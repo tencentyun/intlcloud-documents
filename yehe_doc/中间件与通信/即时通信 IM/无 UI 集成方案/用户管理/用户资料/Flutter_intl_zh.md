@@ -3,9 +3,9 @@
 
 
 ## 关系链事件监听器
-您可以调用 `addFriendListener` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/addFriendListener.html)) 添加关系链事件监听器。
+您可以调用 `addFriendListener` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMFriendshipManager/addFriendListener.html)) 添加关系链事件监听器。
 
-当不想再接收关系链事件时，可调用 `removeFriendListener` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/removeFriendListener.html)) 移除关系链事件监听器。
+当不想再接收关系链事件时，可调用 `removeFriendListener` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMFriendshipManager/removeFriendListener.html)) 移除关系链事件监听器。
 
 > ! 只有预先设置好关系链事件监听器，才能正常接收到下文中的各种事件通知。
 
@@ -13,17 +13,44 @@
 
 
 ```dart
-// 添加关系链监听器
-V2TimFriendshipListener frindshipListener = V2TimFriendshipListener(
-      onBlackListAdd: (infoList) {},
-      onBlackListDeleted: (userids) {},
-      onFriendApplicationListAdded: (applicationlist) {},
-      onFriendApplicationListDeleted: (applicationlist) {},
-      onFriendApplicationListRead: () {},
-      onFriendInfoChanged: (frindInfolist) {},
-      onFriendListAdded: (frindInfolist) {},
-      onFriendListDeleted: (userd) {});
-  friendshipManager.addFriendListener(listener: frindshipListener);
+    //设置关系链监听器
+    V2TimFriendshipListener listener = V2TimFriendshipListener(
+      onBlackListAdd: (List<V2TimFriendInfo> infoList) async {
+        //黑名单列表新增用户的回调
+        //infoList 新增的用户信息列表
+      },
+      onBlackListDeleted: (List<String> userList) async {
+        //黑名单列表删除的回调
+        //userList 被删除的用户id列表
+      },
+      onFriendApplicationListAdded:
+          (List<V2TimFriendApplication> applicationList) async {
+        //好友请求数量增加的回调
+        //applicationList 新增的好友请求信息列表
+      },
+      onFriendApplicationListDeleted: (List<String> userIDList) async {
+        //好友请求数量减少的回调
+        //减少的好友请求的请求用户id列表
+      },
+      onFriendApplicationListRead: () async {
+        //好友请求已读的回调
+      },
+      onFriendInfoChanged: (List<V2TimFriendInfo> infoList) async {
+        //好友信息改变的回调
+        //infoList 好友信息改变的好友列表
+      },
+      onFriendListAdded: (List<V2TimFriendInfo> users) async {
+        //好友列表增加人员的回调
+        //users 新增的好友信息列表
+      },
+      onFriendListDeleted: (List<String> userList) async {
+        //好友列表减少人员的回调
+        //userList 减少的好友id列表
+      },
+    );
+    TencentImSDKPlugin.v2TIMManager
+        .getFriendshipManager()
+        .addFriendListener(listener: listener);//添加关系链监听器
 // 移除关系链监听器
  friendshipManager.removeFriendListener(listener: frindshipListener);
 ```
@@ -32,10 +59,10 @@ V2TimFriendshipListener frindshipListener = V2TimFriendshipListener(
 
 ## 用户资料管理
 ### 查询和修改自己的资料
-您可以调用 `getUsersInfo` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/getUsersInfo.html)) 接口查询个人资料，其中参数 `userIDList` 需填入自己的 UserID。
+您可以调用 `getUsersInfo` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMManager/getUsersInfo.html)) 接口查询个人资料，其中参数 `userIDList` 需填入自己的 UserID。
 
-您可以调用 `setSelfInfo` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/setSelfInfo.html)) 接口修改个人资料。
-资料修改成功后，您会收到 `onSelfInfoUpdated` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Listener/V2TimSDKListener.html#onselfinfoupdated)) 回调。
+您可以调用 `setSelfInfo` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMManager/setSelfInfo.html)) 接口修改个人资料。
+资料修改成功后，您会收到 `onSelfInfoUpdated` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Callback/V2TimUserFullInfoCallback.html)) 回调。
 
 示例代码如下：
 
@@ -52,12 +79,12 @@ TencentImSDKPlugin.v2TIMManager.getUsersInfo(userIDList: [self.data]);
 
 
 ### 查询非好友用户资料
-您可以调用 `getUsersInfo` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/getUsersInfo.html)) 接口查询非好友资料，其中参数 `userIDList` 填入非好友的 UserID 即可。
+您可以调用 `getUsersInfo` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMManager/getUsersInfo.html)) 接口查询非好友资料，其中参数 `userIDList` 填入非好友的 UserID 即可。
 
 > ? 不能修改非好友的资料。
 
 ### 查询和修改好友资料
-您可以调用 `getFriendsInfo` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/getFriendsInfo.html)) 接口查询指定的好友资料，从回调信息中通过 `V2TIMFriendInfoResult` 的 `relation` 字段可以得到该用户与自己的关系：
+您可以调用 `getFriendsInfo` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMFriendshipManager/getFriendsInfo.html)) 接口查询指定的好友资料，从回调信息中通过 `V2TIMFriendInfoResult` 的 `relation` 字段可以得到该用户与自己的关系：
 
 | relation                                          | 与自己的关系               |
 | ------------------------------------------------- | -------------------------- |
@@ -74,7 +101,7 @@ V2TimValueCallback<List<V2TimFriendInfoResult>> friendsInfo = await friendshipMa
 ```
 
 
-您可以调用 `setFriendInfo` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMFriendshipManager/setFriendInfo.html)) 接口修改好友备注等资料。
+您可以调用 `setFriendInfo` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMFriendshipManager/setFriendInfo.html)) 接口修改好友备注等资料。
 
 
 
@@ -89,6 +116,4 @@ TencentImSDKPlugin.v2TIMManager.setSelfInfo(userFullInfo: V2TimUserFullInfo(nick
 增强版 SDK 中用户资料的更新分好友和陌生人两种情况：
  - 好友资料：由于好友资料更新时，后台会主动向 SDK 发送系统通知，因此好友资料可以实时更新。
  - 陌生人资料：陌生人资料更新时，由于没有好友关系，后台无法向 SDK 发送系统通知，因此无法实时更新；为了避免每次获取用户资料都向后台发起网络请求，SDK 增加了缓存逻辑，对同一个用户主动向后台拉取资料的时间间隔为 10 分钟。
-
-
 

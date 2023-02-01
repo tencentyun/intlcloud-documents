@@ -27,29 +27,29 @@ EdgeOne can respond to the client with images in the specified size and format, 
 <tbody><tr>
 <td rowspan=5>Resize</td>
 <td rowspan=5>eo-img.resize</td>
-<td>`w/100`</td>
+<td>w/100</td>
 <td>Changes the width to the specified value. The height is automatically adjusted based on the aspect ratio.</td>
 </tr>
 <tr>
-<td>`h/100`</td>
+<td>h/100</td>
 <td>Changes the height to the specified value. The width is automatically adjusted based on the aspect ratio.</td>
 </tr>
 <tr>
-<td>`w/100/h/100`</td>
+<td>w/100/h/100</td>
 <td>Changes the width and height to the specified values.</td>
 </tr>
 <tr>
-<td>`l/100`</td>
+<td>l/100</td>
 <td>Changes the long side of an image to the specified value. The short side is automatically adjusted based on the aspect ratio.</td>
 </tr>
 <tr>
-<td>`s/100`</td>
+<td>s/100</td>
 <td>Changes the short side of an image to the specified value. The long side is automatically adjusted based on the aspect ratio.</td>
 </tr>
 <tr>
 <td>Format conversion</td>
 <td>eo-img.format</td>
-<td>`webp`, `heif`, `avif`, `guetzli`, `tpg`, `svg`, `jpg2000`, or `jpg-xr`</td>
+<td>webp, heif, avif, guetzli, tpg, svg, jpg2000, or jpg-xr</td>
 <td>Converts an image to the specified format.</td>
 </tr>
 </tbody></table>

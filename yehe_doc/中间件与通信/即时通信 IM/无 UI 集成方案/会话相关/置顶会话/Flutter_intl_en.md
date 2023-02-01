@@ -1,10 +1,10 @@
-## Feature Description
+## Overview
 Pinning a conversation to the top is to fix a one-to-one or group conversation at the top of the conversation list to facilitate search. The status of a conversation being pinned to the top will be stored on the server and synced to new devices.
 
-
+>!The maximum number of conversations pinned to the top is 50, and this limit cannot be increased.
 
 ## Pinning a Conversation to the Top
-Call the `pinConversation` API ([Details](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/pinConversation.html)) to set whether to pin a conversation to the top.
+Call the `pinConversation` API ([details](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMConversationManager/pinConversation.html)) to set whether to pin a conversation to the top.
 
 The conversations are sorted based on the `orderKey` field of the `V2TimConversation` object. This field is an integer that increases as the conversation is activated when a message is sent/received, a draft is set, or the conversation is pinned to the top.
 
@@ -23,7 +23,7 @@ conversationManager.pinConversation(conversationID: "conversationID", isPinned: 
 
 
 ## Notification of the Pinned Status Change
-If you have called `addConversationListener` ([Details](https://pub.dev/documentation/tencent_im_sdk_plugin_platform_interface/latest/im_flutter_plugin_platform_interface/ImFlutterPlatform/addConversationListener.html)) to add a conversation listener, you can get the `isPinned` value of the `V2TimConversation` object in `onConversationChanged` and determine whether the pinned status of a conversation has changed.
+If you have called the `addConversationListener` API ([details](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMConversationManager/addConversationListener.html)) in advance to add a conversation listener, you can get the `isPinned` value of the `V2TimConversation` object in `onConversationChanged` and determine whether the pinned status of a conversation has changed.
 Sample code:
 
 ```java
@@ -31,6 +31,3 @@ conversationManager.addConversationListener(listener: V2TimConversationListener(
     // Latest conversation after the change
   },));
 ```
-
-
-
