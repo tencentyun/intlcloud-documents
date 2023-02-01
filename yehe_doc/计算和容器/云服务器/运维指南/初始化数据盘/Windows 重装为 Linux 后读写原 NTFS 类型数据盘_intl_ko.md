@@ -26,7 +26,7 @@ yum install  -y ntfsprogs
 
 
 1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인합니다.
-2. 왼쪽 사이드바에서 **[CBS](https://console.cloud.tencent.com/cvm/cbs)**를 클릭하여 CBS 관리 페이지로 이동합니다.
+2. 왼쪽 사이드바에서 **[CBS](https://console.cloud.tencent.com/cvm/cbs)** 를 클릭하여 CBS 관리 페이지로 이동합니다.
 3. 마운트할 Windows 데이터 디스크를 선택하고 **더 보기** > **마운트**를 클릭합니다. 아래 이미지와 같습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/6acf53df9c1df0518502402d8bcadb6b.png)
 4. ‘인스턴스로 마운트’ 팝업 창에서 마운트할 Linux CVM을 선택하고 **확인**을 클릭합니다.
