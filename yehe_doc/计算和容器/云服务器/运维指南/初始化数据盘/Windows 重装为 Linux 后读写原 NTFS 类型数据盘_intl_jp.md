@@ -26,7 +26,7 @@ yum install  -y ntfsprogs
 
 
 1. [CVMコンソール](https://console.cloud.tencent.com/cvm/index)にログインします。
-2. 左側のナビゲーションバーで、**[Cloud Block Storage](https://console.cloud.tencent.com/cvm/cbs)**をクリックして、CBS管理画面に入ります。
+2. 左側のナビゲーションバーで、 **[Cloud Block Storage](https://console.cloud.tencent.com/cvm/cbs)** をクリックして、CBS管理画面に入ります。
 3. マウントしたいWindowsデータディスクを選択し、**その他** > **マウント**をクリックします。以下の通りです。
 ![](https://qcloudimg.tencent-cloud.cn/raw/6acf53df9c1df0518502402d8bcadb6b.png)
 4. 表示された「インスタンスへのマウント」ウィンドウで、マウントしたいLinux CVMを選択し、**OK**をクリックします。
