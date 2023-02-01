@@ -82,8 +82,8 @@ A Service of the `LoadBalancer` type works as follows:
 ### High-risk operations on a Service
 
 - Use a traditional CLB instance (not recommended).
-2. Modify or delete a CLB instance label added by TKE, purchase a new CLB instance, and recover the label.
-3. Rename a CLB listener managed by TKE in the CLB console.
+-  Modify or delete a CLB instance label added by TKE, purchase a new CLB instance, and recover the label.
+-  Rename a CLB listener managed by TKE in the CLB console.
 
 ### Service features
 For more information on Service operations and features, see the following documents:
