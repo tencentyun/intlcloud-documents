@@ -8,7 +8,7 @@
 ## 操作步骤
 
 ### 创建 Nginx 服务
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 在“集群管理”页面，选择需创建服务的集群 ID，进入集群的基本信息页面。
 3. 在**工作负载 > Deployment**页面，单击**新建**。参数详情见 [创建 Deployment](https://intl.cloud.tencent.com/document/product/457/30662)。
 4. 在“新建Deployment” 页面，根据以下信息，设置工作负载基本信息。如下图所示：
@@ -43,7 +43,7 @@
 
 #### 通过**负载均衡 IP** 访问 Nginx 服务
 
-1. 单击左侧导航栏中 **[集群](https://console.cloud.tencent.com/tke2/cluster)**，进入 “集群管理” 页面。
+1. 单击左侧导航栏中 **[集群](https://console.cloud.tencent.com/tke2/cluster)** ，进入 “集群管理” 页面。
 2. 单击 Nginx 服务所在的集群 ID，选择**服务与路由** > **Service**。
 3. 在 Service 列表页面，复制 Nginx 服务的负载均衡 IP，如下图所示：
 ![](https://main.qcloudimg.com/raw/bab54241805b352ae007ece3d130bb4a.png)
