@@ -60,7 +60,7 @@ The protocol used when the VOD acceleration node returns to the user's origin si
    </tr>
    <tr>
       <td>Third-party object storage</td>
-      <td><li>If the resource has been stored in a third-party object storage, please enter a valid storage bucket access address as the source site (it cannot contain http:// or http:// protocol header). The currently supported third parties are: Alibaba Cloud OSS and AWS S3.</li><br><li>TO origin-pull to a third-party private storage bucket, you need to fill in a valid key and enable the origin authentication, that is, enable access to the private storage bucket. For details, see <a href="https://www.tencentcloud.com/document/product/266/53277">Access Key Obtaining Guidelines</a>。</li> </td>
+      <td><li>If the resource has been stored in a third-party object storage, please enter a valid storage bucket access address as the source site (it cannot contain http:// or http:// protocol header). The currently supported third parties are: Alibaba Cloud OSS and AWS S3.</li><br><li>TO origin-pull to a third-party private storage bucket, you need to fill in a valid key and enable the origin authentication, that is, enable access to the private storage bucket.For details, see <a href="https://www.tencentcloud.com/document/product/266/53277">Access Key Obtaining Guidelines</a>。
 </li> </td>
    </tr>
 </table>
