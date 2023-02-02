@@ -33,8 +33,8 @@ metadata:
 #### ClusterRoleBinding/RoleBing 授予腾讯云的操作权限规则
 
 >?
-1. 名称和 label 需按如下规则创建。
-2. roleRef 可替换为您期望授权腾讯云的权限。
+>1. 名称和 label 需按如下规则创建。
+>2. roleRef 可替换为您期望授权腾讯云的权限。
 >
 
 
