@@ -12,13 +12,13 @@ GMEは2つの部分に分かれます。リアルタイム音声サービス、�
 
 ###　インターフェース呼び出しのフローチャート
 
-![image](https://main.qcloudimg.com/raw/99d612d90268a7248f5b55c385eeb8b8.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/c8758a24fe68fc084b8d12b09de5e27a.jpg)
 
 ### 統合の手順
 
 #### SDKの統合
 
-プロジェクトにSDKを統合するには、[Unity SDK統合ドキュメント](https://intl.cloud.tencent.com/zh/document/product/607/10783)をご参照ください。
+プロジェクトにSDKを統合するには、[Unity SDK統合ドキュメント](https://intl.cloud.tencent.com/document/product/607/10783)をご参照ください。
 
 ####　コアインターフェース
 
@@ -43,25 +43,25 @@ GMEは2つの部分に分かれます。リアルタイム音声サービス、�
 -<dx-tag-link link="#Stop" tag="接口：StopRecording">レコーディング停止</dx-tag-link>
 </dx-steps>
 
-<dx-tag-link link="#Init" tag="接口：UnInit">GMEの録画を停止</dx-tag-link>
+- <dx-tag-link link="#Init" tag="接口：UnInit">GMEの未初期化</dx-tag-link>
 
 ## コアインターフェースのアクセス
 
 ### 1. SDKのダウンロード 
 
-ダウンロード案内ページにアクセスして、必要な<dx-tag-link link="https://cloud.tencent.com/document/product/607/18521" tag="DownLoad">クライアンSDKをダウンロードします</dx-tag-link>。
+ダウンロード案内ページにアクセスして、必要な<dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/18521" tag="DownLoad">クライアンSDKをダウンロードします</dx-tag-link>。
 
 ### 2. ヘッダーファイルを取り込む
 
 ```
-using TencentMobileGaming;
+using GME;
 ```
 
 ### 3. Contextインスタンスの取得
 
 QAVContext.GetInstance()の直接呼び出しでインスタンスを取得するのではなく、ITMGContextのメソッドでContextのインスタンスを取得してください。
 
-#### サンプルコード  
+####  サンプルコード  
 
 ```
 int ret = ITMGContext.GetInstance().Init(sdkAppId, openID);
@@ -69,11 +69,9 @@ int ret = ITMGContext.GetInstance().Init(sdkAppId, openID);
 
 ### [4. SDKを初期化する](id:Init)
 
-- このインターフェースはGMEサービスの初期化に使用され、アプリケーションの初期化時にアプリケーション側で呼び出すことをお勧めします。
-- **OpenIdはユーザーを一意に識別するために使用されます。現在はINT64のみがサポートされています。ルールはApp開発者が独自に設定し、App内で重複しないようにしてください**。
-- **ユーザーがログインアカウントを切り替えた場合、Uninitを呼び出してから新しいOpenIdを使用してGMEサービスを再Initしてください**。
+初期化前のSDKは初期化されていない状態です。リアルタイム音声サービス、音声メッセージサービスおよびボイスツーテキスト変換サービスを使用するには、**インターフェースInitを使用してSDKを初期化する必要があります**。Initインターフェースを呼び出すスレッドは、他のインターフェースと同じスレッドである必要があります。すべてのメインスレッドでインターフェースを呼び出すことをお勧めします。
 
-#### 関数のプロトタイプ
+#### インターフェースのプロトタイプ
 
 ```
 //class ITMGContext
@@ -82,10 +80,10 @@ public abstract int Init(string sdkAppID, string openID);
 
 | パラメータ     |  タイプ  | 意味                                                         |
 | -------- | :----: | ------------------------------------------------------------ |
-| sdkAppId | String | [Tencent Cloudコンソール](https://console.cloud.tencent.com/gamegme)のGMEサービスが提供するAppId。 |
-| OpenId   | String | openIdはInt64型のみをサポートします（stringに変換されて渡されます）。               |
+| sdkAppId | string | [Tencent Cloud Console](https://console.cloud.tencent.com/gamegme)のGMEサービスが提供するAppIDです。取得については[サービス開始ガイドライン](https://intl.cloud.tencent.com/document/product/607/10782)をご参照ください。|
+| openID   | string | openIDはInt64型（stringに変換して渡す）のみに対応しており、ルールはApp開発者が独自に定め、App内で重複しなければよい。文字列をOpenidとして渡す必要がある場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)をして開発者に連絡してください。|
 
-#### サンプルコード 
+####  サンプルコード 
 
 ```
 int ret = ITMGContext.GetInstance().Init(sdkAppId, openID);
@@ -99,10 +97,9 @@ if (ret != QAVError.OK)
 
 ### [5. イベントコールバックのトリガー](id:Poll)
 
-updateで周期的にPollを呼び出すことで、イベントのコールバックをトリガできます。GMEは定期的にPoll APIを呼び出してイベントコールバックをトリガしてください。Pollが呼び出されないと、SDKサービス全体が異常に動作します。
-詳細については、DemoのEnginePollHelperファイルをご参照ください。
+updateで周期的にPollを呼び出すことで、イベントのコールバックをトリガできます。PollはGMEのメッセージポンプであり、GMEはイベントのコールバックをトリガするためにPollインターフェースを定期的に呼び出す必要があります。Pollが呼び出されないと、SDKサービス全体が異常に動作します。詳細については、[Sample Project](https://intl.cloud.tencent.com/document/product/607/18521)のEnginePollHelperファイルをご参照ください。
 
-#### サンプルコード
+####  サンプルコード
 
 ```
 public void Update()
@@ -131,18 +128,17 @@ public delegate void QAVExitRoomComplete();
 public abstract event QAVExitRoomComplete OnExitRoomCompleteEvent;
 ```
 
-### 7.認証情報
+###　7.　ローカル認証計算
 
-関連する機能の暗号化と認証のためのAuthBufferを生成します。    
-音声メッセージやテキスト変換の認証を取得する場合、ルーム番号のパラメータをnullに設定してください。
+AuthBufferを生成し、関連機能の暗号化と認証に使用します。本格なリリースについてバックグラウンドのデプロイキーを使用してください。バックグラウンドのデプロイについては、[認証キー](https://intl.cloud.tencent.com/document/product/607/12218)をご参照ください。    
 
-####  関数のプロトタイプ
+#### インターフェースのプロトタイプ
 
 ```
 QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
 ```
 
-| パラメータ   |  タイプ     | 意味                                                         |
+| パラメータ   | タイプ   | 意味                                                         |
 | ------ | :----: | ------------------------------------------------------------ |
 | appId  |  int   | Tencent CloudコンソールからのAppId番号。                              |
 | roomId | string | ルーム番号であり、最大127文字まで対応しています（オフライン音声ルーム番号のパラメータをnullに設定しなければなりません）。   |
@@ -162,23 +158,21 @@ public static byte[] GetAuthBuffer(string AppID, string RoomID,string OpenId, st
 
 ### [1. ルームに参加](id:EnterRoom)
 
-生成された認証情報を用いて入室します。ルームに参加するとき、デフォルトでマイクとスピーカーはオフです。インターフェースの戻り値が0の場合は、正常に入室することでなく、呼び出しインタフェースが正常に終了したことを意味します。
+生成した認証情報を用いてルームに参加します。ルームに参加するとき、デフォルトでマイクとスピーカーはオフです。戻り値がAV_OKの場合はルーム参加が成功したことでなく、呼び出しが成功したことを意味します。
 
-ルームオーディオタイプについては、[音質選択](https://intl.cloud.tencent.com/zh/document/product/607/18522)をご参照ください。
-
-####  関数のプロトタイプ
+#### インターフェースのプロトタイプ
 
 ```
 ITMGContext EnterRoom(string roomId, int roomType, byte[] authBuffer)
 ```
 
-| パラメータ       |  タイプ  | 意味                    |
+| パラメータ   | タイプ   | 意味                                                         |
 | ---------- | :----: | ----------------------- |
 | roomId     | String | ルーム番号、127文字まで入力可能 |
-| roomType   |  int   | ルームオーディオタイプ            |
+| roomType   | ITMGRoomType | ITMGRoomType.ITMG_ROOM_TYPE_FLUENCYのみ入力すればよい |
 | authBuffer | byte[] | 認証コード                  |
 
-#### サンプルコード  
+####  サンプルコード  
 
 ```
 ITMGContext.GetInstance().EnterRoom(strRoomId, ITMGRoomType.ITMG_ROOM_TYPE_FLUENCY, byteAuthbuffer);
@@ -186,12 +180,12 @@ ITMGContext.GetInstance().EnterRoom(strRoomId, ITMGRoomType.ITMG_ROOM_TYPE_FLUEN
 
 #### 入室イベントのコールバック
 
-入室が完了すると入室通知が届き、監視処理関数で判断して処理します。err=0のコールバックは成功を意味し、つまりこの時点の入室が成功しました。**課金**が開始されます。本日の合計通話時間が700分未満の場合は無料です。
+ルーム参加が完了するとコールバックにより入室結果が返され、入室結果イベントを監視して処理が行われます。コールバックが成功した場合は、その時点で入室が成功し、**課金**が開始されます。
 
 <dx-fold-block title="计费问题参考">
-[購入ガイド。](https://intl.cloud.tencent.com/zh/document/product/607/36276)
-[課金に関するよくあるご質問。](https://intl.cloud.tencent.com/zh/document/product/607/30255)
-[リアルタイム音声を使用した後、クライアントの接続が切れた場合課金は継続されますか。](https://intl.cloud.tencent.com/zh/document/product/607/30255)
+[購入ガイド。](https://intl.cloud.tencent.com/document/product/607/50009)
+[課金に関するよくあるご質問。](https://intl.cloud.tencent.com/document/product/607/30255)
+[リアルタイム音声を使用した後、クライアントの接続が切れた場合課金は継続されますか。](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
 </dx-fold-block>
 
 - **サンプルコード**  
@@ -270,11 +264,11 @@ void OnEnterRoomComplete(int err, string errInfo)
 }
 ```
 
-### [3. スピーカーのオン/オフ](id:EnableSpeaker)
+[3. スピーカーのオン/オフ](id:EnableSpeaker)
 
 このインターフェースは、スピーカーのオン/オフに使用されます。
 
-#### サンプルコード  
+####  サンプルコード  
 
 ```
 //イベントを監視します：
@@ -298,7 +292,7 @@ void OnEnterRoomComplete(int err, string errInfo)
 
 このインターフェースを呼び出すと、退室することができます。処理の実行は退室のコールバックを待つ必要があります。
 
-#### サンプルコード  
+####  サンプルコード  
 
 ```
 ITMGContext.GetInstance().ExitRoom();
@@ -325,17 +319,17 @@ void OnExitRoomComplete(){
 
 SDKを初期化してから認証の初期化を呼び出します。authBufferの取得については、前記のリアルタイム音声の認証情報インターフェースgenAuthBufferをご参照ください。
 
-#### 関数のプロトタイプ  
+#### インターフェースのプロトタイプ  
 
 ```
 ITMGPTT int ApplyPTTAuthbuffer (byte[] authBuffer)
 ```
 
-| パラメータ       |  タイプ  | 意味 |
+| パラメータ       |  タイプ  | 意味                    |
 | ---------- | :----: | ---- |
 | authBuffer | String | 認証 |
 
-#### サンプルコード  
+####  サンプルコード  
 
 ```
 UserConfig.SetAppID(transform.Find ("appId").GetComponent<InputField> ().text);
@@ -347,31 +341,32 @@ ITMGContext.GetInstance().GetPttCtrl().ApplyPTTAuthbuffer(authBuffer);
 
 ### [2. ストリーミング音声認識を起動](id:StartRWSR)
 
-このインターフェースは、ストリーミング音声識別の開始に使われています。コールバックにおいて、音声はリアルタイムでテキストに変換されて返されます。言語を指定し識別することができるし、音声から識別した情報を指定した言語に翻訳してから返すこともできます。**録音の停止にはStopRecording**を呼び出します。停止後にコールバックが発生します。
+このインターフェースは、ストリーミング音声識別の開始に使われています。コールバックにおいて、音声はリアルタイムでテキストに変換されて返されます。**録音の停止にはStopRecordingを呼び出します**。停止後にコールバックが発生します。
 
-#### 関数のプロトタイプ  
+#### インターフェースのプロトタイプ  
 
 ```
 ITMGPTT int StartRecordingWithStreamingRecognition(string filePath)
-ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string speechLanguage,string translateLanguage)
 ```
 
 | パラメータ              |  タイプ  | 意味                                                         |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | filePath          | String | ボイスの保存パス                                               |
-| speechLanguage    | String | 指定した言語のテキストに識別するパラメータです。パラメータについては、[音声のテキスト変換の言語パラメータ参照リスト](https://intl.cloud.tencent.com/zh/document/product/607/30260)をご参照ください |
-| translateLanguage | String | 指定した言語のテキストに翻訳するパラメータです。パラメータについては、[音声のテキスト変換の言語パラメータ参照リスト](https://intl.cloud.tencent.com/zh/document/product/607/30260)をご参照ください。（このパラメータは一時的に無効です。speechLanguageと同じのパラメータを入力してください） |
 
-#### サンプルコード  
+
+####  サンプルコード  
 
 ```
 string recordPath = Application.persistentDataPath + string.Format("/{0}.silk", sUid++);
-int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingRecognition(recordPath, "cmn-Hans-CN","cmn-Hans-CN");
+int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingRecognition(recordPath);
 ```
 
 #### ストリーミング音声識別コールバック
 
-ストリーミング音声認識を開始した後、コールバック関数OnEventでコールバックメッセージを受信する必要があります。イベントメッセージは`ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE`があり、録音を停止して認識を完了した後にテキストを返します。これは、話が終わってから認識されたテキストを返すことに相当します。
+ストリーミング音声識別を開始した後、OnStreamingSpeechCompleteまたはOnStreamingSpeechisRunning通知でコールバックメッセージを監視する必要があります。イベントメッセージは次の2つがあります。
+
+- `OnStreamingSpeechComplete`はレコーディングを停止して認識が完了した後にテキストを返します。これは、発話が完了した後に認識されたテキストを返すことに相当します。
+- `OnStreamingSpeechisRunning`は録音中に認識されたテキストをリアルタイムで返すことであり、発話しながら認識された文字を返すことに相当します。
 
 OnEvent関数で、必要に応じて適切なイベントメッセージを判断します。渡されるパラメータには次の4つの情報が含まれます。
 
@@ -438,13 +433,13 @@ void OnStreamingRecisRunning(int code, string fileid, string filePath, string re
 
 このインターフェースは、録音の停止に使われています。このインターフェースが非同期インターフェースであるため、録音を停止した後には録音完了のコールバックがあります。コールバックが成功してから、録音ファイルが利用できるようになります。
 
-#### 関数のプロトタイプ  
+#### インターフェースのプロトタイプ  
 
 ```
 ITMGPTT int StopRecording()
 ```
 
-#### サンプルコード  
+####  サンプルコード  
 
 ```
 ITMGContext.GetInstance().GetPttCtrl().StopRecording();
