@@ -33,9 +33,9 @@ You can create an HTTP-triggered function in the [SCF console](https://console.c
 You can edit your bootstrap file in **Advanced configuration** > **Startup command** during [function creation](https://intl.cloud.tencent.com/document/product/583/40689). SCF provides a general enablement template for commonly used web frameworks. You can also modify it as needed as shown below:
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/FvxP047_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221220103521.png)
 After the creation is completed, the console will automatically package your code and `scf_bootstrap` for deployment. 
-
->! The configuration in the console takes effect only if no `scf_bootstrap` is detected in the uploaded code. If there is an `scf_bootstrap` file in your project, the system will deploy the function based on it.
->
+<dx-alert infotype="notice" title="">
+The configuration in the console takes effect only if no `scf_bootstrap` is detected in the uploaded code. If there is an `scf_bootstrap` file in your project, the system will deploy the function based on it.
+</dx-alert>
 :::
 </dx-tabs>
 
