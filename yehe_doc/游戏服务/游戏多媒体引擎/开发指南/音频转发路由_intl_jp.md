@@ -10,7 +10,7 @@ GME開発者がTencent Cloud GME製品APIのデバッグと導入を容易にす
 オーディオルール距離：SetServerAudioRouteSendOperateType(AUDIO_ROUTE_SEND_WHITE_LIST,"2人チームのlist",ITMG_SERVER_AUDIO_ROUTE_RECV_TYPE,"2人チームのlist");
 これにより、音声はlistに含まれる人にのみ送信されるととも、3人チームの音声のみが受信されます。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/819dd334b2ba7af9f2813f2d6f28aea2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/KH6i143_819dd334b2ba7af9f2813f2d6f28aea2.png)
 
 
 ##  前提条件
