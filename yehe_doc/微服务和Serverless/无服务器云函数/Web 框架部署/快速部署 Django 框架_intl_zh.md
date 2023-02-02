@@ -8,24 +8,24 @@
 
 ## 前提条件
 在使用腾讯云云函数服务之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/register) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
-
 ## 操作步骤
 
-### 模版部署 -- 一键部署 Django 项目
+### 模板部署：一键部署 Django 项目
 
-1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，单击左侧导航栏的【函数服务】。
-2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-3. 选择使用【模版创建】来新建函数，在搜索框里输入 `Django` 选择 【Django 框架模版】并单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/e0a04cd3cb345c6c9c8c2f229528a013.png)
-4. 在“配置”页面，您可以查看模版项目的具体配置信息并进行修改。
-5. 单击【完成】即可创建函数。函数创建完成后，您可在“函数管理”页面，查看 Web 函数的基本信息。
-6. 您可以通过 API 网关生成的访问路径 URL，访问您部署的 Django 项目。单击左侧菜单栏中的【触发管理】，查看访问路径。如下图所示：
-![](https://main.qcloudimg.com/raw/e3b1e5cd072c81b14e2555468f4c9499.png)
-7. 单击访问路径 URL，即可访问服务 Django 项目。
+1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，单击左侧导航栏的**函数服务**。
+2. 在主界面上方选择期望创建函数的地域和命名空间，并单击**新建**，进入函数创建流程。
+3. 选择使用**模板创建**来新建函数，在搜索框里输入 `Django` 选择 **Django 框架模板**并单击**下一步**。如下图所示： 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/fckR981_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221219192122.png)
+4. 在**新建**页面，您可以查看模板项目的具体配置信息并进行修改。
+5. 单击**完成**即可创建函数。函数创建完成后，您可在**函数管理**页面查看 Web 函数的基本信息。
+6. 单击左侧菜单栏中的**触发管理**，查看访问路径 URL，访问您部署的 Django 项目。如下图所示： 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/vcp2634_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221219192437.png)
+7. 单击访问路径 URL，即可访问服务 Django 项目。如下图所示： 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/pKxv348_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221219192401.png)
 
 
 
-### 自定义部署 -- 快速迁移本地项目上云
+### 自定义部署：快速迁移本地项目上云
 
 #### 本地开发
 
@@ -57,7 +57,7 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 :::
 </dx-codeblock>
-4. 打开浏览器访问 `http://127.0.0.1:8000`，即可在本地完成 Django 示例项目的访问。如下图所示：
+4. 打开浏览器访问 `http://127.0.0.1:8000`，即可在本地完成 Django 示例项目的访问。如下图所示： 
 ![](https://main.qcloudimg.com/raw/a09696d7d24c719ecb2f276c4bba93ce.png)
 
 
@@ -83,7 +83,6 @@ pip install -r requirements.txt -t .
 #!/bin/bash
 /var/lang/python3/bin/python3 manage.py runserver 9000
 ```
-
 3. 创建完成后，还需执行以下命令修改文件可执行权限，默认需要 `777` 或 `755` 权限才可以正常启动。示例如下：
 ```shell
 chmod 777 scf_bootstrap
@@ -94,22 +93,22 @@ chmod 777 scf_bootstrap
 >
 4. 本地配置完成后，执行以下命令启动服务（如下命令为在 scf_bootstrap 目录下执行时示例），确保您的服务在本地可以正常启动。
 >! 本地测试时注意将 python 路径改为本地路径。
+>
 ```shell
 ./scf_bootstrap
 ```
-
-5. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，单击左侧导航栏的【函数服务】。
-6. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-7. 选择【自定义创建】新建函数，根据页面提示配置相关选项。如下图所示：
-![](https://main.qcloudimg.com/raw/10dce3203472b93e65e66119e47135d8.png)
+5. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，单击左侧导航栏的**函数服务**。
+6. 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
+7. 选择**从头开始**新建函数，根据页面提示配置相关选项。
 	- **函数类型**：选择 “Web 函数”。
 	- **函数名称**：填写您自己的函数名称。
 	- **地域**：填写您的函数部署地域，例如成都。
-	- **部署方式**：选择“代码部署”，上传您的本地项目。
 	- **运行环境**：选择 “Python3.6”。
-8. 单击【完成】完成 Django 项目的部署。
+	- **提交方法**：选择“本地上传文件夹”，上传您的本地项目。
+	- **函数代码**：选择函数代码在本地的具体文件夹。
+8. 单击**完成**完成 Django 项目的部署。
 
 
 #### 开发管理
-部署完成后，即可在 SCF 控制台快速访问并测试您的 Web 服务，并且体验云函数多项特色功能，例如层绑定、日志管理等，享受 Serverless 架构带来的低成本、弹性扩缩容等优势，如下图所示：
+部署完成后，即可在 SCF 控制台快速访问并测试您的 Web 服务，并且体验云函数多项特色功能，例如层绑定、日志管理等，享受 Serverless 架构带来的低成本、弹性扩缩容等优势，如下图所示： 
 ![](https://main.qcloudimg.com/raw/c87151ecbb2f7c7e7f2c6877a043eda6.png)
