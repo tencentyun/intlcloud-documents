@@ -18,7 +18,7 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
 
 ### 创建 Ingress
 
-1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击**集群**进入集群管理页面。
 3. 单击需要创建 Ingress 的集群 ID，进入待创建 Ingress 的集群管理页面。
 4. 选择**服务** > **Ingress**，进入 Ingress 信息页面。
@@ -30,9 +30,9 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
  - IP 版本：提供 IPv4 和 IPv6 NAT64 两种版本，请根据实际需求进行选择。
  - 负载均衡器：可自动创建或使用已有 CLB。
  - 命名空间：根据实际需求进行选择。
- - 监听端口：默认为**Http:80**，请根据实际情况进行选择。
-   如果勾选**Https:443**则需绑定服务器证书，以保证访问安全。如下图所示：
-   ![](https://main.qcloudimg.com/raw/6d6ff3f162e6880ee6dc669cc312ebfd.png)
+ - 转发配置：“协议”默认为**Http**，请根据实际情况进行选择。
+   如果协议“”选择**Https**则需绑定服务器证书，以保证访问安全。如下图所示：
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/aGbv982_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221223175112.png)
    详情请参见 [SSL 证书格式要求及格式转换说明](https://intl.cloud.tencent.com/document/product/214/6155)。
  - 转发配置：根据实际需求进行设置。
 7. 单击**创建Ingress**，完成创建。
@@ -41,7 +41,7 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
 
 #### 更新 YAML
 
-1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击**集群**，进入集群管理页面。
 3. 单击需要更新 YAML 的集群 ID，进入待更新 YAML 的集群管理页面。
 4. 选择**服务** > **Ingress**，进入 Ingress 信息页面。如下图所示：
@@ -120,7 +120,6 @@ metadata:
     kubernetes.io/ingress.internetChargeType: TRAFFIC_POSTPAID_BY_HOUR
     kubernetes.io/ingress.internetMaxBandwidthOut: "10"
 ```
-
 
 ### 创建 Ingress
 

@@ -1,13 +1,9 @@
 ## 操作场景
 
-容器实例 EKSCI 提供日志采集能力，支持将集群内容器标准输出日志、容器日志文件日志发送至 [日志服务 CLS](https://intl.cloud.tencent.com/zh/product/cls)，适用于需要对 EKSCI 内服务日志进行存储和分析的用户。
+容器实例 EKSCI 提供日志采集能力，支持将集群内容器标准输出日志、容器日志文件日志发送至 [日志服务 CLS](https://www.tencentcloud.com/products/cls)，适用于需要对 EKSCI 内服务日志进行存储和分析的用户。
 
 ## 前提条件
-
-- 准备一个 CLS 的日志主题作为日志上报终端，日志上报后在该日志主题下查看并检索日志。若无合适的日志主题，请参见 [新建日志集及日志主题](https://intl.cloud.tencent.com/document/product/614/31592)。
-- 打开日志主题的**日志索引**。索引配置是使用日志服务 CLS 进行检索分析的必要条件。若未开启，则无法查看和检索日志。配置索引的详细操作，请参见 [日志服务配置索引](https://intl.cloud.tencent.com/zh/document/product/614/39594)。 
-  您可在 **[日志服务控制台](https://console.cloud.tencent.com/cls/topic?region=ap-guangzhou)>日志主题**中，选择日志主题名称，在“索引配置”页面开启索引。如下图所示：
-	![](https://qcloudimg.tencent-cloud.cn/raw/b60bf3dae63e22f16154e703f98b0572.png)
+ 准备一个 CLS 的日志主题作为日志上报终端，日志上报后在该日志主题下查看并检索日志。若无合适的日志主题，请参见 [创建日志主题](https://intl.cloud.tencent.com/document/product/614/31592)。
 
 ## 操作步骤
 
@@ -15,26 +11,27 @@
 
 >?日志采集需要在创建容器实例时开启。
 
-1. 登录容器实例控制台，单击新建实例。
-2. 根据实际需求，设置容器实例的参数，完成后，单击下一步。
+1. 登录 [容器实例控制台](https://console.cloud.tencent.com/tke2/eksci)，单击新建实例。
+2. 根据实际需求，设置容器实例的参数，操作详情请参见 [创建容器实例](https://intl.cloud.tencent.com/document/product/457/47857)。完成后，单击下一步。
 3. 在“其他配置”页中开启日志采集。
-	首次开启日志采集功能，需要进行授权，会默认为您的账号绑定角色 TKE_QCSLinkedRoleInEKSLog，该角色配置的预设策略为 QcloudAccessForTKELinkedRoleInEKSLog，该角色会具备日志上传等权限。开启后，选择以下参数：
+首次开启日志采集功能，需要进行授权，会默认为您的账号绑定角色 TKE_QCSLinkedRoleInEKSLog，该角色配置的预设策略为 QcloudAccessForTKELinkedRoleInEKSLog，该角色会具备日志上传等权限。开启后，选择以下参数：
+
 	- 选择日志集及日志主题。
 	- 选择容器，配置采集路径，支持“stdout”（表示标准输出）和绝对路径，支持 `*` 通配，多个采集路径以 `,` 分割。
-
-
 <dx-alert infotype="notice" title="">
-如果开启日志采集的同时需要使用角色授权的能力，为实例绑定的角色必须具备 “cls:pushLog” 写权限，详细请参考 [角色授权](https://www.tencentcloud.com/document/product/457/47857#.E5.88.9B.E5.BB.BA.E5.AE.B9.E5.99.A8.E5.AE.9E.E4.BE.8B)。容器实例只能绑定一个角色。
+如果开启日志采集的同时需要使用角色授权的能力，为实例绑定的角色必须具备 “cls:pushLog” 写权限，详细请参考 [角色授权](https://intl.cloud.tencent.com/document/product/457/47857)。容器实例只能绑定一个角色。
 </dx-alert>
 
-​		
+		
 
 
 ### 查看采集的日志
 
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)，选择左侧**检索分析**。
-2. 进入“检索分析”页面，选择地域、需要查看日志的日志集和日志主题，开启全文索引，即可检索分析日志。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/1c0ff923d5531d8da9a8fa867432c199.png)
+2. 进入“检索分析”页面，选择地域、需要查看日志的日志集和日志主题。
+3. 单击**索引配置**，在基础配置弹窗中为集群开启全文索引。
+4. 输入检索分析语句，选择时间范围，单击检索分析可检索分析日志。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/3YR7537_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221226163615.png)
 
 ## 常见问题
 
@@ -46,4 +43,4 @@
 3. 若已开启角色授权，检查绑定的角色是否有上报日志的权限，具体配置请看角色授权。
 4. 检查绑定的角色所选的载体是否是 CVM。
 
-如果您的问题仍未解决，请通过 [提交工单](https://console.intl.cloud.tencent.com/workorder) 联系我们。
+如果您的问题仍未解决，请通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 联系我们。

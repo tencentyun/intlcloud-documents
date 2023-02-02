@@ -14,34 +14,45 @@ EVENT MESSAGE : “Failed to create pod sandbox in underlay (will retry): insuff
 ```
   这种情况可以创建关联其他可用区的超级节点来拓展集群可用资源。
 
+
+
 ## 计费方式
 
 超级节点本身不收取费用，实际会根据工作负载申请的 CPU、GPU、内存数值以及工作负载的运行时间来核算费用，计费详情请参见 [TKE Serverless 集群计费概述](https://intl.cloud.tencent.com/document/product/457/34054)、[TKE Serverless 集群产品定价](https://intl.cloud.tencent.com/document/product/457/34055)、[TKE Serverless 集群购买限制](https://intl.cloud.tencent.com/document/product/457/34056)。
+
+
 
 ## 操作场景
 
 本文介绍如何通过容器服务控制台在 TKE Serverless 集群中新建超级节点。
 
+
 ## 前提条件
 
-- 请确保已经创建 TKE Serverless 集群。
+- 请确保已经创建 TKE Serverless 集群。操作详情见 [创建 TKE Serverless 集群](https://intl.cloud.tencent.com/document/product/457/34048)。
 - 建议阅读 [超级节点 Pod 调度说明](https://intl.cloud.tencent.com/document/product/457/39760)。
+
+
 
 ## 操作步骤
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的**集群**。
 2. 在集群管理页面，选择 Serverless 集群 ID，进入该集群基本信息页面。
-3. 选择左侧菜单栏中的**超级节点**，进入超级节点列表页面。
-4. 单击**新建节点**，在“新建超级节点”页面，参考以下提示进行设置。如下图所示：
+3. 选择左侧菜单栏中的**超级节点**，在超级节点页面单击**新建节点**。
+4. 在“新建超级节点”页面，参考以下提示进行设置。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/6301a4a22b9aafe021b123bf681ea0ba.png)
  - **计费模式**：提供按量计费的计费模式。
+ - **操作系统类型**：该子网支持的操作系统类型，支持选择 Linux 和 Windows。当选择 Windows 时，支持在该子网下运行 Windows 容器，默认选择 Linux 操作系统。
  - **容器网络**：指定 Pod 调度到超级节点时所分配的网络。调度到超级节点上的 Pod 采用的是与云服务器、云数据库等云产品平级的 VPC 网络，每个 Pod 都会占用一个 VPC 子网 IP。可以选择 Serverless 集群所在VPC的任意子网，请根据实际需求选择合适的可用子网并保证所选的子网可用 IP 数量充足。
  - **安全组**：安全组具有防火墙的功能，用于设置云服务器的网络访问控制。详情请参见 [容器服务安全组设置](https://intl.cloud.tencent.com/document/product/457/9084)。
-5. 点击**确定**，创建超级节点。
+5. 单击**确定**，创建超级节点。
+
+
 
 ## 相关操作
 
-超级节点创建完成之后，您可参考 [管理超级节点](https://www.tencentcloud.com/document/product/457/41743) 进行后续的节点管理。
+超级节点创建完成之后，您可参考 [管理超级节点](https://intl.cloud.tencent.com/document/product/457/41743) 进行后续的节点管理。
+
 
 
 

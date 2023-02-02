@@ -1,10 +1,10 @@
 ## 镜像缓存概述
 
-使用镜像缓存可以在创建实例时加速拉取镜像，减少实例的启动耗时。该能力适用于 EKS 集群 Pod 和超级节点。本文主要介绍镜像缓存的工作原理、计费说明、创建和使用方式等。
+使用镜像缓存可以在创建实例时加速拉取镜像，减少实例的启动耗时。该能力适用于 TKE Serverless 集群 Pod 和超级节点。本文主要介绍镜像缓存的工作原理、计费说明、创建和使用方式等。
 
 ## 工作原理
 
-镜像缓存加速启动实例速度时会事先启动一个容器实例进行镜像拉取，该镜像存储在一个可自定义大小的数据盘中，同时将该数据盘作为云盘快照缓存，即镜像数据已被保存在快照中。在创建容器实例或 Pod 时选择自动匹配或手动匹配镜像缓存，会基于镜像快照创建相应数量的硬盘（数据盘），并直接挂载到实例上，避免镜像层下载，从而提升容器实例及 Pod 的创建速度。
+镜像缓存加速启动实例时会事先启动一个容器实例进行镜像拉取，该镜像存储在一个可自定义大小的数据盘中，同时将该数据盘作为云盘快照缓存，即镜像数据已被保存在快照中。在创建容器实例或 Pod 时选择自动匹配或手动匹配镜像缓存，会基于镜像快照创建相应数量的硬盘（数据盘），并直接挂载到实例上，避免镜像层下载，从而提升容器实例及 Pod 的创建速度。
 
 相比 [镜像复用](https://intl.cloud.tencent.com/document/product/457/43136) 能力，镜像缓存的优势如下：
 
@@ -19,7 +19,7 @@
 
 | 计费项     | 计费说明                                                     | 计费文档                                                     |
 | :--------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| 镜像缓存   | 创建镜像缓存时，需要运行一个 2 核 4GiB 容器实例以拉取镜像。在镜像缓存创建完成后，该容器实例会自动释放并停止计费。 | [容器实例计费](https://intl.cloud.tencent.com/document/product/457/34055) |
+| 镜像缓存   | 创建镜像缓存时，需要运行一个2核4GiB容器实例以拉取镜像。在镜像缓存创建完成后，该容器实例会自动释放并停止计费。 | [容器实例计费](https://intl.cloud.tencent.com/document/product/457/34055) |
 | CBS 数据盘 | 创建镜像缓存时，需要绑定一个高性能数据盘存储镜像，该数据盘的大小支持自定义，默认为 20G。在镜像缓存创建完成后，该数据盘会自动释放并停止计费。 | [云硬盘计费](https://intl.cloud.tencent.com/document/product/362/2413) |
 | 快照       | 基于上述数据盘会创建一个快照，该快照的生命周期与镜像缓存的生命周期一致。快照按照使用时长及容量收费。 | [快照计费](https://intl.cloud.tencent.com/document/product/362/2413#Snapshot) |
 
@@ -31,36 +31,37 @@
 
 ### 使用控制台创建镜像缓存
 
-1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 选择左侧导航栏的**应用中心 > 镜像缓存**，进入“镜像缓存”列表页面。
 3. 单击新建实例，配置相关参数。
-   - 实例名称：选填。
+- 实例名称：自定义。
    - 所在地域：按需选择。
    - 容器网络：为容器实例分配在容器网络地址范围内的 IP 地址。
    - 安全组：安全组具有防火墙的功能，可限制容器实例的网络通信，默认为 default。
+   - OS类型：支持选择 Windows 和 Linux。
    - 镜像：按需选择需要进行缓存的镜像及其版本。
    - 镜像凭证：当选择 Dockerhub 及其他第三方镜像仓库的私有镜像时，必须填写镜像凭证，即仓库的访问地址、用户名及密码。
    - 高级配置：
      - 缓存大小：该大小决定快照及之后创建实例时绑定的数据盘的大小。
      - 过期策略：选择镜像缓存的保留时间，默认为永久保留。
-4. 单击**创建**。创建完成后可在镜像缓存的列表，单击事件名称查看创建进程。如下图所示：
-   ![](https://qcloudimg.tencent-cloud.cn/raw/760e777bb7a7a12075639d589b25c232.png)
+4. 单击**创建实例**。创建完成后可在镜像缓存的列表，单击事件名称查看创建进程。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/760e777bb7a7a12075639d589b25c232.png)
 
 ### 使用 CRD 创建镜像缓存
 
 若要使用 CRD 创建镜像缓存服务，需在集群内安装镜像缓存组件，安装后支持以 CRD+Controller 的模式，使用腾讯云镜像缓存服务，而不需要调用云 API 接口。操作步骤如下：
 
-1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)。
-2. 在集群列表中选择 Serverless 集群，进入集群详情页。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
+2. 在集群列表中单击 Serverless 集群 ID，进入集群详情页。
 3. 在左侧导航栏中选择**组件管理**。
 4. 单击**新建**，在“新建组件管理”页面选择 imc-operator（镜像缓存） 组件。如下图所示：
-![img](https://qcloudimg.tencent-cloud.cn/raw/d58d80e690a236d12f9ef6154cd4b64e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d58d80e690a236d12f9ef6154cd4b64e.png)
 5. 单击**完成**。在组件管理列表页， 查看已安装的组件。
 6. 编辑 YAML。 创建 ImageCache：
 <dx-tabs>
 ::: 创建 ImageCache
 示例：
-``` yaml
+```yaml
 apiVersion: eks.cloud.tencent.com/v1
 kind: ImageCache
 metadata:
@@ -72,7 +73,7 @@ spec:
   # TODO(user): Add fields here
 ```
 带有更多参数的示例：
-``` yaml
+```yaml
 apiVersion: eks.cloud.tencent.com/v1
 kind: ImageCache
 metadata:
@@ -117,7 +118,7 @@ Serverless 集群内创建 Pod 时，可在**高级配置**中，开启使用镜
 - 镜像缓存大小，小容量优先匹配。
 - 创建时间，创建时间晚的优先匹配。
 
->!  若双方都为 nginx：latest，依旧可匹配，但是由于创建时间不同，可能存在版本不一致的情况，因此，建议创建时镜像缓存及实例时，明确注明版本。  
+>!  若双方都为 nginx: latest，依旧可匹配，但是由于创建时间不同，可能存在版本不一致的情况，因此，建议创建时镜像缓存及实例时，明确注明版本。  
 
 若没有匹配到对应的镜像缓存，则会自动正常拉取镜像。
 :::
@@ -132,13 +133,11 @@ Serverless 集群内创建 Pod 时，可在**高级配置**中，开启使用镜
 TKE 集群内的超级节点上的 Pod 可通过指定 Pod 的 Annotation 来使用镜像缓存，具体可参考超级节点 [Annotation 说明](https://intl.cloud.tencent.com/document/product/457/36162)。
 
 - 自动匹配：
-
   ```
   eks.tke.cloud.tencent.com/use-image-cache: auto
   ```
 
 - 手动指定：
-
   ```
   eks.tke.cloud.tencent.com/use-image-cache: imc-xxx
   ```
@@ -148,8 +147,8 @@ TKE 集群内的超级节点上的 Pod 可通过指定 Pod 的 Annotation 来使
 可从创建实例的事件中，查看是否匹配成功。
 
 若匹配成功，则显示以下事件：
-![img](https://qcloudimg.tencent-cloud.cn/raw/06ed9dda35aa48af37c50e3c6985e1a2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/06ed9dda35aa48af37c50e3c6985e1a2.png)
 若未显示该事件，则表示没有匹配到合适的镜像缓存。
 
 需要注意的是，若选择手动匹配，但是匹配的镜像缓存中并没有该镜像，会重新在新创建的数据盘中拉取镜像，并显示以下事件：
-![img](https://qcloudimg.tencent-cloud.cn/raw/8db338c2f36dc2dd39855a96fedc213d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8db338c2f36dc2dd39855a96fedc213d.png)

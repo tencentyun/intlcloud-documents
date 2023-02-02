@@ -1,31 +1,33 @@
 ## 操作场景
-对等连接（Peering Connection）是一种大带宽、高质量的云上资源互通服务，可以打通腾讯云上的资源通信链路。请参考 [创建对等连接](https://intl.cloud.tencent.com/document/product/553/18836) 建立对等连接，您可以通过对等连接实现**同地域和跨地域**的不同集群互通。
+对等连接（Peering Connection）是一种大带宽、高质量的云上资源互通服务，可以打通腾讯云上的资源通信链路。您可以通过对等连接实现**同地域和跨地域**的不同集群互通。
 
->!
->- 本文档以已创建集群并已添加节点为例。若未创建，请参考 [创建集群](https://intl.cloud.tencent.com/document/product/457/40029) 进行创建。
->- 请先确保对等连接成功建立，且子机间能互通。若对等连接建立有问题，请排查**控制台路由表项、CVM 安全组、子网 ACL** 的设置是否有问题。
+## 前提条件
+
+- 本文档以已创建集群并已添加节点为例。若未创建，请参考 [创建集群](https://intl.cloud.tencent.com/document/product/457/40029) 进行创建。
+- 参考 [创建对等连接通信](https://intl.cloud.tencent.com/document/product/553/18836) 建立对等连接。请先确认对等连接已成功建立，且子机间能互通。若对等连接建立有问题，请排查**控制台路由表项、CVM 安全组、子网 ACL** 的设置是否有问题。
 
 
 
 ## 操作步骤
 
->?如需实现跨地域集群间互通，请在执行完以下操作步骤后 [提交工单](https://console.intl.cloud.tencent.com/workorder/category ) 申请打通容器路由，实现容器间互通。
+>?如需实现跨地域集群间互通，请在执行完以下操作步骤后 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请打通容器路由，实现容器间互通。
 
 ### 获取容器的基本信息
 1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
-2. [](id:step3)单击需要设置集群间互通的集群 ID/名称，进入该集群的管理页面。
-3. 在左侧导航栏中，选择 “基本信息”，进入“基本信息” 页面。
-5. [](id:step5)记录 “基础信息” 中 “所在地域”、“节点网络” 和 “容器网络” 的信息。
-6. 重复执行 [步骤3](#step3) - [步骤5](#step5)，记录另一个集群容器 “所在地域”、“节点网络” 和 “容器网络” 的信息。
-例如，记录 B 集群容器 “所在地域”、“节点网络” 和 “容器网络” 的信息。
+3. [](id:step3)单击需要设置集群间互通的集群 ID/名称，进入该集群的详情页面。例如，进入 A 集群的“基本信息” 页面。
+4. [](id:step4)记录 “基础信息” 中 “所在地域”、“节点网络” 和 “容器网络” 的信息。
+5. 重复执行 [步骤3](#step3) - [步骤4](#step4)，记录另一个集群容器 “所在地域”、“节点网络” 和 “容器网络” 的信息。
+例如，进入 B 集群的“基本信息” 页面，记录 B 集群容器 “所在地域”、“节点网络” 和 “容器网络” 的信息。
 
 
 ### 配置路由表
 
 1. 登录私有网络控制台，选择左侧导航栏中的 **[对等连接](https://console.cloud.tencent.com/vpc/conn)**。
-2. 在对等连接管理页面，记录对等连接的 **ID/名称**。
+2. 在对等连接管理页面，记录对等连接的 **ID/名称**。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/5Yue662_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221223184401.png)
 3. [](id:VPCStep3)选择左侧导航栏中的 **[子网](https://console.cloud.tencent.com/vpc/subnet)**，进入子网管理页面。
-4. 单击对等连接本端指定子网的关联路由表。
+4. 单击对等连接本端指定子网的关联路由表。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/EPD9296_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221223184548.png)
 5. 在关联路由表的 “默认详情” 页面，单击**+新增路由策略**。
 6. 在弹出的 “新增路由” 窗口中，设置路由信息。主要参数信息如下：
  - 目的端：输入 B 集群容器的网段。
@@ -43,6 +45,5 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/cce639e7fb41f375a9612dadf662b37a.png)
 2. 登录集群 B 的容器，并在集群 B 的容器中访问集群 A 的容器。如下图所示：
 ![](https://main.qcloudimg.com/raw/6ec462617b4130cc73e088a8632a406e.png)
-
 
 

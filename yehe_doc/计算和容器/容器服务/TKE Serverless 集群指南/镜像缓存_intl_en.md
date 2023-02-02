@@ -1,6 +1,6 @@
 ## Image Cache Overview
 
-This document describes how image cache works and its billing rules, creation, and usage method. You can use image cache to accelerate image pull during instance creation so as to expedite instance startup. This capability is applicable to EKS cluster Pods and super nodes.
+This document describes how image cache works and its billing rules, creation, and usage method. You can use image cache to accelerate image pull during instance creation so as to expedite instance startup. This capability is applicable to TKE Serverless cluster Pods and super nodes.
 
 ## How it Works
 
@@ -34,33 +34,34 @@ When the image cache is used, a Premium Cloud Storage data disk with the same ca
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Select **Application** > **Image Cache** in the left sidebar to enter the “Image cache” page.
 3. Click **Create instance** and configure the relevant parameters.
-   - Instance name: Optional.
+- Instance name: custom.
    - Region: Select as needed.
    - Container network: Assign IPs within the container IP range to the container instances.
    - Security group: It has the capability of a firewall and can limit the network communication of the instance. Default value: `default`.
+   - Operating system: Select **Windows** or **Linux**.
    - Image: Select the image and version to be cached as needed.
    - Image credentials: When you select Docker Hub or a private image in a third-party image repository, you must enter the image credentials, i.e., access address, username, and password of the repository.
    - Advanced configuration:
      - Cache size: It determines the size of the snapshot and the data disk bound during instance creation.
      - Expiration policy: Select the retention duration of the image cache, which is "Permanent" by default.
-4. Click **Create**. After the image cache is created, it will be displayed in the image cache list. You can click the event name to view the creation progress.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/760e777bb7a7a12075639d589b25c232.png)
+4. Click **Create instance**. After the image cache is created, it will be displayed in the image cache list. You can click the event name to view the creation progress.
+![](https://qcloudimg.tencent-cloud.cn/raw/760e777bb7a7a12075639d589b25c232.png)
 
 ### Creating image cache with CRD
 
 The image cache add-on needs to be installed in the cluster if you want to create an image cache with CRD. After the add-on is installed, you can use Tencent Cloud image cache with the method of CRD+Controller without the need to call the cloud API. The steps are as follows:
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. Select the Serverless cluster in the cluster list to go to the cluster details page.
+2. On the cluster list page, click the ID of the target Serverless cluster to enter the cluster details page.
 3. Select **Add-on management** in the left sidebar.
 4. Click **Create**, and select imc-operator (Image cache) as shown in the figure below.
-![img](https://qcloudimg.tencent-cloud.cn/raw/d58d80e690a236d12f9ef6154cd4b64e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/d58d80e690a236d12f9ef6154cd4b64e.png)
 5. Click **OK**. You can view the installed add-ons on the “Add-on management” page.
 6. Edit YAML.
 <dx-tabs>
 ::: Creating ImageCache
 Sample:
-``` yaml
+```yaml
 apiVersion: eks.cloud.tencent.com/v1
 kind: ImageCache
 metadata:
@@ -72,12 +73,12 @@ spec:
   # TODO(user): Add fields here
 ```
 Sample with more parameters:
-``` yaml
+```yaml
 apiVersion: eks.cloud.tencent.com/v1
 kind: ImageCache
 metadata:
   annotations:
-    "eks.tke.cloud.tencent.com/eip-attributes": '{"InternetMaxBandwidthOut":2}' # created automatically eip
+    "eks.tke.cloud.tencent.com/eip-attributes": '{"InternetMaxBandwidthOut":2}' # Creating EIPs automatically
   name: imagecache-sample-more-para
 spec:
   images:
@@ -117,7 +118,7 @@ If you select **Automatic match**, the optimal image cache will be matched autom
 - Images with a smaller cache size will be matched first.
 - Images with a later creation time will be matched first.
 
->! If the versions are both "nginx:latest", the image cache can still be matched; however, as the creation time may be different, the versions may be inconsistent. Therefore, we recommend you specify the version clearly when creating an image cache and instance.  
+>! If the versions are both "nginx: latest", the image cache can still be matched; however, as the creation time may be different, the versions may be inconsistent. Therefore, we recommend you specify the version clearly when creating an image cache and instance.  
 
 If the corresponding image cache fails to be matched, an image will be pulled normally.
 :::
@@ -132,13 +133,11 @@ If you select **Manual match**, you need to manually select a specific image cac
 You can specify a Pod annotation to use an image cache on super nodes in TKE clusters. For more information, see super node [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
 
 - Automatically match:
-
   ```
   eks.tke.cloud.tencent.com/use-image-cache: auto
   ```
 
 - Manually specify:
-
   ```
   eks.tke.cloud.tencent.com/use-image-cache: imc-xxx
   ```
@@ -148,8 +147,8 @@ You can specify a Pod annotation to use an image cache on super nodes in TKE clu
 You can check whether the match succeeds in the instance creation event.
 
 If the image cache is matched successfully, the following event will be displayed:
-![img](https://qcloudimg.tencent-cloud.cn/raw/06ed9dda35aa48af37c50e3c6985e1a2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/06ed9dda35aa48af37c50e3c6985e1a2.png)
 If this event is not displayed, no appropriate image caches have been matched.
 
 Note that if you choose to manually match an image cache but it fails to be matched, an image will be pulled from the newly created data disk, and the following event will be displayed:
-![img](https://qcloudimg.tencent-cloud.cn/raw/8db338c2f36dc2dd39855a96fedc213d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8db338c2f36dc2dd39855a96fedc213d.png)

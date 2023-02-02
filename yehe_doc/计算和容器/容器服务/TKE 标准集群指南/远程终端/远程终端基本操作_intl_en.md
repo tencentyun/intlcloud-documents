@@ -1,23 +1,28 @@
-## Connecting to a Container Through a Remote Terminal
-1. Log in to the TKE console and click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
-2. On the "Cluster Management" page, click the cluster ID (cls-xxx) to go to the cluster details page.
+## Connecting to a Container through Remote Terminal
+1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
+2. On the **Cluster Management** page, click the cluster ID (cls-xxx) to go to the cluster details page.
+3. In the left sidebar, select **Node Management** > **Node**. On the **Node List** page, click the node ID to go to the Pod management page.
+4. In the instance list, click **Remote login** in the **Operation** column of the instance.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/CgXp682_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221223160402.png)
+<dx-alert infotype="notice" title="">
+Containers meeting any of the following conditions do not support remote login:
+- The namespace is kube-system.
+- A bash is not built in the container image.
+For FAQs about the remote terminal, see [here](https://intl.cloud.tencent.com/document/product/457/8638).
+</dx-alert>
+5. In the container login pop-up window, select shell and select **Login** on the right side of the container you want to log in.
 
-3. On the cluster details page, choose **Node Management** > **Nodes** in the left sidebar.
-4. On the "Node List" page, click the node ID to go to the pod management page.
-5. Click **Remote Login** for the instance to log in to the remote terminal.
-
->Containers meeting any of the following conditions do not support remote login:
-> - The namespace is kube-system.
-> - No bash is available in the container image.
 
 ## Running Commands for Containers Without Shell
 1. Go to the remote terminal page.
-2. Enter the command to run in the entry box at the bottom, and then click "OK", as shown in the following figure:
-![](https://main.qcloudimg.com/raw/e019990698f5dc555950bde7052b2aeb.png)
+2. Enter the command to be run below and click **Enter**, as shown in the following figure:
+![](https://qcloudimg.tencent-cloud.cn/raw/68d5298797ff405816af9bf74e169f44.png)
 
 ## Uploading and Downloading Files
 1. Go to the remote terminal page.
-2. Click the file assistant at the bottom, select file uploading or downloading, as shown in the following figure:
- - For uploading, you need to specify the path to the file to be uploaded.
- - For downloading, you need to specify the path for storing the file to be downloaded.
-![](https://main.qcloudimg.com/raw/37a2b9bdc9bb6b0e878c9c8f5b4bc35e.png)
+2. Click **File** and select **Upload File** or **Download File**.
+![](https://qcloudimg.tencent-cloud.cn/raw/1869cf17e59d25858c8fe44abe0a59f6.png)
+ - **Upload File**: Specify the directory to which the files are to be uploaded.
+ - **Download File**: Specify the path of the files to be downloaded.
+
+

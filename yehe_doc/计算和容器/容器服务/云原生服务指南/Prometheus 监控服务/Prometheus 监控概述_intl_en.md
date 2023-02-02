@@ -31,7 +31,7 @@ Prometheus is an open-source system monitoring and alarming framework. It comple
 | Availability            | High                                                           | Low                                  |
 | Data storage capability      | Unlimited                                                       | Subject to local disk capacity                      |
 | Monitoring of ultra large cluster      | Supported                                                         | Not supported                              |
-| Data visualization        | Excellent visualization capabilities based on Grafana and data display of multiple monitoring instances at the same time on Grafana | Limited visualization capabilities based on native Prometheus UI |
+| Data visualization   | Excellent visualization capabilities based on Grafana and data display of multiple monitoring instances at the same time on Grafana | Limited visualization capabilities based on native Prometheus UI |
 | Open-Source ecosystem          | Full compatibility                                                     | Native support                            |
 | Barrier to use          | Low                                                           | High                                  |
 | Cost              | Low                                                           | High                                  |
@@ -66,10 +66,10 @@ After you associate your cluster, TMP will automatically deploy the agent in it,
 TMP uses Tencent Cloud's proprietary sharding and scheduling technologies to implement real-time dynamic scaling of collection tasks, meeting your elastic needs. It also supports load balancing.
 
 **High availability**
-TMP uses technical methods to avoid data breakpoints and losses, so as to secure the high availability of monitoring services.
+TPS uses technical methods to avoid data breakpoints and losses, so as to secure high availability of the monitoring service.
 
 **Low connection costs**
-You can write configuration files easily in the console, so you don't need to have an extensive knowledge of Prometheus. If you already know how to use Prometheus, TMP also allows you to submit configuration information through a native YAML file, making it easier for you to customize advanced features for personalized monitoring.
+You can write configuration files easily in the TMP console, so you don't need to have an extensive knowledge of Prometheus to use TMP. If you already know how to use Prometheus, TMP also allows you to submit configuration information through a native YAML file, making it easier for you to customize advanced features for personalized monitoring.
 
 For more information, see [Strengths](https://intl.cloud.tencent.com/document/product/1116/43154).
 
@@ -79,7 +79,7 @@ For more information, see [Strengths](https://intl.cloud.tencent.com/document/pr
 TMP is a super lightweight, highly available, and non-intrusion monitoring system.
 
 * It contains only one lightweight agent in your cluster.
-* The collector is an EKS cluster created under your account and doesn't affect your native clusters.
+* The collector is a TKE Serverless cluster created under your account and doesn't affect your native clusters.
 * Monitoring data storage and display are achieved through separate modules.
 * Cloud Monitor Grafana is connected to multiple monitoring instances for a unified view.
 
@@ -99,19 +99,19 @@ In addition, TMP is preset with common Grafana dashboards and alarm rule templat
 Use your Tencent Cloud account to log in to the [TMP console](https://console.cloud.tencent.com/tke2/prometheus2/list?rid=16):
 
 1. Create an instance.
-2. Associate a cluster with the newly created instance. At this point, the system will automatically deploy the agent in your cluster and monitoring add-on in your newly created EKS cluster, so you don't need to install any add-ons.
+2. Associate a cluster with the newly created instance. At this point, the system will automatically deploy the agent in your cluster and monitoring add-on in your newly created TKE Serverless cluster, so you don't need to install any add-ons.
 3. Configure a collection rule. After a cluster is successfully associated, you can flexibly configure the data collection and alarm rules as needed. Then, you can open Grafana to view the monitoring data.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/10dd3ad358735a6098c1ac8b4f86c2bf.png)
 
 #### Key concepts
 
-- **Instance**: An instance corresponds to a complete set of monitoring services and has an independent GUI. It can be associated with multiple clusters in the same VPC to implement unified multi-cluster monitoring.
-- **Cluster:** Generally indicates your TKE or EKS cluster in Tencent Cloud.
-- **Associate with Cluster**: Indicates the operation of associating an instance with a cluster.
-- **Collection Rule:** Indicates a custom monitoring data collection rule.
-- **Job:** In Prometheus, a Job is a collection task, which defines the public configurations of all monitoring targets in a Job. Multiple Jobs can form the configuration file of a collection task.
-- **Target:** Indicates a data collection target obtained through static configuration or service discovery. For example, when a Pod is monitored, the Target will be each container in the Pod.
+- **Instance:** An instance corresponds to a complete set of monitoring services and has an independent GUI. It can be associated with multiple clusters in the same VPC to implement unified multi-cluster monitoring.
+- **Cluster:** Generally indicates your TKE or TKE Serverless cluster on Tencent Cloud.
+- **Cluster association:** Indicates the operation of associating an instance with a cluster.
+- **Collection rule:** Indicates a custom monitoring data collection rule.
+- **Job:** In Prometheus, a job is a collection task, which defines the public configurations of all monitoring targets in a job. Multiple jobs can form the configuration file of a collection task.
+- **Target:** Indicates a data collection target obtained through static configuration or service discovery. For example, when a Pod is monitored, the target will be each container in the Pod.
 - **Metric:** It is used to record the monitoring metric data. All metrics are time series data and identified by name. The sample data collected by each metric contains information in at least three dimensions (metric name, time, and metric value).
 - **Series:** It is a metric-label pair displayed as a straight line on a dashboard.
 
@@ -122,5 +122,6 @@ TMP mainly monitors container cloud-native business use cases. In addition to th
 
 ## Pricing
 
-Currently, when you use the TMP service, [EKS clusters](https://intl.cloud.tencent.com/document/product/457/34054) and [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) resources will be created under your account and billed in pay-as-you-go mode. For more information on the created resources and pricing, see [TMP Resource Usage](https://intl.cloud.tencent.com/document/product/457/46733).
+For TMP pricing details, see [Pay-as-You-Go](https://intl.cloud.tencent.com/document/product/1116/43156).
+Currently, when you use the TMP service, [TKE Serverless clusters](https://intl.cloud.tencent.com/document/product/457/34054) and [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) resources will be created under your account and billed in pay-as-you-go mode. For more information on the created resources and pricing, see [Billing Mode and Resource Usage](https://intl.cloud.tencent.com/document/product/457/46733).
 
