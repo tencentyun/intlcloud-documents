@@ -33,8 +33,8 @@ metadata:
 #### ClusterRoleBinding/RoleBing: rules on granting Tencent Cloud OPS team permissions
 
 >?
-1. Name and label should be created according to the following rule.
-2. roleRef can be replaced with the permissions you want to grant to Tencent Cloud OPS team.
+>1. Name and label should be created according to the following rule.
+>2. roleRef can be replaced with the permissions you want to grant to Tencent Cloud OPS team.
 >
 
 
