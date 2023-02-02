@@ -5,7 +5,7 @@
 ## 操作步骤
 
 ### 配置全读写权限
-1. 登录访问管理控制台，选择左侧导航栏中的 **[策略](https://console.cloud.tencent.com/cam/policy)**。
+1. 登录访问管理控制台，选择左侧导航栏中的 **[策略](https://console.cloud.tencent.com/cam/policy)** 。
 2. 在“策略”管理页面，选择 **QcloudTKEFullAccess** 策略行的**关联用户/组/角色**。如下图所示：
 ![](https://main.qcloudimg.com/raw/356fec716212ea633d73c4d48888c0ce.png)
 3. 在“关联用户/用户组/角色”弹窗中，勾选需对 TKE 服务拥有全读写权限的账号，单击**确定**，即可完成子账号对 TKE 服务全读写权限的配置。
@@ -14,7 +14,7 @@
 >? 如果您需要使用镜像仓库的触发器和自动构建功能，还需额外配置容器服务-持续集成（CCB）的相关权限。
 
 ### 配置只读权限
-1. 登录访问管理控制台，选择左侧导航栏中的 **[策略](https://console.cloud.tencent.com/cam/policy)**。
+1. 登录访问管理控制台，选择左侧导航栏中的 **[策略](https://console.cloud.tencent.com/cam/policy)** 。
 2. 在“策略”管理页面，选择 **QcloudTKEReadOnlyAccess** 策略行的**关联用户/用户组/角色**。
 3. 在“关联用户/用户组/角色”弹窗中，勾选需对 TKE 服务拥有只读权限的账号，并单击**确定**，即可完成子账号对 TKE 服务只读权限的配置。
 4. 在策略管理页面中，单击 **QcloudCCRReadOnlyAccess** 策略行的**关联用户/用户组/角色**。
