@@ -18,9 +18,9 @@
 
 ### 2. プロジェクトをダウンロードする
 
-[ダウンロードガイド]（https://cloud.tencent.com/document/product/607/18521）でUnrealEngine Demoをダウンロードしてください。UE5とUE4ではDemoの設定が異なるため、対応するエンジンバージョンのSample Projectをダウンロードする必要があります。
+[ダウンロードガイド](https://www.tencentcloud.com/document/product/607/18521)でUnrealEngine Demoをダウンロードしてください。UE5とUE4ではDemoの設定が異なるため、対応するエンジンバージョンのSample Projectをダウンロードする必要があります。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/d31444d037de015a99b4bf3884aec906.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/jeet801_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16753202244651.png)
 
 
 ### 3. プロジェクトの設定
