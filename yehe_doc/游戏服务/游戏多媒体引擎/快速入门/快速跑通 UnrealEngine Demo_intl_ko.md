@@ -18,9 +18,9 @@ GME 음성 채팅 서비스를 신청하고 [서비스 활성화](https://www.te
 
 ### 2. 프로젝트 다운로드
 
-[SDK 다운로드 가이드](https://cloud.tencent.com/document/product/607/18521)의 안내에 따라 Unreal Engine Demo를 다운로드합니다. UE5와 UE4의 Demo 구성이 다르기 때문에 해당 엔진 버전에 대한 Sample Project를 다운로드해야 합니다.
+[SDK 다운로드 가이드](https://www.tencentcloud.com/document/product/607/18521)의 안내에 따라 Unreal Engine Demo를 다운로드합니다. UE5와 UE4의 Demo 구성이 다르기 때문에 해당 엔진 버전에 대한 Sample Project를 다운로드해야 합니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/d31444d037de015a99b4bf3884aec906.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/jeet801_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16753202244651.png)
 
 
 ### 3. 프로젝트 구성
