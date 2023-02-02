@@ -68,6 +68,7 @@ The protocol used when the VOD acceleration node returns to the user's origin si
 
 
 >? The origin site can specify the origin-pull HOST, and the origin-pull HOST is used to specify the specific site of the domain name/ip of the site that the CDN node visits at the origin when origin-pull. If no origin-pull HOST is specified, the currently created acceleration domain name is used by default.
+
 7. Domain name resolution. For the added custom acceleration domain name, you need to configure a CNAME on the DNS service provider specified by the domain name so that users can access your video media through the domain name. For details, see [VOD Acceleration Domain Name - Domain Name Resolution](https://www.tencentcloud.com/document/product/266/42076).
 
 
