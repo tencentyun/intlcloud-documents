@@ -6,7 +6,7 @@
 ## 시나리오
 
 
-![](https://qcloudimg.tencent-cloud.cn/raw/d7d75633180f90d9357650a7d7493f4d.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Vst2098_d7d75633180f90d9357650a7d7493f4d.png)
 
 ## 전제 조건
 
