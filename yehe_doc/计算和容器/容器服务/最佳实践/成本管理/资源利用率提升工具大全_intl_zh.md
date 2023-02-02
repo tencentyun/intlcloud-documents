@@ -1,7 +1,7 @@
 
 ## 背景
 
-公有云的发展为业务的稳定性、可拓展性、便利性带来了极大帮助。这种用租代替买、并且提供完善的技术支持和保障的服务，理应为业务带来降本增效的效果。但实际上业务上云并不意味着成本一定较少，还需适配云上业务的应用开发、架构设计、管理运维、合理使用等多方面解决方案，才能真正助力业务的降本增效。在《Kubernetes 降本增效标准指南》系列的文章《容器化计算资源利用率现象剖析》中可看到，IDC 上云后资源利用率提高有限，即使已经容器化，节点的平均利用率依旧仅在13%左右，资源利用率的提升任重道远。
+公有云的发展为业务的稳定性、可拓展性、便利性带来了极大帮助。这种用租代替买、并且提供完善的技术支持和保障的服务，理应为业务带来降本增效的效果。但实际上业务上云并不意味着成本一定较少，还需适配云上业务的应用开发、架构设计、管理运维、合理使用等多方面解决方案，才能真正助力业务的降本增效。在《Kubernetes 降本增效标准指南》系列的文章[《容器化计算资源利用率现象剖析》](https://mp.weixin.qq.com/s/8sHsI1pVm-1RX5w1F3uWPg)中可看到，IDC 上云后资源利用率提高有限，即使已经容器化，节点的平均利用率依旧仅在13%左右，资源利用率的提升任重道远。
 
 本篇文章将带您了解：
 1. 为什么 Kubernetes 集群中的 **CPU 和内存资源利用率**通常都如此之低？
@@ -56,10 +56,7 @@ Resource Quota 用于设置命名空间资源的使用配额，命名空间是 K
 - 设置一个命名空间的资源使用数量的上限以提高集群的稳定性，防止一个命名空间对资源的多度侵占和消耗。
 
 #### TKE 上的 Resource Quota 
-TKE 上已经实现对 Resource Quota 的产品化，您可以直接在控制台利用 Resource Quota 限制一个命名空间的资源使用量，详情可参见 [Namespaces 文档](https://intl.cloud.tencent.com/document/product/457/30660)。
-![](https://qcloudimg.tencent-cloud.cn/raw/71d27d6c118bdfcc766178380329cab9.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/c3c7572d3482f0347578b7f170f9f264.png)
-
+TKE 上已经实现对 Resource Quota 的产品化，您可以直接在控制台利用 Resource Quota 限制一个命名空间的资源使用量，操作详情可参见 [Namespaces 文档](https://intl.cloud.tencent.com/document/product/457/30660)。 
 :::
 ::: 使用 Limit Ranges 限制资源
 用户经常忘记设置资源的 Request 和 Limit，或者将值设置得很大怎么办？作为管理员，如果可以为不同的业务设置不同资源使用默认值以及范围，可以有效减少业务创建时的工作量同时，限制业务对资源的过度侵占。
@@ -99,12 +96,10 @@ HPA（Horizontal Pod Autoscaler）可以基于一些指标（例如 CPU、内存
 
 #### TKE 上的 HPA
 TKE 基于 Custom Metrics API 支持许多用于弹性伸缩的指标，涵盖 CPU、内存、硬盘、网络以及 GPU 相关的指标，覆盖绝大多数的 HPA 弹性伸缩场景，详细列表请参见 [自动伸缩指标说明](https://intl.cloud.tencent.com/document/product/457/34025)。此外，针对例如基于业务单副本 QPS 大小来进行自动扩缩容等复杂场景，可通过安装 prometheus-adapter 来实现自动扩缩容，详情见 [在 TKE 上使用自定义指标进行弹性伸缩](https://intl.cloud.tencent.com/document/product/457/38941)。
-![](https://qcloudimg.tencent-cloud.cn/raw/40373c0c3d81c8c326b2dc4906554841.png)
 :::
 ::: 通过 HPC 定时扩缩容
 假设您的业务是电商平台，双十一要进行促销活动，这时可以考虑使用 HPA 自动扩缩容。但是 HPA 需要先监控各项指标后，再进行反应，可能扩容速度不够快，无法及时承载高流量。针对这种有预期的流量暴增，如果能提前发生副本扩容，将有效承载流量井喷。
-HPC（HorizontalPodCronscaler)是 TKE 自研组件，旨在定时控制副本数量，以达到提前扩缩容、和提前触发动态扩容时资源不足的影响，相较社区的 CronHPA，额外支持：
-
+HPC（HorizontalPodCronscaler）是 TKE 自研组件，旨在定时控制副本数量，以达到提前扩缩容、和提前触发动态扩容时资源不足的影响，相较社区的 CronHPA，额外支持：
 1. 与 HPA 结合：可以实现定时开启和关闭 HPA，让您的业务在高峰时更弹性。
 2. 例外日期设置：业务的流量不太可能永远都是规律的，设置例外日期可以减少手工调整 HPC。
 3. 单次执行：以往的 CronHPA 都是永久执行，类似 Cronjob，单次执行可以更灵活的应对大促场景。
@@ -113,12 +108,7 @@ HPC（HorizontalPodCronscaler)是 TKE 自研组件，旨在定时控制副本数
 以游戏服务为例，从周五晚上到周日晚上，游戏玩家数量暴增。如果可以将游戏服务器在星期五晚上前扩大规模，并在星期日晚上后缩放为原始规模，则可以为玩家提供更好的体验。如果使用 HPA，可能因为扩容速度不够快导致服务受影响。
 
 #### TKE 上的 HPC
-TKE 上已经实现对 HPC 的产品化，但您需要提前在”组件管理“里面安装 HPC，HPC 使用 CronTab 语法格式。操作步骤如下：
-1. 安装
-![](https://qcloudimg.tencent-cloud.cn/raw/6339eced5612a77955abe8162794f67a.png)
-2. 使用
-![](https://qcloudimg.tencent-cloud.cn/raw/6339eced5612a77955abe8162794f67a.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/134dc01838c70507fe77546c72cae9cd.png)
+TKE 上已经实现对 HPC 的产品化，但您需要提前在”组件管理“里面安装 HPC，HPC 使用 CronTab 语法格式。操作详情见 [自动伸缩基本操作](https://intl.cloud.tencent.com/document/product/457/32424)。 
 :::
 ::: 通过 CA 自动调整节点数量
 上述 HPA 和 HPC，都是在业务负载层面的自动扩缩副本数量，以灵活应对流量的波峰波谷，提升资源利用率。但是对于集群整体而言，资源总数是固定的，HPA 和 HPC 只是让集群有更多空余的资源，是否有一种方法，能在集群整体较“空”时回收部分资源，能在集群整体较“满”时扩充集群整体资源？因为集群整体资源的使用量直接决定了账单费用，这种集群级别的弹性扩缩将真正帮助您节省使用成本。
@@ -132,7 +122,7 @@ CA（Cluster Autoscaler）用于自动扩缩集群节点数量，以真正实现
 #### TKE 上的 CA
 TKE 上的 CA 是以节点池的形态来让用户使用的，CA 推荐和 HPA 一起使用：HPA 负责应用层的扩缩容，CA 负责资源层（节点层）的扩缩容，当 HPA 扩容造成集群整体资源不足时，会引发 Pod 的 Pending，Pod Pending 会触发 CA 扩充节点池以增加集群整体资源量，整体扩容逻辑可参考下图：
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/nQtK669_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221208161028.png)
-具体的参数配置方式以及应用场景可参考腾讯云容器服务 [节点池概述](https://intl.cloud.tencent.com/document/product/457/35900)。
+具体的参数配置方式以及应用场景可参考 [《像管理 Pod 一样管理 Node》](https://mp.weixin.qq.com/s/C3Z8WD6HzOvk6xKP1b4g9g)，或者可参考腾讯云容器服务 [节点池概述](https://intl.cloud.tencent.com/document/product/457/35900)。
 :::
 </dx-tabs>
 
@@ -166,7 +156,7 @@ TKE 自研的动态调度器解决了以上问题。动态调度器的核心原�
 #### TKE 上的动态调度器
 您可以在扩展组件里面安装和使用动态调度器：
 ![](https://qcloudimg.tencent-cloud.cn/raw/35a2224ade0aeec26492ccc91630ac54.png)
-更多关于动态调度器的使用指南，可以参考官方 [DynamicScheduler 说明](https://intl.cloud.tencent.com/document/product/457/39119)。
+更多关于动态调度器的使用指南，可以参考 [《TKE 重磅推出全链路调度解决方案》](https://mp.weixin.qq.com/s/-USAfoI-8SDoR-LpFIrGCQ) 和官方 [DynamicScheduler 说明](https://intl.cloud.tencent.com/document/product/457/39119)。
 :::
 </dx-tabs>
 
@@ -182,7 +172,7 @@ TKE 自研的动态调度器解决了以上问题。动态调度器的核心原�
 在 Hadoop 架构下，离线作业和在线作业往往分属不同的集群，然而在线业务、流式作业具有明显的波峰波谷特性，在波谷时段，会有大量的资源处于闲置状态，造成资源的浪费和成本的提升。在离线混部集群，通过动态调度削峰填谷，当在线集群的使用率处于波谷时段，将离线任务调度到在线集群，可以显著的提高资源的利用率。然而，Hadoop Yarn 目前只能通过 NodeManager 上报的静态资源情况进行分配，无法基于动态资源调度，无法很好的支持在线、离线业务混部的场景。
 
 #### TKE 上的离在线混部 
-在线业务具有明显的波峰浪谷特征，而且规律比较明显，尤其是在夜间，资源利用率比较低，这时候大数据管控平台向 Kubernetes 集群下发创建资源的请求，可以提高大数据应用的算力。
+在线业务具有明显的波峰浪谷特征，而且规律比较明显，尤其是在夜间，资源利用率比较低，这时候大数据管控平台向 Kubernetes 集群下发创建资源的请求，可以提高大数据应用的算力，详情见 [大数据系统云原生渐进式演进最佳实践](https://mp.weixin.qq.com/s?__biz=Mzg5NjA1MjkxNw==&mid=2247488081&idx=1&sn=9ebcbfa52ddb0a7b17feee58b23d3da4&chksm=c007a98bf770209d92a27500c93ddf84915919a0501e0c1e04a87694c32e2cbe8020cf09df06&mpshare=1&scene=1&srcid=0322wLnbkdKpzGdakERLheAF&sharer_sharetime=1616402240233&sharer_shareid=19f62cec4524d0067764711a5bb68f49&version=3.1.0.2353&platform=mac#rd)。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/JGI4705_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221208163653.png) 
 
 ## 如何权衡资源利用率与稳定性
@@ -194,3 +184,5 @@ TKE 自研的动态调度器解决了以上问题。动态调度器的核心原�
 您可以在扩展组件中安装和使用重调度器，安装组件详情见 [DeScheduler 说明](https://intl.cloud.tencent.com/document/product/457/39146)。
 ![](https://qcloudimg.tencent-cloud.cn/raw/62a9bd573eb7fd0795b53e301efc3c2f.png)
 
+
+更多关于重调度器的使用指南，可参考[《TKE 重磅推出全链路调度解决方案》](https://mp.weixin.qq.com/s/-USAfoI-8SDoR-LpFIrGCQ)。

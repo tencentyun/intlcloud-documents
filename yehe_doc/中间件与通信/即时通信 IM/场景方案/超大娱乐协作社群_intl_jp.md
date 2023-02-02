@@ -18,12 +18,12 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/45d3d5e8818cea79dd65b3b7abbb8d86.jpg)
 
 ###　組織管理：明確な階層的コミュニケーションを実現
-組織内のすべてのメンバーを同じコミュニティに追加し、コミュニティの階層機能と権限設定に依存して、階層的なコミュニケーションを実現できます。たとえば、部門AのメンバーにAトピックのみを表示し、部門BのメンバーにトピックBを表示するように設定します。
+組織のすべてのメンバーを同じコミュニティに引き込み、コミュニティの階層的な機能と権限設定に依存して、階層的コミュニケーションを実現できます。
 ![](https://qcloudimg.tencent-cloud.cn/raw/aa633c15337fbb8befe6c3f9a9a4f890.jpg)
 
 ## 技術的優位性
 ### 極めて大規模なグループメンバー
-普通のQQ、WeChatグループと比較して、Tencent IMコミュニティの容量は約10,000倍に拡大し、友達作り、フォロワーの運営、ゲームソーシャル、組織管理などのシナリオで多数のメンバーのニーズに対応しています。
+Tencent IMコミュニティの容量は約10,000倍に拡大し、友達作り、フォロワーの運営、ゲームソーシャル、組織管理などのシナリオで多数のメンバーのニーズに対応しています。
 ### メッセージの信頼性
 Tencent IMコミュニティはメンバーの容量を大幅に拡大しましながら、Tencentの強力なメッセージ機能を継承し、20年以上の技術蓄積に基づいて完全で信頼性の高いメッセージシステムを構築しました。99.99%を超えるメッセージの送受信成功率とサービスの信頼性をお客様に提供し、お客様が億レベルの大規模な並列処理タスクに簡単に対処できるようにします。
 ### メッセージプッシュのパフォーマンス
@@ -33,44 +33,44 @@ Tencent IMコミュニティは、「高速チャネルと低速チャネル」+
 Tencent IMコミュニティは、メッセージの編集、取り消し、転送などの豊富な拡張機能を提供します。発言禁止、通知のミュート、未読メッセージの数、プロフィール編集などはすべて、ユーザーによる全般、コミュニティ、トピックのレベルでのカスタマイズをサポートします。
 
 ## 端末SDKの統合ガイド
->!コミュニティ(Community)トピック(Topic)機能は、IM端末SDK 6.2.2363拡張バージョン以降でのみサポートされています。[Ultimate Editionを購入](https://www.tencentcloud.com/document/product/1047/34577)して、[有効化を申請](https://intl.cloud.tencent.com/document/product/1047/44322)した後にのみ使用できます。
+>!コミュニティ(Community)トピック(Topic)機能は、IM端末SDK 6.2.2363拡張バージョン以降でのみサポートされています。[Ultimate Editionを購入](https://buy.cloud.tencent.com/avc?from=17182)して、[有効化を申請](https://www.tencentcloud.com/document/product/1047/44322)した後にのみ使用できます。
 
 以下では、Androidを例として、コミュニティトピックのインターフェース機能について説明します。
 
-### Demoのソースコードのダウンロードと設定によるクイック体験
-[クイックスタート](https://intl.cloud.tencent.com/document/product/1047/45914)を参照すると、IMの機能をすばやく体験できます（コミュニティトピックのUIコンポーネントは現在開発中です。お楽しみにしてください）。
-以下では、API呼び出しの観点からコミュニティトピックの使用について説明します：
+
 
 ### コミュニティトピックに関するAPI使用
-1. まず、インターフェースcreateGroupを呼び出して、トピックをサポートするコミュニティを作成します。これを実現するには、[コミュニティ管理](https://intl.cloud.tencent.com/document/product/1047/48172)の「コミュニティの作成」ステップをご参照ください。
+1. まず、インターフェースcreateGroupを呼び出して、トピックをサポートするコミュニティを作成します。これを実現するには、[コミュニティ管理](https://cloud.tencent.com/document/product/269/44494#.E7.A4.BE.E7.BE.A4.E7.AE.A1.E7.90.86)の「コミュニティの作成」ステップをご参照ください。
 2.　次に、getJoinedCommunityListインターフェースを呼び出すことにより、作成・参加したこのタイプのコミュニティリストを取得できます。
 >!コミュニティはグループメンバーを管理するために使用されます。ただし、コミュニティでメッセージを送受信することはできません。コミュニティのその他の機能については、「その他の管理インターフェース」リストをご参照ください。
 >
-3. コミュニティが正常に作成されたら、コミュニティの下でcreateTopicInfoCommunityを呼び出して、複数のトピックを作成できます。これを実現するには、[トピック管理](https://intl.cloud.tencent.com/document/product/1047/48172)の「トピックの作成」のステップをご参照ください。
-4. トピック管理には、「トピックの削除」、「トピック情報の変更」、「トピックリストの取得」、および「トピックコールバックの監視」の機能も含まれます。同時に、トピックはユーザーがコミュニケーションをとるための場所でもあるため、メッセージを送受信できます。関連するインターフェースについては、[トピックメッセージ](https://intl.cloud.tencent.com/document/product/1047/48172)の説明をご参照ください。
+3. コミュニティが正常に作成されたら、コミュニティの下でcreateTopicInfoCommunityを呼び出して、複数のトピックを作成できます。これを実現するには、[トピック管理](https://cloud.tencent.com/document/product/269/44494#.E8.AF.9D.E9.A2.98.E7.AE.A1.E7.90.86)の「トピックの作成」のステップをご参照ください。
+4. トピック管理には、「トピックの削除」、「トピック情報の変更」、「トピックリストの取得」、および「トピックコールバックの監視」の機能も含まれます。同時に、トピックはユーザーがコミュニケーションをとるための場所でもあるため、メッセージを送受信できます。関連するインターフェースについては、[トピックメッセージ](https://cloud.tencent.com/document/product/269/44494#.E8.AF.9D.E9.A2.98.E6.B6.88.E6.81.AF)の説明をご参照ください。
+5. グループメンバーのカスタムフィールドにサブグループ情報を設定することで、コミュニティメンバーのサブループを行い、サブグループ表示の効果を得ることができます。これは、すべてのグループメンバーをローカルにプルし、グループ別に並べ替える必要があります。グループ内の人数が多い場合は、サーバー側で実装することをお勧めします。
 
 ## Web SDKの統合ガイド
->!コミュニティ(Community)トピック(Topic)機能は、IM Web SDK v2.19.1以降のバージョンでのみサポートされています。[Ultimate Editionを購入](https://www.tencentcloud.com/document/product/1047/34577)して、[有効化を申請](https://intl.cloud.tencent.com/document/product/1047/44322)した後にのみ使用できます。
+>!コミュニティ(Community)トピック(Topic)機能は、IM Web SDK v2.19.1バージョン以降でのみサポートされています。[Ultimate Editionを購入](https://buy.cloud.tencent.com/avc?from=17182)して、[**コンソール**](https://console.cloud.tencent.com/im/qun-setting)>**グループ機能設定**>**コミュニティ**でスイッチをオンにした後にのみ使用できます。
 >
 コミュニティトピックのインターフェース機能は次のとおりです：
 ### Demoのソースコードのダウンロードと設定によるクイック体験
-[クイックスタート](https://intl.cloud.tencent.com/document/product/1047/45912)を参照すると、IMの機能をすばやく体験できます。
+[クイックスタート](https://www.tencentcloud.com/document/product/1047/45912)を参照すると、IMの機能をすばやく体験できます。
 以下では、API呼び出しの観点からコミュニティトピックの使用について説明します：
 
 ### コミュニティトピックに関するAPI使用
-1. まず、インターフェースcreateGroupを呼び出して、トピックをサポートするコミュニティを作成します。これを実現するには、[コミュニティ管理](https://intl.cloud.tencent.com/document/product/1047/48171)の「コミュニティの作成」ステップをご参照ください。
+1. まず、インターフェースcreateGroupを呼び出して、トピックをサポートするコミュニティを作成します。これを実現するには、[コミュニティ管理](https://www.tencentcloud.com/document/product/1047/48172#.E7.A4.BE.E7.BE.A4.E7.AE.A1.E7.90.86)の「コミュニティの作成」ステップをご参照ください。
 2.　次に、getJoinedCommunityListインターフェースを呼び出すことにより、作成・参加したこのタイプのコミュニティリストを取得できます。コミュニティはグループメンバーを管理するために使用されます。ただし、トピックをサポートするコミュニティでメッセージを送受信することはできません。コミュニティのその他の機能については、通常のグループAPIをご参照ください。
-3. コミュニティが正常に作成されたら、コミュニティの下でcreateTopicInfoCommunityを呼び出して、複数のトピックを作成できます。これを実現するには、[トピック管理](https://intl.cloud.tencent.com/document/product/1047/48171)の「トピックの作成」のステップをご参照ください。
-4. トピック管理には、「トピックの削除」、「トピック情報の変更」、「トピックリストの取得」、および「トピックコールバックの監視」の機能も含まれます。同時に、トピックはユーザーがコミュニケーションをとるための場所でもあるため、メッセージを送受信できます。関連するインターフェースについては、[メッセージの作成](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#createTextMessage)の説明をご参照ください。
+3. コミュニティが正常に作成されたら、コミュニティの下でcreateTopicInfoCommunityを呼び出して、複数のトピックを作成できます。これを実現するには、[トピック管理](https://www.tencentcloud.com/document/product/1047/48172#.E8.AF.9D.E9.A2.98.E7.AE.A1.E7.90.86)の「トピックの作成」のステップをご参照ください。
+4. トピック管理には、「トピックの削除」、「トピック情報の変更」、「トピックリストの取得」、および「トピックコールバックの監視」の機能も含まれます。同時に、トピックはユーザーがコミュニケーションをとるための場所でもあるため、メッセージを送受信できます。関連するインターフェースについては、[メッセージの作成](https://www.tencentcloud.com/document/product/1047/48172#.E8.AF.9D.E9.A2.98.E6.B6.88.E6.81.AF)の説明をご参照ください。
+5. グループメンバーのカスタムフィールドにサブグループ情報を設定することで、コミュニティメンバーのサブループを行い、サブグループ表示の効果を得ることができます。これは、すべてのグループメンバーをローカルにプルし、グループ別に並べ替える必要があります。グループ内の人数が多い場合は、サーバー側で実装することをお勧めします。
 
-## 関連ドキュメント
+##  関連ドキュメント
 - [グループ管理](https://intl.cloud.tencent.com/document/product/1047/33530)
 - [グループシステム](https://intl.cloud.tencent.com/document/product/1047/33529)
 - [SDKダウンロード](https://intl.cloud.tencent.com/document/product/1047/33996)
-- [SDKマニュアル](https://web.sdk.qcloud.com/im/doc/zh-cn/TIM.html)
-- [SDKの統合（Android）](https://intl.cloud.tencent.com/document/product/1047/34306)
-- [SDKの統合（iOS）](https://intl.cloud.tencent.com/document/product/1047/34307)
-- [SDKの統合（Web、ミニプログラムとuni-app）(https://intl.cloud.tencent.com/document/product/1047/34309)
+- [SDKマニュアル](https://web.sdk.qcloud.com/im/doc/en/TIM.html)
+- [SDKの統合(Android)](https://intl.cloud.tencent.com/document/product/1047/34306)
+- [SDKの統合(iOS)](https://intl.cloud.tencent.com/document/product/1047/34307)
+- [SDKの統合（Web、ミニプログラムとuni-app）(https://www.tencentcloud.com/document/product/1047/34309)
 
 ## お問い合わせ
 ご不明の点があれば、いつでもお気軽に[お問い合わせ](https://intl.cloud.tencent.com/document/product/1047/41676)ください。

@@ -29,18 +29,25 @@ Web 函数基于函数内置的标准语言镜像环境中，您需要创建一�
 您可以本地编写您的 scf_bootstrap 启动文件，确保文件权限满足要求后，和项目代码一起打包部署在 Web 函数上。
 :::
 ::: 控制台快速创建
-您可以在控制台创建流程"高级配置"模块编辑您的启动文件，云函数 SCF 为常用 Web 框架提供了通用启用模板，您也可以根据实际情况进行修改，创建完成后，控制台将自动把您的代码和 scf_bootstrap 一起打包部署。
+您可以在[ Serverless 控制台](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) 中创建 Web 函数。
+[创建函数](https://intl.cloud.tencent.com/document/product/583/40689) 流程中，在**高级配置 > 启动命令**中编辑您的启动文件，云函数 SCF 为常用 Web 框架提供了通用启用模板，您也可以根据实际情况进行修改。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/FvxP047_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221220103521.png)
+函数创建完成后，控制台将自动把您的代码和 scf_bootstrap 一起打包部署。 
+<dx-alert infotype="notice" title="">
+控制台配置仅在上传的代码里未检测到 scf_bootstrap 时生效，如果您的项目里有 scf_bootstrap 文件，系统会以项目里的 scf_bootstrap 为准进行部署。
+</dx-alert>
+:::
+</dx-tabs>
 
->! 控制台配置仅在上传的代码里未检测到 scf_bootstrap 时生效，如果您的项目里有 scf_bootstrap 文件，系统会以项目里的 scf_bootstrap 为准进行部署。
->:::
-></dx-tabs>
+部署完成后，您可以在代码编辑器中查看 scf_bootstrap 文件并进行编辑。如下图所示： 
+![](https://qcloudimg.tencent-cloud.cn/raw/301a05bd37b35c442bb479e814576f0e.png)
+
 
 #### 常见错误定位
 
 执行文件 scf_bootstrap 作为容器启动命令，必须保证容器可以正常启动运行，执行代码逻辑，因此，请确保您的启动命令写法正确。如遇到 `405` 错误码信息，通常为执行文件无法正常运行导致，请确保您的启动文件写法正确。
 
-部署完成后，您可以在代码编辑器中查看 scf_bootstrap 文件并进行编辑。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/301a05bd37b35c442bb479e814576f0e.png)
+
 
 <span id="1"></span>
 

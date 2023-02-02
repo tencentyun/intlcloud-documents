@@ -31,7 +31,7 @@ Prometheus 是一套开源的系统监控报警框架，其彻底颠覆了传统
 | 可用性            | 高                                                           | 低                                  |
 | 数据存储能力      | 无限制                                                       | 受限于本地磁盘                      |
 | 超大集群监控      | 支持                                                         | 不支持                              |
-| 数据可视化        | 基于 Grafana 提供优秀的可视化能力，且支持一个 Grafana 同时查看多个监控实例的数据 | 原生的 Prometheus UI 可视化能力有限 |
+| 数据可视化        | 基于 Grafana 提供优秀的可视化能力，且支持一个 Grafana 同时查看多个监控实例的数据| 原生的 Prometheus UI 可视化能力有限 |
 | 开源生态          | 完全兼容                                                     | 原生支持                            |
 | 使用门槛          | 低                                                           | 高                                  |
 | 成本              | 低                                                           | 高                                  |
@@ -79,7 +79,7 @@ Prometheus 是一套开源的系统监控报警框架，其彻底颠覆了传统
 腾讯云 Prometheus 监控服务作为超轻量、高可用、无侵入式的监控系统。
 
 * 在用户集群内仅包含一个轻量级的 Agent
-* 采集器是在用户账号下创建的 EKS 集群，对用户原生集群没有任何影响
+* 采集器是在用户账号下创建的 TKE Serverless 集群，对用户原生集群没有任何影响
 * 监控数据存储和展示都是独立的模块
 * 云监控的 Grafana 支持对接多个监控实例，实现统一的查看
 
@@ -99,7 +99,7 @@ Prometheus 监控支持跨地域跨 VPC 的多集群监控、支持 VPC 网络�
 用户需要登录腾讯云账号，进入 [Prometheus 监控控制台](https://console.cloud.tencent.com/tke2/prometheus2/list?rid=16)：
 
 1. 创建监控实例。
-2. 关联集群。在新创建的监控实例下完成集群关联操作，此时系统会自动在用户集群内完成 Agent 的部署，在用户的新建 EKS 集群里面内完成监控组件的部署，用户无需进行任何插件的安装。
+2. 关联集群。在新创建的监控实例下完成集群关联操作，此时系统会自动在用户集群内完成 Agent 的部署，在用户的新建 TKE Serverless 集群里面内完成监控组件的部署，用户无需进行任何插件的安装。
 3. 配置采集规则。成功关联集群后用户可以按照实际需求灵活配置数据采集规则，并按需要配置告警规则，配置完成后即可打开 Grafana 查看监控数据。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/10dd3ad358735a6098c1ac8b4f86c2bf.png)
@@ -107,7 +107,7 @@ Prometheus 监控支持跨地域跨 VPC 的多集群监控、支持 VPC 网络�
 #### 关键概念解释
 
 - **监控实例：**一个监控实例对应一整套监控服务，拥有独立的可视化页面，一个监控实例下可以关联同一 VPC 下的多个集群并完成对多个集群的统一监控。
-- **集群：**通常指用户在腾讯云上的 TKE 或 EKS 集群。
+- **集群：**通常指用户在腾讯云上的 TKE 或 TKE Serverless 集群。
 - **关联集群：**指将监控实例与用户的集群进行关联的操作。
 - **采集规则：**指用户自定义的监控数据采集的规则。
 - **Job：**在 Prometheus 中，一个 Job 即为一个采集任务，定义了一个 Job 工作负载下所有监控目标的公共配置，多个 Job 共同组成采集任务的配置文件。
@@ -122,5 +122,6 @@ Prometheus 监控支持跨地域跨 VPC 的多集群监控、支持 VPC 网络�
 
 ## 产品定价
 
-此外，目前使用 Prometheus 监控服务时将会在用户的账户下创建 [EKS 集群](https://intl.cloud.tencent.com/document/product/457/34054)，以及内外网 [负载均衡 CLB](https://intl.cloud.tencent.com/document/product/214) 资源，按用户实际使用的云资源收费。具体创建的资源和参考价格可参考 [云原生监控资源使用情况](https://intl.cloud.tencent.com/document/product/457/46733)。
+Prometheus 监控服务定价详情见 [按量计费](https://intl.cloud.tencent.com/document/product/1116/43156)。
+此外，目前使用 Prometheus 监控服务时将会在用户的账户下创建 [TKE Serverless 集群](https://intl.cloud.tencent.com/document/product/457/34054)，以及内外网 [负载均衡 CLB](https://www.tencentcloud.com/document/product/214) 资源，按用户实际使用的云资源收费。具体创建的资源和参考价格可参考 [云原生监控资源使用情况](https://intl.cloud.tencent.com/document/product/457/46733)。
 

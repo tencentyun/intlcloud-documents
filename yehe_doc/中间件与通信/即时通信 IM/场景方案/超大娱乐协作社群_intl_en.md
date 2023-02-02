@@ -4,7 +4,7 @@ Community is a powerful tool for entertainment collaboration. It supports the **
 ![](https://qcloudimg.tencent-cloud.cn/raw/8db16f94e4ab49ede5dc4207e9b20075.jpg)
 
 ## Use Cases
-### Finding like-minded people: a new way to grow the number of users
+### Finding like-minded people: a new way of user expansion
 - Community supports the accommodation of a high number of enthusiasts in the **community**-**group**-**topic** hierarchy.
 - A large, open community provides more refined topics, so that users can talk and interact more freely and proactively.
 ![](https://qcloudimg.tencent-cloud.cn/raw/38f61b81280afed8df7cd699bbb204fb.jpg)
@@ -18,59 +18,58 @@ The diversified topics in a community can perfectly replace endless groups (such
 ![](https://qcloudimg.tencent-cloud.cn/raw/45d3d5e8818cea79dd65b3b7abbb8d86.jpg)
 
 ### Organization management: a clear and layered communication method
-All the members in an organization can join the same community, which supports hierarchical communication through the community hierarchy and permission settings. For example, topic A is only available for members in department A, and topic B is only available for members in department B.
+All the members in an organization can join the same community, which supports hierarchical communication through the community hierarchy and permission settings. 
 ![](https://qcloudimg.tencent-cloud.cn/raw/aa633c15337fbb8befe6c3f9a9a4f890.jpg)
 
 ## Technical Strengths
 ### A super large number of community members
-The Tencent IM community is nearly ten thousand times larger than ordinary QQ and WeChat groups, perfectly meeting your needs to accommodate massive members in use cases such as finding like-minded people, fan marketing, game-based social networking, and organization management.
+The Tencent Chat community is nearly ten thousand times larger, perfectly meeting your needs to accommodate massive members in use cases such as finding like-minded people, fan marketing, game-based social networking, and organization management.
 ### Message reliability
-The Tencent IM community greatly increases the number of members while incorporating Tencent's powerful messaging capabilities. With the complete and reliable messaging system built on over 20 years of technology accumulation, it delivers over 99.99% message sending/receiving success rate and service availability, helping you easily handle hundreds of millions of concurrent requests.
+The Tencent Chat community greatly increases the number of members while incorporating Tencent's powerful messaging capabilities. With the complete and reliable messaging system built on over 20 years of technology accumulation, it delivers over 99.99% message sending/receiving success rate and service availability, helping you easily handle hundreds of millions of concurrent requests.
 ### Message push performance
-The Tencent IM community adopts a new message push architecture with "fast and slow channels" plus "two-level push". This special type of architecture can well balance time and space for higher system push performance and lower terminal performance consumption. Users can enjoy the same message interaction experience in super-large groups as in general ones.
+The Tencent Chat community adopts a new message push architecture with "fast and slow channels" plus "two-level push". This special type of architecture can well balance time and space for higher system push performance and lower terminal performance consumption. Users can enjoy the same message interaction experience in super-large groups as in general ones.
 
 ### Message status and user permission management
-The Tencent IM community offers extended capabilities such as message editing, recall, and forwarding. It allows setting muting, enabling do-not-disturb, counting unread messages, and editing profiles globally or by community or topic.
+The Tencent Chat community offers extended capabilities such as message editing, recall, and forwarding. It allows setting muting, enabling do-not-disturb, counting unread messages, and editing profiles globally or by community or topic.
 
 ## Native SDK Integration Guide
->!The community topic feature is supported only by the IM native SDK Enhanced edition on v6.2.2363 or later. To use it, purchase the Ultimate edition as instructed in [Creating and Upgrading an Application](https://www.tencentcloud.com/document/product/1047/34577) and apply for activation as instructed in [Configuration Change Ticket](https://intl.cloud.tencent.com/document/product/1047/44322).
+>!The community topic feature is supported only by the Chat native SDK Enhanced edition on v6.2.2363 or later. To use it, [purchase the Ultimate edition](https://buy.cloud.tencent.com/avc?from=17182) and apply for activation as instructed in [Configuration Change Ticket](https://www.tencentcloud.com/document/product/1047/44322).
 
 The following describes community topic APIs for Android.
 
-### Downloading and configuring the demo source code
-For a quick tryout of the IM features, see [Android](https://intl.cloud.tencent.com/document/product/1047/45914). More UI components of the community topic are under development.
-The following describes how to use the community topic feature by calling the APIs:
 
 ### Calling a community topic API
-1. Call the `createGroup` API to create a topic-enabled community as instructed in the [Community Management](https://intl.cloud.tencent.com/document/product/1047/48172).
+1. Call the `createGroup` API to create a topic-enabled community as instructed in the [Community Management](https://cloud.tencent.com/document/product/269/44494#.E7.A4.BE.E7.BE.A4.E7.AE.A1.E7.90.86).
 2. Call the `getJoinedCommunityList` API to get the list of created and joined communities.
 >!A community is used for managing group members but doesn't support sending or receiving messages. For more information on other community features, see the list of "other management APIs".
 >
-3. After the community is created successfully, call the `createTopicInfoCommunity` API to create topics as instructed in [Topic Management](https://intl.cloud.tencent.com/document/product/1047/48172).
-4. Topic management includes deleting a topic, modifying the topic information, getting the topic list, and listening for topic callbacks. In addition, topics support message sending and receiving for user communication. For more information on the APIs, see [Topic Message](https://intl.cloud.tencent.com/document/product/1047/48172).
+3. After the community is created successfully, call the `createTopicInfoCommunity` API to create topics as instructed in [Topic Management](https://cloud.tencent.com/document/product/269/44494#.E8.AF.9D.E9.A2.98.E7.AE.A1.E7.90.86).
+4. Topic management also includes deleting a topic, modifying the topic information, getting the topic list, and listening for topic callbacks. In addition, topics support message sending and receiving for user communication. For more information on the APIs, see [Topic Message](https://cloud.tencent.com/document/product/269/44494#.E8.AF.9D.E9.A2.98.E6.B6.88.E6.81.AF).
+5. Group community members: You can specify group information in group member custom fields to display community members in groups. To achieve this effect, all community members need to be pulled to the local for sorting by group. If the number of group members is large, it is recommended that you implement member grouping on the server side.
 
 ## Web SDK Integration Guide
->!The community topic feature is supported only by the IM web SDK on v2.19.1 or later. To use it, purchase the Ultimate edition as instructed in [Creating and Upgrading an Application](https://www.tencentcloud.com/document/product/1047/34577) and apply for activation as instructed in [Configuration Change Ticket](https://intl.cloud.tencent.com/document/product/1047/44322).
+>!The community topic feature is supported only by the Chat web SDK on v2.19.1 or later. To use it, [purchase the Ultimate edition](https://buy.cloud.tencent.com/avc?from=17182), go to the [**console**](https://console.cloud.tencent.com/im/qun-setting), select **Group feature configuration**, and enable the **Community** feature.
 >
 The features of the community topic APIs are as follows:
 ### Downloading and configuring the demo source code
-For a quick tryout of the IM features, see [Web](https://intl.cloud.tencent.com/document/product/1047/45912).
+For a quick tryout of the Chat features, see [Android](https://www.tencentcloud.com/document/product/1047/45912).
 The following describes how to use the community topic feature by calling the APIs:
 
 ### Calling a community topic API
-1. Call the `createGroup` API to create a topic-enabled community as instructed in [Community Management](https://intl.cloud.tencent.com/document/product/1047/48171).
+1. Call the `createGroup` API to create a topic-enabled community as instructed in the [Community Management](https://www.tencentcloud.com/document/product/1047/48172#.E7.A4.BE.E7.BE.A4.E7.AE.A1.E7.90.86).
 2. Call the `getJoinedCommunityList` API to get the list of created and joined communities. A community is used for managing group members but doesn't support sending or receiving messages. For more information on other community features, see the ordinary group APIs.
-3. After the community is created successfully, call the `createTopicInfoCommunity` API to create topics as instructed in [Topic Management](https://intl.cloud.tencent.com/document/product/1047/48171).
-4. Topic management includes deleting a topic, modifying the topic information, getting the topic list, and listening for topic callbacks. In addition, topics support message sending and receiving for user communication. For more information on the APIs, see [createTextMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#createTextMessage).
+3. After the community is created successfully, call the `createTopicInfoCommunity` API to create topics as instructed in [Topic Management](https://www.tencentcloud.com/document/product/1047/48172#.E8.AF.9D.E9.A2.98.E7.AE.A1.E7.90.86).
+4. Topic management also includes deleting a topic, modifying the topic information, getting the topic list, and listening for topic callbacks. In addition, topics support message sending and receiving for user communication. For more information on the APIs, see [Topic Messages](https://www.tencentcloud.com/document/product/1047/48172#.E8.AF.9D.E9.A2.98.E6.B6.88.E6.81.AF).
+5. Group community members: You can specify group information in group member custom fields to display community members in groups. To achieve this effect, all community members need to be pulled to the local for sorting by group. If the number of group members is large, it is recommended that you implement member grouping on the server side.
 
 ## References
 - [Group Management](https://intl.cloud.tencent.com/document/product/1047/33530)
 - [Group System](https://intl.cloud.tencent.com/document/product/1047/33529)
 - [SDK and Demo Source Code](https://intl.cloud.tencent.com/document/product/1047/33996)
-- [SDK Manual](https://web.sdk.qcloud.com/im/doc/zh-cn/TIM.html)
-- [Android](https://intl.cloud.tencent.com/document/product/1047/34306)
+- [SDK Manual](https://web.sdk.qcloud.com/im/doc/en/TIM.html)
+- [SDK Integration (Android)](https://intl.cloud.tencent.com/document/product/1047/34306)
 - [SDK Integration (iOS)](https://intl.cloud.tencent.com/document/product/1047/34307)
-- [SDK Integration (Web)](https://intl.cloud.tencent.com/document/product/1047/34309)
+- [SDK Integration (Web, Mini Program, and uni-app)](https://www.tencentcloud.com/document/product/1047/34309)
 
 ## Contact Us
-If you have any questions, [contact us](https://intl.cloud.tencent.com/document/product/1047/41676).
+If you experience any issues, [contact us](https://intl.cloud.tencent.com/document/product/1047/41676).

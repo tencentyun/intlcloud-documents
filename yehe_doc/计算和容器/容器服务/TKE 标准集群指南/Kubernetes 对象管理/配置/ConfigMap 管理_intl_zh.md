@@ -3,10 +3,10 @@
 通过 ConfigMap 您可以将配置和运行的镜像进行解耦，使得应用程序有更强的移植性。ConfigMap 是有 key-value 类型的键值对，您可以通过控制台的 Kubectl 工具创建对应的 ConfigMap 对象，也可以通过挂载数据卷、环境变量或在容器的运行命令中使用 ConfigMap。
 
 
-## ConfigMap 控制台操作指引
+## 通过控制台
 
 ### 创建 ConfigMap
-1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击**集群**，进入集群列表页。
 3. 单击需要创建 ConfigMap 的集群 ID，进入集群管理页面。
 4. 选择 **配置管理** > **ConfigMap**，进入 ConfigMap 信息页面。
@@ -14,58 +14,60 @@
 6. 根据实际需求，设置 ConfigMap 参数。关键参数信息如下：
  - 名称：自定义。
  - 命名空间：根据实际需求进行选择命名空间类型，定义变量名和变量值。
+ - 内容：添加变量名和变量值。
 7. 单击**创建ConfigMap**，完成创建。
 
 ### 使用 ConfigMap
 
 #### 方式一：数据卷使用 ConfigMap 类型
-1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中单击**集群**，进入集群列表页。
 3. 单击需要部署 Workload 的集群 ID，进入集群管理页面。
-4. 在 “工作负载” 下，任意选择 Workload 类型，进入对应的信息页面。例如，选择**工作负载** > **DaemonSet**，进入 DaemonSet 信息页面。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/c001d6fd4cdefaeed125b341099bd465.png)
-5. 单击**新建**，进入 “新建Workload” 页面。
-6. 根据页面信息，设置工作负载名、命名空间等信息。并在 “数据卷” 中，单击**添加数据卷**，添加数据卷。如下图所示：
-![添加数据卷](https://qcloudimg.tencent-cloud.cn/raw/7309f6d8d47fc4a772aa644fb24db713.png)
-7. 选择 “使用ConfigMap” 方式，填写名称，单击**选择配置项**。如下图所示：
-![](https://main.qcloudimg.com/raw/2549f59b529775a2b7453ebef596fd90.png)
-8. 在弹出的 “设置ConfigMap” 窗口中，参考以下信息配置挂载点，并单击**确认**。如下图所示：
+4. 在 “工作负载” 下，任意选择 Workload 类型，进入对应的信息页面。例如，选择**工作负载** > **DaemonSet**，进入 DaemonSet 信息页面。
+5. 单击**新建**，进入 “新建DaemonSet” 页面。
+6. 根据页面信息，设置工作负载名、命名空间等信息。并在 “数据卷” 中，单击**添加数据卷**。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/yLHv677_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221223174136.png)
+7. 在“新增数据卷”弹窗中，参考以下信息配置挂载点，并单击**确认**。如下图所示：
+选择 “使用ConfigMap” 方式，填写名称，单击**选择配置项**。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/mUTi863_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221223174248.png)
+ - **数据卷类型**：选择 “使用ConfigMap” 方式。
+ - **数据卷名称**：自定义名称。
  - **选择ConfigMap**：根据实际需求进行选择。
  - **选项**：提供“全部”和“指定部分Key”两种选择。
  - **Items**：当选择“指定部分Key”选项时，可以通过添加 item 向特定路径挂载，如挂载点是 /data/config，文件名是 filename，最终会该键值对的值会存储在 /data/config/filename 下。
-![](https://qcloudimg.tencent-cloud.cn/raw/9cec4dc509b673e988c021a9e968f20d.png)
-9. 单击**创建Workload**，完成创建。
+8. 单击**确认**。单击**创建Workload**，完成创建。
 
-#### 方式二： 环境变量中使用 ConfigMap 类型
+#### 方式二：环境变量中使用 ConfigMap 类型
 
-1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)。
-2. 在左侧导航栏中，单击**集群**，进入集群列表页。
-3. 单击需要部署 Workload 的集群 ID，进入待部署 Workload 的集群管理页面。
-4. 在 “工作负载” 下，任意选择 Workload 类型，进入对应的信息页面。例如，选择**工作负载** > **DaemonSet**，进入 DaemonSet 信息页面。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/769018132b755cb219a17cccbfabb230.png)
-5. 单击**新建**，进入 “新建Workload” 页面。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
+2. 在左侧导航栏中单击**集群**，进入集群列表页。
+3. 单击需要部署 Workload 的集群 ID，进入集群管理页面。
+4. 在 “工作负载” 下，任意选择 Workload 类型，进入对应的信息页面。例如，选择**工作负载** > **DaemonSet**，进入 DaemonSet 信息页面。
+5. 单击**新建**，进入 “新建DaemonSet” 页面。
 6. 根据页面信息，设置工作负载名、命名空间等信息。并在 “实例内容器” 的 “环境变量” 中，单击**新增变量**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/a57b0d0f387482ca924f448885ffefb6.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/WrNu117_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221223174423.png)
 7. 选择 “ConfigMap” 环境变量方式，并根据实际需求选择资源。
 9. 单击**创建Workload**，完成创建。
 
 ### 更新 ConfigMap
 
-1. 登录 [容器服务控制台 ](https://console.cloud.tencent.com/tke2)。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击**集群**，进入集群列表页。
 3. 单击需要更新 ConfigMap 的集群 ID，进入集群管理页面。
-4. 选择 **配置管理** > **ConfigMap**，进入 ConfigMap 信息页面。
+4. 选择**配置管理** > **ConfigMap**，进入 ConfigMap 信息页面。
 5. 在需要更新的 ConfigMap 行中，单击右侧的**更新配置**，进入更新 ConfigMap 页面。
 ![](https://qcloudimg.tencent-cloud.cn/raw/5f98fe781372b6324b302f57fe96f981.png)
-7. 在 “更新配置” 页面，编辑 key-value 类型的键值对，单击**完成**。
+7. 在 “更新配置” 页面，编辑 key-value 类型的键值对，单击**更新 ConfigMap**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/481f4d9b57d33cf40d64faf62786a8d3.png)
 
 
 
 
+## 通过 Kubectl 
 
-## Kubectl 操作 ConfigMap 指引
 
+
+[](id:YAMLSample)
 ### YAML 示例
 <dx-codeblock>
 ::: Yaml

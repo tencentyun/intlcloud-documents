@@ -1,7 +1,6 @@
 開発者がGME製品APIのデバッグ・アクセスを行いやすいように、ここで、Unity開発に適用されるクイックアクセス技術ドキュメントを説明します。
 
-GMEクイックスタート文書は、ユーザーがアクセスDemoを参照してアクセスするのを支援するための最も主要なアクセスインターフェースのみを提供しています。
-
+GMEクイックスタート文書は、ユーザーのアクセスを助けるための最も主要なアクセスインターフェースのみを提供しています。
 
 ## GME利用上の重要事項
 
@@ -13,7 +12,7 @@ GMEは2つの部分に分かれます。リアルタイム音声サービス、�
 
 ###　インターフェース呼び出しのフローチャート
 
-![image](https://qcloudimg.tencent-cloud.cn/raw/20564e5a251c6a53a06fa2b660a93061.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/c8758a24fe68fc084b8d12b09de5e27a.jpg)
 
 ### 統合の手順
 
@@ -40,13 +39,13 @@ GMEは2つの部分に分かれます。リアルタイム音声サービス、�
 -<dx-tag-link link="#Stop" tag="接口：StopRecording">レコーディング停止</dx-tag-link>
 </dx-steps>
 
-<dx-tag-link link="#Init" tag="接口：UnInit">GMEの録画を停止</dx-tag-link>
+- <dx-tag-link link="#Init" tag="接口：UnInit">GMEの未初期化</dx-tag-link>
 
 ## コアインターフェースのアクセス
 
-### 1. Demoのダウンロード 
+### 1. SDKのダウンロード 
 
-ダウンロード案内ページにアクセスして、必要なクライアント<dx-tag-link link="https://cloud.tencent.com/document/product/607/18521" tag="DownLoad">Demoエンジニアリングコードをダウンロードします</dx-tag-link>。
+ダウンロード案内ページにアクセスして、必要な<dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/18521" tag="DownLoad">クライアンSDKをダウンロードします</dx-tag-link>。
 
 
 ### 2. ヘッダーファイルを取り込む
@@ -72,7 +71,7 @@ import com.tencent.bugly.crashreport.CrashReport;
 
 ### 3. シングルトンの取得
 
-音声機能を使用する場合、先にITMGContextオブジェクトを取得してください。
+音声機能を使用する場合、先にITMGContextオブジェクトを取得する必要があります。
 
 ####  関数のプロトタイプ 
 
@@ -211,18 +210,16 @@ void CTMGSDK_For_AudioDlg::OnEvent(ITMG_MAIN_EVENT_TYPE eventType, const char* d
 </dx-codeblock>
 
 
-| パラメータ |               タイプ               | 意味                     |
+| パラメータ          | タイプ                    | 意味                                                  |
 | ---- | :------------------------------: | ------------------------ |
 | type | ITMGContext.ITMG_MAIN_EVENT_TYPE | コールバックのイベントタイプ           |
 | data |         Intent メッセージタイプ          | コールバックの関連情報、イベントデータ |
 
 ### [5. SDKを初期化する](id:Init)
 
-- このインターフェースはGMEサービスの初期化に使用され、アプリケーションの初期化時にアプリケーション側で呼び出すことをお勧めします。
-- **パラメータsdkAppIdの取得については[音声サービス有効化ガイド](https://intl.cloud.tencent.com/document/product/607/39698)**をご参照ください。
-- **OpenIdはユーザーを一意に識別するために使用されます。現在はINT64のみがサポートされています。ルールはApp開発者が独自に設定し、App内で重複しないようにしてください**。
+初期化前のSDKは初期化されていない状態です。リアルタイム音声サービス、音声メッセージサービスおよびボイスツーテキスト変換サービスを使用するには、**インターフェースInitを使用してSDKを初期化する必要があります**。Initインターフェースを呼び出すスレッドは、他のインターフェースと同じスレッドである必要があります。すべてのメインスレッドでインターフェースを呼び出すことをお勧めします。
 
-#### 関数のプロトタイプ
+#### インターフェースのプロトタイプ
 
 <dx-codeblock>
 ::: Java Java
@@ -239,10 +236,10 @@ ITMGContext virtual int Init(const char* sdkAppId, const char* openId)
 
 | パラメータ     |  タイプ  | 意味                                                         |
 | -------- | :----: | ------------------------------------------------------------ |
-| sdkAppId | String | [Tencent Cloudコンソール](https://console.cloud.tencent.com/gamegme)のGMEサービスが提供するAppId。 |
-| OpenId   | String | openIdはInt64型のみをサポートします（stringに変換されて渡されます）。               |
+| sdkAppId | string | [Tencent Cloud Console](https://console.cloud.tencent.com/gamegme)のGMEサービスが提供するAppIDです。取得については[サービス開始ガイドライン](https://intl.cloud.tencent.com/document/product/607/10782)をご参照ください。|
+| openID   | string | openIDはInt64型（stringに変換して渡す）のみに対応しており、ルールはApp開発者が独自に定め、App内で重複しなければよい。文字列をOpenidとして渡す必要がある場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)をして開発者に連絡してください。|
 
-#### サンプルコード 
+####  サンプルコード 
 
 <dx-codeblock>
 ::: Java Java
@@ -252,7 +249,7 @@ if (nRet == AV_OK )
 {
     GMEAuthBufferHelper.getInstance().setGEMParams(appId, key, openId);
     // Step 4/11: Poll to trigger callback
-    //https://cloud.tencent.com/document/product/607/15210#.E8.A7.A6.E5.8F.91.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83
+    //https://www.tencentcloud.com/document/product/607/40860
     EnginePollHelper.createEnginePollHelper();
     showToast("Init success");
 }else if (nRet == AV_ERR_HAS_IN_THE_STATE) // 初期化されました。この操作は成功したと考えられます。
@@ -281,11 +278,9 @@ context->Init(SDKAPPID3RD, openId);
 
 ### [6. イベントコールバックのトリガー](id:Poll)
 
-updateで周期的にPollを呼び出すことで、イベントのコールバックをトリガできます。GMEは定期的にPoll APIを呼び出してイベントコールバックをトリガする必要があります。Pollが呼び出されないと、SDKサービス全体が異常に動作します。
+updateで周期的にPollを呼び出すことで、イベントのコールバックをトリガできます。PollはGMEのメッセージポンプであり、GMEはイベントのコールバックをトリガするためにPollインターフェースを定期的に呼び出す必要があります。Pollが呼び出されないと、SDKサービス全体が異常に動作します。詳細については、[Sample Project](https://intl.cloud.tencent.com/document/product/607/18521)のEnginePollHelperファイルをご参照ください。
 
-DemoのEnginePollHelper.javaファイルをご参照ください。
-
-#### サンプルコード
+####  サンプルコード
 
 <dx-codeblock>
 ::: Java Java
@@ -319,12 +314,11 @@ void TMGTestScene::update(float delta)
 :::
 </dx-codeblock>
 
-### 7.認証情報
+###　7.　ローカル認証計算
 
-関連する機能の暗号化と認証のためのAuthBufferを生成します。    
-音声メッセージやテキスト変換の認証を取得する場合、ルーム番号のパラメータをnullに設定してください。
+AuthBufferを生成し、関連機能の暗号化と認証に使用します。本格なリリースについてバックグラウンドのデプロイキーを使用してください。バックグラウンドのデプロイについては、[認証キー](https://intl.cloud.tencent.com/document/product/607/12218)をご参照ください。    
 
-####  関数のプロトタイプ
+#### インターフェースのプロトタイプ
 
 <dx-codeblock>
 ::: Java Java
@@ -343,11 +337,11 @@ void TMGTestScene::update(float delta)
 :::
 </dx-codeblock>
 
-| パラメータ   |  タイプ  | 意味                                                         |
+| パラメータ   | タイプ   | 意味                                                         |
 | ------ | :----: | ------------------------------------------------------------ |
 | appId  |  int   | Tencent CloudコンソールからのAppId番号。                              |
-| roomId | string | ルーム番号であり、最大127文字まで対応しています（オフライン音声ルーム番号のパラメータをnullに設定しなければならない）。   |
-| openId | string | ユーザーID。Initの場合のopenIdと同じです。                        |
+| roomId | string | ルーム番号であり、最大127文字まで対応しています（オフライン音声ルーム番号のパラメータをnullに設定しなければなりません）。   |
+| openId | string | ユーザーID。Initの場合のopenIdと同じです。                       |
 | key    | string | Tencent Cloud[コンソール](https://console.cloud.tencent.com/gamegme)からの権限キー。 |
 
 
@@ -390,11 +384,9 @@ QAVSDK_AuthBuffer_GenAuthBuffer(atoi(SDKAPPID3RD), roomId, "10001", AUTHKEY,retA
 
 ###  [1. ルームに参加](id:EnterRoom)
 
-生成された認証情報を使って入室する場合、メッセージがITMG_MAIN_EVENT_TYPE_ENTER_ROOMのコールバックを受信します。入室する際に、マイクとスピーカーはデフォルトでオフになっています。戻り値がAV_OKの場合、成功したことを示します。
+生成した認証情報を用いてルームに参加します。ルームに参加するとき、デフォルトでマイクとスピーカーはオフです。戻り値がAV_OKの場合はルーム参加が成功したことでなく、呼び出しが成功したことを意味します。
 
-ルームのオーディオタイプについては、「音質選択」(https://intl.cloud.tencent.com/document/product/607/18522)をご参照ください。
-
-####  関数のプロトタイプ
+#### インターフェースのプロトタイプ
 
 <dx-codeblock>
 ::: Java Java
@@ -408,13 +400,13 @@ ITMGContext virtual int EnterRoom(const char*  roomID, ITMG_ROOM_TYPE roomType, 
 :::
 </dx-codeblock>
 
-| パラメータ       | タイプ     | 意味                    |
+| パラメータ   | タイプ   | 意味                                                         |
 | ---------- | :----: | ----------------------- |
-| roomId     |String |ルーム番号、127文字まで入力可能 |
-| roomType   |  int   | ルームオーディオタイプ            |
+| roomId     | String | ルーム番号、127文字まで入力可能 |
+| roomType   |  int   | FLUENCYタイプの音質を使用してルームに参加してください|
 | authBuffer | byte[] | 認証コード                  |
 
-#### サンプルコード  
+####  サンプルコード  
 
 <dx-codeblock>
 ::: Java Java
@@ -428,7 +420,7 @@ ITMGContext.GetInstance(this).EnterRoom(roomId, roomType, authBuffer);
 :::
 ::: C++ C++
 ITMGContext* context = ITMGContextGetInstance();
-context->EnterRoom(roomID, ITMG_ROOM_TYPE_STANDARD, (char*)retAuthBuff,bufferLen);
+context->EnterRoom(roomID, ITMG_ROOM_TYPE_FLUENCY, (char*)retAuthBuff,bufferLen);
 :::
 </dx-codeblock>
 
@@ -437,9 +429,9 @@ context->EnterRoom(roomID, ITMG_ROOM_TYPE_STANDARD, (char*)retAuthBuff,bufferLen
 入室後とメッセージITMG_MAIN_EVENT_TYPE_ENTER_ROOMを送信し、OnEvent関数でコールバックを判定した後に処理します。コールバックが成功した場合、その時点で正常に入室したと判定し、**課金**が開始されます。
 
 <dx-fold-block title="计费问题参考">
-[購入ガイド。](https://intl.cloud.tencent.com/document/product/607/36276)
+[購入ガイド。](https://intl.cloud.tencent.com/document/product/607/50009)
 [課金に関するよくあるご質問。](https://intl.cloud.tencent.com/document/product/607/30255)
-[リアルタイム音声を使用した後、クライアントの接続が切れた場合課金は継続されますか？](https://intl.cloud.tencent.com/document/product/607/30255)
+[リアルタイム音声を使用した後、クライアントの接続が切れた場合課金は継続されますか。](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
 </dx-fold-block>
 
 - **サンプルコード**  
@@ -539,7 +531,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 
 このインターフェースは、マイクのオン/オフに使用されます。入室する際、マイクとスピーカーはデフォルトでオフになっています。
 
-#### サンプルコード  
+####  サンプルコード  
 
 <dx-codeblock>
 ::: Java Java
@@ -555,7 +547,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableMic(true);
 :::
 </dx-codeblock>
 
-### [3. スピーカーのオン/オフ](id:EnableSpeaker)
+[3. スピーカーのオン/オフ](id:EnableSpeaker)
 
 このインターフェースは、スピーカーのオン/オフに使用されます。
 
@@ -578,9 +570,9 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableSpeaker(true);
 
 ### [4. 退室](id:ExitRoom)
 
-このインターフェースを呼び出すことで、ルームから退出できます。このインターフェースは非同期であり、戻り値がAV_OKの場合は、非同期送信が成功したことを示します。
+このインターフェースを呼び出すと、退室することができます。処理の実行は退室のコールバックを待つ必要があります。
 
-#### サンプルコード  
+####  サンプルコード  
 
 <dx-codeblock>
 ::: Java Java
@@ -646,7 +638,7 @@ switch (eventType) {
 
 SDKを初期化してから認証の初期化を呼び出します。authBufferの取得については、前記のリアルタイム音声の認証情報インターフェースgenAuthBufferをご参照ください。
 
-#### 関数のプロトタイプ  
+#### インターフェースのプロトタイプ  
 
 <dx-codeblock>
 ::: Java Java
@@ -660,11 +652,11 @@ ITMGPTT virtual int ApplyPTTAuthbuffer(const char* authBuffer, int authBufferLen
 :::
 </dx-codeblock>
 
-| パラメータ       |  タイプ  | 意味 |
+| パラメータ       |  タイプ  | 意味                    |
 | ---------- | :----: | ---- |
 | authBuffer | String | 認証 |
 
-#### サンプルコード  
+####  サンプルコード  
 
 <dx-codeblock>
 ::: Java Java
@@ -684,24 +676,24 @@ ITMGContextGetInstance()->GetPTT()->ApplyPTTAuthbuffer(authBuffer,authBufferLen)
 
 ### [2. ストリーミング音声認識を起動](id:StartRWSR)
 
-このインターフェースは、ストリーミング音声識別の開始に使われています。コールバックにおいて、音声はリアルタイムでテキストに変換されて返されます。言語を指定し識別することができるし、音声から識別した情報を指定した言語に翻訳してから返すこともできます。**録音の停止にはStopRecording**を呼び出します。停止後にコールバックが発生します。
+このインターフェースは、ストリーミング音声識別の開始に使われています。コールバックにおいて、音声はリアルタイムでテキストに変換されて返されます。**録音の停止にはStopRecordingを呼び出します**。停止後にコールバックが発生します。
 
 #### インターフェースのプロトタイプ  
 
 <dx-codeblock>
 ::: Java Java
 public abstract int StartRecordingWithStreamingRecognition (String filePath);
-public abstract int StartRecordingWithStreamingRecognition (String filePath,String language,String translatelanguage);
+
 public abstract int StopRecording();
 :::
 ::: Object-C objetctive-c
 -(int)StartRecordingWithStreamingRecognition:(NSString *)filePath;
--(int)StartRecordingWithStreamingRecognition:(NSString *)filePath language:(NSString*)speechLanguage translatelanguage:(NSString*)translatelanguage;
+
 -(QAVResult)StopRecording;
 :::
 ::: C++ C++
 ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath) 
-ITMGPTT virtual int StartRecordingWithStreamingRecognition(const char* filePath,const char* translateLanguage,const char* translateLanguage)
+
 ITMGPTT virtual int StopRecording()
 :::
 </dx-codeblock>
@@ -710,27 +702,26 @@ ITMGPTT virtual int StopRecording()
 | パラメータ              |  タイプ  | 意味                                                         |
 | ----------------- | :----: | ------------------------------------------------------------ |
 | filePath          | String | ボイスの保存パス                                               |
-| speechLanguage    | String | 指定した言語のテキストに識別するパラメータです。パラメータについては、[音声のテキスト変換の言語パラメータ参照リスト](https://intl.cloud.tencent.com/document/product/607/30260)をご参照ください |
-| translateLanguage | String | 指定した言語のテキストに翻訳するパラメータです。パラメータについては、[音声のテキスト変換の言語パラメータ参照リスト](https://intl.cloud.tencent.com/document/product/607/30260)をご参照ください。（このパラメータは一時的に無効です。speechLanguageと同じのパラメータを入力してください） |
 
-#### サンプルコード  
+
+####  サンプルコード  
 
 <dx-codeblock>
 ::: Java Java
 //VoiceMessageRecognitionActivity.java
-ITMGContext.GetInstance(this).GetPTT().StartRecordingWithStreamingRecognition(recordfilePath,"cmn-Hans-CN");
+ITMGContext.GetInstance(this).GetPTT().StartRecordingWithStreamingRecognition(recordfilePath);
 :::
 ::: Object-C objetctive-c
 //TMGPTTViewController.m
-QAVResult ret = [[[ITMGContext GetInstance] GetPTT] StartRecordingWithStreamingRecognition:[self pttTestPath] language:@"cmn-Hans-CN"];
+QAVResult ret = [[[ITMGContext GetInstance] GetPTT] StartRecordingWithStreamingRecognition:[self pttTestPath]];
 if (ret == 0) {
     self.currentStatus = @"ストリーミング録音を開始します";
-} else {
+}else{
     self.currentStatus = @"ストリーミング録音の開始に失敗しました";
 }
 :::
 ::: C++ C++
-ITMGContextGetInstance()->GetPTT()->StartRecordingWithStreamingRecognition(filePath,"cmn-Hans-CN","cmn-Hans-CN");
+ITMGContextGetInstance()->GetPTT()->StartRecordingWithStreamingRecognition(filePath);
 :::
 </dx-codeblock>
 
@@ -745,7 +736,7 @@ OnEvent関数で、必要に応じて適切なイベントメッセージを判�
 | result    |    ストリーミングボイス認識が完了したかどうかを判断するための戻りコード     |
 | text      |            ボイステキスト変換で認識されたテキスト             |
 | file_path |             録音を保存するローカルアドレス              |
-| file_id   | 録音はバックグラウンドのURLアドレスにあり、録音はサーバーで90日間保存します |
+| file_id   | 録音はバックグラウンドのURLアドレスにあり、録音はサーバーで90日間保存されます |
 
 - **サンプルコード**  
 <dx-codeblock>
@@ -824,7 +815,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
             if (isComplete) {
                                 ::SetWindowText(m_EditUpload.GetSafeHwnd(), MByteToWChar(root["file_id"].asString()).c_str());
                             }
-                            else {
+                            else{
                                     std::string isruning = "STREAMINGRECOGNITION_IS_RUNNING";
                                     ::SetWindowText(m_EditUpload.GetSafeHwnd(), MByteToWChar(isruning).c_str());
                                  }
@@ -879,7 +870,7 @@ ITMGPTT virtual int StopRecording();
 </dx-codeblock>
 
 
-#### サンプルコード  
+####  サンプルコード  
 
 <dx-codeblock>
 ::: Java Java
@@ -891,11 +882,11 @@ ITMGContext.GetInstance(this).GetPTT().StopRecording();
 
 - (void)stopRecClick {
   // Step 3/12 stop recording,  need handle ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE event
-  // https://cloud.tencent.com/document/product/607/15221#.E5.81.9C.E6.AD.A2.E5.BD.95.E9.9F.B3
+  //https://www.tencentcloud.com/document/product/607/15221
   QAVResult ret =  [[[ITMGContext GetInstance] GetPTT] StopRecording];
    if (ret == 0) {
        self.currentStatus = @"録音を停止します";
-   } else {
+   }else{
         self.currentStatus = @"録音の停止に失敗しました";
    }
   }
@@ -904,3 +895,5 @@ ITMGContext.GetInstance(this).GetPTT().StopRecording();
   ITMGContextGetInstance()->GetPTT()->StopRecording();
   :::
   </dx-codeblock>
+
+	

@@ -1,26 +1,26 @@
-본문에서는 GME Unreal Engine 데모를 빠르게 실행하고 예시 코드를 프로젝트에 연결하는 방법을 설명합니다.
+본문은 GME UnrealEngine Sample Project를 빠르게 실행하고 예시 코드를 프로젝트에 통합하는 방법을 설명합니다.
 
-## UnrealEngine Demo 실행
+## UnrealEngine Sample Project 실행 
 
 ### 환경 요건
 
 - Unreal Engine 4.22 이상.
 - Microsoft Visual Studio. 
-- UnrealEngine 프로젝트를 실행할 수 있는 구성 환경입니다.
+- UnrealEngine 프로젝트를 실행할 수 있는 구성 환경.
 
 ### 전제 조건
 
-[Signing Up](https://intl.cloud.tencent.com/zh/document/product/378/17985) 및 [Identity Verification](https://intl.cloud.tencent.com/zh/document/product/378/3629)을 완료해야 합니다.
+Tencent Cloud에 [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985)하고 [Identity Verification](https://intl.cloud.tencent.com/document/product/378/3629)을 완료해야 합니다.
 
 ### 1. GME 서비스 신청[](id:step1)
 
-GME 음성 채팅 서비스를 신청하고 실시간 음성 채팅 Appid와 Key를 받으십시오.
+GME 음성 채팅 서비스를 신청하고 [서비스 활성화](https://www.tencentcloud.com/document/product/607/10782)의 안내에 따라 음성 채팅 Appid 및 Key를 받으십시오.
 
 ### 2. 프로젝트 다운로드
 
-[SDK Download Guide](https://intl.cloud.tencent.com/zh/document/product/607/18521)를 통해 UnrealEngine Demo를 다운로드하십시오.
+[SDK 다운로드 가이드](https://www.tencentcloud.com/document/product/607/18521)의 안내에 따라 Unreal Engine Demo를 다운로드합니다. UE5와 UE4의 Demo 구성이 다르기 때문에 해당 엔진 버전에 대한 Sample Project를 다운로드해야 합니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/dd0cabe700054b80607b80798fc87ad5.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/jeet801_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16753202244651.png)
 
 
 ### 3. 프로젝트 구성
@@ -190,7 +190,7 @@ void UExperientialDemoViewController::onCheckSpeaker(bool isChecked) {
 
 ### 3D 음향 효과
 
-3D 음향 효과 연결에 대해서는 [3D Sound Effect](https://intl.cloud.tencent.com/zh/document/product/607/18218)를 참고하십시오. Demo에서는 먼저 ExperientialDemoViewController.cpp의 코드를 사용하여 3D 음향 효과 기능을 초기화합니다.
+3D 음향 효과 연결에 대해서는 [3D 음향 효과](https://www.tencentcloud.com/document/product/607/18218)를 참고하십시오. Demo에서는 먼저 ExperientialDemoViewController.cpp의 코드를 사용하여 3D 음향 효과 기능을 초기화합니다.
 
 ```
 void UExperientialDemoViewController::onCheckSpatializer(bool isChecked) {

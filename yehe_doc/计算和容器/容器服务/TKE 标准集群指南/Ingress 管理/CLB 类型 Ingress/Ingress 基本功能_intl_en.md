@@ -10,32 +10,32 @@ To properly run Ingress resources, the cluster must run an Ingress controller. T
   - Do not use one CLB for multiple Ingresses.
   - Do not use the same CLB for Ingress and Service.
   - After you delete an Ingress, the real server bound to the reused CLB will need to be unbound manually. `tag tke-clusterId: cls-xxxx` will be kept for the CLB and will need to be cleared manually.
-  - By default, up to 50 CLB forwarding rules can be used. If you need more for your Ingress, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to increase the quota.
+  - By default, you can create up to 50 forwarding rules under a single CLB instance. If you need more, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to increase the quota.
   - The management and sync of configurations between Ingress and CLB instances are based on the resource object of the `LoadBalancerResource` type named the CLB ID. Do not perform any operations on this CRD; otherwise, the Ingress may fail.
 
 
-## Managing Ingress in the Console
+## Managing Ingress in Console
 
 ### Creating an Ingress
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. On the left sidebar, click **Cluster** to enter the cluster management page.
+2. In the left sidebar, click **Cluster** to go to the cluster management page.
 3. Click the cluster ID where the Ingress needs to be created to go to the cluster management page.
-4. Select **Service** > **Ingress** to enter the Ingress information page.
-5. Click **Create** to enter the **Create Ingress** page.
+4. Select **Service** > **Ingress** to go to the Ingress information page.
+5. Click **Create** to go to the **Create an Ingress** page.
 ![](https://main.qcloudimg.com/raw/f2fd4c00a82da4e564b964c87b7e7bcb.png)
 6. Set the Ingress parameters based on your actual needs. The key parameters are as follows:
- - Ingress name: Custom.
- - Network type: The default value is `Public network`. Select another network if needed.
+ - Ingress name: custom.
+ - Network type: the default value is `Public network`. Select another network if needed.
  - IP Version: You can select IPv4 or IPv6 NAT64 as needed.
- - Load balancer: Create one automatically or use an existing CLB.
- - Namespace: Select the namespace based on your actual needs.
- - Listener Port: It is **Http:80** by default. You can select one as needed.
-   If you select **Https:443**, you need to bind the server certificate to ensure access security.
-   ![](https://main.qcloudimg.com/raw/6d6ff3f162e6880ee6dc669cc312ebfd.png)
+ - Load balancer: create one automatically or use an existing CLB.
+ - Namespace: select the namespace based on your actual needs.
+ - Forwarding Configuration: the default value of **Protocol** is **Http**. You can select a protocol as needed.
+   If you select **Https**, you need to bind the server certificate to ensure access security.
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/aGbv982_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221223175112.png)
    For more information, see [Certificate Requirements and Certificate Format Conversion](https://intl.cloud.tencent.com/document/product/214/6155).
- - Forwarding configuration: Set this parameter based on your actual needs.
-7. Click **Create Ingress**.
+ - Forwarding configuration: set this parameter based on your actual needs.
+7. Click **Create Ingress** to create an Ingress.
 
 ### Updating an Ingress
 
@@ -44,21 +44,21 @@ To properly run Ingress resources, the cluster must run an Ingress controller. T
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. In the left sidebar, click **Cluster** to go to the cluster management page.
 3. Click the cluster ID for which you want to update the YAML to go to the cluster management page.
-4. Select **Service** > **Ingress** to enter the Ingress information page.
+4. Select **Service** > **Ingress** to go to the Ingress information page.
 ![](https://main.qcloudimg.com/raw/9d8befd5a41b4c922999f3337a71f2ab.png)
-5. Click **Edit YAML** on the right of the target Ingress.
-6. On the **Update Ingress** page, edit the YAML and click **Done**.
+5. In the row of the Ingress for which you want to update YAML, click **Edit YAML** to go to the **Update an Ingress** page.
+6. On the **Update an Ingress** page, edit YAML and click **Complete** to update YAML.
 
 #### Updating a forwarding rule
 
 1. On the cluster management page, click the cluster ID for which you want to update the YAML to go to the cluster management page.
-2. Select **Service** > **Ingress** to enter the Ingress information page.
+2. Select **Service** > **Ingress** to go to the Ingress information page.
 ![](https://main.qcloudimg.com/raw/6fdbb1dacd69b382e93204a3ead2cbbb.png)
-3. Click **Update Forwarding Configuration** on the right of the target Ingress.
+3. In the row of the Ingress for which you want to update the forwarding rule, click **Update the forwarding configuration** to go to the **Update forwarding configuration** page as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/ac813654063e6349790d10216d3eab47.png)
-4. Modify the forwarding configuration as needed and click **Update Forwarding Configuration**.
+4. Modify the forwarding configuration based on your actual needs and click **Update forwarding configuration** to complete the update.
 
-## Managing Ingresses Using kubectl
+## Managing Ingresses Using Kubectl
 
 
 ### YAML sample[](id:YAMLSample)
@@ -68,7 +68,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: qcloud ## Options: qcloud (CLB-type Ingress), nginx (nginx-ingress), traefik 
-	## kubernetes.io/ingress.existLbId: lb-xxxxxxxx	  ## Specify an existing CLB instance to be used to create the Ingress for public/private network access.
+	## kubernetes.io/ingress.existLbId: lb-xxxxxxxx  ## Specify an existing load balancer to be used to create the Ingress for public/private network access.
     ## kubernetes.io/ingress.subnetId: subnet-xxxxxxxx  ## If you are creating a CLB-type private network Ingress, you need to specify this annotation.
   name: my-ingress
   namespace: default
@@ -82,10 +82,10 @@ spec:
           servicePort: 65535
         path: /
 ```
-- kind: Identifies the Ingress resource type.
-- metadata: Basic information such as Ingress name and Label.
-- metadata.annotations: An additional description of the Ingress. You can set additional enhancements for TKE through this parameter.
-- spec.rules: The Ingress forwarding rule, which can be configured to implement a simple routing service, domain name-based simple fan-out routing, default domain name for simple routing, and a securely configured routing service.
+- kind: identifies the Ingress resource type.
+- metadata: basic information such as Ingress name and Label.
+- metadata.annotations: an additional description of the Ingress. You can set additional enhancements for TKE through this parameter.
+- spec.rules: the Ingress forwarding rule, which can be configured to implement a simple routing service, domain name-based simple fan-out routing, default domain name for simple routing, and a securely configured routing service.
 
 #### annotations: create an Ingress for public/private network access using an existing load balancer
 
@@ -121,7 +121,6 @@ metadata:
     kubernetes.io/ingress.internetMaxBandwidthOut: "10"
 ```
 
-
 ### Creating an Ingress
 
 1. Prepare the Ingress YAML file as instructed by the [YAML sample](#YAMLSample).
@@ -130,7 +129,7 @@ metadata:
 ```shell
 kubectl create -f Ingress YAML filename
 ```
-For example, to create an Ingress YAML file named "my-ingress.yaml", run the following command:
+For example, to create an Ingress YAML file named “my-ingress.yaml”, run the following command:
 ```shell
 kubectl create -f my-ingress.yaml
 ```

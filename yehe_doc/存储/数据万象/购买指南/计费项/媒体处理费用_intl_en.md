@@ -14,14 +14,11 @@ Media processing fees refer to fees incurred by using video frame capturing, vid
 | Video enhancement fees       | Fees incurred by using the video enhancement service. Such fees are charged by the **input video duration** at different prices for different resolutions. |          |                |
 | Super resolution fees       | Fees incurred by using the super resolution service, including basic edition and enhanced edition. Such fees are charged by the **output video duration** at different prices for different resolutions. |          |                |
 | SDR-to-HDR fees     | Fees incurred by using the SDR-to-HDR service. Such fees are charged by the **output video duration** based on dynamic range conversion. |          |                |
-| Voice/Sound separation fees       | Fees incurred by using the voice/sound separation service. Such fees are charged by the **output file duration**.     |          |                |
 | Video tagging fees       | Fees incurred by using the video tagging service. Such fees are charged by the **input video duration**. Failed recognitions will not be billed. |          |                |
 | Video metadata acquisition fees | Fees incurred by using the video metadata acquisition service. Such fees are charged by the **number of uses**.   |          |                |
 | Video frame capturing fees       | Fees incurred by using the video frame capturing service. Such fees are charged by the **number of uses**.         |          |                |
 | Intelligent thumbnail fees       | Fees incurred by using the intelligent thumbnail service. Such fees are charged by the **input video duration**.     |          |                |
 | Digital watermark fees       | Fees incurred by using the digital watermark service. Such fees are charged by the **output video duration**.     |          |                |
-| Text-to-speech fees       | Fees incurred by using the text-to-speech service. Such fees are charged by the **number of input characters**.       |          |                |
-| Audio noise cancellation fees       | Fees incurred by using the audio noise cancellation service. Such fees are charged by the **audio processing duration**.     |          |                |
 | Video quality scoring fees   | Fees incurred by using the video quality scoring service. Such fees are charged by the **input video duration**. |          |                |
 
 
@@ -122,48 +119,32 @@ Prices vary by region, codec, and audio/video transcoding type (standard transco
 | 4K (short side ≤ 2160 px)         | 0.5               |
 | Watermark extracting                    | 0.85              |
 
-### Text-to-speech pricing
 
-| Number of Input Characters | Price (USD/10,000 Characters) |
-| :---------------------- | :------------------ |
-| 0 < input characters ≤ 190,000       | 0.4422              |
-| 190,000 < input characters ≤ 990,000    | 0.4127              |
-| 990,000 < input characters ≤ 9,990,000   | 0.3832              |
-| 9,990,000 < input characters ≤ 39,990,000 | 0.3538              |
-| Input characters > 39,990,000         | 0.3243              |
-
->?
->
-> The text-to-speech service is billed in a cumulative manner at tiered prices.
-> For example, if you use the text-to-speech service for 890,000 characters this month, you need to pay 19 * 0.4422 + (89 - 19) * 0.4127 = 37.2908 USD.
 
 ### Pricing of other features
 
 | Features | Price |
 | :------------- | :--------------- |
 | SDR-to-HDR     | 0.06 USD/min |
-| Voice/Sound separation       | 0.012 USD/min |
 | Video tagging       | 0.00784 USD/min |
 | Video metadata acquisition | 0.015 USD/1,000 times   |
 | Video frame capturing       | 0.015 USD/1,000 times   |
 | Intelligent thumbnail       | 0.026 USD/min |
-| Audio noise cancellation        | 0.01194 USD/min |
 | Video quality scoring   | 0.01463 USD/min |
 
 ## Billing Example
 
-You operate an online video website. Visitors can upload their own videos to the website for online media processing and then download output videos. You store the website content in a COS bucket in **Guangzhou region**, use the **CI** service, and enable the CDN acceleration service.
+You operate an online video website. Visitors can upload their own videos to the website for online media processing and then download output videos. You store the website content in a COS bucket, use the **CI** service, and enable the CDN acceleration service.
 
 ### Demand
 
-The monthly basic video processing volume is 100 GB, generating CDN origin-pull traffic of 100 GB, H.264 1080p transcoding of 2,000 minutes, video frame capturing of 10,000 times, and voice/sound separation of 500 minutes.
+The monthly basic video processing volume is 100 GB, generating CDN origin-pull traffic of 100 GB, H.264 1080p transcoding of 2,000 minutes, and video frame capturing of 10,000 times.
 
-### Monthly fees calculation
+### Monthly Fees Calculation
 
 | Item | Free Tier | Unit Price | Billable Usage | Fees (Unit Price * Billable Usage) |
 | :--------------- | :------- | :----------------------------------------------- | :--------- | :--------------------- |
 | Transcoding         | 0        | H.264 FHD (short side ≤ 1080 px) - 0.0094 USD/min | 2,000 minutes | 2,000 * 0.0094 = 18.8 USD |
 | Video frame capturing         | 0        | 0.015 USD/1,000 times                                   | 10,000 times   | 10 * 0.015 = 0.15 USD      |
-| Voice/Sound separation     | 0        | 0.012 USD/min                                   | 500 minutes    | 500 * 0.012 = 6 USD        |
 | CDN origin-pull traffic | 0        | 0.02 USD/GB                                      | 100 GB      | 100 * 0.02 = 2 USD         |
-| **Monthly fees**       | -        | -                                                | -          | **26.95 USD**          |
+| **Monthly fees**       | -        | -                                                | -          | **26.35 USD**          |

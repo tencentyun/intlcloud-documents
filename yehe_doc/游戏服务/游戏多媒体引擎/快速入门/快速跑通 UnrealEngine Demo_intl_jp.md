@@ -1,6 +1,6 @@
-このドキュメントでは、GME UnrealEngine Demoをすばやく実行し、プロジェクトにサンプルコードを導入する方法について説明します。
+このドキュメントでは、GME UnrealEngine Sample Projectをすばやく実行し、プロジェクトにサンプルコードを導入する方法について説明します。
 
-## UnrealEngine Demoのクイック実行
+## UnrealEngine Sample Projectのクイック実行 
 
 ### 環境要件
 
@@ -10,17 +10,17 @@
 
 ### 前提条件
 
-[Tencent Cloudアカウントを登録](https://intl.cloud.tencent.com/zh/document/product/378/17985)し、[実名認証](https://intl.cloud.tencent.com/zh/document/product/378/3629)を完了させたことです。
+[Tencent Cloudアカウントを登録](https://intl.cloud.tencent.com/document/product/378/17985)し、[実名認証](https://intl.cloud.tencent.com/document/product/378/3629)を完了させたことです。
 
 ### 1. GMEサービス[](id:step1)の申請
 
-GMEリアルタイムボイスサービスに申し込むと、リアルタイムボイスAppidとKeyを入手できます。
+[音声サービス利用開始ガイドライン](https://www.tencentcloud.com/document/product/607/10782)を参照して、GMEリアルタイム音声サービスに申し込み、リアルタイム音声AppidとKeyを入手できます。
 
 ### 2. プロジェクトをダウンロードする
 
-[ダウンロードガイド]（https://intl.cloud.tencent.com/zh/document/product/607/18521）でUnrealEngine Demoをダウンロードしてください。
+[ダウンロードガイド](https://www.tencentcloud.com/document/product/607/18521)でUnrealEngine Demoをダウンロードしてください。UE5とUE4ではDemoの設定が異なるため、対応するエンジンバージョンのSample Projectをダウンロードする必要があります。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/dd0cabe700054b80607b80798fc87ad5.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/jeet801_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16753202244651.png)
 
 
 ### 3. プロジェクトの設定
@@ -154,7 +154,7 @@ if (eventType == ITMG_MAIN_EVENT_TYPE_ENTER_ROOM) {
 		if (result == 0) {
 			GEngine->AddOnScreenDebugMessage(INDEX_NONE, 20.0f, FColor::Yellow, TEXT("Enter room success."));
 		}
-		else {
+		else{
 			FString msg = FString::Printf(TEXT("Enter room failed. result=%d, info = %ls"), result, *error_info);
 			GEngine->AddOnScreenDebugMessage(INDEX_NONE, 20.0f, FColor::Yellow, *msg);
 		}
@@ -190,7 +190,7 @@ void UExperientialDemoViewController::onCheckSpeaker(bool isChecked) {
 
 ### 3Dサウンド関連
 
-3Dサウンドへのアクセスについて、[3Dサウンドドキュメント](https://intl.cloud.tencent.com/zh/document/product/607/18218)をご参照ください。Demoでは、まず3Dサウンド機能が初期化され、関連コードはExperientialDemoViewController.cppにあります。
+3Dサウンドの導入について、[3Dサウンドドキュメント](https://www.tencentcloud.com/document/product/607/18218)をご参照ください。Demoでは、まず3Dサウンド機能が初期化され、関連コードはExperientialDemoViewController.cppにあります。
 
 ```
 void UExperientialDemoViewController::onCheckSpatializer(bool isChecked) {

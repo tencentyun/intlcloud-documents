@@ -18,9 +18,9 @@ Apply for the GME voice chat service and get the voice chat `Appid` and `Key` as
 
 ### 2. Download the project
 
-Download the Unreal Engine demo as instructed in [SDK Download Guide](https://cloud.tencent.com/document/product/607/18521). As the demo configurations for UE5 and UE4 are different, you need to download the sample project for the corresponding engine version.
+Download the Unreal Engine demo as instructed in [SDK Download Guide](https://www.tencentcloud.com/document/product/607/18521). As the demo configurations for UE5 and UE4 are different, you need to download the sample project for the corresponding engine version.
 
-
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/jeet801_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16753202244651.png)
 
 
 ### 3. Configure the project

@@ -1,28 +1,26 @@
-본문은 3D 음향 효과를 위한 GME(Game Multimedia Engine) API에 액세스하고 디버깅하는 방법을 설명합니다.
+본문은 3D 음향 효과를 위해 GME(Game Multimedia Engine) API와 통합하고 디버깅하는 방법을 설명합니다.
 
 ## 시나리오
 
-일반적인 채팅방 내 실시간 음성 채팅에서는 플레이어의 음성에 3D 효과음이 없으며, 플레이어끼리 간단한 인터랙션만 가능합니다. 하지만 3D 음향 효과를 적용하면 플레이어는 말하는 동안 방향과 위치 정보를 노출할 수 있으며 거리에 따라 음성이 실시간으로 변경될 수 있습니다. 3D 음향 효과 기능은 플레이어에게 <배틀 로얄 게임>에서 보다 현실적이고 몰입감 있는 커뮤니케이션과 전투 경험을 제공합니다.
+방 입장을 위한 일반적인 음성 채팅에서 플레이어 음성에는 3D 음향 효과가 없으며 플레이어 간에 간단한 인터랙션만 가능합니다. 3D 음향 효과로 플레이어는 말을 하는 동안 자신의 방향과 위치 정보를 노출할 수 있으며 거리에 따라 목소리가 실시간으로 변할 수 있습니다. 3D 음향 효과 기능은 <배틀 로얄 게임>에서 플레이어에게 보다 사실적이고 몰입감 있는 커뮤니케이션 및 전투 경험을 제공합니다.
 
-클릭하여 데모를 다운로드하고 [3D 음향 효과](https://intl.cloud.tencent.com/document/product/607/50219) 기능을 사용해 볼 수 있습니다.
-
-
+[demo 다운로드](https://intl.cloud.tencent.com/document/product/607/50220)를 클릭하여 3D 음향 효과 기능을 사용해 볼 수 있습니다.
 
 ## 전제 조건
 
-- **실시간 음성 서비스 활성화**: [서비스 활성화](https://intl.cloud.tencent.com/document/product/607/10782)를 참고하십시오.
-- **GME SDK에 액세스**: 핵심 API 및 음성 채팅 API에 대한 액세스를 포함합니다. 자세한 내용은 [Native SDK Quick Access](https://intl.cloud.tencent.com/document/product/607/40858), [Quick Integration of SDK for Unity](https://intl.cloud.tencent.com/document/product/607/44544), [Quick Integration of SDK for Unreal Engine](https://intl.cloud.tencent.com/document/product/607/44545)을 참고하십시오.
+- **음성 채팅 서비스 활성화**: [서비스 활성화](https://intl.cloud.tencent.com/document/product/607/10782)를 참고하십시오.
+- **GME SDK에 액세스**: 핵심 API 및 음성 채팅 API에 대한 액세스를 포함합니다. 자세한 내용은 [Quick Integration of Native SDK](https://intl.cloud.tencent.com/document/product/607/40858), [Quick Integration of SDK for Unity](https://intl.cloud.tencent.com/document/product/607/44544), [Quick Integration of SDK for Unreal Engine](https://intl.cloud.tencent.com/document/product/607/44545)을 참고하십시오.
 
 ## 구현 프로세스
 
 ### 구현 순서도
 
-3D 음향 효과 구현 순서도는 다음과 같습니다. 파란색 부분은 채팅방 내 일반 음성 채팅과 비교했을 때 추가되는 연결 단계입니다.
+3D 음향 효과 구현 순서도는 다음과 같습니다. 파란색 부분은 방 입장을 위한 일반 음성 채팅과 비교하여 새로운 통합 단계입니다.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/af3b21c8c6ff552c887ee369f9c217c6.jpg" width="500px">
 
 ### 3D 음향 효과 엔진 초기화
 
-이 함수는 3D 효과음 엔진을 초기화하며 방에 들어간 후 호출합니다. 3D 효과음을 사용하기 전에 꼭 이 API를 먼저 호출해야 합니다. 3D 효과음을 수락만 하고 발송하지 않는 유저도 이 API를 호출해야 합니다.
+이 함수는 3D 음향 효과 엔진을 초기화하는 데 사용되며 방 입장 후 호출해야 합니다. 3D 음향 효과 재생이 아닌 3D 음향 효과 수신만 가능하게 하고 싶은 경우에도 3D 음향 효과 사용 전에 이 API를 호출해야 합니다.
 
 #### 함수 프로토타입 
 
@@ -30,7 +28,7 @@
 public abstract int InitSpatializer(string modelPath)
 ```
 
-| 매개변수      | 유형   | 의미                      |
+| 매개변수      | 유형   | 설명                      |
 | --------- | ------ | ------------------------- |
 | modelPath | string | 3D 음향 효과 리소스 파일의 절대 경로 |
 
@@ -41,7 +39,7 @@ public abstract int InitSpatializer(string modelPath)
 
 GME SDK 릴리스 업데이트는 [릴리스 노트](https://intl.cloud.tencent.com/document/product/607/35323)를 참고하십시오.
 
-<dx-alert infotype="explain" title="리소스 경로에 대한 참고 사항">
+<dx-alert infotype="explain" title="리소스 경로 정보">
 
 - Unity를 예로 들면 3D 음향 효과 리소스 파일을 프로젝트의 StreamingAssets 디렉터리에 넣고 SampleCode의 **copyFileFromAssetsToPersistent** 함수 내용을 기반으로 다른 플랫폼의 해당 디렉터리에 복사하는 것이 좋습니다.
 - Unreal Engine을 예로 들면 3D 모델 파일을 복사하고 SampleCode의 **CopyAllAssetsToExternal** 함수 내용을 기반으로 경로를 읽습니다.
@@ -57,7 +55,7 @@ GME SDK 릴리스 업데이트는 [릴리스 노트](https://intl.cloud.tencent.
 public abstract int EnableSpatializer(bool enable, bool applyToTeam)
 ```
 
-| 매개변수        | 유형 | 의미                                              |
+| 매개변수        | 유형 | 설명                                              |
 | ----------- | ---- | ------------------------------------------------- |
 | enable      | bool | 활성화 후 3D 음향 효과를 들을 수 있습니다                          |
 | applyToTeam | bool | 팀 내에서 3D 음향 효과를 활성화할지 여부를 지정하고 enable이 true인 경우에만 적용됩니다 |
@@ -90,7 +88,7 @@ public abstract bool IsEnableSpatializer()
 | 0 < N < range/10     | 1.0 (감쇠 없음) |
 | N ≥ range/10         | range/10/N         |
 
-![](https://main.qcloudimg.com/raw/50e745c853ab0e3f9f3bbef9d9cfc401.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/4aece18def3601de5380e62406af7f13.jpg)
 
 #### 함수 프로토타입
 
@@ -203,7 +201,5 @@ virtual int ClearSpatializerBlacklist();
 4. UpdateAudioRecvRange의 값이 너무 작은지 확인합니다.
 5. UpdateSelfPosition API가 주기적으로 호출되는지 확인합니다.
 6. [에러 코드](https://intl.cloud.tencent.com/document/product/607/33223)를 참고하여 문제를 해결하십시오.
-
-
 
 
