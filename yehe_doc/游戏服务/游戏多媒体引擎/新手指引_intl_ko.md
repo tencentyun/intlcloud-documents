@@ -181,7 +181,7 @@ GME는 다양한 플랫폼을 위한 SDK와 Sample Project를 제공합니다. S
 
 예를 들어 SDK를 사용할 때 3D 음향 효과 API가 에러 7003을 반환하면 에러 코드 문서를 확인하여 InitSpatializer가 호출되지 않은 것이 원인임을 알 수 있습니다. 그 다음 올바른 순서로 코드에서 InitSpatializer가 호출되는지 확인합니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/1394eb8f4947c28728a00c873b3ecb0c.png)
+
 
 ### 도움 요청
 문서 및 에러 코드를 통해 문제를 해결할 수 없는 경우 [문제 해결 가이드](https://www.tencentcloud.com/document/product/607/51562)의 지침에 따라 지원을 요청하십시오.
