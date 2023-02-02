@@ -6,7 +6,7 @@ Deployment 声明了 Pod 的模板和控制 Pod 的运行策略，适用于部�
 
 [](id:creatDeployment)
 ### 创建 Deployment
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 单击需要创建 Deployment 的集群 ID，进入待创建 Deployment 的集群管理页面。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/5b7eef76397c9cf22aa4c317404d2903.png)
 3. 单击**新建**，进入 “新建Deployment” 页面。根据实际需求，设置 Deployment 参数。关键参数信息如下：
@@ -38,7 +38,7 @@ Deployment 声明了 Pod 的模板和控制 Pod 的运行策略，适用于部�
 ### 更新 Deployment
 
 #### 更新 YAML
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 单击需要更新 Deployment 的集群 ID，进入待更新 Deployment 的集群管理页面。
 3. 在需要更新 YAML 的 Deployment 行中，单击**更多** > **编辑YAML**，进入更新 Deployment 页面。
 5. 在 “更新Deployment” 页面，编辑 YAML，单击**完成**，即可更新 YAML。
@@ -52,7 +52,7 @@ Deployment 声明了 Pod 的模板和控制 Pod 的运行策略，适用于部�
 4. 单击**更新Pod配置**即可。
 
 ### 回滚 Deployment
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 单击需要回滚 Deployment 的集群 ID，进入待回滚 Deployment 的集群管理页面。
 3. 单击需要回滚的 Deployment 名称，进入 Deployment 信息页面。
 5. 选择**修订历史**页签，在需要回滚的版本行中，单击**回滚**。如下图所示：
@@ -60,7 +60,7 @@ Deployment 声明了 Pod 的模板和控制 Pod 的运行策略，适用于部�
 6. 在弹出的 “回滚资源” 提示框中，单击**确定**即可完成回滚。
 
 ### 调整 Pod 数量
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 单击需要调整 Pod 数量的 Deployment 的集群 ID，进入待调整 Pod 数量的 Deployment 的集群管理页面。
 3. 在需要调整 Pod 数量的 Deployment 行中，单击**更新Pod数量**，进入更新 Pod 数量页面。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/11a020fc84d6f07346f7e81c43ef9a9f.png)
