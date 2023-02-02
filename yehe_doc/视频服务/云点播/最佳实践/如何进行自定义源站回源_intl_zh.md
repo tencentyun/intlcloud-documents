@@ -73,7 +73,7 @@
    </tr>
    <tr>
       <td>第三方对象存储</td>
-      <td>目前支持的第三方对象存储有百度云和七牛云</td>
+      <td>目前支持的第三方对象存储有阿里云 OSS 和AWS S3</td>
    </tr>
 	   <tr>
 	<td>回源协议</td>
@@ -84,8 +84,9 @@
       <td>输入有效的存储桶访问地址作为源站（不可包含 http:// 或 http:// 协议头）</td>
    </tr>
 </table>
+
 ![img](https://qcloudimg.tencent-cloud.cn/raw/f5ca4759794c94ffba9f6a960b9a8641.png)<br>
-若选择私有访问的第三方对象存储桶作为源站，需填写有效访问 ID 和 key 进行回源鉴权，鉴权通过后即开启私有存储桶访问。<br>
+若选择私有访问的第三方对象存储桶作为源站，需填写有效访问 ID 和 key 进行回源鉴权，鉴权通过后即开启私有存储桶访问。请查看 <a href="https://www.tencentcloud.com/document/product/266/53277">访问密钥获取指引</a>。<br>
 ![img](https://qcloudimg.tencent-cloud.cn/raw/66864ace26867520f76172f2901ad138.png)
 
 ### 步骤2：自定义域名解析

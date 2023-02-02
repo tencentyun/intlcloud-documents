@@ -26,10 +26,12 @@ Video-on-Demand provides three origin-pull types: self-owned origin site and thi
    </tr>
    <tr>
       <td>Third-party object storage</td>
-      <td>Third-party object storage other than Tencent Cloud, the currently supported third parties are: Qiniu Cloud, Baidu Cloud, Alibaba Cloud and AWS.
+      <td>Third-party object storage other than Tencent Cloud, the currently supported third parties are:Alibaba Cloud OSS and AWS S3.
 </td>
    </tr>
 </table>
+
+
 
   **Origin-pull protocol**
 The protocol used when the VOD acceleration node returns to the user's origin site, HTTP or HTTPS.
@@ -58,18 +60,20 @@ The protocol used when the VOD acceleration node returns to the user's origin si
    </tr>
    <tr>
       <td>Third-party object storage</td>
-      <td><li>If the resource has been stored in a third-party object storage, please enter a valid storage bucket access address as the source site (it cannot contain http:// or http:// protocol header). The currently supported third parties are: Qiniuyun Kodo, Baidu Cloud BOS, Alibaba Cloud OSS and AWS S3.</li><br><li>TO origin-pull to a third-party private storage bucket, you need to fill in a valid key and enable the origin authentication, that is, enable access to the private storage bucket.
+      <td><li>If the resource has been stored in a third-party object storage, please enter a valid storage bucket access address as the source site (it cannot contain http:// or http:// protocol header). The currently supported third parties are: Alibaba Cloud OSS and AWS S3.</li><br><li>TO origin-pull to a third-party private storage bucket, you need to fill in a valid key and enable the origin authentication, that is, enable access to the private storage bucket. For details, see <a href="https://www.tencentcloud.com/document/product/266/53277">Access Key Obtaining Guidelines</a>。</li> </td>
 </li> </td>
    </tr>
 </table>
 
+
+
 >? The origin site can specify the origin-pull HOST, and the origin-pull HOST is used to specify the specific site of the domain name/ip of the site that the CDN node visits at the origin when origin-pull. If no origin-pull HOST is specified, the currently created acceleration domain name is used by default.
-4. Domain name resolution. For the added custom acceleration domain name, you need to configure a CNAME on the DNS service provider specified by the domain name so that users can access your video media through the domain name. For details, see [VOD Acceleration Domain Name - Domain Name Resolution](https://www.tencentcloud.com/document/product/266/42076).
+7. Domain name resolution. For the added custom acceleration domain name, you need to configure a CNAME on the DNS service provider specified by the domain name so that users can access your video media through the domain name. For details, see [VOD Acceleration Domain Name - Domain Name Resolution](https://www.tencentcloud.com/document/product/266/42076).
 
 
 ## Modify origin-pull configuration
 For the added custom domain name, it can be adjusted and modified according to the actual needs of users. The modification method is as follows:
-1.  On the [Domain Management](https://console.tencentcloud.com/vod/distribute-play/domain) > **custom origin server domains** page, select the custom domain name to be modified, click Settings, and enter the details page.
+1. On the [Domain Management](https://console.tencentcloud.com/vod/distribute-play/domain) > **custom origin server domains** page, select the custom domain name to be modified, click Settings, and enter the details page.
 2. Click **Modify** to modify the original configuration information. It takes 5 minutes for the modified results to take effect.
 ![img](https://qcloudimg.tencent-cloud.cn/raw/5df5f46ec7dc7fdc55f9bc3b780f8ac7.png)
 

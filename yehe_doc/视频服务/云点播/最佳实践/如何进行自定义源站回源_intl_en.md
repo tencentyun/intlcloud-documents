@@ -75,7 +75,7 @@ If you want to accelerate the distribution of media files stored in third-party 
    </tr>
    <tr>
       <td>Third-party object storage</td>
-      <td>Currently supported third-party object storage includes Qiniu Cloud, Baidu Cloud, Alibaba Cloud and AWS</td>
+      <td>Currently supported third-party object storage includes Alibaba Cloud OSS and AWS S3</td>
    </tr>
 	   <tr>
 	<td>Origin-pull protocol</td>
@@ -86,8 +86,9 @@ If you want to accelerate the distribution of media files stored in third-party 
       <td>Enter a valid bucket access address as the origin server (it cannot contain http:// or http:// protocol header)</td>
    </tr>
 </table>
+
 ![img](https://qcloudimg.tencent-cloud.cn/raw/f5ca4759794c94ffba9f6a960b9a8641.png)<br>
-If you choose a privately accessed third-party object storage bucket as the origin site, you need to fill in a valid access ID and key for origin-pull authentication. After the authentication is passed, the private storage bucket access will be enabled.<br>
+If you choose a privately accessed third-party object storage bucket as the origin site, you need to fill in a valid access ID and key for origin-pull authentication. After the authentication is passed, the private storage bucket access will be enabled. For details, see [Access Key Obtaining Guidelines](https://www.tencentcloud.com/document/product/266/53277).<br>
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/66864ace26867520f76172f2901ad138.png)
 
