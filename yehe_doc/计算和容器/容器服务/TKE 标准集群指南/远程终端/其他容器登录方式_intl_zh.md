@@ -1,5 +1,5 @@
 ## 通过容器所在节点登录到容器
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 在“集群管理”页面，单击集群 ID（cls-xxx），进入集群详情页。
 3. 在集群详情页，选择左侧导航栏中的**节点管理** > **节点**。
 4. 在“节点列表”页面，单击**节点名**进入 Pod 管理详情页。
@@ -22,7 +22,7 @@ bin  boot  dev	etc  home  lib	lib64  media  mnt  opt	proc  root  run  sbin  srv 
 
 ## 通过 SSH 登录容器
 如果您的容器已安装 SSH 服务端，可以通过 SSH 登录容器。
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 在“集群管理”页面，单击集群 ID（cls-xxx），进入集群详情页。
 3. 在集群详情页，选择左侧导航栏中的**节点管理** > **节点**。
 4. 在“节点列表”页面，单击**节点名**进入 Pod 管理详情页。
