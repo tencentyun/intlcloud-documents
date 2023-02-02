@@ -1,3 +1,4 @@
+
 ## 帐号管理
 
 | 功能说明  | 接口 |
@@ -5,8 +6,8 @@
 | 导入单个帐号 | [v4/im_open_login_svc/account_import](https://intl.cloud.tencent.com/document/product/1047/34953) |
 | 导入多个帐号 | [v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1047/34954) |
 | 删除帐号  | [v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955) |
-| 查询帐号  | [v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)  |
-| 失效帐号登录态  | [v4/im_open_login_svc/kick](https://www.tencentcloud.com/document/product/1047/34957) |
+| 查询帐号  | [v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)  | 
+| 失效帐号登录状态  | [v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957) |
 | 查询帐号在线状态 | [ v4/openim/query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477) |
 
 ## 单聊消息
@@ -86,7 +87,7 @@
 | 获取用户所加入的群组   | [v4/group_open_http_svc/get_joined_group_list](https://intl.cloud.tencent.com/document/product/1047/34925) |
 | 查询用户在群组中的身份 | [v4/group_open_http_svc/get_role_in_group](https://intl.cloud.tencent.com/document/product/1047/34963) |
 | 批量禁言和取消禁言     | [v4/group_open_http_svc/forbid_send_msg](https://intl.cloud.tencent.com/document/product/1047/34951) |
-| 获取被禁言群成员列表 | [v4/group_open_http_svc/get_group_muted_account](https://intl.cloud.tencent.com/document/product/1047/34964) |
+| 获取被禁言群成员列表 | [v4/group_open_http_svc/get_group_shutted_uin](https://intl.cloud.tencent.com/document/product/1047/34964) |
 | 在群组中发送普通消息   | [v4/group_open_http_svc/send_group_msg](https://intl.cloud.tencent.com/document/product/1047/34959) |
 | 在群组中发送系统通知   | [v4/group_open_http_svc/send_group_system_notification](https://intl.cloud.tencent.com/document/product/1047/34958) |
 | 撤回群消息           | [v4/group_open_http_svc/group_msg_recall](https://intl.cloud.tencent.com/document/product/1047/34965) |
@@ -99,13 +100,14 @@
 | 拉取群历史消息         | [v4/group_open_http_svc/group_msg_get_simple](https://intl.cloud.tencent.com/document/product/1047/34971) |
 |获取直播群在线人数|[v4/group_open_http_svc/get_online_member_num](https://intl.cloud.tencent.com/document/product/1047/38521)|
 |获取群自定义属性|[v4/group_open_attr_http_svc/get_group_attr](https://intl.cloud.tencent.com/document/product/1047/44187)|
-|群成员封禁|[v4/group_open_http_svc/ban_group_member](https://www.tencentcloud.com/document/product/1047/50296)|
-|群成员解封|[v4/group_open_http_svc/unban_group_member](https://www.tencentcloud.com/document/product/1047/50297)|
+|获取封禁群成员列表|[v4/group_open_http_svc/get_group_ban_member](https://www.tencentcloud.com/document/product/1047/50295)|
+|群成员封禁|[v4/group_open_http_svc/ban_group_member](https://intl.cloud.tencent.com/document/product/1047/50296)|
+|群成员解封|[v4/group_open_http_svc/unban_group_member](https://intl.cloud.tencent.com/document/product/1047/50297)|
 |修改群自定义属性|[v4/group_open_http_svc/modify_group_attr](https://intl.cloud.tencent.com/document/product/1047/44188)|
 |清空群自定义属性|	[v4/group_open_http_svc/clear_group_attr](https://intl.cloud.tencent.com/document/product/1047/44189)|
 |重置群自定义属性|[v4/group_open_http_svc/set_group_attr](https://intl.cloud.tencent.com/document/product/1047/44190)|
 |修改群聊历史消息|[v4/openim/modify_group_msg](https://intl.cloud.tencent.com/document/product/1047/47948)|
-|直播群广播消息|[v4/group_open_http_svc/send_broadcast_msg](https://www.tencentcloud.com/document/product/1047/49440)|
+|直播群广播消息|[v4/group_open_http_svc/send_broadcast_msg](https://intl.cloud.tencent.com/document/product/1047/49440)|
 
 ## 全局禁言管理
 | 功能说明 |接口 |
@@ -122,3 +124,6 @@
 | 拉取运营数据  |[v4/openconfigsvr/getappinfo](https://intl.cloud.tencent.com/document/product/1047/34886) |
 | 下载消息记录  |[v4/open_msg_svc/get_history](https://intl.cloud.tencent.com/document/product/1047/34885) |
 | 获取服务器 IP 地址  |[v4/ConfigSvc/GetIPList](https://intl.cloud.tencent.com/document/product/1047/36742) |
+|聊天文件封禁|[v4/im_cos_msg/forbid_illegal_object](https://www.tencentcloud.com/document/product/1047/50300)|
+|聊天文件解封|[v4/im_cos_msg/allow_banned_object](https://www.tencentcloud.com/document/product/1047/50299)|
+|聊天文件签名|[v4/im_cos_msg/get_cos_sig](https://www.tencentcloud.com/document/product/1047/50298)|

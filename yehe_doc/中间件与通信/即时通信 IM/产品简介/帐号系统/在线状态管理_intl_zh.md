@@ -5,7 +5,7 @@
 - 后台运行状态（PushOnline）
 - 未登录状态（Offline）
 
->!后台运行状态（PushOnline）只有手机端（Android、iOS、iPad）会存在，PC、Mac、Linux、Web 端不存在该种状态。
+>!后台运行状态（PushOnline）只有手机端（Android、iOS、iPad）会存在，PC、Mac、Linux和 Web 端不存在该种状态。
 
 ### 前台运行状态（Online）
 前台运行状态（Online），是指客户端和即时通信 IM 服务端保持有顺畅的 TCP 网络连接，客户端可以发消息给即时通信 IM 服务端，也可以收到来自即时通信 IM 服务端推送的消息。
@@ -59,12 +59,19 @@ IM SDK 暂时无法获取用户的在线状态。
 - 页面不关闭时，网络断开，需要 60s 才能感知到，状态变成未登录状态（Offline）。
 - 主动调用 destroy 接口，可以实时感知，变成未登录状态（Offline）。
 
+### 小程序
+用户主动登录小程序端时，IM 云服务器可以实时感知到状态变成前台运行状态（Online）。
+
+各种场景的退出/断线的状态变更实时性如下：
+- 点右上角退出，5s 内感知到状态变成未登录状态（Offline）。
+- 断网(如手机开启飞行模式) ，60s 感知到状态变成未登录状态（Offline）。
+- 主动调用 destroy 接口，可以实时感知，变成未登录状态（Offline）。
+
 ## 多端登录
 ### 互踢
 默认情况，IM SDK 在同时登录多个终端（如同时登录 PC、Android）时，会进行互踢，只有最后一个登录的设备可以在线，之前登录的都会被踢下线，详细互踢逻辑可以参考以下文档：
 
-- [Android 用户状态变更](https://intl.cloud.tencent.com/document/product/1047/36255)
-- [iOS 用户状态变更](https://intl.cloud.tencent.com/document/product/1047/39159)
+- [多端登录与互踢](https://intl.cloud.tencent.com/document/product/1047/47971)
 
 
 ### 同时在线
@@ -77,4 +84,5 @@ IM SDK 暂时无法获取用户的在线状态。
 默认情况下，每种平台只支持1个终端在线（如 Android 和 Android 会互踢），旗舰版用户允许配置 Android、iPhone、iPad、Windows、Mac 同种平台可登录的最大实例数。另外，所有用户均可配置 Web 平台可登录的最大实例数。
 
 同平台多设备在线，提升用户体验必备工具，支持配置同种平台可登录的最大实例数，防止同平台多设备上线后互踢的情况出现，让用户体验更丝滑。
->?“同平台多设备在线”为 IM 旗舰版功能，[购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 后可使用，详见 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+>?“同平台多设备在线”为 IM 旗舰版功能，[购买旗舰版](https://buy.cloud.tencent.com/avc?from=17486) 后可使用，详见 [价格说明](https://www.tencentcloud.com/zh/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85
+)。
