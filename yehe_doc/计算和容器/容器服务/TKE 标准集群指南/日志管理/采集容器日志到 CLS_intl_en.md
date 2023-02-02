@@ -43,7 +43,9 @@ For **Container file path**, the corresponding path <b>cannot be a soft link</b>
 - You can specify a file path or use wildcards. For example, when the container file paths for collection are `/opt/logs/service1/*.log` and `/opt/logs/service2/*.log`, you can specify the folder of the collection path as `/opt/logs/service*` and the file name as `*.log`.
 - You can attach metadata in key-value pair format to log records as needed.
 ![](https://main.qcloudimg.com/raw/7c5c8341315408c5668add566a3ff550.png)
->?Each node log file can be collected to only one log topic.
+<dx-alert infotype="explain" title="">
+Each node log file can be collected to only one log topic.
+</dx-alert>
 :::
 </dx-tabs>
 <dx-alert infotype="explain" title="">
