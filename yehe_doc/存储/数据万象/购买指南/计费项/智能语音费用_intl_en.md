@@ -22,7 +22,7 @@ Smart audio fees refer to the fees incurred by using [smart audio features](http
 | 9,990,000 < input characters ≤ 39,990,000 | 0.3538              |
 | Input characters > 39,990,000         | 0.3243              |
 
-> Notes:
+> ?
 >
 > The text-to-speech service is billed in a cumulative manner at tiered prices.
 > For example, if you use the text-to-speech service for 890,000 characters this month, you need to pay 19 * 0.4422 + (89 - 19) * 0.4127 = 37.2908 USD.
