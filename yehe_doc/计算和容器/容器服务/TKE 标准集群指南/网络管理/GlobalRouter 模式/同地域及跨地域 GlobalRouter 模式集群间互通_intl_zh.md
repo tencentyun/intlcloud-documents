@@ -13,7 +13,7 @@
 >?如需实现跨地域集群间互通，请在执行完以下操作步骤后 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请打通容器路由，实现容器间互通。
 
 ### 获取容器的基本信息
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 3. [](id:step3)单击需要设置集群间互通的集群 ID/名称，进入该集群的详情页面。例如，进入 A 集群的“基本信息” 页面。
 4. [](id:step4)记录 “基础信息” 中 “所在地域”、“节点网络” 和 “容器网络” 的信息。
 5. 重复执行 [步骤3](#step3) - [步骤4](#step4)，记录另一个集群容器 “所在地域”、“节点网络” 和 “容器网络” 的信息。
@@ -22,13 +22,13 @@
 
 ### 配置路由表
 
-1. 登录私有网络控制台，选择左侧导航栏中的 **[对等连接](https://console.cloud.tencent.com/vpc/conn)**。
+1. 登录私有网络控制台，选择左侧导航栏中的 **[对等连接](https://console.cloud.tencent.com/vpc/conn)** 。
 2. 在对等连接管理页面，记录对等连接的 **ID/名称**。如下图所示：
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/5Yue662_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221223184401.png)
-3. [](id:VPCStep3)选择左侧导航栏中的 **[子网](https://console.cloud.tencent.com/vpc/subnet)**，进入子网管理页面。
+3. [](id:VPCStep3)选择左侧导航栏中的 **[子网](https://console.cloud.tencent.com/vpc/subnet)** ，进入子网管理页面。
 4. 单击对等连接本端指定子网的关联路由表。如下图所示：
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/EPD9296_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221223184548.png)
-5. 在关联路由表的 “默认详情” 页面，单击**+新增路由策略**。
+5. 在关联路由表的 “默认详情” 页面，单击 **+新增路由策略** 。
 6. 在弹出的 “新增路由” 窗口中，设置路由信息。主要参数信息如下：
  - 目的端：输入 B 集群容器的网段。
  - 下一跳类型：选择 “**对等连接**”。
