@@ -10,7 +10,7 @@
 오디오 규칙 거리: SetServerAudioRouteSendOperateType(AUDIO_ROUTE_SEND_WHITE_LIST,"2인 팀 list",ITMG_SERVER_AUDIO_ROUTE_RECV_TYPE,"2인 팀 list");
 이런 식으로 오디오는 목록에 있는 플레이어에게만 전송되고 3인 팀에서만 수신됩니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/819dd334b2ba7af9f2813f2d6f28aea2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/KH6i143_819dd334b2ba7af9f2813f2d6f28aea2.png)
 
 
 ## 전제 조건
