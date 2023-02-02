@@ -4,7 +4,7 @@ Secret 可用于存储密码、令牌、密钥等敏感信息，降低直接对�
 ## 通过控制台
 
 ### 创建 Secret
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 选择需要创建 Secret 的集群 ID，进入待创建 Secret 的集群管理页面。
 3. 选择左侧导航栏中的**配置管理** > **Secret**，进入 Secret 信息页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/e48919ef47fdc60fa4fd39198f66f4fe.png)
@@ -12,11 +12,11 @@ Secret 可用于存储密码、令牌、密钥等敏感信息，降低直接对�
 ![](https://main.qcloudimg.com/raw/9a9babcb79782ad55d8c19d325139b04.png)
  - **名称**：请输入自定义名称。
  - **Secret类型**：提供**Opaque**和**Dockercfg**两种类型，请根据实际需求进行选择。
-        - **Opaque**：适用于保存密钥证书和配置文件，Value 将以 base64 格式编码。
-        - **Dockercfg**：适用于保存私有 Docker Registry 的认证信息。
+     - **Opaque**：适用于保存密钥证书和配置文件，Value 将以 base64 格式编码。
+    - **Dockercfg**：适用于保存私有 Docker Registry 的认证信息。
  - **生效范围**：提供以下两种范围，请根据实际需求进行选择。
-        - **存量所有命名空间**：不包括 kube-system、kube-public 和后续增量命名空间。
-        - **指定命名空间**：支持选择当前集群下一个或多个可用命名空间。  
+     - **存量所有命名空间**：不包括 kube-system、kube-public 和后续增量命名空间。
+     - **指定命名空间**：支持选择当前集群下一个或多个可用命名空间。  
  - **内容**：根据不同的 Secret 类型，进行配置。
     - 当 Secret 类型为**Opaque**时：根据实际需求，设置变量名和变量值。
     - 当 Secret 类型为**Dockercfg**时：
@@ -28,7 +28,7 @@ Secret 可用于存储密码、令牌、密钥等敏感信息，降低直接对�
 
 ### 使用 Secret
 #### 方式一：数据卷使用 Secret 类型[](id:Volume)
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 选择需要部署 Workload 的集群 ID，进入待部署 Workload 的集群管理页面。
 3. 在**工作负载**下，任意选择 Workload 类型，进入对应的信息页面。
 例如，选择**工作负载** > **DaemonSet**，进入 DaemonSet 信息页面。如下图所示：
@@ -44,7 +44,7 @@ Secret 可用于存储密码、令牌、密钥等敏感信息，降低直接对�
 8. 单击**创建Workload**，完成创建。
 
 #### 方式二：环境变量中使用 Secret 类型[](id:Environment)
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 选择需要部署 Workload 的集群 ID，进入待部署 Workload 的集群管理页面。
 3. 在**工作负载**下，任意选择 Workload 类型，进入对应的信息页面。
 例如，选择**工作负载** > **DaemonSet**，进入 DaemonSet 信息页面。如下图所示：
@@ -55,7 +55,7 @@ Secret 可用于存储密码、令牌、密钥等敏感信息，降低直接对�
 7. 单击**创建Workload**，完成创建。
 
 #### 方法三：使用第三方镜像仓库时引用[](id:ThirdRepository)
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 选择需要部署 Workload 的集群 ID，进入待部署 Workload 的集群管理页面。
 3. 在**工作负载**下，任意选择 Workload 类型，进入对应的信息页面。
 例如，选择**工作负载** > **DaemonSet**，进入 DaemonSet 信息页面。如下图所示：
@@ -65,7 +65,7 @@ Secret 可用于存储密码、令牌、密钥等敏感信息，降低直接对�
 6. 单击**创建Workload**，完成创建。
 
 ### 更新 Secret
-1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)**。
+1. 登录容器服务控制台，选择左侧导航栏中的 **[集群](https://console.cloud.tencent.com/tke2/cluster)** 。
 2. 选择需要更新 YAML 的集群 ID，进入待更新 YAML 的集群管理页面。
 3. 选择**配置管理** > **Secret**，进入 Secret 信息页面。
 4. 在需要更新 YAML 的 Secret 行中，单击**编辑YAML**，进入更新 Secret 页面。
