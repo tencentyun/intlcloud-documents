@@ -117,10 +117,11 @@ If you select **Automatic match**, the optimal image cache will be matched autom
 - If the image names and versions are completely the same, the image cache can be matched.
 - Images with a smaller cache size will be matched first.
 - Images with a later creation time will be matched first.
-
->! If the versions are both "nginx: latest", the image cache can still be matched; however, as the creation time may be different, the versions may be inconsistent. Therefore, we recommend you specify the version clearly when creating an image cache and instance.  
+<dx-alert infotype="notice" title="">
+If the versions are both "nginx: latest", the image cache can still be matched; however, as the creation time may be different, the versions may be inconsistent. Therefore, we recommend you specify the version clearly when creating an image cache and instance.  
 
 If the corresponding image cache fails to be matched, an image will be pulled normally.
+</dx-alert>
 :::
 ::: Manual match
 If you select **Manual match**, you need to manually select a specific image cache. Note that after you manually specify an image cache, a data disk will be directly created based on the image cache snapshot and bound to the instance. However, if the data disk does not have the image entered during instance creation (that is, an incorrect image cache is specified manually), an image will be pulled from the newly created data disk.
