@@ -12,11 +12,11 @@ A secret is a key-value pair that can store sensitive information such as passwo
 ![](https://main.qcloudimg.com/raw/9a9babcb79782ad55d8c19d325139b04.png)
  - **Name**: enter a name.
  - **Secret Type**: select **Opaque** or **Dockercfg** as needed.
-        - **Opaque**: suitable for storing key certificates and configuration files. The value will be base64-encoded.
-        - **Dockercfg**: suitable for storing the verification information of private Docker Registry.
+    - **Opaque**: suitable for storing key certificates and configuration files. The value will be base64-encoded.
+    - **Dockercfg**: suitable for storing the verification information of private Docker Registry.
  - **Effective Scope**: please select one from the following two options based on your needs.
-        - **All existing namespaces**: excluding kube-system, kube-public, and new namespaces added hereafter.
-        - **Specific namespaces**: you can specify one or more available namespaces in the current cluster.  
+     - **All existing namespaces**: excluding kube-system, kube-public, and new namespaces added hereafter.
+     - **Specific namespaces**: you can specify one or more available namespaces in the current cluster.  
  - **Content**: make configuration according to your secret type.
     - If the secret type is **Opaque**: set the variable name and value as needed.
     - If the secret type is **Dockercfg**:
