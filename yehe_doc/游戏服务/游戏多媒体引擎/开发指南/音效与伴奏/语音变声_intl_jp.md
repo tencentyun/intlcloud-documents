@@ -6,12 +6,12 @@
 ## シナリオ
 
 
-![](https://qcloudimg.tencent-cloud.cn/raw/d7d75633180f90d9357650a7d7493f4d.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Vst2098_d7d75633180f90d9357650a7d7493f4d.png)
 
 ##  前提条件
 
-- **リアルタイムボイスサービスを有効にしました：[サービス有効化ガイド](https://intl.cloud.tencent.com/document/product/607/10782)をご参照ください。
--　**ボイスツーテキスト変換サービスを有効にしました**：[サービス有効化ガイド](https://intl.cloud.tencent.com/document/product/607/10782)をご参照ください。
+- **リアルタイムボイスサービスを有効にしました**：[サービス有効化ガイド](https://intl.cloud.tencent.com/document/product/607/10782)をご参照ください。
+- **ボイスツーテキスト変換サービスを有効にしました**：[サービス有効化ガイド](https://intl.cloud.tencent.com/document/product/607/10782)をご参照ください。
 - **GME SDK導入済み**：コアインターフェースとリアルタイム音声インターフェースの導入が含まれます。詳細については、[Native SDKのクイック導入](https://intl.cloud.tencent.com/document/product/607/40858)、[Unity SDKクイック導入](https://intl.cloud.tencent.com/document/product/607/44544)、[Unreal SDKクイック導入](https://intl.cloud.tencent.com/document/product/607/44545)をご参照ください。
 -　**GME SDKライブラリファイルlibgmesoundtouchを導入しました**：libgmesoundtouchがプロジェクトライブラリファイルに含まれていることを確認する必要があります。具体的には、[ライブラリファイル対応機能](https://intl.cloud.tencent.com/document/product/607/32363)をご参照ください。
 
