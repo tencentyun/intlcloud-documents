@@ -2,16 +2,14 @@
 
 云数据库 MongoDB 支持数据库版本进行升级，支持3.6版本升级4.0版本、支持4.0版本升级至4.2版本，同时也支持升级小版本， 帮助用户升级实例至更新版本，从而体验更丰富的功能。 
 
->?4.2版本升级至4.4版本，需 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请。
-
 ## 版本说明
 
 - 支持 MongoDB 3.6版本升级至4.0版本，4.0版本升级至4.2版本。
 - 支持各版本的小版本升级，例如4.0版本的小版本WT.40.3.34升级。
 - 实例的小版本升级，系统会自动检测，升级至最新版本，不支持自定义目标版本。
-- 不支持跨版本升级，例如升级3.2版本至4.0版本。版本差异，请参见 [版本说明](https://intl.cloud.tencent.com/document/product/240/31706)。
+- 不支持跨版本升级，例如升级3.2版本至4.0版本。版本差异，请参见 [版本说明](https://www.tencentcloud.com/document/product/240/31706#bbsm)。
 
->?如需升级3.2版本至4.0版本，可以使用迁移的方式实现。
+>?如需升级3.2版本至4.0版本，可以使用迁移的方式实现，请参见 [迁移至 MongoDB](https://www.tencentcloud.com/document/product/571/42639)。
 
 ## 注意事项
 
@@ -33,7 +31,7 @@
 6. 在**实例详情**页面的**规格信息**区域，升级实例版本或小版本。
  - 如果实例为**3.6**版本，在**版本与引擎**的后面单击**升级4.0**，可将3.6版本升级至4.0版本。
  - 如果实例为**4.0**版本，在**版本与引擎**的后面单击**升级4.2**，可将4.0版本升级至4.2版本。
- - 单击**升级小版本**，可进行小版本升级，默认升级至最新的小版本。具体信息，请参见 [小版本说明](https://intl.cloud.tencent.com/document/product/240/31706)。
- ![](https://qcloudimg.tencent-cloud.cn/raw/1d9f8d74a0e374852c71ba67f0e5afbe.png)
+ - 单击**升级小版本**，可进行小版本升级，默认升级至最新的小版本。具体信息，请参见 [小版本说明](https://www.tencentcloud.com/document/product/240/31706#xbbsm)。
+ ![](https://staticintl.cloudcachetci.com/yehe/backend-news/FKVS509_38-en.png)
 7. 在**提示**对话框，认真阅读提示信息，确认升级，单击**确定**。
 
