@@ -3,12 +3,12 @@ Player SDK는 라이브 및 VOD 시나리오에 대한 비디오 재생 기능�
 <tbody>
 <tr  ><th style="width:5%">기능 모듈</td>
 <th style="width:20%">기능 항목</td>
-<th style="width:70%">기능 소개</td>
-<th style="width:1%">Web</td>
-<th style="width:1%">iOS & Android</td>
-<th style="width:1%">Flutter</td>
+<th style="width:60%">기능 소개</td>
+<th style="width:5%">Web</td>
+<th style="width:3%">iOS & Android</td>
+<th style="width:3%">Flutter</td>
 </tr>
-<tr  ><td colspan="1" rowspan="14" >재생 프로토콜/형식</td>
+<tr  ><td colspan="1" rowspan="15" >재생 프로토콜/형식</td>
 <td>VOD 및 CSS 지원</td>
 <td>VOD 및 라이브 재생 기능 동시 지원</td>
 <td>&#10003;</td>
@@ -69,6 +69,12 @@ Player SDK는 라이브 및 VOD 시나리오에 대한 비디오 재생 기능�
 <td>&#10003;</td>
 <td>&#10003;</td>
 </tr>
+<tr  ><td>AV1</td>
+<td>AV1 비디오를 재생합니다</td>
+<td>부분적으로 <br>지원됨</td>
+<td>부분적으로 <br>지원됨</td>
+<td>부분적으로 <br>지원됨</td>
+</tr>
 <tr  ><td>듀얼 사운드 채널</td>
 <td>듀얼 사운드 채널 재생</td>
 <td>×</td>
@@ -93,7 +99,7 @@ Player SDK는 라이브 및 VOD 시나리오에 대한 비디오 재생 기능�
 <td>&#10003;</td>
 <td>&#10003;</td>
 </tr>
-<tr  ><td colspan="1" rowspan="6" >재생 성능</td>
+<tr  ><td colspan="1" rowspan="7" >재생 성능</td>
 <td>사전 다운로드</td>
 <td>동영상 파일의 콘텐츠를 미리 다운로드하고 미리 다운로드할 파일의 크기와 해상도를 구성하면 첫 번째 프레임까지의 소요 시간(TTFF)을 크게 줄일 수 있음. 재생 장치의 에너지 소비 절감에 최적화되었고, 더 높은 성능을 제공함</td>
 <td>&#10003;</td>
@@ -108,6 +114,12 @@ Player SDK는 라이브 및 VOD 시나리오에 대한 비디오 재생 기능�
 </tr>
 <tr  ><td>정확한 seek</td>
 <td>진행 표시줄의 지정된 시점에서 미디어 파일을 재생하고, 탐색은 모바일 애플리케이션에서는 프레임 레벨까지 정확하고 Web에서는 밀리초 단위로 정확함</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+<tr  ><td>어댑티브 비트레이트</td>
+<td>HLS, DASH 또는 WebRTC 형식의 어댑티브 비트레이트 스트리밍 비디오를 대역폭에 따라 자동으로 선택된 최적의 비트레이트로 재생합니다.
 <td>&#10003;</td>
 <td>&#10003;</td>
 <td>&#10003;</td>

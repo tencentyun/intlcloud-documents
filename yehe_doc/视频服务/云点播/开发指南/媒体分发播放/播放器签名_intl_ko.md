@@ -1,9 +1,9 @@
-Player 서명은 App 재생 서비스가 클라이언트에 재생 권한을 부여하는 데 사용됩니다. App 재생 서비스를 통해 클라이언트가 재생할 수 있는 경우 아래 6단계와 같이 유효한 서명을 클라이언트에 배포합니다. 클라이언트는 서명의 유효 기간 내에서 비디오를 재생할 수 있습니다.
+플레이어 서명은 비디오를 재생하기 위해 재생 장치를 인증하는 데 사용됩니다. App 재생 서비스가 장치에 유효한 서명을 발급하면(아래 그림의 6단계) 장치는 서명의 유효 기간 내에서 비디오를 재생할 수 있습니다.
 <img src="https://main.qcloudimg.com/raw/e5ae52f1b5f15f289b6f54aa28917da4.png" width="700" />
 
-Player 서명 매개변수 및 생성 규칙은 다음과 같습니다.
+Player 서명의 매개변수 및 생성 규칙은 다음과 같습니다.
 
-## 서명 매개변수
+## 서명 매개변수[](id:p0)
 
 | 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 | -- | -- | -- | -- |
@@ -61,10 +61,9 @@ Player 서명 매개변수 및 생성 규칙은 다음과 같습니다.
 
 >?
 >- [서브 애플리케이션](https://intl.cloud.tencent.com/document/product/266/33987)을 사용한 경우 서브 애플리케이션의 AppId를 appId 매개변수로 설정합니다.
->- 서명 매개변수의 `t`, `exper`, `rlimit`, `us` 및 `uid`의 설명 및 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 설명과 동일합니다.
+>- 서명 매개변수의 `t`, `exper`, `rlimit` 및 `us`의 설명 및 유효한 값은 [링크 도용 방지 매개변수](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 설명과 동일합니다.
 ## 서명 계산
-
-VOD Player는 Header, PayLoad 및 Key를 기반으로 계산 및 형성되는 디지털 토큰인 [JWT](https://tools.ietf.org/html/rfc7519)(JSON Web Token)를 사용합니다.
+VOD Player 서명은 Header, PayLoad 및 Key로 구성된 [JWT(JSON Web Token)](https://tools.ietf.org/html/rfc7519)입니다.
 
 ### Header
 
@@ -95,13 +94,12 @@ PayLoad는 JSON 형식이며 Player 서명 매개변수를 나타냅니다. 예�
   "urlAccessInfo": {
     "t": "6323e6b0",
     "rlimit": 3,
-    "us": "72d4cd1101",
-    "uid": "1234abcd"
+    "us": "72d4cd1101"
   }
 }
 ```
 
-### Key
+### Key[](id:p6)
 
 Key는 서명을 계산하는 데 사용됩니다. 아래 예시에서는 [기본 배포 설정](https://intl.cloud.tencent.com/document/product/266/35768)의 `재생 키`가 사용됩니다.
 
@@ -114,9 +112,9 @@ Key는 서명을 계산하는 데 사용됩니다. 아래 예시에서는 [기�
 생성된 Token은 VOD Player 서명입니다.
 
 >?HMACSHA256에 대한 자세한 내용은 [RFC - HMACSHA256](https://tools.ietf.org/html/rfc4868#page-3)을 참고하십시오. base64UrlEncode에 대한 자세한 내용은 [RFC - base64UrlEncode](https://tools.ietf.org/html/rfc4648#page-7)를 참고하십시오.
+
 VOD는 서명 생성 도구와 서명 확인 도구를 제공합니다.
 * [Player 서명 툴](https://console.cloud.tencent.com/vod/distribute-play/signature) .
-
 ### 계산 예시
 
 appId가 `1255566655`이고, fileId가 `4564972818519602447`인 비디오에 대한 플레이어 서명을 생성하려고 한다고 가정합니다. 다른 매개변수는 다음과 같습니다.
@@ -153,18 +151,24 @@ base64UrlEncode 이후에 생성된 결과는 다음과 같습니다.
   "urlAccessInfo": {
     "t": "6323e6b0",
     "rlimit": 3,
-    "us": "72d4cd1101",
-    "uid": "1234abcd"
+    "us": "72d4cd1101"
   }
 }
 ```
-base64UrlEncode를 통해 처리된 결과는 다음과 같습니다.
-`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19`.
+base64UrlEncode 이후에 생성된 결과는 다음과 같습니다.
+`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ`.
 3.  재생 Key(`TxtyhLlgo7J3iOADIron`)를 사용하여 HMAC Signature를 생성합니다.
-`_FR39nKwArkQ6TOy7KAdvLvEjyVZ9ty4mqzDcJpGJiU`。
+`QFcBX9830ysTzJIyZxoOlRmNb2Gqy2fns9yOfriaDI8`。
 4. 생성된 Token은 다음과 같습니다.
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSIsInVpZCI6IjEyMzRhYmNkIn19._FR39nKwArkQ6TOy7KAdvLvEjyVZ9ty4mqzDcJpGJiU`.
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImNvbnRlbnRJbmZvMSI6eyJhdWRpb1ZpZGVvVHlwZSI6IlJhd0FkYXB0aXZlIiwicmF3QWRhcHRpdmVEZWZpbml0aW9uIjoxMCwiaW1hZ2VTcHJpdGVEZWZpbml0aW9uIjoxMH0sImN1cnJlbnRUaW1lU3RhbXAiOjE2NjMwNjQyNzYsImV4cGlyZVRpbWVTdGFtcCI6MTY2MzI5NDIxMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNjMyM2U2YjAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.QFcBX9830ysTzJIyZxoOlRmNb2Gqy2fns9yOfriaDI8`.
 
 ## 코드 예시
 
 VOD는 Python, Java, Go, C#, PHP, Node.js 등 다양한 프로그래밍 언어에 대한 Player 서명의 코드 예시를 제공합니다. 자세한 내용은 [Player 서명 예시](https://intl.cloud.tencent.com/document/product/266/38096)를 참고하십시오.
+
+## 일반적인 오류
+플레이어 서명을 사용하고 플레이어 SDK가 에러 코드를 반환하는 경우 일반적인 원인은 다음과 같습니다.
+- **잘못된 서명 계산 [KEY](#p6)**. [KEY 링크 도용 방지](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)의 `KEY` 매개변수가 아닌 [기본 배포 구성](https://intl.cloud.tencent.com/document/product/266/35768)의 `재생 키`를 사용해야 합니다.
+- **잘못된 [서명 매개변수](#p0)**; 예를 들어:
+ - **잘못된 매개변수 유형**; 예를 들어 appId는 정수이지만 입력된 값은 `appId:"125000123"`(문자열)입니다. 또는 `contentInfo`의 트랜스코딩 템플릿 매개변수가 정수인데 입력한 값이 `transcodeDefinition: "14011"`(문자열 유형)입니다.
+ - **잘못된 매개변수 값**; 예를 들어 `contentInfo`의 오디오/비디오 유형 매개변수에 `audioVideoType: "Transocde"`(오타)가 입력되었습니다.
