@@ -1,10 +1,12 @@
-### CSS 구매 절차
+## LVB
 
-CSS는 후불제로 제공됩니다. Tencent Cloud 계정 가입 후 CSS 서비스를 활성화하면 바로 CSS를 사용할 수 있습니다.
+LVB는 [선불 패키지](https://www.tencentcloud.com/document/product/267/52220)와 [후불](https://intl.cloud.tencent.com/document/product/267/2819) 과금 방식을 제공합니다. Tencent Cloud 계정이 있고 CSS를 활성화한 경우 LVB를 사용할 수 있습니다.
 
-#### Tencent Cloud 계정 가입
-Tencent Cloud 계정에 이미 가입하신 경우 본 절차는 생략해도 됩니다. 아직 Tencent Cloud 계정에 가입하지 않은 경우 [Tencent Cloud 가입하기](https://intl.cloud.tencent.com/document/product/378/17985) 문서를 참조하여 가입해 주십시오. Tencent Cloud는이메일을 통해 가입할 수 있습니다.
-### 실명 인증
-이미 Tencent Cloud 실명 인증을 하신 경우 본 절차는 생략해도 됩니다. Tencent Cloud 실명 인증을 하지 않은 경우 [실명 인증 가이드](https://intl.cloud.tencent.com/document/product/378/3629) 문서를 참조하여 인증해 주십시오. 개인 실명 또는 기업 실명 인증 완료 후 CSS 서비스 활성화를 신청할 수 있습니다.
-#### 서비스 신청
-[CSS 콘솔](https://console.cloud.tencent.com/live) 페이지에서 [활성화 신청]을 클릭하여 제출을 완료하면 CSS 기능을 바로 사용할 수 있습니다. CSS 서비스는 기본적으로 일별 트래픽 과금 방식이 적용됩니다.
+### Tencent Cloud 계정 등록
+Tencent Cloud 계정에 이미 가입하신 경우 이 단계를 건너뛸 수 있습니다. 아직 Tencent Cloud 계정에 가입하지 않은 경우 [Tencent Cloud 가입하기](https://cloud.tencent.com/document/product/378/17985)의 단계에 따라 Tencent Cloud 계정을 만드십시오. Tencent Cloud는 WeChat QR코드, 이메일, QQ, WeChat 공식 계정 등 다양한 방법을 통해 가입할 수 있습니다.
+### CSS 활성화
+[CSS 콘솔](https://console.cloud.tencent.com/live)로 이동합니다. [General Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/12905)를 읽고 동의를 선택한 다음 **활성화 신청**을 클릭하면 LVB를 즉시 사용할 수 있습니다. LVB의 기본 과금 방식은 일 결산 트래픽 과금입니다. 과금 관련 자세한 내용은 [LVB 서비스 요금](https://intl.cloud.tencent.com/document/product/267/2818)을 참고하십시오.
+![](https://main.qcloudimg.com/raw/dec97eeb50fc64dbcbd2b443fa7b96d4.png)
+
+### 선불 패키지 구매
+트래픽 및 트랜스코딩 패키지를 구매하려면 [구매 페이지](https://buy.cloud.tencent.com/live)로 이동하십시오.

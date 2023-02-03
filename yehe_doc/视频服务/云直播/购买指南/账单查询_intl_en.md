@@ -1,12 +1,12 @@
-To view your CSS bills and payment details, go to **Billing Center** > **Bills** > **[Bill Details](https://console.cloud.tencent.com/expense/bill/summary)** in the Tencent Cloud console.
+You can view your CSS bills and payment details in **Billing Center** > **Bills** > [Bill Details](https://console.cloud.tencent.com/expense/bill/summary).
 The Bill Details page includes the **Bill by Instance** and **Bill Details** tabs:
-- Bill by Instance: displays aggregated bills by instance.
-- Bill Details: displays one record per bill without performing aggregation.
-<span id="resources_id"></span>
+- Bill by Instance: Displays bills aggregated by instance.
+- Bill Details: Displays each deduction without performing aggregation.
+
+[](id:resources_id)
 ## Bill by Instance
 1. Click the **Bill by Instance** tab.
-2. Click **All products** and then select **Cloud Streaming Services** to view the CSS bills.
-
+2. Click **All products** and select **Cloud Streaming Services**.
 ![](https://main.qcloudimg.com/raw/9db167f7285dfaf82d83a9028d589ad8.png)
 
 #### Bill fields
@@ -21,51 +21,53 @@ The Bill Details page includes the **Bill by Instance** and **Bill Details** tab
 <tbody><tr>
 <td>Transaction type</td>
 <td><ul style="margin:0;">
-    <li>Daily billing cycle: fees are deducted daily</li>
-    <li>Monthly billing cycle: fees are deducted monthly</li>
+    <li>Daily settlement: Fees are deducted daily.</li>
+    <li>Monthly settlement: Fees are deducted monthly</li>
+    <li>New monthly subscription: CSS packages</li></ul>
     </td>
 </tr>
 <tr>
 <td>Configuration description</td>
-<td>CSS sub-features and their usage in this month. CSS sub-features include: <ul style="margin:0;">
+<td>The CSS features used in the current month and their usage.<ul style="margin:0;">
     <li>Live transcoding</li>
     <li>Live recording</li>
-    <li>Live screencapture</li>
-    <li>Porn detection</li>
+    <li>Live screencapturing</li>
+    <li>Intelligent porn detection</li>
     </ul></td>
 </tr>
 <tr>
-<td>Original price</td>
-<td>Total fees of the sub-feature(s) used in this month</td>
+<td>Original cost</td>
+<td>The total cost of using a CSS feature in the current month.</td>
 </tr>
 <tr>
-<td>Discount rate</td>
-<td>The user’s discount rate this month:Users on the daily billing cycle do not receive discounts. Their discount rate is 1.</td>
+<td>Discount multiplier</td>
+<td>The discount multiplier for the month (1 indicates that no discounts were applied).</td>
 </tr>
 <tr>
-<td>Total cost</td>
-<td>Total cost = Original price × (1 - Discount rate)</td>
+<td>Total amount after discount</td>
+<td>Total amount after discount = Original cost x Discount multiplier</td>
 </tr>
 </tbody></table>
 
->? Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555/7432).
-<span id="detail"></span>
+>? Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555).
+
+[](id:detail)
 ## Bill Details
 1. Click the **Bill Details** tab.
-2. Click **All products** and then select **Cloud Streaming Services** to view the details of the CSS bills.
+2. Click **All products** and select **Cloud Streaming Services**.
 
 ![](https://main.qcloudimg.com/raw/0716954d4d5a955a77acd4149961ca1b.png)
 
 #### Bill fields
 
-| Field     | Description                                                         |
+| Field       | Description                                                         |
 | :--------- | :----------------------------------------------------------- |
-| Component type  | CSS sub-feature used in this month                               |
-| Component name  | Sub-item under this component type                                 |
-| Component list price | The component’s published unit price without discounts                    |
-| Component usage   | Usage of the component                                             |
-| Discount rate    | The user’s discount this month: users on the daily billing cycle do not receive discounts. Their discount rate is 0. Users on the monthly billing cycle can contact sales to query about receiving discounts |
-| Usage duration   | Total usage duration of the component    |
-| Total cost    | Total cost = Component’s original price x (1 - Discount rate). Component’s original price = Component’s published unit price x Usage duration |
+| Component type  | The CSS feature used in the current month.                               |
+| Component name  | The sub-item of the feature used.                                 |
+| Component price | The component’s list price without discounts.                    |
+| Component usage   | The component usage.                                             |
+| Discount multiplier    | The discount multiplier for the month (1 indicates that no discounts were applied). Monthly billed users are offered discounts. For details, please contact sales. |
+| Usage duration   | The total usage of the component in the current month.   |
+| Total amount after discount    | Total amount after discount = Original cost x Discount multiplier. Original cost = Component price x Usage duration. |
 
->?Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555/7432).
+>?Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555).

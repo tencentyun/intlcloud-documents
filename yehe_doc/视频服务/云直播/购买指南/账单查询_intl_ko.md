@@ -1,15 +1,12 @@
-Tencent CSS(CSS)에서 발생한 청구서 및 사용 명세서는 Tencent Cloud [Bills]>[Bill Details](https://console.cloud.tencent.com/expense/bill/summary)에서 조회할 수 있습니다.
-청구서 상세에는 [리소스 ID 청구서](#resources_id) 및 [청구 명세서](#detail)가 포함되어 있습니다.
-- 리소스 ID 청구서: 리소스 ID별 명세 내역을 취합한 청구서입니다.
-- 청구 명세서: 취합하지 않은 각 비용의 명세 기록입니다.
+CSS 청구서 및 결제 세부 정보를 보려면 Tencent Cloud 콘솔에서 **요금 청구서>[청구서 세부 정보](https://console.cloud.tencent.com/expense/bill/summary)**로 이동하십시오.
+청구서 세부 정보 페이지에는 [리소스 ID별 청구서](#resources_id) 및 [청구 명세서](#detail) 탭이 있습니다.
+- 리소스 ID별 청구서: 리소스 ID별로 집계된 청구서를 표시합니다.
+- 청구 명세서: 집계를 수행하지 않고 각 차감 내역을 표시합니다.
 
-<span id="resources_id"></span>
-
-## 리소스 ID 청구서
-
-1. [Bill by Instance]를 클릭해 탭으로 이동합니다.
-2. [All products] 필터 클릭 후 [CSS]를 선택하여 CSS의 리소스 ID 청구서를 조회할 수 있습니다.
-
+[](id:resources_id)
+## 리소스 ID별 청구서
+1. **리소스 ID별 청구서** 탭을 클릭합니다.
+2. **모든 제품**을 클릭한 다음 **CSS**를 선택하면 리소스 ID별 청구서를 볼 수 있습니다.
 ![](https://main.qcloudimg.com/raw/9db167f7285dfaf82d83a9028d589ad8.png)
 
 #### 청구서 필드
@@ -23,14 +20,15 @@ Tencent CSS(CSS)에서 발생한 청구서 및 사용 명세서는 Tencent Cloud
 </thead>
 <tbody><tr>
 <td>거래 유형</td>
-<td><ul style="margin:0;">
-    <li>종량제: 일 결산 과금 방식, 일별로 요금 결산</li>
-    <li>월 결산: 월 결산 과금 방식, 월별로 전체 요금 결산</li>
+<td><ul style="margin:0;">
+    <li>종량제: 일 결산 과금 방식, 매일 요금 차감</li>
+    <li>월 결산: 매월 월별 요금 차감</li>
+    <li>정액 과금제: CSS 리소스 패키지</li></ul>
     </td>
 </tr>
 <tr>
-<td>설정 설명</td>
-<td>이번 달에 사용자가 CSS에서 사용한 하위 기능 항목 및 사용량은 다음과 같습니다.<ul style="margin:0;">
+<td>구성 설명</td>
+<td>이번 달에 사용된 CSS 기능 및 사용량:<ul style="margin:0;">
     <li>라이브 방송 트랜스 코딩</li>
     <li>라이브 방송 녹화</li>
     <li>라이브 방송 화면 캡처</li>
@@ -39,11 +37,11 @@ Tencent CSS(CSS)에서 발생한 청구서 및 사용 명세서는 Tencent Cloud
 </tr>
 <tr>
 <td>원가</td>
-<td>이번 달 사용한 하위 기능 항목별 총 요금</td>
+<td>당월에 CSS 기능을 사용한 총 요금</td>
 </tr>
 <tr>
 <td>할인율</td>
-<td>이번 달 사용자가 받은 할인 혜택은 다음과 같습니다.<ul style="margin:0;"><li>일 결산 사용자에게는 할인 혜택이 제공되지 않습니다. 할인율: 1</li></ul></td>
+<td>당월 할인 혜택: 일 결산 과금 주기의 사용자에게는 할인 혜택이 제공되지 않으므로 할인율은 1입니다.</td>
 </tr>
 <tr>
 <td>총 요금</td>
@@ -51,14 +49,12 @@ Tencent CSS(CSS)에서 발생한 청구서 및 사용 명세서는 Tencent Cloud
 </tr>
 </tbody></table>
 
->? 나머지 필드는 모두 Tencent Cloud 공식 사이트의 할당 필드입니다. 자세한 내용은 [신규 버전 청구서 사용 가이드](https://intl.cloud.tencent.com/document/product/555/7432)를 참조하십시오.
+>? 다른 필드는 Tencent Cloud에서 할당합니다. 자세한 내용은 [About Billing](https://intl.cloud.tencent.com/document/product/555)을 참고하십시오.
 
-<span id="detail"></span>
-
+[](id:detail)
 ## 청구 명세서
-
-1. [청구 명세서]를 클릭해 탭으로 이동합니다.
-2. [모든 제품] 필터 클릭 후 [CSS]를 선택하여 CSS의 청구서를 조회할 수 있습니다.
+1. ** 청구 명세서** 탭을 클릭합니다.
+2. **모든 제품**을 클릭한 다음 **CSS**를 선택하면 CSS 청구서의 세부 정보를 볼 수 있습니다.
 
 ![](https://main.qcloudimg.com/raw/0716954d4d5a955a77acd4149961ca1b.png)
 
@@ -66,13 +62,12 @@ Tencent CSS(CSS)에서 발생한 청구서 및 사용 명세서는 Tencent Cloud
 
 | 필드       | 설명                                                         |
 | :--------- | :----------------------------------------------------------- |
-| 모듈 유형   | 이번 달 CSS에서 사용한 각 하위 기능 항목                                 |
-| 모듈 명칭   | 해당 모듈 유형에서 사용한 기능 항목                                 |
-| 모듈 정가 | 해당 모듈에는 할인된 정가 가격이 존재하지 않습니다                                   |
-| 모듈 사용량   | 해당 모듈의 사용량                                               |
-| 할인율     | 이번 달 사용자가 받은 할인 혜택: 일 결산 사용자에게는 할인 혜택이 제공되지 않으며 할인율은 1입니다. 월 결산 사용자에게 할인 혜택이 제공되며, 상세 할인 내역은 비즈니스 매니저에게 문의하십시오. |
-| 사용 기간   | 이번 달 모듈별 총 사용 시간                                     |
-| 총 요금     | 총 요금 = 모듈 원가 × 할인율. 그중: 모듈 원가 = 모듈 정가 × 사용시간 |
+| 컴포넌트 유형   | 이번 달에 사용한 CSS 기능                                 |
+| 컴포넌트 이름   | 사용된 기능의 서브 항목                                 |
+| 컴포넌트 정가 | 할인이 적용되지 않은 컴포넌트의 정가                                   |
+| 컴포넌트 사용량   | 컴포넌트의 사용량                                               |
+| 할인율     | 해당 월의 할인 혜택: 일 결산 청구 사용자에게는 할인 혜택이 제공되지 않으므로 할인율은 1입니다. 월 결산 청구 사용자에게는 할인 혜택이 제공됩니다. 상세 할인 내역은 영업팀에 문의하십시오. |
+| 사용 기간   | 당월 컴포넌트 총 사용 시간                                     |
+| 총 요금     | 총 요금 = 컴포넌트 원가 × 할인율, 그 중: 컴포넌트 원가 = 컴포넌트 정가 × 사용 시간 |
 
->? 나머지 필드는 모두 Tencent Cloud 공식 사이트의 할당 필드입니다. 자세한 내용은 [신규 버전 청구서 사용 가이드](https://intl.cloud.tencent.com/document/product/555/7432)를 참조하십시오.
-
+>?다른 필드는 Tencent Cloud에서 할당합니다. 자세한 내용은 [About Billing](https://intl.cloud.tencent.com/document/product/555)을 참고하십시오.

@@ -1,13 +1,12 @@
-Tencent CSS（CSS）によって生成された請求書と控除明細を表示する必要がある場合は、Tencent Cloud【請求書】>[【請求書明細】](https://console.cloud.tencent.com/expense/bill/summary)にアクセスし、使用量の請求書をクエリーできます。
+Tencent CSS（CSS）によって生成された請求書と控除明細を表示する必要がある場合は、Tencent Cloud**請求書>[請求書明細](https://console.cloud.tencent.com/expense/bill/summary)**に移動し、使用量の請求書を確認できます。
 請求書明細には、[リソースID請求書](#resources_id)と[請求明細書](#detail)が含まれます。
 - リソースID請求書：リソースIDに基づき、明細を集計して表示した請求書。
 - 請求明細書：集計せず、費用ごとに箇条書きにした明細の記録。
 
-<span id="resources_id"></span>
+[](id:resources_id)
 ## リソースID請求書
-1. 【リソースID請求書】をクリックし、タグページに移動します。
-2. 【すべての製品】選択ボックスをクリックし、【CSS】を選択すれば、CSSのリソースID請求書をクエリーできます。
-
+1. **リソースID請求書**をクリックし、タグページに進みます。
+2.  **すべての製品**の選択ボックスをクリックし、**CSS**を選択すれば、CSSのリソースID請求書を確認できます。
 ![](https://main.qcloudimg.com/raw/9db167f7285dfaf82d83a9028d589ad8.png)
 
 #### 請求書フィールド
@@ -21,17 +20,18 @@ Tencent CSS（CSS）によって生成された請求書と控除明細を表示
 </thead>
 <tbody><tr>
 <td>取引のタイプ</td>
-<td><ul style="margin:0;">
+<td><ul style="margin:0;">
     <li>従量課金：料金計算モデルは日次計算であり、毎日料金の決済が行われます</li>
     <li>月次決済：料金計算モデルは月次計算であり、毎月全料金の決済が行われます</li>
+    <li>サブスクリプション：CSSのリソースパッケージ</li></ul>
     </td>
 </tr>
 <tr>
 <td>構成の説明</td>
 <td>ユーザーが今月CSS内で使用したサブ機能アイテムおよび用量であり、具体的には次のとおりです：<ul style="margin:0;">
-    <li>CSSトランスコード </li>
-    <li>CSSレコーディング </li>
-    <li>CSSスクリーンキャプチャ</li>
+    <li>ライブストリーミングのトランスコーディング </li>
+    <li>ライブストリーミングのレコーディング </li>
+    <li>ライブストリーミングのスクリーンキャプチャ</li>
     <li>Porn Identification</li>
     </ul></td>
 </tr>
@@ -41,7 +41,7 @@ Tencent CSS（CSS）によって生成された請求書と控除明細を表示
 </tr>
 <tr>
 <td>割引率</td>
-<td>今月ユーザーが受けた割引であり、具体的には次のとおりです：<ul style="margin:0;"><li>日次決済ユーザーは割引を受けないため、割引率は1となります</li></ul></td>
+<td>今月、ユーザーが受けた割引：日次決済ユーザーは割引を受けないため、割引率は1となります。</td>
 </tr>
 <tr>
 <td>総料金</td>
@@ -49,13 +49,12 @@ Tencent CSS（CSS）によって生成された請求書と控除明細を表示
 </tr>
 </tbody></table>
 
->? その他いずれもTencent Cloud公式サイトによって割り当てられたフィールドです。詳細は [新版の請求書ガイド](https://intl.cloud.tencent.com/document/product/555/7432)をご参照ください。
+>? その他いずれもTencent Cloud公式サイトによって割り当てられたフィールドです。詳細は [新版の請求書ガイド](https://intl.cloud.tencent.com/document/product/555)をご参照ください。
 
-<span id="detail"></span>
-
+[](id:detail)
 ## 請求明細書
-1. 【請求明細書】をクリックして、タグページに移動します。
-2. 【すべての製品】選択ボックスをクリックし、【CSS】を選択すれば、CSSの請求明細書をクエリーできます。
+1. **請求明細書**をクリックし、タグページに進みます。
+2. **すべての製品**の選択ボックスをクリックし、**CSS**を選択すれば、CSSの請求明細書を確認できます。
 
 ![](https://main.qcloudimg.com/raw/0716954d4d5a955a77acd4149961ca1b.png)
 
@@ -71,5 +70,4 @@ Tencent CSS（CSS）によって生成された請求書と控除明細を表示
 | 使用時間   | 今月、各コンポーネントを使用した総時間数                                     |
 | 総料金     | 総料金 = コンポーネント割引前価格 × 割引率であり、うち：コンポーネント割引前価格 = コンポーネント公表価格 × 使用時間数となります |
 
->? その他いずれもTencent Cloud公式サイトによって割り当てられたフィールドです。詳細は [新版の請求書ガイド](https://intl.cloud.tencent.com/document/product/555/7432)をご参照ください。
-
+>? その他いずれもTencent Cloud公式サイトによって割り当てられたフィールドです。詳細は [新版の請求書ガイド](https://intl.cloud.tencent.com/document/product/555)をご参照ください。

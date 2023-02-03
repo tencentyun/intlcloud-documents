@@ -5,14 +5,14 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/7970d2961c95cd19a4e7568f3ea60467.png)
 
 
-- [基础服务费用](#base)：使用直播（包括标准直播、快直播）后产生的直播消耗费用，标准直播和快直播支持流量或峰值带宽两种计费方式切换。
-- [增值服务费用](#appreciation)：使用直播转码、录制、截图、鉴黄、时移、拉流转推等增值功能，此类功能默认关闭，使用才收费。
+- [基础服务费用](#base)：使用直播（包括标准直播、快直播）后产生的直播消耗费用，标准直播和快直播支持流量或峰值带宽两种计费方式切换，慢直播仅支持流量计费方式。
+- [增值服务费用](#appreciation)：使用直播转码、录制、时移、截图、鉴黄、拉流转推等增值功能，此类功能默认关闭，使用才收费。
 - [拓展服务费用](#extensions)：结合腾讯云其他产品一起提供的增值功能，由其他云产品根据各自的计费规则分别收取相关费用。
 
 [](id:base)
 ## 基础服务费用
 
-基础服务费用根据直播服务分为标准直播服务费用、快直播服务费用。
+基础服务费用根据直播服务分为标准直播服务费用、快直播服务费用和慢直播服务费用。
 
 <table>
 <tr><th width="20%">计费项</th><th width="60%">计费说明</th><th>付费方式</th></tr>
@@ -23,6 +23,7 @@
 <li/>境内、境外计费标准各异。
 </td>
 <td>
+<li><a href="https://www.tencentcloud.com/document/product/267/52220#live_pag">预付费资源包</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/267/2818">后付费-日结</a></li>
 <li/>后付费-月结
 </td>
@@ -42,6 +43,7 @@
 <li/>境内、境外计费标准各异。
 </td>
 <td>
+<li/><a href="https://www.tencentcloud.com/document/product/267/52220#live_pag">预付费资源包</a>
 <li/><a href="https://intl.cloud.tencent.com/document/product/267/39969">后付费-日结</a>
 <li/>后付费-月结
 </td>
@@ -57,14 +59,13 @@
 </td>
 </tr></table>
 
-
 >! 
 >- 由于快直播采用超低延迟链路，流量/带宽费用略高于标准直播。
 >- 云直播为月需求较大的用户提供了更为灵活的月结计费方式。如有需求，可联系商务经理协助您变更计费方式。
 >- 若您需要重新选择计费方式，请参见 [计费变更](https://intl.cloud.tencent.com/document/product/267/30411)。  
 
-[](id:appreciation)
 
+[](id:appreciation)
 ## 增值服务费用
 
 <table>
@@ -78,6 +79,7 @@
 <li/>产生的费用按<b>转码时长计费</b>，以您输出的直播流画面尺寸的范围区间价格为计费单价。
 </ul></td>
 <td>
+<li><a href="https://www.tencentcloud.com/document/product/267/52220#standard_pag">预付费资源包</a></li>
   <li><a href="https://intl.cloud.tencent.com/document/product/267/39604">后付费-日结</a></li></ul>
 	<li/>后付费-月结
 </td>
@@ -88,6 +90,7 @@
 <li/>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31071">极速高清转码</a> 功能时，将产生极速高清转码费用。
 <li/>产生的费用按<b>转码时长计费</b>，以您输出的直播流画面尺寸的范围区间价格为计费单价。
 </ul><td>
+<li><a href="https://www.tencentcloud.com/document/product/267/52220#topspeed_pag">预付费资源包</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/267/39604">后付费-日结</a></li>
 <li/>后付费-月结
 </td>
@@ -98,6 +101,7 @@
 <li/>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31071">音频转码</a>、音频混流等功能时，均会产生音频转码费用。
 <li/>产生的费用按<b>音频转码时长计费</b>。
 <td>
+<li><a href="https://www.tencentcloud.com/document/product/267/52220#standard_pag">预付费资源包</a></li>
 <li><a href="https://intl.cloud.tencent.com/document/product/267/39604">后付费-日结</a></li>
 <li/>后付费-月结
 </td>
@@ -108,6 +112,11 @@
     <li>录制产生的服务费用<b>按标准直播录制并发峰值路数计费</b>。</li>
   </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39605">后付费-月结</a></td>
+</tr><tr>
+<td colspan=2>直播时移</td>
+<td>直播时移按时移总时长计费。</td>
+<td>
+<a href="https://www.tencentcloud.com/document/product/267/47534">后付费-日结</a>
 </tr><tr>
 <td colspan=2>直播截图</td>
 <td>
@@ -122,7 +131,7 @@
     <li>截图产生的服务费用<b>按截图张数计费</b>，每月前1000张免费。</li>
 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39607">后付费-月结</a></td>
-</tr><tr>
+</tr>
 <tr><td colspan=2>拉流转推</td>
 <td>拉流转推任务按任务时长计费。</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/41059">后付费-日结</a>
@@ -133,18 +142,10 @@
 <td>
 <a href="https://intl.cloud.tencent.com/document/product/267/41059">后付费-月结</a>
 </td>
-</tr><tr>
-<td colspan=2>直播时移</td>
-<td>
-直播时移按时移总时长计费。
-</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/267/47534">后付费-日结</a>
-</td>
 </tr>
 </table>
 
 [](id:extensions)
-
 ## 拓展服务费用
 
 <table>
