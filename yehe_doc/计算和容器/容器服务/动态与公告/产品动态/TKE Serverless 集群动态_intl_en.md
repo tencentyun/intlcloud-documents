@@ -1,3 +1,59 @@
+## December 2022
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tbody>
+	  <tr>
+    <td>Supports running DaemonSet</td>
+    <td>Supports adding DaemonSet to super nodes to align with DS scenario product features.</td>
+    <td>2022-12-01</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/43136">TKE Serverless Clusters-related</a></td>
+  </tr>
+</tbody>
+</table>
+
+## November 2022
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tbody>
+	  <tr>
+    <td>Launches Window containers</td>
+    <td>Supports the serverless Windows container service.</td>
+    <td>2022-11-01</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/34040">TKE Serverless Cluster</a></td>
+  </tr>
+</tbody>
+</table>
+
+
+## October 2022
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tbody>
+	  <tr>
+    <td>Supports static IP addresses for Pods</td>
+    <td>Pods running on super nodes can use static IP addresses.</td>
+    <td>2022-10-01</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/39760">Pod Schedulable to Super Node</a></td>
+  </tr>
+</tbody>
+</table>
+
+## August 2022
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tbody>
+	  <tr>
+    <td>Enhances Pod security</td>
+    <td>Supports configuring and managing Pod security groups by label to implement fine-grained secure access control.</td>
+    <td>2022-08-11</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/45561">Scheduling Pod to Super Node</a></td>
+  </tr>
+</tbody>
+</table>
 
 ## June 2022
 <table>
@@ -9,6 +65,7 @@
     <td>2022-06-23</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/457/36162">Annotations</a></td>
   </tr>
+  <tr>
 </table>
 
 
@@ -20,31 +77,30 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
   <tr>
-    <td>Supports upgrading TKE clusters to EKS clusters through tools</td>
-    <td>Supports upgrading existing managed TKE clusters to EKS clusters through tools.</td>
+    <td>Supports upgrading TKE clusters to TKE Serverless clusters through tools</td>
+    <td>Supports upgrading existing managed TKE clusters to TKE Serverless clusters through tools.</td>
     <td>2022-04-20</td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/457/47002" target="_blank" rel="noopener noreferrer">Guide on Migrating Resources in a TKE Managed Cluster to an EKS Cluster</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/47002" target="_blank" rel="noopener noreferrer">Guide on Migrating Resources in a TKE Managed Cluster to a Serverless Cluster</a></td>
   </tr>
   <tr>
-    <td>Pods are restarted automatically when the system disk load reaches the threshold</td>
+    <td>Launches the feature of restarting Pods automatically when the system disk load reaches the threshold for TKE Serverless clusters</td>
     <td>This feature was launched on April 27, 2022 (UTC +8). The Pods created before that date must be rebuilt to enable the feature.</td>
     <td>2022-04-27</td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/457/43136" target="_blank" rel="noopener noreferrer">Elastic Clusters</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/43136" target="_blank" rel="noopener noreferrer">TKE Serverless Clusters-related</a></td>
   </tr>
   <tr>
-    <td>EKS supports batch scheduling of Jobs</td>
-    <td>EKS supports batch scheduling of Jobs. You can <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a> to apply for it.<br></td>
+    <td>Launches the batch Job scheduling feature for TKE Serverless clusters</td>
+    <td>TKE Serverless supports batch scheduling of Jobs. You can <a href="https://console.tencentcloud.com/workorder/category">submit a ticket</a> to apply for it.<br></td>
     <td>2022-04-18</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/457/30665" target="_blank" rel="noopener noreferrer">Job Management</a></td>
   </tr>
     <tr>
     <td>Supports restricting the number of schedulable GPU Pods on super nodes</td>
-    <td>Supports restricting the number of schedulable GPU Pods on super nodes. You can <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a> to apply for it.</td>
+    <td>Supports restricting the number of schedulable GPU Pods on super nodes. You can <a href="https://console.tencentcloud.com/workorder/category">submit a ticket</a> to apply for it.</td>
     <td>2022-04-11</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/457/39760" target="_blank" rel="noopener noreferrer">Notes on Pods Scheduled to a Super Node</a></td>
   </tr>
 </table>
-
 
 
 
@@ -56,8 +112,8 @@
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tbody>
 <tr>
-<td>Supports automatic specification upgrade and retry if the current specification has no resources available during EKS resource creation</td>
-<td>Dynamic specification upgrade can be enabled in EKS.</td>
+<td>Supports automatic specification upgrade and retry if the current specification has no resources available during TKE Serverless cluster resource creation</td>
+<td>Dynamic specification upgrade can be enabled in TKE Serverless clusters.</td>
 <td>2022-03-31</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/457/34048">Creating a Cluster</a></td>
 </tr>
@@ -75,7 +131,7 @@
 </tr>
 <tr>
 <td>Supports the HPC component</td>
-<td>EKS componentization supports scheduled scaling.</td>
+<td>TKE Serverless componentization supports scheduled scaling.</td>
 <td>2022-03-21</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/457/40956">HPC</a></td>
 </tr>
@@ -86,7 +142,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/457/44484">Image Cache</a></td>
 </tr>
 <tr>
-<td>Supports global annotation settings in EKS</td>
+<td>Supports global annotation settings in TKE Serverless clusters</td>
 <td>You can use `ConfigMap` to set global annotations.</td>
 <td>2022-03-12</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/457/36162">Annotations</a></td>
@@ -95,13 +151,12 @@
 </table>
 
 
-
 ## December 2021
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>Supports the image cache feature for EKS</td>	<td>You can use image cache to accelerate image pull during instance creation so as to expedite instance startup.</td><td>2021-12-20</td><td><a href="https://intl.cloud.tencent.com/document/product/457/44484">Image Cache</a></td>
+    <td>Supports the image cache feature for TKE Serverless</td><td>You can use image cache to accelerate image pull during instance creation so as to expedite instance startup.</td><td>2021-12-20</td><td><a href="https://intl.cloud.tencent.com/document/product/457/44484">Image Cache</a></td>
 </tr>
 </table>
 
@@ -111,7 +166,7 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>Supports discounts on resources with small specifications</td><td>EKS offers up to 65% discount for resources with small specifications such as 1-core 2 GiB and 2-core 4 GiB. </td><td>2021-11-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34055">Product Pricing</a></td>
+    <td>Supports discounts on resources with small specifications for TKE Serverless</td><td>TKE Serverless offers up to 65% discount for resources with small specifications such as 1-core 2 GiB and 2-core 4 GiB. </td><td>2021-11-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34055">Product Pricing</a></td>
 </tr>
 </table>
 
@@ -124,7 +179,6 @@
 </tr>
 </table>
 
-
 ## May 2021
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
@@ -136,7 +190,10 @@
     <td>Supports modifying the custom DNS of a super node</td><td>Users can modify the custom DNS of the super node. After modification, the Pods scheduled to this super node will adopt this DNS configuration by default.</td><td>2021-05-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39759">Supernodes Overview</a></td>
 </tr>
 <tr> 
-    <td>Elastic cluster supports log collection via CRD configuration</td><td>Users can use the Custom Resource Definitions (CRD) to configure log collection for the Elastic cluster. CRD is non-intrusive to Pod and supports a variety of log parsing methods. It sends standard output and file logs in the container to Tencent Cloud CLS, which provides search and analysis, visual application, log download and consumption, and other services. It is recommended to use CRD to configure log collection.</td><td>2021-05-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/40585">Using a CRD to Configure Log Collection</a></td>
+    <td>TKE Serverless cluster supports log collection via CRD configuration</td><td>Users can use the Custom Resource Definitions (CRD) to configure log collection for the TKE Serverless cluster. CRD is non-intrusive to Pod and supports a variety of log parsing methods. It sends standard output and file logs in the container to Tencent Cloud CLS, which provides search and analysis, visual application, log download and consumption, and other services. It is recommended to use CRD to configure log collection.</td><td>2021-05-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/40585">Using a CRD to Configure Log Collection</a></td>
+</tr>
+<tr>
+    <td>EKS supports the purchase of reserved instances</td><td>EKS reserved instances can be purchased by month. Purchased EKS reserved instances can be used to offset the cost of containers of the same location, resource type, and resource specifications.</td><td>2021-05-17</td><td>-</td>
 </tr>
 </table>
 
@@ -146,7 +203,7 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>EKS has connected to Tencent Cloud Tags</td><td>Users can add Tencent Cloud tag to EKS cluster, and manage bills through tags.</td><td>2021-03-20</td><td>-</td>
+    <td>EKS has connected to Tencent Cloud Tags</td><td>Users can add Tencent Cloud tag to TKE Serverless cluster, and manage bills through tags.</td><td>2021-03-20</td><td>-</td>
 </tr>
 </table>
 
@@ -205,7 +262,7 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>The EKS console provides a command line window for interaction with containers</td><td>This feature improves the user experience and helps you quickly identify issues.</td><td>2020-06-30</td><td>-</td>
+    <td>The EKS console provides a command line window for interaction with containers.</td><td>This feature improves the user experience and helps you quickly identify issues.</td><td>2020-06-30</td><td>-</td>
 </tr>
 <tr>
     <td>Supports updates of StatefulSets and Pods without changing their IP addresses</td><td>This feature enhances service stability and simplifies service network management.</td><td>2020-06-30</td><td>-</td>
