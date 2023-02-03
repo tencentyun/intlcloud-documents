@@ -1,4 +1,4 @@
-To help you quickly get started with the CSS console, this document will introduce some frequently used CSS services categorized according to different user needs. CSS console comes with four modules: Basic Services, Scenario-Specific Services, Data Center, and CSS Toolkit.
+To help you quickly get started with the CSS console, this document will introduce some frequently used CSS services. They are grouped into four modules based on user needs: Basic Services, Scenario-Specific Services, Data Center, and CSS Toolkit.
 
 ## Basic Services
 This module provides basic services of CSS. If you only want to use basic live streaming services, this is the right module for you.
@@ -8,59 +8,68 @@ This module provides basic services of CSS. If you only want to use basic live s
 <th>Description</th>
 </tr>
 <tr>
-<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31054">Overview</a></td>
-<td><ul style = "margin-bottom: 0px;"><li>You can view bandwidth/traffic data, such as fees and usage trends. You can also access real-time live streaming data and the number of online viewers.</li><li>You can select different billing modes or change the time granularity.</li></ul></td>
+<td ><a href = "https://www.tencentcloud.com/document/product/267/31054">Overview</a></td>
+<td><ul style = "margin-bottom: 0px;"><li>View your bandwidth/traffic usage and usage line chart, as well as real-time live streaming statistics such as the number of online viewers (you can change the granularity).</li><li>Change the billing mode.</li></ul></td>
 </tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/document/product/267/35970">Domain Management</a></td>
-<td><ul style = "margin-bottom: 0px;"><li>You can add and manage your own acceleration domain names and configure CNAME for them.</li><li>You can generate domain-specific live streaming URLs.</li><li>You can use the existing configuration for your live streaming domain names. For example, you can use the templates for recording, transcoding, screencapture, porn detection, watermarking, and callback.</li><li>You can also configure domain information such as authentication, HTTPS protocol, acceleration region, and origin server.</li></ul></td>
+<td><a href = "https://www.tencentcloud.com/document/product/267/35970">Domain Management</a></td>
+<td><ul style = "margin-bottom: 0px;"><li>Add and manage your own acceleration domains and configure CNAME for them.</li><li>Generate live streaming URLs.</li><li>Bind recording, transcoding, screencapture & porn detection, watermark, and callback templates to your domains.</li><li>Configure authentication, HTTPS, the acceleration region, and the origin server for a domain.</li></ul></td>
 </tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/document/product/267/31068">Stream Management</a></td>
-<td>You can manage online, historical, and disabled streams. You can disable and recover streams.</td>
+<td><a href = "https://www.tencentcloud.com/document/product/267/31068">Stream Management</a></td>
+<td>Manage live, historical, and disabled streams and disable and resume streams.</td>
+</tr><tr>
+<td><a href="https://www.tencentcloud.com/document/product/267/52221">Resource Package/Plugin Management</a></td>
+<td>View usage of traffic and transcoding packages.</td>
 </tr></tr>
 </table>
 
-
 ## Scenario-Specific Services
-Scenario-specific services are supporting services on CSS. In this module, you can use and manage services like transcoding, watermarking, stream mixing, screencapture, porn detection, event records, notification service, and the live streaming SDK.
+In this module, you can configure transcoding, watermarking, stream mixing, and screencapture & porn detection, as well as view event history, configure event callbacks, and manage the MLVB SDK.
 
 <table>
 <tr><th width="17%">Feature</th><th>Description</th></tr>
 <tr>
-<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31073">Feature Configuration</a></td>
-<td>You can configure templates for recording, transcoding, screencapture, porn detection, watermarking and other features for live streaming. We streamlined the process by enabling you to bind the domain name to the templates on the same configuration page.</td>
+<td ><a href = "https://www.tencentcloud.com/document/product/267/31073">Feature Configuration</a></td>
+<td>Configure templates for recording, transcoding, screencapture & porn detection, watermarking, adaptive bitrate, and DRM for live streaming (you can also bind templates to domains in this section).</td>
 </tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/document/product/267/31074">Event Center</a></td>
-<td><ul style= "margin: 0"><li>You can configure paths for receiving trigger event callbacks.</li><li>You can quickly view stream push and interruption records, as well as stream interruption causes.</li></ul></td>
-</tr></tr>
+<td><a href = "https://www.tencentcloud.com/document/product/267/31074">Event Center</a></td>
+<td><ul style= "margin: 0"><li>Configure paths for receiving event callbacks.</li><li>View stream push and interruption records.</li><li>Query push errors.</li></ul></td>
+</tr><tr>
+<td><a href = "https://www.tencentcloud.com/document/product/1071/38546">MLVB SDK</a></td>
+<td>Add an official license to use the MLVB SDK.</td>
 </table>
 
 ## Data Center
-This module provides professional data analysis services. You can query usage of traffic/bandwidth, transcoding, watermarking, push relay, screencapture, and porn detection within a specific period. Also, it comes with the log analysis feature for you to monitor resources and keep track of useful data.
+This module provides data analysis services. You can query your usage of traffic/bandwidth, transcoding, watermarking, relay, and screencapture & porn detection in a specific time period. It also offers a log analysis tool for you to monitor resources and obtain useful data.
 
 <table>
 <tr><th width="17%">Feature</th><th>Description</th>
 </tr><tr>
-<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31076">Billing Usage Statistics</a></td>
-<td><ul style = "margin-bottom: 0px;"><li>You can query information of billable items such as traffic/bandwidth, screencapture, porn detection, transcoding, recording, and push relay.</li><li>You can also query and analyze live streaming operation data.</li></ul></td>
+<td ><a href = "https://www.tencentcloud.com/document/product/267/31076">Statistics</a></td>
+<td><ul style = "margin-bottom: 0px;"><li>Query billable usage such as traffic/bandwidth, screencapture & porn detection, transcoding, recording, and relay.</li><li>Query and analyze live streaming operation data.</li></ul></td>
 </tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/document/product/267/31077">Stream Data Query</a></td>
-<td>You can query and export the details of push and playback of a single video stream to a local device.</td>
-</tr><tr>
+<td><a href = "https://www.tencentcloud.com/document/product/267/31077">Stream Data Query</a></td>
+<td>Query and export the push and playback details of a stream.</td>
+</tr>
 </table>
 
+
+
 ## CSS Toolkit
-CSS Toolkit provides ancillary features.
+This module offers additional features.
 
 <table>
 <tr><th width="17%">Feature</th><th>Description</th>
 </tr><tr>
-<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31084">Address Generator</a></td>
-<td>You can fill in URL information to quickly generate push/playback URLs.</td>
-</tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/document/product/267/35968">Web Push</a></td>
-<td>You can quickly generate push URLs and test live streaming online.</td>
+<td ><a href = "https://www.tencentcloud.com/document/product/267/31084">Address Generator</a></td>
+<td>Provide the necessary information to splice push/playback URLs.</td>
 </tr><tr>
 <td ><a href = "https://intl.cloud.tencent.com/document/product/267/39467">Self-Diagnosis</a></td>
-<td>You can use self-diagnosis to troubleshoot common push and playback issues. This feature is in beta and the diagnosis results are for reference only.</td>
-</tr>
+<td>Troubleshoot common push and playback issues (this feature is in beta testing currently and the results are for reference only).</td>
+</tr><tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/42524">Relay</a></td>
+<td>Quickly pull content from an existing live streaming source or video and push it to the destination URL, with no need to push streams.</td>
+</tr></tr>
+<td><a href = "https://www.tencentcloud.com/document/product/267/35968">Web Push</a></td>
+<td>Quickly generate push URLs to test live streaming.</td>
 </table>
