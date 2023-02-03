@@ -124,7 +124,7 @@ metadata:
     kubernetes.io/ingress.https-rules: '[{"path":"/","backend":{"serviceName":"jetty-service","servicePort":"443","host":"sample.tencent.com"}}]'
     ingress.cloud.tencent.com/tke-service-config: jetty-ingress-config
     # 指定已有的 tke-service-config
-    # service.cloud.tencent.com/tke-service-config-auto: true 
+    # ingress.cloud.tencent.com/tke-service-config-auto: "true"
     # 自动创建 tke-service-config
   name: jetty-ingress
   namespace: default

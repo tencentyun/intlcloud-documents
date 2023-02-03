@@ -6,6 +6,7 @@ The CLB parameters and features that cannot be defined by the semantics of `Ingr
 
 ### Configuration instructions
 `TkeServiceConfig` helps you quickly configure CLB. You can specify a target configuration for application to an Ingress through the Ingress annotation **`ingress.cloud.tencent.com/tke-service-config:&lt;config-name&gt;`**.
+
 >! The `TkeServiceConfig` resource needs to be in the same namespace as the Ingress.
 
 `TkeServiceConfig` doesn't help you configure and modify the protocol, port, domain name, and forwarding path; instead, you need to describe them in the configuration to specify the forwarding rule for delivery by the configuration.
@@ -124,7 +125,7 @@ metadata:
     kubernetes.io/ingress.https-rules: '[{"path":"/","backend":{"serviceName":"jetty-service","servicePort":"443","host":"sample.tencent.com"}}]'
     ingress.cloud.tencent.com/tke-service-config: jetty-ingress-config
     # Specify the existing `tke-service-config`
-    # service.cloud.tencent.com/tke-service-config-auto: true 
+    # ingress.cloud.tencent.com/tke-service-config-auto: "true"
     # Automatically create a `tke-service-config`
   name: jetty-ingress
   namespace: default

@@ -2,7 +2,7 @@ In the CSS console, you can manage domains and streams, configure transcoding, r
 
 ## Prerequisites
 
-- You have activated [CSS](https://cloud.tencent.com/product/css). 
+- You have activated [CSS](https://intl.cloud.tencent.com/product/css). 
 - You have logged in to the [CSS console](https://console.cloud.tencent.com/live/livestat).
 
 ## Overview
