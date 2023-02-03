@@ -1,3 +1,15 @@
+## Logging In to the Container Through SSH
+If the SSH server is installed on your container, you can log in to the container through SSH.
+1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
+2. On the **Cluster Management** page, click the cluster ID (cls-xxx) to go to the cluster details page.
+3. On the cluster details page, select **Node Management** > **Node** in the left sidebar.
+4. On the **Node List** page, click the node name to go to the Pod management page.
+5. In the instance list, obtain the IP address of the instance, as shown below:
+![](https://main.qcloudimg.com/raw/15a173b8b8f7361bc513ba6775b27476.png)
+6. Log in to any node in the cluster. For more information, see [here](https://www.tencentcloud.com/document/product/213/5436).
+7. Log in to the container through SSH.
+
+
 ## Logging In to a Container Through the Container's Node
 1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
 2. On the **Cluster Management** page, click the cluster ID (cls-xxx) to go to the cluster details page.
@@ -20,16 +32,6 @@ root@worid-24bn2:/# ls
 bin  boot  devetc  home  liblib64  media  mnt  optproc  root  run  sbin  srv  sys  tmp  usr  var
 ```
 
-## Logging In to the Container Through SSH
-If the SSH server is installed on your container, you can log in to the container through SSH.
-1. Log in to the TKE console and select **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
-2. On the **Cluster Management** page, click the cluster ID (cls-xxx) to go to the cluster details page.
-3. On the cluster details page, select **Node Management** > **Node** in the left sidebar.
-4. On the **Node List** page, click the node name to go to the Pod management page.
-5. In the instance list, obtain the IP address of the instance, as shown below:
-![](https://main.qcloudimg.com/raw/15a173b8b8f7361bc513ba6775b27476.png)
-6. Log in to any node in the cluster. For more information, see [here](https://www.tencentcloud.com/document/product/213/5436).
-7. Log in to the container through SSH.
 
 
 
