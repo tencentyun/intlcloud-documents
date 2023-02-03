@@ -1,4 +1,14 @@
 
+## 2022年11月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>数据订阅</td>
+<td>云数据库 MongoDB 接入DTS 数据订阅服务，便于您使用托管服务订阅 MongoDB 实例的数据变更。</td>
+<td><a href="https://www.tencentcloud.com/document/product/240/52500">新建 MongoDB 数据订阅</a></td></tr>
+</tbody></table>
+
 ## 2022年09月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=20%>相关文档</th></tr>
