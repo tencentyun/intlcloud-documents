@@ -19,6 +19,7 @@ Tencent Cloud TKE allows you to upgrade the Kubernetes version. You can use this
 kubectl patch hpa test -p '{"spec":{"scaleTargetRef":{"apiVersion":"apps/v1"}}}'
 ```
 - **The failure of Helm applications**: each application, including those installed through the application marketplace or third parties, supports different versions of Kubernetes. Before upgrading a cluster, you are advised to view the list of applications installed in the cluster and check the range of cluster versions supported by the applications. Some applications are adaptable to higher versions of Kubernetes, and you may need to upgrade them. Some applications may not be adaptable to higher versions of Kubernetes, and in which case, upgrade the cluster with caution.
+- **Nginx-ingress version issue**: extensions/v1beta1 and networking.k8s.io/v1beta1 ingress APIs are no longer provided in v1.22. For more information, see [here](https://kubernetes.io/zh-cn/docs/reference/using-api/deprecation-guide/#v1-22). If the Nginx-ingress version in your cluster is too early, upgrade the Nginx-ingress add-on on the add-on management page after you upgrade Kubernetes to v1.22 or later.
 
 
 
@@ -44,7 +45,7 @@ Currently, the upgrade of Master supports the **major version upgrade** (for exa
 
 
 
-#### Details
+#### Points for attention
 
 - **Before upgrading, read the [Upgrade Notice](#UpgradeNotice).**
 - For TKE clusters of the v1.7.8, the network mode is bridge. Upgrading the cluster does not automatically switch the network mode to cni.
@@ -90,7 +91,7 @@ After the cluster’s Master Kubernetes version is upgraded, the cluster list pa
 
 
 
-#### Details
+#### Points for attention
 
  - **Before upgrading, read the [Upgrade Notice](#UpgradeNotice).**
  - You can upgrade the node when it’s running.

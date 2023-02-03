@@ -1,5 +1,61 @@
+## 2022年12月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tbody>
+	  <tr>
+    <td>支持运行 Daemonset</td>
+    <td>产品化支持 Daemonset 注入超级节点，对齐 DS 场景下的产品功能。</td>
+    <td>2022-12-01</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/43136">TKE Serverless 集群相关</a></td>
+  </tr>
+</tbody>
+</table>
 
-## 2022年06月
+## 2022年11月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tbody>
+	  <tr>
+    <td>上线 Window 容器</td>
+    <td>支持 Serverless 化的 Windows 容器服务。</td>
+    <td>2022-11-01</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/34040">TKE Serverless 集群</a></td>
+  </tr>
+</tbody>
+</table>
+
+
+## 2022年10月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tbody>
+	  <tr>
+    <td>支持 Pod 固定 IP</td>
+    <td>超级节点上运行的 Pod 支持固定 IP。</td>
+    <td>2022-10-01</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/39760">超级节点可调度 Pod 说明</a></td>
+  </tr>
+</tbody>
+</table>
+
+## 2022年8月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tbody>
+	  <tr>
+    <td>Pod 安全性增强</td>
+    <td>	支持按 Label 配置和管理 Pod 的安全组，实现细粒度的安全访问控制。</td>
+    <td>2022-08-11</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/45561">调度 Pod 至超级节点</a></td>
+  </tr>
+</tbody>
+</table>
+
+## 2022年6月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
@@ -9,37 +65,38 @@
     <td>2022-06-23</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/457/36162">Annotation 说明</a></td>
   </tr>
+  <tr>
 </table>
 
 
 
 
 
-## 2022年04月
+## 2022年4月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
   <tr>
-    <td>支持工具化将 TKE 集群升级至 EKS 集群</td>
-    <td>支持工具化将已有容器服务 TKE 托管集群升级至弹性容器服务 EKS 集群。</td>
+    <td>支持工具化将 TKE 集群升级至 TKE Serverless 集群</td>
+    <td>支持工具化将已有容器服务 TKE 托管集群升级至弹性容器服务 TKE Serverless 集群。</td>
     <td>2022-04-20</td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/457/47002" target="_blank" rel="noopener noreferrer">TKE 托管集群迁移至 EKS 集群操作指南</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/47002" target="_blank" rel="noopener noreferrer">TKE 托管集群迁移至 TKE Serverless 集群操作指南</a></td>
   </tr>
   <tr>
-    <td>EKS 上线根据磁盘阈值自动重启 Pod 能力</td>
+    <td>TKE Serverless 上线根据磁盘阈值自动重启 Pod 能力</td>
     <td>此特性上线时间在2022年4月27日，故在此时间前创建的 pod，需要重建 pod 来开启特性。</td>
     <td>2022-04-27</td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/457/43136" target="_blank" rel="noopener noreferrer">弹性集群相关</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/43136" target="_blank" rel="noopener noreferrer"> Serverless 集群相关</a></td>
   </tr>
   <tr>
-    <td>EKS 支持 Job 批量调度能力</td>
-    <td>EKS 支持 Job 批量调度能力，可 <a href="https://console.intl.cloud.tencent.com/workorder/category">提交工单</a> 申请使用。<br></td>
+    <td>TKE Serverless 支持 Job 批量调度能力</td>
+    <td>TKE Serverless 支持 Job 批量调度能力，可 <a href="https://console.tencentcloud.com/workorder/category">提交工单</a> 申请使用。<br></td>
     <td>2022-04-18</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/457/30665" target="_blank" rel="noopener noreferrer">Job 管理</a></td>
   </tr>
     <tr>
     <td>超级节点支持限制 GPU 可调度 Pod 数</td>
-    <td> 超级节点支持限制 GPU 可调度 Pod 数，可 <a href="https://console.intl.cloud.tencent.com/workorder/category">提交工单</a> 申请使用。</td>
+    <td> 超级节点支持限制 GPU 可调度 Pod 数，可 <a href="https://console.tencentcloud.com/workorder/category">提交工单</a> 申请使用。</td>
     <td>2022-04-11</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/457/39760" target="_blank" rel="noopener noreferrer">调度至超级节点的 Pod 说明</a></td>
   </tr>
@@ -48,16 +105,15 @@
 
 
 
-
-## 2022年03月
+## 2022年3月
 
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tbody>
 <tr>
-<td>EKS 资源创建时若前规格无资源，则支持资源自动升配重试</td>
-<td>EKS 支持开启动态资源升配能力。</td>
+<td>TKE Serverless 资源创建时若前规格无资源，则支持资源自动升配重试</td>
+<td>TKE Serverless 支持开启动态资源升配能力。</td>
 <td>2022-03-31</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/457/34048">创建集群</a></td>
 </tr>
@@ -75,7 +131,7 @@
 </tr>
 <tr>
 <td>支持 HPC 组件</td>
-<td>EKS 组件化支持定时扩缩容。</td>
+<td>TKE Serverless 组件化支持定时扩缩容。</td>
 <td>2022-03-21</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/457/40956">HPC 说明</a></td>
 </tr>
@@ -86,7 +142,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/457/44484">镜像缓存</a></td>
 </tr>
 <tr>
-<td>EKS 支持全局设置 Annotation</td>
+<td>TKE Serverless 支持全局设置 Annotation</td>
 <td>支持通过 configmap 进行全局 Annotation 配置。</td>
 <td>2022-03-12</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/457/36162">Annotation 说明</a></td>
@@ -95,13 +151,12 @@
 </table>
 
 
-
 ## 2021年12月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>EKS 支持镜像缓存功能</td>	<td>使用镜像缓存可以在创建实例时加速拉取镜像，减少实例的启动耗时。</td><td>2021-12-20</td><td><a href="https://intl.cloud.tencent.com/document/product/457/44484">镜像缓存</a></td>
+    <td>TKE Serverless 支持镜像缓存功能</td>	<td>使用镜像缓存可以在创建实例时加速拉取镜像，减少实例的启动耗时。</td><td>2021-12-20</td><td><a href="https://intl.cloud.tencent.com/document/product/457/44484">镜像缓存</a></td>
 </tr>
 </table>
 
@@ -111,11 +166,11 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>EKS 支持小规格资源折扣</td>	<td>EKS 对于1核2GiB、2核4GiB等小规格资源提供最低35折优惠。</td><td>2021-11-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34055">产品定价</a></td>
+    <td>TKE Serverless 支持小规格资源折扣</td>	<td>TKE Serverless 对于1核2GiB、2核4GiB等小规格资源提供最低35折优惠。</td><td>2021-11-01</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34055">产品定价</a></td>
 </tr>
 </table>
 
-## 2021年07月
+## 2021年7月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
@@ -124,8 +179,7 @@
 </tr>
 </table>
 
-
-## 2021年05月
+## 2021年5月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
@@ -136,17 +190,20 @@
     <td>支持超级节点修改自定义 DNS。</td>	<td>支持超级节点修改自定义 DNS，修改后调度到该超级节点的 Pod 默认全部采用该 DNS 配置。</td><td>2021-05-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39759">超级节点概述 </a></td>
 </tr>
 <tr> 
-    <td>弹性集群支持通过 CRD 配置日志采集</td>	<td>弹性集群支持通过 CRD 的方式配置日志采集。CRD 对 Pod 无侵入性，支持多种日志解析方式，将标准输出、容器内文件日志发送至腾讯云日志服务 CLS，提供检索分析、可视化应用、日志下载消费等服务。推荐使用 CRD 配置日志采集。</td><td>2021-05-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/40585">使用 CRD 配置日志采集</a></td>
+    <td> Serverless 集群支持通过 CRD 配置日志采集</td>	<td> Serverless 集群支持通过 CRD 的方式配置日志采集。CRD 对 Pod 无侵入性，支持多种日志解析方式，将标准输出、容器内文件日志发送至腾讯云日志服务 CLS，提供检索分析、可视化应用、日志下载消费等服务。推荐使用 CRD 配置日志采集。</td><td>2021-05-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/40585">使用 CRD 配置日志采集</a></td>
+</tr>
+<tr>
+    <td>弹性容器服务支持购买预留券</td>	<td>弹性容器服务预留券支持按月购买，购买后可以对同地域、同资源规格类型、同资源规格的容器进行计算费用抵扣。</td><td>2021-05-17</td><td>-</td>
 </tr>
 </table>
 
 
-## 2021年03月
+## 2021年3月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>弹性容器服务接入腾讯云标签</td>	<td>为 EKS 集群添加腾讯云标签，可支持通过标签进行账单管理。</td><td>2021-03-20</td><td>-</td>
+    <td>弹性容器服务接入腾讯云标签</td>	<td>为 TKE Serverless 集群添加腾讯云标签，可支持通过标签进行账单管理。</td><td>2021-03-20</td><td>-</td>
 </tr>
 </table>
 
@@ -171,7 +228,7 @@
 </tr>
 </table>
 
-## 2020年08月
+## 2020年8月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
@@ -181,7 +238,7 @@
 </table>
 
 
-## 2020年07月
+## 2020年7月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
@@ -199,13 +256,13 @@
 </tr>
 </table>
 
-## 2020年06月
+## 2020年6月
 
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>弹性容器服务控制台 提供命令行窗口与容器交互</td><td>该功能提升了用户体验，可帮助用户快速定位问题。</td><td>2020-06-30</td><td>-</td>
+    <td>弹性容器服务控制台提供命令行窗口与容器交互</td><td>该功能提升了用户体验，可帮助用户快速定位问题。</td><td>2020-06-30</td><td>-</td>
 </tr>
 <tr>
     <td>支持 StatefulSet、Pod 更新并保持 IP 不变</td><td>该功能可提升服务稳定性，并简化用户服务网络管理。</td><td>2020-06-30</td><td>-</td>
