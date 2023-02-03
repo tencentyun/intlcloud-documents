@@ -1,3 +1,12 @@
+## November 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=20%>Documentation</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported data subscription</td>
+<td>TencentDB for MongoDB is connected to the data subscription service of DTS, making it easier for you to subscribe to data changes of the MongoDB instance by using the managed service.</td>
+<td><a href="https://www.tencentcloud.com/document/product/240/52500">Creating MongoDB Data Subscription</a></td></tr>
+</tbody></table>
 
 ## September 2022
 <table>
