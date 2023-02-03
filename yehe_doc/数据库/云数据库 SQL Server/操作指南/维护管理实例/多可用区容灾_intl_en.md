@@ -38,4 +38,4 @@ You can upgrade disaster recovery capability from single-AZ to multi-AZ for the 
 3. Click **OK**. Upgrading to a multi-AZ can be completed when the instance is purchased.
 
 ## Relevant Documentation
-To migrate the instance to another AZ in the same region, see [Migrating Across AZs] (https://intl.cloud.tencent.com/document/product/238/42695).
+To migrate the instance to another AZ in the same region, see [Migrating Across AZs](https://intl.cloud.tencent.com/document/product/238/42695).
