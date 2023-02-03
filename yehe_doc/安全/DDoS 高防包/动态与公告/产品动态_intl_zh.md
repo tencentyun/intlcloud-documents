@@ -1,3 +1,63 @@
+## 2022-11
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>支持弹性业务带宽</td>
+<td>高防包支持弹性业务带宽，超出部分按照80元/Mbps/月收费。</td>
+<td> 2022-11-16</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1029/36114">计费概述</a>
+</td>
+</tr>
+</tbody></table>
+
+## 2022-10
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优化实例列表</td>
+<td>优化控制台实例列表以防护套餐的维度筛选。</td>
+<td> 2022-10-26</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1029/36121">查看实例信息</a>
+</td>
+</tr>
+</tbody></table>
+
+## 2022-08
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>智能 CC 支持观察模式</td>
+<td>智能 CC 支持观察模式，并全量上线智能 CC。</td>
+<td> 2022-08-25</td>
+<td> <a href="https://www.tencentcloud.com/document/product/1029/48285"> 智能 CC 防护</a>
+</td>
+</tr>
+</tbody></table>
+
 ## 2022-06
 <table>
 <thead>
@@ -10,7 +70,7 @@
 </thead>
 <tbody>
 <tr>
- <tr>
+<tr>
 <td>高防包自动解绑已销毁云产品 </td>
 <td>高防包自动检测已绑定资源的状态来判断是否解绑。</td>
 <td> 2022-06-13 </td>
@@ -27,7 +87,7 @@
 </tr>
 <tr>
 <td>防护对象支持内网CLB 和 EIP</td>
-<td>高防包支持已绑定 EIP 的内网 CLB 的绑定、解绑。</td>
+<td>高防包支持已绑定 EIP 的内网 CLB 和 EIP 的绑定、解绑。</td>
 <td> 2022-06-01	</td>
 <td>- </td>
 </tr>
@@ -103,7 +163,6 @@
 </td>
 </tr>
 </tbody></table>
-
 
 
 ## 2022-01
@@ -355,4 +414,3 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/297/37222">域名接入 </a>
 </tr>
 </tbody></table>
-

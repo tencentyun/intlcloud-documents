@@ -1,7 +1,6 @@
 Intelligent CC protection is an AI-powered protection feature leveraging Tencent Cloud's big data capability. It provides a dynamic protection model to auto-generate rules for detecting and blocking malicious attacks based on website traffic patterns and algorithm-utilized attack analysis.
->?This feature is currently only available to beta users.
 
-## Preparation
+## Prerequisites
 - You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36115) instance and set the object to protect.
 - Only rules configured for instances accessing via domain names take effect.
 
@@ -17,8 +16,11 @@ Intelligent CC protection is an AI-powered protection feature leveraging Tencent
 ![](https://qcloudimg.tencent-cloud.cn/raw/9ebf3f22e757352b303cc1b0183080d2.png)
 4. In the " Intelligent CC Protection" card, click **Set**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7eab58ff66f68d1c3b156b017aefbe47.png)
-5. On the page displayed, click **Create** to create a protection rule, enter the domain name to protect, toggle on the intelligent CC protection switch, and click **Save**. After the rule is created, you can edit or delete it as needed.
+5. On the **CC AI Protection** page, click **Create**, enter the domain name to be protected, enable CC AI protection, select the defense status, and click **Save**.
+>? In the observation mode, protection rules are generated intelligently but don't take effect.
+
 ![](https://qcloudimg.tencent-cloud.cn/raw/2c962326fe0c61a18da9b0b577f803b9.png)
+
 6. When intelligent CC protection is enabled, protection rules are auto-generated and only effective for each attack. Once a single attack ends, the protection rules will automatically expire and be removed. If you need to make changes to your rules, you can click **View** on the right to edit.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a0a3b2ad9ea98a3e74267091c3ad628b.png)
 7. To delete a rule, click **Delete** on the right of the rule you want to remove.

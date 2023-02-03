@@ -1,3 +1,63 @@
+## November 2022
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported resilient business bandwidth</td>
+<td>Anti-DDoS Pro supports resilient business bandwidth, and the excessive part will be charged at 80 CNY/Mbps/month.</td>
+<td> 2022-11-16</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1029/36114">Billing Overview</a>
+</td>
+</tr>
+</tbody></table>
+
+## October 2022
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Optimized the instance list</td>
+<td>The instance list in the console is optimized to support filtering instances by protection pack.</td>
+<td> 2022-10-26</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1029/36121">Viewing Instance Information</a>
+</td>
+</tr>
+</tbody></table>
+
+## August 2022
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported observation mode for CC AI protection</td>
+<td>Observation mode is supported for CC AI protection, and CC AI protection is fully launched.</td>
+<td> 2022-08-25</td>
+<td> <a href="https://www.tencentcloud.com/document/product/1029/48285">Intelligent CC Protection</a>
+</td>
+</tr>
+</tbody></table>
+
 ## June 2022
 <table>
 <thead>
@@ -10,7 +70,7 @@
 </thead>
 <tbody>
 <tr>
- <tr>
+<tr>
 <td>Auto-unbinding and terminating cloud products</td>
 <td>Anti-DDoS Pro auto-detects the binding status of cloud products to determine whether to perform unbinding.</td>
 <td>June 13, 2022</td>
@@ -27,7 +87,7 @@
 </tr>
 <tr>
 <td>Protected targets: Private network CLBs and EIPs</td>
-<td>Anti-DDoS Pro supports binding and unbinding private network CLBs and EIPs.</td>
+<td>Anti-DDoS Pro supports binding and unbinding EIP-bound private network CLBs and EIPs.</td>
 <td>June 1, 2022</td>
 <td>- </td>
 </tr>
@@ -103,7 +163,6 @@
 </td>
 </tr>
 </tbody></table>
-
 
 
 ## January 2022
@@ -355,4 +414,3 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/297/37222">Domain Name Connection </a>
 </tr>
 </tbody></table>
-
