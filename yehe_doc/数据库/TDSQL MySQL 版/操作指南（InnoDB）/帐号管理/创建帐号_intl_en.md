@@ -2,7 +2,7 @@
 This document describes how to create a TencentDB for MySQL account in the console to manage and connect to the database instance.
 
 ## Directions
-1. Log in to the [TDSQL console] (https://console.cloud.tencent.com/tdsqld/instance-tdmysql). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
+1. Log in to the [TDSQL console](https://console.cloud.tencent.com/tdsqld/instance-tdmysql). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the instance management page, select **Account Management** and click **Create Account**.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/H6SZ901_5.png)
 3. In the pop-up dialog box, enter the account name, host, and password. After confirming that everything is correct, click **Next**.
