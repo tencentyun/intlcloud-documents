@@ -35,3 +35,4 @@ SDKのバージョン管理メソッドを直接呼び出すことができま�
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35858)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/34997#versioning)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#versioning)
+- [Mini Program SDK](https://www.tencentcloud.com/document/product/436/35849)
