@@ -1,5 +1,5 @@
 ## Overview
-This document describes how to use the content moderation feature provided by [Cloud Infinite (CI)](https://cloud.tencent.com/document/product/460). CI fully integrates the processing capabilities with the COS SDK.
+This document describes how to use the content moderation feature provided by [Cloud Infinite (CI)](https://www.tencentcloud.com/document/product/1045). CI fully integrates the processing capabilities with the COS SDK.
 
 >?To use the content moderation service, you need to have the permission to use CI:
 - For root accounts, click [here](https://console.cloud.tencent.com/cam/role/grant?roleName=CI_QCSRole&policyName=QcloudCOSDataFullControl,QcloudAccessForCIRole,QcloudPartAccessForCIRole&principal=eyJzZXJ2aWNlIjoiY2kucWNsb3VkLmNvbSJ9&serviceType=%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fci) for role authorization.
