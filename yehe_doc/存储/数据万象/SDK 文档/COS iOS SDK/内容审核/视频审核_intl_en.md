@@ -69,7 +69,7 @@ request.finishBlock = ^(QCloudPostVideoRecognitionResult * outputObject, NSError
 [[QCloudCOSXMLService defaultCOSXML] PostVideoRecognition:request];
 
 ```
->? For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/VideoOperation.m).
+**Note:** For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/VideoOperation.m).
 
 :::
 ::: Swift
@@ -114,7 +114,8 @@ request.finishBlock = { (result, error) in
 }
 QCloudCOSXMLService.defaultCOSXML().postVideoRecognition(request);
 ```
-> ?For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/VideoOperation.swift).
+
+**Note:** For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/VideoOperation.swift).
 :::
 </dx-tabs>
 
@@ -127,6 +128,7 @@ This API (`QCloudGetVideoRecognitionRequest`) is used to query the result of the
 > ! The COS iOS SDK version must be at least v6.0.9.
 
 #### Sample request
+
 <dx-tabs>
 ::: Objective-C
 ```objectivec
@@ -144,7 +146,7 @@ request.jobId = @"jobid";
 [[QCloudCOSXMLService defaultCOSXML] GetVideoRecognition:request];
 
 ```
->? For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/VideoOperation.m).
+**Note:** For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/VideoOperation.m).
 
 :::
 ::: Swift
@@ -163,7 +165,8 @@ request.finishBlock = { (result, error) in
 }
 QCloudCOSXMLService.defaultCOSXML().getVideoRecognition(request);
 ```
-> ?For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/VideoOperation.swift).
+
+**Note:** For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/VideoOperation.swift).
 :::
 </dx-tabs>
 
