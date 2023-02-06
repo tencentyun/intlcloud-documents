@@ -2,17 +2,17 @@
 
 云直播计费项包含基础服务费用、增值服务费用。结合腾讯云其他产品一起提供的增值功能会产生拓展服务费用。费用组成如下图：
 
-![](https://qcloudimg.tencent-cloud.cn/raw/7970d2961c95cd19a4e7568f3ea60467.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e630d73dd3753faaaf5dd3f4aef6ccf2.png)
 
 
-- [基础服务费用](#base)：使用直播（包括标准直播、快直播）后产生的直播消耗费用，标准直播和快直播支持流量或峰值带宽两种计费方式切换，慢直播仅支持流量计费方式。
+- [基础服务费用](#base)：使用直播（包括标准直播和快直播）后产生的直播消耗费用，标准直播和快直播支持流量或峰值带宽两种计费方式切换。
 - [增值服务费用](#appreciation)：使用直播转码、录制、时移、截图、鉴黄、拉流转推等增值功能，此类功能默认关闭，使用才收费。
 - [拓展服务费用](#extensions)：结合腾讯云其他产品一起提供的增值功能，由其他云产品根据各自的计费规则分别收取相关费用。
 
 [](id:base)
 ## 基础服务费用
 
-基础服务费用根据直播服务分为标准直播服务费用、快直播服务费用和慢直播服务费用。
+基础服务费用根据直播服务分为标准直播服务费用、快直播服务费用。
 
 <table>
 <tr><th width="20%">计费项</th><th width="60%">计费说明</th><th>付费方式</th></tr>
@@ -24,7 +24,7 @@
 </td>
 <td>
 <li><a href="https://www.tencentcloud.com/document/product/267/52220#live_pag">预付费资源包</a></li>
-<li><a href="https://intl.cloud.tencent.com/document/product/267/2818">后付费-日结</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/2818#flow">后付费-日结</a></li>
 <li/>后付费-月结
 </td>
 </tr><tr>
@@ -33,7 +33,7 @@
 <li/>标准直播推拉流产生的上下行带宽峰值，默认只收取下行播放费用。
 <li/>境内、境外计费标准各异。
 </td><td>
-<li/><a href="https://intl.cloud.tencent.com/document/product/267/2818">后付费-日结</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/267/2818#bandwidth">后付费-日结</a>
 <li/>后付费-月结
 </td>
 </tr><tr>
@@ -44,7 +44,7 @@
 </td>
 <td>
 <li/><a href="https://www.tencentcloud.com/document/product/267/52220#live_pag">预付费资源包</a>
-<li/><a href="https://intl.cloud.tencent.com/document/product/267/39969">后付费-日结</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/267/39969#flow">后付费-日结</a>
 <li/>后付费-月结
 </td>
 </tr><tr>
@@ -54,8 +54,10 @@
 <li/>境内、境外计费标准各异。
 </td>
 <td>
-<li/><a href="https://intl.cloud.tencent.com/document/product/267/39969">后付费-日结</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/267/39969#bandwidth">后付费-日结</a>
 <li/>后付费-月结
+</td>
+</tr><tr>
 </td>
 </tr></table>
 
@@ -80,43 +82,50 @@
 </ul></td>
 <td>
 <li><a href="https://www.tencentcloud.com/document/product/267/52220#standard_pag">预付费资源包</a></li>
-  <li><a href="https://intl.cloud.tencent.com/document/product/267/39604">后付费-日结</a></li></ul>
-	<li/>后付费-月结
+<li><a href="https://intl.cloud.tencent.com/document/product/267/39604#n_trans">后付费-日结</a></li></ul>
+<li/>后付费-月结
 </td>
 </tr><tr>
 <td>极速高清转码</td>
 <td><ul style="margin:0">
 <li/>使用直播极速高清转码功能时计费。
-<li/>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31071">极速高清转码</a> 功能时，将产生极速高清转码费用。
+<li/>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31071#C_topspeed">极速高清转码</a> 功能时，将产生极速高清转码费用。
 <li/>产生的费用按<b>转码时长计费</b>，以您输出的直播流画面尺寸的范围区间价格为计费单价。
 </ul><td>
 <li><a href="https://www.tencentcloud.com/document/product/267/52220#topspeed_pag">预付费资源包</a></li>
-<li><a href="https://intl.cloud.tencent.com/document/product/267/39604">后付费-日结</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/39604#s_trans">后付费-日结</a></li>
 <li/>后付费-月结
 </td>
 </tr><tr>
 <td>音频转码</td>
 <td>
 <li/>使用直播音频转码功能时计费。
-<li/>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31071">音频转码</a>、音频混流等功能时，均会产生音频转码费用。
+<li/>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31071#C_audio">音频转码</a>、音频混流等功能时，均会产生音频转码费用。
 <li/>产生的费用按<b>音频转码时长计费</b>。
 <td>
 <li><a href="https://www.tencentcloud.com/document/product/267/52220#standard_pag">预付费资源包</a></li>
-<li><a href="https://intl.cloud.tencent.com/document/product/267/39604">后付费-日结</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/39604#a_trans">后付费-日结</a></li>
 <li/>后付费-月结
 </td>
 </tr><tr>
-  <td colspan=2>直播录制</td>
-  <td>
-    <li>直播录制为根据录制模板生成的录制文件并存储到云点播。</li>
-    <li>录制产生的服务费用<b>按标准直播录制并发峰值路数计费</b>。</li>
-  </td>
+  <td rowspan=2>直播录制</td>
+  <td>录制费用</td>
+  <td>按直播录制并发峰值路数计费。</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39605">后付费-月结</a></td>
 </tr><tr>
-<td colspan=2>直播时移</td>
-<td>直播时移按时移总时长计费。</td>
+  <td>录制投递COS费用</td>  <td>当录制存储至COS时，按直播录制时长计费。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/39605#.E5.BD.95.E5.88.B6.E6.8A.95.E9.80.92-cos-.E6.9C.8D.E5.8A.A1">后付费-月结</a></td>
+</tr><tr>
+<td rowspan=2>直播时移</td>
+<td>时移数据写入量</td>
+<td>直播控制台可创建时移模板，当绑定推流域名推流时会产生时移数据写入量费用。</td>
 <td>
-<a href="https://www.tencentcloud.com/document/product/267/47534">后付费-日结</a>
+<a href="https://intl.cloud.tencent.com/document/product/267/2819">后付费-日结</a></td>
+</tr><tr>
+<td>时移总时长</td>
+<td>通过工单配置时移功能，使用时移将会产生时移总时长费用。</td>
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/267/39605">后付费-日结</a></td>
 </tr><tr>
 <td colspan=2>直播截图</td>
 <td>
@@ -131,29 +140,45 @@
     <li>截图产生的服务费用<b>按截图张数计费</b>，每月前1000张免费。</li>
 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39607">后付费-月结</a></td>
+</tr><tr>
+</td>
 </tr>
-<tr><td colspan=2>拉流转推</td>
-<td>拉流转推任务按任务时长计费。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/41059">后付费-日结</a>
+<tr><td rowspan=3>拉流转推</td>
+<td>拉流转推任务时长</td>
+<td>使用拉流转推任务按任务时长计费。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/41059#time">后付费-日结</a>
 </td>
 </tr><tr>
-<td colspan=2>拉流转推第三方计费</td>
+<td>拉流转推第三方计费</td>
 <td>非当前账号的云直播推流地址均为第三方地址，按转推第三方带宽计费。</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/267/41059">后付费-月结</a>
+<a href="https://intl.cloud.tencent.com/document/product/267/41059#third_part">后付费-月结</a>
+</td>
+</tr><tr>
+<td>拉流转推本地模式</td>
+<td>使用拉流转推并开启本地模式时，按增值功能计费。</td>
+<td>
+<a href="https://www.tencentcloud.com/document/product/267/2818">后付费-日结</a>
+</td>
+</tr><tr>
 </td>
 </tr>
 </table>
 
 [](id:extensions)
+
 ## 拓展服务费用
 
 <table>
 <tr><th width="20%">计费项</th><th width="60%">计费说明</th><th>付费方式</th></tr>
 <tr>
-<td>录制存储</td>
+<td>录制存储至VOD</td>
 <td>直播录制文件需存储到云点播，产生的服务费用<b>按数据的实际存储时间和存储量计费</b>，需额外支付点播存储费用。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/266/14666">云点播-按量计费</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/14666#media_storage">云点播-按量计费</a></td>
+</tr><tr>
+<td>录制存储至COS</td>
+<td>直播录制文件需存储到对象存储，产生的服务费用<b>按数据的实际存储时间和存储量计费</b>，需额外支付对象存储容量费用。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40099">对象存储-按量计费</a></td>
 </tr><tr>
 <td>截图存储</td>
 <td>直播截图和鉴黄生成的截图文件需存储到 COS，产生的服务费用<strong>按数据的实际存储时间和存储量计费</strong>，需额外支付 COS 存储费用。</td>
