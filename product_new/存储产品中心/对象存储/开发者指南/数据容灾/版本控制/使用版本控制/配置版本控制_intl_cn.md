@@ -2,7 +2,7 @@
 利用版本控制功能，您可以在存储桶中存放对象的多个版本，并且实现检索、删除和还原指定版本对象。
 了解版本控制详情信息，请参见 [版本控制概述](https://intl.cloud.tencent.com/document/product/436/19883) 文档。
 
->!只有主账号和被授权的子账号可以配置存储桶的版本控制状态。
+>! 只有主账号和被授权的子账号可以配置存储桶的版本控制状态。
 
 ## 使用方法
 
@@ -35,3 +35,4 @@
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35858)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/34997#versioning)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#versioning)
+- [小程序 SDK](https://www.tencentcloud.com/document/product/436/35849)
