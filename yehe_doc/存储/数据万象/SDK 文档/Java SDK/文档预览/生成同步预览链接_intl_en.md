@@ -5,7 +5,7 @@ This document provides an overview of APIs and SDK code samples for file process
 | API | Description |
 | ------------------------------------------------------------ | ------------------ |
 | [Generating a sync file-to-image preview URL](https://intl.cloud.tencent.com/document/product/1045/47929) | Generates a sync file-to-image preview URL. |
-| [Generating a sync file-to-HTML preview URL](https://cloud.tencent.com/document/product/460/52518) | Generates a sync file-to-HTML preview URL. |
+| [Generating a sync file-to-HTML preview URL](https://www.tencentcloud.com/document/product/1045/47938) | Generates a sync file-to-HTML preview URL. |
 
 ## Basic operations
 
