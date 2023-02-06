@@ -4,7 +4,7 @@ This document provides an overview of APIs and SDK code samples for image proces
 
 | API | Description |
 | ------------------------------------------------------------ | ---------------- |
-| Submitting image processing job | Submits an image processing job. |
+| [Submitting an image processing job](https://intl.cloud.tencent.com/document/product/436/49390) | Submits an image processing job. |
 
 
 ## Submit Image Processing Job
@@ -28,19 +28,19 @@ public Guzzle\Service\Resource\Model createMediaPicProcessJobs(array $args = arr
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is `http` by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 try {
     $result = $cosClient->createMediaPicProcessJobs(array(
-        'Bucket' => 'examplebucket-125000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
         'Tag' => 'PicProcess',
         'QueueId' => 'pcf4d6d9e5e734asd0as8d09as8d09a8d0',
         'Input' => array(
@@ -50,9 +50,11 @@ try {
             'TemplateId' => 't1648745f76c354e8ad8a09sd890ad80a8d',
             'Output' => array(
                 'Region' => $region,
-                'Bucket' => 'examplebucket-125000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
                 'Object' => 'picprocess.jpg',
             ),
+//            'UserData' => 'xxx', // The user information passed through.
+//            'JobLevel' => '0', // Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`.
         ),
         'CallBack' => '',
     ));
@@ -71,19 +73,19 @@ try {
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is `http` by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 try {
     $result = $cosClient->createMediaPicProcessJobs(array(
-        'Bucket' => 'examplebucket-125000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
         'Tag' => 'PicProcess',
         'QueueId' => 'pcf4d6d9e5e734asd0as8d09as8d09a8d0',
         'Input' => array(
@@ -96,9 +98,11 @@ try {
             ),
             'Output' => array(
                 'Region' => $region,
-                'Bucket' => 'examplebucket-125000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
                 'Object' => 'picprocess.jpg',
             ),
+//            'UserData' => 'xxx', // The user information passed through.
+//            'JobLevel' => '0', // Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`.
         ),
         'CallBack' => '',
     ));
@@ -115,12 +119,15 @@ try {
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| :----------------- | :------ | :------------------------- | :-------- | :------- |
-| Tag                | Request | Job type: PicProcess                                   | String    | Yes   |
+| :----------------- | :------ | :----------------------------------------------------------- | :-------- | :------- |
+| Tag                | Request | Job tag: PicProcess                                   | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
-| QueueId            | Request | Queue ID of the image processing job                                         | String    | Yes   |
-| CallBack           | Request | Callback address                                                | String    | No   |
+| QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
+| CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It takes priority over that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It takes priority over that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which takes priority over that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
 
 `Input` has the following sub-nodes:
 
@@ -135,18 +142,20 @@ try {
 | PicProcess         | Request.Operation | Job type parameter. Same as `Request.PicProcess` in the image processing template creation API `CreateMediaTemplate`.    | Container | No   |
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
+| UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
 
 >!
 >
-> `TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding job type parameter is used.
+> `TemplateId` is used first. If `TemplateId` is unavailable, the corresponding job type parameter is used.
 
 `Output` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------------------- | :--------------- | :----- | :------- |
-| Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
+| Region             | Request.Operation.Output | Bucket region | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Output result filename                                             | String | Yes   |
+| Object             | Request.Operation.Output | Result filename.                                             | String | Yes   |
 
 #### Sample response
 
@@ -170,8 +179,8 @@ GuzzleHttp\Command\Result Object
     [RequestId] => NjI2N2E4NTRfNzgwYzAJODIAUSIODUAU3ZQ==
     [ContentType] => application/xml
     [ContentLength] => 795
-    [Bucket] => examplebucket-125000000
-    [Location] => examplebucket-125000000.ci.ap-guangzhou.myqcloud.com/pic_jobs
+    [Bucket] => examplebucket-1250000000
+    [Location] => examplebucket-1250000000.ci.ap-guangzhou.myqcloud.com/pic_jobs
     [Response] => Array
         (
             [JobsDetail] => Array
@@ -181,7 +190,7 @@ GuzzleHttp\Command\Result Object
                     [EndTime] => -
                     [Input] => Array
                         (
-                            [BucketId] => examplebucket-125000000
+                            [BucketId] => examplebucket-1250000000
                             [Object] => test01.png
                             [Region] => ap-guangzhou
                         )
@@ -192,13 +201,15 @@ GuzzleHttp\Command\Result Object
                         (
                             [Output] => Array
                                 (
-                                    [Bucket] => examplebucket-125000000
+                                    [Bucket] => examplebucket-1250000000
                                     [Object] => picprocess.jpg
                                     [Region] => ap-guangzhou
                                 )
 
                             [TemplateId] => t1648745f76asd70as8d90as8d0aa8a09
                             [TemplateName] => PicProcess-1
+                            [UserData] => xxx
+                            [UserData] => 0
                         )
 
                     [QueueId] => pcf4d6d9e5e734d0b82eas90d8a90sdd0

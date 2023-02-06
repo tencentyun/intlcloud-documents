@@ -1,17 +1,19 @@
-## Feature Description
+## Overview
 
-This API is used to submit a video moderation job. The video moderation feature is async. You can submit a job to moderate your video files, and then use the API for [Video Moderation Callback Content](https://intl.cloud.tencent.com/document/product/436/48251) to query the moderation results.
+This API is used to submit a video moderation job. The video moderation feature is async. You can submit a job to moderate your video files, and then use the API for [Querying Video Moderation Job Result](https://intl.cloud.tencent.com/document/product/436/48250) or [Video Moderation Callback Content](https://intl.cloud.tencent.com/document/product/436/48251) to query the moderation results.
 
 The API supports the following operations:
->? 
+
+>?
 > - Moderate video files stored in COS.
 > - Moderate videos at URLs of a third-party cloud storage vendor.
 >
+
 - Automatically detect video files and recognize non-compliant content in OCR, object detection (such as object, advertising logo, and QR code), image recognition, and audio moderation dimensions based on the deep learning technology.
-- Get the detection results by setting the callback address `Callback` or calling the API for Querying Video Moderation Job Result.
-- Recognize various non-compliant scenes, including pornographic, illegal, and adverting information.
-<span id=1></span>
-- Customize moderation policies based on different business scenarios as instructed in [Setting Moderation Policy](https://intl.cloud.tencent.com/document/product/1045/52107).
+- Get the detection results by setting the callback address `Callback` or calling the API for [Querying Video Moderation Job Result](https://intl.cloud.tencent.com/document/product/1045/48255).
+- Recognize various non-compliant scenes, including pornographic, illegal, and advertising information.
+  <span id=1></span>
+- [Customize moderation policies](https://intl.cloud.tencent.com/document/product/1045/52107) based on different business scenarios.
 - Customize blocklist/allowlist image libraries to filter non-compliant content of custom types.
 
 ## Billing Description
@@ -21,7 +23,7 @@ Video moderation is divided into **video image moderation**, **video frame captu
 - Video image moderation: Based on the video frame capturing capability, this service takes video screenshots for moderation. The moderation fees are the same as those incurred by image moderation.
 - Video frame capturing: This service incurs [video frame capturing fees](https://intl.cloud.tencent.com/document/product/1045/49489).
 - Video sound moderation: This service extracts sound from the video for sound moderation. The moderation fees are the same as those incurred by audio moderation.
-- Each moderation scene is billed separately. For example, if you choose to moderate two scenes involving pornography and advertising, then **one video file** will be moderated and billed **twice**.
+- Each moderation scene is billed separately. For example, if you choose to moderate **one video file** in two scenes involving pornography and advertising, you will be charged **twice**.
 - Calling the API will incur image moderation fees, audio moderation fees, and [COS read request fees](https://intl.cloud.tencent.com/document/product/436/40100).
 - If the video files are stored in COS STANDARD_IA storage class, calling the moderation API will incur STANDARD_IA data retrieval fees as described in [Data Retrieval Fees](https://intl.cloud.tencent.com/document/product/436/40097).
 - Video moderation is not supported for objects stored in the ARCHIVE or DEEP ARCHIVE storage classes. To moderate these objects, you first need to restore them as instructed in [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633).
@@ -34,8 +36,7 @@ Video moderation is divided into **video image moderation**, **video frame captu
 
 ## SDK Recommendation
 
-CI SDK provides complete capabilities of demo, automatic integration, and signature calculation. You can easily and quickly call APIs through the SDK. For more information, see [SDK Overview](https://intl.cloud.tencent.com/document/product/1045/45578).
-
+COS SDK provides complete capabilities of demo, automatic integration, and signature calculation. You can easily and quickly call APIs through the SDK. For more information, see [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).
 
 ## Request
 
@@ -53,13 +54,13 @@ Content-Type: application/xml
 ```
 
 >? 
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -72,7 +73,6 @@ This request requires the following request body:
     <DataId></DataId>
   </Input>
   <Conf>
-    <DetectType>Porn,Ads</DetectType>
     <Snapshot>
         <Mode>Interval</Mode>
         <TimeInterval></TimeInterval>
@@ -85,7 +85,7 @@ This request requires the following request body:
 </Request>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | ---------------------- | --------- | -------- |
@@ -95,7 +95,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | ---------------- | --------- | -------- |
-| Input | Request | Video to be moderated. | Container | Yes |
+| Input              | Request | Video to be moderated.                   | Container | Yes       |
 | Conf | Request | Moderation rule configuration. | Container | Yes |
 
 `Input` has the following sub-nodes:
@@ -104,7 +104,7 @@ The nodes are as described below:
 | ------------------ | ------------- | ------------------------------------------------------------ | ------ | -------- |
 | Object | Request.Input | Name of the video file stored in the COS bucket; for example, if the file is `video.mp4` in the `test` directory, then the filename is `test/video.mp4`. | String | No |
 | Url | Request.Input | Full URL of the video file, such as `http://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/test.mp4`. Either `Object` or `Url` can be selected at a time. | String | No |
-| DataId             | Request.Input | This field will return the original content in the moderation result, which can contain up to 512 bytes. You can use this field to uniquely identify the data to be moderated in your business. | String | No |
+| DataId | Request.Input | This field will return the original content in the moderation result, which can contain up to 512 bytes. You can use this field to uniquely identify the data to be moderated in your business. | String | No |
 | UserInfo | Request.Input | Business field. | Container | No |
 
 `UserInfo` has the following sub-nodes:
@@ -127,13 +127,13 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------------ | ------------------------------------------------------------ | --------- | -------- |
-| BizType | Request.Conf | Unique identifier of the moderation policy. You can configure the scenes you want to moderate on the moderation policy page in the console, such as pornographic, adverting, and illegal information. For configuration guidelines, see [Setting Moderation Policy](#1). You can get `BizType` in the console. If `BizType` is specified, the moderation request will perform moderation based on the scenes configured in the moderation policy. If `BizType` is not specified, the default moderation policy will be used automatically. | String | No |
-| DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). This parameter will no longer be maintained in the future. You can pass in multiple types and separate them by comma, such as `Porn,Ads`. If you need to moderate more scenes, use the `BizType` parameter. | String | No |
+| BizType | Request.Conf | Unique identifier of the moderation policy. You can configure the scenes you want to moderate on the moderation policy page in the console, such as pornographic, advertising, and illegal information. For configuration guidelines, see [Setting Moderation Policy](#1). You can get `BizType` in the console. If `BizType` is specified, the moderation request will perform moderation based on the scenes configured in the moderation policy. If `BizType` is not specified, the default moderation policy will be used automatically. | String | No |
 | Snapshot           | Request.Conf | Video image moderation is implemented by taking a certain number of screenshots based on the video frame capturing capability and then moderating the screenshots one by one. This parameter is used to specify the configuration of video frame capturing. | Container | Yes |
 | Callback           | Request.Conf | Callback address, which must start with `http://` or `https://`.              | String    | No       |
 | CallbackVersion | Request.Conf | Structure of the callback content. Valid values: `Simple` (the callback content contains basic information), `Detail` (the callback content contains detailed information). Default value: `Simple`. | String | No |
 | DetectContent | Request.Conf | Whether to moderate video sound. Valid values: `0` (moderates the video image only), `1` (moderates both the video image and video sound). Default value: `0`. | Integer | No |
 | CallbackType       | Request.Conf | Callback segment type. Valid values: `1` (calls back all captured frames and audio segments); `2` (calls back only non-compliant captured frames and audio segments). Default value: `1`. | Integer | No |
+| Freeze             | Request.Conf | Automatic freezing configuration, which can be used to automatically freeze the results with the specified moderation score. | Container | No |
 
 `Snapshot` has the following sub-nodes:
 
@@ -141,13 +141,22 @@ The nodes are as described below:
 | ------------------ | :-------------------- | ------------------------------------------------------------ | --------- | -------- |
 | Mode               | Request.Conf.Snapshot | Frame capturing mode. Valid values: `Interval` (interval mode), `Average` (average mode), `Fps` (fixed frame rate mode). <ul  style="margin: 0;"><li>`Interval` mode: One frame will be captured every `TimeInterval` seconds. If `Count` is set but `TimeInterval` is not, all frames will be captured to generate a total of `Count` images. </li><li>`Average` mode: The `TimeInterval` parameter does not take effect in this mode. The `Count` parameter should be used, indicating to capture a total of `Count` images at an average interval in the entire video. </li><li>`Fps` mode: `TimeInterval` indicates how many frames to capture per second. If `TimeInterval` is not set, all frames will be captured to generate a total of `Count` images. </li></ul> | String | No |
 | Count              | Request.Conf.Snapshot | The number of captured frames. Value range: (0, 10000]. | Integer | Yes |
-| TimeInterval       | Request.Conf.Snapshot | Video frame capturing frequency. Value range: (0.000, 60.000] seconds. The value supports the float format, accurate to the millisecond. | Float  | No |
+| TimeInterval       | Request.Conf.Snapshot | Video frame capturing frequency. Value range: (0, 60] seconds. The value supports the float format, accurate to the millisecond. | Float  | No       |
+
+`Freeze` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| :----------------- | :----------- | :----------------------------------------------------------- | :----- | :--- |
+| PornScore        | Request.Conf.Freeze | The threshold at or above which automatic freezing will be performed for the porn moderation result. Value range: [0,100]. If this field is left empty (default value), automatic freezing will not be performed. | Integer | No   |
+| AdsScore        | Request.Conf.Freeze | The threshold at or above which automatic freezing will be performed for the ad moderation result. Value range: [0,100]. If this field is left empty (default value), automatic freezing will not be performed. | Integer | No   |
+
+For freezing parameters in other moderation scenes, [contact the customer service](https://intl.cloud.tencent.com/contact-sales).
 
 ## Response
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -165,7 +174,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :--------------------------- | :-------- |
@@ -189,9 +198,9 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
+No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
-## Samples
+## Examples
 
 #### Request
 

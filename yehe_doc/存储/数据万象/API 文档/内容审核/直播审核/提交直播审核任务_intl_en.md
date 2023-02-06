@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
 
 This API is used to submit a live stream moderation job. The live stream moderation feature is async. You can submit a job to moderate your live streams, and then use the API for querying live stream moderation job result to query the moderation results.
 
@@ -11,9 +11,9 @@ The API supports the following operations:
 
 - Automatically detect live streams and recognize non-compliant content in OCR, object detection (such as object, advertising logo, and QR code), image recognition, and audio moderation dimensions based on the deep learning technology.
 - Get the detection results by setting the callback address `Callback` or calling the API for [Querying Live Stream Moderation Job Result](https://intl.cloud.tencent.com/document/product/436/48279).
-- Recognize various non-compliant scenes, including pornographic, illegal, and adverting information.
+- Recognize various non-compliant scenes, including pornographic, illegal, and advertising information.
 <span id=1></span>
-- Customize moderation policies based on different business scenarios.
+- [Customize moderation policies](https://intl.cloud.tencent.com/document/product/1045/52107) based on different business scenarios.
 - Customize risk libraries to filter non-compliant content of custom types.
 
 ## Billing Description
@@ -35,6 +35,10 @@ Live stream moderation is divided into **live stream image moderation** and **li
 - Supported live streaming protocols: RTMP, HLS, HTTP, HTTPS.
 - Default limit on the number of concurrent moderation channels: 10. When this limit is exceeded, an error will be returned.
 
+## SDK Recommendation
+
+COS SDK provides complete capabilities of demo, automatic integration, and signature calculation. You can easily and quickly call APIs through the SDK. For more information, see [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).
+
 ## Request
 
 #### Sample request
@@ -50,13 +54,14 @@ Content-Type: application/xml
 <body>
 ```
 
->? 
->- Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->- When this feature is used by a sub-account, relevant permissions must be granted.
+> ?
+>
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+>- When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -77,7 +82,7 @@ This request requires the following request body:
 </Request>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | ------------------------ | --------- | -------- |
@@ -90,6 +95,7 @@ The nodes are as described below:
 | Type               | Request | Moderation job type, which is fixed at `live_video` for live stream moderation. | String    | Yes       |
 | Input              | Request | Live stream to be moderated.                   | Container | Yes       |
 | Conf | Request | Moderation rule configuration. | Container | Yes |
+| StorageConf        | Request | Dumping configuration of the live stream.                   | Container | No       |
 
 `Input` has the following sub-nodes:
 
@@ -120,15 +126,22 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------------ | ------------------------------------------------------------ | ------- | -------- |
-| BizType | Request.Conf | Unique identifier of the moderation policy. You can configure the scenes you want to moderate on the moderation policy page in the console, such as pornographic, adverting, and illegal information. For configuration guidelines, see [Setting Moderation Policy](#1). You can get `BizType` in the console. If `BizType` is specified, the moderation request will perform moderation based on the scenes configured in the moderation policy. <br/>If `BizType` is not specified, the default moderation policy will be used automatically. | String | Yes |
+| BizType | Request.Conf | Unique identifier of the moderation policy. You can configure the scenes you want to moderate on the moderation policy page in the console, such as pornographic, advertising, and illegal information. For configuration guidelines, see [Setting Moderation Policy](#1). You can get `BizType` in the console. If `BizType` is specified, the moderation request will perform moderation based on the scenes configured in the moderation policy. If `BizType` is not specified, the default moderation policy will be used automatically. | String | Yes |
 | Callback           | Request.Conf | Callback address, which must start with `http://` or `https://`.              | String    | No       |
 | CallbackType       | Request.Conf | Callback segment type. Valid values: `1` (calls back all captured frames and audio segments); `2` (calls back only non-compliant captured frames and audio segments). Default value: `1`. | Integer | No |
+
+`StorageConf` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| ----------- | ------------------- | ------------------------------------------------------------ | ------- | -------- |
+| Path        | Request.StorageConf | The path where to dump the live stream. The TS and M3U8 files of the live stream will be saved in this directory of the bucket. The saved M3U8 file will be named Path/{$JobId}.m3u8, and the saved TS file will be named Path/{$JobId}-{$Realtime}.ts, where `Realtime` is the 17-digit time of `year, month, day, hour, minute, second, and millisecond`. | String | No |
+
 
 ## Response
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -146,7 +159,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :----------------------------- | :-------- |
@@ -170,9 +183,9 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
-## Samples
+## Examples
 
 #### Request
 

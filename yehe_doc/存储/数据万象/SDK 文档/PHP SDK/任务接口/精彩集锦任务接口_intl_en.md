@@ -4,10 +4,10 @@ This document provides an overview of APIs and SDK code samples for submitting a
 
 | API | Description |
 | ------------- |  ---------------------- |
-| Submitting montage job | Submits montage job |
+| [Submitting a video montage job](https://intl.cloud.tencent.com/document/product/436/49060) | Submits a video montage job. |
 
 
-## Submitting Montage Job
+## Submitting Video Montage Job
 
 #### Feature description
 
@@ -28,19 +28,19 @@ public Guzzle\Service\Resource\Model createMediaVideoMontageJobs(array $args = a
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is `http` by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 try {
     $result = $cosClient->createMediaVideoMontageJobs(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
         'Tag' => 'VideoMontage',
         'QueueId' => 'p81e648af2aeexxxxxxxxxxxxxxxxxxx',
         'Input' => array(
@@ -50,12 +50,15 @@ try {
             'TemplateId' => 't1fcc3770199e04737axxxxxxxxxxxxxx',
             'Output' => array(
                 'Region' => $region,
-                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
                 'Object' => 'VideoMontage.mp4',
             ),
+//            'UserData' => 'xxx', // The user information passed through.
+//            'JobLevel' => '0', // Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`.
         ),
+        'CallBack' => '',
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -70,19 +73,19 @@ try {
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is `http` by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 try {
     $result = $cosClient->createMediaVideoMontageJobs(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
         'Tag' => 'VideoMontage',
         'QueueId' => 'p81e648af2aeexxxxxxxxxxxxxxxxxxx',
         'Input' => array(
@@ -112,12 +115,15 @@ try {
             ),
             'Output' => array(
                 'Region' => $region,
-                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
                 'Object' => 'VideoMontage.mp4',
             ),
+//            'UserData' => 'xxx', // The user information passed through.
+//            'JobLevel' => '0', // Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`.
         ),
+        'CallBack' => '',
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -131,12 +137,15 @@ try {
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| :----------------- | :------ | :--------------------------- | :-------- | :------- |
-| Tag                | Request | Job type: VideoMontage                                | String    | Yes   |
+| :----------------- | :------ | :----------------------------------------------------------- | :-------- | :------- |
+| Tag                | Request | Job tag: VideoMontage                                | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Callback address                                                | String    | No   |
+| CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It takes priority over that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It takes priority over that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which takes priority over that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
 
 `Input` has the following sub-nodes:
 
@@ -144,34 +153,39 @@ try {
 | :----------------- | :------------ | :--------- | :----- | :------- |
 | Object             | Request.Input | Media filename | String | Yes   |
 
+
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| :----------------- | :---------------- | :------------------- | :-------- | :------- |
+| :----------------- | :---------------- | :----------------------------------------------------------- | :-------- | :------- |
 | VideoMontage       | Request.Operation | Video montage template parameter                                         | Container | No   |
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
+| UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
 
-> !
+>!
 >
-> `TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding job type parameter is used.
+> `TemplateId` is used first. If `TemplateId` is unavailable, `VideoMontage` is used.
 
 `VideoMontage` has the following sub-nodes:
 
-| Node Name (Keyword) | Parent Node | Description |
-| :----------------- | :----------------------------- | :----------------------------------------------------------- |
-| Container          | Request.Operation.VideoMontage | Same as `Request.Container` in the video montage template creation API `CreateMediaTemplate`. |
-| Video              | Request.Operation.VideoMontage | Same as `Request.Video` in the video montage template creation API `CreateMediaTemplate`.     |
-| Duration           | Request.Operation.VideoMontage | Same as `Request.Duration` in the video montage template creation API `CreateMediaTemplate`.  |
-| Audio              | Request.Operation.VideoMontage | Same as `Request.Audio` in the video montage template creation API `CreateMediaTemplate`.     |
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| :----------------- | :-------------------------- | :----------------------------------------------------------- | :------------- | :--- |
+| TimeInterval          | Request.Operation.Transcode | Same as `Request.TimeInterval` in the transcoding template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49911).    | Container | No   |
+| Container          | Request.Operation.Transcode | Same as `Request.Container` in the transcoding template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49911).    | Container | No   |
+| Video          | Request.Operation.Transcode | Same as `Request.Video` in the transcoding template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49911).    | Container | No   |
+| Audio          | Request.Operation.Transcode | Same as `Request.Audio` in the transcoding template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49911).    | Container | No   |
+| TransConfig          | Request.Operation.Transcode | Same as `Request.TransConfig` in the transcoding template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49911).    | Container | No   |
+| AudioMix           | Request.Operation.Transcode     | Audio mix parameter as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945).                                    | Container array | No |
 
 `Output` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------------------- | :--------------- | :----- | :------- |
-| Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
+| Region             | Request.Operation.Output | Bucket region | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Output result filename                                             | String | Yes   |
+| Object             | Request.Operation.Output | Result file name                                             | String | Yes   |
 
 #### Sample response
 
@@ -224,6 +238,8 @@ GuzzleHttp\Command\Result Object
 
                             [TemplateId] => t1fcc3770199e0zx7cz897c9zxc9b
                             [TemplateName] => video-montage-1
+                            [UserData] => xxx
+                            [JobLevel] => 0
                         )
 
                     [QueueId] => p81e648af2aezx7c9z7xc98zx7c98e086

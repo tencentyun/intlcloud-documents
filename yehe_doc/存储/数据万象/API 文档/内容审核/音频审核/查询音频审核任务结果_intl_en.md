@@ -1,14 +1,13 @@
-## Feature Description
+## Overview
 
 This API is used to query the status or result of an audio moderation job.
 
->? Audio moderation results are retained for three months, so you can query moderation results in the past three months through this API.
+>? Audio moderation results are retained for one month, so you can query moderation results in the past month through this API.
 >
 
 ## SDK Recommendation
 
-CI SDK provides complete capabilities of demo, automatic integration, and signature calculation. You can easily and quickly call APIs through the SDK. For more information, see [SDK Overview](https://intl.cloud.tencent.com/document/product/1045/45578).
-
+COS SDK provides complete capabilities of demo, automatic integration, and signature calculation. You can easily and quickly call APIs through the SDK. For more information, see [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).
 
 ## Request
 
@@ -22,13 +21,13 @@ Authorization: <Auth String>
 ```
 
 >? 
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
->
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -38,7 +37,7 @@ This request does not have a request body.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -77,7 +76,7 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :--------------- | :-------- |
@@ -98,11 +97,11 @@ The nodes are as described below:
 | Message | Response.JobsDetail | Error message, which will be returned only if `State` is `Failed`. | String |
 | DataId | Response.JobsDetail | This field will return the original content in the moderation result, which can contain up to 512 bytes. You can use this field to uniquely identify the data to be moderated in your business. | String |
 | JobId | Response.JobsDetail | ID of the audio moderation job. | String |
-| State              | Response.JobsDetail | Status of the audio moderation job. Valid values: `Submitted`, `Success`, `Failed`, `Auditing`. | String |
+| State              | Response.JobsDetail | Status of the audio moderation job. Valid values: Submitted, Success, Failed, Auditing. | String |
 | CreationTime       | Response.JobsDetail | Creation time of the audio moderation job. | String |
 | Object             | Response.JobsDetail | If the moderated audio file is a file stored in COS, this field indicates its filename. | String |
 | Url                | Response.JobsDetail | If the moderated audio file is at a URL, this field indicates the URL. | String |
-| Label | Response.JobsDetail | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. Returned values: `Normal`, `Porn`, `Ads`, and other types of unsafe or inappropriate content. | String |
+| Label | Response.JobsDetail | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. Return values: `Normal`, `Porn`, `Ads`, and other types of unsafe or inappropriate content. | String |
 | Result | Response.JobsDetail | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results based on your business needs. Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer |
 | AudioText          | Response.JobsDetail | This field is used to return the recognized text content of the audio file.                 | String  |
 | PornInfo | Response.JobsDetail | The moderation result of the **pornographic information** moderation scene. | Container |
@@ -110,24 +109,28 @@ The nodes are as described below:
 | Section            | Response.JobsDetail | When the audio is too long, it will be segmented. This field is used to return the moderation result of an audio segment, mainly including the start time and audio moderation result. | Container Array |
 | UserInfo           | Response.JobsDetail | Business field. This field will not exist if `UserInfo` is not set during job creation.                           | Container |
 | ListInfo           | Response.JobsDetail | Blocklist/Allowlist status of the account.                                          | Container       |
+| ForbidState        | Response.JobsDetail | If you set automatic freezing, this field indicates the status of the audio file. `0`: not frozen; `1`: frozen, `2`: file moved. | Integer |
 
 `PornInfo` and `AdsInfo` have the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------------------------ | :----------------------------------------------------------- | :------ |
-| HitFlag            | Response.JobsDetail.\*Info | The moderation result returned for the moderation scene. Returned values: `0` (normal); `1` (confirmed as a violation of the current scene); `2` (suspected as a violation of the current scene).     | Integer |
+| HitFlag            | Response.JobsDetail.\*Info | The moderation result returned for the moderation scene. Return values: `0` (normal); `1` (confirmed as a violation of the current scene); `2` (suspected as a violation of the current scene).     | Integer |
 | Score              | Response.JobsDetail.\*Info | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. For example, `Porn 99` means that the content is very likely to be pornographic. | Integer |
-| Label              | Response.JobsDetail.\*Info | Result tag of this moderation job. If a sensitive keyword is hit, the keyword will be returned in this field. | String  |
+| Label              | Response.JobsDetail.\*Info | Overall result tag of this moderation job. If a sensitive keyword is hit, the keyword will be returned in this field. | String  |
+| Category | Response.JobsDetail.\*Info | The specific hit moderation type. Note: This field may return null. | String |
+SubLabel | Response.JobsDetail.\*Info | The specific sub-tag hit by the moderation job. Note: This field may return null. | String |
 
 `Section` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :-------------------------- | :----------------------------------------------------------- | :-------- |
-| Url                | Response.JobsDetail.Section | URL of the current audio segment, at which you can get the content of the segment. It must be a standard URL. Note: Each URL is valid for two hours. If you need to view the data after two hours, initiate a new query request. | String |
+| Url                | Response.JobsDetail.Section | URL of the current audio segment, at which you can get the content of the segment. It must be a standard URL. Note: Each URL is valid for 2 hours. If you need to view the data after 2 hours, initiate a new query request. | String |
 | Text               | Response.JobsDetail.Section | This field is used to return the ASR text recognition result of the current audio segment. | String |
 | OffsetTime         | Response.JobsDetail.Section | This field is used to return the time where the current audio segment is in the entire audio in milliseconds, such as 5000 (i.e., 5000 milliseconds after the audio starts). | Integer |
 | Duration           | Response.JobsDetail.Section | Duration of the current audio segment in milliseconds. | Integer |
-| Label | Response.JobsDetail.Section | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. Returned values: `Normal`, `Porn`, `Ads`, and other types of unsafe or inappropriate content. | String |
+| Label | Response.JobsDetail.Section | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. Return values: `Normal`, `Porn`, `Ads`, and other types of unsafe or inappropriate content. | String |
+| SubLabel | Response.JobsDetail | The specific sub-tag hit by the moderation job. Note: This field may return null. | String |
 | Result             | Response.JobsDetail.Section | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results based on your business needs. Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer   |
 | PornInfo | Response.JobsDetail.Section | The moderation result of the **pornographic information** moderation scene. | Container |
 | AdsInfo | Response.JobsDetail.Section | The moderation result of the **advertising information** moderation scene. | Container |
@@ -136,9 +139,9 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :-------------------------------- | :----------------------------------------------------------- | :----------- |
-| HitFlag            | Response.JobsDetail.Section.\*Info | The moderation result returned for the moderation scene. Returned values: `0` (normal); `1` (confirmed as a violation of the current scene); `2` (suspected as a violation of the current scene).      | Integer      |
+| HitFlag            | Response.JobsDetail.Section.\*Info | The moderation result returned for the moderation scene. Return values: `0` (normal); `1` (confirmed as a violation of the current scene); `2` (suspected as a violation of the current scene).      | Integer      |
 | Score              | Response.JobsDetail.Section.\*Info | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. For example, `Porn 99` means that the content is very likely to be pornographic. | Integer      |
-| Category | Response.JobsDetail.Section.\*Info | This field indicates the specific moderation category hit; for example, `Sexy` presents the sexy category in the `Porn` tag. It may be null, indicating that no category is hit or there is no relevant category. | String |
+| Category | Response.JobsDetail.Section.\*Info | This field is a subset of `Label`, indicating the specific moderation category hit; for example, `Sexy` represents the sexy category in the `Porn` tag. | String |
 | Keywords           | Response.JobsDetail.Section.\*Info | The sensitive keyword hit by the moderation job. Nothing will be returned if there is none. | String Array |
 | LibResults         | Response.JobsDetail.Section.\*Info | This field returns results based on recognition against the risk library. Note: This field will not be returned if no samples in the risk library are hit. | Container Array |
 
@@ -146,9 +149,9 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :-------------------------------- | :----------------------------------------------------------- | :----- |
-| LibType            | Response.JobsDetail.Section.\*Info.LibResults | Type of the hit risk library. Valid values: `1` (preset blocklist/allowlist library), `2` (custom risk library). | Integer |
+| LibType            | Response.JobsDetail.Section.\*Info.LibResults | Type of the hit risk library. Valid values: `1` (preset risk library); `2` (custom risk library). | Integer      |
 | LibName            | Response.JobsDetail.Section.\*Info.LibResults | Name of the hit risk library. | String |
-| Keywords           | Response.JobsDetail.Section.\*Info.LibResults | Keywords hit in the library. There may be multiple returned values representing multiple hit keywords. | String Array |
+| Keywords           | Response.JobsDetail.Section.\*Info.LibResults | Keywords hit in the library. There may be multiple return values representing multiple hit keywords. | String Array |
 
 `UserInfo` has the following sub-nodes:
 
@@ -182,9 +185,9 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
+No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
-## Samples
+## Examples
 
 #### Request
 

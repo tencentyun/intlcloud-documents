@@ -1,27 +1,37 @@
-## Feature Description
+## Overview
 
-This API is used to submit a file moderation job. The file moderation feature is async. You can submit a job to moderate your files, and then use the API for [querying file moderation job result](https://intl.cloud.tencent.com/document/product/1045/52122) or [file moderation callback content](https://intl.cloud.tencent.com/document/product/1045/52123) to query the moderation results.
+This API is used to submit a file moderation job. The file moderation feature is async. You can submit a job to moderate your files, and then use the API for [Querying File Moderation Job Result](https://intl.cloud.tencent.com/document/product/1045/52122) or [File Moderation Callback Content](https://intl.cloud.tencent.com/document/product/1045/52123) to query the moderation results.
 
 >?
 > - Moderate files stored in COS.
 > - Moderate files at URLs of a third-party cloud storage vendor.
->- Currently supported input file types include:
->  - Presentation files: PPTX, PPT, POT, POTX, PPS, PPSX, DPS, DPT, PPTM, POTM, PPSM.
->  - Text files: DOC, DOT, WPS, WPT, DOCX, DOTX, DOCM, DOTM.
->  - Spreadsheet files: XLS, XLT, ET, ETT, XLSX, XLTX, CSV, XLSB, XLSM, XLTM, ETS.
->  - PDF files.
->   - Other files: TXT, LOG, HTM, HTML, LRC, C, CPP, H,  ASM, S, JAVA, ASP, BAT, BAS, PRG, CMD, RTF, XML.
->- A spreadsheet file may be split into multiple pages, with multiple images generated.
->- The input file size cannot exceed 200 MB.
->- The number of pages in the input file cannot exceed 5,000.
-><span id=1></span>
->- Customize moderation policies based on different business scenarios as instructed in [Setting Moderation Policy](https://intl.cloud.tencent.com/document/product/1045/52107).
->
+
+- Automatically detect files and recognize non-compliant content in OCR and image recognition dimensions by converting file pages into images based on the deep learning technology.
+- Get the detection results by setting the callback address `Callback` or calling the `DescribeAuditingTextJob` API as described in [Querying File Moderation Job Result](https://intl.cloud.tencent.com/document/product/1045/52122).
+- Recognize various non-compliant scenes, including pornographic, illegal, and advertising information.
+- [Customize moderation policies](https://intl.cloud.tencent.com/document/product/1045/52107) based on different business scenarios.
+
+## Billing Description
+File moderation fees include:
+- File page moderation: Based on the file-to-image conversion capability, a file is converted into multiple images by page for moderation, and then the text content is recognized through the image OCR technology. The moderation fees are the same as those of image moderation.
+- File-to-image conversion: Corresponding [file-to-image conversion fees](https://intl.cloud.tencent.com/document/product/1045/49490) will be incurred.
+- Each moderation scene is billed separately. For example, if you choose to moderate **one file** in two scenes involving pornography and advertising, you will be charged **twice**.
+- Calling the API will incur image moderation fees and COS read request fees as described in [Request Fees](https://intl.cloud.tencent.com/document/product/436/40100).
+- If the files are stored in COS STANDARD_IA storage class, calling the moderation API will incur STANDARD_IA data retrieval fees as described in [Data Retrieval Fees](https://intl.cloud.tencent.com/document/product/436/40097).
+- Image moderation is not supported for objects stored in the ARCHIVE or DEEP ARCHIVE storage classes. To moderate these objects, you first need to restore them as instructed in [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633).
+
+## Restrictions
+The input file cannot exceed 200 MB in size or 5,000 pages.
+Currently, file types supported for moderation include:
+- Presentation files: PPTX, PPT, POT, POTX, PPS, PPSX, DPS, DPT, PPTM, POTM, PPSM.
+- Text files: DOC, DOT, WPS, WPT, DOCX, DOTX, DOCM, DOTM.
+- Spreadsheet files: XLS, XLT, ET, ETT, XLSX, XLTX, CSV, XLSB, XLSM, XLTM, ETS. A spreadsheet file may be split into multiple pages, with multiple images generated.
+- PDF files.
+- Other files: TXT, LOG, HTM, HTML, LRC, C, CPP, H, ASM, S, JAVA, ASP, BAT, BAS, PRG, CMD, RTF, XML.
 
 ## SDK Recommendation
 
 CI SDK provides complete capabilities of demo, automatic integration, and signature calculation. You can easily and quickly call APIs through the SDK. For more information, see [SDK Overview](https://intl.cloud.tencent.com/document/product/1045/45578).
-
 
 ## Request
 
@@ -39,13 +49,13 @@ Content-Type: application/xml
 ```
 
 >? 
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -59,14 +69,13 @@ This request requires the following request body:
          <DataId></DataId>
       </Input>
       <Conf>
-         <DetectType></DetectType>
          <Callback></Callback>
          <BizType></BizType>
       </Conf>
 </Request>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----- | :------------------- | :-------- | :------- |
@@ -76,7 +85,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :------ | :------------- | :-------- | :------- |
-| Input | Request | Content to be moderated. | Container | Yes |
+| Input              | Request | Content to be moderated.                   | Container | Yes       |
 | Conf | Request | Moderation rule configuration. | Container | Yes |
 
 `Input` has the following sub-nodes:
@@ -86,7 +95,7 @@ The nodes are as described below:
 | Object | Request.Input | Name of the file stored in the COS bucket; for example, if the file is `test.doc` in the `test` directory, then the filename is `test/test.doc`. Either `Object` or `Url` can be selected at a time. | String | No |
 | Url | Request.Input | Full URL of the file, such as `http://www.example.com/doctest.doc`. Either `Object` or `Url` can be selected at a time. | String | No |
 | Type | Request.Input | File type. If this parameter is not specified, the file extension will be used as the type by default, such as DOC, DOCX, PPT, and PPTX. <br>If the file has no extension, this field must be specified; otherwise, moderation will fail. | String | No |
-| DataId             | Request.Input | This field will return the original content in the moderation result, which can contain up to 512 bytes. You can use this field to uniquely identify the data to be moderated in your business. | String | No |
+| DataId | Request.Input | This field will return the original content in the moderation result, which can contain up to 512 bytes. You can use this field to uniquely identify the data to be moderated in your business. | String | No |
 | UserInfo | Request.Input | Business field. | Container | No |
 
 `UserInfo` has the following sub-nodes:
@@ -100,20 +109,34 @@ The nodes are as described below:
 | Room              | Request.Input.UserInfo | Business `Room`, which can contain up to 128 bytes.                          | String | No       |
 | IP                | Request.Input.UserInfo | Business `IP`, which can contain up to 128 bytes.                            | String | No       |
 | Type              | Request.Input.UserInfo | Business `Type`, which can contain up to 128 bytes.                          | String | No       |
+| ReceiveTokenId    | Request.Input.UserInfo | Business `ReceiveTokenId`, which can contain up to 128 bytes.                      | String | No       |
+| Gender            | Request.Input.UserInfo | Business `Gender`, which can contain up to 128 bytes.                      | String | No       |
+| Level             | Request.Input.UserInfo | Business `Level`, which can contain up to 128 bytes.                      | String | No       |
+| Role             | Request.Input.UserInfo | Business `Role`, which can contain up to 128 bytes.                      | String | No       |
 
 `Conf` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------- | :----------------------------------------------------------- | :----- | :------- |
-| BizType | Request.Conf | Unique identifier of the moderation policy. You can configure the scenes you want to moderate on the moderation policy page in the console, such as pornographic, adverting, and illegal information. For configuration guidelines, see [Setting Public Moderation Policy](#1). You can get `BizType` in the console. If `BizType` is specified, the moderation request will perform moderation based on the scenes configured in the moderation policy. </br>If `BizType` is not specified, the default moderation policy will be used automatically. | String | No |
-| DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). This parameter will no longer be maintained in the future. You can pass in multiple types and separate them by comma, such as `Porn,Ads`. If you need to moderate more scenes, use the `BizType` parameter. | String | No |
+| BizType | Request.Conf | Unique identifier of the moderation policy. You can configure the scenes you want to moderate on the moderation policy page in the console, such as pornographic, advertising, and illegal information. For configuration guidelines, see [Setting Public Moderation Policy](#1). You can get `BizType` in the console. If `BizType` is specified, the moderation request will perform moderation based on the scenes configured in the moderation policy. </br>If `BizType` is not specified, the default moderation policy will be used automatically. | String | No |
 | Callback | Request.Conf | The moderation result can be sent to your callback address in the form of a callback. Addresses starting with `http://` or `https://` are supported, such as `http://www.callback.com`.  | String | No |
+| CallbackType       | Request.Conf | Callback segment type. Valid values: `1` (calls back all pages); `2` (calls back only non-compliant pages). Default value: `1`. | Integer | No |
+| Freeze             | Request.Conf | This field can be used to set automatic freezing for files based on the moderation score. It takes effect only if the file moderated in `input` is an `object`. | Container | No |
+
+`Freeze` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| :----------------- | :----------- | :----------------------------------------------------------- | :----- | :--- |
+| PornScore        | Request.Conf.Freeze | The threshold at or above which automatic freezing will be performed for the porn moderation result. Value range: [0,100]. If this field is left empty (default value), automatic freezing will not be performed. | Integer | No   |
+| AdsScore        | Request.Conf.Freeze | The threshold at or above which automatic freezing will be performed for the ad moderation result. Value range: [0,100]. If this field is left empty (default value), automatic freezing will not be performed. | Integer | No   |
+
+For freezing parameters in other moderation scenes, [contact the customer service](https://intl.cloud.tencent.com/contact-sales).
 
 ## Response
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -131,7 +154,7 @@ The response body returns **application/xml** data. The following contains all t
 </Request>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :--------------------------------- | :-------- |
@@ -155,9 +178,9 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
+No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
-## Samples
+## Examples
 
 #### Request
 

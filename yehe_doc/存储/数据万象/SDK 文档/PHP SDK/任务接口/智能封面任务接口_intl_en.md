@@ -4,7 +4,7 @@ This document provides an overview of APIs and SDK code samples for submitting a
 
 | API | Description |
 | ------------- |  ---------------------- |
-| Submitting intelligent thumbnail job | Submits intelligent thumbnail job |
+| [Submitting an intelligent thumbnail job](https://intl.cloud.tencent.com/document/product/436/49054) | Submits an intelligent thumbnail job. |
 
 
 ## Submitting Intelligent Thumbnail Job
@@ -26,34 +26,47 @@ public Guzzle\Service\Resource\Model createMediaSmartCoverJobs(array $args = arr
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is `http` by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 try {
-    // Submit an intelligent thumbnail job: https://cloud.tencent.com/document/product/436/54017
+    // Submit an intelligent thumbnail job. For more information, visit https://intl.cloud.tencent.com/document/product/436/49054.
     $result = $cosClient->createMediaSmartCoverJobs(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
         'Tag' => 'SmartCover',
         'QueueId' => 'p81e648afxxxxxxxxxxxxxxxxx',
         'Input' => array(
             'Object' => 'video01.mp4'
         ),
         'Operation' => array(
+//            'TemplateId' => '', // Use a template
+            'SmartCover' => array(
+                'Format' => '',
+                'Width' => '',
+                'Height' => '',
+                'Count' => '',
+                'DeleteDuplicates' => '',
+            ),
             'Output' => array(
                 'Region' => $region,
-                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
                 'Object' => 'SmartCover-${Number}.jpg',
             ),
+//            'UserData' => 'xxx', // The user information passed through.
+//            'JobLevel' => '0', // Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`.
         ),
+        'CallBack' => '',
+//        'CallBackFormat' => '',
+//        'CallBackType' => '',
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -67,11 +80,14 @@ try {
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :------ | :----------------------------------------------------------- | :-------- | :------- |
-| Tag                | Request | Job type. Valid values: Transcode (transcoding), Animation (animated image), SmartCover (intelligent thumbnail), Snapshot (screenshot), Concat (splicing)                                 | String    | Yes   |
+| Tag                | Request | Job tag: SmartCover                                   | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
-| Operation          | Request | Operation rule. Up to six operation rules are supported.                                                | Container | Yes   |
+| Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Callback address                                                | String    | No   |
+| CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It takes priority over that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It takes priority over that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which takes priority over that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
 
 `Input` has the following sub-nodes:
 
@@ -79,12 +95,30 @@ try {
 | :----------------- | :------------ | :--------- | :----- | :------- |
 | Object             | Request.Input | Media filename | String | Yes   |
 
+
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| :----------------- | :---------------- | :------------------------------------ | :-------- | :------- |
-| SmartCover                   | Request.Operation | This node is valid only when `Tag` is `SmartCover`. Currently, it is null.        | Container | No   |
+| :----------------- | :---------------- | :----------------------------------------------------------- | :-------- | :------- |
+| TemplateId         | Request.Operation | Intelligent thumbnail template ID | String | No       |
+| SmartCover                   | Request.Operation | Thumbnail configuration        | Container | No   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
+| UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
+
+>?
+>
+> If both `TemplateId` and `SmartCover` are set, `TemplateId` will be used first.
+
+`SmartCover` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Default Value | Constraints |
+| :----------------- | :--------------------------- | :----------- | :----- | :------- | :----- | :--------------------------------- |
+| Format             | Request.Operation.SmartCover | Thumbnail image type.    | String | Yes  | None | png, jpg, webp  |
+| Width              | Request.Operation.SmartCover | Thumbnail image width    | String | Yes  | None | 1. Value range: [128, 4096]. 2. Unit: px. |
+| Height             | Request.Operation.SmartCover | Thumbnail image height    | String | Yes  | None | 1. Value range: [128, 4096]. 2. Unit: px. |
+| Count              | Request.Operation.SmartCover | Number of thumbnails.        | String | No  | 3 | 1. Value range: [1, 10]. |
+| DeleteDuplicates   | Request.Operation.SmartCover | Whether to deduplicate thumbnails.    | String | No  | false | true/false |
 
 `Output` has the following sub-nodes:
 
@@ -92,7 +126,7 @@ try {
 | :----------------- | :----------------------- | :----------------------------------------------------------- | :----- | :------- |
 | Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Result filename. **If the job type is `SmartCover`, ${Number} must be included in the filename.** For example, if `Object` is `my-new-cover-${Number}.jpg`, and there are three result files, the output result filenames are as follows: my-new-cover-0.jpg, my-new-cover-1.jpg, my-new-cover-2.jpg | String | Yes   |
+| Object             | Request.Operation.Output | Result filename. <br/>**${Number} must be included in the filename.**<br/> For example, if `Object` is `my-new-cover-${Number}.jpg`, and there are three result files, the output result filenames are as follows: <br/>my-new-cover-0.jpg<br/>my-new-cover-1.jpg<br/>my-new-cover-2.jpg | String | Yes   |
 
 #### Sample response
 
@@ -151,7 +185,8 @@ GuzzleHttp\Command\Result Object
                                     [Height] => 
                                     [Width] => 
                                 )
-
+                            [UserData] => xxx
+                            [JobLevel] => 0
                         )
 
                     [QueueId] => p81e648afzx8c09z8xc09zx8c097be086

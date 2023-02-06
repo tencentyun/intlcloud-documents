@@ -4,7 +4,7 @@ This document provides an overview of APIs and SDK code samples for submitting a
 
 | API | Description |
 | ------------- |  ---------------------- |
-| Submitting animated image job | Submits animated image job |
+| [Submitting an animated image job](https://intl.cloud.tencent.com/document/product/436/49045) | Submits an animated image job. |
 
 
 ## Submitting Animated Image Job
@@ -28,19 +28,19 @@ public Guzzle\Service\Resource\Model createMediaAnimationJobs(array $args = arra
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is `http` by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 try {
     $result = $cosClient->createMediaAnimationJobs(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
         'Tag' => 'Animation',
         'QueueId' => 'p81e648af2aee49688xxxxxxxxxxxxxxxx',
         'Input' => array(
@@ -50,12 +50,15 @@ try {
             'TemplateId' => 't1de276cbdab16xxxxxxxxxxxxxxxxxxxxx',
             'Output' => array(
                 'Region' => $region,
-                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
                 'Object' => 'Animation.gif',
             ),
+//            'UserData' => 'xxx', // The user information passed through.
+//            'JobLevel' => '0', // Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`.
         ),
+        'CallBack' => '',
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -70,19 +73,19 @@ try {
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is `http` by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 try {
     $result = $cosClient->createMediaAnimationJobs(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
         'Tag' => 'Animation',
         'QueueId' => 'p81e648af2aee49688xxxxxxxxxxxxxxxx',
         'Input' => array(
@@ -110,12 +113,15 @@ try {
             ),
             'Output' => array(
                 'Region' => $region,
-                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
                 'Object' => 'Animation.gif',
             ),
+//            'UserData' => 'xxx', // The user information passed through.
+//            'JobLevel' => '0', // Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`.
         ),
+        'CallBack' => '',
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -129,11 +135,14 @@ try {
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :------ | :----------------------------------------------------------- | :-------- | :------- |
-| Tag                | Request | Job type. Valid values: Transcode (transcoding), Animation (animated image), SmartCover (intelligent thumbnail), Snapshot (screenshot), Concat (splicing)                                 | String    | Yes   |
+| Tag                | Request | Job tag: Animation | String    | Yes       |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
-| Operation          | Request | Operation rule. Up to six operation rules are supported.                                                | Container | Yes   |
+| Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Callback address                                                | String    | No   |
+| CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It takes priority over that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It takes priority over that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which takes priority over that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
 
 `Input` has the following sub-nodes:
 
@@ -141,33 +150,36 @@ try {
 | :----------------- | :------------ | :--------- | :----- | :------- |
 | Object             | Request.Input | Media filename | String | Yes   |
 
+
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| :----------------- | :---------------- | :--------------- | :-------- | :------- |
+| :----------------- | :---------------- | :----------------------------------------------------------- | :-------- | :------- |
 | Animation                    | Request.Operation | Job type parameter                                     | Container | No   |
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
+| UserData           | Request.Operation | The user information passed through, which is printable ASCII codes of up to 1,024 in length.                  | String    | No |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
 
 >!
 >
-> `TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding job type parameter is used.
+> `TemplateId` is used first. If `TemplateId` is unavailable, `Animation` is used.
 
 `Animation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :-------------------------- | :----------------------------------------------------------- | :-------- | :------- |
-| Container          | Request.Operation.Animation | Same as `Request.Container` in the animated image template creation API `CreateMediaTemplate`.    | Container | No   |
-| Video              | Request.Operation.Animation | Same as `Request.Video` in the animated image template creation API `CreateMediaTemplate`.        | Container | No   |
-| TimeInterval       | Request.Operation.Animation | Same as `Request.TimeInterval` in the animated image template creation API `CreateMediaTemplate`. | Container | No   |
+| Container          | Request.Operation.Animation | Same as `Request.Container` in the animated image template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49906).    | Container | No   |
+| Video              | Request.Operation.Animation | Same as `Request.Video` in the animated image template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49906).        | Container | No   |
+| TimeInterval       | Request.Operation.Animation | Same as `Request.TimeInterval` in the animated image template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49906). | Container | No   |
 
 `Output` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------------------- | :--------------- | :----- | :------- |
-| Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
+| Region             | Request.Operation.Output | Bucket region | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Output result filename                                             | String | Yes   |
+| Object             | Request.Operation.Output | Result file name                                             | String | Yes   |
 
 #### Sample response
 
@@ -220,6 +232,8 @@ GuzzleHttp\Command\Result Object
 
                             [TemplateId] => t1de276cbdz78xcz09xc80zx901af71
                             [TemplateName] => Animation-gif-1
+                            [UserData] => xxx
+                            [JobLevel] => 0
                         )
 
                     [QueueId] => p81e648af2aeez87c6z78xc7z98xc79ca86

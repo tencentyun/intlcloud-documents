@@ -4,7 +4,7 @@ This document provides an overview of APIs and SDK code samples for submitting a
 
 | API | Description |
 | ------------- |  ---------------------- |
-| Submitting voice/sound separation job | Submits voice/sound separation job |
+| [Submitting a voice/sound separation job](https://intl.cloud.tencent.com/document/product/436/49063) | Submits a voice/sound separation job. |
 
 
 ## Submitting Voice/Sound Separation Job
@@ -28,19 +28,19 @@ public Guzzle\Service\Resource\Model createMediaVoiceSeparateJobs(array $args = 
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is `http` by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 try {
     $result = $cosClient->createMediaVoiceSeparateJobs(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
         'Tag' => 'VoiceSeparate',
         'QueueId' => '',
         'CallBack' => '',
@@ -51,13 +51,15 @@ try {
             'TemplateId' => '',
             'Output' => array(
                 'Region' => $region,
-                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
                 'Object' => 'VoiceSeparate01.mp3',
                 'AuObject' => 'VoiceSeparate02.mp3',
             ),
+//            'UserData' => 'xxx', // The user information passed through.
+//            'JobLevel' => '0', // Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`.
         ),
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -72,19 +74,19 @@ try {
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is `http` by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 try {
     $result = $cosClient->createMediaVoiceSeparateJobs(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
         'Tag' => 'VoiceSeparate',
         'QueueId' => '',
         'CallBack' => '',
@@ -94,7 +96,7 @@ try {
         'Operation' => array(
             'Output' => array(
                 'Region' => $region,
-                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
                 'Object' => 'VoiceSeparate01.mp3',
                 'AuObject' => 'VoiceSeparate02.mp3',
             ),
@@ -107,9 +109,11 @@ try {
                     'Channels' => '2',
                 ),
             ),
+//            'UserData' => 'xxx', // The user information passed through.
+//            'JobLevel' => '0', // Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`.
         ),
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -122,12 +126,15 @@ try {
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| :----------------- | :------ | :---------------------------- | :-------- | :------- |
-| Tag                | Request | Job type: VoiceSeparate                              | String    | Yes   |
+| :----------------- | :------ | :----------------------------------------------------------- | :-------- | :------- |
+| Tag                | Request | Job tag: VoiceSeparate                              | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
 | Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Callback address                                                | String    | No   |
+| CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It takes priority over that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It takes priority over that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which takes priority over that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
 
 `Input` has the following sub-nodes:
 
@@ -135,24 +142,26 @@ try {
 | :----------------- | :------------ | :--------- | :----- | :------- |
 | Object             | Request.Input | Media filename | String | Yes   |
 
+
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| :----------------- | :---------------- | :--------------- | :-------- | :------- |
+| :----------------- | :---------------- | :----------------------------------------------------------- | :-------- | :------- |
 | VoiceSeparate                | Request.Operation | Transcoding template parameter                                    | Container | No   |
 | TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
 
-> !
+>!
 >
-> `TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding job type parameter is used.
+> `TemplateId` is used first. If `TemplateId` is unavailable, `VoiceSeparate` is used.
 
 `VoiceSeparate` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :------------------------------ | :----------------------------------------------------------- | :-------- | :------- |
-| AudioMode        | Request.Operation.VoiceSeparate | Same as `Request.AudioMode` in the voice/sound separation template creation API `CreateMediaTemplate`.  | Container | No   |
-| AudioConfig        | Request.Operation.VoiceSeparate | Same as `Request.AudioConfig` in the voice/sound separation template creation API `CreateMediaTemplate`.  | Container | No   |
+| AudioMode        | Request.Operation.VoiceSeparate | Same as `Request.AudioMode` in the voice/sound separation template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49916).  | Container | No   |
+| AudioConfig        | Request.Operation.VoiceSeparate | Same as `Request.AudioConfig` in the voice/sound separation template creation API  [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49916).  | Container | No   |
 
 `Output` has the following sub-nodes:
 
@@ -215,6 +224,8 @@ GuzzleHttp\Command\Result Object
 
                             [TemplateId] => t1456ea89fczx8c0z8c09z8c0985
                             [TemplateName] => VoiceSeparate-1
+                            [UserData] => xxx
+                            [JobLevel] => 0
                         )
 
                     [QueueId] => p81e648af2azc709zx8c09z8xc0z7be086
