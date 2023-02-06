@@ -1,6 +1,6 @@
 ## 功能说明
-
-App 后台可以通过该回调实时查看用户的群聊消息的撤回动作。
+  
+App 后台可以通过该回调实时查看群组满员的动态，包括：删除一部分不活跃的群成员，以确保用户能够加入该群。
 
 ## 注意事项
 
@@ -11,12 +11,13 @@ App 后台可以通过该回调实时查看用户的群聊消息的撤回动作�
 
 ## 可能触发该回调的场景
 
-- App 用户通过客户端撤回群聊消息。
-- App 管理员通过 REST API 撤回群聊消息
+- App 用户通过客户端申请加群。
+- App 用户通过客户端邀请加群。
+- App 管理员通过 REST API 增加群组成员。
 
 ## 回调发生时机
 
-群聊消息撤回成功之后。
+新成员加入之后导致群组满员，或者由于群组满员导致新成员加入失败之后。
 
 ## 接口说明
 
@@ -36,7 +37,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | https | 请求协议为 HTTPS，请求方式为 POST |
 | www.example.com | 回调 URL |
 | SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为：Group.CallbackAfterRecallMsg |
+| CallbackCommand | 固定为 Group.CallbackAfterGroupFull |
 | contenttype | 固定值为 JSON |
 | ClientIP | 客户端 IP，格式如：127.0.0.1 |
 | OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
@@ -45,37 +46,29 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ```
 {
-    "CallbackCommand":"Group.CallbackAfterRecallMsg", // 回调命令
-    "Operator_Account":"admin", // 操作者
-    "Type":"Community", // 群组类型
-    "GroupId":"1213456", // 群组 ID
-    "MsgSeqList":[ // 撤回消息MsgSeq列表           
-        {"MsgSeq":130}
-    ],
-    "TopicId":"@TGS#_@TGS#cQVLVHIM62CJ@TOPIC#_TestTopic",// 话题的ID, 仅支持话题的社群适用此选项
+    "CallbackCommand": "Group.CallbackAfterGroupFull", // 回调命令
+    "GroupId": "@TGS#2J4SZEAEL", // 群组 ID
     "EventTime":"1670574414123"//毫秒级别，事件触发时间戳		
 }
 ```
 
 ### 请求包字段说明
 
-| 对象 | 介绍 | 功能 |
+| 字段 | 类型 | 说明 |
 | --- | --- | --- |
 | CallbackCommand | String | 回调命令 |
-| Operator_Account | String | 撤回群聊消息的操作者 UserID |
-| Type | String | 产生群消息的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529)，例如 Public |
-| GroupId | String | 群组 ID |
-| MsgSeqList | Array | 撤回消息 MsgSeq 列表 |
-|TopicId|String|话题的 ID，若具有此选项表示撤回的是话题中的消息，仅支持话题的社群适用此选项|
+| GroupId | String | 满员的群组 ID |
 | EventTime | Integer | 事件触发的毫秒级别时间戳 |
 
 ### 应答包示例
+
+App 后台记录群满员信息后，发送回调应答包。
 
 ```
 {
     "ActionStatus": "OK",
     "ErrorInfo": "",
-    "ErrorCode": 0 // 忽略回调结果
+    "ErrorCode": 0 // 忽略应答结果
 }
 ```
 
@@ -84,12 +77,12 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | 字段 | 类型 | 属性 | 说明 |
 | --- | --- | --- | --- |
 | ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码，此处填0表示忽略应答结果|
-| ErrorInfo | String | 必填	 | 错误信息 |
+| ErrorCode | Integer | 必填 | 错误码，0表示允许忽略应答结果 |
+| ErrorInfo | String | 必填 | 错误信息 |
+
 
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
-- REST API：[撤回群消息](https://intl.cloud.tencent.com/document/product/1047/34965)
-
-
+- REST API：[删除群组成员](https://intl.cloud.tencent.com/document/product/1047/34949)
+- REST API：[增加群组成员](https://intl.cloud.tencent.com/document/product/1047/34921)

@@ -1,6 +1,6 @@
 ## Overview
 
-This webhook event is used by the app backend to check the recalls of group messages in real time.
+This webhook event is used by the app backend to check users' group creation requests in real time. The app backend can also reject the requests.
 
 ## Notes
 
@@ -11,12 +11,12 @@ This webhook event is used by the app backend to check the recalls of group mess
 
 ## Webhook Triggering Scenarios
 
-- An app user recalls a group message on the client.
-- An app admin recalls a group message via calling the RESTful API.
+- The app user creates a group on the client.
+- The app admin creates a group through the RESTful API.
 
 ## Webhook Triggering Timing
 
-After a group message is recalled successfully
+It will be triggered before the Chat backend creates a group.
 
 ## API Calling Description
 
@@ -36,7 +36,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | https | The request protocol is HTTPS, and the request method is POST. |
 | www.example.com | Webhook URL |
 | SdkAppid | The `SDKAppID` assigned by the Chat console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackAfterRecallMsg`. |
+| CallbackCommand | Fixed value: `Group.CallbackBeforeCreateGroup`. |
 | contenttype | Fixed value: `JSON`. |
 | ClientIP | Client IP, such as 127.0.0.1 |
 | OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Webhook Protocols** section of [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
@@ -45,15 +45,21 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ```
 {
-    "CallbackCommand":"Group.CallbackAfterRecallMsg", // Webhook command
-    "Operator_Account":"admin", // Operator
-    "Type": "Community", // Group type
-    "GroupId":"1213456", // Group ID
-    "MsgSeqList":[ // `MsgSeq` list of recalled messages           
-        {"MsgSeq":130}
+    "CallbackCommand": "Group.CallbackBeforeCreateGroup", // Webhook command
+    "Operator_Account": "leckie", // Operator
+    "Owner_Account": "leckie", // Group owner
+    "Type": "Public", // Group type
+    "Name": "MyFirstGroup", // Group name
+    "CreateGroupNum": 123, // Number of groups of the same type that the user has created
+    "MemberList": [ // List of initial members
+        {
+            "Member_Account": "bob"
+        },
+        {
+            "Member_Account": "peter"
+        }
     ],
-    "TopicId":"@TGS#_@TGS#cQVLVHIM62CJ@TOPIC#_TestTopic",// Topic ID, which applies only to topic-enabled communities
-    "EventTime":"1670574414123"// Event trigger timestamp in milliseconds		
+    "EventTime":"1670574414123"// Event trigger timestamp in milliseconds
 }
 ```
 
@@ -62,20 +68,37 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Object | Type | Description |
 | --- | --- | --- |
 | CallbackCommand   | String  | Webhook command                                                     |
-| Operator_Account | String | The `UserID` of the operator who recalls a group message |
+| Operator_Account | String | `UserID` of the operator who initiates the group creation request  |
+| Owner_Account | String | `UserID` of the owner of the group requested to be created |
 | Type | String | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
-| GroupId | String | Group ID |
-| MsgSeqList | Array | `MsgSeq` list of recalled messages |
-| TopicId | String | Topic ID, which indicates message recall in the topic and applies only to topic-enabled communities. |
+| Name | String | Name of the group requested to be created |
+| CreateGroupNum | Integer | Number of groups of the same type that the user has created |
+| MemberList | Array | List of initial members of the group requested to be created |
 | EventTime | Integer | Event trigger timestamp in milliseconds |
 
 ### Sample response
+
+#### Creation allowed
+
+The user is allowed to create a group.
 
 ```
 {
     "ActionStatus": "OK",
     "ErrorInfo": "",
-    "ErrorCode": 0 //The value `0` indicates that the webhook result is ignored.
+    "ErrorCode": 0 // Creation allowed
+}
+```
+
+#### Creation disallowed
+
+The user is not allowed to create a group. No group will be created, and the error code `10016` will be returned to the caller.
+
+```
+{
+    "ActionStatus": "OK",
+    "ErrorInfo": "",
+    "ErrorCode": 1 // Creation refused
 }
 ```
 
@@ -84,12 +107,12 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code. The value `0` indicates that the webhook result is ignored. |
+| ErrorCode | Integer | Yes | Error code returned. `0`: Allows group creation; `1`: Forbids group creation. If the business side wants to use a custom error code to forbid a user to create a group and send `ErrorCode` and `ErrorInfo` to the client, ensure that the value of `ErrorCode` is set within the range of [10100, 10200]. |
 | ErrorInfo | String | Yes | Error information |
 
 ## References
 
 - [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
-- Restful API: [Recalling Group Messages](https://intl.cloud.tencent.com/document/product/1047/34965)
+- RESTful API: [Creating a Group](https://intl.cloud.tencent.com/document/product/1047/34895)
 
 

@@ -3,7 +3,7 @@
 App 后台可以通过该回调实时查看用户的群发消息，包括：
 -  对群消息进行实时记录（例如记录日志，或者同步到其他系统）。
 -  拦截用户在群内发言的请求。
-- 若您有内容安全审核需求，希望针对不安全、不适宜的消息内容进行自动识别、处理，请使用内容回调。
+>! 消息前回调默认2s超时且不建议调整，使用前回调处理内容审核，可能导致整个前回调超时。如果有内容审核方面的需求，请使用内容回调，详见 [内容安全场景实践](https://www.tencentcloud.com/document/product/1047/52498)。
 
 ## 注意事项
 
@@ -63,8 +63,9 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
             }
         }
     ],
-   "CloudCustomData": "your cloud custom data",
-    "TopicId":"@TGS#_@TGS#cQVLVHIM62CJ@TOPIC#_TestTopic"		// 话题的 ID, 仅支持话题的社群适用此选项
+    "CloudCustomData": "your cloud custom data",
+    "TopicId":"@TGS#_@TGS#cQVLVHIM62CJ@TOPIC#_TestTopic",// 话题的 ID, 仅支持话题的社群适用此选项
+    "EventTime":"1670574414123"//毫秒级别，事件触发时间戳		
 }
 ```
 
@@ -80,8 +81,9 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Random | Integer | 发消息请求中的 32 位随机数 |
 |OnlineOnlyFlag|Integer|在线消息，为1，否则为0；直播群忽略此属性，为默认值0。|
 | MsgBody | Array | 消息体，具体参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
-| CloudCustomData | String |  消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到） |
-|TopicId|String|话题的 ID, 仅支持话题的社群适用此选项|
+| CloudCustomData | String | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到） |
+|TopicId|String|话题的 ID，若具有此选项表示在话题内发言，仅支持话题的社群适用此选项|
+| EventTime | Integer | 事件触发的毫秒级别时间戳 |
 
 ### 应答包示例
 
@@ -158,6 +160,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | ErrorInfo | String | 必填	 | 错误信息 |
 | MsgBody | Array | 选填	 | 经过App变动之后的消息体，云通讯后台将把变动后的消息发送到群组中，具体格式参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
 | CloudCustomData | String |  选填	 | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到） |
+
 
 ## 参考
 

@@ -1,0 +1,104 @@
+## 功能说明
+App 后台可以通过该回调实时查看群组资料（群名称、群简介、群公告以及群头像）的变更，包括对变动群组资料的实时记录（例如记录日志，或者同步到其他系统）。
+
+## 注意事项
+
+- 要启用回调，必须配置回调 URL，并打开本条回调协议对应的开关，配置方法详见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
+- 回调的方向是即时通信 IM 后台向 App 后台发起 HTTP POST 请求。
+- App 后台在收到回调请求之后，务必校验请求 URL 中的参数 SDKAppID 是否是自己的 SDKAppID。
+- 其他安全相关事宜请参考 [第三方回调简介：安全考虑](https://intl.cloud.tencent.com/document/product/1047/34354) 文档。
+
+## 可能触发该回调的场景
+
+### 哪些内容会触发回调
+
+群组资料包括 [群基础资料](https://intl.cloud.tencent.com/document/product/1047/33529) 和 [群组维度自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529)。
+目前，群基础资料中的群组名称、群组简介、群组公告和群组头像 URL 被变动后，可能触发该回调。其他群基础资料被变动后暂不会触发。
+
+### 哪些方式会触发回调
+
+- App 用户通过客户端变动群组资料。
+- App 管理员通过 REST API 变动群组资料。
+
+## 回调发生时机
+
+群基础资料变动之后。
+
+## 接口说明
+
+### 请求 URL 示例
+
+以下示例中 App 配置的回调 URL 为 `https://www.example.com`。
+**示例：**
+
+```
+https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&contenttype=json&ClientIP=$ClientIP&OptPlatform=$OptPlatform
+```
+
+### 请求参数说明
+
+| 参数 | 说明 |
+| --- | --- |
+| https | 请求协议为 HTTPS，请求方式为 POST |
+| www.example.com | 回调 URL |
+| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
+| CallbackCommand | 固定为 Group.CallbackAfterGroupInfoChanged |
+| contenttype | 固定值为 JSON |
+| ClientIP | 客户端 IP，格式如：127.0.0.1 |
+| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
+
+### 请求包示例
+
+```
+{
+    "CallbackCommand": "Group.CallbackAfterGroupInfoChanged", // 回调命令
+    "GroupId" : "@TGS#2J4SZEAEL",
+    "Type": "Public", // 群组类型
+    "Operator_Account": "leckie", // 操作者
+    "Notification": "NewNotification", // 变动后的群公告
+    "EventTime":"1670574414123"//毫秒级别，事件触发时间戳		
+}
+```
+
+
+
+### 请求包字段说明
+
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| CallbackCommand | String | 回调命令 |
+| GroupId | String | 群资料被变动的群组 ID |
+| Type | String | 群资料被变动的群的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529)，例如 Public |
+| Operator_Account | String | 操作者 UserID |
+| Name | String | 变动后的群名称 |
+| Introduction | String | 变动后的群简介 |
+| Notification | String | 变动后的群公告 |
+| FaceUrl | String | 变动后的群头像 URL |
+| EventTime | Integer | 事件触发的毫秒级别时间戳 |
+
+### 应答包示例
+
+App 后台记录群资料的变更信息后，发送回调应答包。
+
+```
+{
+    "ActionStatus": "OK",
+    "ErrorInfo": "",
+    "ErrorCode": 0  // 忽略应答结果
+}
+```
+
+### 应答包字段说明
+
+| 对象 | 介绍 | 功能 | 功能 |
+| --- | --- | --- | --- |
+| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败。 |
+| ErrorCode | Integer | 必填 | 错误码，0表示允许忽略应答结果 |
+| ErrorInfo | String | 必填 | 错误信息 |
+
+## 参考
+
+- [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
+- REST API：[变动群组基础资料](https://intl.cloud.tencent.com/document/product/1047/34962)
+
+

@@ -2,7 +2,7 @@
 * 拉取历史消息的 API 在类 `TencentImSDKPlugin.v2TIMManager.getMessageManager()` 中。
 * 除了支持单聊、群聊历史消息的拉取外，还提供了高级接口以支持按指定方向拉取、按指定起点和指定时间范围拉取。
 * 除了支持单独拉取本地历史消息外，还支持拉取云端历史消息。
-  
+
 > ? 在拉取云端历史消息时，如果检测到网络异常，SDK 会返回本地存储的历史消息。
 
 本地存储的历史消息无时间限制，但云端存储的历史消息有存储时长的限制：
@@ -10,15 +10,15 @@
 * 专业版：免费存储 7 天，支持延长
 * 旗舰版：免费存储 30 条，支持延长
 
-> ? 
-> * 延长历史消息存储时长是增值服务，您可以登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 修改相关配置，具体计费说明请参加 [增值服务资费](https://intl.cloud.tencent.com/document/product/1047/34350) 。 
+> ?
+> * 延长历史消息存储时长是增值服务，您可以登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 修改相关配置，具体计费说明请参加 [增值服务资费](https://intl.cloud.tencent.com/document/product/1047/34350) 。
 > * 富媒体消息（图片、文件、语音等）对应的文件存储时长，与历史消息存储时长保持一致。
 
 [](id:c2c)
 
 ## 拉取单聊历史消息
 
-您可以调用接口 `getC2CHistoryMessageList` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getC2CHistoryMessageList.html)) 获取单聊历史消息。
+您可以调用接口 `getC2CHistoryMessageList` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/getC2CHistoryMessageList.html)) 获取单聊历史消息。
 在网络正常的情况下会拉取最新的云端数据。如果网络出现异常，SDK 会返回本地存储的历史消息。
 如果您仅仅想拉取本地历史消息，可以参考 [高级接口](#advance) 。
 
@@ -43,13 +43,13 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().getC2CHistoryMessageList(
 [](id:group)
 ## 拉取群聊历史消息
 
-您可以调用接口 `getGroupHistoryMessageList` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getGroupHistoryMessageList.html)) 获取群聊历史消息。
+您可以调用接口 `getGroupHistoryMessageList` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/getGroupHistoryMessageList.html)) 获取群聊历史消息。
 在网络正常的情况下会拉取最新的云端数据。如果网络出现异常，SDK 会返回本地存储的历史消息。
 如果您仅仅想拉取本地历史消息，可以参考 [高级接口](#advance) 。
 
 本接口支持分页拉取，参考：[分页拉取](#advance_page)。
 
-> ! 
+> !
 > * 只有会议群（Meeting）才能拉取到进群前的历史消息，更多关于群消息的限制，详见 [消息能力差异](https://intl.cloud.tencent.com/document/product/1047/33529) 。
 > * 直播群（AVChatRoom）消息不存云端漫游和本地数据库，调用这个接口无效。
 
@@ -75,7 +75,7 @@ TencentImSDKPlugin.v2TIMManager
 [](id:advance)
 ### 高级接口
 
-如果以上的普通接口无法满足您对拉取历史消息的需求，我们还提供了高级接口 `getHistoryMessageList` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMMessageManager/getHistoryMessageList.html))。
+如果以上的普通接口无法满足您对拉取历史消息的需求，我们还提供了高级接口 `getHistoryMessageList` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMMessageManager/getHistoryMessageList.html))。
 
 该接口除了支持普通拉取单聊、群聊历史消息外，还支持以下高级特性：
 * 支持设置拉取消息的位置：从本地拉取、从云端拉取。
@@ -86,23 +86,28 @@ TencentImSDKPlugin.v2TIMManager
 
 
 ```dart
-Future<V2TimValueCallback<List<V2TimMessage>>> getHistoryMessageList({
-    HistoryMsgGetTypeEnum? getType =
-        HistoryMsgGetTypeEnum.V2TIM_GET_LOCAL_OLDER_MSG,
-    String? userID,
-    String? groupID,
-    int lastMsgSeq = -1,
-    required int count,
-    String? lastMsgID,
-  }) async {
-    return ImFlutterPlatform.instance.getHistoryMessageList(
-        getType: getType!.index,
-        userID: userID,
-        count: count,
-        lastMsgID: lastMsgID,
-        groupID: groupID,
-        lastMsgSeq: lastMsgSeq);
-  }
+    // 拉取单聊历史消息
+    // 首次拉取，lastMsgID 设置为 null
+    // 再次拉取时，lastMsgID 可以使用返回的消息列表中的最后一条消息的id
+    V2TimValueCallback<List<V2TimMessage>> getHistoryMessageListRes =
+        await TencentImSDKPlugin.v2TIMManager
+            .getMessageManager()
+            .getHistoryMessageList(
+      getType: HistoryMsgGetTypeEnum.V2TIM_GET_LOCAL_OLDER_MSG, // 拉取消息的位置及方向
+      userID: "userID", // 用户id 拉取单聊消息，需要指定对方的 userID，此时 groupID 传空即可。
+      groupID: "groupID", // 群组id 拉取群聊消息，需要指定群聊的 groupID，此时 userID 传空即可。
+      count: 10, // 拉取数据数量
+      lastMsgID: null, // 拉取起始消息id
+      // 仅能在群聊中使用该字段。
+      // 设置 lastMsgSeq 作为拉取的起点，返回的消息列表中包含这条消息。
+      // 如果同时指定了 lastMsg 和 lastMsgSeq，SDK 优先使用 lastMsg。
+      // 如果均未指定 lastMsg 和 lastMsgSeq，拉取的起点取决于是否设置 getTimeBegin。设置了，则使用设置的范围作为起点；未设置，则使用最新消息作为起点。
+      lastMsgSeq: -1,
+      messageTypeList: [], // 用于过滤历史信息属性，若为空则拉取所有属性信息。
+    );
+    if (getHistoryMessageListRes.code == 0) {
+      //获取成功
+    }
 ```
 
 
@@ -113,7 +118,7 @@ Future<V2TimValueCallback<List<V2TimMessage>>> getHistoryMessageList({
 | getType    | 拉取消息的位置及方向，可以设置拉取 **本地/云端** 的 **更老/更新** 的消息 | YES          | YES          | YES      | 当设置从云端拉取时，会将本地存储消息列表与云端存储消息列表合并后返回。如果无网络，则直接返回本地消息列表。                                                                                                                                                                                                                     |
 | userID     | 拉取指定用户的单聊历史消息                                               | YES          | <b>NO</font> | NO       | 拉取单聊消息，需要指定对方的 userID，此时 groupID 传空即可。                                                                                                                                                                                                                                                                   |
 | groupID    | 拉取指定群组的群聊历史消息                                               | <b>NO</font> | YES          | NO       | 拉取单聊消息，需要指定群聊的 groupID，此时 userID 传空即可。                                                                                                                                                                                                                                                                   |
-| count      | 单次拉取的消息数量                                                       | YES          | YES          | YES      | 建议设置为 20，否则可能影响拉取速度                                                                                                                                                                                                                                                                                            |
+| count      | 单次拉取的消息数量                                                       | YES          | YES          | YES      | iOS/Android端建议设置为 20，否则可能影响拉取速度。 Web端上限为15条。                                                                                                                                                                                                                                                           |
 | lastMsgID  | 最后一条消息，表示从哪条消息开始拉取历史消息                             | YES          | YES          | NO       | 1. 单聊和群聊中均能使用。<br/>2. 设置 lastMsg 作为拉取的起点，返回的消息列表中**不包含**这条消息。<br/>3. 如果设置为空，则使用会话的最新一条消息作为拉取起点。                                                                                                                                                                 |
 | lastMsgSeq | 最后一条消息 seq，表示从哪条消息开始拉取历史消息                         | <b>NO</font> | YES          | NO       | 1. 仅能在群聊中使用该字段。<br/>2. 设置 lastMsgSeq 作为拉取的起点，返回的消息列表中**包含**这条消息。<br/>3. 如果同时指定了 lastMsg 和 lastMsgSeq，SDK 优先使用 lastMsg。<br/>4. 如果均未指定 lastMsg 和 lastMsgSeq，拉取的起点取决于是否设置 getTimeBegin。设置了，则使用设置的范围作为起点；未设置，则使用最新消息作为起点。 |
 
@@ -128,7 +133,7 @@ Future<V2TimValueCallback<List<V2TimMessage>>> getHistoryMessageList({
 * 当设置 `lastMsg` 后，返回的消息列表不包含设置的 `lastMsg`。
 * 返回的消息列表中，越新的消息越靠前。
 
->? 
+>?
 > 1. 为了不影响历史消息拉取速度，建议分页时 `count` 设置为 20。
 > 2. 由于返回的消息列表会包含 `lastMsgSeq` 所对应的消息，所以在拉取群聊历史消息时，不建议使用 `lastMsgSeq` 来续拉。
 
@@ -216,17 +221,14 @@ SDK 目前的策略是：
 建议按照  [问题 1 中的解决方法](#qa1) 来处理。
 
 [](id:qa3)
-
 ### 3. 拉取的历史消息，群名片等群成员信息没有实时更新？
 * SDK 会在消息产生时，更新当前的群名片、role 等群成员信息并存储在本地数据库中。
 * 当拉取群历史消息时，会直接返回消息产生时的群成员信息，不会实时更新。
 
-如果您需要获取最新的群成员信息，您可以使用 `getGroupMembersInfo`([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/getGroupMembersInfo.html))。
+如果您需要获取最新的群成员信息，您可以使用 `getGroupMembersInfo`([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMGroupManager/getGroupMembersInfo.html))。
 
 
 [](id:qa4)
 ### 4. 拉取历史消息时卡顿
-SDK 内部已对消息拉取做了性能优化，您如果碰到消息卡顿的情况，可以先尝试减少拉取的消息数 `count` ，如果还是不能解决问题。
-
-
+SDK 内部已对消息拉取做了性能优化，您如果碰到消息卡顿的情况，可以先尝试减少拉取的消息数 `count` 
 
