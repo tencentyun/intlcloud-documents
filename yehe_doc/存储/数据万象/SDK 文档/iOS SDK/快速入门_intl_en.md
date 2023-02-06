@@ -70,7 +70,7 @@ Add project name-Bridging-Header in the bridging file.
 ```
 let cloudInfinite = CloudInfinite();
 ```
-2. Instantiate the image transformation class `CITransformation` and set related operations. The following takes TPG as an example. For more features, see [Basic Image Processing](https://cloud.tencent.com/document/product/460/47731).
+2. Instantiate the image transformation class `CITransformation` and set related operations. The following takes TPG as an example. For more features, see [Basic Image Processing](https://www.tencentcloud.com/document/product/1045/45588).
 
 **Objective-C**
 ```
