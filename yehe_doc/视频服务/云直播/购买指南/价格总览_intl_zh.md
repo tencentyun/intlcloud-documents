@@ -2,7 +2,7 @@
 
 云直播计费项包含基础服务费用、增值服务费用。结合腾讯云其他产品一起提供的增值功能会产生拓展服务费用。费用组成如下图：
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e630d73dd3753faaaf5dd3f4aef6ccf2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e6890720702b28c1ea9e2a725974b214.png)
 
 
 - [基础服务费用](#base)：使用直播（包括标准直播和快直播）后产生的直播消耗费用，标准直播和快直播支持流量或峰值带宽两种计费方式切换。
@@ -120,12 +120,12 @@
 <td>时移数据写入量</td>
 <td>直播控制台可创建时移模板，当绑定推流域名推流时会产生时移数据写入量费用。</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/267/2819">后付费-日结</a></td>
+<a href="https://www.tencentcloud.com/document/product/267/53262">后付费-日结</a></td>
 </tr><tr>
 <td>时移总时长</td>
 <td>通过工单配置时移功能，使用时移将会产生时移总时长费用。</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/267/39605">后付费-日结</a></td>
+<a href="https://www.tencentcloud.com/document/product/267/47534">后付费-日结</a></td>
 </tr><tr>
 <td colspan=2>直播截图</td>
 <td>
@@ -158,7 +158,7 @@
 <td>拉流转推本地模式</td>
 <td>使用拉流转推并开启本地模式时，按增值功能计费。</td>
 <td>
-<a href="https://www.tencentcloud.com/document/product/267/2818">后付费-日结</a>
+<a href="https://www.tencentcloud.com/document/product/267/51555">后付费-日结</a>
 </td>
 </tr><tr>
 </td>
