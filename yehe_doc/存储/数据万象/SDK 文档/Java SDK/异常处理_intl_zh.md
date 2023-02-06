@@ -51,5 +51,5 @@ CosServiceException 包含了服务端返回的状态码，requestid，出错明
 
 ## 常见问题
 
-若您在使用 Java SDK 过程中，有相关的疑问，请参见 [常见问题](https://cloud.tencent.com/document/product/460/78876) 文档。
+若您在使用 Java SDK 过程中，有相关的疑问，请参见 [常见问题](https://www.tencentcloud.com/document/product/1045/53335) 文档。
 
