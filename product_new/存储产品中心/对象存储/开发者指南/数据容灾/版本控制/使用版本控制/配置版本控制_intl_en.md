@@ -34,4 +34,4 @@ Call the Versioning method in the SDK. For more information, see the SDK documen
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35858)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/34997#versioning)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#versioning)
-
+- [Mini Program SDK](https://www.tencentcloud.com/document/product/436/35849)
