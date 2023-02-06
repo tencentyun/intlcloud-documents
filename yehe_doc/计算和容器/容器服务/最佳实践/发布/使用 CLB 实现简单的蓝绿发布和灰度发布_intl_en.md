@@ -264,8 +264,8 @@ nginx-v2
 3. Use the console or kubectl to adjust the replicas of Deployment versions v1 and v2. Specifically, set v1 to 1 replica and v2 to 4 replicas.
  - **Modification via the console**:
     1. Go to the **Workload** > **Deployment** page of the cluster and choose **More** > **Edit YAML** to the right of the v1 Deployment version.  
-    2. On the YAML editing page, change `replicas` of v1 to 1 and click **Done**.  
-    3. Repeat the above steps to change `replicas` of v2 to 4 and click **Done**.  
+    2. On the YAML editing page, change `.spec.replicas` of v1 to 1 and click **Done**.  
+    3. Repeat the above steps to change `.spec.replicas` of v2 to 4 and click **Done**.  
  - **Modification via kubectl**:
 ``` bash
 kubectl scale deployment/nginx-v1 --replicas=1
