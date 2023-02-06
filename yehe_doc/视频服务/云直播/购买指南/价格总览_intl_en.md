@@ -2,7 +2,7 @@
 
 Billable items of CSS include basic services and value-added services. You may also incur extended service fees if you use CSS features that rely on the capabilities of other Tencent Cloud products.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/e630d73dd3753faaaf5dd3f4aef6ccf2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e6890720702b28c1ea9e2a725974b214.png)
 
 
 - [Basic service fees](#base) are the fees for using LVB and LEB and are charged based on either traffic or peak bandwidth usage.
@@ -120,12 +120,12 @@ Basic service fees include LVB fees and LEB fees.
 <td>Live streaming traffic</td>
 <td>If you create a time shifting template in the CSS console and bind it to a push domain, using the domain for live streaming will incur time shifting fees, which are based on the live streaming traffic.</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/267/2819">Daily pay-as-you-go</a></td>
+<a href="https://www.tencentcloud.com/document/product/267/53262">Daily pay-as-you-go</a></td>
 </tr><tr>
 <td>Total time-shift period</td>
 <td>If you have submitted a ticket to enable the time shifting feature, time shifting fees will be based on the total time-shift period.</td>
 <td>
-<a href="https://intl.cloud.tencent.com/document/product/267/39605">Daily pay-as-you-go</a></td>
+<a href="https://www.tencentcloud.com/document/product/267/47534">Daily pay-as-you-go</a></td>
 </tr><tr>
 <td colspan=2>Live screencapture</td>
 <td>
@@ -158,7 +158,7 @@ Basic service fees include LVB fees and LEB fees.
 <td>Local mode</td>
 <td>Additional fees will be incurred if you enable the local mode for relay.</td>
 <td>
-<a href="https://www.tencentcloud.com/document/product/267/2818">Daily pay-as-you-go</a>
+<a href="https://www.tencentcloud.com/document/product/267/515558">Daily pay-as-you-go</a>
 </td>
 </tr><tr>
 </td>
