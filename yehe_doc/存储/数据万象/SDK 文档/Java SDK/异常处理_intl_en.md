@@ -51,5 +51,5 @@ CI provides a self-help [diagnosis tool](https://console.cloud.tencent.com/cos5/
 
 ## FAQs
 
-If you have any questions about the Java SDK, see [FAQs](https://cloud.tencent.com/document/product/460/78876).
+If you have any questions about the Java SDK, see [FAQs](https://www.tencentcloud.com/document/product/1045/53335).
 
