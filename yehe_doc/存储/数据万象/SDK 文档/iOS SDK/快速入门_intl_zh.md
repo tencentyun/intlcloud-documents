@@ -70,7 +70,7 @@ CloudInfinite 模块主要功能：
 ```
 let cloudInfinite = CloudInfinite();
 ```
-2. 实例化图片转换类 CITransformation，并设置相关操作，这里以 TPG 为例。更多功能请参见 [基础图片处理](https://cloud.tencent.com/document/product/460/47731)。
+2. 实例化图片转换类 CITransformation，并设置相关操作，这里以 TPG 为例。更多功能请参见 [基础图片处理](https://www.tencentcloud.com/document/product/1045/45588)。
 
 **Objective-C**
 ```
