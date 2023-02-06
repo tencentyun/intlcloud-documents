@@ -5,7 +5,7 @@
 | API                                                          | 操作描述             |
 | ------------------------------------------------------------ | ------------------ |
 | [同步预览转图片](https://intl.cloud.tencent.com/document/product/1045/47929) | 生成同步预览转图片链接 |
-| [同步预览转 HTML](https://cloud.tencent.com/document/product/460/52518) | 生成同步预览转 HTML 链接 |
+| [同步预览转 HTML](https://www.tencentcloud.com/document/product/1045/47938) | 生成同步预览转 HTML 链接 |
 
 ## 基本操作
 
