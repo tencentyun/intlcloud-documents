@@ -69,7 +69,8 @@ request.finishBlock = ^(QCloudPostVideoRecognitionResult * outputObject, NSError
 [[QCloudCOSXMLService defaultCOSXML] PostVideoRecognition:request];
 
 ```
-> ?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/VideoOperation.m) 查看。
+
+**说明：** 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/VideoOperation.m) 查看。
 
 :::
 ::: Swift
@@ -113,8 +114,9 @@ request.finishBlock = { (result, error) in
     // QCloudPostVideoRecognitionResult 类；
 }
 QCloudCOSXMLService.defaultCOSXML().postVideoRecognition(request);
+
 ```
-> ?完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/VideoOperation.swift) 查看。
+**说明：** 完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/VideoOperation.swift) 查看。
 :::
 </dx-tabs>
 
@@ -144,7 +146,7 @@ request.jobId = @"jobid";
 [[QCloudCOSXMLService defaultCOSXML] GetVideoRecognition:request];
 
 ```
-> ?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/VideoOperation.m) 查看。
+**说明：** 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/VideoOperation.m) 查看。
 
 :::
 ::: Swift
@@ -163,7 +165,8 @@ request.finishBlock = { (result, error) in
 }
 QCloudCOSXMLService.defaultCOSXML().getVideoRecognition(request);
 ```
-> ?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/VideoOperation.swift) 查看。
+
+**说明：** 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/VideoOperation.swift) 查看。
 :::
 </dx-tabs>
 
