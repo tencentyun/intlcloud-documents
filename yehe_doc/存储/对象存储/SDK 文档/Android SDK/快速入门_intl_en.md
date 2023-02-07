@@ -8,14 +8,13 @@
 - For SDK FAQs, please see [Android SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38955).
 
 >? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
->
 
 
 ## Preparations
 
 1. You need an Android app, which can be one of your existing projects or a new one.
 2. Make sure that your Android app’s target API level is 15 (Ice Cream Sandwich) or above.
-3. Prepare a remote address that can be used to obtain your Tencent Cloud temporary key. For more information on temporary keys, please see [Implementing Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
+3. You need a remote address where users can obtain your Tencent Cloud temporary key. For more information on temporary keys, see [Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
 
 ## Step 1. Install the SDK
 
@@ -42,7 +41,7 @@ Add dependencies to the app-level `build.gradle` file (usually under the app mod
 dependencies {
 	...
     // Add the following line
-    implementation 'com.qcloud.cos:cos-android:5.7.+'
+    implementation 'com.qcloud.cos:cos-android:5.9.+'
 }
 ```
 
@@ -54,20 +53,36 @@ Add dependencies to the app-level `build.gradle` file (usually under the app mod
 dependencies {
 	...
     // Add the following line
-    implementation 'com.qcloud.cos:cos-android-lite:5.7.+'
+    implementation 'com.qcloud.cos:cos-android-lite:5.9.+'
 }
 ```
 
 
 
-#### Disabling the beacon report feature (applicable to 5.5.8 or later)
+#### Disabling beacon reporting
 
 We have introduced the [Tencent Beacon](https://beacon.tencent.com/) into the SDK to track down and optimize the SDK quality for a better user experience.
->? Tencent Beacon monitors only the COS-side request performance, and will not report the business-side data.
+>? DataInsight only monitors the COS request performance and doesn't report any business data.
 >
 
-To disable the beacon analysis feature, add the following statement to the app-level `build.gradle` file (usually under the app module):
+To disable the beacon analysis feature, perform the following operation in the app-level `build.gradle` file (usually under the app module):
 
+For v5.8.0 or later:
+Change the dependency of `cos-android` to
+```
+dependencies {
+	...
+    // Change to
+    implementation 'com.qcloud.cos:cos-android-nobeacon:x.x.x'
+
+    //For lite version, change to
+    implementation 'com.qcloud.cos:cos-android-lite-nobeacon:x.x.x'
+}
+```
+
+
+For v5.5.8–5.7.9:
+Add the beacon removing statement
 ```
 dependencies {
 	...
@@ -88,16 +103,15 @@ You can directly download the latest SDK version [here](https://cos-sdk-archive-
 After downloading and decompressing the file, you can see that it contains multiple `JAR` or `AAR` packages as described below. Please choose the ones you want to integrate.
 
 Required libraries:
-- cosxml: COS protocol implementation
-- qcloud-foundation: foundation library
+- cos-android: COS protocol implementation
+- qcloud-foundation: Foundation library
 - [bolts-tasks](https://github.com/BoltsFramework/Bolts-Android): third-party task library
 - [okhttp](https://github.com/square/okhttp): third-party networking library
 - [okio](https://github.com/square/okio): third-party I/O library
 
 Optional libraries:
-- beacon: mobile beacon analysis to improve the SDK
-- LogUtils: log module for improving the SDK
 - quic: QUIC protocol, required if you transfer data over QUIC
+- beacon: Mobile beacon analysis to improve the SDK
 
 #### 2. Integrate the SDK into your project
 
@@ -187,9 +201,31 @@ QCloudCredentialProvider myCredentialProvider =
     new ShortTimeCredentialProvider(secretId, secretKey, 300);
 ```
 
+#### Using the server-calculated signature to authorize the request
+
+Implement a subclass of `QCloudSelfSigner` to get the server-side signature and add it to the request authorization.
+
+```java
+QCloudSelfSigner myQCloudSelfSigner = new QCloudSelfSigner() {
+    /**
+     * Sign the request
+     *
+     * @param request The request to be signed
+     * @throws QCloudClientException Client exception
+     */
+    @Override
+    public void sign(QCloudHttpRequest request) throws QCloudClientException {
+        // 1. Pass the request parameters to the server to calculate the signature
+        String auth = "get auth from server";
+        // 2. Add the signature to the request
+        request.addHeader(HttpConstants.Header.AUTHORIZATION, auth);
+    }
+});
+```
+
 ### 2. Initialize a COS instance
 
-Use your `myCredentialProvider` instance that provides the key to initialize a `CosXmlService` instance.
+Use your `myCredentialProvider` instance that provides the key or the server-side signature authorization instance `myQCloudSelfSigner` to initialize a `CosXmlService` instance.
 
 `CosXmlService` provides all APIs for accessing COS. We recommend you use it as an **application singleton**.
 
@@ -206,6 +242,10 @@ CosXmlServiceConfig serviceConfig = new CosXmlServiceConfig.Builder()
 // Initialize the COS service to obtain the instance
 CosXmlService cosXmlService = new CosXmlService(context,
     serviceConfig, myCredentialProvider);
+
+// Initialize the COS service via the server-side signature authorization to get the instance
+CosXmlService cosXmlService = new CosXmlService(context,
+    serviceConfig, myQCloudSelfSigner);
 ```
 
 >? For more information on the abbreviations of the COS bucket regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
@@ -225,7 +265,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
@@ -233,10 +273,18 @@ String srcPath = new File(context.getCacheDir(), "exampleobject")
 // If there is an uploadId for the initialized multipart upload, assign the value of uploadId here to resume the upload. Otherwise, assign null
 String uploadId = null;
 
-// Upload the object
+// Upload the file
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         srcPath, uploadId);
 
+// Set the callback for initializing multipart upload (supported starting from v5.9.7)
+cosxmlUploadTask.setInitMultipleUploadListener(new InitMultipleUploadListener() {
+    @Override
+    public void onSuccess(InitiateMultipartUpload initiateMultipartUpload) {
+        // The `uploadId` used for next upload
+        String uploadId = initiateMultipartUpload.uploadId;
+    }
+});
 // Set the upload progress callback
 cosxmlUploadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
     @Override
@@ -291,7 +339,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 // Path of the local directory

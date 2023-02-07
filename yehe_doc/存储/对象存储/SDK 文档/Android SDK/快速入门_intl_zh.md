@@ -8,7 +8,6 @@
 - SDK 常见问题请参见：[Android SDK 常见问题](https://intl.cloud.tencent.com/document/product/436/38955)。
 
 >? 如果您在使用 XML 版本 SDK 时遇到函数或方法不存在等错误，请先将 XML 版本 SDK 升级到最新版再重试。
->
 
 
 ## 准备工作
@@ -37,37 +36,53 @@ repositories {
 
 #### 标准版 SDK
 
-在应用级别（通常是 app 模块下）的 `build.gradle` 中添加依赖：
+在应用级别（通常是 App 模块下）的 `build.gradle` 中添加依赖：
 ```
 dependencies {
 	...
     // 增加这行
-    implementation 'com.qcloud.cos:cos-android:5.7.+'
+    implementation 'com.qcloud.cos:cos-android:5.9.+'
 }
 ```
 
 
 #### 精简版 SDK
 
-在应用级别（通常是 app 模块下）的 `build.gradle` 中添加依赖：
+在应用级别（通常是 App 模块下）的 `build.gradle` 中添加依赖：
 ```
 dependencies {
 	...
     // 增加这行
-    implementation 'com.qcloud.cos:cos-android-lite:5.7.+'
+    implementation 'com.qcloud.cos:cos-android-lite:5.9.+'
 }
 ```
 
 
 
-#### 关闭 beacon 上报功能（适用于5.5.8以及以上版本）
+#### 关闭 beacon 上报功能
 
 为了持续跟踪和优化 SDK 的质量，给您带来更好的使用体验，我们在 SDK 中引入了 [腾讯灯塔](https://beacon.tencent.com/) SDK。
->? 腾讯灯塔只对COS侧的请求性能进行监控，不会上报业务侧数据。
+>? 腾讯灯塔只对 COS 侧的请求性能进行监控，不会上报业务侧数据。
 >
 
-若是想关闭该功能，请在应用级别（通常是 app 模块下）的 `build.gradle` 中添加去掉 beacon 的语句：
+若是想关闭该功能，请在应用级别（通常是 App 模块下）的 `build.gradle` 中进行如下操作:
 
+版本为5.8.0以及以上：
+修改 cos-android 的依赖为
+```
+dependencies {
+	...
+    // 修改为
+    implementation 'com.qcloud.cos:cos-android-nobeacon:x.x.x'
+
+    //lite 版本修改为
+    implementation 'com.qcloud.cos:cos-android-lite-nobeacon:x.x.x'
+}
+```
+
+
+版本为5.5.8至5.7.9：
+添加去掉 beacon 的语句
 ```
 dependencies {
 	...
@@ -88,20 +103,19 @@ dependencies {
 下载完成并解压后，您可以看到里面包含了数个 `jar` 或 `aar` 包。下面是对它们的简单说明，请根据需要选择集成的包。
 
 必选的库：
-- cosxml：COS 协议实现
+- cos-android：COS 协议实现
 - qcloud-foundation：基础库
 - [bolts-tasks](https://github.com/BoltsFramework/Bolts-Android)：第三方 Task 库
 - [okhttp](https://github.com/square/okhttp)：第三方 Networking 库
 - [okio](https://github.com/square/okio)：第三方 IO 库
 
 可选的库：
-- beacon： beacon 移动分析，用于改进 SDK
-- LogUtils： 日志模块，用于改进 SDK
 - quic：QUIC 协议，当您使用到 QUIC 协议来传输数据时需要
+- beacon： beacon 移动分析，用于改进 SDK
 
 #### 2. 集成到项目中
 
-把需要的包放到您应用模块下的 `libs` 文件夹下，并在应用级别（通常是 app 模块下）的 `build.gradle` 文件中添加如下依赖：
+把需要的包放到您应用模块下的 `libs` 文件夹下，并在应用级别（通常是 App 模块下）的 `build.gradle` 文件中添加如下依赖：
 
 ```
 dependencies {
@@ -139,7 +153,7 @@ SDK 需要网络权限，用于与 COS 服务器进行通信，请在应用模�
 
 ### 1. 实现获取临时密钥
 
-实现一个 `BasicLifecycleCredentialProvider`的子类，实现请求临时密钥并返回结果的过程。
+实现一个 `BasicLifecycleCredentialProvider` 的子类，实现请求临时密钥并返回结果的过程。
 
 ```java
 public static class MySessionCredentialProvider
@@ -187,9 +201,31 @@ QCloudCredentialProvider myCredentialProvider =
     new ShortTimeCredentialProvider(secretId, secretKey, 300);
 ```
 
+#### 使用服务端计算的签名对请求授权
+
+实现一个 `QCloudSelfSigner` 的子类，实现获取服务端签名并加入请求授权。
+
+```java
+QCloudSelfSigner myQCloudSelfSigner = new QCloudSelfSigner() {
+    /**
+     * 对请求进行签名
+     *
+     * @param request 需要签名的请求
+     * @throws QCloudClientException 客户端异常
+     */
+    @Override
+    public void sign(QCloudHttpRequest request) throws QCloudClientException {
+        // 1. 把 request 的请求参数传给服务端计算签名
+        String auth = "get auth from server";
+        // 2. 给请求添加签名
+        request.addHeader(HttpConstants.Header.AUTHORIZATION, auth);
+    }
+});
+```
+
 ### 2. 初始化 COS Service
 
-使用您提供密钥的实例 `myCredentialProvider`，初始化一个 `CosXmlService` 的实例。
+使用您提供密钥的实例 `myCredentialProvider` 或 服务端签名授权实例 `myQCloudSelfSigner`，初始化一个 `CosXmlService` 的实例。
 
 `CosXmlService` 提供了访问 COS 的所有接口，建议作为 **程序单例** 使用。
 
@@ -206,6 +242,10 @@ CosXmlServiceConfig serviceConfig = new CosXmlServiceConfig.Builder()
 // 初始化 COS Service，获取实例
 CosXmlService cosXmlService = new CosXmlService(context,
     serviceConfig, myCredentialProvider);
+
+// 通过服务端签名授权初始化 COS Service，获取实例
+CosXmlService cosXmlService = new CosXmlService(context,
+    serviceConfig, myQCloudSelfSigner);
 ```
 
 >? 关于存储桶不同地域的简称请参考 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224)。
@@ -217,7 +257,7 @@ CosXmlService cosXmlService = new CosXmlService(context,
 
 SDK 支持上传本地文件、二进制数据、Uri 以及输入流。下面以上传本地文件为例：
 
-[//]: # ".cssg-snippet-transfer-upload-file"
+[//]: # (.cssg-snippet-transfer-upload-file)
 ```java
 // 初始化 TransferConfig，这里使用默认配置，如果需要定制，请参考 SDK 接口文档
 TransferConfig transferConfig = new TransferConfig.Builder().build();
@@ -237,6 +277,14 @@ String uploadId = null;
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         srcPath, uploadId);
 
+//设置初始化分块上传回调(5.9.7版本以及后续版本支持)
+cosxmlUploadTask.setInitMultipleUploadListener(new InitMultipleUploadListener() {
+    @Override
+    public void onSuccess(InitiateMultipartUpload initiateMultipartUpload) {
+        //用于下次续传上传的 uploadId
+        String uploadId = initiateMultipartUpload.uploadId;
+    }
+});
 //设置上传进度回调
 cosxmlUploadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
     @Override
@@ -280,7 +328,7 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 
 ### 下载对象
 
-[//]: # ".cssg-snippet-transfer-download-object"
+[//]: # (.cssg-snippet-transfer-download-object)
 ```java
 // 高级下载接口支持断点续传，所以会在下载前先发起 HEAD 请求获取文件信息。
 // 如果您使用的是临时密钥或者使用子账号访问，请确保权限列表中包含 HeadObject 的权限。
@@ -291,7 +339,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+// 存储桶名称，由 bucketname-appid 组成，appid 必须填入，可以在 COS 控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; //对象在存储桶中的位置标识符，即称对象键
 //本地目录路径

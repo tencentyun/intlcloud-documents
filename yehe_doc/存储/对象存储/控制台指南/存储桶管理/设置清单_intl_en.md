@@ -18,50 +18,45 @@ You have created a bucket. For more information, see [Creating a Bucket](https:/
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. On the left sidebar, click **Bucket List**.
 3. Click the name of the source bucket that you want to enable inventory for.
-4. Click **Basic Configurations** > **Inventory**, and then click **Add Inventory**.
-![](https://qcloudimg.tencent-cloud.cn/raw/9b8a2b1fc77bc2474f57e10dc5fffd7f.png)
-
-5. In the pop-up window, configure the following information:
-
- a. Basic information
- 
-![](https://qcloudimg.tencent-cloud.cn/raw/9cdbf46cd2fc322b14dafb6a5cb9b4b2.png)
-	- **Rule Status**: whether to enable this inventory rule. Valid values: **Enable**, **Disable**.
-	- **Inventory Name**: name of the published inventory report
-	- **Destination Bucket**: bucket where the inventory is stored. Defaults to the source bucket. The destination bucket must be in the same region as the source bucket.
-	- **Report Prefix (Optional)**: prefix selected for the destination bucket. The prefix can be used to group the inventory files in a public location. The default value is used initially.
-  b. Filter
-![](https://qcloudimg.tencent-cloud.cn/raw/a8138f193f22bd28c824988e4d2d40ab.png)
-	- **Scope of the file**: object scope to apply the inventory rule. **The whole bucket** is selected by default.
-	- **Object Version**: whether to include all object versions or only the current version in the inventory. If not set, only the current version will be included.
-	- **Filter Labels** (optional): lists objects with the same tag to the inventory. If this field is not set, no tag will be filtered.
-	- **Filter Time (Optional)**: filters only objects modified after the specified time or within the specified period in the inventory. If not set, no time filter will be applied.
-	- **Inventory Information**: object information to be included in the inventory report. Options include object size, storage class, ETag, cross-bucket replication status, multipart upload status, last updated time, and tag. If not specified, all will be selected.
->! `ETag` (entity tag) is the hash value of the object. It only reflects changes in the object content but not the object metadata. The value of `ETag` is not necessarily the MD5 checksum of the object. The value can be different if the uploaded object is encrypted.
+4. Select **Basic Configurations** > **Inventory** on the left and click **Add Inventory**.
+5. On the **Configuration** page, you can configure the following items:
+ 1. Basic information
+    - **Rule Status**: Whether to enable this inventory rule. Valid values: **Enable**, **Disable**.
+    - **Inventory Name**: Name of the inventory.
+    - **Destination Bucket**: Bucket where the inventory is stored. Defaults to the source bucket. The destination bucket must be in the same region as the source bucket.
+    - **Report Prefix (Optional)**: Prefix selected for the destination bucket. The prefix can be used to group the inventory files in a public location. The default value is used initially.
+ 2. Filter
+    - **Scope of the file**: Object scope to apply the inventory rule. **The whole bucket** is selected by default.
+	- **Object Version**: Whether to include all object versions or only the current version in the inventory. If not set, only the current version will be included.
+	- **Filter Labels** (optional): Lists objects with the same tag to the inventory. If this field is not set, no tag will be filtered.
+	- **Filter Time (Optional)**: Filters only objects modified after the specified time or within the specified period in the inventory. If not set, no time filter will be applied.
+	- **Inventory Information**: Object information to be included in the inventory report. Options include object size, storage class, ETag, cross-bucket replication status, multipart upload status, last updated time, and tag. If not specified, all will be selected.
+>?
+>- `ETag` (entity tag) is the hash value of the object. It only reflects changes in the object content but not the object metadata. The value of `ETag` is not necessarily the MD5 checksum of the object. The value can be different if the uploaded object is encrypted.
+>- The generated inventory contains the `Appid`, `Bucket`, `Key`, and `LastModifiedTime` fields by default.
+>- If versioning is enabled for the bucket, the generated inventory will also contain the `VersionId`, `IsLatest`, and `IsDeleteMarker` fields.
 >
-  c. Output format
-![](https://qcloudimg.tencent-cloud.cn/raw/b48c91e6bd090d500c7e34cd8eef92eb.png)
-
-	- **Output**: The default value is **CSV**.
-	- **Generate Lifecycle**: specifies whether to export the inventory **Everyday** (default) or **Everyweek**. For example, an inventory added at 15:00 today will be generated and delivered to the destination bucket before 6:00 tomorrow in most cases.
-	- **Inventory Encryption**: whether to encrypt the inventory on the server. Options include:
+ 3. Output format
+	- **Output Format**: The output inventory file is a CSV file compressed with GZIP.
+	- **Generate Lifecycle**: Specifies whether to generate the inventory **Everyday** (default) or **Everyweek**. For example, an inventory added at 15:00 today will be generated and delivered to the destination bucket before 6:00 tomorrow in most cases.
+	- **Inventory Encryption**: Whether to encrypt the inventory on the server. Options include:
 		 - None: The inventory is not encrypted (default).
 		 - SSE-COS: Encrypt the inventory report using server-side encryption with COS-managed key. For more information, see [SSE-COS Encryption](https://intl.cloud.tencent.com/document/product/436/18145) in the COS Developer Guide.
 	- **Access authorization**: This field needs to be enabled to proceed with the next step. By default, this field is disabled.
-  d. Information confirmation
-![](https://qcloudimg.tencent-cloud.cn/raw/f6fe780a4524fe149c258f2c6f17adaf.png)
-
-Confirm the inventory configurations for the bucket. If there is anything you need to modify, click **Previous** and modify as needed.
-
-6. Click **OK**. COS will publish inventory reports and deliver them to the destination bucket you set daily or weekly.
+ 4. Information confirmation
+Confirm the bucket inventory configurations. If you need to change anything, click **Previous** and modify as needed.
+6. Click **OK**. COS will generate inventory reports daily or weekly and deliver them to the destination bucket you set.
 >? For more information about the format and content of the generated inventory reports, see [Inventory Overview](https://intl.cloud.tencent.com/document/product/436/30622).
 >
 
-### Generating an inventory on the fly
+### Generating an instant inventory
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. On the left sidebar, click **Bucket List** and then click the bucket (source bucket) that you want to enable inventory for.
-3. Click **Basic Configurations** > **Inventory**. Click **Generate list on the fly** in the **Operation** column on the right of the desired inventory rule.
-![](https://qcloudimg.tencent-cloud.cn/raw/56d01e3e37a28fa41f0e7a6349a9b438.png)
->? To generate an inventory on the fly, click **Generate list on the fly** in the **Operation** column.
-> If you haven’t configured inventory, you can configure one and then generate an inventory on the fly.
+3. Click **Basic Configurations** > **Inventory** on the left, select an inventory rule, and click **Generate Instant Inventory** on the right to generate an instant inventory.
+>? 
+>- To generate an instant inventory, click **Generate Instant Inventory** in the **Operation** column.
+>- If you haven't configured inventory, you can configure one and then generate an instant inventory.
+>
+
+

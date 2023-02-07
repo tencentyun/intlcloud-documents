@@ -42,7 +42,7 @@ CDN 鉴权配置和 CDN 回源鉴权的使用情况不冲突，但是两者配�
 
 ## 相关操作
 
-- [开启自定义 CDN 加速域名](https://intl.cloud.tencent.com/document/product/436/31506)
+- [开启自定义 CDN 加速域名](https://www.tencentcloud.com/document/product/436/31505)
 - [开启自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31507)
 - [授予子账号配置存储桶加速域名的权限](https://intl.cloud.tencent.com/document/product/436/31712)
 - [配置自定义域名支持 HTTPS 访问](https://intl.cloud.tencent.com/document/product/436/11142)

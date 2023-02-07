@@ -5,9 +5,9 @@
 在数据工作流中可以实现**音视频转码（包括极速高清转码、广电专业格式转码）**、**视频截帧**、 **视频转动图**、**智能封面**、**音视频拼接**、**人声分离**、**精彩集锦**、**自适应码流**、**SDRtoHDR** 、**视频增强**、**超分辨率**、**音视频分段**、**自定义函数**、**图片处理**等功能。
 
 >! 
->- 工作流目前支持处理 3gp、asf、avi、dv、flv、f4v、m3u8、m4v、mkv、mov、mp4、mpg、mpeg、mts、ogg、rm、rmvb、swf、vob、wmv、webm、mp3、aac、flac、amr、m4a、wma、wav 格式的文件，您在发起媒体处理请求时，请务必输入完整的文件名和文件格式，否则无法识别格式和处理。
->- 目前工作流功能仅支持对上传中的视频文件进行操作，若您需要对云上数据进行媒体处理操作，请使用 [任务](https://intl.cloud.tencent.com/document/product/436/46409) 功能。
->
+> - 工作流目前支持处理 3gp、asf、avi、dv、flv、f4v、m3u8、m4v、mkv、mov、mp4、mpg、mpeg、mts、ogg、rm、rmvb、swf、vob、wmv、webm、mp3、aac、flac、amr、m4a、wma、wav 格式的文件，您在发起媒体处理请求时，请务必输入完整的文件名和文件格式，否则无法识别格式和处理。
+> - 目前工作流功能仅支持对上传中的视频文件进行操作，若您需要对云上数据进行媒体处理操作，请使用 [任务](https://intl.cloud.tencent.com/document/product/436/46409) 功能。
+> 
 
 ## 操作步骤
 
@@ -39,6 +39,7 @@
 :::
 ::: 智能封面
 ![](https://qcloudimg.tencent-cloud.cn/raw/00fcf5b908905eadb0e4e0920fd69358.png)
+
 说明：智能封面结合腾讯云先进的 AI 技术，通过对视频内容的理解，智能计算输出3张最优的关键帧。
 :::
 ::: 音视频拼接
@@ -51,10 +52,11 @@
 :::
 ::: 精彩集锦
 ![](https://qcloudimg.tencent-cloud.cn/raw/d320ea46e01a3969811deecf3ee245ff.png)
+
 :::
 ::: 自适应码流
 ![](https://qcloudimg.tencent-cloud.cn/raw/b6f7821676471e7f505dd4f4e0c09574.png)
-说明：将多码率、多音轨的多个文件打包生成一个文件，一步生成多码率自适应的视频文件。
+说明：将多码率、多音轨的多个文件打包生成一个文件，一步生成多码率自适应的HLS或DASH视频文件。
 :::
 ::: SDRtoHDR
 ![](https://qcloudimg.tencent-cloud.cn/raw/51ba2ccf5a680c5217a08cfdbaccc146.png)
@@ -64,11 +66,11 @@
 :::
 </dx-tabs>
 <dx-tabs>
+::: 超分辨率
+
+:::
 ::: 音视频分段
 ![](https://qcloudimg.tencent-cloud.cn/raw/2fd5506dabedfbc051a13bb019ca601f.png)
-:::
-
-::: 超分辨率
 
 :::
 ::: 自定义函数
@@ -76,6 +78,10 @@
 :::
 :::图片处理
 
+:::
+::: 音视频信息（判断节点）
+
+说明：音视频信息节点可以判断输入文件的宽高比、文件时长等信息，作为下一个节点的前置执行条件。
 :::
 </dx-tabs>
 7. 以上配置无误后，单击**保存**，即可看到刚创建的工作流。
@@ -145,3 +151,6 @@
 若目标文件名的参数格式设置为：`${InputNameAndExt}_${RunId}.${Ext}`。
 
 当工作流执行时产生两个执行实例（例如执行实例 ID 分别为000001和000002）时，则最后目标文件名为 test1.mp4_000001.flv 和 test2.mp4_000002.flv。
+
+
+

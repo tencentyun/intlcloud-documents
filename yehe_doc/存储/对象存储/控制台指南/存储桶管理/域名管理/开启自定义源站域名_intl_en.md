@@ -1,25 +1,22 @@
 ## Overview
 
-This document describes how to bind a custom domain name to a bucket. Then, you can access files in the bucket at the custom domain name.
+This document describes how to bind a custom domain name to a bucket. You can access the files in the bucket via the custom domain name.
 
 >? Up to 20 custom domain names can be added in the COS console. To add more, [contact us](https://intl.cloud.tencent.com/contact-sales).
->
 
 ## Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5). 
 2. Click **Bucket List** on the left sidebar.
-3. Click the target bucket to enter the **Bucket Configuration** page.
-4. Click **Domains and Transfer** > **Custom Endpoint** on the left sidebar and click **+Add Domain**.
-5. If your custom domain name has been filed with MIIT, and a DNS record has been added in the [DNS console](https://console.cloud.tencent.com/cns/domains), you can enter the custom domain name in the **Domain Name** input box, and click **Save**. Then, you can choose to upload a certificate.
+3. Click the bucket for which you need to set a domain name to go to the bucket configuration page.
+4. Click **Domains and Transfer** > **Custom Endpoint** on the left sidebar, click **Add Domain**, and configure the following items:
 
-6. If you have not added a DNS record for your custom domain name, add your custom domain name by following the steps below.
-  1. Log in to the [DNS console](https://console.cloud.tencent.com/cns/domains), click **DNS Record List** on the left sidebar to enter the **All Domains** page. Click **Add Record**.
-  2. Enter the custom domain name, **select the default project (recommended if you don't have special requirements)**, and click **OK** to save.
-
-
-  3. After the domain name is added successfully, click it to enter the DNS record management page. Click **Add Record**.
-  4. Enter the host record as prompted, select **CNAME** for **Record Type** and **Default** for **Split Zone**, enter your bucket domain name in **Record Value**, leave **TTL** as-is, and click **Save**.
-
-
-  5. After the record is added, it takes about ten minutes to take effect. Then, you can configure relevant options as described in step 3.
+  - **Domain Name**: Enter the target custom domain name (such as `www.example.com`). Make sure that an ICP filing has been obtained, a DNS record has been added in the [Domains console](https://console.cloud.tencent.com/cns/domains), and a CNAME record has been configured at the DNS service provider for the entered domain name. For more information, see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121). If the custom CDN acceleration domain you are connecting is in the following situations, you need to verify your domain ownership as instructed in [Domain Name Ownership Verification](https://intl.cloud.tencent.com/document/product/228/42693).
+     - The domain name is being connected for the first time.
+     - The domain name has been connected by another user.
+     - The domain name is a wildcard domain name.
+  - **Origin Server Type**: Select **Default Endpoint** or **Static Website Endpoint**. Select the first option unless your bucket has enabled static website. If you want to use your custom domain name as static website, select **Static Website Endpoint** here and enable static website for your bucket.
+  - **HTTPS Certificate**: After the domain name is saved, you can choose to bind a certificate. For detailed instructions, see [Certificate Installation](https://www.tencentcloud.com/document/product/1007/36568).
+  >?
+  >- HTTPS certificate hosting for custom origin server domain names of COS is supported in public cloud regions in the Chinese mainland and in Singapore. If no HTTPS certificate is available for your domain name, click [Apply for Free Certificate](https://console.cloud.tencent.com/ssl).
+  >- HTTPS certificate hosting currently is not supported in other regions. If you need to use HTTPS certificates, see [Method 2](https://intl.cloud.tencent.com/document/product/436/11142).

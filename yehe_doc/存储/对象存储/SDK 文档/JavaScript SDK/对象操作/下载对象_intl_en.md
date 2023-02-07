@@ -1,19 +1,19 @@
 ## Overview
 
->! This API is used to read object content. To download a file using your browser, you should first get a download URL through the `cos.getObjectUrl` method. For more information, please see [Pre-signed URLs](https://intl.cloud.tencent.com/document/product/436/31540).
+>! This API is used to read object content. To download a file using your browser, you should first get a download URL through the `cos.getObjectUrl` method. For more information, see [Pre-signed URLs](https://intl.cloud.tencent.com/document/product/436/31540).
 >
 
-This document provides an overview of APIs and SDK code samples related to object downloads.
+This document provides an overview of APIs and SDK code samples for downloading an object.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system. |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
 
-#### Description
+#### Feature description
 
 This API (`GET Object`) is used to get the content, in string format, of a specified file in a bucket.
+To download files to your local system, see [Generating Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31540#.E4.B8.8B.E8.BD.BD.E8.AF.B7.E6.B1.82.E7.A4.BA.E4.BE.8B).
 
-Download the file locally, see [Generating Pre-Signed URL](https://www.tencentcloud.com/document/product/436/31540) 
 ### Downloading a single object
 
 #### Sample code
@@ -22,7 +22,7 @@ Download the file locally, see [Generating Pre-Signed URL](https://www.tencentcl
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-    Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
+    Region: 'COS_REGION',  /* Bucket region (required), such as ap-beijing */
     Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     onProgress: function (progressData) {
         console.log(JSON.stringify(progressData));
@@ -38,7 +38,7 @@ Getting file content with `Range` specified
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-    Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
+    Region: 'COS_REGION',  /* Bucket region (required), such as ap-beijing */
     Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     Range: 'bytes=1-3', /*Optional*/
     onProgress: function (progressData) {
@@ -68,13 +68,13 @@ cos.getObject({
 
 Downloading an object (limiting single-URL speed):
 
->?For more information about the speed limits on object downloads, please see [Single-URL Speed Limits](https://intl.cloud.tencent.com/document/product/436/34072).
+>?For more information about the speed limits on object downloads, see [Single-Connection Bandwidth Limit](https://intl.cloud.tencent.com/document/product/436/34072).
 
 [//]: # (.cssg-snippet-get-object-traffic-limit)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-    Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
+    Region: 'COS_REGION',  /* Bucket region (required), such as ap-beijing */
     Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     Headers: {
       'x-cos-traffic-limit': 819200, // The speed range is 819200 to 838860800, that is 100 KB/s to 100 MB/s. If the value is not within this range, 400 will be returned.
@@ -120,7 +120,7 @@ function(err, data) { ... }
 
 ```
 
-| Parameter  | Description | Type | 
+| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as `200`, `403`, and `404` | Number |
@@ -135,15 +135,15 @@ function(err, data) { ... }
 | - x-cos-storage-class | Storage class of the object. For the enumerated values, such as `STANDARD` and `STANDARD_IA`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).</br>**Note: If this header is not returned, the storage class is `STANDARD`.** | String  |
 | - x-cos-meta-\*                                               | User defined metadata                                           | String  |
 | - NotModified      | This field is returned if the request has `IfModifiedSince`. If the file hasn’t been modified after the specified time, `true` is returned. If not, `false` is returned. | Boolean |
-| - ETag | MD5 checksum of the object. The value of this parameter can be used to check whether the object was corrupted during the upload. </br>Example: `"09cba091df696af91549de27b8e7d0f6"`. **Note that double quotation marks are required at the beginning and the end.** | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  |
+| - ETag | MD5 checksum of the object. The value of this parameter can be used to check whether the object was corrupted during the upload. </br>Example: `"09cba091df696af91549de27b8e7d0f6"`. **Note that double quotation marks are required at the beginning and the end of the value.** | String |
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | | String  |
 | - Body                | Returned file content, in string format by default        | String  |
 
 
 ### Downloading multiple objects
 
->! This is not recommended as you cannot use code to control the start or stop after triggering a download with browser. When too many objects need to be downloaded, it may cause a poor experience.
-
+This is not recommended as you cannot use code to control the start or stop after triggering a download with browser. When too many objects need to be downloaded, it may cause a poor experience.
+>
 
 #### Sample code
 
@@ -155,7 +155,7 @@ var getObjects = function (marker) {
     cos.getBucket({
         Bucket: config.Bucket,
         Region: config.Region,
-        Prefix: 'abc', /* A directory/prefix to delete */
+        Prefix: 'abc', /* A directory/prefix to download */
         Marker:       marker,
         MaxKeys: 1000,
     }, function (listError, listResult) {

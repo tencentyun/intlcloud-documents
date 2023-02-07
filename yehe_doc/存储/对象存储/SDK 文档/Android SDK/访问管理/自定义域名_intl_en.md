@@ -1,11 +1,12 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to custom domains.
+This document provides an overview of APIs and SDK code samples for custom domains.
 
 | API | Operation | Description |
-| ----------------- | -------------- | -------------------------- |
-| PUT Bucket domain    | Setting a custom domain | Sets a custom domain for a bucket |
-| GET Bucket domain    | Querying a custom domain | Queries the custom domain of a bucket |
+| ------------------------------------------------------------ | ------------ | ------------------------------ |
+| [PUT Bucket domain](https://www.tencentcloud.com/document/product/436/35868) | Setting a custom domain | Sets a custom domain for a bucket |
+| [GET Bucket domain](https://www.tencentcloud.com/document/product/436/35869) | Querying a custom endpoint  | Queries the custom endpoint of a bucket |
+| [DELETE Bucket domain](https://www.tencentcloud.com/document/product/436/35870) | Deleting a custom domain | Deletes the custom domain configuration of a bucket |
 
 ## SDK API References
 
@@ -13,15 +14,15 @@ For the parameters and method descriptions of all the APIs in the SDK, see [SDK 
 
 ## Setting Custom Domains
 
-#### Description
+#### Feature description
 
 This API is used to set a custom domain for a bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-put-bucket-domain)
+[//]: # ".cssg-snippet-put-bucket-domain"
 ```java
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 PutBucketDomainRequest putBucketDomainRequest =
         new PutBucketDomainRequest(bucket);
@@ -69,15 +70,15 @@ The following describes some common errors that may occur when you call this API
 
 ## Querying a Custom Domain
 
-#### Description
+#### Feature description
 
 This API is used to query the custom domain set for a bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-get-bucket-domain)
+[//]: # ".cssg-snippet-get-bucket-domain"
 ```java
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 GetBucketDomainRequest getBucketDomainRequest =
         new GetBucketDomainRequest(bucket);
@@ -112,9 +113,9 @@ cosXmlService.getBucketDomainAsync(getBucketDomainRequest,
 <table>
 <thead>
 <tr>
-<th>Parameter Name</th>
+<th>Parameter</th>
 <th>Description</th>
-<th>Type</th>
+<th>API Type</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -124,3 +125,44 @@ cosXmlService.getBucketDomainAsync(getBucketDomainRequest,
 </tr>
 </tbody></table>
 
+## Deleting Custom Domains
+
+#### Feature description
+
+This API is used to delete the custom domain set for a bucket.
+
+>! The COS Android SDK version should not be earlier than v5.9.8.
+>
+
+#### Sample code
+
+[//]: # ".cssg-snippet-delete-bucket-domain"
+```java
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+String bucket = "examplebucket-1250000000";
+DeleteBucketDomainRequest deleteBucketDomainRequest =
+        new DeleteBucketDomainRequest(bucket);
+cosXmlService.deleteBucketDomainAsync(deleteBucketDomainRequest,
+        new CosXmlResultListener() {
+            @Override
+            public void onSuccess(CosXmlRequest request, CosXmlResult result) {
+                // For detailed fields, see the API documentation or SDK source code.
+                DeleteBucketDomainResult deleteBucketDomainResult =
+                        (DeleteBucketDomainResult) result;
+            }
+            // If you use the Kotlin language to call this, please note that the exception in the callback method is nullable; otherwise, the onFail method will not be called back, that is:
+            // clientException is of type CosXmlClientException? and serviceException is of type CosXmlServiceException?
+            @Override
+            public void onFail(CosXmlRequest cosXmlRequest,
+                               @Nullable CosXmlClientException clientException,
+                               @Nullable CosXmlServiceException serviceException) {
+                if (clientException != null) {
+                    clientException.printStackTrace();
+                } else {
+                    serviceException.printStackTrace();
+                }
+            }
+        });
+```
+
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketDomain.java).

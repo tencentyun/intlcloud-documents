@@ -40,7 +40,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
@@ -48,10 +48,18 @@ String srcPath = new File(context.getCacheDir(), "exampleobject")
 // If there is an uploadId for the initialized multipart upload, assign the value of uploadId here to resume the upload. Otherwise, assign null
 String uploadId = null;
 
-// Upload the object
+// Upload the file
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         srcPath, uploadId);
 
+// Set the callback for initializing multipart upload (supported starting from v5.9.7)
+cosxmlUploadTask.setInitMultipleUploadListener(new InitMultipleUploadListener() {
+    @Override
+    public void onSuccess(InitiateMultipartUpload initiateMultipartUpload) {
+        // The `uploadId` used for next upload
+        String uploadId = initiateMultipartUpload.uploadId;
+    }
+});
 // Set the upload progress callback
 cosxmlUploadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
     @Override
@@ -91,7 +99,7 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 
 >?
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating Pre-Signed URLs](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 #### Sample 2. Uploading binary data
 
@@ -101,7 +109,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 
@@ -135,7 +143,7 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
 
 >?
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating Pre-Signed URLs](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 #### Sample 3. Stream upload
 
@@ -145,7 +153,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 
@@ -181,7 +189,7 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
 
 >?
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating Pre-Signed URLs](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 #### Sample 4. Uploading using a URI
 
@@ -191,7 +199,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key
 
@@ -227,7 +235,7 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
 
 >?
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating Pre-Signed URLs](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 #### Sample 5. Setting the threshold for smart multipart upload
 
@@ -286,7 +294,7 @@ for (File file : files) {
     // If there is an uploadId for the initialized multipart upload, assign the value of uploadId here to resume the upload. Otherwise, assign null
     String uploadId = null;
 
-    // Upload the object
+    // Upload the file
     COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
             file.getAbsolutePath(), uploadId);
 
@@ -321,7 +329,7 @@ for (File file : files) {
 
 [//]: # (.cssg-snippet-create-directory)
 ```java
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 // The location identifier of a directory in a bucket (i.e., the object key), which must end with a slash (/).
 String cosPath = "exampleobject/";
@@ -349,13 +357,13 @@ cosXmlService.putObjectAsync(putObjectRequest, new CosXmlResultListener() {
 ```
 >?
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating Pre-Signed URLs](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 #### Sample 9. Setting a low-priority task
 
 [//]: # (.cssg-snippet-transfer-upload-priority-low)
 ```java
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 // The location identifier of a directory in a bucket (i.e., the object key), which must end with a slash (/).
 String cosPath = "exampleobject/";
@@ -382,7 +390,7 @@ uploadTask.setCosXmlResultListener(new CosXmlResultListener() {
 
 ### Uploading an object using simple upload
 
-#### Description
+#### Feature description
 
 This API (PUT Object) is used to upload an object smaller than 5 GB to a specified bucket. To call this API, you need to have permission to write to the bucket. If the object size is larger than 5 GB, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) for the upload.
 
@@ -395,7 +403,7 @@ This API (PUT Object) is used to upload an object smaller than 5 GB to a specifi
 
 [//]: # (.cssg-snippet-put-object)
 ```java
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
@@ -432,11 +440,11 @@ cosXmlService.putObjectAsync(putObjectRequest, new CosXmlResultListener() {
 
 >?
 >- For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PutObject.java).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating Pre-Signed URLs](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 ### Uploading an object using an HTML form
 
-#### Description
+#### Feature description
 
 This API is used to upload an object using an HTML form.
 
@@ -507,7 +515,7 @@ The multipart upload process is outlined below.
 
 ### Querying multipart uploads
 
-#### Description
+#### Feature description
 
 This API (`List Multipart Uploads`) is used to query in-progress multipart uploads in a specified bucket.
 
@@ -515,7 +523,7 @@ This API (`List Multipart Uploads`) is used to query in-progress multipart uploa
 
 [//]: # (.cssg-snippet-list-multi-upload)
 ```java
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 ListMultiUploadsRequest listMultiUploadsRequest =
         new ListMultiUploadsRequest(bucket);
@@ -547,7 +555,7 @@ cosXmlService.listMultiUploadsAsync(listMultiUploadsRequest,
 
 ### Initializing a multipart upload
 
-#### Description
+#### Feature description
 
 This API is used to initialize a multipart upload operation and get its `uploadId`.
 
@@ -555,7 +563,7 @@ This API is used to initialize a multipart upload operation and get its `uploadI
 
 [//]: # (.cssg-snippet-init-multi-upload)
 ```java
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 
@@ -596,7 +604,7 @@ This API (`Upload Part`) is used to upload an object in parts.
 
 [//]: # (.cssg-snippet-upload-part)
 ```java
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 UploadPartRequest uploadPartRequest = new UploadPartRequest(bucket, cosPath,
@@ -638,7 +646,7 @@ cosXmlService.uploadPartAsync(uploadPartRequest, new CosXmlResultListener() {
 
 ### Querying uploaded parts
 
-#### Description
+#### Feature description
 
 This API (`List Parts`) is used to query the uploaded parts of a multipart upload.
 
@@ -646,7 +654,7 @@ This API (`List Parts`) is used to query the uploaded parts of a multipart uploa
 
 [//]: # (.cssg-snippet-list-parts)
 ```java
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 
@@ -678,14 +686,14 @@ cosXmlService.listPartsAsync(listPartsRequest, new CosXmlResultListener() {
 
 ### Completing a multipart upload
 
-#### Description
+#### Feature description
 
 This API (`Complete Multipart Upload`) is used to complete the multipart upload of a file.
 
 #### Sample code
 [//]: # (.cssg-snippet-complete-multi-upload)
 ```java
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 
@@ -720,7 +728,7 @@ cosXmlService.completeMultiUploadAsync(completeMultiUploadRequest,
 
 ### Aborting a multipart upload
 
-#### Description
+#### Feature description
 
 This API (`Abort Multipart Upload`) is used to abort a multipart upload and delete the uploaded parts.
 
@@ -728,7 +736,7 @@ This API (`Abort Multipart Upload`) is used to abort a multipart upload and dele
 
 [//]: # (.cssg-snippet-abort-multi-upload)
 ```java
-// Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 
@@ -758,5 +766,5 @@ cosXmlService.abortMultiUploadAsync(abortMultiUploadRequest,
 });
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/AbortMultiPartsUpload.java).
+>? For more complete samples, visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/AbortMultiPartsUpload.java).
 >

@@ -1,10 +1,10 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples for video enhancement job submission.
+This document provides an overview of APIs and SDK code samples for submitting a video enhancement job.
 
 | API | Description |
 | ------------- |  ---------------------- |
-| Submitting video enhancement job | Submits video enhancement job |
+| [Submitting a video enhancement job](https://intl.cloud.tencent.com/document/product/436/49061) | Submits a video enhancement job. |
 
 
 ## Submitting Video Enhancement Job
@@ -28,19 +28,19 @@ public Guzzle\Service\Resource\Model createMediaVideoProcessJobs(array $args = a
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is `http` by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 try {
     $result = $cosClient->createMediaVideoProcessJobs(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
         'Tag' => 'VideoProcess',
         'QueueId' => 'p81e648afxxxxxxxxxxxxxxxxx',
         'Input' => array(
@@ -52,12 +52,15 @@ try {
             'WatermarkTemplateId' => 't185e2e24551b24259a0xxxxxxxxxxxxx', // Watermark template ID
             'Output' => array(
                 'Region' => $region,
-                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
                 'Object' => 'VideoProcess.flv',
             ),
+//            'UserData' => 'xxx', // The user information passed through.
+//            'JobLevel' => '0', // Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`.
         ),
+        'CallBack' => '',
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -72,19 +75,19 @@ try {
 
 require dirname(__FILE__) . '/../vendor/autoload.php';
 
-$secretId = "SECRETID"; // Replace it with your real `secretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; // Replace it with your real `secretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; // Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+$secretId = "SECRETID"; //Replace it with the actual `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$secretKey = "SECRETKEY"; //Replace it with the actual `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
+$region = "ap-beijing"; // Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is `http` by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
 try {
     $result = $cosClient->createMediaVideoProcessJobs(array(
-        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+        'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
         'Tag' => 'VideoProcess',
         'QueueId' => 'p81e648afxxxxxxxxxxxxxxxxx',
         'Input' => array(
@@ -182,12 +185,15 @@ try {
             ),
             'Output' => array(
                 'Region' => $region,
-                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+                'Bucket' => 'examplebucket-1250000000', // Bucket name in the format of `BucketName-Appid`, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
                 'Object' => 'VideoProcess.flv',
             ),
+//            'UserData' => 'xxx', // The user information passed through.
+//            'JobLevel' => '0', // Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`.
         ),
+        'CallBack' => '',
     ));
-    // Request successful
+    // Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -200,12 +206,15 @@ try {
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| :----------------- | :------ | :------------------------------------------------------ | :-------- | :------- |
-| Tag                | Request | Job type: VideoProcess                                | String    | Yes   |
+| :----------------- | :------ | :----------------------------------------------------------- | :-------- | :------- |
+| Tag                | Request | Job tag: VideoProcess                                | String    | Yes   |
 | Input              | Request | Information of the media file to be processed                                         | Container | Yes   |
-| Operation          | Request | Operation rule. Up to six operation rules are supported.                                                | Container | Yes   |
+| Operation          | Request | Operation rule                                  | Container | Yes   |
 | QueueId            | Request | Queue ID of the job                                         | String    | Yes   |
-| CallBack           | Request | Callback address                                                | String    | No   |
+| CallBackFormat     | Request | Job callback format, which can be `JSON` or `XML` (default value). It takes priority over that of the queue. | String | No |
+| CallBackType       | Request | Job callback type, which can be `Url` (default value) or `TDMQ`. It takes priority over that of the queue.                    | String | No |
+| CallBack           | Request | Job callback address, which takes priority over that of the queue. If it is set to `no`, no callbacks will be generated at the callback address of the queue. | String | No |
+| CallBackMqConfig   | Request | TDMQ configuration for job callback as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945), which is required if `CallBackType` is `TDMQ`.                | Container | No |
 
 `Input` has the following sub-nodes:
 
@@ -213,36 +222,59 @@ try {
 | :----------------- | :------------ | :--------- | :----- | :------- |
 | Object             | Request.Input | Media filename | String | Yes   |
 
+
 `Operation` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
-| :------------------ | :---------------- | :----------------------------------------------------------- | :-------- | :------- |
-| VideoProcess       | Request.Operation | Video enhancement template parameter                                          | Container | No   |
-| TemplateId                   | Request.Operation | Template ID                                        | String    | No  |
+| :------------------ | :---------------- | :----------------------------------------------------------- | :------------- | :------- |
+| VideoProcess       | Request.Operation | Video enhancement template parameter. This node and `TemplateId` cannot be empty at the same time.                                          | Container | No   |
+| TemplateId                   | Request.Operation | Template ID. This node and `VideoProcess` cannot be empty at the same time.                                        | String    | No  |
 | Transcode          | Request.Operation | Transcoding template parameter. This node and `TranscodeTemplateId` cannot be empty at the same time.             | Container | No   |
-| TranscodeTemplateId | Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node with priority.           | String  | No|
-| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API `CreateMediaTemplate`. Up to three watermarks can be passed in. | Container | No |
-| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` with priority.          | String    | No |
+| TranscodeTemplateId | Request.Operation | Transcoding template ID. This node and `Transcode` cannot be empty at the same time. Use this node first.           | String array  | No|
+| Watermark          | Request.Operation | Watermark template parameter. Same as `Request.Watermark` in the watermark template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49917). Up to three watermarks can be passed in. | Container array | No |
+| WatermarkTemplateId| Request.Operation | Watermark template ID. Up to three watermark template IDs can be passed in. If `Watermark` and `WatermarkTemplateId` exist at the same time, use `WatermarkTemplateId` first.          | String | No |
+| DigitalWatermark   | Request.Operation | Specifies the digital watermark parameter                                                         | Container | No   |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
+| JobLevel            | Request.Operation | Job priority. The greater the value, the higher the priority. Valid values: `0`, `1`, `2`. Default value: `0`. | String | No |
 
-> !
+>?
 >
-> `TemplateId` is used with priority. If `TemplateId` is unavailable, the corresponding job type parameter is used.
+> To submit a video enhancement job, you must pass in the transcoding parameter. For the video enhancement parameter, `TemplateId` is used first, and if `TemplateId` is unavailable, `VideoProcess` is used. For the transcoding parameter, `TranscodeTemplateId` is used first, and if `TranscodeTemplateId` is unavailable, `Transcode` is used. For the watermark parameter, `WatermarkTemplateId` or `Watermark` can be used for configuration, and `WatermarkTemplateId` is used first.
 
 `VideoProcess` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description |
 | :----------------- | :----------------------------- | :----------------------------------------------------------- |
-| ColorEnhance       | Request.Operation.VideoProcess | Same as `Request.ColorEnhance` in the video enhancement template creation API `CreateMediaTemplate`. |
-| MsSharpen          | Request.Operation.VideoProcess | Same as `Request.MsSharpen` in the video enhancement template creation API `CreateMediaTemplate`. |
+| ColorEnhance       | Request.Operation.VideoProcess | Same as `Request.ColorEnhance` in the video enhancement template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49915). |
+| MsSharpen          | Request.Operation.VideoProcess | Same as `Request.MsSharpen` in the video enhancement template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49915). |
+
+`Transcode` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| :----------------- | :-------------------------- | :----------------------------------------------------------- | :------------- | :--- |
+| TimeInterval          | Request.Operation.Transcode | Same as `Request.TimeInterval` in the transcoding template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49911).    | Container | No   |
+| Container          | Request.Operation.Transcode | Same as `Request.Container` in the transcoding template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49911).    | Container | No   |
+| Video          | Request.Operation.Transcode | Same as `Request.Video` in the transcoding template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49911).    | Container | No   |
+| Audio          | Request.Operation.Transcode | Same as `Request.Audio` in the transcoding template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49911).    | Container | No   |
+| TransConfig          | Request.Operation.Transcode | Same as `Request.TransConfig` in the transcoding template creation API [CreateMediaTemplate](https://intl.cloud.tencent.com/document/product/1045/49911).    | Container | No   |
+| AudioMix           | Request.Operation.Transcode     | Audio mix parameter as described in [Structure](https://intl.cloud.tencent.com/document/product/1045/49945).                                    | Container array | No |
+
+`DigitalWatermark` has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| :----------------- | :--------------------------------- | :----------------------------------------------------------- | :----- | :--- |
+| Message               | Request.Operation.DigitalWatermark |  The string embedded by the digital watermark, which can contain up to 64 letters, digits, underscores (\_), hyphens (-), and asterisks (*).    | string | Yes   |
+| Type               | Request.Operation.DigitalWatermark | Watermark type, which currently can be set to `Text` only      | String | Yes |
+| Version            | Request.Operation.DigitalWatermark | Watermark version, which currently can be set to `V1` only       | String | Yes |
+| IgnoreError        | Request.Operation.DigitalWatermark | Whether to ignore the watermarking failure and continue the job. Valid values: `true`, `false` (default)  | string | Yes   |
 
 `Output` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------------------- | :--------------- | :----- | :------- |
-| Region             | Request.Operation.Output | Bucket region                                                | String | Yes   |
+| Region             | Request.Operation.Output | Bucket region | String | Yes   |
 | Bucket             | Request.Operation.Output | Result storage bucket                                             | String | Yes   |
-| Object             | Request.Operation.Output | Output result filename                                             | String | Yes   |
+| Object             | Request.Operation.Output | Result file name                                             | String | Yes   |
 
 #### Sample response
 
@@ -297,6 +329,8 @@ GuzzleHttp\Command\Result Object
                             [TemplateName] => video-process-1
                             [TranscodeTemplateId] => t0b612860z087xc09zx8c09xz8c095dca38
                             [WatermarkTemplateId] => t185e2e24zxc780z8c0z98c323c6428a19c
+                            [UserData] => xxx
+                            [JobLevel] => 0
                         )
 
                     [QueueId] => p81e648af2aee496885zx098c09z8xc09zxc086
