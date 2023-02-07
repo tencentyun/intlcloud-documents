@@ -4,7 +4,7 @@
 >- TDSQL-C MySQL 版集群下，主实例和只读实例的规格配置一样。
 >- 若您有更高的规格存储需求，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系工作人员处理。
 
-## 计算节点规格
+## 计算节点规格[](id:CYNOSJSJDGE)
 **包年包月/按量计费模式的计算节点规格**：
 <table>
 <thead><tr>
@@ -115,49 +115,3 @@
 <td>88核710GB</td>
 <td>50000</td><td>400000</td><td>780000</td><td>98 Gbps</td></tr>
 </tbody></table>	
-
-**Serverless 计费模式下的算力配置**：
-<table>
-<thead><tr>
-<th>最小算力配置</th><th>最大算力配置</th><th>支持最大存储空间（GB)</th></tr>
-<tr>
-<td>0.25</td><td>0.5</td><td>1000</td></tr>
-<tr>
-<td>0.25</td><td>1</td><td>1000</td></tr>
-<tr>
-<td>0.25</td><td>2</td><td>5000</td></tr>
-<tr>
-<td>0.25</td><td>4</td><td>10000</td></tr>
-<tr>
-<td>0.25</td><td>8</td><td>10000</td></tr>
-<tr>
-<td>0.25</td><td>16</td><td>20000</td></tr>
-<tr>
-<td>0.5</td><td>1</td><td>1000</td></tr>
-<tr>
-<td>0.5</td><td>2</td><td>5000</td></tr>
-<tr>
-<td>0.5</td><td>4</td><td>10000</td></tr>
-<tr>
-<td>0.5</td><td>8</td><td>10000</td></tr>
-<tr>
-<td>0.5</td><td>16</td><td>20000</td></tr>
-<tr>
-<td>1</td><td>2</td><td>5000</td></tr>
-<tr>
-<td>1</td><td>4</td><td>10000</td></tr>
-<tr>
-<td>1</td><td>8</td><td>10000</td></tr>
-<tr>
-<td>1</td><td>16</td><td>20000</td></tr>
-<tr>
-<td>2</td><td>4</td><td>10000</td></tr>
-<tr>
-<td>2</td><td>8</td><td>10000</td></tr>
-<tr>
-<td>2</td><td>16</td><td>20000</td></tr>
-<tr>
-<td>4</td><td>8</td><td>10000</td></tr>
-<tr>
-<td>4</td><td>16</td><td>20000</td></tr>
-</tbody></table>

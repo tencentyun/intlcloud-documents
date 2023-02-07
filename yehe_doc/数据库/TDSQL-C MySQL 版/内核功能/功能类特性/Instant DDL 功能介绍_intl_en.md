@@ -1,14 +1,14 @@
 ## Use Cases
 This feature can use DDL operations to alter ultra big tables in online businesses within seconds.
  
-## Feature Overview
+## Description
 The instant DDL feature can quickly modify columns in big tables while avoiding data replication. This feature does not replicate the data or consume disk capacity or I/O, and can implement changes within seconds during peak hours.
 
 ## Supported Versions
 - MySQL 5.7 with kernel minor version 2.0.13 or later.
 - MySQL 8.0 with kernel minor version 3.1.1 or later.
 
-## Notes
+## Instructions
 Instant DDL supports the following operations:
 - ADD COLUMN
 - MODIFY COLUMN
@@ -52,7 +52,7 @@ ALTER TABLE t1 MODIFY COLUMN c BIGINT, ALGORITHM=INSTANT;
 - INSTANT MODIFY COLUMN does not support encryption, storage, and redundant format.
 
 ## Effect Comparison
-- INSTANT ADD COLUMN and INSTANT MODIFY COLUMN are performed on the same table with about 50 million data records (12 GB). As can be seen, normal column addition and modification take 2 and 21 minutes respectively, while INSTANT ADD COLUMN and INSTANT MODIFY COLUMN can be done almost instantly, implementing changes within seconds.
+- INSTANT ADD COLUMN and INSTANT MODIFY COLUMN are performed on the same table with about 50 million data records (around 12 GB). As can be seen, normal column addition and modification take 2 and 21 minutes respectively, while INSTANT ADD COLUMN and INSTANT MODIFY COLUMN can be done almost instantly, implementing changes within seconds.
 <img src="https://main.qcloudimg.com/raw/d50bdfe19657d955204ba8fc8331d277.png"  style="zoom:80%;">
 
 

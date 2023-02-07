@@ -1,10 +1,10 @@
 This document describes the latest and historical specifications of TDSQL-C for MySQL.
 >?
 >- The current specification list may contain some deactivated specifications. Available specifications are listed on the purchase page.
->- Source and read-only instances in a TDSQL-C for MySQL cluster have the same specification configuration.
+>- The read-write instance and read-only instances in a TDSQL-C for MySQL cluster have the same specification configuration.
 >- If you need a higher specification to meet your storage needs, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
-## Compute Node Specification
+## Compute node specification[](id:CYNOSJSJDGE)
 **Specifications of monthly subscribed and pay-as-you-go compute nodes**:
 <table>
 <thead><tr>
@@ -13,7 +13,7 @@ This document describes the latest and historical specifications of TDSQL-C for 
 <th rowspan=2 >Max IOPS</th>
 <th rowspan=2 >I/O Bandwidth</th></tr>
 <tr>
-<th>MySQL 5.7 Kernel Minor Version &lt; 2.0.15<br>MySQL 8.0 Kernel Minor Version &lt; 3.1.2</th><th>MySQL 5.7 Kernel Minor Version ≥ 2.0.15<br>MySQL 8.0 Kernel Minor Version ≥ 3.1.2</th></tr>
+<th>MySQL 5.7 kernel minor version &lt; 2.0.15<br>MySQL 8.0 kernel minor version &lt; 3.1.2</th><th>MySQL 5.7 kernel minor version ≥ 2.0.15<br>MySQL 8.0 kernel minor version ≥ 3.1.2</th></tr>
 </thead><tbody>
 <tr>
 <td>1-core 1 GB MEM</td>
@@ -115,49 +115,3 @@ This document describes the latest and historical specifications of TDSQL-C for 
 <td>88-core 710 GB MEM</td>
 <td>50000</td><td>400000</td><td>780000</td><td>98 Gbps</td></tr>
 </tbody></table>	
-
-**Serverless computing power configuration**:
-<table>
-<thead><tr>
-<th>Min Compute Unit</th><th>Max Compute Unit</th><th>Supported Max Storage Space (GB)</th></tr>
-<tr>
-<td>0.25</td><td>0.5</td><td>1000</td></tr>
-<tr>
-<td>0.25</td><td>1</td><td>1000</td></tr>
-<tr>
-<td>0.25</td><td>2</td><td>5000</td></tr>
-<tr>
-<td>0.25</td><td>4</td><td>10000</td></tr>
-<tr>
-<td>0.25</td><td>8</td><td>10000</td></tr>
-<tr>
-<td>0.25</td><td>16</td><td>20000</td></tr>
-<tr>
-<td>0.5</td><td>1</td><td>1000</td></tr>
-<tr>
-<td>0.5</td><td>2</td><td>5000</td></tr>
-<tr>
-<td>0.5</td><td>4</td><td>10000</td></tr>
-<tr>
-<td>0.5</td><td>8</td><td>10000</td></tr>
-<tr>
-<td>0.5</td><td>16</td><td>20000</td></tr>
-<tr>
-<td>1</td><td>2</td><td>5000</td></tr>
-<tr>
-<td>1</td><td>4</td><td>10000</td></tr>
-<tr>
-<td>1</td><td>8</td><td>10000</td></tr>
-<tr>
-<td>1</td><td>16</td><td>20000</td></tr>
-<tr>
-<td>2</td><td>4</td><td>10000</td></tr>
-<tr>
-<td>2</td><td>8</td><td>10000</td></tr>
-<tr>
-<td>2</td><td>16</td><td>20000</td></tr>
-<tr>
-<td>4</td><td>8</td><td>10000</td></tr>
-<tr>
-<td>4</td><td>16</td><td>20000</td></tr>
-</tbody></table>

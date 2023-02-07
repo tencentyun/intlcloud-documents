@@ -2,7 +2,7 @@ The engine kernel of TDSQL-C for MySQL is fully compatible with native MySQL. Yo
 
 The engine kernel of TDSQL-C for MySQL provides various features similar to those in MySQL Enterprise Edition, including enterprise-level transparent data encryption, audit, thread pool, encryption function, and backup and restoration.
 
-The engine kernel of TDSQL-C for MySQL not only deeply optimizes the InnoDB storage engine and query performance, but also improves the ease of use and maintainability of databases. While providing all the benefits of MySQL, it offers more enterprise-grade advanced features such as disaster recovery, restoration, monitoring, performance optimization, read/write separation, transparent data encryption, and database audit.
+The engine kernel of TDSQL-C for MySQL not only deeply optimizes the InnoDB storage engine and query performance, but also improves the ease of use and maintainability of databases. While providing all the benefits of MySQL, it offers more enterprise-grade advanced features such as disaster recovery, restoration, monitoring, performance optimization, read/write separation, transparent data encryption (TDE), and database audit.
 
 **For more information on the engine kernel of TDSQL-C for MySQL, see:**
 - For updates of the TDSQL-C for MySQL kernel engine version, see [Kernel Version Release Notes](https://intl.cloud.tencent.com/document/product/1098/44587).
@@ -13,6 +13,12 @@ The engine kernel of TDSQL-C for MySQL not only deeply optimizes the InnoDB stor
 
 | Kernel Version | Release Date | 
 |---------|---------|
+| 3.1.9 | November 2022 |
+| 3.1.8 | October 2022 |
+| 3.1.7 | September 2022 |
+| 3.1.6 | August 2022 |
+| 3.1.5 | July 2022 |
+| 3.1.3 | June 2022 |
 | 3.1.2 | February 2022 |
 | 3.1.1 | November 2021 |
 | 3.0.1 | August 2021 |
@@ -21,6 +27,11 @@ The engine kernel of TDSQL-C for MySQL not only deeply optimizes the InnoDB stor
 
 | Kernel Version | Release Date | 
 |---------|---------|
+| 2.0.22/2.1.8  | November 2022 |
+| 2.0.21/2.1.7  | September 2022 |
+| 2.0.20/2.1.6 | August 2022 |
+| 2.0.19 | July 2022 |
+| 2.0.17 | June 2022 |
 | 2.0.16 | January 2022 |
 | 2.0.15 | October 2021 |
 | 2.0.14 | July 2021 |
