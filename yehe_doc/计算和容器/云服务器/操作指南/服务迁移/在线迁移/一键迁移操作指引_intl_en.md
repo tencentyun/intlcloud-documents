@@ -1,5 +1,5 @@
 ## Overview
-Quick migration is a simplified version of service migration - [online migration](https://intl.cloud.tencent.com/document/product/213/35639). It eliminates complex operations such as login to the source server and tool download and allows you to quickly query source servers and batch migrate and sync them to Tencent Cloud. This document describes how to quickly migrate cloud servers to CVM.
+Quick migration is a agile version of [online migration](https://intl.cloud.tencent.com/document/product/213/35639). It eliminates complex operations such as login to the source server and tool download and allows you to quickly query source servers and batch migrate and sync them to Tencent Cloud. This document describes how to quickly migrate cloud servers to CVM.
 
 Quick migration is applicable to both Linux and Windows operating systems. In addition, you can query the migration progress on the [online migration](https://console.cloud.tencent.com/cvm/csm/online?rid=1) page in the CVM console.
 
