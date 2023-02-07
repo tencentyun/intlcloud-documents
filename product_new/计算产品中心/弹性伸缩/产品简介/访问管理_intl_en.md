@@ -42,7 +42,7 @@ The resource types of Auto Scaling that can be authorized through CAM are as fol
 
 The following table lists the resource-level permissions operations APIs that Auto Scaling supports, as well as the resource path supported by each operation.
 When setting the resource path, you must modify variable parameters such as  `$region`, `$account`、`$LaunchConfigurationId`, and `$AutoScalingGroupId` according to your actual parameter information. You can also use `*` in the path as a wildcard character.
-For information about related concepts in CAM policies such as region, action, account, and resource, see [Element Reference](https://intl.cloud.tencent.com/document/product/598/10603).
+For information about related concepts in CAM policies such as region, action, account, and resource, see [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606).
 
 | API: action              | Resource path: resource      |
 | :------------------------- | :----------------- |
