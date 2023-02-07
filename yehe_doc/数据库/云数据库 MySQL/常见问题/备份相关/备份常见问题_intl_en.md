@@ -12,7 +12,7 @@
  - [Can I delete backups manually?](#bfwt8)
 - **Backup and restoration**
  - [How do I download xbstream and qpress?](#bfwt16)
- - [Why can't I unpack/decompress a downloaded backup file with tar?](#bfwt15)
+ - [Why can't a downloaded backup file be unpacked/decompressed with tar?](#bfwt15)
  - [What should I do if the backup download is slow?](#bfwt10)
  - [Why does an error occur when I download data backup files?](#bfwt6)
  - [Can I restore the downloaded backups to another TencentDB for MySQL instance?](#bfwt7)
@@ -22,6 +22,8 @@
  [](id:bfwt1)
 ### How is the backup space billed? 
 TencentDB for MySQL offers a certain amount of backup capacity for free based on the region. The capacity is equivalent to the sum of the storage capacity of all two-node and three-node instances (including source instances and disaster recovery instances) in the region.
+The used space and free space of a single-node instance of cloud disk edition are displayed separately, which can be viewed on the **Backup and Restoration** tab.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/cwQh785_6.png)
 For prices of backup capacity that exceeds the free tier, see [Backup Space Billing](https://intl.cloud.tencent.com/document/product/236/32344).
 
 [](id:bfwt2)
@@ -40,7 +42,6 @@ For prices of backup capacity that exceeds the free tier, see [Backup Space Bill
 | Testing businesses | 7 days. We recommend you manually back up data based on your actual business needs and delete the backups promptly after use |
 
 [](id:bfwt3)
-
 ### How do I configure automatic backup?
 You can configure it on the **Backup and Restoration** tab in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
 ![](https://qcloudimg.tencent-cloud.cn/raw/053719ca0c4898c87bad068cbf70651c.png)
@@ -97,10 +98,10 @@ You need to check the automatic backup time you configured. If the instance is p
 
 [](id:bfwt14)
 ### Why can't I logically back up and download by tables?
-After the backup feature as described in [Backing up Database](https://intl.cloud.tencent.com/document/product/236/37796) was upgraded, both logical and physical backups adopted the new compression algorithm, making some download features currently unavailable. To perform logical backups by tables, you can select **Logical backup** > **Specify Table** in manual backup and download the completed backup file.
+After the backup feature as described in [Backing up Database](https://intl.cloud.tencent.com/document/product/236/37796) was upgraded, both logical and physical backups adopted the new compression algorithm, making some download features currently unavailable.To perform logical backups by tables, you can select **Logical backup** > **Specify table** in manual backup and download the completed backup file.
 
 [](id:bfwt15)
-### Why can't I unpack/decompress a downloaded backup file with tar?
+### Why can't a downloaded backup file be unpacked/decompressed with tar?
 Because backup files in the latest version adopt a new compression algorithm, they cannot be unpacked/decompressed with the tar tool. Instead, xbstream and qpress are required.
 For more information on how to unpack/decompress backup files with xbstream and qpress, see [Restoring Database from Physical Backup](https://intl.cloud.tencent.com/document/product/236/31910) and [Restoring Database from Logical Backup](https://intl.cloud.tencent.com/document/product/236/31909).
 

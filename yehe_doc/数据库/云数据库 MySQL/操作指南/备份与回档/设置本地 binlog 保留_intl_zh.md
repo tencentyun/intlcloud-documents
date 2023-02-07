@@ -1,5 +1,5 @@
-
 本文为您介绍如何通过控制台设置 MySQL 实例的 binlog 保留周期。
+>?单节点云盘实例不支持设置本地 binlog 保留。
 
 ## binlog 说明
 云数据库 MySQL 实例在执行大事务或大量 DML 时会产生较多的 binlog，binlog 写满 256MB 会进行一次切割，切割后的 binlog 文件会被上传至对象存储 COS，然后控制台的日志列表会显示上传到 COS 的 binlog 文件。
@@ -16,6 +16,7 @@ binlog 在上传至 COS 前，会暂存于实例磁盘，从而导致磁盘使�
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表页，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择**备份恢复**页，单击**本地Binlog设置**。
 3. 在弹出的对话框，填写需要保留的时长以及空间使用率，确认无误后，单击**确定**。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/e5xL948_37.png)
 
 ## 热点问题
 #### 本地 binlog 保留设置过小是否会影响数据库恢复？

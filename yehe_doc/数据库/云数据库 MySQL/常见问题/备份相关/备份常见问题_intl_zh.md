@@ -22,6 +22,8 @@
  [](id:bfwt1)
 ### 备份空间如何收费？ 
 云数据库 MySQL 会按地域赠送一定额度的免费备份空间，免费备份空间大小为您在对应地域下所有双节点、三节点实例（包括主实例、灾备实例）的存储空间之和。
+单节点云盘实例实际占用空间和获赠免费空间为单独体现，您可在单节点云盘实例备份恢复页面查看。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/cwQh785_6.png)
 超出免费额度的备份空间定价，请参见 [备份空间收费说明](https://intl.cloud.tencent.com/document/product/236/32344)。
 
 [](id:bfwt2)
@@ -40,7 +42,6 @@
 | 测试业务             | 建议数据备份保留时间设置为7天，根据实际业务需求手动备份数据，用完及时删除 |
 
 [](id:bfwt3)
-
 ### 如何设置自动备份?
 您可在 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 实例的备份恢复页进行设置。
 ![](https://qcloudimg.tencent-cloud.cn/raw/053719ca0c4898c87bad068cbf70651c.png)
