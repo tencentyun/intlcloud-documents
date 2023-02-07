@@ -1,16 +1,16 @@
-## Ticket System
-If you encounter any OPS or technical problems when using our services, you can log in to the Tencent Cloud console and follow the on-screen prompts to submit a ticket. We will get back to you as soon as possible.
-Ticket links:
-- Ticket submission: [submit a ticket](https://console.cloud.tencent.com/workorder/category)
-- Ticket status query: [ticket list](https://console.cloud.tencent.com/workorder)
 
-A ticket can have the following status:
-- Pending processing: the ticket is just submitted or has been received but not reviewed by the technical support team. You can submit more information or close the ticket at this stage.
-- Processing: the technical support team has received and reviewed the ticket and is taking an action. You can submit more information or close the ticket at this stage.
-- More information required: the technical support team has received and reviewed the ticket, but more information is required. You can close the ticket at this stage.
- >? The ticket will revert to the "pending processing" status after you resubmit the ticket with more information.
- >
-- Closed: the ticket has been resolved, or you have closed the ticket before it was processed.
+## Presales inquiry
+If you have any questions before purchase, [contact us](https://cloud.tencent.com/online-service?from=sales&source=PRESALE) for presales inquiry. A dedicated account manager will answer your questions online and recommend professional cloud migration solutions to you.
+You can also submit a ticket for assistance.
 
+## Aftersales support
+If you encounter any problem, you can contact our 24/7 online [technical support](https://cloud.tencent.com/act/event/Online_service).
+You can also submit a ticket for assistance.
 
+ 
+
+## Q&A community
+The Q&A community is a communication platform provided by Tencent Cloud to developers. It features popular tags such as cloud computing, AI, and product documentation.
+You can log in to the Q&A community to ask questions, and product experts or enthusiastic users will provide answers, discussions, and guidance.
+Platform entry: [Q&A](https://cloud.tencent.com/developer/ask)
 
