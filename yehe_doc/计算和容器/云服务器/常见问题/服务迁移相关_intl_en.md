@@ -27,6 +27,17 @@ The time it takes to upload images to COS is related to the image file size and 
  Please check and try again.
 - If messages such as **"task timeout"**, **"system error"**, and **"other reasons"** are displayed, or if you retried and still failed, [contact us](https://intl.cloud.tencent.com/document/product/213/34837).
 
+### What should I do if the network is disconnected after the offline migration of the Windows server?
+
+You can reset the Windows network configuration as instructed below. For more information, see [Instance IP Address Ping Failure](https://intl.cloud.tencent.com/document/product/213/14639).
+
+1. Check if the server supports dhcp (all VPCs created after June 2018 support dhcp). If not, check if the static IP is correct.
+
+2. If the server supports dhcp, check if the assigned private IP is correct. If it is incorrect, run the command as the admin without restarting the server: `ipconfig /release; ipconfig /renew`.
+
+3. If the assigned IP is correct, but the network is disconnected, run ncpa.cpl to open the local connection, and disable and enable the ENI.
+
+4. Run the command as the admin and restart the server: `reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles"  /f`.
 
 [](id:OnlineMigration)
 ## General FAQs about Online Migration
@@ -135,7 +146,6 @@ Check the common errors below:
 If the problem persists or the reason is not identified, [contact us](https://intl.cloud.tencent.com/document/product/213/34837) and provide the migration log file (in the `log` directory of the migration tool by default).
 
 
-
 ### What can I get after migration?
 After a migration task is completed, a Tencent Cloud resource is generated according to your specified destination type.
 - Migrate to a **CVM image**: A destination Tencent Cloud image will be generated for the migration source after migration. You can click the **CVM image ID** in the row of the migration task to view the image details on the [CVM image page](https://console.cloud.tencent.com/cvm/image/index), and use the image to quickly create CVM instances. After a CVM image is created successfully, a **CVM snapshot** associated with it will be created at the same time.
@@ -149,6 +159,17 @@ Check whether the target CVM instance starts up normally, whether data on the ta
 ### How do I migrate a source again after migration is completed?
 Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid=1), and create and start a migration task for the migration source again.
 
+### What should I do if the network is disconnected after the online migration of the Windows server?
+
+You can reset the Windows network configuration as instructed below. For more information, see [Instance IP Address Ping Failure](https://intl.cloud.tencent.com/document/product/213/14639).
+
+1. Check if the server supports dhcp (all VPCs created after June 2018 support dhcp). If not, check if the static IP is correct.
+
+2. If the server supports dhcp, check if the assigned private IP is correct. If it is incorrect, run the command as the admin without restarting the server: `ipconfig /release; ipconfig /renew`.
+
+3. If the assigned IP is correct, but the network is disconnected, run ncpa.cpl to open the local connection, and disable and enable the ENI.
+
+4. Run the command as the admin and restart the server: `reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles"  /f`.
 
 [](id:OnlineMigrationTool)
 ## FAQs about Online Migration Tool
@@ -171,7 +192,4 @@ Check the common errors below:
 
 If the problem persists or the reason is not identified, [contact us](https://intl.cloud.tencent.com/document/product/213/34837) and provide the migration log file (in the `log` directory of the migration tool by default).
 
-
-
-  
 

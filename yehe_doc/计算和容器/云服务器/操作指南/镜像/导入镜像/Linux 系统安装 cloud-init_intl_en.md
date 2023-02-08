@@ -2,31 +2,181 @@
 ## Overview
 
 Cloud-init allows you to customize configurations during the first initialization of an instance. If the imported image does not have the cloud-init service installed, instances booted through the image cannot be initialized properly. As a result, the image will fail to be imported. This document describes how to install the cloud-init service.
-You can use either of the following methods to install cloud-init:
+You can use any of the following methods to install cloud-init:
+- [Downloading the cloud-init binary package](#binary)
 - [Manually downloading the cloud-init source package](#ManualDown) 
 - [Using the cloud-init package from the software source](#SoftSources)
 
-## Notes
+## Must-knows
 Before importing a Linux image, ensure that you have properly installed the cloud-init service in the image.
 
 ## Prerequisites
 A server with the cloud-init service installed can correctly access the public network.
 
-## Directions
+## How It Works
 <dx-tabs>
+::: Downloading the cloud-init binary package[](id:binary)
+<dx-alert infotype="explain" title="">
+- cloud-init depends on qcloud-python, which is a software package recompiled by Tencent Cloud. qcloud-python is a separate python environment and is only used for cloud-init. It is installed under the directory of `/usr/local/qcloud/python`, and it does not conflict with the default python in the system.
+- cloud-init is developed by Tencent Cloud based on the community v20.1. It is adapted to Tencent Cloud operation environment.
+- The cloud-init binary package supports the following operating systems:
+</dx-alert>
+<table>
+<thead>
+  <tr>
+    <th rowspan="2">Type</th>
+    <th rowspan="2">OS</th>
+    <th rowspan="2">Version</th>
+    <th colspan="2" style="text-align:center">x86_64</th>
+    <th colspan="2" style="text-align:center">arm64</th>
+  </tr>
+  <tr>
+    <th>qcloud-python</th>
+    <th>cloud-init</th>
+    <th>qcloud-python</th>
+    <th>cloud-init</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="5">rpm</td>
+    <td rowspan="2">CentOS</td>
+    <td>7</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/centos7.6/qcloud-python-3.7.10-1.el7.x86_64.rpm">qcloud-python-3.7.10-1.el7.x86_64.rpm</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/centos7.6/cloud-init-20.1.0011-1.el7.x86_64.rpm">cloud-init-20.1.0011-1.el7.x86_64.rpm</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/centos7.4/aarch64/qcloud-python-3.7.10-1.el7.centos.aarch64.rpm">qcloud-python-3.7.10-1.el7.centos.aarch64.rpm</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/centos7.4/aarch64/cloud-init-20.1.0011-3.el7.centos.aarch64.rpm">cloud-init-20.1.0011-3.el7.centos.aarch64.rpm</a></td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/centos8.2/x86_64/qcloud-python-3.7.10-1.el8.x86_64.rpm">qcloud-python-3.7.10-1.el8.x86_64.rpm</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/centos8.2/x86_64/cloud-init-20.1.0011-1.el8.x86_64.rpm">cloud-init-20.1.0011-1.el8.x86_64.rpm</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/centos8.2/aarch64/qcloud-python-3.7.10-1.el8.aarch64.rpm">qcloud-python-3.7.10-1.el8.aarch64.rpm</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/centos8.2/aarch64/cloud-init-20.1.0011-3.el8.aarch64.rpm">cloud-init-20.1.0011-3.el8.aarch64.rpm</a></td>
+  </tr>
+  <tr>
+    <td>Fedora</td>
+    <td>36</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/fedora36/qcloud-python-3.7.10-2.fc36.x86_64.rpm">qcloud-python-3.7.10-2.fc36.x86_64.rpm</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu20.04/cloud-init_20.1.0011-1_arm64.deb">cloud-init_20.1.0011-1_arm64.deb</a></td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Kylin</td>
+    <td>20sp1</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/kylin10sp1/x86_64/qcloud-python-3.7.10-1.ky10.x86_64.rpm">qcloud-python-3.7.10-1.ky10.x86_64.rpm</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/kylin10sp1/x86_64/cloud-init-20.1.0011-2.ky10.x86_64.rpm">cloud-init-20.1.0011-2.ky10.x86_64.rpm</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/kylin10sp1/aarch64/qcloud-python-3.7.10-1.ky10.aarch64.rpm">qcloud-python-3.7.10-1.ky10.aarch64.rpm</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/kylin10sp1/aarch64/cloud-init-20.1.0011-1.ky10.aarch64.rpm">cloud-init-20.1.0011-1.ky10.aarch64.rpm</a></td>
+  </tr>
+  <tr>
+    <td>openSUSE</td>
+    <td>15.4</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/opensuse15.4/qcloud-python-3.7.10-2.x86_64.rpm">qcloud-python-3.7.10-2.x86_64.rpm</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/opensuse15.4/cloud-init-20.1.0011-2.x86_64.rpm">cloud-init-20.1.0011-2.x86_64.rpm</a></td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td rowspan="8">deb</td>
+    <td rowspan="4">Debian</td>
+    <td>11</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/debian11/qcloud-python_3.7.10-1_amd64.deb">qcloud-python_3.7.10-1_amd64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/debian11/cloud-init_20.1.0011-1_amd64.deb">cloud-init_20.1.0011-1_amd64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/debian11/aarch64/qcloud-python_3.7.10-1_arm64.deb">qcloud-python_3.7.10-1_arm64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/debian11/aarch64/cloud-init_20.1.0011-1_arm64.deb">cloud-init_20.1.0011-1_arm64.deb</a></td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/debian10/qcloud-python_3.7.10-1_amd64.deb">qcloud-python_3.7.10-1_amd64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/debian10/cloud-init_20.1.0011-1_amd64.deb">cloud-init_20.1.0011-1_amd64.deb</a></td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/debian9/qcloud-python_3.7.10-1_amd64.deb">qcloud-python_3.7.10-1_amd64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/debian9/cloud-init_20.1.0011-1_amd64.deb">cloud-init_20.1.0011-1_amd64.deb</a></td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/debian8/qcloud-python_3.7.10-1_amd64.deb">qcloud-python_3.7.10-1_amd64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/debian8/cloud-init_20.1.0011-1_amd64.deb">cloud-init_20.1.0011-1_amd64.deb</a></td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td rowspan="4">Ubuntu</td>
+    <td>22.04</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu22.04/qcloud-python_3.7.10-1_amd64.deb">qcloud-python_3.7.10-1_amd64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu22.04/cloud-init_20.1.0011-1_amd64.deb">cloud-init_20.1.0011-1_amd64.deb</a></td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>20.04</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu20.04/x86_64/qcloud-python_3.7.10-1_amd64.deb">qcloud-python_3.7.10-1_amd64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu20.04/x86_64/cloud-init_20.1.0011-1_amd64.deb">cloud-init_20.1.0011-1_amd64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu20.04/qcloud-python_3.7.10-1_arm64.deb">qcloud-python_3.7.10-1_arm64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu20.04/cloud-init_20.1.0011-1_arm64.deb">cloud-init_20.1.0011-1_arm64.deb</a></td>
+  </tr>
+  <tr>
+    <td>18.04</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu18.04/x86_64/qcloud-python_3.7.10-1%2Bubuntu18.04_amd64.deb">qcloud-python_3.7.10-1%2Bubuntu18.04_amd64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu18.04/x86_64/cloud-init_20.1.0011-1%2Bubuntu18.04_amd64.deb">cloud-init_20.1.0011-1%2Bubuntu18.04_amd64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu18.04/aarch64/qcloud-python_3.7.10-1_arm64.deb">qcloud-python_3.7.10-1_arm64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu18.04/aarch64/cloud-init_20.1.0011-1_arm64.deb">cloud-init_20.1.0011-1_arm64.deb</a></td>
+  </tr>
+  <tr>
+    <td>16.04</td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu16.04/qcloud-python_3.7.10-1_amd64.deb">qcloud-python_3.7.10-1_amd64.deb</a></td>
+    <td><a href="https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/packages/ubuntu16.04/cloud-init_20.1.0011-1_amd64.deb">cloud-init_20.1.0011-1_amd64.deb</a></td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+</tbody>
+</table>
+
+### Downloading cloud-init binary package[](id:binary)
+1. Download the installation package.
+
+2. If cloud-init already exists, run the following command to clear it.
+```shellsession
+rm -rf /var/lib/cloud
+rm -rf /etc/cloud
+rm -rf /usr/local/bin/cloud*
+```
+3. Run the following commands based on the OS.
+    - For deb type, run the following command.
+    ```shellsession
+    dpkg -i *.deb
+    ```
+   - For rpm type, run the following command.
+   ```shellsession
+   rpm -ivh *.rpm
+   ```
+4. Check whether the version is installed properly.
+  ```shellsession
+cloud-init qcloud -v
+/usr/bin/cloud-init qcloud 0011
+  ```
+5. Restart.
+:::
 ::: Manual download[](id:ManualDown)
 
 ### Downloading the cloud-init source package
 
 <dx-alert infotype="explain" title="">
-- **cloud-init-17.1.tar.gz** is recommended. You can visit https://launchpad.net/cloud-init/+download to download other versions.
-- If the installation fails, you can try the [portable cloud-init package](#greeninitCloudInit) 
+- The cloud-init-20.1.0011 version is most compatible with Tencent Cloud. It ensures that all configuration items of CVMs created through the image can be initialized properly. We recommend that you install **cloud-init-20.1.0011.tar.gz**. You can also [click here](https://launchpad.net/cloud-init/+download) to download other versions. This document uses cloud-init-20.1.0011 as an example.
 </dx-alert>
 
 
 Run the following command to download the cloud-init source package:
 ```shellsession
-wget https://launchpad.net/cloud-init/trunk/17.1/+download/cloud-init-17.1.tar.gz
+wget https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/src/cloud-init-20.1.0011.tar.gz
 ```
 
 ### Installing cloud-init
@@ -35,11 +185,11 @@ wget https://launchpad.net/cloud-init/trunk/17.1/+download/cloud-init-17.1.tar.g
 If you are using the Ubuntu operating system, run this command with the “root” account.
 </dx-alert>
 ```shellsession
-tar -zxvf cloud-init-17.1.tar.gz 
+tar -zxvf cloud-init-20.1.0011.tar.gz 
 ```
-2. Run the following command to enter the decompressed cloud-init installation package directory; that is, the cloud-init-17.1 directory.
+2. Run the following command to enter the decompressed cloud-init installation package directory; that is, the cloud-init-20.1.0011 directory:
 ```shellsession
-cd cloud-init-17.1
+cd cloud-init
 ```
 3. Install Python-pip according to the operating system version.
     - For CentOS 6/7, run the following command:
@@ -62,6 +212,7 @@ Python 2.6 is not supported when cloud-init uses requests 2.20.0 or later. If th
 ```shellsession
 pip3 install -r requirements.txt
 ```
+
 6. Install the cloud-utils components corresponding to your OS version.
     - For CentOS 6, run the following command:
     ```shellsession
@@ -76,25 +227,25 @@ pip3 install -r requirements.txt
     ```shellsession
     apt-get install cloud-guest-utils -y
     ```
-7. Run the following commands to install cloud-init.
+
+7. Run the following command to install cloud-init:
 ```shellsession
 python3 setup.py build
 ```
 ```shellsession
 python3 setup.py install --init-system systemd
 ```
-
 <dx-alert infotype="notice" title="">
 The `--init-system` can be followed by any of systemd, sysvinit, sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse or upstart [default: None]. Please configure parameters based on the auto-start service management method of the operating system. If incorrect parameters are configured, the cloud-init service cannot automatically start upon system startup. This document uses the systemd auto-start service management method as an example.
 </dx-alert>
 
-
 [](id:cloud-init)
+
 ### Modifying the cloud-init configuration file
 
 1. Download cloud.cfg for your operating system.
-    - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) to download cloud.cfg for Ubuntu.
-    - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) to download cloud.cfg for CentOS.
+    - [Click here](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) to download cloud.cfg for Ubuntu.
+    - [Click here](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) to download cloud.cfg for CentOS.
 2. Replace the content of `/etc/cloud/cloud.cfg` with that of the downloaded cloud.cfg file.
 
 
@@ -110,12 +261,10 @@ useradd syslog
 <dx-alert infotype="explain" title="">
 To check whether the operating system uses systemd, run the `strings /sbin/init | grep "/lib/system"` command, and you will receive a return message.
 </dx-alert>
-
--  **Run the following command in Ubuntu or Debian.**
+- **Run the following command in Ubuntu or Debian.**
 ```shellsession
  ln -s /usr/local/bin/cloud-init /usr/bin/cloud-init 
 ```
-
 - **Run the following commands in all operating systems.**
 ```shellsession
 systemctl enable cloud-init-local.service 
@@ -131,8 +280,7 @@ systemctl status cloud-init.service
 systemctl status cloud-config.service
 systemctl status cloud-final.service
 ```
-
--  **Run the following commands in CentOS or Redhat.**
+- **Run the following commands in CentOS or Redhat.**
  Replace the content of `/lib/systemd/system/cloud-init-local.service` with the following:
 ```shellsession
 [Unit]
@@ -209,10 +357,10 @@ By default, the cloud-init version installed by running `apt-get` or `yum` is th
 
 
 
-### Modifying the cloud-init configuration file
+### Modifying the cloud-init configuration file[](id:cloud-init)
 1. Download cloud.cfg for your operating system.
-   - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) to download cloud.cfg for Ubuntu.
-   - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) to download cloud.cfg for CentOS.
+    - [Click here](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) to download cloud.cfg for Ubuntu.
+    - [Click here](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) to download cloud.cfg for CentOS.
 2. Replace the content of `/etc/cloud/cloud.cfg` with that of the downloaded cloud.cfg file.
 :::
 </dx-tabs>
@@ -233,7 +381,7 @@ cloud-init init --local
 ```
 If the following information is returned, it indicates that the cloud-init has been successfully configured.
 ```shellsession
-Cloud-init v. 17.1 running 'init-local' at Fri, 01 Apr 2022 01:26:11 +0000. Up 38.70 seconds.
+Cloud-init v. 20.1.0011 running 'init-local' at Fri, 01 Apr 2022 01:26:11 +0000. Up 38.70 seconds.
 ```
 2. Run the following command to delete the cache records of cloud-init.
 ```shellsession
@@ -251,27 +399,6 @@ source /etc/network/interfaces.d/*
 ```
 
 ## Appendix
-[](id:greeninitCloudInit)
-### Manually downloading the portable cloud-init package
-If the cloud-init service fails to be installed by [manually downloading the cloud-init source package](#ManualDown), complete the following steps to install cloud-init:
-1. Run the following command to switch to `/usr/local`.
-```shellsession
-cd /usr/local
-```
-2. [Click here](https://image-tools-1251783334.cos.ap-guangzhou.myqcloud.com/greeninit-x64-beta.tgz) to obtain the portable cloud-init package, and upload the package to be under `/usr/lcoal`.
->!Note: The installation directory must be the system disk directory. It is recommended to install it under `/usr/local`.
-3. Run the following command to decompress the portable cloud-init package.
-```shellsession
-tar xvf greeninit-x64-beta.tgz 
-```
-4. Run the following command to enter the decompressed portable cloud-init package directory; that is, the greeninit directory.
-```shellsession
-cd greeninit
-```
-5. Run the following command to install cloud-init.
-```shellsession
-sh install.sh 
-```
 [](id:updateSoftware)
 ### Resolving Python-pip installation failure
 During installation, if an error such as “failed to install” or “installation package not found” occurs, troubleshoot it based on the operating system as follows:
@@ -281,7 +408,7 @@ During installation, if an error such as “failed to install” or “installat
 ```shellsession
 yum install epel-release -y
 ```
-  2. Run the following command to install Python-pip.
+  iii. Run the following command to install Python-pip.
 ```shellsession
 yum install python3-pip -y
 ```
@@ -291,11 +418,11 @@ yum install python3-pip -y
 ```shellsession
 apt-get clean all
 ```
-  ii. Run the following command to update the software package list.
+  2. Run the following command to update the software package list.
 ```shellsession
 apt-get update -y
 ```
-  iii. Run the following command to install Python-pip.
+  3. Execute the following command to install Python-pip.
 ```shellsession
 apt-get -y install python3-pip
 ```

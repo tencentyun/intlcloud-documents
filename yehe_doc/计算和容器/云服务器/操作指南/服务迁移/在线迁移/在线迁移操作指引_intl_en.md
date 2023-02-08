@@ -6,7 +6,7 @@ The online migration procedure is shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/0e290646e08b6af1b509ce324ea6e096.png)
 
 [](id:prerequisites)
-## Preparations
+## Preparation
 
 - Register on Tencent Cloud International.
 - If you want to migrate using a sub-account, ask the root account owner to assign the sub-account with the `QcloudCSMFullAccess` and `QcloudCVMFullAccess` permissions in [CAM console](https://console.cloud.tencent.com/cam/policy).
@@ -14,8 +14,8 @@ The online migration procedure is shown below:
 - [Download](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) the compressed migration tool package.
 - Stop all applications on the source server to prevent them from being affected by the migration.
 - Back up your data in the following ways before migrating:
-  - Source server: You can use the source server snapshot feature or other methods to back up data.
-  - Destination CVM: You can create a snapshot as instructed in [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) or use other methods to back up data.
+   - Source server: You can use the source server snapshot feature or other methods to back up data.
+   - Destination CVM: You can create a snapshot as instructed in [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) or use other methods to back up data.
 
 ## Migration Directions
 
@@ -60,11 +60,12 @@ Before migration, you need to check the following configuration based on the act
 		<li>Security group: Port 80, port 443 and port 3389 are opened.</li>
 		<li>
 		Bandwidth setting: It is recommended that you maximize bandwidths at the 2 ends to speed up the migration. During the process, the traffic consumed is approximately the amount of data migrated. Adjust the billing mode before the migration if necessary.</li>
+<li>
+		Network setting: If the source or destination server only supports IPv6 but not IPv4, see <a href="https://intl.cloud.tencent.com/document/product/213/44340"> Parameters in the client.json file</a>.</li>
 	  </ol>
 	</td>
   </tr>
 </table>
-
 
 
 <dx-alert infotype="explain" title="">
@@ -78,7 +79,7 @@ Before migration, you need to check the following configuration based on the act
 #### Importing migration source with migration tool
 <dx-tabs>
 ::: Linux CVM instances
-1. Download or upload `go2tencentcloud.zip` to the source server and run the following command to enter the corresponding directory.
+1. [Download](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) or upload the migration tool go2tencentcloud.zip to the source server. Run the following command to go to the corresponding directory.
    i. Run the following commands in sequence to decompress `go2tencentcloud.zip` and enter the directory.
 ```shellsession
 unzip go2tencentcloud.zip
@@ -97,7 +98,7 @@ cd go2tencentcloud-linux
 The files in the `go2tencentcloud` directory will not be migrated. Do not place the files to be migrated in this directory.
 </dx-alert>
 2. (Optional) Exclude files and directories on the source server that do not need to be migrated.
-If there are files or directories on the Linux source server that do not need to be migrated, you can add them to the [rsync_excludes_linux.txt](https://intl.cloud.tencent.com/document/product/213/44340) file, as described in Compatibility and Tool Configuration Description.
+If there are files or directories on the Linux source server that do not need to be migrated, you can add them to the [rsync_excludes_linux.txt] file, as described in Compatibility and Tool Configuration Description (https://intl.cloud.tencent.com/document/product/213/44340).
 3. Import the migration source.
    i. For example, on a 64-bit Linux source server, execute the following command in sequence as the root user to run the tool.
 ```shellsession
@@ -140,7 +141,7 @@ If "Import source server successfully" isn't displayed, the migration source fai
 Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid=1), go to the online migration page, and click **Create Migration Task** on the right of the desired migration source. In the **Create Migration Task** pop-up window, configure the task as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
 [](id:jobSettings)Configure the migration as follows:
- - **Basic Options**:
+ - **Basic options**:
 <table>
 <thead>
 <tr>
@@ -151,30 +152,30 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 </thead>
 <tbody>
 <tr>
-<td>Destination Region</td>
-<td>Supported</td>
+<td>Destination region</td>
+<td>Yes</td>
   <td>The Tencent Cloud region to which the source server is to be migrated. For information on regions, see<a href="https://intl.cloud.tencent.com/document/product/582/35772">Regions and AZs</a>.</td>
 </tr>
 <tr>
 <td>Task name</td>
-<td>Supported</td>
+<td>Yes</td>
 <td>The migration task name.</td>
 </tr>
 <tr>
-<td>Task Description</td>
+<td>Task description</td>
 <td>No</td>
 <td>Migration task description.</td>
 </tr>
 <tr>
-<td>Destination Type</td>
-<td>Supported</td>
+<td>Destination type</td>
+<td>Yes</td>
 <td>
   Set the destination type for the source server to be migrated to Tencent Cloud.
     <ul>
-    <li><b>CVM Image</b>: A destination CVM image will be generated for the migration source after the migration task ends.
+    <li><b>CVM image</b>: A destination CVM image will be generated for the migration source after the migration task ends.
       <br>Image name: Name of the destination CVM image that will be generated for the migration source. If an image with the same name already exists in the destination region, the migration task will automatically add the task ID to the name.
     </li>
-    <li><b>CVM Instance</b>: Select a CVM instance in the destination region as the migration destination.
+    <li><b>CVM instance</b>: Select a CVM instance in the destination region as the migration destination.
       <br>Destination instance: We recommend you use the same operating system for the source server and destination CVM. For example, to migrate a CentOS 7 source server, select a CentOS 7 CVM as the destination.
     </li>
   </ul>
@@ -182,8 +183,8 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 </tr>
 <tr>
 <tr>
-<td>Network Mode</td>
-<td>Supported</td>
+<td>Network mode</td>
+<td>Yes</td>
 <td>
   Set the network type for transferring data in migration.
     <ul>
@@ -197,7 +198,26 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 </td>
 </tr>	
 <tr>
-<td>Configure Incremental Sync</td>
+<td rowspan='2'>Migration method</td>
+<td rowspan='2'>Yes</td>
+<td>
+  Set migration method for migration on Linux.
+    <ul>
+    <li><b>Linux file-level migration</b>: File-level migration, with higher compatibility and relatively slower transfer speed.
+    </li>
+    <li><b>Linux block-level migration</b>: Block-level migration, with faster transfer speed and relatively lower compatibility.
+    </li>
+  </ul>
+</td>
+</tr>	
+<tr>
+<td>
+<b>Windows block-level migration</b>: Block-level migration, with faster transfer speed and relatively lower compatibility. Block-level migration is used for migration on Windows by default.
+  </ul>
+</td>
+</tr>	
+<tr>
+<td>Configure incremental sync</td>
 <td>No</td>
 <td>You can customize the incremental sync duration to continuously sync the data and flexibly control the migration time.
 	<ul>
@@ -206,12 +226,12 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 	</ul>
 </td>
 </tr>
-<td>Scheduled Execution Time</td>
+<td>Scheduled execution time</td>
 <td>No</td> 
 <td>Set the time when the migration task will be automatically started after creation. It can be as early as <b>10</b> minutes after the current time.</td>
 </tr>
 </tbody></table>
- - **Advanced Options (optional)**:
+ - **Advanced options (optional)**:
 <table>
 <thead>
 <tr>
@@ -222,12 +242,12 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 </thead>
 <tbody>
 <tr>
-<td>Transfer Restriction (KB/s)</td>
+<td>Transfer restriction (KB/s)</td>
 <td>No</td>  
 <td>The bandwidth for data transfer during the migration ranges from 0 to 25600 KB/s. The transfer rate is unlimited by default. This item is not available for migration on Windows.</td>
 </tr>
 <tr>
-<td>Checksum Verification</td>
+<td>Checksum verification</td>
 <td>No</td>  
 <td>When it is enabled, data consistency check is enhanced, but the transfer speed may be reduced. This item is not available for migration on Windows.</td>
 </tr>
