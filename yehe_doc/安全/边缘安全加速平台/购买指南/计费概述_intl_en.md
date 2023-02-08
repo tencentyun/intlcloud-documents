@@ -36,8 +36,8 @@ EdgeOne provides the Standard and Enterprise plans. You can only specify one pla
 | Upload size limit                         |               500 MB (cannot be disabled)               |                           Unlimited                           |
 | External certificate on edge node             |                              ✓                               |                              ✓                               |
 | Load balancing tasks                       |                             5                              |                             10                             |
-| Node cache TTL                         |                      Down to the millisecond level                      |                      Down to the millisecond level                      |
-| Browser cache TTL                       |                      Down to the millisecond level                      |                      Down to the millisecond level                      |
+| Node cache TTL                         |                      Down to the second level                     |                      Down to the second level                      |
+| Browser cache TTL                       |                     Down to the second level                     |                      Down to the second level                      |
 | Cache purge (free for a limited time)                 | Matching type: Host/Prefix<br/>Quota per request: 1,000<br/>Daily quota: 10,000 | Matching type: Host/Prefix<br/>Quota per request: 1,000<br/>Daily quota: 20,000 <br/><br/>Matching type: Cache-Tag<br/>Quota per request: 100 tags<br/>Daily quota: 30,000 tags |
 | Prefetch URL (free for a limited time)                 |             Quota per request: 1,000<br>Daily quota: 50,000              |      Quota per request: 5,000<br>Daily quota: 100,000      |
 | WebSockets                           |                     Default timeout: 1-120s                     |                     Default timeout: 1-300s                     |

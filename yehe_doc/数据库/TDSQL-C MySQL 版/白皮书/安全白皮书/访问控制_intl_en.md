@@ -1,17 +1,23 @@
+TDSQL-C for MySQL provides access control capabilities. By defining and verifying user permissions, regulating user access to database resources, and managing database resource permissions, you can ensure that only authorized users can access database objects within the scope of their permissions or at their security levels.
 
-TDSQL-C for MySQL implements access control through database account management, password management, access management, security group, and other means to ensure data security.
+## Database account management
+You can create database accounts through the TDSQL-C for MySQL console or API. You can also grant management permissions at different levels to such accounts. We recommend you authorize accounts based on the principle of least privilege to ensure the data security.
 
-### Database Account Management
-You can create database accounts in the [console](https://console.cloud.tencent.com/cynosdb). You can also grant management permissions at different levels to such accounts. You are recommended to authorize accounts based on the principle of least privilege so as to ensure the data security.
+For more information, see [Creating Account](https://www.tencentcloud.com/document/product/1098/44612).
 
-### Password Management
-TDSQL-C for MySQL allows you to reset the database account password in the console. The password can contain 8–64 characters in at least two of the following character types: letters, digits, and special symbols `_+-&=!@#$%^*()`.
-The password resetting feature has been connected to [CAM](https://intl.cloud.tencent.com/document/product/598/10583); therefore, we recommend you exercise tighter control over the permissions of the password resetting API or sensitive TDSQL-C for MySQL resources by granting such permissions only to appropriate personnel on an as-needed basis. For data security, we recommend you regularly reset the password at least once every three months.
+## Access management
+Cloud Access Management (CAM) helps you securely manage and control access permissions to your Tencent Cloud resources. With CAM, you can create, manage, and terminate users (groups), and control the Tencent Cloud resources that can be used by the specified user through identity and policy management, which implements permission separation.
 
-### Cloud Access Management
-[Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/1098/40640) helps you securely manage and control access permissions to your Tencent Cloud resources. With CAM, you can create, manage, and terminate users (groups), and control the Tencent Cloud resources that can be used by the specified user through identity and policy management, which implements permission separation.
+For more information, see [CAM Overview](https://intl.cloud.tencent.com/document/product/598/10583).
 
-### Security Groups
-[Security group](https://intl.cloud.tencent.com/document/product/213/12452) mainly helps you implement network access control for your TDSQL-C for MySQL instances. It serves as a stateful virtual firewall with filtering feature for configuring network access control for one or more instances. It is an important network security isolation tool provided by Tencent Cloud.
+## Custom password strength
+Passwords are the most important means for protecting database security. As more data security regulations are introduced, there are higher requirements for the database password strength. TDSQL-C for MySQL supports the custom password strength feature to protect your database security and meet your needs for compliance with applicable regulations.
 
-Instances with the same network security isolation requirements in one region can be put into the same security group, which is a logical group. Instances in a security group are matched based on rules. Modifying security group rules does not require restarting the TDSQL-C for MySQL instances, and the changes will take effect immediately.
+You can configure this feature in the console to enable password strength for all password-related operations. This helps protect your passwords from leakage or other risks. The feature offers the following configuration items:
+- Min Number of Uppercase or Lowercase Letters
+- Min Number of Digitals
+- Min Number of Symbols
+- Min Number of Password Characters
+- Non-Compliant Dictionary
+
+For more information, see [Overview](https://www.tencentcloud.com/document/product/1098/49981).

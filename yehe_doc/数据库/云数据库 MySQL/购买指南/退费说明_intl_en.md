@@ -1,30 +1,36 @@
-﻿- Monthly subscription (prepaid): Each account is entitled to unconditional full refund only once within five days after purchase by default. Non-full refunds will be provided for other refund requests. Note that you cannot return and request a refund for a monthly subscribed instance in the console; instead, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
-- Pay-as-you-go (postpaid): You can return and request a refund for a pay-as-you-go instance in the instance list in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
+﻿
+- Monthly subscription (prepaid): You can return TencentDB for MySQL instances and request a refund (non-full).
+- Pay-as-you-go (postpaid): TencentDB for MySQL will return resources directly, and no refund can be requested.
+You can return monthly subscribed and pay-as-you-go instances in the instance list in the [TencentDB for MySQL console](https://console.tencentcloud.com/cdb/instance?language=en).
 
-
-## Five-Day Unconditional Return Description
-If you have any dissatisfaction after purchasing a TencentDB for MySQL instance, you can return it unconditionally within five days after purchase. The specific rules are as detailed below:
-- Each account can return **one** monthly subscribed TencentDB for MySQL instance unconditionally **within five (inclusive) days after purchase** by default. You need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+## Returning Instances
+- When a monthly subscription instance is returned and its status has changed to **Isolating**, it will no longer generate fees.
+- After an instance is terminated, its data will not be recoverable. You need to back up the data in advance.
+- As database backups will be deleted when an instance is terminated, you need to download the backups in advance.
+- As database audit will be deleted when an instance is terminated, you need to download the the database audit log in advance.
+- After a monthly subscribed instance is terminated, its IP resources will be released simultaneously, and the instances cannot be accessed. If the instance has read-only or disaster recovery instances:
+  - Read-only instances will be terminated at the same time.
+  - Disaster recovery instances will disconnect their sync connections and be promoted to source instances automatically.
+- When a monthly subscribed instance is returned, it is retained in the recycle bin for 7 days, where it cannot be accessed. To restore the instance, go to the recycle bin and renew it.
 - Tencent Cloud has the right to reject any suspected abnormal or malicious application for return.
+- Certain resources purchased during promotions may not be eligible for return. You can check the latest information on the official website.
 
-#### Five-day unconditional return rules
-For an order that meets the five-day unconditional return policy, the refunded amount is **all the amount paid for purchase**, including the cash amount, earnings amount, and trial credit amount.
+## Standard Returns
+Fees for consumed resources will be deducted from the refund. The remaining amount will be returned to your Tencent Cloud account by the proportion of the cash and voucher amount paid for the purchase.
+
+#### Standard return policies
+**Refund amount = Current Orders + Future Orders - Consumed Resources Fees**
+
+- Current orders: The amount paid for current orders, excluding discounts and vouchers.
+- Future orders: The amount paid for future orders, excluding vouchers.
+- Fees for consumed resources are calculated based on the following policies:
+ - For the used part, if the usage has lasted at least one month as of the date of downgrade, fees will be deducted by month; otherwise, fees will be deducted in a pay-as-you-go manner.
+ - The usage is accurate down to the second
+ - If the refunded amount ≤ 0, it is considered 0, and resources are deleted.
+
 >!
->- **Vouchers are not returned.**
->- All the **refunded amount** will be credited into your **Tencent Cloud account**.
+>- Discounts and vouchers will not be returned.
+>- The refund will be returned to your Tencent account by the proportion of the cash and free credit paid for the purchase.
 
-## Standard Return
-- If you have already returned an instance unconditionally within five days after purchase, you can return pay-as-you-go instances in a self-service manner at any time in the console.
-- Fees for consumed resources will be deducted from the refund. The remaining amount, including cash and trial credit, will be returned to your Tencent Cloud account.
->!
->- Discounts and vouchers are not returned.
->- The refund will be credited to your account at the ratio of cash to trial credit paid upon purchase.
-
-
-## Relevant Operations
-For more information on how to return pay-as-you-go instances in the console, see [Terminating Instance](https://intl.cloud.tencent.com/document/product/236/31895).
-
-
-
-
-
+## Related Operations
+For more information on how to return instances in the console, see [Terminating Instance](https://www.tencentcloud.com/document/product/236/31895?lang=en&pg=).
