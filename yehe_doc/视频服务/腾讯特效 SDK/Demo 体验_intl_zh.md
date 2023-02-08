@@ -26,7 +26,7 @@
 <td> <a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/latest/demo.zip">ZIP 包</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45384">DOC</a></td></tr>
 <tr>
-<td>Andriod</td>
+<td>Android</td>
 <td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/56c5bb85cb28e7a5e7a3db37156786b1.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/xmagic-demo-latest.apk">单击下载</a></td>
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/latest/xmagic_S1-04_android_latest.zip">ZIP 包</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45385">DOC</a></td></tr>
@@ -69,7 +69,7 @@
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/latest/MLVB-API-Example.zip">ZIP 包</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45387">DOC</a></td>
 </tr>
-<td>Andriod</td>
+<td>Android</td>
 <td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/116845c46c3710a61e905ae4609c8128.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/MLVB_Example_latest.apk">单击下载</td>
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/latest/MLVB-API-Example_latest.zip">ZIP 包</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45388">DOC</a></td>
@@ -81,7 +81,7 @@
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/iOS/latest/TRTC-API-Example.zip">ZIP 包</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45390">DOC</a></td>
 </tr>
-<td>Andriod</td>
+<td>Android</td>
 <td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/b6d9e3b81e7e3c3b8acc99826d1125bd.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/TRTC-APP-2.4.2.322.apk">单击下载</td>
 <td><a href="https://mediacloud-76607.gzc.vod.tencent-cloud.com/TencentEffect/Android/latest/TRTC-API-Example_latest.zip">ZIP 包</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45391">DOC</a></td></tr>
@@ -92,7 +92,7 @@
 <td><a href="https://liteav.sdk.qcloud.com/download/latest/XiaoShiPin_UGC_iOS_latest.zip">ZIP 包</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45394">DOC</a></td>
 </tr>
-<td>Andriod</td>
+<td>Android</td>
 <td align="center"><img src="https://qcloudimg.tencent-cloud.cn/raw/c64c2577d956d81cc50acb4547f8848f.png" width=120><br><a href="https://dldir1.qq.com/hudongzhibo/xmagic/UGSV-APP-2.4.2.322.apk">单击下载</td>
 <td><a href="https://liteav.sdk.qcloud.com/download/latest/XiaoShiPin_UGC_Android_latest.zip">ZIP 包</a></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1143/45395">DOC</a></td></tr>
