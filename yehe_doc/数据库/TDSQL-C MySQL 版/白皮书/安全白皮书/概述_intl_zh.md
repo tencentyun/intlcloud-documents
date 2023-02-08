@@ -9,6 +9,6 @@ TDSQL-C MySQL 版提供多样化的安全加固功能，来保证用户数据的
 | 数据存储安全 | <li><a href="https://www.tencentcloud.com/document/product/1098/52618" target="_blank">自动备份</a></li><li><a href="https://www.tencentcloud.com/document/product/1098/52618" target="_blank">定期备份保留</a></li><li><a href="https://www.tencentcloud.com/document/product/1098/52618" target="_blank">数据安全</a></li> | 
 | 安全审计 | <li><a href="https://www.tencentcloud.com/document/product/1098/52619" target="_blank">合规审计</a></li><li><a href="https://www.tencentcloud.com/document/product/1098/52619" target="_blank">安全治理</a></li> | 
 | 访问控制 | <li><a href="https://intl.cloud.tencent.com/document/product/1098/44645" target="_blank">数据库账号管理</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1098/44645" target="_blank">访问管理</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1098/44645" target="_blank">自定义密码强度</a></li> | 
-| 数据通信安全 | <li><a href="https://www.tencentcloud.com/document/product/1098/52620" target="_blank">私有网络</a></li><li><a href="https://www.tencentcloud.com/document/product/1098/52620" target="_blank">安全组</a></li> | 
+| 数据通信安全 | <li><a href="https://www.tencentcloud.com/document/product/1098/52622" target="_blank">私有网络</a></li><li><a href="https://www.tencentcloud.com/document/product/1098/52622" target="_blank">安全组</a></li> | 
 | 数据容灾 | <a href="https://www.tencentcloud.com/document/product/1098/52621" target="_blank">同城容灾</a> | 
 

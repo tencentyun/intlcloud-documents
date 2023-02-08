@@ -11,18 +11,18 @@
 云产品内网通信的注意事项如下：
 - 同地域下（保障同一账号，且同一个 VPC 内）的云资源之间可通过内网互通，可以直接使用 [内网 IP](https://intl.cloud.tencent.com/document/product/213/5225) 访问。
 - 不同地域之间网络完全隔离，不同地域之间的云产品默认不能通过内网互通。
-- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式更较为高速、稳定。
-- [负载均衡](https://intl.cloud.tencent.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/38441) 功能，则可支持负载均衡跨地域绑定云服务器。
+- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://www.tencentcloud.com/document/product/1003) 进行通信，此通信方式更较为高速、稳定。
+- [负载均衡](https://www.tencentcloud.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://www.tencentcloud.com/zh/document/product/214/38441) 功能，则可支持负载均衡跨地域绑定云服务器。
 
 ## 可用区
 可用区（Zone）是指腾讯云在同一地域内电力和网络互相独立的物理数据中心。目标是能够保证可用区间故障相互隔离（大型灾害或者大型电力故障除外），不出现故障扩散，使得用户的业务持续在线服务。通过启动独立可用区内的实例，用户可以保护应用程序不受单一位置故障的影响。
-用户启动实例时，可以选择指定地域下的任意可用区。当用户需要设计应用系统的高可靠性时（某个实例发生故障时服务保持可用），可以使用跨可用区的部署方案（例如 [负载均衡](https://intl.cloud.tencent.com/document/product/214)、[弹性 IP](https://intl.cloud.tencent.com/document/product/213/5733) 等），以使另一可用区域中的实例可代为处理相关请求。
+用户启动实例时，可以选择指定地域下的任意可用区。当用户需要设计应用系统的高可靠性时（某个实例发生故障时服务保持可用），可以使用跨可用区的部署方案（例如 [负载均衡](https://www.tencentcloud.com/document/product/214)、[弹性 IP](https://intl.cloud.tencent.com/document/product/213/5733) 等），以使另一可用区域中的实例可代为处理相关请求。
 
 ## 地域和可用区列表
 ### 中国
 <table class="table-striped">
+<thead><tr><th>地域</th><th>可用区</th></tr></thead>
 <tbody>
-<tr><th>地域</th><th>可用区</th></tr>
 <tr>
 <td rowspan="4">华南地区（广州）<br> ap-guangzhou</td>
 <td>广州三区<br> ap-guangzhou-3</td></tr>	
@@ -50,9 +50,14 @@
 <td>北京六区<br>ap-beijing-6</td></tr>
 <tr>
 <td>北京七区<br>ap-beijing-7</td></tr>
+<td rowspan="1">华北地区（北京金融）<br>ap-beijing-fsi</td>
+<td>北京金融一区（仅限金融机构和企业通过 <a href="https://cloud.tencent.com/online-service?from=sales&source=PRESALE">在线咨询</a> 申请开通）<br>ap-beijing-fsi-1</td></tr>
 <tr>
 <td rowspan="1">华东地区（南京）<br>ap-nanjing</td>
 <td>南京一区<br>ap-nanjing-1</td></tr>
+<tr>
+<td >西南地区（成都）<br>ap-chengdu</td>
+<td>成都一区<br>ap-chengdu-1</td></tr>
 <tr>
 <td >西南地区（重庆）<br>ap-chongqing</td>
 <td>重庆一区<br>ap-chongqing-1</td></tr>
@@ -66,17 +71,24 @@
 
 ### 其他国家和地区
 <table class="table-striped">
+<thead><tr><th>地域</th><th>可用区</th></tr></thead>
 <tbody>
-<tr><th>地域</th><th>可用区</th></tr>
 <tr>
-<td rowspan="1">亚太东南（新加坡）<br>ap-singapore</td>
+<td rowspan="2">亚太东南（新加坡）<br>ap-singapore</td>
 <td>新加坡三区<br>ap-singapore-3</td></tr>
+<tr>
+<td>新加坡四区<br>ap-singapore-4</td></tr>
 <tr>
 <td rowspan="1">美国西部（硅谷）<br>na-siliconvalley</td>
 <td>硅谷二区<br>na-siliconvalley-2</td></tr>
 <tr>
-<td rowspan="1">欧洲地区（法兰克福）<br>eu-frankfurt</td>
+<td rowspan="2">欧洲地区（法兰克福）<br>eu-frankfurt</td>
+<td>法兰克福一区<br>eu-frankfurt-1</td></tr>
+<tr>
 <td>法兰克福二区<br>eu-frankfurt-2</td></tr>
+<tr>
+<td rowspan="1">亚太东北（首尔）<br>ap-seoul</td>
+<td>首尔二区<br>ap-seoul-2</td></tr>
 <tr>
 <td rowspan="2">美国东部（弗吉尼亚）<br>na-ashburn</td>
 <td>弗吉尼亚一区<br>na-ashburn-1</td></tr>
