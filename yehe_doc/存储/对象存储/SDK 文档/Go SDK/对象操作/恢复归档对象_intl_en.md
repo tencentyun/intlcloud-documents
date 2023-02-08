@@ -3,13 +3,13 @@ This document provides an overview of APIs and SDK code samples for restoring an
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring archived object | Restores ARCHIVE object. |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access. |
 
-## Restoring Archived Object 
+## Restoring an Archived Object 
 
 #### Feature description
 
-This API is used to restore an ARCHIVE object.
+This API (`POST Object restore`) is used to restore an archived object for access.
 
 #### Method prototype
 
@@ -19,7 +19,7 @@ func (s *ObjectService) PostRestore(ctx context.Context, key string, opt *Object
 
 #### Sample request
 
-[//]: # ".cssg-snippet-restore-object"
+[//]: # (.cssg-snippet-restore-object)
 ```go
 package main                                                                                                                                                                                   
 
@@ -31,23 +31,23 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of `bucketname-appid` (`appid` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-    // Replace it with your `region`, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information on regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
-            // Get the key from environment variables.
+            // Get the key from environment variables
             // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretID: os.Getenv("SECRETID"),
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretKey: os.Getenv("SECRETKEY"),
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     key := "example_restore"
     f, err := os.Open("/test")
-    if err != nil {
+    if err != nil{
         panic(err)
     }
     opt := &cos.ObjectPutOptions{
@@ -60,28 +60,28 @@ func main() {
             XCosACL: "private",
         },
     }
-    // Upload an object directly to ARCHIVE storage class.
+    // Upload an object directly to ARCHIVE storage class
     _, err = client.Object.Put(context.Background(), key, f, opt)
-    if err != nil {
+    if err != nil{
         panic(err)
     }
 
     opts := &cos.ObjectRestoreOptions{
         Days: 2,
         Tier: &cos.CASJobParameters{
-            // Standard, Exepdited and Bulk
+            // Standard, Expedited, and Bulk
             Tier: "Expedited",
         },
     }
     // Restore an archived object.
     _, err = client.Object.PostRestore(context.Background(), key, opts)
-    if err != nil {
+    if err != nil{
         panic(err)
     }
 }
 ```
 
-#### Parameter description
+#### Field description
 
 ```go
 type ObjectRestoreOptions struct {        
@@ -95,9 +95,9 @@ type CASJobParameters struct {
 
 | Parameter | Description | Type | Required |
 | -------------------- | ------------------------------------------------------------ | ------ | ---- |
-| key | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | string | Yes |
-| ObjectRestoreOptions | Describes rules for retrieved temporary files. | struct | Yes |
-| Days | Specifies the number of days before a temporary object expires. | int | Yes |
-| CASJobParameters | Specifies the restoration configuration. | struct | No |
-| Tier | Object restoration mode. For ARCHIVE, valid values are `Expedited`, `Standard`, and `Bulk`. For DEEP ARCHIVE, valid values are `Standard` and `Bulk`. | string | No |
+| key  | Object key, unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| ObjectRestoreOptions | Describes rules for retrieved temporary files | Struct | Yes |
+| Days | Specifies the number of days before a temporary object expires | Int | Yes |
+| CASJobParameters | Specifies the restoration configuration | Struct | No |
+| Tier | Object restoration mode. <li>For ARCHIVE, valid values are `Expedited`, `Standard`, and `Bulk`. <li>For DEEP ARCHIVE, valid values are `Standard` and `Bulk`. | String | No |
 

@@ -1,8 +1,8 @@
 
 
-## Overview
+## Feature Overview
 
-This document provides an overview of APIs and SDK code samples related to COS inventory.
+This document provides an overview of APIs and SDK code samples for COS inventory.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
@@ -13,7 +13,7 @@ This document provides an overview of APIs and SDK code samples related to COS i
 
 ## Creating an Inventory Job
 
-#### Description
+#### Feature description
 
 This API (PUT Bucket inventory) is used to create an inventory job for a bucket.
 
@@ -37,18 +37,18 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://www.tencentcloud.com/document/product/598/32675.
         },
     })
     opt := &cos.BucketPutInventoryOptions{
@@ -74,17 +74,17 @@ func main() {
         },
     }
     _, err := client.Bucket.PutInventory(context.Background(), "test_id", opt)
-    if err != nil {
+    if err != nil{
         // ERROR
     }
 }
 ```
 
-#### Parameter description
+#### Field description
 
 ```go
 type BucketInventoryFilter struct {
-    Prefix string 
+    Prefix     string 
 }
 type BucketInventoryOptionalFields struct {
     BucketInventoryFields []string 
@@ -147,7 +147,7 @@ The following describes some common errors that may occur when you call this API
 
 ## Querying Inventory Jobs
 
-#### Description
+#### Feature description
 
 This API is used to query the inventory jobs of a bucket.
 
@@ -172,22 +172,22 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://www.tencentcloud.com/document/product/598/32675.
         },
     })
     v, _, err := client.Bucket.GetInventory(context.Background(), "test_id")
-    if err != nil {
+    if err != nil{
         // ERROR
     }
     fmt.Println(v)
@@ -222,9 +222,9 @@ type BucketGetInventoryResult BucketPutInventoryOptions
 
 ## Querying All Inventories
 
-#### Description
+#### Feature description
 
-This API is used to query all inventory jobs set for a bucket. You can configure up to 1,000 inventory jobs for a bucket.
+This API is used to query all inventory jobs configured for a bucket. You can configure up to 1,000 inventory jobs for a bucket.
 
 #### Method prototype
 
@@ -247,22 +247,22 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://www.tencentcloud.com/document/product/598/32675.
         },
     })
     v, _, err := client.Bucket.ListInventoryConfigurations(context.Background(), "")
-    if err != nil {
+    if err != nil{
         // ERROR
     }
     fmt.Println(v)
@@ -289,11 +289,11 @@ type ListBucketInventoryConfigResult struct {
 | InventoryConfigurations         | Inventory configuration information                                                 | Struct |
 | IsTruncated            | Flag about whether all inventory jobs have been listed. If yes, it is `false`; otherwise, it is `true` | Bool |
 | ContinuationToken      | Flag of the inventory list on the current page, which can be understood as the page number. It corresponds to the `continuation-token` parameter in the request | String |
-| NextContinuationToken           | Identifier of the next response. You can pass the value of this parameter to `continuation-token` and initiate a GET request to obtain the inventory jobs from the next response | String |
+| NextContinuationToken           | ListInventoryConfigurationResult | Identifier of the next response. You can pass the value of this parameter to `continuation-token` and initiate a GET request to obtain the inventory jobs from the next response | String |
 
 ## Deleting an Inventory Job
 
-#### Description
+#### Feature description
 
 This API is used to delete a specified inventory job from a bucket.
 
@@ -318,28 +318,28 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://www.tencentcloud.com/document/product/598/32675.
         },
     })
     _, err := client.Bucket.DeleteInventory(context.Background(), "test_id")
-    if err != nil {
+    if err != nil{
         // ERROR
     }
 }
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Type |
 | -------- | ---------- | ------ |

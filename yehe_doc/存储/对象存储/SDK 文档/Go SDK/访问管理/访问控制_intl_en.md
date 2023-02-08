@@ -1,4 +1,4 @@
-## Overview
+## Feature Overview
 
 This document provides an overview of APIs and SDK code samples related to the access control lists (ACLs) for buckets and objects.
 
@@ -23,7 +23,7 @@ This document provides an overview of APIs and SDK code samples related to the a
 
 ### Setting a bucket ACL
 
-#### Description
+#### Feature description
 
 This API is used to set the access control list (ACL) of a specified bucket.
 
@@ -35,7 +35,7 @@ func (s *BucketService) PutACL(ctx context.Context, opt *BucketPutACLOptions) (*
 
 #### Sample request
 
-[//]: # ".cssg-snippet-put-bucket-acl"
+[//]: # (.cssg-snippet-put-bucket-acl)
 ```go
 package main
 
@@ -47,18 +47,18 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     // 1. Configure the bucket ACL through the request header
@@ -69,7 +69,7 @@ func main() {
         },
     }
     _, err := client.Bucket.PutACL(context.Background(), opt)
-    if err != nil {
+    if err != nil{
         panic(err)
     }
   	// 2. Configure the bucket ACL through the request body
@@ -92,13 +92,13 @@ func main() {
         },
     }
     _, err = client.Bucket.PutACL(context.Background(), opt)
-    if err != nil {
+    if err != nil{
         panic(err)
     }
 }
 ```
 
-#### Parameter description
+#### Field description
 
 ```go
 type ACLHeaderOptions struct {
@@ -112,14 +112,14 @@ type ACLHeaderOptions struct {
 | Parameter | Description | Type | Required |
 | -------------------- | ------------------------------------------------------------ | ------ | ---- |
 | XCosACL | Sets the bucket ACL, such as private, public-read, and public-read-write | String | No |
-| XCosGrantFullControl | Grants a specified account permission to read and write a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, use `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, use `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. <br>Example: `id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | No |
-| XCosGrantRead | Grants a specified account permission to read a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, use `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, use `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. <br>Example: `id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | No |
-| XCosGrantWrite | Grants a specified account permission to write to a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, use `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, use `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. <br>Example: `id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | No |
+| XCosGrantFullControl | Grants a specified account read and write access to a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, use `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`. To authorize a root account, use `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. <br>Example: `id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | No |
+| XCosGrantRead | Grants a specified account read access to a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, use `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`. To authorize a root account, use `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. <br>Example: `id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | No |
+| XCosGrantWrite | Grants a specified account write access to a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, use `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`. To authorize a root account, use `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. <br>Example: `id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | No |
 | ACLXML | Grants a specified account access permission for a bucket. For more information on the format, see the response description of `Get Bucket acl`. | struct | No |
 
 ### Querying a bucket ACL
 
-#### Description
+#### Feature description
 
 This API is used to query the ACL of a specified bucket.
 
@@ -131,7 +131,7 @@ func (s *BucketService) GetACL(ctx context.Context) (*BucketGetACLResult, *Respo
 
 #### Sample request
 
-[//]: # ".cssg-snippet-get-bucket-acl"
+[//]: # (.cssg-snippet-get-bucket-acl)
 ```go
 package main
 
@@ -143,22 +143,22 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     _, _, err := client.Bucket.GetACL(context.Background())
-    if err != nil {
+    if err != nil{
         panic(err)
     }
 }
@@ -206,7 +206,7 @@ type ACLGrantee struct {
 
 ### Setting an object ACL
 
-#### Description
+#### Feature description
 
 This API is used to set an ACL for an object.
 
@@ -218,7 +218,7 @@ func (s *ObjectService) PutACL(ctx context.Context, key string, opt *ObjectPutAC
 
 #### Sample request
 
-[//]: # ".cssg-snippet-put-object-acl"
+[//]: # (.cssg-snippet-put-object-acl)
 ```go
 package main
 
@@ -230,18 +230,18 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     // 1. Configure through the request header
@@ -252,7 +252,7 @@ func main() {
     }
     key := "exampleobject"
     _, err := client.Object.PutACL(context.Background(), key, opt)
-    if err != nil {
+    if err != nil{
         panic(err)
     }
     // 2. Configure through the request body
@@ -274,13 +274,13 @@ func main() {
         },
     }
     _, err = client.Object.PutACL(context.Background(), key, opt)
-    if err != nil {
+    if err != nil{
         panic(err)
     }
 }
 ```
 
-#### Parameter description
+#### Field description
 
 ```go
 type ACLHeaderOptions struct {
@@ -301,7 +301,7 @@ type ACLHeaderOptions struct {
 
 ### Querying an object ACL
 
-#### Description
+#### Feature description
 
 This API is used to query the ACL of an object.
 
@@ -313,7 +313,7 @@ func (s *ObjectService) GetACL(ctx context.Context, key string) (*ObjectGetACLRe
 
 #### Sample request
 
-[//]: # ".cssg-snippet-get-object-acl"
+[//]: # (.cssg-snippet-get-object-acl)
 ```go
 package main
 
@@ -325,29 +325,29 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     key := "exampleobject"
     _, _, err := client.Object.GetACL(context.Background(), key)
-    if err != nil {
+    if err != nil{
         panic(err)
     }
 }
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | ---- |

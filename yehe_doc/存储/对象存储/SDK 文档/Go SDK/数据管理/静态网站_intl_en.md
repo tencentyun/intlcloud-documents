@@ -1,18 +1,18 @@
 
 
-## Overview
+## Feature Overview
 
-This document provides an overview of APIs and SDK code samples related to static website.
+This document provides an overview of APIs and SDK code samples for static website.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ---------------- | ------------------------ |
-| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website configuration | Configures a static website for a bucket |
+| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Configuring a static website configuration | Configures a static website for a bucket |
 | [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying a static website configuration | Queries the static website configuration of a bucket |
 | [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting a static website configuration | Deletes the static website configuration of a bucket |
 
 ## Setting Static Website Configuration
 
-#### Description
+#### Feature description
 
 This API is used to configure a static website for a bucket.
 
@@ -24,7 +24,7 @@ func (s *BucketService) PutWebsite(ctx context.Context, opt *BucketPutWebsiteOpt
 
 #### Sample request
 
-[//]: # ".cssg-snippet-put-bucket-website"
+[//]: # (.cssg-snippet-put-bucket-website)
 ```go
 package main
 
@@ -36,18 +36,18 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     opt := &cos.BucketPutWebsiteOptions{
@@ -69,13 +69,13 @@ func main() {
         },
     }
     _, err := client.Bucket.PutWebsite(context.Background(), opt)
-    if err != nil {
+    if err != nil{
         // ERROR
     }
 }
 ```
 
-#### Parameter description
+#### Field description
 
 ```go
 type WebsiteRoutingRule struct {
@@ -125,9 +125,9 @@ type BucketPutWebsiteOptions struct {
 
 ## Querying Static Website Configuration
 
-#### Description
+#### Feature description
 
-This API is used to query the static website configuration associated with a bucket.
+This API (`GET Bucket website`) is used to query the static website configuration associated with a bucket.
 
 #### Method prototype
 
@@ -137,7 +137,7 @@ func (s *BucketService) GetWebsite(ctx context.Context) (*BucketGetWebsiteResult
 
 #### Sample request
 
-[//]: # ".cssg-snippet-get-bucket-website"
+[//]: # (.cssg-snippet-get-bucket-website)
 ```go
 package main
 
@@ -150,22 +150,22 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     res, _, err := client.Bucket.GetWebsite(context.Background())
-    if err != nil {
+    if err != nil{
         // ERROR
     }
     fmt.Println(res)
@@ -195,9 +195,9 @@ type BucketGetWebsiteResult BucketPutWebsiteOptions
 
 ## Deleting Static Website Configuration
 
-#### Description
+#### Feature description
 
-This API is used to delete the static website configuration of a bucket.
+This API (`DELETE Bucket website`) is used to delete the static website configuration of a bucket.
 
 #### Method prototype
 
@@ -207,7 +207,7 @@ func (s *BucketService) DeleteWebsite(ctx context.Context) (*Response, error)
 
 #### Sample request
 
-[//]: # ".cssg-snippet-delete-bucket-website"
+[//]: # (.cssg-snippet-delete-bucket-website)
 ```go
 package main
 
@@ -219,22 +219,22 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     _, err := client.Bucket.DeleteWebsite(context.Background())
-    if err != nil {
+    if err != nil{
         // ERROR
     }
 }

@@ -18,7 +18,7 @@ This document provides an overview of APIs and SDK code samples for copying and 
 
 ## Simple Operations
 
-### Copying objects
+### Copying an object
 
 This API (`PUT Object - Copy`) is used to create a copy of an existing COS object, that is, to copy an object from the source path (object key) to the destination path (object key). During the process, object metadata and ACLs can be modified.
 You can use this API to create a copy of an object, modify an object’s metadata (the source object and destination file have the same attributes), and move or rename an object (copy the object first and then call the deletion API).
@@ -45,18 +45,18 @@ import (
     "strings"
 )
 
-func main() {
+func main(){
     // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-    // Replace it with your `region`, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretID: os.Getenv("SECRETID"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretKey: os.Getenv("SECRETKEY"),
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     name := "exampleobject"
@@ -66,10 +66,10 @@ func main() {
 
     sourceURL := fmt.Sprintf("examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/%s", name)
     dest := "example_dest"
-    // Considering the ACL limit, we recommend not setting an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
+    // Considering the ACL limit, we recommend you not set an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
     // opt := &cos.ObjectCopyOptions{}
     _, _, err = client.Object.Copy(context.Background(), dest, sourceURL, nil)
-    if err != nil {
+    if err != nil{
         panic(err)
     }
 }
@@ -90,25 +90,25 @@ import (
     "strings"
 )
 
-func main() {
+func main(){
     // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-    // Replace it with your `region`, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
             // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretID: os.Getenv("SECRETID"),
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretKey: os.Getenv("SECRETKEY"),
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     source := "test/oldfile"
     f := strings.NewReader("test")
     // Upload the file
     _, err := client.Object.Put(context.Background(), source, f, nil)
-    if err != nil {
+    if err != nil{
         // Error
     }
 
@@ -118,7 +118,7 @@ func main() {
     _, _, err = client.Object.Copy(context.Background(), dest, sourceURL, nil)
     if err == nil {
         _, err = client.Object.Delete(context.Background(), source, nil)
-        if err != nil {
+        if err != nil{
             // Error
         }
     }
@@ -142,18 +142,18 @@ import (
     "strings"
 )
 
-func main() {
-    // Bucket name in the format of `BucketName-APPID` (`APPID`. is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-    // Replace it with your `region`, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
             // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretID: os.Getenv("SECRETID"),
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretKey: os.Getenv("SECRETKEY"),
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     name := "exampleobject"
@@ -170,14 +170,14 @@ func main() {
         nil,
     }
     _, _, err = client.Object.Copy(context.Background(), name, sourceURL, opt)
-    if err != nil {
+    if err != nil{
         panic(err)
     }
 }
 
 ```
 
-#### Parameter description
+#### Field description
 
 ```go
 type ObjectCopyOptions struct {
@@ -205,7 +205,7 @@ type ObjectCopyHeaderOptions struct {
 
 | Parameter | Description | Type | Required |
 | ------------------------------- | ------------------------------------------------------------ | ----------- | -------- |
-| key | `ObjectKey` is the unique identifier of an object in a bucket. For example, in the object's access domain name `bucket1-1250000000.cos.ap-guangzhou.myqcloud.com/doc1/pic1.jpg`, the `ObjectKey` is `doc1/pic1.jpg`. | String | Yes |
+| key  | `ObjectKey` is the unique identifier of an object in a bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the `ObjectKey` is `doc/pic.jpg`. | String | Yes |
 | sourceURL | URL of the source file to copy | String | Yes |
 | XCosACL | Sets the file ACL, such as `private`, `public-read`, and `public-read-write` | String | No |
 | XCosGrantFullControl | Grants full permission in the format: `id="[OwnerUin]"` | String | No |
@@ -217,7 +217,7 @@ type ObjectCopyHeaderOptions struct {
 | XCosCopySourceIfNoneMatch | If the `Etag` of the object is different from the specified one, the operation will be performed; otherwise, 412 will be returned. This parameter can be used together with `XCosCopySourceIfModifiedSince`. If it is used together with other conditions, a conflict will be returned. | String | No |
 | XCosStorageClass | Sets the object storage class. Valid values: STANDARD (default), STANDARD_IA, ARCHIVE. | String | No |
 | XCosMetaXXX | User-defined file metadata. | http.Header | No |
-| XCosCopySource | Source file URL. You can specify a historical version using the `versionid` sub-resource. | String | No |
+| XCosCopySource | Source file URL. You can specify a historical version using the `versionid` subresource. | String | No |
 
 #### Response description
 
@@ -262,25 +262,25 @@ import (
     "strings"
 )
 
-func main() {
+func main(){
     // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-    // Replace it with your `region`, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
             // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretID: os.Getenv("SECRETID"),
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretKey: os.Getenv("SECRETKEY"),
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     source := "test/oldfile"
     f := strings.NewReader("test")
     // Upload the file
     _, err := client.Object.Put(context.Background(), source, f, nil)
-    if err != nil {
+    if err != nil{
         // Error
     }
     // Move the object
@@ -289,7 +289,7 @@ func main() {
     _, _, err = client.Object.Copy(context.Background(), dest, sourceURL, nil)
     if err == nil {
         _, err = client.Object.Delete(context.Background(), source, nil)
-        if err != nil {
+        if err != nil{
             // Error
         }
     }
@@ -324,23 +324,23 @@ import (
     "os"
 )
 
-func main() {
+func main(){
     // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-    // Replace it with your `region`, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
             // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretID: os.Getenv("SECRETID"),
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretKey: os.Getenv("SECRETKEY"),
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     name := "exampleobject"
     v, _, err := client.Object.InitiateMultipartUpload(context.Background(), name, nil)
-    if err != nil {
+    if err != nil{
         panic(err)
     }
     UploadID := v.UploadID
@@ -348,7 +348,7 @@ func main() {
 }
 ```
 
-#### Parameter description
+#### Field description
 
 ```go
 type InitiateMultipartUploadOptions struct {
@@ -404,11 +404,11 @@ type InitiateMultipartUploadResult struct {
 | -------- | ------------------------------------------------------------ | ------ |
 | UploadId | ID that identifies the multipart upload | string |
 | Bucket | Bucket name in the format of `BucketName-APPID` | string |
-| key  | `ObjectKey` is the unique identifier of an object in a bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the `ObjectKey` is `doc/pic.jpg`.  | String |
+| key  | `ObjectKey` is the unique identifier of an object in a bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the `ObjectKey` is `doc/pic.jpg` | String |
 
 ### Copying an object part
 
-#### Description
+#### Feature description
 
 This API (`Upload Part - Copy`) is used to copy a part of an object from the source path to the destination path.
 
@@ -431,24 +431,24 @@ import (
     "os"
 )
 
-func main() {
+func main(){
     // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-    // Replace it with your `region`, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
             // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretID: os.Getenv("SECRETID"),
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretKey: os.Getenv("SECRETKEY"),
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     // Initialize multipart upload
     name := "exampleobject"
     v, _, err := client.Object.InitiateMultipartUpload(context.Background(), name, nil)
-    if err != nil {
+    if err != nil{
         // ERROR
     }
     uploadID := v.UploadID
@@ -456,7 +456,7 @@ func main() {
     // Copying an object part
     sourceUrl := "examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceobject"
     res, _, err := client.Object.CopyPart(context.Background(), name, uploadID, 1, sourceUrl, nil)
-    if err != nil {
+    if err != nil{
         // ERROR
     }
 
@@ -467,12 +467,12 @@ func main() {
         ETag:       res.ETag,
     })
     _, _, err = client.Object.CompleteMultipartUpload(context.Background(), name, uploadID, completeOpt)
-    if err != nil {
+    if err != nil{
         // ERROR
     }
 }
 ```
-#### Parameter description
+#### Field description
 
 ```go
 type ObjectCopyPartOptions struct {
@@ -546,24 +546,24 @@ import (
     "os"
 )
 
-func main() {
+func main(){
     // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-    // Replace it with your `region`, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
             // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretID: os.Getenv("SECRETID"),
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretKey: os.Getenv("SECRETKEY"),
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     // Initialize multipart upload
     name := "exampleobject"
     v, _, err := client.Object.InitiateMultipartUpload(context.Background(), name, nil)
-    if err != nil {
+    if err != nil{
         // ERROR
     }
     uploadID := v.UploadID
@@ -571,7 +571,7 @@ func main() {
     // Copying an object part
     sourceUrl := "examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceobject"
     res, _, err := client.Object.CopyPart(context.Background(), name, uploadID, 1, sourceUrl, nil)
-    if err != nil {
+    if err != nil{
         // ERROR
     }
 
@@ -582,13 +582,13 @@ func main() {
         ETag:       res.ETag,
     })
     _, _, err = client.Object.CompleteMultipartUpload(context.Background(), name, uploadID, completeOpt)
-    if err != nil {
+    if err != nil{
         // ERROR
     }
 }
 ```
 
-#### Parameter description
+#### Field description
 
 ```go
 type CompleteMultipartUploadOptions struct {
@@ -620,7 +620,7 @@ type CompleteMultipartUploadResult struct {
 
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| Location | URL address | String |
+| Location | URL | String |
 | Bucket               | Bucket name in the format of `BucketName-APPID`, for example, `examplebucket-1250000000` | String |
-| key  | `ObjectKey` is the unique identifier of an object in a bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the `ObjectKey` is `doc/pic.jpg` | String |
+| Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string |
 | ETag | Unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the `ETag` of each part during the upload process | String |

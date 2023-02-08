@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to bucket tagging.
+This document provides an overview of APIs and SDK code samples for bucket tagging.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
@@ -12,7 +12,7 @@ This document provides an overview of APIs and SDK code samples related to bucke
 
 ## Setting Bucket Tags
 
-#### Description
+#### Feature description
 
 This API is used to set tags for an existing bucket.
 
@@ -24,7 +24,7 @@ func (s *BucketService) PutTagging(ctx context.Context, opt *BucketPutTaggingOpt
 
 #### Sample request
 
-[//]: # ".cssg-snippet-put-bucket-tagging"
+[//]: # (.cssg-snippet-put-bucket-tagging)
 ```go
 package main
 
@@ -36,18 +36,18 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     opt := &cos.BucketPutTaggingOptions{
@@ -63,13 +63,13 @@ func main() {
         },
     }
     _, err := client.Bucket.PutTagging(context.Background(), opt)
-    if err != nil {
+    if err != nil{
         // ERROR
     }
 }
 ```
 
-#### Parameter description
+#### Field description
 
 ```go
 type BucketTaggingTag struct {
@@ -77,7 +77,7 @@ type BucketTaggingTag struct {
     Value string
 }
 type BucketPutTaggingOptions struct {
-    XMLName xml.Name           
+    XMLName                xml.Name           
     TagSet  []BucketTaggingTag 
 }
 ```
@@ -91,7 +91,7 @@ type BucketPutTaggingOptions struct {
 
 ## Querying Bucket Tags
 
-#### Description
+#### Feature description
 
 This API is used to query the existing tags of a specified bucket.
 
@@ -103,7 +103,7 @@ func (s *BucketService) GetTagging(ctx context.Context) (*BucketGetTaggingResult
 
 #### Sample request
 
-[//]: # ".cssg-snippet-get-bucket-tagging"
+[//]: # (.cssg-snippet-get-bucket-tagging)
 ```go
 package main
 
@@ -116,22 +116,22 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     v, _, err := client.Bucket.GetTagging(context.Background())
-    if err != nil {
+    if err != nil{
         fmt.Println(err)
     }
     fmt.Println(v)
@@ -146,7 +146,7 @@ type BucketTaggingTag struct {
     Value string
 }
 type BucketGetTaggingResult struct {
-    XMLName xml.Name           
+    XMLName                xml.Name           
     TagSet  []BucketTaggingTag 
 }
 
@@ -161,13 +161,13 @@ type BucketGetTaggingResult struct {
 
 ## Deleting Bucket Tags
 
-#### Description
+#### Feature description
 
-This API is used to delete the existing tags from a bucket.
+This API (`DELETE Bucket tagging`) is used to delete the existing tags from a bucket.
 
 #### Method prototype
 
-[//]: # ".cssg-snippet-delete-bucket-tagging"
+[//]: # (.cssg-snippet-delete-bucket-tagging)
 ```go
 func (s *BucketService) DeleteTagging(ctx context.Context) (*Response, error)
 ```
@@ -186,22 +186,22 @@ import (
     "os"
 )
 
-func main() {
-    // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+func main(){
+    // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
     // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
-            // Environment variable `SECRETID` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretID: os.Getenv("SECRETID"),
-            // Environment variable `SECRETKEY` refers to the user's SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-            SecretKey: os.Getenv("SECRETKEY"),
+            // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     resp, err := client.Bucket.DeleteTagging(context.Background())
-    if err != nil {
+    if err != nil{
         fmt.Println(err)
     }
     fmt.Println(resp.Header)
