@@ -73,7 +73,7 @@ Unlike `ResourceQuota`, which limits the overall resource usage of a namespace, 
 3. Limit the upper and lower thresholds of resource usage by a container and limit its request for too many resources while ensuring its normal operation.
 
 #### `LimitRange` in TKE
-TKE has productized `LimitRange`. You can directly manage it by namespace in the console. For detailed directions, see [Limit Ranges](https://kubernetes.io/docs/concepts/policy/limit-range/).
+TKE has productized `LimitRange`. You can directly manage it by namespace in the console. For detailed directions, see [Namespace](https://www.tencentcloud.com/document/product/457/30660). For more information, see [Limit Ranges](https://kubernetes.io/docs/concepts/policy/limit-range/).
 ![](https://qcloudimg.tencent-cloud.cn/raw/778c86b97794d55d2b34fe0ef946d3f8.png)
 :::
 </dx-tabs>
