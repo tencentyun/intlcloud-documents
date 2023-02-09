@@ -137,7 +137,7 @@
 <td>镜像漏洞扫描</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>镜像部署阻断</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+<td>镜像部署阻断</td><td>-</td><td>-</td><td>✓</td><td>✓</td>
 </tr>
 <tr>    
 <td>镜像版本保护</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
@@ -149,7 +149,7 @@
 <td>VPC 访问控制</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>VPC 接入配额</td><td>-</td><td>3</td><td>5</td><td>10</td>
+<td>VPC 接入配额</td><td>-</td><td>5</td><td>10</td><td>20</td>
 </tr>
 <tr>
 <td>操作日志保留</td><td>-</td><td>7天</td><td>15天</td><td>30天</td>
