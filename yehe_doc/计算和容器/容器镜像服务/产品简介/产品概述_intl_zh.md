@@ -28,9 +28,6 @@
 当实例正在使用标准版或高级版功能时，不允许降低实例规格至不支持该功能的版本。若想降低规格，请先手动删除相关的功能配置。
 </dx-alert>
 
-
-
-
 <table>
 <tbody><tr>
 <th rowspan="2" style="
@@ -55,12 +52,16 @@
 <td>不支持</td><td>99.9%（支持赔付）</td><td>99.9%（支持赔付）</td><td>99.9%（支持赔付）</td>
 </tr>
 <tr>
-<td rowspan="4">实例管理</td>
+<td rowspan="5">实例管理</td>
 <td>独享 Registry 服务</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
 <td>独享服务访问域名</td>
+<td>-</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+<tr>
+<td>自定义访问域名</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
@@ -71,6 +72,7 @@
 <td>临时/长期访问凭证管理</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
+<tr>
 <td rowspan="5">仓库管理</td>
 <td>多级仓库目录</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
@@ -82,13 +84,13 @@
 <td>命名空间配额</td><td>10</td><td>50</td><td>100</td><td>500<br>（可申请提高配额）</td>
 </tr>
 <tr>
-<td>镜像仓库配额</td><td>500</td><td>1000</td><td>3000</td><td>5000 <br>（可申请提高配额）</td>
+<td>镜像仓库配额</td><td>广州地域：500、其他地域：100</td><td>1000</td><td>3000</td><td>5000 <br>（可申请提高配额）</td>
 </tr>
 <tr>
 <td>Helm 仓库配额</td><td>-</td><td>1000</td><td>3000</td><td>5000 <br>（可申请提高配额）</td>
 </tr>
 <tr>
-<td rowspan="7">数据安全</td>
+<td rowspan="8">数据安全</td>
 <td>数据加密存储</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
@@ -96,16 +98,19 @@
 <td>镜像漏洞扫描</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>镜像部署阻断</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+<td>镜像部署阻断</td><td>-</td><td>-</td><td>✓</td><td>✓</td>
 </tr>
 <tr>    
+<td>镜像版本保护</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+<tr>
 <td>公网访问控制</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
 <td>VPC 访问控制</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>VPC 接入配额</td><td>-</td><td>3</td><td>5</td><td>10</td>
+<td>VPC 接入配额</td><td>-</td><td>5</td><td>10</td><td>20</td>
 </tr>
 <tr>
 <td>操作日志保留</td><td>-</td><td>7天</td><td>15天</td><td>30天</td>
@@ -128,10 +133,10 @@
 <td>Webhook 触发器</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>容器镜像编译构建 *</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+<td>容器镜像编译构建 *</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>云原生交付工作流</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+<td>云原生交付工作流</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
 <td>P2P 镜像加速分发</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
