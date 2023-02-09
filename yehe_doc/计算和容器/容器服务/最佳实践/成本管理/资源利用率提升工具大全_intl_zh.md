@@ -73,7 +73,7 @@ TKE 上已经实现对 Resource Quota 的产品化，您可以直接在控制台
 3. 限制容器个对资源使用的上下限，保证容器正常运行的情况下，限制其请求过多资源。
 
 #### TKE 上的 Limit Ranges
-TKE 上已经实现对 Limit Ranges 的产品化，您可以直接在控制台管理命名空间的 Limit Ranges，具体可参考 [Kubernetes 官方文档](https://kubernetes.io/docs/concepts/policy/limit-range/)。
+TKE 上已经实现对 Limit Ranges 的产品化，您可以直接在控制台管理命名空间的 Limit Ranges，操作详情可参见 [Namespaces 文档](https://www.tencentcloud.com/document/product/457/30660)。Limit Ranges 具体可参考 [Kubernetes 官方文档](https://kubernetes.io/docs/concepts/policy/limit-range/)。
 ![](https://qcloudimg.tencent-cloud.cn/raw/778c86b97794d55d2b34fe0ef946d3f8.png)
 :::
 </dx-tabs>
