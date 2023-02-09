@@ -667,11 +667,11 @@ For more information, see [Integration Solution (No UI)](https://www.tencentclou
 In addition to the SDK and TUIKit basic features, we provide four optional plugins to help you enrich Chat capabilities:
 
 - [Message push plugin](https://intl.cloud.tencent.com/document/product/1047/50032): Supports vendors' native offline push capabilities and supports pushing your other business messages to help you improve the message reach rate.
-- [Audio/Video call plugin](https://www.tencentcloud.com/document/product/1047/50023): Supports one-to-one and group audio/video calls.
-- [Geographical location message plugin](https://www.tencentcloud.com/document/product/1047/48564): Provides the capabilities to select locations, send locations, and parse and display location messages.
-- [Custom emoji plugin](https://www.tencentcloud.com/document/product/1047/50023): TUIKit 0.1.5 or later does not provide an emoji package, and you can use this plugin to quickly integrate the emoji capability. This plugin supports emoji unicode encoding and custom image emojis. For the integration code, refer to our [demo](https://github.com/TencentCloud/tc-chat-demo-flutter/blob/main/lib/src/pages/app.dart).
+- [Audio/Video call plugin](https://pub.dev/packages/tim_ui_kit_calling_plugin): Supports one-to-one and group audio/video calls.
+- [Geographical location message plugin](https://pub.dev/packages/tim_ui_kit_lbs_plugin): Provides the capabilities to select locations, send locations, and parse and display location messages.
+- [Custom emoji plugin](https://www.tencentcloud.com/document/product/1047/52227): TUIKit 0.1.5 or later does not provide an emoji package, and you can use this plugin to quickly integrate the emoji capability. This plugin supports emoji unicode encoding and custom image emojis. For the integration code, refer to our [demo](https://github.com/TencentCloud/tc-chat-demo-flutter/blob/main/lib/src/pages/app.dart).
 
->?If you have any good ideas or suggestions, feel free to [contact us](https://cloud.tencent.com/online-service?from=doc_269&source=PRESALE).
+>?If you have any good ideas or suggestions, feel free to [contact us](https://www.tencentcloud.com/contact-us).
 
 [](id:more)
 
