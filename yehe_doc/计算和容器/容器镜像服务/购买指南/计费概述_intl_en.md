@@ -48,8 +48,8 @@ You can go to the [TCR Purchase Page](https://buy.intl.cloud.tencent.com/tcr) to
 <tr><td rowspan="3"> Chinese Mainland Regions</td><td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu and Chongqing</td><td>0.14</td><td>0.28</td><td>0.54</td></tr>
 <tr><td>Shenzhen Finance, Shanghai Finance and Beijing Finance</td><td>0.23</td><td>0.42</td><td>0.75</td></tr>
 <tr><td>Hong Kong (China), and Taipei (China)</td><td>0.20</td><td>0.38</td><td>0.70</td></tr>
-<tr><td rowspan="1">Asia Pacific Regions</td><td>Singapore, Seoul, Tokyo, Mumbai, and Bangkok</td><td>0.20</td><td>0.38</td><td>0.70</td></tr>
-<tr><td rowspan="1">Europe and North America Regions</td><td>Toronto, Silicon Valley, Virginia, Frankfurt and Moscow</td><td>0.28</td><td>0.50</td><td>0.87</td></tr>
+<tr><td rowspan="1">Asia Pacific Regions</td><td>Singapore, Seoul, Tokyo, Mumbai, Bangkok, and Jakarta</td><td>0.20</td><td>0.38</td><td>0.70</td></tr>
+<tr><td rowspan="1">Europe and North America Regions</td><td>Silicon Valley, Virginia, Frankfurt and Moscow</td><td>0.28</td><td>0.50</td><td>0.87</td></tr>
 </tbody></table>
 
 
