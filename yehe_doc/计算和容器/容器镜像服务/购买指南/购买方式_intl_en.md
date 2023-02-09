@@ -15,6 +15,6 @@ Tencent Cloud allows you to purchase TCR Enterprise Edition instances either fro
 
 
 ## Purchasing via an API
-You can use the `CreateInstance` API to create a TCR Enterprise Edition instance.
+You can use the `CreateInstance` API to create a TCR Enterprise Edition instance. For more information, see [CreateInstance](https://www.tencentcloud.com/document/product/1051/50715).
 
 
