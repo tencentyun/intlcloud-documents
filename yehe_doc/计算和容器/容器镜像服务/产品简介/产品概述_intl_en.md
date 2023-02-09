@@ -27,10 +27,6 @@ The TCR specifications are as follows (**✓**: supported; **-**: not supported)
 <dx-alert infotype="notice" title="">
 When the instance is using the features of Standard Edition or Advanced Edition, it is not allowed to degrade the instance specifications to editions which do not support the features. If you want to degrade the specifications, please delete related feature configurations manually first.
 </dx-alert>
-
-
-
-
 <table>
 <tbody><tr>
 <th rowspan="2" style="
@@ -41,26 +37,30 @@ When the instance is using the features of Standard Edition or Advanced Edition,
 ">Features</th>
 <th rowspan="2" style="
     width: 5%;
-">Personal Edition</th>
+">TCR Individual</th>
 <th colspan="3" style="
     width: 55%;
-">Enterprise Edition</th>
+">TCR Enterprise</th>
 </tr>
 <tr>
-<th>Basic Edition</th><th>Standard Edition</th><th>Advanced Edition</th>
+<th>Basic</th><th>Standard</th><th>Advanced</th>
 </tr>
 <tr>
-<td rowspan="1">Service assurance</td>
+<td rowspan="1">Service guarantee</td>
 <td>SLA</td>
 <td>Not supported</td><td>99.9% (compensation supported)</td><td>99.9% (compensation supported)</td><td>99.9% (compensation supported)</td>
 </tr>
 <tr>
-<td rowspan="4">Instance management</td>
+<td rowspan="5">Instance management</td>
 <td>Dedicated registry service</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
 <td>Dedicated domain name access</td>
+<td>-</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+<tr>
+<td>Custom access domain name</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
@@ -71,6 +71,7 @@ When the instance is using the features of Standard Edition or Advanced Edition,
 <td>Temporary/long-term access credential management</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
+<tr>
 <td rowspan="5">Repository management</td>
 <td>Multi-level repository directory</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
@@ -79,16 +80,16 @@ When the instance is using the features of Standard Edition or Advanced Edition,
 <td>Helm chart hosting</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>Namespace quota</td><td>10</td><td>50</td><td>100</td><td>500<br>(you can apply to increase the quota)</td>
+<td>Namespace quota</td><td>10</td><td>50</td><td>100</td><td>500<br>Submit a ticket to increase the quota.</td>
 </tr>
 <tr>
-<td>Image repository quota</td><td>500</td><td>1000</td><td>3000</td><td>5000 <br>(you can apply to increase the quota)</td>
+<td>Image repository quota</td><td>Guangzhou region: 500, Other regions: 100</td><td>1000</td><td>3000</td><td>5000 <br>Submit a ticket to increase the quota.</td>
 </tr>
 <tr>
-<td>Helm repository quota</td><td>-</td><td>1000</td><td>3000</td><td>5000 <br>(you can apply to increase the quota)</td>
+<td>Helm repository quota</td><td>-</td><td>1000</td><td>3000</td><td>5000 <br>Submit a ticket to increase the quota.</td>
 </tr>
 <tr>
-<td rowspan="7">Data security</td>
+<td rowspan="8">Data security</td>
 <td>Encrypted storage of data</td>
 <td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
@@ -96,16 +97,19 @@ When the instance is using the features of Standard Edition or Advanced Edition,
 <td>Image vulnerability scanning</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>Block Vulnerable Images</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+<td>Block Vulnerable Images</td><td>-</td><td>-</td><td>✓</td><td>✓</td>
 </tr>
-<tr>    
+<tr>   
+<td>Image tag protection</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+<tr>
 <td>Public network access control</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
 <td>VPC access control</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>VPC access quota</td><td>-</td><td>3</td><td>5</td><td>10</td>
+<td>VPC access quota</td><td>-</td><td>5</td><td>10</td><td>20</td>
 </tr>
 <tr>
 <td>Operation log retention</td><td>-</td><td>7 days</td><td>15 days</td><td>30 days</td>
@@ -128,10 +132,10 @@ When the instance is using the features of Standard Edition or Advanced Edition,
 <td>Webhook trigger</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>Container image compilation and building*</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+<td>Container image compilation and building *</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>Cloud native delivery workflow</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+<td>Cloud native delivery workflow</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
 <td>P2P accelerated distribution of images</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
