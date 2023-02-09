@@ -49,6 +49,7 @@ For the data security, the new TCR instance denies all external access by defaul
 #### Step 2: Installing the TCR add-on in the TKE cluster
 If you are using TKE, refer to [TCR](https://intl.cloud.tencent.com/document/product/457/38710) to install the TCR add-on in the TKE cluster and select **Enable Private Network Parsing** in the **TCR Add-on Parameter Settings** window. For nodes in the cluster, this plug-in can automatically configure private network resolution for the associated TCR instance. This enables secret-free pulling of images in the instance through the private network.
 After the add-on is installed, the cluster can pull images from the associated instance without needing a password through a private network.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/xsAp075_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230209155921.png)
 
 <dx-alert infotype="explain" title="">
 Currently, the TCR add-on only supports clusters in Kubernetes1.12, 1.14, 1.16, 1.18 and 1.20. If you are using another cluster version, manually configure the access method.
@@ -70,4 +71,4 @@ Currently, the TCR add-on only supports clusters in Kubernetes1.12, 1.14, 1.16, 
  - **Image Access Credential**: if the TCR add-on has been installed in the cluster, explicit configuration is not required. **Please do not select other access credentials, otherwise, this workload cannot load the secret-free pulling configuration of TCR add-on.**
 6. After configuring other parameters, click **Create Workload** and view the workload deployment progress.
 After the workload is deployed, "Number of Running/Desired Pods" for the workload becomes "1/1" on the "Deployment" page.
-
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/aYMx653_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230209160209.png)
