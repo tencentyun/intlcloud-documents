@@ -24,6 +24,67 @@ Chat TUIKit for Flutter (Including UI Library) refers to the [tencent_cloud_chat
 
 ## Update Logs
 
+### Chat Flutter TUIKit (Including UI Library) 1.6.0 @2023.02.08
+
+- Add: `scrollToConversation` on `TIMUIKitConversationController`. You can now easily navigate to a specific conversation in the conversation list and move to the next unread conversation by double-clicking the tab bar, [refers to our sample app](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/conversation.dart).
+- Optimize: The performance of the history message list while scrolling over a large distance.
+
+### Chat Flutter TUIKit (Including UI Library) 1.5.0+1 @2023.02.06
+
+- Fix: Video message oversize.
+
+### Chat Flutter TUIKit (Including UI Library) 1.5.0 @2023.02.06
+
+- Add: New configuration `defaultAvatarAssetPath` on global `TIMUIKitConfig`, aiming to define the default avatar.
+- Add: Supports Flutter 3.7.0.
+- Fix: `chatBgColor` configuration.
+
+### Chat Flutter SDK (Without UI Library) 5.0.8 @2023.01.13
+
+- Added: group counting capability, common group and live group support group counter meta counter, for details, please refer to groupCounter related API
+- Added: text message translation capability, see translateText for details.
+- Upgrade: Upgrade Native SDK to 7.0
+
+### Chat Flutter TUIKit (Including UI Library) 1.4.0 @2023.01.13
+
+- Add: Text translation. Long press the text messages and choose `Translate`. This function can be turned off by `showTranslation` from `ToolTipsConfig`.
+- Optimize: The long press pop-up location.
+- Optimize: Keyboard pop-up event.
+
+### Chat Flutter TUIKit (Including UI Library) 1.3.2 @2023.01.12
+
+- Fix: Text input field height, after choosing to mention someone.
+
+### Chat Flutter TUIKit (Including UI Library) 1.3.1 @2023.01.12
+
+- Optimize: Improve performance.
+
+### Chat Flutter TUIKit (Including UI Library) 1.3.0 @2023.01.11
+
+- Fix: Group tips not shows the nickname or remarks when transferring group owner.
+- Optimize: Remove the confirmation pop-up before opening the file.
+
+### Chat Flutter TUIKit (Including UI Library) 1.2.0 @2023.01.06
+
+- Fix: The issue of input area not showing, when switching from recording to keyboard, on `TIMUIKitChat`.
+- Fix: Only the first receiver can receive the merged multiple forward messages.
+- Optimize: `MessageItemBuilder` can now be used for shows on the merger message screen.
+
+### Chat Flutter TUIKit (Including UI Library) 1.1.0 And 1.1.0+1 @2022.12.29
+
+- Add: Supports two new languages, Japanese and Korean.
+- Add: Supports adding new other languages, apart from our default ones, including English, Chinese(Simplified and Traditional), Japanese and Korean, or modifying the translations, refers to [this documentation](https://www.tencentcloud.com/document/product/1047/52154?from=pub).
+- Add: Sticker plug-in has been embedded in TUIKit by default. Now we support three types of stickers, Unicode Emoji, small image emoji and big image stickers, the usage has been optimized, refers to [this documentation](https://www.tencentcloud.com/document/product/1047/52227?from=pub).
+- Optimize: Themes, more customization.
+- Optimize: The animation of the input area, keyboard, sticker panel and the more panel.
+- Optimize: Emoji, both Unicode and small images, can be inserted to any position in text messages.
+- Optimize: Avatar in profile can be previewed with a large image.
+- Optimize: UserID in profile can be copied.
+- Optimize: Several UI details, including `TIMUIKitAddFriend`, `TIMUIKitAddGroup`, `TIMUIKitGroupProfile` and `TIMUIKitProfile`.
+- Optimize: `TIMUIKitGroupProfile` and `TIMUIKitProfile` can update automatically after `ID` changed.
+- Optimize: New loading animation when downloading the image/video on `TIMUIKitGroupChat`.
+- Fix: Some bugs.
+
 ### Chat Flutter SDK (Without UI Library) 5.0.6 @2022.11.29
 
 - Fixed the iOS bundle version loss issue.
