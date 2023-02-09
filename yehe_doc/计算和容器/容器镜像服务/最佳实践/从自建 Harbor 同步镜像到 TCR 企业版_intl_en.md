@@ -17,9 +17,8 @@ To synchronize data in the external Harbor to a TCR Enterprise Edition instance,
 
 Based on the actual network of Harbor, you can select [access via Tencent Cloud VPC](#vpc) or [access via public network](#publicnet) to configure access to the TCR Enterprise Edition instance.
 
-<span id="vpc"></span>
-
-#### Accessing via Tencent Cloud VPC
+<dx-tabs>
+::: Accessing via Tencent Cloud VPC
 If the current Harbor is deployed in Tencent Cloud VPC or has been connected to the Tencent Cloud VPC through a private line, you can synchronize data through the private network, which can increase the speed of data synchronization and reduce the cost of public network traffic.
 
 1. Log in to the [TCR console](https://console.cloud.tencent.com/tcr) and select **Network ACL** > **Private network** on the left sidebar.
@@ -34,8 +33,8 @@ You can also configure the host on the CVM where the Harbor is located. If you c
 ```
 echo x.x.x.x harbor-sync.tencentcloudcr.com >> /etc/hosts
 ```
-<span id="publicnet"></span>
-#### Accessing via public network
+:::
+::: Accessing via public network
 If the current Harbor is not deployed in a Tencent Cloud VPC or cannot be connected to Tencent Cloud VPC through a private line, you can synchronize data through the public network. The synchronization may incur public network traffic fees. For billing details, please refer to the pricing of the network ISP or cloud service provider.
 1. Log in to the [TCR console](https://console.cloud.tencent.com/tcr) and select **Network ACL** > **Public network** on the left sidebar.
 2. In the **Instance** drop-down list at the top of the page, select an instance for data synchronization.
@@ -45,11 +44,9 @@ When the status of the button changes from **Enabling** to **Close Internet Acce
 	- **Associated Instance**: the currently selected instance for data synchronization.
 	- **Public IP Range**: the egress public IP address of the external Harbor. If there is no specific public IP address, the IP address can be temporarily set to `0.0.0.0/0` to allow all public network accesses. After the synchronization is completed, please delete the temporary IP address as soon as possible.
 	- **Note**: the remarks of the allowlist configuration, for example, “Allow the external Harbor to access the instance through public network”.
-
-
-
-
-<span id="getCertificate"></span>
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/YGw7975_487b82faa82a11edbb45525400c56988.png)
+:::
+</dx-tabs>
 
 ### Creating an access credential for the TCR Enterprise Edition instance
 
@@ -58,8 +55,8 @@ You can create and manage multiple access credentials in TCR Enterprise Edition.
 2. On the “Instance List” page, select an instance for data synchronization to go to its details page.
 3. Select the **Access Credential** tab and click **Create** at the top of the instance list.
 4. In the pop-up **Create Access Credential** window, perform the following steps:
-  1. In the “Create Access Credential” section, enter the usage description of the credential and click **Next**. For example, “Dedicated for data synchronization of external Harbor”.
-  2. In the “Save Access Credential” section, click **Save Access Credential** to download the credential. **Please save the access credential properly. You will not be able to get it again.**
+    1. In the “Create Access Credential” section, enter the usage description of the credential and click **Next**. For example, “Dedicated for data synchronization of external Harbor”.
+    2. In the “Save Access Credential” section, click **Save Access Credential** to download the credential. **Please save the access credential properly. You will not be able to get it again.**
 After the access credential is created, you can view it in the **Access Credential** tab. Please disable and delete the access credential in time after the data synchronization.
 
 ### Configuring the synchronization repository and rule of Harbor
@@ -67,7 +64,7 @@ You can add a third party Registry and configure the data replication rules in H
 1. Log in to Harbor console with an admin account. You can view and perform **Administration**.
 2. Select **Administration** > **Registries** on the left sidebar to go to the **Registries** page.
 3. <span id="Step3"></span>On the **Registries** page, click **NEW ENDPOINT**. Refer to the following information to add a TCR Enterprise Edition instance.
-- **Provider**: select “tencent-tcr”.
+	- **Provider**: select “tencent-tcr”.
 	- **Name**: custom the endpoint name for the synchronization such as tencent-tcr.
 	- **Description**: the description of the synchronization endpoint.
 	- **Endpoint URL**: the access domain name of the TCR Enterprise Edition instance, for example `https://harbor-sync.tencentcloudcr.com`.
@@ -75,15 +72,15 @@ You can add a third party Registry and configure the data replication rules in H
 	- **Access Secret**: enter the `SecretKey` obtained from **Access Key** > **[Manage API Key](https://console.cloud.tencent.com/cam/capi)**.
 	- **Verify Remote Cert**: keep the default setting.
 4. Click **TEST CONNECTION**.
- - If “Connection tested successfully” is displayed, the current Harbor can access the TCR Enterprise Edition instance normally.
- - If “Failed to ping endpoint” is displayed, make sure that you have [configured access to the TCR Enterprise Edition instance for the external Harbor](#Configuration).
+   - If “Connection tested successfully” is displayed, the current Harbor can access the TCR Enterprise Edition instance normally.
+   - If “Failed to ping endpoint” is displayed, make sure that you have [configured access to the TCR Enterprise Edition instance for the external Harbor](#Configuration).
 5. Click **OK** to create the registry endpoint.
 
 
 >! If the Harbor is an earlier version, there is no "tencent-tcr" option for the **Provider**. Please select "Docker Registry" for **Provider** when creating a registry endpoint. For **Access ID** and **Access Password**, respectively enter the **Login Username** and **Login password** of the long-term access credential of the image repository obtained in **Instance** > **Access Credential** page. In this case, the namespace cannot be automatically created in the TCR.
 
 6. <span id="createRule"></span>Select **Administration** > **Replications** on the left sidebar and click **NEW REPLICATION RULE**. Refer to the following information to create the rule.
- - **Name**: the rule name. You can enter a name based on the actual usage scenario.
+   - **Name**: the rule name. You can enter a name based on the actual usage scenario.
 	- **Description**: the rule description.
     - **Replication mode**: defaults to **Push-based**. Only when “tencent-tcr” is selected for **Provider** and the version of Harbor is V2.1.2 or later, you can select **Pull-based**. **Push-based** means to synchronize the new image in the Harbor to the TCR, while **Pull-based** means to synchronize the new image in the TCR to the Harbor.
 	- **Source resource filter**: you can filter resources to synchronize. If you do not set a filter, all container images and Helm Chart resources in the Harbor are selected by default.
