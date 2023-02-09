@@ -2,7 +2,6 @@ Due to the policy adjustments of CAs and certificate agents, from January 1, 201
 
 >!
 >- From September 1, 2022, the quota for one Tencent Cloud UIN account to apply for a free certificate will be reduced from 50 to 20.
->- Re-applying for expiring certificates after January 1, 2018 will be subject to the above policy.
 >- Thank you for your support for Tencent Cloud. We will continue to provide you with professional HTTPS services.
 >- If you have problems when using the product, please feel free to [contact us](https://intl.cloud.tencent.com/support).
 
