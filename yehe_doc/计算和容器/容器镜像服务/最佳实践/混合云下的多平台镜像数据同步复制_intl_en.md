@@ -6,7 +6,7 @@ For such scenarios, TCR currently provides synchronization and replication featu
 - The instance synchronization feature allows you to **sync** instance images **as needed** based on the configured rules. For more information, see [Configuring Instance Synchronization](https://intl.cloud.tencent.com/document/product/1051/35494).
 - The instance replication feature allows you to **replicate the full** image data from the primary instance to a replica instance. For more information, see [Configuring Instance Replication](https://intl.cloud.tencent.com/document/product/1051/39845).
 - The image migration tool supports migration of Docker image data between **multiple image registry services**. For more information, see [Image Migration Tool: image-transfer](https://github.com/tkestack/image-transfer).
-- In addition, when you migrate your data from another image registry service to TCR, you can also configure a custom domain name for your TCR instance or use the original domain name to maintain the service continuity.
+- In addition, when you migrate your data from another image registry service to TCR, you can also configure a custom domain name for your TCR instance or use the original domain name to maintain the service continuity. For more information, see [Configuring Custom Domain Name](https://www.tencentcloud.com/document/product/1051/43983).
 
 This document describes how to sync and replicate image data between different image registries in a hybrid cloud.
 
@@ -39,7 +39,7 @@ If your cross-region business is also cross-border, you also need to use the [in
 
 ### Scenario 2: cross-platform image migration or synchronization
 
-If you use both a public cloud image registry and a self-built image registry at the same time or use multiple public cloud image registry, you often need to migrate or sync images across platforms. In this case, you can use TCR's custom domain name feature to implement unified access to multiple platforms through the same configuration, so as to ensure service continuity.
+If you use both a public cloud image registry and a self-built image registry at the same time or use multiple public cloud image registry, you often need to migrate or sync images across platforms. In this case, you can use TCR's custom domain name feature to implement unified access to multiple platforms through the same configuration, so as to ensure service continuity. For more information, see [Configuring Custom Domain Name](https://www.tencentcloud.com/document/product/1051/43983).
 
 #### Cross-platform image migration
 
