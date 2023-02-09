@@ -4,7 +4,7 @@
 - 按量计费的实例不再需要使用时**请及时销毁**，以免继续扣费。
 - 实例被销毁/回收后，实例内数据将会被清除且不可找回。
 - 由于您的实际资源消耗可能不断变化，余额预警可能存在一定的误差。
-- 欠费实例自动回收时，受对象存储 COS 计费策略限制，无法自动删除关联的后端存储桶，请前往 [对象存储](https://console.cloud.tencent.com/cos) 控制台手动管理该 COS Bucket，避免持续扣费。
+- 欠费实例自动回收时，受对象存储 COS 计费策略限制，无法自动删除关联的后端存储桶，请前往 [对象存储](https://console.cloud.tencent.com/cos) 控制台管理该 COS Bucket，避免持续扣费。
 
 ### 预警说明
 
@@ -26,7 +26,7 @@
 
 您可在账户欠费状态下删除不再需要使用的实例，避免持续计费，删除实例请参考 [销毁退还实例](https://intl.cloud.tencent.com/document/product/1051/39087)。
 
->! 欠费实例自动回收时，受对象存储 COS 计费策略限制，无法自动删除关联的后端存储桶，请前往 [对象存储](https://console.cloud.tencent.com/cos) 控制台管理该 COS Bucket。
+>! 欠费实例自动回收时，受对象存储 COS 计费策略限制，无法自动删除关联的后端存储桶，请前往 [对象存储](https://console.cloud.tencent.com/cos) 控制台手动管理该 COS Bucket。
 >
 
 
