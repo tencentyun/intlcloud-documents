@@ -36,6 +36,7 @@ public abstract int InitSpatializer(string modelPath)
 
 - 如果是v2.8以下版本，请单击 [下载](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/pubilc/GME_2.X_3d_model)，md5: d0b76aa64c46598788c2f35f5a8a8694。
 - 如果是v2.8及以上版本，请单击 [下载](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/public/GME_2.8_3d_model.dat)，md5: 3d4d04b3949e267e34ca809e8a0b9243。
+- 如果是v2.9.6及以上版本，由于3D音效资源文件已内置，此处 modelPath 可填空。
 
 SDK 的版本发布历史请参见 [产品动态](https://intl.cloud.tencent.com/document/product/607/35323)。
 

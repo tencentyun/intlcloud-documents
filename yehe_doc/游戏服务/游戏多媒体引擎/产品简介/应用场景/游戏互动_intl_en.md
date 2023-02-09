@@ -14,7 +14,7 @@ Various types of gaming scenarios such as game commanding, team battles, and lar
 ## Online board game
 
 GME provides amusing real-time interactive features to make online board games even more fun, such as Werewolf, Draw Something, quiz games, and song guessing games. It helps implement complex gameplay scenarios such as voice control in the visible range and quick switch of player roles and talk directions in Werewolf games. It is well adapted to both traditional Werewolf games and space Werewolf (Among Us) by providing various convenient features, including custom audio routing and millisecond-level multi-room switch.
-The real-time speech-to-text conversion feature facilitates the implementation of innovative board games such as Draw Something and Say Something. GME improves the keyword recognition accuracy through custom trending keyword dictionaries.
+
 ![](https://qcloudimg.tencent-cloud.cn/raw/992d2fb55a5676dc738018a6d58c0dc2.png)
 
 ## Console game
