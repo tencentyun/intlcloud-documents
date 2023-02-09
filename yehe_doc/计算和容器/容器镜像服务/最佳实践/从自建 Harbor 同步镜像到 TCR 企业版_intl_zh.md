@@ -44,6 +44,8 @@ echo x.x.x.x harbor-sync.tencentcloudcr.com >> /etc/hosts
 	- **所属实例**：当前已选择实例，即需要进行数据同步的实例。
 	- **公网 IP 地址段**：自建 Harbor 服务出口的公网 IP。如果无法确认具体的公网 IP 地址，可临时配置为 `0.0.0.0/0` 以放通全部公网来源的访问，完成同步后请尽快删除该配置。
 	- **备注**：可填写白名单配置的备注信息，例如“允许自建 Harbor 公网访问”。
+ 配置完成后如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/YGw7975_487b82faa82a11edbb45525400c56988.png)
 :::
 </dx-tabs>
 
