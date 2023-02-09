@@ -136,7 +136,7 @@ When the instance is using the features of Standard or Advanced edition, it is n
 <td>Image vulnerability scanning</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>Block Vulnerable Images</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
+<td>Block Vulnerable Images</td><td>-</td><td>-</td><td>✓</td><td>✓</td>
 </tr>
 <tr>   
 <td>Image tag protection</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
@@ -148,7 +148,7 @@ When the instance is using the features of Standard or Advanced edition, it is n
 <td>VPC access control</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>VPC access quota</td><td>-</td><td>3</td><td>5</td><td>10</td>
+<td>VPC access quota</td><td>-</td><td>5</td><td>10</td><td>20</td>
 </tr>
 <tr>
 <td>Operation log retention</td><td>-</td><td>7 days</td><td>15 days</td><td>30 days</td>
