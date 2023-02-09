@@ -47,10 +47,10 @@ image-transfer is an open-source tool provided by Tencent Cloud for image migrat
 ![](https://qcloudimg.tencent-cloud.cn/raw/c66431f1bd3fd2369ccac7bb29d5a9bb.png)
 
 <dx-tabs>
-::: General mode
+::: General\smode
 You can use the general mode of image-transfer to migrate images between multiple image registries. To do so, you only need to configure the authentication file and migration rule file. For more information on how to download, install, and use this tool, see [image-transfer](https://github.com/tkestack/image-transfer/blob/main/README.md).
 :::
-::: Quick migration mode
+::: Quick\smigration\smode
 You can use the quick migration mode of image-transfer to migrate from TCR Personal Edition to Enterprise Edition. For more information, see [Migration from TCR Personal Edition to TCR Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/39844), which describes how to use [image-transfer](https://github.com/tkestack/image-transfer) for quick full data migration and how to smoothly migrate a business in the TCR console.
 Currently, TCR provides the Personal Edition and Enterprise Edition services at the same time. The Personal Edition service is for individual developers and only provides basic features for container image storage and distribution. While the Enterprise Edition service is for enterprise users and can provide a secure, dedicated, and high-performance cloud native artifacts hosting and distribution service. For the differences between the two editions, please see [TCR Specifications](https://intl.cloud.tencent.com/document/product/1051/35483).
 :::
@@ -84,7 +84,7 @@ You can also use the external Harbor registry as a relay to sync images between 
 The following image takes **real-time image synchronization from ACR to TCR** as an example:
 1. Configure a pull-based replication policy in Harbor to pull an image from ACR to Harbor in real time and use Harbor as a relay registry.
 2. Configure a push-based replication policy in Harbor to push the image from ACR in Harbor to TCR in real time.
-![](https://qcloudimg.tencent-cloud.cn/raw/1565d6cdf3dea42e151f0a4f91927f5f.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/IxbV124_6474945ca85e11ed9e14525400088f3a.png)
 In this way, the image can be synced from ACR to TCR. You can also configure image synchronization between other platforms in the same way.
 
 
