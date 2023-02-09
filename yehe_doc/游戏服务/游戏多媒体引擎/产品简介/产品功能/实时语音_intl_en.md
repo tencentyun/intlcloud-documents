@@ -17,7 +17,7 @@ GME's 3D voice feature enables players to hear a stereo voice with a sense of di
 GME determines whether players can chat with each other based on their positions. In the same voice room, a large number of users can turn on their mic to have a voice call. It provides "team only" and "everyone" voice modes unique to battle royale and survival shooter games. For more information, see [Range Voice](https://www.tencentcloud.com/document/product/607/17972).
 
 ### Room management
-GME provides SDKs for you to implement room member management, mic-on/off, and muting. You can also use server APIs to remove players from a room and perform other operations.
+GME provides SDKs for you to implement room member management, mic-on/off, and muting. You can also use server APIs to remove players from a room and perform other operations.For more information, see [Integrating GME Chat Room Management](https://www.tencentcloud.com/document/product/607/51115).
 
 ### Ultra large room for 100,000 users
 GME supports an ultra large voice room containing up to 100,000 users and allows multiple users to enter a room at the same time.
@@ -32,7 +32,7 @@ GME supports carrying custom messages during real-time voice chat. For more info
 - Voice changing: GME supports voice changing during voice chat. Players can change their tone to that of a middle-aged man, little girl, etc. For more information, see [Voice Changing Effects](https://www.tencentcloud.com/document/product/607/44995).
 - Accompaniment: GME allows players to play back background music from the licensed music library while speaking. For more information, see [Accompaniment in Voice Chat](https://www.tencentcloud.com/document/product/607/31504).
 - Sound effect: GME allows players to add various sound effects during voice chat. For more information, see [Real-time Sound Effect](https://www.tencentcloud.com/document/product/607/31503).
-- Equalizer: GME acts like an equalizer to adjust the captured audio.
+- Equalizer: GME acts like an equalizer to adjust the captured audio.For more information, see [Real-Time Sound Equalizer](https://www.tencentcloud.com/document/product/607/51115).
 
 
 

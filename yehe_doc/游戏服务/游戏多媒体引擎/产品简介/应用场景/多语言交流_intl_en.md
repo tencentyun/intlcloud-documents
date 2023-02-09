@@ -4,12 +4,12 @@ GME provides diversified capabilities such as speech-to-text conversion, text tr
 ## Chat in a game channel
 
 GME allows players to send voice messages in a public or friend channel in games. It supports speech-to-text conversion and direct recording of short voice messages for the recipients to download and convert to text in 125 languages, so as to implement low-latency multilingual communication in game channels.
-
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/kxMB400_%E6%B8%B8%E6%88%8F%E9%A2%91%E9%81%93%E8%81%8A%E5%A4%A9.png)
 
 ## Voice-enabled team battling
 
 Players from different countries/regions on a unified global server cannot well interact or communicate with each other during team battling due to the language barrier, which makes them unwilling to talk in the game. GME's multilingual solution not only translates speech in multiple languages to text accurately and quickly, but also converts the text messages sent by teammates or enemies to speech when it is inconvenient for players to read the text during battles. It gives players a barrier-free multilingual chat experience and makes them feel completely immersive, attracting more players and helping the game go global.
-
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/2C64451_%E8%AF%AD%E9%9F%B3%E5%BC%80%E9%BB%91.png)
 
 ## Visual and hearing impairment
 
