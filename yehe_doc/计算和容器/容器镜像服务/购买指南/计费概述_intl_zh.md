@@ -49,8 +49,8 @@
 <tr><td rowspan="3">中国地域</td><td>广州、上海、南京、北京、成都、重庆</td><td>0.14</td><td>0.28</td><td>0.54</td></tr>
 <tr><td>深圳金融、上海金融、北京金融</td><td>0.23</td><td>0.42</td><td>0.75</td></tr>
 <tr><td>中国香港、中国台北</td><td>0.20</td><td>0.38</td><td>0.70</td></tr>
-<tr><td rowspan="1">亚太地域</td><td>新加坡、首尔、东京、孟买、曼谷</td><td>0.20</td><td>0.38</td><td>0.70</td></tr>
-<tr><td rowspan="1">欧美地域</td><td>多伦多、硅谷、弗吉尼亚、法兰克福、莫斯科</td><td>0.28</td><td>0.50</td><td>0.87</td></tr>
+<tr><td rowspan="1">亚太地域</td><td>新加坡、首尔、东京、孟买、曼谷、雅加达</td><td>0.20</td><td>0.38</td><td>0.70</td></tr>
+<tr><td rowspan="1">欧美地域</td><td>硅谷、弗吉尼亚、法兰克福、莫斯科</td><td>0.28</td><td>0.50</td><td>0.87</td></tr>
 </tbody></table>
 
 
