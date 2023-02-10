@@ -8,7 +8,7 @@ If you forgot your database account password or need to modify it while using Te
 2. On the instance management page, select **Account Management** tab, find the account for which to reset the password, and select **More** > **Reset Password**.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/bjYK945_11.png)
 3. In the pop-up window, enter the **New Password** and **Confirm Password** and click **OK**.
->? To avoid the risks caused by creating, modifying, and deleting account information, we recommend that you configure [access management] (https://intl.cloud.tencent.com/document/product/237/35441), and reset the password with caution.
+>? To avoid the risks caused by creating, modifying, and deleting account information, we recommend that you configure [access management](https://intl.cloud.tencent.com/document/product/237/35441), and reset the password with caution.
 >
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/M7Xa115_12.png)
 
