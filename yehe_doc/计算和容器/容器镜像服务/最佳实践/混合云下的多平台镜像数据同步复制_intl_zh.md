@@ -6,7 +6,7 @@
 - 实例同步功能支持用户基于规则的配置来**按需同步**实例的镜像，详情请参见  [配置实例同步](https://intl.cloud.tencent.com/document/product/1051/35494)。
 - 实例复制功能支持用户从主实例**全量复制**实例镜像数据至从实例，详情请参见 [配置实例复制](https://intl.cloud.tencent.com/document/product/1051/39845)。
 - 镜像迁移工具支持**多种镜像仓库**的 Docker 镜像数据迁移，详情请参见 [镜像迁移工具：image-transfer](https://github.com/tkestack/image-transfer)。
-- 同时，用户从其他镜像仓库服务迁移至 TCR 时，还可以为 TCR 实例配置自定义域名，继续沿用原有域名，保持服务的连续性。
+- 同时，用户从其他镜像仓库服务迁移至 TCR 时，还可以为 TCR 实例配置自定义域名，继续沿用原有域名，保持服务的连续性，详情请参见 [配置自定义域名](https://www.tencentcloud.com/document/product/1051/43983)。
 
 本文将介绍混合云大背景下，不同镜像仓库之间镜像数据的同步复制的经典使用场景以及对应的最佳实践。
 
@@ -39,7 +39,7 @@
 
 ### 场景2：跨平台镜像迁移或同步
 
-当用户同时使用公有云镜像仓库和自建镜像仓库，或是多家公有云镜像仓库时，往往存在跨平台的镜像迁移或同步的需求。在跨平台场景下，用户可以选择使用 TCR 的自定义域名功能，通过单一配置实现多平台的统一访问，以保证服务的连续性。
+当用户同时使用公有云镜像仓库和自建镜像仓库，或是多家公有云镜像仓库时，往往存在跨平台的镜像迁移或同步的需求。在跨平台场景下，用户可以选择使用 TCR 的自定义域名功能，通过单一配置实现多平台的统一访问，以保证服务的连续性，详情请参见 [配置自定义域名](https://www.tencentcloud.com/document/product/1051/43983)。
 
 #### 跨平台镜像迁移
 
@@ -84,7 +84,7 @@ image-transfer 是腾讯云针对镜像迁移的开源工具，支持多种镜�
 如下图所示，以**将阿里云 ACR 的镜像实时同步至腾讯云 TCR**为例：
 1. 在 Harbor 里配置 Pull-based 复制策略，将 ACR 的镜像实时拉取至 Harbor 中，作为中转。
 2. 在 Harbor 里配置 Push-based 复制策略，将 Harbor 内来自 ACR 的镜像实时推送至 TCR 中。
-![](https://qcloudimg.tencent-cloud.cn/raw/1565d6cdf3dea42e151f0a4f91927f5f.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/IxbV124_6474945ca85e11ed9e14525400088f3a.png)
 以此便实现了将镜像从阿里云 ACR 同步至腾讯云 TCR，其他平台之间的镜像同步也同理。
 
 

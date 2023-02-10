@@ -13,9 +13,8 @@
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的 **Prometheus 监控**。
 2. 在监控实例列表页，选择需要配置数据采集规则的实例名称，进入该实例详情页。
-3. 在“集群监控”页面，单击实例右侧的**数据采集配置**，进入采集配置列表页。如下图所示：
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/d6jb812_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221226165750.png)
-4. 在“数据采集配置”页中，点击“自定义监控”，新增数据采集配置。Prometheus 监控服务预置了部分采集配置文件，用来采集常规的监控数据。您可以通过以下两种方式配置新的数据采集规则来监控您的业务数据。
+3. 在“集群监控”页面，单击实例右侧的**数据采集配置**，进入采集配置列表页。
+4. 在“数据采集配置”页中，单击“自定义监控”，新增数据采集配置。Prometheus 监控服务预置了部分采集配置文件，用来采集常规的监控数据。您可以通过以下两种方式配置新的数据采集规则来监控您的业务数据。
 <dx-tabs>
 ::: 通过控制台新增配置
 #### 监控 Service 
@@ -47,8 +46,7 @@
 :::
 ::: 通过\syaml\s文件新增配置
 1. 单击**YAML新增**。
-2. 在弹窗中，选择监控类型，并填写相应配置。本文以 “添加PodMonitors” 为例，如下图所示：
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/bfJp796_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221226170725.png)
+2. 在弹窗中，选择监控类型，并填写相应配置。
 您可以按照社区的使用方式通过提交相应的 yaml 来完成数据采集的配置。
  - **工作负载监控**：对应配置为 PodMonitors。
  - **service 监控**：对应配置为 ServiceMonitors。
@@ -60,11 +58,7 @@
  **targets（3/3）**表示（实际抓取的 targets 数为3 / 探测的采集目标数为3）。当实际抓取数和探测数的数值相等时，显示为 up，即表示当前抓取正常。当实际抓取数小于探测数时，显示为 down，即表示有部分 endpoints 抓取失败。
 单击字段值（3/3）即可查看采集目标的详细信息。如下图所示 down 的失败状态：
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/9KrJ771_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221226171519.png)
-您还可以在该实例的“集群监控”页中，单击集群名称右侧的**更多 > 查看采集目标**，查看该集群下所有的采集目标情况。如下图所示：
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/CKIU880_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221226171646.png)
-
-
-
+您还可以在该实例的“集群监控”页中，单击集群名称右侧的**更多 > 查看采集目标**，查看该集群下所有的采集目标情况。
 
 
 ### 查看已有配置
@@ -73,8 +67,7 @@
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的 **Prometheus 监控**。
 2. 在监控实例列表页，选择需要配置数据采集规则的实例名称，进入该实例详情页。
-3. 在“集群监控”页面，单击实例右侧的**数据采集配置**，进入采集配置列表页。选择“自定义监控”，点击右侧的编辑，如下图所示：
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/H4wF734_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221226171815.png)
+3. 在“集群监控”页面，单击实例右侧的**数据采集配置**，进入采集配置列表页。选择“自定义监控”，单击右侧的**编辑**。
 4. 在弹出的“编辑RawJobs”窗口，查看 yaml 文件中当前配置的所有监控对象。如下图所示：
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/h3yS394_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221226171905.png)
 

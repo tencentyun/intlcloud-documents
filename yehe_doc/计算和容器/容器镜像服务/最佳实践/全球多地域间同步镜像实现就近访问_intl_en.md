@@ -51,6 +51,7 @@ Instance replication doesn't support replication between regions in and outside 
 
 
 ### Configuring custom domain name
+For detailed directions, see [Configuring Custom Domain Name](https://www.tencentcloud.com/document/product/1051/43983).
 Custom domain name DNS needs to be configured independently. For Tencent Cloud, you can use Private DNS. For Tencent Cloud International, Private DNS is not supported currently, and we recommend you use a self-built DNS service.
 
 
