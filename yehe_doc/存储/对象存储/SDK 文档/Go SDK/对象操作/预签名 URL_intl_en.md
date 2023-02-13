@@ -24,7 +24,7 @@ type PresignedURLOptions struct {
 | Parameter | Type | Description |
 | ------------------ | ---------------------------- | ------------------------------- |
 | httpMethod | string | HTTP request method |
-| key    | string       | Object key, a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324). (**Note: The key does not need to be encoded.**) | String | Yes |
+| key    | string       | Object key, a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324). (**Note: The key does not need to be encoded.**) | String | 
 | ak             | string                       | SecretId                    |
 | sk               | string                       | SecretKey         |
 | expired | time.Duration | Validity period of the signature |
