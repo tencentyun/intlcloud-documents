@@ -1,3 +1,68 @@
+## 7.0.3754 @2023.01.06 - Enhanced Edition
+
+### SDK
+
+- Supported mentioning (@) group members in all types of messages.
+- Supported getting the total message unread count by conversation filter.
+- Supported the meta counter for common groups and audio-video groups.
+- Supported text message translation.
+- Supported custom attributes for community groups.
+- Supported setting the Huawei category and Mi channel ID for offline push.
+- Optimized the QUIC network reconnection logic.
+- Added the base IP logic for COS rich media file download.
+- Supported emoji characters in the file paths of rich media messages sent in Windows.
+- Supported emoji characters in the C++ SDK log and initialization paths in Windows.
+- Fixed the failure in setting custom conversation marks in the v7a architecture.
+- Fixed the errors in setting the height of thumbnails or large images.
+
+### TUIKit and demo
+
+- Supported gain control and AI-based noise reduction for TUIChat voice message recording.
+- Added the message translation capability in TUIChat. 
+- Supported custom ringtones for Android FCM push.
+- Optimized the TUIChat performance in loading historical messages in iOS.
+
+## 6.9.3557 @2022.11.29 - Enhanced Edition
+
+### SDK
+
+- Fixed the occasional crash when getting the `V2TIMOfflinePushInfo` content from messages for Android.
+- Fixed the occasional crash of the Pro SDK enhanced edition for Android.
+- Refined the JSON data content returned by the C API `TIMConvGetConvList`.
+
+### TUIKit and demo
+
+- Released a new minimalist theme, more in line with the styles of international apps.
+
+## 6.8.3374 @2022.11.14 - Enhanced Edition
+
+### SDK
+
+- Supported local text moderation on clients.
+- Released the Swift SDK.
+- Supported the group attribute feature for non-audio-video groups.
+- Optimized the logic for updating the number of members in a non-audio-video groups when someone entered the group.
+- Optimized the COS upload process.
+- Optimized the issue of unread message count after operations such as message recall in a community group.
+- Fixed the failure to deliver a notification when a custom friend field is set independently.
+- Fixed the double callbacks for group listening.
+- Fixed the issue where the topic profile under a community group would not be updated timely when a user left the group and then joined the group again.
+- Fixed the issue that sender’s profile photo is empty in the callback for inserting a local message successfully.
+- Fixed the occasional error when setting message extension after repeated login.
+- Fixed the failure to update the message read receipt status in the conversation update callback after all messages in the conversation are marked as read.
+- Fixed the occasional emptiness of `send_user_id` in a message when a user sends a message immediately after login callback.
+- C++ API: Added an API to check whether a message is read.
+- C++ API: Fixed the failure to update the cursor in the result of the paged pulling of the conversation list.
+
+### TUIKit and demo
+
+- Fixed the issue where a search webpage window popped out when a user long pressed a text message on iOS 16.
+- TUIChat-iOS: Supported sending GIF images.
+- TUIChat-iOS: Fixed image sending status exceptions.
+- TUIChat-iOS: Supported the deletion of time when deleting a message.
+- Fixed system exceptions caused by iOS TUIOfflinePush.
+- Fixed the issue where Android TUIOfflinePush push parameter settings did not take effect.
+
 ## 6.7.3184 @2022.09.29 - Enhanced Edition
 
 ### SDK
@@ -45,7 +110,7 @@
 - Optimized Android TUIOfflinePush component to support notification bar click event callback application, supported uniapp native plug-in packaging.
 - Supported the community mode of "community-group-topic" three-level structure in TUIKit on the Android side.
 - Supported display emoji in iOS input box.
-- Supported different group types corresponding to different default avatars支持不同群类型对应不同默认头像.
+- Supported different group types corresponding to different default avatars.
 - Added resident security tips in Demo.
 - Fixed compatibility and compliance issues caused by using WebView in TUICore skinnable components.
 - Fixed the problem that duplicate messages may appear in the chat interface by clicking offline push.
