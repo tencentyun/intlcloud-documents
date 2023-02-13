@@ -88,7 +88,7 @@ Note that if the access address is set to a domain name, the following message w
 If the database access address is a domain name, run the `ping` command to find the IP address of the domain name or a DNS server that can resolve it. We recommend you not directly modify an access domain name to an IP address, as in scenarios where a domain name is used, the database backend is usually configured with load balancing or high availability. In this case, you can directly configure the DNS server or host on the server. If the database service changes, you can directly modify the DNS service or host to avoid modifying the GitLab service.
 
 ## Step 4. Initialize, log in to, and use GitLab
-1. Run the following command to use GitLabm, which may take a while, so wait patiently. When `gitlab Reconfigured!` is displayed, GitLab has been initialized.
+1. Run the following command to use GitLab, which may take a while, so wait patiently. When `gitlab Reconfigured!` is displayed, GitLab has been initialized.
 ```
 gitlab-ctl reconfigure
 ```
