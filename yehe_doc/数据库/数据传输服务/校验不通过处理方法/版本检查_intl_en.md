@@ -5,7 +5,7 @@
 
 ## PostgreSQL check details
 - Versions earlier than PostgreSQL 10.x (such as 9.x) do not support full + incremental migration. If an incremental migration task is configured for the source database, the verification will fail.
-- If the versions are different, there may be some special compatibility issues, and a warning will be displayed during migration. Read the compatibility report of each version to check whether your business uses some incompatible features.
+- If the versions are different, some special compatibility issues may arise, and a warning will appear during migration. Read the compatibility report for each version to check whether your business is using any incompatible features.
 
 ## TDSQL for PostgreSQL check details
 
@@ -16,7 +16,7 @@ The source and target database versions must be supported by MongoDB.
 
 ## SQL Server check details
 
-Only migration from Basic Edition to High Availability Edition (including Dual-Server High Availability Edition and Cluster Edition) is supported, and the version number of the target instance must be later than of the source instance. 
+Only migration from Basic Edition to High Availability Edition (including Dual-Server High Availability Edition and Cluster Edition) is supported, and the version number of the target instance must be later than that of the source instance. 
 
 ## Redis check details
 
