@@ -25,8 +25,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/group_open_http_svc/send_group_msg | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
@@ -62,6 +61,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
         }
     ],
     "CloudCustomData": "your cloud custom data",
+    "SupportMessageExtension": 0,
     "OfflinePushInfo": {
         "PushFlag": 0, // 正常推送，
         "Desc": "离线推送内容",
@@ -125,7 +125,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 }
 ```
 - **指定消息不更新最近联系人会话**
-如果消息中指定 SendMsgControl，设置 NoLastMsg 的情况下，表示不更新最近联系人会话；NoUnread 不计未读，只对单条消息有效。(AVChatRoom 不允许使用，Meeting 默认不计未读数，需要[配置开通](https://intl.cloud.tencent.com/document/product/1047/44322)，未开通时设置 NoUnread 会报错)。
+如果消息中指定 SendMsgControl，设置 NoLastMsg 的情况下，表示不更新最近联系人会话；NoUnread 不计未读，只对单条消息有效。(AVChatRoom 不允许使用，Meeting 默认不计未读数，需要[配置开通](https://www.tencentcloud.com/document/product/1047/44322)，未开通时设置 NoUnread 会报错)。
 ```
 {
      "GroupId": "@TGS#2C5SZEAEF",
@@ -274,8 +274,9 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 |OnlineOnlyFlag|Integer|选填|1表示消息仅发送在线成员，默认0表示发送所有成员，AVChatRoom(直播群)不支持该参数|
 |SendMsgControl |Array |选填|消息发送权限，NoLastMsg 只对单条消息有效，表示不更新最近联系人会话；NoUnread 不计未读，只对单条消息有效。（如果该消息 OnlineOnlyFlag 设置为1，则不允许使用该字段。）|
 |CloudCustomData|String|选填|消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）|
+|SupportMessageExtension|Integer|选填|该条消息是否支持消息扩展，0为不支持，1为支持。|
 |To_Account|Array|选填|指定消息接收者(接收者成员上限50个)，如果此字段被使用，消息则不计未读，仅旗舰版支持此功能，支持好友工作群（Work）、陌生人社交群（Public）、临时会议群（Meeting）|
-|TopicId|String|选填|话题的 ID, 仅支持话题的社群适用此选项|
+|TopicId|String|选填|话题的 ID，若具有此选项表示在对应的话题中发送普通消息，仅支持话题的社群适用此选项|
 
 ### 应答包体示例
 ```
@@ -315,10 +316,10 @@ https://xxxxxx/v4/group_open_http_svc/send_group_msg?sdkappid=88888888&identifie
 | 10016 | App 后台通过第三方回调拒绝本次操作 |
 | 10017 | 因被禁言而不能发送消息，请检查发送者是否被设置禁言 |
 | 10023| 发消息的频率超限，请延长两次发消息时间的间隔 |
-| 80002 | 消息内容过长，目前最大支持8000字节的消息，请调整消息长度 |
+| 80002 | 消息内容过长，目前最大支持12K字节的消息，请调整消息长度 |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/group_open_http_svc/send_group_msg) 调试本接口。
 
 ## 参考
 

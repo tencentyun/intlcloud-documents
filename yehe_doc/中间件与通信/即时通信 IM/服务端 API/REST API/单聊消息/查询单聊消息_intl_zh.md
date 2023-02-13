@@ -2,12 +2,12 @@
 - 管理员按照时间范围，以会话其中一方的角度查询单聊会话的消息记录。
 - 查询的单聊会话由请求中的 Operator_Account 和 Peer_Account 指定，以 Operator_Account 的角度查询。查询结果包含会话双方互相发送的消息，具体每条消息的发送方和接收方由每条消息里的 From_Account 和 To_Account 指定。
 - 正常情况下，分别以会话双方的角度查询消息，结果是一样的。但以下四种情况会导致结果不一样（即会话里的某些消息，其中一方能查询到，另一方查询不到）：
- - 会话的其中一方清空了会话的消息记录，即调用了终端的 [clearC2CHistoryMessage()](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a29aa6e75c2238c35cc609bef0e5a46ce) 接口。
- - 会话的其中一方删除了会话，即调用了终端的 [deleteConversation()](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a7a6e38c5a7431646bd4c0c4c66279077) 接口，或者 Web /小程序/ uni-app 的 [deleteConversation](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteConversation) 接口，或者服务端的 [删除单个会话](https://intl.cloud.tencent.com/document/product/1047/43088) 的接口且指定了 ClearRamble 的值为1。
- - 会话的其中一方删除了部分消息，即调用了终端的 [deleteMessages()](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#adb346fede13d493e415f6574df911e9a) 接口，或者 Web /小程序/ uni-app 的 [deleteMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteMessage) 接口。
+ - 会话的其中一方清空了会话的消息记录，即调用了终端的 [clearC2CHistoryMessage()](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a29aa6e75c2238c35cc609bef0e5a46ce) 接口。
+ - 会话的其中一方删除了会话，即调用了终端的 [deleteConversation()](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a7a6e38c5a7431646bd4c0c4c66279077) 接口，或者 Web / uni-app 的 [deleteConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteConversation) 接口，或者服务端的 [删除单个会话](https://intl.cloud.tencent.com/document/product/1047/43088) 的接口且指定了 ClearRamble 的值为1。
+ - 会话的其中一方删除了部分消息，即调用了终端的 [deleteMessages()](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#adb346fede13d493e415f6574df911e9a) 接口，或者 Web / uni-app 的 [deleteMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteMessage) 接口。
  - 通过 [单发单聊消息](https://intl.cloud.tencent.com/document/product/1047/34919) 或 [批量发单聊消息](https://intl.cloud.tencent.com/document/product/1047/34920) 接口发送的消息，指定了 SyncOtherMachine 值为2，即指定消息不同步到发送方的消息记录。
 - 查询结果包含被撤回的消息，由消息里的 MsgFlagBits 字段标识。
-- 查询结果中的 IsPeerRead 字段表示接收方是否发送该条消息的已读回执。只有接收方调用 [sendMessageReadReceipts (Android / iOS & Mac / Windows)](https://www.tencentcloud.com/document/product/1047/48022#.E6.8E.A5.E6.94.B6.E7.AB.AF.E5.8F.91.E9.80.81.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7) 或 [sendMessageReadReceipt (Web)](https://www.tencentcloud.com/document/product/1047/48021#.E6.8E.A5.E6.94.B6.E7.AB.AF.E5.8F.91.E9.80.81.E6.B6.88.E6.81.AF.E5.B7.B2.E8.AF.BB.E5.9B.9E.E6.89.A7) 接口后，该字段才会为1。
+- 查询结果中的 IsPeerRead 字段表示接收方是否发送该条消息的已读回执。只有接收方调用 [sendMessageReadReceipts (Android / iOS & Mac / Windows)](https://intl.cloud.tencent.com/document/product/1047/48022) 或 [sendMessageReadReceipt (Web&)](https://intl.cloud.tencent.com/document/product/1047/48021) 接口后，该字段才会为1。
 - 若想通过 [REST API 撤回单聊消息](https://intl.cloud.tencent.com/document/product/1047/35015) 接口撤回某条消息，可先用本接口查询出该消息的 MsgKey，然后再调用撤回接口进行撤回。
 - 可查询的消息记录的时间范围取决于漫游消息存储时长，默认是7天。支持在控制台修改消息漫游时长，延长消息漫游时长是增值服务。具体请参考 [漫游消息存储](https://intl.cloud.tencent.com/document/product/1047/33524)。
 - 若请求时间段内的消息总大小超过应答包体大小限制（目前为13K）时，则需要续拉。您可以通过应答中的 Complete 字段查看是否已拉取请求的全部消息。
@@ -24,8 +24,7 @@ https://xxxxxx/v4/openim/admin_getroammsg?sdkappid=88888888&identifier=admin&use
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https         | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` <li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com`|
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/openim/admin_getroammsg  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
@@ -181,8 +180,8 @@ https://xxxxxx/v4/openim/admin_getroammsg?sdkappid=88888888&identifier=admin&use
 | Operator_Account | String |必填| 会话其中一方的 UserID，以该 UserID 的角度去查询消息。同一个会话，分别以会话双方的角度去查询消息，结果可能会不一样，请参考本接口的接口说明  |
 | Peer_Account | String |必填| 会话的另一方 UserID  |
 | MaxCnt | Integer |必填| 请求的消息条数  |
-| MinTime | Integer |必填| 请求的消息时间范围的最小值  |
-| MaxTime | Integer |必填| 请求的消息时间范围的最大值  |
+| MinTime | Integer |必填| 请求的消息时间范围的最小值（单位：秒）  |
+| MaxTime | Integer |必填| 请求的消息时间范围的最大值（单位：秒）  |
 | LastMsgKey | String |选填| 上一次拉取到的最后一条消息的 MsgKey，续拉时需要填该字段，填写方法见上方 [示例](#example)  |
 
 ### 应答包体示例
@@ -263,7 +262,7 @@ https://xxxxxx/v4/openim/admin_getroammsg?sdkappid=88888888&identifier=admin&use
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/openim/admin_getroammsg) 调试本接口。
 
 ## 参考
 - 单发单聊消息（[v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1047/34919)）
