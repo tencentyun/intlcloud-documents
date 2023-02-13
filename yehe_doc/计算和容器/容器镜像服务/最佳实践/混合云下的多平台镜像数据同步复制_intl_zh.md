@@ -99,5 +99,5 @@ image-transfer 是腾讯云针对镜像迁移的开源工具，支持多种镜�
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/17550d36f7b536ca7e91133e2808fe64.png)
 
-> ! 目前 TCR 的交付流水线功能仅支持预置的固定流水线，如果用户有上述更加复杂的 DevOps 流水线的需求，可以使用 CODING DevOps。CODING DevOps 是腾讯云的一站式 DevOps 研发实践工具，TCR 的交付流水线功能依赖于 CODING DevOps 的持续集成与持续部署功能。
+> ! 目前 TCR 的交付流水线功能仅支持预置的固定流水线，如果用户有上述更加复杂的 DevOps 流水线的需求，可以使用 [CODING DevOps](https://console.cloud.tencent.com/coding)。CODING DevOps 是腾讯云的一站式 DevOps 研发实践工具，TCR 的交付流水线功能依赖于 CODING DevOps 的持续集成与持续部署功能。
 
