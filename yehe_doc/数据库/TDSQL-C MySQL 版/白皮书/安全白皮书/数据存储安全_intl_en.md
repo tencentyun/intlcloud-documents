@@ -1,4 +1,4 @@
-TDSQL-C for MySQL ensures the confidentiality and integrity of data during storage.
+TDSQL-C for MySQL stores your data confidentially and maintains its integrity.
 
 ## Automatic backup
 TDSQL-C for MySQL supports both automatic and manual backup to ensure data restorability that guarantees data integrity and reliability. It provides data backup and binlog backup features by default. Automatic backup is performed once a day between 2:00 AM and 6:00 AM by default. You can customize the backup start time and retention period as needed in the console. If you have other backup needs, you can also initiate manual backup through the console or APIs at any time.
