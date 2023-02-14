@@ -12,7 +12,11 @@
 
 3. 请正确输入您的卡号信息进行绑卡 。 
 
-   ![](https://qcloudimg.tencent-cloud.cn/raw/0cc2a0e1ed9a66e35df3ba54a340dd89.png)
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/kwsM940_bindingcard1.png)
+
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/L4DH894_bindingcard2.png)
+
+   
 
 5. 注册成功，您可以开始 [登陆控制台](https://intl.cloud.tencent.com/login) 体验腾讯云的产品了。
 

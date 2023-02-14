@@ -11,7 +11,7 @@ This document describes how to create a TencentDB for MariaDB account in the con
  - Password: It must contain 8-32 lowercase letters, uppercase letters, digits, and symbols (`()~!@#$%^&*-+=_|{}[]:<>,.?/`), and cannot start with a slash (/).
  - Maximum connections: If left empty or `0` is passed in, the "max_connections" parameter will take effect.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/VFHN787_6.png)
-4. To create a read-only account, you need to [configure read/write separation] (https://intl.cloud.tencent.com/document/product/237/35409) for it. Confirm the information you enter, click **OK**.
+4. To create a read-only account, you need to [configure read/write separation](https://intl.cloud.tencent.com/document/product/237/35409) for it. Confirm the information you enter, click **OK**.
  -If **Primary Server** is selected, read from the primary server when the delay of replica server times out.
   If **Report Errors** is selected, report an error when all replica servers are delayed.
  - If **Read Only from Replica Server** is selected, ignore the replica delay and always read from replica server (generally used to fetch binlog for sync).

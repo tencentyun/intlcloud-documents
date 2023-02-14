@@ -2,12 +2,19 @@
 
 以下为您介绍通过 CLB 开启外网服务，并通过 SQL Server Management Studio（SSMS）连接到实例，运行简单查询的操作。
 
+## 前提条件
+已申请使用后端服务功能。
+1. 进入 [负载均衡跨地域绑定2.0申请页](https://cloud.tencent.com/apply/p/y72ehzwbwzk)。
+2. 根据填好资料，填写完后提交申请。
+3. 提交完内测申请后，[提单至 CLB](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=14&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&level3_id=1068&radio_title=%E9%85%8D%E9%A2%9D/%E7%99%BD%E5%90%8D%E5%8D%95&queue=96&scene_code=41669&step=2)，给账号添加相应开白类型。
+ - 负载均衡实例与 SQL Server 实例同 VPC：添加 CLB_IP_VPCGW 以及 CLB_IP_LB 类型。
+ - 负载均衡实例与 SQL Server 实例跨 VPC：添加 CLB_IP_User 类型。
+
 ## 步骤1：新购负载均衡
 >?如果在云数据库 SQL Server 同地域已经有负载均衡实例，可以不用购买。
 >
->进入 [负载均衡购买页](https://buy.intl.cloud.tencent.com/clb)，选择完配置后单击**立即购买**。
+进入 [负载均衡购买页](https://buy.cloud.tencent.com/clb)，选择完配置后单击**立即购买**。
 >!
->
 >- 地域需选择云数据库 SQL Server 所在的地域。
 >- 所属网络，选择和数据库相同的 VPC 或者不同都可以。
 
@@ -23,9 +30,7 @@ c. 在弹出的对话框，单击**提交**即可开启。
 2.  配置外网监听端口。
 a. 登录 [负载均衡控制台](https://console.cloud.tencent.com/clb/instance)，选择地域，在实例管理列表，单击实例 ID，进入实例管理页面。
 b. 在实例管理页面，选择**监听器管理**页，在**TCP/UDP/TCP SSL监听器**下方，单击**新建**。
-![](https://qcloudimg.tencent-cloud.cn/raw/b30504cee130711bbef74021f19415fe.png)
 c. 在弹出的对话框，逐步完成设置，然后单击**提交**即可完成创建。
-![](https://qcloudimg.tencent-cloud.cn/raw/d4cecb308bbb741997b54753f9a3b983.png)
 
 ### 场景二：负载均衡实例与 SQL Server 实例处于非同一 VPC
 1. 打开跨 VPC 访问功能（启用后 CLB 支持绑定其他内网 IP）。
@@ -37,13 +42,10 @@ e. 在弹窗下选择一个**子网**，然后单击分配 IP 后的**新增**�
 2.  配置外网监听端口。
 a. 登录 [负载均衡控制台](https://console.cloud.tencent.com/clb/instance)，选择地域，在实例管理列表，单击实例 ID，进入实例管理页面。
 b. 在实例管理页面，选择**监听器管理**页，在**TCP/UDP/TCP SSL监听器**下方，单击**新建**。
-![](https://qcloudimg.tencent-cloud.cn/raw/d0f5d8224e839d2a2c8fd27f155e5916.png)
 c. 在弹出的对话框，逐步完成设置，然后单击**提交**即可完成创建。
-![](https://qcloudimg.tencent-cloud.cn/raw/742ad6617e66d2baeece8986c137d414.png)
 
 ## 步骤3：绑定 SQL Server 实例
 1. 创建好监听器后，在**监听器管理**页，单击创建好的监听器，然后单击右侧出现的**绑定**。
-![](https://qcloudimg.tencent-cloud.cn/raw/7ffb1699243706eac9fc303863bbc76a.png)
 2. 在弹出的对话框，选择目标类型为**其他内网IP**，输入 SQL Server 实例的 IP 地址和端口，单击**确认**完成绑定。
 >!登录的账号必须是标准账号（带宽上移），如无法绑定，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 协助处理。
 >
@@ -51,12 +53,11 @@ c. 在弹出的对话框，逐步完成设置，然后单击**提交**即可完�
 ## 步骤4：配置 SQL Server 安全组
 1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，选择地域，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
 2. 在实例管理页面，选择**安全组**页，单击**配置安全组**，配置安全组规则为放通全部端口，确认安全组允许外部 IP 访问，详细配置方法请参见 [配置安全组](https://intl.cloud.tencent.com/document/product/238/35789)。
-![](https://qcloudimg.tencent-cloud.cn/raw/37a72a8346be3934e21b003a43f31095.png)
 
 ## 步骤5：通过外网连接 SQL Server 实例
-1. 在本地下载并安装 [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)。SQL Server Management Studio 相关介绍请参见 [使用 SQL Server Management Studio](https://docs.microsoft.com/zh-cn/sql/ssms/sql-server-management-studio-ssms?view=sql-server-ver15)。
+1. 在本地下载并安装 [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)。SQL Server Management Studio 相关介绍请参见 [使用 SQL Server Management Studio](https://docs.microsoft.com/en/sql/ssms/sql-server-management-studio-ssms?view=sql-server-ver15)。
 2. 本地启动 SQL Server Management Studio。在 **Connect to server**  页面，填写相关信息连接云数据库。单击 **Connect**，稍等几分钟后，SQL Server Management Studio 将连接到您的数据库实例。
-![](https://main.qcloudimg.com/raw/14d90aa2eda6c841680f0fdc74db8219.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Yv5d706_47.png)
  - **Server type**：选择 Database Engine。
  - **Server name**：CLB 的 IP 地址和端口号，需用英文逗号隔开，例如 `10.0.0.1,4000`。
  -  **Authentication**：选择 SQL Server Authentication。

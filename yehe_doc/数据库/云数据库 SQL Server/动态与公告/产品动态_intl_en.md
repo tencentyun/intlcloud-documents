@@ -1,3 +1,57 @@
+## December 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported version upgrade for Basic Edition</td>
+<td>Self-service version upgrade is supported for TencentDB for SQL Server Basic Edition instances.</td>
+<td>2022-12-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/44354" target="_blank">Adjusting Instance Version</a></td></tr>
+<tr>
+<td>Supported cross-AZ migration for Basic Edition</td>
+<td>Cross-AZ migration is supported for TencentDB for SQL Server Basic Edition instances. All attributes and configurations (including the private network address and the subnet) of the instances remain unchanged after migration.</td>
+<td>2022-12-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/42695" target="_blank">Migrating Across AZs</a></td></tr>
+<tr>
+<td>Optimized the console and features</td>
+<td>The TencentDB for SQL Server team has made the following optimizations on the product features and console display to further improve the user experience: <ul><li>The replica AZ field is added in the instance list in the console, which can display the primary and replica AZs and multi-AZ status of the instance. </li><li>The database list and account list support fuzzy search by database or account name.</li></ul></td>
+<td>2022-12-12</td>
+<td>-</td></tr>
+</tbody></table>
+
+## November 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported archive backup</td>
+<td>TencentDB for SQL Server automatic backup supports setting archive backup retention and non-archive backup retention. You can use this feature to back up data by scheduling two cycles, which reduces the costs compared with a single-cycle backup policy.</td>
+<td>2022-11-22</td>
+<td><a href="https://www.tencentcloud.com/document/product/238/51892" target="_blank">Setting Archive Backup Retention</a></td></tr>
+</tbody></table>
+
+## October 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tbody>
+<tr>
+<td>Added monitoring metrics.</td>
+<td>New metrics are available for TencentDB for SQL Server 2014 and later, including internally locked/used memory.</td>
+<td>2022-10-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/46502" target="_blank">Monitoring Metrics</a></td></tr>
+</tbody></table>
+
+## September 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tbody>
+<tr>
+<td>Optimized operations for security group binding</td>
+<td>TencentDB for SQL Server security groups can be unbound from projects and support multi-selection and fuzzy search capabilities.</td>
+<td>2022-09-16</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35789" target="_blank">Configuring Security Group</a></td></tr>
+</tbody></table>
+
 ## November 2022
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>

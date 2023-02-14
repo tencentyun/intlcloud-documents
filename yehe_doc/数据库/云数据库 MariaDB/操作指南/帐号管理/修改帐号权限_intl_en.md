@@ -14,6 +14,6 @@ You can grant global/object-level privileges for TencentDB for MariaDB accounts 
 
 | API Name | Description |
 | ------------------------------------------------------------ | ------------ |
-| [DescribeAccountPrivileges] (https://intl.cloud.tencent.com/document/product/237/16164) | Queries account permission |
-| [GrantAccountPrivileges] (https://intl.cloud.tencent.com/document/product/237/16166) | Sets account permission |
+| [DescribeAccountPrivileges](https://intl.cloud.tencent.com/document/product/237/16164) | Queries account permission |
+| [GrantAccountPrivileges](https://intl.cloud.tencent.com/document/product/237/16166) | Sets account permission |
 

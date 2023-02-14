@@ -1,7 +1,7 @@
 The following table describes the support for IP address binding by different SSL certificates:
 >?
 >- You can apply for free certificates only for single domains, but not for wildcard domains and multi-domains.
->- Single-domain or multi-domain refers to the domain type you selected on the [SSL Certificate Service buy page](https://buy.cloud.tencent.com/ssl?fromSource=ssl).
+>- Single-domain or multi-domain refers to the domain type you selected on the [SSL Certificate Service buy page](https://intl.cloud.tencent.com/pricing/ssl).
 >- `-` indicates that this type of certificate is not available for sale in Tencent Cloud.
 >- A private CA certificate can be bound with a private IP, but both a free certificate and a standard paid certificate cannot be bound with a private IP.
 

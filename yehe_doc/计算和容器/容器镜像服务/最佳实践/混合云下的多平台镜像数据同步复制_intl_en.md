@@ -99,5 +99,5 @@ You can also use the delivery pipeline feature to push code to automatically tri
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/17550d36f7b536ca7e91133e2808fe64.png)
 
-> ! Currently, TCR's delivery pipeline feature only supports preconfigured fixed pipelines. If you need more complicated DevOps pipelines, you can use CODING DevOps, which is Tencent Cloud's one-stop DevOps tool. TCR's delivery pipeline feature depends on the continuous integration and deployment features of CODING DevOps.
+> ! Currently, TCR's delivery pipeline feature only supports preconfigured fixed pipelines. If you need more complicated DevOps pipelines, you can use [CODING DevOps](https://console.cloud.tencent.com/coding), which is Tencent Cloud's one-stop DevOps tool. TCR's delivery pipeline feature depends on the continuous integration and deployment features of CODING DevOps.
 

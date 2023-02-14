@@ -12,7 +12,9 @@
 
 3. Enter your credit/debit card information and click **Bind Credit Card**. 
 
-   ![](https://qcloudimg.tencent-cloud.cn/raw/0cc2a0e1ed9a66e35df3ba54a340dd89.png)
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/kwsM940_bindingcard1.png)
+
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/L4DH894_bindingcard2.png)
 
 5. Log in to the [console](https://intl.cloud.tencent.com/login) with your account and start exploring Tencent Cloud products.
 

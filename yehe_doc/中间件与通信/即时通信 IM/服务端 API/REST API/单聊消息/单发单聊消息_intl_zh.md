@@ -7,21 +7,18 @@
 
 >!使用服务端集成 REST API 发送单聊消息时，存在是否将消息同步至发送方（管理员帐号或者由管理员指定的某帐号）问题，同步方式包括在线终端和漫游，REST API 提供 SyncOtherMachine 参数用于说明是否进行同步，详细使用方式参见下文请求包示例。
 
-## 接口调用说明
+## 
 ### 请求 URL 示例
 ```
 https://xxxxxx/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
-
 ### 请求参数说明
 
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/openim/sendmsg  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
@@ -55,7 +52,8 @@ https://xxxxxx/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&
             }
         }
     ],
-    "CloudCustomData": "your cloud custom data"
+    "CloudCustomData": "your cloud custom data",
+    "SupportMessageExtension": 0
 }
 ```
 
@@ -161,8 +159,9 @@ https://xxxxxx/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&
 | MsgType | String |必填| TIM 消息对象类型，目前支持的消息对象包括：<ul style="margin:0;"><li >TIMTextElem（文本消息）<li >TIMLocationElem（位置消息）<li >TIMFaceElem（表情消息）<li >TIMCustomElem（自定义消息）<li >TIMSoundElem（语音消息）<li >TIMImageElem（图像消息）<li >TIMFileElem（文件消息）<li >TIMVideoFileElem（视频消息）|
 | MsgContent | Object |必填| 对于每种 MsgType 用不同的 MsgContent 格式，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)   |
 | CloudCustomData | String |选填| 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）|
+|SupportMessageExtension|Integer|选填|该条消息是否支持消息扩展，0为不支持，1为支持。|
 | OfflinePushInfo | Object | 选填| 离线推送信息配置，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
-
+| IsNeedReadReceipt | Integer |选填| 该条消息是否需要已读回执，0为不需要，1为需要，默认为0 |
 
 ### 应答包体示例
 - 正常应答
@@ -222,12 +221,12 @@ https://xxxxxx/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&
 |90044 | JSON 格式请求包体中 MsgLifeTime 字段不是 Integer 类型|
 | 91000         | 服务内部错误，请重试                                         |
 | 90992         | 服务内部错误，请重试；如果所有请求都返回该错误码，且 App 配置了第三方回调，请检查 App 服务器是否正常向即时通信 IM 后台服务器返回回调结果 |
-| 93000         | JSON 数据包超长，消息包体请不要超过 8k                       |
+| 93000         | JSON 数据包超长，消息包体请不要超过12k                       |
 | 90048         | 请求的用户帐号不存在                                         |
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/openim/sendmsg) 调试本接口。
 
 ## 参考
 批量发单聊消息（[v4/openim/batchsendmsg](https://intl.cloud.tencent.com/document/product/1047/34920)）

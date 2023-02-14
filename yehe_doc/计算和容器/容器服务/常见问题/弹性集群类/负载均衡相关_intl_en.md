@@ -4,7 +4,7 @@ This document describes the FAQs of CLB, as well as the causes and solutions of 
 
 Prerequisites:
 - You are familiar with K8s [Concepts](https://kubernetes.io/zh/docs/concepts/), such as Pod, workload, Service, Ingress, etc.
-- You are familiar with the general operations of Elastic Cluster in the [TKE console](https://console.cloud.tencent.com/tke2/ecluster?rid=1).
+- You are familiar with the general operations of Serverless Cluster in the [TKE console](https://console.cloud.tencent.com/tke2/ecluster?rid=1).
 - You can use kubectl command line tool to manage the resources in K8s clusters.
 
 
@@ -13,8 +13,8 @@ You can manage the K8s cluster resources in various ways. This document describe
 </dx-alert>
 
 
-### Which Ingress can EKS create CLB instance for?[](id:Ingress)
-EKS will create CLB instances for Ingress that meets the following conditions:
+### Which Ingress can TKE Serverless create CLB instance for?[](id:Ingress)
+TKE Serverless will create CLB instances for Ingress that meets the following conditions:
 
 <table>
 <thead>
@@ -25,7 +25,7 @@ EKS will create CLB instances for Ingress that meets the following conditions:
 </thead>
 <tbody><tr>
 <td>Annotations contain the following key-value pairs: kubernetes.io/ingress.class: qcloud</td>
-<td>If you don’t want EKS to create a CLB instance for Ingress (if, for example, you want to use Nginx-Ingress), you only need to make sure the key-value pairs are not contained in the annotations.</td>
+<td>If you don’t want TKE Serverless to create a CLB instance for Ingress (if, for example, you want to use Nginx-Ingress), you only need to make sure the key-value pairs are not contained in the annotations.</td>
 </tr>
 </tbody></table>
 
@@ -33,26 +33,26 @@ EKS will create CLB instances for Ingress that meets the following conditions:
 
 
 
-### How do I view the CLB instance created by EKS for Ingress?
+### How do I view the CLB instance created by TKE Serverless for Ingress?
 
 
 
 
 
-If EKS has successfully created a CLB instance for Ingress, it will write the VIP of the CLB instance to the `status.loadBalancer.ingress` of the Ingress resource, and write the following key-value pairs to annotations.
+If TKE Serverless has successfully created a CLB instance for Ingress, it will write the VIP of the CLB instance to the `status.loadBalancer.ingress` of the Ingress resource, and write the following key-value pairs to annotations.
 ```plaintext
 kubernetes.io/ingress.qcloud-loadbalance-id: CLB instance ID
 ```
 
-To view the CLB instance created by EKS for Ingress:
-1. Log in to the TKE console and select **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster?rid=1)** in the left sidebar.
-2. On the "Elastic cluster" page, click the ID of the target cluster to go to the cluster management page.
+To view the CLB instance created by TKE Serverless for Ingress:
+1. Log in to the TKE console and select **[Serverless Cluster](https://console.cloud.tencent.com/tke2/ecluster?rid=1)** in the left sidebar.
+2. On the "Serverless cluster" page, click the ID of the target cluster to go to the cluster management page.
 3. On the cluster management page, select **Service and route** > **Ingress** in the left sidebar.
 4. You can find the CLB instance ID and its VIP on the **Ingress** page.
 ![](https://main.qcloudimg.com/raw/df7c11ad5612690543b6b54a151a3c68.png)
 
-### Which Service can EKS create CLB instance for?[](id:Service)
-EKS will create CLB instances for Service that meets the following conditions:
+### Which Service can TKE Serverless create CLB instance for?[](id:Service)
+TKE Serverless will create CLB instances for Service that meets the following conditions:
 
 
 <table>
@@ -63,7 +63,7 @@ EKS will create CLB instances for Service that meets the following conditions:
 </tr>
 </thead>
 <tbody><tr>
-<td>All K8s versions supported by EKS</td>
+<td>All K8s versions supported by TKE Serverless</td>
 <td>spec.type is LoadBalancer.</td>
 </tr>
 <tr>
@@ -78,7 +78,7 @@ EKS will create CLB instances for Service that meets the following conditions:
 
 
 <dx-alert infotype="notice" title=" ">
-If the CLB instance is successfully created, EKS will write the following key-value pairs to Service annotations:
+If the CLB instance is successfully created, TKE Serverless will write the following key-value pairs to Service annotations:
 ```plaintext
 service.kubernetes.io/loadbalance-id: CLB instance ID
 ```
@@ -86,27 +86,27 @@ service.kubernetes.io/loadbalance-id: CLB instance ID
 
 
 
-### How do I view the CLB instance created by EKS for the Service?
-If EKS has successfully created a CLB instance for Service, it will write the VIP of the CLB instance to the `status.loadBalancer.ingress` of the Service resource, and write the following key-value pairs to annotations.
+### How do I view the CLB instance created by TKE Serverless for the Service?
+If TKE Serverless has successfully created a CLB instance for Service, it will write the VIP of the CLB instance to the `status.loadBalancer.ingress` of the Service resource, and write the following key-value pairs to annotations.
 ```plaintext
 kubernetes.io/ingress.qcloud-loadbalance-id: CLB instance ID
 ```
-To view the CLB instance created by EKS for Service:
-1. Log in to the TKE console and select **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster?rid=1)** in the left sidebar.
-2. On the "Elastic cluster" page, click the ID of the target cluster to go to the cluster management page.
+To view the CLB instance created by TKE Serverless for Service:
+1. Log in to the TKE console and select **[Serverless Cluster](https://console.cloud.tencent.com/tke2/ecluster?rid=1)** in the left sidebar.
+2. On the "Serverless cluster" page, click the ID of the target cluster to go to the cluster management page.
 3. On the cluster management page, select **Service and route** > **Service** in the left sidebar.
 4. You can find the CLB instance ID and its VIP on the **Service** page.
 ![](https://main.qcloudimg.com/raw/d7f3465e7e11921768390504661b9c74.png)
 
 ### Why is the ClusterIP of Service invalid (cannot be accessed normally) or why is there no ClusterIP?
-For the Service whose spec.type is LoadBalancer, currently EKS does not allocate ClusterIP by default, or the allocated ClusterIP is invalid (cannot be accessed normally). If users need to use ClusterIP to access the Service, they can add the following key-value pairs in annotations to indicate that EKS implements ClusterIP based on the private network CLB.
+For the Service whose spec.type is LoadBalancer, currently TKE Serverless does not allocate ClusterIP by default, or the allocated ClusterIP is invalid (cannot be accessed normally). If users need to use ClusterIP to access the Service, they can add the following key-value pairs in annotations to indicate that TKE Serverless implements ClusterIP based on the private network CLB.
 ```plaintext
 service.kubernetes.io/qcloud-clusterip-loadbalancer-subnetid: Service CIDR block subnet ID
 ```
 The Service CIDR block subnet ID, which is specified when you create the cluster, is a string in `subnet-********` format. You can view the subnet ID on the CLB basic information page.
 
 <dx-alert infotype="notice" title=" ">
-Only EKS clusters that use the modified version of K8s (Server GitVersion returned by kubectl version has the "eks.*" or "tke.*" suffix) supports this feature. For the EKS clusters created earlier that use the non-modified version of K8s (the Server GitVersion returned by kubectl version does not have the "eks.*" or "tke.*" suffix), you need to upgrade the K8s version to use this feature.
+Only TKE Serverless clusters that use the modified version of K8s (Server GitVersion returned by kubectl version has the "eks.*" or "tke.*" suffix) supports this feature. For the TKE Serverless clusters created earlier that use the non-modified version of K8s (the Server GitVersion returned by kubectl version does not have the "eks.*" or "tke.*" suffix), you need to upgrade the K8s version to use this feature.
 </dx-alert>
 
 
@@ -155,7 +155,7 @@ When creating a Service/Ingress or modifying a Service, you need to add the corr
 
 
 <dx-alert infotype="notice" title=" ">
-The existing CLB instance cannot be the CLB instance created by EKS for Service or Ingress, and EKS does not support multiple Service/Ingress to share the same existing CLB instance.
+The existing CLB instance cannot be the CLB instance created by TKE Serverless for Service or Ingress, and TKE Serverless does not support multiple Service/Ingress to share the same existing CLB instance.
 </dx-alert>
 
 :::
@@ -164,9 +164,9 @@ The existing CLB instance cannot be the CLB instance created by EKS for Service 
 
 
 ### How do I view the access log of a CLB instance?
-Only the layer-7 CLB instance supports configuring access logs, but the access logs of layer-7 CLB instance created by EKS for Ingress is not enabled by default. You can enable the access log of the CLB instance in the details page of the CLB instance, as shown below:
-1. Log in to the TKE console and select **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster?rid=1)** in the left sidebar.
-2. On the "Elastic cluster" page, click the ID of the target cluster to go to the cluster management page.
+Only the layer-7 CLB instance supports configuring access logs, but the access logs of layer-7 CLB instance created by TKE Serverless for Ingress is not enabled by default. You can enable the access log of the CLB instance in the details page of the CLB instance, as shown below:
+1. Log in to the TKE console and select **[Serverless Cluster](https://console.cloud.tencent.com/tke2/ecluster?rid=1)** in the left sidebar.
+2. On the "Serverless cluster" page, click the ID of the target cluster to go to the cluster management page.
 3. On the cluster management page, select **Service and route** > **Ingress** in the left sidebar.
 4. On the **Ingress** page, click the CLB instance ID to go to the CLB basic information page.
 ![](https://main.qcloudimg.com/raw/32a6e8e6eb32fb57ef30397cc538b779.png)
@@ -174,16 +174,16 @@ Only the layer-7 CLB instance supports configuring access logs, but the access l
 ![](https://main.qcloudimg.com/raw/e7e0ec9032c12e9b094ea3f10d80dff1.png)
 
 
-### Why didn't EKS create a CLB instance for Ingress or Service?
-Please refer to [Which Ingress can EKS create CLB instance for?](#Ingress) and [Which Service can EKS create CLB instance for?](#Service) to confirm whether the corresponding resources have the conditions to create CLB instance. If the conditions are met but the CLB instance is not successfully created, you can use the `kubectl describe` command to view the related events of the resource.
-Generally, EKS will output the related “Warning” events. In the following example, the output event indicates that there are no available IP resources in the subnet, so the CLB instance cannot be successfully created.
+### Why didn't TKE Serverless create a CLB instance for Ingress or Service?
+Please refer to [Which Ingress can TKE Serverless create CLB instance for?](#Ingress) and [Which Service can TKE Serverless create CLB instance for?](#Service) to confirm whether the corresponding resources have the conditions to create CLB instance. If the conditions are met but the CLB instance is not successfully created, you can use the `kubectl describe` command to view the related events of the resource.
+Generally, TKE Serverless will output the related “Warning” events. In the following example, the output event indicates that there are no available IP resources in the subnet, so the CLB instance cannot be successfully created.
 ![](https://main.qcloudimg.com/raw/1b8a8815c0478a3acf6735f991bf7f8f.png)
 
 
 
 
 ### How do I use the same CLB in multiple Services?
-For EKS clusters, multiple Services cannot share the same CLB instance by default. If you hope that a Service uses the CLB occupied by other Services, please add this annotation and specify the value as "true": `service.kubernetes.io/qcloud-share-existed-lb: true`. For more information on this annotation, see [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
+For TKE Serverless clusters, multiple Services cannot share the same CLB instance by default. If you hope that a Service uses the CLB occupied by other Services, please add this annotation and specify the value as "true": `service.kubernetes.io/qcloud-share-existed-lb: true`. For more information on this annotation, see [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
 
 
 
@@ -198,8 +198,9 @@ Please follow the steps below to analyze:
 
 #### Confirming whether the environment for accessing CLB VIP is normal
  - If the **Instance type** of the CLB instance is the private network, its VIP can only be accessed in the VPC to which it belongs.
- Since the IP of the Pods in the EKS cluster is the ENI IP in the VPC, you can access the VIP of the CLB instance of any Service or Ingress in the cluster in the Pods.
->!LoadBalancer system always has loopback problems (for example, [Troubleshoot **Azure** Load Balancer](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-troubleshoot#cause-3- accessing-the-load-balancer-from-the-same-vm-and-network-interface). Please do not access the services provided by the workload through the VIP opened by itself (via Service or Ingress) in the Pods to which this workload belongs. That is, Pods should not access the services provided by themselves through VIP (including "private network" and "public network"). Otherwise, the access delay may increase, or the access will be blocked when there is only one RS/Pod under the rules corresponding to the VIP.
+ Since the IP of the Pods in the TKE Serverless cluster is the ENI IP in the VPC, you can access the VIP of the CLB instance of any Service or Ingress in the cluster in the Pods.
+
+>!LoadBalancer system always has loopback problems （for example, [Troubleshoot **Azure** Load Balancer](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-troubleshoot#cause-3-accessing-the-load-balancer-from-the-same-vm-and-network-interface )）. Please do not access the services provided by the workload through the VIP opened by itself (via Service or Ingress) in the Pods to which this workload belongs. That is, Pods should not access the services provided by themselves through VIP (including "private network" and "public network"). Otherwise, the access delay may increase, or the access will be blocked when there is only one RS/Pod under the rules corresponding to the VIP.
  - If the **Instance type** of the CLB instance is the public network, its VIP can be accessed in an environment with public network access enabled.
 If you want to access the public network VIP in the cluster, please ensure that the public network access has been enabled for the cluster by configuring a NAT gateway or other methods.
 
@@ -229,11 +230,11 @@ The security group controls the network access policy of Pods, just like the IPT
 
 <dx-tabs>
 ::: Creating a workload via TKE console
-The interactive process requires to specify a security group, and EKS will use this security group to control the Pods' network access policy. The specified security group will be stored in the `spec.template.metadata.annotations` of the workload, and finally added to the annotations of the Pods. Examples are as follows:
+The interactive process requires to specify a security group, and TKE Serverless will use this security group to control the Pods' network access policy. The specified security group will be stored in the `spec.template.metadata.annotations` of the workload, and finally added to the annotations of the Pods. Examples are as follows:
 ![](https://main.qcloudimg.com/raw/6cda3f21be34e514927c10b840b0acaa.png)
 :::
 ::: Running kubectl command to create a workload
-If you create a workload through the kubectl command and do not specify a security group for Pods (by adding annotations), EKS will use the default security group of the default project in the same region under the account. The directions are as follows:
+If you create a workload through the kubectl command and do not specify a security group for Pods (by adding annotations), TKE Serverless will use the default security group of the default project in the same region under the account. The directions are as follows:
  1. Log in to the VPC console, and click **[Security Group](https://console.cloud.tencent.com/vpc/securitygroup?rid=5&rid=5)** in the left sidebar.
  2. Select **Default project** of the same region at the top of the **Security group** page.
  3. You can view the default security group in the list, and click **Modify rule** to view the details.

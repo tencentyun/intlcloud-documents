@@ -1,3 +1,71 @@
+## January 2023
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr> 
+<tr>
+    <td> SDK 7.0.3754 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+    <li> Supported mentioning (@) group members in all types of messages. </li>
+    <li> Supported getting the total message unread count by conversation filter. </li>
+    <li> Supported the meta counter for common groups and audio-video groups. </li>
+    <li> Supported text message translation. </li> 
+    <li> Supported custom attributes for community groups. </li>     
+    <li> Supported setting the Huawei category and Mi channel ID for offline push. </li>
+    <li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Native</a>.</li>    
+        </ul></td>
+    <td> 2023-01-06 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr> 
+<tr>
+    <td>Launched the cloud moderation feature</td>
+    <td>The cloud moderation feature is to check the text, image, audio, and video content generated in one-to-one chat, group chat, and profile scenarios on the server. You can configure different moderation policies for different content in different scenarios and intercept the identified unsafe content.</td>
+    <td> 2023-01-04 </td>
+    <td> <a href="https://www.tencentcloud.com/document/product/1047/52497#.E4.BA.91.E7.AB.AF.E5.AE.A1.E6.A0.B8.E5.8A.9F.E8.83.BD">On-cloud Moderation</a></td>
+</tr> 
+</table>
+
+## December 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr> 
+<tr>
+    <td> Launched the local moderation feature</td>
+    <td>The local moderation feature is local text moderation on clients. It intercepts or replaces sensitive words in texts locally on clients to achieve sensitive word filtering. You can use this feature to intercept or replace sensitive words that are generated during operations such as sending a text message and modifying a nickname/remark/group notification and are not expected to be sent.</td>
+    <td> 2022-12-07 </td>
+    <td> <a href="https://www.tencentcloud.com/document/product/1047/52497">Content Moderation</a></td>
+</tr> 
+</table>
+
+## November 2022
+<table>
+<tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>
+</tr>
+    <tr>
+    <td>SDK 6.9.3557 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+    <li> Fixed the occasional crash when getting the `V2TIMOfflinePushInfo` content from messages for Android. </li>
+    <li> Fixed the occasional crash of the Pro SDK enhanced edition for Android. </li>
+    <li> Refined the JSON data content returned by the C API `TIMConvGetConvList`. </li>
+    <li> Released a new minimalist theme, more in line with the styles of international apps. </li>    
+        </ul></td>
+    <td> 2022-11-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr>
+    <tr>
+    <td>SDK 6.8.3374 release (enhanced edition)</td>
+    <td><ul style="margin:0">
+    <li> Supported local text moderation on clients. </li>
+    <li> Released the Swift SDK. </li>
+    <li> Supported the group attribute feature for non-audio-video groups. </li>
+    <li> Optimized the logic for updating the number of members in a non-audio-video groups when someone entered the group. </li>     
+    <li> Fixed the failure to deliver a notification when a custom friend field is set independently. </li>
+    <li> For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Native</a>.</li>    
+        </ul></td>
+    <td> 2022-11-14 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">Native SDK download</a> </td>
+</tr> 
+</table>
+
 ## September 2022
 <table>
 <tr><th width="20%">Update</th>  <th width="44%">Description</th><th width="15%">Release Date</th><th width="21%">Document</th>

@@ -72,17 +72,17 @@ rm Miniconda3-py39\_4.11.0-Linux-x86\_64.sh
 ```shellsession
 channels:
 
-  - defaults
+   - defaults
 
 show\_channel\_urls: true
 
 default\_channels:
 
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
 
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
 
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
 
 custom\_channels:
 
@@ -250,7 +250,7 @@ python3 make\_idx.py --tfrecord\_root="../train\_val\_tfrecord"
 ### Model training result
 To facilitate subsequent training of large distributed models, this document describes how to train and develop a model based on the distributed training framework [Colossal-AI](https://colossalai.org/). Colossal-AI provides a set of easy-to-use APIs, which enables you to easily perform data, model, pipeline, and mixed parallel training.
 Based on the demo provided by Colossal-AI, this document uses ViT integrated in the [pytorch-image-models](https://github.com/rwightman/pytorch-image-models) repository for implementation. The minimum `vit\_tiny\_patch16\_224` model at a resolution of 224\*224 is used, where each sample is divided into 16 `patches`.
-1. Run the following command to install Colossal-AI and pytorch-image-models as instructed in [Start Locally](https://colossalai.org/download):
+1. Run the following command to install Colossal-AI and pytorch-image-models as instructed in Start Locally:
 ```shellsession
 pip install colossalai==0.1.5+torch1.11cu11.3 -f https://release.colossalai.org
 ```
