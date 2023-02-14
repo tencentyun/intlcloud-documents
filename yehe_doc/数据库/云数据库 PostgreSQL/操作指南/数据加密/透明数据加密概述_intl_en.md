@@ -31,5 +31,5 @@ TencentDB for PostgreSQL applies to use the CMK stored in KMS to generate the DE
 ![img](https://main.qcloudimg.com/raw/beb03cab3bc4157e94661a78904d34fd.png)
 This encryption scheme is called envelope encryption, where a key is used to encrypt another key. It has a high performance in encrypting and decrypting massive amounts of data. Specifically, it can generate DEKs to encrypt and decrypt local data, which guarantees the randomness and security of data keys based on KMS while meeting the requirements for robust business encryption.
 
-As all encryption and decryption operations are performed by the database in the memory, the database will get key materials from KMS every time it is restarted. No key materials used for decryption are stored in the local storage.
+As encryptions and decryptions are in-memory operations, the database will get key materials from KMS every time it is restarted or its memory is closed. No key materials used for decryption are stored in the local storage.
 ![](https://qcloudimg.tencent-cloud.cn/raw/9b2db6c35942d31a692f57e87937cea5.png)
