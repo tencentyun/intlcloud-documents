@@ -47,8 +47,8 @@ After decompression, you can get the certificate file of the corresponding type,
    - **Files in the folder**:
       - `cloud.tencent.com.jks`: keystore file
       - `keystorePass.txt`: password file (if you have set a private key password, this file will not be generated)
-3. Copy the keystore file `cloud.tencent.com.jks` to the `conf` directory of the Tomcat installation directory as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/56ae13027f283cfdf7ba4babd8d3e466.png)
+3. Copy the keystore file `cloud.tencent.com.jks` to the `conf` directory of the Tomcat installation directory.
+
 4. Edit the `server.xml` file in the `conf` directory by adding the following:
 ```
 <Connector port="443" protocol="HTTP/1.1" SSLEnabled="true"
@@ -107,23 +107,31 @@ The main parameters of the configuration file are described as below:
  - **keystoreFile**: location of the keystore file. You can specify an absolute path or a path relative to the &lt;CATALINA_HOME&gt; (Tomcat installation directory) environment variable. If this parameter is not set, Tomcat reads the file named ".keystore" from the user directory of the current OS user.
  - **keystorePass**: keystore password. If you set a private key password when applying for the certificate, enter the private key password; otherwise, enter the password in the `keystorePass.txt` file in the Tomcat folder.
  - **clientAuth**: If it is set to true, Tomcat requires all SSL clients to provide a security certificate for identity verification.
-7. Confirm whether the Tomcat server is started.
+5. Confirm whether the Tomcat server is started.
    - If the Tomcat server is already started, you need to run the following .bat scripts in sequence in the `bin` directory of the Tomcat installation directory to shut down and restart it:
 ```
 shutdown.bat  (Shut down the Tomcat server)
 startup.bat (Start the Tomcat server)
 ```
- - If the Tomcat server is not started, you need to run the following .bat script in the `bin` directory of the Tomcat installation directory to start it:
+   - If the Tomcat server is not started, you need to run the following .bat script in the `bin` directory of the Tomcat installation directory to start it:
  ```
 startup.bat
  ```
-8. If the server is started successfully, you can access it through `https://cloud.tencent.com`.
+6. If the server is started successfully, you can access it through ``https://www.tencentcloud.com/`.
+  - If the browser address bar displays the security lock logo, it means that the certificate is installed successfully.
 
+  - If the website access is abnormal, you can refer to the following solutions to common problems:
+
+    - [Website Inaccessible After an SSL Certificate is Deployed](https://intl.cloud.tencent.com/document/product/1007/39821)
+    - [“Your Connection is Not Secure” is Displayed After the SSL Certificate is Installed”](https://intl.cloud.tencent.com/document/product/1007/40674)
+    - [Why Does the Website Prompt “Connection Is Untrusted"?](https://intl.cloud.tencent.com/document/product/1007/30184)
+    - [404 Error After the SSL Certificate is Deployed on IIS](https://intl.cloud.tencent.com/document/product/1007/39820)
+    
 ### (Optional) security configuration for automatic redirect from HTTP to HTTPS
 
 You can redirect HTTP requests to HTTPS by configuring the following settings:
-1. Edit the `web.xml` file in the `conf` directory of the Tomcat installation directory and find the `<\/welcome-file-list>` tag as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/3a62b5094560476ac4ab5b6a0204f111.png)
+1. Edit the `web.xml` file in the `conf` directory of the Tomcat installation directory and find the `<\/welcome-file-list>` tag.
+
 2. Insert a new line after `<\/welcome-file-list>` and add the following:
 ```
 <login-config>
@@ -161,7 +169,7 @@ configtest.bat
 ```
  - If yes, reconfigure or fix the problem as prompted.
  - If no, proceed to the next step.
-6. Run the following .bat script to start the Tomcat server. In this way, you can access it through `http://cloud.tencent.com`.
+6. Run the following .bat script to start the Tomcat server. In this way, you can access it through `https://www.tencentcloud.com/`.
 ```
 startup.bat
 ```
