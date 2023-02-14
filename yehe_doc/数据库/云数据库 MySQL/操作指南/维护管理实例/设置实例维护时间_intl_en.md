@@ -1,27 +1,26 @@
 ## Overview
-Maintenance window is a very important concept for TencentDB for MySQL. To ensure the stability of your TencentDB for MySQL instance, the backend system performs maintenance operations on the instance during the maintenance window from time to time. It is highly recommended that you set an acceptable maintenance window for your instance, usually during off-peak hours, so as to minimize the potential impact on your business.
+Maintenance time is a very important concept for TencentDB for MySQL. To ensure the stability of your TencentDB for MySQL instance, the backend system performs maintenance operations on the instance during the maintenance period from time to time. To minimize the potential impact on your business, we recommend you set an acceptable maintenance period for your business instance, usually during off-peak hours.
 
-In addition, it is recommended that operations involving data migration be performed during the maintenance window too, such as instance specification adjustment, instance version upgrade, and instance kernel upgrade. Currently, the maintenance window is supported by source instances, read-only replicas, and disaster recovery instances.
+In addition, we also recommend you perform operations involving data migration during the maintenance time, such as instance specification adjustment, instance version upgrade, and instance kernel upgrade. Currently, the maintenance time can be customized for source, read-only, and disaster recovery instances.
 
-Taking the database instance specification upgrade as an example, as this operation involves data migration, after the upgrade is completed, a momentary disconnection from the database may occur. When the upgrade is initiated, the **Switch Time** can be selected as **During maintenance time**, so that the instance specification switch will be enabled within the next **maintenance window** after the instance upgrade is completed. Please note that when you do so, the switch will not occur immediately after the database specification upgrade is completed; instead, the sync will continue till the instance goes into the next **maintenance window** when the switch will be performed. In this way, the overall time it takes to upgrade the instance may be extended.
+Take the database instance specification upgrade as an example. As this operation involves data migration, after the upgrade is completed, a momentary disconnection from the database may occur. When the upgrade is initiated, the **Switch Time** can be set to **During maintenance time**, so that the instance specification will be switched during the next **maintenance time** after the instance upgrade is completed. Note that when you select **During maintenance time** for **Switch Time**, the switch will not occur immediately after the database specification upgrade is completed; instead, the sync will continue till the instance goes into the next **maintenance time** when the switch will be performed. As a result, the overall time it takes to upgrade the instance may be extended.
 
 >?
->- Before maintenance is carried out for TencentDB for MySQL, notifications will be sent to the contacts configured in your Tencent Cloud account via SMS and email.
->- Instance switch is accompanied by a disconnection from the database lasting for just seconds. Please make sure that your business has a reconnection mechanism.
+>- Before maintenance is carried out for TencentDB for MySQL, notifications will be sent to the contacts configured in your Tencent Cloud account by SMS and email.
+>- TencentDB for MySQL will perform a data consistency check within the maintenance time configured for the database instance to ensure the source-replica data consistency and reduce the risk of data exceptions after the instance switch. The database performance will drop slightly during the check; therefore, we recommend you select a maintenance time during off-peak hours. If the current load of the database is high, the check will be initiated during the maintenance time.
+>- Instance switch is accompanied by a disconnection from the database lasting for just seconds. Make sure that your business has a reconnection mechanism.
 
 ## Directions
-### Setting maintenance window
+### Setting the maintenance time
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance details page.
-2. In the **Maintenance Info** section, click **Modify**.
-![](https://main.qcloudimg.com/raw/388e3aa6ca18c6cb947eb4d053ad1eb5.png)
-3. In the pop-up dialog box, select Maintenance Window and Maintenance Time, and click **OK**.
-![](https://qcloudimg.tencent-cloud.cn/raw/91738d5593aad8f573fde932420ae9fe.png)
+2. In the **Maintenance Info** section on the instance details page, click **Modify**.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/ycyA534_5.png)
+3. In the pop-up window, select **Maintenance Window** and **Maintenance Time** and click **OK**.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/gTPh665_6.png)
 
-<span id="lijiqiehuan"></span>
-### Performing immediate switch
-If a task is configured to be switched during the maintenance window, but you need to switch it urgently under special circumstances, you can click **Switch Now** in the **Operation** column.
-![](https://main.qcloudimg.com/raw/fd9780d4f9e1d8094bcb82f215deb366.png)
+### [Switching now](id:lijiqiehuan)
+If a task is configured to be switched during the maintenance time, but you need to switch it urgently under special circumstances, you can click **Switch Now** in the **Operation** column.
 
 >?
 >- Immediate switch is applicable to operations involving data migration such as instance specification adjustment, instance version upgrade, and instance kernel upgrade.
->- For version upgrade, if it is associated with multiple instances, the switch will be performed in the order from disaster recovery instance, read-only instance and primary instance.
+>- For version upgrade, if it is associated with multiple instances, the switch will be performed in the order from disaster recovery instance to read-only instance to source instance.

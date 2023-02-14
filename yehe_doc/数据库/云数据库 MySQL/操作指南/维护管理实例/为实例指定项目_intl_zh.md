@@ -1,13 +1,16 @@
 云数据库 MySQL 支持将实例分配至不同的项目进行管理，相关配置注意事项如下：
-- 只读实例属于主实例的关联实例，需要与主实例处于同一项目中。
+- 只读实例、灾备实例属于主实例的关联实例，需要与主实例处于同一项目中。
 - 数据库实例在项目间进行分配和移动，不会影响实例对外提供的服务。
 - 用户须在新购实例时为实例指定所属的项目，缺省为**默认项目**。
 - 已指定项目的实例可通过**分配至项目**功能重新指定到其他项目。
 
-## 操作步骤
-1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb/)，选择对应实例，在上方选择**更多操作**>**分配至项目**。
+## 购买页分配项目
+1. 登录 [MySQL 购买页](https://buy.cloud.tencent.com/cdb)。
+2. 购买实例时，在指定项目后，可直接为新购实例分配项目。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Fnk2233_1.png)
 
-   ![](https://main.qcloudimg.com/raw/d1fe0ad3b002172fbb6418cc8ba830d5.png)
-
-2. 在弹出对话框，选择对应项目后，单击**确定**。
-  ![](https://main.qcloudimg.com/raw/f547428bb9ae2fc0d2d8105cff950b85.png)
+## 控制台修改所属项目
+1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb/)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例详情页面。
+2. 在**基本信息 > 所属项目**后单击**转至其他项目**，在弹出对话框，选择对应项目后，单击**确定**。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/GS8u053_2.png)
+>?支持批量分配项目操作，多选实例后，在实例列表上方选择**更多操作** > **分配至项目**即可统一设置。
