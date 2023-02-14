@@ -49,6 +49,7 @@ After the template is successfully bound with the domain name, if an event confi
 - [Recording event notification](https://intl.cloud.tencent.com/document/product/267/38082)
 - [Screencapture event notification](https://intl.cloud.tencent.com/document/product/267/38083)
 - [Porn detection event notification](https://intl.cloud.tencent.com/document/product/267/38084)
+- [Push Error Event Notifications](https://www.tencentcloud.com/document/product/267/53310)
 
 
 
