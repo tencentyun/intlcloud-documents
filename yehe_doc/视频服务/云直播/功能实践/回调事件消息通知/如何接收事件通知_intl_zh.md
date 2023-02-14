@@ -49,6 +49,7 @@
 - [录制事件消息通知](https://intl.cloud.tencent.com/document/product/267/38082)
 - [截图事件消息通知](https://intl.cloud.tencent.com/document/product/267/38083)
 - [鉴黄事件消息通知](https://intl.cloud.tencent.com/document/product/267/38084)
+- [推流异常事件通知](https://www.tencentcloud.com/document/product/267/53310)
 
 
 
