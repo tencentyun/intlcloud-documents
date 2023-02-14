@@ -1,4 +1,4 @@
-TencentDB for PostgreSQL allows you to create one or more read-only instances to form an RO group, which is suitable for read/write separation and one-primary-multiple-standby application scenarios and capable of greatly enhancing the read load capacity of your database.
+TencentDB for PostgreSQL allows you to create one or more read-only instances to form an RO group, which is suitable for read/write separation and one-primary-multiple-standby application scenarios. This greatly improves the read load capacity of your database.
 
 ## Prerequisites
 - You have created a primary instance. For more information, see [Purchase Methods](https://intl.cloud.tencent.com/document/product/409/40953).
