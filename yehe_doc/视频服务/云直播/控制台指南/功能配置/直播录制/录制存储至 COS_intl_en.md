@@ -83,7 +83,8 @@ With CSS, you can record a live stream and save the recording file to VOD or COS
        <td>In case of failure to save recording files to the primary storage path due to network jitter, the backup path will be used. After the primary path recovers, the recording files saved in the backup path will be automatically uploaded to the primary path. The backup and primary paths must be in different regions.</td>
        </tr><tr>      
        <td colspan=2>Folder</td>      
-       <td><li>The default storage folder is {RecordSource}/{Domain}/{AppName}/{StreamID}/{RecordId}/{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}.</li>
+       <td><ul style="margin-bottom:0px">
+        <li>The default storage folder is {RecordSource}/{Domain}/{AppName}/{StreamID}/{RecordId}/{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}.</li>
      <li>{RecordSource} indicates the content type. If the original stream is recorded, this is "origin". If a transcoded stream is recorded, this is the transcoding template ID.</li>  
      <li>{StartYear} indicates the starting year.</li> 
      <li>{StartMonth} indicates the starting month.</li>
@@ -95,7 +96,7 @@ With CSS, you can record a live stream and save the recording file to VOD or COS
      <li>{StreamID} indicates the stream ID.</li>
      <li>{RecordId} indicates the recording task ID, which is returned by the CreateRecordTask API.</li>
      <li> "/" indicates folder levels. "-" is an ordinary character.</li>
-     </td>
+     </ul></td>
       </tr>
       </tbody></table>
 
