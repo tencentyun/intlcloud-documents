@@ -58,47 +58,48 @@ With CSS, you can record a live stream and save the recording file to VOD or COS
  ![](https://qcloudimg.tencent-cloud.cn/raw/ef25f0451d1625570046b88c7a7eba55.png)
 
 <table>
-   <thead><tr><th width="27%" colspan=2>Item</th><th>Description</th></tr></thead>
-   <tbody><tr>
-      <tr>
-      <td colspan=2>Max Recording Time Per File</td>
-      <td><ul style="margin-bottom:0px">
-          <li>There is no upper limit on the length of a recording file in HLS format. If a live stream is interrupted and the timeout period for resumption elapses, a new recording file will be generated to continue recording.</li>
-          <li>The value range for the maximum length of a recording file in FLV format is 1-720 minutes.</li>
-          <li>The value range for the maximum length of a recording file in MP4 or AAC format is 1-120 minutes.</li>
-          </ul></td>
-      </tr><tr>
-      <td colspan=2>Resumption Timeout</td>
-      <td>Only the HLS format supports recording resumption after push interruption, and the value range for the timeout period for resumption is 1-1800 seconds.</td>
-      </tr><tr>
-      <td colspan=2>Storage Period (days)</td>
-      <td>You can select <b>Permanent</b> to save a recording file permanently or <b>Custom</b> to specify a storage period (up to 1,500 days). If you set the period to 0, recording files will be saved permanently.</td>
-      </tr><tr>
-      <td colspan=2>Storage path</td>
-       <td><li>Select a bucket you created in <b>COS</b>. Make sure you have granted CSS access to this bucket.</li>
-       <li>**Region** shows the region information of the selected COS bucket. It cannot be modified.</li>
-       </td>
-       </tr><tr>      
-       <td colspan=2>Backup storage path</td>      
-       <td>In case of failure to save recording files to the primary storage path due to network jitter, the backup path will be used. After the primary path recovers, the recording files saved in the backup path will be automatically uploaded to the primary path. The backup and primary paths must be in different regions.</td>
-       </tr><tr>      
-       <td colspan=2>Folder</td>      
-       <td><ul style="margin-bottom:0px">
-        <li>The default storage folder is {RecordSource}/{Domain}/{AppName}/{StreamID}/{RecordId}/{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}.</li>
-     <li>{RecordSource} indicates the content type. If the original stream is recorded, this is "origin". If a transcoded stream is recorded, this is the transcoding template ID.</li>  
-     <li>{StartYear} indicates the starting year.</li> 
-     <li>{StartMonth} indicates the starting month.</li>
-     <li>{StartDay} indicates the starting day.</li>
-     <li>{StartMinute} indicates the starting minute.</li>
-     <li>{StartSecond} indicates the starting second.</li>
-     <li>{Domain} indicates the push domain.</li>
-     <li>{AppName} indicates the push path.</li>
-     <li>{StreamID} indicates the stream ID.</li>
-     <li>{RecordId} indicates the recording task ID, which is returned by the CreateRecordTask API.</li>
-     <li> "/" indicates folder levels. "-" is an ordinary character.</li>
-     </ul></td>
-      </tr>
-      </tbody></table>
+<thead><tr><th width="27%" colspan=2>Item</th><th>Description</th></tr></thead>
+<tbody><tr>
+<tr>
+<td colspan=2>Max Recording Time Per File</td>
+<td><ul style="margin-bottom:0px">
+<li>There is no upper limit on the length of a recording file in HLS format. If a live stream is interrupted and the timeout period for resumption elapses, a new recording file will be generated to continue recording.</li>
+<li>The value range for the maximum length of a recording file in FLV format is 1-720 minutes.</li>
+<li>The value range for the maximum length of a recording file in MP4 or AAC format is 1-120 minutes.</li>
+</ul></td>
+</tr><tr>
+<td colspan=2>Resumption Timeout</td>
+<td>Only the HLS format supports recording resumption after push interruption, and the value range for the timeout period for resumption is 1-1800 seconds.</td>
+</tr><tr>
+<td colspan=2>Storage Period (days)</td>
+<td>You can select <b>Permanent</b> to save a recording file permanently or <b>Custom</b> to specify a storage period (up to 1,500 days). If you set the period to 0, recording files will be saved permanently.</td>
+</tr><tr>
+<td colspan=2>Storage path</td>
+<td><ul style="margin-bottom:0px">
+<li>Select a bucket you created in <b>COS</b>. Make sure you have granted CSS access to this bucket.</li>
+<li><b>Region</b> shows the region information of the selected COS bucket. It cannot be modified.</li>
+</ul></td>
+</tr><tr>      
+<td colspan=2>Backup storage path</td>      
+<td>In case of failure to save recording files to the primary storage path due to network jitter, the backup path will be used. After the primary path recovers, the recording files saved in the backup path will be automatically uploaded to the primary path. The backup and primary paths must be in different regions.</td>
+</tr><tr>      
+<td colspan=2>Folder</td>      
+<td><ul style="margin-bottom:0px">
+ <li>The default storage folder is {RecordSource}/{Domain}/{AppName}/{StreamID}/{RecordId}/{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}.</li>
+ <li>{RecordSource} indicates the content type. If the original stream is recorded, this is "origin". If a transcoded stream is recorded, this is the transcoding template ID.</li>  
+<li>{StartYear} indicates the starting year.</li> 
+<li>{StartMonth} indicates the starting month.</li>
+<li>{StartDay} indicates the starting day.</li>
+<li>{StartMinute} indicates the starting minute.</li>
+<li>{StartSecond} indicates the starting second.</li>
+<li>{Domain} indicates the push domain.</li>
+<li>{AppName} indicates the push path.</li>
+<li>{StreamID} indicates the stream ID.</li>
+<li>{RecordId} indicates the recording task ID, which is returned by the CreateRecordTask API.</li>
+<li> "/" indicates folder levels. "-" is an ordinary character.</li>
+</ul></td>
+</tr>
+</tbody></table>
 
 4. Click **Save**.
 >? Streams are uploaded while being recorded, which is why the filename does not contain fields that indicate the end time.
