@@ -1,0 +1,105 @@
+## 功能说明
+
+App 后台可以通过该回调实时查看用户的退群动态，包括：对用户退群进行实时记录（例如记录日志，或者同步到其他系统）。
+
+## 注意事项
+
+- 要启用回调，必须配置回调 URL，并打开本条回调协议对应的开关，配置方法详见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
+- 回调的方向是即时通信 IM 后台向 App 后台发起 HTTP POST 请求。
+- App 后台在收到回调请求之后，务必校验请求 URL 中的参数 SDKAppID 是否是自己的 SDKAppID。
+- 其他安全相关事宜请参考 [第三方回调简介：安全考虑](https://intl.cloud.tencent.com/document/product/1047/34354) 文档。
+
+## 可能触发该回调的场景
+
+- App 用户通过客户端退群。
+- App 用户通过客户端踢人。
+- App 管理员通过 REST API 删除群成员。
+
+## 回调发生时机
+
+用户主动退群，或者被群主/管理员踢出群之后。
+
+## 接口说明
+
+### 请求 URL 示例
+
+以下示例中 App 配置的回调 URL 为 `https://www.example.com`。
+**示例：**
+
+```
+https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&contenttype=json&ClientIP=$ClientIP&OptPlatform=$OptPlatform
+```
+
+### 请求参数说明
+
+| 参数 | 说明 |
+| --- | --- |
+| https | 请求协议为 HTTPS，请求方式为 POST |
+| www.example.com | 回调 URL |
+| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
+| CallbackCommand | 固定为 Group.CallbackAfterMemberExit |
+| contenttype | 固定值为 JSON |
+| ClientIP | 客户端 IP，格式如：127.0.0.1 |
+| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
+
+### 请求包示例
+
+```
+{
+    "CallbackCommand": "Group.CallbackAfterMemberExit", // 回调命令
+    "GroupId": "@TGS#2J4SZEAEL", // 群组 ID
+    "Type": "Public", // 群组类型
+    "ExitType": "Kicked", // 成员离开方式：Kicked-被踢；Quit-主动退群
+    "Operator_Account": "leckie", // 操作者
+    "ExitMemberList": [ // 离开群的成员列表
+        {
+            "Member_Account": "jared"
+        },
+        {
+            "Member_Account": "tommy"
+        }
+    ],
+    "EventTime":"1670574414123"//毫秒级别，事件触发时间戳		
+}
+```
+
+### 请求包字段说明
+
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| CallbackCommand | String | 回调命令 |
+| GroupId | String | 产生群消息的群组 ID |
+| Type | String | 产生群消息的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529)，例如 Public |
+| ExitType | String | 成员离开方式：Kicked 为被群主移出群聊；Quit 为主动退群 |
+| Operator_Account | String | 退群者 UserID |
+| ExitMemberList | Array | 退出群的成员列表 |
+| EventTime | Integer | 事件触发的毫秒级别时间戳 |
+
+### 应答包示例
+
+App 后台同步数据后，返回应答包。
+
+```
+{
+    "ActionStatus": "OK",
+    "ErrorInfo": "",
+    "ErrorCode": 0 // 忽略应答结果
+}
+```
+
+### 应答包字段说明
+
+| 字段 | 类型 | 属性 | 说明 |
+| --- | --- | --- | --- |
+| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
+| ErrorCode | Integer | 必填 | 错误码，0表示允许忽略应答结果 |
+| ErrorInfo | String | 必填 | 错误信息 |
+
+## 参考
+
+- [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
+- [新成员入群之后回调](https://intl.cloud.tencent.com/document/product/1047/34372)
+- [直播群在线状态回调](https://intl.cloud.tencent.com/document/product/1047/48734)
+- REST API：[删除群组成员](https://intl.cloud.tencent.com/document/product/1047/34949)
+
+

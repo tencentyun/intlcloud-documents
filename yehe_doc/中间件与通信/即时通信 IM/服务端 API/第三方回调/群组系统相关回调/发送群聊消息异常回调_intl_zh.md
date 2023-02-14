@@ -3,6 +3,7 @@
 App 后台可以通过该回调监控用户的群发消息异常情况，包括：
 - 发送消息参数有误（如群ID不存在等）
 - 发送消息频率超过限制
+- 发送消息被安全打击
 - 发送方被禁言等
 
 ## 注意事项
@@ -64,7 +65,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
     ],
     "CloudCustomData": "your cloud custom data",
     "ErrorCode": 10023, // 消息异常错误码
-    "ErrorInfo": "msg count exceeds limit,please retry later" // 消息异常详细信息
+    "ErrorInfo": "msg count exceeds limit,please retry later", // 消息异常详细信息
+    "EventTime":"1670574414123"//毫秒级别，事件触发时间戳		
 }
 ```
 
@@ -83,6 +85,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CloudCustomData | String | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到） |
 | ErrorCode | Interger | 消息异常错误码，更多的错误码请参见[群组错误码](https://intl.cloud.tencent.com/document/product/1047/34348) |
 | ErrorInfo | String | 消息异常详细信息 |
+| EventTime | Integer | 事件触发的毫秒级别时间戳 |
 
 ### 应答包示例
 

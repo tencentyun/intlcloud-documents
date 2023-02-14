@@ -1,8 +1,9 @@
-## Feature Description
+## Feature Overview
 
 This callback allows you to monitor the exceptions on the application backend when group messages are sent, including:
 - The message sent contains an incorrect parameter (for example, the group ID does not exist).
 - The message sending frequency exceeds the limit.
+- The message sent is found to be non-compliant after content filtering.
 - The sender is muted.
 
 ## Notes
@@ -21,7 +22,7 @@ This callback allows you to monitor the exceptions on the application backend wh
 
 It will be triggered after the IM backend failed to deliver the group message to group members.
 
-## API Call Description
+## API Calling Description
 
 ### Sample request URL
 
@@ -53,7 +54,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
     "From_Account": "jared", // Sender
     "Operator_Account":"admin", // Request initiator
     "Random": 123456, // Random number
-    "OnlineOnlyFlag": 1, // The value is `1` if it is an online message and `0` (default) if it's not. For audio-video groups, the value is `0`.
+    "OnlineOnlyFlag": 1, // The value is `1` if it is an online message and `0` (default) if it’s not. For audio-video groups, the value is `0`.
     "MsgBody": [ // Message body. For more information, see the `TIMMessage` message object.
         {
             "MsgType": "TIMTextElem", // Text
@@ -65,6 +66,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
     "CloudCustomData": "your cloud custom data",
     "ErrorCode": 10023, // Message exception error code
     "ErrorInfo": "msg count exceeds limit,please retry later" // Message exception details
+    "EventTime":"1670574414123"// Event trigger timestamp in milliseconds		
 }
 ```
 
@@ -73,16 +75,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Field | Type | Description |
 | --- | --- | --- |
 | CallbackCommand | String | Callback command |
-| GroupId | String | 	ID of the group that generates group messages |
+| GroupId | String | ID of the group that generates group messages |
 | Type | String | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
 | From_Account    | String  | `UserID` of the message sender                                     |
-| Operator_Account | String | `UserID` of the request initiator, based on which the system can identify whether the request is initiated by the admin. |
+| Operator_Account | String | UserID of the request initiator, based on which the system can identify whether the request is initiated by the admin. |
 | Random | Integer | A 32-bit random number in the request |
-|OnlineOnlyFlag|Integer|The value is `1` if it is an online message and `0` (default) if it's not. For audio-video groups, the value is `0`.|
+|OnlineOnlyFlag|Integer|The value is `1` if it is an online message and `0` (default) if it’s not. For audio-video groups, the value is `0`.|
 | MsgBody | Array | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | CloudCustomData | String | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
 | ErrorCode | Interger | Message exception error code. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
 | ErrorInfo | String | Message exception details |
+| EventTime | Integer | Event trigger timestamp in milliseconds |
 
 ### Sample response
 
@@ -96,11 +99,11 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Response fields
 
-| Field | Type | Attribute | Description |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | ActionStatus | String | Required | Request result. Fixed value: `OK`. |
 | ErrorCode | Integer | Required | Error code. Fixed value: `0`. |
-| ErrorInfo | String | Required	 | Error message. Fixed value: an empty string. |
+| ErrorInfo | String | Required	 | Error message. Fixed value: An empty string. |
 
 ## References
 
