@@ -1,3 +1,57 @@
+## 2022年12月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>基础版支持版本升级</td>
+<td>云数据库 SQL Server 基础版支持自助版本升级。</td>
+<td>2022-12-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/44354" target="_blank">调整实例版本</a></td></tr>
+<tr>
+<td>基础版支持跨可用区迁移</td>
+<td>云数据库 SQL Server 基础版支持跨可用区迁移，迁移后，实例的所有属性、配置、内网地址、子网不会改变。</td>
+<td>2022-12-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/42695" target="_blank">跨可用区迁移</a></td></tr>
+<tr>
+<td>控制台及功能优化</td>
+<td>云数据库 SQL Server 技术团队针对产品功能及控制台展示进行如下优化，进一步改善和提升用户体验。<ul><li>控制台实例列表增加备可用区字段，可展示实例主备可用区及是否跨 AZ。</li><li>实例数据库管理列表及帐号管理列表支持模糊搜索数据库名/帐号名进行过滤查询。</li></ul></td>
+<td>2022-12-12</td>
+<td>-</td></tr>
+</tbody></table>
+
+## 2022年11月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>支持定期备份</td>
+<td>云数据库 SQL Server 自动备份支持设置常规备份保留和定期备份保留，使用定期备份可以实现两个周期规划来进行备份，对比单周期备份策略更节省成本。</td>
+<td>2022-11-22</td>
+<td><a href="https://www.tencentcloud.com/document/product/238/51892" target="_blank">设置定期备份保留</a></td></tr>
+</tbody></table>
+
+## 2022年10月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>新增监控指标</td>
+<td>云数据库 SQL Server 2014及以上版本新增监控指标，包括内部系统锁定内存和内部系统消耗内存。</td>
+<td>2022-10-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/46502" target="_blank">支持的监控指标</a></td></tr>
+</tbody></table>
+
+## 2022年09月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>优化绑定安全组相关操作</td>
+<td>云数据库 SQL Server 安全组支持与项目解绑、支持多选以及模糊搜索能力。</td>
+<td>2022-09-16</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/35789" target="_blank">配置安全组</a></td></tr>
+</tbody></table>
+
 ## 2022年11月
 <table>
 <thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>

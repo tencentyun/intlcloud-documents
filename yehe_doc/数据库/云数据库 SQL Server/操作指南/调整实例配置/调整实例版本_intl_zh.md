@@ -1,5 +1,8 @@
 本文为您介绍通过云数据库 SQL Server 控制台调整实例版本的操作方法。
 
+## 支持版本
+云数据库 SQL Server 基础版、高可用版及集群版均支持版本升级。
+
 ## 前提条件
 云数据库 SQL Server 实例及其所关联的实例处于正常状态下（运行中），并且当前没有任务执行时才能够发起调整配置操作。
 
@@ -13,13 +16,12 @@
 
 ## 操作步骤
 1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，选择实例所在地域，在实例列表找到对应实例，在其**操作**列单击**配置调整**。
-![](https://qcloudimg.tencent-cloud.cn/raw/84f60eedd1e5492b31da602ef387b9f9.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/IQuS751_25.png)
 2. 在弹出的配置调整窗口，选择需要变更的**数据库版本**，检查设置无误后，单击**确认**。
 >?选择变更配置的**生效时间**并勾选橙色提示。
 > - 维护时间内：在实例详情页可修改维护时间。
 >- 立即调整：立即执行变配。
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/f232f1ed96e136d859685b302d3061cf.png)
-3. 在跳转的支付窗口，确认配置信息和费用，单击**提交订单**。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/u8ch887_26.png)
+3. 实例在跳转的支付窗口，确认配置信息和费用，单击**提交订单**。按量计费实例在跳转窗口，确认配置信息和费用，单击**调整**。
 4. 返回实例列表，当实例状态由**实例配置调整调整中**变为**运行中**，即完成版本升级，可在**实例列表**或**实例详情页**查询和确认实例的新版本。
-
