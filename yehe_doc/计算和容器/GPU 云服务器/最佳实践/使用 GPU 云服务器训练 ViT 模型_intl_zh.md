@@ -72,17 +72,17 @@ rm Miniconda3-py39\_4.11.0-Linux-x86\_64.sh
 ```shellsession
 channels:
 
-  - defaults
+   - defaults
 
 show\_channel\_urls: true
 
 default\_channels:
 
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
 
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
 
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
 
 custom\_channels:
 
@@ -250,7 +250,7 @@ python3 make\_idx.py --tfrecord\_root="../train\_val\_tfrecord"
 ### 模型训练结果
 为了便于后续训练分布式大规模模型，本文在分布式训练框架 [Colossal-AI](https://colossalai.org/) 的基础上进行模型训练和开发。Colossal-AI 提供了一组便捷的接口，通过这组接口能方便地实现数据并行、模型并行、流水线并行或者混合并行。
 参考 Colossal-AI 提供的 demo，本文使用 [pytorch-image-models](https://github.com/rwightman/pytorch-image-models) 库所集成的 ViT 实现，选择最小的 `vit\_tiny\_patch16\_224` 模型，该模型的分辨率为224\*224, 每个样本被划分为16个 `patch`。
-1. 根据 [版本选择页面](https://colossalai.org/download) 通过以下命令，安装 Colossal-AI 和 pytorch-image-models：
+1. 根据版本选择页面通过以下命令，安装 Colossal-AI 和 pytorch-image-models：
 ```shellsession
 pip install colossalai==0.1.5+torch1.11cu11.3 -f https://release.colossalai.org
 ```
