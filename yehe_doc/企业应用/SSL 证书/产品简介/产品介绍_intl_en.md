@@ -52,7 +52,7 @@ Tencent Cloud supports the following encryption standards of certificates:
   <tr>
     <td>International standard</td>
     <td>DV, OV, EV, OV Pro, EV Pro</td>
-    <td>SecureSite, GeoTrust, TrustAsia, GlobalSign, Wotrus</td>
+    <td>SecureSite, GeoTrust, TrustAsia, GlobalSign, Wotrus,DNSPod</td>
   </tr>
   <tr>
     <td>Chinese cryptographic standard</td>

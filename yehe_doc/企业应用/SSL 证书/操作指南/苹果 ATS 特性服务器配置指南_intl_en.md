@@ -35,13 +35,13 @@ Update the `%TOMCAT_HOME%\conf\server.xml` file as follows:
 
 ### IIS certificate configuration
 #### Method 1
-Windows Server 2008 and earlier versions do not support the TLS1_2 protocol. Therefore, SSL tools are disabled on those versions. To address this issue, enable the TLS1_2 protocol to meet the ATS requirements.
+Windows Server 2008 and earlier versions do not support the TLS1.2 protocol. Therefore, SSL tools are disabled on those versions. To address this issue, enable the TLS1.2 protocol to meet the ATS requirements.
 
 Taking Windows Server 2008 R2 as an example, there is no adjustment to protocols and cipher suites after the certificate is imported.
- The cipher suites will support ATS requirements after the certificate is imported but the TLS1_2 protocol required for ATS is not enabled. You can use IIS Crypto ([click to download](https://www.nartac.com/Downloads/IISCrypto/IISCrypto.exe)) to enable the TLS1_2 protocol, as shown below:
+ The cipher suites will support ATS requirements after the certificate is imported but the TLS1.2 protocol required for ATS is not enabled. You can use ssltools ([click to download](http://www.trustasia.com/down/ssltools.zip)) to enable the TLS1.2 protocol, as shown below:
 ![](https://main.qcloudimg.com/raw/21fde4a6d02969a22c02d279f71750f5.png) 
 
-- Select the 3 TLS protocols, click **Apply**, and restart the system.
+- Select the 3 TLS protocols, and restart the system.
 - If PFS is not supported, select ECDHE and DHE in **Cipher Suites**.
 
 #### Method 2
@@ -56,7 +56,7 @@ Taking Windows Server 2008 R2 as an example, there is no adjustment to protocols
 ![4](https://main.qcloudimg.com/raw/a65d675b742144e817eef3fd882b48a8.png)
 ![5](https://main.qcloudimg.com/raw/a58d8d4fd525777eb1d7bf523c4fcda6.png)
 5. Restart the system.
-6. Adjust the cipher suites: choose **Start** -> **Run**, and enter `gpedit.msc` for the cipher suite adjustments after enabling the TLS1_2 protocol.
+6. Adjust the cipher suites: choose **Start** -> **Run**, and enter `gpedit.msc` for the cipher suite adjustments after enabling the TLS1.2 protocol.
 >!Adjustments can be made through the Group Policy Editor if PFS is not supported by the cipher suites.
 
 ![3](https://main.qcloudimg.com/raw/11f246fad52917de46de6eff14183137.png)
