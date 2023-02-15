@@ -6,7 +6,6 @@
 ## 步骤2：创建业务系统[](id:step2)
 1. 进入应用性能观测控制台 [**资源管理**](https://console.cloud.tencent.com/apm/monitor/team)。
 2. 在资源管理页中选择对应的地域，单击 **新建**，按照提示填写业务名称，选择存储时长（存储时长越长，计费越高）。选择完后，勾选相关协议并单击 **确定**。   
-3. 创建完后，单击操作列中的 **开启计费** 即可。
 
 <img  width="50%" height="70%" src="https://staticintl.cloudcachetci.com/yehe/backend-news/sehQ931_2%E7%9A%84%E5%89%AF%E6%9C%AC.png"> 
 
