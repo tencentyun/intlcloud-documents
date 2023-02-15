@@ -192,7 +192,7 @@ EXPOSE 20880
 
 #### Building image
 
-TCR provides both automatic and manual methods to build an image. For more information, see [Image Building Overview](https://intl.cloud.tencent.com/document/product/1051/39846). To demonstrate the build process, the manual method is used.  
+TCR provides both automatic and manual methods to build an image. To demonstrate the build process, the manual method is used.  
 
 The image name needs to be in line with the convention of `ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[image tag]`:
 
@@ -724,8 +724,7 @@ At this point, you have completed TSW access. After starting the container servi
 
 1. Log in to the [TSW console](https://console.cloud.tencent.com/apm) and click **Service Observation** > **API Observation** on the left sidebar.  
 2. On the **API Observation** page, you can view the call status of all APIs under a service, including the number of requests, success rate, error rate, response time, and other metrics.
-3. In the above figure, two `qcbm-gateway` APIs (`/api/favorites/query/{userId}` for querying user favorites and `/api/order/{userId}` for querying user orders) encountered call exceptions. Click the `/api/favorites/query/{userId}` API to view all the call records, locate the abnormal call chain, and click it to view the cause.
-   The analysis shows that `favorites-service` encountered a call exception due to `time-out`.
+
 
 
 #### Using TSW to analyze add-on (such as SQL and caching) call
