@@ -36,7 +36,7 @@ rpm -ivh gitlab-ce-13.10.2-ce.0.el7.x86_64.rpm
 
 ## Step 2. Initialize the PostgreSQL data source
 1. You can directly use a cloud database service, such as TencentDB for PostgreSQL. To create a TencentDB for PostgreSQL instance, see [Creating TencentDB for PostgreSQL Instance](https://intl.cloud.tencent.com/document/product/409/40724).
->!Make sure that the database version matches GitLab version when creating or installing the database; otherwise, a version mismatch error will be reported during GitLab initialization, making database creation fail.
+>!The database must be created or installed with the same version as GitLab; otherwise, a version mismatch error will be reported during GitLab initialization, causing database creation to fail.
 <table>
 <thead><tr><th>GitLab Version</th><th>Earliest Supported PostgreSQL Version</th></tr></thead>
 <tbody><tr>
