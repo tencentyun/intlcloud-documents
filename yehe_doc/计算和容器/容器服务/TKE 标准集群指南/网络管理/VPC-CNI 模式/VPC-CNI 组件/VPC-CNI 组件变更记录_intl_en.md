@@ -60,7 +60,7 @@ kubectl -nkube-system get deploy tke-eni-ip-scheduler -o jsonpath={.spec.templat
 <tr>
 	<td>v3.4.1</td><td>2022-01-21 </td>
     <td>
-<li>Supports scheduling Pods to EKS nodes and maintaining the IP address in static IP address mode.</li><li> Supports specifying the EIP through the `tke.cloud.tencent.com/eip-id-list` annotation.</li><li> Supports binding dedicated ENIs to security groups in non-static IP address mode.</li><li> Upgrades the CRD API to v1 and supports Kubernetes 1.22.</li><li>Fixed the occasional issue where the IP status is not synced in static IP address mode.</li>
+<li>Supports scheduling Pods to TKE Serverless nodes and maintaining the IP address in static IP address mode.</li><li> Supports specifying the EIP through the `tke.cloud.tencent.com/eip-id-list` annotation.</li><li> Supports binding dedicated ENIs to security groups in non-static IP address mode.</li><li> Upgrades the CRD API to v1 and supports Kubernetes 1.22.</li><li>Fixed the occasional issue where the IP status is not synced in static IP address mode.</li>
     </td><td>No impact on services</td>
 </tr>
 <tr>
