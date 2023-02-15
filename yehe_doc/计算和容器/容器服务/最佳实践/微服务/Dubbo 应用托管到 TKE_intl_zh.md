@@ -192,7 +192,7 @@ EXPOSE 20880
 
 #### 构建镜像
 
-容器镜像服务 TCR 提供了自动和手工构建镜像方式，详情可参见 [镜像构建](https://intl.cloud.tencent.com/document/product/1051/39846) 文档。为展示具体的构建过程，本文采用手工构建方式。  
+容器镜像服务 TCR 提供了自动和手工构建镜像方式。为展示具体的构建过程，本文采用手工构建方式。  
 
 镜像名称需要符合规范 `ccr.ccs.tencentyun.com/[namespace]/[ImageName]:[镜像版本号]`：
 
@@ -600,7 +600,7 @@ spec:
 
 容器日志采集功能默认关闭，使用前需要开启，步骤如下：
 
-1. 登录容器服务控制台 ，选择左侧导航栏中的**集群运维** > **[功能管理](https://console.cloud.tencent.com/tke2/ops/list?rid=1)**。  
+1. 登录容器服务控制台 ，选择左侧导航栏中的**集群运维** > **[功能管理](https://console.cloud.tencent.com/tke2/ops/list?rid=1)** 。  
 2. 在“功能管理”页面上方选择地域，单击需要开启日志采集的集群右侧的**设置**。  
    ![](https://qcloudimg.tencent-cloud.cn/raw/018b15f5486495a891fad0fe20ca8977.png)
 3. 在“设置功能”页面，单击日志采集**编辑**并勾选**开启日志采集**。如下图所示：
@@ -724,8 +724,7 @@ Skywalking agent 也支持使用环境变量方式进行配置，QCBM 使用 Con
 
 1. 登录 [腾讯微服务观测平台控制台](https://console.cloud.tencent.com/apm)，选择左侧导航栏中的**服务观测** > **接口观测**。  
 2. 在接口观测页面可查看一个服务下所有接口的调用情况，包括请求量、成功率、错误率、响应时间等指标。
-3. 上图中 qcbm-gateway 的两个接口：查询用户收藏夹 `/api/favorites/query/{userId}` 和查询用户订单 `/api/order/{userId}` 出现调用异常。单击查询用户收藏夹接口，可以查看到该接口的所有调用记录，找到异常的调用链，单击进入可以查看具体异常原因。
-   通过分析可以发现 favorites-service 因 time-out 导致调用异常。
+
 
 
 #### 使用 TSW 分析 SQL 和缓存等组件调用情况
