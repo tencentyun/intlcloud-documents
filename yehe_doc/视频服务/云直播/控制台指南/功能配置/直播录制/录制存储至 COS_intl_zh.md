@@ -53,52 +53,26 @@
 >- 若指定转码流录制中选择纯音频转码模板时，录制格式中只可选择音频格式。
 >- 录制转码流需要先发起转码任务，会额外产生转码费用，若使用相同转码模板进行播放，不会重复计费。
 
-3. 选择录制内容，勾选需要录制格式后，弹出相关格式的设置界面，可选择一个或多个录制格式同时进行设置。请进行如下设置：
+4. 选择录制内容，勾选需要录制格式后，弹出相关格式的设置界面，可选择一个或多个录制格式同时进行设置。请进行如下设置：
  ![](https://qcloudimg.tencent-cloud.cn/raw/ef25f0451d1625570046b88c7a7eba55.png)
 
-<table>
-   <thead><tr><th width="27%" colspan=2>配置项</th><th>配置描述</th></tr></thead>
-   <tbody><tr>
-      <tr>
-      <td colspan=2>单个录制文件时长（分钟）</td>
-      <td><ul style="margin-bottom:0px">
-          <li>录制 HLS 格式最长单个文件时长无限制，如果超出续录等待时长则新建文件继续录制。</li>
-          <li>录制 FLV 格式单个文件时长限制为1分钟 - 720分钟。</li>
-          <li>录制 MP4 或 AAC 格式单个文件时长限制为1分钟 - 120分钟。</li>
-          </ul></td>
-      </tr><tr>
-      <td colspan=2>续录等待时长（秒）</td>
-      <td>仅  HLS 格式支持文件推流中断续录，续录等待时长可设置为1s - 1800s。</td>
-      </tr><tr>
-      <td colspan=2>保存时长（天）</td>
-      <td>可选择 <b>永久存储</b> 或 <b>指定时间</b>。单个录制文件保存最大时长均为1500天，文件保存时长0为永久。</td>
-      </tr><tr>
-      <td colspan=2>存储路径</td>
-       <td><li>可在Bucket中选择您已在 <b>对象存储</b> 中创建并完成授权的 COS bucket。</li>
-       <li>Region为上述 Bucket 所属地域信息，不可修改。</li>
-       </td>
-       </tr><tr>      
-       <td colspan=2>容灾存储路径</td>      
-       <td>可开启容灾存储路径，当网络抖动导致录制文件不能存储到主存储路径时，系统会自动将文件存储至容灾路径下，以防止文件丢失。当主存储路径恢复后，容灾路径下的录制文件会自动同步到主存储路径下。主备region不能相同。</td>
-       </tr><tr>      
-       <td colspan=2>存储文件夹</td>      
-       <td><li>录制存储文件夹默认按照{RecordSource}/{Domain}/{AppName}/{StreamID}/{RecordId}/{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}进行存储。其中变量包含：</li>
-     <li>{RecordSource}：录制内容，原始流则为origin，转码流则为转码模板id</li>  
-     <li>{StartYear}：开始时间-年</li> 
-     <li>{StartMonth}：开始时间-月</li>
-     <li>{StartDay}：开始时间-日</li>
-     <li>{StartMinute}：开始时间-分钟</li>
-     <li>{StartSecond}：开始时间-秒</li>
-     <li>{Domain}：推流域名</li>
-     <li>{AppName}：推流路径</li>
-     <li>{StreamID}：流ID</li>
-     <li>{RecordId}：录制id，区别录制规则or录制任务，录制任务则展示任务id（即CreateRecord创建返回ID）</li>
-     <li>「/」为层级关系，「-」为普通字符</li>
-     </td>
-      </tr>
-      </tbody></table>
+<table><thead><tr><th width="27%" colspan=2>配置项</th><th>配置描述</th></tr></thead><tbody><tr><td colspan=2>单个录制文件时长（分钟）</td><td><ul style="margin-bottom:0px"><li>录制 HLS 格式最长单个文件时长无限制，如果超出续录等待时长则新建文件继续录制。</li><li>录制 FLV 格式单个文件时长限制为1分钟 - 720分钟。</li><li>录制 MP4 或 AAC 格式单个文件时长限制为1分钟 - 120分钟。</li></ul></td></tr><tr><td colspan=2>续录等待时长（秒）</td><td>仅  HLS 格式支持文件推流中断续录，续录等待时长可设置为1s - 1800s。</td></tr><tr><td colspan=2>保存时长（天）</td><td>可选择 <b>永久存储</b> 或 <b>指定时间</b>。单个录制文件保存最大时长均为1500天，文件保存时长0为永久。</td></tr><tr><td colspan=2>存储路径</td><td><ul style="margin-bottom:0px"><li>可在Bucket中选择您已在 <b>对象存储</b> 中创建并完成授权的 COS bucket。</li><li>Region为上述 Bucket 所属地域信息，不可修改。</li></ul></td></tr><tr><td colspan=2>容灾存储路径</td><td>可开启容灾存储路径，当网络抖动导致录制文件不能存储到主存储路径时，系统会自动将文件存储至容灾路径下，以防止文件丢失。当主存储路径恢复后，容灾路径下的录制文件会自动同步到主存储路径下。主备region不能相同。</td></tr><tr><td colspan=2>存储文件夹</td><td><ul style="margin-bottom:0px"><li>录制存储文件夹默认按照{RecordSource}/{Domain}/{AppName}/{StreamID}/{RecordId}/{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}进行存储。其中变量包含：</li>
+   <li>{RecordSource}：录制内容，原始流则为origin，转码流则为转码模板id</li>  
+   <li>{StartYear}：开始时间-年</li> 
+   <li>{StartMonth}：开始时间-月</li>
+   <li>{StartDay}：开始时间-日</li>
+   <li>{StartMinute}：开始时间-分钟</li>
+   <li>{StartSecond}：开始时间-秒</li>
+   <li>{Domain}：推流域名</li>
+   <li>{AppName}：推流路径</li>
+   <li>{StreamID}：流ID</li>
+   <li>{RecordId}：录制id，区别录制规则or录制任务，录制任务则展示任务id（即CreateRecord创建返回ID）</li>
+   <li>「/」为层级关系，「-」为普通字符</li>
+   </ul></td>
+   </tr>
+</tbody></table>
 
-4. 单击 **保存** 即可。
+5. 单击 **保存** 即可。
 >? 由于录制文件是边录边传，导致无法在上传前获取到结束时间，无法在文件名中添加结束时间。
 
 [](id:conect)
