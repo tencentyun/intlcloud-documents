@@ -2,7 +2,7 @@
 <dx-alert infotype="alarm" title="">
 **単一のCloud Virtual Machine（CVM）をパブリックゲートウェイとして使用すると、シングルポイントリスクがあるため、本番環境では[NAT Gateway](https://intl.cloud.tencent.com/document/product/1015/30226)を使用することをお勧めします。**
 </dx-alert>
-注意：2019年12月6日以降、Tencent Cloudは、CVMの購入ページでのパブリックゲートウェイの選択と設定をサポートしません。必要に応じて、このドキュメントでの設定に従って、ご自身で設定してください。
+注意：2019年12月06日以降、Tencent Cloudは、CVMの購入ページでのパブリックゲートウェイの選択と設定をサポートしません。必要に応じて、このドキュメントでの設定に従って、ご自身で設定してください。
 
 
 
@@ -24,7 +24,7 @@ Tencent Cloud VPCの一部のCVMに共通のパブリックネットワークIP�
 パブリックゲートウェイとして使用されるCVMにすでにパブリックネットワークIPアドレスがある場合は、この手順をスキップして次の手順を完了してください。
 </dx-alert>
 
-1. [CVMコンソール](https://console.cloud.tencent.com/cvm/index)にログインし、左側ナビゲーションバーでは、**[ElasticパブリックネットワークIP](https://console.cloud.tencent.com/cvm/eip)をクリックして、ElasticパブリックネットワークIP管理ページへ進みます。
+1. [CVMコンソール](https://console.cloud.tencent.com/cvm/index)にログインし、左側ナビゲーションバーでは、 **[ElasticパブリックネットワークIP](https://console.cloud.tencent.com/cvm/eip)** をクリックして、ElasticパブリックネットワークIP管理ページへ進みます。
 2. インスタンスをバインディングする必要があるElasticパブリックネットワークIPのアクションバーの下にある**その他** > **バインディング**を選択します。
 ![](https://main.qcloudimg.com/raw/c9e46426e64fd6de3d4a2a9dccb91822.png)
 3. 「リソースのバインディング」ポップアップボックスで、パブリックゲートウェイとして選択されたCVMインスタンスを選択してバインディングします。
@@ -84,7 +84,7 @@ echo 10800 >/proc/sys/net/netfilter/nf_conntrack_tcp_timeout_established \
 && echo "-->nf_conntrack_tcp_timeout_established:Success" || \
 echo "-->nf_conntrack_tcp_timeout_established:Fail"
 ```
- 3. **Esc**を押し、**:wq**を入力して、ファイルを保存して戻ります。
+ 3. **Esc**を押し、 **:wq** を入力して、ファイルを保存して戻ります。
  4. 次のコマンドを実行して、スクリプトファイルの権限を設定します。
 ```
 chmod +x /usr/local/sbin/vpcGateway.sh
@@ -176,7 +176,7 @@ echo $flow_entries >/proc/sys/net/core/rps_sock_flow_entries
 }
 set_rps
 ```
- 3. **Esc**を押して、**:wq**を入力し、ファイルを保存して戻ります。
+ 3. **Esc**を押して、 **:wq** を入力し、ファイルを保存して戻ります。
  4. 次のコマンドを実行して、スクリプトファイルの権限を設定します。
 ```
 chmod +x /usr/local/sbin/set_rps.sh
