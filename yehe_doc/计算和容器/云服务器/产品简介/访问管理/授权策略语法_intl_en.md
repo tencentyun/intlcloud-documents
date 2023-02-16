@@ -94,7 +94,6 @@ In the following table, names with the prefix $ are placeholders.
 | VPC | qcs::vpc:$region:$account:vpc/$vpcId |
 | Subnet | qcs::vpc:$region:$account:subnet/$subnetId |
 | Image | qcs::cvm:$region:$account:image/\* |
-| Subnet | qcs::vpc:$region:$account:subnet/$subnetId |
 | CBS |  qcs::cvm:$region:$account:volume/$diskid|
 | Security group | qcs::cvm:$region:$account:sg/$sgId |
 | EIP |  qcs::cvm:$region:$account:eip/*|
