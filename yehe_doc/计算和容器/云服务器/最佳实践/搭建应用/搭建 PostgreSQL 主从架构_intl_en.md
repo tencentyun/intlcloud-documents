@@ -7,7 +7,7 @@ This document describes how to build a PostgreSQL system on a CVM instance runni
 ## Software
 This document uses the following software as an example to build PostgreSQL.
 - Linux: Linux operating system. This document uses CentOS 7.6 as an example.
-- PostgreSQL: Relational database management system. This document uses PostgreSQL 9.6 as an example.
+- PostgreSQL: Relational database management system. This document uses PostgreSQL 12 as an example.
 
 
 ## Prerequisites
@@ -26,7 +26,7 @@ For more information, see [Adding Security Group Rules](https://intl.cloud.tence
 yum update -y
 ```
 3. Run the following commands in sequence to install PostgreSQL.
-This document uses PostgreSQL 9.6 as an example. You can choose other versions as needed.
+This document uses PostgreSQL 12 as an example. You can choose other versions as needed.
 ```
 wget --no-check-certificate https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 ```
@@ -34,18 +34,18 @@ wget --no-check-certificate https://download.postgresql.org/pub/repos/yum/reporp
 rpm -ivh pgdg-redhat-repo-latest.noarch.rpm
 ```
 ```
-yum install postgresql96-server postgresql96-contrib -y
+yum install postgresql12-server postgresql12-contrib -y
 ```
 ```
-/usr/pgsql-9.6/bin/postgresql96-setup initdb
+/usr/pgsql-12/bin/postgresql12-setup initdb
 ```
 4. Run the following command to start the service.
 ```
-systemctl start postgresql-9.6.service
+systemctl start postgresql-12.service
 ```
 5. Run the following command to enable the service at startup.
 ```
-systemctl enable postgresql-9.6.service 
+systemctl enable postgresql-12.service 
 ```
 6. Run the following command to switch to the `postgres` user.
 ```
@@ -96,7 +96,7 @@ replica
 13. Enter **exit** and press **Enter** to exit PostgreSQL.
 14. Run the following command to open the `pg_hba.conf` configuration file and add the `replica` user to the allowlist.
 ```
-vim /var/lib/pgsql/9.6/data/pg_hba.conf
+vim /var/lib/pgsql/12/data/pg_hba.conf
 ```
 15. Press **i** to switch to the edit mode, and add the following two lines to the `IPv4 local connections` section:
 ```
@@ -111,7 +111,7 @@ host    replication     replica         xx.xx.xx.xx/16         md5
 16. Press **Esc** and enter **:wq** to save and close the file.
 17. Run the following command to open the `postgresql.conf` file.
 ```
-vim /var/lib/pgsql/9.6/data/postgresql.conf
+vim /var/lib/pgsql/12/data/postgresql.conf
 ```
 18. Press **i** to enter the edit mode, locate and replace the following parameters:
 ```
@@ -125,7 +125,7 @@ wal_sender_timeout = 60s ##The timeout value for the streaming replication insta
 19. Press **Esc** and enter **:wq** to save the file.
 20. Run the following command to restart the service.
 ```
-systemctl restart postgresql-9.6.service
+systemctl restart postgresql-12.service
 ```
 
 ### Configuring secondary node
@@ -143,11 +143,11 @@ wget --no-check-certificate https://download.postgresql.org/pub/repos/yum/reporp
 rpm -ivh pgdg-redhat-repo-latest.noarch.rpm
 ```
 ```
-yum install postgresql96-server postgresql96-contrib -y
+yum install postgresql12-server postgresql12-contrib -y
 ```
 4. Run the following command and use the pg_basebackup utility to create a backup directory:
 ```
-pg_basebackup -D /var/lib/pgsql/9.6/data -h Public IP of the primary node> -p 5432 -U replica -X stream -P
+pg_basebackup -D /var/lib/pgsql/12/data -h Public IP of the primary node> -p 5432 -U replica -X stream -P
 ```
 Enter the password as prompted, and press **Enter**. If the following is returned, it indicates that the backup directory has been successfully created.
 ```
@@ -156,11 +156,11 @@ Password:
 ```
 5. Run the following command to copy the configuration files of the primary node.
 ```
-cp /usr/pgsql-9.6/share/recovery.conf.sample /var/lib/pgsql/9.6/data/recovery.conf
+cp /usr/pgsql-12/share/recovery.conf.sample /var/lib/pgsql/121/data/recovery.conf
 ```
 6. Run the following command to open the `recovery.conf` file.
 ```
-vim /var/lib/pgsql/9.6/data/recovery.conf
+vim /var/lib/pgsql/12/data/recovery.conf
 ```
 7. Press **i** to switch to the edit mode, locate and replace the following parameters:
 ```
@@ -171,7 +171,7 @@ recovery_target_timeline = 'latest' #Sync the latest data by using streaming rep
 8. Press **Esc** and enter **:wq** to save and close the file.
 9. Run the following command to open the `postgresql.conf` file.
 ```
-vim /var/lib/pgsql/9.6/data/postgresql.conf
+vim /var/lib/pgsql/12/data/postgresql.conf
 ```
 10. Press **i** to switch to the edit mode, locate and replace the following parameters:
 ```
@@ -184,22 +184,22 @@ hot_standby_feedback = on          #Enable the secondary node to report errors d
 11. Press **Esc** and enter **:wq** to save and close the file.
 12. Run the following command to modify the group and owner of the data directory:
 ```
-chown -R postgres.postgres /var/lib/pgsql/9.6/data
+chown -R postgres.postgres /var/lib/pgsql/12/data
 ```
 13. Run the following command to start the service.
 ```
-systemctl start postgresql-9.6.service
+systemctl start postgresql-12.service
 ```
 14. Run the following command to enable the service at startup.
 ```
-systemctl enable postgresql-9.6.service
+systemctl enable postgresql-12.service
 ```
 
 ### Verifying deployment
 Perform the following to verify the deployment.
 1. Run the following command to back up the directory from the node.
 ```
-pg_basebackup -D /var/lib/pgsql/96/data -h <Public IP of the primary node> -p 5432 -U replica -X stream -P
+pg_basebackup -D /var/lib/pgsql/12/data -h <Public IP of the primary node> -p 5432 -U replica -X stream -P
 ```
 Enter the database password and press **Enter**. If the following is returned, it indicates that the backup directory has been successfully created.
 ```
