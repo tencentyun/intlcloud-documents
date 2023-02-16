@@ -13,7 +13,7 @@ VOD provides an SDK for PHP for uploading videos from a server. For more informa
 
 ### Installing by using source package
 1. If the Composer tool is not used for dependency management in the project, you can download the source code from [GitHub](https://github.com/tencentyun/vod-php-sdk-v5) and import it into the project.
-2. Decompress the `vod-sdk.zip` file into the project and import the `autoload.php` file.
+2. Decompress the [vod-sdk.zip](https://github.com/tencentyun/vod-php-sdk-v5/tree/master/packages) file into the project and import the `autoload.php` file.
 
 ##  Uploading Videos
 ### Initializing upload object
