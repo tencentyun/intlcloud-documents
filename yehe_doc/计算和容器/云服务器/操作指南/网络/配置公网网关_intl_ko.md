@@ -24,7 +24,7 @@ Tencent Cloud VPC의 일부 CVM에 일반 공용 IP 주소가 없지만 인터�
 공용망 게이트웨이 역할을 하는 CVM에 이미 공용 IP 주소가 있는 경우 이 단계를 건너뜁니다.
 </dx-alert>
 
-1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인하고 왼쪽 사이드바에서 **[EIP](https://console.cloud.tencent.com/cvm/eip)**를 클릭하여 EIP 관리 페이지로 이동합니다.
+1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인하고 왼쪽 사이드바에서 **[EIP](https://console.cloud.tencent.com/cvm/eip)** 를 클릭하여 EIP 관리 페이지로 이동합니다.
 2. 인스턴스를 바인딩할 EIP를 찾아 작업 열에서 **더 보기** > **바인딩**을 선택합니다.
 ![](https://main.qcloudimg.com/raw/c9e46426e64fd6de3d4a2a9dccb91822.png)
 3. ‘리소스 바인딩’ 팝업 창에서 공용망 게이트웨이로 사용할 CVM 인스턴스를 선택하고 바인딩합니다.
