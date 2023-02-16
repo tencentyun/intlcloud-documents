@@ -1,4 +1,4 @@
-Tencent Cloud VPN supports the virtual network connections using IPSec and SSL protocols. It realizes a full connection among IDC, private office network, mobile client, and Tencent Cloud VPC.
+Tencent Cloud VPN supports the virtual network connections using IPSec and SSL protocols. It realizes a full connection among IDC, private office network, mobile client, and Tencent Cloud VPC/CCN.
 
 
 ## IPsec VPN 
@@ -6,7 +6,7 @@ Tencent Cloud VPN supports the virtual network connections using IPSec and SSL p
 ### IPSec VPN Gateway
 An IPSec VPN gateway is an egress gateway for VPC or CCN to establish a VPN connection. It is used with a customer gateway (IPsec VPN gateway on the IDC side) to establish an encrypted communication between a Tencent Cloud VPC or CCN and an external IDC. Tencent Cloud VPN gateway uses software virtualization and an active-active hot backup architecture. When one server fails, automatic switchover helps ensure the normal operation of your businesses.
 
-Eight supported bandwidth caps of VPN gateway: 5 Mbps, 10 Mbps, 20 Mbps, 50 Mbps, 100 Mbps, 200 Mbps, 500 Mbps and 1,000 Mbps.
+Eight supported bandwidth caps of VPN gateway: 5 Mbps, 10 Mbps, 20 Mbps, 50 Mbps, 100 Mbps, 200 Mbps, 500 Mbps, 1,000 Mbps and 3,000 Mbps.
 If you need [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029) to defend against DDoS and CC attacks with high-bandwidth protection, you can bind it to the VPN gateway.
 
 ### Customer Gateway
