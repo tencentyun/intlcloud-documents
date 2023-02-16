@@ -20,7 +20,7 @@ Política do CAM:
 ```
 - a **version** (versão) é obrigatória. Atualmente, apenas a "2.0" é compatível.
 - a **statement** descreve os detalhes de uma ou mais permissões. Esse elemento contém uma permissão ou conjunto de permissões que é composto por outros elementos, como efeito, ação, recurso e condição. Uma política contém apenas uma instrução.
- 1. A **action** descreve as ações permitidas ou negadas. Uma ação pode ser uma API (descrita com o prefixo "name") ou um conjunto de funcionalidades (um conjunto de APIs específicas, descrito com o prefixo "permid"). Esse elemento é obrigatório.
+ 1. A **action** descreve as ações permitidas ou negadas. Uma ação pode ser uma API (descrita com o prefixo "name") ou um conjunto de funcionalidades (um conjunto de APIs específicas, descrito com o prefixo "permit"). Esse elemento é obrigatório.
  2. O **resource** descreve os detalhes da autorização. Um recurso é descrito em um formato de seis partes. As definições detalhadas dos recursos variam de acordo com o produto. Para obter mais informações sobre como definir um recurso, consulte a documentação do devido produto. Esse elemento é obrigatório.
  3. A **condition**  descreve a condição para que a política entre em vigor. Uma condição é composta por operador, chave da ação e valor da ação. Um valor da condição pode conter informações, como hora e endereço IP. Alguns serviços permitem que você especifique valores adicionais em uma condição. Esse elemento é opcional.
  4. O **effect** descreve se o resultado produzido pela instrução é "allowed" (permitido) ou "denied" (negado). Esse elemento é obrigatório.
@@ -91,9 +91,8 @@ Na tabela a seguir, os nomes com o prefixo $ são placeholders.
 | Instância | qcs::cvm:$region:$account:instance/$instanceId |
 | Chave | qcs::cvm:$region:$account:keypair/$keyId |
 | VPC | qcs::vpc:$region:$account:vpc/$vpcId |
-| Sub-rede | qcs::vpc:$region:$account:vpc/$vpcId |
-| Imagem | qcs::cvm:$region:$account:image/* |
 | Sub-rede | qcs::vpc:$region:$account:subnet/$subnetId |
+| Imagem | qcs::cvm:$region:$account:image/\* |
 | CBS |  qcs::cvm:$region:$account:volume/$diskid|
 | Grupo de segurança | qcs::cvm:$region:$account:sg/$sgId |
 | EIP |  qcs::cvm:$region:$account:eip/*|
