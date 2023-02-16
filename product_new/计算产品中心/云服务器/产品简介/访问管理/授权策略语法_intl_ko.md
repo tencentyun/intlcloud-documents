@@ -94,7 +94,6 @@ width:500px;
 |서브넷|   qcs::vpc:$region:$account:subnet/$subnetId|
 |시스템 디스크|  qcs::cvm:$region:$account:systemdisk/*|
 |미러 이미지|   qcs::cvm:$region:$account:image/\*|
-|서브넷|  qcs::vpc:$region:$account:subnet/$subnetId|
 |데이터 디스크|  qcs::cvm:$region:$account:datadisk/*|
 |보안 그룹|  qcs::cvm:$region:$account:sg/$sgId|
 |EIP|  qcs::cvm:$region:$account:eip/*|
