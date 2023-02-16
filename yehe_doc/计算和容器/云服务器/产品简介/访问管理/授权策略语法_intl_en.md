@@ -20,10 +20,11 @@ CAM policy:
 ```
 - **version** is required. Currently, only "2.0" is supported.
 - **statement** describes the details of one or more permissions. This element contains a permission or permission set consisting of other elements such as effect, action, resource, and condition. One policy has only one statement.
- 1. **Action** describes the allowed or denied actions. An action can be an API (described using the prefix "name") or a feature set (a set of specific APIs, described using the prefix "permid"). This element is required.
- 2. **resource** describes the authorization details. A resource is described in a six-piece format. Detailed resource definitions vary by product. For more information on how to specify a resource, see the documentation for the relevant product. This element is required.
- 3. **condition** describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address. Some services allow you to specify additional values in a condition. This element is optional.
- 4. **effect** describes whether the result produced by the statement is "allowed" (allow) or "denied" (deny). This element is required.
+ 1. **effect** describes whether the result produced by the statement is "allowed" (allow) or "denied" (deny). This element is required.
+ 2. **Action** describes the allowed or denied actions. An action can be an API (described using the prefix "name") or a feature set (a set of specific APIs, described using the prefix "permit"). This element is required.
+ 3. **resource** describes the authorization details. A resource is described in a six-piece format. Detailed resource definitions vary by product. For more information on how to specify a resource, see the documentation for the relevant product. This element is required.
+ 4. **condition** describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address. Some services allow you to specify additional values in a condition. This element is optional.
+
 
 <span id = "caozuo"></span>
 ### CVM Operations
@@ -91,8 +92,8 @@ In the following table, names with the prefix $ are placeholders.
 | Instance | qcs::cvm:$region:$account:instance/$instanceId |
 | Key | qcs::cvm:$region:$account:keypair/$keyId |
 | VPC | qcs::vpc:$region:$account:vpc/$vpcId |
-| Subnet | qcs::vpc:$region:$account:vpc/$vpcId |
-| Image | qcs::cvm:$region:$account:image/* |
+| Subnet | qcs::vpc:$region:$account:subnet/$subnetId |
+| Image | qcs::cvm:$region:$account:image/\* |
 | Subnet | qcs::vpc:$region:$account:subnet/$subnetId |
 | CBS |  qcs::cvm:$region:$account:volume/$diskid|
 | Security group | qcs::cvm:$region:$account:sg/$sgId |
