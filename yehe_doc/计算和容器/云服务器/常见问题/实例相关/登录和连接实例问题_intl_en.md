@@ -28,7 +28,7 @@ passwd: password updated successfully
 sudo vi /etc/ssh/sshd_config 
 ```
 6. Press **i** to switch to the editing mode. Find `#Authentication` and change the value of `PermitRootLogin` to `yes`, as shown in the following figure:
-> If `PermitRootLogin` is commented, remove the comment marks (`#`).
+>? If `PermitRootLogin` is commented, remove the comment marks (`#`).
 > 
 ![](https://main.qcloudimg.com/raw/359242f7e5df666d43459fe74abce72a.png)
 7. Press **Esc** and enter **:wq** to save the file and exit vi.
