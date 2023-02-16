@@ -94,7 +94,6 @@ width:500px;
 |VPC|  qcs::vpc:$region:$account:vpc/$vpcId|
 |子网|   qcs::vpc:$region:$account:subnet/$subnetId|
 |镜像|   qcs::cvm:$region:$account:image/\*|
-|子网|  qcs::vpc:$region:$account:subnet/$subnetId|
 |CBS|  qcs::cvm:$region:$account:volume/$diskid|
 |安全组|  qcs::cvm:$region:$account:sg/$sgId|
 |EIP|  qcs::cvm:$region:$account:eip/*|
