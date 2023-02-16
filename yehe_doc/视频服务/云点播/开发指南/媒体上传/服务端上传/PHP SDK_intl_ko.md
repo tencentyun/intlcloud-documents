@@ -13,7 +13,7 @@ VOD는 서버에서 동영상을 업로드할 수 있는 PHP용 SDK를 제공합
 
 ### 소스 패키지를 통해 설치
 1. 프로젝트에서 종속성 관리를 위해 composer 툴을 사용하지 않는 경우, [Github에서 액세스](https://github.com/tencentyun/vod-php-sdk-v5)에서 직접 소스 코드를 다운로드하여 프로젝트에서 사용할 수 있도록 가져올 수 있습니다.
-2. vod-sdk.zip 파일을 프로젝트에 압축 해제하고 autoload.php 파일을 가져옵니다.
+2. [vod-sdk.zip](https://github.com/tencentyun/vod-php-sdk-v5/tree/master/packages) 파일을 프로젝트에 압축 해제하고 autoload.php 파일을 가져옵니다.
 
 ##  비디오 간편 업로드
 ### 업로드 객체 초기화
