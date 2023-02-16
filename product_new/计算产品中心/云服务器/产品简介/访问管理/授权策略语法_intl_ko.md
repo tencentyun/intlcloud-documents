@@ -20,7 +20,7 @@ CAM 정책:
 ```
 - **version**은 필수 항목입니다. 현재는 오직 “2.0”만 허용합니다.
 - **statement**는 하나 또는 여러 개의 권한의 자세한 정보를 기술하는 데 사용합니다. 이 요소에는 effect, action, resource, condition 등의 기타 여러 요소의 권한 또는 권한 집합이 포함됩니다. 하나의 정책에는 하나의 statement 요소만 가지고 있습니다.
- 1. **action**은 허용 또는 거절의 작업을 기술하는 데 사용합니다. action은 API(접두사 name으로 표시) 또는 기능 집합(특정한 API 구성, 접두사 permid로 표시)이 가능합니다. 이 요소는 필수 항목입니다.
+ 1. **action**은 허용 또는 거절의 작업을 기술하는 데 사용합니다. action은 API(접두사 name으로 표시) 또는 기능 집합(특정한 API 구성, 접두사 permit로 표시)이 가능합니다. 이 요소는 필수 항목입니다.
  2. **resource**는 권한 부여의 구체적인 데이터를 기술합니다. resource는 6단식 기술을 사용하며, 모든 제품마다 리소스의 정보 정의의 차이가 있습니다. 리소스 정보를 어떻게 지정할 지에 대한 것은 작성한 리소스 선언에 대한 제품 문서를 참조하십시오. 이 요소는 필수 항목입니다.
  3. **condition**은 정책의 효력이 발생하는 규제 조건을 기술합니다. condition에는 오퍼레이터, 작업 키와 작업 값 구성이 포함됩니다. 작업 값은 시간, IP 주소 등의 정보를 포함합니다. 어떤 서비스는 조건에 기타 값을 지정하는 것을 허용합니다. 이 요소는 필수 항목입니다.
  4. **effect**는 선언으로 발생한 결과가 “허용”인지 “명시적 거절”인지 기술합니다. allow(허용) 및 deny(명시적 거절) 두 가지 상황을 포함합니다. 이 요소는 필수 항목입니다.
@@ -91,9 +91,9 @@ width:500px;
 |인스턴스|  qcs::cvm:$region:$account:instance/$instanceId|
 |키|  qcs::cvm:$region:$account:keypair/$keyId|
 |VPC|  qcs::vpc:$region:$account:vpc/$vpcId|
-|서브넷|   qcs::vpc:$region:$account:vpc/$vpcId|
+|서브넷|   qcs::vpc:$region:$account:subnet/$subnetId|
 |시스템 디스크|  qcs::cvm:$region:$account:systemdisk/*|
-|미러 이미지|   qcs::cvm:$region:$account:image/*|
+|미러 이미지|   qcs::cvm:$region:$account:image/\*|
 |서브넷|  qcs::vpc:$region:$account:subnet/$subnetId|
 |데이터 디스크|  qcs::cvm:$region:$account:datadisk/*|
 |보안 그룹|  qcs::cvm:$region:$account:sg/$sgId|
