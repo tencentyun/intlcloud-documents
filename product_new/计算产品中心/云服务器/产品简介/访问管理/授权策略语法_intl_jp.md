@@ -20,7 +20,7 @@ CAMポリシー：
 ```
 - **バージョンversion**は記入必須項目であり、現時点で数値が"2.0"であることのみを認めています。
 - **ステートメント statement** は一つか複数の権限の詳細情報を説明することに使われています。当該要素は effect、action、resource，condition 等幾つかのほかの要素の権限又は権限の集合を含んでいます。一つのポリシーには一つのstatement 要素しかありません。
- 1. **操作action**は許可する又は拒否する操作を説明することに使われています。操作は API（nameプリフィックスで説明する）又は機能セット（特定APIセットであり、permidプリフィックスで説明する）であってよいです。当該要素は記入必須項目です。
+ 1. **操作action**は許可する又は拒否する操作を説明することに使われています。操作は API（nameプリフィックスで説明する）又は機能セット（特定APIセットであり、permitプリフィックスで説明する）であってよいです。当該要素は記入必須項目です。
  2. **リソースresource** は授権するの具体的なデータを説明することに使われています。リソースは6段階式で説明されます。各製品のリソース定義の詳細は異なっています。リソースの指定方法については、作成したリソース宣言に対応する製品ドキュメントをご参照ください。当該要素は記入必須項目です。
  3. **発効条件condition** はポリシー発効の制約条件を説明しています。条件はオペレーター、操作キーと操作値から構成されています。条件値は時間、IPアドレス等の情報を含んでいます。一部のサービスは、条件に対しほかの値を指定することを認めています。当該要素は記入必須項目ではありません。
  4. **影響effect** は宣言による結果が「許可」であるか「明示的な拒否」であるかを説明しています。それにallow (許可)とdeny (明示的な拒否)という2種類が含まれています。当該要素は記入必須項目です。
@@ -59,7 +59,7 @@ qcs:project_id:service_type:region:account:resource
 ```
 "resource":[ "qcs::cvm:bj:uin/164256472:instance/i-15931881scv4"]
 ```
- * ワイルドカードで特定アカウントのすべてのインスタンスを指定することができます。下記の通りです。
+* ワイルドカードで特定アカウントのすべてのインスタンスを指定することができます。下記の通りです。
 ```
 "resource":[ "qcs::cvm:bj:uin/164256472:instance/*"]
 ```
@@ -91,9 +91,9 @@ width:500px;
 |インスタンス|  qcs::cvm:$region:$account:instance/$instanceId|
 |キー|  qcs::cvm:$region:$account:keypair/$keyId|
 |VPC|  qcs::vpc:$region:$account:vpc/$vpcId|
-|サブネット|   qcs::vpc:$region:$account:vpc/$vpcId|
+|サブネット|   qcs::vpc:$region:$account:subnet/$subnetId|
 |システムディスク|  qcs::cvm:$region:$account:systemdisk/*|
-|イメージ|   qcs::cvm:$region:$account:image/*|
+|イメージ|   qcs::cvm:$region:$account:image/\*|
 |サブネット|  qcs::vpc:$region:$account:subnet/$subnetId|
 |データディスク|  qcs::cvm:$region:$account:datadisk/*|
 |セキュリティグループ|  qcs::cvm:$region:$account:sg/$sgId|
