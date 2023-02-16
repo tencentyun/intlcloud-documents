@@ -20,7 +20,7 @@ Kebijakan CAM:
 ```
 - **versi** diperlukan. Saat ini, hanya "2.0" yang didukung.
 - **pernyataan** menjelaskan detail dari satu atau beberapa izin. Elemen ini berisi izin atau sekumpulan izin yang terdiri dari elemen lain seperti efek, tindakan, sumber daya, dan kondisi. Satu kebijakan hanya memiliki satu pernyataan.
- 1. **Tindakan** menjelaskan tindakan yang diizinkan atau ditolak. Suatu tindakan dapat berupa API (dijelaskan menggunakan awalan "name") atau kumpulan fitur (satu kumpulan API tertentu, dijelaskan menggunakan awalan "permid"). Elemen ini diperlukan.
+ 1. **Tindakan** menjelaskan tindakan yang diizinkan atau ditolak. Suatu tindakan dapat berupa API (dijelaskan menggunakan awalan "name") atau kumpulan fitur (satu kumpulan API tertentu, dijelaskan menggunakan awalan "permit"). Elemen ini diperlukan.
  2. **sumber daya** menjelaskan detail otorisasi. Sumber daya dijelaskan dalam format enam bagian. Definisi sumber daya terperinci berbeda-beda tergantung produk. Untuk informasi selengkapnya tentang cara menentukan sumber daya, lihat dokumentasi untuk produk yang relevan. Elemen ini diperlukan.
  3. **kondisi** menjelaskan kondisi agar kebijakan dapat diterapkan. Kondisi terdiri dari operator, kunci tindakan, dan nilai tindakan. Nilai kondisi dapat berisi informasi seperti waktu dan alamat IP. Beberapa layanan memungkinkan Anda untuk menentukan nilai tambahan dalam suatu kondisi. Elemen ini opsional.
  4. **efek** menjelaskan apakah hasil yang dihasilkan oleh pernyataan tersebut adalah "allowed" (izinkan) atau "denied" (tolak). Elemen ini diperlukan.
@@ -91,9 +91,8 @@ Dalam tabel berikut, nama dengan awalan $ adalah placeholder.
 | Instans | qcs::cvm:$region:$account:instance/$instanceId |
 | Kunci | qcs::cvm:$region:$account:keypair/$keyId |
 | VPC | qcs::vpc:$region:$account:vpc/$vpcId |
-| Subnet | qcs::vpc:$region:$account:vpc/$vpcId |
-| Citra | qcs::cvm:$region:$account:image/* |
 | Subnet | qcs::vpc:$region:$account:subnet/$subnetId |
+| Citra | qcs::cvm:$region:$account:image/\* |
 | CBS |  qcs::cvm:$region:$account:volume/$diskid|
 | Grup keamanan | qcs::cvm:$region:$account:sg/$sgId |
 | EIP |  qcs::cvm:$region:$account:eip/*|
