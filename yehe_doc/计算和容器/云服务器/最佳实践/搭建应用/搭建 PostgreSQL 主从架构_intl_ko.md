@@ -7,7 +7,7 @@ PostgreSQL은 확장성과 표준 준수에 중점을 둔 오픈 소스 관계�
 ## 소프트웨어
 본 문서는 PostgreSQL을 구축하기 위해 다음 소프트웨어를 예로 사용합니다.
 - Linux: Linux 운영 체제의 경우, 본 문서는 CentOS 7.6을 예시로 사용합니다.
-- PostgreSQL: 관계형 데이터베이스 관리 시스템. 본 문서에서는 PostgreSQL 9.6을 예시로 사용합니다.
+- PostgreSQL: 관계형 데이터베이스 관리 시스템. 본 문서에서는 PostgreSQL 12을 예시로 사용합니다.
 
 
 ## 전제 조건
@@ -26,7 +26,7 @@ PostgreSQL은 확장성과 표준 준수에 중점을 둔 오픈 소스 관계�
 yum update -y
 ```
 3. 다음 명령어를 순서대로 실행하여 PostgreSQL을 설치합니다.
-본 문서에서는 PostgreSQL 버전 9.6을 예시로 사용하며 필요에 따라 다른 버전을 선택할 수 있습니다.
+본 문서에서는 PostgreSQL 버전 12을 예시로 사용하며 필요에 따라 다른 버전을 선택할 수 있습니다.
 ```
 wget --no-check-certificate https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 ```
@@ -34,18 +34,18 @@ wget --no-check-certificate https://download.postgresql.org/pub/repos/yum/reporp
 rpm -ivh pgdg-redhat-repo-latest.noarch.rpm
 ```
 ```
-yum install postgresql96-server postgresql96-contrib -y
+yum install postgresql12-server postgresql12-contrib -y
 ```
 ```
-/usr/pgsql-9.6/bin/postgresql96-setup initdb
+/usr/pgsql-12/bin/postgresql12-setup initdb
 ```
 4. 아래의 명령어를 실행하여 서비스를 시작하십시오.
 ```
-systemctl start postgresql-9.6.service
+systemctl start postgresql-12.service
 ```
 5. 다음 명령을 실행하여 시작 시 서비스가 자동으로 실행되도록 설정합니다.
 ```
-systemctl enable postgresql-9.6.service 
+systemctl enable postgresql-12.service 
 ```
 6. 다음 명령을 실행하여 postgres 사용자로 로그인합니다.
 ```
@@ -96,7 +96,7 @@ replica
 13. **exit**를 입력하고 **Enter**를 눌러 PostgreSQL을 종료합니다.
 14. 다음 명령을 실행하여 `pg_hba.conf` 구성 파일을 열고 `replica` 사용자 얼로우리스트를 설정합니다.
 ```
-vim /var/lib/pgsql/9.6/data/pg_hba.conf
+vim /var/lib/pgsql/12/data/pg_hba.conf
 ```
 15. **i**를 눌러 편집 모드로 전환하고 'IPv4 local connections' 섹션에 다음 두 줄의 내용을 추가합니다.
 ```
@@ -111,7 +111,7 @@ host    replication     replica         xx.xx.xx.xx/16         md5
 16. **Esc**를 누르고 **:wq**를 입력하여 파일을 저장하고 뒤로 돌아갑니다.
 17. 다음 명령어를 실행하여 `postgresql.conf` 파일을 엽니다.
 ```
-vim /var/lib/pgsql/9.6/data/postgresql.conf
+vim /var/lib/pgsql/12/data/postgresql.conf
 ```
 18. **i**를 눌러 편집 모드로 이동하고 다음 매개변수를 각각 찾은 다음 매개변수를 다음 콘텐츠로 수정합니다.
 ```
@@ -125,7 +125,7 @@ wal_sender_timeout = 60s #스트리밍 복사 호스트가 데이터를 보내�
 19. **Esc**를 누르고 **:wq**를 입력하여 파일을 저장하고 뒤로 돌아갑니다.
 20. 아래의 명령어를 실행하여 서비스를 재시작합니다.
 ```
-systemctl restart postgresql-9.6.service
+systemctl restart postgresql-12.service
 ```
 
 ### 세컨더리 노드 설정
@@ -143,11 +143,11 @@ wget --no-check-certificate https://download.postgresql.org/pub/repos/yum/reporp
 rpm -ivh pgdg-redhat-repo-latest.noarch.rpm
 ```
 ```
-yum install postgresql96-server postgresql96-contrib -y
+yum install postgresql12-server postgresql12-contrib -y
 ```
 4. 다음 명령을 실행하여 pg_basebackup 기본 백업 툴을 사용하여 백업 디렉터리를 지정합니다.
 ```
-pg_basebackup -D /var/lib/pgsql/9.6/data -h <프라이머리 노드 공용 IP> -p 5432 -U replica -X stream -P
+pg_basebackup -D /var/lib/pgsql/12/data -h <프라이머리 노드 공용 IP> -p 5432 -U replica -X stream -P
 ```
 다음 지시에 따라 데이터베이스 계정에 해당하는 비밀번호를 입력하고 **Enter**를 누릅니다. 다음 결과가 반환되면 백업이 성공한 것입니다.
 ```
@@ -156,11 +156,11 @@ Password:
 ```
 5. 다음 명령을 실행하여 master 설정 파일을 복사합니다.
 ```
-cp /usr/pgsql-9.6/share/recovery.conf.sample /var/lib/pgsql/9.6/data/recovery.conf
+cp /usr/pgsql-12/share/recovery.conf.sample /var/lib/pgsql/12/data/recovery.conf
 ```
 6. 다음 명령어를 실행하여 `recovery.conf` 파일을 엽니다.
 ```
-vim /var/lib/pgsql/9.6/data/recovery.conf
+vim /var/lib/pgsql/12/data/recovery.conf
 ```
 7. **i**를 눌러 편집 모드로 전환하고 각각 다음 매개변수를 찾아 다음 콘텐츠와 같이 수정합니다.
 ```
@@ -171,7 +171,7 @@ recovery_target_timeline = 'latest' #스트림 복사를 최신 데이터와 동
 8. **Esc**를 누르고 **:wq**를 입력하여 파일을 저장하고 뒤로 돌아갑니다.
 9. 다음 명령어를 실행하여 `postgresql.conf` 파일을 엽니다.
 ```
-vim /var/lib/pgsql/9.6/data/postgresql.conf
+vim /var/lib/pgsql/12/data/postgresql.conf
 ```
 10. **i**를 눌러 편집 모드로 전환하고 다음 매개변수를 각각 찾아 다음과 같이 수정합니다.
 ```
@@ -184,22 +184,22 @@ hot_standby_feedback = on          # 데이터 복사에 오류가 있는 경우
 11. **Esc**를 누르고 **:wq**를 입력하여 파일을 저장하고 뒤로 돌아갑니다.
 12. 다음 명령을 실행하여 데이터 디렉터리의 그룹 및 소유자를 수정합니다.
 ```
-chown -R postgres.postgres /var/lib/pgsql/9.6/data
+chown -R postgres.postgres /var/lib/pgsql/12/data
 ```
 13. 아래의 명령어를 실행하여 서비스를 시작하십시오.
 ```
-systemctl start postgresql-9.6.service
+systemctl start postgresql-12.service
 ```
 14. 다음 명령을 실행하여 시작 시 서비스가 자동으로 실행되도록 설정합니다.
 ```
-systemctl enable postgresql-9.6.service
+systemctl enable postgresql-12.service
 ```
 
 ### 배포 인증
 다음을 수행하여 배포 성공 여부를 인증할 수 있습니다.
 1. 다음 명령어를 실행하여 노드에서 디렉터리를 백업합니다.
 ```
-pg_basebackup -D /var/lib/pgsql/96/data -h <프라이머리 노드 공용 IP> -p 5432 -U replica -X stream -P
+pg_basebackup -D /var/lib/pgsql/12/data -h <프라이머리 노드 공용 IP> -p 5432 -U replica -X stream -P
 ```
 데이터베이스 비밀번호를 입력하고 **Enter** 키를 눌러 다음 결과가 반환되면 백업이 성공한 것입니다.
 ```
