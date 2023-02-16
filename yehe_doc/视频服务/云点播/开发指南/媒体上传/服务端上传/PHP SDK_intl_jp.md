@@ -13,7 +13,7 @@
 
 ### ソースコードパッケージによるインストール
 1. プロジェクトの中で依存管理用のcomposerツールを使用していない場合は、[Githubからアクセス](https://github.com/tencentyun/vod-php-sdk-v5)でソースコードを直接ダウンロードして、プロジェクトにインポートすると使用できます。
-2. vod-sdk.zipファイルをプロジェクトの中で解凍し、autoload.phpファイルをインポートすれば使用できます。
+2. [vod-sdk.zip](https://github.com/tencentyun/vod-php-sdk-v5/tree/master/packages)ファイルをプロジェクトの中で解凍し、autoload.phpファイルをインポートすれば使用できます。
 
 ##  シンプルビデオアップロード
 ### アップロードオブジェクトの初期化
