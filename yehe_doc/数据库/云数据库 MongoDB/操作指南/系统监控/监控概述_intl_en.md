@@ -8,8 +8,8 @@ TencentDB for MongoDB currently doesn't allow you to customize the monitoring da
 | 0–1 day | 5 seconds | 1 day |
 | 0–1 day  | 1 minute    | 15 days     |
 | 0–1 day  | 5 minutes    | 31 days     |
-| 0–1 days | 1 hour | 93 days |
-| 0–1 days | 1 day | 186 days |
+| 0–1 day | 1 hour | 93 days |
+| 0–1 day | 1 day | 186 days |
 | 0–7 days | 1 hour | 93 days |
 | 0–7 days  | 1 day      | 186 days    |
 | 7–30 days | 1 hour    | 93 days     |
