@@ -94,7 +94,6 @@ width:500px;
 |サブネット|   qcs::vpc:$region:$account:subnet/$subnetId|
 |システムディスク|  qcs::cvm:$region:$account:systemdisk/*|
 |イメージ|   qcs::cvm:$region:$account:image/\*|
-|サブネット|  qcs::vpc:$region:$account:subnet/$subnetId|
 |データディスク|  qcs::cvm:$region:$account:datadisk/*|
 |セキュリティグループ|  qcs::cvm:$region:$account:sg/$sgId|
 |EIP|  qcs::cvm:$region:$account:eip/*|
