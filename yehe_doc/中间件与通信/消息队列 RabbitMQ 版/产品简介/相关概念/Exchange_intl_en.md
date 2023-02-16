@@ -2,7 +2,7 @@ This document describes the concept, types, and usage of exchange in TDMQ for Ra
 
 ## Concept
 
-Exchange is a message routing agent in TDMQ for RabbitMQ. A producer sends a message to an exchange, which then routes the message to one or more queues based on its attributes or content (or discards it). Then, a consumer pulls it from such queues for consumption.
+Exchange acts as an agent for message routing in TDMQ for RabbitMQ. It receives a message sent from a producer and routes the message to one or more queues based on its attributes or content (or discards it), so that the message can be pulled for consumption by a consumer.
 
 TDMQ for RabbitMQ currently supports three types of exchange: direct, fanout, and topic.
 
