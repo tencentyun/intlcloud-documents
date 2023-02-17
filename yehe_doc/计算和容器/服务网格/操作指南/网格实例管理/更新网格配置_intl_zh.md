@@ -1,36 +1,40 @@
-## 操作场景
-您可以更新运行中服务网格的配置，本文将介绍如何更新 Egress 流量模式和配置 Sidecar 自动注入。
+您可以更新运行中服务网格的配置，本文将介绍如何更新网格配置。
 
-## 操作步骤
-
-### 修改 Egress 流量模式
+## 修改 Egress 流量模式
 
 Egress 流量模式是配置网格内服务对外访问的放通策略，可选择 Registry Only（仅支持访问网格自动发现的服务与手动注册的服务）或 Allow Any（可访问任何地址）。
 
 以下是配置网格 Egress 流量模式的步骤：
-
 1. 登录 [服务网格控制台](https://console.cloud.tencent.com/tke2/mesh)，单击需要变更配置的网格 ID，进入网格的管理页面。
 ![](https://qcloudimg.tencent-cloud.cn/raw/bd10b1c574235a8ac2226222b812ee9f.png)
+
 2. 在网格基本信息页面单击 Egress 流量模式栏的编辑按钮，进入**调整 Egress 流量模式**弹窗。
 ![](https://qcloudimg.tencent-cloud.cn/raw/7c97e45ea182ae955c2e10b5871590f2.png)
+
 3. 按照需要选择 **Allow Any** 或 **Registry Only**，单击**保存**更新 Egress 流量模式。
 ![](https://qcloudimg.tencent-cloud.cn/raw/efc5846fe97bc698b75945a9a778c870.png)
 
-### 配置 Sidecar 自动注入
 
-TCM 当前支持在控制台为指定的 Namespace 开启 Sidecar 自动注入，开启后该 Namespace 下新创建的 workload 将会自动安装网格 Sidecar，由于注入是在 workload 创建过程中完成的，因此开启注入无法为已存在的 workload 自动安装 Sidecar，您可以通过重建 workload 完成 Sidecar 自动注入。
+## 启用 HTTP1.0 支持
 
-以下是配置 Namespaces 级 Sidecar 自动注入的步骤：
+Istio 默认不支持 HTTP 1.0，如有需要，可以在网格基本信息中开启：
 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/cYMA448_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230111163424.png)
+
+## 关闭 HTTP 自动重试
+
+对于失败的 HTTP 请求，Istio 默认会重试2次，某些情况下这不符合您的预期，可以在网格基本信息页里关闭自动重试：
+
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/AcMB792_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230111163839.png)
+
+关闭对全网格生效，但您仍然可以对特定的 Virtual Service 显式设定重试策略。
+
+## 启用 DNS 代理
+
+istio 的 Sidecar 支持 DNS 代理，启用后，DNS 的流量也会被拦截，由 Sidecar 直接响应 DNS 请求，一方面 sidecar 会有 DNS 缓存，可以加速 DNS 响应，另一方面，多集群网格的场景，跨集群访问 service 时，不需要在 client 所在集群创建同名 service 也能正常解析 service。您可以参考以下步骤开启 DNS 转发。
 1. 登录 [服务网格控制台](https://console.cloud.tencent.com/tke2/mesh)，单击需要变更配置的网格 ID，进入网格的管理页面。
-![](https://qcloudimg.tencent-cloud.cn/raw/5bfd233ffe3448492283e1dce1f73bc8.png)
-2. 在服务列表页点击单击**Sidecar 自动注入**，进入 **Sidecar 自动注入配置**弹窗。
-![](https://qcloudimg.tencent-cloud.cn/raw/aae8187f5a5e5d6170c4d427adb8dac1.png)
-3. 按需勾选需要 **Sidecar** 自动注入的 **namespace**，单击**确定**完成 Sidecar 自动注入配置。
-![](https://qcloudimg.tencent-cloud.cn/raw/dcdd2807357aa5190e716d70cd12ee61.png)
 
-### 自定义 Sidecar 注入
-TCM 也支持您通过编辑 yaml 为特定的工作负载开启 Sidecar 自动注入，如有需要，您可以在 Pod 上添加 label：`istio.io/rev：{istio 版本号}`（注意 Sidecar 注入相关的标签设置，TCM 与 istio 默认语法略有区别），示例如下：
-![img](https://qcloudimg.tencent-cloud.cn/raw/e82a35473c7029445160eaed75e96834.png)
+2. 在基本信息页面，单击 **DNS Proxying > DNS 转发**右侧的![](https://qcloudimg.tencent-cloud.cn/image/document/5d77e87a83754f081a5e4be6a8612316.png)，开启 DNS 转发。如下图所示：
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/Fx2T315_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230111164108.png)
 
-如果您需要为已经开启了自动注入的 Namespace 下的特定 Pod 添加特例，使其不自动注入 Sidecar，可在 Pod label 中添加：`sidecar.istio.io/inject="false"`。Pod 级别的注入开关优先级高于 Namespace 级别，关于 Sidecar 自动注入的更多细节，请参考 Istio 文档 [安装 sidecar](https://istio.io/latest/zh/docs/setup/additional-setup/sidecar-injection/)。
+   如果您需要为没有定义 addresses 的 ServiceEntry 自动分配 IP，可以开启**自动 IP 分配**。更多内容可参考 [Address auto allocation](https://istio.io/latest/docs/ops/configuration/traffic-management/dns-proxy/#address-auto-allocation)。
