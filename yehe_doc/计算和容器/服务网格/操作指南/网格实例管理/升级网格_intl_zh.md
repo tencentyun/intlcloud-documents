@@ -29,9 +29,10 @@ TCM 提供网格升级服务， 用户可将低版本的网格升级到高版本
 
 其中业务数据面升级是用户将指定 Namespace 的 Sidecar 自动注入改为使用新版本，勾选后，该 Namespace 下**新创建**的业务 Pod 将注入新版本的 Sidecar ，**存量的业务 Pod 重建后才会更新为新版本**，由于重启涉及到业务可用性影响，平台不会自动重建业务 Pod，**需要用户手动重建**。
 
-> ?
-> - 您可以通过流水线重新发布业务或直接使用 kubectl patch、kubectl rollout restart 等命令行工具手工重建工作负载。
-> - 部分场景下 Sidecar 将被卸载而不是升级，例如：Namespace 曾开启过 Sidecar 注入，并且部分业务 Pod 已成功注入 Sidecar，之后又关闭了 Namepsace 级 Sidecar 注入，则重启业务 Pod 后，除非为 Pod 单独设置了 Sidecar 注入标记，否则 Sidecar 将被卸载。
+<dx-alert infotype="explain" title="">
+- 您可以通过流水线重新发布业务或直接使用 kubectl patch、kubectl rollout restart 等命令行工具手工重建工作负载。
+- 部分场景下 Sidecar 将被卸载而不是升级，例如：Namespace 曾开启过 Sidecar 注入，并且部分业务 Pod 已成功注入 Sidecar，之后又关闭了 Namepsace 级 Sidecar 注入，则重启业务 Pod 后，除非为 Pod 单独设置了 Sidecar 注入标记，否则 Sidecar 将被卸载。
+</dx-alert>
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/hfMT559_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230111161121.png)
 
