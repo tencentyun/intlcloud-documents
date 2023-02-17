@@ -28,7 +28,8 @@ You can configure not to block certain traffic. For example, you may not want to
 
 2. On the basic information page, click ![](https://qcloudimg.tencent-cloud.cn/image/document/5377020ec446cff9f40fc50aff12e406.png) on the right of **External request bypasses Sidecar**. See the figure below: ![](https://staticintl.cloudcachetci.com/yehe/backend-news/IbML391_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230111165043.png)
 
-3. In the **External request bypasses Sidecar** window that pops up, add the IP ranges that you do not want to block. See the figure below: ![](https://staticintl.cloudcachetci.com/yehe/backend-news/Bbrf780_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230111165143.png)
+3. In the **External request bypasses Sidecar** window that pops up, add the IP ranges that you do not want to block. See the figure below: 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Bbrf780_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230111165143.png)
 
 4. Click **Save**.
 
