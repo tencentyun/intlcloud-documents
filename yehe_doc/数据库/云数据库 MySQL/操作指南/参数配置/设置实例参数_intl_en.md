@@ -4,7 +4,7 @@ You can view and modify certain parameters and query the parameter modification 
 
 ## Notes
 - To ensure instance stability, only some parameters can be modified in the console. These parameters are displayed on the **Parameter Settings** page.
-- If the modified parameter requires instance restart to take effect, the system will ask you if you wish to restart. We recommend that you do so during off-peak hours and ensure that your application has a reconnection mechanism.
+- If the modified parameter requires instance restart to take effect, the system will ask you if you want to restart. We recommend that you do so during off-peak hours and ensure that your application has a reconnection mechanism.
 - If you want to return to the default formula, clear the entered parameters and apply.
 
 ## Modifying Parameters in the Parameter List
@@ -18,7 +18,7 @@ UI for source instance:
 4. In the pop-up window, select **Execution Mode** and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
->- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the instance maintenance time as described in [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
+>- If you select **During maintenance time**, the parameter modification task will be executed and take effect during the instance maintenance time. For more information, see [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
 >
 
 ### [Modifying one parameter](id:xgdgcs)
