@@ -3,13 +3,13 @@ VOD’s [Top Speed Codec (TSC)](https://www.tencentcloud.com/document/product/26
 
 <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/FsKK054_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16715089128415.png" width="600" />
 
-With VOD’s smart bitrate reduction feature, you can configure policies to automatically perform TSC transcoding on files whose playback count is high and replace the original transcoding outputs of the files with the low-bitrate files that are generated. This can increase your **net cost savings**. The whole process can be executed automatically.
+With VOD’s smart bitrate reduction feature, you can configure policies to automatically perform TSC transcoding on frequently played files. The general transcoding outputs of the files will be replaced with the low-bitrate files that are generated, while the playback URL remains unchanged, increasing your net cost savings.
 
 ## Use Cases
 <table>
     <tr>
-        <th>
-            Target customer              
+        <th width="20%">
+            Scenario              
         </th>
 				<th>
            Description
@@ -20,7 +20,7 @@ With VOD’s smart bitrate reduction feature, you can configure policies to auto
             UGSV platforms
         </td>
 				<td>
-				UGSV platforms manage a huge number of videos which differ greatly in terms of popularity. VOD’s bitrate reduction feature can automatically reduce the bitrate of popular videos without compromising their quality, helping you save traffic and storage costs.
+				Short video platforms manage a huge number of videos which differ greatly in terms of popularity. VOD’s bitrate reduction feature can automatically reduce the bitrate of popular videos without compromising their quality, helping you save traffic and storage costs.
         </td>
 		</tr>
 		<tr>
