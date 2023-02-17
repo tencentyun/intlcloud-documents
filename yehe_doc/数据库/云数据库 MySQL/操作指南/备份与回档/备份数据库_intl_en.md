@@ -35,7 +35,7 @@ TencentDB for MySQL single-node instances of cloud disk edition support **snapsh
 This will not affect your business access, but may have impact on your habit of automatic backup. If you need logical backups, you can use the manual backup option in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) or call the [CreateBackup](https://intl.cloud.tencent.com/document/product/236/15844) API to generate logical backups.
 - Instance backup files occupy backup space. We recommend that you plan the usage of backup space appropriately. Usage of backup space that exceeds the free tier will incur fees. For more information, see [Backup Space Billing](https://intl.cloud.tencent.com/document/product/236/32344).
 - We recommend you back up your database during off-peak hours.
-- To avoid situations where the required backup files are deleted after the retention period lapses, you need to download them to the local file system in a timely manner.
+- You need to download necessary backups to the local file system timely in case they are deleted after the retention period lapses.
 - Do not perform DDL operations during the backup process to avoid backup failure due to table locking.
 - TencentDB for MySQL single-node instances cannot be backed up.
 
@@ -47,7 +47,7 @@ This will not affect your business access, but may have impact on your habit of 
 >?
 > - The rollback feature as described in [Rolling Back Databases](https://intl.cloud.tencent.com/document/product/236/7276) relies on the backup cycle and retention days of data backups and log backups (binlog). Rollback will be affected if you reduce the automatic backup frequency and retention period. You can select the parameters as needed.
 > For example, if the backup cycle is set as Monday and Thursday and the retention period is set as seven days, you can roll a database back to any point of time in the past seven days (which is the actual retention days of data backups and log backups).
-> - Automatic backups cannot be deleted manually. You can set the retention period for automatic backups, and the backups will be deleted automatically when they expire.
+> - You can't delete automatic backups manually, but you can set the retention period for them so that they are deleted automatically upon expiration.
 > - Increasing the retention period of data and log backups may cause additional backup space fees.
 > - Shortening the retention period of log backups may affect the data rollback cycle of the instance.
 
@@ -126,7 +126,7 @@ Expired backup sets will be automatically deleted and cannot be downloaded or re
 >?Manual backups will also take up the backup space. We recommend you plan the usage of the backup space appropriately to reduce costs.
 
 #### 2. Can I delete backups manually?
-- Automatic backups cannot be deleted manually. You can set the retention period for automatic backups, and they will be deleted automatically when they expire. 
+- You can't delete automatic backups manually, but you can set the retention period for them so that they are deleted automatically upon expiration.
 - For two-node and three-node instances, manual backups can be manually deleted from the backup list in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). Manual backups can be retained permanently as long as they are not deleted. For single-node instances of cloud disk editions, manual backups cannot be deleted.
 
 #### 3. Can I disable data and log backups?
