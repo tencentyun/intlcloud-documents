@@ -19,9 +19,9 @@ You can restore a TencentDB for MySQL instance to any point in time within the l
 - Your account balance must be positive.
 
 ## Notes
-- The specification of the new instance must be greater than or equal to that of the original instance.
+- The specification of the clone instance must be greater than or equal to that of the original instance.
 - The hard disk space of the clone instance must be larger than the amount of the data to be cloned from, or else the clone task may fail.
-- The availability zone, database version, replication mode, and default database parameters of the clone must be the same as those of the original instance.
+- The AZ, database version, replication mode, and default database parameters of the clone must be the same as those of the original instance.
 - The clone will not be displayed in the instance list in the console until the clone process is completed.
 
 ## Directions
@@ -44,4 +44,4 @@ You can restore a TencentDB for MySQL instance to any point in time within the l
 
 ## FAQs
 #### Will the access to the original instance be affected during the clone process?
-The original backup set and binlogs uploaded to COS are used for cloning, which will not affect the access to the source instance.
+No. The cloning is performed with the original backup set and binlogs uploaded to COS.
