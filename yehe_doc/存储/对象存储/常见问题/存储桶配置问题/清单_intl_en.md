@@ -47,7 +47,7 @@ You can get a file list as follows:
 
 ### Can I reset the inventory configuration immediately after I found out I set it incorrectly?
 
-COS’s inventory feature regularly reads the latest configuration at midnight every day before it executes tasks. Currently, manual trigger is not supported. After you modify the inventory configuration, tasks will be executed early in the morning on the next day.
+COS’s inventory feature regularly reads the latest configuration at midnight every day before it executes tasks.After you modify the inventory configuration, tasks will be executed early in the morning on the next day.
 
 ### Does COS support counting file quantity by file type?
 
