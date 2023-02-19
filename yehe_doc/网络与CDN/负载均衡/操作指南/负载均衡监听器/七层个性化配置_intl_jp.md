@@ -10,14 +10,14 @@ CLBはカスタム設定機能をサポートしており、client_max_body_size
 
 | 設定フィールド |   デフォルト値/推奨値  |    パラメータ範囲  | 説明  |
 | :-------- | :-------- | :------ |:------ |
-|ssl_protocols |TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 |TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 |使用するTLSプロトコルのバージョンです。 |
-|  ssl_ciphers  | 下記参照 |  下記参照 | 暗号スイートです。 |
+|ssl_protocols |<ul><li>デフォルト値：TLSv1、TLSv1.1、TLSv1.2</li><li>推奨値：TLSv1.2、TLSv1.3</li></ul> |TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 |使用するTLSプロトコルのバージョンです。 |
+|  ssl_ciphers  | [ssl_ciphersデフォルト値](#ssl_ciphers) |  [ssl_ciphersパラメータ範囲](#ssl_ciphers)  | 暗号スイートです。 |
 |  client_header_timeout  | 60s |  [30-120]s | Clientリクエストヘッダーを取得する際のタイムアウト時間です。タイムアウトになると408を返します。|
 |  client_header_buffer_size | 4k |[1-256]k | Clientリクエストヘッダーを保存するデフォルトのBufferサイズです。 |
 |  client_body_timeout | 60s |  [30-120]s | ClientリクエストBodyを取得する際のタイムアウト時間です。Body全体の取得にかかる持続時間ではなく、一定時間データ伝送のないアイドル状態となった場合のタイムアウト時間を指します。タイムアウトになると408を返します。 |
 |  client_max_body_size | 60M |[1-10240]M| <ul><li>デフォルトの設定範囲は1M～256Mであり、直接設定するだけで完了です。</li><li>最大10240M、すなわち10Gまでサポートされます。client_max_body_size の設定範囲を256Mより大きくする場合は、<a href="#buffer">proxy_request_buffering</a>の値をoffに設定する必要があります。</li></ul> |
 |  keepalive_timeout | 75s | [0-900]s| Client-Serverの長時間接続維持時間です。0に設定すると、長時間接続が無効になります。900sより長く設定したい場合は、[チケット申請](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)を提出してください。最大3600sまで設定可能です。 |
-|  add_header |ユーザーによるカスタム追加|- | クライアントに特定のヘッダーフィールドを返します。形式はadd_header xxx yyyです。</br>例えばクロスドメインのケースでは、`add_header Access-Control-Allow-Methods 'POST, OPTIONS'; add_header Access-Control-Allow-Origin *;`のように設定することができます。 |
+|  add_header |ユーザーによるカスタム追加|- | クライアントに特定のヘッダーフィールドを返します。形式はadd_header xxx yyyです。</br>例えばクロスドメインのケースでは、`add_header Access-Control-Allow-Methods 'POST, OPTIONS'; add_header Access-Control-Allow-Origin *;`のように設定することができます。|
 |  more_set_headers |ユーザーによるカスタム追加|- | クライアントに特定のヘッダーフィールドを返します。形式はmore_set_headers "A:B"です。 |
 |  proxy_connect_timeout | 4s | [4-120]s |upstreamバックエンドの接続タイムアウト時間です。|
 |  proxy_read_timeout |60s |[30-3600]s|upstreamバックエンドの読み取りの応答タイムアウト時間です。|
@@ -26,7 +26,7 @@ CLBはカスタム設定機能をサポートしており、client_max_body_size
 |  keepalive_requests | 100 | [1-10000] |Client-Serverの長時間接続において送信可能な最多リクエスト数です。|
 |  proxy_buffer_size | 4k |[1-32]k| Serverのレスポンスヘッダーのサイズです。デフォルトではproxy_bufferで設定した単独のバッファサイズとなります。proxy_buffer_sizeを設定する場合は、proxy_buffersも同時に設定する必要があります。|
 |  proxy_buffers | 8 4k |[3-8] [4-16]k|バッファ数およびバッファサイズです。|
-|  <span id="buffer">proxy_request_buffering</span> | on |on，off|<ul><li>onはクライアントのリクエストボディをキャッシュすることを表します。CLBはリクエストをキャッシュし、全体を受信し終わってから分割してバックエンドCVMに転送します。</li><li>offはクライアントのリクエストボディをキャッシュしないことを表します。CLBはリクエストを受信すると、ただちにバックエンドCVMに転送します。この場合、バックエンドCVMにはある程度のパフォーマンス負荷がかかります。</li></ul>|
+|  <span id="buffer">proxy_request_buffering</span> | off |on，off|<ul><li>onはクライアントのリクエストボディをキャッシュすることを表します。CLBはリクエストをキャッシュし、全体を受信し終わってから分割してバックエンドCVMに転送します。</li><li>offはクライアントのリクエストボディをキャッシュしないことを表します。CLBはリクエストを受信すると、ただちにバックエンドCVMに転送します。この場合、バックエンドCVMにはある程度のパフォーマンス負荷がかかります。</li></ul>|
 |  proxy_set_header   |X-Real-Port $remote_port|<ul><li>X-Real-Port $remote_port</li><li>X-clb-stgw-vip $server_addr</li><li>Stgw-request-id $stgw_request_id</li><li>X-Forwarded-Port $vport</li><li>X-Method $request_method</li><li>X-Uri $uri</li></ul>|<ul><li>X-Real-Port $remote_portはクライアントポートを表します。</li><li>X-clb-stgw-vip $server_addrはCLBのVIPを表します。</li><li>Stgw-request-id $stgw_request_idはリクエストIDを表します（CLB内部で使用します）。</li><li>X-Forwarded-PortはCLBリスナーのポートを表します。</li><li>X-Methodはクライアントのリクエストメソッドを表します。</li><li>X-UriはクライアントのリクエストパスのURIを表します。</li></ul> |
 |  send_timeout | 60s |[1-3600]s|サーバーからクライアントへのデータ伝送のタイムアウト時間です。連続した2回のデータ送信の間隔であり、リクエスト全体の伝送時間ではありません。|
 |  ssl_verify_depth |  1 |[1，10]|クライアント証明書チェーンの検証の深さを設定します。|
@@ -39,7 +39,7 @@ CLBはカスタム設定機能をサポートしており、client_max_body_size
 
 >?このうち、proxy_buffer_sizeとproxy_buffersの設定の値は制約条件である、2 * max（proxy_buffer_size, proxy_buffers.size) ≤（proxy_buffers.num - 1）\* proxy_buffers.sizeを満たす必要があります。例えば、proxy_buffer_sizeが24k、proxy_buffersが8 8kの場合、2 * 24k = 48k、（8 - 1）\* 8k = 56kとなり、このとき48k ≤ 56kであるため、エラーは発生しません。これを満たさない場合はエラーが発生します。
 >
-## ssl_ciphers設定の説明
+## ssl_ciphers設定の説明[](id:ssl_ciphers)
 ssl_ciphers暗号スイートを設定する際、形式はOpenSSLで使用する形式と一致させる必要があります。アルゴリズムリストは1つまたは複数の`<cipher strings>`とし、複数のアルゴリズムの間は「:」で区切ります。ALLはすべてのアルゴリズムを表し、「!」はこのアルゴリズムが有効になっていないことを表します。「+」はこのアルゴリズムの配置順を最後にすることを表します。
 デフォルトで強制的に無効化される暗号化アルゴリズムは、`!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!DHE`です。
 

@@ -1,7 +1,7 @@
 You can create an HTTP listener to a CLB instance to forward HTTP requests from the client. HTTP is suitable for applications where request contents need to be identified, such as web applications and mobile apps.
 
 ## Prerequisites
-You need to [create a CLB instance](https://intl.cloud.tencent.com/document/product/214/6149) first.
+You need to create a CLB instance as instructed in [Creating CLB Instances](https://intl.cloud.tencent.com/document/product/214/6149) first.
 
 ## Directions
 ### Step 1. Configure a listener
@@ -9,7 +9,7 @@ You need to [create a CLB instance](https://intl.cloud.tencent.com/document/prod
 2. Select a region in the top-left corner of the CLB instance list page and click **Configure Listener** in the **Operation** column on the right.
 ![](https://qcloudimg.tencent-cloud.cn/raw/e3b94945c6dbe084ba51e1e22b46b341.png)
 3. Under **HTTP/HTTPS Listener**, click **Create** and configure the HTTP listener in the **Create Listener** pop-up window.
- **a. Listener creation**
+ **1. Listener creation**
 <table>
 <thead>
 <tr>
@@ -31,12 +31,16 @@ You need to [create a CLB instance](https://intl.cloud.tencent.com/document/prod
 </tr>
 <tr>
 <td>Enable Persistent Connection</td>
-<td>Once this feature is enabled, persistent connections will be used between CLB and real server, and CLB will no longer pass through the source IP, which can be obtained from XFF. To ensure normal forwarding, enable the "Allow by default" feature in the CLB security group or allow `100.127.0.0/16` in the CVM security group.</td>
+<td>Once this feature is enabled, persistent connections will be used between CLB and real server, and CLB will no longer pass through the source IP, which can be obtained from XFF. To ensure normal forwarding, enable the "Allow by default" feature in the CLB security group or allow `100.127.0.0/16` in the CVM security group.
+<dx-alert infotype="explain" title="">
+Once this feature is enabled, the number of the connections between CLB and the backend service will fluctuate in the range of [QPS, QPS*60], subject to the connection reuse rate. If the backend service has a limit on the maximum number of connections, we recommend you be cautious when enabling this feature. This feature is currently in beta test. To try it out, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+</dx-alert>
+</td>
 <td><span>Enabled</span></td>
 </tr>
 </tbody>
 </table>
- <b>b. Forwarding rule creation</b>
+ <b>2. Forwarding rule creation</b>
 <table>
 <thead>
 <tr>
@@ -46,7 +50,7 @@ You need to [create a CLB instance](https://intl.cloud.tencent.com/document/prod
 </tr>
 </thead>
 <tbody><tr>
-<td>Domain name</td>
+<td>Domain Name</td>
 <td>Forwarding domain name: <ul style="margin-bottom:0px;"><li>Length: 1 - 80 characters. </li><li>Underscores (_) cannot be the first character. </li><li>Exact and wildcard domain names are supported. </li><li>Regex is supported. </li><li>For detailed configuration rules, see <a href="https://intl.cloud.tencent.com/document/product/214/9032">Layer-7 Domain Name Forwarding and URL Rules</a>.</li></ul></td>
 <td><span>www.example.com</span></td>
 </tr>
@@ -58,25 +62,29 @@ You need to [create a CLB instance](https://intl.cloud.tencent.com/document/prod
 <tr>
 <td>URL Path</td>
 <td>
-Forwarding URL path: <ul style="margin-bottom:0px;"><li>Length: 1 - 200 characters. </li><li>Regex is supported. </li><li>For detailed configuration rules, see <a href="https://intl.cloud.tencent.com/document/product/214/9032">Layer-7 Domain Name Forwarding and URL Rules</a>.</li></ul>| /index |
-| Balancing method | For HTTP listeners, CLB supports three scheduling algorithms: weighted round robin (WRR), weighted least connections (WLC), and IP hash.<ul style="margin-bottom:0px;"> <li>WRR: requests are sequentially delivered to different real servers according to their weights. Scheduling is done based on the **number of new connections**, where servers with higher weights will undergo more polls (i.e., a higher probability), while servers with the same weight process the same number of connections.</li><li>WLC: loads of servers are estimated according to the number of active connections to the servers. Scheduling is done based on server loads and weights. If their weights are the same, servers with fewer active connections will undergo more polls (i.e., a higher probability).</li><li>IP hash: hash keys are used to locate the corresponding servers in the static hash table based on the source IPs of requests. If a server is available and not overloaded, requests will be delivered to it; otherwise, a null value will be returned.</li></ul></td>
+Forwarding URL path: <ul style="margin-bottom:0px;"><li>Length: 1 - 200 characters. </li><li>Regex is supported. </li><li>For detailed configuration rules, see <a href="https://intl.cloud.tencent.com/document/product/214/9032">Layer-7 Domain Name Forwarding and URL Rules</a>.</li></ul></td>
 <td>/index</td>
+</tr>
+<tr>
+<td>Balancing method</td>
+<td>For HTTP listeners, CLB supports three scheduling algorithms: weighted round-robin (WRR), weighted least connections (WLC), and IP hash.<ul style="margin-bottom:0px;"> <li>WRR: requests are sequentially delivered to different real servers according to their weights. Scheduling is done based on the <b>number of new connections</b>, where servers with higher weights will undergo more polls (i.e., a higher probability), while servers with the same weight process the same number of connections.</li><li>WLC: loads of servers are estimated according to the number of active connections to the servers. Scheduling is done based on server loads and weights. If their weights are the same, servers with fewer active connections will undergo more polls (i.e., a higher probability).</li><li>IP hash: Hash keys are used to locate the corresponding servers in the static hash table based on the source IPs of requests. If a server is available and not overloaded, requests will be delivered to it; otherwise, a null value will be returned.</li></ul></td>
+<td>WRR</td>
 </tr>
 <tr>
 <td>Getting Client IP</td>
 <td>Enabled by default.</td>
-<td><span>Enabled</span></td>
+<td>Enabled</td>
 </tr>
 <tr>
 <td>Gzip Compression</td>
 <td>Enabled by default.</td>
-<td><span>Enabled</span></td>
+<td>Enabled</td>
 </tr>
 </tbody>
 </table>
-	<b>c. Health check</b></br>
+<b>3. Health check</b></br>
 For more information, see <a href="https://intl.cloud.tencent.com/document/product/214/39251">Health Check Configuration</a>.</br> 
- <b>d. Session persistence</b></br>
+<b>4. Session persistence</b></br>
 <table>
 <tr>
 <th width="12%">Session Persistence Configuration</th>
@@ -96,16 +104,16 @@ For more information, see <a href="https://intl.cloud.tencent.com/document/produ
 </table>
 
 
-### Step 2. Bind a real server
-1. On the **Listener Management** page, select the created listener `HTTP:80`. Click **+** on the left to expand the domain names and URL paths, select the desired URL path, and view the real servers bound to the path on the right of the listener.
-2. Click **Bind**, select the target real server, configure the server port and weight in the pop-up window.
->? Default port: enter the **Default Port** first and then select the CVM instance. The port of every CVM instance is the default port.
+### Step 2. Bind a backend CVM
+1. On the **Listener management** page, select the created listener `HTTP:80`. Click **+** on the left to expand the domain names and URL paths, select the desired URL path, and view the real servers bound to the path on the right of the listener.
+2. Click **Bind**, select the target real server, and configure the server port and weight in the pop-up window.
+>? Default port: Enter the **Default Port** first and then select the CVM instance. The port of every CVM instance is the default port.
 >
 
 
 ### Step 3. Configure a security group (optional)
-You can configure a CLB security group to isolate public network traffic. For more information, see [CLB Security Group Configuration](https://intl.cloud.tencent.com/document/product/214/14733).
+You can configure a CLB security group to isolate public network traffic. For more information, see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
 
-### Step 4. Modify and delete a listener (optional)
+### Step 4. Modify or delete a listener (optional)
 If you need to modify or delete a created listener, click the listener on the **Listener Management** page and click ![](https://qcloudimg.tencent-cloud.cn/raw/4ab10b98316964812832043bbfd99df6.svg) for modification or ![](https://qcloudimg.tencent-cloud.cn/raw/e863cc51c29790d665d53feba800fd90.svg) for deletion.
 

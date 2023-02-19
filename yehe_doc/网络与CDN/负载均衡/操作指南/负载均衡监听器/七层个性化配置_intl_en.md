@@ -10,36 +10,36 @@ CLB custom configuration supports the following configuraitons:
 
 | Configuration |   Default Value/Recommended Value  |    Parameter Range  | Description  |
 | :-------- | :-------- | :------ |:------ |
-|ssl_protocols |TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 |TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 | Version of TLS protocol used |
-|  ssl_ciphers  | See further below. | See further below. | Encryption suite |
+|ssl_protocols |<ul><li>Default value: TLSv1, TLSv1.1, TLSv1.2</li><li>Recommend value: TLSv1.2, TLSv1.3</li></ul> |TLSv1, TLSv1.1, TLSv1.2, TLSv1.3 | Version of TLS protocol used |
+|  ssl_ciphers  | [ssl_ciphers default value](#ssl_ciphers) |  [ssl_ciphers parameter range](#ssl_ciphers)  | Cipher suite. |
 |  client_header_timeout  | 60s |  [30-120]s | Timeout period of obtaining a client request header; in case of timeout, a 408 error will be returned.|
 |  client_header_buffer_size | 4k |[1-256]k | Size of default buffer where a client request header is stored. |
 |  client_body_timeout | 60s |  [30-120]s | Timeout period of obtaining a client request body, which is not the time for obtaining the entire body but refers to the idle period without data transmission; in case of timeout, a 408 error will be returned. |
 |  client_max_body_size | 60M |[1-10240]M| <ul><li>Default: 1 - 256.</li><li>Maximum size: 10,240 MB (10 GB); if `client_max_body_size` is more than 256 MB, the value of <a href="#buffer">proxy_request_buffering</a> must be `off`.</li></ul> |
 |  keepalive_timeout | 75s | [0-900]s| `Client-server` persistent connection hold time; if it is set to 0, persistent connection is prohibited. If you want to set it to over 900, please submit an application(https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1). The maximum value you can set is 3600. |
-|  add_header |Custom| - | Specific header field returned to the client in the format of `add_header xxx yyy`. |
+|  add_header | Custom | - | Specific header field returned to the client in the format of `add_header xxx yyy`. </br>For example, you can configure it as `add_header Access-Control-Allow-Methods 'POST, OPTIONS'; add_header Access-Control-Allow-Origin *;` for cross-region scenarios. |
 |  more_set_headers |Custom| - | Specific header field returned to the client in the format of `more_set_headers "A:B"`. |
 |  proxy_connect_timeout | 4s | [4-120]s |Timeout period of upstream backend connection.|
 |  proxy_read_timeout |60s |[30-3600]s|Timeout period of reading upstream backend response.|
 |  proxy_send_timeout |60s |[30-3600]s|Timeout period of sending a request to the upstream backend.|
 |  server_tokens | on | on, off | <ul><li>`on`: displays version information;</li><li>`off`: hides version information.</li></ul>|
 |  keepalive_requests | 100 | [1-10000] |Maximum number of requests that can be sent over the `client-server` persistent connection.|
-|  proxy_buffer_size | 4k |[1-32]k| Size of server response header, which is the size of a single buffer set in `proxy_buffer` by default; to use `proxy_buffer_size`, `proxy_buffers` must be set at the same time.|
-|  proxy_buffers | 8 4k |[3-8] [4-16]k|Buffer quantity and size.|
-|  <span id="buffer">proxy_request_buffering</span> | on |on, off|<ul><li>`on`: caches the client request body; the CLB instance caches the request and forwards it to the backend CVM instance in multiple parts after the request is completely received.</li><li>`off`: does not cache the client request body; after receiving a request, the CLB instance directly forwards it to the backend CVM instance, which increases pressure on the backend CVM performance.</li></ul>|
-|  proxy_set_header   |X-Real-Port $remote_port|<ul><li>X-Real-Port $remote_port</li><li>X-clb-stgw-vip $server_addr</li><li>Stgw-request-id $stgw_request_id</li><li>X-Forwarded-Port $vport</li><li>X-Method $request_method</li><li>X-Uri $uri</li></ul>|<ul><li>`X-Real-Port $remote_port`: client port.</li><li>`X-clb-stgw-vip $server_addr`: CLB VIP.</li><li>`Stgw-request-id $stgw_request_id`: request ID (used in CLB only).</li><li>`X-Forwarded-Port`: CLB listener port.</li><li>`X-Method`: client request method.</li><li>`X-Uri`: client request URI.</li></ul> |
+| proxy_buffer_size | 4 KB | [1-32] KB | Size of server response header, which is the size of a single buffer set in `proxy_buffer` by default; to use `proxy_buffer_size`, `proxy_buffers` must be set at the same time. |
+|  proxy_buffers |8k and 4k |[3-8], [4-16] k|Buffer quantity and size.|
+|  <span id="buffer">proxy_request_buffering</span> | off |on, off|<ul><li>`on`: caches the client request body; the CLB instance caches the request and forwards it to the backend CVM instance in multiple parts after the request is completely received.</li><li>`off`: does not cache the client request body; after receiving a request, the CLB instance directly forwards it to the backend CVM instance, which increases pressure on the backend CVM performance.</li></ul>|
+|  proxy_set_header   |X-Real-Port $remote_port|<ul><li>X-Real-Port $remote_port</li><li>X-clb-stgw-vip $server_addr</li><li>Stgw-request-id $stgw_request_id</li><li>X-Forwarded-Port $vport</li><li>X-Method $request_method</li><li>X-Uri $uri</li></ul>|<ul><li>`X-Real-Port $remote_port: client port.</li><li>`X-clb-stgw-vip $server_addr`: CLB VIP.</li><li>`Stgw-request-id $stgw_request_id`: request ID (used in CLB only).</li><li>`X-Forwarded-Port`: CLB listener port.</li><li>`X-Method`: client request method.</li><li>`X-Uri`: client request URI.</li></ul> |
 |  send_timeout | 60s |[1-3600]s|Timeout period of data transfer from the server to the client, which is the time interval between two consecutive data transfer actions, not the entire request transfer period.|
 |  ssl_verify_depth |  1 |[1, 10]|Verification depth of the client certificate chain.|
 |proxy_redirect | http:// https:// | http:// https://  | If the upstream server returns a redirect or refresh request (code 301 or 302), `proxy_redirect` will reset `http` to `https` in the `Location` or `Refresh` field in the HTTP header for safe redirection.  |
 | ssl_early_data  |  off |on, off| Enables or disables TLS 1.3 0-RTT. Only when the field value of `ssl_protocols` contains `TLSv1.3`, `ssl_early_data` can take effect. **You shall consider the risk of replay attacks before enabling `ssl_early_data`.**|
 |http2_max_field_size|4k|[1-256]k|Restricts the maximum size of the request header compressed in HPACK.|
 |error_page|-|error_page code [ = [ response]] uri|A predefined URL will be shown for the specific error code. The default response code defaults to 302. The URI must start with `/`.|
-| proxy_ignore_client_abort | off | on, off | Connects or disconnects the CLB instance with the real server if the client disconnect with the CLB instance without waiting for a response.|
+| proxy_ignore_client_abort | off | on, off | Whether to disconnect the CLB from the backend server when the client disconnect with the CLB instance without waiting for a response.|
 
 
 >?Requirements on the value of `proxy_buffer_size` and `proxy_buffers`: 2 * max (proxy_buffer_size, proxy_buffers.size) ≤ (proxy_buffers.num - 1)\* proxy_buffers.size; For example, if `proxy_buffer_size` is "24k", `proxy_buffers` is "8 8k"; then 2 * 24k = 48k, (8 - 1)\* 8k = 56k; and 48k ≤ 56k, so there will be no configuration error.
 >
-## ssl_ciphers Configuration Instructions
+## ssl_ciphers Configuration Description[](id:ssl_ciphers)
 The ssl_ciphers encryption suite being configured must be in the same format as that used by OpenSSL. The algorithm list is one or more `<cipher strings>`; multiple algorithms should be separated with ":"; ALL represents all algorithms, "!" indicates not to enable an algorithm, and "+" indicates to move an algorithm to the last place.
 The encryption algorithm for default forced disabling is: `!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!DHE`.
 

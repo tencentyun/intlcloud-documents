@@ -10,8 +10,8 @@ CLB 사용자 지정 구성은 다음 구성을 지원합니다.
 
 | 구성 |   기본값/권장값  |    매개변수 범위  | 설명  |
 | :-------- | :-------- | :------ |:------ |
-|ssl_protocols |TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 |TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 |사용된 TLS 프로토콜의 버전입니다. |
-|  ssl_ciphers  | 아래 참고 |  아래 참고 | 암호화 제품군입니다. |
+|ssl_protocols |<ul><li>기본값: TLSv1, TLSv1.1, TLSv1.2</li><li>권장값: TLSv1.2, TLSv1.3</li></ul> |TLSv1, TLSv1 .1, TLSv1.2, TLSv1.3 | 사용된 TLS 프로토콜 버전 |
+| ssl_ciphers  | [ssl_ciphers 기본값](#ssl_ciphers) |  [ssl_ciphers 매개변수 범위](#ssl_ciphers)  | 암호 제품군. |
 |  client_header_timeout  | 60s |  [30-120]s | Client 요청 헤더를 가져오는 타임아웃 시간. 타임아웃의 경우 408 오류가 반환됩니다.|
 |  client_header_buffer_size | 4k |[1-256]k | Client 요청 헤더가 저장되는 기본 Buffer의 크기입니다. |
 |  client_body_timeout | 60s |  [30-120]s | Client 요청 Body 획득의 타임아웃 시간은, 전체 Body를 획득하는 시간이 아니라 데이터 전송이 없는 유휴 기간을 나타냅니다. 타임아웃의 경우 408 오류가 반환됩니다. |
@@ -26,7 +26,7 @@ CLB 사용자 지정 구성은 다음 구성을 지원합니다.
 |  keepalive_requests | 100 | [1-10000] |Client-Server 지속 연결을 통해 보낼 수 있는 최대 요청 수입니다.|
 |  proxy_buffer_size | 4k |[1-32]k| 기본적으로 proxy_buffer에 설정된 단일 버퍼의 크기인 Server 응답 헤더의 크기입니다. proxy_buffer_size를 사용하려면 proxy_buffers가 동시에 설정되어야 합니다.|
 |  proxy_buffers | 8 4k |[3-8] [4-16]k|버퍼 수량 및 크기.|
-|  <span id="buffer">proxy_request_buffering</span> | on |on, off|<ul><li>on: 클라이언트 요청 본문을 캐시합니다. CLB 인스턴스는 요청을 캐시하고 요청이 완전히 수신된 후 여러 부분에서 이를 백엔드 CVM 인스턴스로 포워딩합니다. </li><li>off: 클라이언트 요청 본문을 캐시하지 않습니다. 요청을 수신한 후 CLB 인스턴스는 이를 백엔드 CVM 인스턴스로 직접 포워딩하여 백엔드 CVM 성능에 대한 부담을 높입니다. </li></ul>|
+|  <span id="buffer">proxy_request_buffering</span> | off |on, off|<ul><li>on: 클라이언트 요청 본문을 캐시합니다. CLB 인스턴스는 요청을 캐시하고 요청이 완전히 수신된 후 여러 부분에서 이를 백엔드 CVM 인스턴스로 포워딩합니다. </li><li>off: 클라이언트 요청 본문을 캐시하지 않습니다. 요청을 수신한 후 CLB 인스턴스는 이를 백엔드 CVM 인스턴스로 직접 포워딩하여 백엔드 CVM 성능에 대한 부담을 높입니다. </li></ul>|
 |  proxy_set_header   |X-Real-Port $remote_port|<ul><li>X-Real-Port $remote_port</li><li>X-clb-stgw-vip $server_addr</li><li>Stgw-request-id $stgw_request_id</li><li>X-Forwarded-Port $vport</li><li>X-Method $request_method</li><li>X-Uri $uri</li></ul>|<ul><li>X-Real-Port $remote_port 클라이언트 포트. </li><li>X-clb-stgw-vip $server_addr CLB VIP. </li><li>Stgw-request-id $stgw_request_id 요청 ID(CLB에서만 사용됨). </li><li>X-Forwarded-Port CLB 리스너 포트. </li><li>X-Method 클라이언트 요청 메소드. </li><li>X-Uri 클라이언트 요청 URI.</li></ul> |
 |  send_timeout | 60s |[1-3600]s|서버에서 클라이언트로의 데이터 전송 타임아웃 시간으로, 전체 요청 전송 기간이 아니라 두 개의 연속 데이터 전송 작업 사이의 시간 간격입니다.|
 |  ssl_verify_depth |  1 |[1, 10]|클라이언트 인증서 체인의 검증 Depth입니다.|
@@ -39,7 +39,7 @@ CLB 사용자 지정 구성은 다음 구성을 지원합니다.
 
 >?proxy_buffer_size 및 proxy_buffers 값에 대한 요구 사항: 2 * max(proxy_buffer_size, proxy_buffers.size) ≤(proxy_buffers.num - 1)\* proxy_buffers.size. 예를 들어 proxy_buffer_size가 24k이면 proxy_buffers는 8 8k입니다. 2 * 24k = 48k, (8 - 1)\* 8k = 56k 및 48k ≤ 56k이므로 구성 오류가 없습니다.
 >
-## ssl_ciphers 구성 지침
+## ssl_ciphers 구성 설명[](id:ssl_ciphers)
 구성 중인 ssl_ciphers 암호화 제품군은 OpenSSL에서 사용하는 것과 동일한 형식이어야 합니다. 알고리즘 목록은 하나 이상의 `<cipher strings>`입니다. 여러 알고리즘은 ‘:’로 구분해야 합니다. ALL은 모든 알고리즘을 나타냅니다. ‘!’는 알고리즘을 활성화하지 않음을 나타내고 ‘+’는 알고리즘을 마지막 위치로 이동함을 나타냅니다.
 기본 강제 비활성화에 대한 암호화 알고리즘은 `!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!DHE`입니다.
 

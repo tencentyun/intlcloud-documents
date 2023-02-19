@@ -1,7 +1,8 @@
 ## Process Flows
 The process flows of layer-7 and layer-4 CLB (formerly application CLB) are shown below:
 ![](https://main.qcloudimg.com/raw/9c30c679e6a5fd70f9dd9273f8784d6d.jpg)
-If layer-7 CLB is used to forward HTTP/HTTPS protocols, you can add a corresponding domain name when creating the forwarding rule in a CLB listener.
+Using Layer-7 CLB to forward an HTTP/HTTPS protocol, you can add a corresponding domain name when creating a forwarding rule in a CLB instance listener.
+
 - If only one forwarding rule is created, you can access the corresponding forwarding rule and the service through VIP+URL.
 - If multiple forwarding rules are created, the use of VIP+URL does not guarantee access to a specified domain name+URL. You should access a domain name+URL directly to make sure a forwarding rule has taken effect. In other words, when you configure multiple forwarding rules, a VIP may correspond to multiple domain names. In this case, we recommend you access the service via specified domain name+URL instead of VIP+URL.
 
@@ -34,8 +35,10 @@ For example, if you enter `URL ~*.(gif|jpg|bmp)$`, it will match all .gif, .jpg 
 #### Default domain name policy[](id:default)
 When the requested domain name does not match any rule, CLB will forward the request to the default domain name (Default Server). One listener can have only one default domain name.
 For example, the `HTTP:80` listener of CLB instance 1 is configured with two domain names: `www.test1.com` and `www.test2.com`, where `www.test1.com` is the default domain name. When a user visits `www.example.com`, since no domain name is matched, CLB will forward the request to the default domain name `www.test1.com`.
+![]()
 
 >?
+>- Before May 18, 2020, the default domain name is optional for layer-7 listeners.
 >  - If your layer-7 listener has a default domain name configured, client requests that do not match other rules will be forwarded to it.
 >  - If your layer-7 listener has no default domain name configured, client requests that do not match other rules will be forwarded to the first domain name loaded by CLB (its loading order may be different from that configured in the console; therefore, it may not be the first one configured in the console). 
 >- Starting from May 18, 2020:
@@ -47,20 +50,25 @@ For example, the `HTTP:80` listener of CLB instance 1 is configured with two dom
 
 The following four operations can be performed on the default domain name:
 - **Operation 1**: when configuring the first forwarding rule for the layer-7 listener, the default domain name must be in "enabled" status.
+![]()
 - **Operation 2**: disable the current default domain name.
  - If there are multiple domain names under a listener, when disabling the current default domain name, you need to specify a new default domain name.
+![]()
  - If a listener has only one domain name and the domain name is the default domain name, it cannot be disabled.
+![]()
 - **Operation 3**: delete the default domain name.
  - If there are multiple domain names under a listener, when you delete a rule under the default domain name:
    - If the rule is not the last rule of the default domain name, you can delete it directly.
    - If the rule is the last rule of the default domain name, you need to set a new default domain name.
+   ![]()
  - If there is only one domain name under a listener, you can directly delete all rules without setting a new default domain name.
 - <span id = "step4"></span>**Operation 4**: you can quickly modify the default domain name in the listener list.
+![]()
 
 ### Forwarded URL path configuration rules
 Layer-7 CLB can forward requests from different URLs to different servers for processing, and multiple forwarded URL paths can be configured for a single domain name.
 - Length limit of forwarded URL: 1–200 characters.
-- A non-regex forwarded URL must start with `/`., with valid character sets including `a-z`, `A-Z`, `0-9`, `.`, `-`, `_`, `/`, `=`, `?`, and `:`.
+- A non-regex forwarded URL is case-sensitive and must start with `/`, with valid character sets including `a-z`, `A-Z`, `0-9`, `.`, `-`, `_`, `/`, `=`, `?`, and `:`.
 - Forwarded URL supports regex:
   - A regex URL must begin with `~` which can appear only once.
   - For a regex URL, the valid character sets include `a-z`, `A-Z`, `0-9`, `.`, `-`, `_`, `/`, `=`, `?`, `~`, `^`, `*`, `$`, `:`, `(`, `)`, `[`, `]`, `+`, and `|`.
@@ -108,3 +116,4 @@ A health check path is the URL path used by layer-7 CLB to detect the health sta
 - Default: `/`. You can enter a custom path starting with /.
 - Regex is not supported. You are recommended to specify a fixed URL (static page) for health check.
 - Valid character sets include `a-z`, `A-Z`, `0-9`, `.`, `-`, `_`, `/`, `=`, `?`, and `:`. For example, `/index`.
+
