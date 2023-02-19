@@ -17,9 +17,10 @@ CLB 인스턴스는 공유 CLB 인스턴스와 LCU 지원 인스턴스의 두 �
 		- ClientIntraffic(클라이언트-CLB 인바운드 대역폭)
 	- 업그레이드된 인스턴스의 최대 용량을 초과하지 않으면 기존 연결은 영향을 받지 않습니다.
 
--**과금**
-	- 과금 방식은 변경되지 않습니다.
-	- LCU 요금은 시간당 사용된 LCU 수를 기준으로 청구됩니다. 자세한 내용은 [LCU Pricing](https://www.tencentcloud.com/document/product/214/41563)을 참고하십시오.
+
+- **과금**
+	 - 과금 방식은 변경되지 않습니다.
+	 - LCU 요금은 시간당 사용된 LCU 수를 기준으로 청구됩니다. 자세한 내용은 [LCU Pricing](https://www.tencentcloud.com/document/product/214/41563)을 참고하십시오.
 
 - **네트워크 연결**
 	 업그레이드는 네트워크 연결을 방해하지 않으며 1분 이내에 완료될 수 있습니다.
