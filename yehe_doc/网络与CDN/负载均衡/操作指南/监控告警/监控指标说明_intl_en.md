@@ -1,19 +1,19 @@
 Cloud Monitor collects raw data from the running CLB instances and displays the data entries in intuitive graphs. Statistics will be kept for one month by default. You can observe the operations of instances in the month to stay informed of the status of application services.
 
 You can go to the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/overview) to view CLB monitoring data. Click **Cloud Product Monitoring** > [**Cloud Load Balancer**](https://console.cloud.tencent.com/monitor/clb) and then click the CLB instance ID to enter the monitoring details page. You can view monitoring data of the CLB instance, and expand it to view the listener and real server monitoring information.
->?
+>?The metrics in this document are all basic metrics. If you need more monitoring capabilities, you can activate paid advanced metrics.
 >- Advanced CLB metrics include max connections utilization (ConcurConnVipRatio) and new connections utilization (NewConnVipRatio) at the instance level.
 >- Currently, only the ConcurConnVipRatio and NewConnVipRatio metrics of LCU-supported CLB instances report data once enabled, while shared CLB instances don't report data for the time being.
 >
 
 ## CLB Instance Level
 
-| Parameter | Metric Name | Description | Unit | Statistical Period |
+| Parameter | Metric Name | Description | Unit | Statistical Period (Sec) |
 | ------------------- | -------------------------- | ------------------------------------------------------------ | ------- | ----------- |
-| ClientConnum        | Client-CLB active connections   | Number of active connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
-| ClientInactiveConn  | Client-CLB inactive connections | Number of inactive connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
-| ClientConcurConn    | Client-CLB concurrent connections   | Number of concurrent connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
-| ClientNewConn       | Client-CLB new connections   | Number of new connections initiated from the client to the CLB instance in the statistical period     | -   | 10s, 60s, 300s       |
+| ClientConnum        | Client-to-CLB active connections   | Number of active connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
+| ClientInactiveConn  | Client-to-CLB inactive connections | Number of inactive connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
+| ClientConcurConn    | Client-to-CLB concurrent connections   | Number of concurrent connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
+| ClientNewConn       | Client-to-CLB new connections   | Number of new connections initiated from the client to the CLB instance in the statistical period     | -   | 10s, 60s, 300s       |
 | ClientInpkg | Inbound packets from the client to the LB | The number of data packets per second sent from the client to the load balancer within the statistical granularity. | Count/sec | 10, 60, 300 |
 | ClientOutpkg | Outbound packets from the client to the LB | The number of data packets per second sent from the load balancer to the client within the statistical granularity. | Count/sec | 10, 60, 300 |
 | ClientAccIntraffic | Inbound traffic from the client to the LB | The traffic flows from the client to the load balancer within the statistical granularity. | MB | 10, 60, 300 |
@@ -58,7 +58,7 @@ You can go to the [Cloud Monitor console](https://console.cloud.tencent.com/moni
 | OverloadCurConn | Concurrent SNAT connections | The concurrent connections of the CLB instance's SNAT IP per minute in the statistical period. <br/>This metric is currently in beta. To try it out, [submit a ticket](https://console.tencentcloud.com/workorder/category). | Count/min | 60s |
 | ConnRatio           | SNAT port utilization            | Utilization of ports of the CLB instance's SNAT IPs in the statistical period.<br/>Port utilization = number of concurrent SNAT connections / (number of SNAT IPs * 55,000 * number of real servers). <br/>This metric is currently in beta. To try it out, [submit a ticket](https://console.tencentcloud.com/workorder/category). | %       | 60s           |
 | SnatFail | Failed SNAT connections | The number of failed connections between the CLB instance's SNAT IP and the RS per minute in the statistical period.<br/>This metric is currently in beta. To try it out, [submit a ticket](https://console.tencentcloud.com/workorder/category). | Count/min | 60s |
-| UnhealthRsCount | Number of abnormal health check | The number of load balancer's abnormal health check within the statistical granularity. | Count | 60, 300 |
+| UnhealthRsCount | Number of abnormal health check | The number of load balancer’s abnormal health check within the statistical granularity. | Count | 60, 300 |
 
 
 
@@ -68,10 +68,10 @@ Layer-4 listeners allow you to view the monitoring metrics at three levels:
 - Real server level
 - Real server port level
 
-| Parameter | Metric Name | Description | Unit | Statistical Period |
+| Parameter | Metric Name | Description | Unit | Statistical Period (Sec) |
 | ------------------- | -------------------------- | ------------------------------------------------------------ | ------- | ----------- |
-| ClientConnum        | Client-CLB active connections   | Number of active connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
-| ClientNewConn       | Client-CLB new connections   | Number of new connections initiated from the client to the CLB instance in the statistical period     | -   | 10s, 60s, 300s       |
+| ClientConnum        | Client-to-CLB active connections   | Number of active connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
+| ClientNewConn       | Client-to-CLB new connections   | Number of new connections initiated from the client to the CLB instance in the statistical period     | -   | 10s, 60s, 300s       |
 | ClientInpkg | Inbound packets from the client to the LB | The number of data packets per second sent from the client to the load balancer within the statistical granularity. | Count/sec | 10, 60, 300 |
 | ClientOutpkg | Outbound packets from the client to the LB | The number of data packets per second sent from the load balancer to the client within the statistical granularity. | Count/sec | 10, 60, 300 |
 | ClientAccIntraffic | Inbound traffic from the client to the LB | The traffic flows from the client to the load balancer within the statistical granularity. | MB | 10, 60, 300 |
@@ -83,9 +83,9 @@ Layer-4 listeners allow you to view the monitoring metrics at three levels:
 | OutPkg | Outbound packets from the LB to the RS | The number of packets per second sent from the RS to the load balancer within the statistical granularity. | Count/sec | 60, 300 |
 | InPkg | Inbound packets from the LB to the RS | The number of packets per second sent from the load balancer to the RS within the statistical granularity. | Count/sec | 60, 300 |
 | AccOuttraffic | Outbound traffic from the LB to the RS | The traffic flows from the load balancer to the RS within the statistical granularity.<br/>This metric is only supported by the public network CLB instances. | MB | 10, 60, 300, 3600 |
-| ConNum | CLB-RS connections | Number of connections initiated from the CLB instance to the RS in the statistical period | - | 60s, 300s |
-| NewConn | CLB-RS new connections | Number of new connections initiated from the CLB instance to the RS in the statistical period | Count/min | 60s, 300s |
-| UnhealthRsCount | Number of abnormal health check | The number of load balancer's abnormal health check within the statistical granularity. | Count | 60, 300 |
+| ConNum | CLB-to-RS connections | Number of connections initiated from the CLB instance to the RS in the statistical period | - | 60s, 300s |
+| NewConn | CLB-to-RS new connections | Number of new connections initiated from the CLB instance to the RS in the statistical period | Count/min | 60s, 300s |
+| UnhealthRsCount | Number of abnormal health check | The number of load balancer’s abnormal health check within the statistical granularity. | Count | 60, 300 |
 
 
 
@@ -95,10 +95,10 @@ Layer-7 listeners allow you to view the monitoring metrics at three levels:
 - Real server level
 - Real server port level
 
-| Parameter | Metric Name | Description | Unit | Statistical Period |
+| Parameter | Metric Name | Description | Unit | Statistical Period (Sec) |
 | ------------------- | -------------------------- | ------------------------------------------------------------ | ------- | ----------- |
-| ClientConnum        | Client-CLB active connections   | Number of active connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
-| ClientNewConn       | Client-CLB new connections   | Number of new connections initiated from the client to the CLB instance in the statistical period     | -   | 10s, 60s, 300s       |
+| ClientConnum        | Client-to-CLB active connections   | Number of active connections initiated from the client to the CLB instance or listener at a certain time point in the statistical period | -      | 10s, 60s, 300s       |
+| ClientNewConn       | Client-to-CLB new connections   | Number of new connections initiated from the client to the CLB instance in the statistical period     | -   | 10s, 60s, 300s       |
 | ClientInpkg | Inbound packets from the client to the LB | The number of data packets per second sent from the client to the load balancer within the statistical granularity. | Count/sec | 10, 60, 300 |
 | ClientOutpkg | Outbound packets from the client to the LB | The number of data packets per second sent from the load balancer to the client within the statistical granularity. | Count/sec | 10, 60, 300 |
 | ClientAccIntraffic | Inbound traffic from the client to the LB | The traffic flows from the client to the load balancer within the statistical granularity. | MB | 10, 60, 300 |
@@ -110,8 +110,8 @@ Layer-7 listeners allow you to view the monitoring metrics at three levels:
 | OutPkg | Outbound packets from the LB to the RS | The number of packets per second sent from the RS to the load balancer within the statistical granularity. | Count/sec | 60, 300 |
 | InPkg | Inbound packets from the LB to the RS | The number of packets per second sent from the load balancer to the RS within the statistical granularity. | Count/sec | 60, 300 |
 | AccOuttraffic | Outbound traffic from the LB to the RS | The traffic flows from the load balancer to the RS within the statistical granularity.<br/>This metric is only supported by the public network CLB instances. | MB | 10, 60, 300, 3600 |
-| ConNum | CLB-RS connections | Number of connections initiated from the CLB instance to the RS in the statistical period | - | 60s, 300s |
-| NewConn | CLB-RS new connections | Number of new connections initiated from the CLB instance to the RS in the statistical period | Count/min | 60s, 300s |
+| ConNum | CLB-to-RS connections | Number of connections initiated from the CLB instance to the RS in the statistical period | - | 60s, 300s |
+| NewConn | CLB-to-RS new connections | Number of new connections initiated from the CLB instance to the RS in the statistical period | Count/min | 60s, 300s |
 | ReqAvg | Average request time | The average request time of the CLB instance in the statistical period. <br/>This metric is dedicated to layer-7 listeners. | Millisecond | 60s, 300s |
 | ReqMax | Maximum request time | The maximum request time of the CLB instance in the statistical period. <br/>This metric is dedicated to layer-7 listeners. | Millisecond | 60s, 300s |
 | RspAvg | Average response time | The average response time of the CLB instance in the statistical period. <br/>This metric is dedicated to layer-7 listeners. | Millisecond | 60s, 300s |
@@ -136,10 +136,10 @@ Layer-7 listeners allow you to view the monitoring metrics at three levels:
 | Http502 | 502 status codes | The number of 502 status codes returned by the RS in the statistical period. <br/>This metric is dedicated to layer-7 listeners. | Count/min | 60s, 300s |
 | Http503 | 503 status codes | The number of 503 status codes returned by the RS in the statistical period. <br/>This metric is dedicated to layer-7 listeners. | Count/min | 60s, 300s |
 | Http504 | 504 status codes | The number of 504 status codes returned by the RS in the statistical period. <br/>This metric is dedicated to layer-7 listeners. | Count/min | 60s, 300s |
-| UnhealthRsCount | Number of abnormal health check | The number of load balancer's abnormal health check within the statistical granularity. | Count | 60, 300 |
+| UnhealthRsCount | Number of abnormal health check | The number of load balancer’s abnormal health check within the statistical granularity. | Count | 60, 300 |
 
 
->?If you want to view the monitoring data of a CVM instance under a listener, log in to the [CLB console](https://console.cloud.tencent.com/clb), click the monitoring bar icon near the CLB instance ID, and then browse the performance data of each instance in the floating window.
+>?If you want to view the monitoring data of a CVM instance under a listener, please log in to the [CLB console](https://console.cloud.tencent.com/clb), click the monitoring bar icon near the CLB instance ID, and then browse the performance data of each instance in the floating window.
 
 
 
