@@ -42,7 +42,7 @@ The request parameters of the `setMessageExtensions` API are detailed as follows
 Sample code:
 
 ```ts
-// Set message extensions
+// Setting message extension
 V2TimValueCallback<V2TimMessageExtensionResult[]>
 setMessageExtensionsRes = await TencentImSDKPlugin.v2TIMManager
   .getMessageManager()
