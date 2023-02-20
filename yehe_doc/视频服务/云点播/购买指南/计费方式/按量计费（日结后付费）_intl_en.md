@@ -344,16 +344,16 @@ The unit price is as follows:
 
 | Item       | Billed By                 | Price (USD/Min) |
 | :----------- | :----------------------- | :---------------- |
-| Highlights generation | The duration of the source video. | 0.0572            |
-| Video segmentation | The duration of the source video. | 0.0572            |
-| Video labeling | The duration of the source video. | 0.0572            |
-| Video classification | The duration of the source video. | 0.0572            |
-| Thumbnail generation | The duration of the source video. | 0.0572            |
+| Highlights generation | The duration of the source video. | 0.06            |
+| Video segmentation | The duration of the source video. | 0.06        |
+| Video labeling | The duration of the source video. | 0.009           |
+| Video classification | The duration of the source video. | 0.009           |
+| Thumbnail generation | The duration of the source video. | 0.009           |
 
 #### Billing example
 
 **User A called the video labeling and classification APIs to analyze video B, whose length is 100 minutes.
-The fee incurred = 100 x 0.0572 + 100 x 0.0572 = 11.4 USD**
+The fee incurred = 100 x 0.06 + 100 x 0.06 = 12 USD**
 
 >!
 >- Currently, the content analysis feature is only offered to customers billed monthly. To change from daily to monthly billing, please contact sales.
@@ -367,11 +367,11 @@ The video content recognition feature of VOD leverages AI technologies to recogn
 
 | Billable Item     | Billed By                               | Price             |
 | :----------- | :------------------------- | :-------------- |
-| Content recognition | The duration of the video recognized | 0.0572 USD/min |
+| Content recognition | The duration of the video recognized | 0.046 USD/min |
 
 #### Billing example
 
-User A used VOD’s content recognition feature on video B, whose length was 60 minutes. The fee incurred would be 60 (minutes) x 0.0572 (USD/min) = 3.432 (USD).
+User A used VOD’s content recognition feature on video B, whose length was 60 minutes. The fee incurred would be 60 (minutes) x 0.046 (USD/min) = 2.76 (USD).
 
 ## Copyright Protection
 
