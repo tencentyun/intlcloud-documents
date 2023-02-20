@@ -43,7 +43,7 @@ The request parameters of the `setMessageExtensions` API are detailed as follows
 Sample code:
 
 ```dart
-    // Set message extensions
+    // Setting message extension
     V2TimValueCallback<List<V2TimMessageExtensionResult>>
         setMessageExtensionsRes = await TencentImSDKPlugin.v2TIMManager
             .getMessageManager()
@@ -104,7 +104,7 @@ Sample code:
 
 ### Updating message extensions
 
-If you have added an event listener for advanced messages by calling `addAdvancedMsgListener`, you will receive the `onRecvMessageExtensionsChanged` callback ([details(https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Callback/OnRecvMessageExtensionsChanged.html)) when message extensions are added or updated, and the `onRecvMessageExtensionsDeleted` callback ([details](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Callback/OnRecvMessageExtensionsDeleted.html)) when message extensions are deleted.
+If you have added an event listener for advanced messages by calling `addAdvancedMsgListener`, you will receive the `onRecvMessageExtensionsChanged` callback ([details](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Callback/OnRecvMessageExtensionsChanged.html)) when message extensions are added or updated, and the `onRecvMessageExtensionsDeleted` callback ([details](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Callback/OnRecvMessageExtensionsDeleted.html)) when message extensions are deleted.
 
 Sample code:
 

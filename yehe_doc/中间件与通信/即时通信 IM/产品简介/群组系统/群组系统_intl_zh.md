@@ -1,6 +1,5 @@
 ## 群组系统简介
 群组系统是一个支持多人聊天的即时通信系统，群组系统所具备的基本能力包括：
-
 - 完备的 [群组管理](https://intl.cloud.tencent.com/document/product/1047/33530) 能力：创建/解散群组、成员管理、群组资料管理、成员资料管理等。
 - 稳定可靠的消息收发能力，完善的 [群组消息](https://intl.cloud.tencent.com/document/product/1047/33526) 管理机制：权限控制，禁言，消息回调，消息漫游等。
 - 根据常见使用场景，默认配置了**好友工作群（Work）**、**陌生人社交群（Public）**、**临时会议群（Meeting）**、**直播群（AVChatRoom）**和**社群（Community）** 五个群组类型。
@@ -11,15 +10,16 @@
 
 
 >!
->- 直播群（AVChatRoom）不设成员人数上限，但如果预期群成员会出现短时间内激增的场景（例如举行大型在线活动，单群成员人数达到5万或以上等情况），请提前联系商务工作人员，提供 SDKAppID 和活动预期发生时间进行服务资源报备。
+>- 直播群（AVChatRoom）不设成员人数上限，但如果预期群成员会出现短时间内激增的场景（例如举行大型在线活动，单群成员人数达到5万或以上等情况），请提前联系 [腾讯云客服](https://cloud.tencent.com/about/connect) 或商务工作人员，提供 SDKAppID 和活动预期发生时间进行服务资源报备。
 >- 目前仅非直播群具备历史消息存储能力（体验版及专业版默认7天，旗舰版默认30天）。如需保存更长时间，您可以在 [控制台](https://console.cloud.tencent.com/im) 修改消息历史消息存储时长。延长历史消息存储时长是付费增值服务，具体计费说明请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
->- 社群（Community），娱乐协作新利器。同一社群内，既可划分不同分组、话题，将消息相互区隔，进行分层级沟通；又可容纳超大规模成员，共用一套好友关系，助您摸索出一条独特的社交扩张路径；还可将成员分组，设置成员组的查看、发言、管理等权限，成为您的高效用户运营工具。适用于兴趣交友、游戏社交、粉丝运营、组织管理等场景。
->- 社群（Community）功能支持终端 SDK 5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，需 [购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) 后方可使用。
+>- 社群（Community），娱乐协作新利器。同一社群内，既可划分不同分组、话题，将消息相互区隔，进行分层级沟通；又可容纳超大规模成员，共用一套好友关系，助您摸索出一条独特的社交扩张路径；适用于兴趣交友、游戏社交、粉丝运营、组织管理等场景。
+>- 社群（Community）功能支持终端 SDK 5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，需 [购买旗舰版](https://buy.cloud.tencent.com/avc?from=17182) 并在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting)>**群功能配置**>**社群** 打开开关后方可使用。
 
 除此之外，即时通信 IM 群组系统具备高度可定制性，具体包括：
 
 - [自定义消息元素](https://intl.cloud.tencent.com/document/product/1047/33527)
 - [自定义群组 ID](https://intl.cloud.tencent.com/document/product/1047/33529)
+- [自定义话题 ID](#customize)
 - [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529)
 - [自定义回调](https://intl.cloud.tencent.com/document/product/1047/33529)
 
@@ -41,8 +41,8 @@
 
 | 群组类型   |适用场景    |
 |--------|---------|
-| 好友工作群（Work）| 类似普通微信群，创建后仅支持已在群内的好友邀请加群，且无需被邀请方同意或群主审批，同旧版本中的 Private  |
-| 陌生人社交群（Public）|类似 QQ 群，创建后群主可以指定群管理员，用户搜索群 ID 发起加群申请后，需要群主或管理员审批通过才能入群|
+| 好友工作群（Work）| 创建后仅支持已在群内的好友邀请加群，且无需被邀请方同意或群主审批，同旧版本中的 Private  |
+| 陌生人社交群（Public）|创建后群主可以指定群管理员，用户搜索群 ID 发起加群申请后，需要群主或管理员审批通过才能入群|
 | 临时会议群（Meeting）|创建后可以随意进出，且支持查看入群前消息；适合用于音视频会议场景、在线教育场景等与实时音视频产品结合的场景，同旧版本中的 ChatRoom|
 | 直播群（AVChatRoom）|创建后可以随意进出，没有群成员数量上限，但不支持历史消息存储；适合与直播产品结合，用于弹幕聊天场景|
 |社群（Community）|创建后可以随意进出，最多支持10w人，支持历史消息存储，用户搜索群 ID 发起加群申请后，无需管理员审批即可进群|
@@ -52,8 +52,8 @@
 
 |功能项|好友工作群（Work）|陌生人社交群（Public）|临时会议群（Meeting）|直播群（AVChatRoom）|社群（Community）|
 |--- |-- |-- |-- |-- |-- |
-|可用成员角色|群主<br>普通成员<br>App 管理员|群主<br>管理员<br>普通成员<br>App 管理员|群主<br>管理员<br>普通成员<br>App 管理员|群主|群主<br>管理员<br>普通成员<br>App 管理员|
-|修改群基础资料的权限|普通成员|群管理员 <br>群主<br>App 管理员|群主<br>App 管理员|群主<br>App 管理员|管理员<br>群主<br>App 管理员|
+|可用成员角色|群主<br>普通成员<br>App 管理员|群主<br>管理员<br>普通成员<br>App 管理员|群主<br>管理员<br>普通成员<br>App 管理员|群主<br>App 管理员|群主<br>管理员<br>普通成员<br>App 管理员|
+|修改群基础资料的权限|普通成员<br>群主<br>App 管理员|群管理员 <br>群主<br>App 管理员|群主<br>App 管理员|群主<br>App 管理员|管理员<br>群主<br>App 管理员|
 |获取群成员信息|可获取全部群成员信息|可获取全部成员信息|可获取全部成员信息|不存储群成员信息|可获取全部成员信息|
 |解散群|只有 App 管理员可以解散群|群主和 App 管理员可以解散群|群主和 App 管理员可以解散群|群主和 App 管理员可以解散群|群主和 App 管理员可以解散群|
 
@@ -107,9 +107,9 @@
 |--- |--- |--- |--- |--- |--- |
 |是否支持未读消息计数|支持|支持|不支持|不支持|支持|
 |是否支持历史消息存储|支持|支持|支持|不支持|支持|
-| 是否支持查看入群前漫游消息 | 默认关闭查看入群前漫游消息，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                              | 默认关闭查看入群前漫游消息，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                              | 默认开启查看入群前漫游消息，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                              | 不支持                                                                                                                                  | 默认开启查看入群前漫游消息，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                              |
+| 是否支持查看入群前漫游消息 | 默认关闭查看入群前漫游消息，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                              | 默认关闭查看入群前漫游消息，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                              | 默认开启查看入群前漫游消息，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                              | 不支持                                                                                                                                  |默认关闭查看入群前漫游消息，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                               |
 | 群成员变更通知       | 邀请进群，申请进群，踢人，退群默认下发通知且存漫游，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                  | 邀请进群，申请进群，踢人，退群默认下发通知且存漫游，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                  | 邀请进群，申请进群，踢人，退群默认关闭通知，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                      | 邀请进群，申请进群，踢人，退群下发通知且不存漫游                                                                                                             | 邀请进群，申请进群，踢人，退群默认下发通知且存漫游，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                  |
-| 群资料变更通知       | 群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言变更默认关闭通知，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置 | 群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言变更默认关闭通知，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置 | 群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言变更默认关闭通知，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置 | 群名称，群通知，群简介，群头像，群主变更下发通知且不存漫游，群禁言变更关闭通知                                                                                              | 群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言变更默认关闭通知，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置 |
+| 群资料变更通知       | 		群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言，申请加群方式变更默认关闭通知，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置|群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言，申请加群方式变更默认关闭通知，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置|群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言，申请加群方式变更默认关闭通知，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置|群名称，群通知，群简介，群头像，群主变更下发通知且不存漫游，群禁言，申请加群方式变更关闭通知|群名称，群通知，群简介，群头像，群主变更默认下发通知且存漫游，群禁言变更默认关闭通知，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置。社群申请加群方式不支持修改，因此无通知|
 | 群成员资料变更通知     | 群成员禁言，群管理员变更默认下发通知且存漫游，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                     | 群成员禁言，群管理员变更默认下发通知且存漫游，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                     | 群成员禁言，群管理员变更默认关闭通知，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                         | 群成员禁言，群管理员变更默认关闭通知，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置 | 群成员禁言，群管理员变更默认下发通知且存漫游，支持 [控制台](https://console.cloud.tencent.com/im/qun-setting) 配置                     |
 |创建群组后是否需要发一条消息激活|需要|不需要|不需要|不需要|不需要|
 |默认消息接收选项| 接收在线推送消息和离线推送 |接收在线推送消息和离线推送|只接收在线推送消息|只接收在线推送消息|接收在线推送消息和离线推送|
@@ -127,7 +127,7 @@
 |允许导入群、群成员和群消息|允许导入群、群成员和群消息，适用于从第三方平台迁移历史群组到即时通信 IM 时使用|不允许批量导入群、群成员和群消息，只能使用现有的群、群成员和群消息|
 |群组自动回收时间（秒）|后台不会回收群组，除非群主解散群，或者所有成员都退出群组（关于解散群组：后台不会主动解散群，除非群主解散，或者配置自动回收后，会不定期遍历群，如果发现该群经过 n 秒没有人说话或者被修改群资料，则进行解散。）|后台不会回收群组，除非群主解散，或者所有成员都退出群组|
 
->!如果需要开启群组回收功能，可以根据 [工单模板](https://intl.cloud.tencent.com/document/product/1047/44322) 提交工单进行申请。配置后，将会根据群组类型清理不活跃群组（群组不活跃是指群组中既没人发言，也没有成员变更）。
+>!如果需要开启群组回收功能，可以根据 [工单模板]([配置变更需求工单 | 腾讯云 (tencentcloud.com)](https://www.tencentcloud.com/document/product/1047/44322)#.E8.87.AA.E5.8A.A8.E5.9B.9E.E6.94.B6.E7.BE.A4.E7.BB.84) 提交工单进行申请。配置后，将会根据群组类型清理不活跃群组（群组不活跃是指群组中既没人发言，也没有成员变更）。
 
 ## 群组数据结构介绍
 ### 群基础资料[](id:GroupBaseInfoFilter)
@@ -147,7 +147,7 @@
 |LastMsgTime|Integer|群组内最后发消息的时间|只读|
 |NextMsgSeq|Integer|群内下一条消息的 Seq|只读<br>群组内每一条消息都有一条唯一的消息 Seq，且该 Seq 是按照发消息顺序而连续的。从1开始，群内每增加一条消息，NextMsgSeq 就会增加1（默认情况下系统消息比如进退群等通知也属于消息，会导致 NextMsgSeq 加1）|
 |MemberNum|Integer|当前成员数量|只读|
-|MaxMemberNum|Integer|最大成员数量|缺省时的默认值：付费套餐包上限，例如体验版是20，如果升级套餐包，需按照修改群基础资料修改这个字段到对应数值|
+|MaxMemberNum|Integer|最大成员数量|缺省时的默认值：付费上限，例如体验版是20，如果升级，需按照修改群基础资料修改这个字段到对应数值|
 |ApplyJoinOption|String|申请加群选项|申请加群选项包括如下几种：<ul style="margin:0;"><li>DisableApply 表示禁止任何人申请加入</li><li>NeedPermission 表示需要群主或管理员审批</li><li>FreeAccess 表示允许无需审批自由加入群组</li></ul>|
 
 
@@ -166,15 +166,26 @@
 |MsgFlag|String|消息接收选项|消息接收选项，包括如下几种：<ul style="margin:0;"><li>AcceptAndNotify 表示接收并提示</li><li>AcceptNotNotify 表示接收不提示（不会触发 APNs 远程推送）</li><li>Discard 表示屏蔽群消息（不会向客户端推送消息）</li></ul>|
 |LastSendMsgTime|Integer|最后发送消息的时间|支持三个普通群，不支持直播群|
 |NameCard|String|群名片|可读可写。最长50字节，不可调整|
+|MuteUntil  |Integer|禁言状态|0表示未被禁言，否则为禁言的截止时间戳|
 
 ## 自定义群组 ID
 
 默认情况下，App 创建群时，即时通信 IM 会为新创建的群组分配一个默认的群组 ID。该 ID 将以 @TGS# 开头，且保证在 App 中唯一。
 为了使得群组 ID 更加简单，便于记忆传播，即时通信 IM 支持 App 在通过 REST API 创建群组时自定义群组 ID。自定义群组 ID 必须为可打印 ASCII 字符（0x20-0x7e），最长48个字节，且前缀不能为 @TGS#（避免与默认分配的群组 ID 混淆）。
 >!社群（Community）前缀必须是@TGS#_。
+
+[](id:customize)
+## 自定义话题 ID
+
+默认情况下，App 创建话题时，即时通信 IM 会为新创建的话题分配一个默认的话题 ID。该 ID 将以 `GroupId+@TOPIC#_`开头，且保证在群组内唯一。
+
+为了使得话题 ID 更加简单，便于记忆传播，即时通信 IM 支持 App 在通过 REST API 创建话题时自定义话题 ID。自定义话题 ID 的形式为`GroupId+@TOPIC#_+自定义部分`，其中自定义部分不能包括`@TGS#_和@TOPIC#_@TOPIC#` （避免与默认分配的群组 ID 混淆）, 且必须为可打印 ASCII 字符（`0x20-0x7e`）。
+
+例如 GroupId 为 `@TGS#_@TGS#cQVLVHIM62CJ`，自定义部分为 `TestTopic`，则最终的自定义话题 ID 为 `@TGS#_@TGS#cQVLVHIM62CJ@TOPIC#_TestTopic`。整个自定义话题 ID 长度需要保证在96个字节内。
+
 ## 自定义字段
 
-即时通信 IM 支持 App 根据业务需求，在群组和群成员两个维度上设置自定义字段。群组维度最多支持10个字段，群成员维度最多支持5个字段。利用自定义字段，App 可以将一些额外数据附加到群组之上，并可以通过现有接口进行读写操作。**自定义字段设置并使用后无法删除。**
+即时通信 IM 支持 App 根据业务需求，在群组和群成员两个维度上设置自定义字段。群组维度最多支持10个字段，群成员维度最多支持5个字段。利用自定义字段，App 可以将一些额外数据附加到群组之上，并可以通过现有接口进行读写操作。
 
 ### 特性介绍
 
@@ -202,6 +213,7 @@
 这两个维度的自定义字段，都可以通过即时通信 IM 控制台进行配置。
 配置群成员维度的自定义字段前，需要先指定群组类型。但对于直播群（AVChatRoom）及以其为参考的群组类型，因为不存储所有群成员的资料，所以不支持群成员维度的自定义字段。
 “自己的读写权限”是指对于用户本人的群成员维度自定义字段值，自己是否有读写权限。例如，群成员维度的自定义字段 “MemberLevel”，用于表示成员在群组中的等级，本人可以读取自己的等级，但无权修改自己的等级，因此字段的“自己的读写权限”为“可读/不可写”。
+>!不支持删除或者修改已配置的自定义字段，请谨慎操作。
 
 ## 自定义回调
 

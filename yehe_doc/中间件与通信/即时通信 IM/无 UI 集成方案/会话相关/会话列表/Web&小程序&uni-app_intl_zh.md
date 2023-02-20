@@ -1,0 +1,96 @@
+## 功能描述
+
+用户在登录 App 后，方便找到目标会话。
+
+会话列表功能主要分为获取会话列表、监听会话列表更新事件。核心数据结构 [Conversation](https://web.sdk.qcloud.com/im/doc/en/Conversation.html)。
+
+## 获取会话列表
+
+接入侧可通过调用 [getConversationList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationList) 接口主动获取会话列表。
+
+### 获取全量的会话列表
+<dx-codeblock>
+:::  js
+
+// 获取全量的会话列表
+let promise = tim.getConversationList();
+promise.then(function(imResponse) {
+  const conversationList = imResponse.data.conversationList; // 全量的会话列表，用该列表覆盖原有的会话列表
+  const isSyncCompleted = imResponse.data.isSyncCompleted; // 从云端同步会话列表是否完成
+}).catch(function(imError) {
+  console.warn('getConversationList error:', imError); // 获取会话列表失败的相关信息
+});
+
+:::
+</dx-codeblock>
+
+### 获取指定的会话列表
+<dx-codeblock>
+:::  js
+
+// 获取指定的会话列表
+let promise = tim.getConversationList([conversationID1, conversationID2]);
+promise.then(function(imResponse) {
+  const conversationList = imResponse.data.conversationList; // 缓存中已存在的指定的会话列表
+}).catch(function(imError) {
+  console.warn('getConversationList error:', imError); // 获取会话列表失败的相关信息
+});
+
+:::
+</dx-codeblock>
+
+### 获取所有的群会话
+<dx-codeblock>
+:::  js
+
+// 获取所有的群会话
+let promise = tim.getConversationList({ type: TIM.TYPES.CONV_GROUP });
+promise.then(function(imResponse) {
+  const conversationList = imResponse.data.conversationList; // 会话列表
+});
+
+:::
+</dx-codeblock>
+
+### 获取所有的“标星”会话
+<dx-codeblock>
+:::  js
+
+// 获取所有的“标星”会话
+let promise = tim.getConversationList({ markType: TIM.TYPES.CONV_MARK_TYPE_STAR });
+promise.then(function(imResponse) {
+  const conversationList = imResponse.data.conversationList; // 会话列表
+});
+
+:::
+</dx-codeblock>
+
+### 获取指定会话分组下的所有会话
+<dx-codeblock>
+:::  js
+
+// 获取指定会话分组下的所有会话
+let promise = tim.getConversationList({ groupName: 'Suppliers' });
+promise.then(function(imResponse) {
+  const conversationList = imResponse.data.conversationList; // 会话列表
+});
+
+:::
+</dx-codeblock>
+
+## 监听会话列表更新事件
+
+接入侧监听 [TIM.EVENT.CONVERSATION_LIST_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.CONVERSATION_LIST_UPDATED) 事件，获取会话列表更新的通知。
+
+**示例**
+
+<dx-codeblock>
+:::  js
+
+let onConversationListUpdated = function(event) {
+  console.log(event.data); // 包含 Conversation 实例的数组
+};
+tim.on(TIM.EVENT.CONVERSATION_LIST_UPDATED, onConversationListUpdated);
+
+:::
+</dx-codeblock>
