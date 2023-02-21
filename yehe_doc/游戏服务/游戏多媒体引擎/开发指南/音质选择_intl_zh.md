@@ -9,7 +9,7 @@
 | ITMG_ROOM_TYPE_HIGHQUALITY		|高清音质	|3|64kbps|48k|<li>扬声器：媒体音量</li><li>耳机：媒体音量</li><li>蓝牙耳机：a2dp 协议，手机采集</li>	|超高音质，延时相对大一些，适用于音乐舞蹈类游戏以及语音互动类 App；适用于播放音乐、线上 K 歌等有高音质要求的场景	|
 
 <dx-alert infotype="notice" title="注意">
-2.9.0及以上版本，Unity、UnrealEngine、Cocos SDK 如需使用标准音质以及高清音质，请参见 [升级指引](https://www.tencentcloud.com/document/product/607/32363) 进行接入。
+2.9.0及以上版本，Unity、UnrealEngine、Cocos SDK 如需使用标准音质以及高清音质，请参见 [升级指引](https://intl.cloud.tencent.com/document/product/607/32363) 进行接入。
 </dx-alert>
 
 
@@ -24,7 +24,7 @@
 
 
 <dx-fold-block title="媒体音量与通话音量相关问题">
-[进房后，手机音量变得很小，开启麦克风后音量又变得很大，怎么解决？](https://www.tencentcloud.com/document/product/607/39524)
+[进房后，手机音量变得很小，开启麦克风后音量又变得很大，怎么解决？](https://intl.cloud.tencent.com/document/product/607/39524)
 </dx-fold-block>
 
 ### 蓝牙耳机协议

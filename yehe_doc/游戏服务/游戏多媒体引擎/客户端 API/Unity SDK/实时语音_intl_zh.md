@@ -12,7 +12,7 @@ GME 提供实时语音服务、语音消息服务及转文本服务，使用 GME
 - GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
 - GME 的接口调用要在同一个线程下。
 - GME 需要周期性的调用 Poll 接口触发事件回调。
-- 错误码详情可参见 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">错误码</dx-tag-link>。
+- 错误码详情可参见 <dx-tag-link link="https://cloud.tencent.com/document/product/607/15173" tag="ErrorCode">错误码</dx-tag-link>。
 - GME 在 Unity-WebGL 平台只支持简易的实时语音通话功能，具体参见 [H5 工程配置](https://intl.cloud.tencent.com/document/product/607/30261)。
 
 ## 接入 SDK
