@@ -100,7 +100,7 @@ Container 类型 FileCompressConfig 的具体数据描述如下：
 | Prefix             | Request.Operation.FileCompressConfig | 支持对存储桶中的某个前缀进行打包，如果需要对某个目录进行打包，需要加/，例如test目录打包，则值为：test/。最多不超过10000个文件，总大小不超过50G，否则会导致任务失败。 | String     | 否       |
 | Key                | Request.Operation.FileCompressConfig | 支持对存储桶中的多个文件进行打包，个数不能超过 1000, 总大小不超过50G，否则会导致任务失败。 | String数组 | 否       |
 
-> 注意
+>!
 >
 > UrlList、Prefix、Key三者仅能选择一个，不能都为空，也不会同时生效。如果填了多个，会按优先级UrlList > Prefix > Key取最高优先级执行。
 
