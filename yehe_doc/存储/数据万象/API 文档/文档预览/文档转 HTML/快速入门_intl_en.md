@@ -82,7 +82,7 @@ To preview the PPT file with the `test.pptx` ObjectKey in the `examples-12581256
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/test.pptx?ci-process=doc-preview&dstType=html
 ```
 
->?You can also implement more custom features through JS-SDK. For more information, see [Custom Configuration Overview](https://cloud.tencent.com/document/product/460/59410).
+>?You can also implement more custom features through JS-SDK. For more information, see [Custom Configuration Overview](https://www.tencentcloud.com/document/product/1045/47939).
 
 Open the link directly in a browser to view the generated preview page. For slides, you can also perform full-screen slideshow, which supports **animation**, **trigger**, and other effects and provides **virtual laser pointer**, **speaker mode**, and other features.
 
