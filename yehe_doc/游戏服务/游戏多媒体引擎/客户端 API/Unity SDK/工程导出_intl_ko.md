@@ -198,7 +198,7 @@ WebGL 플랫폼에서 gmesdk와의 충돌을 피하기 위해 Windows 플랫폼�
 
 ### 2. Flare Layer 취소(Unity 2018 이상 버전)
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/894943f084fc5aefc94c709e35d65d0e.png"  width="60%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/216652f9f9ee0373e3cce5b9228b5f4c.png"  width="60%" /></img>
 
 일부 Unity 버전은 MainCamera의 Flare Layer 모드를 더 이상 지원하지 않으므로 패키징할 Scene에서 Flare Layer를 선택 취소해야 합니다. 그렇지 않으면 다음 오류가 보고됩니다.
 
@@ -214,7 +214,7 @@ WebGL용으로 내보내기 할 때 GME WebGL 템플릿을 선택해야 패키�
  
 GME-WebGL을 자신의 프로젝트로 가져오고 Unity를 사용하여 해당 웹 페이지를 생성할 때 프런트 엔드 라이브러리를 수동으로 가져와 프런트 엔드 라이브러리 파일을 해당 참조 위치에 배치하고 오디오 태그를 추가해야 합니다(아래 이미지 참고). Unity 아티팩트를 패키징할 때마다 상기 작업을 자동으로 완료하려면 GME-WebGL demo를 참고하여 프로젝트에 해당하는 템플릿을 추가하면 됩니다.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b939e1cd5e331579440c16672a59c2e1.png"  width="60%" /></img>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/a3a174706b84fc4b69cbe9bb41c5b59b.png"  width="60%" /></img>
 
 
 ### 5. 내보내기 관련 FAQ
