@@ -82,7 +82,7 @@ Date: GMT Date
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/test.pptx?ci-process=doc-preview&dstType=html
 ```
 
->?您还可通过 JS-SDK 实现更多功能的定制，详情请参见 [自定义配置概述](https://cloud.tencent.com/document/product/460/59410)。
+>?您还可通过 JS-SDK 实现更多功能的定制，详情请参见 [自定义配置概述](https://www.tencentcloud.com/document/product/1045/47939)。
 
 直接在浏览器中打开链接，生成的预览页面如下图所示，对于幻灯片文档，还可进行全屏的幻灯片放映，支持**动画、触发器**等效果，并提供**虚拟激光笔、演讲者模式**等功能。
 
