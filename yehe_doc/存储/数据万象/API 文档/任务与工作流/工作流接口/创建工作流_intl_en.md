@@ -264,7 +264,7 @@ The nodes are described as follows:
 
 `MediaWorkflow` has the following sub-nodes:
 
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |                                                 |
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |  
 | ------------------ | --------------------- | ---------- | --------- | -------- | ------------------------------------------- |
 | Name               | Request.MediaWorkflow | Workflow name | String    | Yes       | The value can be up to 128 characters in length and contain Chinese characters, letters, digits, dashes (–), and underscores (_). |
 | State              | Request.MediaWorkflow | Workflow status | String    | No       | Paused/Active                               |
