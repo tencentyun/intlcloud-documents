@@ -80,7 +80,7 @@ The nodes are described as follows:
 | JobsDetail | Response | Job details |  Container |
 | NonExistJobIds | Response | List of non-existing job IDs queried. If all jobs exist, this node is not returned.               | String    |
 
-For specific parameter values, see [`JobsDetail` in Multi-File Zipping](https://cloud.tencent.com/document/product/460/83091#jobdetail).
+For specific parameter values, see [`JobsDetail` in Multi-File Zipping](https://intl.cloud.tencent.com/document/product/1045/52873).
 
 #### Error codes
 

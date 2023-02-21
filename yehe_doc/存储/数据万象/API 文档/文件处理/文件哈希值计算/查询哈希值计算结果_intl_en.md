@@ -85,7 +85,7 @@ The nodes are described as follows:
 | JobsDetail | Response | Job details |  Container |
 | NonExistJobIds | Response | List of non-existing job IDs queried. If all jobs exist, this node is not returned.               | String    |
 
-For specific parameter values, see [`JobsDetail` in Hash Calculation](https://cloud.tencent.com/document/product/460/83085#jobdetail).
+For specific parameter values, see [`JobsDetail` in Hash Calculation](https://intl.cloud.tencent.com/document/product/1045/52867).
 
 #### Error codes
 
