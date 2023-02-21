@@ -9,7 +9,7 @@
 | ITMG_ROOM_TYPE_HIGHQUALITY|HD|3|64kbps|48k|<li>스피커: 미디어 볼륨</li><li>헤드셋: 미디어 볼륨</li><li>Bluetooth 헤드셋: a2dp 프로토콜을 통한 휴대폰 오디오 캡처</li>|상대적으로 대기 시간이 긴 HD 음질로 음악 재생 및 온라인 노래방과 같이 높은 음질을 요구하는 음악 및 댄스 게임 및 음성 채팅 App에 적합|
 
 <dx-alert infotype="notice" title="주의">
-버전 2.9.0 이상, Unity, UnrealEngine, Cocos SDK 표준 음질 및 고화질 음질을 사용하려면 [업그레이드 가이드](https://intl.cloud.tencent.com/document/ product/607/32363)를 참고하여 연결하십시오.
+버전 2.9.0 이상, Unity, UnrealEngine, Cocos SDK 표준 음질 및 고화질 음질을 사용하려면 [업그레이드 가이드](https://intl.cloud.tencent.com/document/product/607/32363)를 참고하여 연결하십시오.
 </dx-alert>
 
 
