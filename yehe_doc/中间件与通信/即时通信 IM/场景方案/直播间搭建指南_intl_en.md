@@ -1,4 +1,4 @@
-As live streaming has become ubiquitous, more and more enterprises and developers are building their own live streaming platforms. During the process, they need to handle complex requirements such as live stream push and pull, live chat room, live room interaction (like, gift, and co-anchoring), and live room status management. This document takes Tencent Cloud products ([IM](https://console.cloud.tencent.com/im), [TRTC](https://console.cloud.tencent.com/trtc), and [CSS](https://console.cloud.tencent.com/live/livestat)) as examples to describe how to implement a live room, along with possible problems and considerations, giving a glimpse of the live streaming business and requirements.
+As live streaming has become ubiquitous, more and more enterprises and developers are building their own live streaming platforms. During the process, they need to handle complex requirements such as live stream push and pull, live transcoding, live screencapturing, live stream mix, live chat room, live room interaction (like, gift, and co-anchoring), and live room status management. This document takes Tencent Cloud products ([IM](https://console.cloud.tencent.com/im) and [CSS](https://console.cloud.tencent.com/live/livestat)) as examples to describe how to implement a live room, along with possible problems and considerations, giving a glimpse of the live streaming business and requirements.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/91a6136c0b000f0c76b72a890f3e41ac.jpg)
 
@@ -11,14 +11,11 @@ As live streaming has become ubiquitous, more and more enterprises and developer
 To set up a live room in Tencent Cloud, you need to create an IM application in the [console](https://console.cloud.tencent.com/im) as shown below:
 ![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-081650.png)
 
-### Creating a TRTC or CSS application
+### Adding a live push domain and a playback domain
 
-In addition to IM features, a live room also relies on the live streaming feature, which can be implemented with [TRTC](https://console.cloud.tencent.com/trtc) or [CSS](https://console.cloud.tencent.com/live/livestat). After creating an IM application, you can activate a TRTC application as shown below:
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-081714.png)
-
-To use [CSS](https://console.cloud.tencent.com/live/livestat), you can enable stream push and playback domain names as shown below:
+The live streaming feature is required to set up a live room and can be implemented through [CSS](https://console.cloud.tencent.com/live/livestat). You need to add a push domain and a playback domain as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/fb8a00c48c21bd8d8d74b5a83105893d.png)
-
+For detailed directions, see [Adding Your Own Domain](https://intl.cloud.tencent.com/document/product/267/35970).
 
 
 ### Completing basic configuration
@@ -39,12 +36,14 @@ During live streaming, an admin may need to send messages to a live room and mut
 
 To implement lucky draws based on on-screen comments, message statistics collection, sensitive content detection, and other requirements, you need to use the IM callback module, where the IM backend calls back the business backend in certain scenarios. You only need to provide an HTTP API and configure it in the [**Callback configuration**](https://console.cloud.tencent.com/im/callback-setting) module in the console as shown below:
 
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-083718.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/N73j869_9.png)
 
 
 ### Integrating the client SDK
 
-After completing the preparations, you need to integrate the IM and TRTC client SDKs into your project. You can select different integration options as needed.
+After completing the preparations, you need to integrate the IM and CSS client SDKs into your project. You can select an integration option as needed.
+For IM integration, see [Instant Messaging](https://www.tencentcloud.com/document/product/1047/34552).
+For CSS integration, see [User Guide](https://intl.cloud.tencent.com/document/product/1071/41929).
 
 The following describes common features in a live room and provides best practices with implementation code.
 
@@ -120,7 +119,7 @@ Therefore, you can select **audio-video groups (AVChatRoom)** as the **Group typ
 
 IM audio-video groups (AVChatRooms) have the following features:
 - **Support interactive live streaming scenarios with unlimited group members.**
-- Supports pushing messages (group system notifications) to all online members.
+- Messages (group system notifications) can be pushed to all online members.
 - Users can enter the group directly with no admin approval required.
 
 >? The IM SDK for web allows users to join only one audio-video group (AVChatRoom) at a time. If a user logs in to an client and enters live room A, multi-client login is enabled in the [console](https://console.cloud.tencent.com/im/login-message), and the user logs in to another client and enters live room B, the user will be removed from live room A.
@@ -209,7 +208,7 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 
 :::
 
-::: Web
+::: Web 
 
 ```js
 // Get the group profile
@@ -235,7 +234,7 @@ promise.then(function(imResponse) {
 // Starting from v2.6.2, the SDK supports muting and unmuting all. Currently, when all users are muted in a group, group notifications cannot be delivered.
 let promise = tim.updateGroupProfile({
   groupID: 'group1',
-  muteAllMembers: true, // true: mute all; false: unmute all
+  muteAllMembers: true, // `true`: mute all; `false`: unmute all
 });
 promise.then(function(imResponse) {
   console.log(imResponse.data.group) // Detailed group profile after modification
@@ -514,7 +513,7 @@ V2TIMManager.getMessageManager().getHistoryMessageList(option, new V2TIMValueCal
 ::: iOS and macOS
 
 ```swift
-// Pull historical one-to-one chat messages
+// Pull historical one-to-one messages
 // Set `lastMsg` to `nil` for the first pull
 // `lastMsg` can be the last message in the returned message list for the second pull.
 [V2TIMManager.sharedInstance getC2CHistoryMessageList:#your user id# count:20 lastMsg:nil succ:^(NSArray<V2TIMMessage *> *msgs) {
@@ -531,7 +530,7 @@ V2TIMManager.getMessageManager().getHistoryMessageList(option, new V2TIMValueCal
 ::: Flutter
 
 ```dart
-// Pull historical one-to-one chat messages
+// Pull historical one-to-one messages
 // Set `lastMsgID` to `null` for the first pull
 // `lastMsgID` can be the ID of the last message in the returned message list for the second pull.
 TencentImSDKPlugin.v2TIMManager.getMessageManager().getC2CHistoryMessageList(
@@ -571,7 +570,7 @@ See the sample code for historical message pulling in other SDKs [here](https://
 
 Displaying the number of online users in a live room is a common feature. There are two implementation schemes, each with pros and cons.
 
-1. Get the number of online users in a live room through the client SDK API [getGroupOnlineMemberCount](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a56840105a4b3371eeab2046d8c300bce).
+1. Pull the number of online users in a group in a scheduled polling way through the [getGroupOnlineMemberCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a56840105a4b3371eeab2046d8c300bce) API provided by the client SDK.
 2. Deliver the data to all group members through the server API, such as [group system notification](https://intl.cloud.tencent.com/document/product/1047/34958) or [custom group message](https://intl.cloud.tencent.com/document/product/1047/34959), based on the callback for joining or leaving a group on the backend.
 
 If there is only one live room, it's sufficient to pull the number of online users through the API of the client SDK. If there are multiple live rooms that require a large number of exposure positions to display the number of online users, the second scheme is recommended.
@@ -683,7 +682,7 @@ V2TIMManager.getGroupManager().setGroupInfo(info, new V2TIMCallback() {
 V2TIMManager.getInstance().addGroupListener(new V2TIMGroupListener() {
   @Override
   public void onMemberInfoChanged(String groupID, List<V2TIMGroupMemberChangeInfo> v2TIMGroupMemberChangeInfoList) {
-    // Listen for muting a group member
+    // Listen for the muting of a group member
     for (V2TIMGroupMemberChangeInfo memberChangeInfo : v2TIMGroupMemberChangeInfoList) {
       // ID of the muted user
       String userID = memberChangeInfo.getUserID();
@@ -694,7 +693,7 @@ V2TIMManager.getInstance().addGroupListener(new V2TIMGroupListener() {
 
   @Override
   public void onGroupInfoChanged(String groupID, List<V2TIMGroupChangeInfo> changeInfos) {
-    // Listen for muting all
+    // Listen for the muting of all
     for (V2TIMGroupChangeInfo groupChangeInfo : changeInfos) {
       if (groupChangeInfo.getType() == V2TIMGroupChangeInfo.V2TIM_GROUP_INFO_CHANGE_TYPE_SHUT_UP_ALL) {
         // Whether all members are muted
@@ -729,7 +728,7 @@ info.allMuted = YES;
 
 [[V2TIMManager sharedInstance] addGroupListener:self];
 - (void)onMemberInfoChanged:(NSString *)groupID changeInfoList:(NSArray <V2TIMGroupMemberChangeInfo *> *)changeInfoList {
-    // Listen for muting a group member
+    // Listen for the muting of a group member
     for (V2TIMGroupMemberChangeInfo *memberChangeInfo in changeInfoList) {
       // ID of the muted user
       NSString *userID = memberChangeInfo.userID;
@@ -739,7 +738,7 @@ info.allMuted = YES;
 }
 
 - (void)onGroupInfoChanged:(NSString *)groupID changeInfoList:(NSArray <V2TIMGroupChangeInfo *> *)changeInfoList {
-    // Listen for muting all
+    // Listen for the muting of all
     for (V2TIMGroupChangeInfo groupChangeInfo in changeInfoList) {
       if (groupChangeInfo.type == V2TIM_GROUP_INFO_CHANGE_TYPE_SHUT_UP_ALL) {
         // Whether all members are muted
@@ -771,14 +770,14 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 
 ::: 
 
-::: Web
+::: Web 
 
 ```js
 tim.setGroupMemberMuteTime(options);
 let promise = tim.setGroupMemberMuteTime({
   groupID: 'group1',
   userID: 'user1',
-  muteTime: 600 // The user is muted for 10 minutes. If the value is set to 0, the user is unmuted.
+  muteTime: 600 // The user is muted for ten minutes. If the value is set to `0`, the user is unmuted.
 });
 promise.then(function(imResponse) {
   console.log(imResponse.data.group); // New group profile
@@ -790,7 +789,7 @@ promise.then(function(imResponse) {
 let promise = tim.setGroupMemberMuteTime({
   groupID: 'topicID',
   userID: 'user1',
-  muteTime: 600 // The user is muted for 10 minutes. If the value is set to 0, the user is unmuted.
+  muteTime: 600 // The user is muted for ten minutes. If the value is set to `0`, the user is unmuted.
 });
 promise.then(function(imResponse) {
   console.log(imResponse.data.group); // New group profile
@@ -801,7 +800,7 @@ promise.then(function(imResponse) {
 // Starting from v2.6.2, the SDK supports muting and unmuting all. Currently, when all users are muted in a group, group notifications cannot be delivered.
 let promise = tim.updateGroupProfile({
   groupID: 'group1',
-  muteAllMembers: true, // true: mute all; false: unmute all
+  muteAllMembers: true, // `true`: mute all; `false`: unmute all
 });
 promise.then(function(imResponse) {
   console.log(imResponse.data.group) // Detailed group profile after modification
@@ -820,23 +819,14 @@ Note that the change of the group member muting status will not be delivered to 
 
 >?Client SDKs do not support user muting in live rooms at the moment. You can use the corresponding server APIs to [mute](https://intl.cloud.tencent.com/document/product/1047/50296) and [unmute](https://intl.cloud.tencent.com/document/product/1047/50297) users.
 
-### Removing a user from a live room
+### Banning a user in a live room
 
-Similar to muting users in a live room, you can use a server [API](https://intl.cloud.tencent.com/document/product/1047/34949) to remove a user from a live room. As audio-video groups (AVChatRoom) don't support this API, you need another implementation scheme.
-
-Below is the scheme:
-
-1. The backend sends the custom group message containing the `userID` of the removed user. When many users are removed at a time, pay attention to the message body size and send the messages in batches.
-2. The business backend maintains the group join blocklist.
-3. The client receives the custom message and parses the `userID`. If its `userID` is identified, it will call the API to leave the group.
-4. Configure the callback before group join and detect whether the user requesting to join the group is in the blocklist in step 2.
+You can call the [banning](https://intl.cloud.tencent.com/document/product/1047/50296) API on the server to kick users out of a live room and ban them from joining for a certain period of time.
 
 [Configuration items in the console](https://console.cloud.tencent.com/im/callback-setting) are as shown below:
 
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-090320.png)
 
-
->!**Removing a user from a live room is supported from client SDK 6.6.X or later and Flutter SDK 4.1.1 or later.**
+>!**You can use the API for kicking users out of a live room to implement the banning feature in the client SDK on 6.6.x or later or the SDK for Flutter on 4.1.1 or later.**
 
 Sample code:
 
@@ -1035,7 +1025,7 @@ tim.getGroupMemberList(options);
 Similar to message statistics, lucky draws in live streaming also require the callback after sending a message. Specifically, the message content is detected, and users that hit the keywords of a lucky draw are added to the pool.
 
 ### On-screen comments for live video broadcasting
- AVChatRoom makes it easy to build good chatting and interactive experience in live video broadcasting by supporting various message types including on-screen comments, gifts, and likes.
+ Audio-video groups (`AVChatRoom`) support on-screen comments, gifts, and like messages to build a friendly interaction experience.
 ![](https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/product/im-new/css/img/scenes/function2.gif)
 
 ### Broadcast in a live room
@@ -1058,18 +1048,18 @@ For detailed directions on how to send a broadcast message on the business backe
   1. [OBS](https://intl.cloud.tencent.com/document/product/267/31569) (client)
   2. [Web Push](https://console.cloud.tencent.com/live/tools/webpush) (web)
   3. [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38158) (app)
-  
+
   >? Before starting stream push, an anchor needs to configure a push address. Refer to [Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059) or [Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) to generate a push address.
-  
+
 - ### Client (stream pull)
 
   The client can get live streams in different ways:
 
   1. [VLC](https://intl.cloud.tencent.com/document/product/267/32483) for PCs
-  2. [TXLivePusher SDK](https://www.tencentcloud.com/document/product/1071/41881) from web
+  2. [TXLivePusher SDK](https://www.tencentcloud.com/document/product/454/7503) from web
   3. [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38160) for the application
 
-  >? Before starting stream pull, an anchor needs to configure a playback address. Refer to [Playback Configuration](https://intl.cloud.tencent.com/document/product/267/31058) or [Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) to generate a playback address.
+  >? You need to configure a playback address to pull a stream, which can be generated as instructed in [Playback Configuration](https://intl.cloud.tencent.com/document/product/267/31058) or through the [Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator). For more information on SDK integration, see [2. Playback](https://www.tencentcloud.com/document/product/267/51155).
 
 - ### Live director
 
@@ -1083,41 +1073,39 @@ For detailed directions on how to send a broadcast message on the business backe
   6. Live on-screen comment adding
   7. Live stream monitoring
 
-- ### Live streaming in TRTC
 
-  You can also use TRTC to implement live streaming. It provides more advanced features than CSS, such as:
-
-  1. [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618)
-  2. [On-Cloud Recording and Playback](https://www.tencentcloud.com/zh/document/product/647/35426)
-  3. [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242)
-
+- ### More advanced features
+  
+  CSS has the following advanced features in addition to stream push and pull:
+  1. [Top speed codec transcoding](https://intl.cloud.tencent.com/document/product/267/31561) is a unique technology which uses smart scenario recognition and dynamic encoding to implement high-definition live streams at a low bitrate and with a higher image quality.
+  2. [Time shifting](https://intl.cloud.tencent.com/document/product/267/31565) allows for pausing and rewinding a live stream.
+  3. [Live recording](https://intl.cloud.tencent.com/document/product/267/31563) allows for recording and storing live streams for subsequent editing and distribution.
+  4. [Live watermarking](https://intl.cloud.tencent.com/document/product/267/31073) adds visible or digital watermarks to live streams to protect video content from theft.
+  5. [Live stream mix](https://intl.cloud.tencent.com/document/product/267/37665) synchronously mixes multiple streams of input sources into a new stream based on the configured stream mix layout for interactive live streaming.
+  6. [Relay](https://intl.cloud.tencent.com/document/product/267/42524) supports pushing live streams or streaming on-demand videos, that is, pulling content from existing live streams or videos and delivering them to the destination address.
+  
 ## 4. FAQs
-### 1. What should I do to display the nickname and profile photo on the UI when the message sending status, `Message.nick`, and `Message.avatar` fields are empty during message sending?
+### 1. Can I try out CSS?
+New users can get 20 GB free traffic valid for one year after activating CSS, and excessive traffic will be billed daily in pay-as-you-go mode. CSS value-added features are disabled by default, such as live watermarking, transcoding, recording, screencapturing, and porn detection. They can be enabled as needed and will be billed afterward. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/267/2822).
+
+### 2. Is there an upper limit on the number of online viewers?
+By default, CSS does not limit the number of online viewers for a live stream as long as the network and other conditions permit. However, if you have configured a bandwidth limit, new viewers cannot watch the live stream if there are so many existing viewers that the bandwidth limit is exceeded. In this case, the number of online viewers is limited.
+
+### 3. What should I do to display the nickname and profile photo on the UI when the message sending status, `Message.nick`, and `Message.avatar` fields are empty during message sending?
 Call the `getUserInfo` API to get the `Message.nick` and `Message.avatar` fields in the user's information and use them as the fields for message sending.
 
-### 2. How should I choose between TRTC and CSS?
-Live streaming in TRTC features a low latency to facilitate interaction with the anchor, but it's expensive. CSS is cheap but has a high latency.
-
-### 3. Why are messages lost?
+### 4. Why are messages lost?
 
 Possible causes include the following:
 
 - An audio-video group has the frequency limit of 40 messages per second. You can check whether the callback before sending a message and the callback after sending a message are received for a lost message. If the former is received but the latter is not, then the message has been blocked due to frequency restriction.
-- When a group member quits an audio-video group from the web client, the member may also quit on the Android, iOS, or PC client. For more information, see [FAQ 4](#p4).
+- You can check whether a group member quits on the Android, iOS, or PC client after quitting on the web client as instructed in [Message](https://intl.cloud.tencent.com/document/product/1047/34458).
 - If a problem occurs on the web client, check whether your SDK version is earlier than v2.7.6; if yes, upgrade it to the latest version.
 
-If the problem persists, submit a ticket for assistance.
+If the problem persists, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
-### 4. Is there an open-source live streaming component that allows for video watching and chatting?
 
-Yes. You can download the open-source Tencent Cloud web interactive live streaming component TWebLive [here](https://github.com/tencentyun/TWebLive).
 
-### 5. Contact us
+## 5. Contact Us
 
-Join a Tencent Cloud IM group for:
-
-- Reliable technical support
-- Product details
-- Constant exchange of ideas
-
-Telegram group: [Join now](https://t.me/tencent_imsdk)
+Contact us for more information.

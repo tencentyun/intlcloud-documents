@@ -1,13 +1,14 @@
-## Feature Description
+## Feature Overview
 
 This callback allows you to view the deletion status of a topic in real time on the application backend. Specifically, you can view the real-time log of the topic deletion or sync the information to other systems.
 
 ## Notes
 
-- To enable this callback, you must configure a callback URL. This callback and the callback after group deletion use the same switch. For detailed directions, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
+- To enable this callback, you must configure the URL. This callback and the callback after group disbanding use the same switch. For detailed directions, see [Webhook Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 - During this callback, the IM backend initiates an HTTP POST request to the app backend.
 - After receiving the callback request, the app backend must check whether the `SDKAppID` contained in the request URL is the `SDKAppID` of the app.
 - For more security considerations, see the **Security Considerations** section in [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354).
+- You need to [enable the topic feature in the console](https://intl.cloud.tencent.com/document/product/1047/34419) before using it.
 
 ## Callback Triggering Scenarios
 
@@ -18,7 +19,7 @@ This callback allows you to view the deletion status of a topic in real time on 
 
 It will be triggered after a topic is deleted.
 
-## API Call Description
+## API Calling Description
 
 ### Sample request URL
 
@@ -77,11 +78,11 @@ The application backend records the topic deletion information and sends the cal
 
 ### Response fields
 
-| Field | Type | Attribute | Description |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| ActionStatus | String | Required | Request result. OK: succeeded; FAIL: failed. |
+| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
 | ErrorCode | Integer | Required | Error code. We recommend you set it to `0`. This callback is used to notify users of the topic deletion. The error code value of the user doesn't affect the deletion process. |
-| ErrorInfo    | String  | Required | Error message |
+| ErrorInfo    | String  | Yes | Error information                                       |
 
 
 

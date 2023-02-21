@@ -4,10 +4,11 @@ App 后台可以通过该回调实时查看用户创建话题的信息，包括�
 
 ## 注意事项
 
-- 要启用回调，必须配置回调 URL，本条回调协议和创建群组之后回调的开关为同一个，配置方法详见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
+- 要启用回调，必须配置 URL，本条回调协议和创建群组之后回调协议的控制台开关为同一个，配置方法详见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
 - 回调的方向是即时通信 IM 后台向 App 后台发起 HTTP POST 请求。
 - App 后台在收到回调请求之后，务必校验请求 URL 中的参数 SDKAppID 是否是自己的 SDKAppID。
 - 其他安全相关事宜请参考 [第三方回调简介：安全考虑](https://intl.cloud.tencent.com/document/product/1047/34354) 文档。
+- 话题功能需要在 [控制台开通](https://intl.cloud.tencent.com/document/product/1047/34419) 后才能使用。
 
 ## 可能触发该回调的场景
 
@@ -76,7 +77,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Owner_Account | String | 请求创建话题所属群的群主 UserID |
 | Type | String | 代表创建话题所属的群组类型，这里为Community |
 | Name | String | 请求创建的话题的名称 |
-| UserDefinedDataList | Array | 用户创建话题时的自定义字段，这个字段默认是没有的，需要开通，详见 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529) |
+| UserDefinedDataList | Array | 用户创建话题时的自定义字段，这个字段默认是没有的，需要开通，详见 [自定义字段](https://www.tencentcloud.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) |
 
 ### 应答包示例
 

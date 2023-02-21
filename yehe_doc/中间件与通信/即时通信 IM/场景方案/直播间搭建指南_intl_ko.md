@@ -1,4 +1,4 @@
-라이브 스트리밍이 보편화되면서 점점 더 많은 기업과 개발자들이 자체 라이브 스트리밍 플랫폼을 구축하고 있습니다. 이 과정에서 라이브 스트림 푸시 및 풀, 라이브 채팅방, 라이브 룸 인터랙션(예: 좋아요, 선물 및 공동 앵커) 및 라이브 룸 상태 관리와 같은 복잡한 요구 사항을 처리해야 합니다. 이 문서에서는 Tencent Cloud 제품([Instant Messaging](https://console.cloud.tencent.com/im), [Tencent Real-Time Communication](https://console.cloud.tencent.com/trtc) 및 [Cloud Streaming Services](https://console.cloud.tencent.com/live/livestat))을 예로 들어 라이브 룸을 구현하는 방법과 가능한 문제 및 고려 사항을 설명하고, 라이브 스트리밍 비즈니스 및 요구 사항을 간략히 안내합니다.
+라이브 스트리밍이 보편화되면서 점점 더 많은 기업과 개발자들이 자체 라이브 스트리밍 플랫폼을 구축하고 있습니다. 이 과정에서 라이브 스트림 푸시 및 풀, 라이브 트랜스코딩, 라이브 화면 캡처, 라이브 스트림 믹싱, 라이브 채팅방, 라이브 룸 인터랙션(예: 좋아요, 선물 및 공동 앵커) 및 라이브 룸 상태 관리와 같은 복잡한 요구 사항을 처리해야 합니다. 이 문서에서는 Tencent Cloud 제품([Instant Messaging](https://console.cloud.tencent.com/im), [Cloud Streaming Services](https://console.cloud.tencent.com/live/livestat))를 예로 들어 라이브 룸을 구현하는 방법과 가능한 문제 및 고려 사항을 설명하고, 라이브 스트리밍 비즈니스 및 요구 사항을 간략히 안내합니다.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/91a6136c0b000f0c76b72a890f3e41ac.jpg)
 
@@ -11,14 +11,11 @@
 Tencent Cloud에서 라이브 룸을 설정하려면 아래와 같이 [콘솔](https://console.cloud.tencent.com/im)에서 IM 애플리케이션을 생성해야 합니다.
 ![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-081650.png)
 
-### TRTC 또는 CSS 애플리케이션 생성
+### 라이브 스트림 푸시 및 재생 도메인 추가
 
-IM 기능 외에도 라이브 룸은 [TRTC](https://console.cloud.tencent.com/trtc) 또는 [CSS](https://console.cloud.tencent.com/live/livestat)로 구현할 수 있는 라이브 스트리밍 기능에 의존합니다. IM 애플리케이션을 생성한 후 아래와 같이 TRTC 애플리케이션을 활성화할 수 있습니다.
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-081714.png)
-
-[CSS](https://console.cloud.tencent.com/live/livestat)를 사용하려면 아래와 같이 스트림 푸시 및 재생 도메인 이름을 활성화할 수 있습니다.
+라이브 룸을 구축하려면 라이브 기능이 필수적이며 [CSS](https://console.cloud.tencent.com/live/livestat)를 통해 라이브 기능을 실현할 수 있습니다. 아래 그림과 같이 스트림 푸시 및 재생 도메인을 추가해야 합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/fb8a00c48c21bd8d8d74b5a83105893d.png)
-
+자세한 작업 방법은 [외부 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)를 참고하십시오.
 
 
 ### 기본 구성 완료
@@ -39,12 +36,14 @@ IM 계정 시스템에서 사용자 로그인에 필요한 암호는 IM에서 �
 
 라이브 룸에서 화면 댓글을 기반으로한 경품 추첨, 메시지 통계 수집, 민감한 콘텐츠 감지 등 요구 사항을 구현하려면 IM 백엔드가 특정 시나리오에서 비즈니스 백엔드를 다시 호출하는 IM 콜백 모듈을 사용해야 합니다. HTTP API를 제공하고 아래와 같이 [콘솔 > 콜백 구성](https://console.cloud.tencent.com/im/callback-setting) 모듈에서 구성하기만 하면 됩니다.
 
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-083718.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/N73j869_9.png)
 
 
 ### 클라이언트 SDK 통합
 
-준비가 끝나면 IM 및 TRTC 클라이언트 SDK를 프로젝트에 통합해야 합니다. 필요에 따라 다른 통합 옵션을 선택할 수 있습니다.
+준비가 끝나면 IM 및CSS 클라이언트 SDK를 프로젝트에 통합해야 합니다. 필요에 따라 다른 통합 옵션을 선택할 수 있습니다.
+IM은 [Instant Messaging 시작하기](https://www.tencentcloud.com/document/product/1047/34552)를 참고하십시오.
+CSS는 [MLVB SDK 시작하기](https://intl.cloud.tencent.com/document/product/1071/41929)를 참고하십시오.
 
 다음은 라이브 룸의 일반적인 기능을 설명하고 구현 코드와 함께 모범 사례를 제공합니다.
 
@@ -209,7 +208,7 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 
 :::
 
-::: Web
+::: Web 
 
 ```js
 // 그룹 프로필 가져오기
@@ -571,7 +570,7 @@ promise.then(function(imResponse) {
 
 라이브 룸의 온라인 사용자 수를 표시하는 것은 일반적인 기능입니다. 각각 장단점이 있는 두 가지 구현 스키마가 있습니다.
 
-1. 클라이언트 SDK에서 제공하는 [getGroupOnlineMemberCount](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a56840105a4b3371eeab2046d8c300bce) API를 통해 스케쥴된 풀링 방식으로 그룹의 온라인 사용자 수를 가져옵니다.
+1. 클라이언트 SDK에서 제공하는 [getGroupOnlineMemberCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a56840105a4b3371eeab2046d8c300bce) API를 통해 스케쥴된 풀링 방식으로 그룹의 온라인 사용자 수를 가져옵니다.
 2. 백엔드에서 그룹에 가입하거나 탈퇴하는 콜백을 기반으로 [Sending System Messages in a Group](https://intl.cloud.tencent.com/document/product/1047/34958) 또는 [Sending Ordinary Messages in a Group](https://intl.cloud.tencent.com/document/product/1047/34959)과 같은 서버 API를 통해 모든 그룹 구성원에게 데이터를 전달합니다.
 
 라이브 룸이 하나뿐이라면 클라이언트 SDK의 API를 통해 온라인 사용자 수를 풀링하기에 충분합니다. 온라인 사용자 수를 표시하기 위해 많은 노출 위치가 필요한 라이브 룸이 여러 개 있는 경우 두 번째 스키마를 권장합니다.
@@ -771,14 +770,14 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 
 ::: 
 
-::: Web
+::: Web 
 
 ```js
 tim.setGroupMemberMuteTime(options);
 let promise = tim.setGroupMemberMuteTime({
   groupID: 'group1',
   userID: 'user1',
-  muteTime: 600 // 10분 동안 사용자 음소거; 값이 0으로 설정되면 사용자 음소거 해제
+  muteTime: 600 // 10분 동안 사용자 음소거; 0으로 설정되면 사용자 음소거 해제
 });
 promise.then(function(imResponse) {
   console.log(imResponse.data.group) // 새 그룹 프로필
@@ -820,23 +819,14 @@ promise.then(function(imResponse) {
 
 >?Client SDK는 현재 라이브 룸에서 사용자 음소거를 지원하지 않습니다. 해당 서버 API를 사용하여 [Banning Group Members](https://intl.cloud.tencent.com/document/product/1047/50296) 및 [Unbanning Group Members](https://intl.cloud.tencent.com/document/product/1047/50297)할 수 있습니다.
 
-### 라이브 룸에서 사용자 내보내기
+### 라이브 룸 차단
 
-라이브 룸에서 사용자를 음소거하는 것과 유사하게 서버 API [Deleting Group Members](https://intl.cloud.tencent.com/document/product/1047/34949)를 사용하여 라이브 룸에서 사용자를 내보낼 수 있습니다. 오디오/비디오 그룹(AVChatRoom)은 이 API를 지원하지 않으므로 다른 구현 스키마가 필요합니다.
-
-다음은 스키마입니다.
-
-1. 백엔드는 내보낸 사용자의 userID가 포함된 사용자 정의 그룹 메시지를 보냅니다. 한 번에 많은 사용자를 내보내는 경우 메시지 본문 크기에 주의하고 메시지를 일괄적으로 보냅니다.
-2. 비즈니스 백엔드는 그룹 가입 블록리스트를 유지 관리합니다.
-3. 클라이언트는 사용자 정의 메시지를 수신하고 userID를 구문 분석합니다. userID가 식별되면 API를 호출하여 그룹을 탈퇴합니다.
-4. 그룹 가입 전에 콜백을 구성하고 2단계에서 그룹 가입을 요청한 사용자가 블록리스트에 있는지 점검합니다.
+개발자는 서버의 [Banning Group Members](https://intl.cloud.tencent.com/document/product/1047/50296) API를 통해 라이브 룸의 구성원을 강제 퇴장할 수 있으며, 강제 퇴장된 구성원이 그룹에 다시 들어올 수 없도록 일정 기간 동안 차단할 수 있습니다.
 
 [콘솔 구성 항목](https://console.cloud.tencent.com/im/callback-setting)은 다음과 같습니다.
 
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-090320.png)
 
-
->!**라이브 룸에서 사용자 제거는 클라이언트 SDK 6.6.X 이상 및 Flutter SDK 4.1.1 이상에서 지원**
+>!** 클라이언트 SDK 6.6.X 이상 버전, Flutter SDK 4.1.1 이상 버전에서는 라이브 룸 구성원 내보내기 API를 사용하여 차단 기능을 구현할 수 있습니다.**
 
 샘플 코드:
 
@@ -1035,7 +1025,7 @@ tim.getGroupMemberList(options);
 메시지 통계와 마찬가지로 라이브 스트리밍의 경품 추첨도 메시지를 보낸 후 콜백이 필요합니다. 구체적으로, 메시지 내용이 감지되고 경품 추첨의 키워드에 도달한 사용자가 풀에 추가됩니다.
 
 ### 실시간 화면 댓글
- AVChatRoom(오디오/비디오 그룹)은 댓글 자막, 선물하기, 좋아요 등 다양한 메시지 유형을 지원하며 친근한 인터랙션 환경을 구축합니다.
+ AVChatRoom(오디오/비디오 그룹)은 친근한 인터랙션 경험을 구축하기 위해 화면 댓글, 선물하기 및 좋아요 등 다양한 메시지를 지원합니다.
 ![](https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/product/im-new/css/img/scenes/function2.gif)
 
 ### 라이브 룸에서 방송
@@ -1058,18 +1048,18 @@ tim.getGroupMemberList(options);
   1. 클라이언트에서 [OBS 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31569)
   2. Web에서 [Web 푸시](https://console.cloud.tencent.com/live/tools/webpush)
   3. App에서 [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38158)
-  
+
   >? 앵커가 스트림을 푸시할 푸시 주소를 구성해야 하며, 이는 [푸시 스트림 설정](https://intl.cloud.tencent.com/document/product/267/31059)에 따라 생성하거나 [주소 생성기](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)를 통해 생성할 수 있습니다.
-  
+
 - ### 클라이언트(풀 스트림)
 
   클라이언트는 다양한 방법으로 라이브 스트림을 얻을 수 있습니다.
 
   1. PC에서 [VCL 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/32483)
-  2. Web용 [TXLivePusher SDK](https://www.tencentcloud.com/document/product/1071/41881)
+  2. Web용 [TXLivePusher SDK](https://www.tencentcloud.com/document/product/454/7503)
   3. App용 [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38160)
 
-  >? 스트림을 가져오려면 재생 주소를 구성해야 하며, 이는 [재생 설정](https://intl.cloud.tencent.com/document/product/267/31058)을 따라 생성하거나 [주소 생성기](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)를 통해 생성할 수 있습니다.
+  >? 스트림을 가져오려면 재생 주소를 구성해야 하며, 이는 [재생 설정](https://intl.cloud.tencent.com/document/product/267/31058)을 따라 생성하거나 [주소 생성기](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)를 통해 생성할 수 있습니다. SDK 액세스 과정에 대한 자세한 내용은 [재생](https://www.tencentcloud.com/document/product/267/51155)을 참고하십시오.
 
 - ### 라이브 디렉터
 
@@ -1083,41 +1073,39 @@ tim.getGroupMemberList(options);
   6. 실시간 화면 댓글 추가
   7. 라이브 스트림 모니터링
 
-- ### Tencent Real-Time Communication(TRTC) 라이브 스트리밍
 
-  TRTC를 사용하여 라이브 스트리밍을 구현할 수도 있습니다. 다음과 같이 CSS보다 더 많은 고급 기능을 제공합니다.
-
-  1. [클라우드 믹스 트랜스코딩](https://intl.cloud.tencent.com/document/product/647/34618)
-  2. [클라우드 녹화 및 재생](https://www.tencentcloud.com/zh/document/product/647/35426)
-  3. [CDN 라이브 방송 시청 실행](https://intl.cloud.tencent.com/document/product/647/35242)
-
+- ### 고급 기능 더보기
+  
+  CSS는 푸시/풀 스트림 서비스 외에도 다음과 같은 고급 기능이 있습니다.
+  1. [라이브 리먹싱 및 트랜스코딩](https://intl.cloud.tencent.com/document/product/267/31561), 독점적인 초고속 고화질 트랜스코딩 기술로, 시나리오 동적 인코딩을 지능적으로 인식하고 라이브 고화질 저코드 및 화질 향상을 실현합니다.
+  2. [타임 시프트](https://intl.cloud.tencent.com/document/product/267/31565), 라이브 방송 중 하이라이트 영상을 일시 중지 및 다시 볼 수 있도록 지원합니다.
+  3. [라이브 방송 녹화](https://intl.cloud.tencent.com/document/product/267/31563), 라이브 방송 중 동기화 녹화 및 저장이 가능하여 녹화된 비디오의 후속 편집 및 재전파에 편리합니다.
+  4. [라이브 방송 워터마크](https://intl.cloud.tencent.com/document/product/267/31073), 생방송 화면에 선명한 워터마크 또는 디지털 워터마크를 겹쳐 영상 도난 방지 효과를 실현합니다.
+  5. [클라우드 혼합 스트림](https://intl.cloud.tencent.com/document/product/267/37665), 설정한 혼합 스트림 레이아웃에 따라 다양한 경로의 입력 소스를 새로운 스트림으로 동기식으로 혼합하여 라이브 인터랙션 효과를 실현할 수 있습니다.
+  6. [릴레이](https://intl.cloud.tencent.com/document/product/267/42524), 다른 플랫폼의 라이브 또는 VOD 비디오를 라이브 방송 형태로 배포할 수 있으며, 컨텐츠 풀링 및 푸시 기능을 제공하고,기존 라이브 방송이나 영상을 대상 주소로 푸시합니다.
+  
 ## 4. FAQ
-### 1. 메시지 전송 중 메시지 전송 상태, `Message.nick`, `Message.avatar` 필드가 비어 있는 경우 UI에 닉네임과 프로필 사진을 표시하려면 어떻게 해야 하나요?
+### 1. CSS를 테스트할 수 있나요?
+CSS 서비스를 활성화한 신규 사용자에게는 1년간 유효한 20GB의 트래픽이 무료로 제공됩니다. 이때 테스트에 의해 발생하는 트래픽은 이를 이용하여 차감할 수 있으며, 패키지를 초과하는 부분은 후불 일 결산 방식으로 과금됩니다. 동시에 라이브 방송 워터마크, 트랜스코딩, 녹화, 화면 캡처, 음란물 감지 등과 같은 라이브 방송 부가 기능을 사용할 수도 있습니다. 부가 기능은 기본적으로 비활성화되어 있으며, 필요에 따라 사용 및 과금됩니다. 기능에 대한 자세한 내용은 [제품 개요](https://intl.cloud.tencent.com/document/product/267/2822)를 참고하십시오.
+
+### 2. 라이브 방송은 접속 인원 수 제한이 있습니까?
+기본적으로 CSS는 네트워크 및 기타 조건이 허용하는 한 라이브 스트림의 온라인 시청자 수를 제한하지 않습니다. 그러나 대역폭 제한을 설정한 경우 기존 시청자가 너무 많아 대역폭 제한을 초과하면 새로운 시청자가 라이브 스트림을 시청할 수 없습니다. 이 경우 온라인 시청자 수에 제한이 있습니다.
+
+### 3. 메시지 전송 중 메시지 전송 상태, `Message.nick`, `Message.avatar` 필드가 비어 있는 경우 UI에 닉네임과 프로필 사진을 표시하려면 어떻게 해야 하나요?
 getUserInfo API를 호출하여 사용자 정보에서 nick 및 avatar 필드를 가져와 메시지 전송 필드로 사용합니다.
 
-### 2. TRTC와 CSS 중에서 어떻게 선택해야 하나요?
-TRTC의 라이브 스트리밍은 앵커와의 인터랙션을 용이하게 하기 위해 대기 시간이 짧지만 비용이 많이 듭니다. CSS는 저렴하지만 대기 시간이 높습니다.
-
-### 3. 메시지가 손실되는 원인은 무엇입니까?
+### 4. 메시지가 손실되는 원인은 무엇입니까?
 
 메시지가 손실되는 가능 원인은 다음과 같습니다.
 
 - 오디오-비디오 그룹에는 초당 40개 메시지의 빈도 제한이 적용됩니다. 메시지 전송 전 콜백과 메시지 전송 후 콜백 수신 여부를 확인할 수 있습니다. 전자는 수신되었지만 후자는 수신되지 않은 경우 빈도 제한으로 인해 메시지가 차단된 것입니다.
-- 자세한 내용은 [FAQ 4](#p4)를 참고하십시오. Web 클라이언트 퇴장으로 인해 Android/iOS/PC 클라이언트가 퇴장되는지 확인합니다.
+- 자세한 내용은 [메시지](https://intl.cloud.tencent.com/document/product/1047/34458)를 참고하십시오. Web 클라이언트 퇴장으로 인해 Android/iOS/PC 클라이언트가 퇴장되는지 확인합니다.
 - Web 클라이언트에서 문제가 발생하면 SDK 버전이 v2.7.6 이전인지 확인하십시오. 그렇다면 최신 버전으로 업그레이드하십시오.
 
-상기 원인에 해당되지 않는 경우, 티켓 제출을 통해 문의주시기 바랍니다.
+상기 원인에 해당되지 않는 경우, [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 문의주시기 바랍니다.
 
-### 4. 영상 시청과 채팅에 바로 사용이 가능한 라이브 방송 오픈 소스 컴포넌트가 있습니까?
 
-있습니다. 코드 또한 오픈 소스입니다. 자세한 사항은 [Tencent Cloud TWebLive](https://github.com/tencentyun/TWebLive)를 참고하십시오.
 
-### 5. 문의하기
+## 5. 고객센터
 
-Tencent Cloud IM 기술 교류 그룹 가입 혜택:
-
-- 신뢰할 수 있는 기술 지원
-- 자세한 제품 정보
-- 긴밀한 업계 교류
-
-Telegram 그룹: [가입하기](https://t.me/tencent_imsdk)
+그룹 번호 검색: 853084820, 더 자세한 답변을 드리겠습니다.

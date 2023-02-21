@@ -1,4 +1,4 @@
-直播在生活中可谓是无处不在，越来越多的企业、开发者们正在搭建自己的直播平台。由于直播平台本身所涉及到的如推拉直播流、直播间聊天室、直播间互动（点赞、送礼、连麦）、直播间状态管理等需求往往比较复杂，本文章以腾讯云相关产品（[腾讯云即时通信 IM](https://console.cloud.tencent.com/im)、[腾讯云 TRTC](https://console.cloud.tencent.com/trtc)、[腾讯云直播](https://console.cloud.tencent.com/live/livestat) 等）为基础，梳理了在搭建直播间过程中常见的需求的实现方案，以及可能遇到的问题、需要注意的细节点等，希望能帮助开发者们快速的理解业务、实现需求。
+直播在生活中可谓是无处不在，越来越多的企业、开发者们正在搭建自己的直播平台。由于直播平台本身所涉及到的如推拉直播流、直播转码、直播截图、直播混流、直播间聊天室、直播间互动（点赞、送礼、连麦）、直播间状态管理等需求往往比较复杂，本文章以腾讯云相关产品（[腾讯云即时通信 IM](https://console.cloud.tencent.com/im)、[腾讯云直播 CSS](https://console.cloud.tencent.com/live/livestat) ）为基础，梳理了在搭建直播间过程中常见的需求的实现方案，以及可能遇到的问题、需要注意的细节点等，希望能帮助开发者们快速的理解业务、实现需求。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/91a6136c0b000f0c76b72a890f3e41ac.jpg)
 
@@ -11,14 +11,11 @@
 使用腾讯云搭建直播间首先要在 [控制台](https://console.cloud.tencent.com/im) 创建一个即时通信 IM 应用，如下图所示：
 ![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-081650.png)
 
-### 创建 TRTC  或直播应用
+### 添加直播推流及播放域名
 
-直播间的功能，除了依赖即时通信 IM 的功能外，还依赖直播功能，直播功能可以用 [腾讯云 TRTC](https://console.cloud.tencent.com/trtc) 或者 [云直播](https://console.cloud.tencent.com/live/livestat) 来实现。TRTC 应用在创建完即时通信 IM 应用后开通即可，如下图所示：
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-081714.png)
-
-如果需要使用到 [云直播](https://console.cloud.tencent.com/live/livestat)，也可使用如下图所示开通推流以及播放域名：
+搭建直播间，少不了直播功能，直播功能可以通过 [云直播](https://console.cloud.tencent.com/live/livestat) 来实现。需要添加推流及播放域名，如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/fb8a00c48c21bd8d8d74b5a83105893d.png)
-
+操作详情请参见 [添加自有域名](https://intl.cloud.tencent.com/document/product/267/35970)。
 
 
 ### 完成相关基本配置
@@ -39,12 +36,14 @@
 
 在实现直播间弹幕抽奖、消息统计、敏感内容检测等需求时，需要用到 IM 的回调模块，即 IM 后台在某些特定的场景回调开发者业务后台。开发者只需要提供一个 HTTP 的接口并且配置在 [控制台 > 回调配置](https://console.cloud.tencent.com/im/callback-setting) 模块即可，如下图所示：
 
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-083718.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/N73j869_9.png)
 
 
 ### 集成客户端 SDK
 
-在准备工作都完成好后，需要将即时通信 IM 以及实时音视频 TRTC 的客户端 SDK 集成到用户项目中去。开发者可以根据自己业务需要，选择不同的集成方案。
+在准备工作都完成好后，需要将即时通信 IM 以及云直播 CSS 的客户端 SDK 集成到用户项目中去。开发者可以根据自己业务需要，选择不同的集成方案。
+即时通信 IM 可参见 [IM 快速集成系列文档](https://www.tencentcloud.com/document/product/1047/34552)，
+云直播 CSS 可参见 [直播 SDK 快速集成系列文档](https://intl.cloud.tencent.com/document/product/1071/41929)。
 
 接下来文章梳理了直播间中常见的功能点，提供最佳实践方案供开发者参见，并附上相关实现代码。
 
@@ -209,7 +208,7 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 
 :::
 
-::: Web
+::: Web 
 
 ```js
 // 获取群资料
@@ -571,7 +570,7 @@ promise.then(function(imResponse) {
 
 直播间实时展示在线人数在直播场景也是一个十分常见的需求，实现方案分为两种，但两种也是各有优劣。
 
-1. 通过客户端SDK提供的 [getGroupOnlineMemberCount](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a56840105a4b3371eeab2046d8c300bce) API 定时轮训的方式拉取群在线人数。
+1. 通过客户端SDK提供的 [getGroupOnlineMemberCount](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a56840105a4b3371eeab2046d8c300bce) API 定时轮训的方式拉取群在线人数。
 2. 通过用户进退群的后台回调统计，并通过服务端 API 如 [群系统通知](https://intl.cloud.tencent.com/document/product/1047/34958) 或 [群自定义消息](https://intl.cloud.tencent.com/document/product/1047/34959) 下发给群内所有成员。
 
 通过客户端 SDK 提供的接口拉取在线人数的方式获取在线人数对于单直播间模式的用户来说基本可以满足用户需求。但对于 App 有多个直播间且需要在大量曝光位置展示直播间在线人数的需求，建议使用第二种方案来统计在线人数。
@@ -771,7 +770,7 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 
 ::: 
 
-::: Web
+::: Web 
 
 ```js
 tim.setGroupMemberMuteTime(options);
@@ -820,23 +819,17 @@ promise.then(function(imResponse) {
 
 >?客户端 SDK 暂时不支持直播间禁言，可使用服务端 API 进行 [封禁](https://intl.cloud.tencent.com/document/product/1047/50296) 以及 [解封](https://intl.cloud.tencent.com/document/product/1047/50297)。
 
-### 直播间踢人
+### 直播间封禁
 
-与直播间禁言一样，开发者可以通过服务端 [踢人出群](https://intl.cloud.tencent.com/document/product/1047/34949) 的接口，来踢出群成员。但是 AVChatRoom 不支持该接口，因此需要使用其他的方案来实现。
+开发者可以通过服务端 [封禁](https://intl.cloud.tencent.com/document/product/1047/50296) 的接口，来踢出直播间成员，并且封禁一段时间不允许被踢成员再次进群。
 
-方案如下：
-
-1. 后台发送群自定义消息，自定义消息内容为被踢用户 userID。一次性踢人太多时注意消息体大小并分批下发。
-2. 业务后台维护进群黑名单
-3. 客户端收到自定义消息并解析 userID 中包含自己 userID 时主动调用退群接口
-4. 配置用户进群前回调，检测当前进群用户是否在步骤2的黑名单中。
 
 [控制台相关配置](https://console.cloud.tencent.com/im/callback-setting) 如图所示：
 
 ![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-090320.png)
 
 
->!**在客户端 SDK6.6.X 之后以及 Flutter SDK4.1.1之后，支持直播间踢人**
+>!**在客户端 SDK 6.6.X 及以上版本、Flutter SDK 4.1.1 及以上版本，可以使用直播间踢人接口实现封禁功能。**
 
 可参考代码如下：
 
@@ -1058,18 +1051,18 @@ tim.getGroupMemberList(options);
   1. 客户端推流可使用 [OBS 工具推流](https://intl.cloud.tencent.com/document/product/267/31569)
   2. Web 端可使用 [Web 推流](https://console.cloud.tencent.com/live/tools/webpush)
   3. App 端可使用 [移动直播 SDK 推流](https://intl.cloud.tencent.com/document/product/1071/38158)
-  
-  >? 主播端推流前需要配置推流地址，请参见在 [推流配置](https://intl.cloud.tencent.com/document/product/267/31059) 或 [地址生成器](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成地址。
-  
+
+  >? 主播端推流前需要配置推流地址，请参见在 [推流配置](https://intl.cloud.tencent.com/document/product/267/31059) 或 [地址生成器](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成地址
+
 - ### 用户端（拉流）
 
   用户端获取直播流的方式也有不同的方式如：
 
   1. PC 端可使用 [VLC 工具播放](https://intl.cloud.tencent.com/document/product/267/32483)
-  2. Web 端可使用 [播放器 SDK 播放](https://www.tencentcloud.com/document/product/1071/41881)
+  2. Web 端可使用 [播放器 SDK 播放](https://www.tencentcloud.com/document/product/454/7503)
   3. App 端可使用 [播放器 SDK 播放](https://intl.cloud.tencent.com/document/product/1071/38160)
 
-  >? 在拉流前也需要配置播放地址，请参见在 [播放配置](https://intl.cloud.tencent.com/document/product/267/31058) 或 [地址生成器](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成地址。
+  >? 在拉流前也需要配置播放地址，请参见在 [播放配置](https://intl.cloud.tencent.com/document/product/267/31058) 或 [地址生成器](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成地址，SDK接入过程详情可参见 [直播播放](https://www.tencentcloud.com/document/product/267/51155)。
 
 - ### 导播台
 
@@ -1083,41 +1076,39 @@ tim.getGroupMemberList(options);
   6. 添加直播弹幕
   7. 直播流监控
 
-- ### 实时音视频 TRTC 直播
 
-  使用实时音视频 TRTC 同样可以实现直播的功能，相比于云直播，TRTC 有更多高级功能如：
-
-  1. [云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618)
-  2. [云端录制与回放](https://www.tencentcloud.com/zh/document/product/647/35426)
-  3. [低延迟实时CDN观看](https://intl.cloud.tencent.com/document/product/647/35242)
-
+- ### 更多高级功能
+  
+  云直播除了推拉流业务，还有更多高级功能如：
+  1. [极速高清转码](https://intl.cloud.tencent.com/document/product/267/31561)，独家极速高清转码技术，智能识别场景动态编码，实现直播高清低码和画质提升。
+  2. [直播时移](https://intl.cloud.tencent.com/document/product/267/31565)，支持直播过程中暂停、回看精彩片段。
+  3. [直播录制](https://intl.cloud.tencent.com/document/product/267/31563)，可在直播过程中同步录制并存储，便于后续对录制视频的编辑和再传播。
+  4. [直播水印](https://intl.cloud.tencent.com/document/product/267/31073)，通过直播画面叠加明水印或数字水印实现视频防盗效果。
+  5. [云端混流](https://intl.cloud.tencent.com/document/product/267/37665)，根据您设定好的混流布局同步的将各路输入源混流成一个新的流，可实现直播互动效果。
+  6. [拉流转推](https://intl.cloud.tencent.com/document/product/267/42524)，可将其他平台的直播或点播视频通过直播形式分发，提供内容拉取并推送的功能，将已有的直播或视频推送到目标地址上。
+  
 ## 四、常见问题
-### 1. 自己发消息时，消息发送状态，`Message.nick` 与 `Message.avatar` 字段都为空，该怎么处理才能在界面上正常展示昵称和头像？
+### 1. 云直播可以测试吗？
+新用户开通云直播服务，会免费获得 20GB 的流量，有效期1年。此时测试产生的流量可以使用其抵扣，超出套餐部分按照后付费日结计费。同时也欢迎使用直播增值功能如：直播水印、转码、录制、截图、鉴黄等，增值功能默认关闭，按需开启使用并计费，详细功能了解可参见 [产品概述](https://intl.cloud.tencent.com/document/product/267/2822)。
+
+### 2. 直播的在线人数是否有上限？
+腾讯云直播默认不限制观看直播的在线人数，只要网络等条件允许都可以观看直播。如果用户配置了带宽限制，当观看人数过多、超出了限制带宽时新的用户无法观看，此情况下在线人数是有限制的。
+
+### 3. 自己发消息时，消息发送状态，`Message.nick` 与 `Message.avatar` 字段都为空，该怎么处理才能在界面上正常展示昵称和头像？
 可通过 getUserInfo 接口，获取自己的用户信息中的 nick 和 avatar 字段作为消息发送发的 nick 和 avatar 字段。
 
-### 2. TRTC 和云直播怎么选择？
-TRTC 直播延时小，与主播互动实现更加方便，但价格更加贵一些。云直播延迟稍大但价格便宜。
-
-### 3. 为什么会丢消息？
+### 4. 为什么会丢消息？
 
 出现丢消息的可能原因如下：
 
 - 直播群有40条/秒的频率限制，可通过消息发送前回调与消息发送后回调进行判断，若丢失的消息有收到消息发送前回调，未收到消息发送后回调，则该消息被限频。
-- 可参考 [常见问题4](#p4)，判断是否因为Web 端退出时，导致 Android/iOS/PC 同步退出。
+- 可参见 [消息相关问题](https://intl.cloud.tencent.com/document/product/1047/34458)，判断是否因为Web 端退出时，导致 Android/iOS/PC 同步退出。
 - 如果是Web 出现问题，请确认您使用的 SDK 版本是否早于V2.7.6，如果是，请升级最新版。
 
-如果您已排除以上可能性，您可以提交工单联系我们。
+如果您已排除以上可能性，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
 
-### 4. 有没有开源的直播组件，可以直接看视频和聊天互动？
 
-有的，且代码开源，详情请参考 [腾讯云 Web 直播互动组件](https://github.com/tencentyun/TWebLive)。
 
-### 5. 联系我们
+## 五、联系我们
 
-加入腾讯云即时通信 IM 技术交流群，您将获得：
-
-- 可靠的技术支持
-- 详细的产品信息
-- 紧密的行业交流
-
-Telegram交流群：[点击加入](https://t.me/tencent_imsdk)
+搜索群号：853084820，我们会提供更加详细的解答。

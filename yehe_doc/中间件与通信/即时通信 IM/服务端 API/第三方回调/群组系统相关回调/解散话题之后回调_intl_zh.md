@@ -4,10 +4,11 @@ App 后台可以通过该回调实时查看话题的解散动态，包括：对�
 
 ## 注意事项
 
-- 要启用回调，必须配置回调 URL，本条回调协议和群组解散之后回调的开关为同一个，配置方法详见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
+- 要启用回调，必须配置 URL，本条回调协议和群组解散之后回调协议的控制台开关为同一个，配置方法详见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
 - 回调的方向是即时通信 IM 后台向 App 后台发起 HTTP POST 请求。
 - App 后台在收到回调请求之后，务必校验请求 URL 中的参数 SDKAppID 是否是自己的 SDKAppID。
 - 其他安全相关事宜请参考 [第三方回调简介：安全考虑](https://intl.cloud.tencent.com/document/product/1047/34354) 文档。
+- 话题功能需要在 [控制台开通](https://intl.cloud.tencent.com/document/product/1047/34419) 后才能使用。
 
 ## 可能触发该回调的场景
 

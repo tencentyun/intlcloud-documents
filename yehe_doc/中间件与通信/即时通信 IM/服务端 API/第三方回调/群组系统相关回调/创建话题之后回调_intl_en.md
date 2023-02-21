@@ -1,13 +1,14 @@
-## Feature Description
+## Feature Overview
 
 This callback allows you to view the information of the topic created by the user on the application backend in real time. Specifically, it notifies the application backend of the successful topic creation so that the backend can sync data.
 
 ## Notes
 
-- To enable this callback, you must configure a callback URL. This callback and the callback after group creation use the same switch. For detailed directions, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
+- To enable this callback, you must configure the URL. This callback and the callback after group creation use the same switch. For detailed directions, see [Webhook Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 - During this callback, the IM backend initiates an HTTP POST request to the app backend.
 - After receiving the callback request, the app backend must check whether the `SDKAppID` contained in the request URL is the `SDKAppID` of the app.
 - For more security considerations, see the **Security Considerations** section in [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354).
+- You need to [enable the topic feature in the console](https://intl.cloud.tencent.com/document/product/1047/34419) before using it.
 
 ## Callback Triggering Scenarios
 
@@ -18,7 +19,7 @@ This callback allows you to view the information of the topic created by the use
 
 It will be triggered after a topic is created successfully.
 
-## API Call Description
+## API Calling Description
 
 ### Sample request URL
 
@@ -76,7 +77,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Owner_Account | String | `UserID` of the group owner |
 | Type | String | Group type of the topic. Here, it is `Community`. |
 | Name | String | Name of the topic requested to be created |
-| UserDefinedDataList | Array | Custom field to be used when the user creates a topic. This field is unavailable by default and needs to be enabled as instructed in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| UserDefinedDataList | Array | Custom field to be used when the user creates a topic. This field is unavailable by default and needs to be enabled as instructed in [Group System](https://www.tencentcloud.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
 
 ### Sample response
 
@@ -92,11 +93,11 @@ A response is sent after the app backend synchronizes the data.
 
 ### Response fields
 
-| Field | Type | Attribute | 	Description |
+| Field | Type | Required | 	Description |
 | --- | --- | --- | --- |
-| ActionStatus | String | Required | Request result. OK: succeeded; FAIL: failed. |
-| ErrorCode | Integer | Required | Error code. The value `0` indicates that the callback result is ignored. |
-| ErrorInfo | String  | Required | Error message |
+| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
+| ErrorCode | Integer | Yes | Error code. The value `0` indicates that the callback result is ignored. |
+| ErrorInfo    | String  | Yes | Error information                                       |
 
 ## References
 - [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)

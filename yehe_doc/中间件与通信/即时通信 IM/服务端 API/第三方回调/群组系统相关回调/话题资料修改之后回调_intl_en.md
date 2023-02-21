@@ -1,12 +1,13 @@
-## Feature Description
+## Feature Overview
 This callback allows you to view the changes in the topic profile (topic name, topic introduction, topic notice, and topic profile photo) in real time on the application backend. Specifically, you can view the real-time log of the changed topic profile or sync the information to other systems.
 
 ## Notes
 
-- To enable this callback, you must configure a callback URL. This callback and the callback after group profile modification use the same switch. For detailed directions, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
+- To enable this callback, you must configure the URL. This callback and the callback after group profile modification use the same switch. For detailed directions, see [Webhook Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 - During this callback, the IM backend initiates an HTTP POST request to the app backend.
 - After receiving the callback request, the app backend must check whether the `SDKAppID` contained in the request URL is the `SDKAppID` of the app.
 - For more security considerations, see the **Security Considerations** section in [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354).
+- You need to [enable the topic feature in the console](https://intl.cloud.tencent.com/document/product/1047/34419) before using it.
 
 ## Callback Triggering Scenarios
 
@@ -17,8 +18,8 @@ Currently, this callback may be triggered by a change in the topic name, topic i
 
 ### Callback triggering methods
 
-- The application user modifies the topic profile on the client.
-- The application admin modifies the topic profile through the RESTful API.
+- The app user modifies the topic profile on the client.
+- The app admin modifies the topic profile through the RESTful API.
 
 ## Callback Triggering Timing
 
@@ -91,9 +92,9 @@ The application backend records the topic profile change information and sends t
 
 | Object | Type | Required | Description |
 | --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. OK: succeeded; FAIL: failed. |
+| ActionStatus | String | Yes | Request result. Valid values: `OK` (success); `FAIL`: (failure). |
 | ErrorCode | Integer | Yes | Error code. The value `0` indicates to allow ignoring the response result. |
-| ErrorInfo    | String  | Yes | Error message                                       |
+| ErrorInfo    | String  | Yes | Error information                                       |
 
 ## References
 
