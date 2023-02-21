@@ -23,6 +23,7 @@
 
 3. 单击**编辑**，将“状态”修改为“开启”，然后选择图片类型，支持多选。 
 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/byFW613_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_5a825ab9-9077-4650-9d08-1e67590d3227.png)
 
 
 4. 单击**保存**，即可开启原图保护。
