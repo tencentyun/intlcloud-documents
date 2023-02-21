@@ -100,7 +100,7 @@ The nodes are described as follows:
 | Prefix             | Request.Operation.FileCompressConfig | Files with a specified prefix in the bucket can be zipped. To zip files in a specified directory, add / to the directory. For example, to zip files in the `test` directory, set this parameter to `test/`. The number of files cannot exceed 10,000 and the total size cannot exceed 50 GB. Otherwise, the job will fail. | String     | No       |
 | Key                | Request.Operation.FileCompressConfig | Multiple files in the bucket can be zipped. The number of files cannot exceed 1,000 and the total size cannot exceed 50 GB. Otherwise, the job will fail. | String array | No       |
 
-> Note
+>!
 >
 > Only one of UrlList, Prefix, and Key can be selected. They cannot all be empty or do not take effect at the same time. If multiple parameters are specified, the parameter with the highest priority prevails according to the priority UrlList > Prefix > Key.
 
