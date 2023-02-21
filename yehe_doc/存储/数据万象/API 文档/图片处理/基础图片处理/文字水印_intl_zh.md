@@ -12,17 +12,20 @@
 #### 1. 下载时处理
 
 ```plaintext
-download_url?watermark/2/text/<encodedText>
-                        /font/<encodedFont>
-                        /fontsize/<fontSize>
-                        /fill/<encodedColor>
-                        /dissolve/<dissolve>
-                        /gravity/<gravity>
-                        /dx/<dx>
-                        /dy/<dy>
-                        /batch/<type>
-                        /degree/<degree>
-                        /shadow/<shadow>
+GET /<ObjectKey>?watermark/2/text/<encodedText>
+                            /font/<encodedFont>
+                            /fontsize/<fontSize>
+                            /fill/<encodedColor>
+                            /dissolve/<dissolve>
+                            /gravity/<gravity>
+                            /dx/<dx>
+                            /dy/<dy>
+                            /batch/<type>
+                            /degree/<degree>
+                            /shadow/<shadow> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 >? 请忽略上面的空格与换行符。
@@ -54,7 +57,7 @@ Pic-Operations:
 }
 ```
 
->? Pic-Operations 为 json 格式的字符串，具体参数信息可参考 [图片持久化处理](https://intl.cloud.tencent.com/document/product/1045/33695)。
+>? Pic-Operations 为 json 格式的字符串，具体参数信息请参见 [图片持久化处理](https://intl.cloud.tencent.com/document/product/1045/33695)。
 >
 
 #### 3. 云上数据处理
@@ -88,7 +91,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 
@@ -99,24 +102,24 @@ Pic-Operations:
 
 | 参数         | 含义                                                         |
 | ------------ | ------------------------------------------------------------ |
-| download_url | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| ObjectKey  | 对象文件名，例如 folder/sample.jpg。                           |
 | /text/       | 水印内容，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)                    |
-| /font/       | 水印字体，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)，默认值 tahoma.ttf 。水印字体列表参考 [支持字体列表](https://intl.cloud.tencent.com/document/product/1045/40681) |
-| /fontsize/   | 水印文字字体大小，单位为磅，缺省值13。如需按照原图片的大小比例缩放文字水印，请将文字水印转换为 PNG 图片，并参考 [图片水印](https://intl.cloud.tencent.com/document/product/1045/33720) 文档进行配置 |
-| /fill/       | 字体颜色，缺省为灰色，需设置为十六进制 RGB 格式（例如 #FF0000），详情可参考 [RGB 编码表](https://www.rapidtables.com/web/color/RGB_Color.html)，需经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)，默认值为 #3D3D3D |
+| /font/       | 水印字体，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)，默认值 tahoma.ttf 。水印字体列表请参见 [支持字体列表](https://intl.cloud.tencent.com/document/product/1045/40681) |
+| /fontsize/   | 水印文字字体大小，单位为磅，缺省值13。如需按照原图片的大小比例缩放文字水印，请将文字水印转换为 PNG 图片，并参见 [图片水印](https://intl.cloud.tencent.com/document/product/1045/33720) 文档进行配置 |
+| /fill/       | 字体颜色，缺省为灰色，需设置为十六进制 RGB 格式（例如 #FF0000），详情请参见 [RGB 编码表](https://www.rapidtables.com/web/color/RGB_Color.html)，需经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)，默认值为 #3D3D3D |
 | /dissolve/   | 文字透明度，取值1 - 100 ，默认90（90%不透明度）                |
 | /gravity/    | 文字水印位置，九宫格位置（[参见九宫格方位图](#1)），默认值 SouthEast |
 | /dx/         | 水平（横轴）边距，单位为像素，缺省值为0                      |
 | /dy/         | 垂直（纵轴）边距，单位为像素，默认值为0                      |
 | /batch/      | 平铺水印功能，可将文字水印平铺至整张图片。值为1时，表示开启平铺水印功能 |
 | /degree/     | 当 batch 值为1时生效。文字水印的旋转角度设置，取值范围为0 - 360，默认0  |
-| /shadow/	|  文字阴影效果，有效值为[0,100]，默认为0，表示无阴影   |
+| /shadow/	|  文字阴影效果，有效值为[0,100]，默认为0，表示无阴影   |   
 
 
 <span id="1"></span>
 ## 九宫格方位图
 
-九宫格方位图可为图片的多种操作提供位置参考。红点为各区域位置的原点（通过 gravity 参数选定各区域后位移操作会以相应远点为参照）。
+九宫格方位图可为图片的多种操作提供位置参考。红点为各区域位置的原点（通过 gravity 参数选定各区域后位移操作会以相应圆点为参照）。
 ![](https://main.qcloudimg.com/raw/53a143451229b4fbdd74935afe3832d5.png)
 
 >!
@@ -147,7 +150,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/2/
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&watermark/2/text/6IW-6K6v5LqRwrfkuIfosaHkvJjlm74/fill/IzNEM0QzRA/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/45
 ```
 
->? `<signature>` 为签名部分，获取方式请参考 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778)。
+>? `<signature>` 为签名部分，获取方式请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778)。
 >
 
 ## 注意事项

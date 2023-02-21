@@ -18,11 +18,14 @@ An image can be processed:
 #### 1. Processing upon download
 
 ```plaintext
-download_url?watermark/1/image/<encodedURL>
-           		 	/gravity/<gravity>
-           		 	/dx/<dx>
-           		 	/dy/<dy>
-           		 	/blogo/<type>
+GET /<ObjectKey>?watermark/1/image/<encodedURL>
+                            /gravity/<gravity>
+                            /dx/<dx>
+                            /dy/<dy>
+                            /blogo/<type> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 >? Spaces and line breaks above are for readability only and can be ignored.
@@ -77,7 +80,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
@@ -87,7 +90,7 @@ In the code above, `watermark` is the operation name and the number `1` indicate
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           | 
 | /image/      | [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430) URL of the image watermark. For example, if the image watermark URL is `http://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png`, you should set this parameter to `aHR0cDovL2V4YW1wbGVidWNrZXQtMTI1MDAwMDAwMC5jb3MuYXAtc2hhbmdoYWkubXlxY2xvdWQuY29tL3NodWl5aW5fMi5wbmc`.  |
 | /gravity/    | Position of the image watermark, which is a square in a [3x3 grid](#1). Default value: `SouthEast` |
 | /dx/ | Horizontal offset in pixels. Default value: `0` |

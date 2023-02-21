@@ -6,7 +6,7 @@
       <th>说明</td>
    </tr>
    <tr>
-      <td rowspan="14"><nobr>基础图片</nobr>处理服务</td>
+      <td rowspan="16"><nobr>基础图片</nobr>处理服务</td>
       <td><a href="https://intl.cloud.tencent.com/document/product/1045/33713">缩放</a></td>
       <td>提供图片缩放功能，包括等比缩放、设定目标宽高缩放等。</td>
    </tr>
@@ -42,6 +42,10 @@
       <td><a href="https://intl.cloud.tencent.com/document/product/1045/33719">锐化</a></td>
       <td>对图片进行锐化处理。</td>
    </tr>
+	    <tr>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/48829">灰度图</a></td>
+      <td>将图片变成灰度图。</td>
+   </tr>
    <tr>
       <td>添加水印</td>
       <td>对图片添加水印，包括 <a href="https://intl.cloud.tencent.com/document/product/1045/33720">图片水印</a>、<a href="https://intl.cloud.tencent.com/document/product/1045/33721">文字水印</a>。</td>
@@ -57,6 +61,10 @@
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/1045/33726">快速缩略模板</a></td>
       <td>数据万象提供缩略图功能，可快速实现图片格式转换、缩放、剪裁并生成缩略图。</td>
+   </tr>
+   <tr>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/40716">限制图片大小</a></td>
+      <td>数据万象提供可限制图片处理（例如缩放、压缩等）后的文件大小。</td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/1045/33443">样式设置</a></td>
@@ -133,7 +141,7 @@
       <td>视频标签通过对视频中视觉、场景、行为、物体等信息进行分析，结合多模态信息融合及对齐技术，实现高准确率内容识别，自动输出视频的多维度内容标签。</td>
    </tr>
    <tr>
-      <td><a href="https://www.tencentcloud.com/document/product/1045/51257">视频质量评分</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/51257">视频质量评分</a></td>
       <td>采用无参考评价方式对视频清晰度、信噪比、色彩、亮度等进行综合分析输出视频质量分值。</td>
    </tr>
    <tr>
@@ -151,7 +159,7 @@
       <td>语音合成通过先进的深度学习技术，将文本转换成自然流畅的语音。</td>
    </tr>
    <tr>
-      <td>语音识别</td>
+      <td><a href="https://cloud.tencent.com/document/product/460/47492">语音识别</a></td>
       <td>语音识别是针对已经录制完成的录音文件，进行识别的服务，异步返回识别文本，可应用于呼叫中心语音质检、视频字幕生成，会议语音资料转写等场景。</td>
    </tr>
     <tr>
@@ -159,30 +167,44 @@
       <td>人声分离能够将同一素材中的人声与背景音分离开来生成新的独立音频文件。</td>
    </tr>
     <tr>
-      <td><a href="https://www.tencentcloud.com/document/product/1045/51254">音频降噪</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/51254">音频降噪</a></td>
       <td>音频降噪适用于录制课程、户外拍摄后期等情况为音频去除设备底噪、环境噪声等。</td>
    </tr>
    <tr>
       <td rowspan="4">内容审核服务</td>
-      <td>图片审核</td>
+      <td><a href="https://cloud.tencent.com/document/product/460/47487">图片审核</a></td>
       <td>图片审核功能可帮助用户有效识别图片中的违禁内容，检测场景包括鉴黄、违法违规检测、广告检测。目前支持机器自动审核和专业团队人工复审，全方位保障平台的图片安全。</td>
    </tr>
    <tr>
-      <td>视频审核</td>
+      <td><a href="https://cloud.tencent.com/document/product/460/47488">视频审核</a></td>
       <td>视频审核功能可帮助用户有效识别视频画面中的违禁内容，检测场景包括鉴黄、违法违规检测、广告检测。目前支持机器自动审核和专业团队人工复审，全方位保障平台的安全。</td>
    </tr>
    <tr>
-      <td>音频审核</td>
+      <td><a href="https://cloud.tencent.com/document/product/460/47489">音频审核</a></td>
       <td>音频审核功能可帮助用户有效识别音频中的违禁内容，检测场景包括鉴黄、违法违规检测、广告检测。目前支持机器自动审核和专业团队人工复审，全方位保障平台的安全。</td>
    </tr>
    <tr>
-      <td>文本审核</td>
+      <td><a href="https://cloud.tencent.com/document/product/460/53149">文本审核</a></td>
       <td>文本审核功能可帮助用户有效检测文本文件中的违禁内容，可以检测涉黄、违法违规、广告、违法、谩骂等可能令人不适的内容。目前支持机器自动审核和专业团队人工复审，全方位保障平台的安全。</td>
+   </tr>
+   <tr>
+      <td rowspan="3">文件处理服务</td>
+      <td><a href="https://cloud.tencent.com/document/product/436/83107">哈希值计算</a></td>
+      <td>计算文件的哈希值，当前支持的哈希值算法有 MD5、SHA1、SHA256。
+文件大小限制说明：<li>同步请求：小于128MB 的文件；</li><li>异步请求限制：小于50GB 的文件。</li></td>
+   </tr>
+   <tr>
+      <td><a href="https://cloud.tencent.com/document/product/436/83110">文件解压缩</a></td>
+      <td>支持对压缩包文件进行云上解压，解压后转存至 COS，当前支持的压缩包格式有 zip、tar、gz、7zip。<br>文件大小限制说明：小于5TB 的文件。</br></td>
+   </tr>
+   <tr>
+      <td><a href="https://cloud.tencent.com/document/product/436/83112">多文件打包压缩</a></td>
+      <td>支持对多个文件进行打包压缩，当前支持打包为 zip、tar、tar.gz 格式。<br>压缩限制说明：最多支持打包10000个文件，打包前文件总大小不超过50GB。</br></td>
    </tr>
    <tr>
       <td rowspan="10">内容识别服务</td>
       <td>图片识别</td>
-      <td>提供二维码识别、图片标签识别功能。</td>
+      <td>提供 二维码识别、图片标签识别功能。</td>
    </tr>
    <tr>
       <td>商品抠图</td>
@@ -205,7 +227,7 @@
       <td>通用文字识别功能（OCR）基于行业前沿的深度学习技术，将图片上的文字内容，智能识别为可编辑的文本，可应用于随手拍扫描、纸质文档电子化、电商广告审核等多种场景，大幅提升信息处理效率。</td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1045/43516">以图搜图</a></td>
+      <td>以图搜图</td>
       <td>可对图片库内的图片进行特征提取、对比和搜索，适用于电商产品搜索、版权保护等场景。</td>
    </tr>
    <tr>

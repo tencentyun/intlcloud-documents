@@ -1,4 +1,4 @@
-## Overview
+## Feature Overview
 Exchangeable Image File (EXIF) records the camera settings, thumbnails, and other attributes of digital images. CI uses the **exif** API to obtain EXIF data. An input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 250 million. The width and height of an output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (Width x Height x Number of frames) cannot exceed 250 million.
 
 
@@ -7,8 +7,11 @@ Exchangeable Image File (EXIF) records the camera settings, thumbnails, and othe
 
 ## API Format
 
-```
-download_url?exif
+```plaintext
+GET /<ObjectKey>?exif HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 ## Parameters
@@ -17,17 +20,17 @@ download_url?exif
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           | 
 
 
 ## Examples
 
-#### Example 1: public-read
+#### Example 1: Public-read
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?exif
 ```
 
-#### Example 2: private-read with a signature carried
+#### Example 2: Private-read with a signature carried
 
 This example obtains the average hue in the same way as in the example above except that a signature is carried. The signature is joined with other parameters using an ampersand (&):
 
@@ -41,7 +44,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algor
 
 ## Notes
 
-To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/14114).
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
 
 
 ```plaintext

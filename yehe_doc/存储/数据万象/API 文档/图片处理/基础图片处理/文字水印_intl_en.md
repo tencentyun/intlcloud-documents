@@ -12,17 +12,20 @@ An image can be processed:
 #### 1. Processing upon download
 
 ```plaintext
-download_url?watermark/2/text/<encodedText>
-                        /font/<encodedFont>
-                        /fontsize/<fontSize>
-                        /fill/<encodedColor>
-                        /dissolve/<dissolve>
-                        /gravity/<gravity>
-                        /dx/<dx>
-                        /dy/<dy>
-                        /batch/<type>
-                        /degree/<degree>
-                        /shadow/<shadow>
+GET /<ObjectKey>?watermark/2/text/<encodedText>
+                            /font/<encodedFont>
+                            /fontsize/<fontSize>
+                            /fill/<encodedColor>
+                            /dissolve/<dissolve>
+                            /gravity/<gravity>
+                            /dx/<dx>
+                            /dy/<dy>
+                            /batch/<type>
+                            /degree/<degree>
+                            /shadow/<shadow> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 >? Spaces and line breaks above are for readability only and can be ignored.
@@ -88,7 +91,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 
@@ -99,18 +102,18 @@ In the code above, `watermark` is the operation name and the number `2` indicate
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           |
 | /text/  | Watermark text, which must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430) |
-| /font/ | Font of the text, which must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). Default font: Tahoma.ttf (see [Supported Fonts](https://intl.cloud.tencent.com/document/product/1045/40681).) |
- /fontsize/   | Font size, in pt. Default value: 13. To scale the text watermark proportionally based on the original image, convert the text watermark to a PNG image. For more configuration information, see [Image Watermarking](https://intl.cloud.tencent.com/document/product/1045/33720)                     |
-| /fill/ | Font color. The value must be in hexadecimal format, for example, `#FF0000`. For format conversion, see [RGB Color Codes Chart](https://www.rapidtables.com/web/color/RGB_Color.html). The value must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). Default value: `#3D3D3D` (gray) |
+| /font/ | Font of the text, which must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). Default font: Tahoma.ttf (see [Supported Fonts](https://intl.cloud.tencent.com/document/product/1045/40681)). |
+| /fontsize/   | Font size, in pt. Default value: 13. To scale the text watermark proportionally based on the original image, convert the text watermark to a PNG image. For more configuration information, see [Image Watermarking](https://intl.cloud.tencent.com/document/product/1045/33720).                     |
+| /fill/ | Font color. The value must be in hexadecimal format, for example, `#FF0000`. For format conversion, see [RGB Color Codes Chart](https://www.rapidtables.com/web/color/RGB_Color.html). The value must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). Default value: `#3D3D3D` (gray). |
 | /dissolve/ | Text opacity. Value range: 1−100. Default value: `90` (meaning 90% opacity) |
 | /gravity/    | Position of the text watermark, which is a square in a [3x3 grid](#1). Default value: `southeast` |
 | /dx/ | Horizontal offset in pixels. Default value: `0` |
 | /dy/ | Vertical offset in pixels. Default value: `0` |
 | /batch/ | Whether to tile the text watermark. If this parameter is set to `1`, the text watermark will be tiled across the input image. |
 | /degree/ | Angle to rotate text watermarks. This parameter is valid only when `/batch/` is set to `1`. Value range: 0−360. Default value: `0`  |
-| /shadow/| Text shadow effect. Value range: 0−100. Default value: `0`, indicating no shadow.   |
+| /shadow/| Text shadow effect. Value range: 0−100. Default value: `0`, indicating no shadow.   |   
 
 
 <span id="1"></span>
@@ -147,7 +150,7 @@ This example processes the image in the same way as in the example above except 
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&watermark/2/text/6IW-6K6v5LqRwrfkuIfosaHkvJjlm74/fill/IzNEM0QzRA/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/45
 ```
 
->? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>? You can get the value of `<signature>` as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 >
 
 ## Notes

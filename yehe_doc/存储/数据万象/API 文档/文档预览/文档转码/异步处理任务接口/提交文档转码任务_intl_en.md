@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
 
 This API (`CreateDocProcessJobs`) is used to submit a file transcoding job.
 
@@ -11,6 +11,7 @@ This API (`CreateDocProcessJobs`) is used to submit a file transcoding job.
 >  - Other files: PDF, LRC, C, CPP, H, ASM, S, JAVA, ASP, BAT, BAS, PRG, CMD, RTF, TXT, LOG, XML, HTM, HTML.
 >- The input file size cannot exceed 200 MB.
 >- The number of pages in the input file cannot exceed 5,000.
+>- Job records are retained for one month. Save them in time. We recommend you configure callbacks to query job results.
 
 
 ## Request
@@ -28,11 +29,14 @@ Content-Type: application/xml
 <body>
 ```
 
-> ?Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+>? 
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -60,22 +64,22 @@ This request requires the following request body:
 </Request>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 <table>
    <tr>
       <th nowrap="nowrap">Node Name (Keyword)</th>
       <th>Parent Node</th>
       <th>Description</th>
-      <th>Type</th>
+      <th>API Type</th>
       <th>Required</th>
    </tr>
    <tr>
       <td>Request</td>
-      <td>None</td>
+      <td>N/A</td>
       <td>Request container</td>
       <td>Container</td>
-      <td>Yes</td>
+      <td>Supported</td>
    </tr>
 </table>
 
@@ -87,7 +91,7 @@ The nodes are as described below:
       <th nowrap="nowrap">Node Name (Keyword)</th>
       <th>Parent Node</th>
       <th>Description</th>
-      <th>Type</th>
+      <th>API Type</th>
       <th>Required</th>
    </tr>
    <tr>
@@ -95,28 +99,28 @@ The nodes are as described below:
       <td>Request</td>
       <td>Job type, which currently can only be `DocProcess`.</td>
       <td>String</td>
-      <td>Yes</td>
+      <td>Supported</td>
    </tr>
    <tr>
       <td>Input</td>
       <td>Request</td>
       <td>The object to be processed</td>
       <td>Container</td>
-      <td>Yes</td>
+      <td>Supported</td>
    </tr>
    <tr>
       <td>Operation</td>
       <td>Request</td>
       <td>Operation rule</td>
       <td>Container</td>
-      <td>Yes</td>
+      <td>Supported</td>
    </tr>
    <tr>
       <td>QueueId</td>
       <td>Request</td>
-      <td>ID of the queue which the job is in</td>
+      <td>Queue ID of the job, which is automatically generated after the preview service is activated. Use the API for <a href="https://intl.cloud.tencent.com/document/product/1045/47935">querying file transcoding queue</a> to get it, or query it in the bucket in the <a href="https://console.cloud.tencent.com/ci">CI console</a>.</td>
       <td>String</td>
-      <td>Yes</td>
+      <td>Supported</td>
    </tr>
 </table>
 
@@ -128,7 +132,7 @@ The nodes are as described below:
       <th nowrap="nowrap">Node Name (Keyword)</th>
       <th>Parent Node</th>
       <th>Description</th>
-      <th>Type</th>
+      <th>API Type</th>
       <th>Required</th>
    </tr>
    <tr>
@@ -136,7 +140,7 @@ The nodes are as described below:
       <td>Request.Input</td>
       <td>File URL in COS. `Bucket` is specified by `Host`.</td>
       <td>String</td>
-      <td>Yes</td>
+      <td>Supported</td>
    </tr>
 </table>
 
@@ -147,7 +151,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ----------------- | --------------------------------------------- | --------- | -------- |
-| DocProcess         | Request.Operation | Job type parameter, which takes effect only if `Tag` is `DocProcess`.          | Container | Yes      |
+| DocProcess         | Request.Operation | Task type parameter, which takes effect only if `Tag` is `DocProcess`. | Container | Yes       |
 | Output                       | Request.Operation | Result output address                                        | Container | Yes   |
 
 
@@ -174,7 +178,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | :--------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| ImageParams        | Request.Operation.DocProcess | Processing parameters for the output image. All parameters of [basic image processing](https://intl.cloud.tencent.com/document/product/1045/33694) are supported. To specify multiple parameters, separate them by [pipeline operator](https://intl.cloud.tencent.com/document/product/1045/33727). In this way, the image can be processed by multiple parameters in sequence in the same request. | String | No       |
+| ImageParams        | Request.Operation.DocProcess | Processing parameters for the output image. All parameters of [basic image processing](https://www.tencentcloud.com/document/product/1045/33694) are supported. To specify multiple parameters, separate them by [pipeline operator](https://intl.cloud.tencent.com/document/product/1045/33727). In this way, the image can be processed by multiple parameters in sequence in the same request. | String | No       |
 | Quality            | Request.Operation.DocProces  | Quality of the generated preview image. Value range: [1-100]. Default value: 100. For example, if the value is 100, the quality of the generated image will be 100%.                | Int  | No       |
 | Zoom               | Request.Operation.DocProces  | Scaling parameter of the preview image. Value range: [10-200]. Default value: 100. For example, if the value is 200, the image will be scaled up (enlarged) by 200%.                | Int  | No       |
 | ImageDpi           | Request.Operation.DocProcess | Renders the image according to the specified DPI. This parameter works together with `Zoom`. Value range: 96–600. Default value: 96. The width of the output image must be less than 65500 px. | Int | No |
@@ -195,7 +199,7 @@ The nodes are as described below:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
 
 #### Response body
 
@@ -233,31 +237,31 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :------------- | :-------- |
-| JobsDetail         | Response | Job details | Container |
+| JobsDetail | Response | Job details |  Container |
 
 `JobsDetail` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------------------ | :----------------------------------------------------------- | :-------- |
-| Code               | Response.JobsDetail | Error code, which is meaningful only if `State` is `Failed`      | String    |
-| Message            | Response.JobsDetail | Error description, which is meaningful only if `State` is `Failed`   | String    |
+| Code               | Response.JobsDetail | Error code, which is returned only if `State` is `Failed`      | String    |
+| Message            | Response.JobsDetail | Error message, which is returned only if `State` is `Failed`   | String    |
 | JobId              | Response.JobsDetail | Job ID                               | String    |
 | Tag | Response.JobsDetail | Job type: DocProcess | String |
-| State | Response.JobsDetail | Job status. Valid values: Submitted, Running, Success, Failed, Pause, Cancel |  String |
+| State | Response.JobsDetail | Job status. Valid values: `Submitted`, `Running`, `Success`, `Failed`, `Pause`, `Cancel`. |  String |
 | CreationTime       | Response.JobsDetail | Job creation time                         | String    |
-| QueueId            | Response.JobsDetail | ID of the queue which the job is in                       | String    |
+| QueueId            | Response.JobsDetail | Queue ID of the job                       | String    |
 | Input              | Response.JobsDetail | Input file path of the job                   | Container |
-| Operation          | Response.JobsDetail | Operation rule                           | Container |
+| Operation          | Response.JobsDetail | Operation rule. Up to 6 operation rules are supported.                           | Container |
 
 `Input` has the following sub-nodes:
 Same as the `Request.Input` node in the request.
@@ -278,9 +282,9 @@ Same as the `Request.Operation.Output` node in the request.
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
-## Samples
+## Examples
 
 #### Request
 

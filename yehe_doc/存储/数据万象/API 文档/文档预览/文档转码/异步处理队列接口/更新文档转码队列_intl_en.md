@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
 
 This API (`UpdateDocProcessQueue`) is used to update a file transcoding queue.
 
@@ -18,13 +18,13 @@ Content-Type: application/xml
 ```
 
 >? 
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted.
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 > 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
@@ -50,15 +50,15 @@ The nodes are described as follows:
       <th nowrap="nowrap">Node Name (Keyword)</th>
       <th>Parent Node</th>
       <th>Description</th>
-      <th>Type</th>
+      <th>API Type</th>
       <th>Required</th>
    </tr>
    <tr>
       <td>Request</td>
-      <td>None</td>
+      <td>N/A</td>
       <td>Request container</td>
       <td>Container</td>
-      <td>Yes</td>
+      <td>Supported</td>
    </tr>
 </table>
 
@@ -70,16 +70,16 @@ The nodes are described as follows:
       <th nowrap="nowrap">Node Name (Keyword)</th>
       <th>Parent Node</th>
       <th>Description</th>
-      <th>Type</th>
+      <th>API Type</th>
       <th>Required</th>
       <th>Constraints</th>
    </tr>
    <tr>
       <td>Name</td>
       <td>Request</td>
-      <td>Queue name</td>
+      <td>Queue Name</td>
       <td>String</td>
-      <td>Yes</td>
+      <td>Supported</td>
       <td>Length limit: 100 characters</td>
    </tr>
    <tr>
@@ -87,15 +87,15 @@ The nodes are described as follows:
       <td>Request</td>
       <td>Queue ID</td>
       <td>String</td>
-      <td>Yes</td>
-      <td>None</td>
+      <td>Supported</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>State</td>
       <td>Request</td>
       <td>Queue status</td>
       <td>String</td>
-      <td>Yes</td>
+      <td>Supported</td>
       <td>
         1. Active: Jobs in the queue will be scheduled and executed by the file preview service. <br>2. Paused: The queue is paused, and jobs in it will no longer be scheduled and executed. All jobs in the queue will remain in the `Submitted` status, while jobs being executed will continue without being affected.
       </td>
@@ -105,7 +105,7 @@ The nodes are described as follows:
       <td>Request</td>
       <td>Notification channel</td>
       <td>Container</td>
-      <td>Yes</td>
+      <td>Supported</td>
       <td>Third-party callback URL</td>
    </tr>
 </table>
@@ -118,7 +118,7 @@ The nodes are described as follows:
       <th nowrap="nowrap">Node Name (Keyword)</th>
       <th>Parent Node</th>
       <th>Description</th>
-      <th>Type</th>
+      <th>API Type</th>
       <th>Required</th>
       <th>Constraints</th>
    </tr>
@@ -133,7 +133,7 @@ The nodes are described as follows:
    <tr>
       <td>Type</td>
       <td>Request.NotifyConfig</td>
-      <td>Callback type. General callback: Url</td>
+      <td>Callback type, normal callback: URL</td>
       <td>String</td>
       <td>No</td>
       <td>Length limit: 100 characters</td>
@@ -149,7 +149,7 @@ The nodes are described as follows:
    <tr>
       <td>State</td>
       <td>Request.NotifyConfig</td>
-      <td>Callback switch: `Off` or `On`</td>
+      <td>Callback switch: Off, On</td>
       <td>String</td>
       <td>No</td>
       <td>Length limit: 100 characters</td>
@@ -163,7 +163,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610). 
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610). 
 
 #### Response body
 
@@ -187,11 +187,11 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
-| Response           | None     | Response container | Container |
+| Response           | None     | Result storage container | Container |
 
 `Response` has the following sub-nodes:
 
@@ -202,9 +202,9 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
-## Samples
+## Examples
 
 #### Request
 

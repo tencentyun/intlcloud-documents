@@ -18,11 +18,14 @@
 #### 1. 下载时处理
 
 ```plaintext
-download_url?watermark/1/image/<encodedURL>
-           		 	/gravity/<gravity>
-           		 	/dx/<dx>
-           		 	/dy/<dy>
-           		 	/blogo/<type>
+GET /<ObjectKey>?watermark/1/image/<encodedURL>
+                            /gravity/<gravity>
+                            /dx/<dx>
+                            /dy/<dy>
+                            /blogo/<type> HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 >? 请忽略上面的空格与换行符。
@@ -77,7 +80,7 @@ Pic-Operations:
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 
@@ -87,7 +90,7 @@ Pic-Operations:
 
 | 参数         | 含义                                                         |
 | ------------ | ------------------------------------------------------------ |
-| download_url | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| ObjectKey  | 对象文件名，例如 folder/sample.jpg。                           | 
 | /image/      | 水印图片地址，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)。例如，水印图片为`http://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png`，则该处编码后的字符串为`aHR0cDovL2V4YW1wbGVidWNrZXQtMTI1MDAwMDAwMC5jb3MuYXAtc2hhbmdoYWkubXlxY2xvdWQuY29tL3NodWl5aW5fMi5wbmc`            |
 | /gravity/    | 图片水印位置，九宫格位置（[参考九宫格方位图](#1) ），默认值 SouthEast |
 | /dx/         | 水平（横轴）边距，单位为像素，缺省值为0                      |

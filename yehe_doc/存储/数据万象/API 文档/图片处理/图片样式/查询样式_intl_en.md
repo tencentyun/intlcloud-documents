@@ -5,19 +5,20 @@ This API is used to query the styles set for a bucket. If the request body is no
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=QueryBucketStyle&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
 </div>
 
 ## Request
+
 #### Sample request
 
 ```
@@ -26,7 +27,11 @@ Host: <BucketName-APPID>.pic.<Region>.myqcloud.com
 Date: GMT Date
 Authorization: Auth String
 ```
->?Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+
+>? 
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> 
 
 #### Request line
 
@@ -34,13 +39,13 @@ Authorization: Auth String
 GET /?style HTTP/1.1
 ```
 
-This API allows GET requests.
+This API accepts `GET` requests.
 
 #### Request headers
 #### Common request headers
 This API uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 #### Non-common request headers
-This request does not use any non-common request header.
+This API does not use any non-common request header.
 
 #### Request body
 

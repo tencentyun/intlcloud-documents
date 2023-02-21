@@ -1,18 +1,18 @@
-## Feature Description
+## Overview
 
-This API is used to create a workflow.
+Create a workflow
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateTranscodeTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -36,20 +36,20 @@ Content-Type: application/xml
 ```
 
 >?
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
 >
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
 
 #### Request body
 
 This request requires the following request body:
-
-#### Request body 1: Screencapturing and transcoding the input video file, performing remuxing and intelligent thumbnail generation on the output file, and then performing image processing on the generated thumbnail
-
+<dx-tabs>
+::: Request body 1
+**Screencapturing and transcoding the input video file, performing remuxing and intelligent thumbnail generation on the output file, and then performing image processing on the generated thumbnail**
 ```plaintext
 <Request>
     <MediaWorkflow>
@@ -152,9 +152,9 @@ This request requires the following request body:
     </MediaWorkflow>
 </Request>
 ```
-
-#### Request body 2: Adaptive bitrate streaming
-
+:::
+::: Request body 2
+ **Adaptive bitrate streaming**
 ```plaintext
 <Request>
     <MediaWorkflow>
@@ -247,6 +247,8 @@ This request requires the following request body:
     </MediaWorkflow>
 </Request>
 ```
+:::
+</dx-tabs>
 
 The nodes are described as follows:
 
@@ -254,22 +256,20 @@ The nodes are described as follows:
 | ------------------ | ------ | -------------- | --------- | -------- |
 | Request            | None     | Request container | Container | Yes       |
 
-<span id="Request"></span>
 `Request` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------- | ---------- | --------- | -------- |
-| MediaWorkflow      | Request | Workflow node. | Container | Yes       |
+| MediaWorkflow      | Request | Workflow node | Container | Yes       |
 
 `MediaWorkflow` has the following sub-nodes:
 
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |                                                 |
 | ------------------ | --------------------- | ---------- | --------- | -------- | ------------------------------------------- |
-| Name               | Request.MediaWorkflow | Workflow name. | String    | Yes       | The value can contain up to 128 letters, digits, hyphens, and underscores. |
-| State              | Request.MediaWorkflow | Workflow status. | String    | No       | Paused/Active                               |
-| Topology           | Request.MediaWorkflow | Topology information.   | Container | Yes       | None                                          |
+| Name               | Request.MediaWorkflow | Workflow name | String    | Yes       | The value can be up to 128 characters in length and contain Chinese characters, letters, digits, dashes (–), and underscores (_). |
+| State              | Request.MediaWorkflow | Workflow status | String    | No       | Paused/Active                               |
+| Topology           | Request.MediaWorkflow | Topology information   | Container | Yes       | None                                          |
 
-<span id="Topology"></span>
 `Topology` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
@@ -278,31 +278,212 @@ The nodes are described as follows:
 | Nodes             | Request.MediaWorkflow.</br>Topology | Node list. | Container    | Yes   | None |
 
 `Nodes` has the following sub-nodes:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
-| ------------------------ | ----------------------------------------- | ------------------ | --------- | ------------ | ------------------------------------------------------------ |
-| Start         | Request.MediaWorkflow.</br>Topology.Nodes | Start node. | Container    | Yes   | There is only one start node. |
-| Animation\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Animated image type node | Container    | No   | The node name must be prefixed with "Animation". There can be multiple animated image nodes. |
-| Snapshot\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Screenshot type node | Container    | No   | The node name must be prefixed with "Snapshot". There can be multiple screenshot nodes. |
-| SmartCover\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Intelligent thumbnail node | Container    | No   | The node name must be prefixed with "SmartCover". There can be multiple intelligent thumbnail nodes. |
-| Transcode\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Transcoding node | Container    | No   | The node name must be prefixed with "Transcode". There can be multiple transcoding nodes. |
-| Concat\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Audio/Video splicing node | Container    | No   | The node name must be prefixed with "Concat". There can be multiple audio/video splicing nodes. |
-| VoiceSeparate\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Voice/Sound separation node | Container    | No   | The node name must be prefixed with "VoiceSeparate". There can be multiple voice/sound separation nodes. |
-| VideoMontage\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Video montage node | Container    | No   | The node name must be prefixed with "VideoMontage". There can be multiple video montage nodes. |
-| StreamPackConfig\_\*\*\*| Request.MediaWorkflow.</br>Topology.Nodes | Adaptive bitrate streaming node | Container    | No   | The node name must be prefixed with "StreamPackConfig". There can be only one adaptive bitrate streaming node. This node must follow a start node and be followed by a video substream node. There can be multiple video substream nodes. |
-| VideoStream\_\*\*\*| Request.MediaWorkflow.</br>Topology.Nodes | Video substream node | Container    | No   | The node name must be prefixed with "VideoStream". There can be multiple video substream nodes. This node must follow a StreamPackConfig node and be followed by a StreamPack node. |
-| StreamPack\_\*\*\*| Request.MediaWorkflow.</br>Topology.Nodes | Adaptive bitrate streaming packaging node | Container    | No   | The node name must be prefixed with "StreamPack". There can be only one adaptive bitrate streaming packaging node. This node must follow a video substream node and be followed by an end node. |
-| SDRtoHDR\_\*\*\*       | Request.MediaWorkflow.</br>Topology.Nodes | SDR-to-HDR node    | Container | No           | The node name must be prefixed with "SDRtoHDR". There can be multiple SDR-to-HDR nodes.              |
-| VideoProcess\_\*\*\*   | Request.MediaWorkflow.</br>Topology.Nodes | Video processing node    | Container | No           | The node name must be prefixed with "VideoProcess". There can be multiple video processing nodes.         |
-| SCF\_\*\*\*            | Request.MediaWorkflow.</br>Topology.Nodes | SCF function node     | Container | No           | The node name must be prefixed with "SCF". There can be multiple SCF function nodes.                   |
-| SuperResolution\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Super resolution node | Container | No | The node name must be prefixed with "SuperResolution". There can be multiple super resolution nodes. |
-| Segment\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Audio/Video remuxing node | Container | No | The node name must be prefixed with `Segment`. There can be multiple audio/video remuxing nodes. |
-| PicProcess\_\*\*\* | Request.MediaWorkflow.</br>Topology.Nodes | Image processing node | Container | No | The node name must be prefixed with "PicProcess". There can be multiple image processing nodes. |
-| Tts\_\*\*\*              | Request.MediaWorkflow.</br>Topology.Nodes | Text-to-speech node   | Container | No           | The node name must be prefixed with "Tts". There can be multiple text-to-speech nodes.              |
-| SpeechRecognition\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | Speech recognition node       | Container | No           | The node name must be prefixed with "SpeechRecognition". There can be multiple speech recognition nodes.              |
-| AIRecognition\_\*\*\*  | Request.MediaWorkflow.</br>Topology.Nodes | AI-based recognition node       | Container | No           | The node name must be prefixed with "AIRecognition".         |
-
-
+<table>
+<thead>
+<tr>
+<th width=14%>Node Name (Keyword)</th>
+<th width=15%>Parent Node</th>
+<th width=18%>Description</th>
+<th width=9%>Type</th>
+<th width=5%>Required</th>
+<th width=50%>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Start node</td>
+<td>Container</td>
+<td>Supported</td>
+<td>There is only one start node.</td>
+</tr>
+<tr>
+<td>Animation_*** </td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Animated image type node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "Animation". There can be multiple animated image nodes.</td>
+</tr>
+<tr>
+<td>Snapshot_*** </td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Screenshot type node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "Snapshot". There can be multiple screenshot nodes.</td>
+</tr>
+<tr>
+<td>SmartCover_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Intelligent thumbnail node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "SmartCover". There can be multiple intelligent thumbnail nodes.</td>
+</tr>
+<tr>
+<td>Transcode_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Transcoding node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "Transcode". There can be multiple transcoding nodes.</td>
+</tr>
+<tr>
+<td>Concat_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Audio/Video splicing node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "Concat". There can be multiple audio/video splicing nodes.</td>
+</tr>
+<tr>
+<td>VoiceSeparate_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Voice/Sound separation node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "VoiceSeparate". There can be multiple voice/sound separation nodes.</td>
+</tr>
+<tr>
+<td>VideoMontage_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Video montage node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "VideoMontage". There can be multiple video montage nodes.</td>
+</tr>
+<tr>
+<td>StreamPackConfig_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Adaptive bitrate streaming node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "StreamPackConfig". There can be only one adaptive bitrate streaming node. This node must follow a start node and be followed by a video substream node. There can be multiple video substream nodes.</td>
+</tr>
+<tr>
+<td>VideoStream_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Video substream node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "VideoStream". There can be multiple video substream nodes. This node must follow a StreamPackConfig node and be followed by a StreamPack node.</td>
+</tr>
+<tr>
+<td>StreamPack_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Adaptive bitrate streaming packaging node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "StreamPack". There can be only one adaptive bitrate streaming packaging node. This node must follow a video substream node and be followed by an end node.</td>
+</tr>
+<tr>
+<td>SDRtoHDR_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>SDR-to-HDR node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "SDRtoHDR". There can be multiple SDR-to-HDR nodes.</td>
+</tr>
+<tr>
+<td>VideoProcess_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Video processing node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "VideoProcess". There can be multiple video processing nodes.</td>
+</tr>
+<tr>
+<td>SCF_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>SCF function node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "SCF". There can be multiple SCF function nodes.</td>
+</tr>
+<tr>
+<td>SuperResolution_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Super resolution node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "SuperResolution". There can be multiple super resolution nodes.</td>
+</tr>
+<tr>
+<td>Segment_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Audio/Video remuxing node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with `Segment`. There can be multiple audio/video remuxing nodes.</td>
+</tr>
+<tr>
+<td>PicProcess_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Image processing node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "PicProcess". There can be multiple image processing nodes.</td>
+</tr>
+<tr>
+<td>Tts_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Text-to-speech node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "Tts". There can be multiple text-to-speech nodes.</td>
+</tr>
+<tr>
+<td>SpeechRecognition_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Speech recognition node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "SpeechRecognition". There can be multiple speech recognition nodes.</td>
+</tr>
+<tr>
+<td>VideoEnhance_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Video enhancement node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "VideoEnhance". There can be multiple video enhancement nodes.</td>
+</tr>
+<tr>
+<td>Condition_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Conditional judgment node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "Condition". There can be multiple conditional judgment nodes.</td>
+</tr>
+<tr>
+<td>MediaInfo_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Media information acquisition node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "MediaInfo". There can be multiple media information acquisition nodes.</td>
+</tr>
+<tr>
+<td>AIRecognition_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>AI recognition node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "AIRecognition".</td>
+</tr>
+<tr>
+<td>SegmentVideoBody_***</td>
+<td>Request.MediaWorkflow.</br>Topology.Nodes</td>
+<td>Video portrait matting node</td>
+<td>Container</td>
+<td>No</td>
+<td>The node name must be prefixed with "SegmentVideoBody".</td>
+</tr>
+</tbody>
+</table>
 
 `Start` has the following sub-nodes:
 
@@ -311,22 +492,19 @@ The nodes are described as follows:
 | Type         | Request.MediaWorkflow.<br>Topology.Nodes.Start | Node type | String    | Yes   | Start |
 | Input        | Request.MediaWorkflow.<br>Topology.Nodes.Start | Input information. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Start_Input](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes   | None |
 
-
-Animation\_\*\*\* has the following sub-nodes:
+`Animation\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Animation\_\*\*\* | Node type | String    | Yes       | Animation |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Animation\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Animation_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
-Snapshot\_\*\*\* has the following sub-nodes:
+`Snapshot\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Snapshot\_\*\*\* | Node type | String    | Yes       | Snapshot |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Snapshot\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Snapshot_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
-
 
 SmartCover\_\*\*\* has the following sub-nodes:
 
@@ -335,7 +513,6 @@ SmartCover\_\*\*\* has the following sub-nodes:
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SmartCover\_\*\*\* | Node type | String    | Yes       | SmartCover |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SmartCover\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_SmartCover_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
 Transcode\_\*\*\* has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
@@ -343,30 +520,26 @@ Transcode\_\*\*\* has the following sub-nodes:
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Transcode\_\*\*\* | Node type | String    | Yes       | Transcode |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Transcode\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Transcode_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
-Concat\_\*\*\* has the following sub-nodes:
+`Concat\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Concat\_\*\*\* | Node type | String    | Yes       | Concat |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Concat\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Concat_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
-VoiceSeparate\_\*\*\* has the following sub-nodes:
+`VoiceSeparate\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.VoiceSeparate\_\*\*\* | Node type | String    | Yes       | VoiceSeparate |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VoiceSeparate\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_VoiceSeparate_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
-VideoMontage\_\*\*\* has the following sub-nodes:
+`VideoMontage\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.VideoMontage\_\*\*\* | Node type | String    | Yes       | VideoMontage |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VideoMontage\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_VideoMontage_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
-
 
 StreamPackConfig\_\*\*\* has the following sub-nodes:
 
@@ -375,14 +548,12 @@ StreamPackConfig\_\*\*\* has the following sub-nodes:
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.StreamPackConfig\_\*\*\* | Node type | String    | Yes       | StreamPackConfig |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.StreamPackConfig\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_StreamPackConfig_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
-VideoStream\_\*\*\* has the following sub-nodes:
+`VideoStream\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.VideoStream\_\*\*\* | Node type | String    | Yes       | VideoStream |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VideoStream\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_VideoStream_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
-
 
 StreamPack\_\*\*\* has the following sub-nodes:
 
@@ -391,46 +562,40 @@ StreamPack\_\*\*\* has the following sub-nodes:
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.StreamPack\_\*\*\* | Node type | String    | Yes       | StreamPack |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.StreamPack\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_VideoStream_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
-SDRtoHDR\_\*\*\* has the following sub-nodes:
+`SDRtoHDR\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SDRtoHDR\_\*\*\* | Node type | String    | Yes       | SDRtoHDR |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SDRtoHDR\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_SDRtoHDR_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
-VideoProcess\_\*\*\* has the following sub-nodes:
+`VideoProcess\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.VideoProcess\_\*\*\* | Node type | String    | Yes       | VideoProcess |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VideoProcess\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_VideoProcess_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
-SCF\_\*\*\* has the following sub-nodes:
+`SCF\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SCF\_\*\*\* | Node type | String    | Yes   | SCF  |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SCF\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_SCF_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
-SuperResolution\_\*\*\* has the following sub-nodes:
+`SuperResolution\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SuperResolution\_\*\*\* | Node type | String    | Yes | SuperResolution |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SuperResolution\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_SuperResolution_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
-Segment\_\*\*\* has the following sub-nodes:
+`Segment\_\*\*\*` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Segment\_\*\*\* | Node type | String    | Yes       | Segment |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Segment\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Segment_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
-
 
 PicProcess\_\*\*\* has the following sub-nodes:
 
@@ -439,14 +604,12 @@ PicProcess\_\*\*\* has the following sub-nodes:
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.PicProcess\_\*\*\* | Node type | String    | Yes       | PicProcess |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.PicProcess\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_PicProcess_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
-
 Tts\_\*\*\* has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.Tts\_\*\*\* | Node type | String    | Yes       | Tts |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Tts\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_Tts_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
-
 
 SpeechRecognition\_\*\*\* has the following sub-nodes:
 
@@ -455,40 +618,67 @@ SpeechRecognition\_\*\*\* has the following sub-nodes:
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.SpeechRecognition\_\*\*\* | Node type | String    | Yes       | SpeechRecognition |
 | Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SpeechRecognition\_\*\*\* | Operation rule. For more information, see [Structure > MediaWorkflow_Topology_Nodes_SpeechRecognition_***_Operation](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
+VideoEnhance\_\*\*\* has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
+| Type               | Request.MediaWorkflow.<br>Topology.Nodes.VideoEnhance\_\*\*\* | Node type | String    | Yes       | VideoEnhance |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.VideoEnhance\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+
+Condition\_\*\*\* has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
+| Type               | Request.MediaWorkflow.<br>Topology.Nodes.Condition\_\*\*\* | Node type | String    | Yes       | Condition |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.Condition\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
+
+MediaInfo\_\*\*\* has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
+| Type               | Request.MediaWorkflow.<br>Topology.Nodes.MediaInfo\_\*\*\* | Node type | String    | Yes       | MediaInfo |
+
 AIRecognition\_\*\*\* has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
 | ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
 | Type               | Request.MediaWorkflow.<br>Topology.Nodes.AIRecognition\_\*\*\* | Node type | String    | Yes       | AIRecognition |
 
+SegmentVideoBody\_\*\*\* has the following sub-nodes:
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required | Constraints |
+| ------------------ | ---------------------------------------------------------- | -------- | --------- | -------- | --------- |
+| Type               | Request.MediaWorkflow.<br>Topology.Nodes.SegmentVideoBody\_\*\*\* | Node type | String    | Yes       | SegmentVideoBody |
+| Operation          | Request.MediaWorkflow.<br>Topology.Nodes.SegmentVideoBody\_\*\*\* | Operation rule. For more information, see [Structure](https://intl.cloud.tencent.com/document/product/1045/49945). | Container | Yes       | None        |
 
 The dependencies of workflow nodes are as follows:
 
 | Workflow Node Type | Linkable Node Types |
-| ----------------- | ---------------------------------------------------------- |
-| Start             | Snapshot,Animation,SmartCover,Transcode,Concat,VoiceSeparate,VideoMontage,</br>StreamPackConfig,SDRtoHDR,VideoProcess,SCF,SuperResolution,Segment,PicProcess,Tts,SpeechRecognition,AIRecognition |
+|-------------------|----------------------------------------------------|
+| Start             | Snapshot,Animation,SmartCover,Transcode,Concat,VoiceSeparate,VideoMontage,StreamPackConfig,SDRtoHDR,VideoProcess,SCF,SuperResolution,Segment,PicProcess,Tts,SpeechRecognition,VideoEnhance,MediaInfo,AIRecognition,VideoEnhance,SegmentVideoBody |
 | Snapshot          | PicProcess,SCF,End |
 | Animation         | SCF,End |
 | SmartCover        | PicProcess,SCF,End |
-| Transcode         | Snapshot,Animation,SmartCover,Concat,VideoMontage,SDRtoHDR,VideoProcess,SCF,Segment,SpeechRecognition,End |
-| Concat            | Transcode,Snapshot,Animation,SmartCover,SDRtoHDR,VideoProcess,SCF,Segment,End |
+| Transcode         | Snapshot,Animation,SmartCover,Concat,VideoMontage,SDRtoHDR,VideoProcess,SCF,Segment,SpeechRecognition,VideoEnhance,MediaInfo,SegmentVideoBody,End |
+| Concat            | Transcode,Snapshot,Animation,SmartCover,SDRtoHDR,VideoProcess,SCF,Segment,VideoEnhance,MediaInfo,VideoEnhance,SegmentVideoBody,End |
 | VoiceSeparate     | SCF,SpeechRecognition,End |
-| VideoMontage      | Snapshot,Animation,SDRtoHDR,VideoProcess,SCF,SuperResolution,Segment,End |
+| VideoMontage      | Snapshot,Animation,SDRtoHDR,VideoProcess,SCF,SuperResolution,VideoEnhance,Segment,MediaInfo,VideoEnhance,SegmentVideoBody,End |
 | StreamPackConfig  | VideoStream |
-| VideoStream       | StreamPack |
+| VideoStream       | StreamPack  |
 | StreamPack        | End |
-| SDRtoHDR          | Transcode,Concat,VideoMontage,VoiceSeparate,SmartCover,Animation,VideoProcess,SCF,SuperResolution,End |
-| VideoProcess      | Transcode,Concat,VideoMontage,VoiceSeparate,SmartCover,Animation,SDRtoHDR,SCF,Segment,SuperResolution,End |
-| SCF               | SDRtoHDR,Snapshot,Transcode,HighSpeedHd,Concat,VideoMontage,VoiceSeparate,SmartCover,Animation,VideoProcess,End |
-| SuperResolution   | VideoMontage,Transcode,SmartCover,Animation,Snapshot,SCF,Segment,SDRtoHDR,VideoProcess,End |
-| Segment           | End |
+| SDRtoHDR          | Transcode,Concat,VideoMontage,VoiceSeparate,SmartCover,Animation,VideoProcess,SCF,SuperResolution,SegmentVideoBody,End |
+| VideoProcess      | Transcode,Concat,VideoMontage,VoiceSeparate,SmartCover,Animation,SDRtoHDR,SCF,Segment,SuperResolution,MediaInfo,SegmentVideoBody,End |
+| SCF               | SDRtoHDR,Snapshot,Transcode,Concat,VideoMontage,VoiceSeparate,SmartCover,Animation,VideoProcess,End |
+| SuperResolution   | VideoMontage,Transcode,SmartCover,Animation,Snapshot,SCF,Segment,SDRtoHDR,VideoProcess,MediaInfo,SegmentVideoBody,End |
+| Segment           | VideoEnhance,SegmentVideoBody, End |
 | PicProcess        | SCF,End |
 | Tts               | SCF,Transcode,End |
 | SpeechRecognition | SCF,Tts,End |
+| VideoEnhance      | Transcode,VideoMontage,SmartCover,Animation,Snapshot,SCF,Segment,SpeechRecognition,Segment,VoiceSeparate,MediaInfo, End |
+| MediaInfo         | Condition,End |
+| Condition         | Transcode,HighSpeedHd,SuperResolution,VideoProcess,Animation,Snapshot,VideoMontage,SmartCover,Concat,VideoEnhance |
 | AIRecognition     | End |
-
-
-
+| SegmentVideoBody  | End |
 
 Wildcards supported by workflow are as follows:
 
@@ -499,20 +689,24 @@ Wildcards supported by workflow are as follows:
 | ${InputNameAndExt} | Input filename (including the extension)            |
 | ${RunId}           | Instance ID                             |
 | ${Ext}             | Codec extension                         |
+| ${Jobid}           | Job ID |
+| ${Number}          | Product index counting from 0. It is supported only for `Snapshot`, `SmartCover`, and `Segment` nodes. |
+| ${Time}            | Screenshot time point in milliseconds. It is supported only for the `Snapshot` node. |
+
 
 ## Response
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49945).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/49945).
 
 #### Response body
 
 The response body returns **application/xml** data. The following contains all the nodes:
 
-#### Response body 1: Screencapturing and transcoding the input video file, performing remuxing and intelligent thumbnail generation on the output file, and then performing image processing on the generated thumbnail
-
-
+<dx-tabs>
+::: Response body 1
+**Screencapturing and transcoding the input video file, performing remuxing and intelligent thumbnail generation on the output file, and then performing image processing on the generated thumbnail**
 ```plaintext
 <Response>
     <RequestId>NjJmMWQxYjNfOTBmYTUwNjRfNWYyY18x</RequestId>
@@ -621,8 +815,9 @@ The response body returns **application/xml** data. The following contains all t
 </Response>
 ```
 
-#### Response body 2: Adaptive bitrate streaming
-
+:::
+::: Response body 2
+**Adaptive bitrate streaming**
 ```
 <Response>
     <MediaWorkflow>
@@ -719,19 +914,20 @@ The response body returns **application/xml** data. The following contains all t
     </MediaWorkflow>
 </Response>
 ```
+:::
+</dx-tabs>
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :------------- | :-------- |
 | Response           | None     | Result storage container | Container |
 
-<span id="Response"></span>
 `Response` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :------- | :------------ | :-------- |
-| RequestId          | Response | Unique ID of the request.                   | String    |
+| RequestId          | Response | Unique ID of the request                   | String    |
 | MediaWorkflow      | Response | Workflow array.   | Container |
 
 `MediaWorkflow` has the following sub-nodes:
@@ -739,7 +935,7 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ---------------------- | ------------------------------------------------------------ | --------- |
 | Name               | Response.MediaWorkflow | Workflow name.                                                  | String    |
-| WorkflowId         | Response.MediaWorkflow | Workflow ID.                                                    | String    |
+| WorkflowId         | Response.MediaWorkflow | Workflow ID                                                    | String    |
 | State              | Response.MediaWorkflow | Workflow status.                                                  | String    |
 | CreateTime         | Response.MediaWorkflow | Creation time.                                                    | String    |
 | UpdateTime         | Response.MediaWorkflow | Update time.                                                    | String    |
@@ -747,12 +943,12 @@ The nodes are as described below:
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
+No special error message will be returned for this request. For the common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
-## Samples
-
-#### Request 1: Screencapturing and transcoding the input video file, performing remuxing and intelligent thumbnail generation on the output file, and then performing image processing on the generated thumbnail
-
+## Examples
+<dx-tabs>
+::: Request 1
+**Screencapturing and transcoding the input video file, performing remuxing and intelligent thumbnail generation on the output file, and then performing image processing on the generated thumbnail**
 ```plaintext
 POST /workflow HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
@@ -861,9 +1057,8 @@ Content-Type: application/xml
     </MediaWorkflow>
 </Request>
 ```
-
-#### Response 1
-
+:::
+::: Response 1
 ```plaintext
 HTTP/1.1 200 OK
 Content-Type: application/xml
@@ -979,11 +1174,9 @@ x-ci-request-id: NjJmMWQxYjNfOTBmYTUwNjRfNWYyY18x
     </MediaWorkflow>
 </Response>
 ```
-
-
-#### Request 2: Adaptive bitrate streaming
-
-
+:::
+::: Request 2
+**Adaptive bitrate streaming**
 ```plaintext
 POST /workflow HTTP/1.1
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1497530202;1497610202&q-key-time=1497530202;1497610202&q-header-list=&q-url-param-list=&q-signature=28e9a4986df11bed0255e97ff90500557e0e****
@@ -1083,9 +1276,8 @@ Content-Type: application/xml
 </Request>
 ```
 
-
-#### Response 2
-
+:::
+::: Response 2
 ```plaintext
 HTTP/1.1 200 OK
 Content-Type: application/xml
@@ -1191,3 +1383,5 @@ x-ci-request-id: NTk0MjdmODlfMjQ4OGY3XzYzYzhf95s=
     </MediaWorkflow>
 </Response>
 ```
+:::
+</dx-tabs>

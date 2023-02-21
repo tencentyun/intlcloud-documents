@@ -8,13 +8,13 @@ This API is used to set a style for a bucket to process images in the same way.
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=AddBucketStyle&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -31,7 +31,11 @@ Authorization: Auth String
 <XML File>
 ```
 
->? Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
+
+>? 
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> 
 
 
 #### Request headers
@@ -50,7 +54,7 @@ This API uses only common request headers. For more information, please see [Com
 
 Nodes are described as follows:
 
-| Node Name (Keyword)          | Parent Node | Description                                    | Type        | Required |
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | ---------------- | --------- | -------- |
 | AddStyle           | None  | The style to be added | Container | Yes  |
 
@@ -74,7 +78,7 @@ The response body returned is empty.
 #### Error codes
 This API does not have any special error codes. For more information about all error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700).
 
-## Example
+## Examples
 
 #### Request
 ```plaintext

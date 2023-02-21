@@ -2,7 +2,7 @@
 
 图片压缩指在图片质量保持不变的情况，尽可能的减小图片大小，以达到节省图片存储空间、减少图片访问流量、提升图片访问速度的效果。
 
-[数据万象（Cloud Infinite，CI）](https://intl.cloud.tencent.com/document/product/1045/33422) 产品推出了 AVIF 压缩功能，可将图片转换为 avif 格式，avif 是基于 av1 的一种全新图片格式，在2020年2月由 Netflix 首次公布于众，目前已支持 Chrome、Firefox 等浏览器。
+[数据万象（Cloud Infinite，CI）](https://intl.cloud.tencent.com/document/product/1045/33422) 产品推出了 AVIF 压缩功能，可将图片转换为 avif 格式，avif 是基于 AV1 的一种全新图片格式，在2020年2月由 Netflix 首次公布于众，目前已支持 Chrome、Firefox 等浏览器。
 
 ## 限制说明
 
@@ -25,14 +25,17 @@
 - 上传时处理
 - 云上数据处理
 
->?AVIF 压缩为付费服务，计费项为图片高级压缩费用，具体费用请参见图片处理费用。
+>?AVIF 压缩为付费服务，计费项为图片高级压缩费用，具体费用请参见 [图片处理费用](https://intl.cloud.tencent.com/document/product/1045/45582)。
 
 ## 接口示例
 
 #### 1. 下载时处理
 
 ```plaintext
-download_url?imageMogr2/format/avif
+GET /<ObjectKey>?imageMogr2/format/avif HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 #### 2. 上传时处理
@@ -74,15 +77,17 @@ Pic-Operations:
 }
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
+> 
 
 
 ## 处理参数说明
 
 | 参数             | 含义                                                         |
 | :--------------- | :----------------------------------------------------------- |
-| download_url     | 文件的访问链接，具体构成为&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>， 例如`examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`。 |
+| ObjectKey  | 对象文件名，例如 folder/sample.jpg。                           | 
 | /format/&lt;Format> | 压缩格式，此处为 avif。                                       |
 
 ## 实际案例
