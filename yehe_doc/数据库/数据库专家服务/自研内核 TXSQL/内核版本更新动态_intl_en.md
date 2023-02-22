@@ -1,14 +1,58 @@
 This document describes the version updates of the TencentDB for MySQL kernel.
 >?
->- For more information on how to upgrade the minor kernel version of a TencentDB for MySQL instance, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
+>- For more information on how to upgrade the minor kernel version of a TencentDB for MySQL instance, see [Upgrading Kernel Minor Version](https://www.tencentcloud.com/document/product/236/36816).
 >- When you upgrade the minor version, some minor versions may be under maintenance and cannot be selected. The minor versions available in the console shall prevail.
->- For more information on the minor versions of the TencentDB for MySQL database proxy, see [Kernel Minor Version Release Notes](https://intl.cloud.tencent.com/document/product/236/45626) and [Kernel Minor Version Release Notes](https://www.tencentcloud.com/document/product/236/45626) (new version).
+>- For more information on the minor versions of the TencentDB for MySQL database proxy, see [Kernel Minor Version Release Notes](https://intl.cloud.tencent.com/document/product/236/45626).
 
 <dx-tabs>
 ::: MySQL 8.0 Kernel Version Release Notes
+
 <table>
 <thead><tr><th>Minor Version</th><th>Description</th></tr></thead>
 <tbody>
+
+<tr>	
+<td>20220831</td>
+<td><ul><li>New features</li><ul>
+<li>Supported dynamically setting the MySQL version.</li>
+<li>Supported transparent column encryption. When creating a table, you can specify the encryption attribute for the `varchar` field, and the storage system will encrypt the column. This capability is expected to be commercialized in 2023.</li>
+<li>Fixed the exception of the third-party data subscription tool caused by subscription to the comparison SQL for internal data consistency during tool usage. <dx-alert infotype="explain" title="Note">After the database instance is migrated, upgraded, or recovered after failure, the system will compare the data consistency to ensure the consistency of data. When comparison SQL is in `statement` mode, exceptions are easy to occur in response of some third-party subscription tools to the SQL in `statement` mode. When the instance is upgraded to its kernel, the third-party data subscription tool can't subscribe the comparison SQL for internal data consistency.</dx-alert></li>
+<li>Supported adding NO_WAIT | WAIT [n] for DDL operations. This enables such operations to be rolled back immediately if they cannot obtain the MDL lock and must wait or if they have waited the specified time for the MDL lock.</li>
+<li>Supported the fast query cache feature, which is suitable for scenarios with more reads than writes. If there are more writes than reads, the data is updated very frequently, or the result set of the query is very large, we recommend you not enable this feature.</li>
+<li>Supported enhanced MTS deadlock detection.</li>
+<li>Supported <a href="https://www.tencentcloud.com/document/product/236/52512">parallel query</a>. After this feature is enabled, large queries can be automatically identified. The parallel query capability leverages multiple compute cores to greatly shorten the response time of large queries.</li>
+</ul>
+<li>Performance optimizations</li><ul>
+<li>Optimized the overheads of the transaction system to take snapshots. The Copy Free Snapshot method is adopted, the transaction delay is deleted from the global active transaction hash, and the snapshot taking method is optimized to determine the logical timestamp of the snapshot event. As tested by sysbench, the extreme performance is increased by 11% in the read-write scenario.</li>
+<li>Optimized permission verification for prepared statements. A variable is used globally to indicate the permission version number, a prepared statement records the version number after being prepared, and the system checks whether the version number has changed during execution. If there is no permission change, the system will skip the permission check; otherwise, it will check the permission and record the version number again.</li>
+<li>Optimized the accuracy of time acquisition in the thread pool.</li>
+<li>Optimized record offset acquisition. A record offset is cached for each index. When the conditions are met, the cached offset will be directly used, saving the computing overheads of calling the `rec_get_offsets()` function.</li>
+<li>Optimized parallel DDL. <br>1. When the index field is small, the sampled memory size is reduced to lower the sampling frequency. <br>2. The K-way merge algorithm is used for sorting, which effectively reduces the number of rounds of merging and sorting to lower the number of IOs. <br>3. When records are read, the fixed-length offset is cached in order to avoid generating offsets for each record each time.</li>
+<li>Optimized the undo log information recording logic to improve the INSERT performance. </li>
+<li>Improved the performance after semi-sync was enabled.</li>
+<li>Optimized the audit performance to reduce the system overheads.</li>
+</ul>
+
+<li>Bug fixes</li><ul>
+<li>Fixed the issue where the displayed value of `Thread_memory` was abnormal sometimes.</li>
+<li>Fixed the issue where the timestamp was inaccurate during batch statement audit.</li>
+<li>Fixed issues related to column modification at the second level.</li>
+<li>Fixed the issue where the `CREATE TABLE t1 AS SELECT ST_POINTFROMGEOHASH("0123", 4326);` statement caused source-replica disconnection.</li>
+<li>Fixed the issue where the replica failed to retry during concurrent requests at the table level.</li>
+<li>Fixed the `Malformed packet` error reported when `show slave hosts` was executed.</li>
+<li>Fixed recycle bin issues.</li>
+<li>Fixed the issue where the jemalloc mechanism easily triggered OOM on ARM device models.</li>
+<li>Fixed the issue where `truncate pfs account table` caused the failure to collect statistics.</li>
+<li>Fixed the exception that occurred while restoring the child table first and then restoring the parent table when the recycle bin had a foreign key constraint.</li>
+<li>Fixed sql_mode log issues.</li>
+<li>Fixed the occasional issue where a procedure became abnormal when `CREATE DEFINER` was executed.</li>
+<li>Fixed Copy Free Snapshot issues.</li>
+<li>Fixed the performance fluctuation of the thread pool.</li>
+<li>Fixed the issue where the result of `hash join+union` might be empty.</li>
+<li>Fixed memory issues.</li>
+</ul>
+</td>
+</tr>	
 
 <tr>	
 <td>20220401</td>
@@ -220,7 +264,7 @@ This document describes the version updates of the TencentDB for MySQL kernel.
 <tbody>
 
 <tr>	
-<td>20220715</td>
+<td>20220716</td>
 <td>
 <ul><li>New features</li><ul>
 <li>Supported auto-increment column persistence for InnoDB.</li>
@@ -553,7 +597,7 @@ This document describes the version updates of the TencentDB for MySQL kernel.
 <td>
 <ul><li>New features</li><ul>
 <li>Supported automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">submit a ticket</a>.</li>
-<li>Supported automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.</li>
+<li>Supported automatically changing the storage engine from MEMORY to InnoDB: If the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.</li>
 <li>Supported invisible indexes.</li>
 <li>Supported memory management with jemalloc, which can replace the jlibc memory management module to reduce memory usage and improve allocation efficiency.</li>
 </ul>
@@ -770,7 +814,7 @@ This document describes the version updates of the TencentDB for MySQL kernel.
 <td>20180915</td>
 <td>
 <ul><li>New features</li><ul>
-<li>Supported automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.</li>
+<li>Supported automatically changing the storage engine from MEMORY to InnoDB: If the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.</li>
 <li>Supported automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">submit a ticket</a>.</li>
 </ul>
 
