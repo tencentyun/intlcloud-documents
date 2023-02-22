@@ -1,4 +1,4 @@
-﻿## Prerequisites
+## Prerequisites
 You have purchased a WAF instance and [bot traffic management extra pack](https://cloud.tencent.com/document/product/627/11730#bot-.E8.A1.8C.E4.B8.BA.E7.AE.A1.E7.90.86.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E) and enabled bot analysis for WAF-connected domain names.
 
 ## Bot allowlist
