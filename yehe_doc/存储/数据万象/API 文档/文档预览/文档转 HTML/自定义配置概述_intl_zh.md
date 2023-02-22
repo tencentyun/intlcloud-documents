@@ -4,7 +4,7 @@
 
 
 ## 架构图
-![](https://main.qcloudimg.com/raw/d7381cb5aba6a79fcb7084fef24b4dd4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/32602ffb3049da778e94b078c25fd967.png)
 
 
 ## 使用环境
@@ -21,7 +21,7 @@
 
 ### 1. 下载
 
-请下载最新版本的 [JS-SDK 包](https://cos-doc-preview-js-sdk-1253960454.file.myqcloud.com/sdk-v0.1.1.zip)。历史版本前往 [更新日志](https://cloud.tencent.com/document/product/460/75908)。
+请下载最新版本的 [JS-SDK 包](https://cos-doc-preview-js-sdk-1253960454.file.myqcloud.com/sdk-v0.1.1.zip)。历史版本前往 [更新日志](https://www.tencentcloud.com/document/product/1045/47943)。
 
 
 ### 2. 引入 JS-SDK
@@ -155,7 +155,7 @@ JS-SDK 初始化完成后会自动在挂载节点下面插入一个 iframe。
 不使用 Token 时，默认使用文档的签名有效期鉴权，过期则无法预览文件。
 使用 Token 鉴权可以在预览期间持续进行 Token 鉴权和 Token 续期，由业务侧自主控制预览授权。
 
-![](https://main.qcloudimg.com/raw/bb97fce11cdf2991683ab5fbc5d46ec7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e6063d46f22aa3931a0b61084b698e0b.png)
 
 Token 鉴权与续期分为以下三个步骤，详情请参见 [demo 示例](https://github.com/tencentyun/cos-demo/blob/main/doc-preview/token-refresh-preview.html) 。
 
@@ -187,6 +187,8 @@ x-cos-request-id: NjJiMWEwNDZfMTgyMjYyNjRfYmRlYl9iNTAw****
 2. 设置 Token
 >? 避免 Token 刷新过于频繁，推荐设置的超时时间（timeout）为 10 分钟以上。为避免 refresh 请求超时，JS-SDK 会提前几分钟去更新 Token。
 >
+
+
 ```plaintext
 var demo = COSDocPreviewSDK.config({
     url: '在线文档预览地址',  // 步骤3中获取到的在线文档预览地址
@@ -198,9 +200,14 @@ demo.setToken({
   timeout: 10 * 60 * 1000, // token超时时间，单位为毫秒，避免频繁续期，建议设置 10 分钟及以上，JS-SDK将在超时前调用更新Token的方法（refreshToken）
 });
 ```
+
+
 3. 配置 refreshToken 方法，超时自动续期 Token
 refreshToken 方法需要请求**您的服务端封装的更新 Token 的方法**，服务端可以封装上述的获取 Token 的方法（参考 [获取 Token](#token)）。
 以服务端方法`http://your.server.com/refreshToken`为例，配置 refreshToken 函数如下：
+
+
+
 ```plaintext
 // 获取 Token 函数
 const refreshToken = () => {
