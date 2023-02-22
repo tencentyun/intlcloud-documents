@@ -1,85 +1,86 @@
-Powered by the recording capability of CSS, the time shifting feature allows viewers to rewind and play back a video stream from earlier time points. When time shifting is enabled for a VOD playback domain, TS segment URLs and TS files for the video are saved in VOD, and the user can play back earlier video content by passing a time parameter in the request URL under the playback domain.
+We have recently upgraded the time shifting feature. When you create a time shifting template in the console, you will now be enabling the new time shifting feature. Generate a URL in the required format, and you can use the URL to play content from an earlier time point. API 3.0 is also now available for the time shifting feature. For details, see [Time Shifting APIs](https://intl.cloud.tencent.com/document/product/267/30760). This document shows you how the time shifting feature works and how to make a playback request.
 
-
+## Must-Knows
+- The new time shifting feature currently supports 30,000 concurrent viewers. If you need a higher concurrency, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- If you enabled authentication for your playback domain and configured an expiration time, the time shifting URL will expire after the specified time.
+- To use the [old time shifting feature](https://intl.cloud.tencent.com/document/product/267/31565) (which pulls content from a VOD domain), you need to submit a ticket. For a better experience, we recommend you use the new time shifting feature.
 
 ## How It Works
-In HLS streaming, a video stream is split into TS segments. Viewers use an M3U8 file to access a TS segment URL, get the TS file, and play the video content starting from that TS segment.
->! TS files are not saved permanently, so there is a limit to how far back in time playback can start from.
+CSS enables time shifting by saving live streams as TS segments and information about the playback time of each TS segment in the cloud. This feature is often used to replay TV programs or highlights of sports events. Content is distributed to clients over HLS. You can specify the exact playback time by setting the M3U8 request parameters (for details, see [Playback Request](#play)).
 
-
-## Note
-The time shifting feature has been in beta testing so far. However, we will start charging for use of the feature starting from **00:00 on June 1, 2022**. For details, see [Notice: Time Shifting to Become Paid Feature](https://intl.cloud.tencent.com/document/product/267/46847). Time shifting relies on recording, so you will also be charged [live recording fees](https://intl.cloud.tencent.com/document/product/267/39605) by CSS and [storage and playback fees](https://intl.cloud.tencent.com/document/product/266/2838) by VOD.
-
-## How to Use Time Shifting
-
-### Prerequisites
-
--  You have [signed up for a Tencent Cloud account(https://intl.cloud.tencent.com/document/product/378/17985). 
--  You have activated CSS and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970). 
-
-[](id:step1)
-### Step 1. Activate VOD
-
-1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview) and click **Activate Now**.
-2. Select the checkbox to agree to the service agreement, and click **OK** to activate VOD.
-
-[](id:step2)
-### Step 2. Add a domain name
-
-Follow the steps below to add a VOD domain name for time shifting:
-
-1. Go to the VOD console and select **Distribution and Playback > Domain Name** on the left sidebar.
-2. Click **Add Domain** and enter a VOD domain name that has been registered with an ICP filing number. For more information, see [Distribution and Playback Settings](https://intl.cloud.tencent.com/document/product/266/35572).
-3. Add a CNAME record for the domain.
-
-[](id:step3)
-### Step 3. Bind a recording template
-
-1. Go to the CSS console and select **Feature Configuration** > **[Live Recording](https://console.cloud.tencent.com/live/config/record)**.
-2. Click **Create Recording Template**. For detailed directions for creating a recording template, see [Live Recording](https://intl.cloud.tencent.com/document/product/267/34223).
-> ! 
-> - Choose **HLS** as the recording format.
-> - Enter a custom storage period, which cannot be shorter than the [time-shift duration](#step4).
-3. Bind the recording template with the push domain you want to use. For detailed directions, see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34224).
-
-[](id:step4)
-### Step 4. Enable time shifting
-
-[Submit a ticket](https://console.cloud.tencent.com/workorder/category?step=0&source=0) to enable the time shifting feature. You need to select **CSS** as the product and provide the following information:
-
-- The **VOD domain name** added in [Step 2](#step2).
-- The ID of the recording template added in [Step 3](#step3).
-- A custom value (seconds) for `timeshift_dur` (time-shift duration).
-> ? 
-> - The time-shift duration indicates how far back from the current time you can play back the video stream. Currently, the longest time-shift duration allowed is 30 days.
->- Given that the time-shift duration you configure may not exactly match the actual time-shift duration, we recommend you set the duration a little longer than you actually need.
->- For example, if the parameter is set to `7200` (2 hours), you will be able to request content generated 2 hours ago or later, and the value range for the playback delay parameter `delay` is 90 seconds to 2 hours. If `delay` is set to a value larger than 2 hours, `HTTP 404` will be returned even if there is live streaming content at that time point. 
-
-
-
+[](id:play)
 ## Playback Request
+The format of time shifting URL is `http://domain/appname/stream.m3u8`. There are two types of time shifting:
+- Playing a specific duration. This is suitable for replaying highlights of sports events.
+- Playing from a specific time ago. This is suitable if you want to delay the playback of a live stream.
 
-### Request URL format
+### Request parameters for playing a specific duration
+<table id="setmess">
+<tr><th width="14%">Parameter</th><th>Description</th><th>Required</th><th>Example</th>
+</tr><tr>
+<td>txTimeshift</td>
+<td>Whether to enable the new time shifting feature (<code>on</code>: Enable).</td>
+<td>Yes</td>
+<td>txTimeshift=on</td>
+</tr><tr>
+<td>tsStart</td>
+<td>The playback start time.</td>
+<td>Yes</td>
+<td>tsStart=20121010010101</td>
+</tr><tr>
+<td>tsEnd</td>
+<td>The playback end time.</td>
+<td>Yes</td>
+<td>td>tsEnd=20121010010102</td>
+</tr><tr>
+<td>tsFormat</td>
+<td><ul style="margin:0">
+<li>The format of <code>tsStart</code> and <code>tsEnd</code>. The value of this parameter is in the format of <code>{timeformat}_{unit}_{zone}</code>.</li>
+<li>Valid values of <code>timeformat</code>:<ul>
+<li/><code>UNIX</code> - Unix timestamp. If you use this format, you don’t need to specify <code>zone</code>.
+<li/><code>human</code> - Human-readable time, such as “20121010010101”.</ul></li>
+<li>Valid values of <code>unit</code>: <code>s</code>, <code>ms</code>.</li>
+<li><code>s</code> indicates second and <code>ms</code> indicates millisecond.</li>
+  <li><code>zone</code>: <ul style="margin:0"><li>For an east time zone, use a positive number.<li>For a west time zone, use a negative number.</ul></li>
+</ul></td>
+<td>Yes</td>
+<td>tsFormat=unix_s
+tsFormat=human_s_8</td>
+</tr><tr>
+<td>tsCodecname</td>
+<td>For a transcoded stream, set this parameter to the ID of the transcoding template. For original streams or watermarked streams, leave out this parameter.</td>
+<td>No</td>
+<td>tsCodecname=hd</td>
+</tr></table>
 
+
+
+#### Request example 1 (Unix timestamp)
 ```
-http://[Domain]/timeshift/[AppName]/[StreamName]/timeshift.m3u8?delay=xxx
+http://example.domain.com/live/stream.m3u8?txTimeshift=on&tsFormat=unix_s&tsStart=1675302995&tsEnd=1675303025&tsCodecname=test
+```
+#### Request example 2 (human-readable time)
+```
+http://example.domain.com/live/stream.m3u8?txTimeshift=on&tsFormat=unix_s_8&tsStart=20230202095635&tsEnd=20230202095705&tsCodecname=test
 ```
 
-### Parameter description
+### Request parameters for playing from a specific time ago
 
-| Parameter           | Description                                                         |
-| -------------- | ------------------------------------------------------------ |
-| [Domain]       | The VOD domain name added in [Step 2](#step2) for time shifting.     |
-| timeshift      | A non-customizable parameter.                                           |
-| [AppName]      | The application name. For example, if your application name is `live`, set this parameter to `live`.           |
-| [StreamName]   | The stream name. Set this parameter to the name of the stream for which you want to enable time shifting.                                 |
-| timeshift.m3u8 | A non-customizable parameter.                                           |
-| delay          | The playback delay time (seconds). If you pass in a value smaller than `90`, `90` will be used.|
+| Parameter    | Description                    | Required | Example                                |
+| ----------- | ----------------------- | ---------- | ----------------------------------- |
+| txTimeshift | Whether to enable the new time shifting feature (`on`: Enable). | Yes         | txTimeshift=on                      |
+| tsDelay     | The number of seconds to delay the playback by.    | Yes         | `tsDelay=30` indicates that playback will start from 30 seconds ago. |
+| tsCodecname | For a transcoded stream, set this parameter to the ID of the transcoding template.  | No         | tsCodecname=2000                    |
 
-### Example
-
-Suppose the time-shift domain name is `testtimeshift.com`, application name is `live`, and stream name is `SLPUrIFzGPE`. To play back video content from 5 minutes ago, you should use the following request URL:
-
+#### Request example
 ```
-http://testtimeshift.com/timeshift/live/SLPUrIFzGPE/timeshift.m3u8?delay=300
+http:://example.domain.com/live/stream.m3u8?txTimeshift=on&tsDelay=30&tsCodecname=test
 ```
+### Authentication parameters
+The authentication parameters for time shifting are the same as those for playback. For details, see [Playback Authentication Configuration](https://intl.cloud.tencent.com/document/product/267/31060) (HLS URLs generated in the console are only valid for one day).
+
+### Querying time shifted streams
+The **Time Shifting > Time shifting details** page of the console shows a list of time shifted streams. You can click **Details** to view the details of a time shifted stream.
+You can also use APIs to query time shifted streams and the details of a specific stream. For details, see the following documents:
+- [DescribeTimeShiftStreamList](https://www.tencentcloud.com/document/product/267/53719)
+- [DescribeTimeShiftRecordDetail](https://www.tencentcloud.com/document/product/267/53720)
