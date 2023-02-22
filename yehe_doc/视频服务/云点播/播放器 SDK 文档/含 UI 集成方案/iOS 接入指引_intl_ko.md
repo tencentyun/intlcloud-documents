@@ -125,7 +125,7 @@ _playerView.fatherView = self.holderView;
 2. **License 권한 구성**
 이미 관련 License 권한을 획득한 경우, [Tencent Cloud RT-Cube 콘솔](https://console.cloud.tencent.com/vcube)에서 License URL과 License Key를 획득해야 합니다.
 
-아직 필요한 License가 없다면 <a href="https://cloud.tencent.com/document/product/881/74588">비디오 재생 License</a>의 안내에 따라 License를 받을 수 있습니다.
+아직 필요한 License가 없다면 비디오 재생 License 의 안내에 따라 License를 받을 수 있습니다.
 <br>License 정보를 획득한 후 SDK의 해당 인터페이스를 호출하기 전에 다음 인터페이스를 통해 License를 초기화하고 `- [AppDelegate application:didFinishLaunchingWithOptions:]`에서 다음 설정하는 것이 좋습니다.
 ```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
