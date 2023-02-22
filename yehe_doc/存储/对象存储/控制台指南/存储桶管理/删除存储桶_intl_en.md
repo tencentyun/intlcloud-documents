@@ -4,7 +4,7 @@ You can delete buckets on the **Bucket List** page in the COS console. For more 
 
 ## Prerequisites
 
-When deleting a bucket, make sure that all objects and incomplete multipart uploads in the bucket have been cleared. For more information, see [Emptying a Bucket](https://intl.cloud.tencent.com/document/product/436/30926).
+Before deleting a bucket, make sure that the corresponding operations have been completed based on system check results, for example, deleting all objects (including historical versions) and incomplete multipart uploads in the bucket and disabling the CDN acceleration domain name. For details, see [Emptying a Bucket](https://intl.cloud.tencent.com/document/product/436/30926) and [Enabling Custom CDN Acceleration Domain Names](https://intl.cloud.tencent.com/document/product/436/31505).
 
 ## Directions
 

@@ -20,7 +20,7 @@ COSFS allows you to mount COS buckets to local and work with the COS objects as 
 Mainstream Ubuntu, CentOS, SUSE, and macOS
 
 
-## Installation
+## Installation Methods
 You can install COSFS with an installation package or by compiling the source code.
 
 
@@ -177,7 +177,7 @@ export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig #You may need to mod
 ## How to Use
 
 ### 1. Configure the key file
-Write the bucket information in the `/etc/passwd-cosfs` file, including the bucket name (in `BucketName-APPID` format) &lt;SecretId&gt;, as well as &lt;SecretKey&gt;, and use colons (:) to separate them. To avoid compromising your key, set permissions for the key file to 640. Run the following command to configure the `/etc/passwd-cosfs` key file:
+Write the bucket information in the `/etc/passwd-cosfs` file, including the bucket name (in `BucketName-APPID` format), &lt;SecretId&gt;, as well as &lt;SecretKey&gt;, and use colons (:) to separate them. To avoid compromising your key, set permissions for the key file to 640. Run the following command to configure the `/etc/passwd-cosfs` key file:
 ```shell
 sudo su  # Switch to the root account to modify the /etc/passwd-cosfs file. Skip this step if you have already logged in with the root account
 echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
@@ -186,7 +186,7 @@ chmod 640 /etc/passwd-cosfs
 
 >?You need to replace the content enclosed in &lt;&gt; with the actual information.
 >- &lt;BucketName-APPID&gt; indicates the name of the bucket. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312).
->- &lt;SecretId&gt; and &lt;SecretKey&gt; are information about the key, which can be obtained and created at [Manage API Key](https://console.cloud.tencent.com/cam/capi) in the CAM console.
+> - &lt;SecretId&gt; and &lt;SecretKey&gt; are key information. We recommend you use a sub-account key and authorize a sub-account by following the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to reduce risks. For details on how to obtain a sub-account key, see [Access Key](https://intl.cloud.tencent.com/document/product/598/32675).
 >- You can configure the key in `$HOME/.passwd-cosfs`. Alternatively, you can run `-opasswd_file=[path]` to specify the directory of the key file and then set permissions of the key file to 600.
 > 
 
@@ -207,7 +207,7 @@ Run the following command to mount the bucket configured in the key file to a sp
 ```shell
 cosfs <BucketName-APPID> <MountPoint> -ourl=http://cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
 ```
-On the **Stream Interruption Records** page:
+Parameter description
 - &lt;MountPoint&gt; is the mount point, for example, `/mnt`.
 - &lt;Region&gt; is the abbreviation for the region, such as `ap-guangzhou` and `eu-frankfurt`. For more information about region abbreviations, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 - `-odbglevel` specifies the log level. The default value is `crit`. Available options are `crit`, `error`, `warn`, `info`, and `debug`.
