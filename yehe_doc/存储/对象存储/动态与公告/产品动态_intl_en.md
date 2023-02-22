@@ -515,7 +515,7 @@
 <td>Launched the media processing - custom function processing feature</td>
 <td>If the existing services or features of media processing cannot meet your needs, you can use the custom function processing feature of SCF to write core code logic in order to flexibly implement your business needs while reducing your development costs.</td>
 <td> 2021-08-03</td>
-<td>a href="https://intl.cloud.tencent.com/document/product/436/46407">Custom Function Processing</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/46407">Custom Function Processing</a>
 </tr>
 <tr>
 <td>Launched the media processing - video encryption feature</td>
