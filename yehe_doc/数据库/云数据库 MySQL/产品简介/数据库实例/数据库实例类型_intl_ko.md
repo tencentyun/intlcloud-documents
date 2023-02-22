@@ -16,7 +16,7 @@ TencentDB for MySQL에는 다음과 같은 세 가지 데이터베이스 인스�
 <td>읽기 전용 인스턴스는 단독으로 존재할 수 없으며, 반드시 하나의 프라이머리 인스턴스에 종속되어야 합니다. 또한, 유일한 데이터 출처는 프라이머리 인스턴스로부터 동기화된 데이터이며, 프라이머리 인스턴스와 같은 리전이어야만 합니다.</td></tr>
 <tr>
 <td>재해 복구 인스턴스</td><td>교차 가용존 및 리전 간 재해 복구 기능을 제공하는 인스턴스</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/38329" target="_blank">2노드</a><td>Yes</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/236/38329" target="_blank">2노드</a><li><a href="https://intl.cloud.tencent.com/document/product/236/39783" target="_blank">3노드</a><td>Yes</td>
 <td>재해 복구 인스턴스는 동기화 시에 읽기만 가능하며, 프라이머리 인스턴스와의 동기화 관계를 자체적으로 종료하고 프라이머리 인스턴스로 승격하여 읽기 및 쓰기 액세스 기능을 제공할 수 있습니다. 따라서, 재해 복구 인스턴스의 리전을 프라이머리 인스턴스와 다르게 하시길 권장합니다.</td></tr>
 </tbody></table>
 

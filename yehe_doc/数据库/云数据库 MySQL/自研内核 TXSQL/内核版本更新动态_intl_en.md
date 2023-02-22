@@ -1,16 +1,18 @@
 This document describes the version updates of the TencentDB for MySQL kernel.
 >?
->- For more information on how to upgrade the minor kernel version of a TencentDB for MySQL instance, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
+>- For more information on how to upgrade the minor kernel version of a TencentDB for MySQL instance, see [Upgrading Kernel Minor Version](https://www.tencentcloud.com/document/product/236/36816).
 >- When you upgrade the minor version, some minor versions may be under maintenance and cannot be selected. The minor versions available in the console shall prevail.
->- For more information on the minor versions of the TencentDB for MySQL database proxy, see [Kernel Minor Version Release Notes](https://intl.cloud.tencent.com/document/product/236/45626) and [Kernel Minor Version Release Notes](https://www.tencentcloud.com/document/product/236/45626) (new version).
+>- For more information on the minor versions of the TencentDB for MySQL database proxy, see [Kernel Minor Version Release Notes](https://intl.cloud.tencent.com/document/product/236/45626).
 
 <dx-tabs>
 ::: MySQL 8.0 Kernel Version Release Notes
+
 <table>
 <thead><tr><th>Minor Version</th><th>Description</th></tr></thead>
 <tbody>
+
 <tr>	
-<td>20220830</td>
+<td>20220831</td>
 <td><ul><li>New features</li><ul>
 <li>Supported dynamically setting the MySQL version.</li>
 <li>Supported transparent column encryption. When creating a table, you can specify the encryption attribute for the `varchar` field, and the storage system will encrypt the column. This capability is expected to be commercialized in 2023.</li>
@@ -262,7 +264,7 @@ This document describes the version updates of the TencentDB for MySQL kernel.
 <tbody>
 
 <tr>	
-<td>20220715</td>
+<td>20220716</td>
 <td>
 <ul><li>New features</li><ul>
 <li>Supported auto-increment column persistence for InnoDB.</li>
@@ -595,7 +597,7 @@ This document describes the version updates of the TencentDB for MySQL kernel.
 <td>
 <ul><li>New features</li><ul>
 <li>Supported automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">submit a ticket</a>.</li>
-<li>Supported automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.</li>
+<li>Supported automatically changing the storage engine from MEMORY to InnoDB: If the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.</li>
 <li>Supported invisible indexes.</li>
 <li>Supported memory management with jemalloc, which can replace the jlibc memory management module to reduce memory usage and improve allocation efficiency.</li>
 </ul>
@@ -812,7 +814,7 @@ This document describes the version updates of the TencentDB for MySQL kernel.
 <td>20180915</td>
 <td>
 <ul><li>New features</li><ul>
-<li>Supported automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.</li>
+<li>Supported automatically changing the storage engine from MEMORY to InnoDB: If the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.</li>
 <li>Supported automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">submit a ticket</a>.</li>
 </ul>
 

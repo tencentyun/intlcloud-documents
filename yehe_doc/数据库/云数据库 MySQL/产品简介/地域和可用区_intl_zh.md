@@ -1,3 +1,4 @@
+
 腾讯云数据库托管机房分布在全球多个位置，这些位置节点称为地域（Region），每个地域又由多个可用区（Zone）构成。
 每个地域（Region）都是一个独立的地理区域。每个地域内都有多个相互隔离的位置，称为可用区（Zone）。每个可用区都是独立的，但同一地域下的可用区通过低时延的内网链路相连。腾讯云支持用户在不同位置分配云资源，建议用户在设计系统时考虑将资源放置在不同可用区以屏蔽单点故障导致的服务不可用状态。
 
@@ -11,12 +12,12 @@
 
 - 同地域下（保障同一账号，且同一个 VPC 内）的云资源之间可通过内网互通，可以直接使用 [内网 IP](https://intl.cloud.tencent.com/document/product/213/5225) 访问。
 - 不同地域之间网络完全隔离，不同地域之间的云产品默认不能通过内网互通。
-- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式较为高速、稳定。
-- [负载均衡](https://intl.cloud.tencent.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/38441) 功能，则可支持负载均衡跨地域绑定云服务器。
+- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://www.tencentcloud.com/document/product/1003) 进行通信，此通信方式较为高速、稳定。
+- [负载均衡](https://www.tencentcloud.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://www.tencentcloud.com/document/product/214/38441) 功能，则可支持负载均衡跨地域绑定云服务器。
 
 ## 可用区
 可用区（Zone）是指腾讯云在同一地域内电力和网络互相独立的物理数据中心。目标是能够保证可用区间故障相互隔离（大型灾害或者大型电力故障除外），不出现故障扩散，使得用户的业务持续在线服务。通过启动独立可用区内的实例，用户可以保护应用程序不受单一位置故障的影响。
-用户启动实例时，可以选择指定地域下的任意可用区。当用户需要设计应用系统的高可靠性时（某个实例发生故障时服务保持可用），可以使用跨可用区的部署方案（例如 [负载均衡](https://intl.cloud.tencent.com/document/product/214)、[弹性 IP](https://intl.cloud.tencent.com/document/product/213/5733) 等），以使另一可用区域中的实例可代为处理相关请求。
+用户启动实例时，可以选择指定地域下的任意可用区。当用户需要设计应用系统的高可靠性时（某个实例发生故障时服务保持可用），可以使用跨可用区的部署方案（例如 [负载均衡](https://www.tencentcloud.com/document/product/214)、[弹性 IP](https://intl.cloud.tencent.com/document/product/213/5733) 等），以使另一可用区域中的实例可代为处理相关请求。
 
 ## 地域和可用区列表
 地域（Region）和可用区（Zone）构成：
@@ -31,7 +32,7 @@
 <td rowspan="6">华南地区（广州）<br> ap-guangzhou</td>
 <td>广州一区（已售罄）<br> ap-guangzhou-1</td></tr>	
 <tr>
-<td>广州二区<br> ap-guangzhou-2</td></tr>
+<td>广州二区（已售罄）<br> ap-guangzhou-2</td></tr>
 <tr>
 <td>广州三区<br> ap-guangzhou-3</td></tr>
 <tr>
@@ -41,7 +42,14 @@
 <tr>
 <td>广州七区<br> ap-guangzhou-7</td></tr>
 <tr>
-<td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
+<td rowspan="3">华南地区（深圳金融）<br>ap-shenzhen-fsi</td>
+<td>深圳金融一区<span style="background-color: rgb(249, 249, 249);">（仅限金融机构和企业通过 <a href="https://cloud.tencent.com/online-service?from=sales&source=PRESALE">在线咨询</a> 申请开通）<br>ap-shenzhen-fsi-1</span></td></tr>
+<tr>
+<td>深圳金融二区<span style="background-color: rgb(249, 249, 249);">（仅限金融机构和企业通过在线咨询申请开通）<br>ap-shenzhen-fsi-2</span></td></tr>
+<tr>
+<td>深圳金融三区<span style="background-color: rgb(249, 249, 249);">（仅限金融机构和企业通过在线咨询申请开通）<br>ap-shenzhen-fsi-3</span></td></tr>
+<tr>
+<td rowspan="6">华东地区（上海）<br>ap-shanghai</td>
 <td>上海一区<br>ap-shanghai-1</td></tr>
 <tr>
 <td>上海二区<br>ap-shanghai-2</td></tr>
@@ -51,12 +59,22 @@
 <td>上海四区<br>ap-shanghai-4</td></tr>
 <tr>
 <td>上海五区<br>ap-shanghai-5</td></tr>
+<tr>
+<td>上海八区<br>ap-shanghai-8</td></tr>
+<tr>
 <td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
 <td>南京一区<br>ap-nanjing-1</td></tr>
 <tr>
 <td>南京二区<br>ap-nanjing-2</td></tr>
 <tr>
 <td>南京三区<br>ap-nanjing-3</td></tr>
+<tr>
+<td rowspan="3">华东地区（上海金融）<br>ap-shanghai-fsi</td>
+<td>上海金融一区（仅限金融机构和企业通过在线咨询申请开通）<br>ap-shanghai-fsi-1</td></tr>
+<tr>
+<td>上海金融二区（仅限金融机构和企业通过在线咨询申请开通）<br>ap-shanghai-fsi-2</td></tr>
+<tr>
+<td>上海金融三区（仅限金融机构和企业通过在线咨询申请开通）<br>ap-shanghai-fsi-3</td></tr>
 <tr>
 <td rowspan="7">华北地区（北京）<br>ap-beijing</td>
 <td>北京一区<br>ap-beijing-1</td></tr>
@@ -72,6 +90,9 @@
 <td>北京六区<br>ap-beijing-6</td></tr>
 <tr>
 <td>北京七区<br>ap-beijing-7</td></tr>
+<tr>
+<td >华北地区（北京金融）<br>ap-beijing-fsi</td>
+<td>北京金融一区（仅限金融机构和企业通过在线咨询申请开通）<br>ap-beijing-fsi-1</td></tr>   
 <tr>
 <td rowspan="2">西南地区（成都）<br>ap-chengdu</td>
 <td>成都一区<br>ap-chengdu-1</td></tr>
@@ -150,7 +171,7 @@
 <td>法兰克福二区（法兰克福节点可用于覆盖欧洲地区）<br>eu-frankfurt-2</td></tr>
 <tr>
 <td >欧洲地区（莫斯科）<br>eu-moscow</td>
-<td>莫斯科一区（莫斯科节点可用于覆盖欧洲地区）<br>eu-moscow-1</td></tr>
+<td>欧洲东北一区（莫斯科节点可用于覆盖欧洲地区）<br>eu-moscow-1</td></tr>
 </tbody></table>
 
 ## 如何选择地域和可用区

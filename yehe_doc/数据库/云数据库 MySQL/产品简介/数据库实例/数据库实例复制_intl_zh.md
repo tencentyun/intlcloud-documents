@@ -1,6 +1,8 @@
 
 数据库实例复制是指通过为服务器配置一个或多个备份数据库的方式来进行数据同步，将 MySQL 的数据分布到多个系统上去。云数据库 MySQL 支持三种数据复制方式：
 
+<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/2524-42970?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
+
 >?
 >- Master 是指主数据库实例，Slave 是指备份数据库实例。
 >- MySQL 5.6、5.7、8.0 版本支持三种复制方式：异步、半同步、强同步；5.5 版本支持异步方式。

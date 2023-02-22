@@ -1,3 +1,4 @@
+
 TencentDB 데이터 센터는 전 세계 여러 위치에서 호스팅됩니다. 이러한 위치를 리전(Region)이라고 합니다. 각 리전에는 여러 가용존(AZ)이 있습니다.
 각 리전은 여러 개의 격리된 AZ가 있는 독립적인 지리적 영역입니다. 동일한 리전의 개별 AZ는 지연 시간이 짧은 사설망을 통해 연결됩니다. Tencent Cloud를 사용하면 Tencent Cloud 리소스를 여러 위치에 배포할 수 있습니다. 서비스 사용 불가능으로 이어질 수 있는 단일 실패 지점을 제거하기 위해 리소스를 다른 AZ에 배치하는 것이 좋습니다.
 
@@ -11,12 +12,12 @@ Tencent Cloud 리전은 완전히 격리되어 있습니다. 이는 리전 간 �
 
 - 동일 리전의 동일한 리전 내 동일한 VPC에 있는 Tencent Cloud 리소스는 사설망을 통해 서로 통신할 수 있습니다. [개인 IP](https://intl.cloud.tencent.com/document/product/213/5225)를 통해서도 액세스할 수 있습니다.
 - 다른 리전의 네트워크는 서로 완전히 격리되어 있으며 다른 리전의 Tencent Cloud 서비스는 기본적으로 사설망을 사용하여 통신할 수 없습니다.
-- 여러 리전의 Tencent Cloud 서비스는 인터넷을 통해 [공용 IP](https://intl.cloud.tencent.com/document/product/213/5224)를 통해 서로 통신할 수 있지만, 서로 다른 VPC에 있는 서비스는 [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003)를 통해 더 빠르고 안정적으로 서로 통신할 수 있습니다.
-- [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214)는 현재 기본적으로 리전 내 트래픽 전달을 지원합니다. [Cross-Region Binding](https://intl.cloud.tencent.com/document/product/214/38441) 기능을 활성화하면 CLB 인스턴스를 다른 리전의 CVM 인스턴스에 바인딩할 수 있습니다.
+- 여러 리전의 Tencent Cloud 서비스는 인터넷을 통해 [공용 네트워크 IP](https://intl.cloud.tencent.com/document/product/213/5224)를 통해 서로 통신할 수 있지만, 서로 다른 VPC에 있는 서비스는 [Cloud Connect Network](https://www.tencentcloud.com/document/product/1003)를 통해 더 빠르고 안정적으로 서로 통신할 수 있습니다.
+- [Cloud Load Balancer](https://www.tencentcloud.com/document/product/214)는 현재 기본적으로 리전 내 트래픽 전달을 지원합니다. [Cross-Region Binding](https://www.tencentcloud.com/document/product/214/38441) 기능을 활성화하면 CLB 인스턴스를 다른 리전의 CVM 인스턴스에 바인딩할 수 있습니다.
 
 ## 가용존(AZ)
 가용존(AZ)은 동일한 리전에 독립적인 전원 공급 장치와 네트워크가 있는 Tencent Cloud의 물리적 IDC(Internet Data Center)입니다. 동일한 리전의 다른 AZ에 영향을 주지 않고 한 AZ의 장애(중대 재해 또는 정전 제외)가 격리되므로 비즈니스 안정성을 보장할 수 있습니다. 독립적인 AZ에서 인스턴스를 시작함으로써 사용자는 단일 장애 지점의 영향을 받는 애플리케이션을 보호할 수 있습니다.
-인스턴스를 시작할 때 지정된 리전의 AZ를 선택할 수 있습니다. 높은 안정성을 위해 교차 AZ 배포 솔루션을 채택하여 단일 위치의 인스턴스가 실패할 때 서비스를 계속 사용할 수 있도록 할 수 있습니다. 이러한 솔루션의 예시로는 [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) 및 [EIP](https://intl.cloud.tencent.com/document/product/213/5733)가 있습니다.
+인스턴스를 시작할 때 지정된 리전의 AZ를 선택할 수 있습니다. 높은 안정성을 위해 교차 AZ 배포 솔루션을 채택하여 단일 위치의 인스턴스가 실패할 때 서비스를 계속 사용할 수 있도록 할 수 있습니다. 이러한 솔루션의 예시로는 [Cloud Load Balancer](https://www.tencentcloud.com/document/product/214) 및 [EIP](https://intl.cloud.tencent.com/document/product/213/5733)가 있습니다.
 
 ## 리전과 가용존 리스트
 리전(Region)과 가용존(AZ) 구성:
@@ -28,10 +29,10 @@ Tencent Cloud 리전은 완전히 격리되어 있습니다. 이는 리전 간 �
 <tbody>
 <tr><th>리전</th><th>가용존</th></tr>
 <tr>
-<td rowspan="6">화남지역(광저우)<br> ap-guangzhou</td>
+<td rowspan="6">화남 지역(광저우)<br> ap-guangzhou</td>
 <td>광저우 1존(품절)<br> ap-guangzhou-1</td></tr>	
 <tr>
-<td>광저우 2존<br> ap-guangzhou-2</td></tr>
+<td>광저우 2존(품절)<br> ap-guangzhou-2</td></tr>
 <tr>
 <td>광저우 3존<br> ap-guangzhou-3</td></tr>
 <tr>
@@ -41,7 +42,14 @@ Tencent Cloud 리전은 완전히 격리되어 있습니다. 이는 리전 간 �
 <tr>
 <td>광저우 7존<br> ap-guangzhou-7<td></tr>
 <tr>
-<td rowspan="5">화동지역(상하이)<br>ap-shanghai</td>
+<td rowspan="3">화남 지역(선전 금융)<br>ap-shenzhen-fsi</td>
+<td>선전 금융 1존<span style="background-color: rgb(249, 249, 249);">(금융 기관 및 기업만 <a href="https://cloud.tencent.com/online-service?from=sales&source=PRESALE">온라인 문의</a>를 통해 활성화를 신청할 수 있습니다)<br>ap-shenzhen-fsi-1</span></td></tr>
+<tr>
+<td>선전 금융 2존<span style="background-color: rgb(249, 249, 249);">(활성화 신청은 금융 기관 및 기업만 문의 가능)<br>ap-shenzhen-fsi-2</span></td></tr>
+<tr>
+<td>선전 금융 3존<span style="background-color: rgb(249, 249, 249);">(활성화 신청은 금융 기관 및 기업만 문의 가능)<br>ap-shenzhen-fsi-3</span></td></tr>
+<tr>
+<td rowspan="6">화동 지역(상하이)<br>ap-shanghai</td>
 <td>상하이 1존<br>ap-shanghai-1</td></tr>
 <tr>
 <td>상하이 2존<br>ap-shanghai-2</td></tr>
@@ -51,14 +59,24 @@ Tencent Cloud 리전은 완전히 격리되어 있습니다. 이는 리전 간 �
 <td>상하이 4존<br>ap-shanghai-4</td></tr>
 <tr>
 <td>상하이 5존<br>ap-shanghai-5</td></tr>
-<td rowspan="3">화동지역(난징)<br>ap-nanjing</td>
+<tr>
+<td>상하이 8존<br>ap-shanghai-8</td></tr>
+<tr>
+<td rowspan="3">화동 지역(난징)<br>ap-nanjing</td>
 <td>난징 1존<br>ap-nanjing-1</td></tr>
 <tr>
 <td>난징 2존<br>ap-nanjing-2</td></tr>
 <tr>
 <td>난징 3존<br>ap-nanjing-3</td></tr>
 <tr>
-<td rowspan="7">화북지역(베이징)<br>ap-beijing</td>
+<td rowspan="3">화동 지역(상하이 금융)<br>ap-shanghai-fsi</td>
+<td>상하이 금융 1존(활성화 신청은 금융 기관 및 기업만 문의 가능)<br>ap-shanghai-fsi-1</td></tr>
+<tr>
+<td>상하이 금융 2존(활성화 신청은 금융 기관 및 기업만 문의 가능)<br>ap-shanghai-fsi-2</td></tr>
+<tr>
+<td>상하이 금융 3존(활성화 신청은 금융 기관 및 기업만 문의 가능)<br>ap-shanghai-fsi-3</td></tr>
+<tr>
+<td rowspan="7">화북 지역(베이징)<br>ap-beijing</td>
 <td>베이징 1존<br>ap-beijing-1</td></tr>
 <tr>
 <td>베이징 2존<br>ap-beijing-2</td></tr>
@@ -73,12 +91,15 @@ Tencent Cloud 리전은 완전히 격리되어 있습니다. 이는 리전 간 �
 <tr>
 <td>베이징 7존<br>ap-beijing-7</td></tr>
 <tr>
-<td rowspan="2">서남지역(청두)<br>ap-chengdu</td>
+<td >화북 지역(베이징 금융)<br>ap-beijing-fsi</td>
+<td>베이징 금융 1존(활성화 신청은 금융 기관 및 기업만 문의 가능)<br>ap-beijing-fsi-1</td></tr>   
+<tr>
+<td rowspan="2">서남 지역(청두)<br>ap-chengdu</td>
 <td>청두 1존<br>ap-chengdu-1</td></tr>
 <tr>
 <td>청두 2존<br>ap-chengdu-2</td></tr>    
 <tr>
-<td >서남지역(충칭)<br>ap-chongqing</td>
+<td >서남 지역(충칭)<br>ap-chongqing</td>
 <td>충칭 1존<br>ap-chongqing-1</td></tr>
 <tr>
 <td rowspan="3">중국홍콩, 마카오 및 대만 지역(중국홍콩)<br>ap-hongkong</td>
@@ -150,7 +171,7 @@ Tencent Cloud 리전은 완전히 격리되어 있습니다. 이는 리전 간 �
 <td>프랑크푸르트 2존(프랑크푸르트 노드로 유럽 지역 커버 가능)<br>eu-frankfurt-2</td></tr>
 <tr>
 <td >유럽 지역(모스크바)<br>eu-moscow</td>
-<td>모스크바 1존(모스크바 노드로 유럽 지역 커버 가능)<br>eu-moscow-1</td></tr>
+<td>동북 유럽 1존(모스크바 노드로 유럽 지역 커버 가능)<br>eu-moscow-1</td></tr>
 </tbody></table>
 
 ## 리전과 가용존 선택하기
