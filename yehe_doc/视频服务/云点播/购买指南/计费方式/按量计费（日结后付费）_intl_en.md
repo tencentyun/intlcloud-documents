@@ -432,7 +432,6 @@ Assume that you enabled digital watermarking for a 60-minute 1080p video and tra
 If you extract the distributor’s user ID from the video in case of unauthorized distribution, the digital watermark extraction fee incurred would be 0.12 x 60 = 7.2 USD.
 
 >?
->- No fees will be charged if digital watermark extraction fails.
 >- When you add a digital watermark to a video, the video will be transcoded, which will incur transcoding fees. For details, see [Media Processing](#media-processing).
 >- Saving transcoded files incurs storage fees. For details, see [Storage](#storage).
 
