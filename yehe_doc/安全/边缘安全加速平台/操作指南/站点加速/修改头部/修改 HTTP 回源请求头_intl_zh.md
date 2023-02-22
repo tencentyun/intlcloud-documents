@@ -1,7 +1,7 @@
 
 ## 功能简介
 支持自定义变更/增加/删除 HTTP 请求头（从节点向源站请求回源时的 HTTP 请求头）。
->? EdgeOne 默认支持携带 X-Forwarded-For 和 X-Forwarded-Proto 回源，您无需再配置。
+>?EdgeOne 默认支持携带 X-Forwarded-For 和 X-Forwarded-Proto 回源，您无需再配置。
 
 ## 操作指南
 1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**规则引擎**。
@@ -55,94 +55,94 @@
 <table>
 <thead>
 <tr>
-<td>Accept</td>
-<td>Accept-Charset</td>
-<td>Accept-Encoding</td>
-<td>Accept-Language</td>
+<td align="left">Host</td>
+<td align="left">Content-Length</td>
+<td align="left">If-Modified-Since</td>
+<td align="left">Etag</td>
 </tr>
 </thead>
 <tbody><tr>
-<td>Accept-Ranges</td>
-<td>Age</td>
-<td>Authorization</td>
-<td>Cache-Control</td>
+<td align="left">Accept-Encoding</td>
+<td align="left">Last-Modified</td>
+<td align="left">Content-Range</td>
+<td align="left">Content-Type</td>
 </tr>
 <tr>
-<td>chunked</td>
-<td>close</td>
-<td>Connection</td>
-<td>Content-Encoding</td>
+<td align="left">X-Cache-Lookup</td>
+<td align="left">X-Last-Update-Info</td>
+<td align="left">Transfer-Encoding</td>
+<td align="left">Content-Encoding</td>
 </tr>
 <tr>
-<td>Content-Length</td>
-<td>Content-Range</td>
-<td>Content-Type</td>
-<td>Cookie</td>
+<td align="left">Connection</td>
+<td align="left">Range</td>
+<td align="left">Server</td>
+<td align="left">Date</td>
 </tr>
 <tr>
-<td>Date</td>
-<td>Etag</td>
-<td>Expect</td>
-<td>Expires</td>
+<td align="left">Location</td>
+<td align="left">Expect</td>
+<td align="left">Cache-Control</td>
+<td align="left">Expires</td>
 </tr>
 <tr>
-<td>From-Tencent-Lego-Cluster</td>
-<td>From-Tencent-Lego-Cluster-Client-Info</td>
-<td>From-Tencent-Lego-Cluster-Edge-Server-Info</td>
-<td>From-Tencent-Lego-Dsa</td>
+<td align="left">Referer</td>
+<td align="left">User-Agent</td>
+<td align="left">Cookie</td>
+<td align="left">X-Forwarded-For</td>
 </tr>
 <tr>
-<td>From-Tencent-Lego-Dsa-Client-Info</td>
-<td>From-Tencent-Lego-Dsa-Edge-Server-Info</td>
-<td>From-Tencent-Lego-Overload</td>
-<td>Host</td>
+<td align="left">Accept-Language</td>
+<td align="left">Accept-Charset</td>
+<td align="left">Accept-Ranges</td>
+<td align="left">Set-Cookie</td>
 </tr>
 <tr>
-<td>identity</td>
-<td>If-Match</td>
-<td>If-Modified-Since</td>
-<td>If-None-Match</td>
+<td align="left">Via</td>
+<td align="left">X-Via</td>
+<td align="left">Pragma</td>
+<td align="left">Upgrade</td>
 </tr>
 <tr>
-<td>If-Range</td>
-<td>keep-alive</td>
-<td>Last-Modified</td>
-<td>Location</td>
+<td align="left">If-None-Match</td>
+<td align="left">If-Match</td>
+<td align="left">If-Range</td>
+<td align="left">From-Tencent-Lego-Cluster</td>
 </tr>
 <tr>
-<td>multirange</td>
-<td>normal</td>
-<td>Pragma</td>
-<td>Proxy-Authorization</td>
+<td align="left">From-Tencent-Lego-Cluster-Client-Info</td>
+<td align="left">From-Tencent-Lego-Cluster-Edge-Server-Info</td>
+<td align="left">From-Tencent-Lego-Dsa</td>
+<td align="left">From-Tencent-Lego-Dsa-Client-Info</td>
 </tr>
 <tr>
-<td>Proxy-Connection</td>
-<td>Range</td>
-<td>Referer</td>
-<td>Server</td>
+<td align="left">From-Tencent-Lego-Dsa-Edge-Server-Info</td>
+<td align="left">Accept</td>
+<td align="left">Upgrade-Insecure-Requests</td>
+<td align="left">Server-Timing</td>
 </tr>
 <tr>
-<td>Server-Timing</td>
-<td>Set-Cookie</td>
-<td>Transfer-Encoding</td>
-<td>upgrade</td>
+<td align="left">Age</td>
+<td align="left">Proxy-Connection</td>
+<td align="left">Authorization</td>
+<td align="left">Proxy-Authorization</td>
 </tr>
 <tr>
-<td>Upgrade</td>
-<td>Upgrade-Insecure-Requests</td>
-<td>User-Agent</td>
-<td>Via</td>
+<td align="left">normal</td>
+<td align="left">multirange</td>
+<td align="left">chunked</td>
+<td align="left">identity</td>
 </tr>
 <tr>
-<td>X-Cache-Lookup</td>
-<td>X-Forwarded-For</td>
-<td>X-Last-Update-Info</td>
-<td>x-redirect-to-self</td>
+<td align="left">keep-alive</td>
+<td align="left">close</td>
+<td align="left">upgrade</td>
+<td align="left">x-redirect-to-self</td>
 </tr>
 <tr>
-<td>X-Via</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td align="left">From-Tencent-Lego-Overload</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
 </tr>
 </tbody></table>

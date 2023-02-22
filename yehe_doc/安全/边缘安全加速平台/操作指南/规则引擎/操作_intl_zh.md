@@ -9,23 +9,23 @@
 </thead>
 <tbody><tr>
 <td rowspan=2>访问控制</td>
-<td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46164">Token 鉴权</a></td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46164">Token 鉴权</a></td>
 </tr>
 <tr>
-<td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46969">视频拖拽</a></td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46969">视频拖拽</a></td>
 </tr>
 <tr>
 <td rowspan=6>缓存配置</td>
-<td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46175">节点缓存 TTL</a></td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46175">节点缓存 TTL</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46176">浏览器缓存 TTL</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46176">浏览器缓存 TTL</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46177">离线缓存</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46177">离线缓存</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46964">状态码缓存 TTL</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46964">状态码缓存 TTL</a></td>
 </tr>
 <tr>
  <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/47615">自定义 Cache Key</a></td>
@@ -38,68 +38,71 @@
 <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46171">HTTP/2</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46170">HTTP/3 (QUIC)</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46170">HTTP/3 (QUIC)</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46971">WebSocket</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46971">WebSocket</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46172">最大上传大小</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46172">最大上传大小</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46970">真实客户端 IP 头部</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46970">真实客户端 IP 头部</a></td>
 </tr>
 <tr>
  <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/50826">客户端 IP 地理位置</a></td>
 </tr>
 <tr>
 <td rowspan=2>URL 重写</td>
-<td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46166">访问 URL 重写</a></td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46166">访问 URL 重定向</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46167">回源 URL 重写</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46167">回源 URL 重写</a></td>
 </tr>
 <tr>
-<td rowspan=4>回源优化</td>
-<td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46182">智能加速</a></td>
+<td rowspan=5>回源优化</td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46182">智能加速</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46171">HTTP/2 回源</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46189">HTTP/2 回源</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46966">分片回源</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46966">分片回源</a></td>
 </tr>
 <tr>
  <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/51444">回源跟随重定向</a></td>
 </tr>
 <tr>
+ <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/52036">回源请求参数设置</a></td>
+</tr>
+<tr>
 <td rowspan=5>HTTPS 配置</td>
-<td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46356">强制 HTTPS</a></td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356">HTTPS 配置</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46356">回源 HTTPS</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356"">回源 HTTPS</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46356">HSTS 配置</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356"">HSTS 配置</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46356">TLS 版本</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356"">TLS 版本</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46356">OCSP 装订</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356"">OCSP 装订</a></td>
 </tr>
 <tr>
 <td rowspan=3>修改 HTTP 头</td>
-<td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46186">修改 HTTP 请求头</a></td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46186">修改 HTTP 请求头</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46185">修改 HTTP 响应头</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46185">修改 HTTP 响应头</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46965">Host Header 重写</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46965">Host Header 重写</a></td>
 </tr>
 <tr>
 <td align="left">高级配置</td>
-<td align="left"><a href="https://www.tencentcloud.com/document/product/1145/46188">自定义错误页面</a></td>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46188">自定义错误页面</a></td>
 </tr>
 </tbody></table>

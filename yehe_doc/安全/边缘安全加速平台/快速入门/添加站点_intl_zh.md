@@ -1,34 +1,41 @@
-## 功能简介
-EdgeOne 以站点 (site，又称二级域名) 为维度提供服务购买和接入，支持如下 2 种 [接入方式](https://intl.cloud.tencent.com/document/product/1145/45967)：
+ ## 功能简介
+EdgeOne 以站点 (zone，又称二级域名) 为维度提供服务购买和接入，支持如下 2 种 [接入方式](https://intl.cloud.tencent.com/document/product/1145/45967)：
 - NS 接入（推荐）：用户将 DNS 解析转移至 EdgeOne，支持一键开启安全/加速服务。
 - CNAME 接入：用户维持既有 DNS 服务商，通过在 DNS 服务商处添加指定 CNAME 来开启 EdgeOne 的安全/加速服务。
 
 ## NS 接入（推荐）
-1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**服务概览**。
-2. 在服务概览页面，单击右上角的**添加站点**。
-3. 在添加站点页面，请输入合法的二级域名，单击**下一步**。
+1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，点击**添加站点**。
+![](https://qcloudimg.tencent-cloud.cn/raw/feaf8979272485d38100b9cd7f127339.png)
+2. 在添加站点页面，请输入合法的二级域名，单击**下一步**。
 >?站点不可重复添加，如果站点已被其他账户接入，需通过 [站点验证](https://intl.cloud.tencent.com/document/product/1145/45969) 取回站点。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/e3677f3738c1a65ea34fe413be154d01.png)
-4. 在 DNS 配置页面，系统会自动扫描并导入站点的原有 DNS 记录，可以对 DNS 记录进行增删改，并配置 [代理模式](https://intl.cloud.tencent.com/document/product/1145/45968)，单击**下一步**。
-![](https://qcloudimg.tencent-cloud.cn/raw/aa62a8c7d2247738bd21d85cb370d019.png)
-5. 在修改 NS 服务器页面，需要登录站点对应的域名注册商，将 NS 服务器记录修改为 EdgeOne 指定的值。具体操作详情请参见 [NS 修改指南](#NSXG)。
+3. 根据您的业务需求，选择相应的服务区域和套餐类型，勾选服务协议之后，单击**下一步**。
+![](https://qcloudimg.tencent-cloud.cn/raw/6993099afd7680fc5d1b0e0f118b4f29.png)
+ - 服务区域：当前支持选择<strong>中国大陆可用区</strong>、<strong>全球可用区（不含中国大陆）</strong>以及<strong>全球可用区</strong>，当选择中国大陆可用区和全球可用区时，要求该域名已工信部备案。
+ - 套餐类型：套餐详情请参见 <a href="https://www.tencentcloud.com/document/product/1145/48705">计费概述</a>，企业版套餐请 <a href="https://intl.cloud.tencent.com/contact-us">联系我们</a> 申请开通。
+4. 选择 NS 接入模式，系统会自动扫描并导入站点的原有 DNS 记录，可以对 DNS 记录进行增删改，并配置 [代理模式](https://intl.cloud.tencent.com/document/product/1145/45968)，单击**下一步**。
+![](https://qcloudimg.tencent-cloud.cn/raw/895a7f8ba2f56c04087c44284ccc2053.png)
+5. 在修改 NS 服务器页面，需要登录站点对应的域名注册商，将 NS 服务器记录修改为 EdgeOne 指定的值。具体操作详情请参见 [NS 修改指南](#NSXG)。 
+![](https://qcloudimg.tencent-cloud.cn/raw/4cd54e76034647997567c54c3cca094d.png)
 6. 修改后，单击**完成**自动跳转到站点概览页面。
->?NS 记录修改生效时间取决于您的域名注册商，生效后系统会通过邮件/短信/站内信通知。
-
+>? NS 记录修改生效时间取决于您的域名注册商，生效后系统会通过邮件/短信/站内信通知。
 
 ## CNAME 接入
-1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，在左侧菜单栏中，单击**服务概览**。
-2. 在服务概览页面，单击右上角的**添加站点**。
-3. 在添加站点页面，请输入合法的二级域名，单击**下一步**。
->?站点不可重复添加，如果站点已被其他账户接入，需通过 [站点验证](https://intl.cloud.tencent.com/document/product/1145/45969) 取回站点。
+1. 登录 [边缘安全加速平台控制台](https://console.cloud.tencent.com/edgeone)，点击**添加站点**。
+![](https://qcloudimg.tencent-cloud.cn/raw/eee8acf7a9ce5b243cb4ec96961b8f4a.png)
+2. 在添加站点页面，请输入合法的二级域名，单击**下一步**。
+>? 站点不可重复添加，如果站点已被其他账户接入，需通过 [站点验证](https://intl.cloud.tencent.com/document/product/1145/45969) 取回站点。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/e3677f3738c1a65ea34fe413be154d01.png)
-5. 在 DNS 配置页面，可以对记录进行增删改，并配置 [代理模式](https://intl.cloud.tencent.com/document/product/1145/45968)，单击**采用 CNAME 接入**。
-![](https://qcloudimg.tencent-cloud.cn/raw/93f56859b479d239090ef7f0698057a9.png)
-6. 在站点验证页面，按要求在 DNS 服务商处添加一条 TXT 记录，以证明对站点的所有权后，单击**完成验证**。
-![](https://qcloudimg.tencent-cloud.cn/raw/c6e5de739623bc1a8758318c9a29665d.png)
-
+3. 根据您的业务需求，选择相应的服务区域和套餐类型，勾选服务协议之后，单击**下一步**。
+![](https://qcloudimg.tencent-cloud.cn/raw/250107793747b905f229a07680539a98.png)
+ - 服务区域：当前支持选择<strong>中国大陆可用区</strong>、<strong>全球可用区（不含中国大陆）</strong>以及<strong>全球可用区</strong>，当选择中国大陆可用区和全球可用区时，要求该域名已工信部备案。
+ - 套餐类型：套餐详情请参见 <a href="https://www.tencentcloud.com/document/product/1145/48705">计费概述</a>，企业版套餐请 <a href="https://intl.cloud.tencent.com/contact-us">联系我们</a> 申请开通。
+4. 选择 CNAME 模式 接入，单击**下一步** 
+![](https://qcloudimg.tencent-cloud.cn/raw/d96f126fbc9a240bac97baa882dbb631.png)
+5. 在 [站点验证页面](https://intl.cloud.tencent.com/document/product/1145/45969)，采用 DNS 验证或文件验证的方式以证明对站点的所有权后，单击**完成**。
+![](https://qcloudimg.tencent-cloud.cn/raw/8627688759d94e3b6ff12f6c0b474b54.png)
 
 ## NS 修改指南[](id:NSXG)
 1. 确定站点对应的域名注册商并登录。如果不确定您的域名注册商，可前往 [ICANN WHOIS](https://lookup.icann.org/) 查询。
@@ -42,3 +49,4 @@ EdgeOne 以站点 (site，又称二级域名) 为维度提供服务购买和接�
 - [Google Domains](https://support.google.com/domains/answer/3290309?hl%3Den)
 - [Name.com](https://www.name.com/support/articles/205934547-changing-nameservers-for-dns-management)
 - [Yahoo!](http://support.hostgator.com/articles/how-to-change-name-servers-with-yahoo-com)
+

@@ -1,9 +1,9 @@
 
 ## Overview
 You can customize, add, and delete headers in HTTP origin-pull requests from nodes to the origin.
->? EdgeOne forwards `X-Forwarded-For` and `X-Forwarded-Proto` to the origin by default, so you don't need to configure them.
+>?EdgeOne forwards `X-Forwarded-For` and `X-Forwarded-Proto` to the origin by default, so you don't need to configure them.
 
-## Operation Guide
+## Directions
 1. Log in to the [EdgeOne console](https://console.cloud.tencent.com/edgeone). Click **Rule Engine** on the left sidebar.
 2. On the page that displays, select the target site and create rules to configure HTTP request headers as needed. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/1145/46151).
 Description of configuration items:
@@ -43,106 +43,106 @@ Description of header types:
 <td>Preset</td>
 <td>`User-Agent` header, which contains information about the client: <ul><li>`EO-Client-Device`: The device that the client uses.<br>Values: `Mobile`, `Desktop`, `SmartTV`, `Tablet`, `Others`.</li>
 <li>`EO-Client-OS`: The OS that the client uses.<br>Values: `Android`, `iOS`, `Windows`, `MacOS`, `Linux`, `Others`.</li>
-<li>`EO-Client-Browser`: Type of the client browser.<br>Values: `Chrome`，`Safari`, Firefox`, `IE`, `Others`.</li>
+<li>`EO-Client-Browser`: The web browser that the client uses.<br>Values: `Chrome`, `Safari`, `Firefox`, `IE`, `Others`.</li>
 </td>
 </tr>
 </tbody></table>
 
 
-## Must-knows
+## Notes
 - During one HTTP request header modification operation, you can add up to 30 headers of different types, which will be executed in sequence from top to bottom.
 - The following standard headers cannot be modified:
 <table>
 <thead>
 <tr>
-<td>Accept</td>
-<td>Accept-Charset</td>
-<td>Accept-Encoding</td>
-<td>Accept-Language</td>
+<td align="left">Host</td>
+<td align="left">Content-Length</td>
+<td align="left">If-Modified-Since</td>
+<td align="left">Etag</td>
 </tr>
 </thead>
 <tbody><tr>
-<td>Accept-Ranges</td>
-<td>Age</td>
-<td>Authorization</td>
-<td>Cache-Control</td>
+<td align="left">Accept-Encoding</td>
+<td align="left">Last-Modified</td>
+<td align="left">Content-Range</td>
+<td align="left">Content-Type</td>
 </tr>
 <tr>
-<td>chunked</td>
-<td>close</td>
-<td>Connection</td>
-<td>Content-Encoding</td>
+<td align="left">X-Cache-Lookup</td>
+<td align="left">X-Last-Update-Info</td>
+<td align="left">Transfer-Encoding</td>
+<td align="left">Content-Encoding</td>
 </tr>
 <tr>
-<td>Content-Length</td>
-<td>Content-Range</td>
-<td>Content-Type</td>
-<td>Cookie</td>
+<td align="left">Connection</td>
+<td align="left">Range</td>
+<td align="left">Server</td>
+<td align="left">Date</td>
 </tr>
 <tr>
-<td>Date</td>
-<td>Etag</td>
-<td>Expect</td>
-<td>Expires</td>
+<td align="left">Location</td>
+<td align="left">Expect</td>
+<td align="left">Cache-Control</td>
+<td align="left">Expires</td>
 </tr>
 <tr>
-<td>From-Tencent-Lego-Cluster</td>
-<td>From-Tencent-Lego-Cluster-Client-Info</td>
-<td>From-Tencent-Lego-Cluster-Edge-Server-Info</td>
-<td>From-Tencent-Lego-Dsa</td>
+<td align="left">Referer</td>
+<td align="left">User-Agent</td>
+<td align="left">Cookie</td>
+<td align="left">X-Forwarded-For</td>
 </tr>
 <tr>
-<td>From-Tencent-Lego-Dsa-Client-Info</td>
-<td>From-Tencent-Lego-Dsa-Edge-Server-Info</td>
-<td>From-Tencent-Lego-Overload</td>
-<td>Host</td>
+<td align="left">Accept-Language</td>
+<td align="left">Accept-Charset</td>
+<td align="left">Accept-Ranges</td>
+<td align="left">Set-Cookie</td>
 </tr>
 <tr>
-<td>identity</td>
-<td>If-Match</td>
-<td>If-Modified-Since</td>
-<td>If-None-Match</td>
+<td align="left">Via</td>
+<td align="left">X-Via</td>
+<td align="left">Pragma</td>
+<td align="left">Upgrade</td>
 </tr>
 <tr>
-<td>If-Range</td>
-<td>keep-alive</td>
-<td>Last-Modified</td>
-<td>Location</td>
+<td align="left">If-None-Match</td>
+<td align="left">If-Match</td>
+<td align="left">If-Range</td>
+<td align="left">From-Tencent-Lego-Cluster</td>
 </tr>
 <tr>
-<td>multirange</td>
-<td>normal</td>
-<td>Pragma</td>
-<td>Proxy-Authorization</td>
+<td align="left">From-Tencent-Lego-Cluster-Client-Info</td>
+<td align="left">From-Tencent-Lego-Cluster-Edge-Server-Info</td>
+<td align="left">From-Tencent-Lego-Dsa</td>
+<td align="left">From-Tencent-Lego-Dsa-Client-Info</td>
 </tr>
 <tr>
-<td>Proxy-Connection</td>
-<td>Range</td>
-<td>Referer</td>
-<td>Server</td>
+<td align="left">From-Tencent-Lego-Dsa-Edge-Server-Info</td>
+<td align="left">Accept</td>
+<td align="left">Upgrade-Insecure-Requests</td>
+<td align="left">Server-Timing</td>
 </tr>
 <tr>
-<td>Server-Timing</td>
-<td>Set-Cookie</td>
-<td>Transfer-Encoding</td>
-<td>upgrade</td>
+<td align="left">Age</td>
+<td align="left">Proxy-Connection</td>
+<td align="left">Authorization</td>
+<td align="left">Proxy-Authorization</td>
 </tr>
 <tr>
-<td>Upgrade</td>
-<td>Upgrade-Insecure-Requests</td>
-<td>User-Agent</td>
-<td>Via</td>
+<td align="left">normal</td>
+<td align="left">multirange</td>
+<td align="left">chunked</td>
+<td align="left">identity</td>
 </tr>
 <tr>
-<td>X-Cache-Lookup</td>
-<td>X-Forwarded-For</td>
-<td>X-Last-Update-Info</td>
-<td>x-redirect-to-self</td>
+<td align="left">keep-alive</td>
+<td align="left">close</td>
+<td align="left">upgrade</td>
+<td align="left">x-redirect-to-self</td>
 </tr>
 <tr>
-<td>X-Via</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td align="left">From-Tencent-Lego-Overload</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
 </tr>
 </tbody></table>
