@@ -158,7 +158,7 @@ Basic service fees include LVB fees and LEB fees.
 <td>Local mode</td>
 <td>Additional fees will be incurred if you enable the local mode for relay.</td>
 <td>
-<a href="https://www.tencentcloud.com/document/product/267/515558">Daily pay-as-you-go</a>
+<a href="https://www.tencentcloud.com/document/product/267/51555">Daily pay-as-you-go</a>
 </td>
 </tr><tr>
 </td>
