@@ -6,47 +6,49 @@
 
 <dx-tabs>
 ::: MySQL 8.0カーネルマイナーバージョンの更新説明
+
 <table>
 <thead><tr><th>カーネルマイナーバージョン</th><th>の説明</th></tr></thead>
 <tbody>
+
 <tr>	
-<td>20220830</td>
+<td>20220831</td>
 <td><ul><li>新特性</li><ul>
-<li>MySQLバージョンの動的設定をサポートします。</li>
-<li>透過的な列暗号化。テーブル構築時にvarcharフィールドにencryption属性を指定し、ストレージ側でカラムを暗号化します。この機能は2023年に製品化される予定です。</li>
+<li>MySQLバージョンのダイナミック設定をサポートします。</li>
+<li>透過的な列を暗号化します。テーブル構築時にvarcharフィールドにencryption属性を指定すると、ストレージ側で列を暗号化します。この機能は2023年に製品化される予定です。</li>
 <li>サードパーティのデータサブスクリプションツールを使用するときに、内部データの整合性照合SQLのサブスクリプションが原因で、データサブスクリプションツールにエラーが発生するという問題を解決しました。<dx-alert infotype="explain" title="说明">データベースインスタンスが移行、アップグレード、または障害後に再構成された後、システムはデータ整合性の照合を実行して、データの整合性を確保します。データベースの照合SQLは`statement`モードになります。一部のサードパーティのサブスクリプションツールでは、`statement`モードのSQLの処理時にエラーが発生する傾向があります。このバージョンのカーネルにアップデートした後、サードパーティのサブスクリプションツールは、内部データの整合性照合SQLを購読しません。</dx-alert></li>
-<li>DDL操作とNO_WAIT | WAIT [n]機能をサポートします。</li>MDLロックを取得できず、待機する必要がある直前にDDLをロールバックできるようにします。または、MDLロックの待機に指定時間を費やした場合、DDLをロールバックします。
-<li>Fast Query Cache機能をサポートします。読み取りが多く書き込みが少ないシーンに対応します。書き込みが多く読み取りが少なく、データが頻繁に更新される場合、またはクエリー結果セットが非常に大きい場合は、有効にすることはお勧めしません。</li>
-<li>mtsデッドロック検出強化機能をサポートします。</li>
-<li><a href="https://www.tencentcloud.com/document/product/236/52512">並列クエリーをサポートします</a>。並列クエリー機能を有効にして大規模なクエリーを自動的に識別し、並列クエリー機能を使用してマルチコアコンピューティングリソースを動員し、大規模なクエリーの応答時間を大幅に短縮できます。</li>
+<li>DDL操作とNO_WAIT | WAIT [n]機能をサポートします。MDLロックを取得できず、待機する必要がある直前にDDLをロールバックできるようにします。または、MDLロックの待機に指定された時間が費やされた場合、DDLはロールバックされます。</li>
+<li>Fast Query Cache機能をサポートします。読み取りが多く、書き込みが少ないシナリオに対応します。書き込みが多く、読み取りが少ない場合、データが頻繁に更新される場合、またはクエリーの結果セットが非常に大きい場合は、有効にすることはお勧めしません。</li>
+<li>mtsデッドロック検出機能強化をサポートします。</li>
+<li><a href="https://www.tencentcloud.com/document/product/236/52512">並列クエリーをサポートします</a>。並列クエリー機能を有効にして大規模なクエリーを自動的に識別し、並列クエリー機能を使用してマルチコアコンピューティングリソースを動員し、大規模なクエリーの応答時間を大幅に短縮します。</li>
 </ul>
 <li>パフォーマンスの最適化</li><ul>
-<li>トランザクションシステムのスナップショットのオーバーヘッドを最適化しました。Copy Free Snapshotメソッドが採用され、トランザクションディレーがグローバルアクティブトランザクションhashから削除され、スナップショットが最適化されてスナップショットイベントの論理タイムスタンプが決定されます。sysbenchがread-writeをテストするシーンの制限パフォーマンスは11%向上しました。</li>
-<li>prepared statementプロセスでの権限チェックのを最適化しした。グローバルに権限のバージョン番号を示すために1つの変数が使用されます。prepared statementは、prepare完了後にバージョン番号を記録し、実行中に権限のバージョン番号が変更されたかどうかを比較します。権限が変更されない場合は、権限のチェックをスキップし、そうしない場合は、権限を再確認し、バージョン番号を記録します。</li>
-<li>スレッドプールでの時間取得の精度を最適化しました。</li>
-<li>レコードoffsetの取得を最適化しました。</li>indexごとにレコードのoffsetがキャッシュされます。条件が満たされると、キャッシュされたoffsetが直接使用されて、rec_get_offsets()関数を呼び出す計算オーバーヘッドを節約します。
-<li>Parallel DDLを最適化しました。<br>1. インデックスフィールドが小さい場合は、サンプリングメモリのサイズを小さくして、サンプリングの頻度を減らします。<br>2. Kチャネルのマージによるソートは、マージとソートの回数を効果的に減らすことができるため、IOの数を減らすことができます。<br>3. レコードを読み取るときに、固定長のoffsetがキャッシュされて、毎回各レコードのoffsetsが生成されないようにします。</li>
-<li>undo log情報の記録ロジックを最適化し、insert性能を向上させます。</li>
-<li>準同期がオンになっているときの性能を最適化し、準同期が有効になっているときの性能を改善しました。</li>
-<li>監査性能を最適化し、システムのオーバーヘッドを削減しました。</li>
+<li>トランザクションシステムのスナップショットのオーバーヘッドを最適化します。Copy Free Snapshotメソッドが採用され、トランザクションディレーがグローバルアクティブトランザクションhashから削除され、スナップショットの取得がスナップショット取得イベントのロジックタイムスタンプに最適化されます。sysbenchテストのread-writeシナリオ制限のパフォーマンスが11%向上します。</li>
+<li>prepared statementプロセスでの権限チェックを最適化します。グローバルでは、1つの変数で権限のバージョン番号が示され、prepared statementは、prepareが完了した後にバージョン番号を記録し、実行中に権限のバージョン番号が変更されたかどうかを比較します。権限の変更がない場合は、権限のチェックをスキップします。そうでない場合は、権限を再確認し、バージョン番号を記録します。</li>
+<li>スレッドプールの時間取得精度を最適化します。</li>
+<li>記録されたoffsetの取得を最適化します。indexごとに記録されたoffsetがキャッシュされます。条件が満たされる場合は、キャッシュされたoffsetが直接使用されて、rec_get_offsets()関数を呼び出す計算オーバーヘッドが節約されます。</li>
+<li>Parallel DDLを最適化します。<br>1. インデックスフィールドが小さい場合は、サンプリングメモリのサイズを小さくして、サンプリングの頻度を減らします。<br>2. Kチャネルのマージによるソートは、マージによるソートのラウンド数を効果的に減らすことができるため、IO数を減らすことができます。<br>3. 毎回、記録ごとにoffsetsを生成することを避けるために、記録を読み取るときに固定長のoffsetをキャッシュします。</li>
+<li>undo log情報記録ロジックを最適化し、insertパフォーマンスを向上させます。</li>
+<li>半同期をオンにするときのパフォーマンスを最適化し、半同期を有効にするときのパフォーマンスを向上させます。</li>
+<li>監査パフォーマンスを最適化し、システムのオーバーヘッドを削減します。</li>
 </ul>
 
 <li>バグの修正</li><ul>
 <li>Thread_memoryに異常な値が表示されることがある問題を修正しました。</li>
-<li>バッチステートメント監査における不正確なtimestampの問題を修正しました。</li>
+<li>バッチステートメント監査のシナリオでtimestampが正しくない問題を修正しました。</li>
 <li>秒レベルでの列の変更に関連する問題を修正しました。</li>
-<li>CREATE TABLE t1 AS SELECT ST_POINTFROMGEOHASH("0123", 4326);ステートメントによるマスタースレーブ割り込みの問題を修正しました。</li>
-<li>テーブルレベルの並列処理時のslaveリトライ異常の問題を修正しました。</li>
-<li>show slave hostsの実行時にMalformed packetエラーが発生する問題を修正しました。</li>
+<li>CREATE TABLE t1 AS SELECT ST_POINTFROMGEOHASH("0123", 4326)ステートメントでマスタースレーブが中断される問題を修正しました。</li>
+<li>テーブルレベルが並列の場合にslaveリトライ例外が発生する問題を修正しました。</li>
+<li>show slave hostsを実行するときにMalformed packetエラーが発生する問題を修正しました。</li>
 <li>ごみ箱に関連する問題を修正しました。</li>
-<li>ARMモデルでjemalloc割り当てメカニズムがOOMをトリガーしやすい問題を修正しました。</li>
+<li>ARMモデルでjemallocのアサインメカニズムがOOMをトリガーしやすい問題を修正しました。</li>
 <li>truncate pfs accout tableによる統計無効化の問題を修正しました。</li>
-<li>ごみ箱に外部キー制約がある場合、最初に子テーブルを復元してから親テーブルを復元するという異常を修正しました。</li>
-<li>ログのsql_modeログに関連する問題を修正しました。</li>
-<li>低確率でCREATE DEFINERストアドプロシージャが異常実行される問題を修正しました。</li>
+<li>ごみ箱に外部キー制約がある場合、子テーブルが最初に復元され、次に親テーブルが復元されるという異常な状況を修正しました。</li>
+<li>ログのsql_modeロギングに関する問題を修正しました。</li>
+<li>低確率でCREATE DEFINERストアドプロシージャを実行するときに異常が発生する問題を修正しました。</li>
 <li>公式Copy Free Snapshotに関連する問題を修正しました。</li>
-<li>スレッドプールの性能ジッターの問題を修正しました。</li>
-<li>hash join+union結果が空になる可能性がある問題を修正しました。</li>
+<li>スレッドプールのパフォーマンスジッターの問題を修正しました。</li>
+<li>hash join+union結果が空になることがある問題を修正しました。</li>
 <li>メモリに関連する問題を修正しました。</li>
 </ul>
 </td>
@@ -130,7 +132,7 @@
 
 <li>パフォーマンスの最適化</li><ul>
 <li>insert on duplicate key updateによるホットスポットの更新問題を改善しました。</li>
-<li>eventの複数の同一binlog eventを集約することによって、hash scanの適用速度を引き上げました。</li>
+<li>eventの複数の同一binlog eventを集約することによって、hash scanの適用速度を引き上げます。</li>
 <li>plan cacheが開いた状態でのスレッドプールモードでは、prepareステートメントによってチェックされるメモリが大幅に削減されます。</li>
 </ul>
 
@@ -165,7 +167,7 @@
 </ul>
 
 <li>パフォーマンスの最適化</li><ul>
-<li>インデックスプルダウンの代わりにヒストグラムを使用して、評価エラーとI/Oのオーバーヘッドを削減しました。この機能はデフォルトではオフになっています。</li>
+<li>インデックスプルダウンの代わりにヒストグラムを使用して、評価エラーとI/Oのオーバーヘッドを削減します。この機能はデフォルトではオフになっています。</li>
 </ul>
 
 <li>バグの修正</li><ul>
@@ -262,7 +264,7 @@
 <tbody>
 
 <tr>	
-<td>20220715</td>
+<td>20220716</td>
 <td>
 <ul><li>新特性</li><ul>
 <li>InnoDBの自動採番列永続化機能をサポートします。</li>
@@ -576,10 +578,10 @@
 <ul><li>新特性</li><ul>
 <li>大規模なテーブルの非同期削除可能：ファイルを非同期かつ低速にクリーンアップすることで、大規模なテーブルの削除によるサービスパフォーマンスのジッター現象を回避します。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
 <li>CATSのロックスケジューラをサポートします。</li>
-<li>GTIDを有効にすると、トランザクション内の一時テーブルおよびCTS構文を作成・削除することができます。この機能を有効化するには<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
-<li>暗黙的なプライマリキーをサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
+<li>GTIDを有効にすると、トランザクション内の一時テーブルおよびCTS構文を作成・削除することができます。この機能を有効化するには<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
+<li>暗黙的なプライマリキーをサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
 <li>super権限以外のユーザーが他のユーザーのセッションを強制終了する機能をサポートします。cdb_kill_user_extraパラメータを使用して設定します。デフォルト値はroot@%です。</li>
-<li>エンタープライズクラスの暗号化関数をサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
+<li>エンタープライズクラスの暗号化関数をサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
 </ul>
 
 <li>公式bugの修正</li><ul>
@@ -594,7 +596,7 @@
 <td>20180918</td>
 <td>
 <ul><li>新特性</li><ul>
-<li>アイドル状態のトランザクションを自動的にkillしてリソースの競合を減らすことをサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
+<li>アイドル状態のトランザクションを自動的にkillしてリソースの競合を減らすことをサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
 <li>MemoryエンジンからInnoDBエンジンへの自動切り替え：グローバル変数cdb_convert_memory_to_innodbがONの場合、テーブルエンジンはテーブルの作成/変更時にMemoryからInnoDBに変換されます。</li>
 <li>インデックスの非表示機能をサポートします。</li>
 <li>Jemallocによるメモリ管理をサポートします。これにより、jlibcメモリ管理モジュールを置き換え、メモリ使用量を削減し、メモリ割り当て効率を向上させることができます。</li>
@@ -618,7 +620,7 @@
 <td>
 <ul><li>新特性</li><ul>
 <li>SQL監査機能をサポートします。</li>
-<li>テーブルレベルの並列レプリケーションをサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
+<li>テーブルレベルの並列レプリケーションをサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
 </ul>
 
 <li>パフォーマンスの最適化</li><ul>
@@ -639,8 +641,8 @@
 <td>
 <ul><li>新特性</li><ul>
 <li> information_schema.metadata_locksビューをサポートし、現在のインスタンスにおけるMDLの付与及び待機ステータスを確認します。</li>
-<li>ALTER TABLE NO_WAIT | TIMEOUTの構文をサポートし、DDL操作に待機タイムアウトを与えます。この機能を有効化するには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
-<li>スレッドプール機能をサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。
+<li>ALTER TABLE NO_WAIT | TIMEOUTの構文をサポートし、DDL操作に待機タイムアウトを与えます。この機能を有効化するには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
+<li>スレッドプール機能をサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。
 </ul>
 
 <li>公式bugの修正</li><ul>
@@ -791,9 +793,9 @@
 <td>20190203</td>
 <td>
 <ul><li>新特性</li><ul>
-<li>大きなテーブルの非同期削除が可能：ファイルを非同期かつゆっくりとクリーンアップすることで、大きなテーブルの削除によるビジネスパフォーマンスの変動を回避します。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
+<li>大きなテーブルの非同期削除が可能：ファイルを非同期かつゆっくりとクリーンアップすることで、大きなテーブルの削除によるビジネスパフォーマンスの変動を回避します。この機能を有効化するには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
 <li>super権限以外のユーザーが他のユーザーのセッションを強制終了する機能をサポートします。cdb_kill_user_extraパラメータを使用して設定します。デフォルト値はroot@%です。</li>
-<li>GTIDを有効にすると、トランザクション内の一時テーブルおよびCTS構文を作成・削除することができます。この機能を有効にするには<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
+<li>GTIDを有効にすると、トランザクション内の一時テーブルおよびCTS構文を作成・削除することができます。この機能を有効化するには<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
 </ul>
 
 <li>パフォーマンスの最適化</li><ul>
@@ -813,7 +815,7 @@
 <td>
 <ul><li>新特性</li><ul>
 <li>MEMORYエンジンからInnoDBエンジンへの自動切り替え：グローバル変数cdb_convert_memory_to_innodbがONの場合、テーブルエンジンはテーブルの作成/変更時にMEMORYからInnoDBに変換されます。</li>
-<li>アイドル状態のトランザクションを自動的にkillしてリソースの競合を減らすことができます。この機能を有効化するには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
+<li>アイドル状態のトランザクションを自動的にkillしてリソースの競合を減らすことができます。この機能を有効化するには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
 </ul>
 
 <li>公式bugの修正</li><ul>
@@ -827,7 +829,7 @@
 <td>20180130</td>
 <td>
 <ul><li>新特性</li><ul>
-<li>スレッドプール機能をサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットを提出</a>して申請する必要があります。</li>
+<li>スレッドプール機能をサポートします。この機能を有効にするには、<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">チケットをサブミット</a>して申請する必要があります。</li>
 <li>slaveノードはレプリケーションフィルタリング条件の動的な変更をサポートします。</li>
 </ul>
 

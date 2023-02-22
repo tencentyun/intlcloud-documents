@@ -31,7 +31,7 @@ The format of time shifting URL is `http://domain/appname/stream.m3u8`. There ar
 <td>tsEnd</td>
 <td>The playback end time.</td>
 <td>Yes</td>
-<td>td>tsEnd=20121010010102</td>
+<td>tsEnd=20121010010102</td>
 </tr><tr>
 <td>tsFormat</td>
 <td><ul style="margin:0">
