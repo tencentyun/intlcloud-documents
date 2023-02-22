@@ -1,14 +1,15 @@
-## Prerequisites
-You have subscribed to the [bot traffic management](https://intl.cloud.tencent.com/document/product/627/47799) service.
+﻿## Prerequisites
+To connect to bot traffic management, you need to purchase a WAF [value-added service](https://intl.cloud.tencent.com/document/product/627/47799).
 
 ## Directions
-1.Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-botconfig) and select **Configuration Center** > **Bot and Application Security** on the left sidebar.
-2. On the page that appears, select a domain name to be protected and click the ![](https://qcloudimg.tencent-cloud.cn/raw/180f2bd28c577185924e76f8a19396fe.png) switch to enable bot management rules.
+1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-botconfig) and select **Configuration center** > **Bot and application security** on the left sidebar.
+2. On the **Bot and application security** page, select the target domain name in the top-left corner and click ![](https://qcloudimg.tencent-cloud.cn/raw/0b613028c41243c1b53951862a3284e9.png) in **Bot management rules**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/bb5032ca5dcbbfaa400a5a44bc8d9d3f.png)
-
 **Field description**
- - Enable bot rule management: The switch is disabled by default. You can enable it as needed.
->?Bot traffic analysis takes effect only when the WAF switch is enabled.
+ - **Enable bot rule management**: It is disabled by default and can be enabled as needed.
+>?The bot traffic analysis feature takes effect only when the WAF switch of the domain name is enabled.
 
- - Enabled modules: It displays the number of modules enabled for bot analysis. Bot traffic management provides four modules, which are browser bot defense, threat intelligence, AI evaluation, and bot flow statistics.
- - Custom rules: It displays the number of bot custom rules enabled. You can click to view the configuration of bot custom rules under the current domain name.
+ - **Effective scenario**: Displays the number of bot analysis scenario modules enabled currently. They include the browser bot defense module, threat intelligence module, AI evaluation module, and bot flow statistics module.
+ - **Total scenarios**: Displays the number of bot analysis scenario modules existing under the current domain name.
+ - **Current global scenario**: Displays the name of the effective global scenario under the current domain name.
+ - **Total custom rules**: Displays the number of custom bot rules enabled currently.

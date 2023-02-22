@@ -1,29 +1,41 @@
+﻿
+With bot and application security, you can enable and configure modules in bot management, observe and analyze traffic through bot traffic analysis and access logs. Then, you can set refined policies based on the session status to protect core website APIs and businesses from bot attacks.
 
-Bot and application security supports bot management where you can enable and configure the provided modules, which can be used together with bot traffic analysis and access logs to protect the core APIs of your website from bots. Meanwhile, you can create fine-grained protection rules based on the session status provided by bot traffic analysis.
+Bot management supports configuration of bot scenario types, client risk identification (browser bot defense module), threat intelligence module, AI evaluation module, bot flow statistics module, action score, custom rules, token configuration, and legitimate bots. You can configure these modules for refined bot management. 
 
-Bot management allows you to manage bots in a fine-grained manner with the following modules: client risk identification (browser bot defense), threat intelligence, AI evaluation, bot flow statistics, action scores, custom rules, token configuration, and legitimate bots. 
-
-### Client risk identification (browser bot defense)
-It applies dynamic security verification technology to generate a unique client ID that can be used to detect potential malicious bot behaviors in the client access to web or H5 pages.
-
-### Threat intelligence
-Relying on Tencent's nearly 20 years of network security experience and big data intelligence, it accurately identifies malicious IP and IDC access by monitoring the IP status in real time and adopting a risk scoring system, while intelligently identifying malicious bot characteristics to block access initiated by malicious bots, distributed bots, proxies, credential stuffing, and bargain hunting.
-
-### AI evaluation
-It applies AI models, built based on AI technology and Tencent’s rich experience in risk control and defense against cyber crime, along with big data analysis of access traffic to quickly identify and combat access behaviors from advanced persistent threat bots and hidden threat bots.
-
-### Bot flow statistics
-Leveraging big data analysis and statistics, it automatically identifies malicious traffic according to the traffic characteristics of your user group, modifies the malicious traffic threshold to stop the access from common bots and high-frequency bots, and adjusts the statistical model to block most bot bypassing behaviors.
+### Scenario-based bot configuration
+Leveraging Tencent Cloud's years of expertise in bot governance, this feature offers client risk identification (browser bot defense module), threat intelligence module, AI policy module, bot analytics module, action score, session management, legitimate bots, and custom rules specifically for flash sales, price/content crawling, and login scenarios. It simplifies configuration and makes everything easy to use.
 
 
-### Action setting
-A bot score is given based on the access requested detected by the threat intelligence, AI evaluation, bot flow statistics modules. The score range is 0-100. The higher the score, the higher the likelihood that the request is initiated by a bot and the greater the harm caused to the website. Based on the bot score, you can specify an action within a score range to block malicious access accurately.
+### Client Risk Identification (Browser Bot Defense Module)
+This feature uses the dynamic identity verification technology and generates a unique ID for each client's business request to detect possible bots and malicious crawlers in the access to websites or HTML5 pages.
 
-### Session management
-Different access behaviors of the same IP can be distinguished and abnormal user access can be accurately controlled without affecting other users by the specified location of the session token.
+### Threat Intelligence Module
+This feature is built on Tencent's nearly 20 years of experience in cybersecurity and big data intelligence. It determines the status of an IP in real time and uses a scoring mechanism to quantify a risk. It precisely identifies the access from a malicious dynamic IP and IDC. In addition, it intelligently identifies the features of a malicious crawler to cope with risky access requests from malicious crawlers, distributed crawlers, proxies, credential stuffing, and bargain hunting.
 
-### Legitimate bots
-It allows legitimate bots (such as search engines and feed bots) to obtain website data, so that the websites can be indexed normally.
+### AI Evaluation Module
+This feature builds AI evaluation models from AI technologies and Tencent's experiences in controlling risks and fighting cybercrimes. Through big data analysis and AI modeling of access traffic, it quickly identifies malicious requesters and defends against risky access requests from APT and hidden threat bots.
 
-### Custom rules
- Custom rules are rule that you can create to handle access requests initiated by specific bots.
+### Bot Flow Statistics Module
+Based on big data analysis, this feature automatically classifies customer traffic by characteristic and identifies abnormal and malicious traffic. It automatically adjusts the malicious traffic threshold and handles risky access requests from general and high-frequency bots. With auto-adjustment modeling, it resolves most of the bot behavior bypasses.
+
+### Action Setting
+This feature leverages the threat intelligence module, AI evaluation module, and bot flow statistics module to provide a comprehensive score ranging from 0 to 100 for the risk level of an access request to a website. The higher the score, the more likely it is from a bot, and the higher the risk level. With the score provided by bot analytics, the risk level of an access request is intelligently identified, and you can precisely block a risky access request based on actions configured for different score ranges.
+
+In addition, it supports configuring a scope so that request data covered by the scope can be handled precisely.
+
+### Session Management
+This feature allows you to configure the token location of a session to differentiate between access behaviors of different users through the same IP. Therefore, you can precisely handle a user with abnormal access behavior without affecting other users.
+
+### Legitimate Bots
+This feature allows legitimate bots (such as search engines and feed bots) to get website data so that the website can be normally indexed.
+
+### Custom Rules
+This feature allows you to precisely handle compliant crawlers and access requests with different characteristics.
+
+In addition, it supports configuring a scope so that request data covered by the scope can be handled precisely.
+
+### Bot allowlist
+This feature allows you to add the access requests from specified public network users to the allowlist based on the combination of different features, such as HTTP packet session feature, request feature, cookie, HTTP header, scope, IP feature, User-Agent, Referer, and session settings.
+
+Priority from high to low: Bot allowlist > Scenario 1 (priority 1) > Scenario 2 (priority 2) > ... > Scenario n (priority m).

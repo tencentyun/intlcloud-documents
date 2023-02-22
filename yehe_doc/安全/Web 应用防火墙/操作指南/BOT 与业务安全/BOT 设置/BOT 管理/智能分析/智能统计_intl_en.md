@@ -1,33 +1,34 @@
-Bot flow statistics is a module provided in bot traffic management. This feature identifies malicious users by monitoring and analyzing the traffic characteristics of your user groups.
+﻿This document describes how to configure the bot flow statistics module in the bot analytics section of bot traffic management. Using big data analytics and statistics and AI technology, it automatically identifies malicious users based on characteristics of user traffic.
 
 ## Prerequisites
-
-You have purchased a WAF plan and subscribed to [bot traffic management](https://intl.cloud.tencent.com/document/product/627/47799#bot-.E8.A1.8C.E4.B8.BA.E7.AE.A1.E7.90.86.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E). Meanwhile, you have added a domain name to WAF.
+You have purchased a WAF instance and [bot traffic management extra pack](https://intl.cloud.tencent.com/document/product/627/47799#bot-.E8.A1.8C.E4.B8.BA.E7.AE.A1.E7.90.86.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E) and enabled bot analysis for WAF-connected domain names.
 
 ## Protection Configuration
-1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-botconfig) and select **Configuration Center** > **Bot and Application Security** on the left sidebar.
-2. On the page that appears, select a target region and click **Bot management**.
+1. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/tea-botconfig) and select **Configuration center** > **Bot and application security** on the left sidebar.
+2. On the **Bot and application security** page, select the target domain name in the top-left corner and click **Bot management**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/0ce245727d7e77992b94c5df648ef8a8.png)
-3. On the bot management page, click ![](https://qcloudimg.tencent-cloud.cn/raw/f05a86c4176526c2846a61f2a2207a37.png) in the bot flow statistics module.
+3. In **Global settings**, click **Configure now** in the **Bot flow statistics module** section.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c1f85ac9e1901c95c63a592393bbd933.png)
-4. On the page displayed, configure different feature metrics.
+4. On the **Bot flow statistics module** page, you can configure the detection level of different features.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ec756b3e2fc12c366f8c8b0eb0c123b2.png)
 
 **Parameter description:**
-  - Name/Description:
-      - Referer type: Number of deduplicated Referers in a session request. In different detection modes, it is used to determine access requests as abnormal when its probability threshold reaches.
-      - URL type: Number of deduplicated URLs in a session request. In different detection modes, it is used to determine access requests as abnormal when its probability threshold reaches.
-      - User-Agent type: Number of deduplicated User-Agents in a session request. In different detection modes, it is used to determine access requests as abnormal when its probability threshold reaches.
-      - Cookie type: Number of deduplicated Cookies in a session request. In different detection modes, it is used to determine access requests as abnormal when its probability threshold reaches.
-      - Total sessions: Total number of sessions. In different detection modes, it is used to determine access requests as abnormal when its probability threshold reaches.
-     - Average session speed: Average number of sessions per minute. In different detection modes, it is used to determine access requests as abnormal when its probability threshold reaches.
-     - Session duration: Amount of time a session lasts. In different detection modes, it is used to determine access requests as abnormal when its probability threshold reaches.
-  - Mode: The probability thresholds of the metrics vary with different detection modes.
-	 - If the detection mode is quite strict, the detection rate is higher, but the detection accuracy is lower.
-     - If the detection mode is quite loose, the detection rate is lower, but the detection accuracy is higher.
-     - The Auto mode is a mode produced by bot traffic management using the historical website traffic patterns. This mode switches from Loose to Strict automatically according to the bot situation of the website.
-    - On/Off: It controls whether to enable feature metrics. If one feature metric is disabled, it will not be counted toward the bot score.
+   - Name/Description:
+      - Referer type: The number of deduped Referers in a session request is detected, with different thresholds for detecting an access request with a higher value than the corresponding threshold.
+      - Total URL types: The number of deduped URLs in a session request is detected, with different thresholds for detecting an access request with a higher value than the corresponding threshold.
+      - User-Agent type: The number of deduped User-Agents in a session request is detected, with different thresholds for detecting an access request with a higher value than the corresponding threshold.
+      - Cookie type: The number of deduped cookies in a session request is detected, with different thresholds for detecting an access request with a higher value than the corresponding threshold.
+      - Total sessions: The total number of sessions is detected, with different thresholds for detecting an access request with a higher value than the corresponding threshold.
+     - Average speed: The average number of sessions per minute is detected, with different thresholds for detecting an access request with a higher value than the corresponding threshold.
+     - Session duration: The session duration is detected, with different thresholds for detecting an access request with a higher value than the corresponding threshold.
 
-## Best Practices
-As the bot flow statistics module is built based on accumulated experience in bot defense, you are recommended to enable this feature regardless of the situation and set the mode to "Auto".
+   - Mode: Different detection levels correspond to different thresholds, which fluctuate with the number of website access requests.
+	 - A higher detection level indicates a higher detection rate with a lower detection accuracy.
+     - A lower detection level indicates a lower detection rate with a higher detection accuracy.
+     - Intelligent recommendation automatically learns the historical traffic of your website to generate a recommended detection level in Tencent Security bot traffic management. The detection level is either loose or medium according to the current bot situation at your website.
+        - On/Off: You can enable or disable the detection type of the current option. After this option is disabled, the detection item will not contribute to the bot score.
 
+5. After the configuration, click the configuration page of a certain scenario, and click ![](https://qcloudimg.tencent-cloud.cn/raw/7fc653737ff3f26b04fbb43c7754a8d7.png) of the **Bot flow statistics module**.
+
+## Best Practices of Bot Flow Statistics Module
+The bot flow statistics module leverages the bot defense experience and accumulation of the bot attack/defense lab to quickly identify abnormal access behaviors. Therefore, we recommend you enable it and set **Rule level** to **Intelligent recommendation** under any circumstances.
