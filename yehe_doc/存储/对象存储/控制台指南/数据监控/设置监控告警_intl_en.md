@@ -38,7 +38,7 @@ You can leverage the alarm policy feature of Cloud Monitor to set threshold-reac
     <td>Setting the policy project allows you to:<br>   
          <ul>
              <li>Manage alarm policies. Alarm policies of a project can be quickly located in the alarm policy list.</li>
-             <li>Manage instances. You can choose the project as needed. Instances of the project can be quickly located in <b>Alarm Object</b>. You can distribute Tencent Cloud services to the desired project according to your business types. To create a project, please see <a href="https://cloud.tencent.com/document/product/378/10861"> Project Management</a>. After the project is created, you can distribute resources to projects in the console of each Tencent Cloud service. Some Tencent Cloud services cannot be distributed to a project. If you do not have project permission, please see <a href="https://intl.cloud.tencent.com/document/product/248/36744"> Cloud Access Management (CAM) </a> for authorization.   
+             <li>Manage instances. You can choose the project as needed. Instances of the project can be quickly located in <b>Alarm Object</b>. You can distribute Tencent Cloud services to the desired project according to your business types. After the project is created, you can distribute resources to projects in the console of each Tencent Cloud service. Some Tencent Cloud services cannot be distributed to a project. If you do not have project permission, please see <a href="https://intl.cloud.tencent.com/document/product/248/36744"> Cloud Access Management (CAM) </a> for authorization.   
   </tr>
   <tr>
     <td rowspan="3">Configure alarm rule</td>
