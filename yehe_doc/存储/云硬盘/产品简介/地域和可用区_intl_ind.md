@@ -3,7 +3,7 @@ Wilayah adalah lokasi fisik dari IDC.Di Tencent Cloud, wilayah sepenuhnya teriso
 Wilayah memiliki ciri-ciri sebagai berikut:
 
 - Jaringan dari berbagai wilayah sepenuhnya terisolasi.Layanan Tencent Cloud di berbagai wilayah **tidak dapat berkomunikasi melalui jaringan pribadi secara default**.
-- Layanan Tencent Cloud di seluruh wilayah dapat berkomunikasi satu sama lain melalui [IP publik](https://intl.cloud.tencent.com/document/product/213/5224) melalui Internet, sedangkan layanan di VPC dapat menggunakan [koneksi peering](https://intl.cloud.tencent.com/document/product/215/20082) untuk berkomunikasi satu sama lain melalui jaringan berkecepatan tinggi Tencent Cloud, yang lebih cepat dan stabil.
+- Layanan Tencent Cloud di seluruh wilayah dapat berkomunikasi satu sama lain melalui [IP publik](https://intl.cloud.tencent.com/document/product/213/5224) melalui Internet, sedangkan layanan di VPC dapat menggunakan koneksi peering untuk berkomunikasi satu sama lain melalui jaringan berkecepatan tinggi Tencent Cloud, yang lebih cepat dan stabil.
 - [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) saat ini mendukung penerusan traffic intra-wilayah secara default.Jika Anda mengaktifkan fitur [pengikatan lintas wilayah](https://intl.cloud.tencent.com/document/product/214/12014), instance CLB dapat diikat ke instance CVM di wilayah lain.
 
 
