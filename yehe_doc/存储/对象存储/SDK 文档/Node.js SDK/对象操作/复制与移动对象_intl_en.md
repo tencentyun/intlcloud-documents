@@ -84,7 +84,7 @@ function(err, data) { ... }
 | - headers | Returns headers | Object |
 | - ETag | MD5 checksum of the object, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end.** | String |
 | - LastModified | Last modified time of the object, for example, `2017-06-23T12:33:27.000Z` | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | | String  |
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  | 
 
 
 ### Moving an object
@@ -384,4 +384,4 @@ function(err, data) { ... }
 | - Bucket | Destination bucket for the multipart upload | String |
 | - Key | Object key (object name), the unique identifier of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 | - ETag | MD5 checksum of the file after assembly. <br>Example: `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end.** | String |
-| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String  |
+| - VersionId       | Version ID of the uploaded object if versioning is enabled for its bucket. If versioning is not enabled, this parameter is not returned. | String |
