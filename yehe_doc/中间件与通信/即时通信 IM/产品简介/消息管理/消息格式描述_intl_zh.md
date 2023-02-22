@@ -361,8 +361,8 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | MsgNum | Integer | 被转发的消息条数。 |
 | CompatibleText | String | 兼容文本。当不支持合并转发消息的老版本 SDK 收到此类消息时，IM 后台会将该消息转化成兼容文本再下发。 |
 | AbstractList | Array | 合并消息的摘要列表，是一个 String 数组。 |
-| MsgList | Array | 消息列表。当被转发的消息长度之和小于等于12K时才会有此字段，此时不会有 JsonMsgKey 字段。|
-| JsonMsgKey | String | 合并转发的消息列表 Key。当被转发的消息长度之和大于12K时才会有此字段，此时不会有 MsgList 字段。 |
+| MsgList | Array | 消息列表。当被转发的消息长度之和小于等于 8K 时才会有此字段，此时不会有 JsonMsgKey 字段。|
+| JsonMsgKey | String | 合并转发的消息列表 Key。当被转发的消息长度之和大于 8K 时才会有此字段，此时不会有 MsgList 字段。 |
 
 MsgList 中每条消息的结构如下：
 
@@ -451,10 +451,10 @@ CloudCustomData 与 MsgBody 的格式示例如下：
 ### 客户端推送展示格式说明
 - **未设置帐号昵称**
 如果帐号没有设置昵称，APNs 推送只展示推送文本内容。单聊消息只展示“推送文本”，群组消息展示“(群名称):推送文本“。
+![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **已设置帐号昵称**
 如果帐号设置昵称，单聊消息展示格式为“昵称：推送文本内容”，群组消息展示格式为昵称(群名称)：推送文本内容。
-![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **组合消息展示格式**
 对于组合消息，按顺序叠加各个消息元素的推送文本作为展示文本。下述为已设置帐户昵称的单聊消息，推送文本为"helloworld"。注意 helloworld 中间没有空格，后台按照顺序叠加，各个消息元素推送文本之间不添加任何字符。如需要在各个不同的消息元素间添加空格或其他字符，需调用方自己控制。
@@ -595,4 +595,3 @@ OfflinePushInfo 的格式示例如下：
 ## 参考
 
 Apple Push Notification Service(APNs) [苹果推送开发文档](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
-iOS 离线消息推送配置：[离线推送(iOS)](https://www.tencentcloud.com/document/product/1047/34347)。

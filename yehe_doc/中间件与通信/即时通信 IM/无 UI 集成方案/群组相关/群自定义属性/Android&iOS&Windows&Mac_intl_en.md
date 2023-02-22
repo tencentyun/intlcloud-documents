@@ -1,14 +1,22 @@
-## Feature Description
+## Overview
 New custom group fields, also called group attributes, are designed based on API 2.0.
 With group attributes, you can manage the seats of audio chat rooms. When a user mics on, you can set a group attribute to manage the information of the user. When the user mics off, you can delete the group attribute. Other members can get the list of group attributes to display the seat list.
 Group attributes are represented by key-value pairs, and the methods are in the `V2TIMGroupManager(Android)` / `V2TIMManager(Group)(iOS and macOS)` core class.
 
-> ? Currently, only audio-video groups (AVChatRoom) support group attributes.
+> ?  
+>
+> - On versions 6.7 and earlier, only the audio-video group (AVChatRoom) is supported.
+> - Starting from version 6.8, the audio-video group (AVChatRoom), public group (Public), meeting group (Meeting), and work group (Work) are supported.
+> - Currently, the community and topic are not supported.
+
+
 
 The group attribute has the following features:
 1. You can configure up to 16 group attributes. The size of each group attribute can be up to 4 KB, and the total size of all group attributes can be up to 16 KB.
 2. The `initGroupAttributes`, `setGroupAttributes`, and `deleteGroupAttributes` APIs each can be called by a logged-in user up to ten times every five seconds in the SDK, and the 8511 error code will be called back if the limit is exceeded. The APIs each can be called by a logged-in user up to five times every second in the backend, and the 10049 error code will be called back if the limit is exceeded.
 3. The `getGroupAttributes` API can be called by a logged-in user 20 times every five seconds in the SDK.
+4. Starting from version 5.6, when you modify group attributes for the first time after the app is started, call `getGroupAttributes` to pull the latest group attributes before you initiate the modification operation.
+5. Starting from version 5.6, when multiple users modify the same group attributes at the same time, only the first user can execute successfully, and other users will receive the 10056 error code. After receiving this error code, call `getGroupAttributes` to update the locally stored group attributes to the latest before you initiate the modification operation.
 
 ### Initializing group attributes
 Call the `initGroupAttributes` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a17569b57abc77adb6be9356b9eb70182) / [iOS and Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a1b3a56dfc345f1ef2a575cb36156e745) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a049a490d04dde4cf925491809a6df6e2)) to initialize the group attributes, and the original group attributes, if any, will be cleared first.

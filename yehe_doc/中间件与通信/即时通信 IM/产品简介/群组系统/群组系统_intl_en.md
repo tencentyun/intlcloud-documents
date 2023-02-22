@@ -1,8 +1,9 @@
 ## Group System Overview
 The group system is an instant messaging system that allows multiple participants to communicate in one chat. The group system has the following basic capabilities:
+
 - Comprehensive [group management](https://intl.cloud.tencent.com/document/product/1047/33530) capabilities: group creation and disbanding, member management, group profile management, member profile management, and more.
 - Stable and reliable messaging and a sophisticated [group message](https://intl.cloud.tencent.com/document/product/1047/33526) management mechanism: permission control, muting/unmuting, message callback, message roaming, and more.
-- Based on common use cases, Chat provides the following default group types: **work group (Work)**, **public group (Public)**, **meeting group (Meeting)**, **audio-video group (AVChatRoom)**, and **Community group (Community)**.
+- Based on common use cases, IM provides the following default group types: **work group (Work)**, **public group (Public)**, **meeting group (Meeting)**, **audio-video group (AVChatRoom)**, and **Community group (Community)**.
 - Upper limit on the number of group members:
   - The number of members in a Work, Public, or Meeting group can be increased to a maximum of 6,000 if fees are paid. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
   - A community group (Community) supports up to 100,000 members per group.
@@ -10,18 +11,18 @@ The group system is an instant messaging system that allows multiple participant
 
 
 >!
->- Although audio-video groups (AVChatRoom) support unlimited group members, if a spike in group members is expected within a short time (in scenarios such as large online events where the number of members in a single group reaches 50,000 or above), [contact Tencent Cloud customer service](https://cloud.tencent.com/about/connect) or sales representatives in advance and report service resource usage by providing the SDKAppID and the scheduled event time.
+>- Although audio-video groups (AVChatRoom) support unlimited group members, if a spike in group members is expected within a short time (in scenarios such as large online events where the number of members in a single group reaches 50,000 or above), contact the [channel manager](https://cloud.tencent.com/about/connect) in advance and report service resource usage by providing the SDKAppID and the scheduled event time.
 >- Currently, historical message storage is available only for non-audio-video groups, with messages stored for 7 days for billing plans of the Free Edition and Pro Edition and 30 days for the Ultimate Edition by default. If you require a longer storage period, change the storage period of historical messages in the [console](https://console.cloud.tencent.com/im). Increasing the storage period of historical messages is a value-added service. For more information on pricing, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
->- Community is a new powerful tool for entertainment collaboration. Within the same community, a high number of members can be divided into different groups and topics to separate messages for hierarchical communication, yet they can also share the same set of friend relationships. This helps you develop a unique path of social expansion. The community feature is suitable for diverse use cases, such as finding like-minded people, game-based social networking, fan marketing, and organization management.
->- The community feature is available in native SDK 5.8.1668 (enhanced) or later and web SDK 2.17.0 or later. To use it, [purchase the Ultimate edition](https://buy.cloud.tencent.com/avc?from=17182), go to the [**console**](https://console.cloud.tencent.com/im/qun-setting), choose **Group feature configuration** > **Community**, and toggle on the community group feature.
+>- Community is a new powerful tool for entertainment collaboration. Within the same community, a high number of members can be divided into different groups and topics to separate messages for hierarchical communication, yet they can also share the same set of friend relationships. This helps you develop a unique path of social expansion. The community feature is widely suitable for diverse use cases, such as finding like-minded people, game-based social networking, fan marketing, and organization management.
+>- The community feature is supported by the SDK of the Enhanced edition on v5.8.1668 or later and the SDK for web on v2.17.0 or later. You need to [purchase the Ultimate edition](https://buy.cloud.tencent.com/avc?from=17182), go to the [**console**](https://console.cloud.tencent.com/im/qun-setting), select **Group feature configuration**, and enable **Community**.
 
-Chat's group system is highly customizable, allowing you to use:
+IM's group system is highly customizable, allowing you to use:
 
 - [Custom message elements](https://intl.cloud.tencent.com/document/product/1047/33527)
 - [Custom group IDs](https://intl.cloud.tencent.com/document/product/1047/33529#custom-group-ids)
 - [Custom topic IDs](#customize)
 - [Custom fields](https://intl.cloud.tencent.com/document/product/1047/33529#custom-fields)
-- [Webhooks](https://intl.cloud.tencent.com/document/product/1047/33529#custom-callbacks)
+- [Custom callbacks](https://intl.cloud.tencent.com/document/product/1047/33529#custom-callbacks)
 
 ## Group Member Roles
 
@@ -37,11 +38,11 @@ The following table lists various group member roles and their permissions:
 [](id:GroupType)
 ## Group Types
 
-Based on common use cases, Chat provides the following default group types:
+Based on common use cases, IM provides the following default group types:
 
 | Group Type | Applicable Scenario |
 |--------|---------|
-| Work group (Work) | After a work group is created, users can join the group only after being invited by group members. The invitation does not need to be accepted by the invitee or approved by the group owner. This group type is the same as private group (Private) in earlier versions.  |
+| Work group (Work) | After a work group is created, users can join the group only after being invited by group members. The invitation does not need to be accepted by the invitee or approved by the group owner. This group type is the same as private group (Private) in earlier versions. |
 | Public group (Public) | After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send a request, and the request needs to be approved by the group owner or an admin before the user can join the group. |
 | Meeting group (Meeting) | A meeting group allows users to join and leave freely and view historical messages sent before they join the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio/video conferencing and online education. This group type is the same as chat room (ChatRoom) in earlier versions. |
 | Audio-video group (AVChatRoom) | An audio-video group allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Audio-video groups can be used with Cloud Streaming Services (CSS) to support on-screen comment chat scenarios. |
@@ -52,8 +53,8 @@ Based on common use cases, Chat provides the following default group types:
 
 | Item | Work Group | Public Group | Meeting Group | Audio-Video Group | Community Group |
 |--- |-- |-- |-- |-- |-- |
-| Available member roles | Group owner<br>Ordinary member<br>App admin | Group owner<br>Admin<br>Ordinary member<br>App admin | Group owner<br>Admin<br>Ordinary member<br>App admin | Group owner<br>App admin | Group owner<br>Admin<br>Ordinary member<br>App admin |
-| Who can modify the group profile | Ordinary member<br>Group owner<br>App admin | Group admin<br>Group owner<br>App admin | Group owner<br>App admin | Group owner<br>App admin | Admin<br>Group owner<br>App admin |
+|Available member roles|Group owner<br>Ordinary member<br>Application admin|Group owner<br>Admin<br>Ordinary member<br>App admin|Group owner<br>Admin<br>Ordinary member<br>App admin|Group owner<br>App admin |Group owner<br>Admin<br>Ordinary member<br>App admin |
+|Permission to modify basic group information|Ordinary member<br>Group owner<br>Application admin|Group admin <br>Group owner<br>App admin |Group owner<br>App admin |Group owner<br>App admin |Admin<br>Group owner<br>App admin|
 | Number of group members whose information can be obtained | All group members | All group members | All group members | None (no group member information stored) | All group members |
 | Who can disband a group | App admin | Group owner and app admin | Group owner and app admin | Group owner and app admin | Group owner and app admin |
 
@@ -107,9 +108,9 @@ Based on common use cases, Chat provides the following default group types:
 |--- |--- |--- |--- |--- |--- |
 | Unread message count | Supported | Supported | Not supported | Not supported | Supported |
 | Historical message storage | Supported | Supported | Supported | Not supported | Supported |
-| Viewing roaming messages from before a user joins the group | It is disabled by default and can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                              | It is disabled by default and can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                              | It is enabled by default and can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                              | Not supported                                                                                                                                  | It is disabled by default and can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                              |
+| Viewing roaming messages from before a user joins the group | It is disabled by default and can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                              | It is disabled by default and can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                              | It is disabled by default and can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                              | Not supported                                                                                                                                  | It is enabled by default and can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                              |
 | Notification of group member change       | A notification will be pushed and stored on the roaming server by default when a user is invited to a group, asks other users to join a group, is kicked out of a group, or leaves a group. This feature can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                  | A notification will be pushed and stored on the roaming server by default when a user is invited to a group, asks other users to join a group, is kicked out of a group, or leaves a group. This feature can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                  | A notification is disabled by default when a user is invited to a group, asks other users to join a group, is kicked out of a group, or leaves a group. This feature can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                      | A notification will be pushed but not stored on the roaming server when a user is invited to a group, asks other users to join a group, is kicked out of a group, or leaves a group.                                                                                                             | A notification will be pushed and stored on the roaming server by default when a user is invited to a group, asks other users to join a group, is kicked out of a group, or leaves a group. This feature can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                  |
-| Notification of group profile change       | A notification will be pushed and stored on the roaming server by default when the group name, group notifications, group introduction, group profile photo, or group owner is changed, and a notification is disabled by default when group muting or the group joining method is changed. Both can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting). | A notification will be pushed and stored on the roaming server by default when the group name, group notifications, group introduction, group profile photo, or group owner is changed, and a notification is disabled by default when group muting or the group joining method is changed. Both can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting). | A notification will be pushed and stored on the roaming server by default when the group name, group notifications, group introduction, group profile photo, or group owner is changed, and a notification is disabled by default when group muting or the group joining method is changed. Both can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting). | A notification will be pushed but not stored on the roaming server when the group name, group notifications, group introduction, group profile photo, or group owner is changed, and a notification is disabled when group muting or the group joining method is changed. | A notification will be pushed and stored on the roaming server by default when the group name, group notifications, group introduction, group profile photo, or group owner is changed, and a notification is disabled by default when group muting is changed. Both can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting). The group joining method cannot be modified and therefore there is no group joining method change notification. |
+| Notification of group profile change       | 		A notification will be pushed and stored on the roaming server by default when the group name, group notifications, group introduction, group profile photo, or group owner is changed, and a notification is disabled by default when group muting or the group joining mode is changed. Both can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting). | A notification will be pushed and stored on the roaming server by default when the group name, group notifications, group introduction, group profile photo, or group owner is changed, and a notification is disabled by default when group muting or the group joining mode is changed. Both can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting). | A notification will be pushed and stored on the roaming server by default when the group name, group notifications, group introduction, group profile photo, or group owner is changed, and a notification is disabled by default when group muting or the group joining mode is changed. Both can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting). | A notification will be pushed but not stored on the roaming server when the group name, group notifications, group introduction, group profile photo, or group owner is changed, and a notification is disabled when group muting or the group joining mode is changed.                                                                                              | A notification will be pushed and stored on the roaming server by default when the group name, group notifications, group introduction, group profile photo, or group owner is changed, and a notification is disabled by default when group muting or the group joining mode is changed. Both can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting). The community joining mode cannot be changed, so no notification will be pushed.|
 | Notification of group member profile change     | A notification will be pushed and stored on the roaming server by default when the group muting or group admin is changed. This feature can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                     | A notification will be pushed and stored on the roaming server by default when the group muting or group admin is changed. This feature can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                     | A notification is disabled by default when the group muting or group admin is changed. This feature can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                         | A notification will be disabled by default when the group muting or group admin is changed. This feature can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting). | A notification will be pushed and stored on the roaming server by default when the group muting or group admin is changed. This feature can be configured in the [console](https://console.cloud.tencent.com/im/qun-setting).                     |
 | A message must be sent to activate a new group | Required | Not required | Not required | Not required | Not required |
 | Default message receiving option | Receive online and offline push messages | Receive online and offline push messages | Receive only online push messages | Receive only online push messages | Receive online and offline push messages |
@@ -124,10 +125,9 @@ Based on common use cases, Chat provides the following default group types:
 
 | Item | Work Group/Public Group/Meeting Group/Community Group | Audio-Video Group |
 |--- |--- |--- |
-| Importing groups, group members, and group messages is allowed | Yes. It is allowed when historical groups are migrated from a third-party platform to Chat. | No. Only existing groups, group members, and group messages can be used. |
+| Importing groups, group members, and group messages is allowed | Yes. It is allowed when historical groups are migrated from a third-party platform to IM. | No. Only existing groups, group members, and group messages can be used. |
 | Time before a group is automatically repossessed (in seconds) | The backend does not repossess groups, unless the group owner disbands the group or all members quit the group. (About group disbanding: the backend does not proactively disband a group unless the group owner disbands the group or the group is automatically repossessed. If automatic repossession is configured for a group, the backend irregularly traverses the group and disbands it if no one sends a message in the group for n seconds or the group profile is modified.) | The backend does not repossess groups, unless the group owner disbands the group or all members quit the group. |
 
->!To enable group repossession, submit a ticket based on [ticket templates](https://www.tencentcloud.com/document/product/1047/44322#.E8.87.AA.E5.8A.A8.E5.9B.9E.E6.94.B6.E7.BE.A4.E7.BB.84). After configuration, inactive groups will be removed. An inactive group is one in which no message has been sent and no member change has occurred.
 
 ## Group Data Structure
 ### Group basic information[](id:GroupBaseInfoFilter)
@@ -145,9 +145,9 @@ Based on common use cases, Chat provides the following default group types:
 | InfoSeq | Integer | This value increases every time the group information changes. | Read-only. |
 | LastInfoTime | Integer | Time of the last change to group information | Read-only. |
 | LastMsgTime | Integer | Time of the last message in the group chat | Read-only. |
-| NextMsgSeq | Integer | Sequence number of the next message in the group chat | Read-only.<br>Every message in the group chat has a unique sequence number. Sequence numbers are consecutive numbers based on the sequence of sent messages. With every message sent in the group chat, `NextMsgSeq` (starting from 1) increases by 1. (By default, `NextMsgSeq` also increases by 1 for every system message such as a group joining or leaving notification.) |
+|NextMsgSeq|Integer|`Seq` of the next message in the group chat | Read-only. <br>Every message in the group chat has a unique `Seq`, and the `Seq` values are consecutive numbers based on the sequence of sent messages. With every message sent to the group chat, `NextMsgSeq` (starting from 1) increases by 1 (by default, system messages such as notifications of group join or leaving are messages and can cause `NextMsgSeq` to increase by 1). |
 | MemberNum | Integer | Number of current members | Read-only. |
-| MaxMemberNum | Integer | Maximum number of members | The default value is the upper limit of the paid package. For example, it is 20 for a Free Edition. If you upgrade your package, you need to modify this field according to the basic information of the modified group. |
+| MaxMemberNum | Integer | Maximum number of members | Default value: The upper limit of the paid plan; for example, it is 20 on Free Edition. If you upgrade the plan, you need to modify this field to the corresponding value according to the basic information of the modified group. |
 | ApplyJoinOption | String | Membership application option | The following options are available:<ul style="margin:0;"><li>DisableApply: disallow any application.</li><li>NeedPermission: group owner or admin's approval is required.</li><li>FreeAccess: users can join the group freely without prior approval.</li></ul> |
 
 
@@ -166,26 +166,26 @@ Based on common use cases, Chat provides the following default group types:
 | MsgFlag | String | Message receiving option | The following options are available:<ul style="margin:0;"><li>AcceptAndNotify: receive and notify.</li><li>AcceptNotNotify: receive without notifying (remote APNs push is not triggered)</li><li>Discard: block group messages (messages are not pushed to clients)</li></ul>|
 | LastSendMsgTime | Integer | Time of sending the last message | Supported by work groups, public groups, and meeting groups, but not audio-video groups. |
 |NameCard|String|Group name card| Readable and writable. It can contain up to 50 bytes and cannot be adjusted. |
-|MuteUntil  |Integer| Mute status | `0`: The member is not muted; other values: The time when the member will be unmuted. |
+|MuteUntil  |Integer|Muting status|If it is `0`, the group member is not muted; otherwise, it indicates the muting stop timestamp.|
 
 ## Custom Group IDs
 
-When a group is created in the app, Chat assigns a default group ID to the new group by default. This default group ID starts with @TGS# and is unique in the app.
-Chat also allows you to customize group IDs that are simple and easy to remember and communicate. A custom group ID must be a string of ASCII characters (0x20-0x7e) with a length less than 48 bytes. Do not use @TGS# as the prefix to avoid confusion with assigned group IDs.
+When a group is created in the app, IM assigns a default group ID to the new group by default. This default group ID starts with @TGS# and is unique in the app.
+IM also allows you to customize group IDs that are simple and easy to remember and communicate. A custom group ID must be a string of ASCII characters (0x20-0x7e) with a length less than 48 bytes. Do not use @TGS# as the prefix to avoid confusion with assigned group IDs.
 >!The prefix of the IDs of community groups (Community) must be @TGS#_.
 
 [](id:customize)
 ## Custom Topic IDs
 
-When a topic is created in the app, Chat assigns a default topic ID to the new topic by default. This default topic ID starts with `GroupId+@TOPIC#_` and is unique in the group.
+When a topic is created in the app, IM assigns a default topic ID to the new topic by default. The ID starts with `GroupId+@TOPIC#_` and is unique in the group.
 
-To simplify the topic ID, Chat allows customizing it in the format of "GroupId+@TOPIC#_+Custom part" during topic creation through the RESTful API in the app. The custom part in a custom topic ID must exclude `@TGS#_` and `@TOPIC#_@TOPIC#` to avoid confusion with default group IDs assigned and must be printable ASCII characters (0x20-0x7e).
+To make it easier to remember and communicate the topic ID, IM allows customizing it in the format of `GroupId+@TOPIC#_+ custom part` during topic creation through the RESTful API in the application. The custom part cannot contain `@TGS#_` and `@TOPIC#_@TOPIC#` (to avoid confusion with the default group ID) and must consist of printable ASCII characters (`0x20-0x7e`).
 
-For example, if `GroupId` is `@TGS#_@TGS#cQVLVHIM62CJ`, and the custom part is `TestTopic`, the complete custom topic ID is `@TGS#_@TGS#cQVLVHIM62CJ@TOPIC#_TestTopic`. Note that the entire custom topic ID must be within 96 bytes.
+For example, if `GroupId` is `@TGS#_@TGS#cQVLVHIM62CJ`, and the custom part is `TestTopic`, the custom topic ID will be `@TGS#_@TGS#cQVLVHIM62CJ@TOPIC#_TestTopic`. The entire custom topic ID must be no longer than 96 bytes.
 
 ## Custom Fields
 
-Chat allows you to configure up to 10 group-level custom fields and 5 member-level custom fields based on your business needs. With custom fields, apps can attach additional data to groups, and the data can be read and written through existing APIs.
+IM allows you to configure up to 10 group-level custom fields and 5 member-level custom fields based on your business needs. With custom fields, apps can attach additional data to groups, and the data can be read and written through existing APIs.
 
 ### Description
 
@@ -206,16 +206,16 @@ The read and write permissions of a custom field are listed as follows, from hig
 
 For example, an app needs to extend the `GroupLevel` field for groups and the value of this field is a number representing the level of a group. If this level information is calculated by the app backend, then the least write permission should be **writable by the app admin**. If the field is part of the public profile of the group, its least read permission should be **readable by anyone, including non-members**.
 
-If the value to be stored is a number, we recommend that C and C++ developers store it as a string instead of binary data. For example, when the number to be stored is 1, store it as string `1` instead of binary data `0x01`. In the future, Chat will offer more operations for custom fields, such as specific mathematical operations on values, which will be performed on the basis of string-type numbers.
+If the value to be stored is a number, we recommend that C and C++ developers store it as a string instead of binary data. For example, when the number to be stored is 1, store it as string `1` instead of binary data `0x01`. In the future, IM will offer more operations for custom fields, such as specific mathematical operations on values, which will be performed on the basis of string-type numbers.
 
 ### Configuration
 
-Custom fields at these two levels can be configured in the Chat console.
+Custom fields at these two levels can be configured in the IM console.
 To configure member-level custom fields, you need to specify the group type first. Audio-video group and custom group types that are configured based on it do not support custom fields at the group member level, because these types of groups do not store member profiles.
 The **self read and write permissions** indicate whether members can read and write their own member-level custom fields. For example, a member-level customer field named `MemberLevel` represents the level of a member in a group. Group members can read but not modify their own levels, and therefore their **self read and write permissions** are set to **readable/unwritable** for this field.
->!Once custom fields are configured, they cannot be deleted or modified.
+>!Configured custom fields cannot be deleted or modified. Proceed with caution.
 
-## Webhooks
+## Custom Callbacks
 
-Webhook is an important means to meet the special requirements of apps. It provides users with the capability to customize actions.
-Chat's group system supports different webhooks. For more information, see [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354) and [Webhook Command List](https://intl.cloud.tencent.com/document/product/1047/34355).
+Third-party callback is an important means to meet the special requirements of apps. It provides users with the capability to customize actions.
+IM's group system supports different callbacks. For more information, see [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354) and [Callback Command List](https://intl.cloud.tencent.com/document/product/1047/34355).

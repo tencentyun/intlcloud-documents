@@ -1,10 +1,13 @@
-## Feature Description
+## Overview
 Only locally stored group members can be searched for, such as the list of group members or group member profiles that have been pulled.
 
-> ? This feature is supported only by the SDK on v5.4.666 or later. It cannot be used for audio-video groups (AVChatRoom) as the group members are not stored locally.
+> ? 
+>- The local group member search feature is supported only by the SDK on v5.4.666 or later. It cannot be used for audio-video groups (AVChatRoom) as the group members are not stored locally.
+>- The local group member search feature is only available on the IM Ultimate edition. To use it, purchase the [Ultimate edition](https://buy.cloud.tencent.com/avc?from=17473). For more information, see [Billing Overview](https://www.tencentcloud.com/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85).
+)。
 
 ## Searching for Local Group Members
-Call the `searchGroupMembers` API ([Android](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a493fb73258019961f3ca8934ff625b0a) / [iOS and Mac](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Group_08.html#a35ceb734976c833047cceb8b31055b18) / [Windows](https://im.sdk.qcloud.com/doc/zh-cn/classV2TIMGroupManager.html#a705a17828623117e51da885da02d8b12)) to search for local group members.
+Call the `searchGroupMembers` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a493fb73258019961f3ca8934ff625b0a) / [iOS and Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a35ceb734976c833047cceb8b31055b18) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a705a17828623117e51da885da02d8b12)) to search for local group members.
 You can set the search keyword `keywordList` and specify the search scope to set whether to search by the `memberUserID`, `memberNickName`, `memberRemark`, and `memberNameCard` fields of group members.
 
 Depending on whether `groupIDList` of `V2TIMGroupMemberSearchParam` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberSearchParam.html) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMGroupMemberSearchParam.html) / [Windows](https://im.sdk.qcloud.com/doc/en/structV2TIMGroupMemberSearchParam.html)) in `searchGroupMembers` is empty (`null`/`nil`), there are two cases:

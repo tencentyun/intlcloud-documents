@@ -1,44 +1,73 @@
-[## TUIKit Overview
+## TUIKit Overview
+
 TUIKit is a UI component library based on Tencent Cloud IM SDK. It provides universal UI components to offer features such as conversation, chat, search, relationship chain, group, and audio/video call features.
 With these UI components, you can quickly build your own business logic.
 When implementing UI features, components in TUIKit will also call the corresponding APIs of the IM SDK to implement IM-related logic and data processing, allowing developers to focus on their own business needs or custom extensions.
 
+## Supported Platforms
+
+| Platform  | Supported or Not |
+|---------|---------|
+| iOS  | Supported |
+| Android  | Supported |
+| [Web](#web)  | Supported from version 0.1.5 |
+| macOS  | Will be supported soon |
+| Windows  | Will be supported soon |
+| [Hybrid development](https://www.tencentcloud.com/document/product/1047/51456) (adding the SDK for Flutter to your existing native app) | Supported from version 1.0.0 |
+
+>? A set of all-platform IM SDKs for Flutter and TUIKit are provided to help you build apps for different platforms by using one set of code.
+
+## Demo[](id:demo)
+
+You can quickly try out the features of TUIKit online through the demos.
+
+**The following demos are all created by integrating TUIKit into the same Flutter project and packaging the build.**
+
+<table style="text-align:center; vertical-align:middle; max-width: 800px">
+  <tr>
+    <th style="text-align:center;">Mobile app</th>
+    <th style="text-align:center;">Web - HTML5</th>
+  </tr>
+  <tr>
+    <td><div style="display: flex; justify-content: center; align-items: center; flex-direction: column; padding-top: 10px">Scan the QR code to download the app for iOS or Android<img style="max-width:200px; margin: 20px 0 20px 0" src="https://qcloudimg.tencent-cloud.cn/raw/ca2aaff551410c74fce48008c771b9f6.png"/></div></td>
+    <td><div style="display: flex; justify-content: center; align-items: center; flex-direction: column; padding-top: 10px">Scan the QR code with your mobile phone to try out the online demo for web<img style="max-width:200px; margin: 20px 0 20px 0" src="https://qcloudimg.tencent-cloud.cn/raw/3c79e8bb16dd0eeab35e894a690e0444.png"/></div></td>
+  </tr>
+</table>
 
 ## TUIKit Components
+
 TUIKit provides different UI components to implement different features and display different content. Details are as follows:
 
 | Component               | Description           |
 | -------------------- | ------------------ |
-| TIMUIKitConversation | Conversation list component       |
-| TIMUIKitChat         | Chat component           |
-| TIMUIKitAddFriend    | Friend adding component       |
-| TIMUIKitAddGroup     | Group adding component       |
-| TIMUIKitBlackList    | Blocklist component     |
-| TIMUIKitContact      | Contacts component       |
-| TIMUIKitGroup        | Group list component       |
-| TIMUIKitGroupProfile | Group information component       |
-| TIMUIKitNewContact   | New contacts list component |
-| TIMUIKitProfile      | User information component       |
-| TIMUIKitSearch / TIMUIKitSearchMsgDetail      | Global search/In-conversation search component           |
-
+| [TIMUIKitConversation](#TIMUIKitConversation) | Conversation list component |
+| [TIMUIKitChat](#TIMUIKitChat)         | Core chat component           |
+| [TIMUIKitAddFriend](#add) / [TIMUIKitAddGroup](#add)    | Friend adding component and group adding component       |
+| [TIMUIKitBlackList](#contacts) / [TIMUIKitNewContact](#contacts)     | Blocklist component and new contact request list component      |
+| [TIMUIKitContact](#contacts) / [TIMUIKitGroup](#contacts)      | Contacts component and group list component |
+| [TIMUIKitProfile](#TIMUIKitProfile) / [TIMUIKitGroupProfile](#TIMUIKitGroupProfile) | Contact profile component and group profile component       |
+| [TIMUIKitSearch / TIMUIKitSearchMsgDetail](#search)      | Global search component and in-conversation search component           |
+| [Audio/Video call plugin](#calling)      | Audio/Video calls for one-to-one or group chats       |
+| [Message push plugin](#push)      | Vendor offline push and local online push      |
 
 The UI effect is as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/29ae8ebd00b201bcf60f031c7dc763a8.png" style="zoom:50%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b3d5bba6d133d3a0f3a4fa7534037f01.png" style="zoom:50%;"/>
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/51e1a447ea02808f6b6fdea8bd8824d1.png" style="zoom:50%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/33d706da1fd69cbe92c7dd95357f9486.png" style="zoom:50%;"/>
 
-### TIMUIKitChat
+### Key features of TIMUIKitChat[](id:TIMUIKitChat)
+
 TIMUIKitChat is responsible for message UI display. You can use it to directly send different types of messages, reply with emojis, copy or quote messages, query message read receipt details, etc.
 The UI effect is as shown below:
 <table style="text-align:center; vertical-align:middle; width:1000px">
   <tr>
     <th style="text-align:center;" width="500px">Message UI</th>
-    <th style="text-align:center;" width="500px">Sending different types of messages</th>
+    <th style="text-align:center;" width="500px">Sending Different Types of Messages</th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/c64b7ca7083f6858c6bb67f27fafce66.png"/></td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/8b3d14018072db74145ce4bc24b91e89.png"/></td>
-	 </tr>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/9efa78f5687481ab901863dfaeb144d4.png"/></td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/bc1c20996f6618ee8fee3c55fe78535f.png"/></td>
+  </tr>
 </table>
 <table style="text-align:center; vertical-align:middle; width:1000px">
   <tr>
@@ -46,9 +75,9 @@ The UI effect is as shown below:
     <th style="text-align:center;" width="300px">Automatic File Icon Matching</th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/9728707f05092a8ef8945b9b611a1fb9.png" /></td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/1d9f794578306b39e39a8fee3647a57b.png" /></td>
-	 </tr>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/04c0e4192ca8d62bc6bc1e34b93813b7.png" /></td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/c5ba69d29764269cab6262a0982bad97.png" /></td>
+  </tr>
 </table>
 <table style="text-align:center; vertical-align:middle; width:1000px">
   <tr>
@@ -56,9 +85,9 @@ The UI effect is as shown below:
     <th style="text-align:center;" width="300px">Message Read Receipt Details</th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/91de492b091ed713f3249f31f9bd502b.png" /></td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/4fe4d1d57c9ba945d19a6993c290016f.png" /></td>
-	 </tr>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/e15f2913e6f04a9ff914bcf1a6fc6952.png" /></td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/44277387d4df1861e11cc41654f5cf24.png" /></td>
+  </tr>
 </table>
 <table style="text-align:center; vertical-align:middle; width:1000px">
   <tr>
@@ -66,9 +95,9 @@ The UI effect is as shown below:
     <th style="text-align:center;" width="300px">Group Joining Request Approval</th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/280aacf5b254fe263ec47cc712435c8e.png" /></td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/26d87e8f2e54cac8de224735a39e6158.png" /></td>
-	 </tr>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/d9895126af46a910586c600aadc475b6.png" /></td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/42ba9e61d3cfc5795b17cc89e6b8c248.png" /></td>
+  </tr>
 </table>
 <table style="text-align:center; vertical-align:middle; width:1000px">
   <tr>
@@ -76,23 +105,26 @@ The UI effect is as shown below:
     <th style="text-align:center;" width="300px">Geographical Location Message</th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/6f9b523937e482c7aa86d30f02cd1739.png" /></td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/b012b5a54c59748cb964782e37340495.png" /></td>
-	 </tr>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/87a331a8f56326b53eebda543bc89250.png" /></td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/d85fb829caf15ca55c63958e1dcb1247.png" /></td>
+  </tr>
 </table>
 
-### Relationship chain components
+
+### Key features of relationship chain[](id:contacts)
+
 Relationship chain components are responsible for displaying the information of contacts, group chats, and blocklist of the current user.
 The UI effect is as shown below:
+
 <table style="text-align:center; vertical-align:middle; width:1000px">
   <tr>
     <th style="text-align:center;" width="500px">Contacts List (TIMUIKitContact)</th>
     <th style="text-align:center;" width="500px">New Contacts List (TIMUIKitNewContact)</th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/aed62aba0272da2900a5db8c9c0fcc8f.png"/></td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/ed169aaccead28dfa2fc6ef6192b64f3.png"/></td>
-	 </tr>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/a5b16c58dc6f07245d9c812ed73f0c06.png"/></td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/cc507ea91ac78c57d7fedf34f804857a.png"/></td>
+  </tr>
 </table>
 <table style="text-align:center; vertical-align:middle; width:1000px">
   <tr>
@@ -100,23 +132,26 @@ The UI effect is as shown below:
     <th style="text-align:center;" width="300px">Blocklist (TIMUIKitBlackList)</th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/c6bc53492ba9c620680396e687bda3a9.png" /></td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/5eaaa4aa89d5c7a549813b1b3ab054b5.png" /></td>
-	 </tr>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/331cc34016bc624819fd249577793e74.png" /></td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/cc619a08dfe4da2307b8cb3086731e9c.png" /></td>
+  </tr>
 </table>
 
 
-### TIMUIKitConversation
+### Key features of TIMUIKitConversation[](id:TIMUIKitConversation)
+
 TIMUIKitConversation is responsible for conversation list display and editing.
 The UI effect is as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/214007feb3be18519c4ad3947ef0e266.png" style="zoom:40%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/53880bb394b8b665fec6724f16d286ee.png" style="zoom:40%;"/>
 
-### TIMUIKitProfile
+### Key features of TIMUIKitProfile[](id:TIMUIKitProfile)
+
 TIMUIKitProfile is responsible for contacts profile display and management.
 The UI effect is as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e3831ff35e1571c8dbd6b26517cac819.png" style="zoom:40%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/338aa97bdc58f79fd49e5cfc1ed1c93c.png" style="zoom:40%;"/>
 
-### User adding and user group joining
+### Key features of `TIMUIKitAddFriend` and `TIMUIKitAddGroup`[](id:add)
+
 TIMUIKitAddFriend is a friend adding component.
 TIMUIKitAddGroup is a group adding component.
 The UI effect is as shown below:
@@ -126,12 +161,14 @@ The UI effect is as shown below:
     <th style="text-align:center;" width="500px">Group Joining Page (TIMUIKitAddGroup)</th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/cf0eaf557c607a139d8c4afd7da8bb21.png"/></td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/398e1fa730ffe17acdaffaa252c3de3c.png"/></td>
-	 </tr>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/bb42196224b3bc2ec5fe69654622da34.png"/></td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/5d3f91b40ee4226637f41215e6b625f1.png"/></td>
+  </tr>
 </table>
 
-### TIMUIKitGroupProfile
+
+### Key features of TIMUIKitGroupProfile[](id:TIMUIKitGroupProfile)
+
 TIMUIKitGroupProfile is responsible for the display and management of group profiles, members, and permissions.
 The UI effect is as shown below:
 <table style="text-align:center; vertical-align:middle; width:1000px">
@@ -140,9 +177,9 @@ The UI effect is as shown below:
     <th style="text-align:center;" width="500px">Group Member Management</th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/3424c3e391c321bf607fcd807ef70afe.png"/></td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/e35200ce0b9653a98205ad135caa2b45.png"/></td>
-	 </tr>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/ae5e50eb857308403d802fed9cbffb83.png"/></td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/a25514e0bab675b5f5e356604310bcb5.png"/></td>
+  </tr>
 </table>
 <table style="text-align:center; vertical-align:middle; width:1000px">
   <tr>
@@ -150,23 +187,24 @@ The UI effect is as shown below:
     <th style="text-align:center;" width="300px">Group Operation</th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/2af746e239e4f43d142dc634a114a680.png" /></td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/d39a4b2c84e3b62bcd1a770cf26dc209.png" /></td>
-	 </tr>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/78d9a2eae2b8f95226075b1f676f9984.png" /></td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/197466803785eeb07297d68a68e2872a.png" /></td>
+  </tr>
 </table>
 
 
-### Local search
+### Key features of local search[](id:search)
+
 TIMUIKitSearch is responsible for local global search, including contacts, group chat, and chat record search.
 TIMUIKitSearchMsgDetail is responsible for searching for chat records in a conversation.
 For details, see [here](https://intl.cloud.tencent.com/document/product/1047/50036). The UI effect is as follows:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/199a69d9da6126690a34c7bb01552081.png" style="zoom:40%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/35a45f8176005b46e67020e5d9656d0a.png" style="zoom:40%;"/>
 
+### Key features of audio/video call[](id:calling)
 
-### Audio/Video call
-[The TUICalling plugin](https://intl.cloud.tencent.com/document/product/1047/50023) is responsible for audio/video calls.
+[The TUICalling plugin](https://www.tencentcloud.com/document/product/1047/50023) is responsible for audio/video calls.
 One-to-one audio call UIs:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/1ee168e84c31bcac54e1d5ffb98b4491.png" style="zoom:40%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/78c9aa0717517f9e2c245dba1267771e.png" style="zoom:40%;"/>
 One-to-one video call UIs:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/e4a376e5d6895059214ccc7412cc6be2.jpg" style="zoom:60%;"/>
 Group chat audio/video call UIs:
@@ -180,18 +218,17 @@ The UI effect is as shown below:
     <th style="text-align:center;" width="300px">Initiating a Call via a Profile Page</th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/a54e097733331db4593589959ab52a82.png" /></td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/4f9ecb8c9c585271e1c9a527876e6efc.png" /></td>
-	 </tr>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/fab20b828cf3cb8417d169e890b1b0c6.png" /></td>
+    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/b1ba063e4ee5bee45c168c799c800a7b.png" /></td>
+  </tr>
 </table>
 
 
-### Message push
+### Key features of message push[](id:push)
+
 You can use Tencent's [Flutter push plugin](https://intl.cloud.tencent.com/document/product/1047/50032) to integrate message push capabilities, including offline and online push capabilities.
 The message push effect is as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b2717640d161ea0cea66d509311dc6a7.png" style="zoom:40%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/9634f4ffa77a91c8c95c73091abb38ae.png" style="zoom:40%;"/>
 
 [](id:feedback)
 
-
-](https://www.tencentcloud.com/document/product/1047/50059?!editLang=en&!preview)
