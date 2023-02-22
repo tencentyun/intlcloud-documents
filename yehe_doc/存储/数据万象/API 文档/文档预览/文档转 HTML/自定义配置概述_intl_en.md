@@ -4,7 +4,7 @@ By using the JS-SDK, you can customize capabilities such as UI, page status, and
 
 
 ## Architecture
-![](https://main.qcloudimg.com/raw/d7381cb5aba6a79fcb7084fef24b4dd4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/32602ffb3049da778e94b078c25fd967.png)
 
 
 ## Operating Environments
@@ -21,7 +21,7 @@ By using the JS-SDK, you can customize capabilities such as UI, page status, and
 
 ### 1. Download a package
 
-Download the latest version of the [JS-SDK package](https://cos-doc-preview-js-sdk-1253960454.file.myqcloud.com/sdk-v0.1.1.zip). For earlier versions, see [Release Notes](https://cloud.tencent.com/document/product/460/75908).
+Download the latest version of the [JS-SDK package](https://cos-doc-preview-js-sdk-1253960454.file.myqcloud.com/sdk-v0.1.1.zip). For earlier versions, see [Release Notes](https://www.tencentcloud.com/document/product/1045/47943).
 
 
 ### 2. Import the JS-SDK
@@ -155,7 +155,7 @@ After initialization is completed, the JS-SDK will automatically insert an ifram
 If no token is used, the signature validity period will be used for authentication by default. Once the signature expires, the file cannot be previewed.
 If a token is used for authentication, token authentication and refresh can be performed continuously during preview, and you can control the preview authorization on your own.
 
-![](https://main.qcloudimg.com/raw/bb97fce11cdf2991683ab5fbc5d46ec7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/e6063d46f22aa3931a0b61084b698e0b.png)
 
 Token authentication and renewal can be completed in the following three steps. For more information, see the [demo](https://github.com/tencentyun/cos-demo/blob/main/doc-preview/token-refresh-preview.html).
 
@@ -187,20 +187,23 @@ x-cos-request-id: NjJiMWEwNDZfMTgyMjYyNjRfYmRlYl9iNTAw****
 2. Set the token.
 >? To avoid frequent token refresh, we recommend you set `timeout` to over 10 minutes. To prevent the refresh request from timing out, the JS-SDK will refresh the token several minutes in advance.
 >
+
 ```plaintext
 var demo = COSDocPreviewSDK.config({
     url: 'Online file preview URL',  // The online preview URL of the file obtained in step 3
 })
-
 // Set the token
 demo.setToken({
   token: 'yourToken', // Enter the obtained token
   timeout: 10 * 60 * 1000, // Timeout period of the token in milliseconds. To avoid frequent refresh, we recommend you set it to over 10 minutes. The JS-SDK will call the token refresh method `refreshToken` before timeout.
 });
 ```
+
 3. Configure the `refreshToken` method to automatically refresh the token upon timeout.
 The `refreshToken` method needs to request the **token refresh method encapsulated on your server**. The server can encapsulate the above token acquisition method (for more information, see [Get the token](#token)).
 Taking the server method `http://your.server.com/refreshToken` as an example, configure `refreshToken` as follows:
+
+
 ```plaintext
 // Get the token
 const refreshToken = () => {
