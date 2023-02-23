@@ -97,11 +97,11 @@ Dynamic check for pre-binding is triggered immediately after the modification. I
 - Add the following launch parameter to `spec.template.spec.containers[0].args` to modify the default number of pre-bound ENIs/IPs. The ipamd will restart and take effect automatically after the modification. The default number only affects the added nodes.
 ```
 # The default number of minimum pre-bound ENIs/IPs in shared ENI mode. Default value: 5
-- --ip-min-warm-target=3
+  - --ip-min-warm-target=3
 # The default number of maximum pre-bound ENIs/IPs in shared ENI mode. Default value: 5
-- --ip-max-warm-target=3
+  - --ip-max-warm-target=3
 # The default number of minimum pre-bound ENIs/IPs in exclusive ENI mode. Default value: 1
-- --eni-min-warm-target=3
+  - --eni-min-warm-target=3
 # The default number of maximum pre-bound ENIs/IPs in exclusive ENI mode. Default value: 1
-- --eni-max-warm-target=3
+  - --eni-max-warm-target=3
 ```
