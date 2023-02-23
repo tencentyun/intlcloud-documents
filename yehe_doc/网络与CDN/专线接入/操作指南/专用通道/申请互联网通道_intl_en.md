@@ -121,7 +121,8 @@ You have applied for a connection as instructed in [Applying for Connection](htt
 <td><ul><li>If <b>IPv6</b> is not enabled, two IPv4 addresses will be automatically assigned to the Internet dedicated tunnel.</li><li>If <b>IPv6</b> is enabled, two IPv4 addresses and two IPv6 addresses will be automatically assigned to the Internet dedicated tunnel.</li><li>IPv6 cannot be disabled once enabled. If IPv6 addresses are not needed, delete this tunnel and recreate one without enabling IPv6.</li></ul></td>
 </tr>
 </table>
-2. Click **OK**.
+
+2. Click **OK** .
 
 ## Connection Status Description
 After the Internet dedicated tunnel is created, it will be displayed on the **Internet Tunnels** page in the **Applying** connection status.
