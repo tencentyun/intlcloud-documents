@@ -91,26 +91,26 @@ GME 서버 녹음 파일은 귀하의 계정에 있는 **COS** 서비스의 지�
 
 [GME 콘솔](https://console.tencentcloud.com/gamegme)에 로그인하여 [서비스 관리] 메뉴로 들어가 녹음 서비스를 활성화할 애플리케이션의 [설정]을 클릭하여 애플리케이션 상세 페이지로 이동합니다. 페이지의 [음성 녹음 서비스]에서 **수정**을 클릭합니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/181367c9cf60caacb3c70ececa95d55a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9e2c89f462a81ba228c978cd725abf5a.png)
 
 녹음 스위치를 **ON**으로 설정합니다.
 
 녹음 서비스를 처음 시작할 때 GME는 귀하의 **COS 서비스**에 액세스하기 위해 귀하에게 서비스 승인을 신청합니다. 팝업 창 페이지에서 권한 부여에 동의해주셔야 정상적으로 서버 녹음 서비스를 이용하실 수 있습니다.
 
 
-![](https://qcloudimg.tencent-cloud.cn/raw/efcfaf7b4cd84173427b72d701c2bf96.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/33407cf16b4ad310b65c4897ea766340.png)
 
 - #### 녹음 파일 저장 구성
 
 애플리케이션 상세 페이지로 들어가 해당 페이지에서 [음성 녹음 서비스] **수정**을 클릭하고 **녹음 파일 스토리지 버킷**에서 **바인딩**을 클릭합니다.
 **스토리지 버킷 바인딩** 팝업 창에서 기존 COS 스토리지 버킷([COS 콘솔](https://console.tencentcloud.com/cos/bucket)에서 사전에 생성한 버킷)을 바인딩하거나 새로운 스토리지 버킷을 생성할 수 있습니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/5b0d9ceb50fe8d2273d28978d606aa31.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/c63e0fd24da877f5f79f49360f4ff9e1.png)
 
 - #### 녹음 이벤트 콜백 설정(선택 사항)
 녹음 서비스의 이벤트 콜백을 받으려면 콜백 주소를 설정합니다. 작업 경로: 애플리케이션 세부 정보 페이지 이동 후 해당 페이지의 [음성 녹음 서비스] **수정**을 클릭하고, **콜백 주소**에서 **수정** 클릭한 후 팝업 창에 콜백을 받을 url 주소를 입력합니다. 현재 녹음 작업 완료 상태 이벤트 콜백 메시지만 푸시됩니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/bc6aa61e60aa16716b57732ef24d5638.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/92314d86dbf00e8cdafe6ac24d1c17b8.png)
 
 - #### 녹음 범위 구성
 녹음 범위는 사용자 지정 녹음 또는 전체 녹음 중에서 선택할 수 있습니다. 전체 녹음을 선택하고 체크 박스에 단일 스트림 또는 혼합 스트림 녹음을 지정해야 합니다.

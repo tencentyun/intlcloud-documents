@@ -51,7 +51,7 @@ GME는 실시간 음성 채팅 스트림을 위한 **서버 녹음** 기능을 �
 
 #### 녹음 작업 실행 메커니즘
 - ***StartRecord()*** API를 호출하면 지정된 방 녹음 작업이 시작됩니다
- 
+
 #### 녹음 작업 종료 메커니즘
 - ***StopRecord()*** API를 호출하면 지정된 방 녹음 작업이 종료됩니다
 
@@ -94,7 +94,7 @@ GME 서버 녹음 파일은 귀하의 계정에 있는 **COS** 서비스의 지�
  ***userid:*** 플레이어 ID입니다. 실시간 음성 채팅 서비스 이용 시 정의되어 GME SDK로 전달됩니다.
  ***taskid:*** GME 녹음 서비스에서 생성한 녹음 작업 ID입니다. 각 녹음 작업에는 고유한 작업 ID가 있습니다.
  ***id:*** 녹음 작업을 위한 세그먼트의 일련 번호입니다. 초기 일련 번호는 0입니다.
- 
+
 
 
 ## 통합 단계
@@ -112,7 +112,7 @@ GME 서버 녹음 파일은 귀하의 계정에 있는 **COS** 서비스의 지�
 [GME 콘솔](https://console.tencentcloud.com/gamegme)에 로그인하여 [서비스 관리] 메뉴로 들어가 녹음 서비스를 활성화할 애플리케이션의 [설정]을 클릭하여 애플리케이션 상세 페이지로 이동합니다.
 - #### 녹음 서비스 활성화/비활성화
 
-![](https://qcloudimg.tencent-cloud.cn/raw/7fab4bcd6547fee22d3c8c69333f9ea1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4d72f57ae8f4463bc009d8ef8048232e.png)
 
 
 페이지의 [음성 녹음 서비스]에서 **수정**을 클릭하고 녹음 스위치를 **ON**으로 설정합니다.
@@ -120,19 +120,19 @@ GME 서버 녹음 파일은 귀하의 계정에 있는 **COS** 서비스의 지�
 녹음 서비스를 처음 시작할 때 GME는 귀하의 **COS 서비스**에 액세스하기 위해 귀하에게 서비스 승인을 신청합니다. 팝업 창 페이지에서 권한 부여에 동의해주셔야 정상적으로 서버 녹음 서비스를 이용하실 수 있습니다.
 
 
-![](https://qcloudimg.tencent-cloud.cn/raw/efcfaf7b4cd84173427b72d701c2bf96.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/5e38302c5e3b0013ba53bd29af14fab2.png)
 
 - #### 녹음 파일 저장 구성
 
 **녹음 파일 버킷**에서 **바인딩**을 클릭합니다.
 **스토리지 버킷 바인딩** 팝업 창에서 기존 COS 스토리지 버킷([COS 콘솔](https://console.tencentcloud.com/cos/bucket)에서 사전에 생성한 버킷)을 바인딩하거나 새로운 스토리지 버킷을 생성할 수 있습니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/5b0d9ceb50fe8d2273d28978d606aa31.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/30faa09353cdd31c537803f72bca25b2.png)
 
 - #### 녹음 이벤트 콜백 설정(선택 사항)
 녹음 서비스의 이벤트 콜백을 받으려면 콜백 주소를 설정합니다. 작업 경로: 애플리케이션 세부 정보 페이지 이동 후 해당 페이지의 [음성 녹음 서비스] **수정**을 클릭하고, **콜백 주소**에서 **수정** 클릭한 후 팝업 창에 콜백을 받을 url 주소를 입력합니다. 현재 녹음 작업 완료 상태 이벤트 콜백 메시지만 푸시됩니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/bc6aa61e60aa16716b57732ef24d5638.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/cbc0275b887b6bd402f41f9f5c325a5b.png)
 
 - #### 녹음 범위 구성
 녹음 범위는 사용자 지정 녹음 또는 전체 녹음 중에서 선택할 수 있습니다. 사용자 지정 녹음을 선택해야 합니다. 그렇지 않으면 서버에서 관련 API를 호출할 수 없습니다.
