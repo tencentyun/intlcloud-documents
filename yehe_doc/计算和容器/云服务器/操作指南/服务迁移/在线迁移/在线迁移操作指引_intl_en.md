@@ -98,7 +98,7 @@ cd go2tencentcloud-linux
 The files in the `go2tencentcloud` directory will not be migrated. Do not place the files to be migrated in this directory.
 </dx-alert>
 2. (Optional) Exclude files and directories on the source server that do not need to be migrated.
-If there are files or directories on the Linux source server that do not need to be migrated, you can add them to the [rsync_excludes_linux.txt](https://intl.cloud.tencent.com/document/product/213/44340) file, as described in Compatibility and Tool Configuration Description.
+If there are files or directories on the Linux source server that do not need to be migrated, you can add them to the [rsync_excludes_linux.txt] file, as described in Compatibility and Tool Configuration Description (https://intl.cloud.tencent.com/document/product/213/44340).
 3. Import the migration source.
    i. For example, on a 64-bit Linux source server, execute the following command in sequence as the root user to run the tool.
 ```shellsession

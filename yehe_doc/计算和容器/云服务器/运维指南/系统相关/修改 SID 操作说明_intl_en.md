@@ -31,17 +31,17 @@ ipconfig /all
 ```shellsession
 C:\Windows\System32\Sysprep\sysprep.exe
 ```
-5. In the “System Preparation Tool 3.14” window that pops up, make the following configurations.
+5. In the **System Preparation Tool 3.14** window that pops up, make the following configurations.
 - Set **System Cleanup Action** to **Enter System Out-of-Box Experience (OOBE)** and check **General**.
    - Set **Shutdown Options** to **Reboot**.
-6. Click **OK**, and the system will restart automatically.
+6. Click **OK**, and the system restarts automatically.
 7. After the startup is complete, follow the wizard to complete the configuration (select language, reset password, etc.).
 8. In the operating system interface, right-click <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: -3px 0px;"> > **Run**, enter **cmd**, and press **Enter** to open the admin command line.
 9. Run the following command to verify whether the SID has been modified.
 ```shellsession
 whoami /user
 ```
-If a message similar to the following is returned, the SID has been modified.
+If a message similar to the following is returned, the SID is modified.
 ![](https://main.qcloudimg.com/raw/34efb1f4128c753e6c0546f3e8d58678.png)
 
 10. Reset ENI information (such as IP address, gateway address, DNS, etc.) based on the network configuration information saved in [Step 3](# step_03).
@@ -59,15 +59,15 @@ In this example, the sidchg tool is saved on C: drive and named as “sidchg64-2
 4. Enter license key or trial key as prompted by the page, and press **Enter**.
 5. Enter **Y** as prompted by the page, and press **Enter**.
 ![](https://main.qcloudimg.com/raw/43c19634475517b183402d15fa32e962.png)
-6 In the prompt box for modifying the SID, click **OK** to reset the SID.
-The system will be restarted during the reset.
+6. In the prompt box for modifying the SID, click **OK** to reset the SID.
+The system restarts during the reset.
 ![](https://main.qcloudimg.com/raw/b59ec21417cc0de1fd7d851fcd8a2a3b.png)
 7. After the startup is completed, right-click <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-3px 0px;"> > **Run**, enter **cmd**, and press **Enter** to open the admin command line.
-8. Run the following command to verify whether the SID has been modified.
+8. Run the following command to verify whether the SID is modified.
 ```shellsession
 whoami /user
 ```
-If a message similar to the following is returned, the SID has been modified.
+If a message similar to the following is returned, the SID is modified.
 ![](https://main.qcloudimg.com/raw/34efb1f4128c753e6c0546f3e8d58678.png)
 
 

@@ -1,21 +1,21 @@
 
 ## Overview
 
-Cloud-init allows you to customize configurations during the first initialization of an instance. If the imported image does not have the cloud-init service installed, instances booted through the image cannot be initialized properly. As a result, the image will fail to be imported. This document describes how to install the cloud-init service.
-You can use any of the following methods to install cloud-init:
-- [Downloading the cloud-init binary package](#binary)
-- [Manually downloading the cloud-init source package](#ManualDown) 
-- [Using the cloud-init package from the software source](#SoftSources)
+This document describes how to install the cloud-init service. Cloud-init allows you to customize configurations during the first initialization of an instance.
+Options to install cloud-init:
+- [Download the cloud-init binary package](#binary)
+- [Download the cloud-init source package](#ManualDown) 
+- [Use the cloud-init package from the software source](#SoftSources)
 
 ## Must-knows
 Before importing a Linux image, ensure that you have properly installed the cloud-init service in the image.
 
 ## Prerequisites
-A server with the cloud-init service installed can correctly access the public network.
+A server that you want to install cloud-init can access the public network.
 
 ## How It Works
 <dx-tabs>
-::: Downloading the cloud-init binary package[](id:binary)
+::: Download the cloud-init binary package[](id:binary)
 <dx-alert infotype="explain" title="">
 - cloud-init depends on qcloud-python, which is a software package recompiled by Tencent Cloud. qcloud-python is a separate python environment and is only used for cloud-init. It is installed under the directory of `/usr/local/qcloud/python`, and it does not conflict with the default python in the system.
 - cloud-init is developed by Tencent Cloud based on the community v20.1. It is adapted to Tencent Cloud operation environment.
