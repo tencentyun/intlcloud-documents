@@ -1,3 +1,102 @@
+## 2023年01月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>	
+<tr>
+<td>节点自动补偿</td>
+<td>支持异常 Task 节点和 Router 节点监测并自动替换异常节点，降低异常节点导致服务不可用风险</td>
+<td>2023-01-16</td>
+<td><a href="https://cloud.tencent.com/document/product/589/85683" target="_blank">自动补偿</a></td>
+</tr>	
+<tr>
+<td>本地盘磁盘修复</td>
+<td>支持自动监测本地盘换盘事件，换盘后可在控制台自助初始化新磁盘</td>
+<td>2023-01-16</td>
+<td><a href="https://cloud.tencent.com/document/product/589/85569" target="_blank">磁盘修复</a></td>
+</tr>	
+</tbody></table>
+
+
+## 2022年12月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java-GC 在线分析</td>
+<td>Java 分析-GC 在线日志分析，帮助用户排查因 GC 导致进程异常排查，实时采集、记录并分析 GC 日志</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/84338" target="_blank">Java-GC 在线分析</a></td>
+</tr>
+<tr>
+<td>Kafka 角色级监控</td>
+<td>Kafka 丰富角色级监控指标项70+，同时支持核心监控指标的告警功能</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/84339" target="_blank">Kafka 监控指标</a></td>
+</tr>
+<tr>
+<td>丰富默认事件项</td>
+<td>丰富子机 UTC 时间和 NTP 时间差值、Kerberos 响应时间、HDFS MissingBlocks 数量、HDFS NameNode 进入安全模式等事件项</td>
+<td>2022-12-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">集群事件</a></td>
+</tr>
+<tr>
+<td>Kudu 丰富默认告警策略</td>
+<td>Kudu 服务丰富单台 teserver 数量、数据目录失败数量、数据目录打满数量等默认告警策略</td>
+<td>2022-12-06</td>
+<td>-</td>
+</tr>
+<tr>
+<td>配置管理功能升级</td>
+<td><li>新增配置状态，支持查看过期配置详情、失败配置详情<li>配置文件、配置项、配置项描述、配置筛选条件丰富</td>
+<td>2022-12-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31109" target="_blank">配置管理</a></td>
+</tr>
+<tr>
+<td>Yarn 资源调度功能升级</td>
+<td>支持标签调度、队列删除、调度历史查看等</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/83693" target="_blank">配置 Capacity Scheduler</a></td>
+</tr>
+<tr>
+<td>新增客户端管理</td>
+<td>新增客户端管理入口，支持客户端信息查看</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/83701" target="_blank">客户端管理</a></td>
+</tr>
+<tr>
+<td>云硬盘支持调整</td>
+<td><li>支持在 EMR 控制台对节点中的云数据盘机型调整，支持磁盘扩容操作和额外挂载功能。<li>云盘异构能力新增支持容量异构</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/83643" target="_blank">云硬盘扩容</a></td>
+</tr>
+<tr>
+<td>批量修改续费操作</td>
+<td>支持在 EMR 控制台批量对节点进行自动续费开启或关闭操作</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/44851" target="_blank">集群续费</a></td>
+</tr>
+<tr>
+<td>批量变更配置</td>
+<td>支持对同地域同计费类型节点机型批量变配操作</td>
+<td>2022-12-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">变更配置</a></td>
+</tr>
+</tbody></table>
+
 ## 2022年11月
 <table>
 <thead>
@@ -14,19 +113,19 @@
 </td>
 <td>丰富 StarRocks 的各角色基础监控指标</td>
 <td>2022-11-03</td>
-<td><a href="https://www.tencentcloud.com/document/product/1026/51249" target="_blank">StarRocks 监控指标</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/82396" target="_blank">StarRocks 监控指标</a></td>
 </tr>	
 <tr>
 <td>EMR 容器版支持 RSS（即 Remote Shuffle Service 集群）</td>
 <td><li>EMR 容器版支持 RSS 基于弹性容器（EKS）部署<li>Spark 集群支持关联 RSS 集群</td>
 <td>2022-11-01</td>
-<td><a href="https://www.tencentcloud.com/document/product/1026/48582" target="_blank">EMR 容器版概述</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/72672" target="_blank">EMR 容器版概述</a></td>
 </tr>	
 <tr>
 <td>自动伸缩支持托管伸缩</td>
 <td>托管伸缩功能开启后，会持续监控集群 yarn 的负载系统自动补充和减少计算节点</td>
 <td>2022-11-01</td>
-<td><a href="https://www.tencentcloud.com/document/product/1026/51888" target="_blank">托管伸缩使用配置</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/82668" target="_blank">托管伸缩使用配置</a></td>
 </tr>
 </tbody></table>
 
@@ -149,7 +248,7 @@
 <td>应用接口丰富</td>
 <td>开放 Yarn 应用队列统计接口</td>
 <td>2022-07-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/47538" target="_blank">查询 Appilication 统计信息 </a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/77586" target="_blank">查询 Appilication 统计信息 </a></td>
 </tr>	
 <tr>
 <td>Hadoop 集群新增产品版本 EMR-V2.7.0</td>
@@ -167,13 +266,13 @@
 <td>HBase 支持 RIT 修复工具</td>
 <td>支持对处于 rit 状态的 region 进⾏修复</td>
 <td>2022-07-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/48580" target="_blank">HBase RIT 修复</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/77258" target="_blank">HBase RIT 修复</a></td>
 </tr>	
 <tr>
 <td>EMR 容器版开放公测</td>
 <td>北京、上海、广州地域已正式开放 EMR 容器版功能</td>
 <td>2022-07-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/48582" target="_blank">EMR 容器版</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/72672" target="_blank">EMR 容器版</a></td>
 </tr>
 </tbody></table>
 
@@ -202,7 +301,7 @@
 <td>新增 Hive 查询管理</td>
 <td>Hive 服务支持查询管理功能</td>
 <td>2022-06-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/47774" target="_blank">Hive 查询管理</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/75229" target="_blank">Hive 查询管理</a></td>
 </tr>	
 <tr>
 <td>Yarn 作业查询优化</td>
@@ -214,7 +313,7 @@
 <td>接入定价中心</td>
 <td>EMR 产品定价接入官网定价中心，支持 EMR 节点费用查询</td>
 <td>2022-06-07</td>
-<td><a href="https://buy.intl.cloud.tencent.com/price/emr" target="_blank">产品定价</a></td>
+<td><a href="https://buy.cloud.tencent.com/price/emr" target="_blank">产品定价</a></td>
 </tr>	
 </tbody></table>
 
@@ -260,7 +359,7 @@
 <td>Hadoop 集群新增产品版本 EMR-V3.4.0</td>
 <td><li>支持 Spark3.2.1、Trino372、Flink1.14.3、Hbase2.4.5、Zookeeper3.6.3、Impala4.0.0、Zeppelin0.10.1、Alluxio2.8.0、Hudi0.10.1、Iceberg0.13.1、Goosefs1.2.0<li>新版本中 PrestoSQL 更名为 Trino，并支持 Ranger，新版本中监控指标告警需按 Trino 配置</td>
 <td>2022-04-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">组件版本</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/47767" target="_blank">Trino 监控指标</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">组件版本</a><br><a href="https://cloud.tencent.com/document/product/589/72846" target="_blank">Trino 监控指标</a></td>
 </tr>	
 <tr>
 <td>监控丰富</td>
@@ -272,7 +371,7 @@
 <td>支持 EMR 容器版</td>
 <td>北京、上海、广州、南京地域支持 Spark 基于弹性容器（EKS）部署</td>
 <td>2022-04-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/48582" target="_blank">EMR 容器版概述</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/72672" target="_blank">EMR 容器版概述</a></td>
 </tr>	
 </tbody></table>
 
@@ -408,7 +507,7 @@
 <td> Hadoop 类型所有 EMR 版本升级操作系统为 TencenOS Server，提供更稳定、安全和高性能的云原生运行环境。
 已建集群操作系统相关安全问题加固修复，请联系售后渠道或腾讯云助手</td>
 <td>2021-12-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/213/40223" target="_blank">TencentOS Server 简介</a></td>
+<td><a href="https://cloud.tencent.com/document/product/213/38027" target="_blank">TencentOS Server 简介</a></td>
 </tr>
 </tbody></table>
 
@@ -604,6 +703,24 @@
 </tr>
 </tbody></table>
 
+## 2021年03月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 集群恢复  </td>
+<td>  包年包月计费类型集群在隔离状态支持续费恢复集群</td>
+<td> 2021-03-17 </td>
+<td><a href="https://cloud.tencent.com/document/product/589/54107" target="_blank">  集群恢复  </a></td>
+</tr>
+</tbody></table>
 
 ## 2021年02月
 <table>
@@ -1047,7 +1164,7 @@
 </thead>
 <tbody><tr>
 <td>新增节点规格管理</td>
-<td>节点规格管理，根据计费类型设置不同节点类型的默认规格，默认为按量计费规格</td><td>2019-11</td>
+<td>节点规格管理，根据计费类型设置不同节点类型的默认规格，默认为按量计费规格，可切换配置包年包月规格</td><td>2019-11</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/34533" target="_blank">设置节点规格</a></td>
 </tr>
 <tr>

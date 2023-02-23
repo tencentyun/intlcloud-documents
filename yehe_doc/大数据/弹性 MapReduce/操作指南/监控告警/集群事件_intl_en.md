@@ -1,4 +1,4 @@
-## Feature Description
+## Description
 Cluster events include event lists and event policies.
 - Event list: It records key change events and abnormal events occurring in the cluster.
 - Event policy: Event monitoring trigger policies can be customized based on the actual business conditions. Events with monitoring enabled can be set as cluster inspection items.
@@ -26,7 +26,7 @@ The severity divides into the following:
 <table>
 <thead>
 <tr>
-<th><strong>Category</strong></th>
+<th ><strong>Category</strong></th>
 <th><strong>Event Name</strong></th>
 <th><strong>Description</strong></th>
 <th><strong>Recommendations and Measure</strong></th>
@@ -37,7 +37,7 @@ The severity divides into the following:
 </tr>
 </thead>
 <tbody><tr>
-<td rowspan="23"><strong>Node</strong></td>
+<td rowspan="24"><strong>Node</strong></td>
 <td>The CPU utilization exceeds the threshold continuously</td>
 <td>The server CPU utilization has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Expand the node capacity or upgrade the node</td>
@@ -244,7 +244,17 @@ The severity divides into the following:
 <td>Yes</td>
 </tr>
 <tr>
-<td rowspan="17"><strong>HDFS</strong></td>
+<td>The difference between the UTC time and NTP time of the server exceeds the threshold</td>
+<td>The difference between the UTC time and NTP time of the server exceeds the threshold (in ms)</td>
+<td>1. Make sure that the NTP daemon is running <br>2. Make sure that the network communication with the NTP server is normal
+</td>
+<td>Difference=30000</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td rowspan="19"><strong>HDFS</strong></td>
 <td>The total number of HDFS files exceeds the threshold continuously</td>
 <td>The total number of files in the cluster has been greater than or equal to m for t (300 ≤ t ≤ 2,592,000) seconds continuously</td>
 <td>Increase the NameNode memory</td>
@@ -392,6 +402,23 @@ The severity divides into the following:
 <td>Both NameNodes of HDFS are in Standby service status</td>
 <td>Both NameNode roles are in Standby status at the same time</td>
 <td>Troubleshoot</td>
+<td>-</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The number of HDFS missing blocks exceeds the threshold</td>
+<td>The number of missing blocks in the cluster has been greater than or equal to m for t (300 ≤ t ≤ 604,800) seconds continuously</td>
+<td>We recommend you troubleshoot HDFS data block corruption and run the `hadoop fsck /` command to check the HDFS file distribution</td>
+<td>m=1, t=1800</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr><tr>
+<td>The HDFS NameNode entered the safe mode</td>
+<td>The NameNode entered the safe mode (for 300 seconds continuously)</td>
+<td>We recommend you troubleshoot HDFS data block corruption and run the `hadoop fsck /` command to check the HDFS file distribution</td>
 <td>-</td>
 <td>Severe</td>
 <td>Yes</td>
@@ -1011,8 +1038,28 @@ The severity divides into the following:
 <tr>
 <td rowspan=4><strong>Cluster</strong></td>
 <td>Auto-scaling failure</td>
-<td>Node operation failed during the auto-scaling</td>
-<td>Troubleshoot</td>
+<td>1. Scale-in failed as elastic nodes reached the minimum number
+<br>2. Scale-out failed as elastic nodes reached the maximum number
+<br>3. Scale-out cannot be performed as no scaling specifications are set
+<br>4. Scale-out failed due to insufficient resources
+<br>5. Scale-out or scale-in failed as the retry period upon expiration is too short
+<br>6. Scale-out cannot be performed due to insufficient balance
+<br>7. No eligible elastic resources are available for scale-in
+<br>8. The cluster in the current status cannot be scaled out
+<br>9. Scale-out cannot be triggered as the cluster is in the cooldown window
+<br>10. An internal error occurred
+</td>
+<td>1. Adjust the minimum number of nodes
+<br>2. Adjust the maximum number of nodes
+<br>3. Add scaling specification configuration
+<br>4. Use another specification with sufficient resources or <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">submit a ticket</a> for assistance
+<br>5. Prolong the retry period upon expiration
+<br>6. Top up the account
+<br>7. Add elastic resources
+<br>8. Submit a ticket for assistance
+<br>9. Adjust the cooldown period of scaling rules
+<br>10. Submit a ticket for assistance
+</td>
 <td>-</td>
 <td>Severe</td>
 <td>No</td>
@@ -1041,6 +1088,16 @@ The severity divides into the following:
 <td>JVM or OLD exception.</td>
 <td>Troubleshoot</td>
 <td>1. The OLD utilization reaches 80% for 5 consecutive minutes <br>Or 2. The JVM memory utilization reaches 90%.</td>
+<td>Severe</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td rowspan=1><strong>Kerberos</strong></td>
+<td>The Kerberos response time exceeds the threshold</td>
+<td>The Kerberos response time has been greater than or equal to m (ms) for t (300 ≤ t ≤ 604,800) seconds continuously</td>
+<td>Troubleshoot</td>
+<td>m=100, t=1800</td>
 <td>Severe</td>
 <td>Yes</td>
 <td>Yes</td>
