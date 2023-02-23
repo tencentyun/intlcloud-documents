@@ -9,7 +9,7 @@
 ## IPAMD 组件角色添加 EIP 接口访问权限
 
 1. 登录 [访问管理控制台](https://console.cloud.tencent.com/cam/policy)，选择左侧的**角色**。
-2. 在**访问管理控制台** > **[角色](https://console.cloud.tencent.com/cam/role)**中搜索 IPAMD 组件的相关角色 `IPAMDofTKE_QCSRole`，单击角色名称进入角色详情页面。
+2. 在**访问管理控制台** > **[角色](https://console.cloud.tencent.com/cam/role)** 中搜索 IPAMD 组件的相关角色 `IPAMDofTKE_QCSRole`，单击角色名称进入角色详情页面。
 3. 在权限设置中，单击**关联策略**。
 4. 在弹出的关联策略窗口中，在搜索框中搜索 `QcloudAccessForIPAMDRoleInQcloudAllocateEIP`, 然后勾选已创建的预设策略 `QcloudAccessForIPAMDRoleInQcloudAllocateEIP`。单击**确定**，完成为 IPAMD 组件角色添加 EIP 接口访问权限操作。该策略包含了 IPAMD 组件操作弹性公网 IP 所需的所有权限。
 
