@@ -150,14 +150,14 @@ rm -rf /etc/cloud
 rm -rf /usr/local/bin/cloud*
 ```
 3. 根据操作系统，执行如下命令：
-    - deb 系列，执行以下命令：
-    ```shellsession
-    dpkg -i *.deb
-    ```
-   - rpm 系列, 执行如下命令：
-   ```shellsession
-   rpm -ivh *.rpm
-   ```
+  - deb 系列，执行以下命令：
+  ```shellsession
+  dpkg -i *.deb
+  ```
+ - rpm 系列, 执行如下命令：
+ ```shellsession
+ rpm -ivh *.rpm
+ ```
 4. 查询版本是否正确安装
   ```shellsession
 cloud-init qcloud -v
@@ -192,14 +192,14 @@ tar -zxvf cloud-init-20.1.0011.tar.gz
 cd cloud-init
 ```
 3. 根据操作系统版本，安装 Python-pip。
-    - CentOS 6/7系列，执行以下命令：
-    ```shellsession
-    yum install python3-pip -y
-    ```
-    - Ubuntu 系列，执行以下命令：
-    ```shellsession
-    apt-get -y install python3-pip
-    ```
+  - CentOS 6/7系列，执行以下命令：
+```shellsession
+yum install python3-pip -y
+```
+  - Ubuntu 系列，执行以下命令：
+```shellsession
+apt-get -y install python3-pip
+```
 若在安装时，出现无法安装或找不到安装包的错误，可参考 [解决无法安装 Python-pip 问题](#updateSoftware) 进行处理。
 4. 执行以下命令，升级 pip。
 ```
@@ -214,19 +214,19 @@ pip3 install -r requirements.txt
 ```
 
 6. 根据操作系统版本，安装 cloud-utils 组件。
-    - CentOS 6系列，执行以下命令：
-    ```shellsession
-    yum install cloud-utils-growpart dracut-modules-growroot -y
-    dracut -f
-    ```
-    - CentOS 7系列，执行以下命令：
-    ```shellsession
-    yum install cloud-utils-growpart -y
-    ```
-    - Ubuntu 系列，执行以下命令：
-    ```shellsession
-    apt-get install cloud-guest-utils -y
-    ```
+  - CentOS 6系列，执行以下命令：
+```shellsession
+yum install cloud-utils-growpart dracut-modules-growroot -y
+dracut -f
+```
+  - CentOS 7系列，执行以下命令：
+```shellsession
+yum install cloud-utils-growpart -y
+```
+  - Ubuntu 系列，执行以下命令：
+```shellsession
+apt-get install cloud-guest-utils -y
+```
 
 7. 执行以下命令，安装 cloud-init。
 ```shellsession
@@ -236,16 +236,17 @@ python3 setup.py build
 python3 setup.py install --init-system systemd
 ```
 <dx-alert infotype="notice" title="">
---init-system 的可选参数有：(systemd, sysvinit,  sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse, upstart)  [default: None]。请根据当前操作系统使用的自启动服务管理方式，进行选择。若选择错误，cloud-init 服务会无法开机自启动。本文以 systemd 自启动服务管理为例。
+- --init-system 的可选参数有：(systemd, sysvinit, sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse, upstart) [default: None]。请根据当前操作系统使用的自启动服务管理方式，进行选择。若选择错误，cloud-init 服务会无法开机自启动。
+- centos6 及以下系统请选择 sysvinit，centos7 及以上系统请选择 systemd。本文以 systemd 自启动服务管理为例。
 </dx-alert>
 
-[](id:cloud-init)
 
+[](id:cloud-init)
 ### 修改 cloud-init 配置文件
 
 1. 根据不同操作系统，下载 cloud.cfg。
-    - [点此下载](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) Ubuntu 操作系统的 cloud.cfg。
-    - [点此下载](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) CentOS 操作系统的 cloud.cfg。
+  - [点此下载](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) Ubuntu 操作系统的 cloud.cfg。
+  - [点此下载](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) CentOS 操作系统的 cloud.cfg。
 2. 将 `/etc/cloud/cloud.cfg` 的内容替换为已下载的 cloud.cfg 文件内容。
 
 
@@ -359,8 +360,8 @@ apt-get/yum install cloud-init
 
 ### 修改 cloud-init 配置文件[](id:cloud-init)
 1. 根据不同操作系统，下载 cloud.cfg。
-    - [点此下载](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) Ubuntu 操作系统的 cloud.cfg。
-    - [点此下载](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) CentOS 操作系统的 cloud.cfg。
+ - [点此下载](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) Ubuntu 操作系统的 cloud.cfg。
+  - [点此下载](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) CentOS 操作系统的 cloud.cfg。
 2. 将 `/etc/cloud/cloud.cfg` 的内容替换为已下载的 cloud.cfg 文件内容。
 :::
 </dx-tabs>
@@ -418,11 +419,11 @@ yum install python3-pip -y
 ```shellsession
 apt-get clean all
 ```
-  2. 执行以下命令，更新软件包列表。
+  1. 执行以下命令，更新软件包列表。
 ```shellsession
 apt-get update -y
 ```
-  3. 执行以下命令，安装 Python-pip。
+  2. 执行以下命令，安装 Python-pip。
 ```shellsession
 apt-get -y install python3-pip
 ```

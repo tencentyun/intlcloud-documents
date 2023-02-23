@@ -7,11 +7,11 @@ Options to install cloud-init:
 - [Download the cloud-init source package](#ManualDown) 
 - [Use the cloud-init package from the software source](#SoftSources)
 
-## Must-knows
+## Must-Knows
 Before importing a Linux image, ensure that you have properly installed the cloud-init service in the image.
 
 ## Prerequisites
-A server that you want to install cloud-init can access the public network.
+Connect the server that you want to install cloud-init to the public network.
 
 ## How It Works
 <dx-tabs>
@@ -150,14 +150,14 @@ rm -rf /etc/cloud
 rm -rf /usr/local/bin/cloud*
 ```
 3. Run the following commands based on the OS.
-    - For deb type, run the following command.
-    ```shellsession
-    dpkg -i *.deb
-    ```
-   - For rpm type, run the following command.
-   ```shellsession
-   rpm -ivh *.rpm
-   ```
+  - For deb type, run the following command.
+  ```shellsession
+  dpkg -i *.deb
+  ```
+ - For rpm type, run the following command.
+ ```shellsession
+ rpm -ivh *.rpm
+ ```
 4. Check whether the version is installed properly.
   ```shellsession
 cloud-init qcloud -v
@@ -187,19 +187,19 @@ If you are using the Ubuntu operating system, run this command with the “root�
 ```shellsession
 tar -zxvf cloud-init-20.1.0011.tar.gz 
 ```
-2. Run the following command to enter the decompressed cloud-init installation package directory; that is, the cloud-init-20.1.0011 directory:
+2. Run the following command to enter the decompressed cloud-init installation package directory, that is, the cloud-init-20.1.0011 directory:
 ```shellsession
 cd cloud-init
 ```
 3. Install Python-pip according to the operating system version.
-    - For CentOS 6/7, run the following command:
-    ```shellsession
-    yum install python3-pip -y
-    ```
-    - For Ubuntu, run the following command:
-    ```shellsession
-    apt-get -y install python3-pip
-    ```
+  - For CentOS 6/7, run the following command:
+```shellsession
+yum install python3-pip -y
+```
+  - For Ubuntu, run the following command:
+```shellsession
+apt-get -y install python3-pip
+```
 During installation, if an error such as “failed to install” or “installation package not found” occurs, see [resolving Python-pip installation failure](#updateSoftware) to troubleshoot it.
 4. Run the following command to upgrade pip.
 ```
@@ -214,19 +214,19 @@ pip3 install -r requirements.txt
 ```
 
 6. Install the cloud-utils components corresponding to your OS version.
-    - For CentOS 6, run the following command:
-    ```shellsession
-    yum install cloud-utils-growpart dracut-modules-growroot -y
-    dracut -f
-    ```
-    - For CentOS 7, run the following command:
-    ```shellsession
-    yum install cloud-utils-growpart -y
-    ```
-    - For Ubuntu, run the following command:
-    ```shellsession
-    apt-get install cloud-guest-utils -y
-    ```
+  - For CentOS 6, run the following command:
+```shellsession
+yum install cloud-utils-growpart dracut-modules-growroot -y
+dracut -f
+```
+  - For CentOS 7, run the following command:
+```shellsession
+yum install cloud-utils-growpart -y
+```
+  - For Ubuntu, run the following command:
+```shellsession
+apt-get install cloud-guest-utils -y
+```
 
 7. Run the following command to install cloud-init:
 ```shellsession
@@ -236,16 +236,17 @@ python3 setup.py build
 python3 setup.py install --init-system systemd
 ```
 <dx-alert infotype="notice" title="">
-The `--init-system` can be followed by any of systemd, sysvinit, sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse or upstart [default: None]. Please configure parameters based on the auto-start service management method of the operating system. If incorrect parameters are configured, the cloud-init service cannot automatically start upon system startup. This document uses the systemd auto-start service management method as an example.
+- The `--init-system` can be followed by any of `systemd`, `sysvinit`, `sysvinit_deb`, `sysvinit_freebsd`, `sysvinit_openrc`, `sysvinit_suse`, `upstart`, or `None` (default). Choose one according to the auto-start service management method of the operating system. Otherwise the cloud-init service cannot automatically start upon system startup.
+- Select `sysvinit` for the CentOS 6 and earlier versions, and select `systemd` for CentOS 7 and later versions. This document uses systemd as an example.
 </dx-alert>
 
-[](id:cloud-init)
 
+[](id:cloud-init)
 ### Modifying the cloud-init configuration file
 
 1. Download cloud.cfg for your operating system.
-    - [Click here](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) to download cloud.cfg for Ubuntu.
-    - [Click here](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) to download cloud.cfg for CentOS.
+  - [Download cloud.cfg for Ubuntu](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg).
+  - [Download cloud.cfg for CentOS](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg).
 2. Replace the content of `/etc/cloud/cloud.cfg` with that of the downloaded cloud.cfg file.
 
 
@@ -359,8 +360,8 @@ By default, the cloud-init version installed by running `apt-get` or `yum` is th
 
 ### Modifying the cloud-init configuration file[](id:cloud-init)
 1. Download cloud.cfg for your operating system.
-    - [Click here](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) to download cloud.cfg for Ubuntu.
-    - [Click here](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) to download cloud.cfg for CentOS.
+ - [Download cloud.cfg for Ubuntu](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg).
+  - [Download cloud.cfg for CentOS](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg).
 2. Replace the content of `/etc/cloud/cloud.cfg` with that of the downloaded cloud.cfg file.
 :::
 </dx-tabs>
@@ -391,7 +392,7 @@ rm -rf /var/lib/cloud
 ```shellsession
 rm -rf /etc/network/interfaces.d/50-cloud-init.cfg
 ```
-4. For Ubuntu or Debian, replace the content of `/etc/network/interfaces` with the following:
+4. For Ubuntu or Debian, modify the content of `/etc/network/interfaces` to the following:
 ```shellsession
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
@@ -408,13 +409,13 @@ During installation, if an error such as “failed to install” or “installat
 ```shellsession
 yum install epel-release -y
 ```
-  iii. Run the following command to install Python-pip.
+  2. Run the following command to install Python-pip.
 ```shellsession
 yum install python3-pip -y
 ```
 :::
 ::: Ubuntu:
-  i. Run the following command to clear the cache.
+  1. Run the following command to clear the cache.
 ```shellsession
 apt-get clean all
 ```
@@ -422,7 +423,7 @@ apt-get clean all
 ```shellsession
 apt-get update -y
 ```
-  3. Execute the following command to install Python-pip.
+  3. Run the following command to install Python-pip.
 ```shellsession
 apt-get -y install python3-pip
 ```
