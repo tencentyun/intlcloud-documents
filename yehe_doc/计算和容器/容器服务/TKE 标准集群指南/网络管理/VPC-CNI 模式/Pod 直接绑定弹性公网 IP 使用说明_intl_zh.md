@@ -191,7 +191,7 @@ kubectl delete eipc <podname> -n <namespace>
 
 #### tke-eni-ipamd 组件版本 < v3.5.0 或组件管理中无 eniipamd 组件
 
-1. 修改现存的 **tke-eni-ipamd deployment：`kubectl edit deploy tke-eni-ipamd -n kube-system`**。
+1. 修改现存的 **tke-eni-ipamd deployment：`kubectl edit deploy tke-eni-ipamd -n kube-system`** 。
 2. 执行以下命令，在 `spec.template.spec.containers[0].args` 中加入启动参数：
 ```yaml
 - --enable-ownerref
