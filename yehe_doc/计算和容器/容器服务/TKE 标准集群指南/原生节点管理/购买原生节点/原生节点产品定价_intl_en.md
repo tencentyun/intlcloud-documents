@@ -6,7 +6,7 @@
 
 TKE native nodes support multiple types of CVM instances. You can select appropriate instances to deploy based on your application scale and business characteristics. TKE charges resources (including CPU, memory, GPU, and system disk resources) consumed by native node instances according to the instance type and resource specifications.
 
-**Billing formula: Fees = Unit price of the native node instance resource configuration * Running time**
+**Billing formula: Fees** = **Unit price of the native node instance resource configuration** * **Running time**
 
 |    Billing Item      | Description                                                         |
 | -------- | ------------------------------------------------------------ |
