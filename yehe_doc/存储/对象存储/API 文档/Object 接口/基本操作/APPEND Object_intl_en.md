@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
 
 This API is used to upload an object to a bucket in the form of parts. If an object is uploaded using the `APPEND Object` API, it will be automatically determined as "appendable", while objects uploaded using other APIs are determined as "normal" (if you upload an object that already exists and the object type is appendable, the object type will be overwritten to "normal"). You can call the [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) or [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) API to obtain the `x-cos-object-type` header to determine the object type. `APPEND Object` is available only for appendable objects.
 
@@ -8,6 +8,7 @@ The default maximum size of each object part is 5 GB (no minimum size limit), an
 >- Appendable objects do not support replication, versioning, or lifecycle management.
 >- The `APPEND` API does not verify the storage class carried in the request. The storage class will subject to that of the existing object.
 >- The `APPEND Object` API is not available for the intelligent tiering feature.
+>- Buckets with multi-AZ enabled do not support the `APPEND Object` API.
 
 ## Request
 
@@ -104,13 +105,13 @@ The response body returned is empty.
 
 #### Error codes
 
-1. If you perform an append operation on a non-appendable object, the "409 Conflict" error will be returned. The error message is as follows:
+- If you perform an append operation on a non-appendable object, the "409 Conflict" error will be returned. The error message is as follows:
 The operation is not valid for the current state of the object.
-2. If the request does not contain the `position` parameter, the "400 Bad Request" error will be returned. The error message is InvalidArgument.
-3. If the request does not contain the `Content-Length` header, the "411 Length Required" error will be returned. The error message is as follows:
+- If the request does not contain the `position` parameter, the "400 Bad Request" error will be returned. The error message is InvalidArgument.
+- If the request does not contain the `Content-Length` header, the "411 Length Required" error will be returned. The error message is as follows:
 You must provide the Content-Length HTTP header.
 
-For more information about COS error codes or the complete list of error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+For more information about COS error codes or the complete list of error codes, see Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Examples
 

@@ -88,14 +88,14 @@ sh install-libpoco.sh
 ```shell
 cd ${cos-cpp-sdk} 
 vim demo/cos_demo.cpp  # Modify the bucket name and testable code in the demo.
-vim CMakeLists.txt # Set “BUILD_DEMO” to “ON” in “CMakeLists.txt” to start compiling the demo.
+vim CMakeLists.txt # Set "BUILD_DEMO" to "ON" in "CMakeLists.txt" in the root directory to start compiling the demo.
 cd build && make # Compile the demo.
-ls bin/cos_demo # The generated executable is in the “bin” directory.
+ls bin/cos_demo # The generated executable file is in the "bin" directory.
 vim bin/config.json # Modify the key and the region.
 cd bin && ./cos_demo # Run the demo.
 ```
 5. Use the SDK. 
-The compiled libraries can be found in the `build/lib` directory. The static library name is `libcossdk.a` and the dynamic library name is `libcossdk-shared.so`. During actual use, copy the `include` directory to the `include` directory of your project.
+The compiled libraries can be found in the `build/lib` directory. The static library name is `libcossdk.a` and the dynamic library name is `libcossdk-shared.so`. During actual use, copy the libraries to your project and copy the `include` directory to the `include` directory of your project.
 
 
 ### Compiling Windows SDK
@@ -143,7 +143,7 @@ The POCO libraries are in the `third_party/lib/macOS/poco` directory. You can in
 >
 Modify the demo code and compile it. The generated `cos_demo` is in the `bin` directory. Copy `cos-cpp-sdk-v5/demo/config.json` to the `bin` directory and modify `bin/config.json`. Then you can run `cos_demo`.
 5. Use the SDK. 
-The compiled libraries can be found in the `build/lib` directory. The static library is named `libcossdk.a`. During actual use, copy the library to your project and copy the `include` directory to the `include` directory of your project.
+The compiled libraries can be found in the `build/lib` directory. The static library is named `libcossdk.a`, and the dynamic library is named `libcossdk-shared.dylib`. During actual use, copy the libraries to your project and copy the `include` directory to the `include` directory of your project.
 
 ### Common compilation errors
 
@@ -189,18 +189,49 @@ The section below describes how to use the COS C++ SDK to perform basic operatio
 ### Initialization
 
 >!
->- We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+>- We recommend you use a sub-account key and environment variables to call the SDK for security purposes. When authorizing a sub-account, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
 >- If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
 
+### Accessing COS using a temporary key
 
+To access COS using a temporary key, see the code below:
+
+```cpp
+#include "cos_api.h"
+#include "cos_sys_config.h"
+#include "cos_defines.h"
+int main(int argc, char *argv[]) {
+    // Using the configuration file for initialization is not recommended because secret_id and secret_key of a temporary key will change.
+    qcloud_cos::CosConfig config(appid, "secret_id", "secret_key", "region");
+    // secret_id and secret_key of a temporary key are required. For details on how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+    config.SetTmpToken("xxx");
+    qcloud_cos::CosAPI cos(config);
+}
+```
+
+### Accessing COS using a permanent key (not recommended)
+
+To access COS using a permanent key, see the code below:
+
+```cpp
+#include "cos_api.h"
+#include "cos_sys_config.h"
+#include "cos_defines.h"
+int main(int argc, char *argv[]) {
+    qcloud_cos::CosConfig config("./config.json");  // Use the configuration file for initialization
+    // Or use constructor parameters for initialization directly
+    //qcloud_cos::CosConfig config(appid, "secret_id", "secret_key", "region");  // Permanent key
+    qcloud_cos::CosAPI cos(config);
+}
+```
 
 Fields in the configuration file are described as follows:
 
 ```
 {
-"SecretId":"********************************", // Replace the value with your SecretId, which can be viewed at https://console.cloud.tencent.com/cam/capi
-"SecretKey":"*******************************", // Replace the value with your SecretKey, which can be viewed at https://console.cloud.tencent.com/cam/capi
-"Region":"ap-guangzhou",                // Bucket region. Replace it with your bucket region, which can be viewed on the overview page in the COS console at https://console.cloud.tencent.com/cos5/bucket/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+"SecretId":"********************************", // Replace `sercret_id` with your `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+"SecretKey":"*******************************", // Replace `sercret_key` with your `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+"Region":"ap-guangzhou",                // Bucket region. Replace it with your bucket region, which can be viewed on the overview page in the COS console at https://console.cloud.tencent.com/cos5/bucket/. For more information about regions, visit https://cloud.tencent.com/document/product/436/6224.
 "SignExpiredTime":360,              // Signature expiration time, in seconds
 "ConnectTimeoutInms":6000,          // Connection timeout, in milliseconds
 "ReceiveTimeoutInms":60000,         // Receive timeout, in milliseconds
@@ -215,23 +246,7 @@ Fields in the configuration file are described as follows:
 "IsDomainSameToHost":false,         // Whether there is a dedicated host
 "DestDomain":"",                    // Dedicated host
 "IsUseIntranet":false,              // Whether a specific IP and port number are used
-"IntranetAddr":""                   // IP and port number, such as “127.0.0.1:80”
-}
-```
-
-### Accessing COS using a temporary key
-
-To access COS using a temporary key, see the code below:
-
-```cpp
-#include "cos_api.h"
-#include "cos_sys_config.h"
-#include "cos_defines.h"
-int main(int argc, char *argv[]) {
-    qcloud_cos::CosConfig config("./config.json");
-    // Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://intl.cloud.tencent.com/document/product/436/14048
-    config.SetTmpToken("xxx");
-    qcloud_cos::CosAPI cos(config);
+"IntranetAddr":""                   // IP and port number, such as "127.0.0.1:80"
 }
 ```
 
@@ -269,7 +284,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct the PUT Bucket request
-    std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+    std::string bucket_name = "examplebucket-1250000000"; // Replace it with your bucket name, which is in the format of BucketName-APPID (APPID is required). It can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
     qcloud_cos::PutBucketReq req(bucket_name);
     qcloud_cos::PutBucketResp resp;
     
@@ -348,7 +363,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct a request to upload a file
-    std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+    std::string bucket_name = "examplebucket-1250000000"; // Replace it with your bucket name, which is in the format of BucketName-APPID (APPID is required). It can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
     std::string object_name = "exampleobject"; // `exampleobject` is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`. Replace it with your object name.
     qcloud_cos::PutObjectByFileReq req(bucket_name, object_name, "/path/to/local/file"); // Replace the value with your file path.
     //req.SetXCosStorageClass("STANDARD_IA"); // `STANDARD_IA` is the default value. You can call the `Set` method to set the storage class.
@@ -361,7 +376,7 @@ int main(int argc, char *argv[]) {
     if (result.IsSucc()) {
         // File uploaded successfully
     } else {
-        // Failed to upload the file. You can call the CosResult member functions to output the error information such as the requestID.
+        // Failed to upload the file. You can call the `CosResult` member functions to output the error information such as the requestID.
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -385,7 +400,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct a request to query the object list
-    std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+    std::string bucket_name = "examplebucket-1250000000"; // Replace it with your bucket name, which is in the format of BucketName-APPID (APPID is required). It can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
     qcloud_cos::GetBucketReq req(bucket_name);
     qcloud_cos::GetBucketResp resp;
     qcloud_cos::CosResult result = cos.GetBucket(req, &resp);   
@@ -425,7 +440,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct a request to download the object
-    std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+    std::string bucket_name = "examplebucket-1250000000"; // Replace it with your bucket name, which is in the format of BucketName-APPID (APPID is required). It can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
     std::string object_name = "exampleobject"; // `exampleobject` is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`. Replace it with your object name.
     std::string local_path = "/tmp/exampleobject";
     // appid, bucketname, object, and a local path (including filename) are required for the request.
@@ -463,7 +478,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosAPI cos(config);
     
     // 2. Construct a request to delete the object
-    std::string bucket_name = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID (APPID is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket. Replace it with your bucket name.
+    std::string bucket_name = "examplebucket-1250000000"; // Replace it with your bucket name, which is in the format of BucketName-APPID (APPID is required). It can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
     std::string object_name = "exampleobject"; // `exampleobject` is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`. Replace it with your object name.
     // 3. Call the object deleting API
 	qcloud_cos::DeleteObjectReq req(bucket_name, object_name);

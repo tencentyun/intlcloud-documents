@@ -68,9 +68,9 @@ using COSXML.CosException;
 
 Before making any COS requests, always instantiate the following 3 objects: `CosXmlConfig`, `QCloudCredentialProvider`, and `CosXmlServer`.
 
-- `CosXmlConfig` provides an API to configure the SDK.
+- `CosXmlConfig` provides an API to configure SDK.
 - `QCloudCredentialProvider` provides an API to set the key information.
-- `CosXmlServer` provides APIs for COS operations.
+- `CosXmlServer` provides APIs to perform operations on COS API services.
 
 >? The initialization sample below uses a temporary key. For more information about how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 >
@@ -90,19 +90,9 @@ CosXmlConfig config = new CosXmlConfig.Builder()
 
 ### 2. Provide access credentials
 
-The SDK supports three types of access credentials: permanent keys, rotating temporary keys, and unchanging temporary keys.
+The SDK supports three types of access credentials: updated temporary keys, unchanging temporary keys, and permanent keys.
 
-**Type 1: permanent key**
-
-```cs
-string secretId = "SECRET_ID"; //“SecretId of your TencentCloud API key”;
-string secretKey = "SECRET_KEY"; //“SecretKey of your TencentCloud API key”;
-long durationSecond = 600;          // Validity period of each request signature in seconds
-QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProvider(
-  secretId, secretKey, durationSecond);
-```
-
-**Type 2: updated temporary key**
+**Type 1: updated temporary key**
 
 Since temporary keys are short term, you can obtain new ones using the following method:
 
@@ -118,9 +108,9 @@ public class CustomQCloudCredentialProvider : DefaultSessionQCloudCredentialProv
   public override void Refresh()
   {
     //... First, request a temporary key from Tencent Cloud.
-    string tmpSecretId = "SECRET_ID"; // “SecretId of the temporary key”;
-    string tmpSecretKey = "SECRET_KEY"; // “SecretKey of the temporary key”;
-    string tmpToken = "COS_TOKEN"; // “Token of the temporary key”;
+    string tmpSecretId = "SECRET_ID"; // SecretId of a temporary key. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+    string tmpSecretKey = "SECRET_KEY"; // SecretKey of a temporary key. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+    string tmpToken = "COS_TOKEN"; // Token of a temporary key. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
     long tmpStartTime = 1546860702;// Start time in seconds of the temporary key’s validity period
     long tmpExpireTime = 1546862502;// End time in seconds of the temporary key’s validity period
     // Call the API to update the key
@@ -132,7 +122,7 @@ public class CustomQCloudCredentialProvider : DefaultSessionQCloudCredentialProv
 QCloudCredentialProvider cosCredentialProvider = new CustomQCloudCredentialProvider();
 ```
 
-**Type 3: unchanging temporary key (not recommended)**
+**Type 2: unchanging temporary key (not recommended)**
 
 >! This method is not recommended as a request may fail if the temporary key has expired at the time of request.
 >
@@ -144,6 +134,16 @@ string tmpToken = "COS_TOKEN"; // “Token of the temporary key”;
 long tmpExpireTime = 1546862502;// End time in seconds of the temporary key’s validity period
 QCloudCredentialProvider cosCredentialProvider = new DefaultSessionQCloudCredentialProvider(
   tmpSecretId, tmpSecretKey, tmpExpireTime, tmpToken);
+```
+
+**Type 3: permanent key (not recommended)**
+
+```cs
+string secretId = Environment.GetEnvironmentVariable("SECRET_ID"); // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+string secretKey = Environment.GetEnvironmentVariable("SECRET_KEY"); // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+long durationSecond = 600;          // Validity period of each request signature in seconds
+QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProvider(
+  secretId, secretKey, durationSecond);
 ```
 
 ### 3. Initialize CosXmlServer

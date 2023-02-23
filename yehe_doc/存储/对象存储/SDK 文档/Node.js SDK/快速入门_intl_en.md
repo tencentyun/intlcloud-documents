@@ -39,23 +39,7 @@ npm i cos-nodejs-sdk-v5 --save
 >- If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
 
 
-
-#### Initializing with permanent key
-
-First, log in to the CAM console, and get your `SecretId` and `SecretKey` from the [Access Key](https://console.cloud.tencent.com/cam/capi) page.
-Replace `SecretId`, `SecretKey`, `bucket`, and `region` with the actual values in your development environment. To test file upload, see the following sample code.
-
-[//]: # ".cssg-snippet-global-init"
-```js
-// Log in to https://console.cloud.tencent.com/cam/capi to check and manage the SecretId and SecretKey of your project.
-var COS = require('cos-nodejs-sdk-v5');
-var cos = new COS({
-    SecretId: 'SECRETID',
-    SecretKey: 'SECRETKEY'
-});
-```
-
-#### Initializing with temporary key
+#### Using a temporary key for initialization (recommended)
 
 For more information on how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048). The SDK for Node.js supports initialization by passing in a temporary key as shown in the sample code below:
 
@@ -89,6 +73,22 @@ var cos = new COS({
 });
 ```
 
+#### Using a permanent key for initialization (not recommended)
+
+When using a permanent key for initialization, store the key properly to prevent leakage.
+First, log in to the CAM console, and get your `SecretId` and `SecretKey` from the [Access Key](https://console.cloud.tencent.com/cam/capi) page.
+Replace `SecretId`, `SecretKey`, `bucket`, and `region` with the actual values in your development environment. To test file upload, see the following sample code.
+
+[//]: # ".cssg-snippet-global-init"
+```js
+// Log in to https://console.cloud.tencent.com/cam/capi to check and manage the SecretId and SecretKey of your project.
+var COS = require('cos-nodejs-sdk-v5');
+var cos = new COS({
+    SecretId: process.env.SecretId, // User `SecretId`. We recommend you obtain it from the environment variable. In addition, we recommended you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+    SecretKey: process.env.SecretKey, // User `SecretKey`. We recommend you obtain it from the environment variable. In addition, we recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+});
+```
+
 Below are some common APIs. For more detailed initialization methods, see the [demo](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/demo/demo.js).
 
 ### Configuration item
@@ -101,7 +101,7 @@ Below are some common APIs. For more detailed initialization methods, see the [d
 | SecretKey | User SecretKey | String | Yes |             
 | FileParallelLimit | Number of concurrent file uploads in the same instance. Default value: 3 | Number | No |
 | ChunkParallelLimit | Number of concurrent part uploads for the same uploaded file. Default value: 3 | Number | No |
-| ChunkRetryTimes | Number of retries upon multipart upload failure. Default value: 2 (a request will be made 3 times in total, including the initial one) | Number | No|
+| ChunkRetryTimes | Number of retries for multipart upload failure. Default value: 2 (a request will be made 3 time in total, including the initial one) | Number | No|
 | ChunkSize | Part size in the multipart upload in bytes. Default value: 1048576 (1 MB) | Number | No |
 | SliceSize | When files are uploaded in batches using `uploadFiles`, if the file size is greater than the value of this parameter (measured in bytes), multipart upload is used; otherwise, simple upload is used. Default value: 1048576 (1 MB) | Number | No |
 | CopyChunkParallelLimit | Number of concurrent part uploads for the same multipart copy operation. Default value: 20 | Number | No |
@@ -302,7 +302,7 @@ This API is used to upload small files. For large files, use the multipart uploa
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'COS_REGION',    /* Required */
+    Region: 'COS_REGION', /* Required */
     Key: 'exampleobject', /* Required */
     StorageClass: 'STANDARD',
     Body: fs.createReadStream('./exampleobject'), // Uploading file object
@@ -333,7 +333,7 @@ cos.getBucket({
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'COS_REGION',    /* Required */
+    Region: 'COS_REGION', /* Required */
     Key: 'exampleobject', /* Required */
     Output: fs.createWriteStream('./exampleobject'),
 }, function(err, data) {
@@ -347,7 +347,7 @@ cos.getObject({
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'COS_REGION',    /* Required */
+    Region: 'COS_REGION', /* Required */
     Key: 'exampleobject'       /* Required */
 }, function(err, data) {
     console.log(err || data);

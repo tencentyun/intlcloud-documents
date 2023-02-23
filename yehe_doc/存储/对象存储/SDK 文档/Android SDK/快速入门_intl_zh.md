@@ -3,18 +3,19 @@
 - SDK 源码下载请参见 [XML Android SDK](https://github.com/tencentyun/qcloud-sdk-android)。
 - 示例 Demo 请参见 [XML Android SDK Demo](https://github.com/tencentyun/qcloud-sdk-android-samples)。
 - SDK 接口与参数文档请参见 [SDK API 参考](https://cos-android-sdk-doc-1253960454.file.myqcloud.com)。
-- SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/Android)。
+- SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg)。
 - SDK 更新日志请参见 [ChangeLog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md)。
 - SDK 常见问题请参见：[Android SDK 常见问题](https://intl.cloud.tencent.com/document/product/436/38955)。
 
 >? 如果您在使用 XML 版本 SDK 时遇到函数或方法不存在等错误，请先将 XML 版本 SDK 升级到最新版再重试。
+>
 
 
 ## 准备工作
 
 1. 您需要一个 Android 应用，这个应用可以是您现有的工程，也可以是您新建的一个空的工程。
 2. 请确保您的 Android 应用目标为 API 级别 15 (Ice Cream Sandwich) 或更高版本。
-3. 您需要一个可以获取腾讯云临时密钥的远程地址，关于临时密钥的有关说明请参考 [移动应用直传实践](https://intl.cloud.tencent.com/document/product/436/30618)。
+3. 您需要一个可以获取腾讯云临时密钥的远程地址，关于临时密钥的有关说明请参见 [移动应用直传实践](https://intl.cloud.tencent.com/document/product/436/30618)。
 
 ## 第一步：安装 SDK
 
@@ -151,6 +152,11 @@ SDK 需要网络权限，用于与 COS 服务器进行通信，请在应用模�
 
 ## 第三步：开始使用
 
+>!
+> - 建议用户 [使用临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 调用 SDK，通过临时授权的方式进一步提高 SDK 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+> - 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
+
+
 ### 1. 实现获取临时密钥
 
 实现一个 `BasicLifecycleCredentialProvider` 的子类，实现请求临时密钥并返回结果的过程。
@@ -257,7 +263,7 @@ CosXmlService cosXmlService = new CosXmlService(context,
 
 SDK 支持上传本地文件、二进制数据、Uri 以及输入流。下面以上传本地文件为例：
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```java
 // 初始化 TransferConfig，这里使用默认配置，如果需要定制，请参考 SDK 接口文档
 TransferConfig transferConfig = new TransferConfig.Builder().build();
@@ -265,7 +271,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
+// 存储桶名称，由 bucketname-appid 组成，appid 必须填入，可以在 COS 控制台查看存储桶名称。 https://console.cloud.tencent.com/cos5/bucket
 String bucket = "examplebucket-1250000000";
 String cosPath = "exampleobject"; //对象在存储桶中的位置标识符，即称对象键
 String srcPath = new File(context.getCacheDir(), "exampleobject")
@@ -328,7 +334,7 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 
 ### 下载对象
 
-[//]: # (.cssg-snippet-transfer-download-object)
+[//]: # ".cssg-snippet-transfer-download-object"
 ```java
 // 高级下载接口支持断点续传，所以会在下载前先发起 HEAD 请求获取文件信息。
 // 如果您使用的是临时密钥或者使用子账号访问，请确保权限列表中包含 HeadObject 的权限。
@@ -394,4 +400,3 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 >?
 >- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java) 查看。
 >- 高级下载接口支持断点续传，所以会在下载前先发起 HEAD 请求获取文件信息。如果您使用的是临时密钥或者使用子账号访问，请确保权限列表中包含 HeadObject 的权限。
->

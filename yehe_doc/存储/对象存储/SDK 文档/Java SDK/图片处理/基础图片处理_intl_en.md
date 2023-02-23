@@ -1,6 +1,6 @@
 ## Overview
 
-COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/product/1045) (CI), a one-stop professional multimedia solution that offers the image processing features outlined below. For more information, see [Image Processing Overview](https://intl.cloud.tencent.com/document/product/436/35280).
+COS has integrated [Cloud Infinite](https://www.tencentcloud.com/document/product/1045) (CI), a one-stop professional multimedia solution that offers the image processing features outlined below. For more information, see [Image Processing Overview](https://intl.cloud.tencent.com/document/product/436/35280).
 
 <table>
    <tr>
@@ -58,7 +58,9 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
 
 ## Basic Image Processing
 
-Samples of basic image processing are as follows:
+When performing basic image processing, you need to specify the image processing rule. For more information, see [Image Processing Overview](https://intl.cloud.tencent.com/document/product/436/35280).
+For all the code samples, visit [GitHub](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/ci/BasicImageProcessing.java).
+Below are some examples:
 
 ### Scaling
 
@@ -96,7 +98,28 @@ getObj.putCustomQueryParameter(rule, null);
 cosClient.getObject(getObj, new File("qrcode-rotate.png"));
 ```
 
+### Obtaining average hue
+```java
+String bucketName = "examplebucket-1250000000";
+String key = "qrcode.png";
+GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
+// Obtaining image's average hue
+String rule = "imageAve";
+COSObject object = cosClient.getObject(getObj);
+COSObjectInputStream objectContent = object.getObjectContent();
+```
 
+### Obtaining basic image information
+```java
+String bucketName = "examplebucket-1250000000";
+String key = "qrcode.png";
+GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
+// Basic image information
+String rule = "imageInfo";
+getObj.putCustomQueryParameter(rule, null);
+COSObject object = cosClient.getObject(getObj);
+COSObjectInputStream objectContent = object.getObjectContent();
+```
 
 
 

@@ -4,9 +4,9 @@
 - Download the source code for the COS XML PHP SDK [here](https://github.com/tencentyun/cos-php-sdk-v5/releases).
 - Download the XML PHP SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-php-sdk-v5/latest/cos-php-sdk-v5.zip).
 - Download the PHP demo [here](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample).
-- For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/php).
-- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/CHANGELOG.md).
-- For SDK FAQs, please see [PHP SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40543).
+- For the complete sample code, see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/php).
+- For the SDK changelog, see [Changelog](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/CHANGELOG.md).
+- For SDK FAQs, see [PHP SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40543).
 
 
 >? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
@@ -47,7 +47,7 @@ It is recommended to install cos-php-sdk-v5 with Composer, a PHP dependency mana
 
 **Directions**
 
-1. Start the terminal.
+1. Open the terminal.
 2. Run the following command to download Composer:
 ```shell
 curl -sS https://getcomposer.org/installer | php
@@ -65,7 +65,7 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 ```
 This command will create a `vendor` folder in the current directory. The folder will contain the SDK's dependent library and an `autoload.php` script file for future calls in your project.
->! Composer will download Guzzle 6 or Guzzle 7 according to the PHP version. Guzzle 7 supports the Laravel 8 framework. If the PHP version is 7.2.5 or later, Guzzle 7 will be downloaded by default. Otherwise, Guzzle 6 will be downloaded.
+>! Composer will download Guzzle 6 or Guzzle 7 according to the PHP version. Guzzle 7 supports the Laravel 8 framework. If the PHP version is or later than 7.2.5, Guzzle 7 will be downloaded by default. Otherwise, Guzzle 6 will be downloaded.
 >
 5. Run the `autoloader` script to call cos-php-sdk-v5 and import the `autoload.php` file into your code.
 ```php
@@ -101,25 +101,46 @@ Install the SDK using the source code as instructed below:
 ```php
 require '/path/to/sdk/vendor/autoload.php';
 ```
->! `Source code` is the default GitHub-compressed code package, which does not include the `vendor` directory. Note that you should download the release (`cos-sdk-v5-x.tar.gz`) rather than the Source package, and should not clone the entire repository (otherwise, `index.php` and the vendor package will be missing).
+>! `Source code` is the default GitHub-compressed code package, which does not include the `vendor` directory. Note that you should download the release package (`cos-sdk-v5-x.tar.gz`) rather than the Source package, and should not clone the entire repository (otherwise, `index.php` and the vendor package will be missing).
 >
 
 ## Getting Started
-The following describes how to use the PHP SDK of COS to perform basic operations, such as initializing the client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object. For more information about the parameters involved in the samples, please see [Bucket Operations](https://intl.cloud.tencent.com/document/product/436/31470) and [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542).
+The following describes how to use the PHP SDK of COS to perform basic operations, such as initializing the client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object. For more information about the parameters involved in the samples, see [Bucket Operations](https://www.tencentcloud.com/document/product/436/48242) and [Object Operations](https://www.tencentcloud.com/document/product/436/43310).
 
 ### Initialization
+>!
+>- We recommend you use a sub-account key and environment variables to call the SDK for security purposes. When authorizing a sub-account, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+>- If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
+If you initialize a client with a [temporary key](https://intl.cloud.tencent.com/document/product/436/14048), create an instance in the following way.
+
+[//]: # ".cssg-snippet-global-init-sts"
+```php
+$tmpSecretId = "TmpSecretId"; //SecretId of a temporary key. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+$tmpSecretKey = "TmpSecretKey"; //SecretKey of a temporary key. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048.
+$tmpToken = "TmpToken"; //Token of a temporary key. For more information about how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
+$region = "ap-beijing"; //Replace it with the actual `region`, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', //Protocol header, which is http by default
+        'credentials'=> array(
+            'secretId'  => $tmpSecretId,
+            'secretKey' => $tmpSecretKey,
+            'token' => $tmpToken)));
+```
 If you use a permanent key to initialize a `COSClient`, you need to get your `SecretId` and `SecretKey` on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page in the CAM console. A permanent key is suitable for most application scenarios.
 
 [//]: # ".cssg-snippet-global-init"
 ```php
-// You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
-$secretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-$secretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-$region = "ap-beijing"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
+// You can log in to the CAM console to view and manage the `SecretId` and `SecretKey` of your project.
+$secretId = getenv('COS_SECRET_ID'); // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+$secretKey = getenv('COS_SECRET_KEY'); // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+$region = "ap-beijing"; //User `region`, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
-        'schema' => 'https', // Protocol header, which is http by default
+        'schema' => 'https', // Protocol, which is `http` by default
         'credentials'=> array(
             'secretId'  => $secretId ,
             'secretKey' => $secretKey)));
@@ -127,24 +148,6 @@ $cosClient = new Qcloud\Cos\Client(
 
 >! If no HTTPS certificate is configured, you need to delete the `schema` parameter or enter `'schema' => 'http'`. If you enter `https`, a certificate problem will be reported. If you want to configure an HTTPS certificate, see [PHP SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40543).
 >
-
-If you initialize a client with a [temporary key](https://intl.cloud.tencent.com/document/product/436/14048), create an instance in the following way.
-
-[//]: # ".cssg-snippet-global-init-sts"
-```php
-$tmpSecretId = "SECRETID"; //Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-$tmpSecretKey = "SECRETKEY"; //Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-$tmpToken = "COS_TOKEN"; //Token is required for temporary keys. For more information about how to generate and use a temporary key, see https://intl.cloud.tencent.com/document/product/436/14048
-$region = "COS_REGION"; //Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-$cosClient = new Qcloud\Cos\Client(
-    array(
-        'region' => $region,
-        'schema' => 'https', // Protocol header, which is http by default
-        'credentials'=> array(
-            'secretId'  => $tmpSecretId,
-            'secretKey' => $tmpSecretKey,
-            'token' => $tmpToken)));
-```
 
 ### Creating a bucket
 
@@ -180,7 +183,7 @@ try {
 >!
 > - Upload a file (up to 5 GB) using the putObject API.
 > - Upload a file using the Upload API. The Upload API is a composition API that uses simple upload for small files and uses multipart upload for large files.
-> - For parameter descriptions, please see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542).
+> - For parameter descriptions, see [Object Operations](https://www.tencentcloud.com/document/product/436/43310).
 > 
 
 [//]: # ".cssg-snippet-put-object-comp"
@@ -278,7 +281,7 @@ try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $prefix = ''; // Prefix of the objects to be listed
     $marker = ''; // End marker in the last list
-    while (true){
+    while (true) {
         $result = $cosClient->listObjects(array(
             'Bucket' => $bucket,
             'Marker' => $marker,

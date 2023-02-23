@@ -31,9 +31,11 @@
 You can install the SDK in the following ways:
 
 #### Importing via script
->? Click [here](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/dist/cos-js-sdk-v5.min.js) to download the latest cos-js-sdk-v5.min.js.
+>? We recommend you download the SDK to local and then import it. You can download the latest SDK file "cos-js-sdk-v5.min.js" at [URL 1](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/dist/cos-js-sdk-v5.min.js) or [URL 2](https://cdn.jsdelivr.net/npm/cos-js-sdk-v5/dist/cos-js-sdk-v5.min.js).
+>
 ```html
-<script src="https://cdn.jsdelivr.net/npm/cos-js-sdk-v5/dist/cos-js-sdk-v5.min.js"></script>
+<!--src is a local path. Set it based on the directory structure of your project.-->
+<script src="../dist/cos-js-sdk-v5.min.js"></script>
 ```
 
 When the script tag references the SDK, the SDK occupies the global variable name COS, and its constructor can create an SDK instance.
@@ -44,6 +46,10 @@ Install the SDK dependencies by running `npm i cos-js-sdk-v5 --save`, which supp
 
 ```js
 var COS = require('cos-js-sdk-v5');
+
+// or
+
+import COS from 'cos-js-sdk-v5';
 ```
 
 ## Getting Started
@@ -261,7 +267,7 @@ var cos = new COS({
 | SecretKey | User's `SecretKey`, which we recommend to be used only for frontend debugging and should not be disclosed | String | No |
 | FileParallelLimit | Number of concurrent file uploads in the same instance. Default value: 3 | Number | No |
 | ChunkParallelLimit | Number of concurrent part uploads for the same uploaded file. Default value: 3 | Number | No |
-| ChunkRetryTimes | Number of retries upon multipart upload failure. Default value: 2 (a request will be made 3 times in total, including the initial one) | Number | No|
+| ChunkRetryTimes | Number of retries for multipart upload failure. Default value: 2 (a request will be made 3 time in total, including the initial one) | Number | No|
 | ChunkSize | Part size in the multipart upload in bytes. Default value: 1048576 (1 MB) | Number | No |
 | SliceSize | When files are uploaded in batches using `uploadFiles`, if the file size is greater than the value of this parameter (measured in bytes), multipart upload is used; otherwise, simple upload is used. Default value: 1048576 (1 MB) | Number | No |
 | CopyChunkParallelLimit | Number of concurrent part uploads for the same multipart copy operation. Default value: 20 | Number | No |
@@ -400,7 +406,7 @@ var uploadResult = await upload();
 if (uploadResult.err) {
   console.log('Upload failed', uploadResult.err);
 } else {
-  console.log('Uploaded successfully', uploadResult.data);
+  console.log('Uploaded successfully', fuploadResult.data);
 }
 ```
 
@@ -409,7 +415,7 @@ if (uploadResult.err) {
 
 ### Tips
 
-In most cases, you only need to create a COS SDK instance, and use it directly where SDK methods need to be called.  
+In most cases, you only need to create a COS SDK instance, and use it directly where SDK methods need to be called.
 
 ```js
 /* Sample Vue project */
@@ -437,7 +443,7 @@ export default cos;
         cos.uploadFile({
           Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
           Region: 'COS_REGION',     /* Bucket region. Required */
-          Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
+          Key: '1.jpg',  /* Object key stored in the bucket (for example, `1.jpg` and `a/b/test.txt`). Required. */
           Body: file, // Upload the file object
           SliceSize: 1024 * 1024 * 5,     /* Threshold (5 MB in this example) to trigger multipart upload. If the file size is less than 5 MB, simple upload is used. This parameter is optional. You can adjust it as needed. */
         });
@@ -456,7 +462,7 @@ Below are some common APIs. For more detailed initialization methods, see the [d
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Prefix: 'a/',           /* All files in directory `a` (optional) */
+    Prefix: 'a/',           /* All files in directory `a`. Optional */
 }, function(err, data) {
     console.log(err || data.Contents);
 });
@@ -519,7 +525,7 @@ document.getElementById('submitBtn').onclick = function (e) {
 cos.getObjectUrl({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
+    Key: '1.jpg',  /* Object key stored in the bucket (for example, `1.jpg` and `a/b/test.txt`). Required. */
 }, function(err, data) {
     if (err) return console.log(err);
      /* Implement forced download by specifying `response-content-disposition=attachment` */
@@ -538,7 +544,7 @@ cos.getObjectUrl({
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
     Region: 'COS_REGION',     /* Bucket region. Required */
-    Key: '1.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
+    Key: '1.jpg',  /* Object key stored in the bucket (for example, `1.jpg` and `a/b/test.txt`). Required. */
 }, function(err, data) {
     console.log(err || data);
 });
