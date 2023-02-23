@@ -6,17 +6,17 @@
 
 GME는 실시간 음성 채팅 스트림을 위한 **서버 녹음** 기능을 제공하여 개발자가 콘텐츠 보관, 콘텐츠 관리 및 콘텐츠 재생산과 같은 시나리오를 구현할 수 있도록 지원합니다. 전체 녹음: 애플리케이션 내 전체 음성 녹음과 방별 혼합 스트림, 사용자별 단일 스트림을 지원합니다. 사용자 지정 녹음: 지정된 방의 방별 혼합 스트림, 사용자별 단일 스트림을 지원합니다. 녹음된 오디오 파일은 귀하의 계정에 있는 **COS** 서비스에 저장됩니다.
 
-본문은 **사용자 지정 녹음**의 개발 및 통합 방법에 대해서만 설명합니다. 애플리케이션에 전체 녹음을 활성화하려면 [개발 가이드 - 전체 녹음]()을 참고하십시오.
+본문은 **사용자 지정 녹음**의 개발 및 통합 방법에 대해서만 설명합니다. 애플리케이션에 전체 녹음을 활성화하려면 [개발 가이드 - 전체 녹음](https://www.tencentcloud.com/ko/document/product/607/53747)을 참고하십시오.
 
 >! 
->- GME 서버 녹음 기능을 사용하면 녹음 과정에서 GME에서 녹음 서비스 요금이 발생합니다. GME 글로벌 포털 녹음 서비스는 2023년 4월 1일부터 정식 과금될 예정이며, 자세한 내용은 [GME 구매 가이드](https://www.tencentcloud.com/zh/document/product/607/50009)에 공지됩니다.
->- 녹음된 파일은 Tencent Cloud 계정의 **COS** 서비스에 저장되며 저장 용량, 저장 기간 및 액세스 빈도 등 고객의 구체적인 사용 방식에 따라 **COS** 청구서가 발행됩니다. 자세한 내용은 [COS 과금 개요](https://www.tencentcloud.com/zh/document/product/436/16871)를 참고하십시오.
+>- GME 서버 녹음 기능을 사용하면 녹음 과정에서 GME에서 녹음 서비스 요금이 발생합니다. GME 글로벌 포털 녹음 서비스는 2023년 4월 1일부터 정식 과금될 예정이며, 자세한 내용은 [GME 구매 가이드](https://www.tencentcloud.com/ko/document/product/607/50009?lang=ko&pg=)에 공지됩니다.
+>- 녹음된 파일은 Tencent Cloud 계정의 **COS** 서비스에 저장되며 저장 용량, 저장 기간 및 액세스 빈도 등 고객의 구체적인 사용 방식에 따라 **COS** 청구서가 발행됩니다. 자세한 내용은 [COS 과금 개요](https://www.tencentcloud.com/ko/document/product/436/16871?lang=ko&pg=)를 참고하십시오.
 
 ## 전제 조건
 
-- **실시간 음성 채팅 서비스 활성화 완료**: [서비스 활성화](https://www.tencentcloud.com/zh/document/product/607/10782)를 참고하십시오.
+- **실시간 음성 채팅 서비스 활성화 완료**: [서비스 활성화](https://www.tencentcloud.com/ko/document/product/607/10782?lang=ko&pg=)를 참고하십시오.
 - **서버 녹음 서비스 활성화 완료**: 현재 서버 녹음 기능은 얼로우리스트에 있는 사용자에게 제공됩니다. 얼로우리스트를 활성화하려면 당사에 문의하십시오.
-- **GME SDK 통합 완료**: 핵심 API 및 실시간 음성 채팅 API 통합을 포함합니다. 자세한 내용은 [Native SDK 빠른 통합](https://www.tencentcloud.com/zh/document/product/607/40858), [Unity SDK 빠른 통합](https://www.tencentcloud.com/zh/document/product/607/44544), [Unreal SDK 빠른 통합](https://www.tencentcloud.com/zh/document/product/607/44545)을 참고하십시오.
+- **GME SDK 통합 완료**: 핵심 API 및 실시간 음성 채팅 API 통합을 포함합니다. 자세한 내용은 [Native SDK 빠른 통합](https://www.tencentcloud.com/ko/document/product/607/40858?lang=ko&pg=), [Unity SDK 빠른 통합](https://www.tencentcloud.com/ko/document/product/607/44544?lang=ko&pg=), [Unreal SDK 빠른 통합](https://www.tencentcloud.com/ko/document/product/607/44545?lang=ko&pg=)을 참고하십시오.
 
 
 ## 서비스 아키텍처
@@ -31,29 +31,29 @@ GME는 실시간 음성 채팅 스트림을 위한 **서버 녹음** 기능을 �
 
 ### 2. 관련 API
 
-- [ ***StartRecord()*** ]()  **녹음 시작**
+- [ ***StartRecord()*** ](https://www.tencentcloud.com/ko/document/product/607/53736)  **녹음 시작**
 이 API 매개변수에서 단일 스트림 또는 혼합 스트림 녹음 정의, 녹음할 RoomID 지정, 얼로우리스트 또는 블록리스트의 사용자 ID를 지정할 수 있습니다.
 
-- [ ***StopRecord()***]()  **녹음 종료**
+- [ ***StopRecord()***](https://www.tencentcloud.com/ko/document/product/607/53735)  **녹음 종료**
 이 API를 통해 taskid에 대한 녹음을 중지할 수 있습니다. taskid를 기록하지 않은 경우 DescribeTaskInfo()를 통해 지정된 방에서 진행 중인 녹음 작업의 taskid를 가져와야 합니다.
 
-- [***ModifyRecordInfo()***]()  **녹음 정보 업데이트**
+- [***ModifyRecordInfo()***](https://www.tencentcloud.com/ko/document/product/607/53737)  **녹음 정보 업데이트**
 이 API를 통해 taskid의 녹음 유형 업데이트, 얼로우리스트 사용자 ID 또는 블록리스트 사용자 ID 업데이트 등 녹음 정보를 업데이트할 수 있습니다. taskid를 기록하지 않은 경우 DescribeTaskInfo()를 통해 지정된 방에서 진행 중인 녹음 작업의 taskid를 가져와야 합니다.
 
-- [***DescribeTaskInfo()***]() **방 녹음 정보 쿼리**
+- [***DescribeTaskInfo()***](https://www.tencentcloud.com/ko/document/product/607/53738) **방 녹음 정보 쿼리**
 이 API를 통해 지정된 방의 진행 중인 녹음 작업의 taskid, 얼로우리스트/블록리스트 사용자의 ID 등 녹음 정보를 쿼리할 수 있습니다.
 
-- [***DescribeRecordInfo()***]() **녹음 작업 정보 쿼리**
+- [***DescribeRecordInfo()***](https://www.tencentcloud.com/ko/document/product/607/53739) **녹음 작업 정보 쿼리**
 이 API를 통해 taskid의 녹음 유형, 녹음 방 ID, 녹음 사용자 ID, 녹음 파일 정보 등 작업 정보를 쿼리할 수 있습니다.
 
 
 ### 3. 녹음 메커니즘
 
 #### 녹음 작업 실행 메커니즘
-- ***StartRecord()*** API를 호출하면 지정된 방 녹음 작업이 시작됩니다
+- ***StartRecord(https://www.tencentcloud.com/ko/document/product/607/53736)*** API를 호출하면 지정된 방 녹음 작업이 시작됩니다
 
 #### 녹음 작업 종료 메커니즘
-- ***StopRecord()*** API를 호출하면 지정된 방 녹음 작업이 종료됩니다
+- ***StopRecord(https://www.tencentcloud.com/ko/document/product/607/53735)*** API를 호출하면 지정된 방 녹음 작업이 종료됩니다
 
 
 #### 녹음 파일 생성 타이밍
@@ -71,12 +71,12 @@ GME는 실시간 음성 채팅 스트림을 위한 **서버 녹음** 기능을 �
 #### 녹음 작업 이벤트 알림 메커니즘
 
 - 녹음 작업 이벤트는 콜백 메커니즘을 통해 설정한 콜백 주소로 알림됩니다. **녹음 시작**, **녹음 중지**, **녹음 파일 업로드 완료** 이벤트가 발생하면 콜백 알림을 받게 됩니다.
-- 콜백 정보에 대한 자세한 내용은 [녹음 콜백]()을 참고하십시오
+- 콜백 정보에 대한 자세한 내용은 [녹음 콜백](https://www.tencentcloud.com/ko/document/product/607/53749)을 참고하십시오
 
 
 ### 4. 저장 위치
 
-GME 서버 녹음 파일은 귀하의 계정에 있는 **COS** 서비스의 지정된 버킷에 저장됩니다. 버킷의 리전은 귀하가 지정합니다. 선택 가능한 리전 목록은 [리전 및 액세스 도메인](https://www.tencentcloud.com/zh/document/product/436/6224)을 참고하십시오.
+GME 서버 녹음 파일은 귀하의 계정에 있는 **COS** 서비스의 지정된 버킷에 저장됩니다. 버킷의 리전은 귀하가 지정합니다. 선택 가능한 리전 목록은 [리전 및 액세스 도메인](https://www.tencentcloud.com/ko/document/product/436/6224?lang=ko&pg=)을 참고하십시오.
 
 
 ### 5. 녹음 파일 형식
