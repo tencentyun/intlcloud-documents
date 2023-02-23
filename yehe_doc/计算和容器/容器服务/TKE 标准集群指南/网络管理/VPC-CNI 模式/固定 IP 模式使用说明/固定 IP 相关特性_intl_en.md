@@ -14,11 +14,26 @@ For a Pod to which a non-static IP address is bound, `VpcIPClaim` will be termin
 
 As the network component will look for available IP addresses based on `VpcIP` during IP address allocation in the cluster, static IP addresses need to be reclaimed promptly if not used (the current default policy indicates never to reclaim); otherwise, IP addresses will be wasted, and no IP addresses will be available. This document describes reclaiming after expiration, manual reclaiming, and cascade reclaiming of an IP address.
 
-### Reclaiming after expiration (by default)
-On the [**Create Cluster**](https://intl.cloud.tencent.com/document/product/457/30637) page, select **VPC-CNI** for **Container Network Add-on** and **Enable Support** for **Static Pod IP**.
+### Reclaiming after expiration
+On [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637) page, select **VPC-CNI** for **Container Network Add-on** and check **Enable Support** for **Static Pod IP**, as shown in the figure below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/6ec7190975269a84f2fcecb41a842f78.png)
 Set **IP Reclaiming Policy** in **Advanced Settings**. You can set how many seconds after the Pod is terminated to reclaim the static IP address.
 ![](https://main.qcloudimg.com/raw/85c8ec1b5306333ad9d7af4b3301abab.png)
+You can modify the **existing clusters** with the following method:
+
+#### tke-eni-ipamd v3.5.0 or later
+1. Log in to the [TKE console](https://console.qcloud.com/tke2) and click **Cluster** in the left sidebar.
+2. On the **Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
+3. On the cluster details page, select **Add-On Management** in the left sidebar.
+4. On the **Add-On Management** page, click **Update configuration** in the **Operation** column of the **eniipamd** add-on.
+5. On the **Update configuration** page, enter the expiration time in the static IP reclaiming policy, and click **Done**.
+
+#### tke-eni-ipamd earlier than v3.5.0 or no eniipamd to manage
+- Run the command `kubectl edit deploy tke-eni-ipamd -n kube-system` to modify the existing tke-eni-ipamd deployment.
+- Run the following command to add the launch parameter to `spec.template.spec.containers[0].args` or modify the launch parameter.
+```yaml
+- --claim-expired-duration=1h # You can enter a value that is not less than 5m 
+```
 
 ### Manual reclaiming
 For an IP address that urgently needs to be reclaimed, you need to find its Pod and namespace before running the following command to manually reclaim it:
@@ -30,15 +45,26 @@ kubectl delete vipc <podname> -n <namespace>
 
 
 ### Cascade reclaiming
-Currently, the static IP address is tightly bound to the Pod, regardless of the specific workload (e.g., Deployment and StatefulSet). After the Pod is terminated, it is uncertain when to reclaim the static IP address. TKE has implemented deletion of the static IP address immediately after the workload of the Pod is deleted.
+Currently, the static IP address is bound to a Pod, regardless of the specific workload (e.g., Deployment, Statefulset). After the Pod is terminated, it is uncertain when to reclaim the static IP address. TKE has implemented that the static IP address was deleted once the workload to which the Pod belongs was deleted.
 
 You can enable cascade reclaiming by the following steps:
+
+#### tke-eni-ipamd v3.5.0 or later
+
+1. Log in to the [TKE console](https://console.qcloud.com/tke2) and click **Cluster** in the left sidebar.
+2. On the **Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
+3. On the cluster details page, select **Add-On Management** in the left sidebar.
+4. On the **Add-On Management** page, click **Update configuration** in the **Operation** column of the **eniipamd** add-on.
+5. On the **Update configuration** page, select **Cascade reclaiming**, and click **Done**.
+
+#### tke-eni-ipamd earlier than v3.5.0 or no eniipamd to manage
+
 1. **Run the command `kubectl edit deploy tke-eni-ipamd -n kube-system` to modify the existing tke-eni-ipamd deployment**.
 2. Run the following command to add the launch parameter to `spec.template.spec.containers[0].args`.
 ```yaml
 - --enable-ownerref
 ```
-After the modification, IPAMD will automatically restart and take effect. Then, cascade deletion of the static IP address will apply to new workloads but not existing ones.
+After the modification, ipamd will automatically restart and take effect. At that time, a new workload can implement the cascade deletion of the static IP, which is not supported for an existing workload.
 
 
 ## FAQs
@@ -74,8 +100,8 @@ kubectl get vip -oyaml
 ```
 
 If the command returns a success result, the VIP status is `Attaching`. The error message is as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/06375d489d671d5d5ddbd93d588e05e7.png)
+![](https://main.qcloudimg.com/raw/d7df85621d613f30e5109395de4c92bb.png)
 
 #### Solution
-Currently, up to 1,000 ENIs can be bound to a VPC. To increase the quota, [submit a ticket](https://console.tencentcloud.com/workorder/category) for application. The quota will take effect by region.
+Currently, up to 1,000 ENIs can be bound to a VPC. To increase the quota, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for application. The quota will take effect by region.
 

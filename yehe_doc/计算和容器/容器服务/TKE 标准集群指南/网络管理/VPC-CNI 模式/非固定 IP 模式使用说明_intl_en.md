@@ -1,4 +1,4 @@
-## Overview
+## Use Cases 
 
 The non-static IP address mode is suitable for the scenarios where the service does not rely on static IPs of the container. For example, stateless services and stateless offline applications that can deploy multiple copies.
 
@@ -18,19 +18,28 @@ TKE maintains an auto-scaling exclusive ENI/IP pool on each node. The number of 
 - When **the number of bound ENIs/IPs is larger than the number of Pods + the maximum number of pre-bound ENIs/IPs**, an ENI/IP will be released about every 2 minutes until **the number of bound ENIs/IPs = the number of Pods + the maximum number of pre-bound ENIs/IPs**.
 - When **the maximum number of bindable ENIs/IPs is less than the number of bound ENIs/IPs, the unnecessary idle exclusive ENIs/IPs will be released directly to make **the number of bound ENIs/IPs equal to the maximum number of bindable ENIs/IPs**.
 
-## Directions
+## How to Use
 
 
-You can enable the non-static IP address mode by the following method:
-- Select non-static IP address of VPC-CNI mode when creating a cluster. That means you should not check **Enable Support** for **Static Pod IP**.
+#### Enabling non-static IP address
+Select non-static IP address of VPC-CNI mode when creating a cluster. That means you should not check **Enable Support** for **Static Pod IP**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f8bfc9f1ebfcca8253d3296537e163d0.png)
 
 
 ### Supporting quick release
 
-The ENI/IP pool managed in non-static IP address mode applies the policy of slow release by default. Only one unnecessary idle ENI/IP is released every two minutes. If you want to utilize IPs more efficiently, you need to enable "quick release". In this mode, the ENI/IP pool is checked every two minutes to release unnecessary idle ENIs/IPs until the number of idle ENIs/IPs is equal to the maximum number of pre-bound ENIs/IPs.
+The ENI/IP pool managed in non-static IP address mode applies the policy of slow release by default. Only one unnecessary idle ENI/IP is released every two minutes. If you want to utilize IPs more efficiently, you need to enable "quick release". In this mode, the ENI/IP pool is checked every two minutes to release unnecessary idle ENIs/IPs until the number of idle ENIs/IPs is equal to the maximum number of pre-bound ENIs/IPs. The methods for enabling quick release are as follows:
 
-#### Method for enabling
+#### tke-eni-ipamd v3.5.0 or later
+
+1. Log in to the [TKE console](https://console.qcloud.com/tke2) and click **Cluster** in the left sidebar.
+2. On the **Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
+3. On the cluster details page, select **Add-On Management** in the left sidebar.
+4. On the **Add-On Management** page, click **Update configuration** in the **Operation** column of the **eniipamd** add-on.
+5. On the **Update configuration** page, select **Quick release**, and click **Done**.
+
+#### tke-eni-ipamd earlier than v3.5.0 or no eniipamd to manage
+
 - Run the command `kubectl edit ds tke-eni-agent -n kube-system` to modify the existing tke-eni-agent daemonset.
 - Add the following launch parameter to `spec.template.spec.containers[0].args` to enable "quick release". The tke-eni-agent will update and make the feature take effect on a rolling basis after the modification.
 ```
@@ -73,6 +82,17 @@ You must ensure that the value you entered for modification is not less than the
 Dynamic check for pre-binding is triggered immediately after the modification. If `the number of bound ENIs/IPs > the maximum number of bindable ENIs/IPs`, the ENIs/IPs will be unbound until `the number of bound ENIs/IPs = the maximum number of bindable ENIs/IPs`.
 
 ### Specifying the default number of pre-bound ENIs/IPs
+
+#### tke-eni-ipamd v3.5.0 or later
+
+1. Log in to the [TKE console](https://console.qcloud.com/tke2) and click **Cluster** in the left sidebar.
+2. On the **Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
+3. On the cluster details page, select **Add-On Management** in the left sidebar.
+4. On the **Add-On Management** page, click **Update configuration** in the **Operation** column of the **eniipamd** add-on.
+5. On the **Update configuration** page, enter the pre-bound default values for the shared and exclusive ENI modes, and click **Done**.
+
+#### tke-eni-ipamd earlier than v3.5.0 or no eniipamd to manage
+
 - Run the command `kubectl edit deploy tke-eni-ipamd -n kube-system` to modify the existing tke-eni-ipamd deployment.
 - Add the following launch parameter to `spec.template.spec.containers[0].args` to modify the default number of pre-bound ENIs/IPs. The ipamd will restart and take effect automatically after the modification. The default number only affects the added nodes.
 ```

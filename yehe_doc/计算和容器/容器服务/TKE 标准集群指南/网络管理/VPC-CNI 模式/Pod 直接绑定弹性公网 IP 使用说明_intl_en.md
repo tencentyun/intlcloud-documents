@@ -35,7 +35,6 @@ spec:
     metadata:
       annotations:
         tke.cloud.tencent.com/networks: "tke-route-eni"
-        tke.cloud.tencent.com/vpc-ip-claim-delete-policy: Never
         tke.cloud.tencent.com/eip-attributes: '{"Bandwidth":"100","ISP":"BGP"}'
         tke.cloud.tencent.com/eip-claim-delete-policy: "Never"
       creationTimestamp: null
@@ -71,7 +70,7 @@ The maximum number of EIPs that each node can bind to is **the bound number of C
 - Fees will not be charged on IPs after an auto-created EIP is bound. The default billing method for public network access is `postpaid by traffic on an hourly basis`.
 
 ## Specifying an EIP
-To associate with a specified EIP automatically, see the following YAML sample:
+See the following Yaml sample to associate with a specified EIP automatically:
 ```
 apiVersion: apps/v1
 kind: StatefulSet
@@ -91,7 +90,6 @@ spec:
     metadata:
       annotations:
         tke.cloud.tencent.com/networks: "tke-route-eni"
-        tke.cloud.tencent.com/vpc-ip-claim-delete-policy: Never
         tke.cloud.tencent.com/eip-id-list: "eip-xxx1,eip-xxx2"
       creationTimestamp: null
       labels:
@@ -139,7 +137,7 @@ The saved configuration takes effect immediately after exit and will be hot upda
 
 This field prevents the active outbound traffic of Pods within the IP range from SNAT. If a larger IP range is entered, no SNAT will be performed for Pods within the range. Proceed with caution.
 
-### Adjusting the priorities of NAT gateways and EIPs
+### Adjusting the priority levels of NAT gateways and EIPs
 If the NAT gateway is configured for the VPC of the cluster, make sure that the configurations are correct as instructed in [Adjusting the Priorities of NAT Gateways and EIPs](https://intl.cloud.tencent.com/document/product/1015/32734); otherwise, the active outbound traffic of the Pod may prefer NAT gateways over EIPs.
 
 ## Retaining and Reclaiming of an EIP
@@ -150,12 +148,21 @@ For a Pod to which a non-static EIP is bound, `EIPClaim` will be terminated and 
 
 Below are three methods for reclaiming an EIP, including reclaiming after expiration, manual reclaiming and cascade reclaiming.
 
-### Reclaiming after expiration (by default)
+### Reclaiming after expiration
 On [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637) page, select **VPC-CNI** for **Container Network Add-on** and check **Enable Support** for **Static Pod IP**, as shown in the figure below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/bdef5073803ca51eb6d7be57b2d4a0d1.png)
 Set **IP Reclaiming Policy** in **Advanced Settings**. You can set how many seconds after the Pod is terminated to reclaim the static IP address.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5772282abc084605c87f765a69ae3366.png)
 You can modify the **existing clusters** with the following method:
+
+#### tke-eni-ipamd v3.5.0 or later
+1. Log in to the [TKE console](https://console.qcloud.com/tke2) and click **Cluster** in the left sidebar.
+2. On the **Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
+3. On the cluster details page, select **Add-On Management** in the left sidebar.
+4. On the **Add-On Management** page, click **Update configuration** in the **Operation** column of the **eniipamd** add-on.
+5. On the **Update configuration** page, enter the expiration time in the static IP reclaiming policy, and click **Done**.
+
+#### tke-eni-ipamd earlier than v3.5.0 or no eniipamd to manage
 - Run the command `kubectl edit deploy tke-eni-ipamd -n kube-system` to modify the existing tke-eni-ipamd deployment.
 - Run the following command to add the launch parameter to `spec.template.spec.containers[0].args` or modify the launch parameter.
 ```yaml
@@ -174,6 +181,16 @@ kubectl delete eipc <podname> -n <namespace>
 Currently, the static EIP is strongly bound to the Pod, regardless of the specific workload (e.g., deployment, statefulset). After the Pod is terminated, it is uncertain when to reclaim the static EIP. TKE has implemented that the static EIP is deleted once the workload to which the Pod belongs is deleted. **The version of the IPAMD component needs to be v3.3.9 or later version (you can check the version through image tag)**.
 
 You can enable cascade reclaiming by the following steps:
+#### tke-eni-ipamd v3.5.0 or later
+
+1. Log in to the [TKE console](https://console.qcloud.com/tke2) and click **Cluster** in the left sidebar.
+2. On the **Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
+3. On the cluster details page, select **Add-On Management** in the left sidebar.
+4. On the **Add-On Management** page, click **Update configuration** in the **Operation** column of the **eniipamd** add-on.
+5. On the **Update configuration** page, select **Cascade reclaiming**, and click **Done**.
+
+#### tke-eni-ipamd earlier than v3.5.0 or no eniipamd to manage
+
 1. **Run the command `kubectl edit deploy tke-eni-ipamd -n kube-system` to modify the existing tke-eni-ipamd deployment**.
 2. Run the following command to add the launch parameter to `spec.template.spec.containers[0].args`.
 ```yaml

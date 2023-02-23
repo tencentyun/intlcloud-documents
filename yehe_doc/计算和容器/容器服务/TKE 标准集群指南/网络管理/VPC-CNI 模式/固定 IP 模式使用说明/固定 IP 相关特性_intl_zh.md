@@ -14,11 +14,26 @@ kubectl get vip
 
 由于网络组件在集群范围内分配 IP 时会依据 `VpcIP` 信息找寻可用 IP，因此固定 IP 的地址若不使用需要及时回收（目前默认策略是永不回收），否则会导致 IP 浪费而无 IP 可用。本文介绍过期回收、手动回收及级联回收的 IP 回收方法。
 
-### 过期回收（默认支持）
+### 过期回收
 在 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637) 页面，容器网络插件选择**VPC-CNI**模式并且勾选**开启支持**固定Pod IP 支持，如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/6ec7190975269a84f2fcecb41a842f78.png)
 在高级设置中设置 IP 回收策略，可以设置 Pod 销毁后多少秒回收保留的固定 IP。如下图所示：
 ![](https://main.qcloudimg.com/raw/85c8ec1b5306333ad9d7af4b3301abab.png)
+对于**存量集群**，也可支持变更：
+
+#### tke-eni-ipamd 组件版本 >= v3.5.0
+1. 登录 [容器服务控制台](https://console.qcloud.com/tke2)，单击左侧导航栏中**集群**。
+2. 在“集群管理”页面，选择需设置过期时间的集群 ID，进入集群详情页。
+3. 在集群详情页面，选择左侧**组件管理**。
+4. 在组件管理页面中，找到**eniipamd**组件，选择**更新配置**。
+5. 在更新配置页面，填写固定IP回收策略里的过期时间，并单击**完成**。
+
+#### tke-eni-ipamd 组件版本 < v3.5.0 或组件管理中无 eniipamd 组件
+- 修改现存的 tke-eni-ipamd deployment：`kubectl edit deploy tke-eni-ipamd -n kube-system`。
+- 执行以下命令，在 `spec.template.spec.containers[0].args` 中加入/修改启动参数。
+```yaml
+- --claim-expired-duration=1h # 可填写不小于 5m 的任意值 
+```
 
 ### 手动回收
 对于急需回收的 IP 地址，需要先确定需回收的 IP 被哪个 Pod 占用，找到对应的 Pod 的名称空间和名称，执行以下命令通过手动回收：
@@ -33,6 +48,17 @@ kubectl delete vipc <podname> -n <namespace>
 目前的固定 IP 与 Pod 强绑定，而与具体的 Workload 无关（例如 deployment、statefulset 等）。Pod 销毁后，固定 IP 不确定何时回收。TKE 现已实现删除 Pod 所属的 Workload 后即刻删除固定 IP。
 
 以下步骤介绍如何开启级联回收：
+
+#### tke-eni-ipamd 组件版本 >= v3.5.0
+
+1. 登录 [容器服务控制台](https://console.qcloud.com/tke2)，单击左侧导航栏中**集群**。
+2. 在“集群管理”页面，选择需开启级联回收的集群 ID，进入集群详情页。
+3. 在集群详情页面，选择左侧**组件管理**。
+4. 在组件管理页面中，找到**eniipamd**组件，选择**更新配置**。
+5. 在更新配置页面，勾选**级联回收**，并点击完成。
+
+#### tke-eni-ipamd 组件版本 < v3.5.0 或组件管理中无 eniipamd 组件
+
 1. 修改现存的 **tke-eni-ipamd deployment：`kubectl edit deploy tke-eni-ipamd -n kube-system`**。
 2. 执行以下命令，在 `spec.template.spec.containers[0].args` 中加入启动参数：
 ```yaml
@@ -74,8 +100,8 @@ kubectl get vip -oyaml
 ```
 
 若命令返回成功则报错 VIP 状态为 Attaching，报错信息如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/06375d489d671d5d5ddbd93d588e05e7.png)
+![](https://main.qcloudimg.com/raw/d7df85621d613f30e5109395de4c92bb.png)
 
 #### 解决方案
-目前腾讯云弹性网卡限制一个 VPC 下面最多绑定1000个弹性网卡。您可 [提交工单](https://console.tencentcloud.com/workorder/category) 申请提高配额，配额按地域生效。
+目前腾讯云弹性网卡限制一个 VPC 下面最多绑定1000个弹性网卡。您可 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请提高配额，配额按地域生效。
 
