@@ -98,7 +98,7 @@ cd go2tencentcloud-linux
 The files in the `go2tencentcloud` directory will not be migrated. Do not place the files to be migrated in this directory.
 </dx-alert>
 2. (Optional) Exclude files and directories on the source server that do not need to be migrated.
-If there are files or directories on the Linux source server that do not need to be migrated, you can add them to the [rsync_excludes_linux.txt] file, as described in Compatibility and Tool Configuration Description (https://intl.cloud.tencent.com/document/product/213/44340).
+If there are files or directories on the Linux source server that do not need to be migrated, you can add them to the [rsync_excludes_linux.txt](https://intl.cloud.tencent.com/document/product/213/44340) file, as described in Compatibility and Tool Configuration Description.
 3. Import the migration source.
    i. For example, on a 64-bit Linux source server, execute the following command in sequence as the root user to run the tool.
 ```shellsession
@@ -258,7 +258,9 @@ You can skip this step if your task is scheduled, which will automatically start
 </dx-alert>
 After creating a migration task, you can click the <b>Migration Task</b> tab to view the task as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
+
 You can click <b>Start/Retry</b> on the right of the task to start it, click <b>OK</b> in the pop-up window, and the task status will become **Migrating** as shown below:
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
 <dx-alert infotype="notice" title="">
 - If the migration destination is a CVM, the destination CVM enters migration mode after the migration starts. Do not reinstall the system, shut down, terminate, or reset passwords of the destination CVM until the migration ends and the destination CVM exits the migration mode.
