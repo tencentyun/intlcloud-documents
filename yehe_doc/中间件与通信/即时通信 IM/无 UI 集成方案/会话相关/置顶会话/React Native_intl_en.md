@@ -1,10 +1,12 @@
-## Feature Description
+## Overview
 
 Pinning a conversation to the top is to fix a one-to-one or group conversation at the top of the conversation list to facilitate search. The status of a conversation being pinned to the top will be stored on the server and synced to new devices.
 
+>!Up to 50 conversations can be pinned to the top.
+
 ## Pinning a Conversation to the Top
 
-Call the `pinConversation` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/pinConversation.html)) to set whether to pin a conversation to the top.
+Call the [`pinConversation`](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMConversationManager/pinConversation.html) API to specify whether to pin a conversation to the top.
 
 The conversations are sorted based on the `orderKey` field of the `V2TimConversation` object. This field is an integer that increases as the conversation is activated when a message is sent/received, a draft is set, or the conversation is pinned to the top.
 
@@ -12,7 +14,7 @@ Note that a conversation pinned to the top will always be displayed above others
 
 When `getConversationList` is called to get the conversation list, it will first return the conversation that is pinned to the top and then other conversations. You can check whether a conversation is pinned to the top through the `isPinned` field of the `V2TIMConversation` object.
 
-Below is the sample code:
+Sample code:
 
 ```javascript
 // If `isPinned` is `true`, the conversation is pinned to the top; otherwise, it is not.
@@ -22,8 +24,8 @@ conversationManager.pinConversation("conversationID", isPinned);
 
 ## Notification of the Pinned Status Change
 
-If you have called `addConversationListener` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMConversationManager/addConversationListener.html)) in advance to add a conversation listener, you can get the `isPinned` value of the `V2TimConversation` object in `onConversationChanged` and determine whether the pinned status of a conversation has changed.
-Below is the sample code:
+If you have called [`addConversationListener`](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMConversationManager/addConversationListener.html) in advance to add a conversation listener, you can get the `isPinned` value of the `V2TimConversation` object in `onConversationChanged` and determine whether the pinned status of a conversation has changed.
+Sample code:
 
 ```javascript
 conversationManager.addConversationListener({
@@ -32,5 +34,3 @@ conversationManager.addConversationListener({
   },
 });
 ```
-
-

@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
 
 - All types of messages (text, custom, and rich media messages) are listened for and received with the `addAdvancedMsgListener` API, with the callbacks defined in the protocol of `V2TimAdvancedMsgListener`.
 
@@ -8,7 +8,7 @@
 
 #### Adding a listener
 
-The receiver calls the `addAdvancedMsgListener` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/addAdvancedMsgListener.html)) API to add the advanced message listener. It is recommended to call the API early (such as after the chat page is initialized) to ensure timely message receiving in the application.
+The receiver calls the [`addAdvancedMsgListener`](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMMessageManager/addAdvancedMsgListener.html) API to add the advanced message listener. It is recommended to call the API early (such as after the chat page is initialized) to ensure timely message receiving in the application.
 
 Sample code:
 
@@ -29,7 +29,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().addAdvancedMsgListener(
 
 #### Removing a listener
 
-To stop receiving messages, the receiver calls `removeAdvancedMsgListener` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/removeAdvancedMsgListener.html)) to remove the advanced message listener.
+To stop receiving messages, the receiver calls [`removeAdvancedMsgListener`](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMMessageManager/removeAdvancedMsgListener.html) to remove the advanced message listener.
 
 Sample code:
 
@@ -58,7 +58,7 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().removeAdvancedMsgListener(li
 The receiver can receive a one-to-one or group text message with the advanced message listener in the following steps:
 
 1. Call `addAdvancedMsgListener` to set the event listener.
-2. Listen for the `onRecvNewMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvNewMessage.html)) callback that contains the text message.
+2. Listen for the [`onRecvNewMessage`](https://comm.qq.com/im/doc/RN/zh/Callback/OnRecvNewMessage.html) callback that contains the text message.
 3. To stop receiving messages, call `removeAdvancedMsgListener` to remove the listener. This step is optional and can be performed as needed.
 
 Sample code:
@@ -89,7 +89,7 @@ TencentImSDKPlugin.v2TIMManager
 The receiver can receive a custom one-to-one or group message with the advanced message listener in the following steps:
 
 1. Call `addAdvancedMsgListener` to set the event listener.
-2. Listen for the `onRecvNewMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvNewMessage.html)) callback that contains the custom message.
+2. Listen for the [`onRecvNewMessage`](https://comm.qq.com/im/doc/RN/zh/Callback/OnRecvNewMessage.html) callback that contains the custom message.
 3. To stop receiving messages, call `removeAdvancedMsgListener` to remove the listener. This step is optional and can be performed as needed.
 
 Sample code:
@@ -122,7 +122,7 @@ TencentImSDKPlugin.v2TIMManager
 The receiver can receive a rich media message **only with** the advanced message listener in the following steps:
 
 1. Call the `addAdvancedMsgListener` API to set the advanced message listener.
-2. Listen for the `onRecvNewMessage` ([Details](https://comm.qq.com/im/doc/RN/en/Callback/OnRecvNewMessage.html)) callback to get the `V2TimMessage` message.
+2. Listen for the [`onRecvNewMessage`](https://comm.qq.com/im/doc/RN/zh/Callback/OnRecvNewMessage.html) callback to get the `V2TimMessage` message.
 3. Parse the `elemType` attribute in the `V2TIMMessage` message, and then parse the message again according to the type to get the specific content of the elements in the message.
 4. To stop receiving messages, call `removeAdvancedMsgListener` to remove the listener. This step is optional and can be performed as needed.
 
@@ -132,7 +132,8 @@ The image in an image message can be in three formats: original, large, and thum
 `Large` (large image): A large image is an image obtained after the original image is proportionally compressed. After the compression, the height or width (whichever is shorter) is equal to 720 pixels.
 `Thumb` (thumbnail): A thumbnail is an image obtained after the original image is proportionally compressed. After the compression, the height or width (whichever is shorter) is equal to 198 pixels.
 
-The React Native SDK will download the image message when free, which can be directly used by you and will be cleared when the application is uninstalled.
+The message URL is not returned when the list of rich media messages is obtained, and it needs to be obtained through [`getMessageOnlineUrl`](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMMessageManager/getMessageOnlineUrl.html).
+The local URL of a rich media message is no longer returned by default and will be returned after the message is downloaded successfully through [`downloadMessage`](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMMessageManager/downloadMessage.html).
 
 The following sample code demonstrates how to parse the image content from `V2TimMessage`:
 
@@ -159,12 +160,21 @@ const listener = {
           const width = item.width;
         })
       }
+    TencentImSDKPlugin.v2TIMManager
+       .getMessageManager()
+       .getMessageOnlineUrl(message.msgID);
+
+    TencentImSDKPlugin.v2TIMManager
+            .getMessageManager()
+            .downloadMessage(message, 3, 0, false);
     },
     onSendMessageProgress: (message, progress) {},
   };
   TencentImSDKPlugin.v2TIMManager
       .getMessageManager()
       .addAdvancedMsgListener(listener: listener);
+
+
 ```
 
 ### Video message
@@ -172,7 +182,8 @@ const listener = {
 After a video message is received, a video preview is displayed on the chat page, and the video is played back after the user clicks the message.
 Two steps are required:
 
-The React Native SDK will download video messages when free, which can be directly used by you and will be cleared when the application is uninstalled.
+The message URL is not returned when the list of rich media messages is obtained, and it needs to be obtained through [`getMessageOnlineUrl`](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMMessageManager/getMessageOnlineUrl.html).
+The local URL of a rich media message is no longer returned by default and will be returned after the message is downloaded successfully through [`downloadMessage`](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMMessageManager/downloadMessage.html).
 
 The following sample code demonstrates how to parse the video content from `V2TimMessage`:
 
@@ -186,12 +197,20 @@ if (message.elemType == MessageElemType.V2TIM_ELEM_TYPE_VIDEO) {
   message.videoElem.snapshotHeight;
   message.videoElem.snapshotPath;
   // ...
+  TencentImSDKPlugin.v2TIMManager
+     .getMessageManager()
+     .getMessageOnlineUrl(message.msgID);
+
+  TencentImSDKPlugin.v2TIMManager
+          .getMessageManager()
+          .downloadMessage(message, 5, 0, true);
 }
 ```
 
 ### Audio message
 
-The React Native SDK will download audio messages when free, which can be directly used by you and will be cleared when the application is uninstalled.
+The message URL is not returned when the list of rich media messages is obtained, and it needs to be obtained through [`getMessageOnlineUrl`](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMMessageManager/getMessageOnlineUrl.html).
+The local URL of a rich media message is no longer returned by default and will be returned after the message is downloaded successfully through [`downloadMessage`](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMMessageManager/downloadMessage.html).
 
 The following sample code demonstrates how to parse the audio content from `V2TimMessage`:
 
@@ -204,6 +223,13 @@ if (message.elemType == MessageElemType.V2TIM_ELEM_TYPE_SOUND) {
   message.soundElem.localUrl;
   message.soundElem.url;
   // ...
+  TencentImSDKPlugin.v2TIMManager
+     .getMessageManager()
+     .getMessageOnlineUrl(message.msgID);
+
+  TencentImSDKPlugin.v2TIMManager
+          .getMessageManager()
+          .downloadMessage(message, 4, 0, true);
 }
 ```
 
@@ -222,6 +248,14 @@ if (message.elemType == MessageElemType.V2TIM_ELEM_TYPE_FILE) {
   message.fileElem.localUrl;
   message.fileElem.path;
   message.fileElem.url;
+
+  TencentImSDKPlugin.v2TIMManager
+     .getMessageManager()
+     .getMessageOnlineUrl(message.msgID);
+
+  TencentImSDKPlugin.v2TIMManager
+          .getMessageManager()
+          .downloadMessage(message, 6, 0, true);
 }
 ```
 
@@ -241,7 +275,7 @@ if (message.elemType == MessageElemType.V2TIM_ELEM_TYPE_LOCATION) {
 
 ### Emoji message
 
-The SDK only provides a message passthrough channel for an emoji message. For message content fields, see `faceElem` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimFaceElem.html)), where the contents of `index` and `data` are customized by the user.
+The SDK only provides a message passthrough channel for an emoji message. For message content fields, see [`faceElem`](https://comm.qq.com/im/doc/RN/zh/Interface/Message/V2TimFaceElem.html), where the contents of `index` and `data` are customized by the user.
 
 For example, the sender can set `index` to `1` and `data` to `x12345` to indicate the smile emoji.
 The receiver parses the received emoji message as `1` and `x12345` and displays the message as the smile emoji according to the preset rules.
@@ -261,7 +295,7 @@ Group tip messages are tips received by users other than ordinary messages in a 
 
 > ? Group tip messages apply to group members only.
 
-There are several types of group tip messages, as stated in `V2TIMGroupTipsElem` ([Details](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimGroupTipsElem.html)).
+There are several types of group tip messages, as stated in [`V2TIMGroupTipsElem`](https://comm.qq.com/im/doc/RN/zh/Interface/Message/V2TimGroupTipsElem.html).
 
 After receiving a group tip message, the receiver generally needs to:
 
@@ -300,5 +334,3 @@ if (message.textElem.nextElem != null) {
   // There is a next element
 }
 ```
-
-

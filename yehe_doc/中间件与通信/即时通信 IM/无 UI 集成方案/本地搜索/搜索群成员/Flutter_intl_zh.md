@@ -4,10 +4,10 @@
 > ? flutter sdk 3.8.0支持，直播群（AVChatRoom）不在本地存储群成员，无法使用群成员搜索功能。
 
 ## 搜索本地群组
-您可以调用接口 `searchGroupMembers` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMGroupManager/searchGroupMembers.html)) 搜索本地群成员。
+您可以调用接口 `searchGroupMembers` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMGroupManager/searchGroupMembers.html)) 搜索本地群成员。
 您可以设置搜索关键字 `keywordList`，并指定搜索的范围，即是否搜索群成员的 `memberUserID`、`memberNickName`、`memberRemark`、`memberNameCard` 字段。
 
-根据 `searchGroupMembers` 入参 `V2TIMGroupMemberSearchParam` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupMemberSearchParam.html)) 中的 `groupIDList` 是否为空（`null`/`nil`），分为两种情况：
+根据 `searchGroupMembers` 入参 `V2TIMGroupMemberSearchParam` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Class/Group/V2TimGroupMemberSearchParam.html)) 中的 `groupIDList` 是否为空（`null`/`nil`），分为两种情况：
 - 如果设置 groupIDList 为空，代表搜索全部群中的群成员，返回的结果会按照 groupID 进行分类；
 - 如果设置 groupIDList 不为空，代表搜索指定群中的群成员。
 
@@ -16,9 +16,26 @@
 
 
 ```dart
-// 通过关键字、群id搜索群成员
-V2TimValueCallback<V2GroupMemberInfoSearchResult> searchGroupMem = await groupManager.searchGroupMembers(param: V2TimGroupMemberSearchParam(groupIDList: ['可指定群ID'],keywordList: ['关键字'],isSearchMemberNameCard: true,isSearchMemberNickName: true,isSearchMemberRemark: true,isSearchMemberUserID: true,));
+    //搜索参数设置
+    V2TimGroupMemberSearchParam param = V2TimGroupMemberSearchParam(
+        groupIDList: [],// 指定群 ID 列表，若为 null 则搜索全部群中的群成员
+        isSearchMemberNameCard: true,// 设置是否搜索群成员名片，默认为true
+        isSearchMemberRemark: true,// 设置是否搜索群成员备注，默认为true
+        isSearchMemberNickName: true,// 设置是否搜索群成员昵称，默认为true
+        isSearchMemberUserID: true,// 设置是否搜索群成员 userID，默认为true
+        keywordList: []);// 搜索关键字列表，最多支持5个
+    //搜索群成员
+    V2TimValueCallback<V2GroupMemberInfoSearchResult> searchGroupMembersRes =
+        await TencentImSDKPlugin.v2TIMManager
+            .getGroupManager()
+            .searchGroupMembers(param: param); // 搜索群成员的搜索参数
+    if (searchGroupMembersRes.code == 0) {
+      // 搜索成功
+      searchGroupMembersRes.data?.groupMemberSearchResultItems;// 群成员搜索结果
+    }
 ```
+
+
 
 
 
