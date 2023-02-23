@@ -44,7 +44,7 @@ whoami /user
 If a message similar to the following is returned, the SID is modified.
 ![](https://main.qcloudimg.com/raw/34efb1f4128c753e6c0546f3e8d58678.png)
 
-10. Reset ENI information (such as IP address, gateway address, DNS, etc.) based on the network configuration information saved in [Step 3](# step_03).
+10. Reset ENI information (such as IP address, gateway address, DNS, etc.) based on the network configuration information saved in [Step 3](#step_03).
 
 
 ### Using sidchg to modify the SID
