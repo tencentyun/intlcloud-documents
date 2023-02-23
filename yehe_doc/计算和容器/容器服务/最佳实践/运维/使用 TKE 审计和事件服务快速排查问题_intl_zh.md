@@ -17,7 +17,7 @@
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/zTUf662_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230206171354.png)
 4. 查询结果如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/f6e60629ca780079d5989d4af5ce4239.png)
-由图可见， `10001****7138` 账号在 `2020-11-30T03:37:13`时删除了 `nginx` 应用。可根据账号 ID 在**访问管理** > **[用户列表](https://console.cloud.tencent.com/cam)**中查找关于此账号的详细信息。  
+由图可见， `10001****7138` 账号在 `2020-11-30T03:37:13`时删除了 `nginx` 应用。可根据账号 ID 在**访问管理** > **[用户列表](https://console.cloud.tencent.com/cam)** 中查找关于此账号的详细信息。  
 
 
 
