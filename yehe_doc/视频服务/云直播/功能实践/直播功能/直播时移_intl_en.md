@@ -37,7 +37,7 @@ The format of time shifting URL is `http://domain/appname/stream.m3u8`. There ar
 <td><ul style="margin:0">
 <li>The format of <code>tsStart</code> and <code>tsEnd</code>. The value of this parameter is in the format of <code>{timeformat}_{unit}_{zone}</code>.</li>
 <li>Valid values of <code>timeformat</code>:<ul>
-<li/><code>UNIX</code> - Unix timestamp. If you use this format, you don’t need to specify <code>zone</code>.
+<li/><code>unix</code> - unix timestamp. If you use this format, you don’t need to specify <code>zone</code>.
 <li/><code>human</code> - Human-readable time, such as “20121010010101”.</ul></li>
 <li>Valid values of <code>unit</code>: <code>s</code>, <code>ms</code>.</li>
 <li><code>s</code> indicates second and <code>ms</code> indicates millisecond.</li>
