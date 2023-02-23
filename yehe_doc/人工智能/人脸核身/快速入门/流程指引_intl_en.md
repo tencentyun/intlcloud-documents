@@ -1,7 +1,7 @@
 This document describes relevant operations and provides documentation links to help you better use Tencent Cloud FaceID.
 ## Access Process
 ### Step 1. Sign up and log in
-Log in to [Tencent Cloud](https://intl.cloud.tencent.com/login). If you do not have an account yet, sign up as instructed in [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985).
+Log in to [Tencent Cloud](https://intl.cloud.tencent.com/login). If you do not have an account yet, sign up as instructed in [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985), and complete identity verification as instructed in [Enterprise Identity Verification Guide](https://www.tencentcloud.com/document/product/378/10496).
 
 ### Step 2. Apply for the service
 Log in to the [FaceID console](https://console.cloud.tencent.com/faceid) to activate the service.
