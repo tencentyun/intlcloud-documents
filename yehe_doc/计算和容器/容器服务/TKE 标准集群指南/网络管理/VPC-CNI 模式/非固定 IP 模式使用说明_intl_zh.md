@@ -97,11 +97,11 @@ kubectl annotate nec <nodeName> "tke.cloud.tencent.com/direct-eni-max-attach"="5
 - 在 `spec.template.spec.containers[0].args` 中加入以下启动参数修改默认预绑定值。修改后，ipamd 会自动重启并生效。默认值只影响新增的节点：
 ```
 # 共享网卡模式最小预绑定默认值，默认值为 5
-- --ip-min-warm-target=3
+  - --ip-min-warm-target=3
 # 共享网卡模式最大预绑定默认值，默认值为 5
-- --ip-max-warm-target=3
+  - --ip-max-warm-target=3
 # 独占网卡模式最小预绑定默认值，默认值为 1
-- --eni-min-warm-target=3
+  - --eni-min-warm-target=3
 # 独占网卡模式最大预绑定默认值，默认值为 1
-- --eni-max-warm-target=3
+  - --eni-max-warm-target=3
 ```
