@@ -17,7 +17,7 @@
 </tr>
 <tr>
 <td>Tunnel Type</td>
-<td>Select **1.0** or **2.0** based on the associated connection.</td>
+<td>Select 1.0 or 2.0 based on the associated connection.</td>
 </tr>
 <tr>
 <td>Connections</td>
@@ -25,7 +25,7 @@
 </tr>
 <tr>
 <td>Access Network</td>
-<td>Select CCN or VPC if the tunnel type is **1.0** or **2.0**.</td>
+<td>Select CCN or VPC if the tunnel type is 1.0 or 2.0.</td>
 </tr>
 <tr>
 <td>Region</td>
@@ -57,7 +57,7 @@
 </tr>
 <tr>
 <td>Interconnection Method</td>
-<td><ul><li>By default, **Manual allocation** is selected for 2.0 tunnels.</li><li>Both **Manual allocation** and **Automatic assignment** are supported for 1.0 tunnels. If **Automatic assignment** is selected, there is no need to configure **Tencent Cloud Primary Edge IP** and **CPE peer IP**.</li></ul></td>
+<td><ul><li>By default, Manual allocation is selected for 2.0 tunnels.</li><li>Both Manual allocation and Automatic assignment are supported for 1.0 tunnels. If Automatic assignment is selected, there is no need to configure Tencent Cloud Primary Edge IP and CPE peer IP.</li></ul></td>
 </tr>
 <tr>
 <td>Tencent Cloud Primary Edge IP</td>
