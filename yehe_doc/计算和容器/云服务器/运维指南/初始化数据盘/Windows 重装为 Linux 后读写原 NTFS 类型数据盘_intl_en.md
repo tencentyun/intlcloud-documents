@@ -9,7 +9,7 @@ Windows file system typically uses NTFS or FAT32 format, while Linux file system
 1. Log in to the Linux CVM after reinstallation.
 2. Run the following command to install the ntfsprogs software to enable the Linux CVM to support access to the NTFS file system.
 <dx-alert infotype="explain" title="">
-This document takes Centos7 as an example. Different types of Linux systems have different installation commands. Please use the corresponding installation commands.
+This document takes CentOS as an example. Different types of Linux systems have different installation commands. Please use the corresponding installation commands.
 </dx-alert>
 ```shellsession
 yum install  -y ntfsprogs

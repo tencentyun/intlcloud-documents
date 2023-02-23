@@ -16,7 +16,7 @@ The Tencent Cloud software repository updates software sources from the official
 
 ## Prerequisites
 
-You have already logged in to CVM.
+Log in to the CVM.
 
 ## Directions
 

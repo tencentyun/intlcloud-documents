@@ -1,4 +1,4 @@
-## Supported OS
+## Supported Operating Systems
 
 Operating systems supported by the online migration tool include but not limited to the following:
 
@@ -35,7 +35,7 @@ If your source server or destination CVM is located in a private network or Virt
 </dx-tabs>
 
 
-## Files in the compressed package
+## Files in the Compressed Package
 After `go2tencentcloud.zip` is decompressed, it contains the following files:
 <table>
 	<tr><th width="30%">File Name</th><th>Description</th></tr>
@@ -85,7 +85,7 @@ The client.json configuration file is described as below:
 <table>
   <tr>
 	<th>Parameter</th>
-	<th>Type</th>
+	<th>API Type</th>
 	<th>Required<br></th>
 	<th>Description</th>
   </tr>
@@ -110,6 +110,12 @@ The client.json configuration file is described as below:
 	<td>String</td>
 	<td>No</td>
 	<td>The default value is empty. In the private network migration <a href="#Scenario3">Scenario 3</a>, the IP address of the network proxy needs to be configured.</td>
+  </tr>
+	 <tr>
+<td> Client.Net.Proxy.IPv6</td>
+	<td>Bool</td>
+	<td>No</td>
+	<td>It defaults to <code>false</code>. Set it to <code>true</code> if you want to transfer data via IPv6. Otherwise, the migration data will be transferred via IPv4.</td>
   </tr>
   <tr>
 	<td> Client.Net.Proxy.Port</td>
@@ -159,7 +165,7 @@ To exclude other directories or files, append them to the rsync\_excludes\_linux
 /mnt/disk1/*
 ```
 
-## Parameters of the migration tool
+## Parameters of the Migration Tool
 
 <table>
 <thead>
@@ -187,6 +193,10 @@ To exclude other directories or files, append them to the rsync\_excludes\_linux
 <tr>
 <td><code>--version</code></td>
 <td>Prints the version number.</td>
+</tr>
+<tr>
+<td><code>--clean</code></td>
+<td>Ends the migration task.</td>
 </tr>
 </tbody>
 </table>

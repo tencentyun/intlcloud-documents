@@ -13,20 +13,23 @@
 
 ## 处理步骤
 
-<span id="isConfigurePublicIP"></span>
-### 检查实例是否配置公网 IP
 
->? 实例必须具备公网 IP 才能与 Internet 上的其他计算机相互访问。若实例没有公网 IP，内网 IP 外部则无法直接 ping 通实例。
->
+### 检查实例是否配置公网 IP[](id:isConfigurePublicIP)
+
+<dx-alert infotype="explain" title="">
+实例必须具备公网 IP 才能与 Internet 上的其他计算机相互访问。若实例没有公网 IP，内网 IP 外部则无法直接 ping 通实例。
+</dx-alert>
+
+
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
 2. 在“实例列表”页面中，选择需要 ping 通的实例 ID/实例名，进入该实例的详情页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/12dfabc6420688ebb0dd0f1a8f4d7188.png)
 3. 在“网络信息”栏，查看实例是否配置了公网 IP。
- - 是，请 [检查安全组设置](#CheckSecurityGroupSetting)。
- - 否，请 [绑定弹性公网 IP](https://intl.cloud.tencent.com/document/product/213/16586)。
+   - 是，请 [检查安全组设置](#CheckSecurityGroupSetting)。
+   - 否，请 [EIP 绑定云资源](https://intl.cloud.tencent.com/document/product/213/16586)。
 
-<span id="CheckSecurityGroupSetting"></span>
-### 检查安全组设置
+
+### 检查安全组设置[](id:CheckSecurityGroupSetting)
 
 安全组是一个虚拟防火墙，可以控制关联实例的入站流量和出站流量。而安全组的规则可以指定协议、端口、策略等。由于 ping 使用的是 ICMP 协议，请确认实例关联的安全组是否允许 ICMP。执行以下操作，查看实例使用的安全组以及详细的入站和出站规则：
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
@@ -34,43 +37,48 @@
 3. 选择**安全组**页签，进入该实例的安全组管理页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/bf5881258356a0af748ae16d9cf321a2.png)
 4. 根据查看实例所使用的安全组以及详细的入站和出站规则，判断实例关联的安全组是否允许 ICMP。
- - 是，请 [检查系统设置](#CheckOSSetting)。
- - 否，请将 ICMP 协议策略设置为允许。
+   - 是，请 [检查系统设置](#CheckOSSetting)。
+   - 否，请将 ICMP 协议策略设置为允许。
 
-<span id="CheckOSSetting"></span>
-### 检查系统设置
+
+### 检查系统设置[](id:CheckOSSetting)
 
 判断实例的操作系统类型，选择不同的检查方式。
 - Linux 操作系统，请 [检查 Linux 内核参数和防火墙设置](#CheckLinux)。
-- Windows 操作系统，请 [检查 Windows 防火墙设置](#CheckWindows)。
+- Windows 操作系统，请 [检查 Windows 防火墙设置](#CheckWindows)，若非防火墙问题，可尝 [重置 Windows 网络设置](#reset)。
 
-<span id="CheckLinux"></span>
-#### 检查 Linux 内核参数和防火墙设置
 
->? Linux 系统是否允许 ping 由内核和防火墙设置两个共同决定，任何一个禁止，都会造成 ping 包 “Request timeout”。
+#### 检查 Linux 内核参数和防火墙设置[](id:CheckLinux)
+
+<dx-alert infotype="explain" title="">
+Linux 系统是否允许 ping 由内核和防火墙设置两个共同决定，任何一个禁止，都会造成 ping 包 “Request timeout”。
+</dx-alert>
 
 ##### 检查内核参数 icmp_echo_ignore_all
 
-1. 登录实例。
+1. 通过 VNC 登录实例，详见：
+   - [使用 VNC 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32494)
+   - [使用 VNC 登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/32496)
 2. 执行以下命令，查看系统 icmp_echo_ignore_all 设置。
 ```
 cat /proc/sys/net/ipv4/icmp_echo_ignore_all
 ```
- - 若返回结果为0，表示系统允许所有的 ICMP Echo 请求，请 [检查防火墙设置](#CheckLinuxFirewall)。
- - 若返回结果为1，表示系统禁止所有的 ICMP Echo 请求，请执行 [步骤3](#Linux_step03)。
-3. <span id="Linux_step03">执行以下命令，修改内核参数 icmp_echo_ignore_all 的设置。</span>
+   - 若返回结果为0，表示系统允许所有的 ICMP Echo 请求，请 [检查防火墙设置](#CheckLinuxFirewall)。
+   - 若返回结果为1，表示系统禁止所有的 ICMP Echo 请求，请执行 [步骤3](#Linux_step03)。
+
+3. [](id:Linux_step03)执行以下命令，修改内核参数 icmp_echo_ignore_all 的设置。
 ```
 echo "0" >/proc/sys/net/ipv4/icmp_echo_ignore_all
 ```
 
-<span id="CheckLinuxFirewall"></span>
-##### 检查防火墙设置
+
+##### 检查防火墙设置[](id:CheckLinuxFirewall)
 
 执行以下命令，查看当前服务器的防火墙规则以及 ICMP 对应规则是否被禁止。
 ```
 iptables -L
 ```
-- 若返回如下结果，表示 ICMP 对应规则未被禁止，请 [检查域名是否备案](#CheckDomainRegistration)。
+- 若返回如下结果，表示 ICMP 对应规则未被禁止。
 ```
 Chain INPUT (policy ACCEPT)
 target     prot opt source               destination         
@@ -89,20 +97,30 @@ iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
 ```
 
-<span id="CheckWindows"></span>
-#### 检查 Windows 防火墙设置
+
+#### 检查 Windows 防火墙设置[](id:CheckWindows)
 
 1. 登录实例。
-2. 打开**控制面板**，选择**Windows 防火墙设置**。
+2. 打开**控制面板**，选择 **Windows 防火墙设置**。
 3. 在 “Windows 防火墙”界面，选择**高级设置**。
 4. 在弹出的 “高级安全 Windows 防火墙”窗口中，查看 ICMP 有关的出入站规则是否被禁止。
- - 若ICMP 有关的出入站规则被禁用，请启用该规则。
+   - 若ICMP 有关的出入站规则被禁用，请启用该规则。
 
+### 重置 Windows 网络设置
 
-<span id="OtherOperations"></span>
-### 其他操作
+1. 请确认您的 VPC 网络是否支持 DHCP（如为2018年6月后创建的 VPC 网络，均支持 DHCP），若不支持，请确认网络设置中的静态 IP 是否正确。
+2. 如果支持 DHCP，查看 DHCP 分配到的内网 ip 是否正确，若不正确，您可通过官网的登录功能（VNC 登录），以管理员身份运行 PowerShell，在其中执行 `ipconfig /release` 以及 `ipconfig/renew` （无需重启机器）尝试令 DHCP 组件重新获取 IP。
+3. 若 DHCP 分配到的IP正确，但网络仍旧不通，可使用开始菜单中的【运行】功能，输入` ncpa.cpl `并单击确定。打开本地连接，尝试禁用、启用网卡。
+4. 若以上方式仍不能解决问题，可以管理员身份执行在 CMD 中执行以下命令并重启机器。
+```plantext
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles"  /f
+```
+
+### 其他操作[](id:OtherOperations)
 
 若上述步骤无法解决问题，请参考：
 - 域名 ping 不通，请检查您的网站配置。
-- 公网 IP ping 不通，请附上实例的相关信息和双向 MTR 数据（从本地到云服务器以及云服务器到本地），[提交工单](https://console.cloud.tencent.com/workorder/category) 联系工程师协助定位。
+- 公网 IP ping 不通，请附上实例的相关信息和双向 MTR 数据（从本地到云服务器以及云服务器到本地），通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系工程师协助定位。
 MTR 的使用方法请参考 [服务器网络延迟和丢包处理](https://intl.cloud.tencent.com/document/product/213/14638)。
+
+
