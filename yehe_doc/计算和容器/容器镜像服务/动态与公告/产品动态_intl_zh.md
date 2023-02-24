@@ -265,7 +265,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >交付流水线部署功能支持镜像过滤</td>
 <td rowspan="1" colSpan="1" >新增支持使用本地推送镜像触发部署过程，同时支持配置过滤规则，仅部署符合规则的最新推送镜像。</td>
-<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1051/52657">使用交付流水线实现容器 DevOps</a></td>
+<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1051/53613">使用交付流水线实现容器 DevOps</a></td>
 </tr>
 </table>
 
@@ -318,7 +318,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >交付流水线上线</td>
 <td rowspan="1" colSpan="1" >快速配置交付流水线，即可实现代码更新自动触发镜像构建、推送及应用更新，结合容器服务 TKE 快速实现容器 DevOps。</td>
-<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1051/52657">使用交付流水线实现容器 DevOps</a></td>
+<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1051/53613">使用交付流水线实现容器 DevOps</a></td>
 </tr>
 <tr>
 <td rowspan="1" colSpan="1" >Helm Chart 功能更新</td>
