@@ -25,7 +25,7 @@ CI's webpage moderation feature can quickly locate non-compliant elements in hig
 
 ### Using APIs
 
-You can use the provided APIs to moderate images and text on webpages. For more information, see [Webpage Moderation](https://cloud.tencent.com/document/product/460/63966).
+You can use the provided APIs to moderate images and text on webpages. For more information, see [Webpage Moderation](https://www.tencentcloud.com/document/product/1045/52184).
 
 ### Using SDKs
 
@@ -33,13 +33,13 @@ You can also use the SDKs for diverse programming languages to moderate the imag
 
 | SDK            | Integration Guide                                                     |
 | :------------- | :----------------------------------------------------------- |
-| Android SDK    | [Webpage Moderation](https://cloud.tencent.com/document/product/436/74524) |
-| C++ SDK        | [Webpage Moderation](https://cloud.tencent.com/document/product/436/76284) |
-| Go SDK        | [Webpage Moderation](https://cloud.tencent.com/document/product/436/65350) |
-| iOS SDK        | [Webpage Moderation](https://cloud.tencent.com/document/product/436/74623) |
-| JavaScript SDK | [Webpage Moderation](https://cloud.tencent.com/document/product/436/74618) |
-| Node.js SDK   | [Webpage Moderation](https://cloud.tencent.com/document/product/436/76141) |
-| Python SDK    | [Webpage Moderation](https://cloud.tencent.com/document/product/436/75184) |
+| Android SDK    | Webpage Moderation |
+| C++ SDK        | [Webpage Moderation](https://intl.cloud.tencent.com/document/product/436/52358) |
+| Go SDK        | Webpage Moderation|
+| iOS SDK        | Webpage Moderation |
+| JavaScript SDK | [Webpage Moderation](https://intl.cloud.tencent.com/document/product/436/52201) |
+| Node.js SDK   | [Webpage Moderation](https://intl.cloud.tencent.com/document/product/436/52337) |
+| Python SDK    | [Webpage Moderation](https://intl.cloud.tencent.com/document/product/436/52130) |
 
 >?
 > The processing capabilities provided by CI have been fully integrated into the COS SDK, so you can directly use it to process data.
@@ -47,4 +47,4 @@ You can also use the SDKs for diverse programming languages to moderate the imag
 #### Viewing moderation results
 
 - Callback settings: You can set the callback address, moderation type, and threshold in a request to filter callbacks. The moderation result will be sent to your callback address automatically for subsequent operations.
-- Visual processing: After enabling the webpage moderation feature, you can view the moderation results by condition on the **Moderation Details** page in the console and manually process them. For more information, see [Moderation Details](https://cloud.tencent.com/document/product/460/46492).
+- Visual processing: After enabling the webpage moderation feature, you can view the moderation results by condition on the **Moderation Details** page in the console and manually process them. For more information, see [Moderation Details](https://intl.cloud.tencent.com/document/product/1045/52106).

@@ -37,7 +37,7 @@ Compared with other platforms where videos are stored, a professional video plat
 
 #### Automatic moderation during upload
 
-You can activate the service in the CI console. Then, incremental videos in the bucket will be moderated during upload. For more information, see [Configuring Video Moderation](https://cloud.tencent.com/document/product/460/46494).
+You can activate the service in the CI console. Then, incremental videos in the bucket will be moderated during upload. For more information, see [Configuring Video Moderation](https://intl.cloud.tencent.com/document/product/1045/52116).
 
 #### Moderation by scanning historical data
 
@@ -45,7 +45,7 @@ For the historical video data stored in COS, you can configure historical data m
 
 #### Through an API
 
-You can use APIs to moderate the content of images, videos, audios, text, documents, and webpages. For more information, see [Video Moderation](https://cloud.tencent.com/document/product/460/47362).
+You can use APIs to moderate the content of images, videos, audios, text, documents, and webpages. For more information, see [Video Moderation](https://www.tencentcloud.com/document/product/1045/48253).
 
 
 #### Through the SDK
@@ -54,20 +54,20 @@ You can also use the SDKs for diverse programming languages to moderate the cont
 
 | SDK            | Integration Guide                                                     |
 | :------------- | :----------------------------------------------------------- |
-| Android SDK   | [Video Moderation](https://cloud.tencent.com/document/product/436/74520) |
-| C SDK          | [Video Moderation](https://cloud.tencent.com/document/product/436/62020) |
-| C++ SDK       | [Video Moderation](https://cloud.tencent.com/document/product/436/76276) |
-| Go SDK        | [Webpage Moderation](https://cloud.tencent.com/document/product/436/65350) |
-| .NET (C##) SDK  | [Video Moderation](https://cloud.tencent.com/document/product/436/63587) |
-| iOS SDK        | [Webpage Moderation](https://cloud.tencent.com/document/product/436/74623) |
-| JavaScript SDK | [Webpage Moderation](https://cloud.tencent.com/document/product/436/74618) |
-| Node.js SDK   | [Webpage Moderation](https://cloud.tencent.com/document/product/436/76141) |
-| Python SDK    | [Webpage Moderation](https://cloud.tencent.com/document/product/436/75184) |
+| Android SDK   | Video Moderation |
+| C SDK          | [Video Moderation](https://intl.cloud.tencent.com/document/product/436/52203) |
+| C++ SDK       | [Video Moderation](https://intl.cloud.tencent.com/document/product/436/52354) |
+| Go SDK        | Webpage Moderation |
+| .NET (C##) SDK  | [Video Moderation](https://intl.cloud.tencent.com/document/product/436/52361) |
+| iOS SDK        | Webpage Moderation |
+| JavaScript SDK | [Webpage Moderation](https://intl.cloud.tencent.com/document/product/436/52201) |
+| Node.js SDK   | [Webpage Moderation](https://intl.cloud.tencent.com/document/product/436/52337) |
+| Python SDK    | [Webpage Moderation](https://intl.cloud.tencent.com/document/product/436/52130) |
 
 >?
 > The processing capabilities provided by CI have been fully integrated into the COS SDK, so you can directly use it to process data.
 
 #### Viewing moderation results
 
-- Callback settings: You can set the callback address, moderation type, and threshold to filter callbacks. The moderation result will be sent to your callback address automatically for subsequent operations. For more information on the callback content, see [Configuring Video Moderation](https://cloud.tencent.com/document/product/460/46494#.E5.9B.9E.E8.B0.83.E5.86.85.E5.AE.B9).
-- Visual processing: After enabling the video moderation feature, you can view the moderation results by condition on the **Moderation Details** page in the console and manually process them. For more information, see [Moderation Details](https://cloud.tencent.com/document/product/460/46492).
+- Callback settings: You can set the callback address, moderation type, and threshold to filter callbacks. The moderation result will be sent to your callback address automatically for subsequent operations. For more information on the callback content, see [Configuring Video Moderation](https://intl.cloud.tencent.com/document/product/1045/52116#.E5.9B.9E.E8.B0.83.E5.86.85.E5.AE.B9).
+- Visual processing: After enabling the video moderation feature, you can view the moderation results by condition on the **Moderation Details** page in the console and manually process them. For more information, see [Moderation Details](https://intl.cloud.tencent.com/document/product/1045/52106).

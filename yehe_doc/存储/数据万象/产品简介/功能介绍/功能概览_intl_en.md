@@ -76,7 +76,7 @@ Cloud Infinite (CI) provides the following features:
       <td>Allows you to easily convert images into formats that provide a high compression ratio, such as TPG and HEIF. This effectively reduces the transmission time, loading time, and the use of bandwidth and traffic.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/75997">Abnormal image detection</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/53715">Abnormal image detection</a></td>
       <td>Detects whether other types of suspicious files such as video streams are hidden in images</td>
    </tr>
    <tr>
@@ -223,7 +223,7 @@ File size limit: <li>Sync request: Below 128 MB.</li><li>Async request: Below 50
       <td>Based on Tencent Cloud's industry-leading deep learning technology, the optical character recognition (OCR) feature is capable of intelligently recognizing words on images and converting them into editable text. It can be used in photo scanning, paper document digitization, e-commerce ad moderation, and many other scenarios to greatly improve the efficiency of information processing.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/63899">Search by image</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/43516">Search by image</a></td>
       <td>Performs feature extraction, comparison, and search on the images in an image library. It is suitable for e-commerce product search, copyright protection, and other scenarios.</td>
    </tr>
    <tr>

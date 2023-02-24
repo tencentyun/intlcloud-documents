@@ -45,7 +45,7 @@ vlog 已成为社交平台中用户上传 UGC 内容的重要部分，多样化�
 
 #### 使用 API 接口
 
-您可以使用我们提供的 API 接口对图片、视频、音频、文本、文档、网页进行内容审核，详情请参见 [视频审核](https://cloud.tencent.com/document/product/460/47362) API 文档。
+您可以使用我们提供的 API 接口对图片、视频、音频、文本、文档、网页进行内容审核，详情请参见 [视频审核](https://www.tencentcloud.com/document/product/1045/48253) API 文档。
 
 
 #### 使用 SDK
@@ -54,12 +54,12 @@ vlog 已成为社交平台中用户上传 UGC 内容的重要部分，多样化�
 
 | SDK            | 接入文档                                                     |
 | :------------- | :----------------------------------------------------------- |
-| Android SDK    | [内容审核](https://cloud.tencent.com/document/product/436/74520) |
+| Android SDK    | 内容审核 |
 | C SDK          | [内容审核](https://intl.cloud.tencent.com/document/product/436/52203) |
 | C++ SDK        | [内容审核](https://intl.cloud.tencent.com/document/product/436/52354) |
-| Go SDK         | [内容审核](https://cloud.tencent.com/document/product/436/65350) |
+| Go SDK         | 内容审核 |
 | .NET(C##) SDK  | [内容审核](https://intl.cloud.tencent.com/document/product/436/52361) |
-| iOS SDK        | [内容审核](https://cloud.tencent.com/document/product/436/74623) |
+| iOS SDK        | 内容审核 |
 | JavaScript SDK | [内容审核](https://intl.cloud.tencent.com/document/product/436/52201) |
 | Node.js SDK    | [内容审核](https://intl.cloud.tencent.com/document/product/436/52337) |
 | Python SDK     | [内容审核](https://intl.cloud.tencent.com/document/product/436/52130) |
@@ -70,4 +70,4 @@ vlog 已成为社交平台中用户上传 UGC 内容的重要部分，多样化�
 #### 审核结果查看
 
 - 回调设置：您可设置回调地址、回调审核类型、回调阈值等对回调内容进行筛选，审核结果将自动发送至您的回调地址，便于您进行后续操作，回调内容详情请查看 [视频审核](https://intl.cloud.tencent.com/document/product/1045/52116#.E5.9B.9E.E8.B0.83.E5.86.85.E5.AE.B9) 控制台文档。
-- 可视化处理：开启视频审核功能后，您可在控制台审核详情界面根据条件查看审核结果，并对审核结果进行手动处理。使用详情请查看 [审核详情](https://cloud.tencent.com/document/product/460/46492) 控制台文档。
+- 可视化处理：开启视频审核功能后，您可在控制台审核详情界面根据条件查看审核结果，并对审核结果进行手动处理。使用详情请查看 [审核详情](https://intl.cloud.tencent.com/document/product/1045/52106) 控制台文档。

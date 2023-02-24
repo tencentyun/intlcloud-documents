@@ -4,11 +4,11 @@
 
 添加文档自动审核配置后，每当存储桶中新产生音频/文本/文档时，将自动进行检测，并支持自动冻结（禁止公有读访问）已检测的违规内容。
 
-您也可以对已存在对象存储（Cloud Object Storage，COS）中的文档文件进行审核，详情请参见 [设置历史数据审核任务](https://cloud.tencent.com/document/product/460/59083) 和 [文档审核](https://cloud.tencent.com/document/product/460/59379) API 文档。
+
 
 >?
 > - 文档审核基于**文档转换**能力，通过将文档每个页面转换为图片进行审核。
-> - 文档审核为收费项，由数据万象收取，详细的计费说明请参见 [内容审核费用](https://cloud.tencent.com/document/product/460/58119#.E6.96.87.E6.A1.A3.E5.AE.A1.E6.A0.B8.E8.B4.B9.E7.94.A8)。
+> - 文档审核为收费项，由数据万象收取。
 > - 目前支持审核的文档类型包含如下格式：
 >  - 演示文件：pptx、ppt、pot、potx、pps、ppsx、dps、dpt、pptm、potm、ppsm。
 >  - 文字文件：doc、dot、wps、wpt、docx、dotx、docm、dotm。

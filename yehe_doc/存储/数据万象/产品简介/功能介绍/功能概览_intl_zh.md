@@ -76,7 +76,7 @@
       <td>数据万象提供图片高级压缩功能，可以更加高效地将图片转换为 TPG 或 HEIF 等高压缩比格式，有效降低图片传输链路及加载耗时，降低带宽及流量成本。</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/75997">异常图片检测</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/53715">异常图片检测</a></td>
       <td>数据万象提供异常图片检测功能，能够检测出图片中是否隐含视频流等其他类型的可疑文件。</td>
    </tr>
    <tr>

@@ -4,11 +4,11 @@ This document describes how to use the document moderation feature in the consol
 
 After you configure automatic document moderation, new text/documents uploaded to a bucket will be automatically moderated, and the identified non-compliant content can be automatically blocked (by denying public read access to the content).
 
-You can also moderate existing documents stored in COS. For more information, see [Setting Historical Data Moderation Job](https://cloud.tencent.com/document/product/460/59083) and [File Moderation](https://cloud.tencent.com/document/product/460/59379).
+
 
 >?
 > - The document moderation feature leverages the **document conversion** capability to convert each page of a document into an image for moderation.
->- Document moderation is billed by CI. For billing details, see [Content Moderation Fees](https://cloud.tencent.com/document/product/460/58119#.E6.96.87.E6.A1.A3.E5.AE.A1.E6.A0.B8.E8.B4.B9.E7.94.A8).
+>- Document moderation is billed by CI. 
 > - Currently, document types supported for moderation include:
 >  - Presentation files: PPTX, PPT, POT, POTX, PPS, PPSX, DPS, DPT, PPTM, POTM, PPSM.
 >  - Text files: DOC, DOT, WPS, WPT, DOCX, DOTX, DOCM, DOTM.
@@ -30,11 +30,11 @@ You can also moderate existing documents stored in COS. For more information, se
 4. Click **Add Automatic Document Moderation Configuration** and set the following configuration items:
    - **Moderation Scope**: Select the scope of documents to be moderated, which can be the entire bucket, a specific directory, or a specific file prefix.
    - **Moderation Suffix**: Select one or multiple options for **Document Format**, including presentation, text, spreadsheet, and PDF.
-   - **Moderation Policy**: Select a moderation policy. You can create different policies for refined moderation. If no policies have been configured, the default policy will be used. Moderation scene options include **Pornographic**, **Illegal**, and **Advertisement**, and you can select one or multiple options. For more information on how to configure a moderation policy, see [Setting Moderation Policy](https://cloud.tencent.com/document/product/460/56345).
+   - **Moderation Policy**: Select a moderation policy. You can create different policies for refined moderation. If no policies have been configured, the default policy will be used. Moderation scene options include **Pornographic**, **Illegal**, and **Advertisement**, and you can select one or multiple options. For more information on how to configure a moderation policy, see [Setting Moderation Policy](https://intl.cloud.tencent.com/document/product/1045/52107).
    - **Moderation Scene**: It displays the scene that you configure in the moderation policy. You can select the target scene as needed.
    - **Restricted File Block**: You can enable this service to authorize CI to perform automatic or human moderation and block the identified non-compliant files by denying public read access to them. After enabling this service, you need to select the block type and score range of files to be blocked.
    - **Block Type**: You can select a block type and mechanism. **Machine moderation and block** is selected by default. If you select **Manual review freeze**, Tencent Cloud security team will review suspiciously sensitive files identified during machine moderation. You can select the file score range for blocking (by specifying an integer between 60 and 100; the greater the score, the more sensitive the file).
-   - **Callback**: After callback is enabled, you will receive moderation results. You need to select the moderation type and callback content and set the callback URL. For more information, see [Document Moderation Callback Content](https://cloud.tencent.com/document/product/460/62385).
+   - **Callback**: After callback is enabled, you will receive moderation results. You need to select the moderation type and callback content and set the callback URL. For more information, see [Document Moderation Callback Content](https://intl.cloud.tencent.com/document/product/1045/52123).
 5. After completing the configuration, click **Save**. Files uploaded subsequently will be moderated.
 
 ## Notes

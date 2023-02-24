@@ -43,10 +43,5 @@ You can perform file processing operations through **jobs and workflows**. For m
 
 >!Currently, this feature can be used only through a job but not a workflow.
 
-### Using APIs
 
-You can use APIs to calculate the hash of files and perform other file processing operations. For more information, see the following API documentation:
 
-- [Sync Request for File Hash Calculation](https://cloud.tencent.com/document/product/436/83107)
-- [Submitting File Decompression Job](https://cloud.tencent.com/document/product/436/83110)
-- [Submitting Multi-File Zipping Job](https://cloud.tencent.com/document/product/436/83112)

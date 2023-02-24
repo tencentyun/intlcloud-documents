@@ -27,7 +27,7 @@ A bucket tag is a key-value pair (key = value), where the tag key and tag value 
 
 ## How to Use
 
-You can set bucket tags in the console as instructed in [Setting Bucket Tag](https://cloud.tencent.com/document/product/460/79237).
+You can set bucket tags in the console as instructed in [Setting Bucket Tag](https://www.tencentcloud.com/document/product/1045/53781).
 
 - If you have set a bucket tag in the COS console, the tag will be automatically obtained when you bind the bucket in the CI console.
 - If you adjust or delete the bucket tag in the COS console after binding a bucket in the CI console, the bucket tag displayed in the CI console won't change.

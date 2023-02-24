@@ -43,10 +43,4 @@
 
 >!当前仅支持通过任务使用，暂不支持工作流。
 
-### 使用 API 接口
 
-您可以使用我们提供的 API 接口对文件进行哈希值计算等处理，详情请参见以下 API 文档：
-
-- [文件哈希值计算](https://cloud.tencent.com/document/product/436/83107)
-- [文件解压](https://cloud.tencent.com/document/product/436/83110)
-- [多文件打包压缩](https://cloud.tencent.com/document/product/436/83112)
