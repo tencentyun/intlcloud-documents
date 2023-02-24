@@ -265,7 +265,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >Image filtering is supported in the delivery pipeline deployment feature</td>
 <td rowspan="1" colSpan="1" >Local push images can be used to trigger the deployment process, and filtering rules can be configured to deploy only the most recently pushed images that meet the rules.</td>
-<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1051/52657">Implementation of Container DevOps Using Delivery Pipeline</a></td>
+<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1051/53613">Implementation of Container DevOps Using Delivery Pipeline</a></td>
 </tr>
 </table>
 
@@ -318,7 +318,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >Launches the delivery pipeline feature</td>
 <td rowspan="1" colSpan="1" >After a delivery pipeline is configured, code updates can automatically trigger image building, image push, and application updates. When used with TKE, this feature can quickly implement container DevOps.</td>
-<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1051/52657">Implementation of Container DevOps Using Delivery Pipeline</a></td>
+<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1051/53613">Implementation of Container DevOps Using Delivery Pipeline</a></td>
 </tr>
 <tr>
 <td rowspan="1" colSpan="1" >Updates the Helm Chart feature</td>
