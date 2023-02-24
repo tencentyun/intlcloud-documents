@@ -20,7 +20,7 @@
 > - 输入文件页数限制在5000页之内。
 
 ## 操作流程
-<img style="width:418px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b7c31c91d128f77552e443f93b95c167.png" />
+<img style="width:418px; max-width: inherit;" src="https://staticintl.cloudcachetci.com/yehe/backend-news/3YaP402_PRELIM__%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-1.png" />
 
 ## 操作步骤
 
