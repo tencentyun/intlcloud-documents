@@ -4,7 +4,7 @@
 CVMインスタンスを初めて購入して使用する場合は、下記の順序に従って理解、購入および利用することをお勧めします。
 
 1. CVMインスタンスの概念を理解するには：[CVMの概要](https://intl.cloud.tencent.com/document/product/213/495)をご参照ください。
-2. 適切なCVMモデルを選択して購入します。CVMインスタンスを個人ユーザーとして初めて使用する場合は、［Linuxインスタンスの構成］（https://intl.cloud.tencent.com/document/product/213/10517）をご参照ください。
+2. 適切なCVMモデルを選択して購入します。CVMインスタンスを個人ユーザーとして初めて使用する場合は、[Linuxインスタンスの構成](https://intl.cloud.tencent.com/document/product/213/10517)をご参照ください。
 3. 購入したCVMインスタンスにログインします。購入したインスタンスの種類に応じて、[Windowsインスタンスへのログイン](https://intl.cloud.tencent.com/document/product/213/5435)または [Linuxインスタンスへのログイン](https://intl.cloud.tencent.com/document/product/213/5436)を選択することが可能です。
 
 
