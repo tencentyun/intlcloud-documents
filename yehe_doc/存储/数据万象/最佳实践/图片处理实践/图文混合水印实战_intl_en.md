@@ -20,8 +20,8 @@ The basic image processing feature of CI allows you to use [pipeline operators](
 
 1. Define the image watermark parameters as instructed in [Image Watermarking](https://intl.cloud.tencent.com/document/product/1045/33720).
 If you are unfamiliar with API parameters, you can add a style in the console to generate parameters as instructed in [Basic Processing](https://intl.cloud.tencent.com/document/product/1045/33443).
-<img src="https://qcloudimg.tencent-cloud.cn/raw/023a23350ccbef6dbc8f7ff31a4b0686.jpg" style="width: 80%"/></br>
-Below are the processing parameters in the red box in the above figure:
+
+Below are the processing parameters:
 ```
 watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/dissolve/60/dx/10/dy/50/gravity/southeast
 ```
@@ -29,7 +29,7 @@ watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teX
 >
 2. Define the text watermark parameters as instructed in [Text Watermarking](https://intl.cloud.tencent.com/document/product/1045/33721).
 If you are unfamiliar with API parameters, you can add a style in the console to generate parameters as instructed in [Basic Processing](https://intl.cloud.tencent.com/document/product/1045/33443).
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e14eb88078bdb3ae5a14dbdb1f2b7150.jpg" style="width: 80%"/></br>
+
 ```
 watermark/2/text/VUlOOiAxMjM0NTY3OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10
 ```
@@ -43,10 +43,9 @@ watermark/2/text/VUlOOiAxMjM0NTY3OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/I
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/2/text/VUlOOiAxMjM0NTY3OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10|watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/gravity/southeast/dx/10/dy/50/dissolve/60 
 ```
-Then, you can get the image with a hybrid watermark:
-<img src="https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/2/text/VUlOOiAxMjM0NTY3OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10|watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/gravity/southeast/dx/10/dy/50/dissolve/60" style="width: 80%"/></br>
+
 To shorten the URL, you can add the part of the image watermark (unchanged) as the `watermark1` style in the console as instructed in [Basic Processing](https://intl.cloud.tencent.com/document/product/1045/33443).
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e281a9f3dbac953781dc408c36a78f66.jpg" style="width: 80%"/></br>
+
 In this way, the URL can be shortened to:
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png/watermark1?watermark/2/text/VUlOOiAxMjM0NTY3OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10
@@ -55,7 +54,7 @@ If you need to change the text content later, you only need to replace `VUlOOiAx
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png/watermark1?watermark/2/text/VUlOOiA4ODg4ODg4OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10
 ```
-<img src="https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/2/text/VUlOOiA4ODg4ODg4OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10|watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/gravity/southeast/dx/10/dy/50/dissolve/60" style="width: 80%"/></br>
+
 
 
 ### Method 2. Printing the text and image watermarks onto a transparent image and using the output image as the final image watermark
@@ -67,19 +66,14 @@ For example: `https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/transpar
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/transparent.png?watermark/2/text/VUlOOiAxMjM0NTY/font/SGVsdmV0aWNhLmRmb250/fontsize/48/fill/IzAwMDAwMA/dissolve/60/gravity/south/dx/0/dy/60|watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/gravity/center/dx/0/dy/0/dissolve/71
 ```
-Below is the actual effect:
-<img src="https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/transparent.png?watermark/2/text/VUlOOiAxMjM0NTY/font/SGVsdmV0aWNhLmRmb250/fontsize/48/fill/IzAwMDAwMA/dissolve/60/gravity/south/dx/0/dy/60|watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/gravity/center/dx/0/dy/0/dissolve/71" style="width: 20%"/></br>
+
 4. Use the transparent image as the image watermark and add the watermark to the original image:
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/1/image/aHR0cDovL2V0ZXJuYXV4LTEzMDE0NTM1NTAuY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vdHJhbnNwYXJlbnQucG5nP3dhdGVybWFyay8yL3RleHQvVlVsT09pQXhNak0wTlRZL2ZvbnQvU0dWc2RtVjBhV05oTG1SbWIyNTAvZm9udHNpemUvNDgvZmlsbC9JekF3TURBd01BL2Rpc3NvbHZlLzYwL2dyYXZpdHkvc291dGgvZHgvMC9keS82MHx3YXRlcm1hcmsvMS9pbWFnZS9hSFIwY0RvdkwyVjBaWEp1WVhWNExURXpNREUwTlRNMU5UQXVZMjl6TG1Gd0xXZDFZVzVuZW1odmRTNXRlWEZqYkc5MVpDNWpiMjB2Ykc5bmJ5NXdibWMvZ3Jhdml0eS9jZW50ZXIvZHgvMC9keS8wL2Rpc3NvbHZlLzcx/gravity/southeast/dx/0/dy/0/dissolve/90
 ```
-Below is the actual effect:
-<img src="https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/1/image/aHR0cDovL2V0ZXJuYXV4LTEzMDE0NTM1NTAuY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vdHJhbnNwYXJlbnQucG5nP3dhdGVybWFyay8yL3RleHQvVlVsT09pQXhNak0wTlRZL2ZvbnQvU0dWc2RtVjBhV05oTG1SbWIyNTAvZm9udHNpemUvNDgvZmlsbC9JekF3TURBd01BL2Rpc3NvbHZlLzYwL2dyYXZpdHkvc291dGgvZHgvMC9keS82MHx3YXRlcm1hcmsvMS9pbWFnZS9hSFIwY0RvdkwyVjBaWEp1WVhWNExURXpNREUwTlRNMU5UQXVZMjl6TG1Gd0xXZDFZVzVuZW1odmRTNXRlWEZqYkc5MVpDNWpiMjB2Ykc5bmJ5NXdibWMvZ3Jhdml0eS9jZW50ZXIvZHgvMC9keS8wL2Rpc3NvbHZlLzcx/gravity/southeast/dx/0/dy/0/dissolve/90" style="width: 80%"/></br>
+
 You can also use the `scatype` parameter to scale the image watermark proportionally to the image size and use the `batch` parameter to tile the image watermark.
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/1/image/aHR0cDovL2V0ZXJuYXV4LTEzMDE0NTM1NTAuY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vdHJhbnNwYXJlbnQucG5nP3dhdGVybWFyay8yL3RleHQvVlVsT09pQXhNak0wTlRZL2ZvbnQvU0dWc2RtVjBhV05oTG1SbWIyNTAvZm9udHNpemUvNDgvZmlsbC9JekF3TURBd01BL2Rpc3NvbHZlLzYwL2dyYXZpdHkvc291dGgvZHgvMC9keS82MHx3YXRlcm1hcmsvMS9pbWFnZS9hSFIwY0RvdkwyVjBaWEp1WVhWNExURXpNREUwTlRNMU5UQXVZMjl6TG1Gd0xXZDFZVzVuZW1odmRTNXRlWEZqYkc5MVpDNWpiMjB2Ykc5bmJ5NXdibWMvZ3Jhdml0eS9jZW50ZXIvZHgvMC9keS8wL2Rpc3NvbHZlLzcx/scatype/3/spcent/30/gravity/southeast/dx/0/dy/0/dissolve/90/batch/1/degree/45
 ```
-Below is the actual effect:
-<img src="https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/1/image/aHR0cDovL2V0ZXJuYXV4LTEzMDE0NTM1NTAuY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vdHJhbnNwYXJlbnQucG5nP3dhdGVybWFyay8yL3RleHQvVlVsT09pQXhNak0wTlRZL2ZvbnQvU0dWc2RtVjBhV05oTG1SbWIyNTAvZm9udHNpemUvNDgvZmlsbC9JekF3TURBd01BL2Rpc3NvbHZlLzYwL2dyYXZpdHkvc291dGgvZHgvMC9keS82MHx3YXRlcm1hcmsvMS9pbWFnZS9hSFIwY0RvdkwyVjBaWEp1WVhWNExURXpNREUwTlRNMU5UQXVZMjl6TG1Gd0xXZDFZVzVuZW1odmRTNXRlWEZqYkc5MVpDNWpiMjB2Ykc5bmJ5NXdibWMvZ3Jhdml0eS9jZW50ZXIvZHgvMC9keS8wL2Rpc3NvbHZlLzcx/scatype/3/spcent/30/gravity/southeast/dx/0/dy/0/dissolve/90/batch/1/degree/45" style="width: 80%"/></br>
-
 
