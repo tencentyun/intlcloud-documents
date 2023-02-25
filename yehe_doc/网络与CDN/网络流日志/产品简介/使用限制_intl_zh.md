@@ -1,6 +1,8 @@
 ## 注意事项
 - 网络流日志仅支持采集 VPC 范围内弹性网卡、NAT 网关、云联网跨地域流量的流日志，不支持采集基础网络范围内的流日志。
 >?目前 NAT 网关、云联网跨地域流量流日志处于内测中，如有需要，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+>
+- 流日志功能支持所有地域，但 CLS 侧存在地域限制，导致部分地域数据可能无法投递到 CLS，具体请参见 CLS [可用地域](https://intl.cloud.tencent.com/document/product/614/18940)。
 - 创建流日志后，您不能更改其配置（如修改流日志投递的日志服务）。
 - 流日志不支持采集的 IP 流量类型：
   - Windows 实例为 Windows 许可证激活而生成的流量。
@@ -8,23 +10,23 @@
 - 1个弹性网卡仅能创建1个流日志。
 - 网络流日志采集云服务器上弹性网卡的流量时，出方向采集限速前的流量，入方向是限速后的流量。
 例如，若为云服务器的弹性网卡创建网络流日志：
-   - 当云服务器通过负载均衡访问公网时，则出方向采集箭头1的流量，入方向采集箭头2的流量。
-   - 当云服务器通过 NAT 网关访问公网时，则出方向采集箭头3的流量，入方向采集箭头4的流量。
+ - 当云服务器通过负载均衡访问公网时，则出方向采集箭头1的流量，入方向采集箭头2的流量。
+ - 当云服务器通过 NAT 网关访问公网时，则出方向采集箭头3的流量，入方向采集箭头4的流量。
 ![](https://main.qcloudimg.com/raw/77e0e2b4602605c96f31238473e8cecc.png)
 
 
 ## 支持仪表盘功能的流日志类型[](id:gjfxgn)
 目前仅弹性网卡类型、且日志集和日志主题携带“Flowlog”标识的流日志，支持创建或查看高级分析仪表盘。
 >?在 [主题配置](https://intl.cloud.tencent.com/document/product/682/47038) 中可创建携带“Flowlog”标识的日志集“flowlog_logset”和日志主题。
->
 
-## 支持列表
->?流日志功能支持所有地域，但 CLS 侧存在地域限制，导致部分地域数据可能无法投递到 CLS，具体请参见 CLS [可用地域](https://intl.cloud.tencent.com/document/product/614/18940)。
->
-支持采集流日志的弹性网卡云服务器机型如下：
- - 标准型S1、标准型S2、标准型S3
- - 内存型M1、内存型M2、内存型M3
- - 高IO型I1、高IO型I2、高IO型I3
- - 计算型C2、计算型C3、计算增强型CN3
- - 大数据型 D1
+
+
+## 机型限制
+- 支持流日志进行采集的 [云服务器实例规格](https://intl.cloud.tencent.com/document/product/213/11518) 包括：M6ce、M6p、SA3se、S4m、DA3、ITA3、I6t、I6、SA3、S5se、SA2、SK1、S4、S5、SN3ne、S3ne、S2ne、SA2a、S3ne、SW3a、SW3b、SW3ne、ITA3、IT5c、IT5、IT5c、IT3、I3、D3、DA2、D2、M6、MA2、M4、C6、IT3a、IT3b、IT3c、C4ne、CN3ne、C3ne、GI1、PNV4、GNV4v、GNV4、GT4、GI3X、GN7、GN7vw
+- 如下机型不再支持新建流日志进行采集，存量流日志也将于[ 2022年7月25日 ](https://www.tencentcloud.com/document/product/682/52524)起不再进行数据上报：
+   - 标准型：S3、SA1、S2、S1
+   - 内存型：M3、M2、M1
+   - 计算型：C4、CN3、C3、C2
+   - 批量计算型：BC1、BS1
+   - 高性能计算集群：HCCIC5、HCCG5v
 
