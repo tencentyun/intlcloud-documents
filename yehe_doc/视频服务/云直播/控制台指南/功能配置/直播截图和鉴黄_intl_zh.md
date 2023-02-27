@@ -6,20 +6,21 @@
 - 通过云直播控制台创建模板，具体操作步骤请参见 [创建截图鉴黄模板](#Screenshot)。
 - 通过 API 创建模板，具体参数及示例说明请参见 [创建截图模板](https://intl.cloud.tencent.com/document/product/267/30834)。
 
-
 ## 注意事项
 
 - 截图功能可单独开启使用，但鉴黄功能需开启截图后才能开启，不可单独使用。
 - 截图与鉴黄为收费功能，启用后，截图功能按每千张0.0176美元收费；鉴黄功能按每千张0.2294美元收费。详情请参见 [智能鉴黄](https://intl.cloud.tencent.com/document/product/267/39607)。  
 - 截图与鉴黄图片存储至您的对象存储 COS 中，将产生 COS 存储费用，详情请查看 [COS 产品计费定价](https://intl.cloud.tencent.com/pricing/cos)。
+- 纯音频流会截图失败，不会产生相应的截图费用。
 - 截图如需存储至**其他账号**的COS bucket，需要先在 COS bucket 中授权云直播服务的数据写入权限，详情可参见 [COS bucket 授权给直播实现截图存储](https://intl.cloud.tencent.com/document/product/267/33384)。
+- 当 COS Bucket 的访问权限为公有读时，并且 Bucket 中存在涉黄涉政及其他违禁的截图内容，建议前往对应的 COS Bucket 中把对应的图片进行删除处理。避免 COS Bucket 被封禁影响使用。
 - 模板创建成功后，可与推流域名进行关联，相关文档可参见 [截图鉴黄配置](https://intl.cloud.tencent.com/document/product/267/31063)。模板关联成功后约5分钟 - 10分钟生效。 
 - 控制台的截图鉴黄模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过截图鉴黄相关接口关联指定流的，则需要通过调用 [删除截图规则](https://intl.cloud.tencent.com/document/product/267/30833) 解除关联。
 - 模板绑定、修改和解绑均只影响更新后的直播流，已经在直播中的流不会受影响；直播中的流需要断流重推才会使用新的规则。
 
 ## 使用前提
 - 已开通腾讯云直播服务，并添加 [推流域名](https://intl.cloud.tencent.com/document/product/267/35970)。
-- 已创建COS Bucket，详情请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。
+- 已创建 COS Bucket，详情请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。
 
 [](id:Screenshot)
 ## 创建截图鉴黄模板
@@ -27,7 +28,8 @@
 2. 单击 **创建截图&鉴黄模板**，由于云直播截图鉴黄服务需要把截图存储至对象存储的存储桶中，所以**首次**创建截图&鉴黄模板需要您创建服务角色，并给云直播授权 COS 的读写权限。单击前往授权，进入 CAM 进行授权。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f27be286a9f3c68d96a55544a6c25b57.png)
 3. 授权成功后可填写配置项，并单击 **保存** 即可。
-    <img src="https://main.qcloudimg.com/raw/544c2127f7870add334eaf760f1da089.png" style="zoom:67%;" />
+<img src="https://main.qcloudimg.com/raw/544c2127f7870add334eaf760f1da089.png" style="zoom:67%;" />
+
 <table>
 <thead><tr><th width="15%">配置项</th><th>说明</th></tr></thead>
 <tbody><tr>
@@ -97,9 +99,9 @@
 
 1. 登录云直播控制台，进入 **功能配置** > [**直播截图&鉴黄**](https://console.cloud.tencent.com/live/config/jtjh)。
 2. 选择已关联域名的直播截图&鉴黄模板，单击 **解绑**。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/e8a52af13916db8d50bc4395cfc5cc8d.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/e8a52af13916db8d50bc4395cfc5cc8d.png)
 3. 确认是否解绑当前关联域名，单击 **确定** 即可解绑。
-   ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
+ ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
 
 [](id:change)
 ## 修改模板

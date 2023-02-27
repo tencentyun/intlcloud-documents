@@ -12,7 +12,7 @@
 ## 鉴权配置
 1.  进入 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或 **管理** 进入域名详情页。 
 2.  单击 **推流配置** ，查看 **鉴权配置** 标签，单击右侧的 **编辑** 。
-	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
+![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
 3.  进入推流鉴权配置页，单击![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png)按钮选择开启/关闭推流鉴权。
 4. 修改主 KEY 和备 KEY 信息，单击 **保存** 即可成功生效。
 ![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
@@ -23,13 +23,12 @@
 ### 操作步骤
 1. 进入 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage) 选择需配置的推流域名或单击 **管理** ，进入域名详情页。
 2. 选择 **推流配置** > **推流地址生成器** ，进行如下配置：
-   1. 选择过期时间，例如：`2021-06-30 19:26:02`。
-   2. 填写自定义的流名称 StreamName，例如：`liveteststream`。
-   3. 单击 **生成推流地址** 即可生成带着 StreamName 的 RTMP 推流地址。
+   1. 选择过期时间，例如：`2022-11-24 16:00:35`。
+   2. 填写自定义的流名称 StreamName，例如：`livetest`。
+   3. 单击 **生成推流地址** 即可生成带着 StreamName 的推流地址。
 ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
-3. 若您的推流域名未开启推流鉴权，您还可以在 **推流配置** > **推流地址解析** 标签下，查看该推流域名下 RTMP、UDP 这两种推流地址。替换播放地址中的 StreamName（流名称）关联推流地址，关联后即可通过播放地址查看直播画面。 
+3. 若您的推流域名未开启推流鉴权，您还可以在 **推流配置** > **推流地址解析** 标签下，查看该推流域名下 RTMP、WebRTC、SRT和RTMP over SRT 这四种推流地址。替换播放地址中的 StreamName（流名称）关联推流地址，关联后即可通过播放地址查看直播画面。 
 ![](https://main.qcloudimg.com/raw/aa129bd839cb307993bfed247e636a41.png)
-
 
 
 ### 推流地址说明
@@ -38,6 +37,7 @@ RTMP 推流地址格式为：
 ```
 rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
+
 其中：
 - domain：直播推流域名。
 - AppName：直播的应用名称，默认为 live，可自定义。
@@ -46,11 +46,9 @@ rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=h
 - txTime：推流地址设置的时间戳，是控制台推流地址的有效时间。
 
 >!
->- 若您开启了域名鉴权，实际过期时间等于 txTime + Key 有效时间。
+>- 若您开启了域名鉴权，txTime 即有效时间。
 >- 控制台为了方便使用，设置的时间即为实际过期时间。**若您开启了域名鉴权，计算推流地址时会按照公式倒推出 txTime**。
 >- 在过期时间前进行了推拉流，只要推拉流正常没有断开或停止，即使过期时间到了也能正常保持推拉流状态。
-
-
 
 ## 推流地址示例代码
 腾讯云为您提供的 PHP、Java 和 Go 语言的推流地址示例代码，您可直接参考示例代码完成推流地址的接入。具体查看操作如下：
@@ -97,10 +95,10 @@ public class Test {
       public static void main(String[] args) {
             System.out.println(getSafeUrl("txrtmp", "11212122", 1469762325L));
       }
-
+    
       private static final char[] DIGITS_LOWER =
             {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
-
+    
       /*
       * KEY+ streamName + txTime
       */
@@ -109,7 +107,7 @@ public class Test {
                               append(key).
                               append(streamName).
                               append(Long.toHexString(txTime).toUpperCase()).toString();
-
+    
             String txSecret = null;
             try {
                   MessageDigest messageDigest = MessageDigest.getInstance("MD5");
@@ -120,7 +118,7 @@ public class Test {
             } catch (UnsupportedEncodingException e) {
                   e.printStackTrace();
             }
-
+    
             return txSecret == null ? "" :
                               new StringBuilder().
                               append("txSecret=").
@@ -130,10 +128,10 @@ public class Test {
                               append(Long.toHexString(txTime).toUpperCase()).
                               toString();
       }
-
+    
       private static String byteArrayToHexString(byte[] data) {
             char[] out = new char[data.length << 1];
-
+    
             for (int i = 0, j = 0; i < data.length; i++) {
                   out[j++] = DIGITS_LOWER[(0xF0 & data[i]) >>> 4];
                   out[j++] = DIGITS_LOWER[0x0F & data[i]];
@@ -184,8 +182,5 @@ func main(){
 :::
 </dx-codeblock>
 
-
-
 ## 后续操作
 生成推流地址后，可根据业务场景使用直播推流，具体操作请参见 [直播推流](https://intl.cloud.tencent.com/document/product/267/31558)。
-

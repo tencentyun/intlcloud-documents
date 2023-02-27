@@ -1,51 +1,61 @@
-CSSは、Widevine、Fairplay、NormalAESのDRM暗号化プロトコルをベースとするビデオライブストリーミングの暗号化、レコーディングの防止、リンク不正アクセス防止などのサービスを提供し、ユーザーのビデオコンテンツをあらゆる面から保護します。ここでは主に、コンソールからDRM暗号化機能を使用する操作手順についてご説明します。
+Cloud Streaming Services (CSS)は、Widevine、Fairplay、NormalAESをベースにしたDRM暗号化プロトコルを使用し、ライブストリーミング暗号化、画面録画禁止、ホットリンク保護などのサービスを提供し、ユーザーのビデオコンテンツを全面的に保護します。本書では、コンソールでDRM暗号化機能を使用する手順を説明します。
 
 ## 注意事項
-Tencent Cloudは、ビデオストリームの暗号化操作のみを提供し、DRM暗号化の証明書管理は、サードパーティのサービスプロバイダである華曦達(SDMC)が提供します。DRM暗号化証明書管理サービスの利用には料金が発生し、華曦達(SDMC)が請求します。具体的な接続や操作については、華曦達(SDMC)に直接お問い合わせください。
+Tencent Cloudは、ビデオストリームに対する暗号化処理のみを提供します。DRM暗号化ベースの証明書管理は、サードパーティのSDMC社とDRMtoday社により提供された有料サービスです。詳しくは、SDMC社またはDRMtoday社までお問い合わせください。
 
-## 前提条件
-- Tencent Cloud CSSサービスをアクティブ化し、[再生ドメイン名](https://intl.cloud.tencent.com/document/product/267/35970)を追加済みであること。
-- [華曦達SDMC DRMサービス](https://www.xmediacloud.com/contact-us/)でサービスアカウントを作成し、アクセスキーを設定していること。
+##  前提条件
+- Tencent CSSサービスが有効になっており、[再生ドメイン名](https://intl.cloud.tencent.com/document/product/267/35970)が追加されていること。
+- [SDMC DRMサービス](https://console.multidrm.tv/setting/drm/index)または[DRMtoday](https://castlabs.com/free-trials/drmtoday/)にサービスアカウントを作成し、アクセスキーを設定していること。
 
 ## コンソールの設定
 [](id:step1)
-### DRMキー情報へのアクセス設定
-1. CSSコンソールにログインし、**機能設定** >[DRM管理](https://console.cloud.tencent.com/live/config/drm)と進みます。
-2. **編集**をクリックして華曦達(SDMC)DRMキー情報へのユーザーアクセスを設定します。UID、SecretID、SecretKeyを設定する必要があります。これらのキー情報は、証明書のサードパーティプロバイダから入手する必要があります。
-![](https://qcloudimg.tencent-cloud.cn/raw/4a88319f757d161c4b86cbeef27cbf84.png)
+
+### DRMへのアクセスキーの設定
+1. CSSコンソールにログインし、**機能設定** > [**DRM管理](https://console.cloud.tencent.com/live/config/drm)に進みます。
+2. **編集**をクリックし、キーの情報を入力し、証明書管理サービスのプロバイダー（SDMCまたはDRMtoday）を選択します。詳細な設定は以下の通りです：
+- 証明書管理サービスのプロバイダーが**SDMC**の場合
+   - ユーザーがSDMCのDRMにアクセスする時に使用するキーの情報（UID、SecretID、SecretKey）を設定します。これらのキーの情報は、サードパーティから入手してください。
+![](https://qcloudimg.tencent-cloud.cn/raw/09a9b34d85b87b89c43e5c5831530ee9.png)
+- 証明書管理サービスのプロバイダーが**DRMtoday**の場合
+   - ユーザーがDRMtodayのDRMにアクセスする時に使用するキーの情報（MerchantName、MerchantUUID、MerchantApiName、MerchantApiPassword、KeySeedID、IvSeedID）を設定します。これらのキーの情報は、サードパーティから入手してください。
+![](https://qcloudimg.tencent-cloud.cn/raw/292500dccf57d708dca961985020cbc6.png)
 
 [](id:step2)
-### トランスコードテンプレートの設定とドメイン名のバインド
-1. **機能設定** > [CSSトランスコード](https://console.cloud.tencent.com/live/config/transcode)と進みます。
-2. **トランスコードテンプレートの作成**をクリックし、DRM暗号化情報を設定します。
+### トランスコーディングテンプレートの設定とドメイン名のバインド
+1. **機能設定** > [**CSSトランスコーディング**](https://console.cloud.tencent.com/live/config/transcode)に進みます。
+2. **トランスコーディングテンプレートを作成**をクリックし、DRM暗号化情報を設定します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/048b9d46b1b5305605b2cd41a0a85b75.png)
-
 <table>
-<thead><tr><th width=18%>DRM暗号化設定項目</th><th>入力必須かどうか</th><th>説明</th></tr></thead>
+<thead><tr><th width=18%>DRM暗号化設定項目</th><th>設定要否</th><th>についての説明</th></tr></thead>
 <tbody><tr>
 <td>DRM暗号化</td>
-<td>いいえ</td>
-<td>DRM暗号化スイッチは、デフォルトではオフです。この機能をオンにするには、DRM管理でDRMキーを設定する必要があります</td>
+<td>不要</td>
+<td>DRM暗号化の有効/無効。デフォルトでは無効です。有効にするには、DRM管理でDRMキーを設定しておく必要があります</td>
 </tr><tr>
 <td>暗号化タイプ</td>
-<td>はい</td>
-<td>Widevine、Fairplay、NomalAESをサポートしています。Fairplayを使用する場合は、プレーヤー側でAppleから申請された証明書をアップロードする必要があります。詳細については、<a href="https://intl.cloud.tencent.com/document/product/267/48069">Fairplay証明書の申請</a></td>をご参照ください
+<td>必要</td>
+<td>Widevine、Fairplay、NomalAESをサポートします。Fairplayを使用するには、プレイヤー側からAppleに申請した証明書をアップロードする必要があります。詳しくは、<a href="https://www.tencentcloud.com/document/product/267/48069">Fairplay証明書の申請</a></td>をご参照ください
+</tr>
+<td>DRMタグ</td>
+<td>必要</td>
+<td>SD、HD、UHD1、UHD2を選択できます。</a></td>
 </tr>
 </tbody></table>
-3. **ドメイン名のバインド**をクリックすると、対応するトランスコードテンプレートが再生ドメイン名にバインドされます。
+
+3. **ドメイン名をバインド**をクリックし、トランスコーディングテンプレートと再生ドメイン名をバインドします。
 ![](https://qcloudimg.tencent-cloud.cn/raw/96151a6cb6428abceca9e85a66728f99.png)
 
 [](id:step3)
 ### DRM再生アドレスの取得
-DRM暗号化には、再生アドレスがHLS再生プロトコルである必要があります。[アドレスジェネレーター](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)で、対応するトランスコードテンプレートを選択して再生アドレスを発行し、HLS再生プロトコルアドレスを選択してDRM再生アドレスにすることができます。
+DRM暗号化を使用するには、再生アドレスはHLS再生プロトコルを使用する必要があります。[アドレスジェネレータ](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)で対応するトランスコーディングテンプレートを選択し、再生アドレスを生成して、HLS再生プロトコルを使用するアドレスをDRM再生アドレスとして使用してください。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/823cbe64c7fb7fdcbd88f5b3742eacf5.png) 
 
 [](id:step4)
 ### プレーヤーの設定
-ライブストリーミングDRM暗号化機能を使用する場合、プレーヤーに一定の要件があります。
-- プレーヤーと[華曦達(SDMC)](https://www.xmediacloud.com/contact-us/)を接続して、ビデオ情報からLicenseを取得、復号する機能を実装する必要があります。
+ライブストリーミングDRM暗号化機能を使用する場合、プレイヤーは以下の要件を満たさなければなりません。
+- プレイヤーは [SDMC](https://www.xmediacloud.com/contact-us/) と連携し、ビデオ情報を通しライセンスを取得して復号化する必要があります。
 - iOSプラットフォームはFairplayをサポートし、AndroidプラットフォームはWideVineとNomalAESをサポートしています。
-- iOSプラットフォームの場合、証明書を申請し、[華曦達(SDMC)プラットフォーム](https://www.xmediacloud.com/contact-us/)にアップロードする必要があります。
+- iOSプラットフォームの場合、証明書を申請し[SDMCプラットフォーム](https://console.multidrm.tv/licenses/drm/index)にアップロードする必要があります。
 
->? DRMまたは華曦達への接続プロセスで発生したいかなる問題についても、[お問い合わせ](https://console.cloud.tencent.com/workorder/category)からチケットを提出することができます。すべての工程でお客様の問題解決をサポートします。
+>? SDMCプラットフォームを操作するには、登録してアカウントを取得する必要があります。登録方法については、[ユーザーキーの取得](https://www.tencentcloud.com/document/product/267/48070)をご参照ください。DRMまたはサードパーティプロバイダーとのやり取りで問題が発生した場合、いつでも[お問い合わせ](https://console.cloud.tencent.com/workorder/category)までご連絡ください。責任をもって協力させていただきます。

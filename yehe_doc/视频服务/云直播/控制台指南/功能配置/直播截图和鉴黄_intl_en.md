@@ -6,15 +6,16 @@ You can create a screencapture and porn detection template in the following ways
 - Create a template in the CSS console. For details, see [Creating a Screencapture and Porn Detection Template](#Screenshot).
 - Call the `CreateLiveSnapshotTemplate` API to create a template. For information on the parameters and request sample, see [CreateLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30834).
 
+## Must-Knows
 
-## Notes
-
-- In addition to the porn detection feature, you also need to enable screencapture in the console in order to perform porn detection.
+- Porn detection is based on screencapturing. You need to enable screencapturing before you can use the porn detection feature.
 - The screencapture and porn detection features are priced at 0.0176 USD and 0.2294 USD per 1,000 screenshots respectively. For details, see [Intelligent Porn Detection](https://intl.cloud.tencent.com/document/product/267/39607).  
 - The screenshots and porn detection results are stored in your COS bucket, which will incur COS storage fees. For more information, see [COS Pricing](https://intl.cloud.tencent.com/pricing/cos).
+- Screencapturing will fail for audio-only streams, in which case no screencapturing costs will be incurred.
 - If you want to store the data in a COS bucket of **another account**, you need to first grant CSS the permission to write to that COS bucket. For more information, see [Authorizing CSS to Store Screenshots in a COS Bucket](https://intl.cloud.tencent.com/document/product/267/33384).
-- After creating a template, you can bind it with a push domain name. For more information, see [Screencapture and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31063). The binding takes effect in about 5-10 minutes. 
-- In the console, templates are managed at the domain level. To unbind a screencapture rule that was bound by an API, call [DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833).
+- If your COS bucket allows public read access and has politically sensitive, pornographic, or other inappropriate content, to avoid the bucket being blocked, please delete the content first.
+- After creating a template, you need to bind it to a push domain. For more information, see [Screencapture and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31063). The configuration takes effect in about 5-10 minutes. 
+- In the console, templates are managed at the domain level. To unbind a screencapture rule that was bound to a specific stream by an API, call [DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833).
 - Binding, unbinding, or modifying a template affects only new live streams and not ongoing ones. To make the change apply to ongoing live streams, you need to stop them and push them again.
 
 ## Prerequisites
@@ -27,7 +28,8 @@ You can create a screencapture and porn detection template in the following ways
 2. Click **Create Screencapture and Porn Detection Template**. If it is the first time you do so, click **Authorize Now** to create a service role and grant CSS read and write access to COS so that screenshots can be stored in COS.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f27be286a9f3c68d96a55544a6c25b57.png)
 3. Complete the template settings, and click **Save**.
-    <img src="https://main.qcloudimg.com/raw/544c2127f7870add334eaf760f1da089.png" style="zoom:67%;" />
+<img src="https://main.qcloudimg.com/raw/544c2127f7870add334eaf760f1da089.png" style="zoom:67%;" />
+
 <table>
 <thead><tr><th width="15%">Configuration Item</th><th>Description</th></tr></thead>
 <tbody><tr>
@@ -41,9 +43,9 @@ You can create a screencapture and porn detection template in the following ways
 <td>The screencapture interval, which is two seconds by default. Value range: 2-300 (seconds).</td>
 </tr><tr>
 <td>Intelligent porn detection</td>
-<td>Whether to enable intelligent porn detection. If it is enabled, you need to configure a callback template before you can receive porn detection results.</td>
+<td>Whether to enable intelligent porn detection. After it is enabled, you need to configure the porn detection callback in order to receive the detection results.</td>
 </tr><tr>
-<td>Storage Account</td>
+<td>Storage account</td>
 <td><b>Current Account</b> or <b>Other Account</b></td>
 </tr><tr>
 <td>CosAppId</td>
@@ -60,19 +62,19 @@ You can create a screencapture and porn detection template in the following ways
 <td>Click the box to select a COS folder. The default is <code>{Year}-{Month}-{Day}/</code>.<br>Note: The name of a COS folder can contain only letters, digits, placeholders, and symbols <code>-, !, _, ., *</code>.</td>
 </tr><tr>
 <td>File name</td>
-<td><ul style="margin:0"><li>The format of screenshot filenames. The default is <code>{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}</code>. You can customize your own format:
+<td><ul style="margin:0"><li>The format of screenshot filenames. You can customize your own format. The default is <code>{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}</code>:
 			<ul style="margin:0">
-					<li>{AppName}: push `AppName`</li>
-					<li>{PushDomain}: push domain name</li>
-					<li>{StreamID}: stream ID</li>
-					<li>{Year}: screenshot time (year)</li>
-					<li>{Month}: screenshot time (month)</li>
-					<li>{Day}: screenshot time (day)</li>
-					<li>{Hour}: screenshot time (hour)</li>
-					<li>{Minute}: screenshot time (minute)</li>
-					<li>{Second}: screenshot time (second)</li>
-					<li>{Width}: width of the screenshot</li>
-					<li>{Height}: height of the screenshot</li><li>{Ext}: extension (.jpg)</li>
+					<li>{AppName}: The push app name.</li>
+					<li>{PushDomain}: The push domain.</li>
+					<li>{StreamID}: The stream ID.</li>
+					<li>{Year}: The screenshot time (year).</li>
+					<li>{Month}: The screenshot time (month).</li>
+					<li>{Day}: The screenshot time (day).</li>
+					<li>{Hour}: The screenshot time (hour).</li>
+					<li>{Minute}: The screenshot time (minute).</li>
+					<li>{Second}: The screenshot time (second).</li>
+					<li>{Width}: The width of the screenshot.</li>
+					<li>{Height}: The height of the screenshot.</li><li>{Ext}: The extension (.jpg).</li>
 			</ul>
 		<li><b>Note: The filename can contain only letters, digits, placeholders, and symbols (-, !, _, ., *).</li>
     <li><b>Example: If the filename format is <code> {Year}-{Month}-{Day}- {Hour}-{Ext}</code>, a screenshot captured at 14:00:00 on January 1, 2020 would be named <code>2020010114.jpg</code> in COS.</li></ul></td>
@@ -97,15 +99,15 @@ You can create a screencapture and porn detection template in the following ways
 
 1. Log in to the CSS console, and select **Feature Configuration** > [Live Screencapture & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh) on the left sidebar.
 2. Select the target screencapture and porn detection template, find the domain you want to unbind, and click **Unbind**.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/e8a52af13916db8d50bc4395cfc5cc8d.png)
+ ![](https://qcloudimg.tencent-cloud.cn/raw/e8a52af13916db8d50bc4395cfc5cc8d.png)
 3. In the pop-up window, click **Confirm**.
-   ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
+ ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
 
 [](id:change)
 ## Modifying a Template
 
 1. Select **Feature Configuration** > [Live Screencapture & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh) on the left sidebar.
-2. Select a screencapture and porn detection template and click **Edit** on the right to modify it.
+2. Select a screencapture and porn detection template, click **Edit** on the right, and modify its information.
 3. Click **Save**.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/786b4fd9630a178a0aebb65cda16a49c.png)
@@ -121,4 +123,4 @@ You can create a screencapture and porn detection template in the following ways
 ![](https://main.qcloudimg.com/raw/6ae7a299517803a92776d8077ccda1d3.png)
 
 ## More
-For more information about **binding** and **unbinding a domain name**, see [Screencapture and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31063).
+You can also **bind** and **unbind** domains and screencapture and porn detection templates on the **Domain Management** page. For details, see [Screencapture and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31063).

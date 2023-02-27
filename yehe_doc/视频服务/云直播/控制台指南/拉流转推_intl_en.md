@@ -5,11 +5,11 @@ If your live streaming source does not have the capability to push streams or if
 - You have activated [CSS](https://intl.cloud.tencent.com/product/css) and logged in to the CSS console.
 - You have added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970) in the console.
 
-## Use Limits
+## Limits
 - You can create up to **20** relay tasks.
 - The relay feature is charged based on the **duration of relay tasks**. For details, see [Relay](https://intl.cloud.tencent.com/document/product/267/41059).
 - CSS is only responsible for pulling and relaying content. **Please make sure that your content is authorized and complies with relevant laws and regulations. In case of copyright infringement or violation of laws or regulations, CSS will suspend its services for you and reserves the right to seek legal remedies.**
-- Starting from **00:00 on November 23, 2022**, using local relay mode will incur additional fees. For details, see the document about extended feature fees.
+- The local relay mode became a paid feature starting from **00:00 on November 23, 2022**. To learn more, see [Extended Features](https://www.tencentcloud.com/document/product/267/51555).
 
 [](id:create)
 ## Creating a Task
@@ -22,68 +22,59 @@ If your live streaming source does not have the capability to push streams or if
 <tr><th width="15%">Configuration Item</th><th>Description</th>
 <tr>
 <td>Task Description</td>
-<td>Provide a description of the task.</td>
+<td>Describe the task.</td>
 </tr><tr>
 <td>Execution Time</td>
-<td>The default execution time is from the <code>current time</code> to <code>24 hours later</code>. You can select a time range up to seven days, and the start time cannot be later than one year from the current time. <br>Suppose the current time is 2021-3-24 11:50:01. <ul style="margin:0"><li/>You can select a time range between 2021-3-24 11:50:01 and 2022-3-30 11:50:01.<li/>The end time cannot be later than 2022-3-30 11:50:01.</ul></td
+<td>The default execution time is from the <code>current time</code> to <code>24 hours later</code>. You can select a time range up to seven days.
 </tr><tr>
 <td>Event Callback Notification</td>
 <td>Enter a callback URL for receiving relay event notifications. </td>
 </tr></table>
 
 3. Provide the source information.
-      - Region: Random (Chinese mainland), North China region (Beijing), East China (Shanghai), South China (Guangzhou), Southeast Asia (Singapore), Southeast Asia (Bangkok), Northeast Asia (Seoul), South Asia (Mumbai), Hong Kong
-      - If you select **Random (Chinese mainland)**, the system will assign a region that is nearby.
-      
+    - Region: Random (Chinese mainland), North China region (Beijing), East China (Shanghai), South China (Guangzhou), Southeast Asia (Singapore), Southeast Asia (Bangkok), Northeast Asia (Seoul), South Asia (Mumbai), Hong Kong
+    - If you select **Random (Chinese mainland)**, the system will assign a region that is nearby.
 4. For **Content Type**, you can select **Live streaming**, **Custom video path**, or **Image**.
-   - **Live streaming**:
-     - Enter a live streaming URL (**only one** is allowed).
+ - **Live streaming**:
+    - Enter a live streaming URL (**only one** is allowed).
    ![](https://qcloudimg.tencent-cloud.cn/raw/6795d964f41e63fa90f0c09e3ddcf060.png)
-     - If you select **Enable backup**, when the system fails to pull content from the primary source, it will automatically switch to the backup source. After the primary recovers, you need to manually switch back. Backup sources support only loop of a single video.
-     
-  - **Custom video path**:
-      - You can enter **multiple** (max 30) source URLs.
-      
-      - Select **Repeat** to repeat the playback indefinitely or **Specified** to specify the number of times (1-100) to play the content.
-      
-      - If you enable local mode, sources in MP4 format will be cached to the local node before they are relayed. This ensures smoother and more reliable playback.
-      
-
-  ![](https://qcloudimg.tencent-cloud.cn/raw/cc30dc26f64d17f90f3e4fc76d2d9cd0.png)
-      
-   - **Image**:
-      - Upload an image or enter an image URL. You can click **Preview** to preview the image.
-      - Images in JPEG, JPG, PNG, or BMP format are supported. If you enter an image URL, there is no limit on image size. If you upload an image, it cannot exceed 2 MB.
-      
-     ![](https://qcloudimg.tencent-cloud.cn/raw/506182c6890e8f357177c78b190ff6db.png)  
+    - If you select **Enable backup**, when the system fails to pull content from the primary source, it will automatically switch to the backup source. After the primary recovers, you need to manually switch back. Backup sources support only loop of a single video.
+ - **Custom video path**:
+    - You can enter **multiple** (max 30) source URLs.
+    - Select **Repeat** to repeat the playback indefinitely or **Specified** to specify the number of times (1-100) to play the content.
+    - If you enable local mode, sources in MP4 format will be cached to the local node before they are relayed. This ensures smoother and more reliable playback.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/cc30dc26f64d17f90f3e4fc76d2d9cd0.png)
+ - **Image**:
+    - Upload an image or enter an image URL. You can click **Preview** to preview the image.
+    - Images in JPEG, JPG, PNG, or BMP format are supported. If you enter an image URL, there is no limit on image size. If you upload an image, it cannot exceed 2 MB.
+ ![](https://qcloudimg.tencent-cloud.cn/raw/506182c6890e8f357177c78b190ff6db.png)
 
 >? 
->- The system will stop the relay task either when the playback count reaches the specified value or when the task reaches its end time.
->- After modifying a task:
-    - If you change only the playback count, after the new value is applied, the count will start from 2.
-    - If you change both the source URL and playback count, after the new configuration takes effect (whether immediately or after the current playback ends), the count will start from 1.
-    - If you change the destination URL, the playback count will be reset.
+>- The system will stop a relay task either when the playback count reaches the specified value or when the task reaches its end time.
+>- In case of task modification:
+   - If you change only the playback count, after the new value is applied, the count will start from 2.
+   - If you change both the source URL and playback count, after the new configuration takes effect (whether immediately or after the current playback ends), the count will start from 1.
+   - If you change the destination URL, the playback count will be reset.
 >- Relaying a locally cached MP4 file will incur additional fees, which are based on the duration of the file relayed.
 
-5. Enter a destination URL for receiving the content.
+5. Enter a destination URL.
    1. Click **Address Generator** to enter the URL generation page.
    ![](https://qcloudimg.tencent-cloud.cn/raw/9724d77727e21ba1798485d03d6e3246.png)
-   2. Select an existing push domain name, enter the `Appname`, `StreamName`, and expiration time, and click **Confirm** to generate a push URL, which will be auto-filled as **Destination Address**.
+   2. Select an existing push domain, enter the `Appname`, `StreamName`, and expiration time, and click **Confirm** to generate a push URL, which will be auto-filled as **Destination Address**.
    ![](https://qcloudimg.tencent-cloud.cn/raw/b1b6f0b832bacb15b281d71fc653afb0.png)
->!Make sure the URL expiration time is later than the task end time. If you change the destination after the task starts, it will stop and restart.
+>!The URL expiration time must be later than the task end time. If you change the destination URL after the task starts, it will stop and restart.
 
-6. You can click ![](https://qcloudimg.tencent-cloud.cn/raw/b64d8a4343b3a1e340db3adb9002db60.png) next to **Watermark Configuration** to enable watermarking. Watermark images in PNG, JPB, or GIF format are supported.
-
- - Select a watermark type.
-   - If you select **Custom watermark URL**, enter a URL of the watermark image you want to use and click **Preview** to preview it.
-   - If you select **Image Upload**, click **Select image** to upload a watermark image. For better visual experience, transparent images in PNG format are recommended. The image size cannot exceed 2 MB.
- - Position the watermark image in either of two ways:
-   - Drag the watermark image.
-   - Change the values of **X-AXIS** and **Y-AXIS**.
- - Click **Save**.
+6. You can click ![](https://qcloudimg.tencent-cloud.cn/raw/b64d8a4343b3a1e340db3adb9002db60.png) next to **Watermark Configuration** to add a watermark. Watermark images in PNG, JPB, or GIF format are supported.
+- Select a watermark type.
+    - If you select **Custom watermark URL**, enter a URL of the watermark image you want to use and click **Preview** to preview it.
+    - If you select **Image Upload**, click **Select image** to upload a watermark image. For better visual experience, transparent images in PNG format are recommended. The image size cannot exceed 2 MB.
+- Position the watermark image in either of two ways:
+    - Drag the watermark image.
+    - Change the values of **X-AXIS** and **Y-AXIS**.
+    - Click **Save**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a58673819adbc0d2dff5ecf25406816f.png)
 >? 
->- If the source is an image, watermark configuration is not supported.
+>- If the source is an image, watermarking is not supported.
 >- Using watermarks will incur [transcoding fees](https://intl.cloud.tencent.com/document/product/267/39604).
 
 7. Click **Save**.
@@ -125,8 +116,6 @@ In the [task list](https://console.cloud.tencent.com/live/tools/relay), find you
 </tr>
 </tbody></table>
 
-
-
 [](id:change)
 ### Modifying a task
 1. In the [task list](https://console.cloud.tencent.com/live/tools/relay), find the task you want to modify, and click **Edit**.
@@ -152,8 +141,6 @@ In the [task list](https://console.cloud.tencent.com/live/tools/relay), find you
 ![](https://qcloudimg.tencent-cloud.cn/raw/28a0a3542ab9ab838d26dfc565f321d1.png)
 2. The information of the copied task will be auto-filled. You can [modify](#create) it as needed.
 3. Click **Save** to create a new relay task.
-
-
 
 [](id:reboot)
 ### Restarting a task
@@ -206,4 +193,3 @@ A task expires after its end time. If you have too many relay tasks, you may fai
 2. Click ![](https://qcloudimg.tencent-cloud.cn/raw/7ed257d05a4283dc233ef406520187b4.png) to enable auto-delete.
 3. Specify a period (1-24 hours) to retain expired tasks before they are deleted.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4d579b1d0776ea22b5d994e3b7357ea3.png)
-

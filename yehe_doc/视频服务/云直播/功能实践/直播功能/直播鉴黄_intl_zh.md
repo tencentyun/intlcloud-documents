@@ -1,0 +1,282 @@
+开通直播鉴黄，首先要开通直播截图功能，您可以通过 [云直播控制台](https://intl.cloud.tencent.com/document/product/267/31072) 或直播截图鉴黄 API 来实现，本文主要介绍如何通过直播截图鉴黄 API 来实现直播鉴黄功能。
+
+
+## 注意事项
+当 COS Bucket 的访问权限为公有读时，并且 Bucket 中存在涉黄涉政及其他违禁的截图内容，建议前往对应的 COS Bucket 中把对应的图片进行删除处理。避免 COS Bucket 被封禁影响使用。
+
+## 开通直播鉴黄
+由于直播鉴黄是基于直播截图的，因此开通直播鉴黄必须开通直播截图功能，以下为具体操作。
+
+### 1. 创建带鉴黄功能的直播截图模板
+调用 [CreateLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30834)， 通过设置 PornFlag = 1，创建一个带鉴黄功能的直播截图模板。
+
+### 2. 创建带鉴黄功能的直播截图规则
+调用 [CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30835)，创建带鉴黄功能的直播截图规则，将第1步创建的直播截图模板 ID 关联到需要鉴黄的直播 AppId、DomainName、AppName、StreamName 维度下。
+
+### 3. 发起直播，开始鉴黄
+创建带鉴黄功能直播截图规则后，新发起的直播会自动开启鉴黄功能，对于正在直播中的直播流，如需开启直播鉴黄，需要停止、重新发起直播才会生效。
+
+## 获取直播鉴黄结果
+在开通了直播鉴黄功能后，您可在鉴黄回调模板中配置注册的回调域名，则云直播后台会将鉴黄结果回调给您。
+>! 默认只会将可疑结果进行回调，正常结果不会回调。
+
+### 1. 创建直播鉴黄回调模板
+调用 [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815)，设置 PornCensorshipNotifyUrl 参数为您的域名，创建直播鉴黄回调模板。
+### 2. 创建直播鉴黄回调规则
+
+调用 [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816)，创建带鉴黄功能的直播截图规则，将上一步创建的直播截图模板 ID 关联到需要鉴黄回调的直播 AppId、DomainName、AppName 维度下。
+
+### 3. 获取鉴黄结果
+直播后台会将鉴黄结果通过 HTTP POST 请求发送到您注册的域名，鉴黄结果以 JSON 格式存放在 HTTP Body 中，您可以只通过 type 字段来判断直播是否涉黄。
+>! 我们这里建议使用图片的`type`对黄图进行评判，由于检测系统判定无法做到100%准确率，会有少量图片会识别成疑似色情或识别结果不对，建议可以进行人工二次确认。  
+
+#### 完整协议如下：
+| 参数 | 是否必填 | 数据类型 | 描述 |
+| -------- | -------- | -------- | -------- |
+| streamId    | 选填     | String | 流名称     |
+| channelId      | 选填     | string   | 频道 ID      |
+| img     | 必填     | string   | 预警图片链接      |
+| type    | 必填     | Array    | 指检测结果中优先级最高的恶意标签对应的分类值，具体含义可参考参数 label 返回的补充文字描述 |
+| score       | 必填     | Array    | type 对应的评分   |
+| ocrMsg      | 选填     | string   | 图片的 OCR 识别信息（如果存在）       |
+| suggestion     | 必填     | string   | 建议值，取值可选： <ul style="margin:0"><li/>Block：打击<li/>Review：待复审<li/>Pass：正常</ul> |
+| label       | 必填     | string   | 该字段用于返回检测结果（LabelResults）中所对应的优先级最高的恶意标签，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理 |
+| subLabel    | 必填     | string   | 该字段用于返回检测结果所命中优先级最高的恶意标签下的子标签名称，如：色情--性行为；若未命中任何子标签则返回空字符串 |
+| labelResults   | 选填     | [Array of LabelResult](#labelresult)   | 该字段用于返回分类模型命中的恶意标签的详细识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果<br>注意：**此字段可能返回 null，表示取不到有效值** |
+| objectResults  | 选填     | [Array of ObjectResult](#objectresult) | 该字段用于返回物体检测模型的详细检测结果；包括：实体、广告台标、二维码等内容命中的标签名称、标签分数、坐标信息、场景识别结果、建议操作等内容识别信息；详细返回值信息可参阅对应的数据结构（ObjectResults）描述<br> 注意：**此字段可能返回 null，表示取不到有效值** |
+| ocrResults     | 选填     | [Array of OcrResult](#ocrresult)    | 该字段用于返回OCR文本识别的详细检测结果；包括：文本坐标信息、文本识别结果、建议操作等内容识别信息；详细返回值信息可参阅对应的数据结构（OcrResults）描述<br> 注意：**此字段可能返回 null，表示取不到有效值** |
+| libResults     | 选填     | [Array of LibResult](#libresult)    | 风险图库审核结果  |
+| screenshotTime | 必填     | Number | 截图时间 |
+| sendTime    | 必填     | Number | 请求发送时间，UNIX 时间戳 |
+| stream_param   | 选填     | String | 推流参数 |
+| app     | 选填     | String | 推流域名 |
+| appid       | 选填     | Number | 业务 ID |
+| appname     | 选填     | String | 推流 path 路径 |
+
+#### LabelResult
+分类模型命中结果。
+
+| 名称   | 类型  | 描述    |
+| ---------- | ------------------------ | ------------------------ |
+| Scene      | String      | 返回模型识别出的场景结果，如广告、色情、有害内容等场景。     |
+| Suggestion | String      | 返回针对当前恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。 返回值：<ul style="margin:0"><li/>Block：建议屏蔽<li/>Review ：建议人工复审<li/>Pass：建议通过</ul> |
+| label | String      | 该字段用于返回检测结果所对应的恶意标签 |
+| SubLabel   | String | 子标签名称|
+| Score      | Integer | 该标签模型命中的分值    |
+| Details    | Array of [LabelDetailItem](#labeldetailitem) | 分类模型命中子标签明细结果     |
+
+#### LabelDetailItem
+
+分类模型命中子标签结果。
+
+| 名称 | 类型 | 描述|
+| -------- | -------- | ----- |
+| Id    | Integer  | 序号   |
+| Name     | String   | 子标签名称     |
+| Score    | Integer  | 子标签分数，取值范围0分 - 100分|
+
+#### ObjectResult
+
+实体检测结果详情。
+
+| 名称   | 类型 | 描述 |
+| ---------- | --------------------- | --------------------- |
+| Scene      | String   | 返回实体识别出的实体场景结果，如二维码、logo、图片 OCR 等场景。 |
+| Suggestion | String   | 返回针对当前恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。返回值：<ul style="margin:0"><li/>Block：建议屏蔽<li/>Review ：建议人工复审<li/>Pass：建议通过</ul> |
+| label | String   | 该字段用于返回检测结果所对应的恶意标签 |
+| SubLabel   | String | 子标签名称 |
+| Score      | Integer | 所属场景模型命中子标签的分值，取值范围0分 - 100分 |
+| Names      | Array of String    | 实体名称列表 |
+| Details    | Array of [ObjectDetail](#objectdetail) | 实体检测结果明细 |
+
+#### ObjectDetail
+
+实体检测结果明细，当检测场景为实体、广告台标、二维码时表示模型检测目标框的标签名称、标签值、标签分数以及检测框的位置信息。
+
+| 名称     | 类型     | 描述    |
+| -------- | -------- | -------- |
+| Id    | Integer    | 该参数用于返回识别对象的 ID 以方便识别和区分    |
+| Name     | String     | 该参数用于返回命中的实体标签   |
+| Value    | String     | 该参数用于返回对应实体标签所对应的值或内容。如：当标签为二维码（QrCode）时，该字段为识别出的二维码对应的 URL 地址 |
+| Score    | Integer    | 该参数用于返回对应实体标签命中的分值，取值为0-100，如：QrCode 99 则代表相应识别内容命中二维码场景标签的概率非常高 |
+| Location | [Location](#location) | 该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息 |
+
+#### Location
+
+坐标。
+
+| 名称 | 类型 | 描述      |
+| -------- | -------- | ---------------- |
+| X     | Float    | 左上角横坐标     |
+| Y     | Float    | 左上角纵坐标     |
+| Width    | Float    | 宽度      |
+| Height   | Float    | 高度      |
+| Rotate   | Float    | 检测框的旋转角度 |
+
+#### OcrResult
+
+OCR 结果检测详情。
+
+| 名称   | 类型  | 描述   |
+| ---------- | ---------------------- | ---------------------- |
+| Scene      | String     | 表示识别场景，取值默认为 OCR（图片 OCR 识别）。    |
+| Suggestion | String     | 返回优先级最高的恶意标签对应的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。返回值：<ul style="margin:0"><li/>Block：建议屏蔽<li/>Review ：建议人工复审<li/>Pass：建议通过</ul> |
+| label | String     | 该字段用于返回检测结果所对应的恶意标签 |
+| SubLabel   | String | 子标签名称 |
+| Score      | Integer | 所属场景模型命中子标签的分值，取值范围0分 - 100分 |
+| Text    | String | 文本内容 |
+| Details    | Array of [OcrTextDetail](#ocrtextdetail) | OCR 结果详情 |
+
+#### OcrTextDetail
+OCR 文本结果详情。
+
+| 名称 | 类型     | 描述  |
+| -------- | --------------- | --------------- |
+| Text     | String     | 返回 OCR 识别出的文本内容（OCR 文本识别上限在**5000字节内**） 。 |
+| label | String     | 该字段用于返回检测结果所对应的恶意标签 |
+| Keywords | Array of String | 该标签下命中的关键词 |
+| Score    | Integer      | 该标签模型命中的分值，取值范围0分 - 100分 |
+| Location | [Location](#location) | OCR 文本坐标位置 |
+
+#### LibResult
+黑白库结果明细。
+
+| 名称   | 类型    | 描述     |
+| ---------- | ------------------ | ------------------ |
+| Scene      | String      | 表示模型的场景识别结果，默认取值为 Similar。    |
+| Suggestion | String      | 返回后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。 返回值：<ul style="margin:0"><li/>Block：建议屏蔽<li/>Review ：建议人工复审<li/>Pass：建议通过</ul> |
+| label | String      | 该字段用于返回检测结果所对应的恶意标签 |
+| SubLabel   | String      | 子标签名称 |
+| Score      | Integer     | 图片检索模型识别分值，取值范围0分 - 100分 |
+| Details    | Array of [LibDetail](#libdetail) | 黑白库结果明细 |
+
+#### LibDetail
+自定义库/黑白库明细。
+
+| 名称 | 类型 | 描述     |
+| -------- | -------- | ------------------ |
+| Id    | Integer  | 序号    |
+| ImageId  | String   | 图片ID    |
+| label | String  | 该字段用于返回检测结果所对应的恶意标签 |
+| Tag      | String   | 自定义标签|
+| Score    | Integer  | 模型识别分值，取值范围0分 - 100分    |
+
+#### 回调消息示例
+<dx-codeblock>
+::: HTTPbody  json
+{
+        "ocrMsg": "",
+        "type": [1],
+        "socre": 99,
+        "screenshotTime": 1610640000,
+        "level": 0,
+        "img": "http://1.1.1.1/download/porn/test.jpg",
+        "abductionRisk": [],
+        "faceDetails": [],
+        "sendTime": 1615859827,
+        "suggestion": "Block",
+        "label": "Porn",
+        "subLabel": "PornHigh",
+        "labelResults": [{
+                "HitFlag": 0,
+                "Scene": "Illegal",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Details": []
+        }, {
+                "HitFlag": 1,
+                "Scene": "Porn",
+                "Suggestion": "Block",
+                "Label": "Porn",
+                "SubLabel": "PornHigh",
+                "Score": 99,
+                "Details": [{
+                        "Id": 0,
+                        "Name": "PornHigh",
+                        "Score": 99
+                }, {
+                        "Id": 1,
+                        "Name": "WomenChest",
+                        "Score": 99
+                }]
+        }, {
+                "HitFlag": 0,
+                "Scene": "Sexy",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Details": []
+        }, {
+                "HitFlag": 0,
+                "Scene": "Terror",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Details": []
+        }],
+        "objectResults": [{
+                "HitFlag": 0,
+                "Scene": "QrCode",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Names": [],
+                "Details": []
+        }, {
+                "HitFlag": 0,
+                "Scene": "MapRecognition",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Names": [],
+                "Details": []
+        }, {
+                "HitFlag": 0,
+                "Scene": "PolityFace",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Names": [],
+                "Details": []
+        }],
+        "ocrResults": [{
+                "HitFlag": 0,
+                "Scene": "OCR",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Text": "",
+                "Details": []
+        }],
+        "streamId": "teststream",
+        "channelId": "teststream",
+        "stream_param": "txSecret=40f38f69f574fd51126c421a3d96c374&txTime=5DEBEC80",
+        "app": "5000.myqcloud.com",
+        "appname": "live",
+        "appid": 10000,
+        "event_type": 317,
+        "sign": "ac920c3e66**********78cf1b5de2c63",
+        "t": 1615860427
+}
+:::
+</dx-codeblock>
+
+## 关闭直播鉴黄
+
+关闭直播鉴黄，可以通过删除截图规则或修改截图模板来实现，所有删除与修改操作只对新的直播生效；对于已经开始的直播，如要关闭鉴黄，必须停止、重新发起直播才会生效。
+
+### 1. 删除鉴黄截图规则来实现
+
+调用 [DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833)，通过模板 ID 删除 DomainName、 AppName、StreamName 下对应直播截图规格。
+
+### 2. 删除或修改鉴黄截图模板来实现
+
+调用 [ModifyLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30828) 修改直播模板的鉴黄标志为0。
