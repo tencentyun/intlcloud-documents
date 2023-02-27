@@ -13,6 +13,7 @@ Before using GooseFS, you need to:
 ## Downloading and Configuring GooseFS
 
 1. Create and enter a local directory (you can also choose another directory as needed), and then download [goosefs-1.4.0-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz).
+
 ```
 $ cd /usr/local
 $ mkdir /service
@@ -37,6 +38,7 @@ $ cp conf/goosefs-site.properties.bigdata_template conf/goosefs-site.properties
 $ vim conf/goosefs-site.properties
 ```
 4. Modify the following configuration items in the configuration file `conf/goosefs-site.properties`:
+
 ```shell
 # Common properties
 # Modify the master node's host information
@@ -63,15 +65,18 @@ goosefs.user.file.readtype.default=CACHE
 goosefs.user.file.writetype.default=MUST_CACHE
 ```
 
+
 >!Before configuring the path parameter `goosefs.worker.tieredstore.level0.dirs.path`, you need to create the path first.
 
 ## Running GooseFS
 
 1. Before starting GooseFS, you need to enter the GooseFS directory and run the startup command:
+
 ```shell
 $ cd /usr/local/service/goosefs-1.4.0
 $ ./bin/goosefs-start.sh all
 ```
+
 After running this command, you can see the following page:
 
 <img width="881" alt="image" src="https://qcloudimg.tencent-cloud.cn/raw/7b7f7f6ea02d36853ed7851023cfb8af.png">
@@ -149,30 +154,37 @@ To mount COS or Tencent Cloud HDFS to the root directory of GooseFS, configure t
 The following describes how to create a namespace to mount COS or CHDFS.
 
 1. Create a namespace and mount COS:
+
 ```shell
 $ goosefs ns create myNamespace cosn://bucketName-1250000000/ \
 --secret fs.cosn.userinfo.secretId=AKXXXXXXXXXXX \
 --secret fs.cosn.userinfo.secretKey=XXXXXXXXXXXX \
 --attribute fs.cosn.bucket.region=ap-xxx \
 ```
+
 >! 
 > - When creating the namespace that mounts COSN, you must use the `–-secret` parameter to specify the key, and use `--attribute` to specify all required parameters of Hadoop-COS (COSN). For the required parameters, please see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
 > - When you create the namespace, if there is no read/write policy (rPolicy/wPolicy) specified, the read/write type set in the configuration file, or the default value (CACHE/CACHE_THROUGH) will be used.
 >
 Likewise, create a namespace to mount Tencent Cloud HDFS:
+
 ```shell
 goosefs ns create MyNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/ \
 --attribute fs.ofs.user.appid=1250000000
 --attribute fs.ofs.tmp.cache.dir=/tmp/chdfs
 ```
+
 2. After the namespaces are created, run the `ls` command to list all namespaces created in the cluster:
+
 ```shell
 $ goosefs ns ls
 namespace      mountPoint       ufsPath                      creationTime                wPolicy      rPolicy     TTL   ttlAction
 myNamespace    /myNamespace   cosn://bucketName-125xxxxxx/3TB  03-11-2021 11:43:06:239      CACHE_THROUGH   CACHE        -1      DELETE
 myNamespaceCHDFS /myNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/3TB 03-11-2021 11:45:12:336 CACHE_THROUGH   CACHE  -1  DELETE
 ```
+
 3. Run the following command to specify the namespace information:
+
 ```shell
 $ goosefs ns stat myNamespace
 
@@ -205,13 +217,16 @@ Information recorded in the metadata is as follows:
 ## Loading Table Data to GooseFS
 
 1. You can load Hive table data to GooseFS. Before the loading, attach the database to GooseFS using the following command:
+
 ```shell
 $ goosefs table attachdb --db test_db hive thrift://
 172.16.16.22:7004 test_for_demo
 ```
+
 >! Replace `thrift` in the command with the actual Hive Metastore address.
 >
 2. After the database is attached, run the `ls` command to view information about the attached database and table:
+
 ```shell
 $ goosefs table ls test_db web_page
 
@@ -244,31 +259,41 @@ PARTITION LIST (
    }
 )
 ```
+
 3. Run the `load` command to load table data:
+
 ```shell
 $ goosefs table load test_db web_page
 Asynchronous job submitted successfully, jobId: 1615966078836
 ```
+
  The loading of table data is asynchronous. Therefore, a job ID will be returned. You can run the `goosefs job stat &lt;Job Id>` command to view the loading progress. When the status becomes "COMPLETED", the loading succeeds.
 
 ## Using GooseFS for Uploads/Downloads
 
 1. GooseFS supports most file system−related commands. You can run the following command to view the supported commands:
+
 ```shell
 $ goosefs fs
 ```
+
 2. Run the `ls` command to list files in GooseFS. The following example lists all files in the root directory:
+
 ```shell
 $ goosefs fs ls /
 ```
+
 3. Run the `copyFromLocal` command to copy a local file to GooseFS:
+
 ```shell
 $ goosefs fs copyFromLocal LICENSE /LICENSE
 Copied LICENSE to /LICENSE
 $ goosefs fs ls /LICENSE
 -rw-r--r--  hadoop         supergroup               20798       NOT_PERSISTED 03-26-2021 16:49:37:215   0% /LICENSE
 ```
+
 4. Run the `cat` command to view the file content:
+
 ```shell
 $ goosefs fs cat /LICENSE                                                                         
 Apache License
@@ -277,7 +302,9 @@ http://www.apache.org/licenses/
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 ...
 ```
+
 5. By default, GooseFS uses the local disk as the underlying file system. The default file system path is `./underFSStorage`. You can run the `persist` command to store files to the local system persistently as follows:
+
 ```shell
 $ goosefs fs persist /LICENSE
 persisted file /LICENSE with size 26847
@@ -286,11 +313,14 @@ persisted file /LICENSE with size 26847
 ## Using GooseFS to Accelerate Uploads/Downloads
 
 1. Check the file status to determine whether a file is cached. The file status `PERSISTED` indicates that the file is in the memory, and `NOT_PERSISTED` indicates not.
+
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 NOT_PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
 ```
+
 2. Count how many times “tencent” appeared in the file and calculate the time consumed:
+
 ```shell
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
 889
@@ -298,7 +328,9 @@ real	0m22.857s
 user	0m7.557s
 sys	0m1.181s
 ```
+
 3. Caching data in memory can effectively speed up queries. An example is as follows:
+
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 
@@ -309,11 +341,13 @@ real	0m1.917s
 user	0m2.306s
 sys	    0m0.243s
 ```
+
  The data above shows that the system delay is reduced from 1.181s to 0.243s, achieving a 10-times improvement.
 
 ## Shutting Down GooseFS
 
 Run the following command to shut down GooseFS:
+
 ```shell
 $ ./bin/goosefs-stop.sh local
 ```
