@@ -22,6 +22,7 @@ If metadata acceleration is enabled for a COS bucket, you can use Java code to a
 ```
 2. Refer to the following Hadoop code to make changes. The configuration items can be modified as instructed in [Mounting CHDFS Instance](https://intl.cloud.tencent.com/document/product/1106/41965). **Pay special attention to the instructions related to data persistence and visibility.**
    Only certain common file system operations are listed below. For other APIs, see [Hadoop FileSystem APIs](https://hadoop.apache.org/docs/r2.8.2/api/org/apache/hadoop/fs/FileSystem.html).
+
 ```java
 package com.qcloud.cos.demo;
 
@@ -217,6 +218,8 @@ public class Demo {
 			}
 }
 ```
+
+
 3. Compile and run the project.
 >?
 > - Before running the code, be sure to correctly set `classpath`, which must contain the paths of the Hadoop `common` package and the JAR package depended on by the metadata acceleration bucket.
