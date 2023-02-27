@@ -70,8 +70,8 @@ If a bucket is set to private-read (default) and COS is used as the origin for C
 You can authorize the identity quickly in either the [CDN console](https://console.cloud.tencent.com/cdn) or the [COS console](https://console.cloud.tencent.com/cos5) by clicking **Add CDN Service Authorization**. Then, enable **Origin-pull Authentication**. In this way, CDN edge nodes can use the service identity to access COS objects.
 
 >!
-- If the bucket is set to private-read, you must add the service authorization and enable origin-pull authentication; otherwise, access to COS will be denied.
-- A CDN edge node will generate a service account for each root account. Therefore, the account authorization is only valid for the root account to which the acceleration domain name belongs. If the acceleration domain name is bound to another account, access will be denied.
+>- If the bucket is set to private-read, you must add the service authorization and enable origin-pull authentication; otherwise, access to COS will be denied.
+>- A CDN edge node will generate a service account for each root account. Therefore, the account authorization is only valid for the root account to which the acceleration domain name belongs. If the acceleration domain name is bound to another account, access will be denied.
 
 After you added the CDN service authorization and enabled origin-pull authentication, CDN edge nodes can obtain and cache data. Therefore, you are advised to enable [Authentication Configuration](https://intl.cloud.tencent.com/document/product/228/35237) if you need to protect private data stored in the bucket. Whether users can access the private-read bucket in different CDN authentication configurations is described in the following table:
 
