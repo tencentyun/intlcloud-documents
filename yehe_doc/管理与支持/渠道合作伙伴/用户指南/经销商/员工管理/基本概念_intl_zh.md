@@ -8,7 +8,7 @@
 
 ### 员工、角色和权限的关系
 角色是权限的集合，可以自定义。一个员工可以拥有至多三个角色，每个角色拥有若干权限。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/Jfp8299_121401.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/9iAc844_Concepts.png)
 
 示例：
 如果**员工A**分配角色为**客户经理(角色B)**，**客户经理(角色B)**拥有查看客户基础信息的权限（**客户查询权限B**），说明**员工A**拥有**客户查询的权限B**。

@@ -8,7 +8,7 @@ As a reseller, you can create employee accounts with different permissions for h
 
 ### Relationship among employee, role, and permission
 A role is a collection of permissions and can be customized. An employee can have up to three roles, each with particular permissions.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/Jfp8299_121401.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/9iAc844_Concepts.png)
 
 Example:
 If **Employee A** is assigned a role called **Customer manager (Role B)**, it will automatically have all the permissions of the Role B.
