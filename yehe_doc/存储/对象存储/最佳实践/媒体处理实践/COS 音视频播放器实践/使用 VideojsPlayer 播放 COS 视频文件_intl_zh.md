@@ -74,6 +74,7 @@
   <script src="https://cos-video-1258344699.cos.ap-guangzhou.myqcloud.com/lib/dash.all.min.js"></script>
 ```
 3. 初始化播放器并传入对象地址。
+
 ```
 <!-- MP4 -->
 <source
@@ -100,6 +101,7 @@
 />
 ```
 
+
 获取示例代码：
 - [播放 MP4 示例代码](https://github.com/tencentyun/cos-demo/blob/main/cos-video/examples/web/videojs/mp4.html)
 - [播放 FLV 示例代码](https://github.com/tencentyun/cos-demo/blob/main/cos-video/examples/web/videojs/flv.html)
@@ -109,12 +111,14 @@
 [](id:2)
 ### 播放 PM3U8 视频
 PM3U8 是指私有的 M3U8 视频文件，COS 提供用于获取私有 M3U8 TS 资源的下载授权API，可参见 [私有 M3U8 接口](https://intl.cloud.tencent.com/document/product/436/47220)。
+
 ```
 <source
   src="https://<BucketName-APPID>.cos.<Region>.myqcloud.com/xxx.m3u8?ci-process=pm3u8&expires=3600"
   type="application/x-mpegURL"
 />
 ```
+
 
 获取示例代码：
 - [播放 PM3U8 示例代码](https://github.com/tencentyun/cos-demo/blob/main/cos-video/examples/web/videojs/pm3u8.html)
@@ -124,6 +128,7 @@ PM3U8 是指私有的 M3U8 视频文件，COS 提供用于获取私有 M3U8 TS �
 1. 获取 COS 存储桶上的封面图对象地址。
 >!通过数据万象 [智能封面](https://intl.cloud.tencent.com/document/product/1045/47740) 能力，提取最优帧生成截图作为封面，可提升内容吸引力。
 2. 初始化播放器并设置封面图。
+
 ```
 <video
   id="my-video"
@@ -142,6 +147,7 @@ PM3U8 是指私有的 M3U8 视频文件，COS 提供用于获取私有 M3U8 TS �
 </video>
 ```
 
+
 获取示例代码：
 - [设置封面图示例代码](https://github.com/tencentyun/cos-demo/blob/main/cos-video/examples/web/videojs/poster.html)
 
@@ -151,6 +157,7 @@ PM3U8 是指私有的 M3U8 视频文件，COS 提供用于获取私有 M3U8 TS �
 操作步骤如下：
 1. 参见 [播放 HLS 加密视频](https://intl.cloud.tencent.com/document/product/436/48293) 和 [COS 音视频实践 | 给你的视频加把锁](https://mp.weixin.qq.com/s/4f-GKyAG0S-FcZ2BZCn7jA) 流程，生成加密视频。
 2. 初始化播放器并传入视频对象地址。
+
 ```
 <source
   src="https://<BucketName-APPID>.cos.<Region>.myqcloud.com/xxx.m3u8"
