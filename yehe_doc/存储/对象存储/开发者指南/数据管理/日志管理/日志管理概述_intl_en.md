@@ -34,12 +34,12 @@ Logs are generated every 5 minutes (one record per line). Each record contains m
 | 21 | storageClass | Storage class | STANDARD, STANDARD_IA, ARCHIVE |
 | 22       | accountId          | Bucket owner ID                                               | 100000000001                                                 |
 | 23 | resTurnAroundTime | Time used by the request server (in milliseconds, i.e., the time between the first byte of the response and the last byte of the request) | 4295 |
-| 24       | requester    | Requester    | Root account ID, sub-account ID, or `-` (anonymous access)  |
+| 24       | requester    | Requester account. <br>If the requester is a root account, this parameter is in the format of `root account UIN:root account UIN`.<br>If the requester is a sub-account, this parameter is in the format of `root account UIN:sub-account UIN`.<br>If the requester is a [service account](https://intl.cloud.tencent.com/document/product/598/19421), this parameter is in the format of `authorized root account UIN:role ID`.<br>If the requester is anonymous, this parameter is displayed as `-`.             |    100000000001:100000000001          |
 | 25       | requestId    | Request ID             | NWQ1ZjY4MTBfMjZiMjU4NjRfOWI1N180NDBiYTY=      |
 | 26       | objectSize    | Object size, in bytes      | 808. If you use multipart upload, `objectSize` will only be displayed when the upload is complete, and will be `-` during the multipart upload process |
 | 27 | versionId | Object version ID | Random string |
 | 28  | targetStorageClass | Destination storage class, recorded for replication requests | STANDARD, STANDARD_IA, ARCHIVE |
-| 29     | referer    | HTTP referer of the request            | `*.example.com` or 111.111.111.1       |
+| 29       | referer            | HTTP referer of the request                                          | `*.example.com` or 111.111.111.1                             |
 | 30       | requestUri    | Request URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
 | 31       | vpcId    | VPC request ID            | "0" (non-VPC)/"12345" (VPC, a non-"0" string)       |
 

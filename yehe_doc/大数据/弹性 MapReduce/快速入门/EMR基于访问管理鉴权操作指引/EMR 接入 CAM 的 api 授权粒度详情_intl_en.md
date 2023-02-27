@@ -295,7 +295,7 @@ APIs supporting resource-level authorization include:
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >UnbindInstanceAndNodesTags</td>
-<td >Unbinds cluster from labels</td>
+<td >Unbinds cluster from tags</td>
 <td >emr-instance|qcs::emr:${region}:uin/${uin}:emr-instance/$emrInstanceId</td>
 </tr><tr>
 <td >DescribeNodeResourceConfigFast</td>
@@ -831,7 +831,7 @@ APIs supporting resource-level authorization include:
 <td >Gets the information of spread placement group</td>
 </tr><tr>
 <td >DescribeTags</td>
-<td >Pulls all labels of cluster</td>
+<td >Pulls all tags of cluster</td>
 </tr><tr>
 <td >InquiryPriceCreateInstance</td>
 <td >Queries the price of created instance</td>
@@ -895,10 +895,20 @@ APIs supporting resource-level authorization include:
 </tr>
 <tr>
 <td >ModifyResourcesTags</td>
-<td >Forcibly modifies label</td>
+<td >Forcibly modifies tag</td>
 </tr><tr>
 <td >CreateCluster</td>
 <td >Creates cluster</td>
+</tr>
+<tr>
+<td >RepairDisk</td>
+<td >Repairs the business after the customer's corrupted disk is replaced at the CVM side</td>
+</tr><tr>
+<td >CreateOutsideClient</td>
+<td >Provides component packages and deployment scripts for servers outside the EMR cluster to support their access to EMR and job submission</td>
+</tr><tr>
+<td >ModifyCvmReplaceFlag</td>
+<td >Modifies the EMR cluster to support abnormal node replacement</td>
 </tr>
 </tbody>
 </table>

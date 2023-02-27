@@ -24,7 +24,7 @@ On a Linux system, you can use the system's package management tool to directly 
 
 #### macOS
 
-1. Run the following command to install the package management tool [Homebrew](https://raw.githubusercontent.com/Homebrew/install/master/install).
+1. Run the following command to install the package management tool Homebrew.
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```

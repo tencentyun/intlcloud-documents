@@ -1,3 +1,102 @@
+## January 2023
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>	
+<tr>
+<td>Supported automatic node replacement</td>
+<td>Task and router nodes can be monitored, and abnormal nodes can be replaced automatically, mitigating the risk of service unavailability due to node exceptions.</td>
+<td>2023-01-16</td>
+<td><a href="https://cloud.tencent.com/document/product/589/85683" target="_blank">自动补偿</a></td>
+</tr>	
+<tr>
+<td>Supported local disk repair</td>
+<td>Local disk replacement events can be automatically monitored. After disk replacement, you can initialize the new disk in the console on your own.</td>
+<td>2023-01-16</td>
+<td><a href="https://cloud.tencent.com/document/product/589/85569" target="_blank">修复磁盘</a></td>
+</tr>	
+</tbody></table>
+
+
+## December 2022
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported Java-GC online analysis.</td>
+<td>Java-GC online log analysis is supported to help you troubleshoot process exceptions due to GC, collect and record GC logs in real time, and analyze the logs.</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/84338" target="_blank">Java-GC 在线分析</a></td>
+</tr>
+<tr>
+<td>Supported role-level monitoring of Kafka.</td>
+<td>Kafka adds more than 70 role-level monitoring metrics and supports configuring alarms for core monitoring metrics.</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/84339" target="_blank">Kafka 监控指标</a></td>
+</tr>
+<tr>
+<td>Added more default event-related metrics.</td>
+<td>More event-related metrics are added, such as the UTC time and NTP time difference of the server, Kerberos response time, number of HDFS MissingBlocks, and safe mode for the HDFS NameNode.</td>
+<td>2022-12-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">Cluster Event</a></td>
+</tr>
+<tr>
+<td>Added more default alarm policies for Kudu.</td>
+<td>Kudu adds more alarm policies, such as the number of teservers, number of failed data directories, and number of full data directories.</td>
+<td>2022-12-06</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Upgraded the configuration management feature.</td>
+<td><li>The configuration status is added, and you can view the details of expired configuration and failed configuration.<li>More configuration files, configuration items, configuration item descriptions, and configuration filters are added.</td>
+<td>2022-12-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31109" target="_blank">Configuration Management</a></td>
+</tr>
+<tr>
+<td>Upgraded the YARN resource scheduling feature.</td>
+<td>Label-based scheduling, queue deletion, and scheduling history viewing are supported.</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/83693" target="_blank">配置 Capacity Scheduler</a></td>
+</tr>
+<tr>
+<td>Added client management.</td>
+<td>The client management entry is added, and you can view the client information.</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/83701" target="_blank">客户端管理</a></td>
+</tr>
+<tr>
+<td>Supported cloud disk adjustment.</td>
+<td><li>You can adjust the cloud data disk models on nodes and expand and mount disks in the EMR console.<li>Heterogeneous capacity is supported by the heterogeneous capabilities of cloud disks.</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/83643" target="_blank">云硬盘扩容</a></td>
+</tr>
+<tr>
+<td>Supported batch configuration of automatic renewal</td>
+<td>You can batch enable/disable automatic renewal for nodes in the EMR console.</td>
+<td>2022-12-06</td>
+<td><a href="https://cloud.tencent.com/document/product/589/44851" target="_blank">集群续费</a></td>
+</tr>
+<tr>
+<td>Supported batch configuration adjustment.</td>
+<td>The configurations of nodes in the same billing mode and the same region can be batch adjusted.</td>
+<td>2022-12-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">Adjusting Configuration</a></td>
+</tr>
+</tbody></table>
+
 ## November 2022
 <table>
 <thead>
@@ -14,19 +113,19 @@
 </td>
 <td>More basic monitoring metrics are added for various StarRocks roles.</td>
 <td>2022-11-03</td>
-<td><a href="https://www.tencentcloud.com/document/product/1026/51249" target="_blank">StarRocks Monitoring Metrics</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/82396" target="_blank">StarRocks 监控指标</a></td>
 </tr>	
 <tr>
 <td>Supported Remote Shuffle Service (RSS) clusters for container-based EMR.</td>
 <td><li>Container-based EMR supports RSS deployment in EKS.<li>Spark clusters can be associated with RSS clusters.</td>
 <td>2022-11-01</td>
-<td><a href="https://www.tencentcloud.com/document/product/1026/48582" target="_blank">Overview</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/72672" target="_blank">Overview</a></td>
 </tr>	
 <tr>
 <td>Supported managed scaling for automatic scaling.</td>
 <td>The managed scaling feature continuously monitors the load system of the YARN cluster and automatically adds or removes compute nodes.</td>
 <td>2022-11-01</td>
-<td><a href="https://www.tencentcloud.com/document/product/1026/51888" target="_blank">Managed Scaling Configuration</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/82668" target="_blank">托管伸缩使用配置</a></td>
 </tr>
 </tbody></table>
 
@@ -42,7 +141,7 @@
 </thead>
 <tbody>	
 <tr>
-<td>Released a Hadoop cluster version of EMR v3.5.0.</td>
+<td>Released a Hadoop cluster version of EMR v3.5.0</td>
 <td>The Hadoop cluster version of EMR v3.5.0 is released to support Hive v3.1.3, Spark v3.2.2, HBase v2.4.5, Flink v1.14.5, Trino v389, Iceberg v0.13.1, Delta Lake v2.0.0, Hudi v0.12.0, Zeppelin v0.10.1, Superset v1.5.1, and Ranger v2.3.0.</td>
 <td>2022-10-27</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">Component Version</a></td>
@@ -149,7 +248,7 @@
 <td>Added new application APIs.</td>
 <td>The API for collecting YARN application queue statistics is added.</td>
 <td>2022-07-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/47538" target="_blank">Query Application Statistics </a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/77586" target="_blank">Query Application Statistics </a></td>
 </tr>	
 <tr>
 <td>Released a Hadoop cluster version—EMR v2.7.0.</td>
@@ -167,13 +266,13 @@
 <td>Added support for the RIT fixing tool for HBase.</td>
 <td>Regions in the RIT status can be fixed.</td>
 <td>2022-07-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/48580" target="_blank">HBase RIT Fixing</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/77258" target="_blank">HBase RIT Fixing</a></td>
 </tr>	
 <tr>
 <td>Started the open beta test for container-based EMR clusters.</td>
 <td>Container-based EMR clusters become available in Beijing, Shanghai, and Guangzhou regions.</td>
 <td>2022-07-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/48582" target="_blank">Container-Based EMR</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/72672" target="_blank">Container-Based EMR</a></td>
 </tr>
 </tbody></table>
 
@@ -202,7 +301,7 @@
 <td>Added support for Hive query management.</td>
 <td>The Hive service supports query management.</td>
 <td>2022-06-07</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/47774" target="_blank">Hive Query Management</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/75229" target="_blank">Hive Query Management</a></td>
 </tr>	
 <tr>
 <td>Optimized the YARN job query.</td>
@@ -214,7 +313,7 @@
 <td>Connected to Pricing Center.</td>
 <td>The pricing of EMR is connected to the Pricing Center, where you can query EMR node fees.</td>
 <td>2022-06-07</td>
-<td><a href="https://buy.intl.cloud.tencent.com/price/emr" target="_blank">Pricing</a></td>
+<td><a href="https://buy.cloud.tencent.com/price/emr" target="_blank">Pricing</a></td>
 </tr>	
 </tbody></table>
 
@@ -260,7 +359,7 @@
 <td>Released the EMR v3.4.0 for the Hadoop cluster.</td>
 <td><li>Added support for Spark 3.2.1, Trino 372, Flink 1.14.3, HBase 2.4.5, ZooKeeper 3.6.3, Impala 4.0.0, Zeppelin 0.10.1, Alluxio 2.8.0, Hudi 0.10.1, Iceberg 0.13.1, and GooseFS 1.2.0.<li>Renamed PrestoSQL as Trino in the new version and added support for Ranger. Monitoring metric alarms need to be configured according to Trino in the new version.</td>
 <td>2022-04-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">Component Version</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/47767" target="_blank">Trino Monitoring Metrics</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456" target="_blank">Component Version</a><br><a href="https://cloud.tencent.com/document/product/589/72846" target="_blank">Trino Monitoring Metrics</a></td>
 </tr>	
 <tr>
 <td>Enriched monitoring.</td>
@@ -272,7 +371,7 @@
 <td>Added support for container-based EMR clusters.</td>
 <td>Added support for Spark deployment based on EKS in Beijing, Shanghai, Guangzhou, and Nanjing regions.</td>
 <td>2022-04-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/48582" target="_blank">Overview</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/72672" target="_blank">Overview</a></td>
 </tr>	
 </tbody></table>
 
@@ -408,7 +507,7 @@
 <td>Upgraded the operating systems of all EMR versions of the Hadoop type to TencentOS Server to provide a more stable, secure, and high-performance cloud native runtime environment.
 If you encounter any security issues related to the operating system of an existing cluster, contact us for assistance.</td>
 <td>2021-12-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/213/40223" target="_blank">Product Overview of TencentOS Server</a></td>
+<td><a href="https://cloud.tencent.com/document/product/213/38027" target="_blank">Product Overview of TencentOS Server</a></td>
 </tr>
 </tbody></table>
 
@@ -604,6 +703,24 @@ If you encounter any security issues related to the operating system of an exist
 </tr>
 </tbody></table>
 
+## March 2021
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported cluster restoration</td>
+<td>You can renew monthly subscribed clusters in isolated status to restore them.</td>
+<td> 2021-03-17 </td>
+<td><a href="https://cloud.tencent.com/document/product/589/54107" target="_blank">  集群恢复  </a></td>
+</tr>
+</tbody></table>
 
 ## February 2021
 <table>
@@ -1047,7 +1164,7 @@ If you encounter any security issues related to the operating system of an exist
 </thead>
 <tbody><tr>
 <td>Added support for node specification management.</td>
-<td>Added support for setting the default specification of nodes based on their billing mode. The default specification is pay-as-you-go.</td><td>November 2019</td>
+<td>Added support for setting the default specification of nodes based on their billing mode. The default specification is pay-as-you-go.</td><td>2019-11</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/34533" target="_blank">Node Specification Management</a></td>
 </tr>
 <tr>

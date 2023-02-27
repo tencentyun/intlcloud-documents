@@ -1,7 +1,7 @@
 为了让您更好地了解并使用腾讯云慧眼人脸核身（以下简称“慧眼”），本页面中提供了相关操作、文档说明链接。
 ## 接入流程
 ### 第 1 步： 登录注册
-登录 [腾讯云官网](https://intl.cloud.tencent.com/login)。如果没有账号，请参考 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 教程。
+登录 [腾讯云官网](https://intl.cloud.tencent.com/login)。如果没有账号，请参考 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 教程，并进行[企业实名认证](https://www.tencentcloud.com/document/product/378/10496)。
 
 ### 第 2 步：服务申请
 登录腾讯云 [人脸核身控制台](https://console.cloud.tencent.com/faceid) 开通服务。

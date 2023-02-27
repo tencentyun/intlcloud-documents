@@ -1,7 +1,7 @@
-- [FAQs about Offline Migration](#OfflineMigration)
-- [General FAQs about Online Migration](#OnlineMigration)
-- [FAQs about Console-Based Online Migration](#ConsoleOnlineMigration)
-- [FAQs about Online Migration Tool](#OnlineMigrationTool)
+- [Offline Migration](#OfflineMigration)
+- [Online Migration](#OnlineMigration)
+- [Migrating via Console](#ConsoleOnlineMigration)
+- [Online Migration Tool](#OnlineMigrationTool)
 
 
 
@@ -17,21 +17,21 @@ The time it takes to upload images to COS is related to the image file size and 
  - Make sure that the target CVM or cloud disk are not expired.
 
 ### How do I troubleshoot the error occurred in a migration task? 
-- If **"failed to obtain the metadata of the image file"** is displayed, it is usually because the image file is damaged or the image file format is not supported. Please check and confirm the image is correctly created, exported and uploaded. You can also use an image file in QCOW2, VHD, VMDK, or RAW format and try again.
-- If **"image decompression failed"** is displayed, it is usually due to an image creation error. Please check the image package and export the image again, make sure that the destination disk has a larger capacity than the source disk, and try again.
-- If **"the storage space of the target device is too small"** is displayed, it is usually because the capacity of the system disk or data disk you want to migrate to is smaller than the capacity of the source disk or the size of the image file. Please adjust the capacity of the system disk or data disk to make sure that the target disk has a larger capacity than the source disk and try again.
-- If **"failed to access the COS image file"** is displayed, it is usually due to a COS permission issue. Please make sure the region where the COS file resides is the current region, check the COS permission and check that the temporary URL is valid, and try again.
-- If **"failed to migrate to the destination disk"** is displayed, possible causes are as follows:
- - The capacity of the destination disk is too small.
+- **Failed to obtain the metadata of the image file**: The image file is damaged or the image file format is not supported. Supported image file format: QCOW2, VHD, VMDK, and RAW.
+- **Image decompression failed**: Image creation error. Check the image package and export the image again. Make sure that the destination disk has a larger capacity than the source disk.
+- **The storage space of the target device is too small**: The capacity of the system disk or data disk you want to migrate to is smaller than the capacity of the source disk or the size of the image file. 
+- **Failed to access the COS image file**: Not authorized to access COS. Make sure the COS file is in the current region, COS permission is assigned and the temporary URL is valid.
+- **Failed to migrate to the destination disk**:  
+ - The destination disk does not have enough capacity.
  - An error occurred during the image creation.
- Please check and try again.
-- If messages such as **"task timeout"**, **"system error"**, and **"other reasons"** are displayed, or if you retried and still failed, [contact us](https://intl.cloud.tencent.com/document/product/213/34837).
+  
+- **Task timeout**, **System error**, and **Other reasons**: Try again. If the problem persists, [contact us](https://intl.cloud.tencent.com/document/product/213/34837).
 
 ### What should I do if the network is disconnected after the offline migration of the Windows server?
 
-You can reset the Windows network configuration as instructed below. For more information, see [Instance IP Address Ping Failure](https://intl.cloud.tencent.com/document/product/213/14639).
+You can reset the Windows network configuration as instructed below. For more information, see [Ping Failures](https://intl.cloud.tencent.com/document/product/213/14639).
 
-1. Check if the server supports dhcp (all VPCs created after June 2018 support dhcp). If not, check if the static IP is correct.
+1. For VPCs created before June 2018, check if the server supports DHCP. If not, check the static IP.
 
 2. If the server supports dhcp, check if the assigned private IP is correct. If it is incorrect, run the command as the admin without restarting the server: `ipconfig /release; ipconfig /renew`.
 
@@ -40,7 +40,7 @@ You can reset the Windows network configuration as instructed below. For more in
 4. Run the command as the admin and restart the server: `reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles"  /f`.
 
 [](id:OnlineMigration)
-## General FAQs about Online Migration
+## Online Migration
 
 ### Which types of operating systems and disks are supported by online migration?
 - Mainstream Linux and Windows operating systems are supported.
@@ -139,7 +139,7 @@ Check the common errors below:
 - During migration to the destination CVM instance, ports 80 and 443 are not open in the security group of the destination CVM instance.
 **Solution**: modify the security group rules of the destination CVM instance to open ports 80 and 443.
 - During migration to the destination CVM instance, the disk capacity of the destination CVM instance is insufficient.
-**Solution**: select a CVM instance with a sufficient capacity, mount a disk with a sufficient capacity to it, and create a migration task again to start migration.
+**Solution**: Select a CVM instance with a sufficient capacity, mount a disk with a sufficient capacity to it, and create a migration task again to start migration.
 - An error occurred when you create a relay instance during migration to the destination Tencent Cloud image; for example, a log error message **Failed create transit instance, maybe no available source in target region** is displayed.
 **Solution**: there are no available resources in the destination region of the migration task. In this case, you can select another region or migrate the server to the specified CVM instance.
 
@@ -161,7 +161,7 @@ Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid
 
 ### What should I do if the network is disconnected after the online migration of the Windows server?
 
-You can reset the Windows network configuration as instructed below. For more information, see [Instance IP Address Ping Failure](https://intl.cloud.tencent.com/document/product/213/14639).
+You can reset the Windows network configuration as instructed below. For more information, see [Ping Failures](https://intl.cloud.tencent.com/document/product/213/14639).
 
 1. Check if the server supports dhcp (all VPCs created after June 2018 support dhcp). If not, check if the static IP is correct.
 
@@ -172,7 +172,7 @@ You can reset the Windows network configuration as instructed below. For more in
 4. Run the command as the admin and restart the server: `reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles"  /f`.
 
 [](id:OnlineMigrationTool)
-## FAQs about Online Migration Tool
+## Online Migration Tool
 
 
 ### Where can I download the online migration tool?

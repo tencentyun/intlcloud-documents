@@ -1,6 +1,6 @@
 ## Use Cases
 
-The copy operation creates a copy of a COS object of up to 5 GB in a single request. To copy an object over 5 GB, use the multipart upload API. With the copy operation, you can:
+The copy operation creates a copy of a COS object of up to 5 GB in a single request. To copy an object over 5 GB, use the [multipart copy](https://intl.cloud.tencent.com/document/product/436/14118) API. With the copy operation, you can:
 
 - Create a copy of an object.
 - Rename an object by copying it and deleting the original one.
@@ -29,15 +29,15 @@ Use REST APIs to initiate an object copy request. For more information, see [PUT
 
 Directly call the object copy method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/37674)
-- [C SDK](https://intl.cloud.tencent.com/document/product/436/31518)
+- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/40494)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/44872)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/38062)
-- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31526)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37683)
-- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31534)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31538)
-- [Node.js SDK ](https://intl.cloud.tencent.com/document/product/436/31710)
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31542)
-- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31546)
-- [SDK for WeChat Mini Program](https://intl.cloud.tencent.com/document/product/436/32457)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/40171)
+- [SDK for Go](https://intl.cloud.tencent.com/document/product/436/44064)
+- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/40495)
+- [SDK for Java](https://intl.cloud.tencent.com/document/product/436/44019)
+- [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/43865)
+- [Node.js SDK ](https://intl.cloud.tencent.com/document/product/436/43874)
+- [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/45498)
+- [SDK for Python](https://intl.cloud.tencent.com/document/product/436/46470)
+- [SDK for Weixin Mini Program](https://intl.cloud.tencent.com/document/product/436/43885)

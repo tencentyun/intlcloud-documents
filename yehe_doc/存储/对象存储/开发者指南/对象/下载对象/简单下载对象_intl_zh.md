@@ -28,16 +28,16 @@
 
 您可以直接调用 SDK 的下载对象方法，详情请参见下列各语言 SDK 文档：
 
-
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/37675#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [C SDK](https://intl.cloud.tencent.com/document/product/436/31464#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31465#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/37675)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/44873)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522)
 - [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30594)
-- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31466#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37684#.E8.8E.B7.E5.8F.96.E5.AF.B9.E8.B1.A1)
-- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31468#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31477#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31469#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31470#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31471#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [小程序 SDK](https://www.tencentcloud.com/document/product/436/43882)
+- [Go SDK](https://intl.cloud.tencent.com/document/product/436/44065)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37684)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/44016)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/43862)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/43872)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/45499)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/436/46469)
+- [小程序 SDK](https://intl.cloud.tencent.com/document/product/436/43882)
+

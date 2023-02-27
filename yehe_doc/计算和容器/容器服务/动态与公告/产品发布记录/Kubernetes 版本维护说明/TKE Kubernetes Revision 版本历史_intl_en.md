@@ -1,9 +1,71 @@
-## TKE Kubernetes 1.22.5 revisions
+## TKE Kubernetes 1.24.4 revisions
+
+<dx-alert infotype="explain" title="">
+In Kubernetes 1.24, support for Docker through Dockershim is removed. Use containerd for container runtime for new nodes. Images built by using Docker can still be used. For more information, see [Dockershim Removal FAQ](https://kubernetes.io/blog/2022/02/17/dockershim-faq/?spm=a2c4g.11186623.0.0.48413edcVJKrrD).
+</dx-alert>
+
+
 <table>
 <thead>
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
 </thead>
   <tbody>
+	  <tr>
+    <td>2022-12-08</td>
+    <td>v1.24.4-tke.3</td>
+    <td>
+		<li>Supports disk usage metrics of containerd runtime. (kubelet)</li>
+		<li>Supports extended scheduler Prebind and Unreserve operations. (kube-scheduler)</li>
+		<li>Supports TKE Serverless super nodes. (kube-controller-manager, kube-scheduler)</li></td>
+  </tr>
+	    <tr>
+    <td>2022-05-07</td>
+    <td>v1.24.4-tke.1</td>
+		<td>
+<li>Updates the launch method of running kube-proxy as an image, and automatically adapts to the iptables running mode of the node to support the operating system that uses the NF_TABLES mode to run iptables by default. (kube-proxy)</li>
+<li>Allows the special IP range used by TKE managed clusters (kube-apiserver).</li>
+<li>Reverts pr63066, which fixes the issues of LB health check and IPVS (kube-proxy).</li>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/112299">PR112299</a>, which optimizes the apiserver Gzip compression level.</li></td>
+  </tbody>
+</table>
+
+
+
+## TKE Kubernetes 1.22.5 Revisions
+<table>
+<thead>
+<tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
+</thead>
+  <tbody>
+	<tr>
+    <td>2023-01-12</td>
+    <td>v1.22.5-tke.9</td>
+    <td>
+<li>Supports the feature of enlarging native nodes. (kube-scheduler)</li>
+<li>Adds the `delegated_to_storage` tag to the `list_too_many_objects_events_total` metric to indicate whether to pass through requests to etcd. (kube-apiserver)</li>
+</td>
+  </tr>
+			  <tr>
+    <td>2023-01-05</td>
+    <td>v1.22.5-tke.8</td>
+    <td>
+<li>Enhances the kube-apiserver priority and fairness features. (kube-apiserver)
+ <ul>a. During rate limiting, consider the number of objects of the resource type requested by `list` requests. The higher the number of objects, the lower the concurrent QPS and the less resources occupied by APIServer, which effectively improves cluster stability and avoids crashes. If the service add-on sends a large number of `list` requests, the delay may increase after the upgrade, or APIServer may retry due to rate limiting.
+ <br>b. Supports rate limiting based on userAgent, supports token bucket rate limiting, and supports rate limiting and circuit breaking for add-ons of any type.
+ <br>c. Supports rate limiting for update requests related to watched objects to avoid generating too many update events at once.</ul></li>
+<li>DaemonSet pods can be run on super nodes when necessary. (kube-controller-manager)</li>
+<li>Supports the `exec` and `logs` commands for DaemonSet Pods. (kube-apiserver)</li>
+<li>Records the following metrics when list/watch too old, too large, and too many objects occur (kube-apiserver): <code> watch_too_old_objects_events_total</code>, <code>list_too_large_objects_events_total</code>, <code>list_too_many_objects_events_total</code>, <code>watch_too_many_objects_events_total</code></li>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/108754">PR108754</a>, which fixes the occasional "not registered" errors reported during ConfigMap/Secrets volume mounting. (kubelet)</li>
+<li>Supports in-place update of Pod resources (kube-apiserver, kubelet).</li>
+</td>
+  </tr>
+		  <tr>
+    <td>2022-12-08</td>
+    <td>v1.22.5-tke.7</td>
+    <td>Fixes the issue where the default name of a container ENI is set to eth1. (kubelet)
+</td>
+  </tr>
 	  <tr>
     <td>2022-11-09</td>
     <td>v1.22.5-tke.6</td>
@@ -15,43 +77,63 @@
     <td>v1.22.5-tke.5</td>
 		<td>
 <li>Supports DaemonSet for Serverless clusters (kube-apiserver).</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/112299">PR112299</a> and optimizes the gzip compression level of the apiserver (kube-apiserver).</li>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/112299">PR112299</a>, which optimizes the apiserver Gzip compression level. (kube-apiserver)</li>
 <li>Fixes CVE-2022-3172 (kube-apiserver).</li>
 <li>Adds the `calling_webhook_timeout_error` metric (kube-apiserver).</li>
 <li>Ignores the error in case of `TKEDefaultQuota` conflicts and increases the number of workers to fix the `resource quota evaluates timeout` error (kube-apiserver).</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/110294">PR110294</a>, which fixes the issue where `Job activeDeadlineSeconds` doesn't take effect</a> (kube-controller-manager).</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/111773">PR111773</a>, which fixes the memory leak issue during scheduler preemption (kube-scheduler).</li>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/110294">PR110294</a>, which fixes the issue where `Job activeDeadlineSeconds` doesn't take effect. </a>(kube-controller-manager)</li>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/111773">PR111773</a>, which fixes the memory leakage during scheduler preemption. (kube-scheduler)</li>
 <li>Supports the containerd disk metric (kubelet).</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/108831/commits/6157d3cc4a11d3e5bf587c320cf1c39b2dcdd429">PR108831</a>, which fixes the issue where creating multiple Pods at a time leads to kubelet panic (kubelet).</li>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/108831/commits/6157d3cc4a11d3e5bf587c320cf1c39b2dcdd429">PR108831</a>, which fixes the issue where creating multiple Pods at a time leads to kubelet panic. (kubelet)</li>
 <li>Supports specifying the Pod during scale-in (kube-controller-manager).</li>
-<li>Optimizes DaemonSet Pod scheduling performance. Only the assigned nodes are processed (kube-scheduler).</li>
+<li>Optimizes DaemonSet Pod scheduling performance. Only the assigned nodes are processed. (kube-scheduler)</li>
 <li>Sets the CBS-CSI migration to the completed status (kube-controller-manager).</li>
-<li>Supports Prebind and Unreserve operations for extender schedulers (kube-scheduler).</li>
+<li>Supports extended scheduler Prebind and Unreserve operations. (kube-scheduler)</li>
 <li>Optimizes the HPA of virtual nodes in Serverless clusters (kube-controller-manager).</li></td>
 <tr><td> 2022-05-07   </td><td> v1.22.5-tke.1</td>
 		<td>
 <li>Allows the special IP range used by TKE managed clusters (kube-apiserver).</li>
-<li>Reverts <a href="https://github.com/kubernetes/kubernetes/pull/63066">pr63066</a>, which fixes the issues of LB health check and IPVS (kube-proxy).</li>
+<li>Reverts <a href="https://github.com/kubernetes/kubernetes/pull/63066">pr63066, </a>which fixes the issues of LB health check and IPVS. (kube-proxy)</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/90260">pr90260</a>, which fixes the issue of missing monitoring records for containerd cluster networks. (kubelet)</li>
-<li>Fixes the issue where upgrading lxcfs on Ubuntu 16 causes Pods to exit (kubelet).</li>
-<li>Avoids scheduling Pods using CBS to external CHC nodes (kube-scheduler).</li>
-<li>Supports CBS-CSI migration (kube-controller-manager, kubelet).</li>
+<li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes pods to exit. (kubelet)</li>
+<li>Avoids scheduling Pods using CBS to external CHC nodes. (kube-scheduler)</li>
+<li>Tencent Cloud CBS CSI migration is supported. (kube-controller-manager, kubelet)</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/106906">pr106906</a> to detect whether the subPath of the network storage volume has been deleted, thereby preventing Pods from being kept in **Terminating** status (kubelet).</li>
-<li>Updates the launch method of running kube-proxy as an image, and automatically adapts to the iptables running mode of the node to support the operating system that uses the nf_tables mode to run iptables by default (kube-proxy).</li>
+<li>Updates the launch method of running kube-proxy as an image, and automatically adapts to the iptables running mode of the node to support the operating system that uses the NF_TABLES mode to run iptables by default. (kube-proxy)</li>
 </td></tr>
   </tbody>
 </table>
 
 
 
-
-## TKE Kubernetes 1.20.6 revisions
+## TKE Kubernetes 1.20.6 Revisions
 <table>
 <thead>
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
 </thead>
   <tbody>
-	    <tr>
+		  <tr>
+    <td>2023-01-05</td>
+    <td>v1.20.6-tke.30</td>
+    <td>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/104833">PR104833</a>, which optimizes the controller lock of API priority and fairness to a read/write lock. (kube-apiserver)</li>
+<li>DaemonSet pods can be run on super nodes when necessary. (kube-controller-manager)</li> 
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/102576">PR102576</a>, which stops using RemoveAll when a remaining Pod volume is deleted to avoid deleting data related to the volume. (kubelet)</li>
+<li>Allows DaemonSet pods with specific annotations to be scheduled to super nodes. (kube-controller-manager)</li> 
+<li>Adds a switch for the local replica quantity policy for super nodes. (kube-scheduler)</li> 
+<li>Enhances the kube-apiserver priority and fairness features. (kube-apiserver)
+ <ul>a. During rate limiting, consider the number of objects of the resource type requested by `list` requests. The higher the number of objects, the lower the concurrent QPS and the less resources occupied by APIServer, which effectively improves cluster stability and avoids crashes. If the service add-on sends a large number of `list` requests, the delay may increase after the upgrade, or APIServer may retry due to rate limiting.
+ <br>b. Supports rate limiting based on userAgent, supports token bucket rate limiting, and supports rate limiting and circuit breaking for add-ons of any type.
+ <br>c. Supports rate limiting for update requests related to watched objects to avoid generating too many update events at once.</ul></li>
+<li>Super nodes support static IPs. (kube-scheduler)</li>
+<li>Adds switches to super node related features. (kube-scheduler)</li>
+<li>Records the following metrics when list/watch too old, too large, and too many objects occur (kube-apiserver): <code> watch_too_old_objects_events_total</code>, <code>list_too_large_objects_events_total</code>, <code>list_too_many_objects_events_total</code>, <code>watch_too_many_objects_events_total</code></li>
+<li>Adds the watch cache capacity metric <code>watch_cache_capacity</code>. (kube-apiserver)</li>
+<li>Uses ConfigMap Informer to optimize the scheduling performance of super nodes. (kube-scheduler)</li>
+<li>Allows users to use the environment variable DEFAULT_LOWER_BOUND_CAPACITY to set the minimum value of the watch cache capacity. (kube-apiserver)</li>
+<li>Adds the AllowLocalConnection switch. When the switch is enabled, local addresses can be accessed by external requests. (kubelet)</li>
+</td>
+  </tr>
 				  <tr>
     <td>2022-11-09</td>
     <td>v1.20.6-tke.28</td>
@@ -64,13 +146,13 @@
     <td>v1.20.6-tke.27</td>
     <td>
 <li>Optimizes the scheduling policy for super node IP management (kube-scheduler).</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/112299">PR112299</a> and optimizes the gzip compression level of the apiserver (kube-apiserver).</li>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/112299">PR112299</a>, which optimizes the apiserver Gzip compression level. (kube-apiserver)</li>
 <li>Fixes CVE-2022-3172 (kube-apiserver).</li>
 <li>Adds the `calling_webhook_timeout_error` metric (kube-apiserver).</li>
 <li>Ignores the error in case of `TKEDefaultQuota` conflicts and increases the number of workers to fix the `resource quota evaluates timeout` error (kube-apiserver).</li>
 <li>Optimizes the scheduling of the number of local replicas in Serverless clusters (kube-scheduler).</li>
 <li>Cancels the forced scheduling of fixed EIPs to original super nodes (kube-scheduler).</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/99324">PR99324</a> to reset `kube-controller-manager` immediately after the token becomes invalid (kube-controller-manager).</li>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/99324">PR99324</a>, which performs a reset immediately when the kube-controller-manager token becomes invalid. (kube-controller-manager)</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/101155">PR101155</a> to set multiple `ServiceAccount` token issuers (kube-apiserver).</li>
 <li>Adds the `StatusDetaching` status for CBS disks (kube-controller-manager).</li>
 <li>Increases the timeout period for resource update when static IPs are scheduled on super nodes, so as to avoid update failures during large-scale concurrency (kube-scheduler).</li>
@@ -80,11 +162,12 @@
     <td>2022-09-07</td>
     <td>v1.20.6-tke.24</td>
     <td><li>Optimizes scheduler preemption to avoid a crash (kube-scheduler).</li>
-<li>Optimizes super node scheduling (kube-scheduler).</li>
+<li>Optimizes the scheduling of super nodes. (kube-scheduler)</li>
 <li>Supports in-place update of Pod resources (kube-apiserver, kubelet).</li>
+<li>Allows kube-system pods to be scheduled to prepaid super nodes. (kube-scheduler)</li>
 <li>Optimizes super node HPA (kube-controller-manager).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/110294">PR110294</a>, which fixes the issue where `Job activeDeadlineSeconds` doesn't take effect (kube-controller-manager).</li>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/111773">PR111773</a>, which fixes the memory leak issue during scheduler preemption (kube-scheduler).</li>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/111773">PR111773</a>, which fixes the memory leakage during scheduler preemption. (kube-scheduler)</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/97348">PR97348</a>, which fixes the issue where the number for scaling is incorrect when `StabilizationWindowSeconds` is set for HPA (kube-controller-manager).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/108831">PR108831</a>, which fixes the issue where creating multiple Pods at a time leads to kubelet panic (kubelet).</li>
 <li>Fixes the issue where Pod creation fails when the Pod name/UID of CronJob is null (kube-controller-manager).</li></td>
@@ -92,7 +175,7 @@
 	   <tr>
     <td>2022-07-27</td>
     <td>v1.20.6-tke.21</td>
-    <td><li>CBS supports native nodes (kubelet).</li><li>Optimizes the HPA of virtual nodes in TKE Serverless clusters.</li></td>
+    <td><li>CBS supports native nodes. (kubelet)</li><li>Optimizes TKE Serverless virtual node HPA.</li></td>
   </tr>
 	 <tr>
     <td>2022-06-16</td>
@@ -101,14 +184,14 @@
 Optimizes daemonset Pod scheduling performance. Only the assigned nodes are processed. (kube-scheduler)</li><li>
 Optimizes TKE Serverless scheduling (kube-scheduler).
 </li><li>EKS: You can mount the PVC after creating a Pod. (kube-scheduler)
-</li><li>The hugepages resource can be ignored through the feature switch when a Pod is scheduled to an TKE Serverless node (kube-scheduler).</li></td>
+</li><li>The hugepages resource can be ignored through the feature switch when a Pod is scheduled to an TKE Serverless node. (kube-scheduler)</li></td>
   </tr>
-<tr><td>2022-04-22</td><td>	v1.20.6-tke.17</td><td><li>EKS: The sandbox feature is retained (kube-scheduler).
+<tr><td>2022-04-22</td><td>v1.20.6-tke.17</td><td><li>EKS: The sandbox feature is retained. (kube-scheduler)
 </li><li>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/101093"> pr101093</a>, which fixed the issue where `startupProbe` is no longer be implemented after the Pod is restarted. (kubelet)</li></td></tr>
 <tr><td>2022-03-24</td><td>v1.20.6-tke.16</td><td>Fixed the issue where the inline csi and ephemeral generic ephemeral volumes are unavailable after upgrading to v1.20. (kube-apiserver, kube-controller-manager, kube-scheduler, kubelet, kubectl)</td></tr>
-	<tr><td>2022-03-18</td><td>v1.20.6-tke.15</td><td><li>Supports specifying a Pod when scaling in (kube-controller-manager).</li><li>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/106906" target="_blank">pr106906</a>, which detects whether the network storage volume subPath has been deleted, preventing the Pod from being in terminating status all the time (kubelet). </li><li> The TKE Serverless super nodes are ignored when the anti-affinity scheduling is performed based on the hostname (kube-scheduler). </li><li> Supports upgrading tke1.18 to 1.20 (kube-apiserver, kube-controller-manager, kubelet). </li><li> Ports <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/108325" target="_blank">pr108325</a>, which fixes the issue where panic is caused by the deletion of the paused container when the kubelet is launched (kubelet). </li><li> Supports Prebind and Unreserve operations for extender schedulers (kube-scheduler).</li></td></tr>
- <tr><td>2022-01-20</td><td>v1.20.6-tke.12</td><td><li>TKE Serverless rescheduling optimization: Lowers the score for super nodes that have been drained in the same AZ (kube-scheduler). </li><li>The apiserver supports integrating external services of the ExternalName type (kube-apiserver). </li><li>Supports binding the LB addresses to the IPVS ENIs (kube-proxy).</li></td></tr>
-	<tr><td>2021-12-09</td><td>v1.20.6-tke.9</td><td><li>Optimizes TKE Serverless super node scheduling and HPA (kube-controller-manager, kube-scheduler).</li><li>Fixes the inconsistency between the TKE Serverless cluster and frontend when calculating CPU resources (kube-scheduler).</li></td></tr>
+	<tr><td>2022-03-18</td><td>v1.20.6-tke.15</td><td><li>Supports specifying a Pod when scaling in. (kube-controller-manager) </li><li>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/106906" target="_blank">pr106906</a>, which detects whether the network storage volume subpath has been deleted, preventing the Pod from being in terminating status all the time. (kubelet) </li><li> The TKE Serverless super nodes are ignored when the anti-affinity scheduling is performed based on the hostname. (kube-scheduler) </li><li> Supports upgrading tke1.18 to 1.20. (kube-apiserver, kube-controller-manager, kubelet) </li><li> Ports <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/108325" target="_blank">pr108325</a>, which fixed the problem where panic is caused by the deletion of the sandbox container when the kubelet is launched. (kubelet) </li><li> Supports Prebind and Unreserve operations for extender schedulers. (kube-scheduler)</li></td></tr>
+ <tr><td>2022-01-20</td><td>v1.20.6-tke.12</td><td><li>TKE Serverless rescheduling optimization: Lower the score for super nodes that have been drained in the same availability zone. (kube-scheduler) </li><li>The apiserver supports integration of ExternalName type external services. (kube-apiserver)  </li><li>Supports binding the LB addresses to the IPVS ENIs. (kube-proxy)</li></td></tr>
+	<tr><td>2021-12-09</td><td>v1.20.6-tke.9</td><td><li>Optimizes TKE Serverless super node scheduling and HPA. (kube-controller-manager, kube-scheduler)</li><li>Fixes the inconsistency between TKE Serverless and frontend when calculating CPU resources. (kube-scheduler)</li></td></tr>
 	<tr><td>2021-12-02</td><td>v1.20.6-tke.8</td><td><li>Optimizes gRPC logs to avoid printing too many logs when kubelet collects volume status. (kubelet)</li><li>Avoids scheduling Pods using CBS to external CHC nodes. (kube-scheduler)</li></td></tr>
 	<tr><td>2021-11-26</td><td>v1.20.6-tke.7</td><td><li>Supports customized installation of other CNIs for added external hybrid cloud nodes. (kube-controller-manager)</li> 
 <li>Avoids unnecessary processing of updates after a Pod is assumed. (kube-scheduler)</li> 
@@ -131,34 +214,44 @@ Optimizes TKE Serverless scheduling (kube-scheduler).
 <li>Merges pr94833, which fixes the issue where the image tags in status do not match when Pod image has multiple tags. (kubelet)</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/100060" rel="nofollow">pr100060</a>, which automatically deletes the volume directory left by orphaned Pod. (kubelet)</li>
 <li>The kube-controller-manager supports super nodes. (kube-controller-manager)</li>
-<li>The kube-scheduler supports retaining a fixed number of local replicas during hybrid cloud expansion to TKE Serverless clusters (kube-scheduler).</li>
+<li>The kube-scheduler supports retaining a fixed number of local replicas when TKE Serverless nodes are added on a hybrid cloud. (kube-scheduler)</li>
 <li>CBS CSI migration is supported. (kube-controller-manager, kubelet)</li>
 <li>Merges pr93260, which fixes the issue that the node startup becomes slowly caused by AWS Credential Provider. (kubelet)</li>
-<li>Adds the command line parameter eks-config-namespace for the scheduler, which specifies the namespace of the configurations for the TKE Serverless cluster scale-out (kube-scheduler).</li>
-<li>TKE supports hybrid cloud nodes (kube-controller-manager).</li></ul></td></tr>
+<li>Adds the command line parameter eks-config-namespace for the scheduler. This parameter specifies the namespace where scaling of TKE Serverless related configuration occurs. (kube-scheduler)</li>
+<li>TKE supports hybrid cloud nodes. (kube-controller-manager)</li></ul></td></tr>
   </tbody>
 </table>
 
 
 
-
-## TKE Kubernetes 1.18.4 revisions
+## TKE kubernetes 1.18.4 revisions
 
 <table><thead>
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
 </thead>
 <tbody>
+<tr>
+    <td>2023-01-05</td>
+    <td>v1.18.4-tke.34</td>
+    <td>
+<li>DaemonSet pods can be run on super nodes when necessary. (kube-controller-manager)</li> 
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/102576">PR102576</a>, which stops using RemoveAll when a remaining Pod volume is deleted to avoid deleting data related to the volume. (kubelet)</li>
+<li>Allows users to reduce resource limits during in-place update. (kube-apiserver)</li> 
+<li>Fixes the issue where terminated containers are not deleted during log rotation. (kubelet)</li>
+<li>Records the following metrics when list/watch too old, too large, and too many objects occur (kube-apiserver): <code> watch_too_old_objects_events_total</code>, <code>list_too_large_objects_events_total</code>, <code>list_too_many_objects_events_total</code>, <code>watch_too_many_objects_events_total</code></li>
+</td>
+  </tr>
 		  <tr>
     <td>2022-11-09</td>
-    <td>	v1.18.4-tke.33</td>
+    <td>v1.18.4-tke.33</td>
     <td>
 		<li>Optimizes the scheduling of the number of local replicas on super nodes.</li></td>
   </tr>
 	  <tr>
     <td>2022-10-13</td>
-    <td>	v1.18.4-tke.30</td>
+    <td>v1.18.4-tke.30</td>
     <td>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/112299">PR112299</a> and optimizes the gzip compression level of the apiserver (kube-apiserver).</li>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/112299">PR112299</a>, which optimizes the apiserver Gzip compression level. (kube-apiserver)</li>
 <li>Fixes CVE-2022-3172 (kube-apiserver).</li>
 <li>Adds the `calling_webhook_timeout_error` metric (kube-apiserver).</li>
 <li>Ignores the error in case of `TKEDefaultQuota` conflicts and increases the number of workers to fix the `resource quota evaluates timeout` error (kube-apiserver).</li>
@@ -169,7 +262,8 @@ Optimizes TKE Serverless scheduling (kube-scheduler).
     <td>2022-09-07</td>
     <td>v1.18.4-tke.28</td>
     <td><li>Optimizes the list performance for large clusters (kube-apiserver).</li>
-<li>Optimizes super node scheduling (kube-scheduler).</li>
+<li>Optimizes the scheduling of super nodes. (kube-scheduler)</li>
+<li>Allows kube-system pods to be scheduled to prepaid super nodes. (kube-scheduler)</li>
 <li>Optimizes super node HPA (kube-controller-manager).</li>
 <li>Supports in-place update of Pod resources (kube-apiserver, kubelet).</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/97348">PR97348</a>, which fixes the issue where the number for scaling is incorrect when `StabilizationWindowSeconds` is set for HPA (kube-controller-manager).</li>
@@ -180,15 +274,15 @@ Optimizes TKE Serverless scheduling (kube-scheduler).
     <td>v1.18.4-tke.26</td>
     <td>CBS supports native nodes. (kubelet)</td>
   </tr>
-<tr><td>2022-03-18</td><td>v1.18.4-tke.23</td><td><li>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/92878" target="_blank">pr92878</a>, which allows to print alarm information only when the Owership of ConfigMap/Secret volume is set to be more than 30 seconds, avoiding excessive log information (kubelet). </li><li>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/106906" target="_blank">pr106906</a>, which detects whether the network storage volume subPath has been deleted, preventing the Pod from being in terminating status all the time (kubelet). </li><li> The TKE Serverless super nodes are ignored when the anti-affinity scheduling is performed based on the hostname (kube-scheduler). </li><li> Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/93026" target="_blank">pr93026</a>, which fixes the issue where DefaultPodTopologySpread cannot obtain ReplicaSet information (kube-scheduler).</li></td></tr>
-<tr><td>2022-01-20</td><td>v1.18.4-tke.20</td><td><li>TKE Serverless rescheduling optimization: Lowers the score for super nodes that have been drained in the same AZ (kube-scheduler). </li><li>The apiserver supports integrating external services of the ExternalName 556 type (kube-apiserver).  </li><li>Supports binding the LB addresses to the IPVS ENIs (kube-proxy).</li></td></tr>
-<tr><td>2021-12-09</td><td>v1.18.4-tke.17</td><td><li>Fixes the issue where kube-controller-manager's access to api-server is restricted when there are a large number of volume attachment objects (kube-controller-manager).</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/95650">PR95650</a>, so that HPA ignores deleted Pods when counting replicas (kube-controller-manager).</li><li>Fixes the inconsistency between the TKE Serverless cluster and frontend when calculating CPU resources (kube-scheduler).</li></td></tr>
+<tr><td>2022-03-18</td><td>v1.18.4-tke.23</td><td><li>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/92878" target="_blank">pr92878</a>, which allows to print alarm information only when setting the ownership for ConfigMap/Secret volumes takes more than 30 seconds, avoiding excessive log information. (kubelet) </li><li>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/106906" target="_blank">pr106906</a>, which detects whether the network storage volume subpath has been deleted, preventing the Pod from being in terminating status all the time. (kubelet) </li><li> The TKE Serverless super nodes are ignored when the anti-affinity scheduling is performed based on the hostname. (kube-scheduler) </li><li> Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/93026" target="_blank">pr93026</a>, which fixed the problem where DefaultPodTopologySpread cannot obtain replicaset information. (kube-scheduler)</li></td></tr>
+<tr><td>2022-01-20</td><td>v1.18.4-tke.20</td><td><li>TKE Serverless rescheduling optimization: Lower the score for super nodes that have been drained in the same availability zone. (kube-scheduler) </li><li>The apiserver supports integration of ExternalName 556 type external services. (kube-apiserver)  </li><li>Supports binding the LB addresses to the ipvs ENIs. (kube-proxy)</li></td></tr>
+<tr><td>2021-12-09</td><td>v1.18.4-tke.17</td><td><li>Fixes the issue where kube-controller-manager's access to apiserver is restricted when there are a large number of volume attachment objects. (kube-controller-manager)</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/95650">PR95650</a>, so that HPA ignores deleted Pods when counting replicas. (kube-controller-manager)</li><li>Fixes the inconsistency between TKE Serverless and frontend when calculating CPU resources. (kube-scheduler)</li></td></tr>
 <tr><td>2021-12-02</td><td>v1.18.4-tke.16</td><td><li>Fixes the bug when scheduling to super nodes. (kube-scheduler)</li><li>Optimizes the super node scheduling algorithm. (kube-scheduler)</li></td></tr>
 	<tr><td>2021-11-26</td><td>v1.18.4-tke.15</td>
 <td><ul class="params"><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/96444" target="_blank">pr96444</a>, so that if an error occurs during RBAC policy sync, the operation will be retried. (kube-apiserver)</li>
 	<li>Supports customized installation of other CNIs for added external hybrid cloud nodes. (kube-controller-manager)</li>
 	<li>Supports binding cores by group for Android containers in cloud games. (kubelet)</li>
-	<li>Supports Prebind and Unreserve operations for extender schedulers (kube-scheduler).</li>
+	<li>Supports extended scheduler Prebind and Unreserve operations. (kube-scheduler)</li>
 	<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/99336" target="_blank">pr99336</a> to improve the node information sync mechanism upon kubelet startup. (kubelet)</li>
 	<li>Fixes <a href="https://github.com/kubernetes/kubernetes/pull/104340" target="_blank">CVE-2021-25741</a> to block unauthorized access to server files over soft links. (kubelet)</li>
 	<li>Optimizes the error message when scheduling times out due to CBS disk creation failure. (kube-scheduler)</li>
@@ -197,7 +291,7 @@ Optimizes TKE Serverless scheduling (kube-scheduler).
 	<tr>
 	<tr><td>2021-08-23</td><td>v1.18.4-tke.14</td>
 <td><ul class="params"><li>When the TKE cluster adds nodes, it supports static IP. (kube-scheduler)</li>
-	<li>When the TKE cluster adds nodes, if the TKE Serverless static IP is matched, other pre-selected policies are skipped (kube-scheduler).</li><li>When the TKE cluster adds nodes, TKE Serverless node resource awareness rescheduling is optimized for TKE Serverless node scheduling, and TKE Serverless node priority model scheduling and preference/pre-selection policy for TKE Serverless nodes are optimized (kube-scheduler).</li>
+	<li>When the TKE cluster adds nodes, if TKE Serverless static IP is matched, other pre-selected policies are skipped. (kube-scheduler)</li><li>When the TKE cluster adds nodes, TKE Serverless node resource awareness rescheduling is optimized for TKE Serverless node scheduling, and TKE Serverless node priority model scheduling and preference/pre-selection policy for TKE Serverless nodes are optimized. (kube-scheduler)</li>
 	<li>Records loaded IPVS kernel module to avoid kube-proxy crashes in IPVS mode. (kube-proxy)</li>
 	<li>Avoids panic when an error occurs at the time of writing into cpu manager status file. (kubelet)</li></ul></td></tr>
 	<tr><td>2021-07-22</td><td>v1.18.4-tke.13</td><td>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/91859" target="_blank">PR91859</a>, which fixes the issue of kube-apiserver panic when the CRD type has only one letter. (kube-apiserver)</td></tr>
@@ -215,7 +309,7 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 <li>Ports <a href="https://github.com/kubernetes/kubernetes/pull/93370" rel="nofollow">pr93370</a> to support CronJobControllerV2. (kube-controller-manager)</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/100376" rel="nofollow">pr100376</a> to enable HTTP/2 health check, which prevents the issue that the underlying layer connection is closed but can still be used incorrectly. (kube-apiserver, kube-controller-manager, kube-scheduler, kubelet, kube-proxy, kubectl)</li>
 <li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/100317" rel="nofollow">pr100317</a>, which fixes the issue where CVE-2021-25735 node updates might bypass the Validating Admission Webhook. (kube-apiserver)</li>
-<li>When the TKE cluster adds nodes, ComputeResource, TKE Serverless ClusterIP, and HPA are supported (kube-controller-manager, kube-scheduler).</li>
+<li>When TKE cluster adds nodes, ComputeResource, TKE Serverless ClusterIP, and HPA are supported. (kube-controller-manager, kube-scheduler)</li>
 </ul></td>
 </tr>
 <tr>
@@ -306,17 +400,16 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 
 
 
-
-## TKE Kubernetes 1.16.3 revisions
+## (Discontinued) TKE Kubernetes 1.16.3 revisions
 <table><thead>
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
 </thead>
 <tbody>
 	  <tr>
     <td>2022-10-13</td>
-    <td>		v1.16.3-tke.32</td>
+    <td>v1.16.3-tke.32</td>
     <td>
-<li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/112299">PR112299</a> and optimizes the gzip compression level of the apiserver (kube-apiserver).</li>
+<li>Incorporates <a href="https://github.com/kubernetes/kubernetes/pull/112299">PR112299</a>, which optimizes the apiserver Gzip compression level. (kube-apiserver)</li>
 <li>Fixes CVE-2022-3172 (kube-apiserver).</li>
 <li>Adds the `calling_webhook_timeout_error` metric (kube-apiserver).</li>
 <li>Ignores the error in case of `TKEDefaultQuota` conflicts and increases the number of workers to fix the `resource quota evaluates timeout` error (kube-apiserver).</li>
@@ -328,19 +421,19 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 	 <tr>
     <td>2022-07-27</td>
     <td>v1.16.3-tke.28</td>
-    <td><li>TKE Serverless virtual nodes are ignored when anti-affinity scheduling is performed based on hostname (kube-scheduler).</li><li>TKE Serverless retains the sandbox feature (kube-scheduler).</li><li>CBS supports native nodes (kubelet).</li></td>
+    <td><li>TKE Serverless virtual nodes are ignored when anti-affinity scheduling is performed based on hostname. (kube-scheduler)</li><li>TKE Serverless: The sandbox feature is retained. (kube-scheduler)</li><li>CBS supports native nodes. (kubelet)</li></td>
   </tr>
 <tr><td>2022-03-18</td><td>v1.16.3-tke.27</td><td><li>Supports specifying a Pod when scaling in. (kube-controller-manager) </li><li>Optimization of super node scheduling algorithm. (kube-scheduler)</li></td></tr>
-<tr><td>2022-01-20</td><td>v1.16.3-tke.25</td><td><li>Supports binding the LB addresses to the IPVS ENIs (kube-proxy). </li><li>The apiserver supports integrating external services of the ExternalName type (kube-apiserver). </li><li>Optimizes TKE Serverless scheduling (kube-scheduler).</li></td></tr>
-<tr><td>2021-12-09</td><td>v1.16.3-tke.24</td><td>Fixes the issue where the TKE Serverless local replica quantity policy fails on StatefulSet Pods (kube-scheduler).</td></tr>
-<tr><td>2021-12-02</td><td>v1.16.3-tke.23</td><td><li>Supports Prebind and Unreserve operations for extender schedulers (kube-scheduler).</li><li> Avoids scheduling Pods using CBS to external CHC nodes (kube-scheduler).</li><li>Fixes the bug when scheduling to super nodes (kube-scheduler).</li></td></tr>
-<tr><td>2021-09-03</td><td>v1.16.3-tke.22</td><td>Avoids panic when an error occurs at the time of writing the CPU Manager status file (kubelet).</td></tr><tr><td>2021-08-17</td><td>v1.16.3-tke.21</td><td><ul class="params"><li>Optimizes TKE Serverless node resource awareness rescheduling for TKE Serverless node scheduling, optimizes TKE Serverless node priority model scheduling, and optimizes preference/pre-selection policy for TKE Serverless nodes (kube-scheduler).</li><li>Ports <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/87692" target="_blank">87692</a>, which fixes the issue where there is no data for scheduler's pending_pods and schedule_attempts_total metrics (kube-scheduler).</li></ul></td></tr><tr><td>2021-07-19</td><td>v1.16.3-tke.20</td><td><ul class="params"><li>Ports <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/87688" target="_blank">87688 </a>and <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/87693" target="_blank">87693</a>, which optimizes Node Authorizer performance (kube-apiserver).</li><li>When the TKE cluster adds nodes, it can perceive the remaining IPs in the subnet and schedule the right number of Pods to the super node at the time of batch scheduling of Pods (kube-scheduler).</li><li>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/88507" target="_blank">pr88507</a>, which fixes the issue where the podIP and podIPs are inconsistent when updating the Pod status (kube-apiserver).</li></ul></td></tr>
+<tr><td>2022-01-20</td><td>v1.16.3-tke.25</td><td><li>Supports binding the LB addresses to the ipvs ENIs. (kube-proxy) </li><li>The apiserver supports integration of ExternalName type external services. (kube-apiserver) </li><li>Optimization of TKE Serverless scheduling. (kube-scheduler)</li></td></tr>
+<tr><td>2021-12-09</td><td>v1.16.3-tke.24</td><td>Fixes the issue where the TKE Serverless local replica quantity policy fails on StatefulSet Pods. (kube-scheduler)</td></tr>
+<tr><td>2021-12-02</td><td>v1.16.3-tke.23</td><td><li>Supports extended scheduler Prebind and Unreserve operations. (kube-scheduler)</li><li> Avoids scheduling Pods using CBS to external CHC nodes. (kube-scheduler)</li><li>Fixes the bug when scheduling to super nodes. (kube-scheduler)</li></td></tr>
+<tr><td>2021-09-03</td><td>v1.16.3-tke.22</td><td>Avoids panic when an error occurs at the time of writing into cpu manager status file. (kubelet)</td></tr><tr><td>2021-08-17</td><td>v1.16.3-tke.21</td><td><ul class="params"><li>Optimizes TKE Serverless node scheduling: optimizes TKE Serverless node resource awareness rescheduling, optimizes TKE Serverless node priority model scheduling, and optimizes preference/pre-selection policy for TKE Serverless nodes. (kube-scheduler)</li><li>Ports <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/87692" target="_blank">87692</a>, which fixes the issue that there is no data for scheduler’s pending_pods and schedule_attempts_total metrics. (kube-scheduler)</li></ul></td></tr><tr><td>2021-07-19</td><td>v1.16.3-tke.20</td><td><ul class="params"><li>Ports <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/87688" target="_blank">87688 </a>and <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/87693" target="_blank">87693</a>, which optimizes Node Authorizer performance. (kube-apiserver)</li><li>When the TKE cluster adds nodes, it can perceive the remaining IPs in the subnet and schedule the right number of Pods to the super node at the time of batch scheduling of Pods. (kube-scheduler)</li><li>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/88507" target="_blank">pr88507</a>, which fixes the issue that the podIP and podIPs are inconsistent when updating the Pod status. (kube-apiserver)</li></ul></td></tr>
 <tr>
     <td>2021-05-24</td>	
     <td>v1.16.3-tke.17</td>	
     <td><ul class="params">
 <li>Ports <a href="https://github.com/kubernetes/kubernetes/pull/93370" rel="nofollow">pr93370</a> to support CronJobControllerV2. (kube-controller-manager)</li>
-<li>When the TKE cluster adds nodes, the local replicas can be retained (kube-scheduler).</li>
+<li>When the TKE cluster adds nodes, the local replicas can be retained. (kube-scheduler)</li>
 	        </ul></td>
 </tr>	
 <tr>
@@ -448,11 +541,11 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 <tr>
 	<td>2020-01-06</td>
 	<td>v1.16.3-tke.1</td>
-	<td><ul class="params"><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank"> pr79036</a>, which fixes the issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a Pod is Guaranteed.</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/84167" target="_blank"> pr84167</a>, which fixes the issue where an incorrect etcd key prefix causes an apiserver health check failure.</li><li>Reverts<a href="https://github.com/kubernetes/kubernetes/pull/63066" target="_blank"> pr63066</a>, which fixes the CLB health check and IPVS issues.</li><li>Incorporates<a href="https://github.com/kubernetes/kubernetes/pull/72914" target="_blank"> pr72914</a>, which fixes the issue where mounting may fail if you delete a Pod, create a new one, and schedule it to the same node.</li><li>Fixes the issue where creating containers in CentOS results in cgroup leakage.</li><li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes Pods to exit.</li><li>Adds metadata cache and timeout. cloud-provider now supports using node names as hostnames.</li><li>Reverts pr79036, which fixes the issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a Pod is Guaranteed.</li><li>Produces a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevents some users from accessing CBS properly.</li></ul></td>
+	<td><ul class="params"><li>Incorporates<a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank"> pr79036</a>, which fixes the issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a pod is Guaranteed.</li><li>Incorporates<href="https://github.com/kubernetes/kubernetes/pull/84167" target="_blank"> pr84167</a>, which fixes the issue where an incorrect Etcd key prefix causes an apiserver health check failure.</li><li>Reverts<a href="https://github.com/kubernetes/kubernetes/pull/63066" target="_blank"> pr63066</a>, which fixes the CLB health check and IPVS issues.</li><li>Incorporates<a href="https://github.com/kubernetes/kubernetes/pull/72914" target="_blank"> pr72914</a>, which fixes the issue where mounting may fail if you delete a pod, create a new one, and schedule it to the same node.</li><li>Fixes the issue where creating containers in CentOS results in cgroup leakage.</li><li>Fixes the issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Adds metadata cache and timeout. cloud-provider now supports using node names as hostnames.</li><li>Reverts pr79036, which fixes the issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a pod is Guaranteed.</li><li>Produces a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevents some users from accessing CBS properly.</li></ul></td>
 </tr>
 </tbody></table>
 
-## (Disused) TKE Kubernetes 1.14.3 revisions
+## (Discontinued) TKE Kubernetes 1.14.3 revisions
 <table>
 <thead>
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
@@ -460,8 +553,8 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 <tbody>
 	<tr><td>2022-04-13</td><td>v1.14.3-tke.27</td><td>Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/78428">pr78428</a>, which avoids writing a warning message when exporting the iptables rule, causing kube-proxy panic at the time of recovery. (kube-proxy)</td></tr>
 <tr><td>2022-03-18</td><td>v1.14.3-tke.26</td><td><li>Supports specifying a Pod when scaling in. (kube-controller-manager) </li><li>Optimization of super node scheduling algorithm. (kube-scheduler) </li><li> Merges <a rel="nofollow" href="https://github.com/kubernetes/kubernetes/pull/80851" target="_blank">pr80851</a>, which fixed CVE-2019-11247, avoiding the unauthorized access of CRD resources. (kube-apiserver)</li></td></tr>
-<tr><td>2022-01-20</td><td>v1.14.3-tke.24</td><td><li>Supports binding the LB addresses to the IPVS ENIs (kube-proxy). </li><li>The apiserver supports integrating external services of the ExternalName type (kube-apiserver). </li><li>Optimizes TKE Serverless scheduling (kube-scheduler).</li></td></tr>
-<tr><td>2021-12-02</td><td>v1.14.3-tke.23</td><td><li>When the TKE cluster adds nodes, it can perceive the remaining IPs in the subnet and schedule the right number of Pods to the super node at the time of batch scheduling of the Pods (kube-scheduler).</li><li>Optimizes TKE Serverless node resource awareness rescheduling for TKE Serverless node scheduling, optimizes TKE Serverless node priority model scheduling, and optimizes preference/pre-selection policy for TKE Serverless nodes (kube-scheduler).</li><li> Supports Prebind and Unreserve operations for extender schedulers (kube-scheduler).</li><li>Avoids scheduling Pods using CBS to external CHC nodes (kube-scheduler).</li><li> Fixes the bug when scheduling to super nodes (kube-scheduler).</li></td></tr>
+<tr><td>2022-01-20</td><td>v1.14.3-tke.24</td><td><li>Supports binding the LB addresses to the ipvs ENIs. (kube-proxy) </li><li>The apiserver supports integration of ExternalName type external services. (kube-apiserver) </li><li>Optimization of TKE Serverless scheduling. (kube-scheduler)</li></td></tr>
+<tr><td>2021-12-02</td><td>v1.14.3-tke.23</td><td><li>When the TKE cluster adds nodes, it can perceive the remaining IPs in the subnet and schedule the right number of Pods to the super node at the time of batch scheduling of the Pods. (kube-scheduler)</li><li>Optimizes TKE Serverless node scheduling: optimizes TKE Serverless node resource awareness rescheduling, optimizes TKE Serverless node priority model scheduling, and optimizes preference/pre-selection policy for TKE Serverless nodes. (kube-scheduler)</li><li> Supports extended scheduler Prebind and Unreserve operations. (kube-scheduler)</li><li>Avoids scheduling Pods using CBS to external CHC nodes. (kube-scheduler)</li><li> Fixes the bug when scheduling to super nodes. (kube-scheduler)</li></td></tr>
 <tr>
     <td>2021-05-06</td>	
     <td>v1.14.3-tke.22</td>	
@@ -539,7 +632,7 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 <tr>
     <td>2020-04-14</td>
     <td>v1.14.3-tke.11</td>
-    <td><ul class="params"><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/75442"> pr75442</a>, which changes the bandwidth unit from Kb to b.</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/86583">pr87669</a>, which fixes the CVE-2020-8552: apiserver DoS attack issue.</li> <li>TKE can perceive the maximum number of qcloudcbs that can be mounted to a single node. (In 1.12 and later versions, the value is maxAttachCount-2. In version 1.10, the value is 18 by default.)</li></ul></td>
+    <td><ul class="params"><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/75442"> pr75442</a>, which changes the bandwidth unit from Kb to b.</li><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/87669"> pr87669</a>, which fixes the CVE-2020-8552: apiserver DoS attack issue.</li> <li>TKE can perceive the maximum number of qcloudcbs that can be mounted to a single node. (In 1.12 and later versions, the value is maxAttachCount-2. In version 1.10, the value is 18 by default).</li></ul></td>
 </tr>
 <tr>
     <td>2020-04-14</td>
@@ -588,7 +681,7 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 </tr>
 </tbody></table>
 
-## (Disused) TKE Kubernetes 1.12.4 revisions
+## (Discontinued) TKE Kubernetes 1.12.4 revisions
 
 <table>
 <thead>
@@ -686,7 +779,7 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 <tr>
 	<td>2019-10-23</td>
 	<td>v1.12.4-tke.11</td>
-	<td><ul class="params"><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank">pr79036</a>, which fixes the issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a Pod is Guaranteed.</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/72868" target="_blank">pr72866</a>, which adds a new parameter <code>--metrics-port</code> to kube-proxy and addresses the issue where <code>--metrics-bind-address</code> does not recognize port numbers.</li></ul></td>
+	<td><ul class="params"><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank">pr79036</a>, which fixes an issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a pod is Guaranteed.</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/72868" target="_blank">pr72868</a>, which adds a new parameter<code>--metrics-port</code> to kube-proxy and addresses the issue where <code>--metrics-bind-address</code> does not recognize port numbers.</li></ul></td>
 </tr>
 <tr>
 	<td>2019-09-06</td>
@@ -735,7 +828,7 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 </tr>
 </tbody></table>
 
-## (Disused) TKE Kubernetes 1.10.5 revisions
+## (Discontinued) TKE Kubernetes 1.10.5 revisions
 
 <table>
 <thead>
@@ -758,7 +851,7 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 <tr>
     <td>2020-04-29</td>
 	<td>v1.10.5-tke.17</td>
-    <td>Merges <a href="https://github.com/kubernetes/kubernetes/pull/75622">pr75622</a>, which fixes the issue where, when a large number (>2000) of sts workloads exist in a cluster, it takes too long (about 20s) to synchronize sts changes to a Pod.</td>
+    <td>Merges<a href="https://github.com/kubernetes/kubernetes/pull/75622" target="_blank">pr75622</a>, which fixes the issue where, when a large number (>2000) of sts workloads exist in a cluster, it takes too long (about 20s) to synchronize sts changes to a Pod.</td>
     </tr>
 <tr>
     <td>2020-04-14</td>
@@ -774,7 +867,7 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 <tr>
 	<td>2020-01-13</td>
 	<td>v1.10.5-tke.14</td>
-	<td><ul class="params"><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/2359" target="_blank">pr2359</a>, which fixes the issue of missing monitoring records when docker root fails to be obtained.</li> <li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86583" target="_blank"> pr86583</a>, which increases the logging level to prevent excessive logs from being generated when iptables does not support random-fully.</li><li>kube-scheduler supports dynamic logging level configuration.</li><li>Produces a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevents some users from accessing CBS properly.</li><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86230" target="_blank"> pr86230</a>, which skips assumed Pod updates when Pods are scheduled.</li></ul></td>
+	<td><ul class="params"><li>Merges<a href="https://github.com/google/cadvisor/pull/2359" target="_blank"> pr2359</a>, which fixes the issue of missing monitoring records when docker root fails to be obtained.</li> <li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86583" target="_blank"> pr86583</a>, which increases the logging level to prevent excessive logs from being generated when iptables does not support random-fully.</li><li>kube-scheduler supports dynamic logging level configuration.</li><li>Produces a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevents some users from accessing CBS properly.</li><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86230" target="_blank"> pr86230</a>, which skips assumed pod updates when pods are scheduled.</li></ul></td>
 </tr>
 <tr>
 	<td>2019-12-23</td>
@@ -794,7 +887,7 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 <tr>
 	<td>2019-10-23</td>
 	<td>v1.10.5-tke.10</td>
-	<td><ul class="params"><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank">pr79036</a>, which fixes the issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a Pod is Guaranteed.</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/72868" target="_blank">pr72866</a>, which adds a new parameter <code>--metrics-port</code> to kube-proxy and addresses the issue where <code>--metrics-bind-address</code> does not recognize port numbers.</li></ul></td>
+	<td><ul class="params"><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank">pr79036</a>, which fixes an issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a pod is Guaranteed.</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/72868" target="_blank">pr72868</a>, which adds a new parameter<code>--metrics-port</code> to kube-proxy and addresses the issue where <code>--metrics-bind-address</code> does not recognize port numbers.</li></ul></td>
 </tr>
 <tr>
 	<td>2019-09-06</td>
@@ -848,7 +941,7 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 </tr>
 </tbody></table>                                                
 
-## (Disused) TKE Kubernetes 1.8.13 revisions
+## (Discontinued) TKE Kubernetes 1.8.13 revisions
 
 <table>
 <thead>
@@ -887,7 +980,7 @@ TKE supports hybrid cloud nodes. (kube-controller-manager)</td>
 </tbody></table>
 
 
-## (Disused) TKE Kubernetes 1.7.8 revisions
+## (Discontinued) TKE Kubernetes 1.7.8 revisions
 
 <table>
 <thead>

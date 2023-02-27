@@ -1,3 +1,54 @@
+## 2023年01月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tr>
+<td>控制台支持页签视图</td>
+<td>TDSQL-C MySQL 版控制台支持页签视图和列表视图，您可在集群列表自主切换视图，便于更清晰地查询和浏览集群信息。</td>
+<td>2023-01-05</td>
+<td></td></tr>
+</table>
+
+
+## 2022年12月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tr>
+<td>支持全局和非全局参数设置</td>
+<td>TDSQL-C MySQL 版对参数新增了全局与非全局参数区分项，全局参数设置的参数值对集群下所有实例生效；非全局参数的参数值设置后只对当前实例生效，但可将该值同步至其他实例。</td>
+<td>2022-12-16</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/44602" target="_blank">设置实例参数</a></td></tr>
+<tr>
+<td>支持公式化设置参数，优化参数模板</td>
+<td>TDSQL-C MySQL 版提供了更加丰富的参数设置，支持默认或自定义公式化设置参数值，更加适配您的数据库，可另存为参数模板，导入导出参数，便于批量化管理数据库集群。</td>
+<td>2022-12-16</td>
+<td><li><a href="https://www.tencentcloud.com/document/product/1098/53398" target="_blank">参数公式</a><li><a href="https://intl.cloud.tencent.com/document/product/1098/44601" target="_blank">使用参数模板</a></td></tr>
+<tr>
+<td>TDSQL-C MySQL 版发布新版审计服务</td>
+<td>TDSQL-C MySQL 版发布新版审计服务，支持全审计和规则审计，具备数据采集完整性、可靠性，数据防篡改，数据传输完整性，数据存储完整性等特性。</td>
+<td>2022-12-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/44614" target="_blank">开通审计服务</a></td></tr>
+</table>
+
+## 2022年10月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tr>
+<td>TDSQL-C MySQL 版支持并行查询能力</td>
+<td>TDSQL-C MySQL 版支持并行查询能力，利用并行查询能力，调动多核计算资源，大幅缩短大查询响应时间。</td>
+<td>2022-10-24</td>
+<td><a href="https://www.tencentcloud.com/document/product/1098/51769" target="_blank">开启或关闭并行查询</a></td></tr>
+</table>
+
+## 2022年09月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tr>
+<td>TDSQL-C MySQL 版审计支持低频存储</td>
+<td>腾讯云为 TDSQL-C MySQL 版数据库审计提供低频存储方式，用户可根据其数据库审计实际存储频率来选择合适计费，助力用户降低审计使用成本。</td>
+<td>2022-09-30</td>
+<td><a href="https://www.tencentcloud.com/document/product/1098/52146" target="_blank">数据库审计计费说明</a></td></tr>
+</table>
+
 ## 2022年08月
 <table>
 <thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
@@ -20,7 +71,7 @@
 <td>支持数据库代理</td>
 <td>TDSQL-C MySQL 版支持数据库代理，数据库代理是位于云数据库服务和应用服务之间的网络代理服务，用于代理应用服务访问数据库时的所有请求，通过代理集群中转访问数据库的主从节点，进行读写分离，降低主库的负载。</td>
 <td>2022-07-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1098/50004" target="_blank">数据库代理</a></td></tr>
+<td>-</td></tr>
 </table>
 
 ## 2022年05月

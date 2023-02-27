@@ -1,12 +1,11 @@
 ## Prerequisites
-- Apply for a connection. See [Applying for a Connection](https://intl.cloud.tencent.com/document/product/216/19244).
-- Create a direct connect gateway. See [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
+- You have applied for a connection as instructed in [Applying for a Connection](https://intl.cloud.tencent.com/document/product/216/19244).
+- You have created a direct connect gateway as instructed in [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
 
 ## Directions
-### Step 1: Apply for a dedicated tunnel
+### Step 1. Apply for a dedicated tunnel
 1. Log in to the [Direct Connect - Dedicated Tunnel console](https://console.cloud.tencent.com/dc/dcConn).
-2. On the left sidebar, click **Dedicated tunnels > Exclusive virtual interface**, click **+ New**, complete basic configurations such as name, connection type, access network, gateway region and associated direct connect gateway, and click **Next**.
-![]()
+2. On the **Dedicated Tunnels** page, click **+ New**, complete basic configurations such as name, connection type, access network, gateway region and associated direct connect gateway, and click **Next**.
 <table>
 <tr>
 <th width="15%">Field</th>
@@ -18,7 +17,7 @@
 </tr>
 <tr>
 <td>Tunnel Type</td>
-<td>Set to <b>1.0</b> or <b>2.0</b> depending on the associated connection you select.</td>
+<td>Select 1.0 or 2.0 based on the associated connection.</td>
 </tr>
 <tr>
 <td>Connections</td>
@@ -26,13 +25,12 @@
 </tr>
 <tr>
 <td>Access Network</td>
-<td><ul><li>For a 1.0 tunnel, select from CCN and VPC.</li><li>
- For a 2.0 tunnel, select either <b>CCN</b> or <b>Virtual Private Cloud</b>.</li></ul></td>
+<td>Select CCN or VPC if the tunnel type is 1.0 or 2.0.</td>
 </tr>
 <tr>
 <td>Region</td>
-<td><ul><li>If <b>CCN</b> is selected as the access network, the region is where the CCN-based direct connect gateway resides by default.</li><li>
- If <b>VPC</b> is selected as the access network, you can only select the region where the connection resides for a 2.0 tunnel and select any region for a 1.0 tunnel.</li>
+<td><ul><li>If you select <b>CCN</b>, the region is where the CCN-based direct connect gateway resides by default.</li><li>
+ If you select <b>VPC</b>, you can select only the region of the connection for 2.0 dedicated tunnels and any region for 1.0 dedicated tunnels.</li></ul></td>
 </tr>
 <tr>
 <td>VPC</td>
@@ -43,16 +41,15 @@
 <td>Associate an existing direct connect gateway with the dedicated tunnel. A 2.0 tunnel does not support a NAT-type direct connect gateway.</td>
 </tr>
 </table>
-3. Configure the following parameters on the **Advanced Configuration** page.
-<img src="" width="85%"> 
+3. Configure the following parameters on the **Advanced configuration** page.
 <table>
 <tr>
-<th width="15%">Field</th>
-<th width="85%">Description</th>
+<th>Field</th>
+<th>Definition</th>
 </tr>
 <tr>
 <td>VLAN ID</td>
-<td>One VLAN corresponds to one tunnel. Valid range: [0，3000).<ul><li>If the value is 0, only 1 tunnel can be created. Use physical layer 3 interfaces for the connection.</li><li>If the value is between 1 and 2999, multiple tunnels can be created. Use layer 3 sub-interfaces for the connection. When only the layer 2 connection is supported, please disable the STP protocol under the interface at the IDC side. In the case of multiple dedicated tunnels, when the MSTP connection passes through multiple VLANs, the carrier line needs to enable the Trunk mode./li></ul></td>
+<td>One VLAN corresponds to one tunnel. Valid range: [0, 3000).<ul><li>If the value is `0`, only one tunnel can be created. Use physical layer 3 interfaces for the connection.</li><li>If the value is between 1 and 2999, multiple tunnels can be created. Use layer 3 sub-interfaces for the connection. When only the layer 2 connection is supported, we recommend you disable the STP protocol under the interface at the IDC side. In the case of multiple dedicated tunnels, when the MSTP connection passes through multiple VLANs, the carrier line needs to enable the Trunk mode.</li></ul></td>
 </tr>
 <tr>
 <td>Bandwidth</td>
@@ -60,14 +57,14 @@
 </tr>
 <tr>
 <td>Interconnection Method</td>
-<td><ul><li>By default, <b>Manual allocation</b> is selected for 2.0 tunnels.</li><li>Both <b>Manual allocation</b> and <b>Automatic Assignment</b> are supported for 1.0 tunnels. If <b>Automatic Assignment</b> is selected, there is no need to configure <b>Tencent Cloud Primary Edge IP</b> and <b>CPE Peer IP</b>.</li></ul></td>
+<td><ul><li>By default, Manual allocation is selected for 2.0 tunnels.</li><li>Both Manual allocation and Automatic assignment are supported for 1.0 tunnels. If Automatic assignment is selected, there is no need to configure Tencent Cloud Primary Edge IP and CPE peer IP.</li></ul></td>
 </tr>
 <tr>
-<td>Tencent Cloud Primary IP</td>
+<td>Tencent Cloud Primary Edge IP</td>
 <td>Enter the connection IP address on the Tencent Cloud side. Do not use the following IP ranges or IP addresses: 169.254.0.0/16, 127.0.0.0/8, 255.255.255.255, 224.0.0.0 - 239.255.255.255, 240.0.0.0 - 255.255.255.254.</td>
 </tr>
 <tr>
-<td>Tencent Cloud Primary IP</td>
+<td>Tencent Cloud Secondary IP</td>
 <td>Enter the secondary IP address of the connection on the Tencent Cloud side. The secondary IP will be automatically used to ensure the normal operation of your business when the Tencent Cloud primary IP fails and becomes unavailable. This field is not supported when the mask of the secondary IP address is 30 or 31.</td>
 </tr>
 <tr>
@@ -77,22 +74,6 @@
 <tr>
 <td>Routing Mode</td>
 <td>Select:<ul><li>BGP Routing: Applicable to the exchange of routing information and network accessibility across autonomous systems (AS).</li><li>Static Routing: Applicable to a simper network environment.</li></ul></td>
-</tr>
-<tr>
-<td>Health Check</td>
-<td>Health check is enabled by default. BFD and NQA modes are provided. For details, see <a href="https://intl.cloud.tencent.com/document/product/216/46292">Dedicated tunnel health check</a>.</td>
-</tr>
-<tr>
-<td>Check mode</td>
-<td>BFD and NQA modes are provided</td>
-</tr>
-<tr>
-<td>Health Check Interval</td>
-<td>The interval between two health checks.</td>
-</tr>
-<tr>
-<td>Number of Failed Health Checks</td>
-<td>Switch the route after the configured consecutive failed health checks.</td>
 </tr>
 <tr>
 <td>BGP ASN</td>
@@ -114,7 +95,7 @@
  - `172.16.0.0/12` is split into `172.16.0.0/13` + `172.24.0.0/13`.
  - `192.168.0.0/16` is split into `192.168.0.0/17` + `192.168.128.0/17`.
 </dx-alert>
-4. Configure IDC devices. You can click **Download configuration guide** to download related files and complete the configurations as instructed in the guide. <p><img src=""></img></p>
+4. Configure IDC devices. You can click **Download configuration guide** to download the guide and complete the configurations as instructed in the guide.
 <table>
 <tr>
 <th width="20%">Parameter</th>
@@ -129,15 +110,15 @@
 </table>
 5. Click **Submit**.
 
-### Step 2: Set the alarm recipient
+### Step 2. Set the alarm recipient
 After a dedicated tunnel is created, Tencent Cloud automatically configures four event alarms such as `DirectConnectTunnelDown`, `DirectConnectTunnelBFDDown`, `DirectConnectTunnelBGPSessionDown`, and `DirectConnectTunnelRouteTableOverload`, helping you monitor and manage your dedicated tunnels. For more information on the event alarms, see [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403).
-The automatically created default alarm policy is not configured with recipient information, and only supports console alarms. You can configure alarm recipients by yourself. For details, see [**Configuring Alarm Policies**](https://intl.cloud.tencent.com/ document/product/216/38402).
+The automatically created default alarm policy is not configured with recipient information, and only supports console alarms. You can configure alarm recipients by yourself. For details, see [**Configuring Alarm Policies**](https://intl.cloud.tencent.com/document/product/216/38402).
 
-## Connection Status
+## Connection Status Description
 After the dedicated tunnel is created, it will be displayed on the **Dedicated Tunnels** page in the **Applying** status.
-![]()
 The possible connection statuses of a dedicated channel include:
 ![](https://qcloudimg.tencent-cloud.cn/raw/d7a7d15a93d8de373f186870a3b23f42.jpg)
+
 - **Applying**
   The system has received your application for a new dedicated tunnel and is ready to start the creation.
 - **Configuring**

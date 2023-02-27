@@ -1,5 +1,5 @@
 ## 操作场景
-FCM 通道是谷歌推出的系统级推送通道，在国外具备谷歌 Service 框架的手机上，鉴于其较宽松的后台进程管理方式，在应用进程未被强制停止的情况下，可以收到推送消息。
+FCM 通道是谷歌推出的系统级推送通道，在国外具备谷歌 Service 框架的手机上，鉴于其较宽松的后台进程管理方式，在应用进程未被强制停止的情况下，可以收到推送消息。FCM 通道不支持国内集群。
 
 ## 操作步骤
 ### 获取密钥
@@ -14,7 +14,7 @@ FCM 推送支持两种密钥配置，以下方式二选一，推荐使用“服�
 1. 配置 google-services.json 文件。如图所示：
 ![](https://main.qcloudimg.com/raw/568561b72a775058bf06750bfab38ed0.png)
 2. 配置 gradle，集成谷歌 service。
-   1. 在项目级的 build.gradle 文件中的 dependencies 节点中添加下面代码：
+  1. 在项目级的 build.gradle 文件中的 dependencies 节点中添加下面代码：
 ```xml
 classpath 'com.google.gms:google-services:4.2.0'
 ```
@@ -24,6 +24,7 @@ classpath 'com.google.gms:google-services:4.2.0'
 	```xml
 	  implementation 'com.tencent.tpns:fcm:[VERSION]-release' // FCM 推送 [VERSION] 为当前 SDK 版本号，版本号可在 Android SDK 发布动态查看
       implementation  'com.google.firebase:firebase-messaging:17.6.0'
+
 	 //在应用级的 gradle 文件的最后一行代码中新增并将 google-services.json 放进您应用 model 的根路径下
 	apply plugin: 'com.google.gms.google-services'
 	```
@@ -45,3 +46,23 @@ V/TPush: [XGPushConfig] isUsedOtherPush:true
 I/TPush: [OtherPush] checkDevice pushClassNamecom.tencent.android.tpush.otherpush.fcm.impl.OtherPushImpl
 I/TPush: [XGPushManager] other push token is : dSJA5n4fSZ27YeDf2rFg1A:APA91bGiqSPCMZTuyup**********f1fBIahZKYkth2OoDpixDPQmEZkQ11fX06mw_1kEaW5-jFmT4YwlER4qfX66h_BIoUxOyj_tKqZSUg7oHigIKaOrDWmMQfMAqGoT8qSfg  other push type: fcm
 ```
+
+
+### 代码混淆
+
+```xml
+-keep class com.google.firebase.** {*;}
+```
+
+>? 混淆规则需要放在 App 项目级别的 proguard-rules.pro 文件中。
+
+
+## 常见问题排查
+
+#### 推送 FCM 推送收不到，是什么原因？
+
+1. 在境外具备谷歌 Service 框架的手机上，鉴于其较宽松的后台进程管理方式，在应用进程未被强制停止的情况下， FCM 消息抵达较为稳定。
+2. 在大陆发行的国内品牌手机，其后台进程管理普遍较为严格，谷歌 service 后台服务同样也会受到限制，这些手机上 FCM 消息抵达可能会受到影响，FCM 无法进行下发和接收，建议保持 App 在前台接收。
+
+#### 什么是强制停止应用进程？
+在手机设置-应用管理-具体应用-点击“结束运行”/“强制停止”等按钮停止了应用。大部分国内品牌手机，在多任务页面划掉应用进程，也可认为是强制停止了应用进程（境外手机不会）。

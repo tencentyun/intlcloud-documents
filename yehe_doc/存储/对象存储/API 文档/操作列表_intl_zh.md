@@ -99,8 +99,9 @@
 | API                                                          | 操作名       | 操作描述                     |
 | ------------------------------------------------------------ | ------------ | ---------------------------- |
 | [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | 设置清单任务 | 在存储桶中创建清单任务       |
+|  [POST Bucket inventory](https://intl.cloud.tencent.com/document/product/436/46869)       |    创建一次性清单任务             |  对一个存储桶创建一个一次性清单任务  |
 | [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | 查询清单任务 | 查询存储桶的指定清单配置信息 |
-|  [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30627)  |查询所有清单 | 查询存储桶的所有清单任务 |
+| [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30627) | 查询所有清单 | 查询存储桶的所有清单任务     |
 | [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | 删除清单任务 | 删除存储桶中指定的清单任务   |
 
 #### 版本控制（versioning）接口
@@ -125,12 +126,13 @@
 | [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054) | 设置日志管理 | 为源存储桶开启日志记录     |
 | [GET Bucket logging](https://intl.cloud.tencent.com/document/product/436/17053) | 查询日志管理 | 查询源存储桶的日志配置信息 |
 
-#### 全球加速（Accelerate）接口
+#### 全球加速（accelerate）接口
 
 | API                   | 操作名       | 操作描述                   |
 | ---------------------- | ------------ | -------------------------- |
 | [PUT Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33411)|  设置全球加速  |  启用或暂停存储桶的全球加速功能 |
 | [GET Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33412)|  查询全球加速   |  查询存储桶的全球加速功能配置信息  |
+
 
 
 #### 存储桶加密（encryption）接口
@@ -141,6 +143,16 @@
 | [GET Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33460) | 查询存储桶加密 | 查询指定存储桶下的默认加密配置 |
 | [DELETE Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33461) | 删除存储桶加密 | 删除指定存储桶下的默认加密配置 |
 
+
+
+#### 对象锁定（ObjectLock）接口
+
+
+| API                                                          | 操作名         | 操作描述                       |
+| ------------------------------------------------------------ | -------------- | ------------------------------ |
+| [PUT Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40133)|     设置对象锁定    |    为已存在的存储桶设置对象锁定   |
+| [GET Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40134)|     查询对象锁定    |    查询已生效的对象锁定配置    |
+|[GET Object retention](https://www.tencentcloud.com/document/product/436/40135) | 查询对象锁定的到期日期   |    查询对象锁定的到期日期     |
 
 
 ## Object 接口
@@ -169,8 +181,8 @@
 
 #### 对象标签接口
 
-| API      | 操作名   | 操作描述     |
-| ----------- | ------------ | --------- |
+| API                                                          | 操作名       | 操作描述                     |
+| ------------------------------------------------------------ | ------------ | ---------------------------- |
 | [PUT   Object tagging](https://intl.cloud.tencent.com/document/product/436/35709) | 设置对象标签 | 为已上传的对象设置标签       |
 | [GET   Object tagging](https://intl.cloud.tencent.com/document/product/436/35710) | 查询对象标签 | 查询指定对象下已有的对象标签 |
 | [DELETE   Object tagging](https://intl.cloud.tencent.com/document/product/436/35711) | 删除对象标签 | 删除指定对象下已有的对象标签 |
@@ -195,31 +207,43 @@
 | [CreateJob](https://intl.cloud.tencent.com/document/product/436/33781) | 创建任务       | 用于在存储桶中创建批量处理任务                   |
 | [DescribeJob](https://intl.cloud.tencent.com/document/product/436/33782) | 描述任务       | 用于获取已创建的批量处理任务的参数和任务执行状态 |
 | [ListJobs](https://intl.cloud.tencent.com/document/product/436/33783) | 查询任务       | 用于列出已创建的批量处理任务                     |
-| [UpdateJobPriority](https://intl.cloud.tencent.com/document/product/436/33784) | 更新任务优先级 | 用于更新已创建任务的优先级                 |
-| [UpdateJobStatus](https://intl.cloud.tencent.com/document/product/436/33785) | 更新任务状态   | 用于更新已创建任务的状态                    |
+| [UpdateJobPriority](https://intl.cloud.tencent.com/document/product/436/33784) | 更新任务优先级 | 用于更新已创建任务的优先级                       |
+| [UpdateJobStatus](https://intl.cloud.tencent.com/document/product/436/33785) | 更新任务状态   | 用于更新已创建任务的状态                         |
+|  [公共元素](https://intl.cloud.tencent.com/document/product/436/33786)|—|   批量处理功能的公共元素|
+|  [错误响应](https://intl.cloud.tencent.com/document/product/436/33787)|—|  批量处理功能的错误响应|
+
+
 
 
 ##  数据处理接口         
 
-#### 基础图片处理接口
+
+#### 数据处理接口
+
+数据处理接口包括图片处理、AI 内容识别、媒体处理、文档处理、文件处理等接口类别，详情请参见 [数据处理接口](https://www.tencentcloud.com/document/product/436/36364)。
 
 
-| API  | 操作描述 |
-| ---- | -------- |
-| [缩放](https://intl.cloud.tencent.com/document/product/436/36366) | 对图片进行缩小或放大                                         |
-| [裁剪](https://intl.cloud.tencent.com/document/product/436/36367) | 对图片进行裁剪，包括普通裁剪、缩放裁剪、内切圆裁剪、圆角裁剪和人脸智能裁剪 |
-| [旋转](https://intl.cloud.tencent.com/document/product/436/36368) | 对图片进行旋转，包括普通旋转和自适应旋转                     |
-| [格式转换](https://intl.cloud.tencent.com/document/product/436/36369) | 对图片进行格式转换、gif  格式优化、渐进显示                  |
-| [质量变换](https://intl.cloud.tencent.com/document/product/436/36370) | 对图片质量进行调节                                           |
-| [高斯模糊](https://intl.cloud.tencent.com/document/product/436/36371) | 对图片进行模糊处理                                           |
-| [锐化](https://intl.cloud.tencent.com/document/product/436/36372) | 对图片进行锐化                                               |
-| [图片水印](https://intl.cloud.tencent.com/document/product/436/36373) | 对图片进行水印处理                                           |
-| [文字水印](https://intl.cloud.tencent.com/document/product/436/36374) | 对图片进行实时文字水印处理                                   |
-| [获取图片基本信息](https://intl.cloud.tencent.com/document/product/436/36375) | 查询图片基本信息，包括格式、长、宽等                         |
-| [获取图片 EXIF](https://intl.cloud.tencent.com/document/product/436/36376) | 查询 EXIF 信息                                               |
-| [获取图片主色调](https://intl.cloud.tencent.com/document/product/436/36377) | 查询图片主色调信息                                           |
-| [去除元信息](https://intl.cloud.tencent.com/document/product/436/36378) | 去除图片元信息，包括 exif 信息                               |
-| [快速缩略模板](https://intl.cloud.tencent.com/document/product/436/36379) | 通过图片处理模板，生成相应的缩略图                           |
-| [管道操作符](https://intl.cloud.tencent.com/document/product/436/36380) | 实现对图片按顺序进行多种处理                                 |
+
+#### 内容审核接口
+
+内容审核接口包括图片审核、视频审核、音频审核、文本审核、文档审核、网页审核、直播审核等接口类别，详情请参见 [内容审核接口](https://www.tencentcloud.com/document/product/436/48186)。
+
+
+#### 任务与工作流接口
+
+任务与工作流接口包括工作流接口、工作流实例、任务接口、模板接口、批量任务接口等接口类别，详情请参见 [任务与工作流接口](https://www.tencentcloud.com/document/product/436/46211)。
+
+
+#### 云查毒接口
+
+| API                                                          |  操作描述                                         |
+| ---------------------------------------------- | -------------- |
+|  [提交病毒检测任务](https://intl.cloud.tencent.com/document/product/436/50132) |  对云上的文件进行文件病毒（例如木马病毒、蠕虫病毒等）检测|
+|  查询病毒检测任务结果 | 用于查询一个病毒检测任务的状态或结果 |
+
+
+
+
+
 
 

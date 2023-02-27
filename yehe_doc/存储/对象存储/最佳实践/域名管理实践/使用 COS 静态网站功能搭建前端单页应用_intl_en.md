@@ -6,7 +6,6 @@ At present, in the field of frontend development, common SPA development framewo
 
 This document uses two popular frameworks to illustrate how to use the **static website** feature provided by **Tencent Cloud's Cloud Object Storage (COS)** to quickly build an online available SPA, and provides solutions to some common problems.
 
-
 ## Preparations
 
 1. Install the [Node.js](https://nodejs.org/zh-cn/download/) environment.
@@ -24,7 +23,7 @@ This document uses two popular frameworks to illustrate how to use the **static 
 ```
 npm install -g @vue/cli
 ```
-2. Run the following command in the Vue CLI to quickly create a Vue project. For more information, please see the [official document](https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create).
+2. Run the following command in the Vue CLI to quickly create a Vue project. For more information, see the [official document](https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create).
 ```
 vue create vue-spa
 ```
@@ -84,7 +83,7 @@ The `build` directory is created in the root directory of the project, and the R
 ## Configuring the Bucket Static Website
 
 1. Go to the details page of the created bucket and choose **Basic Configurations** > **Static Website**.
-2. On the static website management page, configure information as shown in the figure below. For operation details, please see [Setting up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984).
+2. On the static website management page, configure information as shown in the figure below. For operation details, please see [Setting Up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984).
 
 
 
@@ -96,16 +95,16 @@ The `build` directory is created in the root directory of the project, and the R
 3. Access the bucket's static website domain (the access node shown in the figure below).
 
 Then you can view the homepage of the deployed SPA (the Vue application in this example).
-
+![](https://qcloudimg.tencent-cloud.cn/raw/e4be083f712287f399051d84ceea866c.png)
 4. Try to switch between routes (**Home**, **Foo**, and **Bar**) and refresh the page to check whether the application works properly (no 404 error is reported upon refreshing under new routes).
 
 ## FAQs
 
 ### What if I don't want to use the default domain name of the static website? Can I use my own domain name?
 
-In addition to the default static website domain name used above, COS also provides the default CDN acceleration domain name, custom CDN acceleration domain name, custom origin domain name, and more.
+In addition to the default static website endpoint mentioned above, COS also allows you to set the custom CDN acceleration domain name and custom endpoint. For configuration details, see [Domain Name Management Overview](https://intl.cloud.tencent.com/document/product/436/18424). After successful configuration, you can use your desired domain name to access the application.
 
-For configuration details, please see [Domain Name Management Overview](https://intl.cloud.tencent.com/document/product/436/18424). After successful configuration, you can use your desired domain name to access the application.
+Note that if you choose to configure a CDN acceleration domain name, refer to [Node Cache Validity Configuration](https://intl.cloud.tencent.com/document/product/228/38424) to get the updated data.
 
 
 ### After the application is deployed, rendering is successful after route switching, but the 404 error is reported whenever the page is refreshed. Why is that?

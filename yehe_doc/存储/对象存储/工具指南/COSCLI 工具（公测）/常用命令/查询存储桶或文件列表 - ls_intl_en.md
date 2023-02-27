@@ -3,7 +3,7 @@ The `ls` command is used to query the list of buckets, objects in a bucket, and 
 ## Command Syntax
 
 ```plaintext
-./coscli ls [cos://bucketAlias[/prefix/]] [flag]
+./coscli ls [cos://bucketAlias[/prefix/]]
 ```
 
 >? 
@@ -18,20 +18,8 @@ The `ls` command is used to query the list of buckets, objects in a bucket, and 
 | cos://bucketAlias | Specifies a bucket. | cos://bucket1          |
 | /prefix/          | Specifies a directory. | /picture/ |
 
-`ls` includes the following optional flags:
 
-| Flag Abbreviation | Flag Name   | Description                     |
-| --------- | ----------- | ------------------------------------ |
-|  None  | --include   | Includes specific objects.  |
-|  None  | --exclude   | Excludes specific objects.    |
-| -r        | --recursive | Specifies whether to traverse directories recursively and list all objects. |
 
->? 
-> - `--include` and `--exclude` support standard regular expressions. You can use regular expressions to filter objects that meet your requirements.
-> - When using `zsh`, you may need to add double quotes at both ends of the `pattern` string.
-```plaintext
-./coscli ls cos://bucket1 -r --include ".*.mp4"
-```
 
 ## Examples
 
@@ -56,28 +44,4 @@ The `ls` command is used to query the list of buckets, objects in a bucket, and 
 ./coscli ls cos://bucket1/picture/
 ```
 
-#### Listing all objects in the `picture` directory in the `bucket1` bucket recursively
 
-```plaintext
-./coscli ls cos://bucket1/picture/ -r
-```
-
-#### Listing all MP4 objects in the `bucket1` bucket recursively
-
-```plaintext
-./coscli ls cos://bucket1 -r --include .*.mp4
-```
-
-
-
-#### Listing all non-MP4 objects in the `bucket1` bucket recursively
-
-```plaintext
-./coscli ls cos://bucket1 -r --exclude .*.mp4
-```
-
-#### Listing all non-JPG objects prefixed with `test` in the `picture` directory in the `bucket1` bucket
-
-```plaintext
-./coscli ls cos://bucket1/picture -r --include ^picture/test.* --exclude .*.jpg
-```

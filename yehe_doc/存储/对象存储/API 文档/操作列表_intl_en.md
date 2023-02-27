@@ -23,8 +23,8 @@ COS APIs are described as follows:
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------ |
-| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting bucket ACL | Sets an ACL for a specified bucket |
-| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying bucket ACL | Queries the ACL of a bucket |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets an ACL for a bucket |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying a bucket ACL | Queries the ACL of a bucket |
 
 
 
@@ -99,6 +99,7 @@ COS APIs are described as follows:
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ---------------------------- |
 | [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Creating an inventory job | Creates an inventory job in a bucket |
+|  [POST Bucket inventory](https://intl.cloud.tencent.com/document/product/436/46869)       |    Creating a one-time inventory job             |  Creates a one-time inventory job for a bucket  |
 | [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries an inventory configuration of a bucket |
 |  [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30627) | Querying the list of inventory configurations | Queries the list of inventory configurations for a bucket |
 | [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job from a bucket |
@@ -125,12 +126,13 @@ COS APIs are described as follows:
 | [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054) | Setting logging | Enables logging for a source bucket |
 | [GET Bucket logging](https://intl.cloud.tencent.com/document/product/436/17053) | Querying logging configuration | Queries the logging configuration of a source bucket |
 
-#### Global acceleration APIs
+#### Global acceleration (accelerate) APIs
 
 | API | Operation | Description |
 | ---------------------- | ------------ | -------------------------- |
 | [PUT Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33411)| Setting global acceleration | Enables/Suspends global acceleration for a bucket |
 | [GET Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33412)| Querying global acceleration | Queries the global acceleration configuration of a bucket |
+
 
 
 #### Bucket encryption APIs
@@ -143,20 +145,30 @@ COS APIs are described as follows:
 
 
 
+#### Object lock (ObjectLock) APIs
+
+
+| API | Operation | Description |
+| ------------------------------------------------------------ | -------------- | ------------------------------ |
+| [PUT Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40133)|     Configuring object lock    |     Configures object lock for existing buckets   |
+| [GET Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40134)|     Querying object lock    |    Queries the object lock configuration that has taken effect    |
+|[GET Object retention](https://www.tencentcloud.com/document/product/436/40135) | Querying the expiration date of object lock   |    Queries the expiration date of object lock     |
+
+
 ## Object APIs
 
 #### Basic operation APIs
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ---------------------------------------- |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies an object to a destination path |
-| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using an HTML form | Uploads an object using an HTML form |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object in whole | Uploads an object to a bucket. |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies a file to the destination path. |
+| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using an HTML form | Uploads an object using an HTML form. |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
-| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes an object from a bucket |
-| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket in a single request |
-| [OPTIONS Object](https://intl.cloud.tencent.com/document/product/436/8288) | Configuring a pre-flight request for CORS | Sends a pre-flight request to confirm whether a real CORS request can be sent |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object. |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting an object | Deletes an object from a bucket. |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket. |
+| [OPTIONS Object](https://intl.cloud.tencent.com/document/product/436/8288) | Checking cross-origin resource sharing (CORS) configuration | Sends a preflight request to determine whether an actual CORS request can be sent. |
 | [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access |
 | [SELECT Object Content](https://intl.cloud.tencent.com/document/product/436/32360) | Extracting object content | Extracts the content of an object |
 
@@ -170,7 +182,7 @@ COS APIs are described as follows:
 #### Object tagging APIs
 
 | API | Operation | Description |
-| ----------- | ------------ | --------- |
+| ------------------------------------------------------------ | ------------ | ---------------------------- |
 | [PUT   Object tagging](https://intl.cloud.tencent.com/document/product/436/35709) | Setting object tags | Sets tags for an uploaded object |
 | [GET   Object tagging](https://intl.cloud.tencent.com/document/product/436/35710) | Querying object tags | Queries all tags of an object |
 | [DELETE   Object tagging](https://intl.cloud.tencent.com/document/product/436/35711) | Deleting object tags | Deletes all tags of an object |
@@ -179,13 +191,13 @@ COS APIs are described as follows:
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading a part | Uploads a part in a multipart upload |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Uploads a part by copying data from an existing object as the data source |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an entire file |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload operation | Aborts a multipart upload and deletes the uploaded parts |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart upload operations |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a specific multipart upload operation |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload. |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads a file in parts. |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part. |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of a file. |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts. |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload. |
 
 
 ## Batch Operation APIs
@@ -197,29 +209,41 @@ COS APIs are described as follows:
 | [ListJobs](https://intl.cloud.tencent.com/document/product/436/33783) | Querying jobs | Lists created batch operation jobs |
 | [UpdateJobPriority](https://intl.cloud.tencent.com/document/product/436/33784) | Updating job priority | Updates the priority of a created job |
 | [UpdateJobStatus](https://intl.cloud.tencent.com/document/product/436/33785) | Updating job status | Updates the status of a created job |
+|   [CommonElements](https://intl.cloud.tencent.com/document/product/436/33786)|—|   Common elements of the batch operation feature|
+|  [ErrorResponse](https://intl.cloud.tencent.com/document/product/436/33787)|—|  Error responses of the batch operation feature|
+
+
 
 
 ## Data Processing APIs         
 
-#### Basic image processing APIs
+
+#### Data processing APIs
+
+Data processing APIs include image processing, AI-based content recognition, media processing, and file processing APIs. For details, see [Data Processing APIs](https://www.tencentcloud.com/document/product/436/36364).
 
 
-| API | Description |
-| ---- | -------- |
-| [Scaling](https://intl.cloud.tencent.com/document/product/436/36366) | Scales up/down an image |
-| [Cropping](https://intl.cloud.tencent.com/document/product/436/36367) | Crops an image, including regular cropping, scaling and cropping, inscribed circle cropping, rounded corner cropping, and smart cropping |
-| [Rotation](https://intl.cloud.tencent.com/document/product/436/36368) | Rotates an image, including common rotation and adaptive rotation |
-| [Format conversion](https://intl.cloud.tencent.com/document/product/436/36369) | Converts the format of an image, optimizes GIF format, and performs progressive display |
-| [Quality conversion](https://intl.cloud.tencent.com/document/product/436/36370) | Adjusts the quality of an image |
-| [Gaussian blurring](https://intl.cloud.tencent.com/document/product/436/36371) | Blurs an image by a Gaussian function |
-| [Sharpening](https://intl.cloud.tencent.com/document/product/436/36372) | Sharpens an image |
-| [Image watermarks](https://intl.cloud.tencent.com/document/product/436/36373) | Adds a watermark to an image |
-| [Text watermarks](https://intl.cloud.tencent.com/document/product/436/36374) | Adds a real-time text watermark to an image |
-| [Obtaining basic image information](https://intl.cloud.tencent.com/document/product/436/36375) | Obtains the basic information (such as format, length, and height) about an image |
-| [Obtaining image EXIF data](https://intl.cloud.tencent.com/document/product/436/36376) | Obtains the EXIF data of an image |
-| [Obtaining the image average hue](https://intl.cloud.tencent.com/document/product/436/36377) | Obtains the average hue of an image |
-| [Removing metadata](https://intl.cloud.tencent.com/document/product/436/36378) | Removes the image metadata, including the EXIF data |
-| [Quick thumbnail template](https://intl.cloud.tencent.com/document/product/436/36379) | Provides an image processing template to generate thumbnails |
-| [Pipeline operator](https://intl.cloud.tencent.com/document/product/436/36380) | Performs multiple operations on images in sequence |
+
+#### Content moderation APIs
+
+Content moderation APIs includes image moderation, video moderation, audio moderation, text moderation, file moderation, webpage moderation, and live stream moderation APIs. For details, see [Content Moderation APIs](https://www.tencentcloud.com/document/product/436/48186).
+
+
+#### Job and workflow APIs
+
+Job and workflow APIs include workflow APIs, workflow instances, job APIs, template APIs, and batch job APIs. For details, see [Job and Workflow APIs](https://www.tencentcloud.com/document/product/436/46211).
+
+
+#### Cloud virus detection APIs
+
+| API | Description  |
+| ---------------------------------------------- | -------------- |
+|  [Submitting virus detection job](https://intl.cloud.tencent.com/document/product/436/50132) |  Detects viruses such as trojans and worms in COS files|
+|  Querying virus detection job result | Queries the status or result of a virus detection job |
+
+
+
+
+
 
 

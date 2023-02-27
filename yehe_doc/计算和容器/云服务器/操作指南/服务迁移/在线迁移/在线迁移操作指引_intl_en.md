@@ -258,7 +258,9 @@ You can skip this step if your task is scheduled, which will automatically start
 </dx-alert>
 After creating a migration task, you can click the <b>Migration Task</b> tab to view the task as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
+
 You can click <b>Start/Retry</b> on the right of the task to start it, click <b>OK</b> in the pop-up window, and the task status will become **Migrating** as shown below:
+
 <img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
 <dx-alert infotype="notice" title="">
 - If the migration destination is a CVM, the destination CVM enters migration mode after the migration starts. Do not reinstall the system, shut down, terminate, or reset passwords of the destination CVM until the migration ends and the destination CVM exits the migration mode.

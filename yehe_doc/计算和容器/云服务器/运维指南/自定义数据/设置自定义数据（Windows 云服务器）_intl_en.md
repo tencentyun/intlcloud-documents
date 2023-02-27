@@ -60,13 +60,13 @@ We provide multiple methods to launch an instance, and here we introduce two of 
 
 <dx-tabs>
 ::: Console[](id:Consoletrans)
-1. Refer to [Creating an Instance](https://intl.cloud.tencent.com/document/product/213/4855) to purchase an instance, and click **Advanced settings** under **Other settings** in **2. Configure network and host**.
+1. Purchase an instance (see [Creating an Instance](https://intl.cloud.tencent.com/document/product/213/4855)), and click **Advanced settings** under **Other settings** in **2. Configure network and host**.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/TKin326_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221208114658.png)
 2. In **Advanced settings**, enter the text content you have prepared in the **Custom data** text box.
- - PowerShell script: Directly enter [PowerShell script](#PowerShellScript).
- - Base64 encoded script: First select “The above input is encoded with base64”, and enter [Base64 encoded text](#Base64Script).
+ - PowerShell script: Type in [PowerShell script](#PowerShellScript).
+ - Base64 encoded script: Select “The above input is encoded with base64”, and then type in [Base64 encoded text](#Base64Script).
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/QkmS577_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221208114852.png)
-3. Follow the prompts on the interface to complete CVM creation.
+3. Follow the instruction to complete CVM creation.
 :::
 ::: API[](id:APItrans)
 When creating a CVM by using API, you can pass the text by assigning the value of the encoded result returned in [Base64 encoded script](#Base64Script) to the UserData parameter of the RunInstances API.

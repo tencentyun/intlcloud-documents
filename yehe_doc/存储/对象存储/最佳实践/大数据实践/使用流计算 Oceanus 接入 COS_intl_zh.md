@@ -1,6 +1,6 @@
 ## Oceanus 简介  
 
-[流计算 Oceanus](https://intl.cloud.tencent.com/document/product/1000/30081) 是大数据生态体系的实时化分析利器。只需几分钟，您就可以轻松构建网站点击流分析、电商精准推荐、物联网 IoT 等应用。流计算基于 Apache Flink 构建，提供全托管的云上服务，您无须关注基础设施的运维，并能便捷对接云上数据源，获得完善的配套支持。
+流计算 Oceanus是大数据生态体系的实时化分析利器。只需几分钟，您就可以轻松构建网站点击流分析、电商精准推荐、物联网 IoT 等应用。流计算基于 Apache Flink 构建，提供全托管的云上服务，您无须关注基础设施的运维，并能便捷对接云上数据源，获得完善的配套支持。
 
 流计算 Oceanus 提供了便捷的控制台环境，方便用户编写 SQL 分析语句或者上传运行自定义 JAR 包，支持作业运维管理。基于 Flink 技术，流计算可以在 PB 级数据集上支持亚秒级的处理延时。
 
@@ -59,7 +59,7 @@ CREATE TABLE `cos_sink` (
     'connector' = 'filesystem',
     'path'='cosn://<存储桶名称>/<文件夹名称>/',                 --- 数据写入的目录路径
     'format' = 'json',                                       --- 数据写入的格式
-    'sink.rolling-policy.file-size' = '128MB',               --- 文件最大大小
+    'sink.rolling-policy.file-size' = '128MB',               --- 文件最大的大小
     'sink.rolling-policy.rollover-interval' = '30 min',      --- 文件最大写入时间
     'sink.partition-commit.delay' = '1 s',                   --- 分区提交延迟
     'sink.partition-commit.policy.kind' = 'success-file'     --- 分区提交方式

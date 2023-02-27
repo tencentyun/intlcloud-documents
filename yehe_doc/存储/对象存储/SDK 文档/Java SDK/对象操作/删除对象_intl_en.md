@@ -1,6 +1,6 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to object deletion.
+This document provides an overview of APIs and SDK code samples for deleting an object.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
@@ -9,33 +9,33 @@ This document provides an overview of APIs and SDK code samples related to objec
 
 ## Simple Operations
 
-Requests for simple operations need to be initiated through COSClient instances. You need to create a COSClient instance before performing simple operations.
+Requests for simple operations need to be initiated through `COSClient` instances. You need to create a `COSClient` instance before performing simple operations.
 
-COSClient instances are concurrency safe. You are advised to create only one COSClient instance for a process and then close it when it is no longer used to initiate requests.
+`COSClient` instances are concurrency-safe. You are advised to create only one COSClient instance for a process and then close it when it is no longer used to initiate requests.
 
 ### Creating a COSClient instance
 
-Before calling the COS API, you need to create a COSClient instance.
+Before calling the COS API, first create a COSClient instance.
 
 ```java
 // Create a COSClient instance, which is used to initiate requests later.
 COSClient createCOSClient() {
     // Set the user identity information.
     // Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to view and manage the `SecretId` and `SecretKey` of your project.
-    String secretId = "SECRETID";
-    String secretKey = "SECRETKEY";
+    SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+    SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
     COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 
     // `ClientConfig` contains the COS client configuration for subsequent COS requests.
     ClientConfig clientConfig = new ClientConfig();
 
     // Set the bucket region.
-    // For more information on COS regions, please visit https://intl.cloud.tencent.com/document/product/436/6224.
+    // For more information on COS regions, visit https://cloud.tencent.com/document/product/436/6224.
     clientConfig.setRegion(new Region("COS_REGION"));
 
-    // Set the request protocol, `http` or `https`.
-    // For 5.6.53 and earlier versions, HTTPS is recommended.
-    // Starting from 5.6.54, HTTPS is used by default.
+    // Set the request protocol to `HTTP` or `HTTPS`.
+    // For v5.6.53 or earlier, HTTPS is recommended.
+    // For v5.6.54 or later, HTTPS is used by default.
     clientConfig.setHttpProtocol(HttpProtocol.https);
 
     // The following settings are optional.
@@ -54,17 +54,17 @@ COSClient createCOSClient() {
 }
 ```
 
-### Creating a COSClient client with a temporary key
+### Creating a COSClient instance with a temporary key
 
 If you want to request COS with a temporary key, you need to create a COSClient instance with the temporary key.
-This SDK does not generate temporary keys. For how to generate a temporary key, please see [Generating a Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048#cos-sts-sdk).
+This SDK does not generate temporary keys. For details on how to generate a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
 ```java
 
 // Create a COSClient instance, which is used to initiate requests later.
 COSClient createCOSClient() {
     // Here, the temporary key information is needed.
-    // For how to generate temporary keys, please visit https://intl.cloud.tencent.com/document/product/436/14048.
+    // For details on how to generate temporary keys, visit https://intl.cloud.tencent.com/document/product/436/14048.
     String tmpSecretId = "TMPSECRETID";
     String tmpSecretKey = "TMPSECRETKEY";
     String sessionToken = "SESSIONTOKEN";
@@ -75,12 +75,12 @@ COSClient createCOSClient() {
     ClientConfig clientConfig = new ClientConfig();
 
     // Set the bucket region.
-    // For more information on COS regions, please visit https://intl.cloud.tencent.com/document/product/436/6224.
+    // For more information on COS regions, visit https://cloud.tencent.com/document/product/436/6224.
     clientConfig.setRegion(new Region("COS_REGION"));
 
-    // Set the request protocol, `http` or `https`.
-    // For 5.6.53 and earlier versions, HTTPS is recommended.
-    // Starting from 5.6.54, HTTPS is used by default.
+    // Set the request protocol to `HTTP` or `HTTPS`.
+    // For v5.6.53 or earlier, HTTPS is recommended.
+    // For v5.6.54 or later, HTTPS is used by default.
     clientConfig.setHttpProtocol(HttpProtocol.https);
 
     // The following settings are optional.
@@ -99,7 +99,7 @@ COSClient createCOSClient() {
 }
 ```
 
-### Delete an object
+### Deleting an object
 
 This API (`DELETE Object`) is used to delete a specified object.
 
@@ -118,11 +118,11 @@ COSClient cosClient = createCOSClient();
 
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Object key, the unique ID of an object in a bucket. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
+// Object key, the unique ID of an object in a bucket. For more information, see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
 String key = "exampleobject";
 
 try {
-    cosclient.deleteObject(bucketName, key);
+    cosClient.deleteObject(bucketName, key);
 } catch (CosServiceException e) {
     e.printStackTrace();
 } catch (CosClientException e) {
@@ -133,17 +133,17 @@ try {
 cosClient.shutdown();
 ```
 
-#### Parameter description
+#### Field description
 
-| Parameter  | Description | Type |
+| Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName |  Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName |  Bucket name in the format of `BucketName-APPID`. For details, see the bucket naming conventions section in [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 | key | Object key, the unique identifier of an object in a bucket. For example, in the object endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For details, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 
 #### Response description
 
 - Success: No value is returned.
-- Failure: if an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: If an error (such as authentication failure) occurs, the `CosClientException` or `CosServiceException` exception will be reported. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Delete objects in batch
 
@@ -169,13 +169,15 @@ DeleteObjectsRequest deleteObjectsRequest = new DeleteObjectsRequest(bucketName)
 // Set the list of keys to be deleted. A maximum of 1,000 keys can be deleted at a time.
 ArrayList<KeyVersion> keyList = new ArrayList<>();
 // Pass the names of files to be deleted.
+// Note that filenames are not allowed to start with a forward slash (/) or backslash (\). For example:
+// The bucket directory contains the `a/b/c.txt` file. If you want to delete the `a/b/c.txt` file, run `keyList.add(new KeyVersion("a/b/c.txt"))`. If you run `keyList.add(new KeyVersion("/a/b/c.txt"))`, the deletion fails.
 keyList.add(new KeyVersion("aaa"));
 keyList.add(new KeyVersion("bbb"));
 keyList.add(new KeyVersion("ccc"));
 deleteObjectsRequest.setKeys(keyList);
 
 try {
-    DeleteObjectsResult deleteObjectsResult = cosclient.deleteObjects(deleteObjectsRequest);
+    DeleteObjectsResult deleteObjectsResult = cosClient.deleteObjects(deleteObjectsRequest);
     List<DeletedObject> deleteObjectResultArray = deleteObjectsResult.getDeletedObjects();
 } catch (MultiObjectDeleteException mde) {
     // If the deletion fails partially, `MultiObjectDeleteException` is returned.
@@ -191,13 +193,13 @@ try {
 cosClient.shutdown();
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Type |
 | -------------------- | ---- | -------------------- |
 | deleteObjectsRequest | Request | DeleteObjectsRequest |
 
-The request members are described as follows:
+Description of the `Request` member:
 
 | Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------------------ |
@@ -209,13 +211,13 @@ The request members are described as follows:
 
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| key | Unique identifier of the object in the bucket. For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| key | Unique identifier of the object in the bucket. For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 | version | (Optional) Specifies the version ID of an object to delete from a versioning-enabled bucket | String |
 
 #### Response description
 
 - Success: No value is returned.
-- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Deleting objects of a specified version in batches
 
@@ -252,7 +254,7 @@ keyList.add(new KeyVersion("ccc", "ccc versionId"));
 deleteObjectsRequest.setKeys(keyList);
 
 try {
-    DeleteObjectsResult deleteObjectsResult = cosclient.deleteObjects(deleteObjectsRequest);
+    DeleteObjectsResult deleteObjectsResult = cosClient.deleteObjects(deleteObjectsRequest);
     List<DeletedObject> deleteObjectResultArray = deleteObjectsResult.getDeletedObjects();
 } catch (MultiObjectDeleteException mde) {
     // If the deletion fails partially, `MultiObjectDeleteException` is returned.
@@ -268,13 +270,13 @@ try {
 cosClient.shutdown();
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Type |
 | -------------------- | ---- | -------------------- |
 | deleteObjectsRequest | Request | DeleteObjectsRequest |
 
-The request members are described as follows:
+Description of the `Request` member:
 
 | Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------------------ |
@@ -286,13 +288,13 @@ The request members are described as follows:
 
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
-| key | Unique identifier of the object in the bucket. For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
+| key | Unique identifier of the object in the bucket. For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 | version | (Optional) Specifies the version ID of an object to delete from a versioning-enabled bucket | String |
 
 #### Response description
 
 - Success: No value is returned.
-- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Deleting a directory
 
@@ -326,7 +328,7 @@ ObjectListing objectListing = null;
 
 do {
     try {
-        objectListing = cosclient.listObjects(listObjectsRequest);
+        objectListing = cosClient.listObjects(listObjectsRequest);
     } catch (CosServiceException e) {
         e.printStackTrace();
         return;
@@ -349,7 +351,7 @@ do {
     deleteObjectsRequest.setKeys(delObjects);
 
     try {
-        DeleteObjectsResult deleteObjectsResult = cosclient.deleteObjects(deleteObjectsRequest);
+        DeleteObjectsResult deleteObjectsResult = cosClient.deleteObjects(deleteObjectsRequest);
         List<DeletedObject> deleteObjectResultArray = deleteObjectsResult.getDeletedObjects();
     } catch (MultiObjectDeleteException mde) {
         // If the deletion fails partially, `MultiObjectDeleteException` is returned.

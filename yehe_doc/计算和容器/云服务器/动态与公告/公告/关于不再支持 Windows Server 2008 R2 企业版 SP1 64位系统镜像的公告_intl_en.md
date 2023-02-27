@@ -3,7 +3,7 @@ Microsoft has officially ended the support for Windows Server 2008 since January
 
 To ensure the security and stability of your business, we recommend that you migrate your Windows Server 2008 R2 Enterprise Edition CVM instances to the latest version of Windows Server.
 
-If you have fully evaluated and accepted the risks, you can still import [custom images](https://intl.cloud.tencent.com/document/product/213/4942) to use Windows Server 2008 R2 Enterprise Edition to create or reinstall an instance.
+If you do want to create or reinstall an instance by using Windows Server 2008 R2 Enterprise Edition, try [importing a custom image](https://intl.cloud.tencent.com/document/product/213/4942).
 
 ## Risks
 Because Microsoft no longer provides security updates and patches, the operating system issues cannot be resolved. If you insist on using the Windows Server 2008 R2 Enterprise Edition SP1 64-bit operating system, take note of the following risks:

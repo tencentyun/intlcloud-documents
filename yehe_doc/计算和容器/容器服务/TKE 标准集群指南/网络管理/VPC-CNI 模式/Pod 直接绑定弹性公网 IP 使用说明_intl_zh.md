@@ -9,7 +9,7 @@
 ## IPAMD 组件角色添加 EIP 接口访问权限
 
 1. 登录 [访问管理控制台](https://console.cloud.tencent.com/cam/policy)，选择左侧的**角色**。
-2. 在**访问管理控制台** > [**角色**](https://console.cloud.tencent.com/cam/role)中搜索 IPAMD 组件的相关角色 `IPAMDofTKE_QCSRole`，单击角色名称进入角色详情页面。
+2. 在**访问管理控制台** > **[角色](https://console.cloud.tencent.com/cam/role)** 中搜索 IPAMD 组件的相关角色 `IPAMDofTKE_QCSRole`，单击角色名称进入角色详情页面。
 3. 在权限设置中，单击**关联策略**。
 4. 在弹出的关联策略窗口中，在搜索框中搜索 `QcloudAccessForIPAMDRoleInQcloudAllocateEIP`, 然后勾选已创建的预设策略 `QcloudAccessForIPAMDRoleInQcloudAllocateEIP`。单击**确定**，完成为 IPAMD 组件角色添加 EIP 接口访问权限操作。该策略包含了 IPAMD 组件操作弹性公网 IP 所需的所有权限。
 
@@ -35,7 +35,6 @@ spec:
     metadata:
       annotations:
         tke.cloud.tencent.com/networks: "tke-route-eni"
-        tke.cloud.tencent.com/vpc-ip-claim-delete-policy: Never
         tke.cloud.tencent.com/eip-attributes: '{"Bandwidth":"100","ISP":"BGP"}'
         tke.cloud.tencent.com/eip-claim-delete-policy: "Never"
       creationTimestamp: null
@@ -91,7 +90,6 @@ spec:
     metadata:
       annotations:
         tke.cloud.tencent.com/networks: "tke-route-eni"
-        tke.cloud.tencent.com/vpc-ip-claim-delete-policy: Never
         tke.cloud.tencent.com/eip-id-list: "eip-xxx1,eip-xxx2"
       creationTimestamp: null
       labels:
@@ -140,7 +138,7 @@ metadata:
 该字段的作用是网段内的 Pod 主动外访流量不再做节点地址的 SNAT，如果填写较大的网段，则网段内的 Pod 也会不再做 SNAT，请慎重填写。
 
 ### 调整 NAT 网关和 EIP 的优先级
-如果集群所在 VPC 内配置了 NAT 网关，请参考文档 [调整 NAT 网关和 EIP 的优先级](https://intl.cloud.tencent.com/document/product/1015/32734) 确保配置正确（查询路由表时要查询 Pod 所在子网关联的路由表），否则 Pod 的主动外访流量可能优先走 NAT 网关，而非 EIP。
+如果集群所在 VPC 内配置了 NAT 网关，请参考文档**调整 NAT 网关和 EIP 的优先级**确保配置正确（查询路由表时要查询 Pod 所在子网关联的路由表），否则 Pod 的主动外访流量可能优先走 NAT 网关，而非 EIP。
 
 ## EIP 的保留和回收
 
@@ -150,12 +148,21 @@ Pod 启用自动关联 EIP 特性后，网络组件会为该 Pod 在同 namespac
 
 下面介绍三种回收 EIP 的方法：过期回收、手动回收及级联回收。
 
-### 过期回收（默认支持）
+### 过期回收
 在 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637) 页面，容器网络插件选择 **VPC-CNI** 模式并且勾选**开启支持**固定 Pod IP 支持，如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/bdef5073803ca51eb6d7be57b2d4a0d1.png)
 在高级设置中设置 IP 回收策略，可以设置 Pod 销毁后多少秒回收保留的固定 IP。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/5772282abc084605c87f765a69ae3366.png)
 对于**存量集群**，也可支持变更：
+
+#### tke-eni-ipamd 组件版本 >= v3.5.0
+1. 登录 [容器服务控制台](https://console.qcloud.com/tke2)，单击左侧导航栏中**集群**。
+2. 在“集群管理”页面，选择需设置过期时间的集群 ID，进入集群详情页。
+3. 在集群详情页面，选择左侧**组件管理**。
+4. 在组件管理页面中，找到**eniipamd**组件，选择**更新配置**。
+5. 在更新配置页面，填写固定IP回收策略里的过期时间，并点击完成。
+
+#### tke-eni-ipamd 组件版本 < v3.5.0 或组件管理中无 eniipamd 组件
 - 修改现存的 tke-eni-ipamd deployment：`kubectl edit deploy tke-eni-ipamd -n kube-system`。
 - 执行以下命令，在 `spec.template.spec.containers[0].args` 中加入/修改启动参数。
 ```yaml
@@ -174,7 +181,17 @@ kubectl delete eipc <podname> -n <namespace>
 目前的固定 EIP 与 Pod 强绑定，而与具体的 Workload 无关（例如 deployment、statefulset 等）。Pod 销毁后，固定 EIP 不确定何时回收。TKE 现已实现删除 Pod 所属的 Workload 后即刻删除固定 EIP。**要求 IPAMD 组件版本在 v3.3.9+（可通过镜像 tag 查看）**。
 
 以下步骤介绍如何开启级联回收：
-1. 修改现存的 **tke-eni-ipamd deployment**：`kubectl edit deploy tke-eni-ipamd -n kube-system`。
+#### tke-eni-ipamd 组件版本 >= v3.5.0
+
+1. 登录 [容器服务控制台](https://console.qcloud.com/tke2)，单击左侧导航栏中**集群**。
+2. 在“集群管理”页面，选择需开启级联回收的集群 ID，进入集群详情页。
+3. 在集群详情页面，选择左侧**组件管理**。
+4. 在组件管理页面中，找到**eniipamd**组件，选择**更新配置**。
+5. 在更新配置页面，勾选**级联回收**，并点击完成。
+
+#### tke-eni-ipamd 组件版本 < v3.5.0 或组件管理中无 eniipamd 组件
+
+1. 修改现存的 **tke-eni-ipamd deployment：`kubectl edit deploy tke-eni-ipamd -n kube-system`** 。
 2. 执行以下命令，在 `spec.template.spec.containers[0].args` 中加入启动参数：
 ```yaml
 - --enable-ownerref

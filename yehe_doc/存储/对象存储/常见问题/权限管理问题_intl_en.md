@@ -10,7 +10,7 @@ Currently, a temporary key can be valid for up to 2 hours (i.e., 7,200 seconds) 
 
 ### What do I do if my key information such as `SecretId` and `SecretKey` is compromised?
 
-You can delete the compromised key and create a new one. For more information, please see [Access Key](https://intl.cloud.tencent.com/document/product/598/34227).
+You can delete the compromised key and create a new one. For more information, see [Access Key](https://www.tencentcloud.com/document/product/598/34227).
 
 ### How can I generate a time-bound access URL for a Private Read/Write file?
 
@@ -24,7 +24,7 @@ You can grant such permission by referring to [Setting Folder Permissions](https
 
 ### What do I do if COS returns a 403 error?
 
-You can use the [COS debugger](https://web.debugger.coshelper.com/) that the COS team developed for developers to configure Hosts to capture COS API requests and intelligently analyze the error in the requests. You can also troubleshoot the error according to the following process:
+You can use the [diagnostic tool](https://console.cloud.tencent.com/cos/diagnose/) provided by the COS team, which uses `RequestId` to troubleshoot errors.
 
 1. Check whether the configuration of `BucketName`, `APPID`, `Region`, `SecretId`, and `SecretKey` is correct.
 2. If the above information is correct, check whether a sub-account is used. If so, check whether the sub-account has been authorized by the root account. If it has not been authorized, log in to the root account to authorize the sub-account.
@@ -39,7 +39,7 @@ In most cases, this error is reported due to unauthorized access or insufficient
 2. If the configuration above is correct, check whether a sub-account is used for the operation. If yes, check whether the sub-account has been authorized by the root account. If it has not yet been authorized, log in using the root account to authorize the sub-account. For more information about authorization, please see [Cases of Permission Settings](https://intl.cloud.tencent.com/document/product/436/12514).
 3. If a temporary key is used, check whether the current operation is in the policy set when the temporary key is obtained; if not, modify the relevant policy settings. For more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
-You can also use the [COS debugger](https://web.debugger.coshelper.com/) that the COS team developed for developers to configure Hosts to capture COS API requests and intelligently analyze the error in the requests. The tool will provide the error details and handling suggestions.
+The COS team provides the [diagnostic tool](https://console.cloud.tencent.com/cos/diagnose/), which uses `RequestId` to troubleshoot errors.
 
 ### What do I do if the number of bucket permissions has reached the upper limit?
 
@@ -70,7 +70,7 @@ You can troubleshoot as follows:
 2. If the configuration above is correct, check whether a sub-account is used for the operation. If yes, check whether the sub-account has been authorized by the root account. If it has not yet been authorized, log in using the root account to authorize the sub-account. For more information about authorization, please see [Cases of Permission Settings](https://intl.cloud.tencent.com/document/product/436/12514).
 3. If a temporary key is used, check whether the current operation is in the policy set when the temporary key is obtained; if not, modify the relevant policy settings. For more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
-You can also use the [COS debugger](https://web.debugger.coshelper.com/) that the COS team developed for developers to configure Hosts to capture COS API requests and intelligently analyze the error in the requests. The tool will provide the error details and handling suggestions.
+The COS team provides the [diagnostic tool](https://console.cloud.tencent.com/cos/diagnose/), which uses `RequestId` to troubleshoot errors.
 
 ### How can I prevent users from downloading COS data?
 
@@ -111,13 +111,13 @@ Click **Permission Policy Settings**. Then, click **JSON** > **Edit** and enter 
 {
  "Statement": [
    {
-     "Action": [
+     "Action":[
        "name/cos:GetBucket",
        "name/cos:GetBucketObjectVersions"
      ],
      "Effect": "Deny",
-     "Principal": {
-       "qcs": [
+     "Principal":{
+       "qcs":[
          "qcs::cam::anyone:anyone"
        ]
      },
@@ -159,15 +159,20 @@ You can create sub-accounts and grant them permissions by referring to [Granting
 
 To grant a sub-account access to a specific bucket, you can add access paths for the sub-account. For more information, see [Accessing Bucket List Using a Sub-account](https://intl.cloud.tencent.com/document/product/436/17061).
 
+
+## Ranger Authentication and Verification
+
+For more information, see [FAQs](https://intl.cloud.tencent.com/document/product/1106/41958).
+
 ## Other
 
 ### What do I do if I cannot access COS resources normally?
 
-You can troubleshoot by referring to [Resource Access Error](https://intl.cloud.tencent.com/document/product/436/40167).
+You can troubleshoot by referring to [Resource Access Error](https://www.tencentcloud.com/document/product/436/40167).
 
 ### What do I do if “HTTP ERROR 403” is returned when I access COS using a CDN domain?
 
-This is usually because the CDN acceleration domain is disabled. You can troubleshoot by referring to [“HTTP ERROR 403” is Returned When I Access COS Using a CDN Domain](https://intl.cloud.tencent.com/document/product/436/40175).
+This is usually because the CDN acceleration domain is disabled. You can troubleshoot by referring to [“HTTP ERROR 403” Is Returned When I Access COS Using a CDN Domain](https://intl.cloud.tencent.com/document/product/436/40175).
 
 ### What do I do if I use a CDN domain name to access COS but only access the old version of the file?
 

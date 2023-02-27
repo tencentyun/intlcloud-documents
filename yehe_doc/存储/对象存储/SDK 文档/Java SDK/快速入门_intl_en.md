@@ -1,26 +1,27 @@
 ## Download and Installation
 
-#### Related resources
-- Download the COS XML Java SDK source code [here](https://github.com/tencentyun/cos-java-sdk-v5).
+#### Relevant resources
+- Download the Cloud Object Storage (COS) XML Java SDK source code [here](https://github.com/tencentyun/cos-java-sdk-v5).
 - Download the XML Java SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-java-sdk-v5/latest/cos-java-sdk-v5.zip).
 - Download the demo [here](https://github.com/tencentyun/cos-java-sdk-v5/tree/master/src/main/java/com/qcloud/cos/demo).
-- For all the code samples, see [here](https://github.com/tencentyun/cos-snippets/tree/master/Java).
+- For the complete sample code, see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/Java).
 - For the SDK changelog, see [Changelog](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/CHANGELOG.md).
-- For SDK FAQs, see [Java SDK](https://intl.cloud.tencent.com/document/product/436/38956).
+- For SDK FAQs, see [Java SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38956).
 
 
 >?
 > - If you are using COS for the first time, or your data volume is small, in order to avoid the problems of unnecessary and cumbersome code troubleshooting and program positioning, we recommend you use the more user-friendly GUI-based [console](https://intl.cloud.tencent.com/document/product/436/11365), [COSBrowser](https://intl.cloud.tencent.com/document/product/436/11366), or [COSCLI](https://intl.cloud.tencent.com/document/product/436/43249).
-> - If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, update the SDK to the latest version and try again.
+> - If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
 >
 
 
 #### Environmental dependencies
-- The SDK supports JDK v1.8 and later. You can view the version of Java by using the "java -version" command.
-- For the JDK installation, see [Java](https://intl.cloud.tencent.com/document/product/436/10865).
+
+- SDK supports JDK 1.8 or later. You can run the java -version command to query the Java version. 
+- For the JDK installation, see [Java Installation and Configuration](https://intl.cloud.tencent.com/document/product/436/10865).
 
 >?
->- For the definitions of terms such as `SecretId`, `SecretKey`, and bucket, see [Introduction](https://intl.cloud.tencent.com/document/product/436/7751).
+>- For the definitions of terms such as SecretId, SecretKey, and Bucket, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 >- You can find common classes for the COS Java SDK in the following packages:
  - The classes related to client configuration are in the com.qcloud.cos.\* package.
  - The classes related to permissions are in the com.qcloud.cos.auth.\* sub-package.
@@ -33,12 +34,12 @@
 You can install the Java SDK using Maven or source code:
 
 - Using Maven
-  Add required dependencies to the `pom.xml` file of your Maven project as follows:
+  Add required dependencies to the pom.xml file of your Maven project as follows:
 ```shell
 <dependency>
        <groupId>com.qcloud</groupId>
        <artifactId>cos_api</artifactId>
-       <version>5.6.89</version>
+       <version>5.6.97</version>
 </dependency>
 ```
 - Using source code
@@ -94,7 +95,7 @@ For access over HTTP:
 <?xml version='1.0' encoding='utf-8' ?>
 <Error>
         <Code>AccessDenied</Code>
-        <Message>Check auth failure because signture empty.</Message>
+        <Message>Check auth failure because signature empty.</Message>
         <ServerTime>XXX XXX</ServerTime>
         <Resource>cos.ap-guangzhou.myqcloud.com/</Resource>
         <RequestId>NWE2MWQ5MjZfMTBhYzM1MGFfMTA5ODVfMTVj****==</RequestId>    
@@ -133,7 +134,7 @@ For access over HTTPS:
 <?xml version='1.0' encoding='utf-8' ?>
 <Error>
         <Code>AccessDenied</Code>
-        <Message>Check auth failure because signture empty.</Message>
+        <Message>Check auth failure because signature empty.</Message>
         <ServerTime>XXX XXX</ServerTime>
         <Resource>cos.ap-guangzhou.myqcloud.com/</Resource>
         <RequestId>NWE2MWQ5MjZfMTBhYzM1MGFfMTA5ODVfMTVj****</RequestId>        
@@ -144,7 +145,7 @@ For access over HTTPS:
 If a result similar to the above is displayed, the port connectivity is normal. If an abnormal result is returned, troubleshoot local network problems or contact your local network admin first. After confirming that everything is normal, proceed to the next step.
 On certain versions of Windows, you may need to install the Curl tool before you can run the test.
 
-The following describes how to use the COS Java SDK to complete basic operations, such as initializing the client, creating a bucket, querying a bucket list, uploading an object, querying an object list, downloading an object, and deleting an object. For the classes in the samples, you can click the class name in your IDE to view details about all its fields and functions.
+The following describes how to use the COS Java SDK to complete basic operations, such as initializing the client, creating a bucket, querying a bucket list, uploading an object, querying an object list, downloading an object, and deleting an object. For the classes in the examples, you can click the class name in your IDE to view more details about all its fields and functions.
 
 
 ### Importing classes
@@ -153,71 +154,75 @@ The COS Java SDK package is named `com.qcloud.cos.*`. You can import the classes
 
 ### Initializing the client
 
-Before executing any requests related to the COS service, you need to generate a `COSClient` class object to call the COS APIs.
 
->! COSClient is a thread-safe class that allows multi-thread access to the same instance. Because an instance maintains a connection pool internally, creating multiple instances may lead to resource exhaustion. **Make sure that there is only one instance in the program lifecycle**, and call the `shutdown` method to shut down the instance when it is no longer needed. If you need to create a new instance, shut down the previous one first.
+>!
+> - We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
+Before making any request for COS services, you need to generate a COSClient class object for calling the COS APIs.
+
+>!COSClient is a thread-safe class that allows multi-thread access to the same instance. Because an instance maintains a connection pool internally, creating multiple instances may lead to resource exhaustion. **Please ensure that there is only one instance in the program lifecycle**, and call the shutdown method to turn off the instance when it is no longer needed. If you need to create a new instance, shut down the previous instance first.
 >
 
-If you use a permanent key to initialize a `COSClient`, you can get the `APPId`, `SecretId`, and `SecretKey` on the [API Key](https://console.cloud.tencent.com/cam/capi) page in the CAM console. A permanent key is suitable for most application scenarios. Below is a sample:
+If you use a temporary key to initialize the COSClient (recommended), see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) for more information on how to generate and use a temporary key. An example is shown below:
+
+[//]: # ".cssg-snippet-global-init-sts"
+```java
+// 1. Pass in the obtained temporary key (tmpSecretId, tmpSecretKey, sessionToken).
+String tmpSecretId = "SECRETID";
+String tmpSecretKey = "SECRETKEY";
+String sessionToken = "TOKEN";
+BasicSessionCredentials cred = new BasicSessionCredentials(tmpSecretId, tmpSecretKey, sessionToken);
+// 2. Set the bucket region.
+// `clientConfig` contains the set methods to set region, HTTPS (HTTP by default), timeout, and proxy. For detailed usage, see the source code or the FAQs about the SDK for Java.
+Region region = new Region("COS_REGION"); //COS_REGION parameter, which needs to be set to the actual region of the bucket, for example, ap-beijing. For the abbreviations for more COS regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
+ClientConfig clientConfig = new ClientConfig(region);
+// 3. Generate a COS client
+COSClient cosClient = new COSClient(cred, clientConfig);
+```
+
+You can also use a permanent key to initialize the COSClient (**Not recommended. We recommend you not use this method in the production environment because the CMK may leak.**). You can get the `APPId`, `SecretId`, and `SecretKey` on the [Manage API Key](https://console.cloud.tencent.com/cam/capi) page of the CAM console. An example is shown below:
 
 [//]: # ".cssg-snippet-global-init"
 ```java
-// 1. Initialize the user credentials (`secretId` and `secretKey`).
+// 1. Initialize the user credentials (secretId, secretKey).
 // Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to view and manage the `SecretId` and `SecretKey` of your project.
-String secretId = "SECRETID";
-String secretKey = "SECRETKEY";
+SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
-// 2. Set the bucket region. For the abbreviations for COS regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
-// `clientConfig` contains the set methods to set the region, HTTPS (HTTP by default), timeout, and proxy. For detailed usage, see the source code or the FAQs about the Java SDK.
+// 2. Set the bucket region. For the abbreviations for COS regions, please visit https://intl.cloud.tencent.com/document/product/436/6224.
+// `clientConfig` contains the set methods to set region, HTTPS (HTTP by default), timeout, and proxy. For detailed usage, see the source code or the FAQs about the SDK for Java.
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
 // The HTTPS protocol is recommended.
-// Starting from v5.6.54, HTTPS is used by default.
+// Starting from 5.6.54, HTTPS is used by default.
 clientConfig.setHttpProtocol(HttpProtocol.https);
 // 3. Generate a COS client.
 COSClient cosClient = new COSClient(cred, clientConfig);
 ```
 
-You can also use a temporary key to initialize the `COSClient`. For more information on how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048). Below is a sample:
+The ClientConfig class is a configuration class containing the following main members:
 
-[//]: # ".cssg-snippet-global-init-sts"
-```java
-// 1. Pass in the obtained temporary key (`tmpSecretId`, `tmpSecretKey`, and `sessionToken`).
-String tmpSecretId = "SECRETID";
-String tmpSecretKey = "SECRETKEY";
-String sessionToken = "TOKEN";
-BasicSessionCredentials cred = new BasicSessionCredentials(tmpSecretId, tmpSecretKey, sessionToken);
-// 2. Set the bucket region. For the abbreviations for COS regions, visit https://intl.cloud.tencent.com/document/product/436/6224.
-// `clientConfig` contains the set methods to set the region, HTTPS (HTTP by default), timeout, and proxy. For detailed usage, see the source code or the FAQs about the Java SDK.
-Region region = new Region("COS_REGION");
-ClientConfig clientConfig = new ClientConfig(region);
-// 3. Generate a COS client.
-COSClient cosClient = new COSClient(cred, clientConfig);
-```
-
-
-The `ClientConfig` class is a configuration class containing the following main members:
-
-| Member Name | Configuration Method | Description | Type |
+| Member Name | Setting Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
 | region | Constructor or set method | Bucket region. For the abbreviations for COS regions, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | Region |
 | httpProtocol | Set method | The protocol used by the request. By default, HTTPS is used to interact with COS. | HttpProtocol |
-| signExpired | Set method | Validity period (in seconds) of the request signature. Default value: 3600s | long |
-| connectionTimeout | Set method | Timeout period in milliseconds for connection with COS. Default value: 30000 ms. | int |
-| socketTimeout | Set method | Timeout period in milliseconds for the client to read data. Default value: 30000 ms. | int |
-| httpProxyIp | Set method | Proxy server IP. | String |
-| httpProxyPort | Set method | Proxy server port. | int |
+| signExpired | Set method | Validity period (in seconds) of the request signature. Default: 3600s | long |
+| connectionTimeout | Set method | Timeout duration in milliseconds for connection with COS. Default value: 30000 ms | int |
+| socketTimeout | Set method | Timeout duration in milliseconds for the client to read data. Default value: 30000 ms | int |
+| httpProxyIp | Set method | Proxy server IP | String |
+| httpProxyPort | Set method | Proxy server port | int |
 
 
-### Creating bucket
+### Creating a bucket
 
-Create a bucket as shown below:
+The following example creates a bucket for the selected region and bucket:
 
 [//]: # ".cssg-snippet-put-bucket-and-grant-acl"
 ```java
-String bucket = "examplebucket-1250000000"; // Bucket name in the format of `BucketName-APPID`
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as BucketName-APPID
 CreateBucketRequest createBucketRequest = new CreateBucketRequest(bucket);
-// Set the bucket permission to `Private` (private read/write). Other valid values are `PublicRead` (public read/private write) and `PublicReadWrite` (public read/write).
+// Set the bucket permission to "Private" (private read and write). Other valid values are "PublicRead" (public read/private write) and "PublicReadWrite" (public read and write).
 createBucketRequest.setCannedAcl(CannedAccessControlList.Private);
 try{
     Bucket bucketResult = cosClient.createBucket(createBucketRequest);
@@ -228,9 +233,9 @@ try{
 }
 ```
 
-### Querying bucket list
+### Querying the bucket list
 
-Query the bucket list as shown below:
+The following example queries a bucket list:
 
 [//]: # ".cssg-snippet-get-service"
 ```java
@@ -241,19 +246,19 @@ for (Bucket bucketElement : buckets) {
 }
 ```
 
-### Uploading object
+### Uploading an object
 
-Upload a local file or input stream with a known length to COS. This is most suitable for uploading small image files below 20 MB. The allowed maximum file size is 5 GB. For files larger than 5 GB, you need to use multipart upload or the advanced upload API.
+Upload a local file or input stream with a known length to COS. It is most suitable for uploading small image files below 20 MB. The maximum file size allowed is 5 GB. For files larger than 5 GB, you need to use multipart upload or an advanced upload API.
 
->? The classes related to advanced APIs are in the com.qcloud.cos.transfer.\* sub-package.
+>? The classes related to advanced APIs are in the `com.qcloud.cos.transfer.\*` sub-package.
 
-- If most of your local files are over 20 MB, we recommend you upload them with the advanced upload API.
-- If an object with the same key already exists in COS, it will be overwritten by the newly uploaded one.
-- To create a directory object, see [Java SDK](https://intl.cloud.tencent.com/document/product/436/38956#sdk-.E5.A6.82.E4.BD.95.E5.88.9B.E5.BB.BA.E7.9B.AE.E5.BD.95.EF.BC.9F).
-- An object key (Key) is the unique identifier of an object in a bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg`, its key is `images/picture.jpg`. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
+- If most of your local files are over 20 MB, you are advised to upload them with an advanced upload API.
+- If an object with the same key already exists in COS, it will be overwritten by the newly-uploaded one.
+- To create a directory object, see [How to create a directory in the SDK?](https://intl.cloud.tencent.com/document/product/436/38956#sdk-.E5.A6.82.E4.BD.95.E5.88.9B.E5.BB.BA.E7.9B.AE.E5.BD.95.EF.BC.9F).
+- An object key (Key) is the unique identifier of an object in a bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg`, the object key is `images/picture.jpg`. For more information, see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
 
 
-Upload a file up to 5 GB as shown below:
+The following example uploads a file up to 5 GB:
 
 [//]: # ".cssg-snippet-put-object"
 ```java
@@ -261,32 +266,32 @@ Upload a file up to 5 GB as shown below:
 File localFile = new File(localFilePath);
 // Specify a bucket to store the file.
 String bucketName = "examplebucket-1250000000";
-// Specify the COS path (i.e. the object key) to upload the file. For example, if the object key is `folder/picture.jpg`, the `picture.jpg` file will be uploaded to the `folder` directory.
+// Specify the COS path (i.e. the object key) to upload the file. For example, if the object key is "folder/picture.jpg", the file "picture.jpg" will be uploaded to the "folder" directory.
 String key = "exampleobject";
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 PutObjectResult putObjectResult = cosClient.putObject(putObjectRequest);
 ```
 
-### Querying object list
+### Querying objects
 
-Query the list of objects in a bucket as shown below:
+The following example queries the list of objects in a bucket:
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: #	".cssg-snippet-get-bucket"
 ```java
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
 ListObjectsRequest listObjectsRequest = new ListObjectsRequest();
-// Set the bucket name.
+// Set the bucket name
 listObjectsRequest.setBucketName(bucketName);
-// The prefix indicates that the key of the object to be listed must start with this value.
+// Prefix indicates that the object keys to be listed begin with this prefix
 listObjectsRequest.setPrefix("images/");
-// Set the delimiter to `/` to list objects in the current directory. To list all objects, leave it empty.
+// Delimiter is a separator. Set it to "/" to list objects in the current directory; set it to null to list all objects.
 listObjectsRequest.setDelimiter("/");
-// Set the maximum number of traversed objects (up to 1,000 per `listobject` request)
+// Set the maximum number of objects to be traversed, which can be up to 1,000 in one listobject operation
 listObjectsRequest.setMaxKeys(1000);
 ObjectListing objectListing = null;
 do {
-    try {
+    try{
         objectListing = cosClient.listObjects(listObjectsRequest);
     } catch (CosServiceException e) {
         e.printStackTrace();
@@ -295,7 +300,7 @@ do {
         e.printStackTrace();
         return;
     }
-    // `common prefix` indicates the path that ends with the `delimiter`. If the `delimiter` is set to `/`, the `common prefix` indicates the paths of all subdirectories.
+    // `common prefix` indicates the path that ends with the `delimiter`. If the `delimiter` is set to "/", the `common prefix` indicates the paths of all subdirectories.
     List<String> commonPrefixs = objectListing.getCommonPrefixes();
 
     // The object summary shows all listed objects.
@@ -303,7 +308,7 @@ do {
     for (COSObjectSummary cosObjectSummary : cosObjectSummaries) {
         // File path key
         String key = cosObjectSummary.getKey();
-        // File ETag
+        // `ETag` of the file
         String etag = cosObjectSummary.getETag();
         // File size
         long fileSize = cosObjectSummary.getSize();
@@ -316,15 +321,15 @@ do {
 } while (objectListing.isTruncated());
 ```
 
-### Download object
-Once an object is uploaded, you can download it by calling the `GetObject` API with the same key, or by generating a [pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31536) (specify `GET` as the download method) to share it to another device for download. Note that the pre-signed URL may be valid only for a limited period if your file is set to private-read.
-Download a file to a specified local path as shown below:
+### Downloading an object
+Once an object is uploaded, you can download it by calling the GET Object API with the same key, or by generating a [pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31536) (Please specify GET as the download method) to share to another device for download. Note that the pre-signed URL may be valid only for a limited period if your file is set to private-read.
+The following example downloads a file to a specified local path:
 
-[//]: # ".cssg-snippet-get-object"
+[//]: #	".cssg-snippet-get-object"
 ```java
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Specify the COS path (i.e. the object key) of the file to be downloaded. For example, if the object key is `folder/picture.jpg`, the `picture.jpg` file in the `folder` directory will be downloaded.
+// Specify the COS path (i.e. the object key) of the file to download. For example, if the object key is "folder/picture.jpg", the file "picture.jpg" in the "folder" directory will be downloaded.
 String key = "exampleobject";
 // Method 1. Get the input stream of the downloaded file.
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
@@ -335,34 +340,34 @@ String crc64Ecma = cosObject.getObjectMetadata().getCrc64Ecma();
 // Close the input stream.
 cosObjectInput.close();
 
-// Method 2. Download the file to a local directory, e.g. a directory in D drive.
+// Method 2: Download the file to a local directory, e.g. a directory in D drive.
 String outputFilePath = "exampleobject";
 File downFile = new File(outputFilePath);
 getObjectRequest = new GetObjectRequest(bucketName, key);
 ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
 ```
 
-### Deleting object
+### Deleting an object
 
-You can delete an object in a specified path in COS by running the following code:
+You can delete an object in a specified path in COS with the following code:
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: #	".cssg-snippet-delete-object"
 ```java
 // Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Specify the COS path (i.e. the object key) of the file to be deleted. For example, if the object key is `folder/picture.jpg`, the `picture.jpg` file in the `folder` directory will be deleted.
+// Specify the COS path (i.e. the object key) of the file to delete. For example, if the object key is "folder/picture.jpg", the "picture.jpg" file in the "folder" directory will be deleted.
 String key = "exampleobject";
 cosClient.deleteObject(bucketName, key);
 ```
 
 ### Default retry policy
 
-By default, if a request initiated by the `COSClient` generated via the SDK returns an error response, it will be retried. The retry policy is as follows:
-- Number of retries: 3 by default. You can set it using `clientConfig.setMaxErrorRetry`.
-If it is set to `0`, no retries will be performed on requests returning any type of error.
-- Error types for retry: All client-side `IOException` errors, as well as server-side errors with the status codes 500, 502, 503, and 504.
+By default, if requests initiated by COSClient via the SDK return error responses, they will be retried. The retry policy is as follows:
+- Number of retries: defaults to `3`. You can set it using `clientConfig.setMaxErrorRetry`.
+If set to `0`, no retry will be performed on all types of request errors.
+- Error types for retry: all client-side IOException, as well as server-side errors with the status codes 500, 502, 503, and 504
 
-You can also configure a retry policy as needed by running the following code:
+You can also configure a retry policy as needed by referring to the following code:
 
 Setting the number of retries:
 
@@ -370,7 +375,7 @@ Setting the number of retries:
 ```java
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
-// Set the maximum number of retries to `4`.
+// Set the maximum number of retries to 4.
 clientConfig.setMaxErrorRetry = 4;
 ```
 
@@ -385,7 +390,7 @@ public class OnlyIOExceptionRetryPolicy extends RetryPolicy {
             HttpResponse response,
             Exception exception,
             int retryIndex) {
-        // Retry only for client-side `IOException`.
+        // Retry only for client-side IOException.
         if (exception.getCause() instanceof IOException) {
             return true;
         }
@@ -402,12 +407,12 @@ clientConfig.setRetryPolicy(myRetryPolicy);
 
 ### Shutting down the client
 
-Shut down the `COSClient` and release the server threads connected over HTTP by running the following code:
+Shut down the COSClient and release the server threads connected over HTTP with the following code:
 ```java
-// Shut down the client (release server threads).
+// Close the client (release server threads).
 cosClient.shutdown();
 ```
 
 ## FAQs
 
-If you have any questions about the Java SDK, see [Java SDK](https://intl.cloud.tencent.com/document/product/436/38956).
+If you have any questions about Java SDK, see [here](https://intl.cloud.tencent.com/document/product/436/38956).

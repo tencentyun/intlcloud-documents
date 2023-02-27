@@ -1,3 +1,54 @@
+## January 2023
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tr>
+<td>Supported the tab view in the console</td>
+<td>The TDSQL-C for MySQL console supports the tab and list views. You can switch the view in the cluster list as needed to query and browse cluster information more clearly.</td>
+<td>2023-01-05</td>
+<td></td></tr>
+</table>
+
+
+## December 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tr>
+<td>Supported global and local parameter settings</td>
+<td>TDSQL-C for MySQL provides the **Global Parameters** field to help you quickly distinguish between global and local parameters. Once configured, values of global parameters will take effect for all instances in the cluster, while values of local parameters will take effect only for the target instance and can be synced to other instances.</td>
+<td>2022-12-16</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/44602" target="_blank">Setting Instance Parameters</a></td></tr>
+<tr>
+<td>Supported formula-based parameter settings and optimized the parameter template</td>
+<td>TDSQL-C for MySQL offers more parameter configuration methods and supports default or custom formula-based parameter values to better adapt to your database. You can save parameter settings as a template to import and export parameters, which facilitates the batch management of database clusters.</td>
+<td>2022-12-16</td>
+<td><li><a href="https://www.tencentcloud.com/document/product/1098/53398" target="_blank">Parameter Formula</a><li><a href="https://intl.cloud.tencent.com/document/product/1098/44601" target="_blank">Applying Parameter Template</a></td></tr>
+<tr>
+<td>Launched the new audit service</td>
+<td>The new audit service of TDSQL-C for MySQL is launched, which supports full and rule-based audit. It prevents data tampering and guarantees the data integrity during collection, transfer, and storage as well as the data reliability during collection.</td>
+<td>2022-12-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098/44614" target="_blank">Enabling Audit Service</a></td></tr>
+</table>
+
+## October 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tr>
+<td>Supported the parallel query feature</td>
+<td>TDSQL-C for MySQL supports parallel query, which schedules and leverages multiple compute resources to greatly shorten the response time of large queries.</td>
+<td>2022-10-24</td>
+<td><a href="https://www.tencentcloud.com/document/product/1098/51769" target="_blank">Enabling/Disabling Parallel Query</a></td></tr>
+</table>
+
+## September 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tr>
+<td>Supported the audit of infrequent access storage</td>
+<td>TDSQL-C for MySQL provides the infrequent access storage option for the audit service. You can select a suitable storage type based on your actual storage frequency to reduce audit costs.</td>
+<td>2022-09-30</td>
+<td><a href="https://www.tencentcloud.com/document/product/1098/52146" target="_blank">Database Audit Billing Overview</a></td></tr>
+</table>
+
 ## August 2022
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr></thead>

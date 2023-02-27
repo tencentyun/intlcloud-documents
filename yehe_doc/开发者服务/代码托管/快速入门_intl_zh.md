@@ -24,7 +24,7 @@ CODING 代码托管基于开源的版本控制系统 Git。借助 Git，您的�
 
 #### macOS 版本
 
-1.  运行以下命令安装包管理工具 [homebrew](https://raw.githubusercontent.com/Homebrew/install/master/install) 。
+1.  运行以下命令安装包管理工具 homebrew 。
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```

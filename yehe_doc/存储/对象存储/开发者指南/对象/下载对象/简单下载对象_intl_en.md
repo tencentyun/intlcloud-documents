@@ -1,6 +1,6 @@
 ## Use Cases
 
-You can directly initiate a request to get objects in COS. The following features are supported:
+You can directly initiate a request to download objects in COS. The following features are supported:
 
 - Download a complete object: Download the complete object data by initiating a GET request.
 - Download a part of an object: Use the Range request header in a GET request to retrieve a specific range of bytes of an object. Retrieving multiple ranges is not supported.
@@ -28,16 +28,16 @@ Use the REST API to initiate an object download request. For more information, s
 
 Directly call the object download method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
-
-- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/37675#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [SDK for C](https://intl.cloud.tencent.com/document/product/436/31464#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31465#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
+- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/37675)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/44873)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522)
 - [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30594)
-- [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31466#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/37684#.E8.8E.B7.E5.8F.96.E5.AF.B9.E8.B1.A1)
-- [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31468#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/31477#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/31469#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/31470#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31471#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [Mini Program SDK](https://www.tencentcloud.com/document/product/436/43882)
+- [SDK for Go](https://intl.cloud.tencent.com/document/product/436/44065)
+- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/37684)
+- [SDK for Java](https://intl.cloud.tencent.com/document/product/436/44016)
+- [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/43862)
+- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/43872)
+- [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/45499)
+- [SDK for Python](https://intl.cloud.tencent.com/document/product/436/46469)
+- [SDK for Weixin Mini Program](https://intl.cloud.tencent.com/document/product/436/43882)
+

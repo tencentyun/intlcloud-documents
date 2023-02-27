@@ -23,15 +23,15 @@ The following tools are used in this scenario:
 1. Install PicGo and set relevant COS parameters.
 >?PicGo 2.3.1 is used in this scenario. Note that the configuration process may vary by version.
 >
-After downloading PicGo from [PicGo website](https://molunerfinn.com/PicGo/) and installing it, find **Tencent Cloud** in **Picbeds Settings** and configure the following parameters:
+After downloading PicGo from [PicGo website](https://molunerfinn.com/PicGo/) and installing it, find **Tencent Cloud COS** in the image hosting service settings and configure the following parameters:
 
   - Choose COS version: Select COS v5.
   - Set Secretld: A developer-owned secret ID used for the project. It can be created and obtained at [Manage API Key](https://console.cloud.tencent.com/capi).
-  - Set SecretKey: A developer-owned secret key used for the project. It can be obtained at [Manage API Key](https://console.cloud.tencent.com/capi).
-  - Set AppId: A unique user-level resource identifier for COS access. It can be obtained at [Manage API Key](https://console.cloud.tencent.com/capi).
-  - Set Bucket: A bucket is a container used for data storage. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
-  - Set Area: Region information. For more information about the enumerated values (such as ap-beijing, ap-hongkong, and eu-frankfurtplease), see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). |
-  - Set Path: It is the path where the image is stored in the COS bucket.
+  - Set SecretKey: A developer-owned secret key used for the project. It can be obtained at [Manage API Key](https://console.cloud.tencent.com/capi).  
+  - Set Bucket: It is a bucket, i.e., a container used for data storage. For more information, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
+  - Set AppId: It is a unique user-level resource identifier for COS access, which can be obtained on the [Manage API Key](https://console.cloud.tencent.com/capi) page.
+  - Set Storage Region: It is the region information of the bucket. For enumerated values such as `ap-beijing`, `ap-hongkong`, and `eu-frankfurt`, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+  - Set Storage Path: It is the path where the image is stored in the COS bucket.
   - Set Custom URL: This parameter is optional. If you have configured a custom origin domain name for the storage space specified above, you can enter it here. For more information, see [Enabling Custom Origin Domains](https://intl.cloud.tencent.com/document/product/436/31507).
   - Set URL Suffix: Add a COS data processing parameter to the URL suffix to implement image compression, cropping, format conversion, and other operations. For more information, see [Image Processing](https://www.tencentcloud.com/document/product/436/40118).
 2. Configure Typora (optional).

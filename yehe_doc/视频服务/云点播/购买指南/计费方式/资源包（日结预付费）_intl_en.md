@@ -2,7 +2,7 @@
 
 >?  You can use the [billing example](https://www.tencentcloud.com/document/product/266/38163) to estimate the cost.。
 
-Video-on-Demand provides prepaid packages which refer to the method of pre-purchasing on-demand resources and using the resources later. **Each prepaid resource package only supports the deduction of resources for this billable item.**
+[Video-on-Demand](https://buy.tencentcloud.com/vod) provides prepaid packages which refer to the method of pre-purchasing on-demand resources and using the resources later. **Each prepaid resource package only supports the deduction of resources for this billable item.**
 
 ## Precautions:
 

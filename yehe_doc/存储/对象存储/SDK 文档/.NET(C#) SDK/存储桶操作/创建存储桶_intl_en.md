@@ -1,6 +1,10 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to how to create a bucket.
+This document provides an overview of APIs and SDK code samples for creating a bucket.
+
+>!
+> - We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
 
 
 | API | Operation |  Description |
@@ -13,7 +17,7 @@ For the parameters and method description of all the APIs in the SDK, see [API D
 
 ## Creating a Bucket
 
-#### Description
+#### Feature description
 
 This API is used to create a bucket under the specified account. You can create multiple buckets under the same user account. The maximum number is 200 (regardless of region). There is no limit to the number of objects in the bucket. Bucket creation is a low-frequency operation. We recommended you create a bucket in the console and perform object operations in the SDK.
 
@@ -53,7 +57,7 @@ namespace COSSnippet
         //.cssg-snippet-body-start:[put-bucket]
         try
         {
-          // Bucket name in the format of BucketName-APPID. You can get APPID by referring to https://console.cloud.tencent.com/developer.
+          // Bucket name in the format of `BucketName-APPID`. You can get APPID by referring to https://console.cloud.tencent.com/developer.
           string bucket = "examplebucket-1250000000";
           PutBucketRequest request = new PutBucketRequest(bucket);
           // Execute the request
@@ -92,5 +96,4 @@ namespace COSSnippet
 
 >? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PutBucket.cs).
 >
-
 

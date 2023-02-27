@@ -282,4 +282,3 @@ COS offers the following features:
    </tr>
 </table>
 
-

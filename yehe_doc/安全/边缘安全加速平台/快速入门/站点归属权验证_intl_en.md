@@ -10,6 +10,7 @@
 - Wait until the verification is completed. If the record does not take effect after a long time, you can click **Refresh** to trigger system verification.
 - After the record takes effect, click **Verify**.
 </dx-steps>
+
 ![](https://qcloudimg.tencent-cloud.cn/raw/7fae841267887ab1f89577186e9665a0.png)
 
 ## Method 2: File Verification

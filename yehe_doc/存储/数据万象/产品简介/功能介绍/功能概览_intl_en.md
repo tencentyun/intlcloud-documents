@@ -6,7 +6,7 @@ Cloud Infinite (CI) provides the following features:
       <th>Description</td>
    </tr>
    <tr>
-      <td rowspan="16"><nobr>Basic image </nobr>processing</td>
+      <td rowspan="15"><nobr>Basic image </nobr>processing</td>
       <td><a href="https://intl.cloud.tencent.com/document/product/1045/33713">Scaling</a></td>
       <td>Proportional scaling, scaling based on a target height and width, and more</td>
    </tr>
@@ -42,10 +42,6 @@ Cloud Infinite (CI) provides the following features:
       <td><a href="https://intl.cloud.tencent.com/document/product/1045/33719">Sharpening</a></td>
       <td>Sharpens images</td>
    </tr>
-	    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1045/48829">Grayscale Image</a></td>
-      <td>Sets an image to be a grayscale image.</td>
-   </tr>
    <tr>
       <td>Watermarking</td>
       <td>Adds <a href="https://intl.cloud.tencent.com/document/product/1045/33720">image watermarks</a> and <a href="https://intl.cloud.tencent.com/document/product/1045/33721">text watermarks</a> for images</td>
@@ -63,7 +59,7 @@ Cloud Infinite (CI) provides the following features:
       <td>Provides the thumbnail feature, which can quickly convert the image format, scale and crop the image, and generate a thumbnail</td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1045/40716">Image Size Limiting</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/40716">Image size limiting</a></td>
       <td>Limits the size of an image processed (e.g., scaled or compressed).</td>
    </tr>
    <tr>
@@ -72,19 +68,19 @@ Cloud Infinite (CI) provides the following features:
    </tr>
    <tr>
       <td rowspan="4">Advanced features</td>
-      <td>Guetzli image compression</td>
+      <td><a href="https://cloud.tencent.com/document/product/460/47500">Guetzli image compression</a></td>
       <td>A visually lossless compression service, which can compress JPG and JPEG images at a high ratio to reduce the downstream traffic usage and accelerate downloads</td>
    </tr>
    <tr>
-      <td>Image advanced compression</td>
+      <td><a href="https://cloud.tencent.com/document/product/460/47501">Image advanced compression</a></td>
       <td>Allows you to easily convert images into formats that provide a high compression ratio, such as TPG and HEIF. This effectively reduces the transmission time, loading time, and the use of bandwidth and traffic.</td>
    </tr>
    <tr>
-      <td>Abnormal image detection</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/53715">Abnormal image detection</a></td>
       <td>Detects whether other types of suspicious files such as video streams are hidden in images</td>
    </tr>
    <tr>
-      <td>Blind watermark</td>
+      <td><a href="https://cloud.tencent.com/document/product/460/47502">Blind watermarking</a></td>
       <td>A brand-new watermarking feature, which allows you to add a watermark to the input image information without displaying the watermark or significantly affecting the image quality. If an image is stolen, you can extract the blind watermark from the suspected image to check whether the image belongs to you.</td>
    </tr>
    <tr>
@@ -159,7 +155,7 @@ Cloud Infinite (CI) provides the following features:
       <td>Converts text to natural-sounding and smooth speeches through advanced deep learning technology</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47492">Speech recognition</a></td>
+      <td>Speech recognition</td>
       <td>Recognizes a recording file and asynchronously returns the recognized text. It can be used for call center speech quality inspection, video subtitles generation, and meeting recording transcription.</td>
    </tr>
     <tr>
@@ -172,20 +168,20 @@ Cloud Infinite (CI) provides the following features:
    </tr>
    <tr>
       <td rowspan="4">Content moderation</td>
-      <td><a href="https://cloud.tencent.com/document/product/460/47487">Image moderation</a></td>
-      <td>Helps you effectively identify restricted content (including pornography, violation, and ad) in images. At present, CI supports automatic moderation and manual review by professional teams to secure images in the platform in an all-round way.</td>
+      <td>Image moderation</td>
+      <td>Helps you effectively identify restricted content (including pornography, violation, and ad) in images. At present, CI supports automatic moderation and human moderation by professional teams to secure the platform in an all-around way.</td>
    </tr>
    <tr>
       <td><a href="https://cloud.tencent.com/document/product/460/47488">Video moderation</a></td>
-      <td>Helps you effectively identify restricted content (including pornography, violation, and ad) in videos. At present, CI supports automatic moderation and manual review by professional teams to secure images in the platform in an all-round way.</td>
+      <td>Helps you effectively identify restricted content (including pornography, violation, and ad) in videos. At present, CI supports automatic moderation and human moderation by professional teams to secure the platform in an all-around way.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/47489">Audio moderation</a></td>
-      <td>Helps you effectively identify restricted content (including pornography, violation, and ad) in audios. At present, CI supports automatic moderation and manual review by professional teams to secure images in the platform in an all-round way.</td>
+      <td>Audio moderation</td>
+      <td>Helps you effectively identify restricted content (including pornography, violation, and ad) in audios. At present, CI supports automatic moderation and human moderation by professional teams to secure the platform in an all-around way.</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/53149">Text moderation</a></td>
-      <td>Helps you effectively identify restricted content (that is, content that may be uncomfortable, such as pornography, violation, ad, and abuse) in text files. At present, CI supports automatic moderation and manual review by professional teams to secure images in the platform in an all-round way.</td>
+      <td>Text moderation</td>
+      <td>Helps you effectively identify restricted content (that is, content that may be uncomfortable, such as pornography, violation, ad, and abuse) in text files. At present, CI supports automatic moderation and human moderation by professional teams to secure the platform in an all-around way.</td>
    </tr>
    <tr>
       <td rowspan="3">File processing service</td>
@@ -195,7 +191,7 @@ File size limit: <li>Sync request: Below 128 MB.</li><li>Async request: Below 50
    </tr>
    <tr>
       <td><a href="https://cloud.tencent.com/document/product/436/83110">File decompression</a></td>
-      <td>Decompresses .zip, .tar., .gz, or .7zip packages in the cloud and dumps the extracted files to COS.<br>File size limit: Below 5TB.</br></td>
+      <td>Decompresses .zip, .tar, .gz, or .7z packages in the cloud and dumps the extracted files to COS.<br>File size limit: Below 5 TB.</br></td>
    </tr>
    <tr>
       <td><a href="https://cloud.tencent.com/document/product/436/83112">Multi-file zipping</a></td>
@@ -227,11 +223,11 @@ File size limit: <li>Sync request: Below 128 MB.</li><li>Async request: Below 50
       <td>Based on Tencent Cloud's industry-leading deep learning technology, the optical character recognition (OCR) feature is capable of intelligently recognizing words on images and converting them into editable text. It can be used in photo scanning, paper document digitization, e-commerce ad moderation, and many other scenarios to greatly improve the efficiency of information processing.</td>
    </tr>
    <tr>
-      <td>Search by image</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/43516">Search by image</a></td>
       <td>Performs feature extraction, comparison, and search on the images in an image library. It is suitable for e-commerce product search, copyright protection, and other scenarios.</td>
    </tr>
    <tr>
-      <td>Face filter</td>
+      <td><a href="https://cloud.tencent.com/document/product/460/47493">Face filter</a></td>
       <td>Supports beauty filter, gender swap, age change, and face cut-out. It is suitable for many use cases, such as social entertainment, marketing, and interactive communication.</td>
    </tr>
    <tr>
@@ -243,9 +239,9 @@ File size limit: <li>Sync request: Below 128 MB.</li><li>Async request: Below 50
       <td>Integrates the capability of liveness detection and comparison with authoritative face libraries, where a selfie video, name, and ID card number can be passed in to verify the user's identity</td>
    </tr>
    <tr>
-      <td rowspan="2">File processing</td>
+      <td rowspan="2">Document processing</td>
       <td><a href="https://intl.cloud.tencent.com/document/product/1045/48839">File preview</a></td>
-      <td>Allows you to preview files of nearly 30 types through image or HTML online, with the source file style preserved as much as possible. This addresses the lack of support for certain file formats on different devices and enables online file preview on PC, app, and other terminals.</td>
+      <td>Allows you to preview documents of nearly 30 types through image or HTML online, with the source document style preserved as much as possible. This addresses the lack of support for certain document formats on different devices and enables online document preview on PC, app, and other terminals.</td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/1045/48840">Privacy protection</a></td>

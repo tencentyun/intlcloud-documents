@@ -1,10 +1,10 @@
 このドキュメントでは、CVMインスタンスおよびインスタンスに関連する操作について説明します。
 
 ## CVMの購入と使用
-CVMインスタンスを初めて購入して使用する場合は、下記の順序に従って理解、購入および利用することをお勧めします。
+CVMインスタンスを初めて購入して使用する場合は、以下の手順に従って開始することをお勧めします。
 
 1. CVMインスタンスの概念を理解するには：[CVMの概要](https://intl.cloud.tencent.com/document/product/213/495)をご参照ください。
-2. 適切なCVMモデルを選択して購入します。CVMインスタンスを個人ユーザーとして初めて使用する場合は、［Linuxインスタンスの構成］（https://intl.cloud.tencent.com/document/product/213/10517）をご参照ください。
+2. 適切なCVMモデルを選択して購入します。CVMインスタンスを個人ユーザーとして初めて使用する場合は、[Linuxインスタンスの構成](https://intl.cloud.tencent.com/document/product/213/10517)をご参照ください。
 3. 購入したCVMインスタンスにログインします。購入したインスタンスの種類に応じて、[Windowsインスタンスへのログイン](https://intl.cloud.tencent.com/document/product/213/5435)または [Linuxインスタンスへのログイン](https://intl.cloud.tencent.com/document/product/213/5436)を選択することが可能です。
 
 
@@ -25,7 +25,8 @@ CVMのパスワードを忘れた場合、またはキーを紛失した場合�
 
 ## カスタムイメージの作成、インポートまたは削除
 
-[イメージ](https://intl.cloud.tencent.com/document/product/213/4940) はCVMインスタンスの起動に必要な情報を提供します。つまり、イメージはCVMの「インストールディスク」です。現在、Tencent Cloudは4種類のイメージ（パブリックイメージ、マーケットプレイスイメージ、カスタムイメージおよび共有イメージ）を提供しています。以下ではイメージがサポートされている操作について説明します。
+[イメージ](https://intl.cloud.tencent.com/document/product/213/4940)はCVMインスタンスを起動するためにすべての必要な情報を提供します。現在、Tencent Cloudは「パブリックイメージ」、「カスタムイメージ」、および「共有イメージ」という3種類のイメージを提供します。以下ではイメージがサポートされている操作について説明します。
+
 
 - [カスタムイメージの作成](https://intl.cloud.tencent.com/document/product/213/4942)
 - [カスタムイメージの削除](https://intl.cloud.tencent.com/document/product/213/6036)

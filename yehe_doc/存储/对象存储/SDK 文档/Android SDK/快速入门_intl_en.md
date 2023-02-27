@@ -2,12 +2,13 @@
 
 - Download the XML Android SDK source code [here](https://github.com/tencentyun/qcloud-sdk-android).
 - Download the demo [here](https://github.com/tencentyun/qcloud-sdk-android-samples).
-- For SDK APIs and parameters, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com).
-- For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/Android).
-- For the SDK changelog, please see [ChangeLog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md).
-- For SDK FAQs, please see [Android SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38955).
+- For SDK APIs and parameters, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com).
+- For the complete sample code, see [Sample SDK Codes](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg).
+- For the SDK changelog, see [ChangeLog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md).
+- For SDK FAQs, see [Android SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38955).
 
 >? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
+>
 
 
 ## Preparations
@@ -36,7 +37,7 @@ repositories {
 
 #### Standard SDK
 
-Add dependencies to the app-level `build.gradle` file (usually under the app module).
+Add dependencies to the app-level `build.gradle` file (usually under the App module).
 ```
 dependencies {
 	...
@@ -48,7 +49,7 @@ dependencies {
 
 #### Simplified SDK
 
-Add dependencies to the app-level `build.gradle` file (usually under the app module).
+Add dependencies to the app-level `build.gradle` file (usually under the App module).
 ```
 dependencies {
 	...
@@ -65,7 +66,7 @@ We have introduced the [Tencent Beacon](https://beacon.tencent.com/) into the SD
 >? DataInsight only monitors the COS request performance and doesn't report any business data.
 >
 
-To disable the beacon analysis feature, perform the following operation in the app-level `build.gradle` file (usually under the app module):
+To disable this feature, perform the following operations in the app-level `build.gradle` file (usually under the App module):
 
 For v5.8.0 or later:
 Change the dependency of `cos-android` to
@@ -104,18 +105,18 @@ After downloading and decompressing the file, you can see that it contains multi
 
 Required libraries:
 - cos-android: COS protocol implementation
-- qcloud-foundation: Foundation library
+- qcloud-foundation: foundation library
 - [bolts-tasks](https://github.com/BoltsFramework/Bolts-Android): third-party task library
 - [okhttp](https://github.com/square/okhttp): third-party networking library
 - [okio](https://github.com/square/okio): third-party I/O library
 
 Optional libraries:
 - quic: QUIC protocol, required if you transfer data over QUIC
-- beacon: Mobile beacon analysis to improve the SDK
+- beacon: mobile beacon analysis to improve the SDK
 
 #### 2. Integrate the SDK into your project
 
-Put your libraries in the app-module `libs` folder and add dependencies to the app-level `build.gradle` file (usually under the app module):
+Put your libraries in the app-module `libs` folder and add dependencies to the app-level `build.gradle` file (usually under the App module):
 
 ```
 dependencies {
@@ -150,6 +151,11 @@ If you need to read and write files from external storage, please add the follow
 >
 
 ## Step 3. Use the SDK
+
+>!
+> - We recommend you use a temporary key as instructed in [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) to call the SDK for security purposes. When you apply for a temporary key, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+> - If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
 
 ### 1. Obtain a temporary key
 
@@ -225,7 +231,7 @@ QCloudSelfSigner myQCloudSelfSigner = new QCloudSelfSigner() {
 
 ### 2. Initialize a COS instance
 
-Use your `myCredentialProvider` instance that provides the key or the server-side signature authorization instance `myQCloudSelfSigner` to initialize a `CosXmlService` instance.
+Use your `myCredentialProvider` instance that provides the key or the server-side signed and authorized instance `myQCloudSelfSigner` to initialize a `CosXmlService` instance.
 
 `CosXmlService` provides all APIs for accessing COS. We recommend you use it as an **application singleton**.
 
@@ -248,7 +254,7 @@ CosXmlService cosXmlService = new CosXmlService(context,
     serviceConfig, myQCloudSelfSigner);
 ```
 
->? For more information on the abbreviations of the COS bucket regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+>? For more information on the abbreviations of the COS bucket regions, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 >
 
 ## Step 4. Access COS
@@ -259,9 +265,9 @@ The SDK supports uploading local files, binary data, URIs, and input streams. Th
 
 [//]: # ".cssg-snippet-transfer-upload-file"
 ```java
-// Initialize TransferConfig. The default configuration is used here. To customize the configuration, please see the SDK API documentation.
+// Initialize TransferConfig. The default configuration is used here. To customize the configuration, see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
-// Initialize TransferManager
+// Initialize TransferManager.
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
@@ -281,7 +287,7 @@ COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
 cosxmlUploadTask.setInitMultipleUploadListener(new InitMultipleUploadListener() {
     @Override
     public void onSuccess(InitiateMultipartUpload initiateMultipartUpload) {
-        // The `uploadId` used for next upload
+        //The uploadId required for the subsequent checkpoint restarts
         String uploadId = initiateMultipartUpload.uploadId;
     }
 });
@@ -308,7 +314,7 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
                        @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
-        } else {
+        } else{
             serviceException.printStackTrace();
         }
     }
@@ -324,7 +330,7 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 
 >?
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
->- After the upload, you can generate a download URL for the uploaded file with the same key. For detailed directions, please see [Generating Pre-signed Links](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- After the upload, you can generate a download URL for the uploaded file with the same key. For detailed directions, see [Generating Pre-signed Links](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 ### Downloading an object
 
@@ -333,7 +339,7 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 // The advanced download API supports checkpoint restart. Therefore, a HEAD request will be sent before the download to obtain the file information.
 // If you are using a temporary key or accessing with a sub-account, ensure that your permission list includes HeadObject.
 
-// Initialize TransferConfig. The default configuration is used here. To customize the configuration, please see the SDK API documentation.
+// Initialize TransferConfig. The default configuration is used here. To customize the configuration, see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
 // Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXmlService,
@@ -376,7 +382,7 @@ cosxmlDownloadTask.setCosXmlResultListener(new CosXmlResultListener() {
                        @Nullable CosXmlServiceException serviceException) {
         if (clientException != null) {
             clientException.printStackTrace();
-        } else {
+        } else{
             serviceException.printStackTrace();
         }
     }
@@ -394,4 +400,3 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 >?
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
 >- The advanced download API supports checkpoint restart. Therefore, a HEAD request will be sent before the download to obtain the file information. If you are using a temporary key or accessing with a sub-account, ensure that your permission list includes `HeadObject`.
->

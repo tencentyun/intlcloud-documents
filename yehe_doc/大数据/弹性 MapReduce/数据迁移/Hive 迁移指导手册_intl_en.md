@@ -1,7 +1,7 @@
 Hive migration involves migration of data and metadata. Hive table data is mainly stored in HDFS; therefore, data migration is usually implemented at the HDFS layer. Hive metadata is mainly stored in a relational database and thus can be smoothly migrated to TencentDB for MySQL with guaranteed high availability.
 
-### Migrating Hive Metadata
-1. Dump the source Hive metadatabase.
+### Migrating Hive metadata
+1. Dump the source Hive metastore.
 ```
 mysqldump -hX.X.X.X -uroot -pXXXX --single-transaction --set-gtid-purged=OFF hivemetastore > hivemetastore-src.sql  
 # If GTID is not enabled for MySQL, delete `--set-gtid-purged=OFF` from the command  
@@ -10,22 +10,22 @@ mysqldump -hX.X.X.X -uroot -pXXXX --single-transaction --set-gtid-purged=OFF hiv
 # If the database user is not `root`, use the correct username  
 # `hivemetastore` is the Hive metadatabase name 
 ```
-2. Confirm the default path of the target Hive table data in HDFS.
-The default path of the Hive table data in HDFS is specified by `hive.metastore.warehouse.dir` in `hive-site.xml`. If the storage location of the Hive table in HDFS is to be kept the same as that in the source Hive database, you need to modify this parameter to the same value as that in the source Hive database. For example, if the value of `hive.metastore.warehouse.dir` in the source `hive-site.xml` is as follows:
+2. Confirm the default storage path of the Hive table data in the target cluster in HDFS.
+The default storage path of the Hive table data in HDFS is specified by `hive.metastore.warehouse.dir` in `hive-site.xml`. If the storage path of the Hive table in the target cluster in HDFS is to be kept the same as that in the source cluster, you can modify the configuration file as follows. For example, if the value of `hive.metastore.warehouse.dir` in the `hive-site.xml` in the source cluster is as follows:
 ```
 <property>  
     <name>hive.metastore.warehouse.dir</name>  
     <value>/apps/hive/warehouse</value>  
 </property>  
 ```
-Then, the value of `hive.metastore.warehouse.dir` in the target `hive-site.xml` should be as follows:
+Then, the value of `hive.metastore.warehouse.dir` in `hive-site.xml` in the target cluster should be as follows:
 ```
 <property>  
     <name>hive.metastore.warehouse.dir</name>  
     <value>/usr/hive/warehouse</value>  
 </property>  
 ```
-If the storage location of the Hive table in HDFS is to be kept the same as that in the source Hive database, modify `hive.metastore.warehouse.dir` in the target `hive-site.xml` to the following value:
+If the storage location of the Hive table in the target cluster in HDFS is to be kept the same as that in the source cluster, change `hive.metastore.warehouse.dir` in the target `hive-site.xml` to the following value:
 ```
 <property>  
     <name>hive.metastore.warehouse.dir</name>  
@@ -33,7 +33,7 @@ If the storage location of the Hive table in HDFS is to be kept the same as that
 </property>  
 ```
 3. Confirm the `SDS.LOCATION` and `DBS.DB_LOCATION_URI` fields of the target Hive metadata.
-Run the following query statements to get the current `SDS.LOCATION` and `DBS.DB_LOCATION_URI` fields.
+Run the following query statements to get the current `SDS.LOCATION` and `DBS.DB_LOCATION_URI` fields:
 ```
 SELECT DB_LOCATION_URI from DBS;  
 SELECT LOCATION from SDS; 
@@ -62,35 +62,35 @@ Here, `hdfs://HDFS2648` is the default file system name of HDFS, which is specif
     <value>hdfs://HDFS2648</value>  
 </property> 
 ```
-`/usr/hive/warehouse` is the default storage path of the Hive table in HDFS, which is specified by `hive.metastore.warehouse.dir` in `hive-site.xml`. Therefore, you need to modify the `SDS.LOCATION` and `DBS.DB_LOCATION_URI` fields in the SQL file of the Hive metadata and make sure that the two fields in the imported Hive metadatabase use the correct path. You can run the following `sed` command to modify SQL files in batches.
+`/usr/hive/warehouse` is the default storage path of the Hive table in HDFS, which is specified by `hive.metastore.warehouse.dir` in `hive-site.xml`. Therefore, you need to modify the `SDS.LOCATION` and `DBS.DB_LOCATION_URI` fields in the SQL file of the Hive metadata and make sure that the two fields in the imported Hive metastore use the correct path. You can run the following `sed` command to modify SQL files in batches.
 ```
-Replace the IP: sed -i 's/oldcluster-ip:4007/newcluster-ip:4007/g' hivemetastore-src.sql  
-Replace the default file system: sed -i 's/old-defaultFS/new-defaultFS/g' hivemetastore-src.sql  
+Replace ip: sed -i 's/oldcluster-ip:4007/newcluster-ip:4007/g' hivemetastore-src.sql  
+Replace defaultFS: sed -i 's/old-defaultFS/new-defaultFS/g' hivemetastore-src.sql  
 ```
 >? If some components such as Kudu and HBase are used, and metastore is used as the metadata service, then the `location` field in the target Hive metadata also needs to be changed. 
 
 4. Stop the MetaStore, HiveServer2, and WebHcataLog services of the target Hive database.
-5. Back up the target Hive metadatabase.
+5. Back up the target Hive metastore.
 ```
 mysqldump -hX.X.X.X -uroot -pXXXX --single-transaction --set-gtid-purged=OFF hivemetastore > hivemetastore-target.sql  
 # If GTID is not enabled for MySQL, delete `--set-gtid-purged=OFF` from the command  
 # `X.X.X.X` is the IP address of the database server  
 # `XXXX` is the database password  
 # If the database user is not `root`, use the correct username  
-# `hivemetastore` is the Hive metadatabase name 
+# `hivemetastore` is the Hive metastore name 
 ```
 6. Drop and create the target Hive metastore.
 ```
 mysql> drop database hivemetastore;  
 mysql> create database hivemetastore; 
 ```
-7. Import the source Hive metadatabase to the target database.
+7. Import the source Hive metastore to the target database.
 ```
 mysql -hX.X.X.X -uroot -pXXXX hivemetastore < hivemetastore-src.sql  
 # `X.X.X.X` is the IP address of the database server  
 # `XXXX` is the database password  
 # If the database user is not `root`, use the correct username  
-# `hivemetastore` is the Hive metadatabase name 
+# `hivemetastore` is the Hive metastore name 
 ```
 8. Upgrade the Hive metadata.
 If the versions of the target and source Hive databases are the same, you can skip this step; otherwise, query the Hive version in the source and target clusters, respectively.
@@ -129,4 +129,4 @@ Modify the ZooKeeper address of the Phoenix table in the target Hive metadata to
 mysql> UPDATE TABLE_PARAMS set PARAM_VALUE  = '172.17.64.98,172.17.64.112,172.17.64.223' where PARAM_KEY = 'phoenix.zookeeper.quorum';    
 ```
 10. Start the MetaStore, HiveServer2, and WebHcataLog services of the target Hive database.
-11. You can run simple Hive SQL query statements to check the migration result.
+11. Run simple Hive SQL query statements to check the migration result.

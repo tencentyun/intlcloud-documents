@@ -20,14 +20,12 @@
 1. 进入 [访问管理](https://console.cloud.tencent.com/cam/policy) 策略配置页面。
 2. 单击**新建自定义策略 > 按策略生成器创建**。
 3. 进入授权配置页面，配置信息如下：
-
  - **标签**：
     - **效果**：选择为允许，默认不变。
     - **服务**：选择为标签。
     - **操作**：可根据您的业务需要进行勾选，此处勾选 GetResourceTags、GetResourcesByTags 和 GetTags 这三个操作权限。
     - **资源**：选择**全部资源**。
  - **添加权限**：根据您的业务需求进行配置。
-
 5. 单击**下一步**，输入策略名称。
 6. 单击**完成**，即可完成创建。
 :::
@@ -35,7 +33,6 @@
 1. 进入 [访问管理](https://console.cloud.tencent.com/cam/policy) 策略配置页面。
 2. 单击**新建自定义策略 > 按策略语法创建**。
 3. 您可以选择空白模板或者已有的标签模板创建，此处我们选择 **QcloudTAGFullAccess** 模板。
-
 4. 单击**下一步**，可以看到模板策略默认为 `tag:*`。此处我们将 action 修改为 `name/tag:GetResourceTags`、`name/tag:GetResourcesByTags` 和 `name/tag:GetTags` 操作权限，策略语法如下所示。
 ```
 {
@@ -60,7 +57,5 @@
 </dx-tabs>
 3. 将策略关联子账号 Developer。在策略页面，找到步骤2创建的策略，在其右侧单击**关联用户/组/角色**。
 4. 在弹窗中，勾选子账号 Developer，并单击**确定**，即可将子账号 Developer 关联至该策略。
-
 5. 子账号 Developer 登录控制台，在 [存储桶列表](https://console.cloud.tencent.com/cos5/bucket) 页面，选择**标签**并输入**标签键**进行搜索，即可查询到带有此相同标签的存储桶列表。
-
 
