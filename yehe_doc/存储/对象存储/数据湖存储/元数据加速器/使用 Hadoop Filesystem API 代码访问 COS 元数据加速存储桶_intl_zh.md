@@ -22,6 +22,7 @@
 ```
 2. 参考如下 hadoop 的代码进行修改。其中的配置项可参考 [配置项说明](https://intl.cloud.tencent.com/document/product/1106/41965) 文档进行修改。**以及重点关注其中数据持久化和可见性相关的说明。**
    以下只列出了部分常见的文件系统的操作，其他的接口可参考 [Hadoop FileSystem 接口文档](https://hadoop.apache.org/docs/r2.8.2/api/org/apache/hadoop/fs/FileSystem.html)。
+
 ```java
 package com.qcloud.cos.demo;
 
@@ -217,6 +218,8 @@ public class Demo {
 			}
 }
 ```
+
+
 3. 编译和运行。
 >?
 > - 运行前，请确保已正确设置 classpath。classpath 需包含 Hadoop common 包以及 元数据加速桶依赖的 Jar 包的路径。
