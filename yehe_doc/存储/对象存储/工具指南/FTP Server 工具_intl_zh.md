@@ -129,13 +129,13 @@ log_dir             = log                  # 设置日志的存放目录，默�
 >?
 >- 如果要将每个用户绑定到不同的 bucket 上，则只需要添加 [COS_ACCOUNT_X] 的 section 即可。
 针对每个不同的 COS_ACCOUNT_X 的 section 有如下说明：
- - 每个 ACCOUNT 下的用户名（ftp_login_user_name）和用户的主目录（home_dir）必须各不相同，并且主目录必须是系统中真实存在的目录。
- - 每个 COS FTP Server 允许同时登录的用户数目不能超过100。
- - endpoint 和 region 不会同时生效，使用公有云 COS 服务只需要正确填写 region 字段即可，endpoint 常用于私有化部署环境中。当同时填写了 region 和 endpoint，则 endpoint 会优先生效。
+> - 每个 ACCOUNT 下的用户名（ftp_login_user_name）和用户的主目录（home_dir）必须各不相同，并且主目录必须是系统中真实存在的目录。
+> - 每个 COS FTP Server 允许同时登录的用户数目不能超过100。
+> - endpoint 和 region 不会同时生效，使用公有云 COS 服务只需要正确填写 region 字段即可，endpoint 常用于私有化部署环境中。当同时填写了 region 和 endpoint，则 endpoint 会优先生效。
 >- 配置文件中的 OPTIONAL 选项是提供给高级用户用于调整上传性能的可选项，根据机器的性能合理地调整上传分片的大小和并发上传的线程数，可以获得更好的上传速度，一般用户不需要调整，保持默认值即可。
 同时，提供最大连接数的限制选项。 这里如果不想限制最大连接数，可以填写0，即表示不限制最大连接数目（不过需要根据您机器的性能合理评估）。
 >- 在配置文件的 masquerade_address 配置项中，一般建议指定为客户端连接 COS FTP Server 所使用的 IP 地址。如您对此有疑问，可参见 [FTP Server 工具](https://intl.cloud.tencent.com/document/product/436/30588) 常见问题文档。
- - 当 FTP Server 有多个 IP 地址时，执行 ifconfig 命令后，得到映射到外网的网卡 IP 为10.xxx.xxx.xxx，它映射的外网 IP 假设为119.xxx.xxx.xxx。此时，若 FTP Server 未显式配置 masquerade_address 为客户端访问 server 时的外网IP（119.xxx.xxx.xxx），则 FTP Server 在 Passive 模式下，给客户端回包可能会使用内网地址（10.xxx.xxx.xxx）。这时就会出现客户端能够连上 FTP Server，但却不能正常给客户端返回数据包的情况。因此，通常情况下，建议用户将 masquerade_address 配置为客户端连接 Server 时所使用的那个 IP 地址。
+> - 当 FTP Server 有多个 IP 地址时，执行 ifconfig 命令后，得到映射到外网的网卡 IP 为10.xxx.xxx.xxx，它映射的外网 IP 假设为119.xxx.xxx.xxx。此时，若 FTP Server 未显式配置 masquerade_address 为客户端访问 server 时的外网IP（119.xxx.xxx.xxx），则 FTP Server 在 Passive 模式下，给客户端回包可能会使用内网地址（10.xxx.xxx.xxx）。这时就会出现客户端能够连上 FTP Server，但却不能正常给客户端返回数据包的情况。因此，通常情况下，建议用户将 masquerade_address 配置为客户端连接 Server 时所使用的那个 IP 地址。
 >- 配置文件中的 listen_port 配置项为 COS FTP Server 的监听端口，默认为2121。passive_port 配置项为 COS FTP Server 的数据通道监听端口范围，默认在 [60000, 65535] 区间上选择。当客户端连接 COS FTP Server 时，要确保防火墙放行 listen_port 和 passive_port 中配置的端口。
 
 ## 快速实践
