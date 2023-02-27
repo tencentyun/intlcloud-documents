@@ -1,6 +1,6 @@
 ## Metadata Acceleration Overview
 
-COS offers the metadata acceleration feature to provide high-performance file system capabilities. Metadata acceleration leverages the powerful metadata management feature of Cloud HDFS (CHDFS) at the underlying layer to allow using file system semantics for COS access. The designed system metrics can reach a bandwidth of up to 100 GB/s, over 100,000 queries per second (QPS), and a latency of milliseconds. Buckets with metadata acceleration enabled can be widely used in scenarios such as big data, high-performance computing, machine learning, and AI. For more information on metadata acceleration, see [Overview](https://intl.cloud.tencent.com/document/product/436/43305).
+COS offers the metadata acceleration feature to provide high-performance file system capabilities. Metadata acceleration leverages the powerful metadata management feature of Cloud HDFS (CHDFS) at the underlying layer to allow using file system semantics for COS access. The designed system metrics can reach a bandwidth of up to 100 GB/s, over 100,000 queries per second (QPS), and a latency of milliseconds. Buckets with metadata acceleration enabled can be widely used in scenarios such as big data, high-performance computing, machine learning, and AI. For more information on metadata acceleration, see [Metadata Acceleration Overview](https://intl.cloud.tencent.com/document/product/436/43305).
 
 ## Benefits of HDFS Access
 
@@ -10,23 +10,22 @@ In the past, big data access based on COS was mainly implemented through the Had
 
 ## Creating Bucket and Configuring the HDFS Protocol
 
-1. [Create a COS bucket](https://www.tencentcloud.com/document/product/436/13309) and enable metadata acceleration for it.
-
+1. [Create a COS bucket](https://intl.cloud.tencent.com/document/product/436/13309) and enable metadata acceleration for it.
 After the bucket is created, go to the **File List** page of the bucket, where you can upload and download files.
-
 2. On the left sidebar, click **Performance Configuration** > **Metadata Acceleration**, and you can see that metadata acceleration is enabled.
 When you create a bucket that **requires metadata acceleration to be enabled**, you need to perform the corresponding **authorization** operation as prompted. After you click **Authorize**, the HDFS protocol will be automatically enabled, and you can see the default bucket mount target information.
 
->?If the system prompts that the corresponding HDFS file system is not found, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>?If the system indicates that the corresponding HDFS file system is not found, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 >
 3. In the **HDFS Permission Configuration** column, click **Add Permission Configuration**.
 
+
 4. Select the VPC where the computing cluster resides in the **VPC Name** column, enter the IP address or range that needs to be opened in the **Node IP** column, select **Can edit** or **Can view** as the access type, and click **Save**.
->? **The HDFS permission configuration** is different from the native COS permission system. If you use HDFS to access a COS bucket, we recommend you configure HDFS permission to authorize servers in a specified VPC to access the COS bucket and enjoy the same permission experience as that of native HDFS.
+>? The **HDFS permission configuration** is different from the native COS permission system. If you use HDFS to access a COS bucket, we recommend you configure HDFS permission to authorize servers in a specified VPC to access the COS bucket and enjoy the same permission experience as that of native HDFS.
 
 ## Configuring Computing Cluster to Access COS
 
-### Environment dependencies
+### Environmental dependency
 
 |     Dependency         | chdfs-hadoop-plugin                               | COSN (hadoop-cos)                                | cos_api-bundle                                               |
 | ------------ | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
@@ -71,7 +70,7 @@ Perform the above steps on each EMR node until all JAR packages are replaced.
     -  emr.temrfs.tmp.cache.dir=/data/emr/hdfs/tmp/temrfs 
  - Modify the configuration item `fs.cosn.impl=com.qcloud.emr.fs.TemrfsHadoopFileSystemAdapter` in `core-site.xml`.
 
-4. Configure `core-site.xml` in the EMR console by adding new configuration items `fs.cosn.bucket.region` and `fs.cosn.trsf.fs.ofs.bucket.region` to specify the COS region where the bucket resides, such as `ap-shanghai`.
+4. Configure `core-site.xml` in the [EMR console](https://console.cloud.tencent.com/emr) by adding new configuration items `fs.cosn.bucket.region` and `fs.cosn.trsf.fs.ofs.bucket.region` to specify the COS region where the bucket resides, such as `ap-shanghai`.
 >!`fs.cosn.bucket.region` and `fs.cosn.trsf.fs.ofs.bucket.region` are required to specify the COS region where the bucket resides, such as `ap-shanghai`.
 >
 5. Restart resident services such as YARN, Hive, Presto, and Impala.
@@ -153,7 +152,6 @@ After all environment configuration steps are completed, you can verify the envi
 ![](https://qcloudimg.tencent-cloud.cn/raw/3dbfa5004cf6a3b9183fae20cfaa4e49.png)
 - Log in to the [COS console](https://console.cloud.tencent.com/cos) to check whether the files and directories in the bucket file list are consistent.
 
-
 ## Ranger Permission Configuration
 
 By default, the native POSIX ACL mode is adopted for authentication for the HDFS protocol. If you need to use Ranger authentication, configure as follows:
@@ -161,25 +159,22 @@ By default, the native POSIX ACL mode is adopted for authentication for the HDFS
 ### EMR environment
 
 1. The EMR environment has integrated the COS Ranger Service, so you can select it when purchasing an EMR cluster.
-2. In the HDFS authentication mode of the HDFS protocol, select the Ranger authentication mode and configure the corresponding address information of Ranger.
-
+2. In the **HDFS authentication mode** of the HDFS protocol, select the **Ranger authentication mode** and configure the corresponding address information of Ranger.
  - Add the new configuration item `fs.cosn.credentials.provider` and set it to `org.apache.hadoop.fs.auth.RangerCredentialsProvider`.
  - If you have any questions about Ranger, see [COS Ranger Permission System Solution](https://intl.cloud.tencent.com/document/product/436/39144).
 
 ### Self-built Hadoop/CDH environments
 
 1. Configure the Ranger service to access COS over the HDFS protocol. For more information, see [COS Ranger Permission System Solution](https://intl.cloud.tencent.com/document/product/436/39144).
-2. In the HDFS authentication mode of the HDFS protocol, select the Ranger authentication mode and configure the corresponding address information of Ranger.
-
+2. In the **HDFS authentication mode** of the HDFS protocol, select the **Ranger authentication mode** and configure the corresponding address information of Ranger.
  - Add the new configuration item `fs.cosn.credentials.provider` and set it to `org.apache.hadoop.fs.auth.RangerCredentialsProvider`.
- - If you have any questions about Ranger, see COS Ranger Permission System Solution.
+
 
 ## Others
 
 In a big data scenario, you can access a bucket with metadata acceleration enabled over the HDFS protocol in the following steps:
 
 1. Configure the HDFS mount target information in `core-stie.xml` as instructed in [Creating Bucket and Configuring HDFS Protocol](#1).
-2. Access the bucket with components such as Hive, MR, and Spark. For more information, see [Mounting COS Bucket in Computing Cluster](https://intl.cloud.tencent.com/document/product/436/46199).
+2. Access the bucket using components such as Hive, MR, and Spark. For more information, see [Mounting a COS Bucket in a Computing Cluster](https://intl.cloud.tencent.com/document/product/436/46199).
 3. By default, the native POSIX ACL mode is adopted for authentication. If you need to use Ranger authentication, see [COS Ranger Permission System Solution](https://intl.cloud.tencent.com/document/product/436/39144).
-
 

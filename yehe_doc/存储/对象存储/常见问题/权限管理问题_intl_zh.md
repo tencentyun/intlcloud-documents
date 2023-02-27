@@ -10,7 +10,7 @@
 
 ### 假如 SecretId、SecretKey 等密钥相关信息泄露了，该如何处理？
 
-用户可删除已泄露的密钥，并新建一个密钥。详情请参见 [访问密钥](https://intl.cloud.tencent.com/document/product/598/34227)。
+用户可删除已泄露的密钥，并新建一个密钥。详情请参见 [访问密钥](https://www.tencentcloud.com/document/product/598/34227)。
 
 ### 如何对私有读写的文件生成具有时效性的访问链接？
 
@@ -24,7 +24,7 @@
 
 ### COS 返回 403 错误，该如何处理？
 
-您可以借助 COS 团队为开发者提供的 [COS 调试工具](https://web.debugger.coshelper.com/)，通过开发者配置 Hosts 抓包 COS API 请求，智能分析请求中出现的错误，也可以按照以下思路进行排查。
+您可以借助 COS 团队为开发者提供的 [自助诊断工具](https://console.cloud.tencent.com/cos/diagnose/), 自助诊断工具可以通过请求的 RequestId，帮助您进行操作异常的诊断。
 
 1. 请检查您的以下配置信息是否正确：BucketName、APPID、Region、SecretId、SecretKey 等。
 2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。
@@ -39,7 +39,7 @@ AccessDenied 一般是由于未授权，缺少权限导致的报错。请按照�
 2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。授权操作请参见 [访问管理权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
 3. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置，详情请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
-COS 团队为开发者提供了 [COS 调试工具](https://web.debugger.coshelper.com/)，通过开发者配置 Hosts 抓包 COS API 请求，智能分析请求中出现的错误，给出错误提示和修改建议。
+COS 团队为开发者提供了 [自助诊断工具](https://console.cloud.tencent.com/cos/diagnose/), 自助诊断工具可以通过请求的 RequestId，帮助您进行操作异常的诊断。
 
 ### 存储桶访问权限已达上限怎么办？
 
@@ -70,7 +70,7 @@ COS 团队为开发者提供了 [COS 调试工具](https://web.debugger.coshelpe
 2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。授权操作请参见  [访问管理权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
 3. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置，详情请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
-COS 团队为开发者提供了 [COS 调试工具](https://web.debugger.coshelper.com/)，通过开发者配置 Hosts 抓包 COS API 请求，智能分析请求中出现的错误，给出错误提示和修改建议。
+COS 团队为开发者提供了 [自助诊断工具](https://console.cloud.tencent.com/cos/diagnose/), 自助诊断工具可以通过请求的 RequestId，帮助您进行操作异常的诊断。
 
 ### COS 如何限制他人下载文件到本地？
 
@@ -159,11 +159,16 @@ ACL 限制针对账号。我们不建议使用文件级别的 ACL 或 Policy。�
 
 若希望子账号只有特定存储桶的操作权限，可以使用子账号添加路径。详情请参见 [子账号访问存储桶列表](https://intl.cloud.tencent.com/document/product/436/17061)。
 
+
+## Ranger 鉴权和认证常见问题
+
+具体可参见 [Ranger 鉴权和认证常见问题](https://intl.cloud.tencent.com/document/product/1106/41958)。
+
 ## 其他问题
 
 ### COS 资源访问异常，该如何处理？
 
-请参考 [资源访问异常](https://intl.cloud.tencent.com/document/product/436/40167) 文档进行排查处理。
+请参考 [资源访问异常](https://www.tencentcloud.com/document/product/436/40167) 文档进行排查处理。
 
 ### 使用 CDN 域名访问 COS 返回 HTTP ERROR 403，该如何处理？
 

@@ -2,7 +2,8 @@
 
 A bucket is the carrier of objects, which can be understood as the "container" for storing objects, and this "container" has no upper limit of capacity. Objects are stored in buckets in a flat structure with no concept of folders and directories. You can choose to store objects in one or multiple buckets.
 
->?A bucket can contain any number of objects, but one root account can create only up to 200 buckets.
+>? A bucket can contain any number of objects, but one root account can create only up to 200 buckets.
+>
 
 
 ## Bucket Naming Conventions
@@ -29,14 +30,19 @@ Region is where the COS IDC is located. COS allows users to create buckets in di
 
 For example, if your business is distributed in South China, creating buckets in the Guangzhou region can accelerate object uploads and downloads. For more information on regions, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 
->!A region must be specified when a bucket is created, and cannot be modified once specified. All objects in the bucket are stored in the IDC in the region. You cannot set regions for objects.
-
-
+>! A region must be specified when a bucket is created and cannot be modified once specified. All objects in the bucket are stored in the IDC in the region. You cannot set regions for objects.
+>
 
 
 ## Types of Permission
 
 A bucket provides two types of permissions by default: public and user.
+
+>?
+>- If the bucket permission is private read/write or a specified account is granted the permission, an object request needs to carry a signature for identity verification. For more information on signature, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>- If the bucket permission is public read/private write or public read/write, an object request doesn't need to carry a signature, and anonymous users can directly access the object at the URL. However, your data may be leaked. Therefore, proceed with caution.
+
+
 
 ### Public permissions
 Public permissions include "Private Read/Write", "Public Read/Private Write", and "Public Read/Write". You can modify bucket access permissions in **Permission Management** of the bucket in the COS console. For more information, see [Basic Concepts of Access Control](https://intl.cloud.tencent.com/document/product/436/30581).
@@ -53,12 +59,14 @@ Public permissions include "Private Read/Write", "Public Read/Private Write", an
 A root account has all the permissions (full access) for buckets by default. In addition, you can add sub-accounts that are granted permissions to read/write data and permissions, and even full access.
 
 
+
+
 ## Bucket Operations
 
 
 You can manage buckets and configure attributes of buckets in various methods such as the Tencent Cloud console, tools, APIs, and SDKs. For example, you can set a bucket for hosting a static website or set access permission on a bucket. The following documents describe how to configure some features. For more information on bucket configuration, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). 
 - [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309)
-- [Setting up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984)
+- [Setting Up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984)
 - [Setting Access Permission](https://intl.cloud.tencent.com/document/product/436/13315)
 - [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319)
 

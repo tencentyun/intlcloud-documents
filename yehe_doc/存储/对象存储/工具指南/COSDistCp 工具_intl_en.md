@@ -1,4 +1,4 @@
-## Overview
+## Feature Overview
 
 COSDistCp is a MapReduce-based distributed file copy tool mainly used for data copy between HDFS and COS. It introduces the following features:
 - Performs incremental file migration and data verification based on length and CRC checksum.
@@ -24,12 +24,27 @@ Hadoop 2.6.0 or above; Hadoop-COS 5.9.3 or above
 
 #### Obtaining the COSDistCp JAR package
 
-- If your Hadoop version is 2.x, you can download [cos-distcp-1.10-2.8.5.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5-md5.txt) of the package.
-- If your Hadoop version is 3.x, you can download [cos-distcp-1.10-3.1.0.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0-md5.txt) of the package.
+- If your Hadoop version is 2.x, you can download [cos-distcp-1.12-2.8.5.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-2.8.5.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-2.8.5-md5.txt) of the package.
+- If your Hadoop version is 3.x, you can download [cos-distcp-1.12-3.1.0.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-3.1.0.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-3.1.0-md5.txt) of the package.
 
 #### Installation notes
 
 In the Hadoop environment, install [Hadoop-COS](https://intl.cloud.tencent.com/document/product/436/6884) and then run the COSDistCp tool.
+
+You can download the corresponding versions of COSDistCp, Hadoop-COS, and cos_api-bundle JAR packages from download addresses listed above according to the Hadoop version. Then, specify the Hadoop-COS-related parameters to perform the copy operation, where the JAR package addresses should be the local addresses:
+
+```plaintext
+hadoop jar cos-distcp-${version}.jar \
+-libjars cos_api-bundle-${version}.jar,hadoop-cos-${version}.jar \
+-Dfs.cosn.credentials.provider=org.apache.hadoop.fs.auth.SimpleCredentialProvider \
+-Dfs.cosn.userinfo.secretId=COS_SECRETID \
+-Dfs.cosn.userinfo.secretKey=COS_SECRETKEY \
+-Dfs.cosn.bucket.region=ap-guangzhou \
+-Dfs.cosn.impl=org.apache.hadoop.fs.CosFileSystem \
+-Dfs.AbstractFileSystem.cosn.impl=org.apache.hadoop.fs.CosN \
+--src /data/warehouse \
+--dest cosn://examplebucket-1250000000/warehouse
+```
 
 
 ## How It Works
@@ -37,13 +52,13 @@ In the Hadoop environment, install [Hadoop-COS](https://intl.cloud.tencent.com/d
 COSDistCp uses the MapReduce framework. The multi-process and multi-thread tool performs operations such as file copy, data verification, compression, file attribute preservation, and copy retries. COSDistCp will overwrite files with the same name in the destination location. If data copy or verification fails, the corresponding file may fail to be copied and information about these files will be written in a temporary directory. If new files are added to your source file system or the file content changes, you can use the `--skipMode` or `--diffMode` parameter to compare the length or CRC checksum of the files to implement data verification and incremental file migration.
 
 
-## Parameters
+## Parameter description
 
-You can run the `hadoop jar cos-distcp-${version}.jar --help` (`${version}` is the version number) command to view the COSDistCp-supported parameters. The following table describes the parameters of the COSDistCp of the current version:
+You can run the `hadoop jar cos-distcp-${version}.jar --help` (`${version}` is the version number) command under the `hadoop` user to view the COSDistCp-supported parameters. The following table describes the parameters of the COSDistCp of the current version:
 
 
 | Attribute Key | Description | Default Value | Required |
-| :------------------------------: | :----------------------------------------------------------- | :----: | :------: |
+|:---------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------:|:----:|
 |  --help | Outputs parameters supported by COSDistCp. <br>Example: --help | None | No |
 | --src=LOCATION | Location of the data to copy. This can be either an HDFS or COS location. <br>Example: --src=hdfs://user/logs/ | None | Yes |
 |         --dest=LOCATION          | Destination for the data. This can be either an HDFS or COS location. <br>Example: --dest=cosn://examplebucket-1250000000/user/logs |   None  | Yes |
@@ -54,14 +69,14 @@ You can run the `hadoop jar cos-distcp-${version}.jar --help` (`${version}` is t
 |         --groupBy=PATTERN   | A regular expression to concatenate text files that match the regular expression. </br>Example: --groupBy='.\*group-input/(\d+)-(\d+).\*' |  None  |   No   |
 | --targetSize=VALUE | The size (in MB) of the files to create. This parameter is used together with `--groupBy`. </br>Example: --targetSize=10  | None |  No  |
 |       --outputCodec=VALUE        | Compression method of output file. Valid values: `gzip`, `lzo`, `snappy`, `none`, `keep`. Here: </br> 1. `keep` indicates to keep the compression method of the original file.<br>2. `none` indicates to decompress the file based on the file extension.</br>Example: --outputCodec=gzip </br>**Note: if the `/dir/test.gzip` and `/dir/test.gz` files exist, and you specify the output format as `lzo`, only `/dir/test.lzo` will be retained.** |  keep  |    No    |
-|        --deleteOnSuccess         | Deletes the source file immediately after it is successfully copied to the destination directory.</br>Example: --deleteOnSuccess</br>**Note: v1.7 and above no longer provide this parameter. We recommend you delete the data in the source file system after migrating the data successfully and using `--diffMode` for verification.** | false  |    No    |
-| --multipartUploadChunkSize=VALUE | The size (in MB) of the multipart upload part transferred to COS using the Hadoop-COS plugin. COS supports up to 10,000 parts. You can set the value based on the file size.</br>Example: --multipartUploadChunkSize=20 | 8 |   No   |
+|        --deleteOnSuccess         | Deletes the source file immediately after it is successfully copied to the destination directory.</br>Example: --deleteOnSuccess</br>**Note: v1.7 and later no longer provide this parameter. We recommend you delete the data in the source file system after migrating the data successfully and using `--diffMode` for verification.** | false  |    No    |
+| --multipartUploadChunkSize=VALUE | The size (in MB) of the multipart upload part transferred to COS using the Hadoop-COS plugin. COS supports up to 10,000 parts. You can set the value based on the file size.</br>Example: --multipartUploadChunkSize=20 | 8 MB |   No   |
 |    --cosServerSideEncryption     | Specifies whether to use SSE-COS for encryption on the COS server side. </br>Example: --cosServerSideEncryption | false | No |
 |      --outputManifest=VALUE      | Creates a file (Gzip compressed) that contains a list of all files copied to the destination location. </br>Example: --outputManifest=manifest.gz | None | No |
 |    --requirePreviousManifest     | If this parameter is set to `true`, `--previousManifest=VALUE` must be specified for incremental copy. </br>Example: --requirePreviousManifest |  false  | No |
 |     --previousManifest=LOCATION     | A manifest file that was created during the previous copy operation. <br>Example: --previousManifest=cosn://examplebucket-1250000000/big-data/manifest.gz |  None  |   No   |
 |        --copyFromManifest        | Copies files specified in `--previousManifest` to the destination file system. This is used together with `previousManifest=LOCATION`. <br>Example: --copyFromManifest |  false  |  No |
-| --storageClass=VALUE | The storage class to use. Valid values are `STANDARD`, `STANDARD_IA`, `ARCHIVE`, `DEEP_ARCHIVE`, and `INTELLIGENT_TIERING`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).  | None   |   No   |
+| --storageClass=VALUE | The storage class to use. Valid values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`, `DEEP_ARCHIVE`, and `INTELLIGENT_TIERING`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).  | None   |   No   |
 |        --srcPrefixesFile=LOCATION        | A local file that contains a list of source directories, one directory per line. </br>Example: --srcPrefixesFile=file:///data/migrate-folders.txt |  None    |   No  |
 | --skipMode=MODE  | Verifies whether the source and destination files are the same before the copy. If they are the same, the file will be skipped. Valid values are `none` (no verification), `length`, `checksum`, `length-mtime`, and `length-checksum`. </br>Example: --skipMode=length | length-checksum | No |
 | --checkMode=MODE | Verifies whether the source and destination files are the same when the copy is completed. Valid values are `none` (no verification), `length`, `checksum`, `length-mtime`, and `length-checksum`.<br/>Example: --checkMode=length-checksum | length-checksum | No |
@@ -75,7 +90,7 @@ You can run the `hadoop jar cos-distcp-${version}.jar --help` (`${version}` is t
 | --promGatewayJobName=VALUE | JobName to report to Prometheus PushGateway </br>Example: --promGatewayJobName=cos-distcp-hive-backup | None | No |
 | --promCollectInterval=VALUE | Interval to collect MapReduce jobs, in ms </br>Example: --promCollectInterval=5000 | 5000 | No |
 | --promPort=VALUE | Server port to expose Prometheus metrics <br>Example: --promPort=9028 | None | No |
-|      --enableDynamicStrategy      | Enables the dynamic task assignment policy to make tasks with quicker migration migrate more files.</br>**Note: this mode has certain limits; for example, the task counter may be inaccurate if the process is exceptional. Therefore, use `--diffMode` to verify the data after migration.** </br>Example: --enableDynamicStrategy            |   false   |    No    |
+|      --enableDynamicStrategy      | Enables the dynamic task assignment policy to make tasks with quicker migration migrate more files.</br>**Note: This mode has certain limits; for example, the task counter may be inaccurate if the process is abnormal. Therefore, use `--diffMode` to verify the data after migration.** </br>Example: --enableDynamicStrategy            |   false   |    No    |
 | --splitRatio=VALUE | Split ratio of the dynamic strategy. A higher `splitRatio` indicates a smaller job granularity. </br>Example: --splitRatio=8 | 8 | No |
 | --localTemp=VALUE | Local folder to store the job files generated by the dynamic strategy </br>Example: --localTemp=/tmp | /tmp | No |
 | --taskFilesCopyThreadNum=VALUE | Number of concurrency to copy the job files generated by the dynamic strategy to the HDFS </br>Example: --taskFilesCopyThreadNum=32 | 32 | No |
@@ -84,8 +99,10 @@ You can run the `hadoop jar cos-distcp-${version}.jar --help` (`${version}` is t
 |      --bandWidth      | Maximum bandwidth for reading each migrated file (in MB/s). Default value: -1, which indicates no limit on the read bandwidth.</br>Example: --bandWidth=10            |   None   |    No    |
 |      --jobName      | Migration task name.</br>Example: --jobName=cosdistcp-to-warehouse            |   None   |    No    |
 |      --compareWithCompatibleSuffix  | Whether to change the source file extension gzip to gz and lzop to lzo when using the `--skipMode` and `--diffMode` parameters.</br>Example: --compareWithCompatibleSuffix |   None   |    No    |
+|             --delete              | Moves files that exist in the source directory but not in the target directory to the separate `trash` directory and generates the file list in order to ensure the file consistency between the source and target directories. </br>Note: This parameter cannot be used together with `--diffMode`.                                                                                                                           |    None   |  No   |
+|          --deleteOutput           | Specifies the HDFS output directory for `delete`. This directory must be empty. <br/>Example: --deleteOutput=/dele-output                                                                                                                                                   |  None   |  No   |
 
-## Examples
+## Example
 
 ### Viewing the help option
 
@@ -204,13 +221,13 @@ hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://example
 
 After the above command is executed successfully, the counter information based on the file list of the source file system will be output (ensure that your task submitting machine is configured with INFO log output for MapReduce jobs on the submission end). You can analyze whether the source and destination files are the same based on the counter information as detailed below:
 
-1. SUCCESS: The source and destination files are the same.
+1. SUCCESS: the source and destination files are the same.
 2. DEST_MISS: The destination file does not exist.
 3. SRC_MISS: The source file contained in the source file manifest is not found during the verification.
 4. LENGTH_DIFF: Sizes of the source and destination files are different.
 5. CHECKSUM_DIFF: CRC checksums of the source and destination files are different.
 6. DIFF_FAILED: The `diff` operation fails due to insufficient permissions or other reasons.
-7. TYPE_DIFF: The source is a directory but the destination is a file.
+7. TYPE_DIFF: the source is a directory but the destination is a file.
 
 In addition, COSDistCp will generate a list of different files in the `/tmp/diff-output/failed` directory in HDFS (or `/tmp/diff-output` for v1.0.5 or earlier versions). You can run the following command to obtain the list of different files except for those recorded as SRC_MISS:
 
@@ -240,7 +257,7 @@ hadoop jar cos-distcp-${version}.jar   --src /data/warehouse --dest cosn://examp
 
 ### Restricting the read bandwidth for a single file
 
-Run the command with the `--bandWidth` parameter (in MB). The following command example restricts the read bandwidth of each copied file to 10 MB/s:
+Run the command with the `--bandWidth` parameter (in MB). The following example command restricts the read bandwidth of each copied file to 10 MB/s:
 
 ```plaintext
 hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --bandWidth=10
@@ -369,7 +386,7 @@ hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://exampl
 ```
 
 Download the sample [Grafana Dashboard](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/COSDistcp-Grafana-Dashboard.json) and import it. The Grafana dashboard will be as follows:
-![COSDistcp-Grafana](https://qcloudimg.tencent-cloud.cn/raw/004d8f1a4fc79011c26f6667f085a3b7.png)
+![COSDistcp-Grafana](https://staticintl.cloudcachetci.com/yehe/backend-news/2Rc8914_2.png)
 
 
 ### Alarms for copy failures
@@ -449,7 +466,7 @@ hadoop jar cos-distcp-${version}.jar \
 --dest cosn://examplebucket-1250000000/warehouse
 ```
 
-### What do I do if the result shows that some files failed to be copied?
+### What should I do if the result shows that some files failed to be copied?
 
 COSDistCp will retry 5 times for IOException occurred during the copy process. If the copy still fails, information about the failed files will be written to the `/tmp/${randomUUID}/output/failed/` directory, where `${randomUUID}` is a random string. Common reasons for the copy failure are as follows:
 1. The source file contained in the copy manifest is not found during the copy (recorded as SRC_MISS).
@@ -475,7 +492,7 @@ If the network is abnormal, the source file is missing, or the permissions are i
 - If the destination location is not COS, COSDistCp will attempt to delete the destination files.
 
 ### There are some invisible incomplete multipart uploads in COS buckets, which occupy storage space. How do I deal with them?
-COS buckets may have some incomplete multipart uploads occupying storage space due to events such as server exception and process kill. You can configure an incomplete multipart upload deletion rule as instructed in [Setting Lifecycle](https://intl.cloud.tencent.com/document/product/436/14605) to clear them.
+COS buckets may have some incomplete multipart uploads occupying storage space due to incidents such as server exception and process kill. You can configure an incomplete multipart upload deletion rule as instructed in [Setting Lifecycle](https://intl.cloud.tencent.com/document/product/436/14605) to clear them.
 
 ### A memory overflow and task timeout occurred during migration. How do I adjust parameters?
 During migration, both COSDistCp and the tools used to access COS and CHDFS, based on their own logic, occupy some memory. To avoid memory overflow and task timeout, you can adjust parameters of some MapReduce jobs, for example:
@@ -486,3 +503,6 @@ As shown in the example above, the value of `mapreduce.task.timeout` is changed 
 
 ### How do I control the migration bandwidth of the migration task through migration over Direct Connect?
 The formula for calculating the total bandwidth limit of COSDistCp migration is: taskNumber x workerNumber x bandWidth. You can set `workerNumber` to 1, use the `taskNumber` parameter to control the number of concurrent migrations, and use the `bandWidth` parameter to control the bandwidth of a single concurrent migration.
+
+
+

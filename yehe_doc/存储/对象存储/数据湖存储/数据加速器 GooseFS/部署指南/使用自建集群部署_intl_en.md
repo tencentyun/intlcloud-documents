@@ -1,4 +1,4 @@
-This document describes how to deploy, configure, and run GooseFS on a single server, in a cluster, and the Tencent Cloud EMR cluster that has not integrated with GooseFS.
+This document describes how to deploy, configure, and run GooseFS on a single server, in a cluster, and in the Tencent Cloud EMR cluster that has not integrated with GooseFS.
 
 ## Environment Requirements
 
@@ -20,7 +20,7 @@ Currently, GooseFS can work with Linux/MacOS running a mainstream x86/x64 framew
 
 ### Software environments
 
-- Red Hat Enterprise Linux 5.5 or later, Ubuntu Linux 12.04 LTS or later (supported if batch deployment is not used), CentOS 7.4 or later, TLinux 2.x (Tencent Linux 2.x), and Intel-based MacOS 10.8.3 or later. If you use Tencent Cloud's CVM, we recommend you use CentOS 7.4, Tencent (TLinux 2.x), or TencentOS Server 2.4.
+- Red Hat Enterprise Linux 5.5 or later, Ubuntu Linux 12.04 LTS or later (supported if batch deployment is not used), CentOS 7.4 or later, TLinux 2.x (Tencent Linux 2.x), and Intel-based MacOS 10.8.3 or later. If you use Tencent Cloud CVM, we recommend you use CentOS 7.4, Tencent (TLinux 2.x), or TencentOS Server 2.4.
 - OpenJDK 1.8/Oracle JDK 1.8. Note that JDK 1.9 or later versions have not been verified.
 - Supports SSH tools (including SSH and SCP tools), Expect Shell (for batch deployment), and Yum Package Manager.
 
@@ -31,7 +31,7 @@ Currently, GooseFS can work with Linux/MacOS running a mainstream x86/x64 framew
 
 ### Security group and permission requirements
 
-In most cases, we recommend you use a dedicated Linux account to deploy and run GooseFS. For example, in the self-built cluster and EMR environment, you can use the Hadoop user to deploy and run GooseFS. If batch deployment is used, the following permissions are also needed:
+In most cases, you are advised to use a dedicated Linux account to deploy and run GooseFS. For example, in the self-built cluster and EMR environment, you can use the Hadoop user to deploy and run GooseFS. If batch deployment is used, the following permissions are also needed:
 
 - Permission to switch to the root account or use `sudo`.
 - The running and deployment account needs to have permission to read and write to the installation directory.
@@ -53,7 +53,7 @@ The pseudo–distribution framework is mainly used for trying out and debugging 
 - Set `goosefs.master.hostname` to `localhost` in `conf/goosefs-site.properties`.
 - In `conf/goosefs-site.properties`, set `goosefs.master.mount.table.root.ufs` to the directory in the local file system, such as `/tmp` or `/data/goosefs`.
 
-We recommend you set SSH passwordless login for localhost. Otherwise, you need to enter its login password for operations such as formatting and starting.
+You are advised to set SSH passwordless login for localhost. Otherwise, you need to enter its login password for operations such as formatting and starting.
 
 ### Running
 
@@ -93,7 +93,7 @@ $ goosefs fs ls /
 
 ```
 
-The GooseFS CLI tool allows you to perform all kinds of operations on namespaces, tables, jobs, file systems, and more to manage and access GooseFS. For more information, see our documentation or run the `goosefs -h` command to view the help messages.
+The GooseFS CLI tool allows you to perform all kinds of operations on namespaces, tables, jobs, file systems, and more to manage and access GooseFS. For more information, please see our documentation or run the `goosefs -h` command to view the help messages.
 
 ## Cluster Deployment and Running
 
@@ -129,7 +129,7 @@ $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
 goosefs.master.hostname=<MASTER_HOSTNAME>
 goosefs.master.mount.table.root.ufs=<STORAGE_URI>
 ```
-Set `goosefs.master.hostname` to the hostname or IP of the master node, and `goosefs.master.mount.table.root.ufs` to the URI in the under file system (UFS) that the GooseFS root directory is mounted to. Note that this URI must be accessible for both the master and worker nodes, so local directory is not supported.
+Set `goosefs.master.hostname` to the hostname or IP of the master node, and `goosefs.master.mount.table.root.ufs` to the URI in the under file system (UFS) to which the GooseFS root directory is mounted. Note that this URI must be accessible for both the master and worker nodes and therefore it cannot be a local directory.
 
 For example, you can mount a COS path to the root directory of GooseFS with `goosefs.master.mount.table.root.ufs=cosn://bucket-1250000000/goosefs/`.
 
@@ -158,7 +158,7 @@ Finally, run `./bin/goosefs-start.sh all` to start the GooseFS cluster.
 
 ### HA framework deployment
 
-The standalone framework that uses only one master node might lead to a single point of failure (SPOF). Therefore, we recommend you deploy multiple master nodes in the production environment to adopt an HA framework. One of the master nodes will become the leader node that provides services, while other standby nodes will share journals synchronously to maintain the same state as the leader node. If the leader node fails, one of the standby nodes will automatically replace the leader node to continue providing services. In this way, you can avoid SPOFs and make the framework more highly available.
+The standalone framework that uses only one master node might lead to a single point of failure (SPOF). Therefore, you are advised to deploy multiple master nodes in the production environment to adopt an HA framework. One of the master nodes will become the leader node that provides services, while other standby nodes will share journals synchronously to maintain the same state as the leader node. If the leader node fails, one of the standby nodes will automatically replace the leader node to continue providing services. In this way, you can avoid SPOFs and make the framework more highly available.
 
 Currently, GooseFS supports using Raft logs or ZooKeeper to ensure the strong consistency of the leader and standby nodes. The deployment of each mode is described below.
 
@@ -177,7 +177,7 @@ goosefs.master.embedded.journal.addresses=<EMBBEDDED_JOURNAL_ADDRESS>
 
 The configuration items are described as follows:
 -  Set `goosefs.master.mount.table.root.ufs` to the underlying storage URI that is mounted to the GooseFS root directory.
--  Set `goosefs.master.embedded.journal.addresses` to the `ip:embedded_journal_port` or `host:embedded_journal_port` of all standby nodes, such as `192.168.1.1:9202,192.168.1.2:9202,192.168.1.3:9202`. The default value of `embedded_journal_port` is 9202.
+-  Set `goosefs.master.embedded.journal.addresses` to the `ip:embedded_journal_port` or `host:embedded_journal_port` of all standby nodes. The default value of `embedded_journal_port` is 9202. For example, `goosefs.master.embedded.journal.addresses` can be set to 192.168.1.1:9202, 192.168.1.2:9202, and 192.168.1.3:9202. 
 
 The deployment based on Raft embedded logs uses [copycat](https://github.com/atomix/copycat) to select a leader node. Therefore, if you use Raft for an HA framework, do not mix it with ZooKeeper.
 
@@ -218,7 +218,7 @@ $ ./bin/goosefs fsadmin report
 
 To set up an HA GooseFS framework based on ZooKeeper, you need to:
  - Have a ZooKeeper cluster. GooseFS uses ZooKeeper to select the leader node, and the client and worker nodes use ZooKeeper to query the leader node.
- - Have a highly available and strongly consistent shared file system, which must be accessible for all GooseFS master nodes. The leader will write the logs to the file system, and standby nodes will read logs from the file system constantly and replay logs to ensure state consistency. We recommend you use HDFS or COS (for example, `hdfs://10.0.0.1:9000/goosefs/journal` or `cosn://bucket-1250000000/journal`) as the shared file system.
+ - Have a highly available and strongly consistent shared file system, which must be accessible for all GooseFS master nodes. The leader will write the logs to the file system, and standby nodes will read logs from the file system constantly and replay logs to ensure state consistency. You are advised to use HDFS or COS (for example, `hdfs://10.0.0.1:9000/goosefs/journal` or `cosn://bucket-1250000000/journal`) as the shared file system.
 
 The configurations are as follows:
 
@@ -229,16 +229,16 @@ goosefs.master.journal.type=UFS
 goosefs.master.journal.folder=<JOURNAL_URI>
 ```
 
-Note that `JOURNAL_URI` in ZK mode must use shared storage. Then, use `./bin/goosefs copyDir conf/` to sync the configurations to all nodes in the cluster, and use `./bin/goosefs-start.sh all` to start the cluster.
+Note that `JOURNAL_URI` in ZK mode must be a URI of the shared storage system. Then, use `./bin/goosefs copyDir conf/` to sync the configurations to all nodes in the cluster, and use `./bin/goosefs-start.sh all` to start the cluster.
 
 
 ## GooseFS Process List
 
-After the `goosefs-start.sh all` script is executed and GooseFS is run, the following processes will run in the cluster:
+After the `goosefs-start.sh all` script is executed and GooseFS is started, the following processes will run in the cluster:
 
 | Process | Description |
 | ---------------- | ----------------------------------- |
-| GooseFSMaster    | Default RPC port: 9200; web port: 9201  |
+|GooseFSMaster   | Default RPC port: 9200; web port: 9201  |
 |  GooseFSWorker  | Default RPC port: 9203; web port: 9204   |
 |  GooseFSJobMaster    | Default RPC port: 9205; web port: 9206   |
 |  GooseFSProxy      |   Default web port: 9211   |

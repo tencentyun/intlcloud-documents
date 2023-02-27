@@ -1,25 +1,25 @@
 ## Overview
 
-When using the data processing workflow service, you usually need to set a series of parameters, which can be combined through a template. This **simplifies your operations** and allows you to reuse the configured parameters with no need to enter them repeatedly.
+When using the data processing workflow feature, you usually need to set a series of parameters, which can be combined through a template. This **simplifies your operations** and allows you to reuse the configured parameters with no need to enter them repeatedly.
 
-For media processing features such as audio/video transcoding, audio/video splicing, video frame capturing, and video-to-animated image conversion, you need to specify a template when creating a job or workflow. The template page provides **preset templates**, and you can also **customize templates** based on your business needs.
+For media processing features such as audio/video transcoding, audio/video splicing, video frame capturing, and video to animated image conversion, you need to specify a template when creating a job or workflow. The template page provides **system templates**, and you can also **customize templates** based on your business needs.
 
-## Preset Templates
+## System Templates
 
-The system combines common parameters in advance into preset templates, so that you can use them directly. When creating a job or workflow, you can select such a template by the template name.
+The system combines common parameters in advance into system templates, so that you can use them directly. When creating a job or workflow, you can select such a template by the template name.
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to manipulate.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to view templates of different processing types.
+3. Click the name of the bucket that you want to operate.
+4. On the left sidebar, select **Data Processing Workflow** > **Template Configuration** to view templates of different processing types.
 ![](https://qcloudimg.tencent-cloud.cn/raw/31cd460b2a865fb92c2f26c3d179fd02.png)
 Click **View** in the **Operation** column to view template details.
 >?
-> - Currently, the system provides 15 **audio/video transcoding**, three **video frame capturing**, and 18 **video-to-animated image conversion** preset templates.
-> - You can only view the information of preset templates but cannot edit or delete them.
+> - Currently, the system provides 15 **audio/video transcoding**, 3 **video frame capturing**, and 18 **video to animated image conversion** templates.
+> - You can view the information of system templates but cannot edit or delete them.
 > 
 
-#### Preset templates for audio/video transcoding
+#### System templates for audio/video transcoding
 
 | Template ID | Template Name | Container Format | Video Encoding Format | Resolution | Video Bitrate | Audio Encoding Format | Audio Bitrate |
 | ---------------------------------- | -------- | -------- | ------------ | ------------------ | --------- | ------------ | -------- |
@@ -41,7 +41,7 @@ Click **View** in the **Operation** column to view template details.
 
 
 
-#### Preset templates for video frame capturing
+#### System templates for video frame capturing
 
 | Template ID | Template Name | Frame Capturing Start Time | Frame Capturing Interval | Max Frame Count Per Video | Output Image Size | Output Format |
 | ---------------------------------- | ---------------------- | -------------- | -------- | ---------------- | ----------------- | -------- |
@@ -49,7 +49,7 @@ Click **View** in the **Operation** column to view template details.
 | t0a60a2bc71a4b40c7b3d7f7e8a2779a81 | snapshot\_640 \* 360\_2  | 0s            | 10s     | 5                | 640 \* 360 px  | JPEG     |
 | t07740e32081b44ad7a0aea03adcffd54a | snapshot\_1280 \* 720\_3 | 0s            | 10s     | 5                | 1280 \* 720 px | JPEG     |
 
-#### Preset templates for video-to-animated image conversion
+#### System templates for video to animated image conversion
 
 | Template ID | Template Name | Transcoding Start Time | Transcoding Duration | Frame Extraction Method | Output Animated Image Frame Rate | Output Animated Image Size | Output Format | Output Animated Image Quality |
 | ---------------------------------- | --------------- | ------------ | -------- | ----------------- | -------------------- | -------------- | -------- | ------------ |
@@ -76,7 +76,7 @@ Click **View** in the **Operation** column to view template details.
 
 ## Custom Template
 
-If preset templates cannot meet your needs, use custom templates. Currently, you can create custom templates for **audio/video transcoding**, **top speed codec transcoding**, **highlights generation (also known as video montage)**, **video frame capturing**, **video-to-animated image conversion**, **video watermark**, **audio/video splicing**, **voice separation (also known as voice/sound separation)**, **video enhancement**, **super resolution**, **image processing**, and **broadcast media format transcoding**.
+If system templates cannot meet your needs, use custom templates. Currently, you can create custom templates for **audio/video transcoding**, **top speed codec transcoding**, **highlights generation**, **video frame capturing**, **video to animated image conversion**, **video watermark**, **audio/video splicing**, **voice/sound separation**, **video enhancement**, **super-resolution**, **image processing**, and **broadcast media format transcoding**.
 
 ### Audio/Video transcoding
 
@@ -86,14 +86,16 @@ The audio/video transcoding feature converts an audio/video file bitstream. It c
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
-5. Select **Audio/Video Transcoding** and click **Create Transcoding Template**.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Template Configuration** to enter the template configuration page.
+5. Select **Media Processing** > **Audio/Video Transcoding** and click **Create Transcoding Template**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/92e19a474034280ecb0036a2ae17a100.png)
 6. In the **Create Transcoding Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
  - Transcoding Type: You can select video or audio transcoding.
  - Container Format: Video transcoding supports the MP4, FLV, HLS, TS, MKV, and WebM formats. Audio transcoding supports the MP3, AAC, AMR, FLAC, and WebM formats.
+ - Encoding Format: H264, H265, AV1, VP8, and VP9 are supported.
+ - Bitrate: Adaptive bitrate is supported, which can automatically analyze the video content to set the optimal bitrate.
  - Transcoding Duration: You can select the input file duration or customize the duration.
  - Audio/Video Parameters: You can customize audio/video parameters as needed.
 7. Click **OK**.
@@ -101,7 +103,7 @@ After successfully creating the template, you can **view**, **edit**, or **delet
 >? You can use the template when creating an audio/video transcoding job as instructed in [Configuring Job](https://intl.cloud.tencent.com/document/product/436/46409) or creating a workflow as instructed in [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408).
 >
 
-### Top speed codec transcoding
+### TSC transcoding
 
 The top speed codec transcoding feature improves the subjective image quality of a video at a low bitrate. Compared with regular audio/video transcoding, it outputs smaller files and clearer video images and delivers a better visual experience with guaranteed low network resource usage. You can customize parameters such as codec, resolution, and bitrate in a custom top speed codec transcoding template.
 
@@ -110,11 +112,11 @@ The top speed codec transcoding feature improves the subjective image quality of
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Template Configuration** to enter the template configuration page.
 5. Select **Top Speed Codec Transcoding** and click **Create Top Speed Codec Transcoding Template**.
 
-6. In the **Create Top Speed Codec Transcoding Template** window, configure the following items:
+6. In the **Create Broadcast Media Format Transcoding Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
  - Transcoding Type: It is video transcoding by default.
  - Container Format: Supported formats include MP4 and HLS.
@@ -122,7 +124,7 @@ The top speed codec transcoding feature improves the subjective image quality of
  - Audio/Video Parameters: You can customize audio/video parameters as needed.
 7. Click **OK**.
 After successfully creating the template, you can **view**, **edit**, or **delete** it in the custom template list.
->? You can use the template when creating a top speed codec transcoding job as instructed in [Configuring Job](https://intl.cloud.tencent.com/document/product/436/46409) or creating a workflow as instructed in [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408).
+>? You can use the template when creating a broadcast media format transcoding job as instructed in [Configuring Job](https://intl.cloud.tencent.com/document/product/436/46409) or creating a workflow as instructed in [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408).
 >
 
 ### Broadcast media format transcoding
@@ -134,8 +136,8 @@ This feature processes special formats such as XAVC and ProRes.
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Template Configuration** to enter the template configuration page.
 5. Select **Broadcast Media Format Transcoding** and click **Create Broadcast Media Format Transcoding Template**.
 
 6. In the **Create Broadcast Media Format Transcoding Template** window, configure the following items:
@@ -157,11 +159,11 @@ The highlights generation feature automatically extracts highlights from a video
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Template Configuration** to enter the template configuration page.
 5. Select **Highlights Generation** and click **Create Highlights Generation Template**.
 
-6. In the **Create Highlights Generation Template** window, configure the following items:
+6. In the **Create Voice Separation Template** window, configure the following items:
 >? Currently, highlights generation can be used only for landscape, food, street, and vlog scenarios and will support more scenarios in the future. If you want to customize this feature, [contact us](https://intl.cloud.tencent.com/contact-sales) for assistance.
 >
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
@@ -183,8 +185,8 @@ The video frame capturing feature captures the frames of a video at specified ti
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Template Configuration** to enter the template configuration page.
 5. Select **Video Frame Capturing** and click **Create Video Frame Capturing Template**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ef68628bf5ad449bfc87bd15e9434f70.png)
 6. In the **Create Video Frame Capturing Template** window, configure the following items:
@@ -206,15 +208,15 @@ After successfully creating the template, you can **view**, **edit**, or **delet
 
 ### Video-to-animated image conversion
 
-The video-to-animated image conversion feature converts a video to animated images. You can customize the template name, transcoding start time, transcoding duration, frame extraction method, output animated image frame rate, and output animated image size in a custom video to animated image conversion template.
+The video to animated image conversion feature converts a video to animated images. You can customize the template name, transcoding start time, transcoding duration, frame extraction method, output animated image frame rate, and output animated image size in a custom video to animated image conversion template.
 
 #### Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
-5. Select **Video-to-Animated Image Conversion** and click **Create Video to Animated Image Conversion Template**.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
+5. Select **Video to Animated Image Conversion** and click **Create Video to Animated Image Conversion Template**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3768b371824c8a48a0a7efb096c29b56.png)
 6. In the **Create Video to Animated Image Conversion Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
@@ -244,8 +246,8 @@ The video watermark feature adds a text or image watermark to a video during tra
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Template Configuration** to enter the template configuration page.
 5. Select **Video Watermark** and click **Create Video Watermark Template**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/972bd876e210a6ae96728c9075b4a605.png)
 6. In the **Create Video Watermark Template** window, configure the following items:
@@ -263,6 +265,7 @@ The video watermark feature adds a text or image watermark to a video during tra
      ![img](https://qcloudimg.tencent-cloud.cn/raw/73b44ed792c118f58605209fbccd0fa5.png)
        - If the image is placed underneath the video (as the background), the effect is as shown below:
      ![img](https://qcloudimg.tencent-cloud.cn/raw/0da61e3ac31297550a7a05544af7f6f2.png)
+
     - Watermark Dimensions:
       - Input image size: The original watermark image size will be retained without any processing. Note that if the watermark image is larger than the video image, the watermark cannot be completely displayed.
       - By ratio: You can set the percentage (1–100) of only the width or height or both of them. If the width or height is not set, it will be scaled proportionally. Suppose the width ratio is `a` and height ratio is `b`, then the watermark width will be `w = W * a`, and the watermark height will be `h = H * b` (here, `W` and `H` are the video width and height respectively).
@@ -297,8 +300,8 @@ The video/audio splicing feature adds the specified video/audio segment at the b
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Audio/Video Splicing** and click **Create Audio/Video Splicing Template**.
 
 6. In the **Create Audio/Video Splicing Template** window, configure the following items:
@@ -320,9 +323,9 @@ You can separate the same audio file into a voice file and a background sound fi
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
-5. Select **Voice Separation** and click **Create Voice Separation Template**.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Template Configuration** to enter the template configuration page.
+5. Select **Smart Audio** > **Voice Separation** and click **Create Voice Separation Template**.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/e3a8297817e96904cd35db90628b284f.png" style="zoom:67%;" />
 6. In the **Create Voice Separation Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
@@ -344,9 +347,9 @@ You can convert text to speeches in different voices for use in audiobook, navig
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
-5. Select **Text to Speech** and click **Create Text-to-Speech Template**.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Template Configuration** to enter the template configuration page.
+5. Select **Smart Audio** > **Text to Speech** and click **Create Text-to-Speech Template**.
 
 6. In the **Create Text-to-Speech Template** window, configure the following items:
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
@@ -361,21 +364,21 @@ After successfully creating the template, you can **view**, **edit**, or **delet
 
 
 
-### Video enhancement
+### Image quality enhancement
 
-The video enhancement feature uses AI to improve the video quality and enhance the video colors and details visually.
+Video enhancement uses AI to improve the video quality and enhance the video colors and details visually. It includes super resolution, detail enhancement, SDR-to-HDR, and frame interpolation features.
 
 #### Directions
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
-5. Select **Video Enhancement** and click **Create Video Enhancement Template**.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Template Configuration** to enter the template configuration page.
+5. Select **Image Quality Enhancement** and click **Create Image Quality Enhancement Template**.
 
-6. In the **Create Video Enhancement Template** window, configure the following items:
+6. In the **Create Image Quality Enhancement Template** window, configure the following items:
 > ? 
-> - Currently, video enhancement supports color and detail enhancement. Other features will be provided in the future.
+> - Currently, video enhancement supports color enhancement, detail enhancement, super resolution, and SDR-to-HDR. Other features will be provided in the future.
 > - The input video for enhancement must be shorter than 30 minutes.
 > 
  - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
@@ -386,27 +389,6 @@ After successfully creating the template, you can **view**, **edit**, or **delet
 >? You can use the template when creating a video enhancement job as instructed in [Configuring Job](https://intl.cloud.tencent.com/document/product/436/46409) or creating a workflow as instructed in [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408).
 >
 
-### Super resolution
-
-The super resolution feature reconstructs the details and local features of an image by recognizing its content and contour so as to generate a high-resolution image through a series of low-resolution images.
-
-#### Directions
-
-1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
-2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
-5. Select **Super Resolution** and click **Create Super Resolution Template**.
-
-6. In the **Create Super Resolution Template** window, configure the following items:
- - Template Name: It can contain up to 64 letters, digits, underscores (_), hyphens (-), and asterisks (*).
- - Version: Select Basic or Enhanced. The latter delivers greater image reconstruction and restoration effects.
- - Target Resolution: Select the output resolution.
- - Target Zoom: After it is enabled, the output video will be zoom to the selected target resolution or three times the input video resolution.
-7. Click **OK**.
-After successfully creating the template, you can **view**, **edit**, or **delete** it in the custom template list.
->? You can use the template when creating a super resolution job as instructed in [Configuring Job](https://intl.cloud.tencent.com/document/product/436/46409) or creating a workflow as instructed in [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408).
->
 
 
 ### Image processing
@@ -417,8 +399,8 @@ Image processing is a rich-featured, cost-effective, and high-reliability image 
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket for video storage.
-4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration** > **Template** to enter the template configuration page.
+3. Click the name of the bucket where you want to store the video.
+4. On the left sidebar, select **Data Processing Workflow** > **Common Configuration**. Then, select the **Template** tab to go to the template configuration page.
 5. Select **Video Processing** and click **Create Video Processing Template**.
 
 6. In the **Create Video Processing Template** window, configure the following items:

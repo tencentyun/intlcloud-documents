@@ -8,7 +8,7 @@
 1. 在 COS 服务上创建一个存储桶以作为远端存储，操作指引请参见 [控制台快速入门](https://intl.cloud.tencent.com/document/product/436/32955)。
 2. 安装 [Java 8 或者更高的版本](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)。
 3. 安装 [SSH](https://www.ssh.com/ssh/)，确保能通过 SSH 连接到 LocalHost，并远程登录。
-4. 在 CVM 服务上购买一台实例，操作指引详见购买云服务器，并确保磁盘已经挂载到实例上。
+4. 在 CVM 服务上购买一台实例，操作指引详见 [购买云服务器](https://www.tencentcloud.com/document/product/213/2753)，并确保磁盘已经挂载到实例上。
 
 ## 下载并配置 GooseFS
 
@@ -25,9 +25,15 @@ $ tar -zxvf goosefs-1.4.0-bin.tar.gz
 $ cd goosefs-1.4.0
 ```
 解压后，得到 goosefs-1.4.0，即 GooseFS 的主目录。下文将以 `${GOOSEFS_HOME}` 代指该目录的绝对路径。
-3. 在 `${GOOSEFS_HOME}/conf` 的目录下，创建 `conf/goosefs-site.properties` 的配置文件，可以使用内置的配置模板，然后进入编辑模式修改配置：
+3. 在 `${GOOSEFS_HOME}/conf` 的目录下，创建 `conf/goosefs-site.properties` 的配置文件。GooseFS 提供 AI 和大数据两个场景的配置模板，可以使用任意上述内置模板，然后进入编辑模式修改配置：
+（1）使用 AI 场景模板，更多信息可参考GooseFS AI 场景生产环境配置实践。
 ```shell
-$ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
+$ cp conf/goosefs-site.properties.ai_template conf/goosefs-site.properties
+$ vim conf/goosefs-site.properties
+```
+（2）使用大数据场景模板，更多信息可参考GooseFS 大数据场景生产环境配置实践。
+```shell
+$ cp conf/goosefs-site.properties.bigdata_template conf/goosefs-site.properties
 $ vim conf/goosefs-site.properties
 ```
 4. 在配置文件 `conf/goosefs-site.properties` 中，调整如下配置项：
@@ -57,7 +63,7 @@ goosefs.user.file.readtype.default=CACHE
 goosefs.user.file.writetype.default=MUST_CACHE
 ```
 
->!配置`goosefs.worker.tieredstore.level0.dirs.path`该路径参数前，需要先新建这一路径。
+>!配置 `goosefs.worker.tieredstore.level0.dirs.path` 该路径参数前，需要先新建这一路径。
 
 ## 启用 GooseFS
 
@@ -143,14 +149,12 @@ $ ./bin/goosefs-start.sh all
 下面将介绍一下如何通过创建 Namespace 来挂载 COS 或 CHDFS 的方法和步骤。
 
 1. 创建一个命名空间 namespace 并挂载 COS：
-
 ```shell
 $ goosefs ns create myNamespace cosn://bucketName-1250000000/ \
 --secret fs.cosn.userinfo.secretId=AKXXXXXXXXXXX \
 --secret fs.cosn.userinfo.secretKey=XXXXXXXXXXXX \
 --attribute fs.cosn.bucket.region=ap-xxx \
 ```
-
 >! 
 > - 创建挂载 COSN 的 namespace 时，必须使用 `–-secret` 参数指定访问密钥，并且使用 `--attribute` 指定 Hadoop-COS（COSN）所有必选参数，具体的必选参数可参考 [Hadoop 工具](https://intl.cloud.tencent.com/document/product/436/6884)。
 > - 创建 Namespace 时，如果没有指定读写策略（rPolicy/wPolicy），默认会使用配置文件中指定的 read/write type，或使用默认值（CACHE/CACHE_THROUGH）。
@@ -258,16 +262,13 @@ $ goosefs fs
 $ goosefs fs ls /
 ```
 3. 可以通过 `copyFromLocal` 命令将数据从本地拷贝到 GooseFS 中：
-
 ```shell
 $ goosefs fs copyFromLocal LICENSE /LICENSE
 Copied LICENSE to /LICENSE
 $ goosefs fs ls /LICENSE
 -rw-r--r--  hadoop         supergroup               20798       NOT_PERSISTED 03-26-2021 16:49:37:215   0% /LICENSE
 ```
-
 4. 可以通过 `cat` 命令查看文件内容：
-
 ```shell
 $ goosefs fs cat /LICENSE                                                                         
 Apache License
@@ -285,12 +286,10 @@ persisted file /LICENSE with size 26847
 ## 使用 GooseFS 加速文件上传和下载操作
 
 1. 检查文件存储状态，确认文件是否已被缓存。文件状态 `PERSISTED` 代表文件已在内存中，文件状态 `NOT_PERSISTED` 则代表文件不在内存中：
-
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 NOT_PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
 ```
-
 2. 统计文件中有多少单词 “tencent”，并计算操作耗时：
 ```shell
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
@@ -300,7 +299,6 @@ user	0m7.557s
 sys	0m1.181s
 ```
 3. 将该数据缓存到内存中可以有效提升查询速度，详细示例如下：
-
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 

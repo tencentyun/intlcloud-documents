@@ -1,6 +1,6 @@
 ## 适用场景
 
-您可以在对象存储（Cloud Object Storage，COS）中将已存储的对象通过简单的复制操作，创建一个新的对象副本。在单个操作中，您可以复制最大5GB的对象。当对象超过5GB时，您必须使用分块上传的接口来实现复制。复制对象有以下功能：
+您可以在对象存储（Cloud Object Storage，COS）中将已存储的对象通过简单的复制操作，创建一个新的对象副本。在单个操作中，您可以复制最大5GB 的对象。当对象超过5GB 时，您必须使用 [分块复制](https://intl.cloud.tencent.com/document/product/436/14118) 接口来实现复制。复制对象有以下功能：
 
 - 创建一个新的对象副本。
 - 复制对象并更名，删除原始对象，实现重命名。
@@ -29,15 +29,15 @@
 
 您可以直接调用 SDK 的设置对象复制方法，详情请参见下列各语言 SDK 文档：
 
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/37674)
-- [C SDK](https://intl.cloud.tencent.com/document/product/436/31518)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/40494)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/44872)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/38062)
-- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31526)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37683)
-- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31534)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31538)
-- [Node.js SDK ](https://intl.cloud.tencent.com/document/product/436/31710)
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31542)
-- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31546)
-- [小程序 SDK](https://intl.cloud.tencent.com/document/product/436/32457)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/40171)
+- [Go SDK](https://intl.cloud.tencent.com/document/product/436/44064)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/40495)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/44019)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/43865)
+- [Node.js SDK ](https://intl.cloud.tencent.com/document/product/436/43874)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/45498)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/436/46470)
+- [小程序 SDK](https://intl.cloud.tencent.com/document/product/436/43885)
