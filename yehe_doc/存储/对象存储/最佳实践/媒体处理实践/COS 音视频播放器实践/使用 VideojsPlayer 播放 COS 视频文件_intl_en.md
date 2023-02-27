@@ -37,6 +37,8 @@ Place the player container in the desired place on the page. For example, add th
 > - If the bucket permission is private read/write, the object address needs to carry a signature. For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 
 #### Step 4: Set the video address in the player container and pass in the COS video file object URL
+
+
 ```
 <video
   id="my-video"
@@ -54,6 +56,7 @@ Place the player container in the desired place on the page. For example, add th
 </video>
 ```
 
+
 ## Function Guide
 [](id:1)
 ### Playing back video files in different formats
@@ -62,18 +65,25 @@ Place the player container in the desired place on the page. For example, add th
 2. For different video formats, in order to ensure the compatibility with different browsers, corresponding dependencies need to be imported.
  - MP4: There is no need to import other dependencies.
  - HLS: If you want to play back HLS videos through HTML5 in a modern browser such as Chrome and Firefox, you need to import `hls.min.js` before importing `tcplayer.min.js`.
+
 ```
   <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.2.1/libs/hls.min.0.13.2m.js"></script>
 ```
+
  - FLV: If you want to play back FLV videos through HTML5 in a modern browser such as Chrome and Firefox, you need to import `flv.min.js` before importing `tcplayer.min.js`.
+
 ```
   <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.2/libs/flv.min.1.6.2.js"></script>
 ```
+
  - DASH: You need to import the `dash.all.min.js` file.
+
 ```
   <script src="https://cos-video-1258344699.cos.ap-guangzhou.myqcloud.com/lib/dash.all.min.js"></script>
 ```
+
 3. Initialize the player and pass in the object address.
+
 ```
 <!-- MP4 -->
 <source
@@ -100,6 +110,7 @@ Place the player container in the desired place on the page. For example, add th
 />
 ```
 
+
 Get code samples:
 - [Sample code for MP4 playback](https://github.com/tencentyun/cos-demo/blob/main/cos-video/examples/web/videojs/mp4.html)
 - [Sample code for FLV playback](https://github.com/tencentyun/cos-demo/blob/main/cos-video/examples/web/videojs/flv.html)
@@ -109,6 +120,7 @@ Get code samples:
 [](id:2)
 ### Playing back PM3U8 video
 PM3U8 refers to private M3U8 video file. COS provides a download authorization API for getting private M3U8 TS resources. For more information, see [Private M3U8 API](https://intl.cloud.tencent.com/document/product/436/47220).
+
 ```
 <source
   src="https://<BucketName-APPID>.cos.<Region>.myqcloud.com/xxx.m3u8?ci-process=pm3u8&expires=3600"
@@ -124,6 +136,7 @@ Get code samples:
 1. Get the object address of the thumbnail in the COS bucket.
 >!CI's [intelligent thumbnail](https://intl.cloud.tencent.com/document/product/1045/47740) feature can extract optimal frames to generate thumbnails to make the video content more engaging.
 2. Initialize the player and set the thumbnail image.
+
 ```
 <video
   id="my-video"
@@ -151,6 +164,7 @@ To ensure the security of video content and prevent unauthorized download and di
 Follow the steps below:
 1. Generate an encrypted video as instructed in [Playing back HLS Encrypted Video](https://intl.cloud.tencent.com/document/product/436/48293) and [COS Audio/Video Practice | Encrypting Your Video](https://mp.weixin.qq.com/s/4f-GKyAG0S-FcZ2BZCn7jA).
 2. Initialize the player and pass in the video object address.
+
 ```
 <source
   src="https://<BucketName-APPID>.cos.<Region>.myqcloud.com/xxx.m3u8"
