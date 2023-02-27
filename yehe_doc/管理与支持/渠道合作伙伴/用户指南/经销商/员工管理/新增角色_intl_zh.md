@@ -6,10 +6,10 @@
 2. 在左侧菜单中选择**公司信息 > 员工管理**。
 3. 选择**角色管理**页签。
 4. 单击**创建角色**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/wSwI108_121402.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/XQRQ331_create_roler.png)
 5. 设置角色的基本信息。
 6. 按照菜单级别选择需要关联的角色权限。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/zuXu204_121403.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/gwQc231_create_roler2.png)
 7. 单击**确认**。页面提示操作成功，可以在角色列表看到新增的角色。
 
 ### 角色相关操作

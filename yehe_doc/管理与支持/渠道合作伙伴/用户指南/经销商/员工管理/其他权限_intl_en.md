@@ -10,7 +10,7 @@ Hierarchical permission management in **Employee Management** module only applie
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/vdUV159_121407.png)
 5. Add sub-user permissions in the CAM console.
 Select an employee account and click **Authorize**.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/eWV4389_121408.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/gSsK589_other_auth.png)
 Select non-Partner Center permissions and click **OK**.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/ztdn250_121409.png)
 

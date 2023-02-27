@@ -8,12 +8,12 @@
 3. 单击**创建员工**。
 >!如员工已开通子账号，但尚未录入员工信息，需补充维护员工信息并关联角色后才可继续使用该子账号（员工账号名必须和子账号名一致），该员工子账号已授权的权限需解除绑定，以免和经销商平台分权管理不一致。
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/nMBW053_121404.png)        
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/sPDd712_create_user2.png) 
 
 4. 填写员工信息，单击**提交**。
 >! **员工账号名**必须唯一，且提交后无法修改，请谨慎填写。
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/EBaX436_121405.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/HTe2968_create_user.png)
 
 5. 系统提示，创建员工成功。
 6. 为新增的员工分配角色。勾选角色列表中的角色名称，单击**确认**。

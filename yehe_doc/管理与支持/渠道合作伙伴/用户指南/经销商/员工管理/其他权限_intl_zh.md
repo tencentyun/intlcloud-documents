@@ -10,7 +10,7 @@
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/vdUV159_121407.png)
 5. 在访问管理下，新增子账号用户权限。
 选择员工子账号，点击**授权**
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/eWV4389_121408.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/gSsK589_other_auth.png)
 选择非经销商平台的权限进行补充添加，点击**提交**
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/ztdn250_121409.png)
 

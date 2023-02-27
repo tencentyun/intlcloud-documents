@@ -8,12 +8,12 @@ After you create an employee, you need to inform them of the account name and pa
 3. Click **Create Employee**.
 >!If the employee already has a sub-account, you need to complete the employee information and associate them with a role so that they can use the sub-account (the employee account name and the sub-account name must be the same). To avoid permission conflict, disassociate the permissions that were granted to the sub-account before.
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/nMBW053_121404.png)        
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/sPDd712_create_user2.png)
 
 4. Complete the employee information and click **Submit**.
 >! **Employee Account Name** must be unique and cannot be modified once submitted.
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/EBaX436_121405.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/HTe2968_create_user.png)
 
 5. Wait for the prompt indicating that the employee has been successfully created.
 6. Assign the employee one or more roles. Select role names in the role list and click **OK**.
