@@ -37,6 +37,7 @@ $ cp conf/goosefs-site.properties.bigdata_template conf/goosefs-site.properties
 $ vim conf/goosefs-site.properties
 ```
 4. 在配置文件 `conf/goosefs-site.properties` 中，调整如下配置项：
+
 ```shell
 # Common properties
 # 调整Master节点host信息
@@ -62,6 +63,7 @@ goosefs.worker.tieredstore.level0.dirs.quota=80G
 goosefs.user.file.readtype.default=CACHE
 goosefs.user.file.writetype.default=MUST_CACHE
 ```
+
 
 >!配置 `goosefs.worker.tieredstore.level0.dirs.path` 该路径参数前，需要先新建这一路径。
 
@@ -149,30 +151,37 @@ $ ./bin/goosefs-start.sh all
 下面将介绍一下如何通过创建 Namespace 来挂载 COS 或 CHDFS 的方法和步骤。
 
 1. 创建一个命名空间 namespace 并挂载 COS：
+
 ```shell
 $ goosefs ns create myNamespace cosn://bucketName-1250000000/ \
 --secret fs.cosn.userinfo.secretId=AKXXXXXXXXXXX \
 --secret fs.cosn.userinfo.secretKey=XXXXXXXXXXXX \
 --attribute fs.cosn.bucket.region=ap-xxx \
 ```
+
 >! 
 > - 创建挂载 COSN 的 namespace 时，必须使用 `–-secret` 参数指定访问密钥，并且使用 `--attribute` 指定 Hadoop-COS（COSN）所有必选参数，具体的必选参数可参考 [Hadoop 工具](https://intl.cloud.tencent.com/document/product/436/6884)。
 > - 创建 Namespace 时，如果没有指定读写策略（rPolicy/wPolicy），默认会使用配置文件中指定的 read/write type，或使用默认值（CACHE/CACHE_THROUGH）。
 >
 同理，也可以创建一个命名空间 namespace 用于挂载腾讯云 HDFS：
+
 ```shell
 goosefs ns create MyNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/ \
 --attribute fs.ofs.user.appid=1250000000
 --attribute fs.ofs.tmp.cache.dir=/tmp/chdfs
 ```
+
 2. 创建成功后，可以通过 `ls` 命令列出集群中创建的所有 namespace：
+
 ```shell
 $ goosefs ns ls
 namespace	      mountPoint	       ufsPath                     	 creationTime                wPolicy      	rPolicy	     TTL	   ttlAction
 myNamespace    /myNamespace   cosn://bucketName-125xxxxxx/3TB  03-11-2021 11:43:06:239      CACHE_THROUGH   CACHE        -1      DELETE
 myNamespaceCHDFS /myNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/3TB 03-11-2021 11:45:12:336 CACHE_THROUGH   CACHE  -1  DELETE
 ```
+
 3. 执行如下命令，指定 namespace 的详细信息。
+
 ```shell
 $ goosefs ns stat myNamespace
 
@@ -205,13 +214,16 @@ NamespaceStatus{name=myNamespace, path=/myNamespace, ttlTime=-1, ttlAction=DELET
 ## 使用 GooseFS 预热 Table 中的数据
 
 1. GooseFS 支持将 Hive Table 中的数据预热到  GooseFS 中，在预热之前需要先将相关的 DB 关联到 GooseFS 上，相关命令如下：
+
 ```shell
 $ goosefs table attachdb --db test_db hive thrift://
 172.16.16.22:7004 test_for_demo
 ```
+
 >! 命令中的 thrift 需要填写实际的 Hive Metastore 的地址。
 >
 2. 添加完 DB 后，可以通过 ls 命令查看当前关联的 DB 和 Table 的信息：
+
 ```shell
 $ goosefs table ls test_db web_page
 
@@ -244,31 +256,41 @@ PARTITION LIST (
    }
 )
 ```
+
 3. 通过 load 命令预热 Table 中的数据：
+
 ```shell
 $ goosefs table load test_db web_page
 Asynchronous job submitted successfully, jobId: 1615966078836
 ```
+
  预热 Table 中的数据是一个异步任务，因此会返回一个任务 ID。可以通过 goosefs job stat &lt;Job Id> 命令查看预热作业的执行进度。当状态为 "COMPLETED" 后，则整个预热过程完成。
 
 ## 使用 GooseFS 进行文件上传和下载操作
 
 1. GooseFS 支持绝大部分文件系统操作命令，可以通过以下命令来查询当前支持的命令列表：
+
 ```shell
 $ goosefs fs
 ```
+
 2. 可以通过 `ls` 命令列出 GooseFS 中的文件，以下示例展示如何列出根目录下的所有文件：
+
 ```shell
 $ goosefs fs ls /
 ```
+
 3. 可以通过 `copyFromLocal` 命令将数据从本地拷贝到 GooseFS 中：
+
 ```shell
 $ goosefs fs copyFromLocal LICENSE /LICENSE
 Copied LICENSE to /LICENSE
 $ goosefs fs ls /LICENSE
 -rw-r--r--  hadoop         supergroup               20798       NOT_PERSISTED 03-26-2021 16:49:37:215   0% /LICENSE
 ```
+
 4. 可以通过 `cat` 命令查看文件内容：
+
 ```shell
 $ goosefs fs cat /LICENSE                                                                         
 Apache License
@@ -277,7 +299,9 @@ http://www.apache.org/licenses/
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 ...
 ```
+
 5. GooseFS 默认使用本地磁盘作为底层文件系统，默认文件系统路径为 `./underFSStorage`，可以通过 `persist` 命令将文件持久化存储到本地文件系统中：
+
 ```shell
 $ goosefs fs persist /LICENSE
 persisted file /LICENSE with size 26847
@@ -286,11 +310,14 @@ persisted file /LICENSE with size 26847
 ## 使用 GooseFS 加速文件上传和下载操作
 
 1. 检查文件存储状态，确认文件是否已被缓存。文件状态 `PERSISTED` 代表文件已在内存中，文件状态 `NOT_PERSISTED` 则代表文件不在内存中：
+
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 NOT_PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
 ```
+
 2. 统计文件中有多少单词 “tencent”，并计算操作耗时：
+
 ```shell
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c tencent
 889
@@ -298,7 +325,9 @@ real	0m22.857s
 user	0m7.557s
 sys	0m1.181s
 ```
+
 3. 将该数据缓存到内存中可以有效提升查询速度，详细示例如下：
+
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 
@@ -309,11 +338,13 @@ real	0m1.917s
 user	0m2.306s
 sys	 0m0.243s
 ```
+
  可见，系统处理延迟从1.181s减少到了0.243s，得到了10倍的提升。
 
 ## 关闭 GooseFS
 
 通过如下命令可以关闭 GooseFS：
+
 ```shell
 $ ./bin/goosefs-stop.sh local
 ```
