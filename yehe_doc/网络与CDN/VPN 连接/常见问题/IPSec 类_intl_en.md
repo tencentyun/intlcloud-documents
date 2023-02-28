@@ -80,17 +80,20 @@ The possible causes are as follows:
 [](id:14)
 ### Why do I need to configure an SPD policy?
 An SPD policy specifies the IP ranges in the network in which the VPN gateway resides and the IP ranges in the IDC that can communicate with each other.
->? The IP ranges specified in an SPD policy must not overlap with those specified in another SPD policy of the same VPN gateway.
->
+<dx-alert infotype="explain" title="">
+The IP ranges specified in an SPD policy must not overlap with those specified in another SPD policy of the same VPN gateway.
+</dx-alert>
 
 [](id:15)
 ### How can I configure health check?
 1. Ensure that the customer gateway is a routing gateway.
 2. Configure health check in the Tencent Cloud console. For more information, see [Configuring Health Checks](https://intl.cloud.tencent.com/document/product/1037/46006).
->?
->- Create primary and secondary VPN tunnels before you configure health check, to avoid impacts on your business. We recommend that you do not configure health check without primary and secondary VPN tunnels.
->- Ensure that the IP addresses of the VPN gateway and the customer gateway do not conflict. If the two IP addresses belong to the same IP range, there is no need to configure a separate route to specify the customer gateway.
->
+
+<dx-alert infotype="explain" title="">
+- Create primary and secondary VPN tunnels before you configure health check, to avoid impacts on your business. We recommend that you do not configure health check without primary and secondary VPN tunnels.
+- Ensure that the IP addresses of the VPN gateway and the customer gateway do not conflict. If the two IP addresses belong to the same IP range, there is no need to configure a separate route to specify the customer gateway.
+</dx-alert>
+
 3. Configure the VPN gateway route and set its priority.
 
 [](id:16)
