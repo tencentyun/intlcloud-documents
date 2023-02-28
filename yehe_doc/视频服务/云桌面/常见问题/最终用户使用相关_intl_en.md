@@ -12,7 +12,7 @@ The CVD portal supports multiple login policies. If you encounter login restrict
 
 ### CVD access process for end users
 The CVD access process for end users is as follows:
-1. As an end user, you will receive an email or SMS reminder. Follow the prompts to activate your account as instructed in [Activating a CVD Account](https://www.tencentcloud.com/document/product/1167/51919).
+1. As an end user, you will receive an email or SMS reminder. Follow the prompts to activate your account.
 2. You need to visit the CVD portal and log in to obtain CVD resources as instructed in [Logging in to the CVD Portal](https://www.tencentcloud.com/document/product/1167/51920).
 3. After obtaining the desktop list, you can select an appropriate access method based on your needs as instructed in [Opening CVD](https://www.tencentcloud.com/document/product/1167/51921).
 
@@ -41,8 +41,6 @@ By default, you can change the wallpaper, icons, and shortcut keys of the deskto
 You can transfer files between the cloud desktop and your local device by copying and pasting. If you cannot perform this operation, contact the CVD admin and ask them to change the security policy.
 ### Can I access files on the local device from the cloud desktop?
 You can see the local disk in the file explorer in the CVD instance. If you cannot perform this operation, contact the CVD admin and ask them to change the security policy.
-### What is displayed in the CVD watermark?
-If the admin has enabled the watermark feature, you will see the watermark on the cloud desktop screen, which displays the unique ID of the CVD instance or the time when the connection to the desktop was initiated.
 ### Why can't my cloud desktop recognize USB devices or peripherals such as flash drives?
 CVD supports plug-and-play for peripheral devices. If you cannot perform this operation, contact the CVD admin and ask them to adjust the security policy for peripheral devices.
 ### Does CVD support dual-monitor display?
