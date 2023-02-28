@@ -36,6 +36,7 @@ public abstract int InitSpatializer(string modelPath)
 
 - v2.8 이전 버전의 경우 [여기](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/pubilc/GME_2.X_3d_model)를 클릭하여 다운로드하십시오(md5 값: d0b76aa64c46598788c2f35f5a8a8694).
 - v2.8 이상 버전의 경우 [여기](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/public/GME_2.8_3d_model.dat)를 클릭하여 다운로드하십시오(md5 값: 3d4d04b3949e267e34ca809e8a0b9243).
+- v2.9.6 이상 버전인 경우 3D 음향 효과 리소스 파일이 이미 내장되어 있으므로 여기에 modelPath를 입력할 수 있습니다.
 
 GME SDK 릴리스 업데이트는 [릴리스 노트](https://intl.cloud.tencent.com/document/product/607/35323)를 참고하십시오.
 
