@@ -13,7 +13,7 @@ GME는 음성 채팅 및 오프라인 음성에 대한 인증 키를 제공합�
 | ---------------- |-------------------|--------------|
 | cVer|unsigned char(1)|버전 번호, 입력값: 1|
 | wOpenIDLen|unsigned short(2)|사용자 계정 길이|
-| strOpenID|wOpenIDLen|사용자의 계정 문자수|
+| strOpenID|string|사용자 계정 문자수|
 | dwSdkAppid|unsigned short(4)|개발자 SDKappid|
 | dwReserved1|unsigned int(4)|입력값: 0|
 | dwExpTime|unsigned int(4)|만료 시각(현재시간+유효기간[단위: 초, 권장값 300 초])|
