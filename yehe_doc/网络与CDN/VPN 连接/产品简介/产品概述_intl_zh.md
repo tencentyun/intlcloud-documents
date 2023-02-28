@@ -12,13 +12,11 @@ VPN 连接（VPN Connections）是指在 Internet 公共网络上建立的一个
 >
 - 对端网关：记录 IDC 端 IPsec VPN 网关公网 IP 地址的逻辑对象（IDC 端必须有固定公网 IP）。
 - VPN 通道：加密的 IPsec VPN 通道。
-![](https://main.qcloudimg.com/raw/b408d142266092bc5f75a8bbd659c20a.png)
-
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/ThnQ702_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230228164524.png)
 
 ## SSL VPN
-
 腾讯云 SSL VPN 连接分为如下组成部分:
 - SSL VPN 网关：创建的 SSL 协议类型的 VPN 网关。
-- SSL 服务端：提供 SSL 服务的服务模块。
-- SSL 客户端：提供移动端连接上服务端的证书。
-![](https://qcloudimg.tencent-cloud.cn/raw/9a76dba7981cba360851e3ac28edaf32.png)
+- SSL 服务端：提供 SSL 服务的服务模块，实现数据包的封装与解封装，约定通信端口、加密算法、双方联通网段。
+- SSL 客户端：用户移动设备上部署的 VPN 客户端在腾讯云的逻辑实例对象。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/vLki069_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230228164543.png)
