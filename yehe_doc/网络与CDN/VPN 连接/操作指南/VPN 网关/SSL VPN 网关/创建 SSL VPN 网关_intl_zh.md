@@ -6,7 +6,7 @@ SSL VPN 网关是 VPC 建立 SSL VPN 连接的出口网关 ，主要用于腾讯
 ## 操作步骤
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)。
 2. 在左侧目录中单击 **VPN 连接** > **VPN 网关**，进入管理页。
-3. 在 VPN 网关管理页面，单击**+新建**。
+3. 在 VPN 网关管理页面，单击 **+新建** 。
 4. 在弹出的**新建 VPN 网关**对话框中，配置如下网关参数。
 <table>
 <tr>
