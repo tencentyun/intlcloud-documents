@@ -12,9 +12,9 @@ CVD specifications include compute resources (vCPU and memory) and storage resou
 | Pay-as-you-go | [](id:paid) Postpaid mode. You can request for CVD resources on demand and will be charged based on the actual usage upon settlement (with the usage duration accurate down to the second). | Suitable for businesses with short-term CVD needs. Instances can be shut down as needed to release compute resources to save costs. |
 
 >?
-* Pay-as-you-go CVD instances support the "shut down to save cost" feature; that is, if your instance is shut down and retained, the system will automatically repossess compute resources (vCPU, memory, and GPU) and charge fees only for storage resources (system and data disks) but not compute resources.
-* After an instance is shut down, its compute resources will be released. The instance may temporarily fail to start again. If this happens, try again or try later.
-* When you restart or reset a CVD instance, the instance may need to be automatically shut down and restarted, during which the "shut down to save cost" policy will not be executed.
+>* Pay-as-you-go CVD instances support the "shut down to save cost" feature; that is, if your instance is shut down and retained, the system will automatically repossess compute resources (vCPU, memory, and GPU) and charge fees only for storage resources (system and data disks) but not compute resources.
+>* After an instance is shut down, its compute resources will be released. The instance may temporarily fail to start again. If this happens, try again or try later.
+>* When you restart or reset a CVD instance, the instance may need to be automatically shut down and restarted, during which the "shut down to save cost" policy will not be executed.
 
 [](id:list)
 ### CVD instance specifications
