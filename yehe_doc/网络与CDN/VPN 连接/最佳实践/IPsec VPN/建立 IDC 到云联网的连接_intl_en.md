@@ -51,7 +51,7 @@ The steps to associate the VPN gateway for CCN with CCN are as follows:
 </tr>
 <tr>
 <td>Associated Network</td>
-<td>Select **CCN**.</td>
+<td>Select <b>CCN</b>.</td>
 </tr>
 <tr>
 <td>Tag</td>
