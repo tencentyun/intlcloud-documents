@@ -3,7 +3,7 @@
 An important feature of spot instances is that the system will repossess assigned instances based on prices or the supply-demand relationship. If the market price is higher than your bid or if the CVM resource pool corresponding to your spot instances is in short supply, the process will be interrupted by the system.
 
 ### Is it possible to avoid being repossessed by the system through bidding?
-No. Because repossession triggered by insufficient inventory is unavoidable. You need to accept that instance repossession may occur when you deploy businesses on the spot instance.
+No. Because repossession trigged by insufficient inventory is unavoidable. You need to accept that instance repossession may occur when you deploy businesses on the spot instance.
 
 ### How do I know that an instance is about to be interrupted?
 Two minutes before the interruption, we will notify you in the form of metadata that the instance is about to be interrupted and repossessed.
@@ -17,7 +17,7 @@ You can use cloud products that can automatically maintain the CVM cluster, such
 <table>
 	<tr><th style="width: 14%">Billing Method</th><th style="width: 43%">Similarities</th><th style="width: 43%">Differences</th></tr>
 	<tr><td>Spot instances</td><td rowspan=2>Both of them are pay-as-you-go. There is no need to pay in advance but certain costs must be frozen. You can enable/terminate the CVM at any time and pay according to actual usage. The billing time granularity is accurate to the second, and the account will be settled every hour. </td><td rowspan=2><ul  style="margin: 0;"><li><b>Price</b>: In most cases, the spot instance price is 10%-20% of the pay-as-you-go instance price with the same specifications. </li><li><b>Release mechanism</b>: The lifecycle of a pay-as-you-go instance is controlled by the user, while spot instance may be actively repossessed by the system. </li><li><b>Feature limitations</b>：Configuration adjustments are not allowed. </li></ul></td></tr>
-	<tr><td>Pay-as-you-go instances</td></tr>
+	<tr><td>Pay as you go</td></tr>
 </table>
 
 ### Which price, the market price and the highest bid specified by the user, will be used for billing?
@@ -45,10 +45,13 @@ As with pay-as-you-go instances, you can find detailed usage and billing informa
 No. Each user can have up to 50 spot instance vCPU cores in each availability zone. To raise the quota limits, please submit a ticket.
 
 ### Can I upgrade or downgrade the specifications of spot instances?
-Upgrading or downgrading the specifications of spot instances is not supported.
+No.
 
 ### Do spot instances support no charges when shut down?
-Spot instances do not support no charges when shut down.
+No.
 
 ### Do spot instances support system re-installation?
-Spot instances do not support system re-installation.
+No.
+
+### Can I use vouchers for purchasing spot instances?
+No.
