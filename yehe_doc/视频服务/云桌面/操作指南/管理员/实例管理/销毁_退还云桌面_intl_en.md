@@ -9,11 +9,11 @@ You can terminate a CVD instance in the following two ways:
 ### Manipulating one CVD instance
 1. Log in to the [CVD console](https://console.cloud.tencent.com/cvd).
 2. Select the target instance and click **More** > **Actions** > **Terminate/Return** in the **Operation** column on the right.
-![](https://qcloudimg.tencent-cloud.cn/raw/e572c4a249879e845e62fa3e4a729512.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/baf9d7d1087c77f804effc7831cb4796.png)
 ### Manipulating multiple CVD instances
 1. Log in to the [CVD console](https://console.cloud.tencent.com/cvd).
 2. Select all the target CVD instances and click **Terminate/Return** at the top of the list to batch terminate/return them.
-![](https://main.qcloudimg.com/raw/08912faa8663469fc3d6c11fb0e1d7ad.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1436bca6ce189f29b8db470bbdc16a67.png" style="zoom:50%;" />
 3. You cannot terminate/return pay-as-you-go and monthly subscribed CVD instances at the same time.
 >!You can batch terminate/return up to ten CVD instances at a time.
 

@@ -8,19 +8,19 @@
 当您的云桌面遇到致数据错误或数据丢失的情况时，可以回滚快照数据，从而使该云桌面的数据恢复到创建快照时的状态。
 1. 进入 [云桌面控制台](https://console.cloud.tencent.com/cvd)。
 2. 在桌面列表中，选择需要回滚的云桌面，单击左侧的**云桌面ID**进入云桌面详情页。
-![](https://main.qcloudimg.com/raw/384a76efc0c661e1c1dddd028dcf34aa.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cf162b99cc9906d089784471715b5942.png)
 3. 在云桌面详情页中，单击顶端菜单右侧的**快照列表**切换到快照列表页面。选择需要回滚的快照项，并在右侧操作栏中单击**回滚还原**。
-![](https://main.qcloudimg.com/raw/e4c143ea9b14a665be229f5f78fbc457.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/714c8ee5fd25976c48807196be62fab6.png)
 4. 进行回滚二次确认，回滚会清除当前云桌面数据，阅读风险提示后勾选**强制关机**开关，单击下方的**确认**按钮。
-![](https://main.qcloudimg.com/raw/cf22056fcc6e2fa1eaedbcdd31a0fba2.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/42ae311db2c39da8dee02425e8a0983b.png" style="zoom:50%;" />
 
 ### 删除保存的快照
 每份快照将在3日后自动释放，当您确认某些快照文件不再被需要，您也能手动将他们删除以释放虚拟资源。
 1. 进入 [云桌面控制台](https://console.cloud.tencent.com/cvd)。
 2. 在桌面列表中，选择需要删除快照的云桌面，单击左侧的**云桌面ID**进入云桌面详情页。
-![](https://main.qcloudimg.com/raw/98665040c60dfc328c45edff210a8372.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bde5a7b80bbd1dc82ec7186abb55a35e.png)
 3. 在云桌面详情页中，单击顶端菜单右侧的**快照列表**切换到快照列表页面。选择需要回滚的快照项，并在右侧操作栏中单击**删除**。
-![](https://main.qcloudimg.com/raw/2e226709f3e52d85d1ee06e9e695bc38.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/3afa22f0e3c0a814b18799aa62ed3392.png)
 4. 删除的快照无法恢复，如果确认需要删除，先勾选**删除快照后资源不可恢复，请提前通知终端用户备份数据**的提示框，再单击下方的**确定删除**按钮。
-![](https://main.qcloudimg.com/raw/0fdc0d05452a1c04fa3f3dd026dd4eaa.png)
- 
+<img src="https://qcloudimg.tencent-cloud.cn/raw/c9ad3f50bdf42ef3a8f12dbe8a4f10d2.png" style="zoom:69%;" />
+

@@ -9,11 +9,12 @@
 ### 操作单个云桌面
 1.进入 [云桌面控制台](https://console.cloud.tencent.com/cvd)。
 2.选择需要操作的桌面，并在右侧操作栏中单击**更多** > **实例操作** > **销毁/退还**。
-![](https://qcloudimg.tencent-cloud.cn/raw/e572c4a249879e845e62fa3e4a729512.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/baf9d7d1087c77f804effc7831cb4796.png)
+
 ### 操作多个云桌面
 1.进入 [云桌面控制台](https://console.cloud.tencent.com/cvd)。
 2.勾选所有需要操作的桌面，在列表顶部，单击**销毁/退还**，即可批量操作云桌面。
-![](https://main.qcloudimg.com/raw/08912faa8663469fc3d6c11fb0e1d7ad.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/1436bca6ce189f29b8db470bbdc16a67.png" style="zoom:50%;" />
 3.包年包月云桌面与按量付费云桌面销毁/退还流程不同，无法同时发起销毁/退还操作，请分批进行。
 >!单次批量销毁/退还云桌面限制为10台。
 

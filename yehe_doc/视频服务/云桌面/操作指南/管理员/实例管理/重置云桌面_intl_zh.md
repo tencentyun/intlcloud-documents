@@ -7,11 +7,12 @@
 ### 操作单个云桌面实例重置
 1.进入 [云桌面控制台](https://console.cloud.tencent.com/cvd)。
 2.选择需要操作的实例，并在右侧操作栏中单击**更多**>**实例操作**>**重置**。
-![](https://qcloudimg.tencent-cloud.cn/raw/845726836f614617444d3c23389c5571.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/cd011d711db9d9e95c20d7667067501f.png" style="zoom:67%;" />
+
 ### 操作多个云桌面实例重置
 1.进入 [云桌面控制台](https://console.cloud.tencent.com/cvd)。
 2.勾选所有需要重置的实例，在列表顶部，单击**重置**，即可批量操作云桌面实例重置。
-![](https://qcloudimg.tencent-cloud.cn/raw/d28f9bebd33c9240c7e291fff2a2aa13.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c90b0421f521f2f422e82691ce351b79.png)
 
 ## 注意事项
 1.云桌面系统盘将被重置为初始化状态，数据将被清除且不可恢复，请提前通知用户备份数据。

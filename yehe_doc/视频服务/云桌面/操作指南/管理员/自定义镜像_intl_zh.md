@@ -11,38 +11,33 @@
 
 ## 操作步骤
 1. 在桌面列表页面，选择**更多** > **制作自定义镜像**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/cbf8f6c075d791fa6310b4cef9740055.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5bcfc0f3fb5f89eabc4c6a1f4e2aa109.png)
 2. 在弹出的**制作自定义镜像**窗口中，参见以下信息进行配置：
  - **镜像名称**及**镜像描述**：自定义名称及描述。
  - **镜像包含数据盘**：若您的实例仅具备系统盘，则不会出现该选项。若您的实例具备数据盘，则请按需勾选。
     - 勾选，创建自定义镜像会同时包含数据盘。
     - 不勾选，则仅创建云桌面实例系统盘镜像。
 
-<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/c0b4d95210480c0eab37b411f221bc5c.png" />
+<img style="width:550px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/487c4a26e956e4b14b71631b98e994e5.png" />
 
 3. 开始制作自定义镜像，可通过**云桌面控制台** > [镜像](https://console.cloud.tencent.com/cvd/image) > **自定义镜像**中查看进度。
-<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/d532ebf753ccf38e79b0c93e72ddd2f3.png" />
+<img style="width:600px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/6afa50d0fafb55e82f9d74216ec3ce68.png" />
 
 4. 自定义镜像制作完成。
-<img style="width:700px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/f333812c6bfd1323bff0b53a0ba2f719.png" />
-
-
+<img style="width:1100px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/6c8a472c1a81ceea69a015ace2884edb.png" />
 
 
 ## 基于自定义镜像创建云桌面
 创建云桌面时，镜像类型选择**自定义镜像**，在下拉列表中选择所需的自定义镜像进行创建云桌面。
-<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/c97f84ddba0ced30e478371d826a54fd.png" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/8674ae2ff352de26a5d35751e4ba9360.png" style="zoom:50%;" />
+
 >?
 >- 系统盘容量需大于等于自定义镜像系统盘容量。
 >- 如自定义镜像包含数据盘，数据盘容量需大于等于自定义镜像数据盘容量。
 
-
-
-
-
 ## 删除自定义镜像
 删除自定义镜像后，无法再通过此镜像创建桌面，但不影响已启动的桌面。
 1. 进入**云桌面控制台** > [镜像](https://console.cloud.tencent.com/cvd/image) > **自定义镜像**选择要删除的镜像，单击**删除**。
-<img style="width:700px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/98d45e4445d88ea258306efaa96d1898.png" />
+![](https://qcloudimg.tencent-cloud.cn/raw/f0c20da0e56e576a6400fc99b1dca4a6.png)
 2. 确认删除页面勾选**删除后自定义镜像会被清除且不可恢复**，再单击**确定**进行删除。<br>
-<img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/961e96a286f585d2f2d0fe01fdd39598.png" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/cea7ef362d6b4bacd20d0a75ef407a4f.png" style="zoom:67%;" />
