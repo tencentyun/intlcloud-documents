@@ -180,7 +180,7 @@ This document takes macOS as an example. After you click **Download**, you will 
 ![](https://qcloudimg.tencent-cloud.cn/raw/64ef297dfdefeb11231d3ecb0c2ed5e1.png)
 2. Upload the SSL VPN configuration file that you have downloaded.
 After the configuration file is successfully uploaded, the client automatically connects to the SSL VPN server.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/89087fe374c6a4dc912518a0fad6bb18.png" width="50%"> 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/4242b18feefb476f699e752533efa5f9.png" width="50%">  
-<img src="https://qcloudimg.tencent-cloud.cn/raw/a63a8771ac2a538c97a690f6396639f5.png" width="50%"> 
+![](https://qcloudimg.tencent-cloud.cn/raw/89087fe374c6a4dc912518a0fad6bb18.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4242b18feefb476f699e752533efa5f9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a63a8771ac2a538c97a690f6396639f5.png)
 
