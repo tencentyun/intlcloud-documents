@@ -21,11 +21,6 @@ No, you cannot change the VPN gateway type.
 ### Does a VPN gateway support bandwidth configuration adjustment?
 Currently, you can adjust the bandwidth configuration only within some specifications, such as [20 Mbps, 100 Mbps] and [200 Mbps, 1000 Mbps]. For example, you can increase the bandwidth cap from 50 Mbps to 100 Mbps. If you want to increase the bandwidth cap from 100 Mbps to 200 Mbps, you must create a gateway that supports a bandwidth specification of 200 Mbps.
 
-[](id:06)
-### How do I check the traffic details of a gateway?
-You can enable gateway traffic control. For more information, see [Enabling Gateway Traffic Monitoring](https://intl.cloud.tencent.com/document/product/1037/32702).
-
-
 
 [](id:07)
 ### Why does the monitoring data displayed on the VPN gateway and VPN tunnel sometimes differ?
