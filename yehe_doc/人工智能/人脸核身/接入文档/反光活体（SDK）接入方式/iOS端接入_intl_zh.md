@@ -484,7 +484,7 @@ typedef void (^HuiYanOKitFailCallback)(int errCode, NSString * _Nonnull errMsg ,
 
 1.将自定义UseLanguage.bundle添加至项目中(Copy Bundle Resources)
 
-  自定义UseLanguage.bundle可参考这里https://cloud.tencent.com/developer/article/2016821
+
 
 ![image_1](https://ai-sdk-release-1254418846.cos.ap-guangzhou.myqcloud.com/SDK%E6%96%87%E6%A1%A3%E5%9B%BE%E5%BA%8A/iOS%E6%96%87%E6%A1%A3%E5%9B%BE%E5%BA%8A/huiyan/img_10.png)
 
@@ -507,14 +507,15 @@ config.userLanguageBundleName = @"UseLanguage";//自定义打包bundle名称 例
 
 1）图标Icon。可以将Icon替换到以下列表，命名要保持原有命名。
 
-![image-20230110144933817](/Users/webertzhang/Library/Application Support/typora-user-images/image-20230110144933817.png)
+![image-20230110144933817](https://qcloudimg.tencent-cloud.cn/raw/ca4171a7a422b149bf6f2908f9608b8d.png)
 
 2）xib内布局调整。如TXYOsAuthingViewController 识别页面，可以修改xib内组件的布局，增加静态组件，但是不允许删除组件。该页面逻辑由SDK内部.m文件完成，仅支持修改布局和增加无逻辑组件（如增加背景图）。
 
-![image-20230110145052550](/Users/webertzhang/Library/Application Support/typora-user-images/image-20230110145052550.png)
+![image-20230110145052550](https://qcloudimg.tencent-cloud.cn/raw/4f588059f114b5e8ff598e66bcc81025.png)
 
 3）通过设置userUIBundleName字段设置到SDK中
 ```object-c
 HuiYanOsConfig *config = [[HuiYanOsConfig alloc] init];
 config.userUIBundleName = @"UserUIBundle"
 ```
+
