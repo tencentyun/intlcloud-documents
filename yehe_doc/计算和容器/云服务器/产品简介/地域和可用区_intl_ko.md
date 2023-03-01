@@ -199,9 +199,6 @@ API 인터페이스 [가용존 리스트 조회](https://intl.cloud.tencent.com/
 		<tr>
 			<td>프랑크푸르트 2존(프랑크푸르트 노드의 커버리지: 유럽 지역)<br>eu-frankfurt-2</td>
 		</tr>
-		<td >유럽지역(모스크바)<br>eu-moscow</td>
-		<td>모스크바 1존(모스크바 노드의 커버리지: 유럽 지역)<br>eu-moscow-1</td>
-		</tr>
 	</tbody>
 </table>
 
