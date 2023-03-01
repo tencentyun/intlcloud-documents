@@ -3,5 +3,3 @@ We recommend establishing a VPN connection between two public clouds to transmit
 >- To establish a VPN connection, you need to create Tencent Cloud services and Azure China cloud resources. Therefore, the steps outlined in the tutorial may not be up to date.
 >- The tutorial is provided by a Tencent Cloud service user and is for study and reference only.
 >
-
-This document provides a third-party tutorial on [Establishing a VPN Connection between Tencent Cloud and Azure China](https://cloud.tencent.com/developer/article/2175836) for your reference.
