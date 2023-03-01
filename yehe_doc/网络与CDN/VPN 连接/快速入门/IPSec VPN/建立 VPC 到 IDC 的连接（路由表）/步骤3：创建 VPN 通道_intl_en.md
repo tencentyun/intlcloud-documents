@@ -1,13 +1,12 @@
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
-2. Click **VPN Connection** > **VPN Tunnel** in the left sidebar.
+2. Select **VPN Connections** > **VPN Tunnel** in the left sidebar.
 3. Choose a region and VPC (**Tokyo** and `VPC1` in this example) and click **+New**.
-4. Enter the tunnel name (e.g. tunnel1). Choose the VPN gateway VPN1 and the customer gateway `UserGw1`, enter the pre-shared key (e.g. `123456`), and click **Next**.
->?Whether to enable the health check is optional. If it is enabled, please enter the local IP address and customer IP address. The former is the IP address available other than the primary CIDR block of the VPC, and the latter is the IP address available in the IDC. The health check is not enabled by default.
+4. Configure the basic settings of the VPN tunnel.
+The basic settings of a VPN tunnel include the tunnel name, region of the gateway, network type, VPN gateway instance, customer gateway instance, pre-shared key, negotiation type, and communication mode. For more information about the parameters, see [Creating a VPN Tunnel](https://intl.cloud.tencent.com/document/product/1037/39635).
+In this example, the communication mode is **Destination route**.
+5. Configure the advanced settings.
+In this step, you can set the advanced parameters, including DPD, health check, IKE, and IPsec. In this example, the default parameter values are used.
+>?Make sure that the settings of IKE and IPsec on the cloud side are the same as those on the local side. Otherwise, the tunnel fails due to inconsistent protocol configurations.
 >
-![]()
-5. Select the destination route as the communication mode, and click **Next**.
-![]()
-6. (Optional) Configure IKE parameters. Click **Next** if no advanced configuration is required.
-7. (Optional) Configure IPsec parameters. Click **Completed** if no configuration is required.
-8. After you created the VPN tunnel successfully, return to the VPN tunnel list page. Click **More**and choose **Download config file** to complete the download.
- ![]()
+
+6. After you created the VPN tunnel successfully, return to the VPN tunnel list page. Click **More** and choose **Download config file** to complete the download.

@@ -2,8 +2,10 @@
 
 ## 步骤说明
 SSL VPN 连接激活流程图如下所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/21651b0e3cab4ee790a14a1147199b23.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/uJQb592_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230301152742.png)
+
 
 ## 示例
 通过 SSL VPN 连接，打通您在广东2区的私有网络 VPC 中的子网 1：`10.0.0.0/16`与您移动端的子网：`192.168.0.0/16`。
 ![](https://qcloudimg.tencent-cloud.cn/raw/e1a5f941ffbcf59ef4bf2230f9a6a78b.png)
+

@@ -1,19 +1,15 @@
 This document describes how to create a VPN tunnel.
 
+
 ## Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
-2. Click **VPN Connection** > **VPN Tunnel** in the left sidebar.
+2. Select **VPN Connections** > **VPN Tunnel** in the left sidebar.
 3. Choose the region where your VPC is located and your VPC, i.e. **Guangzhou** and `TomVPC` in this example, and click **+New**.
- ![]()
-4. Enter a name for the tunnel (for example, TomVPNConn), select the VPN gateway `TomVPNGw` and the customer gateway `TomVPNUserGw`, enter the pre-shared key (for example, `123456`), and click **Next**.
->?The labels are alternatively configured, please retain the default settings.
+4. Configure the basic settings of the VPN tunnel.
+The basic settings of a VPN tunnel include the tunnel name, region of the gateway, network type, VPN gateway instance, customer gateway instance, pre-shared key, negotiation type, and communication mode. For more information about the parameters, see [Creating a VPN Tunnel](https://intl.cloud.tencent.com/document/product/1037/39635).
+In this example, the communication mode is **SPD policy**, the local IP range is the IP range `192.168.1.0/24` of subnet A, and the customer IP range is `10.0.1.0/24`.
+5. Configure the advanced settings.
+In this step, you can set the advanced parameters, including DPD, health check, IKE, and IPsec. In this example, the default parameter values are used.
+>?Make sure that the settings of IKE and IPsec on the cloud side are the same as those on the local side. Otherwise, the tunnel fails due to inconsistent protocol configurations.
 >
-![]()
-5. Select the communication mode, and enter an SPD policy to limit the communication between local IP ranges and customer IP ranges. In this example, the local IP range is `192.168.1.0/24` of subnet A, and the customer IP range is `10.0.1.0/24`. Then, click **Next**.
-![]()
-6. (Optional) Configure IKE parameters. Click **Next** if no advanced configuration is required.
- ![](https://main.qcloudimg.com/raw/4c003c6438a4c8e47e8057113edb1371.png)
-7. (Optional) Configure IPsec parameters. Click **Completed** if no configuration is required.
- ![](https://main.qcloudimg.com/raw/3fe3a316218c475f6b5bfcf7a871167a.png)
- 8. After the VPN tunnel is successfully created, return to the VPN tunnel list page. Click **More**and choose **Download config file** to complete the download.
- ![](https://main.qcloudimg.com/raw/00575f0bbbfb9aae0442731db89d042c.png)
+6. Check your configuration and click **Create**. After the tunnel is created, go to the VPN tunnel list page, click **More** next to the created tunnel, and choose **Download config file** to complete the download.
