@@ -43,6 +43,7 @@ CynosDB Compute Unit (CCU) is the computing and billing unit for the Serverless 
 <td>Storage Billing Mode</td>
 <td>The default storage billing mode of the Serverless instance is pay-as-you-go.</td></tr>
 </tbody></table>
+
 2. Select the number of instances. You can batch purchase multiple Serverless instances of the same specification. Then, click **Next**.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/r2Tz089_1.png)
 3. Complete the **Basic Info** and **Advanced Configuration** settings, confirm the fees, and click **Buy Now**.

@@ -24,12 +24,12 @@ TDSQL-C for MySQL only supports the InnoDB engine.
 
 
 ## Operation limits
-| Limit | Description | 
+| Limit | Description |
 |---------|---------|
 | Kernel version upgrade | Cluster switch will be required after version upgrade is completed (that is, the database may be disconnected for seconds). We recommend you use applications configured with automatic reconnection feature and conduct the switch during the instance maintenance time. <br>If the number of tables in a single instance exceeds one million, upgrade may fail and database monitoring may be affected. Make sure that the number of tables in a single instance is below one million. <br>The kernel minor version cannot be downgraded. |
 | Failover | When the source node fails, TDSQL-C for MySQL will switch to a replica node. As a disconnection for less than 30 seconds will occur during the switch, make sure that your business has an automatic reconnection mechanism. |
 | Network switch | Switching the network may cause all of the instance's private IPs to change. The system will automatically assign new IPs, so you need to modify the instance IPs on the client promptly. <br>The original IPs will expire after 24 hours by default. The expiration time can be customized during the network switch. If it is set to zero, the original IPs will be repossessed immediately after the network switch. <br>When switching the network, you can only select a new VPC and subnet in the same region and AZ where the instance resides. |
-| Storage space | There is a limit on the storage space of each computing instance specification in the pay-as-you-go or serverless billing mode. For more information, see [Product Specifications](https://intl.cloud.tencent.com/document/product/1098/46430). <br>The storage space in the monthly subscription billing mode is as purchased. <br>The computing instance specification has a storage upper limit. If you need more storage space, upgrade the specification. |
+| Storage space | There is a limit on the storage space of each pay-as-you-go or serverless compute instance. For more information, see [Product Specifications](https://intl.cloud.tencent.com/document/product/1098/46430) and [Compute Unit](https://www.tencentcloud.com/document/product/1098/51975). <br>The storage space in the monthly subscription billing mode is as purchased. <br>The compute instance specification has a storage upper limit. If you need more storage space, upgrade the specification. |
 | Data recovery | We recommend you back up important data to avoid data loss before restoring data through rollback or cluster cloning. |
 | Configuration adjustment | TDSQL-C for MySQL supports fast in-place configuration upgrade or downgrade, and a momentary disconnection may occur in special circumstances. Make sure that your business has an automatic reconnection mechanism. We recommend you perform this operation during off-peak hours. |
 
@@ -41,5 +41,4 @@ The keywords and reserved words in TDSQL-C for MySQL are basically the same as t
 In addition, TDSQL-C for MySQL has the following additional reserved words and keywords:
 - CLUSTER
 - THREADPOOL_SYM
-
 

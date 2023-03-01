@@ -1,3 +1,4 @@
+
 This document describes the instance types of TDSQL-C for MySQL, including general and dedicated.
 
 | Instance Type | Description | 

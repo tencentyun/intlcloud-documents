@@ -3,6 +3,7 @@ TDSQL-C for MySQL is a new-generation cloud native relational database developed
 TDSQL-C for MySQL uses an architecture where computing and storage resources are separated and all compute nodes share the same data. It supports configuration adjustment and disaster recovery within seconds. A single node can sustain millions of QPS, automatically maintain data and backups, and roll back gigabytes of data per second.
 
 TDSQL-C for MySQL delivers high stability, reliability, performance, and scalability like commercial databases while featuring simplicity, openness, and efficient iteration like open-source cloud databases. Its engine is fully compatible with native MySQL, so you can migrate MySQL data to it without modifying any application code or configuration.
+
 ## Core design concepts
 **Cloud native: TDSQL-C for MySQL is service-oriented.**
 TDSQL-C for MySQL is built on Tencent Cloud's existing efficient and stable cloud services. It allows you to quickly build cloud databases featuring high performance, availability, and reliability.
