@@ -34,7 +34,7 @@ Os serviços do Tencent Cloud no mesmo VPC estão interconectados por meio da re
 		<th>AZ</th>
 	</tr>
 	<tr>
-		<td rowspan="5">Sul da China (Guangzhou)<br>ap-guangzhou</td>
+		<td rowspan="6">Sul da China (Guangzhou)<br>ap-guangzhou</td>
 		<td>Zona 1 de Guangzhou (esgotada)<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
@@ -49,6 +49,10 @@ Os serviços do Tencent Cloud no mesmo VPC estão interconectados por meio da re
 	<tr>
 		<td>Zona 6 de Guangzhou<br>ap-guangzhou-6</td>
 	</tr>
+	<tr>
+               <td>Zona 7 de Guangzhou<br>ap-guangzhou-7</td>
+	</tr>
+	<tr>
 		<td rowspan="5">Leste da China (Xangai)<br>ap-xangai</td>
 		<td>Zona 1 de Xangai<br>ap-shanghai-1</td>
 	</tr>
@@ -65,15 +69,18 @@ Os serviços do Tencent Cloud no mesmo VPC estão interconectados por meio da re
 		<td>Zona 5 de Xangai<br>ap-shanghai-5</td>
 	</tr>
 		<tr>
-			<td rowspan="2">Leste da China (Nanquim)<br>ap-nanjing</td>
+			<td rowspan="3">Leste da China (Nanquim)<br>ap-nanjing</td>
 			<td>Zona 1 de Nanquim<br>ap-nanjing-1</td>
 	</tr>
 	<tr>
 			<td>Zona 2 de Nanquim<br>ap-nanjing-2</td>
 	</tr>
 	<tr>
+                        <td>Zona 3 de Nanquim<br>ap-nanjing-3</td>
+	</tr>
+	<tr>
 			<td rowspan="7">Norte da China (Pequim)<br>ap-beijing</td>
-			<td>Zona 1 de Pequim<br>ap-beijing-1</td>
+			<td>Zona 1 de Pequim(esgotada)<br>ap-beijing-1</td>
 	</tr>
 	<tr>
 			<td>Zona 2 de Pequim<br>ap-beijing-2</td>
@@ -128,7 +135,7 @@ Os serviços do Tencent Cloud no mesmo VPC estão interconectados por meio da re
 			<th>AZ</th>
 		</tr>
 		<tr>
-			<td  rowspan="3">Sudeste da Ásia (Singapura)<br>ap-singapore</td>
+			<td  rowspan="4">Sudeste da Ásia (Singapura)<br>ap-singapore</td>
 			<td>Zona 1 de Singapura (Os nós em Singapura podem abranger o Sudeste da Ásia)<br>ap-singapore-1</td>
 		</tr>
 		<tr>
@@ -138,8 +145,14 @@ Os serviços do Tencent Cloud no mesmo VPC estão interconectados por meio da re
 			<td>Zona 3 de Singapura (Os nós em Singapura podem abranger os serviços no Sudeste da Ásia)<br>ap-singapore-3</td>
 		</tr>
 		<tr>
-			<td>Sudeste da Ásia (Jacarta)<br>ap-jakarta</td>
+                        <td>Zona 4 de Singapura (Os nós em Singapura podem abranger os serviços no Sudeste da Ásia)<br>ap-singapore-4</td>
+		</tr>
+		<tr>
+			<td  rowspan="2">Sudeste da Ásia (Jacarta)<br>ap-jakarta</td>
 			<td>Zona 1 de Jacarta (Os nós em Jacarta podem abranger o Sudeste da Ásia)<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+                        <td>Zona 2 de Jacarta (Os nós em Jacarta podem abranger o Sudeste da Ásia)<br>ap-jakarta-2</td>
 		</tr>
 		<tr>
 			<td  rowspan="2">Nordeste da Ásia (Seul)<br>ap-seoul</td>
@@ -163,11 +176,19 @@ Os serviços do Tencent Cloud no mesmo VPC estão interconectados por meio da re
 			<td>Zona 2 de Mumbai (Os nós em Mumbai podem abranger o Sul da Ásia) <br>ap-mumbai-2</td>
 		</tr>
 		<tr>
-		  	<td >Sudeste da Ásia (Bangkok)<br>ap-bangkok </td>
+		  	<td rowspan="2" >Sudeste da Ásia (Bangkok)<br>ap-bangkok </td>
 				 <td >Zona 1 de Bangkok (Os nós em Bangkok podem abranger o Sudeste da Ásia-Pacífico)<br>ap-bangkok-1</td>
+		</tr>
+		<tr>
+                                  <td >Zona 2 de Bangkok (Os nós em Bangkok podem abranger o Sudeste da Ásia-Pacífico)<br>ap-bangkok-2</td>
+		</tr>
 		<tr>
 			<td>América do Norte (Toronto)<br>na-toronto</td>
 			<td>Zona 1 de Toronto (Os nós em Toronto podem abranger a América do Norte)<br>na-toronto-1</td>
+		</tr>
+		<tr>
+                        <td>América do  Sul (Saopaulo)<br>sa-saopaulo</td>
+			<td>Zona 1 de Saopaulo (Os nós em Saopaulo podem abranger a América do Sul)<br>sa-saopaulo-1</td>
 		</tr>
 		<tr>
 			<td rowspan="2">Oeste dos EUA (Vale do Silício)<br>na-siliconvalley</td>
@@ -184,12 +205,13 @@ Os serviços do Tencent Cloud no mesmo VPC estão interconectados por meio da re
 			<td>Zona 2 de Virgínia (Os nós em Virgínia podem abranger o Leste dos EUA)<br>na-ashburn-2</td>
 		</tr>
 		<tr>
-			<td>Europa (Frankfurt)<br>eu-frankfurt</td>
+			<td rowspan="2">Europa (Frankfurt)<br>eu-frankfurt</td>
 			<td>Zona 1 de Frankfurt (Os nós em Frankfurt podem abranger a Europa)<br>eu-frankfurt-1</td>
 		</tr>
-		<td >Europa (Moscou)<br>eu-moscow</td>
-		<td>Zona 1 de Moscou (Os nós em Moscou podem abranger a Europa)<br>eu-moscow-1</td>
+                <tr>
+                        <td>Zona 2 de Frankfurt (Os nós em Frankfurt podem abranger a Europa)<br>eu-frankfurt-2</td>
 		</tr>
+                <tr>
 	</tbody>
 </table>
 
