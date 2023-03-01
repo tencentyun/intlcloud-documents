@@ -22,10 +22,6 @@ Yes. You can create a VPN gateway for CCN and associate the gateway with a CCN i
 ### Can I implement redundant communication by using a DC connection as the primary connection and a VPN connection as the secondary connection?
 Yes. You can create a VPC-based Direct Connect (DC) gateway and a VPC-based VPN gateway. Then, you can create a DC connection and a VPN connection. Based on the VPC route priority, the DC connection serves as the primary connection and the VPN connection serves as the secondary connection. This allows you to implement redundant communication. For more information, see Hybrid Cloud Primary/Secondary Communication (DC and VPN).
 
-[](id:07)
-### Can I use Tencent Cloud VPN Connections to circumvent internet censorship?
-No. Tencent Cloud VPN Connections provides services in compliance with national laws and regulations, and does not provide the internet access service. You are not allowed to technically circumvent internet censorship.
-
 
 [](id:08)
 ### How do I implement primary/secondary disaster recovery?
