@@ -155,12 +155,12 @@ This document takes macOS as an example. After you click **Download**, you will 
 1. Decompress the installation package locally and double-click the installer to install the client as prompted.
 ![](https://qcloudimg.tencent-cloud.cn/raw/91055f2191fa4e39f9c0b3fc283d2555.png)
 2. After the SSL VPN client is installed, select **Import Profile** > **FILE** to upload the downloaded SSL VPN client configuration file (.ovpn file).
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f39630923b2d06bc4b451e18a049e9a6.png" width="35%"></img>
+![](https://qcloudimg.tencent-cloud.cn/raw/f39630923b2d06bc4b451e18a049e9a6.png)
 3. After successful upload, select **CONNECT** for connection.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/2749df288279c6b7d9965b77a0621928.png" width="35%">
+![](https://qcloudimg.tencent-cloud.cn/raw/2749df288279c6b7d9965b77a0621928.png)
 4. Wait for the connection configured by the profile to be established.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/41ff2524ac4ffd107059cdd00c7ac246.png" width="35%">
+![](https://qcloudimg.tencent-cloud.cn/raw/41ff2524ac4ffd107059cdd00c7ac246.png)
 5. Verify the login information.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/d180678d03f8311ad6b7563a38b994d7.png" width="35%">
+![](https://qcloudimg.tencent-cloud.cn/raw/d180678d03f8311ad6b7563a38b994d7.png)
 6. The connection is successful.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/3397478b0ae43da47d9c1711d60c828f.png" width="35%">
+![](https://qcloudimg.tencent-cloud.cn/raw/3397478b0ae43da47d9c1711d60c828f.png)
