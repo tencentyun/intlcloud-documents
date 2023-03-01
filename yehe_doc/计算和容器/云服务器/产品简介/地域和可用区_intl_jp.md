@@ -10,7 +10,7 @@
 
 - 異なるリージョン間のネットワークは完全に分離されており、異なるリージョン間のクラウド製品は、**デフォルトではプライベートネットワークを介して通信できません**。
 - 異なるリージョン間のクラウドサービスは、[パブリックIP](https://intl.cloud.tencent.com/document/product/213/5224) を介してInternet にアクセスする方式で通信を行うことができます。また異なるプライベートネットワークに属するクラウドサービスは、 [CCN](https://intl.cloud.tencent.com/document/product/1003) を介して通信を行うことができ、この通信方式の方がより高速で、安定しています。
--[CLB](https://intl.cloud.tencent.com/document/product/214 ) は、現在、デフォルトで同一リージョンのトラフィック転送をサポートし、ローカルドメインのCVMをバインドします。 [クロスリージョンバインディング]（https://intl.cloud.tencent.com/document/product/214/38441）機能を有効にすることによって、CLBをサポートし、リージョン間でCVMをバインドすることができます。
+-[CLB](https://intl.cloud.tencent.com/document/product/214 ) は、現在、デフォルトで同一リージョンのトラフィック転送をサポートし、ローカルドメインのCVMをバインドします。 [クロスリージョンバインディング](https://intl.cloud.tencent.com/document/product/214/38441)機能を有効にすることによって、CLBをサポートし、リージョン間でCVMをバインドすることができます。
 
 ## アベイラビリティーゾーン
 
@@ -79,7 +79,7 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 	</tr>
 	<tr>
 			<td rowspan="7">華北地区（北京）<br>ap-beijing</td>
-			<td>北京1区<br>ap-beijing-1</td>
+			<td>北京1区（売り切れ）<br>ap-beijing-1</td>
 	</tr>
 	<tr>
 			<td>北京2区<br>ap-beijing-2</td>
@@ -112,10 +112,10 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 	</tr>
 	<tr>
 			<td rowspan="3">香港・マカオ・台湾地区（中国香港）<br>ap-hongkong</td>
-			<td>中国香港1区（中国香港のノードは中国香港・中国マカオ・中国台湾地域をカバーできる）（売り切れ）<br>ap-hongkong-1</td></tr>
+			<td>中国香港1区（中国香港のノードは中国香港・中国マカオ・中国台湾地域をカバーできる）（売り切れ）<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
-			<td>香港2区（中国香港のノードは香港・マカオ・台湾地域をカバーできる）<br>ap-hongkong-2</td>
+			<td>中国香港1区（中国香港のノードは中国香港・中国マカオ・中国台湾地域をカバーできる）<br>ap-hongkong-2</td>
 	</tr>
 	<tr>
 			<td>中国香港3区（中国香港のノードは中国香港・中国マカオ・中国台湾地域をカバーできる）<br>ap-hongkong-3</td>
@@ -133,7 +133,7 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 			<th>アベイラビリティーゾーン</th>
 		</tr>
 		<tr>
-			<td  rowspan="3">東南アジアパシフィック（シンガポール）<br>ap-singapore</td>
+			<td  rowspan="4">東南アジアパシフィック（シンガポール）<br>ap-singapore</td>
 			<td>シンガポール1区（シンガポールノードは東南アジアパシフィック地域をカバーできる）<br>ap-singapore-1</td>
 		</tr>
 		<tr>
@@ -143,8 +143,14 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 			<td>シンガポール3区（シンガポールのノードは東南アジア地域をカバーできる）<br>ap-singapore-3</td>
 		</tr>
 		<tr>
-			<td>東南アジアパシフィック（ジャカルタ）<br>ap-jakarta</td>
+                        <td>シンガポール4区（シンガポールのノードは東南アジア地域をカバーできる）<br>ap-singapore-4</td>
+		</tr>
+		<tr>
+			<td  rowspan="2">東南アジアパシフィック（ジャカルタ）<br>ap-jakarta</td>
 			<td>ジャカルタ1区（ジャカルタのノードは東南アジア地域をカバーできる）<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+                         <td>ジャカルタ2区（ジャカルタのノードは東南アジア地域をカバーできる）<br>ap-jakarta-2</td>
 		</tr>
 		<tr>
 			<td  rowspan="2">北東アジア（ソウル）<br>ap-seoul</td>
@@ -179,6 +185,10 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 			<td>トロント1区（トロントのノードは北米地域をカバーできる）<br>na-toronto-1</td>
 		</tr>
 		<tr>
+                        <td>南米地域（サン·パウロ）<br>sa-saopaulo</td>
+			<td>サン·パウロ1区（サン·パウロのノードは南米地域をカバーできる）<br>sa-saopaulo-1</td>
+		</tr>
+		<tr>
 			<td rowspan="2">米国西部（シリコンバレー）<br>na-siliconvalley</td>
 			<td>リコンバレー1区（シリコンバレーノードは米国西部をカバーできる）<br>na-siliconvalley-1</td>
 		</tr>
@@ -199,9 +209,6 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 		<tr>
 			<td>フランクフルト2区（フランクフルトのノードはヨーロッパ地域をカバーできる）<br>eu-frankfurt-2</td>
 		</tr>
-		<td >欧州リージョン（モスクワ）<br>eu-moscow</td>
-		<td>モスクワ1区（モスクワのノードはヨーロッパ地域をカバーできる）<br>eu-moscow-1</td>
-		</tr>
 	</tbody>
 </table>
 
@@ -219,10 +226,14 @@ VPCが1つしかない場合でも、単一障害点が生じることを回避�
 
 ## リソースの可用性
 次の表は、グローバル、リージョン、アベイラビリティーゾーンに固有のTencent Cloudリソースを示しています。
-
 <table>
-	<tr><th>リソース</th><th>リソース ID形式<br><リソースの略語>-8桁の数字と文字</th><th>タイプ</th><th>説明</th></tr>
 	<tbody>
+	<tr>
+		<th>リソース</th>
+		<th>リソース ID形式<br><リソースの略語 > -8桁の数字と文字</th>
+		<th>タイプ</th>
+		<th>説明</th>
+	</tr>
 	<tr>
 	  <td>ユーザーアカウント</td>
 	  <td>制限なし</td>
@@ -284,7 +295,7 @@ VPCが1つしかない場合でも、単一障害点が生じることを回避�
 	  <td>VPCは特定のリージョンに作成され、異なるアベイラビリティーゾーンで同じVPCに属するリソースを作成できます。</td>
 	</tr>
 	<tr>
-	<<td> <a href="https://intl.cloud.tencent.com/document/product/215/535#.E5.AD.90.E7.BD.91">サブネット</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/215/535#.E5.AD.90.E7.BD.91">サブネット</a> </td>
 	  <td>subnet-xxxxxxxx</td>
 	  <td>単一リージョンの単一のアベイラビリティーゾーンでのみ利用可能</td>
 	  <td>ユーザーは、異なるアベイラビリティーゾーン間でサブネットを作成することができません。</td>
