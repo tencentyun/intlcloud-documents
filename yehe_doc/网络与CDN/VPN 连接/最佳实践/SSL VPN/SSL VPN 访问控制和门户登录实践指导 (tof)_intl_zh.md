@@ -178,7 +178,7 @@ Tof 处理完成后您可以进行后续操作。
 ![](https://qcloudimg.tencent-cloud.cn/raw/64ef297dfdefeb11231d3ecb0c2ed5e1.png)
 2. SSL 客户端安装完成后，上传已下载的 SSL 客户端配置文件。
 上传后自动与 SSL 服务端连接。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/89087fe374c6a4dc912518a0fad6bb18.png" width="50%"> 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/4242b18feefb476f699e752533efa5f9.png" width="50%">  
-<img src="https://qcloudimg.tencent-cloud.cn/raw/a63a8771ac2a538c97a690f6396639f5.png" width="50%"> 
+![](https://qcloudimg.tencent-cloud.cn/raw/89087fe374c6a4dc912518a0fad6bb18.png) 
+![](https://qcloudimg.tencent-cloud.cn/raw/4242b18feefb476f699e752533efa5f9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a63a8771ac2a538c97a690f6396639f5.png)
 
