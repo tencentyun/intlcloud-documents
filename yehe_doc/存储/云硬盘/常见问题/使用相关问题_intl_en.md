@@ -168,7 +168,7 @@ Refer to [Creating Custom Images](https://intl.cloud.tencent.com/document/produc
 </dx-alert>
 
 
-1. Log in to the [CVM console](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm) and access the **Instances** page.
+1. Log in to the [CVM console](https://www.tencentcloud.com/account/login) and access the **Instances** page.
 2. Select **More** > **Instance Status** > **Shutdown** on the right side of the line where the target instance is located to shut down the instance.
 3. Select **More** > **Resource Adjustment** > **Change Disk Media Type** after shutting down the instance.
 4. In the pop-up window, select a target cloud disk type, check **I have read and agree to Rules for Changing Disk Media Type**, and click **Change Now**.
