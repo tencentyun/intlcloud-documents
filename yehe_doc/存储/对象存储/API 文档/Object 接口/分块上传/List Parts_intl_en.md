@@ -1,27 +1,32 @@
-## Feature Description
+## Overview
 
-This API (`List Parts`) is used to query the uploaded parts in a specified multipart upload, i.e., listing all successfully uploaded parts in a multipart upload with the specified `uploadId`.
+This API is used to query the uploaded parts of a specified multipart upload, i.e., listing all successfully uploaded parts of a multipart upload whose `uploadId` is specified.
+
+
+>?
+>Only the root account or sub-accounts granted the permission of the `List Part` API can call this API.
+>
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
-            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=ListParts&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=ListParts&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
 </div>
 
 
-## Request
+## Requests
 
-#### Sample request
+#### Request example
 
 ```shell
 GET /<ObjectKey>?uploadId=UploadId HTTP/1.1
@@ -31,22 +36,22 @@ Authorization: Auth String
 ```
 
 >? 
-> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com, where &lt;BucketName-APPID> is the bucket name followed by the `APPID`, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com, where &lt;BucketName-APPID> is the bucket name followed by the `APPID`, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-#### Request parameters
+#### Request fields
 
-| Field |  Description | Type | Required |
+| Parameter | Description | Type | Required |
 | ------------------ | ------------------------------------------------------------ | ------ | -------- |
-| UploadId | Multipart upload ID, which is obtained from the response of the `Initiate Multipart Upload` API. | string | Yes |
-| encoding-type | Encoding type of the returned value | string | No |
-| max-parts | Maximum number of entries to be returned at a time. Maximum value: `1000`. Default value: `1000`. | string | No |
-| part-number-marker | The marker after which the returned list begins. By default, entries are listed in UTF-8 binary order. | string | No |
+| uploadId | Multipart upload ID obtained from the `Initiate Multipart Upload` API | string | Yes |
+| encoding-type | Encoding type for the returned value | string | No |
+| max-parts | Maximum number of entries to be returned at a time. Maximum value: `1000`. Default value: `1000`. | int | No |
+| part-number-marker | By default, parts are listed in UTF-8 binary order, starting from the part after the marker. | string | No |
 
 #### Request body
 
@@ -56,11 +61,11 @@ The request body of this request is empty.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
-A successful query returns **application/xml** data, which includes the information on the successfully uploaded parts.
+A successful query returns **application/xml** data, which includes information about the successfully uploaded parts.
 
 ```shell
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -91,58 +96,58 @@ A successful query returns **application/xml** data, which includes the informat
 </ListPartsResult>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------ | ---------------------------------- | --------- |
-| ListPartsResult | None | Stores the response of `List Parts` | Container |
+| ListPartsResult | None | Stores the response of `List Parts`. | Container |
 
-`ListPartsResult` has the following sub-nodes:
+Content of `ListPartsResult`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | -------------------- | --------------- | ------------------------------------------------------------ | --------- |
-| Bucket               | ListPartsResult | Destination bucket for the multipart upload in the format of `BucketName-APPID`, such as `examplebucket-1250000000`. | string |
-| Encoding-Type        | ListPartsResult | Encoding format                                                    | string    |
-| Key                  | ListPartsResult | Object name | string |
-| UploadId             | ListPartsResult | ID of the multipart upload | string |
-| Initiator            | ListPartsResult | Information about the request initiator | Container |
-| Owner                | ListPartsResult | Information of the part owner                                 | Container |
-| StorageClass         | ListPartsResult | Storage class of the parts, such as `STANDARD`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`. For more information, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | string |
-| PartNumberMarker     | ListPartsResult | The marker after which the returned list begins. By default, entries are listed in UTF-8 binary order. | string |
-| NextPartNumberMarker | ListPartsResult | The `NextMarker` after which the next returned list begins if the list is truncated. | string |
-| MaxParts             | ListPartsResult | Maximum number of entries to be returned at a time                                       | string      |
-| IsTruncated          | ListPartsResult | Whether the returned list is truncated. Valid values: `true`, `false`. | boolean |
-| Part                 | ListPartsResult | Metadata                                                   | Container |
+| Bucket | ListPartsResult | Name of the destination bucket for the multipart upload. It is formed by connecting a user-defined string and the system-generated `APPID` with a hyphen, for example, `examplebucket-1250000000`. | string |
+| Encoding-Type | ListPartsResult | Encoding type | string |
+| Key | ListPartsResult | Object name | string |
+| UploadId | ListPartsResult | ID of the multipart upload | string |
+| Initiator | ListPartsResult | Information about the request initiator | Container |
+| Owner | ListPartsResult | Information about the part owner | Container |
+| StorageClass | ListPartsResult | Storage class of the parts. Enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`, `DEEP_ARCHIVE`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | string |
+| PartNumberMarker | ListPartsResult | By default, parts are listed in UTF-8 binary order, starting from the part after the marker.  | string |
+| NextPartNumberMarker | ListPartsResult | If the returned list is truncated, the `NextMarker` returned will be the starting point of the subsequent list.   | string    |
+| MaxParts             | ListPartsResult | Maximum number of entries to be returned at a time                                       | int |
+| IsTruncated | ListPartsResult | Indicates whether the returned list is truncated. Valid values: `true`, `false` | boolean |
+| Part | ListPartsResult | Metadata | Container |
 
-`Initiator` has the following sub-nodes:
+Content of `Initiator`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------------------------- | -------------------- | ------ |
 | ID | ListPartsResult.Initiator | Unique ID of the initiator | string |
-| DisplayName        | ListPartsResult.Initiator | Username of the initiator | string |
+| DisplayName | ListPartsResult.Initiator | Username of the initiator | string |
 
-`Owner` has the following sub-nodes:
+Content of `Owner`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | --------------------- | -------------------- | ------ |
-| ID                 | ListPartsResult.Owner | Unique ID of the owner | string |
-| DisplayName        | ListPartsResult.Owner | Username of the owner | string |
+| ID | ListPartsResult.Owner | Unique ID of the owner | string |
+| DisplayName | ListPartsResult.Owner | Username of the owner | string |
 
-`Part` has the following sub-nodes:
+Content of `Part`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | -------------------- | ----------------------- | ------ |
 | PartNumber         | ListPartsResult.Part | Part number                | string |
-| LastModified       | ListPartsResult.Part | Last modified time of the part    | string |
-| ETag               | ListPartsResult.Part | MD5 checksum of the part     | string |
-| Size               | ListPartsResult.Part | Part size in bytes | string |
+| LastModified       | ListPartsResult.Part | Last modified time of a part | string |
+| ETag               | ListPartsResult.Part | MD5 checksum of a part | string |
+| Size               | ListPartsResult.Part | Part size, in bytes | string |
 
 #### Error codes
 
 This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 
-## Samples
+## Examples
 
 #### Request
 
@@ -204,3 +209,4 @@ x-cos-request-id: NWU3YjJkNWRfMjNhZjJhMDlfNWY5Ml8zMmUy****
 			<IsTruncated>false</IsTruncated>
 </ListPartsResult>
 ```
+

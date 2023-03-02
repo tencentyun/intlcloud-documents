@@ -52,7 +52,7 @@ Authorization: Auth String
 [Request Body]
 ```
 >? 
-> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://www.tencentcloud.com/document/product/436/6224) 文档。
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 > 
 
@@ -64,14 +64,15 @@ Authorization: Auth String
 
 此接口除使用公共请求头部外，还支持以下请求头部，了解公共请求头部详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
-名称|描述|类型|是否必选
----|---|---|---
-x-cos-acl|定义存储桶的访问控制列表（ACL）属性。枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583#.E9.A2.84.E8.AE.BE.E7.9A.84-acl) 文档中存储桶的预设 ACL 部分，如 private, public-read 等，默认为 private|Enum|否
-x-cos-grant-read|赋予被授权者读取存储桶的权限，格式为 id="[OwnerUin]"，如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"`|string|否
-x-cos-grant-write|赋予被授权者写入存储桶的权限，格式为 id="[OwnerUin]"，如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"`|string|否
-x-cos-grant-read-acp|赋予被授权者读取存储桶的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"`|string|否
-x-cos-grant-write-acp|赋予被授权者写入存储桶的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"`|string|否
-x-cos-grant-full-control|赋予被授权者操作存储桶的所有权限，格式为 id="[OwnerUin]"，如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"`|string|否
+| 名称                     | 描述                                                         | 类型   | 是否必选 |
+| :----------------------- | :----------------------------------------------------------- | :----- | :------- |
+| x-cos-acl                | 定义存储桶的访问控制列表（ACL）属性。枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583#.E9.A2.84.E8.AE.BE.E7.9A.84-acl) 文档中存储桶的预设 ACL 部分，例如 private, public-read 等，默认为 private | Enum   | 否       |
+| x-cos-grant-read         | 赋予被授权者读取存储桶的权限。若被授权者为主账号，格式为 id="[OwnerUin]"，如 id="100000000001"；若被授权者为子账号，格式为 id="[OwnerUin/GrantsUin]"，如 id="100000000001/100000000011"。可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"` | string | 否       |
+| x-cos-grant-write        | 赋予被授权者写入存储桶的权限。若被授权者为主账号，格式为 id="[OwnerUin]"，如 id="100000000001"；若被授权者为子账号，格式为 id="[OwnerUin/GrantsUin]"，如 id="100000000001/100000000011"。可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"` | string | 否       |
+| x-cos-grant-read-acp     | 赋予被授权者读取存储桶的访问控制列表（ACL）的权限。若被授权者为主账号，格式为 id="[OwnerUin]"，如 id="100000000001"；若被授权者为子账号，格式为 id="[OwnerUin/GrantsUin]"，如 id="100000000001/100000000011"。可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"` | string | 否       |
+| x-cos-grant-write-acp    | 赋予被授权者写入存储桶的访问控制列表（ACL）的权限。若被授权者为主账号，格式为 id="[OwnerUin]"，如 id="100000000001"；若被授权者为子账号，格式为 id="[OwnerUin/GrantsUin]"，如 id="100000000001/100000000011"。可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"` | string | 否       |
+| x-cos-grant-full-control | 赋予被授权者操作存储桶的所有权限。若被授权者为主账号，格式为 id="[OwnerUin]"，如 id="100000000001"；若被授权者为子账号，格式为 id="[OwnerUin/GrantsUin]"，如 id="100000000001/100000000011"。可使用半角逗号（,）分隔多组被授权者，如 `id="100000000001",id="100000000002"`| string | 否       |
+
 
 #### 请求体
 

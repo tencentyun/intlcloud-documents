@@ -1,39 +1,33 @@
 ## Overview
 
-COS allows you to filter buckets by tag in the console, which is powered by the Tencent Cloud Tag service.
+COS allows you to filter buckets by tag in the console or via the API, which is implemented based on authorization by tag.
 
-Assume that the enterprise account CompanyExample (OwnerUin: 100000000001, Owner_appid: 1250000000) has a sub-account Developer, and CompanyExample needs to grant the sub-account permissions to get a list of tagged objects. The following provides details on how to grant the permissions.
-
-
-
-## Notes
-If you want to enable the sub-account to get a list of buckets filtered by tag in the console, you need to grant it the necessary permissions GetResourceTags, GetResourcesByTags and GetTags by creating custom policies in the [CAM](https://console.cloud.tencent.com/cam/policy) Console.
+## Authorization steps
 
 
-
-## Directions
-
-1. Log in to the [CAM](https://console.cloud.tencent.com/cam/policy) console using the enterprise account CompanyExample and enter the policy configuration page.
-2. Grant the sub-account Developer permissions to pull a list of tagged objects using **policy generator** or **policy syntax**.
+1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/policy) with the root account `Owner` and enter the policy configuration page.
+2. Grant sub-account `SubUser` access to buckets with the specified tag through the **policy generator** or **policy syntax** as follows:
 <dx-tabs>
 ::: Policy generator
 1. Go to the [CAM policy configuration](https://console.cloud.tencent.com/cam/policy) page.
 2. Click **Create Custom Policy** > **Create by Policy Generator**.
 3. On the permission configuration page, configure the following:
- - **Tag**:
-    - **Effect**: use the default option Allow.
-    - **Service**: select Tag.
-    - **Action**: check actions as needed for your business. Check GetResourceTags, GetResourcesByTags and GetTags here.
-    - **Resource**: Select **All resources**.
- - **Add Permissions**: Configure based on your business needs.
-5. Click **Next** and enter the policy name.
-6. Click **Complete**.
+	- **Effect**: use the default option Allow.
+	- **Service**: Select COS.
+	- **Operation**: Select **Read** > **GetService** (pulling the bucket list).
+	- **Resource**: Select **All resources**.
+	- **Condition**: Click **Add other conditions**. On the panel, configure the following:
+		- **Condition Key**: Select `qcs:resource_tag`.
+		- **Operator**: Select `string_equal`.
+		- **Condition Value**: Enter a tag in the format of `key&val`. Here, replace `key` and `value` with the tag key and value respectively.
+4. Click **Next** and enter the policy name.
+5. Click **OK** to complete the process.
 :::
 ::: Policy syntax
 1. Go to the [CAM policy configuration](https://console.cloud.tencent.com/cam/policy) page.
 2. Click **Create Custom Policy** > **Create by Policy Syntax**.
-3. You can choose a blank template or an existing tag template. Here, select the **QcloudTAGFullAccess** template.
-4. Click **Next**, and you can see the template policy is `tag:*` by default. Here, change `action` to `name/tag:GetResourceTags`, `name/tag:GetResourcesByTags`, and `name/tag:GetTags`. Below is the policy syntax:
+3. Select **Blank Template** and click **Next**.
+4. Enter a policy in the following format. Here, replace `key` and `value` with the specified tag key and value respectively.
 ```
 {
     "version": "2.0",
@@ -41,13 +35,16 @@ If you want to enable the sub-account to get a list of buckets filtered by tag i
         {
             "effect": "allow",
             "action":[
-                "name/tag:GetResourceTags",
-                "name/tag:GetResourcesByTags",
-                "name/tag:GetTags"
+                "name/cos:GetService"
             ],
-            "resource": [
-                "*"
-            ]
+            "resource": "*",
+            "condition":{
+                "for_any_value:string_equal": {
+                    "qcs:resource_tag": [
+                        "key&value"
+                    ]
+                }
+            }
         }
     ]
 }
@@ -55,7 +52,34 @@ If you want to enable the sub-account to get a list of buckets filtered by tag i
 5. Click **OK** to complete the process.
 :::
 </dx-tabs>
-3. Associate the policy with the sub-account `Developer` by locating the policy created in step 2 on the **Policies** page and clicking **Associate User/Group/Role** on the right.
-4. In the pop-up window, select the sub-account `Developer` and click **OK**.
-5. Log in to the console with the sub-account `Developer`. On the [Bucket List](https://console.cloud.tencent.com/cos5/bucket) page, select **Tag** and enter a **tag key** to search for buckets with the specified tag:
+3. Associate the policy with the sub-account `SubUser` by locating the policy created in step 2 on the **Policies** page and clicking **Associate User/User Group/Role** on the right.
+4. In the pop-up window, select the sub-account `SubUser` and click **OK**.
+
+
+## Viewing in the console
+
+
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) with the sub-account `SubUser`.
+2. The **Bucket List** page **automatically displays the list of buckets to which the sub-account has access**.
+
+At this point, you have granted the sub-account access to buckets with the specified tag (key and value).
+
+
+## Calling the API
+
+
+>!
+> - Unlike the console, the `GetService` API cannot automatically display the list of buckets to which the sub-account has access and requires you to pass in tag parameters.
+> - The `GetService` API currently allows you to pass in only one tag.
+
+
+1. Initiate a request with the key of the sub-account `SubUser`.
+2. Call the `GetService` API to pass in the tag filtering parameters such as `(key,value)`. Below is a sample request. For more information, see [GET Service (List Buckets)](https://intl.cloud.tencent.com/document/product/436/8291).
+
+```
+GET /?tagkey=key1&tagvalue=value1 HTTP/1.1
+Date: Fri, 24 May 2019 11:59:51 GMT
+Authorization: Auth String
+```
+
 

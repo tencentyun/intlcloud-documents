@@ -12,7 +12,6 @@ COS 里每个对象对应一个 ETag，ETag 是对象被创建时对象内容的
 如果用户需要校验下载对象与原对象是否一致，可在对象上传时使用校验算法计算对象的校验值，通过自定义元数据设置对象的校验值，在下载对象后，用户重新计算对象的校验值，并与该自定义元数据进行比较验证。在这种方式下，用户可自主选择校验算法，但对于同一个对象而言，其上传和下载时所使用的校验算法应保持一致。   
 
 
-
 ## API 接口示例
 
 #### 简单上传请求
@@ -73,7 +72,7 @@ x-cos-meta-md5: b62e10bcab55a88240bd9c436cffdcf9
 
 下面以 Python SDK 为例演示如何校验对象，完整的示例代码如下。
 
->?代码基于 Python 2.7，其中 Python SDK 详细使用方式，请参见 Python SDK  [对象操作](https://intl.cloud.tencent.com/document/product/436/31546) 文档。
+>?代码基于 Python 2.7，其中 Python SDK 详细使用方式，请参见 Python SDK  [对象操作](https://www.tencentcloud.com/document/product/436/43582) 文档。
 
 #### 1. 初始化配置
 
@@ -86,6 +85,7 @@ from qcloud_cos import CosS3Client
 from qcloud_cos import CosServiceError
 from qcloud_cos import CosClientError
 import sys
+import os
 import logging
 import hashlib
 
@@ -93,10 +93,10 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 设置用户属性, 包括 SecretId, SecretKey, Region
 # APPID 已在配置中移除，请在参数 Bucket 中带上 APPID。Bucket 由 BucketName-APPID 组成。
-secret_id = COS_SECRETID           # 替换为您的 SecretId 信息
-secret_key = COS_SECRETKEY         # 替换为您的 SecretKey 信息
+secret_id = os.environ['COS_SECRET_ID']     # 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://cloud.tencent.com/document/product/598/37140
+secret_key = os.environ['COS_SECRET_KEY']   # 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://cloud.tencent.com/document/product/598/37140
 region = 'ap-beijing'      # 替换为您的 Region, 这里以北京为例
-token = None               # 使用临时密钥需要传入 Token，默认为空，可不填
+token = None               # 临时密钥的 Token，临时密钥生成和使用指引参见 https://cloud.tencent.com/document/product/436/14048
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # 获取配置对象
 client = CosS3Client(config)
 ```

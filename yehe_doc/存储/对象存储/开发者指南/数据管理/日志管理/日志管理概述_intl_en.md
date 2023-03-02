@@ -18,7 +18,7 @@ Logs are generated every 5 minutes (one record per line). Each record contains m
 | 5        | eventSource     | Access domain name | examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com                        |
 | 6 | eventName | Event name | UploadPart |
 | 7 | remoteIp | Source IP | 192.168.0.1 |
-| 8 | userSecretKeyId | User access KeyId | AKIDNYVCdoJQyGJ5brTf |
+| 8        | userSecretKeyId | User access `KeyId`        | AKIDNYVCdoJQyGJ5b1234                                                       |
 | 9        | reservedFiled | Reserved field  | Displayed as `-` |
 | 10 | reqBytesSent | Request bytes | 83886080 |
 | 11 | deltaDataSize | Change in storage made by the request (in bytes) | 808 |

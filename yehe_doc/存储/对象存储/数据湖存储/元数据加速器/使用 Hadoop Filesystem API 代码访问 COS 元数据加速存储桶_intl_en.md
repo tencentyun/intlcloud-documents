@@ -4,12 +4,12 @@ If metadata acceleration is enabled for a COS bucket, you can use Java code to a
 
 ## Prerequisites
 
-- Make sure that metadata acceleration has been enabled, and the environment deployment and HDFS protocol configuration have been performed correctly. For more information, see [Using HDFS to Access Metadata Acceleration-Enabled Bucket](https://intl.cloud.tencent.com/document/product/436/46198).
+- Make sure that metadata acceleration has been enabled, and the environment deployment and HDFS protocol configuration have been performed correctly. For more information, see [Using HDFS to Access a Bucket with Metadata Acceleration Enabled](https://intl.cloud.tencent.com/document/product/436/46198).
 - If there is a Hadoop environment, you can verify whether the Hadoop command line can be accessed correctly.
 
 ## Directions
 
-1. Create a Maven project and add the following dependencies to `pom.xml` in Maven (set the version of the `hadoop-common` package based on your actual Hadoop version and environment).
+1. Create a Maven project and add the following dependencies to `pom.xml` in Maven (set the versions of the `hadoop-common`, `hadoop-cos`, and `cos_api-bundle` packages based on your actual Hadoop version and environment).
 ```plaintext
 <dependencies>
         <dependency>
@@ -18,11 +18,21 @@ If metadata acceleration is enabled for a COS bucket, you can use Java code to a
             <version>2.8.5</version>
             <scope>provided</scope>
         </dependency>
+         <dependency>
+            <groupId>com.qcloud.cos</groupId>
+            <artifactId>hadoop-cos</artifactId>
+            <version>xxx</version>
+        </dependency>
+        <dependency>
+            <groupId>com.qcloud</groupId>
+            <artifactId>cos_api-bundle</artifactId>
+            <version>xxx</version>
+        </dependency>
+        
 </dependencies>
 ```
 2. Refer to the following Hadoop code to make changes. The configuration items can be modified as instructed in [Mounting CHDFS Instance](https://intl.cloud.tencent.com/document/product/1106/41965). **Pay special attention to the instructions related to data persistence and visibility.**
    Only certain common file system operations are listed below. For other APIs, see [Hadoop FileSystem APIs](https://hadoop.apache.org/docs/r2.8.2/api/org/apache/hadoop/fs/FileSystem.html).
-
 ```java
 package com.qcloud.cos.demo;
 
@@ -42,20 +52,33 @@ import java.nio.ByteBuffer;
 public class Demo {
 			private static FileSystem initFS() throws IOException {
 				Configuration conf = new Configuration();
-				// For configuration items, visit https://intl.cloud.tencent.com/document/product/1106/41965.
-				// The following configuration items are required
+               // For more information on the configuration items, visit https://cloud.tencent.com/document/product/436/6884#.E4.B8.8B.E8.BD.BD.E4.B8.8E.E5.AE.89.E8.A3.85.
+               // The following configuration items are required
 
-			conf.set("fs.cosn.trsf.fs.ofs.impl", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
-				conf.set("fs.cosn.trsf.fs.AbstractFileSystem.ofs.impl", "com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter");
-				conf.set("fs.cosn.trsf.fs.ofs.tmp.cache.dir", "/data/chdfs_tmp_cache");
-				// Replace `appid` with your actual `appid`
-				conf.set("fs.cosn.trsf.fs.ofs.user.appid", "1250000000");
-				// Replace `region` with your actual region
-				conf.set("fs.cosn.trsf.fs.ofs.bucket.region", "ap-beijing")
-				// For other optional configuration items, visit https://intl.cloud.tencent.com/document/product/1106/41965. 
+               conf.set("fs.cosn.impl", "org.apache.hadoop.fs.CosFileSystem");
+               conf.set("fs.AbstractFileSystem.cosn.impl", "org.apache.hadoop.fs.CosN");
+               conf.set("fs.cosn.userinfo.secretId", "xxxxxx");
+               conf.set("fs.cosn.userinfo.secretKey", "xxxxxx");
+               conf.set("fs.cosn.bucket.region", "xxxxxx");
+               conf.set("fs.cosn.tmp.dir", "/data/chdfs_tmp_cache");
 
-			String chdfsUrl = "cosn://examplebucket-12500000000/";
-				return FileSystem.get(URI.create(chdfsUrl), conf);
+               // For more information on the configuration items, visit https://cloud.tencent.com/document/product/436/71550.
+               // Required configuration items for the POSIX access mode (recommended)
+               conf.set("fs.cosn.trsf.fs.AbstractFileSystem.ofs.impl", "com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter");
+               conf.set("fs.cosn.trsf.fs.ofs.impl", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
+               conf.set("fs.cosn.trsf.fs.ofs.tmp.cache.dir", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
+               conf.set("fs.cosn.trsf.fs.ofs.impl", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
+               conf.set("fs.cosn.trsf.fs.ofs.tmp.cache.dir", "/data/chdfs_tmp_cache");
+               
+               // Replace `appid` with your actual `appid`
+               conf.set("fs.cosn.trsf.fs.ofs.user.appid", "1250000000");
+               // Replace `region` with your actual region
+               conf.set("fs.cosn.trsf.fs.ofs.bucket.region", "ap-beijing");
+               // For more information on the optional configuration items, visit https://cloud.tencent.com/document/product/436/6884#.E4.B8.8B.E8.BD.BD.E4.B8.8E.E5.AE.89.E8.A3.85.
+               // Whether to enable CRC-64 checksum. It is disabled by default, meaning that you can't run the `hadoop fs -checksum` command to obtain the CRC-64 checksum of a file.
+               conf.set("fs.cosn.crc64.checksum.enabled", "true");
+               String cosHadoopFSUrl = "cosn://examplebucket-12500000000/";
+               return FileSystem.get(URI.create(cosHadoopFSUrl), conf);
 			}
 
 		private static void mkdir(FileSystem fs, Path filePath) throws IOException {
@@ -218,10 +241,8 @@ public class Demo {
 			}
 }
 ```
-
-
 3. Compile and run the project.
 >?
 > - Before running the code, be sure to correctly set `classpath`, which must contain the paths of the Hadoop `common` package and the JAR package depended on by the metadata acceleration bucket.
-> - For an EMR environment, if you follow the steps as detailed in [Using HDFS to Access Metadata Acceleration-Enabled Bucket](https://intl.cloud.tencent.com/document/product/436/46198), the Hadoop `common` package is generally in the `/usr/local/service/hadoop/share/hadoop/common/` directory, and the JAR package depended on by the metadata acceleration bucket is generally in the `/usr/local/service/hadoop/share/hadoop/common/lib/` directory.
+> - For an EMR environment, if you follow the steps as detailed in [Using HDFS to Access a Bucket with Metadata Acceleration Enabled](https://intl.cloud.tencent.com/document/product/436/46198), the Hadoop `common` package is generally in the `/usr/local/service/hadoop/share/hadoop/common/` directory, and the JAR package depended on by the metadata acceleration bucket is generally in the `/usr/local/service/hadoop/share/hadoop/common/lib/` directory.
 > 

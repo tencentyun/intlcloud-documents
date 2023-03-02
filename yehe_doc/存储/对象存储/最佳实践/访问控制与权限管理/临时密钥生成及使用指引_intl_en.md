@@ -4,7 +4,7 @@
 
 ## Temporary Key
 
-The temporary key (access credential) obtains limited permissions using Tencent Cloud CAM APIs.
+[Temporary keys (temporary access credentials)](https://intl.cloud.tencent.com/document/product/1150/49452) are access-limited keys requested through CAM APIs.
 To call the COS API, you use temporary keys to calculate a signature for identity authentication.
 When a COS API request uses a temporary key to calculate the signature for authentication, the following three fields in the message returned by the temporary key API are required:
 - TmpSecretId
@@ -22,10 +22,11 @@ For COS API authorization policies, see:
 
 ## Getting a Temporary Key
 
-You can get a temporary key via [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk), or by calling the STS API directly.
+You can get a temporary key via the [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) or by calling the STS API [GetFederationToken](https://intl.cloud.tencent.com/document/product/1150/49452) directly.
 
 
 >! The Java SDK is used as an example in this document. To use it, you need to get the SDK code (version number) on GitHub. If you cannot find the SDK version number, check whether this SDK version is available on GitHub.
+>
 
 ### COS STS SDK 
 
@@ -41,6 +42,7 @@ COS provides SDKs and samples in various languages (e.g., Java, Node.js, PHP, Py
 | Python      | [Download](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/python)    | [View Sample](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/python/demo/sts_demo.py) |
 
 >! To avoid the differences between versions of the STS API, STS SDKs take a return parameters structure that may be different from that of the STS API. For more information, see [Java SDK documentation](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/java).
+>
 
 
 Here is an example to obtain a temporary key using the downloaded [Java SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/java):
@@ -54,10 +56,12 @@ public class Demo {
 
         try {
             // `SecretId` and `SecretKey` represent permanent identities (root account, sub-account) for applying for a temporary key. If it is a sub-account, it must have permission to operate buckets.
+            String secretId = System.getenv("secretId");// User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+ 			String secretKey = System.getenv("secretKey");// User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Replace it with your Cloud API key SecretId
-            config.put("secretId", "SecretId");
+            config.put("secretId", secretId);
             // Replace it with your Cloud API key SecretKey
-            config.put("secretKey", "SecretKey");
+            config.put("secretKey", secretKey);
 
             // Set a domain: 
             // If you use Tencent Cloud CVMs, you can set an internal domain.
@@ -83,11 +87,11 @@ public class Demo {
             });
 
             // A list of permissions needed for the key (required)
-            // The following permissions are required for simple upload, upload using a form, and multipart upload. For other permissions, visit https://intl.cloud.tencent.com/document/product/436/30580
+            // The following permissions are required for simple, form-based, and multipart upload. For other permissions, visit https://intl.cloud.tencent.com/document/product/436/30580.
             String[] allowActions = new String[] {
                      // Simple upload
                     "name/cos:PutObject",
-                    // Upload using a form or WeChat Mini Program
+                    // Upload using a form or Weixin Mini Program
                     "name/cos:PostObject",
                     // Multipart upload
                     "name/cos:InitiateMultipartUpload",
@@ -97,12 +101,48 @@ public class Demo {
                     "name/cos:CompleteMultipartUpload"
             };
             config.put("allowActions", allowActions);
+			    /**
+             * Set `condition` (if necessary)
+             //# Condition for the temporary key to take effect. For the detailed configuration rules of `condition` and `condition` types supported by COS, visit https://cloud.tencent.com/document/product/436/71307.
+             final String raw_policy = "{\n" +
+             "  \"version\":\"2.0\",\n" +
+             "  \"statement\":[\n" +
+             "    {\n" +
+             "      \"effect\":\"allow\",\n" +
+             "      \"action\":[\n" +
+             "          \"name/cos:PutObject\",\n" +
+             "          \"name/cos:PostObject\",\n" +
+             "          \"name/cos:InitiateMultipartUpload\",\n" +
+             "          \"name/cos:ListMultipartUploads\",\n" +
+             "          \"name/cos:ListParts\",\n" +
+             "          \"name/cos:UploadPart\",\n" +
+             "          \"name/cos:CompleteMultipartUpload\"\n" +
+             "        ],\n" +
+             "      \"resource\":[\n" +
+             "          \"qcs::cos:ap-shanghai:uid/1250000000:examplebucket-1250000000/*\"\n" +
+             "      ],\n" +
+             "      \"condition\": {\n" +
+             "        \"ip_equal\": {\n" +
+             "            \"qcs:ip\": [\n" +
+             "                \"192.168.1.0/24\",\n" +
+             "                \"101.226.100.185\",\n" +
+             "                \"101.226.100.186\"\n" +
+             "            ]\n" +
+             "        }\n" +
+             "      }\n" +
+             "    }\n" +
+             "  ]\n" +
+             "}";
 
+             config.put("policy", raw_policy);
+             */				
+          
+          
             Response response = CosStsClient.getCredential(config);
             System.out.println(response.credentials.tmpSecretId);
             System.out.println(response.credentials.tmpSecretKey);
             System.out.println(response.credentials.sessionToken);
-        } catch (Exception e) {
+        } catch (Exception e){
             e.printStackTrace();
             throw new IllegalArgumentException("no valid secret !");
         }
@@ -123,6 +163,7 @@ Use 3.1.0 or a later version.
 
 The following example shows how to use a temporary key obtained by use of COS Java SDK to access COS:
 >? Before you run the sample, go to the [GitHub project](https://github.com/tencentyun/cos-java-sdk-v5) to download the Java SDK installation package.
+>
 
 ```java
 // Import `cos xml java sdk` using the integration method with Maven as described on GitHub.
@@ -139,11 +180,11 @@ public class Demo {
         String tmpSecretKey = "COS_SECRETKEY";  // Replace it with the temporary SecretKey returned by the STS API.
         String sessionToken = "Token";  // Replace it with the temporary token returned by the STS API.
 
-        // 1. Initialize user authentication information (secretId, secretKey).
+        // 1. Initialize user authentication information (`secretId`, `secretKey`).
         COSCredentials cred = new BasicCOSCredentials(tmpSecretId, tmpSecretKey);
-        // 2. Set the bucket region. For COS regions, see https://cloud.tencent.com/document/product/436/6224.
+        // 2. Set the bucket region. For more information on COS regions, visit https://cloud.tencent.com/document/product/436/6224.
         ClientConfig clientConfig = new ClientConfig(new Region("ap-guangzhou"));
-        // 3. Generate a COS client.
+        // 3. Generate a COS client
         COSClient cosclient = new COSClient(cred, clientConfig);
         // The bucket name must contain `appid`.
         String bucketName = "examplebucket-1250000000";
@@ -170,7 +211,7 @@ public class Demo {
             e.printStackTrace();
         }
 
-        // Shut down the client.
+        // Disable the client
         cosclient.shutdown();
 
     }

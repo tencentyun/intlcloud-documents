@@ -7,7 +7,12 @@ After all parts are uploaded, it will take several minutes for them to be concat
 - If any uploaded part is smaller than 1 MB, "400 EntityTooSmall" will be returned when this API is called.
 - If the part numbers are not continuous, "400 InvalidPart" will be returned when this API is called.
 - If the part numbers in the request body are not in ascending order, "400 InvalidPartOrder" will be returned when this API is called.
-- If the `uploadId` does not exist, "404 NoSuchUpload" will be returned when this API is called.
+- If the `uploadId` does not exist, `404` (NoSuchUpload) will be returned when this API is called.
+
+
+>?
+>Only the root account or sub-accounts granted the permission of the `Complete Multipart Upload` API can call this API.
+>
 
 >! We recommend you either complete or abort a multipart upload as early as possible, as the uploaded parts of an incomplete multipart upload will take up storage capacity and incur storage fees.
 >
@@ -16,13 +21,13 @@ After all parts are uploaded, it will take several minutes for them to be concat
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CompleteMultipartUpload&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -31,7 +36,7 @@ After all parts are uploaded, it will take several minutes for them to be concat
 
 #### Versioning
 
-- For a versioning-enabled bucket, COS will automatically generate a unique version ID for the concatenated object, and the ID will be returned in the `x-cos-version-id` response header.
+- For a versioning-enabled bucket, COS will automatically generate a unique version ID for the object, and the ID will be returned in the `x-cos-version-id` response header.
 - For a versioning-suspended bucket, COS will always use `null` as the version ID of the object and will return the `x-cos-version-id: null` response header.
 
 ## Request
@@ -51,8 +56,8 @@ Authorization: Auth String
 ```
 
 >? 
-> - In `Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com`, &lt;BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 #### Request parameters
@@ -63,7 +68,7 @@ Authorization: Auth String
 
 #### Request headers
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -107,15 +112,15 @@ The nodes are described as follows:
 
 In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-**Versioning-related headers**
+**Versioning-Related Headers**
 
 If the object is uploaded to a versioning-enabled bucket, the following response headers will be returned:
 
 | Header | Description | Type |
 | ---------------- | ------------- | ------ |
-| x-cos-version-id | Object version ID | string |
+| x-cos-version-id | Version ID of the object | string |
 
-**Headers related to server-side encryption (SSE)**
+**SSE-related headers**
 
 If server-side encryption is used during object upload, this API will return headers used specifically for server-side encryption. For more information, please see [Server-Side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
@@ -150,14 +155,14 @@ The nodes are described as follows:
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 
-## Samples
+## Examples
 
 This API uses `Transfer-Encoding: chunked` in the response by default. For readability, samples in this document are displayed without `Transfer-Encoding`. During use, different languages and libraries can automatically process this encoding form. For more information, see the language- and library-related documents.
 
-#### Sample 1: simple use case (versioning-disabled)
+#### Example 1: simple use case (with versioning disabled)
 
 #### Request
 
@@ -298,7 +303,7 @@ x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085***
 
 ```
 
-#### Sample 4: using server-side encryption SSE-C
+#### Example 4: using server-side encryption SSE-C
 
 #### Request
 
@@ -343,7 +348,7 @@ x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 </CompleteMultipartUploadResult>
 ```
 
-#### Sample 5: versioning-enabled
+#### Example 5: versioning-enabled
 
 #### Request
 
@@ -387,7 +392,7 @@ x-cos-version-id: MTg0NDUxNTMyMTEwNDU1NDc3OTc
 </CompleteMultipartUploadResult>
 ```
 
-#### Sample 6: versioning-suspended
+#### Example 6: versioning-suspended
 
 #### Request
 

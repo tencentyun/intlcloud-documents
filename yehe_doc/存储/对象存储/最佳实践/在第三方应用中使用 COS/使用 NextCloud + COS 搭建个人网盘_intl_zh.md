@@ -2,105 +2,108 @@
 
 NextCloud 是一款用于创建网络硬盘的开源客户端和服务器软件。每个人都可以借助该软件自行搭建私人的网盘服务。
 
-NextCloud 的服务端采用 PHP 编写，底层存储默认保存在服务器的本地硬盘中。通过修改 NextCloud 配置，可以使用腾讯云对象存储 COS 作为底层存储，享受对象存储 COS 带来的更低廉的存储成本、更高的可靠性和容灾能力，以及无限的存储空间。
+NextCloud 的服务端采用 PHP 编写，底层存储默认保存在服务器的本地硬盘中。通过修改 NextCloud 配置，可以使用腾讯云对象存储（Cloud Object Storage，COS）作为底层存储，享受对象存储带来的更低廉的存储成本、更高的可靠性和容灾能力，以及无限的存储空间。
 
-本文将介绍 NextCloud 服务端所依赖的环境，并分析对比本地存储与对象存储 COS 的区别，最后将讲解实战搭建个人网盘。
+本文将介绍 NextCloud 服务端所依赖的环境，并分析对比本地存储与对象存储的区别，最后将讲解实战搭建个人网盘。
 
 >! 将现有 NextCloud 服务端实例从本地存储更改为使用腾讯云对象存储可能导致已有的文件不可见。如需修改已有实例的存储方式，建议依照本教程搭建全新的 NextCloud 服务端并配置使用腾讯云对象存储，随后将旧实例的数据迁移至新实例。
+>
 
 ## NextCloud 服务端环境简介
 
 NextCloud 服务端采用 PHP 编写，数据库可以使用 SQLite、MySQL、MariaDB 或 PostgreSQL，其中 SQLite 由于性能上的限制，通常不建议在实际应用中使用。虽然 PHP、MySQL 及相关的服务器软件都有 Windows 版本，但是根据 NextCloud 社区的反馈，在 Windows 下运行 NextCloud 服务端会存在文字编码等问题，因此官方宣称不支持在 Windows 下部署 NextCloud 服务端。
 
-<span id=1>
-
+<span id=1></span>
 ### 服务器配置
 
-腾讯云云服务器 CVM 目前有多个实例族，每个实例族中又分为多个子类型。不同的实例族有不同的侧重点，例如大内存或高 IO 等。NextCloud 定位于个人、家庭或中小企业用户，对各项硬件资源需求都不高，因此选择各项资源均衡的标准型即可满足需求。对于子类型，通常来说最新的子类型将拥有更高的性价比，一般情况下选择最新的子类型即可。
+腾讯云云服务器（Cloud Virtual Machine，CVM）目前有多个实例族，每个实例族中又分为多个子类型。不同的实例族有不同的侧重点，例如大内存或高 IO 等。NextCloud 定位于个人、家庭或中小企业用户，对各项硬件资源需求都不高，因此选择各项资源均衡的标准型即可满足需求。对于子类型，通常来说最新的子类型将拥有更高的性价比，一般情况下选择最新的子类型即可。
 
-在确定好实例族和子类型后，还会面临具体的 vCPU 与内存规格选择，此外不同的 vCPU 与内存规格还有对应的内网带宽和网络收发包。PHP 可以使用 OPcache 提升性能，而 NextCloud 服务端支持使用 APCu 内存缓存进一步提升性能，因此在规格的选择上，建议选择较大的内存。
+在确定实例族和子类型后，还会面临具体的 vCPU 与内存规格选择。此外，不同的 vCPU 与内存规格还有对应的内网带宽和网络收发包。PHP 可以使用 OPcache 提升性能，而 NextCloud 服务端支持使用 APCu 内存缓存进一步提升性能，因此在规格的选择上，建议选择较大的内存。
 
-由于 CVM 在购买后支持配置的调整，我们可以先购买配置比较低的规格，例如1核 vCPU 与4GB内存，在完成搭建并实际上线使用后，根据用户数、文件数以及 CVM 的相关监控数据在判断是否需要提高规格提升性能。如果您预期在家庭或中小企业等多用户场景下使用，那么建议选购2核8GB到4核16GB的配置，以提供足够的性能满足多用户的使用。
+由于云服务器在购买后支持配置的调整，我们可以先购买配置比较低的规格，例如1核 vCPU 与4GB内存，在完成搭建并实际上线使用后，根据用户数、文件数以及云服务器的相关监控数据在判断是否需要提高规格提升性能。如果您预期在家庭或中小企业等多用户场景下使用，那么建议选购2核8GB到4核16GB的配置，以提供足够的性能满足多用户的使用。
 
 ### 服务器操作系统
 
 主流的 Linux 发行版都可以很好的支持 NextCloud 服务端运行，除了不同系统在安装软件包时使用的命令（即包管理工具）有所差别外，其余的配置工作没有区别。
 
->?本文将以运行 CentOS 7.7操作系统的云服务器 CVM 为例进行后续的演示。
+>? 本文以 CentOS 7.7操作系统的云服务器为例进行演示。
+>
 
 ### 数据库
 
 如上文所述，在实际应用中通常使用 MySQL 搭配 PHP 使用，而 MariaDB 是 MySQL 的“复刻”版本，与 MySQL 保持高度的兼容，因此 MySQL 5.7+或 MariaDB 10.2+均可以很好的配合 NextCloud 服务端使用。
 
-腾讯云提供托管的云数据库 MySQL 和云数据库 MariaDB，相对于在 CVM 上自建数据库，云数据库默认采用一主一备的高可用模式，具有更高的可靠性，且提供自动备份等方便的运维操作，因此强烈建议在实际应用中使用云数据库。
+腾讯云提供托管的云数据库 MySQL 和云数据库 MariaDB，相对于在云服务器上自建数据库，云数据库默认采用一主一备的高可用模式，具有更高的可靠性，且提供自动备份等方便的运维操作，因此强烈建议在实际应用中使用云数据库。
 
->?本文将以云数据库 MySQL 5.7版本为例进行后续的演示。
+>? 本文以云数据库 MySQL 5.7版本为例进行演示。
+>
 
 ### Web 服务器及 PHP 运行时
 
-NextCloud 服务端通过`.htaccess`指定了部分配置，因此使用 Apache 服务器软件时可直接使用 NextCloud 服务端自带的配置项。Nginx 是近些年发展较快的 Web 服务器软件，相对 Apache 具有安装配置简单、资源占用少、负载能力更强的优点，通过将 NextCloud 服务端中的`.htaccess`配置转写为 Nginx 的配置，亦可很好的支持 NextCloud 服务端的运行，本文将使用 Nginx 服务器软件，并提供完整的 Nginx 配置示例可供参考。
+NextCloud 服务端通过 `.htaccess` 指定了部分配置，因此使用 Apache 服务器软件时可直接使用 NextCloud 服务端自带的配置项。Nginx 是近些年发展较快的 Web 服务器软件，相对 Apache 具有安装配置简单、资源占用少、负载能力更强的优点，通过将 NextCloud 服务端中的 `.htaccess` 配置转写为 Nginx 的配置，亦可很好的支持 NextCloud 服务端的运行，本文将使用 Nginx 服务器软件，并提供完整的 Nginx 配置示例可供参考。
 
 PHP 运行时目前已经发展到 PHP 7，主要维护的版本包括7.2、7.3和7.4，这3个版本均支持 NextCloud 服务端，我们使用最新的7.4即可。此外，NextCloud 还依赖 PHP 的部分扩展模块，下文将详细介绍具体的扩展模块要求。
 
 ### 腾讯云网络环境
 
-腾讯云目前提供基础网络和私有网络（VPC）环境。基础网络是腾讯云上所有用户的公共网络资源池，所有 CVM 的内网 IP 地址都由腾讯云统一分配，无法自定义网段划分、IP 地址。私有网络是用户在腾讯云上建立的一块逻辑隔离的网络空间，在私有网络内，用户可以自由定义网段划分、IP 地址和路由策略。目前基础网络由于资源紧缺且无法扩增等功能，新注册账号及部分新建可用区均不再支持基础网络，因此本文将以私有网络为例进行后续的演示。
+腾讯云目前提供基础网络和私有网络（VPC）环境。基础网络是腾讯云上所有用户的公共网络资源池，所有云服务器的内网 IP 地址都由腾讯云统一分配，无法自定义网段划分、IP 地址。私有网络是用户在腾讯云上建立的一块逻辑隔离的网络空间，在私有网络内，用户可以自由定义网段划分、IP 地址和路由策略。目前基础网络由于资源紧缺且无法扩增等功能，新注册账号及部分新建可用区均不再支持基础网络，因此本文将以私有网络为例进行后续的演示。
 
->?有关私有网络的进一步介绍，请参阅 [私有网络产品概述](https://intl.cloud.tencent.com/document/product/215/535)。
+>? 有关私有网络的进一步介绍，请参见 [私有网络产品概述](https://intl.cloud.tencent.com/document/product/215/535)。
+>
 
-## 云硬盘 CBS 与对象存储 COS 的对比
+## 云硬盘与对象存储的对比
 
-在云服务器 CVM 中，云硬盘 CBS 将以 CVM 中的本地硬盘的形式挂载在操作系统中，NextCloud 默认使用文件系统存储网盘数据，因此可以直接将 NextCloud 的数据存储在操作系统中的云硬盘。那么与云硬盘 CBS 相比，使用对象存储 COS 有哪些优势呢？下面从几个维度讲解一下两者之间的区别。
+在云服务器中，云硬盘（Cloud Block Storage，CBS）将以云服务器中的本地硬盘的形式挂载在操作系统中，NextCloud 默认使用文件系统存储网盘数据，因此可以直接将 NextCloud 的数据存储在操作系统中的云硬盘。与云硬盘相比，使用对象存储的优势从如下几个维度进行讲解。
 
 ### 应用场景
 
-#### 云硬盘 CBS
+#### 云硬盘
 
-云硬盘 CBS 属于块存储，可直接挂载到 CVM 操作系统中作为硬盘使用，通常情况被操作系统独占，即只能挂载在一台 CVM 中，但其拥有较高的读写性能，适用于高 IO 低延时且不需要与其他 CVM 共享的场景。
+云硬盘属于块存储，可直接挂载到云服务器操作系统中作为硬盘使用，通常情况被操作系统独占，即只能挂载在一台云服务器中，但其拥有较高的读写性能，适用于高 IO 低延时且不需要与其他云服务器共享的场景。
 
-#### 对象存储 COS
+#### 对象存储
 
-对象存储 COS 以 http 协议对外提供读写接口，需要通过编程的方式访问 COS 的存储的对象（文件）。对象存储使用对象键（Key，可以理解为文件路径）作为索引，无存储容量的限制。由于使用网络传输，在速度和延时上相对较大，但因为操作是对象级别，因此一个软件完成一个对象的操作后，另一个软件即可马上操作同一对象，适用于对性能要求不高、需要低成本大容量存储或有共享访问需求的场景。由于网盘应用本身通过网络传输，对延时的要求不高，且从网盘客户端到网盘服务端再到 COS 的链路中，影响速度与时延的因素主要在于客户端所处的网络环境，而 COS 本身不限速，因此 COS 更适合搭配网盘应用。
+对象存储以 HTTP 协议对外提供读写接口，需要通过编程的方式访问对象存储的存储对象（文件）。对象存储使用对象键（Key，可以理解为文件路径）作为索引，无存储容量的限制。由于使用网络传输，在速度和延时上相对较大，但因为操作是对象级别，因此一个软件完成一个对象的操作后，另一个软件即可马上操作同一对象，适用于对性能要求不高、需要低成本大容量存储或有共享访问需求的场景。由于网盘应用本身通过网络传输，对延时的要求不高，且从网盘客户端到网盘服务端再到对象存储的链路中，影响速度与时延的因素主要在于客户端所处的网络环境，而对象存储本身不限速，因此对象存储更适合搭配网盘应用。
 
 
 
 ### 维护
 
-#### 云硬盘 CBS
+#### 云硬盘
 
-云硬盘 CBS 为固定容量，可通过控制台或云 API 扩容，扩容后还需要在操作系统中扩展分区，且在扩展分区时有一定的分区异常风险，有一定的维护成本。
+云硬盘为固定容量，可通过控制台或云 API 扩容，扩容后还需要在操作系统中扩展分区，且在扩展分区时有一定的分区异常风险，有一定的维护成本。
 
-#### 对象存储 COS
+#### 对象存储
 
-对象存储 COS 按需使用，不限制总容量，也不限制对象数（文件数），完全无需维护。
+对象存储按需使用，不限制总容量，也不限制对象数（文件数），完全无需维护。
 
 ### 数据安全
 
-云硬盘 CBS 和对象存储 COS 均使用多副本等手段保证数据的可靠性。
+云硬盘和对象存储均使用多副本等手段保证数据的可靠性。
 
 ## 搭建 NextCloud 服务端运行环境
 
 ### 准备 NextCloud 服务端依赖的云产品
 
-#### 云服务器 CVM
+#### 云服务器
+入门操作请参见 [云服务器 CVM 快速入门](https://intl.cloud.tencent.com/document/product/213/8036)。
 
-入门操作请参见 [云服务器 CVM 快速入门](https://intl.cloud.tencent.com/zh/document/product/213/8036)。
 
 #### 云数据库 MySQL
 
-入门操作请参见 [云数据库 MySQL 快速入门](https://intl.cloud.tencent.com/zh/document/product/236/37785)。
+入门操作请参见 [云数据库 MySQL 快速入门](https://intl.cloud.tencent.com/document/product/236/37785)。
 
-#### 对象存储 COS
 
-1. 打开并登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)（首次使用需先开通对象存储服务），进入【存储桶列表】，单击【创建存储桶】，根据下表说明进行配置：
+#### 对象存储
 
-| 配置项   | 值                                                           |
-| -------- | ------------------------------------------------------------ |
-| 名称     | 输入一个自定义的存储桶名称，例如 nextcloud。注意，该名称确定后将不允许更改 |
-| 所属地域 | 与所购 CVM 所属地域保持一致                                  |
-| 其他     | 保持默认                                                     |
-
-2. 完成以上配置后，单击【确定】完成创建。
+1. 打开并登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)（首次使用需先开通对象存储服务），进入**存储桶列表**，单击**创建存储桶**，根据下表说明进行配置：
+<table>
+	<tr><th>配置项</th><th>值</th></tr>
+	<tr><td>名称</td><td>输入一个自定义的存储桶名称，例如 nextcloud。注意，该名称确定后将不允许更改</td></tr>
+	<tr><td>所属地域</td><td>与所购 CVM 所属地域保持一致 </td></tr>
+	<tr><td>其他</td><td>保持默认</td></tr>
+</table>
+2. 完成以上配置后，单击**确定**完成创建。
 
 ### 安装、配置 Web 服务器和 PHP 进行时
 
@@ -111,7 +114,7 @@ PHP 运行时目前已经发展到 PHP 7，主要维护的版本包括7.2、7.3�
 ```bash
 yum install nginx
 ```
-当提示以下信息时，按 `Y` 并回车确认安装（下同）。
+ 当提示以下信息时，按 `Y` 并回车确认安装（下同）。
 ```bash
 Is this ok [y/d/N]:
 ```
@@ -124,7 +127,7 @@ Complete!
 ```bash
 nginx -v
 ```
-假如出现以下信息，则验证安装完成。
+ 假如出现以下信息，则验证安装完成。
 ```bash
 nginx version: nginx/1.16.1
 ```
@@ -136,29 +139,26 @@ nginx version: nginx/1.16.1
 ```bash
 yum install epel-release yum-utils
 ```
-
-继续依次执行下述命令：
+3. 依次执行下述命令：
 **命令1：**
 ```bash
 yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 ```
-
->?执行上述命令时如遇速度过慢、进度长时间不动，可以按 `Ctrl-C` 取消并重新执行该条命令（下同）。
-
+>? 执行上述命令时如遇速度过慢、进度长时间不动，可以按 `Ctrl-C` 取消并重新执行该条命令（下同）。
+>
 **命令2：**
 ```bash
 yum-config-manager --enable remi-php74
 ```
-**命令3：**
+ **命令3：**
 ```bash
 yum install php php-fpm
 ```
-
-3. 安装完成后，执行以下命令，验证是否可以正常查看 PHP 版本。
+4. 安装完成后，执行以下命令，验证是否可以正常查看 PHP 版本。
 ```bash
 php -v
 ```
-假如出现以下信息，则验证安装完成。
+ 假如出现以下信息，则验证安装完成。
 ```bash
 PHP 7.4.8 (cli) (built: Jul 9 2020 08:57:23) ( NTS )
 Copyright (c) The PHP Group
@@ -185,13 +185,13 @@ php -m
 #### 上传并解压 NextCloud 服务端代码
 
 1. 在 [NextCloud 官网](https://nextcloud.com/install/#instructions-server) 下载 NextCloud 服务端最新版安装包，并上传至服务器 `/var/www/` 目录下，您可以通过以下方法上传：
-    a）使用 `wget` 命令直接在服务器上下载安装包，例如：进入 `/var/www/` 目录后，执行命令 `wget https://download.nextcloud.com/server/releases/nextcloud-19.0.1.zip`。
-    b）下载到本地计算机上，然后通过 SFTP 或 SCP 等软件将安装包上传至 `/var/www/` 目录。
-    c）下载到本地计算机上，使用 lrzsz 上传，方法是：
-  1. 使用 SSH 工具登录到新购服务器。
-  2. 执行 `yum install lrzsz` 安装 lrzsz。
-  3. 执行 `cd /var/www/` 进入目标目录。
-  4. 执行 `rz -bye`，随后在 SSH 工具中选择下载到本地的 NextCloud 服务端安装包（依据 SSH 工具的不同，此处操作将不尽相同）。
+ 1. 使用 `wget` 命令直接在服务器上下载安装包，例如：进入 `/var/www/` 目录后，执行命令 `wget https://download.nextcloud.com/server/releases/nextcloud-19.0.1.zip`。
+ 2. 下载到本地计算机上，然后通过 SFTP 或 SCP 等软件将安装包上传至 `/var/www/` 目录。
+ 3. 下载到本地计算机上，使用 lrzsz 上传，方法是：
+    1. 使用 SSH 工具登录到新购服务器。
+    2. 执行 `yum install lrzsz` 安装 lrzsz。
+    3. 执行 `cd /var/www/` 进入目标目录。
+    4. 执行 `rz -bye`，随后在 SSH 工具中选择下载到本地的 NextCloud 服务端安装包（依据 SSH 工具的不同，此处操作将不尽相同）。
 2. 使用 SSH 工具登录到新购服务器。
 3. 执行 `unzip nextcloud-<version>.zip` 解压安装包，例如 `unzip nextcloud-19.0.1.zip`。
 
@@ -199,8 +199,8 @@ php -m
 
 1. 使用 SSH 工具登录到新购服务器。
 2. 执行 `vim /etc/php-fpm.d/www.conf` 打开 PHP-FPM 的配置文件，并依次修改配置项（关于 vim 的具体使用请参阅相关资料，您也可以使用其他方式修改该配置文件）。
-   a）将 `user = apache` 修改为 `user = nginx`。
-    b）将 `group = apache` 修改为 `group = nginx`。
+ 1. 将 `user = apache` 修改为 `user = nginx`。
+ 2. 将 `group = apache` 修改为 `group = nginx`。
 3. 修改完成后，输入 `:wq` 保存文件并退出（有关 vim 的详细操作指引，请参阅相关文档）。
 4. 执行下述命令修改目录所有者，使 PHP 能够适配 Nginx 使用：
 ```bash
@@ -211,7 +211,7 @@ chown -R nginx:nginx /var/lib/php
 ```bash
 systemctl enable php-fpm   # 命令1
 ```
-**命令2：**
+ **命令2：**
 ```bash
 systemctl start php-fpm   # 命令2
 ```
@@ -224,10 +224,9 @@ systemctl start php-fpm   # 命令2
 chown -R nginx:nginx /var/www
 ```
 3. 备份当前的 Nginx 配置文件 `/etc/nginx/nginx.conf`，您可以：
-   a）执行 `cp /etc/nginx/nginx.conf ~/nginx.conf.bak` 将当前配置文件备份到家（HOME）目录。
-   b）使用 SFTP 或 SCP 等软件将当前配置文件下载到本地计算机。
-4. 将`/etc/nginx/nginx.conf` 修改或替换为如下内容：
-
+ 1. 执行 `cp /etc/nginx/nginx.conf ~/nginx.conf.bak` 将当前配置文件备份到家（HOME）目录。
+ 2. 使用 SFTP 或 SCP 等软件将当前配置文件下载到本地计算机。
+4. 将 `/etc/nginx/nginx.conf` 修改或替换为如下内容：
 ```plaintext
 # For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
@@ -364,37 +363,35 @@ http {
 
 }
 ```
-
 5. 依次执行下述命令，并启动 Nginx 服务：
-   **命令1：**
+**命令1：**
 ```bash
 systemctl enable nginx
 ```
-**命令2：**
+ **命令2：**
 ```bash
 systemctl start nginx
 ```
 
-## 配置 NextCloud 服务端使用对象存储 COS
+## 配置 NextCloud 服务端使用对象存储
 
-### 获取 COS 相关信息
+### 获取对象存储相关信息
 
-1. 登录到腾讯云 [对象存储控制台](https://console.cloud.tencent.com/cos5)。
+1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)。
 2. 找到此前创建的存储桶，并单击存储桶名称。
-   ![](https://main.qcloudimg.com/raw/13e02915f8c2846d7dfa5f2fec0c355b.png)
-3. 在跳转界面中，记录【基本信息】中的**存储桶名称**和**所属地域**中的英文部分。
-   ![](https://main.qcloudimg.com/raw/2aef2ba23a6a32305ad39b4ef10a970c.png)
+![](https://main.qcloudimg.com/raw/13e02915f8c2846d7dfa5f2fec0c355b.png)
+3. 在左侧导航栏中，选择**概览**页签，记录**基本信息**中的**存储桶名称**和**所属地域**中的英文部分。
+![](https://main.qcloudimg.com/raw/2aef2ba23a6a32305ad39b4ef10a970c.png)
 
 ### 获取 API 密钥
 
-1. 登录腾讯云 [访问密钥控制台](https://console.cloud.tencent.com/cam/capi)。
-2. 记录表格中【密钥】中的**SecretId**和**SecretKey**。如果表格中没有有效密钥，可单击左上角【新建密钥】创建新的密钥。
-   ![](https://main.qcloudimg.com/raw/ebc71eebfd0d247ec159f700792e43de.png)
+建议使用子账号密钥，授权遵循 [最小权限指引](https://intl.cloud.tencent.com/document/product/436/32972)，降低使用风险，子账号密钥获取可参考 [子账号访问密钥管理](https://intl.cloud.tencent.com/document/product/598/32675)。
+
+
 
 ### 修改 NextCloud 服务端配置文件
 
 1. 使用文本编辑工具创建 `config.php`，输入如下内容并根据注释修改相关的值：
-
 ```php
 <?php
 $CONFIG = array(
@@ -410,12 +407,9 @@ $CONFIG = array(
     ),
   ),
 );
-
 ```
-
-如下图所示：
-![](https://main.qcloudimg.com/raw/a0a2dfc8946015f346b74d0e43e2b3f5.png)
-
+ 如下图所示：
+![](https://main.qcloudimg.com/raw/b14a23e2cac3ac988745fcd82fe56e18.png)
 2. 将该文件保存并上传到 `/var/www/nextcloud/config/` 目录下（保持文件名为`config.php`），您可以通过 SFTP 或 SCP 软件上传文件，也可以通过 `rz -bye` 命令上传。
 3. 执行下述命令修改配置文件的所有者：
 ```bash
@@ -424,28 +418,27 @@ chown nginx:nginx /var/www/nextcloud/config/config.php
 
 ## 配置域名
 
-若您计划使用自己的域名而不是 IP 地址访问您的 NextCloud 服务端，您可参考各域名注册商和相关域名解析服务的说明文档，注册新域名并将域名解析到您 CVM 的 IP 地址并完成备案。
+若您计划使用自己的域名而不是 IP 地址访问您的 NextCloud 服务端，您可参考各域名注册商的说明文档，注册新域名并将域名解析到您 CVM 的 IP 地址并完成备案。
 
-由于 NextCloud 服务端在安装过程中会记录安装时使用的域名或 IP 地址，因此建议您在开始安装前完成域名的注册和解析，并使用域名访问 NextCloud 服务端的安全界面。
+由于 NextCloud 服务端在安装过程中会记录安装时使用的域名或 IP 地址，因此建议您在开始安装前完成域名的注册、解析和备案，并使用域名访问 NextCloud 服务端的安全界面。
 
 如果您在完成 NextCloud 服务端后需要更换域名或 IP 地址，您可以自行修改 `/var/www/nextcloud/config/config.php` 配置文件中的 `trusted_domains`，详情请参阅 [NextCloud 官方文档](https://docs.nextcloud.com/server/19/admin_manual/installation/installation_wizard.html#trusted-domains)。
 
 ## 安装 NextCloud 服务端
 
 1. 使用浏览器访问 NextCloud 服务端，创建并牢记管理员用户名和密码。
-2. 展开【存储与数据库】，根据下表说明进行配置：
+2. 展开**存储与数据库**，根据下表说明进行配置：
 
-| 配置项                             | 值                                      |
-| ---------------------------------- | --------------------------------------- |
-| 数据名录                           | /var/www/nextcloud/data（保持默认）     |
-| 配置数据库                         | MySQL/MariaDB                           |
-| 数据库用户                         | root                                    |
-| 数据库密码                         | 初始化云数据库 MySQL 时填写的 root 密码 |
-| 数据库名                           | nextcloud（或其他未被使用的数据库名）   |
-| 数据库主机（默认显示为 localhost） | 云数据库 MySQL 的内网地址               |
-
-
-3.   单击【安装完成】，等待 NextCloud 服务端完成安装。
+<table>
+	<tr><th>配置项</th><th>值</th></tr>
+	<tr><td>数据名录</td><td>/var/www/nextcloud/data（保持默认）</td></tr>
+	<tr><td>配置数据库</td><td>MySQL/MariaDB</td></tr>
+	<tr><td>数据库用户</td><td>root</td></tr>
+	<tr><td>数据库密码</td><td>初始化云数据库 MySQL 时填写的 root 密码</td></tr>
+	<tr><td>数据库名</td><td>nextcloud（或其他未被使用的数据库名）</td></tr>
+	<tr><td>数据库主机（默认显示为 localhost）</td><td>云数据库 MySQL 的内网地址</td></tr>
+</table>
+3.   单击**安装完成**，等待 NextCloud 服务端完成安装。
 4.   如果安装过程中出现504 Gateway Timeout 等错误信息，可直接刷新重试。
 5.   安装完成后，使用管理员账号登录 NextCloud 服务端即可开始使用网页版 NextCloud。
 
@@ -475,8 +468,7 @@ crontab -u nginx -e
 */5 * * * * php -f /var/www/nextcloud/cron.php
 ```
 随后按 `ESC` 退出编辑模式，输入 `:wq` 保存退出（有关 vi/vim 的详细操作指引，请参阅相关文档）。
-上述配置使用了 NextCloud 官方推荐的每5分钟执行一次（分钟数是5的整数倍）。待5分钟后后台任务执行完成，可以打开浏览器登录 NextCloud 服务端，单击右上角用户名首字母图标，进入【设置】，在左侧菜单进入【基本设置】，可以看到【后台任务】处默认选中了 Cron。
-
+上述配置使用了 NextCloud 官方推荐的每5分钟执行一次（分钟数是5的整数倍）。待5分钟后后台任务执行完成，可以打开浏览器登录 NextCloud 服务端，单击右上角用户名首字母图标，进入**设置**，在左侧菜单进入**基本设置**，可以看到**后台任务**处默认选中了 Cron。
 
 
 ### 内存缓存
@@ -489,19 +481,25 @@ PHP 可以使用 OPcache 提升性能，NextCloud 服务端也支持使用 APCu 
 yum install php-pecl-apcu
 ```
 3. 依次执行下述命令重启 Nginx 和 PHP-FPM：
-   **命令1：**
+**命令1：**
 ```bash
 systemctl restart nginx
 ```
-**命令2：**
+ **命令2：**
 ```bash
 systemctl restart php-fpm
 ```
-4. 执行 `vim /var/www/nextcloud/config/config.php`，打开 NextCloud 服务端的配置文件，在 `$CONFIG = array (` 中添加一行：`'memcache.local' => '\OC\Memcache\APCu',`，随后保存文件并退出；
-   ![](https://main.qcloudimg.com/raw/eaa28e013991aad579cf6abc2a34d9bb.png)
+4. 执行 `vim /var/www/nextcloud/config/config.php`，打开 NextCloud 服务端的配置文件，在 `$CONFIG = array (` 中添加一行：`'memcache.local' => '\OC\Memcache\APCu',`，随后保存文件并退出。
+![](https://main.qcloudimg.com/raw/eaa28e013991aad579cf6abc2a34d9bb.png)
 5. 如果配置了 cron 来优化后台任务，那么还需要修改 PHP 的 apc 配置：执行 `vim /etc/php.d/40-apcu.ini`，打开 PHP APCu 的配置文件，将 `;apc.enable_cli=0` 修改为 `apc.enable_cli=1`（请注意需要同时去掉前面分号），保存退出。如果路径 `/etc/php.d/40-apcu.ini` 不存在，那么请自行在 `/etc/php.d/` 目录下查找并编辑有 apc 或 apcu 字样的 `.ini` 配置文件。
-   ![](https://main.qcloudimg.com/raw/1c57fe0a2078aa0ca5dd7ba07b23fe86.png)
+![](https://main.qcloudimg.com/raw/1c57fe0a2078aa0ca5dd7ba07b23fe86.png)
 
 ## 配置客户端访问
 
 NextCloud 官方提供桌面同步客户端和移动客户端，可在 NextCloud 官网或各大应用商店下载。在配置 NextCloud 时需输入 NextCloud 的服务端地址（域名或 IP），随后输入自己的用户名和密码并登录，即可开始使用客户端。
+
+
+
+
+
+

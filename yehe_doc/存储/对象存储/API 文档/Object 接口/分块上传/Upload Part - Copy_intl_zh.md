@@ -1,11 +1,15 @@
 ## 功能描述
 Upload Part - Copy  请求用于实现将一个对象的分块内容从源路径复制到目标路径。通过指定 x-cos-copy-source 来指定源对象，x-cos-copy-source-range 指定字节范围（允许分块的大小为1MB - 5GB）。
 
+>?以下两种情况拥有调用此 API 的权限：
+>- 拥有主账号权限。
+>- 拥有源对象 GetObjecet 接口权限，且在目标路径下有 InitiateMultipartUpload、ListMultipartUploads、ListParts、PutObject、CompleteMultipartUpload、AbortMultipartUpload 接口权限。
+
 >!
 >- 使用 Upload Part - Copy 接口前，需先使用 [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) 接口初始化分块上传任务并指定目标路径。
 >- 如果目标对象和源对象不属于同一个地域，且目标对象分块会超过5GB，那么需要使用分块上传或者分块拷贝的接口来复制对象。
 >- 使用上传分块对象，必须先初始化分块上传。在初始化分块上传的响应中，会返回一个唯一的描述符（upload ID），您需要在分块上传请求中携带此 ID。
->
+
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -29,8 +33,8 @@ Upload Part - Copy  请求用于实现将一个对象的分块内容从源路径
 ## 请求
 #### 请求示例
 
-```http
-PUT /examplebucket?partNumber=PartNumber&uploadId=UploadId  HTTP/1.1
+```shell
+PUT /<ObjectKey>?partNumber=PartNumber&uploadId=UploadId  HTTP/1.1
 Host: <Bucketname-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Authorization: Auth String
@@ -43,7 +47,7 @@ x-cos-copy-source-if-modified-since: time_stamp
 ```
 
 >? 
-> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://www.tencentcloud.com/document/product/436/6224) 文档。
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 > 
 
@@ -94,7 +98,7 @@ uploadId|使用上传分块文件，必须先初始化分块上传。在初始�
 
 #### 特有响应头
 
-|名称|描述|类型|
+|名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|描述|类型|
 |---|---|---|
 |x-cos-copy-source-version-id|如果已在源存储桶上启用版本控制，则复制源对象的版本|String|
 |x-cos-server-side-encryption | 如果通过 COS 管理的服务端加密来存储对象，响应将包含此头部和所使用的加密算法的值，AES256 | String|
@@ -125,7 +129,7 @@ uploadId|使用上传分块文件，必须先初始化分块上传。在初始�
 ## 实际案例
 #### 请求
 
-```HTTP
+```shell
 PUT /exampleobject?partNumber=1&uploadId=1505706248ca8373f8a5cd52cb129f4bcf85e11dc8833df34f4f5bcc456c99c42cd1ffa2f9 HTTP/1.1
 User-Agent: curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.13.1.0 zlib/1.2.3 libidn/1.18 libssh2/1.2.2
 Accept: */*

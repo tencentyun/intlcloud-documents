@@ -32,8 +32,8 @@ You can create a sub-account in the CAM console and grant it access permissions.
  - **Access Method**: Select **Programming access** and **Tencent Cloud console access**. Other configuration items can be set as needed.
 4. Click **Next** and start identity verification.
 5. Grant permissions to the sub-account. You can configure simple policies, such as granting the sub-account permission to access the COS bucket list or read-only permission, with the policy options provided. To configure a more complex policy, proceed to [Step 2. Grant permissions to the sub-account](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AF.B9.E5.AD.90.E8.B4.A6.E5.8F.B7.E6.8E.88.E4.BA.88.E6.9D.83.E9.99.90).
-6. Set the user tag (optional) and click **Next**.
-7. Click **Complete**. In this way, the sub-account is created.
+6. Set the user tag optionally and click **Next**.
+7. Click **Finish**. In this way, the sub-account is created.
 
 
 <span id="Grant permissions to the sub-account"></span>
@@ -45,7 +45,7 @@ Create a custom policy or select an existing policy and associate it with the su
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam).
 2. Choose **Policy** > **Create Custom Policy** > **Create by Policy Syntax** to go to the policy creation page.
 3. You can select **Blank Template** to customize a permission policy as needed. You can also select a COS-associated **System Template**. Then, click **Next**.
-4. Enter an easy-to-remember policy name. If you have selected **Blank Template**, enter the policy syntax. For more information, see [Sample Policies](#Sample policies). You can copy and paste the policy content into the **Policy Content** box and click **Complete**.
+4. Enter an easy-to-remember policy name. If you have selected **Blank Template**, enter the policy syntax. For more information, see [Sample Policies](#Sample policies). You can copy and paste the policy content into the **Policy Content** box and click **Finish**.
 5. After you create a policy, associate it with the sub-account.
 ![](https://main.qcloudimg.com/raw/1495c8b19dfff2aad622b794d8f5bc6a.png)
 6. Select the sub-account and click **Confirm** to complete the authorization.
@@ -65,23 +65,25 @@ To use the programming access method (for example, using APIs, SDKs, or tools) t
 4. Click the **API Key** tab. Then, click **Create Key** to create `SecretId` and `SecretKey` for the sub-account.
 
 After this, you can use this sub-account’s `SecretId` and `SecretKey`, as well as the root account’s `APPID` to access COS resources. 
-
->!
->To access COS resources with a sub-account, you need to use XML APIs or SDKs based on XML APIs.
+>!To access COS resources with a sub-account, you need to use XML APIs or SDKs based on XML APIs.
 
 
 #### Example of access using XML Java SDK
 
 The following parameters need to be set if you use the XML Java SDK:
 ```
-// 1. Initialize identity information
+// Initialize the user authentication information
 COSCredentials cred = new BasicCOSCredentials("<root account's APPID>", "<sub-account's SecretId>", "<sub-account's SecretKey>");
 ```
 
 Example:
 ```
-// 1. Initialize identity information
-COSCredentials cred = new BasicCOSCredentials("1250000000", "AKIDasdfmRxHPa9oLhJp****", "e8Sdeasdfas2238Vi****");
+String secretId = System.getenv("secretId");// Sub-account's `SecretId`. Follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+String secretKey = System.getenv("secretKey");// Sub-account's `SecretKey`. Follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
+
+// Initialize the user authentication information
+COSCredentials cred = new BasicCOSCredentials("<root account's APPID>", secretId, secretKey);
 ```
 
 #### Example of access using COSCMD command line tool
@@ -102,7 +104,7 @@ After the sub-user is granted permissions, they can enter the root account ID, s
 
 <span id="Sample policies"></span>
 ## Sample Policies
-The following typical sample policies are provided herein. When configuring a policy, you can refer to the following code, copy and paste it into the **Policy Content** box, and modify it as needed. For more policy syntax for other common COS scenarios, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023) or the business use cases parts of the [CAM Documentation](https://www.tencentcloud.com/document/product/598).
+The following typical sample policies are provided herein. When configuring a policy, you can refer to the following code, copy and paste it into the **Policy Content** box, and modify it as needed. For more policy syntax for other common COS scenarios, see [Overview](https://intl.cloud.tencent.com/document/product/436/18023) or the business use cases parts of [Cloud Access Management](https://www.tencentcloud.com/document/product/598).
 
 ### Sample 1. Granting the sub-account full read/write permissions for COS access
 
@@ -184,7 +186,7 @@ The policy is as follows:
 
 ### Sample 4. Granting the sub-account read/write permission for a certain IP range
 The following sample grants read/write permission only for the `192.168.1.0/24` and `192.168.2.0/24` IP address ranges:
-To enter more condition, see [Condition](https://www.tencentcloud.com/document/product/598/10608).
+To enter more conditions, see [Conditions](https://www.tencentcloud.com/document/product/598/10608).
 ```
 {
     "version": "2.0",

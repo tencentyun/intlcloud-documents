@@ -1,4 +1,4 @@
-## Overview
+## Feature Description
 This API is used to read the permission policy of a bucket.
 
 
@@ -6,13 +6,13 @@ This API is used to read the permission policy of a bucket.
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetBucketPolicy&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -30,8 +30,8 @@ Authorization: Auth String
 ```
 
 >? 
-> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com, where &lt;BucketName-APPID> is the bucket name followed by the `APPID`, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 #### Request headers
@@ -52,18 +52,18 @@ The permission policy is returned in the response body.
 
 ```shell
 {
-  "Statement": [
+  "Statement":[
     {
-      "Principal": {
-        "qcs": [
+      "Principal":{
+        "qcs":[
           "qcs::cam::uin/100000000001:uin/100000000001"
         ]
       },
       "Effect": "allow",
-      "Action": [
+      "Action":[
         "name/cos:GetBucket"
       ],
-      "Resource": [
+      "Resource":[
         "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
       ]
     }
@@ -72,11 +72,13 @@ The permission policy is returned in the response body.
 }
 ```
 
+For more information on elements in an access policy, see [Overview](https://intl.cloud.tencent.com/document/product/436/18023).
+
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Sample
+## Examples
 #### Request
 
 ```shell
@@ -97,18 +99,18 @@ Server: tencent-cos
 x-cos-request-id: NTg4MDc3MWFfOWIxZjRlXzZmNDVf****
 
 {
-  "Statement": [
+  "Statement":[
     {
-      "Principal": {
-        "qcs": [
+      "Principal":{
+        "qcs":[
           "qcs::cam::uin/100000000001:uin/100000000001"
         ]
       },
       "Effect": "allow",
-      "Action": [
+      "Action":[
         "name/cos:GetBucket"
       ],
-      "Resource": [
+      "Resource":[
         "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
       ]
     }

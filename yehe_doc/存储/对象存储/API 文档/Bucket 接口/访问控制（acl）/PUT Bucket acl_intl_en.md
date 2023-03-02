@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
 
 This API is used to write an access control list (ACL) for a bucket. You can set the ACL information through the `x-cos-acl` and `x-cos-grant-*` request headers or the request body in XML format.
 >!
@@ -18,7 +18,7 @@ This API is used to write an access control list (ACL) for a bucket. You can set
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can use it to query the request and response of each API call as well as generate sample code for calls.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -52,7 +52,7 @@ Authorization: Auth String
 [Request Body]
 ```
 >? 
-> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
@@ -64,14 +64,15 @@ This API has no request parameter.
 
 In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-| Parameter | Description | Type | Required |
----|---|---|---
-| x-cos-acl | Defines the ACL attribute of the bucket. For the enumerated values such as `private` (default) and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583#.E9.A2.84.E8.AE.BE.E7.9A.84-acl). | Enum | No |
-| x-cos-grant-read | Grants a user permission to read the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
-| x-cos-grant-write | Grants a user permission to write to the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
-| x-cos-grant-read-acp | Grants a user permission to read the ACL of the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
-| x-cos-grant-write-acp | Grants a user permission to write to the ACL of the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
-| x-cos-grant-full-control | Grants a user full permission to operate on the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
+| Header | Description | Type | Required |
+| :----------------------- | :----------------------------------------------------------- | :----- | :------- |
+| x-cos-acl | Defines the access control list (ACL) attribute of the bucket. For the enumerated values such as `private` (default) and `public-read`, see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583#.E9.A2.84.E8.AE.BE.E7.9A.84-acl). | Enum | No |
+| x-cos-grant-read         | Grants a user read access to a bucket in the format of `id="[OwnerUin]"` for root accounts such as `id="100000000001"` or `id="[OwnerUin/GrantsUin]"` for sub-accounts such as `id="100000000001/100000000011"`. You can separate multiple users by comma, such as `id="100000000001",id="100000000002"`. | string | No       |
+| x-cos-grant-write         | Grants a user write access to a bucket in the format of `id="[OwnerUin]"` for root accounts such as `id="100000000001"` or `id="[OwnerUin/GrantsUin]"` for sub-accounts such as `id="100000000001/100000000011"`. You can separate multiple users by comma, such as `id="100000000001",id="100000000002"`. | string | No       |
+| x-cos-grant-read-acp         | Grants a user read access to a bucket ACL in the format of `id="[OwnerUin]"` for root accounts such as `id="100000000001"` or `id="[OwnerUin/GrantsUin]"` for sub-accounts such as `id="100000000001/100000000011"`. You can separate multiple users by comma, such as `id="100000000001",id="100000000002"`. | string | No       |
+| x-cos-grant-write-acp        | Grants a user write access to a bucket ACL in the format of `id="[OwnerUin]"` for root accounts such as `id="100000000001"` or `id="[OwnerUin/GrantsUin]"` for sub-accounts such as `id="100000000001/100000000011"`. You can separate multiple users by comma, such as `id="100000000001",id="100000000002"`. | string | No       |
+| x-cos-grant-full-control         | Grants a user full access to a bucket in the format of `id="[OwnerUin]"` for root accounts such as `id="100000000001"` or `id="[OwnerUin/GrantsUin]"` for sub-accounts such as `id="100000000001/100000000011"`. You can separate multiple users by comma, such as `id="100000000001",id="100000000002"`. | string | No       |
+
 
 #### Request body
 
@@ -150,7 +151,7 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 
 ## Examples

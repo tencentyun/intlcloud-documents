@@ -1,20 +1,21 @@
 ## Overview
 This API is used to query the ongoing multipart uploads. Up to 1,000 multipart uploads can be listed in a single request.
 
->! To call this API, you need to have permission to read the bucket.
+>! 
+>The request requires read access to the bucket. Only the root account or sub-accounts granted the permissions of the `List Multipart Upload` API can call this API.
 >
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=ListMultipartUploads&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -31,8 +32,8 @@ Authorization: Auth String
 ```
 
 >? 
-> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com, where &lt;BucketName-APPID> is the bucket name followed by the `APPID`, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 #### Request headers
@@ -48,7 +49,7 @@ The parameters are as follows: <style  rel="stylesheet"> table th:nth-of-type(1)
 | delimiter | A symbol. The identical paths between `prefix` and the first occurrence of the `delimiter` are grouped and defined as a common prefix. If `prefix` is not specified, the common prefix starts with the beginning of the path. | String | No |
 | encoding-type | Encoding type for the returned value. Valid value: `url` | String | No |
 | prefix | A prefix that the returned object keys must start with. </br>Note that if you use this parameter, the returned keys will contain this prefix. | String | No |
-| max-uploads | Maximum number of multipart uploads that can be returned at a time. Value range: 1−1000. Default value: `1000` | String | No |
+| max-uploads | Sets the maximum number of multipart uploads that can be returned at a time. Value range: 1−1000. Defaults to `1000`. | Int | No |
 | key-marker | This parameter is used together with `upload-id-marker`: <Br/><li>If `upload-id-marker` is not specified, multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed.<Br/><li>If `upload-id-marker` is specified, multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed, and multipart uploads whose `ObjectName` is lexicographically equal to `key-marker` with `UploadId` greater than `upload-id-marker` will be listed. | String | No |
 | upload-id-marker | This parameter is used together with `key-marker`: <Br/><li>If `key-marker` is not specified, `upload-id-marker` will be ignored. <Br/><li>If `key-marker` is specified, multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed, and multipart uploads whose `ObjectName` is lexicographically equal to `key-marker` with `UploadId` greater than `upload-id-marker` will be listed. | String | No |
 
@@ -111,7 +112,7 @@ Content of `ListMultipartUploadsResult`:
 | UploadIdMarker | ListMultipartUploadsResult| The `UploadId` where the listing should start  | String |
 | NextKeyMarker | ListMultipartUploadsResult | If the returned list is truncated, the `NextKeyMarker` returned will be the starting point of the next list. | String |
 | NextUploadIdMarker | ListMultipartUploadsResult | If the returned list is truncated, the `UploadId` returned will be the starting point of the next list. | String |
-| MaxUploads | ListMultipartUploadsResult | Maximum number of multipart uploads that can be returned at a time. Value range: 0−1000 | String |
+| MaxUploads | ListMultipartUploadsResult | Maximum number of multipart uploads that can be returned at a time. Value range: 0−1000 | int |
 | IsTruncated | ListMultipartUploadsResult | Whether the returned list is truncated. Valid values: `TRUE`, `FALSE` | Boolean |
 | Prefix | ListMultipartUploadsResult | A prefix that the returned object keys must start with. </br>Note that if you use this parameter, the returned keys will contain this prefix. | String |
 | Delimiter | ListMultipartUploadsResult | A symbol. The identical paths between `Prefix` and the first occurrence of the `Delimiter` are grouped and defined as a common prefix. If `Prefix` is not specified, the common prefix starts with the beginning of the path. | String |
@@ -151,9 +152,9 @@ Content of `CommonPrefixes`:
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Example
+## Examples
 
 #### Request
 

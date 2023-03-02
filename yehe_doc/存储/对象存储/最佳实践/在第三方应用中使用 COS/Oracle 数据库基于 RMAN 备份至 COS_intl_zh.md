@@ -2,7 +2,7 @@
 
 对象存储（Cloud Object Storage，COS）海量容量无上限，自动沉降归档存储类型和深度归档存储类型，媲美磁带的成本，特别适合备份归档场景。
 
-当前，越来越多客户选择备份上云；而 Oracle 备份模块实现了和对象存储 COS 的对接，基于 COS 来实现低成本的数据库备份和恢复成为优选。
+当前，越来越多客户选择备份上云；而 Oracle 备份模块实现了和 COS 的对接，基于 COS 来实现低成本的数据库备份和恢复成为优选。
 
 ## OSB 对接腾讯云 COS
 
@@ -15,6 +15,8 @@ Oracle 9i 或以上版本，支持 Oracle Secure Backup Cloud Module，详见 [O
 
 1. 前往 [Oracle 官网](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/rcmrf/oracle-secure-backup-osb-cloud-module.html#GUID-964AADD2-3405-4476-8698-E9F2133CB5B7) 获取最新版本，安装 OSB。
 2. 将下载的 osbws_installer.zip 压缩包解压，并根据实际 COS 服务的 SecretId、SecretKey、地域和 endpoint 参数配置，执行如下命令，安装 OSB。
+>!建议优先使用子账号密钥，授权遵循 [最小权限指引](https://intl.cloud.tencent.com/document/product/436/32972)，降低使用风险，子账号密钥获取可参见 [子账号访问密钥管理](https://intl.cloud.tencent.com/document/product/598/32675)。
+>
 ```
 java -jar osbws_install.jar -AWSID <SecretId> -AWSKey <SecretKey> -walletDir $ORACLE_HOME/osbws_wallet -libDir $ORACLE_HOME/lib -location <地域> -awsEndPoint <endpoint>
 
@@ -104,3 +106,5 @@ startup nomount;
 ## 相关参考
 
 更多帮助信息，请参见 [Oracle 官方文档](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/rcmrf/oracle-secure-backup-osb-cloud-module.html#GUID-6FCF4FD8-861C-4D52-BB41-32E6EF03789F)。
+
+

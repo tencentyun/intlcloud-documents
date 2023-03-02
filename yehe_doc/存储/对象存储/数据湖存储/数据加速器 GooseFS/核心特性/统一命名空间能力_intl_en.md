@@ -31,6 +31,10 @@ Usage: goosefs ns [generic options]
          [unsetPolicy <namespace>]                                 
          [unsetTtl <namespace>] 
 ```
+>!
+>- We recommend you use a sub-account key or temporary key instead of a permanent key to improve the business security. When authorizing a sub-account, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid unexpected data leakage.
+>- If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission, including allowed operations, scope of resources, and conditions such as access IP, on the permanent key so as to improve the usage security.
+
 The instructions are described as follows:
 
 | Instruction        | Description                                                         |
@@ -126,6 +130,7 @@ $ goosefs ns setPolicy --wPolicy 3 --rPolicy 5 test_cos
 >!In addition to specifying cache policies when creating namespaces, you can also configure global cache policies by setting `Read_Type` or `Write_Type` for specific files when reading or writing files, or by using the `Properties` configuration file. If multiple policies exist at the same time, their priority order is as follows: custom priority > namespace read and write policies > global cache policy configured in the configuration file. For the read policy, the combination of the custom `Read_Type` and the namespace's `DirReadPolicy` takes effect. That is, the custom `Read_Type` is used as the data stream read policy, and the namespace policy is used for metadata. 
 >
 > For example, GooseFS contains a COSN namespace whose read policy is `CACHE_CONSISTENT` and the namespace contains a `test.txt` file. When the client reads the `test.txt` file, `Read_Type` is specified as `CACHE_PROMOTE`. Then the entire read behavior is to sync metadata and perform `CACHE_PROMOTE`.
+> 
 
 To reset the read and write cache policies, you can use the `unsetPolicy` instruction. The following shows how to reset the read and write cache policies for the `test_cos` namespace:
 ```plaintext
@@ -163,7 +168,6 @@ You can configure the metadata synchronization interval in the `conf/goosefs-sit
 ```plaintext
 goosefs.user.file.metadata.sync.interval=<INTERVAL>
 ```
-
 
 The metadata synchronization interval parameter supports 3 types of input values:
 
@@ -203,7 +207,7 @@ You can set different metadata synchronization intervals based on business acces
    <tr>
       <td colspan=2>Access Mode</td>
       <td>Metadata Synchronization Interval</td>
-      <td>Remarks</td>
+      <td>Description</td>
    </tr>
    <tr>
       <td colspan=2>All file requests go through GooseFS</td>
