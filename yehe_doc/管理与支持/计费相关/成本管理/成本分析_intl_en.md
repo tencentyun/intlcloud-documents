@@ -31,7 +31,7 @@ Bill types include bills and consumption bills. To view consumption bills, you n
 
 - **Specified period**: Select the start date and the end date in the calendar.
 
--**Relative period**: Select a time period from the top of the calendar. This is mainly used to automatically update a regularly occurring cost report. Daily granularity supports the last 7, 30, and 60 days. Monthly granularity supports the last 1, 3, and 6 months.
+- **Relative period**: Select a time period from the top of the calendar. This is mainly used to automatically update a regularly occurring cost report. Daily granularity supports the last 7, 30, and 60 days. Monthly granularity supports the last 1, 3, and 6 months.
 
 >? Daily granularity can display data from within the last 180 days. Monthly granularity can display data from within the last 12 months.
 
