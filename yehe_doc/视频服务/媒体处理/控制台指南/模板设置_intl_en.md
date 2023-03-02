@@ -1,4 +1,4 @@
-Log in to the [MPS console](https://console.cloud.tencent.com/mps) and click **Template Settings** on the left sidebar. Preset templates in the console include video transcoding, audio transcoding, Top Speed Codec, watermark, screenshot, animated image, moderation, content analysis, and content recognition. They can be added to a workflow for on-cloud transcoding and audio/video processing.
+Log in to the [MPS console](https://console.tencentcloud.com/mps) and click **Template Settings** on the left sidebar. Preset templates in the console include video transcoding, audio transcoding, Top Speed Codec, watermark, screenshot, animated image, moderation, content analysis, and content recognition. They can be added to a workflow for on-cloud transcoding and audio/video processing.
 ![](https://main.qcloudimg.com/raw/a6e034f67575726dbdbcfdb462f7de1d.png)
 >?
 >- If a template added to a workflow is edited after the workflow is enabled, the template parameters after editing will be used.
@@ -62,7 +62,7 @@ MPS provides preset Top Speed Codec (formerly Tencent Extreme Speed High Definit
 
 
 >?
-> - You can view **preset** Top Speed Codec templates in [MPS console > Template Settings](https://console.cloud.tencent.com/mps/templates?tab=tehd).
+> - You can view **preset** Top Speed Codec templates in [MPS console > Template Settings](https://console.tencentcloud.com/mps/templates?tab=tehd).
 > - If the container format is set to MP4, FLV, or HLS, video parameters are required.
 
 Templates created are displayed in the template list. You can filter, view, edit, or delete custom templates, but preset templates can be viewed only, not edited or deleted.
@@ -261,7 +261,7 @@ For each subitem, you can set a **Confirm Threshold** and a **Suspicion Threshol
  - Suspicion threshold: MPS analyzes the videos uploaded and gives them scores. If the score of a video exceeds the suspicion threshold, the video will be marked suspicious. You can initiate human moderation tasks for suspicious videos on the video moderation page. The value range of the threshold is 0-100. The default value is recommended.
 
 
->? You can view the **preset** moderation templates in [MPS console > Template Settings](https://console.cloud.tencent.com/mps/templates?tab=audit).
+>? You can view the **preset** moderation templates in [MPS console > Template Settings](https://console.tencentcloud.com/mps/templates?tab=audit).
 
 
 The templates created are displayed in the template list, where you can view, edit, or delete a template.
@@ -274,7 +274,7 @@ MPS provides preset content analysis templates, which can be used in workflows. 
 |    Template name    |    Max 64 characters; supports Chinese characters, letters, digits, spaces, underscores (\_), hyphens (-), and periods    |
 | Content Analysis Items  | **Smart Tag**, **Intelligent Classification**, **Intelligent Thumbnail**, **Tag by Frame**  |
 
->? You can view the **preset** content analysis templates in [MPS > Template Settings](https://console.cloud.tencent.com/mps/templates?tab=analysis).
+>? You can view the **preset** content analysis templates in [MPS > Template Settings](https://console.tencentcloud.com/mps/templates?tab=analysis).
 
 
 The templates created are displayed in the template list, where you can view, edit, or delete a template.
@@ -288,7 +288,7 @@ MPS provides preset content recognition templates, which can be used in workflow
 |    Template name    |    Max 64 characters; supports Chinese characters, letters, digits, spaces, underscores (\_), hyphens (-), and periods    |
 | Content Recognition Items  | **Face Recognition**, **Text Recognition**, **Speech Recognition**  |
 
->?You can view the **preset** content recognition templates in [MPS console > Template Settings](https://console.cloud.tencent.com/mps/templates?tab=recognization).
+>?You can view the **preset** content recognition templates in [MPS console > Template Settings](https://console.tencentcloud.com/mps/templates?tab=recognization).
 
 
 The templates created are displayed in the template list, where you can view, edit, or delete a template.
