@@ -43,7 +43,7 @@ Templates created are displayed in the template list. You can view, edit, or del
 <tr><td colspan="1">100280</td><td colspan="1">HLS</td></tr></tbody></table>
 
 ## Top Speed Codec Template
-MPS provides preset Tencent Extreme Speed High Definition (Top Speed Codec) templates, which can be used in workflows. You can also click **Create Template** to customize your own Top Speed Codec templates.
+MPS provides preset Top Speed Codec (formerly Tencent Extreme Speed High Definition) templates, which can be used in workflows. You can also click **Create Template** to customize your own Top Speed Codec templates.
 
 | Item | Description |
 | --- | ----|
