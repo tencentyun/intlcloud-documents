@@ -134,7 +134,7 @@ The watermark templates created can be found in the template list, which display
 MPS provides preset screenshot templates, which can be used in workflows. Three types of screenshots are supported: time point screenshot, sampled screenshot, and image sprite screenshot. You can also click **Create Template** to customize your own screenshot templates.
 
 ### Time point screenshot
-To create a time point screenshot, select time point screenshot for screenshot type. You can set the template name and screenshot dimensions when creating a template, but the time point must be set in workflows. For detailed instructions, please see [Workflow Management](https://intl.cloud.tencent.com/document/product/1041/33485).
+To create a time point screenshot, select time point screenshot for screenshot type. You can set the template name and screenshot dimensions when creating a template, but the time point must be set in workflows. For detailed instructions, please see [Workflows](https://intl.cloud.tencent.com/document/product/1041/33485).
 
 | Item | Description |
 | --- | ----|
@@ -189,7 +189,7 @@ The screenshot templates created can be found in the template list, which displa
 
 ## Animated Image Generating Template
 MPS provides preset animated image generating templates, which can be used in workflows. You can also click **Create Template** to customize your own animated image generating templates.
-You can set the image format, frame rate, image dimensions and image quality when creating a template, and the time period for generating animated images in workflows. For detailed instructions, please see [Workflow Management](https://intl.cloud.tencent.com/document/product/1041/33485).
+You can set the image format, frame rate, image dimensions and image quality when creating a template, and the time period for generating animated images in workflows. For detailed instructions, see [Workflows](https://intl.cloud.tencent.com/document/product/1041/33485).
 
 | Item | Description |
 | --- | ----|
