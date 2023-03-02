@@ -29,9 +29,9 @@ For example, a business' application image is stored in bucket `examplebucket-12
 - When the container cluster in Beijing/Shanghai region pulls the file through the endpoint, COS will intelligently resolve the request to the private network access layer in Beijing/Shanghai region and use the private network access layer device to pull the file from the storage cluster in Guangzhou region over the cross-region backbone network Direct Connect line.
 
 >!
-- If you use global acceleration, fees will be incurred. Therefore, we recommend that you carefully evaluate whether to use this feature with your actual business needs in mind:
-- The private network global acceleration endpoint can be used in the Tencent Cloud private network environment only. If your request source is not in the Tencent Cloud private network environment, it cannot be connected to. In this case, you can consider using the default endpoint or the default global acceleration endpoint.
-- When you use a private network global acceleration endpoint in another Tencent Cloud product such as CVM, TKE, or SCF, the product must be in a region where COS is available; otherwise, it cannot be used. For more information on regions where COS is available, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+>- If you use global acceleration, fees will be incurred. Therefore, we recommend that you carefully evaluate whether to use this feature with your actual business needs in mind:
+>- The private network global acceleration endpoint can be used in the Tencent Cloud private network environment only. If your request source is not in the Tencent Cloud private network environment, it cannot be connected to. In this case, you can consider using the default endpoint or the default global acceleration endpoint.
+>- When you use a private network global acceleration endpoint in another Tencent Cloud product such as CVM, TKE, or SCF, the product must be in a region where COS is available; otherwise, it cannot be used. For more information on regions where COS is available, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 
 ## Limits
 
