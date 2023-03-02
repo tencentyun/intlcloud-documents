@@ -227,6 +227,7 @@ chown -R nginx:nginx /var/www
  1. Run `cp /etc/nginx/nginx.conf ~/nginx.conf.bak` to back up the current configuration file to the `HOME` directory.
  2. Use SFTP or SCP to download the current configuration file to the local PC.
 4. Change `/etc/nginx/nginx.conf` to the following content:
+
 ```plaintext
 # For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
@@ -363,6 +364,7 @@ http {
 
 }
 ```
+
 5. Run the following commands in sequence and start the Nginx service:
 **Command 1:**
 ```bash
@@ -438,6 +440,8 @@ If you need to change the domain name or IP address after installing the Nextclo
 	<tr><td>Database name</td><td>nextcloud (or another unused name)</td></tr>
 	<tr><td>Database host (`localhost` is displayed by default)</td><td>Private network address of the TencentDB for MySQL instance</td></tr>
 </table>
+
+
 3. Click **Finish setup** and wait for the Nextcloud server to be installed.
 4. If an error such as `504 Gateway Timeout` is displayed during installation, you can directly refresh the page and try again.
 5. After the installation, log in to the Nextcloud server with the admin account to use Nextcloud on web.
