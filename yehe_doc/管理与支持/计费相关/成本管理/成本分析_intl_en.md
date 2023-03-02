@@ -55,6 +55,6 @@ The chart displays only the first 10 items for the selected category. Any remain
 
 The cost report feature allows you to save the results of cost analysis as a report that can be easily referenced and shared. You can create a cost report from the Cost Explorer page, and you can edit or delete a report after it’s created.
 
--The report will save all the settings you configured for cost analysis. If the time is set to a relative time period, the cost report will be updated automatically.
+- The report will save all the settings you configured for cost analysis. If the time is set to a relative time period, the cost report will be updated automatically.
 
--Tencent Cloud provides three preset cost reports that can be viewed in the [Cost Report](https://console.cloud.tencent.com/expense/cost/report) page: Daily costs by service, Daily costs report, and Monthly costs by service. These preset reports cannot be modified or deleted.
+- Tencent Cloud provides three preset cost reports that can be viewed in the [Cost Report](https://console.cloud.tencent.com/expense/cost/report) page: Daily costs by service, Daily costs report, and Monthly costs by service. These preset reports cannot be modified or deleted.
