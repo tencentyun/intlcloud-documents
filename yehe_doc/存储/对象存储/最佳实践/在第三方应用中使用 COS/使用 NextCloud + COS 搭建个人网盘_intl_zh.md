@@ -227,6 +227,7 @@ chown -R nginx:nginx /var/www
  1. 执行 `cp /etc/nginx/nginx.conf ~/nginx.conf.bak` 将当前配置文件备份到家（HOME）目录。
  2. 使用 SFTP 或 SCP 等软件将当前配置文件下载到本地计算机。
 4. 将 `/etc/nginx/nginx.conf` 修改或替换为如下内容：
+
 ```plaintext
 # For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
@@ -363,6 +364,8 @@ http {
 
 }
 ```
+
+
 5. 依次执行下述命令，并启动 Nginx 服务：
 **命令1：**
 ```bash
@@ -438,6 +441,7 @@ chown nginx:nginx /var/www/nextcloud/config/config.php
 	<tr><td>数据库名</td><td>nextcloud（或其他未被使用的数据库名）</td></tr>
 	<tr><td>数据库主机（默认显示为 localhost）</td><td>云数据库 MySQL 的内网地址</td></tr>
 </table>
+
 3.   单击**安装完成**，等待 NextCloud 服务端完成安装。
 4.   如果安装过程中出现504 Gateway Timeout 等错误信息，可直接刷新重试。
 5.   安装完成后，使用管理员账号登录 NextCloud 服务端即可开始使用网页版 NextCloud。
