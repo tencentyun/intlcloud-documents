@@ -10,7 +10,7 @@
 
 ## 사용 프로세스
 
-![](https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027871376/1dc8dd42b75e11eda534525400c56988.png?q-sign-algorithm=sha1&q-ak=AKIDFgIwuCfIDr5bP0rXPSfBL-S99muzsUzE20G2ZzbEUHvIGUkMdHU_Nop0TBDetPRF&q-sign-time=1677640756;1677644356&q-key-time=1677640756;1677644356&q-header-list=&q-url-param-list=&q-signature=ed3e047ea2878a0f8c8d9af9505565973d668c72&x-cos-security-token=bK7rgYee6Vlrw9RJjpxrtdfDlY04DBKac15ccaada6282f9fde255a9532440997OaKmfZJKditLmR-Y5Yin3VA61izb_gR6LLNXiXgtF1268WFaHXvX45EF7W2KLHtzymJBTgPwIjHcXPzuunGhbeOIMce_jGCg4u0SvP8yEE4ZuGmpoyn8Jbc5DBBiY9Q3eAJkHmCQIfuNJrtWHm_S8BBNsclzTRGRV_y1J2WN8Kqjcwokmn2ogm1S_hx3lFGSic3PX2_MGnPvl2o12JywhVxXaCfYIZlvTPivBe7ZN5UAu4Dc5JiZgcZEcE9C0zE25rfQRvS83cXtSg_Xay7XhLTRaHpm_3v91ttcdVTDnCqWhWmDfVitIv1UedniDoEGHGyGgdjLcV83GdOBJmzSmqa-NlMf0ihJc1vpfFlCEUEeeLHkVNR0_0z2BjoIw7pa)
+![](https://qcloudimg.tencent-cloud.cn/image/document/2fa11eaa16042e830437ddefbc90a2ce.png)
 
 ## 호출 프로세스
 
@@ -36,9 +36,7 @@ import com.tencent.TMG.advance.ITMGAudioDataObserver;
 SetAdvanceParams("AllowDumpCapture", "1");
 ```
 
-> **참고:**
-> 
-
+>!
 > 방 입장 API(EnterRoom)를 호출하기 전에 SetAdvanceParams를 호출해야 합니다.
 > 
 
@@ -116,7 +114,7 @@ public abstract int SetAudioDataFormat(Audio_Data_Type audioType, int sampleRate
 <tr>
 <td rowspan="1" colSpan="1" >AUDIO_DATA_TYPE_SEND</td>
 
-<td rowspan="1" colSpan="1" >업스트림 오디오 스트림(마이크로 수집되고 음향 효과를 통해 처리된 음성 및 [Accompaniment in Voice Chat](https://intl.cloud.tencent.com/document/product/607/31504) 사운드 포함)의 원본 오디오 데이터를 가져옵니다.</td>
+<td rowspan="1" colSpan="1" >업스트림 오디오 스트림(마이크로 수집되고 음향 효과를 통해 처리된 음성 및 <a href="https://intl.cloud.tencent.com/document/product/607/31504">Accompaniment in Voice Chat</a> 사운드 포함)의 원본 오디오 데이터를 가져옵니다.</td>
 </tr>
 
 <tr>
