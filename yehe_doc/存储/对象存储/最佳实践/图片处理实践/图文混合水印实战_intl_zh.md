@@ -20,8 +20,8 @@
 
 1. 参见 [图片水印](https://intl.cloud.tencent.com/document/product/1045/33720) API 文档，定义图片水印的参数。
 如您不熟悉 API 参数，可参考 [样式管理](https://intl.cloud.tencent.com/document/product/1045/33443) 文档，通过控制台新增样式，生成参数。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/023a23350ccbef6dbc8f7ff31a4b0686.jpg" style="width: 80%"/></br>
-如上图红框所示，处理参数如下：
+
+处理参数如下：
 ```
 watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/dissolve/60/dx/10/dy/50/gravity/southeast
 ```
@@ -29,7 +29,7 @@ watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teX
 >
 2. 参见 [文字水印](https://intl.cloud.tencent.com/document/product/1045/33721) API 文档，定义文字水印的参数。
 如您不熟悉 API 参数，可参考 [样式管理](https://intl.cloud.tencent.com/document/product/1045/33443) 通过控制台新增样式，生成参数。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e14eb88078bdb3ae5a14dbdb1f2b7150.jpg" style="width: 80%"/></br>
+
 ```
 watermark/2/text/VUlOOiAxMjM0NTY3OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10
 ```
@@ -43,10 +43,9 @@ watermark/2/text/VUlOOiAxMjM0NTY3OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/I
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/2/text/VUlOOiAxMjM0NTY3OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10|watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/gravity/southeast/dx/10/dy/50/dissolve/60 
 ```
-即可获得混合水印的图片：
-<img src="https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/2/text/VUlOOiAxMjM0NTY3OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10|watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/gravity/southeast/dx/10/dy/50/dissolve/60" style="width: 80%"/></br>
+
 为了缩短 URL 长度，我们可以参考 [样式管理](https://intl.cloud.tencent.com/document/product/1045/33443) 文档，在控制台将图片水印（保持不变）的部分新增为样式`watermark1`：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e281a9f3dbac953781dc408c36a78f66.jpg" style="width: 80%"/></br>
+
 这样，链接即可缩短为：
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png/watermark1?watermark/2/text/VUlOOiAxMjM0NTY3OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10
@@ -55,7 +54,7 @@ https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png/watermark1
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png/watermark1?watermark/2/text/VUlOOiA4ODg4ODg4OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10
 ```
-<img src="https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/2/text/VUlOOiA4ODg4ODg4OA/font/SGVsdmV0aWNhLmRmb250/fontsize/36/fill/IzAwMDAwMA/dissolve/50/gravity/southeast/dx/10/dy/10|watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/gravity/southeast/dx/10/dy/50/dissolve/60" style="width: 80%"/></br>
+
 
 
 ### 方案二：将文字和图片水印打印到透明图片上，再将其作为图片水印
@@ -67,19 +66,14 @@ https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png/watermark1
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/transparent.png?watermark/2/text/VUlOOiAxMjM0NTY/font/SGVsdmV0aWNhLmRmb250/fontsize/48/fill/IzAwMDAwMA/dissolve/60/gravity/south/dx/0/dy/60|watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/gravity/center/dx/0/dy/0/dissolve/71
 ```
-其效果如下：
-<img src="https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/transparent.png?watermark/2/text/VUlOOiAxMjM0NTY/font/SGVsdmV0aWNhLmRmb250/fontsize/48/fill/IzAwMDAwMA/dissolve/60/gravity/south/dx/0/dy/60|watermark/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTgxMjU2MzguY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vbG9nby5wbmc/gravity/center/dx/0/dy/0/dissolve/71" style="width: 20%"/></br>
+
 4. 将这张透明图片作为水印图片，对原图进行打水印操作即可：
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/1/image/aHR0cDovL2V0ZXJuYXV4LTEzMDE0NTM1NTAuY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vdHJhbnNwYXJlbnQucG5nP3dhdGVybWFyay8yL3RleHQvVlVsT09pQXhNak0wTlRZL2ZvbnQvU0dWc2RtVjBhV05oTG1SbWIyNTAvZm9udHNpemUvNDgvZmlsbC9JekF3TURBd01BL2Rpc3NvbHZlLzYwL2dyYXZpdHkvc291dGgvZHgvMC9keS82MHx3YXRlcm1hcmsvMS9pbWFnZS9hSFIwY0RvdkwyVjBaWEp1WVhWNExURXpNREUwTlRNMU5UQXVZMjl6TG1Gd0xXZDFZVzVuZW1odmRTNXRlWEZqYkc5MVpDNWpiMjB2Ykc5bmJ5NXdibWMvZ3Jhdml0eS9jZW50ZXIvZHgvMC9keS8wL2Rpc3NvbHZlLzcx/gravity/southeast/dx/0/dy/0/dissolve/90
 ```
-其效果如下：
-<img src="https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/1/image/aHR0cDovL2V0ZXJuYXV4LTEzMDE0NTM1NTAuY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vdHJhbnNwYXJlbnQucG5nP3dhdGVybWFyay8yL3RleHQvVlVsT09pQXhNak0wTlRZL2ZvbnQvU0dWc2RtVjBhV05oTG1SbWIyNTAvZm9udHNpemUvNDgvZmlsbC9JekF3TURBd01BL2Rpc3NvbHZlLzYwL2dyYXZpdHkvc291dGgvZHgvMC9keS82MHx3YXRlcm1hcmsvMS9pbWFnZS9hSFIwY0RvdkwyVjBaWEp1WVhWNExURXpNREUwTlRNMU5UQXVZMjl6TG1Gd0xXZDFZVzVuZW1odmRTNXRlWEZqYkc5MVpDNWpiMjB2Ykc5bmJ5NXdibWMvZ3Jhdml0eS9jZW50ZXIvZHgvMC9keS8wL2Rpc3NvbHZlLzcx/gravity/southeast/dx/0/dy/0/dissolve/90" style="width: 80%"/></br>
+
 您还可以通过`scatype`参数使水印图尺寸根据图片大小等比例缩放，并通过`batch`参数设置平铺。
 ```
 https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/1/image/aHR0cDovL2V0ZXJuYXV4LTEzMDE0NTM1NTAuY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vdHJhbnNwYXJlbnQucG5nP3dhdGVybWFyay8yL3RleHQvVlVsT09pQXhNak0wTlRZL2ZvbnQvU0dWc2RtVjBhV05oTG1SbWIyNTAvZm9udHNpemUvNDgvZmlsbC9JekF3TURBd01BL2Rpc3NvbHZlLzYwL2dyYXZpdHkvc291dGgvZHgvMC9keS82MHx3YXRlcm1hcmsvMS9pbWFnZS9hSFIwY0RvdkwyVjBaWEp1WVhWNExURXpNREUwTlRNMU5UQXVZMjl6TG1Gd0xXZDFZVzVuZW1odmRTNXRlWEZqYkc5MVpDNWpiMjB2Ykc5bmJ5NXdibWMvZ3Jhdml0eS9jZW50ZXIvZHgvMC9keS8wL2Rpc3NvbHZlLzcx/scatype/3/spcent/30/gravity/southeast/dx/0/dy/0/dissolve/90/batch/1/degree/45
 ```
-其效果如下：
-<img src="https://examples-1258125638.cos.ap-guangzhou.myqcloud.com/preview.png?watermark/1/image/aHR0cDovL2V0ZXJuYXV4LTEzMDE0NTM1NTAuY29zLmFwLWd1YW5nemhvdS5teXFjbG91ZC5jb20vdHJhbnNwYXJlbnQucG5nP3dhdGVybWFyay8yL3RleHQvVlVsT09pQXhNak0wTlRZL2ZvbnQvU0dWc2RtVjBhV05oTG1SbWIyNTAvZm9udHNpemUvNDgvZmlsbC9JekF3TURBd01BL2Rpc3NvbHZlLzYwL2dyYXZpdHkvc291dGgvZHgvMC9keS82MHx3YXRlcm1hcmsvMS9pbWFnZS9hSFIwY0RvdkwyVjBaWEp1WVhWNExURXpNREUwTlRNMU5UQXVZMjl6TG1Gd0xXZDFZVzVuZW1odmRTNXRlWEZqYkc5MVpDNWpiMjB2Ykc5bmJ5NXdibWMvZ3Jhdml0eS9jZW50ZXIvZHgvMC9keS8wL2Rpc3NvbHZlLzcx/scatype/3/spcent/30/gravity/southeast/dx/0/dy/0/dissolve/90/batch/1/degree/45" style="width: 80%"/></br>
-
 
