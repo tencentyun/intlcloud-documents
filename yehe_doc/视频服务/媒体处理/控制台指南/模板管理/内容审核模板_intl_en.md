@@ -48,6 +48,6 @@
 2. For each subitem, you can set a **Confirm Threshold** and a **Suspicion Threshold**, which determine the strictness of moderation. If they are left empty, the default values will be used.
  - **Confirm threshold**: MPS analyzes the videos uploaded and gives them confirmation scores. If the score of a video exceeds the confirm threshold, the video will be marked confirmed. The value range of the threshold is 0-100. The default value is recommended.
  - **Suspicion threshold**: MPS analyzes the videos uploaded and gives them suspicion scores. If the score of a video exceeds the suspicion threshold, the video will be marked suspicious. You can initiate human moderation for suspicious videos on the video moderation page. The value range of the threshold is 0-100. The default value is recommended.
->? You can view **preset** moderation templates in [Template Management > Moderation](https://console.intl.cloud.tencent.com/mps/templates/audits) of the MPS console.
+>? You can view **preset** moderation templates in [Templates > Moderation](https://console.intl.cloud.tencent.com/mps/templates/audits) of the MPS console.
 
 3. The templates created are displayed in the moderation template list, where you can view the details of, edit, or delete a template.
