@@ -712,3 +712,4 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 56.[Tencent Ecard](https://www.tencentcloud.com/document/product/1170/52288).
 57.[Tencent Cloud Firewall](https://www.tencentcloud.com/document/product/1160/52113).
 58.[User Generated Short Video SDK](https://www.tencentcloud.com/document/product/1069/52519).
+59.[Key Management Service](https://www.tencentcloud.com/document/product/1030/53637).
