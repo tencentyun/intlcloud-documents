@@ -12,8 +12,8 @@ Step 4. Click **Create Template** and enter the required information.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/GHTr969_create_voucher.png)
 
 >?
->- General vouchers: They are applicable to all products except some listed products, which you can see after clicking the question mark icon next to **All products**.
->- Dedicated vouchers: They are only applicable to the products you specify.
+>- All products: They are applicable to all products except some listed products, which you can see after clicking the question mark icon next to **All products**.
+>- Specified product: They are only applicable to the products you specify.
 
 Step 5. Check and confirm the entered information and click **Confirm** to save the voucher template.
 >?
