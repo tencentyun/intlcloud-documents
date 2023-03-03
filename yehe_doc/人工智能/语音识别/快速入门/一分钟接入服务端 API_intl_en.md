@@ -3,7 +3,7 @@ This document describes how to use API 3.0 Explorer to debug ASR APIs online and
 
 ## Directions
 ### Activate ASR service
-Before calling ASR APIs, you should access the [ASR console](https://console.cloud.tencent.com/asr) to complete identity verification. Then, read the **User agreement**, select **I have read and agree to the "User Agreement"**, and click **Activate now** to activate **APIs for real-time speech recognition**. If you need to activate the business license verification or VAT invoice verification feature, you can go to the service overview page to apply for activation, and the service can be used after approval. 
+Before calling ASR APIs, you should access the [ASR console](https://console.cloud.tencent.com/asr) to complete identity verification. Then, read the **User agreement**, select **I have read and agree to the "User Agreement"**, and click **Activate now** to activate [APIs for real-time speech recognition](https://www.tencentcloud.com/document/product/1118/53937). If you need to activate the business license verification or VAT invoice verification feature, you can go to the service overview page to apply for activation, and the service can be used after approval. 
 ![]()
 
 After the service is successfully activated, API calls will be billed in the pay-as-you-go mode and settled daily. For billing details, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1118/43352).
@@ -33,7 +33,7 @@ Confirm that your local dependent environment meets the following requirements:
 | C++ | Compiler for C++ 11 or later, i.e., GCC 4.8 or later (currently, only the Linux installation environment is supported, while Windows is not) |
 | Ruby | Ruby 2.3 or later |
 
-Install the Tencent Cloud ASR SDK corresponding to the local dependent environment. The following takes Node.js as an example to describe the SDK installation and use methods. For SDKs in other languages, go to the [SDK Center](https://cloud.tencent.com/document/sdk).
+Install the Tencent Cloud ASR SDK corresponding to the local dependent environment. The following takes Node.js as an example to describe the SDK installation and use methods. For SDKs in other languages, go to the [SDK Center](https://intl.cloud.tencent.com).
 
 #### Installation through npm (recommended)
 Installation through npm is the recommended way to use the SDK for Node.js. npm is a dependency manager for Node.js that supports the dependencies your project requires and installs them into your project. For more information, visit [npm's official website](https://www.npmjs.com/).
