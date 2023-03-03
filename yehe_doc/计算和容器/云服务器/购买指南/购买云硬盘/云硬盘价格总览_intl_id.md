@@ -151,15 +151,6 @@
                 <td>0,18</td>
             </tr>
             <tr>
-                <td>Eropa Timur (Moskow)</td>
-                <td>0,0001</td>
-                <td>0,0003</td>
-                <td>0,0003</td>
-                <td>0,05</td>
-                <td>0,19</td>
-                <td>0,19</td>
-            </tr>        
-            <tr>
                 <td>Asia Timur (Tokyo)</td>
                 <td>0,0001</td>
                 <td>0,0003</td>
