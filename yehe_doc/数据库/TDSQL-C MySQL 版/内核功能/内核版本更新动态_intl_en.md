@@ -1,265 +1,419 @@
 This document describes the TDSQL-C for MySQL kernel version updates. For information on how to upgrade the kernel, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/1098/44617).
+<dx-tabs>
+::: TDSQL-C for MySQL 8.0 Kernel Release Notes
+<table>
+<thead><tr><th>Minor Version</th><th>Description</th></tr></thead>
+<tbody>
+<tr>	
+<td>3.1.9</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported CDC, which can directly and repeatedly backtrack/extract the binlogs in the custom log retention period. This solves the problem where the compute node loses local binlogs in scenarios such as HA. For more information on how to set the binlog retention period, see <a href="https://intl.cloud.tencent.com/document/product/1098/48396" target="_blank">Setting Backup Retention Period</a>.</li>
+<li>Optimized the pages purge rate to improve the database performance.</li>
+</ul>
 
-## TDSQL-C for MySQL 8.0
-### 3.1.9
-#### Feature updates
-- Supported CDC, which can directly and repeatedly backtrack/extract the binlogs in the custom log retention period. This solves the problem where the compute node loses local binlogs in scenarios such as HA. For more information on how to set the binlog retention period, see [Setting Backup Retention Period](https://intl.cloud.tencent.com/document/product/1098/48396).
-- Optimized the pages purge rate to improve the database performance.
+<li>Fixes</li><ul>
+<li>Fixed the issue where the worker couldn't pass the table-level NULL ROW FLAG to the coordinator and thus caused incorrect results.</li>
+<li>Fixed the core issue of parallel query caused by the failure of the sort operator to get the order list during operator splitting because sort order was pushed down to the table.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>3.1.8</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported parallel query, which can automatically identify complicated queries. The parallel query capability leverages multiple compute cores to greatly shorten the response time of large queries. For more information on how to use this feature, see <a href="https://www.tencentcloud.com/document/product/1098/51769" target="_blank">Enabling/Disabling Parallel Query</a>.</li>
+</ul>
 
-#### Fixes
-- Fixed the issue where the worker couldn't pass the table-level NULL ROW FLAG to the coordinator and thus caused incorrect results.
-- Fixed the core issue of parallel query caused by the failure of the sort operator to get the order list during operator splitting because sort order was pushed down to the table.
+<li>Fixes</li><ul>
+<li>Fixed several database issues in debug mode.</li>
+<li>Fixed the issue where abnormal information appeared in database proxy-related fields when `show detailed processlist` was used to display connection information.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>3.1.7</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Added the password dictionary parameter as described in <a href="https://www.tencentcloud.com/document/product/1098/49981" target="_blank">Overview</a>, and optimized HA's dependence on dictionary files.</li>
+<li>Supported completing purged binlogs in the kernel.</li>
+<li>Supported the built-in database proxy for the Serverless architecture to implement connection persistence and momentary disconnection prevention, and fixed the connection error reported during the first wakeup.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>3.1.6</td>
+<td>
 
-### 3.1.8
-#### Feature updates
-- Supported parallel query, which can automatically identify complicated queries. The parallel query capability leverages multiple compute cores to greatly shorten the response time of large queries. For more information on how to use this feature, see [Enabling/Disabling Parallel Query](https://www.tencentcloud.com/document/product/1098/51769).
+<ul><li>Fixes</li><ul>
+<li>Fixed the crash caused by full-text index (non-tree index) encountered during index check.</li>
+<li>Fixed the issue where the liveness probe of the database proxy caused the kernel to output a large number of error logs, and blocked the printing of redundant logs.</li>
+<li>Fixed the issue where the uninitialized GCR LSN in the session LSN tracker might return a random value of the database proxy and thus cause the statement execution to time out.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>3.1.5</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported traffic throttling for `bulk insert`.</li>
+<li>Supported setting the change buffer and merge modes.</li>
+<li>Supported database proxy. For more information on how to use this feature, see <a href="https://www.tencentcloud.com/document/product/1098/50004" target="_blank">Database Proxy Overview</a>.</li>
+<li>Supported logical backup for read-only instances.</li>
+<li>Supported parallel replication of binlogs at the table level.</li>
+<li>Supported SQL throttling.</li>
+<li>Supported hotspot update protection.</li>
+<li>Supported interesting order judgment in sort merge join.</li>
+<li>Supported TABLESAMPLE.</li>
+<li>Supported the HISTOGRAM() function.</li>
+<li>Supported histogram versioning and compressed histogram.</li>
+<li>Supported `show detail processlist`.</li>
+</ul>
 
-#### Fixes
-- Fixed several database issues in debug mode.
-- Fixed the issue where abnormal information appeared in database proxy-related fields when `show detailed processlist` was used to display connection information.
+<li>Performance optimizations</li><ul>
+<li>Optimized the physical replication of transactions to greatly improve the write-only performance.</li>
+<li>Optimized the parallel initialization of the transaction system to accelerate the system startup.</li>
+<li>Optimized the logic of page locking during log replay in read-only instances to accelerate the replay thread.</li>
+</ul>
 
-### 3.1.7
-#### Feature updates
-- Added the password dictionary parameter as described in [Overview](https://www.tencentcloud.com/document/product/1098/49981), and optimized HA's dependence on dictionary files.
-- Supported completing purged binlogs in the kernel.
-- Supported the built-in database proxy for the Serverless architecture to implement connection persistence and momentary disconnection prevention, and fixed the connection error reported during the first wakeup.
+<li>Fixes</li><ul>
+<li>Fixed the issue where the MySQL client exited abnormally when receiving an incomplete package.</li>
+<li>Fixed the crash of the FSP management fraction caused by the incorrect commit order of the nested MTRs generated by blob.</li>
+<li>Fixed the transaction consistency issue that might be caused by the purge of the host when RO accessed the secondary index.</li>
+<li>Fixed the issue where `backup lock` couldn't be locked due to the `lock table` statement.</li>
+<li>Fixed the issue where several keywords introduced by TDSQL-C couldn't be used as identifiers, such as CDB_GET_TABLE_VERSION, CLUSTER, and THREADPOOL.</li>
+<li>Fixed the issue where the startup time was prolonged due to the failure to add `dict op lock` to the main thread caused by large transactions or long-line transaction rollbacks during instance startup.</li>
+<li>Fixed the crash caused by TRX reuse after the failure to allocate the undo page.</li>
+<li>Fixed the crash caused by executing `alter table` on a partitioned table to migrate from the extended tablespace to the system tablespace.</li>
+<li>Fixed the crash caused by the startup before the truncate log was completely written.</li>
+<li>Fixed the crash caused by inserting data after `drop table partition force`.</li>
+<li>Fixed the possible crash caused by rollbacks after instant DDL.</li>
+<li>Fixed the issue where creating tables in the extended tablespace with `create temporary table like` failed.</li>
+<li>Fixed the OOM caused by the continuous increase of the cache during data writes to the full-text index table.</li>
+<li>Fixed the error of unstable performance after hotspot update optimization was enabled.</li>
+<li>Fixed the issue where `select count(*)` parallel scans caused full-table scans in extreme cases.</li>
+<li>Fixed the issue where the statistics were read as zero in various cases, and fixed the official bug #31889883.</li>
+<li>Fixed the bug where queries were in the `query end` status for a long time.</li>
+<li>Fixed the case sensitivity issue of column names in the `json_table` function (official bug #32591074).</li>
+<li>Fixed the bug where an error was reported when the Temptable engine was used and the number of aggregate functions in the selected column exceeded 255.</li>
+<li>Fixed the bug that caused correctness issues in window functions because expressions returned early during `return true`.</li>
+<li>Fixed the correctness issue caused by the pushdown by `derived condition pushdown` when it contained user variables.</li>
+<li>Fixed the issue where SQL filters were prone to crash when no namespaces were added in a rule.</li>
+<li>Fixed the QPS jitters when the thread pool was enabled under high concurrency and high conflict.</li>
+<li>Fixed the crash when information was not cleared during execution of the `update` statement or stored procedures.</li>
+<li>Fixed the issue where the histogram couldn't be stopped by CTRL+C on the existing version.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>3.1.3</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported adding the binlog with the specified filename to an index file.</li>
+<li>Added a backup lock in the syntax of LOCK TABLES FOR BACKUP, UNLOCK TABLES.</li>
+<li>Added a binlog lock in the syntax of LOCK BINLOG FOR BACKUP, UNLOCK BINLOG.</li>
+</ul>
 
-### 3.1.6
-#### Fixes
-- Fixed the crash caused by full-text index (non-tree index) encountered during index check.
-- Fixed the issue where the liveness probe of the database proxy caused the kernel to output a large number of error logs, and blocked the printing of redundant logs.
-- Fixed the issue where the uninitialized GCR LSN in the session LSN tracker might return a random value of the database proxy and thus cause the statement execution to time out.
+<li>Fixes</li><ul>
+<li>Fixed the bug where dynamic metadata persistence caused instance table corruptions or visibility errors.</li>
+<li>Merged the official bugfix #32897503 to solve the issue where the execution path of some query statements was incorrect under the `prepare` statement.</li>
+<li>Merged the official bugfix to solve the crash when `set resource group` failed.</li>
+<li>Fixed the bug where the previous `gtid` was empty after HA switch.</li>
+<li>Fixed the bug where an auto-increment column could be set to a value smaller than the inserted maximum value.</li>
+<li>Fixed the issue where explicit transactions in read-only instances would block the replay thread from replaying DDL logs.</li>
+<li>Fixed the issue where tables with "-" in the name might crash when replicated in a read-only instance after DDL.</li>
+<li>Fixed the crash caused by the `undo` request to the DDL log system table when a read-only instance experienced DDL recovery upon startup.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>3.1.2</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported MySQL 8.0 for read-only nodes and source-replica physical replication.</li>
+<li>Supported table space expansion and up to above 1 PB of capacity per instance.</li>
+<li>Supported limiting the number of preloaded rows, which achieved a 1%-5% performance increase during point query testing.</li>
+<li>Supported extended ANALYZE syntax (UPDATE HISTOGRAM c USING DATA 'json') and direct writes to histograms.</li>
+</ul>
 
-### 3.1.5
-#### Feature updates
-- Supported traffic throttling for `bulk insert`.
-- Supported setting the change buffer and merge modes.
-- Supported database proxy. For more information on how to use this feature, see [Database Proxy Overview](https://www.tencentcloud.com/document/product/1098/50004).
-- Supported logical backup for read-only instances.
-- Supported parallel replication of binlogs at the table level.
-- Supported SQL throttling.
-- Supported hotspot update protection.
-- Supported interesting order judgment in sort merge join.
-- Supported TABLESAMPLE.
-- Supported the HISTOGRAM() function.
-- Supported histogram versioning and compressed histogram. 
-- Supported `show detail processlist`.
+<li>Performance optimizations</li><ul>
+<li>Replaced index dive with histogram to reduce evaluation errors and I/O overheads (this capability is not enabled by default).</li>
+</ul>
 
-#### Performance optimizations
-- Optimized the physical replication of transactions to greatly improve the write-only performance.
-- Optimized the parallel initialization of the transaction system to accelerate the system startup.
-- Optimized the logic of page locking during log replay in read-only instances to accelerate the replay thread.
+<li>Fixes</li><ul>
+<li>Fixed the issue where updates related to large object pages were not written to the log when a full-text index containing large object columns was created.</li>
+<li>Fixed the issue with inconsistent formats of `undo page` and different definitions of `TRX_UNDO_HISTORY_NODE` in the computing and storage layers.</li>
+<li>Fixed the issue where statistics information might be zero during online-DDL.</li>
+<li>Fixed the issue where columns generated from replica instances were not updated.</li>
+<li>Fixed the issue where the instance hung when binlog was compressed.</li>
+<li>Fixed the issue of missing GTID in the previous_gtids event of the newly generated binlog file.</li>
+<li>Fixed possible deadlocks when system variables were modified.</li>
+<li>Fixed the issue where the information of the SQL thread of the replica instance in SHOW PROCESSLIST was incorrectly displayed.</li>
+<li>Implemented the bug fix related to hash join provided in MySQL 8.0.23.</li>
+<li>Implemented the bug fix related to writeset provided in MySQL.</li>
+<li>Implemented the bug fix related to the query optimizer provided in MySQL 8.0.24.</li>
+<li>Fixed the concurrency bugs of optimizing flush list and releasing pages in FAST DDL.</li>
+<li>Optimized the memory usage during data dictionary update in instances with a large number of tables.</li>
+<li>Fixed the crash caused by new primary key creation after INSTANT ADD COLUMN.</li>
+<li>Fixed the OOM caused by memory growth in full-text index query.</li>
+<li>Fixed the issue where -1 was included in the TIME field in the result set returned by SHOW PROCESSLIST.</li>
+<li>Fixed the issue where tables might fail to be opened due to histogram compatibility.</li>
+<li>Fixed the floating point accumulation error when Singleton histograms were constructed.</li>
+<li>Fixed the replication interruption caused by using many Chinese characters in the table name of a row format log.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>3.1.1</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported the official updates of MySQL 8.0.19, 8.0.20, 8.0.21, and 8.0.22.</li>
+<li>Supported dynamic setting of thread pooling mode or connection pooling mode by using the `thread_handling` parameter.</li>
+<li>Supported source-replica buffer pool sync: After a high-availability (HA) source-replica switch occurs, it usually takes a long time to warm up the replica, that is, to load hotspot data into its buffer pool. To accelerate the replica's warmup, TXSQL now supports the buffer pool sync between the source and the replica.</li>
+<li>Supported sort merge join.</li>
+<li>Supported async commit: With the thread pool enabled and binlog disabled, async commit can be enabled by setting the parameter `innodb_log_sync_method` to `async`.</li>
+<li>Supported fast DDL operations.</li>
+<li>Supported querying the value of the `character_set_client_handshake` parameter.</li>
+<li>Supported database audit.</li>
+</ul>
 
-#### Fixes
-- Fixed the issue where the MySQL client exited abnormally when receiving an incomplete package.
-- Fixed the crash of the FSP management fraction caused by the incorrect commit order of the nested MTRs generated by blob.
-- Fixed the transaction consistency issue that might be caused by the purge of the host when RO accessed the secondary index.
-- Fixed the issue where `backup lock` couldn't be locked due to the `lock table` statement.
-- Fixed the issue where several keywords introduced by TDSQL-C couldn't be used as identifiers, such as CDB_GET_TABLE_VERSION, CLUSTER, and THREADPOOL.
-- Fixed the issue where the startup time was prolonged due to the failure to add `dict op lock` to the main thread caused by large transactions or long-line transaction rollbacks during instance startup.
-- Fixed the crash caused by TRX reuse after the failure to allocate the undo page.
-- Fixed the crash caused by executing `alter table` on a partitioned table to migrate from the extended tablespace to the system tablespace.
-- Fixed the crash caused by the startup before the truncate log was completely written.
-- Fixed the crash caused by inserting data after `drop table partition force`.
-- Fixed the possible crash caused by rollbacks after instant DDL.
-- Fixed the issue where creating tables in the extended tablespace with `create temporary table like` failed.
-- Fixed the OOM caused by the continuous increase of the cache during data writes to the full-text index table.
-- Fixed the error of unstable performance after hotspot update was enabled after optimization.
-- Fixed the issue where `select count(*)` parallel scans caused full-table scans in extreme cases.
-- Fixed the issue where the statistics were read as zero in various cases, and fixed the official bug #31889883. 
-- Fixed the bug where queries were in the `query end` status for a long time.
-- Fixed the case sensitivity issue of column names in the `json_table` function (official bug #32591074)
-- Fixed the bug where an error was reported when the Temptable engine was used and the number of aggregate functions in the selected column exceeded 255.
-- Fixed the bug that caused correctness issues in window functions because expressions returned early during `return true`.
-- Fixed the correctness issue caused by the pushdown by `derived condition pushdown` when it contained user variables.
-- Fixed the issue where SQL filters were prone to crash when no namespaces were added in a rule.
-- Fixed the QPS jitters when the thread pool was enabled under high concurrency and high conflict.
-- Fixed the crash when information was not cleared during execution of the `update` statement or stored procedures.
-- Fixed the issue where the histogram couldn't be stopped by CTRL+C on the existing version.
+<li>Performance optimizations</li><ul>
+<li>Optimized the mechanism of scanning and flushing the dirty pages tracked in the flush list, so as to solve the performance fluctuation issue while creating indexes and thus improve the system stability.</li>
+<li>Optimized the `BINLOG LOCK_done` conflict to improve write performance.</li>
+<li>Optimized the `trx_sys mutex` conflict by using lock free hash and improve performance.</li>
+<li>Optimized redo log flushing.</li>
+<li>Optimized the buffer pool initialization time.</li>
+<li>Optimized the clearing of adaptive hash indexes (AHI) during the `drop table` operations on big tables.</li>
+</ul>
 
+<li>Fixes</li><ul>
+<li>Fixed the deadlocks caused by the modification of the `offline_mode` and `cdb_working_mode` parameters.</li>
+<li>Fixed the concurrency issue while persistently storing `max_trx_id` of global object `trx_sys`.</li>
+<li>Fixed performance fluctuation when cleaning InnoDB temporary tables.</li>
+<li>Fixed the read-only performance decrease when the instance has many cores.</li>
+<li>Fixed the error (error code: 1032) caused by hash scans.</li>
+<li>Fixed concurrency security issues caused by hotspot update.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>3.0.1</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported three methods of querying `cynos_version`: `select CYNOS_VERSION()`, `select @@cynos_version`, and `show variables like 'cynos_version'`.</li>
+<li>Added a space limit parameter. If the total space usage exceeds the limit, an error will be reported to prompt you to release the space or upgrade the specification.</li>
+<li>Added the `innodb_ncdb_log_priority` read-only parameter, which indicates the priority of the source instance's backend log thread.</li>
+<li>Added the `innodb_ncdb_apply_priority` read-only parameter, which indicates the priority of the read-only instance's log replay thread.</li>
+<li>Added the `innodb_ncdb_fast_shutdown` dynamic parameter, which controls whether to quickly shut down processes. After it is enabled, when a process exits, no destruction operations on the global structure will be performed, which reduces the shutdown time. It is disabled by default.</li>
+<li>Added the `innodb_max_temp_data_file_size` read-only parameter. Its default value is 128 MB. If its value is greater than 0, it indicates the maximum size of the temp tablespace in the local storage.</li>
+</ul>
+</td>
+</tr>
 
-## TDSQL-C for MySQL 8.0
-### 3.1.3
-#### Feature updates
-- Supported adding the binlog with the specified filename to an index file.
-- Added a backup lock in the syntax of LOCK TABLES FOR BACKUP, UNLOCK TABLES.
-- Added a binlog lock in the syntax of LOCK BINLOG FOR BACKUP, UNLOCK BINLOG.
+</tbody></table>
+:::
+::: TDSQL-C for MySQL 5.7 Kernel Release Notes
+<table>
+<thead><tr><th>Minor Version</th><th>Description</th></tr></thead>
+<tbody>
+<tr>	
+<tr>	
+<td>2.0.22/2.1.8</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported CDC, which can directly and repeatedly backtrack/extract the binlogs in the custom log retention period. This solves the problem where the compute node loses local binlogs in scenarios such as HA. For more information on how to set the binlog retention period, see <a href="https://intl.cloud.tencent.com/document/product/1098/48396" target="_blank">Setting Backup Retention Period</a>.</li>
+<li>Optimized the pages purge rate to improve the database performance.</li>
+</ul>
 
-#### Fixes
-- Fixed the bug where dynamic metadata persistence caused instance table corruptions or visibility errors.
-- Merged the official bugfix #32897503 to solve the issue where the execution path of some query statements was incorrect under the `prepare` statement.
-- Merged the official bugfix to solve the crash when `set resource group` failed.
-- Fixed the bug where the previous `gtid` was empty after HA switch.
-- Fixed the bug where an auto-increment column could be set to a value smaller than the inserted maximum value.
-- Fixed the issue where explicit transactions in read-only instances would block the replay thread from replaying DDL logs.
-- Fixed the issue where tables with "-" in the name might crash when replicated in a read-only instance after DDL.
-- Fixed the crash caused by the `undo` request to the DDL log system table when a read-only instance experienced DDL recovery upon startup.
+<li>Fixes</li><ul>
+<li>Fixed the repeated crashes of the compute instance when the upper limit of the space was reached.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>2.0.21/2.1.7</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Added the password dictionary parameter as described in <a href="https://www.tencentcloud.com/document/product/1098/49981" target="_blank">Overview</a>, and optimized HA's dependence on dictionary files.</li>
+<li>Supported completing purged binlogs in the kernel.</li>
+<li>Supported the built-in database proxy for the Serverless architecture to implement connection persistence and momentary disconnection prevention, and fixed the connection error reported during the first wakeup.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>2.0.20/2.1.6</td>
+<td>
+<ul><li>Fixes</li><ul>
+<li>Fixed the issue where the liveness probe of the database proxy caused the kernel to output a large number of error logs, and blocked the printing of redundant logs.</li>
+<li>Fixed the issue where the uninitialized GCR LSN in the session LSN tracker might return a random value of the database proxy and thus cause the statement execution to time out.</li>
+<li>Fixed the issue where creating a temp table in a read-only instance might cause a deadlock.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>2.0.19</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported logical backup for read-only instances.</li>
+<li>Supported database proxy. For more information on how to use this feature, see <a href="https://www.tencentcloud.com/document/product/1098/50004" target="_blank">Database Proxy Overview</a>.</li>
+<li>Supported parallel replication of binlogs at the table level.</li>
+<li>Supported setting the change buffer and merge modes.</li>
+<li>Supported `show detail processlist`.</li>
+</ul>
 
-### 3.1.2
-#### Feature updates
-- Supported MySQL 8.0 for read-only nodes and source-replica physical replication.
-- Supported table space expansion and up to above 1 PB of capacity per instance.
-- Supported limiting the number of preloaded rows, which achieved a 1%-5% performance increase during point query testing.
-- Supported extended ANALYZE syntax (UPDATE HISTOGRAM c USING DATA 'json') and direct writes to histograms.
+<li>Fixes</li><ul>
+<li>Fixed the official bug #22991924 related to the JSON character set.</li>
+<li>Merged the official bugfix #25865525 to solve the issue where `LOAD DATA INFILE` failed to read escape characters plus UTF8 characters.</li>
+<li>Merged the official bugfix #31529221 to fix the issue where the error `Incorrect key file` was reported upon ALTER TABLE failure.</li>
+<li>Merged several official bugfixes related to column generation and cascading deletion, including #33053297, #32124113, and #29127203.</li>
+<li>Fixed the official bug #31599938 where resetting the source caused a crash when binary logging was disabled in the replica. </li>
+<li>Fixed the issue where the startup time was prolonged due to the failure to add `dict op lock` to the main thread caused by large transactions or long-line transaction rollbacks during instance startup.</li>
+<li>Fixed the crash caused by TRX reuse after the failure to allocate the undo page.</li>
+<li>Fixed the crash caused by executing `alter table` on a partitioned table to migrate from the extended tablespace to the system tablespace.</li>
+<li>Fixed the crash caused by the startup before the truncate log was completely written.</li>
+<li>Fixed the crash caused by inserting data after `drop table partition force`.</li>
+<li>Fixed the possible crash caused by rollbacks after instant DDL.</li>
+<li>Fixed the issue where creating tables in the extended tablespace with `create temporary table like` failed.</li>
+<li>Fixed the OOM caused by the continuous increase of the cache during data writes to the full-text index table.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>2.0.17</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported adding the binlog with the specified filename to an index file.</li>
+</ul>
+<li>Fixes</li><ul>
+<li>Merged the official bugfix #25865525 to solve the issue where `LOAD DATA INFILE` failed to read escape characters plus UTF8 characters.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>2.0.16</td>
+<td>
+<ul>
+<li>Performance optimizations</li><ul>
+<li>Optimized `undo space truncate` to improve the speed of `undo truncate` on large-spec instances.</li>
+<li>Optimized the performance of large-scale queries on read-only instances.</li>
+</ul>
 
-#### Performance optimizations
-- Replaced index dive with histogram to reduce evaluation errors and I/O overheads (this capability is not enabled by default).
+<li>Fixes</li><ul>
+<li>Fixed the issue where `backup lock` couldn't be locked due to the `lock table` statement.</li>
+<li>Fixed the issue where `table share` went wrong after thousands of columns were added through `instant add`.</li>
+<li>Fixed the replay error when the content of binlog contained escaped keywords.</li>
+<li>Fixed the issue where externally prepared XA transactions were not explicitly rolled back and thus blocked normal shutdown.</li>
+<li>Fixed the issue where the warning "tablespace -1 not found" was reported during read-only instance startup.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>2.0.15</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported the extended table space: When a single table space exceeds the `innodb_ncdb_extend_space_threshold` configuration, a new table will be created in the extended table space.</li>
+<li>Added new JSON functions: JSON_MERGE_PRESERVE, JSON_MERGE_PATCH, JSON_PRETTY, JSON_STORAGE_SIZE, JSON_ARRAYAGG, JSON_OBJECTAGG.</li>
+<li>Optimized the table lock recovery process at system startup to shorten the startup time.</li>
+</ul>
 
-#### Fixes
-- Fixed the issue where updates related to large object pages were not written to the log when a full-text index containing large object columns was created.
-- Fixed the issue with inconsistent formats of `undo page` and different definitions of `TRX_UNDO_HISTORY_NODE` in the computing and storage layers.
-- Fixed the issue where statistics information might be zero during online-DDL.
-- Fixed the issue where columns generated from replica instances were not updated.
-- Fixed the issue where the instance hung when binlog was compressed.
-- Fixed the issue of missing GTID in the previous_gtids event of the newly generated binlog file.
-- Fixed possible deadlocks when system variables were modified.
-- Fixed the issue where the information of the SQL thread of the replica instance in SHOW PROCESSLIST was incorrectly displayed.
-- Implemented the bug fix related to hash join provided in MySQL 8.0.23.
-- Implemented the bug fix related to writeset provided in MySQL.
-- Implemented the bug fix related to the query optimizer provided in MySQL 8.0.24.
-- Fixed the concurrency bugs of optimizing flush list and releasing pages in FAST DDL.
-- Optimized the memory usage during data dictionary update in instances with a large number of tables.
-- Fixed the crash caused by new primary key creation after INSTANT ADD COLUMN.
-- Fixed the OOM caused by memory growth in full-text index query.
-- Fixed the issue where -1 was included in the TIME field in the result set returned by SHOW PROCESSLIST.
-- Fixed the issue where tables might fail to be opened due to histogram compatibility.
-- Fixed the floating point accumulation error when Singleton histograms were constructed.
-- Fixed the replication interruption caused by using many Chinese characters in the table name of a row format log.
+<li>Fixes</li><ul>
+<li>Fixed the bugs for the `group by` performance issue in text columns and multiple issues related to virtual columns.</li>
+<li>Fixed the possible crash when large transaction rollback and shutdown operations were performed concurrently after instance startup.</li>
+<li>Fixed the issue where repeatedly failed IO retries of related pages caused instance exit after `undo space truncate` failed.</li>
+<li>Fixed the crash when statistics update accessed the snapshot cache for disabled read-only instances.</li>
+<li>Fixed the issue where the truncation log might be behind the `truncate` operation in `undo space truncate`.</li>
+<li>Fixed the bug where an error in ICP check for partitioned table scan resulted in slow query.</li>
+<li>Fixed the crash when the previous scan in a read-only instance encountered the partial replay of a split index log.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>2.0.14</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported INSTANT MODIFY COLUMN. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1098/44589" target="_blank">Instant DDL Overview</a>.</li>
+</ul>
 
-### 3.1.1
-#### Feature updates
-- Supported the official updates of MySQL 8.0.19, 8.0.20, 8.0.21, and 8.0.22.
-- Supported dynamic setting of thread pooling mode or connection pooling mode by using the `thread_handling` parameter.
-- Supported source-replica buffer pool sync: After a high-availability (HA) source-replica switch occurs, it usually takes a long time to warm up the replica, that is, to load hotspot data into its buffer pool. To accelerate the replica's warmup, TXSQL now supports the buffer pool sync between the source and the replica.
-- Supported sort merge join.
-- Supported async commit: With the thread pool enabled and binlog disabled, async commit can be enabled by setting the parameter `innodb_log_sync_method` to `async`.
-- Supported fast DDL operations.
-- Supported querying the value of the `character_set_client_handshake` parameter.
-- Supported database audit.
+<li>Fixes</li><ul>
+<li>Fixed the issue where the used space was not reclaimed when a temp table in a read-only instance was dropped.</li>
+<li>Fixed the issue where the process exited when a read-only instance read the old page version due to changes in storage routes.</li>
+<li>Fixed the issue of possible crash when `information_schema.metadata_locks` was queried.</li>
+<li>Fixed the concurrency error of forward scan and B-tree SMO in read-only instance.</li>
+<li>Fixed the issue where when multiple tables had complex foreign key dependencies and the foreign key attribute was `ON DELETE CASCADE`, the corresponding record in a child table might be deleted twice when a record was delete in its parent table with DELETE.</li>
+<li>Fixed the issue where the process exited due to operations such as CREATE USER in a read-only instance.</li>
+<li>Fixed the issue where SHOW VOLUME STATUS in a read-only instance might trigger an assertion failure.</li>
+<li>Fixed the issue where a read-only instance had abnormal query results and crashed when DDL operations were performed in partitioned tables frequently.</li>
+<li>Fixed the issue where the process crashed during historical version construction when an read-only instance scanned a purged undo log.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>2.0.13</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported INSTANT ADD COLUMN. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1098/44589" target="_blank">Instant DDL Overview</a>.</li>
+<li>Optimized the audit performance under high load and added the `lock_usleep_time` dynamic parameter.</li>
+</ul>
 
-#### Performance optimizations
-- Optimized the mechanism of scanning and flushing the dirty pages tracked in the flush list, so as to solve the performance fluctuation issue while creating indexes and thus improve the system stability.
-- Optimized the `BINLOG LOCK_done` conflict to improve write performance.
-- Optimized the `trx_sys mutex` conflict by using lock free hash and improve performance.
-- Optimized redo log flushing.
-- Optimized the buffer pool initialization time.
-- Optimized the clearing of adaptive hash indexes (AHI) during the `drop table` operations on big tables.
+<li>Fixes</li><ul>
+<li>Fixed the issue where `dict_operation_lock` might cause deadlock during foreign key check.</li>
+<li>Fixed the issue where the process might exit when the ACL change log was replayed during read-only instance startup.</li>
+<li>Fixed the issue where data in source and replica instances was inconsistent after INSTANT ADD COLUMN and TRUNCATE TABLE.</li>
+<li>Fixed the log replay error occurring when data was inserted again after INSTANT ADD COLUMN and TRUNCATE TABLE.</li>
+<li>Fixed the issue where the process exited when a primary key containing a column added by INSTANT ADD COLUMN was created.</li>
+<li>Fixed the issue where the process exited during table structure query in a read-only instance when INSTANT COLUMN was used to create or rebuild a partition.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>2.0.12</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Supported database audit. For more information on how to use it, see <a href="https://intl.cloud.tencent.com/document/product/1102/41312" target="_blank">Enabling TDSQL-C for MySQL Audit</a>.</li>
+<li>Supported purging page read-ahead to accelerate space reclaim.</li>
+<li>Supported real-time update of the size information of tables and indexes in the system view.</li>
+<li>Added a thread to accelerate recycle LSN and storage GC.</li>
+</ul>
 
-#### Fixes
-- Fixed the deadlocks caused by the modification of the `offline_mode` and `cdb_working_mode` parameters.
-- Fixed the concurrency issue while persistently storing `max_trx_id` of global object `trx_sys`.
-- Fixed performance fluctuation when cleaning InnoDB temporary tables.
-- Fixed the read-only performance decrease when the instance has many cores.
-- Fixed the error (error code: 1032) caused by hash scans.
-- Fixed concurrency security issues caused by hotspot update.
+<li>Fixes</li><ul>
+<li>Fixed official bugs in full-text index, including bugs #24938374, #21625016, #27082268, #27155294, #27326796, #27304661, #25289359, #29717909, and #30787535.</li>
+<li>Fixed official bugs where concurrent update might cause system crashes, including bugs #30950714, #31205266, and #25669686.</li>
+<li>Fixed the official bug #28104394 where uncommitted INSERT operations would affect the range scan created by an index and made it return an incorrect number of rows.</li>
+<li>Fixed the official bug #30488700 where an incorrect query execution plan of a derived table could result in a poor performance.</li>
+<li>Fixed the issue where the process exited when a read-only instance replayed statistics logs after the source (read-write) instance executed a DDL statement.</li>
+<li>Fixed the issue where RENAME TABLE was performed on a database that did not exist.</li>
+<li>Fixed the issue where a read-only instance might exit when OPTIMIZE TABLE was used for the source instance.</li>
+<li>Fixed the issue where transactions were inconsistent after a table with a full-text index was updated in a read-only instance.</li>
+<li>Fixed the deadlock occurring during SET OFFLINE MODE and SHOW VARIABLES operations.</li>
+</ul>
+</td>
+</tr>
+<tr>	
+<td>2.0.11</td>
+<td>
+<ul><li>Feature updates</li><ul>
+<li>Optimized the binlog file index to accelerate binlog file scan.</li>
+<li>Optimized the shutdown process to make it faster.</li>
+<li>Optimized the instance memory to reduce the memory usage by structures such as buffer, ZIP, and hash.</li>
+<li>Optimized the DDL lock recovery process during read-only instance startup to accelerate replay.</li>
+<li>Optimized system table loading in read-only instance to accelerate startup.</li>
+<li>Optimized worker thread assignment during PURGE COORDINATOR to accelerate purge.</li>
+</ul>
 
-### 3.0.1
-#### Feature updates
-- Supported three methods of querying `cynos_version`: `select CYNOS_VERSION()`, `select @@cynos_version`, and `show variables like 'cynos_version'`.
-- Added a space limit parameter. If the total space usage exceeds the limit, an error will be reported to prompt you to release the space or upgrade the specification.
-- Added the `innodb_ncdb_log_priority` read-only parameter, which indicates the priority of the source instance's backend log thread.
-- Added the `innodb_ncdb_apply_priority` read-only parameter, which indicates the priority of the read-only instance's log replay thread.
-- Added the `innodb_ncdb_fast_shutdown` dynamic parameter, which controls whether to quickly shut down processes. After it is enabled, when a process exits, no destruction operations on the global structure will be performed, which reduces the shutdown time. It is disabled by default.
-- Added the `innodb_max_temp_data_file_size` read-only parameter. Its default value is 128 MB. If its value is greater than 0, it indicates the maximum size of the temp tablespace in the local storage.
-
-## TDSQL-C for MySQL 5.7
-### 2.0.17
-#### Feature updates
-- Supported adding the binlog with the specified filename to an index file.
-
-#### Fixes
-- Merged the official bugfix #25865525 to solve the issue where `LOAD DATA INFILE` failed to read escape characters plus UTF8 characters.
-
-### 2.0.16
-#### Feature updates
-- Optimized `undo space truncate` to improve the speed of `undo truncate` on large-spec instances.
-- Optimized the performance of large-scale queries on read-only instances.
-
-#### Fixes
-- Fixed the issue where `backup lock` couldn't be locked due to the `lock table` statement.
-- Fixed the issue where `table share` went wrong after thousands of columns were added through `instant add`.
-- Fixed the replay error when the content of binlog contained escaped keywords.
-- Fixed the issue where externally prepared XA transactions were not explicitly rolled back and thus blocked normal shutdown.
-- Fixed the issue where the warning "tablespace -1 not found" was reported during read-only instance startup.
-
-### 2.0.15
-#### Feature updates
-- Supported the extended table space: When a single table space exceeds the `innodb_ncdb_extend_space_threshold` configuration, a new table will be created in the extended table space.
-- Added new JSON functions: JSON_MERGE_PRESERVE, JSON_MERGE_PATCH, JSON_PRETTY, JSON_STORAGE_SIZE, JSON_ARRAYAGG, JSON_OBJECTAGG.
-- Optimized the table lock recovery process at system startup to shorten the startup time.
-
-#### Fixes
-- Fixed the bugs for the `group by` performance issue in text columns and multiple issues related to virtual columns.
-- Fixed the possible crash when large transaction rollback and shutdown operations were performed concurrently after instance startup.
-- Fixed the issue where repeatedly failed IO retries of related pages caused instance exit after `undo space truncate` failed.
-- Fixed the crash when statistics update accessed the snapshot cache for disabled read-only instances.
-- Fixed the issue where the truncation log might be behind the `truncate` operation in `undo space truncate`.
-- Fixed the bug where an error in ICP check for partitioned table scan resulted in slow query.
-- Fixed the crash when the previous scan in a read-only instance encountered the partial replay of a split index log.
-
-### 2.0.14
-#### Feature updates
-- Supported INSTANT MODIFY COLUMN. For more information, see [Instant DDL Overview](https://intl.cloud.tencent.com/document/product/1098/44589).
-
-#### Fixes
-- Fixed the issue where the used space was not reclaimed when a temp table in a read-only instance was dropped.
-- Fixed the issue where the process exited when a read-only instance read the old page version due to changes in storage routes.
-- Fixed the issue of possible crash when `information_schema.metadata_locks` was queried.
-- Fixed the concurrency error of forward scan and B-tree SMO in read-only instance.
-- Fixed the issue where when multiple tables had complex foreign key dependencies and the foreign key attribute was `ON DELETE CASCADE`, the corresponding record in a child table might be deleted twice when a record was delete in its parent table with DELETE.
-- Fixed the issue where the process exited due to operations such as CREATE USER in a read-only instance.
-- Fixed the issue where SHOW VOLUME STATUS in a read-only instance might trigger an assertion failure.
-- Fixed the issue where a read-only instance had abnormal query results and crashed when DDL operations were performed in partitioned tables frequently.
-- Fixed the issue where the process crashed during historical version construction when an read-only instance scanned a purged undo log.
-
-### 2.0.13
-#### Feature updates
-- Supported INSTANT ADD COLUMN. For more information, see [Instant DDL Overview](https://intl.cloud.tencent.com/document/product/1098/44589).
-- Optimized the audit performance under high load and added the `lock_usleep_time` dynamic parameter.
-
-#### Fixes
-- Fixed the issue where `dict_operation_lock` might cause deadlock during foreign key check.
-- Fixed the issue where the process might exit when the ACL change log was replayed during read-only instance startup.
-- Fixed the issue where data in source and replica instances was inconsistent after INSTANT ADD COLUMN and TRUNCATE TABLE.
-- Fixed the log replay error occurring when data was inserted again after INSTANT ADD COLUMN and TRUNCATE TABLE.
-- Fixed the issue where the process exited when a primary key containing a column added by INSTANT ADD COLUMN was created.
-- Fixed the issue where the process exited during table structure query in a read-only instance when INSTANT COLUMN was used to create or rebuild a partition.
-
-### 2.0.12
-#### Feature updates
-- Supported database audit. For more information on how to use it, see [Enabling TDSQL-C Audit](https://intl.cloud.tencent.com/document/product/1102/41312).
-- Supported purging page read-ahead to accelerate space reclaim.
-- Supported real-time update of the size information of tables and indexes in the system view.
-- Added a thread to accelerate recycle LSN and storage GC.
-
-#### Fixes
-- Fixed official bugs in full-text index, including BUG#24938374, BUG#21625016, BUG#27082268, BUG#27155294, BUG#27326796, BUG#27304661, BUG#25289359, BUG#29717909, and BUG#30787535.
-- Fixed official bugs where concurrent update might cause system crashes, including BUG#30950714, BUG#31205266, and BUG#25669686.
-- Fixed the official bug #28104394 where uncommitted INSERT operations would affect the range scan created by an index and made it return an incorrect number of rows.
-- Fixed the official bug #30488700 where an incorrect query execution plan of a derived table could result in a poor performance.
-- Fixed the issue where the process exited when a read-only instance replayed statistics logs after the source (read-write) instance executed a DDL statement.
-- Fixed the issue where RENAME TABLE was performed on a database that did not exist.
-- Fixed the issue where a read-only instance might exit when OPTIMIZE TABLE was used for the source instance.
-- Fixed the issue where transactions were inconsistent after a table with a full-text index was updated in a read-only instance.
-- Fixed the deadlock occurring during SET OFFLINE MODE and SHOW VARIABLES operations.
-
-### 2.0.11
-#### Feature updates
-- Optimized the binlog file index to accelerate binlog file scan.
-- Optimized the shutdown process to make it faster.
-- Optimized the instance memory to reduce the memory usage by structures such as buffer, ZIP, and hash.
-- Optimized the DDL lock recovery process during read-only instance startup to accelerate replay.
-- Optimized system table loading in read-only instance to accelerate startup.
-- Optimized worker thread assignment during PURGE COORDINATOR to accelerate purge.
-
-#### Fixes
-- Fixed the issue where the process crashed during OPEN TABLE due to incorrect index structure mapping.
-- Fixed the issue where read-only instance replication was abnormal during XA transaction rollback.
-- Fixed the issue where startup crashed when binlog replication was started in a read-only instance.
-- Fixed the memory leak caused by FLUSH LOGS.
-- Fixed the shutdown failure of `mysqladmin shutdown`.
-- Fixed the issue where a read-only instance failed to replay logs when DROP COLUMN was performed on the source instance.
-- Fixed the issue where data could still be input after space restriction was triggered when a BLOB was inserted.
-- Fixed the issue of read-only instance replication availability that might be caused by DDL statements in big tables or slow log storage in the source instance.
-- Fixed the issue where storage wasted small tables after `innodb_max_temp_data_file_size` was set for a temp table.
+<li>Fixes</li><ul>
+<li>Fixed the issue where the process crashed during OPEN TABLE due to incorrect index structure mapping.</li>
+<li>Fixed the issue where read-only instance replication was abnormal during XA transaction rollback.</li>
+<li>Fixed the issue where startup crashed when binlog replication was started in a read-only instance.</li>
+<li>Fixed the memory leak caused by FLUSH LOGS.</li>
+<li>Fixed the shutdown failure of `mysqladmin shutdown`.</li>
+<li>Fixed the issue where a read-only instance failed to replay logs when DROP COLUMN was performed on the source instance.</li>
+<li>Fixed the issue where data could still be input after space restriction was triggered when a BLOB was inserted.</li>
+<li>Fixed the issue of read-only instance replication availability that might be caused by DDL statements in big tables or slow log storage in the source instance.</li>
+<li>Fixed the issue where storage wasted small tables after `innodb_max_temp_data_file_size` was set for a temp table.</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+:::
+</dx-tabs>
 

@@ -16,7 +16,7 @@ Determine your use cases before selecting a disk type.
 
 ### What are items I should look out for when using a cloud disk?
 - For an independently purchased cloud disk, use the file system's UUID or label as the file system ID when configuring the `fstab` static file system information. This will ensure kernel name consistency of the disk on CVM when any cloud disk is detached and re-attached. 
-- If the cloud disk expires before CVM, the cloud disk will be restricted, detached, or even repossessed within a certain period. To prevent business interruption, note the cloud disk's expiration date and renew it promptly.
+- If the cloud disk expires before CVM, the cloud disk will be restricted, detached, or even repossessed within a certain period. To prevent business interruption, please note the cloud disk's expiration date and renew it promptly.
 - Consider using the `nofail` option when configuring `fstab` if detaching a cloud disk from your CVM does not severely impact your core business. This prevents the CVM from reporting an error when it restarts after the cloud disk is detached.
 - We recommend that you run `san policy=OnlineAll` in `diskpart` before using the cloud disk in Windows.
 - When detaching a cloud disk from Windows, we recommend that you first interrupt all read/write operations on the disk, and perform the `offline` operation.
@@ -115,7 +115,7 @@ After the cloud disk is formatted and before the instance is written with data, 
 No. To increase the storage capacity, you need to [expand data disk or system disk](https://intl.cloud.tencent.com/document/product/362/5747).
 
 ### After expanding my cloud disk, do I need to unmount existing partitions when creating a new independent partition on Linux? 
-Yes. To do this, follow the steps below:
+Yes. To do this, please follow the steps below:
 1. Run the following command to detach the data disk.
 ```
 umount <Mount point>
@@ -168,7 +168,7 @@ Refer to [Creating Custom Images](https://intl.cloud.tencent.com/document/produc
 </dx-alert>
 
 
-1. Log in to the [CVM console](https://console.intl.cloud.tencent.com/cvm/instance/index?rid=1) and access the **Instances** page.
+1. Log in to the [CVM console](https://www.tencentcloud.com/account/login) and access the **Instances** page.
 2. Select **More** > **Instance Status** > **Shutdown** on the right side of the line where the target instance is located to shut down the instance.
 3. Select **More** > **Resource Adjustment** > **Change Disk Media Type** after shutting down the instance.
 4. In the pop-up window, select a target cloud disk type, check **I have read and agree to Rules for Changing Disk Media Type**, and click **Change Now**.
@@ -206,15 +206,15 @@ For more information, see [Detaching Cloud Disks](https://intl.cloud.tencent.com
 ### What happens to the system after my cloud disk expires?
 The following instructions are only applicable to elastic cloud disks. The lifecycle of non-elastic cloud disks is the same as the associated CVMs. For more information, see [Payment Overdue](https://intl.cloud.tencent.com/document/product/213/2181).
 <dx-tabs>
-::: Monthly subscribed cloud disks
+::: Monthly subscription
  - 7 days before the resources expiration date, you will receive an expiration alert and a renewal reminder.
  - If your account balance is sufficient and auto-renewal is enabled, cloud disk will be auto-renewed on the expiry date.
  - If your cloud disk is not renewed before it expires (including on the expiration date), the system will begin to limit its performance at the point in time of its expiration. When using the cloud disk, you will notice a significant decrease in performance.
- - If your cloud disk is not renewed within 24 * 7 hours after it expires, the system will suspend its service processing (the cloud disk is unavailable, and can only store data), **force release** its relationship with the CVM (if any), and the cloud disk will be sent to the recycle bin. You can still retrieve the cloud disk from the recycle bin and renew it, but **the start time of the cloud disk that has been renewed and retrieved will be the previous period's expiration date**.
- - If your cloud disk is not renewed within 24 * 7 hours after it's moved to the recycle bin, resources will be released and data in the expired cloud disk will be erased and **cannot be recovered**.
+ - If your cloud disk is not renewed within 24 × 7 hours after it expires, the system will suspend its service processing (the cloud disk is unavailable, and can only store data), **force release** its relationship with the CVM (if any), and the cloud disk will be sent to the recycle bin. You can still retrieve the cloud disk from the recycle bin and renew it, but **the start time of the cloud disk that has been renewed and retrieved will be the previous period's expiration date**.
+ - If your cloud disk is not renewed within 24 × 7 hours after it’s moved to the recycle bin, resources will be released and data in the expired cloud disk will be erased and **cannot be recovered**.
 
 :::
-::: Pay-as-you-go cloud disks
+::: Pay-as-you-go
  - You can continue to use the pay-as-you-go cloud disk for 2 hours from the moment your account balance becomes negative. You will be billed for this period. After 2 hours, the services will be suspended and cloud disk will only store data. Until data is completely deleted, you will still be billed according to the billing standard even if the account balance is negative.
  - If your Tencent Cloud account is topped up to a positive balance within 15 days after the cloud disk has its services suspended, the disk can be restored.
  - If the account balance remains negative for more than 15 days after the cloud disk services are suspended, the pay-as-you-go disk will be repossessed. All data will be erased and **cannot be recovered**. When your cloud disk is repossessed, the Tencent Cloud account creator and all collaborators will receive a notification via email, SMS, and the console Message Center.
@@ -222,7 +222,7 @@ The following instructions are only applicable to elastic cloud disks. The lifec
 :::
 </dx-tabs>
 
-Call 4009100100 if you need further information.
+Please call 4009100100 if you need further information.
 
 
 ### Can I change the cloud disk type after a successful purchase?
@@ -232,7 +232,7 @@ No. However, you can create a snapshot for data backup and then use the snapshot
 Yes. Cloud disks support capacity adjustment. Cloud disk capacity can be [expanded](https://intl.cloud.tencent.com/document/product/362/31600), but not reduced.
 
 ### Do I have to shut down the CVM instance before a cloud disk expansion?
-No. Note that you need to assign the expanded capacity to an existing partition, or format it into an independent new partition. Directions on the operating system of the CVM: [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) or [Extending Partitions and File Systems (Linux)](https://intl.cloud.tencent.com/document/product/362/39995).
+No. Please note that you need to assign the expanded capacity to an existing partition, or format it into an independent new partition. Directions on the operating system of the CVM: [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) or [Extending Partitions and File Systems (Linux)](https://intl.cloud.tencent.com/document/product/362/39995).
 
 ### What are the requirements for extending the file system?
 Only cloud disks support expansion. Local disks cannot be expanded. For more information, see [Cloud Disk Expansion Scenarios](https://intl.cloud.tencent.com/document/product/362/31600).
@@ -240,7 +240,7 @@ Only cloud disks support expansion. Local disks cannot be expanded. For more inf
 
 <dx-alert infotype="notice" title="">
 - We strongly recommend that you create a snapshot before expansion to ensure data security.
-- If the maximum capacity of the cloud disk cannot meet your business needs, try [building up RAID groups](https://intl.cloud.tencent.com/document/product/362/2932) or [building LVM logical volumes with multiple elastic cloud disks](https://intl.cloud.tencent.com/document/product/362/2933).
+- If the maximum capacity of the cloud disk cannot meet your business needs, please try [building up RAID groups](https://intl.cloud.tencent.com/document/product/362/2932) or [building LVM logical volumes with multiple elastic cloud disks](https://intl.cloud.tencent.com/document/product/362/2933).
 - MBR partition supports disk with a maximum capacity of 2 TB. When you partition disk with a capacity greater than 2 TB, we recommend that you create and mount a new data disk and use the GPT partition format to copy data.
 </dx-alert>
 
@@ -259,7 +259,7 @@ The expansion on the console only increases the storage capacity of the data dis
 If the system disk of the CVM is a cloud disk, you can adjust its CPU and memory.
 
 ### What should I do if the cloud disk is partitioned in MBR format and cannot be expanded?
-MBR partition supports a disk with a maximum capacity of 2 TB. If you need to extend for over 2 TB, we recommend you create and attach a new data disk and use the GPT partition format.
+MBR partition supports a disk with a maximum capacity of 2 TB. If you need to extend for over 2 TB, it’s recommended to create and attach a new data disk and use the GPT partition format.
 
 ### What should I do if a cloud disk cannot meet my business requirements even at its maximum capacity?
 We recommend you [build up RAID groups](https://intl.cloud.tencent.com/document/product/362/2932) or [build LVM logical volumes with multiple elastic cloud disks](https://intl.cloud.tencent.com/document/product/362/2933).
@@ -291,7 +291,7 @@ If you partition the system disk with a third-party tool, system crash or data l
 
 
 ### How do I update the mounting information at the mount point?
-Linux supports the `systemd mount` command which will generate a mounting configuration file on top of the existing `.mount` file. Mounting to the same directory `/run/systemd/generator/` will be affected by this command.
+LinuxOS supports the `systemd mount` command which will generate a mounting configuration file on top of the existing `.mount` file. Mounting to the same directory `/run/systemd/generator/` will be affected by this command.
 #### Problem
 Assume you have mounted the data disk vdb to the directory `/opt/apps` (run the `mount -a` command on the fstab file based on disk uuid). Now, you want to mount a new data disk vdc to the same directory and replace the old one. If you directly mount vdc to the directory, you will not be able to read the data.
 #### Solution
@@ -299,4 +299,64 @@ Assume you have mounted the data disk vdb to the directory `/opt/apps` (run the 
 2. Run the `reload` command (for example, use `systemctl daemon-reload`).
 3. Attach the data disk (for example, run the `mount /dev/vdc /opt/apps` command).
 
+### How do I perform 4 KiB alignment for a cloud disk in a Linux instance?
+#### Checking whether the cloud disk is 4 KiB-aligned.
+Run the following command to check whether the cloud disk is 4 KiB-aligned.
+```shell
+fdisk -lu
+```
+As shown below, if the Start value in the command output is divisible by 8, then the disk is 4 KiB-aligned.
+![](https://main.qcloudimg.com/raw/d5726510ea6408a36e11fc21da453137.png)
 
+#### Directions
+
+<dx-alert infotype="notice" title="">
+The alignment operation clears the existing data of the cloud disk; therefore, [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) before proceeding to avoid data loss.
+</dx-alert>
+
+<dx-tabs>
+::: fdisk tool (MBR partition supported)
+
+1. Run the following command to access the fdisk tool.
+```shell
+fdisk /dev/vdb
+```
+2. Enter **n** and press **Enter** to start creating a partition as shown below:
+![](https://qcloudimg.tencent-cloud.cn/raw/35c4029f365e36cbcf4efe4aa3d93d7b.png)
+The displayed information indicates that the disk has two partition types:
+  - *p*: Primary partition.
+  - *e*: Extended partition.
+3. Take creating a primary partition as an example. Enter **p** and press **Enter** to start creating a primary partition.
+![](https://qcloudimg.tencent-cloud.cn/raw/f3dff0a7f8a0dc59ef035dc8696a6f4a.png)
+**Partition number** in the displayed information indicates the number of the primary partition as shown below. Valid range: 1-4.
+4. Take selecting partition number 1 as an example. Enter the primary partition number **1** and press **Enter**.
+![](https://qcloudimg.tencent-cloud.cn/raw/9d170c277211ed67a2d79fa4c6c42151.png)
+**First sector** in the displayed information indicates the start sector. Valid range: 2048 (default value) - 125829119.
+5. Take selecting the default start sector number 2048 as an example. Press **Enter**.
+![](https://qcloudimg.tencent-cloud.cn/raw/64b85875cdd338a783b43b0eea32540c.png)
+**Last sector** in the displayed information indicates the end sector. Valid range: 2048 - 20971519 (default value).
+6. Take selecting the default end sector number 20971519 as an example. Press **Enter**.
+![](https://qcloudimg.tencent-cloud.cn/raw/3e6848755af5a6b415d0f679a4ffbed6.png)
+7. Enter **p** and press **Enter** to view the details of the newly created partition. If the following is displayed, 4 KiB alignment is completed.
+![](https://qcloudimg.tencent-cloud.cn/raw/bd5c11407c37856934fab0c25d8aa849.png)
+8. Enter **w** and press **Enter** to write the partition result into the partition table.
+
+:::
+::: parted tool (GPT partition supported)
+1. Run the following command to access the parted tool:
+```shell
+parted /dev/vdb
+```
+2. Run the following command to set the disk partition format to GPT.
+```shell
+mklabel gpt
+```
+2. Enter `unit s` and press **Enter** to set the unit of the disk to sector.
+3. Take creating one partition for the entire disk as an example, enter `mkpart opt 2048s 100%` and press **Enter**.
+Where, 2048s indicates the initial disk capacity and 100% indicates the final disk capacity. This is for reference only. You can choose the number of disk partitions and their capacities based on business needs.
+4. Enter **p** and press **Enter** to check whether the disk partition format has been configured successfully. If the following is displayed, 4 KiB alignment is completed.
+![](https://qcloudimg.tencent-cloud.cn/raw/980fd04256363dcbb5bb9ed939f3a15e.png)
+5. Enter **q** and press **Enter** to exit the parted partition tool.
+
+:::
+</dx-tabs>

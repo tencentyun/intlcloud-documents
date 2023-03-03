@@ -3,7 +3,7 @@
 
 ## 操作步骤
 ### 开通语音识别服务
-在调用语音识别相关接口前，您需要进入 [语音识别控制台](https://console.cloud.tencent.com/asr)，进行认证，认证完成后，阅读《用户协议》后勾选“我已阅读并同意《用户协议》”，然后单击【立即开通】，即可一键开通**实时语音识别接口**，如需开通营业执照核验或增值税发票核验功能，可前往官网页服务介绍页申请开通，审核通过后即可使用该服务。 
+在调用语音识别相关接口前，您需要进入 [语音识别控制台](https://console.cloud.tencent.com/asr)，进行认证，认证完成后，阅读《用户协议》后勾选“我已阅读并同意《用户协议》”，然后单击【立即开通】，即可一键开通[实时语音识别接口](https://www.tencentcloud.com/document/product/1118/53937)，如需开通营业执照核验或增值税发票核验功能，可前往官网页服务介绍页申请开通，审核通过后即可使用该服务。 
 ![]()
 
 服务开通成功后，接口计费将自动转为后付费方式按日进行结算，具体计费标准可以查看语音识别的 [计费概述](https://intl.cloud.tencent.com/document/product/1118/43352)。
@@ -33,7 +33,7 @@
 | C++ | 需要 C++ 11 或更高版本的编译器 GCC 4.8 或以上版本。暂时仅支持 Linux 环境，不支持 Windows 环境 |
 | Ruby | 需要 Ruby 2.3 及以上版本 |
 
-安装与本地依赖环境对应的腾讯云语音识别 SDK，下面将以 Node.js 为例说明 SDK 安装、使用的方法，其他语言的 SDK 使用方法请参考 [腾讯云 SDK 使用手册](https://cloud.tencent.com/document/sdk)。
+安装与本地依赖环境对应的腾讯云语音识别 SDK，下面将以 Node.js 为例说明 SDK 安装、使用的方法，其他语言的 SDK 使用方法请参考 [腾讯云 SDK 使用手册](https://intl.cloud.tencent.com)。
 
 #### 通过 npm 安装（推荐）
 通过 npm 获取安装是使用 NODEJS SDK 的推荐方法，npm 是 NODEJS 的包管理工具。关于 npm 详细可参考 [npm 官网](https://www.npmjs.com/)。
@@ -42,7 +42,7 @@
 npm install tencentcloud-sdk-nodejs --save
 ```
 2. 在您的代码中引用对应模块代码，可参考示例。
-3. 如上引用方式会将腾讯云所有产品 sdk 下载到本地，可以将 `tencentcloud-sdk-nodejs` 换成 `tencentcloud-sdk-nodejs-cvm/cbs/vpc` 等，即可引用特定产品的 sdk，代码中可将 `require("tencentcloud-sdk-nodejs")` 改为 `require("tencentcloud-sdk-nodejs-cvm/cbs/vpc")`，其余不变，可参考示例，可大大节省存储空间。
+3. 如上引用方式会将腾讯云所有产品 sdk 下载到本地，可以将 `tencentcloud-sdk-nodejs` 换成 `tencentcloud-sdk-nodejs-cvm/cbs/vpc` 等，即可引用特定产品的 sdk，代码中可将 `require("tencentcloud-sdk-nodejs")` 改为 `require("tencentcloud-sdk-nodejs-cvm/cbs/vpc")`，其余不变，可参考示例，可极大节省存储空间。
 
 #### 通过源码包安装
 1. 前往 [GitHub 代码托管地址](https://github.com/TencentCloud/tencentcloud-sdk-nodejs) 或者 [快速下载地址](https://github.com/TencentCloud/tencentcloud-sdk-nodejs/archive/refs/heads/master.zip)，下载源码压缩包。

@@ -1,7 +1,7 @@
 MPS provides preset screenshot templates, which can be added directly to a scheme. Three types of screenshots are supported: time point screenshot, sampled screenshot, and image sprite screenshot. You can also click **Create template** to customize your own screenshot templates.
 
 ## Time Point Screenshot[](id:time)
-Select the **Time point screenshot template** tab, click **Create template**, and set the template name and screenshot dimensions. You need to specify the time points in scheme settings. For detailed directions, see [Scheme Management](https://intl.cloud.tencent.com/document/product/1041/33485).
+Select the **Time point screenshot template** tab, click **Create template**, and set the template name and screenshot dimensions. You need to specify the time points in scheme settings. For detailed directions, see [Schemes](https://intl.cloud.tencent.com/document/product/1041/33485).
 
 | Item | Description |
 | --- | ----|
@@ -53,7 +53,7 @@ The templates created can be found in the screenshot template list, which displa
 
 ## Animated Screenshot[](id:move)
 MPS provides preset animated screenshot templates, which can be added directly to a scheme. You can also select the **Animated screenshot template** tab and click **Create template** to customize your own animated screenshot templates.
-You can set the image format, frame rate, image dimensions and image quality when creating a template, but the time period for generating an animated screenshot must be specified in scheme settings. For detailed directions, see [Scheme Management](https://intl.cloud.tencent.com/document/product/1041/33485).
+You can set the image format, frame rate, image dimensions and image quality when creating a template, but the time period for generating an animated screenshot must be specified in scheme settings. For detailed directions, see [Schemes](https://intl.cloud.tencent.com/document/product/1041/33485).
 
 | Item | Description |
 | --- | ----|

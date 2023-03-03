@@ -12,7 +12,6 @@ If you need to verify whether the object uploaded to COS is the same as the loca
 If you need to verify whether the downloaded object is the same as the original object, you can use a verification algorithm to calculate the checksum of the object when it is uploaded, set the checksum of the object through custom metadata, recalculate the checksum of the object after downloading the object, and then verify it against the custom metadata. In this mode, you can choose the verification algorithm as you wish, but for the same object, the algorithm used during upload should be the same as that used during download.   
 
 
-
 ## API Samples
 
 #### Simple Upload Request
@@ -73,7 +72,7 @@ x-cos-meta-md5: b62e10bcab55a88240bd9c436cffdcf9
 
 The following example uses the Python SDK to verify object integrity. The complete sample code is as follows.
 
->?The code is based on Python 2.7. For more information on how to use the Python SDK, see [Object Operations] for Python SDK.(https://intl.cloud.tencent.com/document/product/436/31546).
+>?The code is based on Python 2.7. For more information on how to use the Python SDK, see [Object Operations](https://www.tencentcloud.com/document/product/436/43582).
 
 #### 1. Initialization configuration
 
@@ -86,17 +85,18 @@ from qcloud_cos import CosS3Client
 from qcloud_cos import CosServiceError
 from qcloud_cos import CosClientError
 import sys
+import os
 import logging
 import hashlib
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# Set user attributes, including SecretId, SecretKey, and region
+# Configure user attributes, including SecretId, SecretKey, and region
 # APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
-secret_id = COS_SECRETID           # Replace with your own SecretId
-secret_key = COS_SECRETKEY         # Replace with your own SecretKey
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
 region = 'ap-beijing'      # Replace with your own region (which is Beijing in this sample)
-token = None               # If a temporary key is used, Token needs to be passed in, which is left empty by default
+token = None               # Temporary key token. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
 client = CosS3Client(config)
 ```
@@ -193,14 +193,14 @@ When initializing the multipart upload, set the custom parameter "x-cos-meta-md5
 ```python
 # Initialize the multipart upload
 response = client.create_multipart_upload(
-    Bucket='examplebucket-1250000000',      # Replace with your own bucket name. Here, examplebucket is a sample bucket, and 1250000000 is a sample APPID
+    Bucket='examplebucket-1250000000',  #Replace with your own bucket name and APPID
     Key='exampleobject-2',              # Replace with the key value of the uploaded object 
     StorageClass='STANDARD',            # Storage class of the object
     Metadata={
         'x-cos-meta-md5' : md5_str      # Set the custom parameter to the MD5 checksum
     }
 )
-# Get the UploadId of the multipart upload
+#Get the UploadId of the multipart upload
 upload_id = response['UploadId']
 ```
 

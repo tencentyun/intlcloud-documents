@@ -1,17 +1,18 @@
+
 This document describes how to install SysBench, a performance testing tool for TDSQL-C for MySQL, in a CVM instance.
 
-## SysBench Overview
+## SysBench overview
 SysBench is a modular, cross-platform, and multi-threaded benchmark tool for evaluating OS parameters that are important for a system running a database under intensive load. The idea of this benchmark suite is to quickly get an impression about system performance without setting up complex database benchmarks or even without installing a database at all.
 
-## SysBench Parameter Description
+## SysBench parameter description
 | Parameter | Description | 
 |---------|---------|
 | db-driver | Database engine  | 
 | mysql-host | TDSQL-C for MySQL server host  |
 | mysql-port | TDSQL-C for MySQL server port  |
 | mysql-user | TDSQL-C for MySQL account |
-| mysql-password | TDSQL-C MySQL password |
-| mysql-db | 	TDSQL-C MySQL database name |
+| mysql-password | TDSQL-C for MySQL password |
+| mysql-db | 	TDSQL-C for MySQL database name |
 | table_size| Test table size  |
 |tables | Number of test tables |
 | events | Number of test requests |
@@ -21,7 +22,7 @@ SysBench is a modular, cross-platform, and multi-threaded benchmark tool for eva
 | report-interval | Interval for outputting a test progress report in seconds. 0 indicates to output only the final result but not the test progress report |
 | skip-trx | Whether to skip transactions<br>1: Yes<br>0: No |
 
-## Installation Method
+## Installation method
 This stress test uses SysBench 1.0.20 (using bundled LuaJIT 2.1.0-beta2). For more information, see [here](https://github.com/akopytov/sysbench?spm=a2c4g.11186623.2.12.36061072oZL2qS).
 >!One client offers a concurrency of 1,000. One more client is added after the concurrency exceeds 1,000, and so on.
 

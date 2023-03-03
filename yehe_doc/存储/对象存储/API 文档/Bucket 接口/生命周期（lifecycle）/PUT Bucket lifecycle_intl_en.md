@@ -3,8 +3,8 @@
 COS introduces the lifecycle feature for you to manage the lifecycle of objects in buckets. The lifecycle configuration contains one or more rules that apply to a set of objects. Each rule defines one operation.
 There are two types of operations:
 
-- **Transition**: Defines when an object is transitioned to another storage class. For example, you can transition an object to STANDARD_IA (suitable for infrequently accessed objects) 30 days after its creation. You can also transition the object to INTELLIGENT TIERING (suitable for objects with irregular access patterns) or ARCHIVE (offering lower costs). For specific parameters, see `Transition` in the sample request description.
-- **Expiration**: Specifies when an object shall expire. COS will automatically delete expired objects.
+- **Transition**: defines when an object is transitioned to another storage class. For example, you can transition an object to STANDARD_IA (suitable for infrequently accessed objects) 30 days after its creation. You can also transition the object to INTELLIGENT TIERING (suitable for objects with irregular access patterns) or ARCHIVE (offering lower costs). For specific parameters, please see `Transition` in the sample request description.
+- **Expiration**: specifies when an object shall expire. COS will automatically delete expired objects.
 
 
 <div class="rno-api-explorer">
@@ -25,16 +25,17 @@ There are two types of operations:
 
 #### Notes
 
-This API is used to create a new lifecycle configuration for a bucket. If a lifecycle configuration has already been set for the bucket, the new configuration created with this API will overwrite the existing one.
+This API (`PUT Bucket lifecycle`) is used to create a lifecycle configuration for a bucket.
 
 > !
-> - `Days` and `Date` cannot be both specified in the same lifecycle rule. Pass them to two separate rules. For details, see the following [Sample](#.E5.AE.9E.E9.99.85.E6.A1.88.E4.BE.8B).
+> - If a lifecycle configuration has already been set for the bucket, the new configuration created with this API will overwrite the existing one.
+> - `Days` and `Date` cannot be both specified in the same lifecycle rule. Please pass them to two separate rules. For details, please see the following [Sample](#.E5.AE.9E.E9.99.85.E6.A1.88.E4.BE.8B).
 > - Objects in buckets with [MAZ configuration](https://intl.cloud.tencent.com/document/product/436/35208) enabled cannot be transitioned to an OAZ bucket.
->- Up to 1,000 lifecycle rules can be added for each bucket.
+> - Up to 1,000 lifecycle rules can be added for each bucket.
 
-## Request
+## Requests
 
-#### Sample request
+#### Request example
 
 ```plaintext
 PUT /?lifecycle HTTP/1.1
@@ -46,7 +47,7 @@ Content-MD5: MD5
 ```
 
 >? 
-> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com, where &lt;BucketName-APPID> is the bucket name followed by the `APPID`, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
@@ -61,54 +62,57 @@ Nodes of the request body for this API are as follows:
 
 ```shell
 <LifecycleConfiguration>
-      <Rule>
-            <ID></ID>
-            <Filter>
-                  <And>
-                        <Prefix></Prefix>
-                        <Tag>
-                              <Key></Key>
-                              <Value></Value>
-                        </Tag>
-                  </And>
-            </Filter>
-            <Status></Status>
-            <Transition>
-                  <Days></Days>
-                  <StorageClass></StorageClass>
-            </Transition>
-            <NoncurrentVersionExpiration>
-                  <NoncurrentDays></NoncurrentDays>
-            </NoncurrentVersionExpiration>
-      </Rule>
-      <Rule>
-            <ID></ID>
-            <Filter>
-                  <Prefix></Prefix>
-            </Filter>
-            <Status></Status>
-            <Transition>
-                  <Days></Days>
-                  <StorageClass></StorageClass>
-            </Transition>
-            <NoncurrentVersionTransition>
-                  <NoncurrentDays></NoncurrentDays>
-                  <StorageClass></StorageClass>
-            </NoncurrentVersionTransition>
-      </Rule>
-      <Rule>
-            <ID></ID>
-            <Filter>
-                  <Prefix></Prefix>
-            </Filter>
-            <Status></Status>
-            <Expiration>
-                  <ExpiredObjectDeleteMarker></ExpiredObjectDeleteMarker>
-            </Expiration>
-            <NoncurrentVersionExpiration>
-                  <NoncurrentDays></NoncurrentDays>
-            </NoncurrentVersionExpiration>
-      </Rule>
+    <Rule>
+        <ID></ID>
+        <Filter>
+            <And>
+                <Prefix></Prefix>
+                <Tag>
+                    <Key></Key>
+                    <Value></Value>
+                </Tag>
+            </And>
+        </Filter>
+        <Status></Status>
+        <Transition>
+            <Days></Days>
+            <StorageClass></StorageClass>
+        </Transition>
+        <NoncurrentVersionExpiration>
+            <NoncurrentDays></NoncurrentDays>
+        </NoncurrentVersionExpiration>
+    </Rule>
+    <Rule>
+        <ID></ID>
+        <Filter>
+            <Prefix></Prefix>
+        </Filter>
+        <Status></Status>
+        <Transition>
+            <Days></Days>
+            <StorageClass></StorageClass>
+        </Transition>
+        <NoncurrentVersionTransition>
+            <NoncurrentDays></NoncurrentDays>
+            <StorageClass></StorageClass>
+        </NoncurrentVersionTransition>
+    </Rule>
+    <Rule>
+        <ID></ID>
+        <Filter>
+            <Prefix></Prefix>
+        </Filter>
+        <Status></Status>
+        <Expiration>
+            <ExpiredObjectDeleteMarker></ExpiredObjectDeleteMarker>
+        </Expiration>
+        <NoncurrentVersionExpiration>
+            <NoncurrentDays></NoncurrentDays>
+        </NoncurrentVersionExpiration>
+        <AbortIncompleteMultipartUpload>
+            <DaysAfterInitiation></DaysAfterInitiation>
+        </AbortIncompleteMultipartUpload>
+    </Rule>
 </LifecycleConfiguration>
 ```
 
@@ -129,14 +133,13 @@ The nodes are described as follows:
 | Expiration | LifecycleConfiguration.Rule | Expiration attributes of the rule | Container | No |
 | Transition | LifecycleConfiguration.Rule    | Specifies when to transition the object and the target storage class. | Container | No  |
 | Days | LifecycleConfiguration.Rule<br>.Transition or Expiration | Specifies the number of days between the date an object was last modified and the date when the operation corresponding to the rule is performed. <br><li>If it is a `Transition` operation, this value should be a non-negative integer. <br><li>If it is an `Expiration` operation, this value should be a positive integer. The maximum value is 3650 (days). | Integer | No |
-| Date | LifecycleConfiguration.Rule<br>.Transition or Expiration | Specifies when the operation corresponding to the rule is performed. Supported formats are `2007-12-01T12:00:00.000Z` <br>and `2007-12-01T00:00:00+08:00`. | String | No |
 | ExpiredObjectDeleteMarker | LifecycleConfiguration.Rule<br>.Expiration | Indicates whether the delete marker of an expired object will be removed. Enumerated values: `true`, `false` | String | No |
 | AbortIncompleteMultipartUpload | LifecycleConfiguration.Rule | Specifies the time to abort the multipart upload. | Container | No |
 | DaysAfterInitiation | LifecycleConfiguration.Rule<br>.AbortIncompleteMultipartUpload | Specifies the number of days within which the multipart upload must be completed after it starts. | Integer | Yes |
 | NoncurrentVersionExpiration | LifecycleConfiguration.Rule | Specifies when noncurrent object versions shall expire. | Container | No |
 | NoncurrentVersionTransition | LifecycleConfiguration.Rule | Specifies when to transition objects of noncurrent versions and the target storage class. | Container | No |
 | NoncurrentDays | LifecycleConfiguration.Rule<br>.NoncurrentVersionExpiration <br>or NoncurrentVersionTransition | Specifies the number of days between the date when an object becomes noncurrent and the date when the operation corresponding to a rule is performed.<br><li>If it is a `Transition` operation, this value should be a non-negative integer.<br><li>If it is an `Expiration` operation, this value should be a positive integer. The maximum value is 3650 (days). | Integer | No |
-| StorageClass | LifecycleConfiguration.Rule<br>.Transition or <br>NoncurrentVersionTransition | Specifies the storage class of the transitioned object. Enumerated values: `STANDARD_IA`, `MAZ_STANDARD_IA`, `INTELLIGENT_TIERING`, `MAZ_INTELLIGENT_TIERING`, `ARCHIVE`, `DEEP_ARCHIVE`. For more information about storage classes, see [Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | Yes |
+| StorageClass | LifecycleConfiguration.Rule<br>.Transition or <br>NoncurrentVersionTransition | Specifies the storage class of the transitioned object. Enumerated values: `STANDARD_IA`, `MAZ_STANDARD_IA`, `INTELLIGENT_TIERING`, `MAZ_INTELLIGENT_TIERING`, `ARCHIVE`, `DEEP_ARCHIVE`. For more information about storage classes, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | Yes |
 
 ## Response
 
@@ -152,7 +155,7 @@ The response body is empty.
 
 This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
 #### Request
 

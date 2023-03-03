@@ -2,17 +2,17 @@ This document describes how to connect to a VPC over an SSL VPN connection on a 
 
 ## Background
 This document takes the scenario below as an example to describe how to connect to a VPC over an SSL VPN connection on a Windows, macOS, or Linux client.
-![](https://qcloudimg.tencent-cloud.cn/raw/e91b07b11273ad5cf40a610791f81599.jpg)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Wwus289_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230301163824.png)
 
 ## Configuration
 The process of connecting to a VPC over an SSL VPN connection on the client is as follows:
-![](https://qcloudimg.tencent-cloud.cn/raw/2a6ce14b21ca082ea9a1dd5a0d23c9b3.jpg)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/EAnk058_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230301164021.png)
 
-## Step 1. Create an SSL VPN Gateway
+## Step 1: Create an SSL VPN Gateway
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
-2. On the left sidebar, click **VPN Connections** > **VPN gateway** to enter the management page.
+2. Select **VPN Connections** > **VPN Gateway** on the left sidebar to enter the admin page.
 3. Click **+New**.
-4. In the **Create VPN gateway** pop-up window, configure the following gateway parameters: </br><img src="" width="60%">
+4. In the **Create VPN gateway** pop-up window, configure the following gateway parameters.
 <table>
 <tr>
 <th>Parameter</th>
@@ -20,27 +20,27 @@ The process of connecting to a VPC over an SSL VPN connection on the client is a
 </tr>
 <tr>
 <td>Gateway name</td>
-<td>Enter the VPN gateway name (up to 60 characters)</td>
+<td>Enter the VPN gateway name (up to 60 characters).</td>
 </tr>
 <tr>
 <td>Region</td>
-<td>Display the region of the VPN gateway</td>
+<td>Display the region of the VPN gateway.</td>
 </tr>
 <tr>
 <td>AZ</td>
-<td>Select the availability zone of the current gateway</td>
+<td>Select the availability zone of the current gateway.</td>
 </tr>
 <tr>
 <td>Protocol Type</td>
-    <td>Select <b>SSL</b></td>
+<td>Select <b>SSL</b>.</td>
 </tr>
 <tr>
 <td>Bandwidth cap</td>
-<td>Set a reasonable bandwidth cap for the VPN gateway according to the actual application scenarios</td>
+<td>Set a reasonable bandwidth cap for the VPN gateway according to the actual application scenarios.</td>
 </tr>
 <tr>
 <td>Associated Network</td>
-    <td>Select <b>VPC</b></td>
+<td>Select <b>VPC</b>.</td>
 </tr>
 <tr>
 <td>Network</td>
@@ -48,7 +48,8 @@ The process of connecting to a VPC over an SSL VPN connection on the client is a
 </tr>
 <tr>
 <td>SSL VPN Connections</td>
-<td>Number of client connections.</td>
+<td>Select the number of clients that you want to connect. An SSL client allows connection from only one user.
+</td>
 </tr>
 <tr>
 <td>Billing Mode</td>
@@ -56,30 +57,31 @@ The process of connecting to a VPC over an SSL VPN connection on the client is a
 </tr>
 </table>
 
-5. Click **Create**
-![]()
+5. Click **Create**.
 
-## Step 2. Create an SSL VPN Server
+## Step 2. Create an SSL VPN Server[](id:step2)
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
-2. On the left sidebar, click **VPN Connections** > **SSL VPN server** to enter the management page.
+2. Select **VPN Connections** > **SSL VPN Server** on the left sidebar to enter the admin page.
+>?A VPN gateway can be associated with only one SSL VPN server. For more information, see [Use Limits](https://intl.cloud.tencent.com/document/product/1037/32682).
+>
 3. Click **+New**.
-4. In the **Create an SSL VPN server** pop-up window, configure the following parameters: </br><img src="" width="60%">
+4. In the **Create an SSL VPN server** pop-up window, configure the following parameters.
 <table>
 <tr>
-<th>Parameter</th>
+<th width="15%">Parameter</th>
 <th>Configuration</th>
 </tr>
 <tr>
 <td>Name</td>
-<td>Enter the SSL VPN server name (up to 60 characters)</td>
+<td>Enter the SSL VPN server name (up to 60 characters).</td>
 </tr>
 <tr>
 <td>Region</td>
-<td>Display the region of the SSL VPN server</td>
+<td>Display the region of the SSL VPN server.</td>
 </tr>
 <tr>
 <td>VPN gateway</td>
-<td>Select an existing VPN gateway</td>
+<td>Select an existing VPN gateway.</td>
 </tr>
 <tr>
 <td>Server IP range</td>
@@ -87,14 +89,15 @@ The process of connecting to a VPC over an SSL VPN connection on the client is a
 </tr>
 <tr>
 <td>Client IP Range</td>
-<td>Enter the IP range assigned to the mobile client for communication. The IP range shall not conflict with the VPC CIDR block of Tencent Cloud.</td></tr>
+<td>Enter the IP range that is assigned to the mobile client for communication. The IP range must not conflict with the VPC CIDR block of Tencent or your local IP range.</td>
+</tr>
 <tr>
 <td>Protocol</td>
-<td>Transmission protocol of the server</td>
+<td>Transmission protocol of the server.</td>
 </tr>
 <tr>
 <td>Port</td>
-<td>Enter the SSL VPN server port used for data forwarding</td>
+<td>Enter the SSL VPN server port used for data forwarding.</td>
 </tr>
 <tr>
 <td>Verification algorithm</td>
@@ -106,28 +109,26 @@ The process of connecting to a VPC over an SSL VPN connection on the client is a
 </tr>
 <tr>
 <td>Compressed</td>
-<td>No</td>
+<td>No.</td>
 </tr>
 </table>
-5. Click **Create**
-![]()
+5. Click **Create**.
 
 ## Step 3. Create an SSL VPN Client[](id:step3)
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
-2. On the left sidebar, click **VPN Connections** > **SSL VPN client** to enter the management page.
+2. Select **VPN Connections** > **SSL VPN Client** on the left sidebar to enter the admin page.
 3. Click **+New**.
-4. In the **Create an SSL VPN client** pop-up window, configure the following parameters:
-![]()
-5. After configuring SSL VPN client parameters, click **OK**. When the certificate status becomes **Available**, the creation is completed.
+4. Configure the following parameters in the pop-up window.
+5. Click **Create**. When **Certificate Status** changes to **Available**, the client is created.
 6. On the SSL VPN client page, find the newly created client certificate and click **Download the configuration** in the **Operation** column.
-![]()
+>?An SSL client allows connection from only one user.
+>
 
 ## Step 4. Configure a Route within the VPC
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
-2. On the left sidebar, click **Route table** to enter the management page.
+2. Click **Route Tables** on the left sidebar to enter the admin page.
 3. In the list, click the ID of the target route table to enter its details page. You can also create a route table as instructed in [Creating Custom Route Tables](https://intl.cloud.tencent.com/document/product/215/35236).
 4. Click **+ New routing policies**. In the pop-up window, configure the routing policy.
-![]()
 <table>
 <tr>
 <th>Parameter</th>
@@ -135,15 +136,15 @@ The process of connecting to a VPC over an SSL VPN connection on the client is a
 </tr>
 <tr>
 <td>Destination</td>
-<td>Enter the peer IP range configured when you created the SSL VPN server.</td>
+<td>Enter the client IP range that is configured in <a href="#step2">Step 2: Create an SSL VPN Server</a>.</td>
 </tr>
 <tr>
 <td>Next Hop Type</td>
-    <td>Select <b>VPN gateway</b>.</td>
+<td>Select <b>VPN Gateway</b>.</td>
 </tr>
 <tr>
 <td>Next Hop</td>
-<td>Select a created SSL VPN gateway instance.</td>
+<td>Select an existing SSL VPN gateway.</td>
 </tr>
 </table>
 
@@ -153,15 +154,15 @@ This section describes how to configure Windows, macOS, and Linux clients.
 
 
 ### Windows client
-1. Download OpenVPN Connect [here](https://openvpn.net/vpn-client/) and install it.
+1. Download OpenVPN Connect for Windows from the OpenVPN website and install OpenVPN Connect.
 ![](https://qcloudimg.tencent-cloud.cn/raw/949a9e0031b880397bca986ac8eedfff.png)
-2. After the SSL VPN client is installed, select **Import Profile** > **FILE** to upload the SSL VPN client configuration file (.ovpn file) downloaded in [step 3](#step3).
+2. Start OpenVPN Connect, select **Import Profile** > **FILE** to upload the SSL VPN client configuration file (.ovpn file) downloaded in [Step 3](#step3).
 ![](https://qcloudimg.tencent-cloud.cn/raw/f55cc9eebb56b47511a063eb1135556a.png)
 
 ### macOS client
-1. Download OpenVPN Connect [here](https://openvpn.net/vpn-client/) and install it. 
+1. Download OpenVPN Connect for macOS from the OpenVPN website and install OpenVPN Connect. 
 ![](https://qcloudimg.tencent-cloud.cn/raw/d08446a7176b855c0e19a77dd95cfdc3.png)
-2. After the SSL VPN client is installed, select **Import Profile** > **FILE** to upload the SSL VPN client configuration file (.ovpn file) downloaded in [step 3](#step3).
+2. Start OpenVPN Connect, select **Import Profile** > **FILE** to upload the SSL VPN client configuration file (.ovpn file) downloaded in [Step 3](#step3).
 ![](https://qcloudimg.tencent-cloud.cn/raw/efade3f1b6290cae59a337e0927fe7c5.png)
 
 ### Linux client
@@ -182,5 +183,5 @@ openvpn --config /etc/openvpn/conf/config.ovpn --daemon
 ```
 
 ## Step 6. Test the Connectivity
-After establishing the SSL VPN connection between Tencent Cloud and the client, you can use `ping` to test it.
-For example, you can use the CVM instance in the VPC to ping an IP address in the client IP range. If the ping succeeds, the VPC and the IDC can communicate with each other.
+After establishing the SSL VPN connection between Tencent Cloud and the client, you can use `ping` to test the connection.
+For example, you can use the CVM in the VPC to `ping` an IP address in the client IP range. If the ping is successful, the VPC and the client can communicate with each other.

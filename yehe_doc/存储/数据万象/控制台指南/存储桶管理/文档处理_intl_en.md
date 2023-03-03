@@ -2,34 +2,7 @@
 
 CI provides **privacy protection** and **file preview** features for document files.
 
-## Privacy Protection
 
-CI's privacy protection feature can filter various types of private data in files to effectively prevent information leakage, such as ID number, taxpayer identification number, business registration number, military ID number, email address, license plate number, and mobile number. Currently, it can only scan data automatically during upload.
-
->?Currently, the privacy protection feature is supported for the following types of files:
->
->- Microsoft Office files: DOC, DOCX, PPT, PPTX, XLS, XLSX, RTF
->- WPS files: WPS, DPS, ET
->- PDF files: PDF
->- Plain text files: TXT, XML, SLK
->- Web files: HTML, MSG
->- Email files: EML, PST
-
-### Directions
-
-1. Log in to the [CI console](https://console.cloud.tencent.com/ci/bucket) and click **Bucket Management** to enter the bucket management page.
-2. On the **Bucket Management** page, click the target bucket to enter the bucket details page.
-3. Click **File Processing** on the left and select the **Privacy Protection** configuration item.
-4. Click **Edit** to enable this feature and configure it as follows:
-    - File Type: You can select multiple file types for which privacy protection will be automatically triggered.
-    - Moderation Type: You can select multiple types of sensitive data to be filtered.
-    - Callback: After callback is enabled, you can enter a callback URL to receive the filtering results of privacy protection. Note that the callback URL can be used only if the HTTP 200 status code is returned by default. It will take effect in five minutes after configuration.
-
-5. After enabling privacy protection, you can view the **private data details** below by time, violation type, sensitivity level, or moderation type.
-
-
->?Violation types include violation of GDPR, cybersecurity classified protection compliance, and the Cybersecurity Law of China. Files will be classified into high, medium, and low sensitivity levels based on the moderation results.
->
 
 ## File Preview
 
@@ -95,3 +68,33 @@ After you activate the file preview service, the system will enable the `queue-d
 >?
 > - File preview is a paid feature. For billing details, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1045/33431).
 
+
+
+## Privacy Protection
+
+CI's privacy protection feature can filter various types of private data in files to effectively prevent information leakage, such as ID number, taxpayer identification number, business registration number, military ID number, email address, license plate number, and mobile number. Currently, it can only scan data automatically during upload.
+
+>?Currently, the privacy protection feature is supported for the following types of files:
+>
+>- Microsoft Office files: DOC, DOCX, PPT, PPTX, XLS, XLSX, RTF
+>- WPS files: WPS, DPS, ET
+>- PDF files: PDF
+>- Plain text files: TXT, XML, SLK
+>- Web files: HTML, MSG
+>- Email files: EML, PST
+
+### Directions
+
+1. Log in to the [CI console](https://console.cloud.tencent.com/ci/bucket) and click **Bucket Management** to enter the bucket management page.
+2. On the **Bucket Management** page, click the target bucket to enter the bucket details page.
+3. Click **File Processing** on the left and select the **Privacy Protection** configuration item.
+4. Click **Edit** to enable this feature and configure it as follows:
+    - File Type: You can select multiple file types for which privacy protection will be automatically triggered.
+    - Moderation Type: You can select multiple types of sensitive data to be filtered.
+    - Callback: After callback is enabled, you can enter a callback URL to receive the filtering results of privacy protection. Note that the callback URL can be used only if the HTTP 200 status code is returned by default. It will take effect in five minutes after configuration.
+
+5. After enabling privacy protection, you can view the **private data details** below by time, violation type, sensitivity level, or moderation type.
+
+
+>?Violation types include violation of GDPR, cybersecurity classified protection compliance, and the Cybersecurity Law of China. Files will be classified into high, medium, and low sensitivity levels based on the moderation results.
+>

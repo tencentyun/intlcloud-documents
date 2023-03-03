@@ -1,3 +1,4 @@
+
 This document describes how to view the task list in the TDSQL-C for MySQL console. In this way, you can stay up to date with the progress of operations on clusters and instances.
 
 ## Task type
@@ -11,7 +12,7 @@ The task list contains tasks of the following types: cluster creation, cluster r
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/DPzj589_1.png)
 
 ## Searching by keyword
-In the task list, you can search for the target task by task ID, cluster ID, instance ID, cluster name, and instance name. Separate multiple keywords by "|" and separate filter tags by carriage return.
+In the task list, you can search for the target task by task ID, cluster ID/name, and instance ID/name. Separate multiple keywords by vertical bar "|" and separate filter tags by carriage return.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/GZc5453_2.png)
 
 ## Downloading the task data

@@ -38,7 +38,7 @@ As with pay-as-you-go instances, you can find detailed usage and billing informa
 <tr><th>Region</th><th>Models supported by spot instances</th><th>Discounts</th></tr>
 <tr><td>Beijing, Shanghai, Chengdu, Chongqing, Guangzhou Open</td><td rowspan="4">All models supported by pay-as-you-go instances</td><td rowspan="4">80% off the published prices of pay-as-you-go instances with the same specifications</td></tr>
 <tr><td>Guangzhou (excluding Guangzhou Zone 1)</td></tr>
-<tr><td>Hong Kong (China), Singapore, Bangkok, Seoul, Tokyo, Mumbai, Toronto, Silicon Valley, Virginia, Frankfurt, Moscow</td></tr>
+<tr><td>Hong Kong (China), Singapore, Bangkok, Seoul, Tokyo, Mumbai, Toronto, Silicon Valley, Virginia, Frankfurt</td></tr>
 </table>
 
 ### Are quota limits of spot instances shared by pay-as-you-go instances?

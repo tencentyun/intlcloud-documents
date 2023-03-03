@@ -10,7 +10,7 @@
 </thead>
 <tbody><tr>
 <td>Template Name</td>
-<td>Max 64 characters; supports Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), and periods (.).</td>
+<td>Max 64 characters; supports Chinese characters, letters, digits, spaces, underscores (_), hyphens (-), and periods (.)</td>
 </tr>
 <tr>
 <td>Content analysis configuration</td>
@@ -18,7 +18,7 @@
 </tr>
 </tbody></table>
 
->? You can view **preset** content analysis templates in [Template Management > Content Discovery Templates](https://console.intl.cloud.tencent.com/mps/templates/mls?tab=analysis) of the MPS console.
+>? You can view **preset** content analysis templates in [Templates > Content Discovery](https://console.intl.cloud.tencent.com/mps/templates/mls?tab=analysis) of the MPS console.
 
 2. The templates created are displayed in the content analysis template list, where you can view the details of, edit, or delete a template.
 
@@ -41,6 +41,6 @@
 </tr>
 </tbody></table>
 
->? You can view **preset** content recognition templates in [Template Management > Content Discovery Templates](https://console.intl.cloud.tencent.com/mps/templates/mls?tab=recognize) of the MPS console.
+>? You can view **preset** content recognition templates in [Templates > Content Discovery](https://console.intl.cloud.tencent.com/mps/templates/mls?tab=recognize) of the MPS console.
 
 2. The templates created are displayed in the content recognition template list, where you can view the details of, edit, or delete a template.

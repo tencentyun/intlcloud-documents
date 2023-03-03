@@ -168,7 +168,7 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 </dx-alert>
 
 
-1. 登录  [云服务器控制台](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm) ，进入“实例”列表页面。
+1. 登录  [云服务器控制台](https://www.tencentcloud.com/account/login) ，进入“实例”列表页面。
 2. 选择需调整实例所在行右侧的**更多** > **实例状态** > **关机**，进行关机操作。
 3. 待实例关机后，选择**更多** > **资源调整** > **调整硬盘介质**。
 4. 在弹出的“调整硬盘介质”窗口中，选择目标云硬盘类型，勾选同意说明并单击**立即转换**。

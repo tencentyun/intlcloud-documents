@@ -12,13 +12,14 @@ Serverless 服务是腾讯云自研的新一代云原生关系型数据库 TDSQL
 
 ## 适用场景
 - 开发、测试环境等低频数据库使用场景。
-- 物联网（IoT）、边缘计算等不确定负载场景。
-- 中小企业建站等 SaaS 应用场景。
+- 物联网（IoT）、边缘计算等不确定负载的场景。
+- 小程序云开发、中小企业建站等 SaaS 应用场景。
 - 学校实验或教学环境等应用场景。
 - 全托管或希望完全免运维的用户。
 - 有不确定性、波动性、间歇性的业务场景。
 
 ## 相关文档
+- [Serverless 服务特性](https://www.tencentcloud.com/document/product/1098/52035)
 - [Serverless 服务计费说明](https://www.tencentcloud.com/document/product/1098/51974)
 - [Serverless 服务算力配置](https://www.tencentcloud.com/document/product/1098/51975)
 - [创建 Serverless 版集群](https://www.tencentcloud.com/document/product/1098/51976)

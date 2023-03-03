@@ -3,7 +3,7 @@ You can configure a **scheme** to automatically process videos uploaded to a spe
 
 ## Creating a scheme
 ### Creating a scheme[](id:create)
-1. Log in to the [MPS console](https://console.cloud.tencent.com/mps), select **Workflow > Scheme Management** on the left sidebar and click **Create scheme** to enter the [scheme creation page](https://console.cloud.tencent.com/mps/workflows/pipeline/add).
+1. Log in to the [MPS console](https://console.tencentcloud.com/mps), select **Workflow > Schemes** on the left sidebar and click **Create scheme** to enter the [scheme creation page](https://console.tencentcloud.com/mps/workflows/pipeline/add).
 2. Complete the settings according to your actual needs.
 <table>
     <tr>
@@ -51,7 +51,7 @@ Event notifications keep you updated on the progress and status of a scheme. MPS
 <tr>
 <td>TDMQ-CMQ callbacks</td>
 <td><ol style="margin:0">
-<li>To enable TDMQ-CMQ callbacks, you need to activate <a href="https://console.cloud.tencent.com/tdmq/cmq-queue?rid=1">Tencent Distributed Message Queue</a> and create a model. The event notifications of MPS will be sent to the message queue you specify.</br>
+<li>To enable TDMQ-CMQ callbacks, you need to activate <a href="https://console.tencentcloud.com/tdmq/cmq-queue?rid=1">Tencent Distributed Message Queue</a> and create a model. The event notifications of MPS will be sent to the message queue you specify.</br>
 <li>Complete callback settings on the scheme creation page as follows:<ul style="margin:0">
 			<li>TDMQ-CMQ model: Select “Queue model”.</li>
 			<li>TDMQ-CMQ region: Select Guangzhou, Shanghai, Beijing, Shanghai Finance, Shenzhen Finance, Hong Kong (China), Chengdu, North America, or west US.</li>
@@ -89,7 +89,7 @@ MPS offers a visual way for you to configure actions for a scheme.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f36828df241814cd2a529991325c7b8a.png)
 
 ## Managing Schemes
-1. Log in to the [MPS console](https://console.cloud.tencent.com/mps) and select [Workflow > Scheme Management](https://console.cloud.tencent.com/mps/workflows/pipeline) on the left sidebar. On the **Scheme management** page, you can **enable**, **disable**, **edit**, **delete**, as well as **view the details** of a scheme.
+1. Log in to the [MPS console](https://console.tencentcloud.com/mps) and select [Workflow > Schemes](https://console.tencentcloud.com/mps/workflows/pipeline) on the left sidebar. On the **Schemes** page, you can **enable**, **disable**, **edit**, **delete**, as well as **view the details** of a scheme.
 2. The scheme list displays information including scheme name, trigger bucket, region, trigger directory, creation time, and scheme status. You can sort schemes by creation time, search for a scheme by name, as well as edit, delete, or view the details of a scheme.
    - **Enabling a scheme**
       - Schemes are disabled by default. You can toggle on the switch in the **Enable** column to enable a scheme.

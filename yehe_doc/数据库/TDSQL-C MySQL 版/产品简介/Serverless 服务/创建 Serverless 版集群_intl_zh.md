@@ -43,6 +43,7 @@ CCU（CynosDB Compute Unit）为 Serverless 的计算计费单位，一个 CCU �
 <td>存储计费模式</td>
 <td>Serverless 版本默认存储模式为按量计费模式。</td></tr>
 </tbody></table>
+
 2. 选择实例数量，Serverless 服务支持批量购买同规格多个实例，然后单击**下一步**。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/r2Tz089_1.png)
 3. 完成**基础信息**设置和**高级配置**设置，确认费用后单击**立即购买**。

@@ -2,7 +2,7 @@
 
 COS offers unlimited storage and can automatically transition objects to ARCHIVE or DEEP ARCHIVE for cost reduction, making it ideal for data backup and archive.
 
-More and more customers are backing up data in the cloud. To facilitate this, Oracle’s backup module has integrated with COS so that users can back up and restore databases at a lower cost.
+More and more customers are backing up data in the cloud. To facilitate this, Oracle's backup module has integrated with COS so that you can back up and restore databases at a lower cost.
 
 ## Connecting OSB to COS
 
@@ -15,12 +15,14 @@ Oracle 9i or later versions support the OSB Cloud Module. For more information, 
 
 1. Go to [Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/rcmrf/oracle-secure-backup-osb-cloud-module.html#GUID-964AADD2-3405-4476-8698-E9F2133CB5B7) to obtain the latest version of OSB and install it.
 2. Decompress the downloaded `osbws_installer.zip` and run the following command with the actual `SecretId`, `SecretKey`, region, and endpoint of COS to install OSB:
+>!We recommend you use a sub-account key preferentially and follow the [principle of least privilege](https://intl.cloud.tencent.com/document/product/436/32972) to reduce risks. For information about how to obtain a sub-account key, see [Access Key](https://intl.cloud.tencent.com/document/product/598/32675).
+>
 ```
 java -jar osbws_install.jar -AWSID <SecretId> -AWSKey <SecretKey> -walletDir $ORACLE_HOME/osbws_wallet -libDir $ORACLE_HOME/lib -location <Region> -awsEndPoint <endpoint>
 
 // Replace the location with the actual directory of the package.
 ```
-Example:
+For example:
 ```
 java -jar osbws_install.jar -AWSID AKIDxxxx -AWSKey XXXX -walletDir $ORACLE_HOME/osbws_wallet -libDir $ORACLE_HOME/lib -location ap-guangzhou -awsEndPoint cos.ap-guangzhou.myqcloud.com
 ```
@@ -103,4 +105,6 @@ Log in to RMAN and modify the concurrence configuration. The following sets the 
 
 ## References
 
-For more information, please see [Oracle Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/rcmrf/oracle-secure-backup-osb-cloud-module.html#GUID-6FCF4FD8-861C-4D52-BB41-32E6EF03789F).
+For more information, see [E.1 About Backup on the Cloud Using Oracle Secure Backup Cloud Module](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/rcmrf/oracle-secure-backup-osb-cloud-module.html#GUID-6FCF4FD8-861C-4D52-BB41-32E6EF03789F).
+
+

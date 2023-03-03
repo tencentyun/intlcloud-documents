@@ -34,7 +34,7 @@ Layanan Tencent Cloud di VPC yang sama saling terhubung melalui jaringan pribadi
 		<th>AZ</th>
 	</tr>
 	<tr>
-		<td rowspan="5">Tiongkok Selatan (Guangzhou)<br>ap-guangzhou</td>
+		<td rowspan="6">Tiongkok Selatan (Guangzhou)<br>ap-guangzhou</td>
 		<td>Zona 1 Guangzhou (terjual habis)<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
@@ -49,6 +49,10 @@ Layanan Tencent Cloud di VPC yang sama saling terhubung melalui jaringan pribadi
 	<tr>
 		<td>Zona 6 Guangzhou<br>ap-guangzhou-6</td>
 	</tr>
+	<tr>
+                <td>Zona 7 Guangzhou<br>ap-guangzhou-7</td>
+	</tr>
+	<tr>
 		<td rowspan="5">Tiongkok Timur (Shanghai)<br>ap-shanghai</td>
 		<td>Zona 1 Shanghai (terjual habis)<br>ap-shanghai-1</td>
 	</tr>
@@ -65,15 +69,18 @@ Layanan Tencent Cloud di VPC yang sama saling terhubung melalui jaringan pribadi
 		<td>Zona 5 Shanghai<br>ap-shanghai-5</td>
 	</tr>
 		<tr>
-			<td rowspan="2">Tiongkok Timur (Nanjing)<br>ap-nanjing</td>
+			<td rowspan="3">Tiongkok Timur (Nanjing)<br>ap-nanjing</td>
 			<td>Zona 1 Nanjing<br>ap-nanjing-1</td>
 	</tr>
 	<tr>
 			<td>Zona 2 Nanjing<br>ap-nanjing-2</td>
 	</tr>
 	<tr>
+                        <td>Zona 3 Nanjing<br>ap-nanjing-3</td>
+	</tr>
+	<tr>
 			<td rowspan="7">Tiongkok Utara (Beijing)<br>ap-beijing</td>
-			<td>Zona 1 Beijing<br>ap-beijing-1</td>
+			<td>Zona 1 Beijing(terjual habis)<br>ap-beijing-1</td>
 	</tr>
 	<tr>
 			<td>Zona 2 Beijing<br>ap-beijing-2</td>
@@ -128,7 +135,7 @@ Layanan Tencent Cloud di VPC yang sama saling terhubung melalui jaringan pribadi
 			<th>AZ</th>
 		</tr>
 		<tr>
-			<td  rowspan="3">Asia Tenggara (Singapura)<br>ap-singapore</td>
+			<td  rowspan="4">Asia Tenggara (Singapura)<br>ap-singapore</td>
 			<td>Zona 1 Singapura (Node di Singapura dapat mencakup Asia Tenggara)<br>ap-singapore-1</td>
 		</tr>
 		<tr>
@@ -138,8 +145,14 @@ Layanan Tencent Cloud di VPC yang sama saling terhubung melalui jaringan pribadi
 			<td>Zona 3 Singapura (Node di Singapura dapat mencakup Asia Tenggara)<br>ap-singapore-3</td>
 		</tr>
 		<tr>
-			<td>Asia Tenggara (Jakarta)<br>ap-jakarta</td>
+                        <td>Zona 4 Singapura (Node di Singapura dapat mencakup Asia Tenggara)<br>ap-singapore-4</td>
+		</tr>
+		<tr>
+			<td  rowspan="2">Asia Tenggara (Jakarta)<br>ap-jakarta</td>
 			<td>Zona 1 Jakarta (Node di Jakarta dapat mencakup Asia Tenggara)<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+                         <td>Zona 2 Jakarta (Node di Jakarta dapat mencakup Asia Tenggara)<br>ap-jakarta-2</td>
 		</tr>
 		<tr>
 			<td  rowspan="2">Asia Timur Laut (Seoul)<br>ap-seoul</td>
@@ -163,11 +176,19 @@ Layanan Tencent Cloud di VPC yang sama saling terhubung melalui jaringan pribadi
 			<td>Zona 2 Mumbai (Node di Mumbai dapat mencakup Asia Selatan) <br>ap-mumbai-2</td>
 		</tr>
 		<tr>
-		  	<td >Asia Tenggara (Bangkok)<br>ap-bangkok </td>
+		  	<td rowspan="2">Asia Tenggara (Bangkok)<br>ap-bangkok </td>
 				 <td >Zona 1 Bangkok (Node di Bangkok dapat mencakup Asia Tenggara Pasifik)<br>ap-bangkok-1</td>
+		</tr>
+		<tr>
+                                 <td >Zona 2 Bangkok (Node di Bangkok dapat mencakup Asia Tenggara Pasifik)<br>ap-bangkok-2</td>
+		</tr>
 		<tr>
 			<td>Amerika Utara (Toronto)<br>na-toronto</td>
 			<td>Zona 1 Toronto (Node di Toronto dapat mencakup Amerika Utara)<br>na-toronto-1</td>
+		</tr>
+		<tr>
+                        <td>Amerika Selatan (Saopaulo)<br>sa-saopaulo</td>
+			<td>Zona 1 Saopaulo (Node di Saopaulo dapat mencakup Amerika Selatan)<br>sa-saopaulo-1</td>
 		</tr>
 		<tr>
 			<td rowspan="2">AS Barat (Silicon Valley)<br>na-siliconvalley</td>
@@ -184,12 +205,13 @@ Layanan Tencent Cloud di VPC yang sama saling terhubung melalui jaringan pribadi
 			<td>Zona 2 Virginia (Node di Virginia dapat mencakup AS Timur)<br>na-ashburn-2</td>
 		</tr>
 		<tr>
-			<td>Eropa (Frankfurt)<br>eu-frankfurt</td>
+			<td rowspan="2">Eropa (Frankfurt)<br>eu-frankfurt</td>
 			<td>Zona 1 Frankfurt (Node di Frankfurt dapat mencakup Eropa)<br>eu-frankfurt-1</td>
 		</tr>
-		<td >Eropa (Moskow)<br>eu-moscow</td>
-		<td>Zona 1 Moskow (Node di Moskow dapat mencakup Eropa)<br>eu-moscow-1</td>
+                <tr>
+                        <td>Zona 2 Frankfurt (Node di Frankfurt dapat mencakup Eropa)<br>eu-frankfurt-2</td>
 		</tr>
+                <tr>
 	</tbody>
 </table>
 

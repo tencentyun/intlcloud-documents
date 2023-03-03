@@ -1,5 +1,5 @@
 ## Overview
-After a media processing task is triggered automatically by the upload of a file to COS or initiated manually in the console or by an API call, you can view and manage the task on the [Task Management](https://console.cloud.tencent.com/mps/tasks) page.
+After a media processing task is triggered automatically by the upload of a file to COS or initiated manually in the console or by an API call, you can view and manage the task on the [Tasks](https://console.tencentcloud.com/mps/tasks) page.
 
 ## Details
 ### Task list[](id:tlist)
@@ -39,12 +39,12 @@ After a media processing task is triggered automatically by the upload of a file
 </table>
 
 ### Querying a task[](id:tquery)
-1. Select [Task Management](https://console.cloud.tencent.com/mps/tasks) on the left sidebar. The list shows the tasks initiated by the current account.
+1. Select [Tasks](https://console.tencentcloud.com/mps/tasks) on the left sidebar. The list shows the tasks initiated by the current account.
 2. Enter a **task ID** in the search box in the top right corner to search for a task, or click the **Status** header to select the type of tasks you want to view.
 
 
 ### Creating a task[](id:cquery)
-1. On the [Task Management](https://console.cloud.tencent.com/mps/tasks) page, click **Create task**.
+1. On the [Tasks](https://console.tencentcloud.com/mps/tasks) page, click **Create task**.
 2. Select a file to process and an output path, and specify the transcoding parameters.
 
 ### Task operations[](id:operate)

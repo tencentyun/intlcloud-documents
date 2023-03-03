@@ -4,7 +4,7 @@
 
 ## 临时密钥
 
-临时密钥（临时访问凭证）是通过 CAM 云 API 提供的接口，获取到权限受限的密钥。
+[临时密钥（临时访问凭证）](https://intl.cloud.tencent.com/document/product/1150/49452) 是通过 CAM 云 API 提供的接口，获取到权限受限的密钥。
 COS API 可以使用临时密钥计算签名，用于发起 COS API 请求。
 COS API 请求使用临时密钥计算签名时，需要用到获取临时密钥接口返回信息中的三个字段，如下：
 - TmpSecretId
@@ -22,10 +22,11 @@ Web、iOS、Android 使用 COS 时，通过固定密钥计算签名方式不能�
 
 ## 获取临时密钥
 
-获取临时密钥，可以通过提供的 [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) 方式获取，也可以直接请求STS 云 API的方式获取。
+获取临时密钥，可以通过提供的 [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) 方式获取，也可以直接请求 [STS 云 API](https://intl.cloud.tencent.com/document/product/1150/49452) 的方式获取。
 
 
->!举例使用的是 Java SDK ，需要在 GitHub 上获取 SDK 代码（版本号）。若提示找不到对应 SDK 版本号，请确认是否在 GitHub 上获取到对应版本的 SDK。
+>! 举例使用的是 Java SDK ，需要在 GitHub 上获取 SDK 代码（版本号）。若提示找不到对应 SDK 版本号，请确认是否在 GitHub 上获取到对应版本的 SDK。
+>
 
 ### COS STS SDK 
 
@@ -41,6 +42,7 @@ COS 针对 STS 提供了 SDK 和样例，目前已有 Java、Nodejs、PHP、Pyth
 | Python      | [安装地址](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/python)    | [示例地址](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/python/demo/sts_demo.py) |
 
 >! STS SDK 为了屏蔽 STS 接口本身版本间的差异性，返回参数结构不一定与 STS 接口完全一致，详情请参见 [Java SDK 文档](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/java)。
+>
 
 
 假设您使用的是 Java SDK，请先下载 [Java SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/java)，然后运行如下获取临时密钥示例：
@@ -54,10 +56,12 @@ public class Demo {
 
         try {
             //这里的 SecretId 和 SecretKey 代表了用于申请临时密钥的永久身份（主账号、子账号等），子账号需要具有操作存储桶的权限。
+            String secretId = System.getenv("secretId");//用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://cloud.tencent.com/document/product/598/37140
+ 			String secretKey = System.getenv("secretKey");//用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://cloud.tencent.com/document/product/598/37140
             // 替换为您的云 api 密钥 SecretId
-            config.put("secretId", "SecretId");
+            config.put("secretId", secretId);
             // 替换为您的云 api 密钥 SecretKey
-            config.put("secretKey", "SecretKey");
+            config.put("secretKey", secretKey);
 
             // 设置域名: 
             // 如果您使用了腾讯云 cvm，可以设置内部域名
@@ -83,7 +87,7 @@ public class Demo {
             });
 
             // 密钥的权限列表。必须在这里指定本次临时密钥所需要的权限。
-            // 简单上传、表单上传和分块上传需要以下的权限，其他权限列表请看 https://intl.cloud.tencent.com/document/product/436/30580
+            // 简单上传、表单上传和分块上传需要以下的权限，其他权限列表请参见 https://intl.cloud.tencent.com/document/product/436/30580
             String[] allowActions = new String[] {
                      // 简单上传
                     "name/cos:PutObject",
@@ -97,7 +101,43 @@ public class Demo {
                     "name/cos:CompleteMultipartUpload"
             };
             config.put("allowActions", allowActions);
+			    /**
+             * 设置condition（如有需要）
+             //# 临时密钥生效条件，关于condition的详细设置规则和COS支持的condition类型可以参考 https://cloud.tencent.com/document/product/436/71307
+             final String raw_policy = "{\n" +
+             "  \"version\":\"2.0\",\n" +
+             "  \"statement\":[\n" +
+             "    {\n" +
+             "      \"effect\":\"allow\",\n" +
+             "      \"action\":[\n" +
+             "          \"name/cos:PutObject\",\n" +
+             "          \"name/cos:PostObject\",\n" +
+             "          \"name/cos:InitiateMultipartUpload\",\n" +
+             "          \"name/cos:ListMultipartUploads\",\n" +
+             "          \"name/cos:ListParts\",\n" +
+             "          \"name/cos:UploadPart\",\n" +
+             "          \"name/cos:CompleteMultipartUpload\"\n" +
+             "        ],\n" +
+             "      \"resource\":[\n" +
+             "          \"qcs::cos:ap-shanghai:uid/1250000000:examplebucket-1250000000/*\"\n" +
+             "      ],\n" +
+             "      \"condition\": {\n" +
+             "        \"ip_equal\": {\n" +
+             "            \"qcs:ip\": [\n" +
+             "                \"192.168.1.0/24\",\n" +
+             "                \"101.226.100.185\",\n" +
+             "                \"101.226.100.186\"\n" +
+             "            ]\n" +
+             "        }\n" +
+             "      }\n" +
+             "    }\n" +
+             "  ]\n" +
+             "}";
 
+             config.put("policy", raw_policy);
+             */				
+          
+          
             Response response = CosStsClient.getCredential(config);
             System.out.println(response.credentials.tmpSecretId);
             System.out.println(response.credentials.tmpSecretKey);
@@ -123,6 +163,7 @@ public class Demo {
 
 以 COS Java SDK 为例，使用临时密钥访问 COS 示例如下：
 >? 运行如下示例前，请前往 [Github 项目](https://github.com/tencentyun/cos-java-sdk-v5) 获取 Java SDK 安装包。
+>
 
 ```java
 // 根据 github 提供的 maven 集成方式导入 cos xml java sdk
@@ -141,7 +182,7 @@ public class Demo {
 
         // 1 初始化用户身份信息(secretId, secretKey)
         COSCredentials cred = new BasicCOSCredentials(tmpSecretId, tmpSecretKey);
-        // 2 设置 bucket 区域,详情请参阅 COS 地域 https://cloud.tencent.com/document/product/436/6224
+        // 2 设置 bucket 区域,详情请参见 COS 地域 https://cloud.tencent.com/document/product/436/6224
         ClientConfig clientConfig = new ClientConfig(new Region("ap-guangzhou"));
         // 3 生成 cos 客户端
         COSClient cosclient = new COSClient(cred, clientConfig);

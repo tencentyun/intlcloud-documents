@@ -31,6 +31,10 @@ Usage: goosefs ns [generic options]
          [unsetPolicy <namespace>]                                 
          [unsetTtl <namespace>] 
 ```
+>!
+>- 建议用户尽量避免在配置中使用永久密钥，采取配置子账号密钥或者临时密钥的方式有助于提升业务安全性。为子账号授权时请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，避免发生预期外的数据泄露。
+>- 如果您一定要使用永久密钥，建议对永久密钥的权限范围进行限制，可参考 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 通过限制永久密钥的可执行操作、资源范围和条件（访问 IP 等），提升使用安全性。
+
 上述指令集中各项指令的能力简述如下：
 
 | 指令        | 说明                                                         |
@@ -126,6 +130,7 @@ $ goosefs ns setPolicy --wPolicy 3 --rPolicy 5 test_cos
 >!除了在创建命名空间时指定缓存策略，用户还可以通过在读写文件时，针对指定文件设置 ReadType 或者 Write_Type，或者通过 properties 配置文件配置全局缓存策略。多个策略同时存在的时候，优先级为用户自定义优先级 >  Namespace 读写策略 > 配置文件的全局缓存策略配置。其中，针对读策略会采用用户自定义 ReadType 和 Namespace 的 DirReadPolicy 的组合生效，即数据流读策略采用用户自定义 ReadType，元数据采用 Namespace 的策略。 
 >
 > 例如，GooseFS 中存在一个 COSN 命名空间，读策略为 CACHE_CONSISTENT；假设在该命名空间中存在一个 test.txt 的文件。客户端读取  test.txt  时，ReadType 指定了 CACHE_PROMOTE。那么整个读取行为就是同步元数据并且 CACHE_PROMOTE。
+> 
 
 如果需要重置读写缓存策略，可以通过 unsetPolicy 指令实现，如下策略展示了重置 test_cos 命名空间的读写缓存策略：
 ```plaintext
@@ -163,7 +168,6 @@ $ goosefs ns setTtl --action free test_cos 60000
 ```plaintext
 goosefs.user.file.metadata.sync.interval=<INTERVAL>
 ```
-
 
 同步周期支持如下3种入参：
 

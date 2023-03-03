@@ -13,12 +13,13 @@ TDSQL-C for MySQL Serverless adopts Tencent Cloud's proprietary serverless archi
 ## Use cases
 - Low-frequency database usage scenarios such as development and test environments.
 - Scenarios where the load is uncertain, such as IoT and edge computing.
-- SaaS application scenarios such as SME website construction.
+- SaaS application scenarios such as Mini Program Cloud Base and SME website development.
 - Education scenarios such as experiment and teaching environment.
 - Fully managed and Ops-free scenarios.
 - Business scenarios with uncertain and intermittent fluctuations.
 
 ## References
-- [Billing](https://www.tencentcloud.com/document/product/1098/51974)
+- [Service Features](https://www.tencentcloud.com/document/product/1098/52035)
+- [Billing Overview](https://www.tencentcloud.com/document/product/1098/51974)
 - [Compute Unit](https://www.tencentcloud.com/document/product/1098/51975)
 - [Creating Serverless Cluster](https://www.tencentcloud.com/document/product/1098/51976)

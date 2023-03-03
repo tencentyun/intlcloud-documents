@@ -1,9 +1,9 @@
 ## Overview
 You can unbind a CVD instance from the user, after which the binding status of the CVD instance will become **None**. Then, you can bind the CVD instance to another user or the original user.
 >!
-- You can unbind only CVD instances in **Running** or **In use** status from users.
-- If a CVD instance in **In use** status is unbound from the user, the current CVD connection session will be closed. Ask the user to back up their data first.
-- After unbinding, the user can no longer log in to the instance. Ask the user to back up their data first.
+>- You can unbind only CVD instances in **Running** or **In use** status from users.
+>- If a CVD instance in **In use** status is unbound from the user, the current CVD connection session will be closed. Ask the user to back up their data first.
+>- After unbinding, the user can no longer log in to the instance. Ask the user to back up their data first.
 
 
 

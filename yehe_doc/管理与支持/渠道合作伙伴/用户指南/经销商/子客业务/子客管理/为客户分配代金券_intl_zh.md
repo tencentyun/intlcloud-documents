@@ -9,7 +9,12 @@
 第三步：点击**客户业务>代金券管理**菜单进入代金券发放页面。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a6861563e618bfc05057697fed2e43ef.png)
 第四步：点击**创建代金券模板**，填写代金券规则。
-![](https://qcloudimg.tencent-cloud.cn/raw/5daf53f588e796bdccfd661142135b97.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/GHTr969_create_voucher.png)
+
+>?
+>- 通用产品代金券：该类优惠券存在无法使用的产品清单，清单外的产品都可以用券。（鼠标悬浮问号标识可展示不适用的产品清单）
+>- 指定产品代金券：适用于具体的单个或多个产品，只有适用产品列表里的产品可以使用。
+
 第五步：确认填写内容后点击**确认**保存代金券模板。
 >?
 代金券模板保存成功后，如未发放给实际客户，仍可以进行编辑，发放给客户后则模板无法继续编辑，可重新创建新的模板。

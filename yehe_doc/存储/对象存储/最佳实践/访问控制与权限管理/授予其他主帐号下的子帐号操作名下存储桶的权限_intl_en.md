@@ -1,6 +1,6 @@
 ## Overview
 
-There are two buckets under root account A (APPID: `1250000000`): `examplebucket1-1250000000` and `examplebucket2-1250000000`, which sub-account B0 under root account B wants to manipulate to meet its business needs. This document describes how to authorize it to do so.
+There are two buckets under root account A (`APPID`: `1250000000`): `examplebucket1-1250000000` and `examplebucket2-1250000000`, which sub-account B0 under root account B wants to manipulate to meet its business needs. This document describes how to authorize it to do so.
 
 
 ## Directions
@@ -18,7 +18,7 @@ There are two buckets under root account A (APPID: `1250000000`): `examplebucket
   - **Resource Path**: It needs to be entered only for specified resources.
   - **Operation**: Click "Add Operation" and select all operations. If you want to grant root account B permissions to only certain operations, you can also select one or more operations as needed.
   - **Filter**: Add a filter or leave it blank as needed.
-6. Click **Complete** to grant root account B specified permissions to the bucket.
+6. Click **Finish** to grant root account B specified permissions to the bucket.
 7. If you need to authorize root account B to manipulate other buckets, repeat the above steps.
 
 #### Authorizing sub-account B0 to manipulate buckets under root account A
@@ -43,7 +43,7 @@ There are two buckets under root account A (APPID: `1250000000`): `examplebucket
 }
 ```
 `1250000000` in `uid/1250000000` is the `APPID` of root account A, and `examplebucket1-1250000000` is the name of the bucket to authorize. `examplebucket1-1250000000/*` means that all buckets under root account A that have been authorized to root account B will be authorized to its sub-account B0.
-4. Click **Create Policy**.
+4. Click **Complete**.
 5. Locate the created policy in the **policy list** and click **Associate User/User Group/Role** on the right.
-6. In the pop-up window, select sub-account B0 click **OK**.
+6. In the pop-up window, select sub-account B0 and click **OK**.
 7. Then, the authorization is completed, and you can use the key of sub-account B0 to manipulate the bucket under root account A.

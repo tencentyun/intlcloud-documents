@@ -3,7 +3,7 @@
 <tr><th width=13%>Item</th><th>Description</th></tr>
 <tr>
 <td>Template Name</td>
-<td>Max 64 characters; supports Chinese characters, letters, digits, underscores (\_), hyphens (-), and periods</td>
+<td>Max 64 characters; supports Chinese characters, letters, digits, underscores (_), hyphens (-), and periods</td>
 </tr><tr>
 <td>Watermark type</td>
 <td>Image watermark</td>

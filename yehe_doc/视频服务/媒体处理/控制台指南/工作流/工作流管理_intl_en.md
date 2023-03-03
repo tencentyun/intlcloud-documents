@@ -1,12 +1,12 @@
->! The **Workflow Management** section of the MPS console has been replaced with **Scheme Management**, which offers easier and more flexible settings. To configure a scheme, go to **Scheme Management**.
+>! The **Workflows** section of the MPS console has been replaced with **Schemes**, which offers easier and more flexible settings. To configure a scheme, go to **Schemes**.
 
 
 ## Overview
 After you set up a workflow, media files uploaded to the specified bucket and directory will be processed automatically, and the results will be uploaded to the specified bucket and directory. Workflows can include tasks such as transcoding, screenshot taking, animated screenshot generating, moderation, content recognition, content analysis, and watermarking.
 
 ## Creating a Workflow[](id:create)
-1. Log in to the [MPS console](https://console.cloud.tencent.com/mps) and select **Workflow Management** on the left sidebar.
-2. Click **Create Workflow** to enter the workflow creation page and set the workflow name, trigger bucket, trigger directory, output bucket, output directory, event notifications and tasks. For detailed instructions, please see [workflow configuration](#workflow).
+1. Log in to the [MPS console](https://console.tencentcloud.com/mps) and select **Workflows** on the left sidebar.
+2. Click **Create Workflow** to enter the workflow creation page and set the workflow name, trigger bucket, trigger directory, output bucket, output directory, event notifications and tasks. For detailed instructions, see [workflow configuration](#workflow).
 ![](https://qcloudimg.tencent-cloud.cn/raw/e46b738c267c5b34715abd01cc577b2d.png)
 
 The table below lists the information needed to configure a workflow.
@@ -36,7 +36,7 @@ The table below lists the information needed to configure a workflow.
 <td>Event notifications</td>
 <td>No</td>
 <td>
-<ul style="margin:0"><li>Disabled by default. For detailed instructions on how to configure event notifications, please see <a href="#recall">callback configuration</a> below. </li><li>To enable TDMQ-CMQ event notifications, you need to activate <a href="https://console.cloud.tencent.com/tdmq/cmq-queue?rid=1">Tencent Distributed Message Queue</a> and create a model. After TDMQ-CMQ event notifications are enabled, the specified message queue will receive notifications about video processing events.</li></ul></td>
+<ul style="margin:0"><li>Disabled by default. For detailed instructions on how to configure event notifications, see <a href="#recall">callback configuration</a> below. </li><li>To enable TDMQ-CMQ event notifications, you need to activate <a href="https://console.tencentcloud.com/tdmq/cmq-queue?rid=1">Tencent Distributed Message Queue</a> and create a model. After TDMQ-CMQ event notifications are enabled, the specified message queue will receive notifications about video processing events.</li></ul></td>
 </tr><tr>
 <td>Configuration items</td>
 <td>Yes</td>
@@ -61,7 +61,7 @@ The table below lists the information needed to configure a workflow.
 </tr>
 <tr>
 <td>SCF callbacks</td>
-<td>You can click <a href="https://console.cloud.tencent.com/scf/list-create?rid=1&ns=default&keyword=mps">Go to SCF console</a> to configure a function in the SCF console. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/1041/40337">MPS Task Callback Notification</a>. <br>SCF callback configuration applies to all workflows and is not saved specifically for the current workflow.</td>
+<td>You can click <a href="https://console.tencentcloud.com/scf/list-create?rid=1&ns=default&keyword=mps">Go to SCF console</a> to configure a function in the SCF console. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/1041/40337">MPS Task Callback Notification</a>. <br>SCF callback configuration applies to all workflows and is not saved specifically for the current workflow.</td>
 </tr>
 </table>
 
@@ -87,7 +87,7 @@ CLS can deliver the data in log topics to SCF via an MPS log trigger to enable o
 >! Sending data to SCF will incur fees. For details, see [Billing Overview](https://intl.cloud.tencent.com/document/product/583/17299).
 
 ## Managing Workflows[](id:manage)
-1. Log in to the [MPS console](https://console.cloud.tencent.com/mps) and select **Workflow Management** on the left sidebar.
+1. Log in to the [MPS console](https://console.tencentcloud.com/mps) and select **Workflows** on the left sidebar.
 2. The workflow list displays information including workflow name, trigger bucket, region, trigger directory, creation time, and status. You can sort workflows by creation time, search for a workflow by name, and view, edit, or delete a workflow.
 	-  **Enable a workflow**
 		- Workflows are disabled by default. To enable a workflow, click the toggle in the **Enable** column.

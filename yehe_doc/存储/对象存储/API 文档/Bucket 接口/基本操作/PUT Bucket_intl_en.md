@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
 
 This API is used to create a bucket under a specified account. A signature needs to be carried in `Authorization` and anonymous calls are not supported. By default, the bucket creator is the bucket owner.
 
@@ -52,7 +52,7 @@ Authorization: Auth String
 ```
 
 >? 
-> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com, where &lt;BucketName-APPID> is the bucket name followed by the `APPID`, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
@@ -62,11 +62,20 @@ This API has no request parameter.
 
 #### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information about common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+
+| Header | Description | Type | Required |
+| ------------------- | ------------------------------------------------------------ | ------- | -------- |
+| x-cos-tagging      | Adds up to 50 tags to a bucket during bucket creation, such as `key1=value1&key2=value2`. | string | No |
+
+
+**ACL-related headers**
+
+You can configure an access control list (ACL) for a bucket by specifying the following request headers during bucket creation:
 
 | Header | Description | Type | Required |
 | ------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl | Defines the access control list (ACL) attribute of the bucket. For the enumerated values such as `private` (default) and `public-read`, see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). | Enum | No |
+| x-cos-acl | Defines the access control list (ACL) attribute of the bucket. For the enumerated values such as `private` (default) and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). | Enum | No |
 | x-cos-grant-read | Grants a user permission to read the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use a comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 | x-cos-grant-write | Grants a user permission to write to the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use a comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 | x-cos-grant-read-acp | Grants a user permission to read the ACL and policies of the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use a comma (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
@@ -109,9 +118,9 @@ The response body of this API is empty.
 
 This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
-#### Sample 1: Simple use case (OAZ bucket)
+#### Example 1: simple use case (OAZ bucket)
 
 #### Request
 
@@ -135,7 +144,7 @@ Server: tencent-cos
 x-cos-request-id: NWNlYWE3ZjlfZDQyNzVkNjRfMzg1N18yNzFh****
 ```
 
-#### Sample 2: Setting `public-read` and granting a user permissions to write to the bucket and read the bucket ACL and policies
+#### Example 2: setting `public-read` and granting a user permissions to write to the bucket and read the bucket ACL and policies
 
 #### Request
 
@@ -191,3 +200,28 @@ Date: Thu, 04 Jun 2020 06:06:10 GMT
 Server: tencent-cos
 x-cos-request-id: NWVkODhmNTFfM2JiODJhMDlfMjg4NmFfMzA5ZmE2****
 ```
+
+#### Sample 4: Creating a bucket and adding tags
+
+The following sample request is used to create the bucket `examplebucket-1250000000` in Beijing region and add two tags `<a,a>` and `<b,b>` to the bucket.
+
+#### Request
+
+```plaintext
+PUT / HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+x-cos-tagging: a=a&b=b
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDYv3vWrwkHXVDf******&q-sign-time=1667446950;1668447000&q-key-time=1667446950;1668447000&q-url-param-list=&q-header-list=host;x-cos-tagging&q-signature=6d0ef3446f29aca9f28f66a031******
+```
+
+#### Response
+
+```plaintext
+HTTP/1.1 200 OK
+Content-Length: 0
+Connection: keep-alive
+Date: Thu, 03 Nov 2022 03:43:30 GMT
+Server: tencent-cos
+x-cos-request-id: NjM2MzM4ZTJfZDRiNTE0M********
+```
+

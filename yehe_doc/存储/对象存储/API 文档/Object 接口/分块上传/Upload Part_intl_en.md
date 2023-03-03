@@ -3,22 +3,24 @@
 This API is used to upload an object to COS in multiple parts. You can upload up to 10,000 parts. The size of each part should be 1 MB to 5 GB, and the last part can be smaller than 1 MB.
 
 > ? 
-> 1. To call this API, you need to first call the [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) API to obtain the `UploadId`, which identifies the current upload operation.
-> 2. Every time you call the `Upload Part` API, you need to include the `partNumber` and `uploadId` parameters. You can upload multiple parts out of order.
-> 3. When the `uploadId` and `partNumber` of a new part are the same as those of a previously uploaded part, the old part will be overwritten. If the `uploadId` does not exist, "404 NoSuchUpload" will be returned.
-> 
+>- Multipart upload steps:
+>  1. To call this API, you need to first call the [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) API to obtain the `UploadId`, which identifies the current upload operation.
+>  2. Every time you call the `Upload Part` API, you need to include the `partNumber` and `uploadId` parameters. You can upload multiple parts out of order.
+>  3. When the `uploadId` and `partNumber` of a new part are the same as those of a previously uploaded part, the old part will be overwritten. If the `uploadId` does not exist, "404 NoSuchUpload" will be returned.
+>- Only the root account or sub-accounts granted the permission of the `Upload Part` API can call this API.
+>
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=UploadPart&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -41,7 +43,7 @@ Authorization: Auth String
 ```
 
 >? 
-> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
@@ -87,11 +89,11 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
-#### Sample 1: simple use case
+#### Example 1: simple use case
 
 #### Request
 
@@ -184,7 +186,7 @@ x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
 ```
 
-#### Sample 4: using server-side encryption SSE-C
+#### Example 4: using server-side encryption SSE-C
 
 #### Request
 

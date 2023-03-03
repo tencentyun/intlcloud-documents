@@ -16,7 +16,7 @@ Fees are pay-as-you-go on an hourly billing cycle based on the public network tr
 <td>0.12</td>
 </tr>
 <tr>
-<td>Tokyo, Moscow</td>
+<td>Tokyo</td>
 <td>0.13</td>
 </tr>
 <tr>

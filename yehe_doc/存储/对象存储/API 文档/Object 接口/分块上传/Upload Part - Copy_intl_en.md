@@ -1,23 +1,27 @@
 ## Overview
 This API is used to copy the parts of an object from the source path to the destination path. You can use `x-cos-copy-source` to specify the source object and use `x-cos-copy-source-range` to specify the byte range to copy (each part should be 1 MB to 5 GB).
 
+>?The following two types of accounts can call this API:
+>- Have the root account permissions.
+>- Have the `GetObjecet` API permission of the source object and the `InitiateMultipartUpload`, `ListMultipartUploads`, `ListParts`, `PutObject`, `CompleteMultipartUpload`, and `AbortMultipartUpload` API permissions under the destination path.
+
 >!
 >- To call this API, you need to first call the [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) API to initialize the multipart upload and specify the destination path.
 >- If the source and destination objects reside in two different regions and the part size is larger than 5 GB, use the multipart upload or multipart copy API to copy the object.
 >- To upload an object in parts, you must first initialize the multipart upload. The response of the multipart upload initialization will include a unique descriptor `uploadId`, which needs to be carried in the multipart upload request.
->
+
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                API Explorer is recommended.
+                API Explorer (recommended)
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=UploadPartCopy&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
             </div>
         </div>
     </div>
@@ -26,11 +30,11 @@ This API is used to copy the parts of an object from the source path to the dest
 #### Versioning
 If versioning is enabled for the bucket, `x-cos-copy-source` identifies the current version of the object to copy. If the current version is a delete marker and no version is specified in `x-cos-copy-source`, COS will consider that the object has been deleted and return a 404 error. If you specify a `versionId` in `x-cos-copy-source` and the `versionId` is a delete marker, COS will return an HTTP 400 error as delete markers cannot be set in `x-cos-copy-source`.
 
-## Requests
+## Request
 #### Sample request
 
-```http
-PUT /examplebucket?partNumber=PartNumber&uploadId=UploadId  HTTP/1.1
+```shell
+PUT /<ObjectKey>?partNumber=PartNumber&uploadId=UploadId  HTTP/1.1
 Host: <Bucketname-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Authorization: Auth String
@@ -43,15 +47,15 @@ x-cos-copy-source-if-modified-since: time_stamp
 ```
 
 >? 
-> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 > 
 
 
 #### Request headers
 
 #### Common request headers
-This API uses [common request headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Non-common request headers
 
@@ -79,7 +83,7 @@ This API uses the following recommended headers:
 #### Request parameters
 
  | Parameter | Description | Type | Required |
-|---|---|---|---|
+---|---|---|---
 | partNumber | Part number | String | Yes |
 | uploadId | To upload an object in parts, you must first initialize the multipart upload. The response of the multipart upload initialization will carry a unique descriptor (`uploadId`), which needs to be carried in the multipart upload request. | String | Yes |
 
@@ -94,7 +98,7 @@ This API uses [Common Response Headers](https://intl.cloud.tencent.com/document/
 
 #### Non-common response headers
 
-|Header | Description | Type |
+|Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Description | Type |
 |---|---|---|
 | x-cos-copy-source-version-id | Version ID of the source object to copy (if versioning is enabled for the source bucket) | String |
 | x-cos-server-side-encryption | If the object is stored with COS-managed server-side encryption, the response will contain this header and the encryption algorithm used (AES256). | String |
@@ -120,12 +124,12 @@ The nodes are described as follows:
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 #### Request
 
-```HTTP
+```shell
 PUT /exampleobject?partNumber=1&uploadId=1505706248ca8373f8a5cd52cb129f4bcf85e11dc8833df34f4f5bcc456c99c42cd1ffa2f9 HTTP/1.1
 User-Agent: curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.13.1.0 zlib/1.2.3 libidn/1.18 libssh2/1.2.2
 Accept: */*

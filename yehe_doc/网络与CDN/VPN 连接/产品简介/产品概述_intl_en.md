@@ -12,13 +12,11 @@ Tencent Cloud VPN Connections consists of the following components:
 >
 - Customer gateway: a logical object that records the fixed public IP address of the IPsec VPN gateway on the IDC side.
 - VPN tunnel: an encrypted IPsec VPN tunnel.
-![](https://main.qcloudimg.com/raw/b408d142266092bc5f75a8bbd659c20a.png)
-
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/ThnQ702_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230228164524.png)
 
 ## SSL VPN
-
 Tencent Cloud SSL VPN Connections consists of the following components:
 - SSL VPN gateway: a VPN gateway using the SSL protocol
-- SSL VPN server: a module providing SSL services
-- SSL VPN client: providing a certificate for connecting the mobile client to the server
-![](https://qcloudimg.tencent-cloud.cn/raw/9a76dba7981cba360851e3ac28edaf32.png)
+- SSL VPN server: a service module that provides SSL services and is used to encapsulate and de-encapsulate data packets and negotiate the communication port, encryption algorithm, and IP ranges for interconnection.
+- SSL VPN client: a VPN client that is deployed on user terminals and is considered a logical instance on Tencent Cloud.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/vLki069_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230228164543.png)

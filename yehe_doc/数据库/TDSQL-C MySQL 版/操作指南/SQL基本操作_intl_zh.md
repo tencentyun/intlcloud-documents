@@ -1,6 +1,8 @@
+本文为您列举了部分常用 SQL 命令。
 
-## TDSQL-C（兼容 MySQL 版）SQL 基本操作
-### 查询版本
+如需了解更详细的 SQL 命令信息，包括命令参数和限制条件等，请参见 [MySQL 官方指南](https://dev.mysql.com/doc/refman/5.7/en/?spm=a2c4g.11186623.0.0.1987457aTFGg7y)。
+
+## 查询版本
 方法一：
 ```
 MySQL [(none)]> SELECT CYNOS_VERSION();
@@ -32,87 +34,22 @@ MySQL [(none)]> SHOW VARIABLES LIKE 'CYNOS_VERSION';
 1 row in set (0.01 sec)
 ```
 
-## TDSQL-C（兼容 PostgreSQL 版）SQL 基本操作
+## 数据库相关
 
-### 查询版本
-```
-postgres=# select cynosdb_version(); cynosdb_version
-————————
- CynosDB 1.0
-(1 row)
-```
+| 命令 | 示例 | 
+|---------|---------|
+| 创建数据库并指定字符集 | `CREATE TABLE db01 DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci;` |
+| 删除数据库 | `DROP TABLE db01;` |
 
+## 帐号相关
 
-### 建表使用
-```
-postgres=# create table x(x1 int, x2 int);
-CREATE TABLE
-
-postgres=# insert into x values(1, 2);
-INSERT 0 1
-
-postgres=# update x set x1 = 1;
-UPDATE 1
-```
-
-### 创建视图
-```
-postgres=# create view v_x as select * from x;
-CREATE VIEW
-
-postgres=# select * from v_x;
-
- x1 | x2
-——+——
-  1 |  2
-(1 row)
-```
-
-### 查询使用
-```
-postgres=# select * from x;
+| 命令 | 示例 | 
+|---------|---------|
+| 创建帐号 | `CREATE USER 'username'@'host' IDENTIFIED BY 'password';` | 
+| 删除帐号 | `DROP USER 'username'@'host';` | 
+| 赋权 | `GRANT SELECT ON db01.* TO 'username'@'host';` | 
+| 查询数据库中的帐号 | `SELECT user,host,password FROM mysql.user_view;`<br>或<br>`show grants for xxx;` | 
+| 权限回收 | 收回全部权限：`REVOKE ALL PRIVILEGES,GRANT OPTION FROM 'username'@'host';`<br>收回指定权限：`REVOKE UPDATE ON *.* FROM 'username'@'host';` | 
 
 
- x1 | x2
-——+——
-  1 |  2
-(1 row)
-```
-
-### 系统表
-TDSQL-C 完全支持 PG10 系统表，例如 pg_class, pg_proc 等。
-
-### GUC 参数
-TDSQL-C 兼容 PG10 的 GUC 参数，使用 SHOW 或者 SET 命令可以显示和设置 GUC 参数。
-
-### index
-TDSQL-C 支持多种索引：B-tree、Hash、GiST、SP-GiST、GIN 以及 BRIN，默认的 CREATE INDEX 创建的是 B-tree 索引。
-
-### 多列和单列索引
-```
-postgres=# CREATE TABLE test2 (
-postgres(#   major int,
-postgres(#   minor int,
-postgres(#   name varchar
-postgres(# );
-CREATE TABLE
-```
-
-### 支持多列索引
-```
-postgres=# CREATE INDEX test2_mm_idx ON test2 (major, minor);
-CREATE INDEX
-```
-### 支持单列索引
-```
-postgres=# CREATE INDEX test2_mm ON test2 (name);
-CREATE INDEX
-```
-
-### 表达式索引
-与 PG10 兼容，TDSQL-C 支持表达式索引。
-```
-postgres=# CREATE INDEX test2_expr ON test2 ((major + minor));
-CREATE INDEX
-```
 

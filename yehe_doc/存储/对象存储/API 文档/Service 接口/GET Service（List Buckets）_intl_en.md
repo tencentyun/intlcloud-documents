@@ -42,66 +42,66 @@ Authorization: Auth String
 
 > ?
 > - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
-> - Host: To query the list of all buckets, set it to `service.cos.myqcloud.com`. To query the list of buckets in a specified region, set it to `cos.&lt;Region>.myqcloud.com`, where &lt;Region> is a COS available region (see [Regions and Access Endpoitns](https://www.tencentcloud.com/document/product/436/6224)).
+> - Host: To query the list of all buckets, set it to `service.cos.myqcloud.com`. To query the list of buckets in a specified region, set it to `cos.&lt;Region>.myqcloud.com`, where &lt;Region> is a COS available region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
 
 #### Request parameters
 
-GET Service can filter buckets by bucket tag, region, and creation time based on request parameters. If buckets are to be filtered by bucket tag, only one bucket tag is allowed. If a bucket contains multiple bucket tags, the bucket is returned as long as any of them is the bucket tag specified by users.
+`GetService` supports filtering buckets by bucket tag, region, and creation time through request parameters. To filter buckets by tag, only one tag can be passed in. If a bucket has multiple tags, as long as any of them is hit, the bucket will be returned.
 
 | Field |  Description | Type | Required |
 | --- | --- | --- | --- |
-|tagkey | Bucket tag based on which buckets are to be filtered. Only one bucket tag is allowed. `tagkey` is used to pass in a tag key. | string | No |
-|tagvalue | Bucket tag based on which buckets are to be filtered. Only one bucket tag is allowed. `tagvalue` is used to pass in a tag value. | string | No |
-|region | Region based on which buckets are to be filtered, for example, `region=ap-beijing`. For more information on regions supported by COS, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).| string | No |
-|create-time | GMT timestamp, which is used together with the `range` parameter. This parameter specifies the creation time based on which buckets are to be filtered, for example, `create-time=1642662645`. |Timestamp | No |
-|range | Used together with the `create-time` parameter. This parameter specifies the creation time based on which buckets are to be filtered. Valid values: `lt` (creation time earlier than `create-time`), `gt` (creation time later than `create-time`), `lte` (creation time earlier than or equal to `create-time`), `gte` (creation time later than or equal to `create-time`) | string | No |
+|tagkey | Filters buckets by bucket tag. Only one tag can be passed in. `tagkey` is used to pass in the tag key. | string | No|
+|tagvalue | Filters buckets by bucket tag. Only one tag can be passed in. `tagvalue` is used to pass in the tag value. | string | No|
+|region | Filters buckets by region, such as `region=ap-beijing`. For the regions supported by COS, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | string | No |
+|create-time | GMT timestamp, which is used together with the `range` parameter to filter buckets by creation time, such as `create-time=1642662645`. |Timestamp | No |
+|range | Filters buckets by creation time together with the `create-time` parameter. Enumerated values: lt (creation time before `create-time`), gt (creation time after `create-time`), lte (creation time before or at `create-time`), gte (creation time after or at `create-time`). | string | No |
 
 
-If bucket tag-based authorization is different from GET Service authorization, the authentication and responses of GET Service requests are as follows. For information on the tag authorization method, see [Authorizing Sub-Account to Get Buckets by Tag] (https://intl.cloud.tencent.com/document/product/436/30931).
+When the bucket tag authorization is different from the `GetService` authorization, the authentication and response of the `GetService` request are as follows:
 
 <table>
     <tr>
-        <th>Bucket Tag-based Authorization</th>
-        <th>GET Service Authorization</th>
-        <th>GET Service Request</th>
+        <th>Bucket tag Authorization Status</th>
+        <th>`GetService` Authorization Status</th>
+        <th>`GetService` Request</th>
         <th>Response</th>
     </tr>
     <tr>
-        <td rowspan="4">The root account is authorized through the bucket tag-based authorization, and the sub-account is authorized to perform operations on resources of the bucket tag `tagA`.</td>
-        <td rowspan="2">GET Service permission is not granted.</td>
-        <td>Carries the bucket tag `tagA`</td>
-        <td>List of buckets containing the bucket tag `tagA`</td>
+        <td rowspan="4">The root account passes the bucket tag authorization and grants the sub-account the resource operation permission of the bucket tag `tagA`. </td>
+        <td rowspan="2">`GetService` permission not granted.</td>
+        <td>With bucket tag parameter `tagA`</td>
+        <td>List of buckets containing bucket tag `tagA`</td>
     </tr>
     <tr>
-        <td>Not carry the bucket tag</td>
+        <td>Without bucket tag parameter</td>
         <td>Access Denied</td>
     </tr>
     <tr>
-        <td rowspan="2">GET Service permission is granted.</td>
-        <td>Carries the bucket tag `tagA`</td>
-        <td>List of buckets containing the bucket tag `tagA`</td>
+        <td rowspan="2">`GetService` permission granted</td>
+        <td>With bucket tag parameter `tagA`</td>
+        <td>List of buckets containing bucket tag `tagA`</td>
     </tr>
     <tr>
-        <td>Not carry the bucket tag</td>
+        <td>Without bucket tag parameter</td>
         <td>List of all buckets</td>
     </tr>
     <tr>
-        <td rowspan="4">The root account is not authorized through the bucket tag-based authorization, and the sub-account is not authorized to perform operations on resources of the bucket tag `tagA`.</td>
-        <td rowspan="2">GET Service permission is not granted.</td>
-        <td>Carries the bucket tag `tagA`</td>
+        <td rowspan="4">The root account doesn't pass the bucket tag authorization or grant the sub-account the resource operation permission of the bucket tag `tagA`. </td>
+        <td rowspan="2">`GetService` permission not granted.</td>
+        <td>With bucket tag parameter `tagA`</td>
         <td>Access Denied</td>
     </tr>
     <tr>
-        <td>Not carry the bucket tag</td>
+        <td>Without bucket tag parameter</td>
         <td>Access Denied</td>
     </tr>
     <tr>
-        <td rowspan="2">GET Service permission is granted.</td>
-        <td>Carries the bucket tag `tagA`</td>
-        <td>List of buckets containing the bucket tag `tagA`</td>
+        <td rowspan="2">`GetService` permission granted</td>
+        <td>With bucket tag parameter `tagA`</td>
+        <td>List of buckets containing bucket tag `tagA`</td>
     </tr>
     <tr>
-        <td>Not carry the bucket tag</td>
+        <td>Without bucket tag parameter</td>
         <td>List of all buckets</td>
     </tr>
 </table>
@@ -176,7 +176,7 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------------------------------------- | ------------------------------------------------------------ | ------ |
 | Name  | ListAllMyBucketsResult.Buckets.Bucket | Bucket name in the format of `<BucketName-APPID>`<br>Example: `examplebucket-1250000000` | string |
-| Location | ListAllMyBucketsResult.Buckets.Bucket | Region of the bucket. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).<br>Example: `ap-beijing`, `ap-hongkong`, `eu-frankfurt` | Enum   |
+| Location | ListAllMyBucketsResult.Buckets.Bucket | Region of the bucket. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).<br>Example: `ap-beijing`, `ap-hongkong`, `eu-frankfurt` | Enum   |
 | CreationDate | ListAllMyBucketsResult.Buckets.Bucket | Bucket creation time in ISO 8601 format. Example: `2019-05-24T10:56:40Z`    | date   |
 
 #### Error codes
@@ -238,7 +238,7 @@ x-cos-request-id: NWNlN2RjYjdfOGFiMjM1MGFfNTVjMl8zMmI1****
 </ListAllMyBucketsResult>
 ```
 
-#### Example 2. Querying the list of buckets in a specified region (filtering based on region)
+#### Example 2. Querying the list of buckets in a specific region (filtered by domain name)
 
 #### Request
 
@@ -282,7 +282,7 @@ x-cos-request-id: NWNlN2RjYjdfZjhjODBiMDlfOWNlNF9hYzc2****
 ```
 
 
-#### Example 3. Querying the list of buckets in a specified region (filtering based on request parameters)
+#### Example 3. Querying the list of buckets in a specific region (filtered by request parameter)
 
 
 #### Request
@@ -329,10 +329,10 @@ x-cos-request-id: NWNlN2RjYjdfZjhjODBiMDlfOWNlNF9hYzc2****
 ```
 
 
-#### Example 4. Filtering the list of buckets based on a specified tag
+#### Example 4. Filtering buckets by the specified tag
 
 
-The tag of the bucket examplebucket-1250000000 is `<key1, value1>`, and the tags of the bucket examplebucket1-1250000000 are `<key1, value1>` and `<key2, value2>`.
+The tag of bucket `examplebucket-1250000000` is `<key1, value1>`, and the tags of bucket `examplebucket1-1250000000` are `<key1, value1>` and `<key2, value2>`.
 
 #### Request
 
@@ -380,9 +380,9 @@ x-cos-request-id: NjM1MGY4ZTRfMWViMjM1MGFfYjg3MV8xNjdk****
 ```
 
 
-#### Example 5. Filtering the list of buckets based on creation time
+#### Example 5. Filtering buckets by creation time
 
-List buckets whose creation time is earlier than `2022-1-20 15:10:45`. 
+List buckets created before `2022-1-20 15:10:45`.
 
 #### Request
 

@@ -2,17 +2,17 @@
 
 ## 背景信息
 本文以下图场景为例，为您介绍 Windows、MAC 和 Linux 客户端如何使用 SSL VPN 连接VPC。
-![](https://qcloudimg.tencent-cloud.cn/raw/e91b07b11273ad5cf40a610791f81599.jpg)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Wwus289_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230301163824.png)
 
 ## 配置流程
 客户端通过 SSL VPN 连接 VPC 流程图如下所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/2a6ce14b21ca082ea9a1dd5a0d23c9b3.jpg)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/EAnk058_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230301164021.png)
 
 ## 步骤1：创建 SSL VPN 网关
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)。
 2. 在左侧目录中单击 **VPN 连接** > **VPN 网关**，进入管理页。
-3. 在 VPN 网关管理页面，单击**+新建**。
-4. 在弹出的新建 VPN 网关对话框中，配置如下网关参数。</br><img src="" width="60%">
+3. 在 VPN 网关管理页面，单击 **+新建** 。
+4. 在弹出的新建 VPN 网关对话框中，配置如下网关参数。
 <table>
 <tr>
 <th>参数名称</th>
@@ -48,7 +48,8 @@
 </tr>
 <tr>
 <td>SSL 连接数</td>
-<td>连接客户端的数量。</td>
+<td>连接客户端的数量，一个 SSL 客户端仅允许一个用户连接，不支持一个 SSL 客户端连接多个客户。
+</td>
 </tr>
 <tr>
 <td>计费方式</td>
@@ -56,16 +57,17 @@
 </tr>
 </table>
 5. 完成网关参数设置后，单击**创建**。
-![]()
 
-## 步骤2：创建 SSL 服务端
+## 步骤2：创建 SSL 服务端[](id:step2)
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)。
 2. 在左侧目录中单击 **VPN 连接** > **SSL 服务端**，进入管理页面。
-3. 在 SSL 服务端管理页面，单击**+新建**。
-4. 在弹出的新建 SSL 服务端对话框中，配置如下参数。</br><img src="" width="60%">
+>?一个VPN网关仅支持关联一个SSL 服务端，详情请参见 [使用限制](https://intl.cloud.tencent.com/document/product/1037/32682)。
+>
+3. 在 SSL 服务端管理页面，单击 **+新建** 。
+4. 在弹出的新建 SSL 服务端对话框中，配置如下参数。
 <table>
 <tr>
-<th>参数名称</th>
+<th width="15%">参数名称</th>
 <th>参数说明</th>
 </tr>
 <tr>
@@ -86,7 +88,8 @@
 </tr>
 <tr>
 <td>客户端网段</td>
-<td>分配给用户移动端进行通信的网段，该网段请勿与腾讯侧 VPC CIDR 冲突。</td></tr>
+<td>分配给用户移动端进行通信的网段，该网段请勿与腾讯侧 VPC CIDR 冲突，同时也不能与您本地的网段冲突。</td>
+</tr>
 <tr>
 <td>协议</td>
 <td>服务端传输协议。</td>
@@ -109,24 +112,22 @@
 </tr>
 </table>
 5. 完成网关参数设置后，单击**创建**。
-![]()
 
 ## 步骤3：创建 SSL 客户端[](id:step3)
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)。
 2. 在左侧目录中单击 **VPN 连接** > **SSL 客户端**，进入管理页面。
-3. 在 SSL 客户端管理页面，单击**+新建**。
+3. 在 SSL 客户端管理页面，单击 **+新建** 。
 4. 在弹出的 SSL 客户端对话框中，配置如下参数。
-![]()
 5. 完成 SSL 客户端参数设置后，单击**确定**，当证书状态为可用表示创建完成。
 6. 在 SSL 客户端页面，找到已创建的客户端证书，然后在操作列单击**下载配置**。
-![]()
+>?一个 SSL 客户端仅允许一个用户连接，不支持一个 SSL 客户端连接多个客户。
+>
 
 ## 步骤4：配置 VPC 内路由
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)。
 2. 在左侧目录中单击路由表，进入管理页面。
 3. 在列表中，单击需要修改的路由表 ID，进入详情页，若需新建路由表，可参考 [创建自定义路由表](https://intl.cloud.tencent.com/document/product/215/35236)。
 4. 单击**新增路由策略**，在弹出框中，配置路由策略。
-![]()
 <table>
 <tr>
 <th>参数名称</th>
@@ -134,7 +135,7 @@
 </tr>
 <tr>
 <td>目的端</td>
-<td>填写创建 SSL 服务端时对应的对端网段。</td>
+<td>请填写 <a href="#step2">步骤2：创建 SSL 服务端</a> 中创建时配置的客户端网段。</td>
 </tr>
 <tr>
 <td>下一跳类型</td>
@@ -151,13 +152,13 @@
 
 
 ### Windows 客户端
-1. 首先在 [OpenVPN 官方下载页面 ](https://openvpn.net/vpn-client/)下载并安装 OpenVPN Connect。
+1. 首先在 OpenVPN 官方下载页面下载并安装 OpenVPN Connect。
 ![](https://qcloudimg.tencent-cloud.cn/raw/949a9e0031b880397bca986ac8eedfff.png)
 2. SSL 客户端安装完成后，选择 “Import Profile” 菜单中的 “FILE” 页面，上传 [步骤3](#step3) 已下载的 SSL 客户端配置文件（.ovpn 格式）。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f55cc9eebb56b47511a063eb1135556a.png)
 
 ### MAC 客户端
-1. 首先在[ OpenVPN 官方下载页面 ](https://openvpn.net/vpn-client/)下载并安装 OpenVPN Connect。 
+1. 首先在 OpenVPN 官方下载页面下载并安装 OpenVPN Connect。 
 ![](https://qcloudimg.tencent-cloud.cn/raw/d08446a7176b855c0e19a77dd95cfdc3.png)
 2. SSL 客户端安装完成后，选择 “Import Profile” 菜单中的 “FILE” 页面，上传 [步骤3](#step3) 已下载的 SSL 客户端配置文件（.ovpn 格式）。
 ![](https://qcloudimg.tencent-cloud.cn/raw/efade3f1b6290cae59a337e0927fe7c5.png)

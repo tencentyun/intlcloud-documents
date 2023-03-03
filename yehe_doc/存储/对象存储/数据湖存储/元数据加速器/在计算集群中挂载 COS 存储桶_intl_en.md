@@ -1,16 +1,16 @@
 ## Overview
 
-COS can implement access over the HDFS protocol by enabling metadata acceleration for a bucket. Then, it will generate a mount target for the bucket. You can download the HDFS client from [GitHub](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar) and enter the mount target information in the client to mount COS. This document describes how to mount a bucket with metadata acceleration enabled in a computing cluster.
+In COS, you can enable metadata acceleration to gain the HDFS protocol access capability. After metadata acceleration is enabled, COS generates a mount point for your bucket. Then you can download the [HDFS client](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar) and use the mount point in the client to mount COS. This document introduces how to mount a bucket with metadata acceleration enabled to a computing cluster.
 
 >! 
-> - Hadoop-COS supports access to metadata acceleration buckets in the format of `cosn://bucketname-appid/` starting from v8.1.5.
+>- Hadoop-COS supports access to metadata acceleration buckets in the format of `cosn://bucketname-appid/` starting from v8.1.5.
 > - The metadata acceleration feature can only be enabled during bucket creation and cannot be disabled once enabled. Therefore, **carefully consider** whether to enable it based on your business conditions. You should also note that legacy Hadoop-COS packages cannot access metadata acceleration buckets.
 > 
 
 ## Prerequisites
 
-- Java 1.8 available at [Java Downloads](https://www.oracle.com/java/technologies/downloads/) has been installed on the server or container that needs to be mounted in the computing cluster.
-- The server or container to be mounted in the computing cluster has been granted the access. To this end, you need to specify the accessible VPC and IP address in the HDFS permission configuration.
+- [Java 1.8](https://www.oracle.com/java/technologies/downloads/) is installed on the computing cluster's machine or container to be mounted.
+- The computing cluster's machine or container to be mounted is authorized with the access permission. You need to specify the VPC and IP that can be accessed in the HDFS permission configuration.
 - Descriptions of JAR dependency packages:
  1. [chdfs_hadoop_plugin_network-2.8.jar](https://github.com/tencentyun/chdfs-hadoop-plugin/tree/master/jar) v2.7 or later.
  2. [cos_api-bundle.jar](https://search.maven.org/artifact/com.qcloud/cos_api-bundle/5.6.69/jar) v5.6.69 or later.
@@ -25,8 +25,13 @@ COS can implement access over the HDFS protocol by enabling metadata acceleratio
 >! The EMR environment comes with JAR dependency packages, which don't need to be installed manually. You can directly access metadata acceleration buckets through POSIX semantics. If you need to use the S3 protocol for access, change the `fs.cosn.posix_bucket.fs.impl` configuration item as detailed below.
 >
 5. Edit the `core-site.xml` file by adding the following basic configuration items:
+>!
+>- We recommend you use a sub-account key or temporary key instead of a permanent key to improve the business security. When authorizing a sub-account, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid unexpected data leakage.
+>- If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission, including allowed operations, scope of resources, and conditions such as access IP, on the permanent key so as to improve the usage security.
+
 ```
 <!-- API key information of the account, which can be viewed in the [CAM console](https://console.cloud.tencent.com/capi). -->
+<!-- We recommend you use a sub-account key or temporary key for configuration to improve the configuration security. When authorizing a sub-account, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972). -->
 <property>
 		 <name>fs.cosn.userinfo.secretId/secretKey</name>
 		 <value>AKIDxxxxxxxxxxxxxxxxxxxxx</value>
@@ -56,13 +61,13 @@ COS can implement access over the HDFS protocol by enabling metadata acceleratio
 		 <value>/tmp/hadoop_cos</value>
 </property>
 ```
-6. Sync `core-site.xml` to all `hadoop` nodes.
->?For steps 3 and 4 in an EMR cluster, you can simply modify the HDFS configuration in the component management section in the EMR console.
+6. Sync `core-site.xml` to all Hadoop nodes.
+>?For an EMR cluster, you only need to modify the HDFS configuration in component management in the EMR console for the above steps 3 and 4.
 >
 7. Run the `hadoop fs -ls cosn://${bucketname-appid}/` command on the `hadoop fs` command line, where `bucketname-appid` is the mount address, i.e., the bucket name. If the file list is displayed normally, the COS bucket has been successfully mounted.
 8. You can also use other configuration items of `hadoop` or use an `mr` job to run data processing jobs in COS metadata acceleration buckets. For an `mr` job, you can run `-Dfs.defaultFS=ofs://${bucketname-appid}/` to change the default input/output file system of this job to the specified bucket.
 
-## Configuration Item Description
+## Configuration Items
 
 >? You can access metadata acceleration buckets through POSIX semantics or S3 protocol. We recommend you use POSIX for better performance.
 >
@@ -92,7 +97,7 @@ COS can implement access over the HDFS protocol by enabling metadata acceleratio
 | ------------------------ | ------------------ | ---------------- |
 | fs.cosn.trsf.fs.AbstractFileSystem.ofs.impl | com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter                      |      Implementation class for metadata acceleration bucket access |
 | fs.cosn.trsf.fs.ofs.impl                    | com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter                |     Implementation class for metadata acceleration bucket access |
-| fs.cosn.trsf.fs.ofs.tmp.cache.dir           | A value in the format of `/data/emr/hdfs/tmp/posix-cosn/` | Set an existing local directory such as `/data/emr/hdfs/tmp/posix-cosn/`, where temporary files generated during execution will be placed. Meanwhile, be sure to configure sufficient space and permissions for this directory on each node. |
+| fs.cosn.trsf.fs.ofs.tmp.cache.dir           | A value in the format of `/data/emr/hdfs/tmp/posix-cosn/` | Set an existing local directory such as `"/data/emr/hdfs/tmp/posix-cosn/"`, where temporary files generated during execution will be placed. Meanwhile, be sure to configure sufficient space and permissions for this directory on each node. |
 | fs.cosn.trsf.fs.ofs.user.appid              | A value in the format of `12500000000`  | Your `appid`, which is required. |
 | fs.cosn.trsf.fs.ofs.bucket.region           | A value in the format of `ap-beijing`  | Your bucket region, which is required. |
 
@@ -103,10 +108,10 @@ The following configuration items are required for the S3 access mode. For other
 
 | Configuration Item | Content | Description |
 | ------------------------ | ------------------ | ---------------- |
-| fs.cosn.posix_bucket.fs.impl         | org.apache.hadoop.fs.CosNFileSystem |      This parameter is fixed at `com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter` for the POSIX access mode (default mode) or `org.apache.hadoop.fs.CosNFileSystem` for the S3 access mode, respectively. |
+| fs.cosn.posix_bucket.fs.impl         | org.apache.hadoop.fs.CosNFileSystem |      This parameter is fixed at `com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter` for the POSIX access mode (default mode) or `org.apache.hadoop.fs.CosNFileSystem` for the S3 access mode, respectively.                                        |
 
 
-### 4. Notes
+### 5. Notes
 1. You cannot use a legacy Hadoop-COS JAR package to access metadata acceleration buckets.
 2. To access metadata acceleration buckets in POSIX mode of Hadoop-COS 8.1.5 or earlier, you need to disable ranger verification in the console.
 

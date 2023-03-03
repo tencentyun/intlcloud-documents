@@ -1,7 +1,7 @@
 ## Overview
 This page shows the general transcoding and Top Speed Codec (TSC) transcoding resource packs you have purchased and their usage.
 ## Viewing Resource Packs
-Log in to the [MPS console](https://console.cloud.tencent.com/mps) and select [Resource Pack Management](https://console.cloud.tencent.com/mps/resources?tab=package) on the left sidebar. Under the **Resource packs** tab, you can view the information of the resource packs you have purchased.
+Log in to the [MPS console](https://console.tencentcloud.com/mps) and select [Resource Packs](https://console.tencentcloud.com/mps/resources?tab=package) on the left sidebar. Under the **Resource packs** tab, you can view the information of the resource packs you have purchased.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c81fcdc9a8c3fe4e2c31713c38661039.png)
 
 <table>
@@ -52,7 +52,7 @@ Log in to the [MPS console](https://console.cloud.tencent.com/mps) and select [R
 </tbody></table>
 
 ## Viewing Usages
-Log in to the [MPS console](https://console.cloud.tencent.com/mps) and select [Resource Pack Management](https://console.cloud.tencent.com/mps/resources?tab=package) on the left sidebar. Under the **Usage details** tab, you can view the usage details of your resource packs.
+Log in to the [MPS console](https://console.tencentcloud.com/mps) and select [Resource Packs](https://console.tencentcloud.com/mps/resources?tab=package) on the left sidebar. Under the **Usage details** tab, you can view the usage details of your resource packs.
 ![](https://qcloudimg.tencent-cloud.cn/raw/583c667367a63573868e1d18a44e0e23.png)
 You can view the deductions of a specific resource pack (**resource pack ID**) in a specific time period (**deduction time**).
 

@@ -4,14 +4,14 @@ When using COS, you may need to use a temporary key to grant users permissions t
 
 The **principle of least privilege** means that when granting permission, you must specify the scope of the permission granted to the **specified user** for performing **what operation** and access **what resource** under **what conditions**.
 
-## Notes
-You are advised to strictly comply with the principle of least privilege to ensure that a user can only perform the specified operations (e.g., `action:GetObject`) or access the specified resources (e.g., `resource:examplebucket-1250000000/exampleobject.txt`). 
-To prevent data security risks caused by unexpected and unauthorized operations with excessive permissions, it is strongly recommended that you avoid authorizing a user to access all resources (e.g., `resource:*`) or perform all operations (e.g., `action:*`).
+## Limits
+We recommend you strictly follow the principle of least privilege to ensure that a user can only perform the specified operations (such as `action:GetObject`) or access the specified resources (such as `resource:examplebucket-1250000000/exampleobject.txt`). 
+To prevent data security risks caused by unexpected and unauthorized operations due to excessive permissions, we strongly recommend you not authorize a user to access all resources (such as `resource:*`) or perform all operations (such as `action:*`).
 
 Below are some potential data security risks:
-- Data leakage: if you want to authorize a user to download the specified resources such as `examplebucket-1250000000/data/config.json` and `examplebucket-1250000000/video/` but include `examplebucket-1250000000/*` in the permission policy, then all objects in the bucket can be downloaded without your authorization, leading to unexpected data leakage.
-- Data overwriting: if you want to authorize a user to upload `examplebucket-1250000000/data/config.json` and `examplebucket-1250000000/video/` but include `examplebucket-1250000000/*` in the permission policy, then all objects in the bucket can be uploaded without your authorization, which may overwrite unintended objects. To avoid this risk, in addition to following the principle of least privilege, you can retain all versions of data for traceability as instructed in [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
-- Permission leakage: if you want to authorize a user to list the objects in the bucket (`cos:GetBucket`) but configured `cos:*` in the permission policy, then all operations on the bucket will be allowed, including reauthorizing the bucket, deleting objects, and deleting the bucket, which puts your data at extremely high risk.
+- Data leakage: If you want to authorize a user to download the specified resources such as `examplebucket-1250000000/data/config.json` and `examplebucket-1250000000/video/` but include `examplebucket-1250000000/*` in the permission policy, then all objects in the bucket can be downloaded without your authorization, leading to unexpected data leakage.
+- Data overwriting: If you want to authorize a user to upload `examplebucket-1250000000/data/config.json` and `examplebucket-1250000000/video/` but include `examplebucket-1250000000/*` in the permission policy, then all objects in the bucket can be uploaded without your authorization, which may overwrite unintended objects. To avoid this risk, in addition to following the principle of least privilege, you can retain all versions of data for traceability as instructed in [Overview](https://intl.cloud.tencent.com/document/product/436/19883).
+- Permission leakage: If you want to authorize a user to list the objects in the bucket (`cos:GetBucket`) but configured `cos:*` in the permission policy, then all operations on the bucket will be allowed, including reauthorizing the bucket, deleting objects, and deleting the bucket, which puts your data at extremely high risk.
 
 
 ## Usage Guide
@@ -22,18 +22,18 @@ Under the principle of least privilege, you should specify the following informa
 - statement: enter the corresponding parameters.
 	-  effect: you must specify whether the policy is to "allow" or "deny".
 	-  action: you must specify the action to allow or deny. It can be one API operation or a set of API operations.
-	-  resource: you must specify the resource authorized by the policy. A resource is described in a six-piece format. You can set the resource scope as the specified file (e.g., `exampleobject.jpg`) or the specified directory (e.g., `examplePrefix/*`). Unless it is required by your business, please do not grant any user access to all resources using the `*` wildcard.
+	- resource: You must specify the resource for which permission is granted. A resource is described in a six-segment format. You can set the resource as a specific file, e.g., `exampleobject.jpg` or a directory, e.g., `examplePrefix/*`. Unless needed, do not grant any user the access to all of your resources using the `*` wildcard.
 	-  condition: it describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address.
 
 ### Least privilege guide for temporary keys
 
-When applying for a temporary key, you can set the `policy` field to grant limited permissions on operations and resources. For more information about how to generate a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+When applying for a temporary key, you can set the `policy` field as described in [GetFederationToken](https://intl.cloud.tencent.com/document/product/1150/49452) to grant limited permissions on operations and resources. For more information about how to generate a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
 #### Authorization example
 
 #### Granting a user permission to access the specified object using the SDK for Java
 
-If you want to use the SDK for Java to grant a user permission to download the `exampleObject.txt` object in the `examplebucket-1250000000` bucket, the configuration code should be as follows:
+If you want to use the Java SDK to grant a user permission to download the `exampleObject.txt` object in the `examplebucket-1250000000` bucket, the configuration code should be as follows:
 
 ```
 // Import `java sts sdk` using the integration method with Maven as described on GitHub 
@@ -46,21 +46,23 @@ public class Demo {
         TreeMap<String, Object> config = new TreeMap<String, Object>();
 
         try {
-            // Replace with your own SecretId 
-            config.put("SecretId", "AKIDHTVVaVR6e3");
-            // Replace with your own SecretKey
-            config.put("SecretKey", "PdkhT9e2rZCfy6");
+            String secretId = System.getenv("secretId");// User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            String secretKey = System.getenv("secretKey");// User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+            // Replace it with your own SecretId 
+            config.put("SecretId", secretId);
+            // Replace it with your own SecretKey
+            config.put("SecretKey", secretKey);
 
             // Validity period of the temporary key, in seconds. Default value: 1800; maximum value: 7200
             config.put("durationSeconds", 1800);
 
-            // Replace with your own bucket
+            // Replace it with your own bucket
             config.put("bucket", "examplebucket-1250000000");
-            // Replace with the region where your bucket resides
+            // Replace it with the region where your bucket resides
             config.put("region", "ap-guangzhou");
 
-            // Change it to the allowed path prefix such as `a.jpg`, `a/*`, or`*`. You can determine the specific path to which files can be uploaded based on your login status
-            // If "*" is entered, the user will be allowed to access all resources; unless it is required by your business, please grant the user only the corresponding permission based on the principle of least privilege.
+            // Change it to the allowed path prefix (such as "a.jpg", "a/*", or "*"). You can determine the upload path based on your login status.
+            // If "*" is entered, you allow the user to access all resources. Unless otherwise necessary, grant the user only the limited permissions that are needed following the principle of least privilege.
             config.put("allowPrefix", "exampleObject.txt");
 
             // List of key permissions. The following permissions are required for simple upload, upload using a form, and multipart upload. For other permissions, please visit https://cloud.tencent.com/document/product/436/31923
@@ -73,7 +75,7 @@ public class Demo {
             JSONObject credential = CosStsClient.getCredential(config);
             // If it succeeds, the temporary key information will be returned and printed out as shown below:
             System.out.println(credential);
-        } catch (Exception e) {
+        } catch (Exception e){
             // If it fails, an exception will be thrown
             throw new IllegalArgumentException("no valid secret !");
         }
@@ -90,7 +92,7 @@ If you want to use an API to grant a user permission to download the `exampleObj
   "version": "2.0",
   "statement": [
     {
-      "action": [
+      "action":[
         "name/cos:GetObject"
       ],
       "effect": "allow",
@@ -159,7 +161,6 @@ System.out.println(url.toString());
 cosClient.shutdown();
 ```
 
-
 ### Least privilege guide for user policy
 
 A user policy is a user permission policy created in the [CAM Console](https://console.cloud.tencent.com/cam/policy) to grant a user permission to access certain resources in COS. For more information, please see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
@@ -172,14 +173,14 @@ If you want to grant an account whose UIN is `100000000001` permission to downlo
 ```shell
 {
    "version": "2.0",
-   "principal": {
-      "qcs": [
+   "principal":{
+      "qcs":[
          "qcs::cam::uin/100000000001:uin/100000000001"
       ]
    },
     "statement": [
         {
-            "action": [
+            "action":[
                 "name/cos:GetObject"
             ],
             "effect": "allow",
@@ -193,19 +194,19 @@ If you want to grant an account whose UIN is `100000000001` permission to downlo
 
 #### Granting a sub-account permission to access the specified directory
 
-If you want to grant a sub-account whose UIN is `100000000011` (root account UNI: `100000000001`) permission to download the objects in the `examplePrefix` directory in the `examplebucket-1250000000` bucket, the access policy should be as follows:
+If you want to grant a sub-account whose UIN is `100000000011` (root account UIN: `100000000001`) permission to download the objects in the `examplePrefix` directory in the `examplebucket-1250000000` bucket, the access policy should be as follows:
 
 ```shell
 {
    "version": "2.0",
-   "principal": {
-      "qcs": [
+   "principal":{
+      "qcs":[
          "qcs::cam::uin/100000000001:uin/100000000011"
       ]
    },
     "statement": [
         {
-            "action": [
+            "action":[
                 "name/cos:GetObject"
             ],
             "effect": "allow",
@@ -225,22 +226,22 @@ A bucket policy is an access policy configured for a bucket to allow the specifi
 
 #### Granting a sub-account permission to access the specified objects
 
-If you want to grant a sub-account whose UIN is `100000000011` (root account UNI: `100000000001`) permission to download the `exampleObject.txt` object in the `examplebucket-1250000000` bucket and all objects in the `examplePrefix` directory, the access policy should be as follows:
+If you want to grant a sub-account whose UIN is `100000000011` (root account UIN: `100000000001`) permission to download the `exampleObject.txt` object in the `examplebucket-1250000000` bucket and all objects in the `examplePrefix` directory, the access policy should be as follows:
 
 ```shell
 {
-  "Statement": [
+  "Statement":[
     {
-      "Action": [
+      "Action":[
         "name/cos:GetObject"
       ],
       "Effect": "allow",
-      "Principal": {
-        "qcs": [
+      "Principal":{
+        "qcs":[
           "qcs::cam::uin/100000000001:uin/100000000011"
         ]
       },
-      "Resource": [
+      "Resource":[
         "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/exampleObject.txt",
         "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/examplePrefix/*"
       ]
@@ -249,4 +250,3 @@ If you want to grant a sub-account whose UIN is `100000000011` (root account UNI
   "version": "2.0"
 }
 ```
-

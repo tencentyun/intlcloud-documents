@@ -2,8 +2,7 @@
 
 在云原生时代，DevOps 理念已被广泛接受，而容器技术的兴起和普及加速了 DevOps 的落地。基于容器 DevOps 实现持续集成和持续部署，可显著提升企业的业务应用创建和交付速度，提升企业的竞争力。
 
-本文将介绍如何通过使用 TCR 交付流水线功能，与容器服务 TKE、CODING DevOps 服务联合为用户提供简单易上手的容器 DevOps 能力，可实现 [推送代码自动触发镜像构建和应用部署](https://www.tencentcloud.com/document/product/1051/52657#scene1) 或 [本地推送镜像后自动触发部署](https://www.tencentcloud.com/document/product/1051/52657#scene2)。
-![](https://qcloudimg.tencent-cloud.cn/raw/17550d36f7b536ca7e91133e2808fe64.png)
+本文将介绍如何通过使用 TCR 交付流水线功能，与容器服务 TKE、CODING DevOps 服务联合为用户提供简单易上手的容器 DevOps 能力，可实现 [推送代码自动触发镜像构建和应用部署](https://www.tencentcloud.com/document/product/1051/53613#.E5.9C.BA.E6.99.AF1.EF.BC.9A.E6.8E.A8.E9.80.81.E4.BB.A3.E7.A0.81.E5.90.8E.E8.87.AA.E5.8A.A8.E8.A7.A6.E5.8F.91.E9.95.9C.E5.83.8F.E6.9E.84.E5.BB.BA.E5.92.8C.E5.BA.94.E7.94.A8.E9.83.A8.E7.BD.B2) 或 [本地推送镜像后自动触发部署](https://www.tencentcloud.com/zh/document/product/1051/53613#.E5.9C.BA.E6.99.AF2.EF.BC.9A.E6.9C.AC.E5.9C.B0.E6.8E.A8.E9.80.81.E9.95.9C.E5.83.8F.E5.90.8E.E8.87.AA.E5.8A.A8.E8.A7.A6.E5.8F.91.E9.83.A8.E7.BD.B2)
 
 ## 前提条件
 - 已有容器镜像服务 TCR 企业版实例，并已创建镜像仓库。详情可参见 [购买企业版实例](https://intl.cloud.tencent.com/document/product/1051/35486)、[创建镜像仓库](https://intl.cloud.tencent.com/document/product/1051/35488)。

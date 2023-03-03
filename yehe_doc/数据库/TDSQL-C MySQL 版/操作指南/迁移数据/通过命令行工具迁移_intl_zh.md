@@ -1,5 +1,4 @@
-
-云原生数据库 TDSQL-C（兼容 MySQL 版）支持通过命令行工具迁移数据。
+TDSQL-C MySQL 版支持通过命令行工具迁移数据。
 
 ## [命令行工具迁移数据](id:AA)
 1. 使用 MySQL 命令行工具 mysqldump 生成待导入的 SQL 文件，方式如下：
@@ -10,7 +9,6 @@ shell > mysqldump [options] db_name [tbl_name ...] > bak_pathname
 ```
 其中，options 为导出选项，db_name 为数据库名称，tbl_name 为表名称，bak_pathname 为导出路径名。
 更多 mysqldump 导出数据说明，请参见 [MySQL 官方手册](https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html)。
-
 2. 还原数据库时，可以通过 MySQL 命令行工具进行还原，方式如下：
 ```
 shell > mysql -h hostname -P port -u username -p < bak_pathname
@@ -26,12 +24,12 @@ shell > mysql -h hostname -P port -u username -p < bak_pathname
 ![](https://main.qcloudimg.com/raw/ac73c7b6cd2dd6682dffce3cb696a3dd.png)
 
 ### Linux 系统迁移数据（通过 CVM 主机）
-CVM 主机访问数据库请参见 [访问 TDSQL-C 集群](https://intl.cloud.tencent.com/document/product/1098/40627)。
+CVM 主机访问数据库请参见 [访问 TDSQL-C 集群](https://www.tencentcloud.com/document/product/1098/51980)。
 
 1. 以云数据库上的 db_blog 数据库为例。登录 CVM 主机，使用 MySQL 命令行工具 mysqldump 生成待导入的 SQL 文件。
-![](https://main.qcloudimg.com/raw/5812d047372da1800f02a72c20a6f7e7.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/PFJ9829_51.png)
 2. 通过 MySQL 命令行工具进行还原，本例将数据还原到 CVM 服务器上。可以查看到备份的数据库已导入到目标服务器对应的数据库中。
-![](https://main.qcloudimg.com/raw/6145a7cd6c4293922088952a1170fd14.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/2PTw679_52.png)
 
 ## 导入数据文件字符集编码问题
 1. 如果云数据库导入数据文件没有指定字符集编码，以云数据库设置的字符集编码执行。

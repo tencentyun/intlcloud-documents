@@ -10,18 +10,10 @@
 ## 操作手順
 
 1. [CVMコンソール](https://console.cloud.tencent.com/cvm/index)にログインします。
-2. 左側のナビゲーションメニューバーには、【[EIP](https://console.cloud.tencent.com/cvm/eip)】をクリックし、「EIP」管理ページに入ります。
+2. 左側のナビゲーションメニューバーから【[Public IP](https://console.cloud.tencent.com/cvm/eip)】タブをクリックし、「EIP」管理ページに入ります。
 3.【Retrieve IP】をクリックします。下図に示すように：
 ![Retrieve IP](https://main.qcloudimg.com/raw/be2265a9909b939836bff2065e8acd89.png)
-4. ポップアップされた「Retrieve IP」ウィンドウで、パブリックIPアドレスを入力し、【Check】をクリックし、 IP を取り戻すことを申請できるかどうかを確認します。下図に示すように：
+4. 「Retrieve IP」ダイアログボックスで、パブリックIPアドレスを入力し、【Query】をクリックし、IPを取り戻すことを申請できるかどうかを確認します。下図に示すように：
 ![](https://main.qcloudimg.com/raw/0b1916359835f810767ec265154a758a.png)
- - はい、【Apply Now】をクリックします。
- - いいえ、取り戻す IP リソースが使用されたことを意味し、申請できません。別のIPを申請するか、【Cancel】をクリックして現在の画面を終了します。
-
-
-
-
-
-
-
-
+ - はいの場合、【Apply Now】をクリックします。
+ - いいえの場合、申請したIPアドレスがすでに使用されていることを意味し、取り戻すことができません。この場合、別のIPアドレスを申請するか、【Cancel】をクリックして画面を閉じます。

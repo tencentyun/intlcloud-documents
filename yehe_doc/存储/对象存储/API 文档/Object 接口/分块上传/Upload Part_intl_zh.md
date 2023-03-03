@@ -3,10 +3,12 @@
 Upload Part 接口请求实现将对象按照分块的方式上传到 COS。最多支持10000分块，每个分块大小为1MB - 5GB，最后一个分块可以小于1MB。
 
 > ? 
-> 1. 分块上传首先需要进行初始化，使用 [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) 接口实现，初始化后将得到一个 UploadId，唯一标识本次上传。
-> 2. 在每次请求 Upload Part 时，需要携带 partNumber 和 uploadId，partNumber 为块的编号，支持乱序上传。
-> 3. 当传入 uploadId 和 partNumber 都相同的时候，后发起上传请求的块将覆盖之前传入的块。当 uploadId 不存在时将返回404错误，NoSuchUpload。
-> 
+>- 分块上传步骤说明：
+>  1. 分块上传首先需要进行初始化，使用 [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) 接口实现，初始化后将得到一个 UploadId，唯一标识本次上传。
+>  2. 在每次请求 Upload Part 时，需要携带 partNumber 和 uploadId，partNumber 为块的编号，支持乱序上传。
+>  3. 当传入 uploadId 和 partNumber 都相同的时候，后发起上传请求的块将覆盖之前传入的块。当 uploadId 不存在时将返回404错误，NoSuchUpload。
+>- 只有主账号或者被授权 Upload Part 接口权限的子账号可以调用该接口。
+>
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -41,7 +43,7 @@ Authorization: Auth String
 ```
 
 >? 
-> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://www.tencentcloud.com/document/product/436/6224) 文档。
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 > 
 
