@@ -1,4 +1,4 @@
-## Audio/Video Transcoding Templates[](id:vtrans)
+## Audio/Video Transcoding[](id:vtrans)
 
 ### General video transcoding[](id:nvtrans)
 MPS provides preset audio/video transcoding templates, which can be added directly to a scheme. You can also click **Create template** to customize your own audio/video transcoding templates.
@@ -58,7 +58,7 @@ MPS provides preset Top Speed Codec (TSC) templates, which can be added directly
 
 
 >?
->- You can view **preset** TSC transcoding templates in [Templates > Audio/Video Transcoding Templates](https://console.tencentcloud.com/mps/templates?tab=tehd) of the MPS console.
+>- You can view **preset** TSC transcoding templates in [Templates > Audio/Video Transcoding](https://console.tencentcloud.com/mps/templates?tab=tehd) of the MPS console.
 >- If the container format is set to MP4, FLV, or HLS, video parameters are required.
 
 Templates created are displayed in the template list. You can filter, view, edit, or delete custom templates, but preset templates can be viewed only, not edited or deleted.
