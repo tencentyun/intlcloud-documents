@@ -16,7 +16,7 @@ The main processes of an OKR cycle include:
 
 ##  Launch Phase
 
-Teams implementing OKRs for the first time must confirm the implementation cycle and process, and organize OKR training for all members. If members cannot understand the OKR concept, OKRs may become another KPI tool. See  **[Three Musketeers of Agile Performance Management: OKRs, KPIs, and CFRs](http://help.coding.net/insight/posts/ea45ccf0/)** for details on the concept.
+Teams implementing OKRs for the first time must confirm the implementation cycle and process, and organize OKR training for all members. If members cannot understand the OKR concept, OKRs may become another KPI tool. 
 
 ###  Step 1: Establish a special implementation team
 
