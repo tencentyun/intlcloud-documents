@@ -1,4 +1,4 @@
-## Audio/Video Transcoding[](id:vtrans)
+## Audio/Video Transcoding Templates[](id:vtrans)
 
 ### General video transcoding[](id:nvtrans)
 MPS provides preset audio/video transcoding templates, which can be added directly to a scheme. You can also click **Create template** to customize your own audio/video transcoding templates.
