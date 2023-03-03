@@ -16,7 +16,7 @@ Este documento descreve os preços da rede pública em diferentes modos de fatur
 <td>0,12</td>
 </tr>
 <tr>
-<td>Moscou, Tóquio</td>
+<td>Tóquio</td>
 <td>0,13</td>
 </tr>
 <tr>  
