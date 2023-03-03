@@ -2,7 +2,7 @@
 You can create a template and add it to a **scheme** to process media files according to preset parameters.
 
 ## Directions
-Log in to the [MPS console](https://console.cloud.tencent.com/mps) and click **Template Management** on the left sidebar. Select the type of template you want to configure and click **Create template**.
+Log in to the [MPS console](https://console.cloud.tencent.com/mps) and click **Templates** on the left sidebar. Select the type of template you want to configure and click **Create template**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c195de9b941ac6aff0843e302743649b.png)
 
 
