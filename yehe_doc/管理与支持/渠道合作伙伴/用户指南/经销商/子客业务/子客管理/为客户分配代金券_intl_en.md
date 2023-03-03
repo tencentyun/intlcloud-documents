@@ -4,12 +4,17 @@
 >- Currently, Tencent Cloud exclusively provides vouchers at its own expense. It will review and approve the issuance of such vouchers before they are issued to customers.
 >- The total amount of issued vouchers (excluding rejected ones) cannot exceed the total voucher quota. You should use vouchers reasonably and issue them to customers only when necessary.
 
-Step 1. Currently, we only provide vouchers with costs borne by Tencent Cloud. To activate or apply for vouchers, contact your channel manager. After a voucher issuance quota is approved, you can issue vouchers to your customers.
-Step 2. Log in to [Tencent Cloud](https://intl.cloud.tencent.com/login) with your reseller account and enter the [Partner Center](https://console.intl.cloud.tencent.com/partners).
-Step 3. On the left sidebar, select **Customer Business** > **Voucher Management** to enter the voucher issuance page.
-![](https://qcloudimg.tencent-cloud.cn/raw/fa75a34056508881e3cb2d519eb69f48.png)
+Step 1. Currently, Tencent Cloud exclusively provides vouchers at its own expense. To activate or apply for vouchers, contact your channel manager. After a voucher issuance quota is approved, you can issue vouchers to your customers.
+Step 2. Log in to [Tencent Cloud](https://www.tencentcloud.com/login) with your partner account and enter the [Partner Center](https://console.intl.cloud.tencent.com/partners).
+Step 3. On the left sidebar, select **Customer Business > Voucher Management** to enter the voucher issuance page.
+![](https://qcloudimg.tencent-cloud.cn/raw/a6861563e618bfc05057697fed2e43ef.png)
 Step 4. Click **Create Template** and enter the required information.
-![](https://qcloudimg.tencent-cloud.cn/raw/5daf53f588e796bdccfd661142135b97.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/GHTr969_create_voucher.png)
+
+>?
+>- General vouchers: They are applicable to all products except some listed products, which you can see after clicking the question mark icon next to **All products**.
+>- Dedicated vouchers: They are only applicable to the products you specify.
+
 Step 5. Check and confirm the entered information and click **Confirm** to save the voucher template.
 >?
 After being successfully saved, the voucher template can still be edited if vouchers have not been issued to customers; otherwise, it cannot be edited. You can create a new template if necessary.
