@@ -133,7 +133,7 @@ Content of `OriginRule`:
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------------------------- | :----------------------------------------------- | :-------- | :--- |
 |  RulePriority | OriginConfiguration.OriginRule | Priority of the rule | Integer | Yes |
-| OriginType         | OriginConfiguration.OriginRule | Origin-pull type. Enumerated values: `Proxy` (async origin-pull), `Mirror` (sync origin-pull), `Redirect` (redirection-based origin-pull)                       | Container |
+| OriginType         | OriginConfiguration.OriginRule | Origin-pull type. Enumerated values: `Proxy` (async origin-pull), `Mirror` (sync origin-pull), `Redirect` (redirection-based origin-pull)                       | Container | Yes |
 | OriginCondition | OriginConfiguration.OriginRule | Origin-pull conditions, such as the HTTP protocol | Container | Yes |
 | OriginParameter  | OriginConfiguration.OriginRule | Origin address configuration | Container | Yes |
 | OriginInfo | OriginConfiguration.OriginRule | Information about the origin, such as its domain name or IP | Container | Yes |
@@ -175,7 +175,7 @@ Content of `Header`:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------------------------- | :----------------------------------------------- | :-------- | :--- |
-| Key | OriginConfiguration.OriginRule.OriginParameter.HttpHeader.NewHttpHeader.UserMetaData | Name of the custom header. This parameter is left empty by default. Example: `x-cos|oss|amz-ContentType|CacheControl|ContentDisposition|ContentEncoding|HttpExpiresDate|UserMetaData` | String | No  |
+| Key | OriginConfiguration.OriginRule.OriginParameter.HttpHeader.NewHttpHeader.UserMetaData | Name of the custom header. This parameter is left empty by default. Example: `x-cos\|oss\|amz-ContentType\|CacheControl\|ContentDisposition\|ContentEncoding\|HttpExpiresDate\|UserMetaData` | String | No  |
 | Value | OriginConfiguration.OriginRule.OriginParameter.HttpHeader.NewHttpHeader.UserMetaData | Value of the custom header. This parameter is left empty by default. | String | No |
 
 Content of `OriginInfo`:
