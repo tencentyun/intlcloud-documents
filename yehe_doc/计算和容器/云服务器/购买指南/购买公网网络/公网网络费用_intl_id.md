@@ -16,7 +16,7 @@ Dokumen ini menjelaskan harga jaringan publik dalam berbagai mode penagihan dan 
 <td>0,12</td>
 </tr>
 <tr>
-<td>Moskow, Tokyo</td>
+<td>Tokyo</td>
 <td>0,13</td>
 </tr>
 <tr>  
