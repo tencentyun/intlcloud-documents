@@ -2,8 +2,7 @@
 
 The cloud-native era has witnessed the popularity of the DevOps concept and its implementation thanks to the rise and wide spread of container technologies. Continuous integration and continuous deployment based on container DevOps can significantly speed up application creation and delivery, thereby enhancing enterprise competitiveness.
 
-This document describes how to coordinate the TCR delivery pipeline feature, TKE, and CODING DevOps to offer easy-to-use container DevOps capabilities and enable [automatic triggering of image build and application deployment after code push](https://www.tencentcloud.com/document/product/1051/52657#scene1) or [automatic triggering of deployment after local image push](https://www.tencentcloud.com/document/product/1051/52657#scene2).
-![](https://qcloudimg.tencent-cloud.cn/raw/17550d36f7b536ca7e91133e2808fe64.png)
+This document describes how to coordinate the TCR delivery pipeline feature, TKE, and CODING DevOps to offer easy-to-use container DevOps capabilities and enable [automatic triggering of image build and application deployment after code push](https://www.tencentcloud.com/document/product/1051/53613) or [automatic triggering of deployment after local image push](https://www.tencentcloud.com/document/product/1051/53613).
 
 ## Prerequisites
 - You have purchased a TCR Enterprise Edition instance and created an image repository as instructed in [Creating an Enterprise Edition Instance](https://intl.cloud.tencent.com/document/product/1051/35486) and [Basic Image Repository Operations](https://intl.cloud.tencent.com/document/product/1051/35488).
