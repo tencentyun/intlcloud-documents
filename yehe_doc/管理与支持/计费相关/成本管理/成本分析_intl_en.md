@@ -1,10 +1,10 @@
-## Cost Analysis
+## Cost Explorer
 
-Cost analysis is a basic feature of cost management. It helps you analyze your bill data flexibly and efficiently, and gives you a clearer understanding of your cloud costs.
+Cost Explorer is a basic feature of cost management. It helps you analyze your bill data flexibly and efficiently and gives you a clearer understanding of your cloud costs.
 
-To use cost analysis, log in to the [Billing Center](https://console.cloud.tencent.com/expense/overview), and click **Cost Management > Cost Explorer** in the left sidebar to enter the cost analysis page.
+To use Cost Explorer, log in to the [Billing Center](https://console.cloud.tencent.com/expense/overview), and click **Cost Management > Cost Explorer** in the left sidebar to enter the Cost Explorer page.
 
-## Cost Analysis Features
+## Cost Explorer Features
 
 ### Categories
 
@@ -69,6 +69,6 @@ The cost report feature allows you to save the results of cost analysis as a rep
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/cLbJ456_%E6%88%90%E6%9C%AC%E6%8A%A5%E5%91%8A_2.png)
 
-- The report will save all the settings you configured for cost analysis. If the time is set to a relative time period, the cost report will be updated automatically.
+- The report will save all the settings you configured in Cost Explorer. If the time is set to a relative time period, the cost report will be updated automatically.
 
 - Tencent Cloud provides three preset cost reports that can be viewed in the [Cost Report](https://console.cloud.tencent.com/expense/cost/report) page: Daily costs by service, Daily costs report, and Monthly costs by service. These preset reports cannot be modified or deleted.
