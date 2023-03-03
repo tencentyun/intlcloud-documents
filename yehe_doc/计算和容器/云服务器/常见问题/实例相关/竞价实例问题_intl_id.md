@@ -38,7 +38,7 @@ Seperti halnya instans berbasis pembayaran sesuai pemakaian, Anda dapat menemuka
 <tr><th>Wilayah</th><th>Model yang didukung oleh instans spot</th><th>Diskon</th></tr>
 <tr><td>Beijing, Shanghai, Chengdu, Chongqing, Guangzhou Open</td><td rowspan="4">Semua model yang didukung oleh instans berbasis pembayaran sesuai pemakaian</td><td rowspan="4">Diskon 80% dari harga instans berbasis pembayaran sesuai pemakaian dengan spesifikasi yang sama yang diterbitkan</td></tr>
 <tr><td>Guangzhou (tidak termasuk Zona Guangzhou 1)</td></tr>
-<tr><td>Hong Kong (Tiongkok), Singapura, Bangkok, Seoul, Tokyo, Mumbai, Toronto, Silicon Valley, Virginia, Frankfurt, Moskow</td></tr>
+<tr><td>Hong Kong (Tiongkok), Singapura, Bangkok, Seoul, Tokyo, Mumbai, Toronto, Silicon Valley, Virginia, Frankfurt</td></tr>
 </table>
 
 ### Apakah batas kuota instans spot dibagikan dengan instans berbasis pembayaran sesuai pemakaian?
