@@ -68,10 +68,10 @@ public abstract int SetServerAudioRoute(ITMGContext.ITMG_SERVER_AUDIO_ROUTE_SEND
 | AUDIO_ROUTE_SEND_BLACK_LIST    | 로컬 오디오는 업스트림으로 전송되며 매개변수 OpenIDForSend에서 제공하는 블록리스트에 있는 사람에게 포워딩되지 않습니다. |
 | AUDIO_ROUTE_SEND_WHITE_LIST    | 로컬 오디오는 업스트림으로 전송되고 OpenIDForSend 매개변수에서 제공하는 얼로우리스트에 있는 사람에게 포워딩됩니다. |
 >?
-- 전달된 유형이 AUDIO_ROUTE_NOT_SEND_TO_ANYONE 또는 AUDIO_ROUTE_SEND_TO_ALL인 경우 OpenIDForSend 매개변수가 적용되지 않습니다. null만 입력하면 됩니다.
-- 전달된 유형이 AUDIO_ROUTE_SEND_BLACK_LIST인 경우 OpenIDForSend 매개변수가 블록리스트가 됩니다. 최대 10명까지 지원됩니다.
-- 전달된 유형이 AUDIO_ROUTE_SEND_WHITE_LIST인 경우 OpenIDForSend 매개변수가 얼로우리스트가 됩니다. 최대 10명까지 지원됩니다.
->
+>- 전달된 유형이 AUDIO_ROUTE_NOT_SEND_TO_ANYONE 또는 AUDIO_ROUTE_SEND_TO_ALL인 경우 OpenIDForSend 매개변수가 적용되지 않습니다. null만 입력하면 됩니다.
+>- 전달된 유형이 AUDIO_ROUTE_SEND_BLACK_LIST인 경우 OpenIDForSend 매개변수가 블록리스트가 됩니다. 최대 10명까지 지원됩니다.
+>- 전달된 유형이 AUDIO_ROUTE_SEND_WHITE_LIST인 경우 OpenIDForSend 매개변수가 얼로우리스트가 됩니다. 최대 10명까지 지원됩니다.
+
 
 **ITMG_SERVER_AUDIO_ROUTE_RECV_TYPE**
 
@@ -85,9 +85,9 @@ public abstract int SetServerAudioRoute(ITMGContext.ITMG_SERVER_AUDIO_ROUTE_SEND
 | AUDIO_ROUTE_RECV_WHITE_LIST      | 로컬은 얼로우리스트에 있는 사람들의 오디오만 수신합니다. 얼로우리스트는 OpenIDForSend 매개변수로 제공됩니다. |
 
 >?
-- 전달된 유형이 AUDIO_ROUTE_NOT_RECV_FROM_ANYONE 또는 AUDIO_ROUTE_RECV_FROM_ALL인 경우 OpenIDForSend 매개변수가 적용되지 않습니다.
-- 전달된 유형이 AUDIO_ROUTE_RECV_BLACK_LIST인 경우 OpenIDForSend 매개변수가 블록리스트가 됩니다. 최대 10명까지 지원됩니다.
-- 전달된 유형이 AUDIO_ROUTE_RECV_WHITE_LIST인 경우 OpenIDForSend 매개변수가 얼로우리스트가 됩니다. 최대 10명까지 지원됩니다.
+>- 전달된 유형이 AUDIO_ROUTE_NOT_RECV_FROM_ANYONE 또는 AUDIO_ROUTE_RECV_FROM_ALL인 경우 OpenIDForSend 매개변수가 적용되지 않습니다.
+>- 전달된 유형이 AUDIO_ROUTE_RECV_BLACK_LIST인 경우 OpenIDForSend 매개변수가 블록리스트가 됩니다. 최대 10명까지 지원됩니다.
+>- 전달된 유형이 AUDIO_ROUTE_RECV_WHITE_LIST인 경우 OpenIDForSend 매개변수가 얼로우리스트가 됩니다. 최대 10명까지 지원됩니다.
 >
 
 #### 반환값
