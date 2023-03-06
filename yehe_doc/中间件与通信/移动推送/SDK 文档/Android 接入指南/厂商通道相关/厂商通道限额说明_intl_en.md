@@ -25,6 +25,33 @@ You can view the number of SDK subscriptions and the total number of deliverable
 - For a public message channel (suitable for pushing universal messages to multiple users by default), if the total number of users is smaller than 50,000, the number of allowed pushes will be 100,000; otherwise, the number of allowed pushes will be twice the total number of users.
 - For a private message channel (suitable for pushing private messages to individual users), the number of pushes is not limited. For more information, see [OPPO notification channel overview](https://intl.cloud.tencent.com/document/product/1024/36250).
 - For the OPPO channel (including public and private message channels), the maximum number of messages that can be received by a single user is 2000 per day.
+For the maximum number of messages delivered per device, see [here](https://open.oppomobile.com/new/developmentDoc/info?id=11210).
+<table>
+<thead>
+<tr>
+<th colspan = "2" style="width:30%">Type</th>
+<th style="width:50%">Public Message Channel</th>
+<th style="width:20%">Private Message Channel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan = "2">Single user push limit (number of messages per day)</td>
+<td>News (third-level category)</td>
+<td>5</td>
+<td>Unlimited</td>
+</tr>
+<tr>
+<td>Other application types</td>
+<td>2</td>
+<td>Unlimited</td>
+</tr>
+<tr>
+<td colspan = "2">Maximum number of pushes</td>
+<td>All public message channels share a total number of pushes. If the daily limit is reached, they will stop pushing messages on the day. The current maximum number of daily pushes is twice the total number of all registered users.</td>
+<td>Unlimited</td>
+</tr>
+</tbody></table>
 
 ### Quota query guide
 
@@ -35,10 +62,17 @@ You can view the number of SDK subscriptions and the total number of deliverable
 
 ### Quota description
 
-- The number of general messages (default universal messages to multiple users) that can be pushed per day is 5 times the number of daily connected MIUI devices of the application. If the number of such devices is below 10,000, 50,000 messages can be pushed per day.
-- The number of notification messages (private messages to single users) that can be pushed is not limited. For more information, see [Mi notification channel overview](https://intl.cloud.tencent.com/document/product/1024/36250).
+- The total number of public messages (default universal messages to multiple users) that can be pushed per day is the number of MIUI devices with applications installed and the notification bar enabled multiplied by a factor. The multiplication factor is 2 by default and is 3 if the applications have the Internet News Information Service License, as shown in Table 1. If the number of devices with the notification bar enabled is less than 10,000, it will be calculated as 10,000.
+- The number of private messages (private messages to single users) that can be pushed is not limited. For more information, see [Mi notification channel overview](https://intl.cloud.tencent.com/document/product/1024/36250).
 
-> ?If the number of pushes through the vendor channel exceeds the daily limit, excessive push tasks will be delivered through the TPNS channel.
+The multiplication factor-based quota limit on public messages is effective from February 1, 2023. For more information, see [Mi Push Message Restrictions](https://dev.mi.com/distribute/doc/details?pId=1656).
+
+| With the Internet News Information Service License | Multiplication Factor to Calculate the Maximum Number of Notifications Pushed Per Device Per Day Per Application | Maximum Number of Notifications Received Per Device Per Day Per Application |
+|------------------------------|-------------------------------------------|--------------------------------|
+|Yes        |3      |8     |
+|No        |2      |5     |
+
+> ?If the number of pushes through the vendor channel exceeds the daily limit, excessive push tasks will be delivered through the Tencent Push Notification Service channel.
 
 ### Quota query guide 
 
@@ -62,6 +96,6 @@ You can view the number of SDK subscriptions and the total number of deliverable
 
 ### Quota description
 
-- Limit on the number of delivered messages: up to 3,000 messages can be sent to one single device per day, and if the limit is exceeded, the push feature will be restricted for 24 hours. If the number of messages sent to one single device exceeds 100,000 per day, the push permission will be banned directly, and you need to rectify your application and submit your rectification plan to apply for push permission again to Huawei.
+- Limit on the number of messages sent: From January 5, 2023 on, the number of "information and marketing" messages pushed per day will be capped according to the type of application, while there will be no limit to the number of "service and communication" messages pushed per day. For more information, see [here](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-restriction-description-0000001361648361?ha_source=hms5).
 - Limit on the push rate: Huawei Push Kit calculates and assigns the push rate mainly based on the application's monthly active users (MAUs) and category of the application in Huawei AppGallery.
 

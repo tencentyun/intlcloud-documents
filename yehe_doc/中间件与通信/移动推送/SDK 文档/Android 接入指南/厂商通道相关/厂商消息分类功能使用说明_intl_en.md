@@ -16,7 +16,7 @@ The message type can be specified when you call the push API.
 	- [vivo](#vivozhinan)
 	- [Huawei](#huaweizhinan)
 >?After applying for the channel ID, specify it when using the push API.
-2. If you do not need to use vendor notification/private messages and only need a custom channel ID to classify messages based on your application's business message types, you can make configurations as below:
+2. If you need to manage channels by vendor, customize channel IDs to classify messages based on your application's business message types. You can make vendor-based configurations as below:
 <table>
 <thead>
 <tr>
@@ -30,15 +30,15 @@ The message type can be specified when you call the push API.
 </tr>
 <tr>
 <td>Huawei</td>
-<td><ul><li>On the application, call the channel ID creating API in the SDK for Android to create a channel ID.</li><li>Specify the corresponding channel ID (no limit) when calling the Tencent Push Notification Service <a href="https://intl.cloud.tencent.com/document/product/1024/33764">server API</a>.</li></ul></td>
+<td><ul><li><a href = "https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835#section1653845862216">Apply for the self-help message classification permission for an application</a> in the Huawei console. After the self-help message classification permission takes effect, the messages pushed by the application will be classified by the `hw_category` field.</li><li>Specify the `hw_category` parameter when calling the Tencent Push Notification Service <a href = "https://intl.cloud.tencent.com/document/product/1024/33764">server API</a>.</li><li>Huawei's ChannelID is used as a channel policy to customize the message notification mode and is not used to classify messages.</li></ul></td>
 </tr>
 <tr>
 <td>Mi</td>
-<td><ul><li>Create a channel ID in the Mi open platform console or through the corresponding Mi server API.</li><li>Specify the corresponding channel ID when calling the Tencent Push Notification Service server API. </li></td>
+<td><ul><li>Create a channel ID in the Mi open platform console or through the corresponding Mi server API.</li><li>Specify the corresponding channel ID when calling the Tencent Push Notification Service <a href="https://intl.cloud.tencent.com/document/product/1024/33764">server API</a>.</li></td>
 </tr>
 <tr>
 <td>OPPO</td>
-<td><ul><li>On the application, call the SDK for Android to create a channel ID.</li><li>Register the same channel ID in the OPPO console.</li><li>Specify the corresponding channel ID when calling the Tencent Push Notification Service server API.</li></ul></td>
+<td><ul><li>On the application, call the SDK for Android to create a channel ID.</li><li>Register the same channel ID in the OPPO console.</li><li>Specify the corresponding channel ID when calling the Tencent Push Notification Service <a href="https://intl.cloud.tencent.com/document/product/1024/33764">server API</a>.</li></ul></td>
 </tr>
 <tr>
 <td>Meizu</td>
@@ -46,7 +46,7 @@ The message type can be specified when you call the push API.
 </tr>
 <tr>
 <td>vivo</td>
-<td><ul><li>Call the server API to create the channel ID.</li><li>Specify the corresponding channel ID when calling the Tencent Push Notification Service <a href="https://intl.cloud.tencent.com/document/product/1024/33764">server API</a>.</li></ul></td>
+<td><ul><li>You can only configure using vivo system messages but cannot customize the notification channel.</li><li>Specify the corresponding channel ID when calling the Tencent Push Notification Service <a href="https://intl.cloud.tencent.com/document/product/1024/33764">server API</a>.</li></ul></td>
 </tr>
 </tbody></table>
 3. If you need neither vendor notification messages nor a custom channel ID, Tencent Push Notification Service will specify a default channel ID for all messages of your application and group them into the default type.
@@ -101,7 +101,6 @@ The default channel on the OPPO PUSH platform is the public message channel. Now
 1. Log in to the [OPPO PUSH platform](https://push.oppo.com) and choose **App Configuration** > **Create Channel** to create a channel. The channel ID and name are required and must be the same as those on the application client. Other configuration items are optional.
 >! Once the channel ID is set, it cannot be randomly changed or deleted.
 >
-![]()
 2. Currently, the OPPO private message channel can take effect only after you apply for it through email. Please send an application email to the OPPO PUSH platform according to the following requirements. For more information, see [OPPO PUSH Channel Upgrade Beta Invitation](https://open.oppomobile.com/new/developmentDoc/info?id=11227).
 
 
@@ -141,7 +140,7 @@ The notification channels of Mi Push are divided into two categories: "private m
 - Private message channel: Suitable for personal notification-related content such as chat messages, order status changes, package delivery notifications, transaction reminders, and IoT system notifications. The number of pushes for notification messages is unlimited.
 Mi Push uniformly manages the number of push messages and push rate (QPS). For more information, see [Mi Push Message Restrictions](https://dev.mi.com/distribute/doc/details?pId=1656#_2).
 
-The table below compares the general message channel and notification message channel.
+Restrictions on public and private messages are as follows:
 
 <table>
 <thead>
@@ -224,12 +223,12 @@ vivo classifies push messages into operation messages and system messages.
 
 The system message quota is twice the number of SDK subscriptions by default. To increase the quota, send an application email based on the template below to push@vivo.com:
 ```plaintext
-Subject: Application for Increasing the Quota of IM/System Messages for App XXX
+Subject: Application for Increasing the Quota of Instant Messages/System Messages for App XXX
 Body: …
 Application name: …
 Package name: …
 Application overview: …
-IM/System message quota required (unit: 10,000): ...
+Instant Messages/System message quota required (unit: 10,000): ...
 Specific push scenarios, such as personal user chat and merchant chat
 ```
 
@@ -264,7 +263,8 @@ Sample push:
 
 ### Huawei message classification overview
 
-Starting from EMUI 10.0, Huawei Push intelligently categorizes notification messages into two levels: "service and notification" and "marketing". Versions earlier than EMUI 10.0 don't categorize notification messages and have only one level, where all messages are displayed through the "default notification" channel, which is equivalent to the service and notification category on EMUI 10.0. From January 5, 2023 on, the number of marketing messages pushed per day will be capped according to the type of application, while there will be no limit to the number of service and notification messages pushed per day. For more information, see [Huawei Push Rules](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-restriction-description-0000001361648361?ha_source=hms5).
+Starting from EMUI 10.0, Huawei Push intelligently categorizes notification messages into two levels: "service and communication" and "information and marketing". Versions earlier than EMUI 10.0 don't categorize notification messages and have only one level, where all messages are displayed through the "default notification" channel, which is equivalent to the service and notification category on EMUI 10.0. From January 5, 2023 on, the number of information and marketing messages pushed per day will be capped according to the type of application, while there will be no limit to the number of service and communication messages pushed per day.
+Huawei's response code 256 indicates that the number of information and marketing messages sent of the current day exceeds the limit, and you need to adjust the sending policy. For more information, see [here](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-restriction-description-0000001361648361?ha_source=hms5).
 
 The table below compares the display style of messages at different levels.
 
@@ -331,7 +331,7 @@ Configure the `hw_ch_id` field in the Android request structure of the RESTful A
 > - The custom channel feature requires the self-help message classification permission for your application. Please apply for it as instructed above.
 >
 
-Below is a sample push:
+Sample push:
 
 ```json
 {
