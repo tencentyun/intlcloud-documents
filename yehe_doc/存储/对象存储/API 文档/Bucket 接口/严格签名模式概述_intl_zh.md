@@ -16,7 +16,7 @@
 
 ## 签名越权
 
-COS 支持用户选择需要签入签名的请求头部（Header）和请求参数（Param），对应签名中的 `q-header-list=HeaderList` 和 `q-url-param-list=UrlParamList`，详情可参考 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778)。
+COS 支持用户选择需要签入签名的请求头部（Header）和请求参数（Param），对应签名中的 `q-header-list=HeaderList` 和 `q-url-param-list=UrlParamList`，详情可参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778)。
 
 
 ```plaintext
@@ -166,9 +166,9 @@ COS 接收到请求后：
 ### 使用 REST API
 
 
-- [PUT Bucket StrictSignature](调整到对应的新API文档)
-- [GET Bucket StrictSignature](调整到对应的新API文档)
-- [DELETE Bucket StrictSignature](调整到对应的新API文档)
+- [PUT Bucket StrictSignature](https://www.tencentcloud.com/document/product/436/53889)
+- [GET Bucket StrictSignature](https://www.tencentcloud.com/document/product/436/53890)
+- [DELETE Bucket StrictSignature](https://www.tencentcloud.com/document/product/436/53891)
 
 
 
