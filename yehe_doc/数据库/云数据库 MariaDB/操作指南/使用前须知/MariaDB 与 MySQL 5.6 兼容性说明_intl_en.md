@@ -1,8 +1,8 @@
-## Compatibility of TencentDB for MariaDB with Open-source MariaDB
+## Compatibility of TencentDB for MariaDB with Open-Source MariaDB
 TencentDB for MariaDB is fully compatible with open-source MariaDB.
 
 ## Compatibility of TencentDB for MariaDB with MySQL 5.6
-TencentDB for MariaDB is highly compatible with MySQL 5.6; therefore, code, applications, drivers, and tools that apply to MySQL databases can be directly used in TencentDB for MariaDB with no or only slight change required.
+As TencentDB for MariaDB is highly compatible with MySQL 5.6, you can directly use it with little or no changes to existing code, programs, drivers, or tools that are used with MySQL.
 - Data files and table definition files are binary compatible.
 - All client APIs and protocols are compatible.
 - All filenames, binary files, paths, and port numbers are the same.
@@ -10,15 +10,14 @@ TencentDB for MariaDB is highly compatible with MySQL 5.6; therefore, code, appl
 - You can use a MySQL client to connect to TencentDB for MariaDB.
 
 ## Incompatibility of TencentDB for MariaDB with MySQL 5.6
-
 ### 1. GTID incompatibility
-`GTID` of TencentDB for MariaDB is incompatible with that of MySQL 5.6, i.e., MySQL cannot be used as a slave database of TencentDB for MariaDB.
+`GTID` of TencentDB for MariaDB is incompatible with that of MySQL 5.6, i.e., MySQL cannot be used as a replica database of TencentDB for MariaDB.
 
 ### 2. Different default binlog configurations
-Binlogs in TencentDB for MariaDB are in row format, while in native MySQL 5.6, MariaDB 10.2.3, and their earlier versions, binlogs are in statement format by default.
+Binlogs in TencentDB for MariaDB are in row format, while in native MySQL 5.6 and MariaDB earlier than 10.2.3, they are in statement format by default.
 
 ### 3. Row-based or command-based replication of the `CREATE TABLE ... SELECT` command
-To ensure that the `CREATE TABLE ... SELECT` command can work properly in both row-based and command-based replication, this command in TencentDB for MariaDB will be converted to and executed as the `CREATE OR RPLACE` command in a slave database. The advantage of this mechanism is that the slave database can run properly after recovery from downtime.
+To ensure that the `CREATE TABLE ... SELECT` command can work properly in both row-based and command-based replication, this command in TencentDB for MariaDB will be converted to and executed as the `CREATE OR REPLACE` command in a replica database. The advantage of this mechanism is that the replica database can run properly after recovery from downtime.
 
 #### 3.1. Default value deduction
 When you create tables by using the `Create table ... Select from` statement, the differences between the default values of fields in `varchar(N)` type are as follows:
@@ -26,9 +25,8 @@ When you create tables by using the `Create table ... Select from` statement, th
 - The default value in MySQL 5.7 is `NULL`.
 - The default value in MySQL 5.5 or 5.6 is an empty string ('').
 
-Default value of a decimal column: in MySQL 5.5 and 5.6, it is deduced to 0.00; in MariaDB 10.1, it is deduced to NULL.
-
-Sample code:
+Default value of a decimal column: In MySQL 5.5 and 5.6, it is deduced to 0.00; in MariaDB 10.1, it is deduced to NULL.
+Sample:
 ```
 ---------------- MySQL 5.5 -----------------------
 create table t1
@@ -62,9 +60,8 @@ t1  CREATE TABLE `t1` (
 In this statement: `SELECT a AS x, ROW(11, 12) = (SELECT MAX(x), 12), ROW(11, 12) IN (SELECT MAX(x), 12) FROM t1;`
 
 - In MySQL 5.5 and 5.6, the subquery `SELECT MAX(x), 12` is considered as `SELECT MAX(x), 12 from t1` if it is located after `in`; it is considered as `SELECT x, 12` if it is located after `=`, where "x" is the alias of `a` in the current row.
-- In MySQL 5.7 and MariaDB 10.1.*, the subquery `SELECT MAX(x), 12` always equals `SELECT x, 12`, where `x` is the alias of `a` in the current row.
-
-Sample code:
+- In MySQL 5.7 and MariaDB 10.1.\*, the subquery `SELECT MAX(x), 12` always equals `SELECT x, 12`, where `x` is the alias of `a` in the current row.
+Sample:
 ```
 ----------------- MySQL 5.5/5.6 -----------------------
 CREATE TABLE t1 (a INT);
@@ -95,13 +92,11 @@ When `inplace alter table` is executed in TencentDB for MariaDB, the result of r
 ### 4. Undefined behavior in MySQL and TencentDB for MariaDB
 Undefined behavior is a feature of behavior that can be implemented through any method in MySQL or TencentDB for MariaDB, which may vary by version without the need to notify users or be specified. Implementation of undefined behaviors by MySQL and TencentDB for MariaDB may produce the same or different results.
 
-For such same or different results in the current and future versions, TencentDB for MariaDB does not guarantee the results or ensure the same kernel optimization. For more information, please see [official description of undefined behaviors](https://mariadb.com/kb/en/mariadb/mariadb-vs-mysql-compatibility/).
-
+For such same or different results in the current and future versions, TencentDB for MariaDB does not guarantee the results or ensure the same kernel optimization. For more information, see [MariaDB versus MySQL: Compatibility](https://mariadb.com/kb/en/mariadb/mariadb-vs-mysql-compatibility/).
 
 #### 4.1. Case-insensitive sorting of character-type columns
 Sorting (`order by` clause) of character-type columns is generally case-insensitive, which means that the order of fields with the same content but different letter cases will be undefined after sorting. You can use the `BINARY` keyword to force implement case-sensitive sorting, i.e., `ORDER BY BINARY column name`.
-
-Sample code:
+Sample:
 ```
 The sorting of the following samples in MySQL and TencentDB for MariaDB may be completely random:
 mysql> SELECT email FROM t2 LEFT JOIN t1  ON kid = t2.id WHERE t1.id IS NULL order by email;
@@ -131,10 +126,10 @@ If **only `UNION` is used without `ALL`, TencentDB for MariaDB will remove dupli
 The `LOCK TABLES` statement locks tables in the following method: first, all tables that need to be locked are sorted based on the internally-defined method; however, from user's perspective, the sorting order in MySQL and TencentDB for MariaDB is undefined. For example, if you write `LOCK TABLES t1, t2, t3`, TencentDB for MariaDB and MySQL will not lock the tables according to the sequence of `t1, t2, t3`.
 This behavior is undefined in MySQL and TencentDB for MariaDB; therefore, they may use different methods to sort t1, t2, and t3 and lock them based on the resulting sequence.
 
-Therefore, you should not rely on locking sequence to ensure accuracy in your stored procedures or query code, as this may cause deadlock.
+Therefore, you should not rely on locking sequence to ensure accuracy in your procedures or query code, as this may cause deadlock.
 
 #### 4.5. Timing for running the `RESET MASTER` statement
-You cannot run `RESET MASTER` when any duplicate slave server is running; otherwise, the behaviors of master and slave servers will be undefined (and not supported) in TencentDB for MariaDB and MySQL. Various predictable errors may or may not occur during execution of `RESET MASTER`. The official development teams of TencentDB for MariaDB and MySQL do not consider these errors as bugs and are not responsible for any errors that actually occur in this way. 
+You cannot run `RESET MASTER` when any duplicate replica server is running; otherwise, the behaviors of primary and replica servers will be undefined (and not supported) in TencentDB for MariaDB and MySQL. Various predictable errors may or may not occur during execution of `RESET MASTER`. The official development teams of TencentDB for MariaDB and MySQL do not consider these errors as bugs and are not responsible for any errors that actually occur in this way. 
 
 #### 4.6. Conversion of date and time types to year type
 In MySQL 5.5, when variables in year and date types are compared, the date type will be converted to the year type. For example, "2011-01-01" will be converted to "2011".
@@ -183,291 +178,193 @@ In MySQL 5.5/5.6, `NULL` will be returned; in MariaDB 10.1 and MySQL 5.7, `2016-
 - In MySQL 5.7 and TencentDB for MariaDB, values in time type will be automatically converted to timestamp type, i.e., current date + entered time variable.
 
 ### 5. Appendix: TencentDB for MariaDB parameters and MySQL parameters
-
 #### 5.1. Different parameters with the same variable name
 Parameters with the same variable name have the same main feature.
 
 <table>
-
-<tr>
-<th width="20%">Parameter Name</th>
-<th width="30%">MariaDB 10.1</th>
-<th width="30%">MySQL 5.6</th>
-</tr>
-
+<tr><th width="20%">Parameter</th><th width="30%">MariaDB 10.1</th><th width="30%">MySQL 5.6</th></tr>
 <tr>
 <td>old_passwords</td>
 <td>OFF</td>
-<td>0</td>
-</tr>
-
+<td>0</td></tr>
 <tr>
 <td>tmpdir</td>
 <td>/tmp/5cXm2hHsWi/mysqld.1</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/tmp/mysqld.1</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/tmp/mysqld.1</td></tr>
 <tr>
 <td>version</td>
 <td>10.1.9-MariaDB-log</td>
-<td>5.6.31-log</td>
-</tr>
-
+<td>5.6.31-log</td></tr>
 <tr>
 <td>slow_query_log_file</td>
 <td>/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1/build_dongzhi/mysql-test/var/mysqld.1/mysqld-slow.log</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/mysqld.1/mysqld-slow.log</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/mysqld.1/mysqld-slow.log</td></tr>
 <tr>
 <td>table_definition_cache</td>
 <td>400</td>
-<td>1400</td>
-</tr>
-
+<td>1400</td></tr>
 <tr>
 <td>datadir</td>
 <td>/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1/build_dongzhi/mysql-test/var/mysqld.1/data/</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/mysqld.1/data/</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/mysqld.1/data/</td></tr>
 <tr>
 <td>pid_file</td>
 <td>/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1/build_dongzhi/mysql-test/var/run/mysqld.1.pid</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/run/mysqld.1.pid</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/run/mysqld.1.pid</td></tr>
 <tr>
 <td>max_seeks_for_key</td>
 <td>4294967295</td>
-<td>18446744073709500000</td>
-</tr>
-
+<td>18446744073709500000</td></tr>
 <tr>
 <td>slave_load_tmpdir</td>
 <td>/tmp/5cXm2hHsWi/mysqld.1</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/tmp/mysqld.1</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/tmp/mysqld.1</td></tr>
 <tr>
 <td>secure_file_priv</td>
 <td>	/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1/build_dongzhi/mysql-test/var/</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/</td></tr>
 <tr>
 <td>sql_mode</td>
 <td>NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION	</td>
-<td>NO_ENGINE_SUBSTITUTION</td>
-</tr>
-
+<td>NO_ENGINE_SUBSTITUTION</td></tr>
 <tr>
 <td>ssl_cert</td>
 <td>/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1/mysql-test/std_data/server-cert.pem</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/mysql-test/std_data/server-cert.pem</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/mysql-test/std_data/server-cert.pem</td></tr>
 <tr>
 <td>ssl_ca</td>
 <td>	/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1/mysql-test/std_data/cacert.pem</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/mysql-test/std_data/cacert.pem</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/mysql-test/std_data/cacert.pem</td></tr>
 <tr>
 <td>open_files_limit</td>
 <td>1024</td>
-<td>4161</td>
-</tr>
-
+<td>4161</td></tr>
 <tr>
 <td>binlog_checksum</td>
 <td>NONE</td>
-<td>CRC32</td>
-</tr>
-
+<td>CRC32</td></tr>
 <tr>
 <td>basedir</td>
 <td>/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6</td></tr>
 <tr>
 <td>query_alloc_block_size</td>
 <td>16384</td>
-<td>8192</td>
-</tr>
-
+<td>8192</td></tr>
 <tr>
 <td>innodb_max_dirty_pages_pct</td>
 <td>75.000000</td>
-<td>75</td>
-</tr>
-
+<td>75</td></tr>
 <tr>
 <td>ssl_key</td>
 <td>/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1/mysql-test/std_data/server-key.pem</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/mysql-test/std_data/server-key.pem</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/mysql-test/std_data/server-key.pem</td></tr>
 <tr>
 <td>myisam_sort_buffer_size</td>
 <td>134216704</td>
-<td>8388608</td>
-</tr>
-
+<td>8388608</td></tr>
 <tr>
 <td>skip_name_resolve</td>
 <td>ON</td>
-<td>OFF</td>
-</tr>
-
+<td>OFF</td></tr>
 <tr>
 <td>pseudo_thread_id</td>
 <td>3</td>
-<td>2</td>
-</tr>
-
+<td>2</td></tr>
 <tr>
 <td>character_sets_dir</td>
 <td>/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1/sql/share/charsets/</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/sql/share/charsets/</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/sql/share/charsets/</td></tr>
 <tr>
 <td>innodb_adaptive_flushing_lwm</td>
 <td>10</td>
-<td>10</td>
-</tr>
-
+<td>10</td></tr>
 <tr>
 <td>myisam_recover_options</td>
 <td>DEFAULT</td>
-<td>OFF</td>
-</tr>
-
+<td>OFF</td></tr>
 <tr>
 <td>performance_schema_max_statement_classes</td>
 <td>179</td>
-<td>168</td>
-</tr>
-
+<td>168</td></tr>
 <tr>
 <td>innodb_version</td>
 <td>5.6.26-74.0</td>
-<td>5.6.31</td>
-</tr>
-
+<td>5.6.31</td></tr>
 <tr>
 <td>max_write_lock_count</td>
 <td>4294967295</td>
-<td>18446744073709500000</td>
-</tr>
-
+<td>18446744073709500000</td></tr>
 <tr>
 <td>thread_cache_size</td>
 <td>0</td>
-<td>9</td>
-</tr>
-
+<td>9</td></tr>
 <tr>
 <td>innodb_checksum_algorithm</td>
 <td>INNODB</td>
-<td>innodb</td>
-</tr>
-
+<td>innodb</td></tr>
 <tr>
 <td>optimizer_switch</td>
 <td>
-index_merge=on,<br>index_merge_union=on,<br>index_merge_sort_union=on,<br>index_merge_intersection=on,<br>index_merge_sort_intersection=off,<br>engine_condition_pushdown=off,<br>index_condition_pushdown=on,<br>derived_merge=on,<br>derived_with_keys=on,<br>firstmatch=on,<br>loosescan=on,<br>materialization=on,<br>in_to_exists=on,<br>semijoin=on,<br>partial_match_rowid_merge=on,<br>partial_match_table_scan=on,<br>subquery_cache=on,<br>mrr=off,<br>mrr_cost_based=off,<br>mrr_sort_keys=off,<br>outer_join_with_cache=on,<br>semijoin_with_cache=on,<br>join_cache_incremental=on,<br>join_cache_hashed=on,<br>join_cache_bka=on,<br>optimize_join_buffer_size=off,<br>table_elimination=on,<br>extended_keys=on,<br>exists_to_in=on
-</td>
+index_merge=on,<br>index_merge_union=on,<br>index_merge_sort_union=on,<br>index_merge_intersection=on,<br>index_merge_sort_intersection=off,<br>engine_condition_pushdown=off,<br>index_condition_pushdown=on,<br>derived_merge=on,<br>derived_with_keys=on,<br>firstmatch=on,<br>loosescan=on,<br>materialization=on,<br>in_to_exists=on,<br>semijoin=on,<br>partial_match_rowid_merge=on,<br>partial_match_table_scan=on,<br>subquery_cache=on,<br>mrr=off,<br>mrr_cost_based=off,<br>mrr_sort_keys=off,<br>outer_join_with_cache=on,<br>semijoin_with_cache=on,<br>join_cache_incremental=on,<br>join_cache_hashed=on,<br>join_cache_bka=on,<br>optimize_join_buffer_size=off,<br>table_elimination=on,<br>extended_keys=on,<br>exists_to_in=on</td>
 <td>
 index_merge=on,<br>index_merge_union=on,<br>index_merge_sort_union=on,<br>index_merge_intersection=on,<br>engine_condition_pushdown=on,<br>index_condition_pushdown=on,<br>mrr=on,<br>mrr_cost_based=on,<br>block_nested_loop=on,<br>batched_key_access=off,<br>materialization=on,<br>semijoin=on,<br>loosescan=on,<br>firstmatch=on,<br>subquery_materialization_cost_based=on,<br>use_index_extensions=on
-</td>
-</tr>
-
+</td></tr>
 <tr>
 <td>timestamp</td>
 <td>1471938276</td>
-<td>1471937901</td>
-</tr>
-
+<td>1471937901</td></tr>
 <tr>
 <td>general_log_file</td>
 <td>/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1/build_dongzhi/mysql-test/var/mysqld.1/mysqld.log</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/mysqld.1/mysqld.log</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/mysqld.1/mysqld.log</td></tr>
 <tr>
 <td>myisam_stats_method</td>
 <td>NULLS_UNEQUAL</td>
-<td>nulls_unequal</td>
-</tr>
-
+<td>nulls_unequal</td></tr>
 <tr>
 <td>innodb_log_compressed_pages</td>
 <td>OFF</td>
-<td>ON</td>
-</tr>
-
+<td>ON</td></tr>
 <tr>
 <td>query_prealloc_size</td>
 <td>24576</td>
-<td>0</td>
-</tr>
-
+<td>0</td></tr>
 <tr>
 <td>rand_seed2</td>
 <td>297895171</td>
-<td>0</td>
-</tr>
-
+<td>0</td></tr>
 <tr>
 <td>rand_seed1</td>
 <td>605568929</td>
-<td>0</td>
-</tr>
-
+<td>0</td></tr>
 <tr>
 <td>socket</td>
 <td>/tmp/5cXm2hHsWi/mysqld.1.sock</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/tmp/mysqld.1.sock</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/mysql-test/var/tmp/mysqld.1.sock</td></tr>
 <tr>
 <td>innodb_max_dirty_pages_pct_lwm</td>
 <td>0.001</td>
-<td>0</td>
-</tr>
-
+<td>0</td></tr>
 <tr>
 <td>lc_messages_dir</td>
 <td>/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1/build_dongzhi/sql/share/</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/sql/share/</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/build_dongzhi/sql/share/</td></tr>
 <tr>
 <td>max_relay_log_size</td>
 <td>1073741824</td>
-<td>0</td>
-</tr>
-
+<td>0</td></tr>
 <tr>
 <td>plugin_dir</td>
 <td>/data/home/tdengine/dongzhi/src/tdsql-mariadb-10.1.9-release1/lib/plugin/</td>
-<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/lib/plugin/</td>
-</tr>
-
+<td>/data/home/tdengine/dongzhi/src/mysql-server-5.6/lib/plugin/</td></tr>
 <tr>
 <td>thread_stack</td>
 <td>294912</td>
-<td>262144</td>
-</tr>
-
+<td>262144</td></tr>
 </table>
 
-
 #### 5.2. Variables unique to TencentDB for MariaDB
-
 - aria_block_size     8192
 - aria_checkpoint_interval     30
 - aria_checkpoint_log_activity     1048576

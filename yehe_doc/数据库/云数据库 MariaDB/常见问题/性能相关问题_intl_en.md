@@ -1,21 +1,22 @@
+
 ### Why does my CPU utilization exceed 100%?
-y default, TencentDB for MariaDB adopts the policy of overuse of idle resources that allows your business to preempt some idle CPU resources. Therefore, when the number of CPU cores of your instance exceeds the default value assigned, the CPU utilization may appear to exceed 100% in the monitoring view, which is actually normal.
-However, if your CPU utilization always exceeds 60%, you are recommended to upgrade the database as soon as possible.
+MariaDB is designed by default to overuse idle resources, so your business can preempt some idle CPU resources. Therefore, when your instance uses more CPU cores than the default value, it's normal for CPU utilization to appear higher than 100% in the monitoring view.
+
+However, if your CPU load always exceeds 60%, we recommend that you expand your database as soon as possible.
 
 ### I have purchased 16 GB of memory. The monitoring page shows that the memory has been almost used up, but why is my business not affected?
-The memory allocation mechanism of the database makes the most of idle memory to improve the cache hit rate rather than reading data from the disk. Therefore, it is normal that your memory is used up. Generally, you only need to pay attention to whether your business is affected.
+The memory allocation mechanism of the database makes the most of idle memory to improve the cache hit rate rather than reading data from the disk. Therefore, it is normal that your memory is used up. Generally, you only need to check whether your business is affected.
 
 ### What is the maximum data volume of each table in TencentDB for MariaDB (without affecting the normal read/write efficiency)?
-You are recommended to keep the data volume below 20 million entries; otherwise, TencentDB for MariaDB performance will be affected.
-
+We recommend that you keep the data volume below 20 million entries; otherwise, TencentDB for MariaDB performance will be affected.
 
 ### Does the connection method of a TencentDB for MariaDB data source need to be changed?
 TencentDB for MariaDB is compatible with MySQL protocols and connection programs under such protocols; therefore, no change is needed.
 
 ### What syntax does TencentDB for MariaDB audit support?
->!The database audit feature is being upgraded, during which new instances won't support this feature. But it will be available again very soon.
-
-Database audit currently supports most SQL statements. If you find any deficiency, please [contact us](https://intl.cloud.tencent.com/contact-us) for feedback.
+>!As the database audit feature is being refactored and upgraded, it is not available for newly purchased instances during this period.
+>
+Database audit currently supports most SQL statements. If you find any deficiency, [contact us](https://cloud.tencent.com/about/connect) for feedback.
 1. Parsing of DCL, DDL, and DML statements is supported.
 ``` 
 Insert,Replace,Select,Union,Update,Delete,CreateDatabase:,CreateEvent,CreateFunction,CreateIndex,CreateLog,
@@ -31,12 +32,7 @@ Install,StopSlave,StartSlave,StartTrans,Use,DescribeTable,DescribeStmt,Flush,Loa
 Reset,CacheIndex,TruncateTable,Lock,Unlock,SavePoint,Help,Do,SubQuery,ShowTables,Execute,Deallocate,Binlog,
 Kill,Partition,PrepareRepairXACheckCheckSumAnalyzeChangeOptimizePurgeHandlerSignalResignal
 ``` 
-2. Transaction and stored procedures will be divided into multiple statements.
+2. Transaction and procedures will be divided into multiple statements.
 
-
-### Why does strong sync in TencentDB for MariaDB have master/slave delay?
-The strong sync mechanism is to return a response immediately after data is written to (stored in) a slave log. In this case, data still needs to be written to the table through the log; therefore, delay will occur. For more information, please see [How Strong Sync Works](https://intl.cloud.tencent.com/document/product/237/1057).
-
-
-
-
+### Why does strong sync in TencentDB for MariaDB have primary/replica delay?
+The strong sync mechanism is to return a response immediately after data is written to (stored in) a replica log. In this case, data still needs to be written to the table through the log; therefore, delay will occur. For more information, see [System Architecture](https://intl.cloud.tencent.com/document/product/237/1057).

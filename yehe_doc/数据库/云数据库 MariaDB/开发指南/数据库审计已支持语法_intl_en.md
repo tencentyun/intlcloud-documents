@@ -1,6 +1,6 @@
->!The database audit feature is being upgraded, during which new instances won't support this feature. But it will be available again very soon.
-
-Database audit currently supports most SQL statements. If you find any deficiency, please [contact us](https://intl.cloud.tencent.com/contact-us) for feedback.
+>!As the database audit feature is being refactored and upgraded, it is not available for newly purchased instances during this period.
+>
+Database audit currently supports most SQL statements. If you find any deficiency, [contact us](https://cloud.tencent.com/about/connect) for feedback.
 - Parsing of DCL, DDL, and DML statements is supported.
 ```
 Insert,Replace,Select,Union,Update,Delete,CreateDatabase:,CreateEvent,CreateFunction,CreateIndex,CreateLog,
@@ -16,4 +16,4 @@ Install,StopSlave,StartSlave,StartTrans,Use,DescribeTable,DescribeStmt,Flush,Loa
 Reset,CacheIndex,TruncateTable,Lock,Unlock,SavePoint,Help,Do,SubQuery,ShowTables,Execute,Deallocate,Binlog,
 Kill,Partition,PrepareRepairXACheckCheckSumAnalyzeChangeOptimizePurgeHandlerSignalResignal
 ```
-- Transaction and stored procedures may be divided into multiple statements.
+- Transaction and procedures may be divided into multiple statements.

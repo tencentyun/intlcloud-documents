@@ -4,17 +4,17 @@ TencentDB for MariaDB comes with the transparent data encryption (TDE) feature. 
 This document describes how to enable data encryption and encrypt/decrypt data in the console.
 
 ## Limits
-- The TDE feature is currently supported only for Percona 5.7 in Hong Kong (China) and MySQL 8.0.24.
->?To use TDE feature, [submit a ticket] (https://console.cloud.tencent.com/workorder/category) to apply for it.
+- The TDE feature is currently supported only for MySQL 8.0.24 or later and Percona 5.7.
+>?To use TDE feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for it.
 - [KMS](https://intl.cloud.tencent.com/document/product/1030/32774) must be activated in advance or as prompted when TDE is enabled.
 - KMS key permissions must be granted in advance or as prompted when TDE is enabled.
 
-## Note
+## Notes
 - After KMS is activated, KMS fees may be incurred as detailed in [Purchase Method](https://intl.cloud.tencent.com/document/product/1030/31967).
 - TDE can't be disabled once enabled.
 - If disaster recovery read-only instances are created, TDE cannot be enabled.
 - After TDE is enabled, disaster recovery read-only instances cannot be created.
-After TDE is enabled, the database instances can’t be restored from a backup file. It is recommended to restore them as instructed in [Rolling back Databases] (https://intl.cloud.tencent.com/document/product/237/8719).
+After TDE is enabled, the database instances can't be restored from a backup file. You recommend that you restore them as instructed in [Rolling back Databases](https://intl.cloud.tencent.com/document/product/237/8719).
 - TDE enhances the security of static data while compromising the read-write performance of encrypted databases. Therefore, use it based on your actual needs.
 - After TDE is enabled, more CPU resources will be consumed, and about 5% of the performance will be compromised.
 
