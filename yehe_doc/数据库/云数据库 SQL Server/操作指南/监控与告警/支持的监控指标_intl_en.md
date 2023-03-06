@@ -1,17 +1,17 @@
 This document describes the common monitoring metrics supported by TencentDB for SQL Server.
 
-## Monitoring metrics
-The monitoring of TencentDB for SQL Server supports 37 common metrics of SQL Server. You can collect statistics of other metrics by configuring the performance counters of SQL Server Management Studio (SSMS).
->?To view monitoring metrics at the system level, [contact us](https://www.tencentcloud.com/zh/contact-us). 
+## Monitoring Metrics
+TencentDB for SQL Server supports monitoring 38 common metrics of SQL Server. You can collect statistics of other metrics by configuring the performance counters of SQL Server Management Studio (SSMS).
+>?To view monitoring metrics at the system level, [contact us](https://cloud.tencent.com/online-service?from=connect-us). 
 
 <table>
 <thead>
-<tr><th>Category</th><th>Metric</th><th>Parameter</th><th>Unit</th><th>Description</th></tr></thead>
+<tr><th>Category</th><th>Metric Name</th><th>Metric Name</th><th>Unit</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>CPU</td>
 <td>Total processor time</td><td>Total Processor Time</td><td>%</td><td>Actual CPU utilization</td></tr>
 <tr>
-<td rowspan=5>Memory</td>
+<td rowspan=5 >Memory</td>
 <td>Memory usage</td><td>Server memory</td><td>MB</td><td>Used size of the total memory</td></tr>
 <tr>
 <td>Max memory</td><td>Max memory</td><td>KB</td><td>Maximum memory</td></tr>
@@ -35,7 +35,7 @@ This metric is available only for version 2014 and later.
 <tr>
 <td>Used storage space</td><td>Storage Space</td><td>GB</td><td>Sum of space used by instance database files and log files</td></tr>
 <tr>
-<td>Free storage space</td><td>Free Storage</td><td>%</td><td>Percentage of free disk space calculated in the following way: (purchased disk space - used storage space) / purchased disk space</td></tr>
+<td>Free storage space</td><td>Free storage</td><td>%</td><td>Percentage of free disk space calculated in the following way: (purchased disk space - used storage space) / purchased disk space</td></tr>
 <tr>
 <td>Avg read IO response time</td><td>Avg. Disk Sec/Read</td><td>ms</td><td>Average response time of each read IO (monitoring at the system level)</td></tr>
 <tr>
@@ -51,12 +51,14 @@ This metric is available only for version 2014 and later.
 <tr>
 <td>Disk queue length</td><td>Disk Queue Length</td><td>-</td><td>Disk queue length (monitoring at the system level)</td></tr>
 <tr>
-<td rowspan=3>Network</td>
+<td rowspan=4>Network</td>
 <td>Inbound traffic</td><td>Network Receive Throughput</td><td>KB/s</td><td>Sum of all inbound packets of all connections</td></tr>
 <tr>
 <td>Outbound traffic</td><td>Network Transmit Throughput</td><td>KB/s</td><td>Sum of all outbound packets of all connections</td></tr>
 <tr>
-<td>Network IO waits</td><td>Network IO waits</td><td>ms</td><td>Average network IO delay time</td></tr>
+<td>Average network IO delay</td><td>Network IO waits</td><td>ms</td><td>Average network IO delay time</td></tr>
+<tr>
+<td>Read-only replica delay</td><td>Read-only replica delay</td><td>Second</td><td>Data replica delay between the primary and replica instance </td></tr>
 <tr>
 <td rowspan=3>Connection</td>
 <td>User connections</td><td>User Connections</td><td>-</td><td>Average number of user connections to database per second</td></tr>
@@ -99,4 +101,3 @@ This metric is available only for version 2014 and later.
 <td>Others</td>
 <td>User errors</td><td>User Error/sec</td><td>counts/sec</td><td>Average number of errors per second</td></tr>
 </tbody></table>
-

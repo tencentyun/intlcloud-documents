@@ -7,23 +7,23 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/2289c7168a54e8f6de512dfd41f1255a.png)
 3. 在实例管理页，选择**备份管理**页，在数据备份列表或日志备份列表中可查看每一个备份任务的相关信息。
    - 数据备份列表信息展示：备份开始时间、备份结束时间、备份名称、备份策略、备份方式、备份文件形式、备份大小、数据库、备份地域、状态、操作（下载、还原、删除）等。
-![](https://qcloudimg.tencent-cloud.cn/raw/d3b940edb74ff7b6c4211346b77e5d57.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/d3b940edb74ff7b6c4211346b77e5d57.png)
    - 日志备份列表展示：文件名、日志数据开始时间、日志数据结束时间、备份大小、备份地域、操作（下载）。
-![](https://qcloudimg.tencent-cloud.cn/raw/87a60099a91eb9a7788079f83ef28972.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/87a60099a91eb9a7788079f83ef28972.png)
    - 支持按近1小时、近24小时、今天、昨天、近七天、近30天以及自定义时间范围筛选备份文件。
-![](https://qcloudimg.tencent-cloud.cn/raw/5696c1da3100f8969d8559a2a6966f48.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/5696c1da3100f8969d8559a2a6966f48.png)
    - 右侧搜索框支持根据备份名称、数据库名称、备份策略、备份方式、备份文件形式的资源属性对**数据备份文件**进行搜索。
-![](https://qcloudimg.tencent-cloud.cn/raw/a9880e958a13887899aeeab42f7ba6e3.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/a9880e958a13887899aeeab42f7ba6e3.png)
 
 ## 热点问题
 #### 1. 超出备份保留时间的备份还可以下载或还原吗？
 到期后的备份集会自动删除，无法进行下载还原。
 - 建议您根据需求合理设置备份保留时间，或在 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver) 下载备份文件至本地。
-- 您也可以在控制台通过手动备份实例数据，手动备份会一直保存。
+- 您也可以在控制台通过手动备份实例数据。
 >?手动备份亦会占用备份空间，请合理使用备份空间，避免造成额外的费用。
 
 #### 2. 备份可以手动删除吗？
-- 自动备份无法手动删除，可设置备份保留时间，到期后会自动删除。 若开启 [跨地域备份](https://www.tencentcloud.com/document/product/238/49138) 功能，跨地域备份文件也可设置跨地域备份保留时间，到期后会自动删除。
+- 自动备份无法手动删除，可设置备份保留时间，到期后会自动删除。 若开启 [跨地域备份](https://intl.cloud.tencent.com/document/product/238/49138) 功能，跨地域备份文件也可设置跨地域备份保留时间，到期后会自动删除。
 - 手动备份可在  [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver) 的备份列表手动删除，没有手动删除的前提下会随自动备份的保留时长来保留。
 
 #### 3. 数据和日志备份是否可以关闭？
@@ -46,3 +46,4 @@
 #### 5. 已隔离的实例还可以下载备份吗？
 可以。
 - 按量计费实例：实例到期24个小时后，实例被隔离进入回收站，此时将禁止回档、手动备份，自动备份依然可以进行，可在实例操作列 > 更多，进行备份下载，该实例备份超出免费赠送空间的部分依然计费，直至实例下线。
+

@@ -1,3 +1,41 @@
+## February 2023
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tbody>
+<tr>
+<td>Optimized backup restoration</td>
+<td>TencentDB for SQL Server optimizes the backup restoration and supports task editing, database renaming, and multiple COS file formats </td>
+<td>2023-02-14</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/39005" target="_blank">Cold Backup Migration</a></td></tr>
+<tr>
+<td>Account type and permission modification</td>
+<td>TencentDB for SQL Server launched a new database account type and permission logic to better help you manage your accounts.</td>
+<td>2023-02-09</td>
+<td></td></tr>
+<tr>
+<td>Added monitoring metrics</td>
+<td>The RO sync delay time is added for TencentDB for SQL Server to monitor the data sync delay time between the primary and the replica instance.</td>
+<td>2023-02-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/46502" target="_blank">Monitoring Metrics</a></td></tr>
+<tr>
+<td>Try out two-node cloud disk architecture</td>
+<td>TencentDB for SQL Server launched two-node cloud disk edition instance, which is fully compatible with all features of the two-node local disk instance. Its performance is comparable to that of a local SSD, allowing you to easily handle various business scenarios that require high performance, concurrency, and availability. It has more flexible CPU/memory specification ratios, supports general and enhanced SSD cloud disks, and can store up to 32 TB of data. <br>In addition, the formerly high-availability/cluster editions are renamed as two-node, and the formerly basic edition as single-node for tryout. To use it in advance, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application. </td>
+<td>2023-02-09</td>
+<td></td></tr>
+</tbody></table>
+
+
+## January 2023
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported cross-account data migration</td>
+<td>TencentDB for SQL Server supports cross-account data migration between instances with DTS</td>
+<td>2023-01-13</td>
+<td><a href="https://www.tencentcloud.com/document/product/238/53570" target="_blank">Across-Account Migration with DTS</a></td></tr>
+</tbody></table>
+
 ## December 2022
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
