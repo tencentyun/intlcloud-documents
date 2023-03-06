@@ -1,16 +1,12 @@
-### How do I display an object when I access it without downloading it?
 
-Bind your own domain name and enable the static website hosting feature as instructed in [Setting Up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984). If you don't have a domain name yet, you can [register](https://www.tencentcloud.com/document/product/242) one through Tencent Cloud.
+
 
 ### What should I do if I failed to set a custom domain name in the COS console?
 
 1. Make sure that the domain name has obtained an ICP filing.
 2. Make sure that the DNS resolution of the domain name is correct. If CDN acceleration is disabled, you need to go to the DNS console to map the CNAME record of your domain name to the [default domain name](https://intl.cloud.tencent.com/document/product/436/18424) of the bucket.
 
-### What should I do if images cannot be displayed even after I enable the static website hosting feature?
 
-1. If you want the objects (images) to be displayed directly when you access COS, you need to enable the static website hosting feature instead of setting `Content-Disposition:inline` in the object headers. 
-2. Check browser or CDN for cached data. You can use the curl and wget commands to avoid browser caching. The cached CDN URL can be purged in the [CDN console](https://console.cloud.tencent.com/cdn).
 
 ### What is the difference between enabling and disabling CDN acceleration if I have my own domain name bound?
 
@@ -22,9 +18,7 @@ Bind your own domain name and enable the static website hosting feature as instr
 Other custom headers can take effect once set. However, `Content-Disposition` takes effect only if the static website hosting feature is enabled and you access objects with a custom domain name.
 
 
-### What should I do if images cannot be displayed even after I enable the static website hosting feature?
 
-Check browser or CDN for cached data. You can use the curl and wget commands to avoid browser caching. The cached CDN URL can be purged in the [CDN console](https://console.cloud.tencent.com/cdn).
 
 ### What should I do if a static website cannot be accessed by using a CDN domain name?
 
