@@ -166,9 +166,9 @@ To specify that `versionid` must be signed in the signature if it is in an objec
 ### Using the REST API
 
 
-- [PUT Bucket StrictSignature](use the new API documentation URL)
-- [GET Bucket StrictSignature](use the new API documentation URL)
-- [DELETE Bucket StrictSignature](use the new API documentation URL)
+- [PUT Bucket StrictSignature](https://www.tencentcloud.com/document/product/436/53889)
+- [GET Bucket StrictSignature](https://www.tencentcloud.com/document/product/436/53890)
+- [DELETE Bucket StrictSignature](https://www.tencentcloud.com/document/product/436/53891)
 
 
 
