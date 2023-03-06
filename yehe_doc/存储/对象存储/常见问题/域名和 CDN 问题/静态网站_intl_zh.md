@@ -3,7 +3,7 @@
 ### 在 COS 控制台设置自定义域名失败，如何处理？
 
 1. 请先确认该域名是否已备案。
-2. 确认域名的 DNS 解析是否正确。在关闭 CDN 加速情况下，需要预先在 DNS 解析控制台将域名 CNAME 到存储桶的 [默认域名](https://intl.cloud.tencent.com/document/product/436/18424)）。
+2. 确认域名的 DNS 解析是否正确。在关闭 CDN 加速情况下，需要预先在 DNS 解析控制台将域名 CNAME 到存储桶的 [默认域名](https://intl.cloud.tencent.com/document/product/436/18424)。
 
 
 ### 用户绑定自有域名时，开启 CDN 加速和关闭 CDN 加速的区别？
@@ -27,21 +27,25 @@
  - 当存储桶权限为私有读时，需要对 CDN 服务授权并开启回源鉴权。
  - 当存储桶权限为公有读时，无需对 CDN 服务授权并开启回源鉴权。
 3. CDN 鉴权需要根据存储桶的权限进行对应设置：
- 1. 当存储桶权限为私有读时：
+
+ （1）当存储桶权限为私有读时：
  <table>
 	<tr><th>CDN 鉴权配置</th><th>CDN 加速域名访问</th><th>COS 域名访问</th><th>常见场景</th></tr>
 	<tr><td>关闭（默认）</td><td>不可访问</td><td>需使用 COS 鉴权</td><td>可直接访问 CDN 域名，保护源站数据</td></tr>
 	<tr><td>开启</td><td>需使用 URL 鉴权</td><td>需使用 COS 鉴权</td><td>全链路保护访问，支持 CDN 鉴权防盗链</td></tr>
 </table>
- 2. 当存储桶权限为公有读时：
+
+ （2）当存储桶权限为公有读时：
 <table>
 	<tr><th>CDN 鉴权配置</th><th>CDN 加速域名访问</th><th>COS 域名访问</th><th>常见场景</th></tr>
 	<tr><td>关闭（默认）</td><td>可访问</td><td>可访问</td><td>全站许可公共访问，通过 CDN 或源站均可访问</td></tr>
 	<tr><td>开启</td><td>需使用 URL 鉴权</td><td>可访问</td><td>对 CDN 访问开启防盗链，但不保护源站访问，不推荐</td></tr>
 </table>
+
 4. 确认以上配置无误后，请确认您访问 CDN 加速域名使用的协议和静态网站的 **强制 HTTPS** 配置：
  - 当您访问 CDN 加速域名使用的是 HTTP 协议，**请勿开启强制 HTTPS** 选项。
  - 当您访问 CDN 加速域名使用的是 HTTPS 协议，建议对 CDN 加速域名配置 **开启回源跟随301/302**。详情请参见 [回源跟随301/302配置](https://intl.cloud.tencent.com/document/product/228/7183)。
+
 5. 如果按照以上步骤排查后，仍无法解决问题，您可以 [联系我们](https://intl.cloud.tencent.com/contact-sales)，进行进一步的问题排查。
 
 ### 静态网站功能配合前端 Vue 框架一起使用，当路由设置为 History 模式，刷新页面遇到404问题怎么办？
