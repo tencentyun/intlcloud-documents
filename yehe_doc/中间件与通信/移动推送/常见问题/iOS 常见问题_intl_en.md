@@ -9,9 +9,9 @@ Solution: go to `Targets` > `Build Phases` > `Link Binary With Libraries` and se
 
 ### Why is a development environment token considered as a production environment token in iOS? How do I deal with the issue?
 
-If an application is installed in the Xcode development environment, and development environment messages are pushed through TPNS, the following error messages are reported:
-- Error message reported when you query the token using the push troubleshooting tool in the TPNS console
-- Error log recorded when you debug the TPNS SDK in Xcode
+If an application is installed in the Xcode development environment, and development environment messages are pushed through Tencent Push Notification Service, the following error messages are reported:
+- Error message reported when you query the token using the push troubleshooting tool in the Tencent Push Notification Service console
+- Error log recorded when you debug the Tencent Push Notification Service SDK in Xcode
 ```xml
 Missing Provisioning Profile - iOS Apps must contain a provisioning profile  named embedded.mobileprovision.
 The provisioning profile is missing. iOS apps must contain a provisioning profile named `embedded.mobileprovision`.
@@ -19,9 +19,9 @@ The provisioning profile is missing. iOS apps must contain a provisioning profil
 
 Error cause: the application package does not contain the `embedded.mobileprovision` configuration file, making the token environment unknown.
 Solution:
-1. In the Xcode menu bar, choose **File** -> **Project Settings**.
+1. In the Xcode menu bar, choose **File** > **Project Settings**.
 ![](https://main.qcloudimg.com/raw/c470889681e34e87cc7f661ffb677e7d.png)
-2. Set **Build System** to **Legacy Build System (Deprecated)** and click **Done**.
+2. Set **Build System** to **Legacy Build System** and click **Done**.
 ![](https://main.qcloudimg.com/raw/812b625ddfe5c2e7c40c0ad52cae9aec.png)
 3. Build the application again, and uninstall and reinstall it.
 4. After successful registration, push messages to test the token.
@@ -33,10 +33,10 @@ Solution:
 
 ### What should I do if the error `building for iOS Simulator, but linking in object file built for iOS` is reported when the Xcode 12 simulator integrates with the notification extension plugin during the build?
 
-You need to find the extension plugin target, click **Build Settings** -> **Excluded Architectures**, and add the ARM64 instruction set, as shown in the following figure:
+You need to find the extension plugin target, click **Build Settings** > **Excluded Architectures**, and add the ARM64 instruction set, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/1b62d4bc884c1870c70209b99200d6a6.png)
 
-### What should I do if push certificate upload failed in the TPNS console?
+### What should I do if push certificate upload failed in the Tencent Push Notification Service console?
 
 Convert the .p12 file of the push certificate into a .pem file and troubleshoot as follows:
 
@@ -59,17 +59,17 @@ openssl x509 -in apns-dev-cert.pem -inform pem -noout -text
 
 ### Why doesn't clicking a notification trigger a callback for the notification clicking event when the application is cold started?
 
-1. Check the version of the TPNS SDK. If it is v1.2.5.3 or earlier, you are recommended to upgrade it to v1.2.5.4 or later.
-2. Check the timing for calling the TPNS SDK initialization method. Currently, the TPNS SDK initialization method needs to be called as soon as possible in the main thread of the application startup method to ensure that the TPNS SDK is set as the proxy of the notification center in the first time.
+1. Check the version of the Tencent Push Notification Service SDK. If it is v1.2.5.3 or earlier, you are recommended to upgrade it to v1.2.5.4 or later.
+2. Check the timing for calling the Tencent Push Notification Service SDK initialization method. Currently, the Tencent Push Notification Service SDK initialization method needs to be called as soon as possible in the main thread of the application startup method to ensure that the Tencent Push Notification Service SDK is set as the proxy of the notification center in the first time.
 
 ### What should I do if an empty notification cannot pop up on devices on iOS 10 or below?
 
 The `content` field cannot be empty if the RESTful API is called for push; otherwise, the notification will not pop up on devices on **iOS 10 or below**.
 
 
-### Does TPNS support .p8 certificates?
+### Does Tencent Push Notification Service supports .p8 certificates?
 
-A .p8 certificate has security risks. Although it is valid longer than a .p12 certificate, it has a wider push permission and scope. If leaked, it may cause more severe consequences. TPNS recommends you use .p12 certificates to manage the push services of your applications separately.
+A .p8 certificate has security risks. Although its validity is longer than that of a .p12 certificate, it has a wider push permission and scope. If leaked, it may cause more severe consequences. Tencent Push Notification Service recommends you use .p12 certificates to manage the push services of your applications separately.
 
 
 
@@ -78,24 +78,24 @@ Message push involves various associated modules, and exception in any steps can
 
 **Client troubleshooting**
 - Check the notification settings of the device
-Please go to **Notifications** -> **App name** to check whether your app has enabled message push.
+Go to **Notifications** > **App name** to check whether your app has enabled message push.
 - Check the network settings of the device
-If there is a network issue, the client may fail to obtain the message-receiving token when registering for APNs. As a result, TPNS cannot be used to push messages to specified devices.
+If there is a network issue, the client may fail to obtain the message-receiving token when registering for APNs. As a result, Tencent Push Notification Service cannot be used to push messages to specified devices.
 
-If the device is not connected to the Internet, it cannot receive the message, even if the client has correctly obtained the token, registered it with the TPNS backend, and the TPNS server has successfully delivered the message. The message might be received if the device reconnects to the Internet within a short time, as APNs will retain the message for some time and deliver it again.
+If the device is not connected to the Internet, it cannot receive the message, even if the client has correctly obtained the token, registered it with the Tencent Push Notification Service backend, and the Tencent Push Notification Service server has successfully delivered the message. The message might be received if the device reconnects to the Internet within a short time, as APNs will retain the message for some time and deliver it again.
 
 Check the SDK integration. After the SDK is integrated, please make sure that it can get the device token used to receive messages. For more information, please see [iOS SDK Integration Guide](https://intl.cloud.tencent.com/document/product/1024/30726).
 
 
 **Server troubleshooting**
 - APNs server problem
-The TPNS server sends a message to an iOS device via APNs. If APNs fails, the TPNS server will fail to request APNs to deliver the message to the device.
-- TPNS push server problem
-The TPNS server achieves message delivery through the collaboration of multiple feature modules. If an exception occurs in any of these modules, message push will fail.
+The Tencent Push Notification Service server sends a message to an iOS device via APNs. If APNs fails, the Tencent Push Notification Service server will fail to request APNs to deliver the message to the device.
+- Tencent Push Notification Service server problem
+The Tencent Push Notification Service server achieves message delivery through the collaboration of multiple feature modules. If an exception occurs in any of these modules, message push will fail.
 
 
 **Push certificate troubleshooting**
-When the TPNS server requests APNs to deliver the message, it needs to use two required parameters: the message push certificate and the device token. When pushing the message, please make sure that the message push certificate is valid. For more information on how to configure the message push certificate, please see [Acquisition of Push Certificate](https://intl.cloud.tencent.com/document/product/1024/30728).
+When the Tencent Push Notification Service server requests APNs to deliver the message, it needs to use two required parameters: the message push certificate and the device token. When pushing the message, please make sure that the message push certificate is valid. For more information on how to configure the message push certificate, please see [Acquisition of Push Certificate](https://intl.cloud.tencent.com/document/product/1024/30728).
 
 
 
@@ -108,12 +108,12 @@ Check whether the bundle ID configured in the Xcode project matches the configur
 ### How does the client play the custom push message audio?
 
 First, on the device development side, put the audio file in the `bundle` directory.
-- If you use the TPNS console to create a push, enter the audio file name in **Advanced Settings** (the full path of the audio file is not required).
+- If you use the Tencent Push Notification Service console to create a push, enter the audio file name in **Advanced Settings** (the full path of the audio file is not required).
 - If you use RESTful APIs, set the `sound` parameter to the name of the audio file (the full path of the audio file is not required).
 
 
 ### Does iOS support offline retention of push messages? 
-No. When the TPNS server sends a message to APNs, if APNs finds that the device is not online, it will retain the message for a while. However, the duration of the retention is not clear.
+No. When the Tencent Push Notification Service server sends a message to APNs, if APNs finds that the device is not online, it will retain the message for a while. However, the duration of the retention is not clear.
 
 
 
@@ -122,7 +122,7 @@ No. When the TPNS server sends a message to APNs, if APNs finds that the device 
 - iOS 10.0 and later versions provide the Service Extension API, which can be called by the client to listen to the arrival of messages. For more information, please see [Notification Service Extension](https://intl.cloud.tencent.com/document/product/1024/30730).
 
 
-### How do I create silent push with the TPNS server SDK?
+### How do I create silent push with the Tencent Push Notification Service server SDK?
 Set `content-available` to `1` and do not use `alert`, `badge`, or `sound`.
 
 
@@ -141,12 +141,12 @@ Apply for enterprise signature and push certificates and release your applicatio
 Use the enterprise signature certificate to build and release your application. Testers can download and install the application through the dedicated enterprise channel.
 2. App Store signature certificate
 Use the current push certificate released on App Store as follows:
-Release the preview version in TestFlight: upload the IPA package to [App Store Connect](https://appstoreconnect.apple.com), use TestFlight to create a beta version, and set the list of testers (Apple IDs) for the specified version in TestFlight. Testers can download and install your application through the official TestFlight application on App Store.
+Release the preview version in TestFlight: upload the IPA package to [App Store Connect](https://appstoreconnect.apple.com), use TestFlight to create a beta version, and set the list of testers (Apple IDs) for the specified version in TestFlight. Testers can download and install your application through the official **TestFlight** application on App Store.
 
 
 ### For iOS, how do I configure to change the badge number only without displaying the message?
 When creating a push, you can use the API to specify the notification bar message type, leave the title empty, and only set `badge_type`. For more information, please see [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
-The example is as follows:
+Sample:
 <dx-codeblock>
 :::  json
 {
@@ -170,7 +170,7 @@ The example is as follows:
 
 
 ### What should I do if my application reports the error `Crash: you can't call -sendResponse: twice nor after encoding it`?
-If your application integrates TPNS SDK for iOS (1.2.7.2–1.2.5.4), uses the **Recall** feature of TPNS, and implements the following system callback:
+If your application integrates Tencent Push Notification Service SDK for iOS (1.2.7.2–1.2.5.4), uses the **Recall** feature of Tencent Push Notification Service, and implements the following system callback:
 ```
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo  fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 ```
@@ -182,17 +182,22 @@ Then you may encounter this error. You can use the **override** feature to proce
 The following error is reported during Xcode debugging: "Error Domain=NSCocoaErrorDomain Code=1001. APNs' request for a token failed during Xcode debugging. -> Please resolve the problem as follows: use 4G network and restart the phone. If the problem persists after the phone is restarted for multiple times, you are recommended to use another phone for testing." However, the problem persists after I fixed the problem as instructed.
 
 **Troubleshooting process:**
-1. Use a relevant method in the TPNS SDK to avoid running at the same time as other methods for registering remote notifications.
+1. Use a relevant method in the Tencent Push Notification Service SDK to avoid running at the same time as other methods for registering remote notifications.
 2. Change Xcode's build system to the legacy build system to see if there is any repeated class definition caused by repeated import of the static library. The procedure is as follows:
-	1. In the Xcode menu bar, choose **File** -> **Project Settings**.
+	1. In the Xcode menu bar, choose **File** > **Project Settings**.
 	![](https://main.qcloudimg.com/raw/bec61fe573cfe656b426f2e76a6e7310.png)
-	2. Set **Build System** to **Legacy Build System (Deprecated)** and click **Done**.
+	2. Set **Build System** to **Legacy Build System** and click **Done**.
 	![](https://main.qcloudimg.com/raw/e3ac972a5e6c6c7f8ebdab886c7f2342.png)
 	3. Compile again. If a compilation error occurs, make modifications accordingly.
 
 
+### Why no message arrival data is reported after a message is delivered successfully?
+**Troubleshooting process:**
+**Message delivered via the APNs channel**:
+1. Check whether the notification service extension plugin is configured ([details](https://intl.cloud.tencent.com/document/product/1024/30730)). If the plugin is not configured, arrival data cannot be reported.
+2. It could be that the arrival event failed to be collected but the message has actually been sent to the mobile phone (the actual push effect is not affected). Check whether the mobile phone network is normal or whether APNs delivery was delayed.
 
-
-
-
+**Message delivered via the Tencent Push Notification Service channel**:
+Possible case 1: The Tencent Push Notification Service backend delivered the message via the Tencent Push Notification Service channel when the link between the Tencent Push Notification Service SDK and the backend was actually disconnected. As a result, the message failed to reach the device.
+Possible case 2: No arrival data was reported but the message actually reached the device (the actual push effect is not affected).
 
