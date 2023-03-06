@@ -49,7 +49,7 @@ COS 支持批量自定义头部，详见 [自定义 Headers](https://intl.cloud.
 
 ### COS 是否支持某个文件夹大小的统计？
 
-COS 支持查看当前文件夹的对象数量及对象所占的容量大小，详情请参见 [查看文件夹详情](https://intl.cloud.tencent.com/document/product/436/31633) 。
+COS 控制台支持查看当前文件夹的对象数量及对象所占的容量大小，详情请参见 [查看文件夹详情](https://intl.cloud.tencent.com/document/product/436/31633) 。
 
 ### COS 中的对象能不能设置回退到上个版本？
 
