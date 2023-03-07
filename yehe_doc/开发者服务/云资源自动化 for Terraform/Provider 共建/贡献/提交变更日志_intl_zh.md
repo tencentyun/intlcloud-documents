@@ -55,7 +55,7 @@ tencentcloud_sqlserver_zone_config
 ### 问题修复
 
 一个新的问题修复，它的变更应该使用release-note:bug标题，并有一个前缀指示它对应的资源或数据源，一个冒号，然后是一个简短的摘要。
-
+>?
 > 如果是Provider级别的修复，使用provider前缀
 > 
 
@@ -68,7 +68,7 @@ resource/tencentcloud_cdn_domain: Fix `https_config` inconsistency after apply
 ### 功能增强
 
 一个新的功能增强，它的变更应该使用release-note:enhancement标题，并有一个前缀指示它对应的资源或数据源，一个冒号，然后是一个简短的摘要。
-
+>?
 > 如果是Provider级别的功能增强，使用provider前缀
 > 
 
