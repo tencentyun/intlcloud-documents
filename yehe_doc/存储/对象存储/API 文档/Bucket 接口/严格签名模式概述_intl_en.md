@@ -114,7 +114,7 @@ After COS receives a request:
 | A specified parameter is not signed in the signature  | AccessDenied | Strict signature missing param that must be signed  |
 
 The process is as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/5533162a92992cafa2704943333baf03.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6a18edc7ea695751394b431933114a7c.png)
 
 ### Samples of using the strict signature mode
 
@@ -169,6 +169,5 @@ To specify that `versionid` must be signed in the signature if it is in an objec
 - [PUT Bucket StrictSignature](https://www.tencentcloud.com/document/product/436/53889)
 - [GET Bucket StrictSignature](https://www.tencentcloud.com/document/product/436/53890)
 - [DELETE Bucket StrictSignature](https://www.tencentcloud.com/document/product/436/53891)
-
 
 
