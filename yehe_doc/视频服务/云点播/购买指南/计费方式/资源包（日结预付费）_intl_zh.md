@@ -1,7 +1,7 @@
 ## 资源包使用说明
-> ? 您可以通过 [云点播价格计算器](https://buy.cloud.tencent.com/price/vod/calculator) 计算您的点播相关费用，或者通过 [计费示例](https://cloud.tencent.com/document/product/266/33810) 进行费用预估。
+>? 您可以通过 [云点播价格计算器](https://buy.cloud.tencent.com/price/vod/calculator) 计算您的点播相关费用，或者通过 [计费示例](https://www.tencentcloud.com/document/product/266/38163) 进行费用预估。
 
- [云点播资源包](https://buy.tencentcloud.com/vod)，即预先购买点播资源，后使用资源的方式，**每一种资源包仅支持抵扣该项功能的资源**。
+[云点播资源包](https://buy.tencentcloud.com/vod)，即预先购买点播资源，后使用资源的方式，**每一种资源包仅支持抵扣该项功能的资源**。
 
 ## 注意事项：
 

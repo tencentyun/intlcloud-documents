@@ -1,22 +1,23 @@
 ## Five-Day Unconditional Refund
 
-You can refund a package within five days of purchase if it hasn’t been used.
+You can refund a VOD package within five days of purchase if it hasn't been used.
 
-## Refund policy[](id:p1)
+## Refund Policy[](id:p1)
 
-- For a single account, the unused package can be refunded within 5 days (including 5 days) from the date of the new purchase for 5 days without reason, and will not be refunded once used.
-- Once the UGSV SDK license is activated, it cannot be refunded (after the package and the license are bound, the package cannot be refunded and is considered used).
-- In case of suspected abnormality or malicious refund, Tencent Cloud has the right to reject your refund application.
-- For orders that meet the 5-day unconditional refund requirements, the refund amount is the entire consumption amount spent at the time of purchase, including the amount in the cash account, the amount transferred to the account, and the amount in the gift account.
+- You cannot refund a starter package.
+- You can refund a VOD package within five days of purchase if it hasn't been used.
+- A UGSV license is not refundable after it’s activated. A package will be considered used after it is bound to a license and cannot be refunded.
+- We may reject a refund request if we suspect refund abuse.
+- If a package meets the refund requirements, you will receive a full refund, regardless of whether you used cash credits, commission credits, or free credits for the purchase.
 
 >!
->- A single account only supports one refund without reason.
->- Credits or vouchers are not refundable.
->- The refund  will be refunded to your Tencent Cloud account in the original way.
+>- Each account can request an unconditional refund only once.
+>- Discounts and vouchers will not be returned.
+>- A full refund will be returned to your Tencent Cloud account.
 
-## Refund Steps
+## Directions
 
-1. Log in - Tencent Cloud, click the corresponding number of available resource packs under the resource pack module on the service overview page.
-2. Select the resource pack that needs to be refunded on the resource pack page, and click Return to the right of the selected resource pack.
+1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview). On the **Service Overview** page, click the count of usable packages in the **Package Usage** area.
+2. Find the package you want to return and click **Refund** on the right.
 
->!  Before refunding the package, please check whether the package complies with the refund rules. If complies, click Return. If not, the package cannot be returned.
+>! Before requesting a refund, please make sure the package meets the [refund conditions](#p1).

@@ -1,115 +1,113 @@
-## Introduction
+## Overview
 
-The custom origin-pull feature relies on the Video-on-demand CDN capability. By creating a custom domain name and configuring the origin-pull information, users can accelerate the distribution of media files stored in the third-party origin site with the help of Video- on-demand, providing users with cloud-based services in multi-cloud scenarios. Media distribution scheme. This article will introduce how to configure and use Video-on-demand custom origin-pull capabilities.
+You can configure a third-party origin server for your domain in VOD to pull media files from the origin server and distribute the media via VOD. This multi-cloud media distribution solution is enabled by VOD’s CDN capability. This document shows you how to configure and use an origin server with VOD.
 
-## Usage Scenarios
+## Use cases
 
-- **Origin site migration costs are high:** The user's media resource is stored on other third-party origin sites, and the content of the origin site is highly coupled with the third-party platform, so it is difficult to migrate the origin site. Based on the custom origin-pull feature, you can use it without migrating the origin site and accelerate content distribution by VOD‘s CDN.
-- **High playback quality requirements**:  When the User’s content has high requirements for network delay and lag, it is difficult to meet user needs with other third-party platforms. The custom origin-pull feature can ensure smoother audio and video playback for customers, to ensure the quality of services.
-- **Multi-cloud Coexistence Reduces Risk:** The user‘s content and business need multiple content acceleration channels to ensure business reliability and improve disaster recovery capabilities. You can choose Tencent Cloud Video-on-demand CDN for accelerated audio and video distribution.
-
-
-## Prerequisite
-
-1. [Register](https://www.tencentcloud.com/en/account/register?s_url=https%3A%2F%2Fconsole.tencentcloud.com%2Fvod%2Foverview) and [log in](https://www.tencentcloud.com/en/account/login?s_url=https%3A%2F%2Fconsole.tencentcloud.com%2Fvod%2Foverview) to the Tencent Cloud account, and complete the account real-name authentication.
-2. The Tencent Cloud VOD service has been activated. If it is not activated, please go to activate the [Video-on-demand](https://console.tencentcloud.com/vod/overview) service.
-3. Go to the [feature experience](https://console.tencentcloud.com/vod/overview) module under the console, and enable the custom origin-pull feature.
+- Your media assets are stored with a third-party cloud vendor, and **the cost of migrating them is high**. You can use VOD’s custom origin server feature to deliver your content without migrating your media assets.
+- You have **high requirements on latency and stuttering** and your existing service provider is unable to meet them. You can use VOD’s custom origin server feature to deliver smoother playback and improve your user experience.
+- You need **more than one channel** to distribute your content to ensure the reliability and improve the disaster recovery capability of your business.
 
 
-## Supported origin types
+## Prerequisites
 
-- **Own origin server**
-- **Third party storage**
+1. You have [signed up](https://intl.cloud.tencent.com/register?&s_url=https%3A%2F%2Fcloud.tencent.com%2F) for a Tencent Cloud account, completed identity verification, and [logged in](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fcloud.tencent.com%2F).
+2. You have [activated](https://console.cloud.tencent.com/vod/overview) VOD.
+
+
+
+## Supported Origin Server Types
+
+- **Self-owned origin servers**
+- **Third-party storage services**
 
 ## Directions
-### Step 1: Create a custom domain name and configure  origin-pull information
 
-1. After the custom origin-pull is enabled, log in to the VOD console, and select **Distribution Playback Settings** > [Domain Management](https://console.tencentcloud.com/vod/distribute-play/domain) in the left navigation bar to enter the **Domain Management** page.
-2. Click **Custom** **origin server** **domains** of the origin site acceleration at the top to enter the page of the **custom domain name** of the origin site acceleration.
-![img](https://qcloudimg.tencent-cloud.cn/raw/e68e04641c3ad616450a70c72d5d3dcd.png)
-3. Click Add Domain, fill in the registered domain name and select the acceleration region. For details, see [Customizing Domain Names](https://www.tencentcloud.com/document/product/266/35572).
-![img](https://qcloudimg.tencent-cloud.cn/raw/0fbcc49821fd7eebffd9ad17a81072b1.png)
-4. Fill in the origin station configuration according to the user's actual origin-pull requirements. Currently, **self-owned** **server** and **third-party storage** are supported. The specific configuration instructions are as follows:   
-![img](https://qcloudimg.tencent-cloud.cn/raw/9ac80033d6fb055e299a2f355d0d1825.png) 
-   **Own origin server**
-If the user wants to use a business server running stably as the  origin site to accelerate the distribution of media files on it with the help of Video-on-Demand CDN, please configure the origin site as follows:
+### Step 1. Add a domain and configure origin server information
+
+1. Log in to the VOD console and select **Distribution and Playback** > [Domain Name](https://console.cloud.tencent.com/vod/distribute-play/domain) on the left sidebar.
+2. Select the **Custom origin server domains** tab at the top.
+![](https://qcloudimg.tencent-cloud.cn/raw/e68e04641c3ad616450a70c72d5d3dcd.png)
+3. Click **Add Domain** and enter a domain. For more information, see [Customizing Domain Names](https://intl.cloud.tencent.com/document/product/266/35572).
+![](https://qcloudimg.tencent-cloud.cn/raw/0fbcc49821fd7eebffd9ad17a81072b1.png)
+4. Enter your origin server information. Currently, **self-owned servers** and **third-party storage** are supported.     
+![](https://qcloudimg.tencent-cloud.cn/raw/9ac80033d6fb055e299a2f355d0d1825.png) 
+
+**Self-owned servers**
+If you want to use your existing server as the origin server to distribute media files stored in it via VOD, configure as follows:
 <table>
    <tr>
-      <th width="0px" style="text-align:center">Configuration item</td>
-      <th width="0px" style="text-align:center">Describe</td>
+      <th width="0px" style="text-align:center">Item</td>
+      <th width="0px" style="text-align:center">Description</td>
    </tr>
    <tr>
-      <td>Origin type</td>
-      <td>Choose<b>Self-owned server</b></td>
+      <td>Origin server type</td>
+      <td>Select <b>Self-owned server</b></td>
    </tr>
    <tr>
-      <td>Origin-pull protocol</td>
-      <td>According to the support of the origin site, select the origin-pull request protocol, which supports HTTP, HTTPS ,and protocol following</td>
+      <td>Protocol</td>
+      <td>Select the protocol, which can be HTTP, HTTPS, or “Same as request”.</td>
    </tr>
 	   <tr>
-      <td>Origin-pull address</td>
-      <td>Support filling in multiple IP origin sites (separated by commas) or a domain name origin site</td>
+      <td>Origin server address</td>
+      <td>You can enter multiple IP addresses (separate with commas) or one domain.</td>
    </tr>
 	 <tr>
-      <td>Origin-pull HOST</td>
-      <td>The own origin site can specify the origin-pull HOST, and the origin-pull HOST is used to specify the specific site of the domain name/IP of the site accessed by the CDN node when origin pulling.<br>If the origin-pull HOST is not specified, the current accelerated domain name is used by default</td>
+      <td>Host</td>
+      <td>For self-owned origin servers, you can specify the host of a domain or IP address that VOD pulls from.<br> If you do not specify it, VOD will pull from the current domain.</td>
    </tr>
 </table>
 
 <dx-alert infotype="explain" title="">
-
-- The orgin site address does not support the default domain name of VOD.
-- Protocol following can realize HTTP access using HTTP origin-pull, and HTTPS access using HTTPS origin-pull (the origin site needs to support HTTPS access).
-- It is supported to select a domain name as the origin-pull address, and this domain name cannot be the same as the business acceleration domain name.
+- You cannot use your VOD default domain as the origin server address.
+- If you select **Same as request**, HTTP will be used for HTTP requests, and HTTPS will be used for HTTPS requests (your origin server must support HTTPS).
+- You can use a domain as the origin server address, but this domain cannot be the same as the domain you use for acceleration.
 </dx-alert>
-<b>**Third-party object storage**</b><br>
-If you want to accelerate the distribution of media files stored in third-party object storage with the help of Video-on-Demand CDN capabilities, please configure the origin site as follows:          
+<b>Third-party storage</b><br>
+If you want to distribute the media files you store in a third-party storage service via VOD’s CDN, configure as follows:              
 <table>
    <tr>
-      <th width="0px" style="text-align:center">Configuration item</td>
-      <th width="0px" style="text-align:center">Describe</td>
+      <th width="0px" style="text-align:center">Item</td>
+      <th width="0px" style="text-align:center">Description</td>
    </tr>
    <tr>
-      <td>Origin type</td>
-      <td>Choose<b>third-party object storage</b></td>
+      <td>Origin server type</td>
+      <td>Select <b>Third-party storage</b></td>
    </tr>
    <tr>
-      <td>Third-party object storage</td>
-      <td>Currently supported third-party object storage includes Alibaba Cloud OSS and AWS S3</td>
+      <td>Third-party storage</td>
+      <td>Currently, Alibaba Cloud OSS and AWS S3 are supported.</td>
    </tr>
 	   <tr>
-	<td>Origin-pull protocol</td>
-	  <td>Support HTTP, HTTPS</td>
+	<td>Protocol</td>
+	  <td>HTTP or HTTPS</td>
    </tr>
 	 <tr>
-      <td>Origin-pull address</td>
-      <td>Enter a valid bucket access address as the origin server (it cannot contain http:// or http:// protocol header)</td>
+      <td>Origin server address</td>
+      <td>Enter a valid bucket address (cannot contain “http://” or http:// headers).</td>
    </tr>
 </table>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f5ca4759794c94ffba9f6a960b9a8641.png" /><br>
+If you use a private bucket as the origin server, you need to enter a valid access ID and key to authorize VOD to access the bucket.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/66864ace26867520f76172f2901ad138.png" />
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/f5ca4759794c94ffba9f6a960b9a8641.png)<br>
-If you choose a privately accessed third-party object storage bucket as the origin site, you need to fill in a valid access ID and key for origin-pull authentication. After the authentication is passed, the private storage bucket access will be enabled. For details, see [Access Key Obtaining Guidelines](https://www.tencentcloud.com/document/product/266/53277).<br>
+## Step 2. Configure CNAME for your domain
 
-![img](https://qcloudimg.tencent-cloud.cn/raw/66864ace26867520f76172f2901ad138.png)
+After you add a custom domain in VOD, you need to add a CNAME record for it at your DNS provider before users can access your media files via the domain. For detailed directions, see [Configuring CNAME](https://intl.cloud.tencent.com/document/product/266/42076).
 
-#### **Step 2: Customize domain name resolution**
+### Step 3. View and modify origin server information
+1. Go to **Domain Name**, select the **Custom origin server domains** tab, find the domain you added, and click **Set**.
+![](https://qcloudimg.tencent-cloud.cn/raw/3522690fd01bd3c0f90eb1065dc87965.png)
+2. Click **Basic Configuration** to view or modify the origin server settings of the domain.
+![](https://qcloudimg.tencent-cloud.cn/raw/bb04aa08590e9f88680c29eb19a502b9.png)
 
-For the added custom accelerated domain name, you need to configure a CNAME on the DNS service provider specified by the domain name so that users can access your media files through the accelerated domain name. For details, see [VOD Accelerated Domain Name - Domain Name Resolution](https://www.tencentcloud.com/document/product/266/42076).
+After completing the above steps, you will be able to distribute media files to end users from a self-owned server or third-party storage service via VOD’s CDN. The process is as follows:
 
-#### **Step 3: View and modify the configuration results of custom origin-pull**
+1. After you complete the above settings for a custom domain (for example `test.com`), when an end user opens the address of a media file under the domain (for example `http://www.test.com/test.mp4`) in a browser, a request will be sent to the local DNS resolver.
+2. Because a CNAME record (`www.test.com.cdn.dnsv1.com`) has been added for the domain, the request will be referred to Tencent’s proprietary load balancing system Global Server Load Balance (GSLB).
+3. GSLB will return a list of IP addresses to the local DNS resolver.
+4. The user gets the IP address of the optimal node to access the media file.
+5. The end user sends a request to the IP address to visit the media file `http://www.test.com/test.mp4`.
+6. If the `test.mp4` file has been cached in the CDN node, the file will be returned to the user. If not, the node will request the file from the **origin server you configured**, cache the file, and return it to the user.
 
-1. Go to **domain management**, enter the **custom origin server domains**, select the created domain name and click **Settings**.
-![img](https://qcloudimg.tencent-cloud.cn/raw/3522690fd01bd3c0f90eb1065dc87965.png)
-2. Click **Basic Configuration** to view the origin-pull configuration information of the current custom domain name and modify it.
-![img](https://qcloudimg.tencent-cloud.cn/raw/bb04aa08590e9f88680c29eb19a502b9.png)
-
-Through the above steps, users can complete the origin-pull configuration based on their own origin site or third-party object storage, and can distribute media files on the custom origin site through the Video-on-demand CDN. The specific distribution process is described as follows:
-
-1. If the user adds a custom domain name (for example: test.com) and completes the domain name resolution and configuration of origin-pull, when accessing the media files under the domain name through the browser (for example: http://www.test.com/test. mp4), it will first initiate a domain name resolution request to Local DNS;
-2. When Local DNS resolves the domain name test.com, it finds that a CNAME has been configured: www.test.com.cdn.dnsv1.com, and will resolve the request to Tencent GSLB (Global Server Load Balance, which is the global load balancing system independently developed by Tencent. );
-3. GSLB will return the best access node IP list, and Local DNS will obtain the corresponding resolution IP;
-4. The user obtains the best access IP node;
-5. The user initiates an access request to http://www.test.com/test.mp4 to the best access IP node;
-6. If there is test.mp4 cached on the CDN node, the user will get the data and end the request. If the CDN node does not cache the resource, the node will initiate a request for test.mp4 to the business origin site you configured. After obtaining the resource, it will cache it in the current node by default and return the resource to the user. At this time to end the request.
-
->? When users use the custom origin-pull feature to accelerate distribution and play media files, downlink traffic fees and origin-pull traffic fees will be incurred. The downlink traffic fees are charged by Video-on-demand. For specific rules, please refer to [traffic billing](https://www.tencentcloud.com/document/product/266/14666#video-acceleration) and [traffic  packages](https://www.tencentcloud.com/document/product/266/52806#traffic-pack). The traffic fee of the origin site is charged by the origin site.
+>? Using VOD’s origin server feature to distribute media files will incur **playback traffic costs** and **origin server traffic costs**. Playback traffic costs are charged by VOD. For details, see [Daily Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/266/14666) and [Prepaid Packages](https://www.tencentcloud.com/document/product/266/52806#2.-.E6.B5.81.E9.87.8F.E8.B5.84.E6.BA.90.E5.8C.85). Origin server traffic costs are charged by your origin server.

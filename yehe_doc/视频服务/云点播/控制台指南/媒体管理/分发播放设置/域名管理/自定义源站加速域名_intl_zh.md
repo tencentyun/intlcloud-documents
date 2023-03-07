@@ -11,10 +11,10 @@
 ![img](https://qcloudimg.tencent-cloud.cn/raw/f0536b39ee6156173e7cd27b3642f791.png)
 6. 单击**添加域名**，根据实际需求完成域名配置和源站配置：
  - 域名配置
-填写域名名称和选择域名加速区域，相关内容请参见 [添加域名](https://www.tencentcloud.com/document/product/266/35572)。
-![img](https://qcloudimg.tencent-cloud.cn/raw/ceb83e97ffdd3118c4890c13a68c6971.png)
+填写域名名称和选择域名加速区域，相关内容请参见 [添加域名](https://intl.cloud.tencent.com/document/product/266/35572)。
+![](https://qcloudimg.tencent-cloud.cn/raw/ceb83e97ffdd3118c4890c13a68c6971.png)
  - 源站配置
-![img](https://qcloudimg.tencent-cloud.cn/raw/43279ccef236c0211c4b996f8ff92fd6.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/43279ccef236c0211c4b996f8ff92fd6.png)
 
 **源站类型**
 云点播提供自有源站和第三方对象存储的三种回源类型，用户可根据实际需求选择配置。
@@ -29,9 +29,8 @@
    </tr>
 </table>
 
-  **回源协议**
+**回源协议**
 云点播加速节点回源到用户源站时使用的协议，HTTP 或 HTTPS。
-
 <table>
    <tr>
       <td >HTTP 回源</td>
@@ -49,7 +48,8 @@
 
 >? 存在 HTTPS 回源情况下，请保证源站支持 HTTPS 访问，否则会导致回源失败。
 
-  **源站地址**
+**源站地址**
+
 <table>
    <tr>
       <td>自有源站</td>
@@ -61,16 +61,15 @@
    </tr>
 </table>
 
-
-
 >? 自有源站可指定回源 HOST，回源 HOST 用于指定 CDN 节点在回源时，在源站访问的站点域名/ip的具体站点。若未指定回源 HOST，默认取当前所创建的加速域名。
-7. 域名解析，针对已添加的自定义加速域名，您需要在该域名指定的 DNS 服务商配置 CNAME，用户才能通过域名访问到您的视频媒体，具体操作请参见 [点播加速域名-域名解析](https://www.tencentcloud.com/document/product/266/42076#.E8.A7.A3.E6.9E.90.E5.9F.9F.E5.90.8D)。
+4. 域名解析，针对已添加的自定义加速域名，您需要在该域名指定的 DNS 服务商配置 CNAME，用户才能通过域名访问到您的视频媒体，具体操作请参见 [点播加速域名-域名解析](https://intl.cloud.tencent.com/document/product/266/35572#.E8.A7.A3.E6.9E.90.E5.9F.9F.E5.90.8D)。
+
 
 ## 修改回源配置
 针对已添加的自定义域名，可根据用户实际需求进行调整修改。修改方式如下：
 1. [**域名管理**](https://console.cloud.tencent.com/vod/distribute-play/domain)>**自定义源站加速域名**页面下，选择需要修改自定义域名，单击**设置**，进入详情页面。
 2. 单击**修改**，可对原配置信息进行修改，修改结果生效需要5分钟。
-![img](https://qcloudimg.tencent-cloud.cn/raw/5df5f46ec7dc7fdc55f9bc3b780f8ac7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5df5f46ec7dc7fdc55f9bc3b780f8ac7.png)
 
 >?
 >- 用户自定义源站切换至云点播源站时，需要先停用自定义源站域名并进行删除后，然后在点播加速域名中添加对应域名。
