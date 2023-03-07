@@ -1,0 +1,7 @@
+Tencent Infrastructure Automation for Terraform enables you to deploy, implement, and manage your cloud infrastructure on Tencent Cloud with Terraform's plugin system. It integrates Tencent Cloud services with Terraform's mature capabilities for building, changing, and versioning to help you easily and efficiently provision and manage all of your infrastructure as shown below:
+
+![](https://qcloudimg.tencent-cloud.cn/image/document/76036968d48021e6577e022565a8c685.png)
+
+[TencentCloud Provider](https://github.com/tencentcloudstack/terraform-provider-tencentcloud.git) manages Tencent Cloud products based on the [SDK for Go](https://github.com/TencentCloud/tencentcloud-sdk-go) enabled by TencentCloud API. It offers more than 272 resources and 194 data sources across 40 products, covering compute, storage, network, container service, load balancing, middleware, database, and cloud monitoring, and has supported the cloud migration of multiple large customers at home and abroad.
+
+For a quick start on Terraform, see [TencentCloud Provider](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs) and [terraform-provider-tencentcloud/examples](https://github.com/tencentcloudstack/terraform-provider-tencentcloud/tree/master/examples).
