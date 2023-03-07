@@ -114,7 +114,7 @@ COS 接收到请求后：
 | 签名中未签入规定的 Param  | AccessDenied | Strict signature missing param that must be signed  |
 
 流程图如下：
-![](https://qcloudimg.tencent-cloud.cn/raw/5533162a92992cafa2704943333baf03.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6a18edc7ea695751394b431933114a7c.png)
 
 ### 严格签名模式的使用示例
 
