@@ -11,7 +11,7 @@ Currently, the file types and corresponding moderation scenes supported by COS a
       <th>Specific Moderation Categories</td>
    </tr>
    <tr>
-      <td rowspan="9">Image moderation policy, video moderation policy, <br>audio moderation policy, text moderation policy, file moderation policy</td>
+      <td rowspan="9">Image moderation policy, video moderation policy, <br>audio moderation policy, text moderation policy, file moderation policy,Webpage Moderation policy</td>
       <td rowspan="5">Pornographic content</td>
       <td>Sexually suggestive/vulgar behaviors</td>
    </tr>
@@ -76,7 +76,7 @@ If the default policy cannot meet your business needs, or you have multiple scen
 
 ### Using moderation policy
 
-After the moderation policy is created, configure [automatic moderation](https://cloud.tencent.com/document/product/436/47247), create a historical data moderation job, or call a [content moderation API](https://cloud.tencent.com/document/product/436/54061). You can select the corresponding policy to moderate content in custom categories.
+After the moderation policy is created, configure [automatic moderation](), create a historical data moderation job, or call a [content moderation API](https://www.tencentcloud.com/document/product/436/48186). You can select the corresponding policy to moderate content in custom categories.
 
 #### Automatic moderation
 

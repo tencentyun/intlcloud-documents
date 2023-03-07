@@ -1,3 +1,41 @@
+## 2023年02月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>优化备份恢复功能</td>
+<td>云数据库 SQL Server 对备份恢复功能进行了优化，支持重新编辑任务、数据库重命名，并支持了多种 COS 文件格式。</td>
+<td>2023-02-14</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/39005" target="_blank">冷备迁移</a></td></tr>
+<tr>
+<td>账号类型及权限变更</td>
+<td>云数据库 SQL Server 发布新版数据库账号类型及权限逻辑，为您提供更加全面和便捷的账号管理服务。</td>
+<td>2023-02-09</td>
+<td></td></tr>
+<tr>
+<td>新增监控指标</td>
+<td>云数据库 SQL Server 新增监控指标 RO 同步延迟时间，用以监控主实例和只读实例间的数据同步延迟时间。</td>
+<td>2023-02-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/46502" target="_blank">支持的监控指标</a></td></tr>
+<tr>
+<td>双节点云盘版架构抢先体验</td>
+<td>云数据库 SQL Server 发布双节点云盘版实例，全面兼容双节点本地盘版所有功能，新增更多灵活的 CPU/内存规格配比，支持挂载通用型及增强型 SSD 云硬盘，最大存储空间提升至32TB，性能与本地 SSD 不相上下，可轻松应对高性能、高并发、高可用等多种业务场景。<br>此外，原高可用版/集群版更名为双节点，原基础版更名为单节点，抢先体验。</td>
+<td>2023-02-09</td>
+<td></td></tr>
+</tbody></table>
+
+
+## 2023年01月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>
+<tbody>
+<tr>
+<td>支持跨账号迁移数据</td>
+<td>云数据库 SQL Server 支持使用 DTS 数据迁移能力跨账号进行实例间的数据迁移。</td>
+<td>2023-01-13</td>
+<td><a href="https://www.tencentcloud.com/document/product/238/53570" target="_blank">使用 DTS 跨账号迁移数据</a></td></tr>
+</tbody></table>
+
 ## 2022年12月
 <table>
 <thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr></thead>

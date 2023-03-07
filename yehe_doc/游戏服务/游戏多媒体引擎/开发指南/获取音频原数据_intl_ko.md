@@ -19,7 +19,7 @@
 Android 플랫폼은 ITMGAudioDataObserver를 가져와야 합니다. Unity 플랫폼은 헤더 파일 ITMGEngine_Adv.cs를 가져와야 합니다.
 
 
-【Java】
+
 ``` java
 import com.tencent.TMG.advance.ITMGAudioDataObserver;
 ```
@@ -272,6 +272,40 @@ public abstract int UnRegisteAudioDataCallback(Audio_Data_Type dataType);
   }
 ```
 
+【unity】
+``` html
+Toggle dumpMicToggle = transform.Find("DumpMicToggle").gameObject.GetComponent<Toggle>();
+if (dumpMicToggle)
+{
+    dumpMicToggle.onValueChanged.AddListener(delegate (bool value) {
+        OnDumpMicToggle(value);
+    });
+}
+
+
+public void OnDumpMicToggle(bool isOn)
+{
+    if (isOn)
+    {
+            int nRet = ITMGAudioDataObserver.GetInstance().RegisteAudioDataCallback(Audio_Data_Type.AUDIO_DATA_TYPE_CAPTURE);
+            Debug.Log("RegisteAudioDataCallback AUDIO_DATA_TYPE_CAPTURE ret---:" + nRet);
+            if (nRet == 0 && mDumpMicOutputStream == null)
+            {
+                mDumpMicOutputStream = new FileStream(Application.persistentDataPath + "/Dump_Mic.pcm", FileMode.Create);
+            }
+        }
+        else
+        {
+            ITMGAudioDataObserver.GetInstance().UnRegisteAudioDataCallback(Audio_Data_Type.AUDIO_DATA_TYPE_CAPTURE);
+            if(mDumpMicOutputStream != null)
+            {
+                mDumpMicOutputStream.Close();
+                mDumpMicOutputStream = null;
+            }
+    }
+}
+```
+
 ### 콜백 처리
 
 원본 오디오 데이터 가져오기를 시작한 후 콜백을 통해 데이터가 반환됩니다.
@@ -380,5 +414,45 @@ public void OnAudioDataCallback(int audioDatType, long timestamp, int sampleRate
             }
         }
                 }
+```
+
+【unity】
+``` html
+ITMGAudioDataObserver.GetInstance().OnAudioDataCallback += new QAVAudioDataCallback(OnAudioDataCallback);
+
+
+private void OnAudioDataCallback(Audio_Data_Type audioDatType, UInt64 timestamp, uint sampleRate, uint channelCount, uint bitsType, byte[] pcmData)
+    {
+        Debug.Log(string.Format(
+            "OnAudioDataCallback, audioDatType:{0} timestamp:{1} sampleRate:{2} channelCount:{3} bitsType:{4}",
+               audioDatType, timestamp, sampleRate, channelCount, bitsType));
+        switch (audioDatType)
+        {
+            case Audio_Data_Type.AUDIO_DATA_TYPE_CAPTURE:
+                if (mDumpMicOutputStream != null)
+                {
+                    mDumpMicOutputStream.Write(pcmData, 0, pcmData.Length);
+                    mDumpMicOutputStream.Flush();
+                }
+                break;
+            case Audio_Data_Type.AUDIO_DATA_TYPE_CAPTURE_PLAY:
+                if (mDumpAllOutputStream != null)
+                {
+                    mDumpAllOutputStream.Write(pcmData, 0, pcmData.Length);
+                    mDumpAllOutputStream.Flush();
+                }
+                break;
+            case Audio_Data_Type.AUDIO_DATA_TYPE_LOOPBACK:
+                if (mDumpLoopBackOutputStream != null)
+                {
+                    mDumpLoopBackOutputStream.Write(pcmData, 0, pcmData.Length);
+                    mDumpLoopBackOutputStream.Flush();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+}
 ```
 

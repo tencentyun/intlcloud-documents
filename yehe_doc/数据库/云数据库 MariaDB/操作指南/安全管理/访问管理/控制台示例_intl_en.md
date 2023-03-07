@@ -14,11 +14,11 @@ You can grant a user the permission to view and use specific resources in the Te
 
 ### Step 2. Associate the sub-account/collaborator and verify
 After the policy is created, associate it with a user/group. After the association is completed, use another browser (or server) to verify whether the sub-account/collaborator can work normally. If the policy syntax is written correctly, you can observe the following:
-- You have normal access to the intended target products and resources and can use all the expected features.
-- You will be prompted that "You do not have permission to perform this operation" when accessing other unauthorized products or resources.
+- You can access the target products/resources and use all features as expected.
+- You will be prompted with "You have no permission for this operation" when accessing other unauthorized products or resources.
 
 >!
-- To avoid mutual impact of multiple policies, we recommend you associate only one policy with a sub-account at a time.
+- To avoid mutual impact of multiple policies, we recommend that you associate only one policy with a sub-account at a time.
 - The change to account access permission will take effect within 1 minute.
 
 ## Appendix. Commonly Used Policy Syntax
@@ -62,8 +62,8 @@ The above policy achieves its goal by allowing the user to separately authorize 
 
 >?Because not all functional APIs are now supported, a limited number of operations may be excluded from CAM, which is normal.
 
-### Policy for granting user permission to manipulate TencentDB instances in one specific region
-To grant a user the permission to manipulate TencentDB instances in a specific region, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou.
+### Policy for granting a user permission to manipulate TencentDB instances in one specific region
+To grant a user permissions to manipulate TencentDB instances in a specific region, you can associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou.
 ```
 {
     "version": "2.0",
@@ -77,7 +77,7 @@ To grant a user the permission to manipulate TencentDB instances in a specific r
 }
 ```
 
-### Policy for granting user permission to manipulate TencentDB instances in multiple specific regions
+### Policy for granting a user permission to manipulate TencentDB instances in multiple specific regions
 To grant a user the permission to manipulate TencentDB instances in a specific region, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou and Chengdu.
 ```
 {
@@ -92,7 +92,7 @@ To grant a user the permission to manipulate TencentDB instances in a specific r
 }
 ```
 
-### Policy for granting user permission to manipulate one specific TencentDB instance
+### Policy for granting a user permission to manipulate one specific TencentDB instance
 To grant a user the permission to manipulate a specific database, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instance "tdsql-xxx" in Guangzhou.
 ```
 {
@@ -109,7 +109,7 @@ To grant a user the permission to manipulate a specific database, associate the 
 }
 ```
 
-### Policy for granting user permission to manipulate multiple TencentDB instances
+### Policy for granting a user permission to manipulate multiple TencentDB instances
 To grant a user the permission to manipulate TencentDB instances in batches, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances "tdsql-xxx" and "tdsql-yyy" in Guangzhou and "tdsql-zzz" in Beijing.
 ```
 {
@@ -124,7 +124,7 @@ To grant a user the permission to manipulate TencentDB instances in batches, ass
 }
 ```
 
-### Policy for granting user different permissions to manipulate multiple TencentDB instances
+### Policy for granting a user different permissions to manipulate multiple TencentDB instances
 To grant a user the permission to manipulate TencentDB instances in batches, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances "tdsql-xxx" and "tdsql-yyy" in Guangzhou and "tdsql-zzz" in Beijing.
 ```
 {
@@ -139,8 +139,8 @@ To grant a user the permission to manipulate TencentDB instances in batches, ass
 }
 ```
 
-### Denying user permission to create TencentDB accounts
-To deny a user permission to create TencentDB accounts, configure `effect": "deny"`.
+### Denying a user permission to create TencentDB accounts
+To deny a user permission to create TencentDB accounts, configure `"effect": "deny"` as shown below.
 ```
 {
     "version": "2.0",

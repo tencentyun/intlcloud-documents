@@ -46,7 +46,6 @@ Hong Kong (China): Hong Kong Zone 1, Hong Kong Zone 2, Hong Kong Zone 3.
 - Tokyo: Tokyo Zone 1, Tokyo Zone 2.
 - Seoul: Seoul Zone 1, Seoul Zone 2.
 - Silicon Valley: Silicon Valley Zone 1, Silicon Valley Zone 2.
-- Moscow: Moscow Zone 1.
 - Frankfurt: Frankfurt Zone 1, Frankfurt Zone 2.
 - Toronto: Toronto Zone 1.
 - Mumbai: Mumbai Zone 1, Mumbai Zone 2.

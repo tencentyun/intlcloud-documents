@@ -2,19 +2,19 @@
 为了**精准统计消息抵达率和接收富媒体消息**，SDK 提供了 Service Extension 接口，可供客户端调用，从而可以监听消息的到达和接收富媒体消息，您可以按以下指引使用此功能。
 
 ## 创建通知拓展 Target
-1. 在 xcode 菜单栏，选择 【File】>【New】> 【Target】。
+1. 在 xcode 菜单栏，选择 **File**>**New**> **Target**。
 >?
 > - 主工程的 Bundle Id 和 Service 的 Bundle Id 必须不同，且 Service 的 Bundle Id 必须以主工程的 Bundle Id 为前缀（例如，主工程的 Bundle Id：com.tencent.tpns，Service 的 Bundle Id：com.tencent.tpns.service）。
 > - 若主工程 Target 最低支持版本小于10.0，扩展 Target 系统版本设置为10.0。
 > - 若主工程 Target 最低支持版本大于10.0，则扩展 Target 系统版本与主工程 Target 版本一致。
 > 
 ![](https://main.qcloudimg.com/raw/d742074e3e3814cd449d2b0871a66b4c.png)
-2. 进入 Target 页面，选择【Notification Service Extension】， 单击【Next】。  
+2. 进入 Target 页面，选择**Notification Service Extension**， 单击**Next**。  
 ![](https://main.qcloudimg.com/raw/329e2575a43a5bb168bb958df16b6110.jpg)
-3. 输入 Product Name，单击【Finish】。
+3. 输入 Product Name，单击**Finish**。
 ![](https://main.qcloudimg.com/raw/3cb4636238cf51b60afb9f5d05874077.png)
 
-## 添加 TPNS 扩展库（三选一）
+## 添加移动推送扩展库（三选一）
 ### 方式一：Cocoapods 集成
 通过 Cocoapods 下载地址：
 ``` 
@@ -27,30 +27,27 @@ Podfile 中增加配置项目后展示效果，示例如下：
 ```
 target ‘XXServiceExtension'do
      platform:ios,'10.0'
-     pod 'TPNS-iOS-Extension' , '~>1.2.7.2' 
+     pod 'TPNS-iOS-Extension' , '~> 版本' // 需要与主SDK（TPNS-iOS）版本保持一致
 end
 ```
->? 建议配合 pod 'TPNS-iOS' version 1.2.7.2 及以上版本使用。
->
-
 
 ### 方式二：手动集成
 
 1. 登录 [腾讯移动推送控制台](https://console.cloud.tencent.com/tpns)。
-2. 在左侧导航栏中，单击【工具箱】>【[SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload)】，进入 SDK 下载管理页面。
-3. 在 SDK 下载管理页面，选择 iOS 平台 ，单击【下载】。
+2. 在左侧导航栏中，单击**工具箱** > **[SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload)**，进入 SDK 下载管理页面。
+3. 在 SDK 下载管理页面，选择 iOS 平台 ，单击**下载**。
 4. 解压缩 SDK 包，并依次打开 demo > sdk > XGPushStatistics > extension 目录，获取 `XGExtension.h` 及 `libXGExtension.a` 文件。
 5. 将获取到的 `XGExtension.h`及 `libXGExtension.a` 文件添加至通知扩展 Target：
  - 添加系统库：libz.tbd
- - TPNS 扩展库：libXGExtension.a
+ - 移动推送扩展库：libXGExtension.a
 
 集成后的目录结构如下：
- ![](https://main.qcloudimg.com/raw/4dcaaf779121fa80cb33e7f78e558a09.png)
+![](https://main.qcloudimg.com/raw/d99cf618af6de1431a397fe6063b8bed.png)
 
 ### 方式三：HomeBrew 集成
 
 首次安装 `new_tpns_svc_ext`，请在终端执行下面的命令：
-1. 关联 `TPNS homebrew` 仓库。  
+1. 关联 `移动推送 homebrew` 仓库。  
 ```plaintext
 brew tap tpns/serviceExtension https://github.com/TencentCloud/homebrew-tpnsServiceExtension.git
 ```
@@ -58,7 +55,7 @@ brew tap tpns/serviceExtension https://github.com/TencentCloud/homebrew-tpnsServ
 ```plaintext
 brew install new_tpns_svc_ext
 ```
-3. 安装 TPNS 通知扩展插件。  
+3. 安装移动推送通知扩展插件。  
 ```plaintext
 new_tpns_svc_ext  "AccessID" "AccessKey" "xxx.xcodeproj"
 ```
@@ -72,7 +69,7 @@ new_tpns_svc_ext  "AccessID" "AccessKey" "xxx.xcodeproj"
 ```
 new_tpns_svc_ext "1600013400" "IWRNAHX6XXK6" "/Users/yanbiaomu/Developer/tencent/demo2/SDKToolObjcDemo2/SDKToolObjcDemo2.xcodeproj"
 ```
->? 参数1、2的获取方式：请在 【[TPNS控制台](https://console.cloud.tencent.com/tpns)】>【产品管理】>【选中您要配置推送能力的产品】>【配置管理】中，粘贴复制 `AccessID` 和 `AccessKey` 到命令行`new_tpns_svc_ext`的参数1、2中。  
+>? 参数1、2的获取方式：请在 **[移动推送控制台](https://console.cloud.tencent.com/tpns)**>**产品管理**>**选中您要配置推送能力的产品**>**配置管理**中，粘贴复制 `AccessID` 和 `AccessKey` 到命令行`new_tpns_svc_ext`的参数1、2中。  
 >  ![](https://main.qcloudimg.com/raw/841fa8076620fa64d952eeb366f429c0.png)
 > 
 4. 执行 `new_tpns_svc_ext`命令，进行结果验证。    
@@ -98,9 +95,7 @@ brew update && brew reinstall new_tpns_svc_ext
 
 1. 在通知扩展类 NotificationService 引入头文件 XGExtension.h。
 2. 在回调方法 didReceiveNotificationRequest:withContentHandler: 中调用如下示例代码：
-
-```
-objective-c
+```objective-c
 /**
  @brief TPNS处理富媒体通知和抵达到终端的消息，即消息回执
  @param request 推送请求
@@ -138,6 +133,7 @@ objective-c
 1. 关闭应用，给手机推送一条通知消息。
 2. 在不点击的情况下，管理台查看消息抵达情况。
 若有抵达数据，表示集成成功。
+![](https://main.qcloudimg.com/raw/cd46e9a775297504ebdab7894edd478c.png)
 
 ### 调试方式
 若设备收到推送，但无抵达数据，可按照以下步骤进行调试：
@@ -145,11 +141,11 @@ objective-c
 ![](https://main.qcloudimg.com/raw/668c47734af4f25b087fbcc33a29d6ec.png)
 2. 通过 PID 或者 Name 将 UNNotificationServiceExtension 的实现 Target（Demo 中抵达插件为 TPNSService-Cloud）连接到主 Target。
 ![](https://main.qcloudimg.com/raw/e5d7615ad9c6379be595299bc5a2b651.png)
-3. 在如图代码34行、38行的位置加断点，发送一条通知配合调试，注意需要使用 APNS 通道，通知的内容中 mutable-content 字段必须为1（TPNS SDK 1.2.8.0开始，后台默认使用 APNS 通道，前台使用 TPNS 自建通道，调试抵达插件需要将 App 退到后台后）。如果看到断点被执行了，说明调试成功，否则停止所有 Target，重新重第1步开始。
+3. 在如图代码34行、38行的位置加断点，发送一条通知配合调试，注意需要使用 APNs (Apple Push Notification service) 通道，通知的内容中 mutable-content 字段必须为1（移动推送SDK 1.2.8.0开始，后台默认使用 APNs 通道，前台使用移动推送自建通道，调试抵达插件需要将 App 退到后台后）。如果看到断点被执行了，说明调试成功，否则停止所有 Target，重新重第1步开始。
 ![](https://main.qcloudimg.com/raw/1667c3db7b2486ea45675cb2036da018.png)
 
 ## 常见问题
 
 #### 为何发送通知后，却没有看到抵达上报？
-客户端抵达上报需要集成【通知扩展服务插件】。若集成后，还没有抵达数据上报，则需要排查主工程与抵达插件的 ACCESS ID 和 ACCESS KEY 是否一致。 且需要排查 Web 管理台或者 RestAPI 通知的内容中 mutable-content 字段是否为1。
-只有主工程与抵达插件的 ACCESS ID 和 ACCESS KEY 一致， 且 Web 管理台或者 RestAPI 通知的内容中 mutable-content 字段为1，才会运行客户端抵达插件，从而有抵达数据上报。
+客户端抵达上报需要集成**通知扩展服务插件**。若集成后，还没有抵达数据上报，则需要排查主工程与抵达插件的 ACCESS ID 和 ACCESS KEY 是否一致。 且需要排查 Web 管理台或者 RestAPI 通知的内容中 mutable-content 字段是否为1。
+只有主工程与抵达插件的 ACCESS ID 和 ACCESS KEY 一致， 且 Web 管理台或者 RestAPI 通知的内容中 mutable-content 字段为1，才会运行客户端抵达插件，从而有抵达数据上报。

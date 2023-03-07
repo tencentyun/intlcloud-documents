@@ -11,7 +11,7 @@
       <th>具体审核分类</td>
    </tr>
    <tr>
-      <td rowspan="9">图片审核策略、视频审核策略、<br>音频审核策略、文本审核策略、文档审核策略</td>
+      <td rowspan="9">图片审核策略、视频审核策略、<br>音频审核策略、文本审核策略、文档审核策略、网页审核策略</td>
       <td rowspan="5">色情内容</td>
       <td>性暗示/低俗行为</td>
    </tr>
@@ -73,10 +73,9 @@
 6. 审核策略创建好后，后台会自动生成一个唯一的 Biztype 值。
 7. 对于已创建好的审核策略，您可以进行查看或编辑，编辑时不允许修改策略名称和 Biztype 值。
 
-
 ### 使用审核策略
 
-审核策略创建完毕后，在配置 [自动审核](https://cloud.tencent.com/document/product/436/47247) 、创建 历史数据审核任务 、调用 [内容审核 API 接口](https://cloud.tencent.com/document/product/436/54061) 时，您需要选择对应的策略，即可在审核时按自定义的分类进行审核。
+审核策略创建完毕后，在配置 [自动审核](https://cloud.tencent.com/document/product/436/47247) 、调用 [内容审核 API 接口](https://www.tencentcloud.com/document/product/436/48186) 时，您需要选择对应的策略，即可在审核时按自定义的分类进行审核。
 
 #### 自动审核
 

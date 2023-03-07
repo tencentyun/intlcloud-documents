@@ -11,7 +11,6 @@ Dyld Message: Library not loaded: /System/Library/Frameworks/UserNotifications.f
 
 在 Xcode 开发环境下安装 App，并使用移动推送推送开发环境的消息时，出现以下两种错误提示：
 - 在移动推送控制台推送排查工具查询，出现提示"Token注册环境为：product，推送环境为：dev两者不匹配"。
-
 - Xcode 调试移动推送SDK 错误日志提示 embedded.mobileprovision 缺失。
 ```xml
 Missing Provisioning Profile - iOS Apps must contain a provisioning profile  named embedded.mobileprovision.
@@ -20,9 +19,9 @@ Missing Provisioning Profile - iOS Apps must contain a provisioning profile  nam
 
 错误原因：App 包缺少配置文件 embedded.mobileprovision，导致 token 环境未知。
 出现此问题时，可按以下步骤解决：
-1. 在 Xcode 顶部菜单栏，单击【File】>【Project Settings】。
+1. 在 Xcode 顶部菜单栏，单击**File**>**Project Settings**。
 ![](https://main.qcloudimg.com/raw/c470889681e34e87cc7f661ffb677e7d.png)
-2. 将【Build System】设置为【Legacy Build System】，单击【Done】。
+2. 将**Build System**设置为**Legacy Build System**，单击**Done**。
 ![](https://main.qcloudimg.com/raw/812b625ddfe5c2e7c40c0ad52cae9aec.png)
 3. 重新打包, 卸载 App 重新安装。
 4. 注册成功后，对 token 进行推送测试。
@@ -34,7 +33,7 @@ Missing Provisioning Profile - iOS Apps must contain a provisioning profile  nam
 
 ### Xcode12 模拟器集成通知扩展插件编译报错 building for iOS Simulator, but linking in object file built for iOS，该如何处理？
 
-需要找到扩展插件 target，选择【Build Settings】>【Excluded Architectures】，添加 arm64 指令集，如下图所示：
+需要找到扩展插件 target，选择**Build Settings**>**Excluded Architectures**，添加 arm64 指令集，如下图所示：
 ![](https://main.qcloudimg.com/raw/1b62d4bc884c1870c70209b99200d6a6.png)
 
 ### 移动推送控制台上传 push 证书失败如何解决？
@@ -79,7 +78,7 @@ p8 证书存在安全隐患。虽然 p8 比 p12 有更长的有效期，但是�
 
 **客户端排查**
 - 检查设备通知设置
-请检查【通知】>【应用名】，查看您的应用是否打开了推送消息权限。
+请检查**通知**>**应用名**，查看您的应用是否打开了推送消息权限。
 - 检查设备网络设置
 设备网络问题，可能导致客户端在注册 APNs 时获取接收消息的标识（Token）失败，这会导致无法使用移动推送服务给指定设备推送消息。
 
@@ -91,7 +90,7 @@ SDK 接入问题，在接入 SDK 之后，请确保能够获取到接收消息�
 **服务器排查**
 - APNs 服务器问题
 由于移动推送服务针对 iOS 设备下发消息是通过 APNs 服务下发，若 APNs 出现故障，将直接导致移动推送服务器请求 APNs 给设备下发消息失败。
-- 移动推送服务器问题
+-移动推送服务器问题
 移动推送服务端使用了多个功能模块之间的协作方式完成消息的下发，若其中任何一个模块有问题，也会导致消息推送出现问题。
 
 
@@ -109,7 +108,7 @@ SDK 接入问题，在接入 SDK 之后，请确保能够获取到接收消息�
 ### 客户端如何播放自定义推送消息音频？
 
 首先，终端开发侧，需将音频文件放到 bundle 目录下：
-- 若使用移动推送管理台创建推送时，在【高级设置】中填写音频文件名称（不需要音频文件的全路径）。
+- 若使用移动推送管理台创建推送时，在**高级设置**中填写音频文件名称（不需要音频文件的全路径）。
 - 若使用 REST API 调用时，将 sound 参数设为音频文件名即可（不需要音频文件的全路径）。
 
 
@@ -142,7 +141,7 @@ SDK 接入问题，在接入 SDK 之后，请确保能够获取到接收消息�
 使用企业级签名证书构建并发布 App，体验者可以通过企业内部开放的渠道下载安装 App。
 2. AppStore 发布证书签名
 使用当前 AppStore 的发布签名证书，发布方式如下：
-TestFlight 发布预览版，先将 ipa 包上传到 [App Store Connect](https://appstoreconnect.apple.com)，然后通过 TestFlight 创建一个灰度版本，并在 TestFlight 上设置指定版本的体验人员名单(Apple ID)，最后体验者可以通过苹果官方【TestFlight】App 下载安装。
+TestFlight 发布预览版，先将 ipa 包上传到 [App Store Connect](https://appstoreconnect.apple.com)，然后通过 TestFlight 创建一个灰度版本，并在 TestFlight 上设置指定版本的体验人员名单(Apple ID)，最后体验者可以通过苹果官方**TestFlight**App 下载安装。
 
 
 ### iOS 如何只更改角标而不弹出信息？
@@ -171,11 +170,11 @@ TestFlight 发布预览版，先将 ipa 包上传到 [App Store Connect](https:/
 
 
 ### App 出现 Crash: you can't call -sendResponse: twice nor after encoding it 报错，该如何处理？
-如果您的 App 集成了移动推送 iOS SDK（1.2.7.2 - 1.2.5.4），且使用到移动推送 的【撤回】功能，同时 App 侧实现了如下系统回调：
+如果您的 App 集成了移动推送iOS SDK（1.2.7.2 - 1.2.5.4），且使用到移动推送的**撤回**功能，同时 App 侧实现了如下系统回调：
 ```
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo  fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 ```
-则可能会遇到此问题。您可以使用【覆盖】功能来实现已发送消息的处理。
+则可能会遇到此问题。您可以使用**覆盖**功能来实现已发送消息的处理。
 
 
 ###  Xcode 调试提示“Error Domain=NSCocoaErrorDomain Code=1001 "APNS 请求 token 失败，如何处理？
@@ -183,17 +182,22 @@ TestFlight 发布预览版，先将 ipa 包上传到 [App Store Connect](https:/
 Xcode 调试提示“Error Domain=NSCocoaErrorDomain Code=1001 "APNS请求token失败-->请依次按以下方法解决：优先使用4G网络并重启手机，若多次重启仍然不行，建议更换手机测试!" UserInfo={NSLocalizedDescription=APNS请求token失败-->请依次按以下方法解决：优先使用4G网络并重启手机，若多次重启仍然不行，建议更换手机测试!“，按照提示操作后问题还是存在。
 
 **排查思路**：
-1. 建议使用 移动推送 SDK 的相关方法，避免与其他注册远程通知的方法同时运行。
+1. 建议使用移动推送SDK 的相关方法，避免与其他注册远程通知的方法同时运行。
 2. 建议修改 Xcode 编译的系统，改用 Legacy Build System 去编译，看是否存在类似静态库重复导入引起的类重复定义的问题，具体操作如下：
-	1. 在 Xcode 顶部菜单栏，单击【File】>【Project Settings】。
+	1. 在 Xcode 顶部菜单栏，单击**File**>**Project Settings**。
 	![](https://main.qcloudimg.com/raw/bec61fe573cfe656b426f2e76a6e7310.png)
-	2. 将【Build System】设置为【Legacy Build System】，单击【Done】。
+	2. 将**Build System**设置为**Legacy Build System**，单击**Done**。
 	![](https://main.qcloudimg.com/raw/e3ac972a5e6c6c7f8ebdab886c7f2342.png)
 	3. 重新编译。如果有编译错误针对修改。
 
 
+###  已成功下发，但是提示：无消息抵达数据？
+**排查思路**：
+**APNs 通道下发**：
+1. 请确认是否有 [配置抵达插件](https://intl.cloud.tencent.com/document/product/1024/30730)，否则抵达数据无法上报。
+2. 可能只是抵达事件没有采集到，实际已经下发到手机了（不会影响实际推送效果）。检查手机网络是否正常，或者存在 APNs 下发延迟。
 
-
-
-
+**自建通道下发**：
+1. tpns sdk 与 tpns 后台建立链路实际断开了，但是后台认为链路没有断会继续走移动推送通道下发，在下发的过程中发现长链接是断开的，最后导致移动推送通道下发没有抵达。
+2. 没有抵达数据上报，实际抵达设备了（不会影响实际推送效果）。
 

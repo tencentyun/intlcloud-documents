@@ -1,14 +1,14 @@
 
 Data subscription helps you get incremental data from TencentDB for MariaDB and TDSQL, so that you can flexibly process real-time incremental data based on your actual business needs.
 
-## Feature List
+## Feature list
 - Data subscription is supported for TencentDB for MariaDB and TDSQL instances in public cloud.
 - Data subscription is supported for TencentDB for MariaDB and TDSQL instances in private cloud.
 
-## Data Source Type
+## Data source type
 TencentDB for MariaDB and TDSQL.
 
-## Message Format
+## Message format
 The data subscription feature parses instance binlogs (in row format), encapsulates binlog events into messages in JSON format, and uploads them to a Kafka cluster. Message types include `DML`, `GTID`, `XID`, and `QUERY` events, which represent modification to data rows, start of transactions, commit of transactions, and `DDL` statements, respectively. DML events include `insert`, `update`, and `delete` events.
 
 **The message format of a `DML` event is as follows:**
@@ -88,5 +88,5 @@ The data subscription feature parses instance binlogs (in row format), encapsula
 ```
 
 
-## Subscription Method
+## Subscription method
 You can use message events stored in a Kafka cluster to get the data in real time and process messages after getting them through the data subscription API provided by Tencent Cloud.

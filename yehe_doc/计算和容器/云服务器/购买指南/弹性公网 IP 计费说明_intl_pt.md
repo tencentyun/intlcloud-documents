@@ -56,7 +56,7 @@ Taxa de recursos de IP = o preço de inatividade da região onde o EIP está loc
 <table>
    <tr><th>Região</th><th>Preço (USD/Hora)</th></tr>
    <tr><td>China Continental</td><td>0,031</td></tr>
-   <tr><td>Hong Kong, China</br>Singapura</br>Frankfurt</br>Seul</br>Toronto</br>Virgínia</br>Vale do Silício</br>Bangkok</br>Moscou</br>Tóquio</br>Mumbai</td><td>0,04</td></tr>
+   <tr><td>Hong Kong, China</br>Singapura</br>Frankfurt</br>Seul</br>Toronto</br>Virgínia</br>Vale do Silício</br>Bangkok</br>Tóquio</br>Mumbai</td><td>0,04</td></tr>
 </table>
 
 

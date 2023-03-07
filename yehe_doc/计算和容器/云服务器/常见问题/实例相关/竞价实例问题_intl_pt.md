@@ -38,7 +38,7 @@ Assim como nas instâncias com pagamento conforme o uso, você pode encontrar as
 <tr><th>Região</th><th>Modelos compatíveis com as instâncias spot</th><th>Descontos</th></tr>
 <tr><td>Pequim, Xangai, Chengdu, Chongqing, Guangzhou aberta</td><td rowspan="4">Todos os modelos compatíveis com as instâncias com pagamento conforme o uso</td><td rowspan="4">80% de desconto nos preços publicados das instâncias com pagamento conforme o uso com as mesmas especificações</td></tr>
 <tr><td>Guangzhou (exceto a Zona 1 de Guangzhou)</td></tr>
-<tr><td>Hong Kong (China), Singapura, Bangkok, Seul, Tóquio, Mumbai, Toronto, Vale do Silício, Virgínia, Frankfurt, Moscou</td></tr>
+<tr><td>Hong Kong (China), Singapura, Bangkok, Seul, Tóquio, Mumbai, Toronto, Vale do Silício, Virgínia, Frankfurt</td></tr>
 </table>
 
 ### Os limites de cota das instâncias spot são compartilhados com as instâncias com pagamento conforme o uso?

@@ -1,3 +1,22 @@
+## December 2022
+
+<table>
+ <tr>
+ <th width=20%>Update</th>
+ <th width=44%>Description</th>
+ <th width=16%>Release Date</th>
+ <th width=20%>Documentation</th>
+ </tr>
+<tr>
+ <td>Released SDK v1.3.9.3</td>
+ <td>  
+  Fixed known issues.
+ </td>
+ <td>2022-12-14</td>
+ <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+ </tr>
+</table>
+
 ## September 2022
 
 <table>
@@ -8,12 +27,12 @@
  <th width=20%>Documentation</th>
  </tr>
 <tr>
- <td>SDK v1.3.9.2 release</td>
+ <td>Released SDK v1.3.9.2</td>
  <td>  
   <li>Fixed known issues.</li>
   <li>Separated the registration dependencies of vendor channels and Tencent Push Notification Service channel to shorten the registration process.</li>
  </td>
- <td>September 23, 2022</td>
+ <td>2022-09-23</td>
  <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
  </tr>
 </table>
@@ -28,7 +47,7 @@
  <th width=20%>Documentation</th>
  </tr>
 <tr>
- <td>SDK v1.3.9.1 release</td>
+ <td>Released SDK v1.3.9.1</td>
  <td>  
   <li>Fixed known issues.</li>
   <li> Replaces the reporting domain name to reduce the reporting bandwidth usage.</li>
@@ -49,7 +68,7 @@
  <th width=20%>Documentation</th>
  </tr>
 <tr>
- <td>SDK v1.3.9.0 release</td>
+ <td>Released SDK v1.3.9.0</td>
  <td>  
   <li>Fixed known issues.</li>
   <li> Improves the performance of business APIs.</li>
@@ -70,7 +89,7 @@
  <th width=20%>Documentation</th>
  </tr>
 <tr>
- <td>SDK v1.3.4.1 release</td>
+ <td>Released SDK v1.3.4.1</td>
  <td>  
   <li> Improves the accuracy of notification bar status.</li>
   <li> Modifies the in-app messaging API.</li>
@@ -90,7 +109,7 @@
 	 <th width=20%>Documentation</th>
  </tr>
  <tr>
-	 <td>SDK v1.3.4.0 release</td>
+	 <td>Released SDK v1.3.4.0</td>
 	 <td>  
 		 <li> Fixes the issue where the network connection occasionally fails after a persistent connection is reconnected many times.</li>
 		 <li> Fixes the occasional issue of inaccurate online status of Tencent Push Notification Service caused by app redirection.</li>
@@ -114,7 +133,7 @@
 	 <th width=20%>Documentation</th>
  </tr>
  <tr>
-	 <td>SDK v1.3.3.0 release</td>
+	 <td>Released SDK v1.3.3.0</td>
 	 <td>  
 		<li> Fixes the issue where cluster switching does not take effect in real time.</li>
 		<li> Fixes the issue of inaccurate binding when tag APIs are called frequently.</li>
@@ -139,7 +158,7 @@
 	 <th width=20%>Documentation</th>
  </tr>
 	 <tr>
-	 <td>SDK v1.3.2.1 release</td>
+	 <td>Released SDK v1.3.2.1</td>
 	 <td>  
 			<li>Fixes the compatibility issue of referencing Tencent Push Notification Service's `InAppMessage.framework` under Xcode v12.5.</li>
 			<li>Fixes the issue where two devices have the same Tencent Push Notification Service token during iCloud backup and restoration.</li>

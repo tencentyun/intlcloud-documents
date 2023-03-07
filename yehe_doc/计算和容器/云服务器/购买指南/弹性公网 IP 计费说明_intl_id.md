@@ -56,7 +56,7 @@ Biaya sumber daya IP = harga waktu jeda wilayah tempat EIP × periode penagihan
 <table>
    <tr><th>Wilayah</th><th>Harga (USD/Jam)</th></tr>
    <tr><td>Tiongkok Daratan</td><td>0,031</td></tr>
-   <tr><td>Hong Kong, Tiongkok</br>Singapura</br>Frankfurt</br>Seoul</br>Toronto</br>Virginia</br>Silicon Valley</br>Bangkok</br>Moskow</br>Tokyo</br>Mumbai</td><td>0,04</td></tr>
+   <tr><td>Hong Kong, Tiongkok</br>Singapura</br>Frankfurt</br>Seoul</br>Toronto</br>Virginia</br>Silicon Valley</br>Bangkok</br>Tokyo</br>Mumbai</td><td>0,04</td></tr>
 </table>
 
 
