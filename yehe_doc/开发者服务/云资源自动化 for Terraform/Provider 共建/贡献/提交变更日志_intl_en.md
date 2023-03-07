@@ -55,7 +55,7 @@ tencentcloud_sqlserver_zone_config
 ### Bug fix
 
 The changelog of a new bug fix should be named `release-note:bug`, with a prefix indicating the corresponding resource or data source, a colon, and a summary.
-
+>?
 > Use the `provider` prefix for a provider-level fix.
 > 
 
@@ -68,7 +68,7 @@ resource/tencentcloud_cdn_domain: Fix `https_config` inconsistency after apply
 ### Feature enhancement
 
 The changelog of a new feature enhancement should be named `release-note:enhancement`, with a prefix indicating the corresponding resource or data source, a colon, and a summary.
-
+>?
 > Use the `provider` prefix for a provider-level feature enhancement.
 > 
 
