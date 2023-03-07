@@ -4,14 +4,16 @@ VOD provides an SDK for uploading files from browsers. You can download the SDK 
 
 ### Importing the SDK
 
-#### Importing by using script tag
+#### Importing by using a script tag
 If Webpack is not used, you can import the SDK using a script tag. This method will expose the global variable `TcVod`. You can choose either of the two ways below:
+
 - **Download to the local file system**
 	[Download](https://github.com/tencentyun/vod-js-sdk-v6) the SDK source code to your local file system and use the code below to import the SDK:
 ```html
 <script src="./vod-js-sdk-v6.js"></script>
 ```
 >? Change the value of `src` to the local path of the source code.
+
 - **Import from CDN**
 	Use the code below to import the SDK from a CDN:
 ```html
@@ -20,7 +22,7 @@ If Webpack is not used, you can import the SDK using a script tag. This method w
 
 Click [here](https://tencentyun.github.io/vod-js-sdk-v6/) to try a demo that imported the SDK using a script tag. The source code of the demo can be found [here](https://github.com/tencentyun/vod-js-sdk-v6/blob/master/docs/index.html).
 
-#### Importing by using npm command
+#### Importing by using npm
 If Webpack (such as Vue or React) is used, You can use npm to import the SDK:
 ```js
 // Run `npm install vod-js-sdk-v6`, and use the command below to import the SDK directly on the page:
@@ -29,8 +31,7 @@ import TcVod from 'vod-js-sdk-v6'
 
 Click [here](https://github.com/tencentyun/vod-js-sdk-v6/tree/master/docs/import-demo) to view the source code of a demo that imports the SDK using npm.
 
->! The SDK relies on promises, which you should import if your browser version is low.
-
+>! The SDK relies on promises, which you should import if your browser version is old.
 
 ### Defining the function to get an upload signature
 
@@ -42,11 +43,12 @@ function getSignature() {
 };
 ```
 
->? `url` is the URL of your signature distribution service. For more information, see the [Guide](https://intl.cloud.tencent.com/document/product/266/33921) for upload from a client.
-> For details on how to calculate `signature`, see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
+>? 
+>- `url` is the URL of your signature distribution service. For more information, see the [Guide](https://intl.cloud.tencent.com/document/product/266/33921) for upload from a client.
+>- For details on how to calculate `signature`, see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
+>- The upload signature contains information such as the **subapplication ID**, **video category**, and **task flow**. For more information, see [Descriptions of Signature Parameters](https://www.tencentcloud.com/document/product/266/33922).
 
 ### Video upload example
-
 
 
 ```js
@@ -57,10 +59,10 @@ const tcVod = new TcVod.default({
 })
 
 const uploader = tcVod.upload({
-  mediaFile: mediaFile, // Media file (video, audio, or image) in File type
+  mediaFile: mediaFile, // The media file (video, audio, or image), whose data type is file.
 })
 uploader.on('media_progress', function(info) {
-  console.log(info.percent) // Progress
+  console.log(info.percent) // The upload progress
 })
 
 // Callback of the result
@@ -83,13 +85,13 @@ uploader.done().then(function (doneResult) {
 ```
 
 >?
->- `opts` in `new TcVod(opts)` refers to parameters of the `TcVod` API. For more information, please see [API Description](#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0).
+>- `opts` in `new TcVod(opts)` refers to parameters of the `TcVod` API. For details, see [API Description](#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0).
 >- The upload API automatically selects simple upload or multipart upload based on the file size. You don’t need to manually set up multipart upload.
 >- To upload to a subapplication, see [Subapplication System - Upload from client](https://intl.cloud.tencent.com/document/product/266/33987).
 
 ## Advanced Features
 
-### Uploading both video and thumbnail
+### Uploading both the video and thumbnail
 
 ```js
 const uploader = tcVod.upload({
@@ -102,7 +104,7 @@ uploader.done().then(function (doneResult) {
 })
 ```
 
-### Getting upload progress
+### Getting the upload progress
 
 The SDK can notify you of the upload progress via callbacks:
 
@@ -115,7 +117,7 @@ const uploader = tcVod.upload({
 uploader.on('media_upload', function(info) {
   uploaderInfo.isVideoUploadSuccess = true;
 })
-// Video upload progress
+// The video upload progress
 uploader.on('media_progress', function(info) {
   uploaderInfo.progress = info.percent;
 })
@@ -123,7 +125,7 @@ uploader.on('media_progress', function(info) {
 uploader.on('cover_upload', function(info) {
   uploaderInfo.isCoverUploadSuccess = true;
 })
-// Thumbnail upload progress
+// The thumbnail upload progress
 uploader.on('cover_progress', function(info) {
   uploaderInfo.coverProgress = info.percent;
 })
@@ -133,7 +135,7 @@ uploader.done().then(function (doneResult) {
 })
 ```
 
-For the callback values of `xxx_upload` and `xxx_progress`, see the [multipart upload/copy operation](https://intl.cloud.tencent.com/document/product/436/43552#.E4.B8.8A.E4.BC.A0.E5.88.86.E5.9D.97).
+For details about the return values of `xxx_upload` and `xxx_progress`, see [Object Operations](https://www.tencentcloud.com/document/product/436/43552).
 
 ### Canceling upload
 
@@ -158,7 +160,7 @@ The SDK supports automatic checkpoint restart for uploads. If an upload is inter
 
 | Parameter  | Required | Type | Description |
 | ------------ | ---- | -------- | --------- |
-| getSignature | Yes | Function | Function used to acquire the upload signature. |
+| getSignature | Yes | Function | The function used to get the upload signature. |
 | appId | No | number | If this parameter is set, it will be carried by the built-in statistical report system. |
 | reportId | No | number | If this parameter is set, it will be carried by the built-in statistical report system. |
 
@@ -166,10 +168,10 @@ The SDK supports automatic checkpoint restart for uploads. If an upload is inter
 
 | Parameter  | Required | Type | Description |
 | ------------ | ---- | -------- | --------- |
-| mediaFile | No | File | Media file (video, audio, or image). |
-| coverFile | No | File | Thumbnail file. |
-| mediaName | No | string | The filename that will overwrite the metadata in the media file. |
-| fileId | No | string | Pass in this parameter when changing the thumbnail. |
+| mediaFile | No | File | The media file (video, audio, or image). |
+| coverFile | No | File | The thumbnail file. |
+| mediaName | No | string | The filename, which will overwrite the filename in the metadata. |
+| fileId | No | string | The ID of the new thumbnail file. |
 | reportId | No | number | If this parameter is set, it will be carried by the built-in statistical report system and will overwrite the settings in the constructor. |
 | fileParallelLimit | No    | number     | The maximum number of concurrent uploads allowed in the same instance. Default value: 3. |
 | chunkParallelLimit    | No    | number     | The maximum number of upload parts allowed for the same file. Default value: 6.  |
@@ -195,6 +197,6 @@ The maximum file size allowed is 60 GB.
 3. **What browsers does the SDK support?**
 The SDK supports Chrome, Firefox, and other mainstream browsers that support HTML5. It can also be used on IE 10 or later.
 4. **How to pause and resume an upload?**
-Automatic checkpoint restart is implemented at the underlying layer of the SDK. Therefore, to pause an upload, simply call `uploader.cancel()`, and to resume an upload after pause, just call `tcVod.upload`. Note that when you use `tcVod.upload` to resume an upload, you need to pass in the same parameters used when you initiate the upload (you can use a global variable to save the parameters when you initiate the upload and delete them after upload.)
+Automatic checkpoint restart is implemented at the underlying layer of the SDK. Therefore, to pause an upload, simply call `uploader.cancel()`, and to resume an upload after pause, call `tcVod.upload`. Note that when you use `tcVod.upload` to resume an upload, you need to pass in the same parameters used when you initiate the upload (you can use a global variable to save the parameters when you initiate the upload and delete them after upload.)
 5. **Does the SDK support `https:` upload?**
 Yes, it does. The SDK uses `http:` for upload on HTTP pages and `https:` on non-HTTP pages. 
