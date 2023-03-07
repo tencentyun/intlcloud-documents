@@ -57,11 +57,12 @@ The protocol used when a CDN cache node pulls data from your origin server. HTTP
    </tr>
    <tr>
       <td>Third-party storage</td>
-      <td><li>If your content is stored in the bucket of a third-party storage service, enter a valid address of the bucket (cannot contain `http://` or http:// headers). Currently, Alibaba Cloud OSS and AWS S3 are supported.</li><br><li>If you use a private bucket, you need to enter a valid access key and ID to authorize VOD to access the bucket, see <a href="https://www.tencentcloud.com/document/product/266/53277">Access Key Obtaining Guidelines</a>。</li> </td>
+      <td><li>If your content is stored in the bucket of a third-party storage service, enter a valid address of the bucket (cannot contain `http://` or http:// headers). Currently, Alibaba Cloud OSS and AWS S3 are supported.</li><br><li>If you use a private bucket, you need to enter a valid access key and ID to authorize VOD to access the bucket, see <a href="https://www.tencentcloud.com/document/product/266/53277">Access Key Obtaining Guidelines</a>.</li> </td>
    </tr>
 </table>
 
 >? For self-owned origin servers, you can specify the host of a domain or IP address that VOD pulls from. If you do not specify it, VOD will pull from the current domain.
+
 4. After adding a custom domain in VOD, for end users to access your content via the domain, you need to add a CNAME record for it at your DNS provider. For detailed directions, see [Customizing Domain Names](https://intl.cloud.tencent.com/document/product/266/35572#.E8.A7.A3.E6.9E.90.E5.9F.9F.E5.90.8D).
 
 
