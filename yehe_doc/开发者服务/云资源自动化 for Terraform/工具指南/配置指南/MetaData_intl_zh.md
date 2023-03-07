@@ -188,15 +188,15 @@ resource "tencentcloud_tcr_instance" "foo" {
 ```
 
 `dynamic` 可以在 resource、data、provider 和 provisioner 块内使用。dynamic 块类似于 for 表达式，它产生的是内嵌块，可以迭代一个复杂类型数据并为每一个元素生成相应的内嵌块。在上述示例中：
-- **dynamic **的标签（也就是 "security_policy"）确定了要生成的内嵌块种类。
+- **dynamic** 的标签（也就是 "security_policy"）确定了要生成的内嵌块种类。
 
-- **for_each **参数提供了需要迭代的复杂类型值。
+- **for_each** 参数提供了需要迭代的复杂类型值。
 
 - **iterator** 参数（可选）设置了表示当前迭代元素的临时变量名。若未设置 iterator，则临时变量名默认为 dynamic 块的标签（即 security_policy）。
 
-- **labels **参数（可选）是一个表示块标签的有序列表，用来按次序生成一组内嵌块。有 labels 参数的表达式中可使用临时的 iterator 变量。
+- **labels** 参数（可选）是一个表示块标签的有序列表，用来按次序生成一组内嵌块。有 labels 参数的表达式中可使用临时的 iterator 变量。
 
-- 内嵌的 **content **块定义了要生成的内嵌块的块体。可以在 content 块内部使用临时的 iterator 变量。
+- 内嵌的 **content** 块定义了要生成的内嵌块的块体。可以在 content 块内部使用临时的 iterator 变量。
 
 
    `for_each` 参数：
