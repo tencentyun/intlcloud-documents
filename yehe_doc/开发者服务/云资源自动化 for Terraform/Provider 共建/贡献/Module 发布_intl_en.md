@@ -21,7 +21,7 @@ Create a code repository on GitHub.
    ```
 
    >?
-   - We recommend you add the `example` directory as instructed in [terraform-tencentcloud-vpc/examples](https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-vpc/tree/master/examples) to store the examples for importing and using the module.
+   > We recommend you add the `example` directory as instructed in [terraform-tencentcloud-vpc/examples](https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-vpc/tree/master/examples) to store the examples for importing and using the module.
 
 ### Publishing the module
 1. Log in to [registry.terraform.io](https://registry.terraform.io/), select **Publish** in the top-right corner of the page, and click **Module** from the drop-down list as shown below: ![](https://qcloudimg.tencent-cloud.cn/image/document/98796ead2fca3f29e837b42c88f054dd.png)
