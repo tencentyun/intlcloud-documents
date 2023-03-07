@@ -302,104 +302,15 @@
 
 媒体 AI 类的预置参数模板包含了以下几种类型：
 
-* 预置视频内容审核模板
+* 预置音视频审核模板
 * 预置视频内容分析模板
 * 预置视频内容识别模板
 
 ### 预置音视频审核模板[](id:verify)
 
-
-<table>
-    <tr>
-        <th rowspan=2>
-            模板 ID                
-        </th>
-        <th colspan=3>
-            视频画面
-        </th>
-        <th colspan=2>
-            ASR 文字
-        </th>
-        <th colspan=2>
-            OCR 文字
-        </th>
-    </tr>
- <tr>
-        <th>
-            令人反感的信息（Porn）
-        </th>
-        <th>
-            令人不安全的信息（Terrorism）
-        </th>
-        <th>
-            令人不适宜的信息（Political）
-        </th>
-        <th>
-            令人反感的信息（Asr.Porn）
-        </th>
-        <th>
-            令人不适宜的信息（Asr.Political）
-        </th>
-        <th>
-            令人反感的信息（Ocr.Porn）
-        </th>
-        <th>
-            令人不适宜的信息（Ocr.Political）
-        </th>
-    </tr>
-    <tr>
-        <td>
-            10
-        </td>
-        <td>
-            是
-        </td>
-        <td>
-            是
-        </td>
-        <td>
-            是
-        </td>
-        <td>
-            否
-        </td>
-        <td>
-            否
-        </td>
-        <td>
-            否
-        </td>
-        <td>
-            否
-        </td>
-    </tr>
-    <tr>
-        <td>
-            20
-        </td>
-        <td>
-            是
-        </td>
-        <td>
-            是
-        </td>
-        <td>
-            是
-        </td>
-        <td>
-            是
-        </td>
-        <td>
-            是
-        </td>
-        <td>
-            是
-        </td>
-        <td>
-            是
-        </td>
-    </tr>
-</table>
+|  模板 ID | 色情（Porn）  | 暴恐（Terror） | 娇喘（Moan）|
+|---|---|---|---|
+| 10 |  是 | 是 | 是 |
 
 ### 预置音视频内容分析模板
 
@@ -410,7 +321,7 @@
 
 ### 预置音视频内容识别模板
 
-| 模板 ID | 人脸识别（Face） | 文本全文识别（OcrFullText） | 文本关键词识别（OcrWords） | 语音全文识别（AsrFullText） | 语音关键词识别（AsrWords） | 
+| 模板 ID | 人脸识别（Face） | 文本全文识别（OcrFullText） | 文本关键词识别（OcrWords） | 语音全文识别（AsrFullText） | 语音关键词识别（AsrWords） |
 | -- | -- | -- | -- | -- | -- |
 | 10 | 是（使用默认人物库） | 否 | 否 | 否 | 否 |
 

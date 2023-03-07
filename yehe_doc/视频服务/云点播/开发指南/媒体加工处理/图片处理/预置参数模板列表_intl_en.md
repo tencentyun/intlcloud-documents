@@ -1,4 +1,4 @@
-VOD offers a series of preset templates for real-time image processing. Instead of setting the parameters one by one, you can use the ready-made templates to initiate image processing tasks.
+VOD offers a series of preset templates for different image processing scenarios. Instead of setting the parameters one by one, you can use the ready-made templates to initiate image processing tasks.
 
 ## Real-Time Image Processing
 Each template represents a set of image processing operations.
@@ -90,3 +90,11 @@ Each template represents a set of image processing operations.
 				</td>
  </tr>
 </table>
+
+## Image Moderation
+
+## Image moderation templates
+
+|  Template ID | Porn  | Terror |
+|---|---|---|
+| 10 |  Yes | Yes |

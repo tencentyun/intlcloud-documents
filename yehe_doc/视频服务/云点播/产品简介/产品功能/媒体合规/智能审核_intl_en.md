@@ -1,14 +1,13 @@
 ## Overview
-The smart moderation feature can help you effectively recognize non-compliant content in audio, videos, and images. Smart content moderation can recognize erotic, violent, and illegal content in images, text, and speech. In addition, VOD supports custom moderation. You can create custom dictionaries and image libraries to recognize the custom non-compliant content. Based on advanced speech, text, and image recognition algorithms, this feature continuously performs training and modeling on massive amounts of non-compliant data to achieve industry-leading recognition accuracy and recall rate, guaranteeing your media content security.
+The smart moderation feature can help you effectively recognize non-compliant content such as pornographic and violent images, text in images, speech, as well as sounds. Based on advanced speech, text, and image recognition algorithms and models continuously trained on massive amounts of non-compliant data, VOD’s smart moderation feature delivers industry-leading recognition accuracy and recall rate, helping you ensure content compliance.
 
-## Use cases
-As the multimedia industry develops, the media content becomes more diverse, and its production and spreading also become increasingly faster. However, the requirements for regulatory compliance have also become increasingly strict. This requires that media content operators moderate the compliance of their media assets. Effective content moderation should meet the following requirements:
+## Use Cases
+As the multimedia industry grows, more diverse content is being produced and distributed at a faster rate. In the meantime, compliance guidelines are also being updated continuously. This has raised new challenges for content hosting platforms regarding moderation:
 - **Comprehensive**: The moderation rules must be comprehensive to meet the regulatory compliance requirements without any omissions.
-- **Accurate**: The normal content cannot be falsely identified as non-compliant, and accurate details need to be provided for truly non-compliant content.
+- **Accurate**: Unrelated content is not incorrectly flagged, and accurate details are provided for non-compliant content.
 - **Quick**: As large amounts of media content are generated every day, the moderation must be quick so that compliant videos can be released quickly.
 
 Smart content moderation has the following use cases:
-
 <table>
     <tr>
         <th>
@@ -30,7 +29,7 @@ Smart content moderation has the following use cases:
  </tr>
  <tr>
         <td>
-            Live stream recording
+            Live recording
         </td>
 				<td>
             Live streams can be delivered again after they are recorded and saved. The sources of live streaming content are diverse, including online education, shopping, and entertainment industries.<br/>
@@ -51,6 +50,6 @@ Smart content moderation has the following use cases:
 </table>
 
 ## Directions
-For more information, see:
-- [How to Audit Video Content](https://intl.cloud.tencent.com/document/product/266/37547).
-- [Audio/Video Content Moderation](https://intl.cloud.tencent.com/document/product/266/33944).
+For detailed directions on how to use the smart moderation feature, see the following documents:
+- [How to Moderate Media Content](https://intl.cloud.tencent.com/document/product/266/37547)
+- [Audio/Video Content Moderation](https://intl.cloud.tencent.com/document/product/266/33944)

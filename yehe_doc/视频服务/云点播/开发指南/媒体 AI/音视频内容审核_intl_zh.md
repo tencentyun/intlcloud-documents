@@ -1,0 +1,302 @@
+音视频内容审核是借助于 AI 对音视频内容进行智能审核，是一种离线任务。任务的执行结果中，包括审核评分、审核建议和嫌疑视频片段。根据“审核建议”，视频管理者可以决定视频是否允许公开，有效规避违规视频带来的法律风险和品牌伤害。
+
+云点播可以对画面图像、画面中的文本、语音中的文本以及声音内容四种对象进行审核，审核标签包括色情、暴恐和娇喘。
+
+<table>
+    <tr>
+        <th style="width:20%">
+            对象
+        </th>
+        <th style="width:20%">
+            审核标签
+        </th>
+        <th>
+            说明
+        </th>
+    </tr>
+    <tr>
+        <td rowspan=3>
+            画面图像
+        </td>
+    </tr>
+    <tr>
+        <td>
+            色情（Porn）
+        </td>
+        <td>
+				    色情、淫秽用语等。
+        </td>
+    </tr>
+    <tr>
+        <td>
+            暴恐（Terror）
+        </td>
+        <td>
+				    暴力、血腥、恐怖组织内容等。
+        </td>
+    </tr>
+		<tr>
+        <td rowspan=1>
+           声音
+        </td>
+        <td>
+				    娇喘（Moan）
+        </td>
+        <td>
+            色情擦边的声音。
+        </td>
+    </tr>
+    <tr>
+        <td rowspan=3>
+            语音中的文本（ASR）
+        </td>
+        <tr>
+        <td>
+            色情（Porn）
+        </td>
+        <td>
+				    色情、淫秽用语等。
+        </td>
+    </tr>
+    <tr>
+        <td>
+            暴恐（Terror）
+        </td>
+        <td>
+				    暴力、血腥、恐怖组织内容等。
+        </td>
+    </tr>
+        <td rowspan=3>
+            画面中的文本（OCR）
+        </td>
+        <tr>
+        <td>
+            色情（Porn）
+        </td>
+        <td>
+				    色情、淫秽用语等。
+        </td>
+    </tr>
+    <tr>
+        <td>
+            暴恐（Terror）
+        </td>
+        <td>
+				    暴力、血腥、恐怖组织内容等。
+        </td>
+    </tr>
+</table>
+
+音视频审核结果部分字段说明：
+
+| 字段名     | 类型   | 含义                                                         |
+| ---------- | ------ | ------------------------------------------------------------ |
+| Confidence | Float  | 审核评分（0 - 100），评分越高，嫌疑越大                |
+| Suggestion | String | 审核建议，有 pass，review，block 三种：<ul><li>pass：嫌疑度不高，建议直接通过</li><li>review：嫌疑度较高，建议人工复核</li><li>block：嫌疑度很高，建议直接屏蔽</li></ul> |
+| Form   | String  | 审核形式，有如下几种：<ul><li>Image：画面图像</li><li>Voice：声音</li><li>OCR：画面中的文字</li><li>ASR：语音中的文字</li></ul> |
+| Label   | String  | 审核标签，有如下几种：<ul><li>Porn：色情</li><li>Terror：暴恐</li><li>Moan：娇喘</li></ul> |
+
+## [](id:sh)音视频审核模板
+
+通过音视频审核参数，可以控制审核任务具体检测哪些审核标签。云点播使用视频审核模板来表示审核参数集合，通过视频审核模板，可以指定审核任务中检测哪一项或几项标签：
+- 色情（Porn）
+- 暴恐（Terror）
+- 娇喘（Moan）
+
+针对常见的操作组合，云点播提供了 [预置音视频审核模板](https://intl.cloud.tencent.com/document/product/266/33932)。另外，您还可以调用 [服务端 API](https://www.tencentcloud.com/document/product/266/37566) 创建和管理自定义视频审核模板。
+
+## 任务发起
+
+发起音视频内容审核任务，有“通过服务端 API 直接发起”、“通过控制台直接发起”和“上传时指定要执行的任务”三种方式。具体请参照视频处理的 [任务发起](https://intl.cloud.tencent.com/document/product/266/33931)。
+
+以下是各种方式发起音视频内容审核任务的说明：
+
+* 通过服务端 API 直接发起。调用服务端 API [ReviewAudioVideo](https://www.tencentcloud.com/document/product/266/50634) 发起任务。
+* 通过控制台直接发起。请参见控制台指南 [音视频审核](https://intl.cloud.tencent.com/document/product/266/33897)。
+* 服务端上传时指定任务：调用服务端 API [创建任务流模板](https://www.tencentcloud.com/document/product/266/34167)，任务流中开启音视频审核任务(`ReviewAudioVideoTask`)； [申请上传](https://www.tencentcloud.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数指定为该任务流。
+* 客户端上传时指定任务：调用服务端 API [创建任务流模板](https://www.tencentcloud.com/document/product/266/34167)，任务流中开启音视频审核任务(`ReviewAudioVideoTask`)；在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922) 中的`procedure`指定该任务流。
+* 控制台上传：调用服务端 API [创建任务流模板](https://www.tencentcloud.com/document/product/266/34167)，任务流中开启音视频审核任务(`ReviewAudioVideoTask`)；通过控制台上传视频，选择 [上传的同时对视频进行处理操作](https://intl.cloud.tencent.com/document/product/266/33890) 并指定视频上传后执行该任务流。
+
+## 结果获取
+
+发起视频审核任务后，您可以通过异步等待 [音视频审核完成](https://www.tencentcloud.com/document/product/266/50677) 和同步进行 [任务查询](https://intl.cloud.tencent.com/document/product/266/33931) 两种方式获取视频审核任务的执行结果。下面是发起审核任务后，普通回调方式下结果通知的示例（省略了值为 null 的字段）：
+```json
+{
+    "EventType": "ReviewAudioVideoComplete",
+    "ReviewAudioVideoCompleteEvent": {
+        "TaskId": "125xxxx-ReviewAudioVideo-07edbc78ba20563cdf2362cffbf4aa0ct",
+        "Status": "FINISH",
+        "ErrCodeExt": "",
+        "Message": "SUCCESS",
+        "Input": {
+            "FileId": "387702130626135215"
+        },
+        "Output": {
+            "Suggestion": "block",
+            "Label": "Porn",
+            "Form": "Image",
+            "SegmentSet": [
+                {
+                    "StartTimeOffset": 0,
+                    "EndTimeOffset": 1,
+                    "Confidence": 99,
+                    "Suggestion": "block",
+                    "Label": "Porn",
+                    "SubLabel": "SexyBehavior",
+                    "Form": "Image",
+                    "AreaCoordSet": [],
+                    "Text": "",
+                    "KeywordSet": [],
+                    "Url": "https://251000800.vod2.myqcloud.com/1a168d62vodcq251000800/result/vod/w-video-Y7uETQ0Oqj4SY3Fh/screenshot_0_1638163480.jpg",
+                    "PicUrlExpireTime": "2023-01-16T03:06:16.039Z"
+                },
+                {
+                    "StartTimeOffset": 1,
+                    "EndTimeOffset": 2,
+                    "Confidence": 99,
+                    "Suggestion": "block",
+                    "Label": "Porn",
+                    "SubLabel": "SexyBehavior",
+                    "Form": "Image",
+                    "AreaCoordSet": [],
+                    "Text": "",
+                    "KeywordSet": [],
+                    "Url": "https://251000800.vod2.myqcloud.com/1a168d62vodcq251000800/result/vod/w-video-Y7uETQ0Oqj4SY3Fh/screenshot_0_1638163481.jpg",
+                    "PicUrlExpireTime": "2023-01-16T03:06:17.039Z"
+                },
+                {
+                    "StartTimeOffset": 2,
+                    "EndTimeOffset": 3,
+                    "Confidence": 99,
+                    "Suggestion": "block",
+                    "Label": "Porn",
+                    "SubLabel": "SexyBehavior",
+                    "Form": "Image",
+                    "AreaCoordSet": [],
+                    "Text": "",
+                    "KeywordSet": [],
+                    "Url": "https://251000800.vod2.myqcloud.com/1a168d62vodcq251000800/result/vod/w-video-Y7uETQ0Oqj4SY3Fh/screenshot_0_1638163482.jpg",
+                    "PicUrlExpireTime": "2023-01-16T03:06:18.039Z"
+                },
+                {
+                    "StartTimeOffset": 3,
+                    "EndTimeOffset": 4,
+                    "Confidence": 99,
+                    "Suggestion": "block",
+                    "Label": "Porn",
+                    "SubLabel": "SexyBehavior",
+                    "Form": "Image",
+                    "AreaCoordSet": [],
+                    "Text": "",
+                    "KeywordSet": [],
+                    "Url": "https://251000800.vod2.myqcloud.com/1a168d62vodcq251000800/result/vod/w-video-Y7uETQ0Oqj4SY3Fh/screenshot_0_1638163483.jpg",
+                    "PicUrlExpireTime": "2023-01-16T03:06:19.039Z"
+                },
+                {
+                    "StartTimeOffset": 4,
+                    "EndTimeOffset": 5,
+                    "Confidence": 99,
+                    "Suggestion": "block",
+                    "Label": "Porn",
+                    "SubLabel": "SexyBehavior",
+                    "Form": "Image",
+                    "AreaCoordSet": [],
+                    "Text": "",
+                    "KeywordSet": [],
+                    "Url": "https://251000800.vod2.myqcloud.com/1a168d62vodcq251000800/result/vod/w-video-Y7uETQ0Oqj4SY3Fh/screenshot_0_1638163484.jpg",
+                    "PicUrlExpireTime": "2023-01-16T03:06:20.039Z"
+                },
+                {
+                    "StartTimeOffset": 5,
+                    "EndTimeOffset": 6,
+                    "Confidence": 99,
+                    "Suggestion": "block",
+                    "Label": "Porn",
+                    "SubLabel": "SexyBehavior",
+                    "Form": "Image",
+                    "AreaCoordSet": [],
+                    "Text": "",
+                    "KeywordSet": [],
+                    "Url": "https://251000800.vod2.myqcloud.com/1a168d62vodcq251000800/result/vod/w-video-Y7uETQ0Oqj4SY3Fh/screenshot_0_1638163485.jpg",
+                    "PicUrlExpireTime": "2023-01-16T03:06:21.039Z"
+                },
+                {
+                    "StartTimeOffset": 6,
+                    "EndTimeOffset": 7,
+                    "Confidence": 99,
+                    "Suggestion": "block",
+                    "Label": "Porn",
+                    "SubLabel": "SexyBehavior",
+                    "Form": "Image",
+                    "AreaCoordSet": [],
+                    "Text": "",
+                    "KeywordSet": [],
+                    "Url": "https://251000800.vod2.myqcloud.com/1a168d62vodcq251000800/result/vod/w-video-Y7uETQ0Oqj4SY3Fh/screenshot_0_1638163486.jpg",
+                    "PicUrlExpireTime": "2023-01-16T03:06:22.039Z"
+                },
+                {
+                    "StartTimeOffset": 7,
+                    "EndTimeOffset": 8,
+                    "Confidence": 99,
+                    "Suggestion": "block",
+                    "Label": "Porn",
+                    "SubLabel": "SexyBehavior",
+                    "Form": "Image",
+                    "AreaCoordSet": [],
+                    "Text": "",
+                    "KeywordSet": [],
+                    "Url": "https://251000800.vod2.myqcloud.com/1a168d62vodcq251000800/result/vod/w-video-Y7uETQ0Oqj4SY3Fh/screenshot_0_1638163487.jpg",
+                    "PicUrlExpireTime": "2023-01-16T03:06:23.039Z"
+                },
+                {
+                    "StartTimeOffset": 8,
+                    "EndTimeOffset": 9,
+                    "Confidence": 99,
+                    "Suggestion": "block",
+                    "Label": "Porn",
+                    "SubLabel": "SexyBehavior",
+                    "Form": "Image",
+                    "AreaCoordSet": [],
+                    "Text": "",
+                    "KeywordSet": [],
+                    "Url": "https://251000800.vod2.myqcloud.com/1a168d62vodcq251000800/result/vod/w-video-Y7uETQ0Oqj4SY3Fh/screenshot_0_1638163488.jpg",
+                    "PicUrlExpireTime": "2023-01-16T03:06:24.039Z"
+                },
+                {
+                    "StartTimeOffset": 9,
+                    "EndTimeOffset": 10,
+                    "Confidence": 99,
+                    "Suggestion": "block",
+                    "Label": "Porn",
+                    "SubLabel": "SexyBehavior",
+                    "Form": "Image",
+                    "AreaCoordSet": [],
+                    "Text": "",
+                    "KeywordSet": [],
+                    "Url": "https://251000800.vod2.myqcloud.com/1a168d62vodcq251000800/result/vod/w-video-Y7uETQ0Oqj4SY3Fh/screenshot_0_1638163489.jpg",
+                    "PicUrlExpireTime": "2023-01-16T03:06:25.039Z"
+                }
+            ],
+            "SegmentSetFileUrl": "http://251000800.vod2.myqcloud.com/a8800b40vodtranssgp251000800/0f9bd2b0-34a8-4642-f481-001894d93019.txt",
+            "SegmentSetFileUrlExpireTime": "2022-10-12T07:01:07.695Z"
+        },
+        "SessionContext": "",
+        "SessionId": ""
+    }
+}
+```
+
+回调结果中，`ReviewAudioVideoCompleteEvent.Output` 为音视频审核结果的输出，`Output.Suggestion` 表示整体审核建议，这里为 `block` 即建议直接屏蔽。`Output.Label=Porn` 和 `Output.Form=Image` 说明最有可能的违规内容是视频画面包含色情的信息。
+
+一个音视频可能存在多个违规片段，`Output.SegmentSet` 列出其中的前 10 个片段（完整的违规结果可以在链接有效期内通过 `Output.SegmentSetFileUrl` 获取）。
+
+每个违规片段的 `StartTimeOffset` 和 `EndTimeOffset` 标明了片段在原始视频里的起止时间，`SubLabel` 标明了片段具体的违规内容。
+
+对于画面文字或语音文字识别：
+* `Text` 标明片段识别出来的完整文字内容。
+* `KeywordSet` 标明命中的违规关键词列表。
+
+对于视频画面（人和物体）以及画面文字识别：
+* `AreaCoordSet` 标明违规对象的区域坐标。
+* `Url` 为违规画面截图链接。
+* `PicUrlExpireTime` 为 `Url` 过期时间，超过后链接不可访问。
