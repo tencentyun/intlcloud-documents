@@ -234,9 +234,8 @@ cos.downloadFile({
     ChunkSize: 1024 * 1024 * 8, // Part size
     ParallelLimit: 5, // Number of concurrent parts
     RetryTimes: 3, // Number of retries for multipart download failures
-    onTaskReady: function (taskId) {
-        console.log(taskId);
-    },
+    TaskId: '123', // TaskId can be automatically generated for canceling the download
+
     onProgress: function (progressData) {
         console.log(JSON.stringify(progressData));
     },
