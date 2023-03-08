@@ -5,19 +5,15 @@ According to different job responsibilities and usage requirements, CVD users ca
 
 | Type | Description |
 | ----------------- | --------------- |
-| Admin | A manager of CVD resources, who uniformly manages resources in the console throughout the entire resource lifecycle, including creating, assigning, terminating, and returning instances as well as managing policies. |
-| End user | A user of CVD resources, who logs in to the portal in a browser to obtain and use resources. |
+| Admin | An admin can manage CVD resources in the console throughout their lifecycle, including creating, assigning, terminating, and returning desktops as well as managing policies. |
+| End user | An end user is someone who logs in to the console in a browser and uses virtual desktops. |
 
-## Quick CVD Service Configuration
+## Quick CVD Configuration
 ### Step 1. Create a CVD instance
-Select and purchase a CVD instance based on the compute and storage resources you need on the [purchase page](https://buy.cloud.tencent.com/cvd).
+On the [purchase page](https://buy.cloud.tencent.com/cvd), choose specifications including the compute and storage resources and purchase an instance.
 
-### Step 2. Create a user
-On the [User Management](https://console.cloud.tencent.com/cvd) page, create or import end users of the CVD instance.
+### Step 2. Access CVD
 
-### Step 3. Assign the CVD instance
-On the [Desktop List](https://console.cloud.tencent.com/cvd) page, select the target CVD instance and assign it to an end user.
-![](https://main.qcloudimg.com/raw/cfeb0943b7702bf7c037faf3a29285d4.png)
+Activate your account as an end user as instructed in the email or SMS you receive. Visit the [CVD console](https://console.intl.cloud.tencent.com/cvd), log in, and you will be able to access CVD resources.
 
-### Step 4. Access CVD
-Activate the end user account as prompted in the email or SMS message, visit the CVD portal URL, log in, and start accessing CVD resources.
+![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MTEwODkwMDE2MA_50097_tzmzGM73RtwEhKIs_1677483912?w=3234&h=438)

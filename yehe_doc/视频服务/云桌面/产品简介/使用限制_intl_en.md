@@ -1,17 +1,17 @@
 ## Available regions
-CVD is currently available in Beijing (Beijing Zone 5), Shanghai (Shanghai Zone 5), and Guangzhou (Guangzhou Zone 6), with more regions to come. If you need to use it in other regions, please contact your sales representative for assistance.
- 
-## CVD instance quota
-You can purchase up to 100 CVD instances, including up to 5 graphic instances, under each account in each region. If you need more instances, please contact your sales representative for assistance.
+Currently, CVD is only available in Hong Kong, China. We will offer services in more regions in the future. To request CVD services in your region, please contact your sales representative.
+
+## Instance quota
+You can purchase up to 100 CVD instances (including up to five graphic instances) with each account in each region. If you need more, please contact your sales representative.
 
 ## Policy quota
-You can create up to 10 custom CVD policies under each account. If you need more policies, please contact your sales representative for assistance.
+You can create up to 10 custom CVD policies with each account. If you want to create more, please contact your sales representative.
 
 ## Default port (80)
-CVD communicates with backend management components over port 80, which is occupied by default. When using CVD, avoid using port 80 for applications; otherwise, CVD cannot be connected.
+Because CVD communicates with backend management units over port 80, please avoid using this port for the applications in a virtual desktop; otherwise, end users may fail to connect to the desktop.
 
 ## VPN usage
-Ask end users to be cautious when using VPN and firewall tools in CVD, which may make CVD connections abnormal.
+Using VPN and firewall tools in CVD may cause connection errors. Ask end users to avoid using such tools if possible.
 
 ## Network configuration
 Ask end users not to disable the ENI or change the route in CVD; otherwise, CVD cannot be connected.
