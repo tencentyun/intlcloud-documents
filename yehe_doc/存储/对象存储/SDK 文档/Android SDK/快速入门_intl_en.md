@@ -62,7 +62,7 @@ dependencies {
 
 #### Disabling beacon reporting
 
-We have introduced the [Tencent Beacon](https://beacon.tencent.com/) into the SDK to track down and optimize the SDK quality for a better user experience.
+We have introduced the [Tencent Beacon](https://beacon.qq.com/) into the SDK to track down and optimize the SDK quality for a better user experience.
 >? DataInsight only monitors the COS request performance and doesn't report any business data.
 >
 
@@ -263,7 +263,7 @@ CosXmlService cosXmlService = new CosXmlService(context,
 
 The SDK supports uploading local files, binary data, URIs, and input streams. The following uses uploading a local file as an example:
 
-[//]: # ".cssg-snippet-transfer-upload-file"
+[//]: # (.cssg-snippet-transfer-upload-file)
 ```java
 // Initialize TransferConfig. The default configuration is used here. To customize the configuration, see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
@@ -334,7 +334,7 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 
 ### Downloading an object
 
-[//]: # ".cssg-snippet-transfer-download-object"
+[//]: # (.cssg-snippet-transfer-download-object)
 ```java
 // The advanced download API supports checkpoint restart. Therefore, a HEAD request will be sent before the download to obtain the file information.
 // If you are using a temporary key or accessing with a sub-account, ensure that your permission list includes HeadObject.
