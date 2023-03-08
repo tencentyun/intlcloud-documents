@@ -32,7 +32,7 @@ CVD offers compute resources in the form of packages. You can choose different s
 |---------|---------|---------|  -------- | --------------- |
 | CVD - Standard S1_4-core 8 GB |  \ | Basic OA | 84.82 | 0.29 |
 | CVD - Standard S1_4-core 16 GB | \ | OA | 145.39 | 0.37 |
-| CVD - Standard S1_8-core 16 GB |  \ | High-performance OA and coding   | 206.61 |0.49|
+| CVD - Standard S2_8-core 16 GB |  \ | High-performance OA and coding   | 206.61 |0.49|
 | CVD - Graphic G1_4-core 16 GB |  1/4 NVIDIA T4 | Light 3D requirements, such as drawing viewer  | 296.88 | 0.8 |
 | CVD - Graphic G1_8-core 32 GB |  1/2 NVIDIA T4 | Moderate 3D requirements, such as online design |498.57 | 1.22 |
 | CVD - Graphic G1_16-core 64 GB |  1 NVIDIA T4 | Heavy 3D requirements, such as video editing | 901.93 |2.06 |

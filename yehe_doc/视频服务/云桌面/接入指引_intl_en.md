@@ -16,4 +16,4 @@ On the [purchase page](https://buy.cloud.tencent.com/cvd), choose specifications
 
 Activate your account as an end user as instructed in the email or SMS you receive. Visit the [CVD console](https://console.intl.cloud.tencent.com/cvd), log in, and you will be able to access CVD resources.
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MTEwODkwMDE2MA_50097_tzmzGM73RtwEhKIs_1677483912?w=3234&h=438)
+![img](https://qcloudimg.tencent-cloud.cn/raw/b8af3865cdb733090a7c475e2f971105.png)

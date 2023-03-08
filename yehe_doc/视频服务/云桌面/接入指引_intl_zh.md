@@ -16,4 +16,4 @@
 
 根据邮件或短信提示，完成终端用户账号激活，访问[云桌面控制台](https://console.intl.cloud.tencent.com/cvd)，完成登录认证后即可访问云桌面资源。
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MTEwODkwMDE2MA_50097_tzmzGM73RtwEhKIs_1677483912?w=3234&h=438)
+![img](https://qcloudimg.tencent-cloud.cn/raw/b8af3865cdb733090a7c475e2f971105.png)
