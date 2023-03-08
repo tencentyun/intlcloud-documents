@@ -11,7 +11,7 @@ This document describes how to use cross-account domain transfer to transfer a d
 >
 ## Directions
 
-1. Log in to the **[Domains console]**(https://console.intl.cloud.tencent.com/domain/manage), enter the **My Domains** page, and view the information of all purchased domains.
+1. Log in to the [Domains console](https://console.intl.cloud.tencent.com/domain/manage), enter the **My Domains** page, and view the information of all purchased domains.
 2. In the row of the domain to be transferred, click **Manage** as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/b34df866d595d8b6cdea2966dd7c12d4.png)
 3. Enter the **Domain Name Info** page, select the **Domain Transfer** tab, and click **Transfer** after **Cross-Account Transfer** as shown below:
