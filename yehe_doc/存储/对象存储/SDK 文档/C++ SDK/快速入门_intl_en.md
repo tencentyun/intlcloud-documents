@@ -105,7 +105,7 @@ Install the Visual Studio 2017 development environment.
 2. Install CMake.
 Download the Windows version of the CMake compiler from the [CMake official website](https://cmake.org/download/), and configure `${CMake installation path}\bin` in the `Path` environment variable.
 3. Compile the SDK. 
- i. Download [XML Windows C++ SDK source code](https://github.com/tencentyun/cos-cpp-sdk-v5/tree/windows_dev) to your development environment.
+ i. Download [XML Windows C++ SDK source code](https://github.com/tencentyun/cos-cpp-sdk-v5) to your development environment.
     ii. Open the Windows command-line tool, cd to the directory of the C++ SDK source code, and run the following command:
 ```shell
 mkdir build
