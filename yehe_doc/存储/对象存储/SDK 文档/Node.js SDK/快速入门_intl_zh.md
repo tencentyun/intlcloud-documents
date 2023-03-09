@@ -43,7 +43,7 @@ npm i cos-nodejs-sdk-v5 --save
 
 临时密钥生成和使用请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。Node.js SDK 支持通过传入临时密钥进行初始化，请参考以下示例代码：
 
-[//]: # ".cssg-snippet-global-init-sts"
+[//]: # (.cssg-snippet-global-init-sts)
 ```js
 var request = require('request');
 var COS = require('cos-nodejs-sdk-v5');
@@ -79,7 +79,7 @@ var cos = new COS({
 请先在访问管理控制台中的 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取 SecretId、SecretKey。
 将 SecretId、SecretKey、Bucket 和 Region 修改为您实际开发环境下的值，测试上传文件，请参考以下示例代码：
 
-[//]: # ".cssg-snippet-global-init"
+[//]: # (.cssg-snippet-global-init)
 ```js
 // SECRETID 和 SECRETKEY 请登录 https://console.cloud.tencent.com/cam/capi 进行查看和管理
 var COS = require('cos-nodejs-sdk-v5');
@@ -102,11 +102,11 @@ var cos = new COS({
 | FileParallelLimit      | 同一个实例下上传的文件并发数，默认值3                        | Number   | 否   |
 | ChunkParallelLimit     | 同一个上传文件的分块并发数，默认值3                          | Number   | 否   |
 | ChunkRetryTimes        | 分块上传及分块复制时，出错重试次数，默认值2（加第一次，请求共3次） | Number   | 否   |
-| ChunkSize              | 分块上传时，每块的字节数大小，默认值1048576（1MB）           | Number   | 否   |
+| ChunkSize              | 分块上传时，每块的字节数大小，单位为 Byte，默认值1048576（1MB）           | Number   | 否   |
 | SliceSize              | 使用 uploadFiles 批量上传时，文件大小大于该数值将使用按分片上传，否则将调用简单上传，单位 Byte，默认值1048576（1MB） | Number   | 否   |
 | CopyChunkParallelLimit | 进行分块复制操作中复制分块上传的并发数，默认值20             | Number   | 否   |
-| CopyChunkSize          | 使用 sliceCopyFile 分块复制文件时，每片的大小字节数，默认值10485760（10MB） | Number   | 否   |
-| CopySliceSize          | 使用 sliceCopyFile 分片复制文件时，文件大小大于该数值将使用分片复制 ，否则将调用简单复制，默认值10485760（10MB） | Number   | 否   |
+| CopyChunkSize          | 使用 sliceCopyFile 分块复制文件时，每片的大小字节数，单位为 Byte，默认值10485760（10MB） | Number   | 否   |
+| CopySliceSize          | 使用 sliceCopyFile 分片复制文件时，文件大小大于该数值将使用分片复制 ，否则将调用简单复制，单位为 Byte，默认值10485760（10MB） | Number   | 否   |
 | ProgressInterval       | 上传进度的回调方法 onProgress 的回调频率，单位 ms ，默认值1000 | Number   | 否   |
 | Protocol               | 发请求时用的协议，可选项 `https:`、`http:`，默认判断当前页面是 `http:` 时使用 `http:`，否则使用 `https:` | String   | 否   |
 | ServiceDomain          | 调用 getService 方法时，请求的域名，例如 `service.cos.myqcloud.com` | String   | 否   |
@@ -275,7 +275,7 @@ function myDelete() {
 
 ### 创建存储桶
 
-[//]: # ".cssg-snippet-put-bucket"
+[//]: # (.cssg-snippet-put-bucket)
 ```js
 cos.putBucket({
     Bucket: 'examplebucket-1250000000',
@@ -287,18 +287,19 @@ cos.putBucket({
 
 ### 查询存储桶列表
 
-[//]: # ".cssg-snippet-get-service"
+[//]: # (.cssg-snippet-get-service)
 ```js
 cos.getService(function (err, data) {
     console.log(data && data.Buckets);
 });
 ```
 
+
 ### 上传对象
 
 该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://www.tencentcloud.com/document/product/436/43551) 文档。
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -316,7 +317,7 @@ cos.putObject({
 
 ### 查询对象列表
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -329,7 +330,7 @@ cos.getBucket({
 
 ### 下载对象
 
-[//]: # ".cssg-snippet-get-object-stream"
+[//]: # (.cssg-snippet-get-object-stream)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -343,7 +344,7 @@ cos.getObject({
 
 ### 删除对象
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
