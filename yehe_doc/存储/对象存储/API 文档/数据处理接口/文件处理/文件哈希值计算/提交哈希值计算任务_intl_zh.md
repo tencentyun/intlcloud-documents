@@ -4,7 +4,7 @@
 
 ## 费用说明
 
-- 调用接口会产生哈希值计算费用和 [COS 读请求费用](https://www.tencentcloud.com/document/product/436/40100)。
+- 调用接口会产生 [哈希值计算费用]() 和 [COS 读请求费用](https://www.tencentcloud.com/document/product/436/40100)。
 - 如果文件为 COS 上的低频存储类型，调用会产生 [COS 低频数据取回费用](https://intl.cloud.tencent.com/document/product/436/40097)。
 - 不支持计算 COS 上的归档存储类型和深度归档存储类型的文件哈希值，如果需要计算此类型文件的哈希值，请先 [恢复归档文件](https://intl.cloud.tencent.com/document/product/436/12633)。
 
@@ -12,6 +12,7 @@
 
 - 文件大小支持：支持计算小于 50 GB 大小的文件。
 - 调用接口需携带签名，具体规则请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档。
+- 本接口当前支持以下地域：北京、上海、广州、成都、中国香港、新加坡、硅谷。
 
 ## 请求
 
