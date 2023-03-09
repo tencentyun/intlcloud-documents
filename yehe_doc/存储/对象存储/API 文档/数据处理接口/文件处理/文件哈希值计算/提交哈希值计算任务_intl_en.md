@@ -12,6 +12,7 @@ This API adopts a POST request method. You can submit a job to perform hash calc
 
 - Supported file size: Calculation on files that are less than 50 GB is supported.
 - Calling the API requires a signature. For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+- This API can be used in Beijing, Shanghai, Guangzhou, Chengdu, Hong Kong (China), Singapore, and Silicon Valley regions.
 
 ## Request
 
