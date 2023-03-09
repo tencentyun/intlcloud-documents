@@ -13,7 +13,7 @@ This API uses a sync GET request to perform hash calculation and return a calcul
 - File size: Calculation on files that are less than 128 MB is supported. For files that are greater than 128 MB, use [Async API for Hash Calculation](https://intl.cloud.tencent.com/document/product/1045/52867).
 - Request timeout period: 10 seconds
 - Calling the API requires a signature. For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
-
+- This API can be used in Beijing, Shanghai, Guangzhou, Chengdu, Hong Kong (China), Singapore, and Silicon Valley regions.
 ## Request
 
 #### Sample request
