@@ -2,9 +2,7 @@
 
 Tencent Cloud allows you to batch enable or disable the transfer prohibition lock for multiple domains.
 
-> **Note**
-> 
-
+>!
 > You cannot transfer domains with the **transfer prohibition lock** enabled from Tencent Cloud to another registrar's platform until the **transfer prohibition lock** is disabled, which enhances the domain security.
 > 
 
@@ -23,17 +21,13 @@ Enter the domain for which to enable the **transfer prohibition lock** in either
 - **Enter a domain**: Enter or paste up to 200 domains for which to enable the **transfer prohibition lock**.
   
 
-   > **Note**
-   > 
-
+   >? 
    > If you enter more than 200 domains, you will be unable to proceed.
    > 
 
 - **Upload File**: Click **Upload** and select a local file to batch upload domains.
-  
 
-   > **Note**
-   > 
+   >! 
    > - You can upload up to 4,000 domains at a time. If this number is exceeded, only the first 4,000 domains will be uploaded.
    > - You can upload only **.txt/.xls/.xlsx** files.
    > - You can upload a file of up to 2 MB.
@@ -42,8 +36,7 @@ Enter the domain for which to enable the **transfer prohibition lock** in either
 
 ### Step 2. Set the status
 
-> **Note**
-> 
+>! 
 > - You will be unable to perform the following operations if the update prohibition lock is enabled for the domain.
 > - After a task is submitted, the system will start executing it. The operations may fail for certain domains as they are in different statuses.
 
