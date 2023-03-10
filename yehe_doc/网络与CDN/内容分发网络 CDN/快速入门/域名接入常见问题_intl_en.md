@@ -113,7 +113,7 @@ Yes. CDN already supports domain names suffixed with .pw or .top.
 ### Does CDN support Chinese domain names?
 CDN supports domain names that contain underscores (_) and Punycode-converted Chinese characters.
 - You must obtain ICP filings for Chinese domain names before you convert the Chinese characters in the domain names to Punycode.
-- After you add a Chinese domain name, such as `中文.域名`, to the allowlist, you can convert the domain name to `xn--fiq228c.xn--eqrt2g` by using a thrid-party tool, and then connect `xn--fiq228c.xn--eqrt2g` to CDN.
+- After you add a Chinese domain name, to the allowlist, you can convert the domain name to `xn--fiq228c.xn--eqrt2g` by using a thrid-party tool, and then connect `xn--fiq228c.xn--eqrt2g` to CDN.
 - You can directly add domain names that contain underscores (_), such as `test_qq.tencent.cloud`.
 
 
