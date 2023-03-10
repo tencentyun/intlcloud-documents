@@ -238,7 +238,7 @@ response = client.delete_bucket_cors(
 
 | Parameter | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes
+| Bucket | Bucket name in the format of `BucketName-APPID`. | String | Yes |
 
 #### Response description
 
@@ -838,14 +838,14 @@ This API returns the cross-region replication configuration of the bucket of `di
 
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
-| Role | Initiator identifier in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`. | String | No |
-| Rule | The rule for cross-region replication, including `ID`, `Status`, `Prefix`, and `Destination`. | List | Yes |
-|  ID  | ID of the cross-region replication rule. | String |  No |
-| Status  | Whether the rule is enabled. Valid values: `Enabled`, `Disabled`. | String | Yes |
-| Prefix | The prefix used to filter objects. If it is left empty, the rule applies to all objects in the bucket. | String |  Yes |
-| Destination |   The destination resource, including `Bucket` and `StorageClass`. | Dict | Yes |
-| Bucket | The destination bucket for cross-region replication in the format of `qcs::cos:[region]::[BucketName-APPID]`.  | String  | Yes |
-| StorageClass | The storage class of object copies. Valid values: `STANDARD`, `STANDARD_IA`. | String | No |
+| Role | Initiator identifier in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`. | String | 
+| Rule | The rule for cross-region replication, including `ID`, `Status`, `Prefix`, and `Destination`. | List | 
+|  ID  | ID of the cross-region replication rule. | String | 
+| Status  | Whether the rule is enabled. Valid values: `Enabled`, `Disabled`. | String | 
+| Prefix | The prefix used to filter objects. If it is left empty, the rule applies to all objects in the bucket. | String |  
+| Destination |   The destination resource, including `Bucket` and `StorageClass`. | Dict | 
+| Bucket | The destination bucket for cross-region replication in the format of `qcs::cos:[region]::[BucketName-APPID]`.  | String  | 
+| StorageClass | The storage class of object copies. Valid values: `STANDARD`, `STANDARD_IA`. | String | 
 
 
 ### Deleting cross-region replication rule
