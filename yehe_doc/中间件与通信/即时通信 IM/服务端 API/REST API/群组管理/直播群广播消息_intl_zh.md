@@ -1,6 +1,6 @@
 ## 功能说明
  App 管理员可以通过该接口向所有直播群下发广播消息。
->! 直播群广播消息功能支持需要终端 SDK 6.5.2803 增强版及以上版本、Web SDK v2.21.0及以上版本，需 [购买旗舰版套餐包](https://intl.cloud.tencent.com/document/product/1047/34577) 并在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting)>**群功能配置**>**群功能配置**>**直播群广播消息** 打开开关后方可使用。
+>! 直播群广播消息功能支持需要终端 SDK 6.5.2803 增强版及以上版本、Web SDK v2.21.0及以上版本，需 [购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 并在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting)>**群功能配置**>**群功能配置**>**直播群广播消息** 打开开关后方可使用。
 
 ## 接口调用说明
 ### 适用的群组类型
@@ -25,8 +25,7 @@ https://xxxxxx/v4/group_open_http_svc/send_broadcast_msg?sdkappid=88888888&ident
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/group_open_http_svc/send_broadcast_msg | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
@@ -59,7 +58,7 @@ https://xxxxxx/v4/group_open_http_svc/send_broadcast_msg?sdkappid=88888888&ident
 }
 ```
 
->! MsgBody 支持多个消息元素，如果1次/秒不够用，业务端可以做消息合并处理，合并消息大小不超过8000字节
+>! MsgBody 支持多个消息元素，如果1次/秒不够用，业务端可以做消息合并处理，合并消息大小不超过12K字节
 
 ### 请求包字段说明
 
@@ -105,7 +104,7 @@ https://xxxxxx/v4/group_open_http_svc/send_broadcast_msg?sdkappid=88888888&ident
 | 10023  | 发消息的频率超限，请延长两次发消息时间的间隔                    |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/group_open_http_svc/send_broadcast_msg) 调试本接口。
 
 ## 参考
 

@@ -1,35 +1,34 @@
 ## 功能说明
-- App 管理员禁止指定群组中某些用户在一段时间内发言。
-- App 管理员取消对某些用户的禁言。
-- 被禁言用户退出群组之后再进入同一群组，禁言仍然有效。
+该 API 接口的作用是撤回最近1000条消息中指定用户发送的消息。
 
 ## 接口调用说明
 ### 适用的群组类型
 
-|群组类型| 支持此 REST API|
+|群组类型 ID|是否支持此 REST API|
 |-----------|------------|
-|Private|不支持，同新版本中的 Work（好友工作群）|
+|Private|支持，同新版本中的 Work（好友工作群）|
 |Public|支持|
-|ChatRoom|支持，同新版本中的 Meeting（会议群）|
-|AVChatRoom|支持|
+|ChatRoom|支持，同新版本中的 Meeting（临时会议群）|
+|AVChatRoom|不支持|
 |Community（社群）|支持|
 
-即时通信 IM 内置以上四种群组类型，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
+即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
->?Private（即新版本中的 Work，好友工作群）类型不支持禁言。
+>?
+>- AVChatRoom（直播群）不支持历史消息存储（此处撤回消息指撤回历史消息存储中的消息），对这此类型群组中的用户撤回消息是无效的（但是不会返回错误）。
+>- 该接口目前只支持静默撤回，在服务端对该消息打上撤回标记，并不会通知到客户端，只有拉漫游时才知道该消息被撤回。
 
 ### 请求 URL 示例
 ```
-https://xxxxxx/v4/group_open_http_svc/forbid_send_msg?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/group_open_http_svc/delete_group_msg_by_sender?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 ### 请求参数说明
-
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
-| v4/group_open_http_svc/forbid_send_msg | 请求接口                             |
+| v4/group_open_http_svc/delete_group_msg_by_sender | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
@@ -42,28 +41,11 @@ https://xxxxxx/v4/group_open_http_svc/forbid_send_msg?sdkappid=88888888&identifi
 
 ### 请求包示例
 
-- **设置禁言**
-可以通过 MuteTime 设置禁言时间，对指定用户禁言。
+撤回群消息，撤回最近1000条消息内某个人发送的消息。
 ```
 {
-    "GroupId": "@TGS#2C5SZEAEF",
-    "Members_Account": [ // 最多支持500个
-        "peter",
-        "leckie"
-    ],
-    "MuteTime": 60 // 禁言时间，单位为秒
-}
-```
-- **取消禁言**
-如果要取消禁言，将 MuteTime 设为0。
-```
-{
-    "GroupId": "@TGS#2C5SZEAEF",
-    "Members_Account": [ // 最多支持 500 个
-        "peter",
-        "leckie"
-    ],
-    "MuteTime": 0 // 为0时表示取消禁言
+    "GroupId": "@TGS#2C5SZEAEF",    //必填
+    "Sender_Account": "leckie"      //必填
 }
 ```
 
@@ -71,13 +53,11 @@ https://xxxxxx/v4/group_open_http_svc/forbid_send_msg?sdkappid=88888888&identifi
 
 | 字段 | 类型 | 属性 | 说明 |
 |---------|---------|---------|---------|
-| GroupId | String | 必填 |需要查询的群组 ID   |
-| Members_Account | Array | 必填 |需要禁言的用户帐号，最多支持500个帐号   |
-| MuteTime| Integer | 必填 |无符号类型。需禁言时间，单位为秒，为0时表示取消禁言，4294967295为永久禁言。  |
-|TopicId|String|选填|话题的 ID，若具有此选项表示需要设置的是用户所在话题的禁言状态，仅支持话题的社群适用此选项|
+| GroupId | String | 必填 |要撤回消息的群 ID |
+| Sender_Account | String | 必填 |被撤回消息的发送者 ID |
+|TopicId|String|选填|话题的 ID，若具有此选项表示撤回的是对应话题中的消息，仅支持话题的社群适用此选项|
 
 ### 应答包体示例
-
 ```
 {
     "ActionStatus": "OK",
@@ -91,8 +71,9 @@ https://xxxxxx/v4/group_open_http_svc/forbid_send_msg?sdkappid=88888888&identifi
 | 字段 | 类型 | 说明 |
 |---------|---------|---------|
 | ActionStatus | String | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
+| ErrorInfo|	String	|错误信息 |
 | ErrorCode|	Integer	|错误码，0表示成功，非0表示失败 |
-| ErrorInfo | String | 错误信息  |
+
 
 ## 错误码说明
 
@@ -111,8 +92,7 @@ https://xxxxxx/v4/group_open_http_svc/forbid_send_msg?sdkappid=88888888&identifi
 
 ## 接口调试工具
 
-通过 [REST API在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/group_open_http_svc/forbid_send_msg) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/group_open_http_svc/delete_group_msg_by_sender) 调试本接口。
 
 ## 参考
-获取被禁言群成员列表（[v4/group_open_http_svc/get_group_muted_account](https://intl.cloud.tencent.com/document/product/1047/34964)）
-
+删除群成员（[v4/group_open_http_svc/delete_group_member](https://intl.cloud.tencent.com/document/product/1047/34949)）。

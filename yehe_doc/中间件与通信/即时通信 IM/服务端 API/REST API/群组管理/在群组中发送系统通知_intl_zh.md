@@ -16,30 +16,25 @@
 
 >?
 >- 非直播群支持向群组中的一部分指定成员发送系统通知，而 AVChatRoom（直播群）只支持向群组中所有成员发送系统通知。
->- 客户端接收系统通知接口（V2TIMGroupListener.onReceiveRESTCustomData）请参见 [Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a0775a137d293473aaed4cf9fc4c18795)、[iOS](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a34108da2661d1b5ff68d1458ac4dd163) 。
+>- 客户端接收系统通知接口（V2TIMGroupListener.onReceiveRESTCustomData）请参见 [Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a0775a137d293473aaed4cf9fc4c18795)、[iOS](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a989347c455869dc0aa44572f4f2b7041) 。
 
 ### 请求 URL 示例
 ```
 https://xxxxxx/v4/group_open_http_svc/send_group_system_notification?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
-
 ### 请求参数说明
 
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com`</li> |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/group_open_http_svc/send_group_system_notification | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
-| contenttype | 请求格式固定值为`json` |
-
-
+|contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
 
@@ -76,7 +71,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_system_notification?sdkappid=88
 | GroupId | String | 必填 |向哪个群组发送系统通知 |
 | ToMembers_Account | Array | 选填 |接收者群成员列表，请填写接收者 UserID，最多填写500个，不填或为空表示全员下发  |
 | Content | String | 必填 |系统通知的内容  |
-|TopicId|String|选填|话题的 ID, 仅支持话题的社群适用此选项|
+|TopicId|String|选填|话题的 ID，若具有此选项表示在对应的话题中发送系统通知，仅支持话题的社群适用此选项|
 
 ### 应答包体示例
 
@@ -112,7 +107,7 @@ https://xxxxxx/v4/group_open_http_svc/send_group_system_notification?sdkappid=88
 | 10015  | 群组 ID 非法，请检查群组 ID 是否填写正确                     |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/send_group_system_notification) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/group_open_http_svc/send_group_system_notification) 调试本接口。
 
 ## 参考
 在群组中发送普通消息（[v4/group_open_http_svc/send_group_msg](https://intl.cloud.tencent.com/document/product/1047/34959)）
