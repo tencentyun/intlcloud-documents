@@ -238,7 +238,7 @@ response = client.delete_bucket_cors(
 
 | 参数名称   | 参数描述   |类型 | 必填 | 
 | -------------- | -------------- |---------- | ----------- |
-|Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是
+|Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是|
 
 #### 返回结果说明
 
@@ -838,14 +838,14 @@ Bucket 跨地域复制配置，类型为 dict。
 
 | 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
-|  Role  |  发起者身份标示, 格式为 `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String |  否 |
-|  Rule  |  跨地域复制对应的规则，包括 ID，Status，Prefix，Destination | List |   是 |
-|  ID  |  跨地域复制规则的 ID | String |  否 |
-|  Status  | 跨地域复制 Rule 是否启用，可选值为 Enabled 或者 Disabled | String |  是 |
-|  Prefix  | 跨地域复制 Rule 的前缀匹配规则，为空时表示作用存储桶中的所有对象 | String |  是 |
+|  Role  |  发起者身份标示, 格式为 `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String | 
+|  Rule  |  跨地域复制对应的规则，包括 ID，Status，Prefix，Destination | List |   
+|  ID  |  跨地域复制规则的 ID | String |  
+|  Status  | 跨地域复制 Rule 是否启用，可选值为 Enabled 或者 Disabled | String |  
+|  Prefix  | 跨地域复制 Rule 的前缀匹配规则，为空时表示作用存储桶中的所有对象 | String |  
 |  Destination  | 描述目的资源，包括 Bucket 和 StorageClass| Dict |  是 |
-|  Bucket  | 跨地域复制的目标存储桶，格式为 `qcs::cos:[region]::[BucketName-APPID]` | String |  是 |
-|  StorageClass  | 目的文件的存储类型，可选值为 'STANDARD'，'STANDARD_IA' | String |  否 |
+|  Bucket  | 跨地域复制的目标存储桶，格式为 `qcs::cos:[region]::[BucketName-APPID]` | String | 
+|  StorageClass  | 目的文件的存储类型，可选值为 'STANDARD'，'STANDARD_IA' | String | 
 
 
 ### 删除跨地域复制
