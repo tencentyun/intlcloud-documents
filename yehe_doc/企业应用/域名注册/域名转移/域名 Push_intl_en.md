@@ -3,8 +3,8 @@
 Domain push is a point-to-point transaction mode. A domain transaction loop is closed after the buyer accepts the domain transferred by the seller.
 After the domain seller and buyer make a deal, the seller can transfer the domain to the buyer via domain push.
 
-> **Note**
-> 
+
+>! 
 > - Tencent Cloud is just an online platform for domain transaction services and cannot issue invoices for payments involved in transactions.
 > - Currently, Tencent Cloud supports only free push but not push with domain prices.
 
@@ -70,7 +70,7 @@ Domain push and cross-account transfer are compared as follows:
 
 4. After confirming that everything is correct, click **Submit**.
 
-   > **Note**
+   >!
    > 
    > - A domain push cannot be canceled once initiated successfully by the initiator. Proceed with caution.
    > - You can go to the [account information](https://console.cloud.tencent.com/developer) page to get the account ID of the recipient.
@@ -86,7 +86,7 @@ Domain push and cross-account transfer are compared as follows:
 3. Select the verified registrant profile, set the domain status, and click **Pay and Accept**.
    
 
-   > **Note**
+   >!
    > 
    > - The accepted domain will enter the "Identity being reviewed by the registry" status, which usually takes 1–3 days.
    > - The operation cannot be undone after successful acceptance.
