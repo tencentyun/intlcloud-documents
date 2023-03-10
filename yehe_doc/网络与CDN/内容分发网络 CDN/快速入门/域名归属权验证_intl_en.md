@@ -14,12 +14,9 @@ To start DNS verification, add the "_cdnauth" host record of the TXT type for th
 ![](https://qcloudimg.tencent-cloud.cn/raw/e1da0524ad0781544052fd65195d9798.png)
 **To add a resolution record of Tencent Cloud DNS, perform the following operations:**
 If your DNS provider is Tencent Cloud, log in to the [DNSPod console](https://console.cloud.tencent.com/cns), find the target domain name, click **DNS**, and add a TXT record. Set the **Host** parameter to `_cdnauth`, the **Record Type** parameter to `TXT`, and the **Record Value** parameter to the record value provided by Tencent Cloud CDN. Use the default settings for other parameters.
-![](https://qcloudimg.tencent-cloud.cn/raw/7385a1a0c44d1ecf4c5aaf20a9782a5a.png)
 **To add a resolution record of Alibaba Cloud DNS, perform the following operations:**
 If your DNS provider is Alibaba Cloud, log in to the DNS console of Alibaba Cloud, find the target domain name, and click **DNS Settings** in the **Actions** column. Set the **Record Type** parameter to `TXT`, configure the **Hostname** and **Record Value** parameters, and use the default settings for other parameters.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/1977a75c619d429bd75f4b65af4f1237.png" width="70%">
-3. Wait for the TXT record to take effect before you click the verification button to start verification. If the domain name fails to be verified, make sure that the TXT record is valid and has taken effect at the DNS provider. For information on how to check whether the TXT record has taken effect, see the related documentation.
-![](https://qcloudimg.tencent-cloud.cn/raw/f1faf6676a27e8d75add44c0c06ad7e8.png)
+3. Wait for the TXT record to take effect before you click the verification button to start verification. If the domain name fails to be verified, make sure that the TXT record is valid and has taken effect at the DNS provider. [For information on how to check whether the TXT record has taken effect, see the related documentation.](#q1)
 4. After the domain name is verified, check whether the domain name is connected under another account. If yes, click **Retrieve** to retrieve the domain name. After the domain name is retrieved, the settings that are configured for the domain name under another account are cleared.
 
 
@@ -38,9 +35,7 @@ If your DNS provider is Alibaba Cloud, log in to the DNS console of Alibaba Clou
 **Example:**
 In this example, the acceleration domain name is `a.test.com` and the origin server is a COS biucket.
 1. Upload the verification.html file to the root directory of COS.
-![](https://qcloudimg.tencent-cloud.cn/raw/99d322a7127db4f318b7c21082f8413c.png)
 2. Add a CNAME record for the acceleration domain name at your DNS provider. Set the **Record value** parameter to the COS domain name.
-![](https://qcloudimg.tencent-cloud.cn/raw/8eb20652a0893710ecff07fdb1eb3c19.png)
 3. Check whether the verification.html file is accessible via http(https)://Acceleration domain name/verification.html. Click **Verify**.
 
 ## Method 3: API Operation Verification
@@ -69,10 +64,11 @@ In this example, the acceleration domain name is `a.test.com` and the origin ser
 
 
 ## FAQs
+[](id:q1)
 ### How do I know whether a TXT record takes effect?
 **Windows:**
 If the domain name that you connected is `test.example.com`, open the command prompt and run the `nslookup -qt=txt _cdnauth.example.com` command. Check whether the TXT record takes effect or is valid based on the output.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/2a389cd726f5ea6e58ae8007a437aa8a.png" width="70%">
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/7VQU778_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230310151540.png" width="70%">
 **Linux or macOS:**
 If the domain name that you connected is `test.example.com`, open the command prompt and run the `dig _cdnauth.example.com txt` command. Check whether the TXT record takes effect or is valid based on the output.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/6b65e488b8b52745e8a6a4431c112975.png" width="70%">
