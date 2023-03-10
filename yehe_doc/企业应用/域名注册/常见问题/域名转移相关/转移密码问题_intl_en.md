@@ -2,9 +2,7 @@
 
 A domain auth-code is the authorization code for domain transfer. To get it, contact the original registrar, who usually sends the auth-code via email after verifying the domain identity. Then, you can successfully transfer in your domain within **3–7** days.  
 
-> **Note**
-> 
-
+>?
 > You need to get the domain auth-code from your original registrar by yourself.
 > 
 
@@ -23,8 +21,7 @@ If you purchased the domain from an agent of a registrar such as www.net.cn and 
 2. If the registrar also refuses to cooperate, make complaints to registries such as ICANN and CNNIC.
    
 
-   > **Note**
-   > 
+>?
 >   - According to the regulations of applicable domain administrations (ICANN Domain Transfer Policy), the original registrar shall not reject, restrict, or charge for domain transfers for any reason.
 >   - If the original registrar hinders your domain transfer or charges fees, you can make a complaint to [ICANN](http://www.icann.org/en/resources/compliance/complaints/transfer/form).
 
