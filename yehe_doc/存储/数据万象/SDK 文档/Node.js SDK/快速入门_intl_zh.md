@@ -14,10 +14,10 @@
 #### 环境依赖
 
 1. 使用 SDK 需要您的运行环境包含 nodejs 以及 npm，其中 nodejs 版本要求 ≥ 6。
-2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) 创建存储桶后，获取存储桶名称和 [地域名称](https://intl.cloud.tencent.com/document/product//436/6224)。
+2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) 创建存储桶后，获取存储桶名称和 [地域名称](https://intl.cloud.tencent.com/document/product/436/6224)。
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) 获取您的项目 SecretId 和 SecretKey。
 
->? 关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product//436/7751)。
+>? 关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 >
 
 #### 安装 SDK
@@ -32,31 +32,24 @@ npm i cos-nodejs-sdk-v5 --save
 
 ### 初始化
 
-#### 使用永久密钥初始化
 
-请先在访问管理控制台中的 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取 SecretId、SecretKey。
-将 SecretId、SecretKey、Bucket 和 Region 修改为您实际开发环境下的值，测试上传文件，请参考以下示例代码：
 
-[//]: # ".cssg-snippet-global-init"
-```js
-// SECRETID 和 SECRETKEY请登录 https://console.cloud.tencent.com/cam/capi 进行查看和管理
-var COS = require('cos-nodejs-sdk-v5');
-var cos = new COS({
-    SecretId: 'SECRETID',
-    SecretKey: 'SECRETKEY'
-});
-```
+>!
+>- 建议用户 [使用临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 调用 SDK，通过临时授权的方式进一步提高 SDK 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+>- 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
 
-#### 使用临时密钥初始化
 
-临时密钥生成和使用请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product//436/14048)。Node.js SDK 支持通过传入临时密钥进行初始化，请参考以下示例代码：
+#### 使用临时密钥初始化(推荐)
 
-[//]: # ".cssg-snippet-global-init-sts"
+临时密钥生成和使用请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。Node.js SDK 支持通过传入临时密钥进行初始化，请参考以下示例代码：
+
+[//]: # (.cssg-snippet-global-init-sts)
 ```js
 var request = require('request');
 var COS = require('cos-nodejs-sdk-v5');
 var cos = new COS({
     getAuthorization: function (options, callback) {
+        // 初始化时不会调用，只有调用 cos 方法（例如 cos.putObject）时才会进入
         // 异步获取临时密钥
         request({
             url: 'https://example.com/sts',
@@ -80,6 +73,22 @@ var cos = new COS({
 });
 ```
 
+#### 使用永久密钥初始化(不推荐)
+
+使用永久密钥初始化时，请注意保管好密钥，防止泄露。
+请先在访问管理控制台中的 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取 SecretId、SecretKey。
+将 SecretId、SecretKey、Bucket 和 Region 修改为您实际开发环境下的值，测试上传文件，请参考以下示例代码：
+
+[//]: # (.cssg-snippet-global-init)
+```js
+// SECRETID 和 SECRETKEY 请登录 https://console.cloud.tencent.com/cam/capi 进行查看和管理
+var COS = require('cos-nodejs-sdk-v5');
+var cos = new COS({
+    SecretId: process.env.SecretId, // 推荐使用环境变量获取；用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考https://cloud.tencent.com/document/product/598/37140
+    SecretKey: process.env.SecretKey, // 推荐使用环境变量获取；用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考https://cloud.tencent.com/document/product/598/37140
+});
+```
+
 以下是部分常用接口例子，更详细的初始化方法请参见 [demo](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/demo/demo.js) 示例。
 
 ### 配置项
@@ -93,14 +102,14 @@ var cos = new COS({
 | FileParallelLimit      | 同一个实例下上传的文件并发数，默认值3                        | Number   | 否   |
 | ChunkParallelLimit     | 同一个上传文件的分块并发数，默认值3                          | Number   | 否   |
 | ChunkRetryTimes        | 分块上传及分块复制时，出错重试次数，默认值2（加第一次，请求共3次） | Number   | 否   |
-| ChunkSize              | 分块上传时，每块的字节数大小，默认值1048576（1MB）           | Number   | 否   |
+| ChunkSize              | 分块上传时，每块的字节数大小，单位为 Byte，默认值1048576（1MB）           | Number   | 否   |
 | SliceSize              | 使用 uploadFiles 批量上传时，文件大小大于该数值将使用按分片上传，否则将调用简单上传，单位 Byte，默认值1048576（1MB） | Number   | 否   |
 | CopyChunkParallelLimit | 进行分块复制操作中复制分块上传的并发数，默认值20             | Number   | 否   |
-| CopyChunkSize          | 使用 sliceCopyFile 分块复制文件时，每片的大小字节数，默认值10485760（10MB） | Number   | 否   |
-| CopySliceSize          | 使用 sliceCopyFile 分片复制文件时，文件大小大于该数值将使用分片复制 ，否则将调用简单复制，默认值10485760（10MB） | Number   | 否   |
+| CopyChunkSize          | 使用 sliceCopyFile 分块复制文件时，每片的大小字节数，单位为 Byte，默认值10485760（10MB） | Number   | 否   |
+| CopySliceSize          | 使用 sliceCopyFile 分片复制文件时，文件大小大于该数值将使用分片复制 ，否则将调用简单复制，单位为 Byte，默认值10485760（10MB） | Number   | 否   |
 | ProgressInterval       | 上传进度的回调方法 onProgress 的回调频率，单位 ms ，默认值1000 | Number   | 否   |
-| Protocol               | 发请求时用的协议，可选项`https:`、`http:`，默认判断当前页面是`http:`时使用`http:`，否则使用`https:` | String   | 否   |
-| ServiceDomain          | 调用 getService 方法时，请求的域名，例如`service.cos.myqcloud.com` | String   | 否   |
+| Protocol               | 发请求时用的协议，可选项 `https:`、`http:`，默认判断当前页面是 `http:` 时使用 `http:`，否则使用 `https:` | String   | 否   |
+| ServiceDomain          | 调用 getService 方法时，请求的域名，例如 `service.cos.myqcloud.com` | String   | 否   |
 | Domain                 | 调用操作存储桶和对象的 API 时自定义请求域名。可以使用模板，<br>例如`"{Bucket}.cos.{Region}.myqcloud.com" `，即在调用 API 时会使用参数中传入的 Bucket 和 Region 进行替换 | String   | 否   |
 | UploadQueueSize        | 上传队列最长大小，超出队列大小并失败/已完成/已取消状态的任务会被清理，默认1000 | Number   | 否   |
 | ForcePathStyle         | 强制使用后缀式模式发请求。后缀式模式中 Bucket 会放在域名后的 pathname 里，并且 Bucket 会加入签名 pathname 计算，默认 false | Boolean  | 否   |
@@ -110,7 +119,7 @@ var cos = new COS({
 | StrictSsl              | 严格校验 HTTPS 证书，默认 true | Boolean | 否   |
 | Proxy                  | 请求时使用 HTTP 代理，例如：`http://127.0.0.1:8080`   | String | 否   |
 | getAuthorization       | 获取签名的回调方法，如果没有 SecretId、SecretKey 时，这个参数必选 | Function | 否   |
-| UseAccelerate          | 是否启用全球加速域名，默认为 false。若改为 true，需要存储桶开启全球加速功能，详情请参见 [开启全球加速](https://intl.cloud.tencent.com/document/product//436/33406)。 | Boolean | 否   |
+| UseAccelerate          | 是否启用全球加速域名，默认为 false。若改为 true，需要存储桶开启全球加速功能，详情请参见 [开启全球加速](https://intl.cloud.tencent.com/document/product/436/33406)。 | Boolean | 否   |
 
 
 #### getAuthorization 回调函数说明的函数说明（使用格式一）
@@ -125,7 +134,7 @@ getAuthorization 的函数说明：
 | -------- | ------------------------------------------------------------ | -------- |
 | options  | 获取临时密钥需要的参数对象                                   | Object   |
 | - Bucket | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String   |
-| - Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product//436/6224) | String   |
+| - Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String   |
 | callback | 临时密钥获取完成后的回传方法                                 | Function |
 
 获取完临时密钥后，callback 回传一个对象，回传对象的属性列表如下：
@@ -151,7 +160,7 @@ getAuthorization 的函数说明：
 | options    | 获取签名需要的参数对象                                       | Object   |
 | - Method   | 当前请求的 Method                                            | String   |
 | - Pathname | 请求路径，用于签名计算                                       | String   |
-| - Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，了解更多请参见 [对象概述](https://intl.cloud.tencent.com/document/product//436/13324) | String   |
+| - Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，了解更多请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String   |
 | - Query    | 当前请求的 query 参数对象，{key: 'val'} 的格式               | Object   |
 | - Headers  | 当前请求的 header 参数对象，{key: 'val'} 的格式              | Object   |
 | callback   | 临时密钥获取完成后的回调                                     | Function |
@@ -173,6 +182,62 @@ getAuthorization 计算完成后，callback 回传参数支持两种格式：
 1. 实例化时，传入 SecretId、SecretKey，每次需要签名都由实例内部计算。
 2. 实例化时，传入 getAuthorization 回调，每次需要签名通过这个回调计算完返回签名给实例。
 3. 实例化时，传入 getSTS 回调，每次需要临时密钥通过这个回调回去完返回给实例，在每次请求时实例内部使用临时密钥计算得到签名。
+
+### 使用方式
+
+#### 回调方式
+文档里默认使用回调方式，使用代码如下:
+
+```js
+// 这里省略初始化过程和上传参数
+var cos = new COS({ ... });
+cos.uploadFile({ ... }, function(err, data) {
+  if (err) {
+    console.log('上传出错', err);
+  } else {
+    console.log('上传成功', data);
+  }
+});
+```
+
+#### Promise
+sdk同样支持 Promise 方式调用，例如上述回调方式的代码等同于以下代码:
+
+```js
+// 这里省略初始化过程和上传参数
+var cos = new COS({ ... });
+cos.uploadFile({ ... }).then(data => {
+  console.log('上传成功', data);
+}).catch(err => {
+  console.log('上传出错', err);
+});
+```
+
+#### 同步方式
+同步方式基于 JavaScript 的 async 和 await，上述回调方式的代码等同于以下代码:
+
+```js
+async function upload() {
+  // 这里省略初始化过程和上传参数
+  var cos = new COS({ ... });
+  try {
+    var data = await cos.uploadFile({ ... });
+    return { err: null, data: data }
+  } catch (err) {
+    return { err: err, data: null };
+  }
+}
+// 可以同步拿到请求的返回值,这里举例说明,实际返回的数据格式可以自定义
+var uploadResult = await upload();
+if (uploadResult.err) {
+  console.log('上传出错', uploadResult.err);
+} else {
+  console.log('上传成功', uploadResult.data);
+}
+```
+
+>! cos.getObjectUrl 目前只支持回调方式。
+>
 
 ### 使用技巧
 
@@ -210,7 +275,7 @@ function myDelete() {
 
 ### 创建存储桶
 
-[//]: # ".cssg-snippet-put-bucket"
+[//]: # (.cssg-snippet-put-bucket)
 ```js
 cos.putBucket({
     Bucket: 'examplebucket-1250000000',
@@ -222,18 +287,19 @@ cos.putBucket({
 
 ### 查询存储桶列表
 
-[//]: # ".cssg-snippet-get-service"
+[//]: # (.cssg-snippet-get-service)
 ```js
 cos.getService(function (err, data) {
     console.log(data && data.Buckets);
 });
 ```
 
+
 ### 上传对象
 
-该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/43551) 文档。
+该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://www.tencentcloud.com/document/product/436/43551) 文档。
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -251,7 +317,7 @@ cos.putObject({
 
 ### 查询对象列表
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -264,7 +330,7 @@ cos.getBucket({
 
 ### 下载对象
 
-[//]: # ".cssg-snippet-get-object-stream"
+[//]: # (.cssg-snippet-get-object-stream)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -278,7 +344,7 @@ cos.getObject({
 
 ### 删除对象
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -288,3 +354,4 @@ cos.deleteObject({
     console.log(err || data);
 });
 ```
+**
