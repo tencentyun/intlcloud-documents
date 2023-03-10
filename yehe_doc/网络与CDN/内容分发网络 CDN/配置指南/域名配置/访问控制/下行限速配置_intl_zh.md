@@ -1,34 +1,35 @@
 
+
 ## 配置场景
 
 腾讯云 CDN 为您提供了下行限速配置，对服务端单链接下行最大吞吐速度进行设置。
 通过下行限速配置，可在一定程度上控制 CDN 峰值带宽值，多用于电商大促、游戏新版本发布更新等场景。
 
->! 设置下行限速配置后，一定程度上会影响用户访问体验及 CDN 加速效果，请谨慎使用。
+>! 下行限速配置成功后，将会对访问此域名的全网用户生效，一定程度上会影响用户访问体验及 CDN 加速效果，请谨慎使用。
 
 ## 配置指南
 
-### 配置约束
+
+### 查看配置
+
+登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择**域名管理**，单击域名右侧**管理**，即可进入域名配置页面，第二栏**访问控制**中可看到下行限速配置，默认情况下为关闭状态：
+![](https://main.qcloudimg.com/raw/c9ea85be753b60096b8088b048ac626a.png)
+
+### 新增规则
+单击**新增限速规则**，可进行规则配置：
+![](https://main.qcloudimg.com/raw/02e033c829da553acc5eeb9bca864528.png)
+
+#### 配置约束
 
 - 下行限速规则最多可配置 10 条。
 - 限速单位为 KB/s，需要填充为正整数，取值区间为1 - 1000000。
 - 生效类型支持全部文件、文件类型、文件目录、指定文件路径四种模式，暂不支持正则匹配。
 - 多条规则优先级为从上到下从低到高，底部优先级高于顶部。
 
-### 配置说明
-
-登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，第二栏【访问控制】中可看到下行限速配置，默认情况下为关闭状态：
-![](https://main.qcloudimg.com/raw/c9ea85be753b60096b8088b048ac626a.png)
-单击【新增限速规则】，可进行规则配置：
-![](https://main.qcloudimg.com/raw/02e033c829da553acc5eeb9bca864528.png)
-规则添加完成后，此时整体配置为关闭状态，因此不会影响现网服务：
-![](https://main.qcloudimg.com/raw/e0006ace8527cc13c381666b22f21790.png)
-可通过单击【开启】按钮，将所配置的限速规则发布至 CDN 全网节点：
-![](https://main.qcloudimg.com/raw/4b9685cb889210accb67d11f1b389ae8.png)
 
 ## 配置示例
 
 若加速域名`cloud.tencent.com`的下行限速配置如下：
-![](https://main.qcloudimg.com/raw/7ee9a5167aa054c8e99c15267e38eba3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/814d50bbc8ca84e86bb5ac8c36dffc15.png)
 若用户访问资源为`http://cloud.tencent.com/test.mp4`，则服务端按照下行速度 200KB/s 响应内容。
 若用户访问资源为`http://cloud.tencent.com/test.flv`，则服务端按照下行限速 400KB/s 响应内容。
