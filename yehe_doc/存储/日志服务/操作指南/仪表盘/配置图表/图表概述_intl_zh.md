@@ -15,7 +15,7 @@
 <tr>
 <td>时序图</td>
 <td>时序图需要统计数据具备时序字段，依据时间顺序组织与聚合指标。可直观反映指标随时间的变化趋势。统计近一周，每天404错误出现的次数等趋势分析场景适用。</td>
-<td>时序图</td>
+<td><a href="https://www.tencentcloud.com/document/product/614/47779">时序图</a></td>
 </tr>
 <tr>
 <td>柱状图</td>
