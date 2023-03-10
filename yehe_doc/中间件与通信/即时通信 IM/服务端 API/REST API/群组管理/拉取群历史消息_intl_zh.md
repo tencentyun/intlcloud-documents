@@ -25,23 +25,20 @@ App 管理员可以通过该接口拉取群组的历史消息。
 ### 请求 URL 示例
 ```
 https://xxxxxx/v4/group_open_http_svc/group_msg_get_simple?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
-```
-
+ ```
 ### 请求参数说明
 
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/group_open_http_svc/group_msg_get_simple  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
-| contenttype | 请求格式固定值为`json` |
-
+|contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
 
@@ -76,8 +73,8 @@ https://xxxxxx/v4/group_open_http_svc/group_msg_get_simple?sdkappid=88888888&ide
 | GroupId | String | 必填 |要拉取历史消息的群组 ID  |
 | ReqMsgNumber | Integer | 必填 |拉取的历史消息的条数，目前一次请求最多返回20条历史消息，所以这里最好小于等于20  |
 | ReqMsgSeq | Integer | 选填 |拉取消息的最大 seq  |
-| WithRecalledMsg | Integer | 选填  |是否带撤回的消息，填1表明需要拉取撤回后的消息；默认不拉取撤回后的消息  |
-|TopicId|String|选填|话题的 ID, 仅支持话题的社群适用此选项|
+|WithRecalledMsg|Integer|选填|是否带撤回的消息，填1表明需要拉取撤回后的消息；默认不拉取撤回后的消息|
+|TopicId|String|选填|话题的 ID，若具有此选项表示拉取的是对应话题中的消息，仅支持话题的社群适用此选项|
 
 ### 应答包体示例
 ```
@@ -158,6 +155,7 @@ https://xxxxxx/v4/group_open_http_svc/group_msg_get_simple?sdkappid=88888888&ide
 | MsgSeq | Integer | 消息 seq，用于标识唯一消息，值越小发送的越早 |
 | MsgTimeStamp | Integer | 消息被发送的时间戳，server 的时间 |
 | MsgBody | Array | 消息内容，详情请参见 [消息内容 MsgBody 说明](https://intl.cloud.tencent.com/document/product/1047/33527) |
+|IsSystemMsg|Integer   |字段为1时表示系统消息|
 
 ## 错误码说明
 
@@ -176,7 +174,7 @@ https://xxxxxx/v4/group_open_http_svc/group_msg_get_simple?sdkappid=88888888&ide
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/group_msg_get_simple)  调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/group_open_http_svc/group_msg_get_simple) 调试本接口。
 
 ## 参考
 设置成员未读消息计数（[v4/group_open_http_svc/set_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/34909)）

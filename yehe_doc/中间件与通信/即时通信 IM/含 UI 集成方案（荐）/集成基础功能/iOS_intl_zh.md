@@ -1,7 +1,7 @@
-TUIKit 从 5.7.1435 版本开始支持模块化集成，您可以根据自己的需求集成所需模块。
+﻿TUIKit 从 5.7.1435 版本开始支持模块化集成，您可以根据自己的需求集成所需模块。
 TUIKit 从 6.9.3557 版本开始新增了全新的简约版 UI 组件，之前版本 UI 组件依旧保留，我们称之为经典版 UI 组件，您可以根据需求自由选择经典版或简约版 UI 组件。
 
-如果您还不了解各个界面库的功能，可以查阅文档 [TUIKit 界面库介绍](https://www.tencentcloud.com/document/product/1047/50062)。
+如果您还不了解各个界面库的功能，可以查阅文档 [TUIKit 界面库介绍](https://intl.cloud.tencent.com/document/product/1047/50062)。
 
 下文将介绍如何集成 TUIKit 组件。 
 
@@ -95,8 +95,7 @@ pod init
   ```
 :::
 </dx-tabs>
-
->?1、如果您直接 `pod 'TUIChat'`，不指定经典版或简约版，默认会集成两套版本 UI 组件。 
+> ?1、如果您直接 `pod 'TUIChat'`，不指定经典版或简约版，默认会集成两套版本 UI 组件。 
 > 2、经典版和简约版 UI 不能混用，集成多个组件时，您必须同时全部选择经典版 UI 或简约版 UI。
 > 例如，经典版 TUIChat 组件必须与经典版 TUIConversation、TUIContact、TUIGroup组件搭配使用。同理，简约版 TUIChat 组件必须与简约版 TUIConversation、TUIContact、TUIGroup 组件搭配使用。
 > 3、如果您使用的是 Swift，请开启 use_modular_headers!，并将头文件引用改成 @import 模块名形式引用。
@@ -109,6 +108,10 @@ pod install
 ```bash
 pod repo update
 ```
+之后执行以下命令，更新组件库的Pod版本
+```bash
+pod update
+```
   集成全部的 TUIKit 组件后的项目结构：
   <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/CZff221_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_1671075129288.png" style="zoom:50%;"/> 
 
@@ -116,13 +119,13 @@ pod repo update
 常用的聊天软件都是由会话列表、聊天窗口、好友列表、音视频通话等几个基本的界面组成，参考下面步骤，您仅需几行代码即可在项目中快速搭建这些 UI 界面。
 
 > ? 关于 TUIKit 组件模块功能：
->
-> 如果想了解更多，您还可以 [下载并运行 TUIKitDemo 源码](https://www.tencentcloud.com/document/product/1047/45913)，内含常见功能示例。
+> 1. 实操教学视频请参见：[极速集成 TUIKit（iOS）](https://cloud.tencent.com/edu/learning/course-3130-56699)。
+> 2. 如果想了解更多，您还可以 [下载并运行 TUIKitDemo 源码](https://github.com/TencentCloud/TIMSDK/tree/master/iOS)，内含常见功能示例。
 
 
 ### 步骤1：组件登录
 登录组件后才能正常使用组件的功能。用户在 App 上点击登录时，您可以登录 TUIKit 组件。
-SDKAppID 需要在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 创建并获取，userSig 需要按规则计算，详细步骤请参考文档 [快速入门](https://www.tencentcloud.com/document/product/1047/45913)。
+SDKAppID 需要在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 创建并获取，userSig 需要按规则计算，详细步骤请参考文档 [快速入门](https://intl.cloud.tencent.com/document/product/1047/45913)。
 
 示例代码如下所示：
 ```objectivec
@@ -218,9 +221,7 @@ SDKAppID 需要在 [即时通信 IM 控制台](https://console.cloud.tencent.com
 }
 @end
 ```
-
 >? `TUIC2CChatViewController` 会自动拉取该用户的历史消息并展示出来。
-
 :::
 
 ::: 简约版
@@ -245,6 +246,47 @@ SDKAppID 需要在 [即时通信 IM 控制台](https://console.cloud.tencent.com
 >? `TUIC2CChatViewController_Minimalist` 会自动拉取该用户的历史消息并展示出来。
 :::
 </dx-tabs>
+
+[](id:textTranslation)
+#### 开启文本消息翻译功能
+文本消息翻译功能指的是，当您进入了聊天界面后，可以手动长按消息列表中的文本消息 item，在出现的菜单中，点击【翻译】按钮，翻译文本。
+为了避免对用户使用造成影响，翻译功能默认关闭，消息长按菜单中不会出现【翻译】按钮。
+
+如果您想使用翻译功能，需要操作以下两步：
+1. 联系腾讯云技术人员帮您开通翻译服务。**未开通服务的情况下，即使您在 UI 上显示了【翻译】按钮，也无法正常翻译**。
+2. 开通服务后，您可以在初始化聊天窗口前，设置显示【翻译】按钮，示例代码如下：
+```objectivec
+// 显示翻译按钮
+TUIChatConfig.defaultConfig.enableTextTranslation = YES;
+```
+
+> ! 
+> 1. 文本消息翻译功能从 TUIChat 7.0 版本开始支持。
+> 2. 仅支持文本消息、文本类的引用或回复消息，图片、语音、视频、文件、表情、自定义消息等不支持翻译。
+> 3. 点击【翻译】后，会将文本翻译成当前 TUIChat 所使用的语言。例如当前 TUIChat 语言为英文，无论待翻译的文本是什么语言，都将被翻译为英文。
+
+开启翻译服务及显示开关前后效果图如下所示：
+<dx-tabs>
+
+:::
+::: 简约版
+
+<table style="text-align:center;vertical-align:middle;width: 900px">
+  <tr>
+    <th style="text-align:center;" width="300px">不显示翻译按钮</th>
+    <th style="text-align:center;" width="300px">显示翻译按钮</th>
+    <th style="text-align:center;" width="300px">文本消息翻译效果</th>
+  </tr>
+  <tr>
+    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/XhLb255_1.png"/></td>
+    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/Em34951_2.png"/></td>
+    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/CriP663_4.png"/></td>
+	 </tr>
+</table>
+
+:::
+</dx-tabs>
+
 
 ### 步骤4：构建通讯录界面
 通讯录界面不需要其它依赖，只需创建对象并显示出来即可。
@@ -339,11 +381,11 @@ SDKAppID 需要在 [即时通信 IM 控制台](https://console.cloud.tencent.com
 
 </dx-tabs>
 
->? 您可以 [下载 TUIKitDemo 源码](https://www.tencentcloud.com/document/product/1047/45913)，查看更多的通讯录事件实现。
+>? 您可以 [下载 TUIKitDemo 源码](https://github.com/TencentCloud/TIMSDK/tree/master/iOS)，查看更多的通讯录事件实现。
 
 ### 步骤5：构建音视频通话功能
 TUI 组件支持在聊天界面对用户发起音视频通话，仅需要简单几步就可以快速集成：
-<table style="text-align:center;vertical-align:middle;width: 700px">
+<table style="text-align:center;vertical-align:middle;width: 800px">
   <tr>
     <th style="text-align:center;" ><b>视频通话<br></b></th>
     <th style="text-align:center;"><b>语音通话</b><br></th>
@@ -357,7 +399,7 @@ TUI 组件支持在聊天界面对用户发起音视频通话，仅需要简单�
 
 1. 开通音视频服务。
   1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，进入应用的基础配置页面。
-  2. 在开通腾讯实时音视频服务功能区，单击**免费体验**即可开通 TUICallKit 的 60 天免费试用服务。
+  2. 在开通腾讯实时音视频服务功能区，单击**免费体验**即可开通 TUICallKit 的 7 天免费试用服务。
   3. 在弹出的开通实时音视频 TRTC 服务对话框中，单击确认，系统将为您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建一个与当前 IM 应用相同 SDKAppID 的实时音视频应用，二者帐号与鉴权可复用。
 2. 集成 TUICallKit 组件。
 在 podfile 文件中添加以下内容。
@@ -366,25 +408,50 @@ TUI 组件支持在聊天界面对用户发起音视频通话，仅需要简单�
 pod 'TUICallKit'                  
 ```
 3. 发起和接收视频或语音通话。
-<table style="text-align:center;vertical-align:middle;width: 500px">
+<table style="text-align:center;vertical-align:middle;width: 800px">
   <tr>
-    <th style="text-align:center;" ><b>消息页发起通话/联系人页发起通话<br></b></th>
+    <th style="text-align:center;" ><b>消息页发起通话<br></b></th>
+    <th style="text-align:center;" ><b>联系人页发起通话<br></b></th>
   </tr>
   <tr>
-    <td><img style="width:500px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/EseX367_%E9%9B%86%E5%90%88%281%29.png"/></td>
+    <td><img style="width:400px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/EseX367_%E9%9B%86%E5%90%88%281%29.png"/></td>
+    <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/31fd1d8fb263e953825cf5531a24ffca.png"/></td>
     </tr>
 </table>
 <ul>
 <li>集成 TUICallKit 组件后，聊天界面和联系人资料界面默认会出现 “视频通话” 和 “语音通话” 两个按钮，当用户点击按钮时，TUIKit 会自动展示通话邀请 UI，并给对方发起通话邀请请求。</li>
 <li>当用户<strong>在线</strong>收到通话邀请时，TUIKit 会自动展示通话接收 UI，用户可以选择同意或者拒绝通话。</li>
-<li>当用户<strong>离线</strong>收到通话邀请时，如需唤起 App 通话，就要使用到离线推送能力，离线推送的实现请参考 <a href="#Step5.4">添加离线推送</a>。</li>
+<li>当用户<strong>离线</strong>收到通话邀请时，如需唤起 App 通话，就要使用到离线推送能力，离线推送的实现请参见 <a href = "https://intl.cloud.tencent.com/document/product/1047/50033">添加离线推送</a>。</li>
 </ul>
 
 4. 添加离线推送。
-在使用离线推送之前，您需要开通 [IM 离线推送](https://intl.cloud.tencent.com/document/product/1047/39157) 服务。
-关于 App 的配置，您可以参考文档：[集成 TUIOfflinePush 跑通离线推送功能](https://www.tencentcloud.com/document/product/1047/39157)。
+在使用离线推送之前，您需要开通 [IM 离线推送](https://www.tencentcloud.com/document/product/1047/39157) 服务。
+关于 App 的配置，您可以参考文档：[集成 TUIOfflinePush 跑通离线推送功能](https://intl.cloud.tencent.com/document/product/1047/50033)。
 
 配置完成后，当单击接收到的**音视频通话离线推送通知**时， TUICallKit 会自动拉起**音视频通话邀请界面**。
+	
+5. 附加增值能力
+集成 TUIChat 和 TUICallkit 的组件后，在聊天界面发送语音消息时，即可**录制带 AI 降噪和自动增益的语音消息**。
+下面是使用两台华为 P10 同时录制的语音消息对比：
+<table style="text-align:center;vertical-align:middle;width: 800px">
+  <tr>
+    <th style="text-align:center;" ><b>系统录制的语音消息<br></b></th>
+    <th style="text-align:center;" ><b>TUICallkit 录制的带 AI 降噪和自动增益的语音消息<br></b></th>
+  </tr>
+  <tr>
+    <td>
+      <audio id="audio" controls="" preload="none" >
+	<source id="m4a" src="https://im.sdk.cloudcachetci.com/tools/resource/rain_system_record.m4a">
+      </audio>
+    </td>
+
+    <td>
+      <audio id="audio" controls="" preload="none">
+    <source id="m4a" src="https://im.sdk.cloudcachetci.com/tools/resource/rain_tuicallkit_record_with_agc_aidenoise.m4a">
+      </audio>
+    </td>
+  </tr>
+</table>
 
 ## 常见问题
 #### 提示 "target has transitive dependencies that include statically linked binaries" 如何处理？
@@ -393,14 +460,13 @@ pod 'TUICallKit'
 ```
 use_frameworks! :linkage => :static
 ```
-
 如果您使用的是 swift，请将头文件引用改成 @import 模块名形式引用。
 
 #### TUICallKit 和自己集成的音视频库冲突了？
-腾讯云的 [音视频库](https://intl.cloud.tencent.com/document/product/647/34615) 不能同时集成，会有符号冲突，如果您使用了非 [TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) 版本的音视频库，建议先去掉，然后 pod 集成 `TUICallKit/Professional` 版本，该版本依赖的 [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) 音视频库包含了音视频的所有基础能力。**如果您使用了 [LiteAV_Enterprise](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise) 音视频库，暂不支持和 TUICallKit 共存。**具体解决方案可以参考文档：[音视频常见问题](https://www.tencentcloud.com/document/product/1047/50024)。
+腾讯云的 [音视频库](https://www.tencentcloud.com/document/product/647/34615) 不能同时集成，会有符号冲突，如果您使用了非 [TRTC](https://www.tencentcloud.com/document/product/647/34615#TRTC) 版本的音视频库，建议先去掉，然后 pod 集成 `TUICallKit/Professional` 版本，该版本依赖的 [LiteAV_Professional](https://www.tencentcloud.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) 音视频库包含了音视频的所有基础能力。**如果您使用了 [LiteAV_Enterprise](https://www.tencentcloud.com/document/product/647/34615#Enterprise) 音视频库，暂不支持和 TUICallKit 共存。**具体解决方案可以参考文档：[音视频常见问题](https://www.tencentcloud.com/document/product/1047/50024#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98)。
 
 #### 通话邀请的超时时间默认是多久？
-通话邀请的默认超时时间是 30 秒.
+通话邀请的默认超时时间是 30 秒。
 
 #### 在邀请超时时间内，被邀请者如果离线再上线，能否立即收到邀请？
 

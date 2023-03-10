@@ -1,7 +1,7 @@
-TUIKit supports modular integration starting from version 5.7.1435. You can integrate modules for integration according to your needs.
+﻿TUIKit supports modular integration starting from version 5.7.1435. You can integrate modules for integration according to your needs.
 Starting from version 6.9.3557, TUIKit provides a new set of minimalist version UI components. The previous version UI components are still retained, which are called the classic version UI components. You can choose either the classic or minimalist version as needed.
 
-For more information about TUIKit components, see [here](https://www.tencentcloud.com/document/product/1047/50062).
+For more information about TUIKit components, see [here](https://intl.cloud.tencent.com/document/product/1047/50062).
 
 The following describes how to integrate TUIKit components. 
 
@@ -108,6 +108,10 @@ If you cannot install the latest TUIKit version, run the following command to up
 ```bash
 pod repo update
 ```
+Then run the following command to update the Pod version of the component library:
+```bash
+pod update
+```
   After all TUIKit components are integrated, the project structure is as follows:
   <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/CZff221_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_1671075129288.png" style="zoom:50%;"/> 
 
@@ -115,13 +119,13 @@ pod repo update
 Instant messaging software usually consists of several basic UIs such as the conversation list, chat window, contacts, and audio/video call UIs. It only takes a few lines of code to build these UIs in your project. The process is as follows:
 
 > ? About TUIKit component features:
->
-> If you want to learn more, you can [download and run TUIKitDemo source code](https://www.tencentcloud.com/document/product/1047/45913), where you can find samples of frequently used features.
+> 1. For the Hands-on tutorials, see [TUIKit Quick Integration (iOS)](https://cloud.tencent.com/edu/learning/course-3130-56699).
+> 2. If you want to learn more, you can [download and run TUIKitDemo source code](https://github.com/TencentCloud/TIMSDK/tree/master/iOS), where you can find samples of frequently used features.
 
 
 ### Step 1. Log in to TUIKit
 You need to log in to TUIKit before you can use the component features properly. To log in to TUIKit, click `Login` on your app.
-You need to create an app and obtain the SDKAppID in the [IM console](https://console.cloud.tencent.com/im). `userSig` needs to be calculated according to rules. For operation details, see [Get Started](https://www.tencentcloud.com/document/product/1047/45913).
+You need to create an app and obtain the SDKAppID in the [Chat console](https://console.cloud.tencent.com/im). `userSig` needs to be calculated according to rules. For operation details, see [Get Started](https://intl.cloud.tencent.com/document/product/1047/45913).
 
 Sample code:
 ```objectivec
@@ -243,6 +247,46 @@ Sample code:
 :::
 </dx-tabs>
 
+[](id:textTranslation)
+#### Enabling text message translation
+When you are on the chat UI, you can tap and hold a text message in the message list, and tap the **Translate** button on the pop-up menu to translate the text message.
+The translation feature is disabled by default, and the **Translate** button is not displayed on the menu that pops up when you tap and hold a text message.
+
+To enable the translation feature, perform the following steps:
+1. Contact Tencent Cloud technical support to activate the translation service. **If the translation service is not activated, even if the **Translate** button is displayed on the UI, it does not work properly.**
+2. After the translation service is activated and before the chat UI is initialized, you can configure the system to display the **Translate** button. Sample code:
+```objectivec
+// Display the Translate button
+TUIChatConfig.defaultConfig.enableTextTranslation = YES;
+```
+
+> ! 
+> 1. The text message translation feature is supported from TUIChat 7.0.
+> 2. Only text messages, and quote and reply text messages support translation. Image, audio, video, file, and emoji messages do not support translation.
+> 3. When you click **Translate**, the text will be translated into the language that is currently used by TUIChat. For example, if the current TUIChat language is English, the text will be translated into English regardless of which language it is in.
+
+The following figure shows the UI after the translation service is activated and the **Translate** button display is enabled.
+<dx-tabs>
+
+:::
+::: Minimalist version
+<table style="text-align:center;vertical-align:middle;width: 900px">
+  <tr>
+    <th style="text-align:center;" width="300px">Not Displaying the Translate Button</th>
+    <th style="text-align:center;" width="300px">Displaying the Translate Button</th>
+    <th style="text-align:center;" width="300px">Text Message Translation</th>
+  </tr>
+  <tr>
+    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/XhLb255_1.png"/></td>
+    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/Em34951_2.png"/></td>
+    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/CriP663_4.png"/></td>
+	 </tr>
+</table>
+
+:::
+</dx-tabs>
+
+
 ### Step 4. Build the contacts panel
 The contacts panel does not require other dependencies. You only need to create the object and display it.
 <dx-tabs>
@@ -336,11 +380,11 @@ For example, when a user clicks a friend, the friend's profile page will be disp
 
 </dx-tabs>
 
->? You can [download TUIKitDemo source code](https://www.tencentcloud.com/document/product/1047/45913) and view the implementation of more contacts events.
+>? You can download [TUIKitDemo source code](https://github.com/TencentCloud/TIMSDK/tree/master/iOS) and view the implementation of more contacts events.
 
 ### Step 5. Build the audio/video call feature
 TUI components allow users to start audio/video calls in chat UIs and can be quickly integrated with a few steps:
-<table style="text-align:center;vertical-align:middle;width: 700px">
+<table style="text-align:center;vertical-align:middle;width: 800px">
   <tr>
     <th style="text-align:center;" ><b>Video Call<br></b></th>
     <th style="text-align:center;"><b>Audio Call</b><br></th>
@@ -353,9 +397,9 @@ TUI components allow users to start audio/video calls in chat UIs and can be qui
 
 
 1. Activate the TRTC service
-  1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
-  2. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** to activate the 60-day free trial service of TUICallKit.
-  3. Click **Confirm** in the pop-up dialog box. A TRTC app with the same SDKAppID as the IM app will be created in the [TRTC console](https://console.cloud.tencent.com/trtc). You can use the same account and authentication information for IM and TRTC.
+  1. Log in to the [Chat console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
+  2. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** to activate the 7-day free trial service of TUICallKit.
+  3. Click **Confirm** in the pop-up dialog box. A TRTC app with the same SDKAppID as the Chat app will be created in the [TRTC console](https://console.cloud.tencent.com/trtc). You can use the same account and authentication information for Chat and TRTC.
 2. Integrate the TUICallKit component.
 Add the following content to your Podfile:
 ```objectivec
@@ -363,25 +407,50 @@ Add the following content to your Podfile:
 pod 'TUICallKit'                  
 ```
 3. Start and answer a video or audio call
-<table style="text-align:center;vertical-align:middle;width: 600px">
+<table style="text-align:center;vertical-align:middle;width: 800px">
   <tr>
-    <th style="text-align:center;" ><b>Starting a Call via a Message Page/Starting a Call via a Contact Profile Page<br></b></th>
+    <th style="text-align:center;" ><b>Starting a Call via a Message Page<br></b></th>
+    <th style="text-align:center;" ><b>Starting a Call via a Contact Profile Page<br></b></th>
   </tr>
   <tr>
-    <td><img style="width:600px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/EseX367_%E9%9B%86%E5%90%88%281%29.png"/></td>
+    <td><img style="width:400px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/EseX367_%E9%9B%86%E5%90%88%281%29.png"/></td>
+    <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/31fd1d8fb263e953825cf5531a24ffca.png"/></td>
     </tr>
 </table>
 <ul>
-<li>After integrating the TUICallKit component, the chat UI and contact profile UI display the <b>Video Call</b> and <b>Audio Call</b> buttons by default. When a user clicks either of the buttons, TUIKit automatically displays the call invitation UI and sends the call invitation request to the callee.</li>
+<li>After integrating the TUICallKit component, the chat UI and contact profile UI display the **Video Call** and **Audio Call** buttons by default. When a user clicks either of the buttons, TUIKit automatically displays the call invitation UI and sends the call invitation request to the callee.</li>
 <li>When an <strong>online</strong> user receives a call invitation, TUIKit automatically displays the call receiving UI, where the user can answer or reject the call.</li>
-<li>When an <strong>offline</strong> user receives a call invitation and wants to start the app to accept the call, the offline push capability is required. For how to implement offline push, see <a href="#Step5.4">Add offline push</a>.</li>
+<li>When an <strong>offline</strong> user receives a call invitation and wants to start the app to accept the call, the offline push capability is required. For how to implement offline push, see <a href = "https://intl.cloud.tencent.com/document/product/1047/50033">here</a>.</li>
 </ul>
 
 4. Add offline push
-Before using offline push, you need to activate the [IM offline push](https://intl.cloud.tencent.com/document/product/1047/39157) service.
-For related app configuration, see [Integrating TUIOfflinePush and Running the Offline Push Feature](https://www.tencentcloud.com/document/product/1047/39157).
+Before using offline push, you need to activate the [offline push](https://www.tencentcloud.com/document/product/1047/39157) service.
+For related app configuration, see [Integrating TUIOfflinePush and Running the Offline Push Feature](https://intl.cloud.tencent.com/document/product/1047/50033).
 
 After the configuration is completed, when you click a **received audio/video call notification pushed offline**, TUICallKit automatically opens the **audio/video call invitation UI**.
+	
+5. Add value-added capabilities.
+After TUIChat and TUICallKit are integrated, when you send a voice message on the chat UI, **the voice message can be recorded with AI-based noise reduction and automatic gain control**.
+The following compares the voice messages recorded simultaneously using two Huawei P10 phones:
+<table style="text-align:center;vertical-align:middle;width: 800px">
+  <tr>
+    <th style="text-align:center;" ><b>Voice Message Recorded by the System<br></b></th>
+    <th style="text-align:center;" ><b>Voice Message with AI-based Noise Reduction and Automatic Gain Control Recorded by TUICallkit<br></b></th>
+  </tr>
+  <tr>
+    <td>
+      <audio id="audio" controls="" preload="none" >
+	<source id="m4a" src="https://im.sdk.cloudcachetci.com/tools/resource/rain_system_record.m4a">
+      </audio>
+    </td>
+
+    <td>
+      <audio id="audio" controls="" preload="none">
+    <source id="m4a" src="https://im.sdk.cloudcachetci.com/tools/resource/rain_tuicallkit_record_with_agc_aidenoise.m4a">
+      </audio>
+    </td>
+  </tr>
+</table>
 
 ## FAQs
 #### What should I do when I receive the message "target has transitive dependencies that include statically linked binaries"?
@@ -393,7 +462,7 @@ use_frameworks! :linkage => :static
 If you use Swift, change the reference of the header file to the reference format of @import module name.
 
 #### What should I do if TUICallKit conflicts with an audio/video library that I have integrated?
-Do not integrate different Tencent Cloud [audio and video libraries](https://intl.cloud.tencent.com/document/product/647/34615) at the same time to avoid symbol conflicts. If you use a library not of the [TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version, we recommend that you remove it and integrate the TUICallKit Professional version via `pod`. The audio and video library of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) version contains all basic audio and video capabilities. **The audio and video library of the [LiteAV_Enterprise](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise) version cannot coexist with TUICallKit.** For the detailed solution, see [here](https://www.tencentcloud.com/document/product/1047/50024).
+Do not integrate different Tencent Cloud [audio and video libraries](https://www.tencentcloud.com/document/product/647/34615) at the same time to avoid symbol conflicts. If you use a library not of the [TRTC](https://www.tencentcloud.com/document/product/647/34615#TRTC) version, we recommend that you remove it and integrate the TUICallKit Professional version via `pod`. The audio and video library of the [LiteAV_Professional](https://www.tencentcloud.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) version contains all basic audio and video capabilities. **The audio and video library of the [LiteAV_Enterprise](https://www.tencentcloud.com/document/product/647/34615#Enterprise) version cannot coexist with TUICallKit.** For the detailed solution, see [here](https://www.tencentcloud.com/document/product/1047/50024#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98).
 
 #### How long is the default call invitation timeout duration?
 The default call invitation timeout duration is 30 seconds.

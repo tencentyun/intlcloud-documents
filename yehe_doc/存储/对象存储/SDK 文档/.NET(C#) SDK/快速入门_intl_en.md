@@ -139,8 +139,8 @@ QCloudCredentialProvider cosCredentialProvider = new DefaultSessionQCloudCredent
 **Type 3: permanent key (not recommended)**
 
 ```cs
-string secretId = Environment.GetEnvironmentVariable("SECRET_ID"); // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
-string secretKey = Environment.GetEnvironmentVariable("SECRET_KEY"); // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+string secretId = Environment.GetEnvironmentVariable("SECRET_ID"); // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+string secretKey = Environment.GetEnvironmentVariable("SECRET_KEY"); // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
 long durationSecond = 600;          // Validity period of each request signature in seconds
 QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProvider(
   secretId, secretKey, durationSecond);

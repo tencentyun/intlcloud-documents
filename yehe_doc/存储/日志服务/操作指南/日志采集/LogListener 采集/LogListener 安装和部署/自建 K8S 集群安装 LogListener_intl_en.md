@@ -34,7 +34,7 @@ When the installation is completed, CLS automatically creates a default machine 
 > - Data of different clusters can be shipped to the same topic.
 > - The default ID is in the following format: cls-k8s-Random ID consisting of 8 characters.
 >   
--	--network: Network type, which can be private network (default) or internet.
+-	--network: Network type, which can be private network or internet (default).
 -	--api_network: TencentCloud API network type, which can be private network or internet (default).
 - --api_region: TencentCloud API region. For more information, see [Available Regions](https://intl.cloud.tencent.com/document/product/614/18940).
 - Keep `region` and `api_region` the same. For more information, see [LogListener](https://intl.cloud.tencent.com/document/product/614/18940#LogListener) and [CLS API 3.0](https://intl.cloud.tencent.com/document/product/614/18940#API3).

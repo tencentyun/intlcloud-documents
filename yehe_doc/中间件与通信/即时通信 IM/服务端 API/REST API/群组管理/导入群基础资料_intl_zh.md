@@ -26,8 +26,7 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/group_open_http_svc/import_group | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
@@ -43,7 +42,7 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
 
 - **基础形式**
 导入群，可以用 CreateTime 指定群组的创建时间。
-```
+```JSON
 {
     "Owner_Account": "leckie", // 群主的 UserId（选填）
     "Type": "Public", // 群组类型：Private/Public/ChatRoom/Community（必填）
@@ -51,9 +50,18 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
     "CreateTime": 1448357837 // 群组的创建时间（选填，不填会以请求时刻为准）
 }
 ```
+- **仅包含支持话题参数形式**
+导入群组，并指定其类型为社群且支持话题。
+```JSON
+{
+    "Type": "Community",       //群组类型 (必填)
+    "Name": "test_import_group",  //群组名称 (必填)
+    "SupportTopic": 1    // 是否支持话题选项, 1代表支持,0代表不支持
+}
+```
 - **指定其他选填字段**
 指定简介、公告等选填字段，和创建群组相同。
-```
+```JSON
 {
     "Owner_Account": "leckie", // 群主的 UserId（选填）
     "Type": "Public", // 群组类型：Private/Public/ChatRoom/Community（必填）
@@ -90,14 +98,15 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
 | Introduction | String | 选填 |群简介，最长240字节  |
 | Notification | String | 选填 |群公告，最长300字节 |
 | FaceUrl | String | 选填 |群头像 URL，最长100字节 |
-| MaxMemberCount | Integer | 选填 |最大群成员数量，最大为6000，不填默认为2000个  |
-| ApplyJoinOption | String | 选填 |申请加群处理方式。包含 FreeAccess（自由加入），NeedPermission（需要验证），DisableApply（禁止加群），不填默认为NeedPermission（需要验证） |
+| MaxMemberCount | Integer | 选填 |最大群成员数量，最大为6000，不填默认为2000个。社群目前默认支持的最大群成员数量为100000  |
+| ApplyJoinOption | String | 选填 |申请加群处理方式。包含 FreeAccess（自由加入），NeedPermission（需要验证），DisableApply（禁止加群），不填默认为NeedPermission（需要验证）。社群目前不支持此字段 |
 | AppDefinedData | Array | 选填 |群组维度的自定义字段，默认情况是没有的，需要开通，详细请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529) |
 | CreateTime | Integer | 选填 |群组的创建时间 |
+| SupportTopic | Integer | 选填 |是否支持话题选项，此字段只针对社群有效 |
 
 ### 应答包体示例
 - **基础形式**
-```
+```JSON
 {
     "ActionStatus": "OK",
     "ErrorInfo": "",
@@ -105,9 +114,17 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
     "GroupId": "@TGS#2J4SZEAEL"
 }
 ```
-
-- **指定其他选填字段**
+- **仅包含支持话题参数形式**
+```JSON
+{
+    "ActionStatus": "OK",
+    "ErrorInfo": "",
+    "ErrorCode": 0,
+    "GroupId": "@TGS#_@TGS#c4YHCIIM62CX"
+}
 ```
+- **指定其他选填字段**
+```JSON
 {
     "ActionStatus": "OK",
     "ErrorInfo": "",
@@ -142,7 +159,7 @@ https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#group_open_http_svc/import_group) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/group_open_http_svc/import_group) 调试本接口。
 
 ## 参考
 

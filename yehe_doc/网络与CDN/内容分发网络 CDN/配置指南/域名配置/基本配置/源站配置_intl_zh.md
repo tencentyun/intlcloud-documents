@@ -2,29 +2,60 @@
 
 若您需要修改域名源站基本信息、回源请求协议、回源 HOST等信息，可在源站配置模块进行相关操作。
 
+>! 建议您的源站根据加速区域配置相同地域的源站，例如，加速区域为中国境内，请配置为境内源站回源，如果源站位于中国香港或境外，由于回源存在跨境访问，将无法为您保障回源效果。
+如果您的加速区域为全球加速，可以在域名配置-源站配置中，设立区域独立源站，境内、境外根据不同区域回源到不同的源站内，以保障回源效果。
 
 ## 配置指南
 
 ### 主源站配置
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，第一栏中基本信息下方即为源站配置模块：
-![img](https://main.qcloudimg.com/raw/524f3c9aa2f9f2017d53409ee610bb5b.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/9IJQ709_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230224110508.png)
+
 **源站类型**
-自有源站：已经拥有稳定运行的业务服务器（即源站），填充对应的 IP 地址列表、或一个域名作为源站地址。
-[对象存储（COS）](https://intl.cloud.tencent.com/product/cos)：资源已存储在腾讯云对象存储中，直接选择某一个 bucket 作为源站。
+
+<table>
+<thead>
+<tr>
+<td style="width:150px">自有源站</td>
+<td>已经拥有稳定运行的业务服务器（即源站），填充对应的 IP 地址列表、或一个域名作为源站地址。</td></ul>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.tencentcloud.com/products/cos">COS 源</a></td>
+<td>选择云存储中的一个 bucket 作为源站，支持开启私有存储桶访问。</td>
+</tr>
+<tr>
+<td>第三方对象存储	
+</td>
+<td>腾讯云以外的第三方对象存储，当前支持的第三方为：AWS S3 、阿里云 OSS、华为 OBS、七牛云 kodo。<br/>
+<strong>注：</strong>ECDN 暂不支持第三方对象存储。</td>
+</tr>
+</tbody></table>
+
 
 **回源协议**
 CDN 加速节点回源到用户源站时使用的协议，HTTP 或 HTTPS。
 
-允许在源站配置处调整域名回源协议为 HTTP、HTTPS 或回源跟随：
+<table>
+<thead>
+<tr>
+<td style="width:150px">HTTP 回源</td>
+<td>HTTP/HTTPS 访问均使用 HTTP 回源。</td></ul>
+</tr>
+</thead>
+<tbody><tr>
+<td>HTTPS 回源</td>
+<td>HTTP/HTTPS 访问均使用 HTTPS 回源，可以避免您的回源数据被窃取或者篡改，会少量消耗您源站的处理器资源（源站需要支持 HTTPS 访问）。</td>
+</tr>
+<tr>
+<td>协议跟随</td>
+<td>HTTP 访问使用 HTTP 回源，HTTPS 访问使用 HTTPS 回源。如果您仅需对部分关键的敏感数据采用 HTTPS 协议传输，其他业务采用 HTTP 协议传输，建议您选择"协议跟随"（源站需要支持 HTTPS 访问）
+。</td>
+</tr>
+</tbody></table>
 
-- **HTTP 回源**：访问为 HTTP、HTTPS 时均使用 HTTP 回源。
-- **HTTPS 回源**：访问为 HTTP、HTTPS时均使用 HTTPS 回源。
-- **协议跟随**：HTTP 请求使用 HTTP 回源，HTTPS 请求使用 HTTPS 回源。
-
-> !
-> - 存在 HTTPS 回源情况下，请保证源站支持 HTTPS 访问，否则会导致回源失败。
-> - 目前暂时仍可通过证书管理页面调整此项配置，后续会进行迁移。
+> !存在 HTTPS 回源情况下，请保证源站支持 HTTPS 访问，否则会导致回源失败。
 
 
 
@@ -33,61 +64,89 @@ CDN 加速节点回源到用户源站时使用的协议，HTTP 或 HTTPS。
 <thead>
 <tr>
 <td style="width:80px">自有源</td>
-<td style="padding-bottom:0px;padding-top:15px"><ul><li>支持填充多个 IP 源站（一行一个）或一个域名源站：
-  <br><strong>多 IP 轮询回源：</strong>支持填充多个 IP 源站（一行一个），轮询回源。CDN 默认开启源站检测能力，当某一个 IP 回源失败超出一定经验阈值时，则不再回源到此 IP 地址，会自动屏蔽一段时间后自动恢复。<br>若您已获得 IPv6 源站内测资格，并在添加域名时开启了 IPv6 源站，则可填充一个 IPv6 的 IP 源站。<br><strong>域名回源：</strong>支持单独配置一个域名作为源站，此域名需要与业务加速域名不一致。（暂不支持 IPv6 域名回源）。<br><li> 支持增加端口（0 - 65535）和权重（1 - 100）配置：源站:端口:权重（端口可缺省：源站::权重）<br><strong>注：</strong>回源协议为HTTPS和协议跟随时，仅支持配置443端口或不配置端口。<br><li>源站地址处最多可输入511个字符。</td></ul>
+<td style="padding-bottom:0px;padding-top:15px"><ul><li>支持填充多个 IP 源站或域名（一行一个）：
+  <br><strong>多 IP 轮询回源：</strong>支持填充多个 IP 源站（一行一个），轮询回源。CDN 默认开启源站检测能力，当某一个 IP 回源失败或回源超时次数在1分钟内超出5次时，则不再回源到此 IP 地址，会自动屏蔽 600s 后自动恢复。<br><strong>域名回源：</strong>支持单独配置一个域名作为源站，此域名不可与 CDN 加速域名相同。不支持 IPv6 域名回源。<br><strong>注：</strong>源站地址不可填写为已接入 CDN 加速且源站指向当前加速域名的站点，否则会造成循环解析，无法正常回源。<li> 支持增加端口（0 - 65535）和权重（1 - 100）配置：源站:端口:权重（端口可缺省：源站::权重）<br><strong>注：</strong>权重按照数字大小进行排序，数字越大，权重越高，回源优先级越高。<li>源站地址处最多可输入511个字符。</td></ul>
 </tr>
 </thead>
 <tbody><tr>
-<td>COS 源</td>
-<td>选择云存储中的一个 bucket 作为源站，支持开启私有存储桶访问。</td>
+<td><a href="https://www.tencentcloud.com/products/cos">COS 源</a></td>
+<td><li>选择腾讯云对象存储中的一个存储桶作为源站。<li>根据存储桶处的配置和您的实际业务场景，选择默认域名或静态网站或全球加速域名，例如：当前 bucket 已开启静态网站配置，请选择为静态网站。<li>若您的 COS 存储桶的读写权限设置了私有读访问，请授权 CDN 并开启回源鉴权，即开启私有存储桶访问。</td>
 </tr>
+<tr>
+<td>第三方对象存储</td>
+<td style="padding-bottom:0px;padding-top:15px"><ul><li>若资源已存储在第三方对象存储中，请输入有效的存储桶访问地址作为源站，当前支持的第三方为：AWS S3 、阿里云 OSS、华为 OBS、七牛云 kodo。</br><strong>示例：<code>my-bucket.s3.ap-east-1.amazonaws.com</code> 或 <code>my-bucket.oss-cn-beijing.aliyuncs.com</code>，</strong>不可包含 <code>http://</code> 或 <code>http://</code> 协议头。<li>回源至第三方私有存储桶，需填写有效密钥并开启回源鉴权，即开启私有存储桶访问。</td>
+</tr></ul>
 </tbody></table>
 
 
 
 
 **回源 HOST**
-即回源域名，CDN 节点在回源时，访问的源站 IP 地址下具体的站点域名。默认为当前加速域名，若接入泛域名，则默认为泛域名，且实际回源 Host 为访问域名。您可根据实际业务情况自行修改（注：COS 源时不可修改）。具体配置示例说明可见 [回源域名配置](https://intl.cloud.tencent.com/document/product/228/6289)。
+即回源域名，CDN 节点在回源时，访问的源站 IP 地址下具体的站点域名。具体配置示例说明可见 [回源域名配置](#exp)。
 
 > ?源站地址和回源 HOST 的区别如下：
 > - 源站地址：源站地址决定了回源时请求到的具体 IP 地址。
 > - 回源 HOST：回源 HOST 决定了回源请求访问到该 IP 地址上的具体站点。
+
+<table>
+<thead>
+<tr>
+<td style="width:80px">自有源</td>
+<td >默认为当前加速域名。若接入泛域名，则默认为泛域名，且实际回源 HOST 为访问域名。您可根据实际业务情况自行修改。</td></tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.tencentcloud.com/products/cos">COS 源</a></td>
+<td>默认为存储桶访问地址，与源站地址一致，不可修改。</td>
+</tr>
+<tr>
+<td>第三方对象存储</td>
+<td>默认为存储桶访问地址，与源站地址一致，不可修改。</td>
+</tr>
+</tbody></table>
+
+
 
 ### 热备源站配置
 
 您可以为您的主源站添加热备源站，所有回源请求均会先访问主源站，若返回为 4XX/5XX 错误码，或链接超时、协议不兼容等情况后，会再次回源至热备源站进行资源拉取，保障用户回源高可用。
 
 支持针对热备源站独立配置源站地址和回源 HOST。
-![img](https://main.qcloudimg.com/raw/4d2ba172412182eb87ba40149775689f.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/fBH6442_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230224110649.png)
 
->!若主源站开启了 IPv6 源站，则不支持添加热备源站。
+>!
+>- 热备源的源站类型不支持 COS 源和第三方对象存储。
+>- 若主源站开启了 IPv6 源站，则不支持添加热备源站。
+>- 热备源站不支持配置权重。
 
 ### 区域特殊配置
 
-若您加速域名的服务区域为全球，为避免跨国流量产生，希望针对加速域名不同服务区域设置不同源站，可单击下方【添加特殊配置】实现：
-![img](https://main.qcloudimg.com/raw/d4a7a61ed28daa2c3eb0febf02ca931c.png)
-选择需要不同回源策略的区域，并填充对应的源站信息即可。
+若您加速域名的服务区域为全球，为避免跨国流量产生，希望针对加速域名不同服务区域设置不同源站，可单击下方**区域独立配置**实现：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/XXa9147_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230224112431.png)
+选择需要不同回源策略的区域，并填充对应的源站信息即可。具体配置示例说明可见 [区域特殊配置](#special)。
 
 >!
-> - 区域特殊配置添加后，暂时无法直接删除。
-> - 若区域特殊配置与基础配置完全一致，则会自动进行合并，您可以通过配置成一致来删除区域特殊配置。
+>
+>- 源站类型为第三方对象存储时不支持添加区域特殊配置。
+
 
 ## 配置示例
-[](id:exp)
-### 回源域名配置
+
+### 回源域名配置[](id:exp)
 
 若 CDN 源站配置如下，假设加速域名`www.test.com`配置如下：
-![img](https://main.qcloudimg.com/raw/ec2e007bb32723f7dd12aac17524c8af.png)
+![](https://main.qcloudimg.com/raw/ec2e007bb32723f7dd12aac17524c8af.png)
 则用户访问路径如下：
 用户访问资源`http://www.test.com/test.txt`，此时 CDN 节点尚未缓存该资源，则 CDN 节点回源是针对`www.abc.com`域名进行解析，得到源站服务器地址，假设为`1.1.1.1`，则访问`1.1.1.1`服务器，在其上的 Web 网站`www.def.com`路径下，找到 test.txt 文件，返回给用户。
 
+
+[](id:special)
 ### 区域特殊配置
 
 若腾讯云 CDN 源站配置如下，假设加速域名`www.test.com`配置如下：
-![img](https://main.qcloudimg.com/raw/e9104ca2b0e38c62bdffb022a933b2b9.png)
+![](https://main.qcloudimg.com/raw/e9104ca2b0e38c62bdffb022a933b2b9.png)
 则实际回源场景为：
 
 1. 中国境内用户访问`http://www.test.com/test.txt`文件，境内节点尚未缓存该资源，则回源请求到达服务器`1.1.1.1`，找到 Web 网站`1.test.com`下的 test.txt 文件，若有该资源则直接返回给客户，若无，则进行步骤2。
-2. CDN 境内节点回主源站失败，未找到资源，则回源请求到达服务器`2.2.2.2`，找到 Web 网站`1.test.com`下的 test.txt 文件，返回给用户并进行缓存。
+2. CDN 境内节点回主源站失败，未找到资源，则回源请求到达服务器`2.2.2.2`，找到 Web 网站`2.test.com`下的 test.txt 文件，返回给用户并进行缓存。
 3. 此时中国境外的用户也访问`http://www.test.com/test.txt`文件，境外节点尚未缓存该资源，则回源请求到达服务器`3.3.3.3`，找到 Web 网站`3.test.com`下的 test.txt 文件，若有该资源则直接返回给客户，若无，则进行步骤4。
 4. CDN 境外节点回境外主源站失败，未找到资源，回源请求到达服务器`4.4.4.4`，找到 Web 网站`4.test.com`下的 test.txt 文件，返回给境外用户并进行缓存。

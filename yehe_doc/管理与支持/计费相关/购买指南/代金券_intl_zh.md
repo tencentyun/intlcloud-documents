@@ -85,6 +85,14 @@ B. 根据用户的使用场景，代金券的适用场景也有所不同。
 - 后付费产品开通时不支持用代金券抵扣冻结费用。
 - 系统自动选用代金券进行费用抵扣后，可在[账单详情](https://console.intl.cloud.tencent.com/expense/bill/summary)  查看代金券支付金额。
 
+## 代金券的自动用券开关
+可对单张代金券设置自动用券开关，自动用券包括自动续费、后付费结算等。您可在[费用中心](https://console.cloud.tencent.com/expense) >  [代金券](https://console.tencentcloud.com/expense/voucher) 中看到自动用券开关。
+该开关默认为打开状态，即默认支持自动用券。如需屏蔽自动用券场景，请手动单击关闭，并在弹窗中确认即可关闭；如需恢复自动用券再次单击开启即可。图片示例如下：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/9yVX405_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16770487932568.png)
+
+>?
+>代金券消耗完毕或过期后，开关状态不会改变。
+
 ## 代金券使用规则
 <span id="系统自动选用规则"></span>
 ### 系统自动选用规则

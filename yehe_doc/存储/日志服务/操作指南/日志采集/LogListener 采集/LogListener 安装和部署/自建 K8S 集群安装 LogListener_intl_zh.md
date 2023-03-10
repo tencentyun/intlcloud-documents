@@ -34,7 +34,7 @@ chmod 744 tencentcloud-cls-k8s-install.sh
 > - 不同的集群数据可以投递到相同的 topic。
 > - 默认 ID 生成规则为：cls-k8s-8位随机 ID。
 >   
--	--network：网络使用类型，内网（intra）或者外网（internet），默认使用内网。
+-	--network：网络使用类型，内网（intra）或者外网（internet），默认使用外网。
 -	--api_network：云 API 的网络使用类型，内网（intra）或者外网（internet），默认使用外网（internet）。
 - --api_region：云 API 的地域，地域详情请参见 [可用地域](https://intl.cloud.tencent.com/document/product/614/18940) 文档。
 - region 和 api_region 地区保持一致，可分别参考 [域名-loglistener](https://intl.cloud.tencent.com/document/product/614/18940#LogListener) ，[地域-日志服务 API3.0](https://intl.cloud.tencent.com/document/product/614/18940#API3) 文档检验网络。

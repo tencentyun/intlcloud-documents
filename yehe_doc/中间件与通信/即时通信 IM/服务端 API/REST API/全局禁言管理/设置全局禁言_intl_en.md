@@ -1,57 +1,54 @@
 ## Background
-- Global muting includes the global muting of one-to-one chat messages and that of group chat messages.
-If the global muting of one-to-one chat messages is enabled for an account, during the muting period, no one-to-one chat messages can be sent, the sender receives error code 20012 (for details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348)), and the [callback before sending one-to-one chat messages](https://intl.cloud.tencent.com/document/product/1047/34364) is not triggered. After the muting period expires, the IM backend system automatically disables the global muting of one-to-one chat messages, and then all one-to-one chat messages can be sent normally. For the permanent global muting of one-to-one chat messages, the muting period never expires. By default, the global muting of one-to-one chat messages is disabled for accounts.
-If the global muting of group chat messages is enabled for an account, during the muting period, no group chat messages can be sent, the sender receives error code 10017 (for details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348)), and the [callback before sending group chat messages](https://intl.cloud.tencent.com/document/product/1047/34374) is not triggered. After the muting period expires, the IM backend system automatically disables the global muting of group chat messages, and then all group chat messages can be sent normally. For the permanent global muting of group chat messages, the muting period never expires. By default, the global muting of group chat messages is disabled for accounts.
+- Global muting includes the global muting of one-to-one messages and that of group messages.
+- If the global muting of one-to-one messages is enabled for an account, during the muting period, no one-to-one messages can be sent, the sender receives error code 20012 (for details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348)), and [Before a One-to-One Message Is Sent](https://intl.cloud.tencent.com/document/product/1047/34364) webhook is not triggered. After the muting period expires, the Chat backend system automatically disables the global muting of one-to-one messages, and then all one-to-one messages can be sent normally. For the permanent global muting of one-to-one messages, the muting period never expires. By default, the global muting of one-to-one messages is disabled for accounts.
+- If the global muting of group messages is enabled for an account, during the muting period, no group messages can be sent, the sender receives error code 10017 (for details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348)), and [Before Group Message Is Sent](https://intl.cloud.tencent.com/document/product/1047/34374) webhook is not triggered. After the muting period expires, the Chat backend system automatically disables the global muting of group messages, and then all group messages can be sent normally. For the permanent global muting of group messages, the muting period never expires. By default, the global muting of group messages is disabled for accounts.
 
 ## Feature Description
 
-- This API is used to enable the global muting of one-to-one chat messages for an account.
-- This API is used to enable the global muting of group chat messages for an account.
+- This API is used to enable the global muting of one-to-one messages for an account.
+- This API is used to enable the global muting of group messages for an account.
 
 ## API Calling Description
-### Request URL example
+### Sample request URL
 ```
 https://xxxxxx/v4/openconfigsvr/setnospeaking?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
-```
-
-
+ ```
 ### Request parameters
-
-The following table lists only the parameters to be modified when this API is called. For details on other parameters, see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
+ 
+The following table describes the modified parameters when this API is called. For other parameters, see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
-| https       | The request protocol is HTTPS, and the request method is POST.       |
-| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com `<li>Seoul: `adminapikr.im.qcloud.com`<li>Frankfurt: `adminapiger.im.qcloud.com`<li>India: `adminapiind.im.qcloud.com`<li>Silicon Valley: `adminapiusa.im.qcloud.com` |
-| v4/openconfigsvr/setnospeaking | Request API |
-| sdkappid | SDKAppID assigned by the IM console when an app is created |
-| identifier | The value must be the app admin account. For details, see [App Admins](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98). |
+| xxxxxx | Domain name corresponding to the country/region where your SDKAppID is located.<br><li>China: `console.tim.qq.com`</li><li>Singapore: `adminapisgp.im.qcloud.com`</li><li>Seoul: `adminapikr.im.qcloud.com`</li><li>Frankfurt: `adminapiger.im.qcloud.com`</li><li>Mumbai: `adminapiind.im.qcloud.com`</li><li>Silicon Valley: `adminapiusa.im.qcloud.com`</li> |
+| v4/openconfigsvr/setnospeaking | Request API                             |
+| sdkappid | SDKAppID assigned by the Chat console when an app is created |
+| identifier | App admin account. For more information, see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | Signature generated by the app admin account. For details, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
-| random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
-| contenttype | Request format. The value is always `json`. |
+| random | A random 32-bit unsigned integer ranging from 0 to 4294967295. |
+| contenttype | Request format. The value is fixed to `json`. |
 
-### Maximum calling frequency
+### Maximum call frequency
 
-The maximum calling frequency is 200 times per second.
+200 calls per second
 
-### Request packet example
+### Sample request
 
 ```
 {
     "Set_Account": "lumotuwe",
-    "C2CmsgNospeakingTime": 4294967295, // C2CmsgNospeakingTime and GroupmsgNospeakingTime are optional, but either of them must be specified.
+    "C2CmsgNospeakingTime": 4294967295, // `C2CmsgNospeakingTime` and `GroupmsgNospeakingTime` are optional, but either of them must be specified.
     "GroupmsgNospeakingTime": 7200
 }
 ```
-### Request packet fields
+### Request fields
 
-| Field | Type | Attribute | Description |
+| Field | Type | Required | Description |
 |---------|---------|---------|---------|
-| Set_Account | String | Required | Account for which muting will be enabled |
-| C2CmsgNospeakingTime | Integer |Optional| Muting period (in seconds) of one-to-one chat messages. The value is a non-negative integer, and the maximum value is 4294967295 (0xFFFFFFFF in hexadecimal format). <ul style="margin:0;"><li>0: the account is unmuted</li><li>4294967295: the account is permanently muted</li><li>Other values: a specific muting period of the account</li></ul>  |
-| GroupmsgNospeakingTime | Integer | Optional |Muting period (in seconds) of group chat messages. The value is a non-negative integer, and the maximum value is 4294967295 (0xFFFFFFFF in hexadecimal format).<ul style="margin:0;"><li>0: the account is unmuted</li><li>4294967295: the account is permanently muted</li><li>Other values: a specific muting period of the account</li></ul>  |
+| Set_Account | String | Required | Account for which muting will be enabled  |
+| C2CmsgNospeakingTime | Integer |Optional | Muting period (in seconds) of one-to-one messages. The value is a non-negative integer, and the maximum value is 4294967295 (0xFFFFFFFF in hexadecimal format).<ul style="margin:0;"><li>0: the account is unmuted</li><li>4294967295: the account is permanently muted</li><li>Other values: a specific muting period of the account</li></ul>  |
+| GroupmsgNospeakingTime | Integer | Optional | Muting period (in seconds) of group messages. The value is a non-negative integer, and the maximum value is 4294967295 (0xFFFFFFFF in hexadecimal format).<ul style="margin:0;"><li>0: the account is unmuted</li><li>4294967295: the account is permanently muted</li><li>Other values: a specific muting period of the account</li></ul>  |
 
-### Response packet example
+### Sample response
 
 ```
 {
@@ -60,31 +57,33 @@ The maximum calling frequency is 200 times per second.
 }
 ```
 
-### Response packet fields
+### Response fields
 
 | Field | Type | Description |
 |---------|---------|---------|
-| ErrorCode | Integer | Request error code. 0: succeeded. Others: failed. |
-| ErrorInfo | String | Error information |
+| ErrorCode| Integer | Request error code. `0`: Successful; other values: Failed |
+| ErrorInfo| String | Error information |
 
 ## Error Codes
 
-Unless a network error (such as error 502) occurs, the HTTP return code for this API is always 200. ErrorCode and ErrorInfo in the response packet represent the actual error code and error information, respectively.
+The returned HTTP status code for this API is always 200 unless a network error (such as error 502) occurs. The specific error code and details can be found in the response fields `ErrorCode` and `ErrorInfo` respectively.
 For common error codes (60000 to 79999), see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
-The following table describes the error codes specific to this API.
+The following table describes the error codes specific to this API:
 
 | Error Code | Description |
 |---------|---------|
-| 130001 | Failed to parse the JSON request packet. To correct it, check whether the request packet meets JSON specifications. |
-| 130004 | The JSON request packet does not contain the Set_Account field. |
-| 130005 | The Set_Account field in the JSON request packet is invalid. |
-| 130008 | Neither GroupmsgNospeakingTime nor C2CmsgNospeakingTime in the JSON request packet is specified. |
-| 130014 | A system error occurred. To correct it, try again or contact our technical customer service. |
+| 130001 | Failed to parse the JSON format. Check whether the JSON request meets JSON specifications. |
+| 130004 | The JSON request does not contain the `Set_Account` field. |
+| 130005 | The `Set_Account` field in the JSON request is invalid. |
+| 130008 | Neither `GroupmsgNospeakingTime` nor `C2CmsgNospeakingTime` in the JSON request is specified. |
+| 130014 | A system error occurred. Try again or contact technical support. |
 
 
-## API Commissioning Tool
+## API Debugging Tool
 
-Use the [online commissioning tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openconfigsvr/setnospeaking) to commission this API.
+Use the [RESTful API online debugging tool](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/openconfigsvr/setnospeaking) to debug this API.
 
 ## References
-Querying global muting ([v4/openconfigsvr/setnospeaking](https://intl.cloud.tencent.com/document/product/1047/34924))
+Querying global mute ([v4/openconfigsvr/setnospeaking](https://intl.cloud.tencent.com/document/product/1047/34924))
+
+
