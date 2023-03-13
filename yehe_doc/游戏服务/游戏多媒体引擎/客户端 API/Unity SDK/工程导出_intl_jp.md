@@ -10,7 +10,7 @@ UnityプロジェクトからXcodeプロジェクトにエクスポートする�
 
 UnityEditor.iOS.Xcode.Extensions.PBXProjectExtensions.AddFileToEmbedFrameworksを使用して新しいEditor OnPostprocessBuildスクリプトを作成します。このAPIは、動的ライブラリを最終的なパッケージBundleのframeworkディレクトリに自動的にコピーし、署名します。
 
-ビジネス層は、必要な機能に基づいて動的ライブラリを削減し、動的ライブラリのリストに基づいてサンプルコードにインポートするフレームワークのリストを決定します。動的ライブラリの機能については、「動的ライブラリディレクトリ」(https://intl.cloud.tencent.com/document/product/607/32363)をご参照ください。
+ビジネス層は、必要な機能に基づいて動的ライブラリを削減し、動的ライブラリのリストに基づいてサンプルコードにインポートするフレームワークのリストを決定します。動的ライブラリの機能については、[動的ライブラリディレクトリ](https://intl.cloud.tencent.com/document/product/607/32363)をご参照ください。
 
 ```
 string[] framework_names = {
@@ -198,7 +198,7 @@ WebGLプラットフォームでのgmesdkと競合しないよう、Windowsプ�
 
 ### 2. Flare Layerの取消（Unity 2018以降）
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/894943f084fc5aefc94c709e35d65d0e.png"  width="60%" /></img>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/Gb53323_894943f084fc5aefc94c709e35d65d0e.png"  width="60%" /></img>
 
 一部のUnityバージョンではMainCameraのFlare Layerモードをサポートしなくなるため、パッケージ化するSceneでFlare Layerのチェックを外す必要があります。チェックを外さない場合、次のエラーが表示されます：
 
@@ -214,7 +214,7 @@ WebGLプラットフォームからエクスポートするときは、GMEのWeb
  
 GME- WebGLを独自のプロジェクトにインポートする場合、Unityを使用して適切なWebページを生成する際には、フロントエンドライブラリを手動で導入し、フロントエンドライブラリファイルを適切な参照位置に配置し、Audioタグを追加する必要があります（下の図を参照）。Unityの目的物をパッケージ化するたびに上記の作業を自動的に行いたい場合は、GME-WebGL demoのやり方を参考にして、自分のプロジェクトに適切なテンプレートを追加してください。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b939e1cd5e331579440c16672a59c2e1.png"  width="60%" /></img>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/j2Qx251_b939e1cd5e331579440c16672a59c2e1.png"  width="60%" /></img>
 
 
 ### 5. エクスポート問題
