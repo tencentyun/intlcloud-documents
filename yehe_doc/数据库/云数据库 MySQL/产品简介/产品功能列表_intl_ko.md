@@ -23,9 +23,11 @@
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/7272" target="_blank">재해 복구 인스턴스 생성</a></td><td>지원 (MySQL 5.6, 5.7 및 8.0만 해당)</td><td>지원</td><td>-</td><td>-</td></tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/31895" target="_blank">인스턴스 종료</a></td><td>지원</td><td>지원</td><td>지원</td><td>지원</td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/31895" target="_blank">인스턴스 폐기</a></td><td>지원</td><td>지원</td><td>지원</td><td>지원</td></tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/47702" target="_blank">자동 갱신</a></td><td>지원</td><td>지원</td><td>지원</td><td>지원</td></tr>
+<td><a href="https://www.tencentcloud.com/document/product/236/52515" target="_blank">종량제를 정액 과금제로 전환</a></td><td>지원</td><td>지원</td><td>지원</td><td>지원</td></tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/47702" target="_blank">자동 연장</a></td><td>지원</td><td>지원</td><td>지원</td><td>지원</td></tr>
 <tr>
 <td rowspan="4">인스턴스 관리</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/10929" target="_blank">인스턴스 유지 관리 시간 구성</a></td><td>지원</td><td>지원</td><td>지원</td><td>지원</td></tr>
@@ -110,8 +112,6 @@
 <tr>
 <td>네트워크</td><td><a href="https://intl.cloud.tencent.com/document/product/236/31915">네트워크 스위치</a></td><td>지원</td><td>지원</td><td>지원</td><td>지원</td></tr>
 <tr>
-<td rowspan="2">성능</td><td><a href="https://intl.cloud.tencent.com/document/product/236/42048">데이터베이스 프록시</a></td><td>지원</td><td>지원</td><td>-</td><td>-</td></tr>
-<tr>
-<td><a href="https://www.tencentcloud.com/document/product/236/42048">데이터베이스 프록시(새 버전)</a></td><td>지원</td><td>지원</td><td>-</td><td>-</td></tr>
+<td rowspan="1">성능</td><td><a href="https://www.tencentcloud.com/document/product/236/42048">데이터베이스 프록시(새 버전)</a></td><td>지원</td><td>지원</td><td>-</td><td>-</td></tr>
 </tbody>
 </table>

@@ -4,10 +4,15 @@ TencentDB for MySQL은 배치 매개변수 설정을 위한 시스템 매개변�
 >- 시스템 매개변수 템플릿의 매개변수 변경 사항은 이미 템플릿을 적용한 데이터베이스 인스턴스에 영향을 미치지 않습니다. 인스턴스 배치에 새 매개변수를 적용해야 하는 경우 매개변수를 배치로 설정할 때 업데이트된 템플릿을 가져올 수 있습니다.
 >- 시스템 매개변수 템플릿 사용법은 [매개변수 템플릿 사용](https://intl.cloud.tencent.com/document/product/236/31906)을 참고하십시오.
 
+## 2023년 01월
+| 매개변수 | MySQL 5.7 | MySQL 8.0 |  변경 설명 | 
+|---------|---------|---------|---------|
+| max_execution_time | &#10003; | &#10003;|  max_execution_time 매개변수 동적 설정 지원<br><li>재시작 필요 여부: 아니오<br><li>기본값: 0<br><li>값 범위: 0 - 4294967295<br><li>단위: 밀리초 |
+
 ## 2022년 08월
 | 매개변수 | MySQL 5.7 | MySQL 8.0 |  변경 설명 | 
 |---------|---------|---------|---------|
-| innodb_buffer_pool_size | &#10003; | &#10003;|  innodb_buffer_pool_size 매개변수는 동적 구성 지원<br><li>재시작 필요: 아니오<br><li>기본값: {DBInitMemory * 786432}<br><li>매개변수 수정 가능 값: {DBInitMemory * 524288} - {DBInitMemory * 943718}<br><li>DBinitMemory는 인스턴스 사양의 메모리 크기에 대한 정수 |
+| innodb_buffer_pool_size | &#10003; | &#10003;|  innodb_buffer_pool_size 매개변수 동적 설정 지원<br><li>재시작 필요 여부: 아니오<br><li>기본값: {DBInitMemory * 786432}<br><li>값 범위: {DBInitMemory * 524288} - {DBInitMemory * 943718}<br><li>DBinitMemory 인스턴스 메모리 크기의 정수 |
 
 ## 2022년 07월
 | 매개변수 | MySQL 5.7 | MySQL 8.0 |  변경 설명 | 

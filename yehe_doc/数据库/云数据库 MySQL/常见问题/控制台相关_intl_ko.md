@@ -1,30 +1,30 @@
-### TencentDB for MySQL 생성에 시간이 얼마나 소요되나요?
-일반적으로 CDB 생성에 약 10분이 소요됩니다. 읽기 전용 인스턴스의 생성 소요 시간은 마스터 인스턴스의 데이터 양에 따라 달라지며, 데이터 양이 많을수록 생성 소요 시간도 길어집니다.
-더 많은 시간이 소요되는 경우, 생성 과정에서 문제가 발생한 것일 수 있으므로 [고객센터](https://intl.cloud.tencent.com/document/product/236/32996)로 즉시 문의하십시오.
+### TencentDB for MySQL 인스턴스를 생성하는 데 얼마나 걸립니까?
+일반적으로 TencentDB 인스턴스를 생성하는 데 10분 미만이 걸립니다. 읽기 전용 인스턴스를 생성하는 데 걸리는 시간은 원본 인스턴스의 데이터 볼륨에 따라 다릅니다. 데이터 볼륨이 클수록 시간이 길어집니다.
+인스턴스를 생성하는 데 시간이 오래 걸린다면 문제가 있는 것일 수 있습니다. 도움이 필요한 경우 [문의하기](https://intl.cloud.tencent.com/document/product/236/32996)로 문의하십시오.
 
-### 데이터베이스를 잘못 구매했을 때 어떻게 반품하나요?
-[MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후 인스턴스 리스트의 '작업' 열에서 [더보기]>[폐기/반품] 또는 [폐기/반품 및 환불]을 선택하여 반품할 수 있습니다. 자세한 내용은 [인스턴스 폐기](https://intl.cloud.tencent.com/document/product/236/31895)를 참조하십시오.
+### 데이터베이스를 반환하려면 어떻게 해야 하나요?
+[MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후 인스턴스 리스트의 **작업** 열에서 **더보기** > **폐기/반품** 또는 **폐기/반품 및 환불**을 선택하여 인스턴스를 반환할 수 있습니다. 자세한 내용은 [인스턴스 폐기](https://intl.cloud.tencent.com/document/product/236/31895)를 참고하십시오.
 
-<span id = "shilixiaohui"></span>
-### TencentDB for MySQL의 인스턴스를 폐기했을 경우 어떻게 해야 하나요?
-인스턴스 반환 후에는 일정 시간 휴지통에 보관되며, 종량제 인스턴스는 1일 동안 보관됩니다. 이 시간 내에 휴지통에서 해당하는 인스턴스를 찾아 복구하면 다시 검색할 수 있습니다.
+[](id:shilixiaohui)
+### TencentDB for MySQL 인스턴스가 폐기되면 어떻게 됩니까?
+반환된 인스턴스는 7일(정액 과금제 인스턴스) 또는 1일(종량제 인스턴스) 동안 휴지통에 보관됩니다. 보관 기간 동안 휴지통에서 복원할 수 있습니다.
 
-<span id = "zhanghaomima"></span>
-### 계정을 잘못 삭제했거나 비밀번호를 잊어버렸을 경우 어떻게 해야 하나요?
-- 계정을 잘못 삭제했다면 [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후 인스턴스 이름을 클릭하여 인스턴스 관리 페이지로 이동합니다. [데이터베이스 관리]>[계정 관리]>[계정 생성]을 클릭하거나 sql 명령을 사용하여 생성할 수 있습니다. 자세한 내용은 [계정 생성](https://intl.cloud.tencent.com/document/product/236/31900)을 참조하십시오.
-- root 비밀번호를 잃어버렸다면 [데이터베이스 관리]>[계정 관리] 페이지에서 해당 계정을 찾아 [비밀번호 재설정] 작업을 진행할 수 있습니다. 자세한 내용은 [비밀번호 재설정](https://intl.cloud.tencent.com/document/product/236/31901)을 참조하십시오.
-위 작업은 [클라우드 API 인터페이스](https://intl.cloud.tencent.com/document/product/236/17497)로도 진행할 수 있습니다.
+[](id:zhanghaomima)
+### 실수로 계정을 삭제하거나 비밀번호를 잊어버린 경우 어떻게 해야 하나요?
+- 실수로 계정을 삭제한 경우 [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후 인스턴스 ID를 클릭하여 인스턴스 관리 페이지로 이동한 후 **데이터베이스 관리** > **계정 관리** > **계정 생성**을 클릭하거나 sql 명령을 사용하여 계정을 생성할 수 있습니다. 자세한 내용은 [계정 생성](https://intl.cloud.tencent.com/document/product/236/31900)을 참고하십시오.
+- root 비밀번호를 잊은 경우 **데이터베이스 관리** > **계정 관리** 페이지에서 해당 계정을 찾은 후 작업 열에서 자세히 > **비밀번호 재설정**을 클릭하십시오. 자세한 내용은 [비밀번호 재설정](https://intl.cloud.tencent.com/document/product/236/31901)을 참고하십시오.
+상기 작업은 [ModifyAccountPassword](https://intl.cloud.tencent.com/document/product/236/17497) API를 통해서도 수행할 수 있습니다.
 
-### TencentDB for MySQL의 최대 연결 수는 몇 개이고, 어떻게 수정하나요?
-TencentDB for MySQL의 최대 연결 수는 콘솔에서 조회할 수 있습니다. 연결 수가 너무 많은 경우, 직접 연결 수를 변경하지 말고 먼저 문제를 진단한 후 해결할 것을 권장합니다.
-[MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후 인스턴스 이름을 클릭하여 인스턴스 관리 페이지로 이동합니다. [데이터베이스 관리]>[매개변수 설정] 페이지를 선택하고 `max_connections` 매개변수를 찾아 수정합니다.
+### TencentDB for MySQL에 대한 최대 연결 수는 몇 개입니까? 어떻게 수정합니까?
+TencentDB for MySQL의 최대 연결 수는 콘솔에서 확인할 수 있습니다. 연결 수가 너무 많으면 최대값을 직접 늘리기보다 먼저 원인을 찾아 문제를 해결하는 것이 좋습니다.
+[TencentDB for MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 뒤 인스턴스 ID를 클릭하여 인스턴스 관리 페이지로 이동합니다. **데이터베이스 관리** > **매개변수 설정** 페이지를 선택하고 `max_connections` 매개변수를 수정합니다.
 
-### MySQL 인스턴스 모니터링에서 max_connections의 값이 당시의 실제 최대 연결 수가 아닌 항상 1000으로 표시되는 이유는 무엇인가요?
-인스턴스 모니터링에서 max_connections는 허용된 최대 연결 수를 의미하며, 1~100000까지 원하는 값으로 설정할 수 있습니다. [현재 활성화된 연결 수]는 현재 실제로 연결된 수를 의미하며, 값이 실시간으로 변경됩니다.
+### MySQL 인스턴스 모니터링에서 max_connections 값이 실제 현재 최대 연결 수가 아닌 항상 1000으로 표시되는 이유는 무엇입니까?
+max_connections는 인스턴스 모니터링에서 허용되는 최대 연결 수(1 - 100000)를 나타냅니다. **열린 연결 수**는 현재 사용 가능한 연결 수를 의미하며 실시간으로 변경되는 값입니다.
 
-### 디스크 용량이 부족한지 어떻게 확인하나요?
-모니터링 센터에서 CDB의 디스크 용량에 대해 모니터링을 진행하며, CDB의 사용 용량이 90%를 초과할 경우 SMS 및 이메일 알람이 트리거됩니다. 클라우드 모니터링에서 해당하는 알람 수신자를 설정하면 용량이 부족할 때 알람을 받을 수 있습니다. 설정 방법은 [알람 기능](https://intl.cloud.tencent.com/document/product/236/8457)을 참조하십시오.
+### 디스크 용량이 부족하다는 것을 어떻게 알 수 있습니까?
+모니터링 센터는 TencentDB 인스턴스의 디스크 용량을 모니터링합니다. 디스크 사용률이 90% 이상이면 SMS 및 이메일 알람이 트리거됩니다. 이러한 알람을 수신하도록 Cloud Monitor에서 알람 수신자를 설정할 수 있습니다. (설정 방법에 대한 자세한 내용은 [알람 정책(Cloud Monitoring)](https://intl.cloud.tencent.com/document/product/236/8457)을 참고하십시오.)
 
-### MySQL을 초기화한 후에 테이블의 민감도는 어떻게 변경하나요?
-민감도를 변경하려면 데이터베이스의 `lower_case_table_names` 매개변수를 수정해야 합니다.
-[MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후 인스턴스 이름을 클릭하여 인스턴스 관리 페이지로 이동합니다. [데이터베이스 관리]>[매개변수 설정] 페이지를 선택하고 `lower_case_table_names` 매개변수를 찾아 수정합니다. 0은 민감을 의미하고 1은 민감하지 않음을 의미합니다.
+### TencentDB for MySQL 인스턴스가 초기화된 후 테이블 이름의 대소문자 구분을 어떻게 수정합니까?
+데이터베이스의 `lower_case_table_names` 매개변수를 조정해야 합니다.
+[TencentDB for MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 뒤 인스턴스 ID 를 클릭하여 인스턴스 관리 페이지로 이동합니다. **데이터베이스 관리** > **매개변수 설정**을 선택한 다음 `lower_case_table_names` 매개변수를 수정합니다. 유효한 값은 0(대소문자 구분) 및 1(대소문자 구분 안 함)입니다.

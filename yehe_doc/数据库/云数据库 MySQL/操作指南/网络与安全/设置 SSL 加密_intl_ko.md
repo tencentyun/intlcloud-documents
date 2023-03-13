@@ -38,6 +38,8 @@ TencentDB for MySQL은 SSL 암호화를 활성화하고 SSL CA 인증서를 필�
 
 ## SSL CA 인증서 구성
 SSL 암호화를 활성화한 후 클라이언트를 사용하여 클라우드 데이터베이스에 연결할 때 SSL CA 인증서를 구성해야 합니다. 다음은 Navicat을 예로 들어 SSL CA 인증서를 설치하는 방법을 소개합니다. 다른 애플리케이션이나 클라이언트의 경우 해당 제품의 사용 설명서를 참고하십시오.
+>?TencentDB for MySQL에 대해 SSL 암호화가 활성화 또는 비활성화될 때마다 새 인증서가 생성됩니다.
+>
 1. Navicat을 엽니다.
 2. 해당 데이터베이스를 우클릭하고 **연결 편집**을 선택합니다.
 3. SSL 탭을 선택하고 .pem 형식의 CA 인증서 경로를 선택합니다. 아래 이미지의 설정을 완료한 후 **확인**을 클릭합니다.
@@ -57,3 +59,146 @@ SSL 연결 암호화를 사용하여 다음과 같이 데이터베이스 SQL에 
 ```
 mysql -P <포트 번호> -h <IP 주소>  -u <사용자 이름> -p<비밀번호> --ssl-ca<ca 인증서>
 ```
+
+## 일반 프로그램에서 SSL가 활성화된 인스턴스 연결을 위한 예시 코드
+- PHP
+```
+$conn = mysqli_init();
+mysqli_ssl_set($conn,NULL,NULL, "<다운로드된 인증서 경로>", NULL, NULL);
+mysqli_real_connect($conn, '<데이터베이스 액세스 주소>', '<데이터베이스 액세스 사용자 이름>', '<데이터베이스 액세스 비밀번호>', '<액세스할 지정된 데이터베이스>', <액세스 포트>, MYSQLI_CLIENT_SSL);
+if (mysqli_connect_errno($conn)) {
+die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+```
+- PHP (Using PDO)
+```
+$options = array(
+    PDO::MYSQL_ATTR_SSL_CA => '<다운로드된 인증서의 경로>'
+);
+$db = new PDO('mysql:host=<데이터베이스 액세스 주소>;port=<액세스 포트>;dbname=<액세스할 지정된 데이터베이스>', '<데이터베이스 액세스 사용자 이름>', '<데이터베이스 액세스 비밀번호>', $options);
+```
+- Java (MySQL Connector for Java)
+```
+# generate truststore and keystore in code
+
+String importCert = " -import "+
+    " -alias mysqlServerCACert "+
+    " -file " + ssl_ca +
+    " -keystore truststore "+
+    " -trustcacerts " +
+    " -storepass password -noprompt ";
+String genKey = " -genkey -keyalg rsa " +
+    " -alias mysqlClientCertificate -keystore keystore " +
+    " -storepass password123 -keypass password " +
+    " -dname CN=MS ";
+sun.security.tools.keytool.Main.main(importCert.trim().split("\\s+"));
+sun.security.tools.keytool.Main.main(genKey.trim().split("\\s+"));
+
+# use the generated keystore and truststore
+
+System.setProperty("javax.net.ssl.keyStore","<다운로드한 인증서의 경로>");
+System.setProperty("javax.net.ssl.keyStorePassword","tencentdb");
+System.setProperty("javax.net.ssl.trustStore","<다운로드된 인증서의 경로>");
+System.setProperty("javax.net.ssl.trustStorePassword","tencentdb");
+
+url = String.format("jdbc:mysql://%s/%s?serverTimezone=UTC&useSSL=true", '<데이터베이스 액세스 주소>', '<액세스할 지정된 데이터베이스>');
+properties.setProperty("user", '<데이터베이스 액세스 사용자 이름>');
+properties.setProperty("password", '<데이터베이스 액세스 비밀번호>');
+conn = DriverManager.getConnection(url, properties);
+```
+- .NET (MySqlConnector)
+```
+var builder = new MySqlConnectionStringBuilder
+{
+    Server = "<데이터베이스 액세스 주소>",
+    UserID = "<데이터베이스 액세스 사용자 이름>",
+    Password = "<데이터베이스 액세스 비밀번호>",
+    Database = "<액세스할 지정된 데이터베이스>",
+    SslMode = MySqlSslMode.VerifyCA,
+    SslCa = "<다운로드된 인증서>",
+};
+using (var connection = new MySqlConnection(builder.ConnectionString))
+{
+    connection.Open();
+}
+```
+- Python (MySQLConnector Python)
+```
+try:
+    conn = mysql.connector.connect(user='<데이터베이스 액세스 사용자 이름>',
+                                   password='<데이터베이스 액세스 비밀번호>',
+                                   database='<액세스할 지정된 데이터베이스>',
+                                   host='<데이터베이스 액세스 주소>',
+                                   ssl_ca='<다운로드한 인증서 경로>')
+except mysql.connector.Error as err:
+    print(err)
+```
+
+- Python (PyMySQL)
+```
+conn = pymysql.connect(user='<데이터베이스 액세스 사용자 이름>',
+                       password='<데이터베이스 액세스 비밀번호>',
+                       database='<액세스할 지정된 데이터베이스>',
+                       host='<데이터베이스 액세스 주소>',
+                       ssl={'ca': '<다운로드한 인증서 경로>'})
+```
+
+- Django (PyMySQL)
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '<액세스할 지정된 데이터베이스>',
+        'USER': '<데이터베이스 액세스 사용자 이름>',
+        'PASSWORD': '<데이터베이스 액세스 비밀번호>',
+        'HOST': '<데이터베이스 액세스 주소>',
+        'PORT': '<액세스 포트>',
+        'OPTIONS': {
+            'ssl': {'ca': '<다운로드한 인증서의 경로>'}
+        }
+    }
+}
+```
+- Node.js
+```
+var fs = require('fs');
+var mysql = require('mysql');
+const serverCa = [fs.readFileSync("<다운로드된 인증서의 경로>", "utf8")];
+var conn=mysql.createConnection({
+    host:"<데이터베이스 액세스 주소>",
+    user:"<데이터베이스 액세스 사용자 이름>",
+    password:"<데이터베이스 액세스 비밀번호>",
+    database:"<액세스할 지정된 데이터베이스>",
+    port:<액세스 포트>,
+    ssl: {
+        rejectUnauthorized: true,
+        ca: serverCa
+    }
+});
+conn.connect(function(err) {
+  if (err) throw err;
+});
+```
+- Golang
+```
+rootCertPool := x509.NewCertPool()
+pem, _ := ioutil.ReadFile("<다운로드된 인증서의 경로>")
+if ok := rootCertPool.AppendCertsFromPEM(pem); !ok {
+    log.Fatal("Failed to append PEM.")
+}
+mysql.RegisterTLSConfig("custom", &tls.Config{RootCAs: rootCertPool})
+var connectionString string
+connectionString = fmt.Sprintf("%s:%s@tcp(%s:<액세스 포트>)/%s?allowNativePasswords=true&tls=custom","<데이터베이스 액세스 사용자 이름>" , "<데이터베이스 액세스 비밀번호>", "<데이터베이스 액세스 주소>", '<액세스할 지정된 데이터베이스>')
+db, _ := sql.Open("mysql", connectionString)
+```
+- Ruby
+```
+client = Mysql2::Client.new(
+        :host     => '<데이터베이스 액세스 주소>',
+        :username => '<데이터베이스 액세스 사용자 이름>',
+        :password => '<데이터베이스 액세스 비밀번호>',
+        :database => '<액세스할 지정된 데이터베이스>',
+        :sslca => '<다운로드된 인증서의 경로>'
+    )
+```
+

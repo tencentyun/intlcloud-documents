@@ -10,9 +10,9 @@ When you connect to a database in an unencrypted manner, all information transfe
 - Identity certificates will be used to authenticate the identity.
 
 TencentDB for MySQL supports enhancing the connection security by enabling SSL encryption as well as downloading and installing SSL CA certificates to the required application services.
->!SSL encryption does not protect the data itself; instead, it secures the traffic between the database and the server. Encrypting the network connection at the transport layer can improve the security and integrity of the communication data, but will increase the response time of the network connection.
+>!SSL encryption protects the traffic between the database and the server rather than the data itself. Encrypting the network connection at the transport layer can improve the security and integrity of the communication data, but will increase the response time of the network connection.
 
-## Prerequisite
+## Prerequisites
 - The instance version is MySQL 5.6/5.7/8.0.
 - The instance architecture is two-node/three-node.
 - The instance engine is InnoDB/RocksDB.
@@ -38,9 +38,11 @@ The downloaded file is a compressed package (TencentDB-CA-Chain.zip), which cont
 
 ## Configuring an SSL CA certificate
 After enabling SSL encryption, you need to configure an SSL CA certificate when using a client to connect to TencentDB. The following takes Navicat as an example to describe how to install an SSL CA certificate. For other applications or clients, refer to their respective documentation.
+>?Every time SSL encryption is enabled or disabled for TencentDB for MySQL, a new certificate will be generated.
+>
 1. Open Navicat.
 2. Right-click the target database and select **Edit Connection**.
-3. Select the **SSL** tab, select the path of the CA certificate in .pem format, complete the settings as shown below, and click **OK**.
+3. Select the **SSL** tab, select the path of the CA certificate in .pem format, complete the settings, and click **OK**.
 >? If the error message `connection is being used` is displayed, it may be because the previous session has not been disconnected. In this case, restart Navicat and try again.
 >
 4. Double-click the target database to test whether the connection is normal.
@@ -52,8 +54,151 @@ After enabling SSL encryption, you need to configure an SSL CA certificate when 
 ![](https://qcloudimg.tencent-cloud.cn/raw/5e6f6976d9e97ed01e37a5e722a33c1a.png)
 >!During the process of disabling SSL encryption, your database instance will be restarted to uninstall the SSL certificate. Make sure that your business has a reconnection mechanism.
 
-## Connecting to an instance with SSL encryption enabled
+## Connecting to an SSL-enabled instance
 To use an encrypted SSL connection to connect to the database, run the following SQL statement:
 ```
 mysql -P <port number> -h <IP address>  -u <username> -p<password> --ssl-ca<CA certificate>
 ```
+
+## Sample code for connecting to an SSL-enabled instance from common programs
+- PHP
+```
+$conn = mysqli_init();
+mysqli_ssl_set($conn,NULL,NULL, "<path of the downloaded certificate>", NULL, NULL);
+mysqli_real_connect($conn, '<database access address>', '<database access username>', '<database access password>', '<the specified database to be accessed>', <access port>, MYSQLI_CLIENT_SSL);
+if (mysqli_connect_errno($conn)) {
+die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+```
+- PHP (Using PDO)
+```
+$options = array(
+    PDO::MYSQL_ATTR_SSL_CA => '<path of the downloaded certificate>'
+);
+$db = new PDO('mysql:host=<database access address>;port=<access port>;dbname=<the specified database to be accessed>', '<database access username>', '<database access password>', $options);
+```
+- Java (MySQL Connector for Java)
+```
+# generate truststore and keystore in code
+
+String importCert = " -import "+
+    " -alias mysqlServerCACert "+
+    " -file " + ssl_ca +
+    " -keystore truststore "+
+    " -trustcacerts " +
+    " -storepass password -noprompt ";
+String genKey = " -genkey -keyalg rsa " +
+    " -alias mysqlClientCertificate -keystore keystore " +
+    " -storepass password123 -keypass password " +
+    " -dname CN=MS ";
+sun.security.tools.keytool.Main.main(importCert.trim().split("\\s+"));
+sun.security.tools.keytool.Main.main(genKey.trim().split("\\s+"));
+
+# use the generated keystore and truststore
+
+System.setProperty("javax.net.ssl.keyStore","<path of the downloaded certificate>");
+System.setProperty("javax.net.ssl.keyStorePassword","tencentdb");
+System.setProperty("javax.net.ssl.trustStore","<path of the downloaded certificate>");
+System.setProperty("javax.net.ssl.trustStorePassword","tencentdb");
+
+url = String.format("jdbc:mysql://%s/%s?serverTimezone=UTC&useSSL=true", '<database access address>', '<the specified database to be accessed>');
+properties.setProperty("user", '<database access username>');
+properties.setProperty("password", '<database access password>');
+conn = DriverManager.getConnection(url, properties);
+```
+- .NET (MySqlConnector)
+```
+var builder = new MySqlConnectionStringBuilder
+{
+    Server = "<database access address>",
+    UserID = "<database access username>",
+    Password = "<database access password>",
+    Database = "<the specified database to be accessed>",
+    SslMode = MySqlSslMode.VerifyCA,
+    SslCa = "<downloaded certificate>",
+};
+using (var connection = new MySqlConnection(builder.ConnectionString))
+{
+    connection.Open();
+}
+```
+- Python (MySQLConnector Python)
+```
+try:
+    conn = mysql.connector.connect(user='<database access username>',
+                                   password='<database access password>',
+                                   database='<the specified database to be accessed>',
+                                   host='<database access address>',
+                                   ssl_ca='<path of the downloaded certificate>')
+except mysql.connector.Error as err:
+    print(err)
+```
+
+- Python (PyMySQL)
+```
+conn = pymysql.connect(user='<database access username>',
+                       password='<database access password>',
+                       database='<the specified database to be accessed>',
+                       host='<database access address>',
+                       ssl={'ca': '<path of the downloaded certificate>'})
+```
+
+- Django (PyMySQL)
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '<the specified database to be accessed>',
+        'USER': '<database access username>',
+        'PASSWORD': '<database access password>',
+        'HOST': '<database access address>',
+        'PORT': '<access port>',
+        'OPTIONS': {
+            'ssl': {'ca': '<path of the downloaded certificate>'}
+        }
+    }
+}
+```
+- Node.js
+```
+var fs = require('fs');
+var mysql = require('mysql');
+const serverCa = [fs.readFileSync("<path of the downloaded certificate>", "utf8")];
+var conn=mysql.createConnection({
+    host:"<database access address>",
+    user:"<database access username>",
+    password:"<database access password>",
+    database:"<the specified database to be accessed>",
+    port:<access port>,
+    ssl: {
+        rejectUnauthorized: true,
+        ca: serverCa
+    }
+});
+conn.connect(function(err) {
+  if (err) throw err;
+});
+```
+- Golang
+```
+rootCertPool := x509.NewCertPool()
+pem, _ := ioutil.ReadFile("<path of the downloaded certificate>")
+if ok := rootCertPool.AppendCertsFromPEM(pem); !ok {
+    log.Fatal("Failed to append PEM.")
+}
+mysql.RegisterTLSConfig("custom", &tls.Config{RootCAs: rootCertPool})
+var connectionString string
+connectionString = fmt.Sprintf("%s:%s@tcp(%s:<access port>)/%s?allowNativePasswords=true&tls=custom","<database access username>" , "<database access password>", "<database access address>", '<the specified database to be accessed>')
+db, _ := sql.Open("mysql", connectionString)
+```
+- Ruby
+```
+client = Mysql2::Client.new(
+        :host     => '<database access address>',
+        :username => '<database access username>',
+        :password => '<database access password>',
+        :database => '<the specified database to be accessed>',
+        :sslca => '<path of the downloaded certificate>'
+    )
+```
+

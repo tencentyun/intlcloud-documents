@@ -6,7 +6,6 @@
 
 <dx-tabs>
 ::: MySQL 8.0カーネルマイナーバージョンの更新説明
-
 <table>
 <thead><tr><th>カーネルマイナーバージョン</th><th>の説明</th></tr></thead>
 <tbody>
@@ -171,7 +170,7 @@
 </ul>
 
 <li>バグの修正</li><ul>
-<li>online-DDL期間中に統計情報がゼロになる可能性がある状況を修正しました。</li>
+<li>online-DDL期間中に統計情報がゼロになる状況を修正しました。</li>
 <li>スレーブのgenerated columnが更新されない状況を修正しました。</li>
 <li>binlogが圧縮されたときにインスタンスがハングする不具合を修正しました。</li>
 <li>新しく生成されたbinlogファイルのprevious_gtids eventでgtidが欠落する不具合を修正しました。</li>
@@ -658,6 +657,15 @@
 <table>
 <thead><tr><th>カーネルマイナーバージョン</th><th>の説明</th></tr></thead>
 <tbody>
+
+<tr>	
+<td>20220303</td>
+<td>
+<ul><li>Bugの修正</li><ul>
+<li>大きなテーブルのrow_mysql_truncate_t::file_nameを非同期に削除するとき、mem_strdupによって割り当てられたメモリを使用すると、リリース異常が発生するという問題を修正しました。</li>
+</ul>
+</td>
+</tr>
 
 <tr>	
 <td>20220302</td>
