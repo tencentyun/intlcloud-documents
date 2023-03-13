@@ -1,3 +1,4 @@
+
 ## iOSプラットフォームのエクスポートについて
 ### Xcodeで実行可能なファイルをエクスポートするとき、`GMESDK.framework` ライブラリがすでに追加されています。しかし、コンパイル時にエラーが発生しました。どのようにして解決しますか？
 
@@ -15,7 +16,7 @@ Unityエンジンを使用する場合、GME Unity SDKを導入し`libGMESDK.a`�
 
 ### iOS Demoをダウンロードしましたが実行できません。どのようにして解決できますか？
 
-公式のiOS Demoをダウンロードした後、 Xcode（バージョンが10以降）でコンパイルする時に、`ld: warning: directory not found for option`などのエラーが発生します。この場合、 Demoと同じレベルのディレクトリ配下の「GME_SDK」フォルダ中の「GMESDK.framework」ファイルをプロジェクトの Frameworkリストに手動で追加してください。
+公式のiOS Demoをダウンロードした後、Xcode（バージョンが10以降）でコンパイルする時に、`ld: warning: directory not found for option`などのエラーが発生します。この場合、Demoと同じレベルのディレクトリ配下の「GME_SDK」フォルダ中の「GMESDK.framework」ファイルをプロジェクトのFrameworkリストに手動で追加してください。
 
 
 ### iOS SDKはエミュレーターによるデバッグをサポートしますか？
@@ -27,7 +28,7 @@ Unityエンジンを使用する場合、GME Unity SDKを導入し`libGMESDK.a`�
 ```
 Showing Recent Messages:-1: Unity-iPhone has conflicting provisioning settings. Unity-iPhone is automatically signed, but code signing identity iPhone Distribution: Tencent Technology (Shenzhen) Co., Ltd has been manually specified. Set the code signing identity value to "iPhone Developer" in the build settings editor, or switch to manual signing in the project editor. (in target 'Unity-iPhone')
 ```
-解決方法
+ソリューション：
 物理デバイスでエクスポートする時、お客様ご自身の開発者証明証でTencent Cloudのエンタープライズ証明書を置き換えます。
 
 
@@ -41,7 +42,7 @@ dyld: launch, loading dependent libraries
 DYLD_LIBRARY_PATH=/usr/lib/system/introspection
 DYLD_INSERT_LIBRARIES=/Developer/usr/lib/libBacktraceRecording.dylib:/Developer/usr/lib/libMainThreadChecker.dylib:/Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
 ```
-解決方法
+ソリューション：
 - 動的ライブラリを使用した場合、ロードした動的ライブラリはデフォルトで静的ライブラリ`Linked Frameworks and Libraries`の配下に存在します。動的ライブラリを選択し、その下の`-`をクリックして削除します。その後、`Embedded Binaries`の下の`+`をクリックして動的ライブラリを追加します。
 - または、下図に示すようにframeworkを変更します。
 ![](https://main.qcloudimg.com/raw/fe01a75aba37436d4cae1dd68b3b9640.jpg)
@@ -71,3 +72,20 @@ Windows x64バージョンのエクスポートを例として説明します。
 ### エクスポートしたApkはエミュレーターをサポートしません。どうすればいいですか？
 
 エクスポートしたApkにx86を含んだライブラリファイルがあるかをチェックしてください。ない場合、SDKを再ダウンロードしx86向けのSDKファイルを導入してから、実行可能なファイルを改めてエクスポートしてください。
+
+
+
+
+## Unity-WebGLエクスポート問題
+
+### Unity-WebGLプラットフォームはhttpsプロトコルまたはhttpプロトコルを使用しますか。
+パッケージ化された製品は、**httpsプロトコル**を使用してデプロイする必要があります。サーバーへのデプロイにhttpプロトコルを使用すると、機能が異常になります。
+
+### Unity-WebGLプラットフォームのパッケージ化後、入室時に1004エラーが発生します。
+入力されたOpenidが10000未満であるため、チェックイン時に1004（Invalid Argument）エラーが報告されます。ここに入力する必要がある**Openidは10000を超えています**。
+
+### Unity-WebGLプラットフォームはパッケージ化後、携帯電話で使用できますか？
+Unityの公式サイトによると、Unity-WebGLによりパッケージ化された製品は現在、携帯電話での動作をサポートしません。詳しくは[Unity - Manual: WebGL Browser Compatibility (unity3d.com)](https://docs.unity3d.com/2020.1/Documentation/Manual/webgl-browsercompatibility.html)をご参照ください。
+
+### Unity-WebGLプラットフォームはパッケージ化後、GME範囲音声機能を使用できますか？
+WebGLプラットフォームは現在、最も簡単なリアルタイム音声通話機能（チェックインとチェックアウト、マイクオンとマイクオフ機能）のみをサポートしています。サポートされていない機能の場合は、呼び出しインターフェースからエラーコード1006が返されます。範囲音声機能は現在、WebGLプラットフォームに適応しています。

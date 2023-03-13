@@ -1,10 +1,10 @@
-## Feature Description
-* It supports sending text, custom, and rich media messages, all of which belong to the `Message` type.
+## Overview
+You can send text, custom, and rich media messages, all of which belong to the `Message` type.
 
-## Key API Description
-The `MsgSendMessage` API ([Details](https://comm.qq.com/im/doc/unity/en/api/MessageApi/MsgSendMessage.html)) is one of the core APIs for message sending. It supports sending messages of all types.
+## Key APIs
+The `MsgSendMessage` API ([details](https://comm.qq.com/im/doc/unity/zh/api/MessageApi/MsgSendMessage.html)) is the core API for sending a message. It supports sending all types of messages.
 
-The API is as described below:
+The API is detailed as follows:
 
 <table ><thead ><tr>
 <th >Type</th><th >Name</th><th >Description</th></tr>
@@ -24,7 +24,7 @@ The API is as described below:
 <tr>
 <td>Message</td>
 <td>message</td>
-<td>Message body</td>
+<td>Message</td>
 </tr>
 
 <tr>
@@ -44,7 +44,7 @@ The API is as described below:
 
 
 
-## Sending a Text Message
+## Sending Text Messages
 
 ```c#
 public static void MsgSendMessage() {
@@ -52,7 +52,7 @@ public static void MsgSendMessage() {
         Message message = new Message
         {
           message_conv_id = conv_id,
-          message_conv_type = TIMConvType.kTIMConv_C2C, // It is `TIMConvType.kTIMConv_Group` for a group message.
+          message_conv_type = TIMConvType.kTIMConv_C2C, // For a group message, this value is `TIMConvType.kTIMConv_Group`
           message_elem_array = new List<Elem>
           {
             new Elem
@@ -64,14 +64,14 @@ public static void MsgSendMessage() {
         };
         StringBuilder messageId = new StringBuilder(128);
 
-        TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_C2C, message, messageId, (int code, string desc, 						string json_param, string user_data)=>{
+        TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_C2C, message, messageId, (int code, string desc, string json_param, string user_data)=>{
           // Async message sending result
         });
-  			// The message ID `messageId` returned when the message is sent
+  			// The message ID messageId returned when the message is sent
 }
 ```
 
-## Sending an Image Message
+## Sending Image Messages
 
 ```c#
 public static void MsgSendMessage() {
@@ -79,14 +79,14 @@ public static void MsgSendMessage() {
         Message message = new Message
         {
           message_conv_id = conv_id,
-          message_conv_type = TIMConvType.kTIMConv_C2C, // It is `TIMConvType.kTIMConv_Group` for a group message.
+          message_conv_type = TIMConvType.kTIMConv_C2C, // For a group message, this value is `TIMConvType.kTIMConv_Group`
           message_elem_array = new List<Elem>
           {
             new Elem
             {
               elem_type = TIMElemType.kTIMElem_Image,
-              image_elem_orig_path =  "/Users/xxx/xxx.png", // Absolute file path
-              image_elem_level = TIMImageLevel.kTIMImageLevel_Orig // Send the original image
+              image_elem_orig_path =  "/Users/xxx/xxx.png", // Absolute path to the file
+              image_elem_level = TIMImageLevel.kTIMImageLevel_Orig // Send an original image
             }
           }
         };
@@ -95,11 +95,11 @@ public static void MsgSendMessage() {
         TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_C2C, message, messageId, (int code, string desc, string json_param, string user_data)=>{
           // Async message sending result
         });
-  			// The message ID `messageId` returned when the message is sent
+  			// The message ID messageId returned when the message is sent
 }
 ```
 
-## Sending an Audio Message
+## Sending a Voice Message
 
 ```c#
 public static void MsgSendMessage() {
@@ -107,7 +107,7 @@ public static void MsgSendMessage() {
         Message message = new Message
         {
           message_conv_id = conv_id,
-          message_conv_type = TIMConvType.kTIMConv_C2C, // It is `TIMConvType.kTIMConv_Group` for a group message.
+          message_conv_type = TIMConvType.kTIMConv_C2C, // For a group message, this value is `TIMConvType.kTIMConv_Group`
           message_elem_array = new List<Elem>
           {
             new Elem
@@ -124,7 +124,7 @@ public static void MsgSendMessage() {
         TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_C2C, message, messageId, (int code, string desc, string json_param, string user_data)=>{
           // Async message sending result
         });
-  			// The message ID `messageId` returned when the message is sent
+  			// The message ID messageId returned when the message is sent
 }
 ```
 
@@ -136,7 +136,7 @@ public static void MsgSendMessage() {
         Message message = new Message
         {
           message_conv_id = conv_id,
-          message_conv_type = TIMConvType.kTIMConv_C2C, // It is `TIMConvType.kTIMConv_Group` for a group message.
+          message_conv_type = TIMConvType.kTIMConv_C2C, // For a group message, this value is `TIMConvType.kTIMConv_Group`
           message_elem_array = new List<Elem>
           {
             new Elem
@@ -145,7 +145,12 @@ public static void MsgSendMessage() {
               video_elem_video_path =  "/Users/xxx/xxx.mp4", // Absolute file path
               video_elem_video_type = "mp4",  // Video type
               video_elem_video_duration = 10, // Video duration
-              video_elem_image_path = "Absolute path of the local video thumbnail file"
+
+              video_elem_image_path = "Absolute path of the local video thumbnail file",
+              video_elem_image_type = "png", // Type of the video screenshot file
+              video_elem_image_size = 100, // Size of the video screenshot file
+              video_elem_image_width = 1920, // Width of the video screenshot file
+              video_elem_image_height = 1080, // Height of the video screenshot file
             }
           }
         };
@@ -154,7 +159,7 @@ public static void MsgSendMessage() {
         TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_C2C, message, messageId, (int code, string desc, string json_param, string user_data)=>{
           // Async message sending result
         });
-  			// The message ID `messageId` returned when the message is sent
+  			// The message ID messageId returned when the message is sent
 }
 ```
 
@@ -166,7 +171,7 @@ public static void MsgSendMessage() {
         Message message = new Message
         {
           message_conv_id = conv_id,
-          message_conv_type = TIMConvType.kTIMConv_C2C, // It is `TIMConvType.kTIMConv_Group` for a group message.
+          message_conv_type = TIMConvType.kTIMConv_C2C, // For a group message, this value is `TIMConvType.kTIMConv_Group`
           message_elem_array = new List<Elem>
           {
             new Elem
@@ -182,7 +187,7 @@ public static void MsgSendMessage() {
         TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_C2C, message, messageId, (int code, string desc, string json_param, string user_data)=>{
           // Async message sending result
         });
-  			// The message ID `messageId` returned when the message is sent
+  			// The message ID messageId returned when the message is sent
 }
 ```
 
@@ -194,7 +199,7 @@ public static void MsgSendMessage() {
         Message message = new Message
         {
           message_conv_id = conv_id,
-          message_conv_type = TIMConvType.kTIMConv_C2C, // It is `TIMConvType.kTIMConv_Group` for a group message.
+          message_conv_type = TIMConvType.kTIMConv_C2C, // For a group message, this value is `TIMConvType.kTIMConv_Group`
           message_elem_array = new List<Elem>
           {
             new Elem
@@ -211,11 +216,11 @@ public static void MsgSendMessage() {
         TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_C2C, message, messageId, (int code, string desc, string json_param, string user_data)=>{
           // Async message sending result
         });
-  			// The message ID `messageId` returned when the message is sent
+  			// The message ID messageId returned when the message is sent
 }
 ```
 
-## Sending an Emoji Message
+## Send an Emoji Message
 
 ```c#
 public static void MsgSendMessage() {
@@ -223,7 +228,7 @@ public static void MsgSendMessage() {
         Message message = new Message
         {
           message_conv_id = conv_id,
-          message_conv_type = TIMConvType.kTIMConv_C2C, // It is `TIMConvType.kTIMConv_Group` for a group message.
+          message_conv_type = TIMConvType.kTIMConv_C2C, // For a group message, this value is `TIMConvType.kTIMConv_Group`
           message_elem_array = new List<Elem>
           {
             new Elem
@@ -239,11 +244,11 @@ public static void MsgSendMessage() {
         TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_C2C, message, messageId, (int code, string desc, string json_param, string user_data)=>{
           // Async message sending result
         });
-  			// The message ID `messageId` returned when the message is sent
+  			// The message ID messageId returned when the message is sent
 }
 ```
 
-## Sending a Custom Message
+## Sending Custom Messages
 
 ```c#
 public static void MsgSendMessage() {
@@ -251,7 +256,7 @@ public static void MsgSendMessage() {
         Message message = new Message
         {
           message_conv_id = conv_id,
-          message_conv_type = TIMConvType.kTIMConv_C2C, // It is `TIMConvType.kTIMConv_Group` for a group message.
+          message_conv_type = TIMConvType.kTIMConv_C2C, // For a group message, this value is `TIMConvType.kTIMConv_Group`
           message_elem_array = new List<Elem>
           {
             new Elem
@@ -268,9 +273,7 @@ public static void MsgSendMessage() {
         TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_C2C, message, messageId, (int code, string desc, string json_param, string user_data)=>{
           // Async message sending result
         });
-  			// The message ID `messageId` returned when the message is sent
+  			// The message ID messageId returned when the message is sent
 }
 ```
-
-
 

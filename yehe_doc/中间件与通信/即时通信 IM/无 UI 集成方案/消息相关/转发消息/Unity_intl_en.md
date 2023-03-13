@@ -4,19 +4,11 @@ You can implement the feature of combining and forwarding messages in the follow
 2. Send the combined message to the receiver.
 3. The receiver receives the combined message and parses the list of original messages.
 
-The title and digest are needed to display the combined message:
-
-| Combine and Forward | Display of Combined Message | Click Combined Message to Download Message List for Display |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "300"/> |
-
-
 ## Combined Message
 ### Creating and sending a combined message
 
 A combined message can be created by setting the message list along with the combined message title and digest. The process is as follows:
 1. Create a combined message by setting the list of original messages as well as the combined message title and digest.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" /> 
 <table>
 <thead>
 <tr>
@@ -68,7 +60,7 @@ var message = new Message
      {
       "user1:hello", "user2:hello" // Digest list of the combined message
      },
-     merge_elem_compatible_text = "The current version does not support the message" // Compatibility text of the combined message. If the early SDK version does not support the ccombined message, the user will receive a text message with the content `compatibleText` by default.
+     merge_elem_compatible_text = "The current version does not support the message" // Compatibility text of the combined message. If the early SDK version does not support the combined message, the user will receive a text message with the content `compatibleText` by default.
    }},
 };
 StringBuilder messageId = new StringBuilder(128);

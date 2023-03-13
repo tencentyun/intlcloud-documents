@@ -1,5 +1,4 @@
 
-## Account Management
 
 | Feature | API |
 |---------|---------|
@@ -57,19 +56,25 @@
 | Verifies friends. | [v4/sns/friend_check](https://intl.cloud.tencent.com/document/product/1047/34907) |
 | Pulls friends. | [v4/sns/friend_get](https://intl.cloud.tencent.com/document/product/1047/34908) |
 | Pulls specified friends. | [v4/sns/friend_get_list](https://intl.cloud.tencent.com/document/product/1047/34910) |
-| Adds users to blocklist. | [v4/sns/black_list_add](https://intl.cloud.tencent.com/document/product/1047/34911) |
-| Removes users from blocklist. | [v4/sns/black_list_delete](https://intl.cloud.tencent.com/document/product/1047/34912) |
+| Blocklists users. | [v4/sns/black_list_add](https://intl.cloud.tencent.com/document/product/1047/34911) |
+| Unblocklists users. | [v4/sns/black_list_delete](https://intl.cloud.tencent.com/document/product/1047/34912) |
 | Pulls a blocklist. | [v4/sns/black_list_get](https://intl.cloud.tencent.com/document/product/1047/34914) |
 | Checks whether specified users are on a user’s blocklist and/or vice versa. | [v4/sns/black_list_check](https://intl.cloud.tencent.com/document/product/1047/34913) |
-| Adds friend lists. | [v4/sns/group_add](https://intl.cloud.tencent.com/document/product/1047/34950) |
-| Deletes friend lists. | [v4/sns/group_delete](https://intl.cloud.tencent.com/document/product/1047/34926) |
-|Pulls friend lists.|[v4/sns/group_get](https://intl.cloud.tencent.com/document/product/1047/40123)|
+| Adds lists. | [v4/sns/group_add](https://intl.cloud.tencent.com/document/product/1047/34950) |
+| Deletes lists. | [v4/sns/group_delete](https://intl.cloud.tencent.com/document/product/1047/34926) |
+|Pulls lists.|[v4/sns/group_get](https://intl.cloud.tencent.com/document/product/1047/40123)|
 
 ## Recent Contacts
 | Feature | API |
 | -------- | ------------------------------------------------------------ |
 | Pulls a conversation list. |[v4/recentcontact/get_list](https://intl.cloud.tencent.com/document/product/1047/43087)|
 | Deletes a conversation. |[v4/recentcontact/delete](https://intl.cloud.tencent.com/document/product/1047/43088)|
+| Creates conversation group data. |[v4/recentcontact/create_contact_group](https://www.tencentcloud.com/document/product/1047/53437)|
+| Deletes conversation group data. |[v4/recentcontact/del_contact_group](https://www.tencentcloud.com/document/product/1047/53441)|
+| Updates conversation group data. |[v4/recentcontact/update_contact_group](https://www.tencentcloud.com/document/product/1047/53439)|
+| Searches for conversation group mark data. |[v4/recentcontact/search_contact_group](https://www.tencentcloud.com/document/product/1047/53442)|
+| Creates or updates conversation mark data. |[v4/recentcontact/mark_contact](https://www.tencentcloud.com/document/product/1047/53438)|
+| Pulls conversation group mark data. |[v4/recentcontact/get_contact_group](https://www.tencentcloud.com/document/product/1047/53440)|
 
 ## Group Management
 
@@ -108,6 +113,11 @@
 | Resets custom attributes of a group. |[v4/group_open_http_svc/set_group_attr](https://intl.cloud.tencent.com/document/product/1047/44190)|
 | Modifies historical group chat messages. |[v4/openim/modify_group_msg](https://intl.cloud.tencent.com/document/product/1047/47948)|
 | Delivers broadcast messages to all audio-video groups. |[v4/group_open_http_svc/send_broadcast_msg](https://intl.cloud.tencent.com/document/product/1047/49440)|
+| Gets the group counter. |[v4/group_open_http_svc/get_group_counter](https://www.tencentcloud.com/document/product/1047/53427)|
+| Updates the group counter. |[v4/group_open_http_svc/update_group_counter](https://www.tencentcloud.com/document/product/1047/53428)|
+| Deletes the group counter. |[v4/group_open_http_svc/delete_group_counter](https://www.tencentcloud.com/document/product/1047/53429)|
+
+
 
 ## Global Mute Management
 | Feature | API |
