@@ -1,3 +1,4 @@
+
 ## iOS용으로 내보내기
 ### `GMESDK.framework` 라이브러리를 추가한 후 Xcode에서 실행 파일을 내보내려고 할 때 컴파일 중에 오류가 발생하면 어떻게 해야 합니까?
 
@@ -42,7 +43,7 @@ DYLD_LIBRARY_PATH=/usr/lib/system/introspection
 DYLD_INSERT_LIBRARIES=/Developer/usr/lib/libBacktraceRecording.dylib:/Developer/usr/lib/libMainThreadChecker.dylib:/Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
 ```
 솔루션:
-- 동적 라이브러리를 사용하는 경우 로드된 동적 라이브러리는 기본적으로 정적 라이브러리 `Linked Frameworks and Libraries` 아래에 있습니다. 선택하고 `-` 아이콘을 클릭하여 삭제한 다음 `Embedded Binaries` 아래의 `+`를 클릭하여 동적 라이브러리를 추가해야 합니다.
+- 동적 라이브러리를 사용하는 경우 로딩된 동적 라이브러리는 기본적으로 정적 라이브러리 `Linked Frameworks and Libraries` 아래에 있습니다. 선택하고 `-` 아이콘을 클릭하여 삭제한 다음 `Embedded Binaries` 아래의 `+`를 클릭하여 동적 라이브러리를 추가해야 합니다.
 - framework를 아래와 같이 수정할 수도 있습니다.
 ![](https://main.qcloudimg.com/raw/fe01a75aba37436d4cae1dd68b3b9640.jpg)
 
@@ -71,3 +72,20 @@ Windows x64를 예로 들어 보겠습니다. 실행 파일을 내보낸 후 `UE
 ### 내보낸 Apk가 시뮬레이터를 지원하지 않습니다.
 
 내보내기한 Apk에 x86 아키텍처 SDK가 포함된 라이브러리 파일이 있는지 확인하십시오. 그렇지 않은 경우 SDK를 다시 다운로드하고 x86 아키텍처 SDK를 가져온 다음 마지막으로 실행 파일을 다시 내보내십시오.
+
+
+
+
+## Unity-WebGL 내보내기 문제
+
+### Unity-WebGL 플랫폼은 https 프로토콜과 http 프로토콜 중 어떤 것을 사용합니까?
+패키징된 제품은 **https 프로토콜**을 통해 배포해야 하며 http 프로토콜을 사용하여 서버에 배포하면 기능이 비정상적으로 작동합니다.
+
+### Unity-WebGL 플랫폼 패키징 후 방 입장 시 1004 오류가 발생합니다.
+방 입장 시 1004(Invalid Argument) 오류가 발생하면 이는 입력한 Openid가 10000보다 작기 때문입니다. 여기에는 **Openid가 10000보다 큰 값**을 입력해야 합니다.
+
+### Unity-WebGL 플랫폼을 패키징한 후 휴대폰에서 사용할 수 있나요?
+Unity의 공식 웹 사이트에 따르면 Unity-WebGL로 패키징된 제품은 당분간 휴대폰 실행을 지원하지 않습니다. 자세한 내용은 [Unity - Manual: WebGL Browser Compatibility (unity3d.com)](https://docs.unity3d.com/2020.1/Documentation/Manual/webgl-browsercompatibility.html)를 참고하십시오.
+
+### Unity-WebGL 플랫폼 패키징 후 GME의 레인지 보이스 기능을 사용할 수 있나요?
+현재 WebGL 플랫폼에서는 방 입퇴장 및 마이크 on/off와 같은 가장 기본적인 실시간 음성 통화 기능만 지원됩니다. 지원되지 않는 기능에 대한 API를 호출하면 오류 코드 1006이 반환됩니다. 레인지 보이스 기능은 현재 WebGL 플랫폼에 맞게 조정되고 있습니다.
