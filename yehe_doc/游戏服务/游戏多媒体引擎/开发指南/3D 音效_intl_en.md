@@ -1,6 +1,6 @@
 This document describes how to integrate with and debug GME APIs for 3D sound effects.
 
-## Overview
+## Use Cases
 
 In general voice chat for room entry, the player voice has no 3D sound effects, and players can only have simple interactions with each other. With the 3D sound effect, players can expose their direction and position information while speaking, and their voice can change in real time along with the distance. The 3D sound effect feature delivers players a more real and immersive communication and battle experience in battle royale games.
 
@@ -8,7 +8,7 @@ Click [here](https://intl.cloud.tencent.com/document/product/607/50220) to downl
 
 ## Prerequisites
 
-- **Activated Voice Chat Service**: See [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/10782)**.
+- **Activated Voice Chat Service**: See [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782)**.
 - **You have integrated the GME SDK**, including core APIs and voice chat APIs. For more information, see [Quick Integration of Native SDK](https://intl.cloud.tencent.com/document/product/607/40858), [Quick Integration of SDK for Unity](https://intl.cloud.tencent.com/document/product/607/44544), and [Quick Integration of SDK for Unreal Engine](https://intl.cloud.tencent.com/document/product/607/44545).
 
 ## Directions
@@ -18,7 +18,7 @@ Click [here](https://intl.cloud.tencent.com/document/product/607/50220) to downl
 The 3D sound effect implementation flowchart is as follows. The blue part is new integration steps compared with general voice chat for room entry:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/af3b21c8c6ff552c887ee369f9c217c6.jpg" width="500px">
 
-### Initialize the 3D sound effect engine
+### Initializing the 3D sound effect engine
 
 This function is used to initialize the 3D sound effect engine and needs to be called after room entry. You must call this API before using the 3D sound effect, even if you want to enable only the 3D sound effect reception rather than the 3D sound effect playback.
 
@@ -30,12 +30,13 @@ public abstract int InitSpatializer(string modelPath)
 
 | Parameter | Type | Description |
 | --------- | ------ | ------------------------- |
-| modelPath | String | Absolute path of 3D sound effect resource file |
+| modelPath | string | The absolute path of the 3D sound effect resource file |
 
 The 3D sound effect resource file needs to be downloaded to your local disk, please select one according to the SDK version:
 
-- For SDKs earlier than v2.8, click [here](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/pubilc/GME_2.X_3d_model) to download (MD5: d0b76aa64c46598788c2f35f5a8a8694).
-- For SDKs later than v2.8, click [here](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/public/GME_2.8_3d_model.dat) to download (MD5: 3d4d04b3949e267e34ca809e8a0b9243).
+- For SDK versions earlier than 2.8, click [here](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/pubilc/GME_2.X_3d_model) to download (MD5: d0b76aa64c46598788c2f35f5a8a8694).
+- For SDK 2.8-2.9.5, click [here](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/public/GME_2.8_3d_model.dat) to download (MD5: 3d4d04b3949e267e34ca809e8a0b9243).
+- For SDK 2.9.6 or later, as 3D sound effect resource files are embedded, you can leave `modelPath` empty.
 
 For GME SDK release updates, see [Product Updates](https://intl.cloud.tencent.com/document/product/607/35323).
 
@@ -45,7 +46,7 @@ For GME SDK release updates, see [Product Updates](https://intl.cloud.tencent.co
 - Taking Unreal Engine as an example, copy the 3D model file and read the path based on the content of the **CopyAllAssetsToExternal** function in `SampleCode`.
   </dx-alert>
 
-### Enable or disable the 3D sound effect
+### Enabling or disabling the 3D sound effect
 
 This function is used to enable or disable the 3D sound effect. You can hear the 3D sound after enabling it.
 
@@ -60,7 +61,7 @@ public abstract int EnableSpatializer(bool enable, bool applyToTeam)
 | enable      | bool | You can hear the 3D sound effect after enabling it                           |
 | applyToTeam | bool | Specifies whether the 3D sound effect is enabled within the team and takes effect only when `enable` is `true` |
 
-### Obtain the status of 3D sound effect
+### Obtaining the status of 3D sound effect
 
 This function is used to obtain the status of 3D sound effect.
 
@@ -96,7 +97,7 @@ In the 3D sound effect, the sound will begin to attenuate to almost zero as the 
 public abstract void UpdateAudioRecvRange(int range)
 ```
 
-| Parameter | Type | Description |
+| Parameter  | Type | Description                                       |
 | ----- | ---- | ------------------------------------------------------------ |
 | range | int  | The range within which the sound effect can be heard in distance unit used by the game engine. We recommend you set it to `100`. |
 

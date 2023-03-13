@@ -1,4 +1,5 @@
-This document describes how to integrate with and debug GME client APIs for the voice chat feature for Unity.
+
+This document describes how to integrate with and debug GME client APIs for the voice chat feature for Electron.
 
 ## Key Considerations for Using GME
 
@@ -9,11 +10,10 @@ GME provides the real-time voice service and voice messaging and speech-to-text 
 - You have created a GME application and obtained the SDK `AppID` and key. For more information, see [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
 - You have activated **GME real-time voice service and voice messaging and speech-to-text services**. For more information, see [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
 - Configure your project before using GME; otherwise, the SDK will not take effect.
-- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
+- After a GME API is called successfully, `GmeError.AV_OK` will be returned with the value being `0`.
 - GME APIs should be called in the same thread.
 - The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For detailed error codes, see <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
-- GME only supports simple voice chat features on Unity WebGL. For more information, see [Project Configuration](https://intl.cloud.tencent.com/document/product/607/30261).
+- For detailed error codes, see <dx-tag-link link="https://www.tencentcloud.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
 
 ## Integrating the SDK
 
@@ -27,22 +27,11 @@ Key processes involved in SDK integration are as follows:
 -<dx-tag-link link="#Init" tag="API: Init">Initializing GME</dx-tag-link>
 -<dx-tag-link link="#Poll" tag="API: Poll">Calling Poll periodically to trigger event callbacks</dx-tag-link>
 -<dx-tag-link link="#EnterRoom" tag="API: EnterRoom">Entering a voice chat room</dx-tag-link>
--<dx-tag-link  tag="Callback: QAVEnterRoomComplete">Callback of Room Entry</dx-tag-link>
 -<dx-tag-link link="#EnableMic" tag="API: EnableMic">Enabling the microphone</dx-tag-link>
 -<dx-tag-link link="#EnableSpeaker" tag="API: EnableSpeaker">Enabling the speaker</dx-tag-link>
 -<dx-tag-link link="#ExitRoom" tag="API: ExitRoom">Exiting a voice chat room</dx-tag-link>
 -<dx-tag-link link="#UnInit" tag="API: UnInit">Uninitializing GME</dx-tag-link>
 </dx-steps>
-
-### C# classes
-
-| Class | Description |
-| ------------------- | :----------------: |
-| ITMGContext | Key APIs |
-| ITMGRoom | Room APIs |
-| ITMGRoomManager | Room management APIs |
-| ITMGAudioCtrl | Audio APIs |
-| ITMGAudioEffectCtrl | Sound effect and accompaniment APIs |
 
 ## Core APIs
 
@@ -54,15 +43,18 @@ Key processes involved in SDK integration are as follows:
 | Resume | Resumes the system |
 | Uninit | Uninitializes GME |
 
-### Importing header files
-
+### Importing the GME module
 ```
-using GME;
+const { GmeContext } = require('gme-electron-sdk');
 ```
 
 ### Getting an instance
 
-Get the `Context` instance by using the `ITMGContext` method instead of `QAVContext.GetInstance()`.
+To use the voice chat feature, get the `GmeSDK` object first.
+
+```
+context = new GmeContext();
+```
 
 [](id:Init)
 ### Initializing the SDK
@@ -72,20 +64,20 @@ Get the `Context` instance by using the `ITMGContext` method instead of `QAVCont
 #### API prototype
 
 ```
-//class ITMGContext
-public abstract int Init(string sdkAppID, string openID);
+//class GmeSDK
+Init(appid: string, openid: string): number;
 ```
 
 | Parameter | Type | Description |
 | -------- | :----: | ------------------------------------------------------------ |
 | sdkAppId | string | `AppID` provided in the [GME console](https://console.cloud.tencent.com/gamegme), which can be obtained as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0). |
-| openID   | string | `openID` can only be in `Int64` type, which is passed in after being converted to a string. You can customize its rules, and it must be unique in the application. To pass in `openID` as a string, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) for application. |
+| openID   | string | `openID` can only be in `int64` type, which is passed in after being converted to a string. You can customize its rules, and it must be unique in the application. To pass in `openID` as a string, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) for application. |
 
 #### Returned values
 
 | Returned Value | Description |
 | ------------------------------- | --------------------------------------------- |
-| QAVError.OK= 0 | Initialized SDK successfully |
+| GmeError.AV_OK= 0                  | Initialized the SDK successfully. |
 | AV_ERR_SDK_NOT_FULL_UPDATE=7015 | Checks whether the SDK file is complete. It is recommended to delete it and then import the SDK again. |
 
 <dx-alert infotype="notice" title="Notes on 7015 error code">
@@ -98,19 +90,41 @@ public abstract int Init(string sdkAppID, string openID);
 #### Sample code 
 
 ```
-int ret = ITMGContext.GetInstance().Init(sdkAppId, openID);
+string SDKAPPID3RD = "14000xxxxx";
+string openId="10001";
+number ret = context.Init(SDKAPPID3RD, openId);
 // Determine whether the initialization is successful by the returned value
-if (ret != QAVError.OK)
-    {
-        Debug.Log("SDK initialization failed:"+ret);
-        return;
-    }
+if (ret != GmeError.AV_OK)
+{
+		console.log("Failed to initialize the SDK:");
+		return;
+}
+```
+
+
+### Setting callbacks
+
+The API class uses the `Delegate` method to send callback notifications to the application. Register the callback function to the SDK for receiving callback messages before room entry.
+
+#### Function prototype and sample code
+
+Register the callback function to the SDK for receiving callback messages before room entry.
+```
+SetTMGDelegate(cb: ITMGDelegate);
+// When initializing the SDK
+context =  GmeSDK.GetInstance();
+context.setTMGDelegate(function(eventId, msg){
+  if (type == ITMG_MAIN_EVENT_TYPE_ENTER_ROOM)
+  {
+            // Processing callbacks
+  }
+});
 ```
 
 [](id:Poll)
 ### Triggering event callback
 
-Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API is GME's message pump and should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run abnormally. For more information, see the `EnginePollHelper` file in [SDK Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
+You need to periodically call the `Poll` API to trigger event callbacks. The `Poll` API is GME's message pump and should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run abnormally. For more information, see the `EnginePollHelper` file in [SDK Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 
 <dx-alert infotype="alarm" title="Calling the `Poll` API periodically">
 The `Poll` API must be called periodically and in the main thread to avoid abnormal API callbacks.
@@ -119,16 +133,15 @@ The `Poll` API must be called periodically and in the main thread to avoid abnor
 #### API prototype
 
 ```
-ITMGContext public abstract int Poll();
+Poll():number;
 ```
 
 #### Sample code
 
 ```
-public void Update()
-    {
-        ITMGContext.GetInstance().Poll();
-    }
+setInterval(function () {
+      context.Poll();
+    }, 50);
 ```
 
 ### Pausing the system
@@ -138,7 +151,7 @@ When a `Pause` event occurs in the system, the engine should also be notified fo
 #### API prototype
 
 ```
-ITMGContext public abstract int Pause()
+Pause() :number
 ```
 
 ### Resuming the system
@@ -148,8 +161,9 @@ When a `Resume` event occurs in the system, the engine should also be notified f
 #### API prototype
 
 ```
-ITMGContext  public abstract int Resume()
+Resume() :number
 ```
+
 
 [](id:UnInit)
 ### Uninitializing SDK
@@ -159,7 +173,7 @@ This API is used to uninitialize the SDK to make it uninitialized. **If the game
 #### API prototype
 
 ```
-ITMGContext public abstract int Uninit()
+Uninit() : number;
 ```
 
 ## Voice Chat Room APIs
@@ -175,7 +189,6 @@ If you have any questions when using the service, see [Sound and Audio](https://
 | EnterRoom     |       Enters a room       |
 | ExitRoom      |       Exits a room       |
 | IsRoomEntered | Determines whether room entry is successful |
-| SwitchRoom    |     Switches the room quickly     |
 
 ### Local authentication key calculation
 
@@ -184,29 +197,22 @@ Generate `AuthBuffer` for encryption and authentication of relevant features. Fo
 #### API prototype
 
 ```
-QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
+GenAuthBuffer(appId: string,roomId: string, openId:string, appKey: number) :string;
 ```
 
 | Parameter | Type | Description |
 | ------ | :----: | ------------------------------------------------------------ |
-| appId | int | `AppID` from the Tencent Cloud console.|
+| appId  |  string   | `AppID` from the Tencent Cloud console. |
 | roomId | string | Room ID, which can contain up to 127 characters. |
 | openId | string | User ID, which is the same as `openID` during initialization.                       |
-| key | string | Permission key from the Tencent Cloud [console](https://console.cloud.tencent.com/gamegme). |
+| key    | number | Permission key from the Tencent Cloud [console](https://console.cloud.tencent.com/gamegme). |
 
 #### Sample code  
 
 ```
-public static byte[] GetAuthBuffer(string AppID, string RoomID,string OpenId, string AuthKey){
-        return QAVAuthBuffer.GenAuthBuffer(int.Parse(AppID), RoomID, OpenId, AuthKey);
-}
-
+ let userSig = context.GenAuthBuffer(this.appid, this.roomId, this.userId, this.authKey)
+ context.EnterRoom(this.roomId, this.roomType, userSig);
 ```
-
-#### WebGL adaptation
-- On WebGL, after the local authentication function is called, the authentication key is saved in the JS code, and `authBuffer` is not returned to the C# layer. After a user calls the `GetAuthBuffer` API for local authentication, the user can leave the authentication key empty or enter a random value during room entry.
-- If the authentication key is calculated on the backend, `GetAuthBuffer` doesn't need to be called.
-
 
 [](id:EnterRoom)
 ### Entering a room
@@ -221,26 +227,24 @@ This API is used to enter a room with the generated authentication information. 
 #### API prototype
 
 ```
-ITMGContext EnterRoom(string roomId, int roomType, byte[] authBuffer)
-
+EnterRoom(roomid: string, roomType: number, appKey: string) :number;
 ```
 
 | Parameter | Type | Description |
 | ---------- | :----------: | ------------------------------------------ |
 | roomId     |    string    | Room ID, which can contain up to 127 characters.                    |
 | roomType   | ITMGRoomType | Room type. We recommend you select `ITMG_ROOM_TYPE_FLUENCY` for games. For more information on room audio types, see [Sound Quality](https://intl.cloud.tencent.com/document/product/607/18522). |
-| authBuffer |    Byte[]    | Authentication key                                     |
+| appKey |    string    | Authentication key                                     |
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().EnterRoom(strRoomId, ITMGRoomType.ITMG_ROOM_TYPE_FLUENCY, byteAuthbuffer);
-
+context.EnterRoom(roomID, ITMG_ROOM_TYPE_STANDARD, retAuthBuff);
 ```
 
 ### Callback for room entry
 
-After the user enters the room, the room entry result will be called back, which can be listened on for processing. A successful callback means that the room entry is successful, and the billing **starts**.
+After the user enters the room, the `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` event type will be called back to notify the room entry result, which can be listened on for processing. A successful callback means that the room entry is successful, and the billing **starts**.
 
 <dx-fold-block title="Billing references">
 [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009)
@@ -248,29 +252,17 @@ After the user enters the room, the room entry result will be called back, which
 [Will Voice Chat still be charged when client gets offline?](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
 </dx-fold-block>
 
-#### API prototype
-
-```
-public delegate void QAVEnterRoomComplete(int result, string error_info);
-public abstract event QAVEnterRoomComplete OnEnterRoomCompleteEvent;
-```
-
 #### Sample code  
 
 ```
 // Listen on an event:
-ITMGContext.GetInstance().OnEnterRoomCompleteEvent += new QAVEnterRoomComplete(OnEnterRoomComplete);
-
-// Process the event listened on:
-void OnEnterRoomComplete(int err, string errInfo)
-    {
-	if (err != 0) {
-  			ShowLoginPanel("error code:" + err + " error message:" + errInfo);
-            return;
-	}else{
-		// Entered room successfully
-    }
-}
+ gmeContext.setTMGDelegate(function(eventId, msg){
+  switch (eventId) {
+      case ITMG_MAIN_EVENT_TYPE_ENTER_ROOM:
+      {
+      }
+  }
+});
 ```
 
 #### Data details
@@ -300,70 +292,48 @@ This API is used to exit the current room. It is an async API. The returned valu
 #### API prototype  
 
 ```
-ITMGContext ExitRoom()
+ExitRoom(): number;
 ```
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().ExitRoom();
+context.ExitRoom();
 ```
 
 #### Callback for room exit
 
-A callback will be executed through a delegate function to pass a message after room exit.
-
-#### API prototype  
-
-```
-public delegate void QAVExitRoomComplete();
-public abstract event QAVExitRoomComplete OnExitRoomCompleteEvent; 
-```
+After the user exits a room, a callback will be returned with the message being `ITMG_MAIN_EVENT_TYPE_EXIT_ROOM`. The sample code is shown below:
 
 #### Sample code  
 
 ```
-Listen on an event:
-ITMGContext.GetInstance().OnExitRoomCompleteEvent += new QAVExitRoomComplete(OnExitRoomComplete);
-Process the event listened on:
-void OnExitRoomComplete(){
-    // Send a callback after room exit
-}
+gmeContext.setTMGDelegate(function(eventId, msg){
+  switch (eventId) {
+      case ITMG_MAIN_EVENT_TYPE_EXIT_ROOM:
+      {
+			 // Process
+        break;
+      }
+  }
+});
 ```
 
 ### Determining whether user has entered room
 
-This API is used to determine whether the user has entered a room. A value in bool type will be returned. Do not call this API during room entry.
+This API is used to determine whether the user has entered a room. A value in boolean type will be returned. Do not call this API during room entry.
 
 #### API prototype  
 
 ```
-ITMGContext abstract bool IsRoomEntered()
+IsRoomEntered() :boolean
 ```
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().IsRoomEntered();
+context.IsRoomEntered();
 ```
-
-### Switching room
-
-User can call this API to quickly switch the voice chat room after entering the room. After the room is switched, the device is not reset, that is, if the microphone is already enabled in this room, the microphone will keep enabled after the room is switched.
-The callback for quickly switching rooms is `ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_SWITCH_ROOM`, and the fields are `error_info` and `result`.
-
-#### API prototype
-
-```
-public abstract int SwitchRoom(string targetRoomID, byte[] authBuffer);
-```
-
-#### Type description
-
-| Parameter | Type | Description |
-| ------------ | ------ | ------------------------------ |
-| targetRoomID | String | ID of the room to enter |
-| authBuffer | byte[] | Generates a new authentication with the ID of the room to enter |
 
 ## Room Status Maintenance
 
@@ -376,6 +346,7 @@ APIs in this section are used to display speaking members and members entering o
 | ITMG_MAIN_EVNET_TYPE_USER_UPDATE | The member status changed |
 | AddAudioBlackList                | Mutes a member in the room |
 | RemoveAudioBlackList             |     Unmutes a user     |
+| IsOpenIdInAudioBlackList             |    Queries whether the user of the specified `openid` is muted     |
 
 ### Notification events of member room entry and speaking status
 
@@ -394,15 +365,10 @@ APIs in this section are used to display speaking members and members entering o
 #### Sample code
 
 ```
-public delegate void QAVEndpointsUpdateInfo(int eventID, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]string[] openIdList);
-public abstract event QAVEndpointsUpdateInfo OnEndpointsUpdateInfoEvent;
-
-// Listen on an event:
-ITMGContext.GetInstance().OnEndpointsUpdateInfoEvent += new QAVEndpointsUpdateInfo(OnEndpointsUpdateInfo);
-// Process the event listened on:
-void OnEndpointsUpdateInfo(int eventID, int count, string[] openIdList)
-{
-				// Process
+context.setTMGDelegate(function(eventId, msg){
+  if (type == ITMG_MAIN_EVENT_TYPE_ENTER_ROOM)
+  {
+           	// Process
 		    switch (eventID)
  		    {
  		    case EVENT_ID_ENDPOINT_ENTER:
@@ -422,7 +388,8 @@ void OnEndpointsUpdateInfo(int eventID, int count, string[] openIdList)
 			    break;
  		    }
 		break;
-}
+  }
+});
 ```
 
 ### Muting a member in the room
@@ -438,17 +405,17 @@ This API is suitable for scenarios where a user is muted in a room.
 #### API prototype  
 
 ```
-ITMGContext ITMGAudioCtrl AddAudioBlackList(String openId)
+AddAudioBlackList(openId: string) :number
 ```
 
 | Parameter | Type | Description |
-| ------ | :----: | ------------------------- |
-| openId | String | ID to be blocked openid |
+| ------ | :---: | ------------------ |
+| openId | string | `openid` of the user to be blocked |
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl ().AddAudioBlackList (openId);
+context.AddAudioBlackList(openId);
 ```
 
 ### Unmuting
@@ -458,20 +425,38 @@ This API is used to remove an ID from the audio data blacklist. A returned value
 #### API prototype  
 
 ```
-ITMGContext ITMGAudioCtrl RemoveAudioBlackList(string openId)
+RemoveAudioBlackList(openId: string) :number
 ```
 
 | Parameter | Type | Description |
-| ------ | :----: | ------------------------- |
-| openId | String | ID to be unblocked openid |
+| ------ | :---: | ----------------- |
+| openId |string | ID to be unblocked |
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl ().RemoveAudioBlackList (openId);
+context.RemoveAudioBlackList(openId);
 ```
 
+### Querying whether a user is muted
 
+This API is used to query whether an ID is blocked. The returned value `true` indicates that the ID is blocked, while `false` indicates not.
+
+#### API prototype  
+
+```
+IsOpenIdInAudioBlackList(openId: string) :boolean
+```
+
+| Parameter | Type | Description |
+| ------ | :---: | ----------------- |
+| openId |string | ID to be queried |
+
+#### Sample code  
+
+```
+boolean isInBlackList = context.IsOpenIdInAudioBlackList(openId);
+```
 
 ## Voice Chat Capturing APIs
 
@@ -501,7 +486,7 @@ This API is used to enable/disable the mic. The mic and speaker are not enabled 
 #### API prototype  
 
 ```
-ITMGAudioCtrl EnableMic(bool isEnabled)
+EnableMic(bEnable: boolean) : number
 ```
 
 | Parameter | Type | Description |
@@ -512,7 +497,7 @@ ITMGAudioCtrl EnableMic(bool isEnabled)
 
 ```
 // Turn on mic
-ITMGContext.GetInstance().GetAudioCtrl().EnableMic(true);
+context.EnableMic(true);
 ```
 
 ### Getting the mic status
@@ -522,13 +507,13 @@ This API is used to get the mic status. The returned value 0 indicates that the 
 #### API prototype  
 
 ```
-ITMGAudioCtrl GetMicState()
+GetMicState() :number
 ```
 
 #### Sample code  
 
 ```
-micToggle.isOn = ITMGContext.GetInstance().GetAudioCtrl().GetMicState();
+context.GetMicState();
 ```
 
 ### Enabling or disabling capturing device
@@ -541,18 +526,18 @@ This API is used to enable/disable a capturing device. The device is not enabled
 #### API prototype  
 
 ```
-ITMGAudioCtrl int EnableAudioCaptureDevice(bool isEnabled)
+EnableAudioCaptureDevice(enable:boolean) :number
 ```
 
 | Parameter | Type | Description |
 | --------- | :--: | ------------------------------------------------------------ |
-| isEnabled | bool | To enable a capturing device, set this parameter to `true`; otherwise, set it to `false`. |
+| enable | boolean | To enable a capturing device, set this parameter to `true`; otherwise, set it to `false`. |
 
 #### Sample code
 
 ```
 // Enable capturing device
-ITMGContext.GetInstance().GetAudioCtrl().EnableAudioCaptureDevice(true);
+context.EnableAudioCaptureDevice(true);
 ```
 
 ### Getting the capturing device status
@@ -562,13 +547,13 @@ This API is used to get the status of a capturing device.
 #### API prototype
 
 ```
-ITMGAudioCtrl bool IsAudioCaptureDeviceEnabled()
+IsAudioCaptureDeviceEnabled():boolean
 ```
 
 #### Sample code
 
 ```
-bool IsAudioCaptureDevice = ITMGContext.GetInstance().GetAudioCtrl().IsAudioCaptureDeviceEnabled();
+boolean IsAudioCaptureDevice = context.IsAudioCaptureDeviceEnabled();
 ```
 
 ### Enabling or disabling audio upstreaming
@@ -578,17 +563,17 @@ This API is used to enable/disable audio upstreaming. If a capturing device is a
 #### API prototype
 
 ```
-ITMGAudioCtrl int EnableAudioSend(bool isEnabled)
+EnableAudioSend(bEnable: boolean) :number
 ```
 
 | Parameter | Type | Description |
 | --------- | :--: | ------------------------------------------------------------ |
-| isEnabled | bool | To enable audio upstreaming, set this parameter to `true`; otherwise, set it to `false`. |
+| isEnabled |boolean | To enable audio upstreaming, set this parameter to `true`; otherwise, set it to `false`. |
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl().EnableAudioSend(true);
+context.EnableAudioSend(true);
 ```
 
 ### Getting audio upstreaming status
@@ -598,90 +583,85 @@ This API is used to get the status of audio upstreaming.
 #### API prototype  
 
 ```
-ITMGAudioCtrl bool IsAudioSendEnabled()
+IsAudioSendEnabled():boolean
 ```
 
 #### Sample code  
 
 ```
-bool IsAudioSend = ITMGContext.GetInstance().GetAudioCtrl().IsAudioSendEnabled();
+boolean IsAudioSend = context.IsAudioSendEnabled();
 ```
 
 ### Getting the real-time mic volume
 
-This API is used to get the real-time mic volume. An int-type value in the range of 0-100 will be returned. It is recommended to call this API once every 20 ms.
+This API is used to get the real-time mic volume level. A number-type value in the range of 0–100 will be returned. We recommend you call this API once every 20 ms.
 
  
 
 #### API prototype  
 
 ```
-ITMGAudioCtrl int GetMicLevel
+GetMicLevel():number
 ```
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl().GetMicLevel();
+context.GetMicLevel();
 ```
 
-### Getting the real-time audio upstreaming volume
+ ### Getting the real-time audio upstreaming volume
 
-This API is used to get the local real-time audio upstreaming volume. An int-type value in the range of 0-100 will be returned.
-
- 
+This API is used to get the local real-time audio upstreaming volume level. A number-type value in the range of 0-100 will be returned.
 
 #### API prototype  
 
 ```
-ITMGAudioCtrl int GetSendStreamLevel()
+GetSendStreamLevel() :number
 ```
 
 #### Sample code  
 
 ```
-int Level = ITMGContext.GetInstance().GetAudioCtrl().GetSendStreamLevel();
+context.GetSendStreamLevel();
 ```
 
-### Setting the mic volume
+### Setting the mic software volume
 
 This API is used to set the mic volume level. The corresponding parameter is `volume`, which is equivalent to attenuating or gaining the captured sound.
-
- 
-
 #### API prototype  
 
 ```
-ITMGAudioCtrl SetMicVolume(int volume)
+SetMicVolume(volume:number) :number
 ```
 
 | Parameter | Type | Description |
 | ------ | :--: | ------------------------------------------------------------ |
-| volume | int  | Value range: 0-200. Default value: 100. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
+| volume | number  | Value range: 0-200. Default value: `100`. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
 
 #### Sample code  
 
 ```
-int micVol = (int)(value * 100);
-ITMGContext.GetInstance().GetAudioCtrl().SetMicVolume (micVol);
+number micVol = (value * 100);
+context.SetMicVolume (micVol);
 ```
 
-### Getting the mic volume
+### Getting the mic software volume
 
-This API is used to obtain the microphone volume. An "int" value is returned. Value 101 represents API SetMicVolume has not been called.
+This API is used to get the mic volume level. A number-type value will be returned. `101` indicates that the `SetMicVolume` API has not been called.
 
  
 
 #### API prototype  
 
 ```
-ITMGAudioCtrl GetMicVolume()
+GetMicVolume()
 ```
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl().GetMicVolume();
+context.GetMicVolume();
 ```
 
 ## Voice Chat Playback APIs
@@ -694,7 +674,7 @@ ITMGContext.GetInstance().GetAudioCtrl().GetMicVolume();
 | IsAudioPlayDeviceEnabled | Gets playback device status |
 | EnableAudioRecv          |        Enables/Disables audio downstreaming        |
 | IsAudioRecvEnabled       |        Gets the audio downstreaming status        |
-| GetSpeakerLevel          |       Gets the real-time speaker volume level       |
+| GetSpeakerLevel          |       Gets the real-time speaker volume level        |
 | GetRecvStreamLevel       | Gets the real-time downstreaming audio volume levels of other members in the room |
 | SetSpeakerVolume         |         Sets the speaker volume level         |
 | GetSpeakerVolume         |         Gets the speaker volume level         |
@@ -708,18 +688,18 @@ This API is used to enable/disable the speaker. **EnableSpeaker = EnableAudioPla
 #### API prototype  
 
 ```
-ITMGAudioCtrl EnableSpeaker(bool isEnabled)
+EnableSpeaker(bEnable: boolean) : number;
 ```
 
 | Parameter | Type | Description |
 | --------- | :--: | ------------------------------------------------------------ |
-| isEnabled | bool | To disable the speaker, set this parameter to `false`; otherwise, set it to `true`. |
+| bEnable | boolean | To disable the speaker, set this parameter to `false`; otherwise, set it to `true`. |
 
 #### Sample code  
 
 ```
 // Turn on the speaker
-ITMGContext.GetInstance().GetAudioCtrl().EnableSpeaker(true);
+context.EnableSpeaker(true);
 ```
 
 ### Getting the speaker status
@@ -729,16 +709,14 @@ This API is used to get the speaker status. 0 indicates that the speaker is off,
 #### API prototype  
 
 ```
-ITMGAudioCtrl GetSpeakerState()
+GetSpeakerState() :number
 ```
 
 #### Sample code  
 
 ```
-speakerToggle.isOn = ITMGContext.GetInstance().GetAudioCtrl().GetSpeakerState();
+context.GetSpeakerState();
 ```
-
-
 
 ### Enabling or disabling playback device
 
@@ -747,17 +725,17 @@ This API is used to enable/disable a playback device.
 #### API prototype  
 
 ```
-ITMGAudioCtrl EnableAudioPlayDevice(bool isEnabled)
+EnableAudioPlayDevice(enable:boolean) :number
 ```
 
 | Parameter | Type | Description |
 | --------- | :--: | ------------------------------------------------------------ |
-| isEnabled | bool | To disable a playback device, set this parameter to `false`; otherwise, set it to `true`. |
+| enable | boolean | To disable a playback device, set this parameter to `false`; otherwise, set it to `true`. |
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl().EnableAudioPlayDevice(true);
+context.EnableAudioPlayDevice(true);
 ```
 
 ### Getting the playback device status
@@ -767,13 +745,13 @@ This API is used to get the status of a playback device.
 #### API prototype
 
 ```
-ITMGAudioCtrl bool IsAudioPlayDeviceEnabled()
+IsAudioPlayDeviceEnabled() :boolean
 ```
 
 #### Sample code  
 
 ```
-bool IsAudioPlayDevice = ITMGContext.GetInstance().GetAudioCtrl().IsAudioPlayDeviceEnabled();
+boolean enable = context.IsAudioPlayDeviceEnabled();
 ```
 
 ### Enabling or disabling audio downstreaming
@@ -783,17 +761,17 @@ This API is used to enable/disable audio downstreaming. If a playback device is 
 #### API prototype  
 
 ```
-ITMGAudioCtrl int EnableAudioRecv(bool isEnabled)
+EnableAudioRecv(bEnable: boolean) :number
 ```
 
 | Parameter | Type | Description |
 | --------- | :--: | ------------------------------------------------------------ |
-| isEnabled | bool | To enable audio downstreaming, set this parameter to `true`; otherwise, set it to `false`. |
+| isEnabled | boolean | To enable audio downstreaming, set this parameter to `true`; otherwise, set it to `false`. |
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl().EnableAudioRecv(true);
+context.EnableAudioRecv(true);
 ```
 
 
@@ -805,39 +783,39 @@ This API is used to get the status of audio downstreaming.
 #### API prototype  
 
 ```
-ITMGAudioCtrl bool IsAudioRecvEnabled()
+IsAudioRecvEnabled():boolean
 ```
 
 #### Sample code  
 
 ```
-bool IsAudioRecv = ITMGContext.GetInstance().GetAudioCtrl().IsAudioRecvEnabled();
+boolean IsAudioRecv = context.IsAudioRecvEnabled();
 ```
 
 ### Getting the real-time speaker volume
 
-This API is used to get the real-time speaker volume. An int-type value will be returned to indicate the volume. It is recommended to call this API once every 20 ms.
+This API is used to get the real-time speaker volume level. A number-type value will be returned to indicate the volume level. We recommend you call this API once every 20 ms.
 
 #### API prototype  
 
 ```
-ITMGAudioCtrl GetSpeakerLevel()
+GetSpeakerLevel():number
 ```
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl().GetSpeakerLevel();
+context.GetSpeakerLevel();
 ```
 
 ### Getting the real-time downstreaming audio levels of other members in room
 
-This API is used to get the real-time audio downstreaming volume of other members in the room. An int-type value will be returned. Value range: 0-200.
+This API is used to get the real-time audio downstreaming volume of other members in the room. A number-type value will be returned. Value range: 0–200.
 
 #### API prototype  
 
 ```
-ITMGAudioCtrl int GetRecvStreamLevel(string openId)
+GetRecvStreamLevel(openId: string) :number
 ```
 
 | Parameter | Type | Description |
@@ -847,7 +825,53 @@ ITMGAudioCtrl int GetRecvStreamLevel(string openId)
 #### Sample code  
 
 ```
-int Level = ITMGContext.GetInstance().GetAudioCtrl().GetRecvStreamLevel(openId);
+number level =GetRecvStreamLevel(openId);
+```
+
+### Dynamically setting the volume of a member of the room
+
+This API is used to set the volume of a member in the room. It takes effect only on the local side.
+
+#### API prototype  
+
+```
+SetSpeakerVolumeByOpenID(openId: string, volume:number) :number;
+```
+
+|Parameter   |Type   |Description   |
+|----------|-------|-------|
+|openId       |string   | `OpenID` of the target user |
+|volume  |number       | Percentage. Recommended value range: 0–200. Default value: `100`. |
+
+#### Sample code  
+
+```
+context.SetSpeakerVolumeByOpenID(openId,  100);
+```
+
+### Getting volume percentage
+
+This API is used to get the volume level set by `SetSpeakerVolumeByOpenID`.
+
+#### API prototype
+
+```
+GetSpeakerVolumeByOpenID(openId: string) :number;
+```
+
+|Parameter   |Type   |Description   |
+|----------|-------|-------|
+|openId       |string| `OpenID` of the target user |
+
+
+#### Returned values
+
+API returns volume percentage set by OpenID, where 100 is by default.
+
+#### Sample code  
+
+```
+context.GetSpeakerVolumeByOpenID(openId);
 ```
 
 ### Setting the speaker volume
@@ -857,35 +881,35 @@ This API is used to set the speaker volume.
 #### API prototype  
 
 ```
-ITMGAudioCtrl SetSpeakerVolume(int volume)
+SetSpeakerVolume(volume:number) :number
 ```
 
 | Parameter | Type | Description |
 | ------ | :--: | ------------------------------------------------------------ |
-| volume | int  | Value range: 0-200. Default value: 100. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
+| volume | number  | Value range: 0–200. Default value: 100. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
 
 #### Sample code  
 
 ```
-int speVol = (int)(value * 100);
-ITMGContext.GetInstance().GetAudioCtrl().SetSpeakerVolume(speVol);
+number vol = 100;
+context.SetSpeakerVolume(vol);
 ```
 
 ### Getting the speaker volume
 
-This API is used to get the speaker volume. An int-type value will be returned to indicate the volume. 101 indicates that the `SetSpeakerVolume` API has not been called.
+This API is used to get the speaker volume. A number-type value will be returned to indicate the volume. `101` indicates that the `SetSpeakerVolume` API has not been called.
 "Level" indicates the real-time volume, and "Volume" the speaker volume. The final volume = Level * Volume%. For example, if the "Level" is 100 and "Volume" is 60, the final volume is "60".
 
 #### API prototype  
 
 ```
-ITMGAudioCtrl GetSpeakerVolume()
+GetSpeakerVolume() :number
 ```
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl().GetSpeakerVolume();
+numbet volume = context.GetSpeakerVolume();
 ```
 
 ## Device Selection APIs
@@ -908,14 +932,13 @@ This API is used to get the number of mics.
 #### Function prototype  
 
 ```
-public abstract int GetMicListCount()
-
+GetMicListCount() :number
 ```
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl().GetMicListCount();
+var micListCount = context.GetMicListCount();
 ```
 
 ### Enumerating mics
@@ -925,27 +948,14 @@ This API is used together with the `GetMicListCount` API to enumerate mics.
 #### Function prototype 
 
 ```
-public abstract int GetMicList(out List<TMGAudioDeviceInfo> devicesInfo, int count)
-
+GetMicList() :GmeAudioDeviceInfo[];
 ```
-
-| Parameter             |        Type        | Description                 |
-| ---------------- | :----------------: | -------------------- |
-| ppDeviceInfoList | TMGAudioDeviceInfo | Device list             |
-| count           |        int         | The number of mics |
-
-| `TMGAudioDeviceInfo` Parameter | Type | Description |
-| ---------------- | :----------------: | ------------------- |
-| m_strDeviceID | string | Device name |
-| m_strDeviceID | string | Device ID |
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl().GetMicList(devicesInfo,count);
+var micList = context.GetMicList();
 ```
-
-
 
 ### Selecting mic
 
@@ -955,23 +965,17 @@ The 0th device id returned in the GetMicList API is the default device of the ca
 #### Function prototype  
 
 ```
-public abstract int SelectMic(string micID);
+SelectMic(micId: string) :number;
 ```
 
 | Parameter   |  Type  | Description         |
 | ------ | :---: | ------------- |
-| pMicID | string | Mic ID, which is from the list returned by `GetMicList`. |
+| micId | string | Mic ID, which is from the list returned by `GetMicList`. |
 
 #### Sample code  
 
 ```
-string deviceID = DEVICE_ID_DEFAULT;
-                if (index != 0)
-                {
-                    deviceID = listMicInfo[index - 1].m_strDeviceID;
-                }
-                ITMGContext.GetInstance().GetAudioCtrl().SelectMic(deviceID);
-                selectedMicID = deviceID;
+context.SelectMic(deviceID);
 ```
 
 This API is used to get the number of speakers.
@@ -979,15 +983,13 @@ This API is used to get the number of speakers.
 #### Function prototype  
 
 ```
-public abstract int GetSpeakerListCount();
-
+ GetSpeakerListCount() :number;
 ```
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl().GetSpeakerListCount();
-
+context.GetSpeakerListCount();
 ```
 
 ### Enumerating speakers
@@ -997,34 +999,13 @@ This API is used together with the `GetSpeakerListCount` API to enumerate speake
 #### Function prototype  
 
 ```
-public abstract int GetSpeakerList(out List<TMGAudioDeviceInfo> devicesInfo, int count)
+GetSpeakerList(): GmeAudioDeviceInfo[]
 ```
-
-| Parameter             |        Type        | Description                 |
-| ---------------- | :----------------: | -------------------- |
-| ppDeviceInfoList | TMGAudioDeviceInfo | Device list             |
-| count           |        int         | The number of speakers |
-
-| `TMGAudioDeviceInfo` Parameter | Type | Description |
-| ---------------- | :----------------: | ------------------- |
-| m_strDeviceID | string | Device name |
-| m_strDeviceID | string | Device ID |
 
 #### Sample code  
 
 ```
-int speakerCount = ITMGContext.GetInstance().GetAudioCtrl().GetSpeakerListCount();
-Debug.LogFormat("speakerCount = {0}", speakerCount);
-if (speakerCount > 0)
-	{
-		int ret = ITMGContext.GetInstance().GetAudioCtrl().GetSpeakerList(out listSpeakerInfo, speakerCount);
-		Debug.LogFormat("GetSpeakerList ret = {0}", ret);
-		if (ret != 0)
-		{
-			listSpeakerInfo = null;
-		}
-	}
-}
+var speakList = GetSpeakerList();
 ```
 
 ### Selecting speaker
@@ -1034,33 +1015,18 @@ This API is used to select a playback device. If this API is not called or `DEVI
 #### Function prototype  
 
 ```
-public abstract int SelectSpeaker(string speaker);
-
+SelectSpeaker(speakerId: string) :number
 ```
 
 | Parameter       | Type  | Description          |
 | ---------- | :---: | ------------- |
-| speaker | string | Speaker ID, which is from the list returned by `GetSpeakerList`. |
+| speakerId | string | Speaker ID, which is from the list returned by `GetSpeakerList`. |
 
 #### Sample code  
 
 ```
-speakerDropdown = transform.Find("DevicePanel/SpeakerSelect").GetComponent<Dropdown>();
-        if (speakerDropdown != null)
-        {
-            speakerDropdown.onValueChanged.AddListener(delegate (int index)
-            {
-                string deviceID = DEVICE_ID_DEFAULT;
-                if (index != 0)
-                {
-                    deviceID = listSpeakerInfo[index - 1].m_strDeviceID;
-                }
-                ITMGContext.GetInstance().GetAudioCtrl().SelectSpeaker(deviceID);
-                selectedSpeakerID = deviceID;
-            });
-        }
+var ret = SelectSpeaker(deviceID);
 ```
-
 
 ## Advanced APIs
 
@@ -1071,43 +1037,17 @@ This API is used to enable in-ear monitoring. You need to call `EnableLoopBack+E
 #### API prototype  
 
 ```
-ITMGContext GetAudioCtrl EnableLoopBack(bool enable)
+EnableLoopBack(bEnable: boolean) :number
 ```
 
 | Parameter    | Type   | Description                                                                                                                    |
 | ------ | :--: | ------------ |
-| enable | bool | Specifies whether to enable |
+| enable | boolean | Specifies whether to enable in-ear monitoring. |
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetAudioCtrl().EnableLoopBack(true);
-```
-
-### Callback for device use and release
-
-After a device is used or released in a room, a callback will be executed through a delegate function to pass a message of the event.
-
-```
-public delegate void QAVOnDeviceStateChangedEvent(int deviceType, string deviceId, bool openOrClose);
-public abstract event QAVOnDeviceStateChangedEvent OnDeviceStateChangedEvent;
-```
-
-| Parameter | Type | Description |
-| ----------- | :----: | ----------------------------------------------------- |
-| deviceType  |  int   | <li>1: Capturing device<li>2: Playback device                  |
-| deviceId | string | Device GUID, which is used to identify a device and only applies to Windows and macOS. |
-| openOrClose | bool | Occupies or releases a capturing/playback device |
-
-#### Sample code  
-
-```
-Listen on an event:
-ITMGContext.GetInstance().GetAudioCtrl().OnDeviceStateChangedEvent += new QAVAudioDeviceStateCallback(OnAudioDeviceStateChange);
-Process the event listened on:
-void QAVAudioDeviceStateCallback(int deviceType, string deviceId, bool openOrClose){
-    // Callback for device occupancy and release
-}
+context.EnableLoopBack(true);
 ```
 
 ### Getting user's room audio type
@@ -1117,13 +1057,13 @@ This API is used to get a user's room audio type. The returned value is the room
 #### API prototype  
 
 ```
-ITMGContext ITMGRoom public int GetRoomType()
+GetRoomType() :number
 ```
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetRoom().GetRoomType();
+context.GetRoomType();
 ```
 
 ### Changing the room type
@@ -1132,65 +1072,40 @@ This API is used to modify a user's room audio type. For the result, see the cal
 #### API prototype  
 
 ```
-ITMGContext ITMGRoom public int ChangeRoomType(ITMGRoomType roomtype)
+ChangeRoomType(roomType: number) :number
 ```
 
 | Parameter | Type | Description |
 | -------- | :----------: | ----------------------------------------------------- |
-| roomtype | ITMGRoomType | Room type to be switched to. For room audio types, see the `EnterRoom` API.  |
+| roomtype | number | Room type to be switched to. For room audio types, see the `EnterRoom` API.  |
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetRoom().ChangeRoomType(ITMG_ROOM_TYPE_FLUENCY);
+context.ChangeRoomType(ITMG_ROOM_TYPE_FLUENCY);
 ```
 
 #### Callback event
 
-Set the room type. After the room type is set, a callback will be executed through a delegate function to pass a message indicating that the modification has been completed.
+After the room type is set, the event message `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE` will be returned in the callback. The returned parameters include `result`, `error_info`, and `new_room_type`. The `new_room_type` represents the following information. The event message will be identified in the `OnEvent` function.
 
-| Returned Parameter | Description |
-| ---------- | :------------------------: |
-| roomtype | Updated room type returned |
-
-```
-public abstract event QAVCallback OnChangeRoomtypeCallback;
-public abstract event QAVOnRoomTypeChangedEvent OnRoomTypeChangedEvent;
-```
+| Event Subtype | Parameter | Description |
+| -------- | :----: | ------------------------------------------------------------ |
+| ITMG_ROOM_CHANGE_EVENT_ENTERROOM | 1 | Indicates that the existing audio type is inconsistent with and changed to that of the entered room. |
+| ITMG_ROOM_CHANGE_EVENT_START | 2 | Indicates that a user is already in the room and the audio type starts changing (e.g., calling the `ChangeRoomType` API to change the audio type). |
+| ITMG_ROOM_CHANGE_EVENT_COMPLETE | 3 | Indicates that a user is already in the room and the audio type has been changed. |
+| ITMG_ROOM_CHANGE_EVENT_REQUEST | 4 | Indicates that a room member calls the `ChangeRoomType` API to request a change of room audio type. |
 
 #### Sample code  
 
 ```
-// Listen on an event:
-ITMGContext.GetInstance ().OnRoomTypeChangedEvent += new QAVOnRoomTypeChangedEvent (OnRoomTypeChangedEvent);
-// Process the event listened on:
-void OnRoomTypeChangedEvent(int roomtype)
-{
-        ShowWarnning (string.Format ("RoomTypeChanged current:{0}",roomtype));
-}
+context.setTMGDelegate(function(eventId, msg){
+  if (ITMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE == type)
+        {
+        // Process room type events
+     }
+});
 ```
-
-#### Notification of room type change
-
-Once the room type is changed by you or another user in the room, this notification event will be used to notify the business layer of the room type change. The returned value will be the room type. For more information, see the `EnterRoom` API.
-
-```
-public delegate void QAVOnRoomTypeChangedEvent(int roomtype);
-public abstract event QAVOnRoomTypeChangedEvent OnRoomTypeChangedEvent;	
-```
-
-#### Sample code  
-
-```
-// Listen on an event:
-ITMGContext.GetInstance().OnRoomTypeChangedEvent += new QAVOnRoomTypeChangedEvent(OnRoomTypeChangedEvent);
-// Process the event listened on:
-void OnRoomTypeChangedEvent(int roomtype){
-    // Send a callback after the room type is changed
-}
-```
-
-
 
 ### The monitoring event of room call quality
 
@@ -1198,9 +1113,9 @@ This is the quality monitoring event used to listen on the network quality. If y
 
 | Parameter | Type | Description |
 | ------ | ------ | ------------------------------------------------------------ |
-| weight | int | Value range: 1-50. 50 indicates excellent sound quality, 1 indicates very poor (barely usable) sound quality, and 0 represents an initial meaningless value. Generally, if the value is below 30, the business layer will remind users that the network is poor and recommend them to switch the network. |
-| loss   | double | Upstream packet loss rate |
-| delay | int | Voice chat delay in ms |
+| weight | number   | Value range: 1–50. `50` indicates excellent sound quality, `1` indicates very poor (barely usable) sound quality, and `0` represents an initial meaningless value. Generally, if the value is below 30, you can remind users that the network is poor and recommend them to switch the network. |
+| loss   | var | Upstream packet loss rate |
+| delay  | number    | Voice chat delay in ms |
 
 
 
@@ -1212,13 +1127,34 @@ This API is used to get the SDK version number for analysis.
 #### API prototype
 
 ```
-ITMGContext  abstract string GetSDKVersion()
+GetSDKVersion() :string
 ```
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().GetSDKVersion();
+context.GetSDKVersion();
+```
+### Setting the application name and version
+
+This API is used to set the application name and version.
+
+#### API prototype
+
+```
+SetAppVersion(appVersion: string) : number
+```
+
+#### Parameter description
+
+| Parameter | Type | Description |
+| ---------- | -------------- | ------------------------------------------------------------ |
+| appVersion | string | Application name and version |
+
+#### Sample code  
+
+```
+context.SetAppVersion("gme V2.0.0");
 ```
 
 
@@ -1230,19 +1166,18 @@ This API is used to set the level of logs to be printed, and needs to be called 
 #### API prototype
 
 ```
-ITMGContext  SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
+SetLogLevel(level: number) : number
 ```
 
 #### Parameter description
 
 | Parameter | Type | Description |
 | ---------- | -------------- | ------------------------------------------------------------ |
-| levelWrite | ITMG_LOG_LEVEL | Sets the level of logs to be written. `TMG_LOG_LEVEL_NONE` indicates not to write. Default value: TMG_LOG_LEVEL_INFO |
-| levelPrint | ITMG_LOG_LEVEL | Sets the level of logs to be printed. `TMG_LOG_LEVEL_NONE` indicates not to print. Default value: TMG_LOG_LEVEL_ERROR |
+| level | number | Sets the log level. `TMG_LOG_LEVEL_NONE` indicates not to log. Default value: `TMG_LOG_LEVEL_INFO`. |
 
-`ITMG_LOG_LEVEL` description:
+`level` description:
 
-| ITMG_LOG_LEVEL | Description |
+| Value of `level`       | Description                 |
 | --------------------- | -------------------- |
 | TMG_LOG_LEVEL_NONE | Does not print logs |
 | TMG_LOG_LEVEL_ERROR | Prints error logs (default) |
@@ -1253,7 +1188,7 @@ ITMGContext  SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().SetLogLevel(TMG_LOG_LEVEL_INFO,TMG_LOG_LEVEL_INFO);
+context.SetLogLevel(TMG_LOG_LEVEL_INFO);
 ```
 
 
@@ -1264,27 +1199,23 @@ This API is used to set the log printing path. The default path is as follows. I
 
 | OS | Path |
 | ------- | ------------------------------------------------------------ |
-| Windows | %appdata%\Tencent\GME\ProcessName |
-| iOS | Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Documents |
-| Android | /sdcard/Android/data/xxx.xxx.xxx/files |
-| macOS | /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents |
+| Windows | %appdata%\GMEGLOBAL\GME\ProcessName                            |
 
 #### API prototype
 
 ```
-ITMGContext  SetLogPath(string logDir)
-
+SetLogPath(logPath: string)
 ```
 
 | Parameter | Type | Description |
 | ------ | :----: | ---- |
-| logDir | String | Path |
+| logPath | string | Path |
 
 #### Sample code  
 
 ```
-ITMGContext.GetInstance().SetLogPath(path);
-
+string logDir = ""// Set a path by yourself
+context.SetLogPath(logDir);
 ```
 
 ### Getting the diagnostic messages
@@ -1294,12 +1225,45 @@ This API is used to get information on the quality of real-time audio/video call
 #### API prototype  
 
 ```
-ITMGRoom GetQualityTips()
+GetQualityTips() :string
 ```
 
 #### Sample code  
 
 ```
-string tips = ITMGContext.GetInstance().GetRoom().GetQualityTips();
-
+string tips = context.GetQualityTips();
 ```
+
+### Callback message
+
+| Message |  Description  | Data | Example｜
+| -------- | ---------- | ---------------------- | ------------------------------------------------------------ |
+| ITMG_MAIN_EVENT_TYPE_ENTER_ROOM | A member entered the audio room | result; error_info |{"error_info":"","result":0} |
+| ITMG_MAIN_EVENT_TYPE_EXIT_ROOM | A member exited the audio room | result; error_info |{"error_info":"","result":0} |
+| ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT | The room was disconnected for network or other reasons | result; error_info |{"error_info":"waiting timeout, please check your network","result":0} |
+| ITMG_MAIN_EVNET_TYPE_USER_UPDATE | Room members were updated | user_list; event_id |{"event_id":1,"user_list":["0"]} |
+| ITMG_MAIN_EVENT_TYPE_RECONNECT_START | The reconnection to the room started | result; error_info |{"error_info":"","result":0} |
+| ITMG_MAIN_EVENT_TYPE_RECONNECT_SUCCESS | The reconnection to the room succeeded | result; error_info |{"error_info":"","result":0} |
+| ITMG_MAIN_EVENT_TYPE_SWITCH_ROOM | The room was quickly switched | result; error_info |{"error_info":"","result":0} |
+| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE | The room status was changed |result; error_info; sub_event_type; new_room_type|{"error_info":"","new_room_type":0,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_ROOM_SHARING_START | Cross-room mic connect started | result; |{"result":0} |
+| ITMG_MAIN_EVENT_TYPE_ROOM_SHARING_STOP | Cross-room mic connect stopped | result; |{"result":0}|
+| ITMG_MAIN_EVENT_TYPE_SPEAKER_DEFAULT_DEVICE_CHANGED | The default speaker device was changed | result; error_info |{"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"Speaker (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":false,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_SPEAKER_NEW_DEVICE | A new speaker device was added | result; error_info |{"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"Speaker (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":false,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_SPEAKER_LOST_DEVICE | A speaker device was lost | result; error_info |{"deviceID":"{0.0.0.00000000}.{a4f1e8be-49fa-43e2-b8cf-dd00542b47ae}","deviceName":"Speaker (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":false,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_MIC_NEW_DEVICE | A new mic device was added | result; error_info |{"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"Mic (Realtek High Definition Audio)","error_info":"","isNewDevice":true,"isUsedDevice":true,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_MIC_LOST_DEVICE | A mic device was lost | result; error_info |{"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"Mic (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":true,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_MIC_DEFAULT_DEVICE_CHANGED | The default mic device was changed | result; error_info |{"deviceID":"{0.0.1.00000000}.{5fdf1a5b-f42d-4ab2-890a-7e454093f229}","deviceName":"Mic (Realtek High Definition Audio)","error_info":"","isNewDevice":false,"isUsedDevice":true,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALITY | The room quality changed | weight; loss; delay |{"weight":5,"loss":0.1,"delay":1} |
+| ITMG_MAIN_EVNET_TYPE_PTT_RECORD_COMPLETE | Voice message recording was completed | result; file_path |{"file_path":"","result":0} |
+| ITMG_MAIN_EVNET_TYPE_PTT_UPLOAD_COMPLETE | Voice message upload was completed | result; file_path;file_id |{"file_id":"","file_path":"","result":0} |
+| ITMG_MAIN_EVNET_TYPE_PTT_DOWNLOAD_COMPLETE | Voice message download was completed | result; file_path;file_id |{"file_id":"","file_path":"","result":0} |
+| ITMG_MAIN_EVNET_TYPE_PTT_PLAY_COMPLETE | Voice message playback was completed |result; file_path |{"file_path":"","result":0} |
+| ITMG_MAIN_EVNET_TYPE_PTT_SPEECH2TEXT_COMPLETE | Fast speech-to-text conversion was completed | result; text;file_id |{"file_id":"","text":"","result":0} |
+| ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_COMPLETE | Streaming speech-to-text conversion was completed | result; file_path; text;file_id |{{"file_id":"","file_path":","text":"","result":0}} |
+| ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING | Streaming speech-to-text conversion is in progress | result; file_path; text;file_id |{{"file_id":"","file_path":","text":"","result":0}} |
+| ITMG_MAIN_EVNET_TYPE_PTT_TEXT2SPEECH_COMPLETE | Text-to-speech conversion was completed | result; text;file_id |{{"file_id":"","text":"","result":0}} |
+| ITMG_MAIN_EVNET_TYPE_PTT_TRANSLATE_TEXT_COMPLETE | Text translation was completed | result; text;file_id |{{"file_id":"","text":"","result":0}} |
+
+​	
+
