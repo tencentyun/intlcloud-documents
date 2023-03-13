@@ -198,7 +198,7 @@ Set the scope of `gmesdk.dll` on Windows to prevent it from conflicting with `gm
 
 ### 2. Disable Flare Layer (on Unity 2018 or later)
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/894943f084fc5aefc94c709e35d65d0e.png"  width="60%" /></img>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/Gb53323_894943f084fc5aefc94c709e35d65d0e.png"  width="60%" /></img>
 
 As certain Unity versions no longer support the Flare Layer mode in `MainCamera`, you need to deselect Flare Layer in the scene to be built; otherwise, the following error will be reported:
 
@@ -214,7 +214,7 @@ When exporting to WebGL, select a WebGL template of GME to ensure that the relev
  
 Before importing GME for WebGL to your project, you need to manually import frontend libraries, place the library files in the corresponding import locations, and add the audio tag as shown below. If you want the above operations to be automatically completed every time you build a Unity project, you can add the corresponding template to your project by referring to the GME demo for WebGL.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b939e1cd5e331579440c16672a59c2e1.png"  width="60%" /></img>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/j2Qx251_b939e1cd5e331579440c16672a59c2e1.png"  width="60%" /></img>
 
 
 ### 5. FAQs about export
