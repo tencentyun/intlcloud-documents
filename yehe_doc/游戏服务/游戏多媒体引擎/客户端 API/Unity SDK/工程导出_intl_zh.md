@@ -198,7 +198,7 @@ GME Unity SDK 默认提供 arm64-v8a、armeabi-v7a 及 x86 的 lib 文件，请�
 
 ### 2. 取消Flare Layer（Unity 2018及以上版本）
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/894943f084fc5aefc94c709e35d65d0e.png"  width="60%" /></img>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/Gb53323_894943f084fc5aefc94c709e35d65d0e.png"  width="60%" /></img>
 
 由于部分 Unity 版本不再支持 MainCamera 中的 Flare Layer 模式，因此需要在要打包的 Scene 中将 Flare Layer 取消勾选，否则会报以下错误：
 
@@ -214,7 +214,7 @@ GME Unity SDK 默认提供 arm64-v8a、armeabi-v7a 及 x86 的 lib 文件，请�
  
 在将 GME-WebGL 导入到自己的工程中，在使用 Unity 生成好对应的网页时，需要手动引入前端库并将前端库文件放在相应的引用位置，并添加 Audio 标签（如下图所示）。如希望每次打包 Unity 产物的时候就自动完成上述工作，可以参考 GME-WebGL demo中的做法，为自己的工程添加相应的模板。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b939e1cd5e331579440c16672a59c2e1.png"  width="60%" /></img>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/j2Qx251_b939e1cd5e331579440c16672a59c2e1.png"  width="60%" /></img>
 
 
 ### 5. 导出问题
