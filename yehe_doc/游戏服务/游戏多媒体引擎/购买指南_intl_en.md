@@ -1,10 +1,10 @@
-﻿Game Multimedia Engine (GME) provides Voice Chat, Voice Messaging and Voice-to-Text services at the following prices.
+﻿Game Multimedia Engine (GME) provides Voice Chat, Voice Messaging and Speech-to-Text services at the following prices.
 
 
 ## Voice Chat
 Voice Chat is a pay-as-you-go service billed by voice duration on a monthly basis.
 
-#### Price list
+### Pricing
 
 <table>
    <tr>
@@ -36,11 +36,9 @@ Voice Chat is a pay-as-you-go service billed by voice duration on a monthly basi
       <td>Contact your Tencent Cloud rep</td>
    </tr>
 </table>
-
-
+ 
 
 >!
->- Voice duration is calculated based on the time a user enters and exits the room. If user A enters a voice room at 12:00, user B enters the room at 12:30, and both of them exit the room at 12:40, the duration of voice use would be 50 minutes in total (40 minutes for user A and 10 minutes for user B).
 >- Daily PCU refers to the highest number of concurrent online users for the day, and monthly peak PCU refers to the highest daily PCU value for the month. For example, if the daily PCU is 5,400 on the 2nd day and below 5,400 for the rest of the month, the monthly peak PCU will be 5,400.
 >- For services billed by PCU, fees will be charged per 5,000 PCUs. Values below 5,000 will be calculated as 5,000. For example, if the monthly peak PCU is 5,400, then the fees for the month will be 3,000 USD + 1,870 USD.
 
@@ -53,10 +51,10 @@ Voice Messaging is billed by the number of daily active users.
 <table>
    <tr>
       <td>Billing Mode</td>
-      <td>Unit Price (USD/user/day)</td>
+      <td>Unit Price (USD/DAU/Day)</td>
    </tr>
    <tr>
-      <td>Billed by number of users</td>
+      <td>Billed by voice message DAU</td>
       <td>0.0019 </td>
    </tr>
    </tr>
@@ -71,19 +69,21 @@ Voice Messaging is billed by the number of daily active users.
 
 
 
-## Voice-to-Text
 
-Voice-to-Text supports daily or monthly payment. Daily payment is set by default. If you want to switch to monthly payment, please submit a ticket.
+
+## Speech-to-Text
+
+Speech-to-Text supports daily or monthly payment. Daily payment is set by default. If you want to switch to monthly payment, please submit a ticket.
 
 ### Pricing
 <table>
    <tr>
       <td>Billing Mode</td>
-      <td>USD/15 seconds</td>
+      <td>Unit Price (USD/15 Seconds)</td>
    </tr>
    <tr>
       <td  rowspan="1">Billed by the duration of the audio or audio stream</td>
-      <td> 0.006 (Billed per 15 seconds. Requests shorten than 15 seconds are rounded up to 15 seconds.) </td>
+      <td> 0.006 (Billed per 15 seconds. Requests shorter than 15 seconds are rounded up to 15 seconds.) </td>
    </tr>
    </tr>
 </table>
@@ -94,10 +94,11 @@ Voice-to-Text supports daily or monthly payment. Daily payment is set by default
 ## Text Translation Service
 The Text Translation service is billed by the number of characters that need to be translated.
 
+### Pricing
 <table>
    <tr>
       <td>Billing Mode</td>
-      <td>USD/1 million characters</td>
+      <td>Unit Price (USD/1 Million Characters)</td>
    </tr>
    <tr>
       <td  rowspan="1">Billed by number of characters</td>
@@ -110,6 +111,13 @@ The Text Translation service is billed by the number of characters that need to 
 >?
 >
 >- This feature is now only available to beta users. To join the beta, please submit a ticket.
+
+
+## Text-to-Speech Service
+
+
+>?This feature hasn't been officially launched. To use it, contact the channel manager or submit a ticket to query the price.
+>
 
 
 ## Overdue Policy
