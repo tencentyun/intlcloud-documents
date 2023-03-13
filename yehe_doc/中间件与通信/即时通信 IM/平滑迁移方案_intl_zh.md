@@ -20,7 +20,7 @@
 
 强制升级策略是指完成即时通信 IM 数据同步后，强制 App 从1.0升级为2.0，此方案实施简单，升级后无需处理新老 App 兼容问题。具体方案如下图所示：
 
-![](https://main.qcloudimg.com/raw/e37a5686c81c73827c20312169c3ecc0.png)
+![](C:\Users\v_vzhbgao.TENCENT\Desktop\2731b340f2e93bd303e061bef4d62a2e.svg)
 
 主要流程如下：
 
@@ -38,7 +38,7 @@
 
 新老 App 可以共存，消息互通，在 App 1.0 停用之前，App 后台需要在新老系统之间保持实时双向同步，此方案相对复杂，对终端用户体验更好。具体方案如下图所示：
 
-![](https://main.qcloudimg.com/raw/3b19fed85458fa96ae7110fea8cb8e41.png)
+![](C:\Users\v_vzhbgao.TENCENT\Desktop\48cc1d15f80336966d57704183e46017.svg)
 
 主要流程如下：
 

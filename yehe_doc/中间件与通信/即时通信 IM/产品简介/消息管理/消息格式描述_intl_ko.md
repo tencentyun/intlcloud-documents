@@ -361,8 +361,8 @@ TIMMsgElement의 형식은 다음과 같습니다.
 | MsgNum | Integer | 결합/전달된 메시지 수. |
 | CompatibleText | String | 호환되는 텍스트. 결합된 메시지를 지원하지 않는 이전 버전의 SDK가 결합된 메시지를 수신하면 IM 백엔드는 메시지를 호환 가능한 텍스트로 변환하여 전달합니다. |
 | AbstractList | Array | String 배열 형식의 결합된 메시지 다이제스트 목록입니다. |
-| MsgList | Array | 메시지 목록. 이 필드는 결합된 메시지의 합계가 8K 이하인 경우에만 사용할 수 있으며 이 경우 JsonMsgKey 필드를 사용할 수 없습니다. |
-| JsonMsgKey | String | 결합된 메시지 목록의 키. 이 필드는 결합된 메시지의 합계가 8K보다 큰 경우에만 사용할 수 있으며 이 경우 MsgList 필드를 사용할 수 없습니다. |
+| MsgList | Array | 메시지 목록. 이 필드는 결합된 메시지의 합계가 12K 이하인 경우에만 사용할 수 있으며 이 경우 JsonMsgKey 필드를 사용할 수 없습니다. |
+| JsonMsgKey | String | 결합된 메시지 목록의 키. 이 필드는 결합된 메시지의 합계가 12K보다 큰 경우에만 사용할 수 있으며 이 경우 MsgList 필드를 사용할 수 없습니다. |
 
 MsgList의 각 메시지 구조는 다음과 같습니다.
 
@@ -479,8 +479,6 @@ CloudCustomData 및 MsgBody 형식 예시는 다음과 같습니다.
     ] 
 }
 ```
-![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.pngg)
-
 다음 표에는 다양한 메시지 요소의 푸시 텍스트 필드가 요약되어 있습니다.
 
 | MsgType 값 | 유형 |메시지 요소 푸시 텍스트|
@@ -572,7 +570,7 @@ OfflinePushInfo의 형식 예시는 다음과 같습니다.
 
  필드 설명은 다음과 같습니다.
 
-| 필드 | 유형 | 속성 | 설명 |
+| 필드 | 유형 | 필수 | 설명 |
 |---------|---------|---------|---------|
 | PushFlag | Integer | 옵션 | 0: 푸시 활성화, 1: 오프라인 푸시 비활성화  |
 | Title | String | 옵션| 오프라인 푸시 제목. 이 필드는 iOS 및 Android에 모두 적용됩니다.|
@@ -590,11 +588,11 @@ OfflinePushInfo의 형식 예시는 다음과 같습니다.
 | ApnsInfo.Title|String|옵션|APNs 푸시 메시지의 제목. 입력하면 가장 상단의 Title을 덮어쓰기합니다.|
 | ApnsInfo.SubTitle|String|옵션|APNs 푸시 메시지의 부제목.|
 | ApnsInfo.Image|String|옵션|해당 필드는 APNs에 포함된 이미지 URL. 클라이언트에서 이 필드를 획득하면 URL을 통해 이미지를 다운로드하여 팝업 창에 이미지를 표시합니다. |
-| ApnsInfo.MutableContent | Integer | 옵션| 1: iOS 10 푸시 확장 활성화. 기본값: 0.|
+| ApnsInfo.MutableContent | Integer | 옵션| 1: iOS 10+ 푸시 확장 활성화. 기본값: 0.|
 
 >!APNs 푸시에서 지원하는 최대 데이터 패킷 크기는 4K입니다. Desc와 Ext 필드의 총 크기는 3K를 초과하지 않는 것이 좋습니다.
 
 ## 참고
 
 Apple Push Notification Service(APNs) [Apple 푸시 개발 문서](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1).
-iOS 오프라인 메시지 푸시 설정: [Offline Push (iOS)](https://www.tencentcloud.com/zh/document/product/1047/34347).
+iOS 오프라인 메시지 푸시 설정: [Offline Push (iOS)](https://www.tencentcloud.com/document/product/1047/34347).

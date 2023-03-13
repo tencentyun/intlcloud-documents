@@ -19,7 +19,7 @@
 
 在实现游戏内组队等需求时，需要用到 IM 的回调模块，即 IM 后台在某些特定的场景回调开发者业务后台。开发者只需要提供一个 HTTP 的接口并且配置在 [控制台 > 回调配置](https://console.cloud.tencent.com/im/callback-setting) 模块即可，如下图所示：
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/NDSF820_1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/365705a8a72a1e15ec5259e164beeb06.png)
 
 ### 集成客户端 SDK
 

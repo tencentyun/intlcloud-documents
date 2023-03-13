@@ -1,6 +1,6 @@
 直播在生活中可谓是无处不在，越来越多的企业、开发者们正在搭建自己的直播平台。由于直播平台本身所涉及到的如推拉直播流、直播转码、直播截图、直播混流、直播间聊天室、直播间互动（点赞、送礼、连麦）、直播间状态管理等需求往往比较复杂，本文章以腾讯云相关产品（[腾讯云即时通信 IM](https://console.cloud.tencent.com/im)、[腾讯云直播 CSS](https://console.cloud.tencent.com/live/livestat) ）为基础，梳理了在搭建直播间过程中常见的需求的实现方案，以及可能遇到的问题、需要注意的细节点等，希望能帮助开发者们快速的理解业务、实现需求。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/91a6136c0b000f0c76b72a890f3e41ac.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/bd431307af0643d731a59b6211be54a8.png)
 
 
 
@@ -9,12 +9,12 @@
 ### 创建应用
 
 使用腾讯云搭建直播间首先要在 [控制台](https://console.cloud.tencent.com/im) 创建一个即时通信 IM 应用，如下图所示：
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-081650.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cf88237a876833c58d50bf4c50f90a97.png)
 
 ### 添加直播推流及播放域名
 
 搭建直播间，少不了直播功能，直播功能可以通过 [云直播](https://console.cloud.tencent.com/live/livestat) 来实现。需要添加推流及播放域名，如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/fb8a00c48c21bd8d8d74b5a83105893d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c3d16ab2edd963d9e2da6c5e0eb9ea62.png)
 操作详情请参见 [添加自有域名](https://intl.cloud.tencent.com/document/product/267/35970)。
 
 
@@ -26,7 +26,7 @@
 
 #### 使用密钥计算 UserSig
 在 IM 的账号体系中，用户登录需要的密码由用户服务端使用 IM 提供的密钥计算，用户可参见 [UserSig计算](https://intl.cloud.tencent.com/document/product/1047/34385) 文档，在开发阶段，为了不阻塞客户端开发，也可在 [控制台计算 UserSig](https://console.cloud.tencent.com/im/tool-usersig) ，如下图所示：
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-083650.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5075d8e78f6c31da25d8fa2bf2e940f7.png)
 
 #### 配置管理员账号
 
@@ -36,7 +36,7 @@
 
 在实现直播间弹幕抽奖、消息统计、敏感内容检测等需求时，需要用到 IM 的回调模块，即 IM 后台在某些特定的场景回调开发者业务后台。开发者只需要提供一个 HTTP 的接口并且配置在 [控制台 > 回调配置](https://console.cloud.tencent.com/im/callback-setting) 模块即可，如下图所示：
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/N73j869_9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4c9580f801581b5ac4a7a90dcebac706.png)
 
 
 ### 集成客户端 SDK
@@ -388,7 +388,7 @@ promise.then(function(imResponse) {
 
 ### 礼物与点赞消息最佳实践
 
-![](https://qcloudimg.tencent-cloud.cn/raw/5c7b5b56d78df30840ff9b0ddad00467.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/bf0d1df7fcbf05819643f27091c64e98.png)
 
 #### 礼物消息
 
@@ -416,10 +416,10 @@ promise.then(function(imResponse) {
 5. ...
 
 其中和 IM 相关的如统计在线时长、统计消息量等我们都需要使用 IM 的回调来实现。在第一个准备工作的模块中，有配置回调的相关指引，[控制台](https://console.cloud.tencent.com/im/callback-setting) 中具体的回调如图：
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-083830.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6d6fdc21dd0b75dc0f8d8f38e95d5bf0.jpg)
 
 统计相关信息的流程图如图：
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-091055.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5f1779379a08a66b0647cc368404a439.jpg)
 
 
 消息发送后回调数据示例：
@@ -478,7 +478,7 @@ promise.then(function(imResponse) {
 ### 直播间历史消息
 
 使用 AVChatRoom 默认不存储直播间历史消息，当新用户进入直播间后，只能看到进入直播间后用户发送的消息。为了优化新进群用户的体验，可在控制台配置直播群用户拉取进群前消息条数，如图：
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-085957.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/648238f2a9ebddf3d946494a1fd0cd76.jpg)
 
 
 
@@ -815,7 +815,7 @@ promise.then(function(imResponse) {
 [群组监听其他 SDK 版本代码示例](https://intl.cloud.tencent.com/document/product/1047/48466)
 
 需要注意的是，群成员禁言状态的变更默认不会下发通知给客户端，需要到 [控制台进行配置](https://console.cloud.tencent.com/im/qun-setting)：
-![](https://qcloudimg.tencent-cloud.cn/raw/07c6f6e757a2c05358e7d79ac83b7c68.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/734a516e0507894e087cbbe21d955b17.png)
 
 >?客户端 SDK 暂时不支持直播间禁言，可使用服务端 API 进行 [封禁](https://intl.cloud.tencent.com/document/product/1047/50296) 以及 [解封](https://intl.cloud.tencent.com/document/product/1047/50297)。
 
@@ -826,7 +826,7 @@ promise.then(function(imResponse) {
 
 [控制台相关配置](https://console.cloud.tencent.com/im/callback-setting) 如图所示：
 
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-090320.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/120263819a43d755069750ae853623d0.png)
 
 
 >!**在客户端 SDK 6.6.X 及以上版本、Flutter SDK 4.1.1 及以上版本，可以使用直播间踢人接口实现封禁功能。**
@@ -953,7 +953,7 @@ tim.deleteGroupMember(options);
 
 敏感内容检测流程图如图所示：
 
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-091347.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fe9f27edee7601b0e6153321887c5eec.png)
 
 
 ### 直播间群成员列表
@@ -965,7 +965,7 @@ tim.deleteGroupMember(options);
 
 控制台配置如图2.6：
 
-![img](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-090445.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/d8b552ecd47be3e749a91ef002bec855.jpg)
 
 如果是非旗舰版，开发者也可通过`getGroupMemberList`与群监听中的 onGroupMemberEnter 和 onGroupMemberQuit 回调，在客户端维护当前在线群成员列表。但此方案用户退出直播间重新进入后，也只能获取最新的30位群成员。
 

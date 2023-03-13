@@ -3,7 +3,7 @@
 ## 新建帐号
 1. 在帐号管理页面，单击新建帐号。
 2. 在弹出的新建帐号对话框中，配置以下参数：
-<img style="width:518px; max-width: inherit;" src="https://staticintl.cloudcachetci.com/yehe/backend-news/6upg172_1.png" /><br>
+<img style="width:518px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/e4d68012c93181fdc836c823e4cf5e33.png" /><br>
  - 帐号类型：区分普通帐号和管理员帐号。“App管理员”是对 App 具有最高管理权限的角色，可调用 REST API 接口，进行创建/解散群组、发送全员推送消息等操作。每个应用最多支持配置 10 个管理员。
  - 用户名：需输入用户名（UserID），必填。
  - 用户昵称：可输入用户昵称，非必填。
@@ -13,12 +13,14 @@
 
 ## 删除帐号
 1. 在帐号管理页面，在列表中选中需要删除的帐号，单击**批量删除**。
+<img style="width:518px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/386e1be5b97951663f8976381d1ddc51.png" />
 2. 在弹出的确认对话框中，单击**确定**确认删除。删除后数据无法恢复，请谨慎操作。
-<img style="width:518px; max-width: inherit;" src="https://staticintl.cloudcachetci.com/yehe/backend-news/Xdg3340_2.png" />
+<img style="width:518px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/962d9b982d7d482085e3864c961c9630.png" />
 
 ## 编辑帐号
 1. 在帐号管理页面，在列表中希望编辑的帐号操作列，单击编辑。
-2. 在弹出的编辑帐号对话框中，配置参数：<br>
+2. 在弹出的编辑帐号对话框中，配置以下参数：
+<img style="width:518px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/d6eed3309fa4ab04f6acbf7b905b14e6.png" /><br>
  - 用户名：不可编辑。
  - 昵称：可编辑用户昵称，非必填。
  - 帐号类型：不可编辑。
@@ -37,8 +39,10 @@
 
 ## 导出帐号
 1. 单独导出：在帐号管理页面，在列表中希望导出的帐号操作列，单击导出。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/Vk7p229_3.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fd1619918cec2261cd5896d3e4c54c0e.png)
 2. 批量导出：在账号管理页面，在列表中选中需要导出的帐号，单击批量导出。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/fRPa288_4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/99803ae45341a45148c31efba2cd24e6.png)
 3. 在弹出的导出对话框中提示导出成功后，单击下载，即完成导出。<br>
+<img style="width:518px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/eec7a52b73747cb772cb3f2821f3eabb.png" />
+
 

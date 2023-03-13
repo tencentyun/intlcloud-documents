@@ -1,3 +1,71 @@
+## 2023년 01월
+<table>
+<tr><th width="20%">업데이트</th>  <th width="44%">설명</th><th width="15%">배포일</th><th width="21%">문서</th>
+</tr> 
+<tr>
+    <td> SDK 7.0.3754 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+    <li> 모든 유형의 메시지에서 그룹 구성원 언급(@) 지원 </li>
+    <li> 대화 filter별로 읽지 않은 총 메시지 수 가져오기 지원 </li>
+    <li> 일반 그룹 및 오디오-비디오 그룹 meta counter 지원 </li>
+    <li> 문자 메시지 번역 지원 </li> 
+    <li> 커뮤니티 그룹 속성 사용자 정의 지원 </li>     
+    <li> 오프라인 푸시 Huawei category 및 Xiaomi channel ID 설정 지원 </li>
+    <li> 업데이트 관련 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">업데이트 로그(단말)</a>를 참고하십시오</li>    
+        </ul></td>
+    <td> 2023-01-06 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">네이티브 SDK 다운로드</a></td>
+</tr> 
+<tr>
+    <td>클라우드 조정 기능 출시</td>
+    <td>클라우드 조정 기능은 서버에서 일대일 채팅, 그룹 채팅, 프로필 시나리오에서 생성되는 텍스트, 이미지, 오디오 및 비디오 콘텐츠를 확인합니다. 다양한 시나리오에서 다양한 콘텐츠에 대해 다양한 조정 정책을 구성하고 식별된 안전하지 않은 콘텐츠를 차단할 수 있습니다.</td>
+    <td> 2023-01-04 </td>
+    <td> <a href="https://www.tencentcloud.com/document/product/1047/52497#.E4.BA.91.E7.AB.AF.E5.AE.A1.E6.A0.B8.E5.8A.9F.E8.83.BD">클라우드 조정</a></td>
+</tr> 
+</table>
+
+## 2022년 12월
+<table>
+<tr><th width="20%">업데이트</th>  <th width="44%">설명</th><th width="15%">배포일</th><th width="21%">문서</th>
+</tr> 
+<tr>
+    <td> 로컬 조정 기능 출시</td>
+    <td>로컬 조정 기능은 ‘클라이언트 로컬 텍스트 조정’입니다. 민감한 단어 필터링을 달성하기 위해 클라이언트에서 로컬로 텍스트의 민감한 단어를 차단하거나 교체합니다. 문자 발송, 닉네임/비고/단체 알림 수정 등의 작업 중 생성되었으나 발송되지 않기를 원하는 민감한 단어를 차단 또는 교체할 수 있는 기능입니다.</td>
+    <td> 2022-12-07 </td>
+    <td> <a href="https://www.tencentcloud.com/document/product/1047/52497">콘텐츠 조정</a></td>
+</tr> 
+</table>
+
+## 2022년 11월
+<table>
+<tr><th width="20%">업데이트</th>  <th width="44%">설명</th><th width="15%">배포일</th><th width="21%">문서</th>
+</tr>
+    <tr>
+    <td> SDK 6.9.3557 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+    <li> Android용 메시지에서 V2TIMOfflinePushInfo 콘텐츠를 가져올 때 가끔 충돌이 발생하는 문제 수정 </li>
+    <li> Android용 Pro SDK 인핸스드 버전이 가끔 충돌하는 문제 수정 </li>
+    <li> C API TIMConvGetConvList에서 반환된 json 데이터 콘텐츠 개선 </li>
+    <li> 글로벌 App 스타일에 더 부합하는 새로운 미니멀리스트 테마 릴리스 </li>    
+        </ul></td>
+    <td> 2022-11-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">네이티브 SDK 다운로드</a></td>
+</tr>
+    <tr>
+    <td> SDK 6.8.3374 인핸스드 버전 배포</td>
+    <td><ul style="margin:0">
+    <li> 클라이언트 로컬 텍스트 조정 지원 </li>
+    <li> Swift SDK 릴리스 </li>
+    <li> 일반 그룹에 대한 그룹 속성 기능 지원 </li>
+    <li> 누군가가 일반 그룹 입장 시 구성원 수 업데이트 로직 최적화 </li>     
+    <li> 사용자 지정 친구 필드가 독립적으로 설정된 경우 알림을 전달하지 못하는 문제 수정 </li>
+    <li> 업데이트 관련 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/1047/34282">업데이트 로그(단말)</a>를 참고하십시오</li>    
+        </ul></td>
+    <td> 2022-11-14 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">네이티브 SDK 다운로드</a></td>
+</tr> 
+</table>
+
 ## 2022년 08월
 <table>
 <tr><th width="20%">업데이트 명칭</th>  <th width="44%">업데이트 설명</th><th width="15%">배포일</th><th width="21%">관련 문서</th>
