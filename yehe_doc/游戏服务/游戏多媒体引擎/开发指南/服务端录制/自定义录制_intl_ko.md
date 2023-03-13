@@ -50,10 +50,10 @@ GME는 실시간 음성 채팅 스트림을 위한 **서버 녹음** 기능을 �
 ### 3. 녹음 메커니즘
 
 #### 녹음 작업 실행 메커니즘
-- ***StartRecord(https://www.tencentcloud.com/ko/document/product/607/53736)*** API를 호출하면 지정된 방 녹음 작업이 시작됩니다
+- [***StartRecord()***](https://www.tencentcloud.com/ko/document/product/607/53736)*** API를 호출하면 지정된 방 녹음 작업이 시작됩니다
 
 #### 녹음 작업 종료 메커니즘
-- ***StopRecord(https://www.tencentcloud.com/ko/document/product/607/53735)*** API를 호출하면 지정된 방 녹음 작업이 종료됩니다
+- [***StopRecord()***](https://www.tencentcloud.com/ko/document/product/607/53735)*** API를 호출하면 지정된 방 녹음 작업이 종료됩니다
 
 
 #### 녹음 파일 생성 타이밍
