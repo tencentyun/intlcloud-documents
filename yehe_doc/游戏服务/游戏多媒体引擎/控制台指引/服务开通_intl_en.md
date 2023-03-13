@@ -50,10 +50,10 @@ In **Authentication info**, you can obtain the AppID and permission key required
 ![](https://qcloudimg.tencent-cloud.cn/raw/667413c114bec5fc5f73cb0f08c3d472.png)
 
 > ?
-- The permission key here will be used as a parameter when accessing the SDK. 
-- After you reset the key, it will take effect within 15 minutes to 1 hour. It is not recommended to change it frequently.
-- The option of **Reset key** is only available for the account that creates the game, root account, and global collaborators.
-- For more information about authentication, see [Authentication Key](https://www.tencentcloud.com/zh/document/product/607/12218).
+>- The permission key here will be used as a parameter when accessing the SDK. 
+>- After you reset the key, it will take effect within 15 minutes to 1 hour. It is not recommended to change it frequently.
+>- The option of **Reset key** is only available for the account that creates the game, root account, and global collaborators.
+>- For more information about authentication, see [Authentication Key](https://www.tencentcloud.com/zh/document/product/607/12218).
 
 
 
