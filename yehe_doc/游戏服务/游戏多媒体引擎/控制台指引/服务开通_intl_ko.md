@@ -49,11 +49,11 @@
 ‘인증 정보’에서 SDK 음성 서비스에 필요한 AppID 및 권한 키를 얻을 수 있습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/667413c114bec5fc5f73cb0f08c3d472.png)
 
-> ?
-- 여기에서 권한 키는 SDK 연결 시 매개변수로 사용됩니다. 
-- 키 재설정 후 15분 - 1시간 이내에 적용됩니다. 자주 바꾸는 것은 권장하지 않습니다.
-- **키 재설정** 옵션은 게임 생성 계정, 루트 계정, 글로벌 협업 파트너만 가능합니다.
-- 인증에 대한 자세한 내용은 [Authentication Key](https://www.tencentcloud.com/zh/document/product/607/12218)를 참고하십시오.
+>?
+>- 여기에서 권한 키는 SDK 연결 시 매개변수로 사용됩니다. 
+>- 키 재설정 후 15분 - 1시간 이내에 적용됩니다. 자주 바꾸는 것은 권장하지 않습니다.
+>- **키 재설정** 옵션은 게임 생성 계정, 루트 계정, 글로벌 협업 파트너만 가능합니다.
+>- 인증에 대한 자세한 내용은 [Authentication Key](https://www.tencentcloud.com/zh/document/product/607/12218)를 참고하십시오.
 
 
 
