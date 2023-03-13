@@ -20,7 +20,7 @@ GME는 Init 및 Poll과 같은 핵심 API에 의존하는 실시간 음성, 음�
 - 자세한 에러 코드는 [에러 코드](https://intl.cloud.tencent.com/document/product/607/33223)를 참고하십시오.
   
 
-   > **참고**
+   >!
    > 
    > 음성-텍스트 변환 API는 기본 빈도 제한이 있습니다. 한도 내 과금 방식은 [구매 가이드](https://intl.cloud.tencent.com/document/product/607/50009)를 참고하십시오. 한도를 늘리고 싶거나 빈도 초과 시 과금 방식에 대해 자세히 알아보려면 비즈니스 매니저에게 문의하거나 [티켓 제출](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)하시기 바랍니다.
    >   - 음성 메시지 비스트리밍 텍스트 변환 API **SpeechToText()**: 단일 계정 기본 동시 연결 수는 10개 입니다
@@ -121,12 +121,11 @@ public abstract int Init(string sdkAppID, string openID);
 <tr>
 <td rowspan="1" colSpan="1" >sdkAppId</td>
 <td rowspan="1" colSpan="1" >string</td>
-<td rowspan="1" colSpan="1" >[GME 콘솔](https://console.cloud.tencent.com/gamegme)에서 제공되는 AppID는 [서비스 활성화](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)의 안내에 따라 얻을 수 있습니다.</td>
-</tr>
+<td rowspan="1" colSpan="1" ><a href="https://console.cloud.tencent.com/gamegme">GME 콘솔에서 제공되는 AppID는 <a href="https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0">서비스 활성화</a>의 안내에 따라 얻을 수 있습니다.</td>
 <tr>
 <td rowspan="1" colSpan="1" >openID</td>
 <td rowspan="1" colSpan="1" >string</td>
-<td rowspan="1" colSpan="1" >openID는 Int64 유형만 가능하며 문자열로 변환되어 전달됩니다. 해당 규칙을 사용자 정의할 수 있으며 App에서 고유해야 합니다. openID를 문자열로 전달하기 위해서는 [티켓 제출](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)하여 신청하십시오.</td>
+<td rowspan="1" colSpan="1" >openID는 Int64 유형만 가능하며 문자열로 변환되어 전달됩니다. 해당 규칙을 사용자 정의할 수 있으며 App에서 고유해야 합니다. openID를 문자열로 전달하기 위해서는 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1">티켓 제출</a>하여 신청하십시오.</td>
 </tr>
 </table>
 
@@ -148,7 +147,7 @@ public abstract int Init(string sdkAppID, string openID);
 </table>
 
 
-> **7015 오류 메시지**
+>!**7015 오류 메시지**
 > 
 > - 7015 에러 코드는 md5로 판단됩니다. 통합 중에 이 오류가 보고되면 메시지에 따라 SDK 파일의 무결성과 버전을 확인하십시오.
 > - 반환 값 AV_ERR_SDK_NOT_FULL_UPDATE는 사전 **알림일 뿐**이며 초기화 실패를 일으키지는 않습니다.
@@ -170,7 +169,7 @@ if (ret != QAVError.OK)
 
 이벤트 콜백은 update에서 Poll API를 주기적으로 호출하여 트리거할 수 있습니다. Poll API는 GME의 메시지 펌프이며 GME가 이벤트 콜백을 트리거하도록 주기적으로 호출해야 합니다. 그렇지 않으면 전체 SDK 서비스가 비정상적으로 실행됩니다. 자세한 내용은 [SDK 다운로드 가이드](https://intl.cloud.tencent.com/document/product/607/18521)의 EnginePollHelper 파일을 참고하십시오.
 
-> **참고**
+>!
 > 
 > 비정상적인 API 콜백을 방지하기 위해 Poll API는 주기적으로 메인 스레드에서 호출되어야 합니다.
 > 
@@ -218,7 +217,7 @@ ITMGContext public abstract int Uninit()
 
 ## 음성 메시지 서비스 및 음성-텍스트 변환 서비스
 
-> **설명**
+>?
 > 
 > - 음성-텍스트 변환 서비스는 빠른 녹음 파일 텍스트 변환 및 음성 메시지 스트리밍 텍스트 변환으로 구성됩니다.
 > - 음성 메시지 서비스 이용 시 음성 채팅방에 입장할 필요가 없습니다.
@@ -284,7 +283,7 @@ QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
 <tr>
 <td rowspan="1" colSpan="1" >key</td>
 <td rowspan="1" colSpan="1" >string</td>
-<td rowspan="1" colSpan="1" >Tencent Cloud [콘솔](https://console.cloud.tencent.com/gamegme)의 권한 키.</td>
+<td rowspan="1" colSpan="1" >Tencent Cloud <a href="https://console.cloud.tencent.com/gamegme">콘솔</a>의 권한 키.</td>
 </tr>
 </table>
 
@@ -370,7 +369,7 @@ ITMGContext.GetInstance().GetPttCtrl().SetMaxMessageLength(58000);
 
 ### 스트리밍 음성 인식 시작
 
-이 API는 스트리밍 음성 인식을 시작하는 데 사용됩니다. 음성-텍스트 변환된 텍스트는 콜백에서 실시간으로 반환됩니다. 인식할 언어를 지정하거나 음성에서 인식된 정보를 지정된 언어로 번역하여 반환할 수 있습니다. **녹음을 중지하려면 **[**녹음 중지**](https://write.woa.com/document/102980915702525952)**를 호출합니다.**
+이 API는 스트리밍 음성 인식을 시작하는 데 사용됩니다. 음성-텍스트 변환된 텍스트는 콜백에서 실시간으로 반환됩니다. 인식할 언어를 지정하거나 음성에서 인식된 정보를 지정된 언어로 번역하여 반환할 수 있습니다. **녹음을 중지하려면** [녹음 중지](https://write.woa.com/document/102980915702525952)**를 호출합니다.**
 
 #### API 프로토타입
 ``` bash
@@ -391,12 +390,12 @@ ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string speec
 <tr>
 <td rowspan="1" colSpan="1" >speechLanguage</td>
 <td rowspan="1" colSpan="1" >String</td>
-<td rowspan="1" colSpan="1" >언어 매개변수를 지정하여 해당 언어로 텍스트 변환을 진행합니다. 매개변수는 [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260)를 참고하십시오.</td>
+<td rowspan="1" colSpan="1" >언어 매개변수를 지정하여 해당 언어로 텍스트 변환을 진행합니다. 매개변수는 <a href="https://intl.cloud.tencent.com/document/product/607/30260">Language Parameter Reference List</a>를 참고하십시오.</td>
 </tr>
 <tr>
 <td rowspan="1" colSpan="1" >translateLanguage</td>
 <td rowspan="1" colSpan="1" >String</td>
-<td rowspan="1" colSpan="1" >언어 매개변수를 지정하여 해당 언어로 번역합니다. 매개변수는 [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260)를 참고하십시오.</td>
+<td rowspan="1" colSpan="1" >언어 매개변수를 지정하여 해당 언어로 번역합니다. 매개변수는 <a href="https://intl.cloud.tencent.com/document/product/607/30260">Language Parameter Reference List</a>를 참고하십시오.</td>
 </tr>
 </table>
 
@@ -407,7 +406,7 @@ string recordPath = Application.persistentDataPath + string.Format("/{0}.silk", 
 int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingRecognition(recordPath, "cmn-Hans-CN","cmn-Hans-CN");
 ```
 
-> **참고**
+>!
 > 
 >  번역은 추가 요금이 발생합니다. 자세한 내용은 [구매 가이드](https://intl.cloud.tencent.com/document/product/607/50009)를 참고하십시오.
 > 
@@ -447,7 +446,7 @@ int ret = ITMGContext.GetInstance().GetPttCtrl().StartRecordingWithStreamingReco
 </table>
 
 
-   > **참고**
+   >!
    > 
    > file_id는 `ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING` 메시지 수신 시 비어 있습니다.
    > 
@@ -1022,7 +1021,7 @@ ITMGPTT PlayRecordedFile(string filePath,int voiceType);
 <tr>
 <td rowspan="1" colSpan="1" >voicetype</td>
 <td rowspan="1" colSpan="1" >int</td>
-<td rowspan="1" colSpan="1" >음성 변조 유형. 자세한 내용은 [음성 변조](https://intl.cloud.tencent.com/document/product/607/44995)를 참고하십시오.</td>
+<td rowspan="1" colSpan="1" >음성 변조 유형. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/607/44995">음성 변조</a>를 참고하십시오.</td>
 </tr>
 </table>
 
@@ -1227,7 +1226,7 @@ ITMGContext.GetInstance().GetPttCtrl().SpeechToText(fileID);
 
 이 API는 인식할 언어를 지정하거나 음성으로 인식된 정보를 지정된 언어로 번역하여 반환할 수 있습니다.
 
-> **참고**
+>!
 > 
 > 번역은 추가 요금이 발생합니다. 자세한 내용은 [구매 가이드](https://intl.cloud.tencent.com/document/product/607/50009)를 참고하십시오.
 > 
@@ -1252,12 +1251,12 @@ ITMGPTT int SpeechToText(String fileID,String speechLanguage,String translatelan
 <tr>
 <td rowspan="1" colSpan="1" >speechLanguage</td>
 <td rowspan="1" colSpan="1" >String</td>
-<td rowspan="1" colSpan="1" >언어 매개변수를 지정하여 해당 언어로 텍스트 변환을 진행합니다. 매개변수는 [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260)를 참고하십시오.</td>
+<td rowspan="1" colSpan="1" >언어 매개변수를 지정하여 해당 언어로 텍스트 변환을 진행합니다. 매개변수는 <a href="https://intl.cloud.tencent.com/document/product/607/30260">Language Parameter Reference List</a>를 참고하십시오.</td>
 </tr>
 <tr>
 <td rowspan="1" colSpan="1" >translatelanguage</td>
 <td rowspan="1" colSpan="1" >String</td>
-<td rowspan="1" colSpan="1" >언어 매개변수를 지정하여 해당 언어로 번역합니다. 매개변수는 [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260)를 참고하십시오.</td>
+<td rowspan="1" colSpan="1" >언어 매개변수를 지정하여 해당 언어로 번역합니다. 매개변수는 <a href="https://intl.cloud.tencent.com/document/product/607/30260">Language Parameter Reference List</a>를 참고하십시오.</td>
 </tr>
 </table>
 
