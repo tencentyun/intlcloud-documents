@@ -322,7 +322,7 @@ RFC 2616で定義されたHTTPリクエストのコンテンツの長さ（バ�
 
 #### 事例1: リクエストヘッダーContent-Lengthの最大値を制限する
 
-PutObjectおよびPostObjectのアップロードリクエストには必ずContent-Lengthヘッダーが含まれなければならず、かつこのヘッダーの値を10以下とするよう制限します。
+PutObjectおよびPostObjectのアップロードリクエストには必ずContent-Lengthヘッダーが含まれなければならず、かつこのヘッダーの値を10バイト以下とするよう制限します。
 
 ```
 {
@@ -374,7 +374,7 @@ PutObjectおよびPostObjectのアップロードリクエストには必ずCont
 
 #### 事例2: リクエストヘッダーContent-Lengthの最小値を制限する
 
-PutObjectおよびPostObjectのアップロードリクエストには必ずContent-Lengthヘッダーが含まれなければならず、かつContent-Lengthの値を2以上とするよう制限します。
+PutObjectおよびPostObjectのアップロードリクエストには必ずContent-Lengthヘッダーが含まれなければならず、かつContent-Lengthの値を2バイト以上とするよう制限します。
 
 ```
 {
@@ -830,21 +830,21 @@ COSのストレージタイプフィールドには、`STANDARD`、`MAZ_STANDARD
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "numeric_equal":{
                     "cos:tls-version":1.2
                 }
@@ -869,40 +869,40 @@ COSのストレージタイプフィールドには、`STANDARD`、`MAZ_STANDARD
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "numeric_greater_than_equal":{
                     "cos:tls-version":1.2
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "numeric_less_than_if_exist":{
                     "cos:tls-version":1.2
                 }
@@ -916,6 +916,11 @@ COSのストレージタイプフィールドには、`STANDARD`、`MAZ_STANDARD
 <span id="request_tag"></span>
 ### バケット作成時に指定のバケットタグを強制的に設定（qcs:request_tag）
 
+>?
+>条件キーrequest_tagはPutBucket、PutBucketTagging操作にのみ適用可能です。GetService、PutObject、PutObjectTaggingなどの操作はこの条件キーをサポートしていません。
+>
+
+
 #### 条件キー qcs:request_tag
 
 条件キー`qcs:request_tag`によって、ユーザーがPutBucket、PutBucketTaggingリクエストを送信する際に、必ず指定したバケットタグを含めるよう制限することができます。
@@ -924,7 +929,7 @@ COSのストレージタイプフィールドには、`STANDARD`、`MAZ_STANDARD
 
 多くのユーザーはバケットタグによってバケットを管理しています。次のポリシーの例は、ユーザーがバケットを作成する際、指定のバケットタグ`<a,b>`および`<c,d>`を設定した場合にのみ権限を取得できるよう制限するものです。
 
-バケットタグは複数設定することができ、条件キー内のバケットタグの数とリクエストに含まれるバケットタグの数はすべて1つのセットである可能性があります。ユーザーの持つ複数のパラメータ値をセットA、条件で規定する複数のパラメータ値をセットBと仮定します。この条件キーを使用する際、限定語for_any_value、for_all_valueの組み合わせによって異なる意味を表すことができます。
+バケットタグは複数設定することができ、バケットタグのキー値、タグの数が異なると、それらはすべて異なるセットとなります。ユーザーの持つ複数のパラメータ値をセットA、条件で規定する複数のパラメータ値をセットBと仮定します。この条件キーを使用する際、限定語for_any_value、for_all_valueの組み合わせによって異なる意味を表すことができます。
 - `for_any_value:string_equal`はAとBに共通部分が存在する場合に発効することを表します。
 - `for_any_value:string_equal`はAがBのサブセットである場合に発効することを表します。
 
@@ -941,19 +946,19 @@ COSのストレージタイプフィールドには、`STANDARD`、`MAZ_STANDARD
 ```
 {
     "version": "2.0",
-    "Statement": [
+    "statement":[
         {
-            "Principal": {
+            "principal":{
                 "qcs": [
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect": "allow",
-            "Action": [
+            "effect": "allow",
+            "action":[
                 "name/cos:PutBucket"
             ],
-            "Resource": "*",
-            "Condition":{
+            "resource": "*",
+            "condition":{
                 "for_any_value:string_equal":{
                     "qcs:request_tag": [
                         "a&b",
@@ -983,19 +988,19 @@ COSのストレージタイプフィールドには、`STANDARD`、`MAZ_STANDARD
 ```
 {
     "version": "2.0",
-    "Statement": [
+    "statement":[
         {
-            "Principal": {
+            "principal":{
                 "qcs": [
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect": "allow",
-            "Action": [
+            "effect": "allow",
+            "action":[
                 "name/cos:PutBucket"
             ],
-            "Resource": "*",
-            "Condition":{
+            "resource": "*",
+            "condition":{
                 "for_all_value:string_equal": {
                     "qcs:request_tag": [
                         "a&b",

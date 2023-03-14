@@ -1,6 +1,6 @@
 ## ユースケース
 
-Cloud Object Storage（COS）に保存済みのオブジェクトのシンプルなコピー操作を行うことで、新しいオブジェクトレプリカを作成することができます。1回の操作で最大5GBのオブジェクトをコピーすることができます。オブジェクトが5GBを超える場合は、必ずマルチパートアップロードインターフェースを使用してコピーを行わなければなりません。オブジェクトコピーには次の機能があります。
+Cloud Object Storage（COS）に保存済みのオブジェクトのシンプルなコピー操作を行うことで、新しいオブジェクトレプリカを作成することができます。1回の操作で最大5GBのオブジェクトをコピーすることができます。オブジェクトが5GBを超える場合は、必ず[マルチパートコピー](https://intl.cloud.tencent.com/document/product/436/14118)インターフェースを使用してコピーを行わなければなりません。オブジェクトコピーには次の機能があります。
 
 - 新しいオブジェクトレプリカを作成します。
 - オブジェクトをコピーして名前を変更し、元のオブジェクトを削除することでリネームを実現します。
@@ -29,15 +29,15 @@ REST APIを直接使用してオブジェクトコピーリクエストを送信
 
 SDKのオブジェクトコピー設定メソッドを直接呼び出すことができます。詳細については、下記の各言語のSDKドキュメントをご参照ください。
 
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/37674)
-- [C SDK](https://intl.cloud.tencent.com/document/product/436/31518)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/40494)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/44872)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/38062)
-- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31526)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37683)
-- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31534)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31538)
-- [Node.js SDK ](https://intl.cloud.tencent.com/document/product/436/31710)
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31542)
-- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31546)
-- [ミニプログラムSDK](https://intl.cloud.tencent.com/document/product/436/32457)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/40171)
+- [Go SDK](https://intl.cloud.tencent.com/document/product/436/44064)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/40495)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/44019)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/43865)
+- [Node.js SDK ](https://intl.cloud.tencent.com/document/product/436/43874)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/45498)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/436/46470)
+- [ミニプログラムSDK](https://intl.cloud.tencent.com/document/product/436/43885)

@@ -20,22 +20,19 @@ Cloud Object Storage(COS)는 태그별로 버킷을 필터링하는 기능을 �
 1. CAM 콘솔의 [정책](https://console.cloud.tencent.com/cam/policy) 페이지로 이동합니다.
 2. **사용자 정의 정책 생성 > 정책 생성기에서 생성**을 클릭합니다.
 3. 권한 구성 페이지로 이동하여 다음과 같이 정보를 구성합니다.
-
  - **태그**:
     - **효과**: 허용이 선택되어 있으며, 기본값에서 변경하지 않습니다.
     - **서비스**: 태그를 선택합니다.
     - **작업**: 비즈니스 요구 사항에 따라 선택할 수 있으며, 본 예시에서는 GetResourceTags, GetResourcesByTags, GetTags의 세 작업 권한을 선택합니다.
     - **리소스**: **모든 리소스**를 선택합니다.
  - **권한 추가**: 비즈니스 요구 사항에 따라 구성합니다.
-
-5. **다음**을 클릭하고 정책 이름을 입력하고 사용자/사용자 그룹을 연결합니다.
+5. **다음**을 클릭하고 정책 이름을 입력합니다.
 6. **완료**를 클릭합니다.
 :::
 ::: 정책 구문 사용
 1. CAM 콘솔의 [정책](https://console.cloud.tencent.com/cam/policy) 페이지로 이동합니다.
 2. **사용자 정의 정책 생성 > 정책 구문으로 생성**을 클릭합니다.
 3. 빈 템플릿 또는 기존 태그 템플릿을 선택하여 생성할 수 있습니다. 본 예시에서는 **QcloudTAGFullAccess** 템플릿을 선택합니다.
-
 4. **다음 단계**를 클릭하면 템플릿 정책이 기본적으로 `tag:*`로 설정되어 있는 것을 볼 수 있습니다. 본 예시에서는 action을 `name/tag:GetResourceTags`, `name/tag:GetResourcesByTags` 및 `name/tag:GetTags`로 수정하여 작업 권한을 설정합니다. 정책 구문 예시는 다음과 같습니다.
 ```
 {
@@ -58,9 +55,7 @@ Cloud Object Storage(COS)는 태그별로 버킷을 필터링하는 기능을 �
 5. **완료**를 클릭합니다.
 :::
 </dx-tabs>
-3. 정책 페이지에서 2단계에서 생성한 정책을 찾고 오른쪽에서 **사용자/그룹 연결**을 클릭하여 정책을 서브 계정 Developer와 연결합니다.
-4. 사용자/그룹 연결 창에서 서브 계정 Developer를 선택하고 **확인**을 클릭합니다.
-![](https://main.qcloudimg.com/raw/4818cbb813fce18bc8d6fd6062e35e55.png)
-5. 서브 계정 Developer로 콘솔에 로그인한 후 [버킷 리스트](https://console.cloud.tencent.com/cos5/bucket) 페이지에서 **태그**를 선택하고 **태그 키**를 입력하여 지정된 태그가 있는 버킷을 검색합니다.
-![](https://main.qcloudimg.com/raw/3f31b5273da16e7728ab40209cfedfa9.png)
+3. 정책 페이지에서 2단계에서 생성한 정책을 찾고 오른쪽에서 **사용자/그룹/역할 연결**을 클릭하여 정책을 서브 계정 Developer와 연결합니다.
+4. 팝업 창에서 Developer 서브 계정을 선택하고 **확인**을 클릭합니다.
+5. Developer 서브 계정으로 콘솔에 로그인한 후 [버킷 리스트](https://console.cloud.tencent.com/cos5/bucket) 페이지에서 **태그**를 선택하고 **태그 키**를 입력하여 지정된 태그가 있는 버킷을 검색합니다.
 
