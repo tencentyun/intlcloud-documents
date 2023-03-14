@@ -28,5 +28,5 @@ We will retain personal information in accordance with the following:
 
 | Personal Information | Retention Policy    |
 | :-------------------- | :------------------------------------------------------------ |
-| **Running Log Data **    | Stored for 7 days. |
+| **Running Log Data**    | Stored for 7 days. |
 | **Audit Log Data**       | Stored for 1 year (unless you terminate your use of the Feature, in which case we will delete this data within 30 days of termination). |
