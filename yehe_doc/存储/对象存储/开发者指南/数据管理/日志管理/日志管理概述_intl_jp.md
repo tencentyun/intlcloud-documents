@@ -34,7 +34,7 @@
 | 21       | storageClass    | ストレージタイプ             | STANDARD，STANDARD_IA，ARCHIVE                                              |
 | 22       | accountId    | バケット所有者のID             | 100000000001                                              |
 | 23       | resTurnAroundTime    | リクエストサーバー消費時間（ミリ秒、応答のTTFB-リクエストのTTLBと同じ）             | 4295                                              |
-| 24       | requester    | アクセス者             | ルートアカウントID：サブアカウントID、匿名アクセスの場合は`-`と表示されます。             |
+| 24       | requester    | アクセス者のアカウント。<br>アクセス者がルートアカウントの場合、アカウント形式は`ルートアカウントUIN:ルートアカウントUIN`となります。<br>アクセス者がサブアカウントの場合、アカウント形式は`ルートアカウントUIN:サブアカウントUIN`となります。<br>アクセス者が[サービスアカウント](https://intl.cloud.tencent.com/document/product/598/19421)の場合、アカウント形式は`権限を承認されたルートアカウントUIN:ロールID`となります。<br>匿名アクセスの場合は、`-`と表示されます             |    100000000001:100000000001          |
 | 25       | requestId    | リクエストID             | NWQ1ZjY4MTBfMjZiMjU4NjRfOWI1N180NDBiYTY=      |
 | 26       | objectSize    | オブジェクトサイズ（Bytes）             | 808。マルチパートアップロードを使用した場合、objectSizeフィールドはアップロード完了後にしか表示されません。各パートのアップロード中、このフィールドには`-`と表示されます |
 | 27       | versionId    | オブジェクトのバージョンID             | ランダムな文字列                                              |

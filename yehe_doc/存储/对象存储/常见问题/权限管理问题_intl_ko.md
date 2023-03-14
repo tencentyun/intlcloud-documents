@@ -2,17 +2,17 @@
 
 ### APPID, SecretId, SecretKey 등 키 정보는 어떻게 확인하나요?
 
-버킷 이름의 뒷부분이 APPID 정보입니다. [COS 콘솔](https://console.cloud.tencent.com/cos5/bucket)에 로그인하여 확인할 수 있습니다. SecretId, SecretKey 등의 정보는 CAM 콘솔에 로그인하여 [API 키 관리](https://console.cloud.tencent.com/cam/capi)에서 확인할 수 있습니다.
+버킷 이름의 후반부는 APPID입니다. [COS 콘솔](https://console.cloud.tencent.com/cos5/bucket)에 로그인하면 볼 수 있습니다. SecretId, SecretKey 등의 정보를 보려면 CAM 콘솔에 로그인하여 [API 키 관리](https://console.cloud.tencent.com/cam/capi) 페이지로 이동하십시오.
 
 ### 임시 키의 유효 기간은 얼마나 되나요?
 
 임시 키는 현재 루트 계정 최장 2시간(7200초), 서브 계정 최장 36시간(129600초)이며, 기본값은 30분(1800초)입니다. 임시 키 만료 후, 만료된 임시 키가 있는 요청은 거부됩니다. 임시 키 관련 소개는 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참고하십시오.
 
-### SecretId, SecretKey 등과 같은 키 관련 정보가 유출된 경우 어떻게 해야 하나요?
+### SecretId, SecretKey 등과 같은 키 정보가 손상된 경우 어떻게 해야 합니까?
 
-유출된 키를 삭제하고 새로운 키를 생성할 수 있습니다. 자세한 내용은 [액세스 키](https://intl.cloud.tencent.com/document/product/598/34227)를 참고하십시오.
+손상된 키를 삭제하고 새로운 키를 생성할 수 있습니다. 자세한 내용은 [Access Key](https://www.tencentcloud.com/document/product/598/34227)를 참고하십시오.
 
-### 개인 읽기/쓰기 파일에 유효기간이 있는 액세스 링크는 어떻게 생성하나요?
+### 개인 읽기/쓰기 파일에 대한 시간 제한 액세스 URL을 생성하려면 어떻게 해야 합니까?
 
 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048) 문서를 참고하여 키 유효기간을 설정하십시오.
 
@@ -24,26 +24,26 @@
 
 ### COS가 403 오류를 반환합니다. 어떻게 해야 하나요?
 
-개발자를 위해 COS 팀에서 제공하는 [COS 디버깅 툴](https://web.debugger.coshelper.com/)을 사용하여 COS API 요청을 캡처하고 요청의 오류를 지능적으로 분석하도록 Hosts를 설정하거나 다음 순서에 따라 진단할 수 있습니다.
+COS 팀에서 제공하는 [진단 툴](https://console.cloud.tencent.com/cos/diagnose/)을 사용할 수 있습니다. 진단 툴은 RequestId를 사용하여 오류를 진단할 수 있습니다.
 
-1. BucketName, APPID, Region, SecretId, SecretKey 등의 정보가 정확하게 설정되어 있는지 확인합니다.
+1. BucketName, APPID, Region, SecretId, SecretKey 등의 구성이 올바른지 확인합니다.
 2. 상기 정보가 정확하다는 전제 하에 서브 계정 운영 여부를 확인하고, 서브 계정을 사용하는 경우에는 루트 계정이 서브 계정에 권한을 부여했는지 확인하십시오. 그렇지 않으면, 먼저 루트 계정에 로그인하여 권한을 부여하십시오.
 3. 권한 부여 관련 자세한 내용은 [권한 설정 관련 사례](https://intl.cloud.tencent.com/document/product/436/12514)를 참고하십시오.
 4. 임시 키를 사용하여 작업하는 경우 임시 키를 얻을 때 현재 작업이 Policy 설정에 있는지 확인하십시오. 그렇지 않다면 관련 Policy 설정을 수정하십시오.
 
-### COS에서 AccessDenied 오류를 보고합니다. 어떻게 처리해야 하나요?
+### AccessDenied가 보고되면 어떻게 해야 합니까?
 
-AccessDenied는 일반적으로 아직 권한이 없어서 보고되는 오류입니다. 다음 순서에 따라 문제를 진단하십시오.
+대부분의 경우 AccessDenied 오류는 무단 액세스 또는 권한 부족으로 인해 보고됩니다. 다음과 같이 문제를 해결할 수 있습니다.
 
-1. BucketName, APPID, Region, SecretId, SecretKey 등의 정보가 정확하게 설정되어 있는지 확인합니다. 특히 빈 칸이 있는지 확인하십시오.
+1. BucketName, APPID, Region, SecretId, SecretKey 등의 구성이 올바른지 확인합니다. 공백이 있는지 여부도 확인해야 합니다.
 2. 상기 정보가 정확하다는 전제 하에 서브 계정을 사용하여 작업했는지 확인합니다. 서브 계정을 사용한 경우 루트 계정에서 서브 계정에 권한을 부여했는지 확인합니다. 권한을 부여하지 않은 경우 먼저 루트 계정으로 로그인하여 서브 계정에 권한을 부여합니다. 권한 부여 방법은 [CAM 권한 설정 관련 사례](https://intl.cloud.tencent.com/document/product/436/12514)를 참고하십시오.
 3. 임시 키를 사용한 경우 현재 작업이 임시 키를 획득할 때 설정한 Policy에 부합하는지 확인하고, 부합하지 않으면 관련 Policy 설정을 변경합니다. 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참고하십시오.
 
-COS 팀은 개발자에게 [COS 디버깅 툴](https://web.debugger.coshelper.com/)을 제공합니다. 이를 통해 개발자는 Hosts를 설정하여 COS API 요청을 캡처하고, 요청의 오류를 지능적으로 분석하고, 오류 프롬프트 및 수정 제안을 제공합니다.
+COS 팀은 RequestId를 사용하여 오류를 해결하는 [진단 툴](https://console.cloud.tencent.com/cos/diagnose/)을 제공합니다.
 
-### 버킷 액세스 권한이 최대 제한에 도달했습니다. 어떻게 해야 하나요?
+### 버킷 권한 수가 상한에 도달하면 어떻게 해야 하나요?
 
-루트 계정당(동일한 APPID) 버킷 ACL 규칙 수는 최대 1000개입니다. 설정한 버킷 ACL 수가 1000개를 초과하는 경우 해당 오류가 발생하므로 사용하지 않는 ACL 규칙을 삭제하시기 바랍니다.
+각 루트 계정(즉, 각 APPID)에는 최대 1000개의 버킷 ACL이 있을 수 있습니다. 더 많은 버킷 ACL이 구성된 경우 오류가 보고됩니다. 따라서 불필요한 ACL은 삭제하는 것이 좋습니다.
 
 >? 파일 레벨별 ACL 또는 Policy 사용은 권장하지 않습니다. API 또는 SDK 호출 시 파일에 특별한 ACL 제어가 필요 없는 경우, ACL 관련 매개변수(예: x-cos-acl, ACL 등)는 비워 놓고 버킷 권한 상속을 유지하는 것을 권장합니다.
 >
@@ -54,74 +54,74 @@ COS 팀은 개발자에게 [COS 디버깅 툴](https://web.debugger.coshelper.co
 
 참고할 수 있는 두 가지 솔루션을 제공합니다.
 
-솔루션1: 버킷의 액세스 권한을 개인 읽기/쓰기로 변경합니다. 자세한 내용은 [버킷의 액세스 권한 설정](https://intl.cloud.tencent.com/document/product/436/13315)을 참고하십시오.
+솔루션1: 버킷의 액세스 권한을 개인 읽기/쓰기로 변경합니다. 자세한 내용은 [버킷 액세스 권한 설정](https://intl.cloud.tencent.com/document/product/436/13315)을 참고하십시오.
 솔루션2: **Policy 권한 설정**에서 **정책을 추가**하여 해당 액세스 권한을 설정할 수 있습니다. 자세한 내용은 [버킷 정책 추가](https://intl.cloud.tencent.com/document/product/436/30927)를 참고하십시오.
 
 
-### 서명 링크를 사용하여 공개 읽기 파일에 액세스하는 경우, 서명이 만료되어도 파일에 액세스할 수 있나요?
+### 서명이 만료된 서명된 URL을 사용하여 공개 읽기 파일에 액세스할 수 있습니까?
 
-만료된 서명 링크로 공개 읽기 파일에 액세스하는 경우, COS는 권한 현황 검증을 통해 링크가 만료되었다고 판단하면 액세스를 거부하게 됩니다.
+만료된 서명된 URL을 사용하여 공개 읽기 파일에 액세스하는 경우 COS는 먼저 권한을 확인합니다. URL이 만료된 경우 액세스가 거부됩니다.
 
-### 업로드 및 다운로드 시 '403 Forbidden', '권한 거부' 등 오류가 발생합니다. 어떻게 처리해야 하나요?
+### 업로드, 다운로드 또는 기타 작업 중에 '403 Forbidden' 또는 '권한 거부됨'이 보고되면 어떻게 해야 하나요?
 
-다음 순서에 따라 문제를 진단하십시오.
+다음과 같이 문제를 해결할 수 있습니다.
 
-1. BucketName, APPID, Region, SecretId, SecretKey 등의 정보가 정확하게 설정되어 있는지 확인합니다.
-2. 상기 정보가 정확하다는 전제 하에 서브 계정을 사용하여 작업했는지 확인합니다. 서브 계정을 사용한 경우 루트 계정에서 서브 계정에 권한을 부여했는지 확인합니다. 권한을 부여하지 않은 경우 먼저 루트 계정으로 로그인하여 서브 계정에 권한을 부여합니다. 권한 부여 방법은 [CAM 권한 설정 관련 사례](https://intl.cloud.tencent.com/document/product/436/12514)를 참고하십시오.
+1. BucketName, APPID, Region, SecretId, SecretKey 등의 구성이 올바른지 확인합니다.
+2. 상기 설정이 맞다면 서브 계정으로 동작하는지 확인합니다. 그렇다면 서브 계정이 루트 계정에 의해 승인되었는지 확인하십시오. 아직 인증되지 않은 경우 루트 계정을 사용하여 로그인하여 서브 계정을 인증합니다. 권한에 대한 자세한 내용은 [권한 설정 관련 사례](https://intl.cloud.tencent.com/document/product/436/12514)를 참고하십시오.
 3. 임시 키를 사용한 경우 현재 작업이 임시 키를 획득할 때 설정한 Policy에 부합하는지 확인하고, 부합하지 않으면 관련 Policy 설정을 변경합니다. 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참고하십시오.
 
-COS 팀은 개발자에게 [COS 디버깅 툴](https://web.debugger.coshelper.com/)을 제공합니다. 이를 통해 개발자는 Hosts를 설정하여 COS API 요청을 캡처하고, 요청의 오류를 지능적으로 분석하고, 오류 프롬프트 및 수정 제안을 제공합니다.
+COS 팀은 RequestId를 사용하여 오류를 해결하는 [진단 툴](https://console.cloud.tencent.com/cos/diagnose/)을 제공합니다.
 
-### COS에서 다른 사람이 로컬에 파일을 다운로드하는 것을 어떻게 제한하나요?
+### 사용자가 COS 데이터를 다운로드하지 못하게 하려면 어떻게 해야 합니까?
 
-다른 사람이 로컬에 파일을 다운로드하는 것을 제한하려면 다음 몇 가지 시나리오를 구분해야 합니다.
+다음과 같이 사용 사례에 따라 사용자가 데이터를 다운로드하지 못하도록 방지할 수 있습니다.
 
 1. 서브 계정의 데이터 다운로드를 제한하려면 [서브 계정에 COS 액세스 권한 부여](https://intl.cloud.tencent.com/document/product/436/11714)를 참고하십시오.
 2. 익명 사용자의 데이터 다운로드를 제한하려면, 버킷을 개인 읽기/쓰기로 설정하거나 버킷 정책에서 `deny anyone Get Object` 작업을 설정할 수 있습니다.
 
-### COS에서 기타 계정의 서브 계정에 어떻게 권한을 설정하나요?
+### 다른 루트 계정의 서브 계정에 어떻게 권한을 부여할 수 있나요?
 
 루트 계정 A의 버킷에서 루트 계정 B의 서브 계정 B0에 작업 권한을 부여한다고 가정합니다. 사용자는 먼저 루트 계정 B에게 A에게 있는 버킷을 작업할 권한을 부여한 후, 루트 계정 B를 통해 서브 계정 B0에 A에게 있는 버킷을 작업할 권한을 부여해야 합니다. 자세한 내용은 [기타 루트 계정의 서브 계정에 관련 버킷 작업 권한 부여](https://intl.cloud.tencent.com/document/product/436/32971)를 참고하십시오.
 
-### COS에서 서브 계정/협업 파트너가 파일을 삭제하지 못하고 업로드만 할 수 있도록 어떻게 설정하나요?
+### 서브 계정/협업 파트너가 파일을 업로드만 가능하고 삭제는 불가능하도록 하려면 어떻게 해야 하나요?
 
-[CAM 콘솔](https://console.cloud.tencent.com/cam/policy)을 통해 사용자 정의 정책을 생성하여 서브 계정에 특정 권한을 설정할 수 있습니다. 작업 절차에 대한 자세한 내용은 [사용자 정의 정책 생성](https://intl.cloud.tencent.com/document/product/598/35596)을 참고하십시오.
+[CAM 콘솔](https://console.cloud.tencent.com/cam/policy)을 통해 사용자 정의 정책을 생성하여 서브 계정에 특정 권한을 설정할 수 있습니다. 작업 절차에 대한 자세한 내용은 [Creating Custom Policy](https://intl.cloud.tencent.com/document/product/598/35596)를 참고하십시오.
 
->? 사용자 정의 정책을 생성할 때 읽기 작업 권한을 부여해야 합니다. 쓰기 작업에서는 업로드 권한만 선택합니다. **관련 권한 삭제를 선택하지 마십시오**.
+>? 사용자 정의 정책을 생성할 때 읽기 권한을 부여하고 쓰기 작업에 대해서만 업로드를 설정하고 **삭제 권한을 부여하지 마십시오**.
 >
 ![](https://main.qcloudimg.com/raw/578ae1960f7f8b182503cef5653dc829.png)
 
-### 버킷의 기본 도메인을 사용한 공개 읽기 버킷 액세스 시 파일 리스트가 반환됩니다. 파일 리스트 정보를 숨기려면 어떻게 해야 하나요?
+### 기본 도메인 이름을 사용하여 공개 읽기 버킷에 액세스할 때 반환된 파일 목록을 숨기려면 어떻게 해야 합니까?
 
-해당 버킷에 deny anyone의 Get Bucket 권한을 설정하면 됩니다. 작업 방법은 다음과 같습니다.
+아래 단계에 따라 버킷에 대한 deny someone 의 Get Bucket 작업 권한을 설정할 수 있습니다.
 
-[COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인한 후 버킷 리스트를 선택해 해당 버킷의 **권한 관리** 페이지로 이동합니다.
+[COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인하여 버킷 리스트를 클릭하고 원하는 버킷을 클릭한 후 **권한 관리**를 선택합니다.
 
 #### 방법 1:
 
-1. **Policy 권한 설정 항목**의 **그래픽 설정**에서 **정책 추가**를 클릭합니다.
-2. 다음 이미지와 같이 해당 작업 권한을 추가하고 **확인**을 클릭해 저장합니다.
-   ![Policy 그래픽 설정](https://main.qcloudimg.com/raw/60e17e3473bfb309376a6e54327a41b0.png)
+1. **Policy 권한 설정**을 클릭합니다. 그런 다음 **비주얼 편집기**에서 **정책 추가**를 클릭합니다.
+2. 아래와 같이 권한을 설정한 후 **확인**을 클릭합니다.
+   ![Policy 비주얼 편집기](https://main.qcloudimg.com/raw/60e17e3473bfb309376a6e54327a41b0.png)
 
 #### 방법 2:
 
-**Policy 권한 설정 항목**의 **정책 구문 > 편집**을 클릭하고 다음 표현식을 입력합니다.
+**Policy 권한 설정**을 클릭합니다. 그 다음 **JSON > 편집**을 클릭하고 다음 코드를 입력합니다.
 
 ```
 {
- "Statement": [
+ "Statement":[
    {
-     "Action": [
+     "Action":[
        "name/cos:GetBucket",
        "name/cos:GetBucketObjectVersions"
      ],
      "Effect": "Deny",
-     "Principal": {
-       "qcs": [
+     "Principal":{
+       "qcs":[
          "qcs::cam::anyone:anyone"
        ]
      },
-     "Resource": [
+     "Resource":[
        "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*"
      ]
    }
@@ -157,22 +157,27 @@ COS 팀은 개발자에게 [COS 디버깅 툴](https://web.debugger.coshelper.co
 
 ### 일부 특정 서브 계정에 특정 버킷에 대해서만 작업 권한을 부여하려는 경우 어떻게 해야 하나요?
 
-서브 계정에 특정 버킷에 대해서만 작업 권한을 부여하려는 경우 서브 계정을 사용해 경로를 추가할 수 있습니다. 자세한 내용은 [서브 계정으로 버킷 리스트 액세스](https://intl.cloud.tencent.com/document/product/436/17061)를 참고하십시오.
+서브 계정에 특정 버킷에 대해서만 작업 권한을 부여하려는 경우 서브 계정을 사용해 경로를 추가할 수 있습니다. 자세한 내용은 [서브 계정으로 버킷 리스트에 액세스하기](https://intl.cloud.tencent.com/document/product/436/17061)를 참고하십시오.
+
+
+## Ranger 인증 및 검증
+
+자세한 내용은 [FAQ](https://intl.cloud.tencent.com/document/product/1106/41958)를 참고하십시오.
 
 ## 기타 문제
 
-### COS 리소스 액세스 오류는 어떻게 처리하나요?
+### COS 리소스에 정상적으로 액세스할 수 없으면 어떻게 해야 합니까?
 
-[리소스 액세스 오류](https://intl.cloud.tencent.com/document/product/436/40167) 문서를 참고하여 진단 및 처리하십시오.
+[리소스 액세스 오류](https://www.tencentcloud.com/document/product/436/40167)를 참고하여 문제를 해결할 수 있습니다.
 
-### CDN 도메인으로 COS 액세스 시 HTTP ERROR 403가 반환됩니다. 어떻게 처리해야 하나요?
+### CDN 도메인을 사용하여 COS에 액세스할 때 HTTP ERROR 403이 반환되면 어떻게 해야 합니까?
 
-CDN 가속 도메인의 비활성화 상태가 원인일 수 있습니다. [CDN 도메인으로 COS 액세스 시 HTTP ERROR 403 반환](https://intl.cloud.tencent.com/document/product/436/40175) 문서를 참고하여 처리하십시오.
+이는 일반적으로 CDN 가속 도메인의 비활성화 상태가 원인일 수 있습니다. [CDN 도메인으로 COS 액세스 시 HTTP ERROR 403 반환](https://intl.cloud.tencent.com/document/product/436/40175)을 참고하여 문제를 해결할 수 있습니다.
 
-### CDN 도메인으로 COS 액세스 시 이전 파일로 액세스됩니다. 어떻게 처리해야 하나요?
+### CDN 도메인 이름을 사용하여 COS에 액세스하지만 파일의 이전 버전에만 액세스하는 경우 어떻게 해야 합니까?
 
-캐시가 원인일 수 있습니다. [동일 링크 액세스 시 파일 오류](https://intl.cloud.tencent.com/document/product/436/40170) 문서를 참고하십시오.
+이는 일반적으로 기존 캐시 때문입니다. [URL이 잘못된 파일로 연결되는 오류](https://intl.cloud.tencent.com/document/product/436/40170)를 참고하여 문제를 해결할 수 있습니다.
 
-### 프런트 엔드 작업은 CDN과 임시 키 방식으로 COS의 콘텐츠에 액세스할 수 있나요?
+### 프런트 엔드에서 CDN 및 임시 키를 사용하여 COS에 액세스할 수 있습니까?
 
-COS 개인 읽기/쓰기 상황에서 CDN Origin-pull COS 인증을 구현해야 할 경우 [CDN Origin-pull 인증](https://intl.cloud.tencent.com/document/product/436/18670)을 참고하십시오.
+개인 읽기/쓰기로 설정된 파일을 사용하여 CDN이 COS에서 가져올 때 인증이 필요한 경우 [CDN Origin-pull 인증](https://intl.cloud.tencent.com/document/product/436/18670)을 참고하십시오.

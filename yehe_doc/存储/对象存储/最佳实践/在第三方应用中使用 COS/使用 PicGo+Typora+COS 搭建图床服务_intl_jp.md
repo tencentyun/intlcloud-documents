@@ -27,11 +27,11 @@ COSを画像ホスティングシーンに用いるメリットは、以下の�
 
   - COSバージョン：COS v5を選択します。
   - Secretldの設定：開発者は所有するプロジェクト身分識別IDを、身分認証に用います。[APIキー管理](https://console.cloud.tencent.com/capi)ページで作成し、取得することができます。
-  - SecretKeyの設定：開発者は所有するプロジェクト身分キーを、[APIキー管理](https://console.cloud.tencent.com/capi)ページで取得することができます。
-  - APPIDの設定：開発者はCOSにアクセスする際に所有するユーザーの次元における唯一のリソース識別として、識別リソースを用います。[APIキー管理](https://console.cloud.tencent.com/capi)ページで取得することができます。
-  - ストレージ容量名の設定：バケットは、COSでデータをストレージするコンテナとして使用されます。バケットの詳細については、[バケット概要](https://intl.cloud.tencent.com/document/product/436/13312)ドキュメントをご参照ください。
-  - ストレージリージョンの確認：リージョンの情報です。列挙値については、[アベイラビリティリージョン](https://intl.cloud.tencent.com/document/product/436/6224) ドキュメント、例えば：ap-beijing、ap-hongkong、eu-frankfurtなどをご参照ください。
-  - ストレージパスの指定：画像をCOSバケットに格納する際のパスです。
+  - SecretKeyの設定：開発者は所有するプロジェクト身分キーを、[APIキー管理](https://console.cloud.tencent.com/capi)ページで取得することができます。  
+  - Bucketの設定：バケットは、COSでデータをストレージするコンテナとして使用されます。バケットの詳細については、[バケット概要](https://intl.cloud.tencent.com/document/product/436/13312)ドキュメントをご参照ください。
+  - AppIdの設定：開発者はCOSにアクセスする際に所有するユーザーの次元における唯一のリソース識別として、識別リソースを用います。[APIキー管理](https://console.cloud.tencent.com/capi)ページで取得することができます。
+  - ストレージリージョンの設定：バケットの所属リージョンの情報です。列挙値については、[アベイラビリティリージョン](https://intl.cloud.tencent.com/document/product/436/6224)ドキュメントをご参照ください。例えばap-beijing、ap-hongkong、eu-frankfurtなどです。
+  - ストレージパスの設定：画像をCOSバケットに格納する際のパスです。
   - カスタムドメイン名の設定：選択可能です。上方のストレージ容量にカスタムオリジンサーバードメイン名を設定する場合、入力が可能です。説明については[カスタムオリジンサーバードメイン名の有効化](https://intl.cloud.tencent.com/document/product/436/31507)をご参照ください。
   - URLサフィックスの設定：URLのサフィックスにCOSデータ処理パラメータを追加することで、画像の圧縮、トリミング、形式変換などの操作を行うことができます。関連の説明については[画像処理](https://www.tencentcloud.com/document/product/436/40118)をご参照ください。
 2. typoraを設定します（オプション）。

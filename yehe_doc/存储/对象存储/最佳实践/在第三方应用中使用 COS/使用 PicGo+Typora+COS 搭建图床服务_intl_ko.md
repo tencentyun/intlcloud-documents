@@ -27,13 +27,13 @@
 
   - COS 버전: COS v5를 선택합니다.
   - SecretId 설정: 프로젝트에 사용되는 개발자 소유의 비밀 ID로, [API 키 관리](https://console.cloud.tencent.com/capi) 페이지에서 생성 및 획득할 수 있습니다.
-  - SecretKey 설정: 프로젝트에 사용되는 개발자 소유의 비밀 키이며 [API 키 관리](https://console.cloud.tencent.com/capi) 페이지에서 얻을 수 있습니다.
-  - APPID 설정: COS 액세스에 대한 고유한 사용자 레벨 리소스 식별자이며, [API 키 관리](https://console.cloud.tencent.com/capi) 페이지에서 얻을 수 있습니다.
-  - 저장 공간 이름 설정: 버킷, 즉 COS에서 데이터 저장에 사용되는 컨테이너이며, 버킷과 관련된 자세한 내용은 [버킷 개요](https://intl.cloud.tencent.com/document/product/436/13312) 문서를 참고하십시오.
-  - 저장 리전 확인: 리전 정보, ap-beijing, ap-hongkong 및 eu-frankfurt와 같은 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
-  - 저장 경로 지정: COS 버킷에서 이미지가 저장되는 경로입니다.
-  - 사용자 정의 도메인 이름 설정: 이 매개변수는 선택사항입니다. 위에서 지정한 스토리지 공간에 대해 사용자 지정 원본 도메인 이름을 구성한 경우 여기에 입력할 수 있습니다. 자세한 내용은 [사용자 정의 원본 서버 도메인 활성화](https://intl.cloud.tencent.com/document/product/436/31507)를 참고하십시오.
-  - URL 접미사 설정: URL 접미사에 COS 데이터 처리 매개변수를 추가하여 이미지 압축, 크롭핑, 형식 변환 및 기타 작업을 구현합니다. 자세한 내용은 [이미지 처리](https://www.tencentcloud.com/document/product/436/40118)를 참고하십시오.
+  - SecretKey 설정: 프로젝트에 사용되는 개발자 소유의 비밀 키이며 [API 키 관리](https://console.cloud.tencent.com/capi) 페이지에서 얻을 수 있습니다.  
+  - Bucket 설정: 버킷. COS에서 데이터 저장에 사용되는 컨테이너이며, 버킷과 관련된 자세한 내용은 [버킷 개요](https://intl.cloud.tencent.com/document/product/436/13312) 문서를 참고하십시오.
+  - AppId 설정: COS 액세스에 대한 고유한 사용자 레벨 리소스 식별자이며, [API 키 관리](https://console.cloud.tencent.com/capi) 페이지에서 얻을 수 있습니다.
+  - 스토리지 리전 설정: 버킷 소속 리전 정보, ap-beijing, ap-hongkong 및 eu-frankfurt와 같은 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
+  - 스토리지 경로 설정: COS 버킷에서 이미지가 저장되는 경로입니다.
+  - 사용자 정의 도메인 이름 설정: 이 매개변수는 선택사항입니다. 위에서 지정한 스토리지 공간에 대해 사용자 지정 원본 도메인 이름을 구성한 경우 여기에 입력할 수 있습니다. 자세한 내용은 [사용자 정의 원본 서버 도메인 활성화하기](https://intl.cloud.tencent.com/document/product/436/31507)를 참고하십시오.
+  - URL 접미사 설정: URL 접미사에 COS 데이터 처리 매개변수를 추가하여 이미지 압축, 크롭핑, 형식 변환 및 기타 작업을 구현합니다. 자세한 내용은 [Image Processing](https://www.tencentcloud.com/document/product/436/40118)을 참고하십시오.
 2. typora를 구성합니다(선택 사항).
 >?편집 요구 사항에 Markdown이 포함되지 않은 경우 이 단계를 건너뛰고 이전 단계에서 설치된 PicGo 도구를 이미지 호스팅 도구로 사용할 수 있습니다.
 >
@@ -41,7 +41,7 @@
  1. typora의 기본 설정 **이미지**에서 다음을 구성합니다.
 
     - **이미지 삽입 시** **이미지 업로드**를 선택합니다
-    - **이미지 업로드 설정**에서 **PicGo(app)**을 선택하고 방금 설치한 PicGo.exe의 위치를 설정합니다.
+    - **이미지 업로드 설정**에서 **PicGo(app)**를 선택하고 방금 설치한 PicGo.exe의 위치를 설정합니다.
  2. 설정을 적용하려면 typora를 다시 시작하십시오.
  3. typora 편집기 영역에 들어가 이미지를 직접 드래그 앤 드롭하거나 붙여넣어 업로드하면 자동으로 COS 파일 URL로 대체됩니다(붙여넣기 후 COS URL로 자동 교체되지 않는다면 PicGo에서 server가 활성화되어 있는지 확인하십시오).
 

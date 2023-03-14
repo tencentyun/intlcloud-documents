@@ -97,7 +97,7 @@
 
 #### 요청 매개변수 versionid
 
-요청 매개변수 `versionid`는 객체의 버전 번호를 지정합니다. 버전 관리에 대한 자세한 내용은 [버전 관리 개요](https://intl.cloud.tencent.com/document/product/436/19883)를 참고하십시오. 객체를 다운로드(GetObject)하거나 객체를 삭제할 때(DeleteObject) 요청 매개변수 `versionid`를 사용하여 작업할 객체 버전을 지정할 수 있습니다. versionid에는 세 가지 다른 경우가 있습니다.
+요청 매개변수 `versionid`는 객체의 버전 번호를 지정합니다. 버전 관리에 대한 자세한 내용은 [버전 제어 개요](https://intl.cloud.tencent.com/document/product/436/19883)를 참고하십시오. 객체를 다운로드(GetObject)하거나 객체를 삭제할 때(DeleteObject) 요청 매개변수 `versionid`를 사용하여 작업할 객체 버전을 지정할 수 있습니다. versionid에는 세 가지 다른 경우가 있습니다.
 
 - `versionid`가 없음: 요청은 기본적으로 최신 버전의 객체에 적용됩니다.
 - `versionid`가 빈 문자열인 경우: `versionid` 요청 매개변수가 전달되지 않은 경우와 동일합니다.
@@ -198,7 +198,7 @@ examplebucket-1250000000 버킷을 소유하는 uin 100000000001의 루트 계�
 
 버킷 examplebucket-1250000000을 소유하는 uin 100000000001의 루트 계정이 다음 버킷 정책을 사용하여 uin이 100000000002인 서브 계정이 최신 버전의 객체만 가져오도록 허용한다고 가정합니다.
 
-정책에 따르면 `versionid` 요청 매개변수가 전달되지 않거나 해당 값이 빈 문자열인 경우 GetObject 요청은 기본적으로 최신 버전의 객체만 다운로드할 수 있습니다. 따라서 다음 조건에서 string_equal_if_exsit를 사용할 수 있습니다.
+정책에 따라 `versionid`가 전달되지 않거나 해당 값이 빈 문자열인 경우 GetObject 요청은 기본적으로 최신 버전의 객체를 다운로드합니다. 따라서 다음 조건에서 string_equal_if_exsit를 사용할 수 있습니다.
 1. versionid가 전달되지 않으면 기본적으로 조건이 충족된 것으로 간주(true)되어 allow 정책이 적용되어 요청이 allow됩니다.
 2. versionid가 빈 문자열(`“”`)인 경우 allow 정책도 적용되며 최신 버전의 객체 다운로드 요청만 승인됩니다.
 ```
@@ -322,7 +322,7 @@ RFC 2616에 정의된 바이트 단위의 HTTP 요청 콘텐츠 길이는 PUT �
 
 #### 예시1: 요청 헤더 Content-Length의 최대값 제한
 
-PutObject 및 PostObject 업로드 요청이 10 이하의 값을 가진 Content-Length 헤더를 전달해야 한다고 제한합니다.
+PutObject 및 PostObject 업로드 요청이 10 바이트 이하의 값을 가진 Content-Length 헤더를 전달해야 한다고 제한합니다.
 
 ```
 {
@@ -374,7 +374,7 @@ PutObject 및 PostObject 업로드 요청이 10 이하의 값을 가진 Content-
 
 #### 예시2: 요청 헤더 Content-Length의 최소값 제한
 
-PutObject 및 PostObject 업로드 요청이 2 이상의 값을 가진 Content-Length 헤더를 전달해야 한다고 제한합니다.
+PutObject 및 PostObject 업로드 요청이 2 바이트 이상의 값을 가진 Content-Length 헤더를 전달해야 한다고 제한합니다.
 
 ```
 {
@@ -830,21 +830,21 @@ examplebucket-1250000000 버킷을 소유하는 uin 100000000001의 루트 계�
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "numeric_equal":{
                     "cos:tls-version":1.2
                 }
@@ -869,40 +869,40 @@ examplebucket-1250000000 버킷을 소유하는 uin 100000000001의 루트 계�
 ```
 {
     "version":"2.0",
-    "Statement":[
+    "statement":[
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"allow",
-            "Action":[
+            "effect":"allow",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "numeric_greater_than_equal":{
                     "cos:tls-version":1.2
                 }
             }
         },
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect":"deny",
-            "Action":[
+            "effect":"deny",
+            "action":[
                 "*"
             ],
-            "Resource":[
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
             ],
-            "Condition":{
+            "condition":{
                 "numeric_less_than_if_exist":{
                     "cos:tls-version":1.2
                 }
@@ -916,6 +916,11 @@ examplebucket-1250000000 버킷을 소유하는 uin 100000000001의 루트 계�
 <span id="request_tag"></span>
 ### 버킷 생성 시 지정된 버킷 태그 강제 설정(qcs:request_tag)
 
+>?
+>request_tag 조건 키는 PutBucket 및 PutBucketTagging 작업에만 적용되며 GetService, PutObject 또는 PutObjectTagging에는 적용되지 않습니다.
+>
+
+
 #### 조건 키 qcs:request_tag
 
 조건 키 `qcs:request_tag`를 사용하여 PutBucket 또는 PutBucketTagging 요청을 시작할 때 사용자가 지정된 버킷 태그를 포함하도록 제한할 수 있습니다.
@@ -924,7 +929,7 @@ examplebucket-1250000000 버킷을 소유하는 uin 100000000001의 루트 계�
 
 많은 사용자가 버킷 태그를 사용하여 버킷을 관리할 수 있습니다. 다음 정책 예시는 사용자가 버킷 생성 시 지정된 버킷 태그 `<a,b>` 및 `<c,d>`를 설정한 후에만 권한을 얻을 수 있음을 나타냅니다.
 
-여러 버킷 태그를 설정할 수 있습니다. 버킷 태그의 다른 키 값 및 수량은 다른 세트를 형성할 수 있습니다. 요청 양식 세트 A에서 사용자가 여러 매개변수 값을 가지고 있고 조건 양식 세트 B에 지정된 여러 매개변수 값을 가지고 있다고 가정합니다. 이 조건 키를 통해 사용자는 for_any_value 및 for_all_value 한정자의 다양한 조합을 사용하여 다른 의미를 나타낼 수 있습니다.
+여러 버킷 태그를 설정할 수 있습니다. 각기 다른 버킷 태그 키/값 및 태그 수량은 각각 다른 조합으로 사용됩니다. 요청 양식 세트 A에서 사용자가 여러 매개변수 값을 가지고 있고 조건 양식 세트 B에 지정된 여러 매개변수 값을 가지고 있다고 가정합니다. 이 조건 키를 통해 사용자는 for_any_value 및 for_all_value 한정어의 다양한 조합을 사용하여 다른 의미를 나타낼 수 있습니다.
 - `for_any_value:string_equal`은 A와 B가 교차하는 경우 요청이 적용됨을 나타냅니다.
 - `for_all_value:string_equal`은 A가 B의 subset인 경우 요청이 적용됨을 나타냅니다.
 
@@ -941,19 +946,19 @@ examplebucket-1250000000 버킷을 소유하는 uin 100000000001의 루트 계�
 ```
 {
     "version": "2.0",
-    "Statement":[
+    "statement": [
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect": "allow",
-            "Action":[
+            "effect": "allow",
+            "action":[
                 "name/cos:PutBucket"
             ],
-            "Resource": "*",
-            "Condition":{
+            "resource": "*",
+            "condition":{
                 "for_any_value:string_equal":{
                     "qcs:request_tag": [
                         "a&b",
@@ -983,19 +988,19 @@ examplebucket-1250000000 버킷을 소유하는 uin 100000000001의 루트 계�
 ```
 {
     "version": "2.0",
-    "Statement":[
+    "statement": [
         {
-            "Principal":{
+            "principal":{
                 "qcs":[
                     "qcs::cam::uin/100000000001:uin/100000000002"
                 ]
             },
-            "Effect": "allow",
-            "Action":[
+            "effect": "allow",
+            "action":[
                 "name/cos:PutBucket"
             ],
-            "Resource": "*",
-            "Condition":{
+            "resource": "*",
+            "condition":{
                 "for_all_value:string_equal": {
                     "qcs:request_tag": [
                         "a&b",
