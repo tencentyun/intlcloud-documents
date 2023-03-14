@@ -7,20 +7,26 @@ Hadoop-COSはApache Hadoop、Spark、Tezなどのビッグデータコンピュ�
 
 Hadoop-COS pomファイルを変更する場合はバージョンをHadoopのバージョンと同一のままにしてコンパイルした後、Hadoop-COS jarパッケージとCOS JAVA SDK jarパッケージをhadoop/share/hadoop/common/libディレクトリ下に入れます。具体的な設定については、[Hadoopツール](https://intl.cloud.tencent.com/document/product/436/6884)のドキュメントをご参照ください。
 
-
 ### Hadoop-COSツールにはごみ箱の仕組みはありますか。
+
 HDFSのごみ箱機能はCOSには適用されません。Hadoop-COSを使用し、`hdfs fs`コマンドによってCOSデータを削除すると、データはcosn://user/${user.name}/.Trashディレクトリ下に移動しますが、実際の削除行為は発生せず、データはCOS上に残ったままです。また、`-skipTrash`パラメータを使用してごみ箱機能をスキップし、データを直接削除することもできます。HDFSのごみ箱機能のように、データの定期的な削除という目的を実現したい場合は、オブジェクトプレフィックスが`/user/${user.name}/.Trash/`のオブジェクトに対するライフサイクルルールを設定してください。設定ガイドについては[ライフサイクルルールの設定](https://intl.cloud.tencent.com/document/product/436/14605)をご参照ください。
 
 
 ## クラスCosFileSystemが見つからないことに関するご質問
 ### ロードの際に、クラスCosFileSystemが見つからないと表示されます。Error: java.lang.RuntimeException: java.lang.ClassNotFoundException: Class org.apache.hadoop.fs.CosFileSystem not foundと表示されます。
 
-**考えられる原因**
+**考えられる原因1**
 設定は正しくロードされているが、hadoop classpathにHadoop-COS jarパッケージの位置情報が含まれていない。
 
 **対処方法**
 ロードしたHadoop-COS jarパッケージをhadoop classpathに位置付けます。
 
+**考えられる原因2**
+設定ファイルmapred-site.xml内のmapreduce.application.classpathにHadoop-COS jarパッケージの位置情報が含まれていない。
+
+**対処方法**
+設定ファイルmapred-site.xml内で、mapreduce.application.classpathにcosn jarが存在するパスを追加し、サービスを再起動します。
+![img](https://qcloudimg.tencent-cloud.cn/raw/04c63beec0bc34272e9acaa78141c7a9.png)
 
 ### 公式のHadoopを使用していますが、クラスCosFileSystemが見つからないと表示されました。
 
@@ -100,7 +106,6 @@ net.ipv4.tcp_keepalive_time = 1200           #TCPがKeepAliveメッセージを�
 net.ipv4.ip_local_port_range = 1024 65000    #外部と接続するポートの範囲。デフォルトでは32768から61000ですが、1024から65000に変更します
 net.ipv4.tcp_max_tw_buckets = 10240          #TIME_WAIT状態のSocketの数を制限し、この数を超過すると、新たなTIME_WAITソケットは直接開放されます。デフォルト値は180000です。このパラメータを適切に低下させることで、TIME_WAIT状態にあるSocketの数を減らすことができます
 ```
-
 
 ### ファイルのアップロード時にエラーjava.lang.Thread.State: TIME_WAITING (parking)があり、具体的なスタックにはorg.apache.hadoop.fs.BufferPoll.getBufferおよびjava.util.concurrent.locks.LinkedBlockingQueue.pollのロックされた状況が含まれます。
 
