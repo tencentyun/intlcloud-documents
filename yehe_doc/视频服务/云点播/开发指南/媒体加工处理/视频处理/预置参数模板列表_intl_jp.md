@@ -25,7 +25,7 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
 <tr><td colspan="1">100230</td><td colspan="1">HLS</td></tr>
 <tr><td colspan="1" rowspan="2">FHD</td><td colspan="1">100040</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">比例ズーム × 1080</td><td colspan="1" rowspan="2">2500kbps</td></tr>
 <tr><td colspan="1">100240</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">2K</td><td colspan="1">100070</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">比例ズーム × 1440</td><td colspan="1" rowspan="2">3000kbps</td><td colspan="1" rowspan="4">160kbps</td></tr>
+<tr><td colspan="1" rowspan="2">2K</td><td colspan="1">100070</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">比例ズームグ × 1440</td><td colspan="1" rowspan="2">3000kbps</td><td colspan="1" rowspan="4">160kbps</td></tr>
 <tr><td colspan="1">100270</td><td colspan="1">HLS</td></tr>
 <tr><td colspan="1" rowspan="2">4K</td><td colspan="1">100080</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">比例ズーム × 2160</td><td colspan="1" rowspan="2">6000kbps</td></tr>
 <tr><td colspan="1">100280</td><td colspan="1">HLS</td></tr></tbody></table>
@@ -154,7 +154,7 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
 | テンプレートID | 画像形式（Format） | 解像度（Resolution） | フレームレート（FPS） |
 | ------- | ------------------ | -------------------- | ----------- |
 | 20000   | GIF                | ソースと同じ                 | 2           |
-| 20001   | WEBP               | ソースと同じ                 | 2           |
+| 20001   | WEBP                | ソースと同じ                 | 2           |
 
 [](id:screenshot01)
 ### プリセットタイムポイントスクリーンキャプチャテンプレート
@@ -175,7 +175,7 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
 
 | テンプレートID | 出力形式（Format） | サブ画像幅（Width） | サブ画像の高さ（Height） | サブ画像の行数（Rows） | サブ画像の列数（Columns） | サンプリングタイプ（SampleType） | スクリーンキャプチャ間隔（Interval） |
 | ------- | ------------------ | ----------------- | ------------------ | ---------------- | ------------------- | ---------------------- | -------------------- |
-| 10      | JPG                | 142               | 80                 | 10               | 10                  | インターバルに応じて             | 10秒                 |
+| 10      | JPG                | 142               | 80                 | 10               | 10                  | 時間間隔に応じて             | 10秒                 |
 
 ### プリセットABSテンプレート
 #### テンプレート情報
@@ -191,7 +191,7 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
  <tr>
   <td>10</td>
   <td>HLS</td>
-  <td >暗号化なし</td>
+  <td>暗号化しない</td>
   <td >「LD」から「4K」まで計6つの仕様のサブストリームを含みます</td>
   <td>はい</td>
  </tr>
@@ -302,104 +302,15 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
 
 メディアAI用のプリセットパラメータテンプレートには、次のタイプが含まれます。
 
-* プリセットビデオコンテンツ審査テンプレート
+* プリセットオーディオビデオ審査テンプレート
 * プリセットビデオコンテンツ分析テンプレート
 * プリセットビデオコンテンツ認識テンプレート
 
 ### プリセットオーディオビデオ審査テンプレート[](id:verify)
 
-
-<table>
-    <tr>
-        <th rowspan=2>
-            テンプレートID                
-        </th>
-        <th colspan=3>
-            ビデオ画面
-        </th>
-        <th colspan=2>
-            ASRテキスト
-        </th>
-        <th colspan=2>
-            OCRテキスト
-        </th>
-    </tr>
- <tr>
-        <th>
-            不快感を与える情報（Porn）
-        </th>
-        <th>
-            安全でない情報（Terrorism）
-        </th>
-        <th>
-            不適切な情報（Political）
-        </th>
-        <th>
-            不快感を与える情報（Asr.Porn）
-        </th>
-        <th>
-            不適切な情報（Asr.Political）
-        </th>
-        <th>
-            不快感を与える情報（Ocr.Porn）
-        </th>
-        <th>
-            不適切な情報（Ocr.Political）
-        </th>
-    </tr>
-    <tr>
-        <td>
-            10
-        </td>
-        <td>
-            はい
-        </td>
-        <td>
-            はい
-        </td>
-        <td>
-            はい
-        </td>
-        <td>
-            いいえ
-        </td>
-        <td>
-            いいえ
-        </td>
-        <td>
-            いいえ
-        </td>
-        <td>
-            いいえ
-        </td>
-    </tr>
-    <tr>
-        <td>
-            20
-        </td>
-        <td>
-            はい
-        </td>
-        <td>
-            はい
-        </td>
-        <td>
-            はい
-        </td>
-        <td>
-            はい
-        </td>
-        <td>
-            はい
-        </td>
-        <td>
-            はい
-        </td>
-        <td>
-            はい
-        </td>
-    </tr>
-</table>
+|  テンプレートID | ポルノ（Porn）  | 暴力・テロ（Terror） | 喘ぎ声（Moan）|
+|---|---|---|---|
+| 10 |  はい | はい | はい |
 
 ### プリセットオーディオビデオコンテンツ分析テンプレート
 
@@ -410,9 +321,9 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
 
 ### プリセットオーディオビデオコンテンツ認識テンプレート
 
-| テンプレートID | 顔認証（Face） | テキスト全文認識（OcrFullText） | テキストキーワード認識（OcrWords） | 音声全文認識（AsrFullText） | 音声キーワード認識（AsrWords） | 
+| テンプレートID  | 顔認証（Face） | テキスト全文認識（OcrFullText） | テキストキーワード認識（OcrWords） | 音声全文認識（AsrFullText） | 音声キーワード認識（AsrWords） |
 | -- | -- | -- | -- | -- | -- |
-| 10 | はい（デフォルトで人物データベースを使用） | いいえ | いいえ | いいえ | いいえ |
+| 10 | はい（デフォルトで人物データベースを使用） | いいえ | いいえ | いいえ| いいえ |
 
 
 
@@ -459,8 +370,8 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
         </th>
     </tr>
     <tr>
-        <td rowspan=6>
-            LD（FLU）
+        <td  rowspan=6>
+            滑らかさ（FLU）
         </td>
         <td>
             10
@@ -600,7 +511,7 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
         </td>
     </tr>
     <tr>
-        <td rowspan=6>
+        <td  rowspan=6>
             SD
         </td>
         <td>
@@ -741,7 +652,7 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
         </td>
     </tr>
     <tr>
-        <td rowspan=6>
+        <td  rowspan=6>
             HD
         </td>
         <td>
@@ -1311,7 +1222,7 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
 <table>
     <tr>
         <th style="width:18%">
-            タイプ               
+            分類               
         </th>
         <th style="width:22%">
             パラメータ/機能項目
@@ -1379,7 +1290,7 @@ VODでは、ビデオ処理を開始するための複雑なパラメータセ�
     </tr>
     <tr>
         <td>
-            サウンドチャンネル数
+            サウンドチャンネル
         </td>
         <td>
             2チャネル（Stereo）

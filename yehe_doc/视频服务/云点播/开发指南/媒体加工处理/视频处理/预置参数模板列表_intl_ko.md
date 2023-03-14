@@ -302,117 +302,28 @@ VOD는 복잡한 매개변수 세트 대신 매개변수 템플릿을 사용한 
 
 미디어 AI 클래스의 사전 설정 매개변수 템플릿에는 다음 유형이 포함됩니다.
 
-* 사전 설정 비디오 콘텐츠 심사 템플릿
+* 사전 설정 오디오/비디오 감사 템플릿
 * 사전 설정 비디오 콘텐츠 분석 템플릿
 * 사전 설정 비디오 콘텐츠 인식 템플릿
 
-### 사전 설정 멀티미디어 심사 템플릿[](id:verify)
+### 사전 설정 멀티미디어 조정 템플릿[](id:verify)
 
-
-<table>
-    <tr>
-        <th rowspan=2>
-            템플릿 ID                
-        </th>
-        <th colspan=3>
-            비디오 화면
-        </th>
-        <th colspan=2>
-            ASR 문자
-        </th>
-        <th colspan=2>
-            OCR 문자
-        </th>
-    </tr>
- <tr>
-        <th>
-            자극적인 정보(Porn)
-        </th>
-        <th>
-            위험한 정보(Terrorism)
-        </th>
-        <th>
-            부적절한 정보(Political)
-        </th>
-        <th>
-            자극적인 정보(Asr.Porn)
-        </th>
-        <th>
-            부적절한 정보(Asr.Political)
-        </th>
-        <th>
-            자극적인 정보(Ocr.Porn)
-        </th>
-        <th>
-            부적절한 정보(Ocr.Political)
-        </th>
-    </tr>
-    <tr>
-        <td>
-            10
-        </td>
-        <td>
-            Yes
-        </td>
-        <td>
-            Yes
-        </td>
-        <td>
-            Yes
-        </td>
-        <td>
-            No
-        </td>
-        <td>
-            No
-        </td>
-        <td>
-            No
-        </td>
-        <td>
-            No
-        </td>
-    </tr>
-    <tr>
-        <td>
-            20
-        </td>
-        <td>
-            Yes
-        </td>
-        <td>
-            Yes
-        </td>
-        <td>
-            Yes
-        </td>
-        <td>
-            Yes
-        </td>
-        <td>
-            Yes
-        </td>
-        <td>
-            Yes
-        </td>
-        <td>
-            Yes
-        </td>
-    </tr>
-</table>
+|  템플릿 ID | 음란물(Porn)  | 테러(Terror) | 신음 소리(Moan)|
+|---|---|---|---|
+| 10 |  Yes | Yes | Yes |
 
 ### 사전 설정 멀티미디어 콘텐츠 분석 템플릿
 
-| 템플릿 ID | 스마트 분류(Classification) | 스마트 태그(Tag) | 스마트 커버(Cover) | 스마트 프레임 태그(FrameTag) |
+| 템플릿 ID | 지능형 분류(Classification) | 지능형 태그(Tag) | 지능형 썸네일 생성(Cover) | 지능형 프레임 태그(FrameTag) |
 | -- | -- | -- | -- | -- |
-| 10 | 예 | 예 | 예 | 아니요 |
-| 20 | 예 | 예 | 예 | 예 |
+| 10 | Yes | Yes | Yes | No |
+| 20 | Yes | Yes | Yes | Yes |
 
 ### 사전 설정 멀티미디어 콘텐츠 인식 템플릿
 
-| 템플릿 ID  | 얼굴 인식(Face) | 텍스트 핵심 키워드 인식(OcrWords) | 음성 전체 인식(AsrFullText) | 음성 핵심 키워드 인식(AsrWords) | 
+| 템플릿 ID  | 얼굴 인식(Face) | 전체 텍스트 인식(OcrFullText) | 텍스트 키워드 인식(OcrWords) | 전체 음성 인식(AsrFullText) | 음성 키워드 인식(AsrWords) |
 | -- | -- | -- | -- | -- | -- |
-| 10 | 예(기본 얼굴 라이브러리 사용) | 아니오 | 아니오 | 아니오 |아니오 |
+| 10 | 예(기본 Figure 라이브러리 사용) | No | No | No | No |
 
 
 
