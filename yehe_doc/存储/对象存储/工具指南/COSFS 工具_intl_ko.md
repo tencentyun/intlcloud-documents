@@ -177,7 +177,7 @@ export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig #윗줄 명령어 �
 ## 사용 방법
 
 ### 1. 키 파일 설정
-파일 `/etc/passwd-cosfs`에 버킷 이름(포맷: BucketName-APPID)과 이 버킷에 해당하는 &lt;SecretId&gt; 및 &lt;SecretKey&gt;를 입력하고, 세 항목 사이에는 반각 콜론을 사용해 분리합니다. 키 유출 방지를 위해 COSFS 키 파일의 권한 값을 640으로 설정해야 하며, `/etc/passwd-cosfs` 키 파일을 설정하는 명령어 포맷은 다음과 같습니다.
+`/etc/passwd-cosfs` 파일에 버킷 이름(BucketName-APPID 형식), &lt;SecretId&gt; 및 &lt;SecretKey&gt;를 포함한 버킷 정보를 작성하고 콜론(:)으로 구분합니다. 키 손상을 방지하려면 COSFS 키 파일에 대한 권한을 640으로 설정합니다. 다음 명령을 실행하여 `/etc/passwd-cosfs` 키 파일을 구성합니다.
 ```shell
 sudo su  #/etc/passwd-cosfs 파일 수정을 위해 root로 전환. root 사용자인 경우 해당 명령어는 생략합니다.
 echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
@@ -186,7 +186,7 @@ chmod 640 /etc/passwd-cosfs
 
 >? &lt;&gt;의 매개변수를 사용자 정보로 변경해야 합니다.
 > - &lt;BucketName-APPID&gt;는 버킷 이름 포맷입니다. 버킷 이름 생성 규칙에 대한 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오.
-> - &lt;SecretId&gt;와 &lt;SecretKey&gt;는 키 정보입니다. CAM 콘솔의 [Tencent Cloud API 키 관리](https://console.cloud.tencent.com/cam/capi)에서 조회 및 생성할 수 있습니다.
+> - &lt;SecretId&gt; 및 &lt;SecretKey&gt;는 키 정보입니다. 위험을 줄이기 위해 서브 계정 키를 사용하고 [최소 권한의 원칙 설명](https://intl.cloud.tencent.com/document/product/436/32972)에 따라 서브 계정을 승인하는 것이 좋습니다. 서브 계정 키를 얻는 방법에 대한 자세한 내용은 [Access Key](https://intl.cloud.tencent.com/document/product/598/32675)를 참고하십시오.
 > - 키는 $HOME/.passwd-cosfs 파일에서 설정하거나 -opasswd_file=[path]로 키 파일 경로를 지정할 수 있으며, 키 파일의 권한 값은 600으로 설정해야 합니다.
 > 
 
@@ -271,4 +271,4 @@ COSFS 툴은 성능 향상을 위해 기본적으로 업로드 및 다운로드�
 
 
 ## FAQ
-COSFS 툴 사용 중 문의 사항이 있는 경우 [COSFS 툴 관련 FAQ](https://intl.cloud.tencent.com/document/product/436/30587)를 참고하십시오.
+COSFS 툴 사용 중 문의 사항이 있는 경우 [COSFS 툴 FAQ](https://intl.cloud.tencent.com/document/product/436/30587)를 참고하십시오.

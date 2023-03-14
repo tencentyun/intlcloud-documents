@@ -106,7 +106,7 @@ brew install cask osxfuse
 
 #### 2. ソースコードの取得 
 
-[COSFSソースコード](https://github.com/tencentyun/cosfs)をGitHubから指定されたディレクトリにダウンロードする必要があります。以下では、ディレクトリ`/usr/cosfs`を例として取り上げます（実際の操作では、具体的な操作環境に応じてディレクトリを使用することをお勧めします）。
+[COSFSソースコード](https://github.com/tencentyun/cosfs)をGitHubから指定されたディレクトリにダウンロードする必要があります。以下では、ディレクトリ`/usr/cosfs`を例として取り上げます（実際の操作では、具体的な操作環境に応じてディレクトリを選択することをお勧めします）。
 ```shell
 sudo git clone https://github.com/tencentyun/cosfs /usr/cosfs
 ```
@@ -177,7 +177,7 @@ export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig #前のコマンド�
 ## 利用方法
 
 ### 1. キーファイルの設定
-ファイル`/etc/passwd-cosfs`に、バケット名（形式はBucketName-APPID）と、そのバケットに対応する&lt;SecretId&gtと&lt;SecretKey&gtをセミコロンで区切って記述してください。キーの漏洩を防ぐため、COSFSではキーファイルの権限値を640に設定する必要があります。`/ etc / passwd-cosfs`キーファイルを設定するためのコマンド形式は次のとおりです。
+ファイル`/etc/passwd-cosfs`に、バケット名（形式はBucketName-APPID）と、そのバケットに対応する&lt;SecretId&gtと&lt;SecretKey&gtを半角のコロンで区切って書き込みます。キーの漏洩を防ぐため、COSFSではキーファイルの権限値を640に設定する必要があります。`/ etc / passwd-cosfs`キーファイルを設定するためのコマンド形式は次のとおりです。
 ```shell
 sudo su  #をrootに切り替えて/etc/passwd-cosfsファイルを変更します。すでにrootユーザーである場合は、このコマンドを実行する必要はありません。
 echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
@@ -186,7 +186,7 @@ chmod 640 /etc/passwd-cosfs
 
 >? &lt;&gtのパラメータをお客様の情報に置き換える必要があります。
 > - &lt;BucketName-APPID&gt;はバケット名の形式です。バケットの命名ルールについては、[バケット命名ルール](https://intl.cloud.tencent.com/document/product/436/13312)をご参照ください。
-> - &lt;SecretId&gt;と&lt;SecretKey&gt;はキー情報であり、CAMコンソールの[Tencent Cloud APIキー管理](https://console.cloud.tencent.com/cam/capi)へ移動して確認、作成できます。
+> - &lt;SecretId&gt; と &lt;SecretKey&gt;はキー情報です。サブアカウントキーを使用し、[最小権限ガイド](https://intl.cloud.tencent.com/document/product/436/32972)に従うことで、使用上のリスクを低減させることをお勧めします。サブアカウントキーの取得については[サブアカウントのアクセスキー管理](https://intl.cloud.tencent.com/document/product/598/32675)をご参照ください。
 > - ファイル$HOME/.passwd-cosfsでキーを設定するか、-opasswd_file=[path]でキーファイルパスを指定し、キーファイルの権限値を600に設定する必要があります。
 > 
 

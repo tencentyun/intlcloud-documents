@@ -26,7 +26,7 @@ Cloud Object Storage（COS）は主に次の機能を提供します。
    </tr>
    <tr>
       <td>ライフサイクル</td>
-      <td>COSはユーザー設定ルールをサポートし、指定したオブジェクトに対し、ある時間（日数）が経過した後に自動的に削除またはストレージタイプの変更を行うことができます。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/17028">ライフサイクルの概要</a>をご参照ください。</td>
+      <td>COSはオブジェクトに対するライフサイクルルールの設定をサポートしており、指定したオブジェクトに対し、定期的に自動的に削除またはストレージタイプの変更を行うことができます。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/17028">ライフサイクルの概要</a>をご参照ください。</td>
    </tr>
    <tr>
       <td>静的ウェブサイト</td>
@@ -81,11 +81,8 @@ Cloud Object Storage（COS）は主に次の機能を提供します。
       <td nowrap="nowrap">マルチAZの特性</td>
       <td>COSはマルチAZストレージアーキテクチャをご提供しています。このストレージアーキテクチャはユーザーデータにデータセンターレベルの障害復旧機能を提供することが可能です。詳細については<a href="https://intl.cloud.tencent.com/document/product/436/35208">マルチAZの特徴の概要</a>をご参照ください。</td>
    </tr>
-   <tr>
-      <td nowrap="nowrap">クラウドデータベースバックアップ</td>
-      <td>クラウドデータベースバックアップは、COSがServerless Cloud Function（SCF）をベースとしてユーザーに提供する、データベースバックアップ機能です。ユーザーがTencent Cloudデータベース上のバックアップファイルをCOSにダンプし、永続的な保存をサポートすることで、データの紛失や破損を防ぎます。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/41112">クラウドデータベースバックアップの設定</a>をご参照ください。</td>
-   </tr>
 </table>
+
 
 ## Data Security
 
@@ -196,17 +193,28 @@ Cloud Object Storage（COS）は主に次の機能を提供します。
       <td>COSはCloud Infinite（CI）のプロフェッショナルな一体化メディアソリューションを統合し、画像処理、審査、認識などの機能をすべてカバーします。COSのアップロードおよび処理インターフェースを通じて、メディアデータの処理操作を行うことができます。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/35280">画像処理の概要</a>をご参照ください。また、画像の高度圧縮およびブラインドウォーターマーク機能もサポートしていますので、詳細については <a href="https://intl.cloud.tencent.com/document/product/436/40115">画像の高度圧縮の概要</a>および<a href="https://intl.cloud.tencent.com/document/product/436/46325">ブラインドウォーターマークの概要</a>をご参照ください。</td>
    </tr>
    <tr>
-      <td>ドキュメントプレビュー</td>
-      <td>ドキュメントプレビューサービスは、Tencent CloudのCloud Infiniteをベースにしており、有効化すると、バケット内のドキュメントタイプのファイルをダウンロードすることなく、オンラインプレビューすることができるため、ドキュメントコンテンツのページの表示の問題を解決することができます。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/49159">ドキュメントプレビューの概要</a>をご参照ください。</td>
-   </tr>
-   <tr>
       <td>Media Processing Service</td>
       <td>Media Processing Service（MPS）は、COSがCloud Infiniteをベースにしてリリースした、マルチメディアファイル処理サービスです。オーディオビデオトランスコーディング、ビデオフレームキャプチャ、オーディオビデオスプライシング、ビデオアニメーション画像生成、ビデオメタ情報の取得などのVideo Cloudサービス、さらにTencent Cloudの先進的なAIテクノロジーとの組み合わせをカバーした、インテリジェントカバーの高度な処理サービスです。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/48303">MPSの概要</a>および<a href="https://intl.cloud.tencent.com/document/product/436/46387">データワークフローの概要</a>をご参照ください。</td>
    </tr>
    <tr>
-      <td>音声認識</td>
-      <td>音声認識サービスは、Tencent CloudのCloud Infiniteをベースにしており、有効化すると、バケット内の録音ファイルを識別し、非同期で識別されたテキストを返します。詳細については、音声認識の概要をご参照ください。</td>
+      <td>ファイル処理</td>
+      <td>ファイル処理はCOSがCloud Infiniteをベースにしてリリースした、すべての形式のファイルを対象とした処理サービスです。現在はファイルのハッシュ値計算、ファイル解凍および複数ファイルのパッケージ化圧縮機能を提供しています。詳細についてはファイル処理の概要をご参照ください。</td>
    </tr>
+   <tr>
+      <td>ドキュメントプレビュー</td>
+      <td>ドキュメントプレビューサービスは、Tencent Cloud Infiniteをベースにしており、この機能を有効化すると、バケット内のドキュメントタイプのファイルをダウンロードすることなく、オンラインプレビューすることができるため、ドキュメントコンテンツのページの表示の問題を解決することができます。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/49159">ドキュメントプレビューの概要</a>をご参照ください。</td>
+   </tr>
+   <tr>
+      <td>スマート音声</td>
+      <td>スマート音声サービスはTencent Cloud Infiniteをベースにしたもので、有効化すると、音声合成、音声認識、オーディオノイズリダクションなどの操作を行うことができます。詳細についてはスマート音声の概要をご参照ください。</td>
+   </tr>
+
+   <tr>
+      <td>関数計算</td>
+      <td>COSは指定のバケットでのファイル解凍およびCDNキャッシュ更新をサポートしています。詳細については<a href="https://www.tencentcloud.com/zh/document/product/436/38137">関数計算</a>をご参照ください。</td>
+   </tr>
+	 
+	 
 </table>
 
 ## データ審査
@@ -218,7 +226,7 @@ Cloud Object Storage（COS）は主に次の機能を提供します。
    </tr>
    <tr>
       <td>コンテンツ審査</td>
-      <td>COSコンテンツ審査サービスは、画像、ビデオ、音声、文字などのマルチメディアのコンテンツセキュリティのインテリジェント審査を提供するサービスです。ユーザーが、ポルノ・低俗、暴力・テロ、違法・不正、不快感を与えるなどの禁止コンテンツを効果的に識別し、運営リスクを回避できるようにサポートします。</td>
+      <td>COSコンテンツ審査サービスは、画像、ビデオ、音声、テキスト、ドキュメント、ウェブページなどのマルチメディアのコンテンツセキュリティのインテリジェント審査を提供するサービスです。ユーザーが、ポルノ・低俗、暴力・テロ、違法・不正、不快感を与えるなどの禁止コンテンツを効果的に識別し、運営リスクを回避できるようにサポートします。</td>
    </tr>
 </table>
 
@@ -230,28 +238,8 @@ Cloud Object Storage（COS）は主に次の機能を提供します。
       <th>説明</td>
    </tr>
    <tr>
-      <td>Ckafkaメッセージのバックアップ</td>
-      <td>Ckafkaメッセージのバックアップは、COSがSCFをベースとしてユーザーに提供する、CkafkaメッセージをCOSにダンプする機能です。ユーザーがCkafkaメッセージをダンプするのをサポートすることで、データの分析やダウンロードなどの操作を行いやすくします。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/39926">Ckafka メッセージのバックアップ</a>をご参照ください。</td>
-   </tr>
-   <tr>
-      <td>TDMQメッセージのバックアップ</td>
-      <td>TDMQメッセージのバックアップは、COSがSCFをベースとしてユーザーに提供する、TDMQメッセージをCOSにダンプする機能です。ユーザーがTDMQメッセージをダンプするのをサポートすることで、データの分析やダウンロードなどの操作を行いやすくします。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/40541">TDMQ メッセージのバックアップ</a>をご参照ください。</td>
-   </tr>
-   <tr>
-      <td>CDNログのバックアップ</td>
-      <td>CDNログのバックアップは、COSがSCFをベースとしてユーザーに提供する、CDNログをCOSにダンプする機能です。ユーザーがCDNログをダンプするのをサポートすることで、アクセス行動分析やサービス品質のモニタリングを行いやすくします。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/40485">CDN ログのバックアップ</a>をご参照ください。</td>
-   </tr>
-   <tr>
-      <td>ログのクリーンアップ</td>
-      <td>ログのクリーンアップは、COSがSCFをベースとしてユーザーに提供する、ログファイル処理ソリューションです。ユーザーがログ管理サービスを有効化するか、自身でログファイルをアップロードすると、COSがあらかじめ設定したSCFが自動的にトリガーされ、関数内で事前に指定したSQLステートメントを検索し、ファイル内のログ情報を自動的にフィルタリングしてクリーンアップします。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/39925">ログのクリーンアップ</a>をご参照ください。</td>
-   </tr>
-   <tr>
-      <td>ファイル解凍</td>
-      <td>ファイル解凍機能は、COSがSCFをベースとしてユーザーに提供するデータ処理ソリューションです。ファイル解凍機能を追加すると、圧縮ファイルがCOSにアップロードされた時点で、COSがあらかじめ設定したSCFが自動的にトリガーされ、ファイルが自動的に指定のバケットとディレクトリに解凍されます。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/35663"> ファイル解凍</a>をご参照ください。</td>
-   </tr>
-   <tr>
-      <td>CDNキャッシュ更新</td>
-      <td>CDNキャッシュ更新は、COSがSCFをベースとしてユーザーに提供する、データ更新機能です。ユーザーがCDNエッジノード上のキャッシュデータを自動的に更新するのをサポートします。詳細については <a href="https://intl.cloud.tencent.com/document/product/436/37273"> CDN キャッシュ更新</a>をご参照ください。</td>
+      <td nowrap="nowrap">他のクラウド製品との統合</td>
+      <td>COSはServerless Cloud Function（SCF）をベースにして、データベースバックアップ、メッセージバックアップ、ログバックアップ、ログ分析、ファイル解凍、データエクスポートなどの機能をユーザーにご提供します。詳細については、<a href="https://www.tencentcloud.com/zh/document/product/436/39924">アプリケーション統合</a>をご参照ください。</td>
    </tr>
 </table>
 
@@ -264,7 +252,7 @@ Cloud Object Storage（COS）は主に次の機能を提供します。
    </tr>
    <tr>
       <td nowrap="nowrap">様々な管理ツール/td>
-      <td>COSはCOSBrowser、COSCMD、COS Migrationなどのさまざまな実用的なツールを提供し、ユーザーがデータ管理やデータ移行を便利に行えるようにしています。詳細については、<a href="https://intl.cloud.tencent.com/document/product/436/6242">ツールの概要</a>をご参照ください。</td>
+      <td>COSはCOSBrowser、COSCMD、COSCLI、COS Migrationなどのさまざまな実用的なツールを提供し、ユーザーがデータ管理やデータ移行を便利に行えるようにしています。詳細については、<a href="https://intl.cloud.tencent.com/document/product/436/6242">ツールの概要</a>をご参照ください。</td>
    </tr>
 </table>
 
@@ -290,6 +278,8 @@ Cloud Object Storage（COS）は主に次の機能を提供します。
    </tr>
    <tr>
       <td>複数の伝送プロトコル</td>
-      <td>COSはHTTP1.0、HTTP1.1プロトコルを含む複数の伝送プロトコルをサポートしています。またTLS1.0、TLS1.1、TLS1.2暗号化プロトコルもサポートしています。</td>
+      <td>COSは、HTTP1.0、HTTP1.1、QUICプロトコルを含む複数の伝送プロトコルのほか、TLS1.0、TLS1.1、TLS1.2暗号化プロトコルもサポートしています。QUICプロトコルのご利用を希望される場合は、ホワイトリストのアクティブ化について<a href="https://intl.cloud.tencent.com/contact-sales">お問い合わせ</a>ください。</td>
    </tr>
 </table>
+
+
