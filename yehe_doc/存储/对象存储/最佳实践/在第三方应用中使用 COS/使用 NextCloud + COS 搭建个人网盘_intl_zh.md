@@ -412,7 +412,7 @@ $CONFIG = array(
 );
 ```
  如下图所示：
-![](https://main.qcloudimg.com/raw/b14a23e2cac3ac988745fcd82fe56e18.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/yJvR645_b14a23e2cac3ac988745fcd82fe56e18.png)
 2. 将该文件保存并上传到 `/var/www/nextcloud/config/` 目录下（保持文件名为`config.php`），您可以通过 SFTP 或 SCP 软件上传文件，也可以通过 `rz -bye` 命令上传。
 3. 执行下述命令修改配置文件的所有者：
 ```bash
