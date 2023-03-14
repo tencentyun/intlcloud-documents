@@ -63,8 +63,9 @@ Node.js 运行时提供了在线依赖安装功能，可根据 `package.json` �
 ::: 使用依赖管理工具
 云函数在线编辑器 [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962) 提供了终端功能，并在终端中内置了包管理工具 `npm`。
 
->! Serverless Web IDE 对较新版本运行环境支持存在延时，如果对应运行环境下控制台未开放 Serverless Web IDE，请使用依赖库同代码一起打包上传或在线依赖安装方式进行依赖安装。
-
+<dx-alert infotype="notice" title="">
+ Serverless Web IDE 对较新版本运行环境支持存在延时，如果对应运行环境下控制台未开放 Serverless Web IDE，请使用依赖库同代码一起打包上传或在线依赖安装方式进行依赖安装。
+</dx-alert>
 本文以在终端中安装 `lodash` 库为例：
 
 1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择**函数服务**。
@@ -129,8 +130,9 @@ def main_handler(event, context):
 ::: 使用依赖管理工具
 云函数在线编辑器 [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962) 提供了终端功能，并在终端中内置了包管理工具 `pip`。
 
->! Serverless Web IDE 对较新版本运行环境支持存在延时，如果对应运行环境下控制台未开放 Serverless Web IDE，请使用依赖库同代码一起打包上传或在线依赖安装方式进行依赖安装。
-
+<dx-alert infotype="notice" title="">
+ Serverless Web IDE 对较新版本运行环境支持存在延时，如果对应运行环境下控制台未开放 Serverless Web IDE，请使用依赖库同代码一起打包上传或在线依赖安装方式进行依赖安装。
+</dx-alert>
 本文以在终端中安装 `numpy` 库为例：
 
 1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择**函数服务**。
@@ -200,9 +202,7 @@ function main_handler($event, $context) {
    :::
    ::: 安装自定义扩展
    在函数入口文件的同级目录下创建扩展文件夹 `php_extension` 并添加自定义扩展文件 `.so` 和配置文件 `php.ini`，同函数代码一起打包上传。
-
 本文以 `PHP7.2` 安装自定义扩展 `swoole.so` 为例。
-
 1. 在本地终端中执行 `mkdir test-package` 命令，创建一个目录用于存放函数代码和依赖库。
 2. 执行以下命令在 `test-package` 创建文件夹 `php_extension`，并将扩展对应的配置文件 `php.ini` 和扩展文件 `.so` 放在该目录下，目录结构如下：
    <dx-alert infotype="explain" title="">
@@ -210,32 +210,27 @@ function main_handler($event, $context) {
 - 扩展文件夹 `php_extension` 和配置文件 `php.ini` 为固定命名，如使用其他命名可能导致扩展加载失败。
 - 扩展文件夹 `php_extension` 和配置文件 `php.ini` 以及自定义扩展 `.so` 文件需要具备可执行权限。
   </dx-alert>
-
 ```plaintext
 |____php_extension
 | |____php.ini
 | |____swoole.so
 |____index.php  
 ```
-
 3. 自定义扩展支持从代码中或层中加载，如果扩展以层的形式上传，请确保上传到层的 zip 解压后的目录格式如下：
 
 ```plaintext
 |____php_extension
 | |____swoole.so
 ```
-
 4. php.ini 写法：
      - 扩展在代码目录下：
      ```ini
 extension=/var/user/php_extension/swoole.so
      ```
-  ```
      - 扩展在层目录下：
      ```ini
 extension=/opt/php_extension/swoole.so
   ```
-
 5. 在该目录下创建函数入口文件 `index.php`，可通过`extension_loaded( )`函数检查扩展是否加载成功，加载成功返回`true`，否则返回`false`。
 
 ```php
@@ -248,16 +243,19 @@ function main_handler($event, $context) {
 ```
 
 6. 将函数代码及依赖库一同压缩为 zip 包，在 [Serverless 控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
-    	 1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
-     2. 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
-     3. 在“新建函数”页面，填写函数基本信息。如下图所示： 
-         ![](https://staticintl.cloudcachetci.com/yehe/backend-news/TRF5230_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170044.png)
-          - **创建方式**：选择使用**从头开始**来新建函数。
-          - **运行环境**：选择**Php7.2**。
-          - **提交方法**：选择**本地上传zip包**。
-     4. 单击**完成**即可创建函数。
+  - 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
+  - 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
+  - 在“新建函数”页面，填写函数基本信息。如下图所示： 
+         
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/TRF5230_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170044.png)
+      - **创建方式**：选择使用**从头开始**来新建函数。
+      - **运行环境**：选择**Php7.2**。
+      - **提交方法**：选择**本地上传zip包**。
+  - 单击**完成**即可创建函数。
+
    :::
    </dx-tabs>
+
 
 
 
