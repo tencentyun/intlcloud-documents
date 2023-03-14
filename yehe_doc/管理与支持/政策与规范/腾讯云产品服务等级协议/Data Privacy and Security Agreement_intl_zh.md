@@ -161,6 +161,7 @@
 58.[云防火墙](https://www.tencentcloud.com/document/product/1160/52114)。
 59.[短视频 SDK](https://www.tencentcloud.com/document/product/1069/52520)。
 60.[密钥管理系统](https://www.tencentcloud.com/document/product/1030/53638)。
+61.[腾讯云数据连接器](https://www.tencentcloud.com/document/product/1165/54050).
 
 ## 特定司法管辖区要求
 
