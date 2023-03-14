@@ -8,7 +8,7 @@
 ##  前提条件
 - Tencent CSSサービスを有効化し、[プッシュドメイン名](https://intl.cloud.tencent.com/document/product/267/35970)を追加していること。
 
-## タイムシフトテンプレートの作成。
+## タイムシフトテンプレートの作成
 1. CSSコンソールにログインし、機能設定>[ライブストリーミングタイムシフト](https://console.cloud.tencent.com/live/config/time-shift/template)に進みます。
 2. **タイムシフトテンプレート作成**をクリックし、以下のようにテンプレートの情報を設定します：
 
