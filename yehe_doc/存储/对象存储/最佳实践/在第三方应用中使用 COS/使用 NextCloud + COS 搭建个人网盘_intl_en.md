@@ -411,7 +411,7 @@ $CONFIG = array(
 );
 ```
  As shown below:
-![](https://main.qcloudimg.com/raw/b14a23e2cac3ac988745fcd82fe56e18.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/yJvR645_b14a23e2cac3ac988745fcd82fe56e18.png)
 2. Save the file and upload it to the `/var/www/nextcloud/config/` directory (keep the filename `config.php`) through SFTP or SCP or by running the `rz -bye` command.
 3. Run the following command to change the owner of the configuration file:
 ```bash
