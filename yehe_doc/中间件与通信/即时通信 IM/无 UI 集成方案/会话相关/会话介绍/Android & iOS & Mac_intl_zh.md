@@ -18,19 +18,18 @@
 | recvOpt | 消息接收选项 | 参考 `V2TIMReceiveMessageOpt` 定义。具体使用请参考 [消息免打扰](https://intl.cloud.tencent.com/document/product/1047/48032)。|
 | lastMessage | 会话最后一条消息 | 具体使用请参考 [会话列表](https://intl.cloud.tencent.com/document/product/1047/48326)。|
 | groupAtInfolist | 群会话 @ 信息列表 | 通常用于展示 “有人@我” 或 “@所有人” 这两种提醒状态。|
-| draftText | 草稿信息 | 设置草稿信息请调用 `setConversationDraft` 接口，具体实现请参考会话草稿。|
+| draftText | 草稿信息 | 设置草稿信息请调用 `setConversationDraft` 接口，具体实现请参考 [会话草稿](https://intl.cloud.tencent.com/document/product/1047/48311)。|
 | draftTimestamp | 草稿编辑时间 | 草稿设置的时候自动生成。|
-| isPinned | 会话是否置顶 | 具体使用请参考 置顶会话。|
+| isPinned | 会话是否置顶 | 具体使用请参考 [置顶会话](https://intl.cloud.tencent.com/document/product/1047/48317)。|
 | orderKey | 会话排序字段 | 具体使用请参考 [会话列表](https://intl.cloud.tencent.com/document/product/1047/48326)。|
-
+| markList | 会话标记列表 | 具体使用请参考 [会话标记](https://intl.cloud.tencent.com/document/product/1047/48853)。从 6.5 版本开始支持。|
+| customData | 会话自定义数据 | 设置请调用 `setConversationCustomData` 接口。云端保存，最多支持 256 Bytes。从 6.5 版本开始支持。|
+| conversationGroupList | 会话所属分组列表 | 具体使用请参考 [会话分组](https://intl.cloud.tencent.com/document/product/1047/48854)。从 6.5 版本开始支持。|
 
 ## 会话存储策略
-本地存储的会话列表没有数量上限。
-云端存储的会话列表最大数量为 100。如果您希望扩展此数量，可以升级旗舰版。旗舰版用户可以在控制台配置最高数量为 500，配置页面如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/ba00871ad091df6fbe7cbf0ceb0e7607.png)
+本地存储的会话列表没有数量上限|。
+云端存储的会话列表最大数量为 100。如果您希望扩展此数量，可以升级旗舰版。旗舰版用户可以在控制台配置最高数量为 500。
 
 如果一个会话长时间没有信息变更，该会话在云端最多保存 7 天。
 
 本地存储的会话和云端存储的会话并不总是一致的，如果用户不主动调用 `deleteConversation` 接口删除本地的会话，该会话就会一直存在。而云端存储的会话最大只会保存 100 条，且对于长时间没有信息变更的会话，云端最多保存 7 天，所以不同的终端本地显示的会话可能会不一样。
-
-

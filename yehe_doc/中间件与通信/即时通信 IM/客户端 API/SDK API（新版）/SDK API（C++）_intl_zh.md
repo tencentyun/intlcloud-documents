@@ -28,18 +28,18 @@
 
 ## 信令接口
 
-| API                                                          | 描述                                                   |
-| ------------------------------------------------------------ | ------------------------------------------------------ |
+| API                                                          | 描述                                                 |
+| ------------------------------------------------------------ | ---------------------------------------------------- |
 | [AddSignalingListener](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#ad05971845c3daa32b5c3ceac33cd7440) | 添加信令监听                                         |
-| [RemoveSignalingListener](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#aee990a20a262f205cfa6d5c8117a64c2) | 移除信令监听                                           |
+| [RemoveSignalingListener](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#aee990a20a262f205cfa6d5c8117a64c2) | 移除信令监听                                         |
 | [Invite](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#a85e7fab6f656ff007fa1fae5400ff547) | 邀请某个人                                           |
-| [InviteInGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#a4813ae9206eb27438293054a076e2441) | 邀请群内的某些人                                       |
+| [InviteInGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#a4813ae9206eb27438293054a076e2441) | 邀请群内的某些人                                     |
 | [Cancel](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#a2e57c098f73789bf1a6ac0c2b916e6e0) | 邀请方取消邀请                                       |
-| [Accept](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#a714672da1a57c1006368650842fc5f29) | 接收方接收邀请                                         |
+| [Accept](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#a714672da1a57c1006368650842fc5f29) | 接收方接收邀请                                       |
 | [Reject](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#abd2c124577c39c0a992a34b54665cb9b) | 接收方拒绝邀请                                       |
 | [GetSignalingInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#afc6d9c1e14e05f87e7ea108711095cb8) | 获取信令信息                                         |
 | [AddInvitedSignaling](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#adefac3df746100d0afaff911066bcd7f) | 添加邀请信令（可以用于群离线推送消息触发的邀请信令） |
-| [modifyInvitation](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#a2777536d96c746cd4a831672fcbe6afe) | 修改邀请信令 |
+| [modifyInvitation](https://im.sdk.qcloud.com/doc/en/classV2TIMSignalingManager.html#a2777536d96c746cd4a831672fcbe6afe) | 修改邀请信令                                         |
 
 ## 高级消息收发接口
 
@@ -50,7 +50,6 @@
 | [AddAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a498688ee0f672f114e28d830761dfbf8) | 设置高级消息的事件监听器， 请不要同 [AddSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#ad039bd93fe1a09cf45034697e1c1328f) 混用 |
 | [RemoveAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a7e27cbe3f0cc26e09de0bdee8b192bea) | 移除高级消息的事件监听器                                     |
 | [CreateTextMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#ab96fac17ae7cb4d1e367dff40aa0694c) | 创建文本消息                                                 |
-| [CreateTextAtMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#afa39182f419c621fc929eb3929206107) | 创建 @ 文本消息                                              |
 | [CreateCustomMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a3af1cc2c76c41f3e48080134502ac8d5) | 创建自定义消息                                               |
 | [CreateImageMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a1f066186491a282c98f9cf7296720775) | 创建图片消息                                                 |
 | [CreateSoundMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a017a0c2902d045a70a9d5b686154984e) | 创建语音消息                                                 |
@@ -60,12 +59,14 @@
 | [CreateFaceMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a72c548e00aed06ef99aca1d55d5895c2) | 创建表情消息                                                 |
 | [CreateMergerMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#afc00a2a85b3d29ccfc472ea6544eccf3) | 创建合并转发消息                                             |
 | [CreateForwardMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#aaff05e59893cb1cfe5a806e700e1e270) | 创建单条转发消息                                             |
-| [SendMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a42db237e7ae52cd2aa7edebf4f435c61) | 发送消息，消息对象可以由 CreateXXXMessage 接口创建得来     |
+| [CreateTargetedGroupMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#aceeef38fd6308e91154cdd8310c6012f) | 创建定向群消息                                               |
+| [CreateAtSignedGroupMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#af34abe1b5eac3df820a76e9710bc5fba) | 创建带 @ 标记的群消息                                        |
+| [SendMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a42db237e7ae52cd2aa7edebf4f435c61) | 发送消息，消息对象可以由 CreateXXXMessage 接口创建得来       |
 | [SetC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#adf166f08b68a5df8de19d152bcf868b3) | 设置单聊消息免打扰                                           |
 | [GetC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a30a4979460e73c897b6130ba40356afa) | 获取单聊消息免打扰状态                                       |
-| [SetGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a866d06c28faf058f253f29be6f5b3fe2) | 设置群聊消息免打扰状态                                                                    |
+| [SetGroupReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a866d06c28faf058f253f29be6f5b3fe2) | 设置群聊消息免打扰状态                                       |
 | [GetHistoryMessageList](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a4bbdbdd063d5dad2d164059e1f5d7851) | 获取历史消息高级接口                                         |
-| [RevokeMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a3f271fcb935ada0ef05709367638a1a6) | 撤回消息，消息对象可以由 CreateXXXMessage 接口创建得来     |
+| [RevokeMessage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a3f271fcb935ada0ef05709367638a1a6) | 撤回消息，消息对象可以由 CreateXXXMessage 接口创建得来       |
 | [MarkC2CMessageAsRead](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a024f95bcf2b37a354f11f5b5a4d6920f) | 设置单聊（C2C）消息已读                                      |
 | [MarkGroupMessageAsRead](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#abdf09c92dccfb71b58b8a36f42494b8d) | 设置群组消息已读                                             |
 | [DeleteMessages](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#ac340e09d426d983fb4b6cf48d9a7ebca) | 删除本地及云端的消息                                         |
@@ -75,12 +76,13 @@
 | [InsertC2CMessageToLocalStorage](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#abba2adf81fa2bb457c14fffb9ae0eda4) | 向单聊消息列表中添加一条消息                                 |
 | [FindMessages](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#ac5531e73378b8b8eadd056ba99e5427e) | 根据 msgID 查找本地消息                                      |
 | [SearchLocalMessages](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a46be86c0177c868f03fc939c88e2e36d) | 搜索本地消息                                                 |
-| [SendMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#ae0a86a41d103c1722017d2f71b475cf2) | 发送消息已读回执 |
-| [GetMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a73b488bb868db032a060de4282dd2547) | 获取消息已读回执 |
-| [GetGroupMessageReadMemberList](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a8b6ae2c30d173b6a5a4c99ebb3aecca9) | 获取群消息已读群成员列表 |
-| [setMessageExtensions](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a01d4d98b44f8b1dfdeff3abf1cd71d41) | 设置消息扩展 |
-| [getMessageExtensions](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a7d0ec9f6d4201d916eb2861b19443605) | 获取消息扩展 |
-| [deleteMessageExtensions](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a319ceed3323c5005b3630ef1598d5886) | 删除消息扩展 |
+| [SendMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#ae0a86a41d103c1722017d2f71b475cf2) | 发送消息已读回执                                             |
+| [GetMessageReadReceipts](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a73b488bb868db032a060de4282dd2547) | 获取消息已读回执                                             |
+| [GetGroupMessageReadMemberList](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a8b6ae2c30d173b6a5a4c99ebb3aecca9) | 获取群消息已读群成员列表                                     |
+| [setMessageExtensions](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a01d4d98b44f8b1dfdeff3abf1cd71d41) | 设置消息扩展                                                 |
+| [getMessageExtensions](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a7d0ec9f6d4201d916eb2861b19443605) | 获取消息扩展                                                 |
+| [deleteMessageExtensions](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#a319ceed3323c5005b3630ef1598d5886) | 删除消息扩展                                                 |
+| [translateText](https://im.sdk.qcloud.com/doc/en/classV2TIMMessageManager.html#ad4df190bf4089a64f69b84a874a60028) | 翻译文本消息                                                 |
 
 ## 群组相关接口
 
@@ -88,7 +90,7 @@
 
 - 工作群（Work） ：创建后不能自由加入，必须由已经在群的用户邀请入群。
 - 公开群（Public） ：用户申请加入，但需要群主或管理员审批。
-- 会议群（Meeting）：适合跟 [TRTC](https://intl.cloud.tencent.com/product/trtc) 结合实现视频会议和在线教育等场景，支持随意进出，支持查看进群前的历史消息。
+- 会议群（Meeting）：适合跟 [TRTC](https://cloud.tencent.com/product/trtc) 结合实现视频会议和在线教育等场景，支持随意进出，支持查看进群前的历史消息。
 - 直播群（AVChatRoom）：适合直播弹幕聊天室等场景，支持随意进出，人数无上限。
 
 | API                                                          | 描述                                                       |
@@ -116,7 +118,7 @@
 | [MuteGroupMember](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ab19d433e5552205fcba61627e54f7569) | 禁言                                                       |
 | [KickGroupMember](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ad2e4f74f4e26fb0db455d8e92f774032) | 踢人                                                       |
 | [SetGroupMemberRole](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ab429c1ded6aa3ae27bb0917be6f71dd3) | 切换群成员的角色                                           |
-| [markGroupMemberList](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#abda7d60a02581930b2071cac01d41cfd) | 标记群成员                                                |
+| [markGroupMemberList](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#abda7d60a02581930b2071cac01d41cfd) | 标记群成员                                                 |
 | [TransferGroupOwner](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a2fedff98e2e41e9d30f7a49f5c7adc8f) | 转让群主                                                   |
 | [InviteUserToGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a46fecb95bf66ccc3023201fb3737c423) | 邀请他人入群                                               |
 | [GetGroupApplicationList](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a4609879f4c67fde60a6fa4f707987143) | 获取加群的申请列表                                         |
@@ -126,7 +128,7 @@
 
 ## 会话列表相关接口
 
-会话列表，即登录微信或 QQ 后首屏看到的列表，包含会话节点、会话名称、群名称、最后一条消息以及未读消息数等元素。
+会话列表，即登录后首屏看到的列表，包含会话节点、会话名称、群名称、最后一条消息以及未读消息数等元素。
 
 | API                                                          | 描述             |
 | ------------------------------------------------------------ | ---------------- |
@@ -158,10 +160,10 @@
 | ------------------------------------------------------------ | -------------------------------------------- |
 | [GetUsersInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#ac7aa404aec07fc0d9823d9da5fd4e443) | 获取用户资料                                 |
 | [SetSelfInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#acb89663576c7f68cc4b9983733835e29) | 修改个人资料                                 |
-| [GetUserStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a56a7968dcb6f676c8aebd52d0fffbb30) | 查询用户状态 |
-| [SetSelfStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#aa93c93f1a3ce5d7802febc0e550cf743) | 设置自己的状态 |
-| [SubscribeUserStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a6485ab30f0025998ffeecb78490332f5) | 订阅用户状态 |
-| [UnsubscribeUserStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a7e62b89e6ad2d164458afa24f379530c) | 取消订阅用户状态 |
+| [GetUserStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a56a7968dcb6f676c8aebd52d0fffbb30) | 查询用户状态                                 |
+| [SetSelfStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#aa93c93f1a3ce5d7802febc0e550cf743) | 设置自己的状态                               |
+| [SubscribeUserStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a6485ab30f0025998ffeecb78490332f5) | 订阅用户状态                                 |
+| [UnsubscribeUserStatus](https://im.sdk.qcloud.com/doc/en/classV2TIMManager.html#a7e62b89e6ad2d164458afa24f379530c) | 取消订阅用户状态                             |
 | [AddToBlackList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a2f49378d21cb0d48b9e1e1814dc2460e) | 屏蔽某人的消息（添加该用户到黑名单中）       |
 | [DeleteFromBlackList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a8bacf997892119e021a8f4aa4db48de3) | 取消某人的消息屏蔽（把该用户从黑名单中移除） |
 | [GetBlackList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a8d402bd222d8dcb98516185bd75fc5b2) | 获取黑名单列表                               |
@@ -170,25 +172,25 @@
 
 腾讯云 IM 在收发消息时默认不检查是不是好友关系，您可以在 [**控制台**](https://console.cloud.tencent.com/im) >**功能配置**>**登录与消息**>**好友关系检查**中开启"发送单聊消息检查关系链"开关，并使用如下接口增删好友和管理好友列表。
 
-| API                                                          | 描述                                                   |
-| ------------------------------------------------------------ | ------------------------------------------------------ |
-| [AddFriendListener](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#ac4c542617008471fa1fe7a64ba963fbb) | 添加关系链监听器 
-| [RemoveFriendListener](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#ae21ca2737c35305ecc1f25e054265ed8) | 移除关系链监听器
-| [GetFriendList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a11bcb462e073ebec63a2586bad9757cf) | 获取好友列表                                           |
-| [GetFriendsInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a9b263f612a1e7e35ee2c745b5f36a1e3) | 获取指定好友资料                                       |
-| [SetFriendInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#abe9169909b008fd0a43044356e3206a0) | 设置指定好友资料                                       |
-| [SearchFriends](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#aea84cd163665db3b0f2338d787446f53) | 搜索好友列表                                           |
-| [AddFriend](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a47ae7c54faf0b4b0f1d0a14fe7ed27d3) | 添加好友                                               |
-| [DeleteFromFriendList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#ae46d0b7f89dac1867de915b7fed3b479) | 删除好友                                               |
-| [CheckFriend](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a90046f679ca31dedc00bbecff065538f) | 检查指定用户的好友关系                                 |
-| [GetFriendApplicationList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#aad42cc5d8f5c7abf3c2710697c29a9f9) | 获取好友申请列表                                       |
-| [AcceptFriendApplication](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a9cfb992e1c1b958208f3c1b48a6b336d) | 同意好友申请                                           |
-| [RefuseFriendApplication](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a333de917766b6999e819eafc0513bf6f) | 拒绝好友申请                                           |
-| [DeleteFriendApplication](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a1243005c5ff2032c34dc8f3adf22f11d) | 删除好友申请                                           |
-| [SetFriendApplicationRead](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a91f8045a48c78a8da493f67188078baf) | 设置好友申请已读                                       |
-| [CreateFriendGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a8f4192055ef6b4d85e01983a6369f0d4) | 新建好友分组                                           |
-| [GetFriendGroups](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a3190b203cda3e1cabb947aded25c6354) | 获取分组信息                                           |
-| [DeleteFriendGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#aef0784eca4e5c17d5ef12da5788338b6) | 删除好友分组                                           |
-| [RenameFriendGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a74ada64658763bc5eb7f918993e15649) | 修改好友分组的名称                                     |
-| [AddFriendsToFriendGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a6bb688a4a82c1bc158a7873eda738c2f) | 添加好友到一个好友分组                                 |
-| [DeleteFriendsFromFriendGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a0d9d90dc372d82b07a79fe5e843f3ab6) | 从好友分组中删除好友                                   |
+| API                                                          | 描述                   |
+| ------------------------------------------------------------ | ---------------------- |
+| [AddFriendListener](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#ac4c542617008471fa1fe7a64ba963fbb) | 添加关系链监听器       |
+| [RemoveFriendListener](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#ae21ca2737c35305ecc1f25e054265ed8) | 移除关系链监听器       |
+| [GetFriendList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a11bcb462e073ebec63a2586bad9757cf) | 获取好友列表           |
+| [GetFriendsInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a9b263f612a1e7e35ee2c745b5f36a1e3) | 获取指定好友资料       |
+| [SetFriendInfo](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#abe9169909b008fd0a43044356e3206a0) | 设置指定好友资料       |
+| [SearchFriends](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#aea84cd163665db3b0f2338d787446f53) | 搜索好友列表           |
+| [AddFriend](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a47ae7c54faf0b4b0f1d0a14fe7ed27d3) | 添加好友               |
+| [DeleteFromFriendList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#ae46d0b7f89dac1867de915b7fed3b479) | 删除好友               |
+| [CheckFriend](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a90046f679ca31dedc00bbecff065538f) | 检查指定用户的好友关系 |
+| [GetFriendApplicationList](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#aad42cc5d8f5c7abf3c2710697c29a9f9) | 获取好友申请列表       |
+| [AcceptFriendApplication](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a9cfb992e1c1b958208f3c1b48a6b336d) | 同意好友申请           |
+| [RefuseFriendApplication](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a333de917766b6999e819eafc0513bf6f) | 拒绝好友申请           |
+| [DeleteFriendApplication](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a1243005c5ff2032c34dc8f3adf22f11d) | 删除好友申请           |
+| [SetFriendApplicationRead](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a91f8045a48c78a8da493f67188078baf) | 设置好友申请已读       |
+| [CreateFriendGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a8f4192055ef6b4d85e01983a6369f0d4) | 新建好友分组           |
+| [GetFriendGroups](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a3190b203cda3e1cabb947aded25c6354) | 获取分组信息           |
+| [DeleteFriendGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#aef0784eca4e5c17d5ef12da5788338b6) | 删除好友分组           |
+| [RenameFriendGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a74ada64658763bc5eb7f918993e15649) | 修改好友分组的名称     |
+| [AddFriendsToFriendGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a6bb688a4a82c1bc158a7873eda738c2f) | 添加好友到一个好友分组 |
+| [DeleteFriendsFromFriendGroup](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#a0d9d90dc372d82b07a79fe5e843f3ab6) | 从好友分组中删除好友   |

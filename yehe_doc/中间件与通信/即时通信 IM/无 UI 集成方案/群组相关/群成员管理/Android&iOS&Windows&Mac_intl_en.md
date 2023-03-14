@@ -1,16 +1,15 @@
-## Feature Description
+## Overview
 Group member management includes pulling the member list, muting group members, removing group members, granting permissions, and transferring the group ownership, which can be implemented through the methods in the `V2TIMGroupManager(Android)` / `V2TIMManager(Group)(iOS and macOS)` core class.
 
 [](id:getGroupMemberList)
 ## Getting the Group Member List
-Call the `getGroupMemberList` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a69fc0831aacaa0585c1855f4c91320be) / [iOS and Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a98681b9036e73acbe8f84737b5291326) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ade696bf03f06de9cdfb534570de35254)) to get the list of members in a specified group.
+Call the `getGroupMemberList` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a69fc0831aacaa0585c1855f4c91320be) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a98681b9036e73acbe8f84737b5291326) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ade696bf03f06de9cdfb534570de35254)) to get the list of members in a specified group.
 The list contains profile information about individual group members, such as user ID (`userID`), group name card (`nameCard`), profile photo (`faceUrl`), nickname (`nickName`), and time of joining group (`joinTime`).
 
 As an audio-video group (AVChatRoom) has a large number of members, the feature of pulling the list of all the members is unavailable. The Ultimate edition and non-Ultimate edition differ as follows:
 1. A non-Ultimate edition user can call `getGroupMemberList` to pull the latest 30 group members.
-2. An Ultimate edition user can call `getGroupMemberList` to pull the latest 1,000 group members. This feature needs to be enabled in the IM console. If it is not enabled, only the latest 30 group members will be pulled, just as in the non-Ultimate edition.
-   To enable this feature for the Ultimate edition, log in to the [IM console](https://console.cloud.tencent.com/im) and modify the configuration as follows:
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/4a4bdc0ac01a81bda7c3c9839f76883b.png" style="zoom:90%;" />
+2. An Ultimate edition user can call `getGroupMemberList` to pull the latest 1,000 group members. This feature needs to be enabled in the Chat console. If it is not enabled, only the latest 30 group members will be pulled, just as in the non-Ultimate edition.
+   To enable this feature for the Ultimate edition, log in to the [Chat console](https://console.cloud.tencent.com/im) and modify related configuration.
 
 
 As a group might have a large number of members (for example, over 5,000), this API supports two advanced features: pulling by filter (`filter`) and pulling by page (`nextSeq`).
@@ -25,7 +24,7 @@ When calling the `getGroupMemberList` API ([Android](https://im.sdk.qcloud.com/d
 | V2TIM_GROUP_MEMBER_FILTER_ADMIN | Pull the information list of the group admin |
 | V2TIM_GROUP_MEMBER_FILTER_COMMON | Pull the information list of ordinary group members |
 
-For audio-video groups, you can set `filter` to a custom group member mark other than `V2TIMGroupMemberFilter` to filter group members as needed. For more information, see [Marking Group Members](markGroupMemberList).
+For audio-video groups, you can set `filter` to a custom group member mark other than `V2TIMGroupMemberFilter` to filter group members as needed. For more information, see [Marking Group Members](#markGroupMemberList).
 
 Sample code:
 
@@ -234,9 +233,9 @@ V2TIMManager::GetInstance()->GetGroupManager()->GetGroupMemberList(groupID, filt
 [](id:markGroupMemberList)
 ## Marking Group Members
 The group owner can call the `markGroupMemberList` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#abdd5f157904dd50012c7a93f66f85dba) / [iOS and Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a21238536e7cb2c3fd086797e7dc1b970)) to mark or unmark members of an audio-video group. Rules are as follows:
-1. This feature is supported only on audio-video groups, and only group owners have the permission to mark or ummark group members.
+1. This feature is supported only on audio-video groups, and only group owners have the permission to mark or unmark group members.
 2. Up to ten custom marks can be added per audio-video group.
-3. Custom marks configured through IM SDK must be of uint32_t type and greater than or equal to 1,000.
+3. Custom marks configured through Chat SDK must be of uint32_t type and greater than or equal to 1,000.
 4. Up to 100 group members can be marked at a time.
 5. Only online members can be marked. When a member leaves a group or goes offline, its mark information will be cleared. When the member joins the group or goes online again, you can reset a mark for the member through a third-party callback.
 
@@ -245,13 +244,11 @@ After marking group members, the group owner can call [`getGroupMemberList`](#ge
 > ?
 > 1. This feature is available only in Enhanced edition v6.6 or later.
 > 2. To use this feature, you need to purchase the Ultimate edition as instructed in [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
-> 3. Before using this feature, you need to log in to the [IM console](https://console.cloud.tencent.com/im) and modify configuration as follows:
-> <img src="https://qcloudimg.tencent-cloud.cn/raw/513b23a6598a74a0b0a6be5b6b59536f.png" alt="" style="zoom:90%;" />
+> 3. Before using this feature, you need to log in to the [Chat console](https://console.cloud.tencent.com/im) and modify related configuration.
 
 
 
 [](id:mute)
-
 ## Muting group members
 
 ### Muting a specified group member
@@ -269,8 +266,7 @@ The group owner or admin can also call the `setGroupInfo` API ([Android](https:/
 
 Muting all the group members will trigger the `onGroupInfoChanged` callback ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#ac3a88ea430c6dc35845472ed98ad049b) / [iOS and Mac](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#abbe2208a234d77364bff697eea503d27) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupListener.html#a37aa57b23295e6b295413fafba2eda07)).
 
-This notification is disabled by default. To enable it, log in to the [IM console](https://console.cloud.tencent.com/im) and modify the configuration as follows:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/57eef675340eddd32ead2a7950c23605.png" alt="" style="zoom:90%;" />
+This notification is disabled by default. To enable it, log in to the [Chat console](https://console.cloud.tencent.com/im) and modify related configuration.
 
 > ? Only the group owner can mute the admin.
 
@@ -457,7 +453,7 @@ public:
                             const V2TIMGroupChangeInfoVector& groupChangeInfoList) override {
         // Listen for the muting of all
         for (size_t i = 0; i < groupChangeInfoList.Size(); ++i) {
-            const V2TIMGroupMemberChangeInfo& groupMemberChangeInfo = groupMemberChangeInfoList[i];
+            const V2TIMGroupChangeInfo& groupChangeInfo = groupChangeInfoList[i];
             if (groupChangeInfo.type == V2TIMGroupInfoChangeType::V2TIM_GROUP_INFO_CHANGE_TYPE_SHUT_UP_ALL) {
                 // Whether all members are muted
                 bool boolValue = groupChangeInfo.boolValue;
@@ -486,8 +482,7 @@ For an audio-video group (AVChatRoom):
 2. **For Enhanced edition v6.6 or later, audio-video groups support member removal,** and the corresponding member removal API is the same as that of non-audio-video groups. After a member is removed from an audio-video group, it cannot join the group again nor sending messages to the group. For an audio-video group, only the group owner, not the admin or ordinary members, has the permission to remove members.
 > !
 > 1. To use this feature, you need to purchase the Ultimate edition as instructed in [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
-> 2. Before using this feature, you need to log in to the [IM console](https://console.cloud.tencent.com/im) and modify configuration as follows:
-> <img src="https://qcloudimg.tencent-cloud.cn/raw/4ac973cd8dfff550a762bd7b68d21174.png" style="zoom:90%;"/>
+> 2. Before using this feature, you need to log in to the [Chat console](https://console.cloud.tencent.com/im) and modify related configuration.
 
 
 Sample code:
@@ -903,4 +898,3 @@ V2TIMManager::GetInstance()->GetGroupManager()->GetGroupOnlineMemberCount(groupI
 ```
 :::
 </dx-tabs>
-

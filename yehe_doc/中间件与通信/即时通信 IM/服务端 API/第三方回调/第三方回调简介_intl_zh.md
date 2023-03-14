@@ -3,7 +3,7 @@
 为方便您精细化控制 App 的功能形态，即时通信 IM 为您提供了完全免费且强大的回调能力，默认使用长连接方式。所谓回调，即即时通信 IM 后台会在某一事件发生之前或者之后，向 App 的后台服务器发送请求，App 后台可以据此进行必要的数据同步，或者干预事件的后续处理流程。即时通信 IM 目前支持的回调请参见 [回调命令列表](https://intl.cloud.tencent.com/document/product/1047/34355)。
 
 第三方回调将通过 HTTP/HTTPS 请求的方式发送给 App 后台服务器，App 后台服务器需要处理即时通信 IM 的回调请求并尽快进行应答。以 [群内发言之前回调](https://intl.cloud.tencent.com/document/product/1047/34374) 为例，即时通信 IM 后台会在下发该消息之前回调 App 后台服务器，并根据回调结果决定该消息是否应当下发，App 可以基于该回调来实现消息同步。回调业务流程如下图所示：
-![](https://main.qcloudimg.com/raw/617414146c22be3c874e3af3b3e2234c.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/PnuW853_1.png)
 
 ## 回调分类
 
@@ -87,31 +87,38 @@ Content-Length: 75
 
 ## 安全考虑
 
-即时通信 IM 支持三种回调类型：
-
-1. HTTP 回调。
-2. HTTPS 回调，App 后台的 WebServer 配置的是 CA 机构签发的证书或即时通信 IM 免费签发的证书。
-3. HTTPS 双向认证回调，App 后台的 WebServer 配置的是 CA 机构签发的证书或即时通信 IM 免费签发的证书，且启用双向认证能力。
+即时通信 IM 同时支持 HTTP/HTTPS 回调，其中 HTTPS 回调需要在App 后台的 WebServer 配置 CA 机构签发的证书或即时通信 IM 免费签发的证书。
 
 >?获取即时通信 IM 免费签发的证书，需先登录控制台配置回调 URL 并下载证书，详细操作步骤请参见 [回调配置](https://intl.cloud.tencent.com/document/product/1047/34520)。
 
-三种方案的安全性逐步递增：
+安全性问题：
 
-1. HTTP 回调存在两个缺陷：一是明文传输的数据容易被窃听，二是第三方 App 无法判断回调请求是否真正来自于即时通信 IM。
-2. 对于 HTTPS 回调，如果不启用双向认证，可以解决数据的加密问题，但依然无法确保回调的请求来源是即时通信 IM。
-3. 只有 HTTPS 与双向认证结合，才能确保第三方回调的安全性。
+1. HTTP 是明文传输，数据的保密性无法保证，建议使用HTTPS。
+2. 无法验证回调请求是否真正来自于即时通信 IM。
 
-我们强烈建议 App 使用第三种方式实现回调，且即时通信 IM 签发证书完全免费。
+为了解决请求来源的安全性问题，我们提供了两种方案：
+1. 支持回调鉴权（推荐）。
+<dx-alert infotype="explain" title="配置指引">
+1. 在控制台中配置回调 URL、回调开启。
+2. 在回调URL配置中，开启鉴权，并配置鉴权Token，配置完成后，回调请求URL参数会增加签名Sign以及签名时间戳RequestTime，签名算法：**Sign=sha256(TokenRequestTime)**
+3. 在App 后台支持针对回调请求进行鉴权，通过本地鉴权Token以及回调URL参数中的签名时间戳RequestTime计算sha256，比较签名是否匹配。
+</dx-alert>
+```
+签名算法示例：
 
-## 回调配置
+Token=xxxyyy
+RequestTime=1669872112
+Sign=sha256(xxxyyy1669872112)=17773bc39a671d7b9aa835458704d2a6db81360a5940292b587d6d760d484061
 
-目前即时通信 IM 控制台支持自助配置回调，包括配置回调 URL 以及启用哪些回调。配置方法参见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
-
->!控制台自助配置的回调仅支持 HTTP/HTTPS 回调。如果您需要启用安全级别最强的 HTTPS 双向认证：
->1. 在控制台中配置回调 URL（必须为 HTTPS 域名）、回调开启。
->2. 单击右侧的【HTTPS双向认证证书下载】获取证书，依照如下两篇指引配置 HTTPS 双向认证：
->   1. [Apache 配置 HTTPS 双向认证指南](https://intl.cloud.tencent.com/document/product/1047/34379)
->   2. [Nginx 配置 HTTPS 双向认证指南](https://intl.cloud.tencent.com/document/product/1047/34380)
+回调 URL=URL&Sign=17773bc39a671d7b9aa835458704d2a6db81360a5940292b587d6d760d484061&RequestTime=1669872112
+```
+2. 支持 HTTPS 双向认证。
+<dx-alert infotype="explain" title="配置指引">
+1. 在控制台中配置回调 URL（必须为 HTTPS 域名）、回调开启。
+2. 单击右侧的**HTTPS 双向认证证书下载**获取证书，依照如下两篇指引配置 HTTPS 双向认证：
+   1. [Apache 配置 HTTPS 双向认证指南](https://intl.cloud.tencent.com/document/product/1047/34379)
+   2. [Nginx 配置 HTTPS 双向认证指南](https://intl.cloud.tencent.com/document/product/1047/34380)
+   </dx-alert>
 
 ## 回调不通的常见原因
 

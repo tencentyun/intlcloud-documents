@@ -9,8 +9,7 @@
 直播群由于人数众多，不提供拉取全量成员列表的功能。根据旗舰版和非旗舰版区分不同的表现：
 1. 非旗舰版客户可调用 `getGroupMemberList` 拉取最近进群的 30 位群成员。
 2. 旗舰版客户可调用 `getGroupMemberList` 拉取最近进群的 1000 位群成员。此功能需要在 IM 控制台开启开关，如果不开启，默认跟非旗舰版表现一样，仅拉取最近进群 30 位群成员。
-   旗舰版客户如需开启此功能，需要登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 修改相关配置，配置页面如下图所示：
-   <img src="https://qcloudimg.tencent-cloud.cn/raw/4a4bdc0ac01a81bda7c3c9839f76883b.png" style="zoom:90%;" />
+   旗舰版客户如需开启此功能，需要登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 修改相关配置。
 
 
 一个群中的成员人数可能很多（例如 5000+），群成员列表的拉取接口支持过滤器（`filter`）和分页拉取（`nextSeq`）两个高级特性。
@@ -25,7 +24,7 @@
 | V2TIM_GROUP_MEMBER_FILTER_ADMIN  | 仅拉取群管理员的信息列表   |
 | V2TIM_GROUP_MEMBER_FILTER_COMMON | 仅拉取普通群成员的信息列表 |
 
-对于直播群而言，除了将 `filter` 设置为 `V2TIMGroupMemberFilter` 以外，还可以设置为自定义群成员标记，从而筛选出指定标记的群成员。详情参考下文的 [标记群成员](markGroupMemberList)。
+对于直播群而言，除了将 `filter` 设置为 `V2TIMGroupMemberFilter` 以外，还可以设置为自定义群成员标记，从而筛选出指定标记的群成员。详情参考下文的 [标记群成员](#markGroupMemberList)。
 
 示例代码如下：
 
@@ -245,13 +244,11 @@ V2TIMManager::GetInstance()->GetGroupManager()->GetGroupMemberList(groupID, filt
 > ?
 > 1. 仅增强版 6.6 及以上版本支持。
 > 2. 标记直播群成员仅对旗舰版客户开放，详情请参考 [基础服务详情](https://intl.cloud.tencent.com/document/product/1047/34350)。
-> 3. 如需使用此功能，您需要登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 开启开关，配置页面如下图所示：
-> <img src="https://qcloudimg.tencent-cloud.cn/raw/513b23a6598a74a0b0a6be5b6b59536f.png" alt="" style="zoom:90%;" />
+> 3. 如需使用此功能，您需要登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 开启开关。
 
 
 
 [](id:mute)
-
 ## 禁言
 
 ### 禁言指定群成员
@@ -269,8 +266,7 @@ V2TIMManager::GetInstance()->GetGroupManager()->GetGroupMemberList(groupID, filt
 
 全员禁言后触发 `onGroupInfoChanged` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#ac3a88ea430c6dc35845472ed98ad049b) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#abbe2208a234d77364bff697eea503d27) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupListener.html#a37aa57b23295e6b295413fafba2eda07)) 事件回调。
 
-该通知默认是关闭的，如需开启此通知，您可以登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 修改相关配置，配置页面路径为：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/57eef675340eddd32ead2a7950c23605.png" alt="" style="zoom:90%;" />
+该通知默认是关闭的，如需开启此通知，您可以登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 修改相关配置。
 
 > ? 只有群主能将管理员禁言。
 
@@ -486,8 +482,7 @@ V2TIMManager::GetInstance()->AddGroupListener(&groupListener);
 2. **增强版 6.6 开始，直播群支持踢人**。踢人接口及回调跟普通群一致。群成员被踢出直播群后，无法再加入该群，也不能再向群里发消息。直播群只有群主能踢人，管理员、普通成员均没有踢人权限。
 > !
 > 1. 直播群踢人仅对旗舰版客户开放，详情请参考 [基础服务详情](https://intl.cloud.tencent.com/document/product/1047/34350)。
-> 2. 如需使用此功能，您需要登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 开启开关，配置页面如下图所示：
-> <img src="https://qcloudimg.tencent-cloud.cn/raw/4ac973cd8dfff550a762bd7b68d21174.png" style="zoom:90%;"/>
+> 2. 如需使用此功能，您需要登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 开启开关。
 
 
 示例代码如下：
@@ -903,4 +898,3 @@ V2TIMManager::GetInstance()->GetGroupManager()->GetGroupOnlineMemberCount(groupI
 ```
 :::
 </dx-tabs>
-

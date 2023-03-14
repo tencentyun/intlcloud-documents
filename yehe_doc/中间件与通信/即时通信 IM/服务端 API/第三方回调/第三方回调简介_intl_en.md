@@ -1,40 +1,40 @@
 ## Overview
 
-To give you refined control over app features, IM provides you with powerful callbacks free of charge. The callbacks use persistent connection mode by default. A callback means that the IM backend sends a request to the app backend server before or after an event occurs. This allows the app backend to synchronize data if necessary or intervene in the subsequent event processing. For more information about the callbacks currently supported by IM, see the [Callback Command List](https://intl.cloud.tencent.com/document/product/1047/34355).
+To give you refined control over app features, Chat provides you with powerful webhooks free of charge. The webhooks use persistent connection mode by default. A webhook means that the Chat backend sends a request to the app backend server before or after an event occurs. This allows the app backend to synchronize data if necessary or intervene in the subsequent event processing. For more information about the webhooks currently supported by Chat, see the [Webhook Command List](https://intl.cloud.tencent.com/document/product/1047/34355).
 
-A third-party callback is sent to the app backend server using an HTTP/HTTPS request, and the app backend server must process the IM callback request and provide a response as soon as possible. Take the [callback before delivering a group message](https://intl.cloud.tencent.com/document/product/1047/34374) as an example. Before the message is sent, the IM backend sends a callback request to the app backend server and determines whether the message should be sent based on the callback result. Based on the callback, the app can synchronize the message. The following figure shows the callback process.
-![](https://main.qcloudimg.com/raw/617414146c22be3c874e3af3b3e2234c.png)
+A webhook is sent to the app backend server using an HTTP/HTTPS request, and the app backend server must process the Chat webhook request and provide a response as soon as possible. Take the [Before Group Message Is Sent](https://intl.cloud.tencent.com/document/product/1047/34374) webhook event as an example. Before the message is sent, the Chat backend sends a webhook request to the app backend server and determines whether the message should be sent based on the webhook result. Based on the webhook, the app can synchronize the message. The following figure shows the webhook process.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/PnuW853_1.png)
 
-## Callback Classification
+## Webhook Classification
 
-Callbacks can be classified into four types according to their functions:
-- Online status callbacks
-- Profile and relationship chain callbacks
-- One-to-one message callbacks
-- Group system callbacks
+Webhooks can be classified into four types according to their functions:
+- Online status webhooks
+- Relationship chain webhooks
+- One-to-one message webhooks
+- Group webhooks
 
-Callbacks can be classified into two types by process:
-- Callback before an event occurs: the purpose of this type of callback is to allow the app backend to intervene in the processing logic of the event. IM will determine the subsequent processing flow based on the return code of the callback. For example, the callback before a group message is sent is this type of callback.
-- Callback after an event occurs: the purpose of this type of callback is to allow the app backend to implement essential data synchronization. IM ignores the return codes of such callbacks. For example, the callback after a member quits a group is this type of callback.
+Webhooks can be classified into two types by process:
+- Webhook before an action occurs: the purpose of this type of webhook is to allow the app backend to intervene in the processing logic of the event. Chat will determine the subsequent processing flow based on the return code of the webhook. For example, the webhook before a group message is sent is this type of webhook.
+- Webhook after an action occurs: the purpose of this type of webhook is to allow the app backend to implement essential data synchronization. Chat ignores the return codes of such webhooks. For example, the webhook after a member quits a group is this type of webhook.
 
-## Callback Protocol
+## Webhook Protocol
 
-Third-party callbacks are based on HTTP/HTTPS protocols. The app backend must provide a callback URL to IM, and IM uses a POST request to initiate a callback request to the app backend. When initiating a callback request, IM adds the following parameters at the end of the URL provided by the app backend:
+Webhooks are based on HTTP/HTTPS protocols. The app backend must provide a webhook URL to Chat, and Chat uses a POST request to initiate a webhook request to the app backend. When initiating a webhook request, Chat adds the following parameters at the end of the URL provided by the app backend:
 
-| Parameter | Description |
+| Parameter   | Description     |
 |---------|---------|
-| SdkAppid | App ID assigned by IM |
-| CallbackCommand | Callback command word |
+| SdkAppid | App ID assigned by Chat |
+| CallbackCommand | Webhook command word |
 | contenttype | Optional. The value is generally a JSON string. |
 | ClientIP | IP address of the client |
-| OptPlatform | Client platform. Depending on the platform type, the following values are available: <br />RESTAPI (requests are sent using RESTful APIs) and Web (requests are sent using Web SDKs), <br/>Android, iOS, Windows, Mac, iPad, and Unknown (requests are sent using an unknown device). |
->?"IOS" (all in uppercase) is used in the `State.StateChange` callback, while "iOS" (the first letter is in lowercase) is used in other callbacks. Please perform compatibility processing during use.
+| OptPlatform | Client platform. Depending on the platform type, the following values are available: <br />`RESTAPI` (requests are sent using RESTful APIs) and `Web` (requests are sent using Web SDKs), <br/>`Android`, `iOS`, `Windows`, `macOS`, `iPad`, and `Unknown` (requests are sent using an unknown device). |
+>?"IOS" (all in uppercase) is used in the `State.StateChange` webhook, while "iOS" (the first letter is in lowercase) is used in other webhooks. Please perform compatibility processing during use.
 
-The specific callback content is included in the HTTP request packet. For details, see the following callback examples.
+The specific webhook content is included in the HTTP request packet. For details, see the following webhook examples.
 
-## Callback Examples
+## Webhook Examples
 
-Callback request example:
+Webhook request example:
 
 ```
 POST /?SdkAppid=888888&CallbackCommand=Group.CallbackAfterNewMemberJoin&contenttype=json&ClientIP=$ClientIP&OptPlatform=$OptPlatform HTTP/1.1
@@ -57,7 +57,7 @@ Content-Length: 337
 }
 ```
 
-Callback response example:
+Webhook response example:
 
 ```
 HTTP/1.1 200 OK
@@ -67,61 +67,68 @@ Content-Length: 75
 {
     "ActionStatus": "OK", 
     "ErrorInfo": "", 
-    "ErrorCode": 0
+    "ErrorCode":0
 }
 ```
 
-## Callback Timeout Period and Retry
+## Webhook Timeout Period and Retry
 
-The timeout period for IM callbacks to the app backend is 2 seconds.
+The timeout period for Chat webhooks to the app backend is two seconds.
 
-Before event occurrence, callbacks are not retried. After event occurrence, callbacks are not retried by default, and you can configure whether to retry the callbacks when they time out.
+Before event occurrence, webhooks are not retried. After event occurrence, webhooks are not retried by default, and you can configure whether to retry the webhooks when they time out.
 
-To ensure a high callback success rate, third-party apps need to process callbacks quickly. For example, the app can send a callback response and then process the specific business logic.
+To ensure a high webhook success rate, third-party apps need to process webhooks quickly. For example, the app can send a webhook response and then process the specific business logic.
 
-## Handling Policy for Callback Timeouts Before Event Occurrence
+## Handling Policy for Webhook Timeouts Before Event Occurrence
 
-If a callback times out before event occurrence, the default policy is to deliver the message.
+If a webhook times out before event occurrence, the default policy is to deliver the message.
 
-You can configure the handling policy for callback timeouts before event occurrence in the console. For example, when a callback timeout occurs before a group message is sent, you can specify whether to deliver the message. 
+You can also configure the handling policy for webhook timeouts before event occurrence in the console. For example, when a webhook timeout occurs before a group message is sent, you can specify whether to deliver the message.
 
 ## Security Considerations
 
-IM supports three types of callbacks:
+Chat supports both HTTP and HTTPS webhooks. For HTTPS webhooks, you need to configure a certificate issued by a CA or a certificate issued by Chat free of charge in the WebServer of the app backend.
 
-1. HTTP callback
-2. HTTPS callback. The WebServer of the app backend is configured with a certificate issued by a CA or a certificate issued by IM free of charge.
-3. HTTPS mutual authentication callback. The WebServer of the app backend is configured with a certificate issued by a CA or a certificate issued by IM free of charge, and mutual authentication is enabled.
+>?To get a certificate issued by Chat free of charge, you need to log in to the console and configure webhook URL and download the certificate. For more information, see [Webhook Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 
->?To get a certificate issued by IM free of charge, you need to log in to the console and configure callback URL and download the certificate. For more information, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
+Related security issues are as follows:
 
-The first type of callback has the lowest security level, and the last type has the highest security level.
+1. HTTP transmits data in plain text, and data confidentiality cannot be guaranteed. Therefore, HTTPS is recommended.
+2. It's impossible to determine whether a webhook request really comes from Chat.
 
-1. HTTP callbacks have two defects. One is that data transmitted in plain text is vulnerable to interception, and the second is that a third-party app cannot determine whether the callback request really comes from IM.
-2. For an HTTPS callback, if mutual authentication is disabled, the data encryption issue can be resolved, but the app still cannot ensure that the callback request comes from IM.
-3. Only the combination of HTTPS callback and mutual authentication can ensure the security of third-party callbacks.
+For request source security, we provide two solutions:
+1. Webhook authentication (recommended)
+<dx-alert infotype="explain" title="Configuration guide">
+1. Configure the webhook URL and enable webhook in the console.
+2. During webhook URL configuration, enable authentication and configure the authentication token. Then, the signature (`Sign`) and signing timestamp (`RequestTime`) will be added to the webhook request URL. The signature algorithm is **Sign=sha256(TokenRequestTime)**.
+3. The app backend authenticates the webhook request. It uses SHA256 to calculate and verify the signature based on the local authentication token and the signing timestamp (`RequestTime`) in the webhook URL.
+</dx-alert>
+```
+Signature algorithm sample:
 
-We strongly recommend that apps use the third type of callback. In addition, the certificate issued by IM is completely free of charge.
+Token=xxxyyy
+RequestTime=1669872112
+Sign=sha256(xxxyyy1669872112)=17773bc39a671d7b9aa835458704d2a6db81360a5940292b587d6d760d484061
 
-## Callback Configuration
+Webhook URL=URL&Sign=17773bc39a671d7b9aa835458704d2a6db81360a5940292b587d6d760d484061&RequestTime=1669872112
+```
+2. HTTPS mutual authentication
+<dx-alert infotype="explain" title="Configuration guide">
+1. On the Chat console, configure the webhook URL (which must be an HTTPS domain name) and enable webhook.
+2. Click **Download HTTPS Mutual Authentication Certificate** on the right to get the certificate. Configure HTTPS mutual authentication according to the following:
+   1. [Configuring HTTPS Mutual Authentication on an Apache Server](https://intl.cloud.tencent.com/document/product/1047/34379)
+   2. [Configuring HTTPS Mutual Authentication on an Nginx Server](https://intl.cloud.tencent.com/document/product/1047/34380)
+   </dx-alert>
 
-Currently, the IM console allows you to configure callbacks, including configuring the callback URL and the types of callback enabled. For details on the configuration methods, see [Configuration of Third-Party Callbacks](https://intl.cloud.tencent.com/document/product/1047/34520).
+## Common Reasons for Webhook Failures
 
->!The IM console allows you to configure only HTTP and HTTPS callbacks. If you need to enable the HTTPS mutual authentication callback, which has the highest security level, perform the following steps:
-> 1. On the IM console, configure the callback URL (which must be an HTTPS domain name) and enable the callback.
->2. Click **Download HTTPS Mutual Authentication Certificate** on the right to get the certificate. Configure HTTPS mutual authentication according to the following:
->   1. [Configuring HTTPS Mutual Authentication on an Apache Server](https://intl.cloud.tencent.com/document/product/1047/34379)
->   2. [Configuring HTTPS Mutual Authentication on an Nginx Server](https://intl.cloud.tencent.com/document/product/1047/34380)
+If a webhook failure occurs, check whether the configured webhook service has a problem according to the following checklist:
 
-## Common Reasons for Callback Failures
-
-If a callback failure occurs, check whether the configured callback service has a problem according to the following checklist:
-
-| Callback Failure Symptom | Possible Reason |
+| Webhook Failure Symptom | Possible Reason |
 | --- | --- |
-| Access to the callback URL times out | 1. IM cannot complete DNS resolution. In this case, check whether the domain name is valid on the public network. For example, if the callback host is `http://notexist.com`, IM cannot complete DNS resolution because this domain name does not exist. <br>2. IM cannot access the IP address configured in the callback URL. In this case, check whether this IP address is accessible from the public network. For example, if the callback host is `http://10.0.0.1`, IM cannot access this IP address because the domain name is a private IP address of the app.<br>3. The failure occurs due to the firewall policy of the app callback service. In this case, check the firewall configuration. For example, a callback failure occurs if the app callback server denies all requests arriving at port 80. |
-| Access denied by the callback service | IM can access the host, but a connection is not established. In this case, check whether the WebServer has started properly. For example, a callback failure will occur when the WebServer of the app callback server has not started or when the port configuration is incorrect. |
-| HTTPS certificate configuration error of the callback service | This can occur when the callback type is HTTPS (or HTTPS mutual authentication). IM can access the app callback server, but determines that the certificate configured on the app WebServer is invalid. In this case, check that the HTTPS certificate is properly configured. |
-| HTTPS mutual authentication configuration error of the callback service | This can occur when the callback type is HTTPS mutual authentication. IM verifies that the certificate configured on the app callback server is valid, but the app callback server fails to verify the IM certificate. |
-| The HTTP return code of the callback service is not 200 | The callback request is successful, but the HTTP return code in the response packet is not 200. |
-| The callback response packet could not be parsed | The callback response packet is not in JSON format. |
+| Access to the webhook URL times out | 1. Chat cannot complete DNS resolution. In this case, check whether the domain name is valid on the public network. For example, if the webhook host is `http://notexist.com`, Chat cannot complete DNS resolution because this domain name does not exist. <br>2. Chat cannot access the IP address configured in the webhook URL. In this case, check whether this IP address is accessible from the public network. For example, if the webhook host is `http://10.0.0.1`, Chat cannot access this IP address because the domain name is a private IP address of the app.<br>3. The failure occurs due to the firewall policy of the app webhook service. In this case, check the firewall configuration. For example, a webhook failure occurs if the app webhook server denies all requests arriving at port 80. |
+| Access denied by the webhook service | Chat can access the host, but a connection is not established. In this case, check whether the WebServer has started properly. For example, a webhook failure will occur when the WebServer of the app webhook server has not started or when the port configuration is incorrect. |
+| HTTPS certificate configuration error of the webhook service | This can occur when the webhook type is HTTPS (or HTTPS mutual authentication). Chat can access the app webhook server, but determines that the certificate configured on the app WebServer is invalid. In this case, check that the HTTPS certificate is properly configured. |
+| HTTPS mutual authentication configuration error of the webhook service | This can occur when the webhook type is HTTPS mutual authentication. Chat verifies that the certificate configured on the app webhook server is valid, but the app webhook server fails to verify the Chat certificate. |
+| The HTTP return code of the webhook service is not 200 | The webhook request is successful, but the HTTP return code in the response packet is not 200. |
+| The webhook response packet could not be parsed | The webhook response packet is not in JSON format. |

@@ -6,11 +6,11 @@
 
 |群组类型 ID|是否支持此 REST API|
 |-----------|------------|
-|Private|不支持，同新版本中的 Work（好友工作群）|
-|Public|不支持|
-|ChatRoom|不支持，同新版本中的 Meeting（临时会议群）|
+|Private|支持，同新版本中的 Work（好友工作群）|
+|Public|支持|
+|ChatRoom|支持，同新版本中的 Meeting（临时会议群）|
 |AVChatRoom|支持|
-|Community（社群）|不支持|
+|Community（社群）|支持|
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
@@ -24,9 +24,8 @@ https://xxxxxx/v4/group_open_http_svc/set_group_attr?sdkappid=88888888&identifie
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
-| v4/group_open_http_svc/modify_group_attr | 请求接口                             |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
+| v4/group_open_http_svc/set_group_attr | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
@@ -62,7 +61,7 @@ https://xxxxxx/v4/group_open_http_svc/set_group_attr?sdkappid=88888888&identifie
 | 字段 | 类型 | 属性 | 说明 |
 |---------|---------|---------|---------|
 | GroupId | String | 必填 |重置自定义属性的群id   |
-| GroupAttr | Array | 必填 |自定义属性列表，key 为自定义属性的键，value 为自定义属性的值 |
+| GroupAttr | Array | 必填 |自定义属性列表，key 为自定义属性的键，key 最大数量16个，key 最大长读32个字节；value 为自定义属性的值，value 最大长度为4000字节 |
 
 ### 应答包体示例
 ```
@@ -98,3 +97,5 @@ https://xxxxxx/v4/group_open_http_svc/set_group_attr?sdkappid=88888888&identifie
 | 10047 | 自定义属性 key 数量超过限制，最大为16个 |
 | 10048 | 自定义属性所有 val 总和超过限制，最大为16000字节 |
 | 10049 | 单个群自定义属性写操作超频，增加删除修改合计写操作5次/s |
+
+
