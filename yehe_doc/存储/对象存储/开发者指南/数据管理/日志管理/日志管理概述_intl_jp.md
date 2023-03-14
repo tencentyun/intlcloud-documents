@@ -18,7 +18,7 @@
 | 5        | eventSource     | ユーザーがアクセスしたドメイン名 | examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com                        |
 | 6        | eventName       | イベント名             | UploadPart                                                                    |
 | 7        | remoteIp        | ソースIP                 | 192.168.0.1                                                                   |
-| 8        | userSecretKeyId | ユーザーアクセスKeyId        | AKIDNYVCdoJQyGJ5brTf                                                          |
+| 8        | userSecretKeyId | ユーザーアクセスKeyId        | AKIDNYVCdoJQyGJ5b1234                                                       |
 | 9        | reservedFiled | 予約フィールド   | 予約フィールドは`-`と表示されます。 |
 | 10       | reqBytesSent    | リクエストバイト数（Bytes） | 83886080                                                                      |
 | 11       | deltaDataSize   | ストレージ量変更のリクエスト（Bytes） | 808                                                                   |

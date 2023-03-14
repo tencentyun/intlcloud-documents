@@ -5,35 +5,35 @@ Cloud Object Storage(COS)를 사용 시 임시 키를 사용해 사용자에게 
 **최소 권한 원칙**이란, 권한을 부여할 때 권한 범위를 명확히 하여 **지정 사용자**에게 **어떤 조건**에서 **어떤 작업**을 수행하고 **어떤 리소스**에 액세스할지에 대해 권한을 명확하게 부여하는 것을 의미합니다.
 
 ## 주의 사항
-권한 부여 시 최소 권한 원칙을 엄격히 따라, 한정된 사용자가 제한된 작업(예: `action:GetObject` 권한 부여)을 수행하고 제한된 리소스에 액세스(예: `resource:examplebucket-1250000000/exampleobject.txt` 권한 부여)하도록 할 것을 권장합니다. 
-과도한 권한 부여로 인한 예상 밖의 월권 작업과 데이터 보안 리스크를 피하기 위해, 모든 리소스(예: `resource:*`)에 액세스할 수 있거나 모든 작업(예: `action:*`)이 가능한 권한을 사용자에게 부여하지 않을 것을 강력히 권장합니다.
+사용자가 지정된 작업(예: `action:GetObject`)만 수행하거나 지정된 리소스(예: `resource:examplebucket-1250000000/exampleobject.txt`)에 액세스할 수 있도록 최소 권한 원칙을 엄격히 따르는 것이 좋습니다. 
+과도한 권한으로 인한 예기치 않은 무단 작업으로 인한 데이터 보안 위험을 방지하려면 사용자에게 모든 리소스(예: `resource:*`)에 대한 액세스 권한을 부여하거나 모든 작업(예: `action:*`)을 수행하지 않는 것이 좋습니다.
 
 잠재된 데이터 보안 리스크 예시는 다음과 같습니다.
-- 데이터 유출: 사용자에게 `examplebucket-1250000000/data/config.json`과 `examplebucket-1250000000/video/` 다운로드 같은 지정 리소스에 대한 다운로드 권한을 부여합니다. 그러나 권한 정책 중 `examplebucket-1250000000/*`이 설정되어 있을 경우, 이 버킷에 속한 모든 객체의 다운로드가 허용되어 월권 작업 행위로 인해 예상 밖의 데이터 유출이 발생할 수 있습니다.
-- 데이터 덮어쓰기: 사용자에게 `examplebucket-1250000000/data/config.json`과 `examplebucket-1250000000/video/`와 같은 리소스에 대한 업로드 권한을 부여합니다. 그러나 권한 정책 중 `examplebucket-1250000000/*`이 설정되어 있을 경우, 해당 버킷에 속한 모든 객체의 업로드가 허용되고, 월권 작업 행위로 인해 예상 밖의 객체 덮어쓰기가 발생할 수 있습니다. 리스크를 예방하려면 최소 권한 원칙을 준수해야 할 뿐만 아니라, [버전 관리](https://intl.cloud.tencent.com/document/product/436/19883)를 통해 데이터의 이전 버전을 모두 보관하여 추적을 용이하게 할 수도 있습니다.
-- 데이터 유출: 사용자에게 버킷의 객체 리스트 `cos:GetBucket`을 나열할 수 있는 권한을 부여합니다. 그러나 권한 정책 중 `cos:*`이 설정되어 있을 경우, 버킷 권한 재부여, 객체 삭제 및 버킷 삭제를 포함한 버킷의 모든 작업이 허용되어 데이터 보안에 큰 리스크가 발생할 수 있습니다.
+- 데이터 유출: 사용자에게 `examplebucket-1250000000/data/config.json` 및 `examplebucket-1250000000/video/`와 같은 지정된 리소스를 다운로드할 수 있도록 권한을 부여하고 싶지만 권한 정책에 `examplebucket-1250000000/*`을 포함하면 버킷의 모든 객체는 승인 없이 다운로드될 수 있어 예기치 않은 데이터 유출이 발생할 수 있습니다.
+- 데이터 덮어쓰기: 사용자에게 `examplebucket-1250000000/data/config.json` 및 `examplebucket-1250000000/video/`를 업로드할 수 있는 권한을 부여하고 싶지만 권한 정책에 `examplebucket-1250000000/*`을 포함하면 승인 없이 버킷의 모든 객체를 업로드할 수 있으므로 의도하지 않은 객체를 덮어쓸 수 있습니다. 이러한 위험을 방지하기 위해 최소 권한 원칙을 따르는 것 외에도 [버전 제어 개요](https://intl.cloud.tencent.com/document/product/436/19883)에 설명된 대로 추적을 위해 모든 버전의 데이터를 유지할 수 있습니다.
+- 권한 유출: 사용자가 버킷(`cos:GetBucket`)의 객체를 나열할 수 있는 권한을 부여하고 싶지만 권한 정책에서 `cos:*`를 구성하면 버킷 재승인, 객체 삭제 및 버킷 삭제를 포함하여 버킷에 대한 모든 작업이 허용되므로 데이터가 매우 위험해집니다.
 
 
 ## 사용 가이드
 
 최소 권한 원칙에 따라 정책에서 다음 정보를 명확히 지정해야 합니다.
 
-- 위탁자(principal): 어떤 서브 계정(사용자 ID 작성 필요), 협업 파트너(사용자 ID 작성 필요), 익명 사용자 또는 사용자 그룹에게 권한 부여가 필요한지 명확히 지정할 필요가 있습니다. 임시 키로 액세스를 시도한다면 이 항목을 지정할 필요가 없습니다.
-- 명령(statement): 다음 매개변수 중에 적합한 매개변수를 작성합니다.
-	- 효력(effect): 해당 정책에 대해 '허용'하는지 '명시적 거부'하는지 명확히 기술해야 합니다. allow와 deny 두 가지 상황이 포함됩니다.
-	- 작업(action): 해당 정책에 대해 허용 또는 거부 작업을 명확히 기술해야 합니다. 단일 API 작업이나 여러 API 작업의 결합 작업일 수 있습니다.
-	- 리소스(resource): 해당 정책이 권한을 부여한 구체적인 리소스를 명확히 기술해야 합니다. 리소스는 6단식 기술을 사용하며, 리소스 범위를 지정된 파일로 제한할 수 있습니다. 예를 들어 `exampleobject.jpg` 또는 `examplePrefix/*`와 같은 지정 디렉터리가 있습니다. 업무상 필요 외에는 모든 리소스에 액세스할 수 있는 권한 즉, 와일드카드`*`를 임의로 부여하지 마십시오.
-	- 조건(condition): 정책의 효력이 발생하는 규제 조건을 기술합니다. 조건에는 오퍼레이터, 작업 키와 작업 값 구성이 포함됩니다. 조건 값은 시간, IP 주소 등의 정보를 포함합니다.
+- 위탁자(principal): 권한을 부여할 서브 계정(사용자 ID 필요), 협업 파트너(사용자 ID 필요), 익명 사용자 또는 사용자 그룹을 지정해야 합니다. 액세스에 임시 키를 사용하는 경우에는 필요하지 않습니다.
+- 명령(statement): 해당 매개변수를 입력합니다.
+	-  효력(effect): 정책이 allow인지 deny인지 지정해야 합니다.
+	-  작업(action): 허용 또는 거부할 동작을 지정해야 합니다. 하나의 API 작업 또는 일련의 API 작업일 수 있습니다.
+	-  리소스(resource): 권한이 부여된 리소스를 지정해야 합니다. 리소스는 6개 세그먼트 형식으로 설명됩니다. 리소스를 특정 파일(예: `exampleobject.jpg`) 또는 디렉터리(예: `examplePrefix/*`)로 설정할 수 있습니다. 필요한 경우가 아니면 `*` 와일드카드를 사용하여 모든 리소스에 대한 액세스 권한을 사용자에게 부여하지 마십시오.
+	-  조건(condition): 정책의 효력이 발생하는 규제 조건을 기술합니다. 조건에는 오퍼레이터, 작업 키와 작업 값 구성이 포함됩니다. 조건 값은 시간, IP 주소 등의 정보를 포함합니다.
 
 ### 임시 키 최소 권한 가이드
 
-임시 키 신청 과정에서 권한 정책 Policy 필드 설정을 통해 작업 및 리소스를 제한하고, 권한을 지정된 범위로 제한할 수 있습니다. 임시 키 생성 관련 자세한 설명은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048) 문서를 참고하십시오.
+임시 키 신청 과정에서 권한 정책 [Policy](https://intl.cloud.tencent.com/document/product/1150/49452) 필드 설정을 통해 작업 및 리소스를 제한하고, 권한을 지정된 범위로 제한할 수 있습니다. 임시 키 생성 관련 자세한 설명은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048) 문서를 참고하십시오.
 
 #### 권한 부여 예시
 
-#### Java SDK를 이용해 임의 객체에 액세스할 수 있는 권한을 부여합니다.
+#### Java용 SDK를 사용하여 지정된 객체에 액세스할 수 있는 사용자 권한 부여
 
-Java SDK를 이용해 버킷 `examplebucket-1250000000` 중 객체 `exampleObject.txt`를 다운로드할 수 있는 권한을 부여해야 한다고 가정했을 때, 설정이 필요한 코드는 다음과 같습니다.
+Java SDK를 사용하여 사용자에게 `examplebucket-1250000000` 버킷의 `exampleObject.txt` 객체를 다운로드할 수 있는 권한을 부여하려면 구성 코드는 다음과 같아야 합니다.
 
 ```
 // github에서 제공하는 maven 통합 방법에 따라 java sts sdk 가져오기 
@@ -46,24 +46,26 @@ public class Demo {
         TreeMap<String, Object> config = new TreeMap<String, Object>();
 
         try {
-            // 사용자의 SecretId로 변경 
-            config.put("SecretId", "AKIDHTVVaVR6e3");
-            // 사용자의 SecretKey로 변경
-            config.put("SecretKey", "PdkhT9e2rZCfy6");
+            String secretId = System.getenv("secretId");//사용자 SecretId. 리스크를 줄이기 위해 서브 계정 키를 사용하고 최소 권한 원칙을 따르는 것이 좋습니다. 서브 계정 키를 가져오는 방법에 대한 자세한 내용은 다음을 참고하십시오. https://cloud.tencent.com/document/product/598/37140
+            String secretKey = System.getenv("secretKey");//사용자 SecretKey. 리스크를 줄이기 위해 서브 계정 키를 사용하고 최소 권한 원칙을 따르는 것이 좋습니다. 서브 계정 키를 가져오는 방법에 대한 자세한 내용은 다음을 참고하십시오. https://cloud.tencent.com/document/product/598/37140
+            // 자신의 SecretId로 교체 
+            config.put("SecretId", secretId);
+            // 자신의 SecretKey로 교체
+            config.put("SecretKey", secretKey);
 
-            // 임시 키의 유효 기간은 초 단위입니다. 기본값은 1800초이며, 최대 유효 기간은 7200초로 설정 가능합니다.
+            // 임시 키의 유효 기간(초), 기본값: 1800; 최대값: 7200
             config.put("durationSeconds", 1800);
 
-            // 사용자의 bucket으로 변경
+            // 자신의 bucket으로 교체
             config.put("bucket", "examplebucket-1250000000");
-            // bucket 소재 리전으로 변경
+            // bucket 소재 리전으로 교체
             config.put("region", "ap-guangzhou");
 
-            // 여기서 허용된 경로의 접두사로 바꾸면 자신의 웹 사이트의 사용자 로그인 상태에 따라 업로드가 허용된 구체적 경로를 판단할 수 있습니다. 예: a.jpg 또는 a/* 또는 *
-            // '*'를 입력하면 사용자가 모든 리소스에 액세스하는 것을 허용하게 됩니다. 업무에 필요한 경우가 아니면 최소 권한 원칙에 따라 사용자에게 적합한 액세스 권한 범위를 부여하십시오.
+            // 허용되는 경로 접두사(예: a.jpg, a/* 또는 *)로 변경합니다. 로그인 상태에 따라 업로드 경로를 결정할 수 있습니다.
+            // ‘*’를 입력하면 사용자가 모든 리소스에 액세스할 수 있습니다. 업무에 필요한 경우가 아니면 최소 권한 원칙에 따라 필요한 제한된 권한만 사용자에게 부여합니다.
             config.put("allowPrefix", "exampleObject.txt");
 
-            // 키 권한 리스트. 간단한 업로드, 포맷 업로드 및 멀티 파트 업로드에 필요한 권한은 다음과 같습니다. 기타 권한 리스트는 https://cloud.tencent.com/document/product/436/31923을 참고하십시오.
+            // 키 권한 리스트. 단순 업로드, 양식을 이용한 업로드 및 멀티 파트 업로드에 필요한 권한은 다음과 같습니다. 기타 권한 리스트는 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/31923
             String[] allowActions = new String[] {
                     // 데이터 다운로드
                     "name/cos:GetObject"
@@ -71,30 +73,30 @@ public class Demo {
             config.put("allowActions", allowActions);
 
             JSONObject credential = CosStsClient.getCredential(config);
-            //임시 키 정보를 성공적으로 반환하면, 다음과 같은 키 정보가 출력됩니다.
+            // 성공하면 아래와 같이 임시 키 정보가 반환되어 출력됩니다
             System.out.println(credential);
         } catch (Exception e) {
-            //실패 시 이상 경고가 발생합니다.
+            //실패 시 예외가 발생합니다
             throw new IllegalArgumentException("no valid secret !");
         }
     }
 }
 ```
 
-#### API를 이용해 임의 객체에 대한 액세스 권한을 부여합니다.
+#### API를 사용하여 지정된 객체에 대한 액세스 권한 부여
 
-API를 이용해 버킷 `examplebucket-1250000000` 중 객체 `exampleObject.txt` 및 디렉터리 `examplePrefix`에 속한 모든 객체를 다운로드할 수 있는 권한을 부여해야 한다고 가정했을 때, 입력이 필요한 정책은 다음과 같습니다.
+API를 사용하여 `examplebucket-1250000000` 버킷의 `exampleObject.txt` 객체와 `examplePrefix` 디렉터리의 모든 객체를 다운로드할 수 있는 권한을 사용자에게 부여하려면 액세스 정책은 다음과 같아야 합니다.
 
 ```shell
 {
   "version": "2.0",
   "statement": [
     {
-      "action": [
+      "action":[
         "name/cos:GetObject"
       ],
       "effect": "allow",
-      "resource": [
+      "resource":[
         "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/exampleObject.txt",
         "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/examplePrefix/*"
       ]
@@ -107,11 +109,11 @@ API를 이용해 버킷 `examplebucket-1250000000` 중 객체 `exampleObject.txt
 
 사전 서명된 URL을 통해 임시 업로드 및 다운로드 작업을 구현할 수 있습니다. 또한 사전 서명된 URL을 누구에게나 전달할 수 있으며 유효한 사전 서명된 URL을 받는 사람은 누구나 객체를 업로드하거나 다운로드할 수 있습니다.
 
->! 임시 키와 영구 키를 모두 사용하여 사전 서명된 URL을 생성할 수 있지만, 최소 권한 가이드 [임시 키 생성](https://intl.cloud.tencent.com/document/product/436/14048)을 준수하여, 임시 키를 사용하여 사전 서명을 계산합니다. 보안 리스크를 피하기 위해 과도한 권한을 가진 영구 키를 사용하지 마십시오.
+>!임시 키와 영구 키를 모두 사용하여 사전 서명된 URL을 생성할 수 있지만, 최소 권한 가이드 [임시 키 생성](https://intl.cloud.tencent.com/document/product/436/14048)을 준수하여, 임시 키를 사용하여 사전 서명을 계산합니다. 보안 리스크를 방지하기 위해 과도한 권한을 가진 영구 키를 사용하지 마십시오.
 
 #### 권한 부여 예시
 
-#### 사용자에게 사전에 서명된 URL을 사용하여 객체를 다운로드할 수 있는 권한을 부여합니다.
+#### 사전 서명된 URL을 사용하여 사용자에게 객체 다운로드 권한 부여
 
 임시 키를 사용해 서명이 있는 다운로드 링크를 생성하고, 반환할 일부 공용 헤더(예: content-type, content-language)를 덮어쓰도록 설정합니다. 다음은 Java 예시 코드입니다.
 
@@ -121,15 +123,15 @@ String tmpSecretId = "SECRETID";
 String tmpSecretKey = "SECRETKEY";
 String sessionToken = "TOKEN";
 COSCredentials cred = new BasicSessionCredentials(tmpSecretId, tmpSecretKey, sessionToken);
-// bucket 리전 설정. COS 리전의 약칭은 https://cloud.tencent.com/document/product/436/6224 참고
-// clientConfig에 region, https(기본값: http), 타임아웃, 프록시 등을 설정하는 set 방법이 포함되어 있습니다. 사용 시 소스 코드 또는 FAQ의 Java SDK 부분을 참고하십시오.
+// bucket 리전 설정. COS 리전의 약칭은 https://cloud.tencent.com/document/product/436/6224를 참고하십시오.
+// clientConfig에 region, https(기본값: http), 타임아웃, 프록시 등을 설정하는 set 메소드가 포함되어 있습니다. 사용 시 소스 코드 또는 FAQ의 Java SDK 부분을 참고하십시오.
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
 // https 프로토콜을 사용하는 URL을 생성할 경우, 이 행을 설정하길 권장합니다.
 // clientConfig.setHttpProtocol(HttpProtocol.https);
-// cos 클라이언트 생성
+// cos 클라이언트 생성.
 COSClient cosClient = new COSClient(cred, clientConfig);
-// 버킷의 이름 생성 포맷: BucketName-APPID 
+// 버킷의 이름 생성 형식: BucketName-APPID 
 String bucketName = "examplebucket-1250000000";
 // 여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자입니다.
 String key = "exampleobject";
@@ -159,31 +161,30 @@ System.out.println(url.toString());
 cosClient.shutdown();
 ```
 
-
 ### 사용자 정책 최소 권한 가이드
 
 사용자 정책은 [CAM 콘솔](https://console.cloud.tencent.com/cam/policy)에 추가된 사용자 권한 정책으로, 사용자가 COS 리소스에 액세스할 수 있는 권한을 부여하는 데 사용됩니다. 사용자 액세스 정책 개요의 설정에 관한 자세한 설명은 [액세스 정책 언어 개요](https://intl.cloud.tencent.com/document/product/436/18023) 문서를 참고하십시오.
 
 #### 권한 부여 예시
 
-#### 계정에 임의 객체에 액세스할 수 있는 권한을 부여합니다.
+#### 계정에 지정된 객체에 액세스할 수 있는 권한 부여
 
-계정 UIN을 `100000000001`로 하고 버킷 `examplebucket-1250000000` 중 객체 `exampleObject.txt`를 다운로드할 수 있는 권한을 부여해야 한다고 가정했을 때, 적합한 액세스 정책은 다음과 같습니다.
+UIN이 `100000000001`인 계정에 `examplebucket-1250000000` 버킷의 `exampleObject.txt` 객체를 다운로드할 수 있는 권한을 부여하려면 액세스 정책은 다음과 같아야 합니다.
 ```shell
 {
    "version": "2.0",
-   "principal": {
-      "qcs": [
+   "principal":{
+      "qcs":[
          "qcs::cam::uin/100000000001:uin/100000000001"
       ]
    },
     "statement": [
         {
-            "action": [
+            "action":[
                 "name/cos:GetObject"
             ],
             "effect": "allow",
-            "resource": [
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000.ap-guangzhou.myqcloud.com/exampleObject.txt"
             ]
         }
@@ -191,25 +192,25 @@ cosClient.shutdown();
 }
 ```
 
-#### 서브 계정에 임의 디렉터리에 액세스할 수 있는 권한을 부여합니다.
+#### 서브 계정에 지정된 디렉터리에 대한 액세스 권한 부여
 
-서브 계정 UIN을 `100000000011`(루트 계정 UIN은 `100000000001`)로 하고 버킷 `examplebucket-1250000000` 중 디렉터리 `examplePrefix`에 속한 객체를 다운로드할 수 있는 권한을 부여해야 한다고 가정했을 때, 적합한 액세스 정책은 다음과 같습니다.
+UIN이 `100000000011`인 서브 계정(루트 계정 UIN: `100000000001`)에게 `examplebucket-1250000000` 버킷의 `examplePrefix` 디렉터리에 있는 객체를 다운로드할 수 있는 권한을 부여하려면 액세스 정책은 다음과 같아야 합니다.
 
 ```shell
 {
    "version": "2.0",
-   "principal": {
-      "qcs": [
+   "principal":{
+      "qcs":[
          "qcs::cam::uin/100000000001:uin/100000000011"
       ]
    },
     "statement": [
         {
-            "action": [
+            "action":[
                 "name/cos:GetObject"
             ],
             "effect": "allow",
-            "resource": [
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000.ap-guangzhou.myqcloud.com/examplePrefix/*"
             ]
         }
@@ -223,24 +224,24 @@ cosClient.shutdown();
 
 #### 권한 부여 예시
 
-#### 서브 계정에 특정 객체에 액세스할 수 있는 권한을 부여합니다.
+#### 서브 계정에 지정된 객체에 대한 액세스 권한 부여
 
-서브 계정 UIN을 `100000000011`(루트 계정 UIN은 `100000000001`)로 하고 버킷 `examplebucket-1250000000` 중 객체 `exampleObject.txt` 및 디렉터리 `examplePrefix`에 속한 모든 객체를 다운로드할 수 있는 권한을 부여해야 한다고 가정했을 때, 적합한 액세스 정책은 다음과 같습니다.
+UIN이 `100000000011`인 서브 계정(루트 계정 UIN: `100000000001`)에게 `examplebucket-1250000000` 버킷의 `exampleObject.txt` 객체와 `examplePrefix` 디렉터리의 모든 객체를 다운로드할 수 있는 권한을 부여하려면 액세스 정책은 다음과 같아야 합니다.
 
 ```shell
 {
-  "Statement": [
+  "Statement":[
     {
-      "Action": [
+      "Action":[
         "name/cos:GetObject"
       ],
       "Effect": "allow",
-      "Principal": {
-        "qcs": [
+      "Principal":{
+        "qcs":[
           "qcs::cam::uin/100000000001:uin/100000000011"
         ]
       },
-      "Resource": [
+      "Resource":[
         "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/exampleObject.txt",
         "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/examplePrefix/*"
       ]
@@ -249,4 +250,3 @@ cosClient.shutdown();
   "version": "2.0"
 }
 ```
-

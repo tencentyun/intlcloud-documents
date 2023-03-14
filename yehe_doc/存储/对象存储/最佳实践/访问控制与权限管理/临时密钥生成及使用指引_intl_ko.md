@@ -4,7 +4,7 @@
 
 ## 임시 키
 
-임시 키(임시 액세스 자격 증명)는 CAM 클라우드 API에서 제공하는 인터페이스를 통해 획득한 제한된 권한을 가진 키입니다.
+[임시 키(임시 액세스 자격 증명)](https://intl.cloud.tencent.com/document/product/1150/49452)는 CAM 클라우드 API에서 제공하는 인터페이스를 통해 획득하는 권한이 부여된 키입니다.
 COS API는 임시 키를 사용해 서명을 컴퓨팅해 COS API 요청을 전송하는 데 사용합니다.
 COS API 요청은 임시 키를 사용해 서명 컴퓨팅 시, 다음 3개의 임시 키 인터페이스 반환 정보 획득에 사용하는 필드가 필요합니다.
 - TmpSecretId
@@ -22,10 +22,11 @@ COS API 권한 부여 정책과 관련해서는 다음을 참고하십시오.
 
 ## 임시 키 획득
 
-임시 키는 제공되는 [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) 방식을 통해 획득할 수 있으며, 직접 STS 클라우드 API 요청 방식으로도 획득할 수 있습니다.
+임시 키는 제공되는 [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) 방식을 통해 획득할 수 있으며, 직접 [STS 클라우드 API](https://intl.cloud.tencent.com/document/product/1150/49452) 요청 방식으로도 획득할 수 있습니다.
 
 
->!예시에서는 Java SDK를 사용하였으며, GitHub에서 SDK 코드(버전)을 획득해야 합니다. 해당 SDK 버전을 찾을 수 없다는 안내가 표시되는 경우, GitHub에서 상응하는 버전의 SDK를 획득하였는지 확인하십시오.
+>! 예시에서는 Java SDK를 사용하였으며, GitHub에서 SDK 코드(버전)을 획득해야 합니다. 해당 SDK 버전을 찾을 수 없다는 안내가 표시되는 경우, GitHub에서 상응하는 버전의 SDK를 획득하였는지 확인하십시오.
+>
 
 ### COS STS SDK 
 
@@ -41,6 +42,7 @@ COS는 STS에 대한 SDK와 샘플을 제공합니다. 현재 Java, Nodejs, PHP,
 | Python      | [설치 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/python)    | [예시 주소](https://github.com/tencentyun/qcloud-cos-sts-sdk/blob/master/python/demo/sts_demo.py) |
 
 >! STS SDK는 STS 인터페이스 자체의 버전별 차이점을 차단하기 위해 반환 매개변수 구조가 STS 인터페이스와 완벽하게 일치하지 않습니다. 세부 사항은 [Java SDK 문서](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/java)를 참고하십시오.
+>
 
 
 Java SDK를 사용한다고 가정하고, 먼저 [Java SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk/tree/master/java)를 다운로드한 후 실행하여 다음 예시와 같이 임시 키를 획득합니다.
@@ -54,10 +56,12 @@ public class Demo {
 
         try {
             //여기에서 SecretId와 SecretKey는 임시 키를 신청하기 위한 영구 ID(루트 계정, 서브 계정 등)를 나타내며, 서브 계정은 버킷 작업 권한이 있어야 합니다.
+            String secretId = System.getenv("secretId");//사용자 SecretId. 리스크를 줄이기 위해 서브 계정 키를 사용하고 최소 권한 원칙을 따르는 것이 좋습니다. 서브 계정 키를 가져오는 방법에 대한 자세한 내용은 다음을 참고하십시오. https://cloud.tencent.com/document/product/598/37140
+ 			String secretKey = System.getenv("secretKey");//사용자 SecretKey. 리스크를 줄이기 위해 서브 계정 키를 사용하고 최소 권한 원칙을 따르는 것이 좋습니다. 서브 계정 키를 가져오는 방법에 대한 자세한 내용은 다음을 참고하십시오. https://cloud.tencent.com/document/product/598/37140
             // Tencent Cloud api 키 SecretId로 교체
-            config.put("secretId", "SecretId");
+            config.put("secretId", secretId);
             // Tencent Cloud api 키 SecretKey로 교체
-            config.put("secretKey", "SecretKey");
+            config.put("secretKey", secretKey);
 
             // 도메인 설정: 
             // Tencent Cloud cvm을 사용하는 경우 내부 도메인 이름 설정 가능
@@ -83,7 +87,7 @@ public class Demo {
             });
 
             // 키에 대한 권한 목록입니다. 이 임시 키에 필요한 권한을 여기에서 지정해야 합니다.
-            // 간편 업로드, 폼 업로드 및 멀티파트 업로드 시에는 다음과 같은 권한이 필요합니다. 기타 권한 리스트는 https://intl.cloud.tencent.com/document/product/436/30580을(를) 참고하십시오.
+            // 간편 업로드, 폼 업로드 및 멀티파트 업로드 시에는 다음과 같은 권한이 필요합니다. 기타 권한 리스트는 다음을 참고하십시오. https://intl.cloud.tencent.com/document/product/436/30580
             String[] allowActions = new String[] {
                      // 간편 업로드
                     "name/cos:PutObject",
@@ -97,7 +101,43 @@ public class Demo {
                     "name/cos:CompleteMultipartUpload"
             };
             config.put("allowActions", allowActions);
+			    /**
+             * condition 설정(필요한 경우)
+             //# 임시 키가 적용되는 조건. COS에서 지원하는 condition 및 condition 유형의 자세한 구성 규칙은 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/71307
+             final String raw_policy = "{\n" +
+             "  \"version\":\"2.0\",\n" +
+             "  \"statement\":[\n" +
+             "    {\n" +
+             "      \"effect\":\"allow\",\n" +
+             "      \"action\":[\n" +
+             "          \"name/cos:PutObject\",\n" +
+             "          \"name/cos:PostObject\",\n" +
+             "          \"name/cos:InitiateMultipartUpload\",\n" +
+             "          \"name/cos:ListMultipartUploads\",\n" +
+             "          \"name/cos:ListParts\",\n" +
+             "          \"name/cos:UploadPart\",\n" +
+             "          \"name/cos:CompleteMultipartUpload\"\n" +
+             "        ],\n" +
+             "      \"resource\":[\n" +
+             "          \"qcs::cos:ap-shanghai:uid/1250000000:examplebucket-1250000000/*\"\n" +
+             "      ],\n" +
+             "      \"condition\": {\n" +
+             "        \"ip_equal\": {\n" +
+             "            \"qcs:ip\": [\n" +
+             "                \"192.168.1.0/24\",\n" +
+             "                \"101.226.100.185\",\n" +
+             "                \"101.226.100.186\"\n" +
+             "            ]\n" +
+             "        }\n" +
+             "      }\n" +
+             "    }\n" +
+             "  ]\n" +
+             "}";
 
+             config.put("policy", raw_policy);
+             */				
+          
+          
             Response response = CosStsClient.getCredential(config);
             System.out.println(response.credentials.tmpSecretId);
             System.out.println(response.credentials.tmpSecretKey);
@@ -123,6 +163,7 @@ public class Demo {
 
 임시 키를 사용하여 COS에 액세스하는 COS Java SDK 예시는 다음과 같습니다.
 >? 다음 예시 실행 전 [Github 프로젝트](https://github.com/tencentyun/cos-java-sdk-v5)에서 Java SDK 설치 패키지를 다운로드하십시오.
+>
 
 ```java
 // github에서 제공하는 maven 통합 방법에 따라 cos xml java sdk 가져오기
@@ -141,9 +182,9 @@ public class Demo {
 
         // 1 사용자 자격 정보 초기화(secretId, secretKey)
         COSCredentials cred = new BasicCOSCredentials(tmpSecretId, tmpSecretKey);
-        // 2. bucket 리전 설정, 자세한 정보는 COS 리전 https://cloud.tencent.com/document/product/436/6224 참고
+        // 2. bucket 리전 설정. COS 리전에 대한 자세한 내용은 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/6224
         ClientConfig clientConfig = new ClientConfig(new Region("ap-guangzhou"));
-        // 3 cos 클라이언트 생성.
+        // 3 cos 클라이언트 생성
         COSClient cosclient = new COSClient(cred, clientConfig);
         // bucket 이름에는 반드시 appid를 포함
         String bucketName = "examplebucket-1250000000";
