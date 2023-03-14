@@ -19,7 +19,7 @@ COSBenchはIntel社が開発した、オブジェクトストレージ向けの�
 
 ## COSBench 実行手順
 
-1. [COSBench GitHub](https://github.com/intel-cloud/cosbench/releases)ウェブサイトからCOSBench 0.4.2.c4.zip圧縮パッケージをダウンロードし、サーバーで解凍します。
+1. COSBench GitHubウェブサイトから[COSBench 0.4.2.c4.zip圧縮パッケージをダウンロード](https://github.com/intel-cloud/cosbench/releases/tag/v0.4.2.c4)し、サーバー上で解凍します。
 2. 以下のコマンドを実行して、COSBenchの依存パッケージをインストールします。
  - centosの場合、以下のコマンドを実行して、依存パッケージをインストールします：
 ```
@@ -80,7 +80,7 @@ sudo apt install nmap openjdk-8-jdk
 <tbody>
 <tr>
 <td>accesskey、secretkey</td>
-<td>キーの情報。それぞれユーザーのSecretIdとSecretKeyで置き換えます</td>
+<td>キー情報。サブアカウントキーを使用し、<a href="https://intl.cloud.tencent.com/document/product/436/32972">最小権限ガイド</a>に従うことで、使用上のリスクを低減させることをお勧めします。サブアカウントキーの取得については、<a href="https://intl.cloud.tencent.com/document/product/598/32675">サブアカウントのアクセスキー管理</a>をご参照ください</td>
 </tr>
 <tr>
 <td>cprefix</td>
@@ -92,7 +92,7 @@ sudo apt install nmap openjdk-8-jdk
 </tr>
 <tr>
 <td>csuffix</td>
-<td>ユーザーのAPPID。APPIDの先頭に<code>「-」</code>記号を付けることに注意してください。例えば、 -1250000000</td>
+<td>ユーザーのAPPID。APPIDの前に<code>-</code>の記号を付けることに注意してください（例：-1250000000）</td>
 </tr>
 <tr>
 <td>runtime</td>
@@ -112,6 +112,7 @@ sudo apt install nmap openjdk-8-jdk
 ```plaintext
 -Dcom.amazonaws.services.s3.disableGetObjectMD5Validation=true
 ```
+![](https://qcloudimg.tencent-cloud.cn/raw/ac010bb86f091d709a0776b4e20a5858.png)
 5. cosbenchサービスを起動します。
  - centosの場合、以下のコマンドを実行します：
 ```plaintext
@@ -126,11 +127,11 @@ sudo bash start-controller.sh &
 ```plaintext
 sudo bash cli.sh submit conf/s3-config-sample.xml
 ```
-ウェブサイト`http://ip:19088/controller/index.html`（ユーザーが負荷テストを実行しているマシンのIPでipを置き換えます）で実行状態を確認します：
+さらに、このURL`http://ip:19088/controller/index.html`（ipはユーザーの負荷テストマシンのIPに置き換えます）によって実行状態を確認します。
 ![](https://main.qcloudimg.com/raw/77f1631fa15141332d123fb472bab7ac.png)
 下図に示すように、5段階が表示されます：
 ![](https://main.qcloudimg.com/raw/3ccb5a60253ceb20c6da9292582c4355.png)
-7. 所属リージョンが北京、コア数が32、プライベートネットワークの帯域幅が17GbpsのCVMによる、アップロードとダウンロードの性能テストを以下に示します。具体的には2段階が含まれています。
+7. 次の例は、所属リージョンが北京リージョン、32コア、プライベートネットワーク帯域幅が17GbpsのCVMで行うアップロードおよびダウンロードパフォーマンステストです。次の2段階が含まれます。
     1. prepare段階：100workerスレッドが50MBのオブジェクトを1000個アップロードします。
     2. main段階：100workerスレッドがオブジェクトの読み書きを300秒実行します。
 

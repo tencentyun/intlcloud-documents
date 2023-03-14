@@ -27,7 +27,7 @@ Cloud Object Storage（COS）を使用する際、一時キーを使用して対
 
 ### 一時キーの最小権限ガイド
 
-一時キー申請の過程で、権限ポリシーのPolicyフィールドを設定することで、操作およびリソースを制限し、権限を指定された範囲内に制限することができます。一時キー生成に関する説明については、[一時キーの生成および使用ガイド](https://intl.cloud.tencent.com/document/product/436/14048)のドキュメントをご参照ください。
+一時キー申請の過程で、権限ポリシーの[Policy](https://intl.cloud.tencent.com/document/product/1150/49452)フィールドを設定することで、操作およびリソースを制限し、権限を指定された範囲内に限定することができます。一時キー生成に関する説明については、[一時キーの生成および使用ガイド](https://intl.cloud.tencent.com/document/product/436/14048)のドキュメントをご参照ください。
 
 #### 権限承認の例
 
@@ -46,10 +46,12 @@ public class Demo {
         TreeMap<String, Object> config = new TreeMap<String, Object>();
 
         try {
+            String secretId = System.getenv("secretId");//ユーザーのSecretIdです。サブアカウントのキーを使用し、権限承認は最小権限ガイドに従って行い、使用上のリスクを低減させることをお勧めします。サブアカウントキーの取得については、https://cloud.tencent.com/document/product/598/37140をご参照ください
+            String secretKey = System.getenv("secretKey");//ユーザーのSecretKeyです。サブアカウントのキーを使用し、権限承認は最小権限ガイドに従って行い、使用上のリスクを低減させることをお勧めします。サブアカウントキーの取得については、https://cloud.tencent.com/document/product/598/37140をご参照ください
             // ご自身のSecretIdに置き換えます 
-            config.put("SecretId", "AKIDHTVVaVR6e3");
+            config.put("SecretId", secretId);
             // ご自身のSecretKeyに置き換えます
-            config.put("SecretKey", "PdkhT9e2rZCfy6");
+            config.put("SecretKey", secretKey);
 
             // 一時キーの有効期間の単位は秒であり、デフォルトでは1800秒、最長7200秒まで設定可能です
             config.put("durationSeconds", 1800);
@@ -88,13 +90,13 @@ APIを使用して、バケット`examplebucket-1250000000`内のオブジェク
 ```shell
 {
   "version": "2.0",
-  "statement": [
+  "statement":[
     {
-      "action": [
+      "action":[
         "name/cos:GetObject"
       ],
       "effect": "allow",
-      "resource": [
+      "resource":[
         "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/exampleObject.txt",
         "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/examplePrefix/*"
       ]
@@ -159,7 +161,6 @@ System.out.println(url.toString());
 cosClient.shutdown();
 ```
 
-
 ### ユーザーポリシーの最小権限ガイド
 
 ユーザーポリシーとは[CAMコンソール](https://console.cloud.tencent.com/cam/policy)で追加するユーザー権限ポリシーを指し、ユーザーにCOSリソースへのアクセス権限を与えるために用いられます。ユーザーアクセスポリシー概要の設定説明については、 [アクセスポリシーの言語概要](https://intl.cloud.tencent.com/document/product/436/18023)のドキュメントをご参照ください。
@@ -172,18 +173,18 @@ cosClient.shutdown();
 ```shell
 {
    "version": "2.0",
-   "principal": {
+   "principal":{
       "qcs": [
          "qcs::cam::uin/100000000001:uin/100000000001"
       ]
    },
-    "statement": [
+    "statement":[
         {
-            "action": [
+            "action":[
                 "name/cos:GetObject"
             ],
             "effect": "allow",
-            "resource": [
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000.ap-guangzhou.myqcloud.com/exampleObject.txt"
             ]
         }
@@ -198,18 +199,18 @@ cosClient.shutdown();
 ```shell
 {
    "version": "2.0",
-   "principal": {
+   "principal":{
       "qcs": [
          "qcs::cam::uin/100000000001:uin/100000000011"
       ]
    },
-    "statement": [
+    "statement":[
         {
-            "action": [
+            "action":[
                 "name/cos:GetObject"
             ],
             "effect": "allow",
-            "resource": [
+            "resource":[
                 "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000.ap-guangzhou.myqcloud.com/examplePrefix/*"
             ]
         }
@@ -249,4 +250,3 @@ cosClient.shutdown();
   "version": "2.0"
 }
 ```
-

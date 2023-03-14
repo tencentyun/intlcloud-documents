@@ -65,23 +65,25 @@ CAMコンソールでサブアカウントを作成し、サブアカウント�
 4. **APIキー**タブをクリックし、**キーの作成**をクリックしてこのサブアカウントのSecretIdとSecretKeyを作成します。
 
 この時点で、サブアカウントのSecretIdとSecretKey、ルートアカウントのAPPIDによってCOSリソースにアクセスすることが可能になりました。 
-
->!
->サブアカウントはXML APIまたはXML APIベースのSDKによってCOSリソースにアクセスする必要があります。
+>!サブアカウントはXML APIまたはXML APIベースのSDKによってCOSリソースにアクセスする必要があります。
 
 
 #### XMLベースのJava SDKによるアクセスの例
 
 XMLベースのJava SDKコマンドラインの場合、入力する必要があるパラメータは次のとおりです。
 ```
-// 1 ID情報の初期化
+// ID情報の初期化
 COSCredentials cred = new BasicCOSCredentials("<ルートアカウントのAPPID>", "<サブアカウントのSecretId>", "<サブアカウントのSecretKey>");
 ```
 
 実際の例は次のとおりです。
 ```
-// 1 ID情報の初期化
-COSCredentials cred = new BasicCOSCredentials("1250000000", "AKIDasdfmRxHPa9oLhJp****", "e8Sdeasdfas2238Vi****");
+String secretId = System.getenv("secretId");//サブアカウントのSecretIdです。権限承認は最小権限ガイドに従って行い、使用上のリスクを低減させます。サブアカウントキーの取得については、https://cloud.tencent.com/document/product/598/37140をご参照ください
+String secretKey = System.getenv("secretKey");//サブアカウントのSecretKeyです。権限承認は最小権限ガイドに従って行い、使用上のリスクを低減させます。サブアカウントキーの取得については、https://cloud.tencent.com/document/product/598/37140をご参照ください
+COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
+
+// ID情報の初期化
+COSCredentials cred = new BasicCOSCredentials("<ルートアカウントのAPPID>", secretId, secretKey);
 ```
 
 #### COSCMDコマンドラインツールによるアクセスの例
@@ -98,7 +100,7 @@ coscmd config -u 1250000000 -a AKIDasdfmRxHPa9oLhJp**** -s e8Sdeasdfas2238Vi****
 
 （2）Tencent Cloudコンソール
 
-サブユーザーに権限を承認した後、[サブユーザーログイン画面](https://www.tencentcloud.com/en/account/register?)でルートアカウントID、サブユーザー名、サブユーザーパスワードを入力してコンソールにログインし、**クラウド製品**の中の**Cloud Object Storage**を選択してクリックすると、ルートアカウント下のストレージリソースにアクセスすることができます。
+サブユーザーに権限を承認した後、[サブユーザーログイン画面](https://www.tencentcloud.com/account/login/subAccount)でルートアカウントID、サブユーザー名、サブユーザーパスワードを入力してコンソールにログインし、**クラウド製品**の中の**Cloud Object Storage**を選択してクリックすると、ルートアカウント下のストレージリソースにアクセスすることができます。
 
 <span id="ポリシーの例"></span>
 ## ポリシーの例

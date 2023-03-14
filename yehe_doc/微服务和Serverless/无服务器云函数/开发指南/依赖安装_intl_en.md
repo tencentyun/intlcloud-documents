@@ -1,38 +1,38 @@
-## Built-In Dependencies
+## Built-in Dependencies
 
-Some common dependency libraries have been built in various runtimes of SCF, which can be queried in the corresponding runtime code development guide:
+SCF runtime environments have provided some dependent libraries, which can be queried in the corresponding runtime development guide:
 
 - [Node.js](https://intl.cloud.tencent.com/document/product/583/11060)
 - [Python](https://intl.cloud.tencent.com/document/product/583/40323) 
 - [PHP](https://intl.cloud.tencent.com/document/product/583/17531)
-- [Go](https://intl.cloud.tencent.com/document/product/583/18032)
+- [Golang](https://intl.cloud.tencent.com/document/product/583/18032)
 
-## Installing Dependency Libraries
+## Installing Dependent Libraries
 
-You can save all the dependency libraries of the SCF code in the code package and upload it to the cloud for use by SCF. SCF supports the following runtimes and usage methods:
+You can save the dependent libraries of the SCF code in the code package and upload it to the cloud for use by SCF. SCF supports the following runtimes and usage methods:
 
 
 ### Node.js runtime
 
-The Node.js runtime supports the following three dependency library installation methods:
+The Node.js runtime supports installing dependent libraries in the following three ways:
 
 <dx-tabs>
-::: Package the dependency libraries and code together for upload
-Use a dependency management tool such as npm to install the dependencies locally and upload them together with the function code.
+::: Upload from local
+You can use a dependency manager (such as npm) to locally install the dependent library, package and upload it with the function code.
 <dx-alert infotype="notice" title="">
-When you package them, the function entry file needs to be put in the root directory of the `zip` package. If you package the entire folder as the `zip` package and upload it, function creation will fail because the entry file cannot be found in the root directory after decompression.
+Place the entry point file of the function in the root directory of the `zip` package. If you package and upload the entire folder as a `zip` package, the function creation will fail because the entry point file cannot be found in the unzipped root directory.
 </dx-alert>
-This document takes installing the `lodash` library as an example:
+This document takes installing the `lodash` library as an example.
 
-1. Run the `mkdir test-package` command in the local terminal to create a directory for storing the function code and dependency libraries.
-2. Run the following command to install the `lodash` dependency library in this directory.
+1. Run the `mkdir test-package` command on your local computer to create a directory to store the function code and the dependent library.
+2. Run the following commands to install the `lodash` dependent library in the directory.
 
 ```bash
 cd test-package
 npm install lodash
 ```
 
-3. Create the function entry file `index.js` in this directory and import the `lodash` library in the code.
+3. Create the `index.js` entry point file of the function in the directory and import the `lodash` library in codes.
 
 ```js
 'use strict';
@@ -46,69 +46,65 @@ exports.main_handler = async (event, context) => {
 };
 ```
 
-4. Compress the function code and dependency libraries into a zip package, upload the package in the [SCF console](https://console.cloud.tencent.com/scf), and create a function in the following steps:
+4. Compress the function code and dependent library to a zip package. Upload the zip package and create a function via the [SCF console](https://console.cloud.tencent.com/scf).
    1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
-   2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
-   3. Enter the basic information of the function on the **Create function** page as shown below:
-      ![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
-      - **Creation method**: Select **Custom**.
-      - **Runtime environment**: Select **Node.js 12.16**.
-      - **Submitting method**: Select **Local ZIP file**.
+   2. Choose a region at the top of the **Functions** page and click **Create**.
+   3. Enter the basic information of the function on the **Create** page. 
+      ![](https://staticintl.cloudcachetci.com/yehe/backend-news/6uYd173_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230165310.png)
+      - **Creation method**: Select **From scratch**.
+      - **Runtime environment**: Choose **Node.js12.16**.
+      - **Submitting method**: Choose **Local ZIP file**.
    4. Click **Complete**.
 
 :::
-::: Install dependencies online
-The Node.js runtime provides an online dependency installation feature, which can install dependencies online according to the dependency information configured in `package.json`. For more information, see [Online Dependency Installation](https://intl.cloud.tencent.com/document/product/583/38105).
+::: Install online
+The Node.js runtime supports online dependency installation. You can install the dependent library online according to the configuration in `package.json`. For details, see [Online Dependency Installation](https://intl.cloud.tencent.com/document/product/583/38105)
 :::
-::: Use dependency management tools
-[Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962), SCF's online editor, provides a terminal feature and builds the package management tool `npm` in the terminal.
+::: Using a dependency manager
+The SCF online editor [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962) supports Terminal capability that has a built-in `npm` package management tool. 
 
 >! Serverless Web IDE has a delay in supporting newer versions of runtime environments. If the console does not open up the Serverless Web IDE for the corresponding runtime environment, package and upload the dependency library together with the code for dependency installation or install the dependency online.
 
 This document takes installing the `lodash` library in the terminal as an example:
 
-1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Functions** on the left sidebar.
+1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and click **Functions** on the left sidebar.
 2. In the function list, click a function name to enter the function details page.
-3. On the **Function management** page, select **Function codes** > **Edit codes** to view and edit the function.
-4. Select **Terminal** > **New terminal** on the topbar of the IDE to open the terminal window.
-5. Run the following command in the terminal to install the `lodash` dependency library:
+3. On the **Function management** page, select **Function Code** > **Edit codes** to view and edit the function.
+4. Select **Terminal** > **New Terminal** on the topbar of the IDE to open the terminal window.
+5. Run the following commands in the terminal window to install the `lodash` dependent library.
 ```bash
-cd src  # The dependency library needs to be installed in a directory at the same level as the function entry file, that is, you need to enter the `src` directory before installing the dependency.
+cd src  # Install the dependent library in the same level of directory as the function’s entry point file, namely, enter the `src` directory and install it.
 npm install lodash # You can view the npm version through the terminal
 ```
-6. After the installation is completed, view `package.json` and `node_modules` in the file tree on the left side of the IDE.
-7. After you click **Deploy**, the dependency library can be packaged and uploaded to the cloud together with the function code.
+6. After the installation is complete, check `package.json` and `node_modules` in the file tree on the left side of the IDE.
+7. Click **Deploy** to package the dependency library and upload it to the cloud together with the function code. 
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/I7SN275_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230165842.png)
    :::
    </dx-tabs>
 
-
-
-
-
-
 ### Python runtime
 
-The Python runtime supports the following two dependency library installation methods:
+The Python runtime supports installing dependent libraries in the following two ways.
 
 <dx-tabs>
-::: Package the dependency libraries and code together for upload
-Use a dependency management tool such as pip to install the dependencies locally and upload them together with the function code.
+::: Upload from local
+You can use a dependency manager (such as pip) to locally install the dependent library, package and upload it with the function code.
 <dx-alert infotype="notice" title="">
 
-- When you package them, the function entry file needs to be put in the root directory of the `zip` package. If you package the entire folder as the `zip` package and upload it, function creation will fail because the entry file cannot be found in the root directory after decompression.
+- Place the function’s entry point file in the root directory of the `zip` package. If you package and upload the entire folder as a `zip` package, the function creation will fail because the entry point file cannot be found in the unzipped root directory.
 - Due to runtime environment differences, confirm that the installed dependency version is adapted to the function runtime environment.
 - The function runtime environment is CentOS 7, and you need to install the dependencies in the same environment. If not, an error where the dependencies cannot be found may occur while running the function after upload.
-- If some dependencies involve a dynamic link library, such as Pandas in Python 3.6, you need to manually copy the relevant dependency package to the dependency installation directory before packaging and uploading them. For more information, see [Installing Dependency with Docker](https://intl.cloud.tencent.com/document/product/583/38127). You can also use the online IDE for installation.
+- For dependencies requiring dynamic link library, you need to manually copy these dependencies to the installation directory, and then compress and upload them. You can [install dependency with Docker](https://intl.cloud.tencent.com/document/product/583/38127) or online IDE.
   </dx-alert>
   This document takes installing the `numpy` library as an example:
 
-1. Run the `mkdir test-package` command in the local terminal to create a directory for storing the function code and dependency libraries.
-2. Run the following command to install the `numpy` dependency library in this directory.
+1. Run the `mkdir test-package` command on your local computer to create a directory to store the function code and the dependent library.
+2. Run the following commands to install the `numpy` dependent library in the directory.
 ```bash
 cd test-package
 pip install numpy -t . # Check whether the pip version you are using is adapted to the function runtime environment
 ```
-3. Create the function entry file `index.py` in this directory and import the `numpy` library in the code.
+3. Create the `index.py` entry point file of the function in the directory and import the `numpy` library in codes.
 ```python
 # -*- coding: utf8 -*-
 import json
@@ -119,38 +115,38 @@ def main_handler(event, context):
      print("Hello world")
      return("Hello World")
 ```
-4. Compress the function code and dependency libraries into a zip package, upload the package in the [SCF console](https://console.cloud.tencent.com/scf), and create a function in the following steps:
+4. Compress the function code and dependent library to a zip package. Upload the zip package and create a function via the [SCF console](https://console.cloud.tencent.com/scf).
    1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
-   2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
-   3. Enter the basic information of the function on the **Create function** page as shown below:
-      ![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
-      - **Creation method**: Select **Custom**.
+   2. Choose a region at the top of the **Functions** page and click **Create**.
+   3. Enter the basic information of the function on the **Create** page. 
+      ![](https://staticintl.cloudcachetci.com/yehe/backend-news/edQX579_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230165944.png)
+      - **Creation method**: Select **From scratch**.
       - **Runtime environment**: Select **Python 3.6**.
-      - **Submitting method**: Select **Local ZIP file**.
+      - **Submitting method**: Choose **Local ZIP file**.
    4. Click **Complete**.
 
 :::
-::: Use dependency management tools
-[Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962), SCF's online editor, provides a terminal feature and builds the package management tool `pip` in the terminal.
+::: Using a dependency manager
+The SCF online editor [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962) supports Terminal capability that has a built-in `pip` package management tool. 
 
 >! Serverless Web IDE has a delay in supporting newer versions of runtime environments. If the console does not open up the Serverless Web IDE for the corresponding runtime environment, package and upload the dependency library together with the code for dependency installation or install the dependency online.
 
 This document takes installing the `numpy` library in the terminal as an example:
 
-1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Functions** on the left sidebar.
+1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and click **Functions** on the left sidebar.
 2. In the function list, click a function name to enter the function details page.
-3. On the **Function management** page, select **Function codes** > **Edit codes** to view and edit the function.
-4. Select **Terminal** > **New terminal** on the topbar of the IDE to open the terminal window.
-5. Run the following command in the terminal to install the `numpy` dependency library:
+3. On the **Function management** page, select **Function Code** > **Edit codes** to view and edit the function.
+4. Select **Terminal** > **New Terminal** on the topbar of the IDE to open the terminal window.
+5. Run the following commands in the terminal to install the `numpy` dependent library.
 ```bash
-cd src  # The dependency library needs to be installed in a directory at the same level as the function entry file, that is, you need to enter the `src` directory before installing the dependency.
+cd src  # Install the dependent library in the same level of directory as the function’s entry point file, namely, enter the `src` directory and install it.
 pip install numpy -t . # You can view the pip version through the terminal to check whether it is adapted to the function runtime environment
 ```
-6. After the installation is completed, view the installed dependency libraries in the file tree on the left side of the IDE.
-7. After you click **Deploy**, the dependency library can be packaged and uploaded to the cloud together with the function code.
+6. After the installation is complete, check the installed dependent library in the file tree on the left side of the IDE.
+7. Click **Deploy** to package and upload the dependent library with function codes to the cloud.
    <dx-alert infotype="notice" title="">
-- You can run `pip freeze > requirements.txt` to generate the `requirements.txt` files for all dependencies in the local environment.
-- Run `pip install -r requirements.txt -t .` in the terminal of the IDE to install the dependency package according to the configuration in `requirements.txt`.
+- Use the `pip freeze > requirements.txt` command to generate a `requirements.txt` file that contains all dependencies of the local environment.
+- Run the `pip install -r requirements.txt -t .` command in the IDE Terminal to install the dependency package according to the `requirements.txt` configurations.
   </dx-alert>
   :::
   </dx-tabs>
@@ -158,20 +154,17 @@ pip install numpy -t . # You can view the pip version through the terminal to ch
 
 ### PHP runtime
 
-
-
->! The PHP versions supported by SCF are 8.0、7.4、5.6 and 7.2. Different minor versions of PHP may be incompatible. Check the version number first before installing dependencies.
-
+>! The PHP versions supported by SCF are 5.6, 7.2, 7.4 and 8.0. Different minor versions of PHP may be incompatible. Please check the version number first before installing dependencies.
 
 <dx-tabs>
 ::: Install custom libraries
-Use a dependency management tool such as Composer to install the dependencies locally and upload them together with the function code.
+You can use a dependency manager (such as “composer”) to locally install the dependent library, package and upload it with the function code.
 <dx-alert infotype="notice" title="">
-When you package them, the function entry file needs to be put in the root directory of the `zip` package. If you package the entire folder as the `zip` package and upload it, function creation will fail because the entry file cannot be found in the root directory after decompression.
+Place the entry point file of the function in the root directory of the `zip` package. If you package and upload the entire folder as a `zip` package, the function creation will fail because the entry point file cannot be found in the unzipped root directory.
 </dx-alert>
 This document takes installing the `requests` library for PHP 7.2 as an example:
 
-1. Run the `mkdir test-package` command in the local terminal to create a directory for storing the function code and dependency libraries.
+1. Run the `mkdir test-package` command on your local computer to create a directory to store the function code and the dependent library.
 2. Create `Composer.json` under `test-package` and specify the dependency library and version to be installed.
 ```json
 {
@@ -195,14 +188,14 @@ function main_handler($event, $context) {
 ?> 
 ```
 
-5. Compress the function code and dependency libraries into a zip package, upload the package in the [SCF console](https://console.cloud.tencent.com/scf), and create a function in the following steps:
+5. Compress the function code and dependent library to a zip package. Upload the zip package and create a function via the [SCF console](https://console.cloud.tencent.com/scf).
    1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
-   2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
-   3. Enter the basic information of the function on the **Create function** page as shown below:
-      ![](https://main.qcloudimg.com/raw/5112f6d762b1e90a3b62ad7446da0a79.png)
-    - **Creation method**: Select **Custom**.
-    - **Runtime environment**: Select **PHP 7.2**.
-    - **Submitting method**: Select **Local ZIP file**.
+   2. Choose a region at the top of the **Functions** page and click **Create**.
+   3. Enter the basic information of the function on the **Create** page. 
+      ![](https://staticintl.cloudcachetci.com/yehe/backend-news/TRF5230_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170044.png)
+    - **Creation method**: Select **From scratch**.
+    - **Runtime environment**: Select **Php7.2**.
+    - **Submitting method**: Choose **Local ZIP file**.
    4. Click **Complete**.
    :::
    ::: Install custom extensions
@@ -210,7 +203,7 @@ function main_handler($event, $context) {
 
 This document uses installing the custom extension `swoole.so` for PHP 7.2 as an example.
 
-1. Run the `mkdir test-package` command in the local terminal to create a directory for storing the function code and dependency libraries.
+1. Run the `mkdir test-package` command on your local computer to create a directory to store the function code and the dependent library.
 2. Run the following command to create the folder `php_extension` in `test-package` and place the configuration file `php.ini` and extension file `.so` corresponding to the extension in this directory. The directory structure is as follows:
    <dx-alert infotype="explain" title="">
 
@@ -225,7 +218,7 @@ This document uses installing the custom extension `swoole.so` for PHP 7.2 as an
 |____index.php  
 ```
 
-3. Custom extensions can be loaded from the code or layers. If an extension is uploaded as a layer, make sure that the unzipped directory structure of the uploaded zip file is as follows:
+3. Custom extensions can be loaded from the code or layers. If an extension is uploaded as a layer, please make sure that the unzipped directory structure of the uploaded zip file is as follows:
 
 ```plaintext
 |____php_extension
@@ -233,9 +226,10 @@ This document uses installing the custom extension `swoole.so` for PHP 7.2 as an
 ```
 
 4. `php.ini` writing method:
-     - The extension is in the code directory:
+     - Set in the code directory:
      ```ini
-     extension=/var/user/php_extension/swoole.so
+extension=/var/user/php_extension/swoole.so
+     ```
   ```
      - This extension is in the layer directory:
      ```ini
@@ -253,14 +247,14 @@ function main_handler($event, $context) {
 ?> 
 ```
 
-6. Compress the function code and dependency libraries into a zip package, upload the package in the [SCF console](https://console.cloud.tencent.com/scf), and create a function in the following steps:
+6. Compress the function code and dependent library to a zip package. Upload the zip package and create a function via the [SCF console](https://console.cloud.tencent.com/scf).
     	 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
-     2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
-     3. Enter the basic information of the function on the **Create function** page as shown below:
-      ![](https://main.qcloudimg.com/raw/4fe183a20d4f5ce9b0db9c897a7df095.png)
-          - **Creation method**: Select **Custom**.
-          - **Runtime environment**: Select **PHP 7.2**.
-          - **Submitting method**: Select **Local ZIP file**.
+     2. Choose a region at the top of the **Functions** page and click **Create**.
+     3. Enter the basic information of the function on the **Create** page. 
+         ![](https://staticintl.cloudcachetci.com/yehe/backend-news/TRF5230_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170044.png)
+          - **Creation method**: Select **From scratch**.
+          - **Runtime environment**: Select **Php7.2**.
+          - **Submitting method**: Choose **Local ZIP file**.
      4. Click **Complete**.
    :::
    </dx-tabs>
@@ -269,11 +263,11 @@ function main_handler($event, $context) {
 
 ### Java runtime
 
-Use a dependency management tool such as Maven to install the dependencies locally and upload them together with the function code.
+You can use a dependency manager (such as maven) to locally install the dependent library, package and upload it with the function code.
 
-1. Run the `mkdir test-package` command in the local terminal to create a directory for storing the function code and dependency libraries.
-2. Create `pom.xml` in this directory and configure the dependency information in `pom.xml`.
-3. Run the `mvn package` command in the root directory of the project folder, and the compilation output is as follows:
+1. Run the `mkdir test-package` command on your local computer to create a directory to store the function code and the dependent library.
+2. Create a `pom.xml file in the directory and configure dependency in the file.
+3. Run the `mvn package` command in the root directory of the project folder, and the compilation output should be as follows:
 ```bash
 [INFO] Scanning for projects...
 [INFO]
@@ -290,38 +284,32 @@ Use a dependency management tool such as Maven to install the dependencies local
 [INFO] Final Memory: 17M/214M
 [INFO] ------------------------------------------------------------------------
 ```
-4. Compress the function code and dependency libraries into a JAR package, upload the package in the [SCF console](https://console.cloud.tencent.com/scf), and create a function in the following steps:
+4. Compress the function code and dependent library to a jar package. Upload the jar package and create a function via the [SCF console](https://console.cloud.tencent.com/scf).
    1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
-   2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
-   3. Enter the basic information of the function on the **Create function** page as shown below:
-      ![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
-      - **Creation method**: Select **Custom**.
-      - **Runtime environment**: Select **Java 8**.
-      - **Submitting method**: Select **Local ZIP file**.
+   
+   2. Choose a region at the top of the **Functions** page and click **Create**.
+   
+   3. Enter the basic information of the function on the **Create** page. 
+      ![](https://staticintl.cloudcachetci.com/yehe/backend-news/shvj772_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170239.png)
+      
+      - **Creation method**: Select **From scratch**.
+      - **Runtime environment**: Choose **Java8**.
+      - **Submitting method**: Choose **Local ZIP file**.
+      
    4. Click **Complete**.
-
-
-
-
-
-
-
-
-
-
-
+   
 
 ### Go runtime
 
-**Instructions**: Upload the final binary file when packaging.
+**Instructions**: upload the final binary file when packaging.
 
-Compile the dependency libraries of the Go runtime with the code to get a binary file, upload the packaged binary file in the [SCF console](https://console.cloud.tencent.com/scf), and create a function in the following steps:
+Compile the dependent library of the Go runtime with codes to generate a binary file. Upload the binary file and create a function via the [SCF console](https://console.cloud.tencent.com/scf).
 
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
-2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
-3. Enter the basic information of the function on the **Create function** page as shown below:
-   ![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
-   - **Creation method**: Select **Create from scratch**.
-   - **Runtime environment**: Select **Go 1**.
-   - **Submitting method**: Select **Local ZIP file**.
+2. Choose a region at the top of the **Functions** page and click **Create**.
+3. Enter the basic information of the function on the **Create** page. 
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/URgr420_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170355.png)
+   - **Creation method**: Select **From scratch**.
+   - **Runtime environment**: select **Go 1**.
+   - **Submitting method**: Choose **Local ZIP file**.
 4. Click **Complete**.

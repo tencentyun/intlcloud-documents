@@ -50,7 +50,7 @@ npm install tencentcloud-serverless-nodejs
 ### 云端函数互调
 #### 示例
 >!
-> - 不同地域下的函数互调，须指定地域，命名规则参见 [地域列表](https://intl.cloud.tencent.com/document/api/583/17238)。
+> - 不同地域下的函数互调，须指定地域，命名规则参见 [地域列表](https://www.tencentcloud.com/document/api/583/17238)。
 > - 如果不指定地域，默认为同地域下函数互调。
 > - 命名空间不指定，默认为 default。
 > - 需要打开调用方函数外网访问权限。
@@ -101,13 +101,10 @@ exports.main_handler = async (event, context) => {
  - 代码提交方式：选择**本地上传 zip 包**。
     将 `testNodejsSDK` 目录下的所有文件压缩为 zip 格式，并上传到云端。
 4. 
-在 [Serverless 控制台](https://console.cloud.tencent.com/scf/list) 中的函数详情页面，通过进入函数代码子页面，单击**运行**，测试运行函数。输出结果如下：
+在 [Serverless 控制台](https://console.cloud.tencent.com/scf/list) 单击新建的云函数，进入**函数管理**的**代码编辑**页面，然后单击**测试**，运行函数。输出结果如下：
 ```shell
 "Already invoked a function!"
 ```
-
-
-
 
 ### 本地调用云端函数
 
@@ -166,12 +163,6 @@ prepare to invoke a function!
 Already invoked a function!
 ```
 
-
-
-
-
-
-
 ## 接口列表
 ### API Reference
 - [Init](#Init)
@@ -211,4 +202,5 @@ Already invoked a function!
 | secretId  |    否    | `String` |  默认会取 process.env.TENCENTCLOUD_SECRETID |
 | secretKey |    否    | `String` | 默认会取 process.env.TENCENTCLOUD_SECRETKEY |
 | token |    否    | `String` | 默认会取 process.env.TENCENTCLOUD_SESSIONTOKEN |
+
 

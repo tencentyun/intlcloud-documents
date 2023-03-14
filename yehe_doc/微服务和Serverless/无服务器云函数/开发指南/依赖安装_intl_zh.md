@@ -46,12 +46,12 @@ exports.main_handler = async (event, context) => {
 };
 ```
 
-4. 将函数代码及依赖库一同压缩为 zip 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
-   1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
+4. 将函数代码及依赖库一同压缩为 zip 包，在 [Serverless 控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
+   1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
    2. 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
-   3. 在“新建函数”页面，填写函数基本信息。如下图所示：
-      ![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
-      - **创建方式**：选择使用**自定义创建**来新建函数。
+   3. 在“新建函数”页面，填写函数基本信息。如下图所示： 
+      ![](https://staticintl.cloudcachetci.com/yehe/backend-news/6uYd173_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230165310.png)
+      - **创建方式**：选择使用**从头开始**来新建函数。
       - **运行环境**：选择**Node.js12.16**。
       - **提交方法**：选择**本地上传zip包**。
    4. 单击**完成**即可创建函数。
@@ -67,7 +67,7 @@ Node.js 运行时提供了在线依赖安装功能，可根据 `package.json` �
 
 本文以在终端中安装 `lodash` 库为例：
 
-1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择**函数服务**。
+1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择**函数服务**。
 2. 在函数列表中，单击函数名，进入该函数的详情页面。
 3. 在“函数管理”页面中，选择**函数代码** > **代码编辑**，查看并编辑函数。
 4. 在 IDE 顶部的菜单栏**终端**中选择**新终端**，打开终端窗口。
@@ -77,14 +77,10 @@ cd src  # 依赖库需要安装在与函数入口文件同一级的目录下，�
 npm install lodash # 可通过终端查看 npm 版本
 ```
 6. 安装完成后，在 IDE 左侧的文件树中查看 `package.json` 和 `node_modules`。
-7. 单击**部署**后依赖库即可与函数代码一同打包上传到云端。
+7. 单击**部署**后依赖库即可与函数代码一同打包上传到云端。如下图所示： 
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/I7SN275_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230165842.png)
    :::
    </dx-tabs>
-
-
-
-
-
 
 ### Python 运行时
 
@@ -97,7 +93,7 @@ Python 运行时支持以下两种依赖库安装方法：
 
 - 打包时函数入口文件需要在 `zip` 包的根目录下。如果打包整个文件夹并上传 `zip` 包，则会因解压后无法在根目录找到入口文件而导致函数创建失败。
 - 由于运行环境差异，请确认安装的依赖版本适配函数的运行环境。
-- 函数运行系统为 CentOS 7，您需要在相同环境下进行安装。若环境不一致，则可能导致上传后运行时出现无法找到依赖的错误。或可使用
+- 函数运行系统为 CentOS 7，您需要在相同环境下进行安装。若环境不一致，则可能导致上传后运行时出现无法找到依赖的错误。
 - 若部分依赖涉及动态链接库，例如 Python 3.6 安装 pandas，需手动复制相关依赖包到依赖安装目录后再打包上传。详情请参见 [使用 Docker 安装依赖](https://intl.cloud.tencent.com/document/product/583/38127) 或使用在线 IDE 进行安装。
   </dx-alert>
   本文以安装 `numpy` 库为例：
@@ -119,12 +115,12 @@ def main_handler(event, context):
      print("Hello world")
      return("Hello World")
 ```
-4. 将函数代码及依赖库一同压缩为 zip 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
-   1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
+4. 将函数代码及依赖库一同压缩为 zip 包，在 [Serverless 控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
+   1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
    2. 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
-   3. 在“新建函数”页面，填写函数基本信息。如下图所示：
-      ![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
-      - **创建方式**：选择使用**自定义创建**来新建函数。
+   3. 在“新建函数”页面，填写函数基本信息。如下图所示： 
+      ![](https://staticintl.cloudcachetci.com/yehe/backend-news/edQX579_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230165944.png)
+      - **创建方式**：选择使用**从头开始**来新建函数。
       - **运行环境**：选择**Python 3.6**。
       - **提交方法**：选择**本地上传zip包**。
    4. 单击**完成**即可创建函数。
@@ -137,7 +133,7 @@ def main_handler(event, context):
 
 本文以在终端中安装 `numpy` 库为例：
 
-1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择**函数服务**。
+1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择**函数服务**。
 2. 在函数列表中，单击函数名，进入该函数的详情页面。
 3. 在“函数管理”页面中，选择**函数代码** > **代码编辑**，查看并编辑函数。
 4. 在 IDE 顶部的菜单栏**终端**中选择**新终端**，打开终端窗口。
@@ -158,10 +154,7 @@ pip install numpy -t . # 可通过终端查看 pip 版本，确认是否适配�
 
 ### PHP 运行时
 
-
-
->! SCF 支持的 PHP 版本为 PHP 8.0、PHP7.4、PHP 7.2 和 PHP 5.6，PHP 不同的小版本号存在不兼容的可能，请核对版本号后进行依赖安装。
-
+>! SCF 支持的 PHP 版本为 PHP 8.0、PHP 7.4、PHP 7.2 和 PHP 5.6，PHP 不同的小版本号存在不兼容的可能，请核对版本号后进行依赖安装。
 
 <dx-tabs>
 ::: 安装自定义库
@@ -195,12 +188,12 @@ function main_handler($event, $context) {
 ?> 
 ```
 
-5. 将函数代码及依赖库一同压缩为 zip 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
-   1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
+5. 将函数代码及依赖库一同压缩为 zip 包，在 [Serverless 控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
+   1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
    2. 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
-   3. 在“新建函数”页面，填写函数基本信息。如下图所示：
-      ![](https://main.qcloudimg.com/raw/5112f6d762b1e90a3b62ad7446da0a79.png)
-    - **创建方式**：选择使用**自定义创建**来新建函数。
+   3. 在“新建函数”页面，填写函数基本信息。如下图所示： 
+      ![](https://staticintl.cloudcachetci.com/yehe/backend-news/TRF5230_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170044.png)
+    - **创建方式**：选择使用**从头开始**来新建函数。
     - **运行环境**：选择**Php7.2**。
     - **提交方法**：选择**本地上传zip包**。
    4. 单击**完成**即可创建函数。
@@ -235,7 +228,8 @@ function main_handler($event, $context) {
 4. php.ini 写法：
      - 扩展在代码目录下：
      ```ini
-     extension=/var/user/php_extension/swoole.so
+extension=/var/user/php_extension/swoole.so
+     ```
   ```
      - 扩展在层目录下：
      ```ini
@@ -253,12 +247,12 @@ function main_handler($event, $context) {
 ?> 
 ```
 
-6. 将函数代码及依赖库一同压缩为 zip 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
-    	 1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
+6. 将函数代码及依赖库一同压缩为 zip 包，在 [Serverless 控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
+    	 1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
      2. 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
-     3. 在“新建函数”页面，填写函数基本信息。如下图所示：
-      ![](https://main.qcloudimg.com/raw/4fe183a20d4f5ce9b0db9c897a7df095.png)
-          - **创建方式**：选择使用**自定义创建**来新建函数。
+     3. 在“新建函数”页面，填写函数基本信息。如下图所示： 
+         ![](https://staticintl.cloudcachetci.com/yehe/backend-news/TRF5230_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170044.png)
+          - **创建方式**：选择使用**从头开始**来新建函数。
           - **运行环境**：选择**Php7.2**。
           - **提交方法**：选择**本地上传zip包**。
      4. 单击**完成**即可创建函数。
@@ -290,37 +284,31 @@ function main_handler($event, $context) {
 [INFO] Final Memory: 17M/214M
 [INFO] ------------------------------------------------------------------------
 ```
-4. 将函数代码及依赖库一同压缩为 jar 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 jar 包并创建一个新函数。操作步骤如下：
-   1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
+4. 将函数代码及依赖库一同压缩为 jar 包，在 [Serverless 控制台](https://console.cloud.tencent.com/scf) 中上传打包的 jar 包并创建一个新函数。操作步骤如下：
+   1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
+   
    2. 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
-   3. 在“新建函数”页面，填写函数基本信息。如下图所示：
-      ![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
-      - **创建方式**：选择使用**自定义创建**来新建函数。
+   
+   3. 在“新建函数”页面，填写函数基本信息。如下图所示： 
+      ![](https://staticintl.cloudcachetci.com/yehe/backend-news/shvj772_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170239.png)
+      
+      - **创建方式**：选择使用**从头开始**来新建函数。
       - **运行环境**：选择**Java8**。
       - **提交方法**：选择**本地上传zip包**。
+      
    4. 单击**完成**即可创建函数。
-
-
-
-
-
-
-
-
-
-
-
+   
 
 ### Go 运行时
 
 **使用方法**：打包时上传最终的二进制文件。
 
-Go 运行时的依赖库同代码一起编译后得到二进制文件，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的二进制文件并创建一个新函数。操作步骤如下：
+Go 运行时的依赖库同代码一起编译后得到二进制文件，在 [Serverless 控制台](https://console.cloud.tencent.com/scf) 中上传打包的二进制文件并创建一个新函数。操作步骤如下：
 
-1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
+1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的**函数服务**。
 2. 在主界面上方选择期望创建函数的地域，并单击**新建**，进入函数创建流程。
-3. 在“新建函数”页面，填写函数基本信息。如下图所示：
-   ![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
+3. 在“新建函数”页面，填写函数基本信息。如下图所示： 
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/URgr420_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170355.png)
    - **创建方式**：选择使用**从头开始**来新建函数。
    - **运行环境**：选择**Go1**。
    - **提交方法**：选择**本地上传zip包**。

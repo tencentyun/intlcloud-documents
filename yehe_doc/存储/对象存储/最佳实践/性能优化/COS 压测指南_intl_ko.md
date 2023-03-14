@@ -10,16 +10,16 @@ CentOS 7.0 이상에서 COSBench를 실행하는 것이 좋습니다. ubuntu에�
 
 ## 성능 영향 요인
 
-- **기기의 코어 수**: 기기의 코어 수가 적고 활성화한 worker의 수가 많으면, 콘텍스트 전환 시 과도한 오버헤드가 발생하기 쉽습니다. 32나 64코어를 채택하여 부하 테스트를 실시하는 것을 권장합니다.
-- **기기 ENI**: 기기에서 발생하는 트래픽은 ENI의 영향을 받습니다. 대용량 파일의 트래픽 부하 테스트 시에는 10기가비트 이상의 ENI 사용을 권장합니다.
-- **네트워크 링크 요청**: 외부 네트워크 링크는 품질이 상이하고, 외부 네트워크로 다운로드 시 다운스트림에 따른 트래픽 요금이 발생합니다. 동일 리전 내에서는 내부 네트워크 액세스를 권장합니다.
-- **테스트 시간**: 성능 테스트 시간을 적절하게 확보하여 안정된 값을 획득하는 것이 좋습니다.
-- **테스트 환경**: 프로그램이 실행하는 JDK 버전 역시 성능에 영향을 미칩니다. 예를 들어 HTTPS를 테스트할 때 낮은 버전의 클라이언트는 암호화 알고리즘의 [GCM BUG](https://bugs.openjdk.java.net/browse/JDK-8201633)로 인해 난수 발생기에 락이 발생하는 등의 문제가 있을 수 있습니다.
+- **CPU 코어**: 많은 수의 실행 중인 worker와 결합된 적은 수의 CPU 코어는 컨텍스트 전환에 높은 오버헤드를 유발할 가능성이 큽니다. 따라서 테스트에는 32개 또는 64개의 코어가 권장됩니다.
+- **NIC**: 서버로부터의 아웃바운드 트래픽이 제한됩니다. 대용량 파일에 대한 트래픽을 테스트하려면 10GB 이상의 NIC가 권장됩니다.
+- **네트워크 링크**: 공중망 링크는 품질이 다릅니다. 공중망을 통한 다운로드를 위한 공중망 다운스트림 트래픽에 대해 요금이 부과됩니다. 따라서 동일한 리전 내에서 액세스하기 위해서는 사설망을 권장합니다.
+- **테스트 기간**: 신뢰할 수 있는 값을 얻으려면 더 긴 테스트 기간을 권장합니다.
+- **테스트 환경**: 프로그램에서 실행 중인 JDK 버전도 핵심 성능 요소입니다. 예를 들어, 이전 JDK 버전을 사용하여 HTTPS에서 테스트할 때 암호화 알고리즘에 대한 [GCM BUG](https://bugs.openjdk.java.net/browse/JDK-8201633)와 난수 생성기의 잠금 문제가 발생할 수 있습니다.
 
 
 ## COSBench 실행 단계
 
-1. [COSBench GitHub](https://github.com/intel-cloud/cosbench/releases) 웹 사이트에서 COSBench 0.4.2.c4.zip을 다운로드 한 뒤 서버에서 압축을 해제합니다.
+1. [GitHub](https://github.com/intel-cloud/cosbench/releases/tag/v0.4.2.c4)에서 COSBench 0.4.2.c4.zip을 다운로드하고 서버에서 압축을 해제합니다.
 2. COSBench의 종속 라이브러리를 설치한 뒤 다음 명령어를 실행합니다.
  - centos의 경우 다음 명령을 실행하여 종속성을 설치합니다:
 ```
@@ -79,8 +79,8 @@ sudo apt install nmap openjdk-8-jdk
 </thead>
 <tbody>
 <tr>
-<td>accesskey、secretkey</td>
-<td>키 정보. 사용자의 SecretId 및 SecretKey로 교체</td>
+<td>accesskey, secretkey</td>
+<td>키 정보. 리스크를 줄이기 위해 서브 계정 키를 사용하고 <a href="https://intl.cloud.tencent.com/document/product/436/32972">최소 권한의 원칙</a>을 따르는 것이 좋습니다. 서브 계정 키를 얻는 방법에 대한 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/598/32675">Access Key</a>를 참고하십시오.</td>
 </tr>
 <tr>
 <td>cprefix</td>
@@ -112,6 +112,7 @@ sudo apt install nmap openjdk-8-jdk
 ```plaintext
 -Dcom.amazonaws.services.s3.disableGetObjectMD5Validation=true
 ```
+![](https://qcloudimg.tencent-cloud.cn/raw/ac010bb86f091d709a0776b4e20a5858.png)
 5. cosbench 서비스를 시작합니다.
  - centos의 경우 다음 명령을 실행합니다.
 ```plaintext
@@ -130,7 +131,7 @@ URL `http://ip:19088/controller/index.html`(ip는 사용자의 부하 테스트 
 ![](https://main.qcloudimg.com/raw/77f1631fa15141332d123fb472bab7ac.png)
 이때 다음 이미지와 같이 다섯 단계로 실행되는 것을 확인할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/3ccb5a60253ceb20c6da9292582c4355.png)
-7. 다음은 소속 리전이 베이징이며, 32코어, 내부 네트워크 대역폭 17Gbps인 CVM에 대한 업로드 및 다운로드 성능 테스트 예시로, 두 단계를 포함하고 있습니다.
+7. 다음은 소속 리전이 베이징이며, 32코어, 사설망 대역폭 17Gbps인 CVM에 대한 업로드 및 다운로드 성능 테스트 예시로, 두 단계를 포함하고 있습니다.
     1. prepare 단계: worker 스레드가 100개이며, 50MB 객체를 1000개 업로드합니다.
     2. main 단계: 100개의 worker 스레드가 300초 동안 읽기/쓰기 객체를 혼합합니다.
 
