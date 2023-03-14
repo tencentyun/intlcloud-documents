@@ -227,6 +227,8 @@ chown -R nginx:nginx /var/www
  1. `cp /etc/nginx/nginx.conf ~/nginx.conf.bak`를 실행하여 기존 구성 파일을 홈(HOME) 디렉터리에 백업합니다.
  2. SFTP 또는 SCP 등 소프트웨어를 사용하여 기존 구성 파일을 로컬 컴퓨터에 다운로드합니다.
 4. `/etc/nginx/nginx.conf`를 다음 내용으로 수정 또는 대체합니다.
+
+
 ```plaintext
 # For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
@@ -363,11 +365,16 @@ http {
 
 }
 ```
+
+
+
 5. 계속해서 다음 명령어를 실행하고 Nginx 서비스를 실행합니다.
 **명령어 1:**
+
 ```bash
 systemctl enable nginx
 ```
+
  **명령어 2:**
 ```bash
 systemctl start nginx
@@ -392,6 +399,8 @@ systemctl start nginx
 ### NextCloud 서버 구성 파일 수정
 
 1. 텍스트 편집 툴을 사용하여 `config.php`를 생성하고 다음 내용을 입력한 후 주석에 따라 관련 값을 수정합니다.
+
+
 ```php
 <?php
 $CONFIG = array(
@@ -408,10 +417,14 @@ $CONFIG = array(
   ),
 );
 ```
+
+
  다음 이미지 참고:
-![](https://main.qcloudimg.com/raw/b14a23e2cac3ac988745fcd82fe56e18.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/yJvR645_b14a23e2cac3ac988745fcd82fe56e18.png)
 2. 해당 파일을 저장하고 `/var/www/nextcloud/config/` 디렉터리에 업로드합니다(파일 이름은 `config.php`로 유지). SFTP 또는 SCP 소프트웨어를 통해 파일을 업로드할 수 있고, `rz -bye` 명령어를 통해 업로드할 수도 있습니다.
+
 3. 다음 명령어를 실행하여 구성 파일의 소유자를 수정합니다.
+
 ```bash
 chown nginx:nginx /var/www/nextcloud/config/config.php
 ```
