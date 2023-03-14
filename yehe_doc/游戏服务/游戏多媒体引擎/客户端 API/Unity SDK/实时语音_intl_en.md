@@ -1,24 +1,25 @@
-This document describes how to access and debug GME client APIs for the voice chat feature for Unity.
+This document describes how to integrate with and debug GME client APIs for the voice chat feature for Unity.
 
 ## Key Considerations for Using GME
 
-GME provides the real-time voice, voice message, and speech-to-text services, which all depend on core APIs such as `Init` and `Poll`.
+GME provides the real-time voice service and voice messaging and speech-to-text services, which all depend on core APIs such as `Init` and `Poll`.
 
-#### Key notes
+#### Notes
 
-- You have created a GME application and obtained the `AppID` and `Key` of the SDK as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
-- You have **activated the real-time voice, voice message, and speech-to-text services of GME** as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
+- You have created a GME application and obtained the SDK `AppID` and key. For more information, see [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
+- You have activated **GME real-time voice service and voice messaging and speech-to-text services**. For more information, see [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782).
 - Configure your project before using GME; otherwise, the SDK will not take effect.
 - After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
 - GME APIs should be called in the same thread.
 - The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For detailed error code, please see <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
+- For detailed error codes, see <dx-tag-link link="https://intl.cloud.tencent.com/document/product/607/33223" tag="ErrorCode">Error Codes</dx-tag-link>.
+- GME only supports simple voice chat features on Unity WebGL. For more information, see [Project Configuration](https://intl.cloud.tencent.com/document/product/607/30261).
 
-## Connecting to the SDK
+## Integrating the SDK
 
 ### Directions
 
-Key processes involved in SDK connection are as follows:
+Key processes involved in SDK integration are as follows:
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/c8758a24fe68fc084b8d12b09de5e27a.jpg"  width="70%" /></img>
 
@@ -29,7 +30,7 @@ Key processes involved in SDK connection are as follows:
 -<dx-tag-link  tag="Callback: QAVEnterRoomComplete">Callback of Room Entry</dx-tag-link>
 -<dx-tag-link link="#EnableMic" tag="API: EnableMic">Enabling the microphone</dx-tag-link>
 -<dx-tag-link link="#EnableSpeaker" tag="API: EnableSpeaker">Enabling the speaker</dx-tag-link>
--<dx-tag-link link="#ExitRoom" tag="API: ExitRoom">Exiting a voice room</dx-tag-link>
+-<dx-tag-link link="#ExitRoom" tag="API: ExitRoom">Exiting a voice chat room</dx-tag-link>
 -<dx-tag-link link="#UnInit" tag="API: UnInit">Uninitializing GME</dx-tag-link>
 </dx-steps>
 
@@ -43,7 +44,7 @@ Key processes involved in SDK connection are as follows:
 | ITMGAudioCtrl | Audio APIs |
 | ITMGAudioEffectCtrl | Sound effect and accompaniment APIs |
 
-## Key APIs
+## Core APIs
 
 | API | Description |
 | ------ | :----------: |
@@ -53,7 +54,7 @@ Key processes involved in SDK connection are as follows:
 | Resume | Resumes the system |
 | Uninit | Uninitializes GME |
 
-### Importing the header file
+### Importing header files
 
 ```
 using GME;
@@ -89,9 +90,9 @@ public abstract int Init(string sdkAppID, string openID);
 
 <dx-alert infotype="notice" title="Notes on 7015 error code">
 
-- The 7015 error code is judged by md5. If this error is reported during integration, please check the integrity and version of the SDK file as prompted.
+- The 7015 error code is judged by MD5. If this error is reported during integration, please check the integrity and version of the SDK file as prompted.
 - The returned value `AV_ERR_SDK_NOT_FULL_UPDATE` is **only a reminder** but will not cause an initialization failure.
-- Due to the third-party reinforcement, Unity packaging mechanism and other factors, the md5 of the library file will be affected, resulting in misjudgment. **Please ignore this error in the logic for official release**, and try to avoid displaying it in the UI.
+- Due to the third-party reinforcement, Unity packaging mechanism and other factors, the MD5 of the library file will be affected, resulting in misjudgment. **Please ignore this error in the logic for official release**, and try to avoid displaying it in the UI.
   </dx-alert>
 
 #### Sample code 
@@ -151,7 +152,7 @@ ITMGContext  public abstract int Resume()
 ```
 
 [](id:UnInit)
-### Uninitializing the SDK
+### Uninitializing SDK
 
 This API is used to uninitialize the SDK to make it uninitialized. **If the game business account is bound to `openid`, switching game account requires uninitializing GME and then using the new `openid` to initialize again.**
 
@@ -164,7 +165,7 @@ ITMGContext public abstract int Uninit()
 ## Voice Chat Room APIs
 
 You should initialize and call the SDK to enter a room before voice chat can start.
-If you have any questions when using the service, please see [FAQs About Voice Chat](https://intl.cloud.tencent.com/document/product/607/39524).
+If you have any questions when using the service, see [Sound and Audio](https://intl.cloud.tencent.com/document/product/607/39524).
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/02f98895d0b7bfe1bac774d5983289c1.jpg)
 
@@ -172,19 +173,18 @@ If you have any questions when using the service, please see [FAQs About Voice C
 | ------------- | :------------------: |
 | GenAuthBuffer |     Calculates the local authentication key     |
 | EnterRoom     |       Enters a room       |
-| ExitRoom      |       Exits the room       |
+| ExitRoom      |       Exits a room       |
 | IsRoomEntered | Determines whether room entry is successful |
 | SwitchRoom    |     Switches the room quickly     |
 
 ### Local authentication key calculation
 
-Generate `AuthBuffer` for encryption and authentication of relevant features. For release in the production environment, please use the backend deployment key as detailed in [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
+Generate `AuthBuffer` for encryption and authentication of relevant features. For release in the production environment, use the backend deployment key as detailed in [Authentication Key](https://intl.cloud.tencent.com/document/product/607/12218).    
 
 #### API prototype
 
 ```
 QAVAuthBuffer GenAuthBuffer(int appId, string roomId, string openId, string key)
-
 ```
 
 | Parameter | Type | Description |
@@ -203,12 +203,17 @@ public static byte[] GetAuthBuffer(string AppID, string RoomID,string OpenId, st
 
 ```
 
+#### WebGL adaptation
+- On WebGL, after the local authentication function is called, the authentication key is saved in the JS code, and `authBuffer` is not returned to the C# layer. After a user calls the `GetAuthBuffer` API for local authentication, the user can leave the authentication key empty or enter a random value during room entry.
+- If the authentication key is calculated on the backend, `GetAuthBuffer` doesn't need to be called.
+
+
 [](id:EnterRoom)
 ### Entering a room
 
 This API is used to enter a room with the generated authentication information. The mic and speaker are not enabled by default after room entry.
 
-<dx-alert infotype="alarm" title="Note">
+<dx-alert infotype="alarm" title="Notes">
 - If the room entry callback result is `0`, the room entry is successful. If `0` is returned from the `EnterRoom` API, it doesn't necessarily mean that the room entry is successful.
 - The audio type of the room is determined by the first user entering the room. After that, if a member in the room changes the room type, it will take effect for all members there. For example, if the first user entering the room uses the smooth sound quality, and the second user entering the room uses the HD sound quality, the room audio type of the second user will change to the smooth sound quality. Only after a member in the room calls the `ChangeRoomType` API will the audio type of the room be changed.
 </dx-alert>
@@ -240,7 +245,7 @@ After the user enters the room, the room entry result will be called back, which
 <dx-fold-block title="Billing references">
 [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009)
 [Billing FAQs](https://intl.cloud.tencent.com/document/product/607/30255)
-[Will Voice Chat still be charged when client is offlined?](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
+[Will Voice Chat still be charged when client gets offline?](https://intl.cloud.tencent.com/document/product/607/30255#.E4.BD.BF.E7.94.A8.E5.AE.9E.E6.97.B6.E8.AF.AD.E9.9F.B3.E5.90.8E.EF.BC.8C.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E7.AB.AF.E6.8E.89.E7.BA.BF.E4.BA.86.EF.BC.8C.E6.98.AF.E5.90.A6.E8.BF.98.E4.BC.9A.E7.BB.A7.E7.BB.AD.E8.AE.A1.E8.B4.B9.EF.BC.9F)
 </dx-fold-block>
 
 #### API prototype
@@ -273,7 +278,7 @@ void OnEnterRoomComplete(int err, string errInfo)
 | Message | Data | Sample |
 | ------------------------------------ | :----------------: | ------------------------------------------------------------ |
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM      | result; error_info | {"error_info":"","result":0}                                 |
-| ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT                   |                result; error_info                 | {"error_info":"waiting timeout, please check your network","result":0} |
+| ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT | result; error_info | {"error_info":"waiting timeout, please check your network","result":0} |
 
 If the network is disconnected, there will be a disconnection callback notification `ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT`. At this time, the SDK will automatically reconnect, and the callback is `ITMG_MAIN_EVENT_TYPE_RECONNECT_START`. When the reconnection is successful, there will be a callback `ITMG_MAIN_EVENT_TYPE_RECONNECT_SUCCESS`.
 
@@ -287,11 +292,10 @@ If the network is disconnected, there will be a disconnection callback notificat
 | 1003 | The user was already in the room and called the room entering API again. |
 | 1101 | Make sure that the SDK is initialized, `OpenId` complies with the rules, the APIs are called in the same thread, and the `Poll` API is called normally. |
 
-
 [](id:ExitRoom)	
 ### Exiting a room
 
-This API is used to exit the current room. It is an async API. The returned value `AV_OK` indicates a successful async delivery. If there is a scenario in the application where room entry is performed immediately after room exit, you don't need to wait for the `RoomExitComplete` callback notification from the `ExitRoom` API during API call; instead, you can directly call the `EnterRoom` API.
+This API is used to exit the current room. It is an async API. The returned value `AV_OK` indicates a successful async delivery. If there is a scenario in the application where room entry is performed immediately after room exit, you don't need to wait for the `RoomExitComplete` callback notification from the `ExitRoom` API; instead, you can directly call the `EnterRoom` API.
 
 #### API prototype  
 
@@ -327,7 +331,7 @@ void OnExitRoomComplete(){
 }
 ```
 
-### Determining whether a user has entered a room
+### Determining whether user has entered room
 
 This API is used to determine whether the user has entered a room. A value in bool type will be returned. Do not call this API during room entry.
 
@@ -343,7 +347,7 @@ ITMGContext abstract bool IsRoomEntered()
 ITMGContext.GetInstance().IsRoomEntered();
 ```
 
-### Switching a room
+### Switching room
 
 User can call this API to quickly switch the voice chat room after entering the room. After the room is switched, the device is not reset, that is, if the microphone is already enabled in this room, the microphone will keep enabled after the room is switched.
 The callback for quickly switching rooms is `ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_SWITCH_ROOM`, and the fields are `error_info` and `result`.
@@ -354,7 +358,7 @@ The callback for quickly switching rooms is `ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVEN
 public abstract int SwitchRoom(string targetRoomID, byte[] authBuffer);
 ```
 
-#### Type descriptions
+#### Type description
 
 | Parameter | Type | Description |
 | ------------ | ------ | ------------------------------ |
@@ -507,7 +511,7 @@ ITMGAudioCtrl EnableMic(bool isEnabled)
 #### Sample code  
 
 ```
-// Enable mic
+// Turn on mic
 ITMGContext.GetInstance().GetAudioCtrl().EnableMic(true);
 ```
 
@@ -527,7 +531,7 @@ ITMGAudioCtrl GetMicState()
 micToggle.isOn = ITMGContext.GetInstance().GetAudioCtrl().GetMicState();
 ```
 
-### Enabling or disabling the capturing device
+### Enabling or disabling capturing device
 
 This API is used to enable/disable a capturing device. The device is not enabled by default after room entry.
 
@@ -540,7 +544,7 @@ This API is used to enable/disable a capturing device. The device is not enabled
 ITMGAudioCtrl int EnableAudioCaptureDevice(bool isEnabled)
 ```
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter | Type | Description |
 | --------- | :--: | ------------------------------------------------------------ |
 | isEnabled | bool | To enable a capturing device, set this parameter to `true`; otherwise, set it to `false`. |
 
@@ -569,7 +573,7 @@ bool IsAudioCaptureDevice = ITMGContext.GetInstance().GetAudioCtrl().IsAudioCapt
 
 ### Enabling or disabling audio upstreaming
 
-This API is used to enable/disable audio upstreaming. If a capturing device is already enabled, it will send captured audio data; otherwise, it will remain mute. For more information on how to enable/disable the capturing device, please see the `EnableAudioCaptureDevice` API.
+This API is used to enable/disable audio upstreaming. If a capturing device is already enabled, it will send captured audio data; otherwise, it will remain mute. For more information on how to enable/disable the capturing device, see the `EnableAudioCaptureDevice` API.
 
 #### API prototype
 
@@ -577,7 +581,7 @@ This API is used to enable/disable audio upstreaming. If a capturing device is a
 ITMGAudioCtrl int EnableAudioSend(bool isEnabled)
 ```
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter | Type | Description |
 | --------- | :--: | ------------------------------------------------------------ |
 | isEnabled | bool | To enable audio upstreaming, set this parameter to `true`; otherwise, set it to `false`. |
 
@@ -587,7 +591,7 @@ ITMGAudioCtrl int EnableAudioSend(bool isEnabled)
 ITMGContext.GetInstance().GetAudioCtrl().EnableAudioSend(true);
 ```
 
-### Getting the audio upstreaming status
+### Getting audio upstreaming status
 
 This API is used to get the status of audio upstreaming.
 
@@ -639,7 +643,7 @@ ITMGAudioCtrl int GetSendStreamLevel()
 int Level = ITMGContext.GetInstance().GetAudioCtrl().GetSendStreamLevel();
 ```
 
-### Setting the mic software volume
+### Setting the mic volume
 
 This API is used to set the mic volume level. The corresponding parameter is `volume`, which is equivalent to attenuating or gaining the captured sound.
 
@@ -653,7 +657,7 @@ ITMGAudioCtrl SetMicVolume(int volume)
 
 | Parameter | Type | Description |
 | ------ | :--: | ------------------------------------------------------------ |
-| volume | int  | Value range: 0–200. Default value: 100. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
+| volume | int  | Value range: 0-200. Default value: 100. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
 
 #### Sample code  
 
@@ -662,7 +666,7 @@ int micVol = (int)(value * 100);
 ITMGContext.GetInstance().GetAudioCtrl().SetMicVolume (micVol);
 ```
 
-### Getting the mic software volume
+### Getting the mic volume
 
 This API is used to obtain the microphone volume. An "int" value is returned. Value 101 represents API SetMicVolume has not been called.
 
@@ -697,7 +701,7 @@ ITMGContext.GetInstance().GetAudioCtrl().GetMicVolume();
 
 
 [](id:EnableSpeaker)	
-### Enabling or disabling the speaker
+### Enabling or disabling speaker
 
 This API is used to enable/disable the speaker. **EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv**
 
@@ -707,14 +711,14 @@ This API is used to enable/disable the speaker. **EnableSpeaker = EnableAudioPla
 ITMGAudioCtrl EnableSpeaker(bool isEnabled)
 ```
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter | Type | Description |
 | --------- | :--: | ------------------------------------------------------------ |
 | isEnabled | bool | To disable the speaker, set this parameter to `false`; otherwise, set it to `true`. |
 
 #### Sample code  
 
 ```
-// Enable the speaker
+// Turn on the speaker
 ITMGContext.GetInstance().GetAudioCtrl().EnableSpeaker(true);
 ```
 
@@ -736,7 +740,7 @@ speakerToggle.isOn = ITMGContext.GetInstance().GetAudioCtrl().GetSpeakerState();
 
 
 
-### Enabling or disabling the playback device
+### Enabling or disabling playback device
 
 This API is used to enable/disable a playback device.
 
@@ -746,7 +750,7 @@ This API is used to enable/disable a playback device.
 ITMGAudioCtrl EnableAudioPlayDevice(bool isEnabled)
 ```
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter | Type | Description |
 | --------- | :--: | ------------------------------------------------------------ |
 | isEnabled | bool | To disable a playback device, set this parameter to `false`; otherwise, set it to `true`. |
 
@@ -774,7 +778,7 @@ bool IsAudioPlayDevice = ITMGContext.GetInstance().GetAudioCtrl().IsAudioPlayDev
 
 ### Enabling or disabling audio downstreaming
 
-This API is used to enable/disable audio downstreaming. If a playback device is already enabled, it will play back audio data from other members in the room; otherwise, it will remain mute. For more information on how to enable/disable the playback device, please see the `EnableAudioPlayDevice` API.
+This API is used to enable/disable audio downstreaming. If a playback device is already enabled, it will play back audio data from other members in the room; otherwise, it will remain mute. For more information on how to enable/disable the playback device, see the `EnableAudioPlayDevice` API.
 
 #### API prototype  
 
@@ -782,7 +786,7 @@ This API is used to enable/disable audio downstreaming. If a playback device is 
 ITMGAudioCtrl int EnableAudioRecv(bool isEnabled)
 ```
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter | Type | Description |
 | --------- | :--: | ------------------------------------------------------------ |
 | isEnabled | bool | To enable audio downstreaming, set this parameter to `true`; otherwise, set it to `false`. |
 
@@ -826,7 +830,7 @@ ITMGAudioCtrl GetSpeakerLevel()
 ITMGContext.GetInstance().GetAudioCtrl().GetSpeakerLevel();
 ```
 
-### Getting the real-time downstreaming audio levels of other members in the room
+### Getting the real-time downstreaming audio levels of other members in room
 
 This API is used to get the real-time audio downstreaming volume of other members in the room. An int-type value will be returned. Value range: 0-200.
 
@@ -858,7 +862,7 @@ ITMGAudioCtrl SetSpeakerVolume(int volume)
 
 | Parameter | Type | Description |
 | ------ | :--: | ------------------------------------------------------------ |
-| volume | int  | Value range: 0–200. Default value: 100. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
+| volume | int  | Value range: 0-200. Default value: 100. `0` indicates that the audio is mute, while `100` indicates that the volume level remains unchanged. |
 
 #### Sample code  
 
@@ -891,9 +895,9 @@ Device selection APIs can be used only on PC.
 | API | Description |
 | --------------------------- | :------------------: |
 | GetMicListCount             |       Gets the number of mics       |
-| GetMicList                  |         Lists mics         |
+| GetMicList                  |         Enumerates mics         |
 | GetSpeakerListCount         |       Gets the number of speakers       |
-| GetSpeakerList              |         Lists speakers         |
+| GetSpeakerList              |         Enumerates speakers         |
 | SelectMic                   |         Selects mics         |
 | SelectSpeaker               |         Selects speakers         |
 
@@ -925,7 +929,7 @@ public abstract int GetMicList(out List<TMGAudioDeviceInfo> devicesInfo, int cou
 
 ```
 
-| Parameter | Type | Description |
+| Parameter             |        Type        | Description                 |
 | ---------------- | :----------------: | -------------------- |
 | ppDeviceInfoList | TMGAudioDeviceInfo | Device list             |
 | count           |        int         | The number of mics |
@@ -943,7 +947,7 @@ ITMGContext.GetInstance().GetAudioCtrl().GetMicList(devicesInfo,count);
 
 
 
-### Selecting a mic
+### Selecting mic
 
 This API is used to select a mic. If this API is not called or `DEVICEID_DEFAULT` is passed in, the default mic will be selected.
 The 0th device id returned in the GetMicList API is the default device of the call device. If there is a selected call device, it will be maintained by service. If it is unplugged, the call device will be changed back into the default device.
@@ -954,7 +958,7 @@ The 0th device id returned in the GetMicList API is the default device of the ca
 public abstract int SelectMic(string micID);
 ```
 
-| Parameter | Type | Description |
+| Parameter   |  Type  | Description         |
 | ------ | :---: | ------------- |
 | pMicID | string | Mic ID, which is from the list returned by `GetMicList`. |
 
@@ -996,7 +1000,7 @@ This API is used together with the `GetSpeakerListCount` API to enumerate speake
 public abstract int GetSpeakerList(out List<TMGAudioDeviceInfo> devicesInfo, int count)
 ```
 
-| Parameter | Type | Description |
+| Parameter             |        Type        | Description                 |
 | ---------------- | :----------------: | -------------------- |
 | ppDeviceInfoList | TMGAudioDeviceInfo | Device list             |
 | count           |        int         | The number of speakers |
@@ -1023,7 +1027,7 @@ if (speakerCount > 0)
 }
 ```
 
-### Selecting a speaker
+### Selecting speaker
 
 This API is used to select a playback device. If this API is not called or `DEVICEID_DEFAULT` is passed in, the default playback device will be selected.
 
@@ -1034,7 +1038,7 @@ public abstract int SelectSpeaker(string speaker);
 
 ```
 
-| Parameter | Type | Description |
+| Parameter       | Type  | Description          |
 | ---------- | :---: | ------------- |
 | speaker | string | Speaker ID, which is from the list returned by `GetSpeakerList`. |
 
@@ -1070,7 +1074,7 @@ This API is used to enable in-ear monitoring. You need to call `EnableLoopBack+E
 ITMGContext GetAudioCtrl EnableLoopBack(bool enable)
 ```
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------ | :--: | ------------ |
 | enable | bool | Specifies whether to enable |
 
@@ -1106,9 +1110,9 @@ void QAVAudioDeviceStateCallback(int deviceType, string deviceId, bool openOrClo
 }
 ```
 
-### Getting a user's room audio type
+### Getting user's room audio type
 
-This API is used to get a user's room audio type. The returned value is the room audio type. Value 0 indicates that an error occurred while getting the user's room audio type. For room audio types, please see the `EnterRoom` API.
+This API is used to get a user's room audio type. The returned value is the room audio type. Value 0 indicates that an error occurred while getting the user's room audio type. For room audio types, see the `EnterRoom` API.
 
 #### API prototype  
 
@@ -1124,7 +1128,7 @@ ITMGContext.GetInstance().GetRoom().GetRoomType();
 
 ### Changing the room type
 
-This API is used to modify a user's room audio type. For the result, please see the callback event. The event type is `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE`. The audio type of the room is determined by the first user to enter the room. After that, if a member in the room changes the room type, it will take effect for all members there.
+This API is used to modify a user's room audio type. For the result, see the callback event. The event type is `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE`. The audio type of the room is determined by the first user to enter the room. After that, if a member in the room changes the room type, it will take effect for all members there.
 #### API prototype  
 
 ```
@@ -1201,7 +1205,7 @@ This is the quality monitoring event used to listen on the network quality. If y
 
 
 
-### Getting the version number
+### Getting version number
 
 This API is used to get the SDK version number for analysis.
 
@@ -1219,7 +1223,7 @@ ITMGContext.GetInstance().GetSDKVersion();
 
 
 
-### Setting the log printing level
+### Setting log printing level
 
 This API is used to set the level of logs to be printed, and needs to be called before the initialization. It is recommended to keep the default level.
 
@@ -1236,7 +1240,7 @@ ITMGContext  SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
 | levelWrite | ITMG_LOG_LEVEL | Sets the level of logs to be written. `TMG_LOG_LEVEL_NONE` indicates not to write. Default value: TMG_LOG_LEVEL_INFO |
 | levelPrint | ITMG_LOG_LEVEL | Sets the level of logs to be printed. `TMG_LOG_LEVEL_NONE` indicates not to print. Default value: TMG_LOG_LEVEL_ERROR |
 
-`ITMG_LOG_LEVEL` is as detailed below:
+`ITMG_LOG_LEVEL` description:
 
 | ITMG_LOG_LEVEL | Description |
 | --------------------- | -------------------- |
@@ -1256,14 +1260,14 @@ ITMGContext.GetInstance().SetLogLevel(TMG_LOG_LEVEL_INFO,TMG_LOG_LEVEL_INFO);
 
 ### Setting the log printing path
 
-This API is used to set the log printing path. The default path is as follows. It needs to be called before Init.
+This API is used to set the log printing path. The default path is as follows. It needs to be called before initialization.
 
 | OS | Path |
 | ------- | ------------------------------------------------------------ |
 | Windows | %appdata%\Tencent\GME\ProcessName |
 | iOS | Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Documents |
 | Android | /sdcard/Android/data/xxx.xxx.xxx/files |
-| Mac | /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents |
+| macOS | /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents |
 
 #### API prototype
 

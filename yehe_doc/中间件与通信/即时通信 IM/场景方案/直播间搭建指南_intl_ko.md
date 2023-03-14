@@ -1,6 +1,6 @@
 라이브 스트리밍이 보편화되면서 점점 더 많은 기업과 개발자들이 자체 라이브 스트리밍 플랫폼을 구축하고 있습니다. 이 과정에서 라이브 스트림 푸시 및 풀, 라이브 트랜스코딩, 라이브 화면 캡처, 라이브 스트림 믹싱, 라이브 채팅방, 라이브 룸 인터랙션(예: 좋아요, 선물 및 공동 앵커) 및 라이브 룸 상태 관리와 같은 복잡한 요구 사항을 처리해야 합니다. 이 문서에서는 Tencent Cloud 제품([Instant Messaging](https://console.cloud.tencent.com/im), [Cloud Streaming Services](https://console.cloud.tencent.com/live/livestat))를 예로 들어 라이브 룸을 구현하는 방법과 가능한 문제 및 고려 사항을 설명하고, 라이브 스트리밍 비즈니스 및 요구 사항을 간략히 안내합니다.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/91a6136c0b000f0c76b72a890f3e41ac.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/bd431307af0643d731a59b6211be54a8.png)
 
 
 
@@ -9,12 +9,12 @@
 ### 애플리케이션 생성
 
 Tencent Cloud에서 라이브 룸을 설정하려면 아래와 같이 [콘솔](https://console.cloud.tencent.com/im)에서 IM 애플리케이션을 생성해야 합니다.
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-081650.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/cf88237a876833c58d50bf4c50f90a97.png)
 
 ### 라이브 스트림 푸시 및 재생 도메인 추가
 
 라이브 룸을 구축하려면 라이브 기능이 필수적이며 [CSS](https://console.cloud.tencent.com/live/livestat)를 통해 라이브 기능을 실현할 수 있습니다. 아래 그림과 같이 스트림 푸시 및 재생 도메인을 추가해야 합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/fb8a00c48c21bd8d8d74b5a83105893d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c3d16ab2edd963d9e2da6c5e0eb9ea62.png)
 자세한 작업 방법은 [외부 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)를 참고하십시오.
 
 
@@ -26,7 +26,7 @@ Tencent Cloud에서 라이브 룸을 설정하려면 아래와 같이 [콘솔](h
 
 #### 키로 UserSig 계산하기
 IM 계정 시스템에서 사용자 로그인에 필요한 암호는 IM에서 제공한 키를 사용하여 서버에서 계산합니다. 자세한 내용은 [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)를 참고하십시오. 개발 단계에서 클라이언트의 개발 지연을 방지하기 위해 아래와 같이 [콘솔에서 UserSig 계산](https://console.cloud.tencent.com/im/tool-usersig)할 수도 있습니다.
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-083650.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5075d8e78f6c31da25d8fa2bf2e940f7.png)
 
 #### 관리자 계정 구성
 
@@ -36,7 +36,7 @@ IM 계정 시스템에서 사용자 로그인에 필요한 암호는 IM에서 �
 
 라이브 룸에서 화면 댓글을 기반으로한 경품 추첨, 메시지 통계 수집, 민감한 콘텐츠 감지 등 요구 사항을 구현하려면 IM 백엔드가 특정 시나리오에서 비즈니스 백엔드를 다시 호출하는 IM 콜백 모듈을 사용해야 합니다. HTTP API를 제공하고 아래와 같이 [콘솔 > 콜백 구성](https://console.cloud.tencent.com/im/callback-setting) 모듈에서 구성하기만 하면 됩니다.
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/N73j869_9.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/4c9580f801581b5ac4a7a90dcebac706.png)
 
 
 ### 클라이언트 SDK 통합
@@ -117,7 +117,7 @@ CSS는 [MLVB SDK 시작하기](https://intl.cloud.tencent.com/document/product/1
 
 따라서 IM의 [그룹 특성](https://intl.cloud.tencent.com/document/product/1047/33529)에 따라 라이브 룸의 그룹 유형으로 오디오/비디오 그룹(AVChatRoom)을 선택할 수 있습니다.
 
-IM 라이브 방송 그룹(AVChatRoom)은 다음과 같은 특징이 있습니다.
+IM 오디오 비디오 그룹(AVChatRoom)은 다음과 같은 특징이 있습니다.
 - **인원 제한이 없으며, 천만 규모의 인터랙티브 라이브 방송 시나리오를 구현할 수 있습니다**.
 - 모든 온라인 사용자 대상 푸시 메시지(그룹 시스템 알림)를 지원합니다.
 - 그룹 참여 신청 후 관리자의 승인 없이 바로 참여할 수 있습니다.
@@ -388,7 +388,7 @@ promise.then(function(imResponse) {
 
 ### 선물 및 좋아요 메시지 모범 사례
 
-![](https://qcloudimg.tencent-cloud.cn/raw/5c7b5b56d78df30840ff9b0ddad00467.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/bf0d1df7fcbf05819643f27091c64e98.png)
 
 #### 선물 메시지
 
@@ -416,10 +416,10 @@ promise.then(function(imResponse) {
 5. ...
 
 온라인 지속 시간 및 메시지 수의 경우 준비 지침에 따라 구성할 수 있는 IM 콜백을 사용해야 합니다. [콘솔](https://console.cloud.tencent.com/im/callback-setting)의 콜백은 다음과 같습니다.
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-083830.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6d6fdc21dd0b75dc0f8d8f38e95d5bf0.jpg)
 
 정보 수집을 위한 순서도는 아래와 같습니다.
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-091055.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5f1779379a08a66b0647cc368404a439.jpg)
 
 
 메시지 전송 후 콜백의 예시 데이터:
@@ -430,7 +430,7 @@ promise.then(function(imResponse) {
     "GroupId": "@TGS#2J4SZEAEL", // 그룹 ID
     "Type": "Public", // 그룹 유형
     "From_Account": "jared", // 발신자
-    "Operator_Account":"admin", // 요청자
+    "Operator_Account":"admin", // 요청 개시자
     "Random": 123456, // 랜덤 숫자
     "MsgSeq": 123, // 메시지의 시퀀스 번호
     "MsgTime": 1490686222, // 메시지 시간
@@ -478,7 +478,7 @@ MsgBody의 메시지 유형에 따라 일반, 좋아요, 선물 메시지를 식
 ### 라이브 룸의 메시지 기록
 
 오디오/비디오 그룹(AVChatRoom)에 대한 메시지 기록은 기본적으로 저장되지 않습니다. 새로운 사용자가 라이브 룸에 입장하면 해당 사용자는 입장 후 보낸 메시지만 볼 수 있습니다. 사용자 경험을 최적화하기 위해 아래와 같이 가져올 수 있는 메시지 기록 수를 구성할 수 있습니다.
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-085957.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/648238f2a9ebddf3d946494a1fd0cd76.jpg)
 
 
 
@@ -510,7 +510,7 @@ V2TIMManager.getMessageManager().getHistoryMessageList(option, new V2TIMValueCal
 
 ::: 
 
-:::  iOS&Mac
+::: iOS&Mac
 
 ```swift
 // 일대일 메시지 기록 풀링
@@ -600,7 +600,7 @@ promise.then(function(imResponse) {
 
 ::: 
 
-:::  iOS&Mac
+::: iOS&Mac
 
 ```swift
 [[V2TIMManager sharedInstance] getGroupOnlineMemberCount:@"group_avchatroom" succ:^(NSInteger count) {
@@ -706,7 +706,7 @@ V2TIMManager.getInstance().addGroupListener(new V2TIMGroupListener() {
 
 ::: 
 
-:::  iOS&Mac
+::: iOS&Mac
 
 ```swift
 // 1분 동안 그룹 구성원 user1 음소거
@@ -760,7 +760,7 @@ groupManager.muteGroupMember(groupID: '',userID: 'userB',seconds: 10);
 groupManager.setGroupInfo(info: V2TimGroupInfo(isAllMuted: true,groupID: '',groupType: 'Public'));
 
 TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(onMemberInfoChanged: (groupID, v2TIMGroupMemberChangeInfoList) {
-    // 그룹 구성원 정보 변경
+    //그룹 구성원 정보 변경
   },
   onGroupInfoChanged: (groupID,info){
     // 그룹 프로필 수정
@@ -815,7 +815,7 @@ promise.then(function(imResponse) {
 [다른 SDK의 그룹 수신 예시 코드](https://intl.cloud.tencent.com/document/product/1047/48466)
 
 그룹 구성원 음소거 상태의 변경 사항은 기본적으로 클라이언트에 전달되지 않으며 [콘솔](https://console.cloud.tencent.com/im/qun-setting)에서 구성해야 합니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/07c6f6e757a2c05358e7d79ac83b7c68.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/734a516e0507894e087cbbe21d955b17.png)
 
 >?Client SDK는 현재 라이브 룸에서 사용자 음소거를 지원하지 않습니다. 해당 서버 API를 사용하여 [Banning Group Members](https://intl.cloud.tencent.com/document/product/1047/50296) 및 [Unbanning Group Members](https://intl.cloud.tencent.com/document/product/1047/50297)할 수 있습니다.
 
@@ -823,7 +823,10 @@ promise.then(function(imResponse) {
 
 개발자는 서버의 [Banning Group Members](https://intl.cloud.tencent.com/document/product/1047/50296) API를 통해 라이브 룸의 구성원을 강제 퇴장할 수 있으며, 강제 퇴장된 구성원이 그룹에 다시 들어올 수 없도록 일정 기간 동안 차단할 수 있습니다.
 
+
 [콘솔 구성 항목](https://console.cloud.tencent.com/im/callback-setting)은 다음과 같습니다.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/120263819a43d755069750ae853623d0.png)
 
 
 >!** 클라이언트 SDK 6.6.X 이상 버전, Flutter SDK 4.1.1 이상 버전에서는 라이브 룸 구성원 내보내기 API를 사용하여 차단 기능을 구현할 수 있습니다.**
@@ -859,7 +862,7 @@ V2TIMManager.getInstance().addGroupListener(new V2TIMGroupListener() {
 
 ::: 
 
-:::  iOS&Mac
+::: iOS&Mac
 
 ```swift
 [[V2TIMManager sharedInstance] kickGroupMember:@"groupA" memberList:@[@"user1"] reason:@"" succ:^(NSArray<V2TIMGroupMemberOperationResult *> *resultList) {
@@ -911,7 +914,7 @@ tim.deleteGroupMember(options);
     "GroupId": "@TGS#2J4SZEAEL", // 그룹 ID
     "Type": "Public", // 그룹 유형
     "From_Account": "jared", // 발신자
-    "Operator_Account":"admin", // 요청자
+    "Operator_Account":"admin", // 요청 개시자
     "Random": 123456, // 랜덤 숫자
     "OnlineOnlyFlag": 1, // 값은 온라인 메시지인 경우 1이고 그렇지 않은 경우 0(기본값)입니다. 오디오/비디오 그룹의 경우 값은 0입니다.
     "MsgBody": [ // 메시지 본문, 자세한 내용은 TIMMessage 메시지 객체 참고
@@ -950,7 +953,7 @@ MsgBody의 MsgType 필드를 기반으로 메시지 유형을 식별할 수 있�
 
 민감한 콘텐츠 감지 순서도는 다음과 같습니다.
 
-![](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-091347.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/fe9f27edee7601b0e6153321887c5eec.png)
 
 
 ### 라이브 룸의 그룹 구성원 목록
@@ -962,7 +965,7 @@ MsgBody의 MsgType 필드를 기반으로 메시지 유형을 식별할 수 있�
 
 콘솔의 구성은 다음 이미지 2.6과 같습니다.
 
-![img](https://markdown-1252238885.cos.ap-guangzhou.myqcloud.com/2022-08-09-090445.png)
+![img](https://qcloudimg.tencent-cloud.cn/raw/d8b552ecd47be3e749a91ef002bec855.jpg)
 
 플래그십 에디션 사용자가 아닌 경우 `getGroupMemberList`와 그룹 수신의 onGroupMemberEnter 및 onGroupMemberQuit 콜백을 통해 클라이언트의 온라인 그룹 구성원 목록을 유지할 수 있습니다. 단, 사용자가 라이브룸을 나간 후 다시 입장한 후에는 최근 30명의 그룹 구성원만 풀링할 수 있습니다.
 
@@ -970,7 +973,7 @@ MsgBody의 MsgType 필드를 기반으로 메시지 유형을 식별할 수 있�
 ::: Android
 
 ```java
-// 그룹 소유자의 프로필만 가져오도록 지정하려면 filter 매개변수 사용
+// filter 매개변수를 통해 그룹 소유자의 프로필을 풀링하도록 지정
 int role = V2TIMGroupMemberFullInfo.V2TIM_GROUP_MEMBER_FILTER_OWNER;
 V2TIMManager.getGroupManager().getGroupMemberList("testGroup", role, 0, 
     new V2TIMValueCallback<V2TIMGroupMemberInfoResult>() {
@@ -988,7 +991,7 @@ V2TIMManager.getGroupManager().getGroupMemberList("testGroup", role, 0,
 
 ::: 
 
-:::  iOS&Mac
+::: iOS&Mac
 
 ```swift
 [[V2TIMManager sharedInstance] getGroupMemberList:@"groupA" filter:V2TIM_GROUP_MEMBER_FILTER_OWNER nextSeq:0 succ:^(uint64_t nextSeq, NSArray<V2TIMGroupMemberFullInfo *> *memberList) {

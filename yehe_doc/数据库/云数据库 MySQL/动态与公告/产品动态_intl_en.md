@@ -1,3 +1,14 @@
+## December 2022
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported parallel query</td>
+<td>TencentDB for MySQL supports parallel query, which schedules and leverages multiple compute resources to greatly shorten the response time of large queries.</td>
+<td>2022-12-22</td>
+<td><a href="https://www.tencentcloud.com/document/product/236/53408" target="_blank">Parallel Query</a></td></tr>
+</tbody></table>
+
 ## November 2022
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>

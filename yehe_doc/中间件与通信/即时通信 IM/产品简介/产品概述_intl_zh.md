@@ -1,11 +1,12 @@
 ## 简介
-腾讯是国内最早也是最大的即时通信开发商。顺应行业数字化转型的趋势，腾讯云将高并发、高可靠的即时通信能力以 SDK 和 REST API的形式进行开放，推出即时通信 IM 产品。您可以通过简易的方式将腾讯云提供的 IM SDK 集成进自有应用中，配合服务端 REST API 调用，即可轻松拥有强大的即时通信能力。即时通信 IM 服务和您的应用之间的交互如下图所示：
+腾讯是国内最早也是最大的即时通信开发商。顺应行业数字化转型的趋势，腾讯云将高并发、高可靠的即时通信能力以 SDK 和 REST API的形式进行开放，推出即时通信 IM 产品。您可以通过简易的方式将腾讯云提供的 IM SDK 集成进自有应用中，配合服务端 REST API 调用，即可轻松拥有即时通信能力。即时通信 IM 服务和您的应用之间的交互如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/2e57bf9cbb3a1855efe7abdfd7d8beab.png)
 针对开发者的不同阶段需求及不同场景，即时通信 IM 团队提供了一系列解决方案，包括：Android、iOS、Windows、Web 的 SDK 组件、服务端集成 [REST API 接口](https://intl.cloud.tencent.com/document/product/1047/34620)、[第三方回调接口](https://intl.cloud.tencent.com/document/product/1047/34354) 等。利用这些组件和能力，开发者可以简单快捷地构建高可靠且稳定的即时通信产品，随心所想，触达全球。
 
 ## 架构介绍
 即时通信 IM 提供全球接入、单聊、群聊、消息推送、资料关系链托管、帐号鉴权等全方位解决方案，并提供完备的 App 接入、后台管理接口。
 ![](https://main.qcloudimg.com/raw/6537f6e705289419963ee647ae851c94.png)
+
 ## 业务介绍
 ### 接入服务
 接入服务为即时通信 IM 提供覆盖全球的高连通、高可靠、强安全的网络连接通道，自研多重最优寻址算法，具有全网调度能力，使用智能兼容技术穿透网关策略，长连接多路复用，传输层协议优化，通道加密等，让业务不必关心网络细节，即可安全地与业务后台实现简单可靠的通讯。
@@ -21,7 +22,7 @@
  - 非洲：南非、尼日利亚等。
 
 ### 数据存储中心
-即时通信 IM 提供了中国、南亚（印度）、东南亚（新加坡）、东北亚（韩国首尔）以及欧洲（德国法兰克福）数据存储中心供选择。您的业务数据存储在创建应用时选择的数据中心，每个数据中心均支持全球接入。
+即时通信 IM 提供了中国、南亚（印度）、东南亚（新加坡）、东北亚（韩国首尔）、欧洲（德国法兰克福）以及北美（美国硅谷）数据存储中心供选择。您的业务数据存储在创建应用时选择的数据中心，每个数据中心均支持全球接入。
 
 ### 单聊
 单聊即 1V1 聊天，提供包括文字、表情、地理位置、图片、语音、短视频及自定义消息的能力，可实现红包、对话机器人、消息回执、消息撤回等特殊功能，除此之外还提供离线消息、漫游消息等服务。详细可参阅 [单聊消息](https://intl.cloud.tencent.com/document/product/1047/33523) 文档。
@@ -193,7 +194,7 @@ REST API 是一个 HTTP 管理接口，主要功能是为 App 后台提供一个
  <div class="card-container">
             <div class="card">
                            <img style="width:100px; max-width: inherit;"src="https://qcloudimg.tencent-cloud.cn/raw/f652574979d9db78c8a991ca4b8a78fc.png" data-nonescope="true">
-                                <p class="titlename">  <a 
+                                <p class="titlename">  <a href="https://www.tencentcloud.com/document/product/363/39609">ISO 29151 个人身份信息保护实践指南</a> </p><p style="color:#586376;">腾讯云提供了恰当的信息安全风险管理环境用于个人身份信息的保护，同时满足行业最佳实践，具备持续改进的能力</p>
             </div>
         </div>
 <div class="card-container">
@@ -217,7 +218,10 @@ REST API 是一个 HTTP 管理接口，主要功能是为 App 后台提供一个
 <div class="card-container">
             <div class="card">
                            <img style="width:100px; max-width: inherit;"  src="https://qcloudimg.tencent-cloud.cn/raw/eac6c9f40236f5ad1028ddbb34a2c5cb.png" data-nonescope="true">
-                                <p class="titlename">  <a 
+                                <p class="titlename">  <a href="https://www.tencentcloud.com/document/product/363/45470">BS 10012 </a></p><p style="color:#586376;">英国标准协会发布的个人信息管理体系标准</p>
             </div>
 </div>
 </div>
+
+
+

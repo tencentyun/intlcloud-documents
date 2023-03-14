@@ -2,27 +2,27 @@
 
 **새로운 기능**
 
-- [clearHistoryMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#clearHistoryMessage) API는 로컬 및 클라우드 메시지 지우기 지원.
-- 메시지 확장을 지원(플래그십 버전 기능).
-- 일반 그룹 및 커뮤니티 그룹 속성 지원.
-- [wx.chooseMedia](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseMedia.html)와 호환.
-- [Message.readReceiptInfo](https://web.sdk.qcloud.com/im/doc/en/Message.html)는 C2C 수신 확인 지원(데이터 구조는 NativeIM과 정렬됨).
+- [clearHistoryMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#clearHistoryMessage) API는 로컬 및 클라우드 메시지 비우기를 지원합니다.
+- 메시지 확장(플래그십 버전 기능)을 지원합니다.
+- 일반 그룹과 커뮤니티 그룹 속성을 지원합니다.
+- [wx.chooseMedia](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseMedia.html)와 호환됩니다.
+- [Message.readReceiptInfo](https://web.sdk.qcloud.com/im/doc/en/Message.html)는 C2C 수신 확인을 지원합니다(데이터 구조는 NativeIM과 정렬됨).
 - 에러 코드 2101: 라이브 그룹에 가입하지 않으면 라이브 그룹에 메시지를 보낼 수 없습니다.
 
 **변경 사항**
 
-- 로그 보고 백업 채널은 독립 클러스터 도메인 'https://events.im.qcloud.com' 사용(플랫폼은 수신할 수 있는 도메인 구성을 추가해야 함).
+- 로그 리포트 백업 채널은 독립 클러스터 도메인 `https://events.im.qcloud.com`을 사용합니다(플랫폼에 수신 도메인 구성이 추가되어야 함).
 
 **오류 수정**
 
-- cookies blocked로 인한 실행 오류(Failed to read the 'localStorage' property from 'Window': Access is denied for this document).
+- cookies blocked로 인한 실행 시 오류(Failed to read the 'localStorage' property from 'Window': Access is denied for this document).
 
 
 ### 2.24.1 @2022.11.11
 
 **새로운 기능**
 
-- ts 성명 파일의 영어 버전.
+- 영문판 ts 성명 파일.
 - restapi는 친구의 사용자 정의 프로필 필드 수정 및 SDK 푸시 지원.
 
 **오류 수정**
@@ -68,7 +68,7 @@
 **새로운 기능**
 
 - SDK 중국 외 환경 지원.
-- [getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTotalUnreadMessageCount), 읽지 않은 총 세션 수를 얻기 지원.
+- [getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTotalUnreadMessageCount), 읽지 않은 총 세션 수 가져오기 지원.
 - [TOTAL_UNREAD_MESSAGE_COUNT_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOTAL_UNREAD_MESSAGE_COUNT_UPDATED), 세션에서 읽지 않은 총 세션 수의 변경 알림을 받기 위해 액세스 측에서 이벤트를 수신 대기하도록 추가.
 - [markGroupMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markGroupMemberList), 라이브 그룹 구성원의 태그 지정 지원(플래그십 버전에서만 지원).
 - 그룹 구성원이 그룹에서 추방되거나 그룹이 삭제될 때 SDK가 그룹 대화가 있는 대화 그룹을 동기식으로 업데이트하도록 추가.
@@ -358,7 +358,7 @@ WebSocket 장기간 연결 중단 시 간헐적인 오류 발생.
 
 **새로운 기능**
 
-비디오 업로드 진행 콜백이 지원됩니다.
+비디오 업로드는 진행률 콜백 지원.
 
 **변경 사항**
 
@@ -532,7 +532,7 @@ SDK 크기 축소. [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk)의 크
 
 **오류 수정**
 
-- 오랫동안 연결이 끊어진 후 네트워크가 다시 연결된 경우 오디오-비디오 그룹이 메시지를 가져오지 못하는 경우가 있습니다.
+- 오디오/비디오 그룹은 장시간 연결이 끊긴 후 네트워크가 다시 연결되면 간헐적으로 메시지를 가져오지 못하는 오류가 있습니다.
 - 이미지 메시지의 imageFormat 유형 및 값이 실제 이미지와 불일치.
 - Work 그룹 및 Public 그룹에 잘못된 닉네임 표시.
 
@@ -840,5 +840,5 @@ React 프레임워크에서 이미지 메시지 발송 실패.
 
 **오류 수정**
 
-- 이미지 메시지를 보낼 때 화면이 튀는 현상이 발생했습니다.
+- 이미지 메시지 시작 화면 전송.
 - JPG 또는 기타 이미지 전송에 실패했습니다.

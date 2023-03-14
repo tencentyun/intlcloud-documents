@@ -6,7 +6,6 @@
 
 <dx-tabs>
 ::: MySQL 8.0 内核版本更新说明
-
 <table>
 <thead><tr><th>小版本</th><th>说明</th></tr></thead>
 <tbody>
@@ -658,6 +657,15 @@
 <table>
 <thead><tr><th>小版本</th><th>说明</th></tr></thead>
 <tbody>
+
+<tr>	
+<td>20220303</td>
+<td>
+<ul><li>Bug 修复</li><ul>
+<li>修复异步删除大表中 row_mysql_truncate_t::file_name 使用 mem_strdup 分配的内存时，释放异常的问题。</li>
+</ul>
+</td>
+</tr>
 
 <tr>	
 <td>20220302</td>

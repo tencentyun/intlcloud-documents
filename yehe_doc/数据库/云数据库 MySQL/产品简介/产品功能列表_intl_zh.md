@@ -25,6 +25,8 @@
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31895" target="_blank">销毁实例</a></td><td>支持</td><td>支持</td><td>支持</td><td>支持</td></tr>
 <tr>
+<td><a href="https://www.tencentcloud.com/document/product/236/52515" target="_blank">按量转包年包月</a></td><td>支持</td><td>支持</td><td>支持</td><td>支持</td></tr>
+<tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/47702" target="_blank">自动续费</a></td><td>支持</td><td>支持</td><td>支持</td><td>支持</td></tr>
 <tr>
 <td rowspan="4">实例管理</td>
@@ -110,8 +112,6 @@
 <tr>
 <td>网络</td><td><a href="https://intl.cloud.tencent.com/document/product/236/31915">切换网络</a></td><td>支持</td><td>支持</td><td>支持</td><td>支持</td></tr>
 <tr>
-<td rowspan="2">性能</td><td><a href="https://intl.cloud.tencent.com/document/product/236/42048">数据库代理</a></td><td>支持</td><td>支持</td><td>-</td><td>-</td></tr>
-<tr>
-<td><a href="https://www.tencentcloud.com/document/product/236/42048">数据库代理（新版）</a></td><td>支持</td><td>支持</td><td>-</td><td>-</td></tr>
+<td rowspan="1">性能</td><td><a href="https://www.tencentcloud.com/document/product/236/42048">数据库代理（新版）</a></td><td>支持</td><td>支持</td><td>-</td><td>-</td></tr>
 </tbody>
 </table>

@@ -9,7 +9,7 @@
 -----
 
 ## 2. 云数据库 MySQL 的计费模式
-云数据库 MySQL 的计费模式分为**按量计费**和**包年包月**。您需要全面了解云数据库 MySQL 的计费模式，有利于您选择最优的计费方案。详情请参见 [计费概述](https://buy.intl.cloud.tencent.com/price/cdb/overview)。
+云数据库 MySQL 的计费模式分为**按量计费**和**包年包月**。您需要全面了解云数据库 MySQL 的计费模式，有利于您选择最优的计费方案。详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/236/18335)。
 
 -----
 
@@ -17,9 +17,8 @@
 #### 3.1 购买 MySQL 实例
 在使用云数据库 MySQL 之前，您需要注册腾讯云账号并且购买云数据库 MySQL 服务。详情请参见 [创建 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37785)。
 
-
 #### 3.2 连接 MySQL 实例
-初始化实例后，您可通过 Windows 云服务器或 Linux 云服务器，以内外网两种不同的方式访问云数据库 MySQL。详情请参见 [连接 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37788)。
+购买实例后，您可通过 Windows 云服务器或 Linux 云服务器，以内外网两种不同的方式访问云数据库 MySQL。详情请参见 [连接 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/37788)。
 
 -----
 
@@ -38,10 +37,18 @@
 - [管理只读实例 RO 组](https://intl.cloud.tencent.com/document/product/236/11361)
 - [管理灾备实例](https://intl.cloud.tencent.com/document/product/236/7272)
 - [销毁实例](https://intl.cloud.tencent.com/document/product/236/31895)
+- [迁移可用区](https://intl.cloud.tencent.com/document/product/236/44337)
+- [开通数据库代理](https://www.tencentcloud.com/document/product/236/42052)
+- [设置密码复杂度](https://intl.cloud.tencent.com/document/product/236/49197)
+- [智能参数调优](https://intl.cloud.tencent.com/document/product/236/47701)
+- [跨地域备份](https://www.tencentcloud.com/document/product/236/50652)
+- [备份加密](https://www.tencentcloud.com/document/product/236/51881)
+- [开启透明数据加密](https://intl.cloud.tencent.com/document/product/236/38491)
+- [设置 SSL 加密](https://intl.cloud.tencent.com/document/product/236/48452)
 - [创建帐号](https://intl.cloud.tencent.com/document/product/236/31900)
 - [数据库管理（DMC）](https://intl.cloud.tencent.com/document/product/236/39221)
 - [设置实例参数](https://intl.cloud.tencent.com/document/product/236/35793)
-- [使用参数模版](https://intl.cloud.tencent.com/document/product/236/31906) 
+- [使用参数模板](https://intl.cloud.tencent.com/document/product/236/31906) 
 - [使用物理备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31910)
 - [使用逻辑备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31909)
 - [回档数据库](https://intl.cloud.tencent.com/document/product/236/7276)
@@ -66,5 +73,4 @@
 ## 7. 反馈与建议
 使用云数据库 MySQL 产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
 - 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
-
+- 如果遇到产品相关问题，您可咨询 [提交工单](https://console.tencentcloud.com/workorder/category) 寻求帮助。

@@ -91,7 +91,7 @@
 
 
 ## 群组离线消息处理流程
-![](https://main.qcloudimg.com/raw/3cffbd86ff1fda0a28221c7700d1718f.png)
+![](https://main.qcloudimg.com/raw/cfc6d964bbbb784c7c9fc61cee3ca54d.svg)
 
 #### 群组离线消息处理流程：
 1. 用户 A 调用`sendMessage`给群组 C 发送消息，用户 B 处于下线状态；

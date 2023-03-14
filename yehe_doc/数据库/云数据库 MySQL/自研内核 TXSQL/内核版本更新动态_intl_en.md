@@ -6,7 +6,6 @@ This document describes the version updates of the TencentDB for MySQL kernel.
 
 <dx-tabs>
 ::: MySQL 8.0 Kernel Version Release Notes
-
 <table>
 <thead><tr><th>Minor Version</th><th>Description</th></tr></thead>
 <tbody>
@@ -658,6 +657,15 @@ This document describes the version updates of the TencentDB for MySQL kernel.
 <table>
 <thead><tr><th>Minor Version</th><th>Description</th></tr></thead>
 <tbody>
+
+<tr>	
+<td>20220303</td>
+<td>
+<ul><li>Bug fixes</li><ul>
+<li>Fixed the abnormal release when the memory allocated by `mem_strdup` was used for `row_mysql_truncate_t::file_name` during async drop of big tables.</li>
+</ul>
+</td>
+</tr>
 
 <tr>	
 <td>20220302</td>

@@ -46,7 +46,7 @@
 1. 您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 帐号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 2. 参照 [创建并升级应用](https://intl.cloud.tencent.com/document/product/1047/34577) 创建应用，并记录好 `SDKAppID`。
 3. 在 [IM 控制台](https://console.cloud.tencent.com/im) 选择您的应用，在左侧导航栏依次点击 **辅助工具**->**UserSig 生成&校验** ，创建两个 UserID 及其对应的 UserSig，复制`UserID`、`签名（Key）`、`UserSig`这三个，后续登录时会用到。
-![](https://main.qcloudimg.com/raw/2286644d987d24caf565142ae30c4392.png)
+![](https://main.qcloudimg.com/raw/8315da2551bf35ec85ce10fd31fe2f52.png)
 
 >? 该账户仅限开发测试使用。应用上线前，正确的 `UserSig` 签发方式是由服务器端生成，并提供面向 App 的接口，在需要 `UserSig` 时由 App 向业务服务器发起请求获取动态 `UserSig`。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
@@ -100,6 +100,7 @@ flutter run --dart-define=SDK_APPID={YOUR_SDKAPPID} --dart-define=ISPRODUCT_ENV=
 ![](https://qcloudimg.tencent-cloud.cn/raw/481bc19b55b40051daa8e669325cd123.png)
 2. 打开项目并获取依赖。
 在 Android Studio 中打开 `im-flutter-uikit` 目录。
+![](https://qcloudimg.tencent-cloud.cn/raw/b22a52c14373a222f9bf55e79b04f12b.png)
 并在该路径执行命令安装依赖。
 ```shell
 flutter pub get
@@ -126,6 +127,7 @@ flutter pub get
 ::: iOS 平台[](id:ios)
 
 1. 在 Xcode 中打开 `im-flutter-uikit/ios`目录。
+![](https://qcloudimg.tencent-cloud.cn/raw/16b555ebe0c2caa77f13ac3b42b20a24.png)
 2. 连接 iPhone 真机，单击 **Build And Run**，iOS 工程等待编译完成，会有新窗口弹出 Xcode 工程。
 3. 打开 iOS 工程，设置主 Target 的 Signing & Capabilities（需要苹果开发者帐号），让项目可以在 iPhone 真机上运行。
 4. 启动项目，在真机上进行 Demo 的调试。
@@ -667,11 +669,11 @@ TencentImSDKPlugin.v2TIMManager
 除 SDK 及 TUIKit 本体基础功能外，我们还提供了四个选装插件，帮助您丰富 IM 能力。
 
 - [消息推送插件](https://intl.cloud.tencent.com/document/product/1047/50032)：支持厂商原生离线推送能力及在线推送能力，并支持推送您的其他业务消息，帮助您提高消息触达率。
-- [音视频通话插件](https://pub.dev/packages/tim_ui_kit_calling_plugin)：支持一对一/群组 音视频 通话。
-- [地理位置消息插件](https://pub.dev/packages/tim_ui_kit_lbs_plugin)：提供选取位置/发送位置及解析展示位置消息的能力。
-- [自定义表情插件](https://www.tencentcloud.com/document/product/1047/52227)：TUIKit0.1.5版本后，无自带表情包，需要使用此插件，快速简便集成表情能力。支持 Emoji Unicode 编码及自定义图片表情。集成代码可参考我们的 [Demo](https://github.com/TencentCloud/tc-chat-demo-flutter/blob/main/lib/src/pages/app.dart)。
+- [音视频通话插件](https://www.tencentcloud.com/document/product/1047/50023)：支持一对一/群组 音视频 通话。
+- [地理位置消息插件](https://www.tencentcloud.com/document/product/1047/48564)：提供选取位置/发送位置及解析展示位置消息的能力。
+- [自定义表情插件](https://www.tencentcloud.com/document/product/1047/50023)：TUIKit0.1.5版本后，无自带表情包，需要使用此插件，快速简便集成表情能力。支持 Emoji Unicode 编码及自定义图片表情。集成代码可参考我们的 [Demo](https://github.com/TencentCloud/tc-chat-demo-flutter/blob/main/lib/src/pages/app.dart)。
 
->?如果您有好的想法及建议，欢迎随时 [联系我们](https://www.tencentcloud.com/contact-us)。
+>?如果您有好的想法及建议，欢迎随时 [联系我们](https://cloud.tencent.com/online-service?from=doc_269&source=PRESALE)。
 
 [](id:more)
 
@@ -757,7 +759,7 @@ flutter pub add tencent_im_sdk_plugin_desktop
 #### **尝试方案二：**手动删除 `ios/Pods` 文件夹，及 `ios/Podfile.lock` 文件，并执行如下命令，重新安装依赖
 
 1. 搭载新款 Apple Silicon 的 Mac 设备，如 M1。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/vAsQ099_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_327a198c-bc61-433a-991f-0124e7b0d2e2.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/dd87d8ff05aec0ecad461f12ef6c3020.png)
 ```shell
 cd ios
 sudo arch -x86_64 gem install ffi

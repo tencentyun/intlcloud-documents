@@ -25,6 +25,8 @@ This document compares the current and upcoming features supported by different 
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31895" target="_blank">Instance termination</a></td><td>Supported</td><td>Supported</td><td>Supported</td><td>Supported</td></tr>
 <tr>
+<td><a href="https://www.tencentcloud.com/document/product/236/52515" target="_blank">Switch from pay-as-you-go to monthly subscription</a></td><td>Supported</td><td>Supported</td><td>Supported</td><td>Supported</td></tr>
+<tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/47702" target="_blank">Automatic renewal</a></td><td>Supported</td><td>Supported</td><td>Supported</td><td>Supported</td></tr>
 <tr>
 <td rowspan="4">Instance management</td>
@@ -110,8 +112,6 @@ This document compares the current and upcoming features supported by different 
 <tr>
 <td>Network</td><td><a href="https://intl.cloud.tencent.com/document/product/236/31915">Network switch</a></td><td>Supported</td><td>Supported</td><td>Supported</td><td>Supported</td></tr>
 <tr>
-<td rowspan="2">Performance</td><td><a href="https://intl.cloud.tencent.com/document/product/236/42048">Database proxy</a></td><td>Supported</td><td>Supported</td><td>-</td><td>-</td></tr>
-<tr>
-<td><a href="https://www.tencentcloud.com/document/product/236/42048">Database proxy (new version)</a></td><td>Supported</td><td>Supported</td><td>-</td><td>-</td></tr>
+<td rowspan="1">Performance</td><td><a href="https://www.tencentcloud.com/document/product/236/42048">Database proxy (new version)</a></td><td>Supported</td><td>Supported</td><td>-</td><td>-</td></tr>
 </tbody>
 </table>

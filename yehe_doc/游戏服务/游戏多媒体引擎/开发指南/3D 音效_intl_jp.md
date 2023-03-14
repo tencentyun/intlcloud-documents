@@ -2,7 +2,7 @@
 
 ## シナリオ
 
-通常の入室後のリアルタイム音声では、プレイヤーの音声に3D効果音の効果がなく、プレイヤーの間ではとても簡単なコラボライブを行うことしかできません。一方、3D位置音声を導入した後は、プレーヤーが呼びかけると自分の方位と位置情報を開示し、プレーヤーの音声も位置の変化によってリアルタイムで変化するようになっています。3D効果音は、「大逃殺」のようなプレイヤー間のコミュニケーションや戦闘体験をよりリアルにし、PUBGのように、より没入的で臨場感のある遊び方を体感できるようにしたと言えます。
+通常の入室後のリアルタイム音声では、プレイヤーの音声に3D効果音の効果がなく、プレイヤーの間ではとても簡単なコラボライブを行うことしかできません。一方、3D位置音声を導入した後は、プレーヤーが呼びかけると自分の方位と位置情報を開示し、プレーヤーの音声も位置の変化によってリアルタイムで変化するようになっています。3D効果音は、「バトル・ロワイヤル」のようなプレイヤー間のコミュニケーションや戦闘体験をよりリアルにし、PUBGのように、より没入的で臨場感のある遊び方を体感できるようにしたと言えます。
 
 [demoのダウンロード](https://intl.cloud.tencent.com/document/product/607/50220)をクリックして、3D効果音を体験できます。
 
@@ -36,6 +36,7 @@ public abstract int InitSpatializer(string modelPath)
 
 - v2.8以降のバージョンの場合は、[ダウンロード](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/pubilc/GME_2.X_3d_model)をクリックしてください、。md5：d0b76aa64c46598788c2f35f5a8a8694。
 - v2.8以降の場合は、[ダウンロード](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/public/GME_2.8_3d_model.dat)をクリックしてください。md5：3d4d04b3949e267e34ca809e8a0b9243。
+- v2.9.6以降のバージョンの場合は、3D効果音のリソースファイルが組み込まれているので、ここのmodelPathを空にすることができます。
 
 SDKのバージョンリリース履歴については[製品の最新情報](https://intl.cloud.tencent.com/document/product/607/35323)をご参照ください。
 
@@ -114,7 +115,7 @@ public abstract int UpdateSelfPosition(int position[3], float axisForward[3], fl
 
 | パラメータ        | タイプ    | 意味                                       |
 | ----------- | ------- | ------------------------------------------ |
-| position    | int[]   | 世界座標での自己座標であり、順序は前、右、上です |
+| position    | int[]   | 世界座標での自身の座標であり、順序は前、右、上です |
 | axisForward | float[] | ローカル座標系前軸の単位ベクトル|
 | axisRight   | float[] | ローカル座標系右軸の単位ベクトル|
 | axisUp      | float[] | ローカル座標系上軸の単位ベクトル|
@@ -179,13 +180,13 @@ public abstract int UpdateOtherPosition(int position[3])
 virtual int AddSpatializerBlacklist(const char* openId); 
 ```
 
-このopenidをブラックリストから削除する必要がある場合は、次のインターフェースを呼び出してください。
+このopenidをブラックリストから削除する必要がある場合は、次のインターフェースを呼び出してください：
 
 ```
 virtual int RemoveSpatializerBlacklist(const char* openId); 
 ```
 
-ブラックリストを空にする必要がある場合は、次のインターフェースを呼び出してください。
+ブラックリストを空にする必要がある場合は、次のインターフェースを呼び出してください：
 
 ```
 virtual int ClearSpatializerBlacklist(); 
@@ -195,7 +196,7 @@ virtual int ClearSpatializerBlacklist();
 
 接続後に音声をテストしても3D効果音がない場合は、次の手順に従って確認してください：
 
-1. 正常にルームに参加したか、マイクをオンにしたか？両方が声が聞こえるか？？
+1. 正常にルームに参加したか、マイクをオンにしたか？両方が声が聞こえるか？
 2. デュアルチャネルヘッドセットに適しているか？
 3. InitSpatializerインターフェースの戻り値は0か？
 4. UpdateAudioRecvRangeの設定が小さすぎないか？

@@ -9,7 +9,7 @@
 <tbody>
 <tr>
 <td rowspan="10">ライフサイクル</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/39794" target="_blank">分離ポリシー</a></td><td>汎用型、個別型</td><td>汎用型、個別型</td><td>汎用型（読取専用インスタンス）</td><td>基本型（クラウドディスク版）</td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/39794" target="_blank">分離ポリシー</a></td><td>汎用型、個別型</td><td>汎用型、個別型</td><td>汎用型（読み取り専用インスタンス）</td><td>基本型（クラウドディスク版）</td></tr>
 <tr>
 <td></td><td><li>MySQL 5.5</li><li>MySQL 5.6</li><li>MySQL 5.7</li><li>MySQL 8.0</li></td><td><li>MySQL 5.6</li><li>MySQL 5.7</li><li>MySQL 8.0</li></td><td><li>MySQL 5.6</li><li>MySQL 5.7</li><li>MySQL 8.0</li></td><td>MySQL 5.7、8.0に対応</td></tr>
 <tr>
@@ -19,11 +19,13 @@
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/37785" target="_blank">インスタンス作成</a></td><td>対応</td><td>対応</td><td>対応</td><td>対応</td></tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/7270" target="_blank">読取専用インスタンスの作成</a></td><td>対応（MySQL5.6、5.7、8.0のみ）</td><td>対応</td><td>対応</td><td>-</td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/7270" target="_blank">読み取り専用インスタンスの作成</a></td><td>対応（MySQL5.6、5.7、8.0のみ）</td><td>対応</td><td>対応</td><td>-</td></tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/7272" target="_blank">ディザスタリカバリインスタンスの作成</a></td><td>対応（MySQL 5.6、5.7、8.0のみ）</td><td>対応</td><td>-</td><td>-</td></tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31895" target="_blank">インスタンス廃棄</a></td><td>対応</td><td>対応</td><td>対応</td><td>対応</td></tr>
+<tr>
+<td><a href="https://www.tencentcloud.com/document/product/236/52515" target="_blank">従量からサブスクリプションへ</a></td><td>対応</td><td>支対応</td><td>対応</td><td>対応</td></tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/47702" target="_blank">自動期間更新</a></td><td>対応</td><td>対応</td><td>対応</td><td>対応</td></tr>
 <tr>
@@ -110,8 +112,6 @@
 <tr>
 <td>ネットワーク</td><td><a href="https://intl.cloud.tencent.com/document/product/236/31915">ネットワーク切り替え</a></td><td>対応</td><td>対応</td><td>対応</td><td>対応</td></tr>
 <tr>
-<td rowspan="2">パフォーマンス</td><td><a href="https://intl.cloud.tencent.com/document/product/236/42048">データベースエージェント</a></td><td>対応</td><td>対応</td><td>-</td><td>-</td></tr>
-<tr>
-<td><a href="https://www.tencentcloud.com/document/product/236/42048">データベースエージェント（新版）</a></td><td>対応</td><td>対応</td><td>-</td><td>-</td></tr>
+<td rowspan="1">パフォーマンス</td><td><a href="https://www.tencentcloud.com/document/product/236/42048">データベースエージェント（新バージョン）</a></td><td>対応</td><td>対応</td><td>-</td><td>-</td></tr>
 </tbody>
 </table>

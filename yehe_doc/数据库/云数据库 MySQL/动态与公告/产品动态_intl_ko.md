@@ -1,3 +1,14 @@
+## 2022년 12월
+<table>
+<thead><tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=15%>배포일</th><th width=15%>관련 문서</th></tr></thead>
+<tbody>
+<tr>
+<td>병렬 쿼리 지원</td>
+<td>TencentDB for MySQL은 병렬 쿼리 기능을 지원합니다. 병렬 쿼리 기능을 사용하여 멀티 코어 컴퓨팅 리소스를 동원하고 대규모 쿼리의 응답 시간을 크게 단축합니다.</td>
+<td>2022-12-22</td>
+<td><a href="https://www.tencentcloud.com/document/product/236/53408" target="_blank">병렬 쿼리</a></td></tr>
+</tbody></table>
+
 ## 2022년 11월
 <table>
 <thead><tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=15%>배포일</th><th width=15%>관련 문서</th></tr></thead>

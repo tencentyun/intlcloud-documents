@@ -9,7 +9,7 @@
         <tr>
             <td  rowspan="5">单聊/群聊消息</td>
             <td>内容长度</td>
-            <td>单聊、群聊消息，单条消息最大长度限制为8000字节</td>
+            <td>单聊、群聊消息，单条消息最大长度限制为12K</td>
         </tr>
 	<tr>
             <td>发送频率</td>
@@ -21,11 +21,11 @@
         </tr>	
         <tr>
             <td>单个文件大小</td>
-		<td><li>发送文件消息时，SDK 最大支持发送单个文件大小为100MB</li><li>SDK 不支持创建和发送文件消息</li><li>WebIM SDK 不支持创建和发送语音消息</li></td>
+		<td><li>发送文件消息时，SDK 最大支持发送单个文件大小为100MB</li><li> SDK 不支持创建和发送文件消息</li><li>WebIM SDK 不支持创建和发送语音消息</li></td>
         </tr>
 	<tr>
             <td>历史消息存储时长</td>
-            <td>单聊消息及非直播群消息具备历史消息存储能力，您可以登录 <a href="https://console.cloud.tencent.com/im">即时通信 IM 控制台</a> 修改相关配置。不同默认配置如下：<ul style="margin:0;"><li>体验版：7天，不支持延长</li><li>专业版：7天，支持延长</li><li>旗舰版：30天，支持延长</li></ul>延长历史消息存储时长是付费增值服务，具体计费说明请参见 <a href="https://www.tencentcloud.com/document/product/1047/34350#zz">国内增值服务资费</a> 和 <a href="https://www.tencentcloud.com/document/product/1047/34350#zz">境外增值服务资费</a></td>
+            <td>单聊消息及非直播群消息具备历史消息存储能力，您可以登录 <a href="https://console.cloud.tencent.com/im">即时通信 IM 控制台</a> 修改相关配置。不同默认配置如下：<ul style="margin:0;"><li>体验版：7天，不支持延长</li><li>专业版：7天，支持延长</li><li>旗舰版：30天，支持延长</li></ul>延长历史消息存储时长是付费增值服务，具体计费说明请参见 <a href="https://www.tencentcloud.com/document/product/1047/34350#zz">境外增值服务资费</a></td>
         </tr>
         <tr>
             <td>UserID</td>
@@ -59,15 +59,15 @@
          <tr>
             <td  rowspan="8">群组</td>
             <td>群组数量</td>
-            <td>指单个 SDKAppID 中同时存在的所有群组类型群数之和，已解散的群组不计数，若已达峰值，可先解散无需使用的群组再创建新群组。限制如下：<li>体验版： 100个</li><li>专业版或旗舰版：无上限</li><br>日净增群组数最多支持1万个，免费峰值群组数为10万个/月。若峰值群组数超出免费量将产生套餐外超量费用，具体计费说明请参见 <a href="https://www.tencentcloud.com/document/product/1047/34350#jc"> 国内套餐外超量费用</a> 和 <a href="https://www.tencentcloud.com/document/product/1047/34350#jc"> 境外套餐外超量费用</a></li></ul></td>
+            <td>指单个 SDKAppID 中同时存在的所有群组类型群数之和，已解散的群组不计数，若已达峰值，可先解散无需使用的群组再创建新群组。不同限制如下：<li>体验版： 100个</li><li>专业版或旗舰版：无上限</li><br>日净增群组数最多支持1万个，免费峰值群组数为10万个/月。若峰值群组数超出免费量将产生套餐外超量费用，具体计费说明请参见 <a href="https://www.tencentcloud.com/document/product/1047/34350#jc"> 境外套餐外超量费用</a></li></ul></td>
         </tr>
         <tr>
             <td>群成员数量</td>
-            <td>直播群（AvChatRoom）：无成员数量上限<br>非直播群，默认配置如下：<ul style="margin:0;"><li>体验版：20人/群 </li><li>专业版 ：200人/群，支持拓展至2000人/群</li><li>旗舰版：2000人/群，支持拓展至6000人/群</li>拓展群成员人数上限是付费增值服务，具体计费说明请参见 <a href="https://www.tencentcloud.com/document/product/1047/34350#zz">国内增值服务资费</a> 和 <a href="https://www.tencentcloud.com/document/product/1047/34350#zz">境外增值服务资费</a></ul></td>
+            <td>直播群（AvChatRoom）：无成员数量上限<br>非直播群，不同默认配置如下：<ul style="margin:0;"><li>体验版：20人/群 </li><li>专业版 ：200人/群，支持拓展至2000人/群</li><li>旗舰版：2000人/群，支持拓展至6000人/群</li>拓展群成员人数上限是付费增值服务，具体计费说明请参见 <a href="https://www.tencentcloud.com/document/product/1047/34350#zz">境外增值服务资费</a></ul></td>
         </tr>
         <tr>
             <td>用户可加入群组数</td>
-            <td>指用户同时加入的所有群组类型群数之和，限制如下：<ul style="margin:0;"><li>体验版：50个群/人</li><li>专业版：500个群/人，支持扩展至1000个群/人</li><li>旗舰版：支持扩展至3000个群/人</li></ul>拓展单人可加入群组数上限是付费增值服务，具体计费说明请参见 <a href="https://www.tencentcloud.com/document/product/1047/34350#zz">国内增值服务资费</a> 和 <a href="https://www.tencentcloud.com/document/product/1047/34350#zz">境外增值服务资费</a></li></td>
+            <td>指用户同时加入的所有群组类型群数之和，不同限制如下：<ul style="margin:0;"><li>体验版：50个群/人</li><li>专业版：500个群/人，支持扩展至1000个群/人</li><li>旗舰版：支持扩展至3000个群/人</li></ul>拓展单人可加入群组数上限是付费增值服务，具体计费说明请参见<a href="https://www.tencentcloud.com/document/product/1047/34350#zz">境外增值服务资费</a></li></td>
         </tr>
         <tr>
             <td>群资料</td>
@@ -89,6 +89,7 @@
             <td>社群中话题数量</td>
             <td>一个社群目前最大支持200个话题</td>
         </tr></table>
+
 
 ## 接口相关限制
 >?本文仅列出涉及使用限制的 REST API，更全面的 API 列表请参见 [REST API 接口列表](https://intl.cloud.tencent.com/document/product/1047/34621)。

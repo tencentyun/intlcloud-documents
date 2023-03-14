@@ -1,25 +1,25 @@
 ## 功能介绍
 社群模式（娱乐协作新利器），既支持**社群**-**分组**-**话题**三级结构，将消息相互区隔，又可运营超大规模成员，共用一套好友关系，还可将成员分组，设置成员组的查看、发言、管理等权限。
-![](https://qcloudimg.tencent-cloud.cn/raw/7429b1c2a707a4f4f553cd7c2cbcb0db.jpg)
-![](https://qcloudimg.tencent-cloud.cn/raw/8db16f94e4ab49ede5dc4207e9b20075.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/012568d737c68249ce61b4ba51f7654a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/b3912b1a206d87c93dc3191d1dd71472.png)
 
 ## 适用场景
 ### 兴趣交友：新颖的用户增长模式
 - 支持聚集超大规模爱好者，并通过**社群**-**分组**-**话题**让兴趣圈子保持细分垂直。
 - 在开放的大社群中，为用户提供了封闭的小话题，这样舒服的中间地带让用户可以随意选择话题交流，提升了成员参与的积极性。
-![](https://qcloudimg.tencent-cloud.cn/raw/38f61b81280afed8df7cd699bbb204fb.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/12597e5e5d98fdfa03fa2d719a9bc67c.png)
 
 ### 游戏社交：提高用户粘性和活跃度
 一个社群内多种话题，可完美解决玩家的获取资讯、招募队友、探讨剧情、分享攻略等诸多信息需求。玩游戏前可以了解咨询，玩游戏中可以随时语音（聊天室永远在线），在游戏结束后还能在话题中继续深入交流。
-![](https://qcloudimg.tencent-cloud.cn/raw/e613a51181f771a6309731f8f5b5a09a.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/f9a7348eb58a713cc8bfea86b4d1c40a.png)
 
 ### 粉丝运营：拥有一个高效的运营工具
 告别一个又一个独立的分群（取代“深圳用户1群”“深圳用户2群”“广州用户1群”“上海用户1群”等多个群）运营，一个社群不同话题就搞定，不必再担心分身乏术，让粉丝运营更轻松精准！
-![](https://qcloudimg.tencent-cloud.cn/raw/45d3d5e8818cea79dd65b3b7abbb8d86.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/28b511e5fda1c991f10dec89632236cb.png)
 
 ### 组织管理：实现一种清晰的分层级沟通方式
 组织内所有成员可拉入同一个社群中，再依托社群的层级功能和权限设置，实现分层沟通。
-![](https://qcloudimg.tencent-cloud.cn/raw/aa633c15337fbb8befe6c3f9a9a4f890.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/fc983d18421ed11164475d62eb015344.png)
 
 ## 技术优势
 ### 超大规模群成员
@@ -37,7 +37,10 @@
 
 下文以 Android 为例，介绍社群话题的接口功能。
 
-
+### 下载 Demo 快速体验社群功能
+请使用 Android 手机扫描下图二维码，下载 Demo 后可直接体验。
+下面从 API 调用的角度来介绍下社群话题的使用：
+<img style="width:518px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/386bd090f3b1e5a904d5eced5b94e758.png" />
 
 
 ### 社群话题的 API 使用

@@ -1,3 +1,14 @@
+## 2022年12月
+<table>
+<thead><tr><th width=20%>ダイナミックネーム</th><th width=50%>動的記述</th><th width=15%>リリース時間</th><th width=15%>関連ドキュメント</th></tr></thead>
+<tbody>
+<tr>
+<td>並列検索をサポート</td>
+<td>TencentDB for MySQLは並列検索機能をサポートします。並列検索機能を使用し、マルチコアコンピューティングリソースをスケジューリングして、規模が大きい検索の応答時間を大幅に短縮できます。</td>
+<td>2022-12-22</td>
+<td><a href="https://www.tencentcloud.com/document/product/236/53408" target="_blank">並列検索</a></td></tr>
+</tbody></table>
+
 ## 2022年11月
 <table>
 <thead><tr><th width=20%>ダイナミックネーム</th><th width=50%>動的記述</th><th width=15%>リリース時間</th><th width=15%>関連ドキュメント</th></tr></thead>

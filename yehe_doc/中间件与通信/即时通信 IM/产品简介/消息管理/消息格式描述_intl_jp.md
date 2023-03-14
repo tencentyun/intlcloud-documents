@@ -361,8 +361,8 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 | MsgNum | Integer | 転送されたメッセージの数。|
 | CompatibleText | String | 互換性のあるテキスト。マージ転送メッセージをサポートしていない古いバージョンのSDKがそのようなメッセージを受信すると、IMバックグラウンドはこのメッセージを送信する前に互換性のあるテキストに変換します。|
 | AbstractList | Array | マージされたメッセージのダイジェストリスト。Stringの配列です。|
-| MsgList | Array | メッセージリスト。このフィールドは、転送されたメッセージの長さの合計が8K以下の場合にのみ表示され、現時点ではJsonMsgKeyフィールドはありません。|
-| JsonMsgKey | String | マージ転送されたメッセージリストKey。このフィールドは、転送されたメッセージの長さの合計が8Kよりも大きい場合にのみ表示され、現時点ではJsonMsgKeyフィールドはありません。|
+| MsgList | Array | メッセージリスト。このフィールドは、転送されたメッセージの長さの合計が12K以下の場合にのみ表示されます。この場合、JsonMsgKeyフィールドはありません。|
+| JsonMsgKey | String | マージ転送されたメッセージリストKey。このフィールドは、転送されたメッセージの長さの合計が12Kより大きい場合にのみ表示されます。この場合、JsonMsgKeyフィールドはありません。|
 
 MsgList内の各メッセージの構造は次のとおりです：
 
@@ -479,8 +479,6 @@ CloudCustomDataとMsgBodyの形式の例は次のとおりです：
     ] 
 }
 ```
-![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.pngg)
-
 各タイプのメッセージ要素のテキストフィールドの概要をプッシュします。
 
 | MsgTypeの値 | タイプ |メッセージ要素プッシュテキスト|
@@ -570,9 +568,9 @@ OffsetPushInfoの形式の例は次のとおりです：
 }
 ```
 
-フィールドの説明は次のとおりです。
+フィールドの説明は次のとおりです：
 
-| フィールド | タイプ | 属性 | 説明 |
+| フィールド | タイプ | 属性 | 	説明 |
 |---------|---------|---------|---------|
 | PushFlag | Integer | オプション | 「0」はプッシュを表し、「1」はオフラインプッシュでないことを表します。  |
 | Title | String | オプション | オフラインプッシュタイトル。このフィールドはiOSとAndroidで共有されています。|
@@ -590,11 +588,11 @@ OffsetPushInfoの形式の例は次のとおりです：
 | ApnsInfo.Title|String|オプション|このフィールドは、APNsによってプッシュされたタイトルを識別するために用いられます。入力すると、最上位階層のTitleが上書きされます。|
 | ApnsInfo.SubTitle|String|オプション|このフィールドは、APNsによってプッシュされたサブタイトルを識別するために用いられます。|
 | ApnsInfo.Image|String|オプション|このフィールドは、APNsが持つ画像アドレスを識別するために用いられます。クライアントがこのフィールドを取得すると、画像リソースをダウンロードすることにより、ポップアップウィンドウに画像を表示することができます。|
-| ApnsInfo.MutableContent | Integer | オプション | 「1」は、iOS 10のプッシュ拡張のオンを表します。デフォルトは「0」です。|
+| ApnsInfo.MutableContent | Integer | オプション | 「1」は、iOS 10+のプッシュ拡張が有効にすることを表します。デフォルトは「0」です。|
 
 >!APNsプッシュはデータパケットサイズを4Kを超えないよう制限するので、他の制御フィールドを削除し、DescフィールドとExtフィールドの合計が3Kを超えないようにすることをお勧めします。
 
 ## 参考
 
 Apple Push Notification Service(APNs) [Appleプッシュ開発ドキュメント](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
-iOSオフラインメッセージプッシュの設定：[オフラインプッシュ(iOS)](https://www.tencentcloud.com/zh/document/product/1047/34347)。
+iOSオフラインメッセージプッシュの設定：[オフラインプッシュ(iOS)](https://www.tencentcloud.com/document/product/1047/34347)。

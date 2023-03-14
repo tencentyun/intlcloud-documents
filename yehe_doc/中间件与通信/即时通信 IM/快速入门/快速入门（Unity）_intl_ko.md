@@ -11,7 +11,7 @@
 
 ## 플랫폼 지원
 
-당사는 Unity에서 전체 플랫폼을 커버하는 Tencent Cloud IM SDK 개발에 전념하여 하나의 코드 세트로 모든 플랫폼에서 실행할 수 있도록 지원합니다.
+당사는 Unity에서 전체 플랫폼을 커버하는 Tencent Cloud IM SDK 개발에 주력하여 하나의 코드 세트로 모든 플랫폼에서 실행할 수 있도록 지원합니다.
 
 | 플랫폼 | IM SDK |
 |---------|---------|
@@ -36,16 +36,17 @@
 
 >? 이 계정은 개발 및 테스트 전용입니다. 애플리케이션 런칭 전에 올바른 `UserSig` 배포 방식은 서버에서 생성하여, App 지향 인터페이스를 제공하는 것입니다. `UserSig`가 필요할 때, App은 비즈니스 서버에 동적 `UserSig` 가져오기 요청을 발송합니다. 자세한 내용은 [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)를 참고하십시오.
 
-![](https://main.qcloudimg.com/raw/2286644d987d24caf565142ae30c4392.png)
+![](https://main.qcloudimg.com/raw/8315da2551bf35ec85ce10fd31fe2f52.png)
 
 [](id:part2)
 
 ## 파트2: Tencent Cloud IM SDK를 Unity 프로젝트에 통합
 
 1. Unity를 사용하여 프로젝트를 생성하고 프로젝트 디렉터리를 기록합니다.
+![](https://qcloudimg.tencent-cloud.cn/raw/f07ae1bb4db4ca5f43f6acc563aafa8c.png)
 또는 기존 Unity 프로젝트를 엽니다.
 2. IDE(예시: Visual Studio Code)를 통해 프로젝트를 엽니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/1a21933037a72a6bd4c8ed14f08c6ca7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/881d625bf3ee2e736db22762e8763c18.png)
 3. 디렉터리에 따라 Packages/manifest.json을 찾아 종속성을 다음과 같이 수정합니다.
 ```json
    {
@@ -55,7 +56,7 @@
    }
 ```
 
-Tencent Cloud IM SDK 내의 모든 API를 더 잘 이해할 수 있도록 개발 초기 단계에서 SDK API를 테스트하고 특정 API를 호출하기 위한 [API Example](https://github.com/TencentCloud/tc-chat-sdk-unity/tree/main/Assets/IM_Api_Example)를 제공합니다.
+Tencent Cloud IM SDK 내의 모든 API를 더 잘 이해할 수 있도록 개발 초기 단계에서 SDK API를 테스트하고 특정 API를 호출하기 위한 [API Example](https://github.com/TencentCloud/tc-chat-sdk-unity/tree/main/Assets/IM_Api_Example)을 제공합니다.
 
 [](id:part3)
 
@@ -93,13 +94,13 @@ public static void Init() {
 }
 ```
 
-`Init` 후 이벤트 리스너를 추가하여 네트워크 상태 변경, 사용자 정보 수정 등을 수신할 수 있습니다. 자세한 내용은 [여기](https://intl.cloud.tencent.com/document/product/1047/48570)에서 확인하십시오.
+`Init` 후에는 주로 네트워크 상태 및 사용자 정보 변경에 대한 리스너를 포함하여 일부 리스너를 IM SDK에 마운트할 수 있습니다. 자세한 내용은 [여기](https://intl.cloud.tencent.com/document/product/1047/48570)에서 확인하십시오.
 
-### 테스트 계정에 로그인
+### 테스트 계정으로 로그인
 
 [본 섹션의 상세 문서](https://intl.cloud.tencent.com/document/product/1047/48571)
 
-이제 처음에 콘솔에서 생성한 테스트 계정을 사용하여 로그인 인증을 완료할 수 있습니다.
+콘솔에서 처음 생성된 테스트 계정을 사용하여 로그인 인증을 완료할 수 있습니다.
 
 `TencentIMSDK.Login`을 호출하여 계정에 로그인하십시오.
 
@@ -179,7 +180,7 @@ TIMResult res = TencentIMSDK.ConvGetConvList((int code, string desc, List<ConvIn
 });
 ```
 
-이제 이전 단계에서 다른 테스트 계정을 사용하여 보낸 메시지의 대화를 볼 수 있습니다.
+이 때 이전 단계에서 다른 테스트 계정에서 보낸 메시지를 볼 수 있습니다.
 
 #### 긴 링크에서 실시간으로 대화 목록 가져오기
 
@@ -191,7 +192,7 @@ TencentIMSDK.SetConvEventCallback((TIMConvEvent conv_event, List<ConvInfo> conv_
  // 콜백 로직 프로세스
 });
 ```
-2. 콜백 이벤트를 처리하고 최신 대화 목록을 인터페이스에 표시합니다.
+2. 콜백 이벤트를 처리하고 UI에 최신 대화 목록을 표시합니다.
 
 ### 메시지 수신
 
@@ -259,7 +260,7 @@ TencentIMSDK.AddRecvNewMsgCallback((List<Message> message, string user_data) => 
 
 귀하는 계속해서 [그룹](https://intl.cloud.tencent.com/document/product/1047/48169), [사용자 프로필](https://intl.cloud.tencent.com/document/product/1047/48859), [친구 관리](https://intl.cloud.tencent.com/document/product/1047/49563), [로컬 검색](https://intl.cloud.tencent.com/document/product/1047/50066) 등 관련 기능을 개발할 수 있습니다.
 
-자세한 내용은 [자체 UI와 통합 SDK 문서](https://www.tencentcloud.com/document/product/1047/34299)를 참고하십시오.
+자세한 내용은 [통합 솔루션(UI 없음)](https://www.tencentcloud.com/document/product/1047/34299)을 참고하십시오.
 
 [](id:part5)
 
@@ -267,7 +268,7 @@ TencentIMSDK.AddRecvNewMsgCallback((List<Message> message, string user_data) => 
 
 Tencent Cloud IM SDK (Unity 버전)는 `1.8.1` 버전부터 WebGL용 빌드를 지원합니다.
 
-Android 및 iOS에 비해 다음과 같이 몇 가지 추가 단계가 필요합니다.
+Web 지원을 활성화하려면 Android 및 iOS 지원을 활성화하는 단계와 비교하여 다음과 같은 추가 단계를 수행해야 합니다.
 
 ### JS 가져오기
 

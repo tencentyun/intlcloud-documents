@@ -36,16 +36,17 @@
 
 >? 该账户仅限开发测试使用。应用上线前，正确的 `UserSig` 签发方式是由服务器端生成，并提供面向 App 的接口，在需要 `UserSig` 时由 App 向业务服务器发起请求获取动态 `UserSig`。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
-![](https://main.qcloudimg.com/raw/2286644d987d24caf565142ae30c4392.png)
+![](https://main.qcloudimg.com/raw/8315da2551bf35ec85ce10fd31fe2f52.png)
 
 [](id:part2)
 
 ## 第二部分：集成 IM SDK 进您的 Unity 项目
 
 1. 通过 Unity，创建一个 Unity 项目，并记住项目所在的位置。
+![](https://qcloudimg.tencent-cloud.cn/raw/f07ae1bb4db4ca5f43f6acc563aafa8c.png)
 或打开一个已有 Unity 项目。
 2. 通过 IDE（如：Visual Studio Code）打开项目：
-![](https://qcloudimg.tencent-cloud.cn/raw/1a21933037a72a6bd4c8ed14f08c6ca7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/881d625bf3ee2e736db22762e8763c18.png)
 3. 根据目录，找到 Packages/manifest.json，并修改依赖如下：
 ```json
    {
