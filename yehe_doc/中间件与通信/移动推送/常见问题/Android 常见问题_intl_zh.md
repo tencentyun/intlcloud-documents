@@ -4,7 +4,7 @@
 a. 使用的 setAction 为 SDK 自声明的静态广播 action，无对外暴露风险；
 b. 涉及 PendingIntent 的打开目标为 SDK 内部静态广播，且已添加 SDK 内部自声明的广播权限，属于可信任组件。
 
-2.Google 文档提及 “Fixing this issue is recommended but not mandatory. The publication status of your app will be unaffected by the presence of this issue.”。
+2. Google 文档提及 “Fixing this issue is recommended but not mandatory. The publication status of your app will be unaffected by the presence of this issue.”。
 
 综合考虑，移动推送此处当前使用的 PendingIntent 为可信任安全 PendingIntent，且 Google 提示的此项内容不会影响您的应用上架。当前您可以忽视此项提示，继续上架您的应用。
 
@@ -15,23 +15,23 @@ b. 涉及 PendingIntent 的打开目标为 SDK 内部静态广播，且已添加
 2. 在移动推送推送 REST API 指定相同的通知渠道`n_ch_id `进行推送,厂商通道需指定厂商渠道 ID，如华为通道需指定`hw_ch_id`,小米通道需指定`xm_ch_id`。
 
 >?
->- 目前仅华为、小米、FCM 和移动推送自建通道支持自定义铃声。
->- 部分厂商推送通道使用通道渠道需要先进行通知分类权限申请，相关说明和申请步骤可参见 [厂商通道消息分类功能使用说明](https://intl.cloud.tencent.com/document/product/1024/36250)。
->- 针对华为推送通道，如果您的应用在华为推送控制台申请开通华为推送服务时，选择的数据处理位置为中国区，自定义渠道功能将不再适用于您的应用，即不支持利用通知渠道能力进行通知铃声自定义，详见 [自定义通知渠道](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122)。
+- 目前仅华为、小米、FCM 和移动推送自建通道支持自定义铃声。
+- 部分厂商推送通道使用通道渠道需要先进行通知分类权限申请，相关说明和申请步骤可参见 [厂商通道消息分类功能使用说明](https://intl.cloud.tencent.com/document/product/1024/36250)。
+- 针对华为推送通道，如果您的应用在华为推送控制台申请开通华为推送服务时，选择的数据处理位置为中国区，自定义渠道功能将不再适用于您的应用，即不支持利用通知渠道能力进行通知铃声自定义，详见 [自定义通知渠道](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122)。
 
 ### 如何关闭移动推送的保活功能？
 
 如需关闭联合保活功能，请在应用初始化的时候，例如 Application 或 LauncherActivity 的 onCreate 中调用如下接口，并传递 false 值：
 >!仅 1.1.6.0 之后版本支持关闭联合保活功能，1.1.6.0之前版本移动推送默认开启联合保活能力，且不可关闭。
 
-```
+```java
 XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 ```
 
 若您使用 gradle 自动集成方式，请在自身应用的 AndroidManifest.xml 文件 &lt;application&gt; 标签下配置如下结点，其中 `xxx` 为任意自定义名称；如果使用手动集成方式，请修改如下节点属性：
-```
+```xml
 <!-- 在自身应用的AndroidManifest.xml文件中添加如下结点，其中 xxx 为任意自定义名称: -->     
-<!-- 关闭与移动推送应用的联合保活功能，请配置 -->
+<!-- 关闭与 TPNS 应用的联合保活功能，请配置 -->
 <provider
 		 android:name="com.tencent.android.tpush.XGPushProvider"
 		 tools:replace="android:authorities"
@@ -80,7 +80,7 @@ android:value="true" />
 
 ### 什么是移动推送自建通道？
 
--移动推送自建通道是移动推送的自建通道，依赖移动推送Service 在线（与移动推送后台服务器保持长连接）才能下发消息，因此移动推送自建通道的实际发送一般比其他厂商通道的数据要低。
+- 移动推送自建通道是移动推送的自建通道，依赖移动推送Service 在线（与移动推送后台服务器保持长连接）才能下发消息，因此移动推送自建通道的实际发送一般比其他厂商通道的数据要低。
 - 如果需要实现离线推送，建议集成厂商通道，请参见 [厂商通道接入指南](https://intl.cloud.tencent.com/document/product/1024/37176)。
 
 
@@ -88,7 +88,7 @@ android:value="true" />
 ### 为何关闭应用后，无法收到推送？
 
 - 目前第三方推送都无法保证关闭应用后仍可收到推送消息，该问题为手机定制 ROM 对移动推送 Service 的限制问题，移动推送的移动推送自建通道推送，需要建立在移动推送的 Service 能够与移动推送后台服务器保持长连接，Service 被终止后，需由系统、安全软件和用户操作决定是否能够再次启动。
--移动推送的 Service 和移动推送的服务器断开连接后，此时给这个设备下发的消息，将变成离线消息，离线消息最多保存72小时，每个设备最多保存三条，如果有多条离线消息，只保留最新的三条消息。在关闭应用期间推送的消息，如开启应用无法收到，请检查是否调用了反注册接口：XGPushManager.unregisterPush\(this\)。
+- 移动推送的 Service 和移动推送的服务器断开连接后，此时给这个设备下发的消息，将变成离线消息，离线消息最多保存72小时，每个设备最多保存三条，如果有多条离线消息，只保留最新的三条消息。在关闭应用期间推送的消息，如开启应用无法收到，请检查是否调用了反注册接口：XGPushManager.unregisterPush\(this\)。
 - 如果已经集成厂商通道，但是仍收不到离线推送，请先在 [排查工具](https://console.cloud.tencent.com/tpns/user-tools) 上查询该 Token 是否已经注册上厂商通道，如果未注册成功，请参见 [厂商通道注册失败排查指南](https://intl.cloud.tencent.com/document/product/1024/37006) 进行排查。
 - QQ 和微信是系统级别的应用白名单，相关的 Service 不会因为关闭应用而退出，所以用户感知推出应用过后，仍可收到消息，但相关的 Service 仍能够在后台存活。
 
@@ -120,7 +120,7 @@ android:value="true" />
 自移动推送SDK 1.1.6.3 版本起，为避免**在非本品牌手机上、其他品牌的推送服务在后台自启、传输用户数据**，会在非本品牌手机上禁用其他品牌的推送服务组件。
 华为在账号、游戏、推送等不同功能上有一些公共组件，移动推送禁用推送组件可能会导致其它服务功能在非华为品牌手机上同样不能启动；若您需要关闭此禁用功能，可配置以下内容：
 在 AndroidManifest.xml 文件 application 标签下添加节点配置，并重装应用（需卸载后重装）。
-```
+```xml
 <meta-data
 		android:name="tpns-disable-component-huawei-v2"
 		android:value="false" />
@@ -182,16 +182,16 @@ android:value="true" />
 }
 ```
 
-适配后的具体效果如下，建议参考 Demo logo 图标进行作图。
+适配后的具体效果如下，[建议参考 Demo logo 图标进行作图](https://git.code.tencent.com/tpns/tpns-Demo-Android/blob/master/app/src/main/res/drawable/notification_icon.png)。
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f3df2a69acc72d182fd74a6799734dd9.jpg" width="60%"></img>
 
 
 >?
->- small icon 必须是带 Alpha 透明通道的 PNG 图片。
->- 背景必须是透明。
->- 周围不宜留过多 padding。
->- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
+- small icon 必须是带 Alpha 透明通道的 PNG 图片。
+- 背景必须是透明。
+- 周围不宜留过多 padding。
+- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
 
 
 ### Flyme 6.0 及以下版本的魅族手机，为何消息抵达设备却不在通知栏展示？
@@ -253,3 +253,18 @@ android.useAndroidX=trueandroid.enableJetifier=true
 
 ### FCM 通道适用哪个集群
 FCM 需要国外网络，适用于境外中国香港和新加坡集群。
+
+
+### 已成功下发，为什么提示：无消息抵达数据？
+**排查思路**：
+**厂商通道下发失败**：
+1. 请确认是否超出了厂商的单日单设备的推送条数限制，各厂商的推送条数限制请参见 [厂商消息分类](https://intl.cloud.tencent.com/document/product/1024/36250)。例如华为返回回执码“256”，表示当日的发送量超出资讯营销类消息的限制，请您调整发送策略。
+2. 请确认华为/荣耀/魅族是否有配置 [抵达回执](https://intl.cloud.tencent.com/document/product/1024/35246)，否则抵达数据无法上报（不会影响实际推送效果）。
+3. 厂商下发延迟，由于移动推送侧已及时下发到厂商了，厂商没有下发到设备的具体原因可咨询厂商侧。
+4. 确认通知栏开关都开启了，vivo 、OPPO 部分机型通知栏默认关闭，确认是否手动开启。
+
+**自建通道下发失败**：
+1. tpns sdk 与 tpns 后台建立链路实际断开了，但是后台认为链路没有断会继续走移动推送通道下发，在下发的过程中发现长链接是断开的，最后导致移动推送通道下发没有抵达。
+2. SDK 自身默认通过约 5分钟的心跳间隔来维持长连接，发现心跳发送失败，立即尝试重建长连接。比如在成功建立长链接前接收到来自后台5条推送任务，建立成功后只会对最新的三条推送任务下发，最后导致前面两条推送没有下发从而走自建通道没有抵达。
+3. 没有抵达事件上报，实际抵达设备了（不会影响实际推送效果）。
+

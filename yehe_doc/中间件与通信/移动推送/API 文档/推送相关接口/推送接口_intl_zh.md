@@ -14,7 +14,7 @@
 
 >!
 >- 腾讯云移动推送结合业务优化的需求，对**全量推送、标签推送和号码包推送**的频率进行限制，均调整为 1条/秒，官网控制台将与 API 同步调整。
-- 如果超过此频率可能会引起推送异常，如相关推送需更高频率，您可以 [提交工单](https://console.tencentcloud.com/workorder/category)。
+>- 如果超过此频率可能会引起推送异常，如相关推送需更高频率，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category)。
 >
 
 ## 必要参数
@@ -178,13 +178,13 @@ Android 平台具体字段如下表：
 | fcm_ch_id	 | String  | android | 无     | 否   | FCM 渠道 ID（仅 FCM 推送通道生效）			     |
 | hw_biz_type            | Integer | android     | 0       | 否                                  |是否开启华为快通知：<li>1：开启<li>0：关闭</li>**注意**：仅华为通道有效，其需要 [联系华为商务](https://developer.huawei.com/consumer/cn/support/business) 开通。          |
 | hw_ch_id       | String  | android | 无     | 否   | 华为渠道 ID（仅 华为推送通道生效）                           |
-| hw_category       | String  | android | 无     | 否   | 华为消息类型标识，确定消息提醒方式，对特定类型消息加快发送，参数详情请参见 [华为的请求参数说明](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References/https-send-api-0000001050986197) 的 caregory 参数。                           |
-| hw_importance<span id="hw_importance"></span>     | Integer  | android | 0     | 否   | 消息的提醒级别，取值如下：<li>1：表示通知栏消息预期的提醒方式为静默提醒，消息到达手机后，无铃声震动</li><li>2：表示通知栏消息预期的提醒方式为强提醒，消息到达手机后，以铃声、震动提醒用户。终端设备实际消息提醒方式将根据[category](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References/https-send-api-0000001050986197#ZH-CN_TOPIC_0000001134031085__p5203378238)字段取值或者[智能分类](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835#ZH-CN_TOPIC_0000001149358835__li19162756181511)结果进行调整。 </li>                          |
+| hw_category       | String  | android | 无     | 否   | 华为消息类型标识，确定消息提醒方式，对特定类型消息加快发送，参数详情请参见 [华为的请求参数说明](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References/https-send-api-0000001050986197) 的 category 参数。                           |
+| hw_importance<span id="hw_importance"></span>     | Integer  | android | 无     | 否   | 消息的提醒级别，取值如下：<li>1：表示通知栏消息预期的提醒方式为静默提醒，消息到达手机后，无铃声震动</li><li>2：表示通知栏消息预期的提醒方式为强提醒，消息到达手机后，以铃声、震动提醒用户。终端设备实际消息提醒方式将根据 [hw_category](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References/https-send-api-0000001050986197#ZH-CN_TOPIC_0000001134031085__p5203378238) 字段取值或者 [智能分类](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835#ZH-CN_TOPIC_0000001149358835__li19162756181511) 结果进行调整。 </li>                          |
 | oppo_ch_id     | String  | android | 无     | 否   | OPPO渠道 ID（仅 OPPO 推送通道生效）                          |
 | vivo_ch_id     | String  | android | 0      | 否   | vivo 渠道 ID：“0”代表运营消息，“1”代表系统消息（仅 vivo 推送通道生效） |
 | n_id           | Integer | android | 0      | 否   | **（该字段已废弃，后续会下线，如需使用覆盖功能请使用覆盖参数：collapse_id）**<br>通知消息对象的唯一标识（移动推送自建通道）<br>（1）大于0：会覆盖先前相同 id 的消息<br>（2）等于0：展示本条通知且不影响其他消息<br>（3）等于-1：将清除先前所有消息，仅展示本条消息 |
 | builder_id     | Integer | android | 0      | 否   | 本地通知样式标识                                             |
-| badge_type     | Integer | android | -1     | 否   | 通知角标：<li>-2：自动增加1，支持华为设备</li><li>-1：不变，支持华为、vivo 设备</li><li>[0, 100)：直接设置，支持华为、vivo 设备</li>**注意**：不同厂商设备的角标适配能力不同，各参数值实现效果请参见 <a href="https://www.tencentcloud.com/document/product/1024/35828">角标适配指南<a> |
+| badge_type     | Integer | android | -1     | 否   | 通知角标：<li>-2：自动增加1，支持华为设备</li><li>-1：不变，支持华为、vivo 设备</li><li>[0, 100)：直接设置，支持华为、vivo 设备</li>**注意**：不同厂商设备的角标适配能力不同，各参数值实现效果请参见 <a href="https://cloud.tencent.com/document/product/548/43693">角标适配指南<a> |
 | ring           | Integer | android | 1      | 否   | 是否有铃声：<li>0：没有铃声</li><li>1：有铃声  </li>           |
 | ring_raw       | String  | android | 无     | 否   | 指定 Android 工程里 raw 目录中的铃声文件名，不需要后缀名。<br>**说明：**自定义铃声仅华为、小米、FCM 和移动推送自建通道支持，需配合`n_ch_id`字段使用，配置步骤可参考 [如何设置自定义铃声](https://intl.cloud.tencent.com/document/product/1024/32624)。    |
 | vibrate        | Integer | android | 1      | 否   | 是否使用震动：<li>0：没有震动</li><li>1：有震动</li>           |
@@ -196,7 +196,9 @@ Android 平台具体字段如下表：
 | small_icon     | String  | android | 无     | 否   | 消息在状态栏显示的图标，若不设置，则显示应用图标             |
 | icon_color     | Integer | android | 0      | 否   | 通知栏小图标染色 <li>仅移动推送自建通道有效</li> <li>需要使用 RGB 颜色的十进制值，例如 RGB 颜色 #01e240，请填入123456 </li> |
 | action         | Object  | android | 有     | 否   | 设置点击通知栏之后的行为，默认为打开 App，详情参考  [action 参数说明](#action) |
-| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 JSON String）获取方式详见 [通知点击跳转-客户端获取参数](https://intl.cloud.tencent.com/document/product/1024/38354)<br><dx-alert infotype="explain" title="">华为官方通知：「2021年9月30日起停用V2协议」。移动推送已将华为推送协议升级到V5，V5协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 Intent 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发。</dx-alert>|
+| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 JSON String）获取方式详见 [通知点击跳转-客户端获取参数](https://intl.cloud.tencent.com/document/product/1024/38354)<br><dx-alert infotype="explain" title="">
+华为官方通知：「2021年9月30日起停用V2协议」。移动推送已将华为推送协议升级到V5，V5协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 Intent 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发。
+</dx-alert>|
 | show_type      | Integer | android | 2      | 否   | 应用前台时，是否展示通知 。 默认展示，仅对移动推送自建通道、FCM 通道有效 <li>1：不展示</li><li>2：展示</br>说明：若取值为1且应用在前台，终端用户对该条推送无感知，但有抵达数据上报</li> |
 
 
@@ -268,7 +270,7 @@ Android 平台具体字段如下表：
 								"pf": 0  // PendingIntent的Flag属性
 						},
 						"browser": {
-								"url": "https://intl.cloud.tencent.com ", // 仅支持http、https
+								"url": "https://cloud.tencent.com ", // 仅支持http、https
 								"confirm": 1 // 是否需要用户确认
 						},
 						"intent": "xgscheme://com.tpns.push/notify_detail" //SDK版本需要大于等于1.0.9，然后在客户端的intent配置data标签，并设置scheme属性
@@ -422,7 +424,7 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 
 | 参数名                | 类型    | 父项目 | 必需                           | 默认值                               | 描述                                                         |
 | --------------------- | ------- | ------ | ------------------------------ | ------------------------------------ | ------------------------------------------------------------ |
-| expire_time           | Integer | 无     | 否                             | 86400（24小时）                     | 消息离线存储时间（单位为秒），最长72小时<li>若 expire_time = 0，则表示实时消息</li><li>若 expire_time 大于0，且小于800s，则系统会重置为800s</li><li>若expire_time >= 800s，按实际设置时间存储，最长72小时 </li><li>设置的最大值不得超过259200，否则会导致推送失败</li><li>如需调整离线消息时间，请 [提交工单](https://console.tencentcloud.com/workorder/category) 申请</li> |
+| expire_time           | Integer | 无     | 否                             | 86400（24小时）                     | 消息离线存储时间（单位为秒），最长72小时<li>若 expire_time = 0，则表示实时消息</li><li>若 expire_time 大于0，且小于800s，则系统会重置为800s</li><li>若expire_time >= 800s，按实际设置时间存储，最长72小时 </li><li>设置的最大值不得超过259200，否则会导致推送失败</li><li>如需调整离线消息时间，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请</li> |
 | send_time             | String  | 无     | 否                             | 当前系统时间                         | 指定推送时间，可选择未来90天内的时间：<li>格式为 yyyy-MM-DD HH:MM:SS</li><li>若小于服务器当前时间，则会立即推送</li><li>仅全量推送、号码包推送和标签推送支持此字段</li> |
 | multi_pkg             | Boolean | 无     | 否                             | false                                | 多包名推送：当 App 存在多个渠道包（例如应用宝、豌豆荚等），并期望推送时所有渠道的 App 都能收到消息，可将该值设置为 true。<br>**注意：**该参数默认控制移动推送自建通道的多包名推送，需要实现厂商通道多包名推送详见 [厂商通道多包名配置](https://intl.cloud.tencent.com/document/product/1024/35393) 文档 |
 | loop_param            | Object  | 无     | 否                             | 0                                    | 仅全量推送、号码包推送和标签推送支持此字段，详情见下文 [loop_param 参数说明](#loop_param参数说明) |

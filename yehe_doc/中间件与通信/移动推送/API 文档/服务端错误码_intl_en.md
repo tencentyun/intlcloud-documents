@@ -1,4 +1,4 @@
- The common errors of TPNS RESTful APIs mainly include the following:
+The common errors of the RESTful APIs of Tencent Push Notification Service mainly include the following:
 
 | Error Code | Description | Feedback API |
 | -------- | ---------------- | ---------------- | ----------- |
@@ -29,3 +29,4 @@
 | 10010012 | Invalid push time | Push API |
 | 10010018 | Repeated push | Push APIs for full push and tag push |
 | 1008035  | The application AccessID is incorrect, or the service access point of your application does not match the domain address entered. Refer to [Service URL](https://intl.cloud.tencent.com/document/product/1024/38517) | General error |
+| 1008028  | Request too fast| Exceeded the frequency limit. For the push frequency limits of push to all devices, push to devices with specified tags, and push by account package, see "Note" in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764). | General error |

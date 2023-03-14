@@ -1,5 +1,5 @@
 ### Why was the Implicit PendingIntent Vulnerability error reported when I published my application on Google Play?
-1. Tencent Push Notification Service SDK uses an implicit PendingIntent in `TPushAlarmManager.set` in the code to trigger SDK internal heartbeats.
+1. The Tencent Push Notification Service SDK uses an implicit PendingIntent in `TPushAlarmManager.set` in the code to trigger SDK internal heartbeats.
 You can address the issue by referring to Google's [Remediation for Implicit PendingIntent Vulnerability](https://support.google.com/faqs/answer/10437428). The following self-check has been performed for the SDK:
 a. The `setAction` used is a static broadcast action declared by the SDK and poses no exposure risk.
 b. The target of the PendingIntent is the SDK's internal static broadcast action, and the broadcast permission declared by SDK has been added.
@@ -15,23 +15,23 @@ You can set a custom ringtone by creating a notification channel.
 2. Call the push Restful API of Tencent Push Notification Service and specify the same notification channel `n_ch_id` for push. For a vendor channel, you must specify the vendor channel ID, such as `hw_ch_id` for the Huawei channel and `xm_ch_id` for the Mi channel.
 
 >?
->- Currently, only Huawei, Mi, FCM, and Tencent Push Notification Service channels support custom ringtones.
->- For some vendor channels, you need to apply for notification classification permissions first. For details and application steps, see [Vendor Message Classification Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
->- For the Huawei push channel, if you select China as the data processing location when you apply for the Huawei push service for your application in the Huawei push console, the channel customization feature is no longer available to your application. That is, you cannot use the notification channel capability to customize notification ringtones. For more information, see [Notification Channel Customization](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122).
+- Currently, only Huawei, Mi, FCM, and Tencent Push Notification Service channels support custom ringtones.
+- For some vendor channels, before using the push channels of some vendors, you need to apply for notification classification permissions. For details and application steps, see [Vendor Message Classification Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
+- For Huawei push channel, if you select China as the data processing location when you apply for the Huawei push service for your application in the Huawei push console, the channel customization feature is no longer applicable to your application. That is, you cannot use the notification channel capability to customize notification ringtones. For more information, see [Notification Channel Customization](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-custom-chan-0000001050040122).
 
 ### How do I disable the session keep-alive feature of Tencent Push Notification Service?
 
 To disable the feature, call the following API in `onCreate` of `Application` or `LauncherActivity` during application initialization and pass in `false`:
 >! The session keep-alive feature can be disabled only in SDK v1.1.6.0 or later. In SDKs earlier than v1.1.6.0, the feature is enabled by default and cannot be disabled.
 
-```
+```java
 XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 ```
 
 If you use Gradle automatic integration, configure the following node under the `<application>` tag of the `AndroidManifest.xml` file of your application, where `xxx` is a custom name. For manual integration, modify node attributes as follows:
-```
+```xml
 <!-- Add the following node to the `AndroidManifest.xml` file of your application, where xxx is a custom name: -->     
-<!-- To disable the session keep-alive feature, configure the following: -->
+<!-- To disable the feature of keep-alive with Tencent Push Notification Service, configure as follows: -->
 <provider
 		 android:name="com.tencent.android.tpush.XGPushProvider"
 		 tools:replace="android:authorities"
@@ -63,7 +63,7 @@ HarmonyOS is fully compatible with the Android SDK, so HarmonyOS users can use t
 | Meizu | No. You only need an individual developer account to enable Meizu Push. For details, see [here](http://open.res.flyme.cn/fileserver/upload/file/201709/a271468fe23b47408fc2ec1e282f851f.pdf). | 
 | FCM | No. You only need an individual developer account to enable FCM Push. |
 | Huawei | No. You only need an individual developer account to enable Huawei Push. For details, see [here](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service). | 
-| OPPO | Yes. You need an enterprise developer account to enable OPPO Push. For details, see [here](https://open.oppomobile.com/wiki/doc/#id=10195). | 
+| OPPO | Yes. You need an enterprise developer account to enable OPPO PUSH. For details, see [here](https://open.oppomobile.com/wiki/doc/#id=10195). | 
 | vivo | Yes. You need an enterprise developer account to enable vivo Push. For details, see [here](https://dev.vivo.com.cn/documentCenter/doc/2). |
 
 
@@ -80,7 +80,7 @@ The defective code is from the vivo channel push SDK. The Tencent Push Notificat
 
 ### What is the Tencent Push Notification Service channel?
 
-- The Tencent Push Notification Service channel is a channel build by Tencent Push Notification Service, and messages can be delivered only when the Tencent Push Notification Service is online (maintaining a persistent connection with the backend server). Thus, the actual delivery of this channel is generally lower than that of a vendor channel.
+- The Tencent Push Notification Service channel deeply relies on the Tencent Push Notification Service, and messages can be delivered only when the Service is online (maintaining a persistent connection with the backend server). Thus, the actual delivery of this channel is generally lower than that of a vendor channel.
 - If you need to implement offline push, we recommend you integrate a vendor channel. For more information, see [here](https://intl.cloud.tencent.com/document/product/1024/37176).
 
 
@@ -88,9 +88,9 @@ The defective code is from the vivo channel push SDK. The Tencent Push Notificat
 ### Why pushes cannot be received after the application is closed?
 
 - Currently, almost all third-party push services cannot guarantee that the pushes can be received after the application is closed. This problem arises from the restrictions of the mobile phone's custom ROM on the Service. All pushes through the Tencent Push Notification Service channel can be delivered only when the Service maintains a persistent connection with the backend server. After the Service is terminated, whether to restart it depends on the system settings, security programs, and user operations.
-- After the Tencent Push Notification Service is disconnected from the server, messages delivered to the device will become offline messages and can be retained for up to 72 hours. If there are multiple offline messages, only the latest three can be retained on the device. If messages pushed when the application is closed cannot be received after the application is launched again, check whether the `XGPushManager.unregisterPush\(this\)` API has been called.
+- After the Service is disconnected from the server, messages delivered to the device will become offline messages and can be retained for up to 72 hours. If there are multiple offline messages, only the latest three can be retained on the device. If messages pushed when the application is closed cannot be received after the application is launched again, check whether the `XGPushManager.unregisterPush\(this\)` API has been called.
 - If you have already integrated a vendor channel, but pushes still cannot be received offline, use the [troubleshooting tool](https://console.cloud.tencent.com/tpns/user-tools) to check whether the token has been successfully registered with the vendor, and if not, troubleshoot as instructed in [Troubleshooting Vendor Channel Registration Failures](https://intl.cloud.tencent.com/document/product/1024/37006).
-- QQ and WeChat are in the system-level application allowlist, and their services will not be terminated but survive on the backend after they are closed, so the user can still receive messages.
+- QQ and Weixin are in the system-level application allowlist, and their services will not be terminated but survive on the backend after they are closed, so the user can still receive messages.
 
 ### Why does device registration fail?
 
@@ -120,7 +120,7 @@ Tencent Push Notification Service is not available on Nubia phones released afte
 From SDK v1.1.6.3, in order to avoid **the situation where push services of other vendors auto-start and transfer user data on the background on a phone**, push service components of other vendors will be disabled on the phone.
 Huawei uses some common components for different features such as account, game, and push. Disabling the push component by Tencent Push Notification Service may make other service features unable to start on a non-Huawei phone. To disable this disablement feature, configure the following:
 Add the following node configuration under the `application` tag of the `AndroidManifest.xml` file, uninstall the application, and reinstall it.
-```
+```xml
 <meta-data
 		android:name="tpns-disable-component-huawei-v2"
 		android:value="false" />
@@ -182,16 +182,16 @@ Below is an example of push API fields, where `icon_color: 123456` indicates the
 }
 ```
 
-The display effect after adaption is as shown below. We recommend you draw an icon based on the demo logo.
+The display effect after adaption is as shown below. [We recommend you draw an icon based on the demo logo](https://git.code.tencent.com/tpns/tpns-Demo-Android/blob/master/app/src/main/res/drawable/notification_icon.png).
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f3df2a69acc72d182fd74a6799734dd9.jpg" width="60%"></img>
 
 
 >?
->- The small icon must be a PNG image with an alpha channel.
->- The background must be transparent.
->- Do not leave too much padding around the icon.
->- We recommend you use an image with dimensions of 46 x 46, because smaller images will be blurry and larger images will be automatically scaled down.
+- The small icon must be a PNG image with an alpha channel.
+- The background must be transparent.
+- Do not leave too much padding around the icon.
+- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
 
 
 ### Why can't messages be displayed in the notification bar after arriving at mobile phones on Meizu Flyme 6.0 or earlier?
@@ -230,8 +230,8 @@ android.useAndroidX=trueandroid.enableJetifier=true
 ### What should I do if "the application transferred information over HTTP in plaintext" is reported for vendor channel push SDKs?
 
 After you integrate the push services of various vendor channels, certain security detection tools may prompt that "the application transferred information over HTTP in plaintext". HTTP addresses involved are as follows:
-1. Mi Push SDK: `http://new.api.ad.xiaomi.com/logNotificationAdActions,http://resolver.msg.xiaomi.net/psc/?t=a`
-2. Meizu Push SDK: `http://norma-external-collect.meizu.com/android/exchange/getpublickey.do,http://norma-external-collect.meizu.com/push/android/external/add.do`
+1. Mi Push SDK: http://new.api.ad.xiaomi.com/logNotificationAdActions, http://resolver.msg.xiaomi.net/psc/?t=a
+2. Meizu Push SDK: http://norma-external-collect.meizu.com/android/exchange/getpublickey.do, http://norma-external-collect.meizu.com/push/android/external/add.do
 
 All the above HTTP URLs are from the push SDKs of relevant vendors. The Tencent Push Notification Service team is unable to clarify their purposes or control their behaviors, but is actively contacting them and promoting the adoption of transfer over HTTPS. Currently, you should evaluate and choose whether to continue to use the above vendors' push services.
 
@@ -253,3 +253,18 @@ No. Google services and a network with normal access to Google are necessary for
 
 ### What clusters is the FCM channel applicable to?
 The FCM channel is applicable to clusters in Hong Kong (China) and Singapore.
+
+
+### Why "no message arrival data" is reported after a message is delivered successfully?
+**Troubleshooting process:**
+**Vendor channel delivery failure**:
+1. Check whether the limit on the number of messages pushed per device per day of the vendor channel is exceeded. For the message count limits of different vendors, see [Vendor Message Classification Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250). For example, Huawei's return code 256 indicates that the limit on the information and marketing messages sent in the current day is exceeded and that the message sending policy needs to be adjusted.
+2. Check whether [the display of message arrival receipts](https://intl.cloud.tencent.com/document/product/1024/35246) is configured for the Huawei, HONOR, and Meizu push channels. If not, arrival data cannot be reported (without affecting the actual push results).
+3. The vendor delays the message delivery. If Tencent Push Notification Service has delivered the message to the vendor in time but the vendor does not deliver the message to the device, you can contact the vendor for reasons.
+4. Check whether the notification bar is enabled. For some vivo and OPPO models, the notification bar is disabled by default. Determine whether to manually enable the notification bar.
+
+**Tencent Push Notification Service channel delivery failure**:
+Possible case 1: The Tencent Push Notification Service backend delivered the message via the Tencent Push Notification Service channel when the link between the Tencent Push Notification Service SDK and the backend was actually disconnected. As a result, the message failed to reach the device.
+Possible case 2: By default, the Tencent Push Notification Service SDK sends a heartbeat at an interval of five minutes to maintain a persistent connection. When it fails to send a heartbeat, the SDK immediately rebuilds the persistent connection. For example, if the SDK receives five push messages from the backend before the persistent connection is rebuilt successfully, only the latest three push messages will be delivered after the persistent connection is rebuilt. As a result, the first two push messages are delivered through the Tencent Push Notification Service channel and fail to reach the device.
+Possible case 3: No arrival event was reported but the message actually reached the device (the actual push effect is not affected).
+
