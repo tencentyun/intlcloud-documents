@@ -227,6 +227,8 @@ chown -R nginx:nginx /var/www
  1. `cp /etc/nginx/nginx.conf ~/nginx.conf.bak`を実行し、現在の設定ファイルをホーム（HOME）ディレクトリにバックアップします。
  2. SFTPまたはSCPなどのソフトウェアを使用して、現在の設定ファイルをローカルコンピュータにダウンロードします。
 4. `/etc/nginx/nginx.conf`を変更するか、または次の内容に置き換えます。
+
+
 ```plaintext
 # For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
@@ -363,12 +365,17 @@ http {
 
 }
 ```
+
+
 5. 次のコマンドを順に実行し、Nginxサービスを起動します。
 **コマンド1：**
+
 ```bash
 systemctl enable nginx
 ```
+
  **コマンド2：**
+
 ```bash
 systemctl start nginx
 ```
@@ -392,6 +399,7 @@ systemctl start nginx
 ### NextCloudサーバー設定ファイルの変更
 
 1. テキスト編集ツールを使用して`config.php`を作成し、次の内容を入力して、メモの内容に基づいて関連の値を変更します。
+
 ```php
 <?php
 $CONFIG = array(
@@ -408,10 +416,12 @@ $CONFIG = array(
   ),
 );
 ```
+
  下図に示すように：
-![](https://main.qcloudimg.com/raw/b14a23e2cac3ac988745fcd82fe56e18.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/yJvR645_b14a23e2cac3ac988745fcd82fe56e18.png)
 2. このファイルを保存し、`/var/www/nextcloud/config/`ディレクトリ下にアップロードします（ファイル名は`config.php`のままにしておきます）。SFTPまたはSCPソフトウェアでファイルをアップロードするか、または`rz -bye`コマンドによってアップロードすることができます。
 3. 次のコマンドを実行し、設定ファイルの所有者を変更します。
+
 ```bash
 chown nginx:nginx /var/www/nextcloud/config/config.php
 ```
@@ -456,6 +466,7 @@ cronを設定してNextCloudサーバーのバックエンドタスクを行え�
 
 1. SSHツールを使用して新規購入サーバーにログインします。
 2. 次のコマンドを実行し、PHPモジュールをインストールします。
+
 ```bash
 yum install php-posix
 ```
@@ -464,9 +475,11 @@ yum install php-posix
 crontab -u nginx -e
 ```
 4. 続いての編集画面はvi/vimです。`i`キーを押して編集モードに入り、次の内容の1行を挿入します。
+
 ```plaintext
 */5 * * * * php -f /var/www/nextcloud/cron.php
 ```
+
 その後、`ESC`を押して編集モードを終了し、`:wq`を入力して保存し、終了します（vi/vimの詳細な操作ガイドについては関連ドキュメントをご参照ください）。
 上記の設定ではNextCloud公式が推奨する5分に1回の実行を使用しています（分数は5の整数倍）。5分後にバックエンドタスクの実行が完了すると、ブラウザを開いてNextCloudサーバーにログインできるようになります。右上隅にあるユーザー名のイニシャルのアイコンをクリックし、**設定**に進み、左側メニューから**基本設定**に進むと、**バックエンドタスク**のところにデフォルトでCronが選択されていることを確認できます。
 
@@ -482,9 +495,11 @@ yum install php-pecl-apcu
 ```
 3. 次のコマンドを順に実行し、Nginx とPHP-FPMを再起動します。
 **コマンド1：**
+
 ```bash
 systemctl restart nginx
 ```
+
  **コマンド2：**
 ```bash
 systemctl restart php-fpm
