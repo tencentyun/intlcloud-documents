@@ -32,11 +32,11 @@ exports.handle = (event, context, callback) => {
 
 ## 操作步骤
 
-1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/index)，选择**广州**地域。
+1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index)，选择**广州**地域。
 2. 选择左侧导航栏**函数服务**，在“函数服务”列表页面选择函数名。
 3. 选择**函数代码**页签，根据您的实际需求修改函数代码。
-4. 在 IDE 代码编辑窗口右上角中单击**<img src="https://main.qcloudimg.com/raw/2b9a01a346ba19c9050c6c160ec54f48.jpg" width="2%"></img>**，在下拉列表中选择**自动安装依赖:关闭**以开启自动安装依赖，如下图所示：
-   ![](https://main.qcloudimg.com/raw/a6e558badfef96cbbcc85bbe31a11b16.png)
-   或选择上传方式为**在线依赖安装**。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/d268d8687df5e420ba7f296678d0933a.png)
+4. 在 IDE 代码编辑窗口右上角中单击**<img src="https://main.qcloudimg.com/raw/2b9a01a346ba19c9050c6c160ec54f48.jpg" width="2%"></img>**，在下拉列表中选择**自动安装依赖:关闭**以开启自动安装依赖，如下图所示： 
+	 ![](https://main.qcloudimg.com/raw/a6e558badfef96cbbcc85bbe31a11b16.png)
+   开启自动安装依赖后，刷新界面，在代码编辑区域右下角单击**切换到旧版编辑器**，选择上传方式为**在线安装依赖**。
+	 ![](https://qcloudimg.tencent-cloud.cn/raw/d268d8687df5e420ba7f296678d0933a.png)
 5. 单击**部署**，云函数后台会根据 `package.json` 自动安装依赖。

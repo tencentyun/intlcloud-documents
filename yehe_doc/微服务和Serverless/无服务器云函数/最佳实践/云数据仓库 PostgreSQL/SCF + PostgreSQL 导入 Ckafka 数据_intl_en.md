@@ -1,21 +1,21 @@
-## Background
-SCF provides a serverless execution environment for companies and developers. For more information, see [SCF](https://intl.cloud.tencent.com/zh/product/scf).
+## Overview
+This document introduces a free-of-maintenance approach to import Kafka data to Cloud Data Warehouse PostgreSQL instances by using SCF. 
 
-A common use case of CDWPG is to syncing messages from the messaging middleware for analysis. This document describes a convenient method where an SCF function imports data from Kafka to CDWPG in real time, eliminating your need to maintain any services.
+Cloud Data Warehouse PostgreSQL (CDWPG) can sync messages from the messaging middleware for analysis. 
 
-## Notes
-- This function currently can use CKafka as the data source and does not support self-built Kafka.
-- This function currently can write data into only one table in CDWPG as the target. If you want to write data into multiple tables, create the corresponding function for each table as follows:
+## Limits
+- Only Tencent Cloud CKafka is supported as the data source. External Kafka services are not supported.
+- One function can only import data to one table in CDWPG. To write data into multiple tables, you need to create one function for each table.
 
 ## Directions
 ### Step 1. Create a function
-In the [SCF console](https://console.cloud.tencent.com/scf/index?rid=4), select **Function Service** > **Create**. On the **Create Function** page, select **Phython3.6** as the **runtime environment**, search for the keyword "ckafka" in **Fuzzy search**, select the template function **Load CKafka Data into CDW**, and click **Next**.
-![](https://qcloudimg.tencent-cloud.cn/raw/48f0e533bf7677ee50714b13cd9b5388.png)
-On the **Function Configuration** page, complete the settings in **Environment Configuration** and **Network Configuration** in **Advanced Configuration** as follows:
+In the [SCF console](https://console.cloud.tencent.com/scf/index?rid=4), select **Functions > Create**. In the **Create** page, enter **ckafka** and **CDW** in the **Fuzzy search** field, complete the settings and click **Next**.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/D5QU540_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230164750.png)
+On the **Function configuration** page, complete the settings in **Environment configuration** and **Network configuration** in **Advanced configuration** as follows:
 
-- **Environment Configuration**
- - Memory: set the memory based on the actual running status, which is 128 MB by default. If it is insufficient during data import, you should increase it.
- - Environment variables:
+- **Environment configuration**
+ - Memory: Set the memory based on the actual running status, which is 128 MB by default. If it is insufficient during data import, you should increase it.
+ - Environment variable:
 <table>
 	<thead>
 	<tr>
@@ -27,33 +27,33 @@ On the **Function Configuration** page, complete the settings in **Environment C
 <tbody>
 	<tr>
 		<td>DB_DATABASE</td>
-		<td>Yes</td>
-		<td>Database name.</td>
+		<td>Supported</td>
+		<td>Database name</td>
 	</tr>
 	<tr>
 		<td>DB_HOST</td>
-		<td>Yes</td>
+		<td>Supported</td>
 		<td>If the function is deployed in a VPC and in the same subnet as CDWPG, you can enter the private IP of CDWPG; otherwise, enter the public IP and configure an allowlist.</td>
 	</tr>
 	<tr>
 		<td>DB_USER</td>
-		<td>Yes</td>
-		<td>Username.</td>
+		<td>Supported</td>
+		<td>Username</td>
 	</tr>
 	<tr>
 		<td>DB_PASSWORD</td>
-		<td>Yes</td>
-		<td>User password.</td>
+		<td>Supported</td>
+		<td>User password</td>
 	</tr>
 	<tr>
 		<td>DB_SCHEMA</td>
-		<td>Yes</td>
+		<td>Supported</td>
 		<td>Schema name. If it is not specified during table creation, it will be `public` in general.</td>
 	</tr>
 	<tr>
 		<td>DB_TABLE</td>
-		<td>Yes</td>
-		<td>Table name.</td>
+		<td>Supported</td>
+		<td>Table name</td>
 	</tr>
 	<tr>
 		<td>DB_PORT</td>
@@ -107,15 +107,18 @@ On the **Function Configuration** page, complete the settings in **Environment C
 	</tr>	
 </tbody>
 </table>
-- **Network Configuration**
- - VPC: we recommend you **activate** VPC and set the same VPC and subnet values as those of the CDWPG instance.
+- **Network configuration**
+ - VPC: **Activate** VPC and set the same VPC and subnet values as those of the CDWPG instance.
  ![](https://qcloudimg.tencent-cloud.cn/raw/b8d7e97e7d4a61c2b81ce772d5b183c4.png)
-    The corresponding values in CDWPG are as shown below:
- - Public Network Access: we recommend you also **enable** this option.
+ The corresponding values in CDWPG are as shown below:
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/fR4z323_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230164903.png)
+ - Public Network Access: **Enable** 
 
 ### Step 2. Configure a trigger
 
-In the **Function Service** list in the [SCF console](https://console.cloud.tencent.com/scf/index?rid=4), click the name of the newly created function to enter the function details page and click **Trigger Management** > **Create a Trigger** on the left to create a trigger. Here, set **CKafka trigger** for **Trigger Method** as shown below:
+In the **Functions** list in the [SCF console](https://console.cloud.tencent.com/scf/index?rid=4), click the name of the newly created function to enter the function details page and click **Trigger management** > **Create trigger** on the left to create a trigger. Here, set **CKafka trigger** for **Trigger method**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/01a053c7cea01dc919664c0bf2bda09f.png)
 
-For more information on trigger parameter configuration, see [CKafka Trigger Description](https://intl.cloud.tencent.com/document/product/583/17530).
+For details of trigger settings, see [CKafka Trigger Description](https://intl.cloud.tencent.com/document/product/583/17530).
+
+
