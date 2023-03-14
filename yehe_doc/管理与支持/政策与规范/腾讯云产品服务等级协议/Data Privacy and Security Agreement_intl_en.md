@@ -234,6 +234,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 64.[Application Performance Management](https://www.tencentcloud.com/document/product/1166/52837).
 65.[BM Cloud Physical Machine](https://www.tencentcloud.com/document/product/1171/52878).
 66.[Key Management Service](https://www.tencentcloud.com/document/product/1030/53638).
+67.[App Flow](https://www.tencentcloud.com/document/product/1165/54050).
 
 ## 10.Jurisdiction-specific Requirements
 
