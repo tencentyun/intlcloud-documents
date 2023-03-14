@@ -62,9 +62,9 @@ The Node.js runtime supports online dependency installation. You can install the
 :::
 ::: Using a dependency manager
 The SCF online editor [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962) supports Terminal capability that has a built-in `npm` package management tool. 
-
->! Serverless Web IDE has a delay in supporting newer versions of runtime environments. If the console does not open up the Serverless Web IDE for the corresponding runtime environment, package and upload the dependency library together with the code for dependency installation or install the dependency online.
-
+<dx-alert infotype="notice" title="">
+ Serverless Web IDE has a delay in supporting newer versions of runtime environments. If the console does not open up the Serverless Web IDE for the corresponding runtime environment, package and upload the dependency library together with the code for dependency installation or install the dependency online.
+</dx-alert>
 This document takes installing the `lodash` library in the terminal as an example:
 
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and click **Functions** on the left sidebar.
@@ -128,9 +128,9 @@ def main_handler(event, context):
 :::
 ::: Using a dependency manager
 The SCF online editor [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962) supports Terminal capability that has a built-in `pip` package management tool. 
-
->! Serverless Web IDE has a delay in supporting newer versions of runtime environments. If the console does not open up the Serverless Web IDE for the corresponding runtime environment, package and upload the dependency library together with the code for dependency installation or install the dependency online.
-
+<dx-alert infotype="notice" title="">
+ Serverless Web IDE has a delay in supporting newer versions of runtime environments. If the console does not open up the Serverless Web IDE for the corresponding runtime environment, package and upload the dependency library together with the code for dependency installation or install the dependency online.
+</dx-alert>
 This document takes installing the `numpy` library in the terminal as an example:
 
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and click **Functions** on the left sidebar.
@@ -230,7 +230,6 @@ This document uses installing the custom extension `swoole.so` for PHP 7.2 as an
      ```ini
 extension=/var/user/php_extension/swoole.so
      ```
-  ```
      - This extension is in the layer directory:
      ```ini
 extension=/opt/php_extension/swoole.so
@@ -248,14 +247,14 @@ function main_handler($event, $context) {
 ```
 
 6. Compress the function code and dependent library to a zip package. Upload the zip package and create a function via the [SCF console](https://console.cloud.tencent.com/scf).
-    	 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
-     2. Choose a region at the top of the **Functions** page and click **Create**.
-     3. Enter the basic information of the function on the **Create** page. 
-         ![](https://staticintl.cloudcachetci.com/yehe/backend-news/TRF5230_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170044.png)
-          - **Creation method**: Select **From scratch**.
-          - **Runtime environment**: Select **Php7.2**.
-          - **Submitting method**: Choose **Local ZIP file**.
-     4. Click **Complete**.
+  - Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Functions** on the left sidebar.
+  - Choose a region at the top of the **Functions** page and click **Create**.
+  - Enter the basic information of the function on the **Create** page. 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/TRF5230_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20221230170044.png)
+      - **Creation method**: Select **From scratch**.
+      - **Runtime environment**: Select **Php7.2**.
+      - **Submitting method**: Choose **Local ZIP file**.
+  - Click **Complete**.
    :::
    </dx-tabs>
 
