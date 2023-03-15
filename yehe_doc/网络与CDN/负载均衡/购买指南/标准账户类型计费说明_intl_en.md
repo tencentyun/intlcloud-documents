@@ -42,11 +42,11 @@ For bill-by-IP accounts, the CLB cost involves the following four parts: instanc
 </tr>
 </table>
 
-+ Private network CLB is free of public network fee but generates instance fee. For more details, see [CLB Instance Upgrade and Price Adjustment](https://intl.cloud.tencent.com/zh/document/product/214/41565).
++ Private network CLB is free of public network fee but generates instance fee. For more details, see [CLB Instance Upgrade and Price Adjustment](https://intl.cloud.tencent.com/document/product/214/41565).
 + Public network CLB generates instance fee and public network fee.
-+ If <a href="https://intl.cloud.tencent.com/zh/document/product/214/38441"> cross-region binding 2.0</a> is configured and enabled for public network CLB instances, the cross-region binding fee is included in the CNN bill.
++ If <a href="https://intl.cloud.tencent.com/document/product/214/38441"> cross-region binding 2.0</a> is configured and enabled for public network CLB instances, the cross-region binding fee is included in the CNN bill.
 
->! Tencent Cloud plans to upgrade the architecture of all CLB instances staring from 00:00:00, November 2, 2021 (UTC +8). After the upgrade, the guaranteed performance of each individual CLB instance will be increased to 50,000 concurrent connections, 5,000 new connections per second and 5,000 QPS. The new unit price for CLB instances (both private and public network) is 0.686 USD/day for most regions, and 1.029 USD/day for the rest regions. See [CLB Instance Upgrade and Price Adjustment](https://intl.cloud.tencent.com/zh/document/product/214/41565) for more details.
+>! Tencent Cloud plans to upgrade the architecture of all CLB instances staring from 00:00:00, November 2, 2021 (UTC +8). After the upgrade, the guaranteed performance of each individual CLB instance will be increased to 50,000 concurrent connections, 5,000 new connections per second and 5,000 QPS. The new unit price for CLB instances (both private and public network) is 0.686 USD/day for most regions, and 1.029 USD/day for the rest regions. See [CLB Instance Upgrade and Price Adjustment](https://intl.cloud.tencent.com/document/product/214/41565) for more details.
 
 
 ## Pay-As-You-Go[](id:pay-as-you-go)
@@ -55,7 +55,7 @@ The CLB cost is calculated on the actual amount of usage.
 ### Pricing
 CLB cost = [Instance fee](#traffic-instance) + [Public network fee](#traffic-width) + [LCU fee](#traffic-lcu)
 #### [Instance fee](id:traffic-instance)
-The instance fee is billed by hour and settled once every hour. Each partial hour is billed as a full hour.
+The instance fee is billed by day and settled once every day. Each partial day is billed as a full day.
 
 <table>
 <thead>
@@ -77,12 +77,12 @@ The instance fee is billed by hour and settled once every hour. Each partial hou
 
 >!
 > - Fee for one settlement cycle will be deducted in advance when you create a pay-as-you-go CLB instance. Make sure that your account balance is sufficient.
-> - The CLB instance will incur hourly instance fees even when it is idle (i.e., there is no access requests and no real server is bound).
+> - The CLB instance will incur daily instance fees even when it is idle (i.e., there is no access requests and no real server is bound).
 #### [Public network fee](id:traffic-width)
 <dx-accordion>
 
-::: Bill by traffic[](id:traffic)
-This billing mode is based on the total volume of data (in GB) transferred over the public network and settled once every hour, which is applicable to scenarios where the business traffic fluctuates greatly. If your bandwidth utilization is below 10%, we recommend using bill-by-traffic.
+::: Bill\sby\straffic[](id:traffic)
+This billing mode is based on the total volume of data (in GB) transferred over the public network and settled once every day, which is applicable to scenarios where the business traffic fluctuates greatly. If your bandwidth utilization is below 10%, we recommend using bill-by-traffic.
 <dx-alert infotype="explain" title="">
 - Currently, the outbound traffic is billable, i.e., traffic from CLB to the public network.
 - To avoid unexpected costs due to traffic surges, you can set a bandwidth cap. Any traffic over the cap is dropped and does not incur charges.
@@ -118,48 +118,48 @@ This billing mode is based on the total volume of data (in GB) transferred over 
 <td>Bangkok, Mumbai</td>
 <td>0.1</td>
 </tr><tr>
-<td>São Paulo/td>
+<td>São Paulo</td>
 <td>0.15</td>
 </tr>
 </tbody></table>
 :::
-::: Bill by BWP[](id:bag)
-This billing mode bills multiple IPs in an aggregated manner and is applicable to large-scale businesses where public network instances have traffic peaks at different times. For more details about the pricing, see [BGP Bandwidth Package](https://intl.cloud.tencent.com/zh/document/product/684/15254#bgp).
+::: Bill\sby\sBWP[](id:bag)
+This billing mode bills multiple IPs in an aggregated manner and is applicable to large-scale businesses where public network instances have traffic peaks at different times. For more details about the pricing, see [BGP Bandwidth Package](https://intl.cloud.tencent.com/document/product/684/15254#bgp).
 :::
 </dx-accordion>
 
 #### [LCU fee](id:traffic-lcu)
-For more details on how LCU is billed in the pay-as-you-go modal, see [LCU Billing](https://intl.cloud.tencent.com/zh/document/product/214/41563).
+For more details on how LCU is billed in the pay-as-you-go modal, see [LCU Billing](https://intl.cloud.tencent.com/document/product/214/41563).
 
 ### Billing samples
 <dx-accordion>
 ::: Shared CLB instance
 #### Sample 1 (public network is billed by traffic)
-Suppose you use a pay-as-you-go CLB instance with bill-by-traffic public network and the total traffic from CLB to the public network is 2 GB between 09:00:00 and 09:59:59 in Guangzhou.
+Suppose you use a pay-as-you-go CLB instance with bill-by-traffic public network and the total traffic from CLB to the public network is 2 GB between June 1st 10:00:00 and June 2nd 09:59:59 in Guangzhou.
 - Total instance fee = Unit price × Usage duration, that is 0.686 USD/day × 1 day = 0.686 USD.
 - Total public network fee = Unit price × Total traffic, that is 0.12 USD/GB × 2 GB = 0.24 USD.
-Total fee = Instance fee + Public network fee, that is 0.686 USD + 0.24 USD = 0.926 USD, which will be settled and deducted at the next hour (10:00:00–10:59:59).
+Total fee = Instance fee + Public network fee, that is 0.686 USD + 0.24 USD = 0.926 USD.
 
 #### Sample 2 (public network is billed by bandwidth package)
-Suppose you use a pay-as-you-go CLB instance with bill-by-BWP public network between 09:00:00 and 09:59:59 in Guangzhou.
+Suppose you use a pay-as-you-go CLB instance with bill-by-BWP public network between June 1st 10:00:00 and June 2nd 09:59:59 in Guangzhou.
 - Total instance fee = Unit price × Usage duration, that is 0.686 USD/day × 1 day = 0.686 USD.
-- Total public network fee for this one-hour period cannot be settled because <a href="https://intl.cloud.tencent.com/zh/document/product/684/15254">BWP fees</a> are settled monthly.
-Total fee = Instance fee, that is 0.686 USD, which will be settled and deducted at the next hour (10:00:00–10:59:59).
+- Total public network fee for this period cannot be settled because <a href="https://intl.cloud.tencent.com/document/product/684/15254">BWP fees</a> are settled monthly.
+Total fee = Instance fee, that is 0.686 USD.
 :::
 ::: LCU-supported CLB instance
 #### Sample 1 (public network is billed by traffic)
-Suppose you use a pay-as-you-go CLB instance with bill-by-traffic public network, the total traffic from CLB to the public network is 2 GB between 09:00:00 and 09:59:59 in Guangzhou, and the average LCUs used per hour is 2 LCUs.
+Suppose you use a pay-as-you-go CLB instance with bill-by-traffic public network, the total traffic from CLB to the public network is 2 GB between June 1st 10:00:00 and June 2nd 09:59:59 in Guangzhou and the average LCUs used per hour is 2 LCUs.
 - Total instance fee = Unit price × Usage duration, that is 0.686 USD/day × 1 day = 0.686 USD.
 - Total public network fee = Unit price × Total traffic, that is 0.12 USD/GB × 2 GB = 0.24 USD.
-- Total LCU fee = 2 LCUs × 0.0072 USD/LCU/hour × 1 hour = 0.0144 USD.
-Total fee = Instance fee (0.686 USD) + Public network fee (0.24 USD) + LCU fee (0.0144 USD) = 0.9404 USD.
+- Total LCU fee = 2 LCUs × 0.0072 USD/LCU/hour × 24 hour = 0.3456 USD.
+Total fee = Instance fee (0.686 USD) + Public network fee (0.24 USD) + LCU fee (0.3456 USD) = 1.2716 USD.
 
 #### Sample 2 (public network is billed by bandwidth package)
-Suppose you use a pay-as-you-go CLB instance with bill-by-BWP public network between 09:00:00 and 09:59:59 in Guangzhou and the average LCUs used per hour is 2 LCUs.
+Suppose you use a pay-as-you-go CLB instance with bill-by-BWP public network between June 1st 10:00:00 and June 2nd 09:59:59 in Guangzhou and the average LCUs used per hour is 2 LCUs.
 - Total instance fee = Unit price × Usage duration = 0.686 USD/day × 1 day = 0.686 USD.
-- Total public network fee for this one-hour period cannot be settled because <a href="https://intl.cloud.tencent.com/zh/document/product/684/15254">BWP fees</a> are settled monthly.
-- Total LCU fee = 2 LCUs × 0.0072 USD/LCU/hour × 1 hour = 0.0144 USD.
-Total fee = Instance fee (0.686 USD) + LCU fee (0.0144 USD) = 0.7004 USD, which will be settled and deducted at the next hour (10:00:00–10:59:59).
+- Total public network fee for this period cannot be settled because <a href="https://intl.cloud.tencent.com/document/product/684/15254">BWP fees</a> are settled monthly.
+- Total LCU fee = 2 LCUs × 0.0072 USD/LCU/hour × 24 hour = 0.3456 USD.
+Total fee = Instance fee (0.686 USD) + LCU fee (0.0144 USD) = 1.0316 USD.
 
 :::
 </dx-accordion>
