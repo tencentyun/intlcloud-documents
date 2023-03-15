@@ -1,8 +1,8 @@
 An event pattern defines how EventBridge filters events and routes them to the event target. It must be in the same structure as the matched events. This document describes the common event pattern types:
+### Must-Knows
 
-### Principle of Matching
+The event pattern match rules are as detailed below:
 
-The event pattern match rules are as detailed below: 
 
 - Matched events must contain all field names listed in the event pattern in the same nesting structure.
 - Match between events and an event pattern is exact match down to the character and case-sensitive. During match, no standardized operations will be performed on the strings.
@@ -12,83 +12,83 @@ The event pattern match rules are as detailed below:
 ### Specifying Condition and Operator
 
 You can specify a field value as a match condition. Values to be matched are in a JSON array and enclosed in `[ ]`. Values in `[ ]` are in OR relationship, and keys are in AND relationship.
-Taking COS data as an example, the received event is as shown below: 
+Assumes that the following COS event is received: 
 
-<dx-codeblock>
-:::  json
+
+```
 {
-	"specversion": "1.0",
-	"id": "13a3f42d-7258-4ada-da6d-023a333b4662",
-	"type": "cos:created:object",
-	"source": "cos.cloud.tencent",
-	"subject": "qcs::cos:ap-guangzhou:uid1250000000:bucketname",
-	"time": "1615430559146",
-	"region": "ap-guangzhou",
-	"datacontenttype": "application/json;charset=utf-8",
-	"resource": [
-		"qcs::eb:ap-guangzhou:uid1250000000:eventbusid/eventruleid"
-	],
-	"data": {
-		"name": "testname",
-		"scope": 100
-	}
+    "specversion": "1.0",
+    "id": "13a3f42d-7258-4ada-da6d-023a333b4662",
+    "type": "cos:created:object",
+    "source": "cos.cloud.tencent",
+    "subject": "qcs::cos:ap-guangzhou:uid1250000000:bucketname",
+    "time": "1615430559146",
+    "region": "ap-guangzhou",
+    "datacontenttype": "application/json;charset=utf-8",
+    "resource": [
+        "qcs::eb:ap-guangzhou:uid1250000000:eventbusid/eventruleid"
+    ],
+    "data": {
+        "name": "testname",
+        "scope": 100
+    }
 }
-:::
-</dx-codeblock>
+```
+To match this event with the specified `name` in the `data` field, the rule should be:
 
 
-For the above event, if you specify the `name` value in the `data` field as a match condition, a rule that can be normally triggered is as follows: 
-
-
-<dx-codeblock>
-:::  json
+```
 {
-	"data": {
-		"name": [
-			"testname"
-		]
-	}
+    "data": {
+        "name": [
+            "testname"
+        ]
+    }
 }
-:::
-</dx-codeblock>
+```
+To match the event with any of the specified `name` values in the `data` field, the statement should be:
 
-<span id=2></span>
+
+```
+{
+    "data": {
+        "name": [
+            "testname","test"
+        ]
+    }
+}
+```
+
+
 ### Prefix Matching
 
-You can perform key value matching by comparing the event prefix with that specified in the pattern, such as `{ "prefix": "2021-10-02" }`.
+You can match events with the specified prefix by using `{ "prefix": "2021-10-02" }`.
+Assumes that the following COS event is received: 
 
-Taking COS data as an example, the received event is as shown below: 
 
-
-<dx-codeblock>
-:::  json
+```
 {
-	"specversion": "1.0",
-	"id": "13a3f42d-7258-4ada-da6d-023a333b4662",
-	"type": "cos:created:object",
-	"source": "cos.cloud.tencent",
-	"subject": "qcs::cos:ap-guangzhou:uid1250000000:bucketname",
-	"time": "1615430559146",
-	"region": "ap-guangzhou",
-	"datacontenttype": "application/json;charset=utf-8",
-	"resource": [
-		"qcs::eb:ap-guangzhou:uid1250000000:eventbusid/eventruleid"
-	],
-	"data": {
-		"name": "testname",
-		"scope": 100
-	}
+    "specversion": "1.0",
+    "id": "13a3f42d-7258-4ada-da6d-023a333b4662",
+    "type": "cos:created:object",
+    "source": "cos.cloud.tencent",
+    "subject": "qcs::cos:ap-guangzhou:uid1250000000:bucketname",
+    "time": "1615430559146",
+    "region": "ap-guangzhou",
+    "datacontenttype": "application/json;charset=utf-8",
+    "resource": [
+        "qcs::eb:ap-guangzhou:uid1250000000:eventbusid/eventruleid"
+    ],
+    "data": {
+        "name": "testname",
+        "scope": 100
+    }
 }
-:::
-</dx-codeblock>
+```
+To match the event with the specified prefix of `name`, the statement should be:
 
 
-
-If you specify the `name` value in the `data` field as a prefix match condition, a rule that can be normally triggered is as follows: 
-
-
-<dx-codeblock>
-:::  json
+```
 {
    "data":{
       "name":[
@@ -98,16 +98,14 @@ If you specify the `name` value in the `data` field as a prefix match condition,
       ]
    }
 }
-:::
-</dx-codeblock>
-
+```
 ### Suffix Matching
-You can perform key value matching by comparing the event suffix with that specified in the pattern, such as `{ "suffix": ".txt" }`.
 
-Taking TDMQ data as an example, the received event is as shown below: 
+You can match events with the specified suffix by using `{ "suffix": ".txt" }`.
+Assumes that the following TDMQ event is received: 
 
-<dx-codeblock>
-:::  json
+
+```
 {
     "specversion": "1.0",
     "id": "13a3f42d-7258-4ada-da6d-023a333b4662",
@@ -128,33 +126,26 @@ Taking TDMQ data as an example, the received event is as shown below:
                     "msgBody": "Hello from TDMQ!"
     }
 }
-:::
-</dx-codeblock>
+```
+To match the event with the specified topic suffix, the statement should be:
 
-If you specify the `topic` value in the `data` field as a suffix match condition, a rule that can be normally triggered is as follows: 
 
-<dx-codeblock>
-:::  json
+```
 {
-	"data": {
-		"topic": [{
-			"suffix":"/topic-1"
-		}]
-	}
+    "data": {
+        "topic": [{
+            "suffix":"/topic-1"
+        }]
+    }
 }
-:::
-</dx-codeblock>
-
-
+```
 ## Exclusion Matching
 
-You can specify a field value that you want to exclude from event match, such as `{ "anything-but": "initializing" }`.
+You can match events that contain anything but the specified value in the specified field with a statement like `{ "anything-but": "initializing" }`.
+Assumes that the following COS event is received: 
 
-Taking COS data as an example, the received event is as shown below: 
 
-
-<dx-codeblock>
-:::  json
+```
 {
    "specversion":"1.0",
    "id":"13a3f42d-7258-4ada-da6d-023a333b4662",
@@ -172,49 +163,38 @@ Taking COS data as an example, the received event is as shown below:
       "scope":100
    }
 }
-:::
-</dx-codeblock>
+```
+To match events with anything but `teset1` in the `name` of `data`, the statement should be:
 
 
-
-If you specify the `name` value in the `data` field as an exclusion match condition, a rule that can be normally triggered is as follows: 
-
-<dx-codeblock>
-:::  json
+```
 {
-	"data": {
-		"name": [{
-			"anything-but":"test1"
-		}]
-	}
+    "data": {
+        "name": [{
+            "anything-but":"test1"
+        }]
+    }
 }
-:::
-</dx-codeblock>
+```
+To match the event with anything by the specified value in the `name` of `data`, the statement should be: 
 
 
-
-If you specify the `name` value in the `data` field as an exclusion match condition, a rule that cannot be normally triggered is as follows: 
-
-
-<dx-codeblock>
-:::  json
+```
 {
-	"data": {
-		"name": [{
-			"anything-but":"testname"
-		}]
-	}
+    "data": {
+        "name": [{
+            "anything-but":"testname"
+        }]
+    }
 }
-:::
-</dx-codeblock>
-
+```
 ### Inclusion Matching
-You can specify a field to be included in data as a match condition, such as `{ "contain": ".txt" }`.
 
-Taking TDMQ data as an example, the received event is as shown below: 
+You can match events with the specified values in the specified field of `data` by using a statement like `{ "contain": ".txt" }`.
+Assumes that the following TDMQ event is received: 
 
-<dx-codeblock>
-:::  json
+
+```
 {
     "specversion": "1.0",
     "id": "13a3f42d-7258-4ada-da6d-023a333b4662",
@@ -235,31 +215,39 @@ Taking TDMQ data as an example, the received event is as shown below:
                     "msgBody": "Hello from TDMQ!"
     }
 }
-:::
-</dx-codeblock>
+```
+To match the event with the specified `topic` value in `data`, the statement should be:
 
-If you specify the `topic` value in the `data` field as an inclusion match condition, a rule that can be normally triggered is as follows: 
 
-<dx-codeblock>
-:::  json
+```
 {
-	"data": {
-		"topic": [{
-			"contain":"topic-1"
-		}]
-	}
+    "data": {
+        "topic": [{
+            "contain":"topic-1"
+        }]
+    }
 }
-:::
-</dx-codeblock>
+```
+
+To match the event that includes all the specified `topic` values in `data`, the statement should be: 
 
 
+```
+{
+    "data": {
+        "topic": [{
+            "contain":["topic-1","appid"]
+        }]
+    }
+}
+```
 ### Array Matching
 
-You can filter array fields with syntaxes, such as `{"array": "{\"key1:\"value1\"}"}`.
-To generate event rules based on a field in the `data` attribute, such as DTS data, the received event is as follows:  
+You can filter array fields with a syntax statement, such as `{"array": "{\"key1:\"value1\"}"}`.
+Assumes that the following DTS event is received:
 
-<dx-codeblock>
-:::  json
+
+```
 {
   "id": "13a3f42d-7258-4ada-da6d-023a33******",
   "type": "dts:mysql:update",
@@ -329,120 +317,110 @@ To generate event rules based on a field in the `data` attribute, such as DTS da
     "eb_connector": "cdb-xxx"
   }
 }
-:::
-</dx-codeblock>
+```
+To match the event via the `columns` fields, the statement should be: 
 
 
-
-For the above event, to match the rule with the `columns` fields, the triggered rule is as follows:  
-
-
-<dx-codeblock>
-:::  json
+```
 {
-	"source": "dts.cloud.tencent",
-	"type": "dts:mysql:update",
-	"data": {
-		"event": {
-			"dmlEvent": {
-				"columns": [{
-					"array": "{\"name\":\"time\"}"
-							}]
-			}
-		}
-	}
+    "source": "dts.cloud.tencent",
+    "type": "dts:mysql:update",
+    "data": {
+        "event": {
+            "dmlEvent": {
+                "columns": [{
+                    "array": "{\"name\":\"time\"}"
+                }]
+            }
+        }
+    }
 }
-:::
-</dx-codeblock>
+```
+Multiple filters are combined with AND.
 
 
-
-Multiple filters are combined with AND. 
-
-
-<dx-codeblock>
-:::  json
+```
 {
-	"source": "dts.cloud.tencent",
-	"type": "dts:mysql:update",
-	"data": {
-		"event": {
-			"dmlEvent": {
-				"columns": [{
-					"array": "{\"name\":\"id\",\"originalType\":\"int(11)\"}"
-							}]
-			}
-		}
-	}
+    "source": "dts.cloud.tencent",
+    "type": "dts:mysql:update",
+    "data": {
+        "event": {
+            "dmlEvent": {
+                "columns": [{
+                    "array": "{\"name\":\"id\",\"originalType\":\"int(11)\"}"
+                            }]
+            }
+        }
+    }
 }
-:::
-</dx-codeblock>
-
-
-
-
+```
 ### IP Matching
 
-You can specify an IP address in the `data` field as a match condition. For example, in the following sample event pattern, only events whose IP is within the `10.0.0.0/24` IP range will be matched: `{ "cidr": "10.0.0.0/24" }`.
+You can specify an IP address in the `data` field as a match condition. For example, if the statement is `{ "cidr": "10.0.0.0/24" }`, events whose IP is within the `10.0.0.0/24` IP range are returned. 
+Assumes that the following COS event is received: 
 
-Taking COS data as an example, the received event is as shown below: 
 
-
-<dx-codeblock>
-:::  json
+```
 {
-	"specversion": "1.0",
-	"id": "13a3f42d-7258-4ada-da6d-023a333b4662",
-	"type": "cos:created:object",
-	"source": "cos.cloud.tencent",
-	"subject": "qcs::cos:ap-guangzhou:uid1250000000:bucketname",
-	"time": "1615430559146",
-	"region": "ap-guangzhou",
-	"datacontenttype": "application/json;charset=utf-8",
-	"resource": [
-		"qcs::eb:ap-guangzhou:uid1250000000:eventbusid/eventruleid"
-	],
-	"data": {
-		"name": "testname",
-		"scope": 100,
-		"source-ip": "10.0.0.123"
-	}
+    "specversion": "1.0",
+    "id": "13a3f42d-7258-4ada-da6d-023a333b4662",
+    "type": "cos:created:object",
+    "source": "cos.cloud.tencent",
+    "subject": "qcs::cos:ap-guangzhou:uid1250000000:bucketname",
+    "time": "1615430559146",
+    "region": "ap-guangzhou",
+    "datacontenttype": "application/json;charset=utf-8",
+    "resource": [
+        "qcs::eb:ap-guangzhou:uid1250000000:eventbusid/eventruleid"
+    ],
+    "data": {
+        "name": "testname",
+        "scope": 100,
+        "source-ip": "10.0.0.123"
+    }
 }
-:::
-</dx-codeblock>
+```
+To match the event with the specified `source-ip`, the statement should be:
 
 
-
-If you specify `source-ip` in the `data` field as a match condition, a rule that can be normally triggered is as follows: 
-
-
-<dx-codeblock>
-:::  json
+```
 {
-	"data": {
-		"source-ip": [{
-			"cidr": "10.0.0.0/24"
-		}]
-	}
+    "data": {
+        "source-ip": [{
+            "cidr": "10.0.0.0/24"
+        }]
+    }
 }
-:::
-</dx-codeblock>
+```
+### More
 
-
-### Notes
 
 - A null value is different from an empty string, and null values do not match with a pattern that is used to match empty strings.
 - All match patterns can be nested. In the following sample, exclusion match and prefix match are nested:
-  <dx-codeblock>
-  :::  json
-  {
-  "data": {
-  	"name": [{
-  		"anything-but": {
-  			"prefix": "init"
-  		}
-  	}]
-  }
-  }
-  :::
-  </dx-codeblock>
+```
+{
+    "data": {
+        "name": [{
+            "anything-but": {
+                "prefix": "init"
+            }
+        }]
+    }
+}
+```
+
+- OR is supported in all matching modes. You can specify the prefix and suffix as below:
+```
+{
+    "data": {
+        "topic": [
+          {
+            "prefix":"pre"
+          },
+          {
+            "suffix":"suf"
+          }
+        ]
+    }
+}
+```	
