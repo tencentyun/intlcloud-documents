@@ -82,7 +82,7 @@ The instance fee is billed by day and settled once every day. Each partial day i
 <dx-accordion>
 
 ::: Bill\sby\straffic[](id:traffic)
-This billing mode is based on the total volume of data (in GB) transferred over the public network and settled once every day, which is applicable to scenarios where the business traffic fluctuates greatly. If your bandwidth utilization is below 10%, we recommend using bill-by-traffic.
+This billing mode is based on the total volume of data (in GB) transferred over the public network and settled once every hour, which is applicable to scenarios where the business traffic fluctuates greatly. If your bandwidth utilization is below 10%, we recommend using bill-by-traffic.
 <dx-alert infotype="explain" title="">
 - Currently, the outbound traffic is billable, i.e., traffic from CLB to the public network.
 - To avoid unexpected costs due to traffic surges, you can set a bandwidth cap. Any traffic over the cap is dropped and does not incur charges.
