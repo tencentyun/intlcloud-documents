@@ -22,14 +22,15 @@
 1. 登录 [**腾讯特效SDK控制台 > 移动端 License**](https://console.tencentcloud.com/xmagic)，单击**新建测试 License**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/54ac63cd985f1170b2d74eaac4d0cd1d.png)
 2. 根据实际需求填写 `App Name`、`Package Name` 和 `Bundle ID`，选择所需测试的能力 **高级套餐 S1 - 04**、**原子能力X1-01**、**原子能力X1-02**，勾选后准确填写 **公司名称、所属行业类型**，上传**公司营业执照**，单击**确定**提交审核申请，等待人工审核流程。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e3d3bb59025c79ac4d46f45c67d1cc27.png" style="zoom:50%;" />
+
+![](https://qcloudimg.tencent-cloud.cn/raw/e3d3bb59025c79ac4d46f45c67d1cc27.png)
 3. 测试版 License 成功创建后，页面会显示生成的 License 信息。此时 Key 和 LicenseURL 两个参数暂未生效，需提交的审核通过后方才生效使用。**在 SDK 初始化配置时需要传入 Key 和 License URL 两个参数，请妥善保存以下信息。**
 ![](https://qcloudimg.tencent-cloud.cn/raw/6b8d5e0cca6b37e136040a50a17d5099.png)
 
 <dx-alert infotype="explain"> 
-<li> 测试版 License 有效期内可单击右侧的**编辑**，进入修改 Bundle ID 和 Package Name 信息，单击**确定**即可保存，但会导致此测试 License 下生效中的测试版腾讯特效功能模块**重新进入审核流程**，待审核通过后方可继续使用。</li>
-> <img src="https://qcloudimg.tencent-cloud.cn/raw/b2a4f9588cc7f0ba5131e631ace94d10.png" style="zoom: 67%;" />
-<li> 若无 Package Name 或 Bundle Id，可填写“-”。</li>
+1. 测试版 License 有效期内可单击右侧的**编辑**，进入修改 Bundle ID 和 Package Name 信息，单击**确定**即可保存，但会导致此测试 License 下生效中的测试版腾讯特效功能模块**重新进入审核流程**，待审核通过后方可继续使用。
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b2a4f9588cc7f0ba5131e631ace94d10.png" style="zoom: 67%;" />
+2. 若无 Package Name 或 Bundle Id，可填写“-”。
 </dx-alert>
 
 :::
