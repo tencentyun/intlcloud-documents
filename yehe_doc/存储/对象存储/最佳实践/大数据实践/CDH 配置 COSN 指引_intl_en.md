@@ -10,7 +10,6 @@ Currently, the support for big data modules by COSN is as follows:
 | Module | Supported | Service Module to Restart |
 | -------- | ----------------------- | -------------------------------------------- |
 | YARN     | Yes                    | NodeManager                             |
-| YARN     | Yes                    | NodeManager                             |
 | Hive     | Yes                    | HiveServer and HiveMetastore             |
 | Spark    | Yes                    | NodeManager                             |
 | Sqoop    | Yes                    |  NodeManager                             |
