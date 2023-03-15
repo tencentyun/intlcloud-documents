@@ -1,27 +1,27 @@
-## VPN Connection
+## VPN Connections
 Note the following when using a VPN connection:
- - After configuring VPN parameters, you need to add routing policies for your VPN gateway in the route table associated with the subnet, so that network requests from CVM instances in the subnet to access the peer IP range can reach the customer gateway through the VPN tunnel.
- - If the gateway is on v1.0, after configuring the route table, you need to ping an IP address in the peer IP range from a CVM instance in the VPC to activate the VPN tunnel.
+ - After configuring VPN parameters, you need to add routing policies for your VPN gateway in the route table associated with the subnet, so that network requests from CVMs in the subnet to access the peer IP range can reach the customer gateway through the VPN tunnel.
+ - For a VPN gateway v1.0, after configuring the route table, you need to ping an IP address in the peer IP range from a CVM in the VPC to activate the VPN tunnel.
  - The stability of the VPN connection depends on the ISP's public network.
  - The VPN connection only supports the PSK authentication method rather than CA authentication.
  - SPD or route IP ranges of the VPN connection cannot be specified as the following IP ranges:
-   - Multicast addresses that are all 0, all 255, or start with 224.
+   - Multicast addresses that are all 0, all 225, or start with 224.
    - Loopback addresses: 127.x.x.x/8.
    - IPv6 IP ranges.
 
 ## VPN Gateway
  - VPN Connections is a region-level service, but you can also connect to your VPN gateway in any region over the internet.
  - You cannot specify a public IP or the ISP of the public IP for the VPN gateway. IPv6 and anycast IP addresses are also not supported.
- - To create an SSL VPN gateway with 1Gbps bandwidth cap, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+ - To create a 1 Gbps SSL VPN gateway, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Customer Gateway
  - You must specify the IP address of the customer gateway. The public IP of the customer gateway cannot be the following IP addresses:
-   - Multicast addresses that are all 0, all 255, or start with 224.
+   - Multicast addresses that are all 0, all 225, or start with 224.
    - Loopback addresses: 127.x.x.x/8.
    - IP Addresses with host bits being all 0 or all 1, for example:
-     - Class A IP addresses that start with 1–126, such as `1–126.0.0.0` and `1–126.255.255.255`.
-     - Class B IP addresses that start with 128–191, such as `128–191.x.0.0` and `128–191.x.255.255`.
-     - Class C IP addresses that start with 192–223, such as `192–223.x.x.0` and `192–223.x.x.255`.
+     - Class-A IP addresses that start with 1-126, such as `1-126.0.0.0` and `1-126.255.255.255`.
+     - Class-B IP addresses that start with 128-191, such as `128-191.x.0.0` and `128-191.x.255.255`.
+     - Class-C IP addresses that start with 192-223, such as `192-223.x.x.0` and `192-223.x.x.255`.
    - Internal service addresses: `169.254.x.x/16`.
    - IPv6 addresses.
  - If you use an IPsec VPN connection to interconnect resources in two VPCs, the VPCs are each other's customer gateway, and their IP ranges cannot overlap.
@@ -35,6 +35,7 @@ Note the following when using a VPN connection:
 
 ## SSL VPN Client
  - You need to prepare the client on your own. An SSL VPN connection supports the open-source OpenVPN client or other compatible commercial clients.
+ - Each client can use only one SSL client configuration certificate. You cannot use the same certificate for multiple clients.
  - Supported OpenVPN versions: 2.4.8–3.x.
  - Identity verification is supported only by OpenVPN 3.x or other compatible clients.
 
@@ -61,6 +62,7 @@ Note the following when using a VPN connection:
 <tr>
 <td>VPN tunnels supported by one customer gateway</td>
 <td>20
+
 <dx-alert infotype="explain" title="">
 - The number of VPN tunnels supported by a customer gateway is the quota for the account.
 - Only one VPN tunnel can be established between a pair of customer gateway and VPN gateway.
