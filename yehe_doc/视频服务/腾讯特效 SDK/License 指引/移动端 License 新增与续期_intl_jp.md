@@ -22,14 +22,15 @@ Tencent Effectモジュールのテスト版License（無料テスト版の有�
 1. [**Tencent Effect SDKコンソール > モバイル端末License**](https://console.tencentcloud.com/xmagic)にログインし、**テスト版Licenseの新規作成**をクリックします。
 ![](https://qcloudimg.tencent-cloud.cn/raw/54ac63cd985f1170b2d74eaac4d0cd1d.png)
 2. 実際の必要性に応じて`App Name`、`Package Name`、`Bundle ID`を入力し、テストしたい機能である**ハイグレードパッケージS1 - 04**、**アトミック機能X1-01**、**アトミック機能X1-02**を選択し、チェックを入れた後、**会社名、所属業界の種類**を正しく入力し、**会社営業許可証**をアップロードし、**OK**をクリックして審査申請を送信し、手動での審査フローを待ちます。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e3d3bb59025c79ac4d46f45c67d1cc27.png" style="zoom:50%;" />
+
+![](https://qcloudimg.tencent-cloud.cn/raw/e3d3bb59025c79ac4d46f45c67d1cc27.png)
 3. テスト版Licenseの作成に成功すると、発行されたLicense情報が画面に表示されます。この時点ではKeyとLicenseURLという2つのパラメータはまだ有効になっておらず、送信したものが審査によって承認されて初めて有効化され使用できるようになります。**SDKの初期化設定の際に、KeyとLicense URLの2つのパラメータを渡す必要があります。次の情報を適切に保存してください。**
 ![](https://qcloudimg.tencent-cloud.cn/raw/6b8d5e0cca6b37e136040a50a17d5099.png)
 
 <dx-alert infotype="explain"> 
-<li>テスト版Licenseの有効期間内であれば、右側の**編集**をクリックして進み、Bundle IDとPackage Name情報を変更し、**OK**をクリックして保存することができます。ただし、それによって、このテストLicenseで有効なテスト版Tencent Effect機能モジュールが**新たに審査フローに入ってしまい**、承認されてからでなければ使用を継続できなくなる場合があります。</li>
-> <img src="https://qcloudimg.tencent-cloud.cn/raw/b2a4f9588cc7f0ba5131e631ace94d10.png" style="zoom: 67%;" />
-<li>Package NameまたはBundle Idがない場合は、「-」と入力します。</li>
+1. テスト版Licenseの有効期間内であれば、右側の**編集**をクリックして進み、Bundle IDとPackage Name情報を変更し、**OK**をクリックして保存することができます。ただし、それによって、このテストLicenseで有効なテスト版Tencent Effect機能モジュールが**新たに審査フローに入ってしまい**、承認されてからでなければ使用を継続できなくなる場合があります。
+<img src="https://qcloudimg.tencent-cloud.cn/raw/b2a4f9588cc7f0ba5131e631ace94d10.png" style="zoom: 67%;" />
+2. Package NameまたはBundle Idがない場合は、「-」と入力します。
 </dx-alert>
 
 :::
