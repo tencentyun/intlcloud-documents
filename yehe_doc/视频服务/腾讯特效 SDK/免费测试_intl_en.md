@@ -22,10 +22,12 @@ In the console, you can either **create a trial license for a new application** 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/0d4f80aa8fd068a9d562ee5246a1e63a.png" style="zoom:50%;" />
 3. After the trial license is successfully created, you will see the license URL and key, **which you need to pass in when initializing the SDK, so save a copy of the information**. Note that the license information becomes valid only after you pass the review.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d2bec2a1877a5b1ac83a4ae07e30db39.png)
-> ?
->- To modify the bundle ID and package name bound to a trial license, click **Edit** on the right and, after modification, click **Confirm**. Note that you will need to **go through the review process again** before you can continue to use the Tencent Effect module.
+
+<dx-alert infotype="explain"> 
+<li>To modify the bundle ID and package name bound to a trial license, click **Edit** on the right and, after modification, click **Confirm**. Note that you will need to **go through the review process again** before you can continue to use the Tencent Effect module.</li>
 >  ![](https://qcloudimg.tencent-cloud.cn/raw/733ce3011060a2c552435ebe7115d643.png)
->- You can enter `-` if you don’t have a package name or bundle ID to bind yet.
+<li>You can enter `-` if you don’t have a package name or bundle ID to bind yet.</li>
+</dx-alert>
 
 :::
 ::: Activate Tencent Effect for trial for an existing application
