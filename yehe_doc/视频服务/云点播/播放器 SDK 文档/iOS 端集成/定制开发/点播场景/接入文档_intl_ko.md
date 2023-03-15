@@ -34,10 +34,10 @@ Xcode 열기 -> 해당 Target 선택 -> "Build Setting" Tab 선택 -> "Other Lin
 ```
 2. 해당 라이브러리 파일 추가(SDK 디렉터리에 있음)
  **TXFFmpeg.xcframework**: .xcframework 파일을 프로젝트에 추가하고, “General - Frameworks, Libraries, and Embedded Content”에서 “Embed&Sign”으로 설정하고, “Project Setting - Build Phases - Embed Frameworks”에서 확인하고, ”Code Sign On Copy“ 옵션을 선택 상태로 설정합니다. 다음 이미지와 같습니다.
- **TXSoundTouch.xcframework**: .xcframework 파일을 프로젝트에 추가하고, “General - Frameworks, Libraries, and Embedded Content”에서 “Embed&Sign”으로 설정하고, “Project Setting - Build Phases - Embed Frameworks”에서 확인하고, “Code Sign On Copy” 옵션을 선택 상태로 설정합니다. 다음 이미지와 같습니다.<br>
- <img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b226decc76c33eff8c3f5b4cc4246bea.png" />
-<br>
-동시에, Xcode의 “Build Settings - Search Paths”로 전환하고, “Framework Search Paths”에서 위의 Framework가 있는 경로를 추가합니다.
+    **TXSoundTouch.xcframework**: .xcframework 파일을 프로젝트에 추가하고, “General - Frameworks, Libraries, and Embedded Content”에서 “Embed&Sign”으로 설정하고, “Project Setting - Build Phases - Embed Frameworks”에서 확인하고, “Code Sign On Copy” 옵션을 선택 상태로 설정합니다. 다음 이미지와 같습니다.<br>
+    <img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b226decc76c33eff8c3f5b4cc4246bea.png" />
+ <br>
+ 동시에, Xcode의 “Build Settings - Search Paths”로 전환하고, “Framework Search Paths”에서 위의 Framework가 있는 경로를 추가합니다.
 
 <b>MetalKit.framework</b>: Xcode를 열고, “project setting - Build  Phases - Link Binary With Libraries”로 전환하고, “+” 기호를 선택하고, “MetalKit”을 입력하여 프로젝트에 추가합니다. 아래 이미지와 같습니다.<br>
 <img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/8ab7576dcc8bbe7b36396955ca06b186.png" />
@@ -75,7 +75,38 @@ PIP 기능을 사용해야 하는 경우 아래 이미지와 같이 구성하고
 
 [](id:step2)
 
-### 2단계: Player 객체 생성
+### 2단계: SDK 액세스 환경 설정
+
+고객 비즈니스의 더 높은 보안성과 품질을 보장하고, 고객이 다양한 국가 및 지역의 법률 및 규정을 준수할 수 있도록 Tencent Cloud는 두 가지 세트의 SDK 액세스 환경을 제공합니다. 글로벌 사용자에게 서비스를 제공하는 경우 다음 인터페이스를 사용하여 글로벌 액세스 환경을 구성하는 것이 좋습니다.
+
+```objective-c
+// 글로벌 사용자에게 서비스를 제공하는 경우 SDK 액세스 환경을 글로벌 액세스 환경으로 구성합니다
+[TXLiveBase setGlobalEnv:"GDPR"]
+```
+
+[](id:step3)
+
+### 3단계: License 권한 설정
+
+이미 관련 License 권한을 획득한 경우, [Tencent Cloud RT-Cube 콘솔](https://console.cloud.tencent.com/vcube)에서 License URL과 License Key를 획득해야 합니다.
+License 권한을 획득하지 못했다면 [비디오 재생 License](https://cloud.tencent.com/document/product/881/74588)를 참고하여 관련 권한을 획득해야 합니다.
+
+License 정보를 획득한 후 SDK의 해당 인터페이스를 호출하기 전에 다음 인터페이스를 통해 License를 초기화하고 `- [AppDelegate application:didFinishLaunchingWithOptions:]`에서 다음 설정하는 것이 좋습니다.
+
+```objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSString * const licenceURL = @"<획득한 licenseUrl>";
+    NSString * const licenceKey = @"<획득한 key>";
+
+    //TXLiveBase는 "TXLiveBase.h" 헤더 파일에 위치
+    [TXLiveBase setLicenceURL:licenceURL key:licenceKey]; 
+    NSLog(@"SDK Version = %@", [TXLiveBase getSDKVersionStr]);
+}
+```
+
+[](id:step4)
+
+### 4단계: Player 객체 생성
 
 VOD 기능을 구현하기 위해 플레이어 SDK의 TXVodPlayer 모듈을 사용합니다.
 
@@ -84,9 +115,9 @@ TXVodPlayer *_txVodPlayer = [[TXVodPlayer alloc] init];
 [_txVodPlayer setupVideoWidget:_myView insertIndex:0]
 ```
 
-[](id:step3)
+[](id:step5)
 
-### 3단계: 렌더링 View 생성
+### 5단계: 렌더링 View 생성
 
 iOS에서 view는 기본 UI 렌더링 단위로 사용됩니다. 따라서 플레이어가 비디오 이미지를 표시할 수 있도록 크기와 위치를 조정할 수 있는 view를 구성해야 합니다.
 
@@ -109,9 +140,9 @@ view의 크기와 위치를 변경하여 비디오 이미지의 크기를 조정
  }];
 ```
 
-[](id:step4)
+[](id:step6)
 
-### 4단계: 재생 실행
+### 6단계: 재생 시작
 
 TXVodPlayer는 필요에 따라 선택할 수 있는 두 가지 재생 모드를 지원합니다.
 
@@ -135,7 +166,7 @@ fileId를 통해 비디오를 재생하면 플레이어가 실제 재생 URL에 
 :::
 </dx-tabs>
 
-### 5단계: 재생 중지
+### 7단계: 재생 중지
 
 재생을 중지할 때 현재 UI를 종료하기 전에 **removeVideoWidget**을 사용하여 view 컨트롤을 종료하는 것을 잊지 마십시오. 이렇게 하면 메모리 유출 및 화면 깜박임 문제를 방지할 수 있습니다.
 
@@ -191,8 +222,8 @@ int time = 600; // 값이 int 유형인 경우, 단위: 초
 startPlay를 처음 호출하기 전에 재생 시작 시간을 지정할 수 있습니다.
 
 ```objective-c
-float startTimeInMS = 600; // 단위: 밀리초
-[_txVodPlayer setStartTime:startTimeInMS];  // 재생 시작 시간 설정
+float startTimeInSecond = 60; // 단위: 초
+[_txVodPlayer setStartTime:startTimeInSecond];  // 재생 시작 시간 설정
 [_txVodPlayer startPlay:url];
 ```
 
@@ -322,7 +353,7 @@ VOD 진행률에는 **로딩 진행률** 및 **재생 진행률**의 두 가지 
 
 ### 13. 재생 네트워크 속도 리스닝
 
-[이벤트 리스닝](#listening)를 통해 비디오가 지연될 때 현재 네트워크 속도를 표시할 수 있습니다.
+[이벤트 리스닝](#listening)을 통해 비디오가 지연될 때 현재 네트워크 속도를 표시할 수 있습니다.
 
 * 'onNetStatus'의 'NET_SPEED'를 사용하여 현재 네트워크 속도를 확인할 수 있습니다. 자세한 사용 방법은 [재생 상태 피드백(onNetStatus)](#status)을 참고하십시오.
 * `PLAY_EVT_PLAY_LOADING` 이벤트가 감지된 후 현재 네트워크 속도가 표시됩니다.

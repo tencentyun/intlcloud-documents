@@ -11,13 +11,13 @@ The RT-Cube Player SDK is a subproduct SDK of RT-Cube, which provides excellent 
 
 This project provides the VOD and live playback which you can use to set up your own playback services.
 
-- [VOD playback](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE-EN.md): `TXVodPlayerController` encapsulates the APIs of the VOD player SDKs for Android and iOS. You can integrate it to develop your VOD service. For the detailed code sample, see `DemoTXVodPlayer`.
+- [VOD player SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE-EN.md): `TXVodPlayerController` encapsulates the APIs of the VOD player SDKs for Android and iOS. You can integrate it to develop your VOD service. For the detailed code sample, see `DemoTXVodPlayer`.
 
-- [Live playback](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE-EN.md): `TXLivePlayerController` encapsulates the APIs of the live player SDKs for Android and iOS. You can integrate it to develop your live playback service. For the detailed code sample, see `DemoTXLivePlayer`.
+- [Live player SDK](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE-EN.md): `TXLivePlayerController` encapsulates the APIs of the live player SDKs for Android and iOS. You can integrate it to develop your live playback service. For the detailed code sample, see `DemoTXLivePlayer`.
 
 To reduce the connection costs, the Player component (player with UIs) is provided in `example`. You can set up your own video playback service based on a few lines of simple code. You can apply the Player component's code to your project and adjust UI and interaction details based on your project requirements.
 
-- [Player component](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E6%92%AD%E6%94%BE%E5%99%A8%E7%BB%84%E4%BB%B6-EN.md): `SuperPlayerController` is the Player component, which combines VOD and live playback. It is currently in beta testing, and its features are being optimized. For the detailed code sample, see `DemoSuperplayer`.
+- [Player component](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E6%92%AD%E6%94%BE%E5%99%A8%E7%BB%84%E4%BB%B6-EN.md): `SuperPlayerController` is the Superplayer component, which is a secondary encapsulation of the VOD and live player SDKs for quick and easy integration. It is currently in beta testing, and its features are being optimized. For the detailed code sample, see `DemoSuperplayer`.
 
 ## Quick Integration
 
@@ -69,11 +69,11 @@ Add the following configuration to the `AndroidManifest.xml` file of Android:
 ```
 2. iOS natively uses `pod` for dependency. Edit the `podfile` file and specify your player SDK edition. `TXLiteAVSDK_Player` is integrated by default.
 ```xml
-pod 'TXLiteAVSDK_Player'	        // Player Edition
+pod 'TXLiteAVSDK_Player'          // Player Edition
 ```
 3. Integrate SDK Professional Edition.
 ```
-pod 'TXLiteAVSDK_Professional' 	// Professional Edition
+pod 'TXLiteAVSDK_Professional'  // Professional Edition
 ```
 
 If no edition is specified, the latest version of `TXLiteAVSDK_Player` will be installed by default.
@@ -82,10 +82,31 @@ If no edition is specified, the latest version of `TXLiteAVSDK_Player` will be i
 - Run the `flutter doctor` command to check the runtime environment until "No issues found!" is displayed.
 - Run `flutter pub get` to ensure that all dependent components have been updated successfully.
 
+## Applying for and Integrating Video Playback License
+If you have the required license, you need to get the license URL and key in the [RT-Cube console](https://console.cloud.tencent.com/vcube).
 
+If you don't have the required license, you need to get it as instructed in Video Playback License.
 
+To integrate a player, you need to [sign up for a Tencent Cloud account](https://www.tencentcloud.com/en/account/register), apply for the video playback license, and then integrate the license as follows. We recommend you integrate it during application start.
+
+If no license is integrated, exceptions may occur during playback.
+```dart
+String licenceURL = ""; // The license URL obtained
+String licenceKey = ""; // The license key obtained
+SuperPlayerPlugin.setGlobalLicense(licenceURL, licenceKey);
+```
+
+## Setting the SDK Connection Environment
+
+In order to help you conduct business with higher quality and security in compliance with applicable laws and regulations in different countries and regions, Tencent Cloud provides two SDK connection environments. If you serve global users, we recommend you use the following API to configure the global connection environment.
+
+```dart
+// If you serve global users, configure the global SDK connection environment.
+SuperPlayerPlugin.setGlobalEnv("GDPR");
+```
 
 ## Using the VOD Player
+
 The core class of the VOD player is `TXVodPlayerController`. For the detailed demo, see `DemoTXVodPlayer`.
 ```dart
 import 'package:flutter/material.dart';

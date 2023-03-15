@@ -1,22 +1,57 @@
 ## 準備作業
-1. より完全で全面的なプレーヤー機能を体験していただくために、[VOD](https://intl.cloud.tencent.com/product/vod)関連サービスをアクティブ化することをお勧めします。アカウント登録がないユーザーは、アカウントを登録して[トライアル](https://intl.cloud.tencent.com/login)を行うことができます。VODサービスをご利用にならない場合はこの手順を省略できますが、統合後に使用できるのはプレーヤーの基本機能のみとなります。
-2. Android Studioをダウンロードします。[Android Studio公式サイト](https://developer.android.com/studio)でダウンロードとインストールを行うことができます。ダウンロード済みの場合はこの手順を省略できます。
+1. より完全で包括的なプレーヤー機能を体験するには、[VOD](https://intl.cloud.tencent.com/product/vod)関連サービスを有効化することをお勧めします。未登録のユーザーはアカウントを登録し、[試用](https://intl.cloud.tencent.com/login)できます。VODサービスを使用しない場合は、この手順をスキップできますが、統合後にプレーヤーの基本機能のみを利用できます。
+2. Android Studioをダウンロードします。[Android Studio公式サイト](https://developer.android.com/studio)にアクセスし、ダウンロードしてインストールすることができます。すでにダウンロードしている場合は、この手順をスキップできます。
 
-## ここでは次の内容について知ることができます
-* AndroidプレーヤーSDKの統合方法
-* プレーヤーSDKを使用したVOD再生方法
-* プレーヤーSDKの基本機能を使用して、より多くの機能を実装する方法
+## このドキュメントから把握できること
+* AndroidプレーヤーSDKを統合する方法
+* プレーヤーSDKを使ったオンデマンド再生の方法
+* プレーヤーSDKの基盤となる機能を使用したり多くの機能の実現方法
 
 ## SDKの統合
 [](id:stepone)
-### ステップ1：SDK開発キットのダウンロード[](id:step1)
-[ダウンロード](https://vcube.cloud.tencent.com/home.html)からSDK開発キットをダウンロードし、SDK統合ガイドラインに従ってSDKをAppプロジェクトに組み込みます。
 
+### ステップ1：SDK開発パッケージをダウンロード[](id:step1)
+SDK開発パッケージを[ダウンロード](https://vcube.cloud.tencent.com/home.html)し、SDK統合ガイドラインに従って、SDKをAppプロジェクトに組み込みます。
 
+### ステップ2:**SDKへのアクセス環境の設定**
 
+お客様がより高品質かつ安全でコンプライアンスに則ったビジネスを展開し、各国・地域の規制の要求事項を満たすよう、Tencent Cloudは2つのSDKアクセス環境を提供します。グローバルユーザにサービスを提供している場合、以下のインターフェースでグローバルアクセス環境を設定することをお勧めします。
 
-### ステップ2：Viewの追加
-SDKはデフォルトでビデオレンダリング用にTXCloudVideoViewをご提供しています。最初のステップとして、以下のようにレイアウトxmlファイルにコードを追加します。
+```java
+// グローバルユーザにサービスを提供している場合、SDKアクセス環境にグローバルアクセス環境を設定してください
+TXLiveBase.setGlobalEnv("GDPR");
+```
+
+### ステップ3：License権限承認の設定
+
+すでに関連するLicense権限承認を取得している場合は、[Tencent Cloud View Cubeコンソール](https://console.cloud.tencent.com/vcube)にて、License URLおよびLicense Keyを取得する必要があります。
+
+License権限承認を取得していない場合は、先にビデオ再生License をご参照の上、関連する権限承認を取得してください。
+
+License情報を取得後、SDKの関連インターフェースを呼び出す前に、以下のインターフェースでLicenseを初期化します。Application類で以下の設定を行うことをお勧めします。
+
+```java
+public class MApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        String licenceURL = ""; // 取得したlicence url
+        String licenｃeKey = ""; // 取得したlicence key
+        TXLiveBase.getInstance().setLicence(this, licenceURL, licenceKey);
+        TXLiveBase.setListener(new TXLiveBaseListener() {
+            @Override
+            public void onLicenceLoaded(int result, String reason) {
+                Log.i(TAG, "onLicenceLoaded: result:" + result + ", reason:" + reason);
+            }
+        });
+    }
+}
+```
+
+### ステップ4:  Viewの追加
+
+SDKは、デフォルトでビデオレンダリングのためのTXCloudVideoViewが提供されています。最初の手順では、レイアウト用のxmlファイルに次のコードを追加します：
 ```xml
 <com.tencent.rtmp.ui.TXCloudVideoView
             android:id="@+id/video_view"
@@ -28,41 +63,41 @@ SDKはデフォルトでビデオレンダリング用にTXCloudVideoViewをご�
 
 [](id:step3)
 
-### ステップ3：Playerの作成
+### ステップ5：Playerの作成
 
-次に、**TXVodPlayer**のオブジェクトを作成し、setPlayerViewインターフェースを使用して、先ほどインターフェースに追加した**video_view**コントロールにバインドします。
+次に、**TXVodPlayer**のオブジェクトを作成し、setPlayerViewインターフェースを使用して、インターフェースに追加したばかりの**video_view**コントロールに関連付けます。
 
 ```java
-//mPlayerViewとは、ステップ2で追加したビデオレンダリングviewです
+//mPlayerViewはステップ2で追加したビデオレンダリングviewです
 TXCloudVideoView mPlayerView = findViewById(R.id.video_view);
-//playerオブジェクトの作成
+//playerオブジェクトを作成します
 TXVodPlayer mVodPlayer = new TXVodPlayer(getActivity());
-//playerオブジェクトとビデオレンダリングviewとのバインド
+//ビデオレンダリングviewにplayerオブジェクトを関連付けます
 mVodPlayer.setPlayerView(mPlayerView);
 ```
 
 [](id:step4)
 
-### ステップ4：再生の起動
+### ステップ6：再生を開始
 
-TXVodPlayerは2種類の再生モードをサポートしており、ニーズに応じて選択することができます。
+TXVodPlayerは2つの再生モードをサポートしており、必要に応じて選択できます。
 
 <dx-tabs>
-::: URL方式による方法
-  TXVodPlayerは内部で自動的に再生プロトコルを認識しますので、再生URLをstartPlay関数に渡すだけで完了です。
+::: URL方式
+  TXVodPlayerは内部で再生プロトコルを自動的に認識するので、再生URLをstartPlay関数に渡すだけでよいです。
 
 ```java
-// URLビデオリソースの再生
+// URLビデオリソースを再生
 String url = "http://1252463788.vod2.myqcloud.com/xxxxx/v.f20.mp4";
 mVodPlayer.startPlay(url); 
 
 
-// ローカルビデオリソースの再生
+// ローカルビデオリソースを再生
 String localFile = "/sdcard/video.mp4";
 mVodPlayer.startPlay(localFile); 
 ```
 :::
-::: FileId方式による方法
+::: FileId方式
 ```objectivec
 // 以下の新しいインターフェースの使用をお勧めします
 TXPlayInfoParams playInfoParam = new TXPlayInfoParams(1252463788, // Tencent CloudアカウントのappId
@@ -76,138 +111,138 @@ authBuilder.setAppId(1252463788);
 authBuilder.setFileId("4564972819220421305");
 mVodPlayer.startPlay(authBuilder); 
 ```
-[メディア資産管理](https://console.cloud.tencent.com/vod/media)で対応するビデオファイルを検索することができます。FileIdは、ファイルの名前の下に表示されます。
+[メディア資産管理](https://console.cloud.tencent.com/vod/media)で該当するファイルをさがして、ファイル名の下でFileIdを確認できます。
 
-FileId方式で再生する場合、プレーヤーはバックグラウンドに実際の再生アドレスをリクエストします。この時点でネットワークの異常やFileIdが存在しない場合、`TXLiveConstants.PLAY_ERR_GET_PLAYINFO_FAIL`イベントを受信します。逆に、`TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC`を受信した場合、リクエストが成功したことを意味します。
+FileId方式で再生すると、プレーヤーはリアルな再生アドレスをバックグラウンドにリクエストします。この時点でネットワークに異常が発生した場合、またはFileIdが存在しない場合は、`TXLiveConstants.PLAY_ERR_GET_PLAYINFO_FAIL`イベントが受信されます。そうでない場合は、リクエストが成功したことを示す`TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC`を受信します。
 :::
 </dx-tabs>
 
 
 [](id:5)
 
-### ステップ5：再生終了
+### ステップ7：再生の終了
 
-再生終了時、特に次のstartPlayを行う前には、**viewコントロールの破棄**を忘れずに行ってください。この操作をしない場合、大量のメモリリークや画面のちらつきといった問題が発生します。
+再生が終了したら、特に次のstartPlayの前に**viewコントロールを破棄してください**。そうしないと、大量のメモリリークやスプラッシュスクリーンの問題が発生します。
 
-また、再生画面を終了する際には、レンダリングViewの`onDestroy()`関数の呼び出しを忘れずに行ってください。この操作をしない場合、メモリリークや「Receiver not registered」といったアラームが発生することがあります。
+また、再生インターフェースを終了する際には、必ずレンダリングViewの`onDestroy()`関数を呼び出すようにしてください。そうしないと、メモリリークや"Receiver not registered"というアラームが発生する可能性があります。
 
 ```java
 @Override
 public void onDestroy() {
     super.onDestroy();
-    mVodPlayer.stopPlay(true); // trueは、最後のフレームをクリアすることを意味します
+    mVodPlayer.stopPlay(true); //trueは最後のフレームをクリアすることを意味します
     mPlayerView.onDestroy(); 
 }
 ```
->?stopPlayのブール型パラメータには、「最後のフレームをクリアするかどうか」という意味があります。RTMP SDKの以前のバージョンでは、ライブストリーミングプレーヤーにpauseの概念がなかったため、このブール値は最後のフレームのクリアを制御するために使用されます。
+>?stopPlayのブール型パラメータは、「最後のフレームをクリアするかどうか」を意味します。以前のバージョンのRTMP SDKのライブストリーミングプレーヤーにはpauseという概念がなかったので、このブール値で最後のフレームの画面のクリアをコントロールします。
 
-オンデマンド再生の終了後も、最後のフレームを残したい場合は、再生終了イベントを受信後に何もしないことによって、デフォルトで最後のフレームで停止することができます。
+オンデマンド再生終了後も最後のフレームの画面を残したい場合は、再生終了イベントを受信してから何もしないで、デフォルトで最後のフレームで停止することができます。
 
 ## 基本機能の使用
-### 1、再生の制御
+### 1、再生コントロール
 
-#### 再生開始
+#### 再生の開始
 
 ```java
-// 再生開始
+// 再生の開始
 mVodPlayer.startPlay(url)
 ```
 
-#### 再生一時停止
+#### 再生の一時停止
 
 ```java
-// 再生一時停止
+// 再生の一時停止
 mVodPlayer.pause();
 ```
 
-#### 再生再開
+#### 再生の再開
 
 ```java
-// 再生再開
+// 再生の再開
 mVodPlayer.resume();
 ```
 
-#### 再生終了
+#### 再生の終了
 
 ```java
-// 再生終了
+// 再生の終了
 mVodPlayer.stopPlay(true);
 ```
 
-#### 進捗の調整（Seek）
+#### 再生位置の調整(Seek)
 
-ユーザーがプログレスバーをドラッグすると、seekを呼び出して指定した位置から再生を開始することができます。プレーヤーSDKは正確なseekをサポートします。
+ユーザーが再生バーをドラッグすると、seekを呼び出して指定された位置から再生を開始することができ、プレーヤーSDKは正確なseekをサポートします。
 
 ```java
-int time = 600; // intタイプのとき、単位は秒
+int time = 600; // int型の場合、単位を秒とします
 // float time = 600; // floatタイプのとき、単位は秒
-// 進捗の調整
+/// 再生位置の調整
 mVodPlayer.seek(time);
 ```
 
-#### 指定した時間からの再生
+#### 指定された時間から再生します
 
-startPlayを最初に呼び出す前に、指定した時間からの再生がサポートされています。
+startPlayが初回呼び出されるまでは、指定された時間からの再生がサポートされています。
 
 ```java
-float startTimeInMS = 600; // 単位：ミリ秒
-mVodPlayer.setStartTime(startTimeInMS);   // 再生開始時間の設定
+float startTimeInSecond = 60; // 単位：秒
+mVodPlayer.setStartTime(startTimeInSecond);   // 再生開始時間の設定
 mVodPlayer.startPlay(url);
 ```
 
 ### 2、画面調整
 
 - **view：サイズと位置**
-画面のサイズや位置を変えるには、SDK統合時に[Viewの追加](#addview)で追加した「video_view」コントロールのサイズや位置を調整するだけで完了です。
-- **setRenderMode：全体に表示または適応**
+画面のサイズと位置を変更するには、SDK統合時の[Viewを追加](#addview)に追加された「video_view」コントロールのサイズと位置を直接調整してください。
+- **setRenderMode：並べて表示または画像のサイズに合わせる**
 <table>
 <thead>
 <tr>
-<th>オプション値</th>
+<th>選択可能な値</th>
 <th>意味</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>RENDER_MODE_FULL_FILL_SCREEN</td>
-<td>画像をアスペクト比を維持したまま画面全体に表示し、余分な部分をトリミングします。このモードでは画面に黒枠が残りませんが、一部の領域がトリミングされるため、完全に表示されない場合があります</td>
+<td>画像を拡大や縮小せず、画面のいっぱいに広げられ、はみ出した部分が切れます。このモードでは画面に黒い隙間はありませんが、画像の一部が切れて表示されない場合があります</td>
 </tr>
 <tr>
 <td>RENDER_MODE_ADJUST_RESOLUTION</td>
-<td>画像は、アスペクト比を維持したまま、最も長い辺に合わせてスケーリングされます。スケーリングされた幅と高さは表示領域を超えることなく中央に表示され、画面に黒枠が残る場合があります</td>
+<td>画像の最も長い辺に合わせて縦横の比率を保って拡大・縮小します。拡大・縮小後の幅と高さが表示領域を超えず、中央に表示されます。また画面に黒い隙間が残る場合があります</td>
 </tr>
 </tbody></table>
-- **setRenderRotation：画面の回転**
+- **setRenderRotation：画面回転**
 <table>
 <thead>
 <tr>
-<th>オプション値</th>
+<th>選択可能な値</th>
 <th>意味</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>RENDER_ROTATION_PORTRAIT</td>
-<td>通常再生（Homeボタンは画面直下）</td>
+<td>通常再生（Homeキーは画面の下にある）</td>
 </tr>
 <tr>
 <td>RENDER_ROTATION_LANDSCAPE</td>
-<td>画面が時計回りに270度回転します（Homeは画面真左）</td>
+<td>画面を時計回りに270度回転（Homeキーは画面の左にある）</td>
 </tr>
 </tbody></table>
 ```java
- // 画像を画面全体にアスペクト比を維持したまま表示
+ // 画像を拡大や縮小せずに画面に広げます
 mVodPlayer.setRenderMode(TXLiveConstants.RENDER_MODE_FULL_FILL_SCREEN);
-// 通常再生（Homeボタンは画面直下）
+// 通常再生（Homeキーは画面の下にある）
 mVodPlayer.setRenderRotation(TXLiveConstants.RENDER_ROTATION_PORTRAIT);
 ```
 
 
 
-### 3、可変速再生
-VODプレーヤーは可変速再生をサポートしており、インターフェース`setRate`を通じてオンデマンド再生レートを設定することにより、0.5X、1.0X、1.2X、2Xなどの高速再生と低速再生をサポートしています。
+### 3、速度を変えて再生します
+VODプレーヤーは可変速再生をサポートしています。インターフェース`setRate`を使用してオンデマンド再生速度を設定します。0.5X、1.0X、1.2X、2Xなどの高速再生と低速再生をサポートしています。
 
 
 ```java
-// 1.2倍速再生に設定
+// 1.2倍の再生速度を設定します
 mVodPlayer.setRate(1.2); 
 ```
 
@@ -216,85 +251,85 @@ mVodPlayer.setRate(1.2);
 ```java
 // ループ再生の設定
 mVodPlayer.setLoop(true);
-// 現在のループ再生ステータスの取得
+// 現在のループ再生状態を取得します
 mVodPlayer.isLoop(); 
 ```
 
 ### 5、ミュート設定
 
 ```java
-// ミュートの設定です。trueはミュートオン、falseはミュートオフを表します
+// ミュートを設定します。ミュートをオンにする場合はtrue、ミュートをオフにする場合はfalse
 mVodPlayer.setMute(true);
 ```
 
-### 6、スクリーンキャプチャ
+### 6、スクリーンショット
 
-**snapshot**を呼び出すと、現在のビデオを1つのフレームとしてキャプチャできます。この機能は、現在のCSSストリームのビデオ画面のみをキャプチャします。現在のUI全体をキャプチャする必要がある場合は、AndroidシステムAPIを呼び出して実行してください。
+**snapshot**を呼び出すことにより、現在のビデオから1つのフレーム画像をキャプチャすることができます。この機能は、現在のライブストリームのビデオ画面のみをキャプチャします。現在のインターフェース全体をキャプチャする必要がある場合は、AndroidのシステムAPIを呼び出してください。
 
 
 
 ```java
-// スクリーンキャプチャ
+// スクリーンショット
 mVodPlayer.snapshot(new ITXSnapshotListener() {
     @Override
     public void onSnapshot(Bitmap bmp) {
         if (null != bmp) {
-           //スクリーンキャプチャbitmapの取得
+           //スクリーンショットbitmapとして取得します
         }
     }
 });
 ```
 
 
-### 7、ロール画像広告
-プレーヤーSDKは広告宣伝用として、インターフェースへのロール画像の追加をサポートしています。実装方法は以下のとおりです。
-* `autoPlay`をNOにすると、この時点でプレーヤーは正常にロードされますが、ビデオはすぐに再生を開始しません。
-* プレーヤーがロードされてからビデオが始まる前に、プレーヤーのインターフェースでロール画像広告を確認することができます。
-* 広告の表示終了条件に達したら、resumeインターフェースでビデオ再生を開始します。
+### 7、ピクチャ挿入広告
+プレーヤーSDKは、広告宣伝などのためにインターフェースにピクチャを挿入することをサポートします。実現方式は次のとおりです：
+* `autoPlay'をNOにすると、プレーヤーは正常にロードされますが、ビデオはすぐに再生を開始しません。
+* ビデオはプレーヤーでロードされた後、再生が開始されていない間は、プレーヤーのインターフェースで画像広告が表示されます。
+* 広告表示終了条件が満たされたら、resumeインターフェースを使用してビデオ再生を開始します。
 
 ```java
-mVodPlayer.setAutoPlay(false);  //  自動再生しないように設定します
-mVodPlayer.startPlay(url);    // startPlayを呼び出すとビデオがロードされますが、ロードが成功しても自動的に再生されるわけではありません
+mVodPlayer.setAutoPlay(false)mVodPlayer.setAutoPlay(false);  // 自動再生をオフに設定します
+mVodPlayer.startPlay(url);    // startPlayを呼び出すとビデオがロードされ、正常にロードしても自動的に再生されません
 // ......
-// プレーヤーインターフェースへの広告表示
+// プレーヤー画面に広告を表示します
 // ......  
-mVodPlayer.resume();  // 広告表示後、resumeを呼び出してビデオ再生を開始します
+mVodPlayer.resume();  // 広告表示が終わったらresumeを呼び出して動画再生を開始します
 ```
 
-### 8,HTTP-REF
-TXVodPlayConfigのheadersは、URLがコピーされるのを防ぐためによく使われるRefererフィールド（Tencent Cloudは、よりセキュアな署名のリンク不正アクセス防止方式を提供できます）や、クライアントのID情報を検証するためのCookieフィールドなど、HTTPリクエストヘッダーの設定に使用することができます。
-### 9、ハードウェアアクセラレーション
-Blu-rayレベル(1080p)の画質の場合、ソフトウェアデコードだけではスムーズな再生は困難です。そのため、ゲームのライブストリーミングがメインのシナリオでは、一般的にハードウェアアクセラレーションをオンにすることをお勧めします。
+### 8、HTTP-REF
+TXVodPlayConfigのheadersは、URLがあちこちにコピーされないようにするよく使われているRefererフィールド（Tencent Cloudは、より安全な署名の盗難防止用チェーンスキームを提供します）や、クライアントのID情報を検証するためのCookieフィールドなど、HTTPリクエストヘッダを設定するために使用されます。
+### 9、ハードウェア・アクセラレーション
+ブルーレイ（1080p）レベルの画質については、単にソフトウェアデコードを使用してスムーズな再生体験を得るのが難しいので、ゲームのライブ配信を中心としたシーンでは、ハードウェア・アクセラレーションをオンにすることをお勧めします。
 
-ソフトウェアデコードとハードウェアデコードを切り替えるには、切り替える前に**stopPlay**、切り替えた後に**startPlay**を行う必要があります。この操作をしない場合、より深刻な画面の揺れや歪みといった問題が発生します。
+ソフトウェアデコードとハードウェアデコードを切り替えるには、切り替えの前に**stopPlay**を実行して、切り替えの後に**startPlay**を実行する必要があります。そうしないと、画面のちらつき問題が発生します。
 
 ```java
  mVodPlayer.stopPlay(true);
  mVodPlayer.enableHardwareDecode(true);
  mVodPlayer.startPlay(flvUrl, type);
 ```
-### 10、解像度の設定
-SDKは、HLSのマルチビットレート形式をサポートしています。これはユーザーが異なるビットレートの再生ストリームを切り替えるのに便利で、異なる解像度で再生するという目的を達成することができます。PLAY_EVT_PLAY_BEGINイベントを受信した後、以下の方法で解像度を設定することができます。
+### 10、シャープネスの設定
+SDKはHLSのマルチビットレート形式をサポートしており、ユーザーは異なるビットレートの再生ストリームを簡単に切り替えることができ、シャープネスの異なる再生を実現することができます。PLAY_EVT_PLAY_BEGINイベントを受信した後に、以下の方法でシャープネスを設定することができます。
 
 ```java
-ArrayList<TXBitrateItem> bitrates = mVodPlayer.getSupportedBitrates(); //マルチビットレートアレイの取得
-int index = bitrates.get(i).index;  // 再生するビットレートの添え字を指定します
-mVodPlayer.setBitrateIndex(index);  // ビットレートを希望の解像度に切り替えます
+ArrayList<TXBitrateItem> bitrates = mVodPlayer.getSupportedBitrates(); //マルチビットレート配列を取得します
+int index = bitrates.get(i).index;  // 再生するビットレートの添字を指定します
+mVodPlayer.setBitrateIndex(index);  // ビットレートを希望するシャープネスまで切り替えます
 ```
 
-再生中は、`mVodPlayer.setBitrateIndex(int)`を通じていつでもビットレートを切り替えることができます。切り替え中、別のストリームのデータを再度プルします。SDKは、Tencent Cloudのマルチビットレートファイルに最適化されているため、ラグが発生することなく切り替えが可能です。
-### 11、ビットレートストリーミングアダプティブ
-SDKは、HLSのマルチビットレートアダプティブをサポートしています。関連機能をオンにすると、プレーヤーが現在の帯域幅に基づいて再生に最適なビットレートを動的に選択することが可能です。PLAY_EVT_PLAY_BEGINイベントを受信した後、以下の方法でビットレートストリーミングアダプティブをオンにすることができます。
+再生中はいつでも`mVodPlayer.setBitrateIndex(int)`でビットレートを切り替えることができます。切り替えの過程で、別のストリームのデータを再び取得します。SDKはTencent Cloudのマルチビットレートファイル向けに最適化され、ラグなしで切り替えることができます。
+### 11、アダプティブビットレートストリーミング
+SDKはHLSのアダプティブビットレートストリーミングをサポートし、関連機能をオンにすると、プレーヤーは現在の帯域幅に最適なビットレートを動的に選択して再生することができます。PLAY_EVT_PLAY_BEGINイベントを受信した後、以下の方法でアダプティブビットレートストリーミングをオンにすることができます。
 ```java
-mVodPlayer.setBitrateIndex(-1); //indexパラメータは-1で渡されます
+mVodPlayer.setBitrateIndex(-1); //indexパラメータ渡し-1
 ```
-再生中はいつでも`-[mVodPlayer setBitrateIndex(int)`で別のビットレートに切り替えることができ、切り替えた後はビットレートストリーミングアダプティブはオフになります。
+再生中はいつでも`mVodPlayer.setBitrateIndex(int)`で他のビットレートを切り替えることができます。切り替えた後、自動適応もオフにされます。
 
-### 12、再生進捗のリスニング
+###12、再生位置のリスニング
 
-VOD再生中の進捗情報には、**ロード進捗**と**再生進捗**という2種類があります。現在、SDKはこれら2つの進捗をイベント通知という形でリアルタイムに通知しています。イベント通知の詳細については、[イベントリスニング](#listening)をご参照ください。
+オンデマンド再生位置情報には、**ロードの進行状況**と**再生位置**の2種類があります。SDKでは、この2つの進行状況をイベント通知としてリアルタイムで通知しています。イベント通知の詳細については、[イベントリスニング](#listening)をご参照ください。
 
-**TXVodPlayerListener**リスナーをTXVodPlayerオブジェクトにバインドすると、進捗通知は、**PLAY_EVT_PLAY_PROGRESS**イベントを通じてアプリケーションにコールバックされます。このイベントの追加情報には、上記の2つの進捗指標が含まれます。
+TXVodPlayerオブジェクトに**TXVodPlayerListener**リスナーをバインドできます。再生位置通知は**PLAY_EVT_PLAY_PROGRESS**イベントによってアプリケーションにコールバックされます。このイベントの追加情報には、上記の2つの進行状況メトリックが含まれます。
 
 
 
@@ -304,17 +339,17 @@ mVodPlayer.setVodListener(new ITXVodPlayListener() {
     @Override
     public void onPlayEvent(TXVodPlayer player, int event, Bundle param) {
         if (event == TXLiveConstants.PLAY_EVT_PLAY_PROGRESS) {
-            // ロードの進行状況です。単位はミリ秒
+            // ロードの進行状況（ミリ秒単位）
             int playable_duration_ms = param.getInt(TXLiveConstants.EVT_PLAYABLE_DURATION_MS);
-            mLoadBar.setProgress(playable_duration_ms); // loadingプログレスバーの設定
+            mLoadBar.setProgress(playable_duration_ms); // loadingバーを設定します
 
-            // 再生の進行状況です。単位はミリ秒
+            // 再生位置（ミリ秒単位）
             int progress_ms = param.getInt(TXLiveConstants.EVT_PLAY_PROGRESS_MS);
-            mSeekBar.setProgress(progress_ms);  // 再生プログレスバーの設定
+            mSeekBar.setProgress(progress_ms);  // 再生バーを設定します
 
-            // ビデオの総尺です。単位はミリ秒
+            // ビデオの長さ（ミリ秒単位）
             int duration_ms = param.getInt(TXLiveConstants.EVT_PLAY_DURATION_MS);
-            // 表示時間の設定などに使用できます
+            // 時間表示の設定などに使用されます
         }
     }
 
@@ -325,12 +360,12 @@ mVodPlayer.setVodListener(new ITXVodPlayListener() {
 ```
 
 
-### 13、再生インターネット速度のリスニング
+### 13、再生ネットワーク速度のリスニング
 
-[イベントリスニング](#listening)を使用すると、ビデオの再生時にラグが発生した際、その時点のネットワーク速度を表示することができます。
+[イベントリスニング](#listening)を使用すると、ビデオがカクカクするときに現在のネットワーク速度を表示できます。
 
-* `onNetStatus`の`NET_STATUS_NET_SPEED`で現在のネットワーク速度を取得します。具体的な使用方法については、[ステータスフィードバック（onNetStatus）](#status)をご参照ください。
-* `PLAY_EVT_PLAY_LOADING`イベントをリスニングした後に、現在のネットワーク速度を表示します。
+* 現在のネットワーク速度は`onNetStatus`の`NET_STATUS_NET_SPEED`を使用して取得されます。具体的な使用方法については[ステータスフィードバック(onNetStatus)](#status)をご参照ください。
+* `PLAY_EVT_PLAY_LOADING`イベントを受信した後、現在のネットワーク速度を表示します。
 * `PLAY_EVT_VOD_LOADING_END`イベントを受信した後、現在のネットワーク速度を表示するviewを非表示にします。
 
 ```java
@@ -338,16 +373,16 @@ mVodPlayer.setVodListener(new ITXVodPlayListener() {
     @Override
     public void onPlayEvent(TXVodPlayer player, int event, Bundle param) {
         if (event == TXLiveConstants.PLAY_EVT_PLAY_LOADING) {
-            // 現在のタスクを表示します
+            // 現在のネットワーク速度を表示
 
         } else if (event == TXLiveConstants.PLAY_EVT_VOD_LOADING_END) {
-            // 現在のネットワーク速度を表示するビューを非表示にします
+            // 現在のネットワーク速度を表示するviewを非表示にします
         }
     }
 
     @Override
     public void onNetStatus(TXVodPlayer player, Bundle bundle) {
-        // リアルタイムレートの取得。単位はkbps
+        // リアルタイムレートを取得（単位：kbps）
         int speed = bundle.getInt(TXLiveConstants.NET_STATUS_NET_SPEED);
     }
 });
@@ -355,11 +390,11 @@ mVodPlayer.setVodListener(new ITXVodPlayListener() {
 
 ### 14、ビデオ解像度の取得
 
-プレーヤーSDKはURL文字列を介してビデオを再生します。URLそのものにはビデオ情報は含まれません。関連情報を取得するには、クラウドサーバーにアクセスしてビデオ情報をロードする必要があるため、SDKはビデオ情報をイベント通知としてのみお客様のアプリケーションに送信します。詳細については、[イベントリスニング](#listening)をご参照ください。
+プレーヤーSDKは、URL文字列を通じて映像を再生します。URL自身に映像情報が含まれていません。関連情報を取得するには、クラウド上のサーバーにアクセスして関連ビデオ情報をロードする必要があります。したがって、SDKはイベント通知としてのみビデオ情報をアプリケーションに送信できます。詳細は[イベントリスニング](#listening)をご参照ください。
 
-**解像度の情報は、以下の2種類の方法によって取得できます**
+**解像度情報は次の2つの方法で取得できます**
 
-方法1：`onNetStatus`の`NET_STATUS_VIDEO_WIDTH`と`NET_STATUS_VIDEO_HEIGHT`により、ビデオの幅と高さを取得します。具体的な使用方法については、[ステータスフィードバック（onNetStatus）](#status)をご参照ください。
+方法1：`onNetStatus`の`NET_STATUS_VIDEO_WIDTH`と`NET_STATUS_VIDEO_HEIGHT`を通じてビデオの幅と高さを取得します。具体的な使用方法については[ステータスフィードバック(onNetStatus)](#status)をご参照ください。
 
 方法2：プレーヤーからPLAY_EVT_VOD_PLAY_PREPAREDイベントコールバックを受信した後、`TXVodPlayer.getWidth()`と`TXVodPlayer.getHeight()`を直接呼び出して現在の幅と高さを取得します。
 
@@ -371,83 +406,83 @@ mVodPlayer.setVodListener(new ITXVodPlayListener() {
 
     @Override
     public void onNetStatus(TXVodPlayer player, Bundle bundle) {
-        //ビデオ幅の取得
+        // ビデオ幅の取得
         int videoWidth = bundle.getInt(TXLiveConstants.NET_STATUS_VIDEO_WIDTH);
-        //ビデオ高さの取得
+        // ビデオの高さの取得
         int videoHeight = bundle.getInt(TXLiveConstants.NET_STATUS_VIDEO_HEIGHT);
     }
 });
 
-// ビデオの幅と高さを取得します。プレーヤーからPLAY_EVT_VOD_PLAY_PREPAREDイベントコールバックを受信した後で値を返す必要があります
+// ビデオの幅を取得します。プレーヤーからPLAY_EVT_VOD_PLAY_PREPAREDイベントがコールバックされた後に値を返します
 mVodPlayer.getWidth();
 mVodPlayer.getHeight();
 ```
 
 ### 15、再生バッファサイズ
 
-通常のビデオ再生時に、事前にネットワークからバッファするデータの最大サイズを制御します。設定されていない場合は、プレーヤーのデフォルトのバッファポリシーに従って、スムーズな再生が確保されます。
+通常の映像再生時にネットワークから予めバッファリングされる最大データサイズをコントロールします。設定されていない場合は、スムーズな再生を確保するため、プレーヤーのデフォルトのバッファポリシーが適用されます。
 
 ```java
 TXVodPlayConfig config = new TXVodPlayConfig();
-config.setMaxBufferSize(10);  // 再生時の最大バッファサイズです。単位：MB
+config.setMaxBufferSize(10);  // 再生時の最大バッファサイズ。単位：MB
 mVodPlayer.setConfig(config);  // configをmVodPlayerに渡します
 ```
 
-### 16、ビデオローカルキャッシュ[](id:cache)
+### 16、ビデオのローカルキャッシュ[](id：cache)
 
-UGSVのビデオ再生シナリオでは、ビデオファイルのローカルキャッシュは非常に重要な機能です。一般ユーザーにとっては、一度視聴したビデオを再度視聴する際にトラフィックを消費しないことが望ましいからです。
+短いビデオ再生シーンでは、ビデオファイルのローカルキャッシュは非常に必要な機能であり、一般的なユーザーにとっては、一度見たビデオを再視聴するときに、もう1度トラフィックを消費しないでください。
 
-- **サポートされている形式：**SDKは、HLS(m3u8)とMP4という2種類の一般的なオンデマンド形式のキャッシュ機能をサポートしています。
-- **オンのタイミング：**SDKは、デフォルトではキャッシュ機能がオンになりませんので、ユーザーの再生率が高くないシナリオでは、この機能をオンにすることはお勧めしません。
-- **オンにする方法：**グローバルに有効で、プレーヤーを使用するときにオンになります。この機能をオンにするには、ローカルキャッシュディレクトリとキャッシュサイズという2つのパラメータを設定する必要があります。
+- **対応形式：**SDKは、一般的なオンデマンド形式であるHLS (m3u8)およびMP4の2つのキャッシュ機能をサポートしています。
+- **オンにするタイミング：**SDKでは、デフォルトでキャッシュ機能がオンにされません。また、ユーザのレビュー率が高くないシーンでは、この機能をオンにすることを推奨するものでもありません。
+- **オンにする方式：**グローバルに有効になり、プレーヤーを使用するときにオンになります。この機能をオンにするには、ローカルキャッシュディレクトリとキャッシュサイズの2つのパラメータを設定してください。
 
 ```java
 File sdcardDir = getApplicationContext().getExternalFilesDir(null);
 if (sdcardDir != null) {
-    //再生エンジンのグローバルキャッシュディレクトリの設定
+    //再生エンジンのグローバルキャッシュディレクトリを設定します
    TXPlayerGlobalSetting.setCacheFolderPath(sdcardDir.getPath() + "/txcache");
-    //グローバルキャッシュディレクトリと再生エンジンのキャッシュサイズを設定します。//単位はMBです
+    //再生エンジンのグローバルキャッシュディレクトリとキャッシュサイズを設定します（//単位MB）
     TXPlayerGlobalSetting.setMaxCacheSize(200); 
 }
 
-//プレーヤーの使用
+// プレーヤーの使用
 ```
 
->?TXVodPlayConfig#setMaxCacheItemsインターフェースで設定された旧バージョンは廃止されているため、非推奨です。
+>?古いバージョンでは、TXVodPlayConfig#setMaxCacheItemsインターフェースを使用して設定され、すでに廃止されたため、使用は推奨されていません。
 
-##  高度な機能の使用
+## 高級機能使用
 
-### 1、ビデオのプリ再生
+### 1、ビデオのプリプレイ
 
-#### ステップ1：ビデオのプリ再生・使用
+#### ステップ1：ビデオプリプレイの使用
 
-UGSV再生シナリオでは、ビデオのプリロード機能がスムーズな視聴に大変役立ちます。現在のビデオを視聴中に、次に再生するビデオをバックグラウンドでロードし、ユーザーが実際に次のビデオに切り替えたときに、最初からロードする必要がなく、すぐに再生することができます。
+短いビデオ再生シーンでは、ビデオのプリプレイ機能がスムーズな再生に役立ちます。現在のビデオを再生している間に、次のビデオをバックグラウンドでロードします。これにより、ユーザーが実際に次のビデオに切り替えたときに、最初からロードする必要はなくなり、すぐに再生することが可能になります。
 
-ビデオのプリ再生は、秒単位で開けるという効果を発揮しますが、ある程度のパフォーマンスオーバーヘッドがあります。業務にたくさんのビデオプリロードのニーズがある場合、[ビデオのプリダウンロード](#download)と併用することをお勧めします。
+ビデオをプリプレイすると、素早い再生の効果が得られますが、パフォーマンスのオーバーヘッドが必要です。業務で同時にビデオをプリロードする必要がある場合は、[ビデオのプリダウンロード](#download)と組み合わせて使用することをお勧めします。
 
-これは、ビデオ再生中のシームレスな切り替えを後押しする技術で、TXVodPlayerのsetAutoPlayスイッチを使ってこの機能を実装することができます。具体的な方法は、以下のとおりです。
+これは、ビデオ再生のシームレスな切り替えを実現するための技術的なサポートですT。XVodPlayerのsetAutoPlayを使用してこの機能を実装できます。具体的な使い方は次のとおりです：
 ![](https://qcloudimg.tencent-cloud.cn/raw/b2bd645f29af403bf2740156aee44092.jpg)
 
 ```java
-// ビデオAの再生：autoPlayがtrueに設定されている場合、startPlayの呼び出しにより、直ちにビデオのロードと再生が開始されます
+// ビデオAの再生: autoPlayがtrueに設定されている場合、startPlayを呼び出すとすぐにビデオのロードと再生を開始します
 String urlA = "http://1252463788.vod2.myqcloud.com/xxxxx/v.f10.mp4";
 playerA.setAutoPlay(true);
 playerA.startPlay(urlA);
 
-// ビデオAを再生すると同時に、ビデオBをプリロードします。これは、setAutoPlayをfalseに設定すると行われます
+// ビデオAを再生しながら、setAutoPlayをfalseに設定してビデオBをプリロードします
 String urlB = @"http://1252463788.vod2.myqcloud.com/xxxxx/v.f20.mp4";
 playerB.setAutoPlay(false);
-playerB.startPlay(urlB); // すぐに再生を開始せず、ビデオのロードのみを開始します
+playerB.startPlay(urlB); // ただちに再生は開始されず、ビデオのロードのみが開始されるます
 ```
 
-ビデオAの再生が終了し、自動的に（またはユーザーが手動で）ビデオBに切り替えたとき、resume関数を呼び出し、すぐに再生できるようにします。
+ビデオAの再生が終了し、自動的に（あるいはユーザーが手動で）ビデオBに切り替えたときに、resume関数を呼び出すとすぐに再生できます。
 
->! autoPlayをfalseに設定した後、resumeを呼び出す前にビデオBの準備ができていることを確認する必要があります。すなわち、ビデオBのPLAY_EVT_VOD_PLAY_PREPARED（2013、プレーヤーは再生可能状態）イベントをリスニングした後に呼び出す必要があります。
+>! autoPlayがfalseに設定されている場合、resumeを呼び出す前に、ビデオBの準備が完了していることを確認する必要があります。つまり、ビデオBのPLAY_EVT_VOD_PLAY_PREPARED（2013。プレーヤー準備が完了し、再生可能になりました）イベントを受信した後に呼び出されます。
 
 
 ```java
 public void onPlayEvent(TXVodPlayer player, int event, Bundle param) {
-    // ビデオAの再生が終了すると、そのままビデオBの再生が始まるので、シームレスな切り替えが可能です
+    // ビデオAの再生が終了した時点で、ビデオBの再生を直接開始することで、シームレスに切り替えることができます
     if (event == PLAY_EVT_PLAY_END) {
            playerA.stop();
            playerB.setPlayerView(mPlayerView);
@@ -456,37 +491,37 @@ public void onPlayEvent(TXVodPlayer player, int event, Bundle param) {
 }
 ```
 
-#### ステップ2：ビデオのプリ再生・バッファの設定
+#### ステップ2：ビデオプリプレイのバッファー設定
 
-- バッファを大きめに設定すると、ネットワークの変動に対応しやすくなり、スムーズな再生という目的を達成できます。
-- バッファを小さめに設定すると、トラフィックの消費を抑えることができます。 
+- バッファを大きく設定することで、ネットワークの揺らぎに対応し、スムーズな再生を実現することができます。
+- バッファを小さく設定すると、トラフィックの消費を抑えることができます。 
 
-##### プリ再生バッファサイズ
+##### プリプレイバッファサイズ
 
-このインターフェースは、プリロードシナリオ（ビデオ再生が開始され、playerのAutoPlayがfalseに設定される前）向けで、最大バッファサイズを制御するために使用されます。
+このインターフェースは、プリロードシーン（ビデオの再生開始前で、playerのAutoPlayがfalseに設定されている場合）で、再生開始前の段階での最大バッファサイズを制御するために使用されます。
 
 ```java
 TXVodPlayConfig config = new TXVodPlayConfig();
-config.setMaxPreloadSize(2);  // プリ再生の最大バッファサイズです。単位はMBで、業務の状況に応じてトラフィックを節約するように設定します
+config.setMaxPreloadSize(2);  // プリプレイ時の最大バッファサイズ。単位：MB。業務状況に応じてトラフィックを節約するように設定します
 mVodPlayer.setConfig(config);  // configをmVodPlayerに渡します
 ```
 
-##### 再生バッファサイズ 
+##### プリプレイバッファサイズ 
 
-通常のビデオ再生時に、事前にネットワークからバッファするデータの最大サイズを制御します。設定されていない場合は、プレーヤーのデフォルトのバッファポリシーに従って、スムーズな再生が確保されます。
+通常の映像再生時にネットワークから予めバッファリングされる最大データサイズをコントロールします。設定されていない場合は、スムーズな再生を確保するため、プレーヤーのデフォルトのバッファポリシーが適用されます。
 
 ```java
 TXVodPlayConfig config = new TXVodPlayConfig();
-config.setMaxBufferSize(10);  // 再生時の最大バッファサイズです。単位：MB
+config.setMaxBufferSize(10);  // 再生時の最大バッファサイズ。単位：MB
 mVodPlayer.setConfig(config);  // configをmVodPlayerに渡します
 ```
 
 [](id:download)
-### 2、ビデオプリダウンロード
+### 2、動画のプリダウンロード
 
-プレーヤーインスタンスを作成する必要がなく、ビデオコンテンツの一部があらかじめダウンロードされています。そのためプレーヤーを使用すると、ビデオの再生速度がアップし、より良い再生エクスペリエンスを提供することができます。
+プレーヤーのインスタンスを作成する必要がなく、ビデオの一部のコンテンツを事前にダウンロードすると、プレーヤを使用するときに、ビデオの再生開始速度が速くなり、より良い再生体験を提供できます。
 
-再生サービスを利用する前に、[ビデオキャッシュ](#cache)が設定されていることを確認してください。
+再生サービスを使用する前に、[ビデオキャッシュ](#cache)が設定されていることを確認してください。
 
 >? 
 > 1. TXPlayerGlobalSettingはグローバルキャッシュ設定インターフェースです。以前のTXVodConfigのキャッシュ設定インターフェースは廃止されています。
@@ -495,16 +530,16 @@ mVodPlayer.setConfig(config);  // configをmVodPlayerに渡します
 ユースケース：
 
 ```java
-//まずグローバルキャッシュディレクトリと再生エンジンのキャッシュサイズを設定します
+//まず再生エンジンのグローバルキャッシュディレクトリとキャッシュサイズを設定します
 File sdcardDir = getApplicationContext().getExternalFilesDir(null);
 //再生エンジンのグローバルキャッシュディレクトリとキャッシュサイズを設定します
 if (sdcardDir != null) {
     TXPlayerGlobalSetting.setCacheFolderPath(sdcardDir.getPath() + "/PlayerCache");
-    TXPlayerGlobalSetting.setMaxCacheSize(200); //単位はMB
+    TXPlayerGlobalSetting.setMaxCacheSize(200); //単位MB
 }
 
 String palyrl = "http://****";
-//プリダウンロードの開始
+//プレダウンロードの開始
 final TXVodPreloadManager downloadManager = TXVodPreloadManager.getInstance(getApplicationContext());
 final int taskID = downloadManager.startPreload(playUrl, 3, 1920*1080, new ITXVodPreloadListener() {
     @Override
@@ -519,46 +554,46 @@ final int taskID = downloadManager.startPreload(playUrl, 3, 1920*1080, new ITXVo
 
 });
 
-//プリダウンロードのキャンセル
+//事前ダウンロードをキャンセルします
 downloadManager.stopPreload(taskID);
 ```
 
-### 3、ビデオのダウンロード
-ビデオをダウンロードすると、ユーザーがインターネットに接続している状態でビデオをダウンロードした場合、インターネットに接続していない状態でもビデオを視聴することができます。また同時に、プレーヤーSDKはローカル暗号化機能を提供しており、ダウンロードしたローカルビデオは暗号化された状態のまま、指定されたプレーヤーでのみ復号し再生することができるので、ダウンロードしたビデオの違法配信を効果的に防止し、ビデオのセキュリティを保護することができます。
+### 3. 動画のダウンロード
+ビデオのダウンロードは、ネットワークが存在する状態でビデオをダウンロードし、そしてネットワークが存在しない環境で視聴することをサポートします。また、プレーヤーSDKはローカル暗号化能力を提供しており、ダウンロード後のローカルビデオは暗号化されたままであり、ビデオの復号化と再生には指定されたプレーヤーが必要であり、ダウンロード後のビデオの違法な伝播を効果的に防止し、ビデオの安全を保護することができます。
 
-HLSストリームメディアはローカルに直接保存できないため、ローカルファイルの再生によってHLSをローカルにダウンロードして再生することはできません。この問題については、`TXVodDownloadManager`ベースのビデオダウンロード方式によって、HLSをオフラインで再生することが可能です。
+HLSストリーミングメディアはローカルに直接保存できないので、ローカルファイルを再生することでHLSをローカルにダウンロードした後に再生することもできません。この問題については、`TXVodDownloadManager'に基づくビデオダウンロードスキームを使用してHLSのオフライン再生を行うことができます。
 
 > !
-> - `TXVodDownloadManager`は現時点では、MP4とFLV形式のファイルのキャッシュをサポートしておらず、非ネストのHLS形式ファイルのみサポートしています。
-> - プレーヤーSDKは、MP4およびFLV形式のローカルファイルの再生をサポートしています。
+> -  `TXVodDownloadManager`は、MP4およびFLV形式のファイルのキャッシュを現在のところサポートしておらず、ネストされていないHLS形式のファイルのキャッシュのみをサポートします。
+> - プレーヤーSDKは、MP4及びFLV形式のローカルファイル再生をサポートしています。
 
 [](id:offline1)
 #### ステップ1：準備作業
 
-`TXVodDownloadManager`は単一のインスタンスとして設計されているので、複数のダウンロードオブジェクトを作成することはできません。使い方は以下のとおりです。
+`TXVodDownloadManager`は単一のインスタンスとして設計されているので、複数のダウンロードオブジェクトを作成することはできません。使い方は次のとおりです：
 
 ```java
 TXVodDownloadManager downloader = TXVodDownloadManager.getInstance();
-downloader.setDownloadPath("<ダウンロード先のディレクトリを指定してください>"];
+downloader.setDownloadPath("<ダウンロードディレクトリを指定>");
 ```
 
 [](id:offline2)
-#### ステップ2：ダウンロードの開始
-ダウンロードの開始方法としては、[URL](#url)と[Fileid](#fileid)という2種類の方法があります。具体的な操作については以下のとおりです。
+#### ステップ2:  ダウンロードの開始
+ダウンロードを開始するには、次のように[URL](#url)と[Fileid](#fileid)の2つの方法があります：
 <dx-tabs>
 ::: URL方式[](id:url)
-少なくともダウンロードアドレスのURLを渡す必要があります。ネストしたHLS形式はサポートしておらず、非ネストしたHLS形式のみサポートしています。userNameは具体的な値が渡されない場合、デフォルトは「default」となります。
+少なくともダウンロードアドレスURLを渡してください。ネストされたHLS形式はサポートされておらず、ネストされていないHLS形式のダウンロードのみがサポートされています。userNameが具体的な値を渡さない場合、デフォルトで「default」になります。
 ```java
 downloader.startDownloadUrl("http://1500005830.vod2.myqcloud.com/43843ec0vodtranscq1500005830/00eb06a88602268011437356984/video_10_0.m3u8", "");
 ```
 :::
 ::: Fileid方式[](id:fileid)
-Fileidのダウンロードには、少なくともAppID、FileidおよびqualityIdを渡す必要があります。署名付きビデオはpSignを渡す必要があります。userNameは具体的な値が渡されない場合、デフォルトは「default」となります。
+Fileidのダウンロードには、少なくともAppID、Fileid、qualityIdを渡してください。署名付きビデオはpSignを渡してください。userNameが具体的な値を渡さない場合、デフォルトで「default」になります。
 ```java
-//  QUALITYOD // オリジナル画像
-// QUALITYFLU // LD
-// QUALITYSD  // SD
-// QUALITYHD  // HD
+//  QUALITYOD // 元の画質
+// QUALITYFLU // 流暢
+// QUALITYSD  // 標準画質
+// QUALITYHD  // 高画質
 TXVodDownloadDataSource source = new TXVodDownloadDataSource(1252463788, "4564972819220421305", QUALITYHD, "", "");
 downloader.startDownload(source);
 ```
@@ -568,38 +603,38 @@ downloader.startDownload(source);
 
 [](id:offline3)
 #### ステップ3：タスク情報 
-タスク情報を受信する前に、コールバックlistenerを設定する必要があります。
+タスク情報を受信する前に、コールバックlistenerを設定してください。
 
 ```java
 downloader.setListener(this);
 ```
 
-受信する可能性のあるタスクコールバックは、以下のとおりです。
+受信可能なタスクコールバックは次のとおりです：
 
 | コールバック情報 | 説明 |
 |---------|---------|
-| void onDownloadStart(TXVodDownloadMediaInfo mediaInfo) | タスクの開始です。SDKのダウンロードが開始されたことを示します |
-| void onDownloadProgress(TXVodDownloadMediaInfo mediaInfo) | タスクの進行状況です。ダウンロード中、SDKはこのインターフェースを頻繁にコールバックするので、`mediaInfo.getProgress()`で現在の進捗を取得できます |
-| void onDownloadStop(TXVodDownloadMediaInfo mediaInfo) | タスクの停止です。`stopDownload`を呼び出してダウンロードを停止すると、ダウンロードの停止に成功したことを示すこのメッセージが表示されます |
+| void onDownloadStart(TXVodDownloadMediaInfo mediaInfo)       | タスクが開始し、SDKのダウンロードが開始されたことを意味します                              |
+| void onDownloadProgress(TXVodDownloadMediaInfo mediaInfo)    | タスクの進行状態。ダウンロード中にSDKは頻繁にこのインターフェースをコールバックします。現在の進行状況は`mediaInfo.getProgress()`で取得できます |
+| void onDownloadStop(TXVodDownloadMediaInfo mediaInfo)        | タスクが停止しました。`stopDownload`を呼び出してダウンロードを停止して、このメッセージが表示されると、正常に停止したことを意味します |
 |  void onDownloadFinish(TXVodDownloadMediaInfo mediaInfo) |  ダウンロード完了です。このコールバックを受信すると、すべてのダウンロードが完了したことを意味します。この時点で、ダウンロードしたファイルはTXVodPlayerで再生できます |
 | void onDownloadError(TXVodDownloadMediaInfo mediaInfo, int error, String reason) | ダウンロードエラーです。ダウンロード中にネットワークが切断されると、このインターフェースがコールバックされると同時にダウンロードタスクが停止されます。エラーコードは、`TXVodDownloadManager`にあります|
 
 
-downloaderは複数のタスクを同時にダウンロードできるので、コールバックインターフェースには`TXVodDownloadMediaInfo`オブジェクトが含まれます。お客様は、URLやdataSourceにアクセスしてダウンロード元を特定したり、ダウンロードの進捗やファイルサイズなどの情報を取得したりできます。
+downloaderは複数のタスクを同時にダウンロードできるので、コールバックインターフェースには`TXVodDownloadMediaInfo`オブジェクトが用意されています。URLやdataSourceにアクセスしてダウンロード元を判断し、同時にダウンロードの進行状況やファイルサイズなどの情報を得ることができます。
 
 [](id:offline4)
 
 #### ステップ4：ダウンロードの中断
-ダウンロードを停止するには、`downloader.stopDownload()`メソッドを呼び出してください。パラメータは、`downloader.startDownload()`によって返されるオブジェクトです。**SDKは、中断からの再開をサポート**しています。ダウンロードディレクトリが変更されていない場合、同じファイルの次のダウンロードは最後に停止したところから再び開始されます。
+ダウンロードを停止するには、`downloader.stopDownload()`メソッドを呼び出してください。パラメータは`downloader.startDownload()`から返されたオブジェクトです。**SDKは一時停止/再開をサポートしています。**ダウンロードディレクトリが変更されていない場合、同じファイルの次回のダウンロードは、前回停止した場所から再開されます。
 
-#### ステップ5：管理のダウンロード
-すべてのユーザーアカウントのダウンロードリスト情報を取得します。指定したユーザーアカウントのダウンロードリスト情報も取得することができます。
+#### ステップ5：ダウンロード管理
+すべてのユーザーアカウントのダウンロードリスト情報と、指定されたユーザーアカウントのダウンロードリスト情報を取得できます。
 ```java
-// すべてのユーザーダウンロードリスト情報の取得
-// アクセス側はダウンロード情報に含まれるuserNameに基づいて、異なるユーザーのダウンロードリスト情報を区別することができます
+// すべてのユーザーのダウンロードリスト情報を取得します
+// アクセス側は、ダウンロード情報内のuserNameに基づいて、各ユーザーのダウンロードリスト情報を区別することができます
 List<TXVodDownloadMediaInfo> downloadList = downloader.getDownloadMediaInfoList(); 
 if (downloadInfoList == null || downloadInfoList.size() <= 0) return;
-// デフォルトの「default」ユーザーのダウンロードリストの取得
+// デフォルトの「default」ユーザーのダウンロードリストを取得します
 List<TXVodDownloadMediaInfo> defaultUserDownloadList = new ArrayList<>();
 for(TXVodDownloadMediaInfo downloadMediaInfo : downloadInfoList) {
   if ("default".equals(downloadMediaInfo.getUserName())) {
@@ -608,71 +643,71 @@ for(TXVodDownloadMediaInfo downloadMediaInfo : downloadInfoList) {
 }
 ```
 
-Fileidに関するダウンロード情報を取得します。現在のダウンロード状況、ダウンロードの進捗の取得、ダウンロード完了の判断などが含まれます。AppID、FileidおよびqualityIdを渡す必要があります。
+現在のダウンロードステータスを含むFileid関連のダウンロード情報を取得し、現在のダウンロードの進行状況を取得して、ダウンロードが完了したかどうかを判断するには、AppID、Fileid、qualityIdを渡してください。
 ```java
-// fileIdに関するダウンロード情報の取得
+// fileId関連のダウンロード情報を取得します
 TXVodDownloadMediaInfo downloadInfo = downloader.getDownloadMediaInfo(1252463788, "4564972819220421305", QUALITYHD);
-int duration = downloadInfo.getDuration();	// 総時間の取得
-int playableDuration = downloadInfo.getPlayableDuration(); // ダウンロード済みの再生可能時間の取得
-float progress = downloadInfo.getProgress();	// ダウンロード進行状況の取得
-String playPath = downloadInfo.getPlayPath(); // オフライン再生パスを取得し、プレーヤーに渡すことでオフライン再生が可能になります
-int downloadState = downloadInfo.getDownloadState(); // ダウンロードステータスの取得、詳細については、STATE_xxx定数をご参照ください
-boolean isDownloadFinished = downloadInfo.isDownloadFinished(); // ダウンロードが完了した場合、trueを返します
+int duration = downloadInfo.getDuration();	// 合計使用時間を取得します
+int playableDuration = downloadInfo.getPlayableDuration(); // ダウンロードした再生可能時間を取得します
+float progress = downloadInfo.getProgress();	// ダウンロードの進行状況を取得します
+String playPath = downloadInfo.getPlayPath(); // オフライン再生パスを取得し、プレーヤーに渡すとオフラインで再生できます
+int downloadState = downloadInfo.getDownloadState(); // ダウンロードステータスを取得します。具体的にはSTATE_xxx定数をご参照ください
+boolean isDownloadFinished = downloadInfo.isDownloadFinished(); // trueを返すと、ダウンロードが完了したことを意味します
 ```
 
-URLのダウンロード情報を取得するには、URLの情報を渡す必要があります。
+URLに関連するダウンロード情報を取得するには、URL情報を渡してください。
 ```java
-// 特定のurlダウンロード情報の取得
-TXVodDownloadMediaInfo downloadInfo = downloader.getDownloadMediaInfo("http://1253131631.vod2.myqcloud.com/26f327f9vodgzp1253131631/f4bdff799031868222924043041/playlist.m3u8");
+// urlのダウンロード情報を取得します
+TXVodDownloadMediaInfo downloadInfo = downloader.getDownloadMediaInfo("http://1253131631.vod2.myqcloud.com/26f327f9vodgzp1253131631/f4bdff799031868222924043041/playlist.m3u8”);
 ```
 
-ダウンロード情報および関連ファイルを削除する場合は、TXVodDownloadMediaInfoパラメータを渡す必要があります。
+ダウンロード情報と関連ファイルを削除するには、TXVodDownloadMediaInfoパラメータを渡してください。
 ```java
 // ダウンロード情報の削除
 boolean deleteRst = downloader.deleteDownloadMediaInfo(downloadInfo);
 ```
 
 
-### 4、暗号化再生
+### 4、暗号化して再生します
 
-ビデオ暗号化方式は、主にオンライン教育など、ビデオの著作権保護が必要なシナリオで使用されています。ビデオソースを暗号化する場合、プレーヤーを変更するだけでなく、ビデオソース自体を暗号化・トランスコードする必要があり、バックエンドとエンドポイントという両方の開発エンジニアが関わる必要が出てきます。詳細については、[ビデオ暗号化ソリューション](https://intl.cloud.tencent.com/document/product/266/38131)をご参照ください。
+ビデオ暗号化スキームは主にオンライン教育など、ビデオ著作権の保護が必要なシーンで使用されています。ビデオリソースを暗号化して保護するには、プレーヤーを改造するだけでなく、ビデオソース自体を暗号化してトランスコードしてください。また、それらの作業にはバックグラウンド及び端末開発のエンジニアが参加する必要があります。詳細については、[ビデオ暗号化ソリューション](https://intl.cloud.tencent.com/document/product/266/38131)をご参照ください。
 
-### 5、プレーヤーの設定 
+###5、プレーヤーの設定 
 
-statPlayを呼び出す前に、setConfigによってプレーヤーのパラメータを設定することができます。例としては、プレーヤー接続タイムアウトの設定、プログレスコールバック間隔の設定、キャッシュファイル数の設定などです。TXVodPlayConfigがサポートするパラメータの詳細については、[基本設定インターフェース](https://intl.cloud.tencent.com/document/product/266/47841)をクリックしてご参照ください。使用例は、以下のとおりです。
+statPlayを呼び出す前に、setConfigを使用してプレーヤーのパラメータ設定を行うことができます。例えば、プレーヤー接続タイムアウト時間、進行状態のコールバック間隔、キャッシュファイル数などの設定が可能です。TXVodPlayConfigでサポートされている詳細な設定パラメータについては、[基本設定インターフェース](https://intl.cloud.tencent.com/document/product/266/47841)をご参照ください。ユースケース：
 
 ```java
 TXVodPlayConfig config = new TXVodPlayConfig();
-config.setEnableAccurateSeek(true);  // 正確にseekするかどうかを設定します。デフォルトはtrueです
+config.setEnableAccurateSeek(true);  // 正確なseekを実行するかどうかを設定します。デフォルトはtrueです
 config.setMaxCacheItems(5);  // キャッシュファイル数を5に設定します
-config.setProgressInterval(200);  // プログレスコールバック間隔を設定します。単位はミリ秒です
-config.setMaxBufferSize(50);  // 最大プリロードサイズ。単位はMBです
+config.setProgressInterval(200);  // 再生位置のコールバック間隔をミリ秒単位で設定します
+config.setMaxBufferSize(50);  // 最大プリロードサイズ（単位MB）
 mVodPlayer.setConfig(config);  // configをmVodPlayerに渡します
 ```
 
-##### 再生開始時の解像度の指定
+##### 再生開始時に解像度を指定します
 
-HLSのマルチビットレートのビデオソースを再生する場合、ビデオストリームの解像度情報があらかじめわかっていれば、再生開始前にビデオ解像度を優先的に指定して再生することができます。プレーヤーは、再生開始時に希望する解像度以下のストリームを探すため、再生開始後にsetBitrateIndexによって希望するビットレートストリーミングに切り替える必要はありません。
+マルチビットレートのHLSビデオソースを再生します。ビデオストリームの解像度情報を事前に知っていれば、再生開始前に再生するビデオ解像度を優先的に指定することができます。プレーヤーは、好みの解像度以下のストリームを探して再生を開始します。再生後は、setBitrateIndexを使用して必要なビットレートストリームに切り替える必要はありません。
 
 ```java
 TXVodPlayConfig config = new TXVodPlayConfig();
-// 入力パラメータは、ビデオの幅と高さの積（幅×高さ）で、カスタム値として渡すことができます
+// 渡すパラメータはビデオの幅と高さの積（幅*高さ）です。カスタマイズした値を渡すことができます
 config.setPreferredResolution(TXLiveConstants.VIDEO_RESOLUTION_720X1280); 
 mVodPlayer.setConfig(config);  // configをmVodPlayerに渡します
 ```
 
-##### 再生進捗コールバック時間間隔の設定
+##### 再生位置のコールバック間隔を設定します
 
 ```
 TXVodPlayConfig config = new TXVodPlayConfig();
-config.setProgressInterval(200);  // プログレスコールバック間隔を設定します。単位はミリ秒です
+config.setProgressInterval(200);  // 再生位置のコールバック間隔をミリ秒単位で設定します
 mVodPlayer.setConfig(config);  // configをmVodPlayerに渡します
 ```
 
 [](id:listening)
 
-## プレーヤーイベントのリスニング
-TXVodPlayListenerリスナーをTXVodPlayerオブジェクトにバインドすると、onPlayEvent（イベント通知）とonNetStatus（ステータスフィードバック）を介して、アプリケーションに情報を同期させることができます。
+## プレーヤーイベント監視
+TXVodPlayerオブジェクトにTXVodPlayリスナーをバインドすることができます。つまり、onPlayEvent（イベント通知）とonNetStatus（ステータスフィードバック）を使用してアプリケーションと情報を同期できます。
 
 ### 再生イベント通知（onPlayEvent）
 
@@ -685,17 +720,17 @@ TXVodPlayListenerリスナーをTXVodPlayerオブジェクトにバインドす�
 | PLAY\_EVT\_VOD\_LOADING\_END              | 2014 | ビデオ再生ロードを終了します。ビデオは引き続き再生されます                        |
 | TXVodConstants.VOD_PLAY_EVT_SEEK_COMPLETE | 2019 | Seekの完了です。バージョン10.3からサポートしています|
 
-#### イベント終了
-| イベントID               |   数値  |  意味の説明                |
+#### 終了イベント
+| イベントID                 |    数値  |  意味説明                |
 | :-------------------  |:-------- |  :------------------------ |
-|PLAY_EVT_PLAY_END      |  2006|  ビデオ再生を終了します   |
-|PLAY_ERR_NET_DISCONNECT |  -2301  |  ネットワーク接続が切断され、かつ複数回再接続しても再開できません。これ以上のリトライを行うには、ご自身で再生を再起動してください |
-|PLAY_ERR_HLS_KEY       | -2305 | HLS復号keyの取得に失敗しました |
+| PLAY_EVT_PLAY_END       | 2006  | ビデオ再生終了                                           |
+| PLAY_ERR_NET_DISCONNECT | -2301 | ネットワーク接続が切断され、何度も再接続しても回復できません。さらにリトライしたければ、手動で再起動後再生してください |
+| PLAY_ERR_HLS_KEY        | -2305 | HLS復号キーの取得に失敗しました                                  |
 
 #### 警告イベント
-以下のイベントは、SDK内のイベントをお知らせするためにのみ使用されるため、無視してかまいません。
+これらのイベントは、SDK内のイベントの一部を知らせるためだけに使用されていますが、気にしなくてもかまいません。
 
-| イベントID                 |    数値  |  意味の説明                    |
+| イベントID                 |    数値  |  意味説明                |
 | :-------------------  |:-------- |  :------------------------ |
 | PLAY_WARNING_VIDEO_DECODE_FAIL   |  2101  | 現在のビデオフレームのデコードに失敗しました  |
 | PLAY_WARNING_AUDIO_DECODE_FAIL   |  2102  | 現在のオーディオフレームのデコードに失敗しました  |
@@ -703,24 +738,24 @@ TXVodPlayListenerリスナーをTXVodPlayerオブジェクトにバインドす�
 | PLAY_WARNING_HW_ACCELERATION_FAIL|  2106  | ハードウェアデコードの開始に失敗しました。ソフトウェアデコードを使用してください   |
 
 #### 接続イベント
-サーバーへの接続に関するイベント、主にサーバー接続時間の測定や統計を行うために使用されています。
+サーバー接続イベント。主にサーバー接続時間の測定と統計に使用されます。
 
-| イベントID                     |    数値  |  意味の説明                    |
+| イベントID                 |    数値  |  意味説明                |
 | :-----------------------  |:-------- |  :------------------------ |
-| PLAY_EVT_VOD_PLAY_PREPARED     |  2013    | プレーヤーは再生可能状態です。autoPlayがfalseに設定されている場合、再生を開始するにはこのイベントを受信した後にresumeを呼び出す必要があります|
-| PLAY_EVT_RCV_FIRST_I_FRAME|  2003    | ネットワークが最初のレンダリング可能なビデオデータパッケージ（IDR）を受信しました  |
+| PLAY_EVT_VOD_PLAY_PREPARED | 2013 | プレーヤーの再生準備が完了し、再生可能状態です。autoPlayがfalseに設定されている場合、このイベントを受信してからresumeを呼び出すと再生を開始します |
+| PLAY_EVT_RCV_FIRST_I_FRAME | 2003 | ネットワークが最初のレンダリング可能なビデオパケット（IDR）を受信しました                      |
 
 
 #### 画面イベント
-以下のイベントは、画面変更情報の取得に使用されます。
+次のイベントは、画面の変更情報を取得するために使用されます。
 
 | イベントID                                   | 数値   | 意味の説明       |
 | ----------------------------- | ---- | ---------- |
-| PLAY\_EVT\_CHANGE\_RESOLUTION | 2009 | ビデオ解像度の変更    |
-| PLAY\_EVT\_CHANGE\_ROTATION   | 2011 | MP4ビデオの回転角度 |
+| PLAY\_EVT\_CHANGE\_RESOLUTION | 2009 | ビデオ解像度の変更   |
+| PLAY\_EVT\_CHANGE\_ROTATION   | 2011 | MP4 ビデオ回転角度 |
 
 #### ビデオ情報イベント
-| イベントID                     |    数値  |  意味の説明                    |
+| イベントID                 |    数値  |  意味説明                |
 | :-----------------------  |:-------- |  :------------------------ |
 |TXLiveConstants.PLAY_EVT_GET_PLAYINFO_SUCC   | 2010 | 再生ファイル情報の取得に成功しました |
 
@@ -740,18 +775,18 @@ fileId方式によって再生し、リクエストが成功した場合（イ�
 | TXVodConstants.EVT_DRM_TYPE                 | 暗号化タイプです。バージョン10.2以降でサポートされています                     |
 
 
-onPlayEventによるビデオ再生プロセスにおける取得情報の例：
+onPlayEventからビデオ再生プロセス情報を取得する例：
 
 ```java
 mVodPlayer.setVodListener(new ITXVodPlayListener() {
     @Override
     public void onPlayEvent(TXVodPlayer player, int event, Bundle param) {
         if (event == TXLiveConstants.PLAY_EVT_VOD_PLAY_PREPARED) {
-            // 準備が完了したイベントをプレーヤーが受信すると、この時点でpause、resume、getWidth、getSupportedBitratesなどのインターフェースを呼び出すことができます
+            // プレーヤーの準備ができているイベントを受信しました。この時点で、pause、resume、getWidth、getSupportedBitratesなどのインターフェースを呼び出すことができます
         } else if (event == TXLiveConstants.PLAY_EVT_PLAY_BEGIN) {
-            // 再生開始イベントの受信
+            // 再生開始イベントを受信しました
         } else if (event == TXLiveConstants.PLAY_EVT_PLAY_END) {
-            // 開始終了イベントの受信
+            // 開始終了イベントを受信しました
         }
     }
 
@@ -763,30 +798,30 @@ mVodPlayer.setVodListener(new ITXVodPlayListener() {
 
 [](id:status)
 
-### 再生ステータスフィードバック（onNetStatus）
-ステータスフィードバックは、0.5秒ごとに1回トリガーされますが、プッシャーの現在のステータスをリアルタイムにフィードバックすることが目的です。車のダッシュボードのように、SDK内の状況の一部を具体的に教えてくれるので、現在のビデオ再生状況などを把握することができます。
+### 再生ステータスのフィードバック（onNetStatus）
+ステータスフィードバックは0.5秒ごとにトリガされ、現在のプッシャ状態をリアルタイムでフィードバックすることを目的としています。これは自動車のダッシュボードのように、現在のSDK内部の特定の状況を知らせることができ、現在のビデオ再生の状態などを理解できるようになります。
 <table>
-<thead><tr><th>評価パラメータ</th><th>意味の説明</th></tr>
+<tr><th>評価パラメータ</th><th>意味説明</th></tr>
 <tr>
-<td>NET_STATUS_CPU_USAGE</td><td>現在の瞬間的なCPU使用率</td>
+<td>NET_STATUS_CPU_USAGE</td><td>現在の瞬時CPU使用率</td>
 </tr><tr>
 <td>NET_STATUS_VIDEO_WIDTH</td><td>ビデオ解像度 - 幅</td>
 </tr><tr>
 <td>NET_STATUS_VIDEO_HEIGHT</td><td>ビデオ解像度 - 高さ</td>
 </tr><tr>
-<td>NET_STATUS_NET_SPEED</td><td>現在のネットワークデータ受信速度</td>
+<td>NET_STATUS_NET_SPEED</td><td>現在のネットワークデータの受信速度</td>
 </tr><tr>
-<td>NET_STATUS_VIDEO_FPS</td><td>現在のストリームメディアのビデオフレームレート</td>
+<td>NET_STATUS_VIDEO_FPS</td><td>現在のストリーミングメディアのビデオフレームレート</td>
 </tr><tr>
-<td>NET_STATUS_VIDEO_BITRATE</td><td>現在のストリームメディアのビデオビットレートです。単位はkbps</td>
+<td>NET_STATUS_VIDEO_BITRATE</td><td>現在のストリーミングメディアのビデオビットレート（kbps単位）</td>
 </tr><tr>
-<td>NET_STATUS_AUDIO_BITRATE</td><td>現在のストリームメディアのオーディオビットレートです。単位はkbps</td>
+<td>NET_STATUS_AUDIO_BITRATE</td><td>現在のストリーミングメディアのオーディオビットレート（kbps単位）</td>
 </tr><tr>
-<td>NET_STATUS_VIDEO_CACHE</td><td>バッファ(jitterbuffer)サイズです。現在のバッファの長さは0で、ラグから遠くないことを意味しています</td>
+<td>NET_STATUS_VIDEO_CACHE</td><td>バッファ（jitterbuffer）のサイズ。バッファの現在の長さは0であれば、カクカクする可能性が高いことを意味します</td>
 </tr><tr>
-<td>NET_STATUS_SERVER_IP</td><td>接続先サーバーIP</td>
+<td>NET_STATUS_SERVER_IP</td><td>接続されたサーバIP</td>
 </tr></table>
-onNetStatusによるビデオ再生プロセスにおける取得情報の例：
+onNetStatusからビデオ再生プロセス情報を取得する例：
 
 ```java
 mVodPlayer.setVodListener(new ITXVodPlayListener() {
@@ -796,34 +831,34 @@ mVodPlayer.setVodListener(new ITXVodPlayListener() {
 
     @Override
     public void onNetStatus(TXVodPlayer player, Bundle bundle) {
-        //現在のCPU使用率の取得
+        //現在のCPU使用率を取得します
         CharSequence cpuUsage = bundle.getCharSequence(TXLiveConstants.NET_STATUS_CPU_USAGE);
-        //ビデオ幅の取得
+        // ビデオ幅の取得
         int videoWidth = bundle.getInt(TXLiveConstants.NET_STATUS_VIDEO_WIDTH);
-        //ビデオ高さの取得
+        // ビデオの高さの取得
         int videoHeight = bundle.getInt(TXLiveConstants.NET_STATUS_VIDEO_HEIGHT);
-        //リアルタイムレートの取得。単位はkbps
+        // リアルタイムレートを取得（単位：kbps）
         int speed = bundle.getInt(TXLiveConstants.NET_STATUS_NET_SPEED);
-        //現在のストリームメディアのビデオフレームレートの取得
+        //現在のストリーミングメディアのビデオフレームレートを取得します
         int fps = bundle.getInt(TXLiveConstants.NET_STATUS_VIDEO_FPS);
-        //現在のストリームメディアのビデオビットレートを取得します。単位はkbps
+        //現在のストリーミングメディアのビデオビットレート（kbps単位）を取得します
         int videoBitRate = bundle.getInt(TXLiveConstants.NET_STATUS_VIDEO_BITRATE);
-        //現在のストリームメディアのオーディオビットレートを取得します。単位はkbps
+        //現在のストリーミングメディアのオーディオビットレート（kbps単位）を取得します
         int audioBitRate = bundle.getInt(TXLiveConstants.NET_STATUS_AUDIO_BITRATE);
-        //バッファ(jitterbuffer)サイズを取得します。現在のバッファの長さは0で、ラグから遠くないことを意味しています
+        //バッファ（jitterbuffer）のサイズを取得します。バッファの現在の長さは0であれば、カクカクする可能性が高いことを意味します
         int jitterbuffer = bundle.getInt(TXLiveConstants.NET_STATUS_VIDEO_CACHE);
-        //接続されているサーバーのIPアドレスの取得
+        //連続したサーバーののIPアドレスを取得します
         String ip = bundle.getString(TXLiveConstants.NET_STATUS_SERVER_IP);
     }
 });
 ```
 
-## シナリオ化機能
+##  シーン化機能
 
 ### 1、SDKベースのDemoコンポーネント
 
-Tencent Cloudは、プレーヤーSDKをベースとして以下のような[プレーヤーコンポーネント](https://intl.cloud.tencent.com/document/product/266/33975)を開発しました。品質モニタリング、ビデオ暗号化、超高速HD(TESHD)、解像度切り替え、ミニウィンドウ再生などの機能を一体化し、あらゆるオンデマンド(VOD)、ライブストリーミング再生のシナリオに対応します。完備された機能をパッケージ化するとともに、上位層のUIを提供することで、市場で人気を博す各種ビデオアプリに引けを取らない再生ソフトウェアを短時間で作成することができます。
+Tencent CloudはプレーヤーSDKに基づき、品質監視、動画暗号化、超高速HD、シャープネス切り替え、小窓再生などの機能を一体化した、すべてのオンデマンド、ライブ再生シーンに対応する[プレーヤーコンポーネント](https://intl.cloud.tencent.com/document/product/266/33975)を開発しました。完全な機能を実装し、上位UIを提供することで、市販されているさまざまなビデオアプリに匹敵する再生ソフトウェアを短期間で構築することができます。
 
 ### 2、オープンソースGithub
 
-Tencent Cloudは、プレーヤーSDKをベースとして、没入型ビデオプレーヤーコンポーネント、ビデオFeedストリーム、マルチプレーヤー再利用コンポーネントなどを開発しました。今後はバージョンアップを重ねながら、ユーザーシナリオに基づいたコンポーネントをご提供していく予定です。[Player_Android](https://github.com/LiteAVSDK/Player_Android)からダウンロードし、体験することができます。
+Tencent CloudはプレーヤーSDKに基づき、没入型ビデオプレーヤーコンポーネント、ビデオFeedストリーム、複数プレーヤーに再利用可能なコンポーネントなどを開発しており、リリースに伴い、ユーザーシナリオに基づくコンポーネントをより多く提供していきます。[Player_Android](https://github.com/LiteAVSDK/Player_Android)でダウンロードして体験いただけます。

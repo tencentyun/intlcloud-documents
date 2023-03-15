@@ -1,5 +1,5 @@
 ## Prerequisites
-1. Activate [VOD](https://intl.cloud.tencent.com/product/vod). If you don't have an account yet, [sign up](https://intl.cloud.tencent.com/login) first.
+1. Activate [VOD](https://intl.cloud.tencent.com/product/vod). If you don’t have an account yet, [sign up](https://intl.cloud.tencent.com/login) first.
 2. Download and install Xcode from App Store.
 3. Download and install CocoaPods as instructed at the [CocoaPods website](https://cocoapods.org/).
 
@@ -34,10 +34,10 @@ Open Xcode, select the target, select the **Build Settings** tab, search for "Ot
 ```
 2. Add library files (in the SDK directory)
  **TXFFmpeg.xcframework**: Add the .xcframework file to the project, set it to **Embed & Sign** in **General** > **Frameworks, Libraries, and Embedded Content**, and check whether **Code Sign On Copy** is selected in **Build Phases** > **Embed Frameworks** in your **project settings** as shown below:
- **TXSoundTouch.xcframework**: Add the .xcframework file to the project, set it to **Embed & Sign** in **General** > **Frameworks, Libraries, and Embedded Content**, and check whether **Code Sign On Copy** is selected in **Build Phases** > **Embed Frameworks** in your **project settings** as shown below:<br>
- <img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b226decc76c33eff8c3f5b4cc4246bea.png" />
-<br>
-Then, select **Build Settings** > **Search Paths** in Xcode and add the path of the above frameworks in **Framework Search Paths**.
+    **TXSoundTouch.xcframework**: Add the .xcframework file to the project, set it to **Embed & Sign** in **General** > **Frameworks, Libraries, and Embedded Content**, and check whether **Code Sign On Copy** is selected in **Build Phases** > **Embed Frameworks** in your **project settings** as shown below:<br>
+    <img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b226decc76c33eff8c3f5b4cc4246bea.png" />
+ <br>
+ Then, select **Build Settings** > **Search Paths** in Xcode and add the path of the above frameworks in **Framework Search Paths**.
 
 <b>MetalKit.framework</b>: Open Xcode, go to your **project settings**, select **Build Phases** > **Link Binary With Libraries**, click **+** in the bottom-left corner, and enter "MetalKit" to add it to the project as shown below:<br>
 <img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/8ab7576dcc8bbe7b36396955ca06b186.png" />
@@ -68,14 +68,40 @@ To use the PiP feature, configure as shown below. If you don’t need the PiP fe
 :::
 </dx-tabs>
 
-
-
-
-​        
-
 [](id:step2)
 
-### Step 2. Create a player object
+### Step 2. Set the SDK connection environment
+
+In order to help you conduct business with higher quality and security in compliance with applicable laws and regulations in different countries and regions, Tencent Cloud provides two SDK connection environments. If you serve global users, we recommend you use the following API to configure the global connection environment.
+
+```objective-c
+// If you serve global users, configure the global SDK connection environment.
+[TXLiveBase setGlobalEnv:"GDPR"]
+```
+
+[](id:step3)
+
+### Step 3. Configure the license
+
+If you have the required license, you need to get the license URL and key in the [RT-Cube console](https://console.cloud.tencent.com/vcube).
+If you don't have the required license, you need to get it as instructed in [Video Playback License](https://cloud.tencent.com/document/product/881/74588).
+
+After obtaining the license information, before calling relevant APIs of the SDK, initialize the license through the following API. We recommend you set the following in `- [AppDelegate application:didFinishLaunchingWithOptions:]`:
+
+```objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSString * const licenceURL = @"<The license URL obtained>";
+    NSString * const licenceKey = @"<The key obtained>";
+
+    //TXLiveBase can be found in the "TXLiveBase.h" header file
+    [TXLiveBase setLicenceURL:licenceURL key:licenceKey]; 
+    NSLog(@"SDK Version = %@", [TXLiveBase getSDKVersionStr]);
+}
+```
+
+[](id:step4)
+
+### Step 4. Create a player object
 
 The `TXVodPlayer` module of the Player SDK is used to implement the VOD feature.
 
@@ -84,9 +110,9 @@ TXVodPlayer *_txVodPlayer = [[TXVodPlayer alloc] init];
 [_txVodPlayer setupVideoWidget:_myView insertIndex:0]
 ```
 
-[](id:step3)
+[](id:step5)
 
-### Step 3. Create a rendering view
+### Step 5. Create a rendering view
 
 In iOS, a view is used as the basic UI rendering unit. Therefore, you need to configure a view, whose size and position you can adjust, for the player to display video images on.
 
@@ -109,9 +135,9 @@ You can adjust the size of video images by changing the size and position of the
  }];
 ```
 
-[](id:step4)
+[](id:step6)
 
-### Step 4. Start playback
+### Step 6. Start playback
 
 `TXVodPlayer` supports two playback modes for you to choose as needed:
 
@@ -131,11 +157,11 @@ p.fileId = @"4564972819220421305";
 [_txVodPlayer startPlayWithParams:p];
 ```
 You can go to [Media Assets](https://console.cloud.tencent.com/vod/media) and find it. After clicking it, you can view its `fileId` in the video details on the right.
-Play back the video through the `fileId`, and the player will request the backend for the real playback address. If the network is abnormal or the `fileId` doesn't exist, the `PLAY_ERR_GET_PLAYINFO_FAIL` event will be received; otherwise, `PLAY_EVT_GET_PLAYINFO_SUCC` will be received, indicating that the request succeeded.
+Play back the video through the `fileId`, and the player will request the backend for the real playback URL. If the network is abnormal or the `fileId` doesn't exist, the `PLAY_ERR_GET_PLAYINFO_FAIL` event will be received; otherwise, `PLAY_EVT_GET_PLAYINFO_SUCC` will be received, indicating that the request succeeded.
 :::
 </dx-tabs>
 
-### Step 5. Stop playback
+### Step 7. Stop playback
 
 Remember to use **removeVideoWidget** to terminate the view control before exiting the current UI when stopping playback. This can prevent memory leak and screen flashing issues.
 
@@ -191,14 +217,14 @@ int time = 600; // In seconds if the value is of `int` type
 You can specify the playback start time before calling `startPlay` for the first time.
 
 ```objective-c
-float startTimeInSecond = 60; // In ms
+float startTimeInSecond = 60; // Unit: Second
 [_txVodPlayer setStartTime:startTimeInSecond];  // Set the playback start time
 [_txVodPlayer startPlay:url];
 ```
 
 
 ### 2. Image adjustment
-- **view: Size and position**
+- **view: size and position**
 You can modify the size and position of the view by adjusting the size and position of the parameter `view` of setupVideoWidget. The SDK will automatically adjust the size and position of the view based on your configuration.
 - **setRenderMode: Aspect fill or aspect fit**
 <table>
@@ -226,9 +252,6 @@ You can modify the size and position of the view by adjusting the size and posit
 <td>HOME_ORIENTATION_UP</td>
 <td>The Home button is above the video image</td>
 </tr></table>
-
-
-
 
 ### 3. Adjustable-Speed playback
 The VOD player supports adjustable-speed playback. You can use the `setRate` API to set the VOD playback speed, such as 0.5X, 1.0X, 1.2X, and 2X.
@@ -376,15 +399,15 @@ if (![[NSFileManager defaultManager] fileExistsAtPath:preloadDataPath]) {
 [_txVodPlayer startPlay:playUrl];                            
 ```
 
->? The `TXVodPlayConfig#setMaxCacheItems` API used for configuration on earlier versions has been disused and is not recommended.
+>? The `TXVodPlayConfig#setMaxCacheItems` API used for configuration on earlier versions has been deprecated and is not recommended.
 
-## Advanced Feature Usage
+## Using Advanced Features
 
 ### 1. Video preloading
 
 #### Step 1. Use video preloading
 
-In UGSV playback scenarios, the preloading feature contributes to a smooth viewing experience: While watching a video, you can load the URL of the next video to be played back on the backend. When the next video is switched to, it will be preloaded and can be played back immediately.
+In UGSV playback scenarios, the preloading feature contributes to a smoother viewing experience: While watching a video, you can load the URL of the next video to be played back on the backend. When the next video is switched to, it will be preloaded and can be played back immediately.
 
 Video preloading can deliver an instant playback effect but has certain performance overheads. If your business needs to preload many videos, we recommend you use this feature together with [video predownloading](#download).
 
@@ -405,7 +428,7 @@ _player_B.isAutoPlay = NO;
 
 After video A ends and video B is automatically or manually switched to, you can call the `resume` function to immediately play back video B.
 
->! After `autoPlay` is set to `false`, make sure that video B has been prepared before calling `resume`, that is, you should call it only after the `PLAY_EVT_VOD_PLAY_PREPARED` event of video B (2013: The player has been prepared, and the video can be played back) is detected.
+>! After `autoPlay` is set to `false`, make sure that video B has been prepared before calling `resume`, that is, you should call it only after the `PLAY_EVT_VOD_PLAY_PREPARED` event of video B (2013: the player has been prepared, and the video can be played back) is detected.
 
 ```objectivec
 -(void) onPlayEvent:(TXVodPlayer *)player event:(int)EvtID withParam:(NSDictionary*)param
@@ -450,7 +473,7 @@ You can download part of the video content in advance without creating a player 
 
 Before using the playback service, make sure that [video cache](#cache) has been set.
 >?
->- `TXPlayerGlobalSetting` is the global cache setting API, and the original `TXVodConfig` API has been disused.
+>- `TXPlayerGlobalSetting` is the global cache setting API, and the original `TXVodConfig` API has been deprecated.
 >- The global cache directory and size settings have a higher priority than those configured in `TXVodConfig` of the player.
 
 Sample:
@@ -489,6 +512,7 @@ As HLS streaming media cannot be directly saved locally, you cannot download the
 > ! 
 > - Currently, `TXVodDownloadManager` can cache only HLS files but not MP4 and FLV files.
 >- The Player SDK already supports playing back local MP4 and FLV files.
+
 [](id:offline1)
 #### Step 1. Make preparations
 
@@ -732,7 +756,7 @@ Below is the sample code of using `onNetStatus` to get the video playback inform
 
 ### 1. SDK-based demo component
 
-Based on the Player SDK, Tencent Cloud has developed a [player component](https://intl.cloud.tencent.com/document/product/266/33976). It integrates quality monitoring, video encryption, TSC, definition switch, and small window playback and is suitable for all VOD and live playback scenarios. It encapsulates complete features and provides upper-layer UIs to help you quickly create a playback program comparable to popular video apps.
+Based on the Player SDK, Tencent Cloud has developed a [player component](https://intl.cloud.tencent.com/document/product/266/33976). It integrates quality monitoring, video encryption, TESHD, definition switch, and small window playback and is suitable for all VOD and live playback scenarios. It encapsulates complete features and provides upper-layer UIs to help you quickly create a playback program comparable to popular video apps.
 
 ### 2. Open-source GitHub projects
 

@@ -9,13 +9,48 @@
 
 ## SDK Integration
 [](id:stepone)
+
 ### Step 1. Download the SDK ZIP file[](id:step1)
 [Download](https://vcube.cloud.tencent.com/home.html) the SDK ZIP file and integrate the SDK into your application as instructed in the SDK integration document.
 
+### Step 2. Set the SDK connection environment
 
+In order to help you conduct business with higher quality and security in compliance with applicable laws and regulations in different countries and regions, Tencent Cloud provides two SDK connection environments. If you serve global users, we recommend you use the following API to configure the global connection environment.
 
+```java
+// If you serve global users, configure the global SDK connection environment.
+TXLiveBase.setGlobalEnv("GDPR");
+```
 
-### Step 2. Add a view
+### Step 3. Configure the license
+
+If you have the required license, you need to get the license URL and key in the [RT-Cube console](https://console.cloud.tencent.com/vcube).
+
+If you don't have the required license, you need to get it as instructed in Video Playback License
+
+After obtaining the license information, before calling relevant APIs of the SDK, initialize the license through the following API. We recommend you set the following in the `Application` class:
+
+```java
+public class MApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        String licenceURL = ""; // The license URL obtained
+        String licenceKey = ""; // The license key obtained
+        TXLiveBase.getInstance().setLicence(this, licenceURL, licenceKey);
+        TXLiveBase.setListener(new TXLiveBaseListener() {
+            @Override
+            public void onLicenceLoaded(int result, String reason) {
+                Log.i(TAG, "onLicenceLoaded: result:" + result + ", reason:" + reason);
+            }
+        });
+    }
+}
+```
+
+### Step 4. Add a view
+
 The SDK provides `TXCloudVideoView` for video rendering by default. First, add the following code to the layout XML file:
 ```xml
 <com.tencent.rtmp.ui.TXCloudVideoView
@@ -28,7 +63,7 @@ The SDK provides `TXCloudVideoView` for video rendering by default. First, add t
 
 [](id:step3)
 
-### Step 3. Create a player object
+### Step 5. Create a player object
 
 Create the **TXVodPlayer** object and use the `setPlayerView` API to associate the object with the **video_view** control just added to the UI.
 
@@ -43,7 +78,7 @@ mVodPlayer.setPlayerView(mPlayerView);
 
 [](id:step4)
 
-### Step 4. Start playback
+### Step 6. Start playback
 
 `TXVodPlayer` supports two playback modes for you to choose as needed:
 
@@ -85,7 +120,7 @@ Play back the video through the `FileId`, and the player will request the backen
 
 [](id:5)
 
-### Step 5. Stop playback
+### Step 7. Stop playback
 
 **Remember to terminate the view control** when stopping the playback, especially before the next call of `startPlay`. This can prevent memory leak and screen flashing issues.
 
@@ -150,14 +185,14 @@ mVodPlayer.seek(time);
 You can specify the playback start time before calling `startPlay` for the first time.
 
 ```java
-float startTimeInSecond = 60; // In ms
+float startTimeInSecond = 60; // Unit: Second
 mVodPlayer.setStartTime(startTimeInSecond);   // Set the playback start time
 mVodPlayer.startPlay(url);
 ```
 
 ### 2. Image adjustment
 
-- **view: Size and position**
+- **view: size and position**
 You can modify the size and position of video images by adjusting the size and position of the `video_view` control added in the [Add a view](#addview) step during SDK integration.
 - **setRenderMode: Aspect fill or aspect fit**
 <table>
@@ -489,7 +524,7 @@ You can download part of the video content in advance without creating a player 
 Before using the playback service, make sure that [video cache](#cache) has been set.
 
 >? 
-> 1. `TXPlayerGlobalSetting` is the global cache setting API, and the original `TXVodConfig` API has been disused.
+> 1. `TXPlayerGlobalSetting` is the global cache setting API, and the original `TXVodConfig` API has been deprecated.
 > 2. The global cache directory and size settings have a higher priority than those configured in `TXVodConfig` of the player.
 
 Sample:
@@ -552,7 +587,7 @@ You need to pass in the download URL at least. Only the non-nested HLS format is
 downloader.startDownloadUrl("http://1500005830.vod2.myqcloud.com/43843ec0vodtranscq1500005830/00eb06a88602268011437356984/video_10_0.m3u8", "");
 ```
 :::
-::: Through `Fileid`[](id:fileid)
+::: Through Fileid[](id:fileid)
 For download through `Fileid`, you need to pass in `AppID`, `Fileid`, and `qualityId` at least. For signed videos, you also need to pass in `pSign`. If no specific value is passed in to `userName`, it will be `default` by default.
 ```java
 //  QUALITYOD // Original resolution
@@ -581,8 +616,8 @@ You may receive the following task callbacks:
 | void onDownloadStart(TXVodDownloadMediaInfo mediaInfo)       | The task started, that is, the SDK started the download.                              |
 | void onDownloadProgress(TXVodDownloadMediaInfo mediaInfo)    | Task progress. During download, the SDK will frequently call back this API. You can use `mediaInfo.getProgress()` to get the current progress. |
 | void onDownloadStop(TXVodDownloadMediaInfo mediaInfo)        | The task stopped. When you call `stopDownload` to stop the download, if this message is received, the download is stopped successfully. |
-|  void onDownloadFinish(TXVodDownloadMediaInfo mediaInfo) |  Download was completed. If this callback is received, the entire file has been downloaded, and the downloaded file can be played back by `TXVodPlayer`. |
-| void onDownloadError(TXVodDownloadMediaInfo mediaInfo, int error, String reason) | Download error. If the network is disconnected during download, this API will be called back and the download task will stop. The error code is in `TXVodDownloadManager`. |
+| void onDownloadFinish(TXVodDownloadMediaInfo mediaInfo)      | Download was completed. If this callback is received, the entire file has been downloaded, and the downloaded file can be played back by `TXVodPlayer`. |
+| void onDownloadError(TXVodDownloadMediaInfo mediaInfo, int error, String reason) | Download error. If the network is disconnected during download, this API will be called back and the download task will stop. The error code is in `TXVodDownloadManager`.  |
 
 
 As the downloader can download multiple files at a time, the callback API carries the `TXVodDownloadMediaInfo` object. You can access the URL or `dataSource` to determine the download source and get other information such as download progress and file size.
@@ -679,10 +714,10 @@ You can bind a `TXVodPlayListener` listener to the `TXVodPlayer` object to use `
 
 | Event ID | Code | Description |
 | ----------------------------------------- | ---- | ---------------------------------------------------------- |
-| PLAY\_EVT\_PLAY\_BEGIN                    | 2004 | Video playback started.                                               |
-| PLAY\_EVT\_PLAY\_PROGRESS                 | 2005 | Video playback progress. The current playback progress, loading progress, and total video duration will be notified of.      |
-| PLAY\_EVT\_PLAY\_LOADING                  | 2007 | The video is being loaded. The `LOADING_END` event will be reported if video playback resumes. |
-| PLAY\_EVT\_VOD\_LOADING\_END              | 2014 | Video loading ended, and video playback resumed.                        |
+| PLAY\_EVT\_PLAY\_BEGIN       | 2004 | Video playback started.                                               |
+| PLAY\_EVT\_PLAY\_PROGRESS    | 2005 | Video playback progress (including the current playback progress, loading progress, and total video duration).      |
+| PLAY\_EVT\_PLAY\_LOADING     | 2007 | The video is being loaded. The `LOADING_END` event will be reported if video playback resumes. |
+| PLAY\_EVT\_VOD\_LOADING\_END | 2014 | Video loading ended, and video playback resumed.                        |
 | TXVodConstants.VOD_PLAY_EVT_SEEK_COMPLETE | 2019 | Seeking was completed. The seeking feature is supported by v10.3 or later. |
 
 #### Stop events
@@ -822,7 +857,7 @@ mVodPlayer.setVodListener(new ITXVodPlayListener() {
 
 ### 1. SDK-based demo component
 
-Based on the Player SDK, Tencent Cloud has developed a [player component](https://intl.cloud.tencent.com/document/product/266/33975). It integrates quality monitoring, video encryption, TSC, definition switch, and small window playback and is suitable for all VOD and live playback scenarios. It encapsulates complete features and provides upper-layer UIs to help you quickly create a playback program comparable to popular video apps.
+Based on the Player SDK, Tencent Cloud has developed a [player component](https://intl.cloud.tencent.com/document/product/266/33975). It integrates quality monitoring, video encryption, TESHD, definition switch, and small window playback and is suitable for all VOD and live playback scenarios. It encapsulates complete features and provides upper-layer UIs to help you quickly create a playback program comparable to popular video apps.
 
 ### 2. Open-source GitHub projects
 

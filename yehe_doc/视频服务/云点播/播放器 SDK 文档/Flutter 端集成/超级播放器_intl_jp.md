@@ -7,13 +7,13 @@ Tencent Cloud View Cube Flutterプレーヤーのプロジェクトアドレス�
 
 ## プロジェクトの概要
 
-Tencent Cloud View CubeプレーヤーSDKはオーディオビデオ端末SDK（Tencent Cloud View Cube）のサブ製品SDKの一つであり、Tencent Cloudの強力なバックエンド機能とAIテクノロジーをベースに、ビデオオンデマンドとライブストリーミング再生機能をご提供する、優れた再生媒体です。Tencent CloudのVideo on Demand（VOD）またはCloud Streaming Services（CSS）と組み合わせて使用することで、スムーズで安定した再生パフォーマンスをすぐに体験できます。様々なユースケースに対応し、お客様の多様なニーズを満たすことができるため、お客様は安心して業務に専念でき、超高速で高画質な再生という新体験を存分に楽しむことができます。
+Tencent Cloud View Cube·Player+はオーディオビデオ端末SDK（Tencent Cloud View Cube）のサブ製品SDKの一つであり、Tencent Cloudの強力なバックエンド機能とAIテクノロジーをベースに、ビデオオンデマンドとライブストリーミング再生機能をご提供する、優れた再生媒体です。Tencent CloudのVideo on Demand（VOD）またはCloud Streaming Services（CSS）と組み合わせて使用することで、スムーズで安定した再生パフォーマンスをすぐに体験できます。様々なユースケースに対応し、お客様の多様なニーズを満たすことができるため、お客様は安心して業務に専念でき、超高速で高画質な再生という新体験を存分に楽しむことができます。
 
 このプロジェクトではVOD再生とCSS再生をご提供します。プレーヤーをベースに、ご自身の再生業務を構築することができます。
 
-- [VOD再生](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE-EN.md)：`TXVodPlayerController`でAndroidおよびiOSという2つのプラットフォームのVODプレーヤーに対し、インターフェースのパッケージ化を行います。`TXVodPlayerController`を統合することで、VOD再生業務の開発を行うことができます。詳細な使用例については、`DemoTXVodPlayer`をご参照ください。
+- [VOD再生](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%82%B9%E6%92%AD%E6%92%AD%E6%94%BE-EN.md)：`TXVodPlayerController`でAndroidおよびiOSという2つのプラットフォームのVOD Player+に対し、インターフェースのパッケージ化を行います。`TXVodPlayerController`を統合することで、VOD再生業務の開発を行うことができます。詳細な使用例については、`DemoTXVodPlayer`をご参照ください。
 
-- [CSS再生](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE-EN.md)：`TXLivePlayerController`でAndroidおよびiOSという2つのプラットフォームのライブストリーミングプレーヤーSDKに対し、インターフェースのパッケージ化を行います。`TXLivePlayerController`を統合することで、CSS再生の開発を行うことができます。詳細な使用例については、`DemoTXLivePlayer`をご参照ください。
+- [CSS再生](https://github.com/LiteAVSDK/Player_Flutter/blob/main/Flutter/docs/%E7%9B%B4%E6%92%AD%E6%92%AD%E6%94%BE-EN.md)：`TXLivePlayerController`でAndroidおよびiOSという2つのプラットフォームのライブストリーミングPlayer+に対し、インターフェースのパッケージ化を行います。`TXLivePlayerController`を統合することで、CSS再生業務の開発を行うことができます。詳細な使用例については、`DemoTXLivePlayer`をご参照ください。
 
 接続コストを削減するため、exampleでプレーヤーコンポーネント（UI付きのプレーヤー）をご提供しています。プレーヤーの簡単な数行のコードによってビデオ再生業務を構築できます。ご自身のプロジェクトのニーズに基づいて、プレーヤーコンポーネントの関連コードをプロジェクトに適用し、ニーズに応じてUIとインタラクションの細部を調整することができます。
 
@@ -67,13 +67,13 @@ Androidの`AndroidManifest.xml`に次の設定を追加します。
     <true/>
 </dict>
 ```
-2. iOSは`pod`方式をネイティブに使用して依存するため、`podfile`ファイルを編集して、プレーヤーSDKのバージョンを指定します。デフォルトではPlayer版SDKを統合します。
+2. iOSは`pod`方式をネイティブに使用して依存するため、`podfile`ファイルを編集して、Player+のバージョンを指定します。デフォルトではPlayer版SDKを統合します。
 ```xml
-pod 'TXLiteAVSDK_Player'	        //Player版
+pod 'TXLiteAVSDK_Player'          //Player版
 ```
 3. Professional版SDKを統合します。
 ```
-pod 'TXLiteAVSDK_Professional' 	//Professional版
+pod 'TXLiteAVSDK_Professional'  //Professional版
 ```
 
 バージョンを指定しない場合は、デフォルトで最新バージョンの`TXLiteAVSDK_Player`がインストールされます。
@@ -82,10 +82,31 @@ pod 'TXLiteAVSDK_Professional' 	//Professional版
 - `flutter doctor`コマンドを実行して実行環境を確認すると、「No issues found!」が表示されました。
 - `flutter pub get`を実行し、すべての依存コンポーネントが正常に更新されていることを確認します。
 
+## ビデオ再生機能Licenseおよび統合の申請
+すでにLicense権限承認を取得している場合は、[Tencent Cloud View Cubeコンソール](https://console.cloud.tencent.com/vcube)  にて、License URLおよびLicense Keyを取得する必要があります。
 
+License権限承認を取得していない場合は、先に ビデオ再生Licenseをご参照の上、関連する権限承認を取得してください。
 
+プレーヤーを統合する前に、[Tencent Cloudアカウントの登録](https://www.tencentcloud.com/en/account/register)が必要です。登録完了後、ビデオ再生機能Licenseを申請し、次の方式で統合します。アプリケーション起動時に行うことをお勧めします。
+
+Licenseを統合していない場合、再生中に異常が発生することがあります。
+```dart
+String licenceURL = ""; // 取得したlicence url
+String licenｃeKey = ""; // 取得したlicence key
+SuperPlayerPlugin.setGlobalLicense(licenceURL, licenceKey);
+```
+
+## SDKへのアクセス環境の設定
+
+お客様がより高品質かつ安全でコンプライアンスに則ったビジネスを展開し、各国・地域の規制の要求事項を満たすよう、Tencent Cloudは2つのSDKアクセス環境を提供します。グローバルユーザにサービスを提供している場合、以下のインターフェースでグローバルアクセス環境を設定することをお勧めします。
+
+```dart
+// グローバルユーザにサービスを提供している場合、SDKアクセス環境にグローバルアクセス環境を設定してください
+SuperPlayerPlugin.setGlobalEnv("GDPR");
+```
 
 ## VODプレーヤーの使用
+
 VODプレーヤーのコアクラスは`TXVodPlayerController`です。詳細なDemoについては`DemoTXVodPlayer`をご参照ください。
 ```dart
 import 'package:flutter/material.dart';
@@ -165,7 +186,7 @@ class _DemoSuperplayerState extends State<DemoSuperplayer> {
         setState(() {
           _isFullScreen = false;
         });
-      } else {
+      }else{
         print(evtName);
       }
     });
@@ -257,7 +278,7 @@ class _DemoSuperplayerState extends State<DemoSuperplayer> {
 
 ## ハイレベルカスタム開発ガイド 
 
-Tencent CloudのプレーヤーSDK Flutterプラグインはネイティブプレーヤー機能をパッケージ化したものです。ハイレベルなカスタム開発を行う必要がある場合は、次の方法を用いることをお勧めします。
+Tencent Cloud Player+ Flutterプラグインはネイティブプレーヤー機能をパッケージ化したものです。ハイレベルなカスタム開発を行う必要がある場合は、次の方法を用いることをお勧めします。
 
 - VOD再生をベースにして、インターフェースクラスを`TXVodPlayerController`とするか、またはライブストリーミング再生をベースにして、インターフェースクラスを`TXLivePlayerController`としてカスタム開発を行います。プロジェクトではカスタム開発Demoをご提供しています。exampleプロジェクト内の`DemoTXVodPlayer`および`DemoTXLivePlayer`をご参照ください。
 
@@ -267,5 +288,5 @@ Tencent CloudのプレーヤーSDK Flutterプラグインはネイティブプ�
 
 ## その他の機能
 
-完全な機能は、コードをスキャンし、ビデオクラウドツールキットをダウンロードして体験するか、またはプログラムのDemoを直接実行することもできます。
+完全な機能は、2次元コードをスキャニングし、ビデオクラウドツールキットをダウンロードして体験するか、またはプログラムのDemoを直接実行することもできます。
 <img src="https://main.qcloudimg.com/raw/6790ddaf4ffe4afd0ceb96b309a16496.png" width="150">

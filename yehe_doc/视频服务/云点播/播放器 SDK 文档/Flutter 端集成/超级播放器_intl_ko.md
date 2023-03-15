@@ -82,10 +82,31 @@ pod 'TXLiteAVSDK_Professional' //Professional 에디션
 - `flutter doctor` 명령을 실행하여, “No issues found!”가 표시될 때까지 런타임 환경을 확인하십시오.
 - `flutter pub get`을 실행하여 모든 종속 컴포넌트가 성공적으로 업데이트되었는지 확인하십시오.
 
+## 비디오 재생 기능 License 및 통합 신청
+이미 관련 License 권한을 획득한 경우, [Tencent Cloud RT-Cube 콘솔](https://console.cloud.tencent.com/vcube)에서 License URL과 License Key를 가져옵니다.
 
+아직 License 권한을 획득하지 못했다면 비디오 재생 License를 참고하여 관련 권한을 먼저 획득해야 합니다
 
+플레이어를 통합하기 전에 [Sign up for a Tencent Cloud account](https://www.tencentcloud.com/en/account/register)해야 하며, 등록 성공 후 비디오 재생 능력 License를 신청한 후 다음과 같은 방법으로 통합하십시오. 애플리케이션이 시작될 때 이 작업을 수행하는 것이 좋습니다.
+
+통합 License가 없을 경우 재생 중 예외가 발생할 수 있습니다.
+```dart
+String licenceURL = ""; // 획득한 licence url
+String licenceKey = ""; // 획득한 licence key
+SuperPlayerPlugin.setGlobalLicense(licenceURL, licenceKey);
+```
+
+## SDK 액세스 환경 설정
+
+고객 비즈니스의 더 높은 보안성과 품질을 보장하고, 고객이 다양한 국가 및 지역의 법률 및 규정을 준수할 수 있도록 Tencent Cloud는 두 가지 세트의 SDK 액세스 환경을 제공합니다. 글로벌 사용자에게 서비스를 제공하는 경우 다음 인터페이스를 사용하여 글로벌 액세스 환경을 구성하는 것이 좋습니다.
+
+```dart
+// 글로벌 사용자에게 서비스를 제공하는 경우 SDK 액세스 환경을 글로벌 액세스 환경으로 구성합니다
+SuperPlayerPlugin.setGlobalEnv("GDPR");
+```
 
 ## VOD 플레이어 사용
+
 VOD 플레이어의 핵심 클래스는 `TXVodPlayerController`입니다. 자세한 Demo는 `DemoTXVodPlayer`를 참고하십시오.
 ```dart
 import 'package:flutter/material.dart';

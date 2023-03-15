@@ -1,5 +1,5 @@
 ## 준비 작업
-1. 완전한 플레이어 기능을 사용하려면 [VOD](https://intl.cloud.tencent.com/product/vod)를 활성화하는 것이 좋습니다. 계정을 등록하지 않으셨다면 먼저 [회원 가입](https://intl.cloud.tencent.com/login) 하십시오. VOD 서비스를 사용하지 않는 경우 이 단계를 건너뛰십시오. 그러나 통합 후에는 기본 플레이어 기능만 사용할 수 있습니다.
+1. 완전한 플레이어 기능을 사용하려면 [VOD](https://intl.cloud.tencent.com/product/vod)를 활성화하는 것이 좋습니다. 계정을 등록하지 않으셨다면 먼저 [Sign in](https://intl.cloud.tencent.com/login) 하십시오. VOD 서비스를 사용하지 않는 경우 이 단계를 건너뛰십시오. 그러나 통합 후에는 기본 플레이어 기능만 사용할 수 있습니다.
 2. [Android Studio 공식 웹 사이트](https://developer.android.com/studio)에서 Android Studio를 다운로드하고 설치합니다. 이미 수행한 경우 이 단계를 건너뜁니다.
 
 ## 내용 요약
@@ -9,13 +9,48 @@
 
 ## SDK 통합
 [](id:stepone)
+
 ### 1단계: SDK ZIP 파일 다운로드[](id:step1)
 [다운로드](https://vcube.cloud.tencent.com/home.html) SDK ZIP 파일을 다운로드하고 SDK 통합 가이드의 지침에 따라 SDK를 애플리케이션에 통합합니다.
 
+### 2단계: **SDK 액세스 환경 설정**
 
+고객 비즈니스의 더 높은 보안성과 품질을 보장하고, 고객이 다양한 국가 및 지역의 법률 및 규정을 준수할 수 있도록 Tencent Cloud는 두 가지 세트의 SDK 액세스 환경을 제공합니다. 글로벌 사용자에게 서비스를 제공하는 경우 다음 인터페이스를 사용하여 글로벌 액세스 환경을 구성하는 것이 좋습니다.
 
+```java
+// 글로벌 사용자에게 서비스를 제공하는 경우 SDK 액세스 환경을 글로벌 액세스 환경으로 구성합니다
+TXLiveBase.setGlobalEnv("GDPR");
+```
 
-### 2단계: View 추가
+### 3단계: License 권한 설정
+
+이미 관련 License 권한을 획득한 경우 [Tencent Cloud RT-Cube 콘솔](https://console.cloud.tencent.com/vcube)에서 License URL과 License Key를 획득해야 합니다.
+
+License 권한을 획득하지 못했다면 비디오 재생 License를 참고하여 관련 권한을 획득해야 합니다.
+
+License 정보를 획득한 후 SDK의 해당 인터페이스를 호출하기 전에 다음 인터페이스를 통해 License를 초기화하고 Application 클래스에서 다음을 설정하는 것을 권장합니다.
+
+```java
+public class MApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        String licenceURL = ""; // 획득한 licence url
+        String licenceKey = ""; // 획득한 licence key
+        TXLiveBase.getInstance().setLicence(this, licenceURL, licenceKey);
+        TXLiveBase.setListener(new TXLiveBaseListener() {
+            @Override
+            public void onLicenceLoaded(int result, String reason) {
+                Log.i(TAG, "onLicenceLoaded: result:" + result + ", reason:" + reason);
+            }
+        });
+    }
+}
+```
+
+### 4단계: View 추가
+
 SDK는 기본적으로 비디오 렌더링을 위한 TXCloudVideoView를 제공합니다. 먼저 레이아웃 xml 파일에 다음 코드를 추가합니다.
 ```xml
 <com.tencent.rtmp.ui.TXCloudVideoView
@@ -28,7 +63,7 @@ SDK는 기본적으로 비디오 렌더링을 위한 TXCloudVideoView를 제공�
 
 [](id:step3)
 
-### 3단계: 플레이어 객체 생성
+### 5단계: Player 객체 생성
 
 **TXVodPlayer** 객체를 만들고 setPlayerView API를 사용하여 객체를 UI에 방금 추가한 **video_view** 컨트롤과 연결합니다.
 
@@ -43,7 +78,7 @@ mVodPlayer.setPlayerView(mPlayerView);
 
 [](id:step4)
 
-### 4단계: 재생 시작
+### 6단계: 재생 시작
 
 TXVodPlayer는 필요에 따라 선택할 수 있는 두 가지 재생 모드를 지원합니다.
 
@@ -85,7 +120,7 @@ FileId를 통해 비디오를 재생하면 플레이어가 실제 재생 URL에 
 
 [](id:5)
 
-### 5단계: 재생 중지
+### 7단계: 재생 중지
 
 재생을 중지할 때, 특히 startPlay의 다음 호출 전에 **view 컨트롤을 종료하는 것을 잊지 마십시오**. 이렇게 하면 메모리 유출 및 화면 깜박임 문제를 방지할 수 있습니다.
 
@@ -99,7 +134,7 @@ public void onDestroy() {
     mPlayerView.onDestroy(); 
 }
 ```
->?stopPlay의 boolean 매개변수는 ‘마지막 프레임 이미지 지울기 여부’를 나타냅니다. RTMP SDK 라이브 플레이어의 초기 버전에는 pause 개념이 없습니다. 따라서 이 boolean 값은 마지막 프레임 이미지를 지우는 데 사용됩니다.
+>?stopPlay의 boolean 매개변수는 ‘마지막 프레임 이미지 지우기 여부’를 나타냅니다. RTMP SDK 라이브 플레이어의 초기 버전에는 pause 개념이 없습니다. 따라서 이 boolean 값은 마지막 프레임 이미지를 지우는 데 사용됩니다.
 
 VOD가 중지된 후 마지막 프레임 이미지를 유지하려면 재생 중지 이벤트를 수신한 후 아무 것도 하지 마십시오. 재생은 기본적으로 마지막 프레임에서 중지됩니다.
 
@@ -150,8 +185,8 @@ mVodPlayer.seek(time);
 startPlay를 처음 호출하기 전에 재생 시작 시간을 지정할 수 있습니다.
 
 ```java
-float startTimeInMS = 600; // 단위: 밀리초
-mVodPlayer.setStartTime(startTimeInMS);   // 재생 시작 시간 설정
+float startTimeInSecond = 60; // 단위: 초
+mVodPlayer.setStartTime(startTimeInSecond);   // 재생 시작 시간 설정
 mVodPlayer.startPlay(url);
 ```
 
@@ -169,7 +204,7 @@ SDK 연동 시 [View 추가](#addview) 단계에서 추가한 “video_view” �
 </thead>
 <tbody><tr>
 <td>RENDER_MODE_FULL_FILL_SCREEN</td>
-<td>이미지는 전체 화면을 채우도록 크기가 조정되고 초과 부분은 잘립니다. 이 모드에는 검은색 막대가 없지만 이미지가 전체적으로 표시되지 않을 수 있음</td>
+<td>이미지는 전체 화면을 채우도록 크기가 조정되고 초과 부분은 잘립니다. 이 모드에는 검은색 막대가 없지만 이미지가 전체적으로 표시되지 않을 수 있습니다</td>
 </tr>
 <tr>
 <td>RENDER_MODE_ADJUST_RESOLUTION</td>
@@ -261,7 +296,7 @@ mVodPlayer.startPlay(url);    // 비디오는 startPlay가 호출된 후 로딩�
 mVodPlayer.resume();  // 광고가 표시된 후 resume을 호출하여 비디오 재생 시작
 ```
 
-### 8, HTTP-REF
+### 8. HTTP-REF
 TXVodPlayConfig의 headers는 URL이 임의로 복사되는 것을 방지하기 위해 일반적으로 사용되는 Referer 필드(Tencent Cloud는 보다 안전한 서명 기반 링크 도용 방지 솔루션 제공) 및 클라이언트 인증을 위한 Cookie 필드와 같이 HTTP 요청 헤더를 설정하는 데 사용할 수 있습니다.
 ### 9. 하드웨어 가속
 소프트웨어 디코딩만 사용하면 Blu-ray(1080p) 이상 화질의 비디오를 원활하게 재생하기가 매우 어렵습니다. 따라서 주요 시나리오가 게임 라이브 스트리밍인 경우 하드웨어 가속을 사용하는 것이 좋습니다.
@@ -397,7 +432,7 @@ mVodPlayer.setConfig(config);  // config를 mVodPlayer에 전달
 
 짧은 비디오 재생 시나리오에서는 일반 사용자가 이미 시청한 비디오를 다시 로딩하기 위해 트래픽을 다시 소비할 필요가 없도록 로컬 비디오 파일 캐시가 필요합니다.
 
-- **지원되는 형식:** SDK는 HLS(m3u8) 및 MP4의 두 가지 일반적인 VOD 형식으로 비디오 캐싱을 지원합니다.
+- **지원되는 형식:** SDK는 HLS(m3u8) 및 MP4의 두 가지 일반적인 VOD 형식으로 비디오 캐시를 지원합니다.
 - **활성화 시간:** SDK는 기본적으로 캐싱 기능을 활성화하지 않습니다. 대부분의 비디오를 한 번만 시청하는 시나리오에서는 활성화하지 않는 것이 좋습니다.
 - **활성화 방법:** 이 기능은 플레이어에서 활성화할 수 있으며 전역으로 적용됩니다. 활성화하려면 로컬 캐시 디렉터리와 캐시 크기라는 두 가지 매개변수를 구성해야 합니다.
 

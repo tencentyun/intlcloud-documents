@@ -69,11 +69,11 @@ flutter packages get
 ```
 2. iOS 原生采用`pod`方式进行依赖，编辑`podfile`文件，指定你的播放器 SDK 版本，默认集成的是 Player 版SDK。
 ```xml
-pod 'TXLiteAVSDK_Player'	        //Player版
+pod 'TXLiteAVSDK_Player'          //Player版
 ```
 3. Professional 版 SDK 集成：
 ```
-pod 'TXLiteAVSDK_Professional' 	//Professional版
+pod 'TXLiteAVSDK_Professional'  //Professional版
 ```
 
 如果不指定版本，默认会安装最新的`TXLiteAVSDK_Player`最新版本。
@@ -82,10 +82,31 @@ pod 'TXLiteAVSDK_Professional' 	//Professional版
 - 执行`flutter doctor`命令检查运行环境，知道出现”No issues found!“。
 - 执行`flutter pub get`确保所有依赖的组件都已更新成功。
 
+## 申请视频播放能力 License 和集成
+若您已获得相关 License 授权，需在 [腾讯云视立方控制台](https://console.cloud.tencent.com/vcube)  获取 License URL 和 License Key。
 
+若您暂未获得 License 授权，需先参见视频播放 License 获取相关授权。
 
+集成播放器前，需要 [注册腾讯云账户](https://www.tencentcloud.com/en/account/register)，注册成功后申请视频播放能力 License， 然后通过下面方式集成，建议在应用启动时进行。
+
+如果没有集成 License，播放过程中可能会出现异常。
+```dart
+String licenceURL = ""; // 获取到的 licence url
+String licenceKey = ""; // 获取到的 licence key
+SuperPlayerPlugin.setGlobalLicense(licenceURL, licenceKey);
+```
+
+## 设置 SDK 接入环境
+
+为服务客户更高质量、更安全合规地开展业务，符合各国家和地区的法律法规要求，腾讯云提供两套SDK接入环境。若您服务全球用户，推荐您使用以下接口配置全球接入环境。
+
+```dart
+// 若您服务全球用户， 配置 SDK 接入环境为全球接入环境
+SuperPlayerPlugin.setGlobalEnv("GDPR");
+```
 
 ## 点播播放器使用
+
 点播播放器核心类`TXVodPlayerController`，详细 Demo 可参见`DemoTXVodPlayer`。
 ```dart
 import 'package:flutter/material.dart';

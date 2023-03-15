@@ -9,13 +9,48 @@
 
 ## SDK集成
 [](id:stepone)
+
 ### 步骤1：下载 SDK 开发包[](id:step1)
 [下载](https://vcube.cloud.tencent.com/home.html) SDK 开发包，并按照 SDK 集成指引 将 SDK 嵌入您的 App 工程中。
 
+### 步骤2:**设置 SDK 接入环境**
 
+为服务客户更高质量、更安全合规地开展业务，符合各国家和地区的法律法规要求，腾讯云提供两套SDK接入环境。若您服务全球用户，推荐您使用以下接口配置全球接入环境。
 
+```java
+// 若您服务全球用户， 配置 SDK 接入环境为全球接入环境
+TXLiveBase.setGlobalEnv("GDPR");
+```
 
-### 步骤2: 添加 View
+### 步骤3：配置 License 授权
+
+若您已获得相关 License 授权，需在 [腾讯云视立方控制台](https://console.cloud.tencent.com/vcube) 获取 License URL 和 License Key。
+
+若您暂未获得 License 授权，需先参见 视频播放 License获取相关授权。
+
+获取到 License 信息后，在调用 SDK 的相关接口前，通过下面的接口初始化 License，建议在 Application 类中进行如下设置：
+
+```java
+public class MApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        String licenceURL = ""; // 获取到的 licence url
+        String licenceKey = ""; // 获取到的 licence key
+        TXLiveBase.getInstance().setLicence(this, licenceURL, licenceKey);
+        TXLiveBase.setListener(new TXLiveBaseListener() {
+            @Override
+            public void onLicenceLoaded(int result, String reason) {
+                Log.i(TAG, "onLicenceLoaded: result:" + result + ", reason:" + reason);
+            }
+        });
+    }
+}
+```
+
+### 步骤4:  添加 View
+
 SDK 默认提供 TXCloudVideoView 用于视频渲染，我们第一步要做的就是在布局 xml 文件里加入如下一段代码：
 ```xml
 <com.tencent.rtmp.ui.TXCloudVideoView
@@ -28,7 +63,7 @@ SDK 默认提供 TXCloudVideoView 用于视频渲染，我们第一步要做的�
 
 [](id:step3)
 
-### 步骤3：创建 Player
+### 步骤5：创建 Player
 
 接下来创建一个 **TXVodPlayer** 的对象，并使用 setPlayerView 接口将它与我们刚添加到界面上的 **video_view** 控件进行关联。
 
@@ -43,7 +78,7 @@ mVodPlayer.setPlayerView(mPlayerView);
 
 [](id:step4)
 
-### 步骤4：启动播放
+### 步骤6：启动播放
 
 TXVodPlayer 支持两种播放模式，您可以根据需要自行选择：
 
@@ -85,7 +120,7 @@ mVodPlayer.startPlay(authBuilder);
 
 [](id:5)
 
-### 步骤5：结束播放
+### 步骤7：结束播放
 
 结束播放时**记得销毁 view 控件**，尤其是在下次 startPlay 之前，否则会产生大量的内存泄露以及闪屏问题。
 

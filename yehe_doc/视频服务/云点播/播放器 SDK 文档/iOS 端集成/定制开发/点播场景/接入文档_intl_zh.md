@@ -34,10 +34,10 @@ Pod 方式直接集成 TXLiteAVSDK_Player：
 ```
 2. 添加相应的库文件（SDK 目录里）
  **TXFFmpeg.xcframework**：将.xcframework 文件添加到项目工程中，并在“General - Frameworks, Libraries, and Embedded Content”中将其设置为“Embed&Sign”，并在“Project Setting - Build Phases - Embed Frameworks”中进行检查，设置”Code Sign On Copy“选项为勾选状态，如下图所示：
- **TXSoundTouch.xcframework**：将.xcframework 文件添加到项目工程中，并在“General - Frameworks, Libraries, and Embedded Content”中将其设置为“Embed&Sign”，并在“Project Setting - Build Phases - Embed Frameworks”中进行检查，设置”Code Sign On Copy“选项为勾选状态，如下图所示：<br>
- <img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b226decc76c33eff8c3f5b4cc4246bea.png" />
-<br>
-同时，切换到 Xcode 的 “Build Settings - Search Paths”，在“Framework Search Paths”中添加上述 Framework 所在的路径。
+    **TXSoundTouch.xcframework**：将.xcframework 文件添加到项目工程中，并在“General - Frameworks, Libraries, and Embedded Content”中将其设置为“Embed&Sign”，并在“Project Setting - Build Phases - Embed Frameworks”中进行检查，设置”Code Sign On Copy“选项为勾选状态，如下图所示：<br>
+    <img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b226decc76c33eff8c3f5b4cc4246bea.png" />
+ <br>
+ 同时，切换到 Xcode 的 “Build Settings - Search Paths”，在“Framework Search Paths”中添加上述 Framework 所在的路径。
 
 <b>MetalKit.framework</b>：打开 Xcode，切换到“project setting - Build  Phases - Link Binary With Libraries”，选择左下角的“+”号，并输入“MetalKit”，并加入项目工程中，如下图所示：<br>
 <img style="width:400px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/8ab7576dcc8bbe7b36396955ca06b186.png" />
@@ -75,7 +75,38 @@ Pod 方式直接集成 TXLiteAVSDK_Player：
 
 [](id:step2)
 
-### 步骤2：创建 Player
+### 步骤2：设置SDK接入环境
+
+为服务客户更高质量、更安全合规地开展业务，符合各国家和地区的法律法规要求，腾讯云提供两套SDK接入环境。若您服务全球用户，推荐您使用以下接口配置全球接入环境。
+
+```objective-c
+// 若您服务全球用户， 配置 SDK 接入环境为全球接入环境
+[TXLiveBase setGlobalEnv:"GDPR"]
+```
+
+[](id:step3)
+
+### 步骤3：配置 License 授权
+
+若您已获得相关 License 授权，需在 [腾讯云视立方控制台](https://console.cloud.tencent.com/vcube) 获取 License URL 和 License Key。
+若您暂未获得 License 授权，需先参见 [视频播放 License](https://cloud.tencent.com/document/product/881/74588) 获取相关授权。
+
+获取到 License 信息后，在调用 SDK 的相关接口前，通过下面的接口初始化 License，建议在 `- [AppDelegate application:didFinishLaunchingWithOptions:]` 中进行如下设置：
+
+```objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSString * const licenceURL = @"<获取到的licenseUrl>";
+    NSString * const licenceKey = @"<获取到的key>";
+
+    //TXLiveBase 位于 "TXLiveBase.h" 头文件中
+    [TXLiveBase setLicenceURL:licenceURL key:licenceKey]; 
+    NSLog(@"SDK Version = %@", [TXLiveBase getSDKVersionStr]);
+}
+```
+
+[](id:step4)
+
+### 步骤4：创建 Player
 
 视频云 SDK 中的 TXVodPlayer 模块负责实现点播播放功能。
 
@@ -84,9 +115,9 @@ TXVodPlayer *_txVodPlayer = [[TXVodPlayer alloc] init];
 [_txVodPlayer setupVideoWidget:_myView insertIndex:0]
 ```
 
-[](id:step3)
+[](id:step5)
 
-### 步骤3：渲染 View
+### 步骤5：渲染 View
 
 接下来我们要给播放器的视频画面找个地方来显示，iOS 系统中使用 view 作为基本的界面渲染单位，所以您只需要准备一个 view 并调整好布局就可以了。
 
@@ -109,9 +140,9 @@ TXVodPlayer *_txVodPlayer = [[TXVodPlayer alloc] init];
  }];
 ```
 
-[](id:step4)
+[](id:step6)
 
-### 步骤4：启动播放
+### 步骤6：启动播放
 
 TXVodPlayer 支持两种播放模式，您可以根据需要自行选择：
 
@@ -135,7 +166,7 @@ p.fileId = @"4564972819220421305";
 :::
 </dx-tabs>
 
-### 步骤5：结束播放
+### 步骤7：结束播放
 
 结束播放时，如果要退出当前的 UI 界面，要记得用 **removeVideoWidget** 销毁 view 控件，否则会产生内存泄露或闪屏问题。
 
