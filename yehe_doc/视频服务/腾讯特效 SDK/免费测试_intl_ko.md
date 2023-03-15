@@ -19,13 +19,15 @@ Tencent Effect SDK를 사용해 보려면 평가판 License를 신청할 수 있
 1. [Tencent Effect 콘솔](https://console.tencentcloud.com/xmagic)에 로그인하고 왼쪽 사이드바에서 **모바일 License**를 선택합니다. **평가판 License 생성**을 클릭합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/84f8ab5111e32c16ef6553b14ac72fd7.png)
 2. `App Name`, `Package Name` 및 `Bundle ID`를 입력합니다. 사용할 기능을 선택합니다(**고급 S1 - 04**, **기능 X1-01** 및 **기능 X1-02**). **회사 이름, 업종**을 입력한 후 **사업자등록증**을 업로드하고 **확인**을 클릭하면 검토가 시작됩니다.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/0d4f80aa8fd068a9d562ee5246a1e63a.png" style="zoom:50%;" />
+  
+![](https://qcloudimg.tencent-cloud.cn/raw/0d4f80aa8fd068a9d562ee5246a1e63a.png)
 3. 평가판 License가 성공적으로 생성되면 **SDK를 초기화할 때 전달해야 하는 License URL과 Key가 표시됩니다. 정보 사본을 저장해 두시기 바랍니다.** License 정보는 검토를 통과한 후에만 유효합니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d2bec2a1877a5b1ac83a4ae07e30db39.png)
+
 <dx-alert infotype="explain"> 
-<li>평가판 License에 바인딩된 Bundle ID 및 Package Name을 수정하려면 오른쪽 **편집**을 클릭하고 수정 후 **확인**을 클릭합니다. Tencent Effect 모듈을 계속 사용하려면 **검토 과정을 다시 거쳐야 합니다**.</li>
->![](https://qcloudimg.tencent-cloud.cn/raw/9b8eae6f515542f2e2b08f9f1d21f495.png)
-<li>Package Name 또는 Bundle Id가 없으면 ‘-’를 입력할 수 있습니다.</li></dx-alert>
+1. 평가판 License에 바인딩된 Bundle ID 및 Package Name을 수정하려면 오른쪽 **편집**을 클릭하고 수정 후 **확인**을 클릭합니다. Tencent Effect 모듈을 계속 사용하려면 **검토 과정을 다시 거쳐야 합니다**.
+![](https://qcloudimg.tencent-cloud.cn/raw/9b8eae6f515542f2e2b08f9f1d21f495.png)
+2. Package Name 또는 Bundle Id가 없으면 ‘-’를 입력할 수 있습니다.</dx-alert>
 
 :::
 ::: 옵션2: 기존 평가판 애플리케이션에 새로운 기능 활성화
