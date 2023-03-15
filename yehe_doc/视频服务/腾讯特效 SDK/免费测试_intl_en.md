@@ -19,14 +19,14 @@ In the console, you can either **create a trial license for a new application** 
 1. Log in to the [Tencent Effect console](https://console.tencentcloud.com/xmagic) and select **Mobile Licenses** on the left sidebar. Click **Create trial license**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/84f8ab5111e32c16ef6553b14ac72fd7.png)
 2. Enter the app name, package name, and bundle ID. Select the capabilities to try (**Advanced S1 - 04**, **Capability X1-01**, and **Capability X1-02**). **Enter your company name, select the industry, and upload your company’s business license**. Click **Create**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/0d4f80aa8fd068a9d562ee5246a1e63a.png" style="zoom:50%;" />
+![](https://qcloudimg.tencent-cloud.cn/raw/0d4f80aa8fd068a9d562ee5246a1e63a.png)
 3. After the trial license is successfully created, you will see the license URL and key, **which you need to pass in when initializing the SDK, so save a copy of the information**. Note that the license information becomes valid only after you pass the review.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d2bec2a1877a5b1ac83a4ae07e30db39.png)
 
 <dx-alert infotype="explain"> 
-<li>To modify the bundle ID and package name bound to a trial license, click **Edit** on the right and, after modification, click **Confirm**. Note that you will need to **go through the review process again** before you can continue to use the Tencent Effect module.</li>
->  ![](https://qcloudimg.tencent-cloud.cn/raw/733ce3011060a2c552435ebe7115d643.png)
-<li>You can enter `-` if you don’t have a package name or bundle ID to bind yet.</li>
+1. To modify the bundle ID and package name bound to a trial license, click **Edit** on the right and, after modification, click **Confirm**. Note that you will need to **go through the review process again** before you can continue to use the Tencent Effect module.
+![](https://qcloudimg.tencent-cloud.cn/raw/733ce3011060a2c552435ebe7115d643.png)
+2. You can enter `-` if you don’t have a package name or bundle ID to bind yet.
 </dx-alert>
 
 :::
