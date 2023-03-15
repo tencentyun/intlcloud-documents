@@ -1282,8 +1282,8 @@ COSへのCDN経由のアクセスをサポートしました。パブリック�
 </tr>
 </thead>
 <tbody><tr>
-<td>タイのバンコク、ロシアのモスクワリージョンでサービス開始</td>
-<td>COSはタイのバンコク（ap-bangkok）およびロシアのモスクワ（eu-moscow）リージョンを含む、世界の複数の新リージョンでのサービスを開始しました。</td>
+<td>タイのバンコクリージョンでサービス開始</td>
+<td>COSはタイのバンコク（ap-bangkok）リージョンを含む、世界の複数の新リージョンでのサービスを開始しました。</td>
 <td nowrap="nowrap">2018-05</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/6224">リージョンおよびアクセスドメイン名</a></td>
 </tr>

@@ -131,11 +131,6 @@ For example, if your business is distributed in South China, creating buckets in
       <td>eu-frankfurt</td>
       <td>&lt;BucketName-APPID&gt;.cos.eu-frankfurt.myqcloud.com</td>
    </tr>
-   <tr>
-      <td>Moscow</td>
-      <td>eu-moscow</td>
-      <td>&lt;BucketName-APPID&gt;.cos.eu-moscow.myqcloud.com</td>
-   </tr>
 </table>
 
 

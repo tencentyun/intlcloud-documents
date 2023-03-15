@@ -35,7 +35,7 @@ On September 30, 2021, the published prices of COS were reduced as follows:
 
 ### Which regions will benefit from the reduced unit pricing of STANDARD IA storage usage?
 
-The reduction in the unit price of STANDARD_IA storage usage from 0.018 USD/GB/month to 0.015 USD/GB/month will apply to certain regions, including Mumbai, Seoul, Bangkok, Silicon Valley, Moscow, Jakarta, and São Paulo. The reduction has taken effect on July 1, 2022.
+The reduction in the unit price of STANDARD_IA storage usage from 0.018 USD/GB/month to 0.015 USD/GB/month will apply to certain regions, including Mumbai, Seoul, Bangkok, Silicon Valley , Jakarta, and São Paulo. The reduction has taken effect on July 1, 2022.
 
 
 ## Free Tier

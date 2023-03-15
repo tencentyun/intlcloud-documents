@@ -1282,8 +1282,8 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>泰国曼谷、俄罗斯莫斯科地域上线</td>
-<td>对象存储在全球多个新地域上线，包含泰国曼谷（ap-bangkok）和俄罗斯莫斯科（eu-moscow）地域。</td>
+<td>泰国曼谷等地域上线</td>
+<td>对象存储在全球多个新地域上线，包含泰国曼谷（ap-bangkok）等地域。</td>
 <td nowrap="nowrap">2018-05</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/6224">地域和访问域名</a></td>
 </tr>

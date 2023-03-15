@@ -35,7 +35,7 @@ COS 과금 항목에는 [스토리지 용량 비용](https://intl.cloud.tencent.
 
 ### STANDARD_IA 스토리지 사용량 단가 인하가 적용되는 리전은 어디인가요?
 
-STANDARD_IA 스토리지 사용량 단가가 0.018 USD/GB/월에서 0.015 USD/GB/월로 인하되며, 뭄바이, 서울, 방콕, 실리콘 밸리, 모스크바, 자카르타 및 상파울루를 포함한 Tencent Cloud International의 특정 리전에 적용됩니다. 인하는 2022년 7월 1일부터 적용됩니다.
+STANDARD_IA 스토리지 사용량 단가가 0.018 USD/GB/월에서 0.015 USD/GB/월로 인하되며, 뭄바이, 서울, 방콕, 실리콘 밸리, 자카르타 및 상파울루를 포함한 Tencent Cloud International의 특정 리전에 적용됩니다. 인하는 2022년 7월 1일부터 적용됩니다.
 
 
 ## 프리 티어 관련

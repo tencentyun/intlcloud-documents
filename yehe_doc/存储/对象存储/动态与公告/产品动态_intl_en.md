@@ -1282,8 +1282,8 @@ COS supports access through CDN. In addition to public buckets, you can now also
 </tr>
 </thead>
 <tbody><tr>
-<td>Added support for the Bangkok and Moscow regions</td>
-<td>COS is now available in more new regions around the globe, including Bangkok (ap-bangkok) and Moscow (eu-moscow) regions.</td>
+<td>Added support for the Bangkok regions</td>
+<td>COS is now available in more new regions around the globe, including Bangkok (ap-bangkok)  regions.</td>
 <td nowrap="nowrap">2018-05</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/6224">Regions and Access Endpoints</a></td>
 </tr>

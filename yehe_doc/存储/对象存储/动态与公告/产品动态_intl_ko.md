@@ -1282,8 +1282,8 @@ COS는 CDN을 통한 액세스를 지원합니다. 퍼블릭 버킷 외에도 �
 </tr>
 </thead>
 <tbody><tr>
-<td>태국 방콕, 러시아 모스크바 지역에 대한 지원 추가</td>
-<td>COS는 이제 방콕(ap-bangkok) 및 모스크바(eu-moscow) 리전을 포함하여 전 세계의 더 많은 새로운 리전에서 사용할 수 있습니다.</td>
+<td>태국 방콕 지역에 대한 지원 추가</td>
+<td>COS는 이제 방콕(ap-bangkok)리전을 포함하여 전 세계의 더 많은 새로운 리전에서 사용할 수 있습니다.</td>
 <td nowrap="nowrap">2018-05</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/6224">리전 및 액세스 도메인</a></td>
 </tr>
