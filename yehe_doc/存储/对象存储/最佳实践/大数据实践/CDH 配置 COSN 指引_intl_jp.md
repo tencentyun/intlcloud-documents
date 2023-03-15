@@ -10,7 +10,6 @@ COSNビッグデータコンポーネントのサポートは次のとおりで�
 | コンポーネント名 | COSNビッグデータコンポーネントのサポート状況 | サービスコンポーネントの再起動の要否                       |
 | -------- | ----------------------- | -------------------------------------------- |
 | Yarn     | サポート                     | NodeManagerの再起動                           |
-| Yarn     | サポート                     | NodeManagerの再起動                           |
 | Hive     | サポート                     | HiveServerおよびHiveMetastoreの再起動           |
 | Spark    | サポート                     | NodeManagerの再起動                           |
 | Sqoop    | サポート                     | NodeManagerの再起動                           |
