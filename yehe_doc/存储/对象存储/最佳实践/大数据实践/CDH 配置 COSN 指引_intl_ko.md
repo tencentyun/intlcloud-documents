@@ -10,7 +10,6 @@ COSN 빅 데이터 모듈 지원 현황은 다음과 같습니다.
 | 모듈 이름 | COSN 빅 데이터 모듈 지원 현황 | 서비스 모듈 재시작 필요 여부                         |
 | -------- | ----------------------- | -------------------------------------------- |
 | Yarn     | 지원                    | NodeManager 재시작                             |
-| Yarn     | 지원                    | NodeManager 재시작                             |
 | Hive     | 지원                    | HiveServer 및 HiveMetastore 재시작             |
 | Spark    | 지원                    | NodeManager 재시작                             |
 | Sqoop    | 지원                    | NodeManager 재시작                             |
