@@ -26,9 +26,9 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/d2bec2a1877a5b1ac83a4ae07e30db39.png)
 
 <dx-alert infotype="explain"> 
-1. 测试版 License 有效期内可单击右侧的**编辑**，进入修改 Bundle ID 和 Package Name 信息，单击**确定**即可保存，但会导致此测试 License 下生效中的测试版腾讯特效功能模块**重新进入审核流程**，待审核通过后方可继续使用。</li>
+1. 测试版 License 有效期内可单击右侧的**编辑**，进入修改 Bundle ID 和 Package Name 信息，单击**确定**即可保存，但会导致此测试 License 下生效中的测试版腾讯特效功能模块**重新进入审核流程**，待审核通过后方可继续使用。
 ![](https://qcloudimg.tencent-cloud.cn/raw/733ce3011060a2c552435ebe7115d643.png)
-2. 若无 Package Name 或 Bundle Id，可填写“-”。</li>
+2. 若无 Package Name 或 Bundle Id，可填写“-”。
 </dx-alert>
 
 :::
