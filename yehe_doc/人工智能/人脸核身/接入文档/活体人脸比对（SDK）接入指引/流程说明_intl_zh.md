@@ -1,9 +1,9 @@
 
 ## 接入准备
-- 注册腾讯云企业账号，请见[注册指引](https://www.tencentcloud.com/document/product/378/17985)
-- 完成企业实名认证，请见[企业实名指引](https://www.tencentcloud.com/document/product/378/10496)
+- 注册腾讯云企业账号，请见[注册指引](https://www.tencentcloud.com/zh/document/product/378/17985)
+- 完成企业实名认证，请见[企业实名指引](https://www.tencentcloud.com/zh/document/product/378/10496)
 - 登陆慧眼控制台[开通服务](https://console.intl.cloud.tencent.com/faceid) 
-- [联系我们](https://www.tencentcloud.com/document/product/1061/52144)获取最新的SDK及License
+- [联系我们](https://www.tencentcloud.com/zh/document/product/1061/52144)获取最新的SDK及License
 
 
 ## 名词介绍
@@ -13,9 +13,9 @@
 - Tencent Cloud API: 腾讯云提供的后台接口，用于获取刷脸凭证并获取刷脸结果
 - SDK: 腾讯云提供的Android或者iOS的SDK，用于集成入客户的APP并结合后台接口启动刷脸
 
-## 时序图（详）
+## 接入时序图
 
-实际使用时，腾讯云建议使用`CreateUploadUrl`接口来传递数据资源，即下图中颜色区域的流程。客户业务后台也可以通过其他方式上传资源，详见[如何传递资源](https://console.intl.cloud.tencent.com/faceid) 。
+实际使用时，腾讯云建议使用`CreateUploadUrl`接口来传递数据资源，即下图中颜色区域的流程。客户业务后台也可以通过其他方式上传资源，详见[如何传递资源](https://www.tencentcloud.com/zh/document/product/1061/46849) 。
 
 ```mermaid
 sequenceDiagram
@@ -61,7 +61,7 @@ t-->>-cs: Result
 cs-->>-ca: Result
 ca -->>- u: verify done
 ```
-相关后台接口：[GenerateReflectSequence](https://intl.cloud.tencent.com/document/product/1061/44246)，[DetectReflectLivenessAndCompare](https://intl.cloud.tencent.com/document/product/1061/44246)，[CreateUploadUrl](https://www.tencentcloud.com/document/product/1061/47648)
+相关后台接口：[GenerateReflectSequence](https://www.tencentcloud.com/zh/document/product/1061/47646)，[DetectReflectLivenessAndCompare](https://www.tencentcloud.com/zh/document/product/1061/44246)，[CreateUploadUrl](https://www.tencentcloud.com/zh/document/product/1061/47648)
 
 ## 具体接入步骤
 
@@ -122,23 +122,23 @@ SDK的`startGetAuthConfigData`方法需要传入一个回调函数，用于**接
 }
 ```
 
-**注意：不要直接在客户端调用腾讯云的接口**
+**注意：不要直接在终端调用腾讯云的接口**
 
 ### 2、 服务端：上传DeviceData并生成光线序列（Generate reflect sequence process）
 
 #### 2.1 使用 [CreateUploadUrl](https://www.tencentcloud.com/document/product/1061/47648) 接口上传资源。
 **注1：本步骤描述的是通用的上传资源方式，后续环节中涉及上传资源操作的，均可参考本步骤。**
-**注2：COS 请求地域，一定要跟下方接口调用的地域保持一致，否则会导致调用失败。**
 
-该方法作用是获取两个地址，`UploadUrl`为上传资源的目标地址，`ResourceUrl`为访问资源的地址。
+该接口作用是获取两个地址，`UploadUrl`为上传资源的目标地址，`ResourceUrl`为访问资源的地址。
 
 输入参数：
-- TargetAction：cos 资源用于的接口名称
+- TargetAction：cos 资源用于的接口名称，如：GenerateReflectSequence、DetectReflectLivenessAndCompare
+- Region: 资源上传的目的地域。**重要！！！：调用TargetAction时传入的Region必须跟调用本接口时传入的Region保持一致，否则会调用失败。**
 
 输出参数：
 - UploadUrl：上传资源的目标地址，通过 HTTP 的 PUT 方式进行上传
 - ResourceUrl：cos 资源地址，能够访问已上传资源的地址
-- ExpiredTimestamp：过期的时间戳
+- ExpiredTimestamp：访问地址与上传地址过期的时间戳
 - RequestId：当前请求的 id
 
 下面为 python 示例的 SDK 调用方式：
@@ -208,7 +208,7 @@ print(res.json)
 
 #### 2.2 使用 [GenerateReflectSequence](https://www.tencentcloud.com/document/product/1061/47646) 生成光线序列。
 
-该API用于根据活体比对（基于反光）SDK收集到的信息生成合适的闪光序列，并将闪光序列传入SDK，启动身份验证流程。
+该API用于根据活体比对（基于反光）SDK收集到的信息生成合适的光线序列，并将光线序列传入SDK，启动身份验证流程。
 
 输入参数：
 - Region：需要与上方请求 cos 资源时输入的地域保持一致
@@ -218,8 +218,8 @@ print(res.json)
 
 输出参数：
 
-- ReflectSequenceUrl：反光序列的资源URL，需要下载并传递给SDK启动身份验证流程
-- ReflectSequenceMd5：反光序列的 MD5 值，用于校验反光序列一致性
+- ReflectSequenceUrl：光线序列的资源URL，需要下载并传递给SDK启动身份验证流程
+- ReflectSequenceMd5：光线序列的 MD5 值，用于校验光线序列一致性
 - RequestId：当前请求的 id
 
 下面为 python 示例的 SDK 调用方式：
@@ -262,7 +262,7 @@ except TencentCloudSDKException as err:
 ```
 获取到`ReflectSequenceUrl`后，客户服务端需要下载该文件，校验改文件的md5值，最后返回给终端进行下一个步骤。
 
-### 3、终端：通过反光序列调用相机获取活体数据（Liveness process）
+### 3、终端：通过光线序列调用相机获取活体数据（Liveness process）
 当您已经将配置信息从服务器端兑换完成之后，将服务器下发的reflectSequence也就是核身的光线序列，通过此接口传入继续完成剩余本地核身功能。
 
 Android代码示例：
@@ -303,16 +303,16 @@ SDK的`startAuthByLightData`方法需要传入一个回调函数，用于**接�
 
 ### 4、服务端 ：调用 DetectReflectLivenessAndCompare接口（Detect and compare process）
 
-#### 4.1 使用 [CreateUploadUrl](https://www.tencentcloud.com/document/product/1061/47648) 上传资源，并获取对应的Url。
+#### 4.1 使用 [CreateUploadUrl](https://www.tencentcloud.com/document/product/1061/47648) 上传资源，并获取对应的UploadUrl和ResourceUrl。
 参考2.1，上传**LiveData（活体数据）**与**要比对的图片**，
 
-#### 4.2 使用 [DetectReflectLivenessAndCompare](https://www.tencentcloud.com/document/product/1061/47646) 接口进行活体与比对。
+#### 4.2 使用 [DetectReflectLivenessAndCompare](https://www.tencentcloud.com/zh/document/product/1061/44246) 接口进行活体与比对。
 
 本接口用于通过活体比对（基于反光）SDK生成的包进行活体检测，并将检测到的人与传入的图片中的人进行比对。
 
 输入参数：
 
-- LiveDataUrl：活体数据的 url。第 6 步产生的活体数据，**压缩为 gz 格式**的压缩包后，按照第 3 步 上传 cos
+- LiveDataUrl：活体数据的 url。时序图中第13步产生的活体数据，**压缩为 gz 格式**的压缩包后，按照2.1上传资源指引上传 cos
 - LiveDataMd5：活体数据的 MD5
 - ImageUrl：要比对的图片的 url
 - ImageMd5：要比对图片的 MD5
@@ -368,7 +368,7 @@ except TencentCloudSDKException as err:
 ```
 
 ## 排障指引
-腾讯云不会存储客户端上传的资源，需要客户服务端侧保留**所有的资源**与**API3.0回包中的RequestId**方可定位问题。其中**资源**包括：
+腾讯云不会存储客户服务侧上传的资源，需要客户服务端侧保留**所有的资源**与**API3.0回包中的RequestId**方可定位问题。其中**资源**包括：
 - 生成光线序列阶段上传的`DeviceData`
 - 调用 DetectReflectLivenessAndCompare接口阶段上传的`Image`
 - 调用 DetectReflectLivenessAndCompare接口阶段上传的`LiveData`
