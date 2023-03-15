@@ -6,6 +6,5 @@
 ![](https://main.qcloudimg.com/raw/f6fa95eb30aa3b929bd1ea4dd86462d1.png)
 3. 在配置管理页选择**配置历史**，默认展示当前组件的配置历史，可切换查看所有组件的配置历史。单击**详情**可以看到配置变更前后的参数值对比，单击**回滚**可对该条记录的参数配置变更回滚。选择**回滚 > 确认回滚**，回滚成功重启组件，稍作等待回滚即可生效。
 >? 新增、修改、删除配置项支持回滚，新增配置文件和删除新增配置文件不支持回滚。
-
+>
 ![](https://main.qcloudimg.com/raw/bf67f3da357c8b6592318167dce0cda1.png)
-![](https://main.qcloudimg.com/raw/b9fa163d09e3a2668d6c2ca2c4c1ad21.png)

@@ -9,8 +9,7 @@ Capacity Scheduler 是容量调度器，容量调度器以分层的方式组织�
 4. 新建 Capacity Scheduler
 调度策略类型选择 Capacity Scheduler 即可进入 Capacity Scheduler 的配置页面，单击**新增资源池**即可新建资源池。可对已有资源池进行编辑、新建子池、克隆等操作；也可单击**默认设置**进行设置容量调度的延迟调度次数。
 ![](https://qcloudimg.tencent-cloud.cn/raw/86d66b1e7dbd36ef7db534180aa4884a.png)
-<img src="https://qcloudimg.tencent-cloud.cn/raw/1c9248022f9d3b718353db69b787b985.png" style="zoom:67%;" />
-
+![](https://qcloudimg.tencent-cloud.cn/raw/1c9248022f9d3b718353db69b787b985.png)
 **字段与配置项对照表**：
 <table>
 <thead>
@@ -48,7 +47,7 @@ Capacity Scheduler 是容量调度器，容量调度器以分层的方式组织�
 <tr>
 <td>用户最小容量</td>
 <td>yarn.scheduler.capacity.&lt;queue-path>.minimum-user-limit-percent&lt;/queue-path></td>
-<td>每个用户最低资源保障（百分比）。任何时刻，一个队列中每个用户可使用的资源量均有一定的限制。当一个队列中同时运行多个用户的应用程序时中，每个用户的使用资源量在一个最小值和最大值之间浮动，其中，最小值取决于正在运行的应用程序数目，而最大值则由 minimum-user-limit-percent 决定。</td>
+<td>每个用户最低资源保障（百分比）。任何时刻，一个队列中每个用户可使用的资源量均有一定的限制。当一个队列中同时运行多个用户的应用程序时，每个用户的使用资源量在一个最小值和最大值之间浮动，其中，最小值取决于正在运行的应用程序数目，而最大值则由 minimum-user-limit-percent 决定。</td>
 </tr>
 <tr>
 <td>用户资源因子</td>
@@ -116,14 +115,13 @@ Capacity Scheduler 是容量调度器，容量调度器以分层的方式组织�
 4. 单击**标签调度开关**，打开标签调度后单击**标签管理**，进入标签管理页。
 ![](https://qcloudimg.tencent-cloud.cn/raw/13fd863cc3eb5acd4f8ffedf7f3c0cc3.png)
 5. 单击**新建标签**，填写标签名称，并根据需要设置标签类型和该标签绑定的节点。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/9c4b32d2147ff06371acea3c76be8115.png" style="zoom:67%;" />
+![](https://qcloudimg.tencent-cloud.cn/raw/9c4b32d2147ff06371acea3c76be8115.png)
 6. 标签设置完成后，单击**指令生效**，即可在资源池中编辑查看该标签的资源队列。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f81987efdc00cc01113a5af9710d14e1.png)
 7. 在资源调度页中单击**新建资源池**，根据业务需要选择标签、容量、最大容量等。
 >? 资源池在不同标签中的容量、最大容量相互独立，即可以按照业务分别进行配置，相互不影响。
-
+>
 ![](https://qcloudimg.tencent-cloud.cn/raw/824235abc226885fd6ea2d741510390f.png)
 ![](https://qcloudimg.tencent-cloud.cn/raw/fdb9d5f056738f63a78208ac68de7a09.png)
-
 8. 资源池设置完后，单击**部署生效**，即向后台提交了部署生效任务。
 >! 由于 ResourceManager 重启属于高危操作，单击**部署生效**时如果提示会重启 ResourceManager，请在**调度历史中**查看操作是否成功，并在**角色管理**中查看 ResourceManager 健康状态是否良好。

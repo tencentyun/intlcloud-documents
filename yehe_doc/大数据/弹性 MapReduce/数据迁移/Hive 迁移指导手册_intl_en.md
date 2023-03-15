@@ -1,31 +1,31 @@
 Hive migration involves migration of data and metadata. Hive table data is mainly stored in HDFS; therefore, data migration is usually implemented at the HDFS layer. Hive metadata is mainly stored in a relational database and thus can be smoothly migrated to TencentDB for MySQL with guaranteed high availability.
 
-### Migrating Hive metadata
+### Migrating Hive Metadata
 1. Dump the source Hive metastore.
 ```
 mysqldump -hX.X.X.X -uroot -pXXXX --single-transaction --set-gtid-purged=OFF hivemetastore > hivemetastore-src.sql  
-# If GTID is not enabled for MySQL, delete `--set-gtid-purged=OFF` from the command  
+# If GTID is not enabled for MySQL, please delete `--set-gtid-purged=OFF` from the command  
 # `X.X.X.X` is the IP address of the database server  
 # `XXXX` is the database password  
 # If the database user is not `root`, use the correct username  
-# `hivemetastore` is the Hive metadatabase name 
+# `hivemetastore` is the Hive metastore name 
 ```
-2. Confirm the default storage path of the Hive table data in the target cluster in HDFS.
-The default storage path of the Hive table data in HDFS is specified by `hive.metastore.warehouse.dir` in `hive-site.xml`. If the storage path of the Hive table in the target cluster in HDFS is to be kept the same as that in the source cluster, you can modify the configuration file as follows. For example, if the value of `hive.metastore.warehouse.dir` in the `hive-site.xml` in the source cluster is as follows:
-```
+2. Confirm the default path of the target Hive table in HDFS.
+The default path of the Hive table in HDFS is specified by the `hive.metastore.warehouse.dir` parameter in `hive-site.xml`. If the storage location of the Hive table in HDFS must be the same as that in the source Hive database, you need to modify the configuration file. For example, if the value of `hive.metastore.warehouse.dir` in the source `hive-site.xml` is as follows:
+``` 
 <property>  
     <name>hive.metastore.warehouse.dir</name>  
     <value>/apps/hive/warehouse</value>  
 </property>  
 ```
-Then, the value of `hive.metastore.warehouse.dir` in `hive-site.xml` in the target cluster should be as follows:
+The value of `hive.metastore.warehouse.dir` in the target `hive-site.xml` is as follows:
 ```
 <property>  
     <name>hive.metastore.warehouse.dir</name>  
     <value>/usr/hive/warehouse</value>  
 </property>  
 ```
-If the storage location of the Hive table in the target cluster in HDFS is to be kept the same as that in the source cluster, change `hive.metastore.warehouse.dir` in the target `hive-site.xml` to the following value:
+If the storage location of the target Hive table in HDFS is to be kept the same as that in the source Hive database, change `hive.metastore.warehouse.dir` in the target `hive-site.xml` to the following value:
 ```
 <property>  
     <name>hive.metastore.warehouse.dir</name>  
@@ -73,7 +73,7 @@ Replace defaultFS: sed -i 's/old-defaultFS/new-defaultFS/g' hivemetastore-src.sq
 5. Back up the target Hive metastore.
 ```
 mysqldump -hX.X.X.X -uroot -pXXXX --single-transaction --set-gtid-purged=OFF hivemetastore > hivemetastore-target.sql  
-# If GTID is not enabled for MySQL, delete `--set-gtid-purged=OFF` from the command  
+# If GTID is not enabled for MySQL, please delete `--set-gtid-purged=OFF` from the command  
 # `X.X.X.X` is the IP address of the database server  
 # `XXXX` is the database password  
 # If the database user is not `root`, use the correct username  
@@ -107,26 +107,30 @@ The main operations in the upgrade script are creating tables, adding fields, an
 mysql> source upgrade-2.3.0-to-3.0.0.mysql.sql;  
 mysql> source upgrade-3.0.0-to-3.1.0.mysql.sql;  
 ```
-9. Modify the ZooKeeper address of the Phoenix table in the target Hive metadata.
-If there is a Phoenix table in the source Hive database, run the following query statement to get the `phoenix.zookeeper.quorum` configuration of the Phoenix table.
-```
+9. If there is a Phoenix table in the source Hive database, modify the ZooKeeper address of the Phoenix table in the target Hive metadata.
+Run the following query statement to get the `phoenix.zookeeper.quorum` configuration of the Phoenix table.
+```swift
 mysql> SELECT PARAM_VALUE from TABLE_PARAMS where PARAM_KEY = 'phoenix.zookeeper.quorum';  
 +--------------------------------------------------+    
 | PARAM_VALUE |    
 +--------------------------------------------------+    
 | 172.17.64.57,172.17.64.78,172.17.64.54 |     
-+--------------------------------------------------+  
++--------------------------------------------------+
 ```
 View the ZooKeeper address of the target cluster, i.e., the value specified in `hbase.zookeeper.quorum` of the `hive-site.xml` configuration file.
 ```
 <property>  
     <name>hbase.zookeeper.quorum</name>  
     <value>172.17.64.98:2181,172.17.64.112:2181,172.17.64.223:2181</value>  
-</property>  
+</property>
 ```
 Modify the ZooKeeper address of the Phoenix table in the target Hive metadata to that of the target cluster.
 ```
-mysql> UPDATE TABLE_PARAMS set PARAM_VALUE  = '172.17.64.98,172.17.64.112,172.17.64.223' where PARAM_KEY = 'phoenix.zookeeper.quorum';    
+mysql> UPDATE TABLE_PARAMS set PARAM_VALUE  = '172.17.64.98,172.17.64.112,172.17.64.223' where PARAM_KEY = 'phoenix.zookeeper.quorum';
 ```
-10. Start the MetaStore, HiveServer2, and WebHcataLog services of the target Hive database.
-11. Run simple Hive SQL query statements to check the migration result.
+10. Check the case of table names in the metadata of the target Hive database and change all lowercase table names to uppercase ones. Example:
+```
+alter table metastore_db_properties rename to   METASTORE_DB_PROPERTIES;
+```
+11. Start the MetaStore, HiveServer2, and WebHcataLog services of the target Hive database.
+12. Run simple Hive SQL query statements to check the migration result.

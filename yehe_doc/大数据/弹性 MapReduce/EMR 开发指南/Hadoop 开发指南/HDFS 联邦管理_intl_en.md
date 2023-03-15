@@ -2,14 +2,12 @@
 HDFS federation management is an HDFS federated cluster deployment and management feature, including NameService management and mount table management. Federation management is supported for Hadoop-type clusters in HA mode. There are two federation types to choose from: ViewFs federation and router-based federation, and the federation type cannot be changed once selected. A router node will be used to deploy an added NameNode. This router node does not support termination and role start/stop at the node level.
 
 >!
->1. The HDFS federation management feature is currently made available through an allowlist. To use it, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
->2. All EMR versions support ViewFs federation. As only HDFS v2.9.0 and later support router-based federation, only EMR v3.x.x and later support router-based federation.
->3. Suspending the NameNode role process on a federated node on the **Role Management** page may affect the cluster scaling, so you need to resume the process first before scaling the cluster.
->4. After NameNodes are federated, the `fs.defaultFS` configurations on different NameNodes will differ. When delivering the configuration of the HDFS `core-site.xml` file, do not select the cluster level; otherwise, the `fs.defaultFS` values on NameNodes will be overwritten. Other configuration files will not be affected.
+1. The HDFS federation management feature is currently made available through an allowlist. To use it, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+2. All EMR versions support ViewFs federation. As only HDFS v2.9.0 and later support router-based federation, only EMR v3.x.x and later support router-based federation.
+3. Suspending the NameNode role process on a federated node on the **Role Management** page may affect the cluster scaling, so you need to resume the process first before scaling the cluster.
 
 ## Directions
-
-1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click a **Cluster ID/Name** on the **Cluster List** page to enter the **cluster details** page.
+1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the cluster list to go to the cluster details page.
 2. On the cluster details page, click **Cluster Service** and select **Operation** > **Federation Management** in the top-right corner of the HDFS component block to enter the **Federation Management** page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/263196087adfe138be527a248a4d2865.png)
 3. Click **Add NameService** to create an HDFS federation. You need to enter the NameService name and select the federation type, NameNode, and DFSRouter (for router-based federation only).
@@ -35,5 +33,4 @@ You can add a mount table only after successfully adding a NameService. To reduc
 	2. Log in to another node, such as the router node serving as a client. `hdfs dfs -ls /` points to the global path.
 >-	The data of all business components needs to be placed in first-level directories but not the root directory for access, as the root directory cannot be mounted.
 >-	The default NameService has the `/emr` directory, which needs to be mounted.
-
 

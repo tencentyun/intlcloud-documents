@@ -2,15 +2,14 @@
 Capacity Scheduler organizes resources in a hierarchical manner, allowing multiple users to share cluster resources based on multi-level resource restrictions.
 ## Directions
 ### Creating a resource pool
-1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click **Details** of the target Hadoop cluster in the cluster list to enter the cluster details page.
-2. On the cluster details page, select **Cluster Service** and click **Operation** > **Resource Scheduling** in the top-right corner of the YARN component block to enter the **Resource Scheduling** page.
+1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click **Details** of the target Hadoop cluster in the cluster list to go to the cluster details page.
+2. On the cluster details page, select **Cluster Service** and choose **Operation** > **Resource Scheduling** in the top-right corner of the YARN component block to go to the **Resource Scheduling** page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4905f191ea23cca1404bc0535661343b.png)
-3. Toggle on **Resource Scheduler** and configure the scheduler.
+3. Toggle on **Resource scheduler** and configure the scheduler.
 4. Create a resource pool for Capacity Scheduler.
-Select **Capacity Scheduler**. On the displayed page, click **Create Resource Pool**. You can edit and clone an existing resource pool as well as create a subpool for it. You can also click **Default Settings** to set the number of times of delayed scheduling for Capacity Scheduler.
+Select **Capacity Scheduler** and click **Create Resource Pool** to create a resource pool. You can edit or clone an existing resource pool as well as create a subpool for it. You can also click **Default settings** to set the number of times of delayed scheduling.
 ![](https://qcloudimg.tencent-cloud.cn/raw/86d66b1e7dbd36ef7db534180aa4884a.png)
-<img src="https://qcloudimg.tencent-cloud.cn/raw/1c9248022f9d3b718353db69b787b985.png" style="zoom:67%;" />
-
+![](https://qcloudimg.tencent-cloud.cn/raw/1c9248022f9d3b718353db69b787b985.png)
 **Fields and parameters**:
 <table>
 <thead>
@@ -63,7 +62,7 @@ Select **Capacity Scheduler**. On the displayed page, click **Create Resource Po
 <tr>
 <td>Max vCores per Container</td>
 <td>yarn.scheduler.capacity.&lt;queue-path>.maximum-allocation-vcores&lt;/queue-path></td>
-<td>Maximum number of cores that can be allocated to each container. The value will overwrite and cannot be greater than that of the system's `yarn.scheduler.maximum-allocation-vcores`.</td>
+<td>Maximum number of CPU cores that can be allocated to each container. The value will overwrite and cannot be greater than that of the system's `yarn.scheduler.maximum-allocation-vcores`.</td>
 </tr>
 <tr>
 <td>Resource Pool Status</td>
@@ -103,27 +102,26 @@ Select **Capacity Scheduler**. On the displayed page, click **Create Resource Po
 </tbody></table>
 
 ### Configuring resource pool mappings
-1. In the **Policy Settings** section, click **Resource Pool Mappings**. On the displayed page, click **Create Resource Pool Mapping**.
+1. In the **Policy Settings** section, choose **Resource Pool Mappings** > **Create Resource Pool Mapping** to create a resource pool mapping.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a53afa531d55fc9a9ed0d13806f9c269.png)
 ![](https://qcloudimg.tencent-cloud.cn/raw/885fc900c0d98953418291fa68303905.png)
 2. Configure **Overwrite Specified Queues**.
-This feature is disabled by default. For example, you have defined a mapped queue in **Resource Pool Mappings** and specified a queue other than the mapped queue when submitting a task; if the specified queue is `default` and **Overwrite Specified Queues** is enabled, the mapped queue will be used; otherwise, the specified queue will be used.
+This feature is disabled by default. For example, you have defined a mapped queue in **Resource Pool Mappings** and specified a queue other than the mapped queue when submitting a job; if the specified queue is `default` and **Overwrite Specified Queues** is enabled, the mapped queue will be used; otherwise, the specified queue will be used.
 
 ### Sample label-based scheduling
-1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click **Details** of the target Hadoop cluster in the cluster list to enter the cluster details page.
-2. On the cluster details page, select **Cluster Service** and click **Operation** > **Resource Scheduling** in the top-right corner of the YARN component block to enter the **Resource Scheduling** page.
+1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click **Details** of the target Hadoop cluster in the cluster list to go to the cluster details page.
+2. On the cluster details page, select **Cluster Service** and choose **Operation** > **Resource Scheduling** in the top-right corner of the YARN component block to go to the **Resource Scheduling** page.
 3. Toggle on **Resource scheduler** and select **Capacity Scheduler**.
-4. Toggle on **Label-based scheduling** and click **Label Management** to enter the **Label Management** page.
+4. Toggle on **Label-based scheduling** and click **Label management** to go to the label management** page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/13fd863cc3eb5acd4f8ffedf7f3c0cc3.png)
 5. Click **Create Label**, enter the label name, and set the label type and node to be bound to as needed.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/9c4b32d2147ff06371acea3c76be8115.png" style="zoom:67%;" />
+![](https://qcloudimg.tencent-cloud.cn/raw/9c4b32d2147ff06371acea3c76be8115.png)
 6. After the label is set, click **Apply**. Then, you can view and edit the resource queue of the label in the resource pool.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f81987efdc00cc01113a5af9710d14e1.png)
 7. On the **Resource Scheduling** page, click **Create Resource Pool** and set **Label**, **Capacity**, **Max Capacity**, and other parameters as needed.
 >? The capacity and maximum capacity of a resource pool can be configured by label.
-
+>
 ![](https://qcloudimg.tencent-cloud.cn/raw/824235abc226885fd6ea2d741510390f.png)
 ![](https://qcloudimg.tencent-cloud.cn/raw/fdb9d5f056738f63a78208ac68de7a09.png)
-
 8. After the resource pool is set, click **Apply** to submit the task to the backend.
->! Proceed with caution when restarting the ResourceManager. If you are prompted that the ResourceManager will be restarted after clicking **Apply**, check whether the operation is successful in **Scheduling History** and whether the ResourceManager is healthy in **Role Management**.
+>! Proceed with caution when restarting the ResourceManager. If you are prompted that the ResourceManager will be restarted after you click **Apply**, check whether the operation is successful in **Scheduling History** and whether the ResourceManager is healthy in **Role Management**.

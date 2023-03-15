@@ -1,68 +1,57 @@
-Apache Hudi provides the following streaming primitives over datasets on HDFS: upsert and incremental pull.
+Apache Hudi provides streaming primitives over HDFS datasets for upsert and incremental pull.
 
-In general, we will store large amounts of data in HDFS and incrementally write new data but seldom change old data, particularly in scenarios where data is cleansed and placed in a data warehouse. In data warehouses such as Hive, the support for updates is very limited, and computing is expensive. In addition, in scenarios where only data that is added over a certain period of time needs to be analyzed, as Hive, Presto, and HBase do not provide native methods, it is necessary to filter and analyze it based on timestamp.
+In most cases, we store a large amount of data in HDFS. As new data is incrementally written to the storage, old data is rarely changed, especially if the data is cleansed and stored in, for example, a Hive warehouse. Limited support is provided for updates and the computing costs are high. Further, tools like Hive, Presto, and HBase cannot natively analyze the new data written in a specific period of time. Instead, the data is filtered based on the timestamp before the analysis.
 
-In view of this, Hudi enables you to update records and only query incremental data. In addition, it supports Hive, Presto, and Spark, so that you can directly use these components to query data managed by Hudi.
+Hudi is a solution to those issues because it supports record-level updates and incremental queries. You can use Apache Hive, Presto, and Spark to directly query the data managed by Hudi.
 
-Hudi is a universal big data storage system that enables:
-- Snapshot isolation between ingestion and query engines, including Apache Hive, Presto, and Apache Spark.
-- Support for rollbacks and savepoints to recover datasets.
-- Auto-management of file sizes and layout to optimize query performance and near real-time ingestion to feed queries with fresh data.
-- Async compaction of both real-time and columnar data.
+As a general-purpose big data storage system, Hudi provides the following key features:
+- Ingests snapshots from query engines, such as Hive, Presto, and Spark.
+- Supports rollback and savepoint for dataset recovery.
+- Automatically manages file sizes and layouts to optimize query performance and provide near-real-time data for queries.
+- Asynchronously compresses real-time data and column data.
 
 ## Timeline
-
-At its core, Hudi maintains a **timeline** of all actions performed on the dataset at different **instants of time** that helps provide instantaneous views of the dataset.
+At its core, Hudi maintains a **timeline** of all actions performed on the dataset at different **instants** of time. Therefore, Hudi provides views of the dataset at different points in time.
 
 A Hudi instant consists of the following components:
-- Action type: type of action performed on the dataset.
-- Instant time: typically a timestamp (such as 20190117010349), which monotonically increases in the order of action start time.
-- State: current state of the instant.
+- Instant action: The type of action performed on the dataset.
+- Instant time: Instant time is a timestamp, such as 20190117010349, which monotonically increases in the order of the start time of actions.
+- State: The state of the instant.
 
-## File Organization
+## File Layout
+Hudi organizes a dataset on DFS into a directory structure under a `base path`. The dataset is divided into partitions, which are folders containing data files for that partition. This is much like a Hive table.
 
-Hudi organizes datasets on DFS into a directory structure under a `basepath`. A dataset is broken down into partitions, which are folders containing data files for the corresponding partitions, very similar to Hive tables.
+Each partition is identified by a specific `partition path`, which is relative to the base path. In each partition, files are organized into file groups, which are uniquely identified by file IDs. Each file group contains multiple file slices. Each file slice contains a base file `*.parquet`, which is a columnar file generated at a certain commit or compaction instant time, and a set of `*.log*` files that contain upserts to the base file since it was generated.
 
-Each partition is uniquely identified by its `partitionpath`, which is relative to the `basepath`.
+Hudi works on the Multi-Version Concurrency Control (MVCC) mechanism. Logs and base files are compacted to produce new file slices, and unused and older file slices are cleared to reclaim space on DFS. Hudi provides efficient upserts by mapping a given hoodie key (record key + partition path) to a file group through an indexing mechanism.
 
-Within each partition, files are organized into `file groups` uniquely identified by `file ID`.
-
-Each file group contains several `file slices`, where each slice contains a base columnar file (`*.parquet`) produced at a certain commit/compaction instant time, along with a set of log files (`*.log*`) that contain inserts/updates to the base file since the base file was produced.
-
- Hudi adopts an MVCC design, where compaction action merges logs and base files to produce new file slices and cleaning action gets rid of unused/older file slices to reclaim space on DFS.
-
-Hudi provides efficient upserts by mapping a given hoodie key (record key + partition path) to a file group through an indexing mechanism.
-
-This mapping between record key and `file group`/`file id` never changes once the first version of a record has been written to a file. In short, the mapped file group contains all versions of a group of records.
+Once the first version of a record is written to a file, the mapping between the record key and the file group or file ID never changes. In other words, a mapped file group contains all versions of a group of records.
 
 ## Storage Types
-
 Hudi supports the following storage types:
-- Copy on write: it stores data only in columnar file formats (e.g., parquet), updates version, and rewrites the files by performing a sync merge during write.
-- Merge on read: it stores data by using a combination of columnar (e.g., parquet) and row-based (e.g., avro) file formats. Updates are logged to incremental files and later compacted to produce new versions of columnar files synchronously or asynchronously.
+- Copy on Write: Data is stored only in a columnar file format, such as Parquet. The version is updated and the file rewritten by performing a synchronous merge during the data write.
+- Merge on Read: Data is stored in both columnar (such as Parquet) and row-based (such as Avro) file formats. Updates are recorded in incremental files, which are synchronously or asynchronously compacted to produce new versions of columnar files.
 
 The following table summarizes the trade-offs between these two storage types:
 
-| **Trade-Off** | **Copy on Write** | **Merge on Read** |
+| **Trade-Off**        | **Copy on Write**                | **Merge on Read**           |
 | --------------- | --------------------------- | ---------------------- |
-| Data latency | Higher | Lower |
-| Update cost (I/O) | Higher (rewriting entire parquet) | Lower (appending to incremental log) |
-| Parquet file size | Smaller (high update cost (I/O)) | Larger (low update cost) |
-| Write amplification | Higher | Lower (depending on compaction policy) |
+| Data latency        | Higher                        | Lower                   |
+| Update cost (I/O) | Higher (rewrite the entire Parquet file) | Lower (append to incremental logs) |
+| Parquet file size | Smaller (high update (I/O)) | Larger (low update cost)     |
+| Write amplification          | Higher                        | Lower (depending on compaction strategies) |
 
-
-## Hudi Support for EMR Underlying Storage
-
+## EMR Underlying Storage Supported by Hudi
 - HDFS
 - COS
 
 ## Installing Hudi
-Enter the [EMR purchase page](https://buy.cloud.tencent.com/emapreduce?regionId=1#/) and select EMR v2.2.0 as the **Product Version** and **Hudi 0.5.1** as the **Optional Component**. Hudi is installed on the master and router nodes by default.
-> Hudi relies on Hive and Spark components. If you choose to install Hudi, EMR will automatically install Hive and Spark.
+Go to the [EMR purchase page](https://buy.cloud.tencent.com/emr), select **EMR-V2.2.0** for **Product Version**, and select the **hudi 0.5.1** optional component. By default, Hudi is installed on the master and router nodes.
+>! Hudi relies on Hive and Spark. If you install Hudi, EMR automatically installs Hive and Spark.
 
-## Use Cases
-For more information, please see [Hudi official demo](http://hudi.apache.org/docs/docker_demo.html):
-1. Log in to a master node and switch to the `hadoop` user.
+## Examples
+The following examples are applicable to Hudi 0.11.0 and later. For more information about examples applicable to other versions, see the [Docker Demo](http://hudi.apache.org/docs/docker_demo.html) on Hudi’s official website.
+1. Log in to the master node and switch to the `hadoop` user.
 2. Load the Spark configuration.
 ```
 cd /usr/local/service/hudi
@@ -73,7 +62,7 @@ Upload the configuration to HDFS:
 hdfs dfs -mkdir -p /hudi/config
 hdfs dfs -copyFromLocal demo/config/* /hudi/config/
 ```
-3.	Modify the Kafka data source.
+3. Modify the Kafka data source.
 ```
 /usr/local/service/hudi/demo/config/kafka-source.properties
 bootstrap.servers=kafka_ip:kafka_port
@@ -82,21 +71,21 @@ Upload the first batch of data:
 ```
 cat demo/data/batch_1.json | kafkacat -b [kafka_ip] -t stock_ticks -P
 ```
-4.	Ingest the first batch of data.
+4. Ingest the first batch of data.
 ```
 spark-submit --class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer --master yarn ./hudi-utilities-bundle_2.11-0.5.1-incubating.jar   --table-type COPY_ON_WRITE --source-class org.apache.hudi.utilities.sources.JsonKafkaSource --source-ordering-field ts  --target-base-path /usr/hive/warehouse/stock_ticks_cow --target-table stock_ticks_cow --props /hudi/config/kafka-source.properties --schemaprovider-class org.apache.hudi.utilities.schema.FilebasedSchemaProvider
 spark-submit --class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer  --master yarn ./hudi-utilities-bundle_2.11-0.5.1-incubating.jar  --table-type MERGE_ON_READ --source-class org.apache.hudi.utilities.sources.JsonKafkaSource --source-ordering-field ts  --target-base-path /usr/hive/warehouse/stock_ticks_mor --target-table stock_ticks_mor --props /hudi/config/kafka-source.properties --schemaprovider-class org.apache.hudi.utilities.schema.FilebasedSchemaProvider --disable-compaction
 ```
-5.	View HDFS data.
+5. View the HDFS data.
 ```
  hdfs dfs -ls /usr/hive/warehouse/
 ```
-6.	Sync Hive metadata.
+6. Synchronize the Hive metadata.
 ```
 bin/run_sync_tool.sh  --jdbc-url jdbc:hive2://[hiveserver2_ip:hiveserver2_port]  --user hadoop --pass [password] --partitioned-by dt --base-path /usr/hive/warehouse/stock_ticks_cow --database default --table stock_ticks_cow
 bin/run_sync_tool.sh  --jdbc-url jdbc:hive2://[hiveserver2_ip:hiveserver2_port]   --user hadoop --pass [password]--partitioned-by dt --base-path /usr/hive/warehouse/stock_ticks_mor --database default --table stock_ticks_mor --skip-ro-suffix
 ```
-7.	Query data with a computing engine.
+7. Use a compute engine to query data.
  - Hive engine
 ```
 beeline -u jdbc:hive2://[hiveserver2_ip:hiveserver2_port] -n hadoop --hiveconf hive.input.format=org.apache.hadoop.hive.ql.io.HiveInputFormat --hiveconf hive.stats.autogather=false
@@ -105,7 +94,7 @@ Or Spark engine
 ```
 spark-sql --master yarn --conf spark.sql.hive.convertMetastoreParquet=false
 ```
-In the Hive/Spark engine, execute the following SQL statement:
+Execute the following SQL statements in the Hive or Spark engine:
 ```
 select symbol, max(ts) from stock_ticks_cow group by symbol HAVING symbol = 'GOOG';
 select `_hoodie_commit_time`, symbol, ts, volume, open, close  from stock_ticks_cow where  symbol = 'GOOG';
@@ -114,11 +103,11 @@ select `_hoodie_commit_time`, symbol, ts, volume, open, close  from stock_ticks_
 select symbol, max(ts) from stock_ticks_mor_rt group by symbol HAVING symbol = 'GOOG';
 select `_hoodie_commit_time`, symbol, ts, volume, open, close  from stock_ticks_mor_rt where  symbol = 'GOOG';
 ```
- - Enter the Presto engine
+ - Presto engine
 ```
 /usr/local/service/presto-client/presto --server localhost:9000 --catalog hive --schema default --user Hadoop
 ```
-**You need to enclose a field with underlines in double quotation marks to query it with Presto**, such as `"_hoodie_commit_time"`. Execute the following SQL statement:
+**To query a field with underscores (_) in the Presto engine, you must enclose the field with double quotation marks(" ")**. Example: `"_hoodie_commit_time"`. Execute the following SQL statements:
 ```
 select symbol, max(ts) from stock_ticks_cow group by symbol HAVING symbol = 'GOOG';
 select "_hoodie_commit_time", symbol, ts, volume, open, close  from stock_ticks_cow where  symbol = 'GOOG';
@@ -135,28 +124,26 @@ cat demo/data/batch_2.json | kafkacat -b 10.0.1.70 -t stock_ticks -P
 spark-submit --class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer --master yarn ./hudi-utilities-bundle_2.11-0.5.1-incubating.jar   --table-type COPY_ON_WRITE --source-class org.apache.hudi.utilities.sources.JsonKafkaSource --source-ordering-field ts  --target-base-path /usr/hive/warehouse/stock_ticks_cow --target-table stock_ticks_cow --props /hudi/config/kafka-source.properties --schemaprovider-class org.apache.hudi.utilities.schema.FilebasedSchemaProvider
 spark-submit --class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer  --master yarn ./hudi-utilities-bundle_2.11-0.5.1-incubating.jar  --table-type MERGE_ON_READ --source-class org.apache.hudi.utilities.sources.JsonKafkaSource --source-ordering-field ts  --target-base-path /usr/hive/warehouse/stock_ticks_mor --target-table stock_ticks_mor --props /hudi/config/kafka-source.properties --schemaprovider-class org.apache.hudi.utilities.schema.FilebasedSchemaProvider --disable-compaction
 ```
-10.	Query incremental data by following step 7.
-11.	Use the hudi-cli tool.
+10. Query the incremental data. The query method is the same as step 7.
+11. Use the hudi-cli tool.
 ```
  cli/bin/hudi-cli.sh
 connect --path /usr/hive/warehouse/stock_ticks_mor
 compactions show all
 compaction schedule
-Combine the execution plans
+Compact execution plans.
  compaction run --compactionInstant [requestID] --parallelism 2 --sparkMemory 1G  --schemaFilePath /hudi/config/schema.avsc --retry 1
 ```
-12.	Query data with the Spark/Tez engine.
+12. Specify Tez or Spark as the query engine.
 ```
 beeline -u jdbc:hive2://[hiveserver2_ip:hiveserver2_port] -n hadoop --hiveconf hive.input.format=org.apache.hadoop.hive.ql.io.HiveInputFormat --hiveconf hive.stats.autogather=false
 set hive.execution.engine=tez;
 set hive.execution.engine=spark;
 ```
-Then, execute an SQL query by following step 7.
+Execute the SQL query. For more information about the query method, see step 7.
 
-
-## Working with COS
-
-Like HDFS, you need to add `cosn://[bucket]` before the storage path. Please see the following steps:
+## Using Hudi with COS
+Like HDFS, when using Hudi with COS, you must add `cosn://[bucket]` before the storage path. Example:
 ```
 bin/kafka-server-start.sh config/server.properties &
 cat     demo/data/batch_1.json | kafkacat -b kafkaip -t stock_ticks -P
@@ -165,12 +152,9 @@ kafkacat -b kafkaip  -L
 hdfs dfs -mkdir -p cosn://[bucket]/hudi/config
 hdfs dfs -copyFromLocal demo/config/*  cosn://[bucket]/hudi/config/
 
-
 spark-submit --class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer --master yarn ./hudi-utilities-bundle_2.11-0.5.1-incubating.jar   --table-type COPY_ON_WRITE --source-class org.apache.hudi.utilities.sources.JsonKafkaSource --source-ordering-field ts  --target-base-path cosn://[bucket]/usr/hive/warehouse/stock_ticks_cow --target-table stock_ticks_cow --props cosn://[bucket]/hudi/config/kafka-source.properties --schemaprovider-class org.apache.hudi.utilities.schema.FilebasedSchemaProvider
 
-
 spark-submit --class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer  --master yarn ./hudi-utilities-bundle_2.11-0.5.1-incubating.jar  --table-type MERGE_ON_READ --source-class org.apache.hudi.utilities.sources.JsonKafkaSource --source-ordering-field ts  --target-base-path cosn://[bucket]/usr/hive/warehouse/stock_ticks_mor --target-table stock_ticks_mor --props cosn://[bucket]/hudi/config/kafka-source.properties --schemaprovider-class org.apache.hudi.utilities.schema.FilebasedSchemaProvider --disable-compaction
-
 
 bin/run_sync_tool.sh  --jdbc-url jdbc:hive2://[hiveserver2_ip:hiveserver2_port] --user hadoop --pass isd@cloud --partitioned-by dt --base-path cosn://[bucket]/usr/hive/warehouse/stock_ticks_cow --database default --table stock_ticks_cow
 
@@ -180,7 +164,6 @@ bin/run_sync_tool.sh  --jdbc-url jdbc:hive2://[hiveserver2_ip:hiveserver2_port] 
 beeline -u jdbc:hive2://[hiveserver2_ip:hiveserver2_port] -n hadoop --hiveconf hive.input.format=org.apache.hadoop.hive.ql.io.HiveInputFormat --hiveconf hive.stats.autogather=false
 
 spark-sql --master yarn --conf spark.sql.hive.convertMetastoreParquet=false
-
 
 hivesqls:
 select symbol, max(ts) from stock_ticks_cow group by symbol HAVING symbol = 'GOOG';
@@ -198,7 +181,6 @@ select symbol, max(ts) from stock_ticks_mor group by symbol HAVING symbol = 'GOO
 select "_hoodie_commit_time", symbol, ts, volume, open, close  from stock_ticks_mor where  symbol = 'GOOG';
 select symbol, max(ts) from stock_ticks_mor_rt group by symbol HAVING symbol = 'GOOG';
 select "_hoodie_commit_time", symbol, ts, volume, open, close  from stock_ticks_mor_rt where  symbol = 'GOOG';
-
 
 cli/bin/hudi-cli.sh
 connect --path cosn://[bucket]/usr/hive/warehouse/stock_ticks_mor
