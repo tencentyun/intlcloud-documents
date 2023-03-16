@@ -17,50 +17,8 @@
 
 In practice, we recommend that customers upload data resources by using the `CreateUploadUrl` API. The process is shown in the highlighted area in the following figure. Customers can also upload resources to their servers by other means. For more information, see [Passing Resources](https://intl.cloud.tencent.com/document/product/1061/46849).
 
-```mermaid
-sequenceDiagram
-autonumber
-participant u as End User
-participant ca as Customer<br>APP
-participant sdk as Tencent Cloud<br>SDK
-participant cs as Customer<br>Server
-participant t as Tencent Cloud API
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/DSKv554_a.png)
 
-u ->>+ ca: start verify
-note over ca,sdk: Initial process
-ca->>+sdk: Init()<br>startGetAuthConfigData()
-sdk-->>-ca: DeviceData
-ca->>+cs: DeviceData
-note over cs, t: Generate reflect sequence process 
-rect rgb(250, 200, 255)
-cs->>+t: CreateUploadUrl<br>(TargetAction:GenerateReflectSequence)
-t-->>-cs: UploadUrl+ResourceUrl
-cs->>cs: HTTP PUT UploadUrl <br> DeviceData
-end
-cs->>+t: GenerateReflectSequence(ResourceUrl)
-t-->>-cs: ReflectSequence
-cs-->>-ca: ReflectSequence
-Note over sdk,ca: Liveness process
-ca->>+sdk: startAuthByLightData(ReflectSequence)
-sdk->>sdk: liveness
-sdk-->>-ca: LiveData
-ca->>+cs: LiveData
-note over cs,t: Detect and compare process 
-rect rgb(250, 200, 255)
-cs->>+t: CreateUploadUrl<br>(TargetAction:DetectReflectLivenessAndCompare)
-t-->>-cs: UploadUrl+ResourceUrl(used as ImageUrl)
-cs->>cs: HTTP PUT UploadUrl <br> Image
-end
-rect rgb(250, 200, 255)
-cs->>+t: CreateUploadUrl<br>(TargetAction:DetectReflectLivenessAndCompare)
-t-->>-cs: UploadUrl+ResourceUrl(used as LiveDataUrl)
-cs->>cs: HTTP PUT UploadUrl <br> LiveData
-end
-cs->>+t: DetectReflectLivenessAndCompare(ImageUrl,LiveDataUrl)
-t-->>-cs: Result
-cs-->>-ca: Result
-ca -->>- u: verify done
-```
 Backend APIs: [GenerateReflectSequence](https://intl.cloud.tencent.com/document/product/1061/47646), [DetectReflectLivenessAndCompare](https://intl.cloud.tencent.com/document/product/1061/44246), [CreateUploadUrl](https://www.tencentcloud.com/document/product/1061/47648)
 
 ## Integration Steps
