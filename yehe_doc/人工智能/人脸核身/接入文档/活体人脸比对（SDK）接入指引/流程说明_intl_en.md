@@ -20,7 +20,7 @@ In practice, we recommend that customers upload data resources by using the `Cre
 ```mermaid
 sequenceDiagram
 autonumber
-actor u as End User
+participant u as End User
 participant ca as Customer<br>APP
 participant sdk as Tencent Cloud<br>SDK
 participant cs as Customer<br>Server
@@ -263,7 +263,7 @@ Returned result:
 After obtaining `ReflectSequenceUrl`, the customer server downloads the file, verifies the MD5 hash of the file, and returns it to the customer app to perform the next step.
 
 ### 3. Customer app: Calling the camera to obtain liveness data by using the reflect sequence (Liveness process in the sequence diagram)
-​After you obtain the configuration information from the server, you need to call this API to pass in the `reflectSequence` delivered by the server, i.e., the reflect sequence for identity verification, so as to complete the local identity verification.
+After you obtain the configuration information from the server, you need to call this API to pass in the `reflectSequence` delivered by the server, i.e., the reflect sequence for identity verification, so as to complete the local identity verification.
 
 Sample code for Android:
 ```java

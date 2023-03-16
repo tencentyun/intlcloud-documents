@@ -20,7 +20,7 @@
 ```mermaid
 sequenceDiagram
 autonumber
-actor u as End User
+participant u as End User
 participant ca as Customer<br>APP
 participant sdk as Tencent Cloud<br>SDK
 participant cs as Customer<br>Server
