@@ -3,7 +3,7 @@ This document uses the `cbs-test` cloud disk to be mounted in the Beijing Zone 2
 
 
 <dx-alert infotype="explain" title="">
-- Cloud disks can only be attached to an CVM in the same availability zone.
+- Cloud disks can only be mounted to an CVM in the same availability zone.
 - For more information on attaching cloud disks, see [Attaching Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32401).
 </dx-alert>
 
