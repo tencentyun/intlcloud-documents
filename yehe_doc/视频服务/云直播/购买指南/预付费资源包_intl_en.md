@@ -33,8 +33,8 @@ A traffic package deducts your usage of LVB downstream traffic inside the Chines
   - Asia Pacific 3: Philippines, India, Australia
   - North America: United States, Canada, Mexico
   - Europe: Netherlands, Germany, Russia, United Kingdom, Ireland, Italy, Spain, France
-  - Middle East: United Arab Emirates, Türkiye, Qatar, Saudi Arabia, Bahrain, Iraq
-  - Africa: South Africa
+  - Middle East: United Arab Emirates, Türkiye, Qatar, Saudi Arabia, Bahrain, Iraq, Oman
+  - Africa: South Africa, Egypt
   - South America: Brazil, Colombia, Argentina
 
 [](id:live_pag)
