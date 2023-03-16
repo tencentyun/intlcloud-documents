@@ -1,5 +1,5 @@
 ## Overview
-This document uses the `cbs-test` cloud disk to be attached in the Beijing Zone 2 as an example to describe how to attach it to CVM via the console.
+This document uses the `cbs-test` cloud disk to be mounted in the Beijing Zone 2 as an example to describe how to mount it to CVM via the console.
 
 
 <dx-alert infotype="explain" title="">
@@ -15,17 +15,17 @@ This document uses the `cbs-test` cloud disk to be attached in the Beijing Zone 
 
 ## Directions
 1. Log in to the CVM console and click [**Cloud Block Storage**](https://console.cloud.tencent.com/cvm/cbs) on the left sidebar.
-2. Select **Beijing** at the top of the page, locate the `cbs-test` cloud disk, and select **More** > **Attach** under the **Operation** column.
+2. Select **Beijing** at the top of the page, locate the `cbs-test` cloud disk, and select **More** > **Mount** under the **Operation** column.
 
-3. In the pop-up window, select a CVM instance to which the cloud disk will be attached, and click **Next** > **Attach Now**.
+3. In the pop-up window, select a CVM instance to which the cloud disk will be mounted, and click **Next** > **Mount Now**.
 <dx-alert infotype="explain" title="">
 You can check **Release upon instance termination** according to actual circumstances.
 </dx-alert>
-Return to the cloud disk list page. The status of the cloud disk is **Attaching**, indicating that it is being attached to the CVM. After the status changes to **Attached**, the cloud disk is attached successfully.
+Return to the cloud disk list page. The status of the cloud disk is **Mounting**, indicating that it is being attached to the CVM. After the status changes to **Mounted**, the cloud disk is attached successfully.
 
 
 ## Subsequent Operations
-After the cloud disk is attached to a CVM, the cloud disk acts as a data disk, which is offline by default. You need to initialize the cloud disks by formatting, partitioning, and creating a file system. For more information, see [Step 3. Initializing Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31645).
+After the cloud disk is mounted to a CVM, the cloud disk acts as a data disk, which is offline by default. You need to initialize the cloud disks by formatting, partitioning, and creating a file system. For more information, see [Step 3. Initializing Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31645).
 
 
 
