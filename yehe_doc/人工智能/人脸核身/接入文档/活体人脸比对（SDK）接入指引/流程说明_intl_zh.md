@@ -17,50 +17,9 @@
 
 实际使用时，腾讯云建议使用`CreateUploadUrl`接口来传递数据资源，即下图中颜色区域的流程。客户业务后台也可以通过其他方式上传资源，详见[如何传递资源](https://www.tencentcloud.com/zh/document/product/1061/46849) 。
 
-```mermaid
-sequenceDiagram
-autonumber
-participant u as End User
-participant ca as Customer<br>APP
-participant sdk as Tencent Cloud<br>SDK
-participant cs as Customer<br>Server
-participant t as Tencent Cloud API
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/DSKv554_a.png)
 
-u ->>+ ca: start verify
-note over ca,sdk: Initial process
-ca->>+sdk: Init()<br>startGetAuthConfigData()
-sdk-->>-ca: DeviceData
-ca->>+cs: DeviceData
-note over cs, t: Generate reflect sequence process 
-rect rgb(250, 200, 255)
-cs->>+t: CreateUploadUrl<br>(TargetAction:GenerateReflectSequence)
-t-->>-cs: UploadUrl+ResourceUrl
-cs->>cs: HTTP PUT UploadUrl <br> DeviceData
-end
-cs->>+t: GenerateReflectSequence(ResourceUrl)
-t-->>-cs: ReflectSequence
-cs-->>-ca: ReflectSequence
-Note over sdk,ca: Liveness process
-ca->>+sdk: startAuthByLightData(ReflectSequence)
-sdk->>sdk: liveness
-sdk-->>-ca: LiveData
-ca->>+cs: LiveData
-note over cs,t: Detect and compare process 
-rect rgb(250, 200, 255)
-cs->>+t: CreateUploadUrl<br>(TargetAction:DetectReflectLivenessAndCompare)
-t-->>-cs: UploadUrl+ResourceUrl(used as ImageUrl)
-cs->>cs: HTTP PUT UploadUrl <br> Image
-end
-rect rgb(250, 200, 255)
-cs->>+t: CreateUploadUrl<br>(TargetAction:DetectReflectLivenessAndCompare)
-t-->>-cs: UploadUrl+ResourceUrl(used as LiveDataUrl)
-cs->>cs: HTTP PUT UploadUrl <br> LiveData
-end
-cs->>+t: DetectReflectLivenessAndCompare(ImageUrl,LiveDataUrl)
-t-->>-cs: Result
-cs-->>-ca: Result
-ca -->>- u: verify done
-```
+
 相关后台接口：[GenerateReflectSequence](https://www.tencentcloud.com/zh/document/product/1061/47646)，[DetectReflectLivenessAndCompare](https://www.tencentcloud.com/zh/document/product/1061/44246)，[CreateUploadUrl](https://www.tencentcloud.com/zh/document/product/1061/47648)
 
 ## 具体接入步骤
