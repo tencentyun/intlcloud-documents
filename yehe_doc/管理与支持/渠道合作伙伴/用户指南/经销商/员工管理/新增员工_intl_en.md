@@ -23,7 +23,7 @@ After you create an employee, you need to inform them of the account name and pa
 | ------------ | ------------------------------------------------------------ |
 | Login URL | When you copy and open the login URL, the root account ID will be automatically filled on the login page.                    |
 | Employee account     | Employee account name                                               |
-| Initial password | Employee’s initial login password, which is the combination of the email domain and the last four digits of the mobile number. <br>If the employee’s email address is XXXX@tencent.com and the mobile number is +86 131XXXX4532, then the initial password will be @tencent4532.<br> |
+| Initial password | Employee’s initial login password, which is the combination of the email domain and the last four digits of the mobile number. <br>If the employee’s email address is XXXX@tencent.com and the mobile number is +86 131XXXX4532, then the initial password will be Tci@tencent4532.<br> |
 
 ### Employee-related operations
 - Query employee list: You can query the employee list by certain query condition.
