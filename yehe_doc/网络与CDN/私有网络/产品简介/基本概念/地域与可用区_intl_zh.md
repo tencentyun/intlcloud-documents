@@ -53,7 +53,7 @@
 		<td>广州七区<br> ap-guangzhou-7</td>
 	</tr>
 	<tr>
-		<td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
+		<td rowspan="6">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海一区<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
@@ -65,10 +65,13 @@
 	<tr>
 		<td>上海四区<br>ap-shanghai-4</td>
 	</tr>
- <tr>
+        <tr>
 		<td>上海五区<br>ap-shanghai-5</td>
 	</tr>
-		<tr>
+	<tr>
+                <td>上海八区<br>ap-shanghai-8</td>
+	</tr>
+	<tr>
 			<td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
 			<td>南京一区<br>ap-nanjing-1</td>
 	</tr>
@@ -133,7 +136,7 @@
 			<th>可用区</th>
 		</tr>
 		<tr>
-			<td  rowspan="3">亚太东南（新加坡）<br>ap-singapore</td>
+			<td  rowspan="4">亚太东南（新加坡）<br>ap-singapore</td>
 			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
 		</tr>
 		<tr>
@@ -141,6 +144,16 @@
 		</tr>
 		<tr>
 			<td>新加坡三区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-3</td>
+		</tr>
+		<tr>
+                        <td>新加坡四区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-4</td>
+		</tr>
+		<tr>
+                        <td rowspan="2">亚太东南（雅加达）<br>ap-jakarta</td>
+			<td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+			<td>雅加达二区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-2</td>
 		</tr>
 		<tr>
 			<td  rowspan="2">亚太东北（首尔）<br>ap-seoul</td>
@@ -174,7 +187,11 @@
 			<td>多伦多一区（多伦多节点可用于覆盖北美地区）<br>na-toronto-1</td>
 		</tr>
 		<tr>
-			<td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>
+			<td>南美地区（圣保罗）<br>sa-saopaulo</td>
+			<td>圣保罗一区（圣保罗节点可用于覆盖南美地区）<br>sa-saopaulo-1</td>
+		</tr>
+		<tr>
+                        <td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>
 			<td>硅谷一区（硅谷节点可用于覆盖美国西部）<br>na-siliconvalley-1</td>
 		</tr>
     <tr>
