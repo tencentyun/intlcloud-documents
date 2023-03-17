@@ -1,13 +1,13 @@
-A high availability virtual IP (HAVIP) is a private IP address assigned from the VPC CIDR block. It is usually used together with high-availability software, such as Keepalived and Windows Server Failover Cluster, to build a highly available primary/secondary cluster.
+A high availability virtual IP (HAVIP) is a private IP address assigned from the CIDR block of a VPC subnet. It is usually used together with high-availability software, such as Keepalived and Windows Server Failover Cluster, to build a highly available primary/secondary cluster.
 >?
 >- HAVIP is currently in beta, and switching between primary/secondary servers may take 10 seconds. To try it out, please apply to be a beta user.
 >- To guarantee the CVM high availability in a primary/secondary cluster, we recommend assigning CVMs to different hosts using [placement groups](https://intl.cloud.tencent.com/document/product/213/15486). For more information about the placement group, see [Placement Group](https://intl.cloud.tencent.com/document/product/213/15486).
 >- The high availability software should support sending ARP messages.
 
 ## Features
-1. You can apply for multiple HAVIP addresses in the console for each VPC.
-2. You must bind the HAVIP in CVM’s configuration file.
-3. A HAVIP is subnet-specific and can only be bound to a server under the same subnet through announcement.
+- You can apply for multiple HAVIP addresses in the console for each VPC.
+- You must bind the HAVIP in CVM’s configuration file.
+
 
 ## Architecture and Principle
 Typically, a high availability primary/secondary cluster consists of two servers: an active primary server and a standby secondary server. The two servers share the same VIP (virtual IP). The VIP can only work on one primary server at the same time. When the primary server fails, the secondary server will take over the VIP to continue providing services.
