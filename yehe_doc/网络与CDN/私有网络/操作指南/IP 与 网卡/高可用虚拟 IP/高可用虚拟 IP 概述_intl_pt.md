@@ -5,9 +5,9 @@ Um IP virtual de alta disponibilidade (HAVIP, na sigla em inglês) é um endere�
 >- O software de alta disponibilidade deve permitir o envio de mensagens ARP.
 
 ## Funcionalidades
-1. É possível solicitar vários endereços HAVIP no console para cada VPC.
-2. Você deve vincular o HAVIP no arquivo de configuração da CVM.
-3. O HAVIP é específico da sub-rede e só pode ser vinculado a um servidor na mesma sub-rede por meio de anúncio.
+- É possível solicitar vários endereços HAVIP no console para cada VPC.
+- Você deve vincular o HAVIP no arquivo de configuração da CVM.
+
 
 ## Arquitetura e princípio
 Normalmente, um cluster principal/secundário de alta disponibilidade consiste em dois servidores: um servidor principal ativo e um servidor secundário em espera. Os dois servidores compartilham o mesmo VIP (IP virtual). O VIP só pode trabalhar em um servidor principal ao mesmo tempo. Quando o servidor principal falhar, o servidor secundário assumirá o VIP para continuar fornecendo serviços.
