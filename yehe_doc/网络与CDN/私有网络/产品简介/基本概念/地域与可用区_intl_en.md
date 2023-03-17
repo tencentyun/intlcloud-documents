@@ -54,7 +54,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 		<td>Guangzhou Zone 7<br>ap-guangzhou-7</td>
 	</tr>
 	<tr>
-		<td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
+		<td rowspan="6">East China (Shanghai)<br>ap-shanghai</td>
 		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
@@ -66,10 +66,13 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 	<tr>
 		<td>Shanghai Zone 4</br>ap-shanghai-4</td>
 	</tr>
- <tr>
+        <tr>
 		<td>Shanghai Zone 5 <br>ap-shanghai-5</td>
 	</tr>
-		<tr>
+        <tr>
+                <td>Shanghai Zone 8 <br>ap-shanghai-8</td>
+	</tr>
+	<tr>
 			<td rowspan="3">East China (Nanjing)<br>ap-nanjing</td>
 			<td>Nanjing Zone 1<br>ap-nanjing-1</td>
 	</tr>
@@ -134,7 +137,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<th>AZ</th>
 		</tr>
 		<tr>
-			<td  rowspan="3">Southeast Asia (Singapore)<br>ap-singapore</td>
+			<td  rowspan="4">Southeast Asia (Singapore)<br>ap-singapore</td>
 			<td>Singapore Zone 1 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-1</td>
 		</tr>
 		<tr>
@@ -144,6 +147,16 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Singapore Zone 3 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-3</td>
 		</tr>
 		<tr>
+                        <td>Singapore Zone 4 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-4</td>
+		</tr>
+		<tr>
+                        <td  rowspan="2">Southeast Asia (Jakarta)<br>ap-jakarta</td>
+			<td>Jakarta Zone 1(Nodes in Jakarta can cover Southeast Asia)<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+			<td>Jakarta Zone 2(Nodes in Jakarta can cover Southeast Asia)<br>ap-jakarta-2</td>
+		</tr>
+		<tr >
 			<td  rowspan="2">Northeast Asia (Seoul)<br>ap-seoul</td>
 			<td>Seoul Zone 1 (Nodes in Seoul can cover Northeast Asia)<br>ap-seoul-1</td>
 		</tr>
@@ -173,6 +186,10 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 		</tr>
 			<td>North America (Toronto)<br>na-toronto</td>
 			<td>Toronto Zone 1 (Nodes in Toronto can cover North America)<br>na-toronto-1</td>
+		</tr>
+		<tr>
+                        <td>South America（Saopaulo）<br>South America（Saopaulo）</td>
+			<td>Saopaulo Zone 1 (Nodes in Saopaulo can cover South America)<br>sa-saopaulo-1</td>
 		</tr>
 		<tr>
 			<td rowspan="2">Western US (Silicon Valley)<br>na-siliconvalley</td>
