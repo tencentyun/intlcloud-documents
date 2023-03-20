@@ -21,19 +21,19 @@
     			<td>制限</td>
 					<td>中国大陸パブリッククラウドリージョンでの1バケットのデフォルトの帯域幅は、アップストリーム・ダウンストリーム共有で15Gbit/s、その他のリージョンではアップストリーム・ダウンストリーム共有で10Gbit/sとなります。帯域幅がこの閾値に達すると、リクエストによってトラフィックコントロールがトリガーされます。これ以上の帯域幅が必要な場合は、<a href="https://console.cloud.tencent.com/workorder/category">アフターサービスエンジニア</a>までご連絡ください。</td>	
     </tr>
-    	 <tr>
+    	<tr>
         <td rowspan="5">ストレージタイプ</td>
     			<td>標準ストレージ（マルチAZ）/標準ストレージの制限</td>
     			<td>課金制限：<br>保存期間、ストレージユニットに制限はありません。<br>標準ストレージ料金の詳細については、<a href="https://buy.cloud.tencent.com/price/cos">製品価格</a>をご参照ください。</td>
     </tr>
     	 <tr>
         <td>低頻度ストレージ（マルチAZ）/低頻度ストレージの制限</td>
-    			<td>課金制限：<ul  style="margin: 0;"><li>保存期間が30日未満の場合は、30日として計算します。</li>
-					<li>ストレージユニットが64KB未満の場合は64KBとして計算し、64KB以上の場合は実際のサイズに基づいて計算します。<br>低頻度ストレージ料金の詳細については、<a href="https://buy.cloud.tencent.com/price/cos">製品価格</a>をご参照ください。</li></ul></td>
+    	<td>課金制限：<ul  style="margin: 0;"><li>保存期間が30日未満の場合は、30日として計算します。</li><li>ストレージユニットが64KB未満の場合は64KBとして計算し、64KB以上の場合は実際のサイズに基づいて計算します。<br>低頻度ストレージ料金の詳細については、<a href="https://buy.cloud.tencent.com/price/cos">製品価格</a>をご参照ください。</li></ul></td>
     </tr>
-    	 <tr>
+    	<tr>
         <td>INTELLIGENT_TIERINGストレージ（マルチAZ）/INTELLIGENT_TIERINGストレージの制限</td>
-    			<li>課金制限：<br>64KB未満のオブジェクトは引き続き高頻度アクセスレイヤーに保存されます。単一のストレージファイルのサイズにかかわらず、実際のデータサイズに基づいて計算します。<br>INTELLIGENT_TIERINGストレージ料金の詳細については、<a href="https://buy.cloud.tencent.com/price/cos">製品価格</a>をご参照ください。</td>
+    	<td><li>課金制限：<br>64KB未満のオブジェクトは引き続き高頻度アクセスレイヤーに保存されます。単一のストレージファイルのサイズにかかわらず、実際のデータサイズに基づいて計算します。<br>INTELLIGENT_TIERINGストレージ料金の詳細については、
+<a href="https://buy.cloud.tencent.com/price/cos">製品価格</a>をご参照ください。</td>
     </tr>
     	 <tr>
         <td>アーカイブストレージの制限</td>
