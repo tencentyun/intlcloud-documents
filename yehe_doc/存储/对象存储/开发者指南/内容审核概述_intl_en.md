@@ -13,7 +13,7 @@ The COS content moderation service intelligently moderates the multimedia conten
 | Webpage     | The system can automatically detect webpage files and recognize non-compliant content in OCR, object detection (such as object, advertising logo, and QR code), and image recognition dimensions based on the deep learning technology. |
 
 
->?Content moderation is billed by CI. For billing details, see [Content Moderation Fees](https://cloud.tencent.com/document/product/460/58119). 
+>?Content moderation is billed by CI. 
 >
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/f4b075ccd69c4c8e9b056a3c628a7f6e.png)
@@ -49,7 +49,7 @@ If you want to use the content moderation feature in other regions, [submit a ti
 
 #### Automatic moderation
 
-You can enable the automatic moderation service in the COS console to automatically moderate newly uploaded images, videos, audios, files, documents, and webpages. For more information, see [Automatic Moderation](https://cloud.tencent.com/document/product/436/47247).
+You can enable the automatic moderation service in the COS console to automatically moderate newly uploaded images, videos, audios, files, documents, and webpages. For more information, see [Automatic Moderation](https://www.tencentcloud.com/document/product/436/52097).
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/3YaP402_PRELIM__%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-1.png)
 
@@ -65,10 +65,10 @@ You can use APIs to moderate the content of images, videos, audios, text, docume
 - [Single Image Moderation](https://intl.cloud.tencent.com/document/product/436/48537) 
 - [Submitting Video Moderation Job](https://intl.cloud.tencent.com/document/product/436/48249) 
 - [Submitting Audio Moderation Job](https://intl.cloud.tencent.com/document/product/436/48262)
-- [Text Moderation](https://cloud.tencent.com/document/product/436/56287)
-- [Document Moderation](https://cloud.tencent.com/document/product/436/59378)
-- [Webpage Moderation](https://cloud.tencent.com/document/product/436/63957)
-- [Live Stream Moderation](https://cloud.tencent.com/document/product/436/76259)
+- [Text Moderation](https://www.tencentcloud.com/document/product/436/48187)
+- [Document Moderation](https://www.tencentcloud.com/document/product/436/48257)
+- [Webpage Moderation](https://www.tencentcloud.com/document/product/436/48281)
+- [Live Stream Moderation](https://www.tencentcloud.com/document/product/436/48276)
 
 For a file that is found to be sensitive after moderation, we recommend that you choose one of the following methods to process it:
 - Change the file's access permission to private read to prevent users from accessing it anonymously over the public network. For more information, see [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748).
