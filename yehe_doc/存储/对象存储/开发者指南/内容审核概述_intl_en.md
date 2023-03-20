@@ -16,7 +16,7 @@ The COS content moderation service intelligently moderates the multimedia conten
 >?Content moderation is billed by CI. 
 >
 
-![](https://qcloudimg.tencent-cloud.cn/raw/f4b075ccd69c4c8e9b056a3c628a7f6e.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Exni357_PRELIM__%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US.png)
 
 After enabling the moderation service, you can perform the following operations:
 
@@ -75,18 +75,4 @@ For a file that is found to be sensitive after moderation, we recommend that you
 - Move the file to the backup directory. The file is moved by copying the original file to the specified directory and then deleting the original file. For more information, see [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) and [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743).
 - Delete the file. For more information, see [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743).
 
-### Using SDKs
 
-You can also use the SDKs for diverse programming languages to moderate the content of images, videos, audios, text, documents, and webpages. For more information, see the following SDK documentation:
-
-| SDK            | Integration Guide                                                     |
-| :------------- | :----------------------------------------------------------- |
-| Android SDK    | [Content Moderation](https://cloud.tencent.com/document/product/436/66151) |
-| C SDK          | [Content Moderation](https://cloud.tencent.com/document/product/436/62019) |
-| .NET(C#) SDK   | [Content Moderation](https://cloud.tencent.com/document/product/436/55328) |
-| Go SDK         | [Content Moderation](https://cloud.tencent.com/document/product/436/55368) |
-| iOS SDK        | [Content Moderation](https://cloud.tencent.com/document/product/436/55359) |
-| Java SDK       | [Content Moderation](https://cloud.tencent.com/document/product/436/55380) |
-| JavaScript SDK | [Content Moderation](https://cloud.tencent.com/document/product/436/74611) |
-| PHP SDK        | [Content Moderation](https://cloud.tencent.com/document/product/436/61619) |
-| Python SDK     | [Content Moderation](https://cloud.tencent.com/document/product/436/55929) |

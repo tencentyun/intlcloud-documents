@@ -16,7 +16,7 @@
 >? 内容审核为收费项，由数据万象收取。
 >
 
-![](https://qcloudimg.tencent-cloud.cn/raw/f4b075ccd69c4c8e9b056a3c628a7f6e.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Exni357_PRELIM__%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US.png)
 
 开通审核服务后，您可以实现以下操作：
 
@@ -75,18 +75,4 @@
 - 将文件移动至备份目录，移动文件是通过将原文件拷贝到指定目录后再删除原文的方式实现的，接口请参考 [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) 和 [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743)。
 - 删除文件，接口请参考 [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743)。
 
-### 使用 SDK
 
-您可以使用我们提供的各种语言的 SDK 对图片、视频、音频、文本、文档、网页进行内容审核，详情请参见以下 SDK 文档：
-
-| SDK            | 接入文档                                                     |
-| :------------- | :----------------------------------------------------------- |
-| Android SDK    | [内容审核](https://cloud.tencent.com/document/product/436/66151) |
-| C SDK          | [内容审核](https://cloud.tencent.com/document/product/436/62019) |
-| .NET(C#) SDK   | [内容审核](https://cloud.tencent.com/document/product/436/55328) |
-| Go SDK         | [内容审核](https://cloud.tencent.com/document/product/436/55368) |
-| iOS SDK        | [内容审核](https://cloud.tencent.com/document/product/436/55359) |
-| Java SDK       | [内容审核](https://cloud.tencent.com/document/product/436/55380) |
-| JavaScript SDK | [内容审核](https://cloud.tencent.com/document/product/436/74611) |
-| PHP SDK        | [内容审核](https://cloud.tencent.com/document/product/436/61619) |
-| Python SDK     | [内容审核](https://cloud.tencent.com/document/product/436/55929) |
