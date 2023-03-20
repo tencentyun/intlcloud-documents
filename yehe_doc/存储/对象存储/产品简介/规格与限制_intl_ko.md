@@ -8,8 +8,10 @@
         <td>QPS</td>
     			<td>제한</td>
     			<td><ul  style="margin: 0;"><li>읽기/쓰기 요청: 중국 대륙의 퍼블릭 클라우드 리전에 있는 버킷에 대해 30000QPS 또는 다른 리전에 있는 각 버킷에 대해 3000QPS</li>
-					<li> List 요청: 모든 리전에 대해 1000QPS.</li>
-					<li>데이터 검색 요청: 모든 리전 기본 100QPS.</li>
+					<li>버킷 내 객체/이전 버전/진행 중인 멀티파트 업로드 작업 나열 요청: 기본적으로 모든 리전에서 버킷당 1000QPS.</li>
+                    <li>버킷 생성/삭제/열거 요청: 모든 리전에서 각 APPID에 대해 50QPS.</li>					
+                    <li>데이터 검색 요청: 모든 리전의 버킷당 100QPS.</li>
+                    <li>일회성 인벤토리 작업 생성 요청: 모든 리전의 각 버킷에 대해 1QPS.</li>
 					<li>단일 파일 업로드/삭제/List 요청을 통한 트래픽 조절: 50QPS.</li>
 					<li>단일 파일 다운로드 요청을 통한 트래픽 조절: 1000QPS.
 <br>QPS 임계값을 높이려면 <a href="https://intl.cloud.tencent.com/document/product/436/13653">요청 속도 및 성능 최적화</a>를 참고하십시오.</li></ul></td>
@@ -22,26 +24,26 @@
     	 <tr>
         <td rowspan="5">스토리지 유형</td>
     			<td>MAZ(다중AZ)_STANDARD/STANDARD 제한</td>
-    			<td>과금 제한: <br>저장 기간이나 객체 크기에는 제한이 없습니다. <br>STANDARD 청구에 대한 자세한 내용은 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">제품 가격</a>을 참고하십시오.</td>
+    			<td>과금 제한: <br>저장 기간이나 객체 크기에는 제한이 없습니다. <br>STANDARD 가격은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참고하십시오.</td>
     </tr>
     	 <tr>
         <td>MAZ_STANDARD_IA/STANDARD_IA 제한</td>
     			<td>과금 제한: <ul  style="margin: 0;"><li>30일 미만 동안 저장된 객체는 30일 기준으로 청구됩니다.</li>
-					<li>64KB보다 작은 객체는 64KB로 청구됩니다. 객체 크기가 64KB 이상인 경우 실제 크기를 기준으로 요금이 청구됩니다. <br>STANDARD_IA 청구에 대한 자세한 내용은 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">제품 가격</a>을 참고하십시오.</li></ul></td>
+					<li>64KB보다 작은 객체는 64KB로 과금됩니다. 객체 크기가 64KB 이상인 경우 실제 크기를 기준으로 요금이 청구됩니다. <br>STANDARD_IA 과금에 대한 자세한 내용은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참고하십시오.</li></ul></td>
     </tr>
     	 <tr>
         <td>MAZ_INTELLIGENT TIERING/INTELLIGENT TIERING 제한</td>
-    			<td>과금 제한: <br>64KB보다 작은 객체는 고빈도 액세스 티어에 저장됩니다. 객체는 실제 크기에 따라 요금이 청구됩니다. <br>INTELLIGENT TIERING 청구에 대한 자세한 내용은 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">제품 가격</a>을 참고하십시오.</td>
+    			<td>과금 제한: <br>64KB보다 작은 객체는 고빈도 액세스 티어에 저장됩니다. 객체는 실제 크기에 따라 요금이 청구됩니다. <br>INTELLIGENT TIERING 과금에 대한 자세한 내용은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참고하십시오.</td>
     </tr>
     	 <tr>
         <td>ARCHIVE 제한</td>
     			<td>과금 제한: <ul  style="margin: 0;"><li>90일 미만 동안 저장된 객체는 90일 기준으로 청구됩니다.</li>
-					<li>64KB보다 작은 객체는 64KB로 청구됩니다. 객체 크기가 64KB 이상인 경우 실제 크기를 기준으로 요금이 청구됩니다. <br>ARCHIVE 청구에 대한 자세한 내용은 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">제품 가격</a>을 참고하십시오.</li></ul></td>
+					<li>64KB보다 작은 객체는 64KB로 과금됩니다. 객체 크기가 64KB 이상인 경우 실제 크기를 기준으로 요금이 청구됩니다. <br>ARCHIVE 과금에 대한 자세한 내용은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참고하십시오.</li></ul></td>
     </tr>
     	 <tr>
         <td>DEEP ARCHIVE 제한</td>
     			<td>과금 제한: <ul  style="margin: 0;"><li>180일 미만 동안 저장된 객체는 180일 기준으로 청구됩니다.</li>
-					<li>64KB보다 작은 객체는 64KB로 청구됩니다. 객체 크기가 64KB 이상인 경우 실제 크기를 기준으로 요금이 청구됩니다. <br>DEEP ARCHIVE 청구에 대한 자세한 내용은 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">제품 가격</a>을 참고하십시오.</li></ul></td>
+					<li>64KB보다 작은 객체는 64KB로 과금됩니다. 객체 크기가 64KB 이상인 경우 실제 크기를 기준으로 요금이 청구됩니다. <br>DEEP ARCHIVE 과금에 대한 자세한 내용은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참고하십시오.</li></ul></td>
     </tr>
      <tr>
         <td rowspan="4">버킷</td>
@@ -81,7 +83,7 @@
     		<tr>
     			<td >복사</td>
     			<td ><ul  style="margin: 0;"><li>동일한 계정에 속한 객체는 버킷 내부 및 버킷 간에 복사할 수 있습니다.</li>
-					<li> 리전 내 복사는 무료입니다. 그러나 리전 간 복사에는 트래픽 요금이 발생합니다. 자세한 내용은 <a href="https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=">제품 가격</a>의 트래픽 요금을 참고하십시오. </li>
+					<li> 리전 내 복사는 무료입니다. 그러나 리전 간 복사에는 트래픽 요금이 발생합니다. 자세한 내용은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>의 트래픽 요금을 참고하십시오. </li>
 					<li>API 복사 사양:
 						<ul  style="margin: 0;"><li>단순 복사: 복사할 수 있는 단일 객체 크기는 최대 5GB입니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14117">간편 복사</a>를 참고하십시오.</li>
 						<li>객체가 5GB보다 큰 경우 멀티파트 복사를 사용해야 합니다. 복사할 단일 객체는 최대 48.82TB입니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14118">멀티파트 복사</a>를 참고하십시오.</li></ul>

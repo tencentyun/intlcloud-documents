@@ -17,23 +17,19 @@ App 管理员可以通过本接口获取某一用户加入的群信息。默认�
 ```
 https://xxxxxx/v4/group_open_http_svc/get_joined_group_list?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
-
 ### 请求参数说明
 
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/group_open_http_svc/get_joined_group_list | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
-| contenttype | 请求格式固定值为`json` |
-
+|contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
 
@@ -93,6 +89,14 @@ https://xxxxxx/v4/group_open_http_svc/get_joined_group_list?sdkappid=88888888&id
         ]
     }
 }
+
+```
+- **拉取支持话题的社群**
+```
+{
+    "Member_Account": "107867",	// 需要查询的用户账号（必填）
+    "SupportTopic": 1		// 指定查询的群类型是否支持话题，仅社群类型支持此字段
+}
 ```
 - **ALL IN ONE**
 ```
@@ -137,7 +141,8 @@ https://xxxxxx/v4/group_open_http_svc/get_joined_group_list?sdkappid=88888888&id
 | Limit | Integer | 选填 |单次拉取的群组数量，如果不填代表所有群组 |
 | Offset | Integer | 选填 |从第多少个群组开始拉取|
 | GroupType | String | 选填 |拉取哪种群组类型，例如 Public(陌生人社交群)，Private（即新版本Work，好友工作群)，ChatRoom （即新版本Meeting，会议群），AVChatRoom(直播群)，Community（社群），不填为拉取所有  |
-| ResponseFilter | Object | 选填 |分别包含 GroupBaseInfoFilter 和 SelfInfoFilter 两个过滤器； GroupBaseInfoFilter 表示需要拉取哪些基础信息字段，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)；SelfInfoFilter 表示需要拉取用户在每个群组中的哪些个人资料，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529) |
+| ResponseFilter | Object | 选填 |分别包含 GroupBaseInfoFilter 和 SelfInfoFilter 两个过滤器； GroupBaseInfoFilter 表示需要拉取哪些基础信息字段，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529#GroupBaseInfoFilter)；SelfInfoFilter 表示需要拉取用户在每个群组中的哪些个人资料，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529#SelfInfoFilter) 。|
+|SupportTopic|Integer|选填|指定查询的是否为支持话题的群组，1表示支持，0表示不支持。如果指定了此字段，则 GroupType 字段必须为 Community|
 
 ### 应答包体示例
 - **基础形式和分页拉取**
@@ -204,6 +209,27 @@ https://xxxxxx/v4/group_open_http_svc/get_joined_group_list?sdkappid=88888888&id
     ]
 }
 ```
+- **拉取支持话题的社群**
+```
+{
+    "ActionStatus": "OK",
+    "ErrorInfo": "ok",
+    "ErrorCode": 0,
+    "TotalCount": 1,
+    "GroupIdList": [
+        {
+            "GroupId": "@TGS#_@TGS#cMOQ7HIM62CD",
+            "Type": "Community",
+            "SupportTopic": 1,
+            "GrossTopicNextMsgSeq": 3,
+            "SelfInfo": {
+            "GrossTopicReadSeq": 2
+            }
+        }
+    ]
+}
+
+```
 - **ALL IN ONE**
 ```
 {
@@ -264,5 +290,5 @@ https://xxxxxx/v4/group_open_http_svc/get_joined_group_list?sdkappid=88888888&id
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/openim/admin_msgwithdraw?locale=en-US) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/group_open_http_svc/get_joined_group_list) 调试本接口。
 

@@ -53,7 +53,7 @@
 		<td>广州七区<br> ap-guangzhou-7</td>
 	</tr>
 	<tr>
-		<td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
+		<td rowspan="6">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海一区<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
@@ -65,10 +65,13 @@
 	<tr>
 		<td>上海四区<br>ap-shanghai-4</td>
 	</tr>
- <tr>
+        <tr>
 		<td>上海五区<br>ap-shanghai-5</td>
 	</tr>
-		<tr>
+	<tr>
+                <td>上海八区<br>ap-shanghai-8</td>
+	</tr>
+	<tr>
 			<td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
 			<td>南京一区<br>ap-nanjing-1</td>
 	</tr>
@@ -133,7 +136,7 @@
 			<th>可用区</th>
 		</tr>
 		<tr>
-			<td  rowspan="3">亚太东南（新加坡）<br>ap-singapore</td>
+			<td  rowspan="4">亚太东南（新加坡）<br>ap-singapore</td>
 			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
 		</tr>
 		<tr>
@@ -141,6 +144,16 @@
 		</tr>
 		<tr>
 			<td>新加坡三区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-3</td>
+		</tr>
+		<tr>
+                        <td>新加坡四区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-4</td>
+		</tr>
+		<tr>
+                        <td rowspan="2">亚太东南（雅加达）<br>ap-jakarta</td>
+			<td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+			<td>雅加达二区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-2</td>
 		</tr>
 		<tr>
 			<td  rowspan="2">亚太东北（首尔）<br>ap-seoul</td>
@@ -174,7 +187,11 @@
 			<td>多伦多一区（多伦多节点可用于覆盖北美地区）<br>na-toronto-1</td>
 		</tr>
 		<tr>
-			<td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>
+			<td>南美地区（圣保罗）<br>sa-saopaulo</td>
+			<td>圣保罗一区（圣保罗节点可用于覆盖南美地区）<br>sa-saopaulo-1</td>
+		</tr>
+		<tr>
+                        <td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>
 			<td>硅谷一区（硅谷节点可用于覆盖美国西部）<br>na-siliconvalley-1</td>
 		</tr>
     <tr>
@@ -300,7 +317,7 @@
 
 一个已经启动的实例是无法更改其可用区的，但是用户可以通过其他方法把实例迁移至其他可用区。迁移过程包括从原始实例创建自定义镜像、使用自定义镜像在新可用区中启动实例以及更新新实例的配置。
 1. 创建当前实例的自定义镜像。更多信息，请参阅 [创建自定义镜像](https://intl.cloud.tencent.com/document/product/213/4942)。
-2. 如果当前实例的网络环境为 [私有网络](https://intl.cloud.tencent.com/document/product/213/5227) 且需要在迁移后保留当前私有 IP 地址，用户可以先删除当前可用区中的子网，然后在新可用区中用与原始子网相同的 IP 地址范围创建子网。需要注意的是，不包含可用实例的子网才可以被删除。因此，应该将在当前子网中的所有实例移至新子网。
+2. 如果当前实例的[网络环境](https://intl.cloud.tencent.com/document/product/213/5227)为私有网络且需要在迁移后保留当前私有 IP 地址，用户可以先删除当前可用区中的子网，然后在新可用区中用与原始子网相同的 IP 地址范围创建子网。需要注意的是，不包含可用实例的子网才可以被删除。因此，应该将在当前子网中的所有实例移至新子网。
 3. 使用刚创建的自定义镜像在新的可用区中创建一个新实例。用户可以选择与原始实例相同的实例类型及配置，也可以选择新的实例类型及配置。更多信息，请参阅 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。
 4. 如果原始实例已关联弹性 IP 地址，则将其与旧实例解关联并与新实例相关联。更多信息，请参阅 [弹性 IP](https://intl.cloud.tencent.com/document/product/213/5733)。
 5. （可选）若原有实例为 [按量计费](https://intl.cloud.tencent.com/document/product/213/2180) 类型，可选择销毁原始实例。更多信息，请参阅 [销毁实例](https://intl.cloud.tencent.com/document/product/213/4930)。若原有实例为 [包年包月](https://intl.cloud.tencent.com/document/product/213/2180) 类型，可选择等待其过期并回收。

@@ -8,7 +8,7 @@ After you create an employee, you need to inform them of the account name and pa
 3. Click **Create Employee**.
 >!If the employee already has a sub-account, you need to complete the employee information and associate them with a role so that they can use the sub-account (the employee account name and the sub-account name must be the same). To avoid permission conflict, disassociate the permissions that were granted to the sub-account before.
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/sPDd712_create_user2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/sPDd712_create_user2.png) 
 
 4. Complete the employee information and click **Submit**.
 >! **Employee Account Name** must be unique and cannot be modified once submitted.
@@ -23,7 +23,7 @@ After you create an employee, you need to inform them of the account name and pa
 | ------------ | ------------------------------------------------------------ |
 | Login URL | When you copy and open the login URL, the root account ID will be automatically filled on the login page.                    |
 | Employee account     | Employee account name                                               |
-| Initial password | Employee’s initial login password, which is the combination of the email domain and the last four digits of the mobile number. <br>If the employee’s email address is XXXX@tencent.com and the mobile number is +86 131XXXX4532, then the initial password will be @tencent4532.<br> |
+| Initial password | Employee’s initial login password, which is the combination of the last four digits of the mobile number and "@Tencent".<br>For example, if the employee’s mobile number is 131XXXX4532, the initial password will be 4532@Tencent. |
 
 ### Employee-related operations
 - Query employee list: You can query the employee list by certain query condition.

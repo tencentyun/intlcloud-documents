@@ -12,25 +12,38 @@ https://xxxxxx/v4/recentcontact/delete?sdkappid=88888888&identifier=admin&usersi
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/recentcontact/delete  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
-| contenttype | 请求格式固定值为`json` |
+|contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
 
 200次/秒。
 
 ### 请求包示例
+
+#### 删除 C2C 会话
+
 ```
 {
 	"From_Account":"id1",
 	"Type":1,
 	"To_Account":"id2",
+	"ClearRamble":1
+}
+```
+
+#### 删除 G2C 会话
+
+```
+{
+	"From_Account":"id1",
+	"Type":2,
+	"ToGroupid":"id2",
 	"ClearRamble":1
 }
 ```
@@ -41,7 +54,8 @@ https://xxxxxx/v4/recentcontact/delete?sdkappid=88888888&identifier=admin&usersi
 |-------|------|-------|-----|
 |From_Account|	String	|必填|	请求删除该 UserID 的会话 |
 |Type|Integer|必填|	会话类型：1 表示 C2C 会话；2 表示 G2C 会话 |
-|To_Account|	String	|必填|	待删除的会话的 UserID |
+|To_Account|	String	|选填|	C2C 会话才赋值，C2C 会话方的 UserID |
+|ToGroupid|	string	|选填|	G2C 会话才赋值，G2C 会话的群 ID |
 |ClearRamble|Integer|选填|	是否清理漫游消息：1 表示清理漫游消息；0 表示不清理漫游消息 |
 
 ### 应答包体示例
@@ -80,4 +94,4 @@ https://xxxxxx/v4/recentcontact/delete?sdkappid=88888888&identifier=admin&usersi
 | 50005  | 网络超时，请稍后重试                                       |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/recentcontact/delete) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/#/v4/recentcontact/delete) 调试本接口。

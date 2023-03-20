@@ -1,6 +1,6 @@
 ## 작업 시나리오
 
-COS(Cloud Object Storage) 버킷에 대해 메타데이터 가속화가 활성화된 경우 Java 코드를 사용하여 Hadoop 명령 라인 및 빅 데이터 컴포넌트를 사용하는 것 외에도 Hadoop Filesystem API를 통해 버킷에 액세스할 수 있습니다. 본문은 이를 수행하는 방법을 설명합니다.
+COS(Cloud Object Storage) 버킷에 대해 메타데이터 가속화가 활성화된 경우 Java 코드를 사용하여 Hadoop 명령 라인 및 빅 데이터 컴포넌트를 사용하는 것 외에도 Hadoop Filesystem API를 통해 버킷에 액세스할 수 있습니다. 본문에서는 그 방법을 설명합니다.
 
 ## 전제 조건
 
@@ -9,7 +9,7 @@ COS(Cloud Object Storage) 버킷에 대해 메타데이터 가속화가 활성�
 
 ## 작업 단계
 
-1. maven 프로젝트를 생성하고 maven의 pom.xml에 다음 종속성을 추가합니다(실제 Hadoop 버전 및 환경에 따라 hadoop-common, hadoop-cos 및 cos_api-bundle 패키지 버전 설정).
+1. maven 프로젝트를 생성하고 maven의 pom.xml에 다음 종속 항목(실제 Hadoop 버전 및 환경에 따라 hadoop-common 패키지 버전 설정)을 추가합니다. 
 ```plaintext
 <dependencies>
         <dependency>
@@ -18,21 +18,10 @@ COS(Cloud Object Storage) 버킷에 대해 메타데이터 가속화가 활성�
             <version>2.8.5</version>
             <scope>provided</scope>
         </dependency>
-         <dependency>
-            <groupId>com.qcloud.cos</groupId>
-            <artifactId>hadoop-cos</artifactId>
-            <version>xxx</version>
-        </dependency>
-        <dependency>
-            <groupId>com.qcloud</groupId>
-            <artifactId>cos_api-bundle</artifactId>
-            <version>xxx</version>
-        </dependency>
-        
 </dependencies>
 ```
-2. 다음 Hadoop 코드를 참고하여 변경합니다. 구성 항목은 [설정 항목](https://intl.cloud.tencent.com/document/product/1106/41965)에 설명된 대로 수정할 수 있습니다. **데이터 지속성 및 가시성과 관련된 지침에 특히 주의하십시오.**
-   특정 일반 파일 시스템 작업만 아래에 나열됩니다. 다른 API는 [Hadoop FileSystem API](https://hadoop.apache.org/docs/r2.8.2/api/org/apache/hadoop/fs/FileSystem.html)를 참고하십시오.
+2. 다음 hadoop 코드를 참고하여 변경합니다. 구성 항목은 [CHDFS 마운트](https://intl.cloud.tencent.com/document/product/1106/41965)에 설명된 대로 수정할 수 있습니다. **데이터 지속성 및 가시성 관련 지침에 특히 주의하십시오.**
+   일부 자주 사용되는 파일 시스템 작업 인터페이스는 다음과 같습니다. 다른 API는 [Hadoop FileSystem API](https://hadoop.apache.org/docs/r2.8.2/api/org/apache/hadoop/fs/FileSystem.html)를 참고하십시오.
 ```java
 package com.qcloud.cos.demo;
 
@@ -52,33 +41,20 @@ import java.nio.ByteBuffer;
 public class Demo {
 			private static FileSystem initFS() throws IOException {
 				Configuration conf = new Configuration();
-               // 구성 항목에 대한 자세한 내용은 https://cloud.tencent.com/document/product/436/6884#.E4.B8.8B.E8.BD.BD.E4.B8.8E.E5.AE.89.E8.A3.85 참고
-               // 다음 구성 항목이 필요합니다
+				// 구성 항목 참고: https://intl.cloud.tencent.com/document/product/1106/41965
+				// 다음 구성은 필수 항목입니다
 
-               conf.set("fs.cosn.impl", "org.apache.hadoop.fs.CosFileSystem");
-               conf.set("fs.AbstractFileSystem.cosn.impl", "org.apache.hadoop.fs.CosN");
-               conf.set("fs.cosn.userinfo.secretId", "xxxxxx");
-               conf.set("fs.cosn.userinfo.secretKey", "xxxxxx");
-               conf.set("fs.cosn.bucket.region", "xxxxxx");
-               conf.set("fs.cosn.tmp.dir", "/data/chdfs_tmp_cache");
+			conf.set("fs.cosn.trsf.fs.ofs.impl", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
+				conf.set("fs.cosn.trsf.fs.AbstractFileSystem.ofs.impl", "com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter");
+				conf.set("fs.cosn.trsf.fs.ofs.tmp.cache.dir", "/data/chdfs_tmp_cache");
+				// appid를 실제 appid로 교체
+				conf.set("fs.cosn.trsf.fs.ofs.user.appid", "1250000000");
+				// region을 실제 리전으로 교체
+				conf.set("fs.cosn.trsf.fs.ofs.bucket.region", "ap-beijing")
+				// 기타 옵션 설정 항목 참고: https://intl.cloud.tencent.com/document/product/1106/41965 
 
-               // 구성 항목에 대한 자세한 내용은 https://cloud.tencent.com/document/product/436/71550 참고
-               // POSIX 액세스 모드 필수 구성 항목(권장)
-               conf.set("fs.cosn.trsf.fs.AbstractFileSystem.ofs.impl", "com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter");
-               conf.set("fs.cosn.trsf.fs.ofs.impl", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
-               conf.set("fs.cosn.trsf.fs.ofs.tmp.cache.dir", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
-               conf.set("fs.cosn.trsf.fs.ofs.impl", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
-               conf.set("fs.cosn.trsf.fs.ofs.tmp.cache.dir", "/data/chdfs_tmp_cache");
-               
-               // appid를 실제 appid로 교체
-               conf.set("fs.cosn.trsf.fs.ofs.user.appid", "1250000000");
-               // region을 실제 리전으로 교체
-               conf.set("fs.cosn.trsf.fs.ofs.bucket.region", "ap-beijing");
-               // 선택적 구성 항목에 대한 자세한 내용은 https://cloud.tencent.com/document/product/436/6884#.E4.B8.8B.E8.BD.BD.E4.B8.8E.E5.AE.89.E8.A3.85 참고
-               // CRC64 검사 활성화 여부이며, 기본적으로 비활성화되어 있으므로 hadoop fs -checksum 명령을 실행하여 파일의 CRC64 체크섬 값을 가져올 수 없습니다
-               conf.set("fs.cosn.crc64.checksum.enabled", "true");
-               String cosHadoopFSUrl = "cosn://examplebucket-12500000000/";
-               return FileSystem.get(URI.create(cosHadoopFSUrl), conf);
+			String chdfsUrl = "cosn://examplebucket-12500000000/";
+				return FileSystem.get(URI.create(chdfsUrl), conf);
 			}
 
 		private static void mkdir(FileSystem fs, Path filePath) throws IOException {
@@ -132,7 +108,7 @@ public class Demo {
 			}
 
 
-			// 기본 인증 유형은 COMPOSITE-CRC32C임.
+			// 기본 인증 유형은 COMPOSITE-CRC32C
 			private static void getFileCheckSum(FileSystem fs, Path path) throws IOException {
 				FileChecksum checksum = fs.getFileChecksum(path);
 				System.out.printf("path %s, checkSumType: %s, checkSumCrcVal: %d\n",
@@ -165,8 +141,8 @@ public class Demo {
 			}
 
 
-			// 재귀 삭제 플래그는 디렉터리 삭제에 사용됩니다
-			// 재귀가 false 이고 dir가 비어있지 않으면 작업이 실패합니다
+			// 재귀 삭제 마크는 디렉터리 삭제에 사용됩니다
+			// 재귀가 false 이고 dir이 비어있지 않으면 작업이 수행되지 않습니다
 			private static void deleteFileOrDir(FileSystem fs, Path path, boolean recursive) throws IOException {
 				fs.delete(path, recursive);
 			}
@@ -187,24 +163,24 @@ public class Demo {
 				createFile(fs, chdfsFilePath);
 
 
-				// 파일 읽기
+				// 파일 불러오기
 				readFile(fs, chdfsFilePath);
 
 
-				// 파일 또는 디렉터리 쿼리
+				// 파일 또는 디렉터리 조회
 				queryFileOrDirStatus(fs, chdfsFilePath);
 
 
-				// 파일 체크섬 가져오기
+				// 파일 검사합 가져오기
 				getFileCheckSum(fs, chdfsFilePath);
 
 
-				// 로컬 시스템에서 파일 복사
+				// 로컬에서 파일 복사 
 				Path localFilePath = new Path("file:///home/hadoop/cosn_demo/data/exampleobject.txt");
 				copyFileFromLocal(fs, chdfsFilePath, localFilePath);
 
 
-				// 로컬 파일 시스템에 파일 다운로드
+				// 파일을 로컬로 가져오기
 				Path localDownFilePath = new Path("file:///home/hadoop/cosn_demo/data/exampleobject.txt");
 				copyFileToLocal(fs, chdfsFilePath, localDownFilePath);
 

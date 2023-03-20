@@ -8,21 +8,18 @@
 ```
 https://xxxxxx/v4/sns/friend_get?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
-
 ### 请求参数说明
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/sns/friend_get  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
-| contenttype | 请求格式固定值为`json` |
+|contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
 
@@ -116,7 +113,7 @@ https://xxxxxx/v4/sns/friend_get?sdkappid=88888888&identifier=admin&usersig=xxx&
 | To_Account|String|好友的 UserID|
 | ValueItem|Array|保存好友数据的数组，数组每一个元素都包含一个 Tag 字段和一个 Value 字段|
 | Tag|String|好友字段的名称|
-| Value|String/Integer/Array|好友字段的值，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.AD.97.E6.AE.B5">关系链字段</a>|
+| Value|String/Integer/Array|好友字段的值，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33521">关系链字段</a>|
 | StandardSequence|Integer|标配好友数据的 Sequence，客户端可以保存该 Sequence，下次请求时通过请求的 StandardSequence 字段返回给后台|
 | CustomSequence|Integer|自定义好友数据的 Sequence，客户端可以保存该 Sequence，下次请求时通过请求的 CustomSequence 字段返回给后台|
 | FriendNum|Integer|好友总数|
@@ -127,11 +124,11 @@ https://xxxxxx/v4/sns/friend_get?sdkappid=88888888&identifier=admin&usersig=xxx&
 | ErrorInfo|String|详细错误信息|
 | ErrorDisplay|String|详细的客户端展示信息|
 
-<span id="ErrorCode"></span>
-## 错误码说明
 
+[](id:ErrorCode)
+## 错误码说明
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。实际的错误码、错误信息是通过应答包体中的 ErrorCode 以及 ErrorInfo 来表示的。
-公共错误码（60000到79999）请参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
+公共错误码（60000到79999）请参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)。
 本 API 私有错误码如下：
 
 | 错误码 | 描述                                                         |
@@ -144,7 +141,7 @@ https://xxxxxx/v4/sns/friend_get?sdkappid=88888888&identifier=admin&usersig=xxx&
 
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/friend_get) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/sns/friend_get) 调试本接口。
 
 ## 参考
 

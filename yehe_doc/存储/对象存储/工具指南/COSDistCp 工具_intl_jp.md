@@ -24,12 +24,27 @@ Hadoop-2.6.0以降、Hadoop-COSプラグイン5.9.3以降。
 
 #### COSDistCpjarパッケージの取得
 
-- Hadoop 2.x ユーザーは、[cos-distcp-1.10-2.8.5.jarパッケージ](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5.jar)をダウンロードし、jarパッケージの[MD5チェックサム](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5-md5.txt)に基づき、ダウンロードしたjarパッケージが完全かどうかを確認します。
-- Hadoop 3.xユーザーは、[cos-distcp-1.10-3.1.0.jarパッケージ](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0.jar)をダウンロードし、jarパッケージの[MD5チェックサム](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0-md5.txt)に基づき、ダウンロードしたjarパッケージが完全かどうかを確認します。
+- Hadoop 2.x ユーザーは、[cos-distcp-1.12-2.8.5.jarパッケージ](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-2.8.5.jar)をダウンロードし、jarパッケージの[MD5チェックサム](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-2.8.5-md5.txt)に基づき、ダウンロードしたjarパッケージが完全かどうかを確認します。
+- Hadoop 3.xユーザーは、[cos-distcp-1.12-3.1.0.jarパッケージ](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-3.1.0.jar)をダウンロードし、jarパッケージの[MD5チェックサム](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-3.1.0-md5.txt)に基づき、ダウンロードしたjarパッケージが完全かどうかを確認します。
 
 #### インストール説明
 
 Hadoop環境において、[Hadoop-COS](https://intl.cloud.tencent.com/document/product/436/6884) をインストールすると、直接COSDistCpツールを実行できます。
+
+Hadoop-COSプラグインがインストールおよび設定されていない環境のユーザーの場合、Hadoopのバージョンに従って、対応するバージョンのCOSDistCp jar、Hadoop-COS jar、cos_api-bundle jarパッケージをダウンロードし（jarパッケージのダウンロードアドレスは上記参照）、Hadoop-COS関連のパラメータを指定してコピータスクを実行します。jarパッケージアドレスにはローカルjarの存在するアドレスを入力する必要があります。
+
+```plaintext
+hadoop jar cos-distcp-${version}.jar \
+-libjars cos_api-bundle-${version}.jar,hadoop-cos-${version}.jar \
+-Dfs.cosn.credentials.provider=org.apache.hadoop.fs.auth.SimpleCredentialProvider \
+-Dfs.cosn.userinfo.secretId=COS_SECRETID \
+-Dfs.cosn.userinfo.secretKey=COS_SECRETKEY \
+-Dfs.cosn.bucket.region=ap-guangzhou \
+-Dfs.cosn.impl=org.apache.hadoop.fs.CosFileSystem \
+-Dfs.AbstractFileSystem.cosn.impl=org.apache.hadoop.fs.CosN \
+--src /data/warehouse \
+--dest cosn://examplebucket-1250000000/warehouse
+```
 
 
 ## 原理の説明
@@ -39,51 +54,53 @@ COSDistCpはMapReduceフレームワークをベースとして実装されて�
 
 ## パラメータの説明
 
-コマンド`hadoop jar cos-distcp-${version}.jar --help`を使用すると、COSDistCpでサポートされているパラメータオプションを確認することができます。ここで`${version}`はバージョン番号です。以下は現在のバージョンのCOSDistCpのパラメータの説明です。
+hadoopユーザーの下でコマンド`hadoop jar cos-distcp-${version}.jar --help`を使用すると、COSDistCpでサポートされているパラメータオプションを確認することができます。ここで`${version}`はバージョン番号です。以下は現在のバージョンのCOSDistCpのパラメータの説明です。
 
 
-|              プロパティキー              | 説明|              デフォルト値 | 入力必須かどうか |
-| :------------------------------: | :----------------------------------------------------------- | :----: | :------: |
-|              --help              | COSDistCpでサポートされているパラメータオプションを出力します<br> 例：--help               |   なし   |    いいえ    |
-|          --src=LOCATION          | コピーのソースディレクトリを指定します。これはHDFSまたはCOSパスにすることができます<br> 例：--src=hdfs://user/logs/ |   なし   |    はい    |
-|         --dest=LOCATION          | コピーのターゲットディレクトリを指定します。これは、HDFSまたはCOSパスにすることができます<br> 例：--dest=cosn://examplebucket-1250000000/user/logs |   なし   |    はい |
-|       --srcPattern=PATTERN       | 正規表現を指定して、ソースディレクトリにあるファイルをフィルタリングします。<br>例：`--srcPattern='.*\.log$'`<br>**注意：記号`*`がshellによって解釈されるのを避けるために、パラメータをシングルクォーテーションで囲む必要があります** |   なし   |    いいえ    |
-|       --taskNumber=VALUE       | コピープロセス数を指定します。例：--taskNumber=10 |   10   |    いいえ    |
-|       --workerNumber=VALUE       | コピースレッド数を指定します。COSDistCpは、各コピープロセスでこのパラメータサイズのコピースレッドプールを作成します<br>例：--workerNumber=4 |   4    |    いいえ    |
-|      --filesPerMapper=VALUE      | Mapper入力ファイル1ファイルあたりの行数を指定します<br>例：--filesPerMapper=10000 | 500000 |    いいえ    |
-|        --groupBy=PATTERN         | テキストファイルを集約するための正規表現を指定します</br>例：--groupBy='.\*group-input/(\d+)-(\d+).\*' |   なし   |    いいえ    |
-|        --targetSize=VALUE        | ターゲットファイルのサイズをMB単位で指定します。--groupByとともに使用します</br>示例：--targetSize=10 |   なし   |    いいえ    |
-|       --outputCodec=VALUE        | 出力ファイルの圧縮方法です。オプションのgzip、lzo、snappy、none、keepを指定できます。その中には、次のものがあります。</br> 1. keepは、元のファイルの圧縮方法を維持します。<br>2. noneは、ファイルの拡張子に従ってファイルを解凍します。</br>例：--outputCodec=gzip </br>**注意：ファイル /dir/test.gzipと/dir/test.gzがあり、出力形式をlzoに指定する場合は、最終的に1つのファイル/dir/test.lzoだけが保持されます** |  keep  |    いいえ    |
-|        --deleteOnSuccess         | ソースファイルのターゲットディレクトリへのコピーが成功したら、直ちにソースファイルを削除するよう指定します。</br>例：--deleteOnSuccess，</br>**注意：1.7以降のバージョンでは、このパラメータは提供されませんので、データ移行を成功させ、--diffModeを使用してチェックを行い、ソースファイルシステムのデータを削除することをお勧めします** | false  |    いいえ    |
-| --multipartUploadChunkSize=VALUE | Hadoop-COSプラグインがファイルをCOSに転送するときのチャンクサイズを指定します。COSがサポートするチャンクの最大数は10000で、ファイルサイズに応じてチャンクサイズをMB単位で調整できます。デフォルトは8MBです</br>例：--multipartUploadChunkSize=20 |  8MB   |    いいえ    |
-|    --cosServerSideEncryption     | ファイルがCOSにアップロードされる際に、暗号化・復号アルゴリズムとしてSSE-COSを使用するように指定します</br>例：--cosServerSideEncryption | false  |    いいえ    |
-|      --outputManifest=VALUE      | コピーが完了した際、ターゲットディレクトリにそのコピーのターゲットファイルの情報リスト（GZIP圧縮）が発行されるように指定します</br>例：--outputManifest=manifest.gz |   なし   |    いいえ    |
-|    --requirePreviousManifest     | 増分をコピーする場合は、--previousManifest=VALUEパラメータを指定する必要があります</br>例：--requirePreviousManifest | false  |    いいえ    |
-|   --previousManifest=LOCATION    | 前回のコピーで発行されたターゲットファイルの情報<br>例：--previousManifest=cosn://examplebucket-1250000000/big-data/manifest.gz |   なし   |    いいえ    |
-|        --copyFromManifest        | --previousManifest=LOCATIONとともに使用すると、--previousManifest内のファイルをターゲットファイルシステムにコピーできます<br>例：--copyFromManifest | false  |    いいえ    |
-|       --storageClass=VALUE       | COSタイプを指定します。オプションの値は、STANDARD、STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、INTELLIGENT_TIERINGです。サポートされているストレージタイプと概要については、[ストレージタイプの概要](https://intl.cloud.tencent.com/document/product/436/30925)をご参照ください |   なし   |    いいえ    |
-|    --srcPrefixesFile=LOCATION    | ローカルファイルを指定します。ファイルの各行には、コピーする必要のあるソースディレクトリが含まれます</br>例：--srcPrefixesFile=file:///data/migrate-folders.txt |   なし   |    いいえ    |
-|         --skipMode=MODE          | ファイルをコピーする前に、ソースファイルとターゲットファイルが同じかどうかをチェックし、同じであればスキップします。none（チェックしない）、length（長さ）、checksum（CRC値）、length-mtime(長さ+mtime値)、length-checksum（長さ+CRC値）が選択可能です</br>例：--skipMode=length |  length-checksum  |    いいえ    |
-|         --checkMode=MODE         | ファイルコピー完了時に、ソースファイルとターゲットファイルが同じかどうかをチェックします。none（チェックしない）、length（長さ）、checksum（CRC値）、length-checksum（長さ+mtime値）、length-checksum（長さ+ CRC値）が選択可能です</br>例：--checkMode=length-checksum |  length-checksum  |    いいえ    |
-|         --diffMode=MODE          | ソースディレクトリとターゲットディレクトリの差分ファイルリストを指定して取得します。length（長さ）、checksum（CRC値）、length-checksum（長さ+mtime値）、length-checksum（長さ+CRC値）が選択可能です</br>例：--diffMode=length-checksum |   なし   |    いいえ    |
-|      --diffOutput=LOCATION       | diffModeのHDFS出力ディレクトリを指定します。この出力ディレクトリは、必ず空である必要があります<br/>例：--diffOutput=/diff-output |   なし   |    いいえ    |
-|      --cosChecksumType=TYPE      | Hadoop-COSプラグインが使用するCRCアルゴリズムを指定します。オプション値はCRC32CとCRC64です<br/>例：--cosChecksumType=CRC32C | CRC32C |    いいえ    |
-|      --preserveStatus=VALUE      | ソースファイルのuser、group、permission、xattr、timestampsのメタ情報をターゲットファイルにコピーするかどうかを指定します。オプション値は、ugpxt（user、group、permission、xattr、timestampsの英語頭文字）です<br/>例：--preserveStatus=ugpt |   なし   |    いいえ    |
-|      --ignoreSrcMiss      | ファイルリストには存在しても、コピー時には存在しないファイルを無視します |   false   | いいえ       |
-|      --promGatewayAddress=VALUE      | MapReduceタスクによって実行されるCounterデータがプッシュされるPrometheus PushGatewayのアドレスとポートを指定します |   なし   |    いいえ    |
-|      --promGatewayDeleteOnFinish=VALUE   | 指定したタスクが完了したら、Prometheus PushGatewayのJobNameのメトリクスコレクションを削除します</br>例：--promGatewayDeleteOnFinish=true | true    |    いいえ   |
-|      --promGatewayJobName=VALUE      | Prometheus PushGatewayに報告するJobNameを指定します</br>例：--promGatewayJobName=cos-distcp-hive-backup           |   なし   |    いいえ    |
-|      --promCollectInterval=VALUE      | MapReduceタスクのCounter情報を収集する間隔をms単位で指定します</br>例：--promCollectInterval=5000            |   5000   |     いいえ    |
-|      --promPort=VALUE      | Prometheusメトリクスを外部に公開するサーバーポートを指定します <br>例：--promPort=9028            |   なし   |     いいえ    |
-|      --enableDynamicStrategy      | タスクの動的割り当てポリシーを指定して、移行速度の速いタスクがより多くのファイルを移行できるようにします。</br>**注意：このモードには一定の制限があります。例えば、プロセスに異常が発生した場合、タスクカウンターは不正確になります。移行の完了後、--diffModeを使用してデータチェックを行ってください** </br>例：--enableDynamicStrategy            |   false   |    いいえ    |
-|      --splitRatio=VALUE      | Dynamic Strategyの分割比を指定します。splitRatio値が大きいほど、タスクの粒度は小さくなります</br>例：--splitRatio=8            |   8   |    いいえ    |
-|      --localTemp=VALUE      | Dynamic Strategyが発行したタスク情報ファイルが保存されているローカルフォルダを指定します</br>例：--localTemp=/tmp            |   /tmp   |    いいえ    |
-|      --taskFilesCopyThreadNum=VALUE      | Dynamic Strategyのタスク情報ファイルをHDFSにコピーする際の同時実行性を指​​定します</br>例：--taskFilesCopyThreadNum=32            |   32   |    いいえ    |
-|      --statsRange=VALUE      | 統計の区間範囲を指定します</br>例：---statsRange=0,1mb,10mb,100mb,1gb,10gb,inf   |   0,1mb,10mb,100mb,1gb,10gb,inf   |    いいえ    |
-|      --printStatsOnly      | 移行するファイルサイズの分布情報のみ統計が行われ、データは移行されません</br>例：--printStatsOnly            |   なし   |    いいえ    |
-|      --bandWidth      | 移行する各ファイルの読み込み帯域幅を制限します。単位はMB/s、デフォルトは-1で、読み込み帯域幅は制限しません。</br>例：--bandWidth=10            |   なし   |    いいえ    |
-|      --jobName      | 移行タスクの名前を指定します。</br>例：--jobName=cosdistcp-to-warehouse            |   なし   |    いいえ    |
-|      --compareWithCompatibleSuffix  | --skipModeと--diffModeパラメータを使用する場合、ソースファイルの拡張子gzipをgzに変換するかどうか、lzopファイルの拡張子をlzoに変換するかどうかを判断します。</br>例：--compareWithCompatibleSuffix |   なし   |    いいえ   |
+|                プロパティキー                | 説明                                                                                                                                                                                                                  |              デフォルト値              | 入力必須かどうか |
+|:---------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------:|:----:|
+|              --help               | COSDistCpでサポートされているパラメータオプションを出力します<br> 例：--help                                                                                                                                                                                  |               なし               |  いいえ   |
+|          --src=LOCATION           | コピーのソースディレクトリを指定します。これはHDFSまたはCOSパスにすることができます<br> 例：--src=hdfs://user/logs/                                                                                                                                                          |               なし               |  はい   |
+|          --dest=LOCATION          | コピーのターゲットディレクトリを指定します。これは、HDFSまたはCOSパスにすることができます<br> 例：--dest=cosn://examplebucket-1250000000/user/logs                                                                                                                                |               なし               |  はい   |
+|       --srcPattern=PATTERN        | 正規表現を指定して、ソースディレクトリにあるファイルをフィルタリングします。<br>例：`--srcPattern='.*\.log$'`<br>**注意：記号`*`がshellによって解釈されるのを避けるために、パラメータをシングルクォーテーションで囲む必要があります**                                                                                                                      |               なし               |  いいえ   |
+|        --taskNumber=VALUE         | コピープロセス数を指定します。例：--taskNumber=10                                                                                                                                                                                          |              10               |  いいえ   |
+|       --workerNumber=VALUE        | コピースレッド数を指定します。COSDistCpは、各コピープロセスでこのパラメータサイズのコピースレッドプールを作成します<br>例：--workerNumber=4                                                                                                                                                      |               4               |  いいえ   |
+|      --filesPerMapper=VALUE       | Mapper入力ファイル1ファイルあたりの行数を指定します<br>例：--filesPerMapper=10000                                                                                                                                                                    |            500000             |  いいえ   |
+|         --groupBy=PATTERN         | テキストファイルを集約するための正規表現を指定します</br>例：--groupBy='.\*group-input/(\d+)-(\d+).\*'                                                                                                                                                   |               なし               |  いいえ   |
+|        --targetSize=VALUE         | ターゲットファイルのサイズをMB単位で指定します。--groupByとともに使用します</br>例：--targetSize=10                                                                                                                                                             |               なし               |  いいえ   |
+|        --outputCodec=VALUE        | 出力ファイルの圧縮方法を指定します。gzip、lzo、snappy、none、keepを選択できます。このうち、</br> 1. keepは、元のファイルの圧縮方法を維持します。<br>2. noneは、ファイルの拡張子に従ってファイルを解凍します。</br>例：--outputCodec=gzip </br>**注意：ファイル /dir/test.gzipと/dir/test.gzがあり、出力形式をlzoに指定する場合は、最終的に1つのファイル/dir/test.lzoだけが維持されます** |             keep              |  いいえ   |
+|         --deleteOnSuccess         | ソースファイルのターゲットディレクトリへのコピーが成功したら、直ちにソースファイルを削除するよう指定します</br>例：--deleteOnSuccess，</br>**注意：1.7以降のバージョンではこのパラメータは提供されませんので、データ移行が成功し、--diffModeを使用してチェックを行った後、ソースファイルシステムのデータを削除することをお勧めします**                                                                                                |             false             |  いいえ   |
+| --multipartUploadChunkSize=VALUE  | Hadoop-COSプラグインがファイルをCOSに転送するときのチャンクサイズを指定します。COSがサポートするチャンクの最大数は10000で、ファイルサイズに応じてチャンクサイズをMB単位で調整できます。デフォルトは8MBです</br>例：--multipartUploadChunkSize=20                                                                                              |              8MB              |  いいえ   |
+|     --cosServerSideEncryption     | ファイルがCOSにアップロードされる際に、暗号化・復号アルゴリズムとしてSSE-COSを使用するように指定します</br>例：--cosServerSideEncryption                                                                                                                                                   |             false             |  いいえ   |
+|      --outputManifest=VALUE       | コピーが完了した際、ターゲットディレクトリにそのコピーのターゲットファイルの情報リスト（GZIP圧縮）が発行されるように指定します</br>例：--outputManifest=manifest.gz                                                                                                                                        |               なし               |  いいえ   |
+|     --requirePreviousManifest     | 増分をコピーする場合は、--previousManifest=VALUEパラメータを指定する必要があります</br>例：--requirePreviousManifest                                                                                                                                           |             false             |  いいえ   |
+|    --previousManifest=LOCATION    | 前回のコピーで生成されたターゲットファイルの情報<br>例：--previousManifest=cosn://examplebucket-1250000000/big-data/manifest.gz                                                                                                                        |               なし               |  いいえ   |
+|        --copyFromManifest         | --previousManifest=LOCATIONとともに使用すると、--previousManifest内のファイルをターゲットファイルシステムにコピーできます<br>例：--copyFromManifest                                                                                                                    |             false             |  いいえ   |
+|       --storageClass=VALUE        | COSタイプを指定します。オプション値は、STANDARD、STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、INTELLIGENT_TIERINGです。サポートされているストレージタイプと概要については、[ストレージタイプの概要](https://intl.cloud.tencent.com/document/product/436/30925)をご参照ください                                                       |               なし               |  いいえ   |
+|    --srcPrefixesFile=LOCATION     | ローカルファイルを指定します。ファイルの各行には、コピーする必要のあるソースディレクトリが含まれます</br>例：--srcPrefixesFile=file:///data/migrate-folders.txt                                                                                                                                 |               なし               |  いいえ   |
+|          --skipMode=MODE          | ファイルをコピーする前に、ソースファイルとターゲットファイルが同じかどうかをチェックし、同じであればスキップします。none（チェックしない）、length（長さ）、checksum（CRC値）、length-mtime(長さ+mtime値)、length-checksum（長さ+CRC値）が選択可能です</br>例：--skipMode=length                                                                    |        length-checksum        |  いいえ   |
+|         --checkMode=MODE          | ファイルコピー完了時に、ソースファイルとターゲットファイルが同じかどうかをチェックします。none（チェックしない）、length（長さ）、checksum（CRC値）、length-checksum（長さ+mtime値）、length-checksum（長さ+ CRC値）が選択可能です</br>例：--checkMode=length-checksum                                                          |        length-checksum        |  いいえ   |
+|          --diffMode=MODE          | ソースディレクトリとターゲットディレクトリの差分ファイルリストを指定して取得します。length（長さ）、checksum（CRC値）、length-checksum（長さ+mtime値）、length-checksum（長さ+CRC値）が選択可能です</br>例：--diffMode=length-checksum                                                                             |               なし               |  いいえ   |
+|       --diffOutput=LOCATION       | diffModeのHDFS出力ディレクトリを指定します。この出力ディレクトリは、必ず空である必要があります<br/>例：--diffOutput=/diff-output                                                                                                                                                  |               なし               |  いいえ   |
+|      --cosChecksumType=TYPE       | Hadoop-COSプラグインが使用するCRCアルゴリズムを指定します。オプション値はCRC32CとCRC64です<br/>例：--cosChecksumType=CRC32C                                                                                                                                      |            CRC32C             |  いいえ   |
+|      --preserveStatus=VALUE       | ソースファイルのuser、group、permission、xattr、timestampsのメタ情報をターゲットファイルにコピーするかどうかを指定します。オプション値は、ugpxt（user、group、permission、xattr、timestampsの英語頭文字）です<br/>例：--preserveStatus=ugpt                                                           |               なし               |  いいえ   |
+|          --ignoreSrcMiss          | ファイルリストには存在しても、コピー時には存在しないファイルを無視します                                                                                                                                                                                               |             false             |  いいえ   |
+|    --promGatewayAddress=VALUE     | MapReduceタスクによって実行されるCounterデータがプッシュされるPrometheus PushGatewayのアドレスとポートを指定します                                                                                                                                                     |               なし               |  いいえ   |
+| --promGatewayDeleteOnFinish=VALUE | タスクが完了したら、Prometheus PushGatewayのJobNameのメトリクスコレクションを削除するよう指定します</br>例：--promGatewayDeleteOnFinish=true                                                                                                                           |             true              |  いいえ   |
+|    --promGatewayJobName=VALUE     | Prometheus PushGatewayに報告するJobNameを指定します</br>例：--promGatewayJobName=cos-distcp-hive-backup                                                                                                                          |               なし               |  いいえ   |
+|    --promCollectInterval=VALUE    | MapReduceタスクのCounter情報を収集する間隔をms単位で指定します</br>例：--promCollectInterval=5000                                                                                                                                            |             5000              |  いいえ   |
+|         --promPort=VALUE          | Prometheusメトリクスを外部に公開するサーバーポートを指定します <br>例：--promPort=9028                                                                                                                                                            |               なし               |  いいえ   |
+|      --enableDynamicStrategy      | タスクの動的割り当てポリシーを指定して、移行速度の速いタスクがより多くのファイルを移行できるようにします。</br>**注意：このモードには一定の制限があります。例えば、プロセスに異常が発生した場合、タスクカウンターは不正確になります。移行の完了後、--diffModeを使用してデータチェックを行ってください** </br>例：--enableDynamicStrategy                                                                                |             false             |  いいえ   |
+|        --splitRatio=VALUE         | Dynamic Strategyの分割比を指定します。splitRatio値が大きいほど、タスクの粒度は小さくなります</br>例：--splitRatio=8                                                                                                                                              |               8               |  いいえ   |
+|         --localTemp=VALUE         | Dynamic Strategyによって生成されたタスク情報ファイルが保存されているローカルフォルダを指定します</br>例：--localTemp=/tmp                                                                                                                                                       |             /tmp              |  いいえ   |
+|  --taskFilesCopyThreadNum=VALUE   | Dynamic Strategyのタスク情報ファイルをHDFSにコピーする際の同時実行性を指​​定します </br>例：--taskFilesCopyThreadNum=32                                                                                                                                        |              32               |  いいえ   |
+|        --statsRange=VALUE         | 統計の区間範囲を指定します</br>例：---statsRange=0,1mb,10mb,100mb,1gb,10gb,inf                                                                                                                                                        | 0,1mb,10mb,100mb,1gb,10gb,inf |  いいえ   |
+|         --printStatsOnly          | 移行するファイルサイズの分布情報のみ統計が行われ、データは移行されません</br>例：--printStatsOnly                                                                                                                                                                       |               なし               |  いいえ   |
+|            --bandWidth            | 移行する各ファイルの読み込み帯域幅を制限します。単位はMB/s、デフォルトは-1で、読み込み帯域幅は制限しません。</br>例：--bandWidth=10                                                                                                                                                          |               なし               |  いいえ   |
+|             --jobName             | 移行タスクの名前を指定します。</br>例：--jobName=cosdistcp-to-warehouse                                                                                                                                                                  |               なし               |  いいえ   |
+|   --compareWithCompatibleSuffix   | --skipModeと--diffModeパラメータを使用する場合、ソースファイルの拡張子gzipをgzに変換するかどうか、lzopファイルの拡張子をlzoに変換するかどうかを判断します。</br>例：--compareWithCompatibleSuffix                                                                                                    |               なし               |  いいえ   |
+|             --delete              | ソースディレクトリとターゲットディレクトリのファイルの一致性を保証します。ソースディレクトリにはなく、ターゲットディレクトリにはあるファイルを独立したtrashディレクトリ下に移動させ、同時にファイルリストを生成します。</br>注意：--diffModeパラメータは同時に使用できません                                                                                                                           |    なし   |  いいえ   |
+|          --deleteOutput           | deleteのHDFS出力ディレクトリを指定します。このディレクトリは必ず空でなければなりません<br/>例： --deleteOutput=/dele-output                                                                                                                                                   |  なし   |  いいえ   |
 
 ## ユースケース
 
@@ -165,7 +182,7 @@ CosDistCp Counters
 
 ### コピープロセス数と各コピープロセスのコピースレッド数を指定します
 
-パラメータ`--taskNumber`と`--workersNumber`によりコマンドを実行すると、COSDistCpはマルチプロセス+マルチスレッドのコピーアーキテクチャを使用し、次のようなことが可能になります。
+パラメータ`--taskNumber`と`--workersNumber`によってコマンドを実行します。COSDistCpはマルチプロセス+マルチスレッドのコピーアーキテクチャを使用しており、次のことが可能です。
 - `--taskNumber`でコピーするプロセス数を指定します
 - `--workerNumber`で各コピープロセスにおけるコピースレッド数を指定します
 
@@ -180,7 +197,7 @@ hadoop jar cos-distcp-${version}.jar --src /data/warehouse/ --dest cosn://exampl
 hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse  --skipMode=length-checksum
 ```
 
-`--skipMode`オプションは、ファイルをコピーする前に、ソースファイルとターゲットファイルが同じかどうかをチェックして、同じであればスキップします。none（チェックしない）、length（長さ）、checksum（CRC値）、length-checksum（長さ+ CRC値）が選択可能です
+`--skipMode`オプションは、ファイルをコピーする前に、ソースファイルとターゲットファイルが同じかどうかをチェックして、同じであればスキップします。none（チェックしない）、length（長さ）、checksum（CRC値）、length-checksum（長さ+CRC値）が選択可能です。
 
 ソースとターゲットのファイルシステムのチェックサムアルゴリズムが異なる場合、ソースファイルを読み込んで新しいチェックサムを計算します。ソースがHDFSの場合、HDFSソースがCOMPOSITE-CRC32Cチェックサムアルゴリズムをサポートしているかどうかは、次のように確認することができます。
 
@@ -240,7 +257,7 @@ hadoop jar cos-distcp-${version}.jar   --src /data/warehouse --dest cosn://examp
 
 ### 単一ファイルの読み込み帯域幅を制限します
 
-パラメータ`--bandWidth`によりコマンドを実行します。単位はMBです。移行した各ファイルの読み込み帯域幅を10MB/秒に制限します。次に例を示します。
+パラメータ`--bandWidth`によりコマンドを実行します。単位はMBです。移行した各ファイルの読み込み帯域幅を10MB/sに制限します。次に例を示します。
 
 ```plaintext
 hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --bandWidth=10
@@ -264,7 +281,7 @@ hadoop jar  cos-distcp-${version}.jar --src /data/warehouse  --srcPrefixesFile f
 
 - 入力ファイルの正規表現でのフィルタリング
 
-パラメータ`--srcPattern`でコマンドを実行すると、`/data/warehouse`ディレクトリにある.logで終わるログファイルのみを同期します。次に例を示します。
+パラメータ`--srcPattern`でコマンドを実行すると、`/data/warehouse/`ディレクトリにある.logで終わるログファイルのみを同期します。次に例を示します。
 
 ```plaintext
 hadoop jar cos-distcp-${version}.jar  --src /data/warehouse/ --dest cosn://examplebucket-1250000000/data/warehouse --srcPattern='.*\.log$'
@@ -293,7 +310,7 @@ hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://example
 
 ### ターゲットファイルの圧縮タイプの指定
 
-パラメータ`--outputCodec`によりコマンドを実行します。このパラメータを使用すると、HDFS内のデータをCOSへリアルタイムに圧縮し、ストレージコストを節約することができます。パラメータのオプション値は、keep、none、gzip、lzop、snappyです。noneオプションはターゲットファイルを非圧縮状態で保存し、keepはオリジナルファイルを圧縮状態で維持します。次に例を示します。
+パラメータ`--outputCodec`によりコマンドを実行します。このパラメータを使用すると、HDFS内のデータをリアルタイムに圧縮してCOSにバックアップし、ストレージコストを節約することができます。パラメータのオプション値は、keep、none、gzip、lzop、snappyです。noneオプションはターゲットファイルを非圧縮状態で保存し、keepはオリジナルファイルの圧縮状態を維持します。次に例を示します。
 
 ```plaintext
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse/logs --dest cosn://examplebucket-1250000000/data/warehouse/logs-gzip --outputCodec=gzip
@@ -369,7 +386,7 @@ hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://exampl
 ```
 
 事例の[Grafana Dashboard](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/COSDistcp-Grafana-Dashboard.json)をダウンロードしてインポートすると、Grafanaは次のように表示されます。
-![COSDistcp-Grafana](https://qcloudimg.tencent-cloud.cn/raw/004d8f1a4fc79011c26f6667f085a3b7.png)
+![COSDistcp-Grafana](https://staticintl.cloudcachetci.com/yehe/backend-news/2Rc8914_2.png)
 
 
 ### ファイルコピー失敗時のアラート
@@ -486,3 +503,6 @@ hadoop jar cos-distcp-${version}.jar -Dmapreduce.task.timeout=18000 -Dmapreduce.
 
 ### 専用回線の移行で、どのように移行タスクの移行帯域幅をコントロールしますか。
 COSDistcpでは移行の総帯域幅制限計算式は、taskNumber * workerNumber * bandWidthです。workerNumberを1に設定し、パラメータtaskNumberによる移行の同時実行数のコントロール、およびパラメータbandWidthによる単一の同時実行帯域幅のコントロールができます。
+
+
+

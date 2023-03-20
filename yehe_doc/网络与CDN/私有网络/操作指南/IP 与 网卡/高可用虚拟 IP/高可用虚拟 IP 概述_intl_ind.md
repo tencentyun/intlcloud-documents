@@ -5,9 +5,9 @@ IP virtual ketersediaan tinggi (HAVIP) adalah alamat IP pribadi yang ditetapkan 
 >- Perangkat lunak ketersediaan tinggi harus mendukung pengiriman pesan ARP.
 
 ## Fitur
-1. Anda dapat mengajukan beberapa alamat HAVIP di konsol untuk setiap VPC.
-2. Anda harus mengikat HAVIP di file konfigurasi CVM.
-3. HAVIP berbasis subnet dan hanya dapat diikat ke server di subnet yang sama melalui pengumuman.
+- Anda dapat mengajukan beberapa alamat HAVIP di konsol untuk setiap VPC.
+- Anda harus mengikat HAVIP di file konfigurasi CVM.
+
 
 ## Arsitektur dan Prinsip
 Biasanya, kluster utama/sekunder ketersediaan tinggi terdiri dari dua server: server utama aktif dan server sekunder siaga. Kedua server memiliki VIP (IP virtual) yang sama. VIP hanya dapat bekerja di satu server utama pada saat bersamaan. Ketika server utama gagal, server sekunder akan mengambil alih VIP untuk terus menyediakan layanan.

@@ -15,6 +15,9 @@ App 管理员可以通过该接口解散话题。
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
+>?话题功能需要在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting) > **功能配置** > **群组配置** > **群功能配置** > **社群** 页面，完成开通社群后，再打开开通话题开关，方可使用。
+
+
 ### 请求 URL 示例
 
 ```https
@@ -27,8 +30,7 @@ https://xxxxxx/v4/million_group_open_http_svc/destroy_topic?sdkappid=88888888&id
 
 | 参数                                         | 说明                                                         |
 | -------------------------------------------- | ------------------------------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/million_group_open_http_svc/destroy_topic | 请求接口                                                     |
 | sdkappid                                     | 创建应用时即时通信 IM 控制台分配的 SDKAppID                  |
 | identifier                                   | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517) |
@@ -110,13 +112,13 @@ https://xxxxxx/v4/million_group_open_http_svc/destroy_topic?sdkappid=88888888&id
 | 10015  | 请求的群组ID无效，请根据错误信息检查请求参数                 |
 | 10021  | 群组 ID 已被其他人使用，请选择其他的群组 ID                  |
 | 10025  | 该群组 ID 已经由您自己使用过，请您先解散该群组或者选择其他的群组 ID |
-| 11000  | 表示当前群组不支持社群话题，需购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) 后方可使用 |
+| 11000  | 表示当前群组不支持社群话题，需购买 [旗舰版](https://buy.cloud.tencent.com/avc?from=17473) 并 [在控制台开通](https://intl.cloud.tencent.com/document/product/1047/34419) 后方可使用 |
 | 110002 | 解散话题失败，请根据错误信息进行检查                         |
 | 110003 | 解散话题失败，话题已经被解散                                 |
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/create_group) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/group_open_http_svc/create_group) 调试本接口。
 
 ## 可能触发的回调
 

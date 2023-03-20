@@ -1,0 +1,184 @@
+## 密钥问题
+
+### 如何查看 APPID、SecretId、SecretKey 等密钥信息？
+
+存储桶名称的后半部分即为 APPID 信息，您可以登录 [对象存储控制台](https://console.cloud.tencent.com/cos5/bucket) 查看。SecretId、SecretKey 等信息，请登录访问管理控制台的 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中查看。
+
+### 临时密钥的有效时间是多长？
+
+临时密钥目前主账号最长2小时（即7200秒），子账号最长36小时（即129600秒），默认值为30分钟（即1800秒）。临时密钥过期后，携带过期临时密钥的请求将会被拒绝。有关临时密钥的介绍，请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
+
+### 假如 SecretId、SecretKey 等密钥相关信息泄露了，该如何处理？
+
+用户可删除已泄露的密钥，并新建一个密钥。详情请参见 [访问密钥](https://www.tencentcloud.com/document/product/598/34227)。
+
+### 如何对私有读写的文件生成具有时效性的访问链接？
+
+请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048) 文档设定密钥有效时间。
+
+## 权限问题
+
+### COS 如何授予子账号访问指定文件夹的权限？
+
+您可以参见 [设置文件夹权限](https://intl.cloud.tencent.com/document/product/436/35261) 为子账号授予指定文件夹的访问权限。如果为子账号进行更高级的授权，可参见 [权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
+
+### COS 返回 403 错误，该如何处理？
+
+您可以借助 COS 团队为开发者提供的 [自助诊断工具](https://console.cloud.tencent.com/cos/diagnose/), 自助诊断工具可以通过请求的 RequestId，帮助您进行操作异常的诊断。
+
+1. 请检查您的以下配置信息是否正确：BucketName、APPID、Region、SecretId、SecretKey 等。
+2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。
+3. 授权详情请参见 [权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
+4. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置。
+
+### COS 报错 AccessDenied，该如何处理？
+
+AccessDenied 一般是由于未授权，缺少权限导致的报错。请按照以下步骤逐步排查问题：
+
+1. 请检查您的以下配置信息是否正确：BucketName、APPID、Region、SecretId、SecretKey 等，尤其注意是否带有空格。
+2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。授权操作请参见 [访问管理权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
+3. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置，详情请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
+
+COS 团队为开发者提供了 [自助诊断工具](https://console.cloud.tencent.com/cos/diagnose/), 自助诊断工具可以通过请求的 RequestId，帮助您进行操作异常的诊断。
+
+### 存储桶访问权限已达上限怎么办？
+
+每个主账号（即同一个 APPID），存储桶 ACL 规则数量最多为1000条。当设置的存储桶 ACL 大于1000条时，会出现此报错，因此建议删除无用的 ACL 规则。
+
+>? 我们不建议使用文件级别的 ACL 或 Policy。建议您在调用 API 或 SDK 时，若不需要对文件进行特别的 ACL 控制时，请将 ACL 相关参数（如 x-cos-acl、ACL 等）置空，保持继承存储桶权限。
+>
+
+### 创建存储桶报错，该如何处理？
+
+创建存储桶报错，可能原因是：
+1. 您所创建的存储桶，其存储桶名称已存在。这种情况您需要使用其他名称命名存储桶。
+2. 现有的存储桶设置了过多的公有读私有写或者公有读写权限，并且达到了主账户的 ACL 规则数量上限，新建存储桶时由于无法调整存储桶 ACL 数量上限，所以会报错。
+
+以下提供两种解决方案供您参考：
+
+方案一：您可以把现有存储桶的访问权限修改为私有读写，详情请参见 [设置存储桶访问权限](https://intl.cloud.tencent.com/document/product/436/13315)。然后再尝试创建存储桶。
+方案二：您可在 **Policy 权限设置**中**添加策略**，设置相应的访问权限，详情请参见 [添加存储桶策略](https://intl.cloud.tencent.com/document/product/436/30927)。
+
+
+### 如果使用签名链接访问公有读的文件，签名时间过期了，是否可以访问到文件？
+
+如果您使用过期的签名链接访问公有读文件，那么 COS 会优先校验权限情况，判断链接过期后会拒绝访问。
+
+### 进行上传、下载等操作时，报错“403 Forbidden”、“权限拒绝”等该如何处理？
+
+请按照以下步骤逐步排查问题：
+
+1. 请检查您的以下配置信息是否正确：BucketName、APPID、Region、SecretId、SecretKey 等。
+2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。授权操作请参见  [访问管理权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
+3. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置，详情请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
+
+COS 团队为开发者提供了 [自助诊断工具](https://console.cloud.tencent.com/cos/diagnose/), 自助诊断工具可以通过请求的 RequestId，帮助您进行操作异常的诊断。
+
+### COS 如何限制他人下载文件到本地？
+
+如需限制他人下载文件到本地，需要区分以下几种场景：
+
+1. 限制子账号下载数据，可以参见 [授权子账号访问 COS](https://intl.cloud.tencent.com/document/product/436/11714)。
+2. 限制匿名用户下载数据，可以通过将存储桶设置为私有读写，或者在存储桶策略中设置`deny anyone Get Object`操作。
+
+### COS 如何给其他账号的子账户设置权限？
+
+假设主账户 A 名下的存储桶需要授权给主账户 B 下的子账户 B0 操作权限，您需要先授予主账号 B 操作 A 名下存储桶的权限，再通过主账户 B 授予子账号 B0 操作 A 名下存储桶的权限。详情操作可参见 [授予其他主账号下的子账号操作名下存储桶的权限](https://intl.cloud.tencent.com/document/product/436/32971)。
+
+### COS 如何设置子账号/协作者只能上传文件，而不能删除文件？
+
+可以通过 [访问管理控制台](https://console.cloud.tencent.com/cam/policy) 创建自定义策略，对子用户设置特定权限，详细操作步骤可参见 [创建自定义策略](https://intl.cloud.tencent.com/document/product/598/35596)。
+
+>? 在创建自定义策略时，需要授权读操作，写操作中仅选择上传的权限，**不要选择删除相关的权限**。
+>
+![](https://main.qcloudimg.com/raw/578ae1960f7f8b182503cef5653dc829.png)
+
+### 使用存储桶默认域名访问公有读存储桶时，会返回文件列表，如何隐藏文件列表信息？
+
+您可以为对应存储桶设置一条 deny anyone 的 Get Bucket 权限。操作步骤如下：
+
+登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，选择存储桶列表，进入对应存储桶的**权限管理**页面。
+
+#### 方法 1：
+
+1. 找到 **Policy 权限设置项**，在**图形设置**下单击**添加策略**。
+2. 按照下图添加对应操作权限，单击**确定**保存。
+   ![Polcy图形设置](https://main.qcloudimg.com/raw/60e17e3473bfb309376a6e54327a41b0.png)
+
+#### 方法 2：
+
+找到 **Policy 权限设置项**，单击**策略语法 > 编辑**，输入以下表达式：
+
+```
+{
+ "Statement": [
+   {
+     "Action": [
+       "name/cos:GetBucket",
+       "name/cos:GetBucketObjectVersions"
+     ],
+     "Effect": "Deny",
+     "Principal": {
+       "qcs": [
+         "qcs::cam::anyone:anyone"
+       ]
+     },
+     "Resource": [
+       "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*"
+     ]
+   }
+ ],
+ "version": "2.0"
+}
+```
+
+>! 请将`qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*`中的相关信息进行以下替换：
+>
+> - “ap-beijing”替换为您的存储桶所在地域。
+> - “1250000000”替换为您的 APPID 信息。
+> - “examplebucket-1250000000”替换为您的存储桶名称。
+>
+> 其中，APPID 为存储桶名称的后半部分，您可以在 [对象存储控制台](https://console.cloud.tencent.com/cos5/bucket) 查看存储桶名称。
+
+### COS 的 ACL 限制是针对存储桶还是账号？上传文件时是否可以指定权限？
+
+ACL 限制针对账号。我们不建议使用文件级别的 ACL 或 Policy。建议您在调用 API 或 SDK 时，若不需要对文件进行特别的 ACL 控制时，请将 ACL 相关参数（如 x-cos-acl、ACL 等）置空，保持继承存储桶权限。
+
+### 如何授权协作者访问指定存储桶？
+
+协作者账号是一类特殊的子账号，详情请参见 [访问策略语言概述](https://intl.cloud.tencent.com/document/product/436/18023)。
+
+### 多个业务需要对存储桶进行操作，是否可以根据存储桶或其他维度隔离权限？
+
+可登录 [访问管理控制台](https://console.cloud.tencent.com/cam/overview)，进入用户管理页面，给不同的业务开启子账号，并赋予不同的授权操作。
+
+### 如何为子公司或员工创建子账号，并授予特定存储桶的访问权限？
+
+详情请参见 [授权子账号访问 COS](https://intl.cloud.tencent.com/document/product/436/11714)，创建子账号并对其授权。
+
+### 如何授权某些特定子账号只对某个存储桶有操作权限？
+
+若希望子账号只有特定存储桶的操作权限，可以通过主账号为子账号添加存储桶策略。详情请参见 [添加存储桶策略](https://intl.cloud.tencent.com/document/product/436/30927)。
+
+
+## Ranger 鉴权和认证常见问题
+
+具体可参见 [Ranger 鉴权和认证常见问题](https://intl.cloud.tencent.com/document/product/1106/41958)。
+
+## 其他问题
+
+### COS 资源访问异常，该如何处理？
+
+请参见 [资源访问异常](https://www.tencentcloud.com/document/product/436/40167) 文档进行排查处理。
+
+### 使用 CDN 域名访问 COS 返回 HTTP ERROR 403，该如何处理？
+
+可能是因为 CDN 加速域名为关闭状态导致，请您参考 [使用 CDN 域名访问 COS 返回 HTTP ERROR 403](https://intl.cloud.tencent.com/document/product/436/40175) 文档进行处理。
+
+### 使用 CDN 域名访问 COS 会访问到旧文件，如何处理？
+
+可能是因为存在缓存导致，请您参考 [同一个链接访问的文件异常](https://intl.cloud.tencent.com/document/product/436/40170) 文档进行更新操作。
+
+### 前端业务能否通过 CDN 和 临时密钥的方式来访问 COS 的内容？
+
+如果您希望在 COS 私有读写的情况下，实现 CDN 回源 COS 时鉴权，可参见 [CDN 回源鉴权](https://intl.cloud.tencent.com/document/product/436/18670)。
