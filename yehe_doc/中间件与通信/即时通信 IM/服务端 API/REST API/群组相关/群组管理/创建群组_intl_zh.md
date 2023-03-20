@@ -1,7 +1,6 @@
 ## 功能说明
 App 管理员可以通过该接口创建群组。
 
-
 ## 接口调用说明
 ### 适用的群组类型
 
@@ -28,7 +27,7 @@ App 管理员可以通过该接口创建群组。
 ### 请求 URL 示例
 
 ```https
-https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 
 ### 请求参数说明
@@ -37,7 +36,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` <li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com`|
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/group_open_http_svc/create_group  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
@@ -240,8 +239,8 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 | Introduction | String | 选填 |群简介，最长240字节，使用 UTF-8 编码，1个汉字占3个字节 |
 | Notification | String | 选填 |群公告，最长300字节，使用 UTF-8 编码，1个汉字占3个字节 |
 | FaceUrl | String | 选填 |群头像 URL，最长100字节 |
-| MaxMemberCount | Integer | 选填 |最大群成员数量，缺省时的默认值：付费套餐上限，例如体验版是20，如果升级套餐，需按照修改群基础资料修改这个字段 |
-| ApplyJoinOption | String | 选填 |申请加群处理方式。包含 FreeAccess（自由加入），NeedPermission（需要验证），DisableApply（禁止加群），不填默认为 NeedPermission（需要验证）<br>仅当创建支持申请加群的 [群组](https://intl.cloud.tencent.com/document/product/1047/33529#.E5.8A.A0.E7.BE.A4.E6.96.B9.E5.BC.8F.E5.B7.AE.E5.BC.82) 时，该字段有效 |
+| MaxMemberCount | Integer | 选填 |最大群成员数量，缺省时的默认值：付费套餐包上限，例如体验版是20，如果升级套餐包，需按照修改群基础资料修改这个字段 |
+| ApplyJoinOption | String | 选填 |申请加群处理方式。包含 FreeAccess（自由加入），NeedPermission（需要验证），DisableApply（禁止加群），不填默认为 NeedPermission（需要验证）<br>仅当创建支持申请加群的 [群组](https://intl.cloud.tencent.com/document/product/1047/33529#.E5.8A.A0.E7.BE.A4.E6.96.B9.E5.BC.8F.E5.B7.AE.E5.BC.82) 时，该字段有效。社群目前不支持此字段 |
 | AppDefinedData | Array | 选填 |群组维度的自定义字段，默认情况是没有的，可以通过 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 进行配置，详情请参阅 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)|
 | MemberList | Array | 选填 |初始群成员列表，最多100个；成员信息字段详情请参阅 [群成员资料](https://intl.cloud.tencent.com/document/product/1047/33529#SelfInfoFilter) |
 | AppMemberDefinedData | Array | 选填 |群成员维度的自定义字段，默认情况是没有的，可以通过 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 进行配置，详情请参阅 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)|
@@ -310,11 +309,11 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 | 10036 | 创建的音视频聊天室数量超过限制，请先解散部分音视频聊天室或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
 | 10037 |请求中指定了群主（Owner_Account），但该群主创建和加入的群组数量超过了限制。请该群主退出部分群组或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
 | 10038 | 请求包中导入的成员数量超过了限制，请减少`MemberList`参数中导入的成员数量或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
-|10058|表示体验版超过100个群的限制，需要购买套餐提升建群数量限制。|
+|10058|表示体验版超过100个群的限制，需要购买套餐包提升建群数量限制。|
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/create_group) 调试本接口。
+通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/group_open_http_svc/create_group) 调试本接口。
 
 ## 参考
 解散群组（[v4/group_open_http_svc/destroy_group](https://intl.cloud.tencent.com/document/product/1047/34896)）
