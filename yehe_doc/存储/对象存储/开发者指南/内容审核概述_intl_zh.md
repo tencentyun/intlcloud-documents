@@ -13,7 +13,7 @@
 | 网页     | 支持对网页文件进行自动检测，从 OCR 文本识别、物体检测（实体、广告台标、二维码等）、图像识别几个维度，通过深度学习技术，识别网页中的违规内容。 |
 
 
->? 内容审核为收费项，由数据万象收取，详细的计费说明请参见数据万象 [内容审核费用](https://cloud.tencent.com/document/product/460/58119)。 
+>? 内容审核为收费项，由数据万象收取。
 >
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/f4b075ccd69c4c8e9b056a3c628a7f6e.png)
@@ -49,7 +49,7 @@
 
 #### 自动审核
 
-您可以通过在对象存储控制台开启自动审核服务，对新上传的图片、视频、音频、文件、文档、网页进行自动审核，详情请参见 [自动审核](https://cloud.tencent.com/document/product/436/47247)。
+您可以通过在对象存储控制台开启自动审核服务，对新上传的图片、视频、音频、文件、文档、网页进行自动审核，详情请参见 [自动审核](https://www.tencentcloud.com/document/product/436/52097)。
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/3YaP402_PRELIM__%E6%95%B0%E6%8D%AE%E4%B8%87%E8%B1%A1_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-1.png)
 
@@ -65,10 +65,10 @@
 - [图片审核](https://intl.cloud.tencent.com/document/product/436/48537) 
 - [视频审核](https://intl.cloud.tencent.com/document/product/436/48249) 
 - [音频审核](https://intl.cloud.tencent.com/document/product/436/48262)
-- [文本审核](https://cloud.tencent.com/document/product/436/56287)
-- [文档审核](https://cloud.tencent.com/document/product/436/59378)
-- [网页审核](https://cloud.tencent.com/document/product/436/63957)
-- [直播审核](https://cloud.tencent.com/document/product/436/76259)
+- [文本审核](https://www.tencentcloud.com/document/product/436/48187)
+- [文档审核](https://www.tencentcloud.com/document/product/436/48257)
+- [网页审核](https://www.tencentcloud.com/document/product/436/48281)
+- [直播审核](https://www.tencentcloud.com/document/product/436/48276)
 
 对于审核结果为敏感的数据，我们建议您可以选择以下几种方式之一进行处理：
 - 修改文件访问权限为私有读，杜绝用户在公网匿名访问，修改权限接口请参考 [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748)。
