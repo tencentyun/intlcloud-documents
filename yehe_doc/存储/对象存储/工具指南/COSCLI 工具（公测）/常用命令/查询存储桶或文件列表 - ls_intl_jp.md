@@ -3,10 +3,12 @@ lsコマンドは、すべてのバケットリスト、バケット内のファ
 ## コマンド形式
 
 ```plaintext
-./coscli ls [cos://bucketAlias[/prefix/]] [flag]
+./coscli ls [cos://bucketAlias[/prefix/]]
 ```
 
->? bucketAliasについては、[設定](https://intl.cloud.tencent.com/document/product/436/43265)をご参照ください。
+>? 
+>? bucketAliasについては、[ダウンロードとインストール設定](https://intl.cloud.tencent.com/document/product/436/43265)をご参照ください。
+>- このコマンドのその他の共通オプション（例えばバケットの切り替え、ユーザーアカウントの切り替えなど）に関しては、[共通オプション](https://intl.cloud.tencent.com/document/product/436/46273)のドキュメントをご参照ください。
 >
 
 lsコマンドには、次のオプションのパラメータが含まれます。
@@ -16,21 +18,8 @@ lsコマンドには、次のオプションのパラメータが含まれます
 | cos://bucketAlias | バケットの指定     | cos://bucket1          |
 | /prefix/          | いずれかのフォルダを指定します | /picture/ |
 
-lsコマンドには、以下のオプションflagが含まれます。
 
-| flagの略称 | flagの正式名称   | flagの用途                            |
-| --------- | ----------- | ------------------------------------ |
-| -h        | --help      | ヘルプ情報を出力                         |
-|     なし      | --include   | 特定のモードを含むファイル                   |
-|     なし       | --exclude     | 特定のモードを除外したファイル                   |
-| -r        | --recursive   | フォルダを再帰的にトラバーサル処理、してすべてのファイルを一覧表示するかどうか |
 
->? 
-> - `--include`と`--exclude`は標準的な正規表現の構文をサポートしており、これを使えば特定の条件を満たすファイルをフィルタリングすることができます。
-> - zshを使用する場合、pattern文字列の両端に二重引用符を付ける必要がある場合があります。
-```plaintext
-./coscli ls cos://bucket1 -r --include ".*.mp4"
-```
 
 ## 操作事例
 
@@ -55,28 +44,4 @@ lsコマンドには、以下のオプションflagが含まれます。
 ./coscli ls cos://bucket1/picture/
 ```
 
-### bucket1内のpictrueフォルダにあるすべてのファイルを再帰的に一覧表示します
 
-```plaintext
-./coscli ls cos://bucket1/picture/ -r
-```
-
-#### bucket1内の.mp4タイプのすべてのファイルを再帰的に一覧表示します
-
-```plaintext
-./coscli ls cos://bucket1 -r --include .*.mp4
-```
-
-
-
-#### bucket1内の.mp4タイプ以外のすべてのファイルを再帰的に一覧表示します
-
-```plaintext
-./coscli ls cos://bucket1 -r --exclude .*.mp4
-```
-
-#### bucket1内のpictureフォルダ内のtestで始まり、jpgタイプではないすべてのファイルを再帰的に一覧表示します
-
-```plaintext
-./coscli ls cos://bucket1/picture -r --include ^picture/test.* --exclude .*.jpg
-```

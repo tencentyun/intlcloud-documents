@@ -1,7 +1,7 @@
 
 ## 기능 설명
 
-COSCMD를 사용하면 간단한 명령줄을 사용하여 업로드, 다운로드 및 삭제와 같은 객체 일괄 작업을 수행할 수 있습니다.
+COSCMD 툴을 사용하여 간단한 명령 라인을 통해 객체(Object)의 일괄 업로드, 다운로드, 삭제 등의 작업을 구현합니다.
 
 
 ## 사용 환경
@@ -173,6 +173,14 @@ anonymous = False
 
 ### config 명령어를 통한 설정 파일 생성
 
+
+
+>!
+>- 사용자는 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 통해 SDK를 호출하고 임시 인증을 통해 SDK 사용의 보안을 더욱 강화할 것을 권장합니다. 임시 키 신청 시 대상 버킷이나 객체 외부로 리소스가 유출되지 않도록 [최소 권한의 원칙 설명](https://intl.cloud.tencent.com/document/product/436/32972)을 준수하시기 바랍니다.
+>- 영구 키를 사용해야 하는 경우 [최소 권한의 원칙 설명](https://intl.cloud.tencent.com/document/product/436/32972)에 따라 영구 키의 권한 범위를 제한하는 것이 좋습니다.
+
+
+
 config 명령어로 `~/.cos.conf`에서 구성 파일을 자동 생성할 수 있습니다. 구체적인 명령어 형식은 다음과 같습니다.
 ```plaintext
 coscmd config [OPTION]...<FILE>...
@@ -334,7 +342,7 @@ coscmd upload D:/picture.jpg doc/
 ```plaintext
 coscmd upload D:/doc/picture.jpg doc/
 ```
-- 작업 예시 - 객체 유형을 지정하여 ARCHIVE 유형의 파일을 COS의 doc 디렉터리에 업로드
+- 작업 예시 - 객체 유형을 지정하여 아카이브 유형의 파일을 COS의 doc 디렉터리에 업로드
 ```plaintext
 coscmd upload D:/picture.jpg doc/ -H "{'x-cos-storage-class':'Archive'}"
 ```
@@ -390,7 +398,7 @@ coscmd upload -rs D:/doc / --ignore "*.txt"
 > - 폴더 업로드 시 `--ignore` 매개변수를 사용하여 특정 유형의 파일을 무시하거나 `--include` 매개변수를 사용하여 특정 유형의 파일을 필터링할 수 있습니다. 여러 shell 와일드카드 규칙(쉼표 `,`로 구분)이 지원됩니다. 지정된 확장자를 무시하려면 끝에 `,`를 추가하거나 앞뒤에 `""`를 추가해야 합니다. `""`에 쉼표로 구분된 규칙이 여러 개 있으면 첫 번째 규칙이 우선합니다.
 > - `--ignore`를 사용하여 특정 폴더의 모든 파일을 필터링하려면 절대 경로를 사용하고 경로 앞뒤에 `""`를 추가해야 합니다. 예시 `coscmd upload -rs D:/doc / --ignore "D:/doc/ignore_folder/*"`.
 >
-- 작업 예시 - D 드라이브 doc 폴더에 .txt, .doc 파일 업로드
+- 작업 예시 - D 드라이브 doc 폴더의 .txt 및 .doc 확장명을 가진 파일 업로드
 ```plaintext
 coscmd upload -rs D:/doc / --include *.txt,*.doc
 ```
@@ -506,7 +514,7 @@ coscmd download -rs --skipmd5 / D:/examplefolder
 ```plaintext
 coscmd download -rs --delete / D:/examplefolder
 ```
-- 작업 예시 - .txt 또는 .doc 파일 무시
+- 작업 예시 - .txt 및 .doc 확장명 파일 생략
 ```plaintext
 coscmd download -rs / D:/examplefolder --ignore *.txt,*.doc
 ```
@@ -622,11 +630,11 @@ coscmd -b examplebucket-1250000000 -r ap-chengdu copy examplebucket-1250000000.a
 ```plaintext
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/doc/picture.jpg doc/examplefolder/
 ```
-- 스토리지 유형 수정: 파일 유형을 STANDARD IA 스토리지로 수정
+- 스토리지 유형 수정: 파일 유형을 표준IA 스토리지로 수정
 ```plaintext
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/doc/picture.jpg doc/examplefolder/ -H "{'x-cos-storage-class':'STANDARD_IA'}"
 ```
-- 스토리지 유형 수정: 파일 유형을 ARCHIVE로 수정하고 photo.jpg로 이름 변경
+- 스토리지 유형 수정: 파일 유형을 CAS로 수정하고 photo.jpg로 이름 변경
 ```plaintext
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/doc/picture.jpg doc/examplefolder/photo.jpg -H "{'x-cos-storage-class':'Archive'}"
 ```
@@ -641,7 +649,7 @@ coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-12500
 ```
 
 > ?
-> - '<>'의 매개변수를 복사할 COS 파일 경로(sourcepath)와 붙여 넣을 COS 파일 경로(cospath)로 대체하십시오.
+> - "<>"의 매개변수를 복사할 COS 파일 경로(sourcepath)와 붙여 넣을 COS 파일 경로(cospath)로 대체하십시오.
 > - sourcepath 형식: `<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`.
 > - -d 매개변수를 사용하여 `x-cos-metadata-directive` 매개변수를 설정할 수 있으며, Copy 및 Replaced로 선택할 수 있고 기본값은 Copy입니다.
 > - -H 매개변수를 사용하여 HTTP header로 설정 시, JSON 형식을 유지해야 합니다. 예시: `coscmd copy -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. 헤더에 대한 자세한 내용은 [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) 문서를 참고하십시오.
@@ -660,11 +668,11 @@ coscmd -b examplebucket-1250000000 -r ap-chengdu move examplebucket-1250000000.a
 ```plaintext
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou move examplebucket2-1250000000.ap-beijing.myqcloud.com/picture.jpg doc/folder/
 ```
-- 작업 예시 - 스토리지 유형 수정: 파일 유형을 STANDARD IA 스토리지로 수정
+- 작업 예시 - 스토리지 유형 수정: 파일 유형을 표준IA 스토리지로 수정
 ```plaintext
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou move examplebucket2-1250000000.ap-beijing.myqcloud.com/picture.jpg doc/folder/ -H "{'x-cos-storage-class':'STANDARD_IA'}"
 ```
-- 작업 예시 - 스토리지 유형 수정: 파일 유형을 ARCHIVE로 수정
+- 작업 예시 - 스토리지 유형 수정: 파일 유형을 CAS로 수정
 ```plaintext
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou move examplebucket2-1250000000.ap-beijing.myqcloud.com/data/exampleobject data/examplefolder/exampleobject -H "{'x-cos-storage-class':'Archive'}"
 ```
@@ -679,7 +687,7 @@ coscmd -b examplebucket1-1250000000 -r ap-guangzhou move -r examplebucket2-12500
 ```
 
 > ?
-> - '<>'의 매개변수를 이동할 COS 파일 경로(sourcepath)와 이동될 COS 파일 경로(cospath)로 대체하십시오.
+> - "<>"의 매개변수를 이동할 COS 파일 경로(sourcepath)와 이동될 COS 파일 경로(cospath)로 대체하십시오.
 > - sourcepath 형식: `<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`.
 > - -d 매개변수를 사용하여 `x-cos-metadata-directive` 매개변수를 설정할 수 있으며, Copy 및 Replaced로 선택할 수 있고 기본값은 Copy입니다.
 > - -H 매개변수를 사용하여 HTTP header로 설정 시, JSON 형식을 유지해야 합니다. 예시: `coscmd move -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. 헤더에 대한 자세한 내용은 [PUT Object - copy](https://intl.cloud.tencent.com/document/product/436/10881) 문서를 참고하십시오.
@@ -722,9 +730,9 @@ coscmd getbucketversioning
 >- '<>'의 매개변수를 버전 제어가 필요한 상태(status)로 대체하십시오.
 >- 버킷에 버전 제어를 활성화하면 버전 제어 미활성화 상태(초기 상태)로 돌아갈 수 없습니다. 단, 해당 버킷의 버전 제어를 일시 중지할 수 있으며, 이 이후 업로드하는 객체는 여러 버전이 생성되지 않습니다.
 
-### ARCHIVE 파일 복구
+### 보관된 파일 복구
 
-- ARCHIVE 파일 복구 명령어 형식
+- 보관된 파일 복구 명령어 형식
 ```plaintext
 coscmd restore <cospath>
 ```
@@ -732,7 +740,7 @@ coscmd restore <cospath>
 ```plaintext
 coscmd restore -d 3 -t Expedited picture.jpg
 ```
-- ARCHIVE 파일 일괄 복구 명령어 형식
+- 보관된 파일 일괄 복구 명령어 형식
 ```plaintext
 coscmd restore -r <cospath>
 ```
@@ -749,5 +757,6 @@ coscmd restore -r -d 3 -t Expedited examplefolder/
 ## FAQ
 
 COSCMD 툴 사용 중 문의 사항이 있는 경우 [COSCMD 툴 관련 FAQ](https://intl.cloud.tencent.com/document/product/436/30586)를 참고하십시오.
+
 
 

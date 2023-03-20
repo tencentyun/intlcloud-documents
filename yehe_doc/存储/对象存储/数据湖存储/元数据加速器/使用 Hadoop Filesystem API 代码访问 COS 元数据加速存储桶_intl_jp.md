@@ -9,7 +9,7 @@ Cloud Object Storage（COS）バケットでメタデータアクセラレーシ
 
 ## 操作手順
 
-1. mavenプロジェクトを新規作成し、mavenのpom.xmlに次の依存項目を追加します（実際のHadoopバージョンおよび環境に応じてhadoop-commonパッケージ、hadoop-cosパッケージおよびcos_api-bundleパッケージのバージョンを設定してください）。
+1. mavenプロジェクトを新規作成し、mavenのpom.xmlに次の依存項目を追加します（実際のHadoopバージョンおよび環境に応じてhadoop-commonパッケージのバージョンを設定してください）。
 ```plaintext
 <dependencies>
         <dependency>
@@ -18,17 +18,6 @@ Cloud Object Storage（COS）バケットでメタデータアクセラレーシ
             <version>2.8.5</version>
             <scope>provided</scope>
         </dependency>
-         <dependency>
-            <groupId>com.qcloud.cos</groupId>
-            <artifactId>hadoop-cos</artifactId>
-            <version>xxx</version>
-        </dependency>
-        <dependency>
-            <groupId>com.qcloud</groupId>
-            <artifactId>cos_api-bundle</artifactId>
-            <version>xxx</version>
-        </dependency>
-        
 </dependencies>
 ```
 2. 以下のHadoopのコードを参照して変更します。設定項目については[設定項目の説明](https://intl.cloud.tencent.com/document/product/1106/41965)のドキュメントを参照して変更できます。**また、その中のデータの永続化と可視性に関する説明に特にご注意ください。**
@@ -52,33 +41,20 @@ import java.nio.ByteBuffer;
 public class Demo {
 			private static FileSystem initFS() throws IOException {
 				Configuration conf = new Configuration();
-               // 設定項目についてはhttps://cloud.tencent.com/document/product/436/6884#.E4.B8.8B.E8.BD.BD.E4.B8.8E.E5.AE.89.E8.A3.85をご参照ください
-               // 以下の設定は、入力必須項目です
+				// 設定項目についてはhttps://intl.cloud.tencent.com/document/product/1106/41965をご参照ください
+				// 以下の設定は、入力必須項目です
 
-               conf.set("fs.cosn.impl", "org.apache.hadoop.fs.CosFileSystem");
-               conf.set("fs.AbstractFileSystem.cosn.impl", "org.apache.hadoop.fs.CosN");
-               conf.set("fs.cosn.userinfo.secretId", "xxxxxx");
-               conf.set("fs.cosn.userinfo.secretKey", "xxxxxx");
-               conf.set("fs.cosn.bucket.region", "xxxxxx");
-               conf.set("fs.cosn.tmp.dir", "/data/chdfs_tmp_cache");
+			conf.set("fs.cosn.trsf.fs.ofs.impl", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
+				conf.set("fs.cosn.trsf.fs.AbstractFileSystem.ofs.impl", "com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter");
+				conf.set("fs.cosn.trsf.fs.ofs.tmp.cache.dir", "/data/chdfs_tmp_cache");
+				// appidは実際のappidに置き換えます
+				conf.set("fs.cosn.trsf.fs.ofs.user.appid", "1250000000");
+				// regionは実際のリージョンに置き換えます
+				conf.set("fs.cosn.trsf.fs.ofs.bucket.region", "ap-beijing")
+				// その他のオプションの設定項目については、https://intl.cloud.tencent.com/document/product/1106/41965をご参照ください 
 
-               // 設定項目についてはhttps://cloud.tencent.com/document/product/436/71550をご参照ください
-               // POSIXアクセスメソッド入力必須設定項目（推奨方式）
-               conf.set("fs.cosn.trsf.fs.AbstractFileSystem.ofs.impl", "com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter");
-               conf.set("fs.cosn.trsf.fs.ofs.impl", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
-               conf.set("fs.cosn.trsf.fs.ofs.tmp.cache.dir", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
-               conf.set("fs.cosn.trsf.fs.ofs.impl", "com.qcloud.chdfs.fs.CHDFSHadoopFileSystemAdapter");
-               conf.set("fs.cosn.trsf.fs.ofs.tmp.cache.dir", "/data/chdfs_tmp_cache");
-               
-               // appidは実際のappidに置き換えます
-               conf.set("fs.cosn.trsf.fs.ofs.user.appid", "1250000000");
-               // regionは実際のリージョンに置き換えます
-               conf.set("fs.cosn.trsf.fs.ofs.bucket.region", "ap-beijing");
-               // その他のオプション設定については公式ドキュメントhttps://cloud.tencent.com/document/product/436/6884#.E4.B8.8B.E8.BD.BD.E4.B8.8E.E5.AE.89.E8.A3.85をご参照ください
-               // CRC64チェックを有効にするかどうかです。デフォルトでは有効になっていません。この時点では、hadoop fs -checksumコマンドを使用してファイルのCRC64チェックサムを取得することはできません
-               conf.set("fs.cosn.crc64.checksum.enabled", "true");
-               String cosHadoopFSUrl = "cosn://examplebucket-12500000000/";
-               return FileSystem.get(URI.create(cosHadoopFSUrl), conf);
+			String chdfsUrl = "cosn://examplebucket-12500000000/";
+				return FileSystem.get(URI.create(chdfsUrl), conf);
 			}
 
 		private static void mkdir(FileSystem fs, Path filePath) throws IOException {

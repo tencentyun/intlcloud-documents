@@ -24,12 +24,27 @@ Hadoop-2.6.0 버전 이상, Hadoop-COS 플러그 인 5.9.3 버전 이상.
 
 #### COSDistCp jar 패키지 획득
 
-- Hadoop 2.x 사용자는 [cos-distcp-1.10-2.8.5.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5.jar)를 다운로드하여 jar 패키지의 [MD5 검증 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-2.8.5-md5.txt)에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
-- Hadoop 3.x 사용자는 [cos-distcp-1.10-3.1.0.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0.jar)를 다운로드하여 jar 패키지의 [MD5 검증 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.10-3.1.0-md5.txt)에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
+- Hadoop 2.x 사용자는 [cos-distcp-1.12-2.8.5.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-2.8.5.jar)를 다운로드하여 jar 패키지의 [MD5 검사 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-2.8.5-md5.txt)에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
+- Hadoop 3.x 사용자는 [cos-distcp-1.12-3.1.0.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-3.1.0.jar)를 다운로드하여 jar 패키지의 [MD5 검사 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-3.1.0-md5.txt)에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
 
 #### 설치 설명
 
 Hadoop 환경에서 [Hadoop-COS](https://intl.cloud.tencent.com/document/product/436/6884)를 설치하면 COSDistCp 툴을 실행할 수 있습니다.
+
+Hadoop 버전에 따라 위에 나열된 다운로드 주소에서 COSDistCp jar, Hadoop-COS jar 및 cos_api-bundle jar 패키지의 해당 버전을 다운로드할 수 있습니다. 그 다음 Hadoop-COS 관련 매개변수를 지정하여 복사 작업을 수행합니다. 여기서 jar 패키지 주소는 로컬 주소여야 합니다.
+
+```plaintext
+hadoop jar cos-distcp-${version}.jar \
+-libjars cos_api-bundle-${version}.jar,hadoop-cos-${version}.jar \
+-Dfs.cosn.credentials.provider=org.apache.hadoop.fs.auth.SimpleCredentialProvider \
+-Dfs.cosn.userinfo.secretId=COS_SECRETID \
+-Dfs.cosn.userinfo.secretKey=COS_SECRETKEY \
+-Dfs.cosn.bucket.region=ap-guangzhou \
+-Dfs.cosn.impl=org.apache.hadoop.fs.CosFileSystem \
+-Dfs.AbstractFileSystem.cosn.impl=org.apache.hadoop.fs.CosN \
+--src /data/warehouse \
+--dest cosn://examplebucket-1250000000/warehouse
+```
 
 
 ## 원리 설명
@@ -39,62 +54,64 @@ COSDistCp는 MapReduce 프레임워크를 기반으로 구현되며, 멀티 프�
 
 ## 매개변수 설명
 
-`hadoop jar cos-distcp-${version}.jar --help` 명령어를 사용해 COSDistCp가 지원하는 매개변수 옵션을 조회할 수 있으며, 여기서 `${version}`은 버전 넘버입니다. 다음은 현재 버전 COSDistCp의 매개변수 설명입니다.
+hadoop 사용자에서 `hadoop jar cos-distcp-${version}.jar --help` 명령어를 사용해 COSDistCp가 지원하는 매개변수 옵션을 조회할 수 있으며, 여기서 `${version}`은 버전 넘버입니다. 다음은 현재 버전 COSDistCp의 매개변수 설명입니다.
 
 
-|              속성 키              | 설명                                                         | 기본값 | 필수 입력 여부 |
-| :------------------------------: | :----------------------------------------------------------- | :----: | :------: |
-|              --help              | COSDistCp 출력에 지원하는 매개변수 옵션<br> 예: --help               |   없음   |    No    |
-|          --src=LOCATION          | 복사할 원본 디렉터리 지정, HDFS 또는 COS 경로<br> 예: --src=hdfs://user/logs/ |   없음   |    Yes    |
-|         --dest=LOCATION          | 복사하는 대상 디렉터리 지정, HDFS 또는 COS 경로<br> 예: --dest=cosn://examplebucket-1250000000/user/logs |   없음   |    Yes |
-|       --srcPattern=PATTERN       | 정규식으로 원본 디렉터리에 있는 파일 필터링<br>예: `--srcPattern='.*\.log$'`<br>**참고: `*`가 shell에 의해 해석되지 않도록 매개변수는 작은따옴표로 묶어야 합니다.** |   없음   |    No    |
-|       --taskNumber=VALUE       | 복사 프로세스 수 지정. 예: --taskNumber=10 |   10   |    No    |
-|       --workerNumber=VALUE       | 복사 스레드 수 지정. COSDistCp는 각 복사 프로세스에서 해당 매개변수 크기의 복사 스레드 풀을 생성합니다.<br>예: --workerNumber=4 |   4    |    No    |
-|      --filesPerMapper=VALUE      | 각 Mapper의 입력 파일의 행 개수 지정<br>예: --filesPerMapper=10000 | 500000 |    No    |
-|        --groupBy=PATTERN         | 정규식을 지정해 파일 취합</br>예: --groupBy='.\*group-input/(\d+)-(\d+).\*' |   없음   |    No    |
-|        --targetSize=VALUE        | 대상 파일의 크기 지정, 단위: MB, --groupBy와 함께 사용</br>예: --targetSize=10 |   없음   |    No    |
-|       --outputCodec=VALUE        | 출력 파일의 압축 방식 지정, gzip, lzo, snappy, none, keep 선택 가능</br> 1. keep: 기존 파일 압축 방식 유지<br>2. none: 파일 접미사에 따라 파일의 압축을 해제</br>예: --outputCodec=gzip </br>**참고: /dir/test.gzip 및 /dir/test.gz 파일이 있는 경우, 출력 형식을 lzo로 지정하면 마지막에는 /dir/test.lzo 파일 하나만 유지됩니다** |  keep  |    No    |
-|        --deleteOnSuccess         | 지정된 원본 파일이 대상 디렉터리에 성공적으로 복사되면 원본 파일 즉시 삭제</br>예: --deleteOnSuccess,</br>**참고: 이 매개변수는 1.7 버전 이상에서 더 이상 제공되지 않습니다. 데이터 마이그레이션 성공 후 - diffMode를 사용하여 검사하고 원본 파일 시스템의 데이터를 삭제할 것을 권장합니다.** | false  |    No    |
-| --multipartUploadChunkSize=VALUE | Hadoop-COS 플러그 인에서 COS로 파일 전송 시 멀티파트 크기 지정. COS는 최대 10000개의 파트 수를 지원하며 파일 크기에 따라 파트 크기를 조정할 수 있습니다. 단위: MB, 기본 값: 8MB</br>예: --multipartUploadChunkSize=20 |  8MB   |    No    |
-|    --cosServerSideEncryption     | 파일을 COS로 업로드 시 SSE-COS를 암호화/복호화 알고리즘으로 사용 지정</br>예: --cosServerSideEncryption | false  |    No    |
-|      --outputManifest=VALUE      | 복사 완료 시 대상 디렉터리에 이번 복사의 대상 파일 정보 리스트(GZIP 압축) 생성 지정</br>예:--outputManifest=manifest.gz |   없음   |    No    |
-|    --requirePreviousManifest     | --previousManifest=VALUE 매개변수 지정을 요청해 증분 복사 진행</br>예: --requirePreviousManifest | false  |    No    |
-|   --previousManifest=LOCATION    | 이전에 복사하여 생성된 대상 파일 정보<br>예: --previousManifest=cosn://examplebucket-1250000000/big-data/manifest.gz |   없음   |    No    |
-|        --copyFromManifest        | --previousManifest=LOCATION과 함께 사용 시, --previousManifest의 파일을 대상 파일 시스템으로 복사 가능<br>예: --copyFromManifest | false  |    No    |
-|       --storageClass=VALUE       | 객체 스토리지 유형 지정. STANDARD, STANDARD_IA, ARCHIVE, DEEP_ARCHIVE, INTELLIGENT_TIERING 중 선택할 수 있으며, 지원되는 스토리지 유형 및 소개에 대한 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참고하십시오. |   없음   |    No    |
-|    --srcPrefixesFile=LOCATION    | 각 행마다 복사할 원본 디렉터리가 포함된 로컬 파일 지정</br>예: --srcPrefixesFile=file:///data/migrate-folders.txt |   없음   |    No    |
-|         --skipMode=MODE          | 파일 복사 전 원본 파일과 대상 파일의 일치 여부 검사, 일치할 경우 건너뜀. none(검사 안 함), length (길이), checksum(CRC 값), length-mtime(길이+mtime 값) 및 length-checksum(길이 + CRC 값)을 선택할 수 있습니다.</br>예: --skipMode=length |  length-checksum  |    No    |
-|         --checkMode=MODE         | 파일 복사 완료 시 원본 파일과 대상 파일의 일치 여부를 검사합니다. none(검사 안 함), length (길이), checksum(CRC 값), length-mtime(길이+mtime 값) 및 length-checksum(길이 + CRC 값)을 선택할 수 있습니다.<br/>예: --checkMode=length-checksum |  length-checksum  |    No    |
-|         --diffMode=MODE          | 원본과 대상의 변경 파일 리스트 가져오기 지정. length(길이), checksum(CRC 값), length-mtime(길이+mtime 값) 및 length-checksum(길이 + CRC 값)을 선택할 수 있습니다.</br>예: --diffMode=length-checksum |   없음   |    No    |
-|      --diffOutput=LOCATION       | diffMode의 HDFS 출력 디렉터리 지정. 해당 출력 디렉터리는 반드시 비어 있어야 합니다.<br/>예: --diffOutput=/diff-output |   없음   |    No    |
-|      --cosChecksumType=TYPE      | Hadoop-COS 플러그 인이 사용하는 CRC 알고리즘 지정. CRC32C와 CRC64 중 선택할 수 있습니다.<br/>예: --cosChecksumType=CRC32C | CRC32C |    No    |
-|      --preserveStatus=VALUE      | 원본 파일의 user, group, permission, xattr, timestamps 메타 정보를 대상 파일에 복사 여부 설정. ugpxt(user, group, permission, xattr, timestamps의 영어 이니셜)로 설정할 수 있습니다.<br/>예: --preserveStatus=ugpt |   없음   |    No    |
-|      --ignoreSrcMiss      | 파일 리스트에 존재하나 복사 시 존재하지 않는 파일 무시 |   false   | No       |
-|      --promGatewayAddress=VALUE      | MapReduce 작업에 의해 실행된 Counter 데이터가 푸시되는 Prometheus PushGateway 주소 및 포트 지정 |   없음   |    No    |
-|      --promGatewayDeleteOnFinish=VALUE   | 지정된 작업이 완료되면 Prometheus PushGateway 중의 JobName의 메트릭 집합 삭제</br>예: --promGatewayDeleteOnFinish=true | true    |    No   |
-|      --promGatewayJobName=VALUE      | Prometheus PushGateway에 리포트되는 JobName 지정 </br>예: --promGatewayJobName=cos-distcp-hive-backup           |   없음   |    No    |
-|      --promCollectInterval=VALUE      | MapReduce 작업 Counter 정보 수집 간격 지정, 단위: ms </br>예: --promCollectInterval=5000            |   5000   |    No    |
-|      --promPort=VALUE      | Prometheus 메트릭을 외부 서버 포트에 노출하도록 지정 <br>예: --promPort=9028            |   없음   |    No    |
-|      --enableDynamicStrategy      | 마이그레이션 속도가 빠른 작업이 더 많은 파일을 마이그레이션할 수 있도록 작업 동적 할당 정책 지정.</br>**참고: 이 모드에는 제한이 있습니다. 예: 프로세스가 비정상적일 때 작업 카운터가 정확하지 않습니다. 마이그레이션이 완료된 후 --diffMode를 사용하여 데이터를 검사하십시오.** </br>예: --enableDynamicStrategy            |   false   |    No    |
-|      --splitRatio=VALUE      | Dynamic Strategy 의 분할 비율 지정. splitRatio 값이 클수록 작업 세분성이 작아짐</br>예: --splitRatio=8            |   8   |    No    |
-|      --localTemp=VALUE      | Dynamic Strategy이 생성한 작업 정보 파일이 위치하는 로컬 폴더 지정</br>예: --localTemp=/tmp            |   /tmp   |    No    |
-|      --taskFilesCopyThreadNum=VALUE      | Dynamic Strategy 작업 정보 파일을 HDFS로 복사할 때의 동시성 정도 지정 </br>예: --taskFilesCopyThreadNum=32            |   32   |    No    |
-|      --statsRange=VALUE      | 통계 구간 범위 지정</br>예: ---statsRange=0,1mb,10mb,100mb,1gb,10gb,inf   |   0,1mb,10mb,100mb,1gb,10gb,inf   |    No    |
-|      --printStatsOnly      | 마이그레이션할 파일 크기의 배포 정보만 통계하고 데이터를 마이그레이션하지 않음</br>예: --printStatsOnly            |   없음   |    No    |
-|      --bandWidth      | 각 마이그레이션 파일의 읽기 대역폭 제한, 단위: MB/s, 기본값: -1, 읽기 대역폭: 제한 없음.</br>예: --bandWidth=10            |   없음   |    No    |
-|      --jobName      | 마이그레이션 작업 이름 지정.</br>예: --jobName=cosdistcp-to-warehouse            |   없음   |    No    |
-|      --compareWithCompatibleSuffix  | --skipMode 및 --diffMode 매개변수 사용 시 원본 파일의 접미사 gzip을 gz로 변환 및 lzop 파일의 접미사를 lzo로 변환 여부 판단.</br>예: --compareWithCompatibleSuffix |   없음   |    No    |
+|                속성 키                | 설명                                                                                                                                                                                                                  |              기본값              | 필수 여부 |
+|:---------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------:|:----:|
+|              --help               | COSDistCp가 지원하는 매개변수를 출력합니다<br> 예: --help                                                                                                                                                                                  |               None               |  No   |
+|          --src=LOCATION           | 복사할 데이터의 위치입니다. 이는 HDFS 또는 COS 위치일 수 있습니다.<br> 예: --src=hdfs://user/logs/                                                                                                                                                          |               None               |  Yes   |
+|          --dest=LOCATION          | 데이터의 대상입니다. 이는 HDFS 또는 COS 위치일 수 있습니다.<br> 예: --dest=cosn://examplebucket-1250000000/user/logs                                                                                                                                |               None               |  Yes   |
+|       --srcPattern=PATTERN        | 소스 위치에서 파일을 필터링하는 정규식입니다.<br>예: `--srcPattern='.*\.log$'`<br>**참고: 별표(`*`)가 shell에서 구문 분석되는 경우 매개 변수를 작은따옴표로 묶습니다**                                                                                                                      |               None               |  No   |
+|        --taskNumber=VALUE         | 복사 스레드 수. 예: --taskNumber=10                                                                                                                                                                                          |              10               |  No   |
+|       --workerNumber=VALUE        | 복사 스레드 수입니다. COSDistCp는 이 값 세트를 기반으로 각 복사 프로세스에 대해 복사 스레드 풀을 생성합니다.<br>예: --workerNumber=4                                                                                                                                                      |               4               |  No   |
+|      --filesPerMapper=VALUE       | 각 Mapper에 입력되는 파일 수입니다.<br>예: --filesPerMapper=10000                                                                                                                                                                    |            500000             |  No   |
+|         --groupBy=PATTERN         | 정규식과 일치하는 텍스트 파일을 연결하는 정규식입니다</br>예: --groupBy='.\*group-input/(\d+)-(\d+).\*'                                                                                                                                                   |               None               |  No   |
+|        --targetSize=VALUE         | 생성할 파일의 크기(MB)입니다. 이 매개변수는 --groupBy와 함께 사용됩니다.</br>예: --targetSize=10                                                                                                                                                             |               None               |  No   |
+|       --outputCodec=VALUE        | 출력 파일의 압축 방법. 유효한 값: gzip, lzo, snappy, none, keep. 여기: </br> 1. keep: 원본 파일의 압축 방식을 유지함을 나타냅니다<br>2. none: 파일 확장자를 기준으로 파일의 압축을 푼다는 것을 나타냅니다</br>예: --outputCodec=gzip </br>**참고: /dir/test.gzip 및 /dir/test.gz 파일이 있는 경우, 출력 형식을 lzo로 지정하면 /dir/test.lzo만 유지됩니다** |             keep              |  No   |
+|         --deleteOnSuccess         | 소스 파일이 대상 디렉터리에 성공적으로 복사된 직후 소스 파일을 삭제합니다.</br>예: --deleteOnSuccess，</br>**참고: v1.7 이상에서는 더 이상 이 매개변수를 제공하지 않습니다. 데이터를 성공적으로 마이그레이션하고 확인을 위해 --diffMode를 사용한 후 소스 파일 시스템에서 데이터를 삭제하는 것이 좋습니다.**                                                                                                |             false             |  No   |
+| --multipartUploadChunkSize=VALUE  | Hadoop-COS 플러그인을 사용하여 COS로 전송된 멀티파트 업로드 부분의 크기(MB)입니다. COS는 최대 10000개의 파트를 지원합니다. 파일 크기에 따라 값을 설정할 수 있습니다.</br>예: --multipartUploadChunkSize=20                                                                                              |              8MB              |  No   |
+|     --cosServerSideEncryption     | COS 서버 측 암호화에 SSE-COS를 사용할지 여부를 지정합니다</br>예: --cosServerSideEncryption                                                                                                                                                   |             false             |  No   |
+|      --outputManifest=VALUE       | 대상 위치에 복사된 모든 파일 목록이 포함된 파일(Gzip 압축)을 생성합니다</br>예: --outputManifest=manifest.gz                                                                                                                                        |               None               |  No   |
+|     --requirePreviousManifest     | 이 매개변수가 true로 설정되면 증분 복사에 --previousManifest=VALUE를 지정해야 합니다</br>예: --requirePreviousManifest                                                                                                                                           |             false             |  No   |
+|    --previousManifest=LOCATION    | 이전 복사 작업 중에 생성된 매니페스트 파일입니다<br>예: --previousManifest=cosn://examplebucket-1250000000/big-data/manifest.gz                                                                                                                        |               None               |  No   |
+|        --copyFromManifest         | --previousManifest에 지정된 파일을 대상 파일 시스템에 복사합니다. 이것은 previousManifest=LOCATION과 함께 사용됩니다<br>예: --copyFromManifest                                                                                                                    |             false             |  No   |
+|       --storageClass=VALUE       | 사용할 스토리지 유형입니다. 유효한 값은 STANDARD, STANDARD_IA, ARCHIVE, DEEP_ARCHIVE, INTELLIGENT_TIERING입니다. 자세한 내용은 [스토리지 유형 개요](https://intl.cloud.tencent.com/document/product/436/30925)를 참고하십시오. |   None   |    No    |
+|    --srcPrefixesFile=LOCATION     | 한 줄에 하나의 디렉터리씩 소스 디렉터리 목록을 포함하는 로컬 파일입니다.</br>예: --srcPrefixesFile=file:///data/migrate-folders.txt                                                                                                                                 |               None               |  No   |
+|         --skipMode=MODE          | 파일 복사 전 원본 파일과 대상 파일이 동일한지 확인합니다. 동일하면 파일을 건너뜁니다. 유효한 값은 none(확인 안 함), length (길이), checksum(CRC 값), length-mtime(길이+mtime 값) 및 length-checksum(길이 + CRC 값)입니다.</br>예: --skipMode=length                                                                    |        length-checksum        |  No   |
+|         --checkMode=MODE         | 복사가 완료되면 원본 파일과 대상 파일이 동일한지 확인합니다. 유효한 값은 none(확인 안 함), length (길이), checksum(CRC 값), length-mtime(길이+mtime 값) 및 length-checksum(길이 + CRC 값)입니다.<br/>예: --checkMode=length-checksum                                                          |        length-checksum        |  No   |
+|          --diffMode=MODE          | 소스 및 대상 디렉터리에서 다른 파일 목록을 얻기 위한 규칙을 지정합니다. 유효한 값은 length (길이), checksum(CRC 값), length-mtime(길이+mtime 값) 및 length-checksum(길이 + CRC 값)입니다.</br>예: --diffMode=length-checksum                                                                             |               None               |  No   |
+|       --diffOutput=LOCATION       | diffMode에서 HDFS 출력 디렉터리를 지정합니다. 이 디렉터리는 비어 있어야 합니다.<br/>예: --diffOutput=/diff-output                                                                                                                                                  |               None               |  No   |
+|      --cosChecksumType=TYPE       | Hadoop-COS 플러그인에서 사용하는 CRC 알고리즘을 지정합니다. 유효한 값은 CRC32C 및 CRC64입니다.<br/>예: --cosChecksumType=CRC32C                                                                                                                                      |            CRC32C             |  No   |
+|      --preserveStatus=VALUE      | 원본 파일의 user, group, permission, xattr, timestamps 메타데이터를 대상 파일에 복사할지 여부를 지정합니다. 유효한 값은 문자 ugpxt(각각 user, group, permission, xattr, timestamps의 영어 이니셜)의 조합입니다.<br/>예: --preserveStatus=ugpt                                                           |               None               |  No   |
+|          --ignoreSrcMiss          | 매니페스트 파일에 존재하지만 복사 중에 찾을 수 없는 파일을 무시합니다.                                                                                                                                                                                               |             false             |  No   |
+|    --promGatewayAddress=VALUE     | MapReduce 작업의 Counter 데이터를 푸시하기 위한 Prometheus PushGateway 주소 및 포트를 지정합니다.                                                                                                                                                     |               None               |  No   |
+| --promGatewayDeleteOnFinish=VALUE | 지정된 작업이 완료되면 Prometheus PushGateway에서 JobName 메트릭을 삭제할지 여부입니다</br>예: --promGatewayDeleteOnFinish=true                                                                                                                           |             true              |  No   |
+|    --promGatewayJobName=VALUE     | Prometheus PushGateway에 보고할 JobName 입니다</br>예: v --promGatewayJobName=cos-distcp-hive-backup                                                                                                                          |               None               |  No   |
+|    --promCollectInterval=VALUE    | MapReduce 작업 Counter 정보를 수집하는 간격(ms)입니다 </br>예: --promCollectInterval=5000                                                                                                                                            |             5000              |  No   |
+|         --promPort=VALUE          | Prometheus 메트릭을 노출하는 Server 포트입니다 <br>예: --promPort=9028                                                                                                                                                            |               None               |  No   |
+|      --enableDynamicStrategy      | 동적 작업 할당 정책을 활성화하여 더 빠른 마이그레이션으로 더 많은 파일을 마이그레이션하는 작업을 수행합니다. </br>**참고: 이 모드에는 특정 제한이 있습니다. 예를 들어 프로세스가 예외적인 경우 작업 카운터가 부정확할 수 있습니다. 따라서 --diffMode를 사용하여 마이그레이션 후 데이터를 확인하십시오.** </br>예: --enableDynamicStrategy                                                                                |             false             |  No   |
+|        --splitRatio=VALUE         | Dynamic Strategy의 분할 비율입니다. splitRatio가 높을수록 작업 세분성이 작음을 나타냅니다.</br>예: --splitRatio=8                                                                                                                                              |               8               |  No   |
+|         --localTemp=VALUE         | Dynamic Strategy에 의해 생성된 작업 파일을 저장할 로컬 폴더입니다</br>예: --localTemp=/tmp                                                                                                                                                       |             /tmp              |  No   |
+|  --taskFilesCopyThreadNum=VALUE   | Dynamic Strategy에 의해 생성된 작업 파일을 HDFS에 복사하기 위한 동시성 수 입니다</br>예: --taskFilesCopyThreadNum=32                                                                                                                                        |              32               |  No   |
+|        --statsRange=VALUE         | 통계 범위입니다</br>예: ---statsRange=0,1mb,10mb,100mb,1gb,10gb,inf                                                                                                                                                        | 0,1mb,10mb,100mb,1gb,10gb,inf |  No   |
+|         --printStatsOnly          | 데이터를 복사하지 않고 파일 크기 분포에 대한 통계만 수집합니다</br>예: --printStatsOnly                                                                                                                                                                       |               None               |  No   |
+|            --bandWidth            | 마이그레이션된 각 파일을 읽기 위한 최대 대역폭(MB/s)입니다. 기본값: -1, 읽기 대역폭에 제한이 없음을 나타냅니다.</br>예: --bandWidth=10                                                                                                                                                          |               None               |  No   |
+|             --jobName             | 마이그레이션 작업 이름입니다</br>예: --jobName=cosdistcp-to-warehouse                                                                                                                                                                  |               None               |  No   |
+|   --compareWithCompatibleSuffix   | --skipMode 및 --diffMode 매개변수를 사용할 때 소스 파일 확장자 gzip을 gz로, lzop을 lzo로 변경할지 여부입니다.</br>예: --compareWithCompatibleSuffix                                                                                                    |               None               |  No   |
+|             --delete              | 원본 디렉터리에는 있지만 대상 디렉터리에는 없는 파일을 별도의 trash 디렉터리로 옮기고 원본 디렉터리와 대상 디렉터리 간의 파일 일관성을 보장하기 위해 파일 목록을 생성합니다.</br>참고: 이 매개변수는 --diffMode와 함께 사용할 수 없습니다                                                                                                                           |    None   |  No   |
+|          --deleteOutput           | delete에 대한 HDFS 출력 디렉터리를 지정합니다. 이 디렉터리는 비어 있어야 합니다.<br/>예: --deleteOutput=/dele-output                                                                                                                                                   |  None   |  No   |
 
 ## 사용 예시
 
-### help 옵션 조회
+### help 옵션 보기
 
 매개변수 `--help`로 명령어를 실행해 COSDistCp에서 지원하는 매개변수를 조회합니다. 예시는 다음과 같습니다.
 
 ```plaintext
 hadoop jar cos-distcp-${version}.jar --help
 ```
-위 명령어 중 `${version}`은 COSDistCp의 버전 넘버입니다. 예를 들어 1.0 버전의 COSDistCp jar 패키지 이름은 cos-distcp-1.0.jar입니다.
+상기 명령어 중 `${version}`은 COSDistCp의 버전 넘버입니다. 예를 들어 1.0 버전의 COSDistCp jar 패키지 이름은 cos-distcp-1.0.jar입니다.
 
 ### 마이그레이션할 파일의 크기 분포 정보 통계
 
@@ -165,7 +182,7 @@ CosDistCp Counters
 
 ### 복사 프로세스의 수 및 각 복사 프로세스의 복사 스레드 수 지정
 
-매개변수 `--taskNumber`와 `--workersNumber`로 명령어를 실행합니다. COSDistCp는 멀티 프로세스+멀티 스레드의 복사 구조를 사용하며, 다음 작업이 가능합니다.
+매개변수 `--taskNumber` 및 `--workersNumber`로 명령어를 실행합니다. COSDistCp는 멀티 프로세스+멀티 스레드의 복사 구조를 사용하며, 다음 작업이 가능합니다.
 - `--taskNumber`를 통해 복사 프로세스 수 지정
 - `--workerNumber`를 통해 각 복사 프로세스 내의 복사 스레드 수 지정
 
@@ -191,7 +208,7 @@ hadoop fs  -Ddfs.checksum.combine.mode=COMPOSITE_CRC -checksum /data/test.txt
 
 ### 마이그레이션 후 데이터 검사 및 증분 마이그레이션
 
-매개변수 `--diffMode`와 `--diffOutput`으로 명령어를 실행합니다.
+매개변수 `--diffMode` 및 `--diffOutput`으로 명령어를 실행합니다.
 - `--diffMode`의 옵션 값은 length와 length-checksum이 있습니다.
  - `--diffMode=length`는 파일 크기 동일 여부에 따라 변경 파일 리스트를 획득합니다.
  - `--diffMode=length-checksum`은 파일 크기 및 CRC 검사 동일 여부에 따라 변경 파일 리스트를 획득합니다.
@@ -240,7 +257,7 @@ hadoop jar cos-distcp-${version}.jar   --src /data/warehouse --dest cosn://examp
 
 ### 단일 파일의 읽기 대역폭 제한
 
-매개변수 `--bandWidth`로 명령어를 실행합니다. 값의 단위는 MB이며, 각 마이그레이션 파일의 읽기 대역폭을 10MB/s로 제한합니다. 예시는 다음과 같습니다.
+매개변수 `--bandWidth`으로 명령을 실행합니다. 값 단위는 MB이며, 각 마이그레이션 파일의 읽기 대역폭 10MB/s로 제한합니다. 예시는 다음과 같습니다.
 
 ```plaintext
 hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --bandWidth=10
@@ -315,7 +332,7 @@ hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://example
 
 ### 대상 매니페스트 파일 생성 및 이전 매니페스트 출력 파일 지정
 
-매개변수 `--outputManifest`와 `--previousManifest`로 명령어를 실행합니다.
+매개변수 `--outputManifest` 및 `--previousManifest`로 명령어를 실행합니다.
 
 - `--outputManifest` 해당 옵션은 먼저 로컬에 gzip으로 압축된 manifest.gz를 생성하고 마이그레이션 완료 시 `--dest`에서 지정한 디렉터리로 이동됩니다.
 - `--previousManifest`로 바로 이전의 `--outputManifest` 출력 파일을 지정하여 COSDistCp가 동일한 길이 및 크기의 파일을 건너뜁니다.
@@ -324,7 +341,7 @@ hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://example
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest  cosn://examplebucket-1250000000/data/warehouse/ --outputManifest=manifest.gz --previousManifest= cosn://examplebucket-1250000000/data/warehouse/manifest-2020-01-10.gz
 ```
 
->! 위 명령어의 증분 마이그레이션은 파일 크기가 변경된 파일만 동기화할 수 있으며 파일 내용이 변경된 파일은 동기화할 수 없습니다. 파일 내용이 변경된 경우 --diffMode 사용 예시를 참고하여 파일 CRC에 따라 변경된 파일 리스트를 확인하십시오.
+>! 상기 명령어의 증분 마이그레이션은 파일 크기가 변경된 파일만 동기화할 수 있으며 파일 내용이 변경된 파일은 동기화할 수 없습니다. 파일 내용이 변경된 경우 --diffMode 사용 예시를 참고하여 파일 CRC에 따라 변경된 파일 리스트를 확인하십시오.
 >
 
 
@@ -369,7 +386,7 @@ hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://exampl
 ```
 
 [Grafana Dashboard](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/COSDistcp-Grafana-Dashboard.json) 예시를 다운로드하여 가져옵니다. Grafana는 다음과 같이 표시됩니다.
-![COSDistcp-Grafana](https://qcloudimg.tencent-cloud.cn/raw/004d8f1a4fc79011c26f6667f085a3b7.png)
+![COSDistcp-Grafana](https://staticintl.cloudcachetci.com/yehe/backend-news/2Rc8914_2.png)
 
 
 ### 파일 복사 실패 시 알람
@@ -486,3 +503,6 @@ hadoop jar cos-distcp-${version}.jar -Dmapreduce.task.timeout=18000 -Dmapreduce.
 
 ### 전용 회선 마이그레이션을 통해 마이그레이션 작업의 마이그레이션 대역폭을 제어하는 ​​방법은 무엇입니까?
 COSDistcp 마이그레이션의 총 대역폭 제한 계산 공식은 taskNumber * workerNumber * bandWidth이며, workerNumber를 1로 설정하고 동시 마이그레이션의 수는 매개변수 taskNumber에 의해 제어되고 단일 동시성의 대역폭은 매개변수 bandWidth에 의해 제어됩니다.
+
+
+

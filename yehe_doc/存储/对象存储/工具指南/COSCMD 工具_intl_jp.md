@@ -173,6 +173,14 @@ anonymous = False
 
 ### configコマンドを使用して設定ファイルを発行
 
+
+
+>!
+>- ユーザーには[一時キーを使用](https://intl.cloud.tencent.com/document/product/436/14048)してSDKを呼び出し、一時権限承認方式によってSDK使用の安全性をさらに向上させることをお勧めします。一時キーを申請する際は、[最小権限の原則についてのガイド](https://intl.cloud.tencent.com/document/product/436/32972)に従い、ターゲットバケットまたはオブジェクト以外のリソースが漏洩しないようにしてください。
+>- どうしてもパーマネントキーを使用したい場合は、[最小権限の原則についてのガイド](https://intl.cloud.tencent.com/document/product/436/32972)に従って、パーマネントキーの権限範囲を限定することをお勧めします。
+
+
+
 configコマンドは、`~/.cos.conf`に設定ファイルを自動的に発行します。コマンド形式は次のとおりです。
 ```plaintext
 coscmd config [OPTION]...<FILE>...
@@ -201,7 +209,7 @@ coscmd config [OPTION]...<FILE>...
 | -b               | 指定されたバケット名。バケットの命名形式はBucketName-APPIDです。[命名ルール](https://intl.cloud.tencent.com/document/product/436/13312)をご参照ください。初回設定時に使用する場合、COSコンソールでバケットを作成し、設定ツールとして用いる必要があります | 文字列 | はい       |
 | -r               | バケットの所在リージョンです。[リージョンとアクセスドメイン名](https://www.tencentcloud.com/document/product/436/6224)をご参照ください。| 文字列 | はい       |
 | -e               | リクエストのENDPOINTを設定します。ENDPOINTパラメータを設定すると、REGIONパラメータは無効になります。デフォルトのドメイン名を使用している場合、ここでの設定形式は、`cos.<region>.myqcloud.com`となります。グローバルアクセラレーションドメイン名を使用する場合、設定は`cos.accelerate.myqcloud.com`となります | 文字列 | いいえ       |
-| -m               | マルチスレッド操作の最大スレッド数（デフォルトは5、範囲は1～30）             | 数値 |いいえ       |
+| -m               | マルチスレッド操作の最大スレッド数（デフォルトは5、範囲は1～30）             | 数値｜いいえ       |
 | -p               | チャンク操作の1チャンクサイズ（MB単位、デフォルトは1MB、範囲は1～1000）     | 数値   | いいえ       |
 | --do-not-use-ssl | HTTPSではなく、HTTPプロトコルを使用します                              | 文字列 | いいえ       |
 | --anonymous      | 匿名操作（署名なし）                                       | 文字列 | いいえ       |
@@ -449,7 +457,7 @@ coscmd info <cospath>
 coscmd info doc/picture.jpg
 ```
 
- - 「<>」内のパラメータを、表示させる必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
+> - 「<>」内のパラメータを、表示させる必要のあるCOS上のファイルのパス(cospath)に置き換えてください。
 
 
 ### ファイルまたはフォルダのダウンロード
@@ -555,7 +563,7 @@ coscmd signurl doc/picture.jpg -t 100
 ```plaintext
 coscmd delete <cospath>
 ```
- - 「<>」内のパラメータを、削除する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。ツールは、削除操作を確認するようユーザーに促します。
+> - 「<>」内のパラメータを、削除する必要のあるCOS上のファイルのパス(cospath)に置き換えてください。ツールは、削除操作を確認するようユーザーに促します。
 
 - 操作事例 - doc/exampleobject.txtを削除します
 ```plaintext
@@ -749,5 +757,6 @@ coscmd restore -r -d 3 -t Expedited examplefolder/
 ## よくあるご質問
 
 COSCMDツールの使用に関するご質問は、[COSCMDツールに関するよくあるご質問](https://intl.cloud.tencent.com/document/product/436/30586)をご参照ください。
+
 
 
