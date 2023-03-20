@@ -18,6 +18,11 @@ The figure above shows the working principle of the unified namespace. You can u
 
 You can use the `create ns` instruction to create a namespace in GooseFS and map underlying storage systems to GooseFS. Currently supported underlying storage systems include COS, CHDFS, and local HDFS. The procedure for creating a namespace is similar to that for mounting a file volume disk in a Linux file system. With the namespace created, GooseFS can provide clients with a file system with uniform access semantics. The current operation instruction set for GooseFS namespaces is as follows:
 
+>!
+>- We recommend that you avoid using permanent keys in the configuration. Configuring sub-account keys or temporary keys can help improve your business security. When authorizing a sub-account, grant only the permissions of the operations and resources that the sub-account needs, which helps avoid unexpected data leakage.
+>- If you must use a permanent key, we recommend that you limit ITS permission scope. This can improve the security by limiting its executable operations, resource scope, and conditions (access IP, etc.).
+>
+
 ```plaintext
 $ goosefs ns
 Usage: goosefs ns [generic options]
@@ -31,9 +36,6 @@ Usage: goosefs ns [generic options]
          [unsetPolicy <namespace>]                                 
          [unsetTtl <namespace>] 
 ```
->!
->- We recommend you use a sub-account key or temporary key instead of a permanent key to improve the business security. When authorizing a sub-account, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid unexpected data leakage.
->- If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission, including allowed operations, scope of resources, and conditions such as access IP, on the permanent key so as to improve the usage security.
 
 The instructions are described as follows:
 
@@ -96,8 +98,9 @@ The read and write cache policies currently supported by GooseFS are as follows:
 | THROUGH (4)       | Data is not stored in GooseFS, but written directly to the remote storage system.                   | THROUGH | Reliable       | Medium     |
 | ASYNC_THROUGH (5) | Data is written to GooseFS and asynchronously purged to remote storage systems.                 | ASYNC_THROUGH | Weak reliability     | High     |
 
->? `Write_Type` indicates the file cache policy specified when the user calls the SDK or API to write data to GooseFS. It takes effect only for a single file.
-> 
+>? 
+>- `Write_Type` indicates the file cache policy specified when the user calls the SDK or API to write data to GooseFS. It takes effect only for a single file.
+>- If you want to change the configured write cache policy, you need to carefully evaluate the importance of the cached data. If the data is important, we recommend that you ensure that the cached data has been persisted; otherwise, it may be lost. For example, after the write cache is changed from `MUST_CACHE` to `CACHE_THROUGH`, if the `persist` command is not called to persist the data, the data that is about to be eliminated cannot be written to the underlying layer and will be lost.
 
 **Read cache policies**
 
@@ -168,6 +171,7 @@ You can configure the metadata synchronization interval in the `conf/goosefs-sit
 ```plaintext
 goosefs.user.file.metadata.sync.interval=<INTERVAL>
 ```
+
 
 The metadata synchronization interval parameter supports 3 types of input values:
 

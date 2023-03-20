@@ -4,7 +4,7 @@ The COS server will generate an ID (`RequestId`) for every request sent to COS. 
 
 ## Using the Console
 
-1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket list page.
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5). Click **Bucket List** on the left sidebar to open the bucket list page.
 2. Click the name of the target bucket.
 3. Press F12 on the keyboard to open the developer tools of your browser.
 4. Select the **Network** tab.
@@ -52,8 +52,6 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
- 
-
 ### Using the Go SDK
 
 ```
@@ -68,8 +66,8 @@ import (
    "github.com/tencentyun/cos-go-sdk-v5"
 )
  
-func main() {
-   // Replace examplebucket-1250000000 and COS_REGION with the actual information
+func main(){
+   // Replace `examplebucket-1250000000` and `COS_REGION` with the actual information
    u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
    b := &cos.BaseURL{BucketURL: u}
    c := cos.NewClient(b, &http.Client{
@@ -85,7 +83,7 @@ func main() {
    f := strings.NewReader("Hello COS")
  
    _, err := c.Object.Put(context.Background(), name, f, nil)
-   if err != nil {
+   if err != nil{
        // The error message contains the RequestId field.
        panic(err)
    }
@@ -101,7 +99,7 @@ func main() {
 String secretId = "SECRETID";
 String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
-// 2. Set the bucket region. For abbreviations of COS regions, visit https://cloud.tencent.com/document/product/436/6224.
+// 2. Set the bucket region. For abbreviations of COS regions, please visit https://cloud.tencent.com/document/product/436/6224.
 // `clientConfig` contains the set methods to set region, HTTPS (HTTP by default), timeout, and proxy. For detailed usage, see the source code or the FAQs about the SDK for Java.
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
@@ -109,7 +107,7 @@ ClientConfig clientConfig = new ClientConfig(region);
 clientConfig.setHttpProtocol(HttpProtocol.https);
 // 3. Generate a COS client.
 COSClient cosClient = new COSClient(cred, clientConfig);
-// Enter the bucket name in the format of `BucketName-APPID`
+// Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
  
 String content = "Hello COS";
@@ -129,16 +127,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+secret_id = os.environ['COS_SECRET_ID']     # User `SecretId`. We recommend that you use a sub-account key and follow the principle of least privilege to reduce risks. For more information on how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend that you use a sub-account key and follow the principle of least privilege to reduce risks. For more information on how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, see https://cloud.tencent.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, see https://cloud.tencent.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -164,7 +162,7 @@ except CosServiceError as e:
 ```
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'COS_REGION',    /* Required */
+    Region: 'COS_REGION', /* Required */
     Key: 'test.js',              /* Required */
     StorageClass: 'STANDARD',
     Body: 'Hello COS',
@@ -190,7 +188,7 @@ var cos = new COS({
  
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'COS_REGION',    /* Required */
+    Region: 'COS_REGION', /* Required */
     Key: 'test.nodejs',              /* Required */
     StorageClass: 'STANDARD',
     Body: Buffer.from('Hello COS'),
@@ -203,7 +201,7 @@ cos.putObject({
 });
 ```
 
-### Using the WeChat Mini Program SDK
+### Using the Weixin Mini Program SDK
 
 ```
 var COS = require('cos-wx-sdk-v5');
@@ -214,7 +212,7 @@ var cos = new COS({
  
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'COS_REGION',    /* Required */
+    Region: 'COS_REGION', /* Required */
     Key: 'test.js',              /* Required */
     StorageClass: 'STANDARD',
     Body: 'Hello COS',
@@ -238,7 +236,7 @@ $region = "COS_REGION"; // Set the default bucket region
 $cosClient = new Qcloud\Cos\Client(
    array(
        'region' => $region,
-       'schema' => 'https', // Protocol, which is http by default
+       'schema' => 'https', // Protocol, which is `http` by default
        'credentials'=> array(
            'secretId'  => $secretId ,
            'secretKey' => $secretKey)));
@@ -269,11 +267,11 @@ QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 2. [NSURL fileURLWithPath:@"/var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
 */
 NSURL* url = [NSURL fileURLWithPath:@"file URL"];
-// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket
+// Bucket name in the format of BucketName-Appid, which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
 put.bucket = @"examplebucket-1250000000";
 // Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 put.object = @"exampleobject";
-// Content of the object to be uploaded. You can pass variables of the `NSData*` or `NSURL*` type
+// Content of the object to be uploaded. You can pass variables of the `NSData*` or `NSURL*` type.
 put.body =  url;
 // Monitor the upload progress
 [put setSendProcessBlock:^(int64_t bytesSent,
