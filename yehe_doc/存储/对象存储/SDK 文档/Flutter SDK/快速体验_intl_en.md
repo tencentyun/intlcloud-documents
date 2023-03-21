@@ -29,25 +29,25 @@ Download the demo from the repository on [GitHub](https://github.com/TencentClou
 #### Querying a bucket list
 Open the sample app, and you will see all the buckets that you have created.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/838e295d674eead3a71c011562ad431f.png" style="width:40%;" />
+
 
 #### Creating a bucket
 Click **+Create Bucket** in the top-right corner to open the configuration page, enter the bucket name and select the bucket [region](https://www.tencentcloud.com/document/product/436/6224).
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/90218ceb7e119d3db7e8868031aa2e95.png" style="width:40%;" />
+
 
 #### Querying an object list
 
 Click a bucket, and you will see all the files and folders that it contains.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/7719d2b05a7585901d9219735dfddfa2.png" style="width:40%;" />
+
 
 #### Uploading an object
 On the file list page, click **Upload** in the top-right corner and select the file to be uploaded.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e100bd47cd46d42bf50219903f39657d.png" style="width:40%;" />
+
 
 #### Downloading an object
 In the object list, click **Download** below a file to download it.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/9b2412a4b41276b8b186e8faffb99130.png" style="width:40%;" />
+
