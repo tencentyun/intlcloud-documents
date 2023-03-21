@@ -105,7 +105,7 @@ cd bin && ./cos_demo #运行demo
 2. 安装 CMake 工具
 从 [CMake官网](https://cmake.org/download/) 下载 Windows 版本的 CMake 编译工具，并将 `${CMake的安装路径}\bin`配置在 Windows 的系统环境变量 Path 中。
 3. 编译 SDK 
- i. 下载 [XML Windows C++ SDK 源码](https://github.com/tencentyun/cos-cpp-sdk-v5/tree/windows_dev) 到您的开发环境。
+ i. 下载 [XML Windows C++ SDK 源码](https://github.com/tencentyun/cos-cpp-sdk-v5) 到您的开发环境。
  ii. 打开 Windows 的命令行，cd 到 C++ SDK 的源码目录下，执行以下命令：
 ```shell
 mkdir build
@@ -114,7 +114,7 @@ cmake .. #生成Win32 makefile
 cmake -G "Visual Studio 15 Win64" .. #生成Win64 makefile
 ```
  iii. 使用 visual studio 2017 打开解决方案资源管理器，进行编译。
-4. 测试 demo <br>
+4. 测试 demo 
 >? 如果不需要测试 demo，可跳过此步骤。
 >
 修改 demo 代码并编译，生成的 cos_demo.exe 在 bin 目录中，修改 bin/config.json 可运行 cos_demo.exe。
@@ -188,6 +188,9 @@ undefined reference to `qcloud_cos::CosConfig::CosConfig(std::__cxx11::basic_str
 
 ### 初始化
 
+>!
+> - 建议用户 [使用临时密钥](https://www.tencentcloud.com/document/product/436/14048) 调用 SDK，通过临时授权的方式进一步提高 SDK 使用的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://www.tencentcloud.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+> - 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://www.tencentcloud.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
 配置文件各字段介绍：
 
 ```
@@ -275,7 +278,6 @@ int main(int argc, char *argv[]) {
         // 创建成功
     } else {
         // 创建存储桶失败，可以调用 CosResult 的成员函数输出错误信息，例如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -320,7 +322,6 @@ int main(int argc, char *argv[]) {
         // 查询存储桶列表成功
     } else {
         // 查询存储桶列表失败，可以调用 CosResult 的成员函数输出错误信息，比如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -358,7 +359,6 @@ int main(int argc, char *argv[]) {
         // 上传文件成功
     } else {
         // 上传文件失败，可以调用 CosResult 的成员函数输出错误信息，比如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -399,7 +399,6 @@ int main(int argc, char *argv[]) {
         // 查询对象列表成功
     } else {
         // 查询对象列表失败，可以调用 CosResult 的成员函数输出错误信息，例如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -438,7 +437,6 @@ int main(int argc, char *argv[]) {
         // 下载文件成功
     } else {
         // 下载文件失败，可以调用 CosResult 的成员函数输出错误信息，例如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -474,7 +472,6 @@ int main(int argc, char *argv[]) {
         // 删除对象成功
     } else {
         // 删除对象失败，可以调用 CosResult 的成员函数输出错误信息，例如 requestID 等
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
