@@ -114,7 +114,7 @@ cmake .. # Generate the Windows 32-bit Makefile
 cmake -G "Visual Studio 15 Win64" .. # Generate the Windows 64-bit Makefile
 ```
  iii. Use Visual Studio 2017 to open the Solution Explorer and perform compilation.
-4. Run the demo.<br>
+4. Run the demo.
 >?You can skip this step if you don't need to test the demo.
 >
 Modify the demo code and compile it. The generated `cos_demo.exe` file is in the `bin` directory. You can modify `bin/config.json` to run `cos_demo.exe`.
@@ -188,9 +188,13 @@ The section below describes how to use the COS C++ SDK to perform basic operatio
 
 ### Initialization
 
+>!
+>- We recommend you use a sub-account key and environment variables to call the SDK for security purposes. When authorizing a sub-account, follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
+>- If you must use a permanent key, we recommend you follow the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to limit the scope of permission on the permanent key.
+
 Fields in the configuration file are as described below:
 
-```
+``` bash
 {
 "SecretId":"********************************", // Replace the value with your `SecretId`, which can be viewed at https://console.cloud.tencent.com/cam/capi.
 "SecretKey":"*******************************", // Replace the value with your `SecretKey`, which can be viewed at https://console.cloud.tencent.com/cam/capi.
@@ -275,7 +279,6 @@ int main(int argc, char *argv[]) {
         // Created successfully
     } else {
         // Failed to create the bucket. You can call the CosResult member functions to output the error information such as the `requestID`.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -320,7 +323,6 @@ int main(int argc, char *argv[]) {
         // Queried the bucket list successfully
     } else {
         // Failed to query the bucket list. You can call the CosResult member functions to output the error information such as the `requestID`.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -358,7 +360,6 @@ int main(int argc, char *argv[]) {
         // Uploaded the file successfully
     } else {
         // Failed to upload the file. You can call the CosResult member functions to output the error information such as the `requestID`.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -399,7 +400,6 @@ int main(int argc, char *argv[]) {
         // Queried the object list successfully
     } else {
         // Failed to query the object list. You can call the CosResult member functions to output the error information such as the `requestID`.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -438,7 +438,6 @@ int main(int argc, char *argv[]) {
         // Downloaded the file successfully
     } else {
         // Failed to download the file. You can call the CosResult member functions to output the error information such as the `requestID`.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
@@ -474,7 +473,6 @@ int main(int argc, char *argv[]) {
         // Deleted the object successfully
     } else {
         // Failed to delete the object. You can call the CosResult member functions to output the error information such as the `requestID`.
-        std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
         std::cout << "ErrorMsg=" << result.GetErrorMsg() << std::endl;
