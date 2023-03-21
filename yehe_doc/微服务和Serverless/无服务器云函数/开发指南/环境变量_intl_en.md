@@ -6,7 +6,7 @@ The configured environment variables will be configured into the OS environment 
 
 ### Adding an environment variable in the console
 
-1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
+1.Log in to the [Serverless console](https://console.cloud.tencent.com/scf) and click **Function Service** on the left sidebar
 2. When creating or editing a function, you can add environment variables in "Environment Variable".
    Environment variables usually appear as `key-value` pairs. Enter the required environment variable key in the first input box and the required value in the second one. Note that the value of `key` or `value` can contain 2–64 bytes of letters, digits, and underscores and must begin with a letter.
 
@@ -62,11 +62,11 @@ console.log(value)
 ```
 
 - **In a Java runtime environment**, the way to read the environment variables varies by temporary authorized fields and other fields:
- - For temporary authorized fields (including `TENCENTCLOUD_SESSIONTOKEN`, `TENCENTCLOUD_SECRETID`, and `TENCENTCLOUD_SECRETKEY`), the way to read the environment variables is as follows:
+    - For temporary authorized fields (including `TENCENTCLOUD_SESSIONTOKEN`, `TENCENTCLOUD_SECRETID`, and `TENCENTCLOUD_SECRETKEY`), the way to read the environment variables is as follows:
 ```
 System.out.println("value: "+ System.getProperty("key"));
 ```
- - For other fields, the way to read the environment variables is as follows:
+    - For other fields, the way to read the environment variables is as follows:
 ```
 System.out.println("value: "+ System.getenv("key"));
 ```
