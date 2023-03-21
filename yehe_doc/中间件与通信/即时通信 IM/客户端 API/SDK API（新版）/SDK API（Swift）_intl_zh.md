@@ -58,7 +58,6 @@
 | [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.addadvancedmsglistener(listener:)) | 设置高级消息的事件监听器，<br/> 请不要同 [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager.html#v2timmanager.addsimplemsglistener(listener:)) 混用 |
 | [removeAdvancedMsgListener](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.removeadvancedmsglistener(listener:)) | 移除高级消息监听器 |
 | [createTextMessage](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.createtextmessage(text:)) | 创建文本消息 |
-| [createTextAtMessage](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.createtextatmessage(text:atuserlist:)) | 创建 @ 文本消息 |
 | [createCustomMessage](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.createcustommessage(data:)) | 创建自定义消息 |
 | [createImageMessage](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.createimagemessage(imagepath:)) | 创建图片消息 |
 | [createSoundMessage](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.createsoundmessage(audiofilepath:duration:)) | 创建语音消息 |
@@ -69,6 +68,7 @@
 | [createMergerMessage](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.createmergermessage(messagelist:title:abstractlist:compatibletext:)) | 创建合并转发消息 |
 | [createForwardMessage](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.createforwardmessage(message:)) | 创建单条转发消息 |
 | [createTargetedGroupMessage](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.createtargetedgroupmessage(message:receiverlist:)) | 创建定向群消息 |
+| [createAtSignedGroupMessage](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.createatsignedgroupmessage(message:atuserlist:)) | 创建带 @ 标记的群消息 |
 | [sendMessage](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.sendmessage(message:receiver:groupid:priority:onlineuseronly:offlinepushinfo:progress:succ:fail:)) | 发送消息，消息对象可以由 createXXXMessage 接口创建得来 |
 | [setC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.setc2creceivemessageopt(useridlist:opt:succ:fail:)) | 设置单聊消息秒打扰 |
 | [getC2CReceiveMessageOpt](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.getc2creceivemessageopt(useridlist:succ:fail:)) | 获取单聊消息免打扰状态 |
@@ -95,6 +95,7 @@
 | [setMessageExtensions](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.setmessageextensions(message:extensions:succ:fail:)) | 设置消息扩展 |
 | [getMessageExtensions](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.getmessageextensions(message:succ:fail:)) | 获取消息扩展 |
 | [deleteMessageExtensions](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.deletemessageextensions(message:keys:succ:fail:)) | 删除消息扩展 |
+| [translateText](https://im.sdk.qcloud.com/doc/en/swift_V2TIMManager+Message.html#v2timmanager.translatetext(sourcetextlist:sourcelanguage:targetlanguage:completion:)) | 翻译文本消息 |
 
 
 
@@ -102,8 +103,8 @@
 
 腾讯云 IM SDK 支持四种预设的群组类型，每种类型都有其适用场景：
 
-- 工作群（Work） ：类似普通微信群，创建后不能自由加入，必须由已经在群的用户邀请入群。
-- 公开群（Public）   ：类似 QQ 群，用户申请加入，但需要群主或管理员审批。
+- 工作群（Work） ：创建后不能自由加入，必须由已经在群的用户邀请入群。
+- 公开群（Public）   ：用户申请加入，但需要群主或管理员审批。
 - 会议群（Meeting）：适合跟 [TRTC](https://cloud.tencent.com/product/trtc) 结合实现视频会议和在线教育等场景，支持随意进出，支持查看进群前的历史消息。
 - 直播群（AVChatRoom）：适合直播弹幕聊天室等场景，支持随意进出，人数无上限。
 
@@ -147,7 +148,7 @@
 
 ## 会话列表相关接口
 
-会话列表，即登录微信或 QQ 后首屏看到的列表，包含会话节点、会话名称、群名称、最后一条消息以及未读消息数等元素。
+会话列表，即登录后首屏看到的列表，包含会话节点、会话名称、群名称、最后一条消息以及未读消息数等元素。
 
 | API | 描述 |
 |---------|---------|

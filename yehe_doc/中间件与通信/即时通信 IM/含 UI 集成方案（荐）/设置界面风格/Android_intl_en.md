@@ -1,13 +1,13 @@
-﻿This document describes how to set the UI styles for Android.
+﻿This document describes how to set the UI styles for Android. For more hands-on teaching videos, see [Setting Styles (Android)](https://cloud.tencent.com/edu/learning/course-3130-57629).
 
 ## Setting the Conversation List UI Styles
 The conversation list UI consists of the title bar TitleBarLayout and list area ConversationListLayout. Each part provides UI styles and event registration APIs that can be modified.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/7d4c12e1246ce6b6c786114eda7b3532.png" style="zoom:50%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/d4fa84742e49ed43faa33614f74dbe25.png" style="zoom:50%;"/>
 
 ### Setting the title style
 The title bar itself has all the features of a view. In addition, it is divided into three parts: left group (LeftGroup), middle, and right group (RightGroup).
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/6dec8fa21bb42ea6c70d6e898634c28d.png" style="zoom:30%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/a6f5e4e2d544041827b7936229a00215.png" style="zoom:30%;"/>
 
 To make custom modifications, see [ITitleBarLayout](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUICore/tuicore/src/main/java/com/tencent/qcloud/tuicore/component/interfaces/ITitleBarLayout.java).
 For example, the following code hides LeftGroup, sets the title in the middle, and hides the text and image buttons on the right in LeftGroup:
@@ -64,24 +64,13 @@ public static void customizeConversation(final ConversationLayout layout) {
 }
 ```
 
-The effects of different text font sizes and profile photos with rounded corners are as follows:
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">Default Styles</th>
-    <th style="text-align:center;" width="300px">Custom Styles</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/866f324419ee191b0b6aa72f13c9016d.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/e5558f38454d9e6600ed19ee1848c74d.png" />     </td>
-	 </tr>
-</table>
 
-For more information, see [ConversationLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIConversation/tuiconversation/src/main/java/com/tencent/qcloud/tuikit/tuiconversation/setting/ConversationLayoutSetting.java).
+For more information, see [ConversationLayoutSetting.java](https://github.com/TencentCloud/TIMSDK/blob/master/Android/TUIKit/TUIConversation/tuiconversation/src/main/java/com/tencent/qcloud/tuikit/tuiconversation/classicui/setting/ConversationLayoutSetting.java).
 
 
 ### Setting the profile photo style
 
-The IM SDK does not store profile photos. Therefore, the integrator needs to have a profile photo storage API to get profile photo URLs. The following shows how to use TUIKit to set a profile photo by using a random profile photo API as an example.
+The Chat SDK does not store profile photos. Therefore, the integrator needs to have a profile photo storage API to get profile photo URLs. The following shows how to use TUIKit to set a profile photo by using a random profile photo API as an example.
 First, you need to upload a profile photo to your personal profile page and call the profile modification API.
 
 ```java
@@ -100,7 +89,7 @@ V2TIMManager.getInstance().setSelfInfo(v2TIMUserFullInfo, new V2TIMCallback() {
     }
 });
 ```
-Conversation list profile photo, which is displayed in [ConversationCommonHolder.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIConversation/tuiconversation/src/main/java/com/tencent/qcloud/tuikit/tuiconversation/ui/view/ConversationCommonHolder.java):
+Conversation list profile photo, which is displayed in [ConversationCommonHolder.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIConversation/tuiconversation/src/main/java/com/tencent/qcloud/tuikit/tuiconversation/classicui/widget/ConversationCommonHolder.java):
 ```java
 conversationIconView.setConversation(conversation);
 ```
@@ -108,7 +97,7 @@ conversationIconView.setConversation(conversation);
 ## Setting the Chat UI Styles
 The chat UI includes the tile bar (TitleBarLayout), which is the same as that of the conversation list UI. The chat UI also includes the notice area (NoticeLayout), message area (MessageRecyclerView), and input area (InputView), as shown in the following figure:
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f77f84e36532a96f084b8ce7e4f8a3a8.png" style="zoom:50%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/3f32af89097f69fd0c5961e5fdf8ee0c.png" style="zoom:50%;"/>
 
 ```java
 /**
@@ -132,7 +121,7 @@ MessageRecyclerView getMessageLayout();
 NoticeLayout getNoticeLayout();
 ```
 
-For more information, see [ChatLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/setting/ChatLayoutSetting.java).
+For more information, see [ChatLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/classicui/setting/ChatLayoutSetting.java).
 
 
 ### Setting the notice area (NoticeLayout) style
@@ -140,7 +129,7 @@ For more information, see [ChatLayoutSetting.java](https://github.com/tencentyun
 The notice area consists of two TextViews, as shown in the following figure:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/157fb6c48a679a4be94299aa16c61115.png" style="zoom:30%;"/>
 The effect is shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/86738ac0ff0706f902bfe0db7704db93.png" style="zoom:70%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/86738ac0ff0706f902bfe0db7704db93.png" style="zoom:40%;"/>
 
 
 ```java
@@ -163,9 +152,9 @@ noticeLayout.setOnNoticeClickListener(new View.OnClickListener() {
 
 ### Setting the message area (MessageRecyclerView) style
 
-MessageRecyclerView is inherited from RecyclerView. This document describes how to customize the chat background, bubbles, text, and nicknames. For more information, see [IMessageProperties.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/ui/interfaces/IMessageProperties.java).
+MessageRecyclerView is inherited from RecyclerView. This document describes how to customize the chat background, bubbles, text, and nicknames. For more information, see [IMessageProperties.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/classicui/interfaces/IMessageProperties.java).
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/d73552bed43fc4686961ba179bc28ebf.png" style="zoom:90%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/d73552bed43fc4686961ba179bc28ebf.png" style="zoom:30%;"/>
 
 ### Setting the chat UI background color
 You can customize the chat UI background color. The following is a code sample:
@@ -175,19 +164,6 @@ MessageRecyclerView messageRecyclerView = layout.getMessageLayout();
 ////// Set the chat background //////
 messageRecyclerView.setBackground(new ColorDrawable(0xB0E2FF00));
 ```
-
-The display effects of different chat UI background colors are as follows:
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">Default Color</th>
-    <th style="text-align:center;" width="300px">Custom Color</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f907aabfe3761b34fc74b4c79845ef60.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/2ccf21d6aa52ec8a84d6de9d01fb77eb.png" />     </td>
-	 </tr>
-</table>
-
 
 #### Setting the sender's profile photo style
 When displaying a user, TUIKit reads the URL of the user's profile photo from the user's profile and displays the profile photo.
@@ -228,16 +204,6 @@ messageRecyclerView.setAvatarRadius(50);
 messageRecyclerView.setAvatarSize(new int[]{68, 68});
 ```
 
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">Default Profile Photo Style</th>
-    <th style="text-align:center;" width="300px">Custom Profile Photo Style</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f3aa98a0b575b668e8f6cf86d6ab003c.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/b4f3d8aa8da9c20c8740211692bfc27e.png" />     </td>
-	 </tr>
-</table>
 
 #### Setting bubble background colors
 The receiver's bubbles are on the left and your own bubbles are on the right. You can customize the bubble background for both parties.
@@ -252,19 +218,6 @@ messageRecyclerView.setRightBubble(context.getResources().getDrawable(R.drawable
 messageRecyclerView.setLeftBubble(context.getResources().getDrawable(R.drawable.chat_bubble_other_bg_lively));
 ```
 
-The display effects of different bubble background images are as follows:
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">Default Bubble Background Image</th>
-    <th style="text-align:center;" width="300px">Custom Bubble Background Image</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f3aa98a0b575b668e8f6cf86d6ab003c.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/3ccba378c6f8606eef9f34bc8083ab99.png" />     </td>
-	 </tr>
-</table>
-
-#### Setting the sender's nickname style
 You can customize the nickname style, including the font size and color. The nickname styles of both parties must be the same.
 Sample code:
 
@@ -276,17 +229,6 @@ messageRecyclerView.setNameFontSize(12);
 messageRecyclerView.setNameFontColor(0x8B5A2B00);
 ```
 
-The display effects of different nickname colors are as follows:
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">Default Nickname Color</th>
-    <th style="text-align:center;" width="300px">Custom Nickname Color</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f3aa98a0b575b668e8f6cf86d6ab003c.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/8a6e500d6109a1922b879480bfd62728.png" />     </td>
-	 </tr>
-</table>
 
 #### Setting the chat content style
 You can customize the font size and color for both parties, but the sender and receiver must use the same font size.
@@ -303,17 +245,6 @@ messageRecyclerView.setRightChatContentFontColor(0xA9A9A900);
 messageRecyclerView.setLeftChatContentFontColor(0xA020F000);
 ```
 
-The display effects of different chat content font styles are as follows:
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">Default Font Style</th>
-    <th style="text-align:center;" width="300px">Custom Font Style</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f3aa98a0b575b668e8f6cf86d6ab003c.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/614bacdb5c07f856eecc43d4a136b9ec.png" />     </td>
-	 </tr>
-</table>
 
 #### Setting the chat timeline style
 
@@ -331,17 +262,6 @@ messageRecyclerView.setChatTimeFontSize(20);
 messageRecyclerView.setChatTimeFontColor(0xEE00EE00);
 ```
 
-The display effects of different timeline styles are as follows:
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">Default Timeline Style</th>
-    <th style="text-align:center;" width="300px">Custom Timeline Style</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f3aa98a0b575b668e8f6cf86d6ab003c.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/5976a8c814c5215cdf14eae2d0d1690c.png" />     </td>
-	 </tr>
-</table>
 
 #### Setting the tips message style
 
@@ -359,21 +279,10 @@ messageRecyclerView.setTipsMessageFontSize(20);
 messageRecyclerView.setTipsMessageFontColor(0x7CFC0000);
 ```
 
-The display effects of different tips messages are as follows:
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">Default Tips Message Style</th>
-    <th style="text-align:center;" width="300px">Custom Tips Message Style</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/a0652ef9215ce6f84dc76174d5d56e39.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/1ae13d10a19ff11c80377aa3534ae498.png" />     </td>
-	 </tr>
-</table>
 
 ### Setting the input area InputView
 The input area (InputView) contains audio, text, emoji, and more (+) input options.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/53abac7901a717b6a58f2903339dfe0e.png" style="zoom:90%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/53abac7901a717b6a58f2903339dfe0e.png" style="zoom:30%;"/>
 
 #### Hiding undesired features
 
@@ -394,8 +303,6 @@ inputView.disableVideoRecordAction(true);
 
 #### Adding custom features
 You can customize and add action units to the "+" panel to provide more features.
-
-![Adding custom features](https://main.qcloudimg.com/raw/727056dd0e975dbaea86927040b385ab.gif)
 
 The following code shows how to hide the "send file" feature and add an action unit which sends a message:
 
@@ -476,7 +383,3 @@ public static class CustomInputFragment extends BaseInputFragment {
     }
 }
 ```
-The effect is shown below:
-
-![Replacing the panel](https://main.qcloudimg.com/raw/d347f9e12358fb00d0c517e6a7aa44a6.gif)
-

@@ -29,7 +29,7 @@ TUIKit implements the sending and display for basic message types such as text, 
 </table>
 
 
-## Customizing a Message
+## Custom Message
 If the basic message types do not meet your requirements, you can customize messages as needed. The following uses sending a custom hypertext message that can redirect to the browser as an example to help you quickly understand the implementation process.
 The built-in custom message style of TUIKit is shown in the figure below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/ccd1537415821a33b0c860a22d92f830.png" width = "300"/>
@@ -39,16 +39,13 @@ The built-in custom message style of TUIKit is shown in the figure below:
 
 
 ## Displaying a Custom Message
-The `cell` element of the built-in custom message of TUIKit is shown in the figure below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b7ce3028a88112e0f8017fbf5806d891.png" width = "500"/>
-
-You can receive a custom message via the `onRecvNewMessage` function in [TUIMessageDataProvider.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/DataProvider/TUIMessageDataProvider.m),
+You can receive a custom message via the `onRecvNewMessage` function in [TUIMessageBaseDataProvider.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/BaseDataProvider/TUIMessageBaseDataProvider.m),
 and the received custom message will be displayed in `Cell` mode in the message list. The data required for `Cell` drawing is called `CellData`.
 
 The following introduces how to display a custom message.
 
 ### Creating custom CellData
-1. Create the [TUILinkCellData.h](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/Cell/CellData/Custom/TUILinkCellData.h) and [TUILinkCellData.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/Cell/CellData/Custom/TUILinkCellData.m) files in `TUIChat/Cell/CellData/Custom`. Inherit data from `TUIMessageCellData` to `CellData` to store the text to display and the link to redirect.
+1. Create the [TUILinkCellData.h](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/UI_Classic/Cell/CellData/Custom/TUILinkCellData.h) and [TUILinkCellData.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/UI_Classic/Cell/CellData/Custom/TUILinkCellData.m) files in `TUIChat/UI_Classic/Cell/CellData/Custom`. Inherit data from `TUIMessageCellData` to `CellData` to store the text to display and the link to redirect.
 Sample code:
 ```objectivec
 @interface TUILinkCellData : TUIMessageCellData
@@ -103,7 +100,7 @@ Sample code:
 ```
 
 ### Creating custom Cell
-1. Create the [TUILinkCell.h](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/Cell/CellUI/Custom/TUILinkCell.h) and [TUILinkCell.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/Cell/CellUI/Custom/TUILinkCell.m) files in `TUIChat/Cell/CellUI/Custom`. Inherit data from `TUIMessageCell` to `Cell` to draw `TUILinkCellData` data.
+1. Create the [TUILinkCell.h](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/UI_Classic/Cell/CellUI/Custom/TUILinkCell.h) and [TUILinkCell.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/UI_Classic/Cell/CellUI/Custom/TUILinkCell.m) files in `TUIChat/UI_Classic/Cell/CellUI/Custom`. Inherit data from `TUIMessageCell` to `Cell` to draw `TUILinkCellData` data.
 Sample code:
 ```objectivec
 @interface TUILinkCell : TUIMessageCell
@@ -160,7 +157,7 @@ Sample code:
 ```
 
 ### Registering the custom Cell and CellData
-After `cell` and `cellData` are created, you need to register the `cell` and `cellData` information in the `load` function in [TUIMessageDataProvider.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/DataProvider/TUIMessageDataProvider.m).
+After `cell` and `cellData` are created, you need to register the `cell` and `cellData` information in the `load` function in [TUIMessageDataProvider.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/UI_Classic/DataProvider/TUIMessageDataProvider.m).
 After the registration is completed, when a message is received, the message list automatically finds the corresponding `cellData` to process message data based on `businessID`. When refreshing the UI, the message list will also automatically create the corresponding `Cell` to draw `cellData` data based on `businessID`.
 
 Sample code:
@@ -181,9 +178,9 @@ Sample code:
 @end
 ```
 
-## Sending a Custom Message
-As the figure below shows, the custom message sending button consists of the text `title` and image `image`. You can register the button using the `load` function in [TUIChatDataProvider.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/DataProvider/TUIChatDataProvider.m).
-<img src="https://qcloudimg.tencent-cloud.cn/raw/25956eb7a545e59ddcdf8620a35bbf26.png" width = "500"/>
+## Sending Custom Messages
+As the figure below shows, the custom message sending button consists of the text `title` and image `image`. You can register the button using the `load` function in [TUIChatDataProvider.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/UI_Classic/DataProvider/TUIChatDataProvider.m).
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e7c26ad63941fb2bc3fb8277bf037ac4.png" width = "500"/>
 	
 
 Sample code:
@@ -199,7 +196,7 @@ Sample code:
 @end
 ```
 
-You can create a custom message to be sent when the button is clicked by calling the [createCustomMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a7a38c42f63a4e0c9e89f6c56dd0da316) API in the `didSelectMoreCell` callback of [TUIC2CChatViewController.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/UI/Chat/TUIC2CChatViewController.m). In the configuration, the `data` parameter can be comprised of `json` data. You can define a `businessID` field in the `json` data to uniquely identify the message.
+You can create a custom message to be sent when the button is clicked by calling the [createCustomMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a7a38c42f63a4e0c9e89f6c56dd0da316) API in the `didSelectMoreCell` callback of [TUIC2CChatViewController.m](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKit/TUIChat/UI_Classic/Chat/TUIC2CChatViewController.m). In the configuration, the `data` parameter can be comprised of `json` data. You can define a `businessID` field in the `json` data to uniquely identify the message.
 Sample code:
 ```objectivec
 @implementation TUIMessageController
@@ -208,7 +205,7 @@ Sample code:
     if ([cell.data.key isEqualToString:@"custom_link_btn"]) { 
         // Create the custom message and set the message `businessID`, display text, and redirection link (you need to implement the following code yourself)
         NSString *businessID = @"custom_message_link";
-        NSString *text = @"Welcome to Tencent Cloud IM group";
+        NSString *text = @"Welcome to Tencent Cloud Chat group";
         NSString *link = @"https://cloud.tencent.com/document/product/269/3794";
         NSDictionary *param = @{@"businessID": businessID, @"text":text, @"link":link};
         NSData *data = [NSJSONSerialization dataWithJSONObject:param options:0 error:&error];
@@ -220,5 +217,3 @@ Sample code:
 ```
 
 [](id:feedback)
-
-

@@ -28,7 +28,8 @@ TUIKit implements the sending and display for basic message types such as text, 
      </tr> 
 </table>
 
-## Customizing a Message
+
+## Custom Message
 If the basic message types do not meet your requirements, you can customize messages as needed. The following uses sending a custom hypertext message that can redirect to the browser as an example to help you quickly understand the implementation process.
 The built-in custom message style of TUIKit is shown in the figure below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/ccd1537415821a33b0c860a22d92f830.png" width = "300"/>
@@ -39,7 +40,7 @@ The built-in custom message style of TUIKit is shown in the figure below:
 
 ## Displaying a Custom Message
 The `cell` element of the built-in custom message of TUIKit is shown in the figure below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/04a1898efd5897953ac68ed5140469fc.png" width = "500"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/156b57068a297b308a4bf66fdb9daeff.png" width = "500"/>
 
 You can receive a custom message via the `onRecvNewMessage` method in [ChatPresenter.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/presenter/ChatPresenter.java), and the received custom message will be displayed in `MessageViewHolder` mode in the message list. The data required for `MessageViewHolder` drawing is called `MessageBean`.
 
@@ -105,7 +106,7 @@ public String onGetDisplayString() {
 
 
 ### Implement the MessageViewHolder class
-1. Create the `CustomLinkMessageHolder.java` file in `TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/ui/view/message/viewholder/`. Inherit data from `MessageContentHolder` to `CustomLinkMessageHolder` to implement the bubble style layout and click event of the custom message.
+1. Create the `CustomLinkMessageHolder.java` file in `Android/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/classicui/widget/message/viewholder/CallingMessageHolder.java`. Inherit data from `MessageContentHolder` to `CustomLinkMessageHolder` to implement the bubble style layout and click event of the custom message.
 Sample code:
 <dx-codeblock>
 :::  java
@@ -179,18 +180,28 @@ Sample code:
 :::  java
 private void initMessageType() {
     addCustomMessageType("text_link",                                       // Unique ID of the custom message (Duplicate IDs are not allowed.)
-                        CustomLinkMessageBean.class,                        // MessageBean type of the message, which is the MessageBean class created in step 1
-                        CustomLinkMessageHolder.class);                     // MessageViewHolder type of the message, which is the MessageViewHolder class created in step 2
+                         CustomLinkMessageBean.class);    // MessageBean type of the message, which is the MessageBean class created in step 1
 }
 :::
 </dx-codeblock>
 
+In the `initMessage` method in the `ClassicUIService.java` file, call the `addMessageType` method to register the mapping between the custom message type and message layout.
 
-## Sending a Custom Message
+Sample code:
+<dx-codeblock>
+:::  java
+public void initMessage() {
+    addMessageType(CustomLinkMessageBean.class,       // MessageBean type of the message, which is the MessageBean class created in step 1
+                   CustomLinkMessageHolder.class);                     // MessageViewHolder type of the message, which is the MessageViewHolder class created in step 2
+}
+:::
+</dx-codeblock>
+
+## Sending Custom Messages
 As the figure below shows, the custom message sending button consists of a text title and an image icon.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/2d862d8b8d606219b88bcc1100e953bc.png" width = "500"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e7c26ad63941fb2bc3fb8277bf037ac4.png" width = "500"/>
 
-1. Add code to the `customizeChatLayout` method in [ChatLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/setting/ChatLayoutSetting.java) to add the custom message sending button.
+1. Add code to the `customizeChatLayout` method in [ChatLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/classicui/setting/ChatLayoutSetting.java) to add the custom message sending button.
 Sample code:
 <dx-codeblock>
 :::  java
@@ -214,8 +225,8 @@ unit.setOnClickListener(unit.new OnActionClickListener() {
         Gson gson = new Gson();
         CustomHelloMessage customHelloMessage = new CustomHelloMessage();
         customHelloMessage.businessID = "text_link";
-        customHelloMessage.text = "Welcome to Tencent Cloud IM group";
-        customHelloMessage.link = "https://intl.cloud.tencent.com/document/product/1047";
+        customHelloMessage.text = "Welcome to Tencent Cloud Chat group";
+        customHelloMessage.link = "https://cloud.tencent.com/document/product/269/3794";
         String data = gson.toJson(customHelloMessage);
         TUIMessageBean info = ChatMessageBuilder.buildCustomMessage(data, customHelloMessage.text, customHelloMessage.text.getBytes());
         layout.sendMessage(info, false);
@@ -226,4 +237,3 @@ unit.setOnClickListener(unit.new OnActionClickListener() {
 
 
 [](id:feedback)
-

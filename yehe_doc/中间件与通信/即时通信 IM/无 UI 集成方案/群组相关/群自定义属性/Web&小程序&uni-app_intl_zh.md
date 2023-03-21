@@ -1,0 +1,244 @@
+## 功能描述
+
+基于群属性，我们可以做语聊房的麦位管理。当有人上麦的时候，可以设置一个群属性管理上麦人信息。当有人下麦的时候，可以删除对应群属性。其他成员可以通过获取群属性列表来展示麦位列表。
+
+>!
+>- v2.14.0 起仅支持直播群（AVChatRoom）。
+>- v2.25.0 起同时支持 AVChatRoom、Public、Meeting、Work、Community 五种群类型。
+
+群属性功能特性有：
+1. 最多支持 16 个群属性，每个群属性的大小最大支持 4k，所有群属性的大小最大支持 16k。
+2. `initGroupAttributes`、`setGroupAttributes`、`deleteGroupAttributes` 接口 SDK 限制为单个登录用户 5 秒 10 次，超过后回调 2996 错误码。
+3. `getGroupAttributes` 接口 SDK 限制为单个登录用户 5 秒 20 次，超过后回调 2996 错误码。
+4. 当每次登录成功后初次修改群属性时，请您先调用 getGroupAttributes 拉取到最新的群属性之后，再发起修改操作。
+5. 当多个用户同时修改同一个群属性时，只有第一个用户可以执行成功，其它用户会收到 10056 错误码；收到这个错误码之后，请您调用 getGroupAttributes 把本地保存的群属性更新到最新之后，再发起修改操作。
+6. 登录成功后直播群（AVChatRoom）使用该功能必须先调用 [joinGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#joinGroup) 加入直播群，Public、Meeting、Work、Community 类型群组如果已加群，则不需要重复进行加群操作。
+
+### 初始化群属性
+
+**接口**
+
+<dx-codeblock>
+:::  js
+
+tim.initGroupAttributes(options);
+
+:::
+</dx-codeblock>
+
+**参数**
+
+参数 options 为 Object 类型，包含的属性值如下：
+
+| Name               | Type     | Description                                                  |
+| ------------------ | -------- | ------------------------------------------------------------ |
+| groupID     | String | 		群组 ID |
+| groupAttributes | Object | 群属性 |
+
+**返回值**
+
+`Promise` 对象。
+
+**示例**
+
+<dx-codeblock>
+:::  js
+
+let promise = tim.initGroupAttributes({
+  groupID: 'group1',
+  groupAttributes: { key1: 'value1', key2: 'value2' }
+});
+promise.then(function(imResponse) { // 初始化成功
+  console.log(imResponse.data.groupAttributes); // 初始化成功的群属性
+}).catch(function(imError) { // 初始化失败
+  console.warn('initGroupAttributes error:', imError); // 初始化群属性失败的相关信息
+});
+
+:::
+</dx-codeblock>
+
+### 设置群属性
+
+**接口**
+
+<dx-codeblock>
+:::  js
+
+tim.setGroupAttributes(options);
+
+:::
+</dx-codeblock>
+
+**参数**
+
+参数 options 为 Object 类型，包含的属性值如下：
+
+| Name               | Type     | Description                                                  |
+| ------------------ | -------- | ------------------------------------------------------------ |
+| groupID     | String | 		群组 ID |
+| groupAttributes | Object | 群属性 |
+
+**返回值**
+
+`Promise` 对象。
+
+**示例**
+
+<dx-codeblock>
+:::  js
+
+let promise = tim.setGroupAttributes({
+  groupID: 'group1',
+  groupAttributes: { key1: 'value1', key2: 'value2' }
+});
+promise.then(function(imResponse) { // 设置成功
+  console.log(imResponse.data.groupAttributes); // 设置成功的群属性
+}).catch(function(imError) { // 设置失败
+  console.warn('setGroupAttributes error:', imError); // 设置群属性失败的相关信息
+});
+
+:::
+</dx-codeblock>
+
+
+### 删除群属性
+
+>! keyList 传入非空数组表示删除指定的群属性 key-value，传入空数组表示删除全部群属性。
+
+**接口**
+
+<dx-codeblock>
+:::  js
+
+tim.deleteGroupAttributes(options);
+
+:::
+</dx-codeblock>
+
+**参数**
+
+参数 options 为 Object 类型，包含的属性值如下：
+
+| Name               | Type     | Description                                                  |
+| ------------------ | -------- | ------------------------------------------------------------ |
+| groupID     | String | 		群组 ID |
+| keyList | Array | 群属性 key 列表 |
+
+**返回值**
+
+`Promise` 对象。
+
+**示例**
+
+<dx-codeblock>
+:::  js
+
+// 删除指定的群属性 key-value
+let promise = tim.deleteGroupAttributes({
+  groupID: 'group1',
+  keyList: ['key1', 'key2']
+});
+promise.then(function(imResponse) { // 删除成功
+  console.log(imResponse.data.keyList); // 删除成功的群属性 key 列表
+}).catch(function(imError) { // 删除失败
+  console.warn('deleteGroupAttributes error:', imError); // 删除群属性失败的相关信息
+});
+
+:::
+</dx-codeblock>
+
+<dx-codeblock>
+:::  js
+
+// 删除全部群属性
+let promise = tim.deleteGroupAttributes({
+  groupID: 'group1',
+  keyList: []
+});
+promise.then(function(imResponse) { // 删除成功
+  console.log(imResponse.data.keyList); // 删除成功的群属性 key 列表
+}).catch(function(imError) { // 删除失败
+  console.warn('deleteGroupAttributes error:', imError); // 删除群属性失败的相关信息
+});
+
+:::
+</dx-codeblock>
+
+### 获取群属性
+
+>! keyList 传入非空数组表示获取指定的群属性，传入空数组表示获取全部群属性。
+
+**接口**
+
+<dx-codeblock>
+:::  js
+
+tim.getGroupAttributes(options);
+
+:::
+</dx-codeblock>
+
+**参数**
+
+参数 options 为 Object 类型，包含的属性值如下：
+
+| Name               | Type     | Description                                                  |
+| ------------------ | -------- | ------------------------------------------------------------ |
+| groupID     | String | 		群组 ID |
+| keyList | Array | 群属性 key 列表 |
+
+**返回值**
+
+`Promise` 对象。
+
+**示例**
+
+<dx-codeblock>
+:::  js
+
+// 获取指定的群属性
+let promise = tim.getGroupAttributes({
+  groupID: 'group1',
+  keyList: ['key1', 'key2']
+});
+promise.then(function(imResponse) { // 获取成功
+  console.log(imResponse.data.groupAttributes); // 指定 key 的群属性
+}).catch(function(imError) { // 获取失败
+  console.warn('getGroupAttributes error:', imError); // 获取群属性失败的相关信息
+});
+
+:::
+</dx-codeblock>
+
+<dx-codeblock>
+:::  js
+
+// 获取全部群属性
+let promise = tim.getGroupAttributes({
+  groupID: 'group1',
+  keyList: []
+});
+promise.then(function(imResponse) { // 获取成功
+  console.log(imResponse.data.groupAttributes); // 全部群属性
+}).catch(function(imError) { // 获取失败
+  console.warn('getGroupAttributes error:', imError); // 获取群属性失败的相关信息
+});
+
+:::
+</dx-codeblock>
+
+
+### 监听群属性更新事件
+
+<dx-codeblock>
+:::  js
+
+let onGroupAttributesUpdated = function(event) {
+   const groupID = event.data.groupID // 群组ID
+   const groupAttributes = event.data.groupAttributes // 更新后的群属性
+   console.log(event.data);
+};
+tim.on(TIM.EVENT.GROUP_ATTRIBUTES_UPDATED, onGroupAttributesUpdated);
+
+:::
+</dx-codeblock>

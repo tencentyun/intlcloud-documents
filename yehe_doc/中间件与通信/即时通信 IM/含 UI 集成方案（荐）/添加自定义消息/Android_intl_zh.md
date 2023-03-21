@@ -28,6 +28,7 @@ TUIKit 默认实现了文本、图片、语音、视频、文件等基本消息�
      </tr> 
 </table>
 
+
 ## 自定义消息
 如果基本消息类型不能满足您的需求，您可以根据实际业务需求自定义消息。下文以发送一条可跳转至浏览器的超文本作为自定义消息为例，帮助您快速了解实现流程。
 TUIKit 内置的自定义消息样式如下图所示：
@@ -39,7 +40,7 @@ TUIKit 内置的自定义消息样式如下图所示：
 
 ## 展示自定义消息
 TUIKit 内置的自定义消息 cell 元素如下图所示：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/04a1898efd5897953ac68ed5140469fc.png" width = "500"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/156b57068a297b308a4bf66fdb9daeff.png" width = "500"/>
 
 您可以在 [ChatPresenter.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/presenter/ChatPresenter.java) 的 `onRecvNewMessage` 方法中接收自定义消息。收到的自定义消息最终会以 `MessageViewHolder` 的形式展示在消息列表中，`MessageViewHolder` 绘制所需的数据我们称之为 `MessageBean`。
 
@@ -105,7 +106,7 @@ public String onGetDisplayString() {
 
 
 ### 实现 MessageViewHolder 类
-1. 在 `TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/ui/view/message/viewholder/` 文件夹下新建 `CustomLinkMessageHolder.java` 文件，`CustomLinkMessageHolder` 继承自 `MessageContentHolder` ，用于实现自定义消息气泡的样式布局和点击事件。
+1. 在 `Android/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/classicui/widget/message/viewholder/CallingMessageHolder.java` 文件夹下新建 `CustomLinkMessageHolder.java` 文件，`CustomLinkMessageHolder` 继承自 `MessageContentHolder` ，用于实现自定义消息气泡的样式布局和点击事件。
 示例代码如下：
 <dx-codeblock>
 :::  java
@@ -179,18 +180,28 @@ public void layoutVariableViews(TUIMessageBean msg, int position) {
 :::  java
 private void initMessageType() {
     addCustomMessageType("text_link",                     // 自定义消息唯一标识（注意不能重复）
-                        CustomLinkMessageBean.class,      // 消息 MessageBean 类型，步骤一中创建的 MessageBean 类
-                        CustomLinkMessageHolder.class);   // 消息 MessageViewHolder 类型，步骤二中创建的 MessageViewHolder 类
+                         CustomLinkMessageBean.class);    // 消息 MessageBean 类型，步骤一中创建的 MessageBean 类
 }
 :::
 </dx-codeblock>
 
+在 `ClassicUIService.java` 文件的 `initMessage` 方法中，调用 `addMessageType` 方法注册自定义消息类型与消息布局的映射关系。
+
+示例代码如下：
+<dx-codeblock>
+:::  java
+public void initMessage() {
+    addMessageType(CustomLinkMessageBean.class,       // 消息 MessageBean 类型，步骤一中创建的 MessageBean 类
+                   CustomLinkMessageHolder.class);    // 消息 MessageViewHolder 类型，步骤二中创建的 MessageViewHolder 类
+}
+:::
+</dx-codeblock>
 
 ## 发送自定义消息
 如下图所示，自定义消息发送按钮主要由文本 `title` 和图片 `icon` 组成：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/2d862d8b8d606219b88bcc1100e953bc.png" width = "500"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/e7c26ad63941fb2bc3fb8277bf037ac4.png" width = "500"/>
 
-1. 在 [ChatLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/setting/ChatLayoutSetting.java) 的 `customizeChatLayout` 方法中添加代码，添加自定义消息发送按钮。
+1. 在 [ChatLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/classicui/setting/ChatLayoutSetting.java) 的 `customizeChatLayout` 方法中添加代码，添加自定义消息发送按钮。
 示例代码如下：
 <dx-codeblock>
 :::  java
@@ -215,7 +226,7 @@ unit.setOnClickListener(unit.new OnActionClickListener() {
         CustomHelloMessage customHelloMessage = new CustomHelloMessage();
         customHelloMessage.businessID = "text_link";
         customHelloMessage.text = "欢迎加入云通信IM大家庭！";
-        customHelloMessage.link = "https://intl.cloud.tencent.com/document/product/1047";
+        customHelloMessage.link = "https://cloud.tencent.com/document/product/269/3794";
         String data = gson.toJson(customHelloMessage);
         TUIMessageBean info = ChatMessageBuilder.buildCustomMessage(data, customHelloMessage.text, customHelloMessage.text.getBytes());
         layout.sendMessage(info, false);
@@ -226,4 +237,3 @@ unit.setOnClickListener(unit.new OnActionClickListener() {
 
 
 [](id:feedback)
-

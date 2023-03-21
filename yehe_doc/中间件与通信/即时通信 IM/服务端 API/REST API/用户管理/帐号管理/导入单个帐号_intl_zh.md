@@ -5,19 +5,16 @@
 
 ## 接口调用说明
 ### 请求 URL 示例
-``` 
+```
 https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
-
 ### 请求参数说明
 
  下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https         | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` <li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com`|
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/im_open_login_svc/account_import | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
@@ -74,21 +71,21 @@ https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=
 | 40006 | 设置资料时服务器内部错误，请稍后重试 |
 | 40601 | 资料字段的 Value 长度超过500字节 |
 | 70169 | 服务端内部超时，请稍后重试 |
-| 70398 | 帐号数超限。如需创建多于100个帐号，请将应用升级为专业版，具体操作指引请参见 [购买指引](https://intl.cloud.tencent.com/document/product/1047/34351) |
+| 70398 | 帐号数超限。如需创建多于100个帐号，请将应用升级为专业版，具体操作指引请参见 [购买指引](https://www.tencentcloud.com/document/product/1047/36021) |
 | 70402 | 参数非法，请检查必填字段是否填充，或者字段的填充是否满足协议要求 |
 | 70403 | 请求失败，需要 App 管理员权限 |
 | 70500 | 服务器内部错误，请稍后重试 |
 
 
 ## 接口调试工具
-通过 [REST API 在线调试](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/im_open_login_svc/account_import) 工具调试本接口。
-
-
+通过 [REST API 在线调试](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/im_open_login_svc/account_import) 工具调试本接口。
 
 ## 参考
 
 - 导入多个帐号（[v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1047/34954)）
 - 删除帐号（[v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955)）
 - 查询帐号（[v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)）
+- 设置资料 ([v4/profile/portrait_set](https://intl.cloud.tencent.com/document/product/1047/34916))
 - 失效帐号登录态（[v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957)）
 - 查询帐号在线状态（[ v4/openim/query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477)）
+

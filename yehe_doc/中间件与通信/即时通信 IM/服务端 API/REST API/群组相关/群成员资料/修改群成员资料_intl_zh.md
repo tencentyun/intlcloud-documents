@@ -14,27 +14,25 @@
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
->?AVChatRoom（直播群）不存储群成员资料，所以不能修改成员资料。只能修改管理员和群主的成员资料，修改普通成员资料时会返回10007错误。
+>?AVChatRoom（直播群）不存储群成员资料，所以不能修改成员资料。
 
 
 ### 请求 URL 示例
 ```
 https://xxxxxx/v4/group_open_http_svc/modify_group_member_info?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-
 ### 请求参数说明
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/group_open_http_svc/modify_group_member_info | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
-| contenttype | 请求格式固定值为`json` |
+|contenttype|请求格式固定值为`json`|
 
 ### 最高调用频率
 
@@ -110,13 +108,14 @@ https://xxxxxx/v4/group_open_http_svc/modify_group_member_info?sdkappid=88888888
 }
 ```
 >?Private 群（同新版本中的 Work（好友工作群））不支持禁言群用户。
+
 ### 请求包字段说明
 
 | 字段 | 类型 | 属性 | 说明 |
 |---------|---------|---------|---------|
 | GroupId | String | 必填 |操作的群 ID  |
 | Member_Account | String | 必填 |要操作的群成员  |
-| Role | String | 选填 |成员身份，Admin/Member 分别为设置/取消管理员  |
+| Role | String | 选填 |成员身份，Admin/Member 分别为设置/取消管理员（不允许修改群主的身份）  |
 | MsgFlag | String | 选填 |消息屏蔽类型  |
 | NameCard | String | 选填 |群名片（最大不超过50个字节）  |
 | AppMemberDefinedData | Array | 选填 |群成员维度的自定义字段，默认情况是没有的，可以通过 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 进行配置，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)  |
@@ -155,9 +154,8 @@ https://xxxxxx/v4/group_open_http_svc/modify_group_member_info?sdkappid=88888888
 | 10010  | 群组不存在，或者曾经存在过，但是目前已经被解散               |
 | 10015  | 群组 ID 非法，请检查群组 ID 是否填写正确                     |
 
-
 ## 接口调试工具
-通过 [REST API在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/modify_group_member_info) 调试本接口。
+通过 [REST API在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/group_open_http_svc/modify_group_member_info) 调试本接口。
 
 ## 参考
 获取群成员详细资料（[v4/group_open_http_svc/get_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34948)）

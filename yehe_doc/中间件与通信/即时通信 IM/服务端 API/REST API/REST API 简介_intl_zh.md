@@ -21,7 +21,7 @@ https://xxxxxx/$ver/$servicename/$command?sdkappid=$SDKAppID&identifier=$identif
 | 参数  | 含义  | 取值  |
 |---------|---------|---------|
 | https    |请求协议      | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx | 专属域名 |<li>中国：`console.tim.qq.com`<li>新加坡：`adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com` <li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com`|
+| xxxxxx |专属域名  | <li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | ver  | 协议版本号 | 固定为`v4`  |
 | servicename  | 内部服务名，不同的 servicename 对应不同的服务类型 |示例：<br>`v4/im_open_login_svc/account_import`，其中`im_open_login_svc`为`servicename`<br/>更多详情请参见 [REST API 接口列表](https://intl.cloud.tencent.com/document/product/1047/34621) |
 | command  | 命令字，与 servicename 组合用来标识具体的业务功能 |示例：<br>`v4/im_open_login_svc/account_import`，其中`account_import`为`command`<br/>更多详情请参见 [REST API 接口列表](https://intl.cloud.tencent.com/document/product/1047/34621) |
@@ -120,7 +120,7 @@ Access-Control-Allow-Methods: POST
 | 60017  | 请求被禁用。              |
 | 60018  | 请求过于频繁，请稍后重试。                                   |
 | 60019  | 请求过于频繁，请稍后重试。                                   |
-| 60020  | 您的专业版已到期并停用，请重新[购买](https://intl.cloud.tencent.com/document/product/1047/36021)。购买后，将在5分钟后生效。 |
+| 60020  | 您的专业版已到期并停用，请登录 [即时通信 IM 购买页面](https://buy.cloud.tencent.com/avc) 重新购买。购买后，将在5分钟后生效。 |
 |60021  |RestAPI 调用来源 IP 非法。|
 
 ## FAQ

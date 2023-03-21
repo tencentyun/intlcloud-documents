@@ -3,7 +3,7 @@ App 管理员和会话成员可以为单聊普通消息设置消息扩展，消�
 
 > !
 >
-> - 此功能需 [旗舰版套餐](https://www.tencentcloud.com/document/product/1047/34577)，并且已开通“消息扩展功能”功能(控制台“登录与消息”配置)。
+> - 此功能需 [旗舰版套餐](https://buy.cloud.tencent.com/avc?from=17473)，并且已开通“消息扩展功能”功能(控制台“登录与消息”配置)。
 > - 单条单聊消息可设置的最大键值对数量为300条。
 > - 被设置的单聊消息需要在发送时指定“支持消息扩展”，参见 [单发单聊消息](https://intl.cloud.tencent.com/document/product/1047/34919)。
 
@@ -17,8 +17,7 @@ https://xxxxxx/v4/openim_msg_ext_http_svc/set_key_values?sdkappid=88888888&ident
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https         | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` <li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com`|
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/openim_msg_ext_http_svc/set_key_values | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |

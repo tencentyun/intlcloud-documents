@@ -1,13 +1,13 @@
-﻿本文介绍如何设置 Android 界面风格。
+﻿本文介绍如何设置 Android 界面风格。更多实操教学视频请参见 [设置样式（Android）](https://cloud.tencent.com/edu/learning/course-3130-57629)。
 
 ## 设置会话列表
 会话列表由标题区 TitleBarLayout 与列表区 ConversationListLayout 组成，每部分都提供了 UI 样式以及事件注册的接口可供修改。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/7d4c12e1246ce6b6c786114eda7b3532.png" style="zoom:50%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/d4fa84742e49ed43faa33614f74dbe25.png" style="zoom:50%;"/>
 
 ### 设置标题样式
 标题区除了本身作为 View 所具有的属性功能之外，还包含左、中、右三块区域，如下图所示：
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/6dec8fa21bb42ea6c70d6e898634c28d.png" style="zoom:30%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/a6f5e4e2d544041827b7936229a00215.png" style="zoom:30%;"/>
 
 您可参见 [ITitleBarLayout](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUICore/tuicore/src/main/java/com/tencent/qcloud/tuicore/component/interfaces/ITitleBarLayout.java) 进行自定义修改。
 例如，在会话列表中，隐藏左边的 LeftGroup，设置中间的标题，隐藏右边的文本和图片按钮，代码如下：
@@ -64,19 +64,8 @@ public static void customizeConversation(final ConversationLayout layout) {
 }
 ```
 
-设置会话列表不同的文字大小和头像圆角大小效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认样式</th>
-    <th style="text-align:center;" width="300px">自定义样式</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/866f324419ee191b0b6aa72f13c9016d.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/e5558f38454d9e6600ed19ee1848c74d.png" />     </td>
-	 </tr>
-</table>
 
-更多详细信息请参见 [ConversationLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIConversation/tuiconversation/src/main/java/com/tencent/qcloud/tuikit/tuiconversation/setting/ConversationLayoutSetting.java)。
+更多详细信息请参见 [ConversationLayoutSetting.java](https://github.com/TencentCloud/TIMSDK/blob/master/Android/TUIKit/TUIConversation/tuiconversation/src/main/java/com/tencent/qcloud/tuikit/tuiconversation/classicui/setting/ConversationLayoutSetting.java)。
 
 
 ### 设置头像的风格样式
@@ -100,7 +89,7 @@ V2TIMManager.getInstance().setSelfInfo(v2TIMUserFullInfo, new V2TIMCallback() {
     }
 });
 ```
-会话列表设置头像在 [ConversationCommonHolder.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIConversation/tuiconversation/src/main/java/com/tencent/qcloud/tuikit/tuiconversation/ui/view/ConversationCommonHolder.java) 中进行获取展示：
+会话列表设置头像在 [ConversationCommonHolder.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIConversation/tuiconversation/src/main/java/com/tencent/qcloud/tuikit/tuiconversation/classicui/widget/ConversationCommonHolder.java) 中进行获取展示：
 ```java
 conversationIconView.setConversation(conversation);
 ```
@@ -108,7 +97,7 @@ conversationIconView.setConversation(conversation);
 ## 设置聊天窗口的样式
 聊天窗口包含标题区 TitleBarLayout，用法与会话列表相同。除此之外，聊天窗口还包含三个区域，从上到下为通知区 NoticeLayout、消息区 MessageRecyclerView 和输入区 InputView，如下图所示：
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f77f84e36532a96f084b8ce7e4f8a3a8.png" style="zoom:50%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/3f32af89097f69fd0c5961e5fdf8ee0c.png" style="zoom:50%;"/>
 
 ```java
 /**
@@ -132,7 +121,7 @@ MessageRecyclerView getMessageLayout();
 NoticeLayout getNoticeLayout();
 ```
 
-更多详细信息请参见 [ChatLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/setting/ChatLayoutSetting.java)。
+更多详细信息请参见 [ChatLayoutSetting.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/classicui/setting/ChatLayoutSetting.java)。
 
 
 ### 设置通知区域 NoticeLayout 样式
@@ -140,7 +129,7 @@ NoticeLayout getNoticeLayout();
 通知区域由两个 TextView 组成，如下图所示：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/157fb6c48a679a4be94299aa16c61115.png" style="zoom:30%;"/>
 效果如下图所示：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/86738ac0ff0706f902bfe0db7704db93.png" style="zoom:70%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/86738ac0ff0706f902bfe0db7704db93.png" style="zoom:40%;"/>
 
 
 ```java
@@ -163,9 +152,9 @@ noticeLayout.setOnNoticeClickListener(new View.OnClickListener() {
 
 ### 设置消息区域 MessageRecyclerView 样式
 
-MessageRecyclerView 继承自 RecyclerView ，本文提供自定义修改聊天背景、气泡、文字、是否显示昵称等常见的用法，更多详情请参见 [IMessageProperties.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/ui/interfaces/IMessageProperties.java)。
+MessageRecyclerView 继承自 RecyclerView ，本文提供自定义修改聊天背景、气泡、文字、是否显示昵称等常见的用法，更多详情请参见 [IMessageProperties.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/TUIKit/TUIChat/tuichat/src/main/java/com/tencent/qcloud/tuikit/tuichat/classicui/interfaces/IMessageProperties.java)。
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/d73552bed43fc4686961ba179bc28ebf.png" style="zoom:90%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/d73552bed43fc4686961ba179bc28ebf.png" style="zoom:30%;"/>
 
 #### 设置聊天窗口的背景色
 您可以自定义设置聊天背景色，示例代码如下：
@@ -175,19 +164,6 @@ MessageRecyclerView messageRecyclerView = layout.getMessageLayout();
 ////// 设置聊天背景 //////
 messageRecyclerView.setBackground(new ColorDrawable(0xB0E2FF00));
 ```
-
-设置不同的聊天窗口背景色效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认颜色</th>
-    <th style="text-align:center;" width="300px">自定义颜色</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f907aabfe3761b34fc74b4c79845ef60.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/2ccf21d6aa52ec8a84d6de9d01fb77eb.png" />     </td>
-	 </tr>
-</table>
-
 
 #### 设置发送者的头像样式
 TUIKit 的界面在显示用户时，会从用户资料中读取头像地址并显示。
@@ -228,16 +204,6 @@ messageRecyclerView.setAvatarRadius(50);
 messageRecyclerView.setAvatarSize(new int[]{68, 68});
 ```
 
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认头像样式</th>
-    <th style="text-align:center;" width="300px">自定义头像样式</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f3aa98a0b575b668e8f6cf86d6ab003c.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/b4f3d8aa8da9c20c8740211692bfc27e.png" />     </td>
-	 </tr>
-</table>
 
 #### 设置气泡的背景色
 左边为对方的气泡，右边为自己的气泡，您可以自定义设置双方的气泡背景。
@@ -252,19 +218,6 @@ messageRecyclerView.setRightBubble(context.getResources().getDrawable(R.drawable
 messageRecyclerView.setLeftBubble(context.getResources().getDrawable(R.drawable.chat_bubble_other_bg_lively));
 ```
 
-设置气泡背景图片效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认气泡背景图片</th>
-    <th style="text-align:center;" width="300px">自定义气泡背景图片</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f3aa98a0b575b668e8f6cf86d6ab003c.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/3ccba378c6f8606eef9f34bc8083ab99.png" />     </td>
-	 </tr>
-</table>
-
-#### 设置发送者的昵称样式
 您可以自定义设置昵称的字体大小与颜色等，但双方昵称样式必须保持一致。
 示例代码如下：
 
@@ -276,17 +229,6 @@ messageRecyclerView.setNameFontSize(12);
 messageRecyclerView.setNameFontColor(0x8B5A2B00);
 ```
 
-设置发送者昵称文字颜色效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认昵称颜色</th>
-    <th style="text-align:center;" width="300px">自定义昵称颜色</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f3aa98a0b575b668e8f6cf86d6ab003c.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/8a6e500d6109a1922b879480bfd62728.png" />     </td>
-	 </tr>
-</table>
 
 #### 设置聊天内容样式
 您可以自定义设置聊天内容的字体大小、双方字体颜色等，但双方字体大小必须保持一致。
@@ -303,17 +245,6 @@ messageRecyclerView.setRightChatContentFontColor(0xA9A9A900);
 messageRecyclerView.setLeftChatContentFontColor(0xA020F000);
 ```
 
-设置聊天内容字体效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认字体样式</th>
-    <th style="text-align:center;" width="300px">自定义字体样式</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f3aa98a0b575b668e8f6cf86d6ab003c.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/614bacdb5c07f856eecc43d4a136b9ec.png" />     </td>
-	 </tr>
-</table>
 
 #### 设置聊天时间线样式
 
@@ -331,17 +262,6 @@ messageRecyclerView.setChatTimeFontSize(20);
 messageRecyclerView.setChatTimeFontColor(0xEE00EE00);
 ```
 
-设置时间线效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认时间线样式</th>
-    <th style="text-align:center;" width="300px">自定义时间线样式</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/f3aa98a0b575b668e8f6cf86d6ab003c.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/5976a8c814c5215cdf14eae2d0d1690c.png" />     </td>
-	 </tr>
-</table>
 
 #### 设置聊天的提示信息样式
 
@@ -359,21 +279,10 @@ messageRecyclerView.setTipsMessageFontSize(20);
 messageRecyclerView.setTipsMessageFontColor(0x7CFC0000);
 ```
 
-设置提示信息效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认提示信息样式</th>
-    <th style="text-align:center;" width="300px">自定义提示信息样式</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/a0652ef9215ce6f84dc76174d5d56e39.png"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/1ae13d10a19ff11c80377aa3534ae498.png" />     </td>
-	 </tr>
-</table>
 
 ### 设置输入区域 InputView
 输入区域 InputView，包含语音输入、文字输入、表情输入以及更多的“+”输入。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/53abac7901a717b6a58f2903339dfe0e.png" style="zoom:90%;"/>
+<img src="https://qcloudimg.tencent-cloud.cn/raw/53abac7901a717b6a58f2903339dfe0e.png" style="zoom:30%;"/>
 
 #### 隐藏不要的功能
 
@@ -394,8 +303,6 @@ inputView.disableVideoRecordAction(true);
 
 #### 增加自定义的功能
 您可以自定义新增更多“+”面板的动作单元实现相应的功能。
-
-![增加自定义的功能](https://main.qcloudimg.com/raw/727056dd0e975dbaea86927040b385ab.gif)
 
 本文以隐藏发送文件，增加一个动作单元且该动作单元会发送一条消息为例，示例代码如下：
 
@@ -476,7 +383,3 @@ public static class CustomInputFragment extends BaseInputFragment {
     }
 }
 ```
-效果如下图所示：
-
-![替换面板](https://main.qcloudimg.com/raw/d347f9e12358fb00d0c517e6a7aa44a6.gif)
-

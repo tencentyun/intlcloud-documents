@@ -2,7 +2,7 @@
 管理员获取应用属性名称。使用前请先 [设置应用属性名称](https://intl.cloud.tencent.com/document/product/1047/37167) 。
 
 ## 接口调用说明
-本功能仅针对旗舰版客户开放（如您降级为专业版将无法使用），请参见[配置变更需求工单](https://intl.cloud.tencent.com/document/product/1047/44322)指引，提交全员推送开通申请。申请通过后，该功能将在**48小时**后开启。
+“全员推送”为 IM 旗舰版功能，需 [**购买旗舰版**](https://buy.cloud.tencent.com/avc?from=17182) 并在 [**控制台**](https://console.cloud.tencent.com/im/login-message) > **功能配置** > **登录与消息** > **全员推送设置** 打开开关后方可使用。
 
 ### 请求 URL 示例
 ```
@@ -13,8 +13,8 @@ https://xxxxxx/v4/all_member_push/im_get_attr_name?usersig=xxx&identifier=admin&
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https   | 请求协议为 HTTPS，请求方式为 POST       |
-| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com`<li>首尔： `adminapikr.im.qcloud.com`<li>法兰克福：`adminapiger.im.qcloud.com`<li>印度：`adminapiind.im.qcloud.com`<li>硅谷：`adminapiusa.im.qcloud.com` |
+| https              | 请求协议为 HTTPS，请求方式为 POST       |
+| xxxxxx | SDKAppID 所在国家/地区对应的专属域名：<br><li>中国：`console.tim.qq.com`</li><li>新加坡：`adminapisgp.im.qcloud.com`</li><li>首尔： `adminapikr.im.qcloud.com`</li><li>法兰克福：`adminapiger.im.qcloud.com`</li><li>孟买：`adminapiind.im.qcloud.com`</li><li>硅谷：`adminapiusa.im.qcloud.com`</li>|
 | v4/all_member_push/im_get_attr_name  | 请求接口                             |
 | usersig            | App 管理员帐号生成的签名，参见 [UserSig 后台 API](https://intl.cloud.tencent.com/document/product/1047/34385)                            |
 | identifier         | 必须为 App 管理员帐号                |
@@ -71,7 +71,7 @@ https://xxxxxx/v4/all_member_push/im_get_attr_name?usersig=xxx&identifier=admin&
 | 91000 | 服务内部错误，请重试。|
 
 ## 接口调试工具
-通过 [REST API 在线调试](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/all_member_push/im_get_attr_name) 工具调试本接口。
+通过 [REST API 在线调试](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/all_member_push/im_get_attr_name) 工具调试本接口。
 
 ## 参考
 - [全员推送接口说明](https://intl.cloud.tencent.com/document/product/1047/37165) 
@@ -84,3 +84,4 @@ https://xxxxxx/v4/all_member_push/im_get_attr_name?usersig=xxx&identifier=admin&
 - [获取用户标签](https://intl.cloud.tencent.com/document/product/1047/37172)  
 - [删除用户标签](https://intl.cloud.tencent.com/document/product/1047/37174)  
 - [删除用户所有标签](https://intl.cloud.tencent.com/document/product/1047/37175)  
+
