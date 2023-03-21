@@ -9,7 +9,7 @@ When integrating the real-time speech recognition API, you need to comply with t
 
 | Item | Description |
 |---------|---------|
-| Language | Supported languages include Mandarin, English, and Japanese. You can set the language through the `engine_model_type` parameter. |
+| Language | Supported languages include Mandarin, English, Japanese, and Bahasa. You can set the language through the `engine_model_type` parameter. |
 | Industry | General, finance, gaming, education, and healthcare. |
 | Audio attribute | Sample rate: 16000 Hz or 8000 Hz <br>Bit depth: 16 bits<br>Channel: mono |
 | Audio format | PCM, WAV, Opus, Speex, SILK, MP3, M4A, and AAC |
@@ -63,7 +63,7 @@ Parameter description:
 | timestamp | Yes | Integer | The current UNIX timestamp in seconds. If the difference between the UNIX timestamp and the current time is too large, a signature expiration error may occur. |
 | expired | Yes | Integer | The UNIX timestamp of the signature expiration time in seconds. `expired` must be greater than `timestamp`, and `expired` - `timestamp` must be smaller than 90 days. |
 | nonce | Yes | Integer | A random positive integer, which you need to generate on your own and can contain up to ten digits. |
-| engine_model_type | Yes | String | The engine model type <br>For non-phone call scenarios:<br>• 16k_zh: 16 kHz, for Mandarin in general scenarios;<br>• 16k_en: 16 kHz, for English;<br>• 16k_ja: 16 kHz, for Japanese |
+| engine_model_type | Yes | String | The engine model type <br>For non-phone call scenarios:<br>• 16k_zh: 16 kHz, for Mandarin in general scenarios;<br>• 16k_en: 16 kHz, for English;<br>• 16k_ja: 16 kHz, for Japanese;<br>• 16k_id: 16 kHz, for Bahasa;|
 | voice_id | Yes | String | The unique identifier of each audio, which you need to generate on your own. |
 | voice_format | No | Int | The audio encoding format, which is optional. The default value is `4`. 1: PCM; 4: Speex (SP); 6: SILK; 8: MP3; 10: Opus ([Opus audio stream encapsulation description](#jump)); 12: WAV; 14: M4A (each segment must be a complete M4A audio); 16: AAC |
 | needvad | No | Integer | 0: disables VAD; 1: enables VAD<br>If an audio segment exceeds 60 seconds in length, you should enable voice activity detection (VAD). |
