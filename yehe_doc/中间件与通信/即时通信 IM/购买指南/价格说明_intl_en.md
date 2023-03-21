@@ -1,60 +1,61 @@
-[## Basic Service Pricing
+﻿>! 
+>- The original billing mode of Chat was disused on December 26, 2022.
+>- Customers who created Chat applications before December 26, 2022 use the original billing mode ([details](https://www.tencentcloud.com/document/product/1047/52474)) by default. If you want to migrate to the current billing mode, [contact sales](https://www.tencentcloud.com/contact-us) or [submit a ticket](https://console.tencentcloud.com/workorder). Once migrated, the billing mode cannot be restored.
+## Chat Service Pricing
+The Chat service pricing consists of two parts: [basic service fee](#jc) and [value-added service fee](#zz).
+
+### Basic service fee[](id:jc)
+The basic service fee covers two parts: the **resource plan** fee and **out-of-plan resource usage** fee.
+- Resource plan fee: Chat offers the Developer, Standard, and Premium editions. The edition for a created application defaults to the Developer edition (free). You can choose a plan based on your needs. For resource plan comparison, see [Comparison of billing plans](#tc).
+- Out-of-plan resource usage fee: The fee charged for resource usage that exceeds the free quota of the Standard or Premium edition plan.
 
 
-### IM Plan Prices[](id:Package)
-A plan can be applied only to a single `SDKAppID`. You must purchase a plan for each `SDKAppID` if you want to [upgrade](https://intl.cloud.tencent.com/zh/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) multiple ones to the Pro or Ultimate edition.
-IM plans are billed on a monthly basis. Fees incurred in a calendar month will be deducted within the first 3 days of the next month. See the table below for billing details:
+The billing details are as follows:
 
-| Item | Free Edition | Pro Edition | Ultimate Edition |
-| -------- | ------ | ------------- | ------------- |
-| Unit price | Free | 449.99 USD/month | 899.99 USD/month |
-| Validity period | Permanent | Monthly billing<br /> | Monthly billing<br /> |
+<table >
+<tbody>
+ <tr>
+<th colspan="2" rowspan="2" >Billable Item</td>
 
+<th colspan="3">Plan Type</td>
+ </tr>
+ <tr>
+<th  >Developer Edition</td>
+<th  >Standard Edition</td>
+<th  >Premium Edition</td>
+ </tr>
+ <tr>
+<td colspan="2" >Resource plan fee</td>
 
+<td>Free of charge</td>
+<td  >399 USD/month</td>
+<td  >699 USD/month</td>
+ </tr>
+ <tr  >
+<td rowspan="2" >Out-of-plan resource usage fee</td>
+<td  >Peak MAU</td>
+<td rowspan="2" >-</td>
+<td colspan="2"  >0.015 USD/user/month</td>
+ </tr>
+ <tr>
+<td  >Peak concurrent connections (PCC)</td>
+<td colspan="2"> <strike></strike> Free (Time-bound)</td>
+ </tr>
+</tbody></table>
 
-### Fees for out-of-plan resource usage[](id:Excess)
-DAU and peak group count that exceed the quota in a plan will be charged according to their peak values within the calendar month on a pay-as-you-go basis. Billing starts from the calendar month the plan is activated, and fees will be deducted within the first 3 days of the next month. See the table below for billing details:
+>?
+>- MAU calculates the number of unique users that log in to your Chat app in a given month. After a user logs in successfully by calling the `login` function of the Chat SDK to establish a persistent connection with the Chat backend, MAU will be increased by one. A user that logs in repeatedly in the same month is considered as one user only for MAU. Use the `login` function appropriately according to business scenarios to avoid an excessively high MAU.
 
-| Billable Item | Pro Edition | Ultimate Edition |
-| ---------- | -------------------------------------------- | -------------------------------------------- |
-| DAU | 449.99 USD/10,000. Those less than 10,000 will be billed as 10,000. | 449.99 USD/10,000. Those less than 10,000 will be billed as 10,000. |
-| Peak group count | 449.99 USD/100,000 per month. Those less than 100,000 will be billed as 100,000. | 449.99 USD/100,000 per month. Those less than 100,000 will be billed as 100,000. |
-
-
-
-## Value-Added Service Pricing[](id:Value-added)
-Value-added services are available only under the Pro and Ultimate editions. See the table below for billing details:
+### Value-added service fees[](id:zz)
 
 <table>
 <tr>
 <th width="30%">Billable Item</th>
-<th width="20%">Billing Cycle</th>
-<th width="25%">Pro Edition</th>
-<th width="25%">Ultimate Edition</th>
+<th width="70%">Description</th>
 </tr><tr>
-<td>Setting the number of audio-video groups (AvChatRoom) to unlimited</td>
-<td rowspan = "3">Billed by calendar month. Fees incurred in a calendar month will be deducted within the first 3 days of the next month.</td>
-<td>449.99 USD/month</td>
-<td>-</td>
-</tr>
-<tr>
-<td>Increasing the maximum members per non-audio-video group</td>
-<td>2,000 members per group: 239.99 USD/month</td>
-<td>6,000 members per group: 239.99 USD/month</td>
-</tr>
-<tr>
-<td>Increasing the maximum groups one user can join</td>
-<td>1,000 groups per user: 449.99 USD/month</td>
-<td>3,000 groups per user: 449.99 USD/month</td>
-</tr>
-<tr>
-<td>Extending the retention period of historical messages</td>
-<td>Billed by calendar month. Billing starts from the month the service is activated, and fees incurred in a calendar month will be deducted within the first 3 days of the next month. </td>
-<td>30 days: 99.99 USD/month<br>90 days: 179.99 USD/month<br>180 days: 269.99 USD/month<br>360 days: 399.99 USD/month</td>
-<td>90 days: 99.99 USD/month<br>180 days: 179.99 USD/month<br>360 days: 319.99 USD/month</td>
-</tr>
 <tr>
 <td>Audio/video call feature</td>
-<td colspan=3><b>It is currently in beta, with a 60-day free edition provided. </b></td>
+<td ><b>This feature is currently in beta. ​Each SDKAppID can be tried twice for free with a 60-day validity period for each trial.</b>。</td>
 </tr></table>
-](https://yehe-sg.woa.com/qcloud-official-i18n/intlDoc/product-article/1047/34350)
+
+>?More value-added services are under development. If you have additional value-added service requirements when using Chat, [contact us](https://www.tencentcloud.com/document/product/1047/41676).

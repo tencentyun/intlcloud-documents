@@ -1,5 +1,5 @@
 ## 简介
-腾讯是国内最早也是最大的即时通信开发商。顺应行业数字化转型的趋势，腾讯云将高并发、高可靠的即时通信能力以 SDK 和 REST API的形式进行开放，推出即时通信 IM 产品。您可以通过简易的方式将腾讯云提供的 IM SDK 集成进自有应用中，配合服务端 REST API 调用，即可轻松拥有即时通信能力。即时通信 IM 服务和您的应用之间的交互如下图所示：
+腾讯是中国大陆地区最早也是最大的即时通信开发商，QQ 和微信已经成为每个互联网用户必不可少的应用。顺应行业数字化转型的趋势，腾讯云将高并发、高可靠的即时通信能力以 SDK 和 REST API的形式进行开放，推出即时通信 IM 产品。您可以通过简易的方式将腾讯云提供的 IM SDK 集成进自有应用中，配合服务端 REST API 调用，即可轻松拥有微信和 QQ 一样强大的即时通信能力。即时通信 IM 服务和您的应用之间的交互如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/2e57bf9cbb3a1855efe7abdfd7d8beab.png)
 针对开发者的不同阶段需求及不同场景，即时通信 IM 团队提供了一系列解决方案，包括：Android、iOS、Windows、Web 的 SDK 组件、服务端集成 [REST API 接口](https://intl.cloud.tencent.com/document/product/1047/34620)、[第三方回调接口](https://intl.cloud.tencent.com/document/product/1047/34354) 等。利用这些组件和能力，开发者可以简单快捷地构建高可靠且稳定的即时通信产品，随心所想，触达全球。
 
@@ -12,7 +12,7 @@
 接入服务为即时通信 IM 提供覆盖全球的高连通、高可靠、强安全的网络连接通道，自研多重最优寻址算法，具有全网调度能力，使用智能兼容技术穿透网关策略，长连接多路复用，传输层协议优化，通道加密等，让业务不必关心网络细节，即可安全地与业务后台实现简单可靠的通讯。
 终端登录时，IM SDK 会访问就近接入点或加速点。全球接入加速点分布如下：
 
-- 中国：华南、华北、华东、中国香港、中国台湾等。
+- 中国：华南、华北、华东、香港、台湾等。
 - 其他国家（或地区）：
  - 亚洲：新加坡、印度尼西亚、阿联酋、泰国、马来西亚、日本、越南、印度、韩国、菲律宾等。
  - 欧洲：英国、荷兰、法国、德国、意大利、挪威、法国、俄罗斯、西班牙等。
@@ -21,24 +21,23 @@
  - 大洋洲：澳大利亚等。
  - 非洲：南非、尼日利亚等。
 
-### 数据存储中心
-即时通信 IM 提供了中国、南亚（印度）、东南亚（新加坡）、东北亚（韩国首尔）、欧洲（德国法兰克福）以及北美（美国硅谷）数据存储中心供选择。您的业务数据存储在创建应用时选择的数据中心，每个数据中心均支持全球接入。
-
+### 数据存储站点：
+除了中国站已提供的中国数据存储站点外，即时通信 IM 还为国内出海企业以及境外企业提供了南亚（印度）、东南亚（新加坡）、东北亚（韩国首尔）以及欧洲（德国法兰克福）数据存储地点供选择。如果您需要部署海外数据存储站点，请前往 [IM 国际站控制台](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.intl.cloud.tencent.com%2Fim%3Ffrom%3D15210)。
 ### 单聊
 单聊即 1V1 聊天，提供包括文字、表情、地理位置、图片、语音、短视频及自定义消息的能力，可实现红包、对话机器人、消息回执、消息撤回等特殊功能，除此之外还提供离线消息、漫游消息等服务。详细可参阅 [单聊消息](https://intl.cloud.tencent.com/document/product/1047/33523) 文档。
 
 ### 群聊
 多人聊天服务，根据群组加群方式及管理组织形式的部分预设以下五种群组类型，可以适应各种群聊场景需求。
 
-- **好友工作群（Work）**：创建后仅支持已在群内的好友邀请加群，且无需被邀请方同意或群主审批。
-- **陌生人社交群（Public）**：创建后群主可以指定群管理员，用户搜索群 ID 发起加群申请后，需要群主或管理员审批通过才能入群。
+- **好友工作群（Work）**：类似普通微信群，创建后仅支持已在群内的好友邀请加群，且无需被邀请方同意或群主审批。
+- **陌生人社交群（Public）**：类似 QQ 群，创建后群主可以指定群管理员，用户搜索群 ID 发起加群申请后，需要群主或管理员审批通过才能入群。
 - **临时会议群（Meeting）**：创建后可以随意进出，且支持查看入群前消息；适合用于音视频会议场景、在线教育场景等与实时音视频产品结合的场景。
 - **直播群（AVChatRoom）**：创建后可以随意进出，没有群成员数量上限，但不支持历史消息存储；适合与直播产品结合，用于弹幕聊天场景。
 - **社群（Community）**：创建后可以随意进出，适合用于知识分享和游戏交流等超大社区群聊场景。
->?社群（Community）功能支持终端 SDK 5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，需购买旗舰版并在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting) > **群功能配置** > **社群** 打开开关后方可使用。
+>?社群（Community）功能支持终端 SDK5.8.1668增强版及以上版本、Web SDK 2.17.0及以上版本，需购买旗舰版套餐包并 [申请开通](https://intl.cloud.tencent.com/document/product/1047/37275) 后方可使用。
 
 群组具备高度可定制性，包括自定义群组类型、自定义群组字段、自定义群成员字段、自定义群组 ID、自定义事件回调等。App 可以根据自己的需求进行深度定制。详细可参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529) 文档。
->!直播群（AVChatRoom）不设成员人数上限，但如果预期群成员会出现短时间内激增的场景（例如举行大型在线活动，单群成员人数达到5万或以上等情况），请提前联系 [腾讯云客服](https://cloud.tencent.com/about/connect) 或商务工作人员，提供 SDKAppID 和活动预期发生时间进行服务资源报备。
+>!直播群（AVChatRoom）不设成员人数上限，但如果预期群成员会出现短时间内激增的场景（例如举行大型在线活动，单群成员人数达到5万或以上等情况），请[联系我们](https://intl.cloud.tencent.com/contact-us) 或商务工作人员，提供 SDKAppID 和活动预期发生时间进行服务资源报备。
 
 
 
@@ -63,165 +62,10 @@ REST API 是一个 HTTP 管理接口，主要功能是为 App 后台提供一个
 即时通信 IM 提供种类丰富的回调接口，目前回调功能完全免费。详细请参阅 [回调命令列表](https://intl.cloud.tencent.com/document/product/1047/34355) 文档。
 
 ## 私有化支持
-私有化部署允许企业将系统直接部署到企业自己的服务器上，数据直接保存在本地。即时通信 IM 已支持私有化部署功能，可以协助企业进行私有化版本的部署、实施、运营维护。如您有使用需求请申请 [即时通信 IM 私有化服务](https://cloud.tencent.com/apply/p/kotpgwc3vq)。
+私有化部署允许企业将系统直接部署到企业自己的服务器上，数据直接保存在本地。即时通信 IM 已支持私有化部署功能，可以协助企业进行私有化版本的部署、实施、运营维护。如您有使用需求请申请 [即时通信 IM 私有化服务](https://intl.cloud.tencent.com/apply/p/itvi76h023)。
 >?申请时需要您登录腾讯云主帐号。
 
 ## 安全合规
 合规性是腾讯云即时通信 IM 发展的基础，腾讯云即时通信 IM 遵从不同国家和行业的合规性要求，除了保证所提供服务的**安全性、合规性、可用性、保密性和隐私性**之外，还可以为使用即时通信 IM 的客户提供相关支持，**满足企业及其客户的多项合规监管需求，降低公司及客户在审计工作上的重复投入，提高审计与管理效率。**
 
-<b>即时通信 IM 已通过 SOC 系列审计报告（包括 SOC 1、SOC 2、SOC 3）、网络安全等级保护2.0（三级）、ISO系列认证（包括 ISO 9001、ISO 20000、ISO 27001、ISO 27017、ISO 27018、ISO 27701、ISO 29151）、CSA STAR、NIST CSF、BS10012 和 KISMS 等认证。</b>
-
-<style>
-    .card-container {
-        width: 380px;
-				height:
-        display: block;
-        float: left;
-        padding-left: 15px;
-        padding-right: 15px;
-        box-sizing: border-box;
-    }
-
-    .card {
-        border-radius: 10px;
-        padding-top: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-        margin-top: 30px;
-        border: 1px solid #ebeef5;
-        background-color: #fff;
-        overflow: hidden;
-        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
-        text-align: left;
-    			height:260px;
-    }
-    
-    .markdown-text-box img {
-        box-shadow: none;
-    }
-
-
-    .titlename {
-                color:#191919;f
-        position: relative;
-        top: -2px;
-                font-weight: bolder;
-                font-size: larger;
-    }
-        
-        @media (max-width: 768px){
-                .card-container,
-                .scene-card-container{
-                        width: 100%;
-                }
-                .scene-card > div{
-                        width: 100%!important;
-                        margin-left: 0!important;
-                }
-                img {
-        box-shadow: none;
-    }
-        }
-</style>
-
-<div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden">
-    <div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/7c288e0b31526692c16a8e4fe641d6db.jpg" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/11543">SOC 1 Type Ⅱ报告</a> </p>
-																<p style="color:#586376;">参照 AICPA 审计准则 SSAE No. 18 中的 AT-C section 320 针对腾讯云云服务体系的控制环境出具的报告</p>
-            </div>
-</div>
- <div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/7c288e0b31526692c16a8e4fe641d6db.jpg" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/11543">SOC 2 Type Ⅱ报告</a> </p>
-                                <p style="color:#586376;">参照 AICPA 审计准则 SSAE No. 18 中的 AT-C section 205 以及 TSP section 100 2017版，针对云服务体系的安全性、可用性、机密性出具的报告</p>
-            </div>
-</div>
-<div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;"src="https://qcloudimg.tencent-cloud.cn/raw/7c288e0b31526692c16a8e4fe641d6db.jpg" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/11543">SOC 3 Type Ⅱ报告 </a></p>
-																<p style="color:#586376;">参照 AICPA 审计准则 SSAE No. 18 中的 AT-C section 205 以及 TSP section 100 2017版，针对云服务体系的安全性、可用性、机密性报告出具的一般控制报告</p>
-            </div>
-</div>
-<div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;"src="https://qcloudimg.tencent-cloud.cn/raw/7e62e559319afa51562101026009f0e3.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://www.tencentcloud.com/document/product/363/2487">网络安全等级保护2.0 </a></p>
-																<p style="color:#586376;">腾讯金融云通过了等级保护四级备案和测评，公有云通过了等级保护三级备案和测评</p>
-            </div>
-</div>
- <div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;"src="https://qcloudimg.tencent-cloud.cn/raw/be5a02d7027805cec66391d24d5382d6.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/2410">ISO 9001 质量管理体系认证</a>
-																<p style="color:#586376;">腾讯云是国内首家在云计算领域获得 ISO 9001 CNAS 和 ANAB 双认可的云计算服务商，实施有效的质量控制流程交付优质的云服务</p></p>
-            </div>
-</div>
-<div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/0f2f62361c7420c58bfeab74c42373da.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/2409">ISO 20000 IT 服务管理体系认证</a> </p><p style="color:#586376;">腾讯云是国内首家通过 ISO 20000-1:2018 新版标准认证的云计算服务商，建立并严格执行标准的 IT 服务管理流程</p>
-            </div>
-</div>
-<div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b3b88a42e294d602d7af7d42aa343b4d.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/2408">ISO 27001 信息安全管理体系认证</a></p><p style="color:#586376;">ISO/IEC 27001:2015 是 ISO/IEC 27002:2013 的补充，腾讯云通过 ISO 27001指导证书，证明腾讯云实施了有效设计和实施云计算信息安全控制</p>
-            </div>
-</div>
- <div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/4934c5489f0cb35f8e1e16614fc07593.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/33541">ISO 27017 云服务信息安全控制实施指引</a> </p><p style="color:#586376;">ISO/IEC 27017:2015 是 ISO/IEC 27002:2013 的补充，腾讯云通过 ISO 27017指导证书，证明腾讯云实施了有效设计和实施云计算信息安全控制</p>
-            </div>
- </div>
- <div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/c5b246657205e0023ea89b19d95b6753.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/14031">ISO 27018 公有云个人信息保护认证 </a></p><p style="color:#586376;">腾讯云致力于保护每个客户的个人信息，构建完善的个人信息管理体系，采用各种技术手段保护用户个人信息</p>
-            </div>
-</div>
- <div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;"src="https://qcloudimg.tencent-cloud.cn/raw/0b37fbf8d1bfa04031db30ed15d76f9b.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/33540">ISO 27701 个人信息管理体系国际标准 </a> <p style="color:#586376;">腾讯云是全球首家通过 ISO/IEC 27701认证的云服务提供商，建立和实施了隐私信息管理体系，并具备持续改进的能力</p></p>
-            </div>
-</div>
- <div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;"src="https://qcloudimg.tencent-cloud.cn/raw/f652574979d9db78c8a991ca4b8a78fc.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://www.tencentcloud.com/document/product/363/39609">ISO 29151 个人身份信息保护实践指南</a> </p><p style="color:#586376;">腾讯云提供了恰当的信息安全风险管理环境用于个人身份信息的保护，同时满足行业最佳实践，具备持续改进的能力</p>
-            </div>
-        </div>
-<div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;"src="https://qcloudimg.tencent-cloud.cn/raw/32d85d30e2129e5f22259918ff1d6619.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/7249">CSA STAR 云安全管理体系认证</a> </p><p style="color:#586376;">CSA STAR 是针对云安全特性的一项国际性认证，腾讯云以金牌等级通过了 STAR 认证，强化云安全技术管控</p>
-            </div>
-</div>
- <div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/a18be30e18d5f87d324094f9353083d0.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/45469">NIST 网络安全框架</a> </p><p style="color:#586376;">NIST CSF 是美国国家标准技术研究所根据行政命令(E0) 13636“改进关键基础设施网络安全”开发，该框架侧重于使用业务驱动因素来指导网络安全活动</p>
-            </div>
-</div>
-<div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;"src="https://qcloudimg.tencent-cloud.cn/raw/23115be55af090caf230525be53b883d.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://intl.cloud.tencent.com/document/product/363/34542">KISMS 认证</a> </p><p style="color:#586376;">腾讯云是中国首家通过 KISMS 认证的云计算服务商，证明腾讯云建立的信息安全管理体系和能力满足相关韩国法律和标准合规性要求</p>
-            </div>
-</div>
-<div class="card-container">
-            <div class="card">
-                           <img style="width:100px; max-width: inherit;"  src="https://qcloudimg.tencent-cloud.cn/raw/eac6c9f40236f5ad1028ddbb34a2c5cb.png" data-nonescope="true">
-                                <p class="titlename">  <a href="https://www.tencentcloud.com/document/product/363/45470">BS 10012 </a></p><p style="color:#586376;">英国标准协会发布的个人信息管理体系标准</p>
-            </div>
-</div>
-</div>
-
-
-
+<b>即时通信 IM 已通过 SOC系列审计报告（包括SOC 1、SOC 2、SOC 3）、网络安全等级保护2.0（三级）、ISO系列认证（包括 ISO 9001、ISO 20000、ISO 27001、ISO 27017、ISO 27018、ISO 27701、ISO 29151）、CSA STAR、NIST CSF、BS10012 和 KISMS 等认证。</b>

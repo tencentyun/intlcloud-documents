@@ -230,7 +230,7 @@ ul.rno-tabs-operation {
 </style>
 
 
-### Demo 体验
+### Free demo
 <div class="preview-demo-section" id="demo-card">
    <div class="preview-demo-item style-web">
         <div class="demo-item-header">
@@ -240,10 +240,10 @@ ul.rno-tabs-operation {
             <div class="demo-item-platform">Web</div>
         </div>
         <div class="demo-item-desc">
-           单击即可体验
+           Try now
         </div>
         <div class="demo-item-download">
-            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/im/demo/intl/index.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">应用内聊天</div>
+            <div class="demo-item-download-btn" onclick="window.open('https://web.sdk.qcloud.com/im/demo/intl/index.html');reportEvent({name: 'demo-click-web', ext1: 'api-sample'});">In-App Chat</div>
         </div>
     </div>
     </div>
@@ -252,63 +252,63 @@ ul.rno-tabs-operation {
 
 
 
-### Demo 功能
+## Demo Features
 
 <dx-tabs>
-::: 应用内聊天
+::: In-App Chat
 <div class="tab-img">
     <img src="https://qcloudimg.tencent-cloud.cn/raw/4562be8179a1534efb17d33428239c82.png"/>
 </div>
 <div class="tab-bottom">
     <div>
     <div class="platform-icon">
-        <span class="support-platform">Demo 源码支持平台</span>
+        <span class="support-platform">Supported platforms</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/864f8562e1b7780e6f23e1f2987f9ff9.svg" class="platform-img">Flutter</span>
         <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
-    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">源码下载</button></a></div>
-    <div style="text-align:center;">您可以点击<a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">快速入门</a>了解如何快速跑通 DEMO，还可以点击<a href="https://intl.cloud.tencent.com/document/product/1047/50055" style="color:#06A4FF;">集成方案</a>了解详细功能</div>
+    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">Source Code Download</button></a></div>
+    <div style="text-align:center;">You can click <a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">Get Started</a> to learn how to quickly run the demo. You can also click <a href="https://intl.cloud.tencent.com/document/product/1047/50055" style="color:#06A4FF;">Integration Solution</a> to learn more about the features.</div>
     </div>
 </div>
 :::
-::: 会话管理
+::: Conversation
 <div class="tab-img">
     <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/C7Qm895_%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86%402x.png"/>
 </div>
 <div class="tab-bottom">
     <div>
     <div class="platform-icon">
-        <span class="support-platform">Demo 源码支持平台</span>
+        <span class="support-platform">Supported platforms</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/864f8562e1b7780e6f23e1f2987f9ff9.svg" class="platform-img">Flutter</span>
         <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
-    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">源码下载<class="try-icon"></button></a></div>
-    <div style="text-align:center;">您可以点击<a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">快速入门</a>了解如何快速跑通 DEMO，还可以点击<a href="https://intl.cloud.tencent.com/document/product/1047/34320" style="color:#06A4FF;">集成方案</a>了解详细功能</div>
+    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">Source Code Download<class="try-icon"></button></a></div>
+    <div style="text-align:center;">You can click <a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">Get Started</a> to learn how to quickly run the demo. You can also click <a href="https://intl.cloud.tencent.com/document/product/1047/34320" style="color:#06A4FF;">Integration Solution</a> to learn more about the features.</div>
     </div>
 </div>
 :::
-::: 群组管理
+::: Group Management
 <div class="tab-img">
     <img src="https://qcloudimg.tencent-cloud.cn/raw/583ddd04d57be2129c6005165828033c.png"/>
 </div>
 <div class="tab-bottom">
     <div>
     <div class="platform-icon">
-        <span class="support-platform">Demo 源码支持平台</span>
+        <span class="support-platform">Supported platforms</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/864f8562e1b7780e6f23e1f2987f9ff9.svg" class="platform-img">Flutter</span>
         <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
-    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">源码下载<class="try-icon"></button></a></div>
-    <div style="text-align:center;">您可以点击<a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">快速入门</a>了解如何快速跑通 DEMO，还可以点击<a href="https://intl.cloud.tencent.com/document/product/1047/34328" style="color:#06A4FF;">集成方案</a>了解详细功能</div>
+    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">Source Code Download<class="try-icon"></button></a></div>
+    <div style="text-align:center;">You can click <a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">Get Started</a> to learn how to quickly run the demo. You can also click <a href="https://intl.cloud.tencent.com/document/product/1047/34328" style="color:#06A4FF;">Integration Solution</a> to learn more about the features.</div>
     </div>
 </div>
 :::
@@ -317,60 +317,60 @@ ul.rno-tabs-operation {
 </dx-tabs>  
 
 <dx-tabs>
-::: 用户资料与关系链
+::: User Profile and Relationship Chain
 <div class="tab-img">
     <img src="https://qcloudimg.tencent-cloud.cn/raw/7cabab98274e99291cc0186f2fd34f14.png"/>
 </div>
 <div class="tab-bottom">
     <div>
     <div class="platform-icon">
-        <span class="support-platform">Demo 源码支持平台</span>
+        <span class="support-platform">Supported platforms</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/864f8562e1b7780e6f23e1f2987f9ff9.svg" class="platform-img">Flutter</span>
         <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
-    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">源码下载<class="try-icon"></button></a></div>
-    <div style="text-align:center;">您可以点击<a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">快速入门</a>了解如何快速跑通 DEMO，还可以点击<a href="https://intl.cloud.tencent.com/document/product/1047/34332" style="color:#06A4FF;">集成方案</a>了解详细功能</div>
+    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">Source Code Download<class="try-icon"></button></a></div>
+    <div style="text-align:center;">You can click <a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">Get Started</a> to learn how to quickly run the demo. You can also click <a href="https://intl.cloud.tencent.com/document/product/1047/34332" style="color:#06A4FF;">Integration Solution</a> to learn more about the features.</div>
     </div>
 </div>
 :::
-::: 离线推送
+::: Offline push
 <div class="tab-img">
     <img src="https://qcloudimg.tencent-cloud.cn/raw/03ec8c8db4a2431ad835dac757be6af6.jpg"/>
 </div>
 <div class="tab-bottom">
     <div>
     <div class="platform-icon">
-        <span class="support-platform">Demo 源码支持平台</span>
+        <span class="support-platform">Supported platforms</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/864f8562e1b7780e6f23e1f2987f9ff9.svg" class="platform-img">Flutter</span>
         <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
-    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">源码下载<class="try-icon"></button></a></div>
-    <div style="text-align:center;">您可以点击<a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">快速入门</a>了解如何快速跑通 DEMO，还可以点击<a href="https://intl.cloud.tencent.com/document/product/1047/39156" style="color:#06A4FF;">集成方案</a>了解详细功能</div>
+    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">Source Code Download<class="try-icon"></button></a></div>
+    <div style="text-align:center;">You can click <a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">Get Started</a> to learn how to quickly run the demo. You can also click <a href="https://intl.cloud.tencent.com/document/product/1047/39156" style="color:#06A4FF;">Integration Solution</a> to learn more about the features.</div>
     </div>
 </div>
 :::
-::: 本地搜索
-<div class="tab-img">
+::: Local Search
+<div class="tab_list">
     <img src="https://qcloudimg.tencent-cloud.cn/raw/1f2595db3599daad32316d0fd037f62e.png"/>
 </div>
 <div class="tab-bottom">
     <div>
     <div class="platform-icon">
-        <span class="support-platform">Demo 源码支持平台</span>
+        <span class="support-platform">Supported platforms</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/7adfb7daedcc48ead500f1ddf6bdb237.svg" class="platform-img">Web</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/901d05fdb42e3ac74f4a1521c119b320.svg" class="platform-img">Android</span>
         <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/8aef65529388017d7f9a46a24085d15a.svg" class="platform-img">iOS</span>
        <span class="support-platform"><img src="https://qcloudimg.tencent-cloud.cn/raw/864f8562e1b7780e6f23e1f2987f9ff9.svg" class="platform-img">Flutter</span>
         <span class="support-platform"><img src="" class="platform-img"></span>
     </div>
-    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">源码下载<class="try-icon"></button></a></div>
-    <div style="text-align:center;">您可以点击<a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">快速入门</a>了解如何快速跑通 DEMO，还可以点击<a href="https://intl.cloud.tencent.com/document/product/1047/41795" style="color:#06A4FF;">集成方案</a>了解详细功能</div>
+    <div class="tab-experience-button"><a href="#demo-.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88.E4.B8.8B.E8.BD.BD"><button class="tab-experience">Source Code Download<class="try-icon"></button></a></div>
+    <div style="text-align:center;">You can click <a href="https://www.tencentcloud.com/document/product/1047/45914" style="color:#06A4FF;">Get Started</a> to learn how to quickly run the demo. You can also click <a href="https://intl.cloud.tencent.com/document/product/1047/41795" style="color:#06A4FF;">Integration Solution</a> to learn more about the features.</div>
     </div>
 </div>
 :::
@@ -380,7 +380,7 @@ ul.rno-tabs-operation {
 
 
 
-### Demo 及解决方案下载
+## Demo and Solution Download
 
 <div>
 <div style="margin-top: 15px;">
@@ -388,46 +388,46 @@ ul.rno-tabs-operation {
         <div class="card-container">
             <div class="card">
                                 <img src="https://main.qcloudimg.com/raw/b0211b0870806899009a17a4216ea65c.svg" data-nonescope="true">
-                                <p class="titlename"> IM Demo （Android）</p>
-                <p style="color:#586376;">包含所有 IM 功能以及群直播连麦语聊能力</p>
+                                <p class="titlename"> Chat Demo (Android)</p>
+                <p style="color:#586376;">Includes all Chat features and the capability to co-anchor in a live stream in a group</p>
                     <div style="margin-top: 13px;" >
-                    <a href="https://github.com/tencentyun/TIMSDK/tree/master/Android">Github 下载</a>
-                                <a style="margin-left: 10px;" href="https://im.sdk.qcloud.com/download/github/TIMSDK.zip">ZIP 下载</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45914">集成指引</a>
+                    <a href="https://github.com/tencentyun/TIMSDK/tree/master/Android">Download via GitHub</a>
+                                <a style="margin-left: 10px;" href="https://im.sdk.qcloud.com/download/github/TIMSDK.zip">Download via ZIP</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45914">Integration Guide</a>
                     </div>
             </div>
         </div>
         <div class="card-container">
             <div class="card">
                                 <img src="https://main.qcloudimg.com/raw/613f2e15bed7c8297110676b52784b71.svg" data-nonescope="true">
-                                <p class="titlename"> IM Demo （iOS）</p>
-                <p style="color:#586376;">包含所有 IM 功能以及群直播连麦语聊能力</p>
+                                <p class="titlename"> Chat Demo (iOS)</p>
+                <p style="color:#586376;">Includes all Chat features and the capability to co-anchor in a live stream in a group</p>
                     <div style="margin-top: 13px;" >
-                    <a  href="https://github.com/tencentyun/TIMSDK/tree/master/iOS">Github 下载</a>
-                          <a  style="margin-left: 10px;"href="https://im.sdk.qcloud.com/download/github/TIMSDK.zip">ZIP 下载</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45913">集成指引</a>
+                    <a  href="https://github.com/tencentyun/TIMSDK/tree/master/iOS">Download via GitHub</a>
+                          <a style="margin-left: 10px;" href="https://im.sdk.qcloud.com/download/github/TIMSDK.zip">Download via ZIP</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45913">Integration Guide</a>
                     </div>
             </div>
         </div>
         <div class="card-container">
             <div class="card">
                                 <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename"> IM Demo （Web）</p>
-                <p style="color:#586376;">包含所有 IM 功能以及群直播连麦语聊能力</p>
+                                <p class="titlename"> Chat Demo (Web)</p>
+                <p style="color:#586376;">Includes all Chat features and the capability to co-anchor in a live stream in a group</p>
                     <div style="margin-top: 13px;" >
-                    <a " href="https://github.com/TencentCloud/chat-uikit-react">Github 下载</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45912">集成指引</a>
+                    <a " href="https://github.com/TencentCloud/chat-uikit-react">Download via GitHub</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45912">Integration Guide</a>
                     </div>
             </div>
         </div>
         <div class="card-container">
             <div class="card">
                                 <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename"> IM Demo （Flutter）</p>
-                <p style="color:#586376;">包含 IM 主要功能</p>
+                                <p class="titlename"> Chat Demo (Flutter)</p>
+                <p style="color:#586376;">Includes the main features of Chat</p>
                      <div style="margin-top: 13px; " >
-                    <a href="https://github.com/tencentyun/TIMSDK/tree/master/Flutter/Demo/im-flutter-uikit">Github 下载</a>
-                     <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45907">集成指引</a></div>
+                    <a href="https://github.com/tencentyun/TIMSDK/tree/master/Flutter/Demo/im-flutter-uikit">Download via GitHub</a>
+                     <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45907">Integration Guide</a></div>
          </div>
             </div>
         </div>

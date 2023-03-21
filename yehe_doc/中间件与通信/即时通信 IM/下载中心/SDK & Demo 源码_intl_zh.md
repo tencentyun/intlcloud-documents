@@ -9,7 +9,7 @@
     }
 
     .card {
-        height: 190px;
+        height: 190px; 
         border-radius: 10px;
         padding-top: 20px;
         padding-left: 10px;
@@ -26,7 +26,8 @@
     .markdown-text-box img {
         box-shadow: none;
     }
-    
+
+
     .titlename {
                 color:#191919;
         position: relative;
@@ -34,7 +35,7 @@
                 font-weight: bolder;
                 font-size: larger;
     }
-    
+        
         @media (max-width: 768px){
                 .card-container,
                 .scene-card-container{
@@ -58,29 +59,16 @@
   <div class="card-container">
       <div class="card">
         <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-        <p class="titlename">Web & H5 & uni-app(Web/H5) SDK</p>
+        <p class="titlename">Web & H5 SDK</p>
         <p style="color:#586376;">包含所有 IM 功能以及群直播连麦语聊能力</p>
         <div style="margin-top: 13px;" >
         <a style="margin-left: 10px;" href="https://www.npmjs.com/package/tim-js-sdk">NPM 下载</a>
-        <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/1047/34309">集成指引</a>
+        <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34309">集成指引</a>
         <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志</a>
         </div>
     </div>
   </div>
-  <div class="card-container">
-    <div class="card">
-      <img src="https://qcloudimg.tencent-cloud.cn/raw/af07e321883032c9796848d189a80f5e.png" data-nonescope="true">
-      <p class="titlename">uni-app(App) SDK</p>
-      <p style="color:#586376;">包含所有 IM 功能以及群直播连麦语聊能力</p>
-      <div style="margin-top: 13px;" >
-        <a style="margin-left: 10px;" href="https://www.npmjs.com/package/tim-wx-sdk">NPM 下载</a>
-      <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/1047/34309">集成指引</a>
-      <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志</a>
-      </div>
     </div>
-    </div>
-
-</div>
 
 [](id:client)
 <h3 style="margin-top: 15px;"> 终端 SDK </h3>
@@ -148,10 +136,9 @@
             <div class="card">
                                 <img class="icon" src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
                                 <p class="titlename">Flutter SDK</p>
-                <p style="color:#586376;">全平台支持 iOS/Android/Web/macOS/Windows</p>
+                <p style="color:#586376;">包含 IM 主要功能</p>
                     <div style="margin-top: 13px;" >
-                        <a  href="https://intl.cloud.tencent.com/document/product/1047/46264">SDK</a>
-                        <a  style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/50059">TUIKit</a>
+                        <a  href="https://pub.dev/packages/tencent_im_sdk_plugin">Github 下载</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45907">集成指引</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45915">更新日志</a>
                     </div>
@@ -163,6 +150,7 @@
                                 <p class="titlename">Unity SDK</p>
                 <p style="color:#586376;">包含 IM 主要功能</p>
                     <div style="margin-top: 13px;" >
+                        <a  href="https://comm.qq.com/im/sdk/unity_plus/im_unity_sdk_plus_v1.6.0.unitypackage">Unity Package</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/46263">集成指引</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/41800">更新日志</a>
                     </div>
@@ -175,28 +163,16 @@
                  <p style="color:#586376;">包含 TRTC、直播、短视频、点播等多项功能</p>
                     <div style="margin-top: 13px;" >
                         <a  href="https://www.npmjs.com/package/im_electron_sdk">NPM 下载</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45910">集成指引</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/43090">集成指引</a>
                                 <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/43089">更新日志</a>
                     </div>
             </div>
         </div>
-        <div class="card-container">
-            <div class="card">
-                                <img class="icon" src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename">React Native SDK</p>
-                 <p style="color:#586376;">包含 IM 主要功能</p>
-                    <div style="margin-top: 13px;" >
-                        <a  href="https://www.npmjs.com/package/react-native-tim-js">NPM 下载</a>
-                                <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/1047/52397">集成指引</a>
-                                <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/1047/52398">更新日志</a>
-                    </div>
-            </div>
-        </div>
 </div>
-</div>
+
 <h2> Demo 及解决方案下载 </h2>
 
-即时通信 IM Demo 演示了各个场景下的 IM 功能，您可 [前往安装](https://intl.cloud.tencent.com/document/product/1047/34279) 并体验不同平台、不同使用场景下的 Demo。
+
 <div>
 <div style="margin-top: 15px;">
 <div style="position: relative; box-sizing: border-box;  padding-bottom: 10px; margin-bottom: 10px; overflow:hidden;">
@@ -227,36 +203,11 @@
         <div class="card-container">
             <div class="card">
                                 <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename"> IM UIKit （Web）</p>
+                                <p class="titlename"> IM Demo （Web）</p>
                 <p style="color:#586376;">包含所有 IM 功能以及群直播连麦语聊能力</p>
                     <div style="margin-top: 13px;" >
-                    <a  href="https://github.com/TencentCloud/chat-uikit-vue">Github 下载</a>
-                    <a style="margin-left: 10px;" href="https://www.npmjs.com/package/@tencentcloud/chat-uikit-vue">npm 下载</a>
-                                <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/1047/45912">集成指引</a>
-                    </div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                                <img src="https://qcloudimg.tencent-cloud.cn/raw/af07e321883032c9796848d189a80f5e.png" data-nonescope="true">
-                                <p class="titlename"> IM UIKit </p>
-                <p style="color:#586376;">包含 IM 主要功能以及在线客服场景能力</p>
-                    <div style="margin-top: 13px;" >
-                    <a href="https://github.com/TencentCloud/chat-uikit-wechat">Github 下载</a>
-                     <a style="margin-left: 10px;" href="https://www.npmjs.com/package/@tencentcloud/chat-uikit-wechat">npm 下载</a>
-                                <a style="margin-left: 10px;"  
-                    </div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                                <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename"> IM UIKit （uni-app）</p>
-                <p style="color:#586376;">包含 IM 主要功能以及在线客服场景能力</p>
-                    <div style="margin-top: 13px; " >
-                    <a href="https://github.com/TencentCloud/chat-uikit-uniapp">Github 下载</a>
-                    <a style="margin-left: 10px;" href="https://www.npmjs.com/package/@tencentcloud/chat-uikit-uniapp">npm 下载</a>
-                                <a style="margin-left: 10px;" href="">集成指引</a>
+                    <a " href="https://github.com/TencentCloud/chat-uikit-react">Github 下载</a>
+                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45912">集成指引</a>
                     </div>
             </div>
         </div>
@@ -264,39 +215,17 @@
             <div class="card">
                                 <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
                                 <p class="titlename"> IM Demo （Flutter）</p>
-                <p style="color:#586376;">包含 IM 主要功能，支持 iOS/Android/Web</p>
+                <p style="color:#586376;">包含 IM 主要功能</p>
                      <div style="margin-top: 13px; " >
-                    <a href="https://github.com/TencentCloud/tc-chat-demo-flutter">Github 下载</a>
-                     <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/46264">集成指引</a></div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                                <img src="https://qcloudimg.tencent-cloud.cn/raw/d6fd52f011bdbb13302b2ae261e8a756.png" data-nonescope="true">
-                                <p class="titlename"> IM Demo （Electron）</p>
-                <p style="color:#586376;">包含所有IM 功能、音视频通话及视频会议功能</p>
-                     <div style="margin-top: 13px;" >
-                        <a href="https://github.com/TencentCloud/tc-chat-demo-electron">Github 下载</a>
-                                <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45910">集成指引</a>
-                     </div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                            <img src="https://main.qcloudimg.com/raw/98394fa5d669de7fb7a187565d138cdb.svg" data-nonescope="true">
-                                <p class="titlename">直播互动 Demo （Web）</p>
-            <p style="color:#586376;">包含直播发起以及观看方聊天互动等能力</p>
-                <div style="margin-top: 13px;" >
-                <a  href="https://github.com/tencentyun/TUILiveRoom/tree/main/Web">Github 下载</a>
-                        <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/38175">集成指引</a>
-                </div>
+                    <a href="https://github.com/tencentyun/TIMSDK/tree/master/Flutter/Demo/im-flutter-uikit">Github 下载</a>
+                     <a style="margin-left: 10px;" href="https://intl.cloud.tencent.com/document/product/1047/45907">集成指引</a></div>
+         </div>
             </div>
         </div>
     </div>
 </div>
 <div>
 <h2 style="margin-top: 36px;"> 安装包增量对比 </h2>
-
 
 <table>
     <tr>
@@ -326,3 +255,4 @@
     </tr>
 </table>
 </div>
+    
