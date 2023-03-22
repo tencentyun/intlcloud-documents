@@ -71,7 +71,7 @@
 <td>MySQLは低頻度ストレージをサポートします</td>
 <td>Tencent CloudはTencentDB for MySQLに低頻度ストレージ方式を提供します。ユーザーはそのデータベース審査の実際のストレージレートに基づき、適切な課金を選択できます。ユーザーの審査使用コスト削減に役立ちます。</td>
 <td>2022-06-30</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52083" target="_blank">データベース監査料金説明</a></td></tr>
+<td></td></tr>
 <tr>
 <td>SSL暗号化をサポートしています</td>
 <td>TencentDB for MySQLは、SSL暗号化をサポートしています。暗号化伝送チャネル確立を実現し、通信データの安全性と完全性を向上させました。</td>
@@ -155,11 +155,11 @@
 <tr>
 <td>MySQL監査ログの保存期間は7日間をサポートします</td>
 <td>初めて監査機能を有効にする際に、ログの保存時間に7日を設定できるようになりました。これにより、データベースの問題が検出された場合、短時間で運用状況を把握し問題を分析することが可能になります。また、監査機能が有効になっているインスタンスに対しても、ログの保存時間を7日に変更できます。</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52088" target="_blank">ログ保存時間の変更</a></td></tr>
+<td></td></tr>
 <tr>
 <td>MySQL監査検索を最適化しました</td>
 <td>曖昧検索と複数SQLタイプの指定による絞り込む機能はサポートされています。検索時間帯にかけた24時間の制限が解除されています。</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52087" target="_blank">監査ログの確認</a></td></tr>
+<td></td></tr>
 </tbody></table>
 
 ## 2021年07月
@@ -273,7 +273,7 @@
 <td>MySQLデータベース監査をサポートします</td>
 <td>Tencent CloudはTencentDB for MySQLにデータベース監査機能を提供し、データベースへのアクセスおよびSQL文の実行状況を記録し、企業のリスク管理に貢献し、データのセキュリティレベルを高めます。</td>
 <td>2020-07</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52086" target="_blank">データベース監査を有効にします</a></td></tr>
+<td></td></tr>
 </tbody></table>
 
 ## 2020年06月
@@ -458,7 +458,7 @@
 <td>データサブスクリプションをサポートします</td>
 <td>DTSを使用すると、ユーザーがTencentDBの増分アップデートデータをリアルタイムで取得でき、自社のサービスニーズに合わせて増分データを使用できます。</td>
 <td>2017-08</td>
-<td><a href="https://www.tencentcloud.com/document/product/571/48492" target="_blank">データサブスクリプション</a></td></tr>
+<td></td></tr>
 <tr>
 <td>TencentDBインスタンス間のデータマイグレーションをサポートします</td>
 <td>DTSデータマイグレーションが様々なネットワーク環境に対応します</td>
