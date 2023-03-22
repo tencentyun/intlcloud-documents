@@ -24,7 +24,7 @@
 
 ##### Type：SRT_PUSH
 若Type选SRT_PUSH，Destination代表streamid，非必填。
-![](https://qcloudimg.tencent-cloud.cn/raw/6122fc1b6a94baa6b3d1dadd315185f1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f4a9ec18c0de6d127fce99d8c91aad89.png)
 
 ##### Type：PULL
 若Type选PULL类型，需要填InputAddress，作为PULL的源。
