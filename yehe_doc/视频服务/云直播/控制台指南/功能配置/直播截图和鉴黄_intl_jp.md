@@ -28,7 +28,7 @@ CSSはスクリーンキャプチャ・ポルノ検出機能を提供します�
 2. **スクリーンキャプチャ・ポルノ検出テンプレートの作成**クリックしてください。CSSスクリーンキャプチャ・ポルノ検出サービスでは、スクリーンショットをCOSバケットに保存する必要があるため、**初めて**スクリーンショット・ポルノ検出テンプレートを作成するには、サービスロールを作成し、CSSにCOSの読み取り/書き込み権限を付与する必要があります。クリックしてCAMへ進んで権限を付与します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f27be286a9f3c68d96a55544a6c25b57.png)
 3. 権限付与が完了した後、設定項目を入力し、**保存**をクリックすれば完了です。
-<img src="https://main.qcloudimg.com/raw/544c2127f7870add334eaf760f1da089.png" style="zoom:67%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6ecf7c0591d97bdd525e0419e1a5da5c.png" style="zoom:67%;" />
 
 <table>
 <thead><tr><th width="15%">設定項目</th><th>説明</th></tr></thead>
