@@ -71,7 +71,7 @@
 <td>MySQL 支持低频存储</td>
 <td>腾讯云为云数据库 MySQL 提供低频存储方式，用户可根据其数据库审计实际存储频率来选择合适计费，助力用户降低审计使用成本。</td>
 <td>2022-06-30</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52083" target="_blank">数据库审计计费说明</a></td></tr>
+<td></td></tr>
 <tr>
 <td>支持 SSL 加密</td>
 <td>云数据库 MySQL 支持 SSL 加密，实现加密传输通道建立，提升通信数据的安全性和完整性。</td>
@@ -155,11 +155,11 @@
 <tr>
 <td>MySQL 审计日志保存时长支持7天</td>
 <td>新开通审计能力时可以设置日志保留时长为7天，满足用于发现数据库问题时，希望短期观察运行概况并分析问题的场景。同时，已经开通审计能力的实例也支持修日志保留时长至7天。</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52088" target="_blank">修改日志保存时长</a></td></tr>
+<td></td></tr>
 <tr>
 <td>MySQL 审计搜索优化</td>
 <td>支持模糊搜索、支持多 SQL 类型同时作为条件进行过滤、搜索时间段解除24小时限制。</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52087" target="_blank">查看审计日志</a></td></tr>
+<td></td></tr>
 </tbody></table>
 
 ## 2021年07月
@@ -273,7 +273,7 @@
 <td>支持 MySQL 数据库审计</td>
 <td>腾讯云为云数据库 MySQL 提供数据库审计能力，记录对数据库的访问及 SQL 语句执行情况，帮助企业进行风险控制，提高数据安全等级。</td>
 <td>2020-07</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52086" target="_blank">开通数据库审计</a></td></tr>
+<td></td></tr>
 </tbody></table>
 
 ## 2020年06月
@@ -458,7 +458,7 @@
 <td>支持数据订阅</td>
 <td>DTS 可帮助用户获取云数据库的实时增量更新数据，用户能够根据自身业务需求消费增量数据。</td>
 <td>2017-08</td>
-<td><a href="https://www.tencentcloud.com/document/product/571/48492" target="_blank">数据订阅</a></td></tr>
+<td></td></tr>
 <tr>
 <td>支持云数据库与云数据库间的数据迁移</td>
 <td>DTS 数据迁移兼容多种网络环境。</td>
@@ -468,7 +468,7 @@
 <td>数据管理 DMC 发布</td>
 <td>DMC 支持实时监控、实例会话管理。</td>
 <td>2017-08</td>
-<td><a href="https://www.tencentcloud.com/document/product/1035/48822" target="_blank">DMC</a></td></tr>
+<td></td></tr>
 </tbody></table>
 
 ## 2017年06月
