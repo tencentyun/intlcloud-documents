@@ -7,7 +7,7 @@
 GME对实时语音流提供**服务端录制**能力，帮助开发者实现内容留存、内容管理、内容再生产等场景。全量录制：支持录制应用内全量语音房间按房间维度混流、按用户维度单流；自定义录制：支持录制用户指定房间按房间维度混流、按用户维度单流。录制后的音频文件将存储在您账号下的**对象存储(COS)**服务中。
 
 
-本文仅针对**全量录制**的开发接入方法进行说明。若您需要对应用开启自定义录制，请参考[开发指南-自定义录制]()
+本文仅针对**全量录制**的开发接入方法进行说明。若您需要对应用开启自定义录制，请参考[开发指南-自定义录制](https://www.tencentcloud.com/document/product/607/53748)
 
 >! 
 >- 使用GME服务端录制功能，录制过程将在GME产生录制服务费用。GME国际站录制服务将从2023年4月1日起正式计费，详细计费信息将提前公示在[GME购买指南](https://www.tencentcloud.com/zh/document/product/607/50009)；
@@ -91,26 +91,26 @@ GME服务端录制，录制完成后的音频文件将存储在您账号下的**
 
 登录[GME控制台](https://console.tencentcloud.com/gamegme)，进入【服务管理】菜单，对希望启用录制服务的应用点击【设置】，进入应用详情页。在页面中对【语音录制服务】点击 **修改** 。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/181367c9cf60caacb3c70ececa95d55a.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/9e2c89f462a81ba228c978cd725abf5a.png)
 
 将录制开关置为 **开启** 。
 
 首次开启录制服务时，GME将会向您申请服务授权，以便于访问您的**对象存储COS服务**，您需要在弹窗页面需要同意授权后，才能正常开启服务端录制服务。
 
 
-![](https://qcloudimg.tencent-cloud.cn/raw/efcfaf7b4cd84173427b72d701c2bf96.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/33407cf16b4ad310b65c4897ea766340.png)
 
 - #### 录音文件存储配置
 
 进入应用详情页面，在页面中对【语音录制服务】点击 **修改** ，在 **录制文件存储桶** 点击 **绑定** 。
 在 **绑定存储桶**弹窗中，您可以绑定一个已有的COS存储桶（已有的存储桶需要您在[COS控制台](https://console.tencentcloud.com/cos/bucket)先行创建），或新建一个存储桶。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/5b0d9ceb50fe8d2273d28978d606aa31.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/c63e0fd24da877f5f79f49360f4ff9e1.png)
 
 - #### 录制事件回调配置（可选）
 如果您希望接收录制服务的事件回调，可以配置回调地址。操作路径：进入应用详情页面，在页面中对【语音录制服务】点击 **修改** ，在 **回调地址** 点击 **修改** ，在弹窗中输入接收回调的url地址。目前仅针对录制任务完成状态推送事件回调消息。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/bc6aa61e60aa16716b57732ef24d5638.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/92314d86dbf00e8cdafe6ac24d1c17b8.png)
 
 - #### 录制范围配置
 录制范围可选自定义录制或全量录制。您此时应选中全量，并在复选框中指定是否录制单流、是否录制混流。
