@@ -56,4 +56,4 @@ client.DescribeZones(req, function(errMsg, response) {
 
 ## More Examples
 
-You can find more detailed examples in the examples directory of the GitHub repository.
+You can find more detailed examples in the examples directory of the [GitHub](https://github.com/TencentCloud/tencentcloud-sdk-nodejs-intl-en/tree/master/examples) repository.
