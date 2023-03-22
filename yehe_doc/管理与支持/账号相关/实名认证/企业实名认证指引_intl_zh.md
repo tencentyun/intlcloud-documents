@@ -16,27 +16,26 @@
 ### 步骤1：选择企业认证
 1. 登录腾讯云控制台，进入 [账号信息](https://console.cloud.tencent.com/developer) 页面，选择【基本信息】>【认证状态】，单击【提交认证】。
     ![image-20200701205840709](https://main.qcloudimg.com/raw/13e63c6eb445cdb3ca6b144bae3237dd.png)
-    
+
 2. 在实名认证前请先阅读以下条款，如果同意请点击【接受】。
 
     ![img](https://qcloudimg.tencent-cloud.cn/raw/6d13131ec31ea69ea9ffbd23bdae446a.png)
 
 3. 选择【企业认证】
 
-![image-20200701174758776](https://main.qcloudimg.com/raw/cf47265fb6a0837b41bdeef45a8b615e.png)
+    ![image-20200701174758776](https://main.qcloudimg.com/raw/cf47265fb6a0837b41bdeef45a8b615e.png)
 
 
 
 ### 步骤2：填写企业基本信息
 
-![image-20200701205642590](https://main.qcloudimg.com/raw/a3dc3cfcfaea15b1165b083ecd0ea341.png)
+![image-20200701205642590](https://staticintl.cloudcachetci.com/yehe/backend-news/RPdk609_Organization%20Verification.png)
 
 在控制台页面中分别填写企业的：
 
-1. 注册地区；
-2. 企业名称；
+1. 企业名称；
 3. 注册地址；
-4. 企业营业执照号；
+4. 企业注册号码；
 5. 企业实名认证照片；
 
 填写完以上信息后，点击【提交】即可发起实名认证流程。
