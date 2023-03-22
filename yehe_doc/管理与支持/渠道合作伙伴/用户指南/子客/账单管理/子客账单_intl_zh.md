@@ -10,7 +10,7 @@
 >- 该界面信息仅展示系统升级后的账信息，您的历史账单请至[历史账单](https://console.intl.cloud.tencent.com/expense/bill)页查询。
 >
 
-第一步：子客可登录[控制台-费用中心](https://console.intl.cloud.tencent.com/expense/customerbill)查看自己信用额度。
+第一步：子客可登录[控制台-费用中心](https://console.intl.cloud.tencent.com/expense/customerbill)查看自己帐单。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/57afda34ff0aeb330d6e92369f85360d.png)
 
