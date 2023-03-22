@@ -27,7 +27,7 @@ If this is the first time that you use EventBridge with your root account, accor
 ![](https://qcloudimg.tencent-cloud.cn/raw/24be8712c315ec7e9e35c9538f52193d.png)
 
 3. Select **Create by Policy Syntax** > **Blank Template**. Enter the policy name and enter the following syntax content in **Policy Content**:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/324a5819ecf3e52015dc3d1301d6f03f.png" width="450">
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/cbUz634_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230322161459.png" width="450">
 ```json
 {
     "version": "2.0",
