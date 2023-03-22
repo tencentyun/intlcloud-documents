@@ -9,7 +9,7 @@
 >- For products purchased offline, the product team will generate reseller bills and forward them to channel managers.
 >- This page only displays the bills generated after the system upgrade. Please check your historical bills on the [historical bills](https://console.intl.cloud.tencent.com/expense/bill) page.
 
-Step 1:Customer can log in to the [Console > Billing Center](https://console.intl.cloud.tencent.com/expense/customerbill)  to view your credit
+Step 1:Customer can log in to the [Console > Billing Center](https://console.intl.cloud.tencent.com/expense/customerbill)  to view your bill
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/57afda34ff0aeb330d6e92369f85360d.png)
 
