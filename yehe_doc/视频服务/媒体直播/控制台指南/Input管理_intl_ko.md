@@ -24,7 +24,7 @@ PULL 또는 PUSH 입력을 생성할 수 있습니다. Input 관리 페이지에
 
 ##### Type: SRT_PUSH
 입력 Type이 SRT_PUSH인 경우 Destination에 대한 streamid를 입력할 수 있습니다(선택 사항).
-![](https://qcloudimg.tencent-cloud.cn/raw/6122fc1b6a94baa6b3d1dadd315185f1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f4a9ec18c0de6d127fce99d8c91aad89.png)
 
 ##### Type: PULL
 입력 Type이 PULL인 경우 PULL 입력의 소스로 사용되는 InputAddress를 입력해야 합니다.
