@@ -134,6 +134,3 @@
 | Pulls operations data. |[v4/openconfigsvr/getappinfo](https://intl.cloud.tencent.com/document/product/1047/34886) |
 | Downloads recent messages.  |[v4/open_msg_svc/get_history](https://intl.cloud.tencent.com/document/product/1047/34885) |
 | Gets server IP addresses.  |[v4/ConfigSvc/GetIPList](https://intl.cloud.tencent.com/document/product/1047/36742) |
-| Blocks chat files. |[v4/im_cos_msg/forbid_illegal_object](https://www.tencentcloud.com/document/product/1047/50300)|
-| Unblocks chat files. |[v4/im_cos_msg/allow_banned_object](https://www.tencentcloud.com/document/product/1047/50299)|
-| Signed chat files. |[v4/im_cos_msg/get_cos_sig](https://www.tencentcloud.com/document/product/1047/50298)|
