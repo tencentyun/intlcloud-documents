@@ -28,7 +28,7 @@ You can create a screencapture and porn detection template in the following ways
 2. Click **Create Screencapture and Porn Detection Template**. If it is the first time you do so, click **Authorize Now** to create a service role and grant CSS read and write access to COS so that screenshots can be stored in COS.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f27be286a9f3c68d96a55544a6c25b57.png)
 3. Complete the template settings, and click **Save**.
-<img src="https://main.qcloudimg.com/raw/544c2127f7870add334eaf760f1da089.png" style="zoom:67%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6ecf7c0591d97bdd525e0419e1a5da5c.png" style="zoom:67%;" />
 
 <table>
 <thead><tr><th width="15%">Configuration Item</th><th>Description</th></tr></thead>
