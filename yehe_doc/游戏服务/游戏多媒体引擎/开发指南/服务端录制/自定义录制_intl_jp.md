@@ -21,7 +21,7 @@ GMEはリアルタイム音声ストリーム向けの**サーバー側のレコ
 
 ## サービスアーキテクチャ
 
-![](https://qcloudimg.tencent-cloud.cn/raw/115956742ac610dfb784d68a909dd032.jpg)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/zUFy538_PRELIM__%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8E_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-2.png)
 
 ## 機能説明
 
