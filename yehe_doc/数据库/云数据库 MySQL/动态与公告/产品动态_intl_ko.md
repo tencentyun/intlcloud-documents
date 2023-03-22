@@ -71,7 +71,7 @@
 <td>MySQL 스탠다드IA 스토리지 지원</td>
 <td>Tencent Cloud는 TencentDB for MySQL 스탠다드IA 스토리지를 제공하며, 사용자는 데이터베이스 감사의 실제 저장 빈도에 따라 적절한 과금 방식을 선택할 수 있어 감사 이용 비용을 줄일 수 있습니다.</td>
 <td>2022-06-30</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52083" target="_blank">데이터베이스 감사 과금 안내</a></td></tr>
+<td></td></tr>
 <tr>
 <td>SSL 암호화 지원</td>
 <td>TencentDB for MySQL은 SSL 암호화를 지원하여 암호화된 전송 터널을 구축하고 통신 데이터의 보안성 및 완전성을 향상시킵니다.</td>
@@ -155,11 +155,11 @@
 <tr>
 <td>MySQL 감사에서 로그 보관 기간으로 7일 지원</td>
 <td>감사가 새로 활성화되면 로그 보존 기간을 7일로 설정할 수 있습니다. 이는 짧은 시간 동안 실행 조건을 관찰하고 발견된 데이터베이스 문제를 분석하는 시나리오에 적합합니다. 감사가 이미 활성화된 인스턴스의 경우 로그 보관 기간을 7일로 변경할 수도 있습니다.</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52088" target="_blank">로그 저장 기간 수정</a></td></tr>
+<td></td></tr>
 <tr>
 <td>MySQL 감사에서 최적화된 검색</td>
 <td>퍼지 검색이 지원되며, 여러 SQL 유형을 함께 필터링하여 사용할 수 있으며, 검색 기간에 대한 24시간 제한이 제거됩니다.</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52087" target="_blank">감사 로그 보기</a></td></tr>
+<td></td></tr>
 </tbody></table>
 
 ## 2021년 07월
@@ -273,7 +273,7 @@
 <td>MySQL 데이터베이스 감사 지원</td>
 <td>Tencent Cloud는 TencentDB for MySQL 데이터베이스 감사 기능을 제공하여 데이터베이스 액세스 및 SQL 명령어 실행 상황을 기록하고, 기업의 리스크 관리와 데이터 보안 등급 향상에 이바지합니다.</td>
 <td>2020-07</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52086" target="_blank">데이터베이스 감사 활성화</a></td></tr>
+<td></td></tr>
 </tbody></table>
 
 ## 2020년 06월
@@ -458,7 +458,7 @@
 <td>데이터 구독 지원</td>
 <td>DTS는 사용자가 CDB의 실시간 증분 업데이트 데이터를 획득하도록 돕습니다. 사용자는 필요에 따라 증분 데이터를 소비합니다.</td>
 <td>2017-08</td>
-<td><a href="https://www.tencentcloud.com/document/product/571/48492" target="_blank">데이터 구독</a></td></tr>
+<td></td></tr>
 <tr>
 <td>CDB와 CDB 간의 데이터 마이그레이션 지원</td>
 <td>DTS 데이터 마이그레이션은 다양한 네트워크 환경과 호환됩니다.</td>
@@ -468,7 +468,7 @@
 <td>데이터 관리 DMC 출시</td>
 <td>DMC는 실시간 모니터링과 인스턴스 세션 관리를 지원합니다.</td>
 <td>2017-08</td>
-<td><a href="https://www.tencentcloud.com/document/product/1035/48822" target="_blank">DMC</a></td></tr>
+<td></td></tr>
 </tbody></table>
 
 ## 2017년 06월
