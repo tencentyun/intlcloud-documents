@@ -15,9 +15,7 @@ You need to have a Tencent Cloud account. If you don't have an account, you can 
 
 1. Log in to the Tencent Cloud Console and go to [Account Information](https://console.cloud.tencent.com/developer), navigate to **Basic Information** > **Verification Status**, and click **Submit for Verification**.
 
-![image-20200701205840709](https://main.qcloudimg.com/raw/13e63c6eb445cdb3ca6b144bae3237dd.png)
-
-
+   ![image-20200701205840709](https://main.qcloudimg.com/raw/13e63c6eb445cdb3ca6b144bae3237dd.png)
 
 2. Select ""Individual Verification"" and click **Verify Now**.
    ![image-20200701171147604](https://main.qcloudimg.com/raw/f23b527a964b770a45da7a32e8ba40f9.png)
@@ -26,7 +24,7 @@ You need to have a Tencent Cloud account. If you don't have an account, you can 
 
 ### Step 2. Enter basic individual information
 
-The International Tencent Cloud website allows you to verify your individual identity with your passport or driver's license number. After entering all required information, please click **Submit**.
-![image-20200701205356370](https://main.qcloudimg.com/raw/e778e09cdc5f814b74c46624d16d540e.png)
+The International Tencent Cloud website allows you to verify your individual identity with your passport, driver's license or work permit . After entering all required information, please click **Submit**.
+![image-20200701205356370](https://staticintl.cloudcachetci.com/yehe/backend-news/DHyE338_Individual%20Verification.png)
 
 The Tencent Cloud team will review the application within two to three business days and notify you of the result through the console Message Center, email, and SMS.
