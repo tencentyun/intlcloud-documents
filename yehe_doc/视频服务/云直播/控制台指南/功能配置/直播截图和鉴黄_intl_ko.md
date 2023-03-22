@@ -28,7 +28,7 @@ CSS는 음란물 감지를 지원합니다(화면 캡처 기반). 콘솔에서 �
 2. **화면 캡처 및 음란물 감지 템플릿 생성**을 클릭합니다. **처음** 수행하는 경우 지금 승인을 클릭하여 서비스 역할을 생성하고 COS에 화면 스크린샷을 저장할 수 있도록 CSS 읽기 및 쓰기 액세스 권한을 COS에 부여하십시오.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f27be286a9f3c68d96a55544a6c25b57.png)
 3. 템플릿 설정을 완료하고 **저장**을 클릭합니다.
-<img src="https://main.qcloudimg.com/raw/544c2127f7870add334eaf760f1da089.png" style="zoom:67%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/6ecf7c0591d97bdd525e0419e1a5da5c.png" style="zoom:67%;" />
 
 <table>
 <thead><tr><th width="15%">구성 항목</th><th>설명</th></tr></thead>
