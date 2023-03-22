@@ -71,7 +71,7 @@
 <td>TencentDB for MySQL supported infrequent access storage</td>
 <td>Tencent Cloud provides the infrequent access storage option for TencentDB for MySQL. You can select a suitable storage type based on your actual storage frequency to reduce audit costs.</td>
 <td>2022-06-30</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52083" target="_blank">Database Audit Billing</a></td></tr>
+<td></td></tr>
 <tr>
 <td>Supported SSL encryption</td>
 <td>TencentDB for MySQL supports SSL encryption to create encrypted data transfer channels and thus improve the security and integrity of communication data.</td>
@@ -155,11 +155,11 @@
 <tr>
 <td>Supported seven days as the log retention period in MySQL audit</td>
 <td>When audit is newly enabled, you can set the log retention period to seven days. This is suitable for scenarios where you want to observe execution conditions and analyze discovered database problems for a short time. For instances with audit already enabled, you can also change the log retention period to seven days.</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52088" target="_blank">Modifying Log Retention Period</a></td></tr>
+<td></td></tr>
 <tr>
 <td>Optimized search in MySQL audit</td>
 <td>Fuzzy search is supported, multiple SQL types can be used together for filtering, and the 24-hour limit on the search time period is removed.</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52087" target="_blank">Viewing Audit Log</a></td></tr>
+<td></td></tr>
 </tbody></table>
 
 ## July 2021
@@ -273,7 +273,7 @@
 <td>Supported MySQL database audit</td>
 <td>Tencent Cloud provides database audit capabilities for TencentDB for MySQL, which can record accesses to databases and executions of SQL statements to help you manage risks and improve the database security.</td>
 <td>2020-07</td>
-<td><a href="https://www.tencentcloud.com/document/product/236/52086" target="_blank">Enabling Database Audit</a></td></tr>
+<td></td></tr>
 </tbody></table>
 
 ## June 2020
@@ -458,7 +458,7 @@
 <td>Data subscription is now supported</td>
 <td>DTS can now help you get incrementally updated data in TencentDB in real time, so that you can consume incremental data based on your business needs.</td>
 <td>2017-08</td>
-<td><a href="https://www.tencentcloud.com/document/product/571/48492" target="_blank">Data Subscription</a></td></tr>
+<td></td></tr>
 <tr>
 <td>Data migration between TencentDB instances is now supported</td>
 <td>DTS is now compatible with more types of network environments.</td>
@@ -468,7 +468,7 @@
 <td>Data Management Center (DMC) is available</td>
 <td>DMC supports real-time monitoring and management of instance sessions.</td>
 <td>2017-08</td>
-<td><a href="https://www.tencentcloud.com/document/product/1035/48822" target="_blank">DMC</a></td></tr>
+<td></td></tr>
 </tbody></table>
 
 ## June 2017
