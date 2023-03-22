@@ -20,7 +20,7 @@
     <td>云端审核功能上线</td>
     <td>	云端审核功能，在服务端检测由单聊、群聊、资料场景中产生的文本、图片、音频、视频内容，支持针对不同场景的不同内容分别配置审核策略，并对识别出的不安全内容进行拦截。</td>
     <td> 2023-01-04 </td>
-    <td> <a href="https://www.tencentcloud.com/document/product/1047/52497#.E4.BA.91.E7.AB.AF.E5.AE.A1.E6.A0.B8.E5.8A.9F.E8.83.BD">云端审核</a></td>
+    <td></td>
 </tr> 
 </table>
 
