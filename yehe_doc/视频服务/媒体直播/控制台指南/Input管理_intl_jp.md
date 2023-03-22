@@ -24,7 +24,7 @@ TypeにRTMP_PUSHを選択した場合は、それぞれapplication nameとstream
 
 ##### Type：SRT_PUSH
 TypeにSRT_PUSHを選択した場合は、Destinationはstreamidを表しますが、必須ではありません。
-![](https://qcloudimg.tencent-cloud.cn/raw/6122fc1b6a94baa6b3d1dadd315185f1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f4a9ec18c0de6d127fce99d8c91aad89.png)
 
 ##### Type：PULL
 TypeにPULLタイプを選択した場合は、PULLのソースとしてInputAddressを入力してください。
