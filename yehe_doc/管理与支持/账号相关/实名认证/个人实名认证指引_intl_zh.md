@@ -15,18 +15,17 @@
 
 1. 登录腾讯云控制台，进入 [账号信息](https://console.cloud.tencent.com/developer) 页面，选择【基本信息】>【认证状态】，单击【提交认证】。
 
-![image-20200701205840709](https://main.qcloudimg.com/raw/13e63c6eb445cdb3ca6b144bae3237dd.png)
-
-
+   ![image-20200701205840709](https://main.qcloudimg.com/raw/13e63c6eb445cdb3ca6b144bae3237dd.png)
 
 2. 选择个人认证，单击【开始认证】。
+
    ![image-20200701171147604](https://main.qcloudimg.com/raw/f23b527a964b770a45da7a32e8ba40f9.png)
 
 
 
 ### 步骤2：填写个人基本信息
 
-国际站支持通过护照号或驾驶证号进行个人实名认证，当您填写完页面所需信息后，请单击【提交】。
-![image-20200701205356370](https://main.qcloudimg.com/raw/e778e09cdc5f814b74c46624d16d540e.png)
+国际站支持通过护照、驾驶证或工作许可证进行个人实名认证，当您填写完页面所需信息后，请单击【提交】。
+![image-20200701205356370](https://staticintl.cloudcachetci.com/yehe/backend-news/DHyE338_Individual%20Verification.png)
 
 提交实名申请后，工作人员会在2~3个工作日内完成审批，审核结果将会以站内信、邮件和短信的方式通知给您。
