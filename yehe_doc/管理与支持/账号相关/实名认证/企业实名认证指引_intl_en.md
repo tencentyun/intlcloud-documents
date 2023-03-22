@@ -23,20 +23,19 @@ You need to have a Tencent Cloud account. If you don't have an account, you can 
 
 3. Select **Enterprise Verification**.
 
-![image-20200701174758776](https://main.qcloudimg.com/raw/cf47265fb6a0837b41bdeef45a8b615e.png)
+    <img src="https://main.qcloudimg.com/raw/cf47265fb6a0837b41bdeef45a8b615e.png" alt="image-20200701174758776" style="zoom:50%;" />
 
 
 
 ### Step 2. Enter basic enterprise information
 
-![image-20200701205642590](https://main.qcloudimg.com/raw/a3dc3cfcfaea15b1165b083ecd0ea341.png)
+![image-20200701205642590](https://staticintl.cloudcachetci.com/yehe/backend-news/RPdk609_Organization%20Verification.png)
 
 Enter the following enterprise information in the console:
 
-1. Registration region;
-2. Enterprise name;
+1. Enterprise name;
 3. Registered address;
-4. Enterprise business license ID;
+4. Business Registration Number;
 5. Photo for enterprise verification.
 
 After entering the information above, click **Submit** to initiate identity verification.
