@@ -24,7 +24,7 @@ If the input type is RTMP_PUSH, you need to enter an application name and stream
 
 ##### SRT_PUSH
 If the input type is SRT_PUSH, you can enter a stream ID for the destination (optional).
-![](https://qcloudimg.tencent-cloud.cn/raw/6122fc1b6a94baa6b3d1dadd315185f1.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f4a9ec18c0de6d127fce99d8c91aad89.png)
 
 ##### PULL
 If the input type is PULL, you need to enter an input address, which is used as the source of the PULL input.
