@@ -20,13 +20,12 @@ GME 提供实时语音服务、语音消息服务及转文本服务，使用 GME
 - 错误码详情可参见 [错误码](https://intl.cloud.tencent.com/document/product/607/33223)。
   
 
-   > **注意**
+   >!
    > 
-
    > 语音转文本相关接口有默认频率限制，限额范围内计费方式请参见 [计费文档](https://intl.cloud.tencent.com/document/product/607/50009)；若需提升接口频率限额或了解超额计费方式，请联系商务或 [提交工单咨询](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)。
    > 
->   - 语音消息非流式转文本接口 ***SpeechToText()*** ：默认单账号限制并发数为10路
->   - 语音消息流式转文本接口 ***StartRecordingWithStreamingRecognition()***：默认单账号限制并发数为50路
+   >   - 语音消息非流式转文本接口 ***SpeechToText()*** ：默认单账号限制并发数为10路
+   >   - 语音消息流式转文本接口 ***StartRecordingWithStreamingRecognition()***：默认单账号限制并发数为50路
 
 
 ## 接入 SDK
@@ -117,7 +116,7 @@ Future<int> InitSDK(String appID, String openID)
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参见 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。</td>
+<td rowspan="1" colSpan="1" >来自<a href="https://console.cloud.tencent.com/gamegme">腾讯云控制台</a>的 GME 服务提供的 AppID，获取请参见<a href="https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0">语音服务开通指引</a>。</td>
 </tr>
 
 <tr>
@@ -125,7 +124,7 @@ Future<int> InitSDK(String appID, String openID)
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >openID 只支持 Int64 类型（转为 string 传入），规则由 App 开发者自行制定，App 内不重复即可。如需使用字符串作为 Openid 传入，可 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) 联系开发者。</td>
+<td rowspan="1" colSpan="1" >openID 只支持 Int64 类型（转为 string 传入），规则由 App 开发者自行制定，App 内不重复即可。如需使用字符串作为 Openid 传入，可 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)">提交工单</a>联系开发者。</td>
 </tr>
 </table>
 
@@ -152,7 +151,7 @@ Future<int> InitSDK(String appID, String openID)
 </table>
 
 
-> **关于7015错误提示**
+>!**关于7015错误提示**
 > 
 > - 7015错误码是通过 md5 进行判断，在接入过程中若出现此错误，请根据提示检查 SDK 文件是否完整、SDK 文件版本是否一致。
 > - 出现返回值 AV_ERR_SDK_NOT_FULL_UPDATE 时，此返回值**只有提示作用**，并不会造成初始化失败。
@@ -173,9 +172,8 @@ if (ret != GmeError.AV_OK)
 
 通过在定时器调用 Poll 可以触发事件回调。Poll 是 GME 的消息泵，GME 需要周期性的调用 Poll 接口触发事件回调。如果没有调用 Poll ，将会导致整个 SDK 服务运行异常。详情请参见 [Sample Project](https://intl.cloud.tencent.com/document/product/607/18521)  中的 EnginePollHelper 文件。
 
-> **注意**
+>!
 > 
-
 > 务必周期性调用 Poll 接口且在主线程调用，以免接口回调异常。
 > 
 
@@ -205,7 +203,7 @@ Future<int> Uninit()
 
 ## 语音消息服务及转文本服务
 
-> **说明**
+>?
 > 
 > - 转文本服务分录音文件极速转文本以及语音消息流式转文本。
 > - 使用语音消息服务不需要进入实时语音房间。
@@ -286,7 +284,7 @@ Future<Uint8List> GenAuthBuffer(String appID, String roomID, String openID, Stri
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme) 的权限密钥。</td>
+<td rowspan="1" colSpan="1" >来自腾讯云<a href="https://console.cloud.tencent.com/gamegme">控制台</a>的权限密钥。</td>
 </tr>
 </table>
 
@@ -392,7 +390,7 @@ Future<int> StartRecordingWithStreamingRecognition(String filePath, String speec
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >识别成指定文字的语言参数，参数请参见 [语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)</td>
+<td rowspan="1" colSpan="1" >识别成指定文字的语言参数，参数请参见<a href="https://intl.cloud.tencent.com/document/product/607/30260">语言参数参考列表</a></td>
 </tr>
 
 <tr>
@@ -400,7 +398,7 @@ Future<int> StartRecordingWithStreamingRecognition(String filePath, String speec
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >翻译成指定文字的语言参数，参数请参见 [语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)</td>
+<td rowspan="1" colSpan="1" >翻译成指定文字的语言参数，参数请参见<a href="https://intl.cloud.tencent.com/document/product/607/30260">语言参数参考列表</a></td>
 </tr>
 </table>
 
@@ -416,9 +414,8 @@ if (ret == 0) {
 }
 ```
 
-> **注意**
+>!
 > 
-
 >  翻译会收取额外费用，请参见 [购买指南](https://intl.cloud.tencent.com/document/product/607/50009)。
 > 
 
@@ -464,9 +461,8 @@ ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING 是在录音过程中�
 </table>
 
 
-> **注意**
+>!
 > 
-
 > 监听 `ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING` 消息时，file_id 为空。
 > 
 
@@ -1208,7 +1204,7 @@ Future<int> PlayRecordedFile(String filePath, int voiceType)
 
 <td rowspan="1" colSpan="1" >ITMG_VOICE_TYPE</td>
 
-<td rowspan="1" colSpan="1" >变声类型，请参见 [变声接入文档](https://intl.cloud.tencent.com/document/product/607/44995)</td>
+<td rowspan="1" colSpan="1" >变声类型，请参见<a href="https://intl.cloud.tencent.com/document/product/607/44995">变声接入文档</a></td>
 </tr>
 </table>
 
@@ -1410,9 +1406,8 @@ final int res = await ITMGContext.GetInstance().GetPTT().GetVoiceFileDuration(_f
 
 此接口可以指定语言进行识别，也可以将语音中识别到的信息翻译成指定的语言返回。
 
-> **注意**
+>!
 > 
-
 > 翻译会收取额外费用，请参见 [购买指南](https://intl.cloud.tencent.com/document/product/607/50009)。
 > 
 
@@ -1443,7 +1438,7 @@ Future<int> SpeechToText(String fileId, String speechLanguage, String translateL
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >识别出指定文字的语言参数，参数参见 [语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260)</td>
+<td rowspan="1" colSpan="1" >识别出指定文字的语言参数，参数参见<a href="https://intl.cloud.tencent.com/document/product/607/30260">语言参数参考列表</a></td>
 </tr>
 
 <tr>
@@ -1451,7 +1446,7 @@ Future<int> SpeechToText(String fileId, String speechLanguage, String translateL
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >翻译成指定文字的语言参数，参数参见 [语言参数参考列表](https://intl.cloud.tencent.com/document/product/607/30260) 中的翻译语言参数</td>
+<td rowspan="1" colSpan="1" >翻译成指定文字的语言参数，参数参见<a href="https://intl.cloud.tencent.com/document/product/607/30260">语言参数参考列表</a>中的翻译语言参数</td>
 </tr>
 </table>
 
