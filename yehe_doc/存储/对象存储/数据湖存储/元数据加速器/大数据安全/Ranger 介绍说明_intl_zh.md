@@ -28,7 +28,7 @@ EMR 环境中默认安装目录在 /usr/local/service/hadoop/share/hadoop/common
 
 #### COSN Ranger Interface
 
-该插件由 COS Ranger Client 和 COS Ranger Client 公共数据定义以及接口定义。
+该插件由 COS Ranger Server 和 COS Ranger Client 公共数据定义以及接口定义。
 
 EMR 环境中默认安装目录在 /usr/local/service/hadoop/share/hadoop/common/lib 下。例如包名 cosn-ranger-interface-1.0.4.jar，1.0.4即为 COSN Ranger Interface 版本号。
 
@@ -120,7 +120,7 @@ EMR 环境中默认安装目录在 /usr/local/service/hadoop/share/hadoop/common
 
 之所以推荐上述版本原因如下：
 
-- zookeeper 只用来选主，不进行服务注册与发现，大大减少大数据作业时 zookeeper 压力；因为每一个大数据作业时，会有大量 task 去访问 zookeeper 来进行 COS Ranger Server 服务发现，对 zookeeper 压力比较大，从而影响其他大数据组件稳定。
+- zookeeper 只用来选主，不进行服务注册与发现，极大减少大数据作业时 zookeeper 压力；因为每一个大数据作业时，会有大量 task 去访问 zookeeper 来进行 COS Ranger Server 服务发现，对 zookeeper 压力比较大，从而影响其他大数据组件稳定。
 - V5.0 版本的 hadoop-ranger-client 包可兼容旧版本 COS Ranger Server 包，可方便老用户升级 COS Ranger Server。
 - COS Ranger Server 5.1.2之前的版本，可能会存在获取到的 leader IP 和 leader latch 中的 IP 不一致的情况；而且，后期会简化 COS Ranger Server 注册到 zk 的信息，有利于后续拓展或升级。
 - 修复若干 bug。
