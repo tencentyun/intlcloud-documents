@@ -120,7 +120,7 @@ Future<int> InitSDK(String appID, String openID)
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参见 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。</td>
+<td rowspan="1" colSpan="1" >来自<a href="https://console.cloud.tencent.com/gamegme">腾讯云控制台</a>的 GME 服务提供的 AppID，获取请参见<a href="https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0">语音服务</a>开通指引。</td>
 </tr>
 
 <tr>
@@ -128,7 +128,7 @@ Future<int> InitSDK(String appID, String openID)
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >openID 只支持int64 类型（转为 string 传入），规则由 App 开发者自行制定，App 内不重复即可。如需使用字符串作为 Openid 传入，可 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) 联系开发者。</td>
+<td rowspan="1" colSpan="1" >openID 只支持int64 类型（转为 string 传入），规则由 App 开发者自行制定，App 内不重复即可。如需使用字符串作为 Openid 传入，可<a href="https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1">提交工单</a>联系开发者。</td>
 </tr>
 </table>
 
@@ -155,7 +155,7 @@ Future<int> InitSDK(String appID, String openID)
 </table>
 
 
-> **关于7015错误提示**
+>!**关于7015错误提示**
 > 
 > - 7015错误码是通过 md5 进行判断，在接入过程中若出现此错误，请根据提示检查 SDK 文件是否完整、SDK 文件版本是否一致。
 > - 出现返回值 AV_ERR_SDK_NOT_FULL_UPDATE 时，此返回值**只有提示作用**，并不会造成初始化失败。
@@ -208,9 +208,8 @@ void handleEventMsg(int eventType, String data) async {
 
 需要周期的调用 Poll 可以触发事件回调。Poll 是 GME 的消息泵，GME 需要周期性的调用 Poll 接口触发事件回调。如果没有调用 Poll ，将会导致整个 SDK 服务运行异常。详情请参见 [Sample Project](https://intl.cloud.tencent.com/document/product/607/18521)  中的 EnginePollHelper 文件。
 
-> **务必周期性调用 Poll 接口**
+>! **务必周期性调用 Poll 接口**
 > 
-
 > 务必周期性调用 Poll 接口且在主线程调用，以免接口回调异常。
 > 
 
@@ -340,7 +339,7 @@ Future<Uint8List> GenAuthBuffer(String appID, String roomID, String openID, Stri
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme) 的权限密钥。</td>
+<td rowspan="1" colSpan="1" >来自腾讯云<a href="https://console.cloud.tencent.com/gamegme">控制台</a>的权限密钥。</td>
 </tr>
 </table>
 
@@ -355,7 +354,7 @@ Future<Uint8List> GenAuthBuffer(String appID, String roomID, String openID, Stri
 
 用生成的鉴权信息进房，加入房间默认不打开麦克风及扬声器。
 
-> **注意**
+>!
 > 
 > - 加入房间事件回调结果 result 为 0 代表进房成功，进房接口 EnterRoom 返回值为 0 不代表进房成功。
 > - 房间的音频类型由第一个进房的人确定，此后房间里有成员修改房间类型，将对此房间所有成员生效。例如第一个进入房间的人使用的房间音频类型是流畅音质，第二个进房的是即使进房时候调用接口的音频类型参数是高清音质，进入房间之后也会变成流畅音质。需要有成员调用 ChangeRoomType 才会修改房间的音频类型。
@@ -387,7 +386,7 @@ Future<int> EnterRoom(String roomID, int roomType, Uint8List authBuffer)
 
 <td rowspan="1" colSpan="1" >ITMGRoomType</td>
 
-<td rowspan="1" colSpan="1" >房间类型，游戏建议使用  ITMG_ROOM_TYPE_FLUENCY。房间音频类型请参见 [音质选择](https://intl.cloud.tencent.com/document/product/607/18522)。</td>
+<td rowspan="1" colSpan="1" >房间类型，游戏建议使用  ITMG_ROOM_TYPE_FLUENCY。房间音频类型请参见<a href="https://intl.cloud.tencent.com/document/product/607/18522">音质选择</a>。</td>
 </tr>
 
 <tr>
@@ -409,7 +408,7 @@ int res = await ITMGContext.GetInstance().EnterRoom(_editRoomID.text, 1, authBuf
 
 加入房间完成后会通过回调返回ITMG_MAIN_EVENT_TYPE_ENTER_ROOM事件类型返回进房结果，监听进房结果事件后进行处理。如果回调为成功，即此时进房成功，开始进行**计费**。
 
-> **计费问题参考：**
+>!**计费问题参考：**
 > 
 > - [购买指南。](https://intl.cloud.tencent.com/document/product/607/50009)
 > - [计费相关问题。](https://intl.cloud.tencent.com/document/product/607/30255)
