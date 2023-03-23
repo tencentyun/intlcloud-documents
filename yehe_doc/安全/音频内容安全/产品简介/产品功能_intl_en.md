@@ -12,9 +12,7 @@ AMS identifies whether the audio contains panting, moaning, [ASMR](https://intl.
 
 ### Language Recognition
 
-Audio recognition supports Chinese, English, Korean, Japanese, Indonesian, Arabic, Hindi and more.
-
-ASR speech-to-text supports Chinese, English, Korean, Japanese, Indonesian, Arabic, Hindi and more.
+Currently only supports Chinese.
 
 ### Custom Content Recognition
 
