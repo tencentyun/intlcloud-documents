@@ -20,13 +20,10 @@ GME provides the real-time voice service and voice messaging and speech-to-text 
 - For detailed error codes, see [Error Codes](https://intl.cloud.tencent.com/document/product/607/33223).
   
 
-   > **Note**
-   > 
-
+   >!
    > There is a default call rate limit for speech-to-text APIs. For more information on how calls are billed within the limit, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009). If you want to increase the limit or learn more about how excessive calls are billed, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1).
-   > 
->   - Non-streaming speech-to-text API ***SpeechToText()***: There can be up to 10 concurrent requests per account.
->   - Streaming speech-to-text API ***StartRecordingWithStreamingRecognition()***: There can be up to 50 concurrent requests per account.
+   >   - Non-streaming speech-to-text API ***SpeechToText()***: There can be up to 10 concurrent requests per account.
+   >   - Streaming speech-to-text API ***StartRecordingWithStreamingRecognition()***: There can be up to 50 concurrent requests per account.
 
 
 ## Integrating the SDK
@@ -117,7 +114,7 @@ Future<int> InitSDK(String appID, String openID)
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >`AppID` provided in the [GME console](https://console.cloud.tencent.com/gamegme), which can be obtained as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0).</td>
+<td rowspan="1" colSpan="1" >`AppID` provided in the <a href="https://console.cloud.tencent.com/gamegme">GME console</a>, which can be obtained as instructed in <a href="https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0">Activating Services</a>.</td>
 </tr>
 
 <tr>
@@ -125,7 +122,7 @@ Future<int> InitSDK(String appID, String openID)
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >`openID` can only be in `Int64` type, which is passed in after being converted to a string. You can customize its rules, and it must be unique in the application. To pass in `openID` as a string, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) for application.</td>
+<td rowspan="1" colSpan="1" >`openID` can only be in `Int64` type, which is passed in after being converted to a string. You can customize its rules, and it must be unique in the application. To pass in `openID` as a string, <a href="https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1">submit a ticket</a> for application.</td>
 </tr>
 </table>
 
@@ -152,8 +149,7 @@ Future<int> InitSDK(String appID, String openID)
 </table>
 
 
-> **Notes on 7015 error code**
-> 
+>!**Notes on 7015 error code** 
 > - The 7015 error code is identified by MD5. If this error is reported during integration, check the integrity and version of the SDK file as prompted.
 > - The returned value `AV_ERR_SDK_NOT_FULL_UPDATE` is **only a reminder** but will not cause an initialization failure.
 
@@ -173,9 +169,7 @@ if (ret != GmeError.AV_OK)
 
 Event callbacks can be triggered by calling the `Poll` API in the timer. The `Poll` API is GME's message pump and should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run abnormally. For more information, see the `EnginePollHelper` file in [SDK Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 
-> **Note**
-> 
-
+>!
 > The `Poll` API must be called periodically and in the main thread to avoid abnormal API callbacks.
 > 
 
@@ -205,8 +199,7 @@ Future<int> Uninit()
 
 ## Voice Messaging and Speech-to-Text Services
 
-> **Notes**
-> 
+>!
 > - The speech-to-text service consists of fast recording-to-text conversion and streaming speech-to-text conversion.
 > - You do not need to enter a voice chat room when using the voice messaging service.
 > - The maximum recording duration of a voice message is 58 seconds by default, and the minimum recording duration cannot be less than 1 second. If you want to customize the recording duration, for example, to change the maximum recording duration to 10 seconds, call the `SetMaxMessageLength` API to set it after initialization.
@@ -219,6 +212,7 @@ Future<int> Uninit()
 ### Flowchart for using the speech-to-text service
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/8269f413756379d574a2969ac8da0158.jpg)
+
 <table>
 <tr>
 <td rowspan="1" colSpan="1" >API</td>
@@ -248,6 +242,7 @@ Generate `AuthBuffer` for encryption and authentication of relevant features. Fo
 ``` bash
 Future<Uint8List> GenAuthBuffer(String appID, String roomID, String openID, String key)
 ```
+
 <table>
 <tr>
 <td rowspan="1" colSpan="1" >Parameter</td>
@@ -286,7 +281,7 @@ Future<Uint8List> GenAuthBuffer(String appID, String roomID, String openID, Stri
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >Permission key from the Tencent Cloud [console](https://console.cloud.tencent.com/gamegme).</td>
+<td rowspan="1" colSpan="1" >Permission key from the Tencent Cloud <a href="https://console.cloud.tencent.com/gamegme">console</a>.</td>
 </tr>
 </table>
 
@@ -341,6 +336,7 @@ ITMGContext.GetInstance().GetPTT().SetMaxMessageLength(fileLen);
 ## Streaming Speech Recognition
 
 ### Voice messaging and speech-to-text APIs
+
 <table>
 <tr>
 <td rowspan="1" colSpan="1" >API</td>
@@ -370,6 +366,7 @@ This API is used to start streaming speech recognition. Text obtained from speec
 ``` bash
 Future<int> StartRecordingWithStreamingRecognition(String filePath, String speechLanguage, String translateLanguage) 
 ```
+
 <table>
 <tr>
 <td rowspan="1" colSpan="1" >Parameter</td>
@@ -392,7 +389,7 @@ Future<int> StartRecordingWithStreamingRecognition(String filePath, String speec
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >The language in which the voice message file is to be converted to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260).</td>
+<td rowspan="1" colSpan="1" >The language in which the voice message file is to be converted to text. For parameters, see <a href="https://intl.cloud.tencent.com/document/product/607/30260">Language Parameter Reference List</a>.</td>
 </tr>
 
 <tr>
@@ -400,7 +397,7 @@ Future<int> StartRecordingWithStreamingRecognition(String filePath, String speec
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >The language in which the voice message file is to be translated to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260).</td>
+<td rowspan="1" colSpan="1" >The language in which the voice message file is to be translated to text. For parameters, see <a href="https://intl.cloud.tencent.com/document/product/607/30260">Language Parameter Reference List.</a></td>
 </tr>
 </table>
 
@@ -416,10 +413,8 @@ if (ret == 0) {
 }
 ```
 
-> **Note**
-> 
-
->  Translation incurs additional fees. For more information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009).
+>!
+> Translation incurs additional fees. For more information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009).
 > 
 
 
@@ -431,6 +426,7 @@ After streaming speech recognition is started, you need to listen on callback me
 `ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING` returns the recognized text in real time during the recording, which is equivalent to returning the recognized text while speaking.
 
 The event message will be identified in the callback notification based on the actual needs. The passed parameters include the following four messages.
+
 <table>
 <tr>
 <td rowspan="1" colSpan="1" >Message</td>
@@ -464,14 +460,13 @@ The event message will be identified in the callback notification based on the a
 </table>
 
 
-> **Note**
-> 
-
+>!
 > The `file_id` is empty when the 'ITMG_MAIN_EVNET_TYPE_PTT_STREAMINGRECOGNITION_IS_RUNNING' message is listened for.
 > 
 
 
 #### Error codes
+
 <table>
 <tr>
 <td rowspan="1" colSpan="1" >Error Code</td>
@@ -1208,7 +1203,7 @@ Future<int> PlayRecordedFile(String filePath, int voiceType)
 
 <td rowspan="1" colSpan="1" >ITMG_VOICE_TYPE</td>
 
-<td rowspan="1" colSpan="1" >Voice changing type. For more information, see [Voice Changing](https://intl.cloud.tencent.com/document/product/607/44995).</td>
+<td rowspan="1" colSpan="1" >Voice changing type. For more information, see <a href="https://intl.cloud.tencent.com/document/product/607/44995">Voice Changing</a>.</td>
 </tr>
 </table>
 
@@ -1410,9 +1405,8 @@ final int res = await ITMGContext.GetInstance().GetPTT().GetVoiceFileDuration(_f
 
 This API can specify a language for recognition or translate the text recognized in speech into a specified language and return the translation.
 
-> **Note**
+>！
 > 
-
 > Translation incurs additional fees. For more information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009).
 > 
 
@@ -1443,7 +1437,7 @@ Future<int> SpeechToText(String fileId, String speechLanguage, String translateL
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >The language in which the audio file is to be converted to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260).</td>
+<td rowspan="1" colSpan="1" >The language in which the audio file is to be converted to text. For parameters, see <a href="https://intl.cloud.tencent.com/document/product/607/30260">Language Parameter Reference List</a>.</td>
 </tr>
 
 <tr>
@@ -1451,7 +1445,7 @@ Future<int> SpeechToText(String fileId, String speechLanguage, String translateL
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >The language in which the audio file is to be translated to text. For parameters, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260).</td>
+<td rowspan="1" colSpan="1" >The language in which the audio file is to be translated to text. For parameters, see <a href="https://intl.cloud.tencent.com/document/product/607/30260">Language Parameter Reference List</a>.</td>
 </tr>
 </table>
 
