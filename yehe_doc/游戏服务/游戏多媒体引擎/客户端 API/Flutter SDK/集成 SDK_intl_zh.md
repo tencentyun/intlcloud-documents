@@ -30,7 +30,8 @@ flutter pub get
 1. 在终端环境里进入到您的 Flutter 项目内 iOS 工程目录中，执行 pod install。
 
 2. 在 xcode 工程中配置 GME 依赖的库（如果您的工程中本来就有，此步骤可以忽略）依赖文件如下图：
-![](https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100022348635/3b7e2b2ba91e11ed9e14525400088f3a.png?q-sign-algorithm=sha1&q-ak=AKIDXRkeWGao-4Lv3f_Eu1m3VnMKKY6x8epsBbtjkms4ddDo74Ms78vFddiSrwbcU8jQ&q-sign-time=1677574660;1677578260&q-key-time=1677574660;1677578260&q-header-list=&q-url-param-list=&q-signature=bf2bce23372294095f44ea81d6ab081e19d3cdd0&x-cos-security-token=4BxBX1TdmsXQgKiC0yuQkiNKPjqcXA3ab3ea5ec8dc478a562f373af322df1e3bt1CAEDm-_AoFFamI9r7Z0Qo4kHjZ0fSHNxd4tvhUTTLE7ZVd9s-RurQ5v-9OEjAl4WGsJvhiUrpbooKU0qFC1HtwKSU8O6NVGJ6NZocBI0EAqA6XcsnjJfn8JsFxo1Hb7WAcR2k6sMrYl9csiYZW_poBONMAAwo_5tBmXa-et6MAuFNuBH4NlLm7eFJlTn0MR3L_csg8Q_8dFfnyxl14-y7FWsHh7olUQbIS3dyyuMMVUksk6zotFcewS08U5DdgVlsK5mzH68JMn2Ee4Ne2_OqLnxFB92a0TSIahKuWuB-vditl2wbPulD9DMkdb4ZEL38Zyvff1qsrO_RmrjtWinDWnEBnCw8vJZlT70QYeP3NYnGbhVBIfysFNbB6TyHp)
+
+![](https://qcloudimg.tencent-cloud.cn/image/document/dc2719d67a93363fd577382afa706f21.png)
 
 3. 游戏多媒体引擎 iOS 平台所需要的隐私权限如下：
 
@@ -43,7 +44,7 @@ flutter pub get
 1. 因 GME 需要获取通话等权限并使用了 flutter permission-handler 权限管理插件，所以需要使用31以上版本的 Android SDK（如在工程中已经使用请忽略），修改如图：
 
 
-   ![](https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100025598411/2be82716adce11ed9e14525400088f3a.png?q-sign-algorithm=sha1&q-ak=AKIDQvqZYxEAxGk7IGQ5VxYx9ES21_DoTUx_ubBjhure4A7pxIe0GL3MHmSAchNQKAA3&q-sign-time=1677574660;1677578260&q-key-time=1677574660;1677578260&q-header-list=&q-url-param-list=&q-signature=f1191c9c7b59a54d0509ecabefe7ea96456208e6&x-cos-security-token=bK7rgYee6Vlrw9RJjpxrtdfDlY04DBKa792613b4a003612ede236793ba1a4008OaKmfZJKditLmR-Y5Yin3UxRFASPLWyamAKRx-xY-qaRj0vYqXEMUqLjdbhfW9aTel3RxGt7GuYCuOILDA8msvrLtHDmWiPW1_kpPDq947w7kHezY0h4oaFirCp7LAgBNVsUBFydps-b0HOsFPkI8ceS7EMbLtxNhdsm3vx6dMf6JfHNK2cft32BuwaeSOFm3r1nsrsm9SoJv7yD5u1k76tUzdsMbI_xC_XUUztnKz0pxI2afuCsQeYmKLjLSevui57MB2cxuPRmZCKtD2HGEDyWnJFMVibQHnFTMw90i5DoT-GGre95x3cjeEIOglo0DZwjjdZuBIcFbRQ1sijX-35MpuYAga7_-s0oZ2eiHdvgpMhUC3x2deRanGBnvyhu)
+   ![](https://qcloudimg.tencent-cloud.cn/image/document/708a65ce06b75331d6d06427b869172a.png)
 
 2. 在 flutter 工程文件 android/app/src/AndroidManifest.xml 中添加工程权限（如已修改请忽略）。
 
