@@ -34,7 +34,7 @@ EMR 환경에서는 /usr/local/service/hadoop/share/hadoop/common/lib에 설치�
 
 [Github](https://github.com/tencentyun/cos-ranger-service)에서 상기 jar 패키지를 가져올 수 있습니다. impala 및 presto의 COS Ranger Client 패키지와 같은 다른 컴포넌트의 경우 EMR 팀에 문의하십시오.  
 
-상기 컴포넌트는 EMR 콘솔에서 Ranger 및 cosranger 컴포넌트를 구매할 때 자동으로 설치됩니다. [CHDFS Ranger 권한 시스템 솔루션] (https://intl.cloud.tencent.com/document/product/1106/41973)의 지침에 따라 직접 설치할 수도 있습니다.
+상기 컴포넌트는 EMR 콘솔에서 Ranger 및 cosranger 컴포넌트를 구매할 때 자동으로 설치됩니다. [CHDFS Ranger 권한 시스템 솔루션](https://intl.cloud.tencent.com/document/product/1106/41973)의 지침에 따라 직접 설치할 수도 있습니다.
 
 ### 버전 설명 
 
@@ -192,7 +192,7 @@ find . -name "*.jar" -exec grep -Hls "org/apache/hadoop/fs/cosn/ranger/protocol/
 
 ### Ranger policy 에서 스토리지 경로 정책 규칙을 구성하려면 어떻게 해야 합니까?
 
-Ranger에는 주로 문자열 일치를 기반으로 하는 간단한 Path 인증 규칙이 있습니다. policy의 path 규칙이 파일 /a/b/c에 대해 **/a/**로 설정된 경우 sdk가 끝에서 **/**를 제거하고 경로는 Ranger에서 **/a**가 되며 **/a/**와 일치할 수 없기 때문에 **/a** 또는 **/a/**를 통해 파일에 액세스할 수 없습니다. **/a/b** 또는 **/a/b/c**에 액세스하는 경우 두 path의 접두사가 policy의 path 규칙 **/a/**과 일치할 수 있습니다.
+Ranger에는 주로 문자열 일치를 기반으로 하는 간단한 Path 인증 규칙이 있습니다. policy의 path 규칙이 파일 /a/b/c에 대해 **/a/** 로 설정된 경우 sdk가 끝에서 **/** 를 제거하고 경로는 Ranger에서 **/a** 가 되며 **/a/** 와 일치할 수 없기 때문에 **/a** 또는 **/a/** 를 통해 파일에 액세스할 수 없습니다. **/a/b** 또는 **/a/b/c** 에 액세스하는 경우 두 path의 접두사가 policy의 path 규칙 **/a/** 과 일치할 수 있습니다.
 
 ### 테이블 생성을 위해 Hive에서 COSN 또는 OFS 경로를 지정할 때 HiveAccessControlException 오류가 보고되면 어떻게 해야 합니까?
 
