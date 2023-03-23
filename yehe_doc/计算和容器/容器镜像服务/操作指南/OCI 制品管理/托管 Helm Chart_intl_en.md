@@ -23,7 +23,7 @@ Before uploading and managing Helm Charts in a TCR Enterprise Edition instance, 
 	- **Version Management**: this page displays the existing Chart versions in the current repository, and you can **download** or **delete** the specified versions, as shown in the figure below:
 	![](https://main.qcloudimg.com/raw/bfdcb7b09f1e7e575b10f110c5b54b4b.png)
 	- **Basic Information**: this page allows you to browse the detailed information of the specified Chart version, such as Chart.yaml, as shown in the figure below:
-	![](https://main.qcloudimg.com/raw/245e50656e42d1a17d380889feeeda7d.png)
+	![](https://staticintl.cloudcachetci.com/yehe/backend-news/NcKf494_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230323100700.png)
 
 ### Using the console to upload and download Helm Charts
 #### Uploading a local Helm Chart package
