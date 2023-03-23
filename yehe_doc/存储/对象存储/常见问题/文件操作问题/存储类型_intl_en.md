@@ -5,10 +5,10 @@ INTELLIGENT TIERING fees include **INTELLIGENT TIERING storage usage fees** and 
  - When objects are stored in the frequent access tier, STANDARD storage usage fees are charged.
  - When objects are stored in the infrequent access tier, STANDARD_IA storage usage fees are charged.
  >?
- > - STANDARD and STANDARD_IA storage usage fees vary by region. For details about their pricing, see [Product Pricing](https://buy.cloud.tencent.com/price/cos).
+ > - STANDARD and STANDARD_IA storage usage fees vary by region. For details about their pricing, see [Product Pricing](https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=).
  > - Request fees and traffic fees are also incurred during object upload and download. For the billing examples, see [Traffic Fees](https://intl.cloud.tencent.com/document/product/436/33776) and [Request Fees](https://intl.cloud.tencent.com/document/product/436/40100).
  > 
-2. INTELLIGENT TIERING object monitoring fees are charged based on the number of objects stored (excluding files smaller than 64 KB). 0.025 USD is charged per 10,000 monitored objects per month.
+2. INTELLIGENT TIERING object monitoring fees are charged based on the number of objects stored (excluding files smaller than 64 KB). For details about their pricing, see [Product Pricing](https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=).
 
 **Sample**
 
