@@ -37,5 +37,5 @@ SDKのバケット削除メソッドを直接呼び出すことができます�
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31469)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31470)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31471)
-
+- [Mini Program SDK](https://www.tencentcloud.com/document/product/436/31472)
 
