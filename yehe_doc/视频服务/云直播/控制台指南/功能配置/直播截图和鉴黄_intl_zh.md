@@ -28,8 +28,7 @@
 2. 单击 **创建截图&鉴黄模板**，由于云直播截图鉴黄服务需要把截图存储至对象存储的存储桶中，所以**首次**创建截图&鉴黄模板需要您创建服务角色，并给云直播授权 COS 的读写权限。单击前往授权，进入 CAM 进行授权。
 ![](https://qcloudimg.tencent-cloud.cn/raw/f27be286a9f3c68d96a55544a6c25b57.png)
 3. 授权成功后可填写配置项，并单击 **保存** 即可。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/6ecf7c0591d97bdd525e0419e1a5da5c.png" style="zoom:67%;" />
-
+    <img src="https://main.qcloudimg.com/raw/544c2127f7870add334eaf760f1da089.png" style="zoom:67%;" />
 <table>
 <thead><tr><th width="15%">配置项</th><th>说明</th></tr></thead>
 <tbody><tr>
@@ -99,9 +98,9 @@
 
 1. 登录云直播控制台，进入 **功能配置** > [**直播截图&鉴黄**](https://console.cloud.tencent.com/live/config/jtjh)。
 2. 选择已关联域名的直播截图&鉴黄模板，单击 **解绑**。
- ![](https://qcloudimg.tencent-cloud.cn/raw/e8a52af13916db8d50bc4395cfc5cc8d.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e8a52af13916db8d50bc4395cfc5cc8d.png)
 3. 确认是否解绑当前关联域名，单击 **确定** 即可解绑。
- ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
+   ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
 
 [](id:change)
 ## 修改模板

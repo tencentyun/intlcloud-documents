@@ -2,8 +2,7 @@
 
 [](id:limit)
 ## 使用限制
-- 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台，建议提前开通点播服务，并可提前选购点播相关资源包，避免点播业务欠费停用，详细请参见 [点播快速入门](https://intl.cloud.tencent.com/document/product/266/8757)。
-- 开启录制功能后请确保云点播服务处于正常使用状态。云点播服务未开通或账号欠费导致云点播服务停服等情况将影响直播无法进行录制，期间不会产生录制文件和录制费用。
+- 开启录制功能后请确保云点播或对象存储服务处于正常使用状态。若云点播或对象存储服务未开通或账号欠费导致停服等情况将影响直播无法进行录制，期间不会产生录制文件和录制费用。
 -  模板配置完后约5分钟 - 10分钟生效。 
 -  模板关联成功后，指定推流域名下的推流地址开启录制功能。
 -  一个域名仅可关联一个录制模板，关联后该域名下的所有流均会按照该模板进行录制。
@@ -16,18 +15,18 @@
 
 [](id:conect)
 ## 关联录制模板
-1.	进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。
-2.	选择【模板配置】页签，单击【录制配置】标签右上角的【编辑】。
+1.	进入 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或**管理**进入域名详情页。
+2.	选择**模板配置**页签，单击**录制配置**标签右上角的**编辑**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a56ed2f940b60babab0e2bbbe4eebaab.png)
-3. 选择录制配置模板，单击【确定】即可。
+3. 选择录制配置模板，单击**确定**即可。
 ![](https://qcloudimg.tencent-cloud.cn/raw/b4e5b04ee6e79636e52ae907556cd5d1.png)
 
 
 [](id:unite)
 ## 解绑录制模板
-1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。
-2. 选择【模板配置】页签，单击【录制配置】标签右上角的【编辑】。
-3. 单击取消相应模板的勾选，单击【确定】即可。
+1. 进入 [**域名管理**](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或**管理**进入域名详情页。
+2. 选择**模板配置**页签，单击**录制配置**标签右上角的**编辑**。
+3. 单击取消相应模板的勾选，单击**确定**即可。
 ![](https://qcloudimg.tencent-cloud.cn/raw/ae44efc51b581100735c7faafe2414e8.png)
 
 >? 
@@ -38,14 +37,18 @@
 [](id:get_record)
 ## 录制文件获取
 录制文件生成后自动存储到云点播系统，有以下方式可以获取录制文件：
-
-### 云点播控制台
-登录云点播控制台，选择子应用进入并单击左侧的[【媒资管理】](https://console.cloud.tencent.com/vod/media)可以浏览已录制所有文件。
+### 存储至云点播
+#### 云点播控制台
+登录云点播控制台，选择子应用进入并单击左侧的 [**媒资管理**](https://console.cloud.tencent.com/vod/media)可以浏览已录制所有文件。
 ![](https://main.qcloudimg.com/raw/b41dc459807ac1986d1db04032ea7942.png)
- 
-### 录制事件通知
-通过控制台或者 API 调用设置录制回调地址，录制文件生成后会以消息方式通知到该回调地址。在收到消息后可根据录制 [回调协议内容](https://intl.cloud.tencent.com/document/product/267/31566) 进行业务处理。
+
+#### 录制事件通知
+通过控制台或者 API 调用设置录制回调地址，录制文件生成后会以消息方式通知到该回调地址。在收到消息后可根据录制 [回调协议内容](https://intl.cloud.tencent.com/document/product/267/38080) 进行业务处理。
 >?事件通知机制高效可靠且实时性好，我们推荐您使用回调方式获取录制文件。
 
-### 云点播 API 查询
+#### 云点播 API 查询
 具体使用请参见云点播 API  [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179) 接口筛选查询录制文件。
+
+### 存储至对象存储
+#### 对象存储控制台
+登录对象存储控制台，单击左侧的 [存储桶列表](https://console.cloud.tencent.com/cos/bucket) 并选择对应的存储桶，在文件里表中可找到对应的录制文件夹。
