@@ -147,11 +147,11 @@ rm tencent-cloud-cos.zip -f
 </tr>
 <tr>
 <td align="left">Cloud Infinite</td>
-<td align="left">Cloud Infiniteサービスを有効にすると、画像の編集、圧縮、形式変換、ウォーターマーク追加などの操作を行うことができます。詳細については、<a href="https://cloud.tencent.com/product/ci">Cloud Infinite製品の紹介</a>をご参照ください</td>
+<td align="left">Cloud Infiniteサービスを有効にすると、画像の編集、圧縮、形式変換、ウォーターマーク追加などの操作を行うことができます。詳細については、<a href="https://www.tencentcloud.com/products/ci">Cloud Infinite製品の紹介</a>をご参照ください</td>
 </tr>
 <tr>
 <td align="left">ファイル審査</td>
-<td align="left">ファイル審査を有効にすると、画像、ビデオ、オーディオ、テキスト、ドキュメント、ウェブページなどのマルチメディアのコンテンツセキュリティに対してインテリジェント審査サービスを行うことができます。ユーザーが、ポルノ・低俗、違法・不正、不快感を与えるなどの禁止コンテンツを効果的に識別し、運営リスクを回避できるようにサポートします。詳細については<a href="https://cloud.tencent.com/document/product/436/45435">コンテンツ審査の概要</a>をご参照ください</td>
+<td align="left">ファイル審査を有効にすると、画像、ビデオ、オーディオ、テキスト、ドキュメント、ウェブページなどのマルチメディアのコンテンツセキュリティに対してインテリジェント審査サービスを行うことができます。ユーザーが、ポルノ・低俗、違法・不正、不快感を与えるなどの禁止コンテンツを効果的に識別し、運営リスクを回避できるようにサポートします。詳細については<a href="https://www.tencentcloud.com/document/product/436/53946">コンテンツ審査の概要</a>をご参照ください</td>
 </tr>
 <tr>
 <td align="left">ドキュメントプレビュー</td>
