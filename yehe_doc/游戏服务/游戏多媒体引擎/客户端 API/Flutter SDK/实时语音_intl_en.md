@@ -120,7 +120,7 @@ Future<int> InitSDK(String appID, String openID)
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >`AppID` provided in the [GME console](https://console.cloud.tencent.com/gamegme), which can be obtained as instructed in [Activating Services](https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0).</td>
+<td rowspan="1" colSpan="1" >`AppID` provided in the <a href="https://console.cloud.tencent.com/gamegme">GME console</a>, which can be obtained as instructed in <a href="https://intl.cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0">Activating Services</a>.</td>
 </tr>
 
 <tr>
@@ -128,7 +128,7 @@ Future<int> InitSDK(String appID, String openID)
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >`openID` can only be in `int64` type, which is passed in after being converted to a string. You can customize its rules, and it must be unique in the application. To pass in `openID` as a string, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1) for application.</td>
+<td rowspan="1" colSpan="1" >`openID` can only be in `int64` type, which is passed in after being converted to a string. You can customize its rules, and it must be unique in the application. To pass in `openID` as a string, <a href="https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1">submit a ticket</a> for application.</td>
 </tr>
 </table>
 
@@ -155,7 +155,7 @@ Future<int> InitSDK(String appID, String openID)
 </table>
 
 
-> **Notes on 7015 error code**
+>! **Notes on 7015 error code**
 > 
 > - The 7015 error code is identified by MD5. If this error is reported during integration, check the integrity and version of the SDK file as prompted.
 > - The returned value `AV_ERR_SDK_NOT_FULL_UPDATE` is **only a reminder** but will not cause an initialization failure.
@@ -208,9 +208,8 @@ void handleEventMsg(int eventType, String data) async {
 
 You need to periodically call the `Poll` API to trigger event callbacks. The `Poll` API is GME's message pump and should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run abnormally. For more information, see the `EnginePollHelper` file in [SDK Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 
-> **Call the `Poll` API periodically**
+>? **Call the `Poll` API periodically**
 > 
-
 > The `Poll` API must be called periodically and in the main thread to avoid abnormal API callbacks.
 > 
 
@@ -340,7 +339,7 @@ Future<Uint8List> GenAuthBuffer(String appID, String roomID, String openID, Stri
 
 <td rowspan="1" colSpan="1" >string</td>
 
-<td rowspan="1" colSpan="1" >Permission key from the Tencent Cloud [console](https://console.cloud.tencent.com/gamegme).</td>
+<td rowspan="1" colSpan="1" >Permission key from the Tencent Cloud <a href="https://console.cloud.tencent.com/gamegme">console</a>.</td>
 </tr>
 </table>
 
@@ -355,7 +354,7 @@ Future<Uint8List> GenAuthBuffer(String appID, String roomID, String openID, Stri
 
 This API is used to enter a room with the generated authentication information. The mic and speaker are not enabled by default after room entry.
 
-> **Note**
+>!
 > 
 > - If the room entry callback result is `0`, the room entry is successful. If `0` is returned from the `EnterRoom` API, it doesn't necessarily mean that the room entry is successful.
 > - The audio type of the room is determined by the first user entering the room. After that, if a member in the room changes the room type, it will take effect for all members there. For example, if the first user entering the room uses the smooth sound quality, and the second user entering the room uses the HD sound quality, the room audio type of the second user will change to the smooth sound quality. Only after a member in the room calls the `ChangeRoomType` API will the audio type of the room be changed.
@@ -387,7 +386,7 @@ Future<int> EnterRoom(String roomID, int roomType, Uint8List authBuffer)
 
 <td rowspan="1" colSpan="1" >ITMGRoomType</td>
 
-<td rowspan="1" colSpan="1" >Room type. We recommend that you select `ITMG_ROOM_TYPE_FLUENCY` for games. For more information on room audio types, see [Sound Quality](https://intl.cloud.tencent.com/document/product/607/18522).</td>
+<td rowspan="1" colSpan="1" >Room type. We recommend that you select `ITMG_ROOM_TYPE_FLUENCY` for games. For more information on room audio types, see <a href="https://intl.cloud.tencent.com/document/product/607/18522">Sound Quality</a>.</td>
 </tr>
 
 <tr>
@@ -409,7 +408,7 @@ int res = await ITMGContext.GetInstance().EnterRoom(_editRoomID.text, 1, authBuf
 
 After the user enters the room, the `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` event type will be called back to notify the room entry result, which can be listened on for processing. A successful callback means that the room entry is successful, and the billing **starts**.
 
-> **Billing references:**
+>! **Billing references:**
 > 
 > - [Purchase Guide](https://intl.cloud.tencent.com/document/product/607/50009)
 > - [Billing](https://intl.cloud.tencent.com/document/product/607/30255)
