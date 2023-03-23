@@ -8,7 +8,7 @@
 
 ## 转发路径
 负载均衡负责转发业务流量，由后端服务实际处理业务请求。CLB 与后端 CVM 之间是通过腾讯云内网进行通信的。TGW 和 STGW 均由多台服务器部署，通过集群来提供负载均衡服务。CLB 的转发路径如下图所示：
-![](https://main.qcloudimg.com/raw/a00470f1d73bf937422d3d917b42cd38.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Bzmv359_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230323115443.png)
 1. TCP/UDP协议：
  - TCP/UDP 协议由 TGW 集群处理转发逻辑。
  - 业务流量到达后，由 TGW 通过腾讯云内网转发给后端 CVM，后端 CVM 的回包也是通过 TGW 返回给客户端。
