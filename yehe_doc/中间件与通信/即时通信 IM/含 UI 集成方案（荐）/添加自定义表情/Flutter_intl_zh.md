@@ -23,7 +23,7 @@
 
 ### 将文件导入项目
 
-请将您的表情资源文件，导入项目的 `assets/custom_face_resource/` 目录内。无论是图片大表情，亦或是图片小表情，都需按此步骤引入。
+请将您的表情资源文件，导入项目的 `assets/custom_face_resource/` 目录内。无论是图片大表情，抑或是图片小表情，都需按此步骤引入。
 
 该目录内，请使用不同的文件夹，区分表情面板中的不同Tab。每个Tab内表情，仅支持一种类型，图片大表情或图片小表情。
 
@@ -444,11 +444,4 @@ List<Map<String, Object>> emojiData = [
 ```
 
 [](id:contact)
-
-## 联系我们
-
-If there's anything unclear or you have more ideas, feel free to contact us!
-
-- Telegram Group: https://t.me/+1doS9AUBmndhNGNl
-- WhatsApp Group: https://chat.whatsapp.com/Gfbxk7rQBqc8Rz4pzzP27A
 

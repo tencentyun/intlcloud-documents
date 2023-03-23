@@ -14,7 +14,7 @@
 >   - 群成员资料信息仅支持 userID | nick | avatar | joinTime 字段，设置 nick 和 avatar 信息请调用：[updateMyProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateMyProfile)。
 
 旗舰版如需户开启直播群在线成员列表功能，请登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 修改相关配置，配置页面如下图所示：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/513b23a6598a74a0b0a6be5b6b59536f.png" alt="" style="zoom:90%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/513b23a6598a74a0b0a6be5b6b59536f.png" alt="" style="zoom:30%;" />
 
 **接口**
 
@@ -262,7 +262,7 @@ tim.setGroupMemberRole(options);
 | Name               | Type     | Description                                                  |
 | ------------------ | -------- | ------------------------------------------------------------ |
 | groupID     | String | 		群组 ID 或 话题 ID |
-| userIDList | Array | 用户 ID |
+| userID | String | 用户 ID |
 | role | String | 可选值：TIM.TYPES.GRP_MBR_ROLE_ADMIN（群管理员）,TIM.TYPES.GRP_MBR_ROLE_MEMBER（群普通成员）,TIM.TYPES.GRP_MBR_ROLE_CUSTOM（自定义群成员角色，仅社群支持） |
 
 **返回值**

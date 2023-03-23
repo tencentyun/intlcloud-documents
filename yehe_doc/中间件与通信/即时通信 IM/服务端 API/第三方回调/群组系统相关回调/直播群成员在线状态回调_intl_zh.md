@@ -1,10 +1,10 @@
 ## 功能说明
 
-App 后台可以通过该回调实时查看直播群的上下线状态，例如记录日志，或者同步到其他系统。
+App 后台可以通过该回调实时查看直播群的上下线状态，例如记录日志，或者同步到其他系统。该回调仅同步上下线事件，如需要监控进群/退群事件，请参见 [新成员入群之后回调](https://intl.cloud.tencent.com/document/product/1047/34372)、[群成员离开之后回调](https://intl.cloud.tencent.com/document/product/1047/34373)。
 
 ## 注意事项
 
-- 此功能[升级](https://www.tencentcloud.com/document/product/1047/34577)旗舰版后可使用，并且已开通“直播群在线成员列表”功能(控制台“群功能配置”)。
+- 此功能需 [旗舰版套餐](https://buy.cloud.tencent.com/avc?from=17473)，并且已开通“直播群在线成员列表”功能(控制台“群功能配置”)。在控制台开启后，直播群成员将保存最新入群并且在线的1000人，客户端可以拉取该列表。在控制台关闭后，客户端无法拉取该1000人列表，只能拉取到最新进群的30人列表。
 - 要启用回调，必须配置回调 URL，并打开本条回调协议对应的开关，配置方法详见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
 - 回调的方向是即时通信 IM 后台向 App 后台发起 HTTP POST 请求。
 - App 后台在收到回调请求之后，务必校验请求 URL 中的参数 SDKAppID 是否是自己的 SDKAppID。
@@ -92,4 +92,5 @@ App 后台同步数据后，返回应答包。
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - [新成员入群之后回调](https://intl.cloud.tencent.com/document/product/1047/34372)
 - [群成员离开之后回调](https://intl.cloud.tencent.com/document/product/1047/34373)
+
 

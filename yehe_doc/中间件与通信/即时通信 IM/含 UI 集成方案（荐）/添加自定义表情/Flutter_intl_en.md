@@ -1,307 +1,305 @@
 
-## Overview
+This document describes how to introduce emoji capabilities to Tencent Cloud Chat Flutter TUIKit.
 
-Tencent Cloud Chat Flutter TUIKit provides powerful Emoji and Sticker modules to help you customize the Emoji and Sticker sharing of your app.
+The `TIMUIKitChat` component supports sending and receiving emojis of the following three types:
 
-Through simple configurations, you can easily choose and integrate those three types of stickers to your app.
-
-| Sticker Type | Message Type | Embed to text | Sending content | Render | Import | Provide by default |
+| Emoji Type | Sending Mode | Mix-Up with Text | Sending Content | Parsing Mode | Introduction Method | Embedded in TUIKit |
 |---------|---------|---------|---------|---------|---------|---------|
-| [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) Emoji | Text Message | Yes | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) |[Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) to Emoji can be compiled automatically by devices, while different devices or platforms have different Emoji rendering | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) List | Sample [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) List is provided [here](#unicode) |
-| Small Image Emoji | Text Message | Yes | Image name | Match local Asset image resources according to name automatically | Image stored in asset, and define `List` | A set of QQ Emoji is provided by default |
-| Big Image Sticker | Sticker Message | No | `baseURL` join with image name, as asset path | Render image from asset | Image stored in asset, and define `List` | - |
+| [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) emoji | Text message | Yes | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) | The device automatically parses [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) characters into emojis. The parsing result of the same [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) characters may vary with devices. | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) List | A set of [default Unicode emoji list](#unicode) is provided. |
+| Small image | Text message | Yes | Image name | The image is automatically matched against the local image assets by name. | Images are stored as assets, and are defined in `List`. | A QQ small emoji gallery is provided, which can be used directly. |
+| Large image | Text message | No | `baseURL` plus the image file name, which form the path of the emoji image asset | The asset resources are parsed based on the path. | Images are stored as assets, and are defined in `List`. | - |
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/023c3c716b481401c8da763e66ba08d1.png)
 
-Now, let's start integrating Emoji and Sticker to your app with TUIKit.
+Take the following steps to manually introduce emoji capabilities to TUIKit.
 
->? The usage of this module has been modified since the 1.1.0 version of [TUIKit](https://pub.dev/packages/tencent_cloud_chat_uikit). Please check all the parts in this tutorial if you upgrade the version.
+>? The emoji capabilities have been changed greatly since [TUIKit](https://pub.dev/packages/tencent_cloud_chat_uikit) V1.1.0. After you upgrade TUIKit to the latest version, re-introduce emoji capabilities as instructed in this document.
 
-## STEP 1: Customize Image Emoji and Sticker
+## Step 1. Customize Emoji Image Resources
 
->? **This step is optional:**
-> This step is necessary only if image stickers, includes default QQ emoji one, includes both small and big, are needed.
-> QQ Emoji set is provided by default, and is unnecessary to import in this step.
+>? **This step is optional.**
+> You need to perform this step only when you need to use emojis other than the QQ emojis provided by default, for example, to use custom small and large image emojis.
+> The QQ emojis are embedded in TUIKit and are provided by default. Therefore, you do not need to import them in this step.
 
-### Import Image File to Project
+### Importing resource files to a project
 
-Please add your image resources file to `assets/custom_face_resource/` of your project, including both small and big images.
+Import the resource files of both small and large image emojis to the `assets/custom_face_resource/` directory of the project.
 
-In this directory, separate subdirectory with different sticker packages, means each Tabs on Sticker panel. Only one type of sticker is allowed in each Tab(package or subdirectory).
+In this directory, create respective folders for the tabs in the emoji panel. Each tab contains emojis of the same type, for example, small image emojis or large image emojis.
 
-Name those subdirectories differently, and this name will be used as the `name` field of `CustomEmojiFaceData` and `CustomStickerPackage` in the following steps. Please allocate the name as you need.
+Use the value of the `name` field of a tab to name the corresponding folder. The name is invisible to users. You can name the folders as required.
 
-Also, please make sure that all image resource files do not have the same name.
+The names of all emoji resource files must be unique.
 
-You can refer to our [sample project](https://github.com/TencentCloud/chat-demo-flutter/tree/main/assets/custom_face_resource), if not clear.
+For more information about how to import emoji images, see [Demo](https://github.com/TencentCloud/chat-demo-flutter/tree/main/assets/custom_face_resource).
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/060d5846a3ad0f5078f40eb05686f9ec.png)
 
-### Add assets to app
+### Declare emoji files
 
-Open `pubspec.yaml`, add those following lines to `flutter` => `assets`.
+Open the `pubspec.yaml` file. In `flutter` => `assets`, declare the emoji resource files that are imported in the previous step.
 
 ```yaml
 flutter:
- assets:
-   - assets/custom_face_resource/
+  assets:
+    - assets/custom_face_resource/
 ```
 
-### Configure assets list
+### Configuring the image resource list in the code
 
->? The sample code for this part can be found [here](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/utils/constant.dart), mainly focused on `emojiList`.
+>? For the sample code, click [here](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/utils/constant.dart) and see the `emojiList` section.
 
-Define a static `List<CustomEmojiFaceData>` in your project, aiming for transferring the local image assets to TUIKit, as List.
+In the code that defines the static parameters or configuration, define a `static List<CustomEmojiFaceData>` line to convert the local image resources into a format that TUIKit accepts, for pass-through in the `List` form.
 
-In this `List`, each item is `CustomEmojiFaceData`, while it constitutes each Tab in the sticker panel.
+In the `List` section, each item is a `CustomEmojiFaceData` entry. Each `CustomEmojiFaceData` entry constitutes a tab on the emoji panel. The parameters are described as follows:
 
 ```dart
 CustomEmojiFaceData(
-   {
-       String name, // The name of the package and subdirectory.
-       String icon, // The file name of the icon on the Tab.
-       List<String> list, // The list of the files name.
-       bool isEmoji //Whether it contains small image emojis, default is big image stickers.
-   }
+    {
+        String name, // The directory name of the folder.
+        String icon, // The name of the icon resource file for the tab.
+        List<String> list, // The list of the file names of images.
+        bool isEmoji // Specifies whether the image is a small image emoji. The default value is `false`, indicating a large image emoji.
+    }
 );
 ```
 
-Sample Code:
+Sample code:
 
 ```dart
 static final List<CustomEmojiFaceData> emojiList = [
- // Small Image Emoji, embedded in text messages.
- CustomEmojiFaceData(
-     name: '4349',
-     icon: "aircraft.png",
-     isEmoji: true,
-     list: [
-       "aircraft.png",
-       "alarmClock.png",
-       "anger.png",
-       // ...
-     ]),
+  // A small image emoji is used, which supports mix-up with text and is sent in the form of a text message.
+  CustomEmojiFaceData(
+      name: '4349',
+      icon: "aircraft.png",
+      isEmoji: true,
+      list: [
+        "aircraft.png",
+        "alarmClock.png",
+        "anger.png",
+        // ...
+      ]),
 
- // Big image stickers, sent as sticker messages independently.
- CustomEmojiFaceData(
-   name: '4350',
-   icon: "menu@2x.png",
-   list: [
-   "yz00@2x.png",
-   // ...
- ]),
+  // A large image emoji is used, which does not support mix-up with text and is sent in the form of an emoji message.
+  CustomEmojiFaceData(
+    name: '4350',
+    icon: "menu@2x.png",
+    list: [
+    "yz00@2x.png",
+    // ...
+  ]),
 ]
 ```
 
-## Step 2: Customize the Unicode Emoji List
+## Step 2. Customize the Emoji Unicode Character String List
 
->? **This step is optional:**
-> This step is necessary only if Unicode Emoji is needed.
+>? **This step is optional.**
+> You need to perform this step only when you need to use [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) emojis.
 
-Define a static `List<Map<String, Object>>` of Unicode in your project, you can build it based on the [sample list we provided](#unicode).
+In the code that defines the static parameters or configuration, define a `List<Map<String, Object>>` Unicode list for pass-through.
 
-You can add, delete and modify some items in this List, based on the official [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html).
+See [Appendix](#unicode) for the sample list.
 
+You can copy the sample code to introduce the list or modify the code to introduce a customized list.
 
-## Step 3: Cache the Emoji and Sticker to memory
+## Step 3. Save Emoji Resources to the Memory
 
 >?
-> - Sample code for this step [can be found here](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/pages/app.dart), mainly focus on `setCustomSticker` function.
-> - QQ Emoji has been embedded by default, and unnecessary to do this step.
+> For the sample code, click [here](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/pages/app.dart), and see the `setCustomSticker` section.
+> The QQ emojis are embedded in TUIKit and are provided by default. Therefore, you do not need to import them in this step.
 
-Cache those Emoji and Stickers to global `Provider`, memory, **just after your app launched, and before the first `TIMUIKitChat` shows**.
+After your project starts and before the first `TIMUIKitChat` component is rendered, convert the emoji resource list defined the previous step into TUIKit emoji instances, and place the instances in the global provider so that the instances are saved in the memory.
 
-**This steps should only be done once.** Aiming for reducing the load of memory IO, as rendering each sticker is a high frequency event, and will cost a lot.
+**This step needs to be performed only once. All resources in the list will then be saved in the memory.** Displaying and rendering emoji resources are high-frequency operations. If the resources are read to the memory each time before being displayed, resource consumption will be high, compromising the performance.
 
-The instance of each sticker is generated by the following `CustomSticker` class. It will show Unicode Emoji if `unicode` is not null, otherwise it shows an image.
+The memory instance of each emoji is generated by using the `CustomSticker` class. If `unicode` is passed in, the emoji is a Unicode emoji. Otherwise, it is an image emoji.
 
 ```dart
 class CustomSticker {
- int? unicode; // Unicode int value。It will show Unicode Emoji if this field is not null, otherwise it shows an image.
- String name; // The name of the sticker
- int index; // The index of the sticker
- bool isEmoji; // Whether it is a small image emoji, while a big image sticker is as default.
+  int? unicode; // The Unicode int value. If `unicode` is passed in, the emoji is a Unicode emoji. Otherwise, it is an image emoji.
+  String name; // The name of the emoji.
+  int index; //The sequence number of the emoji.
+  bool isEmoji; // Whether the image is a small image emoji. The default value is `false`, indicating a big image emoji.
 }
 ```
 
-The instance of each Tab on sticker panel, each sticker package, is generated by the `CustomStickerPackage` class.
+The memory instance of each tab is generated by using the `CustomStickerPackage` class.
 
 ```dart
-class CustomStickerPackage { // Each Tab on sticker panel, each sticker package
- String name; // The name of this sticker package, subdirectory, and the Tab.
- String? baseUrl; // Sticker package baseUrl，recommend specify as "assets/custom_face_resource/${package name}"
- List<CustomSticker> stickerList; // The list of the image files name
- CustomSticker menuItem; // The file name of the icon of Tab
- bool isEmoji; // Whether it contains small image emojis, while big image stickers are as default.
+class CustomStickerPackage { // A series of emojis are defined as a package and occupy one tab on the emoji panel.
+  String name; // The emoji package name, which is the name of the tab folder.
+  String? baseUrl; // The emoji package baseUrl. We recommend that you set it to "assets/custom_face_resource/${Emoji package name}"
+  List<CustomSticker> stickerList; // The emoji resource list.
+  CustomSticker menuItem; // The tab icon on the emoji panel.
+  bool isEmoji; // Whether the image is a small image emoji. The default value is `false`, indicating a big image emoji.
 }
 ```
 
-For the classes shown above, we provide sample codes as follows, for the code you may need to write.
+The sample code is provided in accordance with the preceding description.
 
-`Solution A` shows the usage of Unicode Emoji while `Solution B` shows the usage of image stickers. You can choose all or part of them as needed.
-
+Emoji item 1 shows how to use a Unicode emoji package, and emoji item 2 shows how to use an image emoji package (including large and small image emojis). You can use some or all the code as needed.
 
 ```dart
 setCustomSticker() async {
- // Define a list to store sticker packages.
- List<CustomStickerPackage> customStickerPackageList = [];
+  // Define a large list that accommodates the emoji package tabs.
+  List<CustomStickerPackage> customStickerPackageList = [];
 
- // Solution A: Use Emoji Unicode list. Can be added to text messages.
- // `emojiData` comes from step 2.
- final defEmojiList = emojiData.asMap().keys.map((emojiIndex) {
-   final emoji = Emoji.fromJson(emojiData[emojiIndex]);
-   return CustomSticker(
-       index: emojiIndex, name: emoji.name, unicode: emoji.unicode);
- }).toList();
- customStickerPackageList.add(CustomStickerPackage(
-     name: "defaultEmoji",
-     stickerList: defEmojiList,
-     menuItem: defEmojiList[0]));
+  // Emoji item 1: Use a Unicode emoji list, which can be embedded in text.
+  // `emojiData` is configured in Step 2.
+  final defEmojiList = emojiData.asMap().keys.map((emojiIndex) {
+    final emoji = Emoji.fromJson(emojiData[emojiIndex]);
+    return CustomSticker(
+        index: emojiIndex, name: emoji.name, unicode: emoji.unicode);
+  }).toList();
+  customStickerPackageList.add(CustomStickerPackage(
+      name: "defaultEmoji",
+      stickerList: defEmojiList,
+      menuItem: defEmojiList[0]));
 
- // Solution B: Use the image sticker.
- // Please make sure `customEmojiPackage.name` is the name of the subdirectory.
- customStickerPackageList.addAll(Const.emojiList.map((customEmojiPackage) {
-   return CustomStickerPackage(
-       name: customEmojiPackage.name,
-       baseUrl: "assets/custom_face_resource/${customEmojiPackage.name}",
-       stickerList: customEmojiPackage.list
-           .asMap()
-           .keys
-           .map((idx) =>
-           CustomSticker(index: idx, name: customEmojiPackage.list[idx]))
-           .toList(),
-       menuItem: CustomSticker(
-         index: 0,
-         name: customEmojiPackage.icon,
-       ));
- }).toList());
+  // Emoji item 2: Use an image emoji package of your own.
+  // Make sure that the value of `customEmojiPackage.name` is the name of the tab folder.
+  // `Const.emojiList` is configured in Step 1.
+  customStickerPackageList.addAll(Const.emojiList.map((customEmojiPackage) {
+    return CustomStickerPackage(
+        name: customEmojiPackage.name,
+        baseUrl: "assets/custom_face_resource/${customEmojiPackage.name}",
+        stickerList: customEmojiPackage.list
+            .asMap()
+            .keys
+            .map((idx) =>
+            CustomSticker(index: idx, name: customEmojiPackage.list[idx]))
+            .toList(),
+        menuItem: CustomSticker(
+          index: 0,
+          name: customEmojiPackage.icon,
+        ));
+  }).toList());
 
- Provider.of<CustomStickerPackageData>(context, listen: false)
-     .customStickerPackageList = customStickerPackageList;
+  Provider.of<CustomStickerPackageData>(context, listen: false)
+      .customStickerPackageList = customStickerPackageList;
 }
 ```
 
-## STEP 4: Adding those stickers to TIMUIKitChat
+## Step 4. Add Emoji Parsing Capabilities to the TIMUIKitChat Component
 
 >?
-> - Sample code for this step [can be found here](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/chat.dart), mainly focus on `renderCustomStickerPanel`, `customStickerPanel` and `customEmojiList`.
+> For the sample code in this step, click [here](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/chat.dart) and see the `renderCustomStickerPanel`, `customStickerPanel`, and `customEmojiList` sections.
 
-Copy the following codes to the class that contains the `TIMUIKitChat` widget directly.
+Copy the following code to the class that hosts the `TIMUIKitChat` component.
 
 ```dart
 Widget renderCustomStickerPanel({
- sendTextMessage,
- sendFaceMessage,
- deleteText,
- addCustomEmojiText,
- addText,
- List<CustomEmojiFaceData> defaultCustomEmojiStickerList = const [],
+  sendTextMessage,
+  sendFaceMessage,
+  deleteText,
+  addCustomEmojiText,
+  addText,
+  List<CustomEmojiFaceData> defaultCustomEmojiStickerList = const [],
 }) {
- final theme = Provider.of<DefaultThemeData>(context).theme;
- final customStickerPackageList =
-     Provider.of<CustomStickerPackageData>(context).customStickerPackageList;
- final defaultEmojiList =
-     defaultCustomEmojiStickerList.map((customEmojiPackage) {
-   return CustomStickerPackage(
-       name: customEmojiPackage.name,
-       baseUrl: "assets/custom_face_resource/${customEmojiPackage.name}",
-       isEmoji: customEmojiPackage.isEmoji,
-       isDefaultEmoji: true,
-       stickerList: customEmojiPackage.list
-           .asMap()
-           .keys
-           .map((idx) =>
-               CustomSticker(index: idx, name: customEmojiPackage.list[idx]))
-           .toList(),
-       menuItem: CustomSticker(
-         index: 0,
-         name: customEmojiPackage.icon,
-       ));
- }).toList();
- return StickerPanel(
-     sendTextMsg: sendTextMessage,
-     sendFaceMsg: (index, data) =>
-         sendFaceMessage(index + 1, (data.split("/")[3]).split("@")[0]),
-     deleteText: deleteText,
-     addText: addText,
-     addCustomEmojiText: addCustomEmojiText,
-     customStickerPackageList: [
-       ...defaultEmojiList,
-       ...customStickerPackageList
-     ],
-     backgroundColor: theme.weakBackgroundColor,
-     lightPrimaryColor: theme.lightPrimaryColor);
+  final theme = Provider.of<DefaultThemeData>(context).theme;
+  final customStickerPackageList =
+      Provider.of<CustomStickerPackageData>(context).customStickerPackageList;
+  final defaultEmojiList =
+      defaultCustomEmojiStickerList.map((customEmojiPackage) {
+    return CustomStickerPackage(
+        name: customEmojiPackage.name,
+        baseUrl: "assets/custom_face_resource/${customEmojiPackage.name}",
+        isEmoji: customEmojiPackage.isEmoji,
+        isDefaultEmoji: true,
+        stickerList: customEmojiPackage.list
+            .asMap()
+            .keys
+            .map((idx) =>
+                CustomSticker(index: idx, name: customEmojiPackage.list[idx]))
+            .toList(),
+        menuItem: CustomSticker(
+          index: 0,
+          name: customEmojiPackage.icon,
+        ));
+  }).toList();
+  return StickerPanel(
+      sendTextMsg: sendTextMessage,
+      sendFaceMsg: (index, data) =>
+          sendFaceMessage(index + 1, (data.split("/")[3]).split("@")[0]),
+      deleteText: deleteText,
+      addText: addText,
+      addCustomEmojiText: addCustomEmojiText,
+      customStickerPackageList: [
+        ...defaultEmojiList,
+        ...customStickerPackageList
+      ],
+      backgroundColor: theme.weakBackgroundColor,
+      lightPrimaryColor: theme.lightPrimaryColor);
 }
 ```
 
-### STEP 4.1: Render Small Image Emoji
+### Step 4.1. Render small image emojis
 
->? **This step is optional:**
-> - This step is necessary only if small images emoji are needed for your app, except the QQ Emoji we provided by default.
-> - Unicode Emoji and small image emoji are similar, it is not recommended to integrate these two types of emoji at the same time.
+>? **This step is optional.**
+> - You need to perform this step only when you need to use small image emojis, including custom small image emojis and QQ small emojis that are provided by default.
+> - The display form of small image emojis is similar to that of Unicode emojis. We recommend that you use either Unicode emojis or small image emojis. Therefore, if you have chosen Unicode emojis, you can skip this step.
 
-- STEP 4.1(a) shows the usage of using custom small image emoji.
-- STEP 4.1(b) shows the usage of using default QQ emojis.
+- Perform Step 4.1 (a) to enable custom small image emojis.
+- Perform Step 4.1 (b) to enable QQ small emojis that are provided by default.
 
-It is recommended to choose one of them.
+Perform either Step 4.1 (a) or Step 4.1 (b).
 
-If you tend to use both of them, please make sure those image resource files do not have the same name.
+If you want to use both custom small image emojis and QQ small emojis that are provided by default, make sure that the custom small image emojis do not duplicate with the QQ small emojis.
 
-#### STEP 4.1(a): Render custom small image emoji
+#### Step 4.1 (a). Enable rendering and parsing of  custom small image emojis
 
-Add a `List customEmojiList` field to the `build` function of the `Widget` that contains `TIMUIKitChat`, storing the list of small image emoji.
+In the `build` method that hosts the `TIMUIKitChat` component, define a `List customEmojiList` variable to store the list of small image emojis.
 
 ```dart
 List customEmojiList =
-   Const.emojiList.where((element) => element.isEmoji == true).toList();
+    Const.emojiList.where((element) => element.isEmoji == true).toList();
 ```
 
-And transferring this list to `customEmojiStickerList` of `TIMUIKitChat`.
+Pass the list to the `customEmojiStickerList` parameter of the `TIMUIKitChat` component.
 
 ```dart
 return TIMUIKitChat(
-   customEmojiStickerList: customEmojiList,
-   // ......
+    customEmojiStickerList: customEmojiList,
+    // ......
 );
 ```
 
->?
-> If this widget is a `StatefulWidget`, choosing to place this list to state, and execute the `where` method once, to improve the performance are recommended.
+>? If the class that hosts the `TIMUIKitChat` component is `StatefulWidget`, you can place the `customEmojiList` variable in the State, and execute the `where` command only in the first build for better performance.
 
-#### STEP 4.1(b): Enable QQ Emoji
+#### Step 4.1 (b). Enable the QQ emoji package
 
-Enable the `isUseDefaultEmoji` of `TIMUIKitChatConfig` from `TIMUIKitChat` to `true`. Meanwhile, a Tab shows the default QQ Emoji will occur on the left of the sticker panel.
+Set the `isUseDefaultEmoji` parameter of  `TIMUIKitChatConfig` to `true` for the `TIMUIKitChat`  component. Then, a tab that contains the QQ emojis is automatically generated in the leftmost side of the emoji panel.
 
 ```dart
 return TIMUIKitChat(
-   config: TIMUIKitChatConfig(
-       isUseDefaultEmoji: true,
-       // ......
-   ),
-   // ......
+    config: TIMUIKitChatConfig(
+        isUseDefaultEmoji: true,
+        // ......
+    ),
+    // ......
 );
 ```
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/ed14b886c08cb1c0e8371ba54925bd71.png)
 
-### STEP 4.2: Add the sticker panel to TIMUIKitChat
+### Step 4.2. Introduce the emoji capabilities to TIMUIKitChat
 
-Transfer the function, you copied in this step, to the `customStickerPanel` field of `TIMUIKitChat`.
+Pass the code copied in the beginning of Step 4 to the `customStickerPanel` parameter of the `TIMUIKitChat` component.
 
 ```dart
 return TIMUIKitChat(
-   customStickerPanel: renderCustomStickerPanel,
-   // ......
+    customStickerPanel: renderCustomStickerPanel,
+    // ......
 );
 ```
 
-That's all you need to integrate Emoji and Sticker modules to your app, with Tencent Cloud Chat Flutter TUIKit.
+Until now, the emoji capabilities have been introduced to TUIKit. You can test emoji sending and receiving. If you encounter any problems when you introduce the emoji capabilities, [contact us](#contact).
 
 [](id:unicode)
 
-## Appendix: Sample list of Emoji Unicodes
+## Appendix: Sample emoji unicode list
 
-The list is for sample and presentation purposes only, you can modify it as you need.
+This list is merely intended for demo purposes. You can modify the list as needed.
 
 ```dart
 List<Map<String, Object>> emojiData = [
@@ -446,12 +444,4 @@ List<Map<String, Object>> emojiData = [
 ```
 
 [](id:contact)
-
-## Contact Us
-
-If there's anything unclear or you have more ideas, feel free to contact us!
-
-- Telegram Group: https://t.me/+1doS9AUBmndhNGNl
-- WhatsApp Group: https://chat.whatsapp.com/Gfbxk7rQBqc8Rz4pzzP27A
-
 

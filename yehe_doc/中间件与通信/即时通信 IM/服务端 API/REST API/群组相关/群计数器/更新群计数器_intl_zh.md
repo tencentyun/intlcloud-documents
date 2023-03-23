@@ -1,6 +1,6 @@
 ## 功能说明
  App 管理员可以通过该接口更新（设置、递增、递减）群计数器。
- >! 该功能仅对旗舰版客户开放，需 [购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577)。
+ >! 该功能仅对旗舰版客户开放，需 [购买旗舰版](https://buy.cloud.tencent.com/avc?from=17182)。
 
 ## 接口调用说明
 ### 适用的群组类型

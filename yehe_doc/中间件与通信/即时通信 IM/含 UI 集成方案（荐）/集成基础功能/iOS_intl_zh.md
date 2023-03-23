@@ -113,7 +113,7 @@ pod repo update
 pod update
 ```
   集成全部的 TUIKit 组件后的项目结构：
-  <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/CZff221_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_1671075129288.png" style="zoom:50%;"/> 
+  <img src="https://qcloudimg.tencent-cloud.cn/raw/42a839342ac69e1d87952a05458df0e4.png" style="zoom:50%;"/> 
 
 ## 快速搭建
 常用的聊天软件都是由会话列表、聊天窗口、好友列表、音视频通话等几个基本的界面组成，参考下面步骤，您仅需几行代码即可在项目中快速搭建这些 UI 界面。
@@ -253,7 +253,7 @@ SDKAppID 需要在 [即时通信 IM 控制台](https://console.cloud.tencent.com
 为了避免对用户使用造成影响，翻译功能默认关闭，消息长按菜单中不会出现【翻译】按钮。
 
 如果您想使用翻译功能，需要操作以下两步：
-1. 联系腾讯云技术人员帮您开通翻译服务。**未开通服务的情况下，即使您在 UI 上显示了【翻译】按钮，也无法正常翻译**。
+1. 文本翻译是**增值付费功能**，按翻译字符数量计费。当前此功能处于内测阶段，请联系腾讯云商务为您开通。**未开通服务的情况下，即使您在 UI 上显示了【翻译】按钮，也无法正常翻译**。
 2. 开通服务后，您可以在初始化聊天窗口前，设置显示【翻译】按钮，示例代码如下：
 ```objectivec
 // 显示翻译按钮
@@ -267,10 +267,7 @@ TUIChatConfig.defaultConfig.enableTextTranslation = YES;
 
 开启翻译服务及显示开关前后效果图如下所示：
 <dx-tabs>
-
-:::
-::: 简约版
-
+::: 经典版
 <table style="text-align:center;vertical-align:middle;width: 900px">
   <tr>
     <th style="text-align:center;" width="300px">不显示翻译按钮</th>
@@ -278,12 +275,25 @@ TUIChatConfig.defaultConfig.enableTextTranslation = YES;
     <th style="text-align:center;" width="300px">文本消息翻译效果</th>
   </tr>
   <tr>
-    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/XhLb255_1.png"/></td>
-    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/Em34951_2.png"/></td>
-    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/CriP663_4.png"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/773e84c24e7841e4869c02928fc9cb38.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/120664399ca36b38d6c262f2672cc0db.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/9a6bdc1138ad9956257d1f7305f00eef.jpg"/></td>
 	 </tr>
 </table>
-
+:::
+::: 简约版
+<table style="text-align:center;vertical-align:middle;width: 900px">
+  <tr>
+    <th style="text-align:center;" width="300px">不显示翻译按钮</th>
+    <th style="text-align:center;" width="300px">显示翻译按钮</th>
+    <th style="text-align:center;" width="300px">文本消息翻译效果</th>
+  </tr>
+  <tr>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/1b440a16a852d0cc2a9878d49da96d5f.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/e80da5a3e10967329c6334bf798053f9.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/4387ad821803260c15ad65de770560ed.jpg"/></td>
+	 </tr>
+</table>
 :::
 </dx-tabs>
 
@@ -391,11 +401,10 @@ TUI 组件支持在聊天界面对用户发起音视频通话，仅需要简单�
     <th style="text-align:center;"><b>语音通话</b><br></th>
   </tr>
   <tr>
-    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/44d4c8a412752abda898341665a90016.png"/></td>
-    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/5eb84936666da81b0331a28c3c779b77.png"/></td>
+    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/b9f362503d25179db6f75fc91cfd000a.jpg"/></td>
+    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/2f037d7de8270c0edef68c0b829465ec.png"/></td>
   </tr>
 </table>
-
 
 1. 开通音视频服务。
   1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，进入应用的基础配置页面。
@@ -414,7 +423,7 @@ pod 'TUICallKit'
     <th style="text-align:center;" ><b>联系人页发起通话<br></b></th>
   </tr>
   <tr>
-    <td><img style="width:400px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/EseX367_%E9%9B%86%E5%90%88%281%29.png"/></td>
+    <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/b7b6aca5e1f3f3e5d775cfa3316e30f4.png"/></td>
     <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/31fd1d8fb263e953825cf5531a24ffca.png"/></td>
     </tr>
 </table>
@@ -423,7 +432,6 @@ pod 'TUICallKit'
 <li>当用户<strong>在线</strong>收到通话邀请时，TUIKit 会自动展示通话接收 UI，用户可以选择同意或者拒绝通话。</li>
 <li>当用户<strong>离线</strong>收到通话邀请时，如需唤起 App 通话，就要使用到离线推送能力，离线推送的实现请参见 <a href = "https://intl.cloud.tencent.com/document/product/1047/50033">添加离线推送</a>。</li>
 </ul>
-
 4. 添加离线推送。
 在使用离线推送之前，您需要开通 [IM 离线推送](https://www.tencentcloud.com/document/product/1047/39157) 服务。
 关于 App 的配置，您可以参考文档：[集成 TUIOfflinePush 跑通离线推送功能](https://intl.cloud.tencent.com/document/product/1047/50033)。
@@ -431,7 +439,7 @@ pod 'TUICallKit'
 配置完成后，当单击接收到的**音视频通话离线推送通知**时， TUICallKit 会自动拉起**音视频通话邀请界面**。
 	
 5. 附加增值能力
-集成 TUIChat 和 TUICallkit 的组件后，在聊天界面发送语音消息时，即可**录制带 AI 降噪和自动增益的语音消息**。
+集成 TUIChat 和 TUICallkit 的组件后，在聊天界面发送语音消息时，即可**录制带 AI 降噪和自动增益的语音消息**。该功能需要购买 音视频通话能力进阶版及以上套餐，仅 IMSDK 7.0 及以上版本支持。当套餐过期后，录制语音消息会切换到系统 API 进行录音。
 下面是使用两台华为 P10 同时录制的语音消息对比：
 <table style="text-align:center;vertical-align:middle;width: 800px">
   <tr>

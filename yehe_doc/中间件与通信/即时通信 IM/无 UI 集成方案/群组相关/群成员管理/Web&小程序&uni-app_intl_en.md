@@ -1,4 +1,4 @@
-## Feature Description
+## Overview
 
 Group member management includes pulling the member list, muting group members, removing group members, granting permissions, and transferring the group ownership.
 
@@ -13,8 +13,8 @@ Group member management includes pulling the member list, muting group members, 
 >   - On the Ultimate edition, this API can be called up to one time per three seconds. To query the group member list periodically, you are advised to call the API once every ten seconds.
 >   - This API supports only the following group member profile fields: `userID`, `nick`, `avatar`, and `joinTime`. If you need to set `nick` and `avatar`, call [updateMyProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateMyProfile).
 
-To enable this feature for the Ultimate edition, log in to the [IM console](https://console.cloud.tencent.com/im) and modify the configuration as follows:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/513b23a6598a74a0b0a6be5b6b59536f.png" alt="" style="zoom:90%;" />
+To enable this feature for the Ultimate edition, log in to the [Chat console](https://console.cloud.tencent.com/im) and modify the configuration as follows:
+<img src="https://qcloudimg.tencent-cloud.cn/raw/513b23a6598a74a0b0a6be5b6b59536f.png" alt="" style="zoom:30%;" />
 
 **API**
 
@@ -262,7 +262,7 @@ The `options` parameter is of the `Object` type. It contains the following attri
 | Name | Type | Description |
 | ------------------ | -------- | ------------------------------------------------------------ |
 | groupID     | String | 		Group ID or topic ID |
-| userIDList | Array | User ID |
+| userID | String | The user ID. |
 | role | String | Valid values: TIM.TYPES.GRP_MBR_ROLE_ADMIN (group admin), TIM.TYPES.GRP_MBR_ROLE_MEMBER (ordinary group member), TIM.TYPES.GRP_MBR_ROLE_CUSTOM (custom group member role, which is supported only by the community) |
 
 **Return values**

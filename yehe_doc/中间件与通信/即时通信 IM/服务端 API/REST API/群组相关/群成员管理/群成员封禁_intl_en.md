@@ -1,6 +1,6 @@
 ## Feature Overview
  This API is used to ban a member of an audio-video group. A banned member cannot receive messages nor rejoin the audio-video group during the ban duration.
->? Audio-video group member banning is supported by SDK Enhanced edition v6.6 or later and web SDK v2.22.0 or later. To use it, you need to [purchase the Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577), go to the [**console**](https://console.cloud.tencent.com/im/qun-setting), choose **Feature configuration** > **Group configuration** > **Group feature configuration**, and enable **Audio-video group member banning**.
+>? Audio-video group member banning is supported by SDK Enhanced edition v6.6 or later and web SDK v2.22.0 or later. To use it, you need to [purchase the Ultimate edition](https://buy.cloud.tencent.com/avc?from=17182), go to the [**console**](https://console.cloud.tencent.com/im/qun-setting), choose **Group configuration** > **Group feature configuration**, and enable **Audio-video group member banning**.
 
 ## API Calling Description
 ### Applicable group types
@@ -13,7 +13,7 @@
 | AVChatRoom | Yes |
 | Community | No |
 
-These are the preset group types in Chat. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
+These are the preset group types in Chat. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/3 3529).
 
 ### Sample request URL
 ```
@@ -40,7 +40,7 @@ The following table describes the modified parameters when this API is called. F
 
 - **Basic format**
 
-Banning members of an audio-video group
+Banning members of an audio-vid eo group
 
 ```
 {
@@ -58,7 +58,7 @@ Banning members of an audio-video group
 |---------|---------|---------|---------|
 | GroupId | String | Yes | ID of the group whose members are to be banned |
 | Members_Account | Array | Yes | Account IDs of the members to be banned. Up to 20 account IDs are supported per request. |
-| Duration | Array | Yes | Ban duration, in seconds, 32-bit unsigned integer |
+| Duration | Integer | Yes | Ban duration, in seconds. It is a 32-bit unsigned integer. |
 | Description | String | No | Ban information, which can be up to 1,000 bytes in length |
 
 ### Sample response
@@ -75,7 +75,7 @@ Banning members of an audio-video group
 
 | Field | Type | Description |
 |---------|---------|---------|
-| ActionStatus | String | Request result. `OK`: successful; `FAIL`: failed |
+| ActionStatus | String | Request result. `OK`: Successful; `FAIL`: Failed |
 | ErrorCode | Integer | Error code. `0`: Successful; other values: Failed |
 | ErrorInfo | String | Error information |
 
@@ -90,7 +90,7 @@ The following table describes the error codes specific to this API:
 | 10002 | Internal server error. Try again. |
 | 10003 | Invalid command word. |
 | 10004 | Invalid parameter. Check the error description and troubleshoot the issue. |
-| 10005  | The number of members to be banned exceeds the maximum limit of 20 members per request.                            |
+| 10005  | The number of members to be banned exceeds the upper limit of 20 members per request.                            |
 | 10007  | Insufficient operation permissions. For example, the switch is not enabled in the console, or the operating account is not the root account.    |
 
 ## API Debugging Tool

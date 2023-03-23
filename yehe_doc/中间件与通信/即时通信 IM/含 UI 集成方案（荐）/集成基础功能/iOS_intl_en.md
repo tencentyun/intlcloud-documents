@@ -113,13 +113,13 @@ Then run the following command to update the Pod version of the component librar
 pod update
 ```
   After all TUIKit components are integrated, the project structure is as follows:
-  <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/CZff221_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_1671075129288.png" style="zoom:50%;"/> 
+  <img src="https://qcloudimg.tencent-cloud.cn/raw/42a839342ac69e1d87952a05458df0e4.png" style="zoom:50%;"/> 
 
 ## Quick Build
 Instant messaging software usually consists of several basic UIs such as the conversation list, chat window, contacts, and audio/video call UIs. It only takes a few lines of code to build these UIs in your project. The process is as follows:
 
 > ? About TUIKit component features:
-> 1. For the Hands-on tutorials, see [TUIKit Quick Integration (iOS)](https://cloud.tencent.com/edu/learning/course-3130-56699).
+> 1. For the Hands-on tutorial video, see [TUIKit Quick Integration (iOS)](https://cloud.tencent.com/edu/learning/course-3130-56699).
 > 2. If you want to learn more, you can [download and run TUIKitDemo source code](https://github.com/TencentCloud/TIMSDK/tree/master/iOS), where you can find samples of frequently used features.
 
 
@@ -253,7 +253,7 @@ When you are on the chat UI, you can tap and hold a text message in the message 
 The translation feature is disabled by default, and the **Translate** button is not displayed on the menu that pops up when you tap and hold a text message.
 
 To enable the translation feature, perform the following steps:
-1. Contact Tencent Cloud technical support to activate the translation service. **If the translation service is not activated, even if the **Translate** button is displayed on the UI, it does not work properly.**
+1. Text translation is a **value-added paid service**, and is billed based on the number of characters translated. The feature is currently in beta test. To try it out, contact your Tencent Cloud rep. **If the translation service is not activated, even if the Translate button is displayed on the UI, the translation service cannot work properly.**
 2. After the translation service is activated and before the chat UI is initialized, you can configure the system to display the **Translate** button. Sample code:
 ```objectivec
 // Display the Translate button
@@ -265,24 +265,35 @@ TUIChatConfig.defaultConfig.enableTextTranslation = YES;
 > 2. Only text messages, and quote and reply text messages support translation. Image, audio, video, file, and emoji messages do not support translation.
 > 3. When you click **Translate**, the text will be translated into the language that is currently used by TUIChat. For example, if the current TUIChat language is English, the text will be translated into English regardless of which language it is in.
 
-The following figure shows the UI after the translation service is activated and the **Translate** button display is enabled.
+The following figure shows the effect after the translation service is activated and the **Translate** button display is enabled.
 <dx-tabs>
-
+::: Classic version
+<table style="text-align:center;vertical-align:middle;width: 900px">
+  <tr>
+    <th style="text-align:center;" width="300px">Not Displaying the Translate Button</th>
+    <th style="text-align:center;" width="300px">Displaying the Translate Button</th>
+    <th style="text-align:center;" width="300px">Text Message Translation Effect</th>
+  </tr>
+  <tr>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/773e84c24e7841e4869c02928fc9cb38.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/120664399ca36b38d6c262f2672cc0db.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/9a6bdc1138ad9956257d1f7305f00eef.jpg"/></td>
+	 </tr>
+</table>
 :::
 ::: Minimalist version
 <table style="text-align:center;vertical-align:middle;width: 900px">
   <tr>
     <th style="text-align:center;" width="300px">Not Displaying the Translate Button</th>
     <th style="text-align:center;" width="300px">Displaying the Translate Button</th>
-    <th style="text-align:center;" width="300px">Text Message Translation</th>
+    <th style="text-align:center;" width="300px">Text Message Translation Effect</th>
   </tr>
   <tr>
-    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/XhLb255_1.png"/></td>
-    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/Em34951_2.png"/></td>
-    <td><img style="width:300px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/CriP663_4.png"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/1b440a16a852d0cc2a9878d49da96d5f.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/e80da5a3e10967329c6334bf798053f9.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/4387ad821803260c15ad65de770560ed.jpg"/></td>
 	 </tr>
 </table>
-
 :::
 </dx-tabs>
 
@@ -390,11 +401,10 @@ TUI components allow users to start audio/video calls in chat UIs and can be qui
     <th style="text-align:center;"><b>Audio Call</b><br></th>
   </tr>
   <tr>
-    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/44d4c8a412752abda898341665a90016.png"/></td>
-    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/5eb84936666da81b0331a28c3c779b77.png"/></td>
+    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/b9f362503d25179db6f75fc91cfd000a.jpg"/></td>
+    <td><img src="https://qcloudimg.tencent-cloud.cn/raw/2f037d7de8270c0edef68c0b829465ec.png"/></td>
   </tr>
 </table>
-
 
 1. Activate the TRTC service
   1. Log in to the [Chat console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
@@ -413,7 +423,7 @@ pod 'TUICallKit'
     <th style="text-align:center;" ><b>Starting a Call via a Contact Profile Page<br></b></th>
   </tr>
   <tr>
-    <td><img style="width:400px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/EseX367_%E9%9B%86%E5%90%88%281%29.png"/></td>
+    <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/b7b6aca5e1f3f3e5d775cfa3316e30f4.png"/></td>
     <td><img style="width:400px" src="https://qcloudimg.tencent-cloud.cn/raw/31fd1d8fb263e953825cf5531a24ffca.png"/></td>
     </tr>
 </table>
@@ -422,15 +432,14 @@ pod 'TUICallKit'
 <li>When an <strong>online</strong> user receives a call invitation, TUIKit automatically displays the call receiving UI, where the user can answer or reject the call.</li>
 <li>When an <strong>offline</strong> user receives a call invitation and wants to start the app to accept the call, the offline push capability is required. For how to implement offline push, see <a href = "https://intl.cloud.tencent.com/document/product/1047/50033">here</a>.</li>
 </ul>
-
 4. Add offline push
-Before using offline push, you need to activate the [offline push](https://www.tencentcloud.com/document/product/1047/39157) service.
+Before using offline push, you need to activate the [Chat offline push](https://www.tencentcloud.com/document/product/1047/39157) service.
 For related app configuration, see [Integrating TUIOfflinePush and Running the Offline Push Feature](https://intl.cloud.tencent.com/document/product/1047/50033).
 
 After the configuration is completed, when you click a **received audio/video call notification pushed offline**, TUICallKit automatically opens the **audio/video call invitation UI**.
 	
 5. Add value-added capabilities.
-After TUIChat and TUICallKit are integrated, when you send a voice message on the chat UI, **the voice message can be recorded with AI-based noise reduction and automatic gain control**.
+After TUIChat and TUICallKit are integrated, when you send a voice message on the chat UI, **the voice message can be recorded with AI-based noise reduction and automatic gain control**. This feature relies on the audio/video call capability of higher-level plans, which is supported in Chat SDK 7.0 and later versions. If the dependent plan expires, voice message recording is switched to the system API.
 The following compares the voice messages recorded simultaneously using two Huawei P10 phones:
 <table style="text-align:center;vertical-align:middle;width: 800px">
   <tr>
