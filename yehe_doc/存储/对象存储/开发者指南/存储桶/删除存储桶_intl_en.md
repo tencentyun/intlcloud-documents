@@ -37,5 +37,5 @@ Directly call the bucket deleting method in the SDK. For more information, see t
 - [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/31469)
 - [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/31470)
 - [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31471)
-
+- [SDK for Mini Program](https://www.tencentcloud.com/document/product/436/31472)
 
