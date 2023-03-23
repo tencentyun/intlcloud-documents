@@ -23,7 +23,7 @@
 	- **版本管理**：此页面展示当前仓库内已有的 Chart 版本，可**下载**或**删除**指定版本。如下图所示：
 	![](https://main.qcloudimg.com/raw/bfdcb7b09f1e7e575b10f110c5b54b4b.png)
 	- **基本信息**：此页面可浏览指定 Chart 版本内的详细信息，如 Chart.yaml。如下图所示：
-	![](https://main.qcloudimg.com/raw/245e50656e42d1a17d380889feeeda7d.png)
+	![](https://staticintl.cloudcachetci.com/yehe/backend-news/NcKf494_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230323100700.png)
 
 ### 使用控制台上传及下载 Helm Chart
 #### 上传本地 Helm Chart 包
@@ -79,10 +79,10 @@ helm repo add $instance-$namespace https://$instance.tencentcloudcr.com/chartrep
 ```
 
 #### 推送 Helm Chart
-1. 安装 Helm Push 插件
+1. 安装 Helm CM-Push 插件
 >! 请安装 0.9.0 及以上版本的 helm-push 插件，避免因版本不兼容等问题造成无法正常推送 helm chart。
 >
-使用 Helm CLI 上传 Chart 包需要安装 helm-push 插件，该插件支持使用 `helm push` 指令推送 helm chart 至指定 repo，同时支持上传目录及压缩包。
+使用 Helm CLI 上传 Chart 包需要安装 helm-push 插件，该插件支持使用 `helm cm-push` 指令推送 helm chart 至指定 repo，同时支持上传目录及压缩包。
 ```
 helm plugin install https://github.com/chartmuseum/helm-push
 ```
@@ -92,7 +92,7 @@ helm create tcr-chart-demo
 ```
 3. 执行以下命令，可直接推送指定目录至 Chart 仓库（可选）。
 ```
-helm push tcr-chart-demo $instance-$namespace
+helm cm-push tcr-chart-demo $instance-$namespace
 ```
 其中 `$instance-$namespace` 为已添加的本地仓库名称。
 4. 执行以下命令，可压缩指定目录，并推送至 Chart 仓库。
@@ -100,7 +100,7 @@ helm push tcr-chart-demo $instance-$namespace
 tar zcvf tcr-chart-demo-1.0.0.tgz tcr-chart-demo/
 ```
 ```
-helm push tcr-chart-demo-1.0.0.tgz $instance-$namespace
+helm cm-push tcr-chart-demo-1.0.0.tgz $instance-$namespace
 ```
 其中 `$instance-$namespace` 为已添加的本地仓库名称。
 
