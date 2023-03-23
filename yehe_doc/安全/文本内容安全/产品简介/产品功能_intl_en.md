@@ -12,7 +12,7 @@ TMS filters various types of ads, such as normal product ads, spam ads, prostitu
 
 ### Language recognition
 
-It supports dozens of languages, including Chinese, English, French, German, Italian, Spain and more.
+Currently only supports Chinese.
 
 ### Custom Content Recognition
 
