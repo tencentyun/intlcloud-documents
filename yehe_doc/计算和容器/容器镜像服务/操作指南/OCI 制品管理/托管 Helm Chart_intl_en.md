@@ -79,10 +79,10 @@ helm repo add $instance-$namespace https://$instance.tencentcloudcr.com/chartrep
 ```
 
 #### Pushing Helm Charts
-1. Install the Helm Push plugin.
+1. Install the helm cm-push plugin.
 >! Please install the helm-push plugin on version 0.9.0 or above so as to prevent Helm Chart push exceptions caused by version incompatibility and other issues.
 >
-To upload Chart packages on Helm CLI, you need to install the helm-push plugin. The plugin supports using the `helm push` command to push Helm Charts to the specified repository, as well as uploading directories and compressed packages.
+To upload Chart packages on Helm CLI, you need to install the helm-push plugin. The plugin supports using the `helm cm-push` command to push Helm Charts to the specified repository, as well as uploading directories and compressed packages.
 ```
 helm plugin install https://github.com/chartmuseum/helm-push
 ```
@@ -92,7 +92,7 @@ helm create tcr-chart-demo
 ```
 3. Run the following command to directly push the specified directory to the Chart repository (optional).
 ```
-helm push tcr-chart-demo $instance-$namespace
+helm cm-push tcr-chart-demo $instance-$namespace
 ```
 Here, `$instance-$namespace` is the name of the added local repository.
 4. Run the following command to compress the specified directory and push it to the Chart repository.
@@ -100,7 +100,7 @@ Here, `$instance-$namespace` is the name of the added local repository.
 tar zcvf tcr-chart-demo-1.0.0.tgz tcr-chart-demo/
 ```
 ```
-helm push tcr-chart-demo-1.0.0.tgz $instance-$namespace
+helm cm-push tcr-chart-demo-1.0.0.tgz $instance-$namespace
 ```
 Here, `$instance-$namespace` is the name of the added local repository.
 
