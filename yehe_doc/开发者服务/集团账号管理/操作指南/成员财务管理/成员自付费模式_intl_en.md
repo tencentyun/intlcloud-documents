@@ -20,7 +20,7 @@ This section describes how the admin account views the balance information of it
 
 2. In the drop-down list in the top-right corner, select a member account to view its balance information.
 
-![img](https://staticintl.cloudcachetci.com/yehe/backend-news/H2cG398_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110731.png)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/2Mf9943_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324150920.png)
 
 
 
@@ -36,11 +36,11 @@ This section describes how the admin account views the bill details of member ac
 
 3. On the **Bill Details** page, select a member account in the drop-down list in the top-right corner to view its bill details. You can also click **Confirm Bill** to confirm the bill for the member account for the selected month.
 
-![img](https://staticintl.cloudcachetci.com/yehe/backend-news/3wc5340_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110752.png)  
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/DtV2725_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324150658.png)  
 
-![img](https://staticintl.cloudcachetci.com/yehe/backend-news/ZNsJ175_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110811.png)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/AAwx873_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324150742.png)
 
-![img](https://staticintl.cloudcachetci.com/yehe/backend-news/CuzK230_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110821.png)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/AAWP795_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324150814.png)
 
 
 ### **Consolidating Member Account Bills**
@@ -53,7 +53,7 @@ This section describes how the admin account consolidates the bills of multiple 
 
 2. Select the **Consolidated Bill** tab, select the member accounts for which you want to consolidate bills, and click **Download Consolidated Bill**. You can also go to the [Download Records](https://console.tencentcloud.com/expense/download) page and click **Download** to download the consolidated bills. 
 
-![img](https://staticintl.cloudcachetci.com/yehe/backend-news/WHbI289_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110851.png)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/hu72019_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324150851.png)
 
 
 ### **Issuing Invoices to Member Accounts**

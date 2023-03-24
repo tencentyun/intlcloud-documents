@@ -20,7 +20,7 @@
 
 2. 通过右上方的下拉列表，选择对应的成员账号，查看成员账号的账户余额信息。
 
-![img](https://staticintl.cloudcachetci.com/yehe/backend-news/H2cG398_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110731.png)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/2Mf9943_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324150920.png)
 
 
 
@@ -36,11 +36,11 @@
 
 3. 通过右上方的下拉列表，选择对应的成员账号，查看成员账号的账单详情。在账单详情页面，也可以通过“账单确认”按钮，为成员账号确认对应月份的账单。
 
-![img](https://staticintl.cloudcachetci.com/yehe/backend-news/3wc5340_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110752.png)  
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/DtV2725_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324150658.png)  
 
-![img](https://staticintl.cloudcachetci.com/yehe/backend-news/ZNsJ175_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110811.png)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/AAwx873_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324150742.png)
 
-![img](https://staticintl.cloudcachetci.com/yehe/backend-news/CuzK230_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110821.png)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/AAWP795_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324150814.png)
 
 
 ### **选择成员账号合并账单**
@@ -53,7 +53,7 @@
 
 2. 选择“合并账单”页签，勾选需合并出账的成员账号，单击**下载合并账单**即可。如下图所示： 您也可在 [下载记录](https://console.tencentcloud.com/expense/download) 页面中，单击合并账单所在行右侧的**下载**，下载合并账单。 
 
-![img](https://staticintl.cloudcachetci.com/yehe/backend-news/WHbI289_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110851.png)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/hu72019_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324150851.png)
 
 
 ### **为成员账号开票**

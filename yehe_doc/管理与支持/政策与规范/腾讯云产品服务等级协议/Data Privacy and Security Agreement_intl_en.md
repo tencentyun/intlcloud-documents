@@ -235,6 +235,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 65.[BM Cloud Physical Machine](https://www.tencentcloud.com/document/product/1171/52878).
 66.[Key Management Service](https://www.tencentcloud.com/document/product/1030/53638).
 67.[App Flow](https://www.tencentcloud.com/document/product/1165/54050).
+68.[Low-code Interactive Classroom](https://www.tencentcloud.com/document/product/1168/54191).
 
 ## 10.Jurisdiction-specific Requirements
 
