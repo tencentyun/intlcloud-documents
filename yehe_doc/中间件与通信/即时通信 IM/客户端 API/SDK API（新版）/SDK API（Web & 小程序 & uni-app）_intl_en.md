@@ -17,7 +17,7 @@ TIM is the namespace of the Chat Web SDK and provides the static method [create(
 | Profile | [Profile](https://web.sdk.qcloud.com/im/doc/en/Profile.html) describes the basic information of a user, including the nickname, gender, personal signature, and profile photo address. |
 | Friend | [Friend](https://web.sdk.qcloud.com/im/doc/en/Friend.html) describes the basic information of a friend, including the remarks and friend list. |
 | FriendApplication | [FriendApplication](https://web.sdk.qcloud.com/im/doc/en/FriendApplication.html) describes the basic information of a friend request, including the friend source and remarks. |
-| FriendGroup | [FriendGroup](https://web.sdk.qcloud.com/im/doc/en/FriendGroup.html) describes the basic information of a friend list, including the friend list name and members.
+| FriendGroup | [FriendGroup](https://web.sdk.qcloud.com/im/doc/en/FriendGroup.html) describes the basic information of a friend list, including the friend list name and members. |
 | Group | [Group](https://web.sdk.qcloud.com/im/doc/en/Group.html) indicates a communication system for group chatting, including Work, Public, Meeting, and AVChatRoom. |
 | GroupMember (group member) | [GroupMember](https://web.sdk.qcloud.com/im/doc/en/GroupMember.html) indicates the basic information of each group member, such as the ID, nickname, role, and the time of joining the group. |
 | Group tip | A group tip is generated when an event such as adding or deleting group member occurs. The access side can configure whether to display group tips to group members. <br/>For more information about group tip types, see [Message.GroupTipPayload](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GroupTipPayload).|
@@ -62,7 +62,7 @@ TIM is the namespace of the Chat Web SDK and provides the static method [create(
 | [createCustomMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createCustomMessage) | Creates a custom message. |
 | [createFaceMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFaceMessage) | Creates an emoji message. |
 | [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage) | Creates a file message. |
-| [createLocationMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createLocationMessage) | Creates a location message. |
+| [createLocationMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createLocationMessage) | Creates a geographical location message. |
 | [createMergerMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createMergerMessage) | Creates a combined message. |
 | [downloadMergerMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#downloadMergerMessage) | Downloads a combined message. |
 | [createForwardMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createForwardMessage) | Creates a forward message. |
@@ -77,7 +77,7 @@ TIM is the namespace of the Chat Web SDK and provides the static method [create(
 ### Conversation
 | API | Description |
 | --- | --- |
-| [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage) | Modifies a message.
+| [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage) | Modifies a message. |
 | [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList) | Gets the message list.  |
 | [getMessageListHopping](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageListHopping) | Pulls the conversation message list by specified sequence or time range. |
 | [sendMessageReadReceipt](https://web.sdk.qcloud.com/im/doc/en/SDK.html#sendMessageReadReceipt) | Sends message read receipts. |
@@ -92,7 +92,7 @@ TIM is the namespace of the Chat Web SDK and provides the static method [create(
 | [pinConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#pinConversation) | Pins/Unpins a conversation to/from top. |
 | [setAllMessageRead](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setAllMessageRead) | Marks the unread messages of all conversations as read. |
 | [setMessageRemindType](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setMessageRemindType) | Sets the conversation message notification type. You can use this API to mute notifications or reject messages. |
-| [getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTotalUnreadMessageCount) | Gets the total unread message count of a conversation. |
+| [getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTotalUnreadMessageCount) | Gets the total unread message count of conversations. |
 
 ### Conversation group
 | API | Description |
@@ -110,7 +110,7 @@ TIM is the namespace of the Chat Web SDK and provides the static method [create(
 | API | Description |
 | --- | --- |
 | [getMyProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMyProfile) | Gets personal profile. |
-| [getUserProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getUserProfile) | Gets other user’s profile. |
+| [getUserProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getUserProfile) | Gets another user's profile. |
 | [updateMyProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateMyProfile) | Updates your personal profile. |
 | [getBlacklist](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getBlacklist) | Gets your blocklist. |
 | [addToBlacklist](https://web.sdk.qcloud.com/im/doc/en/SDK.html#addToBlacklist) | Adds a user to the blocklist. |
@@ -164,6 +164,10 @@ TIM is the namespace of the Chat Web SDK and provides the static method [create(
 | [setGroupAttributes](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setGroupAttributes) | Sets group attributes. |
 | [deleteGroupAttributes](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteGroupAttributes) | Deletes group attributes. |
 | [getGroupAttributes](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupAttributes) | Gets group attributes. |
+| [setGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setGroupCounters) | Sets group counters. |
+| [increaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#increaseGroupCounter) | Increases the value of a group counter. |
+| [decreaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#decreaseGroupCounter) | Decreases the value of a group counter. |
+- [getGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupCounters): Gets group counters.
 
 ### Group member
 | API | Description |

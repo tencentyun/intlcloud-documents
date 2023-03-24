@@ -23,7 +23,7 @@ Before uploading and managing Helm Charts in a TCR Enterprise Edition instance, 
 	- **Version Management**: this page displays the existing Chart versions in the current repository, and you can **download** or **delete** the specified versions, as shown in the figure below:
 	![](https://main.qcloudimg.com/raw/bfdcb7b09f1e7e575b10f110c5b54b4b.png)
 	- **Basic Information**: this page allows you to browse the detailed information of the specified Chart version, such as Chart.yaml, as shown in the figure below:
-	![](https://main.qcloudimg.com/raw/245e50656e42d1a17d380889feeeda7d.png)
+	![](https://staticintl.cloudcachetci.com/yehe/backend-news/NcKf494_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230323100700.png)
 
 ### Using the console to upload and download Helm Charts
 #### Uploading a local Helm Chart package
@@ -79,10 +79,10 @@ helm repo add $instance-$namespace https://$instance.tencentcloudcr.com/chartrep
 ```
 
 #### Pushing Helm Charts
-1. Install the Helm Push plugin.
+1. Install the helm cm-push plugin.
 >! Please install the helm-push plugin on version 0.9.0 or above so as to prevent Helm Chart push exceptions caused by version incompatibility and other issues.
 >
-To upload Chart packages on Helm CLI, you need to install the helm-push plugin. The plugin supports using the `helm push` command to push Helm Charts to the specified repository, as well as uploading directories and compressed packages.
+To upload Chart packages on Helm CLI, you need to install the helm-push plugin. The plugin supports using the `helm cm-push` command to push Helm Charts to the specified repository, as well as uploading directories and compressed packages.
 ```
 helm plugin install https://github.com/chartmuseum/helm-push
 ```
@@ -92,7 +92,7 @@ helm create tcr-chart-demo
 ```
 3. Run the following command to directly push the specified directory to the Chart repository (optional).
 ```
-helm push tcr-chart-demo $instance-$namespace
+helm cm-push tcr-chart-demo $instance-$namespace
 ```
 Here, `$instance-$namespace` is the name of the added local repository.
 4. Run the following command to compress the specified directory and push it to the Chart repository.
@@ -100,7 +100,7 @@ Here, `$instance-$namespace` is the name of the added local repository.
 tar zcvf tcr-chart-demo-1.0.0.tgz tcr-chart-demo/
 ```
 ```
-helm push tcr-chart-demo-1.0.0.tgz $instance-$namespace
+helm cm-push tcr-chart-demo-1.0.0.tgz $instance-$namespace
 ```
 Here, `$instance-$namespace` is the name of the added local repository.
 

@@ -1,6 +1,6 @@
 ## 功能说明
  App 管理员可以通过该接口向直播群封禁成员，封禁后成员无法接收消息，并且封禁时间内无法再次进群。
->?直播群封禁功能支持需要终端 SDK 6.6 增强版及以上版本、Web SDK v2.22.0及以上版本，需 [购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 并在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting)>**群功能配置**>**群功能配置**>**直播群封禁成员** 打开开关后方可使用。
+>?直播群封禁功能支持需要终端 SDK 6.6 增强版及以上版本、Web SDK v2.22.0及以上版本，需 [购买旗舰版](https://buy.cloud.tencent.com/avc?from=17182) 并在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting)>**群功能配置**>**群功能配置**>**直播群封禁成员** 打开开关后方可使用。
 
 ## 接口调用说明
 ### 适用的群组类型
@@ -58,7 +58,7 @@ https://xxxxxx/v4/group_open_http_svc/ban_group_member?sdkappid=88888888&identif
 |---------|---------|---------|---------|
 | GroupId | String | 必填 |封禁成员的群 id |
 | Members_Account | Array | 必填 | 封禁的群成员账号id，单次请求最大20个 |
-| Duration | Array | 必填 | 封禁时长，单位秒，无符号32位数字 |
+| Duration | Integer | 必填 | 封禁时长，单位秒，无符号32位数字 |
 | Description | String | 选填 | 封禁信息，最大长度1000字节 |
 
 ### 应答包体示例

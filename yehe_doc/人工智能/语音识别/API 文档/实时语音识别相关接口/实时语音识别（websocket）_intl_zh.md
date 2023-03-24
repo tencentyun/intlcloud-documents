@@ -9,7 +9,7 @@
 
 | 内容 | 说明 |
 |---------|---------|
-| 语言种类 | 支持中文普通话、英语、日语、印度尼西亚语。可通过接口参数 engine_model_type 设置对应语言类型|
+| 语言种类 | 支持中文普通话、英语、日语、印度尼西亚语、越南语、马来语、菲律宾语。可通过接口参数 engine_model_type 设置对应语言类型|
 | 支持行业 | 通用、金融、游戏、教育、医疗 |
 | 音频属性 | 采样率：16000Hz或8000Hz<br>采样精度：16bits<br>声道：单声道（mono） |
 | 音频格式 | pcm、wav、opus、speex、silk、mp3、m4a、aac |
@@ -63,7 +63,7 @@ key1=value2&key2=value2...(key 和 value 都需要进行 urlencode)
 | timestamp | 是 | Integer | 当前 UNIX 时间戳，单位为秒。如果与当前时间相差过大，会引起签名过期错误 |
 | expired | 是 | Integer | 签名的有效期截止时间 UNIX 时间戳，单位为秒。expired 必须大于 timestamp 且 expired - timestamp 小于90天 |
 | nonce | 是 | Integer | 随机正整数。用户需自行生成，最长10位 |
-| engine_model_type | 是 | String | 引擎模型类型<br>非电话场景：<br>• 16k_zh：16k 中文普通话通用；<br>• 16k_en：16k 英语；<br>• 16k_ja：16k 日语；<br>• 16k_id 印度尼西亚语； |
+| engine_model_type | 是 | String | 引擎模型类型<br>非电话场景：<br>• 16k_zh：16k 中文普通话通用；<br>• 16k_en：16k 英语；<br>• 16k_ja：16k 日语；<br>• 16k_id 印度尼西亚语；<br>• 16k_vi 越南语；<br>• 16k_ms 马来语；<br>• 16k_fil 菲律宾语；|
 | voice_id | 是 | String | 16位 String 串作为每个音频的唯一标识，用户自己生成 |
 | voice_format | 否 | Int | 语音编码方式，可选，默认值为4。1：pcm；4：speex(sp)；6：silk；8：mp3；10：opus（[opus 格式音频流封装说明](#jump)）；12：wav；14：m4a（每个分片须是一个完整的 m4a 音频）；16：aac|
 | needvad | 否 | Integer | 0：关闭 vad，1：开启 vad<br>如果语音分片长度超过60秒，用户需开启 vad（人声检测切分功能） |

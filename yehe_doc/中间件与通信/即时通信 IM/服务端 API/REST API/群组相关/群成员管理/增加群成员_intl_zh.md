@@ -107,7 +107,7 @@ https://xxxxxx/v4/group_open_http_svc/add_group_member?sdkappid=88888888&identif
 | ErrorInfo | String | 错误信息  |
 | MemberList | Array | 返回添加的群成员结果  |
 | Member_Account | String | 返回的群成员 UserID |
-| Result | Integer | 加人结果：0-失败；1-成功；2-已经是群成员；3-等待被邀请者确认 |
+| Result | Integer | 加人结果：0-失败；1-成功；2-已经是群成员；3-等待被邀请者或者管理员审核 |
 
 ## 错误码说明
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
@@ -127,7 +127,7 @@ https://xxxxxx/v4/group_open_http_svc/add_group_member?sdkappid=88888888&identif
 | 10016 | 开发者后台通过第三方回调拒绝本次操作 |
 | 10019 | 请求的 UserID 不存在，请检查 MemberList 中的所有 Member_Account 是否正确 |
 | 10026 | 该  SDKAppID 请求的命令字已被禁用，请联系客服 |
-| 10037 | 被邀请的成员加入群组数量超过了限制，请检查并删除群组数量超过限制的 Member_Account 或者按实际需要【购买升级】。跳转到 [功能套餐](https://intl.cloud.tencent.com/document/product/1047/34350) |
+| 10037 | 被邀请的成员加入群组数量超过了限制，请检查并删除群组数量超过限制的 Member_Account 或者按实际需要【购买升级】。跳转到 [功能](https://intl.cloud.tencent.com/document/product/1047/34350) |
 
 ## 接口调试工具
 通过 [REST API 在线调试工具](https://tcc.tencentcs.com/im-api-tool/index.html#/v4/group_open_http_svc/add_group_member) 调试本接口。

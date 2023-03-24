@@ -8,7 +8,7 @@ Currently, Tencent Cloud CLB provides Layer-4 and Layer-7 load balancing service
 
 ## Forwarding Path
 CLB forwards business traffic and real servers process business requests. CLB communicates with real servers via Tencent Cloud private network. Both TGW and STGW are deployed on multiple servers, and provide load balancing services through clusters. The forwarding path of CLB is as shown below:
-![](https://main.qcloudimg.com/raw/a00470f1d73bf937422d3d917b42cd38.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Bzmv359_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230323115443.png)
 1. TCP and UDP protocol:
  - The forwarding logic of TCP/UDP protocol is processed by TGW cluster.
  - After receiving the business traffic, TGW forwards it to real servers via Tencent Cloud's private network. The return packets from real servers are also returned to the client via TGW.

@@ -8,7 +8,7 @@ Tencent Cloud CLBは現在、レイヤー4およびレイヤー7のロードバ�
 
 ## 転送パス
 CLBは業務トラフィックの転送を行い、バックエンドサービスが業務リクエストを実際に処理します。CLBとバックエンドCVMの間の通信はTencent Cloudプライベートネットワークによって行います。TGWとSTGWはどちらも複数のサーバーにデプロイし、クラスターによってロードバランシングサービスを提供します。CLBの転送パスは下図のとおりです。
-![](https://main.qcloudimg.com/raw/a00470f1d73bf937422d3d917b42cd38.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Bzmv359_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230323115443.png)
 1. TCP/UDPプロトコル：
  - TCP/UDPプロトコルの転送ロジックはTGWクラスターによって処理されます。
  - 業務トラフィックが到達すると、TGWがTencent Cloudプライベートネットワークを経由してバックエンドCVMに転送し、バックエンドCVMのリターンパケットもTGWを経由してクライアントに返されます。

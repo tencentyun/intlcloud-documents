@@ -71,7 +71,4 @@ The table below describes different options available for you to get started wit
 
 COS is billed on a pay-as-you-go basis by default. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/436/16871).
 
-## References
-
-For other relevant documents, see [Developer Guide](https://www.tencentcloud.com/document/product/436/14102).
 

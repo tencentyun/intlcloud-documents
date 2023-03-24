@@ -17,10 +17,10 @@ TIM 是 IM Web SDK 的命名空间，提供了创建 SDK 实例的静态方法 [
 | Profile（资料） | IM SDK 中 [Profile](https://web.sdk.qcloud.com/im/doc/en/Profile.html) 描述个人的常用基本信息，例如昵称、性别、个性签名以及头像地址等。 |
 | Friend（好友） | IM SDK 中 [Friend](https://web.sdk.qcloud.com/im/doc/en/Friend.html) 描述好友的常用基本信息，例如备注、分组等。 |
 | FriendApplication（好友申请）	| IM SDK 中 [FriendApplication](https://web.sdk.qcloud.com/im/doc/en/FriendApplication.html) 描述好友申请的常用基本信息，例如加好友来源、备注等。 |
-| FriendGroup（好友分组）| IM SDK 中 [FriendGroup](https://web.sdk.qcloud.com/im/doc/en/FriendGroup.html) 描述好友分组的常用基本信息，例如分组名、分组成员等。
+| FriendGroup（好友分组）| IM SDK 中 [FriendGroup](https://web.sdk.qcloud.com/im/doc/en/FriendGroup.html) 描述好友分组的常用基本信息，例如分组名、分组成员等。 |
 | Group（群组） | IM SDK 中 [Group](https://web.sdk.qcloud.com/im/doc/en/Group.html) 表示一个支持多人聊天的通信系统，支持好友工作群、陌生人社交群、临时会议群以及直播群。 |
 | GroupMember（群成员） | IM SDK 中 [GroupMember](https://web.sdk.qcloud.com/im/doc/en/GroupMember.html) 描述群内成员的常用基本信息，例如 ID、昵称、群内身份以及入群时间等。 |
-| 群提示消息 | 当有用户被邀请加入群组或被移出群组等事件发生时，群内会产生提示消息，接入侧可以根据实际需求展示给群组用户或忽略。<br/>群提示消息有多种类型，详细描述请参见  [Message.GroupTipPayload](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GroupTipPayload)。|
+| 群提示消息 | 当有用户被邀请加入群组或被移出群组等事件发生时，群内会产生提示消息，接入侧可以根据实际需求展示给群组用户或忽略。<br/>群提示消息有多种类型，详细描述请参见  [Message.GroupTipPayload](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GroupTipPayload)。 |
 | 群系统通知消息 | 当有用户申请加群等事件发生时，管理员会收到申请加群等系统消息。管理员同意或拒绝加群申请，IM SDK 会通过群系统通知消息将申请加群等相应消息发送给接入侧，由接入侧展示给用户。<br/>群系统通知消息有多种类型，详细描述请参见 [Message.GroupSystemNoticePayload](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GroupSystemNoticePayload)。  |
 | 消息上屏 | 用户单击发送后，事先输入的文字或选择的图片等信息显示在用户电脑屏幕或手机屏幕上的过程。 |
 
@@ -77,7 +77,7 @@ TIM 是 IM Web SDK 的命名空间，提供了创建 SDK 实例的静态方法 [
 ### 会话
 | API | 描述 |
 | --- | --- |
-| [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage) | 变更消息。
+| [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage) | 变更消息。|
 | [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList) | 获取消息列表。  |
 | [getMessageListHopping](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageListHopping) | 根据指定的消息 sequence 或 消息时间拉取会话的消息列表。|
 | [sendMessageReadReceipt](https://web.sdk.qcloud.com/im/doc/en/SDK.html#sendMessageReadReceipt) | 发送消息已读回执。|
@@ -164,6 +164,10 @@ TIM 是 IM Web SDK 的命名空间，提供了创建 SDK 实例的静态方法 [
 | [setGroupAttributes](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setGroupAttributes) | 设置群属性。 |
 | [deleteGroupAttributes](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteGroupAttributes) | 删除群属性。 |
 | [getGroupAttributes](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupAttributes) | 获取群属性。 |
+| [setGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setGroupCounters) | 设置群计数器。 |
+| [increaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#increaseGroupCounter) | 递增群计数器。 |
+| [decreaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#decreaseGroupCounter) | 递减群计数器。 |
+| [getGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupCounters) | 获取群计数器。 |
 
 ### 群成员
 | API | 描述 |

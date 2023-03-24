@@ -1,7 +1,7 @@
 TUIKit 从 5.7.1435 版本开始支持模块化集成，您可以根据自己的需求集成所需模块。
 TUIKit 从 6.9.3557 版本开始新增了全新的简约版 UI，之前的 UI 依旧保留，我们称之为经典版 UI，您可以根据需求自由选择经典版或简约版 UI。
 
-如果您还不了解各个界面库的功能，可以查阅文档 [TUIKit 界面库介绍](https://www.tencentcloud.com/document/product/1047/50062)。
+如果您还不了解各个界面库的功能，可以查阅文档 [TUIKit 界面库介绍](https://intl.cloud.tencent.com/document/product/1047/50062)。
 
 下文将介绍如何集成 TUIKit 组件。 
 
@@ -91,12 +91,9 @@ buildscript {
 <img src="https://qcloudimg.tencent-cloud.cn/raw/454abb6051a7a94a08559d8404e5aec7.png" width="400"/> 
 7. 裁剪不需要的 UI 文件（可选）
 `经典版`和`简约版` UI 互不影响，可独立运行。`经典版`和`简约版`的 UI 文件都在各 TUI 组件中，放在不同的文件夹里，以 `TUIChat` 组件为例：
-
 <img src="https://qcloudimg.tencent-cloud.cn/raw/179a15bb72b24a09cf7440c50e5c3442.png" width="400"/> 
-
 classicui 文件夹中存放的是`经典版` UI 文件，minimalistui 文件夹中存放的是`简约版` UI 文件, 如果您要集成简约版 UI，可直接删除 classicui 文件夹，同时删除 AndroidManifest.xml 文件中经典版 UI 对应的 Activity 和 Service 。
-
->?  经典版和简约版 UI 不能混用，集成多个组件时，您必须同时选择经典版 UI 或者 简约版 UI。
+> ?  经典版和简约版 UI 不能混用，集成多个组件时，您必须同时选择经典版 UI 或者 简约版 UI。
 
 ## 快速搭建
 常用的聊天软件都是由会话列表、聊天窗口、好友列表、音视频通话等几个基本的界面组成，参考下面步骤，您仅需几行代码即可在项目中快速搭建这些 UI 界面。
@@ -133,9 +130,7 @@ TUILogin.login(context, sdkAppID, userID, userSig, new TUICallback() {
     android:layout_weight = "1"/>
 </LinearLayout>
 ```
-
 2. 创建 FragmentAdapter.java 用来配合 ViewPager2 展示会话和联系人界面。
-
 ```java
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -143,6 +138,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+
 import java.util.List;
 
 public class FragmentAdapter extends FragmentStateAdapter {
@@ -234,7 +231,7 @@ mainViewPager.setCurrentItem(0, false);
 ### 步骤4：构建音视频通话功能
 TUI 组件支持在聊天界面对用户发起音视频通话，仅需要简单几步就可以快速集成：
 
-<table style="text-align:center;vertical-align:middle;width: 700px">
+<table style="text-align:center;vertical-align:middle;width: 800px">
   <tr>
     <th style="text-align:center;" ><b>视频通话<br></b></th>
     <th style="text-align:center;"><b>语音通话</b><br></th>
@@ -248,7 +245,7 @@ TUI 组件支持在聊天界面对用户发起音视频通话，仅需要简单�
 
 1. **开通音视频服务**
 	1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，进入应用的基础配置页面。
-	2. 在开通腾讯实时音视频服务功能区，单击**免费体验**即可开通 TUICallKit 的 60 天免费试用服务。
+	2. 在开通腾讯实时音视频服务功能区，单击**免费体验**即可开通 TUICallKit 的 7 天免费试用服务。
 	3. 在弹出的开通实时音视频 TRTC 服务对话框中，单击确认，系统将为您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建一个与当前 IM 应用相同 SDKAppID 的实时音视频应用，二者帐号与鉴权可复用。
 2. **集成 TUICallKit 组件**
 在 APP 的 build.gradle 文件中添加对 `TUICallKit` 的依赖：
@@ -256,12 +253,14 @@ TUI 组件支持在聊天界面对用户发起音视频通话，仅需要简单�
 api project(':tuicallkit')
 ```
 3. **发起和接收视频或语音通话**
-<table style="text-align:center;vertical-align:middle;width: 600px">
+<table style="text-align:center;vertical-align:middle;width: 800px">
   <tr>
-    <th style="text-align:center;" ><b>消息页发起通话/联系人页发起通话<br></b></th>
+    <th style="text-align:center;" ><b>消息页发起通话<br></b></th>
+    <th style="text-align:center;" ><b>联系人页发起通话<br></b></th>
   </tr>
   <tr>
-        <td><img style="width:600px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/EseX367_%E9%9B%86%E5%90%88%281%29.png"  />    </td>
+        <td><img style="width:400px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/EseX367_%E9%9B%86%E5%90%88%281%29.png"  />    </td>
+    <td><img style="width:400px" src="https://staticintl.cloudcachetci.com/yehe/backend-news/EseX367_%E9%9B%86%E5%90%88%281%29.png"  />    </td>
      </tr>
 </table>
 <ul>
@@ -271,10 +270,89 @@ api project(':tuicallkit')
 </ul>
 
 4. **添加离线推送：**[](id:Step5)
-	实现音视频通话的离线推送，请参考以下几个步骤：
+实现音视频通话的离线推送，请参考以下几个步骤：
 	1. 配置 App 的 [离线推送](https://www.tencentcloud.com/document/product/1047/39156)。
 	2. 集成 TUICallKit 组件。
 	3. 通过 TUICallKit 发起通话邀请的时候，默认会生成一条离线推送消息。
+
+5. **附加增值能力**
+集成 TUIChat 和 TUICallkit 的组件后，在聊天界面发送语音消息时，即可**录制带 AI 降噪和自动增益的语音消息**。该功能需要购买 音视频通话能力进阶版及以上套餐，仅 IMSDK 7.0 及以上版本支持。当套餐过期后，录制语音消息会切换到系统 API 进行录音。
+下面是使用两台华为 P10 同时录制的语音消息对比：
+<table style="text-align:center;vertical-align:middle;width: 800px">
+  <tr>
+    <th style="text-align:center;" ><b>系统录制的语音消息<br></b></th>
+    <th style="text-align:center;" ><b>TUICallkit 录制的带 AI 降噪和自动增益的语音消息<br></b></th>
+  </tr>
+  <tr>
+    <td>
+      <audio id="audio" controls="" preload="none" >
+	<source id="m4a" src="https://im.sdk.cloudcachetci.com/tools/resource/rain_system_record.m4a">
+      </audio>
+    </td>
+
+    <td>
+      <audio id="audio" controls="" preload="none">
+    <source id="m4a" src="https://im.sdk.cloudcachetci.com/tools/resource/rain_tuicallkit_record_with_agc_aidenoise.m4a">
+      </audio>
+    </td>
+  </tr>
+</table>
+	
+
+>? 更多实操教学视频请参见：[极速集成 TUIKit（Android）](https://cloud.tencent.com/edu/learning/course-3130-56399)。
+
+
+[](id:textTranslation)
+## 开启文本消息翻译功能
+文本消息翻译功能指的是，当您进入了聊天界面后，可以手动长按消息列表中的文本消息 item，在出现的菜单中，点击【翻译】按钮，翻译文本。
+为了避免对用户使用造成影响，翻译功能默认关闭，消息长按菜单中不会出现【翻译】按钮。
+
+如果您想使用翻译功能，需要操作以下两步：
+1. 文本翻译是**增值付费功能**，按翻译字符数量计费。当前此功能处于内测阶段，请联系腾讯云商务为您开通。**未开通服务的情况下，即使您在 UI 上显示了【翻译】按钮，也无法正常翻译**。
+2. 开通服务后，您可以在初始化聊天窗口前，设置显示【翻译】按钮，示例代码如下：
+```java
+// 显示翻译按钮
+TUIChatConfigs.getConfigs().getGeneralConfig().setEnableTextTranslation(true);
+```
+
+> ! 
+> 1. 文本消息翻译功能从 TUIChat 7.0 版本开始支持。
+> 2. 仅支持文本消息、文本类的引用或回复消息，图片、语音、视频、文件、表情、自定义消息等不支持翻译。
+> 3. 点击【翻译】后，会将文本翻译成当前 TUIChat 所使用的语言。例如当前 TUIChat 语言为英文，无论待翻译的文本是什么语言，都将被翻译为英文。
+
+开启翻译服务及显示开关前后效果图如下所示：
+<dx-tabs>
+::: 经典版
+
+<table style="text-align:center;vertical-align:middle;width: 900px">
+  <tr>
+    <th style="text-align:center;" width="300px">不显示翻译按钮</th>
+    <th style="text-align:center;" width="300px">显示翻译按钮</th>
+    <th style="text-align:center;" width="300px">文本消息翻译效果</th>
+  </tr>
+  <tr>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/398a628b6a0a885c1f63c0f8d320c702.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/ec5fa852d7ffa0ec8236418e09427bbc.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/0e1b9927120ff048561270fcc7475595.jpg"/></td>
+	 </tr>
+</table>
+:::
+::: 简约版
+<table style="text-align:center;vertical-align:middle;width: 900px">
+  <tr>
+    <th style="text-align:center;" width="300px">不显示翻译按钮</th>
+    <th style="text-align:center;" width="300px">显示翻译按钮</th>
+    <th style="text-align:center;" width="300px">文本消息翻译效果</th>
+  </tr>
+  <tr>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/b65557255c88aa0a1cc557c40515be80.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/254884ffcd7cf16b3d4db58698e9314f.jpg"/></td>
+    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/4528dc6a31b06782d0279fc5cc81ab1a.jpg"/></td>
+	 </tr>
+</table>
+:::
+</dx-tabs>
+
 
 ## 常见问题
 #### 提示 "Manifest merger failed : Attribute application@allowBackup value=(true) from AndroidManifest.xml" 如何处理？
@@ -341,4 +419,3 @@ public class MyApplication extends SomeOtherApplication {
 
 #### 提示 "Plugin with id 'kotlin-android' not found." 如何处理？
 因为 `TUIChat` 组件使用了 Kotlin 代码，所以需要添加 Kotlin 构建插件。请参考 [module 源码集成第 5 步](#buildStep5)。
-

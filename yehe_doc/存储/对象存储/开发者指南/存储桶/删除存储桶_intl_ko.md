@@ -37,5 +37,5 @@ SDK의 버킷 삭제 메서드를 호출할 수 있습니다. 자세한 내용�
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31469)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31470)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31471)
-
+- [Mini Program SDK](https://www.tencentcloud.com/document/product/436/31472)
 
