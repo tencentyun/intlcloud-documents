@@ -19,8 +19,8 @@ CSS는 음란물 감지를 지원합니다(화면 캡처 기반). 콘솔에서 �
 - 템플릿 바인딩 및 수정, 바인딩 해제는 진행 중인 라이브 스트림이 아닌 새로운 라이브 스트림에만 영향을 미칩니다. 진행 중인 라이브 스트림에 변경 사항을 적용하려면 스트림을 중지하고 다시 푸시해야 합니다.
 
 ## 전제 조건
--  CSS를 활성화하고 [푸시 도메인 이름](https://intl.cloud.tencent.com/document/product/267/35970)을 추가했습니다.
-- COS Bucket을 생성합니다. 자세한 내용은 [버킷 생성](https://intl.cloud.tencent.com/document/product/436/13309)을 참고하십시오.
+-  CSS를 활성화하고 [푸시 도메인](https://intl.cloud.tencent.com/document/product/267/35970)을 추가해야 합니다.
+- COS Bucket을 생성해야 합니다. 자세한 내용은 [버킷 생성](https://intl.cloud.tencent.com/document/product/436/13309)을 참고하십시오.
 
 [](id:Screenshot)
 ## 화면 캡처&음란물 감지 템플릿 생성
@@ -28,8 +28,7 @@ CSS는 음란물 감지를 지원합니다(화면 캡처 기반). 콘솔에서 �
 2. **화면 캡처 및 음란물 감지 템플릿 생성**을 클릭합니다. **처음** 수행하는 경우 지금 승인을 클릭하여 서비스 역할을 생성하고 COS에 화면 스크린샷을 저장할 수 있도록 CSS 읽기 및 쓰기 액세스 권한을 COS에 부여하십시오.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f27be286a9f3c68d96a55544a6c25b57.png)
 3. 템플릿 설정을 완료하고 **저장**을 클릭합니다.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/6ecf7c0591d97bdd525e0419e1a5da5c.png" style="zoom:67%;" />
-
+    <img src="https://main.qcloudimg.com/raw/544c2127f7870add334eaf760f1da089.png" style="zoom:67%;" />
 <table>
 <thead><tr><th width="15%">구성 항목</th><th>설명</th></tr></thead>
 <tbody><tr>
@@ -82,9 +81,9 @@ CSS는 음란물 감지를 지원합니다(화면 캡처 기반). 콘솔에서 �
 </tbody></table>
 
 [](id:conect)
-## 바인딩 도메인 이름
+## 도메인 이름 바인딩
 
-1. CSS 콘솔에 로그인하여 **기능 설정** > [**라이브 방송 화면 캡처&음란물 감지**](https://console.cloud.tencent.com/live/config/jtjh) 페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 왼쪽 사이드바에서 **기능 구성** > [**라이브 화면 캡처&음란물 감지**](https://console.cloud.tencent.com/live/config/jtjh)를 선택합니다.
 2. 다음 방법 중 하나로 도메인 이름 바인딩 페이지로 이동합니다.
     - **기존 템플릿에 도메인 바인딩:** 왼쪽 상단에서 **도메인 이름 바인딩**을 클릭합니다.
     ![](https://qcloudimg.tencent-cloud.cn/raw/92b7542783d6d5ac59ef5faedbf53746.png)
@@ -99,9 +98,9 @@ CSS는 음란물 감지를 지원합니다(화면 캡처 기반). 콘솔에서 �
 
 1. CSS 콘솔에 로그인하여 왼쪽 사이드바에서 **기능 구성** > [**라이브 화면 캡처&음란물 감지**](https://console.cloud.tencent.com/live/config/jtjh)를 선택합니다.
 2. 대상 화면 캡처&음란물 감지 템플릿을 선택하고 해제할 도메인을 찾은 다음 **바인딩 해제**를 클릭합니다.
- ![](https://qcloudimg.tencent-cloud.cn/raw/e8a52af13916db8d50bc4395cfc5cc8d.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/e8a52af13916db8d50bc4395cfc5cc8d.png)
 3. 팝업 창에서 **확인**을 클릭합니다.
- ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
+   ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
 
 [](id:change)
 ## 템플릿 수정

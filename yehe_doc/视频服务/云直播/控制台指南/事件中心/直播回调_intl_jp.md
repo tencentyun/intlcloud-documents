@@ -12,21 +12,22 @@ CSSではCSSコールバック機能を提供し、コンソールでのコー�
 - コールバック設定の中で、コールバックイベントの受信に使用するコールバックアドレスの`http`または`https`サーバーが正常にレスポンスを受信する必要があります。
 - コンソールのコールバックテンプレート管理はドメイン次元となっており、現在はバインドインターフェース作成のルールを取り消すことができません。CSSコールバック関連インターフェースを介して指定ストリームをバインドした場合は、[コールバックルールの削除](https://intl.cloud.tencent.com/document/product/267/30814)を呼び出して、バインドを解除する必要があります。
 - CSSコールバック関連プロトコルについては、[イベントメッセージ通知のプロトコル](https://intl.cloud.tencent.com/document/product/267/38080)をご参照ください。
-- CSSコールバックメッセージ通知のパラメータについての説明は以下をご参照ください。
+- CSSコールバックメッセージ通知のパラメータについての説明は以下をご参照ください：
  - [プッシュイベント通知](https://intl.cloud.tencent.com/document/product/267/38081)
  - [ストリーム切断イベント通知](https://intl.cloud.tencent.com/document/product/267/38081)
  - [レコーディングイベント通知](https://intl.cloud.tencent.com/document/product/267/38082)
  - [スクリーンキャプチャイベント通知](https://intl.cloud.tencent.com/document/product/267/38083)
  - [ポルノ検出イベント通知](https://intl.cloud.tencent.com/document/product/267/38084)
-
+ - [プルリツイートイベント通知](https://intl.cloud.tencent.com/document/product/267/42525)
+ - [プッシュ異常イベント通知](https://www.tencentcloud.com/document/product/267/53310)
 
 
 
 ## コールバックテンプレートの作成[](id:Callback)
 1. [CSSコンソール](https://console.cloud.tencent.com/live)にログインします。
-2. 左側メニューバーから**イベントセンター**>[**CSSコールバック**](https://console.cloud.tencent.com/live/config/callback)を選択します。
+2. 左側メニューバーから**イベントセンター**>[**ライブブロードキャストのコールバック**](https://console.cloud.tencent.com/live/config/callback)を選択します。
 3. **コールバックテンプレートの作成**をクリックし、CSSコールバック用の新しいテンプレートにコールバック情報を記入して、コールバックタイプを選択し、コールバックアドレスを記入します。複数選択可能です。**保存**をクリックすれば完了です。
-![](https://main.qcloudimg.com/raw/e79b06c3fecbfaa34d124f820e10ff2c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/f8418ac2c646c3461d95d7fab157f2f3.png)
 <table>
 <thead><tr><th width="17%">設定項目</th><th>説明</th></tr></thead><tbody><tr>
 <td>テンプレート名</td>
@@ -52,27 +53,30 @@ CSSではCSSコールバック機能を提供し、コンソールでのコー�
 </tr><tr>
 <td>スクリーンキャプチャ・ポルノ検出コールバック</td>
 <td>スクリーンキャプチャ・ポルノ検出コールバックイベントを受信するためのパスを入力します。サポート可能なプロトコルヘッダーは、HTTP、HTTPSなどです。</td>
+</tr><tr>
+<td>プッシュ異常イベントコールバック</td>
+<td>プッシュ異常イベントコールバックを受信するためのパスを入力します。サポート可能なプロトコルヘッダーは、HTTP、HTTPSなどです。</td>
 </tr>
 </tbody></table>
 
 
 
+
 ## テンプレートの変更[](id:change)
 
-1. **イベントセンター**>[**CSSコールバック**](https://console.cloud.tencent.com/live/config/callback)に入ります。
+1. **イベントセンター**>[**ライブブロードキャストのコールバック**](https://console.cloud.tencent.com/live/config/callback)に移動します。
 2. 作成済みのコールバック設定テンプレートを選択し、右側の**編集**をクリックすれば、テンプレートの情報を変更できます。
 3. **保存**をクリックすれば完了です。
 
-![](https://main.qcloudimg.com/raw/885d9f6ec5ee5b921865cba965068de0.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/6350e65d695ece9c075dd3e053c1aeca.png)
 
 
 ## テンプレートの削除[](id:delete)
 
 テンプレートがすでにバインドされている場合は、先にテンプレートのバインドを解除する必要があり、その後削除操作を行うことができます。具体的なバインド解除の操作は、[コールバック設定のバインド解除](https://intl.cloud.tencent.com/document/product/267/31065#untie)をご参照ください。
 
-1. **イベントセンター**>[**CSSコールバック**](https://console.cloud.tencent.com/live/config/callback)に入ります。
+1. **イベントセンター**>[**ライブブロードキャストのコールバック**](https://console.cloud.tencent.com/live/config/callback)に移動します。
 2. 作成済みのコールバック設定テンプレートを選択し、右側の**削除**をクリックします。
 3. 現在のスクリーンキャプチャ・ポルノ検出設定テンプレートの削除の是非を確認し、**OK**をクリックすれば削除できます。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/9cc8d3a6c82a8b54ae904ddcc9ca01f6.png)
-
