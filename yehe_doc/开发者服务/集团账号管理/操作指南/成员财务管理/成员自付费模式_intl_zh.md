@@ -20,7 +20,7 @@
 
 2. 通过右上方的下拉列表，选择对应的成员账号，查看成员账号的账户余额信息。
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDU1NTYyNzgyNg_266346_LqIl60j1n4lVPaBT_1676339454?w=2445&h=963)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/H2cG398_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110731.png)
 
 
 
@@ -36,11 +36,11 @@
 
 3. 通过右上方的下拉列表，选择对应的成员账号，查看成员账号的账单详情。在账单详情页面，也可以通过“账单确认”按钮，为成员账号确认对应月份的账单。
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDU1NTYyNzgyNg_350256_WKXPmJx_E2i2LCES_1676339761?w=2396&h=1035)  
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/3wc5340_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110752.png)  
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDU1NTYyNzgyNg_568621_asQ9K--0XcGvD3kt_1676339976?w=2442&h=942)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/ZNsJ175_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110811.png)
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDU1NTYyNzgyNg_50591_jEOJBmnFiTx_Q3RX_1676339994?w=2460&h=1002)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/CuzK230_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110821.png)
 
 
 ### **选择成员账号合并账单**
@@ -53,7 +53,7 @@
 
 2. 选择“合并账单”页签，勾选需合并出账的成员账号，单击**下载合并账单**即可。如下图所示： 您也可在 [下载记录](https://console.tencentcloud.com/expense/download) 页面中，单击合并账单所在行右侧的**下载**，下载合并账单。 
 
-![img](https://wdoc-76491.picgzc.qpic.cn/MTY4ODg1MDU1NTYyNzgyNg_861251_xktvmiLpOtCyFDg3_1676344780?w=2441&h=925)
+![img](https://staticintl.cloudcachetci.com/yehe/backend-news/WHbI289_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324110851.png)
 
 
 ### **为成员账号开票**
