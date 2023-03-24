@@ -4,8 +4,8 @@ TCO integrates the finance management methods of organization users to provide t
 
 In unified organization payment mode, member accounts top up the admin account, and the consumption of each member account is automatically paid by the admin account uniformly, with no need of fund allocation. For users of the same entity, the admin can be set as the payer account to automatically pay for their used resources.
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/gwKG567_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230105183237.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/6gPr336_PRELIM__%E9%9B%86%E5%9B%A2%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86_%E6%99%AE%E9%80%9A%E5%9B%BE%E7%89%87_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-2_%E5%A5%BD%E5%8E%8B%E7%9C%8B%E5%9B%BE.png)
 
 ### Member Self-Pay Mode
 In this mode, the organization admin account can view the account and bill information of its members, issue invoices to members, and consolidate members’ bills. If member accounts and the admin account are under the same verified entity, the former can inherit the latter’s offers specified in the contract. Besides, member accounts pay for the resources they consume by themselves.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/2g8b527_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230324094238.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/TfdP262_PRELIM__%E9%9B%86%E5%9B%A2%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86_%E6%99%AE%E9%80%9A%E5%9B%BE%E7%89%87_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US_%E5%A5%BD%E5%8E%8B%E7%9C%8B%E5%9B%BE.png)
