@@ -12,7 +12,7 @@ AMS identifies whether the audio contains panting, moaning, [ASMR](https://intl.
 
 ### Language Recognition
 
-Currently only supports Chinese.
+ Currently only Chinese is supported.
 
 ### Custom Content Recognition
 
