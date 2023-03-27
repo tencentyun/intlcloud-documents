@@ -1,4 +1,34 @@
+
+
+## 2023年02月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th> 
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布自定义源站回源功能</td>
+<td>云点播开放 CDN 托管能力帮助用户分发自有源站的媒体资源，支持自有源站和第三方对象存储源站的回源能力。用户通过创建自定义域名并配置源站类型、回源请求协议和源站地址等信息，便可实现自定义源站功能。</td>
+<td>2023-02</td>
+<td><a href="https://www.tencentcloud.com/document/product/266/52805">自定义源站回源</a></td>
+</tr>
+</tbody>
+<tbody ><tr>
+<td>上线云点播资源包</td>
+<td>云点播资源包，即预先购买点播资源，后使用资源的方式，<b>各类型资源包仅支持抵扣该项功能的资源。</b></td>
+<td>2023-02</td>
+<td><a href="https://www.tencentcloud.com/document/product/266/52806">云点播资源包</a></td>
+</tr>
+</tbody></table>
+
+
 ## 2022年10月
+
 <table>
 <thead>
 <tr>
