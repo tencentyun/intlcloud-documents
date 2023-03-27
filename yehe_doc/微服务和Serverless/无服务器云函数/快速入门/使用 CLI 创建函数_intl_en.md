@@ -12,7 +12,7 @@ This document describes how to use the SCF component provided by Serverless Clou
 ### Creating function
 Run the following command to quickly create a function in the Node.js language: 
 ```
-scf init scf-demo
+scf init scf-starter
 ```
 >?`scf-demo` in the command is the Node.js template by default, and you can replace it with function templates in other languages, such as `scf-golang`, `scf-php`, and `scf-python`.
 
