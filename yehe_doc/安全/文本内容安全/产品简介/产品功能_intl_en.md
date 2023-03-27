@@ -16,5 +16,5 @@ Currently only Chinese is supported.
 
 ### Custom Content Recognition
 
-TMS allows you to customize Chinese and English keyword dictionaries. It can accurately recognize non-compliant content that contains custom keywords. You don't need to train a machine recognition model, as the system automatically matches the content to be recognized with the samples in the custom dictionaries for targeted content recognition, thus meeting diversified moderation needs in different scenarios.
+TMS allows you to customize keyword dictionaries. It can accurately recognize non-compliant content that contains custom keywords. You don't need to train a machine recognition model, as the system automatically matches the content to be recognized with the samples in the custom dictionaries for targeted content recognition, thus meeting diversified moderation needs in different scenarios.
 
