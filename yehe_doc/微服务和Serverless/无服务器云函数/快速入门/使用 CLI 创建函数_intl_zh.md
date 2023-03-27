@@ -12,7 +12,7 @@
 ### 创建函数
 执行以下命令，快速创建一个开发语言为 Node.js 的函数示例。 
 ```
-scf init scf-demo
+scf init scf-starter
 ```
 >?命令中的 scf-demo 默认为 nodejs 模版，您也可以替换为其它语言的函数模版：`scf-golang`，`scf-php`，`scf-python`。
 
