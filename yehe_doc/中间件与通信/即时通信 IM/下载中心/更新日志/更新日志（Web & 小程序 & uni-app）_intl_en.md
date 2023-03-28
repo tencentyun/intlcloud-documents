@@ -1,29 +1,56 @@
+### 2.26.1 @2023.2.10
+
+**Bug fixing**
+
+- In the case where the last group message is a group notice, the value of `lastMessage.lastTime` of the group conversation was incorrect.
+- After a user set a conversation mark via the [markConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markConversation) API, the mark content got missing if the user logged in again.
+- Group profile query failed occasionally when the [createGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createGroup) API was called to create a group.
+- Historical messages got missing in some scenarios when the [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList) API was called to pull historical group messages.
+
+### 2.26.0 @2023.1.13
+
+**New features**
+
+- [translateText](https://web.sdk.qcloud.com/im/doc/en/SDK.html#translateText): text translation API.
+- [setGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setGroupCounters): API for setting group counters. On the access side, this API can be used to implement some common counter features, such as the like counter, audio-video group gift counter, and viewer counter.
+- [increaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#increaseGroupCounter): API for increasing the values of group counters.
+- [decreaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#decreaseGroupCounter): API for decreasing the values of group counters.
+- [getGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupCounters): API for getting group counters.
+- Pulling group message recall signaling, improving the recall status accuracy of group messages in weak network conditions.
+- New field `revoker` added in [Message](https://web.sdk.qcloud.com/im/doc/en/Message.html) to identify the ID of the user who recalls a message.
+
+**Bug fixing**
+
+- Mobile number ranges from sites outside the Chinese mainland that users purchased inside the Chinese mainland were not recognized as resources of sites outside the Chinese mainland.
+- The userID error was reported in repeated login logs.
+
+
 ### 2.25.0 @2022.12.8
 
 **New features**
 
-- Added [clearHistoryMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#clearHistoryMessage) API to clear messages from local storage and the cloud.
-- Supported message extension (Ultimate edition feature).
-- Supported ordinary group and community group attributes.
-- Supported compatibility with [wx.chooseMedia](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseMedia.html)
-- Supported one-to-one message read receipts, whose data structure is aligned with that of native Chat SDK, in [Message.readReceiptInfo](https://web.sdk.qcloud.com/im/doc/en/Message.html).
-- Added the 2101 error code: Users who are not members of the audio-video group cannot send messages to the audio-video group.
+- The [clearHistoryMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#clearHistoryMessage) API supports clearing local and cloud messages.
+- Supports message extension (feature in the Ultimate edition).
+- Supports ordinary group and community group attributes.
+- Compatible with [wx.chooseMedia](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseMedia.html).
+- The [Message.readReceiptInfo](https://web.sdk.qcloud.com/im/doc/en/Message.html) API supports read receipts for one-to-one messages (with the same data structure as that of native Chat).
+- Error code 2101: The user hasn't joined the audio-video group and cannot send messages to it.
 
 **Changes**
 
-- The log reporting backup channel uses a dedicated cluster domain name `https://events.im.qcloud.com` (a trusted domain configuration must be added to the platform).
+- The `https://events.im.qcloud.com` domain of the self-deployed cluster is used for log reporting and backup (a trusted domain needs to be added).
 
 **Bug fixing**
 
-- Fixed the runtime error (Failed to read the 'localStorage' property from 'Window': Access is denied for this document) caused by cookies blocked.
+- An error occurred at runtime due to blocked cookies (Failed to read the 'localStorage' property from 'Window': Access is denied for this document).
 
 
 ### 2.24.1 @2022.11.11
 
 **New features**
 
-- Added the English version of the declaration TS file.
-- RESTful APIs support pushing custom profile field modifications to the SDK.
+- The English TS declaration file is added.
+- Supports pushing the custom friend profile field modified via the RESTful API to the SDK.
 
 **Bug fixing**
 
@@ -34,57 +61,57 @@
 **New features**
 
 - Supported mini game environment integration.
-- Added the local audit feature to the local audit plugin [tim-profanity-filter-plugin](https://www.npmjs.com/package/tim-profanity-filter-plugin).
+- The [tim-profanity-filter-plugin](https://www.npmjs.com/package/tim-profanity-filter-plugin) local moderation plugin supports local moderation.
 - [getFriendProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getFriendProfile): added support for pulling custom friend and profile fields by default for better user experience.
 - [getGroupApplicationList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupApplicationList): added support for pulling the list of all group joining requests.
-- RESTful APIs support pushing custom field modifications to the SDK.
-- Supported sending topic messages that are excluded from the unread count.
-- Supported sending common community messages that are excluded from the unread count.
-- Message sending supports VoIP Push.
+- Supports pushing the custom friend field modified via the RESTful API to the SDK.
+- Added support for sending topic messages that are excluded from the unread count.
+- Supports excluding ordinary community messages from the unread count.
+- Supports VoIP push of messages.
 
 **Bug fixing**
 
-- Fixed friend profile related issues.
+- Friend profile issues.
 
 
 ### 2.23.1 @2022.9.29
 
 **New features**
 
-- [createTextMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createTextMessage): Supported creating a targeted group message, which is sent to specified members in a group and cannot be received by other members in the group.
-- Supported sending videos in MOV format.
-- RESTful API [Updating Friends](https://intl.cloud.tencent.com/document/product/1047/34904): Supported pushing to SDK.
-- [getFriendProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getFriendProfile): Supported pulling custom friend and profile fields.
-- [getConversationList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationList): Added the `isSyncCompleted` field to the return data to indicate whether synchronizing the conversation list from the cloud is completed.
+- [createTextMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createTextMessage) and other APIs support targeted group message creation; that is, messages will be received only by the specified group members.
+- Supports sending MOV videos.
+- Supports pushing [friend updates](https://intl.cloud.tencent.com/document/product/1047/34904) via the RESTful API to the SDK.
+- [getFriendProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getFriendProfile): added support for pulling custom friend and profile fields.
+- The `isSyncCompleted` field is added to the data returned by the [getConversationList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationList) API, indicating whether the sync of the conversation list from the cloud is completed.
 - The receiving of a message from the community to which a topic belongs can be notified to the access side through the [MESSAGE_RECEIVED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.MESSAGE_RECEIVED) event.
 
 **Bug fixing**
 
-- Fixed the issue where roaming messages could not be pulled for some group conversations when the number of groups in the group list exceeded the upper limit of 5,000.
-- Fixed the issue where, when `setConversationCustomData` was called to set custom fields for a conversation, `customData` of the conversation was '' after the user logged in again.
+- Roaming messages couldn't be pulled in certain group conversations after the number of groups exceeds the upper limit of 5,000.
+- After `setConversationCustomData` was called to set the custom conversation field, the `customData` of the conversation was `''` after login.
 
 ### 2.23.0 @2022.9.16
 
 **New features**
 
 - The SDK supports environments outside the Chinese mainland.
-- Added [getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTotalUnreadMessageCount) API to get the total unread message count of a conversation.
-- Added the [TOTAL_UNREAD_MESSAGE_COUNT_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOTAL_UNREAD_MESSAGE_COUNT_UPDATED) event. By listening for this event, the access side can receive notifications of a change in the total unread count.
-- Added [markGroupMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markGroupMemberList) API to mark a member of an audio-video group (Ultimate edition required).
-- When a member is removed from a group, or a group is deleted, the SDK updates the conversation group to which the group conversation belongs at the same time.
+- [getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTotalUnreadMessageCount) supports getting the total unread count of conversations.
+- The receiver can listen for the [TOTAL_UNREAD_MESSAGE_COUNT_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOTAL_UNREAD_MESSAGE_COUNT_UPDATED) event to get notifications of changes to the total unread count of conversations.
+- [markGroupMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markGroupMemberList) supports marking audio-video group members (supported only by the Ultimate edition).
+- The SDK will update the conversation group of the group conversation after a group member is kicked out of the group or the group is disbanded.
 - Supported independent subpackaging.
-- Web: When an account logged in on multiple instances, the SDK proactively recovers the message history of the most recent contacts after network reconnection to ensure message reliability.
+- The SDK will recover the message history with recent contacts after network reconnection in the scenario of login on multiple web instances.
 
 **Bug fixing**
 
-- Fixed the out-of-sync issue of the conversation `lastMessage` recall state that may occur in multi-instance login web scenarios.
-- Fixed the issue of pinning conversations to the top when recent contacts were synchronized.
+- In the scenario of login on multiple web instances, `lastMessage` recall might not be synced.
+- An error occurred while pinning a conversation to the top when recent contacts were synced.
 
 ### 2.22.0 @2022.8.18
 
 **New features**
 
-- Supported packaging the uni-app into the native app for offline push. For details, see [registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin).
+- [registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin) supports packaging a native app with uni-app using an offline push plugin.
 - Supported getting the list of online members of an audio-video group. For details, see [getGroupMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberList) (Ultimate edition required).
 - Supported blocking a member of an audio-video group. For details, see [deleteGroupMember](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteGroupMember) (Ultimate edition required).
 - Added [setConversationCustomData](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setConversationCustomData) to set custom conversation data.
@@ -98,13 +125,13 @@
 
 **Bug fixing**
 
-- Fixed the issue where the unread count of a topic was not updated after a topic message recall notification was received.
+- The unread count of the topic was not updated after the notification of topic message recall was received.
 
 ### 2.21.2 @2022.8.8
 
 **New features**
 
-- Supported creating and sending audio messages on web clients.
+- Supports creating and sending audio messages on the web.
 - Added the ID field to messages combined to the [createMergerMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createMergerMessage) API for creating a combined message.
 
 ### 2.21.1 @2022.8.3
@@ -121,24 +148,23 @@ Fixed the message duplication problem that [resendMessage](https://web.sdk.qclou
 - Added [getUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getUserStatus) to query a user's status.
 - Added [subscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#subscribeUserStatus) to subscribe to a user's status.
 - Added [unsubscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#unsubscribeUserStatus) to unsubscribe from a user's status.
-- Added a feature of [setMessageRemindType](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setMessageRemindType): Synchronizing the settings of group and topic message muting across clients and instances.
-- Added a feature of [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage): Sending a file message.
-- Added a feature of [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage): Modifying `cloudCustomData` for messages of all types.
-- Added the `isBroadcastMessage` field to [Message](https://web.sdk.qcloud.com/im/doc/en/Message.html) to support broadcast messages for audio-video groups.
-- Supported synchronizing group joining options across terminals and instances.
-- Supported @ all members for an ordinary community and its topics and `lastMessage` for topics.
+- Added a feature of [setMessageRemindType](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setMessageRemindType): synchronizing the settings of group and topic message muting across clients and instances.
+- Added a feature of [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage): modifying `cloudCustomData` for messages of all types.
+- [Message](https://web.sdk.qcloud.com/im/doc/en/Message.html) supports the new field `isBroadcastMessage` and broadcast messages of audio-video groups.
+- Supports multi-client and multi-instance sync of the group join option.
+- Supports @ all for ordinary communities and topics and the `lastMessage` for topics.
 
 **Changes**
 
-- Webworker is enabled by default in the international website and private environment when the browser supports webworker.
+- The webworker is enabled by default at Tencent Cloud International and in private environments if it is supported by the browser.
 
 **Bug fixing**
 
-- Fixed the issue where `lastMessage.payload` was set to `undefined` when receiving a message without updating the conversation's `lastMessage`.
-- Fixed the compensation for group messages caused by online messages did not start.
-- Fixed the group roaming message pulling exception that occurred after a user frequently left a group and joined the group again.
-- Fixed the issue where the lag in pulling the group list by page caused the result of pulling group conversation roaming messages to be an empty array.
-- Fixed known topic issues.
+- The `lastMessage.payload` was set to `undefined` when the message set not to update the `lastMessage` was received.
+- Group message compensation was not enabled due to online messages.
+- An exception occurred when roaming group messages were pulled after frequent group leaving or joining.
+- The pulled roaming group messages were an empty array due to the delayed group list pull by page.
+- Known topic issues.
 
 ### 2.20.1 @2022.6.27
 
@@ -159,7 +185,7 @@ Fixed the message duplication problem that [resendMessage](https://web.sdk.qclou
 
 - Added [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage) to modify a message.
 - Added [getMessageListHopping](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageListHopping) to pull the conversation message list by specified sequence or time range.
-- Supported read receipts for one or more one-to-one messages (Ultimate edition required).
+- Supported read receipts for one or more one-to-one messages (supported only by the Ultimate edition).
 - Added the `isPeerRead` field for `lastMessage` of a one-to-one conversation to indicate whether a message was read by the receiver.
 - Excluded group tips from the unread count of a conversation.
 - Added [TIM.TYPES.KICKED_OUT_REST_API](https://web.sdk.qcloud.com/im/doc/en/module-TYPES.html#.KICKED_OUT_REST_API) to support the RESTful API [Invalidating Account Login States](https://intl.cloud.tencent.com/document/product/1047/34957).
@@ -207,11 +233,11 @@ Optimized the audio-video group user experience.
 - Added [getMessageReadReceiptList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageReadReceiptList) for pulling the list of group message read receipts.
 - Added [getGroupMessageReadMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMessageReadMemberList) for pulling the list of members who have (or have not) read a group message.
 - Added [findMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#findMessage) for querying local messages in a specified conversation by messageID.
-- Aligned with the native Chat experience of the conversation unread count change after a message is recalled.
+- Aligned the experience of conversation unread count update after messages are recalled with that of native Chat SDK.
 
 **Changes**
 
-- The rule for concatenating the [message ID](https://web.sdk.qcloud.com/im/doc/en/Message.html) is `${senderTinyID}-${clientTime}-${random}`, which is the same as that for concatenating the message ID of native Chat.
+- The concatenation rule of [Message.ID](https://web.sdk.qcloud.com/im/doc/en/Message.html) is `${senderTinyID}-${clientTime}-${random}`, which is consistent with that of a native Chat SDK message ID.
 - When the SDK is in the not ready state, specific reasons are provided for the access side.
 
 **Bug fixing**
@@ -239,7 +265,7 @@ After a group member was removed from a group, the `Conversation.groupProfile.me
 
 **Bug fixing**
 
-Fixed login failures that occurred when a Windows client accessed after a packaged Android application (on some devices).
+Login failures occurred when Windows accessed uni-app packaged Android apps (some devices).
 
 ### 2.16.2 @2022.2.10
 
@@ -358,7 +384,7 @@ An error was occasionally reported when WebSocket persistent connections were di
 
 **New features**
 
-Supported video upload progress callback.
+Supports the callback for video upload progress.
 
 **Changes**
 
@@ -444,7 +470,7 @@ If a user hasn't joined a group (not an audio-video group), calling [quitGroup](
 **New features**
 
 - Supports sending and receiving one-to-one messages with `avatar` (profile photo) and `nick` (nickname) displayed.
-- Supports the Tencent Cloud Chat upload plugin [tim-upload-plugin](https://www.npmjs.com/package/tim-upload-plugin). This plugin enables more secure file upload, supports web, Baidu, Toutiao, and Alipay platforms, and is merely 26 KB. For more information, see [registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin).
+- Supports the Tencent Cloud Chat upload plugin [tim-upload-plugin](https://www.npmjs.com/package/tim-upload-plugin). This plugin enables more secure file upload, supports web, Baidu, and Toutiao, and is merely 26 KB. For more information, see [registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin).
 
 **Bug fixing**
 
@@ -456,7 +482,7 @@ If a user hasn't joined a group (not an audio-video group), calling [quitGroup](
 
 **Bug fixing**
 
-A compilation error occurred when [tim-wx-sdk.js](https://www.npmjs.com/package/tim-wx-sdk) was imported into the basic library 2.14.1 of Developer Tools.
+A compilation error occurred when [tim-wx-sdk.js](https://www.npmjs.com/package/tim-wx-sdk) was imported into the basic library 2.14.1 of DevTools.
 
 ### 2.9.0 @2020.12.15
 
@@ -507,7 +533,7 @@ The SDK could not enter the ready state due to problems synchronizing the list o
 
 **Bug fixing**
 
-Compatibility issues when Taro 3.x integrates WebIM
+Compatibility issues when Taro 3.x integrates the web Chat SDK
 
 **Changes**
 
@@ -532,7 +558,7 @@ The [TIM.EVENT.SDK_RELOAD](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.htm
 
 **Bug fixing**
 
-- Audio-video groups occasionally failed to pull messages in cases where the network was reconnected after a long disconnection.
+- Audio-video groups occasionally failed to pull messages in cases where the network was reconnected after a long disconnection or switched to the foreground after running in the background for a long time.
 - The type and value of `imageFormat` of an image message were inconsistent with those of the actual image.
 - The nicknames displayed in work groups and public groups were incorrect.
 
@@ -745,10 +771,10 @@ The logic for getting group roaming messages is optimized.
 
 **New features**
 
-- Support creating and sending video messages via the [createVideoMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createVideoMessage) API. Video messages can be synced across platforms. You need to update to the latest versions of the [TUIKit and SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
-- The [getGroupMemberProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberProfile) API is added.
-- Compatible with audio and file messages sent by Native Chat SDK v3.x.
-- Location messages [GeoPayload](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GeoPayload) can be received.
+- [createVideoMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createVideoMessage): API for creating and sending video messages. Video messages can be synced across platforms. You need to update to the latest versions of the [TUIKit and SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
+- [getGroupMemberProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberProfile): API for querying group member profiles.
+- Compatible with audio and file messages sent by native Chat v3.x.
+- Receiving location messages [GeoPayload](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GeoPayload).
 
 **Changes**
 Up to 100 groups can be written to local storage. The SDK does not write the full group list when there are more than 100 groups.
@@ -800,7 +826,7 @@ Combined messages (multiple message elements in one message) sent via RESTful AP
 ### 2.1.1 @2019.10.18
 
 **New features**
-Support [sending audio messages](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createAudioMessage). Audio messages can be synced across platforms. You need to update to the latest versions of the [TUIKit and SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
+Supports [sending audio messages](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createAudioMessage). Audio messages can be synced across platforms. You need to update to the latest versions of the [TUIKit and SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
 
 **Bug fixing**
 [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList) could still pull historical messages in a quit group after rejoining.
@@ -809,8 +835,8 @@ Support [sending audio messages](https://web.sdk.qcloud.com/im/doc/en/SDK.html#c
 
 **New features**
 
-- Web supported receiving [audio messages](https://web.sdk.qcloud.com/im/doc/en/Message.html#.AudioPayload).
-- Web supported receiving [video messages](https://web.sdk.qcloud.com/im/doc/en/Message.html#.VideoPayload).
+- The web SDK supports receiving [audio messages](https://web.sdk.qcloud.com/im/doc/en/Message.html#.AudioPayload).
+- The web SDK supports receiving [video messages](https://web.sdk.qcloud.com/im/doc/en/Message.html#.VideoPayload).
 
 **Changes**
 
@@ -840,5 +866,5 @@ The actual width and height of an image are detected before the image message is
 
 **Bug fixing**
 
-- Flickering screen occurred after an image message is sent.
+- Screen flashing occurred when image messages were sent.
 - JPG or other images failed to be sent.

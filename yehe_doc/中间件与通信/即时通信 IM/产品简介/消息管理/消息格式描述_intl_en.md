@@ -1,5 +1,5 @@
 ## MsgBody
-Message content is entered in the fields of MsgBody. Instant Messaging (IM) supports multiple message elements in one message, for example, a message can contain both text and emojis. Therefore, MsgBody is defined as an array that can include as many message elements as needed. The name for a message element is TIMMsgElement. For examples of the TIMMsgElements that constitute the MsgBody, see [MsgBody Message Content Examples](https://intl.cloud.tencent.com/document/product/1047/33527).
+Message content is entered in the fields of MsgBody. Tencent Cloud Chat supports multiple message elements in one message, for example, a message can contain both text and emojis. Therefore, MsgBody is defined as an array that can include as many message elements as needed. The name for a message element is TIMMsgElement. For examples of the TIMMsgElements that constitute the MsgBody, see [MsgBody Message Content Examples](https://intl.cloud.tencent.com/document/product/1047/33527).
 
 The format of TIMMsgElement is defined as follows:
 ```
@@ -36,7 +36,7 @@ The following table lists the message types (MsgType) that are currently support
 ```
 {
     "MsgType": "TIMTextElem",
-    "MsgContent":{
+    "MsgContent": {
         "Text": "hello world"
     }
 }
@@ -53,7 +53,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 ```
 {
     "MsgType": "TIMLocationElem", 
-    "MsgContent":{
+    "MsgContent": {
         "Desc": "someinfo", 
         "Latitude": 29.340656774469956, 
         "Longitude": 116.77497920478824
@@ -74,7 +74,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 ```
 {
     "MsgType": "TIMFaceElem", 
-    "MsgContent":{
+    "MsgContent": {
         "Index": 1, 
         "Data": "content"
     }
@@ -99,7 +99,7 @@ When a message contains only one `TIMCustomElem` custom message element, if both
 ```
 {
     "MsgType": "TIMCustomElem", 
-    "MsgContent":{
+    "MsgContent": {
         "Data": "message", 
         "Desc": "notification", 
         "Ext": "url", 
@@ -123,11 +123,11 @@ When the receiver is an iOS or Android device and the app is working in the back
 
 >!To send a voice message through the server-side RESTful API, you need to enter the `Url`, `UUID`, and `Download_Flag` fields. Make sure that the voice can be downloaded via the `Url` and the `UUID` is a globally unique string value, usually the MD5 value of the voice file. The message recipient can obtain the specified `UUID` through `V2TIMSoundElem.getUUID()` and the app can use the `UUID` to identify the voice. `Download_Flag` must be set to `2`.
 
-4.X or later versions of IM SDK (for Android, iOS, Mac, and Windows) send voice message elements in the following format:
+4.X or later versions of Chat SDK (for Android, iOS, macOS, and Windows) send voice message elements in the following format:
 ```
 {
     "MsgType": "TIMSoundElem",
-    "MsgContent":{
+    "MsgContent": {
         "Url": "https://1234-5678187359-1253735226.cos.ap-shanghai.myqcloud.com/abc123/c9be9d32c05bfb77b3edafa4312c6c7d",
         "UUID": "1053D4B3D61040894AC3DE44CDF28B3EC7EB7C0F",
         "Size": 62351,
@@ -145,12 +145,12 @@ When the receiver is an iOS or Android device and the app is working in the back
 | Second | Number | Voice duration, in seconds. |
 | Download_Flag | Number | Flag of the voice download method. Currently, the value of `Download_Flag` must be `2`, which means that the voice content can be downloaded from the URL specified by the `Url` field. |
 
->?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send audio message elements in the following format:
+>?2.X and 3.X versions of Chat SDK (for Android, iOS, macOS, and Windows) send voice message elements in the following format:
 ```
 {
     "MsgType": "TIMSoundElem",
-    "MsgContent":{
-        "UUID": "305c0201", //Unique identifier of the voice in String type. This is the key value the client uses to index the voice. The voice cannot be downloaded through this field. To obtain the voice, upgrade the IM SDK to version 4.X.
+    "MsgContent": {
+        "UUID": "305c0201", //Unique identifier of the voice in String type. This is the key value the client uses to index the voice. The voice cannot be downloaded through this field. To obtain the voice, upgrade the Chat SDK to version 4.X.
         "Size": 62351,      //Voice data size in bytes, in Number type.
         "Second": 1         //Voice duration in seconds, in Number type.
     }
@@ -165,7 +165,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 ```
 {
     "MsgType": "TIMImageElem",
-    "MsgContent":{
+    "MsgContent": {
         "UUID": "1853095_D61040894AC3DE44CDFFFB3EC7EB720F",
         "ImageFormat": 1,
         "ImageInfoArray": [
@@ -210,11 +210,11 @@ When the receiver is an iOS or Android device and the app is working in the back
 
 >!To send a file message through the server-side RESTful API, you need to enter the `Url`, `UUID`, and `Download_Flag` fields. Make sure that the file can be downloaded via the `Url` and the `UUID` is a globally unique string value, usually the MD5 value of the file. The message recipient can obtain the specified `UUID` by calling `V2TIMFileElem.getUUID()` and the app can use the `UUID` to identify the file. `Download_Flag` must be set to `2`.
 
-4.X or later versions of IM SDK (for Android, iOS, Mac, and Windows) send file message elements in the following format:
+4.X or later versions of Chat SDK (for Android, iOS, macOS, and Windows) send file message elements in the following format:
 ```
 {
     "MsgType": "TIMFileElem",
-    "MsgContent":{
+    "MsgContent": {
         "Url": "https://7492-5678539059-1253735326.cos.ap-shanghai.myqcloud.com/abc123/49be9d32c0fbfba7b31dafa4312c6c7d",
         "UUID": "1053D4B3D61040894AC3DE44CDF28B3EC7EB7C0F",
         "FileSize": 1773552,
@@ -232,12 +232,12 @@ When the receiver is an iOS or Android device and the app is working in the back
 | fileName | String | File name. |
 | Download_Flag | Number | Flag of the file download method. Currently, the value of `Download_Flag` must be 2, which means that the file can be downloaded from the URL specified by the `Url` field. |
 
->?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send file message elements in the following format:
+>?2.X and 3.X versions of Chat SDK (for Android, iOS, macOS, and Windows) send file message elements in the following format:
 >```
 {
     "MsgType": "TIMFileElem",
-    "MsgContent":{
-        "UUID": "305c02010", //Unique identifier of the file in String type. This is the key value the client uses to index the file. The file cannot be downloaded through this field. To obtain the file, upgrade the IM SDK to version 4.X.
+    "MsgContent": {
+        "UUID": "305c02010", //Unique identifier of the file in String type. This is the key value the client uses to index the file. The file cannot be downloaded through this field. To obtain the file, upgrade the Chat SDK to version 4.X.
         "FileSize": 1773552, //The size of file data in bytes, in Number type.
         "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //The file name in String type.
     }
@@ -248,11 +248,11 @@ When the receiver is an iOS or Android device and the app is working in the back
 
 >!To send a video message through the server-side RESTful API, you need to enter the `VideoUrl`, `VideoUUID`, `ThumbUrl`, `ThumbUUID`, `ThumbWidth`, `ThumbHeight`, `VideoDownloadFlag`, and `ThumbDownloadFlag` fields. Make sure that the video and video thumbnail can be downloaded via the `VideoUrl` and `ThumbUrl` respectively. `VideoUUID` and `ThumbUUID` must be globally unique string values, usually the MD5 values of the video and video thumbnail. The message recipient can obtain the specified `VideoUUID` and `ThumbUUID` by calling `V2TIMVideoElem.getVideoUUID()` and `V2TIMVideoElem.getSnapshotUUID()` respectively. The app can use the `VideoUUID` to identify the video. `VideoDownloadFlag` and `ThumbDownloadFlag` must be set to `2`.
 
-4.X or later versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
+4.X or later versions of Chat SDK (for Android, iOS, macOS, and Windows) send video message elements in the following format:
 ```
 {
     "MsgType": "TIMVideoFileElem",
-    "MsgContent":{
+    "MsgContent": {
         "VideoUrl": "https://0345-1400187352-1256635546.cos.ap-shanghai.myqcloud.com/abcd/f7c6ad3c50af7d83e23efe0a208b90c9",
         "VideoUUID": "5da38ba89d6521011e1f6f3fd6692e35",
         "VideoSize": 1194603,
@@ -287,16 +287,16 @@ When the receiver is an iOS or Android device and the app is working in the back
 | ThumbDownloadFlag | Number | Flag of the video thumbnail download method. Currently, the value of `ThumbDownloadFlag` must be 2, which means that the video thumbnail can be downloaded from the URL specified by the `ThumbUrl` field. |
 
 
->?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
+>?2.X and 3.X versions of Chat SDK (for Android, iOS, macOS, and Windows) send video message elements in the following format:
 >```
 {
     "MsgType": "TIMVideoFileElem",
-    "MsgContent":{
-        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",//Unique identifier of the video in String type. This is the key value the client uses to index the video. The video cannot be downloaded through this field. To obtain the video, upgrade the IM SDK to version 4.X.
+    "MsgContent": {
+        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",//Unique identifier of the video in String type. This is the key value the client uses to index the video. The video cannot be downloaded through this field. To obtain the video, upgrade the Chat SDK to version 4.X.
         "VideoSize": 1194603, //Size of video data in bytes, in Number type.
         "VideoSecond": 5,     //Video duration in seconds, in Number type.
 		"VideoFormat": "mp4", //Video format in String type, for example, MP4.
-		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",//Unique identifier of the video thumbnail in String type. This is the key value the client uses to index the video thumbnail. The video thumbnail cannot be downloaded through this field. To obtain the video thumbnail, upgrade the IM SDK to version 4.X.
+		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",//Unique identifier of the video thumbnail in String type. This is the key value the client uses to index the video thumbnail. The video thumbnail cannot be downloaded through this field. To obtain the video thumbnail, upgrade the Chat SDK to version 4.X.
 		"ThumbSize": 13907,   //Size of thumbnail data in bytes, in Number type.
 		"ThumbWidth": 720,    //Thumbnail width in Number type.
 		"ThumbHeight": 1280,  //Thumbnail height in Number type.
@@ -306,12 +306,12 @@ When the receiver is an iOS or Android device and the app is working in the back
 ```
 
 ### Elements of a combined message
->!Only native SDK on v5.2.210 or later and SDK for web on v2.10.1 or later support the sending and receiving of combined messages.
+>!Only native SDK 5.2.210 or later and web SDK 2.10.1 or later support the sending and receiving of combined messages.
 
 ```json
 {
   "MsgType": "TIMRelayElem",
-  "MsgContent":{
+  "MsgContent": {
     "Title": "Group chat history",
     "MsgNum": 2,
     "CompatibleText": "The SDK version does not support combined messages. Please upgrade to the latest version.",
@@ -326,9 +326,9 @@ When the receiver is an iOS or Android device and the app is working in the back
         "MsgSeq": 85,
         "MsgRandom": 3998651049,
         "MsgTimeStamp": 1664437702,
-        "MsgBody":[
+        "MsgBody": [
           {
-            "MsgContent":{
+            "MsgContent": {
               "Text": " What do you think of this?"
             },
             "MsgType": "TIMTextElem"
@@ -341,9 +341,9 @@ When the receiver is an iOS or Android device and the app is working in the back
         "MsgSeq": 86,
         "MsgRandom": 965790,
         "MsgTimeStamp": 1664437703,
-        "MsgBody":[
+        "MsgBody": [
           {
-            "MsgContent":{
+            "MsgContent": {
               "Text": "I think it's great."
             },
             "MsgType": "TIMTextElem"
@@ -359,10 +359,10 @@ When the receiver is an iOS or Android device and the app is working in the back
 |---------|---------|---------|
 | Title | String | Title of the combined message. |
 | MsgNum | Integer | Number of messages combined/forwarded. |
-| CompatibleText | String | Compatible text. When an SDK of an earlier version that does not support combined messages receives a combined message, the IM backend converts the message into compatible text and delivers it. |
+| CompatibleText | String | Compatible text. When an SDK of an earlier version that does not support combined messages receives a combined message, the Chat backend converts the message into compatible text and delivers it. |
 | AbstractList | Array | Digest list of a combined message, in string array format. |
-| MsgList | Array | Message list. This field is available only when the sum of the combined messages is less than or equal to 8 KB, in which case the `JsonMsgKey` field is unavailable. |
-| JsonMsgKey | String | Key of the combined message list. This field is available only when the sum of the combined messages is greater than 8 KB, in which case the `MsgList` field is unavailable. |
+| MsgList | Array | Message list. This field is available only when the total length of the combined messages is less than or equal to 12 KB, in which case the `JsonMsgKey` field is unavailable. |
+| JsonMsgKey | String | Key of the combined message list. This field is available only when the total length of the combined messages is greater than 12 KB, in which case the `MsgList` field is unavailable. |
 
 The structure of each message in `MsgList` is as follows:
 
@@ -385,10 +385,10 @@ A single message contains only one text message element. The text content is **h
 
 ```json
 {
-    "MsgBody":[
+    "MsgBody": [
         {
             "MsgType": "TIMTextElem", 
-            "MsgContent":{
+            "MsgContent": {
                 "Text": "hello world"
             }
         }
@@ -401,23 +401,23 @@ A single message contains only one text message element. The text content is **h
 The following single message contains two text message elements and one emoji message element, in the sequence of text + emoji + text.
 ```json
 {
-    "MsgBody":[
+    "MsgBody": [
         {
             "MsgType": "TIMTextElem", 
-            "MsgContent":{
+            "MsgContent": {
                 "Text": "hello"
             }
         }, 
         {
             "MsgType": "TIMFaceElem", 
-            "MsgContent":{
+            "MsgContent": {
                 "Index": 1, 
                 "Data": "content"
             }
         }, 
         {
             "MsgType": "TIMTextElem", 
-            "MsgContent":{
+            "MsgContent": {
                 "Text": "world"
             }
         }
@@ -435,10 +435,10 @@ Each message can carry custom data `CloudCustomData`.
 The following example shows the formats of `CloudCustomData` and `MsgBody`:
 ```json
 {
-    "MsgBody":[
+    "MsgBody": [
         {
             "MsgType": "TIMTextElem", 
-            "MsgContent":{
+            "MsgContent": {
                 "Text": "hello"
             }
         }
@@ -455,21 +455,22 @@ For an account without a nickname, APNs displays only text content: **push text*
 
 - **Account with a nickname**
 For an account with a nickname, APNs displays **nickname: push text** for one-to-one chat messages, and **nickname (group name): push text** for group messages.
+![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **Display format of combined messages**
 For combined messages, the text displayed shows the push text of each message element in sequence. The following example shows a one-to-one chat message with an account nickname set, and the push text is **helloworld**. Note that the text contains no spaces. The backend connects message elements in sequence without adding any extra characters. If spaces or other characters need to be added between different message elements, the caller should take control.
 ```json
 {
-    "MsgBody":[
+    "MsgBody": [
         {
             "MsgType": "TIMTextElem", 
-            "MsgContent":{
+            "MsgContent": {
                 "Text": "hello"  
             }
         },
         {
             "MsgType": "TIMCustomElem",
-            "MsgContent":{
+            "MsgContent": {
                 "Data": "message",
                 "Desc": "world",
                 "Ext": "https://www.example.com",               
@@ -499,10 +500,10 @@ Use TIMCustomElem to customize message elements. In the `Sound` field, enter the
 {
     "To_Account": "lumotuwe5", 
     "MsgRandom": 121212, 
-    "MsgBody":[
+    "MsgBody": [
         {
             "MsgType": "TIMCustomElem", 
-            "MsgContent":{
+            "MsgContent": {
                 "Data": "other information", 
                 "Desc": "hello", 
                 "Ext": "www.qq.com", 
@@ -511,7 +512,7 @@ Use TIMCustomElem to customize message elements. In the `Sound` field, enter the
         }, 
         {
             "MsgType": "TIMTextElem", 
-            "MsgContent":{
+            "MsgContent": {
                 "Text": "world"
             }
         }
@@ -574,24 +575,26 @@ The preceding fields are described as follows:
 |---------|---------|---------|---------|
 | PushFlag | Integer | Optional | 0: enable push, 1: disable offline push. |
 | Title | String | Optional | Offline push title. This field is applicable to both iOS and Android. |
-| Desc | String | Optional | Offline push content. This field overwrites the offline push display text of the [TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) elements mentioned above.<br>If the message sent has only one [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0) element, this `Desc` field will overwrite the `Desc` field in the TIMCustomElem. If neither of the `Desc` fields is filled in, the offline push notification for the message will not be received. |
+| Desc | String | Optional | The offline push content. This field overwrites the offline push display text of the [TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) elements mentioned above.<br>If the message sent has only one [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0) element, this Desc field will overwrite the Desc field in the TIMCustomElem. If neither of the Desc fields is filled in, the offline push notification for the message will not be received. |
 | Ext | String | Optional | Passthrough content of offline push. To make sure the offline push of all Android vendors are attainable, this field must be in JSON format. |
 | AndroidInfo.Sound | String | Optional | Path to the offline push sound file in Android. |
-| AndroidInfo.HuaWeiChannelID | String | Optional | Notification channel field for Huawei phones with EMUI 10.0 or above. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
-| AndroidInfo.XiaoMiChannelID | String | Optional | Notification type (Channel) adaptation field for Mi phones with MIUI 10 or above. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
-| AndroidInfo.OPPOChannelID | String | Optional | `NotificationChannel` notification adaptation field for OPPO phones with Android 8.0 or above. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
+| AndroidInfo.HuaWeiChannelID | String | Optional | Notification channel field for Huawei phones with EMUI 10.0 or later. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
+| AndroidInfo.XiaoMiChannelID | String | Optional | Notification type (Channel) adaptation field for Mi phones with MIUI 10 or later. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
+| AndroidInfo.OPPOChannelID | String | Optional | `NotificationChannel` notification adaptation field for OPPO phones with Android 8.0 or later. When this field is not empty, it will overwrite the `ChannelID` value configured in the console; otherwise, it will not. |
 | AndroidInfo.GoogleChannelID | String | Optional | Notification channel field for Google mobile phones with Android 8.0 or later. This field is supported by the new Google push API (certificate file upload API) but not the old API (server key entering API). |
-| AndroidInfo.VIVOClassification | Integer | Optional | Push message classification for Vivo phones. Valid values: 0: operation message; 1: system message (default value). |
+| AndroidInfo.VIVOClassification | Integer | Optional | Push message classification for vivo phones. Valid values: 0: operation message; 1: system message (default value). |
 | AndroidInfo.HuaWeiImportance | String | Optional | Push notification message classification for Huawei phones. Valid values: LOW, NORMAL (default value). |
 | AndroidInfo.ExtAsHuaweiIntentParam | Integer | Optional | After Huawei Push is configured to **Open specified in-app page** in the console, "1" indicates to use the passthrough content `Ext` as the `Intent` parameter, while "0" (default value) indicates to use the passthrough content `Ext` as the `Action` parameter. For the differences between the two parameters, see [Guides](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/andorid-basic-clickaction-0000001087554076#section20203190121410). |
+| AndroidInfo.HuaWeiCategory | String | Optional | Message type identifier for Huawei phones. When this field is not empty, it will overwrite the `category` value configured in the console; otherwise, it will not. For more information, see the `category` description [here](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References/https-send-api-0000001050986197#section13271045101216). |
 | ApnsInfo.BadgeMode | Integer | Optional | The default value or 0 indicates that counting is required. 1 indicates that counting is not required for this message, in which case the number in the upper-right icon does not increase. |
 | ApnsInfo.Title | String | Optional | Title of an APNs push message. The top-level title is replaced when this field is filled in. |
 | ApnsInfo.SubTitle | String | Optional | Subtitle of an APNs push message. |
 | ApnsInfo.Image | String | Optional | Image URL carried by APNs. When the client obtains this field, it displays the image in a pop-up window by downloading the image through the URL. |
-| ApnsInfo.MutableContent | Integer | Optional | Valid values: `1` (enable the push extension of iOS 10+); `0` (default value). |
+| ApnsInfo.MutableContent | Integer | Optional | Valid values: 1: enable the push extension of iOS 10 or later; 0 (default value). |
 
 >!The maximum data packet size supported by APNs is 4 KB. Therefore, we recommend that the total size of the `Desc` and `Ext` fields does not exceed 3 KB.
 
 ## References
 
 [APNs development documentation](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)
+[Offline Push (iOS)](https://www.tencentcloud.com/document/product/1047/34347).

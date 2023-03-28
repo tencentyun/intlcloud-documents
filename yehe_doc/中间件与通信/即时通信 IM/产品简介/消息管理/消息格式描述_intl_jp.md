@@ -111,7 +111,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
 | Data | String | カスタムメッセージデータ。APNsのpayloadフィールドとして発行されないため、payloadからDataフィールドを取得できません。|
-|Desc|String|カスタムメッセージの説明情報。受信者がiOSまたはAndroidのバックグラウンドでオンラインの場合、オフラインプッシュテキストを表示します。<br>カスタムメッセージの送信中に[OfflinePushInfo.Desc](https://intl.cloud.tencent.com/document/product/1047/33527)フィールドが同時に設定されている場合、このフィールドは上書きされますので、OfflinePushInfo.Descフィールドを優先的に入力してください。<br><dx-alert infotype="explain" title="説明">
+|Desc|String|カスタムメッセージの説明情報。受信者がiOSまたはAndroidのバックグラウンドでオンラインの場合、オフラインプッシュテキストを表示します。<br>カスタムメッセージの送信中に[OfflinePushInfo.Desc](https://intl.cloud.tencent.com/document/product/1047/33527)フィールドが同時に設定されている場合、このフィールドは上書きされますので、OfflinePushInfo.Descフィールドを優先的に入力してください。<br><dx-alert infotype="explain" title="说明">
 メッセージにTIMCustomElemカスタムメッセージ要素が1つしかない場合、DescフィールドとOfflinePushInfo.Descフィールドが入力されていないと、メッセージのオフラインプッシュを受信できません。このメッセージのオフラインプッシュを受信するには、OfflinePushInfo.Descフィールドに入力する必要があります。
 </dx-alert>|
 |Ext|String|拡張フィールド。受信者がiOSシステムで、アプリケーションがバックグラウンドにある場合、このフィールドはAPNリクエストパケットPayloadsのExtキー値として発行されます。Extのプロトコル形式は業務側が決定し、APNsは透過的な送信のみを行います。|
@@ -151,7 +151,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
     "MsgType": "TIMSoundElem",
     "MsgContent": {
         "UUID": "305c0201"、//音声の一意の識別子。タイプはStringです。クライアントが音声にインデックスを付けるために用いるキー値です。このフィールドからは、対応する音声をダウンロードできません。音声を取得する必要がある場合は、IM SDKバージョンを4.Xにアップグレードしてください。
-        "Size": 62351、      //音声データサイズ、タイプはNumber、単位：バイト。
+        "Size": 62351,      //音声データサイズ、タイプはNumber、単位：バイト。
         "Second": 1         //音声の長さ、タイプはNumber。単位：秒。
     }
 }
@@ -238,7 +238,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
     "MsgType": "TIMFileElem",
     "MsgContent": {
         "UUID": "305c02010", //ファイルの一意の識別子。タイプはStringです。クライアントがファイルにインデックスを付けるために用いるキー値です。このフィールドからは、対応するファイルをダウンロードできません。このファイルを取得する必要がある場合は、IM SDKバージョンを4.Xにアップグレードしてください。
-        "FileSize": 1773552、//ファイルデータサイズ。タイプはNumber、単位はバイトです。
+        "FileSize": 1773552,//ファイルデータサイズ。タイプはNumber、単位はバイトです。
         "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //ファイル名。タイプはStringです。
     }
 }
@@ -293,13 +293,13 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
         "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5"、//ビデオの一意の識別子。タイプはStringです。クライアントがビデオにインデックスを付けるために用いるキー値です。このフィールドからは、対応するビデオをダウンロードできません。このビデオを取得する必要がある場合は、IM SDKバージョンを4.Xにアップグレードしてください。
-        "VideoSize": 1194603、//ビデオデータサイズ。タイプはNumber。単位：バイト。
-        "VideoSecond": 5、//ビデオの長さ。タイプはNumber。単位：秒。
-		"VideoFormat": "mp4"、//ビデオ形式。タイプはmp4などのStringです。
+        "VideoSize": 1194603,//ビデオデータサイズ。タイプはNumber。単位：バイト。
+        "VideoSecond": 5,//ビデオの長さ。タイプはNumber。単位：秒。
+		"VideoFormat": "mp4",//ビデオ形式。タイプはmp4などのStringです。
 		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a"、//ビデオサムネイルの一意の識別子。タイプはStringです。クライアントがビデオサムネイルにインデックスを付けるために用いるキー値です。このフィールドからは、対応するビデオサムネイルをダウンロードできません。このビデオサムネイルを取得する必要がある場合は、IM SDKバージョンを4.Xにアップグレードしてください。
-		"ThumbSize": 13907、//サムネイルサイズ。タイプは数値。単位：バイト。
-		"ThumbWidth": 720、//サムネイルの幅。 タイプはNumberです。
-		"ThumbHeight": 1280、//サムネイルの高さ。タイプはNumberです。
+		"ThumbSize": 13907,//サムネイルサイズ。タイプは数値。単位：バイト。
+		"ThumbWidth": 720,//サムネイルの幅。 タイプはNumberです。
+		"ThumbHeight": 1280,//サムネイルの高さ。タイプはNumberです。
 		"ThumbFormat": "JPG"  //サムネイル形式。タイプはJPG、BMPなどのStringです。
     }
 }
@@ -317,7 +317,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
     "CompatibleText": "このSDKバージョンはマージ転送メッセージをサポートしていません。新しいバージョンにアップグレードしてください。",
     "AbstractList": [
       "A:これについて、みなさんはどう思いますか？",
-      "B:とてもいいと思います"
+      "B:とても良いと思います"
     ],
     "MsgList": [
       {
@@ -344,7 +344,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
         "MsgBody": [
           {
             "MsgContent": {
-              "Text": "とてもいいと思います"
+              "Text": "とても良いと思います"
             },
             "MsgType": "TIMTextElem"
           }
@@ -361,8 +361,8 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 | MsgNum | Integer | 転送されたメッセージの数。|
 | CompatibleText | String | 互換性のあるテキスト。マージ転送メッセージをサポートしていない古いバージョンのSDKがそのようなメッセージを受信すると、IMバックグラウンドはこのメッセージを送信する前に互換性のあるテキストに変換します。|
 | AbstractList | Array | マージされたメッセージのダイジェストリスト。Stringの配列です。|
-| MsgList | Array | メッセージリスト。このフィールドは、転送されたメッセージの長さの合計が12K以下の場合にのみ表示されます。この場合、JsonMsgKeyフィールドはありません。|
-| JsonMsgKey | String | マージ転送されたメッセージリストKey。このフィールドは、転送されたメッセージの長さの合計が12Kより大きい場合にのみ表示されます。この場合、JsonMsgKeyフィールドはありません。|
+| MsgList | Array | メッセージリスト。このフィールドは、転送されたメッセージの長さの合計が12KB以下の場合にのみ表示され、現時点ではJsonMsgKeyフィールドはありません。|
+| JsonMsgKey | String | マージ転送されたメッセージリストKey。このフィールドは、転送されたメッセージの長さの合計が12KBよりも大きい場合にのみ表示され、現時点ではJsonMsgKeyフィールドはありません。|
 
 MsgList内の各メッセージの構造は次のとおりです：
 
@@ -451,6 +451,7 @@ CloudCustomDataとMsgBodyの形式の例は次のとおりです：
 ### クライアントプッシュ表示形式の説明
 - **アカウントのニックネームは設定されていません**
 アカウントにニックネームがない場合、APNsプッシュはプッシュテキスト内容のみを表示します。シングルチャットメッセージは「プッシュテキスト」のみを表示し、グループメッセージは「（グループ名）：プッシュテキスト」を表示します。
+![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **アカウントのニックネームが設定されています**
 アカウントにニックネームが設定されている場合、シングルチャットメッセージの表示形式は「ニックネーム：プッシュテキス内容」、グループメッセージの表示形式はニックネーム（グループ名）：プッシュテキスト内容になります。
@@ -484,7 +485,7 @@ CloudCustomDataとMsgBodyの形式の例は次のとおりです：
 | MsgTypeの値 | タイプ |メッセージ要素プッシュテキスト|
 |---------|---------|---------|
 | TIMTextElem | テキストメッセージ。|Textフィールド。|
-|TIMLocationElem|地理的位置メッセージ。|中国語版オフラインプッシュテキストは「[位置]」、英語版は「[Location]です。|
+|TIMLocationElem|地理的位置メッセージ。|中国語版オフラインプッシュテキストは「[位置]」、英語版は「[Location]」です。|
 |TIMFaceElem|顔絵文字メッセージ。|中国語版オフラインプッシュテキストは「[表情]」、英語版は「[Face]」です。|
 |TIMCustomElem|カスタムメッセージ。|Descフィールド。|
 
@@ -584,11 +585,12 @@ OffsetPushInfoの形式の例は次のとおりです：
 | AndroidInfo.VIVOClassification | Integer | オプション | VIVOスマホプッシュメッセージの分類。「0」は運用メッセージを表し、「1」はシステムメッセージを表します。入力されていない場合、デフォルトで「1」になります。|
 | AndroidInfo.HuaWeiImportance | String | オプション | Huaweiプッシュ通知メッセージの分類。値はLOW、NORMALであり、入力されていない場合のデフォルト値はNORMALです。|
 | AndroidInfo.ExtAsHuaweiIntentParam | Integer | オプション | コンソールでHuaweiプッシュを「アプリで指定されたページを開く」ように設定することを前提として、「1」が渡された場合、透過的コンテンツExtがIntentのパラメータとして使用されることを表し、「0」は透過的コンテンツExtがActionパラメータとして使用されることを表します。入力されていない場合、デフォルト値は0です。渡される2つのパラメータの違いについては、[Huaweiプッシュドキュメント](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/andorid-basic-clickaction-0000001087554076#section20203190121410)をご参照ください。|
+| AndroidInfo.HuaWeiCategory | String | オプション | Huaweiスマホでメッセージのタイプを識別するために使用されます。このフィールドがブランクでない場合、コンソールによって設定されたcategory値は上書きされます。このフィールドが空の場合、コンソールによって設定されたcategory値は上書きされません。|詳細については[category説明](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References/https-send-api-0000001050986197#section13271045101216)ご参照ください。|
 | ApnsInfo.BadgeMode | Integer | オプション | このフィールドをデフォルトのままにするか、「0」に設定すると、メッセージをカウントする必要があることを表し、「1」に設定すると、このメッセージをカウントする必要がないことを表します。この場合、右上隅のアイコンの数字は増加しません。|
 | ApnsInfo.Title|String|オプション|このフィールドは、APNsによってプッシュされたタイトルを識別するために用いられます。入力すると、最上位階層のTitleが上書きされます。|
 | ApnsInfo.SubTitle|String|オプション|このフィールドは、APNsによってプッシュされたサブタイトルを識別するために用いられます。|
 | ApnsInfo.Image|String|オプション|このフィールドは、APNsが持つ画像アドレスを識別するために用いられます。クライアントがこのフィールドを取得すると、画像リソースをダウンロードすることにより、ポップアップウィンドウに画像を表示することができます。|
-| ApnsInfo.MutableContent | Integer | オプション | 「1」は、iOS 10+のプッシュ拡張が有効にすることを表します。デフォルトは「0」です。|
+| ApnsInfo.MutableContent | Integer | オプション | 「1」は、iOS 10のプッシュ拡張のオンを表します。デフォルトは「0」です。|
 
 >!APNsプッシュはデータパケットサイズを4Kを超えないよう制限するので、他の制御フィールドを削除し、DescフィールドとExtフィールドの合計が3Kを超えないようにすることをお勧めします。
 

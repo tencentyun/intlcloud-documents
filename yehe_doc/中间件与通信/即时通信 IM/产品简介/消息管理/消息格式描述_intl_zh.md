@@ -306,7 +306,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 ```
 
 ### 合并转发消息元素
->!终端 5.2.210 及以上版本，web  2.10.1 及以上版本才支持收发合并转发消息。
+>!终端 5.2.210 及以上版本，web 2.10.1 及以上版本才支持收发合并转发消息。
 
 ```json
 {
@@ -451,6 +451,7 @@ CloudCustomData 与 MsgBody 的格式示例如下：
 ### 客户端推送展示格式说明
 - **未设置帐号昵称**
 如果帐号没有设置昵称，APNs 推送只展示推送文本内容。单聊消息只展示“推送文本”，群组消息展示“(群名称):推送文本“。
+![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **已设置帐号昵称**
 如果帐号设置昵称，单聊消息展示格式为“昵称：推送文本内容”，群组消息展示格式为昵称(群名称)：推送文本内容。
@@ -584,6 +585,7 @@ OfflinePushInfo 的格式示例如下：
 | AndroidInfo.VIVOClassification | Integer | 选填 | VIVO 手机推送消息分类，“0”代表运营消息，“1”代表系统消息，不填默认为1。|
 | AndroidInfo.HuaWeiImportance | String | 选填 | 华为推送通知消息分类，取值为 LOW、NORMAL，不填默认为 NORMAL。|
 | AndroidInfo.ExtAsHuaweiIntentParam | Integer | 选填 | 在控制台配置华为推送为“打开应用内指定页面”的前提下，传“1”表示将透传内容 Ext 作为 Intent 的参数，“0”表示将透传内容 Ext 作为 Action 参数。不填默认为0。两种传参区别可参见 [华为推送文档](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/andorid-basic-clickaction-0000001087554076#section20203190121410)。|
+| AndroidInfo.HuaWeiCategory | String | 选填 | 华为手机用来标识消息类型，该字段不为空时，会覆盖控制台配置的 category 值；该字段为空时，不会覆盖控制台配置的 category 值。详见 [category 描述](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References/https-send-api-0000001050986197#section13271045101216)。|
 | ApnsInfo.BadgeMode | Integer | 选填 | 这个字段缺省或者为0表示需要计数，为1表示本条消息不需要计数，即右上角图标数字不增加。|
 | ApnsInfo.Title|String|选填|该字段用于标识 APNs 推送的标题，若填写则会覆盖最上层 Title。|
 | ApnsInfo.SubTitle|String|选填|该字段用于标识 APNs 推送的子标题。|
