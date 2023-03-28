@@ -70,9 +70,9 @@ Content-MD5: MD5
 | actionlist                   | StrictSignatureConfiguration.Rule            | action 列表，最多包括200个 action                            | Container | 否       |
 | action                       | StrictSignatureConfiguration.Rule.actionlist | 规则指定的 action，命名方式参考接入 CAM 的授权动作；支持通配符，例如`Put*` | String    | 否       |
 | headerlist                   | StrictSignatureConfiguration.Rule            | 规则限定必须签入的 header 列表，列表内 header 的数量不得超过20个 | Container | 否       |
-| headerlist                   | StrictSignatureConfiguration.Rule.headerlist | 必须签入的请求头部，支持填入的具体请求头部可参考 [支持的请求头部](跳转到严格签名模式概述文档中“支持的请求头部”一节) | String    | 否       |
+| headerlist                   | StrictSignatureConfiguration.Rule.headerlist | 必须签入的请求头部，支持填入的具体请求头部可参考 [支持的请求头部](https://www.tencentcloud.com/document/product/436/53892) | String    | 否       |
 | paramlist                    | StrictSignatureConfiguration.Rule            | 规则限定必须签入的请求参数列表，列表内 param 的数量不得超过20个 | Container | 否       |
-| param                        | StrictSignatureConfiguration.Rule.paramlist  | 必须签入的请求参数，支持填入的具体请求参数可参考 [支持的请求参数](跳转到严格签名模式概述文档中“支持的请求头部”一节节) | String    | 否       |
+| param                        | StrictSignatureConfiguration.Rule.paramlist  | 必须签入的请求参数，支持填入的具体请求参数可参考 [支持的请求参数](https://www.tencentcloud.com/document/product/436/53892) | String    | 否       |
 
 ## 响应
 
