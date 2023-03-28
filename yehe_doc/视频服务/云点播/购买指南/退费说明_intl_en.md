@@ -11,5 +11,3 @@
 
 1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview). On the **Service Overview** page, click the count of usable packages in the **Package Usage** area.
 2. Find the package you want to return and click **Refund** on the right.
-
->! Before requesting a refund, please make sure the package meets the [refund conditions](#p1).
