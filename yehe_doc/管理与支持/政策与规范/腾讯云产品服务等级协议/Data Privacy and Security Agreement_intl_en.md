@@ -236,6 +236,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 66.[Key Management Service](https://www.tencentcloud.com/document/product/1030/53638).
 67.[App Flow](https://www.tencentcloud.com/document/product/1165/54050).
 68.[Low-code Interactive Classroom](https://www.tencentcloud.com/document/product/1168/54191).
+69.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54258).
 
 ## 10.Jurisdiction-specific Requirements
 
