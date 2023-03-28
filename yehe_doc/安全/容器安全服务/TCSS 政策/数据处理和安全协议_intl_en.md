@@ -25,7 +25,7 @@ We will store personal data processed in connection with the Feature as follows:
 
 | **Personal Information**              | **Retention Policy**                                         |
 | ------------------------------------- | ------------------------------------------------------------ |
-| Asset Basic Data[Security Event Data] | We retain such data for a minimum of 180 days. We retain such data until you terminate your use of the relevant Hosting Service(s), in which case we will temporarily retain this data in our COS feature delete the same for (i) 30 days thereafter or (ii) the minimum number of days required to meet the 180-days minimum data retention threshold (as applicable). |
+| Asset Basic Data<br/>[Security Event Data] | We retain such data for a minimum of 180 days. We retain such data until you terminate your use of the relevant Hosting Service(s), in which case we will temporarily retain this data in our COS feature delete the same for (i) 30 days thereafter or (ii) the minimum number of days required to meet the 180-days minimum data retention threshold (as applicable). |
 | Console Configuration Data            | Stored until you request for deletion, upon which such data will be deleted within 30 working days. Where you do not request for deletion, such data will be deleted after 1 month of termination of your use of this Feature, unless otherwise required by applicable data protection laws. |
 
 You can request deletion of such personal data in accordance with the DPSA.
