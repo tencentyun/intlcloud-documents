@@ -1,3 +1,15 @@
+
+## 1.8.3 @2023.01.13
+- Added support for adding multiple callback functions to an event callback.
+- Added support for deleting specified callback functions.
+- Added conversation group related APIs and event callbacks.
+- Added support for setting custom conversation data event callbacks.
+- Added conversation marking APIs.
+- Added the advanced API for getting the conversation list.
+- Added group counter related APIs and event callbacks.
+- Added the text message translation API.
+- Added the API and event callback for getting/subscribing to the total unread message count by filter.
+
 ## 1.8.2 @2022.12.06
 
 - Supported Mac M1 chips for build.
@@ -18,7 +30,7 @@
 - Fixed known issues.
 
 ## 1.7.6 @2022.06.24
-- Supported `string calllback data` and `object callback data`.
+- Supported `string callback data` and `object callback data`.
 
 ## 1.7.5 @2022.05.23
 - Added APIs for group message read receipts.

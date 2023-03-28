@@ -1,6 +1,6 @@
 ## Platform Support
 
-We are committed to building a set of Chat SDK and TUIKit for all Flutter platforms, allowing you to run one set of code on all platforms.
+We are committed to building a set of Chat SDK and TUIKit for all Flutter platforms, allowing you to run one set of code across all platforms.
 
 | Platform | No-UI SDK ([tencent_cloud_chat_sdk](https://pub.dev/packages/tencent_cloud_chat_sdk)) | TUIKit with UI and Basic Business Logic ([tencent_cloud_chat_uikit](https://pub.dev/packages/tencent_cloud_chat_uikit)) |
 |---------|---------|---------|
@@ -9,91 +9,75 @@ We are committed to building a set of Chat SDK and TUIKit for all Flutter platfo
 | [Web](https://intl.cloud.tencent.com/document/product/1047/45907) | Supported from v4.1.1+2 | Supported from v0.1.5 |
 | [macOS](https://intl.cloud.tencent.com/document/product/1047/45907) | Supported from v4.1.8 | Will be supported soon |
 | [Windows](https://intl.cloud.tencent.com/document/product/1047/45907) | Supported from v4.1.8 | Will be supported soon |
-| [Hybrid development](https://www.tencentcloud.com/document/product/1047/51456) (Adding Flutter SDK to Existing Native Applications) | Supported from v5.0.0 | Supported from v1.0.0 |
+| [Hybrid development](https://tencentcloud.com/document/product/1047/51456) (Adding Flutter SDK to Existing Native Applications) | Supported from v5.0.0 | Supported from v1.0.0 |
 
 >? For web, macOS, and Windows platforms, you need to perform a few extra steps for integration. For details, see [Support for the Flutter for Web](https://intl.cloud.tencent.com/document/product/1047/45907) and [Support for the Flutter for Desktop](https://intl.cloud.tencent.com/document/product/1047/45907).
 
 ## SDK Description
 
-Chat SDK for Flutter (Without UI Library) refers to the [tencent_cloud_chat_sdk](https://pub.dev/packages/tencent_cloud_chat_sdk) package, which includes only all Chat client APIs and callbacks.
+Chat Flutter SDK (Without UI Library) refers to the [tencent_cloud_chat_sdk](https://pub.dev/packages/tencent_cloud_chat_sdk) package, which includes only all Chat client APIs and callbacks.
 
-Chat TUIKit for Flutter (Including UI Library) refers to the [tencent_cloud_chat_uikit](https://pub.dev/packages/tencent_cloud_chat_uikit) package, which includes all UI components and business logic in addition to the items included in Chat SDK for Flutter (Without UI Library).
+Chat Flutter TUIKit (Including UI Library) refers to the [tencent_cloud_chat_uikit](https://pub.dev/packages/tencent_cloud_chat_uikit) package, which includes all UI components and business logic in addition to the items included in Chat Flutter SDK (Without UI Library).
 
->?Chat SDK for Flutter (Without UI Library) has been migrated from [tencent_im_sdk_plugin](https://pub.dev/packages/tencent_im_sdk_plugin) to [tencent_cloud_chat_sdk](https://pub.dev/packages/tencent_cloud_chat_sdk), and TUIKit has been migrated from [tim_ui_kit](https://pub.dev/packages/tim_ui_kit) to [tencent_cloud_chat_uikit](https://pub.dev/packages/tencent_cloud_chat_uikit).
+>?Chat Flutter SDK (Without UI Library) has been migrated from [tencent_im_sdk_plugin](https://pub.dev/packages/tencent_im_sdk_plugin) to [tencent_cloud_chat_sdk](https://pub.dev/packages/tencent_cloud_chat_sdk), and TUIKit has been migrated from [tim_ui_kit](https://pub.dev/packages/tim_ui_kit) to [tencent_cloud_chat_uikit](https://pub.dev/packages/tencent_cloud_chat_uikit).
 > The two original version packages will not be maintained in the future. If you are still using them, please upgrade to the latest versions as soon as possible.
 
 ## Update Logs
 
 ### Chat Flutter TUIKit (Including UI Library) 1.6.0 @2023.02.08
 
-- Add: `scrollToConversation` on `TIMUIKitConversationController`. You can now easily navigate to a specific conversation in the conversation list and move to the next unread conversation by double-clicking the tab bar, [refers to our sample app](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/conversation.dart).
-- Optimize: The performance of the history message list while scrolling over a large distance.
+- Added `scrollToConversation` to `TIMUIKitConversationController`. You can now easily navigate to a specific conversation in the conversation list and move to the next unread conversation by double-clicking the tab bar. For more information, see our [demo source code](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/conversation.dart).
+- Optimized the performance of the historical message list while scrolling over a large distance.
 
-### Chat Flutter TUIKit (Including UI Library) 1.5.0+1 @2023.02.06
+### Chat Flutter TUIKit (Including UI Library) 1.5.0 @2023.02.02
 
-- Fix: Video message oversize.
-
-### Chat Flutter TUIKit (Including UI Library) 1.5.0 @2023.02.06
-
-- Add: New configuration `defaultAvatarAssetPath` on global `TIMUIKitConfig`, aiming to define the default avatar.
-- Add: Supports Flutter 3.7.0.
-- Fix: `chatBgColor` configuration.
-
-### Chat Flutter SDK (Without UI Library) 5.0.8 @2023.01.13
-
-- Added: group counting capability, common group and live group support group counter meta counter, for details, please refer to groupCounter related API
-- Added: text message translation capability, see translateText for details.
-- Upgrade: Upgrade Native SDK to 7.0
+- Added `defaultAvatarAssetPath` to the global configuration `TIMUIKitConfig` to define the default profile photo.
+- Added support for Flutter 3.7.0.
+- Fixed the `chatBgColor` configuration.
 
 ### Chat Flutter TUIKit (Including UI Library) 1.4.0 @2023.01.13
 
-- Add: Text translation. Long press the text messages and choose `Translate`. This function can be turned off by `showTranslation` from `ToolTipsConfig`.
-- Optimize: The long press pop-up location.
-- Optimize: Keyboard pop-up event.
+- Added the feature of translating the text in text messages and replied and quoted messages. To use the feature, you only need to long press the text and choose **Translate**. This feature can be enabled or disabled by the `showTranslation` parameter in `ToolTipsConfig`.
+- Optimized the position of the window that pops up when text is long pressed.
+- Optimized the keyboard pop-up event.
 
-### Chat Flutter TUIKit (Including UI Library) 1.3.2 @2023.01.12
+### Chat Flutter SDK (Without UI Library) 5.0.8 @2023.01.13
 
-- Fix: Text input field height, after choosing to mention someone.
-
-### Chat Flutter TUIKit (Including UI Library) 1.3.1 @2023.01.12
-
-- Optimize: Improve performance.
+- Added the group counter capability: Ordinary groups and audio-video groups support meta counters. For details, see groupCounter related APIs.
 
 ### Chat Flutter TUIKit (Including UI Library) 1.3.0 @2023.01.11
 
-- Fix: Group tips not shows the nickname or remarks when transferring group owner.
-- Optimize: Remove the confirmation pop-up before opening the file.
+- Fixed the failure to display the nickname of the new group owner in the group tip message after the group ownership is transferred.
+- Removed the confirmation window that pops up before a file is opened.
 
 ### Chat Flutter TUIKit (Including UI Library) 1.2.0 @2023.01.06
 
-- Fix: The issue of input area not showing, when switching from recording to keyboard, on `TIMUIKitChat`.
-- Fix: Only the first receiver can receive the merged multiple forward messages.
-- Optimize: `MessageItemBuilder` can now be used for shows on the merger message screen.
+- Fixed the failure to display the input box when the chat component is switched from recording to keyboard.
+- Fixed the issue where, when a combined message is sent to multiple recipients, only the first recipient can receive the message.
+- Optimized `MessageItemBuilder` so that it can be used to display the combined message page.
 
-### Chat Flutter TUIKit (Including UI Library) 1.1.0 And 1.1.0+1 @2022.12.29
+### Chat Flutter TUIKit (Including UI Library) 1.1.0 @2022.12.27
 
-- Add: Supports two new languages, Japanese and Korean.
-- Add: Supports adding new other languages, apart from our default ones, including English, Chinese(Simplified and Traditional), Japanese and Korean, or modifying the translations, refers to [this documentation](https://www.tencentcloud.com/document/product/1047/52154?from=pub).
-- Add: Sticker plug-in has been embedded in TUIKit by default. Now we support three types of stickers, Unicode Emoji, small image emoji and big image stickers, the usage has been optimized, refers to [this documentation](https://www.tencentcloud.com/document/product/1047/52227?from=pub).
-- Optimize: Themes, more customization.
-- Optimize: The animation of the input area, keyboard, sticker panel and the more panel.
-- Optimize: Emoji, both Unicode and small images, can be inserted to any position in text messages.
-- Optimize: Avatar in profile can be previewed with a large image.
-- Optimize: UserID in profile can be copied.
-- Optimize: Several UI details, including `TIMUIKitAddFriend`, `TIMUIKitAddGroup`, `TIMUIKitGroupProfile` and `TIMUIKitProfile`.
-- Optimize: `TIMUIKitGroupProfile` and `TIMUIKitProfile` can update automatically after `ID` changed.
-- Optimize: New loading animation when downloading the image/video on `TIMUIKitGroupChat`.
-- Fix: Some bugs.
+- Embedded the emoji plug-in in TUIKit by default. Now we support three types of emojis: Unicode emoji, small image emoji, and big image emoji. The emoji use methods have been optimized. For more information, see [here](https://www.tencentcloud.com/document/product/1047/52227).
+- Optimized the topic feature to support more custom capabilities.
+- Optimized the animation for the input area, keyboard, sticker panel, and "More" panel.
+- Optimized: Emojis, including Unicode and small images, can be inserted to any position in text messages.
+- Optimized: The profile photo in a profile can be previewed with a large image.
+- Optimized: The user ID in a user profile can be copied.
+- Optimized: Several UI details are added, including `TIMUIKitAddFriend`, `TIMUIKitAddGroup`, `TIMUIKitGroupProfile`, and `TIMUIKitProfile`.
+- Optimized: `TIMUIKitGroupProfile` and `TIMUIKitProfile` support modifying content by modifying IDs.
+- Optimized `TIMUIKitGroupChat` to display the loading animation when a user clicks the image/video download button.
+- Fixed some errors.
+
 
 ### Chat Flutter SDK (Without UI Library) 5.0.6 @2022.11.29
 
 - Fixed the iOS bundle version loss issue.
-- Upgraded the underlying native SDK version to 6.9.3557.
+- Improvement: The underlying native SDK has been upgraded to 6.9.3557.
 
 ### Chat Flutter TUIKit (Including UI Library) 1.0.1 @2022.11.28
 
 - Removed `groupTRTCTipsItemBuilder` from `MessageItemBuilder`. Please use `customMessageItemBuilder` instead.
-- Removed the default parsing of audio/video call record information from `TIMUIKitConversation` and `TIMUIKitChat`. Instead, you need to manually parse audio/video call record information or pass in the call record information component. For more information, see [here](https://www.tencentcloud.com/document/product/1047/50023#updateuikit).
 
 ### Chat Flutter TUIKit (Including UI Library) 1.0.0 @2022.11.23
 
@@ -106,7 +90,6 @@ Chat TUIKit for Flutter (Including UI Library) refers to the [tencent_cloud_chat
 - Optimized the feature of loading the latest messages when scrolling back to the bottom for smoother loading.
 - Fixed the Android album image quantity issue.
 - Fixed the border crossing issue of long text in the group profile card.
-- Modification: **When calling the audio/video call plugin, you need to manually pass in the call record information component into the `messageItemBuilder` => `customMessageItemBuilder` of `TIMUIKitChat`. For more information, see [here](https://www.tencentcloud.com/document/product/1047/50023#updateuikit).**
 - Fixed some errors.
 
 >?If you upgrade your TUIKit to this version, pay special attention to the changes of the emoji part (the second update item) and audio/video call part (the last but one update item). Otherwise, related capabilities will not work properly.
@@ -324,7 +307,7 @@ Chat TUIKit for Flutter (Including UI Library) refers to the [tencent_cloud_chat
 ### Chat Flutter TUIKit (Including UI Library) 0.0.1 @2022.03.01
 
 - Launched Tencent Cloud Chat for Flutter (including the UI library and business logic).
-- Released the first seven main components, including the chat area, conversation list, contact and group profiles, contacts, blocklist, and friend request list.
+- Released the first seven main components, including the chat area, conversation list, contact and group profiles, contacts list, blocklist, and friend request list.
 
 ### Chat Flutter SDK (Without UI Library) 3.8.3 @2022.03.01
 
@@ -351,7 +334,7 @@ Chat TUIKit for Flutter (Including UI Library) refers to the [tencent_cloud_chat
 ### Chat Flutter SDK (Without UI Library) 3.7.5 @2022.01.23
 
 - Upgraded the underlying library to v6.0.1975.
-- Supported the Tencent Push Notification Service token for offline push configuration.
+- Supported the TPNS token for offline push configuration.
 
 ### Chat Flutter SDK (Without UI Library) 3.7.1 @2022.01.12
 
@@ -383,7 +366,7 @@ Chat TUIKit for Flutter (Including UI Library) refers to the [tencent_cloud_chat
 
 - Fixed syntax errors in Java.
 
-### Chat Flutter SDK (Without UI Library) 3.6.2 @2021.12.9
+### Chat Flutter SDK (Without UI Library) 3.6.4 @2021.12.17
 
 - Fixed the issue where there was no return for Android async registration events.
 - Fixed the issue where removing a general listening event triggered an error.
@@ -533,6 +516,5 @@ Added support for web.
 
 ### Chat Flutter SDK (Without UI Library) 0.0.1-1.0.2 @2020.12.01
 
-- Launched the SDK for Flutter.
+- Launched the Flutter SDK.
 - Invited users to join the beta test.
-

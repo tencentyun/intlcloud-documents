@@ -1,5 +1,5 @@
 ## 메시지 바디 MsgBody
-메시지 내용은 MsgBody 필드에 입력됩니다. IM은 하나의 메시지에 텍스트 메시지 요소와 이모티콘 메시지 요소를 모두 포함하는 등 여러 메시지 요소 유형을 포함할 수 있습니다. 그렇기 때문에 MsgBody를 Array 형식으로 정의하면 필요에 맞게 여려 종류의 메시지 요소를 추가할 수 있습니다. 메시지 요소 이름은 TIMMsgElement, 메시지 요소는 TIMMsgElement로 구성된 MsgBody의 예시는 [MsgBody 예시](https://intl.cloud.tencent.com/document/product/1047/33527)를 참고하십시오.
+메시지 내용은 MsgBody 필드에 입력됩니다. Instant Messaging(IM)은 하나의 메시지에서 여러 메시지 요소를 지원합니다. 예를 들어 메시지에는 텍스트와 이모티콘이 모두 포함될 수 있습니다. 따라서 MsgBody는 메시지 요소를 필요한 만큼 포함할 수 있는 Array로 정의됩니다. 메시지 요소의 이름은 TIMMsgElement입니다. MsgBody를 구성하는 TIMMsgElements의 예시는 [MsgBody 메시지 콘텐츠 예시](https://intl.cloud.tencent.com/document/product/1047/33527)를 참고하십시오.
 
 TIMMsgElement의 형식은 다음과 같습니다.
 ```
@@ -451,6 +451,7 @@ CloudCustomData 및 MsgBody 형식 예시는 다음과 같습니다.
 ### 클라이언트 푸시가 표시되는 형식
 - **닉네임 미설정 계정**
 계정에 닉네임을 설정하지 않은 경우 APNs 푸시에는 푸시된 텍스트 콘텐츠만 표시됩니다. 1:1 채팅 메시지는 ‘푸시 텍스트’, 그룹 채팅 메시지에는 ‘(그룹 이름): 푸시 텍스트’만 표시됩니다. 
+![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **닉네임 설정 계정**
 계정에 닉네임을 설정한 경우 1:1 채팅 메시지에는 ‘닉네임: 푸시 텍스트’ 형식으로 표시되고, 그룹 채팅 메시지에는 ‘닉네임(그룹 이름): 푸시 텍스트’ 형식으로 표시됩니다.
@@ -584,6 +585,7 @@ OfflinePushInfo의 형식 예시는 다음과 같습니다.
 | AndroidInfo.VIVOClassification | Integer | 옵션| VIVO 휴대폰 푸시 메시지 분류. ‘0’: 운영 메시지, ‘1’: 시스템 메시지를 의미하며, 입력하지 않으면 기본값은 1입니다.|
 | AndroidInfo.HuaWeiImportance | String | 옵션| Huawei 푸시 공지 메시지 분류. 값은 LOW, NORMAL이며, 입력하지 않으면 기본값은 NORMAL입니다.|
 | AndroidInfo.ExtAsHuaweiIntentParam | Integer | 옵션| 콘솔에서 Huawei 푸시를 ‘지정된 인앱 페이지 열기’로 설정한 경우, ‘1’은 패스스루 콘텐츠 Ext를 Intent 매개변수로 함을 의미하고 ‘0’은 패스스루 콘텐츠 Ext를 Action 매개변수로 함을 의미합니다. 입력하지 않으면 기본값은 0입니다. 두 매개변수의 차이점 관련 자세한 내용은 [Huawei 푸시 문서](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/andorid-basic-clickaction-0000001087554076#section20203190121410)를 참고하십시오.|
+| AndroidInfo.HuaWeiCategory | String | 옵션 | Huawei 휴대폰은 메시지 유형 식별에 사용됩니다. 이 필드가 비어 있지 않으면 콘솔에 구성된 category 값을 재정의하고, 이 필드가 비어 있으면 콘솔에 구성된 category 값을 덮어쓰지 않습니다. 자세한 내용은 [category 설명](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References/https-send-api-0000001050986197#section13271045101216)을 참고하십시오.|
 | ApnsInfo.BadgeMode | Integer | 옵션| 기본값 또는 0은 카운트 필요함을 나타내며 1은 이 메시지에 대해 카운트가 필요하지 않음을 나타냅니다. 이 경우 우측 상단의 숫자는 증가하지 않습니다.|
 | ApnsInfo.Title|String|옵션|APNs 푸시 메시지의 제목. 입력하면 가장 상단의 Title을 덮어쓰기합니다.|
 | ApnsInfo.SubTitle|String|옵션|APNs 푸시 메시지의 부제목.|

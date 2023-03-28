@@ -1,43 +1,46 @@
-
-## 1. IM SDK Error Codes
+## 1. Chat SDK Error Codes
 >?For web SDK error codes, see [here](https://web.sdk.qcloud.com/im/doc/en/module-ERROR_CODE.html). 
 
 ### Common error codes
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
-| 0 | No error. |
-| 6015   | Operation in progress. Optimize the control over API calls. For example, if another initialization operation is performed before the first initialization operation is called back, the system returns this error code. |
+| 4001       | File message failed: The corresponding URL is not a storage resource assigned by Chat. |
+| 4002      | File message failed: Internal server network error.                       |
+| 4003      | Image message failed: Incorrect format returned by CI.                    |
+| 4004      | Image message failed: Invalid image format.            |
+| 4005      | File message failed: Illegal or blocked files cannot be sent.                  |
+| 6015 | Operation in progress. Optimize the control over API calls. For example, if another initialization operation is performed before the first initialization operation is called back, the system returns this error code. |
 | 6017 | Invalid parameter. Check the error information to locate the invalid parameter. |
 | 6022 | Local I/O operation error. Check whether you have the read/write permission or whether the disk is full. |
 | 6027 | Incorrect JSON format. Check the error information to locate the specific field. |
 | 6028 | Insufficient memory. A memory leak may occur. Analyze and identify the location with high memory usage by using the Instrument tool on the iOS platform or the Profiler tool on the Android platform. |
 | 6001 | PB parsing failed. Internal error. |
 | 6002 | PB serialization failed. Internal error. |
-| 6013 | The IM SDK has not been initialized. Try again after the IM SDK is initialized and the response is returned through callback. |
-| 6005 | Failed to load the local database, possibly due to file corruption. |
+| 6013 | The Chat SDK has not been initialized. Try again after the Chat SDK is initialized and the response is returned through callback. |
+| 6005   | Failed to load the local database, possibly due to file corruption.                 |
 | 6019 | Operation on the local database failed. This error may be caused by a lack of permissions for some directories or file corruption in the database. |
 | 7001 | Cross-thread error. Cross-thread operations are not supported. Internal error. |
-| 7002   | An internal error occurred because the `TinyId` is empty. Check whether the `UserID` exists and is valid. |
+| 7002   | TinyId is empty. Internal error. Check whether the UserID exists and is valid.        |
 | 7003 | Invalid UserID. A UserID cannot be empty and must be printable ASCII characters (0x20-0x7e) containing up to 32 bytes in length. |
 | 7004 | The file does not exist. Check whether the file path is correct. |
 | 7005 | The file size exceeds the limit. The maximum permitted size of an uploaded file is 100 MB. |
 | 7006 | The file is empty. The file cannot be 0 bytes. When uploading an image, audio, video, or document, ensure that the file is generated correctly. |
 | 7007 | Failed to open the file. Check whether the file exists or has been opened exclusively, which causes the SDK to fail to open it. |
-| 7008   | The API call frequency exceeds the limit. Check for and avoid frequently called APIs. |
+| 7008   | Exceeded the API call frequency limit. Check and control the API call frequency.                     |
 | 7009   | The SDK is terminated while it is executing. For example, the SDK execution is terminated by calling unInit during login. |
 | 7010   | The database operation failed. |
 | 7011   | The queried data does not exist in the database. |
 | 7012   | An internal error occurred in the SDK. |
-| 7013   | The API is not supported. Upgrade to the Ultimate Edition. |
-| 7014   | Invalid request. Check whether the API call is compliant. |
-| 7015   | The local content moderation in the SDK hit a sensitive word. |
+| 7013   | The current package does not support this API. Please upgrade to the Flagship Edition package. |
+| 7014   | Invalid request. Check the API call meets requirements.                       |
+| 7015   | Sensitive words found in SDK local content moderation.                               |
 
 ### Account error codes
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
-| 6014 | You have not logged in to the IM SDK or have been forcibly logged out. Log in to the IM SDK first and try again after a successful callback. To check whether you are online, use TIMManager getLoginUser. |
+| 6014 | You have not logged in to the Chat SDK or have been forcibly logged out. Log in to the Chat SDK first and try again after a successful callback. To check whether you are online, use TIMManager getLoginUser. |
 | 6026 | This user account was not logged in during auto login. Call the login API to log in to the account again. |
 | 6206 | UserSig has expired. Get a new valid UserSig and log in again. For more information about how to get a UserSig, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | 6208 | You have been logged out because your account is logged in on another device. Please log in again. |
@@ -58,28 +61,28 @@
 | 6006 | File transfer authentication failed. We recommend that you check whether the file format is correct. |
 | 6007 | Failed to get the server list via FTP. |
 | 6008 | Failed to upload the file via FTP. Check your network connection. If you want to upload an image, ensure that the image can be opened. |
-| 6031   | Failed to upload the file. Check whether the image can be opened. |
+| 6031   | Failed to upload the file. Check whether the uploaded image can be opened properly. |
 | 6009 | Failed to download the file via FTP. Check whether your network is connected or whether the file or audio has expired. Currently, resource files are stored for up to 7 days. |
 | 6010 | HTTP request failed. Check whether the URL is valid. You can try to visit the URL via a web browser. |
-| 6016 | Invalid message elem of the IM SDK. For more information, you can check the error information to locate the specific field. |
+| 6016 | Invalid message elem of the Chat SDK. For more information, you can check the error information to locate the specific field. |
 | 6021 | Invalid object. The TIMImage object is user-generated or an incorrect value is assigned to the object. |
-| 8001 | The message length exceeds the limit of 8 KB. The length of a message is the sum of the length of all elements in the message, and the length of an element is the sum of the length of all fields of the element. |
+| 8001 | The message length exceeds the limit of 12 KB. The length of a message is the sum of the lengths of all elements in the message, and the length of an element is the sum of the lengths of all fields of the element. |
 | 8002 | Message key error. This is an internal error. The key of the network request packet is not consistent with that of the response packet. |
 | 8003 | The image conversion HTTP request failed. |
-| 8004   | Cloud Infinite (CI) failed to convert the image into a thumbnail due to porn. |
+| 8004   | Thumbnail conversion failed due to reasons such as CI pornographic recognition. |
 | 8005 | The number of nested levels of combined forwarded messages exceeds the upper limit of 100. |
-| 8006   | The message you attempted to modify has been modified by someone else. |
+| 8006   | Message modification conflict. The message that you request to modify is modified by another user. |
 | 8010 | The signaling request ID is invalid or has been processed. |
 | 8011 | The signaling request is not authorized, such as canceling an invitation not initiated by the current user. |
 | 8012   | The signaling invitation already exists. |
-| 8020   | The recalled message does not exist or has been sent successfully. |
-| 8021   | The message failed to be sent, as it has been recalled. |
+| 8020   | Failed to cancel the message because the message does not exist or has been sent successfully. |
+| 8021   | Failed to send the message because the message has been canceled. |
 
 ### Group error codes
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
-| 8501   | Invalid group ID (unique group ID). A custom group ID must be printable ASCII characters (0x20-0x7e) containing up to 48 bytes in length. To avoid confusion with the default group IDs assigned by IM, a custom group ID cannot be prefixed with @TGS#. |
+| 8501 | Invalid group ID (unique group identifier). A custom group ID must be printable ASCII characters (0x20-0x7e) containing up to 48 bytes in length. To avoid confusion with the default group IDs assigned by Chat, a custom group ID cannot be prefixed with @TGS#. |
 | 8502 | Invalid group name. A group name can be up to 30 bytes in length and must be encoded in UTF-8. If the group name contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 8503 | Invalid group introduction. A group introduction can be up to 240 bytes in length and must be encoded in UTF-8. If the group introduction contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 8504 | Invalid group notice. A group notice can be up to 300 bytes in length and must be encoded in UTF-8. If the group notice contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
@@ -89,11 +92,11 @@
 | 8508 | A private group cannot be joined via app. Any group member can invite non-members to join the group without the invitees' confirmation. |
 | 8509 | You cannot invite a group member whose role is group owner. Ensure that the role field is entered correctly. |
 | 8510 | You cannot invite 0 members. Ensure that the member field is entered correctly. |
-| 8511   | Group attribute API operation limits: The Create, Delete, and Update APIs each can be called by the backend for up to 5 times per second. The Query API can be called by the SDK for up to 20 times per 5 seconds.  |
-| 8512   | Limit on the operation of the API for getting the number of online group members: The Query API can be called by the SDK for up to 1 times per 60 seconds.       |
-| 8513   | Limit on the operation of the group profile acquisition API: The Query API can be called by the SDK for up to 1 times per second.       |
-| 8514   | Limit on the operation of the API for getting the list of joined groups: The Query API can be called by the SDK for up to 1 times per second.       |
-| 8515   | Group members cannot be labeled.       |
+| 8511   | Group attribute API operation limits: the Create, Delete, and Update APIs each can be called by the backend for up to five times per second. The Read API can be called by the SDK for up to 20 times per five seconds.      |
+| 8512   | Operation limit of the API for getting the number of online users: The Read API can be called only once per 60 seconds.       |
+| 8513   | Operation limit of the API for getting profiles: The Read API can be called only once per second.       |
+| 8514   | Operation limit of the API for getting the list of groups that you have joined: The Read API can be called only once per second.       |
+| 8515   | Group member marking is not allowed.       |
 
 
 ### Relationship chain error codes
@@ -105,7 +108,7 @@
 | 9003 | Invalid friend request. The friend request field can be up to 120 bytes in length and must be encoded in UTF-8. If the friend request field contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 9004 | The source field of the friend request is invalid. The source field must be prefixed with “AddSource_Type\_”. |
 | 9005 | Invalid friend list name. A friend list name cannot be empty, can be up to 30 bytes in length, and must be encoded in UTF-8. If the friend list name contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
-| 9006   | The number exceeds the limit. |
+| 9006   | Exceeded the quantity limit. |
 
 ### Network error codes
 
@@ -129,9 +132,9 @@
 | 9516 | Failed to parse the IP address. Internal error. The local `imsdk_config` file may be corrupted and can cause the system to read an invalid IP address. |
 | 9517 | Invalid connection. The network is connected to an intermediate node or is reset by the server. This is an internal error. The SDK automatically initiates reconnection. Try again after the network is reconnected and the callback function `onConnSucc` on iOS or `onConnected` on Android is called successfully. |
 | 9518 | The request packet timed out when waiting to enter the sending queue. This usually occurs when the network connection setup is slow or the network is frequently disconnected and reconnected. Check whether the network connection is normal. |
-| 9519 | The request packet entered the IM SDK sending queue but timed out while waiting to enter the network layer of the operating system. This usually occurs when the local network is restricted or disconnected or the local network and the IM SDK backend are not connected. We recommend that you run the IM SDK in different network environments to check whether this issue is caused by the current network environment. |
-| 9520 | The request packet entered the network layer of the operating system from the IM SDK sending queue but timed out while waiting for a response packet from the server. This usually occurs when the local network is restricted or disconnected or the local network and the IM SDK backend are not connected. We recommend that you run the IM SDK in different network environments to check whether this issue is caused by the current network environment. |
-| 9521   | The request packet has entered the sending queue, certain data has been sent, but the remaining data timed out when waiting to be sent. This usually occurs because the upstream bandwidth is insufficient or the network is disconnected when the error is called back. |
+| 9519 | The request packet entered the Chat SDK sending queue but timed out while waiting to enter the network layer of the operating system. This usually occurs when the local network is restricted or disconnected or the local network and the Chat SDK backend are not connected. We recommend that you run the Chat SDK in different network environments to check whether this issue is caused by the current network environment. |
+| 9520 | The request packet entered the network layer of the operating system from the Chat SDK sending queue but timed out while waiting for a response packet from the server. This usually occurs when the local network is restricted or disconnected or the local network and the Chat SDK backend are not connected. We recommend that you run the Chat SDK in different network environments to check whether this issue is caused by the current network environment. |
+| 9521   | The request packet has entered the sending queue, certain data has been sent, but the remaining data timed out when waiting to be sent. This usually occurs because the upstream bandwidth is insufficient or the network is connected when the error is called back. Please check whether the network connection is normal. |
 | 9522   | The request packet length exceeds the maximum limit of 1 MB. |
 | 9523 | The request packet has entered the sending queue but timed out when waiting to enter the network buffer of the system. This usually occurs because too many packets are to be sent, the sending thread is too busy to handle the packets, or the network is disconnected when the error code is called back. |
 | 9524 | The request packet has entered the network buffer of the system but timed out when waiting for the server to return packets. This usually occurs because the request packet does not leave the client device, is discarded in an intermediate route, or is dropped accidentally by the server, the response packet is discarded by the network layer of the system, or the network is disconnected when the error code is called back. |
@@ -153,7 +156,7 @@
 | -10008 | The key and ticket are required.                                    |
 |-10009 | Cookie mismatch. |
 | -10106 | Decryption with the key failed too many times. Instruct the device to call the `TIMManager.getInstance().login` API to generate a new key. |
-| -10108 | The payment is overdue.                                          |
+| -10108 | Overdue prepayment. |
 | -10109 | The format of the request packet is incorrect. |
 | -10110 | The SDKAppID is blocklisted. |
 | -10111 | The SDKAppID is on the service CMD blocklist. |
@@ -198,10 +201,13 @@
 | 60017 | The request is disabled. |
 | 60018 | Too many requests. Try again later. |
 | 60019 | Too many requests. Try again later. |
-| 60020 | Your Pro Edition plan has expired and been disabled. To purchase the plan again The new plan will take effect five minutes later. |
+| 60020 | Your Pro Edition standard billing plan has expired and been disabled. To repurchase the standard billing plan, log in to [Instant Messaging Purchase Page](https://buy.cloud.tencent.com/avc). The new standard billing plan will take effect 5 minutes later. |
 | 60021  | The source IP of the RESTful API call is invalid. |
+| 80001  | The text in the message contains sensitive content and cannot be delivered. |
 | 80002 | The outgoing message packet exceeds the length limit of 8 KB. Reduce the packet size and try again. |
 | 80003  | The message was not sent because the callback failed or timed out before the one-to-one or group message was sent. Configure the [policy for handling callback timeouts before event occurrence](https://intl.cloud.tencent.com/document/product/1047/34354) in the console. |
+| 80004  | The image in the message contains sensitive content and cannot be delivered. |
+
 
 ### Account error codes
 
@@ -212,11 +218,11 @@
 | 70003 | Invalid UserSig. Call the API provided on the official website to [generate a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | 70005 | Invalid UserSig. Call the API provided on the official website to [generate a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | 70009 | UserSig authentication failed, probably because the private key or key of another SDKAppID was mistakenly used to generate the UserSig. Use the private key or key of the desired SDKAppID to [generate a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
-| 70013 | The `UserID` in the request does not match the `UserID` used to generate the `UserSig`. You can verify the `UserSig` on the **[Auxiliary Tools](https://console.cloud.tencent.com/im/tool-usersig)** page of the IM console. |
-| 70014 | The `SDKAppID` in the request does not match the `SDKAppID` used to generate the `UserSig`. You can verify the `UserSig` on the **[Auxiliary Tools](https://console.cloud.tencent.com/im/tool-usersig)** page of the IM console. |
-| 70016 | UserSig authentication failed because the public key does not exist. [Obtain the key](https://intl.cloud.tencent.com/document/product/1047/34540) in the IM console. |
-| 70020 | SDKAppID not found. Check the app information in the IM console. |
-| 70050 | Too many UserSig authentication attempts. Check whether the UserSig is correct and try again in one minute. You can verify the UserSig on the **[Auxiliary Tools](https://console.cloud.tencent.com/im/tool-usersig)** page of the IM console. |
+| 70013 | The UserID in the request does not match the UserID used to generate the UserSig. You can verify the UserSig on the **[Auxiliary Tools](https://console.cloud.tencent.com/im/tool-usersig)** page of the Chat console. |
+| 70014 | The SDKAppID in the request does not match the SDKAppID used to generate the UserSig. You can verify the UserSig on the **[Auxiliary Tools](https://console.cloud.tencent.com/im/tool-usersig)** page of the Chat console. |
+| 70016 | UserSig authentication failed because the public key does not exist. [Obtain the key](https://intl.cloud.tencent.com/document/product/1047/34540) in the Chat console. |
+| 70020 | SDKAppID not found. Check the app information in the Chat console. |
+| 70050 | Too many UserSig authentication attempts. Check whether the UserSig is correct and try again in one minute. You can verify the UserSig on the **[Auxiliary Tools](https://console.cloud.tencent.com/im/tool-usersig)** page of the Chat console. |
 | 70051 | The account is blocklisted. |
 | 70107 | The requested UserID does not exist. |
 | 70114 | Login is restricted for security reasons. Please reduce the login frequency. |
@@ -225,9 +231,11 @@
 | 70206 | Invalid batch quantity in the request. |
 | 70402 | Invalid parameter. Check whether the required fields are all set and whether the parameter settings meet the protocol requirements. |
 | 70403 | Request failed. App admin permissions are required to perform this operation. |
+| 70398 | The number of accounts exceeds the limit allowed. To create more than 100 accounts, upgrade your app to the Pro Edition. For specific steps, see [Purchase Guide](https://www.tencentcloud.com/document/product/1047/36021). |
 | 70500 | Internal server error. Try again later. |
-| 71000 | Failed to delete the account. Only trial accounts can be deleted. Your current app is of the Pro Edition and therefore cannot be deleted. |
-| 72001  | Enable the user status query and status change notification settings in the IM console. For operation details, see [Operation Guide](https://intl.cloud.tencent.com/document/product/1047/49562). |
+| 71000 | Failed to delete the account. Only Free accounts can be deleted. Your current app is of the Pro Edition and therefore cannot be deleted. |
+| 72000  | Your app is now using the Trial Edition, and the free daily active users (DAU) quota was exceeded. To lift the restriction, upgrade your app to the Pro Edition or Flagship Edition. For detailed directions, see [Purchase Guide](https://www.tencentcloud.com/document/product/1047/36021).      |
+| 72001  | Please enable user status query and status change notification settings in the Chat console. For operation details, see [Operation Guide](https://intl.cloud.tencent.com/document/product/1047/49562). |
 
 ### Profile error codes
 
@@ -287,7 +295,7 @@
 | 51009  | The conversation group does not exist when a deletion attempt is made.       |
 | 51010  | The number of conversation groups exceeds the upper limit of 20.       |
 | 51011  | The conversation group name contains more than 32 bytes.       |
-| 51012  | The number of conversations pinned to the top exceeds the limit of 50.     |
+| 51012  | Exceeded the maximum number of conversations pinned to the top. The maximum number of conversations pinned to the top is 50, and this limit cannot be increased.       |
 
 ### Message error codes
 
@@ -295,11 +303,11 @@
 | --------------- | ------------------------------------------------------------ |
 | 20001 | Invalid request packet. |
 | 20002 | Invalid UserSig or A2. |
-| 20003 | The UserID of the sender or recipient is invalid or does not exist. Check whether the UserID has been imported into the IM console. |
+| 20003 | The UserID of the sender or recipient is invalid or does not exist. Check whether the UserID has been imported into the Chat console. |
 | 20004 | Network exception. Please try again. |
 | 20005 | Internal server error. Please try again. |
 | 20006 | The callback prior to sending a one-to-one chat message was triggered, and the App backend returned a response to forbid the message. |
-| 20007 | The one-to-one chat message cannot be sent to the other party because the sender is in the blocklist of the other party.<br>The message delivery status is displayed as failed by default. You can log in to the IM console to change the message delivery status displayed in this scenario. For specific steps, see [Blocklist check](https://intl.cloud.tencent.com/document/product/1047/34419). |
+| 20007 | The one-to-one chat message cannot be sent to the other party because the sender is in the blocklist of the other party.<br>The message delivery status is displayed as failed by default. You can log in to the Chat console to change the message delivery status displayed in this scenario. For specific steps, see [Blocklist check](https://intl.cloud.tencent.com/document/product/1047/34419). |
 | 20008 | The SDKAppID of the sender does not match the SDKAppID of the recipient, because the SDKAppID is switched on the client but the data is not cleared in the database. To rectify this problem, clear the original database after switching the SDKAppID. |
 | 20009 | The message cannot be sent because the sender and the intended recipient are not friends. This problem occurs only when friend verification is configured for one-to-one chats. |
 | 20010 | The one-to-one chat message cannot be sent, because the sender is not a friend of the intended recipient (one-way relationship). |
@@ -327,7 +335,7 @@
 | 90009 | The request requires the app admin permission. |
 | 90010 | The JSON request packet is not in the message format. For more information, see the definition in [TIMMsgElement Objects](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | 90011 | The number of target user accounts for batch message sending exceeds the limit of 500. Decrease the value of `To_Account`. |
-| 90012 | `To_Account` is not registered or does not exist. Check whether `To_Account` has been imported into the IM console or is incorrectly spelled. |
+| 90012 | `To_Account` is not registered or does not exist. Check whether `To_Account` has been imported into the Chat console or is incorrectly spelled. |
 | 90018 | The number of requested accounts exceeds the limit. |
 | 90022 | `TagsOr` and `TagsAnd` in the push conditions contain repeated tags. |
 | 90024 | Pushes are too frequent. The interval between every two pushes must be greater than 1s. |
@@ -348,10 +356,10 @@
 | 90994 | Internal service error. Please try again. |
 | 90995 | Internal service error. Please try again. |
 | 91000 | Internal service error. Please try again. |
-| 90992 | Internal service error. Please try again. If this error code is returned for all requests and the app has enabled third-party callback, check whether the app server returns callback results to the IM backend properly. |
+| 90992 | Internal service error. Please try again. If this error code is returned for all requests and the app has enabled third-party callback, check whether the app server returns callback results to the Chat backend properly. |
 | 93000 | The JSON packet exceeds the length limit of 8 KB. |
 | 91101 | The web instance is forcibly logged out during long polling because the number of concurrent online web instances exceeds the limit allowed. |
-| 120001-130000 | Custom error code returned by third-party callback for a one-to-one chat. |
+| 120001-130000 | Custom error code returned by webhook for a one-to-one chat. |
 
 ### Group error codes
 
@@ -385,9 +393,9 @@
 | 10033 | This type of group does not support message recalls. |
 | 10034 | This type of message cannot be deleted. |
 | 10035 | Audio-video chat rooms and broadcasting chat rooms do not support message deletion. |
-| 10036 | The number of audio-video chat rooms exceeds the limit allowed. To purchase "IM audio-video chat rooms", see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10037 | The number of groups that can be created and joined by a single user exceeds the limit allowed. To purchase or upgrade "the number of groups that can be created and joined by a single user", see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10038  | Exceeded the limit on the number of group members. To purchase or upgrade the plan to increase the maximum number of members in a single group, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). (After upgrade, you need to call the [group profile modification API](https://intl.cloud.tencent.com/document/product/1047/34962) to modify the maximum number of members allowed per group.) |
+| 10036 | The number of audio-video chat rooms exceeds the limit allowed. To purchase a prepaid package of “Chat audio-video chat rooms”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10037 | The number of groups that can be created and joined by a single user exceeds the limit allowed. To purchase or upgrade a prepaid package of "Expanding the number of groups that can be created and joined by a single user", see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10038  | Exceeded the limit on the number of group members. To purchase or upgrade the prepaid plan to increase the maximum number of members in a single group, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). (After upgrade, you need to call the [group profile modification API](https://intl.cloud.tencent.com/document/product/1047/34962) to modify the maximum number of members allowed per group.) |
 | 10041 | The app (SDKAppID) is configured not to support group message recalls. |
 |10044| This type of group (such as AVChatRoom group) does not support getting roaming messages. |
 | 10045 | The size of the custom attribute key exceeds the limit of 32 bytes. |
@@ -401,23 +409,28 @@
 | 10053 | The number of group @ objects exceeds the upper limit of 30. |
 | 10054 | There are too many members in the group. Please pull by page. |
 | 10056 | Competition conflict for custom attribute write operation. Please get the latest custom attribute before writing. |
-|10058| You are now using the Trial edition, and the free tier of 100 groups is exceeded. To create more groups, you need to purchase a plan. |
+|10058| You are now using the Free Edition, and the free quota of 100 groups is exceeded. To create more groups, you need to purchase a package. |
 |10059| To use this feature, you need to purchase the Ultimate Edition. |
+|10060| The number of members in the group exceeds the upper limit for a read receipt group. |
+|10061| Online messages do not support read receipts. |
+| 10062  | The read receipt doesn't exist.       |
+| 10062  | The read receipt doesn't exist.       |
+| 10063 | The number of keys in the group counter exceeds the limit of 20. |
 |11000| The community group feature is not enabled. |
 
 ### Offline push error codes
 
-| Error Code	 | Description |
+| Error Code | Description |
 |---------|---------|
-| -195  | Google FCM failed to build the push object. This is generally caused by a certificate error. |
-| -196  | The parameter is missing. `intent` is selected but not assigned a value. |
-| -197  | A certificate error occurred. Check the certificate parameters. |
-| -198  | An error occurred with the vendor response. |
-| -199  | The vendor network is abnormal. |
-| -200  | An internet error occurred on the IM backend. |
-| -201  | The validity check failed, for example, due to an incorrect token or certificate ID. |
-| -202  | The object failed to be built before being pushed to the vendor. |
-| -203  | The HUAWEI Push daily limit is exceeded. |
+| -195  | Google Push failed to build a push object, usually due to a certificate error. |
+| -196  | Parameter missing: `intent` is selected, but no value is specified for `intent`. |
+| -197  | Certificate error. Check the certificate related parameters. |
+| -198  | Vendor response error. |
+| -199  | Vendor network exception. |
+| -200  | Chat backend network error. |
+| -201  | Validity check failed, for example, token or certificate ID error. |
+| -202  | Object build failed before push to vendors. |
+| -203  | Exceeded Huawei's daily push limit. |
 
 
 
@@ -432,7 +445,7 @@
 | 1005 | File expired. |
 
 
-## 3. IM SDK V3 Error Codes
+## 3. Chat SDK V3 Error Codes
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------ |
@@ -474,7 +487,7 @@
 | 6200 | No network connection when sending the request. |
 | 6201 | No network connection when sending the response. |
 | 6205 | QALSDK service not ready. |
-| 6207   | Account authentication failed due to `TinyId` conversion failure. Check whether the `UserID` exists and is valid. |
+| 6207   |  Account authentication failed due to `TinyId` conversion failure. Check whether the UserID exists and is valid. |
 | 6209 | The app did not attempt to connect to the network after being started. |
 | 6210 | QALSDK execution failed. |
 | 6211 | Invalid request due to invalid `toMsgService`. |
@@ -494,7 +507,7 @@
 | 6226 | Auto login failed because the local ticket expired. Manual login with the UserSig is needed. |
 | 6300 | No available SSO for short connections. |
 | 70101 | Ticket expired. This error is returned during login. |
-| 90101 | The IM SDK has been initialized and does not need to be re-initialized. |
+| 90101 | The Chat SDK has been initialized and does not need to be re-initialized. |
 | 115000 | OpenBDH error code. |
 | 6250 | No network connection when sending the request. Please try again after the network connection is recovered. |
 | 6251 | No network connection when sending the response. Please try again after the network connection is recovered. |

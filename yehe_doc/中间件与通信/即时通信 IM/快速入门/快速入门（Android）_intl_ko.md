@@ -1,4 +1,3 @@
-본문은 Tencent Cloud Instant Messaging(IM) Demo(Android)를 빠르게 실행하는 방법을 소개합니다.
 ## 작업 단계
 [](id:step1)
 ### 1단계: 애플리케이션 생성
@@ -24,8 +23,7 @@
 
 1. IM Demo 프로젝트를 다운로드합니다. 다운로드 주소는 [SDK 다운로드](https://intl.cloud.tencent.com/document/product/1047/33996)를 참고하십시오.
 >?이모티콘 디자인의 저작권 존중을 위해, 다운로드한 Demo 프로젝트에는 주요 이모티콘 요소의 슬라이스 이미지가 포함되어 있지 않습니다. 로컬 이모티콘 패키지를 사용하여 코드를 구성할 수 있습니다. IM Demo에서의 이모티콘 무단 사용 행위는 디자인 저작권 침해에 해당될 수 있습니다.
->
->2. 단말 디렉터리의 프로젝트를 열고 해당 `GenerateTestUserSig` 파일을 찾습니다. 경로:  Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/signature/GenerateTestUserSig.java
+2. 단말 디렉터리의 프로젝트를 열고 해당 `GenerateTestUserSig` 파일을 찾습니다. 경로:  Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/signature/GenerateTestUserSig.java
 3. `GenerateTestUserSig` 파일에서 관련 매개변수를 설정합니다.
 
  - SDKAPPID: [1단계](#step1)에서 획득한 실제 애플리케이션 SDKAppID로 설정합니다.
@@ -37,14 +35,14 @@
 >올바른 UserSig 배포 방식은 UserSig 컴퓨팅 코드를 귀하의 서버에 통합하고, App 지향 인터페이스를 제공하는 것입니다. UserSig가 필요할 때, App은 비즈니스 서버에 동적 UserSig 가져오기 요청을 발송합니다. 자세한 내용은 [서버에서 UserSig 생성](https://intl.cloud.tencent.com/document/product/1047/34385)을 참고하십시오.
 
 [](id:step4)
-### 4단계: 컴파일 실행
+### 4단계: 데모 컴파일 및 실행
 Android Studio를 사용하여 프로젝트를 가져오고 바로 컴파일 및 실행합니다.
 자세한 내용은 [3단계](#step3)에서 복제된 Demo 프로젝트의 해당 디렉터리에 있는 `README.md` 파일을 참고하십시오.
+
+**개발 환경 요구 사항**
+- Android Studio-Chipmunk 
+- Gradle-6.7.1
+- Android Gradle Plugin Version-4.2.0
+- kotlin-gradle-plugin-1.5.31
+
 >!Demo는 기본적으로 음성/영상 통화 기능과 통합되어 있습니다. 그러나 음성/영상 통화 기능이 의존하는 TRTC SDK는 현재 시뮬레이터를 지원하지 않습니다. Demo 실행 또는 디버깅을 위해 실제 장치를 사용하십시오.
-## 고급 기능
-- [UI 인터페이스 라이브러리](https://intl.cloud.tencent.com/document/product/1047/50062)
-- [영상 통화 활성화](https://intl.cloud.tencent.com/document/product/1047/34287)
-
-## 관련 문서
-- [요금 안내](https://intl.cloud.tencent.com/document/product/1047/34350)
-

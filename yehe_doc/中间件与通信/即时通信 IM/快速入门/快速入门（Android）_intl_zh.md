@@ -1,4 +1,3 @@
-本文主要介绍如何快速运行腾讯云即时通信 IM Demo（Android）。
 ## 操作步骤
 [](id:step1)
 ### 步骤1：创建应用
@@ -24,8 +23,7 @@
 
 1. 下载即时通信 IM Demo 工程，具体下载地址请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/1047/33996)。
 >?为尊重表情设计版权，下载的 Demo 工程中不包含大表情元素切图，您可以使用自己本地表情包来配置代码。未授权使用 IM Demo 中的表情包可能会构成设计侵权。
->
->2. 打开终端目录的工程，找到对应的 `GenerateTestUserSig` 文件，路径为  Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/signature/GenerateTestUserSig.java
+2. 打开终端目录的工程，找到对应的 `GenerateTestUserSig` 文件，路径为  Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/signature/GenerateTestUserSig.java
 3. 设置`GenerateTestUserSig`文件中的相关参数：
 
  - SDKAPPID：请设置为 [步骤1](#step1) 中获取的实际应用 SDKAppID。
@@ -40,11 +38,11 @@
 ### 步骤4：编译运行
 用 Android Studio 导入工程直接编译运行即可。
 更多详情可参见 [步骤3](#step3) 克隆的 Demo 工程中对应目录下的`README.md`文件。
+
+**开发环境要求**
+- Android Studio-Chipmunk 
+- Gradle-6.7.1
+- Android Gradle Plugin Version-4.2.0
+- kotlin-gradle-plugin-1.5.31
+
 >!Demo 默认集成了音视频通话功能，由于该功能依赖的音视频 SDK 暂不支持模拟器，请使用真机调试或者运行 Demo。
-## 进阶功能
-- [UI 界面库](https://intl.cloud.tencent.com/document/product/1047/50062)
-- [开启视频通话](https://intl.cloud.tencent.com/document/product/1047/34287)
-
-## 相关文档
-- [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)
-

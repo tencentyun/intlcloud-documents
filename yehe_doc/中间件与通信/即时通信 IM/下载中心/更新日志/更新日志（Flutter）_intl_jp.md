@@ -9,9 +9,9 @@ FlutterのすべてのプラットフォームをサポートするIM SDKとTUIK
 | [Web](https://intl.cloud.tencent.com/document/product/1047/45907) | 4.1.1+2とそれ以降のバージョンは対応可                 | 0.1.5とそれ以降のバージョンは対応可                          |
 | [macOS](https://intl.cloud.tencent.com/document/product/1047/45907) | 4.1.8とそれ以降のバージョンは対応可                   | 間もなくリリースされます                                 |
 | [Windows](https://intl.cloud.tencent.com/document/product/1047/45907) | 4.1.8とそれ以降のバージョンは対応可                   | 間もなくリリースされます                                 |
-| [混合開発](https://www.tencentcloud.com/document/product/1047/51456) （Flutter SDKを既存のネイティブアプリケーションに追加します） | 5.0.0とそれ以降のバージョンは対応可 | 1.0.0とそれ以降のバージョンは対応可 |
+| [混合開発](https://tencentcloud.com/document/product/1047/51456) （Flutter SDKを既存のネイティブアプリケーションに追加します） | 5.0.0とそれ以降のバージョンは対応可 | 1.0.0とそれ以降のバージョンは対応可 |
 
->? Web/macOS/Windowsプラットフォームでは、わずかなステップで簡単に導入する必要があります。詳細については[Web互換性](https://intl.cloud.tencent.com/document/product/1047/45907)および[Desktop互換性(https://intl.cloud.tencent.com/document/product/1047/45907)]ガイドラインをご参照ください。
+>? Web/macOS/Windowsプラットフォームでは、わずかなステップで簡単に導入できます。詳細については[Web互換性](https://intl.cloud.tencent.com/document/product/1047/45907)および[Desktop互換性(https://intl.cloud.tencent.com/document/product/1047/45907)]ガイドラインをご参照ください。
 
 ## SDK説明
 
@@ -20,9 +20,55 @@ IM Flutter SDK（UIなし）は、[tencent_im_sdk_plugin](https://pub.dev/packag
 IM Flutter TUIKit（UIを含む）は[tim_ui_kit](https://pub.dev/packages/tencent_cloud_chat_uikit)パッケージを参照し、UI SDKがない場合は、完全なUIコンポーネントリポジトリと業務ロジックも含まれています。
 
 >?UIなしのSDKは、[tencent_im_sdk_plugin](https://pub.dev/packages/tencent_im_sdk_plugin)から[tencent_cloud_chat_sdk](https://pub.dev/packages/tencent_cloud_chat_sdk)へ移行され、TUIKitは、[tim_ui_kit](https://pub.dev/packages/tim_ui_kit)から[tencent_cloud_chat_uikit](https://pub.dev/packages/tencent_cloud_chat_uikit)へ移行されています。
-> 後続の2つのオリジナルバージョンのパッケージは維持されなくなります。できるだけ早く最新バージョンにアップグレードしてください。ありがとうございます。
+> 後続の2つのオリジナルバージョンのパッケージは維持されなくなります。できるだけ早く最新バージョンにアップグレードしてください。よろしくお願いします。
 
 ## ログの更新
+
+### IM Flutter TUIKit（UIを含む） 1.6.0 @2023.02.08
+
+- 新規追加：`TIMUIKitConversationController`の`scrollToConversation`。ダイアログリストの特定のダイアログにスクロールできます。また、タブバーをダブルクリックすると次の未読ダイアログにスクロールできます。[Demoソース](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/conversation.dart)をご参照ください。
+- 最適化：履歴メッセージリストが長時間スクロールされた場合のパフォーマンス。
+
+### IM Flutter TUIKit（UIを含む） 1.5.0 @2023.02.02
+
+- 新規追加：グローバル`TIMUIKitConfig`に新たに`defaultAvatarAssetPath`が追加されました。デフォルトのアバターを定義するために使用されます。
+- 新規追加：Flutter 3.7.0対応可。
+- 修正：`chatBgColor`設定。
+
+### IM Flutter TUIKit（UIを含む） 1.4.0 @2023.01.13
+
+- 新規追加：テキストメッセージおよびリプライ引用メッセージのテキスト翻訳機能。テキストを長押しして、翻訳を選択してください。`ToolTipsConfig`の`showTranslation`パラメータで有効にします。
+- 最適化：メッセージウィンドウを長押しする場合の表示位置。
+- 最適化：キーボードポップアップイベント。
+
+### IM Flutter SDK（UIなし） 5.0.8 @2023.01.13
+
+- 新規追加：グループカウント機能。一般グループおよびライブ配信グループの場合は、グループカウンタmeta counterをサポートします。詳細についてはgroupCounter関連APIをご参照ください。
+
+### IM Flutter TUIKit（UIを含む） 1.3.0 @2023.01.11
+
+- 修正：グループマスターのグループTipsメッセージを転送するとき、グループマスターの新しいニックネームが表示されません。
+- 最適化：ファイルを開く前の二次確認ボックスが削除されました。
+
+### IM Flutter TUIKit（UIを含む） 1.2.0 @2023.01.06
+
+- 修正：チャットコンポーネントで、録音状態から入力状態に切り替えたときに、入力ボックスが表示されない不具合を修正しました。
+- 修正：マージして複数の受信者に転送するとき、最初の受信者だけがメッセージを受信する不具合を修正しました。
+- 最適化：マージするメッセージページの表示に使用される`MessageItemBuilder`。
+
+### IM Flutter TUIKit（UIを含む） 1.1.0 @2022.12.27
+
+- 新規追加：TUIKitにはデフォルトで顔文字プラグインが組み込まれています。現在、Unicode Emoji、小さい絵文字、大きい絵文字の3種類の顔文字をサポートしています。使用方法の最適化については[このドキュメント](https://www.tencentcloud.com/document/product/1047/52227)をご参照ください。
+- 最適化：よりカスタマイズ機能としてテーマをサポートします。
+- 最適化：入力領域、キーボード、ステッカーパネルなどのアニメーション。
+- 最適化：Unicodeや小さな画像など、テキストメッセージ内の任意位置に挿入できる顔文字。
+- 最適化：個人プロフィールのアバターを大きな画像でプレビューできます。
+- 最適化：個人プロファイルファイル内のユーザーIDをコピーできます。
+- 最適化：`TIMUIKitAddFriend`、`TIMUIKitAddGroup`、`TIMUIKitGroupProfile`、`TIMUIKitProfile`などのUIの詳細。
+- 最適化：`TIMUIKitGroupProfile`と`TIMUIKitProfile`は、IDの変更によるコンテンツの変更をサポートしています。
+- 最適化：`TIMUIKitGroupChat`を用いて画像/ビデオのダウンロードボタンをクリックして、ダウンロード中にLoadingアニメーションが表示されます。
+- 修正：いくつかのエラー。
+
 
 ### IM Flutter SDK（UIなし） 5.0.6 @2022.11.29
 
@@ -32,7 +78,6 @@ IM Flutter TUIKit（UIを含む）は[tim_ui_kit](https://pub.dev/packages/tence
 ### IM Flutter TUIKit（UIを含む） 1.0.1 @2022.11.28
 
 - 変更：`MessageItemBuilder`から`groupTRTCTipsItemBuilder`を削除し、代わりに`customMessageItemBuilder`を使用してください。
-- 変更：`TIMUIKitConversation`および`TIMUIKitChat`からオーディオ・ビデオの通話記録情報のデフォルト解析を削除し、通話記録情報を手動で解析するか、コンポーネントを渡す必要があります。詳細については、[このアップグレードガイド](https://www.tencentcloud.com/document/product/1047/50023#updateuikit)をご参照ください。
 
 ### IM Flutter TUIKit（UIを含む） 1.0.0 @2022.11.23
 
@@ -45,7 +90,6 @@ IM Flutter TUIKit（UIを含む）は[tim_ui_kit](https://pub.dev/packages/tence
 - 最適化：一番下にスクロールして戻るときに最新メッセージを読み込み、よりスムーズになります。
 - 修正：Androidアルバムの写真の数。
 - 修正：グループ情報カードの長いテキストが範囲外になる問題。
-- 変更：**Callingオーディオ・ビデオ通話プラグインで使用するとき、通話記録情報コンポーネントを`TIMUIKitChat`の`messageItemBuilder` => `customMessageItemBuilder`に手動で渡す必要があります。詳細については、[このアップグレードガイド](https://www.tencentcloud.com/document/product/1047/50023#updateuikit)をご参照ください。**
 - 修正：いくつかのエラー。
 
 >?このバージョンTUIKitにアップグレードするには、絵文字の部分（第2条）とオーディオ・ビデオ通話の部分（最後からの第2条）の変更に注意する必要があります。そうしないと、関連する機能が正常に動作しません。
@@ -93,12 +137,12 @@ IM Flutter TUIKit（UIを含む）は[tim_ui_kit](https://pub.dev/packages/tence
 - 最適化：一番下にスクロールしたときに最新のメッセージを読み込みます。
 - 最適化：Flutter 2.xと3.xシリーズへのサポートを最適化しました。
 - 修正：iOSアルバム、一部の画像だけの許可、権限へのサポート。
-- 修正：いくつかのbug。
+- 修正：わずかのbug。
 
 ### IM Flutter TUIKit（UIを含む） 0.1.5 @2022.09.22
 
-- 追加：Webへのサポート。現在、iOS/Android/WebプラットフォームでTUIKitを実装できます。
-- 追加：ログイン後にディスクストレージをチェックし、`init`の`config`で制御します。
+- 新規追加：Webへのサポート。現在、iOS/Android/WebプラットフォームでTUIKitを実装できます。
+- 新規追加：ログイン後にディスクストレージをチェックし、`init`の`config`で制御します。
 - 追加：`TIMUIKitChatConfig`に、`timeDividerConfig`、`notificationAndroidSound`HuaweiからGoogleへの音声設定のプッシュ、`isSupportMarkdown`テキストメッセージかMarkdownの解析をサポートするかどうか、`onTapLink`を追加しました。
 - 削除：著作権の問題があるので、デフォルトでEmojiリストです。[tim_ui_kit_sticker_plugin](https://pub.dev/packages/tim_ui_kit_sticker_plugin)を使用して、TUIKitに自分の絵文字リストを提供できます。
 - 最適化：ダイアログのリストに@メッセージを表示しないように選択できるようになりました。
@@ -147,7 +191,7 @@ IM Flutter TUIKit（UIを含む）は[tim_ui_kit](https://pub.dev/packages/tence
 - グループチャットページに発言禁止状態を追加しました。
 - テキストメッセージ内のURLをクリックするとジャンプできるようになり、Webサイト情報のプレビューカードを追加しました。
 - TUIKitレイヤーのグローバルイベントのコールバック（表示されるメッセージテキスト/Flutterレイヤーのエラー通知/IM APIレイヤーのエラー通知の返しを含む）を追加しました。またTUIKitではメッセージのポップアップ表示がなくなり、コールバックと通知メッセージに基づいてポップアップをカスタマイズできます。
-- `TUIKitGroupProfile`グループ情報コンポーネントと`TUIKitProfile`ユーザー個人情報コンポーネントをリファクタリングし、使い方を簡素化し、超高速アクセスを実現できます。
+- `TUIKitGroupProfile`グループ資料コンポーネントと`TUIKitProfile`ユーザ資料コンポーネントをリファクタリングし、使い方を簡素化し、超高速アクセスを実現できます。
 
 ### IM Flutter SDK（UIなし） 4.0.7 @2022.07.07
 
@@ -171,7 +215,7 @@ IM Flutter TUIKit（UIを含む）は[tim_ui_kit](https://pub.dev/packages/tence
 - メッセージ編集更新のUI能力をサポートします。
 - グループ参加申請審査ページコンポーネントを追加しました。
 - 国際化言語に繁体字中国語を追加しました。
-- その他のカスタムコンポーネントパラメータをオープンしました。
+- より多くのカスタムコンポーネントパラメータをオープンしました。
 
 ### IM Flutter TUIKit（UIを含む） 0.0.9 @2022.05.30
 
@@ -467,11 +511,10 @@ add web support
 - Android/iOSマルチプラットフォームに対応しました
 - シングルチャット、グループチャット（討論グループ、ライブストリーミンググループ）のセッションタイプに対応しました
 - テキスト、スタンプ、画像、音声、カスタムメッセージのメッセージタイプに対応しました
-- APNsオフラインプッシュ（Token、フロント/バックグラウンドの切替イベントの報告）に対応しました
+- APNsオフラインプッシュ（Token、フロント/バックエンドの切替イベントの報告）に対応しました
 - メッセージのローカルストレージ
 
 ### IM Flutter SDK（UIなし） 0.0.1-1.0.2 @2020.12.01
 
 - Flutter SDKをリリースしました
 - ユーザーをベータ版テストに招待しました
-

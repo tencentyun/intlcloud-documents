@@ -1,3 +1,30 @@
+### 2.26.1 @2023.2.10
+
+**修正**
+
+- グループ履歴メッセージの最新のメッセージがグループメッセージ通知のシナリオで表示されます。グループセッションのlastMessage.lastTimeが正しくありません。
+- [markConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markConversation)インターフェースを呼び出してセッションタグを設定しましたが、再ログイン後にタグの内容が失われました。
+- [createGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createGroup)インターフェースを呼び出してグループを作成したときに、たまにグループ情報を確認できませんでした。
+- [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList)インターフェースを呼び出して履歴メッセージをプルしますが、一部のシナリオで履歴メッセージが表示されません。
+
+### 2.26.0 @2023.1.13
+
+**追加**
+
+- [translateText](https://web.sdk.qcloud.com/im/doc/en/SDK.html#translateText)インターフェースで、テキストの翻訳をサポートします。
+- [setGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setGroupCounters)インターフェースで、グループカウンタの設定をサポートします。アクセス側はこのインターフェースにより、「いいね」カウント、ライブ配信グループプレゼントカウント、視聴者数カウントなど、よく使われるカウント機能を実現できます。
+- [increaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#increaseGroupCounter)インターフェースで、グループカウンタをインクリメントします。
+- [decreaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#decreaseGroupCounter)インターフェースで、グループカウンタをデクリメントします。
+- [getGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupCounters)インターフェースで、グループカウンタを取得します。
+- グループメッセージのプルを取り消すシグナリングをサポートし、弱いネットワークの下でグループメッセージが取り消された状態の正確性を向上させます。
+- [Message](https://web.sdk.qcloud.com/im/doc/en/Message.html)に`revoker`のフィールドを追加しました。このフィールドはメッセージを取り消した者の`userID`を示します。
+
+**修正**
+
+- サイトをまたがって購入されたセグメントは国際サイトとして認識されません。
+- ログインログに表示されるuserIDエラーが繰り返します。
+
+
 ### 2.25.0 @2022.12.8
 
 **追加**
@@ -11,7 +38,7 @@
 
 **変更**
 
-- ログが報告したバックアップチャネルは、独立したクラスタードメイン名`https://events.im.qcloud.com`を使用します（プラットフォームに信頼できるドメイン名構成を追加する必要があります）。
+- ログが報告したバックアップチャネルは、独立したクラスタードメイン名`https://events.im.qcloud.com`を使用します（信頼できるドメイン名構成を追加する必要があります）。
 
 **修正**
 
@@ -44,7 +71,7 @@
 
 **修正**
 
-- 友達資料に関する問題。
+- 友達データに関する問題。
 
 
 ### 2.23.1 @2022.9.29
@@ -70,7 +97,7 @@
 - SDKは、中国本土以外の環境をサポートします。
 - [getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTotalUnreadMessageCount)はセッション未読総数の取得をサポートします。
 - [TOTAL_UNREAD_MESSAGE_COUNT_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOTAL_UNREAD_MESSAGE_COUNT_UPDATED)、導入側がこのイベントをリスニングするとセッション未読合計数の変更の通知を取得できます。
-- [markGroupMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markGroupMemberList)は、ライブブロードキャストグループのグループメンバをタグつけることをサポートします（Ultimate Editionの有効化が必要です）。
+- ライブストリーミンググループのグループメンバをタグつける[markGroupMemberList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markGroupMemberList)。
 - グループメンバーがグループから追放されるか、グループが解散されると、SDKがこのグループセッションが存在するセッションのサブグループを同期的に更新しました。
 - 独立したパッケージングをサポートします。
 - Webマルチインスタンスのサインオンシーンで、ネットワークが切断されて再接続された後、SDKが最近使用した連絡先のメッセージ履歴を自動で回復し、メッセージの信頼性を保証します。
@@ -85,8 +112,8 @@
 **追加**
 
 - uni-appでnative appへのパッケージ化時にオフライン配信を使用することをサポートします。[registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin)をご参照ください。
-- ライブブロードキャストグループのオンラインメンバーリストを取得することをサポートします。[getGroupMemberList ](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberList)（Ultimate Editionが必要）をご参照ください。
-- ライブブロードキャストグループのメンバーブロックをサポートします。[deleteGroupMember](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteGroupMember)（Ultimate Editionが必要）をご参照ください。
+- ライブストリーミンググループのオンラインメンバーリストを取得することをサポートします。[getGroupMemberList ](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberList)（Ultimate Editionが必要）をご参照ください。
+- ライブストリーミンググループのメンバーブロックをサポートします。[deleteGroupMember](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteGroupMember)（Ultimate Editionが必要）をご参照ください。
 - セッションのカスタムデータを設定する[setConversationCustomData](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setConversationCustomData)。
 - セッションをタグつける[markConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markConversation)（Ultimate Editionが必要）。
 - セッションのサブグループリストを取得する[getConversationGroupList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getConversationGroupList)（Ultimate Editionが必要）。
@@ -122,9 +149,8 @@
 - ユーザーの状態をサブスクリプションする[subscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#subscribeUserStatus)。
 - ユーザーの状態のサブスクリプションを解除する[unsubscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#unsubscribeUserStatus)。
 - グループメッセージやトピックメッセージの通知オフ設定を多端末と多インスタンスで同期する[setMessageRemindType](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setMessageRemindType)。
-- [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage)は、ファイルメッセージの送信をサポートします。
 - すべてのタイプのメッセージのcloudCustomDataの変更をサポートする[modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage)。
-- ライブブロードキャストグループでメッセージをブロードキャストするため、[Message](https://web.sdk.qcloud.com/im/doc/en/Message.html)の新しいフィールドisBroadcastMessageを追加しました。
+- ライブストリーミンググループでメッセージをブロードキャストするため、[Message](https://web.sdk.qcloud.com/im/doc/en/Message.html)の新しいフィールドisBroadcastMessageを追加しました。
 - グループ参加オプションのマルチ端末とマルチインスタンス同期をサポートします。
 - 一般コミュニティとトピックの@全員およびトピックlastMessageをサポートします。
 
@@ -166,7 +192,7 @@
 
 **変更**
 
-- [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList)によるローミングメッセージのプル体験を改善・最適化しました。
+- [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList)によるローミングメッセージのプル体験を改善、最適化しました。
 
 **修正**
 
@@ -239,7 +265,7 @@
 
 **修正**
 
-WindowsでAndroid app（一部のデバイス）をパッケージ化してアクセスする場合、ログインできないという問題。
+Android app（一部のデバイス）をパッケージ化するuni-appをWindowsでアクセスする場合、ログインできないという問題。
 
 ### 2.16.2 @2022.2.10
 
@@ -257,7 +283,7 @@ WindowsでAndroid app（一部のデバイス）をパッケージ化してア�
 **追加**
 
 - Alipayが.imageサフィックスが付いた画像を送信することをサポートしました。
-- セッション[deleteConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteConversation)を削除すると同時に、履歴メッセージを削除しました。
+- セッション[deleteConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteConversation)を削除すると同時に、履歴メッセージを削除します。
 
 **修正**
 
@@ -276,7 +302,7 @@ WindowsでAndroid app（一部のデバイス）をパッケージ化してア�
 
 **変更**
 
-- SDKが[厳格モード](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode)を使用します。
+- SDKが[厳格モード](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Strict_mode)を使用します。
 - セッションリストは、削除されたアカウントとのセッションをフィルタリングします。
 - ローミングメッセージの`nick`と`avatar`の更新タイミングを最適化しました。
 - 相手側（フレンド）のプロファイル更新を受け取った後、対応して`conversation.userProfile`を更新しました。
@@ -444,11 +470,11 @@ C2Cセッションメッセージリストの`avatar`（プロフィール画像
 **追加**
 
 - C2Cメッセージの送受信に`avatar`（プロフィール画像）と`nick`（ニックネーム）が添付されます。
-- Tencent Cloud IMアップロードプラグイン[tim-upload-plugin](https://www.npmjs.com/package/tim-upload-plugin)をサポートするようになりました。ファイルのアップロードがより速く、より安全になります。Web版、Baidu（百度）、Toutiao（頭条）、Alipayプラットフォームに対応し、容量はわずか26KBです。利用方法の詳細については、[registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin)をご参照ください。
+- Tencent Cloud IMのアップロードプラグイン[tim-upload-plugin](https://www.npmjs.com/package/tim-upload-plugin)をサポートするようになりました。ファイルのアップロードがより速く、より安全になります。Web版、Baidu（百度）、Toutiao（頭条）に対応し、容量はわずか26KBです。利用方法の詳細については、[registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin)をご参照ください。
 
 **修正**
 
-- ログアウトした後に匿名でライブブロードキャストグループに参加すると、ロングポーリングのレスポンスにエラーコード70402が発生する問題。
+- ログアウトした後に匿名でライブストリーミンググループに参加すると、ロングポーリングのレスポンスにエラーコード70402が発生する問題。
 - Taro 3.0+統合時にブラウザ環境でエラーと判断される問題。
 - 画像のタイプとサイズの検証失敗時、返されるデータ構造が不正。
 
@@ -474,7 +500,7 @@ C2Cセッションメッセージリストの`avatar`（プロフィール画像
 **修正**
 
 - 開封確認と既読通知が同時に存在するとき、SDKにランタイムエラーが起きる問題。
-- ライブブロードキャストグループをログアウトした後に、匿名で再び参加すると失敗する問題。
+- ライブストリーミンググループをログアウトした後に、匿名で再び参加すると失敗する問題。
 - グループリストが異常により消去される問題。
 
 ### 2.8.4 @2020.11.4
@@ -532,7 +558,7 @@ SDKの容量を縮小しました。[tim-js-sdk](https://www.npmjs.com/package/t
 
 **修正**
 
-- 長時間切断された後、ネットワークに再接続すると、ライブブロードキャストグループがメッセージを取得できなくなることがある問題。
+- ネットワークが長時間切断した後に再接続したとき、またはバックエンドに長時間切り替えた後にフロントエンドに戻したときに、ライブストリーミンググループのメッセージが時々プルできなくなる問題。
 - 画像メッセージimageFormatのタイプおよび値が、実際の画像形式と一致しない問題。
 - Work・Publicのグループニックネームがおかしくなる問題。
 
@@ -540,7 +566,7 @@ SDKの容量を縮小しました。[tim-js-sdk](https://www.npmjs.com/package/t
 
 **修正**
 
-ライブブロードキャストグループ(AVChatRoom)を長時間使用するとメッセージがプルできなくなることがある問題。
+ライブストリーミンググループ（AVChatRoom）を長時間使用するとメッセージがプルできなくなることがある問題。
 
 ### 2.7.5 @2020.7.2
 
@@ -642,7 +668,7 @@ COSアップロードのサイン失効後にすみやかに更新しないと�
 
 **修正**
 
-オーディオビデオチャットルーム(AVChatRoom)の受信側が受信するメッセージの優先度と送信側で設定するメッセージ優先度が一致しない問題。
+オーディオビデオチャットルーム（AVChatRoom）の受信側が受信するメッセージの優先度と送信側で設定するメッセージ優先度が一致しない問題。
 
 ### 2.5.0 @2020.2.28
 
@@ -688,7 +714,7 @@ COSアップロードのサイン失効後にすみやかに更新しないと�
 **変更**
 
 - [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage)で、アップロードするファイルサイズを20Mから100Mに変更しました。
-- [グループプロンプトメッセージ](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GroupTipPayload)の`msgMemberInfo`および`shutupTime`はまもなく破棄されます。代替として`memberList`および`muteTime`を使用してください。
+- [グループプロンプトメッセージ](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GroupTipPayload)の`msgMemberInfo`および`shutupTime`はまもなく廃棄されます。代替として`memberList`および`muteTime`を使用してください。
 - コンソールで[IM AIBotエントリー](https://cloud.tencent.com/act/event/smarty-service?from=im-doc)を追加しました。
 
 **修正**
