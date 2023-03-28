@@ -3,16 +3,17 @@
 **创建转码模板有以下两种方式：**
 
 - 通过云直播控制台创建转码模板，具体操作步骤请参见 [创建标准转码模板](#C_trans)、[创建极速高清转码模板](#C_topspeed)、[创建纯音频转码模板](#C_audio)。
-- API 对直播频道创建转码模板，具体参数及示例说明请参见 [创建转码模板](https://intl.cloud.tencent.com/document/product/267/30790)。
+- API 对直播频道创建转码模板，具体参数及示例说明请参见 [创建转码模板](https://www.tencentcloud.com/document/product/267/30790)。
 
 
 ## 注意事项
 - 云直播支持标准转码、极速高清转码和纯音频转码，使用前请了解相关计费说明：
-   - 标准转码：[标准转码后付费](https://intl.cloud.tencent.com/document/product/267/39604)。
-   - 极速高清转码：[极速高清转码后付费](https://intl.cloud.tencent.com/document/product/267/39604)。
+   - 标准转码：[标准转码资源包](https://www.tencentcloud.com/document/product/267/52220#standard_pag)、[标准转码后付费](https://intl.cloud.tencent.com/document/product/267/39604)。
+   - 极速高清转码：[极速高清转码资源包](https://www.tencentcloud.com/document/product/267/52220#topspeed_pag)、[极速高清转码后付费](https://intl.cloud.tencent.com/document/product/267/39604)。
 - **极速高清转码**相比**标准转码**画质更优、码率更低。通过智能场景识别、动态编码技术，CTU/行/帧三级码率精准控制模型，实现以更低的码率（平均节省50%+）提供更高清的流媒体服务。广泛运用于游戏直播、秀场直播、事件活动直播等场景。
 - 模板创建成功后，可与播放域名进行关联。关联成功后约5分钟 - 10分钟生效。
-- 绑定转码模板后，可在对应的直播流 StreamName 后加上 `_转码模板名称` 来生成转码流地址。若同时设置了宽高或长短边，推流原始分辨率尽可能接近设置值的比例，以避免画面拉伸变形。
+- 绑定转码模板后，可在对应的直播流 StreamName 后加上 `_转码模板名称` 来生成转码流地址。**转码模板名**和 **StreamName** 后缀不能相同，比如转码模板名为 `hd`，StreamName 不能为 `test_a1_hd`，否则播放时，程序会将 `test_a1` 识别为 StreamName，按转码模板 `hd` 来拉流，导致拉流异常。
+- 若同时设置了宽高或长短边，推流原始分辨率尽可能接近设置值的比例，以避免画面拉伸变形。
 - 绑定转码模板后，会在对应的模板下显示绑定规则，若您是通过 API 创建的更细维度规则，也可以在此进行查看和 [解绑](#untie)。
 - 单个播放域名可关联**多个转码模板**，单个转码模板可关联**多个播放域名**。
 - 转码模板设置数量上限为**50个**。
@@ -28,7 +29,7 @@
   - 高级配置项（非必填）：单击 **高级配置** 展开内容即可选择配置，具体请参见 [标准转码高级配置说明](#C_trans_high)。
 3. 填写完成后，单击 **保存** 即可。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/a687312d5f0cb459a9684fe9f2de6459.png)
+<img src="https://qcloudimg.tencent-cloud.cn/raw/d67e6aa3cc7d5bc0ddfe6f47342b6a24.png" style="zoom:67%;" />
 
 <table id="C_trans_normal">
 <tr><th width="20%">标准转码基础配置项</th><th>是否必填</th><th>说明</th></tr>
@@ -51,7 +52,7 @@
 </tr><tr>
 <td>视频码率 <br>（单位：Kbps）</td>
 <td>是</td>
-<td>输出平均码率，取值范围：100Kbps - 8000Kbps。<ul style="margin:0">
+<td>输出平均码率，取值范围：101Kbps - 8000Kbps。<ul style="margin:0">
   <li>1000Kbps以内仅支持整百填写。</li>
   <li>1000Kbps以上仅支持整500填写。</li></ul>
 </td>
@@ -59,7 +60,12 @@
 <td>画面分辨率</td>
 <td>是</td>
 <td>默认 <b>按宽高设置</b>。<li>输入值为高度值，可切换为 <b>按长短边设置</b>，输入值为短边值。<li>输入值范围为 0px - 3000px，数值填写需为2的倍数，另一边默认会按分辨率等比例缩放。</td>
+</tr><tr>
+<td>DRM 加密</td>
+<td>否</td>
+<td>要开启该功能，请先前往 DRM 管理配置 DRM 密钥。支持 HLS 播放协议下 Widevine、Fairplay、NormalAES 的 DRRM 加密，Fairplay 需要在播放器端上传 Apple 申请的证书。</td>
 </tr></table>
+
 
 
 <table id="C_trans_high">
@@ -67,7 +73,7 @@
 <tr>
 <td>编码方式</td>
 <td>否</td>
-<td>默认原始编码，可选 H.264 和 H.265 两种编码方式。</td>
+<td>默认原始编码，可选 H.264 、 H.265 和 AV1 编码方式。</td>
 </tr><tr>
 <td>视频帧率</td>
 <td>否</td>
@@ -82,9 +88,6 @@
 <td>默认关闭，可手动开启。<br>开启参数限制后，当输入的直播流原始参数小于设置的输出参数时，将按照原始参数输出直播流，可以防止低质量直播流被强行拉高参数值，影响实际画面。</td>
 </tr></table>
 
-
-   
-
 [](id:C_topspeed)
 
 ### 创建极速高清转码模板
@@ -94,7 +97,7 @@
   - 高级配置项（非必填）：单击 **高级配置** 展开内容即可选择配置，具体请参见 [极速高清转码高级配置说明](#C_topspeed_high)。
 3. 单击 **保存** 即可。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/54a0334f1d24f7e0acb4e4f923b27d23.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/54965fbb96dc3a1ac6c51793b579954a.png)
 
 <table  id="C_topspeed_normal">
 <tr><th width="20%">极速高清转码基础配置项</th><th>是否必填</th><th>说明</th>
@@ -117,7 +120,7 @@
 </tr><tr>
 <td>视频码率 <br>（单位：Kbps）</td>
 <td>是</td>
-<td>输出平均码率，取值范围：100Kbps - 8000Kbps。<li>1000Kbps以内仅支持整百填写。</li><li>1000Kbps以上仅支持整500填写。</li></td>
+<td>输出平均码率，取值范围：101Kbps - 8000Kbps。<li>1000Kbps以内仅支持整百填写。</li><li>1000Kbps以上仅支持整500填写。</li></td>
 </tr><tr>
 <td>画面分辨率</td>
 <td>是</td>
@@ -151,7 +154,7 @@
 1. 登录云直播控制台， **功能配置** > [**直播转码**](https://console.cloud.tencent.com/live/config/transcode)。
 2. 单击 **创建转码模板**，选择转码类型为『**纯音频转码**』，填写 [配置项](#C_audio_normal)，并单击 **保存**即可。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/3cfe98bcc9f21c445e5db220a9ea0673.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6e51f4ba0d495176203d2a65a4a4dc57.png)
 
 <table id="C_audio_normal">
 <tr><th width="20%">纯音频转码基础配置项</th><th>是否必填</th><th>说明</th>
@@ -175,41 +178,37 @@
 <td>是</td>
 <td>可选择保持<b>原始音频码率</b>和<b>设置音频码率</b>，设置音频码率取值范围：101kbps - 500kbps。</td>
 </tr>
+</tr><tr><td>DRM 加密</td><td>否</td><td>要开启该功能，请先前往 DRM 管理配置 DRM 密钥。支持 HLS 播放协议下 Widevine、Fairplay、NormalAES 的 DRRM 加密，Fairplay 需要在播放器端上传 Apple 申请的证书。</td>
 </tbody></table>
-
 
 [](id:related)
 ## 关联域名
 1. 登录云直播控制台，进入 **功能配置** > [**直播转码**](https://console.cloud.tencent.com/live/config/transcode)。
 2. 通过以下方式进入域名绑定窗口：
   - **直接关联域名：**单击左上方的 **绑定域名**。
-    ![](https://qcloudimg.tencent-cloud.cn/raw/7bcbc02fbc3ec3390ed16475b62482c5.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/6e7b5d21d7211b08993ccd648c08ea39.png)
   - **新转码模板创建成功后关联域名**： [转码模板创建](#create) 成功后，单击提醒框中的 **去绑定域名**。
-    ![](https://qcloudimg.tencent-cloud.cn/raw/2927d94d3e07f7344b6d740593265a0b.png)
+    ![](https://qcloudimg.tencent-cloud.cn/raw/e46853c98ef7a78b4758b5d516d2db22.png)
 3. 在域名绑定窗口中，选择您需绑定的**转码模板**及**播放域名**，单击 **确定**即可绑定成功。
-![](https://qcloudimg.tencent-cloud.cn/raw/1dc995d90d354e72613c699d59836f05.png)
->?支持通过单击 **添加**为当前模板绑定多个播放域名。
-
-
+![](https://qcloudimg.tencent-cloud.cn/raw/19098af218a1e131310677e3fa4b6cd7.png)
+>? 支持通过单击 **添加**为当前模板绑定多个播放域名。
 
 [](id:untie)
 ## 解除绑定
 1. 登录云直播控制台，进入 **功能配置** > [**直播转码**](https://console.cloud.tencent.com/live/config/transcode)。
 2. 选择已关联域名的转码模板，单击 **解绑**。
-![](https://main.qcloudimg.com/raw/59ecf14bea1e5b3ffa7b1fe6da0d565b.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/06d982f8c5ce34375945196485dfee59.png)
 3. 确认是否解绑当前关联域名，单击 **确定**即可解绑。
-![](https://main.qcloudimg.com/raw/e335a8c597413b90dfabda9a1f7f3150.png)
-
-
+![](https://qcloudimg.tencent-cloud.cn/raw/fcb7537e8ab238617920fd54347da6da.png)
 
 [](id:modify)
+
 ## 修改模板
 1. 登录云直播控制台，进入 **功能配置** > [**直播转码**](https://console.cloud.tencent.com/live/config/transcode)。
 2. 选择您已创建成功的转码模板，并单击右侧的 **编辑**，进入修改模板信息。
 3. 单击 **保存**即可。
-![](https://main.qcloudimg.com/raw/202923ad5334c6ee3e5a879042aa0d5c.png)
 
-
+![](https://qcloudimg.tencent-cloud.cn/raw/995e1529ba890505c2db7ecc0788fac4.png)
 
 [](id:delect)
 ## 删除模板
@@ -217,14 +216,10 @@
 
 1. 登录云直播控制台，进入 **功能配置** > [**直播转码**](https://console.cloud.tencent.com/live/config/transcode)。
 2. 选择未关联播放域名的转码模板，单击 **删除**。
-![](https://main.qcloudimg.com/raw/c3109628fcb4a5a4fabce8ad58c03db5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/201fbd96756e417eb01bc4c4162c3a3e.png)
 3. 确认是否删除当前转码模板，单击 **确定**即可成功删除。
-![](https://qcloudimg.tencent-cloud.cn/raw/0e27dc5c0ebfc2915161894c3d6a337c.png)
-
-
+![](https://qcloudimg.tencent-cloud.cn/raw/e9062327d9cae6164254af7454c878de.png)
 
 
 ## 相关操作
 域名维度**绑定**和**解绑**转码模板的具体操作及相关说明，请参见 [转码配置](https://intl.cloud.tencent.com/document/product/267/31062)。
-
-
