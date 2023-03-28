@@ -725,6 +725,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 65.[Key Management Service](https://www.tencentcloud.com/document/product/1030/53637).
 66.[App Flow](https://www.tencentcloud.com/document/product/1165/54051).
 67.[Low-code Interactive Classroom](https://www.tencentcloud.com/document/product/1168/54190).
+68.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54257).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
