@@ -31,7 +31,7 @@
  <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/47615">自定义 Cache Key</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/48548">节点缓存预刷新</a></td>
+ <td align="left"><a href="https://www.tencentcloud.com/document/product/1145/48548">缓存预刷新</a></td>
 </tr>
 <tr>
 <td rowspan=6>网络优化</td>
@@ -80,16 +80,16 @@
 <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356">HTTPS 配置</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356"">回源 HTTPS</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356">回源 HTTPS</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356"">HSTS 配置</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356">HSTS 配置</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356"">TLS 版本</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356">TLS 版本</a></td>
 </tr>
 <tr>
- <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356"">OCSP 装订</a></td>
+ <td align="left"><a href="https://intl.cloud.tencent.com/document/product/1145/46356">OCSP 装订</a></td>
 </tr>
 <tr>
 <td rowspan=3>修改 HTTP 头</td>
