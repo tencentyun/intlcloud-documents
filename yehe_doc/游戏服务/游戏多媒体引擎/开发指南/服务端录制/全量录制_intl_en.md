@@ -49,7 +49,7 @@ After full recording is enabled, all voice chat rooms will be recorded. You can 
 #### Recording task event notification
 
 - A recording task event will be notified to the configured callback URL through the callback mechanism. If such an event occurs, you will receive a callback notification such as **Recording started**, **Recording stopped**, or **The recording file has been uploaded**.
-- For the specific callback information, see [Recording Callback Description]().
+- For the specific callback information, see [Recording Callback Description](https://www.tencentcloud.com/document/product/607/53749).
 
 
 
@@ -66,7 +66,7 @@ With GME's server-side recording, recording files will be stored in the specifie
 ### 5. Recording file naming convention
 
 - User single-stream recording files: bizid_roomid_userid/${task start time}_${id}_audio.mp3
-- Room mixed-stream recording file: bizid_roomid/${taskid}_${task start time}_${id}_audio.mp3
+- Room mixed-stream recording file: bizid_roomid/${taskid} _${task start time} _${id}_audio.mp3
 
  ***bizid***: GME application ID, which can be obtained in the [GME console](https://console.tencentcloud.com/gamegme).
  ***roomid***: Voice chat room ID, which is defined and passed in to the GME SDK when you use the voice chat service.
