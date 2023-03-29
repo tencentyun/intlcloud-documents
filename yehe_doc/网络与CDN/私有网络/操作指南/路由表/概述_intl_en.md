@@ -38,7 +38,7 @@ Equal-cost multipath (ECMP) routing means there are multiple equal-cost routes t
 </tr>
 <tr>
 <td>NAT Gateway</td>
-<td>No</td>
+<td>Yes</td>
 <td>N/A</td>
 </tr>
 <tr>
