@@ -14,7 +14,7 @@ The feature of custom audio package attached with message allows you to attach c
 
 ## Use Limits
 
-Calling this API must meet two requirements: the room type should be **Standard** or **HD** (ITMG_ROOM_TYPE_STANDARD or ITMG_ROOM_TYPE_HIGHQUALITY); The mic of the sender and the speaker of the receiver are both on.
+Calling this API must meet two requirements: the room type should be [Standard or HD](https://www.tencentcloud.com/document/product/607/18522) (ITMG_ROOM_TYPE_STANDARD or ITMG_ROOM_TYPE_HIGHQUALITY); The mic of the sender and the speaker of the receiver are both on.
 
 ## Integrating Custom Message Feature
 
