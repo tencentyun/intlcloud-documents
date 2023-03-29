@@ -119,7 +119,7 @@ type NotifyConfigCallBackMqConfig struct {
 | 参数名称  | 描述                                   | 类型      | 是否必选 |
 | --------- | -------------------------------------- | --------- | --------- |
 | Tag       | 创建任务的 Tag，目前仅支持：FileCompress | String    | 是         |
-| Input     | 待操作的文件对象。详情见 [Input](https://intl.cloud.tencent.com/document/product/436/53991) | Container | 是         |
+| Input     | 待操作的文件对象。详情见 [Input](https://www.tencentcloud.com/document/product/436/53995) | Container | 是         |
 | Operation | 操作规则                               | Container | 是         |
 | Operation.FileCompressConfig | 指定文件打包压缩的处理规则。详情见 [FileCompressConfig](https://intl.cloud.tencent.com/document/product/436/53995) | Container | 是         |
 | Operation.FileCompressResult | 多文件打包压缩的结果，任务未完成时不返回。详情见 [FileCompressResult](https://intl.cloud.tencent.com/document/product/436/53995) | Container | 否         |

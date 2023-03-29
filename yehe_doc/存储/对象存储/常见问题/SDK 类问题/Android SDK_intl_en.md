@@ -17,7 +17,7 @@ To upload files to or download files from an external storage device, you must h
 If you access COS via a proxy, check whether the proxy supports HTTPS. If not, please [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 ### What do I do if the upload progress reaches 100%, while the `onFailed` method is called?
-The 100% upload progress indicates only the SDK packet sending progress. The upload is successful only when the `onSuccess` method is called. If an exception occurs when the `Complete Multipart Upload` request is sent, the `onFailed` method will be called.
+The 100% upload progress indicates only the SDK packet sending progress. The upload is successful only when the `onSuccess` method is called. If an exception occurs when the `Complete Multipart Upload` request is sent, the `onFailed` API will be called to indicate the upload failure. You can view the detailed exception and solutions based on the `onFailed` callback information.
 
 ### What do I do if an error, such as `400 Bad Request` and `409 Conflict`, occurs in a multipart upload?
 Use the advanced API `TransferManager` provided by the SDK for upload/download if possible. Encapsulating the multipart upload API may easily cause an error.

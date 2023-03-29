@@ -79,9 +79,9 @@ The nodes are described as follows:
 | actionlist | StrictSignatureConfiguration.Rule | Action list, which can contain up to 200 actions. | Container | No |
 | action | StrictSignatureConfiguration.Rule.actionlist | The action specified by the rule, which should be named in the same way as authorized actions in CAM and supports wildcards, such as `Put*`. | String | No |
 | headerlist | StrictSignatureConfiguration.Rule | The list of up to 20 headers that must be signed as required by the rule. | Container | No |
-| headerlist | StrictSignatureConfiguration.Rule.headerlist | Request headers that must be signed. For specific request headers, see [Supported request headers](redirect to the "Supported request headers" section in the Strict Signature Mode Overview document). | String | No |
+| headerlist | StrictSignatureConfiguration.Rule.headerlist | Request headers that must be signed. For specific request headers, see [Supported request headers](https://www.tencentcloud.com/document/product/436/53892). | String | No |
 | paramlist | StrictSignatureConfiguration.Rule | The list of up to 20 request parameters that must be signed as required by the rule. | Container | No |
-| param | StrictSignatureConfiguration.Rule.paramlist | Request parameters that must be signed. For specific request parameters, see [Supported request parameters](redirect to the "Supported request parameters" section in the Strict Signature Mode Overview document). | String | No |
+| param | StrictSignatureConfiguration.Rule.paramlist | Request parameters that must be signed. For specific request parameters, see [Supported request parameters](https://www.tencentcloud.com/document/product/436/53892). | String | No |
 
 #### Error codes
 

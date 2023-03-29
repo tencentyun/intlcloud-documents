@@ -10,11 +10,11 @@ We will use the collected information to create and verify your account, enable 
 
 #### Who do we share the collected personal information with?
 
-We share your information with our third party service providers, related group companies and as required by law. See below at [How we share and store your Personal Information](#3) for more information.
+We share your information with our third party service providers, related group companies and as required by law. See below at [How We Disclose and Store Your Personal Information](#3) for more information.
 
 #### Where do we process the collected personal information?
 
-Our servers may be located outside of the country you are located, for example in Mainland China. See below at [How we share and store your Personal Information](#3) for more information.
+Our servers may be located outside of the country you are located, for example in Mainland China. See below at [How We Disclose and Store Your Personal Information](#3) for more information.
 
 #### How long do we hold on to the collected personal information?
 
@@ -114,9 +114,9 @@ We will use the information in the following ways and in accordance with the fol
 We may process and collect other personal information from you from time to time for specific reasons, such as when you try our demo versions on our Services for a specific Feature. For example, when you input or upload data on the demo version of our Instant Messaging feature (such as by sending chat messages and notices, or changing chat names), we will process such data in order to enable you to experience the interface and functions, and delete such data within forty-eight (48) hours. We may also otherwise provide more information on the way we process personal information (including information on any changes to the way we process that personal information that may differ to this privacy policy), such as on our product pages. 
 
 <span id="3"></span>
-### How We Share and Store Your Personal Information
+### How We Disclose and Store Your Personal Information
 
-We may share your personal information with selected third parties in and outside your country, including:
+We may disclose your personal information with selected third parties in and outside your country, including:
 
 -   **Third Parties** where we use a third party service to: (a) process payments ; (b) provide customer support (including provision of a support database and ticketing); (c) send SMS service notification; or (d) provide other services, support, features or functionality as part of the Services, including those listed on our [Third Parties](https://intl.cloud.tencent.com/document/product/1033/32281) page.
 
@@ -222,7 +222,7 @@ Last updated: 12 / 07 / 2020
 
 This Addendum to the Tencent Cloud Privacy Policy (the "Addendum") is to address matters that are necessary to process your personal information in compliance with the Personal Information Protection Act (the "PIPA") of Korea. Please refer Tencent Cloud Privacy Policy for more details on the conditions of using the Services.
 
-### How We Share and Store Your Personal Information
+### How We Disclose and Store Your Personal Information
 
 a.  We delegate the processing of your personal information as described below, and the delegatees may process your personal information according to the purpose of the delegation:
 
@@ -291,17 +291,21 @@ If you need to report or consult any invasion of private information issue then 
 
  - Korean National Policy Agency’s Cyber Investigation Bureau (ecrm.cyber.go.kr/minwon / dial 182)
 
-### California
+### UNITED STATES
 
-The terms of this Addendum apply to residents of California under the California Consumer Privacy Act (“CCPA”) and other applicable laws. The CCPA provides California residents with certain legal rights such as access, deletion, disclosure, or “do not sell.” These rights are not absolute and are subject to certain exceptions.
+The terms of this Addendum apply to residents of the United States under the California Consumer Privacy Act, as amended by the California Privacy Rights Acts (“CCPA”) , the Colorado Privacy Act, Connecticut’s Act Concerning Personal Data Privacy and Online Monitoring, the Utah Consumer Privacy Act and the Virginia Consumer Data Protection Act (collectively, the “U.S. Privacy Laws”). The U.S. Privacy Laws provide certain U.S. residents with certain legal rights regarding their personal information such as the right to request access, deletion and correction. These rights are not absolute and are subject to certain exceptions. For purposes of this Addendum, “consumer”, “you” and “your” means users of the Services, job applicants and representatives of entities with whom we engage in relation to the Services.
 
-***Collection and Disclosure of Personal Information***
+***Do Not Track (DNT)***
 
-***Over the past 12 months, through your use of the Services, we may have collected and disclosed the following categories of personal information from or about consumers, as defined in the CCPA:***
+Your browser settings may allow you to transmit a “do not track” signal, “opt-out preference” signal or other mechanism for exercising your choice regarding the collection of your personal information when you visit various websites.  Like many websites, our website is not designed to respond to such signals, and we do not use or disclose your personal information in any way that would legally require us to recognize opt-out preference signals.
+
+***Collection, Use and Disclosure of Personal Information***
+
+<b><i>Over the past 12 months, through your use of the Services, we may have collected and disclosed the following categories of personal information, including sensitive personal information (as denoted by *):</i></b>
 
 - Identifiers, including name, email address, mobile number, IP address, device identifiers, Tencent Cloud ID, mailing address, government-issued identification, and verification codes transmitted to or from the device. This information is collected directly from the consumer or device.
 - Internet or other electronic network activity information, including the User Agent or website browser, log metadata associated with the consumer’s interactions with Tencent Cloud, and Tencent Cloud customer support incident details (as well as response steps associated with customer service tickets). This information is collected directly from the consumer or device.
-- Geolocation data, including location data derived from IP address provided directly to us from the device. The Wi-Fi access point data can be used to understand location data at a zip-code level, whereas the GPS information provided by the device can more precisely track the device’s current coordinates. This information is collected directly from the device.
+- Geolocation data, including location data derived from IP address provided directly to us from the device. The Wi-Fi access point data can be used to understand location data at a zip-code level. This information is collected directly from the device.
 - Commercial information, including payment card information and transaction records (such as information about purchased Services, such as the activation code and date of purchase). This information is collected directly from the consumer or device.
 
 ***We collect personal information for the following purposes and as described in the applicable Module:***
@@ -312,34 +316,39 @@ The terms of this Addendum apply to residents of California under the California
 - For security and verification purposes, including to prevent and detect fraudulent activity; and
 - To address and remediate technical issues and bugs.
 
-For additional information about what each type of personal information is used for, see [this chart](#2) in the main portion of the Privacy Policy.
+For additional information about what each type of personal information is used for, see [this chart](#2) in the main portion of the Privacy Policy. We do not collect, use or disclose your personal information, including sensitive personal information, for purposes other than those specified in this Privacy Policy. Further, we only use and disclose sensitive personal information for purposes permitted by U.S. Privacy Laws, or otherwise with your consent.
 
 We disclose personal information to the following types of entities:
 
 - Our affiliate companies within our corporate group who process personal information in order to operate the Services
 - Other companies that provide services on our behalf who are prohibited by contract from retaining, using, or disclosing personal information for any purpose other than for providing the services to us
 - Regulators and judicial authorities and law enforcement agencies
-- Entities that acquire all or substantially all of our business
+- Entities that acquire or are in the process of acquiring all or substantially all of our business
 
-***In the past 12 months, we have not sold personal information of California residents within the meaning of “sold” in the CCPA.***
+***In the past 12 months, we have not sold personal information of U.S. residents within the meaning of “sold” in the U.S. Privacy Laws and have not shared personal information of California residents within the meaning of “share” in the CCPA. Further, we do not have actual knowledge that we sell or “share” personal information of residents under 16 years of age.***
 
-***Rights under the CCPA***
-If you are a California resident and the CCPA does not recognize an exemption that applies to you or your personal information, you have the right to:
+***Rights under the U.S. Privacy Laws***
+If you are a U.S. resident and the U.S. Privacy Laws do not recognize an exemption that applies to you or your personal information, you have the right to:
 
-- Request we disclose to you free of charge the following information covering the 12 months preceding your request:
+- Request we disclose to you free of charge certain information about you. If you are a California resident, you may request that we disclose the following information:
     - the categories of personal information about you that we collected;
     - the categories of sources from which the personal information was collected;
     - the purpose for collecting personal information about you;
     - the categories of third parties to whom we disclosed personal information about you and the categories of personal information that was disclosed (if applicable) and the purpose for disclosing the personal information about you; and
     - the specific pieces of personal information we collected about you;
-- Request we delete personal information we collected from you, unless CCPA recognizes an exemption; and
-- Be free from unlawful discrimination for exercising your rights including providing a different level or quality of services or deny goods or services to you when you exercise your rights under the CCPA.   
+- Request we delete personal information we collected about you;
+- Request we correct inaccurate personal information that we maintain about you; and
+- Be free from unlawful discrimination for exercising your rights including providing a different level or quality of services or deny goods or services to you when you exercise your rights.   
 
-We aim to fulfill all verified requests within 45 days pursuant to the CCPA.  If necessary, extensions for an additional 45 days will be accompanied by an explanation for the delay.
+We aim to fulfill all verified requests within 45 days. If necessary, extensions for an additional 45 days will be accompanied by an explanation for the delay.
 
 ***How to Exercise Your Rights***
 
-First, you may wish to log into your account and manage your data from there. If you are a California resident to whom the CCPA applies, you may exercise your rights, if any, to other data by contacting us at cloudlegalnotices@tencent.com.
+First, you may wish to log into your account and manage your data from there. If you are a U.S. resident to whom the U.S. Privacy laws apply, you may exercise your rights, if any, to other personal information by contacting us at cloudlegalnotices@tencent.com.
+
+Only you, or someone that you authorize to act on your behalf, may make a request regarding your personal information. An authorized agent may make a request by providing written permission assigned by you. As part of the identify verification process for the purpose of handling your data subject request, you are required to log into your existing account and we may ask you additional information (including but not limited to country of registration, cloud resources purchased, and mobile number registered) to make your account verifiable. 
+
+In addition, where applicable, we will provide you with more information about our appeal process. When you submit a request or launch an appeal, we will limit our collection of your information to only what is necessary to securely fulfill your request or process your appeal.
 
 ### BRAZIL
 
@@ -490,7 +499,7 @@ You are entitled to the following rights, to the extent provided by applicable l
 By consenting to this Privacy Policy, you consent to us:
  - collecting and processing your personal information as described in the section “[How We Use Your Personal Information](#2)”;
  - sharing your personal information with third parties, companies within our corporate group, and a third party that acquires substantially all or substantially all of us or our business, as described in this Privacy Policy and for the purposes stated herein; and
- - transferring or storing your personal information in destinations outside the Philippines when the processing shall need to occur outside the Philippines, as described in the section “[How We Store and Share Your Personal Information](#3)”.
+ - transferring or storing your personal information in destinations outside the Philippines when the processing shall need to occur outside the Philippines, as described in the section “[How We Disclose and Store Your Personal Information](#3)”.
 
 ### SAUDI ARABIA 
 You consent to the disclosure, transfer and export of your personal information outside of Saudi Arabia or any other jurisdiction in which you provided it.
@@ -612,7 +621,7 @@ Except as specified above otherwise, we process your personal information by rel
 
 *Transfer, Location and Retention of Personal Information*
 
-We will not share your personal information with any unrelated third party without your consent, except in the circumstances specified in the section “How We Share and Store Your Personal Information” in this Privacy Policy. 
+We will not share your personal information with any unrelated third party without your consent, except in the circumstances specified in the section “How We Disclose and Store Your Personal Information” in this Privacy Policy. 
 
 We will not publicly disclose your personal information, and if we have to make public disclosure thereof, we will inform you of the purpose of the same, the type of information disclosed and the sensitive information that may be disclosed, and obtain your express consent. 
 
