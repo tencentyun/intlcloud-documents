@@ -59,9 +59,9 @@ package main
  
 import (
    "context"
+   "fmt"
    "net/http"
    "net/url"
-   "os"
    "strings"
    "github.com/tencentyun/cos-go-sdk-v5"
 )
@@ -82,7 +82,7 @@ func main(){
    // 1. Upload the object with a string.
    f := strings.NewReader("Hello COS")
  
-   _, err := c.Object.Put(context.Background(), name, f, nil)
+   response, err := c.Object.Put(context.Background(), name, f, nil)
    if err != nil{
        // The error message contains the RequestId field.
        panic(err)
