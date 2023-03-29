@@ -94,7 +94,7 @@ Set audio receiving rules. There will be different receiving effects for the dif
 
 A returned value of QAV_OK indicates the call is successful.
 - If the callback returns 1004, it means the parameter is incorrect. Please check the parameter.
-- If the callback returns 1004, it means the operation is repeated.
+- If the callback returns 1001, it means the operation is repeated.
 - If the callback returns 1201, it means the room does not exist. Please check whether the room number is correct.
 - If the callback returns 10001 and 1005, please call the API again.
 
