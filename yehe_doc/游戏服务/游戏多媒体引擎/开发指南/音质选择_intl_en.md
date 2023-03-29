@@ -6,10 +6,10 @@ This document describes how to choose sound quality in the GME SDK.
 | ------------- |------------ | ---- |---- |---- |---- |---- |
 | ITMG_ROOM_TYPE_FLUENCY			| Smooth	|1| 30 Kbps | 16 kHz |<li>Speaker: Call volume</li><li>Headset: Media volume</li><li>Bluetooth headset: Headset audio capturing over the HFP protocol</li>			| Smooth sound quality and ultra-low delay, which is suitable for group chat in games like FPS and MOBA games.	|
 | ITMG_ROOM_TYPE_STANDARD			| Standard	| 2 | 64 Kbps | 48 kHz |<li>Speaker: Call volume</li><li>Headset: Media volume</li><li>Bluetooth headset: Headset audio capturing over the HFP protocol</li>				| Good sound quality with a moderate latency, which is suitable for voice chat in casual games such as Werewolves and board games.	|
-| ITMG_ROOM_TYPE_HIGHQUALITY		| HD	| 3 |64 Kbps | 48 kHz |<li>Speaker: Media volume</li><li>Headset: Media volume</li><li>Bluetooth headset: Mobile phone audio capturing over the A2DP protocol</li>	| HD sound quality with a relatively high latency, which is suitable for music and dancing games and voice chat applications that require high sound quality such as music playback and online karaoke.	|
+| ITMG_ROOM_TYPE_HIGHQUALITY		| HD	| 3 |64 Kbps | 48 kHz |<li>Speaker: Media volume</li><li>Headset: Media volume</li><li>Bluetooth headset: Mobile phone audio capturing over the A2DP protocol</li>	| HD sound quality with a relatively high latency, which is suitable for music and dancing games that require high sound quality such as music playback and online karaoke.	|
 
 <dx-alert infotype="notice" title="Note">
-If you need to use the standard and HD sound quality levels in the SDK for Unity, Unreal Engine, or Cocos on v2.9.0 or later, see [SDK Version Upgrade Guide](https://www.tencentcloud.com/document/product/607/32363).
+Currently, only the ITMG_ROOM_TYPE_FLUENCY audio quality type is provided by default. To use other audio quality types, [submit a ticket](https://www.tencentcloud.com/account/login?s_url=https%3A%2F%2Fconsole.tencentcloud.com%2Fworkorder%2Fcategory).
 </dx-alert>
 
 
