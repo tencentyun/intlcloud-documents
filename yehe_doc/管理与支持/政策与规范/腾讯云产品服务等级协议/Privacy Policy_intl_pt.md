@@ -504,7 +504,7 @@ Você concorda com a divulgação, transferência e exportação de suas informa
 
 Podemos armazenar suas informações pessoais dentro e fora do seu país, incluindo em Singapura.  Na medida em que os dados são transferidos fora da AEE para processamento (por exemplo, para a China Continental e Singapura), nos baseamos no modelo de contrato da Comissão Europeia para a transferência de dados pessoais para esses países terceiros (ou seja, as cláusulas contratuais padrão), nos termos da Decisão 2001/497/EC (no caso de transferências para um controlador) e da Decisão 2004/915/EC (no caso de transferências para um processador).
 
-O parágrafo intitulado "Acesso, Correção e Exclusão" na Política de Privacidade é excluído e substituído pelo seguinte parágrafo:
+O parágrafo intitulado “Acesso, Correção e Exclusão” na Política de Privacidade é excluído e substituído pelo seguinte parágrafo:
 
 Você pode acessar e corrigir alguns de seus dados no portal da conta a qualquer momento. Se acreditar que há alguma outra informação pessoal que processamos sobre você, ou se não conseguir corrigir informações incorretas, você pode fazer uma solicitação e contatar-nos em **cloudlegalnotices@tencent.com**. Você também poderá ter direito a receber uma cópia de determinadas informações pessoais (consulte Portabilidade abaixo). De acordo com as leis de Singapura, você não tem o direito legal de excluir seus dados, no entanto podemos excluir seus dados depois de nos solicitar. 
 
@@ -524,7 +524,7 @@ Nosso responsável pelo controle de dados na Turquia é Özdağıstanli Ekici Av
 
 Nossos serviços não se destinam a crianças. As crianças não devem usar o Serviço para nenhuma finalidade. Não permitiremos intencionalmente que qualquer pessoa menor de 18 anos se registre em nossos serviços e/ou que forneça qualquer informação de identificação pessoal. Pediremos o consentimento dos pais para crianças menores de 18 anos para qualquer processamento de seus dados pessoais.
 
-Com relação à seção "Como usamos suas informações pessoais", para efeitos da Turquia, a coluna "Base Legal para o Processamento" será considerada alterada de forma que os propósitos para o processamento de informações pessoais para a Turquia sejam os art. 5/2 c e art. 5/2 f da Lei de Proteção de Dados Pessoais nº 6698.
+Com relação à seção “Como usamos suas informações pessoais”, para efeitos da Turquia, a coluna “Base Legal para o Processamento” será considerada alterada de forma que os propósitos para o processamento de informações pessoais para a Turquia sejam os art. 5/2 c e art. 5/2 f da Lei de Proteção de Dados Pessoais nº 6698.
 
 Seus dados pessoais podem ser transferidos e armazenados em servidores localizados na Turquia ou no exterior com o seu consentimento.
 
@@ -563,9 +563,9 @@ O usuário tem o direito de acessar, corrigir e eliminar suas informações pess
 
 ### Adendo da PRC
 
-Os termos deste Adendo são aplicáveis ao processamento de suas informações pessoais caso você selecione a China Continental (excluindo a Região Administrativa Especial de Hong Kong, a RAE de Macau e Taiwan) como Região de Serviço de escolha para o seu uso dos Serviços. Consulte a Política de Privacidade da Tencent Cloud International para saber mais detalhes sobre as condições gerais de uso dos Serviços além da China Continental. Tencent Cloud Computing (Pequim) Co., Ltd. (doravante também denominada como “<b>Tencent Cloud (PRC)</b>”, “**nós**”, “**nos**” e "**nosso**" para os fins deste Adendo) fornece os Serviços na região da China Continental. Processaremos suas informações pessoais de acordo com as leis e regulamentos da China Continental e os requisitos relevantes das autoridades governamentais.
+Os termos deste Adendo são aplicáveis ao processamento de suas informações pessoais caso você selecione a China Continental (excluindo a Região Administrativa Especial de Hong Kong, a RAE de Macau e Taiwan) como Região de Serviço de escolha para o seu uso dos Serviços. Consulte a Política de Privacidade da Tencent Cloud International para saber mais detalhes sobre as condições gerais de uso dos Serviços além da China Continental. Tencent Cloud Computing (Pequim) Co., Ltd. (doravante também denominada como “<b>Tencent Cloud (PRC)</b>”, “**nós**”, “**nos**” e “**nosso**” para os fins deste Adendo) fornece os Serviços na região da China Continental. Processaremos suas informações pessoais de acordo com as leis e regulamentos da China Continental e os requisitos relevantes das autoridades governamentais.
 
-Neste Adendo, o termo "**Serviços**" se refere aos serviços da Tencent Cloud que são oferecidos pela Tencent Cloud (PRC) quando a China Continental é selecionada como Região de Serviço. 
+Neste Adendo, o termo “**Serviços**” se refere aos serviços da Tencent Cloud que são oferecidos pela Tencent Cloud (PRC) quando a China Continental é selecionada como Região de Serviço. 
 
 Ao usar os Serviços, você (a) deve garantir que qualquer informação pessoal coletada e que seja usada por você seja feita de acordo com a lei, sem infringir os direitos legais de qualquer pessoa ou entidade de qualquer forma; (b) afirma que você tem o direito de usar os Serviços para armazenar, transmitir, analisar, distribuir ou processar informações pessoais; (c) compreende e concorda que a PRC pode ter regulamentos relevantes sobre armazenamento e exportação de dados e, antes de usar os Serviços para armazenar ou transmitir informações pessoais, você deve pesquisar e compreender as leis e regulamentos aplicáveis da PRC para cumpri-las, garantindo a conformidade com os regulamentos relevantes; e (d) consente com o processamento de suas informações pessoais pela Tencent Cloud (PRC) de acordo com os termos deste Adendo.
 
@@ -611,13 +611,13 @@ Para fornecer a você os Serviços, usamos as informações coletadas para os se
 
 (7) convidar você a participar em pesquisas sobre os nossos produtos e serviços, apenas com o seu consentimento;
 
-(8) analisar os dados de uso dos Serviços pelos usuários da Tencent Cloud (PRC) para gerar relatórios estatísticos sobre os usuários, análises de negócios e outras informações (doravante denominado coletivamente de "Estatísticas"), e compartilhá-los, publicá-los e exibi-los dentro ou fora da Tencent Cloud (PRC). Garantiremos que as Estatísticas sejam agregadas, anonimizadas e não envolvam informações que possam identificar usuários específicos.
+(8) analisar os dados de uso dos Serviços pelos usuários da Tencent Cloud (PRC) para gerar relatórios estatísticos sobre os usuários, análises de negócios e outras informações (doravante denominado coletivamente de “Estatísticas”), e compartilhá-los, publicá-los e exibi-los dentro ou fora da Tencent Cloud (PRC). Garantiremos que as Estatísticas sejam agregadas, anonimizadas e não envolvam informações que possam identificar usuários específicos.
 
 Exceto conforme especificado acima, processamos suas informações pessoais com base na necessidade contratual.
 
 *Transferência, localização e retenção de informações pessoais*
 
-Não compartilharemos suas informações pessoais com terceiros não relacionados sem o seu consentimento, exceto nas circunstâncias especificadas na seção "Como divulgamos e armazenamos suas informações pessoais" nesta Política de Privacidade. 
+Não compartilharemos suas informações pessoais com terceiros não relacionados sem o seu consentimento, exceto nas circunstâncias especificadas na seção “Como divulgamos e armazenamos suas informações pessoais” nesta Política de Privacidade. 
 
 Não divulgaremos publicamente suas informações pessoais e, se tivermos que torná-las públicas, informaremos você sobre o propósito das mesmas, o tipo de informação divulgada e as informações confidenciais que podem ser divulgadas com o objetivo de obter o seu consentimento expresso. 
 
