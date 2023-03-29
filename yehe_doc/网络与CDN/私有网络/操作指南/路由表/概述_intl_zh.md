@@ -38,7 +38,7 @@
 </tr>
 <tr>
 <td>NAT 网关</td>
-<td>否</td>
+<td>是</td>
 <td>N/A</td>
 </tr>
 <tr>
