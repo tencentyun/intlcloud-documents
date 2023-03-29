@@ -41,7 +41,7 @@ Signature = HMAC-SH1 ( strContent, SecretKey )
 <tbody><tr>
 <td>BizID</td>
 <td>Integer</td> 
-<td>Application's `AppID`, which can be viewed in **Details** in the <a href="https://console.tencentcloud.com/gamegme">console</a>.</td> 
+<td>Application's `AppID`, which can be viewed in <b>Details</b> in the <a href="https://console.tencentcloud.com/gamegme">console</a>.</td> 
 </tr>
 <tr>
 <td>RoomID</td>
