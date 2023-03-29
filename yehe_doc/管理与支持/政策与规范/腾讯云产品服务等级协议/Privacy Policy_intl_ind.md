@@ -10,11 +10,11 @@ Kami akan menggunakan informasi yang dikumpulkan untuk membuat dan memverifikasi
 
 #### Dengan siapa kami berbagi informasi pribadi yang dikumpulkan?
 
-Kami membagikan informasi Anda dengan penyedia layanan pihak ketiga kami, perusahaan grup terkait dan seperti yang dipersyaratkan oleh hukum. Lihat [Cara kami menyimpan dan membagikan Informasi Pribadi Anda](#3) di bawah untuk informasi selengkapnya.
+Kami membagikan informasi Anda dengan penyedia layanan pihak ketiga kami, perusahaan grup terkait dan seperti yang dipersyaratkan oleh hukum. Lihat [Cara Kami Menyimpan dan Mengungkapkan Informasi Pribadi Anda](#3) di bawah untuk informasi selengkapnya.
 
 #### Di mana kami memproses informasi pribadi yang dikumpulkan?
 
-Server kami mungkin berlokasi di luar negara tempat Anda berada, misalnya di Tiongkok Daratan. Lihat [Cara kami menyimpan dan membagikan Informasi Pribadi Anda](#3) di bawah untuk informasi selengkapnya.
+Server kami mungkin berlokasi di luar negara tempat Anda berada, misalnya di Tiongkok Daratan. Lihat [Cara Kami Menyimpan dan Mengungkapkan Informasi Pribadi Anda](#3) di bawah untuk informasi selengkapnya.
 
 #### Berapa lama kami menyimpan informasi pribadi yang dikumpulkan?
 
@@ -50,7 +50,7 @@ Modul yang ditetapkan di bawah ini di bagian [Modul](#8) untuk kebijakan privasi
 
 ### PENGANTAR
 
-Saat Anda menggunakan situs web dan layanan cloud Tencent Cloud (termasuk https://tencentcloud.io dan https://intl.cloud.tencent.com) ("**Layanan**") Anda menyetujui aturan dan kebijakan kami mengenai informasi pribadi Anda dan Anda secara tegas menyetujui kami mengumpulkan, memproses, menggunakan, dan menyimpan informasi pribadi Anda, seperti yang dijelaskan dalam kebijakan privasi ini.
+Saat Anda menggunakan atau berinteraksi dengan kami dalam kaitannya dengan situs web dan layanan cloud Tencent Cloud (termasuk https://tencentcloud.io dan https://www.tencentcloud.com)(“**Layanan**”) Anda menyetujui aturan dan kebijakan kami mengenai informasi pribadi Anda dan Anda secara tegas menyetujui kami mengumpulkan, memproses, menggunakan, dan menyimpan informasi pribadi Anda, seperti yang dijelaskan dalam kebijakan privasi ini.
 
 #### Apabila Anda tidak menyetujui kebijakan privasi ini, Anda tidak diperbolehkan untuk menggunakan Layanan.
 
@@ -94,8 +94,8 @@ Layanan kami tidak ditujukan untuk anak-anak. Anak-anak tidak boleh menggunakan 
 
 Kami akan menggunakan informasi dengan cara berikut dan sesuai dengan dasar hukum berikut:
 
-| **Informasi Pribadi**                                     | **Tujuan Penggunaan**                                           | **Dasar Hukum untuk Pemrosesan (hanya berlaku untuk EEA dan Inggris)** |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Informasi Pribadi** | **Tujuan Penggunaan** | **Dasar Hukum untuk Pemrosesan (hanya berlaku untuk EEA dan Inggris)** |
+| --------------------- | --------------------- | ---------------------------------------------------------------------- |
 | Lokasi, Nama, Alamat Email, Alamat IP, Agen Pengguna (atau browser situs web), ID Perangkat, ID Tencent Cloud, Alamat (termasuk kota, provinsi, dan kode pos), APPID, UIN, Nama pengguna  (Wajib) | Kami menggunakan informasi ini  untuk:   <br/>· membuat akun Tencent Cloud Anda sesuai dengan permintaan Anda dan/atau memverifikasi bahwa Anda memiliki akun;   <br/> · mengizinkan reset kata sandi;   <br/> · menyediakan dukungan pengguna kepada Anda;  <br/> · mencatat transaksi atau memberikan konfirmasi pesanan; dan  <br/> · menerapkan syarat, ketentuan, dan kebijakan kami. | Kami memproses  informasi ini karena kami perlu melaksanakan kontrak kami dengan Anda untuk  menyediakan Layanan. |
 | Nomor Ponsel, Alamat Email, Alamat (Wajib)                   | Kami menggunakan informasi ini:    <br/>· untuk memverifikasi akun Tencent Cloud Anda;    <br/>· untuk perlindungan keamanan (jika Anda mengaktifkan verifikasi akun, ini akan  digunakan untuk mengirimi Anda peringatan SMS dan kode autentikasi dua faktor saat Anda  memodifikasi kata sandi akun, alamat email, dll.);    <br/>· untuk pemberitahuan produk;    <br/>· untuk konfirmasi pesanan; dan    <br/>· untuk informasi layanan (contoh informasi saldo akun, dan untuk  menghubungi Anda saat saldo akun Anda sedikit). | Merupakan  kepentingan sah kami untuk memverifikasi identitas Anda dan berkomunikasi dengan Anda tentang  Layanan. |
 | ID Foto (misalnya, SIM, paspor atau izin kerja) Nama dan Alamat (Wajib) | Jika Anda memilih untuk menggunakan  server yang berada di RRC (tidak termasuk Hong Kong (Tiongkok), Makau (Tiongkok), dan  Taiwan (Tiongkok)) untuk Layanan, kami menggunakan ID foto Anda (atau, di mana Anda seorang  pelanggan perusahaan, dokumentasi perusahaan) untuk memastikan akun Anda diverifikasi secara  sah sesuai dengan undang-undang lokal. | Ini sesuai  kepentingan sah kami untuk memproses data tersebut demi memastikan Anda dapat mengaktifkan layanan  untuk digunakan di yurisdiksi di mana ini merupakan persyaratan yang sah. |
@@ -112,9 +112,9 @@ Kami akan menggunakan informasi dengan cara berikut dan sesuai dengan dasar huku
 | Nama, Alamat Email, Kode Negara, Nomor Telepon, dan Nama Perusahaan (Wajib)  |  Kami menggunakan informasi ini untuk berkomunikasi (baik melalui kami atau mitra pihak ketiga kami) dengan Anda, untuk memahami produk dan layanan yang mungkin menarik bagi Anda, dan untuk mengeksplorasi peluang bisnis potensial dengan Anda.  | Merupakan kepentingan sah kami untuk memproses data tersebut untuk menjaga hubungan dengan Anda dan untuk lebih memahami kebutuhan bisnis Anda.  |
 
 <span id="3"></span>
-### Cara Kami Menyimpan dan Membagikan Informasi Pribadi Anda
+### Cara Kami Menyimpan dan Mengungkapkan Informasi Pribadi Anda
 
-Kami dapat membagikan informasi pribadi Anda dengan pihak ketiga yang dipilih di dalam dan di luar negara Anda, termasuk:
+Kami dapat mengungkapkan informasi pribadi Anda dengan pihak ketiga yang dipilih di dalam dan di luar negara Anda, termasuk:
 
 -   **Pihak Ketiga** di mana kami menggunakan layanan pihak ketiga untuk: (a) proses pembayaran; (b) memberikan dukungan pelanggan (termasuk penyediaan database dukungan dan tiket); (c) mengirim pemberitahuan layanan SMS; atau (d) menyediakan layanan, dukungan, fitur, atau fungsionalitas lain sebagai bagian dari Layanan, termasuk yang tercantum di halaman [Pihak Ketiga](https://intl.cloud.tencent.com/document/product/1033/32281) kami.
 
@@ -220,7 +220,7 @@ Terakhir diperbarui: 12 / 07 / 2020
 
 Adendum Kebijakan Privasi Tencent Cloud ("Adendum") ini adalah untuk menanggapi hal-hal yang diperlukan untuk memproses informasi pribadi Anda sesuai dengan Undang-Undang Perlindungan Informasi Pribadi ("PIPA") Korea. Silakan merujuk Kebijakan Privasi Tencent Cloud untuk detail lebih lanjut tentang ketentuan penggunaan Layanan.
 
-### Cara Kami Menyimpan dan Membagikan Informasi Pribadi Anda
+### Cara Kami Menyimpan dan Mengungkapkan Informasi Pribadi Anda
 
 a.  Kami mendelegasikan pemrosesan informasi pribadi Anda seperti yang dijelaskan di bawah ini, dan delegasi dapat memproses informasi pribadi Anda sesuai dengan tujuan delegasi:
 
@@ -287,17 +287,21 @@ Jika Anda perlu melaporkan atau melakukan konsultasi tentang masalah invasi info
 
  - Biro Investigasi Siber Badan Kepolisian Nasional Korea (ecrm.cyber.go.kr/minwon / hubungi 182)
 
-### California
+### AMERIKA SERIKAT
 
-Ketentuan Adendum ini berlaku untuk penduduk California di bawah Undang-Undang Privasi Konsumen California ("CCPA") dan undang-undang lain yang berlaku. CCPA memberikan hak-hak hukum tertentu, seperti hak akses, penghapusan, pengungkapan, atau "jangan dijual" kepada penduduk California. Hak-hak ini tidak mutlak dan tunduk pada pengecualian tertentu.
+Ketentuan Adendum ini berlaku untuk penduduk Amerika Serikat berdasarkan Undang-Undang Privasi Konsumen California, sebagaimana diubah oleh Undang-Undang Hak Privasi California (California Privacy Rights Acts, “CCPA”) , Undang-Undang Privasi Colorado, Undang-Undang Connecticut Mengenai Privasi Data Pribadi dan Pemantauan Online, Undang-Undang Privasi Konsumen Utah dan Undang-Undang Perlindungan Data Konsumen Virginia (secara bersama-sama disebut sebagai “Undang-Undang Privasi A.S.”). Undang-Undang Privasi A.S. memberikan penduduk A.S. tertentu hak hukum tertentu terkait informasi pribadi mereka seperti hak untuk meminta akses, menghapus, dan memperbaiki. Hak-hak ini tidak mutlak dan tunduk pada pengecualian tertentu. Untuk tujuan Adendum ini, “konsumen”, “Anda”, dan “milik Anda” berarti pengguna Layanan, pelamar kerja, dan perwakilan entitas yang terlibat dengan kami terkait dengan Layanan.
 
-***Pengumpulan dan Pengungkapan Informasi Pribadi***
+***Jangan Telusuri (Do Not Track, DNT)***
 
-***Selama 12 bulan terakhir, melalui penggunaan Layanan oleh Anda, kami mungkin telah mengumpulkan dan mengungkapkan kategori informasi pribadi berikut ini dari atau tentang konsumen, sebagaimana ditentukan di dalam CCPA:***
+Pengaturan peramban Anda memungkinkan Anda untuk mengirimkan sinyal “jangan telusuri”, sinyal “preferensi memilih untuk keluar” atau mekanisme lain untuk menggunakan pilihan Anda mengenai pengumpulan informasi pribadi Anda ketika Anda mengunjungi berbagai situs web. Seperti banyak situs web, situs web kami tidak dirancang untuk menanggapi sinyal tersebut, dan kami tidak menggunakan atau mengungkapkan informasi pribadi Anda dengan cara apa pun yang secara hukum mewajibkan kami untuk mengenali sinyal preferensi memilih untuk keluar.
+
+***Pengumpulan, Penggunaan, dan Pengungkapan Informasi Pribadi***
+
+<b><i>Selama 12 bulan terakhir, melalui penggunaan Layanan oleh Anda, kami mungkin telah mengumpulkan dan mengungkapkan kategori informasi pribadi, termasuk informasi pribadi yang sensitif (ditandai dengan *)</i></b>
 
 - Pengidentifikasi, termasuk nama, alamat email, nomor ponsel, alamat IP, pengenal perangkat, Tencent Cloud ID, alamat surat, identifikasi yang dikeluarkan pemerintah, dan kode verifikasi yang dikirimkan ke atau dari perangkat. Informasi ini dikumpulkan langsung dari konsumen atau perangkat.
 - Internet atau informasi aktivitas jaringan elektronik lainnya, termasuk Agen Pengguna atau browser situs web, metadata log yang terkait dengan interaksi konsumen dengan Tencent Cloud, dan rincian insiden dukungan pelanggan Tencent Cloud (serta langkah-langkah respons yang terkait dengan tiket layanan pelanggan). Informasi ini dikumpulkan langsung dari konsumen atau perangkat.
-- Data geolokasi, termasuk data lokasi yang berasal dari alamat IP yang diberikan langsung kepada kami dari perangkat. Data titik akses Wi-Fi dapat digunakan untuk memahami data lokasi pada tingkat kode pos, sedangkan informasi GPS yang diberikan oleh perangkat dapat lebih tepat melacak koordinat perangkat saat ini. Informasi ini dikumpulkan langsung dari perangkat;
+- Data geolokasi, termasuk data lokasi yang berasal dari alamat IP yang diberikan langsung kepada kami dari perangkat. Data titik akses Wi-Fi dapat digunakan untuk memahami data lokasi pada tingkat kode pos. Informasi ini dikumpulkan langsung dari perangkat;
 - Informasi komersial, termasuk informasi kartu pembayaran dan catatan transaksi (seperti informasi tentang Layanan yang dibeli, seperti kode aktivasi dan tanggal pembelian). Informasi ini dikumpulkan langsung dari konsumen atau perangkat.
 
 ***Kami mengumpulkan informasi pribadi untuk tujuan berikut dan sebagaimana dijelaskan dalam Modul yang berlaku:***
@@ -308,34 +312,39 @@ Ketentuan Adendum ini berlaku untuk penduduk California di bawah Undang-Undang P
 - Untuk tujuan keamanan dan verifikasi, termasuk untuk mencegah dan mendeteksi aktivitas penipuan; dan
 - Untuk mengatasi dan memulihkan kesalahan dan masalah (bug) teknis.
 
-Untuk informasi tambahan tentang kegunaan masing-masing jenis informasi pribadi, lihat [grafik ini](#2) dalam bagian utama dari Kebijakan Privasi.
+Untuk informasi tambahan tentang kegunaan masing-masing jenis informasi pribadi, lihat [grafik ini](#2) dalam bagian utama dari Kebijakan Privasi. Kami tidak mengumpulkan, menggunakan, atau mengungkapkan informasi pribadi Anda, termasuk informasi pribadi yang sensitif, untuk tujuan selain yang ditentukan dalam Kebijakan Privasi ini. Selanjutnya, kami hanya menggunakan dan mengungkapkan informasi pribadi yang sensitif untuk tujuan yang diizinkan oleh Undang-Undang Privasi A.S., atau dengan persetujuan Anda.
 
 Kami mengungkapkan informasi pribadi kepada jenis entitas berikut ini:
 
 - Afiliasi kami di dalam grup perusahaan yang memproses informasi pribadi untuk mengoperasikan Layanan
 - Perusahaan lain yang menyediakan layanan atas nama kami yang dilarang berdasarkan kontrak untuk menyimpan, menggunakan atau mengungkapkan informasi pribadi untuk tujuan apa pun selain untuk memberikan jasa kepada kami
 - Regulator dan otoritas peradilan dan lembaga penegak hukum.
-- Perusahaan yang mengambilalih seluruh atau sebagian besar bisnis kami
+- Perusahaan yang mengambilalih atau sedang dalam proses akuisisi seluruh atau sebagian besar bisnis kami
 
-***Selama 12 bulan terakhir, kami belum menjual informasi pribadi milik warga California dengan mengacu pada definisi “dijual” berdasarkan CCPA.***
+***Selama 12 bulan terakhir, kami belum menjual informasi pribadi milik warga A.S. dengan mengacu pada definisi “dijual” berdasarkan Undang-Undang Privasi A.S. dan belum membagikan informasi pribadi penduduk California dalam arti “berbagi” dalam CCPA. Selanjutnya, kami tidak mengetahui bahwa kami menjual atau “membagikan” informasi pribadi penduduk di bawah usia 16 tahun.***
 
-***Hak-hak berdasarkan CCPA***
- Jika Anda merupakan penduduk California dan CCPA tidak mengakui pengecualian yang berlaku untuk Anda atau informasi pribadi Anda, Anda berhak untuk:
+***Hak-hak berdasarkan Undang-Undang Privasi A.S.***
+ Jika Anda merupakan penduduk A.S. dan Undang-Undang Privasi A.S. tidak mengakui pengecualian yang berlaku untuk Anda atau informasi pribadi Anda, Anda berhak untuk:
 
-- Meminta kami untuk mengungkapkan kepada Anda tanpa biaya apa pun informasi berikut ini yang mencakup jangka waktu 12 bulan sebelum permintaan Anda:
+- Meminta kami untuk mengungkapkan kepada Anda tanpa biaya apa pun informasi tertentu tentang Anda. Jika Anda adalah penduduk California, Anda dapat meminta agar kami mengungkapkannya informasi berikut:
     - kategori Informasi pribadi tentang Anda yang kami kumpulkan;
     - kategori sumber tempat informasi pribadi dikumpulkan;
     - tujuan pengumpulan informasi pribadi tentang Anda;
     - kategori pihak ketiga kepada siapa kami mengungkapkan informasi pribadi tentang Anda dan kategori informasi pribadi yang diungkapkan (jika relevan) dan tujuan pengungkapan informasi pribadi tentang Anda; dan
     - jenis informasi pribadi spesifik yang kami kumpulkan mengenai Anda;
-- Meminta agar kami menghapus informasi pribadi yang telah kami kumpulkan dari Anda, kecuali CCPA mengakui pengecualian; dan
-- Bebas dari diskriminasi yang melanggar hukum untuk menggunakan hak-hak Anda, termasuk memberikan tingkat atau kualitas layanan yang berbeda, atau menolak barang atau layanan kepada Anda saat Anda menggunakan hak-hak Anda berdasarkan CCPA.   
+- Meminta agar kami menghapus informasi pribadi yang telah kami kumpulkan tentang Anda
+- Meminta kami memperbaiki informasi pribadi yang tidak akurat yang kami simpan tentang Anda; dan
+- Bebas dari diskriminasi yang melanggar hukum untuk menggunakan hak-hak Anda, termasuk memberikan tingkat atau kualitas layanan yang berbeda, atau menolak barang atau layanan kepada Anda saat Anda menggunakan hak-hak Anda.   
 
-Kami bertujuan untuk memenuhi semua permintaan terverifikasi dalam waktu 45 hari sesuai dengan ketentuan CCPA.  Apabila diperlukan, perpanjangan selama 45 hari tambahan akan disertai dengan penjelasan untuk penundaan tersebut.
+Kami bertujuan untuk memenuhi semua permintaan terverifikasi dalam waktu 45 hari. Apabila diperlukan, perpanjangan selama 45 hari tambahan akan disertai dengan penjelasan untuk penundaan tersebut.
 
 ***Cara Menggunakan Hak-Hak Anda***
 
-Pertama, Anda dapat masuk ke akun Anda dan mengelola data Anda dari akun tersebut. Jika Anda merupakan penduduk California tempat CCPA diterapkan, Anda dapat menggunakan hak-hak Anda, jika ada, untuk data lainnya dengan menghubungi kami di cloudlegalnotices@tencent.com.
+Pertama, Anda dapat masuk ke akun Anda dan mengelola data Anda dari akun tersebut. Jika Anda merupakan penduduk A.S. tempat Undang-Undang Privasi A.S. diterapkan, Anda dapat menggunakan hak-hak Anda, jika ada, untuk informasi pribadi dengan menghubungi kami di cloudlegalnotices@tencent.com.
+
+Hanya Anda, atau seseorang yang Anda beri wewenang untuk bertindak atas nama Anda, yang dapat mengajukan permintaan terkait informasi pribadi Anda. Agen resmi dapat mengajukan permintaan dengan memberikan izin tertulis yang diberikan oleh Anda. Sebagai bagian dari proses verifikasi identitas untuk tujuan menangani permintaan subjek data Anda, Anda diwajibkan masuk ke akun Anda yang ada dan kami dapat menanyakan informasi tambahan kepada Anda (termasuk tetapi tidak terbatas pada negara pendaftaran, sumber daya cloud yang dibeli, dan nomor ponsel terdaftar) untuk membuat akun Anda dapat diverifikasi.
+
+Selain itu, apabila berlaku, kami akan memberi Anda lebih banyak informasi tentang proses banding kami. Ketika Anda mengirimkan permintaan atau mengajukan banding, kami akan membatasi pengumpulan informasi Anda hanya pada hal yang diperlukan untuk memenuhi permintaan Anda dengan aman atau memproses banding Anda.
 
 ### BRASIL
 
@@ -486,7 +495,7 @@ Anda berhak atas hak-hak berikut, sejauh yang diberikan oleh hukum yang berlaku:
 Dengan menyetujui Kebijakan Privasi ini, Anda memberi persetujuan kepada kami untuk:
  - mengumpulkan dan memproses informasi pribadi Anda seperti yang dijelaskan di bagian “[Cara Kami Menggunakan Informasi Pribadi Anda](#2)”;
  - berbagi informasi pribadi Anda dengan pihak ketiga, perusahaan dalam grup korporasi kami , dan pihak ketiga yang memperoleh semua atau sebagian data dari kami atau bisnis kami, sebagaimana dijelaskan dalam Kebijakan Privasi ini dan untuk tujuan yang dinyatakan di sini; dan
- - mentransfer atau menyimpan informasi pribadi Anda di tujuan di luar Filipina ketika pemrosesan harus terjadi di luar Filipina, seperti yang dijelaskan di bagian “[Cara Kami Menyimpan dan Membagikan Informasi Pribadi Anda](#3)”.
+ - mentransfer atau menyimpan informasi pribadi Anda di tujuan di luar Filipina ketika pemrosesan harus terjadi di luar Filipina, seperti yang dijelaskan di bagian “[Cara Kami Menyimpan dan Mengungkapkan Informasi Pribadi Anda](#3)”.
 
 ### ARAB SAUDI 
 Anda menyetujui pengungkapan, transfer, dan ekspor informasi pribadi Anda di luar Arab Saudi atau yurisdiksi lain tempat Anda memberikannya.
@@ -608,7 +617,7 @@ Kecuali sebagaimana ditentukan di atas sebaliknya, kami memproses informasi prib
 
 *Transfer, Lokasi, dan Retensi Informasi Pribadi*
 
-Kami tidak akan membagikan informasi pribadi Anda pada pihak ketiga yang tidak terkait tanpa persetujuan Anda, kecuali dalam keadaan yang ditentukan di bagian “Cara Kami Membagikan dan Menyimpan Informasi Pribadi Anda” di dalam Kebijakan Privasi ini. 
+Kami tidak akan membagikan informasi pribadi Anda pada pihak ketiga yang tidak terkait tanpa persetujuan Anda, kecuali dalam keadaan yang ditentukan di bagian “Cara Kami Menyimpan dan Mengungkapkan Informasi Pribadi Anda” di dalam Kebijakan Privasi ini. 
 
 Kami tidak akan mengungkapkan informasi pribadi Anda secara publik, dan jika kami harus membuat pengungkapan publik, kami akan menginformasikan pada Anda tentang tujuan yang dimaksud, jenis informasi yang diungkapkan dan informasi sensitif yang mungkin diungkapkan, serta mendapatkan pernyataan persetujuan Anda. 
 
