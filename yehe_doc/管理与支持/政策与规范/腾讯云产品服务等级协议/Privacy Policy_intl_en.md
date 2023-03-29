@@ -499,7 +499,7 @@ You are entitled to the following rights, to the extent provided by applicable l
 By consenting to this Privacy Policy, you consent to us:
  - collecting and processing your personal information as described in the section “[How We Use Your Personal Information](#2)”;
  - sharing your personal information with third parties, companies within our corporate group, and a third party that acquires substantially all or substantially all of us or our business, as described in this Privacy Policy and for the purposes stated herein; and
- - transferring or storing your personal information in destinations outside the Philippines when the processing shall need to occur outside the Philippines, as described in the section “[How We Store and Share Your Personal Information](#3)”.
+ - transferring or storing your personal information in destinations outside the Philippines when the processing shall need to occur outside the Philippines, as described in the section “[How We Disclose and Store Your Personal Information](#3)”.
 
 ### SAUDI ARABIA 
 You consent to the disclosure, transfer and export of your personal information outside of Saudi Arabia or any other jurisdiction in which you provided it.
