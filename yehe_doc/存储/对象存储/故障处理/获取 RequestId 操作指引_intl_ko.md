@@ -61,9 +61,9 @@ package main
  
 import (
    "context"
+   "fmt"
    "net/http"
    "net/url"
-   "os"
    "strings"
    "github.com/tencentyun/cos-go-sdk-v5"
 )
@@ -84,7 +84,7 @@ func main() {
    // 1. 문자열로 객체 업로드
    f := strings.NewReader("Hello COS")
  
-   _, err := c.Object.Put(context.Background(), name, f, nil)
+   response, err := c.Object.Put(context.Background(), name, f, nil)
    if err != nil {
        // error정보에는 RequestId 필드가 포함되어 있습니다. 
        panic(err)
