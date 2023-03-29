@@ -92,7 +92,7 @@ public:
 | ITMG_VOICE_TYPE_HEAVY_MACHINE		|9	|Machine			|
 | ITMG_VOICE_TYPE_STRONG_CURRENT		|10	|Strong current			|
 | ITMG_VOICE_TYPE_KINDER_GARTEN			|11	|Kid			|
-| ITMG_VOICE_TYPE_HUANG |12|Minion|
+| ITMG_VOICE_TYPE_HUANG |12|Urchin|
 
 #### Sample code  
 ```
