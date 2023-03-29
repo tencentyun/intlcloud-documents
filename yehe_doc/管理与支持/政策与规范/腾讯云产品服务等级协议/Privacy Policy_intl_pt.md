@@ -10,11 +10,11 @@ Usaremos as informações coletadas para criar e verificar sua conta, ativar a a
 
 #### Com quem compartilhamos as informações pessoais coletadas?
 
-Compartilhamos suas informações com nossos prestadores de serviços terceirizados, empresas de grupos relacionados e conforme exigido por lei. Consulte abaixo em [Como compartilhamos e armazenamos suas informações pessoais](#3) para obter mais informações.
+Compartilhamos suas informações com nossos prestadores de serviços terceirizados, empresas de grupos relacionados e conforme exigido por lei. Consulte abaixo em [Como divulgamos e armazenamos suas informações pessoais](#3) para obter mais informações.
 
 #### Onde processamos as informações pessoais coletadas?
 
-Nossos servidores podem estar localizados fora do país onde você está localizado, por exemplo, na China continental. Consulte abaixo em [Como compartilhamos e armazenamos suas informações pessoais](#3) para obter mais informações.
+Nossos servidores podem estar localizados fora do país onde você está localizado, por exemplo, na China continental. Consulte abaixo em [Como divulgamos e armazenamos suas informações pessoais](#3) para obter mais informações.
 
 #### Por quanto tempo reteremos as informações pessoais coletadas?
 
@@ -50,15 +50,15 @@ Os Módulos definidos abaixo na seção [Módulos](#8) desta política de privac
 
 ### INTRODUÇÃO
 
-Quando você usa o site da Tencent Cloud e os serviços em nuvem (incluindo https://tencentcloud.io e https://intl.cloud.tencent.com) ("**Serviços**"), está concordando com nossas regras e políticas sobre suas informações pessoais e expressamente concorda que coletemos, processemos, usemos e armazenemos suas informações pessoais, conforme descrito nesta política de privacidade.
+Quando você usa ou interage conosco em relação ao site da Tencent Cloud e os serviços em nuvem (incluindo https://tencentcloud.io e https://intl.cloud.tencent.com) (“**Serviços**”), está concordando com nossas regras e políticas sobre suas informações pessoais e expressamente concorda que coletemos, processemos, usemos e armazenemos suas informações pessoais, conforme descrito nesta política de privacidade.
 
 #### Se você não concorda com esta política de privacidade, não deve usar os Serviços.
 
-Armazenamos informações pessoais que você nos fornece para configurar e gerenciar sua conta e os Serviços, e informações pessoais geradas em conexão com o uso dos Serviços ("**Informações Administrativas**"). Somos o controlador de dados de Informações Administrativas. Esta política de privacidade informa suas escolhas e as práticas com relação às suas Informações Administrativas.
+Armazenamos informações pessoais que você nos fornece para configurar e gerenciar sua conta e os Serviços, e informações pessoais geradas em conexão com o uso dos Serviços (“**Informações Administrativas**”). Somos o controlador de dados de Informações Administrativas. Esta política de privacidade informa suas escolhas e as práticas com relação às suas Informações Administrativas.
 
-Também temos dados, incluindo informações pessoais, que você envia, carrega, transmite ou exibe usando os Serviços ("**Conteúdo**") e armazenamos esses dados exclusivamente para prestar os Serviços. Os termos relacionados ao nosso armazenamento de conteúdo estão definidos em nossos [Termos de serviço](https://intl.cloud.tencent.com/document/product/301/9248) e [Processamento de dados e adendo de segurança](https://intl.cloud.tencent.com/document/product/301/17347). Você é o controlador de dados do Conteúdo e as perguntas sobre os processos de tratamento de dados de seus usuários ou terceiros em relação ao Conteúdo devem, em primeira instância, ser endereçadas a você. Em todos os momentos, atuamos como um provedor de serviços para você e processamos dados em seu nome. Você pode extrair seu Conteúdo a qualquer momento.
+Também temos dados, incluindo informações pessoais, que você envia, carrega, transmite ou exibe usando os Serviços (“**Conteúdo**”) e armazenamos esses dados exclusivamente para prestar os Serviços. Os termos relacionados ao nosso armazenamento de conteúdo estão definidos em nossos [Termos de serviço](https://intl.cloud.tencent.com/document/product/301/9248) e [Processamento de dados e adendo de segurança](https://intl.cloud.tencent.com/document/product/301/17347). Você é o controlador de dados do Conteúdo e as perguntas sobre os processos de tratamento de dados de seus usuários ou terceiros em relação ao Conteúdo devem, em primeira instância, ser endereçadas a você. Em todos os momentos, atuamos como um provedor de serviços para você e processamos dados em seu nome. Você pode extrair seu Conteúdo a qualquer momento.
 
-Se você estiver localizado na Área Econômica Europeia ou na Suíça, o controlador de dados de suas informações pessoais para fins do Regulamento Geral de Proteção de Dados é a Tencent Cloud Europe B.V., uma empresa registrada na Holanda com seu endereço registrado no edifício Atrium, 8º andar, Strawinskylaan 3127, 1077 ZX Amsterdam, Países Baixos. Se você estiver localizado fora da Área Econômica Europeia ou Suíça, o controlador de dados de suas informações pessoais é a entidade com a qual está contratado, conforme estabelecido nos [Termos de Serviço](https://intl.cloud.tencent.com/document/product/301/9248). Em cada caso, a entidade relevante é referida nesta política como "**Tencent**", "**nós**" e "**nos**".
+Se você estiver localizado na Área Econômica Europeia ou na Suíça, o controlador de dados de suas informações pessoais para fins do Regulamento Geral de Proteção de Dados é a Tencent Cloud Europe B.V., uma empresa registrada na Holanda com seu endereço registrado no edifício Atrium, 8º andar, Strawinskylaan 3127, 1077 ZX Amsterdam, Países Baixos. Se você estiver localizado fora da Área Econômica Europeia ou Suíça, o controlador de dados de suas informações pessoais é a entidade com a qual está contratado, conforme estabelecido nos [Termos de Serviço](https://intl.cloud.tencent.com/document/product/301/9248). Em cada caso, a entidade relevante é referida nesta política como “**Tencent**”, “**nós**” e “**nos**”.
 
 Você pode entrar em contato com nosso encarregado de proteção de dados em **cloudlegalnotices@tencent.com.**
 
@@ -79,7 +79,7 @@ Coletaremos e usaremos as seguintes informações sobre você:
 
 #### Cookies
 
-Usamos cookies e outras tecnologias similares (por exemplo, web beacons, flash cookies etc.) ("**Cookies**") para melhorar sua experiência de uso dos Serviços. Cookies são pequenos arquivos que, quando armazenados em seu dispositivo, nos permitem fornecer determinados recursos e funcionalidades.
+Usamos cookies e outras tecnologias similares (por exemplo, web beacons, flash cookies etc.) (“**Cookies**”) para melhorar sua experiência de uso dos Serviços. Cookies são pequenos arquivos que, quando armazenados em seu dispositivo, nos permitem fornecer determinados recursos e funcionalidades.
 
 Você tem a opção de permitir a instalação desses cookies ou de desabilitá-los posteriormente. Você poderá aceitar todos os cookies, ou instruir o navegador da web a notificar quando ocorrer instalação de cookies, ou poderá recusar-se a aceitar todos os cookies fazendo o ajuste da função relacionada no navegador da web em seu computador. No entanto, no caso de sua recusa em instalar cookies, a Tencent Cloud pode ser impedida de fornecer alguns de seus Serviços que estão disponíveis para você.
 
@@ -112,9 +112,9 @@ Usaremos as informações das seguintes formas e de acordo com as seguintes base
 | Nome, endereço de e-mail, código do país, número de telefone e nome da empresa (Obrigatório)  |  Usamos essas informações para comunicar (seja através de nós ou de nossos parceiros de terceiros) com você, a fim de entender produtos e serviços que possam lhe interessar e explorar potenciais oportunidades de negócios com você.  | É do nosso interesse legítimo processar tais dados para manter um relacionamento com você e entender melhor as necessidades do seu negócio.  |
 
 <span id="3"></span>
-### Como compartilhamos e armazenamos suas informações pessoais
+### Como divulgamos e armazenamos suas informações pessoais
 
-Podemos compartilhar suas informações pessoais com terceiros selecionados dentro e fora do seu país, incluindo:
+Podemos divulgar suas informações pessoais com terceiros selecionados dentro e fora do seu país, incluindo:
 
 -   **Terceiros** onde usamos um serviço de terceiros para: (a) processar pagamentos; (b) fornecer suporte ao cliente (incluindo prestação de um banco de dados de suporte e tíquetes); (c) enviar notificação de serviço por SMS; ou (d) fornecer outros serviços, suporte ou funcionalidade como parte dos Serviços, incluindo aqueles relacionados em nossa página de [Terceiros](https://intl.cloud.tencent.com/document/product/1033/32281).
 
@@ -136,7 +136,7 @@ Na medida em que os dados são transferidos para fora da AEE ou do Reino Unido p
 
 #### Conexões e serviços de terceiros
 
-A Tencent pode fornecer links para outros sites de terceiros como uma conveniência para você (coletivamente, o "**Sites de terceiros**"). Pedimos que seja observado o devido cuidado ao visitar qualquer site de terceiros. Os Sites de Terceiros têm políticas de privacidade separadas e independentes, avisos e termos de uso que regem o uso que você faz de tais sites e o uso que eles fazem de quaisquer informações coletadas. Recomendamos que você leia essas políticas com cuidado. A Tencent se isenta de qualquer responsabilidade pelas informações pessoais que você fornece a quaisquer sites de terceiros.
+A Tencent pode fornecer links para outros sites de terceiros como uma conveniência para você (coletivamente, o “**Sites de terceiros**”). Pedimos que seja observado o devido cuidado ao visitar qualquer site de terceiros. Os Sites de Terceiros têm políticas de privacidade separadas e independentes, avisos e termos de uso que regem o uso que você faz de tais sites e o uso que eles fazem de quaisquer informações coletadas. Recomendamos que você leia essas políticas com cuidado. A Tencent se isenta de qualquer responsabilidade pelas informações pessoais que você fornece a quaisquer sites de terceiros.
 
 #### A segurança das suas informações pessoais
 
@@ -170,7 +170,7 @@ Caso o período de processamento e retenção tenha sido encerrado, mas as infor
 <span id="5"></span>
 ### Seus direitos
 
-**Esta seção ("Seus Direitos") se aplica aos usuários que estão localizados na Área Econômica Europeia.  As subseções intituladas "Acesso, correção e exclusão" também se aplicam a usuários localizados no Japão e Coreia e Região administrativa especial de Macau**.
+**Esta seção (“Seus Direitos”) se aplica aos usuários que estão localizados na Área Econômica Europeia.  As subseções intituladas “Acesso, correção e exclusão” também se aplicam a usuários localizados no Japão e Coreia e Região administrativa especial de Macau**.
 
 Você tem determinados direitos em relação às informações pessoais que retemos sobre você. Alguns deles aplicam-se apenas em certas circunstâncias, conforme estabelecido em mais detalhes abaixo. Definimos também como exercer esses direitos. Observe que solicitaremos que você verifique sua identidade antes de responder a qualquer solicitação para exercer seus direitos. Devemos responder a uma solicitação sua para exercer esses direitos sem demora injustificada e dentro de um mês pelo menos (embora esse prazo possa ser estendido por outros dois meses em determinadas circunstâncias), exceto se de outra forma permitido pela legislação aplicável. Para exercer qualquer um dos seus direitos, preencha o formulário de solicitação [aqui](https://intl.cloud.tencent.com/services/dataSubject).
 
@@ -218,16 +218,16 @@ Se fizermos alterações materiais nesta política, publicaremos a política atu
 
 Última atualização: 07/12/2020
 
-Este Adendo à Política de Privacidade da Tencent Cloud (o "Adendo") tem como objetivo abordar questões que são necessárias para processar suas informações pessoais em conformidade com a Lei de Proteção de Informações Pessoais (o "PIPA") da Coreia. Consulte a Política de Privacidade na Nuvem da Tencent para obter mais detalhes sobre as condições de uso dos Serviços.
+Este Adendo à Política de Privacidade da Tencent Cloud (o “Adendo”) tem como objetivo abordar questões que são necessárias para processar suas informações pessoais em conformidade com a Lei de Proteção de Informações Pessoais (o “PIPA”) da Coreia. Consulte a Política de Privacidade na Nuvem da Tencent para obter mais detalhes sobre as condições de uso dos Serviços.
 
-### Como compartilhamos e armazenamos suas informações pessoais
+### Como divulgamos e armazenamos suas informações pessoais
 
 a.  Delegamos o processamento de suas informações pessoais conforme descrito abaixo, e os delegados podem processar suas informações pessoais de acordo com a finalidade da delegação:
 
 | **Delegado**                                                | **Tarefas Delegadas**                     |
 | ------------------------------------------------------------ | --------------------------------------- |
 | Adyen Singapore Pte Ltd.                                     | Processamento de  pagamento e gerenciamento de risco |
-| Image  Frame Investment (HK) Limited                         | Envio de SMS                             |
+| Image Frame Investment (HK) Limited                         | Envio de SMS                             |
 | Tencent Computing (Pequim) Co., Ltd.                        | Fornecimento de suporte back-end              |
 | Revendedores terceirizados                     | Gestão de relacionamento com clientes e comunicações de marketing              |
 
@@ -241,9 +241,9 @@ a.  Delegamos o processamento de suas informações pessoais conforme descrito a
 | -- | ------- | -------| ----------------------- | -------------------------------------- | ------------------------------------------------------------ |
 | Adyen  Singapore Pte Ltd.</br>dpo@adyen.com             | Singapura                                                    | Transmissão  criptografada                                | Número do  cartão de crédito, nome, período de validade, CVV, endereço        | Processador  de pagamento e gerenciamento de risco | 7  anos                                                     |
 |Frensworkz Software Technology Co., Limited</br>support@frensworkz.com</div> |República Popular da China |Transmissão on-line  |<li>Nome e sobrenome</li> <li>Cargo</li> <li>Função</li> <li>Posição</li> <li>Setor</li> <li>Empregador</li> <li> Informações de contato (empresa, departamento, função, e-mail, telefone, número do QQ, endereço físico de correspondência, site)</li> <li>Conta, nome da conta, nome da nota da conta</li> <li>Dados de ID</li> <li>Endereço de faturamento, país de faturamento, rua de faturamento, cidade do faturamento, estado/província do faturamento, código postal do faturamento</li> |Serviços de implementação agregados |Até a conclusão dos serviços de suporte do sistema pela Frensworkz ou por 20 meses (o que ocorrer primeiro)|
-| Image  Frame Investment (HK) Limited </br>dataprotection@tencent.com                    | Hong  Kong                                                   | Transmissão  on-line                                   | Número do  celular, conteúdo de SMS                                  | Envio de  SMS                           | Os dados da conta são mantidos enquanto uma conta existir. As mensagens de SMS são excluídas  13 meses depois de terem sido enviadas. |
+| Image Frame Investment (HK) Limited</br>dataprotection@tencent.com                   | Hong  Kong                                                   | Transmissão  on-line                                   | Número do  celular, conteúdo de SMS                                  | Envio de  SMS                           | Os dados da conta são mantidos enquanto uma conta existir. As mensagens de SMS são excluídas  13 meses depois de terem sido enviadas. |
 |Salesforce.com Singapura Pte. Ltd</br>https://www.salesforce.com/</br>ap/company/privacy/ |Estados Unidos|Transmissão on-line | <li>Dados de contato promocionais</li> <li>Dados de marketing</li> <li>Nome e sobrenome</li> <li>Cargo</li> <li>Função</li> <li>Posição</li> <li>Setor</li> <li>Empregador</li> <li>Informações de contato (empresa, departamento, função, e-mail, telefone, número do QQ, endereço físico de correspondência, site)</li> <li>Conta, nome da conta, nome da nota da conta</li> <li>Dados de ID</li> <li>Endereço de faturamento, país de faturamento, rua de faturamento, cidade do faturamento, estado/província do faturamento, código postal do faturamento</li>|Gestão de relacionamento com clientes e suporte de marketing|Consulte os períodos de retenção definidos em “[Retenção de dados](#4)”, sujeito a encerramento do relacionamento contratual entre nós e Salesforce, em cujo caso os dados serão excluídos dentro de 300 dias a partir do encerramento.|
-| Tencent  Computing (Pequim) Co., Ltd.</br>meeting_info@tencent.com                      | República  Popular da China                                  | Transmissão  on-line após criação da conta e pagamento | **Obrigatório**：  data  de nascimento, nome, número do telefone celular, endereço de e-mail, local, endereço (incluindo  cidade e CEP), informações do cartão de crédito, tipo de negócio, senha  </br>**Opcional:**  fotografia ID (por exemplo, carteira de motorista, passaporte, licença de trabalho ou licença de negócios) nome e endereço | Operação  e manutenção do sistema    | Os  dados da conta são mantidos enquanto uma conta existir. As informações são excluídas em  trinta (30) dias a partir da data em que a conta for excluída. |
+| Tencent Computing (Pequim) Co., Ltd</br>meeting_info@tencent.com                    | República  Popular da China                                  | Transmissão  on-line após criação da conta e pagamento | **Obrigatório**：  data  de nascimento, nome, número do telefone celular, endereço de e-mail, local, endereço (incluindo  cidade e CEP), informações do cartão de crédito, tipo de negócio, senha  </br>**Opcional:**  fotografia ID (por exemplo, carteira de motorista, passaporte, licença de trabalho ou licença de negócios) nome e endereço | Operação  e manutenção do sistema    | Os  dados da conta são mantidos enquanto uma conta existir. As informações são excluídas em  trinta (30) dias a partir da data em que a conta for excluída. |
 
 ### Destruição de dados
 
@@ -287,17 +287,21 @@ Se você precisar denunciar ou consultar qualquer invasão de informações priv
 
  - Agência de Investigação Cibernética da Agência Nacional de Política Coreana (ecrm.cyber.go.kr/minwon/disque 182)
 
-### Califórnia
+### ESTADOS UNIDOS
 
-Os termos deste Adendo aplicam-se aos residentes da Califórnia segundo a Lei de Privacidade do Consumidor da Califórnia ("CCPA") e outras leis aplicáveis. A CCPA concede a residentes da Califórnia determinados direitos legais, tais como de acesso, exclusão, divulgação ou proibição de venda de dados. Tais direitos não são absolutos e estão sujeitos a certas exceções.
+Os termos deste Adendo aplicam-se aos residentes dos Estados Unidos no âmbito da Lei de Privacidade do Consumidor da Califórnia, conforme emendada pela Lei de Direitos de Privacidade da Califórnia (“CCPA”), a Lei de Privacidade do Colorado, a Lei de Connecticut Relativa à Privacidade de Dados Pessoais e Monitoramento On-line, a Lei de Privacidade do Consumidor de Utah e a Lei de Proteção de Dados do Consumidor da Virgínia (coletivamente, as “Leis de Privacidade dos EUA”). As Leis de Privacidade dos EUA fornecem a determinados residentes nos EUA alguns direitos legais relativos às suas informações pessoais, tais como o direito de solicitar acesso, exclusão e correção. Estes direitos não são absolutos e estão sujeitos a determinadas exceções. Para fins deste Adendo, “consumidor”, “você” e “seu” significam usuários dos Serviços, candidatos a emprego e representantes de entidades com as quais nos relacionamos em relação aos Serviços.
 
-***Coleta e divulgação de informações pessoais***
+***Não Rastrear (Do Not Track, DNT)***
 
-***Ao longo dos últimos 12 meses, por meio do seu uso dos Serviços, é possível termos coletado e divulgado as seguintes categorias de Informações Pessoais de consumidores ou referentes a eles, de acordo com a definição na CCPA:***
+As configurações de seu navegador podem permitir que você transmita um sinal de “não rastrear”, sinal de “optar por não rastrear” ou outro mecanismo para exercer suas escolhas em relação à coleta de suas informações pessoais quando você visita vários sites. Como acontece com muitos sites, o nosso não foi concebido para responder a tais sinais e não usamos ou divulgamos suas informações pessoais de nenhuma forma que legalmente nos obrigue a reconhecer os sinais de preferência por não rastrear.
+
+***Coleta, uso e divulgação de informações pessoais***
+
+<b><i>Ao longo dos últimos 12 meses, por meio do seu uso dos Serviços, é possível termos coletado e divulgado as seguintes categorias de Informações Pessoais, incluindo informações pessoais confidenciais (identificadas com *):</i></b>
 
 - Identificadores, incluindo nome, endereço de e-mail, número de celular, endereço IP, identificadores de dispositivo, ID da Tencent Cloud, endereço de correspondência, identificação emitida pelo governo e códigos de verificação transmitidos de ou para o dispositivo. Essas informações são coletadas diretamente do consumidor ou dispositivo.
 - Informações de atividade de Internet ou outras redes eletrônicas, incluindo o Agente do Usuário ou navegador do site, logs de metadados associados às interações do consumidor com a Tencent Cloud e detalhes de incidentes de suporte ao cliente da Tencent Cloud (bem como etapas de resposta associadas aos tíquetes de atendimento ao cliente). Essas informações são coletadas diretamente do consumidor ou dispositivo.
-- Dados de geolocalização, incluindo dados de localização derivados de endereço IP fornecidos diretamente a nós a partir do dispositivo. Os dados do ponto de acesso Wi-Fi podem ser usados para entender os dados de localização em um nível de CEP, enquanto as informações de GPS fornecidas pelo dispositivo podem rastrear com mais precisão as coordenadas atuais do dispositivo. Essas informações são coletadas diretamente do dispositivo.
+- Dados de geolocalização, incluindo dados de localização derivados de endereço IP fornecidos diretamente a nós a partir do dispositivo. Os dados do ponto de acesso Wi-Fi podem ser usados para entender os dados de localização em um nível de CEP. Essas informações são coletadas diretamente do dispositivo.
 - Informações comerciais, incluindo informações sobre cartões de pagamento e registros de transações (como informações sobre serviços adquiridos, como o código de ativação e a data de compra). Essas informações são coletadas diretamente do consumidor ou dispositivo.
 
 ***Coletamos informações pessoais para os seguintes fins e como descrito no Módulo aplicável:***
@@ -308,34 +312,39 @@ Os termos deste Adendo aplicam-se aos residentes da Califórnia segundo a Lei de
 - para verificação e segurança, incluindo a prevenção e identificação de atividades fraudulentas; e
 - para abordar e corrigir problemas técnicos e bugs.
 
-Para informações adicionais sobre para que cada tipo de informação pessoal é usada, consulte [este gráfico](#2) na parte principal da Política de Privacidade.
+Para informações adicionais sobre para que cada tipo de informação pessoal é usada, consulte [este gráfico](#2) na parte principal da Política de Privacidade. Não coletamos, usamos ou divulgamos suas informações pessoais, incluindo informações pessoais sensíveis, para outros fins que não sejam aqueles especificados nesta Política de Privacidade. Além disso, somente usamos e divulgamos informações pessoais confidenciais para fins permitidos pelas Leis de Privacidade dos EUA, ou de outra forma, com seu consentimento.
 
 Divulgamos informações pessoais para os seguintes tipos de entidades:
 
 - Nossas empresas afiliadas em nosso grupo corporativo que processam informações pessoais para operar os Serviços
 - Outras empresas que prestam serviços em nosso nome e que são proibidas por contrato de reter, usar ou divulgar informações pessoais para qualquer outra finalidade que não seja nos prestar serviços
 - Autoridades reguladoras e jurídicas e agencias de cumprimento da lei
-- Entidades que adquiram todos ou substancialmente todos os nossos negócios
+- Entidades que adquiram ou estejam no processo de aquisição de todos ou substancialmente todos os nossos negócios
 
-***Nos últimos 12 meses, não vendemos informações pessoais de residentes da Califórnia na acepção de “venda” da CCPA.***
+***Nos últimos 12 meses, não vendemos informações pessoais de residentes dos EUA na acepção de “venda” nas Leis de privacidade dos EUA e não compartilhamos informações pessoais dos residentes da Califórnia na acepção de “compartilhamento” da CCPA. Além disso, não temos conhecimento de que vendemos ou “compartilhamos” informações pessoais de residentes menores de 16 anos de idade.***
 
-***Direitos segundo a CCPA***
-Se você for residente na Califórnia e a CCPA não reconhecer uma isenção que se aplique a você e às suas informações pessoais, você terá o direito de:
+***Direitos segundo as Leis de privacidade dos EUA***
+Se você for residente dos EUA e as Leis de privacidade dos EUA não reconhecerem uma isenção que se aplique a você e às suas informações pessoais, você terá o direito de:
 
-- Solicitar a divulgação gratuita das seguintes informações, abrangendo os 12 meses anteriores à sua solicitação:
+- Solicitar a divulgação gratuita de determinadas informações sobre você. Se você for residente da Califórnia, você poderá solicitar que divulguemos as seguintes informações:
     - as categorias de informações pessoais suas que coletamos;
     - as categorias das fontes das quais as informações pessoais foram coletadas;
     - o objetivo de coletar informações pessoais sobre você;
     - as categorias de terceiros a quem divulgamos informações pessoais sobre você e as categorias de informações pessoais que foram divulgadas (se aplicável) e o objetivo de divulgar as informações pessoais sobre você; e
     - as partes específicas de informações pessoais que coletamos sobre você;
-- Solicitar que deletemos as informações pessoais que coletamos de você, a menos que a CCPA reconheça uma isenção; e
-- Não sofrer discriminação ilegal por exercer seus direitos; isso inclui que você não receba serviços de nível ou qualidade diferentes ou que mercadorias ou serviços sejam negados a você ao exercer seus direitos sob a CCPA.   
+- Solicitar que deletemos as informações pessoais que coletamos sobre você;
+- Solicitar a correção de informações pessoais inexatas que mantemos sobre você; e
+- Não sofrer discriminação ilegal por exercer seus direitos; isso inclui que você não receba serviços de nível ou qualidade diferentes ou que mercadorias ou serviços sejam negados a você ao exercer seus direitos.  
 
 Visamos a atender a todas as solicitações verificadas dentro de 45 dias de acordo com a CCPA.  Se necessário, a prorrogação por mais 45 dias será acompanhada de explicação sobre o atraso.
 
 ***Como exercer seus direitos***
 
-Para começar, você pode fazer login em sua conta e gerenciar os dados a partir dela. Se você for residente da Califórnia, a quem a CCPA se aplica, você poderá exercer seus direitos, caso existam, a outros dados entrando em contato conosco pelo endereço cloudlegalnotices@tencent.com.
+Para começar, você pode fazer login em sua conta e gerenciar os dados a partir dela. Se você for residente dos EUA, a quem as Leis de privacidade dos EUA se aplicam, você poderá exercer seus direitos, caso existam, a outras informações pessoais entrando em contato conosco pelo endereço cloudlegalnotices@tencent.com.
+
+Somente você, ou alguém que você autorize a agir em seu nome, poderá fazer um pedido relativo às suas informações pessoais. Um agente autorizado poderá fazer uma solicitação fornecendo a permissão por escrito designada por você. Como parte do processo de verificação de identificação para fins de tratamento de sua solicitação de dados, você deverá fazer o login em sua conta existente e poderemos solicitar informações adicionais (incluindo, entre outras, o país de registro, os recursos adquiridos na nuvem e o número de celular registrado) para tornar a sua conta verificável. 
+
+Além disso, quando aplicável, forneceremos a você mais informações sobre o nosso processo de apelação. Quando você apresentar uma solicitação ou fizer uma apelação, limitaremos a nossa coleta de suas informações apenas ao que for necessário para atender com segurança a sua solicitação ou processar a sua apelação.
 
 ### BRASIL
 
@@ -486,7 +495,7 @@ Você tem os seguintes direitos, na medida do previsto pelas leis aplicáveis:
 Ao consentir com esta Política de Privacidade, você nos consente:
  - coletar e processar suas informações pessoais como descrito na seção “[Como usamos suas informações pessoais](#2)”;
  - compartilhar suas informações pessoais com terceiros, empresas em nosso grupo corporativo, e terceiros que adquiram todos ou parte substancial de nossos negócios, como descrito na Política de Privacidade e para os fins ali expressos; e
- - transferir ou armazenar suas informações pessoais fora das Filipinas quando o processamento deve ocorrer fora das Filipinas como descrito na seção “[Como armazenamos e compartilhamos suas informações pessoais](#3)”.
+ - transferir ou armazenar suas informações pessoais fora das Filipinas quando o processamento deve ocorrer fora das Filipinas como descrito na seção “[Como divulgamos e armazenamos suas informações pessoais](#3)”.
 
 ### ARÁBIA SAUDITA 
 Você concorda com a divulgação, transferência e exportação de suas informações pessoais fora da Arábia Saudita ou em qualquer outra jurisdição na qual você as forneceu.
@@ -608,7 +617,7 @@ Exceto conforme especificado acima, processamos suas informações pessoais com 
 
 *Transferência, localização e retenção de informações pessoais*
 
-Não compartilharemos suas informações pessoais com terceiros não relacionados sem o seu consentimento, exceto nas circunstâncias especificadas na seção "Como compartilhamos e armazenamos seus dados pessoais" nesta Política de Privacidade. 
+Não compartilharemos suas informações pessoais com terceiros não relacionados sem o seu consentimento, exceto nas circunstâncias especificadas na seção "Como divulgamos e armazenamos suas informações pessoais" nesta Política de Privacidade. 
 
 Não divulgaremos publicamente suas informações pessoais e, se tivermos que torná-las públicas, informaremos você sobre o propósito das mesmas, o tipo de informação divulgada e as informações confidenciais que podem ser divulgadas com o objetivo de obter o seu consentimento expresso. 
 
