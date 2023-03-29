@@ -26,7 +26,7 @@ This document describes how to develop and integrate **custom recording**. To en
 ## Feature Overview
 
 ### 1. Recording scope
-You can specify the ID of a room to record the mixed stream or a user in a room to record a single stream in the server API.
+You can specify RoomID to record the mixed stream or a user in a room to record a single stream in the server API.
 For the ID of the room to be recorded, you can specify players to be recorded in a allowlist and players not to be recorded in a blocklist through server API parameters.
 
 ### 2. Relevant APIs
