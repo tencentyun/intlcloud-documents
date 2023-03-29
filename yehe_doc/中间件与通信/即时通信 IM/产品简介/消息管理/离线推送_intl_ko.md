@@ -1,7 +1,6 @@
 ## 응용 시나리오
 App이 백그라운드에서 종료되거나 프로세스가 중단된 경우에도 오프라인 푸시 기능을 사용하여 사용자에게 새 메시지를 알릴 수 있으며, iOS 디바이스는 APNs를 사용하여 오프라인 푸시하며, Android 디바이스는 사용자가 오프라인 메시지 콜백을 등록해야 합니다.
 
-
 ## iOS APNs 푸시
 ### 푸시 형식
 
@@ -32,5 +31,5 @@ iOS의 경우 [푸시 형식](https://intl.cloud.tencent.com/document/product/10
 ## 관련 문서
 - [오프라인 푸시 인증서 관리](https://intl.cloud.tencent.com/document/product/1047/34540)
 - [Apple 푸시 인증서 신청](https://intl.cloud.tencent.com/document/product/1047/34346)
-- [iOS 오프라인 푸시 설정] (https://intl.cloud.tencent.com/document/product/1047/34347)
+- [iOS 오프라인 푸시 설정](https://intl.cloud.tencent.com/document/product/1047/34347)
 - [Android 오프라인 푸시 기본 설정](https://intl.cloud.tencent.com/document/product/1047/34336)

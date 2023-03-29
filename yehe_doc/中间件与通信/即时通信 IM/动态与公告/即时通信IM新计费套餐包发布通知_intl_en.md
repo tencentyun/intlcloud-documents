@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 The original billing mode of Chat was disused on December 26, 2022.
 - If you created your first Chat application in a selected IDC before December 26, 2022, all Chat applications of the IDC use the original billing mode.
 - If you created your first Chat application in a selected IDC after December 26, 2022, all Chat applications of the IDC use the new billing mode.

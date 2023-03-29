@@ -366,6 +366,6 @@ The [statistics and analytics](https://console.cloud.tencent.com/im) feature in 
 
 ### Private deployment
 
-Private deployment allows an enterprise to deploy systems directly to its own servers and save data locally. Chat provides the private deployment feature to assist enterprises in the deployment, implementation, and OPS of the private version. If needed, please apply for the [Chat private service](https://cloud.tencent.com/apply/p/kotpgwc3vq).
+Private deployment allows an enterprise to deploy systems directly to its own servers and save data locally. Chat provides the private deployment feature to assist enterprises in the deployment, implementation, and OPS of the private version. 
 
 >?To apply for the Chat private service, you need to log in with your root account of Tencent Cloud.

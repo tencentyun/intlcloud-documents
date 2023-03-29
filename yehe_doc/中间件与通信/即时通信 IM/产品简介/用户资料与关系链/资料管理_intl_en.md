@@ -176,9 +176,4 @@ The rules for naming custom profile fields are as follows:
 - Keyword: the keyword must be a string of letters with a length no more than 8 bytes. We recommend you use an English word or its abbreviation as the keyword.
 - Example: if the custom field to be applied for by an app has the keyword **Test**, then the name of the custom profile field is: Tag_Profile_Custom_Test.
 
-## See Also
-
-- [User Profile and Relationship Chain (Android)](https://intl.cloud.tencent.com/document/product/1047/48162)
-- [User Profile and Relationship Chain (iOS)](https://intl.cloud.tencent.com/document/product/1047/48162)
-- [User Profile (Web)](https://intl.cloud.tencent.com/document/product/1047/48161)
 

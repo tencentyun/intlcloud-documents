@@ -84,5 +84,5 @@ IM을 사용하면 [콘솔](https://console.cloud.tencent.com/im)에서 동시 �
 기본적으로 사용자는 각 플랫폼에 대해 하나의 장치에서만 온라인 상태가 될 수 있습니다(예를 들어, 하나의 Android 클라이언트는 다른 Android 클라이언트를 강제로 오프라인으로 전환함). 플래그십 버전 사용자의 경우 Android, iPhone, iPad, Windows 또는 Mac 플랫폼에서 로그인할 수 있는 최대 인스턴스 수를 구성할 수 있습니다. 또한 모든 사용자가 Web 플랫폼에서 로그인할 수 있는 최대 인스턴스 수를 구성할 수 있습니다.
 
 동시 접속은 사용자 경험을 향상시키는 핵심 툴입니다. 사용자가 동일한 플랫폼에서 여러 장치에 로그인할 때 강제 로그아웃이 발생하지 않도록 특정 플랫폼에 대한 최대 동시 로그인 수를 구성할 수 있습니다.
->?‘동일한 플랫폼의 멀티 디바이스 동시 접속’ 기능은 IM 플래그십 버전에서만 사용할 수 있습니다. [플래그십 버전 구매](https://buy.cloud.tencent.com/avc?from=17486) 후 사용할 수 있습니다. 자세한 내용은 [과금 개요](https://www.tencentcloud.com/zh/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85)를 참고하십시오.
+>?‘동일한 플랫폼의 멀티 디바이스 동시 접속’ 기능은 IM 플래그십 버전에서만 사용할 수 있습니다. [플래그십 버전 구매](https://www.tencentcloud.com/document/product/1047/34577) 후 사용할 수 있습니다. 자세한 내용은 [과금 개요](https://www.tencentcloud.com/zh/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85)를 참고하십시오.
 )。

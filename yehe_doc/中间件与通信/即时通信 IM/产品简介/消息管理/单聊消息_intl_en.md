@@ -57,9 +57,9 @@ Instant Messaging (IM) provides comprehensive one-to-one messaging capabilities.
 #### Offline cache and roaming of one-to-one messages:
 
 1. User A calls `sendMessage` to send messages to user B who is offline.
-   - User A is added to user B’s recent contacts, with up to 100 messages cached.
-   - Messages are stored in the offline cache for 7 days.
-   - Messages are stored on the roaming server for 7 days.
+  - User A is added to user B’s recent contacts, with up to 100 messages cached.
+  - Messages are stored in the offline cache for 7 days.
+  - Messages are stored on the roaming server for 7 days.
 2. User B calls the `login` API to log in to IM.
 3. The SDK automatically pulls messages from the offline cache and throws them through the `OnNewMessage` API.
 4. The SDK automatically pulls recent contacts and throws them through the `OnNewMessage` API.

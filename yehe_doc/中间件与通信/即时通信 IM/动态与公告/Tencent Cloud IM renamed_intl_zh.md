@@ -1,4 +1,4 @@
-﻿Dear user,
+﻿﻿Dear user,
 
 For a better product experience, **Tencent Cloud Instant Messaging** was officially renamed **Tencent Cloud Chat**.
 

@@ -176,9 +176,5 @@ App 관리자는 IM [콘솔](https://console.cloud.tencent.com/im)>**애플리�
 - 키워드: 8바이트 이하의 영어 알파벳으로 구성하며, 영어 단어 또는 약자 사용 권장.
 - 예시: App에서 신청하려는 사용자 정의 필드의 키워드가 Test일 경우, 사용자 정의 프로필 정보 필드 이름은 Tag_Profile_Custom_Test가 됨.
 
-## 관련 문서
 
-- [사용자 프로필 및 관계망(Android)](https://intl.cloud.tencent.com/document/product/1047/48162)
-- [사용자 프로필 및 관계망(iOS)](https://intl.cloud.tencent.com/document/product/1047/48162)
-- [사용자 프로필(Web)](https://intl.cloud.tencent.com/document/product/1047/48161)
 

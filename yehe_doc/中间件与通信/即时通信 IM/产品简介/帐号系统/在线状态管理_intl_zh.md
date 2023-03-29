@@ -84,5 +84,5 @@ IM SDK 暂时无法获取用户的在线状态。
 默认情况下，每种平台只支持1个终端在线（如 Android 和 Android 会互踢），旗舰版用户允许配置 Android、iPhone、iPad、Windows、Mac 同种平台可登录的最大实例数。另外，所有用户均可配置 Web 平台可登录的最大实例数。
 
 同平台多设备在线，提升用户体验必备工具，支持配置同种平台可登录的最大实例数，防止同平台多设备上线后互踢的情况出现，让用户体验更丝滑。
->?“同平台多设备在线”为 IM 旗舰版功能，[购买旗舰版](https://buy.cloud.tencent.com/avc?from=17486) 后可使用，详见 [价格说明](https://www.tencentcloud.com/zh/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85
+>?“同平台多设备在线”为 IM 旗舰版功能，[购买旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 后可使用，详见 [价格说明](https://www.tencentcloud.com/zh/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85
 )。

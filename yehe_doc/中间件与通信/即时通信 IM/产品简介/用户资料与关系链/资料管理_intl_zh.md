@@ -176,9 +176,5 @@ App 管理员可以通过即时通信 IM [控制台](https://console.cloud.tence
 - 关键字：必须是英文字母，且长度不得超过8字节，建议用一个英文单词或该英文单词的缩写。
 - 示例：某 App 要申请的自定义字段的关键字是 Test，则自定义资料字段的名称是：Tag_Profile_Custom_Test。
 
-## 相关文档
 
-- [用户资料与关系链（Android）](https://intl.cloud.tencent.com/document/product/1047/48162)
-- [用户资料与关系链（iOS）](https://intl.cloud.tencent.com/document/product/1047/48162)
-- [用户资料（Web）](https://intl.cloud.tencent.com/document/product/1047/48161)
 

@@ -176,9 +176,4 @@ App管理者は、IM[コンソール](https://console.cloud.tencent.com/im)>**�
 - キーワード：必ずアルファベットとし、長さは8バイトを超えてはなりません。英単語または英単語の省略形を使用することをお勧めします。
 - 例：特定のAppが申請するカスタムフィールドのキーワードがTestの場合、カスタムプロフィールフィールドの名称は、Tag_Profile_Custom_Testとなります。
 
-## 関連ドキュメント
-
-- [ユーザープロフィールとリレーションシップチェーン（Android）](https://intl.cloud.tencent.com/document/product/1047/48162)
-- [ユーザープロフィールとリレーションシップチェーン（iOS）](https://intl.cloud.tencent.com/document/product/1047/48162)
-- [ユーザープロフィール（Web）](https://intl.cloud.tencent.com/document/product/1047/48161)
 

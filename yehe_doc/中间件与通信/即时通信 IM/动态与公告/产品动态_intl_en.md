@@ -20,7 +20,7 @@
     <td>Launched the cloud moderation feature</td>
     <td>The cloud moderation feature is to check the text, image, audio, and video content generated in one-to-one chat, group chat, and profile scenarios on the server. You can configure different moderation policies for different content in different scenarios and intercept the identified unsafe content.</td>
     <td> 2023-01-04 </td>
-    <td> <a href="https://www.tencentcloud.com/document/product/1047/52497#.E4.BA.91.E7.AB.AF.E5.AE.A1.E6.A0.B8.E5.8A.9F.E8.83.BD">On-cloud Moderation</a></td>
+    <td> </a></td>
 </tr> 
 </table>
 
@@ -32,7 +32,7 @@
     <td> Launched the local moderation feature</td>
     <td>The local moderation feature is local text moderation on clients. It intercepts or replaces sensitive words in texts locally on clients to achieve sensitive word filtering. You can use this feature to intercept or replace sensitive words that are generated during operations such as sending a text message and modifying a nickname/remark/group notification and are not expected to be sent.</td>
     <td> 2022-12-07 </td>
-    <td> <a href="https://www.tencentcloud.com/document/product/1047/52497">Content Moderation</a></td>
+    <td></td>
 </tr> 
 </table>
 

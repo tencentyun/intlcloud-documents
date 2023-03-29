@@ -84,5 +84,5 @@ IMは[コンソール](https://console.cloud.tencent.com/im)で同時オンラ�
 デフォルトの場合、各プラットフォームはオンラインで1つの端末のみをサポートします（例えば、AndroidとAndroidは相互切断が生じます）。フラッグシップ版ユーザーは、Android、iPhone、iPad、WindowsおよびMacと同じプラットフォームにログインできるインスタンス最大数を設定できます。さらにすべてのユーザーは、Webプラットフォームにログインできるインスタンス最大数を設定できます。
 
 同じプラットフォームで複数のデバイスをオンラインにし、ユーザー体験を向上させるために不可欠なツールとして、同じプラットフォームにログインできる最大インスタンス数の設定をサポートし、同じプラットフォーム上の複数のデバイスがログイン後に互いに競合する状況を防ぐことで、よりスムーズなユーザー体験を提供します。
->?「同じプラットフォームでの複数のデバイスのオンライン」は、IM Ultimate Editionの機能です。[Ultimate Editionを購入](https://buy.cloud.tencent.com/avc?from=17486)した後にのみ使用できます。詳細については、[料金説明](https://www.tencentcloud.com/zh/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85)をご参照ください。
+>?「同じプラットフォームでの複数のデバイスのオンライン」は、IM Ultimate Editionの機能です。[Ultimate Editionを購入](https://www.tencentcloud.com/document/product/1047/34577)した後にのみ使用できます。詳細については、[料金説明](https://www.tencentcloud.com/zh/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85)をご参照ください。
 )。
