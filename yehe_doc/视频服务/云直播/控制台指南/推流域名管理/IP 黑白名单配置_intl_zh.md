@@ -4,6 +4,10 @@
 - 配置 IP **白名单**：只有配置的 IP 地址能够访问当前直播内容。
 - 配置 IP **黑名单**：只有配置的 IP 地址无法访问当前直播内容。
 
+## 注意事项
+- IP 黑白名单配置完成后约5分钟生效。
+- IP 黑白名单配置成功后，直播中的流需断流重推才能生效。
+
 ## 前提条件
 - 已开通云直播服务，并登录 [云直播控制台](https://console.cloud.tencent.com/live/livestat)。
 - 已添加 [推流域名](https://intl.cloud.tencent.com/document/product/267/35970)。
@@ -48,4 +52,3 @@
 1.选择 [域名管理](https://console.cloud.tencent.com/live/domainmanage)，单击需关闭 IP 黑白名单配置的**推流域名**或右侧的**管理**，进入域名管理页。
 2.在**高级配置> IP 黑白名单配置**中，单击![img](https://main.qcloudimg.com/raw/e72f89a0deb6858428dc3e93ce7e7088.png)按钮，选择关闭 IP 黑白名单。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a3f6197b29df76c3e4cc0deebb17890b.png)
-

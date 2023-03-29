@@ -4,12 +4,16 @@ This document shows you how to configure an IP allowlist/blocklist to filter req
 - IP **allowlist**: Only IP addresses on the list can access your streaming content.
 - IP **blocklist**: IP addresses on the list cannot access your streaming content.
 
+## Reminders
+- An IP allowlist/blocklist takes effect about five minutes after configuration.
+- For an IP allowlist/blocklist configuration to apply to ongoing streams, you need to restart the streams.
+
 ## Prerequisites
 - You have activated CSS and logged in to the [CSS console](https://console.cloud.tencent.com/live/livestat).
-- You have added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
+- You have added a [push domain](https://intl.cloud.tencent.com/document/product/267/35970).
 
 [](id:set)
-## Configuring IP Allowlist/Blocklist
+## Configuring an IP Allowlist/Blocklist
 1. Select [Domain Management](https://console.cloud.tencent.com/live/domainmanage) on the left sidebar. Click the name of the target playback domain or click **Manage** on the right to enter the domain management page.
 2. Select the **Access Control** tab and find **IP allowlist/blocklist**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/0fb58ebd1e7bcbddfc50c687aa486281.png)
@@ -26,7 +30,7 @@ This document shows you how to configure an IP allowlist/blocklist to filter req
 <li>If you configure a blocklist, IP addresses on the list cannot access your streaming content.</li></ul></td>
 </tr><tr>
 <td>IP List</td>
-<td>You can add up to 200 items. Separate them with line breaks.<ul style="margin:0">
+<td>You can add up to 200 entries. Separate them with line breaks.<ul style="margin:0">
 <li>You can enter IP addresses or IP ranges (/8/16/24). The “IP address: port number” format is not supported.</li>
 <li>IPv6 is not supported currently.</li></ul></td>
 </tr>
@@ -36,7 +40,7 @@ This document shows you how to configure an IP allowlist/blocklist to filter req
 ![](https://qcloudimg.tencent-cloud.cn/raw/b69fefdda388b25f5adf09781094dcb9.png)
 
 [](id:change)
-## Modifying IP Allowlist/Blocklist Configuration
+## Modifying an IP Allowlist/Blocklist
 1. Select [Domain Management](https://console.cloud.tencent.com/live/domainmanage) on the left sidebar. Click the name of the target playback domain or click **Manage** on the right to enter the domain management page.
 2. Select the **Access Control** tab. In the **IP allowlist/blocklist** area, click **Edit**.
 3. Modify the configuration and click **Save**.

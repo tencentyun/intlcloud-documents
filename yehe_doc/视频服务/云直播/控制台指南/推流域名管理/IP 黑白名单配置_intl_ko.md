@@ -4,6 +4,10 @@
 - IP **얼로우리스트**: 목록에 있는 IP 주소만 스트리밍 콘텐츠에 액세스할 수 있습니다.
 - IP **블록리스트**: 목록에 있는 IP 주소는 스트리밍 콘텐츠에 액세스할 수 없습니다.
 
+## 참고 사항
+- IP 블록리스트/얼로우리스트 구성이 완료되면 약 5분 후에 적용됩니다.
+- IP 블록리스트/얼로우리스트 구성 완료 후, 진행 중인 라이브 스트림을 중지하고 다시 푸시해야만 적용됩니다.
+
 ## 전제 조건
 - CSS 서비스가 활성화되어 있고 [CSS 콘솔](https://console.cloud.tencent.com/live/livestat)에 로그인되어 있어야 합니다.
 - [푸시 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가되어 있어야 합니다.
@@ -17,7 +21,7 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/0c7ad338e825a85dce922fd9b9f5d0d4.png)
 
 <table>
-<thead><tr><th>설정 항목</th><th>설명</th></tr></thead>
+<thead><tr><th>구성 항목</th><th>설명</th></tr></thead>
 <tbody><tr>
 <td>인증 유형</td>
 <td>얼로우리스트 또는 블록리스트: <ul style="margin:0">

@@ -1,116 +1,108 @@
-This document provides a list of features in CSS. For more information on their descriptions and usage, please see the corresponding documents.
+This document provides a list of what you can do with CSS. You can find more information about each feature by reading their documents.
 
-
-
-
-
-### Live Push
+### Push
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968" target="_blank">Push protocol</a></td><td>Supports the RTMP protocol for push.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31558" target="_blank">Push method</a></td><td>Supports applications that are integrated with Tencent Cloud CSS Push SDK for iOS, Android, or web as well as common third-party push software programs such as OBS, XSplit, and FMLE.</td></tr>
-<tr><td>Push device</td><td>Supports common third-party RTMP push hardware devices, encoders, and set-top boxes.</td></tr>
+<tr><th width=17%>Feature</th><th>Description</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968">Push protocol support</a></td><td>Supports push over RTMP and WebRTC.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31558">Push tool support</a></td><td>Supports Tencent Cloud’s MLVB SDK (which comes in iOS, Android, and web editions) or third-party streaming software such as OBS, XSplit, and FMLE.</td></tr>
+<tr><td>Push device support</td><td>Supports common third-party RTMP streaming devices, encoders, and set-top boxes.</td></tr>
 </table>
 
-
-### Live Playback
+### Playback
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968" target="_blank">Playback protocol</a></td><td>Supports RTMP, FLV, and HLS playback protocols.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31559" target="_blank">Playback method</a></td><td>Supports Tencent Cloud CSS Player SDK for iOS, Android, and web as well as common third-party FLV, RTMP, and HLS players.</td></tr>
-<tr><td>Playback control</td><td>Plays back an original stream that has the same specification as the input stream or a stream that is transcoded in real time.</td></tr>
+<tr><th width=17%>Feature</th><th>Description</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968">Playback protocol support</a></td><td>Supports playback over RTMP, FLV, HLS, and UDP.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31559">Playback tool support</a></td><td>Supports Tencent Cloud’s MLVB SDK (which comes in iOS, Android, and web editions) or third-party FLV, RTMP, or HLS players.</td></tr>
+<tr><td>Playback control</td><td>Plays the original stream or a stream transcoded in real time.</td></tr>
 </table>
 
-
- ### Live Streaming Management
- <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td>Management method</td><td>Supports management in the CSS console graphically or by calling CSS's TencentCloud APIs.</td></tr>
+### Live Streaming Management
+<table>
+<tr><th width=17%>Feature</th><th>Description</th></tr>
+<tr><td>Management</td><td>Manages live streams graphically in the console or using APIs.</td></tr>
 </table>
 
-### CSS Console
+### CSS console
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31054" target="_blank">Overview</a></td><td>Displays data such as real-time live streaming bandwidth and traffic. </td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/35970" target="_blank">Domain name management</a></td><td>Supports adding, modifying, disabling, and deleting live push and playback domain names as well as configuring domain name CNAME records, HTTPS certificates, and push and playback authentication.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31068" target="_blank">Live stream management</a></td><td>Supports querying the information of real-time and historical live streams.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/34223" target="_blank">Feature module</a></td><td>Supports querying and modifying the configuration information of live recording, transcoding, screencapture, porn detection, watermark, and callback.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31076" target="_blank">Statistical analysis</a></td><td>Supports querying the usage statistics of live streaming service bandwidth, traffic, requests, concurrent connections, screenshots, channels, and recording channels.</td></tr>
-<tr><td>Live streaming SDK</a></td><td>Supports querying the MLVB SDK quality monitoring data and MLVB mic connect minutes.</td></tr>
+<tr><th width=17%>Section</th><th>Description</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31054" target="_blank">Overview</a></td><td>Displays data such as traffic package usage or real-time bandwidth and traffic usage.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/35970">Domain Management</a></td><td>Supports adding, modifying, disabling and deleting push and playback domains, as well as configuring CNAME, HTTPS certificates, and push and playback authentication.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31068">Stream Management</a></td><td>Supports querying live streams in real time as well as querying historical streams.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/34223">Scenario-Specific Services</a></td><td>Supports viewing and modifying recording, transcoding, screencapturing, porn detection, watermarking, and callback configurations.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31076">Data Center</a></td><td>Supports querying usage statistics including bandwidth, traffic, requests, concurrent connections, screenshots, push channels, and recording channels.</td></tr>
 </table>
 
-
-### Live Streaming Security
+### Security
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31059" target="_blank">Push authentication</a></td><td>Supports configuring push URL hotlink protection and customizing the authentication key and expiration time.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31060" target="_blank">Playback authentication</a></td><td>Supports hotlink protection based on blocklist, allowlist, Referer, and playback URL as well as remote playback authentication.</td></tr>
+<tr><th width=17%>Feature</th><th>Description</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31059">Push authentication</a></td><td>Generates hotlink protection push URLs (you can use your own key and specify the expiration time).</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31060">Playback authentication</a></td><td>Generates hotlink protection playback URLs using IP allowlist/blocklist or the referer field; supports remote playback authentication.</td></tr>
+<tr><td><a href="https://www.tencentcloud.com/document/product/267/48068">DRMencryption</a></td><td>Encrypts videos based on DRM schemes including Widevine, FairPlay, or NormalAES to prevent unauthorized recording and hotlinking.</td></tr>
 </table>
 
-​    
-### API Management
+### APIs
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
+<tr><th width=17%>API Category</th><th>Description</th></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Domain management APIs</a></td>
-            <td>Used to add domain name, delete domain name, query domain name information, query domain name list, enable domain name, disable domain name, or modify playback domain name information.</td>
+<td>Add, delete, query, enable, and disable push and playback domains, as well as modify playback domains.</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Real-time log APIs</a></td>
-            <td>Used to get log URLs in batches.</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Delayed playback management APIs</a></td>
-            <td>Used to delay playback, get delayed playback list, or resume playback.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Delayed Playback management APIs</a></td>
+<td>Delay playback, query delayed playbacks, and resume real-time playback.</td>
 </tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Recording management APIs</a></td>
-            <td>Used to create recording task, create recording rule, create recording template, delete recording task, delete recording rule, delete recording template, get recording rule list, get one single recording template, get recording template list, modify recording template configuration, or terminate recording task.</td>
+<td>Create, delete, and end recording tasks, create, delete, query, and modify recording templates, as well as create, delete, and query recording rules.</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Screencapture and porn detection APIs</a></td>
-            <td>Used to create screencapture rule, create screencapture template, delete screencapture rule, delete screencapture template, get screencapture rule list, get one single screencapture template, get screencapture template list, or modify screencapture template.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Screencapturing and Porn Detection APIs</a></td>
+<td>Create, delete, and query recording rules, as well as create, delete, query, and modify recording templates.</td>
 </tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Watermark management APIs</a></td>
-            <td>Used to add watermark, create watermark rule, delete watermark, delete watermark rule, get one single watermark, get watermark rule list, query watermark list, or update watermark.</td>
+ <td>Add, delete, query, and modify watermarks, as well as create, delete, and query watermark rules.</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Live Stream callback APIs</a></td>
-            <td>Used to create callback rule, create callback template, delete callback rule, delete callback template, get callback rule list, get one single callback template, get callback template list, or modify callback template.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Live callback APIs</a></td>
+<td>Create, delete, and query callback rules, as well as create, delete, query, and modify callback templates.</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Live pull APIs</a></td>
-            <td>Used to add, delete, query, update, or modify status of the live pull configuration.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Stream pulling APIs</a></td>
+<td>Add, delete, query, and modify pull configurations.</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Live stream management APIs</a></td>
-            <td>Used to get forbidden stream list, query stream interruption event, query live stream, query historical stream list, query stream status, interrupt live stream, forbid live stream, or resume live stream.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Live stream management API</a></td>
+<td>Query disabled, ongoing, and historical streams, query push interruptions and stream status, stop streams, block streams, and resume streams.</td>
 </tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Live transcoding APIs</a></td>
-            <td>Used to create transcoding rule, create transcoding template, delete transcoding rule, delete transcoding template, get transcoding rule list, get one single transcoding template, get transcoding template list, or modify transcoding template configuration.</td>
+<td>Create, delete, and query transcoding rules, as well as create, delete, query, and modify transcoding templates.</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Statistical query APIs</a></td>
-            <td>Used to query billable live streaming bandwidth and traffic data, query playback data by district and ISP, query HTTP playback status code details, query real-time downstream playback data at domain name level, or query live streaming package information.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Billing data query APIs</a></td>
+<td>Query billable bandwidth and traffic usage, query playback data by region and ISP, query HTTP status codes for playback requests, query domain-level playback data in real time, and query packages.</td>
 </tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Certificate management APIs</a></td>
-            <td>Used to bind certificate to domain name, add certificate, delete certificate, get certificate information, get certificate information list, get domain name certificate information, modify certificate, modify domain name-certificate binding information, or unbind domain name from certificate.</td>
+<td>Add, delete, bind, unbind, and query certificates, as well as query and change the domains bound with a certificate.</td>
 </tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Authentication management APIs</a></td>
-            <td>Used to query playback authentication key, query push authentication key, modify playback authentication key, or modify push authentication key.</td>
+<td>Query and modify authentication keys for playback and push.</td>
+</tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Time shifting APIs</a></td>
+<td>Create, delete, query, and modify time shifting templates, create, delete, and query time shifting rules, as well as query time-shifted streams.</td>
+</tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Live stream mix APIs</a></td>
+<td>Mix streams and cancel stream mixing.</td>
 </tr>
 </table>
 
-
-### Value-Added Services
+### Value-added services
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31561" target="_blank">Live transcoding</a></td><td>Supports transcoding live streams in various specifications.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31562" target="_blank">Live screencapture</a></td><td>Supports taking screenshots during live streaming through the APIs and storing them in COS.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31564" target="_blank">Recognition</a></td><td>Supports detecting pornographic information in CSS screenshots with the aid of AI and returning recognition results.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31563" target="_blank">Live recording</a></td><td>Supports recording live streams through APIs and storing them in the Tencent Cloud VOD platform.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31565" target="_blank">Time shifting</a></td><td>Supports playing back the content at any previous time point during live streaming.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31567" target="_blank">Global live streaming acceleration</a></td><td>Supports using the Tencent Cloud CSS service outside the Chinese mainland.</td></tr>
+<tr><th width=17%>Feature</th><th>Description</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31561">Live transcoding</a></td><td>Transcodes a stream into different specifications.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31563">Live recording</a></td><td>Records live streams (by calling an API) and saves the recording files to Tencent Cloud VOD or COS.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31562">Live screencapturing</a></td><td>Takes screenshots of a live stream (by calling an API) and saves them to Tencent Cloud VOD or COS.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31564">Porn detection</a></td><td>Recognizes pornographic content in live streams.</td></tr>
+<tr><td><a href="https://www.tencentcloud.com/document/product/1071/42210">RTC-based communication</a></td><td>Supports communication among participants with ultra-low latency (powered by Tencent Cloud TRTC).</td></tr>
+<tr><td><a href="https://www.tencentcloud.com/document/product/267/31565">Time shifting (new)</a></td><td>Plays ongoing streams from earlier time points.</td></tr>
+<tr><td><a href="https://www.tencentcloud.com/document/product/267/53400">Standby stream</a></td><td>Shows a video or image that becomes active automatically when a live stream is interrupted (CSS will automatically switch back to the primary stream after it is recovered).</td></tr>
 </table>
 
-
-
-### CSS SDK
+### SDKs
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/1071" target="_blank">MLVB SDK</a></td><td>An integrated live streaming SDK that provides various features such as live push, basic beauty filters, filters, live playback, and time shifting.</td></tr>
-<tr><td>Beauty filter SDK</a></td><td>Jointly created by Tencent Cloud, Pitu, and YouTu Lab, this is an advanced video processing solution that has a wide variety of real-time special effects for live video capture such as filters, beauty filters, stickers, and gesture recognition to meet the diversified video capture needs in multiple scenarios.</td></tr>
-<tr><td>Interactive live streaming (solution)</a></td><td>Interactive live mic connect solution based on the MLVB SDK.</td></tr>
+<tr><th width=17%>SDK</th><th>Description</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/1071">MLVB SDK</a></td><td>Offers capabilities including stream pushing, basic beautification, filters, playback, and time shifting.</td></tr>
+<tr><td><a href="https://www.tencentcloud.com/document/product/1143">Tencent Effect SDK</a></td><td>Offers capabilities including filters, beautification, stickers, and gesture recognition for different shooting scenarios (the SDK is a video processing solution developed jointly by Tencent Cloud, Pitu, and YouTu).</td></tr>
 </table>
-
