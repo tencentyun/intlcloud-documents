@@ -1,25 +1,25 @@
-Se houver qualquer conflito entre este Adendo de Privacidade e segurança de Dados ("**DPSA"**) e os [Termos de Serviço](https://intl.cloud.tencent.com/document/product/301/9248) (e quaisquer documentos ou políticas incorporados como referência, exceto para o DPSA) ("**Acordos**"), este DPSA deverá prevalecer.
+Se houver qualquer conflito entre este Adendo de Privacidade e segurança de Dados (“**DPSA”**) e os [Termos de Serviço](https://intl.cloud.tencent.com/document/product/301/9248) (e quaisquer documentos ou políticas incorporados como referência, exceto para o DPSA) (“**Acordos**”), este DPSA deverá prevalecer.
 
 ## Definições
 
 A menos que seja declarado o contrário, os seguintes termos terão os significados abaixo atribuídos a eles. Os termos em maiúsculas usados no DPSA mas não definidos abaixo terão o significado atribuído a eles no Contrato.
 “**Informações administrativas**” refere-se às informações pessoais que a Empresa fornece à Tencent Cloud para configurar e gerenciar as contas e serviços da Empresa fornecidos pela Tencent Cloud, além de quaisquer informações pessoais geradas em conexão com o uso pela Empresa dos serviços prestados pela Tencent Cloud;
 “**Conteúdo**” refere-se a quaisquer dados, incluindo informações pessoais, que a Empresa envia, faz upload, transmite ou exibe usando os serviços fornecidos pela Tencent Cloud;
-“**Controlador**” refere-se a uma pessoa, que sozinha ou em conjunto com uma ou mais pessoas, controla a coleta, detenção, processamento ou uso dos Dados pessoais;
-“**Cláusulas de transferência de Controlador-processador**” refere-se às cláusulas contratuais padrão (Controlador a processador) como definido na Decisão da comissão de 5 de fevereiro de 2010 (C(2010) 593), como definido abaixo em **(2) Cláusulas de transferência de Controlador-processador**;
+“**Controlador**” refere-se a uma pessoa, que sozinha ou em conjunto com uma ou mais pessoas, controla a coleta, detenção, processamento ou uso dos Dados pessoais, incluindo, se aplicável, qualquer “negócio” conforme o termo é definido no CCPA.
+“**Cláusulas de transferência de Controlador-processador**” refere-se às cláusulas contratuais padrão (Controlador a processador) como definido na Decisão da comissão de 5 de fevereiro de 2010 (C(2010) 593), como definido abaixo em <b>(2) Cláusulas de transferência de Controlador-processador</b>;
 “**Violação de dados**” refere-se a qualquer uso indevido, interferência, perda, acesso não autorizado, modificação ou divulgação de Dados pessoais que são processados pela Tencent em conexão com o Contrato;
-“**Leis de proteção de dados**” refere-se às leis de proteção de dados aplicáveis em relação à coleta, armazenamento, processamento, transferência, divulgação e uso de quaisquer Dados pessoais aplicáveis de tempos em tempos a uma pessoa ou atividade nas circunstâncias em questão, incluindo as seções 1798.100 – 1798.199 (2020), a Lei de privacidade do consumidor da Califórnia (“a CCPA”), a Diretiva, a Diretiva de privacidade eletrônica e a GDPR;
+“**Leis de proteção de dados**” refere-se às leis de proteção de dados aplicáveis em relação à coleta, armazenamento, processamento, transferência, divulgação e uso de quaisquer Dados pessoais aplicáveis de tempos em tempos a uma pessoa ou atividade nas circunstâncias em questão, incluindo as Leis de privacidade dos EUA,  a Diretiva de privacidade eletrônica e a GDPR;
 “**Titular dos dados**” deverá significar (1) “Titular dos dados” conforme o termo é definido no GDPR; (2) “Consumidor” conforme o termo é definido no CCPA; ou (3) ou qualquer outro indivíduo que seja titular dos Dados pessoais;
 “**Diretiva**” refere-se à Diretiva 95/46/EC do Parlamento Europeu e do Conselho de 24 de outubro de 1995 sobre a proteção das pessoas com relação ao Processamento de dados pessoais e sobre a livre circulação desses dados; 
 **Diretiva de privacidade eletrônica**” refere-se à Diretiva 2002/58/EC do Parlamento Europeu e do Conselho de 12 de julho de 2002 com relação ao Processamento de dados pessoais e à proteção da privacidade no setor de comunicações eletrônicas;  
 “**EEA**” refere-se à Área econômica Europeia;
 “**Dados pessoais da UE**” refere-se aos dados pessoais de um titular de dados que está localizado na EEA;
 “**GDPR**” refere-se ao Regulamento 2016/679 do Parlamento europeu e do Conselho de 27 de abril de 2016 sobre a proteção das pessoas físicas com relação ao Processamento de dados pessoais e à livre circulação desses dados; 
-“**Requisitos específicos da jurisdição**” refere-se aos requisitos específicos para processamento de dados pessoais que se aplicam a determinadas jurisdições, como definido abaixo em **(1) Requisitos específicos da jurisdição**;
+“**Requisitos específicos da jurisdição**” refere-se aos requisitos específicos para processamento de dados pessoais que se aplicam a determinadas jurisdições, como definido abaixo em <b>(1) Requisitos específicos da jurisdição</b>;
 “**Empresa**” refere-se à entidade que concordou com os Termos do serviço. Para os fins deste DPSA (incluindo seus anexos), uma referência a “Empresa” deverá ser considerada, no caso de um contrato com uma pessoa que não esteja agindo em nome de uma Empresa, uma referência a essa pessoa;
-“**Dados pessoais**” refere-se a qualquer informação relacionada a uma pessoa física identificada ou identificável, incluindo "dados pessoais" e "informações pessoais" conforme esses termos estejam definidos nas Leis de proteção de dados;
+“**Dados pessoais**” refere-se a qualquer informação relacionada a uma pessoa física identificada ou identificável, incluindo “dados pessoais” e “informações pessoais” conforme esses termos estejam definidos nas Leis de proteção de dados que a Tencent processe nos termos do Contrato para prestar os Serviços;
 “**Processamento**” refere-se à execução de qualquer operação ou conjunto de operações em Dados pessoais, incluindo qualquer coleta, uso, armazenamento ou divulgação, ou conforme definido de outra forma nas Leis de proteção de dados;
-“**Processador**” refere-se a uma pessoa que processa dados pessoais em nome de um ou mais Controladores; 
+“**Processador**” refere-se a uma pessoa que processa dados pessoais em nome de um ou mais Controladores, incluindo, conforme aplicável, qualquer “prestador de serviços” ou “contratado” de acordo com a definição do termo pelo CCPA;
 “**Sub-Processador**” refere-se a qualquer afiliada da Tencent ou terceiro indicado de tempos em tempos pela Tencent para processar dados pessoais em seu nome de acordo com a cláusula 7.4;
 “**Autoridade supervisora**” refere-se a uma autoridade reguladora com jurisdição competente em relação a uma Lei de proteção de dados;
 “**Tencent Cloud**” refere-se à entidade que fornece os serviços à Empresa, como especificado nos Termos de serviços;
@@ -27,11 +27,12 @@ A menos que seja declarado o contrário, os seguintes termos terão os significa
 “**Política de privacidade da Tencent Cloud**” refere-se à política localizada na [Política de privacidade](https://intl.cloud.tencent.com/document/product/301/17345), conforme atualizado pela Tencent e notificado à Empresa de tempos em tempos;
 “**Política de segurança da Tencent**” refere-se às medidas organizacionais e técnicas apropriadas e razoáveis determinadas pela Tencent de tempos em tempos, para proteger os Dados pessoais contra acesso, processamento, exclusão, perda ou uso não autorizados ou acidentais.  Essas medidas incluirão as medidas definidas nas Cláusulas de transferência de Controlador-processador (se aplicável);
 “**Termos de serviço**” refere-se aos termos localizados em [Termos de serviço](https://intl.cloud.tencent.com/document/product/301/9248); e
- “**Países terceiros**” refere-se a todos os países fora do escopo das leis de proteção de dados da Área Econômica Europeia (a “**EEA**”), exceto os países aprovados no fornecimento de proteção adequada para Dados pessoais pela Comissão Europeia de tempos em tempos, que nada data deste Contrato inclui Andorra, Argentina, Canadá, Faroe Islands, Guernsey, Ilha de Man, Israel, Jersey, Nova Zelândia, Suíça e Uruguai.
+“**Países terceiros**” refere-se a todos os países fora do escopo das leis de proteção de dados da Área Econômica Europeia (a “<b>EEA</b>”), exceto os países aprovados no fornecimento de proteção adequada para Dados pessoais pela Comissão Europeia de tempos em tempos, que nada data deste Contrato inclui Andorra, Argentina, Canadá, Faroe Islands, Guernsey, Ilha de Man, Israel, Jersey, Nova Zelândia, Suíça e Uruguai.
+“**Leis de privacidade dos EUA**” significa a Lei de Privacidade do Consumidor da Califórnia, conforme emendada pela Lei de Direitos de Privacidade da Califórnia (California Consumer Privacy Act, “CCPA”), a Lei de Privacidade do Colorado, a Lei de Privacidade de Dados de Connecticut, a Lei de Privacidade do Consumidor de Utah e a Lei de Proteção de Dados do Consumidor da Virgínia;
 
 ## Escopo do Contrato
 
-Este Adendo se aplica se você tiver inserido os Termos de Serviço para o fornecimento de serviços pela Tencent Cloud. O Adendo se aplica ao processamento de dados pessoais que é conteúdo. Os Dados Pessoais de Informações Administrativas são processados de acordo com a Política de Privacidade da Tencent Cloud e este Adendo não se aplicará ao Processamento de Informações Administrativas.
+Este Adendo se aplica se você tiver inserido os Termos de Serviço para o fornecimento de serviços pela Tencent Cloud. O Adendo se aplica ao processamento de dados pessoais que é conteúdo. Os Dados Pessoais de Informações Administrativas são processados de acordo com a Política de Privacidade e este Adendo não se aplicará ao Processamento de Informações Administrativas.
 
 ## Autorização para processar dados pessoais
 
@@ -45,18 +46,19 @@ A Tencent e a Organização reconhecem que a Organização é o Controlador e a 
 ## Regiões dos serviços
 
 1. Sujeito à cláusula 5.2, onde a Organização selecionou uma Região de Serviços de acordo com o Contrato, a Tencent processará apenas os dados pessoais nessa região de serviço.
-2. A organização reconhece e concorda que a Tencent poderá, por razões operacionais, normativas ou outras, ter de alterar seus locais de processamento esporadicamente, desde que qualquer processamento de Dados Pessoais em um lugar diferente da Região de Serviços preferida da Empresa seja considerado uma "mudança material" tratada de acordo com o Contrato.
+2. A organização reconhece e concorda que a Tencent poderá, por razões operacionais, normativas ou outras, ter de alterar seus locais de processamento esporadicamente, desde que qualquer processamento de Dados Pessoais em um lugar diferente da Região de Serviços preferida da Empresa seja considerado uma “mudança material” tratada de acordo com o Contrato.
 3. A Empresa reconhece e concorda que a entidade contratante da Tencent relacionada nos Termos e serviços talvez não seja a entidade em custódia ou controle dos Dados do cliente, incluindo Dados pessoais, assim esses dados poderão ser armazenados e processados na Região de serviço escolhida. Se a Empresa fornece informações que não requerem a seleção de uma Região de serviço, como informações relacionadas a conta, a Tencent poderá processar e armazenar essas informações em qualquer local. 
 
 ## Obrigações da Tencent
 
 1. Na medida em que processa dados pessoais em nome da Organização, a Tencent:
 <ol style = 'list-style-type :lower-latin'>
-<li>Processará os Dados Pessoais apenas para fins do Contrato, de acordo com as instruções por escrito da Organização (que incluirão os termos deste DPSA, quaisquer instruções fornecidas através do console administrativo da Organização) e da Política de Segurança da Tencent, e notificará a Organização prontamente se ela não puder cumprir este DPSA ou qualquer um de seus termos;</li>
+<li>Processará os Dados Pessoais apenas para fins limitados e específicos para a prestação dos serviços, de acordo com as instruções por escrito da Organização (que incluirão os termos deste DPSA, quaisquer instruções fornecidas através do console administrativo da Organização) e da Política de Segurança da Tencent, e notificará a Organização prontamente se ela não puder cumprir este DPSA ou qualquer um de seus termos;</li>
 <li>devolverá ou (solicitação por escrito da Organização) destruirá com segurança todos os Dados Pessoais em sua posse (incluindo todas as cópias de backup), a menos que seja proibida de fazê-lo pelas Leis Aplicáveis;</li>
 <li>notificará prontamente a Empresa, ao tomar conhecimento, de:</li>
 <ol style = 'list-style-type:lower-roman'>
 <li>qualquer ordem judicial ou outro processo jurídico ou qualquer solicitação ou demanda de qualquer autoridade supervisora, regulador, funcionário ou outro ministro do governo, autoridade ou representante para obter ou acessar qualquer dado pessoal, exceto se tal informação for proibida pela Lei aplicável;</li>
+<li>Violação de dados;</li>
 <li>qualquer divulgação não autorizada ou acesso aos Dados Pessoais ou qualquer perda, dano ou destruição dos Dados Pessoais; e</li>
 <li>qualquer reclamação, comunicação ou solicitação material relativa às obrigações da Tencent nos termos das Leis de Proteção de Dados;</li>
 <li>qualquer instrução recebida da Organização em relação aos Dados Pessoais que, a critério da Tencent, pode violar qualquer Lei Aplicável, incluindo qualquer Lei de Proteção de Dados, da jurisdição apropriada;</li></ol></li>
@@ -65,7 +67,7 @@ A Tencent e a Organização reconhecem que a Organização é o Controlador e a 
 <li>cumprirá todos os requisitos específicos da jurisdição aplicáveis; e</li>
 <li>onde as leis da jurisdição relevante assim o requererem:</li>
 <ol style = 'list-style-type:lower-roman'>
-<li>implementará medidas de segurança técnicas e organizacionais apropriadas até onde aplicável, com a finalidade de fornecer assistência razoável à Empresa para que ela cumpra suas obrigações, incluindo como apropriado e aplicável na jurisdição relevante: (i) a pseudonimização dos dados pessoais; (ii) a garantia de confidencialidade, integridade, disponibilidade e resiliência contínuas dos sistemas de processamento e serviços; (iii) a restauração de disponibilidade e acesso a Dados pessoais em tempo hábil no caso de incidente físico ou técnico; e (iv) testar, avaliar e analisar regularmente a eficiência das medidas técnicas e organizacionais para a segurança do processamento;</li>
+<li>implementará medidas de segurança técnicas e organizacionais apropriadas até onde aplicável, com a finalidade de fornecer assistência razoável à Empresa para que ela cumpra suas obrigações, incluindo como apropriado e aplicável na jurisdição relevante: (i) a pseudonimização ou desidentificação dos dados pessoais; (ii) a garantia de confidencialidade, integridade, disponibilidade e resiliência contínuas dos sistemas de processamento e serviços; (iii) a restauração de disponibilidade e acesso a Dados pessoais em tempo hábil no caso de incidente físico ou técnico; e (iv) testar, avaliar e analisar regularmente a eficiência das medidas técnicas e organizacionais para a segurança do processamento;</li>
 <li>considerará a natureza do processamento, auxiliará a Empresa com medidas técnicas e organizacionais apropriadas, até onde aplicável, para o cumprimento das obrigações da Empresa de responder a solicitações de exercício dos direitos do Titular dos dados estabelecidos nas Leis de proteção de dados;</li>
 <li>auxiliará a empresa a garantir o cumprimento das obrigações de: (i) implementar medidas de segurança técnicas e organizacionais apropriadas; (ii)  notificará (se exigido) Violações de dados às autoridades supervisoras, aos titulares de dados relevantes e outras pessoas necessárias segundo as Leis de proteção de dados, em casos onde a notificação e os relatórios são exigidos segundo as Leis de proteção de dados relevantes; e (iii) executará avaliações de impacto da proteção de dados e, se necessário, consulta prévia com autoridades supervisoras; e</li>
 <li>notificará prontamente a Organização por escrito ao tomar conhecimento de qualquer acesso impróprio, não autorizado ou ilegal, uso ou divulgação de dados pessoais que sejam processados pela Tencent de acordo com este DPSA. A Tencent será obrigada a fornecer à Organização todas as informações razoavelmente necessárias para o cumprimento das obrigações da Organização, de acordo com as Leis de Proteção de Dados.</li></ol></li></ol>
@@ -94,8 +96,8 @@ A Tencent e a Organização reconhecem que a Organização é o Controlador e a 
 
 ## Nomeação de Subprocessadores
 
-1. A Tencent poderá autorizar qualquer subprocessador a processar os dados pessoais em seu nome desde que, quando (e na medida do) exigido pelas Leis de proteção de dados, a Tencent celebre um acordo por escrito com o Subprocessador contendo termos que sejam substancialmente os mesmos daqueles contidos neste DPSA. A empresa, por meio deste, concede à Tencent autorização geral por escrito para contratar esses subprocessadores relacionados na Tencent Cloud [Terceiros](https://intl.cloud.tencent.com/services/thirdParties), sujeitos aos requisitos desta cláusula 8.
-2. A Tencent deverá informar, na medida que os Dados pessoais processados sejam Dados pessoais da UE ou quando as leis de qualquer outra jurisdição exigir tal notificação, a Empresa por e-mail (e por meio do Portal da Tencent Cloud) sobre quaisquer alterações pretendidas em relação a acréscimo ou substituição dos subprocessadores. Nesse caso, a Empresa terá 14 (quatorze) dias a partir da data de recebimento do aviso para aprovar ou rejeitar a alteração. No caso de não haver resposta da Empresa, o Subprocessador será considerado aceito. Se a Empresa rejeitar a substituição do subprocessador, a Tencent poderá rescindir o Contrato com efeito imediato mediante notificação por escrito à Empresa.
+1. A Tencent poderá autorizar qualquer subprocessador a processar os dados pessoais em seu nome desde que, quando (e na medida do) exigido pelas Leis de proteção de dados, a Tencent celebre um acordo por escrito com o Subprocessador contendo termos que sejam substancialmente os mesmos daqueles contidos neste DPSA. A empresa, por meio deste, concede à Tencent autorização geral por escrito para contratar esses subprocessadores relacionados na Tencent Cloud [Terceiros](https://www.tencentcloud.com/document/product/1033/32281), sujeitos aos requisitos desta cláusula 8.
+2. A Tencent deverá informar, na medida que o seu processamento de Dados pessoais esteja sujeito às Leis de proteção de dados que exijam tais notificações, a Empresa por e-mail (e por meio do Portal da Tencent Cloud) sobre quaisquer alterações pretendidas em relação a acréscimo ou substituição dos subprocessadores. Nesse caso, a Empresa terá 14 (quatorze) dias a partir da data de recebimento do aviso para aprovar ou rejeitar a alteração. No caso de não haver resposta da Empresa, o Subprocessador será considerado aceito. Se a Empresa rejeitar a substituição do subprocessador, a Tencent poderá rescindir o Contrato com efeito imediato mediante notificação por escrito à Empresa.
 3. Caso a Tencent contrate um Subprocessador para realizar as atividades específicas de Processamento em nome da Empresa, se aquele subprocessador deixar de cumprir suas obrigações de proteção de dados, a Tencent ficará totalmente responsável segundo as Leis de proteção de dados pelo desempenho daquelas obrigações do Subprocessador.
 
 ## MÓDULOS
@@ -181,10 +183,10 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 
 1. Se e na medida em que a Política de segurança da Tencent for insuficiente no cumprimento dos requisitos aplicáveis segundo as leis e regulamentações coreanas, a Tencent tomará medidas adicionais esporadicamente para cumprir esses requisitos (conforme aplicável a um beneficiário de transferência de dados pessoais no exterior), incluindo:  
 <ol style = 'list-style-type :lower-latin'>
-<li>Artigos 28 e 63 da Lei de Promoção da Utilização de Redes de Informação e Comunicações e a Proteção da Informação (a "<b>Lei de redes de TIC</b>”);</li>
+<li>Artigos 28 e 63 da Lei de Promoção da Utilização de Redes de Informação e Comunicações e a Proteção da Informação (a “<b>Lei de redes de TIC</b>”);</li>
 <li>Artigos 15 e 67 do Decreto de Execução promulgado pela Lei de Redes de TIC;</li>
 <li>as Diretrizes para Medidas Técnicas e Administrativas para a Proteção de Informações Pessoais (emitidas pela Comissão de Comunicações da Coreia);</li>
-<li>Artigo 29 da Lei de Proteção de Informações Pessoais (a "<b>PIPA</b>”);</li>
+<li>Artigo 29 da Lei de Proteção de Informações Pessoais (a “<b>PIPA</b>”);</li>
 <li>Artigo 30 do Decreto de Execução promulgado para a PIPA; e</li>
 <li>as Diretrizes para Medidas de Segurança para a Segurança das Informações Pessoais (emitidas pelo Ministério do Interior e Segurança), como o precedente, podem ser alteradas e/ou complementadas ocasionalmente.</li></ol>
 2. A Tencent:
@@ -194,13 +196,21 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 <li>concordará em sujeitar-se à supervisão e auditoria feitas por autoridades regulatórias relevantes.</li></ol>
 3. A Tencent compensará a Organização e quaisquer titulares de dados relevantes por todo e qualquer dano, passivo, custos e despesas decorrentes de qualquer violação das obrigações da Tencent sob este DPSA ou sob a Lei Aplicável.
 
-**Califórnia**
+**Leis de privacidade dos EUA**
 
-1. Além das outras obrigações da Tencent, conforme estabelecido em outros setores deste Contrato, quando aplicável para fins do CCPA, a Tencent atuará como um "provedor de serviços" para a Empresa, de acordo com o que as partes concordam que todas essas Informações Pessoais sejam divulgadas à Tencent para uma ou mais finalidades comerciais e que seu uso ou compartilhamento pela Empresa com a Tencent é necessário para realizar tais finalidades comerciais(s).
-2. A Tencent concorda que está: (a) proibida de reter, usar ou divulgar Informações pessoais para qualquer finalidade que não seja a específica de execução dos serviços especificados nos Termos de serviço da Empresa, incluindo, entre outros, reter, usar ou divulgar essas informações pessoais para fins comerciais que não sejam o fornecimento dos serviços especificados nos Termos de serviços.
-3. A Tencent não coletará, não venderá nem usará informações pessoais adicionais, exceto conforme necessário para cumprir as finalidades comerciais.
-
-Para efeito esta seção [ ], “informações pessoais”, “prestador do serviço”, “finalidade empresarial”, “finalidade comercial”, “cobrança” e “venda” deverão ter os significados que lhes são atribuídos no CCPA.
+1. Na medida do exigido pelas Leis de privacidade aplicáveis nos EUA e mediante solicitação ou aviso razoável por escrito:
+<ol style = 'list-style-type :lower-latin'>
+<li>A Organização poderá tomar medidas razoáveis e adequadas para assegurar que a Tencent utilize os Dados Pessoais de forma consistente com as obrigações da Organização no âmbito das Leis de privacidade dos EUA aplicáveis;</li>
+<li>À medida que a Organização acredite razoavelmente que a Tencent esteja usando Dados Pessoais em violação às Leis de privacidade aplicáveis dos EUA, a Organização poderá tomar medidas razoáveis e adequadas para interromper e remediar tal uso não autorizado;</li>
+<li>A Tencent deverá disponibilizar à Organização informações em posse da Tencent que sejam necessárias para demonstrar o cumprimento de suas obrigações no âmbito das Leis de privacidade dos EUA.</li>
+<li>A Tencent deverá permitir e cooperar com avaliações anuais razoáveis da Organização, ou do auditor designado pela Organização, às custas da Organização e somente após as partes chegarem a um acordo sobre o escopo da avaliação, quanto ao cumprimento pela Tencent de suas obrigações no âmbito das Leis de privacidade aplicáveis dos EUA. De outra forma, a Tencent poderá providenciar um auditor qualificado e independente para realizar uma avaliação das políticas e medidas técnicas e organizacionais da Tencent em apoio a suas obrigações no âmbito das Leis de privacidade aplicáveis dos EUA, utilizando para tais avaliações um padrão ou estrutura de controle adequados e aceitos, bem como os respectivos procedimentos de avaliação. A Tencent deverá fornecer um relatório de tal avaliação à Empresa mediante solicitação razoável.</li></ol> 
+2. Considerando o contexto do Processamento, as Partes deverão implementar medidas técnicas e organizacionais adequadas para proporcionar um nível de segurança compatível com o risco e estabelecer uma alocação clara das responsabilidades entre elas para implementar tais medidas. Conforme exigido pelas Leis de privacidade aplicáveis dos EUA, a Tencent deverá fornecer o mesmo nível de proteção de privacidade que é exigido por tais leis.
+3. É vedado à Tencent:
+<ol style = 'list-style-type :lower-latin'>
+<li>vender ou compartilhar os Dados Pessoais;</li>
+<li>reter, utilizar ou divulgar os Dados Pessoais para qualquer outra finalidade que não seja a finalidade específica de prestar os Serviços;</li>
+<li>reter, utilizar ou divulgar os Dados Pessoais fora do relacionamento de negócios direto entre a Tencent e a Organização; e</li>
+<li>combinar os Dados Pessoais recebidos da Organização, ou em nome dela, com quaisquer Dados Pessoais que possam ser coletados de interações separadas da Tencent com os indivíduos aos quais os Dados Pessoais se referem ou de quaisquer outras fontes, salvo na medida permitida pelas Leis de privacidade dos EUA. Para os fins desta seção da Lei de privacidade dos EUA, “Vender”, “Compartilhar” e outros termos análogos terão os significados atribuídos a eles segundo as Leis de privacidade dos EUA.</li></ol> 
 
 **Macau**
 
@@ -220,7 +230,7 @@ E
 
 Nome da empresa de importação de dados: a entidade contratante especificada na seção 1.2 dos Termos de serviço.
 
-(o "**importador de dados**”)
+(o “**importador de dados**”)
 
 cada um representando uma “**parte**”; juntos “**as partes**”,
 
@@ -230,12 +240,12 @@ CONCORDARAM com as seguintes Cláusulas contratuais (as “**Cláusulas**”) a 
 
 Para efeito das Cláusulas:
 <ol style = 'list-style-type :lower-latin'>
-<li> &quot;dados pessoais&quot;, &quot;categorias especiais de dados&quot;, &quot;processo/processamento&quot;, &quot;controlador&quot;, &quot;processador&quot;, &quot;titular dos dados&quot; e &quot;autoridade supervisora&quot; terão o mesmo significado da Diretiva 95/46/CE do Parlamento Europeu e do Conselho de 24 de Outubro de 1995 sobre a proteção de pessoas no que diz respeito ao processamento de dados pessoais e à livre circulação de tais dados;</li>
-<li>&quot;o exportador de dados&quot; refere-se ao controlador que transfere os dados pessoais;</li>
-<li>&quot;o importador de dados&quot; refere-se ao processador que concorda em receber do exportador de dados os dados pessoais destinados ao processamento em seu nome após a transferência de acordo com suas instruções e os termos das Cláusulas e que não está sujeito ao sistema de outro país, garantindo proteção adequada dentro da interpretação do artigo 25&deg;(1) da Diretiva 95/46/CE;</li>
-<li>&quot;o subprocessador&quot; refere-se a qualquer processador contratado pelo importador de dados ou por qualquer outro subprocessador do importador de dados que concorde em receber do importador de dados ou de qualquer outro subprocessador do importador de dados, os dados pessoais exclusivamente destinados a atividades de processamento a serem realizadas em nome do exportador de dados após a transferência de acordo com suas instruções, os termos das Cláusulas e os termos do subcontrato por escrito;</li>
-<li>&quot;a lei de proteção de dados em vigor&quot; refere-se à legislação que protege os direitos e liberdades fundamentais das pessoas e, em particular, seu direito à privacidade no que diz respeito ao processamento de dados pessoais aplicável a um controlador de dados no Estado-membro em que o exportador de dados está estabelecido;</li>
-<li>&quot;medidas de segurança técnicas e organizacionais&quot; refere-se a essas medidas destinadas a proteger dados pessoais contra a destruição acidental ou ilegal ou perda acidental, alteração, divulgação ou acesso não autorizados, em particular, quando o processamento envolve a transmissão de dados através de uma rede e contra todas as outras formas ilegais de processamento.</li></ol>
+<li>“dados pessoais”, “categorias especiais de dados”, “processo/processamento”, “controlador”, “processador”, “titular dos dados”; e “autoridade supervisora”; terão o mesmo significado da Diretiva 95/46/CE do Parlamento Europeu e do Conselho de 24 de Outubro de 1995 sobre a proteção de pessoas no que diz respeito ao processamento de dados pessoais e à livre circulação de tais dados;</li>
+<li>“o exportador de dados” refere-se ao controlador que transfere os dados pessoais;</li>
+<li>“o importador de dados” refere-se ao processador que concorda em receber do exportador de dados os dados pessoais destinados ao processamento em seu nome após a transferência de acordo com suas instruções e os termos das Cláusulas e que não está sujeito ao sistema de outro país, garantindo proteção adequada dentro da interpretação do artigo 25&deg;(1) da Diretiva 95/46/CE;</li>
+<li>“o subprocessador” refere-se a qualquer processador contratado pelo importador de dados ou por qualquer outro subprocessador do importador de dados que concorde em receber do importador de dados ou de qualquer outro subprocessador do importador de dados, os dados pessoais exclusivamente destinados a atividades de processamento a serem realizadas em nome do exportador de dados após a transferência de acordo com suas instruções, os termos das Cláusulas e os termos do subcontrato por escrito;</li>
+<li>“a lei de proteção de dados em vigor” refere-se à legislação que protege os direitos e liberdades fundamentais das pessoas e, em particular, seu direito à privacidade no que diz respeito ao processamento de dados pessoais aplicável a um controlador de dados no Estado-membro em que o exportador de dados está estabelecido;</li>
+<li>“medidas de segurança técnicas e organizacionais” refere-se a essas medidas destinadas a proteger dados pessoais contra a destruição acidental ou ilegal ou perda acidental, alteração, divulgação ou acesso não autorizados, em particular, quando o processamento envolve a transmissão de dados através de uma rede e contra todas as outras formas ilegais de processamento.</li></ol>
 
 ### Detalhes da transferência
 
