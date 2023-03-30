@@ -29,7 +29,7 @@ QCloudPostLiveVideoRecognitionRequest 接口用于提交一个直播审核任务
 
 **Objective-C**
 
-[//]: # ".cssg-snippet-post-video-recognition"
+[//]: # (.cssg-snippet-post-video-recognition)
 
 ```objective-c
 
@@ -71,7 +71,7 @@ QCloudGetLiveVideoRecognitionRequest 接口用来查询指定的直播审核任�
 
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-video-recognition"
+[//]: # (.cssg-snippet-get-video-recognition)
 
 ```objective-c
 QCloudGetLiveVideoRecognitionRequest * request = [[QCloudGetLiveVideoRecognitionRequest alloc]init];
@@ -106,7 +106,7 @@ QCloudCancelLiveVideoRecognitionRequest 接口用来取消指定的直播审核�
 
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-video-recognition"
+[//]: # (.cssg-snippet-get-video-recognition)
 
 ```objective-c
 
