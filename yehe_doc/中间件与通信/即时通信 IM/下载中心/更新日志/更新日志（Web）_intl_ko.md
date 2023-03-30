@@ -1,44 +1,17 @@
-### 2.26.1 @2023.2.10
-
-**오류 수정**
-
-- 마지막 그룹 메시지가 그룹 알림인 경우 그룹 대화의 lastMessage.lastTime 값이 올바르지 않은 문제.
-- 사용자가 [markConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markConversation) API를 통해 대화 표시를 설정한 후 사용자가 다시 로그인하면 표시 내용이 누락되는 문제.
-- 그룹을 생성하기 위해 [createGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createGroup) API 호출 시 간헐적인 그룹 프로필 쿼리 실패 문제.
-- [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList) API를 호출하여 기록 그룹 메시지를 가져올 때 일부 시나리오에서 기록 메시지가 누락되는 문제.
-
-### 2.26.0 @2023.1.13
-
-**새로운 기능**
-
-- [translateText](https://web.sdk.qcloud.com/im/doc/en/SDK.html#translateText) 텍스트 번역 API.
-- [setGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setGroupCounters): 그룹 카운터 설정 API. 액세스 측면에서 이 API는 좋아요 카운터, 오디오-비디오 그룹 선물 카운터 및 시청자 카운터와 같은 일부 공통 카운터 기능을 구현하는 데 사용할 수 있습니다.
-- [increaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#increaseGroupCounter): 그룹 카운터 값 증가 API.
-- [decreaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#decreaseGroupCounter): 그룹 카운터 값 감소 API.
-- [getGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupCounters): 그룹 카운터 가져오기 API.
-- 약한 네트워크 조건에서 그룹 메시지의 회수 상태 정확도를 개선하여 그룹 메시지 리콜 신호 가져오기 지원.
-- [Message](https://web.sdk.qcloud.com/im/doc/en/Message.html)에 새로운 필드 `revoker`를 추가하여 메시지를 회수한 `userID`를 식별.
-
-**오류 수정**
-
-- 중국 본토 내에서 구매한 중국 본토 외부 사이트의 휴대폰 번호가 중국 본토 외부 사이트의 리소스로 인식되지 않는 문제.
-- 반복 로그인 로그에 userID 오류가 보고되는 문제.
-
-
 ### 2.25.0 @2022.12.8
 
 **새로운 기능**
 
-- [clearHistoryMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#clearHistoryMessage) API. 로컬 및 클라우드 메시지 비우기 지원.
-- 메시지 확장(플래그십 버전 기능) 지원.
-- 일반 그룹과 커뮤니티 그룹 속성 지원.
-- [wx.chooseMedia](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseMedia.html) 호환.
-- [Message.readReceiptInfo](https://web.sdk.qcloud.com/im/doc/en/Message.html) C2C 수신 확인 지원(데이터 구조는 NativeIM과 정렬됨).
-- 에러 코드 2101: 라이브 그룹에 가입하지 않으면 라이브 그룹에 메시지 전송 불가.
+- [clearHistoryMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#clearHistoryMessage) API는 로컬 및 클라우드 메시지 비우기를 지원합니다.
+- 메시지 확장(플래그십 버전 기능)을 지원합니다.
+- 일반 그룹과 커뮤니티 그룹 속성을 지원합니다.
+- [wx.chooseMedia](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseMedia.html)와 호환됩니다.
+- [Message.readReceiptInfo](https://web.sdk.qcloud.com/im/doc/en/Message.html)는 C2C 수신 확인을 지원합니다(데이터 구조는 NativeIM과 정렬됨).
+- 에러 코드 2101: 라이브 그룹에 가입하지 않으면 라이브 그룹에 메시지를 보낼 수 없습니다.
 
 **변경 사항**
 
-- 로그 리포트 백업 채널은 독립 클러스터 도메인 `https://events.im.qcloud.com`을 사용합니다(수신 도메인 구성이 추가되어야 함).
+- 로그 리포트 백업 채널은 독립 클러스터 도메인 `https://events.im.qcloud.com`을 사용합니다(플랫폼에 수신 도메인 구성이 추가되어야 함).
 
 **오류 수정**
 
@@ -138,7 +111,7 @@
 
 **오류 수정**
 
-[resendMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#resendMessage)로 인해 발생할 수 있는 메시지 중복 문제.
+[resendMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#resendMessage)로 인해 발생할 수 있는 메시지 중복 문제 수정.
 
 ### 2.21.0 @2022.7.28
 
@@ -149,6 +122,7 @@
 - [subscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#subscribeUserStatus), 구독 사용자 상태 추가.
 - [unsubscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#unsubscribeUserStatus), 구독 취소 사용자 상태 추가.
 - [setMessageRemindType](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setMessageRemindType) 그룹 메시지 및 주제 메시지에 대한 DND 설정의 다중 터미널 및 다중 인스턴스 동기화 지원.
+- [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage) 파일 메시지 보내기 지원.
 - [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage) 모든 유형의 메시지에 대해 cloudCustomData 수정 지원.
 - [Message](https://web.sdk.qcloud.com/im/doc/en/Message.html) isBroadcastMessage 필드 추가. 라이브 룸 방송 메시지 지원.
 - 그룹 추가 옵션으로 다중 터미널 및 다중 인스턴스 동기화 지원.
@@ -209,7 +183,6 @@
 - [deleteTopicFromCommunity](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteTopicFromCommunity) 토픽을 삭제합니다.
 - [updateTopicProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateTopicProfile) 토픽 프로필을 설정합니다.
 - [getTopicList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTopicList) 토픽 목록을 가져옵니다.
-- [Topic](https://web.sdk.qcloud.com/im/doc/en/Topic.html) 이름, 공지사항, 소개, 읽지 않은 메시지 등 토픽의 속성을 설명하는 커뮤니티 토픽 객체입니다.
 - [TIM.EVENT.TOPIC_CREATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_CREATED) 토픽 생성 시 트리거되는 이벤트입니다.
 - [TIM.EVENT.TOPIC_DELETED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_DELETED) 토픽 삭제 시 트리거되는 이벤트입니다.
 - [TIM.EVENT.TOPIC_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_UPDATED) 토픽 프로필 업데이트 시 트리거되는 이벤트입니다.
@@ -265,7 +238,7 @@
 
 **오류 수정**
 
-uni-app 패키지 Android app(일부 기기)에 액세스한 후 Windows에서 로그인할 수 없는 문제를 수정했습니다.
+Windows 액세스 패키지 Android app(일부 기기)에 액세스할 때 로그인 실패 발생.
 
 ### 2.16.2 @2022.2.10
 
@@ -469,8 +442,8 @@ MTA 통계 기능은 더 이상 사용되지 않음.
 
 **새로운 기능**
 
-- `avatar`(프로필 사진)와 `nick`(닉네임)이 표시된 C2C 메시지 송수신 지원.
-- Tencent Cloud IM 업로드 플러그인 [tim-upload-plugin](https://www.npmjs.com/package/tim-upload-plugin) 지원. 이 플러그인은 보다 안전한 파일 업로드를 가능하게 하고 Web 및 Baidu, Toutiao를 지원하며 크기는 26KB에 불과합니다. 자세한 내용은 [registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin)을 참고하십시오.
+- `avatar`(프로필 사진)와 `nick`(닉네임)이 표시된 C2C 메시지 송수신을 지원함.
+- Tencent Cloud IM 업로드 플러그인 [tim-upload-plugin](https://www.npmjs.com/package/tim-upload-plugin) 지원. 이 플러그인은 보다 안전한 파일 업로드를 가능하게 하고 Web 및 Baidu, Toutiao, Alipay 플랫폼을 지원하며 26KB에 불과합니다. 자세한 내용은 [registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin)을 참고하십시오.
 
 **오류 수정**
 
@@ -558,7 +531,7 @@ SDK 크기 축소. [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk)의 크
 
 **오류 수정**
 
-- 오디오/비디오 그룹은 오랜 시간 연결이 끊긴 후 네트워크가 다시 연결되거나 백그라운드에서 오랜 시간 실행된 후 포그라운드로 전환되는 경우 메시지를 가져오지 못하는 간헐적 문제.
+- 오디오/비디오 그룹은 장시간 연결이 끊긴 후 네트워크가 다시 연결되면 간헐적으로 메시지를 가져오지 못하는 오류가 있습니다.
 - 이미지 메시지의 imageFormat 유형 및 값이 실제 이미지와 불일치.
 - Work 그룹 및 Public 그룹에 잘못된 닉네임 표시.
 
@@ -715,7 +688,6 @@ C2C 메시지 수신 확인 지원(피어가 메시지를 읽음 여부 나타�
 
 - [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage)를 통해 업로드할 수 있는 최대 파일 크기가 20M에서 100M로 증가.
 - [그룹 프롬프트](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GroupTipPayload)의 `msgMemberInfo` 및 `shutupTime`은 더 이상 사용되지 않음. 대신 `memberList` 및 `muteTime`을 사용하십시오.
-- 콘솔에 [IM 스마트 고객 지원 포털](https://cloud.tencent.com/act/event/smarty-service?from=im-doc)을 추가했습니다.
 
 **오류 수정**
 

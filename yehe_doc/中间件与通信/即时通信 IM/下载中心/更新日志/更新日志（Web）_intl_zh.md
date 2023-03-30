@@ -1,30 +1,3 @@
-### 2.26.1 @2023.2.10
-
-**修复**
-
-- 群历史消息最近一条是群提示消息的场景下，群会话的 lastMessage.lastTime 不准确。
-- 调用 [markConversation](https://web.sdk.qcloud.com/im/doc/en/SDK.html#markConversation) 接口设置了会话标记，重新登录后标记内容缺失。
-- 调用 [createGroup](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createGroup) 接口创建群组偶现查群资料失败。
-- 调用 [getMessageList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getMessageList) 接口拉群历史消息，部分场景下历史消息缺失。
-
-### 2.26.0 @2023.1.13
-
-**新增**
-
-- [translateText](https://web.sdk.qcloud.com/im/doc/en/SDK.html#translateText) 接口，支持翻译文本。
-- [setGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setGroupCounters) 接口，支持设置群计数器。接入侧可通过此接口实现一些常见的计数功能，如点赞计数、直播群礼物计数、观看人数计数等。
-- [increaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#increaseGroupCounter) 接口，递增群计数器。
-- [decreaseGroupCounter](https://web.sdk.qcloud.com/im/doc/en/SDK.html#decreaseGroupCounter) 接口，递减群计数器。
-- [getGroupCounters](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupCounters) 接口，获取群计数器。
-- 支持拉取群消息撤回信令，提升弱网下群消息被撤回状态的准确性。
-- [Message](https://web.sdk.qcloud.com/im/doc/en/Message.html) 新增字段 `revoker`，标识消息撤回者的 `userID`。
-
-**修复**
-
-- 跨站购买的号段未被识别为国际站。
-- 重复登录日志提示的 userID 错误。
-
-
 ### 2.25.0 @2022.12.8
 
 **新增**
@@ -38,7 +11,7 @@
 
 **变更**
 
-- 日志上报备份通道使用独立集群域名 `https://events.im.qcloud.com`（需新增一个受信域名配置）。
+- 日志上报备份通道使用独立集群域名 `https://events.im.qcloud.com`（平台需新增一个受信域名配置）。
 
 **修复**
 
@@ -149,6 +122,7 @@
 - [subscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#subscribeUserStatus)，订阅用户状态。
 - [unsubscribeUserStatus](https://web.sdk.qcloud.com/im/doc/en/SDK.html#unsubscribeUserStatus)，取消订阅用户状态。
 - [setMessageRemindType](https://web.sdk.qcloud.com/im/doc/en/SDK.html#setMessageRemindType) 支持群消息和话题消息的免打扰设置多端、多实例同步。
+- [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage) 支持发文件消息。
 - [modifyMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#modifyMessage) 支持变更所有类型消息的 cloudCustomData。
 - [Message](https://web.sdk.qcloud.com/im/doc/en/Message.html) 新增字段 isBroadcastMessage，支持直播群广播消息。
 - 支持加群选项多终端、多实例同步。
@@ -209,7 +183,6 @@
 - [deleteTopicFromCommunity](https://web.sdk.qcloud.com/im/doc/en/SDK.html#deleteTopicFromCommunity) 删除话题。
 - [updateTopicProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateTopicProfile) 设置话题资料。
 - [getTopicList](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getTopicList) 获取话题列表。
-- [Topic](https://web.sdk.qcloud.com/im/doc/en/Topic.html) 社群话题对象，用于描述话题具有的属性，如名称、公告、简介、未读数等信息。
 - 事件 [TIM.EVENT.TOPIC_CREATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_CREATED) 创建话题时触发。
 - 事件 [TIM.EVENT.TOPIC_DELETED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_DELETED) 删除话题时触发。
 - 事件 [TIM.EVENT.TOPIC_UPDATED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.TOPIC_UPDATED) 话题资料更新时触发。
@@ -265,7 +238,7 @@
 
 **修复**
 
-Windows 访问uni-app 打包 Android app（部分设备）后遇到的无法登录的问题。
+Windows 访问打包 Android app（部分设备）后遇到的无法登录的问题。
 
 ### 2.16.2 @2022.2.10
 
@@ -470,7 +443,7 @@ C2C 会话消息列表 `avatar`（头像）或 `nick`（昵称）不一致。
 **新增**
 
 - 收发 C2C 消息带 `avatar`（头像） 和 `nick`（昵称）。
-- 支持腾讯云即时通信 IM 上传插件 [tim-upload-plugin](https://www.npmjs.com/package/tim-upload-plugin)，上传文件更快更安全，支持 Web 和百度、头条、体积仅26KB，详细使用请参考 [registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin)。
+- 支持腾讯云即时通信 IM 上传插件 [tim-upload-plugin](https://www.npmjs.com/package/tim-upload-plugin)，上传文件更快更安全，支持 Web 和百度、头条、支付宝平台，体积仅26KB，详细使用请参考 [registerPlugin](https://web.sdk.qcloud.com/im/doc/en/SDK.html#registerPlugin)。
 
 **修复**
 
@@ -558,7 +531,7 @@ Taro 3.x 集成 WebIM 时的兼容性问题。
 
 **修复**
 
-- 长时间断网后重新接入网络或者长时间切后台又切回前台，偶现直播群拉不到消息。
+- 长时间断网后重新接入网络，偶现直播群拉不到消息。
 - 图片消息 imageFormat 的类型和值，跟实际图片格式不一致。
 - Work Public 群昵称错乱问题。
 
@@ -715,7 +688,6 @@ Taro 3.x 集成 WebIM 时的兼容性问题。
 
 - [createFileMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createFileMessage) 上传文件大小由20M调整为100M。
 - [群提示消息](https://web.sdk.qcloud.com/im/doc/en/Message.html#.GroupTipPayload) 的 `msgMemberInfo` 和 `shutupTime` 即将废弃，请使用 `memberList` 和 `muteTime` 代替。
-- 控制台新增 [IM 智能客服入口](https://cloud.tencent.com/act/event/smarty-service?from=im-doc)。
 
 **修复**
 

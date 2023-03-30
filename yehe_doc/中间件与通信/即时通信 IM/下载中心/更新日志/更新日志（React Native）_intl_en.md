@@ -10,6 +10,5 @@
 
 ## Chat React Native SDK 0.1.0 @2022.07.14
 - Officially open to users
+
 >? This is the first release of the Chat SDK for React Native, and it will be improved in future versions.
-
-

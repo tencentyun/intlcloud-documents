@@ -187,7 +187,6 @@ IM SDK 및 Demo의 최신 소스 코드를 다운로드할 수 있습니다.
                  <p style="color:#586376;">IM의 주요 기능 포함</p>
                     <div style="margin-top: 13px;" >
                         <a  href="https://www.npmjs.com/package/react-native-tim-js">NPM 다운로드</a>
-                                <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/1047/52397">통합 가이드</a>
                                 <a style="margin-left: 10px;" href="https://www.tencentcloud.com/document/product/1047/52398">업데이트 로그</a>
                     </div>
             </div>
