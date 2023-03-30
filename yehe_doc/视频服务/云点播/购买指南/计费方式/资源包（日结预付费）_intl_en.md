@@ -12,7 +12,6 @@
 - If you have multiple packages, their validity periods will not be added up.
 - VOD’s packages can only deduct usage of the corresponding VOD services.
 - **Traffic packages** and **storage packages** deduct **usage outside the Chinese mainland** at different ratios.
-- You can refund a package if it meets the requirements specified in our [five-day unconditional refund policy](https://www.tencentcloud.com/document/product/266/52807).
 - Your usage each day is billed the following day between 12:00 and 18:00. A package cannot deduct usage that occurs the day before the package is purchased.
 - To view your package balance and other details, go to [Package Management](https://console.cloud.tencent.com/vod/assets/packages) (admin privileges required). 
 
