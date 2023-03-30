@@ -1,4 +1,5 @@
-## Overview
+
+## Scenario
 TencentDB for SQL Server provides a rollback tool for rolling back an instance. Historical data can be re-constructed by using the periodical backups and real-time transactions so as to roll back the instance to a specified time point where the time slices of all data are guaranteed to be identical.
 The retention period of TencentDB for SQL Server data backups is seven days by default and can be customized. The retention period of log backups is the same as that of data backups. You can roll back the instance data to any time point within the configured backup retention period. This document describes how to roll back an instance in the console.
 

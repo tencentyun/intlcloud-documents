@@ -1,8 +1,8 @@
+
 ## 标签简介
 标签是腾讯云提供的用于标识云上资源的标记，是一个键-值对（Key-Value），具体介绍请参见 [标签概述](https://intl.cloud.tencent.com/document/product/651/13334)。
 
 您可以根据各种维度（例如，业务、用途、负责人等）使用标签对云数据库 SQL Server 资源进行分类管理。通过标签可以非常方便地筛选过滤出对应的资源。标签键值对在腾讯云没有任何语义意义，会严格按字符串进行解析匹配，在使用过程中只需要注意 [使用限制](https://intl.cloud.tencent.com/document/product/651/13354) 即可。
-
 
 ## 创建标签
 1. 登录 [标签控制台](https://console.cloud.tencent.com/tag)。
@@ -13,8 +13,10 @@
 ## 为 SQL Server 实例设置标签
 ### 在实例列表设置标签
 1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)。
-2. 在上方选择地域，找到需设置标签的实例，在其**操作**列选择**更多**>**编辑标签**，如需批量编辑标签，可勾选需要的实例，在上方选择**更多操作**>**编辑标签**。
-![](https://qcloudimg.tencent-cloud.cn/raw/6edac0d0467ae20d40a293a86e46d1be.png)![](https://qcloudimg.tencent-cloud.cn/raw/833b80ef23e06d8e1ab52490dcc5158e.png)
+2. 在上方选择地域，找到需设置标签的实例，在其**操作**列选择**更多** > **编辑标签**。
+![](https://qcloudimg.tencent-cloud.cn/raw/6edac0d0467ae20d40a293a86e46d1be.png)
+如需批量编辑标签，可勾选需要的实例，在上方选择**更多操作** > **编辑标签**。
+![](https://qcloudimg.tencent-cloud.cn/raw/833b80ef23e06d8e1ab52490dcc5158e.png)
 3. 在弹出的对话框，设置**标签键**和**标签值**，单击**确定**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/28d62b84fefafeec888be60a92bb515b.png)
 
@@ -22,6 +24,4 @@
 1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)。
 2. 在上方选择地域，找到需要设置标签的实例，单击实例 ID 或**操作**列的**管理**，进入实例管理页。
 3. 在实例管理页面，选择**实例详情**页，在**基本信息**里的**标签**后单击![](https://qcloudimg.tencent-cloud.cn/raw/3cb7a5db4b50a9ac05f229599a652ed6.png)。
-![](https://qcloudimg.tencent-cloud.cn/raw/deffec25b8b35b036b0e55960e42e77d.png)
 4. 在弹出的对话框，设置**标签键**和**标签值**，单击**确定**。
-

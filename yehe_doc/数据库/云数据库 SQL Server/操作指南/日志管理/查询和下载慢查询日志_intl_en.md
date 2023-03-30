@@ -13,4 +13,3 @@ The collection threshold of slow query is 1 second, and SQL executions exceeding
  - You can search for slow logs generated in the last 5/15/30 minutes, last 1/3/24 hours, today, last 3 days, or a custom time range.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4ce15827444cca9421dd87f0093204dd.png)
 4. Click **Download** in the **Operation** column to download slow query log files.
-

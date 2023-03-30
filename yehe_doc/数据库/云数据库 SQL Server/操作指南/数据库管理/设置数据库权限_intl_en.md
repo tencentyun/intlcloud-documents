@@ -1,8 +1,8 @@
-## Overview
-TencentDB for SQL Server allows you to grant and modify database account permissions. You cannot modify the root account's permissions because it has read/write access to all databases in a TencentDB for SQL Server instance. On the database management page, you can grant other accounts read/write or read-only access to created databases.
+## Scenario
+TencentDB for SQL Server allows you to grant and modify database account permissions. You cannot modify the permissions of admin and privileged accounts because they have owner permissions of all databases in a TencentDB for SQL Server instance. On the database management page, you can grant other accounts read/write, read-only, or owner permissions of created databases.
 
 ## Prerequisites
-- You have created an account other than the root account in your TencentDB for SQL Server instance as instructed in [Creating Accounts](https://intl.cloud.tencent.com/document/product/238/7521).
+- You have created an account other than admin or privileged accounts in your TencentDB for SQL Server instance as instructed in [Creating Account](https://intl.cloud.tencent.com/document/product/238/7521).
 - You have created at least one database in your TencentDB for SQL Server instance as instructed in [Creating Database](https://intl.cloud.tencent.com/document/product/238/35780).
 
 ## Directions
@@ -16,5 +16,3 @@ TencentDB for SQL Server allows you to grant and modify database account permiss
 >- You can batch set permissions. On the database management page, select multiple databases and click **Batch Management** > **Batch Reset Permissions** at the top.
 >- Batch resetting permissions will clear all set database account permissions; that is, account permissions of the selected databases will be reset.
 >
-![](C:\Users\v_vwslwu\AppData\Roaming\Typora\typora-user-images\image-20220419155151554.png)
-

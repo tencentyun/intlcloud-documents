@@ -8,9 +8,9 @@
 3. 在弹出的对话框，展示了数据库名称及收缩至剩余空间的比例，当前仅支持收缩至剩余空间的10%。
 >!收缩数据库后，将仅剩当前剩余空间的10%，若收缩至剩余空间10%后不足2GB，将实际保留2GB空间。
 >
-![](https://main.qcloudimg.com/raw/d778ec0f30dfd19ada706dbd2280a84d.png)
+<img src="https://main.qcloudimg.com/raw/d778ec0f30dfd19ada706dbd2280a84d.png" style="zoom:50%;" /><br>
 您可以通过**数据库管理**页右上角的**当前任务**，查看收缩数据库的任务进度。
-![](https://main.qcloudimg.com/raw/e31bf0fe34402b71f0cc76e2b3843d73.png)
+<img src="https://main.qcloudimg.com/raw/e31bf0fe34402b71f0cc76e2b3843d73.png" style="zoom:50%;" />
 
 ## 批量收缩数据库
 1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver) ，在实例列表，单击实例 ID，进入实例管理页面。
@@ -19,7 +19,7 @@
 3. 在弹出的对话框，展示了数据库名称及收缩至剩余空间的比例，当前仅支持收缩至剩余空间的10%。
 >!收缩数据库后，将仅剩当前剩余空间的10%，若收缩至剩余空间10%后不足2GB，将实际保留2GB空间。
 >
-<img src="https://main.qcloudimg.com/raw/38ddbb2395dd0f1b54dc5e63ca584180.png" style="zoom:70%;" /><br>
+<img src="https://main.qcloudimg.com/raw/38ddbb2395dd0f1b54dc5e63ca584180.png" style="zoom:50%;" /><br>
 您可以通过数据库管理页右上角的**当前任务**，查看收缩数据库的任务进度。
-<img src="https://main.qcloudimg.com/raw/e31bf0fe34402b71f0cc76e2b3843d73.png" style="zoom:100%;" />
+<img src="https://main.qcloudimg.com/raw/e31bf0fe34402b71f0cc76e2b3843d73.png" style="zoom:50%;" />
 

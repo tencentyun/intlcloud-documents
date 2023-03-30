@@ -1,7 +1,7 @@
 This document describes the fields in the database list.
 
 ## Prerequisites
-You have created a TencentDB for SQL Server instance. For more information, see [Creating TencentDB for SQL Server Instance](https://intl.cloud.tencent.com/document/product/238/31571).
+You have created a TencentDB for SQL Server instance. For more information, see [Creating TencentDB for SQL Server Instance](https://www.tencentcloud.com/document/product/238/31571).
 
 ## Viewing the database list
 1. Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver).
@@ -17,7 +17,7 @@ You have created a TencentDB for SQL Server instance. For more information, see 
 
 ## Fields in the database list
 
-| Parameter | Description |
+| Field | Description |
 |---------|---------|
 | Database Name | The name of the database created in the instance. |
 | Status | The status of the database. |
@@ -25,12 +25,12 @@ You have created a TencentDB for SQL Server instance. For more information, see 
 | Database Creation Time | The time when the database was created, which can be sorted in ascending or descending order. |
 | Bound Accounts | The accounts authorized to access the database. |
 | Description | The description of the database. |
-| Operation | <li>Set Permissions: Set the read/write or read-only permission of the database for an account. <li>Delete: Delete the database. <li>Clone: Quickly clone an existing database to the current instance. <li>Others: Enable/Disable CDC, enable/disable CT, or shrink the database. |
+| Operation | <li>Set Permissions: Set the read/write, read-only, or owner permission of the database for an account. <li>Delete: Delete the database. <li>Clone: Quickly clone an existing database to the current instance. <li>Others: Enable/Disable CDC, enable/disable CT, or shrink the database. |
 
 >?For each operation in the database list, you can select multiple databases and click the corresponding batch operation button above the list for batch management.
 >![](https://staticintl.cloudcachetci.com/yehe/backend-news/3R93632_24.png)
 
-## Relevant operations
+## More
 - [Creating Database](https://intl.cloud.tencent.com/document/product/238/35780)
 - [Setting Database Permissions](https://intl.cloud.tencent.com/document/product/238/47425)
 - [Cloning Database](https://intl.cloud.tencent.com/document/product/238/47426)

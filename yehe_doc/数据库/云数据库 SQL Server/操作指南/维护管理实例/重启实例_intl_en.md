@@ -1,12 +1,13 @@
+
 This document describes how to restart an instance in the console.
 
-## Overview
+## Scenario
 Instance restart is a common maintenance method for TencentDB for SQL Server. It is similar to restarting a local database.
 
-## Overview
+## Limits
 - During the restart, the TencentDB for SQL Server instance cannot provide services. Therefore, make sure that an instance has stopped accepting business requests before restarting it. During the restart, if the business write volume is high, the restart may fail.
 - Restarting an instance does not change its physical attributes, so the private IP and any data stored in the instance will remain unchanged.
-- After the restart, reconnection to the database is needed. Make sure that your business has a reconnection mechanism.
+- After the restart, reconnection to the database is needed. Make sure your business has a reconnection mechanism.
 - Restart the instance during off-peak hours to ensure success and minimize the impact on your business.
 
 ## Directions

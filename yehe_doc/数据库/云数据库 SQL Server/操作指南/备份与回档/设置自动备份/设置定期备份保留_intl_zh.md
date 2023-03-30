@@ -64,8 +64,7 @@
 
 ## 查看保留计划
 设置完定期备份保留策略以及起始日期后，您可单击起始日期后的**查看保留计划**对备份计划进行预览。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/gJK8560_14.png)
-
+![](https://qcloudimg.tencent-cloud.cn/raw/9b7c21feff9bf1409c80f745fbf1d370.png)
 - 蓝色日期表示常规备份的日期。
 - 红色日期表示定期备份的日期。
 - 可通过单击常规备份或者定期备份，隐藏对应日期颜色标注，便于预览。

@@ -20,16 +20,16 @@
 
 ## 排序规则说明
 
-| 排序规则选项 | 说明 |
+| 排序规则选项 | 说明 | 
 |---------|---------|
-| 区分大小写（_CS） | 区分大小写字母。表示排序时小写字母将在其对应的大写字母之前。 |
-| 不区分大小写（_CI） | 不区分大小写字母。表示排序时不区分大小写字母。 |
-| 区分重音（_AS） | 区分重音字符和非重音字符。例如，“a”和“ấ”为不同字符。 |
-| 不区分重音（_AI） | 不区分重音。 |
+| 区分大小写（_CS） | 区分大小写字母。表示排序时小写字母将在其对应的大写字母之前。 | 
+| 不区分大小写（_CI） | 不区分大小写字母。表示排序时不区分大小写字母。 | 
+| 区分重音（_AS） | 区分重音字符和非重音字符。例如，“a”和“ấ”为不同字符。 | 
+| 不区分重音（_AI） | 不区分重音。 | 
 
 ## 实例字符集后缀说明
 
-| 实例字符集后缀 | 说明 |
+| 实例字符集后缀 | 说明 | 
 |---------|---------|
 |_CI_AI|不区分大小写、不区分重音。|
 |_CI_AS|不区分大小写、区分重音。|
@@ -41,22 +41,21 @@
 
 | Windows 区域设置 | 默认排序规则 |
 |---------|---------|
-| 南非荷兰语（南非） | Latin1_General_CI_AS |
-| 阿尔萨斯语（法国） | Latin1_General_CI_AS |
-| 巴斯克语（巴斯克） | Latin1_General_CI_AS |
-| 波斯尼亚语（波斯尼亚和黑塞哥维那，拉丁语） | Latin1_General_CI_AS |
-| 保加利亚语（保加利亚） | Cyrillic_General_CI_AS |
-| 中文（澳门特别行政区） | Latin1_General_CI_AI |
-| 中文（中华人民共和国） | Chinese_PRC_CI_AS |
-| 荷兰语（荷兰） | Latin1_General_CI_AS |
-| 英语（澳大利亚） | Latin1_General_CI_AS |
-| 英语（印度） | Latin1_General_CI_AS |
-| 英语（加拿大） | Latin1_General_CI_AS |
-| 英语（新西兰） | Latin1_General_CI_AS |
-| 英语（英国） | Latin1_General_CI_AS |
-| 英语（美国） | Latin1_General_CI_AS |
-| 菲律宾语（菲律宾） | Latin1_General_CI_AS |
-| 意大利语（意大利） | Latin1_General_CI_AS |
-| 泰语（泰国） | Thai_CI_AS |
-
+| 南非荷兰语（南非） | Latin1_General_CI_AS | 
+| 阿尔萨斯语（法国） | Latin1_General_CI_AS | 
+| 巴斯克语（巴斯克） | Latin1_General_CI_AS | 
+| 波斯尼亚语（波斯尼亚和黑塞哥维那，拉丁语） | Latin1_General_CI_AS | 
+| 保加利亚语（保加利亚） | Cyrillic_General_CI_AS | 
+| 中文（澳门特别行政区） | Latin1_General_CI_AI | 
+| 中文（中华人民共和国） | Chinese_PRC_CI_AS | 
+| 荷兰语（荷兰） | Latin1_General_CI_AS | 
+| 英语（澳大利亚） | Latin1_General_CI_AS | 
+| 英语（印度） | Latin1_General_CI_AS | 
+| 英语（加拿大） | Latin1_General_CI_AS | 
+| 英语（新西兰） | Latin1_General_CI_AS | 
+| 英语（英国） | Latin1_General_CI_AS | 
+| 英语（美国） | Latin1_General_CI_AS | 
+| 菲律宾语（菲律宾） | Latin1_General_CI_AS | 
+| 意大利语（意大利） | Latin1_General_CI_AS | 
+| 泰语（泰国） | Thai_CI_AS | 
 

@@ -10,4 +10,3 @@ This document describes how to delete manual backup files in the console to redu
 4. In the pop-up window, confirm the backup file to be deleted and click **OK**.
 >?You can batch delete historical manual backup files. To do so, click **Batch Delete Manual Backups**, select the time range of the files to be deleted in the settings window, and click **OK**.
 >
-
