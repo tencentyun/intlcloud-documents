@@ -16,7 +16,7 @@ Except to the extent defined below, capitalized terms shall have the meaning giv
 
 “**Content**” refers to any data, including Personal Data, that Organisation submits, uploads, transmits or displays while using the Services;
 
-“**Controller**” refers to a person who either alone or jointly in common with one or more other persons controls the collection, holding, processing or use of Personal Data;
+“**Controller**” refers to a person who either alone or jointly in common with one or more other persons controls the collection, holding, processing or use of Personal Data, including as applicable any “business” as that term is defined by the CCPA;
 
 “**Controller-Processor Transfer Clauses**” means:
 <ol style = 'list-style-type :lower-latin'>
@@ -31,13 +31,13 @@ which are both hereby incorporated and form part of this DPSA, and:
 
 “**Data Breach**” refers to any misuse, interference with, loss of, improper, unauthorized, unlawful access to, use of, modification or disclosure of Content that is Processed by Tencent in connection with the Terms of Service;
 
-“**Data Protection Laws**” refers to the data protection law(s) applicable in respect of the collection, storage, processing, transfer, disclosure, and use of any Content in connection with the Services, including (without limitation) the California Civil Code sections 1798.100 – 1798.199 (2020), the California Consumer Privacy Act (the “CCPA”), the e-Privacy Directive, the e-Privacy Regulation (once it takes effect), the GDPR and the UK GDPR, in addition to any law which implements the e-Privacy Directive, the e-Privacy Regulation (once it takes effect), the GDPR and the UK GDPR (which for the avoidance of doubt is the UK Data Protection Act 2018), in each case as amended, consolidated, re-enacted or replaced from time to time;
+“**Data Protection Laws**” refers to the data protection law(s) applicable in respect of the collection, storage, processing, transfer, disclosure, and use of any Content in connection with the Services, including (without limitation) the U.S. Privacy Laws, the e-Privacy Directive, the e-Privacy Regulation (once it takes effect), the GDPR and the UK GDPR, in addition to any law which implements the e-Privacy Directive, the e-Privacy Regulation (once it takes effect), the GDPR and the UK GDPR (which for the avoidance of doubt is the UK Data Protection Act 2018), in each case as amended, consolidated, re-enacted or replaced from time to time;
 
 “**Data Subject**” has the meaning given to that term or other analogous term (such as ‘consumer’ in the case of the CCPA) in Data Protection Laws;
 
-**e-Privacy Directive**” refers to Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the Processing of Personal Data and the protection of privacy in the electronic communications sector;
+“**e-Privacy Directive**” refers to Directive 2002/58/EC of the European Parliament and of the Council of 12 July 2002 concerning the Processing of Personal Data and the protection of privacy in the electronic communications sector;
 
-**e-Privacy Regulation**”  refers to Regulation of the European Parliament and of the Council concerning the respect for private life and the protection of personal data in electronic communications and repealing Directive 2002/58/EC (Regulation on Privacy and Electronic Communications)
+“**e-Privacy Regulation**”  refers to Regulation of the European Parliament and of the Council concerning the respect for private life and the protection of personal data in electronic communications and repealing Directive 2002/58/EC (Regulation on Privacy and Electronic Communications)
 
 “**EEA**” refers to the European Economic Area;
 
@@ -51,13 +51,13 @@ which are both hereby incorporated and form part of this DPSA, and:
 
 “**Lawful Export Measure**”means a method allowing for the lawful transfer of Personal Data from a data exporter to a data importer, as may be stipulated by Data Protection Laws or a Supervisory Authority from time to time, and which may include (depending upon the Applicable Laws) model transfer terms prescribed by Data Protection Laws; or prior registration, licensing or permission from a Supervisory Authority;
 
-“**Personal Data**” has the meaning given to such term or other analogous term in Data Protection Laws;
+“**Personal Data**” has the meaning given to such term or other analogous term in Data Protection Laws that Tencent processes under the Agreement to provide the Services;
 
 “**Privacy Policy**” refers to the policy located at [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/17345), as updated and notified to Organisation from time to time;
 
 “**Processing**” has the meaning given to such term or other analogous term in Data Protection Laws, and “Process” and “Processed” shall be construed accordingly;
 
-“**Processor**” refers to a person who Processes Personal Data on behalf of one or more Controller(s);
+“**Processor**” refers to a person who Processes Personal Data on behalf of one or more Controller(s), including as applicable any “service provider” or “contractor” as that term is defined by the CCPA;
 
 “**Processor-Processor Transfer Clauses**” means, as relevant, (i) in respect of transfers of Personal Data subject to the GDPR the standard contractual clauses for the transfer of Personal Data to third countries set out in Commission Decision 2021/914 of 4 June 2021, specifically including Module 3 (Processor to Processor); or (ii) in respect of transfers of Personal Data subject to the UK GDPR, the International Data Transfer Addendum to the EU Commission Standard Contractual Clauses (version B.1.0) issued by the UK Information Commissioner, in each case as in force and as amended, updated or replaced from time-to-time;
 
@@ -77,13 +77,15 @@ which are both hereby incorporated and form part of this DPSA, and:
 
 “**Third Country**”  refers to (i) in relation to Personal Data transfers subject to the GDPR, any country outside of the scope of the data protection laws of the EEA, excluding countries approved as providing adequate protection for Personal Data by the European Commission from time to time; (ii) in relation to Personal Data transfers subject to the UK GDPR, any country outside the scope of the data protection laws of the UK, excluding countries approved as providing adequate protection for Personal Data by the relevant competent authority of the UK from time-to-time; and (iii) in relation to Personal Data transfers that are not subject to either the GDPR or UK GDPR, any country or territory other than those approved as providing adequate protection for Personal Data by the relevant competent authority of such jurisdiction from time to time; 
 
+“**U.S. Privacy Laws**” means the California Consumer Privacy Act, as amended by the California Privacy Rights Act (“CCPA”), the Colorado Privacy Act, the Connecticut Data Privacy Act, the Utah Consumer Privacy Act and the Virginia Consumer Data Protection Act;
+
 “**UK**” refers to the United Kingdom of Great Britain and Northern Ireland; and
 
 “**UK GDPR**” means the UK General Data Protection Regulation as defined by the UK Data Protection Act 2018, as amended by the Data Protection, Privacy and Electronic Communications (Amendments etc.) (EU Exit) Regulations 2019. 
 
 ## 2. Scope of this DPSA
 
-This DPSA applies if you have entered into the Terms of Service for the supply of Services by Tencent. This DPSA applies to the Processing of Content. Personal Data that is Administrative Information is Processed in accordance with the Privacy Policy and this DPSA shall not apply to the Processing of Administrative Information.
+This DPSA applies if you have entered into the Terms of Service for the supply of Services by Tencent. This DPSA applies to the Processing of Content. Personal Data that is Administrative Information is Processed in accordance with the [Privacy Policy](https://www.tencentcloud.com/document/product/301/17345) and this DPSA shall not apply to the Processing of Administrative Information.
 
 ## 3. Authorisation to Process Personal Data
 
@@ -107,20 +109,20 @@ Tencent and Organisation agree that Organisation is the Controller and Tencent i
 
 **6.1**	To the extent that it Processes Personal Data on behalf of Organisation, Tencent will:
 <ol style = 'list-style-type :lower-latin'>
-<li>Process the Personal Data only for the purpose of the Terms of Service, in accordance with the Organisation’s written instructions (which shall include the terms of this DPSA and any instructions provided via the Organisation’s administrative console), and the Tencent Security Policy, and notify Organisation promptly if it is unable to comply with this DPSA or any of its terms; </li>
+<li>Process the Personal Data only for the limited and specified purpose of performing the Services, in accordance with the Organisation’s written instructions (which shall include the terms of this DPSA and any instructions provided via the Organisation’s administrative console), and the Tencent Security Policy, and notify Organisation promptly if it is unable to comply with this DPSA or any of its terms; </li>
 <li>return or (at the written request of Organisation) securely destroy all Personal Data in its possession (including all back-up copies), unless it is prohibited from doing so by Applicable Laws;</li>
 <li>promptly notify the Organisation, upon becoming aware,  of:</li>
 <ol style = 'list-style-type:lower-roman'>
 <li>any court order or other legal process or any request or demand by any Supervisory Authority, regulator, official or other government ministry, authority or agent to obtain or access any Personal Data, unless such notification is prohibited by Applicable Law;</li>
-<li>any unauthorized disclosure of, or access to, the Personal Data or any loss, damage or destruction of the Personal Data; and</li>
-<li>any material complaint, communication or request relating to Tencent’s obligations under the Data Protection Laws;</li>
+<li>Data Breach; </li>
+<li>any material complaint, communication or request relating to Tencent’s obligations under the Data Protection Laws; and</li>
 <li>any instruction received from the Organisation in relation to the Personal Data, which in the discretion of Tencent may breach any Applicable Law, including any Data Protection Law, of the appropriate jurisdiction;</li></ol></li>
 <li>ensure that the Personal Data is accessible only to the duly authorized persons engaged by Tencent and, subject to clause 8, accessible only to its Sub-Processors and the personnel of such Sub-Processors who are duly authorized and who need to have access to the Personal Data in order to perform Tencent’s obligations under the Terms of Service;</li>
 <li>ensure that the personnel engaged and duly authorized by it to Process the Personal Data have committed themselves to confidentiality or are under an appropriate statutory obligation of confidentiality, and ensure that the same obligations for data protection under this DPSA and the Organisation’s instructions are complied with by such persons, taking into account the nature of the Processing;</li>
 <li>comply with any applicable Jurisdiction-Specific Requirements; and</li>
 <li>where the laws of the relevant jurisdiction require it:</li>
 <ol style = 'list-style-type:lower-roman'>
-<li>implement appropriate technical and organisational security measures insofar as is practicable, for the purpose of providing reasonable assistance to the Organisation for the latter to comply with its obligations, including, as appropriate and applicable in the relevant jurisdiction: (i) the pseudonymisation of Personal Data; (ii) ensuring the ongoing confidentiality, integrity, availability and resilience of Processing systems and services; (iii) restoring the availability and access to Personal Data in a timely manner in the event of a physical or technical incident; and (iv) regularly testing, assessing, and evaluating the effectiveness of technical and organisational measures for ensuring the security of the Processing;</li>
+<li>implement appropriate technical and organisational security measures insofar as is practicable, for the purpose of providing reasonable assistance to the Organisation for the latter to comply with its obligations, including, as appropriate and applicable in the relevant jurisdiction: (i) the pseudonymisation or de-identification of Personal Data; (ii) ensuring the ongoing confidentiality, integrity, availability and resilience of Processing systems and services; (iii) restoring the availability and access to Personal Data in a timely manner in the event of a physical or technical incident; and (iv) regularly testing, assessing, and evaluating the effectiveness of technical and organisational measures for ensuring the security of the Processing;</li>
 <li>taking into account the nature of the Processing, assist Organisation by appropriate technical and organisational measures, insofar as this is practicable, for the fulfilment of Organisation’s obligation to respond to requests for exercising the Data Subject’s rights laid down in the Data Protection Laws;</li>
 <li>assist Organisation in ensuring compliance with the obligations to: (i) implement appropriate technical and organisational security measures; (ii) notify (if required) Data Breaches to Supervisory Authorities, the relevant Data Subjects, and other persons required under such Data Protection Laws, in cases where such notification and reporting is required under the relevant Data Protection Laws; and (iii) conduct data protection impact assessments and, if required, prior consultation with Supervisory Authorities; and</li>
 <li>promptly notify Organisation in writing upon becoming aware of any improper, unauthorized, or unlawful access to, use of, or disclosure of, Personal Data which is Processed by Tencent under or in connection with this DPSA. Tencent shall be obliged to provide Organisation with all information reasonably necessary for the compliance with Organisation’s obligations pursuant to Data Protection Laws.</li></ol></li></ol>
@@ -161,7 +163,7 @@ the parties agree that the Controller-Processer Transfer Clauses, the descriptio
 
 **8.1**	 Tencent may authorize any Sub-Processor to Process the Personal Data on its behalf provided that, where (and to the extent)  required by Data Protection Laws, Tencent enters into a written agreement with the Sub-Processor containing terms which are substantially the same as those contained in this DPSA. Organisation hereby grants Tencent general written authorisation to engage such Sub-Processors listed at [Third Party Information](https://intl.cloud.tencent.com/document/product/1033/32281)  to Process Personal Data on its behalf, subject to the requirements of this clause 8.
 
-**8.2**	 Tencent shall, to the extent the Personal Data Processed is EEA/UK Personal Data or where the laws of any other jurisdiction require such notification, inform Organisation by email (and via the Tencent Cloud Portal) of any intended changes concerning the addition or replacement of the Sub-Processors. In such a case, Organisation will have fourteen (14) days from the date of receipt of the notice to approve or reject the change. In the event of no response from Organisation, the Sub-Processor will be deemed accepted. If Organisation rejects the replacement sub-processor, Tencent may terminate the Terms of Service with immediate effect on written notice to Organisation.
+**8.2**	 Tencent shall, to the extent its processing of the Personal Data is subject to Data Protection Laws that require such notification, inform Organisation by email (and via the Tencent Cloud Portal) of any intended changes concerning the addition or replacement of the Sub-Processors. In such a case, Organisation will have fourteen (14) days from the date of receipt of the notice to approve or reject the change. In the event of no response from Organisation, the Sub-Processor will be deemed accepted. If Organisation rejects the replacement sub-processor, Tencent may terminate the Terms of Service with immediate effect on written notice to Organisation.
 
 **8.3**	 In the event that Tencent engages a Sub-Processor for carrying out specific Processing activities on behalf of Organisation, where that Sub-Processor fails to fulfill its data protection obligations, Tencent will remain fully liable under the Data Protection Laws to Organisation for the performance of that Sub-Processor’s obligations.
 
@@ -278,14 +280,23 @@ The following Modules shall apply and be incorporated by reference into this DPS
 
 **10.9** Tencent will compensate Organisation and any relevant Data Subjects for any and all damages, liabilities, costs and expenses arising out of any breach of Tencent’s obligations under this DPSA or under Korean data protection laws.
 
-### California
+### U.S. Privacy Laws
 
-**10.10** In addition to Tencent’s other obligations as set out elsewhere in this DPSA, where applicable for the purposes of the CCPA, Tencent shall act as a “service provider” for Organisation, pursuant to which the parties agree that all such Personal Information is disclosed to Tencent for one or more business purpose(s) and its use or sharing by Organisation with Tencent is necessary to perform such business purpose(s).
+**10.10** To the extent required by applicable U.S. Privacy Laws, and upon reasonable written request or notice: 
+<ol style = 'list-style-type :lower-latin'>
+<li>The Organisation may take reasonable and appropriate steps to ensure that Tencent uses the Personal Data in a manner consistent with the Organisation’s obligations under the applicable U.S. Privacy Laws;</li>
+<li>To the extent Organisation reasonably believe Tencent is using Personal Data in violation of applicable U.S. Privacy Laws, the Organisation may take reasonable and appropriate steps to stop and remediate such unauthorized use;</li>
+<li>Tencent shall make available to the Organisation information in Tencent’s possession that is necessary to demonstrate Tencent’s compliance with its obligations under the U.S. Privacy Laws.</li>
+<li>Tencent shall allow and cooperate with reasonable annual assessments by the Organisation, or the Organisation’s designated auditor, at Organisation’s expense and only after the parties come to an agreement on the scope of the assessment, of Tencent’s compliance with its obligations under the applicable U.S. Privacy Laws. Alternatively, Tencent may arrange for a qualified and independent auditor to conduct an assessment of Tencent’s policies and technical and organizational measures in support of its obligations under the applicable U.S. Privacy Laws using an appropriate and accepted control standard or framework and assessment procedure for such assessments. Tencent shall provide a report of such assessment to the Organisation upon reasonable request.</li></ol>
 
-**10.11** Tencent agrees that it: (a) is prohibited from retaining, using, or disclosing Personal Information for any purpose other than for the specific purpose of performing the services specified in the Terms of Service for Organisation, including, without limitation, from retaining, using, or disclosing such Personal Information for a commercial purpose other than providing the services specified in the Terms of Service.
+**10.11** The Parties shall, taking into account the context of the Processing, implement appropriate technical and organizational measures designed to provide a level of security appropriate to the risk and establish a clear allocation of the responsibilities between them to implement such measures. To the extent required by applicable U.S. Privacy Laws, Tencent shall provide the same level of privacy protection as is required by such laws.
 
-**10.12** Tencent will not further collect, sell, or use Personal Information except as necessary to perform the business purpose(s).
-For the purposes of Sections 10.10 – 10.12, “personal information,” “service provider,” “business purpose,” “commercial purpose,” “collects,” and “sell” shall have the meanings given to them in the CCPA.
+**10.12** Tencent is prohibited from:
+<ol style = 'list-style-type :lower-latin'>
+<li>Selling and Sharing the Personal Data;</li>
+<li>retaining, using or disclosing the Personal Data for any purpose other than for the specific purpose of performing the Services;</li>
+<li>retaining, using or disclosing the Personal Data outside of the direct business relationship between Tencent the Organisation; and</li>
+<li>combining the Personal Data received from, or on behalf of, the Organisation with any Personal Data that may be collected from Tencent’s separate interactions with the individual(s) to whom the Personal Data relates or from any other sources, except to the extent permitted by U.S. Privacy Laws. For the purposes of this U.S. Privacy Law section,  “Sell”, “Share” and other analogous term shall have the meanings given to them in the U.S. Privacy Laws.</li></ol>
 
 ### Macau
 
