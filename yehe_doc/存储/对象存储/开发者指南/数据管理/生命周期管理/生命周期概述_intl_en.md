@@ -2,7 +2,7 @@
 
 COS supports object-based lifecycle configuration. You can use lifecycle rules to define operations to perform on applicable objects.
 
->- Up to 1,000 lifecycle rules can be added for each bucket.
+>? Up to 1,000 lifecycle rules can be added for each bucket.
 
 ## Use Cases
 
