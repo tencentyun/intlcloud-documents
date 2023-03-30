@@ -6,7 +6,7 @@
 - 更多信息请参见 [COS Go SDK API](https://godoc.org/github.com/tencentyun/cos-go-sdk-v5) 文档。
 - SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/Go)。
 - SDK 更新日志请参见 [ChangeLog](https://github.com/tencentyun/cos-go-sdk-v5/blob/master/CHANGELOG.md)。
-- SDK 常见问题请参见：[Go SDK 常见问题](https://intl.cloud.tencent.com/document/product/436/40774)。
+- SDK 常见问题请参见：[Go SDK 常见问题](https://www.tencentcloud.com/document/product/436/40774)。
 
 >? 如果您在使用 SDK 时遇到函数或方法不存在等错误，请先将 SDK 升级到最新版再重试。
 >
@@ -24,6 +24,13 @@ go get -u github.com/tencentyun/cos-go-sdk-v5
 下面为您介绍如何使用 COS Go SDK 完成一个基础操作，如初始化客户端、创建存储桶、查询存储桶列表、上传对象、查询对象列表、下载对象和删除对象。
 
 ### 初始化
+
+>!
+>- 建议用户使用子账号密钥 + 环境变量的方式调用 SDK，提高 SDK 使用的安全性。为子账号授权时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+>- 如果您一定要使用永久密钥，建议遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972) 对永久密钥的权限范围进行限制。
+
+
+
 使用 COS 域名生成 COS GO 客户端 Client 结构。
 
 #### 方法原型
@@ -54,37 +61,37 @@ type BaseURL struct {
 
 #### 请求示例1：使用永久密钥
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```go
 // 将 examplebucket-1250000000 和 COS_REGION 修改为用户真实的信息
-// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
+// 存储桶名称，由 bucketname-appid 组成，appid 必须填入，可以在 COS 控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
+// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://www.tencentcloud.com/document/product/436/6224
 u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
-// 用于Get Service 查询，默认全地域 service.cos.myqcloud.com
+// 用于 Get Service 查询，默认全地域 service.cos.myqcloud.com
 su, _ := url.Parse("https://cos.COS_REGION.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u, ServiceURL: su}
 // 1.永久密钥
 client := cos.NewClient(b, &http.Client{
     Transport: &cos.AuthorizationTransport{
-        SecretID:  "SECRETID",  // 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-        SecretKey: "SECRETKEY", // 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+        SecretID:  os.Getenv("SECRETID"),  // 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
+        SecretKey: os.Getenv("SECRETKEY"), // 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
     },
 })
 ```
 
 #### 请求示例2：使用临时密钥
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```go
 // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
-// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
+// 存储桶名称，由 bucketname-appid 组成，appid 必须填入，可以在 COS 控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
+// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://www.tencentcloud.com/document/product/436/6224
 u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u}
 // 2.临时密钥
 client := cos.NewClient(b, &http.Client{
     Transport: &cos.AuthorizationTransport{
-        // 如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+        // 如果使用临时密钥需要填入，临时密钥生成和使用指引参见 https://intl.cloud.tencent.com/document/product/436/14048
         SecretID:     "SECRETID",
         SecretKey:    "SECRETKEY",
         SessionToken: "SECRETTOKEN",
@@ -108,7 +115,7 @@ b := &cos.BaseURL{BucketURL: u}
 // 2.临时密钥
 client := cos.NewClient(b, &http.Client{
     Transport: &cos.AuthorizationTransport{
-        // 如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+        // 如果使用临时密钥需要填入，临时密钥生成和使用指引参见 https://intl.cloud.tencent.com/document/product/436/14048
         SecretID:     "SECRETID",
         SecretKey:    "SECRETKEY",
         SessionToken: "SECRETTOKEN",
@@ -126,14 +133,14 @@ COS Go SDK 默认开启了文件上传 CRC64 检验。
 
 ```
 // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
-// 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
+// 存储桶名称，由 bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
+// COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://www.tencentcloud.com/document/product/436/6224
 u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u}
 // 2.临时密钥
 client := cos.NewClient(b, &http.Client{
     Transport: &cos.AuthorizationTransport{
-        // 如果使用临时密钥需要填入，临时密钥生成和使用指引参见https://intl.cloud.tencent.com/document/product/436/14048
+        // 如果使用临时密钥需要填入，临时密钥生成和使用指引参见 https://intl.cloud.tencent.com/document/product/436/14048
         SecretID:     "SECRETID",
         SecretKey:    "SECRETKEY",
         SessionToken: "SECRETTOKEN",
@@ -163,14 +170,14 @@ import (
 
 func main() {
     // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
-    // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
+    // 存储桶名称，由 bucketname-appid 组成，appid 必须填入，可以在 COS 控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
+    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://www.tencentcloud.com/document/product/436/6224
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
-            SecretID:  "SECRETID",   // 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-            SecretKey: "SECRETKEY",  // 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+            SecretID:  os.Getenv("SECRETID"),  // 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
+            SecretKey: os.Getenv("SECRETKEY"), // 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
         },
     })
 
@@ -202,8 +209,8 @@ import (
 func main() {
     c := cos.NewClient(nil, &http.Client{
         Transport: &cos.AuthorizationTransport{
-            SecretID:  "SECRETID",   // 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-            SecretKey: "SECRETKEY",  // 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+            SecretID:  os.Getenv("SECRETID"),  // 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
+            SecretKey: os.Getenv("SECRETKEY"), // 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
         },
     })
 
@@ -238,14 +245,14 @@ import (
 
 func main() {
     // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
-    // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
+    // 存储桶名称，由 bucketname-appid 组成，appid 必须填入，可以在 COS 控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
+    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://www.tencentcloud.com/document/product/436/6224
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
-            SecretID:  "SECRETID",   // 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-            SecretKey: "SECRETKEY",  // 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+            SecretID:  os.Getenv("SECRETID"),  // 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
+            SecretKey: os.Getenv("SECRETKEY"), // 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
         },
     })
     // 对象键（Key）是对象在存储桶中的唯一标识。
@@ -295,14 +302,14 @@ import (
 
 func main() {
     // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
-    // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
+    // 存储桶名称，由 bucketname-appid 组成，appid 必须填入，可以在 COS 控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
+    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://www.tencentcloud.com/document/product/436/6224
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
-            SecretID:  "SECRETID",   // 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-            SecretKey: "SECRETKEY",  // 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+            SecretID:  os.Getenv("SECRETID"),  // 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
+            SecretKey: os.Getenv("SECRETKEY"), // 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
         },
     })
 
@@ -342,14 +349,14 @@ import (
 
 func main() {
     // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
-    // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
+    // 存储桶名称，由 bucketname-appid 组成，appid 必须填入，可以在 COS 控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
+    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://www.tencentcloud.com/document/product/436/6224
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
-            SecretID:  "SECRETID",   // 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-            SecretKey: "SECRETKEY",  // 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+            SecretID:  os.Getenv("SECRETID"),  // 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
+            SecretKey: os.Getenv("SECRETKEY"), // 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
         },
     })
     // 1.通过响应体获取对象
@@ -386,14 +393,14 @@ import (
 
 func main() {
     // 将 examplebucket-1250000000 和 COS_REGION 修改为真实的信息
-    // 存储桶名称，由bucketname-appid 组成，appid必须填入，可以在COS控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
-    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://cloud.tencent.com/document/product/436/6224
+    // 存储桶名称，由 bucketname-appid 组成，appid 必须填入，可以在 COS 控制台查看存储桶名称。https://console.cloud.tencent.com/cos5/bucket
+    // COS_REGION 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket, 关于地域的详情见 https://www.tencentcloud.com/document/product/436/6224
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
-            SecretID:  "SECRETID",   // 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-            SecretKey: "SECRETKEY",  // 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+            SecretID:  os.Getenv("SECRETID"),  // 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
+            SecretKey: os.Getenv("SECRETKEY"), // 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参考 https://www.tencentcloud.com/document/product/598/32675
         },
     })
     name := "test/objectPut.go"
