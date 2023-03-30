@@ -1,4 +1,4 @@
-﻿>! 
+﻿> !
 >- 即时通信 IM 原计费方案已于2022年12月26日下线。
 >- 2022年12月26日前创建过 IM 应用的客户默认使用原计费方案，请参考[旧版价格说明](https://www.tencentcloud.com/document/product/1047/52470)，如果您想迁移到当前计费方案，请[联系销售](https://www.tencentcloud.com/contact-us)或[提交工单](https://console.tencentcloud.com/workorder)。迁移后不可恢复，请谨慎选择。
 ## IM 基础功能包

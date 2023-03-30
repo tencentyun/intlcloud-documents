@@ -31,11 +31,11 @@ The following table compares the features of different plans:
 | Free retention period of historical messages | 7 days | 7 days | 30 days |
 | Quota of free daily active users (DAU) | 100/month | 10,000/month | 10,000/month |
 | Free peak group count | 100,000/month | 100,000/month | 100,000/month |
-| [Pushing to all users](https://intl.cloud.tencent.com/document/product/1047/37165) | Not supported | Not supported |Supported. You need to apply for it as instructed [here](https://intl.cloud.tencent.com/document/product/1047/44322) |
+| [Pushing to all users](https://intl.cloud.tencent.com/document/product/1047/37165) | Not supported | Not supported |Supported|
 | Concurrent logins on multiple devices on the same platform | Not supported | Not supported |Supported |
 | Local message search (Android and iOS) | Not supported | Not supported |Supported |
 | Message history for new members in audio-video groups | Not supported | Not supported |Supported |
-| [Community](https://intl.cloud.tencent.com/document/product/1047/33529)   | Not supported | Not supported | 100,000. You need to apply for it as instructed [here](https://intl.cloud.tencent.com/document/product/1047/44322)  |
+| [Community](https://intl.cloud.tencent.com/document/product/1047/33529)   | Not supported | Not supported |Supported|
 | Read receipts for group messages  | Not supported | Not supported | Supported |
 |Targeted group messages | Not supported | Not supported| Supported|
 | List of online audio-video group members | Not supported | Not supported | Supported |

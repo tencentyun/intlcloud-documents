@@ -34,7 +34,7 @@ IM 과금 방식은 월별 청구 주기에 따라 사용한 만큼만 지불하
 | 일별 순 증가 그룹 수 | 100개  | 10000개 | 10000개    |
 | 무료 메시지 기록 저장 기간    | 7일         | 7일             | 30일          |
 | 무료 MAU 한도  | 100/월         | 1만/월       | 1만/월           |
-| [API for Pushing to All Users](https://intl.cloud.tencent.com/document/product/1047/37165) | 지원 | 미지원 |지원, [활성화 신청](https://intl.cloud.tencent.com/document/product/1047/44322) 필요 |
+| [API for Pushing to All Users](https://intl.cloud.tencent.com/document/product/1047/37165) | 지원 | 미지원 |지원 |
 | 동일 플랫폼 멀티 디바이스 로그인 | 지원 | 미지원 |지원 |
 | 로컬 메시지 검색(Android, iOS) | 지원 | 미지원 |지원 |
 | 라이브 방송 그룹 신규 구성원 그룹 입장 전 메시지 확인  | 지원 | 미지원 |지원 |

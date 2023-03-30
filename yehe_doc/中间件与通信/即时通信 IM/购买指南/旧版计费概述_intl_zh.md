@@ -31,11 +31,11 @@
 | 免费历史消息存储时长    | 7天         | 7天             | 30天          |
 | 免费日活跃用户数（DAU）额度  | 100/月         | 1万/月       | 1万/月           |
 | 免费峰值群组数| 10万/月 | 10万/月  |10万/月   |
-| [全员推送](https://intl.cloud.tencent.com/document/product/1047/37165) | 不支持 | 不支持 |支持，需[申请开通](https://intl.cloud.tencent.com/document/product/1047/44322) |
+| [全员推送](https://intl.cloud.tencent.com/document/product/1047/37165) | 不支持 | 不支持 |支持 |
 | 同平台多设备在线 | 不支持 | 不支持 |支持 |
 | 本地消息搜索（Android、iOS) | 不支持 | 不支持 |支持 |
 | 直播群新成员查看入群前消息  | 不支持 | 不支持 |支持 |
-| [创建社群（Community）](https://intl.cloud.tencent.com/document/product/1047/33529)   | 不支持 | 不支持 | 10万个，需 [申请开通](https://intl.cloud.tencent.com/document/product/1047/44322)  |
+| [创建社群（Community）](https://intl.cloud.tencent.com/document/product/1047/33529)   | 不支持 | 不支持 | 支持 |
 | 群消息已读回执  | 不支持 | 不支持 |支持 |
 |群定向消息|不支持|不支持|支持|
 | 直播群在线成员列表 | 不支持 | 不支持 | 支持 |

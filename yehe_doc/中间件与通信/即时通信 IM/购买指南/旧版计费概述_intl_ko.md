@@ -31,11 +31,11 @@ IM 과금 방식은 월별 청구 주기에 따라 사용한 만큼만 지불하
 | 무료 메시지 기록 저장 기간    | 7일         | 7일             | 30일          |
 | 무료 일일 활성 사용자 수(DAU) 한도  | 100/월         | 1만/월       | 1만/월           |
 | 무료 피크 그룹 수| 10만/월 | 10만/월  |10만/월   |
-| [API for Pushing to All Users](https://intl.cloud.tencent.com/document/product/1047/37165) | 미지원 | 미지원 |지원, [활성화 신청](https://intl.cloud.tencent.com/document/product/1047/44322) 필요 |
+| [API for Pushing to All Users](https://intl.cloud.tencent.com/document/product/1047/37165) | 미지원 | 미지원 |지원 |
 | 동일 플랫폼 멀티 디바이스 로그인 | 미지원 | 미지원 |지원 |
 | 로컬 메시지 검색(Android, iOS) | 미지원 | 미지원 |지원 |
 | 라이브 방송 그룹 신규 구성원 그룹 입장 전 메시지 확인  | 미지원 | 미지원 |지원 |
-| [커뮤니티(Community) 생성](https://intl.cloud.tencent.com/document/product/1047/33529)   | 미지원 | 미지원 | 10만 개, [활성화 신청](https://intl.cloud.tencent.com/document/product/1047/44322) 필요|
+| [커뮤니티(Community) 생성](https://intl.cloud.tencent.com/document/product/1047/33529)   | 미지원 | 미지원 | 지원|
 | 메시지 읽음 확인  | 미지원 | 미지원 |지원 |
 |그룹 대상 메시지 | 미지원 | 미지원| 지원|
 | 온라인 오디오/비디오 그룹 구성원 목록 | 미지원 | 미지원 | 지원 |
@@ -113,9 +113,9 @@ IM 과금 방식은 월별 청구 주기에 따라 사용한 만큼만 지불하
    - [그룹당 최대 인원 확장](https://www.tencentcloud.com/document/product/1047/34577) 기능을 구매하거나 플랜을 업그레이드한 후 [RESTful API](https://intl.cloud.tencent.com/document/product/1047/34962)를 호출하여 그룹 인원 제한을 업데이트한 후 기존 일반 그룹(라이브 방송 그룹 외) 인원을 조정하십시오.
 - 기존 메시지의 보관 기간 연장: 서비스는 텍스트, 이미지, 짧은 음성, 쇼트 비디오, 파일 및 사용자 지정 메시지의 보관 기간 연장을 지원하지만 지원되는 특정 메시지 유형은 SDK 버전에 따라 다릅니다. 자세한 내용은 [메시지 저장](https://intl.cloud.tencent.com/document/product/1047/33524)을 참고하십시오. 이 서비스는 추가 리소스가 필요하므로 서비스가 활성화된 달부터 월별로 요금이 부과됩니다. 적절한 시기에 서비스를 활성화하는 것이 좋습니다.
 - **음성/영상 통화 기능**:
-  - **음성/영상 통화 기능은 현재 베타 버전이며 60일 체험판이 제공됩니다**. 
-  - IM 및 TRTC 서비스를 기반으로 구현됩니다. 따라서 이 기능을 활성화하면 기본적으로 TRTC 서비스가 활성화되고 애플리케이션이 생성됩니다.
-  - 무료 체험판은 **체험판 기능 무료 사용 권한만 제공합니다. 이 기능을 사용하는 과정 중 발생한 통화 시간 사용량은 [TRTC 과금](https://www.tencentcloud.com/zh/document/product/647/42734)에 명시된 대로 요금이 부과되며 관련 IM 서비스는 IM [과금 개요](https://www.tencentcloud.com/zh/document/product/1047/34349)에 명시된 대로 요금이 부과됩니다**.
+    - **음성/영상 통화 기능은 현재 베타 버전이며 60일 체험판이 제공됩니다**. 
+    - IM 및 TRTC 서비스를 기반으로 구현됩니다. 따라서 이 기능을 활성화하면 기본적으로 TRTC 서비스가 활성화되고 애플리케이션이 생성됩니다.
+    - 무료 체험판은 **체험판 기능 무료 사용 권한만 제공합니다. 이 기능을 사용하는 과정 중 발생한 통화 시간 사용량은 [TRTC 과금](https://www.tencentcloud.com/zh/document/product/647/42734)에 명시된 대로 요금이 부과되며 관련 IM 서비스는 IM [과금 개요](https://www.tencentcloud.com/zh/document/product/1047/34349)에 명시된 대로 요금이 부과됩니다**.
     </dx-alert>
 
 

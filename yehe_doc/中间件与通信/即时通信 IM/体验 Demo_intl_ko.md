@@ -101,7 +101,6 @@
                                 align-items: center;"><input type="button" value="기본 채팅" style="height: 30px;width: 110px;background-color: #006eff;
     color: #fff;border: 1px solid #006eff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
     box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;border-radius: 15px;"  onclick="window.open('https://web.sdk.qcloud.com/im/demo/intl/index.html')" /></p>
-                 <a href="https://www.tencentcloud.com/document/product/1047/52491">시작하기</a>
                 </div>
             </div>
                 </div>
