@@ -196,7 +196,6 @@ This API returns the cross-region replication configuration on a bucket in dict 
 | ------------ | ------------------------------------------------------------ | ------ |
 | Role | Replication initiator identifier: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String | No |
 | Rule | Sets the rule for cross-region replication, including ID, Status, Prefix, and Destination | List | Yes |
-
 | Status  | Sets whether the rule is enabled. Valid values: `Enabled`, `Disabled` | String | Yes |
 | Prefix | Specifies the prefix used to filter objects that are subject to the rule. If it is left empty, the rule applies to all objects in the bucket | String |  Yes |
 | Destination |   Describes the destination resource, including `Bucket` and `StorageClass` | Dict | Yes |
