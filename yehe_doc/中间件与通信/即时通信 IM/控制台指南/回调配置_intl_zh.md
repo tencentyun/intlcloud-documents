@@ -26,7 +26,7 @@
 配置回调 URL 后，您可以在控制台下载 HTTPS 双向认证证书供后续使用。
 >?您可以根据实际需求配置双向认证，具体配置方法参见 [双向认证配置](https://intl.cloud.tencent.com/document/product/1047/34379)。
 
-1. 进入 [**控制台**](https://console.cloud.tencent.com/im/callback-setting) 的**[回调配置](https://console.cloud.tencent.com/im/callback-setting)**页面，单击右上角回调 URL 配置区域的**HTTPS 双向认证证书下载**。
+1. 进入 [**控制台**](https://console.cloud.tencent.com/im/callback-setting) 的[**回调配置**](https://console.cloud.tencent.com/im/callback-setting)页面，单击右上角回调 URL 配置区域的**HTTPS 双向认证证书下载**。
 ![](https://main.qcloudimg.com/raw/52a1d6fc283f07e29842da512ba303a3.png)
 2. 在弹出的证书下载对话框中，单击**下载**。
 ![](https://main.qcloudimg.com/raw/584dcfbed3a36a691971f6edcca19b43.png)

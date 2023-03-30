@@ -255,11 +255,11 @@ A live room features a large number of user messages. Each user may frequently s
 Group messages are divided into three levels by priority. The backend delivers high-priority messages first. Therefore, select appropriate priorities according to the importance of messages.
 The following lists the priorities from high to low:
 
-| Priority | Description       |
-| ------ | ---------- |
-| High   | High priority   |
-| Normal | Medium priority |
-| Low    | Low priority   |
+| Priority | Description     |
+| -------- | --------------- |
+| High     | High priority   |
+| Normal   | Medium priority |
+| Low      | Low priority    |
 
 Messages are discarded according to the following policy:
 
@@ -577,7 +577,7 @@ If there is only one live room, it's sufficient to pull the number of online use
 
 >? Your server can send the message of online user count statistics to the client in a scheduled manner, for example, once every five seconds. However, this will incur extra network overheads if the number of online users in the live room doesn't change sharply. We recommend you update the number by monitoring its change rate.
 >
-> You can determine the priority of the accuracy and real-timeness of the number of online users in the live room as needed.
+>You can determine the priority of the accuracy and real-timeness of the number of online users in the live room as needed.
 
 The code for getting the number of online users in a live room is as follows:
 
@@ -940,11 +940,11 @@ You can choose to handle a non-compliant message in a specific way, which can be
 
 
 
-| ErrorCode | Description                        |
-| --------- | --------------------------- |
-| 0         | Speaking is allowed, and messages can be delivered.    |
-| 1         | Speaking is denied, and the client returns `10016`. |
-| 2         | Silent discarding is enabled, and the client returns messages normally.  |
+| ErrorCode | Description                                                  |
+| --------- | ------------------------------------------------------------ |
+| 0         | Speaking is allowed, and messages can be delivered.          |
+| 1         | Speaking is denied, and the client returns `10016`.          |
+| 2         | Silent discarding is enabled, and the client returns messages normally. |
 
 You can use them as needed.
 
@@ -1056,8 +1056,7 @@ For detailed directions on how to send a broadcast message on the business backe
   The client can get live streams in different ways:
 
   1. [VLC](https://intl.cloud.tencent.com/document/product/267/32483) for PCs
-  2. [TXLivePusher SDK](https://www.tencentcloud.com/document/product/454/7503) from web
-  3. [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38160) for the application
+  2. [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071/38160) for the application
 
   >? You need to configure a playback address to pull a stream, which can be generated as instructed in [Playback Configuration](https://intl.cloud.tencent.com/document/product/267/31058) or through the [Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator). For more information on SDK integration, see [2. Playback](https://www.tencentcloud.com/document/product/267/51155).
 

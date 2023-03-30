@@ -1,56 +1,57 @@
-## 操作场景
-本文指导您如何在即时通信 IM 控制台创建体验版应用获取 SDKAppID，以及指导您如何将体验版应用升级为专业版应用。
+4. ## 操作场景
+   本文指导您如何在即时通信 IM 控制台创建体验版应用获取 SDKAppID，以及指导您如何将体验版应用升级为专业版应用。
 
-## 前提条件
-已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 帐号并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+   ## 前提条件
+   已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 帐号并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 
-## 创建体验版应用
-1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)。
-2. 单击**创建新应用**。
-3. 在**创建应用**对话框中输入您的应用名称，单击**确认**。
-    创建完成后，可在控制台总览页查看新建应用的状态、业务版本、SDKAppID、创建时间以及到期时间。
+   ## 创建体验版应用
+   1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)。
+   2. 单击**创建新应用**。
+   3. 在**创建应用**对话框中输入您的应用名称，单击**确认**。
+       创建完成后，可在控制台总览页查看新建应用的状态、业务版本、SDKAppID、创建时间以及到期时间。
 
-<dx-alert infotype="explain" title="">
-新建应用的业务版本默认为体验版，状态默认为启用。
-同一个腾讯云帐号，最多可创建300个即时通信 IM 应用。若已有300个应用，您可以先 [停用并删除](https://intl.cloud.tencent.com/document/product/1047/34540) 无需使用的应用后再创建新的应用。**应用删除后，该 SDKAppID 对应的所有数据和服务不可恢复，请谨慎操作。**
-</dx-alert>
+   <dx-alert infotype="explain" title="">
+   新建应用的业务版本默认为体验版，状态默认为启用。
+   同一个腾讯云帐号，最多可创建300个即时通信 IM 应用。若已有300个应用，您可以先 [停用并删除](https://intl.cloud.tencent.com/document/product/1047/34540) 无需使用的应用后再创建新的应用。**应用删除后，该 SDKAppID 对应的所有数据和服务不可恢复，请谨慎操作。**
+   </dx-alert>
 
-![](https://main.qcloudimg.com/raw/8997bb04e972bfe2a1ef7a149b7350b1.jpg)
-
-
-## 升级应用
->?应用使用套餐包从体验版升级至专业版或旗舰版，不支持退回至体验版。当应用出现欠费、退费导致停服后，如需继续使用原应用，您可以续费专业版或旗舰版套餐包。如果您想重新使用体验版，请 [创建新的应用](https://intl.cloud.tencent.com/document/product/1047/34577)。
+   ![](https://main.qcloudimg.com/raw/8997bb04e972bfe2a1ef7a149b7350b1.jpg)
 
 
-1. 单击目标应用卡片区域的**查看可升级项**，即可查看对比可升级项。
-![](https://main.qcloudimg.com/raw/57df90241441a67073bfd4b52de3bc5d.png)
-2. 单击**对比升级项**窗口下方**升级套餐包**，进入即时通信 IM 套餐包购买页。
-3. 根据实际需求设置以下参数：
-  <table>
-     <tr>
-         <th>参数项</th>  
-         <th>说明</th>  
-     </tr>
-	 <tr>      
-         <td>选择要开通套餐的 SDKAppID</td>   
-				<td>请确认 SDKAppID 是否正确，购买后无法修改。</td>   
-     </tr> 
-	 <tr>      
-         <td>选择套餐包</td>   
-				 <td><ul><li>当 SDKAppID 为体验版时，可以选择**专业版**或**旗舰版**，不支持单独购买功能包。</li><li>当 SDKAppID 为专业版或旗舰版时，仅支持**单独购买功能包**。</li></ul></td>   
-     </tr> 
-	 <tr>      
-         <td nowrap="nowrap">可选增值功能</td>   
-				 <td>请根据实际需求选择增值功能，包含**单个用户可加入群组数上限**、**单个群成员数上限 (非直播群)**、**安全打击服务高级版**以及**延长历史消息存储时长**等。</ul></td>   
-     </tr> 
-	 <tr> 
-	     <td>购买时长</td>   
-	     <td>支持1个月 - 2年，以月为单位购买套餐包。<br>您也可以根据实际需求勾选**账户余额足够时，套餐到期时按月自动续费**。</td>   
-     </tr> 
-</table>
-![](https://main.qcloudimg.com/raw/30985b047064c2c520d5c8b867ed42f5.png)
+   ## 升级应用
+   >?应用使用套餐包从体验版升级至专业版或旗舰版，不支持退回至体验版。当应用出现欠费、退费导致停服后，如需继续使用原应用，您可以续费专业版或旗舰版套餐包。如果您想重新使用体验版，请 [创建新的应用](https://intl.cloud.tencent.com/document/product/1047/34577)。
 
-![](https://main.qcloudimg.com/raw/ee60c52d0d2b738e2afb1f0209a27a79.png)
 
-4. 勾选**我已阅读并同意 《[腾讯云即时通信 IM 服务等级协议](https://intl.cloud.tencent.com/document/product/1047/34545)》**，单击**立即购买**。
-5. 核对所选信息，选择是否使用代金券，单击**确认购买**，完成支付流程。
+   1. 单击目标应用卡片区域的**查看可升级项**，即可查看对比可升级项。
+   ![](https://main.qcloudimg.com/raw/57df90241441a67073bfd4b52de3bc5d.png)
+   2. 单击**对比升级项**窗口下方**升级套餐包**，进入即时通信 IM 套餐包购买页。
+   3. 根据实际需求设置以下参数：
+     <table>
+        <tr>
+            <th>参数项</th>  
+            <th>说明</th>  
+        </tr>
+   	 <tr>      
+            <td>选择要开通套餐的 SDKAppID</td>   
+   				<td>请确认 SDKAppID 是否正确，购买后无法修改。</td>   
+        </tr> 
+   	 <tr>      
+            <td>选择套餐包</td>   
+   				 <td><ul><li>当 SDKAppID 为体验版时，可以选择<b>专业版</b>或<b>旗舰版</b>，不支持单独购买功能包。</li><li>当 SDKAppID 为专业版或旗舰版时，仅支持<b>单独购买功能包</b>。</li></ul></td>   
+        </tr> 
+   	 <tr>      
+            <td nowrap="nowrap">可选增值功能</td>   
+   				 <td>请根据实际需求选择增值功能，包含<b>单个用户可加入群组数上限</b>、<b>单个群成员数上限 (非直播群)</b>、<b>安全打击服务高级版</b>以及<b>延长历史消息存储时长</b>等。</ul></td>   
+        </tr> 
+   	 <tr> 
+   	     <td>购买时长</td>   
+   	     <td>支持1个月 - 2年，以月为单位购买套餐包。<br>您也可以根据实际需求勾选<b>账户余额足够时，套餐到期时按月自动续费</b>。</td>   
+        </tr> 
+   </table>
+
+   ![](https://main.qcloudimg.com/raw/30985b047064c2c520d5c8b867ed42f5.png)
+
+   ![](https://main.qcloudimg.com/raw/ee60c52d0d2b738e2afb1f0209a27a79.png)
+
+   4. 勾选**我已阅读并同意 《[腾讯云即时通信 IM 服务等级协议](https://intl.cloud.tencent.com/document/product/1047/34545)》**，单击**立即购买**。
+   5. 核对所选信息，选择是否使用代金券，单击**确认购买**，完成支付流程。

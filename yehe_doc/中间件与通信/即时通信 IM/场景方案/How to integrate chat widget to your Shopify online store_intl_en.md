@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-# Integration Tencent Cloud Chat to your Shopify online store
 
 **Try it now with [our Demo](https://tencent-im-chat.myshopify.com/), password is `tencentim`.**
 
@@ -26,7 +25,7 @@ In this tutorial, we will discuss how to build this chat box on your Shopify onl
 
 >?
 >
-> For the agent side shows on the left of the picture above, you can implement it with our [TUIKit](https://www.tencentcloud.com/document/product/1047/45907#part-4.-using-tuikit-component-library-to-implant-im-capabilities-in-half-a-day) or [DEMO](https://www.tencentcloud.com/document/product/1047/45907#part-3.-using-the-demo) easily, or you can build your own APP with our [Chat SDK](https://www.tencentcloud.com/document/product/1047/45907#part-5.-self-implementing-integration).
+>For the agent side shows on the left of the picture above, you can implement it with our [TUIKit](https://www.tencentcloud.com/document/product/1047/45907#part-4.-using-tuikit-component-library-to-implant-im-capabilities-in-half-a-day) or [DEMO](https://www.tencentcloud.com/document/product/1047/45907#part-3.-using-the-demo) easily, or you can build your own APP with our [Chat SDK](https://www.tencentcloud.com/document/product/1047/45907#part-5.-self-implementing-integration).
 
 ## Requirements
 
@@ -148,7 +147,7 @@ export { default as demoImage } from "./demo.png";
 
 Now, the updating of the admin page is finished, you can refresh the page and see the following page.
 
-![](https://dscache.tencent-cloud.cn/upload/uploader/企业微信截图_1d233d11-3d44-4c23-a3d7-5989ab5a9e65-52321dcfbdc048a75d823e1688fe16ca53fbdbb4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/6767b5b8244e009617b0b70d5cb9af6e.png)
 
 ### Step 5: Create a new extension
 
@@ -284,14 +283,14 @@ Fill in the settings related to it. The detailed introduction for each field sho
 
 ![](https://dscache.tencent-cloud.cn/upload/uploader/demo-6c67169d12f8aa159f0a0c80b5d781c1789d1534.png)
 
-| Field                  | Description                                                                                   | Required |
-| ---------------------- | --------------------------------------------------------------------------------------------- | -------- |
+| Field                  | Description                                                  | Required |
+| ---------------------- | ------------------------------------------------------------ | -------- |
 | SDKAppID               | The `SDKAppID` from [Tencent Cloud Chat console.](https://console.tencentcloud.com/im/detail) | true     |
-| Usersig generation URL | The service to generate Usersig for each UserID. The URL of the API was created from step 7.  | true     |
-| Agent User ID          | The User ID of the customer support agent. The user who visitors chat with.                   | true     |
-| LOGO URL               | The logo shows on the title bar.                                                              | false    |
-| First line             | The first line of the title.                                                                  | false    |
-| Second line            | The second line of the title.                                                                 | false    |
+| Usersig generation URL | The service to generate Usersig for each UserID. The URL of the API was created from step 7. | true     |
+| Agent User ID          | The User ID of the customer support agent. The user who visitors chat with. | true     |
+| LOGO URL               | The logo shows on the title bar.                             | false    |
+| First line             | The first line of the title.                                 | false    |
+| Second line            | The second line of the title.                                | false    |
 
 After the configuration, click the `Save` button on the top right.
 

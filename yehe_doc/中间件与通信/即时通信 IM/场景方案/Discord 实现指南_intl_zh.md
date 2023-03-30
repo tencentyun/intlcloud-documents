@@ -38,6 +38,7 @@ Discord 是一款专为社群设计的免费网络实时通话软件与数字发
     - [好友自定义字段](https://console.cloud.tencent.com/im/friends-diy-vars)
     - [群自定义字段](https://console.cloud.tencent.com/im/qun-setting)
     - [群成员自定义字段](https://console.cloud.tencent.com/im/qun-setting)
+  
   >?用户使用自定义字段，可现在控制台进行配置，再使用 SDK\API 进行读写即可。
 
 ### 集成客户端&服务端 SDK
@@ -91,11 +92,11 @@ V2TIMManager.getGroupManager().createGroup(groupinfo, memberList, new V2TIMValue
 >!开发者也可以使用 IM 提供的服务端 API，[在服务端创建服务器](https://intl.cloud.tencent.com/document/product/1047/34895)。关键参数如下：
 >
 >```json
-{
-    "Type": "Community",     // 群组类型 (必填)
-    "Name": "TestCommunityGroup", // 群组名称 (必填)
-    "SupportTopic": 1            // 是否支持话题选项, 1代表支持,0代表不支持
-}
+>{
+>"Type": "Community",     // 群组类型 (必填)
+>"Name": "TestCommunityGroup", // 群组名称 (必填)
+>"SupportTopic": 1            // 是否支持话题选项, 1代表支持,0代表不支持
+>}
 ```
 
 ###### 服务器列表

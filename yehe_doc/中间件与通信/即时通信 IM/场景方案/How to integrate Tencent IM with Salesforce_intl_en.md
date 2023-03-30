@@ -1,6 +1,3 @@
-# How to integrate Tencent Cloud IM with Salesforce
-Key words: Instant Message, Salesforce, Real-time communication
-
 ## Introduction
 This tutorial aims to demonstrate an approach to integrate the Tencent Cloud IM SDK into Salesforce's workflow to leverage the communication between a Salesforce agent and an end user.
 
@@ -25,7 +22,7 @@ In here, we will guide you step by step to create a web server to allow an end u
 ### Agent Chat Interface
 This tutorial will give you the instructions to create an chat interface in Salesforce and invite agent into the Tencent Cloud IM chat group. Also, you can use our [Web](https://intl.cloud.tencent.com/document/product/1047/46261) UIKit to build this plug-in widget.
 
-# Step 1. Create an online server
+## Step 1. Create an online server
 The online server is for the purpose to connect Salesforce and Tencent Cloud IM, and enables the end user to create a Salesforce case and create an corresponding Tencent Cloud IM chat group.
 The example Node server is shown below:
 ```javascript
@@ -253,7 +250,7 @@ const createCase = async function (token, caseInfo) {
 ```
 3. Generate UserSig for Tencent Cloud IM
 ```javascript
-  const generateUserSig = function () {
+ const generateUserSig = function () {
   const expires = 600
   const api = new TLSSigAPIv2.Api(YOUR_SDKAPPID, YOUR_SECRET)
   return api.genSig(ADMIN_USERID, expires)
@@ -320,23 +317,23 @@ That's all for the web server side. Once you set up the server, call the endpoin
 - Check in Salesforce that a case is created.
 - Check in the Tencent Cloud IM console for the group with the case ID as the group ID.
 
-# Step 2. Use the Tencent Cloud IM Web UI Kit to build a Salesforce utilities component
+## Step 2. Use the Tencent Cloud IM Web UI Kit to build a Salesforce utilities component
 
 Here we show the steps to create a Salesforce utilities component with Tencent Cloud IM UI Kit. In Salesforce you may use [Lightning Container](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/container_overview.htm) to upload a third-party i-frame as a static resource, and host the content in an Aura component using `lightning:container`. And you can use [Tencent Cloud IM Web UIKit](https://intl.cloud.tencent.com/document/product/1047/46261) to build an agent chat component, and deploy it in the Lightning Container as a Salesforce utilities bar widget at the bottom.
 
 1. First develop a chat component by using [Tencent Cloud IM Web UIKit](https://intl.cloud.tencent.com/document/product/1047/46261). Build it as a static resource with a root index.html and compress it as an zip file. Case agent's ID will be transmitted to the chat component, use that ID to init and login Tencent Cloud IM in the chat component.
-![](https://qcloudimg.tencent-cloud.cn/raw/317953b68d9f8c7da1d2f0d23fde44e4.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/5989029ee9c3d415f4d3db3f821d6f87.png)
 
 2. Create a Lightning Container for your component, details are[here](http://simpluslabs.com/what-is-lightning-component-and-lightning-bundles/).
-![](http://simpluslabs.com/wp-content/uploads/2018/11/createCOmp-1.gif)
-
+![](http://simpluslabs.com/wp-content/uploads/2018/11/createCOmp-1.gif)  
     2.1 Go to Salesforce [Developer Console](https://help.salesforce.com/articleView?id=code_dev_console.htm&type=5)
     2.2 Click File -> New -> Lightning Component
     2.3 Name = "tim_utilities_bar"
     2.4 Click submit
 
-3. Render the custom component to your bar widget.
-3.1 Set aura:component as a utility bar and provide an aura:id
+3. Render the custom component to your bar widget.  
+    3.1 Set aura:component as a utility bar and provide an aura:id
+
     ```html
     <!-- tim_utilities_bar.cmp -->
     <aura:component implements="flexipage:availableForAllPageTypes" access="global">
@@ -413,7 +410,7 @@ Here we show the steps to create a Salesforce utilities component with Tencent C
         if (payload === "READY") helper.initUIKit(component, message, helper)
       }
     });
-
+   
     ({
       initUIKit: function (component, message, helper) {
         // Get Agent's ID
@@ -467,7 +464,7 @@ Here we show the steps to create a Salesforce utilities component with Tencent C
     }
     ```
 
-# Step 3. Listen for Salesforce Case assignment and set IM Chat Group members
+## Step 3. Listen for Salesforce Case assignment and set IM Chat Group members
 In Salesforce, a case is assigned to an agent manually or automatically. Hence we need to invite new agent to the group and make the previous agent leaves the group. We use Salesforce Apex Callous to listen for the changing of the case agent assignment. Here's what to do by calling the Salesforce Apex Callout.
 
 1. Listen to manual case assignment
@@ -540,7 +537,7 @@ Go to Salesforce Developer console –> New –> Apex Trigger –> Name = "Agent
     ```
 
 3. Set Salesforce Callout to invite/remove agents.
-Go to Salesforce Developer console –> New –> Apex Class –> Name = "TIMCallOuts"
+   Go to Salesforce Developer console –> New –> Apex Class –> Name = "TIMCallOuts"
     ```java
     // TIMCallOuts.apxc
     public class TIMCallouts {
@@ -562,7 +559,7 @@ Go to Salesforce Developer console –> New –> Apex Class –> Name = "TIMCall
             System.debug('Tencent Cloud IM Response: ' + response.getBody());
           }
       }
-
+   
       @future(callout=true)
       public static void leaveGroup(String[] data) {
           String groupId = data[0];
@@ -582,7 +579,7 @@ Go to Salesforce Developer console –> New –> Apex Class –> Name = "TIMCall
             System.debug('Tencent Cloud IM Response: ' + response.getBody());
           }
         }
-
+   
         @future(callout=true)
         public static void deleteGroup(String data) {
           String groupId = data;
@@ -605,6 +602,5 @@ Go to Salesforce Developer console –> New –> Apex Class –> Name = "TIMCall
     ```
 
 
-# Conclusion
+## Conclusion
 That's all you need to know to allow end users from any appliction to start chatting with a Salesforce agent. If you have any further questions please send an e-mail at tencentcloud_im@tencent.com, we'd be delighted to give you more details about the solution or any other solutions to build a modern real-time communication system via Tencent Cloud IM.
-

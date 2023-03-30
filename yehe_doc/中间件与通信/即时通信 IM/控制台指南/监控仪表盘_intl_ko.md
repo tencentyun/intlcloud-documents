@@ -1,4 +1,3 @@
-
 IM 콘솔은 데이터 통계 및 분석 기능을 제공합니다.[IM 콘솔](https://console.cloud.tencent.com/im)에 로그인하고 대상 애플리케이션 카드를 클릭한 후 왼쪽 사이드바에서 **모니터링 대시보드**를 선택하여 사용자 기반, 메시지 활동, 그룹 크기 및 실시간 모니터링 데이터와 같은 애플리케이션 데이터를 볼 수 있습니다.
 >?데이터는 매일 오전 10시경에 업데이트 되며, 데이터가 0이거나 업데이트 되지 않은 경우, 해당 시간대에 SDKAppID의 관련 데이터 생성 여부(예: 신규 사용자 등록 여부 등)를 확인하십시오. 데이터가 생성되었는데도 업데이트되지 않았다면, 업데이트 될 때까지 기다려주시기 바랍니다. 
 
@@ -44,7 +43,7 @@ IM 콘솔은 데이터 통계 및 분석 기능을 제공합니다.[IM 콘솔](h
  - 로그인 상황 모니터링 섹션에서는 각 단말의 로그인 횟수와 로그인 성공률을 확인할 수 있습니다.
 >?현재 SDK 4.8.10 이후 버전이 설치된 iOS, Android, Windows 및 Mac 단말에서 보고된 로그인 데이터만 표시됩니다. [최신 SDK](https://intl.cloud.tencent.com/document/product/1047/33996)로 업그레이드하실 것을 권장합니다.
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/44981d16aeec09991b8147e9d3ebaad2.png)
+>![](https://qcloudimg.tencent-cloud.cn/raw/44981d16aeec09991b8147e9d3ebaad2.png)
  - 메시지 상황 모니터링 섹션에서는 각 단말의 1:1 채팅/그룹 채팅 발송 횟수와 성공률을 확인할 수 있습니다.
 >?현재 SDK 버전 4.8.10 이상이 설치된 iOS, Android, Windows 및 Mac 장치에서 보고된 로그인 데이터만 표시할 수 있습니다. [최신 SDK](https://intl.cloud.tencent.com/document/product/1047/33996) 사용을 권장합니다. Web 단말은 현재 채팅 유형별 메시지 수 통계가 지원되지 않습니다.
 >
@@ -52,6 +51,3 @@ IM 콘솔은 데이터 통계 및 분석 기능을 제공합니다.[IM 콘솔](h
  - REST API 호출 상황 모니터링 섹션에서는 REST API 요청 수와 요청 성공률을 확인할 수 있습니다.
  - 오프라인 푸시 상황 모니터링 섹션에서는 오프라인 푸시 횟수와 푸시 성공률을 확인할 수 있습니다.
     ![](https://qcloudimg.tencent-cloud.cn/raw/c57d688deafc6dd8049b05dd3480ee06.png)
-
-
-

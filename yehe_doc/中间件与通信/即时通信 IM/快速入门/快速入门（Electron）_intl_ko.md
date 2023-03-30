@@ -1,3 +1,4 @@
+````javascript
 본문은 IM Demo(Electron)를 빠르게 실행하는 방법과 Electron SDK를 통합하는 방법을 설명합니다.
 
 ## 환경 요건
@@ -263,4 +264,5 @@ Dynamic Linking Error. electron-builder 구성
       ]
     }
   ]
-```
+```xxxxxxxxxx    extraFiles:[    {      "from": "./node_modules/im_electron_sdk/lib/",      "to": "./Resources",      "filter": [        "**/*"      ]    }  ]javascript
+````

@@ -1,3 +1,4 @@
+````javascript
 このドキュメントでは、Tencent CloudのIM Demo（Electron）を速やかに実行する方法と、Electron SDKを統合する方法について説明します。
 
 ## 環境要件
@@ -263,4 +264,5 @@ Dynamic Linking Error. electron-builderの設定
       ]
     }
   ]
-```
+```xxxxxxxxxx    extraFiles:[    {      "from": "./node_modules/im_electron_sdk/lib/",      "to": "./Resources",      "filter": [        "**/*"      ]    }  ]javascript
+````

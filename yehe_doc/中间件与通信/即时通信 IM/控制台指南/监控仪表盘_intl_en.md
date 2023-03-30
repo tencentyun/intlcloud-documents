@@ -1,4 +1,3 @@
-
 The Chat console provides you with data statistics and analysis features. You can log in to the [Chat console](https://console.cloud.tencent.com/im), click the target app card, and choose **Monitoring Dashboard** in the left sidebar to view app data such as user base, message activity, group size, and real-time monitoring data.
 >?Normally, the data is updated at 10:00 every morning. In the event that the data is 0 or not updated, check whether the SDKAppID produced relevant data (for example, whether there are new registered users) in the specified period. If data was produced but not updated, just wait a while for it to be updated.
 
@@ -44,7 +43,7 @@ The Chat console provides you with data statistics and analysis features. You ca
  - In the login monitoring area, you can view the login times and login success rate of each client.
 >?Currently, only the login data reported by 4.8.10 or later Chat SDKs for iOS, Android, Windows, and macOS will be displayed. You are advised to upgrade to the [latest version of SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/44981d16aeec09991b8147e9d3ebaad2.png)
+>![](https://qcloudimg.tencent-cloud.cn/raw/44981d16aeec09991b8147e9d3ebaad2.png)
  - In the message monitoring area, you can view the number of one-to-one or group messages sent by each client and the message sending success rate.
 >?Currently, only the login data reported by 4.8.10 or later Chat SDKs for iOS, Android, Windows, and macOS will be displayed. You are advised to upgrade to the [latest version of SDK](https://intl.cloud.tencent.com/document/product/1047/33996). Currently, the web SDK does not support collecting message statistics by chat type.
 >
@@ -52,6 +51,3 @@ The Chat console provides you with data statistics and analysis features. You ca
  - In the RESTful API monitoring area, you can view the number of RESTful API requests and the request success rate.
  - In the offline push monitoring area, you can view the number of offline push times and the push success rate.
     ![](https://qcloudimg.tencent-cloud.cn/raw/c57d688deafc6dd8049b05dd3480ee06.png)
-
-
-

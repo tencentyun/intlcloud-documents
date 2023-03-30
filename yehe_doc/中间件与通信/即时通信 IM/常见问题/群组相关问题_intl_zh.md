@@ -1,8 +1,8 @@
 ### 在群聊中如何对群成员设置或取消禁言？
 禁言是控制群成员发送消息的方式之一，被禁言成员的禁言时间内无法在该群发送消息。详细设置文档可参阅以下 SDK 文档：
-- [Android 对群成员进行禁言](https://intl.cloud.tencent.com/document/product/1047/48466)
-- [iOS 对群成员进行禁言](https://intl.cloud.tencent.com/document/product/1047/48181)
-- [Web 对群成员禁言](https://intl.cloud.tencent.com/document/product/1047/48180)
+- [Android 对群成员进行禁言](https://intl.cloud.tencent.com/document/product/1047/36271)
+- [iOS 对群成员进行禁言](https://intl.cloud.tencent.com/document/product/1047/36257)
+- [Web 对群成员禁言](https://intl.cloud.tencent.com/document/product/1047/34330)
 
 
 另外 App 管理员也可通过 REST API 对任意群的任意成员设置禁言，详细请参阅 [REST API：批量禁言和取消禁言](https://intl.cloud.tencent.com/document/product/1047/34951)。
@@ -11,17 +11,17 @@
 ### 如何查看被禁言的成员及禁言时间？
 管理员和群主可以通过 IM SDK 提供的接口对成员设置或取消禁言（取消禁言只需要把禁言时间设置为 0 即可）。
 查询成员禁言信息，是通过查询群成员资料来实现的。详细设置文档可参阅以下 SDK 文档：
-- [Android 获取群成员资料](https://intl.cloud.tencent.com/document/product/1047/48178)
-- [iOS 获取群成员资料](https://intl.cloud.tencent.com/document/product/1047/48178)
-- [Web 获取群成员列表](https://intl.cloud.tencent.com/document/product/1047/48180)
+- [Android 获取群成员资料](https://intl.cloud.tencent.com/document/product/1047/36271)
+- [iOS 获取本人在群里的资料](https://intl.cloud.tencent.com/document/product/1047/36257)
+- [Web 获取群成员列表](https://intl.cloud.tencent.com/document/product/1047/34330)
 
 另外 App 管理员也可通过 REST API 查询成员禁言信息，详细请参阅 [REST API：获取群组被禁言用户列表](https://intl.cloud.tencent.com/document/product/1047/34964)。
 
-### 如何查看入群前的漫游消息？
+### 如何查看入群前的消息？
 
-可以查看入群前的漫游消息的前提是该群类型历史消息必须支持云端存储，根据群类型及设定的使用场景，我们做了如下配置：
-- **直播群（AVChatRoom）**以及老版本中的**在线成员广播大群（BChatRoom）**不支持历史消息存储，所以这两种群组无法支持查看入群前的漫游消息。
-- 非直播群中，**好友工作群（Work）** 和 **陌生人社交群（Public）** ，默认不允许查看入群前的漫游消息；**临时会议群（Meeting）**和 **社群（Community）**，默认允许群成员可以查看入群前的漫游消息。如需修改默认配置，可以在 [**控制台**](https://console.cloud.tencent.com/im) >**功能配置>群组配置>群消息配置**中进行修改。
+可以查看入群前消息的前提是该群类型历史消息必须支持云端存储，根据群类型及设定的使用场景，我们做了如下配置：
+- **直播群（AVChatRoom）**以及老版本中的**在线成员广播大群（BChatRoom）**不支持历史消息存储，所以这两种群组无法支持查看入群前消息。
+- 非直播群中，**好友工作群（Work）** 和 **陌生人社交群（Public）** ，默认不允许查看入群前消息；**临时会议群（Meeting）** ，默认允许群成员可以查看入群之前的历史消息。如需修改默认配置，可以 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1) 申请修改。
 
 非直播群历史消息存储时长默认为7天（旗舰版默认存储30天），如需延长历史消息存储时长可在 [控制台](https://console.cloud.tencent.com/im) >**功能配置**中进行配置，延长历史消息存储时长是付费增值服务，具体计费说明请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
 
@@ -29,16 +29,16 @@
 
 这两种群组分别面向不同的应用场景：Meeting 适用于群组规模中等（6000人以下规模）的场景；AVChatRoom 是适用于大型直播场景，成员人数不受上限。因而这两种群组，在功能设计上有些不同，主要差异点如下表所示：
 
-| 群功能项                  | Meeting                                | AVChatRoom            |
-| ------------------------- | --------------------------------------- | --------------------- |
-| 群成员上限                | 6000人                                 | 无上限                |
-| 群成员信息                | 保存全部群成员信息                      | 不存储成员信息 |
-| 是否支持群主设置群管理员  | 支持                                    | 不支持                |
-| 删除群成员                | 群管理员、群主和 App 管理员可以删除群成员 | 不支持                |
-| 是否支持消息漫游          | 支持                                    | 不支持                |
-| 是否支持入群前历史消息    | 默认支持查看历史消息存储有效期内的消息          | 不支持                |
-| 是否支持成员变更通知      | 不支持                                  | 支持                  |
-| 是否支持 App 管理员导入群组 | 支持                                    | 不支持                |
+| 群功能项                    | Meeting                                   | AVChatRoom     |
+| --------------------------- | ----------------------------------------- | -------------- |
+| 群成员上限                  | 6000人                                    | 无上限         |
+| 群成员信息                  | 保存全部群成员信息                        | 不存储成员信息 |
+| 是否支持群主设置群管理员    | 支持                                      | 不支持         |
+| 删除群成员                  | 群管理员、群主和 App 管理员可以删除群成员 | 不支持         |
+| 是否支持消息漫游            | 支持                                      | 不支持         |
+| 是否支持入群前历史消息      | 默认支持查看历史消息存储有效期内的消息    | 不支持         |
+| 是否支持成员变更通知        | 不支持                                    | 支持           |
+| 是否支持 App 管理员导入群组 | 支持                                      | 不支持         |
 
 ### 为什么获取不到群/群成员维度自定义字段值？
 
@@ -52,11 +52,3 @@
 5. 对于群成员维度的自定义字段:
    - iOS：需要在登录 IM SDK 之前，通过 TIMManager > setUserConfig > TIMUserConfig > TIMGroupMemberInfoOption > memberCustom 进行相应的配置。
    - Android：需要在登录 IM SDK 之前，通过 TIMManager > setUserConfig > TIMUserConfig > TIMGroupSettings > memberInfoOptions > setCustomTags 进行相应的配置。
-   
-   
- ### 如何获取直播群的在线人数？
-AVChatRoom 在线人数，可以通过 SDK 接口（[Android](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a56840105a4b3371eeab2046d8c300bce
-)、[iOS](https://im.sdk.qcloud.com/doc/zh-cn/categoryV2TIMManager_07Group_08.html#ada2eadb44f6865e9848df94fb5bae4ae)、[Web](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupOnlineMemberCount)、[Flutter](https://pub.dev/documentation/tencent_im_sdk_plugin/latest/manager_v2_tim_group_manager/V2TIMGroupManager/getGroupOnlineMemberCount.html)）或者 [REST API](https://intl.cloud.tencent.com/document/product/1047/38521) 接口获取。
-
-### 群消息限制40条/秒，没有相关提示说明，如何来判断是否超了40条/秒的限制呢？
-超过频控后，默认不会返回限频错误码给到调用方，如果需要该错误码（[10023](https://intl.cloud.tencent.com/document/product/1047/34348)）返回给调用方，请提 [配置变更需求工单](https://intl.cloud.tencent.com/document/product/1047/44322) 给到平台。

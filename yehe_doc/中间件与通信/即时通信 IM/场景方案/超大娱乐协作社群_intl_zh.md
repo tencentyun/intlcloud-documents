@@ -44,18 +44,18 @@
 
 
 ### 社群话题的 API 使用
-1. 首先调用接口 createGroup 创建支持话题的社群，可以参见 [社群管理](https://cloud.tencent.com/document/product/269/44494#.E7.A4.BE.E7.BE.A4.E7.AE.A1.E7.90.86) “创建社群”步骤来实现。
+1. 首先调用接口 createGroup 创建支持话题的社群，可以参见社群管理 “创建社群”步骤来实现。
 2. 然后通过调用 getJoinedCommunityList 接口，可以获取到创建和加入的该类社群列表。
 >!社群用来管理群成员，但不可以在社群中收发消息。社群的其他功能可以参考“其他管理接口”列表。
 >
-3. 成功创建社群后，可以在社群下调用 createTopicInfoCommunity 创建多个话题，参见 [话题管理](https://cloud.tencent.com/document/product/269/44494#.E8.AF.9D.E9.A2.98.E7.AE.A1.E7.90.86) 中“创建话题”步骤实现。
-4. 话题的管理还包括“删除话题”、“修改话题信息”、“获取话题列表”、“监听话题回调”功能。同时，话题也是可以供用户交流的地方，因此可以进行收发消息，相关接口可以参见 [话题消息](https://cloud.tencent.com/document/product/269/44494#.E8.AF.9D.E9.A2.98.E6.B6.88.E6.81.AF) 介绍。
+3. 成功创建社群后，可以在社群下调用 createTopicInfoCommunity 创建多个话题，参见话题管理 中“创建话题”步骤实现。
+4. 话题的管理还包括“删除话题”、“修改话题信息”、“获取话题列表”、“监听话题回调”功能。同时，话题也是可以供用户交流的地方，因此可以进行收发消息，相关接口可以参见话题消息介绍。
 5. 社群成员分组，可通过把分组信息设置到群成员自定义字段里，实现按照分组展示的效果。这需要拉取所有群成员到本地按照分组排序，若群人数较多，建议您在服务端自行实现。
 
 ## Web  SDK 集成指南
 >!社群（Community）话题（Topic）功能仅 IM Web SDK v2.19.1 及以上版本支持，需 [购买旗舰版](https://buy.cloud.tencent.com/avc?from=17182) 并在 [**控制台**](https://console.cloud.tencent.com/im/qun-setting)>**群功能配置**>**社群** 打开开关后方可使用。
 >
-社群话题的接口功能如下：
+>社群话题的接口功能如下：
 ### 下载并配置 Demo 源码快速体验
 您可参见 [快速入门](https://www.tencentcloud.com/document/product/1047/45912)，快速体验 IM 的功能。
 下面从 API 调用的角度来介绍下社群话题的使用：

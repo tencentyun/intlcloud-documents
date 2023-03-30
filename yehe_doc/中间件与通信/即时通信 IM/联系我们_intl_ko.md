@@ -6,8 +6,11 @@ Tencent Cloud IM 기술 교류 그룹 가입 혜택:
 - 자세한 제품 정보
 - 긴밀한 업계 교류
 
-Telegram 그룹: [가입하기](https://t.me/tencent_imsdk)
 
+Telegram 그룹 (EN):[가입하기](https://t.me/+1doS9AUBmndhNGNl)
+WhatsApp 그룹 (EN):[가입하기](https://chat.whatsapp.com/Gfbxk7rQBqc8Rz4pzzP27A)
+Telegram 그룹 (ZH):[가입하기](https://t.me/tencent_imsdk)
+WhatsApp 그룹 (ZH):[가입하기](https://chat.whatsapp.com/IVa11ZkVmKTEwSWsAzSyik)
 
 ## 핫라인 전화
 

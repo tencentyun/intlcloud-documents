@@ -41,4 +41,3 @@ After the account is created, you can see the account's username, nickname, type
 2. Batch export: On the **Account Management** page, select the accounts to export and click **Batch Export** above the account list.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/fRPa288_4.png)
 3. In the pop-up dialog box that reads **Export successful**, click **Download**.<br>
-

@@ -44,5 +44,3 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/99803ae45341a45148c31efba2cd24e6.png)
 3. 在弹出的导出对话框中提示导出成功后，单击下载，即完成导出。<br>
 <img style="width:518px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/eec7a52b73747cb772cb3f2821f3eabb.png" />
-
-

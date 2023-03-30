@@ -38,6 +38,7 @@ Tencent Cloud IMを使用してDiscord関連機能を実装するには、Tencen
     - [友達カスタムフィールド](https://console.cloud.tencent.com/im/friends-diy-vars)
     - [グループカスタムフィールド](https://console.cloud.tencent.com/im/qun-setting)
     - [グループメンバーのカスタムフィールド](https://console.cloud.tencent.com/im/qun-setting)
+  
   >?ユーザーはカスタムフィールドを使用するには、コンソールで設定し、SDKのAPIを用いて読み書きしてください。
 
 ### クライアント側とサーバー側の統合SDK
@@ -91,11 +92,11 @@ V2TIMManager.getGroupManager().createGroup(groupinfo, memberList, new V2TIMValue
 >!開発者は、IMが提供するサーバー側APIを使って、[サーバー側でサーバーを作成](https://intl.cloud.tencent.com/document/product/1047/34895)できます。主なパラメータは次のとおりです：
 >
 >```json
-{
-    "Type": "Community",     // グループタイプ（必須）
-    "Name"："TestCommunityGroup",　//　コミュニティ名(必須)
-    "SupportTopic"：1　　　　　　　　　　　　//　トピックオプションへの対応。対応の場合は1、非対応の場合は0。
-}
+>{
+>"Type": "Community",     // グループタイプ（必須）
+>"Name"："TestCommunityGroup",　//　コミュニティ名(必須)
+>"SupportTopic"：1　　　　　　　　　　　　//　トピックオプションへの対応。対応の場合は1、非対応の場合は0。
+>}
 ```
 
 ###### サーバーリスト

@@ -25,7 +25,7 @@
         overflow: hidden;
         box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
         text-align: left;
-    			height:260px;
+    			height:300px;
     }
     
     .markdown-text-box img {
@@ -152,4 +152,3 @@
             </div>
 </div>
 </div>
-

@@ -33,24 +33,25 @@ The Tencent Chat community adopts a new message push architecture with "fast and
 The Tencent Chat community offers extended capabilities such as message editing, recall, and forwarding. It allows setting muting, enabling do-not-disturb, counting unread messages, and editing profiles globally or by community or topic.
 
 ## Native SDK Integration Guide
->!The community topic feature is supported only by the Chat native SDK Enhanced edition on v6.2.2363 or later. To use it, [purchase the Ultimate edition](https://buy.cloud.tencent.com/avc?from=17182) and apply for activation as instructed in [Configuration Change Ticket](https://www.tencentcloud.com/document/product/1047/44322).
+>!The community topic feature is supported only by the Chat native SDK Enhanced edition on v6.2.2363 or later. To use it, purchase the Ultimate editionand apply for activation as instructed in [Configuration Change Ticket](https://www.tencentcloud.com/document/product/1047/44322).
 
 The following describes community topic APIs for Android.
 
 
 ### Calling a community topic API
-1. Call the `createGroup` API to create a topic-enabled community as instructed in the [Community Management](https://cloud.tencent.com/document/product/269/44494#.E7.A4.BE.E7.BE.A4.E7.AE.A1.E7.90.86).
+1. Call the `createGroup` API to create a topic-enabled community as instructed in the [Community Management](https://www.tencentcloud.com/document/product/1047/36271?lang=zh).
 2. Call the `getJoinedCommunityList` API to get the list of created and joined communities.
 >!A community is used for managing group members but doesn't support sending or receiving messages. For more information on other community features, see the list of "other management APIs".
 >
-3. After the community is created successfully, call the `createTopicInfoCommunity` API to create topics as instructed in [Topic Management](https://cloud.tencent.com/document/product/269/44494#.E8.AF.9D.E9.A2.98.E7.AE.A1.E7.90.86).
-4. Topic management also includes deleting a topic, modifying the topic information, getting the topic list, and listening for topic callbacks. In addition, topics support message sending and receiving for user communication. For more information on the APIs, see [Topic Message](https://cloud.tencent.com/document/product/269/44494#.E8.AF.9D.E9.A2.98.E6.B6.88.E6.81.AF).
+3. After the community is created successfully, call the `createTopicInfoCommunity` API to create topics as instructed in [Topic Management](https://www.tencentcloud.com/document/product/1047/36271?lang=zh).
+4. Topic management also includes deleting a topic, modifying the topic information, getting the topic list, and listening for topic callbacks. In addition, topics support message sending and receiving for user communication. For more information on the APIs, see [Topic Message](https://www.tencentcloud.com/document/product/1047/36271?lang=zh
+).
 5. Group community members: You can specify group information in group member custom fields to display community members in groups. To achieve this effect, all community members need to be pulled to the local for sorting by group. If the number of group members is large, it is recommended that you implement member grouping on the server side.
 
 ## Web SDK Integration Guide
->!The community topic feature is supported only by the Chat web SDK on v2.19.1 or later. To use it, [purchase the Ultimate edition](https://buy.cloud.tencent.com/avc?from=17182), go to the [**console**](https://console.cloud.tencent.com/im/qun-setting), select **Group feature configuration**, and enable the **Community** feature.
+>!The community topic feature is supported only by the Chat web SDK on v2.19.1 or later. To use it, purchase the Ultimate edition, go to the [**console**](https://console.cloud.tencent.com/im/qun-setting), select **Group feature configuration**, and enable the **Community** feature.
 >
-The features of the community topic APIs are as follows:
+>The features of the community topic APIs are as follows:
 ### Downloading and configuring the demo source code
 For a quick tryout of the Chat features, see [Android](https://www.tencentcloud.com/document/product/1047/45912).
 The following describes how to use the community topic feature by calling the APIs:

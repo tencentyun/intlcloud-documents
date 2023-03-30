@@ -1,3 +1,4 @@
+````javascript
 This document describes how to quickly run the Tencent Cloud Chat demo for Electron and integrate the Electron SDK.
 
 ## Environment Requirements
@@ -263,4 +264,5 @@ Dynamic Linking Error. electron-builder configuration
       ]
     }
   ]
-```
+```xxxxxxxxxx    extraFiles:[    {      "from": "./node_modules/im_electron_sdk/lib/",      "to": "./Resources",      "filter": [        "**/*"      ]    }  ]javascript
+````

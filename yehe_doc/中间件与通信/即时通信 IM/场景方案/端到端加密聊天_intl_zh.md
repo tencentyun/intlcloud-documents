@@ -345,11 +345,11 @@ String decrypted = group.decrypt(encrypted, users.get("Alice"));
 
 加入腾讯云即时通信 IM 技术交流群，您将获得：
 
-​                ● 可靠的技术支持
-
-​                ● 详细的产品信息
-
-​                ● 紧密的行业交流
+                ● 可靠的技术支持
+    
+                ● 详细的产品信息
+    
+                ● 紧密的行业交流
 
 Telegram交流群：[点击加入](https://t.me/tencent_imsdk)
 

@@ -44,5 +44,3 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/99803ae45341a45148c31efba2cd24e6.png)
 3. 내보내기 완료 팝업 창에서 다운로드를 클릭합니다.<br>
 <img style="width:518px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/eec7a52b73747cb772cb3f2821f3eabb.png" />
-
-

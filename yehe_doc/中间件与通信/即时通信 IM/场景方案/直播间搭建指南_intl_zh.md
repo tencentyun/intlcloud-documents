@@ -1059,8 +1059,7 @@ tim.getGroupMemberList(options);
   用户端获取直播流的方式也有不同的方式如：
 
   1. PC 端可使用 [VLC 工具播放](https://intl.cloud.tencent.com/document/product/267/32483)
-  2. Web 端可使用 [播放器 SDK 播放](https://www.tencentcloud.com/document/product/454/7503)
-  3. App 端可使用 [播放器 SDK 播放](https://intl.cloud.tencent.com/document/product/1071/38160)
+  2.App 端可使用 [播放器 SDK 播放](https://intl.cloud.tencent.com/document/product/1071/38160)
 
   >? 在拉流前也需要配置播放地址，请参见在 [播放配置](https://intl.cloud.tencent.com/document/product/267/31058) 或 [地址生成器](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成地址，SDK接入过程详情可参见 [直播播放](https://www.tencentcloud.com/document/product/267/51155)。
 

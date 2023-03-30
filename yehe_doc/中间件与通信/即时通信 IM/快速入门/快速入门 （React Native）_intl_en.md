@@ -2,11 +2,11 @@ This document describes how to quickly run the Tencent Cloud Chat demo for React
 
 ## Environment Requirements
 
-|              | Version                                                                 |
-| ------------ | -------------------------------------------------------------------- |
-| React Native | v0.63.4 or later                                                      |
-| Android | Android Studio 3.5 or later; devices with Android 4.1 or later for apps |
-| iOS | Xcode 11.0 or later. Ensure that your project has a valid developer signature. |
+|              | Version                                                      |
+| ------------ | ------------------------------------------------------------ |
+| React Native | v0.63.4 or later                                             |
+| Android      | Android Studio 3.5 or later; devices with Android 4.1 or later for apps |
+| iOS          | Xcode 11.0 or later. Ensure that your project has a valid developer signature. |
 
 ## Prerequisites
 

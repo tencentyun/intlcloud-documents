@@ -38,6 +38,7 @@ To use Tencent Cloud Chat to implement Discord features, you need to understand 
     - [Custom friend fields](https://console.cloud.tencent.com/im/friends-diy-vars)
     - [Custom group fields](https://console.cloud.tencent.com/im/qun-setting)
     - [Custom group member fields](https://console.cloud.tencent.com/im/qun-setting)
+  
   >?To use custom fields, you can configure them in the console and then read/write them via SDK/API.
 
 ### Integrating client and server SDKs
@@ -91,11 +92,11 @@ After the API is called successfully, the server ID will be returned in the `onS
 >!You can also use the [server creation API](https://intl.cloud.tencent.com/document/product/1047/34895) provided by Chat. Key parameters are as follows:
 >
 >```json
-{
-    "Type": "Community", // Group type (required)
-    "Name": "TestCommunityGroup", // Group name (required)
-    "SupportTopic": 1// Whether the topic option is supported. Valid values: `1`: yes; `0`: no.
-}
+>{
+>"Type": "Community", // Group type (required)
+>"Name": "TestCommunityGroup", // Group name (required)
+>"SupportTopic": 1// Whether the topic option is supported. Valid values: `1`: yes; `0`: no.
+>}
 ```
 
 ###### Server list

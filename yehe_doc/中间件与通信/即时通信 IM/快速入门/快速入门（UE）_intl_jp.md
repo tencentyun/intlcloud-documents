@@ -53,7 +53,7 @@ Unreal Engine 4.27.1およびそれ以降のバージョンを推奨します。
 3. `DebugDefs.h`のファイルの関連パラメータを設定します。
 <ul><li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
 	<li/>SECRETKEY：デフォルトは""。実際のキー情報を設定してください。</ul>
-	<img src="https://imgcache.qq.com/operation/dianshi/other/UE4.6a419c2e7f7085671529d3694cb99458527c2970.png"/>
+
 
 >?
 >- ここで言及したUserSigの新規作成ソリューションでは、クライアントコードでSECRETKEYを設定します。この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになります。そのため**この手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適合します**。

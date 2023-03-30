@@ -1,4 +1,3 @@
-
 即时通信 IM 控制台为您提供了数据统计和分析功能，登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，在左侧导航栏选择**监控仪表盘**，您可以查看该应用的用户规模、消息活跃、群组规模以及实时监控等相关数据。
 >?正常情况下，每天上午10:00左右更新数据，如遇数据为0或未及时更新，请先检查该 SDKAppID 在统计段内是否产生相关数据（例如，是否有新注册用户等），若已产生相关数据但未及时更新请耐心等待。
 
@@ -44,7 +43,7 @@
  - 在登录情况监控区域，您可以查看各个端的登录次数和登录成功率。
 >?目前仅支持展示4.8.10或以上的 iOS、Android、Windows 及 Mac 终端上报登录数据，建议您升级至 [最新版 SDK](https://intl.cloud.tencent.com/document/product/1047/33996)。
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/44981d16aeec09991b8147e9d3ebaad2.png)
+>![](https://qcloudimg.tencent-cloud.cn/raw/44981d16aeec09991b8147e9d3ebaad2.png)
  - 在消息情况监控区域，您可以查看各个端发送单聊/群聊消息的次数和成功率。
 >?目前仅支持展示4.8.10或以上的 iOS、Android、Windows 及 Mac 终端上报登录数据，建议您升级至 [最新版 SDK](https://intl.cloud.tencent.com/document/product/1047/33996)。Web端暂不支持按聊天类型统计消息量。
 >
@@ -52,6 +51,3 @@
  - 在 REST API 调用情况监控区域，您可以查看 REST API 请求数和请求成功率。
  - 在离线推送情况监控区域，您可以查看离线推送次数和推送成功率。
     ![](https://qcloudimg.tencent-cloud.cn/raw/c57d688deafc6dd8049b05dd3480ee06.png)
-
-
-

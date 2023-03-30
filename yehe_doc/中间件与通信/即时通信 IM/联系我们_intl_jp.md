@@ -22,7 +22,7 @@ Tencent Cloudのご使用時に問題が発生した場合は、カスタマー�
 製品の使用中に運用・保守や技術的な問題が生じた場合は、Tencent Cloudの公式Webサイトにログインして、ガイドラインに従ってチケットを提出してください。可及的速やかに対応させていただきます。皆様の貴重なご意見をお待ちしております。
 チケットの関連エントリーは以下のとおりです。
 
-- チケットの提出：[チケットを提出](https://console.cloud.tencent.com/workorder/category)
+- チケットの提出：[チケットを提出](https://console.cloud.tencent.com/workorder/category)
 - チケットステータスのクエリー：[チケットリスト](https://console.cloud.tencent.com/workorder)
 
 チケットステータスの説明は以下のとおりです。

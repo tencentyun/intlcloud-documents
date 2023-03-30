@@ -1,4 +1,3 @@
-
 ## Introduction
 Zendesk, one of the most prevalent SaaS products in customer support, sales, and other customer communications. Meanwhile, according to [Gartner](https://www.gartner.com/en/documents/4006202), Tencent Cloud Instant Messaging made the champion in Chinese market and one of the most compotent providers in Communication Platform as a Service (CPaaS) in the global market. Naturally, it comes to us to bring you the solution of integrating Tencent Cloud IM with Zendesk.
 

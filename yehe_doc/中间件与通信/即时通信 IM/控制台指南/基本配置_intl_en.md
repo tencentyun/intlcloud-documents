@@ -95,9 +95,22 @@ Account admins can call RESTful APIs, disband groups, and perform operations on 
 2. In the pop-up dialog, you can add or delete a tag.
 ![](https://main.qcloudimg.com/raw/0fd92ff5708ea939777cd6916d311f60.png)
 
-## Activating Tencent Real-Time Communication (TRTC)
-If you need features such as audio calling, video calling, and interactive live streaming in your current IM app, or you need to integrate the IM SDK and TRTC SDK at the same time, you can activate [TRTC](https://intl.cloud.tencent.com/document/product/647) in the **Activate Tencent Real-Time Communication (TRTC)** area. The system will create a TRTC app in the [TRTC console](https://console.cloud.tencent.com/trtc), which has the same SDKAppID as your current IM app. The two accounts and their authentications can be reused.
+## TRTC
 
-1. Click **Activate** in the **Activate Tencent Real-Time Communication (TRTC)** area.
-2. Click **Confirm** in the pop-up dialog box.
+### Activate the Video Calls Service
 
+To implement features such as audio/video call and interactive live streaming in the current IM application, click **Activate** in the top-right corner of the **TRTC** section to quickly activate [TRTC](https://www.tencentcloud.com/document/product/647?lang=en&pg=). The system will create a TRTC application in the [TRTC console](https://console.cloud.tencent.com/trtc), which has the same `SDKAppID` as your current IM application. The two can use the same accounts and authentications.
+
+After activation, you can click **View application** in the top-right corner of the **TRTC** section to view your TRTC application in the TRTC console.
+
+### Managing audio/video call feature
+
+IM and TRTC jointly provide the audio/video call capability as described in [Billing Overview](https://www.tencentcloud.com/document/product/1047/34349) for audio/video call business scenarios, so you can better use audio/video services at lower costs by quickly integrating relevant capabilities. You can click **Activate now** in the **TRTC** section and then manage the feature.
+
+The directions are as follows:
+
+1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target application card to go to the basic configuration page.
+
+2. In the bottom-right corner of the page, click **Audio/Video call capability - free trial** in the **TRTC** section. In the **Activate free trial of audio/video call feature** pop-up window, click **Activate Now** to activate the **60-day free trial** of TUICallKit.
+
+3. In the feature section, you can click <img src="https://qcloudimg.tencent-cloud.cn/raw/26be00c9c3f48ae0c7031b89d1f3d3d9.png" style="zoom:35%;" /> to view the details of the free trial of the audio/video call capability.

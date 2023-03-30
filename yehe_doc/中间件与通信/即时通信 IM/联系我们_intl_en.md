@@ -6,8 +6,13 @@ Join a Tencent Cloud IM developer group for:
 - Product details
 - Constant exchange of ideas
 
-Telegram group: [join](https://t.me/tencent_imsdk)
+Telegram group (EN): [join](https://t.me/+1doS9AUBmndhNGNl)
 
+WhatsApp group (EN): [join](https://chat.whatsapp.com/Gfbxk7rQBqc8Rz4pzzP27A)
+
+Telegram group (ZH): [join](https://t.me/tencent_imsdk)
+
+WhatsApp group (ZH): [join](https://chat.whatsapp.com/IVa11ZkVmKTEwSWsAzSyik)
 
 ## Hotline
 

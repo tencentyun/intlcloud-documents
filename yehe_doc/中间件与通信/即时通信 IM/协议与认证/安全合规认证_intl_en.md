@@ -25,7 +25,7 @@ Compliance is the foundation for the development of Tencent Cloud IM, which meet
         overflow: hidden;
         box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
         text-align: left;
-    			height:260px;
+    			height:350px;
     }
     
     .markdown-text-box img {
@@ -152,4 +152,3 @@ Compliance is the foundation for the development of Tencent Cloud IM, which meet
             </div>
 </div>
 </div>
-

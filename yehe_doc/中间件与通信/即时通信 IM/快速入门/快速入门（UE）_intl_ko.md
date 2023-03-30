@@ -53,7 +53,7 @@ Unreal Engine 4.27.1 이상 버전 권장.
 3. `DebugDefs.h` 파일에서 관련 매개변수를 설정합니다.
 <ul><li/>SDKAPPID: 기본값 0 , 실제 SDKAppID로 설정하십시오.
 	<li/>SECRETKEY: 기본값 ‘ ’ , 실제 키 정보로 설정하십시오.</ul>
-	<img src="https://imgcache.qq.com/operation/dianshi/other/UE4.6a419c2e7f7085671529d3694cb99458527c2970.png"/>
+
 
 >?
 >- 본 문서의 UserSig 생성 방법은 클라이언트 코드에서 SECRETKEY를 설정하는 것입니다. 이 방법에서 SECRETKEY는 디컴파일로 크래킹되기 쉬우므로, 키가 유출되면 해커가 귀하의 Tencent Cloud 트래픽을 도용할 수 있습니다. 따라서 **해당 방법은 로컬 Demo 실행 및 기능 디버깅용으로만 적합합니다**.

@@ -329,11 +329,11 @@ String decrypted = group.decrypt(encrypted, users.get("Alice"));
 
 Join a Tencent Cloud IM developer group for:
 
-​                ● Reliable technical support 
-
-​                ● Product details
-
-​                ● Constant exchange of ideas
+                ● Reliable technical support 
+    
+                ● Product details
+    
+                ● Constant exchange of ideas
 
 Telegram group (EN): [join](https://t.me/+1doS9AUBmndhNGNl)
 

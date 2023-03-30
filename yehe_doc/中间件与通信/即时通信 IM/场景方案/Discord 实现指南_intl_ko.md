@@ -38,6 +38,7 @@ Tencent Cloud IM을 사용하여 Discord 기능을 구현하려면 Tencent Cloud
     - [사용자 지정 친구 필드](https://console.cloud.tencent.com/im/friends-diy-vars)
     - [사용자 지정 그룹 필드](https://console.cloud.tencent.com/im/qun-setting)
     - [사용자 지정 구성원 필드](https://console.cloud.tencent.com/im/qun-setting)
+  
   >?사용자 지정 필드를 사용하려면 콘솔에서 구성한 다음 SDK\API를 통해 읽고 쓸 수 있습니다.
 
 ### 클라이언트&서버 SDK 통합
@@ -91,11 +92,11 @@ API가 성공적으로 호출되면 onSuccess 콜백에 서버 ID가 반환되�
 >!IM에서 제공하는 [서버 생성 API](https://intl.cloud.tencent.com/document/product/1047/34895)를 이용해도 됩니다. 주요 매개변수는 다음과 같습니다.
 >
 >```json
-{
-    "Type": "Community", // 그룹 유형(필수)
-    "Name": "TestCommunityGroup", // 그룹 이름(필수)
-    "SupportTopic": 1            // 토픽 옵션 지원 여부. 유효한 값: 1 yes, 0 no
-}
+>{
+>"Type": "Community", // 그룹 유형(필수)
+>"Name": "TestCommunityGroup", // 그룹 이름(필수)
+>"SupportTopic": 1            // 토픽 옵션 지원 여부. 유효한 값: 1 yes, 0 no
+>}
 ```
 
 ###### 서버 목록

@@ -1,3 +1,4 @@
+````dart
 ## 前言
 本文以 [Tencent Cloud AV Chat Room](https://pub.dev/packages/tencent_cloud_av_chat_room) 插件为基础，结合 [直播 Flutter SDK](https://www.tencentcloud.com/document/product/1071/50587) 实现的直播业务场景.
 
@@ -590,4 +591,5 @@ TencentCloudAvChatRoomTextTheme(
 	barrageTitleStyle: TextStyle(), // 弹幕消息发送人名称主题
 	barrageTextStyle: TextStyle() // 弹幕消息内容主题
 )
-```
+```xxxxxxxxxx TencentCloudAvChatRoomTextTheme(    giftBannerSubTitleStyle: TextStyle(), // 屏幕左侧划入的礼物消息 sub title 字体主题, 礼物名称    giftBannerTitleStyle: TextStyle(), // 屏幕左侧划入的礼物消息 title 字体主题    anchorTitleStyle: TextStyle(), // 主播名称字体主题    anchorSubTitleStyle: TextStyle(), // 点赞字体主题    barrageTitleStyle: TextStyle(), // 弹幕消息发送人名称主题    barrageTextStyle: TextStyle() // 弹幕消息内容主题)dart
+````

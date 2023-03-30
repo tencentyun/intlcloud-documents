@@ -1,171 +1,204 @@
-## 1. Introduction to TWebLive
+- This document introduces you to our web-based interactive live streaming solutions `TUIPusher` and `TUIPlayer` (UI included). You can integrate them into Tencent Cloud’s basic SDKs such as [IM](https://intl.cloud.tencent.com/product/im) and [TRTC](https://intl.cloud.tencent.com/product/trtc) to quickly equip your live streaming applications (corporate live streaming, live shopping, vocational training, remote teaching, etc.) with web-based publishing and playback capabilities.
 
-[TWebLive](https://trtc.qcloud.com/tweblive/index.html#/) is a Tencent Cloud web ILVB component. As a new [SDK](https://www.npmjs.com/package/tweblive) developed by the Tencent Cloud terminal development team, it integrates [Tencent Cloud TRTC](https://intl.cloud.tencent.com/product/trtc), [Tencent Cloud IM](https://intl.cloud.tencent.com/product/im), and the Tencent Cloud superplayer TCPlayer. It provides common features in web interactive livestreaming scenarios, including push, enabling/disabling the microphone, enabling/disabling the camera, WeChat video sharing, chat, and likes. It also contains simple and easy-to-use [APIs](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html) for implementing web push/pull, real-time chat interaction, and other features.
+  Strengths:
+  + A general-purpose live streaming solution with UI that includes common live streaming features such as device selection, beauty filters, publishing, playback, and live chat, helping you quickly bring your services to the market
+  + Easy integration into Tencent Cloud’s basic SDKs, including TRTC, IM, and TCPlayer, for excellent flexibility and scalability
+  + Web-based, easy-to-use, and quick updates
 
+  ## Demos
 
+  See below for a demonstration of the components’ features. We also provide a [TUIPusher Demo](https://web.sdk.qcloud.com/component/tuiliveroom/tuipusher/pusher.html) and a [TUIPlayer Demo](https://web.sdk.qcloud.com/component/tuiliveroom/tuiplayer/player.html), with user and room management systems, for you to experiment with the features.
+  >! You need to log in with two different accounts to try `TUIPusher` and `TUIPlayer` at the same time.  
 
+  ![TUIPusher demonstration](https://qcloudimg.tencent-cloud.cn/raw/8d33df705c07c80d75ad19096e681903.png)
+  ![TUIPlayer demonstration](https://qcloudimg.tencent-cloud.cn/raw/6490fdf7db4980db3a98b4b103fb52f1.png)
 
+  ## Download
 
-## 2. TWebLive Advantages
-
-Developers can use this SDK to completely replace the flash push solution, which greatly reduces the complexity and time for implementing web push, low-latency web streaming, CDN streaming, and real-time chat interactions (or on-screen comments). For more information, see the following examples.
-
-### 1. Push
-
-To use the push feature, you must create a pusher object. The simplest push operation takes only three steps, as shown below.
-
-```javascript
-<div id="pusherView" style="width:100%; height:auto;"></div>
-<script>
-// 1. Create a pusher object.
-let pusher = TWebLive.createPusher({ userID: 'your userID' });
-
-// 2. Configure the rendering view, use the microphone to capture audio, and use the camera to capture video (720p by default).
-pusher.setRenderView({
-  elementID: 'pusherView',
-  audio: true,
-  video: true
-}).then(() => {.then(() => {
-  // 3. Enter the sdkappid, roomid, and other information for push.
-  // The URL must start with `room://`
-  let url = `room://sdkappid=${SDKAppID}&roomid=${roomID}&userid=${userID}&usersig=${userSig}&livedomainname=${liveDomainName}&streamid=${streamID}`;
-  pusher.startPush(url).then(() => {
-    console.log('pusher | startPush | ok');
-  });
-}).catch(error => {
-  console.error('pusher | setRenderView | failed', error);
-});
-</script>
-```
-
-### 2. Pull
-
-To use the pull feature, you must create a player object. The simplest pull operation takes only three steps, as shown below.
-
-```javascript
-<div id="playerView" style="width:100%; height:auto;"></div>
-<script>
-// 1. Create a player object.
-let player = TWebLive.createPlayer();
-
-// 2. Configure the rendering view.
-player.setRenderView({ elementID: 'playerView' });
-
-// 3. Enter the FLV and HLS addresses and other required information for pulling CDN streams for playback. The URL must start with `https://`.
-// Alternatively, enter the sdkappid, roomid, and other information for pulling WebRTC low-latency streams for playback. The URL must start with `room://`.
-let url = 'https://'
-  + 'flv=https://200002949.vod.myqcloud.com/200002949_b6ffc.f0.flv' + '&' // Replace the URL with an actual playback address
-  + 'hls=https://200002949.vod.myqcloud.com/200002949_b6ffc.f0.m3u8' // Replace the URL with an actual playback address
-
-// let url = `room://sdkappid=${SDKAppID}&roomid=${roomID}&userid=${userID}&usersig=${userSig}`;
-player.startPlay(url).then(() => {
-  console.log('player | startPlay | ok');
-}).catch((error) => {
-  console.error('player | startPlay | failed', error);
-});
-</script>
-```
-
-### 3. Livestreaming interaction
-
-To enable the host to chat with the audience, you must create an IM object. The simplest message receiving and sending process takes only three steps, as shown below.
-
-```javascript
-// 1. Create an IM object and monitor events.
-let im = TWebLive.createIM({
-  SDKAppID: 0 // Replace 0 with the SDKAppID of your IM instance
-});
-// Monitor IM_READY IM_TEXT_MESSAGE_RECEIVED and other events
-let onIMReady = function(event) {
-  im.sendTextMessage({ roomID: 'your roomID', text: 'hello from TWebLive' });
-};
-let onTextMessageReceived = function(event) {
-  event.data.forEach(function(message) {
-    console.log((message.from || message.nick) + ' : ', message.payload.text);
-  });
-};
-// Monitor this event on the access side, and then you can call the SDK to send messages or perform other operations
-im.on(TWebLive.EVENT.IM_READY, onIMReady);
-// Receive a text message and display it on the screen
-im.on(TWebLive.EVENT.IM_TEXT_MESSAGE_RECEIVED, onTextMessageReceived);
-
-// 2. Log in to the IM console.
-im.login({userID: 'your userID', userSig: 'your userSig'}).then((imResponse) => {
-  console.log(imResponse.data); // Logged in successfully
-  if (imResponse.data.repeatLogin === true) {
-    // This indicates that the account has been logged in and that the current login is a repeated login
-    console.log(imResponse.data.errorInfo);
-  }
-}).catch((imError) => {
-  console.warn('im | login | failed', imError); // Information about the login failure
-});
-
-// 3. Enter the chat room.
-im.enterRoom('your roomID').then((imResponse) => {
-  switch (imResponse.data.status) {
-    case TWebLive.TYPES.ENTER_ROOM_SUCCESS: // Entered the chat room successfully
-      break;
-    case TWebLive.TYPES.ALREADY_IN_ROOM: // You are already in the chat room
-      break;
-    default:
-      break;
-  }
-}).catch((imError) => {
-  console.warn('im | enterRoom | failed', imError); // Information about the failure to enter the chat room
-});
-</script>
-```
-
-To further reduce developers' development and labor costs, in addition to the TWebLive SDK, we provide an open-source [demo](https://github.com/tencentyun/TWebLive) on GitHub, which is adaptable to both PC and mobile browsers. Developers can fork and clone a project to their local devices and make simple modifications to run the demo. Alternatively, they can integrate the demo into their own projects for deployment and launch.
-
-## 3. Using TWebLive
+  You can download `TUIPusher` and `TUIPlayer` from the following links:
+  + [TUIPusher](https://github.com/tencentyun/TUILiveRoom/tree/main/Web/TUIPusher) 
+  + [TUIPlayer](https://github.com/tencentyun/TUILiveRoom/tree/main/Web/TUIPlayer)
 
 
-Create a TRTC instance in the [Tencent Cloud TRTC console](https://console.cloud.tencent.com/trtc/app) and save the SDKAPPID. At the same time, an IM instance with the same SDKAppID will be automatically created. Then, choose **App Management** > **Feature Configuration** and enable automatic relayed push. After relayed push is enabled, each video stream in the TRTC room is assigned a playback URL. (If CDN livestreaming is not required, you do not need to enable relayed push.)
+  ## Overview
+  ### TUIPusher
+  - Capturing and publishing streams from camera and mic
+    - Customizing video parameters including frame rate, resolution, and bitrate
+    - Applying beauty filters and setting beauty filter parameters
+  - Capturing and publishing data from the screen
+  - Publishing to the TRTC backend and Tencent Cloud’s CDNs
+  - Text chatting with the anchor and other audience members
+  - Getting the audience list and muting audience members
 
-Configure the playback domain name and CNAME in the [Tencent Cloud LVB console](https://console.cloud.tencent.com/live/). For detailed instructions, see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242). (If CDN livestreaming is not required, skip this step.)
+  ### TUIPlayer
+  - Playing the audio/video stream and screen sharing stream at the same time
+  - Text chatting with the anchor and other audience members
+  - Three playback options: ultra-low-latency live streaming (300 ms latency), high-speed live streaming (latency within 1,000 ms), and standard live streaming (ultra-high concurrency)
+  - Supports desktop and mobile browsers and landscape mode on mobile devices
+  > !
+  > If your browser does not support WebRTC and can play videos only using standard live streaming protocols, please use a different browser to try WebRTC playback.
 
-Download TWebLive through NPM as follows.
-```javascript
-npm i tweblive --save
-```
+  ## Integration
+  ### Notes
+  - `TUIPusher` and `TUIPlayer` are based on TRTC and IM. Make sure you use the same `SDKAppID` for your TRTC and IM applications so that they can share your account and authentication information.
+  - Local `UserSig` calculation is for development and local debugging only and not for official launch. The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
-## 4. Architecture and Platform Support
-The following figure shows the TWebLive architecture design.
-![](https://main.qcloudimg.com/raw/ab2b13a441da8b0631cc664f95ad18db.png)
+  ### Step 1. Create an application
+  <dx-tabs>
+  ::: Method 1: via \sIM
+  #### Step 1. Create an IM app
+  1. Log in to the [IM console](https://console.cloud.tencent.com/im), and click **Create Application**.
+  ![](https://qcloudimg.tencent-cloud.cn/raw/7382cbcd81df7afbad1e9af641697c87.png)
+  2. In the pop-up window, enter an application name and click **Confirm**.
+  ![](https://qcloudimg.tencent-cloud.cn/raw/b3a630da00564cf7ef4a91b8492b646e.png)
+  3. Go to the [overview page](https://console.cloud.tencent.com/im) to view the status, edition, `SDKAppID`, creation time, and expiration time of the application created. Note the `SDKAppID`.
 
-Web push and low-latency web streaming adopt the WebRTC technology, which works well with Chrome (desktop version) and Safari (desktop and mobile versions) but poorly or not at all with other platforms (such as browsers on Android terminals).
+  #### Step 2. Obtain the key and activate TRTC
+  1. On the [overview page](https://console.cloud.tencent.com/im), click the application created to go to the **Basic Configuration** page. In the **Basic Information** section, click **Display key**, and copy and save the key.
+  ![](https://qcloudimg.tencent-cloud.cn/raw/6f284cf687e9648d209567ed32983c84.png)
+  >! Please store the key information properly to prevent disclosure.
+  2. On the **Basic Configuration** page, activate TRTC.
+  ![](https://qcloudimg.tencent-cloud.cn/raw/8a9d1ca2c395fc6ebd26298a0f5226c4.png)
+  :::
+  ::: Method 2: via TRTC
+  [](id:step1)
+  #### Step 1. Create a TRTC application
+  1. [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fdocument%2Fproduct%2F647%2F49327) and activate [TRTC](https://console.cloud.tencent.com/trtc) and [IM](https://console.cloud.tencent.com/im).
+  2. In the [TRTC console](https://console.cloud.tencent.com/trtc), click **Application Management > Create Application** to create an application.
+  ![Create application](https://qcloudimg.tencent-cloud.cn/raw/9a50fca02d951862a3d0d38251835f76.png)
 
-| Operating System | Browser | Minimum Browser Version Requirement | Receiving (Playback) | Sending (Mic-on) | Screen Sharing |
-|:-------:|:-------:|:-------:|:-------:|:-------:| :-------:|
-| MacOS | Safari (desktop) | V11 and later | Supported | Supported | Not supported |
-| MacOS | Chrome (desktop) | V56 and later | Supported | Supported | Supported (for Chrome V72 and later) |
-| Windows | Chrome (desktop) | V56 and later | Supported | Supported | Supported (for Chrome V72 and later) |
-| Windows | QQ Browser (desktop) | V10.4 | Supported | Supported | Not supported |
-| iOS | Safari (mobile) | V11.1.2 | Supported | Supported | Not supported |
-| iOS | WeChat embedded browser | V12.1.4 | Supported | Not supported | Not supported |
-| Android | QQ Browser (mobile) | - | Not supported | Not supported | Not supported |
-| Android | UC Browser (mobile) | - | Not supported | Not supported | Not supported |
-| Android | WeChat embedded browser (with the TBS kernel) | - | Supported | Supported | Not supported |
+  #### Step 2. Get the TRTC key information
+  1. In the application list, find the application created and click **Application Info** to view the `SDKAppID`.
+  ![](https://qcloudimg.tencent-cloud.cn/raw/6c39a936934a944cd1b13e2ced0869d2.png)
+  2. Select the **Quick Start** tab to view the application’s secret key.
+  ![](https://qcloudimg.tencent-cloud.cn/raw/08e836506f07f33b7b527f1eb0413b10.png)
 
-We recommend that you use the [Mini Program] solution on mobile devices, which is supported by both WeChat and Mobile QQ. This solution is built around native technologies of corresponding platforms and delivers excellent audio/video performance. It is specifically adapted to major mobile phone brands. If your application scenario mainly involves the education sector, we recommend that you use the [Electron](https://intl.cloud.tencent.com/document/product/647/35097) solution for the teacher end. This solution is more stable and supports dual-channel pictures, more flexible screen sharing schemes, and more powerful recovery capabilities in poor network conditions.
+  <dx-alert infotype="explain">
+  - Accounts creating their first application in the TRTC console will get a 10,000-minute free trial package.
+  - After you create a TRTC application, an IM application with the same `SDKAppID` will be created automatically. You can configure package information for the application in the [IM console](https://console.cloud.tencent.com/im).</dx-alert>
+  :::
+  </dx-tabs>
 
-## 5. Notes
+  [](id:step2)
+  ### Step 2. Prepare your project
 
-- TRTC and IM instances can share each other's accounts and authentication data only if they have the same SDKAppID.
-- The IM instance provides the basic-edition content filtering capability for text messages. To use the sensitive word customization feature, click **Upgrade**.
-- The local UserSig calculation method is used for local development and debugging only. Do not publish it to your online systems. Once your SECRETKEY is disclosed, attackers can use your Tencent Cloud traffic without authorization. To correctly distribute UserSigs, integrate the computing code of UserSigs into your server and provide an app-oriented API. When a UserSig is required, your app can send a request to the business server to obtain the dynamic UserSig. For more information, see "Generating a UserSig on the Server" in [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
-- Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support the TRTC SDK for desktop browsers.
+  1. Download the code for `TUIPusher` and `TUIPlayer` at [GitHub](https://github.com/tencentyun/TUILiveRoom/tree/main/Web).
+  2. Install dependencies for `TUIPusher` and `TUIPlayer`.
+  ```bash
+  cd Web/TUIPusher
+  npm install
+  
+  cd Web/TUIPlayer
+  npm install
+  ```
+  3. Paste `SDKAppID` and the secret key to the specified locations below in the `TUIPusher/src/config/basic-info-config.js` and `TUIPlayer/src/config/basic-info-config.js` files.
+  ![](https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png)
+  4. Run `TUIPusher` and `TUIPlayer` in a local development environment.
+  ```bash
+  cd Web/TUIPusher
+  npm run serve
+  
+  cd Web/TUIPlayer
+  npm run serve
+  ```
+  5. You can open `http://localhost:8080` and `http://localhost:8081` to try out the features of `TUIPusher` and `TUIPlayer`.
+  6. You can modify the room, anchor, and audience information in `TUIPusher/src/config/basic-info-config.js` and `TUIPlayer/src/config/basic-info-config.js`, but **make sure the room and anchor information is consistent in the two files**.
 
-## 6. Summary
+  >!
+  >- You can now use `TUIPusher` and `TUIPlayer` for ultra-low-latency live streaming. If you want to support high-speed and standard live streaming too, see [Step 3. Enable relayed push](#step3).
+  >- Local calculation of `UserSig` is for development and local debugging only and not for official launch. If your `SECRETKEY` is leaked, attackers will be able to steal your Tencent Cloud traffic.
+  >- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/1047/34385).
 
-This document describes the new Tencent Cloud web ILVB component TWebLive. With this SDK, developers can quickly implement web push, low-latency web streaming, CDN streaming, real-time chat interactions (or on-screen comments), and other features. In addition, this component can completely replace the traditional flash push solution.
+  [](id:step3)
+  ### Step 3. Enable relayed push
 
-This document also provides a detailed access solution and [online demo](https://trtc.qcloud.com/tweblive/index.html#/). Currently, TWebLive works well with mainstream desktop browsers and provides Mini Program solutions on mobile devices.
+  Because the high-speed and standard live streaming features of `TUIPusher` and `TUIPlayer` are powered by [CSS](https://intl.cloud.tencent.com/document/product/267), you need to enable relayed push to use these features.
 
-In the future, we will provide more livestreaming services, such as screen sharing on the push end, image message interaction, multi-line display for viewers (over the WebRTC low-latency and CDN lines), and host-viewer co-anchoring.
+  1. In the [TRTC console](https://console.cloud.tencent.com/trtc), enable relayed push for your application. You can choose **Specified stream for relayed push** or **Global auto-relayed push** based on your needs. 
+  ![](https://qcloudimg.tencent-cloud.cn/raw/b65584a5b096481ade6e302dabedcd5f.png)
+  2. On the **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** page, add your playback domain name. For detailed directions, please see [Adding Your Own Domain Names](https://intl.cloud.tencent.com/document/product/267/35970).
+  3. Configure the playback domain name in `TUIPlayer/src/config/basic-info-config.js`.
 
-References
+  You can now use all features of `TUIPusher` and `TUIPlayer`, including ultra-low-latency live streaming, high-speed live streaming, and standard live streaming.
 
-- [TWebLive](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html)
-- [Quick Demo of the Web ILVB Component](https://intl.cloud.tencent.com/document/product/1047/38174)
+  [](id:step4)
+  ### Step 4. Apply in a production environment
+
+  To apply `TUIPusher` and `TUIPlayer` to a production environment, in addition to integrating them into your project, you also need to do the following:
+
+  - Create a user management system to manage user information such as user IDs, usernames, and profile pictures
+  - Create a room management system to manage room information such as room IDs, room names, and anchors
+  - Generate `UserSig` on your server
+  > !
+  > - In this document, `UserSig` is generated on the client based on the `SDKAppID` and secret key you provide. The secret key may be easily decompiled and reversed, and if your key is leaked, attackers will be able to steal your traffic. Therefore, **this method is for local debugging only**.
+  > - The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
+  - Submit account information such as user information, room information, `SDKAppID`, and `UserSig` to `store` of `vuex` for global storage, as in `TUIPusher/src/pusher.vue` and `TUIPlayer/src/player.vue`, and you will be able to use all features of the two components on publishing and playback clients. The diagram below shows the process in detail:
+  ![](https://qcloudimg.tencent-cloud.cn/raw/30e959d1b4605532f6d4cac190cdd1df.png)
+
+  ## FAQs
+  ### How do I implement the beauty filter feature on the web?
+  See [Enabling Beauty Filters](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-28-advanced-beauty.html).
+
+  ### How do I implement the screen sharing feature on the web?
+  See [Screen Sharing](https://web.sdk.qcloud.com/trtc/webrtc/doc/en/tutorial-16-basic-screencast.html).
+
+  ### How do I implement the on-cloud recording feature on the web?
+  1. For information about how to enable **on-cloud recording**, see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
+  2. If you enable **specified user recording**, you can start recording on the web by specifying `userDefineRecordId` when calling the [TRTC.createClient](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/TRTC.html#createClient) API.
+
+
+  ### How do I enable high-speed playback on the web?
+  Publish streams to CDNs using the TRTC Web SDK and play the streams using WebRTC.
+
+  ## Notes
+  ### Supported platforms
+
+  | Operating System | Browser                  | Required Version | TUIPlayer                                | TUIPusher     | TUIPusher Screen Sharing   |
+  | :--------------- | :----------------------- | :--------------- | :--------------------------------------- | :------------ | :------------------------- |
+  | macOS            | Safari                   | 11+              | Supported                                | Supported     | Supported (on Safari 13+)  |
+  | macOS            | Chrome                   | 56+              | Supported                                | Supported     | Supported (on Chrome 72+)  |
+  | macOS            | Firefox                  | 56+              | Supported                                | Supported     | Supported (on Firefox 66+) |
+  | macOS            | Edge                     | 80+              | Supported                                | Supported     | Supported                  |
+  | macOS            | WeChat built-in browser  | -                | Supported                                | Not supported | Not supported              |
+  | macOS            | WeCom built-in browser   | -                | Supported                                | Not supported | Not supported              |
+  | Windows          | Chrome                   | 56+              | Supported                                | Supported     | Supported (on Chrome 72+)  |
+  | Windows          | QQ Browser (WebKit core) | 10.4+            | Supported                                | Supported     | Not supported              |
+  | Windows          | Firefox                  | 56+              | Supported                                | Supported     | Supported (on Firefox 66+) |
+  | Windows          | Edge                     | 80+              | Supported                                | Supported     | Supported                  |
+  | Windows          | WeChat built-in browser  | -                | Supported                                | Not supported | Not supported              |
+  | Windows          | WeCom built-in browser   | -                | Supported                                | Not supported | Not supported              |
+  | iOS              | WeChat built-in browser  | -                | Supported                                | Not supported | Not supported              |
+  | iOS              | WeCom built-in browser   | -                | Supported                                | Not supported | Not supported              |
+  | iOS              | Safari                   | -                | Supported                                | Not supported | Not supported              |
+  | iOS              | Chrome                   | -                | Supported                                | Not supported | Not supported              |
+  | Android          | WeChat built-in browser  | -                | Supported                                | Not supported | Not supported              |
+  | Android          | WeCom built-in browser   | -                | Supported                                | Not supported | Not supported              |
+  | Android          | Chrome                   | -                | Supported                                | Not supported | Not supported              |
+  | Android          | QQ Browser               | -                | Supported                                | Not supported | Not supported              |
+  | Android          | Firefox                  | -                | Supported                                | Not supported | Not supported              |
+  | Android          | UC Browser               | -                | Supported (only standard live streaming) | Not supported | Not supported              |
+
+  ### Domain requirements
+  For security and privacy reasons, only HTTPS URLs can access all features of `TUIPusher` and `TUIPlayer`. Therefore, please use the HTTPS protocol for the web page of your application in production environments.
+  >! Note: You can use `http://localhost` for local development.
+
+  The table below lists the supported domain names and protocols.
+
+  | Scenario          | Protocol                    | TUIPlayer | TUIPusher     | TUIPusher Screen Sharing | Remarks     |
+  | ----------------- | --------------------------- | --------- | ------------- | ------------------------ | ----------- |
+  | Production        | HTTPS                       | Supported | Supported     | Supported                | Recommended |
+  | Production        | HTTP                        | Supported | Not supported | Not supported            | -           |
+  | Local development | `http://localhost`          | Supported | Supported     | Supported                | Recommended |
+  | Development       | `http://127.0.0.1`          | Supported | Supported     | Supported                | -           |
+  | Local development | `http://[local IP address]` | Supported | Not supported | Not supported            | -           |
+
+  ### Firewall configuration
+  `TUIPusher` and `TUIPlayer` rely on the following ports and domain for data transfer, which should be added to the allowlist of your firewall.
+  - TCP port: 8687
+  - UDP ports: 8000, 8080, 8800, 843, 443, 16285
+  - Domain name: qcloud.rtc.qq.com
+
+  ## Summary
+  In future versions, we plan to add support for communication between the web components and the TRTC SDKs for iOS, Android, etc. and introduce features such as co-anchoring, advanced filters, custom layout, relaying to multiple platforms, and image/text/music upload.
+
+  If you have any requirements or feedback, contact colleenyu@tencent.com.

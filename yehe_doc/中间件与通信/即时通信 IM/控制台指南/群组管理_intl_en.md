@@ -26,7 +26,7 @@ On the **Group Management** page, you can click **View Details** in the row of t
 2. In the pop-up dialog box for adding members, enter the username.
  >? You must enter the name of a registered user.
  >
-![](https://main.qcloudimg.com/raw/a770c24a1c91813e16e50da0616f22ba.png)
+ >![](https://main.qcloudimg.com/raw/a770c24a1c91813e16e50da0616f22ba.png)
 3. Click **Confirm** to save the configuration.
  After adding a group member, you can view the username, nickname, join time, last speak time, and role of the member on the group member list.
 
@@ -54,4 +54,3 @@ On the **Group Management** page, you can click **View Details** in the row of t
  - Delete a batch of groups: Select the target groups to be deleted and click **Delete Groups** above the group list.
 2. In the pop-up dialog box, click **Confirm**.
  **After the group is deleted, all its information will be deleted and cannot be recovered.**
-

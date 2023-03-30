@@ -1,3 +1,4 @@
+````javascript
 本文主要介绍如何快速运行腾讯云即时通信 IM Demo（Electron）并了解集成 Electron SDK 的方法。
 
 ## 环境要求
@@ -263,4 +264,5 @@ Dynamic Linking Error. electron-builder 配置
       ]
     }
   ]
-```
+```xxxxxxxxxx    extraFiles:[    {      "from": "./node_modules/im_electron_sdk/lib/",      "to": "./Resources",      "filter": [        "**/*"      ]    }  ]javascript
+````

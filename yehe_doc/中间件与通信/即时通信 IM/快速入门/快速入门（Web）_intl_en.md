@@ -1,7 +1,8 @@
 - [Web](https://intl.cloud.tencent.com/document/product/1047/45911)
+
 >Chat UIKit is a UI component library based on Tencent Cloud IM SDK. It provides universal UI components to offer features such as conversation, chat, relationship chain, group, and audio/video call features.
-With these UI components, you can quickly build your own business logic.
-When implementing UI features, components in Chat UIKit will also call the corresponding APIs of the IM SDK to implement IM-related logic and data processing, allowing developers to focus on their own business needs or custom extensions.
+>With these UI components, you can quickly build your own business logic.
+>When implementing UI features, components in Chat UIKit will also call the corresponding APIs of the IM SDK to implement IM-related logic and data processing, allowing developers to focus on their own business needs or custom extensions.
 
 <img align="right" src="https://qcloudimg.tencent-cloud.cn/raw/4562be8179a1534efb17d33428239c82.png?auto=format,enhance" width="50%" />
 
@@ -95,3 +96,39 @@ export function SampleChat() {
    );
 }
 ```
+
+- import React, { useEffect, useState } from 'react';
+  import { TUIKit } from '@tencentcloud/chat-uikit-react';
+  import '@tencentcloud/chat-uikit-react/dist/cjs/index.css';
+  import TIM, { ChatSDK } from 'tim-js-sdk/tim-js-friendship';
+  import TIMUploadPlugin from 'tim-upload-plugin';
+  
+  // Generate a tim instance object and complete login
+  const init = async () => {
+     return new Promise((resolve, reject) => {
+        const tim = TIM.create({ SDKAppID: 000 });
+        tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
+        const onReady = () => { resolve(tim); };
+        tim.on(TIM.EVENT.SDK_READY, onReady);
+        tim.login({
+           userID: 'xxx',
+           userSig: 'xxx',
+        });
+     });
+  }
+  
+  export function SampleChat() {
+     const [tim, setTim] = useState<ChatSDK>();
+     useEffect(() => {
+        (async () => {
+           const tim = await init()
+           setTim(tim)
+        })()
+     }, [])
+  
+     return (
+             <div style={{height: '100vh',width: '100vw'}}>
+                <TUIKit tim={tim}></TUIKit>
+             </div>
+     );
+  }

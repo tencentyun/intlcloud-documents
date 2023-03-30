@@ -35,7 +35,7 @@ Refer to [Offline Push (iOS)](https://intl.cloud.tencent.com/document/product/10
   - For a group message, check that no alert has been enabled.
 
 - Android
-Refer to [Offline Push Configuration](https://intl.cloud.tencent.com/document/product/1047/34336) to check the following:
+  Refer to [Offline Push Configuration](https://intl.cloud.tencent.com/document/product/1047/34336) to check the following:
   - Check that the correct push certificate has been uploaded.
   - Check that the token has been reported successfully.
   - When not using third-party offline push (Huawei, Xiaomi, or Meizu), check that the QALService process is active. If the process is not active, offline push messages will fail to be received. In that case, the auto-start permissions of the system need to be relied on.
