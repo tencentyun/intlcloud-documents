@@ -77,9 +77,8 @@ response = client.put_bucket_policy(
 | Parameter | Description | Type | Required |
 | --------- | ------------------------------------------------------------ | ------ | -------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Statement | Detailed information about one or more permissions | Struct |
+| Statement | Detailed information about one or more permissions | Struct |Yes |
 | Principal | Specifies the entity to which the permission is granted. For more information, see [Access Policy Language Overview](https://www.tencentcloud.com/document/product/436/18023)|Dict| Yes |
-
 | Effect | Allow or deny |String| Yes |
 | Action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, e.g. `name/cos:GetService`. **Note that this value is case-sensitive**.    |List | Yes |
 | Resource | Specifies the resource for which permission is granted. It can be any resource, a resource in a path with a specified prefix, a resource in a specified absolute path, or a combination thereof. |List | Yes |
@@ -175,13 +174,13 @@ This API returns the bucket permission policy of `dict` type, which contains a k
 
 | Parameter | Description | Type |
 | --------- | ------------------------------------------------------------ | ------ |
-| Statement | Specifies one or more permissions |List| Yes |
-| Principal | Specifies the entity to which the permission is granted. For more information, see [Access Policy Language Overview](https://www.tencentcloud.com/document/product/436/18023)|Dict| Yes |
-| version | The policy syntax version. The default is 2.0. |
+| Statement | Specifies one or more permissions |List| 
+| Principal | Specifies the entity to which the permission is granted. For more information, see [Access Policy Language Overview](https://www.tencentcloud.com/document/product/436/18023)|Dict| 
+| version | The policy syntax version. The default is 2.0. |String | 
 | Effect | Allow or explicitly deny | String |
-| Action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, e.g. `name/cos:GetService`. **Note that this value is case-sensitive**.    |List | Yes |
-| Resource | Specifies the resource for which permission is granted. It can be any resource, a resource in a path with a specified prefix, a resource in a specified absolute path, or a combination thereof. |List | Yes |
-| Condition | (Optional) Specifies the rule condition. For more information, see [condition](https://www.tencentcloud.com/document/product/598/10603) |List | No |
+| Action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, e.g. `name/cos:GetService`. **Note that this value is case-sensitive**.    |List | 
+| Resource | Specifies the resource for which permission is granted. It can be any resource, a resource in a path with a specified prefix, a resource in a specified absolute path, or a combination thereof. |List |
+| Condition | (Optional) Specifies the rule condition. For more information, see [condition](https://www.tencentcloud.com/document/product/598/10603) |List | 
 
 
 ## Deleting a bucket policy
