@@ -1,5 +1,7 @@
 **GME's text-to-speech service** can convert text to natural and realistic speech based on advanced deep learning technology.
 
+>?This feature hasn't been officially launched. To use it, contact the channel manager or [submit a ticket](https://console.tencentcloud.com/workorder/category) to query the price.
+>
 
 ## Feature Overview
 
