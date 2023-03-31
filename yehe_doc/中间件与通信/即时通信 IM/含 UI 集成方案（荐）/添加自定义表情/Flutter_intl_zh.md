@@ -1,13 +1,12 @@
-
 以下为您介绍，如何为腾讯云IM Flutter TUIKit引入表情能力。
 
 我们的 `TIMUIKitChat` 组件中，支持发送及接收三种类型的表情：
 
-| 表情类型 | 发送形式 | 是否文字混排 | 发送内容 | 解析方式 | 引入方式 | TUIKit默认自带 |
-|---------|---------|---------|---------|---------|---------|---------|
-| [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) Emoji表情 | 文本消息 | 是 | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html)编码 | 设备自动将[Unicode](https://unicode.org/emoji/charts/full-emoji-list.html)编码解析成小表情。不同的设备，对[Unicode](https://unicode.org/emoji/charts/full-emoji-list.html)解析后的图形，略有不同 | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) List | 文档中提供一套[默认Unicode列表示例](#unicode) |
-| 小图片表情 | 文本消息 | 是 | 表情图片名称 | 根据名称，自动匹配本地Asset图片资源 | 图片资源预存于Asset，并定义 `List` | 一套 QQ 同款小表情图库，可直接使用 |
-| 大图片表情 | 表情消息 | 否 | `baseURL` 拼接图片文件名，表情图片Asset路径 | 通过路径，解析Asset资源 | 图片资源预存于Asset，并定义 `List`  | - |
+| 表情类型                                                     | 发送形式 | 是否文字混排 | 发送内容                                                     | 解析方式                                                     | 引入方式                                                     | TUIKit默认自带                                |
+| ------------------------------------------------------------ | -------- | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
+| [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) Emoji表情 | 文本消息 | 是           | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html)编码 | 设备自动将[Unicode](https://unicode.org/emoji/charts/full-emoji-list.html)编码解析成小表情。不同的设备，对[Unicode](https://unicode.org/emoji/charts/full-emoji-list.html)解析后的图形，略有不同 | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) List | 文档中提供一套[默认Unicode列表示例](#unicode) |
+| 小图片表情                                                   | 文本消息 | 是           | 表情图片名称                                                 | 根据名称，自动匹配本地Asset图片资源                          | 图片资源预存于Asset，并定义 `List`                           | 一套 QQ 同款小表情图库，可直接使用            |
+| 大图片表情                                                   | 表情消息 | 否           | `baseURL` 拼接图片文件名，表情图片Asset路径                  | 通过路径，解析Asset资源                                      | 图片资源预存于Asset，并定义 `List`                           | -                                             |
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/023c3c716b481401c8da763e66ba08d1.png)
 
@@ -18,8 +17,8 @@
 ## STEP1: 自定义表情图片资源
 
 >? **本步骤选做：**
-> 如果您需要用到非默认提供的QQ小表情外的其他图片表情，如自定义图片小表情及图片大表情，才需完成本步骤。
-> QQ小表情包，TUIKit已自带提供，无需在本步骤引入，请关注后续步骤。
+>如果您需要用到非默认提供的QQ小表情外的其他图片表情，如自定义图片小表情及图片大表情，才需完成本步骤。
+>QQ小表情包，TUIKit已自带提供，无需在本步骤引入，请关注后续步骤。
 
 ### 将文件导入项目
 
@@ -94,7 +93,7 @@ static final List<CustomEmojiFaceData> emojiList = [
 ## STEP2: 自定义Emoji Unicode 字符串List
 
 >? **本步骤选做:**
-> 如果您需要用到[Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) Emoji表情，才需完成本步骤。
+>如果您需要用到[Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) Emoji表情，才需完成本步骤。
 
 在您代码定义静态参数或配置的地方，定义一个 `List<Map<String, Object>>` Unicode 列表，供传入。
 
@@ -105,8 +104,8 @@ static final List<CustomEmojiFaceData> emojiList = [
 ## STEP3: 表情资源预读入内存
 
 >?
-> 本步骤代码示例请[参考此处](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/pages/app.dart)，直接看 `setCustomSticker` 方法即可。
-> QQ小表情包，TUIKit已自带提供，无需在本步骤引入，请关注后续步骤。
+>本步骤代码示例请[参考此处](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/pages/app.dart)，直接看 `setCustomSticker` 方法即可。
+>QQ小表情包，TUIKit已自带提供，无需在本步骤引入，请关注后续步骤。
 
 在您的项目启动后，首个 `TIMUIKitChat` 组件渲染前，将上一步定义的图片表情资源List，转换成TUIKit表情的实例，放入全局Provider中，存储于内存里。
 
@@ -183,7 +182,7 @@ setCustomSticker() async {
 ## STEP4: 为 TIMUIKitChat 组件添加表情解析能力
 
 >?
-> 本步骤代码示例请[参考此处](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/chat.dart)，重点浏览 `renderCustomStickerPanel`, `customStickerPanel` 及 `customEmojiList` 即可。
+>本步骤代码示例请[参考此处](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/chat.dart)，重点浏览 `renderCustomStickerPanel`, `customStickerPanel` 及 `customEmojiList` 即可。
 
 将以下代码，直接拷贝进入您用于承载 `TIMUIKitChat` 组件的类中。
 
@@ -236,8 +235,8 @@ Widget renderCustomStickerPanel({
 ### STEP4.1: 渲染图片小表情
 
 >? **本步骤选做:**
-> - 如果您的项目需要用到图片小表情，包括自定义图片小表情，或直接使用默认自带 QQ 同款图片小表情，才需完成本步骤。
-> - 图片小表情展现形式和Unicode Emoji类似，建议Unicode Emoji和图片小表情选用一个即可。即，如果您选用了Unicode Emoji，可直接跳过本步骤。
+>- 如果您的项目需要用到图片小表情，包括自定义图片小表情，或直接使用默认自带 QQ 同款图片小表情，才需完成本步骤。
+>- 图片小表情展现形式和Unicode Emoji类似，建议Unicode Emoji和图片小表情选用一个即可。即，如果您选用了Unicode Emoji，可直接跳过本步骤。
 
 - STEP4.1(a) 为使用自定义图片小表情；
 - STEP4.1(b) 为使用默认自带 QQ 同款图片小表情。
@@ -444,4 +443,3 @@ List<Map<String, Object>> emojiData = [
 ```
 
 [](id:contact)
-

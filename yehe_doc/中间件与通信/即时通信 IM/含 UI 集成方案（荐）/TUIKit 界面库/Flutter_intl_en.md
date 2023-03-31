@@ -6,13 +6,13 @@ When implementing UI features, components in TUIKit will also call the correspon
 
 ## Supported Platforms
 
-| Platform  | Supported or Not |
-|---------|---------|
-| iOS  | Supported |
-| Android  | Supported |
-| [Web](#web)  | Supported from version 0.1.5 |
-| macOS  | Will be supported soon |
-| Windows  | Will be supported soon |
+| Platform                                                     | Supported or Not             |
+| ------------------------------------------------------------ | ---------------------------- |
+| iOS                                                          | Supported                    |
+| Android                                                      | Supported                    |
+| [Web](#web)                                                  | Supported from version 0.1.5 |
+| macOS                                                        | Will be supported soon       |
+| Windows                                                      | Will be supported soon       |
 | [Hybrid development](https://www.tencentcloud.com/document/product/1047/51456) (adding the SDK for Flutter to your existing native app) | Supported from version 1.0.0 |
 
 >? A set of all-platform IM SDKs for Flutter and TUIKit are provided to help you build apps for different platforms by using one set of code.
@@ -38,17 +38,17 @@ You can quickly try out the features of TUIKit online through the demos.
 
 TUIKit provides different UI components to implement different features and display different content. Details are as follows:
 
-| Component               | Description           |
-| -------------------- | ------------------ |
-| [TIMUIKitConversation](#TIMUIKitConversation) | Conversation list component |
-| [TIMUIKitChat](#TIMUIKitChat)         | Core chat component           |
-| [TIMUIKitAddFriend](#add) / [TIMUIKitAddGroup](#add)    | Friend adding component and group adding component       |
-| [TIMUIKitBlackList](#contacts) / [TIMUIKitNewContact](#contacts)     | Blocklist component and new contact request list component      |
-| [TIMUIKitContact](#contacts) / [TIMUIKitGroup](#contacts)      | Contacts component and group list component |
-| [TIMUIKitProfile](#TIMUIKitProfile) / [TIMUIKitGroupProfile](#TIMUIKitGroupProfile) | Contact profile component and group profile component       |
-| [TIMUIKitSearch / TIMUIKitSearchMsgDetail](#search)      | Global search component and in-conversation search component           |
-| [Audio/Video call plugin](#calling)      | Audio/Video calls for one-to-one or group chats       |
-| [Message push plugin](#push)      | Vendor offline push and local online push      |
+| Component                                                    | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [TIMUIKitConversation](#TIMUIKitConversation)                | Conversation list component                                  |
+| [TIMUIKitChat](#TIMUIKitChat)                                | Core chat component                                          |
+| [TIMUIKitAddFriend](#add) / [TIMUIKitAddGroup](#add)         | Friend adding component and group adding component           |
+| [TIMUIKitBlackList](#contacts) / [TIMUIKitNewContact](#contacts) | Blocklist component and new contact request list component   |
+| [TIMUIKitContact](#contacts) / [TIMUIKitGroup](#contacts)    | Contacts component and group list component                  |
+| [TIMUIKitProfile](#TIMUIKitProfile) / [TIMUIKitGroupProfile](#TIMUIKitGroupProfile) | Contact profile component and group profile component        |
+| [TIMUIKitSearch / TIMUIKitSearchMsgDetail](#search)          | Global search component and in-conversation search component |
+| [Audio/Video call plugin](#calling)                          | Audio/Video calls for one-to-one or group chats              |
+| [Message push plugin](#push)                                 | Vendor offline push and local online push                    |
 
 The UI effect is as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/b3d5bba6d133d3a0f3a4fa7534037f01.png" style="zoom:50%;"/>
@@ -202,8 +202,6 @@ For details, see [here](https://intl.cloud.tencent.com/document/product/1047/500
 
 ### Key features of audio/video call[](id:calling)
 
-[The TUICalling plugin](https://www.tencentcloud.com/document/product/1047/50023) is responsible for audio/video calls.
-One-to-one audio call UIs:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/78c9aa0717517f9e2c245dba1267771e.png" style="zoom:40%;"/>
 One-to-one video call UIs:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/e4a376e5d6895059214ccc7412cc6be2.jpg" style="zoom:60%;"/>
@@ -231,4 +229,3 @@ The message push effect is as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/9634f4ffa77a91c8c95c73091abb38ae.png" style="zoom:40%;"/>
 
 [](id:feedback)
-

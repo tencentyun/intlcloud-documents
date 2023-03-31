@@ -1,3 +1,4 @@
+````
 ## 概述
 即时通信 IM 的终端用户需要随时都能够得知最新的消息，而由于移动端设备的性能与电量有限，当 App 处于后台时，为了避免维持长连接而导致的过多资源消耗，即时通信 IM 推荐您使用各厂商提供的系统级推送通道来进行消息通知，系统级的推送通道相比第三方推送拥有更稳定的系统级长连接，可以做到随时接受推送消息，且资源消耗大幅降低。
 
@@ -82,22 +83,6 @@ android {
 华为和 Google FCM 需要按照厂商方法，集成对应的 plugin 和 json 配置文件。
 
  1. 下载配置文件添加到工程根目录。
- <dx-tabs>
-::: 华为
-<table> 
-<tr> 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/220264120cdadd154c581e8164c21515.png" style="zoom:60%;" />
-</tr> 
-</table>
-:::
-::: Google FCM
-<table> 
-<tr> 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/1bfbfc52fb60440c192d7bddd372f99d.png" style="zoom:60%;" />
-</tr> 
-</table>
-:::
-</dx-tabs>
 
  2. 在项目级 build.gradle 文件中 buildscript -> dependencies 下添加以下配置：
 ```
@@ -125,8 +110,6 @@ apply plugin: 'com.huawei.agconnect'
 ### 步骤2：推送参数配置
 推送证书添加成功之后，IM 控制台会为您分配一个证书 ID，请您填充到  [PrivateConstants](https://github.com/TencentCloud/TIMSDK/blob/master/Android/TUIKit/TUIOfflinePush/tuiofflinepush/src/main/java/com/tencent/qcloud/tim/tuiofflinepush/PrivateConstants.java)  的配置参数里，该证书 ID 会在注册推送服务和上报 token 时使用, 以小米为例：
 
-**推送证书 ID 如下：**
-![](https://qcloudimg.tencent-cloud.cn/raw/772536e8a3f474572f5b85bfb2597fe1.png)
 
 **填充的参数如下：**
 
@@ -216,4 +199,5 @@ OPPO 手机收不到推送一般有以下几种情况：
 
 
 
-```
+```xxxxxxxxxx   以上步骤完成后，就可以收到离线推送通知了。### 步骤3：发消息时设置离线推送参数发送消息时，请您设置离线推送参数，具体请参见  [发消息时设置离线推送参数](https://intl.cloud.tencent.com/document/product/1047/39156) 。### 步骤4：解析离线推送消息收到离线推送的通知栏消息，点击会自动跳转到您配置的跳转界面，该界面可以获取透传的离线消息，请您参见  [解析离线推送消息](https://intl.cloud.tencent.com/document/product/1047/39156) 。## 常见问题### 离线推送怎么自定义推送的声音？从 SDK 6.1.2155 版本开始，支持设置自定义铃音，支持机型有华为、小米、FCM 和 APNS。方法参见：V2TIMOfflinePushInfo 接口 [setAndroidSound()](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a3ff923225d5a79802a02c47a07e07fc5) 和 [setIOSSound()](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#acffd09150398b06c3d7eb42baee5aee1)。### 收不到离线推送怎么排查？#### 1. OPPO 手机OPPO 手机收不到推送一般有以下几种情况：- 按照 OPPO 推送官网要求，在 Android 8.0 及以上系统版本的 OPPO 手机上必须配置 ChannelID，否则推送消息无法展示。配置方法可以参见 [setAndroidOPPOChannelID](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a32d340e95395bb64cc3e8f62321aafe1)。- OPPO 安装应用通知栏显示默认关闭，需要确认下开关状态。#### 2. Google FCM收不到推送需要确认下 IM 控制台是否正确上传证书。排查路径参照文档 “[IM 控制台配置](https://intl.cloud.tencent.com/document/product/1047/39156) - Google FCM”，对照示意图看下是否添加正确。#### 3. 发送消息为自定义消息自定义消息的离线推送和普通消息不太一样，自定义消息的内容我们无法解析，不能确定推送的内容，所以默认不推送，如果您有推送需求，需要您在 [sendMessage](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) 的时候设置 [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html) 的 [desc](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) 字段，推送的时候会默认展示 desc 信息。#### 4. 设备通知栏设置影响离线推送的直观表现就是通知栏提示，所以同其他通知一样受设备通知相关设置的影响，以华为为例：- “手机设置-通知-锁屏通知-隐藏或者不显示通知”，会影响锁屏状态下离线推送通知显示。- “手机设置-通知-更多通知设置-状态栏显示通知图标”，会影响状态栏下离线推送通知的图标显示。- “手机设置-通知-应用的通知管理-允许通知”，打开关闭会直接影响离线推送通知显示。- “手机设置-通知-应用的通知管理-通知铃声” 和 “手机设置-通知-应用的通知管理-静默通知”，会影响离线推送通知铃音的效果。#### 5. 按照流程接入完成，还是收不到离线推送- 首先在 IM 控制台通过 [离线测试工具](https://console.cloud.tencent.com/im/tool-push-check) 自测下是否可以正常推送。推送异常情况，设备状态异常，需要检查下 IM 控制台配置各项参数是否正确，再者需要检查下代码初始化注册逻辑，包括厂商推送服务注册和 IM 设置离线推送配置相关逻辑是否正确设置。推送异常情况，设备状态正常，需要看下是否需要正确填写 channel ID 或者后台服务是否正常。- 离线推送依赖厂商能力，一些简单的字符可能会被厂商过滤不能透传推送。- 如果离线推送消息出现推送不及时或者偶尔收不到情况，需要看下厂商的推送限制。### 跳转界面不成功怎么排查？单击离线推送消息的通知栏，跳转到指定界面，原理是后台根据您在控制台配置的各个厂商的跳转方式和界面参数，根据厂商接口规则，传递给厂商服务器，单击时候进行对应界面启动跳转。对应界面启动还依赖清单文件的配置，必须和控制台配置的相对应，才能正确启动和跳转。1. 首先需要重点排查下控制台和清单文件相关配置是否对应且正确，可参见 TUIKitDemo 的配置，注意部分厂商提供接口方式存在差异。2. 如果跳转到了配置的界面，需要再看下配置界面内离线消息的解析和界面重定向是否正常。### 厂商推送限制1. 国内厂商都有消息分类机制，不同类型也会有不同的推送策略。如果想要推送及时可靠，需要按照厂商规则设置自己应用的推送类型为高优先级的系统消息类型或者重要消息类型。反之，离线推送消息会受厂商推送消息分类影响，与预期会有差异。2. 另外，一些厂商对于应用每天的推送数量也是有限制的，可以在厂商控制台查看应用每日限制的推送数量。如果离线推送消息出现推送不及时或者偶尔收不到情况，需要考虑下这里：   - 华为：将推送消息分为服务与通讯类和资讯营销类，推送效果和策略不同。另外，消息分类还和自分类权益有关：     - 无自分类权益，推送消息厂商还会进行二次智能分类 。     - 有申请自分类权益，消息分类会按照自定义的分类进行推送。具体请参见 [厂商描述](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835)。   - vivo：将推送消息分为系统消息类和运营消息类，推送效果和策略不同。系统消息类型还会进行厂商的智能分类二次修正，若智能分类识别出不是系统消息，会自动修正为运营消息，如果误判可邮件申请反馈。另外，消息推送也受日推总数量限制，日推送量由应用在厂商订阅数统计决定。具体请参见 [厂商描述1](https://dev.vivo.com.cn/documentCenter/doc/359) 或 [厂商描述2](https://dev.vivo.com.cn/documentCenter/doc/156)。   - OPPO：将推送消息分为私信消息类和公信消息类，推送效果和策略不同。其中私信消息是针对用户有一定关注度，且希望能及时接收的信息，私信通道权益需要邮件申请。公信通道推送数量有限制。具体请参见 [厂商描述1](https://open.oppomobile.com/wiki/doc#id=11227) 或 [厂商描述2](https://open.oppomobile.com/wiki/doc#id=11210)。   - 小米：将推送消息分为重要消息类和普通消息类，推送效果和策略不同。其中重要消息类型仅允许即时通讯消息、个人关注动态提醒、个人事项提醒、个人订单状态变化、个人财务提醒、个人状态变化、个人资源变化、个人设备提醒这8类消息推送，可以在厂商控制台申请开通。普通消息类型推送数量有限制。具体请参见 [厂商描述1](https://dev.mi.com/console/doc/detail?pId=2422) 或 [厂商描述2](https://dev.mi.com/console/doc/detail?pId=2086)。   - 魅族：推送消息数量有限制。具体请参见 [厂商描述](http://open.res.flyme.cn/fileserver/upload/file/202201/85079f02ac0841da859c1da0ef351970.pdf)。   - FCM：推送上行消息频率有限制。具体请参见 [厂商描述](https://firebase.google.com/docs/cloud-messaging/concept-options?hl=en#upstream_throttling)。
+````

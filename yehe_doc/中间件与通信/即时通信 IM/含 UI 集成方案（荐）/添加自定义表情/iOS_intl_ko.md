@@ -333,5 +333,3 @@ TUIChat은 렌더링을 위해 구문 분석된 'TUIMessageCellData'를 'TUIFace
     return faceData;
 }
 ```
-
-

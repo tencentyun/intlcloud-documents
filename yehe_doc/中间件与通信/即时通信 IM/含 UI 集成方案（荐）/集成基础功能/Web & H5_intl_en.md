@@ -1,130 +1,129 @@
+- [](id:required)
+  ## Environment Requirements
+  - React^18.0
+  - TypeScript
+  - Node (12.13.0 ≤ node version ≤ 17.0.0. The official LTS version 16.17.0 of Node.js is recommended.)
+  - npm (use a version that matches the Node version in use)
 
-[](id:required)
-## Environment Requirements
-- React^18.0
-- TypeScript
-- Node (12.13.0 ≤ node version ≤ 17.0.0. The official LTS version 16.17.0 of Node.js is recommended.)
-- npm (use a version that matches the Node version in use)
+  ## chat-uikit-react Integration
 
-## chat-uikit-react Integration
+  ### Step 1. Create a project
 
-### Step 1. Create a project
+  Create a React project. You can choose whether to use a TS template.
+  <dx-codeblock>
+  :::  shell
+  npx create-react-app sample-chat --template typescript
+  :::
+  </dx-codeblock>
 
-Create a React project. You can choose whether to use a TS template.
-<dx-codeblock>
-:::  shell
-npx create-react-app sample-chat --template typescript
-:::
-</dx-codeblock>
+  After the project is created, go to the project directory.
+  <dx-codeblock>
+  :::  shell
+  cd sample-chat
+  :::
+  </dx-codeblock>
 
-After the project is created, go to the project directory.
-<dx-codeblock>
-:::  shell
-cd sample-chat
-:::
-</dx-codeblock>
+  ### Step 2. Download the chat-uikit-react component
 
-### Step 2. Download the chat-uikit-react component
+  Use npm to download [chat-uikit-react](https://www.npmjs.com/package/@tencentcloud/chat-uikit-react) and use it in the project. Related [open source code](https://github.com/TencentCloud/chat-uikit-react) is also available in GitHub, and you can use it to develop your own component library.
+  <dx-codeblock>
+  :::  shell
+  npm install @tencentcloud/chat-uikit-react
+  :::
+  </dx-codeblock>
 
-Use npm to download [chat-uikit-react](https://www.npmjs.com/package/@tencentcloud/chat-uikit-react) and use it in the project. Related [open source code](https://github.com/TencentCloud/chat-uikit-react) is also available in GitHub, and you can use it to develop your own component library.
-<dx-codeblock>
-:::  shell
-npm install @tencentcloud/chat-uikit-react
-:::
-</dx-codeblock>
+  [](id:step3)
+  ### Step 3. Include the chat-uikit-react component
+  [](id:step3)
 
-[](id:step3)
-### Step 3. Include the chat-uikit-react component
-[](id:step3)
+  Replace the content in `App.tsx` with following code, or create a React component.
+  >! `SDKAppID`, `userID`, and `userSig` in the following code are not specified. Obtain them as described in [step 4](#step4) and enter them in the code.
 
-Replace the content in `App.tsx` with following code, or create a React component.
->! `SDKAppID`, `userID`, and `userSig` in the following code are not specified. Obtain them as described in [step 4](#step4) and enter them in the code.
+   <dx-codeblock>
+  :::  tsx
+  import React, { useEffect, useState } from 'react';
+  import { TUIKit } from '@tencentcloud/chat-uikit-react';
+  import '@tencentcloud/chat-uikit-react/dist/cjs/index.css';
+  import TIM, { ChatSDK } from 'tim-js-sdk/tim-js-friendship';
+  import TIMUploadPlugin from 'tim-upload-plugin';
 
- <dx-codeblock>
-:::  tsx
-import React, { useEffect, useState } from 'react';
-import { TUIKit } from '@tencentcloud/chat-uikit-react';
-import '@tencentcloud/chat-uikit-react/dist/cjs/index.css';
-import TIM, { ChatSDK } from 'tim-js-sdk/tim-js-friendship';
-import TIMUploadPlugin from 'tim-upload-plugin';
+  // Create TIM instance and log in
+  const init = async ():Promise<ChatSDK> => {
+  	return new Promise((resolve, reject) => {
+  		const tim = TIM.create({ SDKAppID: 0 });
+  		tim?.registerPlugin({ 'tim-upload-plugin': TIMUploadPlugin });
+  		const onReady = () => { resolve(tim); };
+  		tim.on(TIM.EVENT.SDK_READY, onReady);
+  		tim.login({
+  			userID: 'xxx',
+  			userSig: 'xxx',
+  		});
+  	});
+  }
 
-// Create TIM instance and log in
-const init = async ():Promise<ChatSDK> => {
-	return new Promise((resolve, reject) => {
-		const tim = TIM.create({ SDKAppID: 0 });
-		tim?.registerPlugin({ 'tim-upload-plugin': TIMUploadPlugin });
-		const onReady = () => { resolve(tim); };
-		tim.on(TIM.EVENT.SDK_READY, onReady);
-		tim.login({
-			userID: 'xxx',
-			userSig: 'xxx',
-		});
-	});
-}
+  export default function SampleChat() {
+  	const [tim, setTim] = useState<ChatSDK>();
+  	useEffect(() => {
+  		(async ()=>{
+  			const tim = await init()
+  			setTim(tim)
+  		})()
+  	}, [])
 
-export default function SampleChat() {
-	const [tim, setTim] = useState<ChatSDK>();
-	useEffect(() => {
-		(async ()=>{
-			const tim = await init()
-			setTim(tim)
-		})()
-	}, [])
+  	return (
+  		<div style={{height: '100vh',width: '100vw'}}>
+  			<TUIKit tim={tim}></TUIKit>
+  		</div>
+  	);
+  }
+  :::
+  </dx-codeblock>
 
-	return (
-		<div style={{height: '100vh',width: '100vw'}}>
-			<TUIKit tim={tim}></TUIKit>
-		</div>
-	);
-}
-:::
-</dx-codeblock>
+  ### Step 4. Obtain SDKAppID, userID, and userSig
+  [](id:step4)
+  - SDKAppID: Unique ID that the IM service uses to identify a customer account. We recommend you apply for a new `SDKAppID` for every independent app. Messages are automatically isolated among different `SDKAppIDs`.
+    You can view all `SDKAppIDs` in the [IM console](https://console.tencentcloud.com/im) or click **Create Application** to create an `SDKAppID`.
+    ![](https://qcloudimg.tencent-cloud.cn/raw/897506a32765ad504c261d3a8b545307.png)
 
-### Step 4. Obtain SDKAppID, userID, and userSig
-[](id:step4)
-- SDKAppID: Unique ID that the IM service uses to identify a customer account. We recommend you apply for a new `SDKAppID` for every independent app. Messages are automatically isolated among different `SDKAppIDs`.
-  You can view all `SDKAppIDs` in the [IM console](https://console.tencentcloud.com/im) or click **Create Application** to create an `SDKAppID`.
-  ![](https://qcloudimg.tencent-cloud.cn/raw/897506a32765ad504c261d3a8b545307.png)
+  - userID: Enter a user ID or create and obtain a user ID as follows: go to the [IM console](https://console.tencentcloud.com/im), click the target app card, go to the account management page, and create an account and obtain `userID`.
 
-- userID: Enter a user ID or create and obtain a user ID as follows: go to the [IM console](https://console.tencentcloud.com/im), click the target app card, go to the account management page, and create an account and obtain `userID`.
+  <img style="width:870px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/d6774e3ca2bbaf993b505d1596bdac1f.png"/>
 
-<img style="width:870px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/d6774e3ca2bbaf993b505d1596bdac1f.png"/>
+  - userSig: The password with which the user logs in to IM. It is the ciphertext generated by encrypting information such as userID. To obtain `userSig`, go to the [IM console](https://console.tencentcloud.com/im) select your application and click **Auxiliary Tools** > **[UserSig Generation & Verification](https://console.tencentcloud.com/im/tool-usersig)** on the left sidebar. For more information, see [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385).
+    ![](https://qcloudimg.tencent-cloud.cn/raw/1613698480f2a0d660e458ef9e519730.png)
 
-- userSig: The password with which the user logs in to IM. It is the ciphertext generated by encrypting information such as userID. To obtain `userSig`, go to the [IM console](https://console.tencentcloud.com/im) select your application and click **Auxiliary Tools** > **[UserSig Generation & Verification](https://console.tencentcloud.com/im/tool-usersig)** on the left sidebar. For more information, see [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385).
-  ![](https://qcloudimg.tencent-cloud.cn/raw/1613698480f2a0d660e458ef9e519730.png)
+  ### Step 5. Launch the project
 
-### Step 5. Launch the project
+  <dx-codeblock>
+  :::  shell
+   npm run start
+  :::
+  </dx-codeblock>
 
-<dx-codeblock>
-:::  shell
- npm run start
-:::
-</dx-codeblock>
+  >!1. Check that `SDKAppID`, `userID`, and `userSig` in the code mentioned in [step 3](#step3) are successfully entered to ensure proper operating of the project.
+  >2. Each `userID` corresponds to a `userSig`. For more information, see [Generating UserSig](https://www.tencentcloud.com/document/product/1071/39471).
+  >3. If the project fails to be launched, check whether the [development environment requirements](#required) are met.
 
->!1. Check that `SDKAppID`, `userID`, and `userSig` in the code mentioned in [step 3](#step3) are successfully entered to ensure proper operating of the project.
->2. Each `userID` corresponds to a `userSig`. For more information, see [Generating UserSig](https://www.tencentcloud.com/document/product/1071/39471).
->3. If the project fails to be launched, check whether the [development environment requirements](#required) are met.
+  ### Step 6. Send your first message
+  1. After the product is launched, click the **+** icon to create a conversation.
+  2. In the input box, search for the `userID` of another user. (See [Step 4 -> Create an account and obtain userID](#step4)).
+  3. Click the user's profile photo to initiate a conversation.
+  4. Enter a message in the input box and press **Enter** to send it.
+     ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat-English.gif)
 
-### Step 6. Send your first message
-1. After the product is launched, click the **+** icon to create a conversation.
-2. In the input box, search for the `userID` of another user. (See [Step 4 -> Create an account and obtain userID](#step4)).
-3. Click the user's profile photo to initiate a conversation.
-4. Enter a message in the input box and press **Enter** to send it.
-   ![](https://web.sdk.qcloud.com/im/demo/TUIkit/react-static/images/chat-English.gif)
+  ## FAQs
 
-## FAQs
+  #### What is `UserSig`?
 
-#### What is `UserSig`?
+  A UserSig is a password with which you can log in to use IM service. It is the ciphertext generated by encrypting information such as userID.
 
-A UserSig is a password with which you can log in to use IM service. It is the ciphertext generated by encrypting information such as userID.
+  #### How can I generate a UserSig?
 
-#### How can I generate a UserSig?
+  The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide a project-oriented API. When `UserSig` is needed, your project can send a request to your server for a dynamic `UserSig`. For more information, see [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385).
 
-The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide a project-oriented API. When `UserSig` is needed, your project can send a request to your server for a dynamic `UserSig`. For more information, see [Generating UserSig](https://www.tencentcloud.com/document/product/1047/34385).
-
->! In the sample code in this document, the method to obtain `UserSig` is to configure a `SECRETKEY` in the client code. In this method, the `SECRETKEY` is vulnerable to decompilation and reverse engineering. Once your `SECRETKEY` is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and feature debugging**. For the correct `UserSig` distribution method, see above.
+  >! In the sample code in this document, the method to obtain `UserSig` is to configure a `SECRETKEY` in the client code. In this method, the `SECRETKEY` is vulnerable to decompilation and reverse engineering. Once your `SECRETKEY` is disclosed, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and feature debugging**. For the correct `UserSig` distribution method, see above.
 
 
-## References
+  ## References
 
-- [SDK APIs (Web)](https://www.tencentcloud.com/document/product/1047/33999)
+  - [SDK APIs (Web)](https://www.tencentcloud.com/document/product/1047/33999)

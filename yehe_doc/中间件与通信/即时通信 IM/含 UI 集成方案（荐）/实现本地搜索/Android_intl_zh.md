@@ -5,8 +5,7 @@ TUIKit 中的 TUISearch 实现了本地搜索，支持搜索本地存储的聊�
 
 ## 功能展示
 搜索接口的界面分为多个部分，第一部分是搜索好友，第二部分是搜索群组、群成员，第三部分是搜索消息且按照会话分组。
-您可通过 [下载安装应用](https://intl.cloud.tencent.com/document/product/1047/34279) 即刻体验，效果如下：
-![](https://im.sdk.qcloud.com/tools/resource/search.gif)
+您可通过 [下载安装应用](https://intl.cloud.tencent.com/document/product/1047/34279) 即刻体验。
 
 ## 接入指引
 以下步骤将向您演示如何接入 TUISearch 组件。
@@ -56,5 +55,3 @@ TUILogin.login(this, SDKAPPID, userID, userSig, new TUICallback() {
 而对于图片、语音、视频消息，界面通常显示缩略图或时长，可以指定消息类型做分类搜索，但不能通过关键字搜索。
 
 [](id:feedback)
-
-

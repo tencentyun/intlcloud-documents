@@ -333,5 +333,3 @@ TUIChat 会将解析到的 `TUIMessageCellData` 赋值给 `TUIFaceMessageCell` �
     return faceData;
 }
 ```
-
-

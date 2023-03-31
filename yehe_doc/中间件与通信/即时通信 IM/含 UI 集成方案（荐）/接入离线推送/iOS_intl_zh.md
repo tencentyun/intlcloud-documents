@@ -1,3 +1,4 @@
+````
 ## 概述
 即时通信 IM 的终端用户需要随时都能够得知最新的消息，而由于移动端设备的性能与电量有限，当 App 处于后台时，为了避免维持长连接而导致的过多资源消耗，即时通信 IM 推荐您使用 Apple 提供的系统级推送通道（APNs）来进行消息通知，APNs 相比第三方推送拥有更稳定的系统级长连接，可以做到随时接受推送消息，且资源消耗大幅降低。
 
@@ -39,8 +40,8 @@ pod install
 
 [](id:push_para)
 ### 步骤2：配置推送参数
-1. 当您 [上传证书到 IM 控制台](https://intl.cloud.tencent.com/document/product/1047/39157) 后，IM 控制台会为您分配一个证书 ID ，见下图。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/15802b097a0347f16a28c1a354ee3ea3.png" style="zoom:40%;" />
+1. 当您 [上传证书到 IM 控制台](https://intl.cloud.tencent.com/document/product/1047/39157) 后，IM 控制台会为您分配一个证书 ID 。
+
 
 
 2. 您需要在 AppDelegate 中，调用宏 `TUIOfflinePushCertificateIDForAPNS` 设置下证书 ID 即可。
@@ -121,7 +122,7 @@ TUIOfflinePush 默认使用了 TUICore 组件中的 TUILogin 提供的 login/log
 
 []()
 
-````
+```
 // 您登录完成后的回调
 - (void)onLoginSuccess
 {
@@ -203,5 +204,4 @@ confg.token = self.deviceToken;
 1. 给手机插入 SIM 卡后使用4G网络测试。
 2. 卸载重装、重启 App、关机重启后测试。
 3. 打生产环境的包测试。
-4. 更换其它 iOS 系统的手机测试。
-
+4. 更换其它 iOS 系统的手机测试。xxxxxxxxxx // 您登录完成后的回调- (void)onLoginSuccess{    // 调用 TUIOfflinePush 组件的登录    [TUIOfflinePushManager.shareManager registerService];}// 您登出成功后的回调- (void)onLogoutSuccess{    // 调用 TUIOfflinePush 的登出    [TUIOfflinePushManager.shareManager unregisterService];}```[](id:advance_parse)### 2. 自定义离线内容解析TUIOfflinePush 默认参与解析了离线推送的内容，并通过  `- navigateToTUIChatViewController:groupID:` 接口回调给业务层自定义跳转。如果您想自定义解析离线推送的内容，或者查看收到的离线推送，可以在您的 AppDelegate 中实现 `- processTUIOfflinePushNotification:` 方法。> ? 关于方法的返回值>> * 如果返回 YES，那么组件将不再执行默认解析逻辑，完全交由业务层自行处理> * 如果返回 NO，组件会继续执行默认解析逻辑，继续回调 - navigateToTUIChatViewController:groupID: 方法。[]()```// 统一收到离线推送- (BOOL)processTUIOfflinePushNotification:(NSDictionary *)userInfo{    // 自定义解析收到的 userInfo    NSLog(@">>> 您可以在此处自定义解析, %@", userInfo);        // 如果您不想执行 TUIOfflinePush 默认的解析逻辑，直接返回 YES    // 如果您只是想查看推送的内容，依然依赖 TUIOfflinePush 的默认解析及统一跳转逻辑，直接返回 NO    return NO;}```[](id:qa)## 常见问题### 普通消息为什么收不到离线推送？- 首先，请检查下 App 的运行环境和证书的环境是否一致，如果不一致，收不到离线推送。- 其次，检查下 App 和证书的环境是否为生产环境。如果是开发环境，向苹果申请 `deviceToken` 可能会失败，生产环境暂时没有发现这个问题，请切换到生产环境测试。### 自定义消息为什么收不到离线推送？自定义消息的离线推送和普通消息不太一样，自定义消息的内容我们无法解析，不能确定推送的内容，所以默认不推送，如果您有推送需求，需要您在 [sendMessage](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a3694cd507a21c7cfdf7dfafdb0959e56) 的时候设置  [offlinePushInfo](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMOfflinePushInfo.html) 的 `desc`字段，推送的时候会默认展示 `desc` 信息。### 如何关闭离线推送消息的接收？如果您想关闭离线推送消息的接收，可以通过设置 [setAPNS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07APNS_08.html#a6aecbdc0edaa311c3e4e0ed3e71495b1) 接口的 `config` 参数为 `nil` 来实现。该功能从5.6.1200 版本开始支持。### 收不到推送，且后台报错 bad devicetoken。Apple 的 deviceToken 与当前编译环境有关。如果 [登录 IMSDK 后上传 deviceToken 到腾讯云 ](#uploadDeviceToken) 所使用的证书 ID 和 token 不一致，就会报错。- 如果使用的是 Release 环境编译，则 `- application:didRegisterForRemoteNotificationsWithDeviceToken:`  回调返回的是发布环境的 token，此时 businessID 需要设置生产环境的 [证书 ID](#businessid)。- 如果使用的是 Debug 环境编译，则`- application:didRegisterForRemoteNotificationsWithDeviceToken:`  回调返回的是开发环境的 token，此时 businessID 需要设置开发环境的 [证书 ID](#businessid)。```V2TIMAPNSConfig *confg = [[V2TIMAPNSConfig alloc] init];/* 用户自己到苹果注册开发者证书，在开发者帐号中下载并生成证书(p12 文件)，将生成的 p12 文件传到腾讯证书管理控制台，控制台会自动生成一个证书 ID，将证书 ID 传入以下 busiId 参数中。*///推送证书 IDconfg.businessID = sdkBusiId;confg.token = self.deviceToken;[[V2TIMManager sharedInstance] setAPNS:confg succ:^{     NSLog(@"%s, succ, %@", __func__, supportTPNS ? @"TPNS": @"APNS");} fail:^(int code, NSString *msg) {     NSLog(@"%s, fail, %d, %@", __func__, code, msg);}];```### iOS 开发环境下，注册偶现不返回 deviceToken 或提示 APNs 请求 token 失败？此问题现象是由于 APNs 服务不稳定导致的，可尝试通过以下方式解决：1. 给手机插入 SIM 卡后使用4G网络测试。2. 卸载重装、重启 App、关机重启后测试。3. 打生产环境的包测试。4. 更换其它 iOS 系统的手机测试。

@@ -1,7 +1,7 @@
 This document describes how to set the UI styles for web. 
 ## Setting the Conversation List UI Styles
  TUIConversation provides the conversation list feature. The conversation list consists mainly of the conversation list area, which provides UI styles that can be modified.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/70f93d0d0e04b6bf99c9554356f3d22e.png" style="zoom:50%;"/>
+
 
 ### Setting the conversation list style
 
@@ -68,7 +68,7 @@ The following sample code shows how to set the profile photo style for the conve
 
 ## Setting the Chat UI Styles
 TUIChat provides the chat UI. The chat UI includes three areas: title bar area, message area, and input area. 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e4b6173bb5a3f03a9b89b60e2f2b031c.png" style="zoom:50%;"/> 
+
 The chat UI can be configured in the `src/TUIKit/TUIComponents/container/TUIChat/index.vue` file.
 
 ### Setting the title bar area style
@@ -223,7 +223,7 @@ Sample code:
 
 ### Setting the input area InputView
 The input area provides various features, including the input of text and emojis and the sending of images, videos, files, ratings, and commonly used expressions. 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/83552cab3ca2d2836a88708a98797913.png" style="zoom:30%;"/> 
+
 
 #### Hiding unnecessary features
 You can customize to hide features, such as image, file, and rating sending, of the feature module of the input area.
@@ -241,4 +241,3 @@ let sendComponents: any = {
 };
 :::
 </dx-codeblock>
-

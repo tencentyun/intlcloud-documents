@@ -333,5 +333,3 @@ For more information on the message parsing process in TUIChat, see [iOS](https:
     return faceData;
 }
 ```
-
-

@@ -1,5 +1,3 @@
-
-
 ## TUIKit 介绍
 TUIKit 是基于腾讯云 IM SDK 的一款 UI 组件库，它提供了一些通用的 UI 组件，包含会话、聊天、关系链、群组、音视频通话等功能。
 基于 UI 组件您可以像搭积木一样快速搭建起自己的业务逻辑。
@@ -7,7 +5,7 @@ TUIKit 中的组件在实现 UI 功能的同时，会调用 IM SDK 相应的接�
 
 
 ## TUIKit 组成
-TUIKit 主要分为 TUIChat、TUIConversation、TUIProfile、TUIManage 等模块，每个模块负责不同的内容，具体可参考[开源代码](!https://github.com/TencentCloud/chat-uikit-react)。
+TUIKit 主要分为 TUIChat、TUIConversation、TUIProfile、TUIManage 等模块，每个模块负责不同的内容，具体可参考[开源代码](https://github.com/TencentCloud/chat-uikit-react)。
 TUIKit Web 端界面效果如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/14ed827eecc218306abc82d46c57252d.png)
 

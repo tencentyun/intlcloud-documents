@@ -4,20 +4,6 @@
 
 TUI components have four built-in themes by default: Light, Serious, Lively, and Dark. They also support the Auto mode (automatically switching the Dark mode on/off to match your system settings). You can switch or modify the built-in themes or add new themes as needed.
 
-<table style="text-align:center;vertical-align:middle;width:1000px">
-  <tr>
-    <th style="text-align:center;" width="500px">Light<br></th>
-    <th style="text-align:center;" width="500px">Serious<br></th>
-    <th style="text-align:center;" width="500px">Lively<br></th>
-    <th style="text-align:center;" width="500px">Dark<br></th>
-  </tr>
-  <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/454e9371db4870d57e65f63f5d3bf881.png"  />    </td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/64ffe55d52dcfbfa573a3113f3d546ed.png" />     </td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/1ba8984dedb2509448e409737ed6a0d9.png"  />    </td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/2c0e10be9e748f3d8094e23b76487fbb.png" />     </td>
-	 </tr>
-</table>
 
 
 [](id:resource)
@@ -231,43 +217,43 @@ The basic styles of TUICore provide common UI specifications, such as the prefer
 
 **Icons**
 
-| Style Key                          | Style Description                           |
-| --------------------------------- | ---------------------------------- |
-| nav_back_img                      | Image name of the topbar return button             |
-| default_group_head_public_img     | Default profile photo of a Public group chat        |
-| default_group_head_meeting_img    | Default profile photo of a Meeting group chat       |
-| default_group_head_avchatroom_img | Default profile photo of an audio-video group chat    |
-| default_group_head_img            | Default profile photo of a group                      |
-| default_c2c_head_img              | Default profile photo of a user                   |
+| Style Key                         | Style Description                                    |
+| --------------------------------- | ---------------------------------------------------- |
+| nav_back_img                      | Image name of the topbar return button               |
+| default_group_head_public_img     | Default profile photo of a Public group chat         |
+| default_group_head_meeting_img    | Default profile photo of a Meeting group chat        |
+| default_group_head_avchatroom_img | Default profile photo of an audio-video group chat   |
+| default_group_head_img            | Default profile photo of a group                     |
+| default_c2c_head_img              | Default profile photo of a user                      |
 | service_more_video_call_img       | Chat page: Video call icon on the "+" tab (More tab) |
 | service_more_voice_call_img       | Chat page: Audio call icon on the "+" tab (More tab) |
-| icon_online_status_img            | User online status icon                 |
-| icon_offline_status_img            | User offline status icon                 |
+| icon_online_status_img            | User online status icon                              |
+| icon_offline_status_img           | User offline status icon                             |
 
 **Colors**
 
-| Style Key                             | Style Description                                             |
-| ------------------------------------ | ---------------------------------------------------- |
-| primary_theme_color                  | Theme color, indicating the average hue under the current theme                      |
-| common_switch_on_color               | Color of the common UISwitch component switch when turned on                 |
-| head_bg_gradient_start_color         | Start gradient color, background color of the topbar                           |
-| head_bg_gradient_end_color         | End gradient color, background color of the topbar                           |
-| separator_color                      | Dividing line color                                           |
-| controller_bg_color                  | Controller background color                                       |
-| form_title_color                     | Form: UITableViewCell title text color                |
-| form_subtitle_color                     | Form: UITableViewCell subtitle text color                |
-| form_desc_color                      | Form: UITableViewCell description text color             |
-| form_bg_color                        | Form: UITableViewCell background color                     |
-| form_green_button_text_color         | Form: Text color of green-theme buttons in UITableViewCell       |
-| form_green_button_bg_color         | Form: Background color of green-theme buttons in UITableViewCell       |
+| Style Key                            | Style Description                                            |
+| ------------------------------------ | ------------------------------------------------------------ |
+| primary_theme_color                  | Theme color, indicating the average hue under the current theme |
+| common_switch_on_color               | Color of the common UISwitch component switch when turned on |
+| head_bg_gradient_start_color         | Start gradient color, background color of the topbar         |
+| head_bg_gradient_end_color           | End gradient color, background color of the topbar           |
+| separator_color                      | Dividing line color                                          |
+| controller_bg_color                  | Controller background color                                  |
+| form_title_color                     | Form: UITableViewCell title text color                       |
+| form_subtitle_color                  | Form: UITableViewCell subtitle text color                    |
+| form_desc_color                      | Form: UITableViewCell description text color                 |
+| form_bg_color                        | Form: UITableViewCell background color                       |
+| form_green_button_text_color         | Form: Text color of green-theme buttons in UITableViewCell   |
+| form_green_button_bg_color           | Form: Background color of green-theme buttons in UITableViewCell |
 | form_green_button_highlight_bg_color | Form: Text color of highlighted green-theme buttons in UITableViewCell |
-| form_white_button_text_color         | Form: Text color of white-theme buttons in UITableViewCell       |
-| form_white_button_bg_color         | Form: Background color of white-theme buttons in UITableViewCell       |
-| form_key_text_color                  | Form: Description text color in UITableViewCell                 |
-| form_value_text_color                  | Form: Value text color in UITableViewCell                 |
-| nav_title_text_color                 | Topbar text color                                       |
-| nav_back_img                         | Image name of the topbar return button                               |
-| search_textfield_bg_color            | Background color of the search input box                               |
+| form_white_button_text_color         | Form: Text color of white-theme buttons in UITableViewCell   |
+| form_white_button_bg_color           | Form: Background color of white-theme buttons in UITableViewCell |
+| form_key_text_color                  | Form: Description text color in UITableViewCell              |
+| form_value_text_color                | Form: Value text color in UITableViewCell                    |
+| nav_title_text_color                 | Topbar text color                                            |
+| nav_back_img                         | Image name of the topbar return button                       |
+| search_textfield_bg_color            | Background color of the search input box                     |
 
 
 
@@ -291,54 +277,54 @@ You can view the keys of the basic styles of a theme in the `manifest.plist` fil
 
 **Icons**
 
-| Style Key                                     | Style Description                                           |
-| -------------------------------------------- | -------------------------------------------------- |
-| chat_more_camera_img                         | "+" tab (More tab): Camera icon                               |
-| chat_more_file_img                           | "+" tab (More tab): File icon                               |
-| chat_more_link_img                           | "+" tab (More tab): Custom icon                             |
+| Style Key                                    | Style Description                                            |
+| -------------------------------------------- | ------------------------------------------------------------ |
+| chat_more_camera_img                         | "+" tab (More tab): Camera icon                              |
+| chat_more_file_img                           | "+" tab (More tab): File icon                                |
+| chat_more_link_img                           | "+" tab (More tab): Custom icon                              |
 | chat_more_picture_img                        | "+" tab (More tab): Image icon                               |
-| chat_more_video_img                          | "+" tab (More tab): Video recording icon                               |
-| chat_bubble_send_img                         | Message bubble: Background color for messages sent                         |
-| chat_bubble_receive_img                      | Message bubble: Background color for messages received                         |
-| chat_voice_message_sender_voice_normal_img   | Voice message: Normal status background image for messages sent           |
-| chat_voice_message_receiver_voice_normal_img   | Voice message: Normal status background image for messages received           |
+| chat_more_video_img                          | "+" tab (More tab): Video recording icon                     |
+| chat_bubble_send_img                         | Message bubble: Background color for messages sent           |
+| chat_bubble_receive_img                      | Message bubble: Background color for messages received       |
+| chat_voice_message_sender_voice_normal_img   | Voice message: Normal status background image for messages sent |
+| chat_voice_message_receiver_voice_normal_img | Voice message: Normal status background image for messages received |
 | chat_icon_copy_img                           | Chat UI: "Copy" icon on the menu page that pops up when you long press a message |
-| chat_icon_delete_img                           | Chat UI: "Delete" icon on the menu page that pops up when you long press a message |
-| chat_icon_recall_img                           | Chat UI: "Recall" icon on the menu page that pops up when you long press a message |
-| chat_icon_multi_img                           | Chat UI: "Select" icon on the menu page that pops up when you long press a message |
-| chat_icon_forward_img                           | Chat UI: "Forward" icon on the menu page that pops up when you long press a message |
-| chat_icon_reply_img                           | Chat UI: "Reply" icon on the menu page that pops up when you long press a message |
-| chat_icon_reference_img                           | Chat UI: "Quote" icon on the menu page that pops up when you long press a message |
-| chat_ToolViewInputVoice_img                  | Chat UI: "Voice/Keyboard" switching button icon on the input bar        |
-| chat_ToolViewEmotion_img                     | Chat UI: "Emoji/Keyboard" switching button icon on the input bar        |
-| chat_ToolViewKeyboard_img                    | Chat UI: "Keyboard" button icon on the input bar                  |
+| chat_icon_delete_img                         | Chat UI: "Delete" icon on the menu page that pops up when you long press a message |
+| chat_icon_recall_img                         | Chat UI: "Recall" icon on the menu page that pops up when you long press a message |
+| chat_icon_multi_img                          | Chat UI: "Select" icon on the menu page that pops up when you long press a message |
+| chat_icon_forward_img                        | Chat UI: "Forward" icon on the menu page that pops up when you long press a message |
+| chat_icon_reply_img                          | Chat UI: "Reply" icon on the menu page that pops up when you long press a message |
+| chat_icon_reference_img                      | Chat UI: "Quote" icon on the menu page that pops up when you long press a message |
+| chat_ToolViewInputVoice_img                  | Chat UI: "Voice/Keyboard" switching button icon on the input bar |
+| chat_ToolViewEmotion_img                     | Chat UI: "Emoji/Keyboard" switching button icon on the input bar |
+| chat_ToolViewKeyboard_img                    | Chat UI: "Keyboard" button icon on the input bar             |
 
 **Colors**
 
-| Style Key                             | Style Description                                             |
-| ------------------------------------------- | -------------------------------------------- |
-| chat_controller_bg_color                    | Chat UI: Background color                           |
-| chat_input_controller_bg_color              | Chat UI: Background color of the input control page                 |
-| chat_input_bg_color                         | Chat UI: Background color of the input box                     |
-| chat_input_text_color                         | Chat UI: Text color of the input box                     |
-| chat_face_page_control_current_color        | Emoji tab: Color of the current page of the pagination control           |
-| chat_face_page_control_color        | Emoji tab: Default color of the pagination control           |
-| chat_text_message_send_text_color           | Text message: Color of the text displayed in messages sent           |
-| chat_text_message_receive_text_color           | Text message: Color of the text displayed in messages received           |
-| chat_file_message_bg_color                  | File message: Background color                           |
-| chat_file_message_title_color                  | File message: Title text color                           |
-| chat_file_message_subtitle_color                  | File message: Subtitle text color                           |
-| chat_merge_message_bg_color                  | Combined message: Background color                           |
-| chat_merge_message_title_color                  | Combined message: Title text color                           |
-| chat_merge_message_content_color                  | Combined message: Content text color                           |
-| chat_drop_down_color                        | Chat UI: Color of the down arrow                     |
-| chat_voice_message_send_duration_time_color | Voice message: Duration text color displayed for messages sent       |
-| chat_voice_message_recv_duration_time_color | Voice message: Duration text color displayed for messages received       |
-| chat_small_tongue_bg_color                  | Chat UI: Background color of the "Back to the latest position" component        |
-| chat_small_tongue_line_color                  | Chat UI: Dividing line color of the "Back to the latest position" component        |
-| chat_pop_menu_bg_color                      | Chat UI: Background color of the menu page that pops up when a message is long pressed   |
-| chat_pop_menu_text_color                      | Chat UI: Text color of the menu page that pops up when a message is long pressed   |
-| chat_message_read_status_text_color         | Chat UI: Text prompt color of the read status of a message         |
+| Style Key                                   | Style Description                                            |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| chat_controller_bg_color                    | Chat UI: Background color                                    |
+| chat_input_controller_bg_color              | Chat UI: Background color of the input control page          |
+| chat_input_bg_color                         | Chat UI: Background color of the input box                   |
+| chat_input_text_color                       | Chat UI: Text color of the input box                         |
+| chat_face_page_control_current_color        | Emoji tab: Color of the current page of the pagination control |
+| chat_face_page_control_color                | Emoji tab: Default color of the pagination control           |
+| chat_text_message_send_text_color           | Text message: Color of the text displayed in messages sent   |
+| chat_text_message_receive_text_color        | Text message: Color of the text displayed in messages received |
+| chat_file_message_bg_color                  | File message: Background color                               |
+| chat_file_message_title_color               | File message: Title text color                               |
+| chat_file_message_subtitle_color            | File message: Subtitle text color                            |
+| chat_merge_message_bg_color                 | Combined message: Background color                           |
+| chat_merge_message_title_color              | Combined message: Title text color                           |
+| chat_merge_message_content_color            | Combined message: Content text color                         |
+| chat_drop_down_color                        | Chat UI: Color of the down arrow                             |
+| chat_voice_message_send_duration_time_color | Voice message: Duration text color displayed for messages sent |
+| chat_voice_message_recv_duration_time_color | Voice message: Duration text color displayed for messages received |
+| chat_small_tongue_bg_color                  | Chat UI: Background color of the "Back to the latest position" component |
+| chat_small_tongue_line_color                | Chat UI: Dividing line color of the "Back to the latest position" component |
+| chat_pop_menu_bg_color                      | Chat UI: Background color of the menu page that pops up when a message is long pressed |
+| chat_pop_menu_text_color                    | Chat UI: Text color of the menu page that pops up when a message is long pressed |
+| chat_message_read_status_text_color         | Chat UI: Text prompt color of the read status of a message   |
 
 
 
@@ -358,12 +344,12 @@ You can view the keys of the basic styles of a theme in the `manifest.plist` fil
 
 ![](https://im.sdk.cloud.tencent.cn/tools/resource/themes/ios/styles/style_conversation.png?1)
 
-| Style Key                                     | Style Description                                           |
-| ------------------------------------ | --------------------------------------------------- |
+| Style Key                            | Style Description                                            |
+| ------------------------------------ | ------------------------------------------------------------ |
 | conversation_cell_bg_color           | Conversation list UI: UITableViewCell background color of common conversations |
 | conversation_cell_top_bg_color       | Conversation list UI: UITableViewCell background color of sticky conversations |
-| conversation_bg_color                | Conversation list UI: Background color                              |
-| conversation_message_not_disturb_img | Conversation list UI: Mute Notifications icon                        |
+| conversation_bg_color                | Conversation list UI: Background color                       |
+| conversation_message_not_disturb_img | Conversation list UI: Mute Notifications icon                |
 
 
 
@@ -383,15 +369,15 @@ You can view the keys of the basic styles of a theme in the `manifest.plist` fil
 
 ![](https://im.sdk.cloud.tencent.cn/tools/resource/themes/ios/styles/style_group.png?1)
 
-| Style Key                                     | Style Description                                           |
-| ------------------------------------- | --------------------------------------------------- |
-| group_modify_view_bg_color            | Group/Individual information modification page: Background color                           |
-| group_modify_container_view_bg_color  | Group/Individual information modification page: Container color                      |
-| group_modify_title_color              | Group/Individual information modification page: Title text color                    |
-| group_modify_desc_color               | Group/Individual information modification page: Descriptive information text color                |
-| group_modify_input_bg_color           | Group/Individual information modification page: Input box background color                  |
-| group_modify_input_text_color         | Group/Individual information modification page: Input box text color                 |
-| group_modify_confirm_enable_bg_color  | Group/Individual information modification page: Background color of the clickable state of the confirmation button   |
+| Style Key                             | Style Description                                            |
+| ------------------------------------- | ------------------------------------------------------------ |
+| group_modify_view_bg_color            | Group/Individual information modification page: Background color |
+| group_modify_container_view_bg_color  | Group/Individual information modification page: Container color |
+| group_modify_title_color              | Group/Individual information modification page: Title text color |
+| group_modify_desc_color               | Group/Individual information modification page: Descriptive information text color |
+| group_modify_input_bg_color           | Group/Individual information modification page: Input box background color |
+| group_modify_input_text_color         | Group/Individual information modification page: Input box text color |
+| group_modify_confirm_enable_bg_color  | Group/Individual information modification page: Background color of the clickable state of the confirmation button |
 | group_modify_confirm_disable_bg_color | Group/Individual information modification page: Background color of the non-clickable state of the confirmation button |
 
 
@@ -414,16 +400,14 @@ You can view the keys of the basic styles of a theme in the `manifest.plist` fil
 
 ![](https://im.sdk.cloud.tencent.cn/tools/resource/themes/ios/styles/style_contact.png?1)
 
-| Style Key                             | Style Description                                             |
-| ------------------------------------------ | ---------------------------------------------- |
-| contact_new_friend_img                     | Contacts page: New Contacts icon                     |
-| contact_blacklist_img                      | Contacts page: Blocklist icon                         |
-| contact_public_group_img                   | Contacts page: Group Chats icon                           |
-| contact_add_contact_tips_text_color        | Contacts addition page: Text color of my user ID tip       |
+| Style Key                                  | Style Description                                            |
+| ------------------------------------------ | ------------------------------------------------------------ |
+| contact_new_friend_img                     | Contacts page: New Contacts icon                             |
+| contact_blacklist_img                      | Contacts page: Blocklist icon                                |
+| contact_public_group_img                   | Contacts page: Group Chats icon                              |
+| contact_add_contact_tips_text_color        | Contacts addition page: Text color of my user ID tip         |
 | contact_add_contact_nodata_tips_text_color | Contacts addition page: Text color of the tip indicating that the queried user does not exist |
 
 
 
 [](id:feedback)
-
-

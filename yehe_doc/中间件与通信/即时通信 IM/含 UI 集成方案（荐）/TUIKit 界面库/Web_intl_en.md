@@ -1,5 +1,3 @@
-
-
 ## TUIKit Overview
 TUIKit is a UI component library based on Tencent Cloud IM SDK. It provides universal UI components to offer features such as conversation, chat, relationship chain, group, and audio/video call features.
 With these UI components, you can quickly build your own business logic.
@@ -7,7 +5,7 @@ When implementing UI features, components in TUIKit will also call the correspon
 
 
 ## TUIKit Components
-TUIKit provides the following modules for different purposes: TUIChat, TUIConversation, TUIProfile, and TUIManage modules. For details, see [the open source code here](!https://github.com/TencentCloud/chat-uikit-react).
+TUIKit provides the following modules for different purposes: TUIChat, TUIConversation, TUIProfile, and TUIManage modules. For details, see [the open source code here](https://github.com/TencentCloud/chat-uikit-react).
 The TUIKit web UI effect is as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/14ed827eecc218306abc82d46c57252d.png)
 

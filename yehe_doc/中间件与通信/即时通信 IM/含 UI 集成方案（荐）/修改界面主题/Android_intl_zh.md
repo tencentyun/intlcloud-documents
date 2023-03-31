@@ -2,18 +2,6 @@
 
 TUI 组件默认内置了：轻量、活泼、深沉共三套主题。您可以任意切换或者修改内置主题，也可以按需新增主题。
 
-<table style="text-align:center;vertical-align:middle;width:800px">
-  <tr>
-    <th style="text-align:center;" width="300px">轻量 light<br></th>
-    <th style="text-align:center;" width="300px">活泼 lively<br></th>
-    <th style="text-align:center;" width="300px">深沉 serious<br></th>
-  </tr>
-  <tr>
-    <td style="text-align:center;"><img style="width:300px" src="https://im.sdk.qcloud.com/tools/resource/themes/android/demo_light.png"  />    </td>
-    <td style="text-align:center;"><img style="width:300px" src="https://im.sdk.qcloud.com/tools/resource/themes/android/demo_lively.png" />     </td>
-    <td style="text-align:center;"><img style="width:300px" src="https://im.sdk.qcloud.com/tools/resource/themes/android/demo_serious.png" />     </td>
-	 </tr>
-</table>
 
 ## 主题资源
 
@@ -104,18 +92,9 @@ TUI 组件目前可以修改内置的主题，按照下列步骤，可对内置�
    
     <img src="https://im.sdk.qcloud.com/tools/resource/themes/android/changedChatLivelyBubbleColor.png" width="500px" />
 
-3. 保存文件，重新编译安装应用，切换主题为活泼版主题，即可看到效果：
+3. 保存文件，重新编译安装应用，切换主题为活泼版主题，即可看到效果。
    
-<table style="text-align:center;vertical-align:middle;width:700px">
-  <tr>
-    <th style="text-align:center;" width="300px">修改前<br></th>
-    <th style="text-align:center;" width="300px">修改后<br></th>
-  </tr>
-  <tr>
-    <td style="text-align:center;"><img style="width:300px" src="https://im.sdk.qcloud.com/tools/resource/themes/android/chatLivelyBubbleBg.png"  />    </td>
-    <td style="text-align:center;"><img style="width:300px" src="https://im.sdk.qcloud.com/tools/resource/themes/android/chatChangedBubbleBg.png" />     </td>
-	 </tr>
-</table>
+
 
 
 ## 新增主题
@@ -129,7 +108,7 @@ TUI 组件目前可以修改内置的主题，按照下列步骤，可对内置�
 
 
 >! 1、`res-enterprise` 目录下必须包含所有要参与切换主题的资源，否则切换到 `商务版` 主题后应用会因为找不到资源而崩溃；
-> 2、主题资源名不能跟系统资源名重复，也不可与已有资源名重复，否则会在编译期和运行期出现错误，因此要保证资源命名全局唯一。
+>2、主题资源名不能跟系统资源名重复，也不可与已有资源名重复，否则会在编译期和运行期出现错误，因此要保证资源命名全局唯一。
 
 
 2. 在 `enterprise_styles.xml` 文件中建立主题资源映射：
@@ -332,6 +311,3 @@ public class DemoApplication extends Application {
 | contact_new_friend_icon | 新的联系人菜单图标 |
 | contact_group_list_icon | 我的群聊菜单图标   |
 | contact_black_list_icon | 黑名单菜单图标     |
-
-
-

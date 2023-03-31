@@ -1,7 +1,7 @@
 本文介绍如何设置 Web 界面风格。 
 ## 设置会话列表
  TUIConversation 提供会话列表功能。会话列表主要由会话列表区组成，会话列表区提供了 UI 样式可供修改。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/70f93d0d0e04b6bf99c9554356f3d22e.png" style="zoom:50%;"/>
+
 
 ### 设置会话列表样式
 
@@ -67,8 +67,7 @@
 </dx-codeblock>
 
 ## 设置聊天窗口的样式
-TUIChat提供聊天窗口。聊天窗口包含三个区域，从上到下为标题栏区、消息区和输入区，如下图所示： 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e4b6173bb5a3f03a9b89b60e2f2b031c.png" style="zoom:50%;"/> 
+TUIChat提供聊天窗口。聊天窗口包含三个区域，从上到下为标题栏区、消息区和输入区。
 聊天窗口相关配置主要在路径 `src/TUIKit/TUIComponents/container/TUIChat/index.vue` 文件中。
 
 ### 设置标题栏区样式
@@ -223,7 +222,7 @@ TUIChat提供聊天窗口。聊天窗口包含三个区域，从上到下为标�
 
 ### 设置输入区域 InputView
 输入区域包含文字输入、表情输入、图片发送、视频发送、文件发送、评价发送、常用语发送等功能。 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/83552cab3ca2d2836a88708a98797913.png" style="zoom:30%;"/> 
+
 
 #### 隐藏不需要的功能
 您可以自定义隐藏功能模块的发送图片、发送文件以及发送评价等功能。
@@ -241,4 +240,3 @@ let sendComponents: any = {
 };
 :::
 </dx-codeblock>
-

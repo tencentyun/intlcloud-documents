@@ -299,7 +299,6 @@ The following compares the voice messages recorded simultaneously using two Huaw
 </table>
 	
 
->? For more hands-on tutorial videos, see [TUIKit Quick Integration (Android)](https://cloud.tencent.com/edu/learning/course-3130-56399)
 
 
 [](id:textTranslation)

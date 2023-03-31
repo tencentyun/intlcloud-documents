@@ -1,7 +1,8 @@
-﻿本文介绍如何设置 Android 界面风格。更多实操教学视频请参见 [设置样式（Android）](https://cloud.tencent.com/edu/learning/course-3130-57629)。
+﻿````java
+﻿本文介绍如何设置 Android 界面风格。
 
 ## 设置会话列表
-会话列表由标题区 TitleBarLayout 与列表区 ConversationListLayout 组成，每部分都提供了 UI 样式以及事件注册的接口可供修改。
+会话列表由标题区 TitleBarLayout 与列表区 ConversationListLayout 组成，每部分都提供了 UI 样式以及事件注册的接口可供修改。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/d4fa84742e49ed43faa33614f74dbe25.png" style="zoom:50%;"/>
 
 ### 设置标题样式
@@ -166,7 +167,7 @@ messageRecyclerView.setBackground(new ColorDrawable(0xB0E2FF00));
 ```
 
 #### 设置发送者的头像样式
-TUIKit 的界面在显示用户时，会从用户资料中读取头像地址并显示。
+TUIKit 的界面在显示用户时，会从用户资料中读取头像地址并显示。
 示例代码如下：
 
 ```java
@@ -382,4 +383,5 @@ public static class CustomInputFragment extends BaseInputFragment {
         return baseView;
     }
 }
-```
+```xxxxxxxxxx public static class CustomInputFragment extends BaseInputFragment {    @Nullable    @Override    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {        View baseView = inflater.inflate(R.layout.test_chat_input_custom_fragment, container, false);        Button btn1 = baseView.findViewById(R.id.test_send_message_btn1);        btn1.setOnClickListener(new View.OnClickListener() {            @Override            public void onClick(View v) {                ToastUtil.toastShortMessage("发送一条超链接消息");            }        });        Button btn2 = baseView.findViewById(R.id.test_send_message_btn2);        btn2.setOnClickListener(new View.OnClickListener() {            @Override            public void onClick(View v) {                ToastUtil.toastShortMessage("发送一条视频文字混合消息");            }        });        return baseView;    }}java
+````

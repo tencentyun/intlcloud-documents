@@ -17,21 +17,21 @@ If vendor offline push has been configured for your application, you only need t
 
 >? The following APIs are compatible with Android/iOS platforms and supported vendor devices unless otherwise specified. The platform and vendor are identified inside the plugin, which can be called directly.
 
-| API  |	Description  |
-|---------|---------|
-| Constructor (TimUiKitPushPlugin) | Instantiates a push plugin object and determines whether to use Google FCM. |
-| init | Binds the callback for the notification click event and passes in vendor channel information. |
-| uploadToken | Automatically gets and uploads the device token and certificate ID to the IM server. |
-| requireNotificationPermission | Requests the push permission. |
-| setBadgeNum | Sets the unread count badge (only supported by some Android devices. For more information, see API Code Parameter Description.) |
-| clearAllNotification | Clears all the notifications of the current application from the notification bar. |
-| getDevicePushConfig | Gets the push information of the current vendor, including model, certification ID, and token. |
-| getDevicePushToken | Gets the push token of the current vendor. |
-| getOtherPushType | Gets the vendor information. |
-| getBuzId | Gets the current vendor's certificate ID registered in the Tencent Cloud console. |
-| createNotificationChannel | Creates a notification channel for an Android model. For more information, see [Create and Manage Notification Channels](https://developer.android.com/training/notify-user/channels). |
-| clearAllNotification | Clears all the notifications of the current application from the notification bar. |
-| displayNotification | Manually creates a message notification on the client. |
+| API                                  | Description                                                  |
+| ------------------------------------ | ------------------------------------------------------------ |
+| Constructor (TimUiKitPushPlugin)     | Instantiates a push plugin object and determines whether to use Google FCM. |
+| init                                 | Binds the callback for the notification click event and passes in vendor channel information. |
+| uploadToken                          | Automatically gets and uploads the device token and certificate ID to the IM server. |
+| requireNotificationPermission        | Requests the push permission.                                |
+| setBadgeNum                          | Sets the unread count badge (only supported by some Android devices. For more information, see API Code Parameter Description.) |
+| clearAllNotification                 | Clears all the notifications of the current application from the notification bar. |
+| getDevicePushConfig                  | Gets the push information of the current vendor, including model, certification ID, and token. |
+| getDevicePushToken                   | Gets the push token of the current vendor.                   |
+| getOtherPushType                     | Gets the vendor information.                                 |
+| getBuzId                             | Gets the current vendor's certificate ID registered in the Tencent Cloud console. |
+| createNotificationChannel            | Creates a notification channel for an Android model. For more information, see [Create and Manage Notification Channels](https://developer.android.com/training/notify-user/channels). |
+| clearAllNotification                 | Clears all the notifications of the current application from the notification bar. |
+| displayNotification                  | Manually creates a message notification on the client.       |
 | displayDefaultNotificationForMessage | Automatically creates a message notification for a `V2TimMessage` object on the client according to the default rules. |
 
 ## Connection Preparations (Vendor Registration)[](id:firstone)
@@ -140,12 +140,12 @@ Go to the [IM console > Basic Configuration](https://console.cloud.tencent.com/i
 Get the SHA-256 certificate fingerprint as instructed in [Generating a Signing Certificate Fingerprint](https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/Preparations#generate_finger). Then configure the fingerprint on the Huawei Push platform, and **remember to click <img src="https://main.qcloudimg.com/raw/f74e3aa948316533ce91f9add4a81a29.png"></img> to save the configuration**.
 
 > ?If your application needs to be compiled and released through a pipeline, and each compilation is performed on different build machines, you can create a local `keystore.jks` key file to get its SHA-256 value and enter it on the HUAWEI Push platform.
-> 
+>
 > When a script is built in a pipeline, you need to archive and align the final build and use the `keystore` signature, so that the SHA-256 value of the final build is consistent with the former value. The code is as follows:
->  ```shell
->  zipalign -v -p 4 built apk.apk packaged apk_aligned.apk 
->  apksigner sign --ks keystore.jks --ks-pass pass: Your keystore password --out Final signature Completed apk.apk Packaged apk_aligned.apk
->  ```
+> ```shell
+> zipalign -v -p 4 built apk.apk packaged apk_aligned.apk 
+> apksigner sign --ks keystore.jks --ks-pass pass: Your keystore password --out Final signature Completed apk.apk Packaged apk_aligned.apk
+> ```
 
 ##### Getting the Huawei Push configuration file
 
@@ -584,7 +584,7 @@ TIMUIKitChat(
 
 >?If the receiver is redirected when the application is in the background, the Flutter homepage may have been unmounted and cannot provide a context for the redirect. Therefore, we recommend you cache a context upon start to ensure the success of the redirect.
 >
-> We recommend you call the `clearAllNotification()` method to clear other notifications on the notification bar after the redirect to avoid too many IM messages.
+>We recommend you call the `clearAllNotification()` method to clear other notifications on the notification bar after the redirect to avoid too many IM messages.
 
 ```Dart
 BuildContext? _cachedContext;
@@ -751,7 +751,7 @@ If offline push messages are not pushed timely or cannot be received, consider t
 - Huawei: Push messages are classified into service & communication messages and news & marketing messages with different push effects and policies. In addition, message classification is associated with the self-help message classification permission.
   - If there is no self-help message classification permission, the vendor will perform secondary intelligent message classification on push messages.
   - If you have applied for the self-help message classification permission, push messages will be classified based on the custom classification and then pushed.
-For more information, see [Message Classification Criteria](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835).
+  For more information, see [Message Classification Criteria](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835).
 
 - vivo: Push messages are classified into system messages and operational messages with different push effects and policies. The system messages are further subject to the vendor's intelligent classification for correction. A message that cannot be intelligently identified as a system message will be automatically corrected as an operational message. If the judgment is incorrect, you can give a feedback by email. In addition, the total number of push messages is subject to a daily limit determined based on the app subscription statistics by the vendor. 
 See [vendor description 1](https://dev.vivo.com.cn/documentCenter/doc/359) or [vendor description 2](https://dev.vivo.com.cn/documentCenter/doc/156) for details.
@@ -935,7 +935,7 @@ During initialization, register the callback method to get the `Map` containing 
 
 >? If the receiver is redirected when the application is in the background, the Flutter homepage may have been unmounted and cannot provide a context for the redirect. Therefore, we recommend you cache a context upon start to ensure the success of the redirect.
 >
-> We recommend you call the `clearAllNotification()` method to clear other notifications on the notification bar after the redirect to avoid too many IM messages.
+>We recommend you call the `clearAllNotification()` method to clear other notifications on the notification bar after the redirect to avoid too many IM messages.
 
 ```Dart
 BuildContext? _cachedContext;
@@ -985,5 +985,3 @@ void onClickNotification(Map<String, dynamic> msg) async {
 If you customize the `ext` structure, you need to implement the redirect function on your own.
 
 At this point, you have connected to online push. After the test, you can define the time and scenario for triggering a push notification in `onRecvNewMessage`.
-
-

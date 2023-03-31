@@ -27,21 +27,21 @@ Currently, TUIKit for Flutter contains the following primary components:
 
 ## Environment Requirements
 
-|     Environment    | Version                                                               |
-| ------- | ------------------------------------------------------------------ |
-| Flutter | Flutter 2.10.0 or later.                                     |
-| Android | Android Studio 3.5 or later; and devices with Android 4.1 or later for apps |
-| iOS | Xcode 11.0 or later. Ensure that your project has a valid developer signature. |
+| Environment | Version                                                      |
+| ----------- | ------------------------------------------------------------ |
+| Flutter     | Flutter 2.10.0 or later.                                     |
+| Android     | Android Studio 3.5 or later; and devices with Android 4.1 or later for apps |
+| iOS         | Xcode 11.0 or later. Ensure that your project has a valid developer signature. |
 
 ## Supported Platforms
 
-| Platform  | Supported or Not |
-|---------|---------|
-| iOS  | Supported |
-| Android  | Supported |
-| [Web](#web)  | Supported from version 0.1.5 |
-| macOS  | Will be supported soon |
-| Windows  | Will be supported soon |
+| Platform                                                     | Supported or Not             |
+| ------------------------------------------------------------ | ---------------------------- |
+| iOS                                                          | Supported                    |
+| Android                                                      | Supported                    |
+| [Web](#web)                                                  | Supported from version 0.1.5 |
+| macOS                                                        | Will be supported soon       |
+| Windows                                                      | Will be supported soon       |
 | [Hybrid development](https://www.tencentcloud.com/document/product/1047/51456) (adding the SDK for Flutter to your existing native app) | Supported from version 1.0.0 |
 
 >? A set of all-platform Chat SDKs for Flutter and TUIKit are provided to help you build apps for different platforms by using one set of code.
@@ -306,11 +306,11 @@ In scenarios such as the conversation list page, you can customize the swipe act
 
 Currently, the following controllers are provided:
 
-| Component                                                                                                                               | Controller                                                                                                                                  | Feature Description                                                                                                                                         |
-| ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| [TIMUIKitChat](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitChat/TIMUIKitChat-Implementation.html)                         | [TIMUIKitChatController](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitChat/TIMUIKitChatController.html)                         | Refreshes the historical message list/Updates a single message/Sends additional messages/Sets custom fields for messages, etc.                                                                     |
-| [TIMUIKitConversation](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitConversation/TIMUIKitConversation-Implementation.html) | [TIMUIKitConversationController](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitConversation/TIMUIKitConversationController.html) | Gets and refreshes the conversation list/Pins a conversation to the top/Sets a conversation draft/Clears all messages in a conversation/Deletes a conversation/Navigates to a specific conversation, etc.                                                                    |
-| [TIMUIKitProfile](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitProfile/TIMUIKitProfile-Implementation.html)                | [TIMUIKitProfileController](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitProfile/TIMUIKitProfileController.html)                | Deletes a contact/Pins the conversation with the current contact/Adds a user to the blocklist/Changes the way of being added as a friend/Updates the alias of a contact/Mutes notifications of messages of contacts/Adds a contact/Updates the user profile, etc.|
+| Component                                                    | Controller                                                   | Feature Description                                          |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [TIMUIKitChat](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitChat/TIMUIKitChat-Implementation.html) | [TIMUIKitChatController](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitChat/TIMUIKitChatController.html) | Refreshes the historical message list/Updates a single message/Sends additional messages/Sets custom fields for messages, etc. |
+| [TIMUIKitConversation](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitConversation/TIMUIKitConversation-Implementation.html) | [TIMUIKitConversationController](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitConversation/TIMUIKitConversationController.html) | Gets and refreshes the conversation list/Pins a conversation to the top/Sets a conversation draft/Clears all messages in a conversation/Deletes a conversation/Navigates to a specific conversation, etc. |
+| [TIMUIKitProfile](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitProfile/TIMUIKitProfile-Implementation.html) | [TIMUIKitProfileController](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitProfile/TIMUIKitProfileController.html) | Deletes a contact/Pins the conversation with the current contact/Adds a user to the blocklist/Changes the way of being added as a friend/Updates the alias of a contact/Mutes notifications of messages of contacts/Adds a contact/Updates the user profile, etc. |
 
 These controllers are used in the same way, and [TIMUIKitChatController](https://comm.qq.com/im/doc/flutter/zh/TUIKit/TIMUIKitChat/TIMUIKitChatController.html) is taken as an example. For the complete code, see the [demo](https://github.com/TencentCloud/tc-chat-demo-flutter/blob/main/lib/src/chat.dart).
 
@@ -358,7 +358,7 @@ In addition to the basic features of TUIKit, four optional plugins are provided 
 - [Message push plugin](https://intl.cloud.tencent.com/document/product/1047/50032): It provides vendor offline push capabilities, online push capabilities, and the push of your other business messages to help you increase the message deliverability.
 - [Custom emoji plugin](https://www.tencentcloud.com/document/product/1047/52227): Starting from version 0.1.5, TUIKit comes with no stickers, and you need to use this plugin to quickly integrate emoji and sticker capabilities. The plugin supports emoji Unicode encoding and custom image stickers. For the integration process, see the [demo](https://github.com/TencentCloud/tc-chat-demo-flutter/blob/main/lib/src/pages/app.dart).
 
->?More practical plugins are on the way. If you have any good ideas and suggestions, feel free to [contact us](https://cloud.tencent.com/online-service?from=doc_269&source=PRESALE).
+>?More practical plugins are on the way. If you have any good ideas and suggestions, feel free to contact us.
 
 ## Support for Flutter for Web[](id:web)
 
@@ -566,54 +566,87 @@ You can directly pop up the default prompt or customize a prompt based on `infoC
 
 `infoCode` consists of seven digits, the first five of which determine the component where the scenario occurred, and the last two of which determine the specific scenario.
 
-| Start of `infoCode` | Component             |
-| ---------- | ---------------------- |
-| 66601      | `TIMUIKitAddFriend`    |
-| 66602      | `TIMUIKitAddGroup`     |
-| 66603      | `TIMUIKitBlackList`    |
-| 66604      | `TIMUIKitChat`         |
-| 66605      | `TIMUIKitContact`      |
-| 66606      | `TIMUIKitConversation` |
-| 66607      | `TIMUIKitGroup`        |
-| 66608      | `TIMUIKitGroupProfile` |
-| 66609      | `TIMUIKitNewContact`   |
-| 66610      | `TIMUIKitGroupProfile` |
-| 66611      | `TIMUIKitNewContact`   |
-| 66612      | `TIMUIKitProfile`      |
-| 66613      | `TIMUIKitSearch`       |
-| 66614      | Common component               |
+| Start of `infoCode` | Component              |
+| ------------------- | ---------------------- |
+| 66601               | `TIMUIKitAddFriend`    |
+| 66602               | `TIMUIKitAddGroup`     |
+| 66603               | `TIMUIKitBlackList`    |
+| 66604               | `TIMUIKitChat`         |
+| 66605               | `TIMUIKitContact`      |
+| 66606               | `TIMUIKitConversation` |
+| 66607               | `TIMUIKitGroup`        |
+| 66608               | `TIMUIKitGroupProfile` |
+| 66609               | `TIMUIKitNewContact`   |
+| 66610               | `TIMUIKitGroupProfile` |
+| 66611               | `TIMUIKitNewContact`   |
+| 66612               | `TIMUIKitProfile`      |
+| 66613               | `TIMUIKitSearch`       |
+| 66614               | Common component       |
 
 **The complete list of `infoCode` values is as follows:**[](id:infoCode)
 
-| `infoCode` | `infoRecommendText`                               | Scenario Description                                                                    |
+| `infoCode` | `infoRecommendText`                                          | Scenario Description                                         |
+| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 6660101    | A friend request is sent successfully.                       | The user requests to add another user to the contacts.       |
+| 6660102    | The user is already a friend.                                | The `onTapAlreadyFriendsItem` callback is triggered when the user requests to add an existing friend. |
+| 6660201    | A group join request is sent.                                | The user requests to join a group requiring admin approval.  |
+| 6660202    | You are already a group member.                              | The `onTapExistGroup` callback is triggered when the user sends a group join request and is identified as an existing group member. |
+| 6660401    | The original message cannot be located.                      | The target message cannot be found in the message list when the user needs to be redirected to the @message or quote the message. |
+| 6660402    | The video is saved successfully.                             | The user selects **Save** after opening a video message in the message list. |
+| 6660403    | The video failed to be saved.                                | The user selects **Save** after opening a video message in the message list. |
+| 6660404    | The recording is too short.                                  | The user sends a too short audio message.                    |
+| 6660405    | The video failed to be sent. Videos cannot be greater than 100 MB in size. | The user attempts to send a video greater than 100 MB in size. |
+| 6660406    | The image is saved successfully.                             | The user selects **Save** after opening the large image in the message list. |
+| 6660407    | The image failed to be saved.                                | The user selects **Save** after opening the large image in the message list. |
+| 6660408    | Copied                                                       | The user selects **Copy** to copy the text message in the pop-up window. |
+| 6660409    | Unavailable                                                  | The user selects a non-standard feature in the pop-up window. |
+| 6660410    | Other files are being received.                              | The previous download tasks have not been completed when the user clicks to download a file message. |
+| 6660411    | Receiving                                                    | The user clicks to download a file message.                  |
+| 6660412    | Video messages must be in MP4 format.                        | The user sends a video message in non-MP4 format.            |
+| 6660413    | The file has been added to the queue waiting to be downloaded. Other files are being downloaded. | The file has been added to the queue waiting to be downloaded. Other files are being downloaded. |
+| 6661001    | Modification failed in the absence of a network connection.  | The user attempts to modify the group profile in an environment without a network connection. |
+| 6661002    | You cannot view the group members in the absence of a network connection. | The user attempts to view the group members in an environment without a network connection. |
+| 6661003    | The admin status is removed successfully.                    | The user removes the admin status of another user in the group. |
+| 6661201    | Modification failed in the absence of a network connection.  | The user attempts to modify their own profile or that of a contact in an environment without a network connection. |
+| 6661202    | The friend is added successfully.                            | The user adds another user as a friend on the profile page, who is automatically added successfully without approval. |
+| 6661203    | A friend request is sent.                                    | The user adds another user who requires approval as a friend on the profile page. |
+| 6661204    | The user is on the blocklist.                                | The user adds another user who is on the blocklist as a friend on the profile page. |
+| 6661205    | The friend failed to be added.                               | The user failed to add a friend, possibly because the latter forbids being added. |
+| 6661206    | The friend is deleted successfully.                          | The user successfully deleted a friend on the profile page.  |
+| 6661207    | The friend failed to be deleted.                             | The user failed to delete a friend on the profile page.      |
+| 6661401    | The input cannot be empty.                                   | The user enters an empty string.                             |
+| 6661402    | Pass in a lifecycle function for leaving a group to provide the navigation method to return to the homepage or another page. | A method to return to the homepage is provided when the user leaves or disbands the group. |
+| 6661403    | The device's available storage space is insufficient. We recommend you free up some space to gain a better user experience. | After the user is logged in successfully, the system will automatically check the device's available storage space. If the available space is less than 1 GB, a prompt will be displayed indicating that the available space is insufficient. |
+
+|      |      |      |
 | ----------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------- |
-| 6660101           | A friend request is sent successfully.                                               | The user requests to add another user to the contacts.                                                |
-| 6660102           | The user is already a friend.                                               | The `onTapAlreadyFriendsItem` callback is triggered when the user requests to add an existing friend. |
-| 6660201           | A group join request is sent.                                                 | The user requests to join a group requiring admin approval.                                             |
-| 6660202           | You are already a group member.                                                 | The `onTapExistGroup` callback is triggered when the user sends a group join request and is identified as an existing group member.       |
-| 6660401           | The original message cannot be located.                                             | The target message cannot be found in the message list when the user needs to be redirected to the @message or quote the message.             |
-| 6660402           | The video is saved successfully.                                                 | The user selects **Save** after opening a video message in the message list.                                 |
-| 6660403           | The video failed to be saved.                                                 | The user selects **Save** after opening a video message in the message list. |
-| 6660404           | The recording is too short.                                                 | The user sends a too short audio message.                                                    |
-| 6660405           | The video failed to be sent. Videos cannot be greater than 100 MB in size.                                  | The user attempts to send a video greater than 100 MB in size.                                               |
-| 6660406           | The image is saved successfully.                                                 | The user selects **Save** after opening the large image in the message list.                                 |
-| 6660407           | The image failed to be saved.                                                 | The user selects **Save** after opening the large image in the message list.                                |
-| 6660408           | Copied                                                       | The user selects **Copy** to copy the text message in the pop-up window.                                 |
-| 6660409           | Unavailable                                                     | The user selects a non-standard feature in the pop-up window.                                                     |
-| 6660410           | Other files are being received.                                           | The previous download tasks have not been completed when the user clicks to download a file message.                                |
-| 6660411           | Receiving                                                   | The user clicks to download a file message.                                                        |
-| 6660412           | Video messages must be in MP4 format.                                        | The user sends a video message in non-MP4 format.                                          |
-| 6660413           | The file has been added to the queue waiting to be downloaded. Other files are being downloaded.                                                   | The file has been added to the queue waiting to be downloaded. Other files are being downloaded.                                         |
-| 6661001           | Modification failed in the absence of a network connection.                                         | The user attempts to modify the group profile in an environment without a network connection.                                        |
-| 6661002           | You cannot view the group members in the absence of a network connection.                                   | The user attempts to view the group members in an environment without a network connection.                                        |
-| 6661003           | The admin status is removed successfully.                                           | The user removes the admin status of another user in the group.                                                |
-| 6661201           | Modification failed in the absence of a network connection.                                         | The user attempts to modify their own profile or that of a contact in an environment without a network connection.                                        |
-| 6661202           | The friend is added successfully.                                                 | The user adds another user as a friend on the profile page, who is automatically added successfully without approval.                        |
-| 6661203           | A friend request is sent.                                               | The user adds another user who requires approval as a friend on the profile page.                                 |
-| 6661204           | The user is on the blocklist.                                             | The user adds another user who is on the blocklist as a friend on the profile page.                             |
-| 6661205           | The friend failed to be added.                                                 | The user failed to add a friend, possibly because the latter forbids being added.                |
-| 6661206           | The friend is deleted successfully.                                                 | The user successfully deleted a friend on the profile page.                                            |
-| 6661207           | The friend failed to be deleted.                                                  | The user failed to delete a friend on the profile page.                                            |
-| 6661401           | The input cannot be empty.                                                 | The user enters an empty string.                                           |
-| 6661402           | Pass in a lifecycle function for leaving a group to provide the navigation method to return to the homepage or another page. | A method to return to the homepage is provided when the user leaves or disbands the group.                                    |
-| 6661403           | The device's available storage space is insufficient. We recommend you free up some space to gain a better user experience.               | After the user is logged in successfully, the system will automatically check the device's available storage space. If the available space is less than 1 GB, a prompt will be displayed indicating that the available space is insufficient.        |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+|      |      |      |

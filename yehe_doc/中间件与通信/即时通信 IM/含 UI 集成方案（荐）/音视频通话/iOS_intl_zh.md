@@ -19,12 +19,11 @@ TUIKit 组件从 4.8.50 版本开始支持音视频通话功能，并且实现�
 
 
 [](id:step1)
-## 步骤1：开通音视频服务
+## 步骤1：开通音视频通话服务
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，进入应用的基础配置页面。
-2. 在页面的右下角找到**开通腾讯实时音视频服务**功能区，单击 **免费体验** 即可开通 TUICallKit 的 60 天免费试用服务。 
->= **友情提示**：单击免费体验以后，部分之前使用过 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 服务的用户会提示`[-100013]:TRTC service is  suspended. Please check if the package balance is 0 or the Tencent Cloud accountis in arrears`，
->
->因为新的 IM 音视频通话能力是整合了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047/35448) 两个基础的 PaaS 服务，所以当 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 的免费额度（10000分钟）已经过期或者耗尽，就会导致开通此项服务失败，这里您可以单击[ TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，找到对应 SDKAppID 的应用管理页，示例如图，开通后付费功能后，再次**启用应用**即可正常体验音视频通话能力。
+
+2. 在页面的右下角找到**腾讯实时音视频服务**功能区，单击下方 **音视频通话能力-免费体验** ，在弹出的**免费开通音视频通话能力体验版**对话框中，单击**免费开通**，即可开通 TUICallKit 的 **60 天免费试用**服务。
+
 
 [](id:step2)
 ## 步骤2：集成 TUICallKit 组件
@@ -71,13 +70,13 @@ TUICallKit 组件和 TUIChat 组件可自由组合，当集成了 TUICallKit 组
 [](id:version)
 ## 版本说明
 
-| 版本 | 库/组件名称 | 说明 |
-| --- | --- | --- |
-| 4.8.50 ~ 5.1.60 | TXIMSDK_TUIKit_iOS   | TUIKit 组件默认集成了音视频通话 UI 组件和 [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 音视频库 |
-| 5.4.666 ~ 5.6.1200  | TXIMSDK_TUIKit_live_iOS  | - TUIKit 组件默认不再集成音视频通话 UI 组件和 TRTC 音视频库  <br/>- 音视频相关逻辑都移到了 TXIMSDK_TUIKit_live_iOS 组件里面 |
-| 5.7.1435 ~ 6.0.1992 | TUICalling | TUICalling 组件包含了所有的音视频通话 UI 和 [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 音视频库 <br/>TUICalling 组件支持与 [TUIKit](https://intl.cloud.tencent.com/document/product/1047/34547) 其他组件自由组合 |
-| 6.1.2155 及以上 | TUICalling | TUICalling 前后台切换体验优化 |
-| 6.5 及以上版本 | TUICallKit | 全新升级音视频通话组件，功能更强大 |
+| 版本                | 库/组件名称             | 说明                                                         |
+| ------------------- | ----------------------- | ------------------------------------------------------------ |
+| 4.8.50 ~ 5.1.60     | TXIMSDK_TUIKit_iOS      | TUIKit 组件默认集成了音视频通话 UI 组件和 [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 音视频库 |
+| 5.4.666 ~ 5.6.1200  | TXIMSDK_TUIKit_live_iOS | - TUIKit 组件默认不再集成音视频通话 UI 组件和 TRTC 音视频库  <br/>- 音视频相关逻辑都移到了 TXIMSDK_TUIKit_live_iOS 组件里面 |
+| 5.7.1435 ~ 6.0.1992 | TUICalling              | TUICalling 组件包含了所有的音视频通话 UI 和 [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 音视频库 <br/>TUICalling 组件支持与 [TUIKit](https://intl.cloud.tencent.com/document/product/1047/34547) 其他组件自由组合 |
+| 6.1.2155 及以上     | TUICalling              | TUICalling 前后台切换体验优化                                |
+| 6.5 及以上版本      | TUICallKit              | 全新升级音视频通话组件，功能更强大                           |
 
 [](id:qa)
 
@@ -89,7 +88,7 @@ TUICallKit 组件和 TUIChat 组件可自由组合，当集成了 TUICallKit 组
 如遇以上错误提示，是由于您当前应用的**音视频通话能力包过期**或**未开通**，请参见 [步骤一：开通服务](#step1)，领取或者开通音视频通话能力，进而继续使用 TUICallKit 组件.
 
 #### 如何购买套餐？
-音视频通话 SDK **目前处于内测期，提供有效期为60天的免费体验版**，正式付费版预计2022年12月发布上线，敬请期待。
+音视频通话 SDK **目前处于内测期，提供有效期为60天的免费体验版**。
 
 #### 在邀请超时时间内，被邀请者如果离线再上线，能否立即收到邀请？
 

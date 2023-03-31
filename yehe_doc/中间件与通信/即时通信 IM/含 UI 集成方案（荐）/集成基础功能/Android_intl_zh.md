@@ -299,7 +299,6 @@ api project(':tuicallkit')
 </table>
 	
 
->? 更多实操教学视频请参见：[极速集成 TUIKit（Android）](https://cloud.tencent.com/edu/learning/course-3130-56399)。
 
 
 [](id:textTranslation)

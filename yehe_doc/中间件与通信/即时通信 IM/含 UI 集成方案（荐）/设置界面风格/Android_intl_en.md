@@ -1,5 +1,5 @@
-﻿This document describes how to set the UI styles for Android. For more hands-on teaching videos, see [Setting Styles (Android)](https://cloud.tencent.com/edu/learning/course-3130-57629).
-
+﻿````java
+﻿This document describes how to set the UI styles for Android.
 ## Setting the Conversation List UI Styles
 The conversation list UI consists of the title bar TitleBarLayout and list area ConversationListLayout. Each part provides UI styles and event registration APIs that can be modified.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/d4fa84742e49ed43faa33614f74dbe25.png" style="zoom:50%;"/>
@@ -382,4 +382,5 @@ public static class CustomInputFragment extends BaseInputFragment {
         return baseView;
     }
 }
-```
+```xxxxxxxxxx public static class CustomInputFragment extends BaseInputFragment {    @Nullable    @Override    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {        View baseView = inflater.inflate(R.layout.test_chat_input_custom_fragment, container, false);        Button btn1 = baseView.findViewById(R.id.test_send_message_btn1);        btn1.setOnClickListener(new View.OnClickListener() {            @Override            public void onClick(View v) {                ToastUtil.toastShortMessage("Send a hyperlink message");            }        });        Button btn2 = baseView.findViewById(R.id.test_send_message_btn2);        btn2.setOnClickListener(new View.OnClickListener() {            @Override            public void onClick(View v) {                ToastUtil.toastShortMessage("Send a message containing video and text");            }        });        return baseView;    }}java
+````

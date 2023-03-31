@@ -19,12 +19,10 @@ Audio/Video call UIs are shown as follows:
 
 
 [](id:step1)
-## Step 1: Activate the TRTC Service
-1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
-2. Click **Free trial** under **Activate Tencent Real-Time Communication (TRTC)** in the lower-right corner of the page to activate the 60-day free trial service of TUICallKit. 
->= **Notes**: If you have used [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) before, after clicking **Free trial**, the following error may occur: `[-100013]:TRTC service is suspended. Please check if the package balance is 0 or the Tencent Cloud account is in arrears`.
->
->This is because the new IM audio/video call capability is based on two basic PaaS services: [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047/35448). If you have used up your free monthly minutes (10,000) for TRTC, you will fail to activate the capability. You can log in to the [TRTC console](https://console.cloud.tencent.com/trtc/app), go to the application management page of the corresponding SDKAppID, and activate the pay-as-you-go feature, as shown in the figure below. Then, next time when you **start the application**, you can experience the new audio/video call capability properly.
+## Step 1: Activate the Video Calls Service
+1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target application card to go to the basic configuration page.
+
+2. In the bottom-right corner of the page, click **Audio/Video call capability - free trial** in the **TRTC** section. In the **Activate free trial of audio/video call feature** pop-up window, click **Activate Now** to activate the **60-day free trial** of TUICallKit.
 
 [](id:step2)
 ## Step 2: Integrate the TUICallKit Component
@@ -71,13 +69,13 @@ Before using offline push, you need to activate the [IM offline push](https://in
 [](id:version)
 ## Version Description
 
-| Version | Library/Component Name | Description |
-| --- | --- | --- |
-| 4.8.50 - 5.1.60 | TXIMSDK_TUIKit_iOS   | TUIKit is integrated with the TRTC UI components and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) audio/video library by default. |
-| 5.4.666 - 5.6.1200  | TXIMSDK_TUIKit_live_iOS  | - TUIKit is no longer integrated with the TRTC UI components and TRTC audio/video library by default.  <br/>- Related audio/video logic is moved to the TXIMSDK_TUIKit_live_iOS component. |
-| 5.7.1435 - 6.0.1992 | TUICalling | TUICalling includes all audio/video call UI components and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) audio/video library. <br/>TUICalling can be freely combined with other components of [TUIKit](https://intl.cloud.tencent.com/document/product/1047/34547). |
-| 6.1.2155 or above | TUICalling | The foreground/background switch experience of TUICalling is optimized. |
-| 6.5 or above | TUICallKit | The audio/video call component is upgraded and provides more powerful features. |
+| Version             | Library/Component Name  | Description                                                  |
+| ------------------- | ----------------------- | ------------------------------------------------------------ |
+| 4.8.50 - 5.1.60     | TXIMSDK_TUIKit_iOS      | TUIKit is integrated with the TRTC UI components and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) audio/video library by default. |
+| 5.4.666 - 5.6.1200  | TXIMSDK_TUIKit_live_iOS | - TUIKit is no longer integrated with the TRTC UI components and TRTC audio/video library by default.  <br/>- Related audio/video logic is moved to the TXIMSDK_TUIKit_live_iOS component. |
+| 5.7.1435 - 6.0.1992 | TUICalling              | TUICalling includes all audio/video call UI components and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) audio/video library. <br/>TUICalling can be freely combined with other components of [TUIKit](https://intl.cloud.tencent.com/document/product/1047/34547). |
+| 6.1.2155 or above   | TUICalling              | The foreground/background switch experience of TUICalling is optimized. |
+| 6.5 or above        | TUICallKit              | The audio/video call component is upgraded and provides more powerful features. |
 
 [](id:qa)
 
@@ -89,7 +87,7 @@ Before using offline push, you need to activate the [IM offline push](https://in
 The error message indicates that your app's **audio/video call capability package has expired or is not activated**. You can refer to [step 1](#step1) to claim or activate the audio/video call capability to continue using TUICallKit.
 
 #### How do I purchase a package?
-The audio/video call SDK **is currently in beta, with a 60-day free edition provided**. The official paid edition is expected to be released in December 2022. Please stay tuned.
+The audio/video call SDK **is currently in beta, with a 60-day free edition provided**. 
 
 #### Will an invitee receive a call invitation immediately if the invitee goes offline and then online within the call invitation timeout duration?
 

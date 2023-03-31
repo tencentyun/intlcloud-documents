@@ -6,14 +6,14 @@ TUIKit 中的组件在实现 UI 功能的同时，会调用 IM SDK 相应的接�
 
 ## 支持平台
 
-| 平台  | 支持状态 |
-|---------|---------|
-| iOS  | 支持 |
-| Android  | 支持 |
-| [Web](#web)  | 支持，0.1.5版本起 |
-| macOS  | 开发中，敬请期待 |
-| Windows  | 开发中，敬请期待 |
-| [混合开发](https://www.tencentcloud.com/document/product/1047/51456) （将 Flutter SDK 添加至现有原生应用） | 1.0.0版本起支持 |
+| 平台                                                         | 支持状态          |
+| ------------------------------------------------------------ | ----------------- |
+| iOS                                                          | 支持              |
+| Android                                                      | 支持              |
+| [Web](#web)                                                  | 支持，0.1.5版本起 |
+| macOS                                                        | 开发中，敬请期待  |
+| Windows                                                      | 开发中，敬请期待  |
+| [混合开发](https://www.tencentcloud.com/document/product/1047/51456) （将 Flutter SDK 添加至现有原生应用） | 1.0.0版本起支持   |
 
 >? 我们致力于打造一套支持 Flutter 全平台的即时通信 IM SDK 及 TUIKit，帮助您一套代码，全平台运行。
 
@@ -38,17 +38,17 @@ TUIKit 中的组件在实现 UI 功能的同时，会调用 IM SDK 相应的接�
 
 TUIKit 按照功能主要分为**聊天**、**关系链**、**用户或群组资料**、**搜索**、**语音**几个类型的 UI 组件，每个类型的 UI 组件负责展示不同的内容。具体的 UI 组件描述如下表所示：
 
-| 组件名               | 组件功能           |
-| -------------------- | ------------------ |
-| [TIMUIKitConversation](#TIMUIKitConversation) | 会话列表组件       |
-| [TIMUIKitChat](#TIMUIKitChat)         | 核心聊天组件           |
-| [TIMUIKitAddFriend](#add) / [TIMUIKitAddGroup](#add)    | 添加好友 及 添加群组 组件       |
-| [TIMUIKitBlackList](#contacts) / [TIMUIKitNewContact](#contacts)     | 黑名单列表 及 新的联系人申请列表 组件     |
-| [TIMUIKitContact](#contacts) / [TIMUIKitGroup](#contacts)      | 好友列表 及 群组列表 组件       |
-| [TIMUIKitProfile](#TIMUIKitProfile) / [TIMUIKitGroupProfile](#TIMUIKitGroupProfile) | 用户信息 及 群组信息 组件       |
-| [TIMUIKitSearch / TIMUIKitSearchMsgDetail](#search)      | 全局搜索/会话内搜索组件           |
-| [音视频通话插件](#calling)      | 单聊or群聊 的 语音通话&视频通话       |
-| [消息推送插件](#push)      | 接入厂商的离线推送 & 本地在线推送       |
+| 组件名                                                       | 组件功能                              |
+| ------------------------------------------------------------ | ------------------------------------- |
+| [TIMUIKitConversation](#TIMUIKitConversation)                | 会话列表组件                          |
+| [TIMUIKitChat](#TIMUIKitChat)                                | 核心聊天组件                          |
+| [TIMUIKitAddFriend](#add) / [TIMUIKitAddGroup](#add)         | 添加好友 及 添加群组 组件             |
+| [TIMUIKitBlackList](#contacts) / [TIMUIKitNewContact](#contacts) | 黑名单列表 及 新的联系人申请列表 组件 |
+| [TIMUIKitContact](#contacts) / [TIMUIKitGroup](#contacts)    | 好友列表 及 群组列表 组件             |
+| [TIMUIKitProfile](#TIMUIKitProfile) / [TIMUIKitGroupProfile](#TIMUIKitGroupProfile) | 用户信息 及 群组信息 组件             |
+| [TIMUIKitSearch / TIMUIKitSearchMsgDetail](#search)          | 全局搜索/会话内搜索组件               |
+| [音视频通话插件](#calling)                                   | 单聊or群聊 的 语音通话&视频通话       |
+| [消息推送插件](#push)                                        | 接入厂商的离线推送 & 本地在线推送     |
 
 界面效果如下图所示：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/b3d5bba6d133d3a0f3a4fa7534037f01.png" style="zoom:50%;"/>
@@ -202,8 +202,6 @@ TIMUIKitSearchMsgDetail 为会话内聊天历史记录搜索。
 
 ### 音视频通话 重点功能介绍[](id:calling)
 
-[TUICalling插件](https://www.tencentcloud.com/document/product/1047/50023) 主要负责语音、视频通话。
-单聊语音通话示意图：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/1ee168e84c31bcac54e1d5ffb98b4491.png" style="zoom:40%;"/>
 单聊视频通话示意图：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/e4a376e5d6895059214ccc7412cc6be2.jpg" style="zoom:60%;"/>
@@ -231,4 +229,3 @@ TIMUIKitSearchMsgDetail 为会话内聊天历史记录搜索。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/9634f4ffa77a91c8c95c73091abb38ae.png" style="zoom:40%;"/>
 
 [](id:feedback)
-

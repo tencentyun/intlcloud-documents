@@ -18,21 +18,21 @@
 
 >? 以下 API 若无特殊说明，均可自动兼容 Android/iOS 平台及支持厂商，插件内部进行平台及厂商判断，您直接调用即可。
 
-| API | 说明 |
-|---------|---------|
-| 构造函数（TimUiKitPushPlugin） | 实例化一个 Push 插件对象，并确定是否使用 Google Service FCM |
-| init | 初始化插件，绑定点击通知回调事件及传入厂商渠道信息 |
-| uploadToken | 自动获取设备 Token 及证书 ID，自动上传至腾讯云 IM 服务端 |
-| requireNotificationPermission | 申请推送权限 |
-| setBadgeNum | 设置未读数角标 （仅支持部分 Android 设备，可参见 API 代码参数说明） |
-| clearAllNotification | 清除通知栏内，当前应用，所有的通知 |
-| getDevicePushConfig | 获取当前厂商的推送相关信息，含机型/证书 ID/Token |
-| getDevicePushToken | 获取当前厂商的推送 Token |
-| getOtherPushType | 获取厂商信息 |
-| getBuzId | 获取当前厂商对应的腾讯云控制台上注册的证书 ID |
-| createNotificationChannel | 为Android机型创建通知Channel渠道，[详见Google官方文档](https://developer.android.com/training/notify-user/channels) |
-| clearAllNotification | 清除通知栏内，当前应用，所有的通知 |
-| displayNotification | 在客户端本地，手动创建一条消息通知 |
+| API                                  | 说明                                                         |
+| ------------------------------------ | ------------------------------------------------------------ |
+| 构造函数（TimUiKitPushPlugin）       | 实例化一个 Push 插件对象，并确定是否使用 Google Service FCM  |
+| init                                 | 初始化插件，绑定点击通知回调事件及传入厂商渠道信息           |
+| uploadToken                          | 自动获取设备 Token 及证书 ID，自动上传至腾讯云 IM 服务端     |
+| requireNotificationPermission        | 申请推送权限                                                 |
+| setBadgeNum                          | 设置未读数角标 （仅支持部分 Android 设备，可参见 API 代码参数说明） |
+| clearAllNotification                 | 清除通知栏内，当前应用，所有的通知                           |
+| getDevicePushConfig                  | 获取当前厂商的推送相关信息，含机型/证书 ID/Token             |
+| getDevicePushToken                   | 获取当前厂商的推送 Token                                     |
+| getOtherPushType                     | 获取厂商信息                                                 |
+| getBuzId                             | 获取当前厂商对应的腾讯云控制台上注册的证书 ID                |
+| createNotificationChannel            | 为Android机型创建通知Channel渠道，[详见Google官方文档](https://developer.android.com/training/notify-user/channels) |
+| clearAllNotification                 | 清除通知栏内，当前应用，所有的通知                           |
+| displayNotification                  | 在客户端本地，手动创建一条消息通知                           |
 | displayDefaultNotificationForMessage | 在客户端本地，按照默认的规则，自动为一个 `V2TimMessage` 创建一个消息通知 |
 
 ## 接入准备（注册厂商）[](id:firstone)
@@ -138,12 +138,12 @@
 获取 SHA256 证书指纹，并在华为推送平台中配置证书指纹，**单击 <img src="https://main.qcloudimg.com/raw/f74e3aa948316533ce91f9add4a81a29.png"></img> 保存**。证书指纹获取可参见 [生成签名证书指纹](https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/Preparations#generate_finger)。
 
 > ?如果您的应用需要经过流水线编译发布，每次编译在不同的构建机上进行，可在本地创建`keystore.jks`密钥文件，得到该 keystore 的 SHA256 值，填入华为推送平台中。
-> 
->  在流水线的构建脚本中，对完成构建后的产物进行归档对齐，及使用刚才的 keystore 签名。此时该最终产物签名 SHA256 值即可保持一致。代码如下：
->  ```shell
->  zipalign -v -p 4 构建生成的apk.apk 打包生成的apk_aligned.apk 
->  apksigner sign --ks keystore.jks --ks-pass pass:您创建的keystore密码 --out 最终签名  完成的apk.apk 打包生成的apk_aligned.apk
->  ```
+>
+> 在流水线的构建脚本中，对完成构建后的产物进行归档对齐，及使用刚才的 keystore 签名。此时该最终产物签名 SHA256 值即可保持一致。代码如下：
+> ```shell
+> zipalign -v -p 4 构建生成的apk.apk 打包生成的apk_aligned.apk 
+> apksigner sign --ks keystore.jks --ks-pass pass:您创建的keystore密码 --out 最终签名  完成的apk.apk 打包生成的apk_aligned.apk
+> ```
 
 ##### 获取华为推送配置文件
 
@@ -581,7 +581,7 @@ TIMUIKitChat(
 
 >?在后台跳转情况下，此时 Flutter 首页可能已经 unmounted，无法为跳转提供 context，因此建议启动时缓存一个 context，保证跳转成功。
 >
-> 建议跳转成功后，清除通知栏中其他通知消息，避免太多IM消息堆积在通知栏中。调用插件中`clearAllNotification()`方法即可。
+>建议跳转成功后，清除通知栏中其他通知消息，避免太多IM消息堆积在通知栏中。调用插件中`clearAllNotification()`方法即可。
 
 ```Dart
 BuildContext? _cachedContext;
@@ -748,7 +748,7 @@ TIMUIKitChat(
 - 华为：将推送消息分为服务与通讯类和资讯营销类，推送效果和策略不同。另外，消息分类还和自分类权益有关：
   - 无自分类权益，推送消息厂商还会进行二次智能分类 。
   - 有申请自分类权益，消息分类会按照自定义的分类进行推送。
-具体请参见 [厂商描述](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835)。
+  具体请参见 [厂商描述](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835)。
 
 - vivo：将推送消息分为系统消息类和运营消息类，推送效果和策略不同。系统消息类型还会进行厂商的智能分类二次修正，若智能分类识别出不是系统消息，会自动修正为运营消息，如果误判可邮件申请反馈。另外，消息推送也受日推总数量限制，日推送量由应用在厂商订阅数统计决定。
 具体请参见 [厂商描述1](https://dev.vivo.com.cn/documentCenter/doc/359) 或 [厂商描述2](https://dev.vivo.com.cn/documentCenter/doc/156)。
@@ -932,7 +932,7 @@ cPush.displayDefaultNotificationForMessage(
 
 >? 在后台跳转情况下，此时 Flutter 首页可能已经 unmounted，无法为跳转提供 context，因此建议启动时缓存一个 context，保证跳转成功。
 >
-> 建议跳转成功后，清除通知栏中其他通知消息，避免太多 IM 消息堆积在通知栏中。调用插件中`clearAllNotification()`方法即可。
+>建议跳转成功后，清除通知栏中其他通知消息，避免太多 IM 消息堆积在通知栏中。调用插件中`clearAllNotification()`方法即可。
 
 ```Dart
 BuildContext? _cachedContext;
@@ -982,5 +982,3 @@ void onClickNotification(Map<String, dynamic> msg) async {
 如果您自定义了 `ext` 结构，则需自实现点击跳转函数。
 
 此时，您已完成在线推送的接入。测试通过后，你可以在 `onRecvNewMessage` 内定义，触发推送通知的时机及场景。
-
-

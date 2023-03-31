@@ -1,60 +1,12 @@
 TUIKit 默认实现了文本、图片、语音、视频、文件等基本消息类型的发送和展示，如果这些消息类型满足不了您的需求，您可以新增自定义消息类型。
 
-## 基本消息类型
-<table>
-     <tr>
-         <th width="20%" style="text-align:center">消息类型</th>  
-         <th style="text-align:center">显示效果图</th>  
-     </tr>
-     <tr>      
-         <td style="text-align:center">文本类消息</td>   
-     <td style="text-align:center"><img src="https://qcloudimg.tencent-cloud.cn/raw/9cb4ed8a616242ef1af2c95deede7d41.png" width="320"/></td>   
-     </tr> 
-     <tr>      
-         <td style="text-align:center">图片类消息</td>   
-     <td style="text-align:center"><img src="https://qcloudimg.tencent-cloud.cn/raw/f55d26506d6d5a00e0155a682d55379b.png" width="320"/></td>   
-     </tr> 
-     <tr>      
-         <td style="text-align:center">语音类消息</td>   
-     <td style="text-align:center"><img src="https://qcloudimg.tencent-cloud.cn/raw/c391f8425e3274abc13ef22e7ab1b0bf.png" width="320"/></td>   
-     </tr> 
-     <tr>      
-         <td style="text-align:center">视频类消息</td>   
-     <td style="text-align:center"><img src="https://qcloudimg.tencent-cloud.cn/raw/5778254c16b8bbe925e1c5f2a72c22ea.png" width="320"/></td>   
-     </tr> 
-     <tr>      
-         <td style="text-align:center">文件类消息</td>   
-     <td style="text-align:center"><img src="https://qcloudimg.tencent-cloud.cn/raw/3b2bfdd4135840a07359c08b4c10aaea.png" width="320"/></td>   
-     </tr> 
-</table>
 
 ## 自定义消息
 如果基本消息类型不能满足您的需求，您可以根据实际业务需求自定义消息。
-TUIKit 中内置了几种自定义消息样式，如下图所示：
-<table>
-     <tr>
-         <th width="20%" style="text-align:center">自定义消息预设样式</th>  
-         <th style="text-align:center">显示效果图</th>  
-     </tr>
-     <tr>      
-         <td style="text-align:center">超文本类消息</td>   
-     <td style="text-align:center"><img src="https://qcloudimg.tencent-cloud.cn/raw/ba0942914ab685b2f787c2eb9562a071.png" width="320"/></td>   
-     </tr> 
-     <tr>      
-         <td style="text-align:center">评价类消息</td>   
-     <td style="text-align:center"><img src="https://qcloudimg.tencent-cloud.cn/raw/7a48e2fcc4b8480f7c41ff2bfbdf47a5.png" width="320"/></td>   
-     </tr> 
-     <tr>      
-         <td style="text-align:center">订单类消息</td>   
-     <td style="text-align:center"><img src="https://qcloudimg.tencent-cloud.cn/raw/2ab2d710f7b5d1fe94099942992678c6.png" width="320"/></td>   
-     </tr> 
-</table>
 下文以发送一条可跳转至浏览器的超文本作为自定义消息为例，帮助您快速了解实现流程。
 
 
 ## 展示自定义消息
-TUIKit 内置的自定义消息 cell 元素如下图所示：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/d199be3f5a4ff5693d4f80b62afb262f.png" width = "500"/>
 自定义类消息和其他普通类型消息接收方式一致，所有类型消息都通过监听`TIM.EVENT.MESSAGE_RECEIVED`事件来获取。
 收到的自定义消息根据相应的具体类型字段以不同的形式展示在消息列表中 。
 下面我们讲解下如何展示自定义消息。
@@ -97,4 +49,3 @@ const custom = {
 sendCustomMessage(custom);// 调用 sendCustomMessage 方法发送自定义消息
 :::
 </dx-codeblock>
-

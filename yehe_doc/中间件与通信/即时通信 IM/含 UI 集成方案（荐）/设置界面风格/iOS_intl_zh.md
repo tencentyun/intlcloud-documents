@@ -3,7 +3,7 @@
 ## 设置头像的样式
 
 ### 设置缺省的头像图片
-TUIKit 的界面在显示用户时，会从用户资料中读取头像地址并显示。如果用户没有设置头像，则显示默认头像。
+TUIKit 的界面在显示用户时，会从用户资料中读取头像地址并显示。如果用户没有设置头像，则显示默认头像。
 您可以在 TUIKit 初始化前，自定义默认头像的图片，示例代码如下：
 ```objectivec
 TUIConfig *config = [TUIConfig defaultConfig]; 
@@ -16,7 +16,7 @@ config.enableGroupGridAvatar = NO;
 ```
 
 >? 群组头像默认展示九宫格头像。九宫格头像是 TUIKit 使用群成员的头像合成的，如果九宫格合成失败或群组里只有一个成员，TUIKit 会展示 `defaultGroupAvatarImage`。
-> 如果您不想使用九宫格头像，可以禁用九宫格头像。
+>如果您不想使用九宫格头像，可以禁用九宫格头像。
 
 ### 设置头像的形状
 TUIKit 提供 3 种头像类型：矩形直角头像、圆形头像和矩形圆角头像。
@@ -36,29 +36,7 @@ config.avatarType = TAvatarTypeRadiusCorner;
 config.avatarCornerRadius = 5.f;
 ```
 
-圆形头像效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">会话列表页</th>
-    <th style="text-align:center;" width="300px">消息页</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/c03049d9f8e4df5f78d8f0d26f629e11.jpg"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/20ad8d1dc817e7d2f7f8d50ce5b602e6.jpg" />     </td>
-	 </tr>
-</table>
 
-矩形圆角头像效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">会话列表页</th>
-    <th style="text-align:center;" width="300px">消息页</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/087a637bc8a8f0d6da4d3254b53fc6d8.jpg"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/4774c0c89b66d6b3d370271f98865e07.jpg" />     </td>
-	 </tr>
-</table>
 
 ## 设置聊天窗口的样式
 
@@ -67,34 +45,13 @@ config.avatarCornerRadius = 5.f;
 ```objectivec
 [TUIChatConfig defaultConfig].backgroudColor = [UIColor greenColor];
 ```
-设置不同的聊天窗口背景色效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认颜色</th>
-    <th style="text-align:center;" width="300px">自定义颜色</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/05bbfe937a5761c64155a3770a715470.jpg"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/4625f25ed5b2994517f698524b2bf905.jpg" />     </td>
-	 </tr>
-</table>
+
 
 ### 设置聊天窗口的背景图片
 您可以在初始化聊天窗口前，自定义窗口背景图片，示例代码如下：
 ```objectivec
 [TUIChatConfig defaultConfig].backgroudImage = [UIImage imageNamed:@"your chat background image"];
 ```
-设置聊天窗口背景图片效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认背景</th>
-    <th style="text-align:center;" width="300px">自定义背景图片</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/05bbfe937a5761c64155a3770a715470.jpg"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/69339461044cccfc4c51b6663032b245.jpg" />     </td>
-	 </tr>
-</table>
 
 
 
@@ -113,17 +70,7 @@ config.avatarCornerRadius = 5.f;
 [TUITextMessageCellData setIncommingTextFont:[UIFont systemFontOfSize:20]];
 [TUITextMessageCellData setIncommingTextColor:[UIColor purpleColor]];
 ```
-设置消息字体和颜色效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认字体和颜色</th>
-    <th style="text-align:center;" width="300px">自定义字体和颜色</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/b34575d82aab9fb6e9a2f11732b2e55f.jpg"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/15865f75a5bf49f3aa298272439c52c5.jpg" />     </td>
-	 </tr>
-</table>
+
 
 
 ### 设置气泡的背景图片
@@ -137,20 +84,10 @@ config.avatarCornerRadius = 5.f;
 [TUIBubbleMessageCellData setIncommingBubble:[UIImage imageNamed:@"incoming_bubble"]];
 [TUIBubbleMessageCellData setIncommingHighlightedBubble:[UIImage imageNamed:@"incoming_bubble_highlighted"]];
 ```
-设置气泡背景图片效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认图片</th>
-    <th style="text-align:center;" width="300px">自定义图片</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/970feb804e27d62b0d0605716f04b5cf.jpg"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/06208b5236c7574a10a48d5ac3c924ae.jpg" />     </td>
-	 </tr>
-</table>
+
 
 ###  设置气泡的边距
-在 TUIKit 中，文字和声音都会用气泡显示，TUIMessageCellLayout 提供了类方法设置 bubbleInsets。
+在 TUIKit 中，文字和声音都会用气泡显示，TUIMessageCellLayout 提供了类方法设置 bubbleInsets。
 您可以在初始化聊天窗口前，自定义气泡边距，示例代码如下：
 ```objectivec
 // 设置发送消息的气泡边距
@@ -159,17 +96,6 @@ config.avatarCornerRadius = 5.f;
 [TUIMessageCellLayout incommingTextMessageLayout].bubbleInsets = UIEdgeInsetsMake(20, 20, 24, 24);
 ```
 
-设置气泡边距效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认边距</th>
-    <th style="text-align:center;" width="300px">扩大边距</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/b34575d82aab9fb6e9a2f11732b2e55f.jpg"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/c84497cd77803883aa652c53eab91ca9.jpg" />     </td>
-	 </tr>
-</table>
 
 
 ### 设置发送者的头像样式
@@ -186,17 +112,7 @@ config.avatarCornerRadius = 5.f;
 
 > ! 其他消息类型请获取对应的 layout 实例设置头像的大小和位置。
 
-设置发送者头像效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认头像 insets</th>
-    <th style="text-align:center;" width="300px">自定义头像 insets</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/c71fb217070342316289c6a41ec41b9a.jpg"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/2cbef1dd982d5fc07486d75d2c5bb847.jpg" />     </td>
-	 </tr>
-</table>
+
 
 ### 设置消息的昵称样式
 修改 TUIMessageCellLayout 的相关属性，可设置消息的发送方昵称字体和颜色。
@@ -209,17 +125,3 @@ config.avatarCornerRadius = 5.f;
 [TUIMessageCellData setOutgoingNameFont:[UIFont systemFontOfSize:20]];
 [TUIMessageCellData setOutgoingNameColor:[UIColor purpleColor]];
 ```
-
-设置消息的昵称样式效果图如下所示：
-<table style="text-align:center;vertical-align:middle;width: 600px">
-  <tr>
-    <th style="text-align:center;" width="300px">默认样式</th>
-    <th style="text-align:center;" width="300px">自定义样式</th>
-  </tr>
-  <tr>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/91badb4d77b9cbe243148735e1d86f2d.jpg"  />    </td>
-    <td><img style="width:300px" src="https://qcloudimg.tencent-cloud.cn/raw/54a86c9e41b285c43adcbf1b9c455f0e.jpg" />     </td>
-	 </tr>
-</table>
-
-

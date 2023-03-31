@@ -1,13 +1,12 @@
-
 This document describes how to introduce emoji capabilities to Tencent Cloud Chat Flutter TUIKit.
 
 The `TIMUIKitChat` component supports sending and receiving emojis of the following three types:
 
-| Emoji Type | Sending Mode | Mix-Up with Text | Sending Content | Parsing Mode | Introduction Method | Embedded in TUIKit |
-|---------|---------|---------|---------|---------|---------|---------|
-| [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) emoji | Text message | Yes | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) | The device automatically parses [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) characters into emojis. The parsing result of the same [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) characters may vary with devices. | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) List | A set of [default Unicode emoji list](#unicode) is provided. |
-| Small image | Text message | Yes | Image name | The image is automatically matched against the local image assets by name. | Images are stored as assets, and are defined in `List`. | A QQ small emoji gallery is provided, which can be used directly. |
-| Large image | Text message | No | `baseURL` plus the image file name, which form the path of the emoji image asset | The asset resources are parsed based on the path. | Images are stored as assets, and are defined in `List`. | - |
+| Emoji Type                                                   | Sending Mode | Mix-Up with Text | Sending Content                                              | Parsing Mode                                                 | Introduction Method                                          | Embedded in TUIKit                                           |
+| ------------------------------------------------------------ | ------------ | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) emoji | Text message | Yes              | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) | The device automatically parses [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) characters into emojis. The parsing result of the same [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) characters may vary with devices. | [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) List | A set of [default Unicode emoji list](#unicode) is provided. |
+| Small image                                                  | Text message | Yes              | Image name                                                   | The image is automatically matched against the local image assets by name. | Images are stored as assets, and are defined in `List`.      | A QQ small emoji gallery is provided, which can be used directly. |
+| Large image                                                  | Text message | No               | `baseURL` plus the image file name, which form the path of the emoji image asset | The asset resources are parsed based on the path.            | Images are stored as assets, and are defined in `List`.      | -                                                            |
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/023c3c716b481401c8da763e66ba08d1.png)
 
@@ -18,8 +17,8 @@ Take the following steps to manually introduce emoji capabilities to TUIKit.
 ## Step 1. Customize Emoji Image Resources
 
 >? **This step is optional.**
-> You need to perform this step only when you need to use emojis other than the QQ emojis provided by default, for example, to use custom small and large image emojis.
-> The QQ emojis are embedded in TUIKit and are provided by default. Therefore, you do not need to import them in this step.
+>You need to perform this step only when you need to use emojis other than the QQ emojis provided by default, for example, to use custom small and large image emojis.
+>The QQ emojis are embedded in TUIKit and are provided by default. Therefore, you do not need to import them in this step.
 
 ### Importing resource files to a project
 
@@ -94,7 +93,7 @@ static final List<CustomEmojiFaceData> emojiList = [
 ## Step 2. Customize the Emoji Unicode Character String List
 
 >? **This step is optional.**
-> You need to perform this step only when you need to use [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) emojis.
+>You need to perform this step only when you need to use [Unicode](https://unicode.org/emoji/charts/full-emoji-list.html) emojis.
 
 In the code that defines the static parameters or configuration, define a `List<Map<String, Object>>` Unicode list for pass-through.
 
@@ -105,8 +104,8 @@ You can copy the sample code to introduce the list or modify the code to introdu
 ## Step 3. Save Emoji Resources to the Memory
 
 >?
-> For the sample code, click [here](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/pages/app.dart), and see the `setCustomSticker` section.
-> The QQ emojis are embedded in TUIKit and are provided by default. Therefore, you do not need to import them in this step.
+>For the sample code, click [here](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/pages/app.dart), and see the `setCustomSticker` section.
+>The QQ emojis are embedded in TUIKit and are provided by default. Therefore, you do not need to import them in this step.
 
 After your project starts and before the first `TIMUIKitChat` component is rendered, convert the emoji resource list defined the previous step into TUIKit emoji instances, and place the instances in the global provider so that the instances are saved in the memory.
 
@@ -183,7 +182,7 @@ setCustomSticker() async {
 ## Step 4. Add Emoji Parsing Capabilities to the TIMUIKitChat Component
 
 >?
-> For the sample code in this step, click [here](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/chat.dart) and see the `renderCustomStickerPanel`, `customStickerPanel`, and `customEmojiList` sections.
+>For the sample code in this step, click [here](https://github.com/TencentCloud/chat-demo-flutter/blob/main/lib/src/chat.dart) and see the `renderCustomStickerPanel`, `customStickerPanel`, and `customEmojiList` sections.
 
 Copy the following code to the class that hosts the `TIMUIKitChat` component.
 
@@ -236,8 +235,8 @@ Widget renderCustomStickerPanel({
 ### Step 4.1. Render small image emojis
 
 >? **This step is optional.**
-> - You need to perform this step only when you need to use small image emojis, including custom small image emojis and QQ small emojis that are provided by default.
-> - The display form of small image emojis is similar to that of Unicode emojis. We recommend that you use either Unicode emojis or small image emojis. Therefore, if you have chosen Unicode emojis, you can skip this step.
+>- You need to perform this step only when you need to use small image emojis, including custom small image emojis and QQ small emojis that are provided by default.
+>- The display form of small image emojis is similar to that of Unicode emojis. We recommend that you use either Unicode emojis or small image emojis. Therefore, if you have chosen Unicode emojis, you can skip this step.
 
 - Perform Step 4.1 (a) to enable custom small image emojis.
 - Perform Step 4.1 (b) to enable QQ small emojis that are provided by default.
@@ -444,4 +443,3 @@ List<Map<String, Object>> emojiData = [
 ```
 
 [](id:contact)
-

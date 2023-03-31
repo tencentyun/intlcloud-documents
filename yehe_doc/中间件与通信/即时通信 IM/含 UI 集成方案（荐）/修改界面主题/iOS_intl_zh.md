@@ -4,21 +4,6 @@
 
 TUI 组件默认内置了：轻量、深沉、活泼、深色共四套主题，以及支持跟随 iOS 系统自动切换深色主题和默认设置。您可以任意切换或者修改内置主题，也可以按需新增主题。
 
-<table style="text-align:center;vertical-align:middle;width:1000px">
-  <tr>
-    <th style="text-align:center;" width="500px">轻量 light<br></th>
-    <th style="text-align:center;" width="500px">深沉 serious<br></th>
-    <th style="text-align:center;" width="500px">活泼 lively<br></th>
-    <th style="text-align:center;" width="500px">深色 dark<br></th>
-  </tr>
-  <tr>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/454e9371db4870d57e65f63f5d3bf881.png"  />    </td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/64ffe55d52dcfbfa573a3113f3d546ed.png" />     </td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/1ba8984dedb2509448e409737ed6a0d9.png"  />    </td>
-    <td><img style="width:500px" src="https://qcloudimg.tencent-cloud.cn/raw/2c0e10be9e748f3d8094e23b76487fbb.png" />     </td>
-	 </tr>
-</table>
-
 
 [](id:resource)
 
@@ -425,5 +410,3 @@ Contact 页面样式均存在于 `TUIContact` 组件中，供 Contact 页面使�
 
 
 [](id:feedback)
-
-

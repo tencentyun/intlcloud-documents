@@ -5,8 +5,7 @@ Local search is implemented in the TUISearch component of TUIKit. It allows user
 
 ## Feature Demonstration
 The search API UI consists of three parts: the first part is for friend search, the second part is for group and group member search, and the third part is for message search, where messages are classified by conversation.
-[Download and try out the application demo](https://intl.cloud.tencent.com/document/product/1047/34279).
-![](https://im.sdk.qcloud.com/tools/resource/search.gif)
+
 
 ## Integration Guide
 The following introduces how to integrate the TUISearch component.
@@ -56,5 +55,3 @@ For a file message, the filename is usually displayed on the UI. Therefore, you 
 For an image, audio, or video message, the thumbnail or duration is usually displayed on the UI. In this case, you can specify the message type for search but cannot specify keywords for search.
 
 [](id:feedback)
-
-

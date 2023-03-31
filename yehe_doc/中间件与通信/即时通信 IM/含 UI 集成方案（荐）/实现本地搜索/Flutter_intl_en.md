@@ -4,10 +4,10 @@ Local search is implemented in TUIKit. It allows users to quickly find the expec
 
 ## Feature Demonstration
 
-| Component               | Description           |
-| ----------------------- | --------------------- |
-| TIMUIKitSearch       | Global search.           |
-| TIMUIKitSearchMsgDetail  | In-conversation search, including searches in one-to-one chats and group chats.           |
+| Component               | Description                                                  |
+| ----------------------- | ------------------------------------------------------------ |
+| TIMUIKitSearch          | Global search.                                               |
+| TIMUIKitSearchMsgDetail | In-conversation search, including searches in one-to-one chats and group chats. |
 
 The global search UI consists of three parts: the first part is for friend search, the second part is for group and group member search, and the third part is for message search, where messages are classified by conversation.
 

@@ -146,4 +146,3 @@ The offline push effect is as shown below:
 <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/CFL3713_TUIofflinepush.png" style="zoom:90%;"/>
 
 [](id:feedback)
-

@@ -72,13 +72,13 @@ You can click such a notification to redirect to the call UI.
 
 ## Version Description
 
-| Version                | Library/Component Name | Description                                                         |
-| :------------------ | ----------- | ------------------------------------------------------------ |
-| 4.8.50 - 5.1.60     | TUIKit      | TUIKit is integrated with the TRTC UI components and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) audio/video library by default. |
-| 5.4.666 - 5.6.1200  | TUIKitLive  | TUIKit is no longer integrated with the TRTC UI components and TRTC audio/video library by default.  <br/>Related audio/video logic is moved to the TUIKitLive component. |
-| 5.7.1435 - 6.0.1992 | TUICalling  | TUICalling includes all audio/video call UI components and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) audio/video library. <br/>TUICalling can be freely combined with other components of [TUIKit](https://intl.cloud.tencent.com/document/product/1047/34547). |
-| 6.1.2155 - 6.5.2803 | TUICalling  | The foreground/background switch experience of TUICalling is optimized.                                |
-| 6.5.2816 or above     | TUICallKit  | The audio/video call component is upgraded and provides more powerful features.                           |
+| Version             | Library/Component Name | Description                                                  |
+| :------------------ | ---------------------- | ------------------------------------------------------------ |
+| 4.8.50 - 5.1.60     | TUIKit                 | TUIKit is integrated with the TRTC UI components and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) audio/video library by default. |
+| 5.4.666 - 5.6.1200  | TUIKitLive             | TUIKit is no longer integrated with the TRTC UI components and TRTC audio/video library by default.  <br/>Related audio/video logic is moved to the TUIKitLive component. |
+| 5.7.1435 - 6.0.1992 | TUICalling             | TUICalling includes all audio/video call UI components and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) audio/video library. <br/>TUICalling can be freely combined with other components of [TUIKit](https://intl.cloud.tencent.com/document/product/1047/34547). |
+| 6.1.2155 - 6.5.2803 | TUICalling             | The foreground/background switch experience of TUICalling is optimized. |
+| 6.5.2816 or above   | TUICallKit             | The audio/video call component is upgraded and provides more powerful features. |
 
 [](id:qa)
 
@@ -92,7 +92,7 @@ The error message indicates that your app's **audio/video call capability packag
 
 #### How do I purchase a package?
 
-The audio/video call SDK **is currently in beta, with a 60-day free edition provided**. The official paid edition is expected to be released in December 2022. Please stay tuned.
+The audio/video call SDK **is currently in beta, with a 60-day free edition provided**. 
 
 #### Will the call UI be displayed if the invitee goes offline and then online within the call invitation timeout duration?
 
@@ -140,4 +140,3 @@ Note that different vendors or even different Android versions from the same ven
 You only need to replace the source code of the IM-related components. TUICalling and TUICallKit can interconnect with each other, and you are advised to upgrade to the latest TUICallKit.
 
 [](id:feedback)
-
