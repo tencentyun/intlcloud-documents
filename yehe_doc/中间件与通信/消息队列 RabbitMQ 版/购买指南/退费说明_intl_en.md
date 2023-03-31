@@ -1,19 +1,3 @@
-## 5-Day Unconditional Return
-
-### Refund policy
-
-- Each account can return **one** instance unconditionally within five (inclusive) days after purchase. The refund amount is **all the amount paid for purchase**, including cash, commission, and free credit amounts.
-- Tencent Cloud has the right to reject any suspected abnormal or malicious application for return.
-
-### Refund amount and method
-
-Vouchers used for purchase are not refundable. Non-voucher payments will be proportionally refunded to the payer's Tencent Cloud account in accordance with the original payment method (cash or free credit) and percentage.
-
-
-## Partial Refund
-
-For prepaid Tencent Cloud products **not eligible for the 5-day unconditional full refund**, the refund policy is as follows:
-
 ### Refund policy
 
 - Unit prices and discounts are subject to the current system offers.
