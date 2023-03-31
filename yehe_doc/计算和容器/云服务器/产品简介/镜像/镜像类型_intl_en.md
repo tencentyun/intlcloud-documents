@@ -10,7 +10,7 @@ Tencent Cloud provides three types of images, namely public images, custom image
 
 Features:
  - **Operating system:** you can select a preferred operating system, such as Linux or Windows. Operating systems are updated regularly.
- - **Software:** public images are integrated with software packages (such as APIs) provided by Tencent Cloud, and support multiple versions of software with full permissions, such as Java, MySQL, SQL Server, Python, Ruby, and Tomcat.
+ - **Software:** public images are integrated with software packages provided by Tencent Cloud, and support multiple versions of software with full permissions, such as Java, MySQL, SQL Server, Python, Ruby, and Tomcat.
  - **Security:** all provided operating systems are licensed. All images are created by Tencent Cloud’s security and OPS team, and are strictly tested. The Tencent Cloud security components are also available.
  - **Limit:** none.
  - **Fees:** all public images are free of charge, except for Windows images in certain regions outside the Chinese mainland where a license fee may be charged.
