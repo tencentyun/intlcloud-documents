@@ -2,7 +2,7 @@ The Direct Connect console provides a tunnel tool that sends a detection packet 
 
 ## Preparation
 - To enable the Ping feature in a 2.0 dedicated tunnel, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-- The dedicated tunnel should be a 2.0 tunnel, which can be checked on the [Basic Information](https://console.cloud.tencent.com/dc/conn/detail?id=dcx-6lmo2guk) page.
+- The dedicated tunnel should be a 2.0 tunnel, which can be checked on the **Basic Information** page.
 
 ## Directions
 1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/vpc/dcConn) and click *Dedicated Tunnels** on the left sidebar to access the **Dedicated Tunnels** page.
