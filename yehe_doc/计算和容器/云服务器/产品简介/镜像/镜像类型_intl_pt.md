@@ -10,7 +10,7 @@ As **imagens públicas** são imagens fornecidas pelo Tencent Cloud. Cada imagem
 
 Funcionalidades:
  - **Sistema operacional:** você pode escolher um sistema operacional de preferência, como o Linux ou o Windows. Os sistemas operacionais são atualizados regularmente.
- - **Software:** as imagens públicas são integradas com pacotes de software (como APIs) fornecidos pelo Tencent Cloud e aceitam várias versões de software com todas as permissões, como Java, MySQL, SQL Server, Python, Ruby e Tomcat.
+ - **Software:** as imagens públicas são integradas com pacotes de software fornecidos pelo Tencent Cloud e aceitam várias versões de software com todas as permissões, como Java, MySQL, SQL Server, Python, Ruby e Tomcat.
  - **Segurança:** todos os sistemas operacionais fornecidos são licenciados. Todas as imagens são criadas pela equipe de segurança e de operações do Tencent Cloud, e são rigorosamente testadas. Os componentes de segurança do Tencent Cloud também estão disponíveis.
  - **Limite:** nenhum.
  - **Taxas:** todas as imagens públicas são gratuitas, exceto as imagens do Windows em algumas regiões fora da China continental, em que uma taxa de licença pode ser cobrada.
