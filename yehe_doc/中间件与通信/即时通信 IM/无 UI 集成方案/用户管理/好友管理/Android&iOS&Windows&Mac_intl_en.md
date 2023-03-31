@@ -388,12 +388,12 @@ Call the `getFriendsInfo` API ([Android](https://im.sdk.qcloud.com/doc/en/classc
 
 The relationship between the user and the friend can be obtained through the `relation` field of the `V2TIMFriendInfoResult` in the callback:
 
-| `V2TIMFriendInfoResult`.`relation` | Relationship |
-| --- | --- |
-| `V2TIM_FRIEND_RELATION_TYPE_NONE` | Non-friend user | 
-| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY` | Two-way friend | 
-| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST` | User in your contacts | 
-| `V2TIM_FRIEND_RELATION_TYPE_IN_OTHER_FRIEND_LIST` | User who has you on their contacts | 
+| `V2TIMFriendInfoResult`.`relation`                | Relationship                       |
+| ------------------------------------------------- | ---------------------------------- |
+| `V2TIM_FRIEND_RELATION_TYPE_NONE`                 | Non-friend user                    |
+| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY`             | Two-way friend                     |
+| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST`    | User in your contacts              |
+| `V2TIM_FRIEND_RELATION_TYPE_IN_OTHER_FRIEND_LIST` | User who has you on their contacts |
 
 > ? When the profile of a friend is updated, the backend proactively sends a system notification to the SDK so that the friend's profile will be updated in real time.
 
@@ -576,4 +576,3 @@ V2TIMManager::GetInstance()->GetFriendshipManager()->SetFriendInfo(info, callbac
 In customer service scenarios where having to friend a customer service agent before chatting is inefficient, the IM SDK does not check the relationship when one-to-one messages are sent by default.
 If you want to implement the interaction mode of "friending before chatting" as in WeChat and QQ, go to the [IM console](https://console.cloud.tencent.com/im) and enable **Check Relationship for One-to-One Messages**. With this feature enabled, users can only send messages to friends and will receive the 20009 error code from SDK when sending a message to a non-friend user. For the configuration page path, see the figure below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/9d140d6fb21721cea1c6fa16848bdd39.png" alt="" style="zoom:90%;" />
-

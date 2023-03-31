@@ -125,7 +125,3 @@ TIMResult res = TencentIMSDK.FriendshipModifyFriendGroup(param, (int code, strin
  // Process the async logic
 });
 ```
-
-
-
-

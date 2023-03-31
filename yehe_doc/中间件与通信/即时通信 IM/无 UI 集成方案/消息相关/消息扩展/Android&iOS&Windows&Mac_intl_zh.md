@@ -7,10 +7,10 @@
 - 在问卷调查场景，我们可以先通过 `createCustomMessage` 接口创建一条用于问卷调查的自定义消息，其中 `data` 存储问卷调查的标题和选项，然后用消息扩展 key 存储问卷调查的用户 ID，用消息扩展 value 存储问卷调查信息。
 
 > ?
->- 该功能仅对旗舰版客户开放，购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 后可使用。
->- 该功能仅增强版 6.7 及以上版本支持。
->- 该功能需要先在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) > 功能配置 > 登录与消息 > 消息扩展设置中开启。
->- 社群（Community）和直播群（AVChatRoom）消息不支持该功能。
+> - 该功能仅对旗舰版客户开放，购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 后可使用。
+> - 该功能仅增强版 6.7 及以上版本支持。
+> - 该功能需要先在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) > 功能配置 > 登录与消息 > 消息扩展设置中开启。
+> - 社群（Community）和直播群（AVChatRoom）消息不支持该功能。
 
 ### 设置消息扩展
 
@@ -394,4 +394,3 @@ V2TIMManager::GetInstance()->GetMessageManager()->AddAdvancedMsgListener(&advanc
 
 :::
 </dx-tabs>
-

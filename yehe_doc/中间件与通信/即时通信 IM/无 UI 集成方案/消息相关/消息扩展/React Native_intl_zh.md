@@ -1,4 +1,3 @@
-
 ## 功能描述
 消息扩展可以为消息增加 key/value 状态标识。基于消息扩展，我们可以实现投票、接龙、问卷调查等功能。
 - 在投票场景，我们可以先通过 `createCustomMessage` ([点击查看详情](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMMessageManager/createCustomMessage.html)) 接口创建一条用于投票的自定义消息，其中 `data` 存储投票的标题和选项，然后用消息扩展 key 存储投票用户 ID，用消息扩展 value 存储投票用户选项，有了每个用户的投票选项，我们就可以动态计算出投票选项的用户占比。
@@ -6,7 +5,7 @@
 - 在问卷调查场景，我们可以先通过 `createCustomMessage` 接口创建一条用于问卷调查的自定义消息，其中 `data` 存储问卷调查的标题和选项，然后用消息扩展 key 存储问卷调查的用户 ID，用消息扩展 value 存储问卷调查信息。
 
 > ?
-- 该功能仅对旗舰版客户开放，购买 [旗舰版](https://buy.cloud.tencent.com/avc?from=17220) 后可使用。
+- 该功能仅对旗舰版客户开放，购买旗舰版后可使用。
 - 该功能需要先在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) > 功能配置 > 登录与消息 > 消息扩展设置中开启。
 - 社群（Community）和直播群（AVChatRoom）消息不支持该功能。
 

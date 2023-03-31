@@ -21,10 +21,10 @@ tim.pinConversation(options);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationID     | String | 会话 ID。会话 ID 组成方式：<br/><li>C2C${userID}（单聊）</li><li>GROUP{groupID}（群聊）</li><li>@TIM#SYSTEM（系统通知会话）</li><li>GROUP${topicID}（话题) v2.19.1 起支持</li> |
-| isPinned           | Boolean | true 表示置顶会话，false 表示取消置顶会话 |
+| Name           | Type    | Description                                                  |
+| -------------- | ------- | ------------------------------------------------------------ |
+| conversationID | String  | 会话 ID。会话 ID 组成方式：<br/><li>C2C${userID}（单聊）</li><li>GROUP{groupID}（群聊）</li><li>@TIM#SYSTEM（系统通知会话）</li><li>GROUP${topicID}（话题) v2.19.1 起支持</li> |
+| isPinned       | Boolean | true 表示置顶会话，false 表示取消置顶会话                    |
 
 **返回值**
 

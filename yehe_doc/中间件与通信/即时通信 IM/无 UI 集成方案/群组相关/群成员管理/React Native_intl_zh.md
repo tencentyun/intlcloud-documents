@@ -186,5 +186,3 @@ groupManager.transferGroupOwner("groupID", "userID");
 ```javascript
 groupManager.getGroupOnlineMemberCount("groupID");
 ```
-
-

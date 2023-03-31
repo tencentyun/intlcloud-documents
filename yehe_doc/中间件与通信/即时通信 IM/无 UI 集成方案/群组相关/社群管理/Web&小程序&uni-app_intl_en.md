@@ -85,15 +85,15 @@ tim.createTopicInCommunity(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | Community ID of the topic |
-| topicName | String | Topic name |
-| topicID | String | A custom topic ID must be in the format of "community ID + custom topic ID", such as "@TGS#_xxx@TOPIC#_xxx". |
-| avatar | String | Topic profile photo |
-| notification | String | Topic notice |
-| introduction | String | Topic introduction |
-| customData | String | Custom topic information |
+| Name         | Type   | Description                                                  |
+| ------------ | ------ | ------------------------------------------------------------ |
+| groupID      | String | Community ID of the topic                                    |
+| topicName    | String | Topic name                                                   |
+| topicID      | String | A custom topic ID must be in the format of "community ID + custom topic ID", such as "@TGS#_xxx@TOPIC#_xxx". |
+| avatar       | String | Topic profile photo                                          |
+| notification | String | Topic notice                                                 |
+| introduction | String | Topic introduction                                           |
+| customData   | String | Custom topic information                                     |
 
 **Return values**
 
@@ -140,9 +140,9 @@ tim.deleteTopicFromCommunity(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | Community ID of the topic |
+| Name        | Type               | Description                                                  |
+| ----------- | ------------------ | ------------------------------------------------------------ |
+| groupID     | String             | Community ID of the topic                                    |
 | topicIDList | Array \| undefined | List of topic IDs. If it is not passed in, all the topics are deleted. |
 
 **Return values**
@@ -219,15 +219,15 @@ tim.updateTopicProfile(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | Community ID of the topic |
-| topicID | String | Topic ID, which is required |
-| topicName | String \| undefined | Topic name |
-| avatar | String \| undefined | Topic profile photo |
-| notification | String \| undefined | Topic notice |
-| introduction | String \| undefined | Topic introduction |
-| customData | String \| undefined | Custom topic information |
+| Name           | Type                 | Description                                                  |
+| -------------- | -------------------- | ------------------------------------------------------------ |
+| groupID        | String               | Community ID of the topic                                    |
+| topicID        | String               | Topic ID, which is required                                  |
+| topicName      | String \| undefined  | Topic name                                                   |
+| avatar         | String \| undefined  | Topic profile photo                                          |
+| notification   | String \| undefined  | Topic notice                                                 |
+| introduction   | String \| undefined  | Topic introduction                                           |
+| customData     | String \| undefined  | Custom topic information                                     |
 | muteAllMembers | Boolean \| undefined | Muting all. Valid values: `true`: mute all; `false`: unmute all. |
 
 **Return values**
@@ -278,9 +278,9 @@ tim.getTopicList(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | Community ID of the topic |
+| Name        | Type               | Description                                                  |
+| ----------- | ------------------ | ------------------------------------------------------------ |
+| groupID     | String             | Community ID of the topic                                    |
 | topicIDList | Array \| undefined | List of topic IDs. If it is not passed in, all the topics are obtained. |
 
 **Return values**
@@ -339,18 +339,18 @@ promise.then(function(imResponse) { // Got successfully
 </dx-codeblock>
 
 ### Topic group
-<img style="width:50%;" src="https://qcloudimg.tencent-cloud.cn/raw/728b38c71f25a70bcb717c3fefe29aac.png" />
+
 
 The community-**group**-topic hierarchy is implemented as follows:
-The [groupCustomField](https://web.sdk.qcloud.com/im/doc/en/Group.html) field in the community profile defines a field to store the topic group list of the community. The [customData](https://web.sdk.qcloud.com/im/doc/en/Topic.html) field in the topic profile stores the group to which each topic belongs.
+The [groupCustomField](https://web.sdk.qcloud.com/im/doc/en/Group.html) field in the community profile defines a field to store the topic group list of the community. The customData field in the topic profile stores the group to which each topic belongs.
 
 - When a community is loaded, the `groupCustomField` field for the topic group list in the community (group) profile is used to display the group list.
 - When the topic list of a community is loaded, the `customData` field in the topic profile is used to get the group name for assignment.
 
 >? 
 >
-> You can customize the `key` value of the `groupCustomField` field for the topic group list of the community (group).
-> The following sample code names it `topic_category`.
+>You can customize the `key` value of the `groupCustomField` field for the topic group list of the community (group).
+>The following sample code names it `topic_category`.
 
 #### Configuring the group list for the community
 You only need to modify the `groupCustomField` field in the group profile. The `key` value is the name of the field for the topic group list you defined.
@@ -461,4 +461,3 @@ tim.on(TIM.EVENT.TOPIC_UPDATED, onTopicUpdated);
 
 :::
 </dx-codeblock>
-

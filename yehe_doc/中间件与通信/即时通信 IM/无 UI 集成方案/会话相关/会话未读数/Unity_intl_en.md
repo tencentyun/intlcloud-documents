@@ -106,7 +106,3 @@ TencentIMSDK.SetConvEventCallback((TIMConvEvent conv_event, List<ConvInfo> conv_
  // Process the callback logic
 });
 ```
-
-
-
-

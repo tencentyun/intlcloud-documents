@@ -18,18 +18,18 @@ tim.createTextMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to                 | String |            -                    | 消息接收方的 userID 或 groupID                               |
-| conversationType   | String |             -                    | 会话类型，取值`TIM.TYPES.CONV_C2C`（端到端会话）或`TIM.TYPES.CONV_GROUP`（群组会话） |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
-| payload            | Object |            -                    | 消息内容的容器  |
-| cloudCustomData    | String |  ''                             | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | 消息接收方的 userID 或 groupID                               |
+| conversationType | String | -                             | 会话类型，取值`TIM.TYPES.CONV_C2C`（端到端会话）或`TIM.TYPES.CONV_GROUP`（群组会话） |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
+| payload          | Object | -                             | 消息内容的容器                                               |
+| cloudCustomData  | String | ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
 
 payload 的描述如下：
 
-| Name   | Type     | Description  |
-| ------ | -------- | ------------ |
+| Name | Type   | Description  |
+| ---- | ------ | ------------ |
 | text | String | 消息文本内容 |
 
 **返回值**
@@ -97,20 +97,20 @@ tim.createTextAtMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to                 | String |            -                    | 消息接收方的 userID 或 groupID                               |
-| conversationType   | String |             -                    | 会话类型，取值`TIM.TYPES.CONV_C2C`（端到端会话）或`TIM.TYPES.CONV_GROUP`（群组会话） |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
-| payload            | Object |            -                    | 消息内容的容器  |
-| cloudCustomData    | String |  ''                             | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | 消息接收方的 userID 或 groupID                               |
+| conversationType | String | -                             | 会话类型，取值`TIM.TYPES.CONV_C2C`（端到端会话）或`TIM.TYPES.CONV_GROUP`（群组会话） |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
+| payload          | Object | -                             | 消息内容的容器                                               |
+| cloudCustomData  | String | ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
 
 payload 的描述如下：
 
-| Name   | Type     | Description  |
-| ------ | -------- | ------------ |
-| text | String | 消息文本内容 |
-| atUserList | Array | 需要 @ 的用户列表，如果需要 @ALL，请传入 [TIM.TYPES.MSG_AT_ALL](https://web.sdk.qcloud.com/im/doc/en/module-TYPES.html#.MSG_AT_ALL) 。 举个例子，假设该条文本消息希望 @ 提醒 denny 和 lucy 两个用户，同时又希望 @ 所有人，atUserList 传 ['denny', 'lucy', TIM.TYPES.MSG_AT_ALL]
+| Name       | Type   | Description                                                  |
+| ---------- | ------ | ------------------------------------------------------------ |
+| text       | String | 消息文本内容                                                 |
+| atUserList | Array  | 需要 @ 的用户列表，如果需要 @ALL，请传入 [TIM.TYPES.MSG_AT_ALL](https://web.sdk.qcloud.com/im/doc/en/module-TYPES.html#.MSG_AT_ALL) 。 举个例子，假设该条文本消息希望 @ 提醒 denny 和 lucy 两个用户，同时又希望 @ 所有人，atUserList 传 ['denny', 'lucy', TIM.TYPES.MSG_AT_ALL] |
 
 **返回值**
 
@@ -173,14 +173,14 @@ tim.createImageMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下表所示：
 
-| Name               | Type       | Default                         | Description                                                |
-| ------------------ | ---------- | ------------------------------- | ---------------------------------------------------------- |
-| to                 | String     |            -                    | 消息的接收方                                               |
-| conversationType   | String     |            -                    | 会话类型，取值 TIM.TYPES.CONV_C2C 或 TIM.TYPES.CONV_GROUP |
-| priority           | String     | TIM.TYPES.MSG_PRIORITY_NORMAL   | 消息优先级                                                 |
-| payload            | Object     |            -                    | 消息内容的容器 |
-| onProgress         | function   |            -                    | 获取上传进度的回调函数                                     |
-| cloudCustomData    | String     |  ''                             | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
+| Name             | Type     | Default                       | Description                                                  |
+| ---------------- | -------- | ----------------------------- | ------------------------------------------------------------ |
+| to               | String   | -                             | 消息的接收方                                                 |
+| conversationType | String   | -                             | 会话类型，取值 TIM.TYPES.CONV_C2C 或 TIM.TYPES.CONV_GROUP    |
+| priority         | String   | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
+| payload          | Object   | -                             | 消息内容的容器                                               |
+| onProgress       | function | -                             | 获取上传进度的回调函数                                       |
+| cloudCustomData  | String   | ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
 
 payload 的描述如下：
 
@@ -291,18 +291,18 @@ tim.createAudioMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Default                         | Description                                                |
-| ------------------ | -------- | ------------------------------- | ---------------------------------------------------------- |
-| to                 | String   |              -                   | 消息的接收方                                               |
-| conversationType | String |               -                  | 会话类型，取值 TIM.TYPES.CONV_C2C 或 TIM.TYPES.CONV_GROUP |
-| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                 |
-| payload          | Object |            -                     | 消息内容的容器 |
-| cloudCustomData    | String |  ''                          | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | 消息的接收方                                                 |
+| conversationType | String | -                             | 会话类型，取值 TIM.TYPES.CONV_C2C 或 TIM.TYPES.CONV_GROUP    |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
+| payload          | Object | -                             | 消息内容的容器                                               |
+| cloudCustomData  | String | ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
 
 payload 的描述如下：
 
-| Name | Type     | Description          |
-| ---- | -------- | -------------------- |
+| Name | Type   | Description          |
+| ---- | ------ | -------------------- |
 | file | Object | 录音后得到的文件信息 |
 
 **返回值**
@@ -333,19 +333,19 @@ tim.createVideoMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Default                         | Description                                                |
-| ------------------ | -------- | ------------------------------- | ---------------------------------------------------------- |
-| to               | String |                -                 | 消息的接收方                                               |
-| conversationType | String |                 -               | 会话类型，取值 TIM.TYPES.CONV_C2C 或 TIM.TYPES.CONV_GROUP |
-| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                 |
-| payload          | Object |                    -             | 消息内容的容器 |
-| cloudCustomData    | String | ''                             | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | 消息的接收方                                                 |
+| conversationType | String | -                             | 会话类型，取值 TIM.TYPES.CONV_C2C 或 TIM.TYPES.CONV_GROUP    |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
+| payload          | Object | -                             | 消息内容的容器                                               |
+| cloudCustomData  | String | ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
 
 payload 的描述如下：
 
-| Name          | Type     | Description          |
-| ------------- | -------- | -------------------- |
-| file        | HTMLInputElement \| File \| Object | 自定义消息的数据字段 |
+| Name | Type                               | Description          |
+| ---- | ---------------------------------- | -------------------- |
+| file | HTMLInputElement \| File \| Object | 自定义消息的数据字段 |
 
 
 **返回值**
@@ -433,18 +433,18 @@ tim.createCustomMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to               | String |           -                     | 消息接收方的 userID 或 groupID                               |
-| conversationType | String |           -                    | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | 消息接收方的 userID 或 groupID                               |
+| conversationType | String | -                             | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
 | priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
-| payload          | Object |                -                | 消息内容的容器 |
-| cloudCustomData    | String | ''                             | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
+| payload          | Object | -                             | 消息内容的容器                                               |
+| cloudCustomData  | String | ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
 
 payload 的描述如下：
 
-| Name          | Type     | Description          |
-| ------------- | -------- | -------------------- |
+| Name        | Type   | Description          |
+| ----------- | ------ | -------------------- |
 | data        | String | 自定义消息的数据字段 |
 | description | String | 自定义消息的说明字段 |
 | extension   | String | 自定义消息的扩展字段 |
@@ -507,20 +507,20 @@ tim.createFaceMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to               | String |             -                    | 消息接收方的 userID 或 groupID                               |
-| conversationType | String |              -                   | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | 消息接收方的 userID 或 groupID                               |
+| conversationType | String | -                             | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
 | priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
-| payload          | Object |              -                  | 消息内容的容器 |
-| cloudCustomData    | String | ''                             | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
+| payload          | Object | -                             | 消息内容的容器                                               |
+| cloudCustomData  | String | ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
 
 payload 的描述如下：
 
-| Name    | Type     | Description          |
-| ------- | -------- | -------------------- |
+| Name  | Type   | Description          |
+| ----- | ------ | -------------------- |
 | index | Number | 表情索引，用户自定义 |
-| data  | String | 额外数据           |
+| data  | String | 额外数据             |
 
 **返回值**
 
@@ -584,19 +584,19 @@ tim.createFileMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type       | Default                         | Description                                                  |
-| ------------------ | ---------- | ------------------------------- | ------------------------------------------------------------ |
-| to               | String   |           -                      | 消息接收方的 userID 或 groupID                               |
-| conversationType | String   |               -                  | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
+| Name             | Type     | Default                       | Description                                                  |
+| ---------------- | -------- | ----------------------------- | ------------------------------------------------------------ |
+| to               | String   | -                             | 消息接收方的 userID 或 groupID                               |
+| conversationType | String   | -                             | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
 | priority         | String   | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
-| payload          | Object   |           -                      | 消息内容的容器 |                                        |
-| onProgress       | function |               -                  | 获取上传进度的回调函数                                       |
-| cloudCustomData    | String |  ''                             | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
+| payload          | Object   | -                             | 消息内容的容器                                               |
+| onProgress       | function | -                             | 获取上传进度的回调函数                                       |
+| cloudCustomData  | String   | ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
 
 payload 的描述如下：
 
-| Name   | Type               | Description                                                  |
-| ------ | ------------------ | ------------------------------------------------------------ |
+| Name | Type                               | Description                                                  |
+| ---- | ---------------------------------- | ------------------------------------------------------------ |
 | file | HTMLInputElement \| File \| Object | 用于选择文件的 DOM 节点（Web）或者 File 对象（Web）或者 Object（uni.chooseFile 接口的 success 回调参数），SDK 会读取其中的数据并上传文件。 |
 
 **返回值**
@@ -731,21 +731,21 @@ tim.createLocationMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to               | String |             -                    | 消息接收方的 userID 或 groupID                               |
-| conversationType | String |              -                   | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | 消息接收方的 userID 或 groupID                               |
+| conversationType | String | -                             | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
 | priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
-| payload          | Object |               -                  | 消息内容的容器 |
-| cloudCustomData    | String |  ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
+| payload          | Object | -                             | 消息内容的容器                                               |
+| cloudCustomData  | String | ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
 
 payload 的描述如下：
 
-| Name    | Type     | Description          |
-| ------- | -------- | -------------------- |
+| Name        | Type   | Description      |
+| ----------- | ------ | ---------------- |
 | description | String | 地理位置描述信息 |
-| longitude | Number | 经度 |
-| latitude | Number | 纬度 |
+| longitude   | Number | 经度             |
+| latitude    | Number | 纬度             |
 
 **返回值**
 
@@ -805,21 +805,21 @@ tim.createMergerMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to               | String |             -                    | 消息接收方的 userID 或 groupID                               |
-| conversationType | String |              -                   | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | 消息接收方的 userID 或 groupID                               |
+| conversationType | String | -                             | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
 | priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
-| payload          | Object |               -                  | 消息内容的容器 |
-| cloudCustomData    | String |  ''                             | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
+| payload          | Object | -                             | 消息内容的容器                                               |
+| cloudCustomData  | String | ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
 
 payload 的描述如下：
 
-| Name    | Type     | Description          |
-| ------- | -------- | -------------------- |
-| messageList | Array | 合并的消息列表 |
-| title | String | 合并的标题，例如："大湾区前端人才中心的聊天记录" |
-| abstractList | String | 摘要列表，不同的消息类型可以设置不同的摘要信息，例如：文本消息可以设置为：sender: text，图片消息可以设置为：sender: [图片]，文件消息可以设置为：sender: [文件] |
+| Name           | Type   | Description                                                  |
+| -------------- | ------ | ------------------------------------------------------------ |
+| messageList    | Array  | 合并的消息列表                                               |
+| title          | String | 合并的标题，例如："大湾区前端人才中心的聊天记录"             |
+| abstractList   | String | 摘要列表，不同的消息类型可以设置不同的摘要信息，例如：文本消息可以设置为：sender: text，图片消息可以设置为：sender: [图片]，文件消息可以设置为：sender: [文件] |
 | compatibleText | String | 兼容文本，低版本 SDK 如果不支持合并消息，默认会收到一条文本消息，文本消息的内容为 ${compatibleText}，必填 |
 
 **返回值**
@@ -875,9 +875,9 @@ tim.downloadMergerMessage(message);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- |  ------------------------------------------------------------ |
-| message          | Message | 消息实例  |
+| Name    | Type    | Description |
+| ------- | ------- | ----------- |
+| message | Message | 消息实例    |
 
 
 **返回值**
@@ -924,9 +924,9 @@ tim.createForwardMessage(message);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| message          | Message | 消息实例 |
+| Name    | Type    | Description |
+| ------- | ------- | ----------- |
+| message | Message | 消息实例    |
 
 **示例**
 
@@ -974,7 +974,7 @@ promise.then(function(imResponse) {
 
 >!
 >- 调用该接口发送消息实例，需要 sdk 处于 ready 状态，否则将无法发送消息实例。sdk 状态，可通过监听以下事件得到：TIM.EVENT.SDK_READY - sdk 处于 ready 状态时触发
-TIM.EVENT.SDK_NOT_READY - sdk 处于 not ready 状态时触发。
+>TIM.EVENT.SDK_NOT_READY - sdk 处于 not ready 状态时触发。
 >- 接收推送的单聊、群聊、群提示、群系统通知的新消息，需监听事件 [TIM.EVENT.MESSAGE_RECEIVED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.MESSAGE_RECEIVED)。
 >- 本实例发送的消息，不会触发事件 [TIM.EVENT.MESSAGE_RECEIVED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.MESSAGE_RECEIVED)。同帐号从其他端（或通过 REST API）发送的消息，会触发事件 [TIM.EVENT.MESSAGE_RECEIVED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.MESSAGE_RECEIVED)。
 >- 离线推送仅适用于终端（Android 或 iOS)，Web 不支持。
@@ -992,36 +992,36 @@ tim.sendMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name      | Type      | Description                    |
-| --------- | --------- | ------------------------------ |
-| message | Message | 消息实例                       |
+| Name    | Type    | Description                          |
+| ------- | ------- | ------------------------------------ |
+| message | Message | 消息实例                             |
 | options | Object  | 消息发送选项（消息内容的容器），选填 |
 
 options 的描述如下：
 
-| Name              | Type      | Description                                                  |
-| ----------------- | --------- | ------------------------------------------------------------ |
-| onlineUserOnly  | Boolean | v2.6.4起支持，消息是否仅发送给在线用户的标识，默认值为 false；设置为 true，则消息既不存漫游，也不会计入未读，也不会离线推送给接收方。适合用于发送广播通知等不重要的提示消息场景。在 AVChatRoom 发送消息不支持此选项 |
-| offlinePushInfo | Object  | v2.6.4起支持，[离线推送](https://intl.cloud.tencent.com/document/product/1047/33525) 配置 |
-| messageControlInfo | Object | v2.16.0起支持，消息控制配置 |
+| Name               | Type    | Description                                                  |
+| ------------------ | ------- | ------------------------------------------------------------ |
+| onlineUserOnly     | Boolean | v2.6.4起支持，消息是否仅发送给在线用户的标识，默认值为 false；设置为 true，则消息既不存漫游，也不会计入未读，也不会离线推送给接收方。适合用于发送广播通知等不重要的提示消息场景。在 AVChatRoom 发送消息不支持此选项 |
+| offlinePushInfo    | Object  | v2.6.4起支持，[离线推送](https://intl.cloud.tencent.com/document/product/1047/33525) 配置 |
+| messageControlInfo | Object  | v2.16.0起支持，消息控制配置                                  |
 
 offlinePushInfo 的描述如下：
 
-| Name                   | Type      | Description                                                  |
-| ---------------------- | --------- | ------------------------------------------------------------ |
+| Name                 | Type    | Description                                                  |
+| -------------------- | ------- | ------------------------------------------------------------ |
 | disablePush          | Boolean | true 关闭离线推送；false 开启离线推送（默认）                |
 | title                | String  | 离线推送标题，该字段为 iOS 和 Android 共用                   |
-| description         | String  | 离线推送内容，该字段会覆盖消息实例的离线推送展示文本。若发送的是自定义消息，该 description 字段会覆盖 message.payload.description。如果 description 和 message.payload.description 字段都不填，接收方将收不到该自定义消息的离线推送 |
+| description          | String  | 离线推送内容，该字段会覆盖消息实例的离线推送展示文本。若发送的是自定义消息，该 description 字段会覆盖 message.payload.description。如果 description 和 message.payload.description 字段都不填，接收方将收不到该自定义消息的离线推送 |
 | extension            | String  | 离线推送透传内容                                             |
 | ignoreIOSBadge       | Boolean | 离线推送忽略 badge 计数（仅对 iOS 生效），如果设置为 true，在 iOS 接收端，这条消息不会使 App 的应用图标未读计数增加 |
 | androidOPPOChannelID | String  | 离线推送设置 OPPO 手机 8.0 系统及以上的渠道 ID               |
 
 messageControlInfo 的描述如下：
 
-| Name                   | Type      | Description                                                  |
-| ---------------------- | --------- | ------------------------------------------------------------ |
-| excludedFromUnreadCount | Boolean | true 消息不更新会话 unreadCount（消息存漫游），默认值 false
-| excludedFromLastMessage | Boolean | true 消息不更新会话 lastMessage（消息存漫游），默认值 false
+| Name                    | Type    | Description                                                 |
+| ----------------------- | ------- | ----------------------------------------------------------- |
+| excludedFromUnreadCount | Boolean | true 消息不更新会话 unreadCount（消息存漫游），默认值 false |
+| excludedFromLastMessage | Boolean | true 消息不更新会话 lastMessage（消息存漫游），默认值 false |
 
 **返回**
 
@@ -1091,4 +1091,3 @@ tim.sendMessage(message, {
 
 :::
 </dx-codeblock>
-

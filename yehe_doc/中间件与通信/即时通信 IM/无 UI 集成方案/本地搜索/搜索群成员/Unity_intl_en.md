@@ -38,7 +38,3 @@ TIMResult res = TencentIMSDK.GroupSearchGroupMembers(param, (int code, string de
  // Process the async logic
 });
 ```
-
-
-
-

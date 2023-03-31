@@ -40,19 +40,19 @@ tim.createGroup(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| name | String | 群名称，最长30字节 |
-| type | String | 群组类型，包括：<br/><li>TIM.TYPES.GRP_WORK（好友工作群，默认）</li><li>TIM.TYPES.GRP_PUBLIC（陌生人社交群）</li><li>TIM.TYPES.GRP_MEETING（临时会议群）</li><li>TIM.TYPES.GRP_AVCHATROOM（直播群）</li><li>TIM.TYPES.GRP_COMMUNITY（社群，v2.17.0 起支持）</li> |
-| groupID | String \| undefined | 群组ID。不填该字段时，会自动为群组创建一个唯一的群 ID |
-| introduction | String \| undefined | 群简介，最长240字节 |
-| notification | String \| undefined | 群公告，最长300字节 |
-| avatar | String \| undefined | 群头像 URL，最长100字节 |
-| maxMemberNum | Number \| undefined | 最大群成员数量，缺省时的默认值：好友工作群是200，陌生人社交群是2000，临时会议群是10000，直播群无限制 |
-| joinOption | String | 申请加群处理方式。<br/><li>TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS （自由加入）</li><li>TIM.TYPES.JOIN_OPTIONS_NEED_PERMISSION （需要验证）</li><li>TIM.TYPES.JOIN_OPTIONS_DISABLE_APPLY （禁止加群）</li>注意：TIM.TYPES.GRP_WORK, TIM.TYPES.GRP_MEETING, TIM.TYPES.GRP_AVCHATROOM 类型群组的该属性不允许修改。好友工作群禁止申请加群，临时会议群和直播群自由加入。 |
-| memberList | Array \| undefined | 初始群成员列表，最多500个。创建直播群时不能添加成员。数组元素结构如下：<br/><li>userID --- String --- 必填，群成员的 userID</li><li>role --- String --- 成员身份，可选值只有Admin，表示添加该成员并设其为管理员</li><li>memberCustomField --- Array|undefined --- 群成员维度的自定义字段，默认情况是没有的，需要开通，详情请参阅 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529)</li>
-| groupCustomField | Array \| undefined | 群自定义字段。默认情况是没有的。开通群组维度的自定义字段详情请参见 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529) |
-| isSupportTopic | Boolean | 创建支持话题的社群时必填， true - 创建支持话题的社群 false - 创建普通社群。v2.19.1 起支持 |
+| Name             | Type                | Description                                                  |
+| ---------------- | ------------------- | ------------------------------------------------------------ |
+| name             | String              | 群名称，最长30字节                                           |
+| type             | String              | 群组类型，包括：<br/><li>TIM.TYPES.GRP_WORK（好友工作群，默认）</li><li>TIM.TYPES.GRP_PUBLIC（陌生人社交群）</li><li>TIM.TYPES.GRP_MEETING（临时会议群）</li><li>TIM.TYPES.GRP_AVCHATROOM（直播群）</li><li>TIM.TYPES.GRP_COMMUNITY（社群，v2.17.0 起支持）</li> |
+| groupID          | String \| undefined | 群组ID。不填该字段时，会自动为群组创建一个唯一的群 ID        |
+| introduction     | String \| undefined | 群简介，最长240字节                                          |
+| notification     | String \| undefined | 群公告，最长300字节                                          |
+| avatar           | String \| undefined | 群头像 URL，最长100字节                                      |
+| maxMemberNum     | Number \| undefined | 最大群成员数量，缺省时的默认值：好友工作群是200，陌生人社交群是2000，临时会议群是10000，直播群无限制 |
+| joinOption       | String              | 申请加群处理方式。<br/><li>TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS （自由加入）</li><li>TIM.TYPES.JOIN_OPTIONS_NEED_PERMISSION （需要验证）</li><li>TIM.TYPES.JOIN_OPTIONS_DISABLE_APPLY （禁止加群）</li>注意：TIM.TYPES.GRP_WORK, TIM.TYPES.GRP_MEETING, TIM.TYPES.GRP_AVCHATROOM 类型群组的该属性不允许修改。好友工作群禁止申请加群，临时会议群和直播群自由加入。 |
+| memberList       | Array \| undefined  | 初始群成员列表，最多500个。创建直播群时不能添加成员。数组元素结构如下：<br/><li>userID --- String --- 必填，群成员的 userID</li><li>role --- String --- 成员身份，可选值只有Admin，表示添加该成员并设其为管理员</li><li>memberCustomField --- Array |
+| groupCustomField | Array \| undefined  | 群自定义字段。默认情况是没有的。开通群组维度的自定义字段详情请参见 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529) |
+| isSupportTopic   | Boolean             | 创建支持话题的社群时必填， true - 创建支持话题的社群 false - 创建普通社群。v2.19.1 起支持 |
 
 **返回值**
 
@@ -111,13 +111,13 @@ promise.then(function(imResponse) { // 创建成功
 
 不同类型的群组，加群的方法不同：
 
-| 类型 | 加群方法 |
-| --- | --- |
-| 好友工作群（Work）| 必须由其他群成员邀请 |
-| 陌生人社交群（Public）| 用户申请，群主或管理员审批 |
-| 临时会议群（Meeting）| 用户可随意加入 |
-| 社群（Community）| 用户可随意加入 |
-| 直播群（AVChatRoom）| 用户可随意加入 |
+| 类型                   | 加群方法                   |
+| ---------------------- | -------------------------- |
+| 好友工作群（Work）     | 必须由其他群成员邀请       |
+| 陌生人社交群（Public） | 用户申请，群主或管理员审批 |
+| 临时会议群（Meeting）  | 用户可随意加入             |
+| 社群（Community）      | 用户可随意加入             |
+| 直播群（AVChatRoom）   | 用户可随意加入             |
 
 >!
 >- 好友工作群不允许申请加群，只能通过 [addGroupMember](https://web.sdk.qcloud.com/im/doc/en/SDK.html#addGroupMember) 方式添加。
@@ -137,10 +137,10 @@ tim.joinGroup(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID | String | 群组 ID |
-| applyMessage | String \| undefined | 附言 |
+| Name         | Type                | Description |
+| ------------ | ------------------- | ----------- |
+| groupID      | String              | 群组 ID     |
+| applyMessage | String \| undefined | 附言        |
 
 **返回值**
 
@@ -188,9 +188,9 @@ tim.getGroupList(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-|  groupProfileFilter | Array \| undefined | 群资料过滤器。除默认拉取的群资料外，指定需要额外拉取的群资料，支持的值如下：<br/><li>TIM.TYPES.GRP_PROFILE_OWNER_ID（群主 ID）</li><li>TIM.TYPES.GRP_PROFILE_CREATE_TIME（群创建时间）</li><li>TIM.TYPES.GRP_PROFILE_LAST_INFO_TIME（最后一次群资料变更时间）</li><li>TIM.TYPES.GRP_PROFILE_MEMBER_NUM（群成员数量）</li><li>TIM.TYPES.GRP_PROFILE_MAX_MEMBER_NUM（最大群成员数量）</li><li>TIM.TYPES.GRP_PROFILE_JOIN_OPTION（申请加群选项）></li><li>TIM.TYPES.GRP_PROFILE_INTRODUCTION（群介绍）</li><li>TIM.TYPES.GRP_PROFILE_NOTIFICATION（群公告）</li><li>TIM.TYPES.GRP_PROFILE_MUTE_ALL_MBRS (全体禁言设置) v2.6.2起支持</li> |
+| Name               | Type               | Description                                                  |
+| ------------------ | ------------------ | ------------------------------------------------------------ |
+| groupProfileFilter | Array \| undefined | 群资料过滤器。除默认拉取的群资料外，指定需要额外拉取的群资料，支持的值如下：<br/><li>TIM.TYPES.GRP_PROFILE_OWNER_ID（群主 ID）</li><li>TIM.TYPES.GRP_PROFILE_CREATE_TIME（群创建时间）</li><li>TIM.TYPES.GRP_PROFILE_LAST_INFO_TIME（最后一次群资料变更时间）</li><li>TIM.TYPES.GRP_PROFILE_MEMBER_NUM（群成员数量）</li><li>TIM.TYPES.GRP_PROFILE_MAX_MEMBER_NUM（最大群成员数量）</li><li>TIM.TYPES.GRP_PROFILE_JOIN_OPTION（申请加群选项）></li><li>TIM.TYPES.GRP_PROFILE_INTRODUCTION（群介绍）</li><li>TIM.TYPES.GRP_PROFILE_NOTIFICATION（群公告）</li><li>TIM.TYPES.GRP_PROFILE_MUTE_ALL_MBRS (全体禁言设置) v2.6.2起支持</li> |
 
 **返回值**
 
@@ -244,9 +244,9 @@ tim.quitGroup(groupID);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-|  groupID | String | 群组 ID |
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| groupID | String | 群组 ID     |
 
 **返回值**
 
@@ -283,9 +283,9 @@ tim.dismissGroup(groupID);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-|  groupID | String | 群组 ID |
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| groupID | String | 群组 ID     |
 
 **返回值**
 
@@ -324,10 +324,10 @@ tim.changeGroupOwner(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-|  groupID | String | 待转让的群组 ID |
-| newOwnerID | String | 新群主的 ID |
+| Name       | Type   | Description     |
+| ---------- | ------ | --------------- |
+| groupID    | String | 待转让的群组 ID |
+| newOwnerID | String | 新群主的 ID     |
 
 **返回值**
 
@@ -369,11 +369,11 @@ tim.handleGroupApplication(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| handleAction | String | 处理结果 Agree(同意) / Reject(拒绝) |
-| handleMessage | String \| undefined | 附言 |
-| message | Message | 对应【群系统通知】的消息实例 |
+| Name          | Type                | Description                         |
+| ------------- | ------------------- | ----------------------------------- |
+| handleAction  | String              | 处理结果 Agree(同意) / Reject(拒绝) |
+| handleMessage | String \| undefined | 附言                                |
+| message       | Message             | 对应【群系统通知】的消息实例        |
 
 **返回值**
 

@@ -37,6 +37,3 @@ Sample code:
   // Process the callback logic
  });
 ```
-
-
-

@@ -91,13 +91,13 @@ V2TIMManager::GetInstance()->GetGroupManager()->GetGroupsInfo(groupIDList, callb
 
 不同类型的群组，可以修改群资料的成员角色不同：
 
-| 群组类型 | 可以修改群资料的成员角色 |
-| --- | --- |
-| 好友工作群(Work) | 所有群成员 |
-| 陌生人社交群（Public）| 群主和管理员 |
-| 临时会议群（Meeting）| 群主和管理员 |
-| 社群（Community）| 群主和管理员 |
-| 直播群（AVChatRoom）| 群主 |
+| 群组类型               | 可以修改群资料的成员角色 |
+| ---------------------- | ------------------------ |
+| 好友工作群(Work)       | 所有群成员               |
+| 陌生人社交群（Public） | 群主和管理员             |
+| 临时会议群（Meeting）  | 群主和管理员             |
+| 社群（Community）      | 群主和管理员             |
+| 直播群（AVChatRoom）   | 群主                     |
 
 > ! 不是所有的群资料 `V2TIMGroupInfo` 的字段都能修改，只有可写的属性才能修改。
 
@@ -198,8 +198,8 @@ V2TIMManager::GetInstance()->GetGroupManager()->SetGroupInfo(info, callback);
 2. 调用 `setGroupInfo` 接口设置该字段，value 长度不超过 512 字节。
 
 >!
-> 1. 最多可设置 10 个自定义字段，在字段创建后，该字段将不可删除，也无法修改字段名与字段类型。
-> 2. 自定义字段主要用于 V1 和 V2 版本的兼容，如果您直接使用的是 V2 版本的 API，建议使用 `initGroupAttributes` 接口设置群属性，其设置更灵活（无需控制台配置），支持的存储也更大（最大支持 16K）。详情请参考 [群自定义属性](https://intl.cloud.tencent.com/document/product/1047/48175)。
+>1. 最多可设置 10 个自定义字段，在字段创建后，该字段将不可删除，也无法修改字段名与字段类型。
+>2. 自定义字段主要用于 V1 和 V2 版本的兼容，如果您直接使用的是 V2 版本的 API，建议使用 `initGroupAttributes` 接口设置群属性，其设置更灵活（无需控制台配置），支持的存储也更大（最大支持 16K）。详情请参考 [群自定义属性](https://intl.cloud.tencent.com/document/product/1047/48175)。
 
 
 [](id:setGroupReceiveMessageOpt)
@@ -208,11 +208,11 @@ V2TIMManager::GetInstance()->GetGroupManager()->SetGroupInfo(info, callback);
 
 `V2TIMReceiveMessageOpt` 的可选项有：
 
-| 消息接收选项 | 含义 |
-| --- | --- |
-| V2TIM_RECEIVE_MESSAGE | 在线正常接收消息，离线时会有厂商的离线推送通知。|
-| V2TIM_NOT_RECEIVE_MESSAGE | 不会接收到群消息。|
-| V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | 在线正常接收消息，离线不会有推送通知。|
+| 消息接收选项                     | 含义                                             |
+| -------------------------------- | ------------------------------------------------ |
+| V2TIM_RECEIVE_MESSAGE            | 在线正常接收消息，离线时会有厂商的离线推送通知。 |
+| V2TIM_NOT_RECEIVE_MESSAGE        | 不会接收到群消息。                               |
+| V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | 在线正常接收消息，离线不会有推送通知。           |
 
 使用不同的 `V2TIMReceiveMessageOpt` 可以实现群消息免打扰：
 
@@ -302,4 +302,3 @@ V2TIMManager::GetInstance()->GetMessageManager()->SetGroupReceiveMessageOpt(grou
 ```
 :::
 </dx-tabs>
-

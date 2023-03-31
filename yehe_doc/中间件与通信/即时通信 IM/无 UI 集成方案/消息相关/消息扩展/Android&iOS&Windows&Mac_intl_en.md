@@ -7,10 +7,10 @@ Message extension allows you to configure keys and values for messages to implem
 - For survey, create a custom message using the `createCustomMessage` API, where `data` stores the title and options of the survey, and then store the user ID and the corresponding info in the `key` and `value` of the message extension, respectively.
 
 > ?
->- To use this feature, you need to purchase the [Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577).
->- This feature is available only in SDK enhanced edition v6.7 or later.
->- You need to enable this feature via [IM console](https://console.cloud.tencent.com/im) > **Feature Configuration** > **Login and Message** > **Set message extension**.
->- This feature is not available for communities and audio/video groups.
+> - To use this feature, you need to purchase the [Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577).
+> - This feature is available only in SDK enhanced edition v6.7 or later.
+> - You need to enable this feature via [IM console](https://console.cloud.tencent.com/im) > **Feature Configuration** > **Login and Message** > **Set message extension**.
+> - This feature is not available for communities and audio/video groups.
 
 ### Setting message extension
 
@@ -394,4 +394,3 @@ V2TIMManager::GetInstance()->GetMessageManager()->AddAdvancedMsgListener(&advanc
 
 :::
 </dx-tabs>
-

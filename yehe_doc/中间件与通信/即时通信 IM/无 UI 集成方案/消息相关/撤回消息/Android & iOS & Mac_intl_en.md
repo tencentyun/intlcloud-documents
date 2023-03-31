@@ -137,4 +137,3 @@ V2TIMManager::GetInstance()->GetMessageManager()->AddAdvancedMsgListener(&advanc
 ```
 :::
 </dx-tabs>
-

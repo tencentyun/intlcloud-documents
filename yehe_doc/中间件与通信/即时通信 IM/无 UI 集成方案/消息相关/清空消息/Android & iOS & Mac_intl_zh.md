@@ -168,4 +168,3 @@ V2TIMManager::GetInstance()->GetMessageManager()->ClearGroupHistoryMessage(group
 ```
 :::
 </dx-tabs>
-

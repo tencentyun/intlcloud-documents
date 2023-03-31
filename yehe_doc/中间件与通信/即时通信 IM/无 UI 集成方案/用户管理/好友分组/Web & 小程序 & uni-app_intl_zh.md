@@ -21,10 +21,10 @@ tim.createFriendGroup(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| name     | String | 	分组名称  |
-| userIDList | Array | 要添加到分组的好友 userID 列表 |
+| Name       | Type   | Description                    |
+| ---------- | ------ | ------------------------------ |
+| name       | String | 分组名称                       |
+| userIDList | Array  | 要添加到分组的好友 userID 列表 |
 
 **返回值**
 
@@ -69,9 +69,9 @@ tim.deleteFriendGroup(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| name     | String | 	分组名称  |
+| Name | Type   | Description |
+| ---- | ------ | ----------- |
+| name | String | 分组名称    |
 
 **返回值**
 
@@ -112,9 +112,9 @@ tim.renameFriendGroup(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| oldName     | String | 	旧的分组名称  |
+| Name    | Type   | Description  |
+| ------- | ------ | ------------ |
+| oldName | String | 旧的分组名称 |
 | newName | String | 新的分组名称 |
 
 **返回值**
@@ -199,10 +199,10 @@ tim.addToFriendGroup(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| name     | String | 	分组名称  |
-| userIDList | Array | 要添加的好友 userID 列表 |
+| Name       | Type   | Description              |
+| ---------- | ------ | ------------------------ |
+| name       | String | 分组名称                 |
+| userIDList | Array  | 要添加的好友 userID 列表 |
 
 **返回值**
 
@@ -247,10 +247,10 @@ tim.removeFromFriendGroup(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| name     | String | 	分组名称  |
-| userIDList | Array | 要移除的好友 userID 列表 |
+| Name       | Type   | Description              |
+| ---------- | ------ | ------------------------ |
+| name       | String | 分组名称                 |
+| userIDList | Array  | 要移除的好友 userID 列表 |
 
 **返回值**
 

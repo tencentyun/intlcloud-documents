@@ -83,6 +83,3 @@ groupManager.setGroupInfo(info: V2TimGroupInfo.fromJson({
     // ...其他资料
   }));
 ```
-
-
-

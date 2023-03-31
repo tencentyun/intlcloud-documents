@@ -531,6 +531,3 @@ if(message.textElem.nextElem!=null){
    // 다음 메시지가 있습니다.
 }
 ```
-
-
-

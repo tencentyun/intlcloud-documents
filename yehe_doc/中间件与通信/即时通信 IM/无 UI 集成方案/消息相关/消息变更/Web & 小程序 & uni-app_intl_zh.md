@@ -23,9 +23,9 @@ tim.modifyMessage(message);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| message          | Message | 消息实例 |
+| Name    | Type    | Description |
+| ------- | ------- | ----------- |
+| message | Message | 消息实例    |
 
 **返回值**
 

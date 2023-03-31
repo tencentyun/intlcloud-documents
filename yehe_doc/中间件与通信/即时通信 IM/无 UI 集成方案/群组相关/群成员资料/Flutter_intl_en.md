@@ -30,6 +30,3 @@ Sample code:
 // Set the group member profile
 groupManager.setGroupMemberInfo(groupID: "",userID: "",nameCard: "",customInfo: {});
 ```
-
-
-

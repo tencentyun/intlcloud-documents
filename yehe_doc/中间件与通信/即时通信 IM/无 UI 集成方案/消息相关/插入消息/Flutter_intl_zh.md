@@ -26,4 +26,3 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().insertC2CMessageToLocalStora
 ```dart
 TencentImSDKPlugin.v2TIMManager.getMessageManager().insertGroupMessageToLocalStorage(data: "", groupID: "", sender: "");
 ```
-

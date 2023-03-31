@@ -94,11 +94,11 @@ Call the `createGroup` ordinary API ([Android](https://im.sdk.qcloud.com/doc/en/
 
 The `createGroup` parameters are as described below:
 
-| Parameter | Definition | Required | Description |
-| --- | --- | --- | --- |
-| groupType | Group type | Yes | For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
-| groupID | Group ID | No | If it is left empty, an ID will be automatically assigned after a group is created successfully.<br>It can be customized as instructed in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).|
-| groupName | Group name | Yes | It can contain up to 30 bytes. |
+| Parameter | Definition | Required | Description                                                  |
+| --------- | ---------- | -------- | ------------------------------------------------------------ |
+| groupType | Group type | Yes      | For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| groupID   | Group ID   | No       | If it is left empty, an ID will be automatically assigned after a group is created successfully.<br>It can be customized as instructed in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| groupName | Group name | Yes      | It can contain up to 30 bytes.                               |
 
 If you have called `addGroupListener` to add a group event listener as instructed in [Group Event Listener](#advance_page), `onGroupCreated` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a93504c985480a2bb87ca716809e3dd00) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#aa5c08185c8c9ddaace6421e1e153711d) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupListener.html#af7cf426687a86f033051ad6bed8fc087)) will be called back after a group is created successfully.
 
@@ -325,13 +325,13 @@ V2TIMManager::GetInstance()->GetGroupManager()->CreateGroup(info, memberInfoList
 ## Joining a Group
 The method for joining a group may vary by group type as follows:
 
-| Type | Method for Joining a Group |
-| --- | --- |
-| Work group (Work)| By invitation |
-| Public group (Public)| On request from the user and on approval from the group owner or admin |
-| Meeting group (Meeting)| Free to join |
-| Community (Community)| Free to join |
-| Audio-video group (AVChatRoom)| Free to join |
+| Type                           | Method for Joining a Group                                   |
+| ------------------------------ | ------------------------------------------------------------ |
+| Work group (Work)              | By invitation                                                |
+| Public group (Public)          | On request from the user and on approval from the group owner or admin |
+| Meeting group (Meeting)        | Free to join                                                 |
+| Community (Community)          | Free to join                                                 |
+| Audio-video group (AVChatRoom) | Free to join                                                 |
 
 The following describes how to join the groups in an easy-to-hard sequence.
 
@@ -956,11 +956,11 @@ The group owner or admin can also call the `setGroupInfo` API ([Android](https:/
 
 `V2TIMGroupAddOpt` has the following options:
 
-| Group Join Option | Description |
-| --- | --- |
-| V2TIM_GROUP_ADD_FORBID | No users can join the group. |
-| V2TIM_GROUP_ADD_AUTH | Approval from the group owner or admin is required to join the group (default value). |
-| V2TIM_GROUP_ADD_ANY | Any user can join the group without approval. |
+| Group Join Option      | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| V2TIM_GROUP_ADD_FORBID | No users can join the group.                                 |
+| V2TIM_GROUP_ADD_AUTH   | Approval from the group owner or admin is required to join the group (default value). |
+| V2TIM_GROUP_ADD_ANY    | Any user can join the group without approval.                |
 
 [](id:getJoinedGroup)
 ## Getting the Joined Groups
@@ -1272,4 +1272,3 @@ V2TIMManager::GetInstance()->AddGroupListener(&groupListener);
 
 ## Receiving a Custom Group System Notification
 If you call the RESTful API on the server [to send custom system messages to the group](https://intl.cloud.tencent.com/document/product/1047/34958), the SDK will call back `onReceiveRESTCustomData` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a0775a137d293473aaed4cf9fc4c18795) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a989347c455869dc0aa44572f4f2b7041) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupListener.html#aa41c066e713dac9e71b31d77f2f65a7c)) and return the custom data you send.
-

@@ -49,13 +49,13 @@ TIMResult res = TencentIMSDK.GroupCreate(param, (int code, string desc, CreateGr
 ## Joining a Group
 The method for joining a group may vary by group type as follows:
 
-| Type                           | Method for Joining a Group                                             |
-| ------------------------------ | ---------------------------------------------------------------------- |
-| Work group (Work)              | By invitation                                                          |
+| Type                           | Method for Joining a Group                                   |
+| ------------------------------ | ------------------------------------------------------------ |
+| Work group (Work)              | By invitation                                                |
 | Public group (Public)          | On request from the user and on approval from the group owner or admin |
-| Meeting group (Meeting)        | Free to join                                                           |
-| Community (Community)          | Free to join                                                           |
-| Audio-video group (AVChatRoom) | Free to join                                                           |
+| Meeting group (Meeting)        | Free to join                                                 |
+| Community (Community)          | Free to join                                                 |
+| Audio-video group (AVChatRoom) | Free to join                                                 |
 
 The following describes how to join the groups in an easy-to-hard sequence.
 
@@ -132,11 +132,11 @@ The group owner or admin can also call the `GroupModifyGroupInfo` API ([Details]
 
 `group_modify_info_param_add_option` has the following options:
 
-| Group Join Option                        | Description                                                                           |
-| ---------------------------------------- | ------------------------------------------------------------------------------------- |
-| TIMGroupAddOption.kTIMGroupAddOpt_Forbid | No users can join the group.                                                          |
+| Group Join Option                        | Description                                                  |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| TIMGroupAddOption.kTIMGroupAddOpt_Forbid | No users can join the group.                                 |
 | TIMGroupAddOption.kTIMGroupAddOpt_Auth   | Approval from the group owner or admin is required to join the group (default value). |
-| TIMGroupAddOption.kTIMGroupAddOpt_Any    | Any user can join the group without approval.                                         |
+| TIMGroupAddOption.kTIMGroupAddOpt_Any    | Any user can join the group without approval.                |
 
 
 ## Getting the Joined Groups
@@ -190,10 +190,3 @@ TIMResult res = TencentIMSDK.GroupDelete(group_id, (int code, string desc, strin
  // Process the async logic
 });
 ```
-
-
-
-
-
-
-

@@ -20,5 +20,3 @@ TIMResult res = TencentIMSDK.ConvGetConvInfo(list, (int code, string desc, List<
  // 处理异步逻辑
 });
 ```
-
-

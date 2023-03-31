@@ -21,9 +21,9 @@ tim.deleteConversation(conversationID);
 
 **Parameter**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationID     | String | Conversation ID. Valid values:<br/><li>C2C${userID} (for a one-to-one chat)</li><li>GROUP{groupID} (for a group chat)</li><li>@TIM#SYSTEM (for a system notification conversation)</li> |
+| Name           | Type   | Description                                                  |
+| -------------- | ------ | ------------------------------------------------------------ |
+| conversationID | String | Conversation ID. Valid values:<br/><li>C2C${userID} (for a one-to-one chat)</li><li>GROUP{groupID} (for a group chat)</li><li>@TIM#SYSTEM (for a system notification conversation)</li> |
 
 
 **Returned value**

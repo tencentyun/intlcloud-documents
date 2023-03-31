@@ -1,9 +1,8 @@
-
 ## Feature Description
 In some cases, you may need to mark a conversation, for example, as "favorite", "collapsed", "hidden", or "unread", which can be implemented through the following API.
 > ?
-- To use this feature, you need to purchase the [Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577).
-- This feature is available only in v2.22.0 or later.
+> - To use this feature, you need to purchase the [Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577).
+> - This feature is available only in v2.22.0 or later.
 
 ## Conversation Mark
 
@@ -25,11 +24,11 @@ tim.markConversation(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationIDList  | String | List of conversation IDs |
-| markType   | String | Conversation mark type |
-| enableMark | Boolean | `true`: Mark. `false`: Unmark |
+| Name               | Type    | Description                   |
+| ------------------ | ------- | ----------------------------- |
+| conversationIDList | String  | List of conversation IDs      |
+| markType           | String  | Conversation mark type        |
+| enableMark         | Boolean | `true`: Mark. `false`: Unmark |
 
 > ? The SDK provides four default marks ("favorite", "collapsed", "hidden", and "unread"). If they cannot meet your requirements, you can customize extended marks, which must meet the following conditions:
 1. The value of an extended mark cannot be the same as that of an existing one.

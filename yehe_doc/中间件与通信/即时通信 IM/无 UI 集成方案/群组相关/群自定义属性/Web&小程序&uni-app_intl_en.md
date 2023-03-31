@@ -3,7 +3,7 @@
 With group attributes, you can manage the seats of audio chat rooms. When a user mics on, you can set a group attribute to manage the information of the user. When the user mics off, you can delete the group attribute. Other members can get the list of group attributes to display the seat list.
 
 >!
-> - Starting from v2.14.0, this feature is supported only by audio-video groups (AVChatRoom).
+>- Starting from v2.14.0, this feature is supported only by audio-video groups (AVChatRoom).
 >- Starting from v2.25.0, this feature is supported by audio-video groups (AVChatRoom), public groups (Public), meeting groups (Meeting), work groups (Work), and community groups (Community).
 
 The group attribute feature has the following characteristics:
@@ -30,9 +30,9 @@ tim.initGroupAttributes(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID | String | Group ID |
+| Name            | Type   | Description      |
+| --------------- | ------ | ---------------- |
+| groupID         | String | Group ID         |
 | groupAttributes | Object | Group attributes |
 
 **Return values**
@@ -73,9 +73,9 @@ tim.setGroupAttributes(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID | String | Group ID |
+| Name            | Type   | Description      |
+| --------------- | ------ | ---------------- |
+| groupID         | String | Group ID         |
 | groupAttributes | Object | Group attributes |
 
 **Return values**
@@ -119,10 +119,10 @@ tim.deleteGroupAttributes(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID | String | Group ID |
-| keyList | Array | List of keys of the group attributes  |
+| Name    | Type   | Description                          |
+| ------- | ------ | ------------------------------------ |
+| groupID | String | Group ID                             |
+| keyList | Array  | List of keys of the group attributes |
 
 **Return values**
 
@@ -182,10 +182,10 @@ tim.getGroupAttributes(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID | String | Group ID |
-| keyList | Array | List of keys of the group attributes  |
+| Name    | Type   | Description                          |
+| ------- | ------ | ------------------------------------ |
+| groupID | String | Group ID                             |
+| keyList | Array  | List of keys of the group attributes |
 
 **Return values**
 

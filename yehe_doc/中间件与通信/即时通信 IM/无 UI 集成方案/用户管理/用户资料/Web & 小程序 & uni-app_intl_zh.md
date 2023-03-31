@@ -59,9 +59,9 @@ tim.getUserProfile(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList     | Array | 		用户的帐号列表，类型为数组 |
+| Name       | Type  | Description                |
+| ---------- | ----- | -------------------------- |
+| userIDList | Array | 用户的帐号列表，类型为数组 |
 
 **返回值**
 
@@ -100,21 +100,21 @@ tim.updateMyProfile(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| nick     | String \| undefined | 		昵称 |
-| avatar | String \| undefined | 头像地址 |
-| gender | String \| undefined | 性别：<br/><li>TIM.TYPES.GENDER_UNKNOWN（未设置性别）</li><li>TIM.TYPES.GENDER_FEMALE（女）</li><li>TIM.TYPES.GENDER_MALE（男）</li> |
-| selfSignature | String \| undefined | 个性签名 |
-| allowType | String \| undefined | 当被加人加好友时：<br/><li>TIM.TYPES.ALLOW_TYPE_ALLOW_ANY（允许直接加为好友）</li><li>TIM.TYPES.ALLOW_TYPE_NEED_CONFIRM（需要验证）</li><li>TIM.TYPES.ALLOW_TYPE_DENY_ANY（拒绝）</li> |
-| birthday | Number \| undefined | 生日，推荐用法：20000101 |
-| location | String \| undefined | 所在地 推荐用法：App 本地定义一套数字到地名的映射关系 后台实际保存的是4个 uint32_t 类型的数字： 其中第一个 uint32_t 表示国家； 第二个 uint32_t 用于表示省份； 第三个 uint32_t 用于表示城市； 第四个 uint32_t 用于表示区县 |
-| language | Number \| undefined | 语言 |
-| messageSettings | Number \| undefined | 消息设置，0：接收消息，1：不接收消息 |
-| adminForbidType | String \| undefined | 管理员禁止加好友标识：<br/><li>TIM.TYPES.FORBID_TYPE_NONE（默认值，允许加好友）</li><li>TIM.TYPES.FORBID_TYPE_SEND_OUT（禁止该用户发起加好友请求）</li> |
-| level | Number \| undefined | 等级，建议拆分以保存多种角色的等级信息 |
-| role | Number \| undefined | 角色，建议拆分以保存多种角色信息 |
-| profileCustomField | Array \| undefined | 自定义资料键值对集合，可根据业务侧需要使用，详细请参考: https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5 |
+| Name               | Type                | Description                                                  |
+| ------------------ | ------------------- | ------------------------------------------------------------ |
+| nick               | String \| undefined | 昵称                                                         |
+| avatar             | String \| undefined | 头像地址                                                     |
+| gender             | String \| undefined | 性别：<br/><li>TIM.TYPES.GENDER_UNKNOWN（未设置性别）</li><li>TIM.TYPES.GENDER_FEMALE（女）</li><li>TIM.TYPES.GENDER_MALE（男）</li> |
+| selfSignature      | String \| undefined | 个性签名                                                     |
+| allowType          | String \| undefined | 当被加人加好友时：<br/><li>TIM.TYPES.ALLOW_TYPE_ALLOW_ANY（允许直接加为好友）</li><li>TIM.TYPES.ALLOW_TYPE_NEED_CONFIRM（需要验证）</li><li>TIM.TYPES.ALLOW_TYPE_DENY_ANY（拒绝）</li> |
+| birthday           | Number \| undefined | 生日，推荐用法：20000101                                     |
+| location           | String \| undefined | 所在地 推荐用法：App 本地定义一套数字到地名的映射关系 后台实际保存的是4个 uint32_t 类型的数字： 其中第一个 uint32_t 表示国家； 第二个 uint32_t 用于表示省份； 第三个 uint32_t 用于表示城市； 第四个 uint32_t 用于表示区县 |
+| language           | Number \| undefined | 语言                                                         |
+| messageSettings    | Number \| undefined | 消息设置，0：接收消息，1：不接收消息                         |
+| adminForbidType    | String \| undefined | 管理员禁止加好友标识：<br/><li>TIM.TYPES.FORBID_TYPE_NONE（默认值，允许加好友）</li><li>TIM.TYPES.FORBID_TYPE_SEND_OUT（禁止该用户发起加好友请求）</li> |
+| level              | Number \| undefined | 等级，建议拆分以保存多种角色的等级信息                       |
+| role               | Number \| undefined | 角色，建议拆分以保存多种角色信息                             |
+| profileCustomField | Array \| undefined  | 自定义资料键值对集合，可根据业务侧需要使用，详细请参考: https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5 |
 
 **返回值**
 

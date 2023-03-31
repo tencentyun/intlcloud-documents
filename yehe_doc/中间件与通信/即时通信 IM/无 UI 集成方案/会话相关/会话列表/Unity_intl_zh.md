@@ -42,13 +42,13 @@ TencentIMSDK.SetConvEventCallback((TIMConvEvent conv_event, List<ConvInfo> conv_
 
 目前 IM SDK 支持的会话变更事件有：
 
-| 事件                 | 说明       | 建议                                                                                     |
-| -------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| 事件                 | 说明       | 建议                                                         |
+| -------------------- | ---------- | ------------------------------------------------------------ |
 | kTIMConvEvent_Add    | 有会话新增 | 例如收到一个新同事发来的单聊消息、被拉入了一个新的群组中，此时可以重新对会话列表做排序。 |
-| kTIMConvEvent_Del    | 有会话删除 | 例如自己删除某会话时会触发。                                                             |
-| kTIMConvEvent_Update | 有会话更新 | 例如会话内消息的未读计数变化和收到新消息时触发。                                         |
-| kTIMConvEvent_Start  | 会话开始   | -                                                                                        |
-| kTIMConvEvent_Finish | 会话结束   | -                                                                                        |
+| kTIMConvEvent_Del    | 有会话删除 | 例如自己删除某会话时会触发。                                 |
+| kTIMConvEvent_Update | 有会话更新 | 例如会话内消息的未读计数变化和收到新消息时触发。             |
+| kTIMConvEvent_Start  | 会话开始   | -                                                            |
+| kTIMConvEvent_Finish | 会话结束   | -                                                            |
 
 
 ### 移除会话监听器
@@ -68,6 +68,3 @@ TencentIMSDK.RemoveConvEventCallback();
 会话列表界面，通常需要展示每个会话的最新一条消息预览及发送时间，此时您可以使用 `ConvInfo` 的 `conv_last_msg` 作为数据源实现。但是某些场景下，如果您不希望一些消息（例如系统提示等）显示为会话的最新消息，可以在 `MsgSendMessage` 时设置 `message_excluded_from_last_message` 为 `false`/`no`。
 
 发送消息参见 [发送消息](https://comm.qq.com/im/doc/unity/zh/api/MessageApi/MsgSendMessage.html)。
-
-
-

@@ -59,9 +59,9 @@ tim.getUserProfile(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList     | Array | 		List of user accounts, which is an array. |
+| Name       | Type  | Description                               |
+| ---------- | ----- | ----------------------------------------- |
+| userIDList | Array | List of user accounts, which is an array. |
 
 **Returned value**
 
@@ -100,21 +100,21 @@ tim.updateMyProfile(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| nick     | String \| undefined | 		Nickname |
-| avatar | String \| undefined | Profile photo URL |
-| gender | String \| undefined | Gender. Valid values:<br/><li>TIM.TYPES.GENDER_UNKNOWN (not set)</li><li>TIM.TYPES.GENDER_FEMALE (female)</li><li>TIM.TYPES.GENDER_MALE (male)</li> |
-| selfSignature | String \| undefined | Status |
-| allowType | String \| undefined | When a friend request is received: Valid values<br/><li>TIM.TYPES.ALLOW_TYPE_ALLOW_ANY (no approval required)</li><li>TIM.TYPES.ALLOW_TYPE_NEED_CONFIRM (approval required)</li><li>TIM.TYPES.ALLOW_TYPE_DENY_ANY (reject)</li> |
-| birthday | Number \| undefined | Birth date, such as `20000101`. |
-| location | String \| undefined | Location. We recommend you define a mapping relationship between numbers and locations locally. Actually, the backend saves four numbers of the `uint32_t` type. Here, the first `uint32_t` indicates the country, the second the province, the third the city, and the fourth the district/county. |
-| language | Number \| undefined | Language |
-| messageSettings | Number \| undefined | Message settings. Valid values: 0 (receive messages), 1 (don't receive messages). |
-| adminForbidType | String \| undefined | Friending. Valid values:<br/><li>TIM.TYPES.FORBID_TYPE_NONE (allow, which is the default value)</li><li>TIM.TYPES.FORBID_TYPE_SEND_OUT (disallow)</li> |
-| level | Number \| undefined | Level. We recommend you split it to save the level information of multiple roles. |
-| role | Number \| undefined | Role. We recommend you split it to save the information of multiple roles. |
-| profileCustomField | Array \| undefined | Collection of custom profile key-value pairs, which can be used as needed. For more information, see https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5. |
+| Name               | Type                | Description                                                  |
+| ------------------ | ------------------- | ------------------------------------------------------------ |
+| nick               | String \| undefined | Nickname                                                     |
+| avatar             | String \| undefined | Profile photo URL                                            |
+| gender             | String \| undefined | Gender. Valid values:<br/><li>TIM.TYPES.GENDER_UNKNOWN (not set)</li><li>TIM.TYPES.GENDER_FEMALE (female)</li><li>TIM.TYPES.GENDER_MALE (male)</li> |
+| selfSignature      | String \| undefined | Status                                                       |
+| allowType          | String \| undefined | When a friend request is received: Valid values<br/><li>TIM.TYPES.ALLOW_TYPE_ALLOW_ANY (no approval required)</li><li>TIM.TYPES.ALLOW_TYPE_NEED_CONFIRM (approval required)</li><li>TIM.TYPES.ALLOW_TYPE_DENY_ANY (reject)</li> |
+| birthday           | Number \| undefined | Birth date, such as `20000101`.                              |
+| location           | String \| undefined | Location. We recommend you define a mapping relationship between numbers and locations locally. Actually, the backend saves four numbers of the `uint32_t` type. Here, the first `uint32_t` indicates the country, the second the province, the third the city, and the fourth the district/county. |
+| language           | Number \| undefined | Language                                                     |
+| messageSettings    | Number \| undefined | Message settings. Valid values: 0 (receive messages), 1 (don't receive messages). |
+| adminForbidType    | String \| undefined | Friending. Valid values:<br/><li>TIM.TYPES.FORBID_TYPE_NONE (allow, which is the default value)</li><li>TIM.TYPES.FORBID_TYPE_SEND_OUT (disallow)</li> |
+| level              | Number \| undefined | Level. We recommend you split it to save the level information of multiple roles. |
+| role               | Number \| undefined | Role. We recommend you split it to save the information of multiple roles. |
+| profileCustomField | Array \| undefined  | Collection of custom profile key-value pairs, which can be used as needed. For more information, see https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5. |
 
 **Returned value**
 

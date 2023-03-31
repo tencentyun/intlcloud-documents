@@ -21,10 +21,10 @@ tim.pinConversation(options);
 
 **パラメータ**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationID     | String | セッション ID。セッションIDの構成方式：<br/><li>C2C${userID}（シングルチャット）</li><li>GROUP{groupID}（グループチャット）</li><li>@TIM#SYSTEM（システム通知セッション）</li><li>GROUP${topicID}（トピック) v2.19.1からサポート</li> |
-| isPinned           | Boolean | trueはセッションの先頭固定表示を表し、falseはセッションの先頭固定表示解除を表します |
+| Name           | Type    | Description                                                  |
+| -------------- | ------- | ------------------------------------------------------------ |
+| conversationID | String  | セッション ID。セッションIDの構成方式：<br/><li>C2C${userID}（シングルチャット）</li><li>GROUP{groupID}（グループチャット）</li><li>@TIM#SYSTEM（システム通知セッション）</li><li>GROUP${topicID}（トピック) v2.19.1からサポート</li> |
+| isPinned       | Boolean | trueはセッションの先頭固定表示を表し、falseはセッションの先頭固定表示解除を表します |
 
 **戻り値**
 

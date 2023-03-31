@@ -17,7 +17,3 @@ TIMResult res = TencentIMSDK.ConvDelete(conv_id, conv_type, (int code, string de
  // 处理异步逻辑
 });
 ```
-
-
-
-

@@ -32,6 +32,3 @@ onRecvMessageRevoked: (String messageid) {
       // Process the recalled message among locally maintained messages
 },
 ```
-
-
-

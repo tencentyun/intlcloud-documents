@@ -35,4 +35,3 @@ TencentIMSDK.SetMsgRevokeCallback((List<MsgLocator> msg_locator, string user_dat
       // 在本地维护的消息中处理被对方撤回的消息
 });
 ```
-

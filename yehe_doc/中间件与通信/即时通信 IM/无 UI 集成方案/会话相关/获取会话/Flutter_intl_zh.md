@@ -22,6 +22,3 @@ V2TimValueCallback<V2TimConversation> conv = await conversationManager.getConver
 ```dart
 V2TimValueCallback<V2TimConversationResult> convList = await conversationManager.getConversationList(nextSeq: '', count: 10);
 ```
-
-
-

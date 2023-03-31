@@ -22,9 +22,9 @@ tim.getConversationList(options);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| options          | undefined \| Array | 参数选项。<br/><li>options 不传表示获取全部会话</li><li>options 传入数组参数表示获取指定的多个会话，且不能传入空数组</li> |
+| Name    | Type               | Description                                                  |
+| ------- | ------------------ | ------------------------------------------------------------ |
+| options | undefined \| Array | 参数选项。<br/><li>options 不传表示获取全部会话</li><li>options 传入数组参数表示获取指定的多个会话，且不能传入空数组</li> |
 
 **返回值**
 
@@ -76,9 +76,9 @@ tim.getConversationProfile(conversationID);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationID          | String | 会话 ID。会话 ID 组成方式：<br/><li>C2C${userID}（单聊）</li><li>GROUP{groupID}（群聊）</li><li>@TIM#SYSTEM（系统通知会话）</li> |
+| Name           | Type   | Description                                                  |
+| -------------- | ------ | ------------------------------------------------------------ |
+| conversationID | String | 会话 ID。会话 ID 组成方式：<br/><li>C2C${userID}（单聊）</li><li>GROUP{groupID}（群聊）</li><li>@TIM#SYSTEM（系统通知会话）</li> |
 
 **返回值**
 

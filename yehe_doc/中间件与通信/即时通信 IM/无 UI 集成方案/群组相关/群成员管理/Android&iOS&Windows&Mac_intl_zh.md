@@ -17,10 +17,10 @@
 ### 过滤器（filter）拉取
 在调用 `getGroupMemberList` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a69fc0831aacaa0585c1855f4c91320be) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a98681b9036e73acbe8f84737b5291326) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ade696bf03f06de9cdfb534570de35254)) 接口时，您可以指定 `filter` 为 `V2TIMGroupMemberFilter`，拉取特定角色列表。
 
-| 过滤器                           | 过滤类型                 |
-| -------------------------------- | --------------------- |
+| 过滤器                           | 过滤类型                   |
+| -------------------------------- | -------------------------- |
 | V2TIM_GROUP_MEMBER_FILTER_ALL    | 拉取所有群成员的信息列表   |
-| V2TIM_GROUP_MEMBER_FILTER_OWNER  | 仅拉取群主的信息列表      |
+| V2TIM_GROUP_MEMBER_FILTER_OWNER  | 仅拉取群主的信息列表       |
 | V2TIM_GROUP_MEMBER_FILTER_ADMIN  | 仅拉取群管理员的信息列表   |
 | V2TIM_GROUP_MEMBER_FILTER_COMMON | 仅拉取普通群成员的信息列表 |
 

@@ -17,5 +17,3 @@ const searchGroup = await groupManager.searchGroups({
   isSearchGroupName: true,
 });
 ```
-
-

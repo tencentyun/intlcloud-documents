@@ -21,10 +21,10 @@ The `options` parameter is of the `Object` type. It contains the following attri
 
 **Parameters**
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationID     | String | Conversation ID, which consists of:<br/><li>C2C${userID} (for one-to-one chats)</li><li>GROUP{groupID} (for group chats)</li><li>@TIM#SYSTEM (system notification conversation)</li><li>GROUP${topicID} (topic). It is supported by v2.19.1 or later.</li> |
-| isPinned           | Boolean | If it is `true`, the conversation is pinned to the top; if it is `false`, the conversation is unpinned from the top. |
+| Name           | Type    | Description                                                  |
+| -------------- | ------- | ------------------------------------------------------------ |
+| conversationID | String  | Conversation ID, which consists of:<br/><li>C2C${userID} (for one-to-one chats)</li><li>GROUP{groupID} (for group chats)</li><li>@TIM#SYSTEM (system notification conversation)</li><li>GROUP${topicID} (topic). It is supported by v2.19.1 or later.</li> |
+| isPinned       | Boolean | If it is `true`, the conversation is pinned to the top; if it is `false`, the conversation is unpinned from the top. |
 
 **Return values**
 

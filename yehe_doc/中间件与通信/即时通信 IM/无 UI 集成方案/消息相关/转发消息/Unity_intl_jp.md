@@ -129,6 +129,3 @@ if(elem.TIMElemType == TIMElemType.kTIMElem_Merge){
 
 ## メッセージを1つずつ転送
 単一のメッセージを転送する必要がある場合は、先に元のメッセージとまったく同じ内容の転送メッセージを作成してから、`MsgSendMessage` ([クリックして詳細を表示](https://comm.qq.com/im/doc/unity/zh/api/MessageApi/MsgSendMessage.html))インターフェースを呼び出して転送メッセージを送信できます。
-
-
-

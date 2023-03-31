@@ -27,5 +27,3 @@ Below is the sample code:
 // Set the group member profile
 groupManager.setGroupMemberInfo("groupID", "userID", "nameCard");
 ```
-
-

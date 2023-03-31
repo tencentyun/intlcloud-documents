@@ -13,9 +13,9 @@ Call the `login` API ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManage
 
 Key parameters of the `login` API are as follows:
 
-| Parameter | Description    | Remarks                                                                                                                                                                  |
-| --------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| UserID    | Unique user ID | It can contain up to 32 bytes of letters (a–z and A-Z), digits (0–9), underscores (\_), and hyphens (-).                                                                 |
+| Parameter | Description    | Remarks                                                      |
+| --------- | -------------- | ------------------------------------------------------------ |
+| UserID    | Unique user ID | It can contain up to 32 bytes of letters (a–z and A-Z), digits (0–9), underscores (\_), and hyphens (-). |
 | UserSig   | Login ticket   | It is calculated by your business server to ensure security. For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 
 You can call the `login` API in the following scenarios:
@@ -128,5 +128,3 @@ if (logoutRes.code == 0) {
 Call `login` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMManager/login.html)) to switch between accounts in the application.
 
 For example, to switch the logged-in user from `alice` to `bob`, just [log](#login_code) bob in. You don't need to explicitly call `logout alice`, as this operation will be handled automatically inside the IM SDK.
-
-

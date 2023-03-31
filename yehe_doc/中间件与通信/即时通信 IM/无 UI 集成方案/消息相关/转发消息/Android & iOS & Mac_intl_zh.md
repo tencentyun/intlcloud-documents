@@ -6,9 +6,9 @@
 
 合并消息的展示还需要标题和摘要信息，如下图所示：
 
-| 合并转发 | 合并消息展示 | 点击合并消息下载合并消息列表展示 |
-|---------|---------|---------|
-|<img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "219"/>|
+| 合并转发                                                     | 合并消息展示                                                 | 点击合并消息下载合并消息列表展示                             |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "219"/> |
 
 
 ## 合并转发消息
@@ -20,12 +20,12 @@
 <img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.pngg" width = "450" />
 
 
-| 属性 |  含义 | 说明 |
-| --- |  --- | --- |
-| messageList |  原始消息列表 | 合并转发的原始消息列表。|
-| title | 标题 | 合并消息的标题，如上图所示 “xixiyah 和 Hello 的聊天记录”。 |
-| abstractList | 摘要列表 | 合并消息的摘要信息，如上图所示，合并消息需要预先展示原始消息的摘要信息，当用户点击 Cell 后才去展示完整消息内容。|
-| compatibleText | 兼容文本信息 | 低版本 SDK 如果不支持合并消息，默认会收到一条文本消息，文本消息的内容为 compatibleText。|
+| 属性           | 含义         | 说明                                                         |
+| -------------- | ------------ | ------------------------------------------------------------ |
+| messageList    | 原始消息列表 | 合并转发的原始消息列表。                                     |
+| title          | 标题         | 合并消息的标题，如上图所示 “xixiyah 和 Hello 的聊天记录”。   |
+| abstractList   | 摘要列表     | 合并消息的摘要信息，如上图所示，合并消息需要预先展示原始消息的摘要信息，当用户点击 Cell 后才去展示完整消息内容。 |
+| compatibleText | 兼容文本信息 | 低版本 SDK 如果不支持合并消息，默认会收到一条文本消息，文本消息的内容为 compatibleText。 |
 
 示例代码如下：
 <dx-tabs>
@@ -248,5 +248,3 @@ V2TIMMessage *forwardMessage = [[V2TIMManager sharedInstance] createForwardMessa
 ```
 :::
 </dx-tabs>
-
-

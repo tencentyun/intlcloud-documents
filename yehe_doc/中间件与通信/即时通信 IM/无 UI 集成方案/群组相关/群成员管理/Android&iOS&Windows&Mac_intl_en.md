@@ -17,11 +17,11 @@ As a group might have a large number of members (for example, over 5,000), this 
 ### Pulling by filter (`filter`)
 When calling the `getGroupMemberList` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a69fc0831aacaa0585c1855f4c91320be) / [iOS and Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a98681b9036e73acbe8f84737b5291326) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#ade696bf03f06de9cdfb534570de35254)), you can set `filter` to `V2TIMGroupMemberFilter` to pull the information of certain roles.
 
-| Filter                                                     | Type                   |
-| -------------------------------- | --------------------- |
-| V2TIM_GROUP_MEMBER_FILTER_ALL | Pull the information list of all group members |
-| V2TIM_GROUP_MEMBER_FILTER_OWNER | Pull the information list of the group owner |
-| V2TIM_GROUP_MEMBER_FILTER_ADMIN | Pull the information list of the group admin |
+| Filter                           | Type                                                |
+| -------------------------------- | --------------------------------------------------- |
+| V2TIM_GROUP_MEMBER_FILTER_ALL    | Pull the information list of all group members      |
+| V2TIM_GROUP_MEMBER_FILTER_OWNER  | Pull the information list of the group owner        |
+| V2TIM_GROUP_MEMBER_FILTER_ADMIN  | Pull the information list of the group admin        |
 | V2TIM_GROUP_MEMBER_FILTER_COMMON | Pull the information list of ordinary group members |
 
 For audio-video groups, you can set `filter` to a custom group member mark other than `V2TIMGroupMemberFilter` to filter group members as needed. For more information, see [Marking Group Members](#markGroupMemberList).

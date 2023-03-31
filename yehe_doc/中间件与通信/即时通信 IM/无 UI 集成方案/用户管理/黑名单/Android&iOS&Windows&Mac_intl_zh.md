@@ -310,4 +310,3 @@ V2TIMManager::GetInstance()->GetFriendshipManager()->GetBlackList(callback);
 ```
 :::
 </dx-tabs>
-

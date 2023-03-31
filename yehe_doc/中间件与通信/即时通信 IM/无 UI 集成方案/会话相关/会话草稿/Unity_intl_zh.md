@@ -2,8 +2,8 @@
 在发送消息时，可能会遇到消息尚未编辑完，就要切换至其它聊天窗口的情况。这些未编辑完的消息可通过 `ConvSetDraft` 接口保存，以便于下次回到这个聊天界面时，通过 ConvInfo 对象的 conv_draft 字段，获取到尚未编辑完的内容，继续编辑。
 
 >!
-> 1. 草稿仅支持文本内容。
-> 2. 草稿仅在本地保存，不会存储到服务器，因此不能多端同步，程序卸载重装会失效。
+>1. 草稿仅支持文本内容。
+>2. 草稿仅在本地保存，不会存储到服务器，因此不能多端同步，程序卸载重装会失效。
 
 ## 设置会话草稿
 通过调用 `ConvSetDraft`([Details](https://comm.qq.com/im/doc/unity/en/api/ConvApi/ConvSetDraft.html)) 接口，设置会话草稿。
@@ -27,6 +27,3 @@ DraftParam draft_param = new DraftParam
 }
 TIMResult res = TencentIMSDK.ConvSetDraft(conv_id, conv_type, draft_param);
 ```
-
-
-

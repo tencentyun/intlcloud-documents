@@ -2,11 +2,11 @@
 通过设置单聊和群聊的消息接收选项，可以实现类似消息免打扰的功能。
 IM SDK 支持三种类型的消息接收选项，消息接收选项在 `V2TIMReceiveMessageOpt` 中定义：
 
-| 消息接收选项 | 功能描述 |
-|---------|---------|
-| V2TIM_RECEIVE_MESSAGE | 在线时正常接收消息，离线时接收离线推送通知 | 
-| V2TIM_NOT_RECEIVE_MESSAGE | 在线和离线都不接收消息 | 
-| V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | 在线时正常接收消息，离线时不接收离线推送通知 | 
+| 消息接收选项                     | 功能描述                                     |
+| -------------------------------- | -------------------------------------------- |
+| V2TIM_RECEIVE_MESSAGE            | 在线时正常接收消息，离线时接收离线推送通知   |
+| V2TIM_NOT_RECEIVE_MESSAGE        | 在线和离线都不接收消息                       |
+| V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | 在线时正常接收消息，离线时不接收离线推送通知 |
 
 > ? 消息接收选项仅增强版 SDK 5.3.425 及以上版本支持。
 
@@ -393,4 +393,3 @@ V2TIMManager::GetInstance()->GetGroupManager()->GetGroupsInfo(groupIDList, callb
 ```
 :::
 </dx-tabs>
-

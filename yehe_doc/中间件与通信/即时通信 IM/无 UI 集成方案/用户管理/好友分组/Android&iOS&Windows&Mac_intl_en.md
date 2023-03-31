@@ -507,4 +507,3 @@ V2TIMManager::GetInstance()->GetFriendshipManager()->DeleteFriendsFromFriendGrou
 ```
 :::
 </dx-tabs>
-

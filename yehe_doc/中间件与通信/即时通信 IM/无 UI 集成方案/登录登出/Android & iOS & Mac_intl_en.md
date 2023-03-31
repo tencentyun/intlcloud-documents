@@ -13,10 +13,10 @@ You can call the `login` API ([Android](https://im.sdk.qcloud.com/doc/en/classco
 
 Key parameters of the `login` API are as follows:
 
-| Parameter | Definition | Description |
-| --- | --- | --- |
-| UserID | Unique user ID | It can contain up to 32 bytes of letters (a-z and A-Z), digits (0-9), underscores (_), and hyphens (-). |
-| UserSig | Login ticket | It is calculated by your business server to ensure security. For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
+| Parameter | Definition     | Description                                                  |
+| --------- | -------------- | ------------------------------------------------------------ |
+| UserID    | Unique user ID | It can contain up to 32 bytes of letters (a-z and A-Z), digits (0-9), underscores (_), and hyphens (-). |
+| UserSig   | Login ticket   | It is calculated by your business server to ensure security. For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 
 You can call the `login` API in the following scenarios:
 * You use the features of the IM SDK for the first time after your application is started.
@@ -29,8 +29,8 @@ You don't need to call the `login` API in the following scenarios:
 * The login process is running.
 
 >!
-> 1. After you call the IM SDK API and log in successfully, DAU calculation will start; therefore, call the login API as needed to avoid a high DAU.
-> 2. You cannot log in to multiple IM SDK accounts of the same application at the same time; otherwise, only the last logged in account will be online. 
+>1. After you call the IM SDK API and log in successfully, DAU calculation will start; therefore, call the login API as needed to avoid a high DAU.
+>2. You cannot log in to multiple IM SDK accounts of the same application at the same time; otherwise, only the last logged in account will be online. 
 
 
 Sample code:
@@ -99,11 +99,11 @@ NSString *loginUserID = [[V2TIMManager sharedInstance] getLoginUser];
 
 Call `getLoginStatus` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a1836146275265b2a120412f18961db95) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#acfd2f6366780badf80ebf66d95550f89)) to get the login status. If a user is logged in or logging in, don't call the login API frequently. The IM SDK supports the following login statuses:
 
-| Login Status | Description |
-|---------|---------|
-| V2TIM_STATUS_LOGINED | Logged in |
-| V2TIM_STATUS_LOGINING | Logging in |
-| V2TIM_STATUS_LOGOUT | Not logged in |
+| Login Status          | Description   |
+| --------------------- | ------------- |
+| V2TIM_STATUS_LOGINED  | Logged in     |
+| V2TIM_STATUS_LOGINING | Logging in    |
+| V2TIM_STATUS_LOGOUT   | Not logged in |
 
 Sample code:
 <dx-tabs>
@@ -170,5 +170,3 @@ V2TIMManager.getInstance().logout(new V2TIMCallback() {
 Call `login` to switch between accounts in the application.
 
 For example, to switch the logged-in user from `alice` to `bob`, just log bob in. You don't need to explicitly call `logout alice`, as this operation will be handled automatically inside the IM SDK.
-
-

@@ -37,6 +37,3 @@ Call `getBlackList` ([Details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/
 // Get the blocklist
 V2TimValueCallback<List<V2TimFriendInfo>> blacklist = await friendshipManager.getBlackList();
 ```
-
-
-

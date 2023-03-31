@@ -61,14 +61,14 @@ tim.addFriend(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| to     | String | 	User ID |
-| source | String | Friend source.<br/><li>It consists of two parts: the prefix and the keyword. The former is `AddSource_Type_`, and the latter must be a string of up to eight bytes. We recommend you use an English word or its abbreviation as the keyword. For example, if the keyword is `Android`, this field will be `AddSource_Type_Android`.</li>
-| wording | String \| undefined | Friending remarks, which can contain up to 256 bytes. |
-| type | String \| undefined | Friending method (two-way friending by default). Valid values:<br/><li>TIM.TYPES.SNS_ADD_TYPE_SINGLE (one-way friending, where user B is in the friend list of user A but not vice versa)</li><li>TIM.TYPES.SNS_ADD_TYPE_BOTH (two-way friending, where user B is in the friend list of user A and vice versa)</li> |
-| remark | String \| undefined | Friend remarks, which can contain up to 96 bytes. |
-| groupName | String \| undefined | List name, which can contain up to 30 bytes.
+| Name      | Type                | Description                                                  |
+| --------- | ------------------- | ------------------------------------------------------------ |
+| to        | String              | User ID                                                      |
+| source    | String              | Friend source.<br/><li>It consists of two parts: the prefix and the keyword. The former is `AddSource_Type_`, and the latter must be a string of up to eight bytes. We recommend you use an English word or its abbreviation as the keyword. For example, if the keyword is `Android`, this field will be `AddSource_Type_Android`.</li> |
+| wording   | String \| undefined | Friending remarks, which can contain up to 256 bytes.        |
+| type      | String \| undefined | Friending method (two-way friending by default). Valid values:<br/><li>TIM.TYPES.SNS_ADD_TYPE_SINGLE (one-way friending, where user B is in the friend list of user A but not vice versa)</li><li>TIM.TYPES.SNS_ADD_TYPE_BOTH (two-way friending, where user B is in the friend list of user A and vice versa)</li> |
+| remark    | String \| undefined | Friend remarks, which can contain up to 96 bytes.            |
+| groupName | String \| undefined | List name, which can contain up to 30 bytes.                 |
 
 **Returned value**
 
@@ -126,10 +126,10 @@ tim.deleteFriend(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList     | Array | 	List of `userID` values of the friends to be deleted. The number of `userID` values cannot exceed 100 per request. |
-| type | String \| undefined | Deletion mode (two-way deletion by default). Valid values:<br/><li>TIM.TYPES.SNS_DELETE_TYPE_SINGLE (one-way deletion, where user B is deleted from the friend list of user A but not vice versa)</li><li>TIM.TYPES.SNS_DELETE_TYPE_BOTH (two-way deletion, where user B is deleted from the friend list of user A and vice versa)</li> |
+| Name       | Type                | Description                                                  |
+| ---------- | ------------------- | ------------------------------------------------------------ |
+| userIDList | Array               | List of `userID` values of the friends to be deleted. The number of `userID` values cannot exceed 100 per request. |
+| type       | String \| undefined | Deletion mode (two-way deletion by default). Valid values:<br/><li>TIM.TYPES.SNS_DELETE_TYPE_SINGLE (one-way deletion, where user B is deleted from the friend list of user A but not vice versa)</li><li>TIM.TYPES.SNS_DELETE_TYPE_BOTH (two-way deletion, where user B is deleted from the friend list of user A and vice versa)</li> |
 
 **Returned value**
 
@@ -180,10 +180,10 @@ tim.checkFriend(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList     | Array | 	List of the `userID` values to be verified. The number of `userID` values cannot exceed 1,000 per request. |
-| type | String \| undefined | Verification mode (two-way verification by default). Valid values:<br/><li>TIM.TYPES.SNS_CHECK_TYPE_SINGLE (one-way verification, where the friend list of user A is checked for user B but not vice versa)</li><li>TIM.TYPES.SNS_CHECK_TYPE_BOTH (two-way verification, where the friend list of user A is checked for user B and vice versa)</li> |
+| Name       | Type                | Description                                                  |
+| ---------- | ------------------- | ------------------------------------------------------------ |
+| userIDList | Array               | List of the `userID` values to be verified. The number of `userID` values cannot exceed 1,000 per request. |
+| type       | String \| undefined | Verification mode (two-way verification by default). Valid values:<br/><li>TIM.TYPES.SNS_CHECK_TYPE_SINGLE (one-way verification, where the friend list of user A is checked for user B but not vice versa)</li><li>TIM.TYPES.SNS_CHECK_TYPE_BOTH (two-way verification, where the friend list of user A is checked for user B and vice versa)</li> |
 
 **Returned value**
 
@@ -227,4 +227,3 @@ promise.then(function(imResponse) {
 
 By default, IM SDK does not check the relationship when sending one-to-one messages. This default setting is generally applied in customer service scenarios, where having to friend a customer service agent before chatting is inefficient.
 To implement "adding a friend before sending a message", you can log in to the [IM console](https://console.cloud.tencent.com/im), select **Feature Configuration** > **Login and Message** > **Relationship Check**, and enable **Check Relationship for One-to-One Messages**. After it is enabled, a user can send messages only to friends. If the user sends a message to a non-friend user, the SDK will report error code 20009.
-

@@ -5,16 +5,16 @@ After this feature is enabled, the sender can set whether a message requires a r
 Read receipts are supported for both one-to-one and group messages in the same way.
 
 > ?
-- To use this feature, you need to purchase the [Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8).
-- Read receipts for group messages are supported only by the Enhanced edition on v6.1.2155 or later.
-- Read receipts for one-to-one messages are supported only by the Enhanced edition on v6.2.2363 or later.
+> - To use this feature, you need to purchase the [Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8).
+> - Read receipts for group messages are supported only by the Enhanced edition on v6.1.2155 or later.
+> - Read receipts for one-to-one messages are supported only by the Enhanced edition on v6.2.2363 or later.
 
 
 ## Message Read Receipt
 ### Specifying a group type for which to support message read receipts
 Log in to the [IM console](https://console.cloud.tencent.com/im), select **Feature Configuration** > **Login and Message** > **Group Message Read Receipts**.
 
-    
+
 You don't need to configure read receipts to be sent for one-to-one messages in the console, as they are supported by default.
 
 ### Specifying that a message requires a read receipt (by the sender)
@@ -151,14 +151,14 @@ After entering the message list, the sender pulls historical messages first, and
 
 The `V2TIMMessageReceipt` field of the message read receipt is as described below:
 
-| Attribute | Definition | Description |
-| --- |  --- | --- |
-| msgID | Message ID | Unique message ID |
-| userID | ID of the receiver | If the message is a one-to-one message, this field indicates the ID of the receiver. |
-| isPeerRead | Whether the message is read by the receiver | If the message is a one-to-one message, this field indicates whether the message is read by the receiver. |
-| timestamp | Time when the receiver marks the message as read | This field is invalid when a message is read. If the message is a one-to-one message, when the receiver calls the `markC2CMessageAsRead` API to mark the message as read, the sender will receive the `onRecvC2CReadReceipt` callback which contains the `timestamp` information. For more information on how to use `markC2CMessageAsRead`, see [Unread Count of Conversation](https://intl.cloud.tencent.com/document/product/1047/48320). |
-| groupID | Group ID | If the message is a group message, this field indicates the group ID. |
-| readCount | Number of members who have read the group message | If the message is a group message, this field indicates the number of members who have read the message. |
+| Attribute   | Definition                                            | Description                                                  |
+| ----------- | ----------------------------------------------------- | ------------------------------------------------------------ |
+| msgID       | Message ID                                            | Unique message ID                                            |
+| userID      | ID of the receiver                                    | If the message is a one-to-one message, this field indicates the ID of the receiver. |
+| isPeerRead  | Whether the message is read by the receiver           | If the message is a one-to-one message, this field indicates whether the message is read by the receiver. |
+| timestamp   | Time when the receiver marks the message as read      | This field is invalid when a message is read. If the message is a one-to-one message, when the receiver calls the `markC2CMessageAsRead` API to mark the message as read, the sender will receive the `onRecvC2CReadReceipt` callback which contains the `timestamp` information. |
+| groupID     | Group ID                                              | If the message is a group message, this field indicates the group ID. |
+| readCount   | Number of members who have read the group message     | If the message is a group message, this field indicates the number of members who have read the message. |
 | unreadCount | Number of members who have not read the group message | If the message is a group message, this field indicates the number of members who have not read the message. |
 
 Sample code:
@@ -313,5 +313,3 @@ V2TIMManager.getMessageManager().getGroupMessageReadMemberList(message, V2TIMMes
 ```
 :::
 </dx-tabs>
-
-

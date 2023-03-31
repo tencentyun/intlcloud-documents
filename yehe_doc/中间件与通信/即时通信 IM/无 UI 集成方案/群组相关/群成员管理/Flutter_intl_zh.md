@@ -62,7 +62,7 @@ groupManager.getGroupMemberList(count: 10,filter: GroupMemberFilterTypeEnum.V2TI
 群主或管理员也可以通过 `setGroupInfo` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMGroupManager/setGroupInfo.html)) 接口对整个群进行禁言，将 `allMuted`属性字段设置为 `true` 即可。全群禁言没有时间限制，需通过将群资料 `setAllMuted(false)` 解除禁言。
 
 > ? 全员禁言后触发 `onGroupInfoChanged` ([点击查看详情](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Callback/OnGroupInfoChangedCallback.html)) 事件回调，该功能默认是关闭的，可在控制台内自行开通。
->  方式：[进入即时通信IM控制台群组配置模块](https://console.cloud.tencent.com/im/qun-setting)，选择群系统通知配置，为各种类型群，单击操作中**编辑**，修改“群禁言变更通知”，即可。
+> 方式：[进入即时通信IM控制台群组配置模块](https://console.cloud.tencent.com/im/qun-setting)，选择群系统通知配置，为各种类型群，单击操作中**编辑**，修改“群禁言变更通知”，即可。
 
 示例代码如下：
 ```dart
@@ -167,4 +167,3 @@ groupManager.transferGroupOwner(groupID: "", userID: "userID");
 ```dart
 groupManager.getGroupOnlineMemberCount(groupID: '');
 ```
-

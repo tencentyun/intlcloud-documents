@@ -81,5 +81,3 @@ const groups = await TencentImSDKPlugin.v2TIMManager.getGroupManager().getGroups
     element.groupInfo.recvOpt;
   });
 ```
-
-

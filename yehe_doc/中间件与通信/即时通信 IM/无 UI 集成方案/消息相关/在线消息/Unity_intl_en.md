@@ -31,6 +31,3 @@ var message = new Message
   // Process the callback logic
  });
 ```
-
-
-

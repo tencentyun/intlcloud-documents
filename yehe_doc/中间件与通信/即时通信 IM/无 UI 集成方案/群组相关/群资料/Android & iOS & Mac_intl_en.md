@@ -91,13 +91,13 @@ If you have called `addGroupListener` to add a group event listener, after the g
 
 Member roles that can modify the group profile vary by group type as follows:
 
-| Group Type | Member Roles Allowed to Modify the Group Profile |
-| --- | --- |
-| Work group (Work) | All group members |
-| Public group (Public)| Group owner and admin |
-| Meeting group (Meeting)| Group owner and admin |
-| Community (Community)| Group owner and admin |
-| Audio-video group (AVChatRoom)| Group owner |
+| Group Type                     | Member Roles Allowed to Modify the Group Profile |
+| ------------------------------ | ------------------------------------------------ |
+| Work group (Work)              | All group members                                |
+| Public group (Public)          | Group owner and admin                            |
+| Meeting group (Meeting)        | Group owner and admin                            |
+| Community (Community)          | Group owner and admin                            |
+| Audio-video group (AVChatRoom) | Group owner                                      |
 
 > ! Not all the fields of the group profile `V2TIMGroupInfo` can be modified, but only those writable.
 
@@ -198,8 +198,8 @@ Unlike setting other fields in `V2TIMGroupInfo`, setting the custom group field 
 2. Call the `setGroupInfo` API to set the field with up to 512 bytes.
 
 >!
-> 1. You can set up to ten custom fields, which cannot be deleted and whose name and type cannot be changed.
-> 2. The custom field is mainly used to ensure compatibility with v1 and v2. If you use the API on v2, we recommend you use the `initGroupAttributes` API to set the group attribute. This allows for greater flexibility (requiring no configuration in the console) and storage (up to 16 KB). For more information, see [Custom Group Attribute](https://intl.cloud.tencent.com/document/product/1047/48175).
+>1. You can set up to ten custom fields, which cannot be deleted and whose name and type cannot be changed.
+>2. The custom field is mainly used to ensure compatibility with v1 and v2. If you use the API on v2, we recommend you use the `initGroupAttributes` API to set the group attribute. This allows for greater flexibility (requiring no configuration in the console) and storage (up to 16 KB). For more information, see [Custom Group Attribute](https://intl.cloud.tencent.com/document/product/1047/48175).
 
 
 [](id:setGroupReceiveMessageOpt)
@@ -208,11 +208,11 @@ Any group member can call the `setGroupReceiveMessageOpt` API ([Android](https:/
 
 `V2TIMReceiveMessageOpt` has the following options:
 
-| Message Receiving Option | Description |
-| --- | --- |
-| V2TIM_RECEIVE_MESSAGE | Messages will be received when the user is online, and push notifications will be received when the user is offline. |
-| V2TIM_NOT_RECEIVE_MESSAGE | No group messages will be received.|
-| V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | Messages will be received when the user is online, and no push notifications will be received when the user is offline.|
+| Message Receiving Option         | Description                                                  |
+| -------------------------------- | ------------------------------------------------------------ |
+| V2TIM_RECEIVE_MESSAGE            | Messages will be received when the user is online, and push notifications will be received when the user is offline. |
+| V2TIM_NOT_RECEIVE_MESSAGE        | No group messages will be received.                          |
+| V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | Messages will be received when the user is online, and no push notifications will be received when the user is offline. |
 
 Different `V2TIMReceiveMessageOpt` options can be used to implement group message notification muting:
 
@@ -302,4 +302,3 @@ V2TIMManager::GetInstance()->GetMessageManager()->SetGroupReceiveMessageOpt(grou
 ```
 :::
 </dx-tabs>
-

@@ -83,4 +83,3 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
     // A group attribute is changed.
   },));
 ```
-

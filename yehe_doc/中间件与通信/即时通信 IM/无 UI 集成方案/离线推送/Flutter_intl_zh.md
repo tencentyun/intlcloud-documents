@@ -11,30 +11,30 @@
 
 >?
 >
-> - 如果您的应用已经自行完成厂商离线推送，仅需查看本教程 [第一步](#step_1) 和 [第五步](#step_5)，在控制台内录入厂商信息，并在应用登录后，上报证书 ID 即可。
-> - 如果您的应用有其他内容的消息需要推送，包括运营消息等，或在接入其他第三方推送 SDK 报错冲突，[可参考本部分，使用全员推送，解决问题](#push_to_all)。**建议不要和第三方推送 SDK，如 TPNS，混用。**
-> - 如果您的应用不需要离线推送，或场景不满足离线推送的需求，请直接看本文最后一节 [“在线推送-在本地创建新消息通知”](#online_push) 在线推送部分。
+>- 如果您的应用已经自行完成厂商离线推送，仅需查看本教程 [第一步](#step_1) 和 [第五步](#step_5)，在控制台内录入厂商信息，并在应用登录后，上报证书 ID 即可。
+>- 如果您的应用有其他内容的消息需要推送，包括运营消息等，或在接入其他第三方推送 SDK 报错冲突，[可参考本部分，使用全员推送，解决问题](#push_to_all)。**建议不要和第三方推送 SDK，如 TPNS，混用。**
+>- 如果您的应用不需要离线推送，或场景不满足离线推送的需求，请直接看本文最后一节 [“在线推送-在本地创建新消息通知”](#online_push) 在线推送部分。
 
 ## 插件 API 概览
 
 >? 以下 API 若无特殊说明，均可自动兼容 Android/iOS 平台及支持厂商，插件内部进行平台及厂商判断，您直接调用即可。
 
-| API | 说明 |
-|---------|---------|
-| 构造函数（TimUiKitPushPlugin） | 实例化一个 Push 插件对象，并确定是否使用 Google FCM |
-| init | 初始化插件，绑定点击通知回调事件及传入厂商渠道信息 |
-| uploadToken | 自动获取设备 Token 及证书 ID，自动上传至腾讯云 IM 服务端 |
-| clearToken | 清除服务端上本设备的推送 Token，达到屏蔽通知的效果 |
-| requireNotificationPermission | 申请推送权限 |
-| setBadgeNum | 设置未读数角标 （iOS 设备需要[先禁用 IM SDK 自带的设置角标功能](#iosbadge)） |
-| clearAllNotification | 清除通知栏内，当前应用，所有的通知 |
-| getDevicePushConfig | 获取当前厂商的推送相关信息，含机型/证书ID/Token |
-| getDevicePushToken | 获取当前厂商的推送 Token |
-| getOtherPushType | 获取厂商信息 |
-| getBuzId | 获取当前厂商对应的腾讯云控制台上注册的证书 ID |
-| createNotificationChannel | 为 Android 机型创建通知 Channel 渠道，[详见 Google 官方文档](https://developer.android.com/training/notify-user/channels) |
-| clearAllNotification | 清除通知栏内，当前应用，所有的通知 |
-| displayNotification | 在客户端本地，手动创建一条消息通知 |
+| API                                  | 说明                                                         |
+| ------------------------------------ | ------------------------------------------------------------ |
+| 构造函数（TimUiKitPushPlugin）       | 实例化一个 Push 插件对象，并确定是否使用 Google FCM          |
+| init                                 | 初始化插件，绑定点击通知回调事件及传入厂商渠道信息           |
+| uploadToken                          | 自动获取设备 Token 及证书 ID，自动上传至腾讯云 IM 服务端     |
+| clearToken                           | 清除服务端上本设备的推送 Token，达到屏蔽通知的效果           |
+| requireNotificationPermission        | 申请推送权限                                                 |
+| setBadgeNum                          | 设置未读数角标 （iOS 设备需要[先禁用 IM SDK 自带的设置角标功能](#iosbadge)） |
+| clearAllNotification                 | 清除通知栏内，当前应用，所有的通知                           |
+| getDevicePushConfig                  | 获取当前厂商的推送相关信息，含机型/证书ID/Token              |
+| getDevicePushToken                   | 获取当前厂商的推送 Token                                     |
+| getOtherPushType                     | 获取厂商信息                                                 |
+| getBuzId                             | 获取当前厂商对应的腾讯云控制台上注册的证书 ID                |
+| createNotificationChannel            | 为 Android 机型创建通知 Channel 渠道，[详见 Google 官方文档](https://developer.android.com/training/notify-user/channels) |
+| clearAllNotification                 | 清除通知栏内，当前应用，所有的通知                           |
+| displayNotification                  | 在客户端本地，手动创建一条消息通知                           |
 | displayDefaultNotificationForMessage | 在客户端本地，按照默认的规则，自动为一个 `V2TimMessage` 创建一个消息通知 |
 
 ## 接入准备（注册厂商）[](id:firstone)
@@ -135,12 +135,12 @@
 > ?如果您的应用需要经过流水线编译发布，每次编译在不同的构建机上进行，可在本地创建`keystore.jks`密钥文件，得到该 keystore 的 SHA256 值，填入华为推送平台中。
 >
 > 在流水线的构建脚本中，对完成构建后的产物进行归档对齐，及使用刚才的 keystore 签名。此时该最终产物签名 SHA256 值即可保持一致。代码如下：
-><dx-codeblock>
-:::  shell
-zipalign -v -p 4 构建生成的apk.apk 打包生成的apk_aligned.apk
-apksigner sign --ks keystore.jks --ks-pass pass:您创建的keystore密码 --out 最终签名  完成的apk.apk 打包生成的apk_aligned.apk
-:::
-</dx-codeblock>
+> <dx-codeblock>
+> :::  shell
+> zipalign -v -p 4 构建生成的apk.apk 打包生成的apk_aligned.apk
+> apksigner sign --ks keystore.jks --ks-pass pass:您创建的keystore密码 --out 最终签名  完成的apk.apk 打包生成的apk_aligned.apk
+> :::
+> </dx-codeblock>
 
 ##### 获取华为推送配置文件
 
@@ -198,10 +198,10 @@ apksigner sign --ks keystore.jks --ks-pass pass:您创建的keystore密码 --out
 
 请注意，我们提供两个版本的消息推送插件，中国大陆版和国际版。iOS都使用APNS通道，但 Android 通道有差异。
 
-| 版本类型 | 包名 | Google FCM 支持 | 国内厂商原生支持 | 描述 |
-|---------|---------|---------|---------|---------|
-| 中国大陆版 | [tencent_chat_push_for_china](https://pub.dev/packages/tencent_chat_push_for_china) | 否 | 是 | Android 离线推送仅走国内厂商原生通道 |
-| 国际版 | [tim_ui_kit_push_plugin](https://pub.dev/packages/tim_ui_kit_push_plugin) | 是 | 是 | 在配置 Google FCM 相关信息，且当前设备 Google FCM 可用的情况下，优先使用 Google FCM 通道，其次再尝试国内厂商通道 |
+| 版本类型   | 包名                                                         | Google FCM 支持 | 国内厂商原生支持 | 描述                                                         |
+| ---------- | ------------------------------------------------------------ | --------------- | ---------------- | ------------------------------------------------------------ |
+| 中国大陆版 | [tencent_chat_push_for_china](https://pub.dev/packages/tencent_chat_push_for_china) | 否              | 是               | Android 离线推送仅走国内厂商原生通道                         |
+| 国际版     | [tim_ui_kit_push_plugin](https://pub.dev/packages/tim_ui_kit_push_plugin) | 是              | 是               | 在配置 Google FCM 相关信息，且当前设备 Google FCM 可用的情况下，优先使用 Google FCM 通道，其次再尝试国内厂商通道 |
 
 请根据目标客户群里，选用合适的推送插件。
 
@@ -1047,7 +1047,7 @@ cPush.displayDefaultNotificationForMessage(
 
 >? 在后台跳转情况下，此时 Flutter 首页可能已经 unmounted，无法为跳转提供 context，因此建议启动时缓存一个 context，保证跳转成功。
 >
-> 建议跳转成功后，清除通知栏中其他通知消息，避免太多IM消息堆积在通知栏中。调用插件中`clearAllNotification()`方法即可。
+>建议跳转成功后，清除通知栏中其他通知消息，避免太多IM消息堆积在通知栏中。调用插件中`clearAllNotification()`方法即可。
 
 ```Dart
 BuildContext? _cachedContext;

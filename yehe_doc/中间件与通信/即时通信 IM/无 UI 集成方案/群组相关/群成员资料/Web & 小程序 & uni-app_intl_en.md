@@ -16,10 +16,10 @@ tim.getGroupMemberProfile(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		Group ID |
-| userIDList | Array | List of IDs of the group members to be queried |
+| Name                    | Type               | Description                                                  |
+| ----------------------- | ------------------ | ------------------------------------------------------------ |
+| groupID                 | String             | Group ID                                                     |
+| userIDList              | Array              | List of IDs of the group members to be queried               |
 | memberCustomFieldFilter | Array \| undefined | Filtering the custom group member field. This attribute is optional. If it is not specified, all the custom group member fields are queried by default. |
 
 **Returned value**
@@ -63,11 +63,11 @@ tim.setGroupMemberNameCard(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		Group ID or topic ID |
-| userID | String \| undefined | It is optional. By default, the user's own name card is modified. |
-| nameCard | String | Name card of a group member |
+| Name     | Type                | Description                                                  |
+| -------- | ------------------- | ------------------------------------------------------------ |
+| groupID  | String              | Group ID or topic ID                                         |
+| userID   | String \| undefined | It is optional. By default, the user's own name card is modified. |
+| nameCard | String              | Name card of a group member                                  |
 
 **Returned value**
 
@@ -107,11 +107,11 @@ tim.setGroupMemberCustomField(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		Group ID or topic ID |
-| userID | String \| undefined | Optional. If it is not specified, the user's own custom group member field is modified. |
-| memberCustomField | Array | Custom group member field. Its array elements are as structured below:<br/><li>key --- String --- `Key` of the custom field</li><li>value --- String --- `Value` of the custom field</li> |
+| Name              | Type                | Description                                                  |
+| ----------------- | ------------------- | ------------------------------------------------------------ |
+| groupID           | String              | Group ID or topic ID                                         |
+| userID            | String \| undefined | Optional. If it is not specified, the user's own custom group member field is modified. |
+| memberCustomField | Array               | Custom group member field. Its array elements are as structured below:<br/><li>key --- String --- `Key` of the custom field</li><li>value --- String --- `Value` of the custom field</li> |
 
 **Returned value**
 
@@ -132,5 +132,3 @@ promise.then(function(imResponse) {
 
 :::
 </dx-codeblock>
-
-

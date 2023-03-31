@@ -45,9 +45,9 @@ dependencies {
 >?“版本号”应替换为 SDK 的实际版本号，建议使用 [最新版本]( https://github.com/tencentyun/TIMSDK/tree/master/Android/IMSDK)。
 >以版本号是`5.4.666`为例：
 >```
-dependencies {
-		api 'com.tencent.imsdk:imsdk-plus:5.4.666'
-}
+>dependencies {
+>	api 'com.tencent.imsdk:imsdk-plus:5.4.666'
+>}
 ```
 >
  

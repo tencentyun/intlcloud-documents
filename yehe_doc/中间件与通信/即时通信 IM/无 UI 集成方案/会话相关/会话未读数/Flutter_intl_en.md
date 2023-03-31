@@ -126,6 +126,3 @@ conversationManager.addConversationListener(listener: V2TimConversationListener(
     // Latest conversation after the change
   },));
 ```
-
-
-

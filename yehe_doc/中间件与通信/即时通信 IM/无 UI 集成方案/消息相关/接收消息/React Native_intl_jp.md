@@ -294,7 +294,7 @@ if(message.elemType == MessageElemType.V2TIM_ELEM_TYPE_FACE){
 グループtipsメッセージは、グループの中でユーザが受信する一般メッセージ以外の通知メッセージを指します。例えば、「管理者がaliceさんからグループチャットから削除しました」 「bobさんがグループ名を○○に変更しました」など。
 
 > ? グループtipsメッセージはグループチャットのメンバーだけが受信し、1対1チャット
-のメンバーは受信しません。
+> のメンバーは受信しません。
 
 グループtipsメッセージには複数のタイプがあります。詳しくは、`V2TIMGroupTipsElem`([詳細はこちら](https://comm.qq.com/im/doc/RN/zh/Interface/Message/V2TimGroupTipsElem.html)) の定義をご参照ください。
 

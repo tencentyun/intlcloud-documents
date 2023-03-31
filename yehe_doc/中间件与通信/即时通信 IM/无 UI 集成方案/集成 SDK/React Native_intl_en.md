@@ -2,10 +2,10 @@ This document describes how to quickly integrate the Tencent Cloud IM SDK into y
 
 ## Environment Requirements
 
-| Platform         | Version                                                                  |
-| ------------ | --------------------------------------------------------------------- |
-| React Native | 2.2.0 or later                                                    |
-| Android      | Android Studio 3.5 or later; devices on Android 4.1 or later for applications  |
+| Platform     | Version                                                      |
+| ------------ | ------------------------------------------------------------ |
+| React Native | 2.2.0 or later                                               |
+| Android      | Android Studio 3.5 or later; devices on Android 4.1 or later for applications |
 | iOS          | Xcode 11.0 or later. For testing with a real device, make sure that your project has a valid developer signature. |
 
 ## Integrating the IM SDK

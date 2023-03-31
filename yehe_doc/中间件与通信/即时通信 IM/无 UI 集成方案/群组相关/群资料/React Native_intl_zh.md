@@ -6,11 +6,11 @@
 
 ## 获取群资料
 
-您可以调用 `getGroupsInfo` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupsInfo.html)) 获取群资料。该接口支持一次传入多个 `groupID`，批量获取多个群的群资料。
+您可以调用 ``getGroupsInfo`` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMGroupManager/getGroupsInfo.html)) 获取群资料。该接口支持一次传入多个 `groupID`，批量获取多个群的群资料。
 
 代码示例如下：
 
-```javascript
+```
 // 获取群资料
 const groupinfos = await groupManager.getGroupsInfo(["groupid1"]);
 ```
@@ -35,7 +35,7 @@ const groupinfos = await groupManager.getGroupsInfo(["groupid1"]);
 
 示例代码如下：
 
-```javascript
+```
 groupManager.setGroupInfo({
   groupAddOpt: GroupAddOptTypeEnum.V2TIM_GROUP_ADD_AUTH,
   // ...其他资料
@@ -62,8 +62,7 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener({
 
 使用不同的 `V2TIMReceiveMessageOpt` 可以实现群消息免打扰：
 
-**完全不接收群内消息**
-群消息接收选项设置为 `V2TIM_NOT_RECEIVE_MESSAGE` 后，群内的任何消息都收不到，会话列表也不会更新。
+**完全不接收群内消息** 群消息接收选项设置为 `V2TIM_NOT_RECEIVE_MESSAGE` 后，群内的任何消息都收不到，会话列表也不会更新。
 
 **接收群内消息但不提醒，在会话列表界面显示小圆点（不显示未读数）**
 
@@ -75,11 +74,9 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener({
 
 示例代码如下：
 
-```javascript
+```
 // 社会群接收消息选项
 groupManager.setGroupInfo({
   groupAddOpt: GroupAddOptTypeEnum.V2TIM_GROUP_ADD_AUTH,
 });
 ```
-
-

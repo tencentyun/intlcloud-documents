@@ -7,8 +7,8 @@ In the group chat list of the receiver's conversation UI, the identifier `"someo
 
 ## Feature Demonstration
 
-| Listening for the @ character for selection of group members                     | Editing and sending the group @ message                                          | Receiving the group @ message                                                    |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Listening for the @ character for selection of group members | Editing and sending the group @ message                      | Receiving the group @ message                                |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | ![](https://qcloudimg.tencent-cloud.cn/raw/ed60cac72b215f6e7128cf2533bab2f7.jpg) | ![](https://qcloudimg.tencent-cloud.cn/raw/fbabe9cac382a7944676565242b29b59.jpg) | ![](https://qcloudimg.tencent-cloud.cn/raw/b20c30564c78b9fec9ab25260110641f.jpg) |
 
 Figure 1: When the @ character is detected in the input box on the chat UI, the user is redirected to the group member selection UI to select the target group members.
@@ -66,5 +66,3 @@ if (getConversationList.code == 0) {
   });
 }
 ```
-
-

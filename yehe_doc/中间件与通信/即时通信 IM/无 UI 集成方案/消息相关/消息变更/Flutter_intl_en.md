@@ -50,4 +50,3 @@ onRecvMessageModified: (V2TimMessage message) {
       // `msg` is the modified message object
 },
 ```
-

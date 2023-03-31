@@ -2,9 +2,9 @@
 Only locally stored groups can be searched for, such as the list of joined groups and group profiles that have been pulled.
 
 > ?
->- The local group search feature is supported only by v5.4.666 or later. 
->- The local group search feature is only available on the IM Ultimate edition. To use it, purchase the [Ultimate edition](https://buy.cloud.tencent.com/avc?from=17473). For more information, see [Billing Overview](https://www.tencentcloud.com/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85).
-)。
+> - The local group search feature is supported only by v5.4.666 or later. 
+> - The local group search feature is only available on the IM Ultimate edition. To use it, purchase the Ultimate edition. For more information, see [Billing Overview](https://www.tencentcloud.com/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85).
+> )。
 
 ## Searching a Local Group
 Call the `searchGroups` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a94a72082b7e2682942f35196a7e28023) / [iOS and Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#ac9a960921e512621340159d82a4b5259) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a63b463ce1a5952adf8d88bc794b32f22)) to search a local group.

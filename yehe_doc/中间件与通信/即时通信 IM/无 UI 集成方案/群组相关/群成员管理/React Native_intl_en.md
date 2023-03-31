@@ -186,5 +186,3 @@ Below is the sample code:
 ```javascript
 groupManager.getGroupOnlineMemberCount("groupID");
 ```
-
-

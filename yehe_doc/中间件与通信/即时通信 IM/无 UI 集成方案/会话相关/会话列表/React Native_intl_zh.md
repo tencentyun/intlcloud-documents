@@ -1,9 +1,6 @@
 ## 功能描述
 
 用户在登录 App 后，可以像微信或 QQ 那样展示最近会话列表，方便找到目标会话。
-会话列表如下图所示：
-<img src="https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/res/RPReplay_Final0511.gif" alt="" style="zoom:40%;" />
-
 会话列表功能主要分为获取会话列表、处理会话列表更新。
 本文将为您介绍具体的实现细节。
 
@@ -95,13 +92,13 @@ TencentImSDKPlugin.v2TIMManager
 
 目前 IM SDK 支持的会话变更事件有：
 
-| 事件                             | 说明                 | 建议                                                                                                             |
-| -------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| onSyncServerStart                | 同步服务器会话开始   | SDK 会在登录成功或者断网重连后自动同步服务器会话，您可以监听这个事件做一些 UI 进度展示操作。                     |
-| onSyncServerFinish               | 同步服务器会话完成   | 如果会话有变更，会通过 `onNewConversation`/`onConversationChanged` 回调告知。                                    |
-| onSyncServerFailed               | 同步服务器会话失败   | 您可以监听这个事件做一些 UI 异常展示操作。                                                                       |
-| onNewConversation                | 有会话新增           | 例如收到一个新同事发来的单聊消息、被拉入了一个新的群组中，此时可以重新对会话列表做排序。                         |
-| onConversationChanged            | 有会话更新           | 例如未读计数发生变化、最后一条消息被更新等，此时可以重新对会话列表做排序。                                       |
+| 事件                             | 说明                 | 建议                                                         |
+| -------------------------------- | -------------------- | ------------------------------------------------------------ |
+| onSyncServerStart                | 同步服务器会话开始   | SDK 会在登录成功或者断网重连后自动同步服务器会话，您可以监听这个事件做一些 UI 进度展示操作。 |
+| onSyncServerFinish               | 同步服务器会话完成   | 如果会话有变更，会通过 `onNewConversation`/`onConversationChanged` 回调告知。 |
+| onSyncServerFailed               | 同步服务器会话失败   | 您可以监听这个事件做一些 UI 异常展示操作。                   |
+| onNewConversation                | 有会话新增           | 例如收到一个新同事发来的单聊消息、被拉入了一个新的群组中，此时可以重新对会话列表做排序。 |
+| onConversationChanged            | 有会话更新           | 例如未读计数发生变化、最后一条消息被更新等，此时可以重新对会话列表做排序。 |
 | onTotalUnreadMessageCountChanged | 会话未读总数变更通知 | 详情请参见 [会话未读数](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#unreadcount)。 |
 
 示例代码如下：
@@ -136,5 +133,3 @@ conversationManager.removeConversationListener(conversationListener);
 会话列表界面，通常需要展示每个会话的最新一条消息预览及发送时间，此时您可以使用 `V2TIMConversation` 的 `lastMessage` 作为数据源实现。但是某些场景下，如果您不希望一些消息（例如系统提示等）显示为会话的最新消息，可以在 `sendMessage` 时设置 `isExcludedFromLastMessage` 为 `false`/`no`。
 
 发送消息参见 [发送消息](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html)。
-
-

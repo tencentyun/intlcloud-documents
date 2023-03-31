@@ -16,5 +16,3 @@ Below is the sample code:
 // Delete a specified conversation
 conversationManager.deleteConversation("conversationID");
 ```
-
-

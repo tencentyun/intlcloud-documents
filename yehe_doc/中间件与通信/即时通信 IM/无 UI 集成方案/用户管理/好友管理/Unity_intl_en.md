@@ -1,14 +1,14 @@
-## Feature Description
-The IM SDK supports friend management, and users can add and delete friends and set to send messages only to friends.
+## Overview
+The Chat SDK supports friend management, and users can add and delete friends and set to send messages only to friends.
 
-### Getting contacts
-The IM SDK supports the logic for the friend relationship chain. You can call the `FriendshipGetFriendProfileList` API ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_FriendshipGetFriendProfileList_com_tencent_imsdk_unity_callback_ValueCallback_System_Collections_Generic_List_com_tencent_imsdk_unity_types_FriendProfile___)) to get contacts.
+### Getting the contacts
+The Chat SDK supports the logic for the friend relationship chain. You can call the `FriendshipGetFriendProfileList` API ([details](https://comm.qq.com/im/doc/unity/zh/api/FriendshipApi/FriendshipGetFriendProfileList.html)) to get contacts.
 
 Sample code:
 
 
 ```c#
-// Get contacts
+// Obtain the contacts
 TIMResult res = TencentIMSDK.FriendshipGetFriendProfileList((int code, string desc, List<FriendProfile> profile_list, string user_data)=>{
  // Process the async logic
 });
@@ -16,8 +16,8 @@ TIMResult res = TencentIMSDK.FriendshipGetFriendProfileList((int code, string de
 
 
 
-### Adding a friend
-Call the `FriendshipAddFriend` API ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_FriendshipAddFriend_com_tencent_imsdk_unity_types_FriendshipAddFriendParam_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_FriendResult__)) to add a friend.
+### Adding friends
+Call the `FriendshipAddFriend` API ([details](https://comm.qq.com/im/doc/unity/zh/api/FriendshipApi/FriendshipAddFriend.html)) to add a friend.
 
 Sample code:
 
@@ -37,41 +37,36 @@ TIMResult res = TencentIMSDK.FriendshipAddFriend(param, (int code, string desc, 
 ```
 
 
-The process has the following variations depending on whether friend verification is required.
+The process has the following variations depending on whether friend request approval is required.
 
-#### Option 1. Friend request approval is not required
+#### Friend request approval is not required
 1. Users A and B call `SetOnAddFriendCallback` to set the relationship chain listener.
-
-2. User B specifies that friend request approval is not required (`kTIMProfileAddPermission_AllowAny`) through the `user_profile_item_add_permission` field ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.types.UserProfileItem.html#com_tencent_imsdk_unity_types_UserProfileItem_user_profile_item_add_permission)) in the `ProfileModifySelfUserProfile` function.
-
+2. User B specifies that friend request approval is not required (`kTIMProfileAddPermission_AllowAny`) through the `user_profile_item_add_permission` field ([details](https://comm.qq.com/im/doc/unity/zh/api/UserApi/ProfileModifySelfUserProfile.html)) in the `ProfileModifySelfUserProfile` function.
 3. User A can add user B as a friend successfully by calling `FriendshipAddFriend`, after which the `friendship_add_friend_param_friend_type` of the `FriendshipAddFriendParam` request parameter can be set to either value as needed:
-   * If it is set to `TIMFriendType.FriendTypeBoth` (two-way friend), both users A and B will receive the `OnAddFriendCallback` callback ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_SetOnAddFriendCallback_com_tencent_imsdk_unity_callback_OnAddFriendCallback_com_tencent_imsdk_unity_callback_OnAddFriendStringCallback_)).
+   * If it is set to `TIMFriendType.FriendTypeBoth` (two-way friend), both users A and B will receive the `OnAddFriendCallback` callback ([details](https://comm.qq.com/im/doc/unity/zh/callback/OnAddFriendCallback.html)).
    * If it is set to `TIMFriendType.FriendTypeSignle` (one-way friend), only user A will receive the `OnAddFriendCallback` callback.
 
 
-#### Option 2. Friend request approval is required
+#### Friend request approval is required
 1. Users A and B call `SetOnAddFriendCallback` to set the relationship chain listener.
-
 2. User B specifies that friend request approval is required (`kTIMProfileAddPermission_NeedConfirm`) through the `user_profile_item_add_permission` field in the `ProfileModifySelfUserProfile` function.
-
 3. User A calls `FriendshipAddFriend` to request to add user B as a friend. The `code` parameter in the callback for successful API call returns `30539`, indicating that the request needs to be approved by user B.
-
 4. User B will receive the `SetFriendAddRequestCallback` callback and can accept or reject the request.
-    - User B calls `FriendshipHandleFriendAddRequest` ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_FriendshipHandleFriendAddRequest_com_tencent_imsdk_unity_types_FriendRespone_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_FriendResult__)) to accept the friend request. If the type is `TIMFriendResponseAction.ResponseActionAgree` (one-way friend):
+    - User B calls `FriendshipHandleFriendAddRequest` API ([details](https://comm.qq.com/im/doc/unity/zh/api/FriendshipApi/FriendshipHandleFriendAddRequest.html)) to accept the friend request. If the type is `TIMFriendResponseAction.ResponseActionAgree` (one-way friend):
       - User A will receive the `OnAddFriendCallback` callback, indicating that the one-way friend was added successfully.
-      - User B will receive the `FriendApplicationListDeletedCallback` callback ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_SetFriendApplicationListDeletedCallback_com_tencent_imsdk_unity_callback_FriendApplicationListDeletedCallback_com_tencent_imsdk_unity_callback_FriendApplicationListDeletedStringCallback_)). At this point, user B has become a friend of user A, but not vice versa.
+      - User B will receive the `FriendApplicationListDeletedCallback` callback ([details](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListDeletedCallback.html)). At this point, user B has become a friend of user A, but not vice versa.
     - User B calls `FriendshipHandleFriendAddRequest` to accept the friend request. If the type is `TIMFriendResponseAction.ResponseActionAgreeAndAdd` (two-way friend), both users A and B will receive the `OnAddFriendCallback` callback, indicating that they added each other as a friend successfully.
     - User B calls `FriendshipHandleFriendAddRequest` and passes in the `TIMFriendResponseAction` parameter to reject the friend request, and both users will receive the `FriendApplicationListDeletedCallback` callback.
 
 
-### Deleting a friend
-Call the `FriendshipDeleteFriend` API ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_FriendshipDeleteFriend_com_tencent_imsdk_unity_types_FriendshipDeleteFriendParam_com_tencent_imsdk_unity_callback_ValueCallback_com_tencent_imsdk_unity_types_FriendResult__)) to delete a friend.
+### Deleting friends
+Call the `FriendshipDeleteFriend` API ([details](https://comm.qq.com/im/doc/unity/zh/api/FriendshipApi/FriendshipDeleteFriend.html)) to delete a friend.
 
 Sample code:
 
 
 ```c#
-// Delete a two-way friend
+// Two-way deletion
 FriendshipDeleteFriendParam param = new FriendshipDeleteFriendParam
 {
   friendship_delete_friend_param_friend_type = TIMFriendType.FriendTypeBoth,
@@ -87,8 +82,8 @@ TIMResult res = TencentIMSDK.FriendshipDeleteFriend(param, (int code, string des
 
 
 
-### Checking the friend relationship
-Call the `FriendshipCheckFriendType` API ([Details](https://comm.qq.com/im/sdk/unity_plus/_site_en/api/com.tencent.imsdk.unity.TencentIMSDK.html#com_tencent_imsdk_unity_TencentIMSDK_FriendshipCheckFriendType_com_tencent_imsdk_unity_types_FriendshipCheckFriendTypeParam_com_tencent_imsdk_unity_callback_ValueCallback_System_Collections_Generic_List_com_tencent_imsdk_unity_types_FriendshipCheckFriendTypeResult___)) to check the friend relationship.
+### Checking friend relationships
+Call the `FriendshipCheckFriendType` API ([details](https://comm.qq.com/im/doc/unity/zh/api/FriendshipApi/FriendshipCheckFriendType.html)) to check the friend relationship.
 
 Sample code:
 
@@ -109,8 +104,5 @@ TIMResult res = TencentIMSDK.FriendshipCheckFriendType(param, (int code, string 
 
 
 ### Setting to send messages to friends only
-By default, IM SDK does not check the relationship when sending one-to-one messages. This default setting is generally applied in customer service scenarios, where having to friend a customer service agent before chatting is inefficient.
-To implement "adding a friend before sending a message" like WeChat or QQ, you can log in to the [IM console](https://console.cloud.tencent.com/im), select **Feature Configuration** > **Login and Message** > **Relationship Check**, and enable **Check Relationship for One-to-One Messages**. After it is enabled, a user can send messages only to friends. If the user sends a message to a non-friend user, the SDK will report error code 20009.
-
-
-
+By default, Chat SDK does not check the relationship when sending one-to-one messages. This default setting is generally applied in customer service scenarios, where having to friend a customer service agent before chatting is inefficient.
+If you want to implement the interaction mode of “friending before chatting” as in WeChat and QQ, go to [Chat console](https://console.cloud.tencent.com/im) -> **Feature Configuration** -> **Login and Message** -> **Relationship Check** and enable "Check Relationship for One-to-One Messages". With this feature enabled, users can only send messages to friends, and will receive the 20009 error code from SDK when sending a message to a non-friend user.

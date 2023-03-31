@@ -18,9 +18,9 @@ tim.findMessage(messageID);
 
 **Parameter**
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| messageID          | String | Message ID |
+| Name      | Type   | Description |
+| --------- | ------ | ----------- |
+| messageID | String | Message ID  |
 
 **Returned value**
 

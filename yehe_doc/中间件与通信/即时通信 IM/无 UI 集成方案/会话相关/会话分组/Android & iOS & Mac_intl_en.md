@@ -10,10 +10,10 @@ In some cases, you may need to group conversations, for example, into a "Product
 Call the `createConversationGroup` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a280dff193ef770efd5d878ca3e3821d5) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Conversation_08.html#a2f5f4587c881aa26fbdce3b4d469aa0a) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#ab2d52eebca186348cdc6d655e39303b2)) to create a conversation group.
 >? Up to 20 conversation groups can be created. After this limit is exceeded, the `51010` error will be reported. Groups that are no longer used should be promptly deleted.
 
-| Attribute | Definition | Description |
-| --- |  --- | --- |
-| groupName | Conversation group name | It must be greater than 0 in length and can contain up to 32 bytes; otherwise, the `51011` error will be reported. |
-| conversationIDList | List of conversation IDs | It cannot be empty. |
+| Attribute          | Definition               | Description                                                  |
+| ------------------ | ------------------------ | ------------------------------------------------------------ |
+| groupName          | Conversation group name  | It must be greater than 0 in length and can contain up to 32 bytes; otherwise, the `51011` error will be reported. |
+| conversationIDList | List of conversation IDs | It cannot be empty.                                          |
 
 Sample code:
 <dx-tabs>
@@ -689,4 +689,3 @@ V2TIMManager::GetInstance()->GetConversationManager()->AddConversationListener(&
 ```
 :::
 </dx-tabs>
-

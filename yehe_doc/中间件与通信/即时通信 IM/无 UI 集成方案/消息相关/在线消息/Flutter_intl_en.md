@@ -23,6 +23,3 @@ V2TimValueCallback<V2TimMsgCreateInfoResult> createCustomMessageRes =
           );
   TencentImSDKPlugin.v2TIMManager.getMessageManager().sendMessage(id: createCustomMessageRes.data.id, receiver: "", groupID: "",onlineUserOnly: true);
 ```
-
-
-

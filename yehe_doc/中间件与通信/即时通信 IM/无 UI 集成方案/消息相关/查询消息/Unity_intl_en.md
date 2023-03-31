@@ -16,5 +16,3 @@ TIMResult res = TencentIMSDK.MsgFindMessages(message_id_array, (int code, string
   // Process the callback logic
 });
 ```
-
-

@@ -29,7 +29,3 @@ TIMResult res = TencentIMSDK.MsgSearchLocalMessages(param, (int code, string des
  // Process the async logic
 });
 ```
-
-
-
-

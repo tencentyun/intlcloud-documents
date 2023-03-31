@@ -22,9 +22,9 @@ tim.deleteMessage(messageList);
 
 **Parameter**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- |------------------------------------------------------------ |
-| messageList          | Array |  List of messages (up to 30) in the same conversation |
+| Name        | Type  | Description                                          |
+| ----------- | ----- | ---------------------------------------------------- |
+| messageList | Array | List of messages (up to 30) in the same conversation |
 
 **Returned value**
 

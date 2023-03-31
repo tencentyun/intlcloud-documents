@@ -15,4 +15,3 @@ Sample code:
 // Delete a specified conversation
 conversationManager.deleteConversation(conversationID: "conversationID");
 ```
-

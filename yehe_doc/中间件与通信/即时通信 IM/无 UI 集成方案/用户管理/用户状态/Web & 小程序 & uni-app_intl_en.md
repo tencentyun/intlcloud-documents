@@ -43,9 +43,9 @@ tim.setSelfStatus(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| customStatus       | String   | Custom user status |
+| Name         | Type   | Description        |
+| ------------ | ------ | ------------------ |
+| customStatus | String | Custom user status |
 
 
 **Returned value**
@@ -94,9 +94,9 @@ tim.getUserStatus(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList         | Array    | List of the `userID` values to be queried. Users only need to pass in their own `userID` to query their own status. |
+| Name       | Type  | Description                                                  |
+| ---------- | ----- | ------------------------------------------------------------ |
+| userIDList | Array | List of the `userID` values to be queried. Users only need to pass in their own `userID` to query their own status. |
 
 **Returned value**
 
@@ -222,9 +222,9 @@ tim.subscribeUserStatus(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList         | Array    | List of `userID` values. The number of `userID` values cannot exceed 100 per request. |
+| Name       | Type  | Description                                                  |
+| ---------- | ----- | ------------------------------------------------------------ |
+| userIDList | Array | List of `userID` values. The number of `userID` values cannot exceed 100 per request. |
 
 **Returned value**
 
@@ -278,9 +278,9 @@ tim.unsubscribeUserStatus(options);
 
 When the `options` parameter is `undefined`, it indicates to cancel all the current subscriptions. When it is of the `Object` type, it contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList         | Array    | List of `userID` values. The number of `userID` values cannot exceed 100 per request. When `userIDList` is an empty array or `undefined`, it indicates to cancel all the current subscriptions. |
+| Name       | Type  | Description                                                  |
+| ---------- | ----- | ------------------------------------------------------------ |
+| userIDList | Array | List of `userID` values. The number of `userID` values cannot exceed 100 per request. When `userIDList` is an empty array or `undefined`, it indicates to cancel all the current subscriptions. |
 
 **Returned value**
 
@@ -365,10 +365,10 @@ To get the change in a non-friend user's status, you can only call `subscribeUse
  * 2. This event will be triggered when a friend's status changes after notifications of friends' statuses are enabled in the IM console, even if the status has not been subscribed to.
  * 3. This event will be sent to all the devices when an account is logged in on them and the custom status is changed on one of them.
  */
-let onUserStatusUpdated = function(event) {
-   console.log(event.data);
-   const userStatusList = event.data;
-   userStatusList.forEach((item) => {
+ let onUserStatusUpdated = function(event) {
+    console.log(event.data);
+    const userStatusList = event.data;
+    userStatusList.forEach((item) => {
      const { userID, statusType, customStatus } = item;
      // userID - User ID
      // statusType - User status. The enumerated values are described as follows:
@@ -377,9 +377,9 @@ let onUserStatusUpdated = function(event) {
      // TIM.TYPES.USER_STATUS_OFFLINE - Offline
      // TIM.TYPES.USER_STATUS_UNLOGINED - Not logged in
      // customStatus - Custom user status
-   })
-};
-tim.on(TIM.EVENT.USER_STATUS_UPDATED, onUserStatusUpdated);
+    })
+ };
+ tim.on(TIM.EVENT.USER_STATUS_UPDATED, onUserStatusUpdated);
 
 :::
 </dx-codeblock>
@@ -413,7 +413,3 @@ If you have enabled multi-client login or multi-instance login on the same platf
 ### What should I do if error code 72001 is reported when I call the subscribe/unsubscribe API?
 
 Error code 72001 indicates that the feature is not enabled in the console. You need to log in to the [IM console](https://console.cloud.tencent.com/im) and enable the feature.
-
-
-
-

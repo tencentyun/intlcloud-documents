@@ -82,5 +82,3 @@ const userIDList = ["user1"];
 const deletefromFriendsGrousps =
   await friendshipManager.deleteFriendsFromFriendGroup(groupName, userIDList);
 ```
-
-

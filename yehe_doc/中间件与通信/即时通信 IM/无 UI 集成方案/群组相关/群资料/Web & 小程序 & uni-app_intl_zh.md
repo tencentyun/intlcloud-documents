@@ -18,9 +18,9 @@ tim.getGroupProfile(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID |
+| Name                   | Type               | Description                                                  |
+| ---------------------- | ------------------ | ------------------------------------------------------------ |
+| groupID                | String             | 群组 ID                                                      |
 | groupCustomFieldFilter | Array \| undefined | 群组维度的自定义字段过滤器，指定需要获取的群组维度的自定义字段，详情请参阅 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529) |
 
 **返回值**
@@ -56,17 +56,17 @@ tim.updateGroupProfile(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID |
-| name | String \| undefined | 群名称，最长30字节 |
-| avatar | String \| undefined | 群头像 URL，最长100字节 |
-| introduction | String \| undefined | 群简介，最长240字节 |
-| notification | String \| undefined | 群公告，最长300字节 |
-| maxMemberNum | Number \| undefined | 最大群成员数量，最大为6000 |
-| muteAllMembers | Boolean \| undefined | 设置全体禁言，true 表示全体禁言，false 表示取消全体禁言，v2.6.2 起支持 |
-| joinOption | String | 申请加群处理方式。<br/><li>TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS （自由加入）</li><li>TIM.TYPES.JOIN_OPTIONS_NEED_PERMISSION （需要验证）</li><li>TIM.TYPES.JOIN_OPTIONS_DISABLE_APPLY （禁止加群）</li>注意：TIM.TYPES.GRP_WORK, TIM.TYPES.GRP_MEETING, TIM.TYPES.GRP_AVCHATROOM 类型群组的该属性不允许修改。好友工作群禁止申请加群，临时会议群和直播群自由加入。 |
-| groupCustomField | Array \| undefined | 群自定义字段。默认情况是没有的。开通群组维度的自定义字段详情请参见 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529) |
+| Name             | Type                 | Description                                                  |
+| ---------------- | -------------------- | ------------------------------------------------------------ |
+| groupID          | String               | 群组 ID                                                      |
+| name             | String \| undefined  | 群名称，最长30字节                                           |
+| avatar           | String \| undefined  | 群头像 URL，最长100字节                                      |
+| introduction     | String \| undefined  | 群简介，最长240字节                                          |
+| notification     | String \| undefined  | 群公告，最长300字节                                          |
+| maxMemberNum     | Number \| undefined  | 最大群成员数量，最大为6000                                   |
+| muteAllMembers   | Boolean \| undefined | 设置全体禁言，true 表示全体禁言，false 表示取消全体禁言，v2.6.2 起支持 |
+| joinOption       | String               | 申请加群处理方式。<br/><li>TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS （自由加入）</li><li>TIM.TYPES.JOIN_OPTIONS_NEED_PERMISSION （需要验证）</li><li>TIM.TYPES.JOIN_OPTIONS_DISABLE_APPLY （禁止加群）</li>注意：TIM.TYPES.GRP_WORK, TIM.TYPES.GRP_MEETING, TIM.TYPES.GRP_AVCHATROOM 类型群组的该属性不允许修改。好友工作群禁止申请加群，临时会议群和直播群自由加入。 |
+| groupCustomField | Array \| undefined   | 群自定义字段。默认情况是没有的。开通群组维度的自定义字段详情请参见 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529) |
 
 **返回值**
 
@@ -109,4 +109,3 @@ promise.then(function(imResponse) {
 
 :::
 </dx-codeblock>
-

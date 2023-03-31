@@ -42,5 +42,3 @@ TencentImSDKPlugin.v2TIMManager
   .getMessageManager()
   .deleteMessages(["messageid"]);
 ```
-
-

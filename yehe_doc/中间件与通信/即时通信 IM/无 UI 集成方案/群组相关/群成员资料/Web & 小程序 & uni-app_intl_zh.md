@@ -16,10 +16,10 @@ tim.getGroupMemberProfile(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID |
-| userIDList | Array | 要查询的群成员用户 ID 列表 |
+| Name                    | Type               | Description                                                  |
+| ----------------------- | ------------------ | ------------------------------------------------------------ |
+| groupID                 | String             | 群组 ID                                                      |
+| userIDList              | Array              | 要查询的群成员用户 ID 列表                                   |
 | memberCustomFieldFilter | Array \| undefined | 群成员自定义字段筛选。可选，若不填，则默认查询所有群成员自定义字段。 |
 
 **返回值**
@@ -63,11 +63,11 @@ tim.setGroupMemberNameCard(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID 或 话题 ID |
-| userID | String \| undefined | 可选，默认修改自身的群名片 |
-| nameCard | String | 群成员名片 |
+| Name     | Type                | Description                |
+| -------- | ------------------- | -------------------------- |
+| groupID  | String              | 群组 ID 或 话题 ID         |
+| userID   | String \| undefined | 可选，默认修改自身的群名片 |
+| nameCard | String              | 群成员名片                 |
 
 **返回值**
 
@@ -107,11 +107,11 @@ tim.setGroupMemberCustomField(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID 或 话题 ID |
-| userID | String \| undefined | 可选，不填则修改自己的群成员自定义字段 |
-| memberCustomField | Array | 群成员自定义字段。数组元素的结构如下：<br/><li>key --- String --- 自定义字段的 Key</li><li>value --- String --- 自定义字段的 Value</li> |
+| Name              | Type                | Description                                                  |
+| ----------------- | ------------------- | ------------------------------------------------------------ |
+| groupID           | String              | 群组 ID 或 话题 ID                                           |
+| userID            | String \| undefined | 可选，不填则修改自己的群成员自定义字段                       |
+| memberCustomField | Array               | 群成员自定义字段。数组元素的结构如下：<br/><li>key --- String --- 自定义字段的 Key</li><li>value --- String --- 自定义字段的 Value</li> |
 
 **返回值**
 
@@ -132,5 +132,3 @@ promise.then(function(imResponse) {
 
 :::
 </dx-codeblock>
-
-

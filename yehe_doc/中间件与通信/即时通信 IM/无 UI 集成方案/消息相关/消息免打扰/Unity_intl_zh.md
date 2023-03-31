@@ -62,7 +62,3 @@ TIMResult res = TencentIMSDK.MsgSetGroupReceiveMessageOpt(group_id, TIMReceiveMe
  // 处理异步逻辑
 });
 ```
-
-
-
-

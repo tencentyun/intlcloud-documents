@@ -30,6 +30,3 @@ V2TimValueCallback<List<V2TimGroupMemberFullInfo>> memberInfos = await groupMana
 // 设置群成员资料
 groupManager.setGroupMemberInfo(groupID: "",userID: "",nameCard: "",customInfo: {});
 ```
-
-
-

@@ -4,7 +4,7 @@
 >- 消息搜索只能搜索本地存储的消息，例如接收到的消息、调用拉取历史消息接口得到的消息等。 
 >- 消息搜索功能仅 5.4.666 及以上版本支持。
 >- 本地消息搜索为 IM 旗舰版功能，购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) 后可使用，详见 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350
-)。
+>)。
 
 ## 消息搜索类介绍
 ### 消息搜索参数类
@@ -12,33 +12,33 @@
 
 `V2TIMMessageSearchParam` 的参数说明如下：
 
-| 参数 | 含义 | 说明 |
-| --- | --- | --- |
-| keywordList | 关键字列表 | 最多支持 5 个。当消息发送者以及消息类型均未指定时，必须设置关键字列表；否则，关键字列表可以为空。 |
-| keywordListMatchType | 指定关键字列表匹配类型 | 可设置为 “或” 关系搜索，或 “与” 关系搜索。取值分别为 V2TIM_KEYWORD_LIST_MATCH_TYPE_OR 和 V2TIM_KEYWORD_LIST_MATCH_TYPE_AND。默认为 “或” 关系搜索。 |
-| senderUserIDList | 指定 userID 发送的消息 | 最多支持 5 个。 |
-| messageTypeList | 指定搜索的消息类型集合 | 传空表示搜索支持的全部类型消息（`V2TIMFaceElem` 和 `V2TIMGroupTipsElem` 不支持搜索）。其他类型取值参考  `V2TIMElemType`([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#a00455865d1a14191b8c612252bf20a1c) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a849af0e4698e8db9f227f9c8e54215b8) / [Windows](https://im.sdk.qcloud.com/doc/en/V2TIMMessage_8h.html#a6854ecfbc6f3b65ed381d8a2e14e2377))。 |
-| conversationID | 搜索 “全部会话” 还是搜索 “指定的会话” | conversationID 为空，搜索全部会话；conversationID 不为空，搜索指定会话。 |
-| searchTimePosition | 搜索的起始时间点 | 默认为 0（从现在开始搜索）。UTC 时间戳，单位：秒。 |
-| searchTimePeriod | 从起始时间点开始的过去时间范围 | 默认为 0（不限制时间范围）。24x60x60 代表过去一天。单位：秒。|
-| pageIndex | 分页的页号 | 用于分页展示查找结果，0 表示首页。|
-| pageSize | 每页结果数量 | 用于分页展示查找结果，如不希望分页可将其设置成 0。但如果结果数量太多，一次性拉取可能会引发性能问题。 |
+| 参数                 | 含义                                  | 说明                                                         |
+| -------------------- | ------------------------------------- | ------------------------------------------------------------ |
+| keywordList          | 关键字列表                            | 最多支持 5 个。当消息发送者以及消息类型均未指定时，必须设置关键字列表；否则，关键字列表可以为空。 |
+| keywordListMatchType | 指定关键字列表匹配类型                | 可设置为 “或” 关系搜索，或 “与” 关系搜索。取值分别为 V2TIM_KEYWORD_LIST_MATCH_TYPE_OR 和 V2TIM_KEYWORD_LIST_MATCH_TYPE_AND。默认为 “或” 关系搜索。 |
+| senderUserIDList     | 指定 userID 发送的消息                | 最多支持 5 个。                                              |
+| messageTypeList      | 指定搜索的消息类型集合                | 传空表示搜索支持的全部类型消息（`V2TIMFaceElem` 和 `V2TIMGroupTipsElem` 不支持搜索）。其他类型取值参考  `V2TIMElemType`([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#a00455865d1a14191b8c612252bf20a1c) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a849af0e4698e8db9f227f9c8e54215b8) / [Windows](https://im.sdk.qcloud.com/doc/en/V2TIMMessage_8h.html#a6854ecfbc6f3b65ed381d8a2e14e2377))。 |
+| conversationID       | 搜索 “全部会话” 还是搜索 “指定的会话” | conversationID 为空，搜索全部会话；conversationID 不为空，搜索指定会话。 |
+| searchTimePosition   | 搜索的起始时间点                      | 默认为 0（从现在开始搜索）。UTC 时间戳，单位：秒。           |
+| searchTimePeriod     | 从起始时间点开始的过去时间范围        | 默认为 0（不限制时间范围）。24x60x60 代表过去一天。单位：秒。 |
+| pageIndex            | 分页的页号                            | 用于分页展示查找结果，0 表示首页。                           |
+| pageSize             | 每页结果数量                          | 用于分页展示查找结果，如不希望分页可将其设置成 0。但如果结果数量太多，一次性拉取可能会引发性能问题。 |
 
 ### 消息搜索结果类
 消息搜索结果类为 `V2TIMMessageSearchResult`([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageSearchResult.html) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessageSearchResult.html) / [Windows](https://im.sdk.qcloud.com/doc/en/structV2TIMMessageSearchResult.html))。参数说明如下：
 
-| 参数 | 含义 | 说明 |
-| --- | --- | --- |
-| totalCount | 搜索结果总数 | 如果搜索指定会话，返回满足搜索条件的**消息总数**；<br>如果搜索全部会话，返回满足搜索条件的消息所在的所有**会话总数量**。|
-| messageSearchResultItems | 指定关键字列表匹配类型 | 如果搜索指定会话，返回结果列表只包含该会话结果；<br>如果搜索全部会话，会对满足搜索条件的消息根据会话 ID 分组，分页返回分组结果。|
+| 参数                     | 含义                   | 说明                                                         |
+| ------------------------ | ---------------------- | ------------------------------------------------------------ |
+| totalCount               | 搜索结果总数           | 如果搜索指定会话，返回满足搜索条件的**消息总数**；<br>如果搜索全部会话，返回满足搜索条件的消息所在的所有**会话总数量**。 |
+| messageSearchResultItems | 指定关键字列表匹配类型 | 如果搜索指定会话，返回结果列表只包含该会话结果；<br>如果搜索全部会话，会对满足搜索条件的消息根据会话 ID 分组，分页返回分组结果。 |
 
 其中 `messageSearchResultItems` 是个列表，内含 `V2TIMMessageSearchResultItem`([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageSearchResultItem.html) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessageSearchResultItem.html) / [Windows](https://im.sdk.qcloud.com/doc/en/structV2TIMMessageSearchResultItem.html)) 对象，参数说明如下：
 
-| 参数 | 含义 | 说明 |
-| --- | --- | --- |
-| conversationID | 会话 ID | —— |
-| messageCount | 消息数量 | 当前会话一共搜索到了多少条符合要求的消息。 |
-| messageList | 满足搜索条件的消息列表 | 如果搜索指定会话，messageList 中装载的是本会话中所有满足搜索条件的消息列表。<br>如果搜索全部会话，messageList 中装载的消息条数会有如下两种可能：<br>* 如果某个会话中匹配到的消息条数 > 1，则 messageList 为空，您可以在 UI 上显示 “{messageCount} 条相关记录”。<br>* 如果某个会话中匹配到的消息条数 = 1，则 messageList 为匹配到的那条消息，您可以在 UI 上显示之，并高亮匹配关键词。|
+| 参数           | 含义                   | 说明                                                         |
+| -------------- | ---------------------- | ------------------------------------------------------------ |
+| conversationID | 会话 ID                | ——                                                           |
+| messageCount   | 消息数量               | 当前会话一共搜索到了多少条符合要求的消息。                   |
+| messageList    | 满足搜索条件的消息列表 | 如果搜索指定会话，messageList 中装载的是本会话中所有满足搜索条件的消息列表。<br>如果搜索全部会话，messageList 中装载的消息条数会有如下两种可能：<br>* 如果某个会话中匹配到的消息条数 > 1，则 messageList 为空，您可以在 UI 上显示 “{messageCount} 条相关记录”。<br>* 如果某个会话中匹配到的消息条数 = 1，则 messageList 为匹配到的那条消息，您可以在 UI 上显示之，并高亮匹配关键词。 |
 
 
 ## 搜索全部会话的消息
@@ -794,4 +794,3 @@ void LoadMore() { SearchConversation(++pageIndex); }
 
 对于图片、语音、视频消息，并没有类似 `fileName` 这种名称，界面通常显示缩略图或时长，此时指定 `keywordList` 搜索无效。
 如果您希望搜索出此类消息，可以指定 `messageTypeList` 为 `V2TIM_ELEM_TYPE_IMAGE`/`V2TIM_ELEM_TYPE_SOUND`/`V2TIM_ELEM_TYPE_VIDEO` 做分类搜索，此时会搜索出所有指定类型的消息。
-

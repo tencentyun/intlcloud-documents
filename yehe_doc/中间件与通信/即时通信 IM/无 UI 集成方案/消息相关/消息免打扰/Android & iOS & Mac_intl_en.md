@@ -2,11 +2,11 @@
 You can set the message receiving option for a one-to-one or group chat to implement the notification muting feature.
 The IM SDK supports the following three message receiving options as defined in `V2TIMReceiveMessageOpt`:
 
-| Message Receiving Option | Feature Description |
-|---------|---------|
-| V2TIM_RECEIVE_MESSAGE | Messages will be received when the user is online, and offline push notifications will be received when the user is offline. | 
-| V2TIM_NOT_RECEIVE_MESSAGE | Messages will not be received no matter whether the user is online or offline. | 
-| V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | Messages will be received when the user is online, and offline push notifications will not be received when the user is offline. | 
+| Message Receiving Option         | Feature Description                                          |
+| -------------------------------- | ------------------------------------------------------------ |
+| V2TIM_RECEIVE_MESSAGE            | Messages will be received when the user is online, and offline push notifications will be received when the user is offline. |
+| V2TIM_NOT_RECEIVE_MESSAGE        | Messages will not be received no matter whether the user is online or offline. |
+| V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | Messages will be received when the user is online, and offline push notifications will not be received when the user is offline. |
 
 > ? The message receiving options are supported only by the SDK of the Enhanced edition on v5.3.425 or later.
 
@@ -393,4 +393,3 @@ V2TIMManager::GetInstance()->GetGroupManager()->GetGroupsInfo(groupIDList, callb
 ```
 :::
 </dx-tabs>
-

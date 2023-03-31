@@ -4,8 +4,8 @@ Chat terminal users need to obtain the latest messages at any time. However, con
 
 > !
 >
->- If you want users to receive Chat message notifications when, without proactive logout, the app is switched to the background, the mobile phone screen is locked, or the app process is killed by a user, you can enable the Chat offline push.
->- If the `logout` API is called to log out proactively or users are forced to log out due to multi-device login, users cannot receive offline push messages even though Chat offline push is enabled.
+> - If you want users to receive Chat message notifications when, without proactive logout, the app is switched to the background, the mobile phone screen is locked, or the app process is killed by a user, you can enable the Chat offline push.
+> - If the `logout` API is called to log out proactively or users are forced to log out due to multi-device login, users cannot receive offline push messages even though Chat offline push is enabled.
 
 ## Integrating react-native-tim-push to Implement the Offline Push
 
@@ -66,7 +66,7 @@ android {
 </dx-tabs>
 
 -  **Adaptation to Huawei and Google FCM**
-For Huawei and Google FCM, you need to integrate the corresponding plugin and JSON configuration files by the vendor's methods.
+  For Huawei and Google FCM, you need to integrate the corresponding plugin and JSON configuration files by the vendor's methods.
 
   1. Download the configuration file and place it under the root directory of the project.
 
@@ -203,4 +203,3 @@ If offline push messages are not pushed timely or cannot be received, consider t
     See [vendor description](http://open.res.flyme.cn/fileserver/upload/file/202201/85079f02ac0841da859c1da0ef351970.pdf) for details.
  - FCM: Upstream message push is subject to a frequency limit.
     See [vendor description](https://firebase.google.com/docs/cloud-messaging/concept-options?hl=en#upstream_throttling) for details.
-

@@ -77,4 +77,3 @@ V2TIMManager::GetInstance()->GetMessageManager()->FindMessages(messageIDList, ca
 ```
 :::
 </dx-tabs>
-

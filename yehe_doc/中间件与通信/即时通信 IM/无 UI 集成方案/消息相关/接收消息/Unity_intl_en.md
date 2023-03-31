@@ -318,10 +318,3 @@ foreach (Elem elem in message.message_elem_array) {
    // There is a next element
 }
 ```
-
-
-
-
-
-
-

@@ -51,7 +51,3 @@ TIMResult res = TencentIMSDK.FriendshipGetBlackList((int code, string desc, List
  // Process the async logic
 });
 ```
-
-
-
-

@@ -73,4 +73,3 @@ Sample code:
 // Remove a friend from a list
 V2TimValueCallback<List<V2TimFriendOperationResult>> deletefromFriendsGrousps = await friendshipManager.deleteFriendsFromFriendGroup(groupName: "Friend list 1", userIDList: ['user1']);
 ```
-

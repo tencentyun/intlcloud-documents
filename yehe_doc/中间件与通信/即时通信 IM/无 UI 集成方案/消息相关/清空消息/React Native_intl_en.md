@@ -30,5 +30,3 @@ TencentImSDKPlugin.v2TIMManager
   .getMessageManager()
   .clearGroupHistoryMessage("groupID");
 ```
-
-

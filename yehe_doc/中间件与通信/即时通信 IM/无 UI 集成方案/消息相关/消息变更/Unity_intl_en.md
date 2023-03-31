@@ -1,4 +1,3 @@
-
 ## Overview
 This feature enables any member in a conversation to modify a successfully sent message in the conversation. The message will be synced to all the members in the conversation once modified successfully.
 

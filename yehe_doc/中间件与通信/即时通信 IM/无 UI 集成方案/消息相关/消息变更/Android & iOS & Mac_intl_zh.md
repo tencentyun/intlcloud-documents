@@ -81,5 +81,3 @@ V2TIMManager.getMessageManager().addAdvancedMsgListener(advancedMsgListener);
 ```
 :::
 </dx-tabs>
-
-

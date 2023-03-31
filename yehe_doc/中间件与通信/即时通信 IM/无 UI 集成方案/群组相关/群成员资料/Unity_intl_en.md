@@ -49,7 +49,3 @@ TIMResult res = TencentIMSDK.GroupModifyMemberInfo(param, (int code, string desc
  // Process the async logic
 });
 ```
-
-
-
-

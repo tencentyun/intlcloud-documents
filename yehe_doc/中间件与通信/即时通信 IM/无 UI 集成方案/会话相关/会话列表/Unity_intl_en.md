@@ -42,13 +42,13 @@ You can listen for the event in `TIMConvEvent` ([details](https://comm.qq.com/im
 
 Currently, the Chat SDK supports the following conversation change events:
 
-| Event                 | Description       | Suggestion                                                                                     |
-| -------------------- | ---------- | ---------------------------------------------------------------------------------------- |
-|kTIMConvEvent_Add | A new conversation was added.           | Re-sort the conversations when the user receives a one-to-one message from a new colleague or is invited to a new group.  |
-| kTIMConvEvent_Del    | A conversation was deleted. | Trigger this event when the user deletes a conversation.                                                             |
-| kTIMConvEvent_Update | A conversation was updated. | Trigger this event when the unread count of a conversation changes or a new message is received.                                         |
-| kTIMConvEvent_Start  | A conversation was started.   | -                                                                                        |
-| kTIMConvEvent_Finish | A conversation was ended.   | -                                                                                        |
+| Event                | Description                   | Suggestion                                                   |
+| -------------------- | ----------------------------- | ------------------------------------------------------------ |
+| kTIMConvEvent_Add    | A new conversation was added. | Re-sort the conversations when the user receives a one-to-one message from a new colleague or is invited to a new group. |
+| kTIMConvEvent_Del    | A conversation was deleted.   | Trigger this event when the user deletes a conversation.     |
+| kTIMConvEvent_Update | A conversation was updated.   | Trigger this event when the unread count of a conversation changes or a new message is received. |
+| kTIMConvEvent_Start  | A conversation was started.   | -                                                            |
+| kTIMConvEvent_Finish | A conversation was ended.     | -                                                            |
 
 
 ### Removing a conversation listener
@@ -68,6 +68,3 @@ TencentIMSDK.RemoveConvEventCallback();
 On the UI of conversation list, it is usually necessary to display the preview and send time of the latest message in each conversation. In this case, you can use `conv_last_msg` of `ConvInfo` as the data source for implementation. However, in some cases, if you don't want some messages (such as system tips) to be displayed as the latest message in a conversation, you can set `message_excluded_from_last_message` to `false`/`no` when calling `MsgSendMessage`.
 
 For directions on how to send a message, see [here](https://comm.qq.com/im/doc/unity/zh/api/MessageApi/MsgSendMessage.html).
-
-
-

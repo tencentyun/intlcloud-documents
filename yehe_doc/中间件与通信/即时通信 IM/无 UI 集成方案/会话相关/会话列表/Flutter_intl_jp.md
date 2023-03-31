@@ -107,14 +107,14 @@ TencentImSDKPlugin.v2TIMManager.getConversationManager().addConversationListener
 
 現在、IM SDKでサポートされているセッション変更イベントを以下に示します。
 
-| イベント                             | 説明                 | 推奨                                                                                                                     |
-| -------------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| onSyncServerStart                | サーバーセッションの同期開始   | ログイン完了後、またはネットワークが切断されて再接続された後、SDKはサーバーセッションを自動的に同期します。このイベントを監視して、いくつかのUI進捗状況を表示させる操作を実行できます。                             |
-| onSyncServerFinish               | サーバーセッションの同期完了  | セッションに変更が加えた場合、`onNewConversation`/`onConversationChangedによってコールバックされ、通知されます。                                            |
-| onSyncServerFailed               | サーバーセッションの同期失敗   | このイベントを監視して、いくつかのUI異常を表示させる操作を実行できます。                                                                               |
-| onNewConversation                | 追加したセッションがある | たとえば、新しい同僚から個人チャットメッセージを受信し、新しいグループに招待された場合は、セッションリストを再度並べ替えることができます。                                 |
-| onConversationChanged            | 更新したセッションがある           | たとえば、未読数が変化した場合、最後のメッセージが更新された場合は、セッションリストを再度並べ替えることができます。                                               |
-| onTotalUnreadMessageCountChanged | 未読セッションの総数の変更通知 | 詳細については、[セッションの未読数](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Class/Message/V2TimConversation.html#unreadcount)をご参照ください。|
+| イベント                         | 説明                           | 推奨                                                         |
+| -------------------------------- | ------------------------------ | ------------------------------------------------------------ |
+| onSyncServerStart                | サーバーセッションの同期開始   | ログイン完了後、またはネットワークが切断されて再接続された後、SDKはサーバーセッションを自動的に同期します。このイベントを監視して、いくつかのUI進捗状況を表示させる操作を実行できます。 |
+| onSyncServerFinish               | サーバーセッションの同期完了   | セッションに変更が加えた場合、`onNewConversation`/`onConversationChangedによってコールバックされ、通知されます。 |
+| onSyncServerFailed               | サーバーセッションの同期失敗   | このイベントを監視して、いくつかのUI異常を表示させる操作を実行できます。 |
+| onNewConversation                | 追加したセッションがある       | たとえば、新しい同僚から個人チャットメッセージを受信し、新しいグループに招待された場合は、セッションリストを再度並べ替えることができます。 |
+| onConversationChanged            | 更新したセッションがある       | たとえば、未読数が変化した場合、最後のメッセージが更新された場合は、セッションリストを再度並べ替えることができます。 |
+| onTotalUnreadMessageCountChanged | 未読セッションの総数の変更通知 | 詳細については、[セッションの未読数](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Class/Message/V2TimConversation.html#unreadcount)をご参照ください。 |
 
 > ? セッションリストの順序が最後のメッセージの並べ替えの原則に従っていることを確認するには、各セッションが変更または追加された後にデータソースの順序を再度並べ替える必要があります。
 > * Flutter SDK 3.8.0より前のバージョンを使用している場合は、`lastMessage`で並べ替えることができます。ただし、`lastMessage`が空になっていること（セッションメッセージのクリアなど）を処理することに注意する必要があります。
@@ -244,6 +244,3 @@ conversationManager.removeConversationListener(conversationListener);
 
 
 >? `isExcludedFromLastMessage`は、Flutter SDK 4.0.0 以降のバージョンでのみサポートされています。
-
-
-

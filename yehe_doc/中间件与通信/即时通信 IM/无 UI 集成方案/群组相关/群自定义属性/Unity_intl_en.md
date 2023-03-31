@@ -84,8 +84,3 @@ TencentIMSDK.SetGroupAttributeChangedCallback((string group_id, List<GroupAttrib
  // Process the callback logic
 });
 ```
-
-
-
-
-

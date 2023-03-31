@@ -60,29 +60,29 @@ initSDKを呼出した直後にグローバルイベントリスナーを登録�
 
 関連のコールバックを下表に示します：
 
-| イベントコールバック                                                                                                                                   | イベント説明                                         |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
-| [RecvNewMsgCallback](https://comm.qq.com/im/doc/unity/zh/callback/RecvNewMsgCallback.html)                                                 | 新しいメッセージを受信した時に実行するコールバック                              |
-| [MsgReadedReceiptCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgReadedReceiptCallback.html)                                     | メッセージ既読確認を通知した時に実行するコールバック                             |
-| [MsgRevokeCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgRevokeCallback.html)                                                   | 受信したメッセージが取り消された時に実行するコールバック                         |
-| [MsgElemUploadProgressCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgElemUploadProgressCallback.html)                           | メッセージにおけるエレメント関連のファイルのアップロード進捗に関するコールバック               |
-| [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupTipsEventCallback.html)                                         | グループシステムメッセージに関するコールバック                             |
-| [GroupAttributeChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupAttributeChangedCallback.html)                           | グループの属性が変更された時に実行するコールバック                             |
-| [ConvTotalUnreadMessageCountChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/ConvTotalUnreadMessageCountChangedCallback.html) | セッションの未読メッセージ数が変更された時に実行するコールバック                   |
-| [NetworkStatusListenerCallback](https://comm.qq.com/im/doc/unity/zh/callback/NetworkStatusListenerCallback.html)                           | ネットワーク接続状態監視に関するコールバック                         |
-| [KickedOfflineCallback](https://comm.qq.com/im/doc/unity/zh/callback/KickedOfflineCallback.html)                                           | 強制退会によるオフラインを通知する時に実行するコールバック                             |
-| [UserSigExpiredCallback](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html)                                         | 資格情報が期限切れになった時に実行するコールバック                                 |
-| [OnAddFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnAddFriendCallback.html)                                               | 友達追加に関するコールバック                               |
-| [OnDeleteFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnDeleteFriendCallback.html)                                         | 友達削除に関するコールバック                               |
-| [UpdateFriendProfileCallback](https://comm.qq.com/im/doc/unity/zh/callback/UpdateFriendProfileCallback.html)                               | 友達プロフィールが更新された時に実行するコールバック                           |
-| [FriendAddRequestCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendAddRequestCallback.html)                                     | 友達追加申請に関するコールバック                           |
-| [FriendApplicationListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListDeletedCallback.html)             | 友達追加申請が削除された時に実行するコールバック                         |
-| [FriendApplicationListReadCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListReadCallback.html)                   | 友達追加申請が既読になった時に実行するコールバック                          |
-| [FriendBlackListAddedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListAddedCallback.html)                             | ブラックリストが追加された時に実行するコールバック                             |
-| [FriendBlackListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListDeletedCallback.html)                         | ブラックリストが削除された時に実行するコールバック                             |
-| [LogCallback](https://comm.qq.com/im/doc/unity/zh/callback/LogCallback.html)                                                               | ログ関連のコールバック                                     |
-| [MsgUpdateCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgUpdateCallback.html)                                                   | メッセージがクラウド側で変更されたことによってメッセージが更新されたことを通知した時に実行するコールバック |
-| [MsgGroupMessageReadMemberListCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgGroupMessageReadMemberListCallback.html)           | グループメッセージを既読したグループメンバーのリストを取得した時に実行するコールバック                         |
+| イベントコールバック                                         | イベント説明                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [RecvNewMsgCallback](https://comm.qq.com/im/doc/unity/zh/callback/RecvNewMsgCallback.html) | 新しいメッセージを受信した時に実行するコールバック           |
+| [MsgReadedReceiptCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgReadedReceiptCallback.html) | メッセージ既読確認を通知した時に実行するコールバック         |
+| [MsgRevokeCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgRevokeCallback.html) | 受信したメッセージが取り消された時に実行するコールバック     |
+| [MsgElemUploadProgressCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgElemUploadProgressCallback.html) | メッセージにおけるエレメント関連のファイルのアップロード進捗に関するコールバック |
+| [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupTipsEventCallback.html) | グループシステムメッセージに関するコールバック               |
+| [GroupAttributeChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupAttributeChangedCallback.html) | グループの属性が変更された時に実行するコールバック           |
+| [ConvTotalUnreadMessageCountChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/ConvTotalUnreadMessageCountChangedCallback.html) | セッションの未読メッセージ数が変更された時に実行するコールバック |
+| [NetworkStatusListenerCallback](https://comm.qq.com/im/doc/unity/zh/callback/NetworkStatusListenerCallback.html) | ネットワーク接続状態監視に関するコールバック                 |
+| [KickedOfflineCallback](https://comm.qq.com/im/doc/unity/zh/callback/KickedOfflineCallback.html) | 強制退会によるオフラインを通知する時に実行するコールバック   |
+| [UserSigExpiredCallback](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html) | 資格情報が期限切れになった時に実行するコールバック           |
+| [OnAddFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnAddFriendCallback.html) | 友達追加に関するコールバック                                 |
+| [OnDeleteFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnDeleteFriendCallback.html) | 友達削除に関するコールバック                                 |
+| [UpdateFriendProfileCallback](https://comm.qq.com/im/doc/unity/zh/callback/UpdateFriendProfileCallback.html) | 友達プロフィールが更新された時に実行するコールバック         |
+| [FriendAddRequestCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendAddRequestCallback.html) | 友達追加申請に関するコールバック                             |
+| [FriendApplicationListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListDeletedCallback.html) | 友達追加申請が削除された時に実行するコールバック             |
+| [FriendApplicationListReadCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListReadCallback.html) | 友達追加申請が既読になった時に実行するコールバック           |
+| [FriendBlackListAddedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListAddedCallback.html) | ブラックリストが追加された時に実行するコールバック           |
+| [FriendBlackListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListDeletedCallback.html) | ブラックリストが削除された時に実行するコールバック           |
+| [LogCallback](https://comm.qq.com/im/doc/unity/zh/callback/LogCallback.html) | ログ関連のコールバック                                       |
+| [MsgUpdateCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgUpdateCallback.html) | メッセージがクラウド側で変更されたことによってメッセージが更新されたことを通知した時に実行するコールバック |
+| [MsgGroupMessageReadMemberListCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgGroupMessageReadMemberListCallback.html) | グループメッセージを既読したグループメンバーのリストを取得した時に実行するコールバック |
 
 >! [`UserSigExpiredCallback`](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html)コールバックを受信した場合、ログイン用のUserSig資格情報が期限切れになったため、新たに発行されたUserSigを使用して改めてログインしてください。期限切れのUserSigを引き続き使用すれば、IM SDKのログインが無限ループになります。
 
@@ -110,4 +110,3 @@ SDKの初期化に成功した直後に、必要なイベントリスナーを�
 [](id:qa1)
 
 ### 1. IM SDKのログイン、メッセージ、グループ、セッション、リレーショナルチェーン、プロフィール、シグナルなどの機能を使用する前に、初期化を実行する必要があります。
-

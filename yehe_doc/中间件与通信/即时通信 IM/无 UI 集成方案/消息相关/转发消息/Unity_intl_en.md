@@ -121,6 +121,3 @@ if(elem.TIMElemType == TIMElemType.kTIMElem_Merge){
 
 ## Forwarding Messages One by One
 To forward a single message, create a message identical to the original message first, and then call the `MsgSendMessage` API ([details](https://comm.qq.com/im/doc/unity/zh/api/MessageApi/MsgSendMessage.html)) to send the message.
-
-
-

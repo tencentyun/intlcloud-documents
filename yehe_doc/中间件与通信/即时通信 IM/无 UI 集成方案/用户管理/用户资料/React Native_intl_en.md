@@ -94,5 +94,3 @@ There are two types of user profile updates in the enhanced SDK:
 
 - Friend's profile: When the profile of a friend is updated, the backend will send a system notification to the SDK, so the profile will be updated in real time.
 - Non-friend user's profile: When the profile of a non-friend user is updated, the backend cannot send a system notification to the SDK; therefore, the profile cannot be updated in real time. To avoid sending a network request to the backend every time the user profile is obtained, the SDK adds the caching logic and allows a user to pull the profile from the backend every ten minutes.
-
-

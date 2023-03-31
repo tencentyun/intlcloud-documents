@@ -57,10 +57,10 @@ Any group member can call the `MsgSetGroupReceiveMessageOpt` API ([Details](http
 
 `TIMReceiveMessageOpt` has the following options:
 
-| Message Receiving Option                        | Description                                                                                                             |
-| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Receive     | Messages will be received when the user is online, and push notifications will be received when the user is offline.    |
-| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Receive | No group messages will be received.                                                                                     |
+| Message Receiving Option                        | Description                                                  |
+| ----------------------------------------------- | ------------------------------------------------------------ |
+| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Receive     | Messages will be received when the user is online, and push notifications will be received when the user is offline. |
+| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Receive | No group messages will be received.                          |
 | TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Notify  | Messages will be received when the user is online, and no push notifications will be received when the user is offline. |
 
 Different `TIMReceiveMessageOpt` options can be used to implement group message notification muting:
@@ -91,8 +91,3 @@ TIMResult res = TencentIMSDK.GroupModifyGroupInfo(param, (int code, string desc,
  // Process the async logic
 });
 ```
-
-
-
-
-

@@ -531,6 +531,3 @@ if(message.textElem.nextElem!=null){
    // 有下一个消息
 }
 ```
-
-
-

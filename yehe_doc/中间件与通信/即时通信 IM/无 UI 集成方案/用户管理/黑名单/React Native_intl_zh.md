@@ -33,5 +33,3 @@ const deleteBlackList = await friendshipManager.deleteFromBlackList(["user1"]);
 // 获取黑名单列表
 const blacklist = await friendshipManager.getBlackList();
 ```
-
-

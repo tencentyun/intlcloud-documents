@@ -161,8 +161,8 @@ The [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2Ti
 
 >? 
 >
-> You can customize the `key` value of the [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#custominfo) field for the topic group list of the community (group).
-> The following sample code names it `topic_category`.
+>You can customize the `key` value of the [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#custominfo) field for the topic group list of the community (group).
+>The following sample code names it `topic_category`.
 
 #### Getting the list of groups in the community
 

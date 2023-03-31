@@ -107,13 +107,13 @@ You can listen for the event in `V2TIMConversationListener` ([details](https://c
 
 Currently, the Chat SDK supports the following conversation change events:
 
-| Event                             | Description                 | Suggestion                                                                                                                         |
-| -------------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| onSyncServerStart                | Server conversation sync started.   | The SDK will automatically sync server conversations after a successful login or network reconnection. You can listen for such an event and display the event progress on the UI.                                 |
-| onSyncServerFinish               | Server conversation sync was completed.   | If there is a conversation change, the change will be notified through the `onNewConversation`/`onConversationChanged` callback.                                                |
-| onSyncServerFailed               | Server conversation sync failed.   | You can listen for such an event and display the event exception on the UI.                                                                                   |
-| onNewConversation                | A new conversation was added.           | When the user receives a one-to-one message from a new colleague or is invited to a new group, you can re-sort the conversations.                                     |
-| onConversationChanged            | There is a conversation update.           | When the unread count changes or the last message is updated, you can re-sort the conversations.                                                   |
+| Event                            | Description                                                  | Suggestion                                                   |
+| -------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| onSyncServerStart                | Server conversation sync started.                            | The SDK will automatically sync server conversations after a successful login or network reconnection. You can listen for such an event and display the event progress on the UI. |
+| onSyncServerFinish               | Server conversation sync was completed.                      | If there is a conversation change, the change will be notified through the `onNewConversation`/`onConversationChanged` callback. |
+| onSyncServerFailed               | Server conversation sync failed.                             | You can listen for such an event and display the event exception on the UI. |
+| onNewConversation                | A new conversation was added.                                | When the user receives a one-to-one message from a new colleague or is invited to a new group, you can re-sort the conversations. |
+| onConversationChanged            | There is a conversation update.                              | When the unread count changes or the last message is updated, you can re-sort the conversations. |
 | onTotalUnreadMessageCountChanged | The total unread message count of all conversations has changed. | For details, see [unreadCount](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Class/Message/V2TimConversation.html#unreadcount). |
 
 > ? To ensure that the conversations are sorted by the last message, you need to re-sort the data sources each time a conversation is changed/added.
@@ -244,6 +244,3 @@ For how to send a message, see [sendMessage](https://comm.qq.com/im/doc/flutter/
 
 
 >? `isExcludedFromLastMessage` is supported only by the SDK for Flutter on v4.0.0 or later.
-
-
-

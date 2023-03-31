@@ -37,6 +37,3 @@ TIMResult res = TencentIMSDK.MsgClearHistoryMessage(conv_id, TIMConvType.kTIMCon
   // 处理回调逻辑
  });
 ```
-
-
-

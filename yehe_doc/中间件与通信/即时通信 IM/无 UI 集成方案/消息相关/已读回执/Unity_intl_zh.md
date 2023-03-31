@@ -5,7 +5,7 @@
 单聊和群聊均支持消息已读回执功能，操作步骤一致。
 
 > ?
-- 该功能需要购买旗舰版。
+> - 该功能需要购买旗舰版。
 
 
 ## 消息已读回执
@@ -88,4 +88,3 @@ TIMResult res = TencentIMSDK.MsgGetMessageReadReceipts(message, TIMGroupMessageR
   // 处理回调逻辑
 });
 ```
-

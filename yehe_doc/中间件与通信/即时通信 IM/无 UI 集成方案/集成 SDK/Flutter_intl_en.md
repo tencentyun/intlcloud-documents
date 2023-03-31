@@ -2,24 +2,24 @@ This document describes how to quickly integrate the Tencent Cloud Chat SDK into
 
 ## Environment Requirements
 
-| Platform | Version |
-|---------|---------|
-| Flutter | 2.2.0 or later|
-| Android | Android Studio 3.5 or later; devices with Android 4.1 or later for apps |
-| iOS | Xcode 11.0 or later. For testing with a real device, ensure that your project has a valid developer signature. |
+| Platform | Version                                                      |
+| -------- | ------------------------------------------------------------ |
+| Flutter  | 2.2.0 or later                                               |
+| Android  | Android Studio 3.5 or later; devices with Android 4.1 or later for apps |
+| iOS      | Xcode 11.0 or later. For testing with a real device, ensure that your project has a valid developer signature. |
 
 ## Supported Platforms
 
 We are committed to building a set of Chat SDK and TUIKit for all Flutter platforms, allowing you to run one set of code across all platforms.
 
-| Platform | Support or Not |
-|---------|---------|
-| iOS | Supported |
-| Android | Supported |
-| [Web](#web) | Supported from v4.1.1+2 |
-| [macOS](#pc) | Supported from v4.1.9 |
-| [Windows](#pc) | Supported from v4.1.9 |
-| [Hybrid development](https://www.tencentcloud.com/document/product/1047/51456) (Adding SDK for Flutter to existing native applications) | Supported from v5.0.0 |
+| Platform                                                     | Support or Not          |
+| ------------------------------------------------------------ | ----------------------- |
+| iOS                                                          | Supported               |
+| Android                                                      | Supported               |
+| [Web](#web)                                                  | Supported from v4.1.1+2 |
+| [macOS](#pc)                                                 | Supported from v4.1.9   |
+| [Windows](#pc)                                               | Supported from v4.1.9   |
+| [Hybrid development](https://www.tencentcloud.com/document/product/1047/51456) (Adding SDK for Flutter to existing native applications) | Supported from v5.0.0   |
 
 >? For web, macOS, and Windows platforms, you need to perform a few extra steps for SDK integration. For details, see [Support for the Flutter for Web](#web) and [Support for the Flutter for Desktop](#pc) in this document.
 

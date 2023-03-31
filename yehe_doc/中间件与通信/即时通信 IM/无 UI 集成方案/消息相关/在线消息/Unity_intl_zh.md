@@ -31,6 +31,3 @@ var message = new Message
   // 处理回调逻辑
  });
 ```
-
-
-

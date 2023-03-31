@@ -12,10 +12,10 @@ You can call the `login` API ([details](https://comm.qq.com/im/doc/flutter/zh/SD
 
 Key parameters of the `login` API are as follows:
 
-| Parameter | Description | Remarks |
-| ------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| UserID | Unique user ID | It can contain up to 32 bytes of letters (a-z and A-Z), digits (0-9), underscores (_), and hyphens (-). |
-| UserSig | Login ticket.         | It is calculated by your business server to ensure security. For more information on the calculation method, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
+| Parameter | Description    | Remarks                                                      |
+| --------- | -------------- | ------------------------------------------------------------ |
+| UserID    | Unique user ID | It can contain up to 32 bytes of letters (a-z and A-Z), digits (0-9), underscores (_), and hyphens (-). |
+| UserSig   | Login ticket.  | It is calculated by your business server to ensure security. For more information on the calculation method, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 
 You can call the `login` API in the following scenarios:
 * When you use features of the Chat SDK for the first time after the app is started.
@@ -29,7 +29,7 @@ You don't need to call the `login` API in the following scenarios:
 
 >?
 >1. After you call the Chat SDK API and log in successfully, DAU calculation will start; therefore, call the login API as needed to avoid a high DAU.
-> 2. You cannot log in to multiple Chat SDK accounts of the same application at the same time; otherwise, only the last logged in account will be online.
+>2. You cannot log in to multiple Chat SDK accounts of the same application at the same time; otherwise, only the last logged in account will be online.
 
 Sample code:[](id:login_code)
 
@@ -71,10 +71,10 @@ Sample code:
 
 Call the `getLoginStatus` API ([details](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMManager/getLoginStatus.html)) to get the login status. If a user is logged in or logging in, don't call the login API frequently. The Chat SDK supports the following login status:
 
-| Login Status | Description |
-| ------------------------- | ------ |
-| V2TIM_STATUS_LOGINED (1)  | Logged in |
-| V2TIM_STATUS_LOGINING (2) | Logging in |
+| Login Status              | Description   |
+| ------------------------- | ------------- |
+| V2TIM_STATUS_LOGINED (1)  | Logged in     |
+| V2TIM_STATUS_LOGINING (2) | Logging in    |
 | V2TIM_STATUS_LOGOUT (3)   | Not logged in |
 
 Sample code:

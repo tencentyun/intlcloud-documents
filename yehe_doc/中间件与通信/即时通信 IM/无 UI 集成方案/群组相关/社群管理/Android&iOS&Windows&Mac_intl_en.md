@@ -624,8 +624,8 @@ The `customInfo` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent
 
 >? 
 >
-> You can customize the `key` value of the `customInfo` field for the topic group list of the community (group).
-> The following sample code names it `topic_category`.
+>You can customize the `key` value of the `customInfo` field for the topic group list of the community (group).
+>The following sample code names it `topic_category`.
 
 #### Configuring the group list for the community
 You just need to modify the `customInfo` in `groupInfo`. Here is a `Map`, and the `key` value is the name of the field for the topic group list you defined.

@@ -17,5 +17,3 @@ const msgListRes = await TencentImSDKPlugin.v2TIMManager
   .getMessageManager()
   .findMessages(["msgid"]);
 ```
-
-

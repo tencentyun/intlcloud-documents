@@ -87,9 +87,9 @@ tim.sendMessageReadReceipt(messageList);
 
 **Parameter**
 
-| Name               | Type     |Description                                                  |
-| ------------------ | -------- |------------------------------------------------------------ |
-| messageList          | Array |  List of messages (up to 30) in the same conversation |
+| Name        | Type  | Description                                          |
+| ----------- | ----- | ---------------------------------------------------- |
+| messageList | Array | List of messages (up to 30) in the same conversation |
 
 **Returned value**
 
@@ -196,9 +196,9 @@ tim.getMessageReadReceiptList(messageList);
 
 **Parameter**
 
-| Name               | Type     |Description                                                  |
-| ------------------ | -------- |------------------------------------------------------------ |
-| messageList          | Array | List of messages in the same conversation |
+| Name        | Type  | Description                               |
+| ----------- | ----- | ----------------------------------------- |
+| messageList | Array | List of messages in the same conversation |
 
 **Returned value**
 
@@ -266,12 +266,12 @@ tim.getGroupMessageReadMemberList(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------- | ------ | ------------------------------------------------------------ |
-| message | Message | Message instance |
-| cursor | String | Cursor for the paged pull. Pass in `''` for the first pull. |
-| filter | Number | Specifies to pull the list of members who have or have not read the message. Valid values: 0 - pull the list of members who have read the message; 1 - pull the list of members who have not read the message |
-| count | Number | Number of members to be pulled per page. Maximum value: 100. |
+| Name    | Type    | Description                                                  |
+| ------- | ------- | ------------------------------------------------------------ |
+| message | Message | Message instance                                             |
+| cursor  | String  | Cursor for the paged pull. Pass in `''` for the first pull.  |
+| filter  | Number  | Specifies to pull the list of members who have or have not read the message. Valid values: 0 - pull the list of members who have read the message; 1 - pull the list of members who have not read the message |
+| count   | Number  | Number of members to be pulled per page. Maximum value: 100. |
 
 **Returned value**
 

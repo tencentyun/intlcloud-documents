@@ -1,4 +1,3 @@
-
 ## Overview
 
 Starting from v7.0, Tencent Cloud Chat SDK provides the group counter feature. You can configure a certain number of counters for each group.

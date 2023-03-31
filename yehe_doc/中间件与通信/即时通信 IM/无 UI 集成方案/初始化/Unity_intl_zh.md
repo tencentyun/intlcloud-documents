@@ -60,29 +60,29 @@ SDK 初始化后，会通过诸如 [`NetworkStatusListenerCallback`](https://com
 
 相关回调如下表所示：
 
-| 事件回调                                                                                                                                   | 事件描述                                         |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
-| [RecvNewMsgCallback](https://comm.qq.com/im/doc/unity/zh/callback/RecvNewMsgCallback.html)                                                 | 注册收到新消息回调                               |
-| [MsgReadedReceiptCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgReadedReceiptCallback.html)                                     | 设置消息已读回执回调                             |
-| [MsgRevokeCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgRevokeCallback.html)                                                   | 设置接收的消息被撤回回调                         |
-| [MsgElemUploadProgressCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgElemUploadProgressCallback.html)                           | 设置消息内元素相关文件上传进度回调               |
-| [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupTipsEventCallback.html)                                         | 设置群组系统消息回调                             |
-| [GroupAttributeChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupAttributeChangedCallback.html)                           | 设置群组属性变更回调                             |
+| 事件回调                                                     | 事件描述                                         |
+| ------------------------------------------------------------ | ------------------------------------------------ |
+| [RecvNewMsgCallback](https://comm.qq.com/im/doc/unity/zh/callback/RecvNewMsgCallback.html) | 注册收到新消息回调                               |
+| [MsgReadedReceiptCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgReadedReceiptCallback.html) | 设置消息已读回执回调                             |
+| [MsgRevokeCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgRevokeCallback.html) | 设置接收的消息被撤回回调                         |
+| [MsgElemUploadProgressCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgElemUploadProgressCallback.html) | 设置消息内元素相关文件上传进度回调               |
+| [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupTipsEventCallback.html) | 设置群组系统消息回调                             |
+| [GroupAttributeChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupAttributeChangedCallback.html) | 设置群组属性变更回调                             |
 | [ConvTotalUnreadMessageCountChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/ConvTotalUnreadMessageCountChangedCallback.html) | 设置会话未读消息总数变更的回调                   |
-| [NetworkStatusListenerCallback](https://comm.qq.com/im/doc/unity/zh/callback/NetworkStatusListenerCallback.html)                           | 设置网络连接状态监听回调                         |
-| [KickedOfflineCallback](https://comm.qq.com/im/doc/unity/zh/callback/KickedOfflineCallback.html)                                           | 设置被踢下线通知回调                             |
-| [UserSigExpiredCallback](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html)                                         | 设置票据过期回调                                 |
-| [OnAddFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnAddFriendCallback.html)                                               | 设置添加好友的回调                               |
-| [OnDeleteFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnDeleteFriendCallback.html)                                         | 设置删除好友的回调                               |
-| [UpdateFriendProfileCallback](https://comm.qq.com/im/doc/unity/zh/callback/UpdateFriendProfileCallback.html)                               | 设置更新好友资料的回调                           |
-| [FriendAddRequestCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendAddRequestCallback.html)                                     | 设置好友添加请求的回调                           |
-| [FriendApplicationListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListDeletedCallback.html)             | 设置好友申请被删除的回调                         |
-| [FriendApplicationListReadCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListReadCallback.html)                   | 设置好友申请已读的回调                           |
-| [FriendBlackListAddedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListAddedCallback.html)                             | 设置黑名单新增的回调                             |
-| [FriendBlackListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListDeletedCallback.html)                         | 设置黑名单删除的回调                             |
-| [LogCallback](https://comm.qq.com/im/doc/unity/zh/callback/LogCallback.html)                                                               | 设置日志回调                                     |
-| [MsgUpdateCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgUpdateCallback.html)                                                   | 设置消息在云端被修改后回传回来的消息更新通知回调 |
-| [MsgGroupMessageReadMemberListCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgGroupMessageReadMemberListCallback.html)           | 获取群消息已读群成员列表                         |
+| [NetworkStatusListenerCallback](https://comm.qq.com/im/doc/unity/zh/callback/NetworkStatusListenerCallback.html) | 设置网络连接状态监听回调                         |
+| [KickedOfflineCallback](https://comm.qq.com/im/doc/unity/zh/callback/KickedOfflineCallback.html) | 设置被踢下线通知回调                             |
+| [UserSigExpiredCallback](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html) | 设置票据过期回调                                 |
+| [OnAddFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnAddFriendCallback.html) | 设置添加好友的回调                               |
+| [OnDeleteFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnDeleteFriendCallback.html) | 设置删除好友的回调                               |
+| [UpdateFriendProfileCallback](https://comm.qq.com/im/doc/unity/zh/callback/UpdateFriendProfileCallback.html) | 设置更新好友资料的回调                           |
+| [FriendAddRequestCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendAddRequestCallback.html) | 设置好友添加请求的回调                           |
+| [FriendApplicationListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListDeletedCallback.html) | 设置好友申请被删除的回调                         |
+| [FriendApplicationListReadCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListReadCallback.html) | 设置好友申请已读的回调                           |
+| [FriendBlackListAddedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListAddedCallback.html) | 设置黑名单新增的回调                             |
+| [FriendBlackListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListDeletedCallback.html) | 设置黑名单删除的回调                             |
+| [LogCallback](https://comm.qq.com/im/doc/unity/zh/callback/LogCallback.html) | 设置日志回调                                     |
+| [MsgUpdateCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgUpdateCallback.html) | 设置消息在云端被修改后回传回来的消息更新通知回调 |
+| [MsgGroupMessageReadMemberListCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgGroupMessageReadMemberListCallback.html) | 获取群消息已读群成员列表                         |
 
 >! 如果收到 [`UserSigExpiredCallback`](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html) 回调，说明您登录用的 UserSig 票据已经过期，请使用新签发的 UserSig 进行重新登录。如果继续使用过期的 UserSig，会导致 IM SDK 登录进入死循环。
 
@@ -110,4 +110,3 @@ TencentIMSDK.Uninit();
 [](id:qa1)
 
 ### 1. 在使用 IM SDK 登录、消息、群组、会话、关系链和资料、信令的功能前，必须先进行初始化。
-

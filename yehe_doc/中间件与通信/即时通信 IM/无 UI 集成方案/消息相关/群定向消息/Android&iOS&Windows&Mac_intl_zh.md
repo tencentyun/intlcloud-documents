@@ -139,4 +139,3 @@ V2TIMManager::GetInstance()->GetMessageManager()->SendMessage(
 ## 接收群定向消息
 定向群消息默认不计入群会话的未读计数。
 接收群定向消息跟接收普通消息是一样的操作步骤，参考 [接收消息](https://intl.cloud.tencent.com/document/product/1047/47995)。
-

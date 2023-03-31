@@ -1,9 +1,8 @@
-
 ## 功能描述
 在某些场景下，您可能需要对会话进行标记，例如 "会话标星"、"会话折叠"、"会话隐藏"、“会话标记未读”等，您可以调用以下接口实现。
 > ?
-- 该功能仅对旗舰版客户开放，购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 后可使用。
-- 该功能仅v2.22.0及以上版本支持。
+> - 该功能仅对旗舰版客户开放，购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 后可使用。
+> - 该功能仅v2.22.0及以上版本支持。
 
 ## 会话标记
 
@@ -25,15 +24,15 @@ tim.markConversation(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationIDList  | String | 会话 ID 列表 |
-| markType   | String | 会话标记类型 |
-| enableMark | Boolean | true 设置标记，false 取消标记 |
+| Name               | Type    | Description                   |
+| ------------------ | ------- | ----------------------------- |
+| conversationIDList | String  | 会话 ID 列表                  |
+| markType           | String  | 会话标记类型                  |
+| enableMark         | Boolean | true 设置标记，false 取消标记 |
 
 > ? SDK 提供了四个默认标记（"会话标星"、"会话折叠"、"会话隐藏"、“会话标记未读”），如果已有标记不能满足您的需求，您可以自定义扩展标记，扩展标记需要满足以下两个条件：
-1、扩展标记值不能和已有的标记值冲突。
-2、自定义标记值必须是 Math.power(2, n)（32 <= n < 64，即 n 必须大于等于 32 并且小于 64），比如自定义 Math.power(2, 32) 标记值表示 "iPhone 在线"。
+> 1、扩展标记值不能和已有的标记值冲突。
+> 2、自定义标记值必须是 Math.power(2, n)（32 <= n < 64，即 n 必须大于等于 32 并且小于 64），比如自定义 Math.power(2, 32) 标记值表示 "iPhone 在线"。
 
 **返回**
 

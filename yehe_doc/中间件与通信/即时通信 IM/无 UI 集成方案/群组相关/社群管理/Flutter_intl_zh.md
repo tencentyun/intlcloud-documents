@@ -161,8 +161,8 @@ groupManager.getTopicInfoList(groupID: "",topicIDList: ['topicID']);
 
 >? 
 >
-> 社群（群组）中 [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#custominfo) 的话题分组列表字段名，key值，可由您自行定义。
-> 以下示例代码中，将其命名为 `topic_category` 。
+>社群（群组）中 [`customInfo`](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Class/Group/V2TimGroupInfo.html#custominfo) 的话题分组列表字段名，key值，可由您自行定义。
+>以下示例代码中，将其命名为 `topic_category` 。
 
 #### 获取社群的分组列表
 

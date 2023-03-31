@@ -11,30 +11,30 @@ This document describes how to connect to offline push of the Chat service. The 
 
 >?
 >
-> - If vendor offline push has been configured for your application, you only need to enter the vendor information in the console as instructed in [step 1](#step_1) and [step 5](#step_5) and report the certificate ID after logging in to the application.
-> - If you want to push messages of other types (such as operations messages) for your application, or an error occurs in the connection to a third-party push SDK, perform configuration by referring to [Pushing Other Business Messages](#push_to_all). **We do not recommend that you use the SDK with other third-party push SDKs, such as Tencent Push Notification Service (TPNS).**
-> - If offline push is not required by your application or is not supported in your business scenarios, see [Online Push - Creating a Local Message Notification](#online_push).
+>- If vendor offline push has been configured for your application, you only need to enter the vendor information in the console as instructed in [step 1](#step_1) and [step 5](#step_5) and report the certificate ID after logging in to the application.
+>- If you want to push messages of other types (such as operations messages) for your application, or an error occurs in the connection to a third-party push SDK, perform configuration by referring to [Pushing Other Business Messages](#push_to_all). **We do not recommend that you use the SDK with other third-party push SDKs, such as Tencent Push Notification Service (TPNS).**
+>- If offline push is not required by your application or is not supported in your business scenarios, see [Online Push - Creating a Local Message Notification](#online_push).
 
 ## Plugin APIs
 
 >? The following APIs are compatible with Android/iOS platforms and supported vendor devices unless otherwise specified. The platform and vendor are identified inside the plugin, which can be called directly.
 
-| API  |	Description  |
-|---------|---------|
-| Constructor (TimUiKitPushPlugin) | Instantiates a push plugin object and determines whether to use Google FCM. |
-| init | Initialize the plugin. Binds the callback for the notification click event and passes in vendor channel information. |
-| uploadToken | Automatically gets and uploads the device token and certificate ID to the Chat server. |
-| clearToken | Clears the push token of the current device on the server side to block notifications. |
-| requireNotificationPermission | Requests the push permission. |
-| setBadgeNum | Sets the unread count badge. For iOS devices, disable the badge setting feature of the Chat SDK first. For more information, [see here](#iosbadge). |
-| clearAllNotification | Clears all the notifications of the current application from the notification bar. |
-| getDevicePushConfig | Gets the push information of the current vendor, including model, certification ID, and token. |
-| getDevicePushToken | Gets the push token of the current vendor. |
-| getOtherPushType | Gets the vendor information. |
-| getBuzId | Gets the current vendor's certificate ID registered in the Tencent Cloud console. |
-| createNotificationChannel | Creates a notification channel for an Android model. For more information, see [Create and manage notification channels](https://developer.android.com/training/notify-user/channels). |
-| clearAllNotification | Clears all the notifications of the current application from the notification bar. |
-| displayNotification | Manually creates a message notification on the client. |
+| API                                  | Description                                                  |
+| ------------------------------------ | ------------------------------------------------------------ |
+| Constructor (TimUiKitPushPlugin)     | Instantiates a push plugin object and determines whether to use Google FCM. |
+| init                                 | Initialize the plugin. Binds the callback for the notification click event and passes in vendor channel information. |
+| uploadToken                          | Automatically gets and uploads the device token and certificate ID to the Chat server. |
+| clearToken                           | Clears the push token of the current device on the server side to block notifications. |
+| requireNotificationPermission        | Requests the push permission.                                |
+| setBadgeNum                          | Sets the unread count badge. For iOS devices, disable the badge setting feature of the Chat SDK first. For more information, [see here](#iosbadge). |
+| clearAllNotification                 | Clears all the notifications of the current application from the notification bar. |
+| getDevicePushConfig                  | Gets the push information of the current vendor, including model, certification ID, and token. |
+| getDevicePushToken                   | Gets the push token of the current vendor.                   |
+| getOtherPushType                     | Gets the vendor information.                                 |
+| getBuzId                             | Gets the current vendor's certificate ID registered in the Tencent Cloud console. |
+| createNotificationChannel            | Creates a notification channel for an Android model. For more information, see [Create and manage notification channels](https://developer.android.com/training/notify-user/channels). |
+| clearAllNotification                 | Clears all the notifications of the current application from the notification bar. |
+| displayNotification                  | Manually creates a message notification on the client.       |
 | displayDefaultNotificationForMessage | Automatically creates a message notification for a `V2TimMessage` object on the client according to the default rules. |
 
 ## Connection Preparations (Vendor Registration)[](id:firstone)
@@ -135,12 +135,12 @@ Get the SHA-256 certificate fingerprint as instructed in [Generating a Signing C
 > ?If your application needs to be compiled and released through a pipeline, and each compilation is performed on different build machines, you can create a local `keystore.jks` key file to get its SHA-256 value and enter it on the HUAWEI Push platform.
 >
 > When a script is built in a pipeline, you need to archive and align the final build and use the `keystore` signature, so that the SHA-256 value of the final build is consistent with the former value. The code is as follows:
-><dx-codeblock>
-:::  shell
-zipalign -v -p 4 built apk.apk packaged apk_aligned.apk
-apksigner sign --ks keystore.jks --ks-pass pass: Your keystore password --out Final signature Completed apk.apk Packaged apk_aligned.apk
-:::
-</dx-codeblock>
+> <dx-codeblock>
+> :::  shell
+> zipalign -v -p 4 built apk.apk packaged apk_aligned.apk
+> apksigner sign --ks keystore.jks --ks-pass pass: Your keystore password --out Final signature Completed apk.apk Packaged apk_aligned.apk
+> :::
+> </dx-codeblock>
 
 ##### Getting the Huawei Push configuration file
 
@@ -198,10 +198,10 @@ Install the offline push plugin of Chat for Flutter in your project.
 
 Tencent Cloud provides two message push plugin editions: the Chinese mainland edition and the international edition. Use Apple Push Notification service (APNs) for iOS devices. However, the channels for Android devices vary with the vendors.
 
-| Edition | Package | Support for Google FCM | Native Channel Support for Chinese Device Vendors | Description |
-|---------|---------|---------|---------|---------|
-| Chinese mainland edition | [tencent_chat_push_for_china](https://pub.dev/packages/tencent_chat_push_for_china) | No | Yes | Offline push for Android devices is implemented only through the native channels of the vendors. |
-| International edition | [tim_ui_kit_push_plugin](https://pub.dev/packages/tim_ui_kit_push_plugin) | Yes | Yes | The Google FCM channel is preferred whenever possible. Native channels of the vendors are also supported. |
+| Edition                  | Package                                                      | Support for Google FCM | Native Channel Support for Chinese Device Vendors | Description                                                  |
+| ------------------------ | ------------------------------------------------------------ | ---------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
+| Chinese mainland edition | [tencent_chat_push_for_china](https://pub.dev/packages/tencent_chat_push_for_china) | No                     | Yes                                               | Offline push for Android devices is implemented only through the native channels of the vendors. |
+| International edition    | [tim_ui_kit_push_plugin](https://pub.dev/packages/tim_ui_kit_push_plugin) | Yes                    | Yes                                               | The Google FCM channel is preferred whenever possible. Native channels of the vendors are also supported. |
 
 Choose the suitable push plugin based on your target customers.
 
@@ -1047,7 +1047,7 @@ During initialization, register the callback method to get the `Map` containing 
 
 >? If the receiver is redirected when the application is in the background, the Flutter homepage may have been unmounted and cannot provide a context for the redirect. Therefore, we recommend you cache a context upon start to ensure the success of the redirect.
 >
-> We recommend you call the `clearAllNotification()` method to clear other notifications on the notification bar after the redirect to avoid too many Chat messages.
+>We recommend you call the `clearAllNotification()` method to clear other notifications on the notification bar after the redirect to avoid too many Chat messages.
 
 ```Dart
 BuildContext? _cachedContext;

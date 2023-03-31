@@ -1,4 +1,3 @@
-
 ## Feature Description
 In some cases, you may need to group conversations, for example, into a "Product experience" or "R&D" group, which can be implemented through the following API.
 > ?
@@ -26,10 +25,10 @@ tim.createConversationGroup(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationIDList  | String | List of conversation IDs |
-| groupName   | String | Conversation group name, which can be up to 32 bytes in length |
+| Name               | Type   | Description                                                  |
+| ------------------ | ------ | ------------------------------------------------------------ |
+| conversationIDList | String | List of conversation IDs                                     |
+| groupName          | String | Conversation group name, which can be up to 32 bytes in length |
 
 **Return values**
 
@@ -77,9 +76,9 @@ tim.deleteConversationGroup(groupName);
 
 **Parameters**
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupName   | String | Conversation group name, which can be up to 32 bytes in length |
+| Name      | Type   | Description                                                  |
+| --------- | ------ | ------------------------------------------------------------ |
+| groupName | String | Conversation group name, which can be up to 32 bytes in length |
 
 **Return values**
 
@@ -117,10 +116,10 @@ tim.renameConversationGroup(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| oldName     | String | Old group name  |
-| newName   | String | New group name, which can be up to 32 bytes in length |
+| Name    | Type   | Description                                           |
+| ------- | ------ | ----------------------------------------------------- |
+| oldName | String | Old group name                                        |
+| newName | String | New group name, which can be up to 32 bytes in length |
 
 **Return values**
 
@@ -203,10 +202,10 @@ tim.addConversationsToGroup(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationIDList  | String | List of conversation IDs |
-| groupName   | String | Conversation group name, which can be up to 32 bytes in length |
+| Name               | Type   | Description                                                  |
+| ------------------ | ------ | ------------------------------------------------------------ |
+| conversationIDList | String | List of conversation IDs                                     |
+| groupName          | String | Conversation group name, which can be up to 32 bytes in length |
 
 **Return values**
 
@@ -256,10 +255,10 @@ tim.deleteConversationsFromGroup(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationIDList  | String | List of conversation IDs |
-| groupName   | String | Conversation group name, which can be up to 32 bytes in length |
+| Name               | Type   | Description                                                  |
+| ------------------ | ------ | ------------------------------------------------------------ |
+| conversationIDList | String | List of conversation IDs                                     |
+| groupName          | String | Conversation group name, which can be up to 32 bytes in length |
 
 **Return values**
 

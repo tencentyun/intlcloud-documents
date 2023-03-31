@@ -25,5 +25,3 @@ const searchGroupMem = await groupManager.searchGroupMembers({
   isSearchMemberUserID: true,
 });
 ```
-
-

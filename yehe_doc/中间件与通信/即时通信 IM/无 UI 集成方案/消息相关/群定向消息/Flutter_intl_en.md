@@ -32,6 +32,3 @@ Sample code:
 ## Receiving a Targeted Group Message
 By default, targeted group messages are excluded from the unread count of a group conversation.
 A targeted group message can be received in the same way as an ordinary message. For detailed directions, see Receiving Message.
-
-
-

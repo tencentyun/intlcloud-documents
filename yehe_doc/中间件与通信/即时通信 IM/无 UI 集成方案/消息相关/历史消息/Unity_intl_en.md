@@ -80,8 +80,8 @@ TIMResult res = TencentIMSDK.MsgGetMsgList(conv_id, TIMConvType.kTIMConv_Group, 
 * The returned message list displays messages in reverse chronological order.
 
 >?
-> 1. To avoid affecting the speed of pulling historical messages, we recommend you set `msg_getmsglist_param_count` to `20` for pagination.
-> 2. We recommend you not use `msg_getmsglist_param_last_msg_seq` for the subsequent pull, as the corresponding message will be included in the returned message list.
+>1. To avoid affecting the speed of pulling historical messages, we recommend you set `msg_getmsglist_param_count` to `20` for pagination.
+>2. We recommend you not use `msg_getmsglist_param_last_msg_seq` for the subsequent pull, as the corresponding message will be included in the returned message list.
 
 
 [](id:advance_group_at)
@@ -130,5 +130,3 @@ If you want to get the latest group member information, you can use the `GroupGe
 [](id:qa4)
 ### 4. What should I do if I get a lag while pulling historical messages?
 The SDK has been optimized for message pull. If a lag occurs, you can reduce the number of pulled messages (`msg_getmsglist_param_count`). If the issue persists, contact us for assistance.
-
-

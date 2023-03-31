@@ -18,5 +18,3 @@ const serchFriend = await friendshipManager.searchFriends({
   keywordList: ["Keyword"],
 });
 ```
-
-

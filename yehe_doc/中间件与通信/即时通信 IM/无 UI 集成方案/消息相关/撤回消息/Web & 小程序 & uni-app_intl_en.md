@@ -21,9 +21,9 @@ tim.revokeMessage(message);
 
 **Parameter**
 
-| Name               | Type     |Description                                                  |
-| ------------------ | -------- |------------------------------------------------------------ |
-| message          | Message | Message instance |
+| Name    | Type    | Description      |
+| ------- | ------- | ---------------- |
+| message | Message | Message instance |
 
 **Returned value**
 

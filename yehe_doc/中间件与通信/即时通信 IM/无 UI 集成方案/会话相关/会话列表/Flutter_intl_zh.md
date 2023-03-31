@@ -107,13 +107,13 @@ TencentImSDKPlugin.v2TIMManager.getConversationManager().addConversationListener
 
 目前 IM SDK 支持的会话变更事件有：
 
-| 事件                             | 说明                 | 建议                                                                                                                     |
-| -------------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| onSyncServerStart                | 同步服务器会话开始   | SDK 会在登录成功或者断网重连后自动同步服务器会话，您可以监听这个事件做一些 UI 进度展示操作。                             |
-| onSyncServerFinish               | 同步服务器会话完成   | 如果会话有变更，会通过 `onNewConversation`/`onConversationChanged` 回调告知。                                            |
-| onSyncServerFailed               | 同步服务器会话失败   | 您可以监听这个事件做一些 UI 异常展示操作。                                                                               |
-| onNewConversation                | 有会话新增           | 例如收到一个新同事发来的单聊消息、被拉入了一个新的群组中，此时可以重新对会话列表做排序。                                 |
-| onConversationChanged            | 有会话更新           | 例如未读计数发生变化、最后一条消息被更新等，此时可以重新对会话列表做排序。                                               |
+| 事件                             | 说明                 | 建议                                                         |
+| -------------------------------- | -------------------- | ------------------------------------------------------------ |
+| onSyncServerStart                | 同步服务器会话开始   | SDK 会在登录成功或者断网重连后自动同步服务器会话，您可以监听这个事件做一些 UI 进度展示操作。 |
+| onSyncServerFinish               | 同步服务器会话完成   | 如果会话有变更，会通过 `onNewConversation`/`onConversationChanged` 回调告知。 |
+| onSyncServerFailed               | 同步服务器会话失败   | 您可以监听这个事件做一些 UI 异常展示操作。                   |
+| onNewConversation                | 有会话新增           | 例如收到一个新同事发来的单聊消息、被拉入了一个新的群组中，此时可以重新对会话列表做排序。 |
+| onConversationChanged            | 有会话更新           | 例如未读计数发生变化、最后一条消息被更新等，此时可以重新对会话列表做排序。 |
 | onTotalUnreadMessageCountChanged | 会话未读总数变更通知 | 详情请参考 [会话未读数](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Class/Message/V2TimConversation.html#unreadcount)。 |
 
 > ? 为保证会话列表顺序符合最后一条消息的排序原则，每次会话变更/新增后，您需要对数据源重新排序。
@@ -244,6 +244,3 @@ conversationManager.removeConversationListener(conversationListener);
 
 
 >? `isExcludedFromLastMessage` 仅Flutter SDK 4.0.0 及以上版本支持。
-
-
-

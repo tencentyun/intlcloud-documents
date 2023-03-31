@@ -24,5 +24,3 @@ const nextSeq = "";
 
 const convList = await conversationManager.getConversationList(count, nextSeq);
 ```
-
-

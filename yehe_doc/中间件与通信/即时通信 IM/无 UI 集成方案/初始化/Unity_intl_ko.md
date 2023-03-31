@@ -60,29 +60,29 @@ initSDK를 호출한 직후 글로벌 이벤트 리스너를 등록하고 이러
 
 콜백은 다음과 같습니다.
 
-| 이벤트 콜백                                                                                                                                   | 설명                                         |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
-| [RecvNewMsgCallback](https://comm.qq.com/im/doc/unity/zh/callback/RecvNewMsgCallback.html)                                                 | 새 메시지 수신 콜백                               |
-| [MsgReadedReceiptCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgReadedReceiptCallback.html)                                     | 메시지 수신 확인 콜백                             |
-| [MsgRevokeCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgRevokeCallback.html)                                                   | 메시지 회수 콜백                         |
-| [MsgElemUploadProgressCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgElemUploadProgressCallback.html)                           | 메시지 요소의 업로드 진행 콜백               |
-| [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupTipsEventCallback.html)                                         | 그룹 시스템 메시지 콜백                             |
-| [GroupAttributeChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupAttributeChangedCallback.html)                           | 그룹 속성 변경 콜백                             |
-| [ConvTotalUnreadMessageCountChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/ConvTotalUnreadMessageCountChangedCallback.html) | 대화의 읽지 않은 메시지 수 변경 콜백                   |
-| [NetworkStatusListenerCallback](https://comm.qq.com/im/doc/unity/zh/callback/NetworkStatusListenerCallback.html)                           | 네트워크 연결 상태 수신 콜백                         |
-| [KickedOfflineCallback](https://comm.qq.com/im/doc/unity/zh/callback/KickedOfflineCallback.html)                                           | 강제 오프라인 콜백                             |
-| [UserSigExpiredCallback](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html)                                         | 티켓 만료 콜백                                 |
-| [OnAddFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnAddFriendCallback.html)                                               | 친구 추가 콜백                               |
-| [OnDeleteFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnDeleteFriendCallback.html)                                         | 친구 삭제 콜백                               |
-| [UpdateFriendProfileCallback](https://comm.qq.com/im/doc/unity/zh/callback/UpdateFriendProfileCallback.html)                               | 친구 프로필 업데이트 콜백                           |
-| [FriendAddRequestCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendAddRequestCallback.html)                                     | 친구 요청 콜백                           |
-| [FriendApplicationListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListDeletedCallback.html)             | 친구요청 삭제 콜백                         |
-| [FriendApplicationListReadCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListReadCallback.html)                   | 친구 요청 읽기 콜백                           |
-| [FriendBlackListAddedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListAddedCallback.html)                             | 블록리스트 친구 추가 콜백                             |
-| [FriendBlackListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListDeletedCallback.html)                         | 블록리스트 친구 제거 콜백                             |
-| [LogCallback](https://comm.qq.com/im/doc/unity/zh/callback/LogCallback.html)                                                               | 로그 콜백                                     |
-| [MsgUpdateCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgUpdateCallback.html)                                                   | 메시지 업데이트 콜백 |
-| [MsgGroupMessageReadMemberListCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgGroupMessageReadMemberListCallback.html)           | 그룹 메시지를 읽은 그룹 구성원 목록 가져오기 콜백                         |
+| 이벤트 콜백                                                  | 설명                                              |
+| ------------------------------------------------------------ | ------------------------------------------------- |
+| [RecvNewMsgCallback](https://comm.qq.com/im/doc/unity/zh/callback/RecvNewMsgCallback.html) | 새 메시지 수신 콜백                               |
+| [MsgReadedReceiptCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgReadedReceiptCallback.html) | 메시지 수신 확인 콜백                             |
+| [MsgRevokeCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgRevokeCallback.html) | 메시지 회수 콜백                                  |
+| [MsgElemUploadProgressCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgElemUploadProgressCallback.html) | 메시지 요소의 업로드 진행 콜백                    |
+| [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupTipsEventCallback.html) | 그룹 시스템 메시지 콜백                           |
+| [GroupAttributeChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupAttributeChangedCallback.html) | 그룹 속성 변경 콜백                               |
+| [ConvTotalUnreadMessageCountChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/ConvTotalUnreadMessageCountChangedCallback.html) | 대화의 읽지 않은 메시지 수 변경 콜백              |
+| [NetworkStatusListenerCallback](https://comm.qq.com/im/doc/unity/zh/callback/NetworkStatusListenerCallback.html) | 네트워크 연결 상태 수신 콜백                      |
+| [KickedOfflineCallback](https://comm.qq.com/im/doc/unity/zh/callback/KickedOfflineCallback.html) | 강제 오프라인 콜백                                |
+| [UserSigExpiredCallback](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html) | 티켓 만료 콜백                                    |
+| [OnAddFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnAddFriendCallback.html) | 친구 추가 콜백                                    |
+| [OnDeleteFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnDeleteFriendCallback.html) | 친구 삭제 콜백                                    |
+| [UpdateFriendProfileCallback](https://comm.qq.com/im/doc/unity/zh/callback/UpdateFriendProfileCallback.html) | 친구 프로필 업데이트 콜백                         |
+| [FriendAddRequestCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendAddRequestCallback.html) | 친구 요청 콜백                                    |
+| [FriendApplicationListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListDeletedCallback.html) | 친구요청 삭제 콜백                                |
+| [FriendApplicationListReadCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListReadCallback.html) | 친구 요청 읽기 콜백                               |
+| [FriendBlackListAddedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListAddedCallback.html) | 블록리스트 친구 추가 콜백                         |
+| [FriendBlackListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListDeletedCallback.html) | 블록리스트 친구 제거 콜백                         |
+| [LogCallback](https://comm.qq.com/im/doc/unity/zh/callback/LogCallback.html) | 로그 콜백                                         |
+| [MsgUpdateCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgUpdateCallback.html) | 메시지 업데이트 콜백                              |
+| [MsgGroupMessageReadMemberListCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgGroupMessageReadMemberListCallback.html) | 그룹 메시지를 읽은 그룹 구성원 목록 가져오기 콜백 |
 
 >! [`UserSigExpiredCallback`](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html) 콜백을 수신하면 로그인에 사용하는 UserSig가 만료된 것입니다. 이 경우 새 UserSig를 사용하여 다시 로그인해야 합니다. 만료된 UserSig를 계속 사용하면 IM SDK가 무한 로그인 루프에 빠집니다.
 
@@ -110,4 +110,3 @@ SDK가 성공적으로 초기화된 후 메시지 누락을 방지하려면 필�
 [](id:qa1)
 
 ### 1. 로그인, 메시지, 그룹, 대화, 관계 체인 및 프로필, 신호 기능을 사용하기 전에 IM SDK를 초기화해야 합니다.
-

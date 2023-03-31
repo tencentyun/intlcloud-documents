@@ -86,12 +86,12 @@ TencentImSDKPlugin.v2TIMManager.getUsersInfo(userIDList: [self.data]);
 ### 友達情報の表示と変更
 `getFriendsInfo`([クリックして詳細を表示](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMFriendshipManager/getFriendsInfo.html))インターフェースを呼び出すことで、指定の友達情報を表示し、コールバック情報から`V2TIMFriendInfoResult`の`relation`フィールドを通じてユーザーと自分の関係を取得できます。
 
-| relation                                          | 自分との関係               |
-| ------------------------------------------------- | -------------------------- |
-| `V2TIM_FRIEND_RELATION_TYPE_NONE`                 | 友達でないことを示します。             |
-| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY`             | お互いに友達であることを示します。             |
-| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST`    | 相手が自分の友達リストに登録されていることを示します。|
-| `V2TIM_FRIEND_RELATION_TYPE_IN_OTHER_FRIEND_LIST` | 自分が相手の友達リストに登録されていることを示します。|
+| relation                                          | 自分との関係                                           |
+| ------------------------------------------------- | ------------------------------------------------------ |
+| `V2TIM_FRIEND_RELATION_TYPE_NONE`                 | 友達でないことを示します。                             |
+| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY`             | お互いに友達であることを示します。                     |
+| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST`    | 相手が自分の友達リストに登録されていることを示します。 |
+| `V2TIM_FRIEND_RELATION_TYPE_IN_OTHER_FRIEND_LIST` | 自分が相手の友達リストに登録されていることを示します。 |
 
 
 
@@ -116,4 +116,3 @@ TencentImSDKPlugin.v2TIMManager.setSelfInfo(userFullInfo: V2TimUserFullInfo(nick
 拡張版SDKでのユーザー情報の更新は、友達と知らない人の2つの状況に分けられます。
  - 友達情報：友達情報が更新されると、バックグラウンドがシステム通知をSDKに自主的に送信するため、友達情報をリアルタイムで更新できます。
  - 知らない人の情報：知らない人の情報が更新されると、友達関係がないため、バックグラウンドはSDKにシステム通知を送信できず、情報をリアルタイムで更新できません。ユーザー情報が取得されるたびにバックグラウンドへのネットワークリクエストを送信することを避けるために、SDKはキャッシュロジックを追加し、同じユーザーのバックグラウンドから自主的にデータをプルする時間間隔は10分となっています。
-

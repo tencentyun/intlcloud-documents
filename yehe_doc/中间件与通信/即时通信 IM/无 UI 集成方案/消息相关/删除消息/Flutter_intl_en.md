@@ -41,6 +41,3 @@ Sample code:
 ```dart
 TencentImSDKPlugin.v2TIMManager.getMessageManager().deleteMessages(msgIDs: ['messageid']);
 ```
-
-
-

@@ -34,8 +34,3 @@ Sample code:
       searchGroupMembersRes.data?.groupMemberSearchResultItems;// Group member search result
     }
 ```
-
-
-
-
-

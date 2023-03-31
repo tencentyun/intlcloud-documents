@@ -12,11 +12,11 @@ Call the `ConvMarkConversation` ([details](https://comm.qq.com/im/doc/unity/zh/a
 
 Parameters of the API for marking a conversation are as described below:
 
-| Attribute | Definition | Description |
-| ------------------ | ------------- | -------------------------------------------- |
-| conversationIDList | List of conversation IDs | Up to 100 conversations can be marked at a time. |
-| markType | Mark type| A conversation can be marked as a favorite, unread, collapsed, or hidden.|
-| enableMark         | Mark/Unmark |  A conversation can be marked/unmarked.                               |
+| Attribute          | Definition               | Description                                                  |
+| ------------------ | ------------------------ | ------------------------------------------------------------ |
+| conversationIDList | List of conversation IDs | Up to 100 conversations can be marked at a time.             |
+| markType           | Mark type                | A conversation can be marked as a favorite, unread, collapsed, or hidden. |
+| enableMark         | Mark/Unmark              | A conversation can be marked/unmarked.                       |
 
 > ? The SDK provides four default marks ("favorite", "collapsed", "hidden", and "unread"). If they cannot meet your requirements, you can customize extended marks, which must meet the following conditions:
 - The value of an extended mark cannot be the same as that of an existing one.

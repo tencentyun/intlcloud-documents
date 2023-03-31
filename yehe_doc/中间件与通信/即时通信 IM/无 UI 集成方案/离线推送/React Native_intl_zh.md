@@ -66,7 +66,7 @@ android {
 </dx-tabs>
 
 -  **华为和 Google FCM 适配**
-华为和 Google FCM 需要按照厂商方法，集成对应的 plugin 和 json 配置文件。
+  华为和 Google FCM 需要按照厂商方法，集成对应的 plugin 和 json 配置文件。
 
   1. 下载配置文件添加到工程根目录。
 
@@ -203,4 +203,3 @@ OPPO 手机收不到推送一般有以下几种情况：
     具体请参见 [厂商描述](http://open.res.flyme.cn/fileserver/upload/file/202201/85079f02ac0841da859c1da0ef351970.pdf)。
  - FCM：推送上行消息频率有限制。
     具体请参见 [厂商描述](https://firebase.google.com/docs/cloud-messaging/concept-options?hl=en#upstream_throttling)。
-

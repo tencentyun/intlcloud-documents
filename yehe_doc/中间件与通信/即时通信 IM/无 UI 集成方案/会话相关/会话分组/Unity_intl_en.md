@@ -10,10 +10,10 @@ In some cases, you may need to group conversations, for example, into a "Product
 Call the `ConvCreateConversationGroup` ([details](https://comm.qq.com/im/doc/unity/zh/api/ConvApi/ConvCreateConversationGroup.html)) API to create a conversation group.
 >? Up to 20 conversation groups can be created. After this limit is exceeded, the `51010` error will be reported. Groups that are no longer used should be promptly deleted.
 
-| Attribute | Definition | Description |
-| ------------------ | ------------ | -------------------------------------------------------- |
-| groupName | Conversation group name | It must be greater than 0 in length and can contain up to 32 bytes; otherwise, the `51011` error will be reported. |
-| conversationIDList | List of conversation IDs | It cannot be empty.                                                 |
+| Attribute          | Definition               | Description                                                  |
+| ------------------ | ------------------------ | ------------------------------------------------------------ |
+| groupName          | Conversation group name  | It must be greater than 0 in length and can contain up to 32 bytes; otherwise, the `51011` error will be reported. |
+| conversationIDList | List of conversation IDs | It cannot be empty.                                          |
 
 Sample code:
 

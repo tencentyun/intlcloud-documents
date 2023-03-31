@@ -6,7 +6,7 @@
 单聊和群聊均支持消息已读回执功能，操作步骤一致。
 
 > ?
->- 该功能需要购买旗舰版，购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) 后可使用。
+> - 该功能需要购买旗舰版，购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8) 后可使用。
 
 ## 消息已读回执
 
@@ -71,14 +71,14 @@ onRecvMessageReadReceipts: (receiptList) {
 
 其中已读回执信息 `V2TimessageReceipt` 字段含义如下：
 
-| 属性        | 含义                     | 说明                                                                                                                                                              |
-| ----------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| msgID       | 消息 ID                  | 消息唯一 ID                                                                                                                                                       |
-| userID      | 对端用户 ID              | 如果是单聊，该字段表示对端用户 ID                                                                                                                                 |
+| 属性        | 含义                     | 说明                                                         |
+| ----------- | ------------------------ | ------------------------------------------------------------ |
+| msgID       | 消息 ID                  | 消息唯一 ID                                                  |
+| userID      | 对端用户 ID              | 如果是单聊，该字段表示对端用户 ID                            |
 | timestamp   | 对端用户标记会话已读时间 | 该字段在消息已读场景无效，如果是单聊，当对端用户调用 markC2CMessageAsRead 接口标记会话已读时，自己会收到的 onRecvC2CReadReceipt 回调，回调里会携带 timestamp 信息 |
-| groupID     | 群组 ID                  | 如果是群聊，该字段为群组 ID                                                                                                                                       |
-| readCount   | 群消息已读人数           | 如果是群聊，该字段为群消息已读人数                                                                                                                                |
-| unreadCount | 群消息未读人数           | 如果是群聊，该字段为群消息未读人数                                                                                                                                |
+| groupID     | 群组 ID                  | 如果是群聊，该字段为群组 ID                                  |
+| readCount   | 群消息已读人数           | 如果是群聊，该字段为群消息已读人数                           |
+| unreadCount | 群消息未读人数           | 如果是群聊，该字段为群消息未读人数                           |
 
 示例代码如下：
 
@@ -116,5 +116,3 @@ if (getGroupMessageReadMemberList.code == 0) {
   getGroupMessageReadMemberList.data.nextSeq;
 }
 ```
-
-

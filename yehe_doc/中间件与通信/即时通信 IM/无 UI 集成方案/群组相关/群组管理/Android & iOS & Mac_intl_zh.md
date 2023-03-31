@@ -94,11 +94,11 @@ V2TIMManager::GetInstance()->AddGroupListener(&groupListener);
 
 `createGroup` 参数说明如下表所示：
 
-| 参数 | 含义 | 是否必填 | 说明 |
-| --- | --- | --- | --- |
-| groupType | 群类型 | YES | 参考 [群类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529)。 |
-| groupID | 群 ID | NO | 如果传空，群创建成功后会自动分配。<br>支持自定义群 ID，参考 [自定义群组 ID](https://intl.cloud.tencent.com/document/product/1047/33529) 规则。|
-| groupName | 群名称 | YES | 最长 30 字节。 |
+| 参数      | 含义   | 是否必填 | 说明                                                         |
+| --------- | ------ | -------- | ------------------------------------------------------------ |
+| groupType | 群类型 | YES      | 参考 [群类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529)。 |
+| groupID   | 群 ID  | NO       | 如果传空，群创建成功后会自动分配。<br>支持自定义群 ID，参考 [自定义群组 ID](https://intl.cloud.tencent.com/document/product/1047/33529) 规则。 |
+| groupName | 群名称 | YES      | 最长 30 字节。                                               |
 
 如果您按照上文 [群事件监听](#advance_page) 中所述调用 `addGroupListener` 添加了群组事件监听器，群创建成功后会回调 `onGroupCreated` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a93504c985480a2bb87ca716809e3dd00) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#aa5c08185c8c9ddaace6421e1e153711d) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupListener.html#af7cf426687a86f033051ad6bed8fc087)) 接口。
 
@@ -325,13 +325,13 @@ V2TIMManager::GetInstance()->GetGroupManager()->CreateGroup(info, memberInfoList
 ## 加入群组
 不同类型的群组，加群的方法不同：
 
-| 类型 | 加群方法 |
-| --- | --- |
-| 好友工作群（Work）| 必须由其他群成员邀请 |
-| 陌生人社交群（Public）| 用户申请，群主或管理员审批 |
-| 临时会议群（Meeting）| 用户可随意加入 |
-| 社群（Community）| 用户可随意加入 |
-| 直播群（AVChatRoom）| 用户可随意加入 |
+| 类型                   | 加群方法                   |
+| ---------------------- | -------------------------- |
+| 好友工作群（Work）     | 必须由其他群成员邀请       |
+| 陌生人社交群（Public） | 用户申请，群主或管理员审批 |
+| 临时会议群（Meeting）  | 用户可随意加入             |
+| 社群（Community）      | 用户可随意加入             |
+| 直播群（AVChatRoom）   | 用户可随意加入             |
 
 下面将根据加群流程从简单到复杂进行逐一介绍。
 
@@ -956,11 +956,11 @@ V2TIMManager::GetInstance()->AddGroupListener(&groupListener);
 
 `V2TIMGroupAddOpt` 的可选项有：
 
-| 加群选项 | 含义 |
-| --- | --- |
-| V2TIM_GROUP_ADD_FORBID | 禁止任何人加群。 |
-| V2TIM_GROUP_ADD_AUTH | 需要群主或管理员审批才能加入（默认值）。|
-| V2TIM_GROUP_ADD_ANY | 取消审批流程，任何用户都可以加入。 |
+| 加群选项               | 含义                                     |
+| ---------------------- | ---------------------------------------- |
+| V2TIM_GROUP_ADD_FORBID | 禁止任何人加群。                         |
+| V2TIM_GROUP_ADD_AUTH   | 需要群主或管理员审批才能加入（默认值）。 |
+| V2TIM_GROUP_ADD_ANY    | 取消审批流程，任何用户都可以加入。       |
 
 [](id:getJoinedGroup)
 ## 获取已加入的群组
@@ -1272,4 +1272,3 @@ V2TIMManager::GetInstance()->AddGroupListener(&groupListener);
 
 ## 接收群组自定义系统通知
 如果您在自己的服务器端调用 REST API [向群组中发送自定义系统通知](https://intl.cloud.tencent.com/document/product/1047/34958)，那么 SDK 会回调 `onReceiveRESTCustomData` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a0775a137d293473aaed4cf9fc4c18795) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/protocolV2TIMGroupListener-p.html#a989347c455869dc0aa44572f4f2b7041) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupListener.html#aa41c066e713dac9e71b31d77f2f65a7c)) ，在其中抛出您发送的自定义数据。
-

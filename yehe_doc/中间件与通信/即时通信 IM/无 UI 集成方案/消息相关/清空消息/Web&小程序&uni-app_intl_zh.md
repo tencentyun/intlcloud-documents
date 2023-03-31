@@ -1,4 +1,3 @@
-
 ## 功能描述
 
 清空消息会同时清空当前会话内所有的消息，包含本地和云端消息，但不会删除会话本身。
@@ -26,9 +25,9 @@ tim.clearHistoryMessage(conversationID);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationID     | String | 会话 ID。会话 ID 组成方式：<br/><li>C2C${userID}（单聊）</li><li>GROUP{groupID}（群聊）</li> |
+| Name           | Type   | Description                                                  |
+| -------------- | ------ | ------------------------------------------------------------ |
+| conversationID | String | 会话 ID。会话 ID 组成方式：<br/><li>C2C${userID}（单聊）</li><li>GROUP{groupID}（群聊）</li> |
 
 **返回值**
 

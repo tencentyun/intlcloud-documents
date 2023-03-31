@@ -74,5 +74,3 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener({
   },
 });
 ```
-
-

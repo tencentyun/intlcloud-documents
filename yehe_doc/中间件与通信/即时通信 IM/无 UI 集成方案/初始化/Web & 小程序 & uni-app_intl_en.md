@@ -30,10 +30,10 @@ After performing the above steps, you can call [TIM.create](https://web.sdk.qclo
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- |  ------------------------------------------------------------ |
-| SDKAppID          | Number | `SDKAppID` of the IM app |
-| oversea | Boolean | If your app needs to be used outside the Chinese mainland, set this property to `true`. Then, the SDK will use a domain name outside the Chinese mainland to avoid interference. |
+| Name     | Type    | Description                                                  |
+| -------- | ------- | ------------------------------------------------------------ |
+| SDKAppID | Number  | `SDKAppID` of the IM app                                     |
+| oversea  | Boolean | If your app needs to be used outside the Chinese mainland, set this property to `true`. Then, the SDK will use a domain name outside the Chinese mainland to avoid interference. |
 
 
 **Sample**
@@ -240,5 +240,3 @@ tim.destroy();
 
 :::
 </dx-codeblock>
-
-

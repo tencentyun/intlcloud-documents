@@ -18,9 +18,9 @@ tim.findMessage(messageID);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| messageID          | String | 消息 ID |
+| Name      | Type   | Description |
+| --------- | ------ | ----------- |
+| messageID | String | 消息 ID     |
 
 **返回值**
 

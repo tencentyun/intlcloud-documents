@@ -88,5 +88,3 @@ V2TIMMessage *msg = [[V2TIMManager sharedInstance] createTextMessage:@"Insert a 
 ```
 :::
 </dx-tabs>
-
-

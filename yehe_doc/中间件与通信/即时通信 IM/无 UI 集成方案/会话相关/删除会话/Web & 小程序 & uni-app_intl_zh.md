@@ -21,9 +21,9 @@ tim.deleteConversation(conversationID);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationID     | String | 会话 ID。会话 ID 组成方式：<br/><li>C2C${userID}（单聊）</li><li>GROUP{groupID}（群聊）</li><li>@TIM#SYSTEM（系统通知会话）</li> |
+| Name           | Type   | Description                                                  |
+| -------------- | ------ | ------------------------------------------------------------ |
+| conversationID | String | 会话 ID。会话 ID 组成方式：<br/><li>C2C${userID}（单聊）</li><li>GROUP{groupID}（群聊）</li><li>@TIM#SYSTEM（系统通知会话）</li> |
 
 
 **返回值**

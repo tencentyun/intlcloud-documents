@@ -30,10 +30,10 @@ SDKAppID 是腾讯云 IM 服务区分客户帐号的唯一标识。我们建议�
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- |  ------------------------------------------------------------ |
-| SDKAppID          | Number | 即时通信 IM 应用的 SDKAppID  |
-| oversea | Boolean | 如果您的应用需要在海外使用，请设置为 true，SDK 将替换域名，避免在某些国家或地区被干扰 |
+| Name     | Type    | Description                                                  |
+| -------- | ------- | ------------------------------------------------------------ |
+| SDKAppID | Number  | 即时通信 IM 应用的 SDKAppID                                  |
+| oversea  | Boolean | 如果您的应用需要在海外使用，请设置为 true，SDK 将替换域名，避免在某些国家或地区被干扰 |
 
 
 **示例**
@@ -240,5 +240,3 @@ tim.destroy();
 
 :::
 </dx-codeblock>
-
-

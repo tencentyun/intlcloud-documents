@@ -228,13 +228,13 @@ V2TIMManager::GetInstance()->GetConversationManager()->GetConversationList(nextS
 ## Advanced API for Getting the Conversation List
 If the ordinary API mentioned above cannot meet your needs to pull the conversation list, you can use the advanced API `getConversationListByFilter` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#abf71156b8b6423e98943e25a77dc1967) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Conversation_08.html#ac1b77eedff7f2f8742a873cf766daec9) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#ace956492c5ee80187ebd1795e52b0de8)). Here, `V2TIMConversationListFilter` of the conversations is pulled and as detailed below:
 
-| Attribute | Definition | Description |
-| --- |  --- | --- |
-| type | Conversation type | One-to-one or group conversation |
-| nextSeq | Cursor for the paged pull | Pass in `0` for the first pull and the `nextSeq` returned by the previous pull for the subsequent pull. |
-| count | Number of conversations to be pulled per page | Up to 100 conversations per page are recommended. |
-| markType | Conversation tag type | For more information, see [Conversation Tag](https://intl.cloud.tencent.com/document/product/1047/48853). |
-| groupName | Conversation group name | It is not the group name but the conversation group name. For more information, see [Conversation Group](https://intl.cloud.tencent.com/document/product/1047/48854). |
+| Attribute | Definition                                    | Description                                                  |
+| --------- | --------------------------------------------- | ------------------------------------------------------------ |
+| type      | Conversation type                             | One-to-one or group conversation                             |
+| nextSeq   | Cursor for the paged pull                     | Pass in `0` for the first pull and the `nextSeq` returned by the previous pull for the subsequent pull. |
+| count     | Number of conversations to be pulled per page | Up to 100 conversations per page are recommended.            |
+| markType  | Conversation tag type                         | For more information, see [Conversation Tag](https://intl.cloud.tencent.com/document/product/1047/48853). |
+| groupName | Conversation group name                       | It is not the group name but the conversation group name. For more information, see [Conversation Group](https://intl.cloud.tencent.com/document/product/1047/48854). |
 
 Sample code:
 <dx-tabs>
@@ -370,14 +370,14 @@ You can listen for the event in `V2TIMConversationListener` ([Android](https://i
 
 Currently, the IM SDK supports the following conversation change events:
 
-| Event                             | Description                 | Suggestion                                                                                                                         |
-| --- | --- | --- |
-|onSyncServerStart | Server conversation sync started. | Listen for such an event when the user logged in successfully or went online or the network was disconnected and reconnected and display the progress on the UI. |
-| onSyncServerFinish               | Server conversation sync was completed.   | If there is a conversation change, the change will be notified through the `onNewConversation`/`onConversationChanged` callback.                                                |
-|onSyncServerFailed | Server conversation sync failed.   | Listen for such an event and display the exception on the UI.                                                                                   |
-|onNewConversation | There is a new conversation.           | Re-sort the conversations when the user receives a one-to-one message from a new colleague or is invited to a new group.                                     |
-|onConversationChanged | A conversation was updated.           | Re-sort the conversations when the unread count changes or the last message is updated. |
-|onTotalUnreadMessageCountChanged | The total unread count of the conversation changed.  | For more information, see [Conversation Unread Count](https://intl.cloud.tencent.com/document/product/1047/48320). This event is supported by v5.3.425 or later. |
+| Event                            | Description                                         | Suggestion                                                   |
+| -------------------------------- | --------------------------------------------------- | ------------------------------------------------------------ |
+| onSyncServerStart                | Server conversation sync started.                   | Listen for such an event when the user logged in successfully or went online or the network was disconnected and reconnected and display the progress on the UI. |
+| onSyncServerFinish               | Server conversation sync was completed.             | If there is a conversation change, the change will be notified through the `onNewConversation`/`onConversationChanged` callback. |
+| onSyncServerFailed               | Server conversation sync failed.                    | Listen for such an event and display the exception on the UI. |
+| onNewConversation                | There is a new conversation.                        | Re-sort the conversations when the user receives a one-to-one message from a new colleague or is invited to a new group. |
+| onConversationChanged            | A conversation was updated.                         | Re-sort the conversations when the unread count changes or the last message is updated. |
+| onTotalUnreadMessageCountChanged | The total unread count of the conversation changed. | For more information, see [Conversation Unread Count](https://intl.cloud.tencent.com/document/product/1047/48320). This event is supported by v5.3.425 or later. |
 
 > !
 > 1. To ensure that the conversations are sorted by the last message, you need to re-sort the data sources each time a conversation is changed/added.
@@ -656,4 +656,3 @@ V2TIMManager::GetInstance()->GetMessageManager()->SendMessage(
 ```
 :::
 </dx-tabs>
-

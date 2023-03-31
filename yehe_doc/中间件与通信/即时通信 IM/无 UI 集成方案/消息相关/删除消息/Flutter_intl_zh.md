@@ -41,6 +41,3 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().deleteMessageFromLocalStorag
 ```dart
 TencentImSDKPlugin.v2TIMManager.getMessageManager().deleteMessages(msgIDs: ['messageid']);
 ```
-
-
-

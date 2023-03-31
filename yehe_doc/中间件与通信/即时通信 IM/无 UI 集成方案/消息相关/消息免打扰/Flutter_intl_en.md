@@ -2,10 +2,10 @@
 You can set the message receiving option for a **one-to-one or group chat** to implement the notification muting feature.
 The IM SDK supports the following three message receiving options as defined in `V2TIMReceiveMessageOpt`:
 
-| Message Receiving Option                           | Feature Description                                                                                                              |
-| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE            | Messages will be received when the user is online, and offline push notifications will be received when the user is offline.     |
-| ReceiveMsgOptEnum.V2TIM_NOT_RECEIVE_MESSAGE        | Messages will not be received no matter whether the user is online or offline.                                                   |
+| Message Receiving Option                           | Feature Description                                          |
+| -------------------------------------------------- | ------------------------------------------------------------ |
+| ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE            | Messages will be received when the user is online, and offline push notifications will be received when the user is offline. |
+| ReceiveMsgOptEnum.V2TIM_NOT_RECEIVE_MESSAGE        | Messages will not be received no matter whether the user is online or offline. |
 | ReceiveMsgOptEnum.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | Messages will be received when the user is online, and offline push notifications will not be received when the user is offline. |
 
 Different `V2TIMReceiveMessageOpt` options can be used to implement group message notification muting:
@@ -77,4 +77,3 @@ V2TimValueCallback<List<V2TimGroupInfoResult>> groups = await TencentImSDKPlugin
     element.groupInfo.recvOpt;
   });
 ```
-

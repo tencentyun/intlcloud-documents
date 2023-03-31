@@ -19,9 +19,9 @@ The `options` parameter is of the `Object` type. It contains the following attri
 
 **Parameter**
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| conversationID     | String |                   | Conversation ID. Valid values:<br/><li>C2C${userID} (for a one-to-one chat)</li><li>GROUP{groupID} (for a group chat)</li><li>@TIM#SYSTEM (for a system notification conversation)</li><li>GROUP${topicID} (for a topic). It is supported by v2.19.1 or later.</li> |
+| Name           | Type   | Default | Description                                                  |
+| -------------- | ------ | ------- | ------------------------------------------------------------ |
+| conversationID | String |         | Conversation ID. Valid values:<br/><li>C2C${userID} (for a one-to-one chat)</li><li>GROUP{groupID} (for a group chat)</li><li>@TIM#SYSTEM (for a system notification conversation)</li><li>GROUP${topicID} (for a topic). It is supported by v2.19.1 or later.</li> |
 
 **Returned value**
 
@@ -61,9 +61,9 @@ The `options` parameter is of the `Object` type. It contains the following attri
 
 **Parameter**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| scope          | String \| undefined |  Set the scope of message processing. Valid values:<br/><li>TIM.TYPES.READ_ALL_C2C_MSG: set the unread messages of all the one-to-one conversations as read</li><li>TIM.TYPES.READ_ALL_GROUP_MSG: set the unread messages of all the group conversations as read</li><li>TIM.TYPES.READ_ALL_MSG (default value): set the unread messages of all the one-to-one and group conversations as read</li> |
+| Name  | Type                | Description                                                  |
+| ----- | ------------------- | ------------------------------------------------------------ |
+| scope | String \| undefined | Set the scope of message processing. Valid values:<br/><li>TIM.TYPES.READ_ALL_C2C_MSG: set the unread messages of all the one-to-one conversations as read</li><li>TIM.TYPES.READ_ALL_GROUP_MSG: set the unread messages of all the group conversations as read</li><li>TIM.TYPES.READ_ALL_MSG (default value): set the unread messages of all the one-to-one and group conversations as read</li> |
 
 **Returned value**
 

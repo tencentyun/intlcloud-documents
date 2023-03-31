@@ -531,6 +531,3 @@ if(message.textElem.nextElem!=null){
    // There is a next message
 }
 ```
-
-
-

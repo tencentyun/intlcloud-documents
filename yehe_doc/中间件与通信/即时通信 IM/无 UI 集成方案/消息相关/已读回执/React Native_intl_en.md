@@ -71,14 +71,14 @@ After entering the message list, the sender pulls historical messages first, and
 
 The `V2TimessageReceipt` field of the message read receipt is as described below:
 
-| Attribute   | Description                                           | Remarks                                                                                                                                                                                                                                                                           |
-| ----------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| msgID       | Message ID                                            | Unique message ID                                                                                                                                                                                                                                                                 |
-| userID      | ID of the receiver                                    | If the message is a one-to-one message, this field indicates the ID of the receiver.                                                                                                                                                                                              |
+| Attribute   | Description                                           | Remarks                                                      |
+| ----------- | ----------------------------------------------------- | ------------------------------------------------------------ |
+| msgID       | Message ID                                            | Unique message ID                                            |
+| userID      | ID of the receiver                                    | If the message is a one-to-one message, this field indicates the ID of the receiver. |
 | timestamp   | Time when the receiver marks the message as read      | This field is invalid when a message is read. If the message is a one-to-one message, when the receiver calls the `markC2CMessageAsRead` API to mark the message as read, the sender will receive the `onRecvC2CReadReceipt` callback which contains the `timestamp` information. |
-| groupID     | Group ID                                              | If the message is a group message, this field indicates the group ID.                                                                                                                                                                                                             |
-| readCount   | Number of members who have read the group message     | If the message is a group message, this field indicates the number of members who have read the message.                                                                                                                                                                          |
-| unreadCount | Number of members who have not read the group message | If the message is a group message, this field indicates the number of members who have not read the message.                                                                                                                                                                      |
+| groupID     | Group ID                                              | If the message is a group message, this field indicates the group ID. |
+| readCount   | Number of members who have read the group message     | If the message is a group message, this field indicates the number of members who have read the message. |
+| unreadCount | Number of members who have not read the group message | If the message is a group message, this field indicates the number of members who have not read the message. |
 
 Below is the sample code:
 
@@ -116,5 +116,3 @@ if (getGroupMessageReadMemberList.code == 0) {
   getGroupMessageReadMemberList.data.nextSeq;
 }
 ```
-
-

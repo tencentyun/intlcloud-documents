@@ -151,17 +151,17 @@ virtual void GetHistoryMessageList(const V2TIMMessageListGetOption& option,
 
 `V2TIMMessageListGetOption` 类参数说明：
 
-| 参数 | 含义 | 单聊有效 | 群聊有效 | 是否必填 | 说明 |
-| --- | --- | --- | --- | --- |--- |
-| getType | 拉取消息的位置及方向，可以设置拉取 **本地/云端** 的 **更老/更新** 的消息 | YES | YES | YES  | 当设置从云端拉取时，会将本地存储消息列表与云端存储消息列表合并后返回。如果无网络，则直接返回本地消息列表。|
-| userID | 拉取指定用户的单聊历史消息 | YES | <font color="red">NO</font> | NO | 拉取单聊消息，需要指定对方的 userID，此时 groupID 传空即可。|
-| groupID | 拉取指定群组的群聊历史消息 | <font color="red">NO</font> | YES | NO | 拉取单聊消息，需要指定群聊的 groupID，此时 userID 传空即可。|
-| count | 单次拉取的消息数量 | YES | YES | YES | 建议设置为 20，否则可能影响拉取速度 |
-| messageTypeList | 拉取的消息类型集合 | YES | YES | NO | 1. 只支持本地拉取，即当 `getType` 为 `V2TIM_GET_LOCAL_OLDER_MSG` 或 `V2TIM_GET_LOCAL_NEWER_MSG` 时有效。<br/>2. 如果该字段为空，表示拉取所有的消息类型。<br/>3. 支持的消息类型详见 `V2TIMElemType` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#a00455865d1a14191b8c612252bf20a1c) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a849af0e4698e8db9f227f9c8e54215b8) / [Windows](https://im.sdk.qcloud.com/doc/en/V2TIMMessage_8h.html#a6854ecfbc6f3b65ed381d8a2e14e2377))。|
-| lastMsg | 最后一条消息 | YES | YES | NO | 可用于拉取历史消息的场景。<br/>1. 单聊和群聊中均能使用。<br/>2. 设置 lastMsg 作为拉取的起点，返回的消息列表中**不包含**这条消息。<br/>3. 如果设置为空，则使用会话的最新一条消息作为拉取起点。|
-| lastMsgSeq | 最后一条消息的 seq | <font color="red">NO</font> | YES | NO | 可用于拉取历史消息或消息定位等场景。<br/>1. 仅能在群聊中使用该字段。<br/>2. 设置 lastMsgSeq 作为拉取的起点，返回的消息列表中**包含**这条消息。<br/>3. 如果同时指定了 lastMsg 和 lastMsgSeq，SDK 优先使用 lastMsg。<br/>4. 如果均未指定 lastMsg 和 lastMsgSeq，拉取的起点取决于是否设置 getTimeBegin。设置了，则使用设置的范围作为起点；未设置，则使用最新消息作为起点。|
-| getTimeBegin | 拉取消息的时间起点。UTC 时间戳，单位：秒 | YES | YES | NO | 默认为 0，表示从当前时间开始拉取。|
-| getTimePeriod | 拉取消息的时间范围。单位：秒 | YES | YES | NO | 1. 默认为 0，表示不限制时间范围。<br/>2. 取值的范围区间为闭区间，包含起止时间，二者关系如下：<br/>* 如果 `getType` 指定了朝消息时间更老的方向拉取，则时间范围表示为 [getTimeBegin - getTimePeriod, getTimeBegin]。<br/>* 如果 `getType` 指定了朝消息时间更新的方向拉取，则时间范围表示为 [getTimeBegin, getTimeBegin + getTimePeriod]。 |
+| 参数            | 含义                                                         | 单聊有效                    | 群聊有效                    | 是否必填 | 说明                                                         |
+| --------------- | ------------------------------------------------------------ | --------------------------- | --------------------------- | -------- | ------------------------------------------------------------ |
+| getType         | 拉取消息的位置及方向，可以设置拉取 **本地/云端** 的 **更老/更新** 的消息 | YES                         | YES                         | YES      | 当设置从云端拉取时，会将本地存储消息列表与云端存储消息列表合并后返回。如果无网络，则直接返回本地消息列表。 |
+| userID          | 拉取指定用户的单聊历史消息                                   | YES                         | <font color="red">NO</font> | NO       | 拉取单聊消息，需要指定对方的 userID，此时 groupID 传空即可。 |
+| groupID         | 拉取指定群组的群聊历史消息                                   | <font color="red">NO</font> | YES                         | NO       | 拉取单聊消息，需要指定群聊的 groupID，此时 userID 传空即可。 |
+| count           | 单次拉取的消息数量                                           | YES                         | YES                         | YES      | 建议设置为 20，否则可能影响拉取速度                          |
+| messageTypeList | 拉取的消息类型集合                                           | YES                         | YES                         | NO       | 1. 只支持本地拉取，即当 `getType` 为 `V2TIM_GET_LOCAL_OLDER_MSG` 或 `V2TIM_GET_LOCAL_NEWER_MSG` 时有效。<br/>2. 如果该字段为空，表示拉取所有的消息类型。<br/>3. 支持的消息类型详见 `V2TIMElemType` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#a00455865d1a14191b8c612252bf20a1c) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a849af0e4698e8db9f227f9c8e54215b8) / [Windows](https://im.sdk.qcloud.com/doc/en/V2TIMMessage_8h.html#a6854ecfbc6f3b65ed381d8a2e14e2377))。 |
+| lastMsg         | 最后一条消息                                                 | YES                         | YES                         | NO       | 可用于拉取历史消息的场景。<br/>1. 单聊和群聊中均能使用。<br/>2. 设置 lastMsg 作为拉取的起点，返回的消息列表中**不包含**这条消息。<br/>3. 如果设置为空，则使用会话的最新一条消息作为拉取起点。 |
+| lastMsgSeq      | 最后一条消息的 seq                                           | <font color="red">NO</font> | YES                         | NO       | 可用于拉取历史消息或消息定位等场景。<br/>1. 仅能在群聊中使用该字段。<br/>2. 设置 lastMsgSeq 作为拉取的起点，返回的消息列表中**包含**这条消息。<br/>3. 如果同时指定了 lastMsg 和 lastMsgSeq，SDK 优先使用 lastMsg。<br/>4. 如果均未指定 lastMsg 和 lastMsgSeq，拉取的起点取决于是否设置 getTimeBegin。设置了，则使用设置的范围作为起点；未设置，则使用最新消息作为起点。 |
+| getTimeBegin    | 拉取消息的时间起点。UTC 时间戳，单位：秒                     | YES                         | YES                         | NO       | 默认为 0，表示从当前时间开始拉取。                           |
+| getTimePeriod   | 拉取消息的时间范围。单位：秒                                 | YES                         | YES                         | NO       | 1. 默认为 0，表示不限制时间范围。<br/>2. 取值的范围区间为闭区间，包含起止时间，二者关系如下：<br/>* 如果 `getType` 指定了朝消息时间更老的方向拉取，则时间范围表示为 [getTimeBegin - getTimePeriod, getTimeBegin]。<br/>* 如果 `getType` 指定了朝消息时间更新的方向拉取，则时间范围表示为 [getTimeBegin, getTimeBegin + getTimePeriod]。 |
 
 
 [](id:advance_page)
@@ -1173,4 +1173,3 @@ SDK 目前的策略是：
 [](id:qa4)
 ### 4. 拉取历史消息时卡顿
 SDK 内部已对消息拉取做了性能优化，您如果碰到消息卡顿的情况，可以先尝试减少拉取的消息数 `count`，如果还是不能解决问题，欢迎加入文末的 QQ 群反馈。
-

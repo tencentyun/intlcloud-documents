@@ -61,14 +61,14 @@ tim.addFriend(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| to     | String | 	用户 ID |
-| source | String | 好友来源。<br/><li>加好友来源字段包含前缀和关键字两部分；加好友来源字段的前缀是：AddSource_Type_ ；关键字：必须是英文字母，且长度不得超过 8 字节，建议用一个英文单词或该英文单词的缩写。示例：加好友来源的关键字是 Android，则加好友来源字段是：AddSource_Type_Android</li>
-| wording | String \| undefined | 加好友附言，长度最长不得超过 256 个字节 |
-| type | String \| undefined | 加好友方式（默认双向加好友方式）：<br/><li>TIM.TYPES.SNS_ADD_TYPE_SINGLE 单向加好友（单向好友：用户 A 的好友表中有用户 B，但 B 的好友表中却没有 A）</li><li>TIM.TYPES.SNS_ADD_TYPE_BOTH 双向加好友（双向好友：用户 A 的好友表中有用户 B，B 的好友表中也有 A）</li> |
-| remark | String \| undefined | 好友备注，备注长度最长不得超过 96 个字节 |
-| groupName | String \| undefined | 分组名，分组名长度不得超过 30 个字节
+| Name      | Type                | Description                                                  |
+| --------- | ------------------- | ------------------------------------------------------------ |
+| to        | String              | 用户 ID                                                      |
+| source    | String              | 好友来源。<br/><li>加好友来源字段包含前缀和关键字两部分；加好友来源字段的前缀是：AddSource_Type_ ；关键字：必须是英文字母，且长度不得超过 8 字节，建议用一个英文单词或该英文单词的缩写。示例：加好友来源的关键字是 Android，则加好友来源字段是：AddSource_Type_Android</li> |
+| wording   | String \| undefined | 加好友附言，长度最长不得超过 256 个字节                      |
+| type      | String \| undefined | 加好友方式（默认双向加好友方式）：<br/><li>TIM.TYPES.SNS_ADD_TYPE_SINGLE 单向加好友（单向好友：用户 A 的好友表中有用户 B，但 B 的好友表中却没有 A）</li><li>TIM.TYPES.SNS_ADD_TYPE_BOTH 双向加好友（双向好友：用户 A 的好友表中有用户 B，B 的好友表中也有 A）</li> |
+| remark    | String \| undefined | 好友备注，备注长度最长不得超过 96 个字节                     |
+| groupName | String \| undefined | 分组名，分组名长度不得超过 30 个字节                         |
 
 **返回值**
 
@@ -126,10 +126,10 @@ tim.deleteFriend(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList     | Array | 	待删除的好友的 userID 列表，单次请求的 userID 数不得超过100 |
-| type | String \| undefined | 删除模式（默认双向删除好友）：<br/><li>TIM.TYPES.SNS_DELETE_TYPE_SINGLE 单向删除（只将 B 从 A 的好友表中删除，但不会将 A 从 B 的好友表中删除）</li><li>TIM.TYPES.SNS_DELETE_TYPE_BOTH 双向删除（将 B 从 A 的好友表中删除，同时将 A 从 B 的好友表中删除）</li> |
+| Name       | Type                | Description                                                  |
+| ---------- | ------------------- | ------------------------------------------------------------ |
+| userIDList | Array               | 待删除的好友的 userID 列表，单次请求的 userID 数不得超过100  |
+| type       | String \| undefined | 删除模式（默认双向删除好友）：<br/><li>TIM.TYPES.SNS_DELETE_TYPE_SINGLE 单向删除（只将 B 从 A 的好友表中删除，但不会将 A 从 B 的好友表中删除）</li><li>TIM.TYPES.SNS_DELETE_TYPE_BOTH 双向删除（将 B 从 A 的好友表中删除，同时将 A 从 B 的好友表中删除）</li> |
 
 **返回值**
 
@@ -180,10 +180,10 @@ tim.checkFriend(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList     | Array | 	要校验的 userID 列表，单次请求的 userID 数不得超过1000 |
-| type | String \| undefined | 校验模式（默认双向校验好友关系）：<br/><li>TIM.TYPES.SNS_CHECK_TYPE_SINGLE 单向校验好友关系（只会检查 A 的好友表中是否有 B，不会检查 B 的好友表中是否有 A）</li><li>TIM.TYPES.SNS_CHECK_TYPE_BOTH 双向校验好友关系（既会检查 A 的好友表中是否有 B，也会检查 B 的好友表中是否有 A）</li> |
+| Name       | Type                | Description                                                  |
+| ---------- | ------------------- | ------------------------------------------------------------ |
+| userIDList | Array               | 要校验的 userID 列表，单次请求的 userID 数不得超过1000       |
+| type       | String \| undefined | 校验模式（默认双向校验好友关系）：<br/><li>TIM.TYPES.SNS_CHECK_TYPE_SINGLE 单向校验好友关系（只会检查 A 的好友表中是否有 B，不会检查 B 的好友表中是否有 A）</li><li>TIM.TYPES.SNS_CHECK_TYPE_BOTH 双向校验好友关系（既会检查 A 的好友表中是否有 B，也会检查 B 的好友表中是否有 A）</li> |
 
 **返回值**
 
@@ -227,4 +227,3 @@ promise.then(function(imResponse) {
 
 IM SDK 在发送单聊消息的时候，默认不检查好友关系。在客服场景中，如果用户需要先加客服为好友才能进行沟通非常不方便，因此该默认设置常用于在线客服等场景。
 如需实现“先加好友，再发消息”的交互体验，您可以在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) >【功能配置】>【登录与消息】>【好友关系检查】中开启"发送单聊消息检查关系链"。开启后，用户只能给好友发送消息，当用户给非好友发消息时，SDK 会报 20009 错误码。
-

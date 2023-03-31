@@ -22,9 +22,9 @@ tim.getConversationList(options);
 
 **Parameter**
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| options          | undefined \| Array | Parameter option.<br/><li>If no value is passed in, it indicates to get all the conversations.</li><li>If a non-empty array parameter is passed in, it indicates to get multiple specified conversations.</li> |
+| Name    | Type               | Description                                                  |
+| ------- | ------------------ | ------------------------------------------------------------ |
+| options | undefined \| Array | Parameter option.<br/><li>If no value is passed in, it indicates to get all the conversations.</li><li>If a non-empty array parameter is passed in, it indicates to get multiple specified conversations.</li> |
 
 **Returned value**
 
@@ -76,9 +76,9 @@ tim.getConversationProfile(conversationID);
 
 **Parameter**
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationID          | String | Conversation ID. Valid values:<br/><li>C2C${userID} (for a one-to-one chat)</li><li>GROUP{groupID} (for a group chat)</li><li>@TIM#SYSTEM (for a system notification conversation)</li> |
+| Name           | Type   | Description                                                  |
+| -------------- | ------ | ------------------------------------------------------------ |
+| conversationID | String | Conversation ID. Valid values:<br/><li>C2C${userID} (for a one-to-one chat)</li><li>GROUP{groupID} (for a group chat)</li><li>@TIM#SYSTEM (for a system notification conversation)</li> |
 
 **Returned value**
 

@@ -6,9 +6,10 @@
 
 合并消息的展示还需要标题和摘要信息，如下图所示：
 
-| 合并转发 | 合并消息展示 | 点击合并消息下载合并消息列表展示 |
-|---------|---------|---------|
-|<img src="https://main.qcloudimg.com/raw/8f9a338c4e05cf1477250a5fc1a468c6.jpg" width = "300" /> | <img src="https://main.qcloudimg.com/raw/ff2afe17010e1840eae78e56d3abcf2d.jpg" width = "300" /> | <img src="https://main.qcloudimg.com/raw/a05b309924e59382dc928694d6397d20.jpg" width = "300"/>|
+| 合并转发                                                     | 合并消息展示 | 点击合并消息下载合并消息列表展示 |
+| ------------------------------------------------------------ | ------------ | -------------------------------- |
+| <img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" /> |              |                                  |
+
 
 ## 创建合并消息
 
@@ -32,21 +33,21 @@ tim.createMergerMessage(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to               | String |             -                    | 消息接收方的 userID 或 groupID                               |
-| conversationType | String |              -                   | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | 消息接收方的 userID 或 groupID                               |
+| conversationType | String | -                             | 会话类型，取值 TIM.TYPES.CONV_C2C（端到端会话）或 TIM.TYPES.CONV_GROUP（群组会话） |
 | priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | 消息优先级                                                   |
-| payload          | Object |               -                  | 消息内容的容器 |
-| cloudCustomData    | String |  ''                             | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
+| payload          | Object | -                             | 消息内容的容器                                               |
+| cloudCustomData  | String | ''                            | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到，v2.10.2起支持） |
 
 payload 的描述如下：
 
-| Name    | Type     | Description          |
-| ------- | -------- | -------------------- |
-| messageList | Array | 合并的消息列表 |
-| title | String | 合并的标题，例如："大湾区前端人才中心的聊天记录" |
-| abstractList | String | 摘要列表，不同的消息类型可以设置不同的摘要信息，例如：文本消息可以设置为：sender: text，图片消息可以设置为：sender: [图片]，文件消息可以设置为：sender: [文件] |
+| Name           | Type   | Description                                                  |
+| -------------- | ------ | ------------------------------------------------------------ |
+| messageList    | Array  | 合并的消息列表                                               |
+| title          | String | 合并的标题，例如："大湾区前端人才中心的聊天记录"             |
+| abstractList   | String | 摘要列表，不同的消息类型可以设置不同的摘要信息，例如：文本消息可以设置为：sender: text，图片消息可以设置为：sender: [图片]，文件消息可以设置为：sender: [文件] |
 | compatibleText | String | 兼容文本，低版本 SDK 如果不支持合并消息，默认会收到一条文本消息，文本消息的内容为 ${compatibleText}，必填 |
 
 **返回值**
@@ -102,9 +103,9 @@ tim.downloadMergerMessage(message);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- |  ------------------------------------------------------------ |
-| message          | Message | 消息实例  |
+| Name    | Type    | Description |
+| ------- | ------- | ----------- |
+| message | Message | 消息实例    |
 
 
 **返回值**
@@ -151,9 +152,9 @@ tim.createForwardMessage(message);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| message          | Message | 消息实例 |
+| Name    | Type    | Description |
+| ------- | ------- | ----------- |
+| message | Message | 消息实例    |
 
 **返回值**
 

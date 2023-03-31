@@ -1,8 +1,8 @@
 ## Feature Description
 In some cases, you may need to group conversations, for example, into a "Product experience" or "R&D" group, which can be implemented through the following API.
 > ?
-- To use this feature, you need to purchase the [Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577).
-- This feature is available only in SDK enhanced edition v4.0.8 or later.
+> - To use this feature, you need to purchase the [Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577).
+> - This feature is available only in SDK enhanced edition v4.0.8 or later.
 
 ## Conversation Group
 
@@ -10,10 +10,10 @@ In some cases, you may need to group conversations, for example, into a "Product
 Call the `createConversationGroup` ([dart](https://comm.qq.com/im/doc/flutter/en/SDKAPI/Api/V2TIMConversationManager/createConversationGroup.html?h=createConversationGroup)) API to create a conversation group.
 >? Up to 20 conversation groups can be created. After this limit is exceeded, the `51010` error will be reported. Groups that are no longer used should be promptly deleted.
 
-| Attribute | Definition | Description |
-| ------------------ | ------------ | -------------------------------------------------------- |
-| groupName | Conversation group name | It must be greater than 0 in length and can contain up to 32 bytes; otherwise, the `51011` error will be reported. |
-| conversationIDList | List of conversation IDs | It cannot be empty.                                                 |
+| Attribute          | Definition               | Description                                                  |
+| ------------------ | ------------------------ | ------------------------------------------------------------ |
+| groupName          | Conversation group name  | It must be greater than 0 in length and can contain up to 32 bytes; otherwise, the `51011` error will be reported. |
+| conversationIDList | List of conversation IDs | It cannot be empty.                                          |
 
 Sample code:
 
@@ -239,4 +239,3 @@ Sample code:
         .getConversationManager()
         .addConversationListener(listener: listener);
 ```
-

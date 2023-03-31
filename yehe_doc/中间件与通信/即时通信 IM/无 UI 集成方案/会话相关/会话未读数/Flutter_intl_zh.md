@@ -126,6 +126,3 @@ conversationManager.addConversationListener(listener: V2TimConversationListener(
     // 变更后的最新会话
   },));
 ```
-
-
-

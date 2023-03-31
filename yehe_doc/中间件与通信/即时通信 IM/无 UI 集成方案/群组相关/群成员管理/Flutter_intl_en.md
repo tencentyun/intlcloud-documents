@@ -12,12 +12,12 @@ As a group might have a large number of members (for example, over 5,000), this 
 ### Filter (`filter`)
 When calling the [`getGroupMemberList`](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMGroupManager/getGroupMemberList.html) API, you can specify `filter` to pull the list of the information of specified roles.
 
-| Filter                                                     | Type                   |
-| ---------------------------------------------------------- | -------------------------- |
-| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ALL    | Pull the list of the information of all the group members   |
+| Filter                                                     | Type                                                      |
+| ---------------------------------------------------------- | --------------------------------------------------------- |
+| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ALL    | Pull the list of the information of all the group members |
 | GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_OWNER  | Pull the list of the information of the group owner       |
-| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ADMIN  | Pull the list of the information of the group admin   |
-| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_COMMON | Pull the information list of ordinary group members |
+| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_ADMIN  | Pull the list of the information of the group admin       |
+| GroupMemberFilterTypeEnum.V2TIM_GROUP_MEMBER_FILTER_COMMON | Pull the information list of ordinary group members       |
 
 Sample code:
 
@@ -167,4 +167,3 @@ Sample code:
 ```dart
 groupManager.getGroupOnlineMemberCount(groupID: '');
 ```
-

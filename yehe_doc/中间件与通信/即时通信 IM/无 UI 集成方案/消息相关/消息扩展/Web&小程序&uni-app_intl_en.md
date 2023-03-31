@@ -1,4 +1,3 @@
-
 ## Overview
 Message extension allows you to configure keys and values for messages to implement polling, group notes, survey and other types of messages.
 - For polling, create a custom message using the `createCustomMessage` API ([details](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createCustomMessage)), where `data` stores the polling title and options. And store the user ID of the voter and selected option(s) in the `key` and `value` of the message extension, respectively. With the selected options of users, we can calculate the polling percentage in real time.
@@ -26,10 +25,10 @@ tim.setMessageExtensions(message, extensions);
 
 **Parameters**
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| message            | Message  | Message instance |
-| extensions      | Array    | List of key-value extensions of a message. If an extension `key` already exists, modify its `value`. Otherwise, add the new key-value extension. |
+| Name       | Type    | Description                                                  |
+| ---------- | ------- | ------------------------------------------------------------ |
+| message    | Message | Message instance                                             |
+| extensions | Array   | List of key-value extensions of a message. If an extension `key` already exists, modify its `value`. Otherwise, add the new key-value extension. |
 
 > ? 
 > 1. The message must meet the following conditions:
@@ -84,9 +83,9 @@ tim.getMessageExtensions(message);
 
 **Parameters**
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| message            | Message  | Message instance |
+| Name    | Type    | Description      |
+| ------- | ------- | ---------------- |
+| message | Message | Message instance |
 
 > ? 
 > The message must meet the following conditions:
@@ -137,10 +136,10 @@ tim.deleteMessageExtensions(message, keyList);
 
 **Parameters**
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| message            | Message  | Message instance |
-| keyList            | Array\|undefined    | List of message extension keys |
+| Name    | Type             | Description                    |
+| ------- | ---------------- | ------------------------------ |
+| message | Message          | Message instance               |
+| keyList | Array\|undefined | List of message extension keys |
 
 > ? 
 > 1. The message must meet the following conditions:

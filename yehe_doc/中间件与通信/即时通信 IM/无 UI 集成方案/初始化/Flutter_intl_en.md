@@ -28,13 +28,13 @@ Before initializing the SDK, you need to initialize the `LogLevelEnum` ([Dart](h
 #### Setting the log level
 The IM SDK supports the following log levels:
 
-| Log Level                     | Log Output                                                     |
-| ---------------------------- | -------------------------------------------------------------- |
-| LogLevelEnum.V2TIM_LOG_NONE  | No log is output.                                                 |
+| Log Level                    | Log Output                                                   |
+| ---------------------------- | ------------------------------------------------------------ |
+| LogLevelEnum.V2TIM_LOG_NONE  | No log is output.                                            |
 | LogLevelEnum.V2TIM_LOG_DEBUG | Logs of the DEBUG, INFO, WARNING, and ERROR levels (default log levels) are output. |
-| LogLevelEnum.V2TIM_LOG_INFO  | Logs at the INFO, WARNING, and ERROR levels are output.                                 |
-| LogLevelEnum.V2TIM_LOG_WARN  | Logs at the WARNING and ERROR levels are output.                                 |
-| LogLevelEnum.V2TIM_LOG_ERROR | Logs at the ERROR level are output.                                          |
+| LogLevelEnum.V2TIM_LOG_INFO  | Logs at the INFO, WARNING, and ERROR levels are output.      |
+| LogLevelEnum.V2TIM_LOG_WARN  | Logs at the WARNING and ERROR levels are output.             |
+| LogLevelEnum.V2TIM_LOG_ERROR | Logs at the ERROR level are output.                          |
 
 SDK log storage rules are as follows:
 - Local IM SDK logs are stored for seven days by default, and logs generated earlier than seven days ago will be automatically cleared during SDK initialization.
@@ -55,14 +55,14 @@ We recommend you pass in `V2TimSDKListener` ([Dart](https://comm.qq.com/im/doc/f
 
 `V2TimSDKListener` callbacks are as follows:
 
-| Event Callback | Event Description | Recommended Operation |
-| ----------------- | -------------------------- | ------------------------------------------------------------------- |
-| onConnecting | The SDK is connecting to the CVM instance. | Display the "connecting" status on the UI.                                  |
-| onConnectSuccess | The SDK is successfully connected to the CVM instance. | -                                                                   |
-| onConnectFailed | The SDK failed to connect to the CVM instance. | Notify the user that the network connection is currently unavailable.                                         |
-| onKickedOffline | The current user is kicked offline. | Display the "You are already logged in on another device. Are you sure you want to log in again?" message on the UI. |
-| onUserSigExpired | The login ticket expired. | Log in with a new `UserSig`. |
-| onSelfInfoUpdated | The current user's profile is updated. | Update the profile photo and nickname on the UI. |
+| Event Callback    | Event Description                                      | Recommended Operation                                        |
+| ----------------- | ------------------------------------------------------ | ------------------------------------------------------------ |
+| onConnecting      | The SDK is connecting to the CVM instance.             | Display the "connecting" status on the UI.                   |
+| onConnectSuccess  | The SDK is successfully connected to the CVM instance. | -                                                            |
+| onConnectFailed   | The SDK failed to connect to the CVM instance.         | Notify the user that the network connection is currently unavailable. |
+| onKickedOffline   | The current user is kicked offline.                    | Display the "You are already logged in on another device. Are you sure you want to log in again?" message on the UI. |
+| onUserSigExpired  | The login ticket expired.                              | Log in with a new `UserSig`.                                 |
+| onSelfInfoUpdated | The current user's profile is updated.                 | Update the profile photo and nickname on the UI.             |
 
 >! If you receive the `onUserSigExpired` callback, the UserSig that you use for login has expired. In this case, you need to use the newly issued `UserSig` to log in again. If you continue to use the expired `UserSig`, the IM SDK will enter an infinite login loop.
 
@@ -140,4 +140,3 @@ TencentImSDKPlugin.v2TIMManager.unInitSDK();
 
 ### 1. What should I do if error code 6013 is returned along with the description "not initialized" when I call the login or another API?
 You must initialize the IM SDK before using the login, message, group, conversation, relationship chain and profile, and signaling features.
-

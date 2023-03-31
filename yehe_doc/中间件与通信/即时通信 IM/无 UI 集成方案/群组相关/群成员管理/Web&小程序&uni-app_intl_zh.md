@@ -8,10 +8,10 @@
 >- 从 v2.6.2 起，该接口支持拉取群成员禁言截止时间戳（muteUntil），接入侧可根据此值判断群成员是否被禁言，以及禁言的剩余时间。在低于v2.6.2的版本，该接口获取的群成员列表中的资料是不完整的（仅包括头像、昵称等，能够满足群成员列表的渲染需求），若要查询群成员禁言截止时间戳（muteUntil）等详细资料，请使用 [getGroupMemberProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberProfile)。
 >- 该接口是分页拉取群成员，不能直接用于获取群的总人数。获取群的总人数（memberCount）请使用 [getGroupProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupProfile)。
 >- 从 v2.22.0 起，对直播群（AVChatRoom）增加以下特殊限制：
->   - 旗舰版支持拉取最近入群群成员最多 1000 人，新进来的成员排在前面。需要您购买旗舰版套餐且前往 [控制台](https://console.cloud.tencent.com/im) 开启开关。
->   - 旗舰版使用该接口时 SDK 会忽略 count 参数，单次查询默认最多返回 500 个群成员。
->   - 旗舰版接口调用默认限制 3 秒 1 次请求，如果需要定时查询群成员列表，建议每 10 秒请求一次。
->   - 群成员资料信息仅支持 userID | nick | avatar | joinTime 字段，设置 nick 和 avatar 信息请调用：[updateMyProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateMyProfile)。
+>  - 旗舰版支持拉取最近入群群成员最多 1000 人，新进来的成员排在前面。需要您购买旗舰版套餐且前往 [控制台](https://console.cloud.tencent.com/im) 开启开关。
+>  - 旗舰版使用该接口时 SDK 会忽略 count 参数，单次查询默认最多返回 500 个群成员。
+>  - 旗舰版接口调用默认限制 3 秒 1 次请求，如果需要定时查询群成员列表，建议每 10 秒请求一次。
+>  - 群成员资料信息仅支持 userID | nick | avatar | joinTime 字段，设置 nick 和 avatar 信息请调用：[updateMyProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateMyProfile)。
 
 旗舰版如需户开启直播群在线成员列表功能，请登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 修改相关配置，配置页面如下图所示：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/513b23a6598a74a0b0a6be5b6b59536f.png" alt="" style="zoom:30%;" />
@@ -30,11 +30,11 @@ tim.getGroupMemberList(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID |
-| count | Number | 需要拉取的数量。默认值：15，最大值：100，避免回包过大导致请求失败。若传入超过100，则只拉取前100个 |
-| offset | Number | 偏移量，默认从0开始拉取 |
+| Name    | Type   | Description                                                  |
+| ------- | ------ | ------------------------------------------------------------ |
+| groupID | String | 群组 ID                                                      |
+| count   | Number | 需要拉取的数量。默认值：15，最大值：100，避免回包过大导致请求失败。若传入超过100，则只拉取前100个 |
+| offset  | Number | 偏移量，默认从0开始拉取                                      |
 
 **返回值**
 
@@ -112,10 +112,10 @@ tim.setGroupMemberMuteTime(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID 或 话题 ID |
-| userID | String | 用户 ID |
+| Name     | Type   | Description                                                  |
+| -------- | ------ | ------------------------------------------------------------ |
+| groupID  | String | 群组 ID 或 话题 ID                                           |
+| userID   | String | 用户 ID                                                      |
 | muteTime | Number | 禁言时长，单位秒。如设为1000，则表示从现在起禁言该用户1000秒；设为0，则表示取消禁言。 |
 
 **返回值**
@@ -184,9 +184,9 @@ promise.then(function(imResponse) {
 
 ## 踢人
 >! 
-> - 从 v2.22.0 起，旗舰版支持直播群（AVChatRoom）踢人。
-> - 踢出时长字段（duration）仅直播群（AVChatRoom）支持，单位：秒。
-> - 成员被踢出直播群后，App 管理员可以通过 [RESTAPI](https://intl.cloud.tencent.com/document/product/1047/50297) 解封群成员，解封之后该成员可以再次加群。
+>- 从 v2.22.0 起，旗舰版支持直播群（AVChatRoom）踢人。
+>- 踢出时长字段（duration）仅直播群（AVChatRoom）支持，单位：秒。
+>- 成员被踢出直播群后，App 管理员可以通过 [RESTAPI](https://intl.cloud.tencent.com/document/product/1047/50297) 解封群成员，解封之后该成员可以再次加群。
 
 **接口**
 
@@ -202,12 +202,12 @@ tim.deleteGroupMember(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID 或 话题 ID |
-| userIDList | Array | 待删除的群成员的 ID 列表 |
-| reason | String \| undefined | 踢人的原因 |
-| duration | Number | 踢出时长，必须大于 0（仅直播群支持） |
+| Name       | Type                | Description                          |
+| ---------- | ------------------- | ------------------------------------ |
+| groupID    | String              | 群组 ID 或 话题 ID                   |
+| userIDList | Array               | 待删除的群成员的 ID 列表             |
+| reason     | String \| undefined | 踢人的原因                           |
+| duration   | Number              | 踢出时长，必须大于 0（仅直播群支持） |
 
 **返回值**
 
@@ -259,11 +259,11 @@ tim.setGroupMemberRole(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID 或 话题 ID |
-| userID | String | 用户 ID |
-| role | String | 可选值：TIM.TYPES.GRP_MBR_ROLE_ADMIN（群管理员）,TIM.TYPES.GRP_MBR_ROLE_MEMBER（群普通成员）,TIM.TYPES.GRP_MBR_ROLE_CUSTOM（自定义群成员角色，仅社群支持） |
+| Name    | Type   | Description                                                  |
+| ------- | ------ | ------------------------------------------------------------ |
+| groupID | String | 群组 ID 或 话题 ID                                           |
+| userID  | String | 用户 ID                                                      |
+| role    | String | 可选值：TIM.TYPES.GRP_MBR_ROLE_ADMIN（群管理员）,TIM.TYPES.GRP_MBR_ROLE_MEMBER（群普通成员）,TIM.TYPES.GRP_MBR_ROLE_CUSTOM（自定义群成员角色，仅社群支持） |
 
 **返回值**
 
@@ -292,8 +292,8 @@ promise.then(function(imResponse) {
 ## 获取群在线人数
 
 >! 
-> - 目前该接口仅支持直播群（AVChatRoom）。
-> - 当不在直播群内或非直播群使用此API查询人数时，SDK 返回的 memberCount 为0。调用此接口查询直播群人数的频率建议控制在5~10秒一次。
+>- 目前该接口仅支持直播群（AVChatRoom）。
+>- 当不在直播群内或非直播群使用此API查询人数时，SDK 返回的 memberCount 为0。调用此接口查询直播群人数的频率建议控制在5~10秒一次。
 
 **接口**
 
@@ -307,9 +307,9 @@ tim.getGroupOnlineMemberCount(groupID);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID |
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| groupID | String | 群组 ID     |
 
 **返回值**
 

@@ -80,8 +80,8 @@ TIMResult res = TencentIMSDK.MsgGetMsgList(conv_id, TIMConvType.kTIMConv_Group, 
 * 返回的消息列表中，越新的消息越靠前。
 
 >?
-> 1. 为了不影响历史消息拉取速度，建议分页时 `msg_getmsglist_param_count` 设置为 20。
-> 2. 由于返回的消息列表会包含 `msg_getmsglist_param_last_msg_seq` 所对应的消息，所以在拉取群聊历史消息时，不建议使用 `msg_getmsglist_param_last_msg_seq` 来续拉。
+>1. 为了不影响历史消息拉取速度，建议分页时 `msg_getmsglist_param_count` 设置为 20。
+>2. 由于返回的消息列表会包含 `msg_getmsglist_param_last_msg_seq` 所对应的消息，所以在拉取群聊历史消息时，不建议使用 `msg_getmsglist_param_last_msg_seq` 来续拉。
 
 
 [](id:advance_group_at)
@@ -130,5 +130,3 @@ SDK 目前的策略是：
 [](id:qa4)
 ### 4. 拉取历史消息时卡顿
 SDK 内部已对消息拉取做了性能优化，您如果碰到消息卡顿的情况，可以先尝试减少拉取的消息数 `msg_getmsglist_param_count` ，如果还是不能解决问题，欢迎加入 QQ 群（**764231117**）反馈。
-
-

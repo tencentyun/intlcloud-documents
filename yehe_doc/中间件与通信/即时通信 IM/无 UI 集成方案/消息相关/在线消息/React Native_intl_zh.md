@@ -22,5 +22,3 @@ const createCustomMessageRes =
           .createCustomMessage(data);
   TencentImSDKPlugin.v2TIMManager.getMessageManager().sendMessage(id: createCustomMessageRes.data.id, receiver: "", groupID: "",onlineUserOnly: true);
 ```
-
-

@@ -26,12 +26,12 @@ If you have called `addGroupListener` to add a group event listener in advance, 
 Member roles that can modify the group profile vary by group type as follows:
 
 | Group Type                     | Member Roles Allowed to Modify the **Basic Group Information** |
-| ------------------------------ | -------------------------------------------------------------- |
-| Work group (Work)              | All group members                                              |
-| Public group (Public)          | Group owner and admin                                          |
-| Meeting group (Meeting)        | Group owner and admin                                          |
-| Community (Community)          | Group owner and admin                                          |
-| Audio-video group (AVChatRoom) | Group owner                                                    |
+| ------------------------------ | ------------------------------------------------------------ |
+| Work group (Work)              | All group members                                            |
+| Public group (Public)          | Group owner and admin                                        |
+| Meeting group (Meeting)        | Group owner and admin                                        |
+| Community (Community)          | Group owner and admin                                        |
+| Audio-video group (AVChatRoom) | Group owner                                                  |
 
 Below is the sample code:
 
@@ -54,10 +54,10 @@ Any group member can call the `setGroupReceiveMessageOpt` API ([Details](https:/
 
 `V2TIMReceiveMessageOpt` has the following options:
 
-| Message Receiving Option                           | Description                                                                                                             |
-| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE            | Messages will be received when the user is online, and push notifications will be received when the user is offline.    |
-| ReceiveMsgOptEnum.V2TIM_NOT_RECEIVE_MESSAGE        | No group messages will be received.                                                                                     |
+| Message Receiving Option                           | Description                                                  |
+| -------------------------------------------------- | ------------------------------------------------------------ |
+| ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE            | Messages will be received when the user is online, and push notifications will be received when the user is offline. |
+| ReceiveMsgOptEnum.V2TIM_NOT_RECEIVE_MESSAGE        | No group messages will be received.                          |
 | ReceiveMsgOptEnum.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | Messages will be received when the user is online, and no push notifications will be received when the user is offline. |
 
 Different `V2TIMReceiveMessageOpt` options can be used to implement group message notification muting:
@@ -81,5 +81,3 @@ groupManager.setGroupInfo({
   groupAddOpt: GroupAddOptTypeEnum.V2TIM_GROUP_ADD_AUTH,
 });
 ```
-
-

@@ -18,11 +18,11 @@ tim.on(eventName, handler, context);
 
 **Parameter**
 
-| Name | Type | Description |
-| ------- | ------ | ------------------------------------------------------------ |
-| eventName  | String | Event name. All event names are stored in the `TIM.EVENT` variable. To view all the events, use `console.log(TIM.EVENT)`. The event list is [here](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html). |
-| handler | Function | Event handling method. When an event is triggered, this handler will be called to handle it. |
-| context | * \| undefined | The context expected for handler execution |
+| Name      | Type           | Description                                                  |
+| --------- | -------------- | ------------------------------------------------------------ |
+| eventName | String         | Event name. All event names are stored in the `TIM.EVENT` variable. To view all the events, use `console.log(TIM.EVENT)`. The event list is [here](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html). |
+| handler   | Function       | Event handling method. When an event is triggered, this handler will be called to handle it. |
+| context   | * \| undefined | The context expected for handler execution                   |
 
 **Returned value**
 
@@ -79,12 +79,12 @@ tim.off(eventName, handler, context, once);
 
 **Parameter**
 
-| Name | Type | Description |
-| ------- | ------ | ------------------------------------------------------------ |
-| eventName  | String | Event name. All event names are stored in the `TIM.EVENT` variable. To view all the events, use `console.log(TIM.EVENT)`. The event list is [here](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html). |
-| handler | Function | Event handling method. When an event is triggered, this handler will be called to handle it. |
-| context | * \| undefined | The context expected for handler execution |
-| once | Boolean \| undefined | Whether to unbind only once |
+| Name      | Type                 | Description                                                  |
+| --------- | -------------------- | ------------------------------------------------------------ |
+| eventName | String               | Event name. All event names are stored in the `TIM.EVENT` variable. To view all the events, use `console.log(TIM.EVENT)`. The event list is [here](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html). |
+| handler   | Function             | Event handling method. When an event is triggered, this handler will be called to handle it. |
+| context   | * \| undefined       | The context expected for handler execution                   |
+| once      | Boolean \| undefined | Whether to unbind only once                                  |
 
 **Returned value**
 

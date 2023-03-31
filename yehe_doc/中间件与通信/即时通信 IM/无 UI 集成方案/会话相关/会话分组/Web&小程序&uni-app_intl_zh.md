@@ -1,4 +1,3 @@
-
 ## 功能描述
 在某些场景下，您可能需要对会话进行分组，例如分为 "产品体验"、"需求研发" 等，您可以调用以下接口实现。
 > ?
@@ -26,10 +25,10 @@ tim.createConversationGroup(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationIDList  | String | 会话 ID 列表 |
-| groupName   | String | 分组名，长度最大支持32字节 |
+| Name               | Type   | Description                |
+| ------------------ | ------ | -------------------------- |
+| conversationIDList | String | 会话 ID 列表               |
+| groupName          | String | 分组名，长度最大支持32字节 |
 
 **返回值**
 
@@ -77,9 +76,9 @@ tim.deleteConversationGroup(groupName);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupName   | String | 分组名，长度最大支持32字节 |
+| Name      | Type   | Description                |
+| --------- | ------ | -------------------------- |
+| groupName | String | 分组名，长度最大支持32字节 |
 
 **返回值**
 
@@ -117,10 +116,10 @@ tim.renameConversationGroup(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| oldName  | String | 旧的分组名 |
-| newName   | String | 新的分组名，长度最大支持32字节 |
+| Name    | Type   | Description                    |
+| ------- | ------ | ------------------------------ |
+| oldName | String | 旧的分组名                     |
+| newName | String | 新的分组名，长度最大支持32字节 |
 
 **返回值**
 
@@ -203,10 +202,10 @@ tim.addConversationsToGroup(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationIDList  | String | 会话 ID 列表 |
-| groupName   | String | 分组名，长度最大支持32字节 |
+| Name               | Type   | Description                |
+| ------------------ | ------ | -------------------------- |
+| conversationIDList | String | 会话 ID 列表               |
+| groupName          | String | 分组名，长度最大支持32字节 |
 
 **返回值**
 
@@ -256,10 +255,10 @@ tim.deleteConversationsFromGroup(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationIDList  | String | 会话 ID 列表 |
-| groupName   | String | 分组名，长度最大支持32字节 |
+| Name               | Type   | Description                |
+| ------------------ | ------ | -------------------------- |
+| conversationIDList | String | 会话 ID 列表               |
+| groupName          | String | 分组名，长度最大支持32字节 |
 
 **返回值**
 

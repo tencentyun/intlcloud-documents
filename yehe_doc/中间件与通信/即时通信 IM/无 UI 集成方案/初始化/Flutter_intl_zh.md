@@ -28,13 +28,13 @@ SDKAppID 是腾讯云 IM 服务用于区分客户帐号的唯一标识。我们�
 #### 设置日志级别
 IM SDK 支持多种日志级别，如下表所示：
 
-| 日志级别                     | LOG 输出量                                                     |
-| ---------------------------- | -------------------------------------------------------------- |
-| LogLevelEnum.V2TIM_LOG_NONE  | 不输出任何 log                                                 |
+| 日志级别                     | LOG 输出量                                                   |
+| ---------------------------- | ------------------------------------------------------------ |
+| LogLevelEnum.V2TIM_LOG_NONE  | 不输出任何 log                                               |
 | LogLevelEnum.V2TIM_LOG_DEBUG | 输出 DEBUG，INFO，WARNING，ERROR 级别的 log （默认的日志级别） |
-| LogLevelEnum.V2TIM_LOG_INFO  | 输出 INFO，WARNING，ERROR 级别的 log                           |
-| LogLevelEnum.V2TIM_LOG_WARN  | 输出 WARNING，ERROR 级别的 log                                 |
-| LogLevelEnum.V2TIM_LOG_ERROR | 输出 ERROR 级别的 log                                          |
+| LogLevelEnum.V2TIM_LOG_INFO  | 输出 INFO，WARNING，ERROR 级别的 log                         |
+| LogLevelEnum.V2TIM_LOG_WARN  | 输出 WARNING，ERROR 级别的 log                               |
+| LogLevelEnum.V2TIM_LOG_ERROR | 输出 ERROR 级别的 log                                        |
 
 SDK 日志存储规则如下：
 - IM SDK 本地日志默认保存 7 天；SDK 在初始化时，会自动清理 7 天之前的日志。
@@ -55,14 +55,14 @@ SDK 初始化后，会通过 `V2TimSDKListener` 抛出一些事件，例如连�
 
 `V2TimSDKListener` 相关回调如下表所示：
 
-| 事件回调          | 事件描述                   | 推荐操作                                                            |
-| ----------------- | -------------------------- | ------------------------------------------------------------------- |
-| onConnecting      | 正在连接到腾讯云服务器     | 适合在 UI 上展示 “正在连接” 状态。                                  |
-| onConnectSuccess  | 已经成功连接到腾讯云服务器 | -                                                                   |
-| onConnectFailed   | 连接腾讯云服务器失败       | 提示用户当前网络连接不可用。                                        |
+| 事件回调          | 事件描述                   | 推荐操作                                                     |
+| ----------------- | -------------------------- | ------------------------------------------------------------ |
+| onConnecting      | 正在连接到腾讯云服务器     | 适合在 UI 上展示 “正在连接” 状态。                           |
+| onConnectSuccess  | 已经成功连接到腾讯云服务器 | -                                                            |
+| onConnectFailed   | 连接腾讯云服务器失败       | 提示用户当前网络连接不可用。                                 |
 | onKickedOffline   | 当前用户被踢下线           | 此时可以 UI 提示用户 “您已经在其他端登录了当前帐号，是否重新登录？” |
-| onUserSigExpired  | 登录票据已经过期           | 请使用新签发的 UserSig 进行登录。                                   |
-| onSelfInfoUpdated | 当前用户的资料发生了更新   | 可以在 UI 上更新自己的头像和昵称。                                  |
+| onUserSigExpired  | 登录票据已经过期           | 请使用新签发的 UserSig 进行登录。                            |
+| onSelfInfoUpdated | 当前用户的资料发生了更新   | 可以在 UI 上更新自己的头像和昵称。                           |
 
 >! 如果收到 `onUserSigExpired` 回调，说明您登录用的 UserSig 票据已经过期，请使用新签发的 UserSig 进行重新登录。如果继续使用过期的 UserSig，会导致 IM SDK 登录进入死循环。
 
@@ -140,4 +140,3 @@ TencentImSDKPlugin.v2TIMManager.unInitSDK();
 
 ### 1. 在调用登录等其他接口时，发生错误，返回错误码是 6013 和错误描述是 "not initialized" 的信息。
 在使用 IM SDK 登录、消息、群组、会话、关系链和资料、信令的功能前，必须先进行初始化。
-

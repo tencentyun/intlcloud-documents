@@ -4,7 +4,7 @@ Local message search is a feature essential to improve user experience of the ap
 >- Only local messages can be searched for, for example, received messages or historical messages obtained after the API is called. 
 >- The message search feature is supported only by v5.4.666 or later.
 >- The local message search feature is only available on the IM Ultimate edition. To use it, purchase the [Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8). For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
-)。
+>)。
 
 ## Message Search Class
 ### Message search parameter class
@@ -12,33 +12,33 @@ The message search parameter class is `V2TIMMessageSearchParam` ([Android](https
 
 The `V2TIMMessageSearchParam` parameters are as described below:
 
-| Parameter | Definition | Description |
-| --- | --- | --- |
-| keywordList | Keyword list | It can contain up to five keywords. When the message sender and the message type are not specified, the keyword list must be set; in other cases, it can be left empty. |
-| keywordListMatchType | Match type of the keyword list | It can be set to `OR` or `AND`. Valid values: V2TIM_KEYWORD_LIST_MATCH_TYPE_OR (default), V2TIM_KEYWORD_LIST_MATCH_TYPE_AND. |
-| senderUserIDList | `userID` who sent messages | It can contain up to five user IDs. |
-| messageTypeList | Set of the message types to be searched for | If it is left empty, messages of all the supported types (excluding `V2TIMFaceElem` and `V2TIMGroupTipsElem`) will be searched for. For more information on the values of other types, see `V2TIMElemType` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#a00455865d1a14191b8c612252bf20a1c) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a849af0e4698e8db9f227f9c8e54215b8) / [Windows](https://im.sdk.qcloud.com/doc/en/V2TIMMessage_8h.html#a6854ecfbc6f3b65ed381d8a2e14e2377)). |
-| conversationID | Whether to search all the conversations or the specified conversation | If it is left empty, all the conversations will be searched; otherwise, the specified conversation will be searched. |
-| searchTimePosition | Start time for the search | It is `0` by default, indicating to search from the current time point. It is a UTC timestamp in seconds. |
-| searchTimePeriod | A past period of time starting from the start time | It is `0` by default, indicating not to limit the time range. It is in seconds. `24x60x60` represents a past day. |
-| pageIndex | Page number | It is used to display the search result by page. `0` indicates the first page. |
-| pageSize | Number of result items per page | It is used to display the search result by page. Set it to `0` if you don't want paged display. If too many result items are pulled at a time, a performance problem may occur. |
+| Parameter            | Definition                                                   | Description                                                  |
+| -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| keywordList          | Keyword list                                                 | It can contain up to five keywords. When the message sender and the message type are not specified, the keyword list must be set; in other cases, it can be left empty. |
+| keywordListMatchType | Match type of the keyword list                               | It can be set to `OR` or `AND`. Valid values: V2TIM_KEYWORD_LIST_MATCH_TYPE_OR (default), V2TIM_KEYWORD_LIST_MATCH_TYPE_AND. |
+| senderUserIDList     | `userID` who sent messages                                   | It can contain up to five user IDs.                          |
+| messageTypeList      | Set of the message types to be searched for                  | If it is left empty, messages of all the supported types (excluding `V2TIMFaceElem` and `V2TIMGroupTipsElem`) will be searched for. For more information on the values of other types, see `V2TIMElemType` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#a00455865d1a14191b8c612252bf20a1c) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a849af0e4698e8db9f227f9c8e54215b8) / [Windows](https://im.sdk.qcloud.com/doc/en/V2TIMMessage_8h.html#a6854ecfbc6f3b65ed381d8a2e14e2377)). |
+| conversationID       | Whether to search all the conversations or the specified conversation | If it is left empty, all the conversations will be searched; otherwise, the specified conversation will be searched. |
+| searchTimePosition   | Start time for the search                                    | It is `0` by default, indicating to search from the current time point. It is a UTC timestamp in seconds. |
+| searchTimePeriod     | A past period of time starting from the start time           | It is `0` by default, indicating not to limit the time range. It is in seconds. `24x60x60` represents a past day. |
+| pageIndex            | Page number                                                  | It is used to display the search result by page. `0` indicates the first page. |
+| pageSize             | Number of result items per page                              | It is used to display the search result by page. Set it to `0` if you don't want paged display. If too many result items are pulled at a time, a performance problem may occur. |
 
 ### Message search result class
 The message search result class is `V2TIMMessageSearchResult`([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageSearchResult.html) / [iOS and Mac](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessageSearchResult.html) / [Windows](https://im.sdk.qcloud.com/doc/en/structV2TIMMessageSearchResult.html)). The parameters are as described below:
 
-| Parameter | Definition | Description |
-| --- | --- | --- |
-| totalCount | Total number of the search result items | If the specified conversation is searched, the **total number of messages** that meet the search criteria will be returned.<br>If all the conversations are searched, the **total number of the conversations** to which messages that meet the search criteria belong will be returned. |
-| messageSearchResultItems | Match type of the keyword list | If the specified conversation is searched, only the result items in the conversation will be included in the returned result list.<br>If all the conversations are searched, messages that meet the search criteria will be grouped by conversation ID and returned by page. |
+| Parameter                | Definition                              | Description                                                  |
+| ------------------------ | --------------------------------------- | ------------------------------------------------------------ |
+| totalCount               | Total number of the search result items | If the specified conversation is searched, the **total number of messages** that meet the search criteria will be returned.<br>If all the conversations are searched, the **total number of the conversations** to which messages that meet the search criteria belong will be returned. |
+| messageSearchResultItems | Match type of the keyword list          | If the specified conversation is searched, only the result items in the conversation will be included in the returned result list.<br>If all the conversations are searched, messages that meet the search criteria will be grouped by conversation ID and returned by page. |
 
 Here, `messageSearchResultItems` is a list that contains the `V2TIMMessageSearchResultItem` objects ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageSearchResultItem.html) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMMessageSearchResultItem.html) / [Windows](https://im.sdk.qcloud.com/doc/en/structV2TIMMessageSearchResultItem.html)). The parameters are as described below:
 
-| Parameter | Definition | Description |
-| --- | --- | --- |
-| conversationID | Conversation ID | - |
-| messageCount | Number of messages | Number of messages that meet the search criteria and are found in the current conversation. |
-| messageList | List of messages that meet the search criteria | If the specified conversation is searched, `messageList` is the list of messages in the conversation that meet the search criteria.<br>If all the conversations are searched, `messageList` may display either of the following results:<br>* If the number of matched messages in a conversation is greater than 1, `messageList` is empty, and you can display "{messageCount} relevant records" on the UI.<br>* If the number of matched messages in a conversation is equal to 1, `messageList` is the matched message, and you can display it on the UI and highlight the matched keyword. |
+| Parameter      | Definition                                     | Description                                                  |
+| -------------- | ---------------------------------------------- | ------------------------------------------------------------ |
+| conversationID | Conversation ID                                | -                                                            |
+| messageCount   | Number of messages                             | Number of messages that meet the search criteria and are found in the current conversation. |
+| messageList    | List of messages that meet the search criteria | If the specified conversation is searched, `messageList` is the list of messages in the conversation that meet the search criteria.<br>If all the conversations are searched, `messageList` may display either of the following results:<br>* If the number of matched messages in a conversation is greater than 1, `messageList` is empty, and you can display "{messageCount} relevant records" on the UI.<br>* If the number of matched messages in a conversation is equal to 1, `messageList` is the matched message, and you can display it on the UI and highlight the matched keyword. |
 
 
 ## Searching for the Messages in All the Conversations
@@ -794,4 +794,3 @@ Both `fileName` and `filePath` will be saved in the local database and on the se
 
 For image, audio, and video messages, there is no such name as `fileName`, and a thumbnail or duration is usually displayed on the UI; in this case, `keywordList` is invalid.
 To enable a user to find such messages, you can specify `messageTypeList` as `V2TIM_ELEM_TYPE_IMAGE`/`V2TIM_ELEM_TYPE_SOUND`/`V2TIM_ELEM_TYPE_VIDEO` for categorized search.
-

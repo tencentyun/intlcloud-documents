@@ -86,11 +86,11 @@ Call the `getUsersInfo` API ([details](https://comm.qq.com/im/doc/flutter/zh/SDK
 ### Querying and modifying a friend's profile
 Call the `getFriendsInfo` API ([details](https://comm.qq.com/im/doc/flutter/zh/SDKAPI/Api/V2TIMFriendshipManager/getFriendsInfo.html)) to query the profile of the specified friend. The relationship between the user and the friend can be obtained through the `relation` field of the `V2TIMFriendInfoResult` in the callback:
 
-| relation                                          | Relationship               |
-| ------------------------------------------------- | -------------------------- |
-| `V2TIM_FRIEND_RELATION_TYPE_NONE`                 | Not a friend             |
-| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY`             | Two-way friend             |
-| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST`    | The user is in your contacts. |
+| relation                                          | Relationship                    |
+| ------------------------------------------------- | ------------------------------- |
+| `V2TIM_FRIEND_RELATION_TYPE_NONE`                 | Not a friend                    |
+| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY`             | Two-way friend                  |
+| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST`    | The user is in your contacts.   |
 | `V2TIM_FRIEND_RELATION_TYPE_IN_OTHER_FRIEND_LIST` | You are in the user's contacts. |
 
 
@@ -116,4 +116,3 @@ TencentImSDKPlugin.v2TIMManager.setSelfInfo(userFullInfo: V2TimUserFullInfo(nick
 There are two types of user profile updates in the enhanced SDK:
  - Friend's profile: when the profile of a friend is updated, the backend will send a system notification to the SDK, so the friend's profile will be updated in real time.
  - Stranger's profile: when the profile of a stranger is updated, the backend will not send any system notification because the stranger is not a friend of yours, so the stranger's profile will not be updated in real time. To avoid sending a network request to the backend every time the user profile is obtained, the SDK adds a caching logic, setting a 10-minute interval between pulls of the same user's profile from the backend.
-

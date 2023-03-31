@@ -33,4 +33,3 @@ Sample code:
 ```dart
  TencentImSDKPlugin.v2TIMManager.getMessageManager().clearGroupHistoryMessage(groupID: "");
 ```
-

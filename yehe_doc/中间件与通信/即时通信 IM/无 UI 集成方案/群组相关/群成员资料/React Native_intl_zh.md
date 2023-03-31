@@ -27,5 +27,3 @@ const memberInfos = await groupManager.getGroupMembersInfo("groupID", ["id1"]);
 // 设置群成员资料
 groupManager.setGroupMemberInfo("groupID", "userID", "nameCard");
 ```
-
-

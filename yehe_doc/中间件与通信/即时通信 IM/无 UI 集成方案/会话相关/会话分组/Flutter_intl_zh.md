@@ -1,8 +1,8 @@
 ## 功能描述
 在某些场景下，您可能需要对会话进行分组，例如分为 "产品体验"、"需求研发" 等，您可以调用以下接口实现。
 > ?
-- 该功能仅对旗舰版客户开放，购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 后可使用。
-- 该功能仅增强版 4.0.8 及以上版本支持。
+> - 该功能仅对旗舰版客户开放，购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 后可使用。
+> - 该功能仅增强版 4.0.8 及以上版本支持。
 
 ## 会话分组
 
@@ -239,4 +239,3 @@
         .getConversationManager()
         .addConversationListener(listener: listener);
 ```
-

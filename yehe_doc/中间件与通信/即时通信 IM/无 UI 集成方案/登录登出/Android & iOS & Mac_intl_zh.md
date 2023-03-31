@@ -13,10 +13,10 @@
 
 `login` 接口的关键参数如下：
 
-| 参数 | 含义 | 说明 |
-| --- | --- | --- |
-| UserID | 登录用户唯一标识 | 建议只包含大小写英文字母（a-z、A-Z）、数字（0-9）、下划线（_）和连词符（-)。长度不超过 32 字节。|
-| UserSig | 登录票据 | 由您的业务服务器进行计算以保证安全。计算方法请参考 [UserSig 后台 API](https://intl.cloud.tencent.com/document/product/1047/34385)。|
+| 参数    | 含义             | 说明                                                         |
+| ------- | ---------------- | ------------------------------------------------------------ |
+| UserID  | 登录用户唯一标识 | 建议只包含大小写英文字母（a-z、A-Z）、数字（0-9）、下划线（_）和连词符（-)。长度不超过 32 字节。 |
+| UserSig | 登录票据         | 由您的业务服务器进行计算以保证安全。计算方法请参考 [UserSig 后台 API](https://intl.cloud.tencent.com/document/product/1047/34385)。 |
 
 您需要在以下场景调用 `login` 接口：
 * App 启动后首次使用 IM SDK 的功能。
@@ -29,8 +29,8 @@
 * 当一个登录过程在进行时，不需要进行重复登录。
 
 >!
-> 1. 调用 IM SDK 接口成功登录后，将会开始计算 DAU，请根据业务场景合理调用登录接口，避免出现 DAU 过高的情况。
-> 2. 在一个 App 中，IM SDK 不支持多个帐号同时在线，如果同时登录多个帐号，只有最后登录的帐号在线。 
+>1. 调用 IM SDK 接口成功登录后，将会开始计算 DAU，请根据业务场景合理调用登录接口，避免出现 DAU 过高的情况。
+>2. 在一个 App 中，IM SDK 不支持多个帐号同时在线，如果同时登录多个帐号，只有最后登录的帐号在线。 
 
 
 示例代码如下：
@@ -99,11 +99,11 @@ NSString *loginUserID = [[V2TIMManager sharedInstance] getLoginUser];
 
 通过调用`getLoginStatus`([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a1836146275265b2a120412f18961db95) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/interfaceV2TIMManager.html#acfd2f6366780badf80ebf66d95550f89)) 获取登录状态，如果用户已经处于已登录和登录中状态，请勿再频繁调用登录接口登录。IM SDK 支持的登录状态，如下表所示：
 
-| 登录状态 | 含义 |
-|---------|---------|
-| V2TIM_STATUS_LOGINED | 已登录 |
+| 登录状态              | 含义   |
+| --------------------- | ------ |
+| V2TIM_STATUS_LOGINED  | 已登录 |
 | V2TIM_STATUS_LOGINING | 登录中 |
-| V2TIM_STATUS_LOGOUT | 无登录 |
+| V2TIM_STATUS_LOGOUT   | 无登录 |
 
 示例代码如下：
 <dx-tabs>
@@ -170,5 +170,3 @@ V2TIMManager.getInstance().logout(new V2TIMCallback() {
 如果您希望在应用中实现帐号切换的需求，只需要每次切换帐号时调用 `login` 即可。
 
 例如已经登录了 alice，现在要切换到 bob，只需要直接 login bob 即可。login bob 前无需显式调用 logout alice，IM SDK 内部会自动处理。
-
-

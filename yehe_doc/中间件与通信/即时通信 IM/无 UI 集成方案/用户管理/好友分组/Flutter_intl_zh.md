@@ -73,4 +73,3 @@ V2TimValueCallback<List<V2TimFriendOperationResult>> addToFrindgroups = await fr
 // 将要有从分组中删除
 V2TimValueCallback<List<V2TimFriendOperationResult>> deletefromFriendsGrousps = await friendshipManager.deleteFriendsFromFriendGroup(groupName: "分组1", userIDList: ['user1']);
 ```
-

@@ -5,7 +5,7 @@ When cloud messages are deleted, such messages will be deleted both locally and 
 If the last message is deleted, the `lastMessage` in the conversation will become the last but one message.
 * If your SDK version is earlier than v5.5.892 and the `lastMessage` is used for sorting, the sequence in the conversation list will be affected.
 * If your SDK is on v5.5.892 or later and `orderKey` is used for sorting, the sequence in the conversation list will not be affected.
-For more information, see [Conversation List](https://intl.cloud.tencent.com/document/product/1047/48326).
+
 
 ### Deleting a local message
 
@@ -90,4 +90,3 @@ NSArray *selectedMessageList = @[selectedMessage1, selectedMessage2];
 ```
 :::
 </dx-tabs>
-

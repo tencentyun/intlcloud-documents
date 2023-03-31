@@ -43,9 +43,9 @@ tim.setSelfStatus(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| customStatus       | String   | 用户自定义状态 |
+| Name         | Type   | Description    |
+| ------------ | ------ | -------------- |
+| customStatus | String | 用户自定义状态 |
 
 
 **返回值**
@@ -94,9 +94,9 @@ tim.getUserStatus(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList         | Array    | 待查询的用户 userID 列表，查询自己时，只需要传入自己的 userID 即可。 |
+| Name       | Type  | Description                                                  |
+| ---------- | ----- | ------------------------------------------------------------ |
+| userIDList | Array | 待查询的用户 userID 列表，查询自己时，只需要传入自己的 userID 即可。 |
 
 **返回值**
 
@@ -222,9 +222,9 @@ tim.subscribeUserStatus(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList         | Array    | 用户 userID 列表，单次请求最多 100 个。 |
+| Name       | Type  | Description                             |
+| ---------- | ----- | --------------------------------------- |
+| userIDList | Array | 用户 userID 列表，单次请求最多 100 个。 |
 
 **返回值**
 
@@ -278,9 +278,9 @@ tim.unsubscribeUserStatus(options);
 
 参数 options 为 undefined 时，表示取消当前所有订阅，options 为 Object 时，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| userIDList         | Array    | 用户 userID 列表，单次请求最多 100 个。当 userIDList 为空数组或者 undefined 时，取消当前所有的订阅。 |
+| Name       | Type  | Description                                                  |
+| ---------- | ----- | ------------------------------------------------------------ |
+| userIDList | Array | 用户 userID 列表，单次请求最多 100 个。当 userIDList 为空数组或者 undefined 时，取消当前所有的订阅。 |
 
 **返回值**
 
@@ -365,10 +365,10 @@ promise.then(function(imResponse) {
  * 2. 在 IM 控制台打开了好友状态通知开关，即使未主动订阅，当好友状态发生变更时，也会触发该事件
  * 3. 同一个账号多设备登录，当其中一台设备修改了自定义状态，所有设备都会收到该事件
  */
-let onUserStatusUpdated = function(event) {
-   console.log(event.data);
-   const userStatusList = event.data;
-   userStatusList.forEach((item) => {
+ let onUserStatusUpdated = function(event) {
+    console.log(event.data);
+    const userStatusList = event.data;
+    userStatusList.forEach((item) => {
      const { userID, statusType, customStatus } = item;
      // userID - 用户 ID
      // statusType - 用户状态，枚举值及说明如下：
@@ -377,9 +377,9 @@ let onUserStatusUpdated = function(event) {
      // TIM.TYPES.USER_STATUS_OFFLINE - 离线
      // TIM.TYPES.USER_STATUS_UNLOGINED - 未登录
      // customStatus - 用户自定义状态
-   })
-};
-tim.on(TIM.EVENT.USER_STATUS_UPDATED, onUserStatusUpdated);
+    })
+ };
+ tim.on(TIM.EVENT.USER_STATUS_UPDATED, onUserStatusUpdated);
 
 :::
 </dx-codeblock>
@@ -413,7 +413,3 @@ tim.on(TIM.EVENT.USER_STATUS_UPDATED, onUserStatusUpdated);
 ### 调用订阅/取消订阅接口时，接口提示 ”72001“ 的错误码
 
 72001 错误码表示在控制台上并没有开启对应的能力，请登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)  打开对应的功能开关。
-
-
-
-

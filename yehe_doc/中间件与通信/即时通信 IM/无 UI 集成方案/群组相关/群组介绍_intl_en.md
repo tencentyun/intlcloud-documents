@@ -4,13 +4,13 @@ The IM SDK on the new version comes with upgraded group types, including work gr
 
 The groups on the earlier SDK version and the new SDK version are as compared below:
 
-| Groups on the Earlier Version | Groups on the New Version | Group Feature |
-| --- | --- | --- |
-| Public | Public<br>Public group | It allows the group owner to designate group admins. To join the group, a user needs to search for the group ID and send a request for approval by the group owner or admin. |
-| Private | Work<br>Work group | A work group allows users to join after being invited by a friend who is a member of the group, without acceptance by the user or approval by the group owner required. |
-| ChatRoom | Meeting<br>Meeting group | A meeting group allows users to join and leave freely and view message history from before they joined the group. This group type is suitable for scenarios where Tencent Real-Time Communication (TRTC) is used, for example, audio and video conferences and online education. |
-| AVChatRoom | AVChatRoom<br>Audio-video group | An audio-video group allows users to join and leave freely. It supports an unlimited number of group members and doesn't store message history. This group type can be used with live streaming products to support on-screen comment chat scenarios.|
-| - | Community<br>Community| <li>A community allows users to join and leave freely. It is a new powerful tool for entertainment collaboration and is suitable for chat scenarios with a super large number of community members, such as finding like-minded people, gaming social networking, fan marketing, and organization management.</li><li>Within the same community, a high number of members can be divided into different groups and topics to separate messages for hierarchical communication, yet they can also share the same set of friend relationships.  |
+| Groups on the Earlier Version | Groups on the New Version       | Group Feature                                                |
+| ----------------------------- | ------------------------------- | ------------------------------------------------------------ |
+| Public                        | Public<br>Public group          | It allows the group owner to designate group admins. To join the group, a user needs to search for the group ID and send a request for approval by the group owner or admin. |
+| Private                       | Work<br>Work group              | A work group allows users to join after being invited by a friend who is a member of the group, without acceptance by the user or approval by the group owner required. |
+| ChatRoom                      | Meeting<br>Meeting group        | A meeting group allows users to join and leave freely and view message history from before they joined the group. This group type is suitable for scenarios where Tencent Real-Time Communication (TRTC) is used, for example, audio and video conferences and online education. |
+| AVChatRoom                    | AVChatRoom<br>Audio-video group | An audio-video group allows users to join and leave freely. It supports an unlimited number of group members and doesn't store message history. This group type can be used with live streaming products to support on-screen comment chat scenarios. |
+| -                             | Community<br>Community          | <li>A community allows users to join and leave freely. It is a new powerful tool for entertainment collaboration and is suitable for chat scenarios with a super large number of community members, such as finding like-minded people, gaming social networking, fan marketing, and organization management.</li><li>Within the same community, a high number of members can be divided into different groups and topics to separate messages for hierarchical communication, yet they can also share the same set of friend relationships. |
 
 > ? The community feature is supported only by the SDK of the Enhanced edition on v5.8.1668 or later and the SDK for web on v2.17.0 or later. You need to [purchase the Ultimate edition](https://www.tencentcloud.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8), go to the **[console](https://console.cloud.tencent.com/im)**, select **Feature Configuration** > **Group configuration** > **Group feature configuration**, and enable **Community**.
 
@@ -120,5 +120,3 @@ The features and limits of each group type are as described below:
 </table>
 
 > ? In the `SDKAppID` of the Pro or Ultimate edition, the maximum net increase in group count per day is 10,000 for all group types. Free peak group count is 100,000 per month, and you will need to <a href="https://intl.cloud.tencent.com/document/product/1047/34350">pay for usage not covered by the free tier</a>.
-
-

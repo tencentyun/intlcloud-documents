@@ -35,4 +35,3 @@ TencentIMSDK.SetMsgRevokeCallback((List<MsgLocator> msg_locator, string user_dat
       // Process the recalled message among locally maintained messages
 });
 ```
-

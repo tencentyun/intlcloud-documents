@@ -276,4 +276,3 @@ public static void MsgSendMessage() {
   			// The message ID messageId returned when the message is sent
 }
 ```
-

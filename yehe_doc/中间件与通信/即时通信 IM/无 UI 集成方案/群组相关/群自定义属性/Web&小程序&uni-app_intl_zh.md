@@ -30,10 +30,10 @@ tim.initGroupAttributes(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID |
-| groupAttributes | Object | 群属性 |
+| Name            | Type   | Description |
+| --------------- | ------ | ----------- |
+| groupID         | String | 群组 ID     |
+| groupAttributes | Object | 群属性      |
 
 **返回值**
 
@@ -73,10 +73,10 @@ tim.setGroupAttributes(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID |
-| groupAttributes | Object | 群属性 |
+| Name            | Type   | Description |
+| --------------- | ------ | ----------- |
+| groupID         | String | 群组 ID     |
+| groupAttributes | Object | 群属性      |
 
 **返回值**
 
@@ -119,10 +119,10 @@ tim.deleteGroupAttributes(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID |
-| keyList | Array | 群属性 key 列表 |
+| Name    | Type   | Description     |
+| ------- | ------ | --------------- |
+| groupID | String | 群组 ID         |
+| keyList | Array  | 群属性 key 列表 |
 
 **返回值**
 
@@ -182,10 +182,10 @@ tim.getGroupAttributes(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		群组 ID |
-| keyList | Array | 群属性 key 列表 |
+| Name    | Type   | Description     |
+| ------- | ------ | --------------- |
+| groupID | String | 群组 ID         |
+| keyList | Array  | 群属性 key 列表 |
 
 **返回值**
 

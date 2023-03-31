@@ -60,29 +60,29 @@ We recommend you register a global event listener immediately after calling `ini
 
 The callbacks are as described below:
 
-| Event Callback | Description |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
-| [RecvNewMsgCallback](https://comm.qq.com/im/doc/unity/zh/callback/RecvNewMsgCallback.html)                                                 | Callback for receiving a new message                               |
-| [MsgReadedReceiptCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgReadedReceiptCallback.html)                                     | Callback for a message read receipt                             |
-| [MsgRevokeCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgRevokeCallback.html)                                                   | Callback for a message recall                         |
-| [MsgElemUploadProgressCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgElemUploadProgressCallback.html)                           | Callback for the upload progress of a message element               |
-| [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupTipsEventCallback.html)                                         | Callback for a group system message                             |
-| [GroupAttributeChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupAttributeChangedCallback.html)                           | Callback for a group attribute change                             |
-| [ConvTotalUnreadMessageCountChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/ConvTotalUnreadMessageCountChangedCallback.html) | Callback for a change in the unread message count of a conversation                   |
-| [NetworkStatusListenerCallback](https://comm.qq.com/im/doc/unity/zh/callback/NetworkStatusListenerCallback.html)                           | Callback for listening for the network connection status                         |
-| [KickedOfflineCallback](https://comm.qq.com/im/doc/unity/zh/callback/KickedOfflineCallback.html)                                           | Callback for being kicked offline                             |
-| [UserSigExpiredCallback](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html)                                         | Callback for ticket expiration                                 |
-| [OnAddFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnAddFriendCallback.html)                                               | Callback for adding a friend                               |
-| [OnDeleteFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnDeleteFriendCallback.html)                                         | Callback for deleting a friend                               |
-| [UpdateFriendProfileCallback](https://comm.qq.com/im/doc/unity/zh/callback/UpdateFriendProfileCallback.html)                               | Callback for updating the profile of a friend                           |
-| [FriendAddRequestCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendAddRequestCallback.html)                                     | Callback for a friend request                           |
-| [FriendApplicationListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListDeletedCallback.html)             | Callback for deleting a friend request                         |
-| [FriendApplicationListReadCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListReadCallback.html)                   | Callback for reading a friend request                           |
-| [FriendBlackListAddedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListAddedCallback.html)                             | Callback for adding a friend to the blocklist                             |
-| [FriendBlackListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListDeletedCallback.html)                         | Callback for deleting a friend from the blocklist                             |
-| [LogCallback](https://comm.qq.com/im/doc/unity/zh/callback/LogCallback.html)                                                               | Log callback                                     |
-| [MsgUpdateCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgUpdateCallback.html)                                                   | Callback for a message update |
-| [MsgGroupMessageReadMemberListCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgGroupMessageReadMemberListCallback.html)           | Callback for getting the list of group members who have read a group message                         |
+| Event Callback                                               | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [RecvNewMsgCallback](https://comm.qq.com/im/doc/unity/zh/callback/RecvNewMsgCallback.html) | Callback for receiving a new message                         |
+| [MsgReadedReceiptCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgReadedReceiptCallback.html) | Callback for a message read receipt                          |
+| [MsgRevokeCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgRevokeCallback.html) | Callback for a message recall                                |
+| [MsgElemUploadProgressCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgElemUploadProgressCallback.html) | Callback for the upload progress of a message element        |
+| [GroupTipsEventCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupTipsEventCallback.html) | Callback for a group system message                          |
+| [GroupAttributeChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/GroupAttributeChangedCallback.html) | Callback for a group attribute change                        |
+| [ConvTotalUnreadMessageCountChangedCallback](https://comm.qq.com/im/doc/unity/zh/callback/ConvTotalUnreadMessageCountChangedCallback.html) | Callback for a change in the unread message count of a conversation |
+| [NetworkStatusListenerCallback](https://comm.qq.com/im/doc/unity/zh/callback/NetworkStatusListenerCallback.html) | Callback for listening for the network connection status     |
+| [KickedOfflineCallback](https://comm.qq.com/im/doc/unity/zh/callback/KickedOfflineCallback.html) | Callback for being kicked offline                            |
+| [UserSigExpiredCallback](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html) | Callback for ticket expiration                               |
+| [OnAddFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnAddFriendCallback.html) | Callback for adding a friend                                 |
+| [OnDeleteFriendCallback](https://comm.qq.com/im/doc/unity/zh/callback/OnDeleteFriendCallback.html) | Callback for deleting a friend                               |
+| [UpdateFriendProfileCallback](https://comm.qq.com/im/doc/unity/zh/callback/UpdateFriendProfileCallback.html) | Callback for updating the profile of a friend                |
+| [FriendAddRequestCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendAddRequestCallback.html) | Callback for a friend request                                |
+| [FriendApplicationListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListDeletedCallback.html) | Callback for deleting a friend request                       |
+| [FriendApplicationListReadCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendApplicationListReadCallback.html) | Callback for reading a friend request                        |
+| [FriendBlackListAddedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListAddedCallback.html) | Callback for adding a friend to the blocklist                |
+| [FriendBlackListDeletedCallback](https://comm.qq.com/im/doc/unity/zh/callback/FriendBlackListDeletedCallback.html) | Callback for deleting a friend from the blocklist            |
+| [LogCallback](https://comm.qq.com/im/doc/unity/zh/callback/LogCallback.html) | Log callback                                                 |
+| [MsgUpdateCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgUpdateCallback.html) | Callback for a message update                                |
+| [MsgGroupMessageReadMemberListCallback](https://comm.qq.com/im/doc/unity/zh/callback/MsgGroupMessageReadMemberListCallback.html) | Callback for getting the list of group members who have read a group message |
 
 >! If you receive the [`UserSigExpiredCallback`](https://comm.qq.com/im/doc/unity/zh/callback/UserSigExpiredCallback.html) callback, the `UserSig` that you use for login has expired. In this case, you need to use the newly issued `UserSig` to log in again. If you continue to use the expired `UserSig`, the IM SDK will enter an infinite login loop.
 
@@ -110,4 +110,3 @@ After the SDK is successfully initialized, add required listeners to avoid missi
 [](id:qa1)
 
 ### 1. You must initialize the IM SDK before using the login, message, group, conversation, relationship chain and profile, and signaling features.
-

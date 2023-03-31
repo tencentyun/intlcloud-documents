@@ -5,7 +5,7 @@
 如果删除的是最后一条消息，会话的 `lastMessage` 会变为前一条消息。
 * 如果您的 SDK 版本是 5.5.892 之前，使用了 `lastMesasge` 进行排序，此时会影响您的会话列表顺序。
 * 如果你的 SDK 版本是 5.5.892 及以后，并且采用了 `orderKey` 进行排序，此时不影响您的会话列表顺序。
-详情请参考 [会话列表](https://intl.cloud.tencent.com/document/product/1047/48326)。
+
 
 ### 删除本地消息
 
@@ -90,4 +90,3 @@ NSArray *selectedMessageList = @[selectedMessage1, selectedMessage2];
 ```
 :::
 </dx-tabs>
-

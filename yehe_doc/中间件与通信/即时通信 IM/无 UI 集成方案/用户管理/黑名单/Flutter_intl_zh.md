@@ -37,6 +37,3 @@ V2TimValueCallback<List<V2TimFriendOperationResult>> deleteBlackList = await fri
 // 获取黑名单列表
 V2TimValueCallback<List<V2TimFriendInfo>> blacklist = await friendshipManager.getBlackList();
 ```
-
-
-

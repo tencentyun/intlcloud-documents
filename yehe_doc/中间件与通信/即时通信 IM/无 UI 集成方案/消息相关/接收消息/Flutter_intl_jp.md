@@ -531,6 +531,3 @@ if(message.textElem.nextElem!=null){
    // 次のメッセージが存在します
 }
 ```
-
-
-

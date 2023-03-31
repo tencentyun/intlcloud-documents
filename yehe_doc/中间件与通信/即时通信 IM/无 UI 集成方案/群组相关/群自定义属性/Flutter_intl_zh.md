@@ -83,4 +83,3 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
     // 群属性变更
   },));
 ```
-

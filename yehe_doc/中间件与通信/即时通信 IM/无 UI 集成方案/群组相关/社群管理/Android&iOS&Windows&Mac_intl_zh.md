@@ -624,8 +624,8 @@ V2TIMManager::GetInstance()->GetGroupManager()->GetTopicInfoList("groupID", topi
 
 >? 
 >
-> 社群（群组）中 `customInfo` 的话题分组列表字段名，key 值，可由您自行定义。
-> 以下示例代码中，将其命名为 `topic_category` 。
+>社群（群组）中 `customInfo` 的话题分组列表字段名，key 值，可由您自行定义。
+>以下示例代码中，将其命名为 `topic_category` 。
 
 #### 配置社群的分组列表
 此处直接修改群组 `groupInfo` 的 `customInfo` 即可。此处为一个 Map，key 值是您定义的话题分组列表字段名。

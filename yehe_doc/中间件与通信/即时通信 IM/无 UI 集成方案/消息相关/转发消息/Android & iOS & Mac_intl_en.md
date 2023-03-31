@@ -6,9 +6,9 @@ You can merge and forward messages in the following steps:
 
 The title and digest are needed to display the merged message, as shown below:
 
-| Merge and Forward | Display of Merged Message | Click Merged Message to Download Message List for Display |
-|---------|---------|---------|
-|<img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "219"/>|
+| Merge and Forward                                            | Display of Merged Message                                    | Click Merged Message to Download Message List for Display    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "219"/> |
 
 
 ## Merging and Forwarding Messages
@@ -17,14 +17,14 @@ The title and digest are needed to display the merged message, as shown below:
 A merged message can be created by setting the message list along with the merged message title and digest. The process is as follows:
 1. Call the `createMergerMessage` API ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#acebe275789ab49cc8abe6af5e07aa3b0) / [iOS and macOS](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Message_08.html#a2943bb31403aeb22f8582cd9966cf13e) to create a merged message. The list of original messages as well as the merged message title and digest also need to be set.
 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.pngg" width = "450" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" />
 
 
-| Attribute |  Description | Remarks |
-| --- |  --- | --- |
-| messageList |  List of original messages | List of original messages to be merged and forwarded |
-| title | Title | Title of the merged message, such as "Chat History of xixiyah and Hello" as shown above |
-| abstractList | Digest list | Digest list of the merged message as shown above. The original message digests need to be displayed for the merged message, which will be unfolded after the user clicks the cell. |
+| Attribute      | Description                | Remarks                                                      |
+| -------------- | -------------------------- | ------------------------------------------------------------ |
+| messageList    | List of original messages  | List of original messages to be merged and forwarded         |
+| title          | Title                      | Title of the merged message, such as "Chat History of xixiyah and Hello" as shown above |
+| abstractList   | Digest list                | Digest list of the merged message as shown above. The original message digests need to be displayed for the merged message, which will be unfolded after the user clicks the cell. |
 | compatibleText | Compatibility text message | If the early SDK version does not support the merged message, the user will receive a text message with the content `compatibleText` by default. |
 
 Sample code:
@@ -248,5 +248,3 @@ V2TIMMessage *forwardMessage = [[V2TIMManager sharedInstance] createForwardMessa
 ```
 :::
 </dx-tabs>
-
-

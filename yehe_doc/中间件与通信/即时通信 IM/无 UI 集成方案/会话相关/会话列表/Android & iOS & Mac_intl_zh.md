@@ -228,13 +228,13 @@ V2TIMManager::GetInstance()->GetConversationManager()->GetConversationList(nextS
 ## 获取会话列表高级接口
 如果以上的普通接口无法满足您对拉取会话列表的需求，我们还提供了高级接口 `getConversationListByFilter` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#abf71156b8b6423e98943e25a77dc1967) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Conversation_08.html#ac1b77eedff7f2f8742a873cf766daec9) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#ace956492c5ee80187ebd1795e52b0de8))，其中拉取会话的 `V2TIMConversationListFilter` 详解如下：
 
-| 属性 |  含义 | 说明 |
-| --- |  --- | --- |
-| type | 会话类型 | C2C 或者群组会话|
-| nextSeq | 分页拉取的游标 | 第一次拉取传 0，后续分页拉取传入上一次成功拉取返回的  nextSeq |
-| count | 分页拉取的个数 | 一次分页建议不超过 100 |
-| markType | 会话标记类型 | 参考文档 [会话标记](https://intl.cloud.tencent.com/document/product/1047/48853) |
-| groupName | 会话分组名称 | 不是群组名称，是会话分组的名称，参考文档 [会话分组](https://intl.cloud.tencent.com/document/product/1047/48854) |
+| 属性      | 含义           | 说明                                                         |
+| --------- | -------------- | ------------------------------------------------------------ |
+| type      | 会话类型       | C2C 或者群组会话                                             |
+| nextSeq   | 分页拉取的游标 | 第一次拉取传 0，后续分页拉取传入上一次成功拉取返回的  nextSeq |
+| count     | 分页拉取的个数 | 一次分页建议不超过 100                                       |
+| markType  | 会话标记类型   | 参考文档 [会话标记](https://intl.cloud.tencent.com/document/product/1047/48853) |
+| groupName | 会话分组名称   | 不是群组名称，是会话分组的名称，参考文档 [会话分组](https://intl.cloud.tencent.com/document/product/1047/48854) |
 
 示例代码如下：
 <dx-tabs>
@@ -370,14 +370,14 @@ V2TIMManager::GetInstance()->GetConversationManager()->AddConversationListener(&
 
 目前 IM SDK 支持的会话变更事件有：
 
-| 事件 | 说明 | 建议 |
-| --- | --- | --- |
-|onSyncServerStart | 同步服务器会话开始 | SDK 会在登录成功、用户上线、断网重连后自动同步服务器会话，您可以监听这个事件做一些 UI 进度展示操作。 |
-|onSyncServerFinish | 同步服务器会话完成 | 如果会话有变更，会通过 `onNewConversation`/`onConversationChanged` 回调告知。 |
-|onSyncServerFailed | 同步服务器会话失败 | 您可以监听这个事件做一些 UI 异常展示操作。 |
-|onNewConversation | 有会话新增 | 例如收到一个新同事发来的单聊消息、被拉入了一个新的群组中等，此时可以重新对会话列表做排序。|
-|onConversationChanged | 有会话更新 | 例如未读计数发生变化、最后一条消息被更新等，此时可以重新对会话列表做排序。|
-|onTotalUnreadMessageCountChanged | 会话未读总数变更通知 | 详情请参考 [会话未读数](https://intl.cloud.tencent.com/document/product/1047/48320)。5.3.425 及以上版本支持。|
+| 事件                             | 说明                 | 建议                                                         |
+| -------------------------------- | -------------------- | ------------------------------------------------------------ |
+| onSyncServerStart                | 同步服务器会话开始   | SDK 会在登录成功、用户上线、断网重连后自动同步服务器会话，您可以监听这个事件做一些 UI 进度展示操作。 |
+| onSyncServerFinish               | 同步服务器会话完成   | 如果会话有变更，会通过 `onNewConversation`/`onConversationChanged` 回调告知。 |
+| onSyncServerFailed               | 同步服务器会话失败   | 您可以监听这个事件做一些 UI 异常展示操作。                   |
+| onNewConversation                | 有会话新增           | 例如收到一个新同事发来的单聊消息、被拉入了一个新的群组中等，此时可以重新对会话列表做排序。 |
+| onConversationChanged            | 有会话更新           | 例如未读计数发生变化、最后一条消息被更新等，此时可以重新对会话列表做排序。 |
+| onTotalUnreadMessageCountChanged | 会话未读总数变更通知 | 详情请参考 [会话未读数](https://intl.cloud.tencent.com/document/product/1047/48320)。5.3.425 及以上版本支持。 |
 
 > !
 > 1. 为保证会话列表顺序符合最后一条消息的排序原则，每次会话变更/新增后，您需要对数据源重新排序。
@@ -656,4 +656,3 @@ V2TIMManager::GetInstance()->GetMessageManager()->SendMessage(
 ```
 :::
 </dx-tabs>
-

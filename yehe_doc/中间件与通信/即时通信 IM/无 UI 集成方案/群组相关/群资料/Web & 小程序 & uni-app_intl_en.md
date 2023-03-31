@@ -18,9 +18,9 @@ tim.getGroupProfile(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		Group ID |
+| Name                   | Type               | Description                                                  |
+| ---------------------- | ------------------ | ------------------------------------------------------------ |
+| groupID                | String             | Group ID                                                     |
 | groupCustomFieldFilter | Array \| undefined | Custom group field filter. You can specify the custom group field to be obtained. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
 
 **Returned value**
@@ -56,17 +56,17 @@ tim.updateGroupProfile(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		Group ID |
-| name | String \| undefined | Group name, which can contain up to 30 bytes. |
-| avatar | String \| undefined | Group profile photo URL, which can contain up to 100 bytes. |
-| introduction | String \| undefined | Group introduction, which can contain up to 240 bytes. |
-| notification | String \| undefined | Group notice, which can contain up to 300 bytes. |
-| maxMemberNum | Number \| undefined | Maximum number of group members, which is 6,000. |
-| muteAllMembers | Boolean \| undefined | Muting all. Valid values: `true`: mute all; `false`: unmute all. It is supported by v2.6.2 or later. |
-| joinOption | String | Method to join a group. Valid values:<br/><li>TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS (free to join)</li><li>TIM.TYPES.JOIN_OPTIONS_NEED_PERMISSION (approval required)</li><li>TIM.TYPES.JOIN_OPTIONS_DISABLE_APPLY (no group join)</li>Note: It cannot be modified for `TIM.TYPES.GRP_WORK`, `TIM.TYPES.GRP_MEETING`, and `TIM.TYPES.GRP_AVCHATROOM` groups. Work groups cannot be joined on request, and meeting groups and audio-video groups can be joined freely. |
-| groupCustomField | Array \| undefined | Custom group field, which is unavailable by default. For more information on how to enable a custom group field, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| Name             | Type                 | Description                                                  |
+| ---------------- | -------------------- | ------------------------------------------------------------ |
+| groupID          | String               | Group ID                                                     |
+| name             | String \| undefined  | Group name, which can contain up to 30 bytes.                |
+| avatar           | String \| undefined  | Group profile photo URL, which can contain up to 100 bytes.  |
+| introduction     | String \| undefined  | Group introduction, which can contain up to 240 bytes.       |
+| notification     | String \| undefined  | Group notice, which can contain up to 300 bytes.             |
+| maxMemberNum     | Number \| undefined  | Maximum number of group members, which is 6,000.             |
+| muteAllMembers   | Boolean \| undefined | Muting all. Valid values: `true`: mute all; `false`: unmute all. It is supported by v2.6.2 or later. |
+| joinOption       | String               | Method to join a group. Valid values:<br/><li>TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS (free to join)</li><li>TIM.TYPES.JOIN_OPTIONS_NEED_PERMISSION (approval required)</li><li>TIM.TYPES.JOIN_OPTIONS_DISABLE_APPLY (no group join)</li>Note: It cannot be modified for `TIM.TYPES.GRP_WORK`, `TIM.TYPES.GRP_MEETING`, and `TIM.TYPES.GRP_AVCHATROOM` groups. Work groups cannot be joined on request, and meeting groups and audio-video groups can be joined freely. |
+| groupCustomField | Array \| undefined   | Custom group field, which is unavailable by default. For more information on how to enable a custom group field, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
 
 **Returned value**
 
@@ -109,4 +109,3 @@ promise.then(function(imResponse) {
 
 :::
 </dx-codeblock>
-

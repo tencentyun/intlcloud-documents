@@ -21,10 +21,10 @@ tim.createFriendGroup(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| name     | String | 	List name  |
-| userIDList | Array | List of `userID` values of the friends to be added to the list |
+| Name       | Type   | Description                                                  |
+| ---------- | ------ | ------------------------------------------------------------ |
+| name       | String | List name                                                    |
+| userIDList | Array  | List of `userID` values of the friends to be added to the list |
 
 **Returned value**
 
@@ -69,9 +69,9 @@ tim.deleteFriendGroup(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| name     | String | 	List name  |
+| Name | Type   | Description |
+| ---- | ------ | ----------- |
+| name | String | List name   |
 
 **Returned value**
 
@@ -112,9 +112,9 @@ tim.renameFriendGroup(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| oldName     | String | 	Old list name  |
+| Name    | Type   | Description   |
+| ------- | ------ | ------------- |
+| oldName | String | Old list name |
 | newName | String | New list name |
 
 **Returned value**
@@ -199,10 +199,10 @@ tim.addToFriendGroup(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| name     | String | 	List name  |
-| userIDList | Array | List of `userID` values of the friends to be added |
+| Name       | Type   | Description                                        |
+| ---------- | ------ | -------------------------------------------------- |
+| name       | String | List name                                          |
+| userIDList | Array  | List of `userID` values of the friends to be added |
 
 **Returned value**
 
@@ -247,10 +247,10 @@ tim.removeFromFriendGroup(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| name     | String | 	List name  |
-| userIDList | Array | List of `userID` values of the friends to be removed |
+| Name       | Type   | Description                                          |
+| ---------- | ------ | ---------------------------------------------------- |
+| name       | String | List name                                            |
+| userIDList | Array  | List of `userID` values of the friends to be removed |
 
 **Returned value**
 

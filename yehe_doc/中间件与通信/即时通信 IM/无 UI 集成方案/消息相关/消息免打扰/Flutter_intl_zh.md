@@ -77,4 +77,3 @@ V2TimValueCallback<List<V2TimGroupInfoResult>> groups = await TencentImSDKPlugin
     element.groupInfo.recvOpt;
   });
 ```
-

@@ -3,8 +3,8 @@
 
 >?
 >- 本地用户搜索功能仅 5.4.666 及以上版本支持。
->- 本地用户资料搜索为 IM 旗舰版功能，购买 [旗舰版](https://buy.cloud.tencent.com/avc?from=17473) 后可使用，详见 [价格说明](https://www.tencentcloud.com/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85
-)。
+>- 本地用户资料搜索为 IM 旗舰版功能，购买旗舰版后可使用，详见 [价格说明](https://www.tencentcloud.com/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85
+>)。
 
 ## 搜索本地用户资料
 调用接口 `searchFriends` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a3e657c9ec5d68a4c423a64d71f5f9c6e) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Friendship_08.html#a9a036dcc1bd65474a3d2e90f2bb6b9c6) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMFriendshipManager.html#aea84cd163665db3b0f2338d787446f53)) 可以搜索本地用户资料。

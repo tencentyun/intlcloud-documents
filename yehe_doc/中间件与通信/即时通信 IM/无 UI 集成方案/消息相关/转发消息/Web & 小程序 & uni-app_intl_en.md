@@ -6,9 +6,9 @@ You can merge and forward messages in the following steps:
 
 The title and digest are needed to display the merged message, as shown below:
 
-| Merge and Forward | Display of Merged Message | Click Merged Message to Download Message List for Display |
-|---------|---------|---------|
-|<img src="https://main.qcloudimg.com/raw/8f9a338c4e05cf1477250a5fc1a468c6.jpg" width = "300" /> | <img src="https://main.qcloudimg.com/raw/ff2afe17010e1840eae78e56d3abcf2d.jpg" width = "300" /> | <img src="https://main.qcloudimg.com/raw/a05b309924e59382dc928694d6397d20.jpg" width = "300"/>|
+| Merge and Forward                                            | Display of Merged Message                                    | Click Merged Message to Download Message List for Display    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "219"/> |
 
 ## Creating a Merged Message
 
@@ -32,21 +32,21 @@ tim.createMergerMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to                 | String |            -                    | `userID` or `groupID` of the message receiver                               |
-| conversationType | String |           -                    | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                                   |
-| payload            | Object |            -                    | Message content container  |
-| cloudCustomData | String |  ''                             | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | `userID` or `groupID` of the message receiver                |
+| conversationType | String | -                             | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                             |
+| payload          | Object | -                             | Message content container                                    |
+| cloudCustomData  | String | ''                            | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
 
 The `payload` is as described below:
 
-| Name    | Type     | Description          |
-| ------- | -------- | -------------------- |
-| messageList | Array | Merged message list |
-| title | String | Title of merged messages, for example, "Chat History of the Talent Center in the Greater Bay Area" |
-| abstractList | String | Digest list. You can set digest information in different formats for different message types, for example, in the `sender:text` format for a text message, in the `sender:[image]` format for an image message, or in the `sender:[file]` format for a file message. |
+| Name           | Type   | Description                                                  |
+| -------------- | ------ | ------------------------------------------------------------ |
+| messageList    | Array  | Merged message list                                          |
+| title          | String | Title of merged messages, for example, "Chat History of the Talent Center in the Greater Bay Area" |
+| abstractList   | String | Digest list. You can set digest information in different formats for different message types, for example, in the `sender:text` format for a text message, in the `sender:[image]` format for an image message, or in the `sender:[file]` format for a file message. |
 | compatibleText | String | Compatibility text. If the early SDK version does not support the merged message, the user will receive a text message with the content `${compatibleText}` by default. This field is required. |
 
 **Returned value**
@@ -102,9 +102,9 @@ tim.downloadMergerMessage(message);
 
 **Parameter**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- |  ------------------------------------------------------------ |
-| message          | Message | Message instance  |
+| Name    | Type    | Description      |
+| ------- | ------- | ---------------- |
+| message | Message | Message instance |
 
 
 **Returned value**
@@ -151,9 +151,9 @@ tim.createForwardMessage(message);
 
 **Parameter**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| message          | Message | Message instance |
+| Name    | Type    | Description      |
+| ------- | ------- | ---------------- |
+| message | Message | Message instance |
 
 **Returned value**
 

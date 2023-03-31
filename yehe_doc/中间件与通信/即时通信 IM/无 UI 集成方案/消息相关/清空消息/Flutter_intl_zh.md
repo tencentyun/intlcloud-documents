@@ -33,4 +33,3 @@ TencentImSDKPlugin.v2TIMManager.getMessageManager().clearC2CHistoryMessage(userI
 ```dart
  TencentImSDKPlugin.v2TIMManager.getMessageManager().clearGroupHistoryMessage(groupID: "");
 ```
-

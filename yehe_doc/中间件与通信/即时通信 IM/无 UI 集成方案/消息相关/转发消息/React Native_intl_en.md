@@ -8,8 +8,8 @@ You can implement the feature of merging and forwarding messages as provided by 
 
 The title and digest are needed to display the merged message:
 
-| Merge and Forward                                                                                       | Display of Merged Message                                                                               | Click Merged Message to Download Message List for Display                                              |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Merge and Forward                                            | Display of Merged Message                                    | Click Merged Message to Download Message List for Display    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | <img src="https://qcloudimg.tencent-cloud.cn/raw/cb970fdd471cdd668b5ce31d188970fd.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/2304c7ea1e29de702f99d96e52a9739c.png" width = "300" /> | <img src="https://qcloudimg.tencent-cloud.cn/raw/f2c81dc8df0064cf8202d06a79f7af16.png" width = "219"/> |
 
 ## Merging and Forwarding Messages
@@ -22,12 +22,12 @@ A merged message can be created by setting the message list along with the merge
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/dbc9a0f199effcf6d865b6497ec185f3.png" width = "450" />
 
-| Attribute      | Description                      | Remarks                                                                                                                                                             |
-| -------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| msgIDList      | List of IDs of original messages | List of IDs of original messages to be merged and forwarded                                                                                                         |
-| title          | Title                            | Title of the merged message, such as "Chat History of xixiyah and Hello"                                                                                            |
+| Attribute      | Description                      | Remarks                                                      |
+| -------------- | -------------------------------- | ------------------------------------------------------------ |
+| msgIDList      | List of IDs of original messages | List of IDs of original messages to be merged and forwarded  |
+| title          | Title                            | Title of the merged message, such as "Chat History of xixiyah and Hello" |
 | abstractList   | Digest list                      | Digest list of the merged message. The original message digests need to be displayed for the merged message, which will be unfolded after the user clicks the cell. |
-| compatibleText | Compatibility text message       | If the SDK on an early version does not support the merged message, the user will receive a text message with the content `compatibleText` by default.              |
+| compatibleText | Compatibility text message       | If the SDK on an early version does not support the merged message, the user will receive a text message with the content `compatibleText` by default. |
 
 Below is the sample code for creating and sending a merged message:
 
@@ -104,5 +104,3 @@ const createForwardMessageRes = await TencentImSDKPlugin.v2TIMManager.getMessage
     TencentImSDKPlugin.v2TIMManager.getMessageManager().sendMessage(id: createForwardMessageRes.data.id, receiver: "denny", groupID: "");
   }
 ```
-
-

@@ -2,9 +2,9 @@
 您只能搜索本地存储过的群成员，例如拉取过的群成员列表、拉取过的群成员资料等。
 
 > ? 
->- 本地群成员搜索功能仅 5.4.666 及以上版本支持，直播群（AVChatRoom）不在本地存储群成员，无法使用群成员搜索功能。
->- 本地群成员搜索为 IM 旗舰版功能，购买 [旗舰版](https://buy.cloud.tencent.com/avc?from=17473) 后可使用，详见 [价格说明](https://www.tencentcloud.com/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85
-)。
+> - 本地群成员搜索功能仅 5.4.666 及以上版本支持，直播群（AVChatRoom）不在本地存储群成员，无法使用群成员搜索功能。
+> - 本地群成员搜索为 IM 旗舰版功能，购买 [旗舰版](https://www.tencentcloud.com/document/product/1047/34577) 后可使用，详见 [价格说明](https://www.tencentcloud.com/document/product/1047/34349#.E5.9F.BA.E7.A1.80.E6.9C.8D.E5.8A.A1.E8.AF.A6.E6.83.85
+> )。
 
 ## 搜索本地群成员
 您可以调用接口 `searchGroupMembers` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a493fb73258019961f3ca8934ff625b0a) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Group_08.html#a35ceb734976c833047cceb8b31055b18) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMGroupManager.html#a705a17828623117e51da885da02d8b12)) 搜索本地群成员。
@@ -129,4 +129,3 @@ V2TIMManager::GetInstance()->GetGroupManager()->SearchGroupMembers(param, callba
 ```
 :::
 </dx-tabs>
-

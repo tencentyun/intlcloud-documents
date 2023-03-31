@@ -36,7 +36,3 @@ TIMResult res = TencentIMSDK.MsgSendMessage(conv_id, TIMConvType.kTIMConv_Group,
 ## 接收群定向消息
 定向群消息默认不计入群会话的未读计数。
 接收群定向消息跟接收普通消息是一样的操作步骤，参考[接收消息](https://www.tencentcloud.com/document/product/1047/48573)。
-
-
-
-

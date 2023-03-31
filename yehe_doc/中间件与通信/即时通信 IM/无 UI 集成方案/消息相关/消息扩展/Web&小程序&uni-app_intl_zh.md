@@ -1,4 +1,3 @@
-
 ## 功能描述
 消息扩展可以为消息增加 key/value 状态标识。基于消息扩展，我们可以实现投票、接龙、问卷调查等功能。
 - 在投票场景，我们可以先通过 [createCustomMessage](https://web.sdk.qcloud.com/im/doc/en/SDK.html#createCustomMessage) 接口创建一条用于投票的自定义消息，其中 `data` 存储投票的标题和选项，然后用消息扩展 key 存储投票用户 ID，用消息扩展 value 存储投票用户选项，有了每个用户的投票选项，我们就可以动态计算出投票选项的用户占比。
@@ -26,10 +25,10 @@ tim.setMessageExtensions(message, extensions);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| message            | Message  | 消息实例 |
-| extensions      | Array    | 消息扩展 key-value 列表，如果扩展 key 已经存在，则修改扩展的 value 信息，如果扩展 key 不存在，则新增扩展。 |
+| Name       | Type    | Description                                                  |
+| ---------- | ------- | ------------------------------------------------------------ |
+| message    | Message | 消息实例                                                     |
+| extensions | Array   | 消息扩展 key-value 列表，如果扩展 key 已经存在，则修改扩展的 value 信息，如果扩展 key 不存在，则新增扩展。 |
 
 > ? 
 > 1. 消息需满足三个条件：
@@ -84,9 +83,9 @@ tim.getMessageExtensions(message);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| message            | Message  | 消息实例 |
+| Name    | Type    | Description |
+| ------- | ------- | ----------- |
+| message | Message | 消息实例    |
 
 > ? 
 > 消息需满足三个条件：
@@ -137,10 +136,10 @@ tim.deleteMessageExtensions(message, keyList);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| message            | Message  | 消息实例 |
-| keyList            | Array\|undefined    | 消息扩展 key 列表。 |
+| Name    | Type             | Description         |
+| ------- | ---------------- | ------------------- |
+| message | Message          | 消息实例            |
+| keyList | Array\|undefined | 消息扩展 key 列表。 |
 
 > ? 
 > 1. 消息需满足三个条件：

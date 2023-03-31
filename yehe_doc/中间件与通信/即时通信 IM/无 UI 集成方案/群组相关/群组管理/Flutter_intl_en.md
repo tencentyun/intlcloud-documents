@@ -47,13 +47,13 @@ groupManager.createGroup(
 ## Joining a Group
 The method for joining a group may vary by group type as follows:
 
-| Type                           | Method for Joining a Group                                             |
-| ------------------------------ | ---------------------------------------------------------------------- |
-| Work group (Work)              | By invitation                                                          |
+| Type                           | Method for Joining a Group                                   |
+| ------------------------------ | ------------------------------------------------------------ |
+| Work group (Work)              | By invitation                                                |
 | Public group (Public)          | On request from the user and on approval from the group owner or admin |
-| Meeting group (Meeting)        | Free to join                                                           |
-| Community (Community)          | Free to join                                                           |
-| Audio-video group (AVChatRoom) | Free to join                                                           |
+| Meeting group (Meeting)        | Free to join                                                 |
+| Community (Community)          | Free to join                                                 |
+| Audio-video group (AVChatRoom) | Free to join                                                 |
 
 The following describes how to join the groups in an easy-to-hard sequence.
 
@@ -159,11 +159,11 @@ The group owner or admin can also call the `setGroupInfo` API ([Details](https:/
 
 `V2TIMGroupAddOpt` has the following options:
 
-| Group Join Option                          | Description                                                                           |
-| ------------------------------------------ | ------------------------------------------------------------------------------------- |
-| GroupAddOptTypeEnum.V2TIM_GROUP_ADD_FORBID | No users can join the group.                                                          |
+| Group Join Option                          | Description                                                  |
+| ------------------------------------------ | ------------------------------------------------------------ |
+| GroupAddOptTypeEnum.V2TIM_GROUP_ADD_FORBID | No users can join the group.                                 |
 | GroupAddOptTypeEnum.V2TIM_GROUP_ADD_AUTH   | Approval from the group owner or admin is required to join the group (default value). |
-| GroupAddOptTypeEnum.V2TIM_GROUP_ADD_ANY    | Any user can join the group without approval.                                         |
+| GroupAddOptTypeEnum.V2TIM_GROUP_ADD_ANY    | Any user can join the group without approval.                |
 
 
 ## Getting the Joined Groups
@@ -228,5 +228,3 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener(listener: V2TimGroupListener(on
 
 ## Receiving a Custom Group System Notification
 If you call the RESTful API on the server [to send a custom system messages to the group](https://intl.cloud.tencent.com/document/product/1047/34958), the SDK will call back `onReceiveRESTCustomData`.
-
-

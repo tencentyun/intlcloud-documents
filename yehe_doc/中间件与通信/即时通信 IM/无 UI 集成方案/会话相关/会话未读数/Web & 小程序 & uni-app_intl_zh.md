@@ -19,9 +19,9 @@ tim.setMessageRead(options);
 
 **参数**
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| conversationID     | String |                   | 会话 ID。会话 ID 组成方式：<br/><li>C2C${userID}（单聊）</li><li>GROUP{groupID}（群聊）</li><li>@TIM#SYSTEM（系统通知会话）</li><li>GROUP${topicID}（话题) v2.19.1 起支持</li> |
+| Name           | Type   | Default | Description                                                  |
+| -------------- | ------ | ------- | ------------------------------------------------------------ |
+| conversationID | String |         | 会话 ID。会话 ID 组成方式：<br/><li>C2C${userID}（单聊）</li><li>GROUP{groupID}（群聊）</li><li>@TIM#SYSTEM（系统通知会话）</li><li>GROUP${topicID}（话题) v2.19.1 起支持</li> |
 
 **返回值**
 
@@ -61,9 +61,9 @@ tim.setAllMessageRead(options);
 
 **参数**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| scope          | String \| undefined |  设置消息处理的范围。详细类型如下：<br/><li>TIM.TYPES.READ_ALL_C2C_MSG (设置所有 C2C 会话未读消息为已读)</li><li>TIM.TYPES.READ_ALL_GROUP_MSG (设置所有群会话未读消息为已读)</li><li>TIM.TYPES.READ_ALL_MSG (默认值，设置所有 C2C 和群会话未读消息为已读)</li> |
+| Name  | Type                | Description                                                  |
+| ----- | ------------------- | ------------------------------------------------------------ |
+| scope | String \| undefined | 设置消息处理的范围。详细类型如下：<br/><li>TIM.TYPES.READ_ALL_C2C_MSG (设置所有 C2C 会话未读消息为已读)</li><li>TIM.TYPES.READ_ALL_GROUP_MSG (设置所有群会话未读消息为已读)</li><li>TIM.TYPES.READ_ALL_MSG (默认值，设置所有 C2C 和群会话未读消息为已读)</li> |
 
 **返回值**
 

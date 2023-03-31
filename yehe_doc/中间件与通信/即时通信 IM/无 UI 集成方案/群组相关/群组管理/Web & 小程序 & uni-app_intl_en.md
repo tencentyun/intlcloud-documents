@@ -40,19 +40,19 @@ tim.createGroup(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| name | String | Group name, which can contain up to 30 bytes.  |
-| type | String | Group type. Valid values:<br/><li>TIM.TYPES.GRP_WORK (work group, which is the default value)</li><li>TIM.TYPES.GRP_PUBLIC (public group)</li><li>TIM.TYPES.GRP_MEETING (meeting group)</li><li>TIM.TYPES.GRP_AVCHATROOM (audio-video group)</li><li>TIM.TYPES.GRP_COMMUNITY (community, which is supported by v2.17.0 or later)</li> |
-| groupID | String \| undefined | Group ID. If it is not specified, a unique ID will be automatically created for the group. |
-| introduction | String \| undefined | Group introduction, which can contain up to 240 bytes. |
-| notification | String \| undefined | Group notice, which can contain up to 300 bytes. |
-| avatar | String \| undefined | Group profile photo URL, which can contain up to 100 bytes. |
-| maxMemberNum | Number \| undefined | Maximum number of group members. Default value: 200 for a work group, 2,000 for a public group, 10,000 for a meeting group, or unlimited for an audio-video group. |
-| joinOption | String | Method to join a group. Valid values:<br/><li>TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS (free to join)</li><li>TIM.TYPES.JOIN_OPTIONS_NEED_PERMISSION (approval required)</li><li>TIM.TYPES.JOIN_OPTIONS_DISABLE_APPLY (no group join allowed)</li>Note: It cannot be modified for `TIM.TYPES.GRP_WORK`, `TIM.TYPES.GRP_MEETING`, and `TIM.TYPES.GRP_AVCHATROOM` groups. Work groups cannot be joined on request, and meeting groups and audio-video groups can be joined freely. |
-| memberList | Array \| undefined | List of up to 500 existing group members. No group members can be added when an audio-video group is created. The array elements are as structured below:<br/><li>userID --- String --- `userID` of the group member, which is required</li><li>role --- String --- member role, which can only be `Admin`, indicating to add and set the group member as the admin</li><li>memberCustomField --- Array|undefined --- Custom group member field, which is unavailable by default and needs to be enabled. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).</li>
-| groupCustomField | Array \| undefined | Custom group field, which is unavailable by default. For more information on how to enable a custom group field, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
-| isSupportTopic | Boolean | It is required for creating a topic-enabled community. Valid values: `true`: create a topic-enabled community; `false`: create an ordinary community. It is supported by v2.19.1 or later. |
+| Name             | Type                | Description                                                  |
+| ---------------- | ------------------- | ------------------------------------------------------------ |
+| name             | String              | Group name, which can contain up to 30 bytes.                |
+| type             | String              | Group type. Valid values:<br/><li>TIM.TYPES.GRP_WORK (work group, which is the default value)</li><li>TIM.TYPES.GRP_PUBLIC (public group)</li><li>TIM.TYPES.GRP_MEETING (meeting group)</li><li>TIM.TYPES.GRP_AVCHATROOM (audio-video group)</li><li>TIM.TYPES.GRP_COMMUNITY (community, which is supported by v2.17.0 or later)</li> |
+| groupID          | String \| undefined | Group ID. If it is not specified, a unique ID will be automatically created for the group. |
+| introduction     | String \| undefined | Group introduction, which can contain up to 240 bytes.       |
+| notification     | String \| undefined | Group notice, which can contain up to 300 bytes.             |
+| avatar           | String \| undefined | Group profile photo URL, which can contain up to 100 bytes.  |
+| maxMemberNum     | Number \| undefined | Maximum number of group members. Default value: 200 for a work group, 2,000 for a public group, 10,000 for a meeting group, or unlimited for an audio-video group. |
+| joinOption       | String              | Method to join a group. Valid values:<br/><li>TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS (free to join)</li><li>TIM.TYPES.JOIN_OPTIONS_NEED_PERMISSION (approval required)</li><li>TIM.TYPES.JOIN_OPTIONS_DISABLE_APPLY (no group join allowed)</li>Note: It cannot be modified for `TIM.TYPES.GRP_WORK`, `TIM.TYPES.GRP_MEETING`, and `TIM.TYPES.GRP_AVCHATROOM` groups. Work groups cannot be joined on request, and meeting groups and audio-video groups can be joined freely. |
+| memberList       | Array \| undefined  | List of up to 500 existing group members. No group members can be added when an audio-video group is created. The array elements are as structured below:<br/><li>userID --- String --- `userID` of the group member, which is required</li><li>role --- String --- member role, which can only be `Admin`, indicating to add and set the group member as the admin</li><li>memberCustomField --- Array |
+| groupCustomField | Array \| undefined  | Custom group field, which is unavailable by default. For more information on how to enable a custom group field, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| isSupportTopic   | Boolean             | It is required for creating a topic-enabled community. Valid values: `true`: create a topic-enabled community; `false`: create an ordinary community. It is supported by v2.19.1 or later. |
 
 **Returned value**
 
@@ -111,13 +111,13 @@ promise.then(function(imResponse) { // Created successfully
 
 The method for joining a group may vary by group type as follows:
 
-| Type | Method for Joining a Group |
-| --- | --- |
-| Work group (Work)| By invitation |
-| Public group (Public)| On request from the user and on approval from the group owner or admin |
-| Meeting group (Meeting)| Free to join |
-| Community (Community)| Free to join |
-| Audio-video group (AVChatRoom)| Free to join |
+| Type                           | Method for Joining a Group                                   |
+| ------------------------------ | ------------------------------------------------------------ |
+| Work group (Work)              | By invitation                                                |
+| Public group (Public)          | On request from the user and on approval from the group owner or admin |
+| Meeting group (Meeting)        | Free to join                                                 |
+| Community (Community)          | Free to join                                                 |
+| Audio-video group (AVChatRoom) | Free to join                                                 |
 
 >!
 >- Work groups cannot be joined on request, but only through [addGroupMember](https://web.sdk.qcloud.com/im/doc/en/SDK.html#addGroupMember).
@@ -137,10 +137,10 @@ tim.joinGroup(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID | String | Group ID |
-| applyMessage | String \| undefined | Remarks |
+| Name         | Type                | Description |
+| ------------ | ------------------- | ----------- |
+| groupID      | String              | Group ID    |
+| applyMessage | String \| undefined | Remarks     |
 
 **Returned value**
 
@@ -188,9 +188,9 @@ tim.getGroupList(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-|  groupProfileFilter | Array \| undefined | Group profile filter. You can specify extra group profiles to be pulled in addition to those pulled by default. Valid values:<br/><li>TIM.TYPES.GRP_PROFILE_OWNER_ID (group owner ID)</li><li>TIM.TYPES.GRP_PROFILE_CREATE_TIME (group creation time)</li><li>TIM.TYPES.GRP_PROFILE_LAST_INFO_TIME (time the group profile was last changed)</li><li>TIM.TYPES.GRP_PROFILE_MEMBER_NUM (number of group members)</li><li>TIM.TYPES.GRP_PROFILE_MAX_MEMBER_NUM (maximum number of group members)</li><li>TIM.TYPES.GRP_PROFILE_JOIN_OPTION (group join option)></li><li>TIM.TYPES.GRP_PROFILE_INTRODUCTION (group introduction)</li><li>TIM.TYPES.GRP_PROFILE_NOTIFICATION (group notice)</li><li>TIM.TYPES.GRP_PROFILE_MUTE_ALL_MBRS (muting all). It is supported by v2.6.2 or later.</li> |
+| Name               | Type               | Description                                                  |
+| ------------------ | ------------------ | ------------------------------------------------------------ |
+| groupProfileFilter | Array \| undefined | Group profile filter. You can specify extra group profiles to be pulled in addition to those pulled by default. Valid values:<br/><li>TIM.TYPES.GRP_PROFILE_OWNER_ID (group owner ID)</li><li>TIM.TYPES.GRP_PROFILE_CREATE_TIME (group creation time)</li><li>TIM.TYPES.GRP_PROFILE_LAST_INFO_TIME (time the group profile was last changed)</li><li>TIM.TYPES.GRP_PROFILE_MEMBER_NUM (number of group members)</li><li>TIM.TYPES.GRP_PROFILE_MAX_MEMBER_NUM (maximum number of group members)</li><li>TIM.TYPES.GRP_PROFILE_JOIN_OPTION (group join option)></li><li>TIM.TYPES.GRP_PROFILE_INTRODUCTION (group introduction)</li><li>TIM.TYPES.GRP_PROFILE_NOTIFICATION (group notice)</li><li>TIM.TYPES.GRP_PROFILE_MUTE_ALL_MBRS (muting all). It is supported by v2.6.2 or later.</li> |
 
 **Returned value**
 
@@ -244,9 +244,9 @@ tim.quitGroup(groupID);
 
 **Parameter**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-|  groupID | String | Group ID |
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| groupID | String | Group ID    |
 
 **Returned value**
 
@@ -283,9 +283,9 @@ tim.dismissGroup(groupID);
 
 **Parameter**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-|  groupID | String | Group ID |
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| groupID | String | Group ID    |
 
 **Returned value**
 
@@ -324,10 +324,10 @@ tim.changeGroupOwner(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-|  groupID | String | ID of the group to be transferred |
-| newOwnerID | String | ID of the new group owner |
+| Name       | Type   | Description                       |
+| ---------- | ------ | --------------------------------- |
+| groupID    | String | ID of the group to be transferred |
+| newOwnerID | String | ID of the new group owner         |
 
 **Returned value**
 
@@ -369,11 +369,11 @@ tim.handleGroupApplication(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| handleAction | String | Processing result. Valid values: `Agree`, `Reject`. |
-| handleMessage | String \| undefined | Remarks |
-| message | Message | Message instance of the group system notification |
+| Name          | Type                | Description                                         |
+| ------------- | ------------------- | --------------------------------------------------- |
+| handleAction  | String              | Processing result. Valid values: `Agree`, `Reject`. |
+| handleMessage | String \| undefined | Remarks                                             |
+| message       | Message             | Message instance of the group system notification   |
 
 **Returned value**
 

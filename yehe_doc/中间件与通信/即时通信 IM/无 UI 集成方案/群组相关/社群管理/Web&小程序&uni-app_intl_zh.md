@@ -85,15 +85,15 @@ tim.createTopicInCommunity(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		话题所属社群 ID |
-| topicName | String | 话题名称 |
-| topicID | String | 自定义话题 ID 时，格式必须是社群 ID 拼接上自定义话题 ID。如：@TGS#_xxx@TOPIC#_xxx |
-| avatar | String | 话题头像 |
-| notification | String | 话题公告 |
-| introduction | String | 话题简介 |
-| customData | String | 话题自定义信息 |
+| Name         | Type   | Description                                                  |
+| ------------ | ------ | ------------------------------------------------------------ |
+| groupID      | String | 话题所属社群 ID                                              |
+| topicName    | String | 话题名称                                                     |
+| topicID      | String | 自定义话题 ID 时，格式必须是社群 ID 拼接上自定义话题 ID。如：@TGS#_xxx@TOPIC#_xxx |
+| avatar       | String | 话题头像                                                     |
+| notification | String | 话题公告                                                     |
+| introduction | String | 话题简介                                                     |
+| customData   | String | 话题自定义信息                                               |
 
 **返回值**
 
@@ -140,9 +140,9 @@ tim.deleteTopicFromCommunity(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		话题所属社群 ID |
+| Name        | Type               | Description                                     |
+| ----------- | ------------------ | ----------------------------------------------- |
+| groupID     | String             | 话题所属社群 ID                                 |
 | topicIDList | Array \| undefined | 话题 ID 列表，不传 topicIDList 表示删除全部话题 |
 
 **返回值**
@@ -219,15 +219,15 @@ tim.updateTopicProfile(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		话题所属社群 ID |
-| topicID | String | 必填，话题 ID |
-| topicName | String \| undefined | 话题名称 |
-| avatar | String \| undefined | 话题头像 |
-| notification | String \| undefined | 话题公告 |
-| introduction | String \| undefined | 话题简介 |
-| customData | String \| undefined | 话题自定义信息 |
+| Name           | Type                 | Description                                        |
+| -------------- | -------------------- | -------------------------------------------------- |
+| groupID        | String               | 话题所属社群 ID                                    |
+| topicID        | String               | 必填，话题 ID                                      |
+| topicName      | String \| undefined  | 话题名称                                           |
+| avatar         | String \| undefined  | 话题头像                                           |
+| notification   | String \| undefined  | 话题公告                                           |
+| introduction   | String \| undefined  | 话题简介                                           |
+| customData     | String \| undefined  | 话题自定义信息                                     |
 | muteAllMembers | Boolean \| undefined | 设置全体禁言，true - 全体禁言 false - 取消全体禁言 |
 
 **返回值**
@@ -278,9 +278,9 @@ tim.getTopicList(options);
 
 参数 options 为 Object 类型，包含的属性值如下：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		话题所属社群 ID |
+| Name        | Type               | Description                                     |
+| ----------- | ------------------ | ----------------------------------------------- |
+| groupID     | String             | 话题所属社群 ID                                 |
 | topicIDList | Array \| undefined | 话题 ID 列表，不传 topicIDList 表示获取全部话题 |
 
 **返回值**
@@ -339,18 +339,17 @@ promise.then(function(imResponse) { // 获取成功
 </dx-codeblock>
 
 ### 实现话题分组
-<img style="width:50%;" src="https://qcloudimg.tencent-cloud.cn/raw/728b38c71f25a70bcb717c3fefe29aac.png" />
 
 社群-**分组**-话题三级结构中的分组实现原理为：
-社群资料的 [groupCustomField](https://web.sdk.qcloud.com/im/doc/en/Group.html) 中定义一个字段保存该社群的话题分组列表；每个话题所属的分组，存储于话题资料的 [customData](https://web.sdk.qcloud.com/im/doc/en/Topic.html) 字段中。
+社群资料的 [groupCustomField](https://web.sdk.qcloud.com/im/doc/en/Group.html) 中定义一个字段保存该社群的话题分组列表；每个话题所属的分组，存储于话题资料的 customData 字段中。
 
 - 加载社群时，根据社群（群组）资料中的 `groupCustomField` 的话题分组列表字段，展示分组列表。
 - 加载社群下的 Topic 列表时，通过话题资料中的 `customData` 获取分组名分配到所属分组中。
 
 >? 
 >
-> 社群（群组）中 `groupCustomField` 的话题分组列表字段名，key 值，可由您自行定义。
-> 以下示例代码中，将其命名为 `topic_category` 。
+>社群（群组）中 `groupCustomField` 的话题分组列表字段名，key 值，可由您自行定义。
+>以下示例代码中，将其命名为 `topic_category` 。
 
 #### 配置社群的分组列表
 此处直接修改群组资料的 `groupCustomField` 即可。key 值是您定义的话题分组列表字段名，value 是话题分组列表。
@@ -461,4 +460,3 @@ tim.on(TIM.EVENT.TOPIC_UPDATED, onTopicUpdated);
 
 :::
 </dx-codeblock>
-

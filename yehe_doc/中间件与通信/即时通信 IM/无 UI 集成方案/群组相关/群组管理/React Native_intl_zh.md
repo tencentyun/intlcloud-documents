@@ -239,5 +239,3 @@ TencentImSDKPlugin.v2TIMManager.addGroupListener({
 ## 接收群组自定义系统通知
 
 如果您在自己的服务器端调用 REST API [向群组中发送自定义系统通知](https://intl.cloud.tencent.com/document/product/1047/34958)，那么 SDK 会回调 `onReceiveRESTCustomData`。
-
-

@@ -2,10 +2,10 @@
 You can set the message receiving option for a **one-to-one or group chat** to implement the notification muting feature.
 The IM SDK supports the following three message receiving options as defined in `TIMReceiveMessageOpt`:
 
-| Message Receiving Option                        | Feature Description                                                                                                              |
-| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Receive     | Messages will be received when the user is online, and offline push notifications will be received when the user is offline.     |
-| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Receive | Messages will not be received no matter whether the user is online or offline.                                                   |
+| Message Receiving Option                        | Feature Description                                          |
+| ----------------------------------------------- | ------------------------------------------------------------ |
+| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Receive     | Messages will be received when the user is online, and offline push notifications will be received when the user is offline. |
+| TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Receive | Messages will not be received no matter whether the user is online or offline. |
 | TIMReceiveMessageOpt.kTIMRecvMsgOpt_Not_Notify  | Messages will be received when the user is online, and offline push notifications will not be received when the user is offline. |
 
 Different `TIMReceiveMessageOpt` options can be used to implement group message notification muting:
@@ -62,7 +62,3 @@ TIMResult res = TencentIMSDK.MsgSetGroupReceiveMessageOpt(group_id, TIMReceiveMe
  // Process the async logic
 });
 ```
-
-
-
-

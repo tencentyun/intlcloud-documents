@@ -76,4 +76,3 @@ V2TimValueCallback<List<V2TimFriendCheckResult>> checkres = await friendshipMana
 ### Setting to send messages to friends only
 By default, Chat SDK does not check the relationship when sending one-to-one messages. This default setting is generally applied in customer service scenarios, where having to friend a customer service agent before chatting is inefficient.
 If you want to implement the interaction mode of "friending before chatting", go to [Chat console](https://console.cloud.tencent.com/im) -> **Feature Configuration** -> **Login and Message** -> **Relationship Check** and enable "Check Relationship for One-to-One Messages". With this feature enabled, users can only send messages to friends, and will receive the 20009 error code from SDK when sending a message to a non-friend user.
-

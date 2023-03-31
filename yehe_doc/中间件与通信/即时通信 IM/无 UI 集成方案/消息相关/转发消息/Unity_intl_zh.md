@@ -121,6 +121,3 @@ if(elem.TIMElemType == TIMElemType.kTIMElem_Merge){
 
 ## 逐条转发消息
 如果您需要转发单条消息，可以先创建一条和原消息内容完全一样的转发消息，再调用 `MsgSendMessage` ([点击查看详情](https://comm.qq.com/im/doc/unity/zh/api/MessageApi/MsgSendMessage.html)) 接口把转发消息发送出去。
-
-
-

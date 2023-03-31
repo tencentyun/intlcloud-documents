@@ -8,10 +8,10 @@ Group member management includes pulling the member list, muting group members, 
 >- Starting from v2.6.2, this API supports pulling the muting stop timestamp (`muteUntil`). The receiver can determine whether a group member is muted and the remaining muting period based on the value. On versions earlier than v2.6.2, the profile in the group member list obtained through this API is incomplete, and it contains only the information which is sufficient to render the group member list, such as profile photo and nickname. To query the muting stop timestamp (`muteUntil`) and other details, use [getGroupMemberProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupMemberProfile).
 >- This API is used to pull a paginated list of group members and not the complete list. To get the complete list of group members (`memberCount`), use [getGroupProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#getGroupProfile).
 >- Starting from v2.22.0, the following special restrictions are added for audio-video groups (AVChatRoom):
->   - With the Ultimate edition, you can use this API to pull up to 1,000 latest group members, with new members ranked first. To use this feature, you need to purchase the Ultimate edition and enable the feature in the [console](https://console.cloud.tencent.com/im).
->   - If this API is used on the Ultimate edition, the SDK will ignore the `count` parameter and return up to 500 group members per query by default.
->   - On the Ultimate edition, this API can be called up to one time per three seconds. To query the group member list periodically, you are advised to call the API once every ten seconds.
->   - This API supports only the following group member profile fields: `userID`, `nick`, `avatar`, and `joinTime`. If you need to set `nick` and `avatar`, call [updateMyProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateMyProfile).
+>  - With the Ultimate edition, you can use this API to pull up to 1,000 latest group members, with new members ranked first. To use this feature, you need to purchase the Ultimate edition and enable the feature in the [console](https://console.cloud.tencent.com/im).
+>  - If this API is used on the Ultimate edition, the SDK will ignore the `count` parameter and return up to 500 group members per query by default.
+>  - On the Ultimate edition, this API can be called up to one time per three seconds. To query the group member list periodically, you are advised to call the API once every ten seconds.
+>  - This API supports only the following group member profile fields: `userID`, `nick`, `avatar`, and `joinTime`. If you need to set `nick` and `avatar`, call [updateMyProfile](https://web.sdk.qcloud.com/im/doc/en/SDK.html#updateMyProfile).
 
 To enable this feature for the Ultimate edition, log in to the [Chat console](https://console.cloud.tencent.com/im) and modify the configuration as follows:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/513b23a6598a74a0b0a6be5b6b59536f.png" alt="" style="zoom:30%;" />
@@ -30,11 +30,11 @@ tim.getGroupMemberList(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID | String | Group ID |
-| count | Number | Number of group members to be pulled. Default value: `15`. Maximum value: `100`. Too large a response packet will cause a request failure. If more than 100 group members are passed in, only the first 100 group members are pulled. |
-| offset | Number | Offset value. By default, the pull will start from `0`. |
+| Name    | Type   | Description                                                  |
+| ------- | ------ | ------------------------------------------------------------ |
+| groupID | String | Group ID                                                     |
+| count   | Number | Number of group members to be pulled. Default value: `15`. Maximum value: `100`. Too large a response packet will cause a request failure. If more than 100 group members are passed in, only the first 100 group members are pulled. |
+| offset  | Number | Offset value. By default, the pull will start from `0`.      |
 
 **Return values**
 
@@ -112,10 +112,10 @@ tim.setGroupMemberMuteTime(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		Group ID or topic ID |
-| userID | String | The user ID. |
+| Name     | Type   | Description                                                  |
+| -------- | ------ | ------------------------------------------------------------ |
+| groupID  | String | Group ID or topic ID                                         |
+| userID   | String | The user ID.                                                 |
 | muteTime | Number | Muting duration, in seconds. For example, if the muting duration is set to 1000, the user is muted for 1,000 seconds immediately. If the muting duration is set to 0, the user is unmuted. |
 
 **Return values**
@@ -184,9 +184,9 @@ promise.then(function(imResponse) {
 
 ## Removing Group Members
 >! 
-> - Starting from v2.22.0, the Ultimate edition supports removing members from an audio-video group (AVChatRoom).
-> - The removal duration field (`duration`, in seconds) is supported only by audio-video groups (AVChatRoom).
-> - After a member is removed from an audio-video group, the app admin can use the [RESTful API](https://intl.cloud.tencent.com/document/product/1047/50297) to unban the member so that the member can join the group again.
+>- Starting from v2.22.0, the Ultimate edition supports removing members from an audio-video group (AVChatRoom).
+>- The removal duration field (`duration`, in seconds) is supported only by audio-video groups (AVChatRoom).
+>- After a member is removed from an audio-video group, the app admin can use the [RESTful API](https://intl.cloud.tencent.com/document/product/1047/50297) to unban the member so that the member can join the group again.
 
 **API**
 
@@ -202,12 +202,12 @@ tim.deleteGroupMember(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		Group ID or topic ID |
-| userIDList | Array | List of IDs of the group members to be removed |
-| reason | String \| undefined | Reason for removing a member |
-| duration | Number | Removal duration, which must be greater than 0 (This field is supported only by audio-video groups.) |
+| Name       | Type                | Description                                                  |
+| ---------- | ------------------- | ------------------------------------------------------------ |
+| groupID    | String              | Group ID or topic ID                                         |
+| userIDList | Array               | List of IDs of the group members to be removed               |
+| reason     | String \| undefined | Reason for removing a member                                 |
+| duration   | Number              | Removal duration, which must be greater than 0 (This field is supported only by audio-video groups.) |
 
 **Return values**
 
@@ -259,11 +259,11 @@ tim.setGroupMemberRole(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID     | String | 		Group ID or topic ID |
-| userID | String | The user ID. |
-| role | String | Valid values: TIM.TYPES.GRP_MBR_ROLE_ADMIN (group admin), TIM.TYPES.GRP_MBR_ROLE_MEMBER (ordinary group member), TIM.TYPES.GRP_MBR_ROLE_CUSTOM (custom group member role, which is supported only by the community) |
+| Name    | Type   | Description                                                  |
+| ------- | ------ | ------------------------------------------------------------ |
+| groupID | String | Group ID or topic ID                                         |
+| userID  | String | The user ID.                                                 |
+| role    | String | Valid values: TIM.TYPES.GRP_MBR_ROLE_ADMIN (group admin), TIM.TYPES.GRP_MBR_ROLE_MEMBER (ordinary group member), TIM.TYPES.GRP_MBR_ROLE_CUSTOM (custom group member role, which is supported only by the community) |
 
 **Return values**
 
@@ -292,8 +292,8 @@ promise.then(function(imResponse) {
 ## Getting the Number of Online Group Members
 
 >! 
-> - Currently, this API is supported only by audio-video groups (AVChatRoom).
-> - If this API is called to get the number of online members in a group other than an audio-video group (AVChatRoom), `memberCount` returned by the SDK is `0`. We recommend you call this API only once every 5-10 seconds.
+>- Currently, this API is supported only by audio-video groups (AVChatRoom).
+>- If this API is called to get the number of online members in a group other than an audio-video group (AVChatRoom), `memberCount` returned by the SDK is `0`. We recommend you call this API only once every 5-10 seconds.
 
 **API**
 
@@ -307,9 +307,9 @@ tim.getGroupOnlineMemberCount(groupID);
 
 **Parameters**
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| groupID | String | Group ID |
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| groupID | String | Group ID    |
 
 **Return values**
 

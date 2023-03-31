@@ -50,4 +50,3 @@ onRecvMessageModified: (V2TimMessage message) {
       // msg 为被修改之后的消息对象
 },
 ```
-

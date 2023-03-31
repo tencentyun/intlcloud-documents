@@ -22,6 +22,3 @@ Sample code:
 ```dart
 V2TimValueCallback<V2TimConversationResult> convList = await conversationManager.getConversationList(nextSeq: '', count: 10);
 ```
-
-
-

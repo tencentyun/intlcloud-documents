@@ -18,11 +18,11 @@ tim.on(eventName, handler, context);
 
 **参数**
 
-| 名称    | 类型   | 描述                                                         |
-| ------- | ------ | ------------------------------------------------------------ |
-| eventName  | String | 事件名称。所有的事件名称都存放在 TIM.EVENT 变量中，如需要查看可以使用 console.log(TIM.EVENT) 把所有的事件显示出来。[事件列表](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html)。|
-| handler | Function | 处理事件的方法，当事件触发时，会调用此 handler 进行处理。 |
-| context | * \| undefined | 期望 handler 执行时的上下文 |
+| 名称      | 类型           | 描述                                                         |
+| --------- | -------------- | ------------------------------------------------------------ |
+| eventName | String         | 事件名称。所有的事件名称都存放在 TIM.EVENT 变量中，如需要查看可以使用 console.log(TIM.EVENT) 把所有的事件显示出来。[事件列表](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html)。 |
+| handler   | Function       | 处理事件的方法，当事件触发时，会调用此 handler 进行处理。    |
+| context   | * \| undefined | 期望 handler 执行时的上下文                                  |
 
 **返回值**
 
@@ -79,12 +79,12 @@ tim.off(eventName, handler, context, once);
 
 **参数**
 
-| 名称    | 类型   | 描述                                                         |
-| ------- | ------ | ------------------------------------------------------------ |
-| eventName  | String | 事件名称。所有的事件名称都存放在 TIM.EVENT 变量中，如需要查看可以使用 console.log(TIM.EVENT) 把所有的事件显示出来。[事件列表](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html)。|
-| handler | Function | 处理事件的方法，当事件触发时，会调用此 handler 进行处理。 |
-| context | * \| undefined | 期望 handler 执行时的上下文 |
-| once | Boolean \| undefined | 是否只解绑一次 |
+| 名称      | 类型                 | 描述                                                         |
+| --------- | -------------------- | ------------------------------------------------------------ |
+| eventName | String               | 事件名称。所有的事件名称都存放在 TIM.EVENT 变量中，如需要查看可以使用 console.log(TIM.EVENT) 把所有的事件显示出来。[事件列表](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html)。 |
+| handler   | Function             | 处理事件的方法，当事件触发时，会调用此 handler 进行处理。    |
+| context   | * \| undefined       | 期望 handler 执行时的上下文                                  |
+| once      | Boolean \| undefined | 是否只解绑一次                                               |
 
 **返回值**
 

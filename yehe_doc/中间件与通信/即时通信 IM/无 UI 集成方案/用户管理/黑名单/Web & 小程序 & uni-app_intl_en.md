@@ -25,8 +25,8 @@ tim.addToBlacklist(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
+| Name       | Type  | Description                                                  |
+| ---------- | ----- | ------------------------------------------------------------ |
 | userIDList | Array | List of `userID` values of the users to be added to the blocklist. The number of `userID` values cannot exceed 1,000 per request. |
 
 **Returned value**
@@ -66,8 +66,8 @@ tim.removeFromBlacklist(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
+| Name       | Type  | Description                                                  |
+| ---------- | ----- | ------------------------------------------------------------ |
 | userIDList | Array | List of `userID` values of the users to be removed from the blocklist. The number of `userID` values cannot exceed 1,000 per request. |
 
 **Returned value**

@@ -973,5 +973,3 @@ customElem.data = [@"自定义消息" dataUsingEncoding:NSUTF8StringEncoding];
 ```
 :::
 </dx-tabs>
-
-

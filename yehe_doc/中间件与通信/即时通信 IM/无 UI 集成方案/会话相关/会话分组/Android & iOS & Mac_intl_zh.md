@@ -10,10 +10,10 @@
 您可以调用 `createConversationGroup` ([Android](https://im.sdk.qcloud.com/doc/en/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a280dff193ef770efd5d878ca3e3821d5) / [iOS & Mac](https://im.sdk.qcloud.com/doc/en/categoryV2TIMManager_07Conversation_08.html#a2f5f4587c881aa26fbdce3b4d469aa0a) / [Windows](https://im.sdk.qcloud.com/doc/en/classV2TIMConversationManager.html#ab2d52eebca186348cdc6d655e39303b2)) 接口新建会话分组。
 >? 会话分组最大支持 20 个，超过后创建新的分组会报 `51010` 错误，不再使用的分组请及时删除。
 
-| 属性 |  含义 | 说明 |
-| --- |  --- | --- |
-| groupName | 会话分组名 | 长度要大于 0，最大支持 32 bytes，超过后会报 `51011` 错误|
-| conversationIDList | 会话 ID 列表 | 不能为空|
+| 属性               | 含义         | 说明                                                     |
+| ------------------ | ------------ | -------------------------------------------------------- |
+| groupName          | 会话分组名   | 长度要大于 0，最大支持 32 bytes，超过后会报 `51011` 错误 |
+| conversationIDList | 会话 ID 列表 | 不能为空                                                 |
 
 示例代码如下：
 <dx-tabs>
@@ -689,4 +689,3 @@ V2TIMManager::GetInstance()->GetConversationManager()->AddConversationListener(&
 ```
 :::
 </dx-tabs>
-

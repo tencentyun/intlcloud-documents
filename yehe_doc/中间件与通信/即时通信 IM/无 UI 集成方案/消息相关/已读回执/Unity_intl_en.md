@@ -5,7 +5,7 @@ After this feature is enabled, the sender can set whether a message requires a r
 Read receipts are supported for both one-to-one and group messages in the same way.
 
 > ?
-- To use this feature, you need to purchase the Ultimate edition.
+> - To use this feature, you need to purchase the Ultimate edition.
 
 
 ## Message Read Receipt
@@ -87,4 +87,3 @@ TIMResult res = TencentIMSDK.MsgGetMessageReadReceipts(message, TIMGroupMessageR
   // Process the callback logic
 });
 ```
-

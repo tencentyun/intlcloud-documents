@@ -17,5 +17,3 @@
 ```javascript
 conversationManager.setConversationDraft("conversationID", "草稿");
 ```
-
-

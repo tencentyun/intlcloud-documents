@@ -1,9 +1,6 @@
 ## Feature Description
 
 After a user logs in to the application, the list of recent conversations can be displayed as in WeChat or QQ to make it easy to locate the target conversation.
-The conversation list is as follows:
-<img src="https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/res/RPReplay_Final0511.gif" alt="" style="zoom:40%;" />
-
 The conversation list features include getting the conversation list and processing the conversation list update.
 This document describes how to implement such features.
 
@@ -95,14 +92,14 @@ You can listen for the event in `V2TIMConversationListener` ([Details](https://c
 
 Currently, the IM SDK supports the following conversation change events:
 
-| Event                            | Description                                                            | Suggestion                                                                                                                                                                        |
-| -------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| onSyncServerStart                | Server conversation sync started.                                      | The SDK will automatically sync server conversations after a successful login or network reconnection. You can listen for such an event and display the event progress on the UI. |
-| onSyncServerFinish               | Server conversation sync was completed.                                | If there is a conversation change, the change will be notified through the `onNewConversation`/`onConversationChanged` callback.                                                  |
-| onSyncServerFailed               | Server conversation sync failed.                                       | You can listen for such an event and display the event exception on the UI.                                                                                                       |
-| onNewConversation                | A new conversation was added.                                          | When the user receives a one-to-one message from a new colleague or is invited to a new group, you can re-sort the conversations.                                                 |
-| onConversationChanged            | There is a conversation update                                         | When the unread count changes or the last message is updated, you can re-sort the conversations.                                                                                  |
-| onTotalUnreadMessageCountChanged | Notification of a change in the total unread count of the conversation | For more information, see [unreadCount](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#unreadcount).                                                   |
+| Event                            | Description                                                  | Suggestion                                                   |
+| -------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| onSyncServerStart                | Server conversation sync started.                            | The SDK will automatically sync server conversations after a successful login or network reconnection. You can listen for such an event and display the event progress on the UI. |
+| onSyncServerFinish               | Server conversation sync was completed.                      | If there is a conversation change, the change will be notified through the `onNewConversation`/`onConversationChanged` callback. |
+| onSyncServerFailed               | Server conversation sync failed.                             | You can listen for such an event and display the event exception on the UI. |
+| onNewConversation                | A new conversation was added.                                | When the user receives a one-to-one message from a new colleague or is invited to a new group, you can re-sort the conversations. |
+| onConversationChanged            | There is a conversation update                               | When the unread count changes or the last message is updated, you can re-sort the conversations. |
+| onTotalUnreadMessageCountChanged | Notification of a change in the total unread count of the conversation | For more information, see [unreadCount](https://comm.qq.com/im/doc/RN/en/Interface/Message/V2TimConversation.html#unreadcount). |
 
 Below is the sample code:
 
@@ -136,5 +133,3 @@ conversationManager.removeConversationListener(conversationListener);
 On the conversation list UI, it is usually necessary to display the preview and send time of the latest message in each conversation. In this case, you can use `lastMessage` of `V2TIMConversation` as the data source for implementation. However, in some cases, if you don't want some messages (such as system tips) to be displayed as the latest message in a conversation, you can set `isExcludedFromLastMessage` to `false`/`no` when calling `sendMessage`.
 
 For directions on how to send a message, see [sendMessage](https://comm.qq.com/im/doc/RN/en/Api/V2TIMMessageManager/sendMessage.html).
-
-

@@ -17,5 +17,3 @@ Below is the sample code:
 ```javascript
 conversationManager.setConversationDraft("conversationID", "Draft");
 ```
-
-

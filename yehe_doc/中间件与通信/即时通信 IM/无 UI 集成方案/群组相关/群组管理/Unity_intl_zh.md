@@ -190,10 +190,3 @@ TIMResult res = TencentIMSDK.GroupDelete(group_id, (int code, string desc, strin
  // 处理异步逻辑
 });
 ```
-
-
-
-
-
-
-

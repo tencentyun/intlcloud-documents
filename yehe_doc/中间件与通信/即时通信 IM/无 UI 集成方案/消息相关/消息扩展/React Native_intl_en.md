@@ -1,4 +1,3 @@
-
 ## Overview
 Message extension allows you to configure keys and values for messages to implement polling, group notes, survey and other types of messages.
 - For polling, create a custom message using the `createCustomMessage` API ([details](https://comm.qq.com/im/doc/RN/zh/Api/V2TIMMessageManager/createCustomMessage.html)), where `data` stores the polling title and options. And store the user ID of the voter and selected option(s) in the `key` and `value` of the message extension, respectively. With the selected options of users, we can calculate the polling percentage in real time.
@@ -6,7 +5,7 @@ Message extension allows you to configure keys and values for messages to implem
 - For survey, create a custom message using the `createCustomMessage` API, where `data` stores the title and options of the survey, and then store the user ID and the corresponding info in the `key` and `value` of the message extension, respectively.
 
 > ?
-- To use this feature, you need to purchase the [Ultimate edition](https://buy.cloud.tencent.com/avc?from=17220).
+- To use this feature, you need to purchase the Ultimate edition.
 - You need to enable this feature via [Chat console](https://console.cloud.tencent.com/im) > **Feature Configuration** > **Login and Message** > **Set message extension**.
 - This feature is not available for communities and audio/video groups.
 

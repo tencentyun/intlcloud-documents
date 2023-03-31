@@ -7,12 +7,12 @@ Call the `translateText` API ([Android](https://im.sdk.qcloud.com/doc/en/classco
 
 API parameters are described as follows:
 
-| Input Parameter | Definition | Description |
-| --- | --- | --- |
-| sourceTextList| List of text messages to be translated | 1. Multiple text messages can be passed in at a time.<br> 2. UTF-8 encoding is required; otherwise, translation will failed.<br>3. For non-pure texts such as those with HTML tags, the translation may fail.<br>4. The total texts to be translated per request can contain up to 2,000 characters (each Chinese character, letter, punctuation mark, or space is counted as a character). |
-| sourceLanguage | Source language | Pass in a specific language or `auto` (automatically identify the source language). If no value is passed in, the default value `auto` will be used. |
-| targetLanguage | Target language | Multiple target languages are supported. For more information, see [Supported Text Translation Languages](#languageSupport). |
-| callback | Translation result callback | In the callback, `key` indicates the text to be translated, and `value` indicates the translated text. |
+| Input Parameter | Definition                             | Description                                                  |
+| --------------- | -------------------------------------- | ------------------------------------------------------------ |
+| sourceTextList  | List of text messages to be translated | 1. Multiple text messages can be passed in at a time.<br> 2. UTF-8 encoding is required; otherwise, translation will failed.<br>3. For non-pure texts such as those with HTML tags, the translation may fail.<br>4. The total texts to be translated per request can contain up to 2,000 characters (each Chinese character, letter, punctuation mark, or space is counted as a character). |
+| sourceLanguage  | Source language                        | Pass in a specific language or `auto` (automatically identify the source language). If no value is passed in, the default value `auto` will be used. |
+| targetLanguage  | Target language                        | Multiple target languages are supported. For more information, see [Supported Text Translation Languages](#languageSupport). |
+| callback        | Translation result callback            | In the callback, `key` indicates the text to be translated, and `value` indicates the translated text. |
 
 Sample code:
 
@@ -20,14 +20,14 @@ Sample code:
 ::: Android
 ```java
 List<String> textList = new ArrayList<>();
-textList.add("早上好");
-textList.add("中午好");
-textList.add("晚上好");
+textList.add("");
+textList.add("");
+textList.add("");
 String targetLanguage = "en";
 V2TIMManager.getMessageManager().translateText(textList, null, targetLanguage, new V2TIMValueCallback<HashMap<String, String>>() {
     @Override
     public void onSuccess(HashMap<String, String> translateHashMap) {
-        // Texts translated successfully. `translateHashMap`: {"早上好": "Good morning", "中午好": "Good afternoon", "晚上好": "Good evening"}
+        // Texts translated successfully. `translateHashMap`: {"": "Good morning", "": "Good afternoon", "": "Good evening"}
     }
 
     @Override
@@ -39,14 +39,14 @@ V2TIMManager.getMessageManager().translateText(textList, null, targetLanguage, n
 :::
 ::: iOS and macOS
 ```objectivec
-NSArray *sourceText = @[@"早上好", @"中午好", @"晚上好"];
+NSArray *sourceText = @[@"", @"", @""];
 NSString *targetLanguage = @"en";
 [[V2TIMManager sharedInstance] translateText:sourceText
                               sourceLanguage:nil
                               targetLanguage:targetLanguage
                                   completion:^(int code, NSString *desc, NSDictionary<NSString *,NSString *> *result) {
     if (code == 0) {
-        // Texts translated successfully. `result`: @{@"早上好": @"Good morning", @"中午好": @"Good afternoon", @"晚上好": @"Good evening"}
+        // Texts translated successfully. `result`: @{@"": @"Good morning", @"": @"Good afternoon", @"": @"Good evening"}
     } else {
         // Text translation failed
     }
@@ -86,15 +86,15 @@ private:
 };
 
 V2TIMStringVector textList;
-textList.PushBack(u8"早上好");
-textList.PushBack(u8"中午好");
-textList.PushBack(u8"晚上好");
+textList.PushBack(u8"");
+textList.PushBack(u8"");
+textList.PushBack(u8"");
 V2TIMString targetLanguage = u8"en";
 
 auto callback = new ValueCallback<V2TIMStringToV2TIMStringMap>{};
 callback->SetCallback(
     [=](const V2TIMStringToV2TIMStringMap& result) {
-        // Texts translated successfully. `result`: {{"早上好", "Good morning"}, {"中午好", "Good afternoon"}, {"晚上好", "Good evening"}}
+        // Texts translated successfully. `result`: {{"", "Good morning"}, {"", "Good afternoon"}, {"", "Good evening"}}
         delete callback;
     },
     [=](int error_code, const V2TIMString& error_message) {
@@ -109,23 +109,23 @@ V2TIMManager::GetInstance()->GetMessageManager()->TranslateText(textList, "", ta
 
 [](id:languageSupport)
 ## Supported Text Translation Languages
-| Source Language | Supported Target Language |
-| --- | --- |
-| zh (Simplified Chinese) | en (English), ja (Japanese), ko (Korean), fr (French), es (Spanish), it (Italian), de (German), tr (Turkish), ru (Russian), pt (Portuguese), vi (Vietnamese), id (Bahasa Indonesian), th (Thai), and ms (Malay) |
+| Source Language             | Supported Target Language                                    |
+| --------------------------- | ------------------------------------------------------------ |
+| zh (Simplified Chinese)     | en (English), ja (Japanese), ko (Korean), fr (French), es (Spanish), it (Italian), de (German), tr (Turkish), ru (Russian), pt (Portuguese), vi (Vietnamese), id (Bahasa Indonesian), th (Thai), and ms (Malay) |
 | zh-TW (Traditional Chinese) | en (English), ja (Japanese), ko (Korean), fr (French), es (Spanish), it (Italian), de (German), tr (Turkish), ru (Russian), pt (Portuguese), vi (Vietnamese), id (Bahasa Indonesian), th (Thai), and ms (Malay) |
-| en (English) | zh (Simplified Chinese), ja (Japanese), ko (Korean), fr (French), es (Spanish), it (Italian), de (German), tr (Turkish), ru (Russian), pt (Portuguese), vi (Vietnamese), id (Bahasa Indonesian), th (Thai), ms (Malay), ar (Arabic), and hi (Hindi) |
-| ja (Japanese) | zh (Simplified Chinese), en (English), ko (Korean) |
-| ko (Korean) | zh (Simplified Chinese), en (English), ja (Japanese) |
-| fr (French) | zh (Simplified Chinese), en (English), es (Spanish), it (Italian), de (German), tr (Turkish), ru (Russian), and pt (Portuguese) |
-| es (Spanish) | zh (Simplified Chinese), en (English), fr (French), it (Italian), de (German), tr (Turkish), ru (Russian), and pt (Portuguese) |
-| it (Italian) | zh (Simplified Chinese), en (English), fr (French), es (Spanish), de (German), tr (Turkish), ru (Russian), and pt (Portuguese) |
-| de (German) | zh (Simplified Chinese), en (English), fr (French), es (Spanish), it (Italian), tr (Turkish), ru (Russian), and pt (Portuguese) |
-| tr (Turkish) | zh (Simplified Chinese), en (English), fr (French), es (Spanish), it (Italian), de (German), ru (Russian), and pt (Portuguese) |
-| ru (Russian) | zh (Simplified Chinese), en (English), fr (French), es (Spanish), it (Italian), de (German), tr (Turkish), and pt (Portuguese) |
-| pt (Portuguese) | zh (Simplified Chinese), en (English), fr (French), es (Spanish), it (Italian), de (German), tr (Turkish), and ru (Russian) |
-| vi (Vietnamese) | zh (Simplified Chinese), en (English) |
-| id (Bahasa Indonesian) | zh (Simplified Chinese), en (English) |
-| th (Thai) | zh (Simplified Chinese), en (English) |
-| ms (Malay) | zh (Simplified Chinese), en (English) |
-| ar (Arabic) | en (English) |
-| hi (Hindi) | en (English) |
+| en (English)                | zh (Simplified Chinese), ja (Japanese), ko (Korean), fr (French), es (Spanish), it (Italian), de (German), tr (Turkish), ru (Russian), pt (Portuguese), vi (Vietnamese), id (Bahasa Indonesian), th (Thai), ms (Malay), ar (Arabic), and hi (Hindi) |
+| ja (Japanese)               | zh (Simplified Chinese), en (English), ko (Korean)           |
+| ko (Korean)                 | zh (Simplified Chinese), en (English), ja (Japanese)         |
+| fr (French)                 | zh (Simplified Chinese), en (English), es (Spanish), it (Italian), de (German), tr (Turkish), ru (Russian), and pt (Portuguese) |
+| es (Spanish)                | zh (Simplified Chinese), en (English), fr (French), it (Italian), de (German), tr (Turkish), ru (Russian), and pt (Portuguese) |
+| it (Italian)                | zh (Simplified Chinese), en (English), fr (French), es (Spanish), de (German), tr (Turkish), ru (Russian), and pt (Portuguese) |
+| de (German)                 | zh (Simplified Chinese), en (English), fr (French), es (Spanish), it (Italian), tr (Turkish), ru (Russian), and pt (Portuguese) |
+| tr (Turkish)                | zh (Simplified Chinese), en (English), fr (French), es (Spanish), it (Italian), de (German), ru (Russian), and pt (Portuguese) |
+| ru (Russian)                | zh (Simplified Chinese), en (English), fr (French), es (Spanish), it (Italian), de (German), tr (Turkish), and pt (Portuguese) |
+| pt (Portuguese)             | zh (Simplified Chinese), en (English), fr (French), es (Spanish), it (Italian), de (German), tr (Turkish), and ru (Russian) |
+| vi (Vietnamese)             | zh (Simplified Chinese), en (English)                        |
+| id (Bahasa Indonesian)      | zh (Simplified Chinese), en (English)                        |
+| th (Thai)                   | zh (Simplified Chinese), en (English)                        |
+| ms (Malay)                  | zh (Simplified Chinese), en (English)                        |
+| ar (Arabic)                 | en (English)                                                 |
+| hi (Hindi)                  | en (English)                                                 |

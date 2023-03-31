@@ -14,4 +14,3 @@ Sample code:
 // Query a message by message ID
 V2TimValueCallback<List<V2TimMessage>> msgListRes = await TencentImSDKPlugin.v2TIMManager.getMessageManager().findMessages(messageIDList: ['msgid']);
 ```
-

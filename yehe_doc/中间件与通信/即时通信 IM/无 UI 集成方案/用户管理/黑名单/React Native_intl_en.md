@@ -33,5 +33,3 @@ Call `getBlackList` ([Details](https://comm.qq.com/im/doc/RN/en/Api/V2TIMFriends
 // Get the blocklist
 const blacklist = await friendshipManager.getBlackList();
 ```
-
-

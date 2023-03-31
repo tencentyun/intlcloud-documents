@@ -35,5 +35,3 @@ TencentImSDKPlugin.v2TIMManager
   .getMessageManager()
   .insertGroupMessageToLocalStorage(data, groupID, sender);
 ```
-
-

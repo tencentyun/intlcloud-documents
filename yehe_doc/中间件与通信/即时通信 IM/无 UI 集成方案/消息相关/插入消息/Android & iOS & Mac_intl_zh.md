@@ -88,5 +88,3 @@ V2TIMMessage *msg = [[V2TIMManager sharedInstance] createTextMessage:@"本地插
 ```
 :::
 </dx-tabs>
-
-

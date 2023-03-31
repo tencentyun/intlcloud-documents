@@ -61,5 +61,3 @@ public static void MsgDelete()
       });
   }
 ```
-
-

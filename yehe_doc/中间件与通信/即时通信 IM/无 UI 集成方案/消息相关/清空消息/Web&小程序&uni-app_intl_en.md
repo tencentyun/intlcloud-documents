@@ -1,4 +1,3 @@
-
 ## Overview
 
 When messages in a conversation are cleared, all the messages in the conversation will be cleared both locally and from the cloud, but the conversation itself will not be deleted.
@@ -26,9 +25,9 @@ The `conversationID` parameter is described as follows:
 
 **Parameters**
 
-| Name | Type | Description |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| conversationID  | String | Conversation ID, in the format of:<br/><li>C2C${userID} (for one-to-one chats)</li><li>GROUP{groupID} (for group chats)</li>|
+| Name           | Type   | Description                                                  |
+| -------------- | ------ | ------------------------------------------------------------ |
+| conversationID | String | Conversation ID, in the format of:<br/><li>C2C${userID} (for one-to-one chats)</li><li>GROUP{groupID} (for group chats)</li> |
 
 **Return values**
 

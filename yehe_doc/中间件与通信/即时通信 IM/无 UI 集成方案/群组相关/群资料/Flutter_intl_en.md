@@ -54,10 +54,10 @@ Any group member can call the `setGroupReceiveMessageOpt` API ([Details](https:/
 
 `V2TIMReceiveMessageOpt` has the following options:
 
-| Message Receiving Option                           | Description                                                                                                             |
-| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE            | Messages will be received when the user is online, and push notifications will be received when the user is offline.    |
-| ReceiveMsgOptEnum.V2TIM_NOT_RECEIVE_MESSAGE        | No group messages will be received.                                                                                     |
+| Message Receiving Option                           | Description                                                  |
+| -------------------------------------------------- | ------------------------------------------------------------ |
+| ReceiveMsgOptEnum.V2TIM_RECEIVE_MESSAGE            | Messages will be received when the user is online, and push notifications will be received when the user is offline. |
+| ReceiveMsgOptEnum.V2TIM_NOT_RECEIVE_MESSAGE        | No group messages will be received.                          |
 | ReceiveMsgOptEnum.V2TIM_RECEIVE_NOT_NOTIFY_MESSAGE | Messages will be received when the user is online, and no push notifications will be received when the user is offline. |
 
 Different `V2TIMReceiveMessageOpt` options can be used to implement group message notification muting:
@@ -83,6 +83,3 @@ groupManager.setGroupInfo(info: V2TimGroupInfo.fromJson({
     // ...Other profiles
   }));
 ```
-
-
-

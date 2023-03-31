@@ -63,11 +63,11 @@ TIMResult res = TencentIMSDK.ProfileGetUserProfileList(param, (int code, string 
 ### 查询和修改好友资料
 您可以调用 `FriendshipGetFriendsInfo` ([Details](https://comm.qq.com/im/doc/unity/en/api/FriendshipApi/FriendshipGetFriendsInfo.html)) 接口查询指定的好友资料，从回调信息中通过 `FriendInfoGetResult` 的 `friendship_friend_info_get_result_relation_type` 字段可以得到该用户与自己的关系：
 
-| relation                                                                 | 与自己的关系               |
-| ------------------------------------------------------------------------ | -------------------------- |
-| `TIMFriendshipRelationType.kTIMFriendshipRelationType_None`              | 表示不是好友。             |
-| `TIMFriendshipRelationType.kTIMFriendshipRelationType_BothFriend`        | 表示互为好友。             |
-| `TIMFriendshipRelationType.kTIMFriendshipRelationType_InMyFriendList`    | 表示对方在我的好友列表中。 |
+| relation                                                     | 与自己的关系               |
+| ------------------------------------------------------------ | -------------------------- |
+| `TIMFriendshipRelationType.kTIMFriendshipRelationType_None`  | 表示不是好友。             |
+| `TIMFriendshipRelationType.kTIMFriendshipRelationType_BothFriend` | 表示互为好友。             |
+| `TIMFriendshipRelationType.kTIMFriendshipRelationType_InMyFriendList` | 表示对方在我的好友列表中。 |
 | `TIMFriendshipRelationType.kTIMFriendshipRelationType_InOtherFriendList` | 表示我在对方的好友列表中。 |
 
 
@@ -105,5 +105,3 @@ TIMResult res = TencentIMSDK.FriendshipModifyFriendProfile(param, (int code, str
 增强版 SDK 中用户资料的更新分好友和陌生人两种情况：
  - 好友资料：由于好友资料更新时，后台会主动向 SDK 发送系统通知，因此好友资料可以实时更新。
  - 陌生人资料：陌生人资料更新时，由于没有好友关系，后台无法向 SDK 发送系统通知，因此无法实时更新；为了避免每次获取用户资料都向后台发起网络请求，SDK 增加了缓存逻辑，对同一个用户主动向后台拉取资料的时间间隔为 10 分钟。
-
-

@@ -388,12 +388,12 @@ V2TIMManager::GetInstance()->GetFriendshipManager()->CheckFriend(userIDList, che
 
 从回调信息中通过 `V2TIMFriendInfoResult` 的 `relation` 字段可以得到该用户与自己的关系：
 
-| `V2TIMFriendInfoResult`.`relation` | 与自己的关系 |
-| --- | --- |
-| `V2TIM_FRIEND_RELATION_TYPE_NONE` | 不是好友。| 
-| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY` | 互为好友。| 
-| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST` | 对方在我的好友列表中。| 
-| `V2TIM_FRIEND_RELATION_TYPE_IN_OTHER_FRIEND_LIST` | 我在对方的好友列表中。| 
+| `V2TIMFriendInfoResult`.`relation`                | 与自己的关系           |
+| ------------------------------------------------- | ---------------------- |
+| `V2TIM_FRIEND_RELATION_TYPE_NONE`                 | 不是好友。             |
+| `V2TIM_FRIEND_RELATION_TYPE_BOTH_WAY`             | 互为好友。             |
+| `V2TIM_FRIEND_RELATION_TYPE_IN_MY_FRIEND_LIST`    | 对方在我的好友列表中。 |
+| `V2TIM_FRIEND_RELATION_TYPE_IN_OTHER_FRIEND_LIST` | 我在对方的好友列表中。 |
 
 > ? 好友资料更新时，后台会主动向 SDK 发送系统通知，因此好友资料可以实时更新。
 
@@ -576,4 +576,3 @@ V2TIMManager::GetInstance()->GetFriendshipManager()->SetFriendInfo(info, callbac
 在客服场景中，如果用户需要先加客服为好友才能进行沟通非常不方便，因此 IM SDK 在发送单聊消息的时候，默认不检查好友关系。
 如需实现微信或 QQ 中 “先加好友，再发消息” 的交互体验，您可以登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 修改“发送单聊消息检查关系链”。开启后，用户只能给好友发送消息，当用户给非好友发消息时，SDK 会报 20009 错误码。配置页面路径为：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/9d140d6fb21721cea1c6fa16848bdd39.png" alt="" style="zoom:90%;" />
-

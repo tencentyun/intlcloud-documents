@@ -18,18 +18,18 @@ tim.createTextMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to                 | String |            -                    | `userID` or `groupID` of the message receiver                               |
-| conversationType   | String |             -                    | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation).  |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                                   |
-| payload            | Object |            -                    | Message content container  |
-| cloudCustomData    | String |  ''                             | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | `userID` or `groupID` of the message receiver                |
+| conversationType | String | -                             | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                             |
+| payload          | Object | -                             | Message content container                                    |
+| cloudCustomData  | String | ''                            | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
 
 The `payload` is as described below:
 
-| Name   | Type     | Description  |
-| ------ | -------- | ------------ |
+| Name | Type   | Description          |
+| ---- | ------ | -------------------- |
 | text | String | Message text content |
 
 **Returned value**
@@ -97,20 +97,20 @@ tim.createTextAtMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to                 | String |            -                    | `userID` or `groupID` of the message receiver                               |
-| conversationType   | String |             -                    | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-ont conversation), `TIM.TYPES.CONV_GROUP` (group conversation).  |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                                   |
-| payload            | Object |            -                    | Message content container  |
-| cloudCustomData    | String |  ''                             | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | `userID` or `groupID` of the message receiver                |
+| conversationType | String | -                             | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-ont conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                             |
+| payload          | Object | -                             | Message content container                                    |
+| cloudCustomData  | String | ''                            | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
 
 The `payload` is as described below:
 
-| Name   | Type     | Description  |
-| ------ | -------- | ------------ |
-| text | String | Text content |
-| atUserList | Array | List of users that need to be mentioned (@). To mention (@) all, pass in [TIM.TYPES.MSG_AT_ALL](https://web.sdk.qcloud.com/im/doc/en/module-TYPES.html#.MSG_AT_ALL). For example, to mention (@) `denny` and `lucy` as well as all members, pass in ['denny', 'lucy', TIM.TYPES.MSG_AT_ALL] for `atUserList`.
+| Name       | Type   | Description                                                  |
+| ---------- | ------ | ------------------------------------------------------------ |
+| text       | String | Text content                                                 |
+| atUserList | Array  | List of users that need to be mentioned (@). To mention (@) all, pass in [TIM.TYPES.MSG_AT_ALL](https://web.sdk.qcloud.com/im/doc/en/module-TYPES.html#.MSG_AT_ALL). For example, to mention (@) `denny` and `lucy` as well as all members, pass in ['denny', 'lucy', TIM.TYPES.MSG_AT_ALL] for `atUserList`. |
 
 **Returned value**
 
@@ -173,14 +173,14 @@ tim.createImageMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type       | Default                         | Description                                                |
-| ------------------ | ---------- | ------------------------------- | ---------------------------------------------------------- |
-| to                 | String     |            -                    | Message receiver                                               |
-| conversationType   | String     |            -                    | Conversation type. Valid values: `TIM.TYPES.CONV_C2C`, `TIM.TYPES.CONV_GROUP`. |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                                   |
-| payload            | Object |            -                    | Message content container  |
-| onProgress         | function   |            -                    | Callback function for getting the upload progress                                     |
-| cloudCustomData    | String |  ''                             | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
+| Name             | Type     | Default                       | Description                                                  |
+| ---------------- | -------- | ----------------------------- | ------------------------------------------------------------ |
+| to               | String   | -                             | Message receiver                                             |
+| conversationType | String   | -                             | Conversation type. Valid values: `TIM.TYPES.CONV_C2C`, `TIM.TYPES.CONV_GROUP`. |
+| priority         | String   | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                             |
+| payload          | Object   | -                             | Message content container                                    |
+| onProgress       | function | -                             | Callback function for getting the upload progress            |
+| cloudCustomData  | String   | ''                            | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
 
 The `payload` is as described below:
 
@@ -291,18 +291,18 @@ tim.createAudioMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Default                         | Description                                                |
-| ------------------ | -------- | ------------------------------- | ---------------------------------------------------------- |
-| to                 | String     |            -                    | Message receiver                                               |
-| conversationType   | String     |            -                    | Conversation type. Valid values: `TIM.TYPES.CONV_C2C`, `TIM.TYPES.CONV_GROUP`. |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                                   |
-| payload            | Object |            -                    | Message content container  |
-| cloudCustomData    | String |  ''                             | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | Message receiver                                             |
+| conversationType | String | -                             | Conversation type. Valid values: `TIM.TYPES.CONV_C2C`, `TIM.TYPES.CONV_GROUP`. |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                             |
+| payload          | Object | -                             | Message content container                                    |
+| cloudCustomData  | String | ''                            | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
 
 The `payload` is as described below:
 
-| Name | Type     | Description          |
-| ---- | -------- | -------------------- |
+| Name | Type   | Description                               |
+| ---- | ------ | ----------------------------------------- |
 | file | Object | File information obtained after recording |
 
 **Returned value**
@@ -333,19 +333,19 @@ tim.createVideoMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Default                         | Description                                                |
-| ------------------ | -------- | ------------------------------- | ---------------------------------------------------------- |
-| to                 | String     |            -                    | Message receiver                                               |
-| conversationType   | String     |            -                    | Conversation type. Valid values: `TIM.TYPES.CONV_C2C`, `TIM.TYPES.CONV_GROUP`. |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                                   |
-| payload            | Object |            -                    | Message content container  |
-| cloudCustomData    | String |  ''                             | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | Message receiver                                             |
+| conversationType | String | -                             | Conversation type. Valid values: `TIM.TYPES.CONV_C2C`, `TIM.TYPES.CONV_GROUP`. |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                             |
+| payload          | Object | -                             | Message content container                                    |
+| cloudCustomData  | String | ''                            | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
 
 The `payload` is as described below:
 
-| Name          | Type     | Description          |
-| ------------- | -------- | -------------------- |
-| file        | HTMLInputElement \| File \| Object | Data field of the custom message  |
+| Name | Type                               | Description                      |
+| ---- | ---------------------------------- | -------------------------------- |
+| file | HTMLInputElement \| File \| Object | Data field of the custom message |
 
 
 **Returned value**
@@ -433,21 +433,21 @@ tim.createCustomMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to                 | String |            -                    | `userID` or `groupID` of the message receiver                               |
-| conversationType | String |           -                    | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                                   |
-| payload            | Object |            -                    | Message content container  |
-| cloudCustomData    | String |  ''                             | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | `userID` or `groupID` of the message receiver                |
+| conversationType | String | -                             | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                             |
+| payload          | Object | -                             | Message content container                                    |
+| cloudCustomData  | String | ''                            | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
 
 The `payload` is as described below:
 
-| Name          | Type     | Description          |
-| ------------- | -------- | -------------------- |
-| data | String | Data of the custom message |
+| Name        | Type   | Description                       |
+| ----------- | ------ | --------------------------------- |
+| data        | String | Data of the custom message        |
 | description | String | Description of the custom message |
-| extension   | String | Extension of the custom message |
+| extension   | String | Extension of the custom message   |
 
 **Returned value**
 
@@ -507,20 +507,20 @@ tim.createFaceMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to                 | String |            -                    | `userID` or `groupID` of the message receiver                               |
-| conversationType | String |           -                    | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                                   |
-| payload            | Object |            -                    | Message content container  |
-| cloudCustomData    | String |  ''                             | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | `userID` or `groupID` of the message receiver                |
+| conversationType | String | -                             | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                             |
+| payload          | Object | -                             | Message content container                                    |
+| cloudCustomData  | String | ''                            | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
 
 The `payload` is as described below:
 
-| Name    | Type     | Description          |
-| ------- | -------- | -------------------- |
+| Name  | Type   | Description                                  |
+| ----- | ------ | -------------------------------------------- |
 | index | Number | Emoji index, which is customized by the user |
-| data  | String | Extra data           |
+| data  | String | Extra data                                   |
 
 **Returned value**
 
@@ -584,19 +584,19 @@ tim.createFileMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type       | Default                         | Description                                                  |
-| ------------------ | ---------- | ------------------------------- | ------------------------------------------------------------ |
-| to                 | String |            -                    | `userID` or `groupID` of the message receiver                               |
-| conversationType | String |           -                    | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (client to client conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                                   |
-| payload            | Object |            -                    | Message content container  |
-| onProgress         | function   |            -                    | Callback function for getting the upload progress                                     |
-| cloudCustomData    | String |  ''                             | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
+| Name             | Type     | Default                       | Description                                                  |
+| ---------------- | -------- | ----------------------------- | ------------------------------------------------------------ |
+| to               | String   | -                             | `userID` or `groupID` of the message receiver                |
+| conversationType | String   | -                             | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (client to client conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
+| priority         | String   | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                             |
+| payload          | Object   | -                             | Message content container                                    |
+| onProgress       | function | -                             | Callback function for getting the upload progress            |
+| cloudCustomData  | String   | ''                            | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
 
 The `payload` is as described below:
 
-| Name   | Type               | Description                                                  |
-| ------ | ------------------ | ------------------------------------------------------------ |
+| Name | Type                               | Description                                                  |
+| ---- | ---------------------------------- | ------------------------------------------------------------ |
 | file | HTMLInputElement \| File \| Object | It is used to select a DOM node or `File` object of the file on web, or the success callback parameter of the uni.chooseFile API. The SDK reads the data contained in this parameter and uploads the file. |
 
 **Returned value**
@@ -731,21 +731,21 @@ tim.createLocationMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to                 | String |            -                    | `userID` or `groupID` of the message receiver                               |
-| conversationType | String |           -                    | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                                   |
-| payload            | Object |            -                    | Message content container  |
-| cloudCustomData    | String |  ''                             | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | `userID` or `groupID` of the message receiver                |
+| conversationType | String | -                             | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                             |
+| payload          | Object | -                             | Message content container                                    |
+| cloudCustomData  | String | ''                            | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
 
 The `payload` is as described below:
 
-| Name    | Type     | Description          |
-| ------- | -------- | -------------------- |
+| Name        | Type   | Description                              |
+| ----------- | ------ | ---------------------------------------- |
 | description | String | Description of the geographical location |
-| longitude | Number | Longitude |
-| latitude | Number | Latitude |
+| longitude   | Number | Longitude                                |
+| latitude    | Number | Latitude                                 |
 
 **Returned value**
 
@@ -805,21 +805,21 @@ tim.createMergerMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name               | Type     | Default                         | Description                                                  |
-| ------------------ | -------- | ------------------------------- | ------------------------------------------------------------ |
-| to                 | String |            -                    | `userID` or `groupID` of the message receiver                               |
-| conversationType | String |           -                    | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
-| priority           | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                                   |
-| payload            | Object |            -                    | Message content container  |
-| cloudCustomData    | String |  ''                             | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
+| Name             | Type   | Default                       | Description                                                  |
+| ---------------- | ------ | ----------------------------- | ------------------------------------------------------------ |
+| to               | String | -                             | `userID` or `groupID` of the message receiver                |
+| conversationType | String | -                             | Conversation type. Valid values: `TIM.TYPES.CONV_C2C` (one-to-one conversation), `TIM.TYPES.CONV_GROUP` (group conversation). |
+| priority         | String | TIM.TYPES.MSG_PRIORITY_NORMAL | Message priority                                             |
+| payload          | Object | -                             | Message content container                                    |
+| cloudCustomData  | String | ''                            | Custom message data, which is saved in the cloud, will be sent to the receiver, and can still be pulled after the application is uninstalled and reinstalled. This attribute is supported by v2.10.2 or later. |
 
 The `payload` is as described below:
 
-| Name    | Type     | Description          |
-| ------- | -------- | -------------------- |
-| messageList | Array | Merged message list |
-| title | String | Title of merged messages, for example, "Chat History of the Talent Center in the Greater Bay Area" |
-| abstractList | String | Abstract list. You can set abstract information in different formats for different message types, for example, in the `sender:text` format for a text message, in the `sender:[image]` format for an image message, or in the `sender:[file]` format for a file message. |
+| Name           | Type   | Description                                                  |
+| -------------- | ------ | ------------------------------------------------------------ |
+| messageList    | Array  | Merged message list                                          |
+| title          | String | Title of merged messages, for example, "Chat History of the Talent Center in the Greater Bay Area" |
+| abstractList   | String | Abstract list. You can set abstract information in different formats for different message types, for example, in the `sender:text` format for a text message, in the `sender:[image]` format for an image message, or in the `sender:[file]` format for a file message. |
 | compatibleText | String | Compatibility text. If the SDK on an early version does not support the merged message, the user will receive a text message with the content `${compatibleText}` by default. This field is required. |
 
 **Returned value**
@@ -875,9 +875,9 @@ tim.downloadMergerMessage(message);
 
 **Parameter**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- |  ------------------------------------------------------------ |
-| message          | Message | Message instance  |
+| Name    | Type    | Description      |
+| ------- | ------- | ---------------- |
+| message | Message | Message instance |
 
 
 **Returned value**
@@ -924,9 +924,9 @@ tim.createForwardMessage(message);
 
 **Parameter**
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| message          | Message | Message instance |
+| Name    | Type    | Description      |
+| ------- | ------- | ---------------- |
+| message | Message | Message instance |
 
 **Sample**
 
@@ -974,7 +974,7 @@ This API is used to send a message. You need to call any of the following messag
 
 >!
 >- When this API is called to send a message instance, the SDK must be in the `ready` status; otherwise, the message instance cannot be sent. The SDK status can be obtained by listening for the `TIM.EVENT.SDK_READY` event, which will be triggered when the SDK is in the `ready` status.
-TIM.EVENT.SDK_NOT_READY: Triggered when the SDK is in the `not ready` status
+>TIM.EVENT.SDK_NOT_READY: Triggered when the SDK is in the `not ready` status
 >- The [TIM.EVENT.MESSAGE_RECEIVED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.MESSAGE_RECEIVED) event must be listened for in order to receive newly pushed one-to-one messages, group messages, group tips, or group system notifications.
 >- Messages sent by this API will not trigger the [TIM.EVENT.MESSAGE_RECEIVED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.MESSAGE_RECEIVED) event. Messages sent by the same account from another client (or through the RESTful API) will trigger the [TIM.EVENT.MESSAGE_RECEIVED](https://web.sdk.qcloud.com/im/doc/en/module-EVENT.html#.MESSAGE_RECEIVED) event.
 >- Offline push applies only to Android or iOS devices but is not supported for web.
@@ -992,36 +992,36 @@ tim.sendMessage(options);
 
 The `options` parameter is of the `Object` type. It contains the following attribute values:
 
-| Name      | Type      | Description                    |
-| --------- | --------- | ------------------------------ |
-| message | Message | Message instance                       |
+| Name    | Type    | Description                                                  |
+| ------- | ------- | ------------------------------------------------------------ |
+| message | Message | Message instance                                             |
 | options | Object  | Message sending option (message content container), which is optional |
 
 The `options` is as described below:
 
-| Name              | Type      | Description                                                  |
-| ----------------- | --------- | ------------------------------------------------------------ |
-| onlineUserOnly  | Boolean | This parameter is supported by v2.6.4 or later. It specifies whether the message is sent only to online users and defaults to `false`. If it is set to `true`, the message will not be stored on the roaming server, nor counted as an unread message, nor pushed to the receiver offline. It is suitable for sending unimportant tips such as broadcast notifications. This parameter is not supported when a message is sent in an audio-video group (AVChatRoom). |
-| offlinePushInfo | Object  | This parameter is supported by v2.6.4 or later. For more information, see [Offline Push](https://intl.cloud.tencent.com/document/product/1047/33525). |
-| messageControlInfo | Object | This parameter is supported by v2.16.0 or later. It is a message control configuration item. |
+| Name               | Type    | Description                                                  |
+| ------------------ | ------- | ------------------------------------------------------------ |
+| onlineUserOnly     | Boolean | This parameter is supported by v2.6.4 or later. It specifies whether the message is sent only to online users and defaults to `false`. If it is set to `true`, the message will not be stored on the roaming server, nor counted as an unread message, nor pushed to the receiver offline. It is suitable for sending unimportant tips such as broadcast notifications. This parameter is not supported when a message is sent in an audio-video group (AVChatRoom). |
+| offlinePushInfo    | Object  | This parameter is supported by v2.6.4 or later. For more information, see [Offline Push](https://intl.cloud.tencent.com/document/product/1047/33525). |
+| messageControlInfo | Object  | This parameter is supported by v2.16.0 or later. It is a message control configuration item. |
 
 The `offlinePushInfo` is as described below:
 
-| Name                   | Type      | Description                                                  |
-| ---------------------- | --------- | ------------------------------------------------------------ |
+| Name                 | Type    | Description                                                  |
+| -------------------- | ------- | ------------------------------------------------------------ |
 | disablePush          | Boolean | true: offline push is disabled; false (default): offline push is enabled. |
 | title                | String  | Offline push title. This parameter is used by both iOS and Android. |
-| description         | String  | Offline push content. This parameter will overwrite the offline push display text of the message instance. If the sent message is a custom message, this parameter will overwrite `message.payload.description`. If both `description` and `message.payload.description` are left empty, the receiver cannot receive the offline push notification of the custom message. |
-| extension            | String  | Content passed through by offline push                                             |
+| description          | String  | Offline push content. This parameter will overwrite the offline push display text of the message instance. If the sent message is a custom message, this parameter will overwrite `message.payload.description`. If both `description` and `message.payload.description` are left empty, the receiver cannot receive the offline push notification of the custom message. |
+| extension            | String  | Content passed through by offline push                       |
 | ignoreIOSBadge       | Boolean | Specifies whether the badge count is ignored (applicable to iOS only). If this parameter is set to `true`, the unread message count on the application badge will not increase when the message is received by the iOS device. |
 | androidOPPOChannelID | String  | Offline push channel ID for OPPO phones that run Android v8.0 or later |
 
 The `messageControlInfo` is as described below:
 
-| Name                   | Type      | Description                                                  |
-| ---------------------- | --------- | ------------------------------------------------------------ |
-| excludedFromUnreadCount | Boolean | true: `unreadCount` of the conversation is not updated (the message is stored on the roaming server); false (default)
-| excludedFromLastMessage | Boolean | true: `lastMessage` of the conversation is not updated (the message is stored on the roaming server); false (default)
+| Name                    | Type    | Description                                                  |
+| ----------------------- | ------- | ------------------------------------------------------------ |
+| excludedFromUnreadCount | Boolean | true: `unreadCount` of the conversation is not updated (the message is stored on the roaming server); false (default) |
+| excludedFromLastMessage | Boolean | true: `lastMessage` of the conversation is not updated (the message is stored on the roaming server); false (default) |
 
 **Response**
 
@@ -1091,4 +1091,3 @@ tim.sendMessage(message, {
 
 :::
 </dx-codeblock>
-
