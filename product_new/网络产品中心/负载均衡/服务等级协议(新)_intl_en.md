@@ -50,10 +50,6 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 </table> 
 
 **Other CLB**
-Service Availability (Av) for a Service Month	Value of Compensation Voucher
-99.95% > Av ≥ 99%	10% of the Monthly Service Fee
-99% > Av ≥ 95%	25% of the Monthly Service Fee
-95% > Av	100% of the Monthly Service Fee
 <table>
    <tr>
       <th>Service Availability (Av) for a Service Month</th>
