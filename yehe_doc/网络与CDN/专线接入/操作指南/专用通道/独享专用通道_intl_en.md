@@ -26,7 +26,7 @@
 <tr>
 <td>Access Network</td>
 <td><ul><li>For a 1.0 tunnel, select from CCN and VPC.</li><li>
- For a 2.0 tunnel, select either <b>CCN</b> or <b>Virtual Private Cloud</b>.</li></ul></td>
+ For a 2.0 tunnel, select either <b>CCN</b>、<b>Virtual Private Cloud</b> and <b>NAT network</b>.</li></ul></td>
 </tr>
 <tr>
 <td>Region</td>
