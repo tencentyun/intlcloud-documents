@@ -1,5 +1,7 @@
 The **GME audio and video recording service** provides full recording and recording by room ID to perform audio recording and screen global/local recording.
 
+>?This feature hasn't been officially launched. To use it, contact the channel manager or [submit a ticket](https://console.tencentcloud.com/workorder/category) to query the price.
+>
 
 ## Feature Overview
 - You can choose to record on the client or on the server. Recording on the client is implemented by calling the GME SDK recording API, and recording on the server is implemented by calling the cloud API.
