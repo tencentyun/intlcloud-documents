@@ -73,7 +73,7 @@ Voice Messaging is billed by the number of daily active users.
 
 ## Speech-to-Text
 
-Speech-to-Text supports daily or monthly payment. Daily payment is set by default. If you want to switch to monthly payment, please submit a ticket.
+Speech-to-Text supports daily or monthly payment. Daily payment is set by default. If you want to switch to monthly payment, please [submit a ticket](https://console.tencentcloud.com/workorder/category).
 
 ### Pricing
 <table>
@@ -110,13 +110,13 @@ The Text Translation service is billed by the number of characters that need to 
 
 >?
 >
->- This feature is now only available to beta users. To join the beta, please submit a ticket.
+>- This feature is now only available to beta users. To join the beta, please [submit a ticket](https://console.tencentcloud.com/workorder/category).
 
 
 ## Text-to-Speech Service
 
 
->?This feature hasn't been officially launched. To use it, contact the channel manager or submit a ticket to query the price.
+>?This feature hasn't been officially launched. To use it, contact the channel manager or [submit a ticket](https://console.tencentcloud.com/workorder/category) to query the price.
 >
 
 
