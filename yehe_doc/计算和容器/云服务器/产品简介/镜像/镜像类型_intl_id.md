@@ -10,7 +10,7 @@ Tencent Cloud menyediakan tiga jenis citra, yaitu citra publik, citra kustom, da
 
 Fitur:
  - **Sistem operasi:** Anda dapat memilih sistem operasi yang diinginkan, seperti Linux atau Windows. Sistem operasi diperbarui secara berkala.
- - **Perangkat Lunak:** citra publik terintegrasi dengan paket perangkat lunak (seperti API) yang disediakan oleh Tencent Cloud, dan mendukung beberapa versi perangkat lunak dengan izin penuh, seperti Java, MySQL, SQL Server, Python, Ruby, dan Tomcat.
+ - **Perangkat Lunak:** citra publik terintegrasi dengan paket perangkat lunak yang disediakan oleh Tencent Cloud, dan mendukung beberapa versi perangkat lunak dengan izin penuh, seperti Java, MySQL, SQL Server, Python, Ruby, dan Tomcat.
  - **Keamanan:** semua sistem operasi yang disediakan dilisensikan. Semua citra dibuat oleh tim keamanan dan OPS Tencent Cloud, dan telah diuji secara ketat. Komponen keamanan Tencent Cloud juga tersedia.
  - **Batas:** tidak ada.
  - **Biaya:** semua citra publik tidak dikenai biaya, kecuali untuk citra Windows di wilayah tertentu di luar daratan Tiongkok yang mungkin dikenai biaya lisensi.
