@@ -5,7 +5,7 @@ Access logging is used to record access logs of domain names protected by WAF. I
 Health check is enabled for WAF by default. WAF checks the connection status of all real server IPs. For the real server IP that does not respond, WAF will not forward requests to this IP until its connection status becomes normal.
 
 ### Does WAF support session persistence?
-Session persistence is supported and enabled by default in WAF.
+WAF supports session persistence. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=867&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=15&scene_code=29995&step=2) to activate this feature.
 
 ### Will logging still be available once WAF is disabled for the domain name list?
 Once WAF is disabled, all its protection features are unavailable, and only the traffic forwarding mode starts to run instead, with no logs recorded.
