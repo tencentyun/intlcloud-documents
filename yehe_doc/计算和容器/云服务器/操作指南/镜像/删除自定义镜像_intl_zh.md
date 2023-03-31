@@ -11,10 +11,10 @@
 ## 操作步骤
 <dx-tabs>
 ::: 通过控制台删除
-1. 登录云服务器控制台，选择左侧导航栏中的 [**镜像**](https://console.cloud.tencent.com/cvm/image)。
+1. 登录云服务器控制台，选择左侧导航栏中的 **[镜像](https://console.cloud.tencent.com/cvm/image)** 。
 2. 选择**自定义镜像**页签，进入自定义镜像的管理页面。
 3. 根据实际需求，选择删除自定义镜像的操作方式。
- - **删除单个镜像**：列表中找到需要删除的自定义镜像，单击**更多**>**删除**。如下图所示：
+ - **删除单个镜像**：列表中找到需要删除的自定义镜像，选择**更多**>**删除**。如下图所示：
   ![](https://qcloudimg.tencent-cloud.cn/raw/1211de56434b4b6034dccb1ff9ce4aa1.png)
  - **删除多个镜像**：列表中勾选所有要删除的自定义镜像，单击顶部**删除**。如下图所示：
   ![](https://qcloudimg.tencent-cloud.cn/raw/9f002d5cce1cfa2c94931ea3bca25ac2.png)
