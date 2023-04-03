@@ -39,9 +39,9 @@
 
 ## インポート手順
 
- 1. CVMコンソールにログインし、左側ナビゲーションバーの**[イメージ](https://console.cloud.tencent.com/cvm/image)**をクリックします。
+ 1. [CVM](https://console.cloud.tencent.com/cvm/instance/index?rid=19)コンソールにログインし、左側ナビゲーションバーの**[イメージ](https://console.cloud.tencent.com/cvm/image)**をクリックします。
  3. **カスタマイズイメージ**を選択し、**イメージのインポート**をクリックします。
- 4. 操作インターフェースの要件に基づき、まず[COSのアクティブ化](https://console.cloud.tencent.com/cos4/index)、次に[bucketの作成](https://intl.cloud.tencent.com/document/product/436/13309)を実行し、イメージファイルをbucketにアップロードして、[イメージファイルURLの取得](https://intl.cloud.tencent.com/document/product/436/13322)を実行します。
+ 4. 操作インターフェースの要件に基づき、まず[COSのアクティブ化](https://console.cloud.tencent.com/cos4/index)、次に[bucketの作成](https://intl.cloud.tencent.com/document/product/436/13309)を実行し、イメージファイルをbucketに[オブジェクトのアップロード](https://www.tencentcloud.com/document/product/436/13321)して、[イメージファイルURLの取得](https://intl.cloud.tencent.com/document/product/436/13322)を実行します。
  5. **次のステップへ**をクリックします。
  6. 実際の状況に応じて、リストを記入し、**インポート開始**をクリックします。
 <dx-alert infotype="notice" title="">
