@@ -4,8 +4,8 @@ COS offers a limited free tier resource pack to all new users (i.e., enterprise 
 
 | Object | Free Tier | Validity |
 | -------- | ----------------- | ------ |
-| Individual user | 50 GB STANDARD storage usage | 6 months (180 days) |
-| Enterprise user | 1 TB STANDARD storage usage | 6 months (180 days) |
+| New user | 50 GB STANDARD storage usage | 6 months (180 days) |
+
 
 >? The storage capacity is calculated in binary, for example, 1 TB = 1024 GB.
 >
@@ -31,7 +31,7 @@ The free tier offered by COS can be used to deduct only **STANDARD storage usage
    <tr>
       <td rowspan="6">Storage capacity fees</td>
       <td>STANDARD storage usage</td>
-      <td>Yes.<ul  style="margin: 0;"><li>Individual users are entitled to a free tier of 50 GB STANDARD storage usage for 6 months (180 days).</li><li>Enterprise users are entitled to a free tier of 1 TB STANDARD storage usage for 6 months (180 days).</li></ul></td>
+      <td>Yes.<ul  style="margin: 0;"><li>New users are entitled to a free tier of 50 GB STANDARD storage usage for 6 months (180 days).</li></ul></td>
    </tr>
    <tr>
       <td>MAZ_STANDARD storage usage</td>
