@@ -1,6 +1,6 @@
 ## Overview
 
-COS offers a limited free tier resource pack to all new users to deduct the fees incurred by data stored in the **STANDARD** storage class, as detailed below: 
+COS offers a limited free tier resource pack to all new users(i.e.users activating COS for the first time) to deduct the fees incurred by data stored in the **STANDARD** storage class, as detailed below: 
 
 | Object | Free Tier | Validity |
 | -------- | ----------------- | ------ |
