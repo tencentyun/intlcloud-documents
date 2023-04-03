@@ -1,4 +1,4 @@
-﻿## 中国大陆版本
+## 中国大陆版本
 ### SaaS 型 WAF 
 <table>
 <thead>
@@ -27,11 +27,11 @@
 <td>50000QPS</td>
 </tr>
 <tr>
- <td>带宽规格（云内/云外）</td>
-<td>60Mbps/20Mbps</td>
-<td>125Mbps/40Mbps</td>
-<td>250Mbps/80Mbps</td>
-<td>1250Mbps/400Mbps</td>
+ <td>带宽规格（腾讯云内/腾讯云外）</td>
+<td>50Mbps/15Mbps</td>
+<td>100Mbps/30Mbps</td>
+<td>200Mbps/50Mbps</td>
+<td>1000Mbps/250Mbps</td>
 </tr>
 <tr>
  <td>独享 IP</td>
@@ -48,7 +48,7 @@
 <td>1000（可自定义）</td>
 </tr>
 <tr>
- <td>支持子域名个数</td>
+ <td>支持总域名个数（包括防护主域名和其下的子域名）</td>
 <td>20</td>
 <td>30</td>
 <td>40</td>
@@ -251,17 +251,17 @@
 <td>50000QPS</td>
 </tr>
 <tr>
- <td>带宽规格（云内）</td>
-<td>60Mbps</td>
-<td>125Mbps</td>
-<td>250Mbps</td>
-<td>1250Mbps</td>
+ <td>带宽规格</td>
+<td>100Mbps</td>
+<td>200Mbps</td>
+<td>400Mbps</td>
+<td>400Mbps</td>
 </tr>
 <tr>
  <td>多地域联动支持</td>
 <td>-</td>
 <td>-</td>
-<td>支持</td>
+<td>支持10个地域</td>
 <td>支持</td>
 </tr>
 <tr>
@@ -279,7 +279,7 @@
 <td>1000（可自定义）</td>
 </tr>
 <tr>
- <td>支持子域名个数</td>
+ <td>支持总域名个数（包括防护主域名和其下的子域名）</td>
 <td>20</td>
 <td>30</td>
 <td>40</td>
@@ -417,6 +417,8 @@
 </tbody></table>
 
 ## 非中国大陆版本
+>?资源正在升级中，如需购买请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=864&radio_title=%E8%AE%A1%E8%B4%B9/%E4%BB%B7%E6%A0%BC%E5%92%A8%E8%AF%A2&queue=3026&scene_code=30040&step=2) 申请。
+>
 ### SaaS 型 WAF 
 <table>
 <thead>
@@ -445,11 +447,11 @@
 <td>50000QPS</td>
 </tr>
 <tr>
- <td>带宽规格（云内/云外）</td>
-<td>60Mbps/20Mbps</td>
-<td>125Mbps/40Mbps</td>
-<td>250Mbps/80Mbps</td>
-<td>1250Mbps/400Mbps</td>
+ <td>带宽规格（腾讯云内/腾讯云外）</td>
+<td>50Mbps/15Mbps</td>
+<td>80Mbps/30Mbps</td>
+<td>100Mbps/50Mbps</td>
+<td>1000Mbps/250Mbps</td>
 </tr>
 <tr>
  <td>独享 IP</td>
@@ -466,7 +468,7 @@
 <td>1000（可自定义）</td>
 </tr>
 <tr>
- <td>支持子域名个数</td>
+ <td>支持总域名个数（包括防护主域名和其下的子域名）</td>
 <td>20</td>
 <td>30</td>
 <td>40</td>
@@ -655,17 +657,17 @@
 <td>50000QPS</td>
 </tr>
 <tr>
- <td>带宽规格（云内）</td>
-<td>60Mbps</td>
-<td>125Mbps</td>
-<td>250Mbps</td>
-<td>1250Mbps</td>
+ <td>带宽规格</td>
+<td>100Mbps</td>
+<td>200Mbps</td>
+<td>400Mbps</td>
+<td>400Mbps</td>
 </tr>
 <tr>
  <td>多地域联动支持</td>
 <td>-</td>
 <td>-</td>
-<td>支持</td>
+<td>支持10个地域</td>
 <td>支持</td>
 </tr>
 <tr>
@@ -683,7 +685,7 @@
 <td>1000（可自定义）</td>
 </tr>
 <tr>
- <td>支持子域名个数</td>
+ <td>支持总域名个数（包括防护主域名和其下的子域名）</td>
 <td>20</td>
 <td>30</td>
 <td>40</td>
