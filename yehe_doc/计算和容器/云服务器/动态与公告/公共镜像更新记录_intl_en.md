@@ -78,7 +78,7 @@ For update logs of OpenCloudOS, see [OpenCloudOS Image Update History](https://w
 		<td>Image ID: 
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-l8og963d">img-l8og963d</a>
 		<br />Current kernel version: 3.10.0-1160.71.1.el7.x86_64</td>
-		<td>2022-11-07</td>
+		<td>2023-03-06</td>
 		<td>Updates the system with the latest patch.</td>
 	</tr>
 	<tr>
@@ -133,8 +133,8 @@ For update logs of OpenCloudOS, see [OpenCloudOS Image Update History](https://w
 		<td>CentOS 7.2x86_64</td>
 		<td>Image ID: 
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-31tjrtph">img-31tjrtph</a>
-		<br />Current kernel version: 3.10.0-1160.62.1.el7.x86_65</td>
-		<td>2022-04-24</td>
+		<br />Current kernel version: 3.10.0-1160.83.1.el7.x86_64</td>
+		<td>2023-03-06</td>
 		<td>Updates the system with the latest patch.</td>
 	</tr>
 	<tr>
@@ -459,7 +459,7 @@ img-aif2u6pf</a>
 	<td>Image ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1e4uwwol">img-1e4uwwol</a>
 	<br />Current kernel version: 5.3.18-59.27-default</td>
-	<td>2021-11-07</td>
+	<td>2022-11-02</td>
 	<td>Updates the system with the latest patch.</td>
   </tr>
 	<tr>
@@ -495,56 +495,56 @@ img-4orfgj3l</a>
 	<td>Windows Server 2022 IDC 64-bit Chinese</td>
 	<td>Image ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-9lw52tbx">img-9lw52tbx</a></td>
-	<td>2022-10-27</td>
+	<td>2023-01-06</td>
 	<td>Updates the system with the latest patch.</td>
   </tr>
 	<tr>
 	<td>Windows Server 2022 IDC 64-bit English</td>
 	<td>Image ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-cg67n3n9">img-cg67n3n9</a></td>
-	<td>2022-10-27</td>
+	<td>2023-01-06</td>
 	<td>Updates the system with the latest patch.</td>
   </tr>
   <tr>
 	<td>Windows Server 2019 IDC 64-bit Chinese</td>
 	<td>Image ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-perxw61f">img-perxw61f</a></td>
-	<td>2022-12-08</td>
+	<td>2023-03-09</td>
 	<td>Updates the system with the latest patch.</td>
   </tr>
 	<tr>
 	<td>Windows Server 2019 IDC 64-bit English</td>
 	<td>Image ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1dmc4wwp">img-1dmc4wwp</a></td>
-	<td>2022-12-8</td>
+	<td>2023-03-09</td>
 	<td>Updates the system with the latest patch.</td>
   </tr>
   <tr>
 	<td>Windows Server 2016 IDC 64-bit Chinese</td>
 	<td>Image ID: 
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9ltji92z">img-9ltji92z</a></td>
-	<td>2022-12-08</td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-gu1nmb8d">img-gu1nmb8d</a></td>
+	<td>2023-03-09</td>
 	<td>Updates the system with the latest patch.</td>
   </tr>
   <tr>
 <td>Windows Server 2016 IDC 64-bit English</td>
 	<td>Image ID: 
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-6fp83vpb">img-6fp83vpb</a></td>
-	<td>2022-12-08</td>
+	<td>2023-03-09</td>
 	<td>Updates the system with the latest patch.</td>
   </tr>
   <tr>
 	<td>Windows Server 2012 R2 IDC 64-bit Chinese</td>
 	<td>Image ID: 
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-29hl923v">img-29hl923v</a></td>
-	<td>2022-03-30</td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-ixj8o53x">img-ixj8o53x</a></td>
+	<td>2023-01-06</td>
 	<td>Updates the system with the latest patch.</td>
   </tr>
   <tr>
 	<td>Windows Server 2012 R2 IDC 64-bit English</td>
 	<td>Image ID: 
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-2tddq003">img-2tddq003</a></td>
-	<td>2022-03-30</td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-bpsjtw7n">img-bpsjtw7n</a></td>
+	<td>2023-01-06</td>
 	<td>Updates the system with the latest patch.</td>
   </tr>
 
