@@ -78,7 +78,7 @@ OpenCloudOS 更新记录请参见 [OpenCloudOS 镜像更新日志](https://intl.
 		<td>镜像 ID：
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-l8og963d">img-l8og963d</a>
 		<br />当前内核版本：3.10.0-1160.71.1.el7.x86_64</td>
-		<td>2022-11-07</td>
+		<td>2023-03-06</td>
 		<td>更新最新系统补丁。</td>
 	</tr>
 	<tr>
@@ -133,8 +133,8 @@ OpenCloudOS 更新记录请参见 [OpenCloudOS 镜像更新日志](https://intl.
 		<td>CentOS 7.2x86_64</td>
 		<td>镜像 ID：
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-31tjrtph">img-31tjrtph</a>
-		<br />当前内核版本：3.10.0-1160.62.1.el7.x86_65</td>
-		<td>2022-04-24</td>
+		<br />当前内核版本：3.10.0-1160.83.1.el7.x86_64</td>
+		<td>2023-03-06</td>
 		<td>更新最新系统补丁。</td>
 	</tr>
 	<tr>
@@ -459,7 +459,7 @@ img-aif2u6pf</a>
 	<td>镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1e4uwwol">img-1e4uwwol</a>
 	<br />当前内核版本：5.3.18-59.27-default</td>
-	<td>2021-11-07</td>
+	<td>2022-11-02</td>
 	<td>更新最新系统补丁。</td>
   </tr>
 	<tr>
@@ -536,7 +536,7 @@ img-4orfgj3l</a>
   <tr>
 	<td>Windows Server 2012 R2 数据中心版 64位中文版</td>
 	<td>镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-29hl923v">img-29hl923v</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-ixj8o53x">img-ixj8o53x</a></td>
 	<td>2023-01-06</td>
 	<td>更新最新系统补丁。</td>
   </tr>
