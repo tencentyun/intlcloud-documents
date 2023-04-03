@@ -495,56 +495,56 @@ img-4orfgj3l</a>
 	<td>Windows Server 2022 数据中心版 64位中文版</td>
 	<td>镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-9lw52tbx">img-9lw52tbx</a></td>
-	<td>2022-10-27</td>
+	<td>2023-01-06</td>
 	<td>更新最新系统补丁。</td>
   </tr>
 	<tr>
 	<td>Windows Server 2022 数据中心版 64位英文版</td>
 	<td>镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-cg67n3n9">img-cg67n3n9</a></td>
-	<td>2022-10-27</td>
+	<td>2023-01-06</td>
 	<td>更新最新系统补丁。</td>
   </tr>
   <tr>
 	<td>Windows Server 2019 数据中心版 64位中文版</td>
 	<td>镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-perxw61f">img-perxw61f</a></td>
-	<td>2022-12-08</td>
+	<td>2023-03-09</td>
 	<td>更新最新系统补丁。</td>
   </tr>
 	<tr>
 	<td>Windows Server 2019 数据中心版 64位英文版</td>
 	<td>镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1dmc4wwp">img-1dmc4wwp</a></td>
-	<td>2022-12-8</td>
+	<td>2023-03-09</td>
 	<td>更新最新系统补丁。</td>
   </tr>
   <tr>
 	<td>Windows Server 2016 数据中心版 64位中文版</td>
 	<td>镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9ltji92z">img-9ltji92z</a></td>
-	<td>2022-12-08</td>
+	<td>2023-03-09</td>
 	<td>更新最新系统补丁。</td>
   </tr>
   <tr>
 <td>Windows Server 2016 数据中心版 64位英文版</td>
 	<td>镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-6fp83vpb">img-6fp83vpb</a></td>
-	<td>2022-12-08</td>
+	<td>2023-03-09</td>
 	<td>更新最新系统补丁。</td>
   </tr>
   <tr>
 	<td>Windows Server 2012 R2 数据中心版 64位中文版</td>
 	<td>镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-29hl923v">img-29hl923v</a></td>
-	<td>2022-03-30</td>
+	<td>2023-01-06</td>
 	<td>更新最新系统补丁。</td>
   </tr>
   <tr>
 	<td>Windows Server 2012 R2 数据中心版 64位英文版</td>
 	<td >镜像 ID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-2tddq003">img-2tddq003</a></td>
-	<td>2022-03-30</td>
+	<td>2023-01-06</td>
 	<td>更新最新系统补丁。</td>
   </tr>
 
