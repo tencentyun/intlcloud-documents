@@ -39,9 +39,9 @@
 
 ## 가져오기 단계
 
- 1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바의 **[이미지](https://console.cloud.tencent.com/cvm/image)**를 클릭합니다.
+ 1. [CVM](https://console.cloud.tencent.com/cvm/instance/index?rid=19) 콘솔에 로그인한 뒤, 왼쪽 사이드바의 **[이미지](https://console.cloud.tencent.com/cvm/image)** 를 클릭합니다.
  3. **사용자 정의 이미지**를 선택하고,**이미지 가져오기**를 클릭합니다.
- 4. 작업 인터페이스 요구에 따라 먼저 [COS 활성화](https://console.cloud.tencent.com/cos4/index) 후, [버킷 생성](https://intl.cloud.tencent.com/document/product/436/13309)합니다. 이미지 파일을 bucket에 업로드하고 [이미지 파일 URL 가져오기](https://intl.cloud.tencent.com/document/product/436/13322)합니다.
+ 4. 작업 인터페이스 요구에 따라 먼저 [COS 활성화](https://console.cloud.tencent.com/cos4/index) 후, [버킷 생성](https://intl.cloud.tencent.com/document/product/436/13309)합니다. 이미지 파일을 bucket에 [객체 업로드](https://www.tencentcloud.com/document/product/436/13321)하고 [이미지 파일 URL 가져오기](https://intl.cloud.tencent.com/document/product/436/13322)합니다.
  5. **다음**을 클릭합니다.
  6. 실제 상황에 따라 서식을 입력하고 **가져오기 시작**을 클릭합니다.
 <dx-alert infotype="notice" title="">
