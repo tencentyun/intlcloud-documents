@@ -31,15 +31,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Callback URL |
-| SdkAppid | The `SDKAppID` assigned by the IM console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackAfterCreateGroup`. |
-| contenttype | Fixed value: `JSON`. |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Callback URL                                                 |
+| SdkAppid        | The `SDKAppID` assigned by the IM console when the app is created |
+| CallbackCommand | Fixed value: `Group.CallbackAfterCreateGroup`.               |
+| contenttype     | Fixed value: `JSON`.                                         |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -75,17 +75,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand | String | Callback command |
-| groupID | String | The group ID. |
-| Operator_Account | String | `UserID` of the operator who initiates the group creation request |
-| Owner_Account | String | `UserID` of the owner of the group to be created |
-| Type | String | Type of the group to be created (for more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529)), such as `Public`. |
-| Name | String | Name of the group to be created |
-| MemberList | Array | Initial member list of the group to be created |
-| UserDefinedDataList | Array | Custom field for group creation, which is unavailable by default and needs to be enabled. For more information, see [Group Management](https://www.tencentcloud.com/document/product/1047/33530#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
-| EventTime | Integer | Event trigger timestamp in milliseconds |
+| Field               | Type    | Description                                                  |
+| ------------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand     | String  | Callback command                                             |
+| groupID             | String  | The group ID.                                                |
+| Operator_Account    | String  | `UserID` of the operator who initiates the group creation request |
+| Owner_Account       | String  | `UserID` of the owner of the group to be created             |
+| Type                | String  | Type of the group to be created (for more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529)), such as `Public`. |
+| Name                | String  | Name of the group to be created                              |
+| MemberList          | Array   | Initial member list of the group to be created               |
+| UserDefinedDataList | Array   | Custom field for group creation, which is unavailable by default and needs to be enabled. For more information, see [Group Management](https://www.tencentcloud.com/document/product/1047/33530#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
+| EventTime           | Integer | Event trigger timestamp in milliseconds                      |
 
 ### Sample response
 
@@ -101,13 +101,12 @@ A response is sent after the app backend synchronizes the data.
 
 ### Response fields
 
-| Field | Type | Required | 	Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code. The value `0` indicates that the callback result is ignored. |
-| ErrorInfo    | String  | Yes | Error information                                       |
+| Field        | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. `OK`: Successful; `FAIL`: Failed             |
+| ErrorCode    | Integer | Yes      | Error code. The value `0` indicates that the callback result is ignored. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 ## References
 - [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - RESTful API: [Creating a Group](https://intl.cloud.tencent.com/document/product/1047/34895)
-

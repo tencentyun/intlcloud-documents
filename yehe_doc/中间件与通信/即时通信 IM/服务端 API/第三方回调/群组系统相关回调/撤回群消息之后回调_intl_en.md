@@ -31,15 +31,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Webhook URL |
-| SdkAppid | The `SDKAppID` assigned by the Chat console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackAfterRecallMsg`. |
-| contenttype | Fixed value: `JSON`. |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Webhook Protocols** section of [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Webhook URL                                                  |
+| SdkAppid        | The `SDKAppID` assigned by the Chat console when the app is created |
+| CallbackCommand | Fixed value: `Group.CallbackAfterRecallMsg`.                 |
+| contenttype     | Fixed value: `JSON`.                                         |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Webhook Protocols** section of [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -59,15 +59,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Object | Type | Description |
-| --- | --- | --- |
-| CallbackCommand   | String  | Webhook command                                                     |
-| Operator_Account | String | The `UserID` of the operator who recalls a group message |
-| Type | String | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
-| GroupId | String | Group ID |
-| MsgSeqList | Array | `MsgSeq` list of recalled messages |
-| TopicId | String | Topic ID, which indicates message recall in the topic and applies only to topic-enabled communities. |
-| EventTime | Integer | Event trigger timestamp in milliseconds |
+| Object           | Type    | Description                                                  |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | Webhook command                                              |
+| Operator_Account | String  | The `UserID` of the operator who recalls a group message     |
+| Type             | String  | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| GroupId          | String  | Group ID                                                     |
+| MsgSeqList       | Array   | `MsgSeq` list of recalled messages                           |
+| TopicId          | String  | Topic ID, which indicates message recall in the topic and applies only to topic-enabled communities. |
+| EventTime        | Integer | Event trigger timestamp in milliseconds                      |
 
 ### Sample response
 
@@ -81,15 +81,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code. The value `0` indicates that the webhook result is ignored. |
-| ErrorInfo | String | Yes | Error information |
+| Field        | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. `OK`: Successful; `FAIL`: Failed             |
+| ErrorCode    | Integer | Yes      | Error code. The value `0` indicates that the webhook result is ignored. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 ## References
 
 - [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - Restful API: [Recalling Group Messages](https://intl.cloud.tencent.com/document/product/1047/34965)
-
-

@@ -30,15 +30,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求参数说明
 
-| 参数 | 说明 |
-| --- | --- |
-| https | 请求协议为 HTTPS，请求方式为 POST |
-| www.example.com | 回调 URL |
-| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为：Profile.CallbackPortraitSet |
-| contenttype | 固定值为：json |
-| ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
+| 参数            | 说明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 请求协议为 HTTPS，请求方式为 POST                            |
+| www.example.com | 回调 URL                                                     |
+| SdkAppid        | 创建应用时在即时通信 IM 控制台分配的 SDKAppID                |
+| CallbackCommand | 固定为：Profile.CallbackPortraitSet                          |
+| contenttype     | 固定值为：json                                               |
+| ClientIP        | 客户端 IP，格式如：127.0.0.1                                 |
+| OptPlatform     | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 
@@ -71,15 +71,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求包字段说明
 
-| 字段 | 类型 | 说明 |
-| --- | --- | --- |
-| CallbackCommand | String | 回调命令|
-| Operator_Account | String | 触发更新操作的用户的 UserID |
-| From_Account | String | 更新用户资料的用户的 UserID |
-| EventTime | Integer | 毫秒时间戳 |
-| ProfileItem | Array | 更新成功的用户资料列表 |
-| Tag | String | 更新成功的资料字段的名称，详情可参见 [资料字段](https://intl.cloud.tencent.com/document/product/1047/33520) |
-| Value | uint32/string | 更新成功后的资料字段的值，详情可参见 [资料字段](https://intl.cloud.tencent.com/document/product/1047/33520) |
+| 字段             | 类型          | 说明                                                         |
+| ---------------- | ------------- | ------------------------------------------------------------ |
+| CallbackCommand  | String        | 回调命令                                                     |
+| Operator_Account | String        | 触发更新操作的用户的 UserID                                  |
+| From_Account     | String        | 更新用户资料的用户的 UserID                                  |
+| EventTime        | Integer       | 毫秒时间戳                                                   |
+| ProfileItem      | Array         | 更新成功的用户资料列表                                       |
+| Tag              | String        | 更新成功的资料字段的名称，详情可参见 [资料字段](https://intl.cloud.tencent.com/document/product/1047/33520) |
+| Value            | uint32/string | 更新成功后的资料字段的值，详情可参见 [资料字段](https://intl.cloud.tencent.com/document/product/1047/33520) |
 
 ### 应答包示例
 
@@ -93,14 +93,12 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 应答包字段说明
 
-| 字段 | 类型 | 属性 | 说明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码，0表示 App 后台处理成功，1表示 App 后台处理失败 |
-| ErrorInfo | String | 必填 | 错误信息 |
+| 字段         | 类型    | 属性 | 说明                                                   |
+| ------------ | ------- | ---- | ------------------------------------------------------ |
+| ActionStatus | String  | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败         |
+| ErrorCode    | Integer | 必填 | 错误码，0表示 App 后台处理成功，1表示 App 后台处理失败 |
+| ErrorInfo    | String  | 必填 | 错误信息                                               |
 
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
-
-

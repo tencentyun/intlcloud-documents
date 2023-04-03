@@ -31,15 +31,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパラメータの説明
 
-| パラメータ     | 説明 |
-| --- | --- |
-| https | リクエストプロトコルはHTTPS、リクエスト方式はPOSTです |
-| www.example.com | コールバックURL |
-| SdkAppid | アプリケーション作成時にIMコンソールで割り当てられたSDKAppID |
-| CallbackCommand | Group.CallbackBeforeCreateGroupに固定します |
-| contenttype | 固定値はJSONです |
-| ClientIP | クライアントIP、形式はたとえば127.0.0.1です |
-| OptPlatform | クライアントプラットフォーム、値の選択は、[サードパーティコールバック概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)のパラメータOptPlatformの意味を参照します |
+| パラメータ      | 説明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | リクエストプロトコルはHTTPS、リクエスト方式はPOSTです        |
+| www.example.com | コールバックURL                                              |
+| SdkAppid        | アプリケーション作成時にIMコンソールで割り当てられたSDKAppID |
+| CallbackCommand | Group.CallbackBeforeCreateGroupに固定します                  |
+| contenttype     | 固定値はJSONです                                             |
+| ClientIP        | クライアントIP、形式はたとえば127.0.0.1です                  |
+| OptPlatform     | クライアントプラットフォーム、値の選択は、[サードパーティコールバック概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)のパラメータOptPlatformの意味を参照します |
 
 ### リクエストパッケージの事例
 
@@ -65,16 +65,16 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパッケージフィールドの説明
 
-| オブジェクト | 概要 | 機能 |
-| --- | --- | --- |
-| CallbackCommand | String | コールバックコマンド |
-| Operator_Account | String | グループ作成要求を開始したオペレーターUserID |
-| Owner_Account | String | 作成がリクエストされたグループのグループマスターUserID |
-| Type | String | グループメッセージを生成する[グループタイプ概要](https://intl.cloud.tencent.com/document/product/1047/33529)、たとえばPublic |
-| Name | String | 作成がリクエストされたグループ名 |
-| CreateGroupNum | Integer | このユーザーが作成した類似グループの数 |
-| MemberList | Array | 作成がリクエストされたグループの初期化メンバーリスト |
-| EventTime | Integer | イベントトリガーのミリ秒レベルのタイムスタンプ |
+| オブジェクト     | 概要    | 機能                                                         |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | コールバックコマンド                                         |
+| Operator_Account | String  | グループ作成要求を開始したオペレーターUserID                 |
+| Owner_Account    | String  | 作成がリクエストされたグループのグループマスターUserID       |
+| Type             | String  | グループメッセージを生成する[グループタイプ概要](https://intl.cloud.tencent.com/document/product/1047/33529)、たとえばPublic |
+| Name             | String  | 作成がリクエストされたグループ名                             |
+| CreateGroupNum   | Integer | このユーザーが作成した類似グループの数                       |
+| MemberList       | Array   | 作成がリクエストされたグループの初期化メンバーリスト         |
+| EventTime        | Integer | イベントトリガーのミリ秒レベルのタイムスタンプ               |
 
 ### レスポンスパッケージの事例
 
@@ -104,15 +104,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### レスポンスパッケージフィールドの説明
 
-| フィールド | タイプ | 属性 | 説明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必須 | リクエスト処理の結果、OKは処理が成功したことを意味し、FAILは失敗を意味します |
-| ErrorCode | Integer | 必須 | エラーコード。0は作成を許可、1は作成を拒否することを意味します。業務が独自のエラーコードを使用してユーザーのグループ作成を拒否したい場合は、エラーコードErrorCodeおよびErrorInfoをクライアントに渡します。エラーコードErrorCodeを[10100, 10200]の範囲内に設定してください|
-| ErrorInfo | String | 必須 | エラーメッセージ |
+| フィールド   | タイプ  | 属性 | 説明                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 必須 | リクエスト処理の結果、OKは処理が成功したことを意味し、FAILは失敗を意味します |
+| ErrorCode    | Integer | 必須 | エラーコード。0は作成を許可、1は作成を拒否することを意味します。業務が独自のエラーコードを使用してユーザーのグループ作成を拒否したい場合は、エラーコードErrorCodeおよびErrorInfoをクライアントに渡します。エラーコードErrorCodeを[10100, 10200]の範囲内に設定してください |
+| ErrorInfo    | String  | 必須 | エラーメッセージ                                             |
 
 ## 参考
 
 - [サードパーティのコールバック概要](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[グループの作成](https://intl.cloud.tencent.com/document/product/1047/34895)
-
-

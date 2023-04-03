@@ -61,15 +61,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求参数说明
 
-| 参数 | 说明 |
-| --- | --- |
-| https | 请求协议为 HTTPS，请求方式为 POST |
-| www.example.com | 回调 URL |
-| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为：State.StateChange |
-| contenttype | 固定值为 JSON |
-| ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
+| 参数            | 说明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 请求协议为 HTTPS，请求方式为 POST                            |
+| www.example.com | 回调 URL                                                     |
+| SdkAppid        | 创建应用时在即时通信 IM 控制台分配的 SDKAppID                |
+| CallbackCommand | 固定为：State.StateChange                                    |
+| contenttype     | 固定值为 JSON                                                |
+| ClientIP        | 客户端 IP，格式如：127.0.0.1                                 |
+| OptPlatform     | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 
@@ -95,17 +95,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求包字段说明
 
-| 字段 | 类型 | 说明 |
-| --- | --- | --- |
-| CallbackCommand | String | 回调命令 |
-| Info | Object | 用户上下线的信息 |
-| Action | String | 用户上线或者下线的动作，Login 表示上线（TCP 建立），Logout 表示下线（TCP 断开），Disconnect 表示网络断开（TCP 断开） |
-| To_Account | String | 用户 UserID |
-| Reason | String | 用户上下线触发的原因：<ul style="margin:0;"><li >Login 的原因有 Register：App TCP 连接建立或断网重连<li >Logout 的原因有 Unregister：App 用户注销帐号导致 TCP 断开<li >Disconnect 的原因有 LinkClose：即时通信 IM 检测到 App TCP 连接断开（例如 kill App，客户端发出 TCP 的 FIN 包或 RST 包）；TimeOut：即时通信 IM 检测到 App 心跳包超时，认为 TCP 已断开（例如客户端网络异常断开，未发出 TCP 的 FIN 包或 RST 包，也无法发送心跳包）。心跳超时时间为400秒<li >各种具体场景触发的回调 Reason 请参考 [可能触发该回调的场景](https://intl.cloud.tencent.com/document/product/1047/34357) |
-| KickedDevice | Array | 如果本次状态变更为 Login（Register），而且有其他设备被踢下线，才会有此字段。此字段表示其他被踢下线的设备的信息。 |
-| KickedDevice.Platform | String | 被踢下线的设备的平台类型，可能的取值有"iOS", "Android", "Web", "Windows", "iPad", "Mac", "Linux"。 |
-| EventTime | Integer | 触发本次回调的时间戳，单位为毫秒。 |
-    
+| 字段                  | 类型    | 说明                                                         |
+| --------------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand       | String  | 回调命令                                                     |
+| Info                  | Object  | 用户上下线的信息                                             |
+| Action                | String  | 用户上线或者下线的动作，Login 表示上线（TCP 建立），Logout 表示下线（TCP 断开），Disconnect 表示网络断开（TCP 断开） |
+| To_Account            | String  | 用户 UserID                                                  |
+| Reason                | String  | 用户上下线触发的原因：<ul style="margin:0;"><li >Login 的原因有 Register：App TCP 连接建立或断网重连<li >Logout 的原因有 Unregister：App 用户注销帐号导致 TCP 断开<li >Disconnect 的原因有 LinkClose：即时通信 IM 检测到 App TCP 连接断开（例如 kill App，客户端发出 TCP 的 FIN 包或 RST 包）；TimeOut：即时通信 IM 检测到 App 心跳包超时，认为 TCP 已断开（例如客户端网络异常断开，未发出 TCP 的 FIN 包或 RST 包，也无法发送心跳包）。心跳超时时间为400秒<li >各种具体场景触发的回调 Reason 请参考 [可能触发该回调的场景](https://intl.cloud.tencent.com/document/product/1047/34357) |
+| KickedDevice          | Array   | 如果本次状态变更为 Login（Register），而且有其他设备被踢下线，才会有此字段。此字段表示其他被踢下线的设备的信息。 |
+| KickedDevice.Platform | String  | 被踢下线的设备的平台类型，可能的取值有"iOS", "Android", "Web", "Windows", "iPad", "Mac", "Linux"。 |
+| EventTime             | Integer | 触发本次回调的时间戳，单位为毫秒。                           |
+
 ### 应答包示例
 
 ```
@@ -118,14 +118,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 应答包字段说明
 
-| 字段 | 类型 | 属性 | 说明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码，0表示 App 后台处理成功，1表示 App 后台处理失败 |
-| ErrorInfo | String | 必填	 | 错误信息 |
+| 字段         | 类型    | 属性 | 说明                                                   |
+| ------------ | ------- | ---- | ------------------------------------------------------ |
+| ActionStatus | String  | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败         |
+| ErrorCode    | Integer | 必填 | 错误码，0表示 App 后台处理成功，1表示 App 后台处理失败 |
+| ErrorInfo    | String  | 必填 | 错误信息                                               |
 
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - [在线状态管理](https://intl.cloud.tencent.com/document/product/1047/33518)
-

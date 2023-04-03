@@ -31,15 +31,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 매개변수
 
-| 매개변수     | 설명 |
-| --- | --- |
-| https | 요청 프로토콜은 HTTPS, 요청 방식은 POST |
-| www.example.com | 콜백 URL |
-| SdkAppid | 애플리케이션 생성 시 IM 콘솔에서 할당한 SDKAppID |
-| CallbackCommand | 값은 Group.CallbackAfterRecallMsg로 고정 |
-| contenttype | 값은 JSON으로 고정 |
-| ClientIP | 클라이언트 IP 주소(예: 127.0.0.1) |
-| OptPlatform | 클라이언트 플랫폼, 유효한 값은 [타사 콜백 소개](https://intl.cloud.tencent.com/document/product/1047/34354)의 콜백 프로토콜 섹션에서 OptPlatform 설명 참고 |
+| 매개변수        | 설명                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 요청 프로토콜은 HTTPS, 요청 방식은 POST                      |
+| www.example.com | 콜백 URL                                                     |
+| SdkAppid        | 애플리케이션 생성 시 IM 콘솔에서 할당한 SDKAppID             |
+| CallbackCommand | 값은 Group.CallbackAfterRecallMsg로 고정                     |
+| contenttype     | 값은 JSON으로 고정                                           |
+| ClientIP        | 클라이언트 IP 주소(예: 127.0.0.1)                            |
+| OptPlatform     | 클라이언트 플랫폼, 유효한 값은 [타사 콜백 소개](https://intl.cloud.tencent.com/document/product/1047/34354)의 콜백 프로토콜 섹션에서 OptPlatform 설명 참고 |
 
 ### 요청 예시
 
@@ -59,15 +59,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 필드
 
-| 객체 | 유형 | 설명 |
-| --- | --- | --- |
-| CallbackCommand | String | 콜백 명령 |
-| Operator_Account | String | 그룹 메시지를 회수한 운영자의 UserID |
-| Type | String | Public과 같이 그룹 메시지를 생성하는 그룹의 유형, 자세한 내용은 [그룹 시스템](https://intl.cloud.tencent.com/document/product/1047/33529)의 그룹 유형 섹션 참고 |
-| GroupId | String | 그룹 ID |
-| MsgSeqList | Array | 회수된 메시지의 MsgSeq 목록 |
-|TopicId|String|주제의 ID, 이 옵션은 주제 기능을 지원하는 커뮤니티에서만 사용 가능|
-| EventTime | Integer | 이벤트 트리거의 밀리초 수준 타임스탬프 |
+| 객체             | 유형    | 설명                                                         |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | 콜백 명령                                                    |
+| Operator_Account | String  | 그룹 메시지를 회수한 운영자의 UserID                         |
+| Type             | String  | Public과 같이 그룹 메시지를 생성하는 그룹의 유형, 자세한 내용은 [그룹 시스템](https://intl.cloud.tencent.com/document/product/1047/33529)의 그룹 유형 섹션 참고 |
+| GroupId          | String  | 그룹 ID                                                      |
+| MsgSeqList       | Array   | 회수된 메시지의 MsgSeq 목록                                  |
+| TopicId          | String  | 주제의 ID, 이 옵션은 주제 기능을 지원하는 커뮤니티에서만 사용 가능 |
+| EventTime        | Integer | 이벤트 트리거의 밀리초 수준 타임스탬프                       |
 
 ### 응답 예시
 
@@ -81,15 +81,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 응답 필드
 
-| 필드 | 유형 | 필수 | 설명 |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | 요청 결과, OK: 성공, FAIL: 실패 |
-| ErrorCode | Integer | Yes | 에러 코드, 값 0은 콜백 결과가 무시됨 표시|
-| ErrorInfo | String | Yes | 오류 정보 |
+| 필드         | 유형    | 필수 | 설명                                      |
+| ------------ | ------- | ---- | ----------------------------------------- |
+| ActionStatus | String  | Yes  | 요청 결과, OK: 성공, FAIL: 실패           |
+| ErrorCode    | Integer | Yes  | 에러 코드, 값 0은 콜백 결과가 무시됨 표시 |
+| ErrorInfo    | String  | Yes  | 오류 정보                                 |
 
 ## 참고
 
 - [3rd party 콜백 소개](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API: [그룹 메시지 회수](https://intl.cloud.tencent.com/document/product/1047/34965)
-
-

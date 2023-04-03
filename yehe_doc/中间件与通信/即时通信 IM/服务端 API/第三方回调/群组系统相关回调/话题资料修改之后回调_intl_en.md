@@ -38,15 +38,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Callback URL |
-| SdkAppid | The `SDKAppID` assigned by the IM console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackAfterTopicInfoChanged`. |
-| contenttype | Fixed value: `JSON`. |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Callback URL                                                 |
+| SdkAppid        | The `SDKAppID` assigned by the IM console when the app is created |
+| CallbackCommand | Fixed value: `Group.CallbackAfterTopicInfoChanged`.          |
+| contenttype     | Fixed value: `JSON`.                                         |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -65,16 +65,16 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand | String | Callback command |
-| GroupId | String | Group ID of the changed topic profile |
-| Type | String | Group type of the deleted topic. Here, it is `Community`. |
-| Operator_Account | String | `UserID` of the operator |
-| Name | String | Changed topic name |
-| Introduction | String | Changed topic introduction |
-| Notification | String | Changed topic notice |
-| FaceUrl | String | Changed topic profile photo URL |
+| Field            | Type   | Description                                               |
+| ---------------- | ------ | --------------------------------------------------------- |
+| CallbackCommand  | String | Callback command                                          |
+| GroupId          | String | Group ID of the changed topic profile                     |
+| Type             | String | Group type of the deleted topic. Here, it is `Community`. |
+| Operator_Account | String | `UserID` of the operator                                  |
+| Name             | String | Changed topic name                                        |
+| Introduction     | String | Changed topic introduction                                |
+| Notification     | String | Changed topic notice                                      |
+| FaceUrl          | String | Changed topic profile photo URL                           |
 
 ### Sample response
 
@@ -90,11 +90,11 @@ The application backend records the topic profile change information and sends t
 
 ### Response fields
 
-| Object | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. Valid values: `OK` (success); `FAIL`: (failure). |
-| ErrorCode | Integer | Yes | Error code. The value `0` indicates to allow ignoring the response result. |
-| ErrorInfo    | String  | Yes | Error information                                       |
+| Object       | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. Valid values: `OK` (success); `FAIL`: (failure). |
+| ErrorCode    | Integer | Yes      | Error code. The value `0` indicates to allow ignoring the response result. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 ## References
 

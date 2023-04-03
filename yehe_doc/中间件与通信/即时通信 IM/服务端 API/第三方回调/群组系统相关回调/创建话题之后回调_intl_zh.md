@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求参数说明
 
-| 参数 | 说明 |
-| --- | --- |
-| https | 请求协议为 HTTPS，请求方式为 POST |
-| www.example.com | 回调 URL |
-| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为 Group.CallbackAfterCreateTopic |
-| contenttype | 固定值为 JSON |
-| ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
+| 参数            | 说明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 请求协议为 HTTPS，请求方式为 POST                            |
+| www.example.com | 回调 URL                                                     |
+| SdkAppid        | 创建应用时在即时通信 IM 控制台分配的 SDKAppID                |
+| CallbackCommand | 固定为 Group.CallbackAfterCreateTopic                        |
+| contenttype     | 固定值为 JSON                                                |
+| ClientIP        | 客户端 IP，格式如：127.0.0.1                                 |
+| OptPlatform     | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 
@@ -68,16 +68,16 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求包字段说明
 
-| 字段 | 类型 | 说明 |
-| --- | --- | --- |
-| CallbackCommand | String | 回调命令 |
-| GroupId | String | 操作的话题所属的群组ID |
-| TopicId | string | 操作的话题ID |
-| Operator_Account | String | 发起创建话题请求的操作者 UserID |
-| Owner_Account | String | 请求创建话题所属群的群主 UserID |
-| Type | String | 代表创建话题所属的群组类型，这里为Community |
-| Name | String | 请求创建的话题的名称 |
-| UserDefinedDataList | Array | 用户创建话题时的自定义字段，这个字段默认是没有的，需要开通，详见 [自定义字段](https://www.tencentcloud.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) |
+| 字段                | 类型   | 说明                                                         |
+| ------------------- | ------ | ------------------------------------------------------------ |
+| CallbackCommand     | String | 回调命令                                                     |
+| GroupId             | String | 操作的话题所属的群组ID                                       |
+| TopicId             | string | 操作的话题ID                                                 |
+| Operator_Account    | String | 发起创建话题请求的操作者 UserID                              |
+| Owner_Account       | String | 请求创建话题所属群的群主 UserID                              |
+| Type                | String | 代表创建话题所属的群组类型，这里为Community                  |
+| Name                | String | 请求创建的话题的名称                                         |
+| UserDefinedDataList | Array  | 用户创建话题时的自定义字段，这个字段默认是没有的，需要开通，详见 [自定义字段](https://www.tencentcloud.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) |
 
 ### 应答包示例
 
@@ -93,13 +93,12 @@ App 后台同步数据后，发送回调应答包。
 
 ### 应答包字段说明
 
-| 字段 | 类型 | 属性 | 	说明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码，此处填0表示忽略应答结果 |
-| ErrorInfo | String | 必填 | 错误信息 |
+| 字段         | 类型    | 属性 | 说明                                           |
+| ------------ | ------- | ---- | ---------------------------------------------- |
+| ActionStatus | String  | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
+| ErrorCode    | Integer | 必填 | 错误码，此处填0表示忽略应答结果                |
+| ErrorInfo    | String  | 必填 | 错误信息                                       |
 
 ## 参考
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[创建话题](https://intl.cloud.tencent.com/document/product/1047/49471)
-

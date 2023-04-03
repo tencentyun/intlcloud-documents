@@ -1,5 +1,5 @@
 ## Feature Overview
-  
+
 This webhook event is used by the app backend to check the status of a full group in real time. For example, when some inactive group members are removed so that new users can join the group, this webhook will be sent to the app backend.
 
 ## Notes
@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Webhook URL |
-| SdkAppid | The `SDKAppID` assigned by the Chat console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackAfterGroupFull`. |
-| contenttype | Fixed value: `JSON`. |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Webhook Protocols** section of [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Webhook URL                                                  |
+| SdkAppid        | The `SDKAppID` assigned by the Chat console when the app is created |
+| CallbackCommand | Fixed value: `Group.CallbackAfterGroupFull`.                 |
+| contenttype     | Fixed value: `JSON`.                                         |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Webhook Protocols** section of [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -54,11 +54,11 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand   | String  | Webhook command                                                     |
-| GroupId | String | ID of the full group |
-| EventTime | Integer | Event trigger timestamp in milliseconds |
+| Field           | Type    | Description                             |
+| --------------- | ------- | --------------------------------------- |
+| CallbackCommand | String  | Webhook command                         |
+| GroupId         | String  | ID of the full group                    |
+| EventTime       | Integer | Event trigger timestamp in milliseconds |
 
 ### Sample response
 
@@ -74,11 +74,11 @@ The app backend records the group full information and sends the webhook respons
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code. The value `0` indicates that the response result is ignored. |
-| ErrorInfo    | String  | Yes | Error information                                       |
+| Field        | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. `OK`: Successful; `FAIL`: Failed             |
+| ErrorCode    | Integer | Yes      | Error code. The value `0` indicates that the response result is ignored. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 
 ## References

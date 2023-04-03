@@ -30,15 +30,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Callback URL |
-| SdkAppid | The `SDKAppID` assigned by the IM console when the app is created |
-| CallbackCommand | Fixed value: `Profile.CallbackPortraitSet`. |
-| contenttype | Fixed value: json |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocol** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Callback URL                                                 |
+| SdkAppid        | The `SDKAppID` assigned by the IM console when the app is created |
+| CallbackCommand | Fixed value: `Profile.CallbackPortraitSet`.                  |
+| contenttype     | Fixed value: json                                            |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocol** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -71,15 +71,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand | String | Callback command |
-| Operator_Account | String | `UserID` of the user who triggers the update operation |
-| From_Account | String | `UserID` of the user who updates the profile |
-| EventTime | Integer | Timestamp in milliseconds |
-| ProfileItem | Array | List of successfully updated user profile items |
-| Tag | String | Field name of the successfully updated profile. For more information, see [Profile Management](https://intl.cloud.tencent.com/document/product/1047/33520). |
-| Value | uint32/string | Value of the successfully updated profile field. For more information, see [Profile Management](https://intl.cloud.tencent.com/document/product/1047/33520). |
+| Field            | Type          | Description                                                  |
+| ---------------- | ------------- | ------------------------------------------------------------ |
+| CallbackCommand  | String        | Callback command                                             |
+| Operator_Account | String        | `UserID` of the user who triggers the update operation       |
+| From_Account     | String        | `UserID` of the user who updates the profile                 |
+| EventTime        | Integer       | Timestamp in milliseconds                                    |
+| ProfileItem      | Array         | List of successfully updated user profile items              |
+| Tag              | String        | Field name of the successfully updated profile. For more information, see [Profile Management](https://intl.cloud.tencent.com/document/product/1047/33520). |
+| Value            | uint32/string | Value of the successfully updated profile field. For more information, see [Profile Management](https://intl.cloud.tencent.com/document/product/1047/33520). |
 
 ### Sample response
 
@@ -93,14 +93,12 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. OK: succeeded; FAIL: failed. |
-| ErrorCode | Integer | Yes | Error code. 0: the app backend processing succeeded; 1: the app backend processing failed. |
-| ErrorInfo    | String  | Yes | Error information                                       |
+| Field        | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. OK: succeeded; FAIL: failed.                 |
+| ErrorCode    | Integer | Yes      | Error code. 0: the app backend processing succeeded; 1: the app backend processing failed. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 ## References
 
 - [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
-
-

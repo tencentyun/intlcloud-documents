@@ -11,7 +11,7 @@
 - **第三方开发者向即时通信 IM 申请为其域名签发证书**
  - 开发者在控制台 [配置回调 URL](https://intl.cloud.tencent.com/document/product/1047/34520)，例如 `www.example.com`。
  <dx-alert infotype="notice" title="">
- 在注册域名时，请您遵循以下规则：
+  在注册域名时，请您遵循以下规则：
 - 只能使用英文字母（a-z，不区分大小写）、数字（0-9）、以及 “-”（英文中的连接符，即中横线）。
 - 不能使用空格及特殊字符，例如！、$、&、？等。
 - “-” 不能连续出现、不能单独注册，也不能放在开头和结尾。
@@ -32,4 +32,3 @@
 	SSLCACertificateFile  "/usr/local/apache2/conf/TencentQQAuthCA.crt" # 腾讯认证的 CA 证书
 	SSLVerifyClient require # 验证请求来源
 ```
-

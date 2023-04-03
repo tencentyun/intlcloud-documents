@@ -37,15 +37,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Webhook URL |
-| SdkAppid | The `SDKAppID` assigned by the Chat console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackAfterGroupInfoChanged`. |
-| contenttype | Fixed value: `JSON`. |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Webhook Protocols** section of [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Webhook URL                                                  |
+| SdkAppid        | The `SDKAppID` assigned by the Chat console when the app is created |
+| CallbackCommand | Fixed value: `Group.CallbackAfterGroupInfoChanged`.          |
+| contenttype     | Fixed value: `JSON`.                                         |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Webhook Protocols** section of [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -64,17 +64,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand   | String  | Webhook command                                                     |
-| GroupId | String | ID of the group whose profile is modified |
-| Type | String | Type of the group whose profile is modified, such as `Public`. For details, see the **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
-| Operator_Account | String | `UserID` of the operator |
-| Name | String | New group name |
-| Introduction | String | New group introduction |
-| Notification | String | New group announcement |
-| FaceUrl | String | New group profile photo URL |
-| EventTime | Integer | Event trigger timestamp in milliseconds |
+| Field            | Type    | Description                                                  |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | Webhook command                                              |
+| GroupId          | String  | ID of the group whose profile is modified                    |
+| Type             | String  | Type of the group whose profile is modified, such as `Public`. For details, see the **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| Operator_Account | String  | `UserID` of the operator                                     |
+| Name             | String  | New group name                                               |
+| Introduction     | String  | New group introduction                                       |
+| Notification     | String  | New group announcement                                       |
+| FaceUrl          | String  | New group profile photo URL                                  |
+| EventTime        | Integer | Event trigger timestamp in milliseconds                      |
 
 ### Sample response
 
@@ -90,15 +90,13 @@ The application backend records the group profile change information and sends t
 
 ### Response fields
 
-| Object | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code. The value `0` indicates that the response result is ignored. |
-| ErrorInfo    | String  | Yes | Error information                                       |
+| Object       | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. `OK`: Successful; `FAIL`: Failed             |
+| ErrorCode    | Integer | Yes      | Error code. The value `0` indicates that the response result is ignored. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 ## References
 
 - [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - RESTful API: [Modifying the Profile of a Group](https://intl.cloud.tencent.com/document/product/1047/34962)
-
-

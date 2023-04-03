@@ -1,5 +1,5 @@
 ## 機能説明
-  
+
 Appバックグラウンドは、このコールバックを使用して、ユーザーがグループに参加できるために、非アクティブなグループメンバーを削除するなど、グループ満員のダイナミックをリアルタイムで確認できます。
 
 ## 注意事項
@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパラメータの説明
 
-| パラメータ     | 説明 |
-| --- | --- |
-| https | リクエストプロトコルはHTTPS、リクエスト方式はPOSTです |
-| www.example.com | コールバックURL |
-| SdkAppid | アプリケーション作成時にIMコンソールでアサインされたSDKAppID |
-| CallbackCommand | Group.CallbackAfterGroupFullに固定されます |
-| contenttype | 固定値はJSONです |
-| ClientIP | クライアントIP、形式はたとえば127.0.0.1です |
-| OptPlatform | クライアントプラットフォーム、値の選択は、[サードパーティコールバック概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)のパラメータOptPlatformの意味を参照します |
+| パラメータ      | 説明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | リクエストプロトコルはHTTPS、リクエスト方式はPOSTです        |
+| www.example.com | コールバックURL                                              |
+| SdkAppid        | アプリケーション作成時にIMコンソールでアサインされたSDKAppID |
+| CallbackCommand | Group.CallbackAfterGroupFullに固定されます                   |
+| contenttype     | 固定値はJSONです                                             |
+| ClientIP        | クライアントIP、形式はたとえば127.0.0.1です                  |
+| OptPlatform     | クライアントプラットフォーム、値の選択は、[サードパーティコールバック概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)のパラメータOptPlatformの意味を参照します |
 
 ### リクエストパッケージの事例
 
@@ -54,11 +54,11 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパッケージフィールドの説明
 
-| フィールド | タイプ | 説明 |
-| --- | --- | --- |
-| CallbackCommand | String | コールバックコマンド |
-| GroupId | String | 満員のグループID |
-| EventTime | Integer | イベントトリガーのミリ秒レベルのタイムスタンプ |
+| フィールド      | タイプ  | 説明                                           |
+| --------------- | ------- | ---------------------------------------------- |
+| CallbackCommand | String  | コールバックコマンド                           |
+| GroupId         | String  | 満員のグループID                               |
+| EventTime       | Integer | イベントトリガーのミリ秒レベルのタイムスタンプ |
 
 ### レスポンスパッケージの事例
 
@@ -74,11 +74,11 @@ Appバックグラウンドでグループ満員情報を記録した後、コ�
 
 ### レスポンスパッケージフィールドの説明
 
-| フィールド | タイプ | 属性 | 説明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必須 | リクエスト処理の結果、OKは処理が成功したことを意味し、FAILは失敗を意味します |
-| ErrorCode | Integer | 必須 | エラーコード、0はレスポンス結果を無視できることを意味します |
-| ErrorInfo | String | 必須 | エラーメッセージ |
+| フィールド   | タイプ  | 属性 | 説明                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 必須 | リクエスト処理の結果、OKは処理が成功したことを意味し、FAILは失敗を意味します |
+| ErrorCode    | Integer | 必須 | エラーコード、0はレスポンス結果を無視できることを意味します  |
+| ErrorInfo    | String  | 必須 | エラーメッセージ                                             |
 
 
 ## 参考

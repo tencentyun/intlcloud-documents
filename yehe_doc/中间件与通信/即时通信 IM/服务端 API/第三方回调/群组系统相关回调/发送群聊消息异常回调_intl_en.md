@@ -35,14 +35,14 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Callback URL |
-| SdkAppid | The `SDKAppID` assigned by the IM console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackSendMsgException`. |
-| contenttype | Fixed value: `JSON`. |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Callback URL                                                 |
+| SdkAppid        | The `SDKAppID` assigned by the IM console when the app is created |
+| CallbackCommand | Fixed value: `Group.CallbackSendMsgException`.               |
+| contenttype     | Fixed value: `JSON`.                                         |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -72,20 +72,20 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand | String | Callback command |
-| GroupId | String | ID of the group that generates group messages |
-| Type | String | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
-| From_Account    | String  | `UserID` of the message sender                                     |
-| Operator_Account | String | UserID of the request initiator, based on which the system can identify whether the request is initiated by the admin. |
-| Random | Integer | A 32-bit random number in the request |
-|OnlineOnlyFlag|Integer|The value is `1` if it is an online message and `0` (default) if it’s not. For audio-video groups, the value is `0`.|
-| MsgBody | Array | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| CloudCustomData | String | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
-| ErrorCode | Interger | Message exception error code. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
-| ErrorInfo | String | Message exception details |
-| EventTime | Integer | Event trigger timestamp in milliseconds |
+| Field            | Type     | Description                                                  |
+| ---------------- | -------- | ------------------------------------------------------------ |
+| CallbackCommand  | String   | Callback command                                             |
+| GroupId          | String   | ID of the group that generates group messages                |
+| Type             | String   | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| From_Account     | String   | `UserID` of the message sender                               |
+| Operator_Account | String   | UserID of the request initiator, based on which the system can identify whether the request is initiated by the admin. |
+| Random           | Integer  | A 32-bit random number in the request                        |
+| OnlineOnlyFlag   | Integer  | The value is `1` if it is an online message and `0` (default) if it’s not. For audio-video groups, the value is `0`. |
+| MsgBody          | Array    | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CloudCustomData  | String   | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
+| ErrorCode        | Interger | Message exception error code. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
+| ErrorInfo        | String   | Message exception details                                    |
+| EventTime        | Integer  | Event trigger timestamp in milliseconds                      |
 
 ### Sample response
 
@@ -99,14 +99,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Required | Request result. Fixed value: `OK`. |
-| ErrorCode | Integer | Required | Error code. Fixed value: `0`. |
-| ErrorInfo | String | Required	 | Error message. Fixed value: An empty string. |
+| Field        | Type    | Required | Description                                  |
+| ------------ | ------- | -------- | -------------------------------------------- |
+| ActionStatus | String  | Required | Request result. Fixed value: `OK`.           |
+| ErrorCode    | Integer | Required | Error code. Fixed value: `0`.                |
+| ErrorInfo    | String  | Required | Error message. Fixed value: An empty string. |
 
 ## References
 
 - [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - RESTful API: [Sending Ordinary Messages in a Group](https://intl.cloud.tencent.com/document/product/1047/34959)
-

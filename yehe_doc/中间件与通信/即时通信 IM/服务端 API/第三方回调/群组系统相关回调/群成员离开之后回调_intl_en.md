@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Callback URL |
-| SdkAppid | The `SDKAppID` assigned by the IM console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackAfterMemberExit`. |
-| contenttype | Fixed value: `JSON`. |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Callback URL                                                 |
+| SdkAppid        | The `SDKAppID` assigned by the IM console when the app is created |
+| CallbackCommand | Fixed value: `Group.CallbackAfterMemberExit`.                |
+| contenttype     | Fixed value: `JSON`.                                         |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -65,15 +65,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand | String | Callback command |
-| GroupId | String | ID of the group that generates group messages |
-| Type | String | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
-| ExitType | String | Group leaving mode. Valid values: `Kicked` (a member is removed from the group); `Quit` (a member leaves the group). |
-| Operator_Account | String | `UserID` of the user leaving the group |
-| ExitMemberList | Array | List of members leaving the group |
-| EventTime | Integer | Event trigger timestamp in milliseconds |
+| Field            | Type    | Description                                                  |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | Callback command                                             |
+| GroupId          | String  | ID of the group that generates group messages                |
+| Type             | String  | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| ExitType         | String  | Group leaving mode. Valid values: `Kicked` (a member is removed from the group); `Quit` (a member leaves the group). |
+| Operator_Account | String  | `UserID` of the user leaving the group                       |
+| ExitMemberList   | Array   | List of members leaving the group                            |
+| EventTime        | Integer | Event trigger timestamp in milliseconds                      |
 
 ### Sample response
 
@@ -89,11 +89,11 @@ A response is returned after the app backend syncs the data.
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code. The value `0` indicates to allow ignoring the response result. |
-| ErrorInfo    | String  | Yes | Error information                                       |
+| Field        | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. `OK`: Successful; `FAIL`: Failed             |
+| ErrorCode    | Integer | Yes      | Error code. The value `0` indicates to allow ignoring the response result. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 ## References
 
@@ -101,5 +101,3 @@ A response is returned after the app backend syncs the data.
 - [Callback After a User Joins a Group](https://intl.cloud.tencent.com/document/product/1047/34372)
 - [Callback for Online and Offline Status of Audio-Video Group Members](https://intl.cloud.tencent.com/document/product/1047/48734)
 - RESTful API: [Deleting Group Members](https://intl.cloud.tencent.com/document/product/1047/34949)
-
-

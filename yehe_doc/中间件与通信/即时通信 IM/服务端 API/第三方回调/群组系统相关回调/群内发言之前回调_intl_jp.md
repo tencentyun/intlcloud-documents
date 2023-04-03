@@ -3,7 +3,7 @@
 Appバックグラウンドは、このコールバックを使用して、ユーザーのグループメッセージをリアルタイムで確認でき、以下を含みます：
 -  グループメッセージをリアルタイムで記録します（たとえば、ログの記録、他のシステムへの同期など）。
 -  グループで発言するユーザーのリクエストをブロックします。
->! メッセージのプレコールバックはデフォルトで2秒のタイムアウトになり、調整することはお勧めしません。プレコールバックを使用して内容審査を処理すると、プレコールバック全体がタイムアウトする場合があります。内容審査が必要な場合は、内容コールバックを使用してください。詳細については、[内容セキュリティシナリオ実践](https://www.tencentcloud.com/document/product/1047/52498)をご参照ください。
+>! メッセージのプレコールバックはデフォルトで2秒のタイムアウトになり、調整することはお勧めしません。プレコールバックを使用して内容審査を処理すると、プレコールバック全体がタイムアウトする場合があります。内容審査が必要な場合は、内容コールバックを使用してください。
 
 ## 注意事項
 
@@ -34,15 +34,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパラメータの説明
 
-| パラメータ     | 説明 |
-| --- | --- |
-| https | リクエストプロトコルはHTTPS、リクエスト方式はPOSTです |
-| www.example.com | コールバックURL |
-| SdkAppid | アプリケーション作成時にIMコンソールで割り当てられたSDKAppID |
-| CallbackCommand | Group.CallbackBeforeSendMsgに固定します |
-| contenttype | 固定値はJSONです |
-| ClientIP | クライアントIP、形式はたとえば127.0.0.1です |
-| OptPlatform | クライアントプラットフォーム、値の選択は、[サードパーティコールバック概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)のパラメータOptPlatformの意味を参照します |
+| パラメータ      | 説明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | リクエストプロトコルはHTTPS、リクエスト方式はPOSTです        |
+| www.example.com | コールバックURL                                              |
+| SdkAppid        | アプリケーション作成時にIMコンソールで割り当てられたSDKAppID |
+| CallbackCommand | Group.CallbackBeforeSendMsgに固定します                      |
+| contenttype     | 固定値はJSONです                                             |
+| ClientIP        | クライアントIP、形式はたとえば127.0.0.1です                  |
+| OptPlatform     | クライアントプラットフォーム、値の選択は、[サードパーティコールバック概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)のパラメータOptPlatformの意味を参照します |
 
 ### リクエストパッケージの事例
 
@@ -71,19 +71,19 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパッケージフィールドの説明
 
-| フィールド | タイプ | 説明 |
-| --- | --- | --- |
-| CallbackCommand | String | コールバックコマンド |
-| GroupId | String | グループメッセージを生成するグループID |
-| Type | String | グループメッセージを生成する[グループタイプ概要](https://intl.cloud.tencent.com/document/product/1047/33529)、たとえばPublic |
-| From_Account | String | メッセージの送信者UserID |
-| Operator_Account | String | リクエストの開始者UserID、管理者によるリクエストかどうかを認識するために使用できます |
-| Random | Integer | メッセージリクエストの32ビットの乱数 |
-|OnlineOnlyFlag|Integer|オンラインメッセージは1、そうでない場合は0となります。ライブブロードキャストグループの場合はこの属性を無視し、デフォルト値の0とします。|
-| MsgBody | Array | メッセージ内容。具体的には、[メッセージ形式の説明](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください |
-| CloudCustomData | String | メッセージカスタムデータ（クラウドに保存され、対向側に送信され、プログラムをアンインストールして再インストールした後にプルできます） |
-|TopicId|String|トピックID、このオプションが使用可能な場合、トピック内の発言を意味します。このオプションは、トピックをサポートするコミュニティにのみ適用されます |
-| EventTime | Integer | イベントトリガーのミリ秒レベルのタイムスタンプ |
+| フィールド       | タイプ  | 説明                                                         |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | コールバックコマンド                                         |
+| GroupId          | String  | グループメッセージを生成するグループID                       |
+| Type             | String  | グループメッセージを生成する[グループタイプ概要](https://intl.cloud.tencent.com/document/product/1047/33529)、たとえばPublic |
+| From_Account     | String  | メッセージの送信者UserID                                     |
+| Operator_Account | String  | リクエストの開始者UserID、管理者によるリクエストかどうかを認識するために使用できます |
+| Random           | Integer | メッセージリクエストの32ビットの乱数                         |
+| OnlineOnlyFlag   | Integer | オンラインメッセージは1、そうでない場合は0となります。ライブブロードキャストグループの場合はこの属性を無視し、デフォルト値の0とします。 |
+| MsgBody          | Array   | メッセージ内容。具体的には、[メッセージ形式の説明](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください |
+| CloudCustomData  | String  | メッセージカスタムデータ（クラウドに保存され、対向側に送信され、プログラムをアンインストールして再インストールした後にプルできます） |
+| TopicId          | String  | トピックID、このオプションが使用可能な場合、トピック内の発言を意味します。このオプションは、トピックをサポートするコミュニティにのみ適用されます |
+| EventTime        | Integer | イベントトリガーのミリ秒レベルのタイムスタンプ               |
 
 ### レスポンスパッケージの事例
 
@@ -153,17 +153,16 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### レスポンスパッケージフィールドの説明
 
-| フィールド | タイプ | 属性 | 説明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必須 | リクエスト処理の結果、OKは処理が成功したことを意味し、FAILは失敗を意味します |
-| ErrorCode | Integer | 必須 | エラーコード。0は発言が許可され、1は発現が拒否され、2はサイレントに破棄することを意味します。業務が発言を拒否したいと同時に、エラーコードErrorCodeおよびErrorInfoをクライアントに渡した場合は、エラーコードErrorCodeを[10100, 10200]の範囲内に設定してください|
-| ErrorInfo | String | 必須 | エラーメッセージ |
-| MsgBody | Array | オプション	 | App変更後のメッセージボディ。Instant Messagingバックグラウンドは、変更後のメッセージをグループに送信します。具体的な形式については、[メッセージ形式の説明](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください |
-| CloudCustomData | String |  オプション	 || メッセージカスタムデータ（クラウドに保存され、対向側に送信され、プログラムをアンインストールして再インストールした後にプルできます） |
+| フィールド      | タイプ  | 属性       | 説明                                                         |
+| --------------- | ------- | ---------- | ------------------------------------------------------------ |
+| ActionStatus    | String  | 必須       | リクエスト処理の結果、OKは処理が成功したことを意味し、FAILは失敗を意味します |
+| ErrorCode       | Integer | 必須       | エラーコード。0は発言が許可され、1は発現が拒否され、2はサイレントに破棄することを意味します。業務が発言を拒否したいと同時に、エラーコードErrorCodeおよびErrorInfoをクライアントに渡した場合は、エラーコードErrorCodeを[10100, 10200]の範囲内に設定してください |
+| ErrorInfo       | String  | 必須       | エラーメッセージ                                             |
+| MsgBody         | Array   | オプション | App変更後のメッセージボディ。Instant Messagingバックグラウンドは、変更後のメッセージをグループに送信します。具体的な形式については、[メッセージ形式の説明](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください |
+| CloudCustomData | String  | オプション |                                                              |
 
 
 ## 参考
 
 - [サードパーティのコールバック概要](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[グループでの普通メッセージの送信](https://intl.cloud.tencent.com/document/product/1047/34959)
-

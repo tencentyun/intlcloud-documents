@@ -37,15 +37,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 매개변수
 
-| 매개변수     | 설명 |
-| --- | --- |
-| https | 요청 프로토콜은 HTTPS이고 요청 방법은 POST |
-| www.example.com | 콜백 URL |
-| SdkAppid | 애플리케이션 생성 시 IM 콘솔에서 할당한 SDKAppID |
-| CallbackCommand | 값은 Group.CallbackAfterGroupInfoChanged로 고정 |
-| contenttype | 값은 JSON으로 고정 |
-| ClientIP | 클라이언트 IP 주소, 형식: 127.0.0.1 |
-| OptPlatform | 클라이언트 플랫폼. 가능한 값에 대한 자세한 내용은 [3rd party 콜백 개요: 콜백 프로토콜](https://intl.cloud.tencent.com/document/product/1047/34354)의 OptPlatform 매개변수를 참고하십시오. |
+| 매개변수        | 설명                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 요청 프로토콜은 HTTPS이고 요청 방법은 POST                   |
+| www.example.com | 콜백 URL                                                     |
+| SdkAppid        | 애플리케이션 생성 시 IM 콘솔에서 할당한 SDKAppID             |
+| CallbackCommand | 값은 Group.CallbackAfterGroupInfoChanged로 고정              |
+| contenttype     | 값은 JSON으로 고정                                           |
+| ClientIP        | 클라이언트 IP 주소, 형식: 127.0.0.1                          |
+| OptPlatform     | 클라이언트 플랫폼. 가능한 값에 대한 자세한 내용은 [3rd party 콜백 개요: 콜백 프로토콜](https://intl.cloud.tencent.com/document/product/1047/34354)의 OptPlatform 매개변수를 참고하십시오. |
 
 ### 요청 패킷 예시
 
@@ -64,17 +64,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 패킷 필드
 
-| 필드 | 유형 | 설명|
-| --- | --- | --- |
-| CallbackCommand | String | 콜백 명령 |
-| GroupId | String | 정보가 수정된 그룹의 ID |
-| Type | String | Public과 같이 정보가 수정된 그룹의 유형입니다. 자세한 내용은 [그룹 유형](https://intl.cloud.tencent.com/document/product/1047/33529)을 참고하십시오. |
-| Operator_Account | String | 운영자의 UserID |
-| Name | String | 변경된 그룹 이름 |
-| Introduction | String | 변경된 그룹 소개 |
-| Notification | String | 변경된 그룹 공지 |
-| FaceUrl | String | 변경된 단체 프로필 사진 URL |
-| EventTime | Integer | 이벤트 트리거의 밀리초 수준 타임스탬프 |
+| 필드             | 유형    | 설명                                                         |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | 콜백 명령                                                    |
+| GroupId          | String  | 정보가 수정된 그룹의 ID                                      |
+| Type             | String  | Public과 같이 정보가 수정된 그룹의 유형입니다. 자세한 내용은 [그룹 유형](https://intl.cloud.tencent.com/document/product/1047/33529)을 참고하십시오. |
+| Operator_Account | String  | 운영자의 UserID                                              |
+| Name             | String  | 변경된 그룹 이름                                             |
+| Introduction     | String  | 변경된 그룹 소개                                             |
+| Notification     | String  | 변경된 그룹 공지                                             |
+| FaceUrl          | String  | 변경된 단체 프로필 사진 URL                                  |
+| EventTime        | Integer | 이벤트 트리거의 밀리초 수준 타임스탬프                       |
 
 ### 응답 패킷 예시
 
@@ -90,15 +90,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 응답 패킷 필드
 
-| 필드 | 유형 | 속성 | 설명 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 필수 | 요청 처리 결과, OK: 성공, FAIL: 실패. |
-| ErrorCode | Integer | 필수 | 에러 코드, 0 값은 응답의 결과가 무시됨을 나타냅니다 |
-| ErrorInfo | String | 필수 | 오류 정보 |
+| 필드         | 유형    | 속성 | 설명                                                |
+| ------------ | ------- | ---- | --------------------------------------------------- |
+| ActionStatus | String  | 필수 | 요청 처리 결과, OK: 성공, FAIL: 실패.               |
+| ErrorCode    | Integer | 필수 | 에러 코드, 0 값은 응답의 결과가 무시됨을 나타냅니다 |
+| ErrorInfo    | String  | 필수 | 오류 정보                                           |
 
 ## 참고
 
 - [3rd party 콜백 소개](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API: [그룹 기본 정보 변경](https://intl.cloud.tencent.com/document/product/1047/34962)
-
-

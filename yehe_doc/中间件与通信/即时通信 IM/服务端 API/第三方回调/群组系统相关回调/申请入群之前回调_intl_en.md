@@ -30,15 +30,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com| Callback URL |
-| SdkAppid | The `SDKAppID` assigned by the IM console when the app is created |
-| CallbackCommand | Fixed value: `roup.CallbackBeforeApplyJoinGroup`. |
-| contenttype | Fixed value: `JSON`. |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Callback URL                                                 |
+| SdkAppid        | The `SDKAppID` assigned by the IM console when the app is created |
+| CallbackCommand | Fixed value: `roup.CallbackBeforeApplyJoinGroup`.            |
+| contenttype     | Fixed value: `JSON`.                                         |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -54,13 +54,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand | String | Callback command |
-| GroupId | String | ID of the group that generates group messages |
-| Type | String | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
-| Requestor_Account | String | `UserID` of the requester |
-| EventTime | Integer | Event trigger timestamp in milliseconds |
+| Field             | Type    | Description                                                  |
+| ----------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand   | String  | Callback command                                             |
+| GroupId           | String  | ID of the group that generates group messages                |
+| Type              | String  | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| Requestor_Account | String  | `UserID` of the requester                                    |
+| EventTime         | Integer | Event trigger timestamp in milliseconds                      |
 
 ### Sample response
 
@@ -90,14 +90,12 @@ The group join request is not allowed to be further processed. The user cannot j
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code. `0` indicates to allow further processing; `1` indicates to reject the request. If you want to use the specified error code to reject a group join request, you need to pass in `ErrorCode` and `ErrorInfo` to the client, with `ErrorCode` in the range of [10100, 10200]. If a group join request requires admin approval, admin approval is still required even if `0` is returned in the callback. |
-| ErrorInfo    | String  | Yes | Error information                                       |
+| Field        | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. `OK`: Successful; `FAIL`: Failed             |
+| ErrorCode    | Integer | Yes      | Error code. `0` indicates to allow further processing; `1` indicates to reject the request. If you want to use the specified error code to reject a group join request, you need to pass in `ErrorCode` and `ErrorInfo` to the client, with `ErrorCode` in the range of [10100, 10200]. If a group join request requires admin approval, admin approval is still required even if `0` is returned in the callback. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 ## References
 
 [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
-
-

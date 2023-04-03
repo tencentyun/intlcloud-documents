@@ -31,15 +31,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパラメータの説明
 
-| パラメータ | 説明 |
-| --- | --- |
-| https | リクエストプロトコルはHTTPS、リクエストメソッドはPOSTです |
-| www.example.com | コールバックURL |
-| SdkAppid | アプリケーションの作成時にIMコンソールで割り当てられたSDKAppID |
-| CallbackCommand | 固定値：Group.CallbackAfterGroupDestroyed。 |
-| contenttype | JSONという固定値が適用されます |
-| ClientIP | クライアントIP。形式の例：127.0.0.1 |
-| OptPlatform | クライアントプラットフォーム。値の詳細については、[サードパーティコールバックの概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)にあるOptPlatformのパラメータの意味をご参照ください |
+| パラメータ      | 説明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | リクエストプロトコルはHTTPS、リクエストメソッドはPOSTです    |
+| www.example.com | コールバックURL                                              |
+| SdkAppid        | アプリケーションの作成時にIMコンソールで割り当てられたSDKAppID |
+| CallbackCommand | 固定値：Group.CallbackAfterGroupDestroyed。                  |
+| contenttype     | JSONという固定値が適用されます                               |
+| ClientIP        | クライアントIP。形式の例：127.0.0.1                          |
+| OptPlatform     | クライアントプラットフォーム。値の詳細については、[サードパーティコールバックの概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)にあるOptPlatformのパラメータの意味をご参照ください |
 
 ### リクエストパケットの例
 
@@ -67,14 +67,14 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパケットフィールドの説明
 
-| フィールド | タイプ	 | 説明 |
-| --- | --- | --- |
-| CallbackCommand | String | コールバックコマンド |
-| GroupId | String | 解散されたグループID |
-| Type | String | 解散されたグループの[グループタイプの概要](https://intl.cloud.tencent.com/document/product/1047/33529)。例：Public |
-| Owner_Account | String | グループオーナーのUserID |
-| MemberList | Array | 解散されたグループのメンバーリスト。コミュニティはこのフィールドを返しません |
-| EventTime | Integer | イベントがトリガーされるミリ秒レベルのタイムスタンプ |
+| フィールド      | タイプ  | 説明                                                         |
+| --------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand | String  | コールバックコマンド                                         |
+| GroupId         | String  | 解散されたグループID                                         |
+| Type            | String  | 解散されたグループの[グループタイプの概要](https://intl.cloud.tencent.com/document/product/1047/33529)。例：Public |
+| Owner_Account   | String  | グループオーナーのUserID                                     |
+| MemberList      | Array   | 解散されたグループのメンバーリスト。コミュニティはこのフィールドを返しません |
+| EventTime       | Integer | イベントがトリガーされるミリ秒レベルのタイムスタンプ         |
 
 ### レスポンスパケットの例
 
@@ -90,15 +90,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### レスポンスパケットフィールドの説明
 
-| フィールド | タイプ | 属性 | 説明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必須 | リクエスト処理の結果。OKは処理に成功したことを意味し、FAILは失敗したことを意味します |
-| ErrorCode | Integer | 必須 | エラーコード。0に設定することをお勧めします。このコールバックは、グループ解散後にユーザーに通知するために使用されます。ユーザーのエラーコード値は、グループ解散の通常のプロセスには影響しません |
-| ErrorInfo | String | 必須 | エラー情報 |
+| フィールド   | タイプ  | 属性 | 説明                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 必須 | リクエスト処理の結果。OKは処理に成功したことを意味し、FAILは失敗したことを意味します |
+| ErrorCode    | Integer | 必須 | エラーコード。0に設定することをお勧めします。このコールバックは、グループ解散後にユーザーに通知するために使用されます。ユーザーのエラーコード値は、グループ解散の通常のプロセスには影響しません |
+| ErrorInfo    | String  | 必須 | エラー情報                                                   |
 
 ## 参照情報
 
 - [サードパーティコールバックの概要](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[グループの解散](https://intl.cloud.tencent.com/document/product/1047/34896)
-
-

@@ -61,15 +61,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Callback URL |
-| SdkAppid | SDKAppID assigned by the IM console when the app is created |
-| CallbackCommand | Fixed value: State.StateChange |
-| contenttype | Fixed value: JSON. |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of OptPlatform in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Callback URL                                                 |
+| SdkAppid        | SDKAppID assigned by the IM console when the app is created  |
+| CallbackCommand | Fixed value: State.StateChange                               |
+| contenttype     | Fixed value: JSON.                                           |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of OptPlatform in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -95,17 +95,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand   | String  | Callback command                                                     |
-| Info | Object | User login or logout information |
-| Action | String | User login or logout behavior. Valid values: Login (TCP connection established); Logout (TCP connection terminated); Disconnect (network disconnected) |
-| To_Account | String | UserID of the user |
-| Reason | String | Reason for triggering user login or logout:<ul style="margin:0;"><li >Login reason: Register, which indicates that a TCP connection is established with the app or that the network is disconnected and then connected again.<li >Logout reason: Unregister, which indicates that the app user deregisters the account and terminates the TCP connection.<li >Disconnect reason: LinkClose, which indicates that IM detects that the TCP connection with the app is terminated, such as when the app is killed or the client sends a TCP FIN or RST packet. TimeOut: IM detects that the app heartbeat packet times out and determines that the TCP connection is terminated. For example, when the client network is abnormally disconnected, the client does not send the TCP FIN or RST packet and cannot send heartbeat packets. The heartbeat timeout interval is 400 seconds.<li >For the callback reasons of specific scenarios, see [Callback Trigger Scenarios](https://intl.cloud.tencent.com/document/product/1047/34357).|
-| KickedDevice | Array | Information about other devices that are kicked offline. This field is available only when the current status change is Login (Register) and there are other devices being kicked offline. |
-| KickedDevice.Platform | String | Platform type of the device kicked offline. Valid values: iOS, `Android, Web, Windows, iPad, Mac, Linux |
-| EventTime | Integer | Timestamp when the current callback is triggered, in milliseconds. |
-    
+| Field                 | Type    | Description                                                  |
+| --------------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand       | String  | Callback command                                             |
+| Info                  | Object  | User login or logout information                             |
+| Action                | String  | User login or logout behavior. Valid values: Login (TCP connection established); Logout (TCP connection terminated); Disconnect (network disconnected) |
+| To_Account            | String  | UserID of the user                                           |
+| Reason                | String  | Reason for triggering user login or logout:<ul style="margin:0;"><li >Login reason: Register, which indicates that a TCP connection is established with the app or that the network is disconnected and then connected again.<li >Logout reason: Unregister, which indicates that the app user deregisters the account and terminates the TCP connection.<li >Disconnect reason: LinkClose, which indicates that IM detects that the TCP connection with the app is terminated, such as when the app is killed or the client sends a TCP FIN or RST packet. TimeOut: IM detects that the app heartbeat packet times out and determines that the TCP connection is terminated. For example, when the client network is abnormally disconnected, the client does not send the TCP FIN or RST packet and cannot send heartbeat packets. The heartbeat timeout interval is 400 seconds.<li >For the callback reasons of specific scenarios, see [Callback Trigger Scenarios](https://intl.cloud.tencent.com/document/product/1047/34357). |
+| KickedDevice          | Array   | Information about other devices that are kicked offline. This field is available only when the current status change is Login (Register) and there are other devices being kicked offline. |
+| KickedDevice.Platform | String  | Platform type of the device kicked offline. Valid values: iOS, `Android, Web, Windows, iPad, Mac, Linux |
+| EventTime             | Integer | Timestamp when the current callback is triggered, in milliseconds. |
+
 ### Sample response
 
 ```
@@ -118,14 +118,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. OK: Successful; FAIL: Failed |
-| ErrorCode | Integer | Yes | Error code. 0: The app backend processing was successful; 1: The app backend processing failed. |
-| ErrorInfo | String | Yes | Error information |
+| Field        | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. OK: Successful; FAIL: Failed                 |
+| ErrorCode    | Integer | Yes      | Error code. 0: The app backend processing was successful; 1: The app backend processing failed. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 ## References
 
 - [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - [Online Status Management](https://intl.cloud.tencent.com/document/product/1047/33518)
-

@@ -36,15 +36,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求参数说明
 
-| 参数 | 说明 |
-| --- | --- |
-| https | 请求协议为 HTTPS，请求方式为 POST |
-| www.example.com | 回调 URL |
-| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为：Sns.CallbackPrevFriendResponse |
-| contenttype | 固定值为：json |
-| ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
+| 参数            | 说明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 请求协议为 HTTPS，请求方式为 POST                            |
+| www.example.com | 回调 URL                                                     |
+| SdkAppid        | 创建应用时在即时通信 IM 控制台分配的 SDKAppID                |
+| CallbackCommand | 固定为：Sns.CallbackPrevFriendResponse                       |
+| contenttype     | 固定值为：json                                               |
+| ClientIP        | 客户端 IP，格式如：127.0.0.1                                 |
+| OptPlatform     | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 
@@ -73,17 +73,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求包字段说明
 
-| 字段              | 类型    | 说明                                                         |
-| --- | --- | --- |
-| CallbackCommand   | String  | 回调命令                                                     |
-| Requester_Account | String  | 添加好友回应请求发起方的 UserID                                        |
-| From_Account      | String | 请求加好友回应的用户的 UserID |
-| ResponseFriendItem | Array | 加好友回应请求的参数 |
-| To_Account | String | 请求回应的用户的 UserID |
-| Remark | String | From_Account 对 To_Account 设置的好友备注，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1047/33521) |
-| TagName | String | From_Account 对 To_Account 设置的好友分组，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1047/33521) |
-| ResponseAction | String | 加好友回应方式：<br/><li>Response_Action_AgreeAndAdd 表示同意且添加对方为好友<br/><li>Response_Action_Agree 表示同意对方加自己为好友<br/><li>Response_Action_Reject 表示拒绝对方的加好友请求 |
-| EventTime | Integer | 毫秒时间戳 |
+| 字段               | 类型    | 说明                                                         |
+| ------------------ | ------- | ------------------------------------------------------------ |
+| CallbackCommand    | String  | 回调命令                                                     |
+| Requester_Account  | String  | 添加好友回应请求发起方的 UserID                              |
+| From_Account       | String  | 请求加好友回应的用户的 UserID                                |
+| ResponseFriendItem | Array   | 加好友回应请求的参数                                         |
+| To_Account         | String  | 请求回应的用户的 UserID                                      |
+| Remark             | String  | From_Account 对 To_Account 设置的好友备注，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1047/33521) |
+| TagName            | String  | From_Account 对 To_Account 设置的好友分组，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1047/33521) |
+| ResponseAction     | String  | 加好友回应方式：<br/><li>Response_Action_AgreeAndAdd 表示同意且添加对方为好友<br/><li>Response_Action_Agree 表示同意对方加自己为好友<br/><li>Response_Action_Reject 表示拒绝对方的加好友请求 |
+| EventTime          | Integer | 毫秒时间戳                                                   |
 
 ### 应答包示例
 
@@ -109,18 +109,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 应答包字段说明
 
-| 字段 | 类型 | 属性 | 说明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码：<br/><li>0表示 App 后台处理成功<br/><li>非0值表示 App 后台处理失败，默认放过<br/><li>如果 App 后台处理失败，请将错误码设置在[38000, 39000] |
-| ErrorInfo | String | 必填 | 错误信息 |
-| ResultItem | Array | 必填 | App 后台的处理结果 |
-| To_Account | String | 必填 | 请求添加的用户的 UserID |
-| ResultCode | Integer | 必填 | 错误码：<br/><li>0表示允许加好友<br/><li>非0值表示不允许加好友<br/><li>如果不允许加好友，请将错误码设置在[38000, 39000] |
-| ResultInfo | String | 必填 | 错误信息 |
+| 字段         | 类型    | 属性 | 说明                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败               |
+| ErrorCode    | Integer | 必填 | 错误码：<br/><li>0表示 App 后台处理成功<br/><li>非0值表示 App 后台处理失败，默认放过<br/><li>如果 App 后台处理失败，请将错误码设置在[38000, 39000] |
+| ErrorInfo    | String  | 必填 | 错误信息                                                     |
+| ResultItem   | Array   | 必填 | App 后台的处理结果                                           |
+| To_Account   | String  | 必填 | 请求添加的用户的 UserID                                      |
+| ResultCode   | Integer | 必填 | 错误码：<br/><li>0表示允许加好友<br/><li>非0值表示不允许加好友<br/><li>如果不允许加好友，请将错误码设置在[38000, 39000] |
+| ResultInfo   | String  | 必填 | 错误信息                                                     |
 
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[添加好友](https://intl.cloud.tencent.com/document/product/1047/34902)
-

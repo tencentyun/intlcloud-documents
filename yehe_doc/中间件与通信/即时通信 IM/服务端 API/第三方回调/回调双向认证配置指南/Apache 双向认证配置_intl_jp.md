@@ -11,7 +11,7 @@
 - **サードパーティ開発者がIMにドメイン名の証明書の発行をリクエストする場合**
  - 開発者はコンソールで[コールバックのURLを設定](https://intl.cloud.tencent.com/document/product/1047/34520)します。例えば、`www.example.com`。
  <dx-alert infotype="notice" title="">
- ドメイン名を登録する時、以下のルールに従ってください：
+  ドメイン名を登録する時、以下のルールに従ってください：
 - 英文字（a-z、大文字と小文字を区別しない）、数字（0-9）、「-」（ハイフン）を使用してください。
 - スペースと特殊文字を使用しないでください。例えば、！、$、&、？など。
 - 「-」を連続して使用したり、「-」のみを使って登録したりできません。また、先頭または末尾に「-」を使用できません。
@@ -32,4 +32,3 @@
 	SSLCACertificateFile  "/usr/local/apache2/conf/TencentQQAuthCA.crt" # Tencent Cloud認定のCA証明書
 	SSLVerifyClient require # リクエストの送信元を認証する
 ```
-

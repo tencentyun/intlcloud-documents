@@ -36,15 +36,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS and the request method is POST. |
-| www.example.com | Callback URL |
-| SdkAppid | `SDKAppID` assigned by the IM console when the app is created |
-| CallbackCommand | Always `Sns.CallbackPrevFriendResponse` |
-| contenttype | Always `json` |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS and the request method is POST. |
+| www.example.com | Callback URL                                                 |
+| SdkAppid        | `SDKAppID` assigned by the IM console when the app is created |
+| CallbackCommand | Always `Sns.CallbackPrevFriendResponse`                      |
+| contenttype     | Always `json`                                                |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -73,17 +73,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field              | Type    | Description                                                         |
-| --- | --- | --- |
-| CallbackCommand   | String  | Callback command                                                     |
-| Requester_Account | String  | `UserID` of the user who initiates the friend request                                        |
-| From_Account      | String | `UserID` of the user who responds to the friend request |
-| ResponseFriendItem | Array | Parameter of the response to the friend request  |
-| To_Account | String | `UserID` of the user who makes the friend request |
-| Remark | String | Friend remarks set by `From_Account` for `To_Account`. For more information, see the **Standard friend fields** section in [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521). |
-| TagName | String | Friend list set by `From_Account` for `To_Account`. For more information, see the **Standard friend fields** section in [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521). |
-| ResponseAction | String | Response method. Valid values:<br/><li>`Response_Action_AgreeAndAdd`: accept the friend request and add the other party as friend.<br/><li>`Response_Action_Agree`: agree to let the other party add you as friend.<br/><li>`Response_Action_Reject`: reject the friend request.|
-| EventTime | Integer | Timestamp in milliseconds |
+| Field              | Type    | Description                                                  |
+| ------------------ | ------- | ------------------------------------------------------------ |
+| CallbackCommand    | String  | Callback command                                             |
+| Requester_Account  | String  | `UserID` of the user who initiates the friend request        |
+| From_Account       | String  | `UserID` of the user who responds to the friend request      |
+| ResponseFriendItem | Array   | Parameter of the response to the friend request              |
+| To_Account         | String  | `UserID` of the user who makes the friend request            |
+| Remark             | String  | Friend remarks set by `From_Account` for `To_Account`. For more information, see the **Standard friend fields** section in [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521). |
+| TagName            | String  | Friend list set by `From_Account` for `To_Account`. For more information, see the **Standard friend fields** section in [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521). |
+| ResponseAction     | String  | Response method. Valid values:<br/><li>`Response_Action_AgreeAndAdd`: accept the friend request and add the other party as friend.<br/><li>`Response_Action_Agree`: agree to let the other party add you as friend.<br/><li>`Response_Action_Reject`: reject the friend request. |
+| EventTime          | Integer | Timestamp in milliseconds                                    |
 
 ### Sample response
 
@@ -109,18 +109,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: successful; `FAIL`: failed |
-| ErrorCode | Integer | Yes | Error code. Valid values:<br/><li>`0`: processing by the app backend is successful.<br/><li>Other values: processing by the app backend fails. The IM backend ignores this error by default.<br/><li>If the processing fails, set the error code to a value in the range of [38000, 39000]. |
-| ErrorInfo | String | Yes | Error information |
-| ResultItem | Array | Yes | Processing result from the app backend |
-| To_Account | String | Yes | `UserID` of the user who initiates the friend request |
-| ResultCode | Integer | Yes | Result code. Valid values:<br/><li>`0`: allow adding as friend.<br/><li>Other values: do not allow adding as friend.<br/><li>To not allow adding as friend, set the result code to a value in the range of [38000, 39000]. |
-| ResultInfo | String | Yes | Error information |
+| Field        | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. `OK`: successful; `FAIL`: failed             |
+| ErrorCode    | Integer | Yes      | Error code. Valid values:<br/><li>`0`: processing by the app backend is successful.<br/><li>Other values: processing by the app backend fails. The IM backend ignores this error by default.<br/><li>If the processing fails, set the error code to a value in the range of [38000, 39000]. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
+| ResultItem   | Array   | Yes      | Processing result from the app backend                       |
+| To_Account   | String  | Yes      | `UserID` of the user who initiates the friend request        |
+| ResultCode   | Integer | Yes      | Result code. Valid values:<br/><li>`0`: allow adding as friend.<br/><li>Other values: do not allow adding as friend.<br/><li>To not allow adding as friend, set the result code to a value in the range of [38000, 39000]. |
+| ResultInfo   | String  | Yes      | Error information                                            |
 
 ## References
 
 - [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - [Adding Friends](https://intl.cloud.tencent.com/document/product/1047/34902)
-

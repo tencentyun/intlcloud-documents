@@ -31,15 +31,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパラメータの説明
 
-| パラメータ     | 説明 |
-| --- | --- |
-| https | リクエストプロトコルはHTTPS、リクエスト方式はPOSTです |
-| www.example.com | コールバックURL |
-| SdkAppid | アプリケーション作成時にIMコンソールで割り当てられたSDKAppID |
-| CallbackCommand | Group.CallbackAfterSendMsgに固定します |
-| contenttype | 固定値はJSONです |
-| ClientIP | クライアントIP、形式はたとえば127.0.0.1です |
-| OptPlatform | クライアントプラットフォーム、値の選択は、[サードパーティコールバック概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)のパラメータOptPlatformの意味を参照します |
+| パラメータ      | 説明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | リクエストプロトコルはHTTPS、リクエスト方式はPOSTです        |
+| www.example.com | コールバックURL                                              |
+| SdkAppid        | アプリケーション作成時にIMコンソールで割り当てられたSDKAppID |
+| CallbackCommand | Group.CallbackAfterSendMsgに固定します                       |
+| contenttype     | 固定値はJSONです                                             |
+| ClientIP        | クライアントIP、形式はたとえば127.0.0.1です                  |
+| OptPlatform     | クライアントプラットフォーム、値の選択は、[サードパーティコールバック概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)のパラメータOptPlatformの意味を参照します |
 
 ### リクエストパッケージの事例
 
@@ -69,21 +69,21 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパッケージフィールドの説明
 
-| フィールド | タイプ | 説明 |
-| --- | --- | --- |
-| CallbackCommand | String | コールバックコマンド |
-| GroupId | String | グループメッセージを生成するグループID |
-| Type | String | グループメッセージを生成する[グループタイプ概要](https://intl.cloud.tencent.com/document/product/1047/33529)、たとえばPublic |
-| From_Account | String | メッセージの送信者UserID |
-| Operator_Account | String | リクエストの開始者UserID、管理者によるリクエストかどうかを認識するために使用できます|
-| Random | Integer | メッセージリクエストの32ビットの乱数 |
-| MsgSeq | Integer | メッセージのシーケンス番号、メッセージの一意の識別子<br>グループチャットメッセージはMsgSeqを使用してソートされます。MsgSeqの値が大きいほど、メッセージが遅くなります |
-| MsgTime | Integer | メッセージが送信されたときのタイムスタンプ。バックグラウンドServer時間に対応します |
-|OnlineOnlyFlag|Integer|オンラインメッセージは1、そうでない場合は0となります。ライブブロードキャストグループの場合はこの属性を無視し、デフォルト値の0とします。|
-| MsgBody | Array | メッセージボディ。具体的には、[メッセージ形式の説明](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください |
-| CloudCustomData | String | メッセージカスタムデータ（クラウドに保存され、対向側に送信され、プログラムをアンインストールして再インストールした後にプルできます） |
-| TopicId | String | トピックID、このオプションが使用可能な場合、トピック内の発言を意味します。このオプションは、トピックをサポートするコミュニティにのみ適用されます |
-| EventTime | Integer | イベントトリガーのミリ秒レベルのタイムスタンプ |
+| フィールド       | タイプ  | 説明                                                         |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | コールバックコマンド                                         |
+| GroupId          | String  | グループメッセージを生成するグループID                       |
+| Type             | String  | グループメッセージを生成する[グループタイプ概要](https://intl.cloud.tencent.com/document/product/1047/33529)、たとえばPublic |
+| From_Account     | String  | メッセージの送信者UserID                                     |
+| Operator_Account | String  | リクエストの開始者UserID、管理者によるリクエストかどうかを認識するために使用できます |
+| Random           | Integer | メッセージリクエストの32ビットの乱数                         |
+| MsgSeq           | Integer | メッセージのシーケンス番号、メッセージの一意の識別子<br>グループチャットメッセージはMsgSeqを使用してソートされます。MsgSeqの値が大きいほど、メッセージが遅くなります |
+| MsgTime          | Integer | メッセージが送信されたときのタイムスタンプ。バックグラウンドServer時間に対応します |
+| OnlineOnlyFlag   | Integer | オンラインメッセージは1、そうでない場合は0となります。ライブブロードキャストグループの場合はこの属性を無視し、デフォルト値の0とします。 |
+| MsgBody          | Array   | メッセージボディ。具体的には、[メッセージ形式の説明](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください |
+| CloudCustomData  | String  | メッセージカスタムデータ（クラウドに保存され、対向側に送信され、プログラムをアンインストールして再インストールした後にプルできます） |
+| TopicId          | String  | トピックID、このオプションが使用可能な場合、トピック内の発言を意味します。このオプションは、トピックをサポートするコミュニティにのみ適用されます |
+| EventTime        | Integer | イベントトリガーのミリ秒レベルのタイムスタンプ               |
 
 ### レスポンスパッケージの事例
 
@@ -99,14 +99,13 @@ Appバックグラウンドでデータ同期を実行した後、コールバ�
 
 ### レスポンスパッケージフィールドの説明
 
-| フィールド | タイプ | 属性 | 説明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必須 | リクエスト処理の結果、OKは処理が成功したことを意味し、FAILは失敗を意味します |
-| ErrorCode | Integer | 必須 | エラーコード、ここで0を入力すると、レスポンス結果を無視できることを意味します |
-| ErrorInfo | String | 必須 | エラーメッセージ |
+| フィールド   | タイプ  | 属性 | 説明                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 必須 | リクエスト処理の結果、OKは処理が成功したことを意味し、FAILは失敗を意味します |
+| ErrorCode    | Integer | 必須 | エラーコード、ここで0を入力すると、レスポンス結果を無視できることを意味します |
+| ErrorInfo    | String  | 必須 | エラーメッセージ                                             |
 
 ## 参考
 
 - [サードパーティのコールバック概要](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[グループでの普通メッセージの送信](https://intl.cloud.tencent.com/document/product/1047/34959)
-

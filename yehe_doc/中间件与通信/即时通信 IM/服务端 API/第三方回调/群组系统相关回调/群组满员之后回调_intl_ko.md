@@ -1,5 +1,5 @@
 ## 기능 설명
-  
+
 App 백엔드는 이 콜백을 사용하여 그룹의 구성원 수가 그룹의 한도에 도달했는지 확인할 수 있습니다. 이 콜백은 비활성 그룹 구성원을 삭제하여 새 구성원을 수락하는 데에도 사용할 수 있습니다.
 
 ## 주의 사항
@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 547 / 5,000번역 결과번역 결과요청 매개변수
 
-| 매개변수     | 설명 |
-| --- | --- |
-| https | https 요청 프로토콜은 HTTPS이고 요청 방법은 POST |
-| www.example.com | 콜백 URL |
-| SdkAppid | 애플리케이션 생성 시 IM 콘솔에서 할당한 SDKAppID |
-| CallbackCommand | 값은 Group.CallbackAfterGroupFull로 고정 |
-| contenttype | 값은 JSON으로 고정 |
-| ClientIP | 클라이언트 IP 주소, 형식: 127.0.0.1 |
-| OptPlatform | 클라이언트 플랫폼. 가능한 값에 대한 자세한 내용은 [3rd party 콜백 개요: 콜백 프로토콜](https://intl.cloud.tencent.com/document/product/1047/34354)의 OptPlatform 매개변수를 참고하십시오. |
+| 매개변수        | 설명                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | https 요청 프로토콜은 HTTPS이고 요청 방법은 POST             |
+| www.example.com | 콜백 URL                                                     |
+| SdkAppid        | 애플리케이션 생성 시 IM 콘솔에서 할당한 SDKAppID             |
+| CallbackCommand | 값은 Group.CallbackAfterGroupFull로 고정                     |
+| contenttype     | 값은 JSON으로 고정                                           |
+| ClientIP        | 클라이언트 IP 주소, 형식: 127.0.0.1                          |
+| OptPlatform     | 클라이언트 플랫폼. 가능한 값에 대한 자세한 내용은 [3rd party 콜백 개요: 콜백 프로토콜](https://intl.cloud.tencent.com/document/product/1047/34354)의 OptPlatform 매개변수를 참고하십시오. |
 
 ### 요청 패킷 예시
 
@@ -54,11 +54,11 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 패킷 필드
 
-| 필드 | 유형 | 설명|
-| --- | --- | --- |
-| CallbackCommand | String | 콜백 명령 |
-| GroupId | String | 만원 그룹의 ID |
-| EventTime | Integer | 이벤트 트리거의 밀리초 수준 타임스탬프 |
+| 필드            | 유형    | 설명                                   |
+| --------------- | ------- | -------------------------------------- |
+| CallbackCommand | String  | 콜백 명령                              |
+| GroupId         | String  | 만원 그룹의 ID                         |
+| EventTime       | Integer | 이벤트 트리거의 밀리초 수준 타임스탬프 |
 
 ### 응답 패킷 예시
 
@@ -74,11 +74,11 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 응답 패킷 필드
 
-| 필드 | 유형 | 속성 | 설명 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 필수 | 요청 처리 결과, OK: 성공, FAIL: 실패 |
-| ErrorCode | Integer | 필수 | 에러 코드, 0: 응답에서 결과를 무시합니다 |
-| ErrorInfo | String | 필수 | 오류 정보 |
+| 필드         | 유형    | 속성 | 설명                                     |
+| ------------ | ------- | ---- | ---------------------------------------- |
+| ActionStatus | String  | 필수 | 요청 처리 결과, OK: 성공, FAIL: 실패     |
+| ErrorCode    | Integer | 필수 | 에러 코드, 0: 응답에서 결과를 무시합니다 |
+| ErrorInfo    | String  | 필수 | 오류 정보                                |
 
 
 ## 참고

@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 매개변수
 
-| 매개변수 | 설명 |
-| --- | --- |
-| https | 요청 프로토콜은 HTTPS이고, 요청 방법은 POST |
-| www.example.com | 콜백 URL |
-| SdkAppid | 애플리케이션이 생성될 때 IM 콘솔에서 할당한 SDKAppID |
-| CallbackCommand | 고정 값: Group.CallbackBeforeCreateTopic |
-| contenttype | 고정 값: JSON |
-| ClientIP | 클라이언트 IP, 형식: 127.0.0.1 |
-| OptPlatform | 클라이언트 플랫폼, 유효한 값은 [Webhook Overview: Callback Protocol](https://intl.cloud.tencent.com/document/product/1047/34354) 섹션에서 OptPlatform에 대한 설명 참고 |
+| 매개변수        | 설명                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 요청 프로토콜은 HTTPS이고, 요청 방법은 POST                  |
+| www.example.com | 콜백 URL                                                     |
+| SdkAppid        | 애플리케이션이 생성될 때 IM 콘솔에서 할당한 SDKAppID         |
+| CallbackCommand | 고정 값: Group.CallbackBeforeCreateTopic                     |
+| contenttype     | 고정 값: JSON                                                |
+| ClientIP        | 클라이언트 IP, 형식: 127.0.0.1                               |
+| OptPlatform     | 클라이언트 플랫폼, 유효한 값은 [Webhook Overview: Callback Protocol](https://intl.cloud.tencent.com/document/product/1047/34354) 섹션에서 OptPlatform에 대한 설명 참고 |
 
 ### 요청 예시
 
@@ -55,12 +55,12 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 필드
 
-| 객체 | 유형 | 설명 |
-| --- | --- | --- |
-| CallbackCommand | String | 콜백 명령 |
+| 객체             | 유형   | 설명                                    |
+| ---------------- | ------ | --------------------------------------- |
+| CallbackCommand  | String | 콜백 명령                               |
 | Operator_Account | String | 토픽 생성 요청을 시작한 운영자의 UserID |
-| Type | String | 토픽의 그룹 유형, 여기는 Community |
-| Name | String | 생성을 요청한 토픽의 이름 |
+| Type             | String | 토픽의 그룹 유형, 여기는 Community      |
+| Name             | String | 생성을 요청한 토픽의 이름               |
 
 ### 응답 예시
 
@@ -90,14 +90,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 응답 필드
 
-| 필드 | 유형 | 속성 | 설명 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 필수 | 요청 결과, OK: 성공 표시, FAIL: 실패 표시 |
-| ErrorCode | Integer | 필수 | 에러 코드, 유효한 값: 0: 생성 허용; 1: 생성이 거부됨, 고유한 에러 코드를 사용하여 토픽 생성에 대한 사용자 요청을 거부하려면 [10100,10200] 범위의 ErrorCode와 함께 ErrorCode 및 ErrorInfo를 클라이언트에 전달해야 합니다 |
-| ErrorInfo | String | 필수 | 에러 메시지 |
+| 필드         | 유형    | 속성 | 설명                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 필수 | 요청 결과, OK: 성공 표시, FAIL: 실패 표시                    |
+| ErrorCode    | Integer | 필수 | 에러 코드, 유효한 값: 0: 생성 허용; 1: 생성이 거부됨, 고유한 에러 코드를 사용하여 토픽 생성에 대한 사용자 요청을 거부하려면 [10100,10200] 범위의 ErrorCode와 함께 ErrorCode 및 ErrorInfo를 클라이언트에 전달해야 합니다 |
+| ErrorInfo    | String  | 필수 | 에러 메시지                                                  |
 
 ## 참고
 
 - [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API: [토픽 생성](https://intl.cloud.tencent.com/document/product/1047/49471)
-

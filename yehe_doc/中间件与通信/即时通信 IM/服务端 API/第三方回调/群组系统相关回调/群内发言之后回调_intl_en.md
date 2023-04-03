@@ -31,15 +31,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Webhook URL |
-| SdkAppid | The `SDKAppID` assigned by the Chat console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackAfterSendMsg`. |
-| contenttype | Fixed value: `JSON`. |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Webhook URL                                                  |
+| SdkAppid        | The `SDKAppID` assigned by the Chat console when the app is created |
+| CallbackCommand | Fixed value: `Group.CallbackAfterSendMsg`.                   |
+| contenttype     | Fixed value: `JSON`.                                         |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample requests
 
@@ -69,21 +69,21 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand   | String  | Webhook command                                                     |
-| GroupId | String | ID of the group that generates group messages |
-| Type | String | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
-| From_Account    | String  | `UserID` of the message sender                                     |
-| Operator_Account | String | `UserID` of the request initiator, based on which the system can identify whether the request is initiated by the admin. |
-| Random | Integer | A 32-bit random number in the request |
-| MsgSeq | Integer | Message sequence number, which uniquely identifies a message<br>Group messages are sorted by `MsgSeq`. The larger the `MsgSeq` value, the lower a message ranks. |
-| MsgTime | Integer | Message sending timestamp, corresponding to the backend server time |
-|OnlineOnlyFlag|Integer|The value is `1` if it is an online message and `0` (default) if it’s not. For audio-video groups, the value is `0`.|
-| MsgBody | Array | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| CloudCustomData | String | Custom message data. It is saved in the cloud and will be sent to the receiver. Such data can be pulled after the app is uninstalled and reinstalled. |
-| TopicId | String | Topic ID, which indicates message sending in the topic and applies only to topic-enabled communities. |
-| EventTime | Integer | Event trigger timestamp in milliseconds |
+| Field            | Type    | Description                                                  |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | Webhook command                                              |
+| GroupId          | String  | ID of the group that generates group messages                |
+| Type             | String  | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| From_Account     | String  | `UserID` of the message sender                               |
+| Operator_Account | String  | `UserID` of the request initiator, based on which the system can identify whether the request is initiated by the admin. |
+| Random           | Integer | A 32-bit random number in the request                        |
+| MsgSeq           | Integer | Message sequence number, which uniquely identifies a message<br>Group messages are sorted by `MsgSeq`. The larger the `MsgSeq` value, the lower a message ranks. |
+| MsgTime          | Integer | Message sending timestamp, corresponding to the backend server time |
+| OnlineOnlyFlag   | Integer | The value is `1` if it is an online message and `0` (default) if it’s not. For audio-video groups, the value is `0`. |
+| MsgBody          | Array   | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CloudCustomData  | String  | Custom message data. It is saved in the cloud and will be sent to the receiver. Such data can be pulled after the app is uninstalled and reinstalled. |
+| TopicId          | String  | Topic ID, which indicates message sending in the topic and applies only to topic-enabled communities. |
+| EventTime        | Integer | Event trigger timestamp in milliseconds                      |
 
 ### Sample response
 
@@ -99,14 +99,13 @@ A response is sent after the app backend synchronizes the data.
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code. The value `0` indicates that the webhook result is ignored. |
-| ErrorInfo | String | Yes | Error information |
+| Field        | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. `OK`: Successful; `FAIL`: Failed             |
+| ErrorCode    | Integer | Yes      | Error code. The value `0` indicates that the webhook result is ignored. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 ## References
 
 - [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - RESTful APIs: [Sending Ordinary Messages in a Group](https://intl.cloud.tencent.com/document/product/1047/34959)
-

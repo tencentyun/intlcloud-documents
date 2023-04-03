@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求参数说明
 
-| 参数 | 说明 |
-| --- | --- |
-| https | 请求协议为 HTTPS，请求方式为 POST |
-| www.example.com | 回调 URL |
-| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为：Group.CallbackBeforeCreateTopic |
-| contenttype | 固定值为 JSON |
-| ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
+| 参数            | 说明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 请求协议为 HTTPS，请求方式为 POST                            |
+| www.example.com | 回调 URL                                                     |
+| SdkAppid        | 创建应用时在即时通信 IM 控制台分配的 SDKAppID                |
+| CallbackCommand | 固定为：Group.CallbackBeforeCreateTopic                      |
+| contenttype     | 固定值为 JSON                                                |
+| ClientIP        | 客户端 IP，格式如：127.0.0.1                                 |
+| OptPlatform     | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 
@@ -55,12 +55,12 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求包字段说明
 
-| 对象 | 介绍 | 功能 |
-| --- | --- | --- |
-| CallbackCommand | String | 回调命令 |
-| Operator_Account | String | 发起创建话题请求的操作者 UserID |
-| Type | String | 代表创建话题所属的群组类型，这里为Community |
-| Name | String | 请求创建话题的名称 |
+| 对象             | 介绍   | 功能                                        |
+| ---------------- | ------ | ------------------------------------------- |
+| CallbackCommand  | String | 回调命令                                    |
+| Operator_Account | String | 发起创建话题请求的操作者 UserID             |
+| Type             | String | 代表创建话题所属的群组类型，这里为Community |
+| Name             | String | 请求创建话题的名称                          |
 
 ### 应答包示例
 
@@ -90,14 +90,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 应答包字段说明
 
-| 字段 | 类型 | 属性 | 说明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码，0为允许创建；1为拒绝创建，若业务希望使用自己的错误码拒绝用户新建话题，将错误码 ErrorCode 和 ErrorInfo 传递至客户端，请将错误码 ErrorCode 设置在 [10100, 10200] 区间内 |
-| ErrorInfo | String | 必填	 | 错误信息 |
+| 字段         | 类型    | 属性 | 说明                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败               |
+| ErrorCode    | Integer | 必填 | 错误码，0为允许创建；1为拒绝创建，若业务希望使用自己的错误码拒绝用户新建话题，将错误码 ErrorCode 和 ErrorInfo 传递至客户端，请将错误码 ErrorCode 设置在 [10100, 10200] 区间内 |
+| ErrorInfo    | String  | 必填 | 错误信息                                                     |
 
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[创建话题](https://intl.cloud.tencent.com/document/product/1047/49471)
-

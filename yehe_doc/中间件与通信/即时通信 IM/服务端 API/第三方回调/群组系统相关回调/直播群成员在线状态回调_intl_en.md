@@ -32,13 +32,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Callback URL |
-| SdkAppid | The `SDKAppID` assigned by the Chat console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackOnMemberStateChange`. |
-| contenttype | Fixed value: `JSON`. |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Callback URL                                                 |
+| SdkAppid        | The `SDKAppID` assigned by the Chat console when the app is created |
+| CallbackCommand | Fixed value: `Group.CallbackOnMemberStateChange`.            |
+| contenttype     | Fixed value: `JSON`.                                         |
 
 ### Sample request
 
@@ -60,12 +60,12 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand | String | Webhook command |
-| GroupId | String | ID of the group that generates group messages |
-| EventType | String | Event type: Offline (disconnected); Online (reconnected) |
-| MemberList | Array | List of members triggering the event |
+| Field           | Type   | Description                                              |
+| --------------- | ------ | -------------------------------------------------------- |
+| CallbackCommand | String | Webhook command                                          |
+| GroupId         | String | ID of the group that generates group messages            |
+| EventType       | String | Event type: Offline (disconnected); Online (reconnected) |
+| MemberList      | Array  | List of members triggering the event                     |
 
 ### Sample response
 
@@ -81,16 +81,14 @@ A response is returned after the app backend synchronizes the data.
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code. The value `0` indicates that the response result is ignored. |
-| ErrorInfo | String | Yes | Error information |
+| Field        | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. `OK`: Successful; `FAIL`: Failed             |
+| ErrorCode    | Integer | Yes      | Error code. The value `0` indicates that the response result is ignored. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 ## References
 
 - [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - [After a User Joins a Group](https://intl.cloud.tencent.com/document/product/1047/34372)
 - [After a User Leaves a Group](https://intl.cloud.tencent.com/document/product/1047/34373)
-
-

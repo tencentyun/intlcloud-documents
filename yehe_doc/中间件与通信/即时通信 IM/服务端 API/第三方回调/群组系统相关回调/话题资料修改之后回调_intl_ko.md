@@ -38,15 +38,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 매개변수
 
-| 매개변수 | 설명 |
-| --- | --- |
-| https | 요청 프로토콜은 HTTPS이고, 요청 방법은 POST |
-| www.example.com | 콜백 URL |
-| SdkAppid | 애플리케이션이 생성될 때 IM 콘솔에서 할당한 SDKAppID |
-| CallbackCommand | 고정 값: Group.CallbackAfterTopicInfoChanged |
-| contenttype | 고정 값: JSON |
-| ClientIP | 클라이언트 IP, 형식: 127.0.0.1 |
-| OptPlatform | 클라이언트 플랫폼, 유효한 값은 [Webhook Overview: Callback Protocol](https://intl.cloud.tencent.com/document/product/1047/34354) 섹션에서 OptPlatform에 대한 설명 참고 |
+| 매개변수        | 설명                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 요청 프로토콜은 HTTPS이고, 요청 방법은 POST                  |
+| www.example.com | 콜백 URL                                                     |
+| SdkAppid        | 애플리케이션이 생성될 때 IM 콘솔에서 할당한 SDKAppID         |
+| CallbackCommand | 고정 값: Group.CallbackAfterTopicInfoChanged                 |
+| contenttype     | 고정 값: JSON                                                |
+| ClientIP        | 클라이언트 IP, 형식: 127.0.0.1                               |
+| OptPlatform     | 클라이언트 플랫폼, 유효한 값은 [Webhook Overview: Callback Protocol](https://intl.cloud.tencent.com/document/product/1047/34354) 섹션에서 OptPlatform에 대한 설명 참고 |
 
 ### 요청 예시
 
@@ -65,16 +65,16 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 필드
 
-| 필드 | 유형 | 설명|
-| --- | --- | --- |
-| CallbackCommand | String | 콜백 명령 |
-| GroupId | String | 변경된 토픽 프로필의 그룹 ID |
-| Type | String | 삭제된 토픽의 그룹 유형, 여기는 Community |
-| Operator_Account | String | 운영자의 UserID |
-| Name | String | 변경된 토픽 이름 |
-| Introduction | String | 변경된 토픽 소개 |
-| Notification | String | 변경된 토픽 알림 |
-| FaceUrl | String | 변경된 토픽 프로필 사진 URL |
+| 필드             | 유형   | 설명                                      |
+| ---------------- | ------ | ----------------------------------------- |
+| CallbackCommand  | String | 콜백 명령                                 |
+| GroupId          | String | 변경된 토픽 프로필의 그룹 ID              |
+| Type             | String | 삭제된 토픽의 그룹 유형, 여기는 Community |
+| Operator_Account | String | 운영자의 UserID                           |
+| Name             | String | 변경된 토픽 이름                          |
+| Introduction     | String | 변경된 토픽 소개                          |
+| Notification     | String | 변경된 토픽 알림                          |
+| FaceUrl          | String | 변경된 토픽 프로필 사진 URL               |
 
 ### 응답 예시
 
@@ -90,11 +90,11 @@ App 백엔드는 토픽 프로필 변경 정보를 기록하고 콜백 응답 �
 
 ### 응답 필드
 
-| 객체 | 유형 | 필수 | 설명 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 필수 | 결과를 요청합니다. OK: 성공 표시, FAIL: 실패 표시. |
-| ErrorCode | Integer | 필수 | 에러 코드, 값 0은 응답 결과를 무시하도록 허용함을 나타냅니다 |
-| ErrorInfo | String | 필수 | 에러 메시지 |
+| 객체         | 유형    | 필수 | 설명                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 필수 | 결과를 요청합니다. OK: 성공 표시, FAIL: 실패 표시.           |
+| ErrorCode    | Integer | 필수 | 에러 코드, 값 0은 응답 결과를 무시하도록 허용함을 나타냅니다 |
+| ErrorInfo    | String  | 필수 | 에러 메시지                                                  |
 
 ## 참고
 

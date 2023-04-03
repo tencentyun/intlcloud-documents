@@ -4,7 +4,7 @@ App 后台可以通过该回调实时查看直播群的上下线状态，例如�
 
 ## 注意事项
 
-- 此功能需 [旗舰版套餐](https://buy.cloud.tencent.com/avc?from=17473)，并且已开通“直播群在线成员列表”功能(控制台“群功能配置”)。在控制台开启后，直播群成员将保存最新入群并且在线的1000人，客户端可以拉取该列表。在控制台关闭后，客户端无法拉取该1000人列表，只能拉取到最新进群的30人列表。
+- 此功能需 [旗舰版](https://buy.cloud.tencent.com/avc?from=17473)，并且已开通“直播群在线成员列表”功能(控制台“群功能配置”)。在控制台开启后，直播群成员将保存最新入群并且在线的1000人，客户端可以拉取该列表。在控制台关闭后，客户端无法拉取该1000人列表，只能拉取到最新进群的30人列表。
 - 要启用回调，必须配置回调 URL，并打开本条回调协议对应的开关，配置方法详见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
 - 回调的方向是即时通信 IM 后台向 App 后台发起 HTTP POST 请求。
 - App 后台在收到回调请求之后，务必校验请求 URL 中的参数 SDKAppID 是否是自己的 SDKAppID。
@@ -32,13 +32,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求参数说明
 
-| 参数 | 说明 |
-| --- | --- |
-| https | 请求协议为 HTTPS，请求方式为 POST |
-| www.example.com | 回调 URL |
-| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为 Group.CallbackOnMemberStateChange |
-| contenttype | 固定值为 JSON |
+| 参数            | 说明                                          |
+| --------------- | --------------------------------------------- |
+| https           | 请求协议为 HTTPS，请求方式为 POST             |
+| www.example.com | 回调 URL                                      |
+| SdkAppid        | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
+| CallbackCommand | 固定为 Group.CallbackOnMemberStateChange      |
+| contenttype     | 固定值为 JSON                                 |
 
 ### 请求包示例
 
@@ -60,12 +60,12 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求包字段说明
 
-| 字段 | 类型 | 说明 |
-| --- | --- | --- |
-| CallbackCommand | String | 回调命令 |
-| GroupId | String | 产生群消息的群组 ID |
-| EventType | String | 事件类型：Offline - 掉线、Online - 重新上线 |
-| MemberList | Array | 产生事件的成员列表 |
+| 字段            | 类型   | 说明                                        |
+| --------------- | ------ | ------------------------------------------- |
+| CallbackCommand | String | 回调命令                                    |
+| GroupId         | String | 产生群消息的群组 ID                         |
+| EventType       | String | 事件类型：Offline - 掉线、Online - 重新上线 |
+| MemberList      | Array  | 产生事件的成员列表                          |
 
 ### 应答包示例
 
@@ -81,16 +81,14 @@ App 后台同步数据后，返回应答包。
 
 ### 应答包字段说明
 
-| 字段 | 类型 | 属性 | 说明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码，0表示允许忽略应答结果 |
-| ErrorInfo | String | 必填 | 错误信息 |
+| 字段         | 类型    | 属性 | 说明                                           |
+| ------------ | ------- | ---- | ---------------------------------------------- |
+| ActionStatus | String  | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
+| ErrorCode    | Integer | 必填 | 错误码，0表示允许忽略应答结果                  |
+| ErrorInfo    | String  | 必填 | 错误信息                                       |
 
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - [新成员入群之后回调](https://intl.cloud.tencent.com/document/product/1047/34372)
 - [群成员离开之后回调](https://intl.cloud.tencent.com/document/product/1047/34373)
-
-

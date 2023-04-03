@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 매개변수
 
-| 매개변수 | 설명 |
-| --- | --- |
-| https | 요청 프로토콜은 HTTPS이고 요청 방법은 POST |
-| www.example.com | 콜백 URL |
-| SdkAppid | 애플리케이션 생성 시 IM 콘솔에서 할당한 SDKAppID |
-| CallbackCommand | 고정 값: Group.CallbackAfterCreateTopic |
-| contenttype | 고정 값: JSON |
-| ClientIP | 클라이언트 IP，형식: 127.0.0.1 |
-| OptPlatform | 클라이언트 플랫폼, 유효한 값은 [Webhook Overview: Callback Protocol](https://intl.cloud.tencent.com/document/product/1047/34354) 섹션에서 OptPlatform에 대한 설명 참고 |
+| 매개변수        | 설명                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 요청 프로토콜은 HTTPS이고 요청 방법은 POST                   |
+| www.example.com | 콜백 URL                                                     |
+| SdkAppid        | 애플리케이션 생성 시 IM 콘솔에서 할당한 SDKAppID             |
+| CallbackCommand | 고정 값: Group.CallbackAfterCreateTopic                      |
+| contenttype     | 고정 값: JSON                                                |
+| ClientIP        | 클라이언트 IP，형식: 127.0.0.1                               |
+| OptPlatform     | 클라이언트 플랫폼, 유효한 값은 [Webhook Overview: Callback Protocol](https://intl.cloud.tencent.com/document/product/1047/34354) 섹션에서 OptPlatform에 대한 설명 참고 |
 
 ### 요청 예시
 
@@ -68,16 +68,16 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 필드
 
-| 필드 | 유형 | 설명|
-| --- | --- | --- |
-| CallbackCommand | String | 콜백 명령 |
-| GroupId | String | 토픽의 그룹 ID |
-| TopicId | string | 토픽 ID |
-| Operator_Account | String | 토픽 생성 요청을 시작한 운영자의 UserID |
-| Owner_Account | String | 그룹 소유자의 사용자 ID |
-| Type | String | 토픽의 그룹 유형, 여기는 Community |
-| Name | String | 생성을 요청한 토픽의 이름 |
-| UserDefinedDataList | Array | 사용자가 토픽을 만들 때 사용할 사용자 정의 필드, 이 필드는 기본적으로 사용할 수 없으며 [그룹 시스템](https://www.tencentcloud.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)의 지침에 따라 활성화해야 합니다 |
+| 필드                | 유형   | 설명                                                         |
+| ------------------- | ------ | ------------------------------------------------------------ |
+| CallbackCommand     | String | 콜백 명령                                                    |
+| GroupId             | String | 토픽의 그룹 ID                                               |
+| TopicId             | string | 토픽 ID                                                      |
+| Operator_Account    | String | 토픽 생성 요청을 시작한 운영자의 UserID                      |
+| Owner_Account       | String | 그룹 소유자의 사용자 ID                                      |
+| Type                | String | 토픽의 그룹 유형, 여기는 Community                           |
+| Name                | String | 생성을 요청한 토픽의 이름                                    |
+| UserDefinedDataList | Array  | 사용자가 토픽을 만들 때 사용할 사용자 정의 필드, 이 필드는 기본적으로 사용할 수 없으며 [그룹 시스템](https://www.tencentcloud.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)의 지침에 따라 활성화해야 합니다 |
 
 ### 응답 예시
 
@@ -93,13 +93,12 @@ App 백엔드가 데이터를 동기화한 후 응답이 전송됩니다.
 
 ### 응답 필드
 
-| 필드 | 유형 | 속성 | 설명 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 필수 | 요청 결과, OK: 성공 표시, FAIL: 실패 표시 |
-| ErrorCode | Integer | 필수 | 에러 코드, 값 0은 콜백 결과가 무시됨 표시 |
-| ErrorInfo | String | 필수 | 에러 메시지 |
+| 필드         | 유형    | 속성 | 설명                                      |
+| ------------ | ------- | ---- | ----------------------------------------- |
+| ActionStatus | String  | 필수 | 요청 결과, OK: 성공 표시, FAIL: 실패 표시 |
+| ErrorCode    | Integer | 필수 | 에러 코드, 값 0은 콜백 결과가 무시됨 표시 |
+| ErrorInfo    | String  | 필수 | 에러 메시지                               |
 
 ## 참고
 - [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API: [Creating Topic](https://intl.cloud.tencent.com/document/product/1047/49471)
-

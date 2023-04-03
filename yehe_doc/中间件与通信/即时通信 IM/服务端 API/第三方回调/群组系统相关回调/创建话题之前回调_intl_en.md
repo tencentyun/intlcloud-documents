@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Callback URL |
-| SdkAppid | The `SDKAppID` assigned by the IM console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackBeforeCreateTopic`. |
-| contenttype | Fixed value: `JSON`. |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Callback URL                                                 |
+| SdkAppid        | The `SDKAppID` assigned by the IM console when the app is created |
+| CallbackCommand | Fixed value: `Group.CallbackBeforeCreateTopic`.              |
+| contenttype     | Fixed value: `JSON`.                                         |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -55,12 +55,12 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Object | Type | Description |
-| --- | --- | --- |
-| CallbackCommand | String | Callback command |
+| Object           | Type   | Description                                                  |
+| ---------------- | ------ | ------------------------------------------------------------ |
+| CallbackCommand  | String | Callback command                                             |
 | Operator_Account | String | `UserID` of the operator who initiates the topic creation request |
-| Type | String | Group type of the topic. Here, it is `Community`. |
-| Name | String | Name of the topic requested to be created |
+| Type             | String | Group type of the topic. Here, it is `Community`.            |
+| Name             | String | Name of the topic requested to be created                    |
 
 ### Sample response
 
@@ -90,14 +90,13 @@ The user is not allowed to create a topic. No topic will be created, and the err
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code. Valid values: `0` (creation allowed); `1` (creation refused). If you want to use your own error code to refuse a user request for topic creation, you need to pass in ` ErrorCode` and `ErrorInfo` to the client, with `ErrorCode` in the range of [10100,10200]. |
-| ErrorInfo | String | Yes	 | Error message |
+| Field        | Type    | Required | Description                                                  |
+| ------------ | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Yes      | Request result. `OK`: Successful; `FAIL`: Failed             |
+| ErrorCode    | Integer | Yes      | Error code. Valid values: `0` (creation allowed); `1` (creation refused). If you want to use your own error code to refuse a user request for topic creation, you need to pass in ` ErrorCode` and `ErrorInfo` to the client, with `ErrorCode` in the range of [10100,10200]. |
+| ErrorInfo    | String  | Yes      | Error message                                                |
 
 ## References
 
 - [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - RESTful API: [Creating Topic](https://intl.cloud.tencent.com/document/product/1047/49471)
-

@@ -11,7 +11,7 @@ This document uses the third-party developer domain name `www.example.com` as an
 - **The third-party developer sends an application to Chat, requesting Chat to issue a certificate for its domain name.**
  - The developer [configures the webhook URL](https://intl.cloud.tencent.com/document/product/1047/34520), such as `www.example.com`, in the console.
  <dx-alert infotype="notice" title="">
- When you register a domain, follow the rules below:
+  When you register a domain, follow the rules below:
 - Use English letters (a-z, case-insensitive), digits (0-9), and hyphen `-` only.
 - Do not use spaces and special characters such as `!`, `$`, `&`, and `?`.
 - Hyphen `-` cannot appear consecutively, be registered independently, or be placed at the beginning or end.
@@ -32,4 +32,3 @@ This document uses the third-party developer domain name `www.example.com` as an
 	SSLCACertificateFile  "/usr/local/apache2/conf/TencentQQAuthCA.crt" # CA certificate authenticated by Tencent
 	SSLVerifyClient require # Verify the request source
 ```
-

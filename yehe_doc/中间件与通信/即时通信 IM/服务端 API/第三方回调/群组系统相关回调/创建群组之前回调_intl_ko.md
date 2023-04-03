@@ -31,15 +31,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 매개변수
 
-| 매개변수     | 설명 |
-| --- | --- |
-| https | 요청 프로토콜은 HTTPS, 요청 방법은 POST |
-| www.example.com | 콜백 URL |
-| SdkAppid | 애플리케이션 생성 시 IM 콘솔에서 할당한 SDKAppID |
-| CallbackCommand | 값은 Group.CallbackBeforeCreateGroup으로 고정 |
-| contenttype | 값은 JSON으로 고정 |
-| ClientIP | 클라이언트 IP 주소(예: 127.0.0.1) |
-| OptPlatform | 클라이언트 플랫폼, 가능한 값에 대한 정보는 [타사 콜백 소개: 콜백 프로토콜](https://intl.cloud.tencent.com/document/product/1047/34354)에서 OptPlatform에 대한 매개변수 설명 참고 |
+| 매개변수        | 설명                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 요청 프로토콜은 HTTPS, 요청 방법은 POST                      |
+| www.example.com | 콜백 URL                                                     |
+| SdkAppid        | 애플리케이션 생성 시 IM 콘솔에서 할당한 SDKAppID             |
+| CallbackCommand | 값은 Group.CallbackBeforeCreateGroup으로 고정                |
+| contenttype     | 값은 JSON으로 고정                                           |
+| ClientIP        | 클라이언트 IP 주소(예: 127.0.0.1)                            |
+| OptPlatform     | 클라이언트 플랫폼, 가능한 값에 대한 정보는 [타사 콜백 소개: 콜백 프로토콜](https://intl.cloud.tencent.com/document/product/1047/34354)에서 OptPlatform에 대한 매개변수 설명 참고 |
 
 ### 요청 패킷 예시
 
@@ -65,16 +65,16 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 요청 패킷 필드
 
-| 필드 | 유형 | 기능 |
-| --- | --- | --- |
-| CallbackCommand | String | 콜백 명령 |
-| Operator_Account | String | 그룹 생성 요청을 시작한 운영자의 UserID |
-| Owner_Account | String | 요청을 통해 생성할 그룹 소유자의 UserID |
-| Type | String | Public과 같이 그룹 메시지를 생성하는 그룹의 유형, 자세한 내용은 [그룹 시스템](https://intl.cloud.tencent.com/document/product/1047/33529) 참고|
-| Name | String | 요청을 통해 생성할 그룹의 이름 |
-| CreateGroupNum | Integer | 사용자가 이미 생성한 동일한 유형의 그룹 수 |
-| MemberList | Array | 배열 요청을 통해 생성될 그룹의 초기 구성원 목록 |
-| EventTime | Integer | 이벤트 트리거의 밀리초 수준 타임스탬프 |
+| 필드             | 유형    | 기능                                                         |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | 콜백 명령                                                    |
+| Operator_Account | String  | 그룹 생성 요청을 시작한 운영자의 UserID                      |
+| Owner_Account    | String  | 요청을 통해 생성할 그룹 소유자의 UserID                      |
+| Type             | String  | Public과 같이 그룹 메시지를 생성하는 그룹의 유형, 자세한 내용은 [그룹 시스템](https://intl.cloud.tencent.com/document/product/1047/33529) 참고 |
+| Name             | String  | 요청을 통해 생성할 그룹의 이름                               |
+| CreateGroupNum   | Integer | 사용자가 이미 생성한 동일한 유형의 그룹 수                   |
+| MemberList       | Array   | 배열 요청을 통해 생성될 그룹의 초기 구성원 목록              |
+| EventTime        | Integer | 이벤트 트리거의 밀리초 수준 타임스탬프                       |
 
 ### 응답 패킷 예시
 
@@ -104,15 +104,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 응답 패킷 필드
 
-| 필드 | 유형 | 속성 | 설명 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 필수 | 요청 처리 결과, OK: 성공, FAIL: 실패 |
-| ErrorCode | Integer | 필수 | 에러 코드, 0: 생성 허용 1: 생성 거부, 비즈니스 측에서 사용자의 요청을 금지하는 에러 코드를 지정하고 클라이언트에게 ErrorCode 및 ErrorInfo를 보내려면 ErrorCode 값이 [10100, 10200] 범위 내로 설정되어 있는지 확인하십시오|
-| ErrorInfo | String | 필수 | 오류 정보 |
+| 필드         | 유형    | 속성 | 설명                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 필수 | 요청 처리 결과, OK: 성공, FAIL: 실패                         |
+| ErrorCode    | Integer | 필수 | 에러 코드, 0: 생성 허용 1: 생성 거부, 비즈니스 측에서 사용자의 요청을 금지하는 에러 코드를 지정하고 클라이언트에게 ErrorCode 및 ErrorInfo를 보내려면 ErrorCode 값이 [10100, 10200] 범위 내로 설정되어 있는지 확인하십시오 |
+| ErrorInfo    | String  | 필수 | 오류 정보                                                    |
 
 ## 참고
 
 - [3rd party 콜백 소개](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API: [그룹 생성](https://intl.cloud.tencent.com/document/product/1047/34895)
-
-

@@ -35,15 +35,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求参数说明
 
-| 参数 | 说明 |
-| --- | --- |
-| https | 请求协议为 HTTPS，请求方式为 POST |
-| [www.example.com](http://www.example.com) | 回调 URL |
-| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为：C2C.CallbackBeforeSendMsg |
-| contenttype | 请求包体固定为 JSON |
-| ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
+| 参数                                      | 说明                                                         |
+| ----------------------------------------- | ------------------------------------------------------------ |
+| https                                     | 请求协议为 HTTPS，请求方式为 POST                            |
+| [www.example.com](http://www.example.com) | 回调 URL                                                     |
+| SdkAppid                                  | 创建应用时在即时通信 IM 控制台分配的 SDKAppID                |
+| CallbackCommand                           | 固定为：C2C.CallbackBeforeSendMsg                            |
+| contenttype                               | 请求包体固定为 JSON                                          |
+| ClientIP                                  | 客户端 IP，格式如：127.0.0.1                                 |
+| OptPlatform                               | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 
@@ -71,18 +71,18 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求包字段说明
 
-| 字段 | 类型 | 说明 |
-| --- | --- | --- |
-| CallbackCommand | String | 回调命令 |
-| From_Account | String | 消息发送者 UserID |
-| To_Account | String | 消息接收者 UserID |
-| MsgSeq | Integer | 消息序列号，用于标记该条消息（32位无符号整数）|
-| MsgRandom | Integer | 消息随机数，用于标记该条消息（32位无符号整数）|
-| MsgTime | Integer | 消息的发送时间戳，单位为秒<br>单聊消息优先使用 MsgTime 进行排序，同一秒发送的消息则按 MsgSeq 排序，MsgSeq 值越大消息越靠后  |
-| MsgKey | String | 该条消息的唯一标识，可根据该标识进行 [REST API 撤回单聊消息](https://intl.cloud.tencent.com/document/product/1047/35015) |
-|OnlineOnlyFlag|Integer|在线消息，为1，否则为0|
-| MsgBody | Array | 消息体，详情请参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)  |
-| CloudCustomData | String | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）|
+| 字段            | 类型    | 说明                                                         |
+| --------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand | String  | 回调命令                                                     |
+| From_Account    | String  | 消息发送者 UserID                                            |
+| To_Account      | String  | 消息接收者 UserID                                            |
+| MsgSeq          | Integer | 消息序列号，用于标记该条消息（32位无符号整数）               |
+| MsgRandom       | Integer | 消息随机数，用于标记该条消息（32位无符号整数）               |
+| MsgTime         | Integer | 消息的发送时间戳，单位为秒<br>单聊消息优先使用 MsgTime 进行排序，同一秒发送的消息则按 MsgSeq 排序，MsgSeq 值越大消息越靠后 |
+| MsgKey          | String  | 该条消息的唯一标识，可根据该标识进行 [REST API 撤回单聊消息](https://intl.cloud.tencent.com/document/product/1047/35015) |
+| OnlineOnlyFlag  | Integer | 在线消息，为1，否则为0                                       |
+| MsgBody         | Array   | 消息体，详情请参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
+| CloudCustomData | String  | 消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到） |
 
 ### 应答包示例（允许发言）
 
@@ -151,13 +151,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 应答包字段说明
 
-| 字段 | 类型 | 属性 | 说明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码，0为允许发言；1为禁止发言；2为静默丢弃。若业务希望拒绝发言的同时，将错误码 ErrorCode 和 ErrorInfo 传递至客户端，请将错误码 ErrorCode 设置在 \[120001, 130000] 区间内 |
-| ErrorInfo | String | 	必填 | 错误信息 |
-| MsgBody | Array | 选填 | 经过 App 变动之后的消息体，即时通信 IM 后台将把变动后的消息发送给接收方，具体格式参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
-| CloudCustomData | String | 选填 | 经过 App 变动之后的消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到），即时通信 IM 后台将把变动后的消息发送给接收方|
+| 字段            | 类型    | 属性 | 说明                                                         |
+| --------------- | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus    | String  | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败               |
+| ErrorCode       | Integer | 必填 | 错误码，0为允许发言；1为禁止发言；2为静默丢弃。若业务希望拒绝发言的同时，将错误码 ErrorCode 和 ErrorInfo 传递至客户端，请将错误码 ErrorCode 设置在 \[120001, 130000] 区间内 |
+| ErrorInfo       | String  | 必填 | 错误信息                                                     |
+| MsgBody         | Array   | 选填 | 经过 App 变动之后的消息体，即时通信 IM 后台将把变动后的消息发送给接收方，具体格式参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
+| CloudCustomData | String  | 选填 | 经过 App 变动之后的消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到），即时通信 IM 后台将把变动后的消息发送给接收方 |
 
 ## 参考
 
@@ -165,4 +165,3 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 - [发单聊消息之后回调](https://intl.cloud.tencent.com/document/product/1047/34365)
 - REST API：[单发单聊消息](https://intl.cloud.tencent.com/document/product/1047/34919)
 - REST API：[批量发单聊消息](https://intl.cloud.tencent.com/document/product/1047/34920)
-

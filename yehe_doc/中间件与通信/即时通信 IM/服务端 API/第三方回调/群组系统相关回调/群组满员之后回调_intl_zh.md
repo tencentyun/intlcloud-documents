@@ -1,5 +1,5 @@
 ## 功能说明
-  
+
 App 后台可以通过该回调实时查看群组满员的动态，包括：删除一部分不活跃的群成员，以确保用户能够加入该群。
 
 ## 注意事项
@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求参数说明
 
-| 参数 | 说明 |
-| --- | --- |
-| https | 请求协议为 HTTPS，请求方式为 POST |
-| www.example.com | 回调 URL |
-| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为 Group.CallbackAfterGroupFull |
-| contenttype | 固定值为 JSON |
-| ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
+| 参数            | 说明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 请求协议为 HTTPS，请求方式为 POST                            |
+| www.example.com | 回调 URL                                                     |
+| SdkAppid        | 创建应用时在即时通信 IM 控制台分配的 SDKAppID                |
+| CallbackCommand | 固定为 Group.CallbackAfterGroupFull                          |
+| contenttype     | 固定值为 JSON                                                |
+| ClientIP        | 客户端 IP，格式如：127.0.0.1                                 |
+| OptPlatform     | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 
@@ -54,11 +54,11 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求包字段说明
 
-| 字段 | 类型 | 说明 |
-| --- | --- | --- |
-| CallbackCommand | String | 回调命令 |
-| GroupId | String | 满员的群组 ID |
-| EventTime | Integer | 事件触发的毫秒级别时间戳 |
+| 字段            | 类型    | 说明                     |
+| --------------- | ------- | ------------------------ |
+| CallbackCommand | String  | 回调命令                 |
+| GroupId         | String  | 满员的群组 ID            |
+| EventTime       | Integer | 事件触发的毫秒级别时间戳 |
 
 ### 应答包示例
 
@@ -74,11 +74,11 @@ App 后台记录群满员信息后，发送回调应答包。
 
 ### 应答包字段说明
 
-| 字段 | 类型 | 属性 | 说明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码，0表示允许忽略应答结果 |
-| ErrorInfo | String | 必填 | 错误信息 |
+| 字段         | 类型    | 属性 | 说明                                           |
+| ------------ | ------- | ---- | ---------------------------------------------- |
+| ActionStatus | String  | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
+| ErrorCode    | Integer | 必填 | 错误码，0表示允许忽略应答结果                  |
+| ErrorInfo    | String  | 必填 | 错误信息                                       |
 
 
 ## 参考

@@ -35,15 +35,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| [www.example.com](http://www.example.com) | Callback URL |
-| SdkAppid | The `SDKAppID` assigned by the Chat console when the app is created |
-| CallbackCommand | The value is always `C2C.CallbackBeforeSendMsg`. |
-| contenttype     | Always `json`                                          |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Webhook Protocols** section of [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter                                 | Description                                                  |
+| ----------------------------------------- | ------------------------------------------------------------ |
+| https                                     | The request protocol is HTTPS, and the request method is POST. |
+| [www.example.com](http://www.example.com) | Callback URL                                                 |
+| SdkAppid                                  | The `SDKAppID` assigned by the Chat console when the app is created |
+| CallbackCommand                           | The value is always `C2C.CallbackBeforeSendMsg`.             |
+| contenttype                               | Always `json`                                                |
+| ClientIP                                  | Client IP, such as 127.0.0.1                                 |
+| OptPlatform                               | Client platform. For valid values, see the description of `OptPlatform` in the **Webhook Protocols** section of [Webhook Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample requests
 
@@ -71,18 +71,18 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand | String | Webhook command |
-| From_Account    | String  | `UserID` of the message sender                                     |
-| To_Account      | String  | `UserID` of the message recipient                                     |
-| MsgSeq | Integer | Sequence number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
-| MsgRandom | Integer | Random number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
-| MsgTime | Integer | Timestamp in seconds indicating when the message is sent. <br>One-to-one messages are preferentially sorted by `MsgTime`. Messages sent in the same second are sorted by `MsgSeq`. Messages with larger values of `MsgSeq` are after those with smaller values. |
-| MsgKey | String | Unique identifier of the message. It can be used to [recall the message](https://intl.cloud.tencent.com/document/product/1047/35015) via a RESTful API call. |
-| OnlineOnlyFlag | Integer | The value is `1` if it is an online message and `0` if it's not. |
-| MsgBody | Array | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| CloudCustomData | String | Custom message data. It is saved in the cloud and will be sent to the receiver. Such data can be pulled after the app is uninstalled and reinstalled. |
+| Field           | Type    | Description                                                  |
+| --------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand | String  | Webhook command                                              |
+| From_Account    | String  | `UserID` of the message sender                               |
+| To_Account      | String  | `UserID` of the message recipient                            |
+| MsgSeq          | Integer | Sequence number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
+| MsgRandom       | Integer | Random number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
+| MsgTime         | Integer | Timestamp in seconds indicating when the message is sent. <br>One-to-one messages are preferentially sorted by `MsgTime`. Messages sent in the same second are sorted by `MsgSeq`. Messages with larger values of `MsgSeq` are after those with smaller values. |
+| MsgKey          | String  | Unique identifier of the message. It can be used to [recall the message](https://intl.cloud.tencent.com/document/product/1047/35015) via a RESTful API call. |
+| OnlineOnlyFlag  | Integer | The value is `1` if it is an online message and `0` if it's not. |
+| MsgBody         | Array   | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CloudCustomData | String  | Custom message data. It is saved in the cloud and will be sent to the receiver. Such data can be pulled after the app is uninstalled and reinstalled. |
 
 ### Sample response when sending messages is allowed
 
@@ -151,13 +151,13 @@ In the following sample, the message sent by the user is modified (a custom mess
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code returned. `0`: allows message sending; `1`: forbids message sending; `2`: discards the message silently. If the business side wants to forbid a user to send messages and send` ErrorCode` and `ErrorInfo` to the client, ensure that the value of `ErrorCode` is set within the range of \[120001, 130000]. |
-| ErrorInfo | String | Yes | Error information |
-| MsgBody | Array | No | Message body modified by the app backend. The Chat backend sends the modified message to the recipient. For more information on the format, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| CloudCustomData | String | No | Custom message data modified by the app backend. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. The Chat backend sends the modified message to the recipient. |
+| Field           | Type    | Required | Description                                                  |
+| --------------- | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus    | String  | Yes      | Request result. `OK`: Successful; `FAIL`: Failed             |
+| ErrorCode       | Integer | Yes      | Error code returned. `0`: allows message sending; `1`: forbids message sending; `2`: discards the message silently. If the business side wants to forbid a user to send messages and send` ErrorCode` and `ErrorInfo` to the client, ensure that the value of `ErrorCode` is set within the range of \[120001, 130000]. |
+| ErrorInfo       | String  | Yes      | Error information                                            |
+| MsgBody         | Array   | No       | Message body modified by the app backend. The Chat backend sends the modified message to the recipient. For more information on the format, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CloudCustomData | String  | No       | Custom message data modified by the app backend. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. The Chat backend sends the modified message to the recipient. |
 
 ## References
 
@@ -165,4 +165,3 @@ In the following sample, the message sent by the user is modified (a custom mess
 - [After One-to-One Message Is Sent](https://intl.cloud.tencent.com/document/product/1047/34365)
 - [Sending One-to-One Messages to One User](https://intl.cloud.tencent.com/document/product/1047/34919)
 - [Sending One-to-One Messages to Multiple Users](https://intl.cloud.tencent.com/document/product/1047/34920)
-

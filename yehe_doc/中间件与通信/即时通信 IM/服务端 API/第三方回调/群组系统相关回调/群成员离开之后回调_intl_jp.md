@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパラメータの説明
 
-| パラメータ | 説明 |
-| --- | --- |
-| https | リクエストプロトコルはHTTPS、リクエストメソッドはPOSTです。
-| www.example.com | コールバックURL。 |
-| SdkAppid | アプリケーションの作成時にIMコンソールで割り当てられたSDKAppID |
-| CallbackCommand | Group.CallbackAfterMemberExitという固定値が適用されます |
-| contenttype | JSONという固定値が適用されます |
-| ClientIP | クライアントIP。形式の例：127.0.0.1 |
-| OptPlatform | クライアントプラットフォーム。値の詳細については、[サードパーティコールバックの概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)にあるOptPlatformのパラメータの意味をご参照ください。
+| パラメータ      | 説明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | リクエストプロトコルはHTTPS、リクエストメソッドはPOSTです。  |
+| www.example.com | コールバックURL。                                            |
+| SdkAppid        | アプリケーションの作成時にIMコンソールで割り当てられたSDKAppID |
+| CallbackCommand | Group.CallbackAfterMemberExitという固定値が適用されます      |
+| contenttype     | JSONという固定値が適用されます                               |
+| ClientIP        | クライアントIP。形式の例：127.0.0.1                          |
+| OptPlatform     | クライアントプラットフォーム。値の詳細については、[サードパーティコールバックの概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)にあるOptPlatformのパラメータの意味をご参照ください。 |
 
 ### リクエストパケットの例
 
@@ -65,15 +65,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパケットフィールドの説明
 
-| フィールド | タイプ | 説明 |
-| --- | --- | --- |
-| CallbackCommand | String | コールバックコマンド |
-| GroupId    | String             | グループメッセージが生成されるグループID |
-| Type | String | グループメッセージが生成される[グループタイプの概要](https://intl.cloud.tencent.com/document/product/1047/33529)。例：Public |
-| ExitType | String | メンバーの退出方法：Kickedはグループオーナーに強制退出させたこと、Quitは自分からグループを退出することを意味します |
-| Operator_Account | String | グループ退出者のUserID |
-| ExitMemberList | Array | グループを退出したメンバーのリスト |
-| EventTime | Integer | イベントがトリガーされるミリ秒レベルのタイムスタンプ |
+| フィールド       | タイプ  | 説明                                                         |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | コールバックコマンド                                         |
+| GroupId          | String  | グループメッセージが生成されるグループID                     |
+| Type             | String  | グループメッセージが生成される[グループタイプの概要](https://intl.cloud.tencent.com/document/product/1047/33529)。例：Public |
+| ExitType         | String  | メンバーの退出方法：Kickedはグループオーナーに強制退出させたこと、Quitは自分からグループを退出することを意味します |
+| Operator_Account | String  | グループ退出者のUserID                                       |
+| ExitMemberList   | Array   | グループを退出したメンバーのリスト                           |
+| EventTime        | Integer | イベントがトリガーされるミリ秒レベルのタイムスタンプ         |
 
 ### レスポンスパケットの例
 
@@ -89,11 +89,11 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### レスポンスパケットフィールドの説明
 
-| フィールド | タイプ | 属性 | 説明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必須 | リクエスト処理の結果。OKは処理に成功したことを意味し、FAILは失敗したことを意味します |
-| ErrorCode | Integer | 必須 | エラーコード。0はレスポンス結果の無視を許可することを意味します |
-| ErrorInfo | String | 必須 | エラー情報 |
+| フィールド   | タイプ  | 属性 | 説明                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 必須 | リクエスト処理の結果。OKは処理に成功したことを意味し、FAILは失敗したことを意味します |
+| ErrorCode    | Integer | 必須 | エラーコード。0はレスポンス結果の無視を許可することを意味します |
+| ErrorInfo    | String  | 必須 | エラー情報                                                   |
 
 ## 参照情報
 
@@ -101,5 +101,3 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 -[新しいメンバーによるグループ参加後のコールバック](https://intl.cloud.tencent.com/document/product/1047/34372)
 - [ライブストリーミングオンライン状態のコールバック](https://intl.cloud.tencent.com/document/product/1047/48734)
 - REST API：[グループメンバーの削除](https://intl.cloud.tencent.com/document/product/1047/34949)
-
-

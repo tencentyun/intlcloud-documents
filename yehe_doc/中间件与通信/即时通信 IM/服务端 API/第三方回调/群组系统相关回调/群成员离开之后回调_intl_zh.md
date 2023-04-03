@@ -32,15 +32,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求参数说明
 
-| 参数 | 说明 |
-| --- | --- |
-| https | 请求协议为 HTTPS，请求方式为 POST |
-| www.example.com | 回调 URL |
-| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为 Group.CallbackAfterMemberExit |
-| contenttype | 固定值为 JSON |
-| ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
+| 参数            | 说明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 请求协议为 HTTPS，请求方式为 POST                            |
+| www.example.com | 回调 URL                                                     |
+| SdkAppid        | 创建应用时在即时通信 IM 控制台分配的 SDKAppID                |
+| CallbackCommand | 固定为 Group.CallbackAfterMemberExit                         |
+| contenttype     | 固定值为 JSON                                                |
+| ClientIP        | 客户端 IP，格式如：127.0.0.1                                 |
+| OptPlatform     | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 
@@ -65,15 +65,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求包字段说明
 
-| 字段 | 类型 | 说明 |
-| --- | --- | --- |
-| CallbackCommand | String | 回调命令 |
-| GroupId | String | 产生群消息的群组 ID |
-| Type | String | 产生群消息的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529)，例如 Public |
-| ExitType | String | 成员离开方式：Kicked 为被群主移出群聊；Quit 为主动退群 |
-| Operator_Account | String | 退群者 UserID |
-| ExitMemberList | Array | 退出群的成员列表 |
-| EventTime | Integer | 事件触发的毫秒级别时间戳 |
+| 字段             | 类型    | 说明                                                         |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | 回调命令                                                     |
+| GroupId          | String  | 产生群消息的群组 ID                                          |
+| Type             | String  | 产生群消息的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529)，例如 Public |
+| ExitType         | String  | 成员离开方式：Kicked 为被群主移出群聊；Quit 为主动退群       |
+| Operator_Account | String  | 退群者 UserID                                                |
+| ExitMemberList   | Array   | 退出群的成员列表                                             |
+| EventTime        | Integer | 事件触发的毫秒级别时间戳                                     |
 
 ### 应答包示例
 
@@ -89,11 +89,11 @@ App 后台同步数据后，返回应答包。
 
 ### 应答包字段说明
 
-| 字段 | 类型 | 属性 | 说明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码，0表示允许忽略应答结果 |
-| ErrorInfo | String | 必填 | 错误信息 |
+| 字段         | 类型    | 属性 | 说明                                           |
+| ------------ | ------- | ---- | ---------------------------------------------- |
+| ActionStatus | String  | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
+| ErrorCode    | Integer | 必填 | 错误码，0表示允许忽略应答结果                  |
+| ErrorInfo    | String  | 必填 | 错误信息                                       |
 
 ## 参考
 
@@ -101,5 +101,3 @@ App 后台同步数据后，返回应答包。
 - [新成员入群之后回调](https://intl.cloud.tencent.com/document/product/1047/34372)
 - [直播群在线状态回调](https://intl.cloud.tencent.com/document/product/1047/48734)
 - REST API：[删除群组成员](https://intl.cloud.tencent.com/document/product/1047/34949)
-
-

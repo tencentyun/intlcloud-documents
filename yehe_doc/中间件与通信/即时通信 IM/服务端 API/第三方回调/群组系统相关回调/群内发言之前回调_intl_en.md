@@ -3,7 +3,7 @@
 This webhook event is used by the app backend to check users' group messages in real time, including:
 - Records group messages in real time, for example, by recording a log or synchronizing the messages to other systems.
 - Blocks users' requests to send messages in a group.
->! The timeout period of the webhook before message sending is two seconds by default, and we recommend you not adjust it. This webhook may time out when used for text moderation. If you need to moderate text, use the content webhook. For more information, see [here](https://www.tencentcloud.com/document/product/1047/52498).
+>! The timeout period of the webhook before message sending is two seconds by default, and we recommend you not adjust it. This webhook may time out when used for text moderation. If you need to moderate text, use the content webhook. 
 
 ## Limits
 
@@ -34,15 +34,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
-| --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | Webhook URL |
-| SdkAppid | The `SDKAppID` assigned by the Chat console when the app is created |
-| CallbackCommand | Fixed value: `Group.CallbackBeforeSendMsg`. |
-| contenttype | Fixed value: `JSON`. |
-| ClientIP | Client IP, such as 127.0.0.1 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Webhook Protocols** section of [Webhook Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| https           | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | Webhook URL                                                  |
+| SdkAppid        | The `SDKAppID` assigned by the Chat console when the app is created |
+| CallbackCommand | Fixed value: `Group.CallbackBeforeSendMsg`.                  |
+| contenttype     | Fixed value: `JSON`.                                         |
+| ClientIP        | Client IP, such as 127.0.0.1                                 |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Webhook Protocols** section of [Webhook Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample requests
 
@@ -71,19 +71,19 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| CallbackCommand   | String  | Webhook command                                                     |
-| GroupId | String | ID of the group that generates group messages |
-| Type | String | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
-| From_Account    | String  | `UserID` of the message sender                                     |
-| Operator_Account | String | `UserID` of the request initiator, based on which the system can identify whether the request is initiated by the admin. |
-| Random | Integer | A 32-bit random number in the request |
-|OnlineOnlyFlag|Integer|The value is `1` if it is an online message and `0` (default) if it’s not. For audio-video groups, the value is `0`.|
-| MsgBody | Array | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| CloudCustomData | String | Custom message data. It is saved in the cloud and will be sent to the receiver. Such data can be pulled after the app is uninstalled and reinstalled. |
-| TopicId | String | Topic ID, which indicates message sending in the topic and applies only to topic-enabled communities. |
-| EventTime | Integer | Event trigger timestamp in milliseconds |
+| Field            | Type    | Description                                                  |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | Webhook command                                              |
+| GroupId          | String  | ID of the group that generates group messages                |
+| Type             | String  | Type of the group that generates group messages, such as `Public`. For details, see **Group Types** section in [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
+| From_Account     | String  | `UserID` of the message sender                               |
+| Operator_Account | String  | `UserID` of the request initiator, based on which the system can identify whether the request is initiated by the admin. |
+| Random           | Integer | A 32-bit random number in the request                        |
+| OnlineOnlyFlag   | Integer | The value is `1` if it is an online message and `0` (default) if it’s not. For audio-video groups, the value is `0`. |
+| MsgBody          | Array   | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CloudCustomData  | String  | Custom message data. It is saved in the cloud and will be sent to the receiver. Such data can be pulled after the app is uninstalled and reinstalled. |
+| TopicId          | String  | Topic ID, which indicates message sending in the topic and applies only to topic-enabled communities. |
+| EventTime        | Integer | Event trigger timestamp in milliseconds                      |
 
 ### Sample response
 
@@ -153,17 +153,16 @@ In the following response sample, the group message sent by the user is modified
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| ActionStatus | String | Yes | Request result. `OK`: Successful; `FAIL`: Failed |
-| ErrorCode | Integer | Yes | Error code returned. `0`: allows group message sending; `1`: forbids group message sending; `2`: discards the message silently. If the business side wants to forbid a user to send group messages and send` ErrorCode` and `ErrorInfo` to the client, ensure that the value of `ErrorCode` is set within the range of [10100, 10200]. |
-| ErrorInfo | String | Yes | Error information |
-| MsgBody | Array | No | Message body modified by the app backend. The Chat backend sends the modified message to the group. For more information on the format, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| CloudCustomData | String | No | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
+| Field           | Type    | Required | Description                                                  |
+| --------------- | ------- | -------- | ------------------------------------------------------------ |
+| ActionStatus    | String  | Yes      | Request result. `OK`: Successful; `FAIL`: Failed             |
+| ErrorCode       | Integer | Yes      | Error code returned. `0`: allows group message sending; `1`: forbids group message sending; `2`: discards the message silently. If the business side wants to forbid a user to send group messages and send` ErrorCode` and `ErrorInfo` to the client, ensure that the value of `ErrorCode` is set within the range of [10100, 10200]. |
+| ErrorInfo       | String  | Yes      | Error information                                            |
+| MsgBody         | Array   | No       | Message body modified by the app backend. The Chat backend sends the modified message to the group. For more information on the format, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CloudCustomData | String  | No       | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
 
 
 ## References
 
 - [Webhook Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - RESTful API: [Sending Ordinary Messages in a Group](https://intl.cloud.tencent.com/document/product/1047/34959)
-

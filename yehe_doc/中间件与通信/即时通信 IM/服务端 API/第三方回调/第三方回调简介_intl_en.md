@@ -21,13 +21,13 @@ Webhooks can be classified into two types by process:
 
 Webhooks are based on HTTP/HTTPS protocols. The app backend must provide a webhook URL to Chat, and Chat uses a POST request to initiate a webhook request to the app backend. When initiating a webhook request, Chat adds the following parameters at the end of the URL provided by the app backend:
 
-| Parameter   | Description     |
-|---------|---------|
-| SdkAppid | App ID assigned by Chat |
-| CallbackCommand | Webhook command word |
-| contenttype | Optional. The value is generally a JSON string. |
-| ClientIP | IP address of the client |
-| OptPlatform | Client platform. Depending on the platform type, the following values are available: <br />`RESTAPI` (requests are sent using RESTful APIs) and `Web` (requests are sent using Web SDKs), <br/>`Android`, `iOS`, `Windows`, `macOS`, `iPad`, and `Unknown` (requests are sent using an unknown device). |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| SdkAppid        | App ID assigned by Chat                                      |
+| CallbackCommand | Webhook command word                                         |
+| contenttype     | Optional. The value is generally a JSON string.              |
+| ClientIP        | IP address of the client                                     |
+| OptPlatform     | Client platform. Depending on the platform type, the following values are available: <br />`RESTAPI` (requests are sent using RESTful APIs) and `Web` (requests are sent using Web SDKs), <br/>`Android`, `iOS`, `Windows`, `macOS`, `iPad`, and `Unknown` (requests are sent using an unknown device). |
 >?"IOS" (all in uppercase) is used in the `State.StateChange` webhook, while "iOS" (the first letter is in lowercase) is used in other webhooks. Please perform compatibility processing during use.
 
 The specific webhook content is included in the HTTP request packet. For details, see the following webhook examples.
@@ -124,11 +124,11 @@ Webhook URL=URL&Sign=17773bc39a671d7b9aa835458704d2a6db81360a5940292b587d6d760d4
 
 If a webhook failure occurs, check whether the configured webhook service has a problem according to the following checklist:
 
-| Webhook Failure Symptom | Possible Reason |
-| --- | --- |
-| Access to the webhook URL times out | 1. Chat cannot complete DNS resolution. In this case, check whether the domain name is valid on the public network. For example, if the webhook host is `http://notexist.com`, Chat cannot complete DNS resolution because this domain name does not exist. <br>2. Chat cannot access the IP address configured in the webhook URL. In this case, check whether this IP address is accessible from the public network. For example, if the webhook host is `http://10.0.0.1`, Chat cannot access this IP address because the domain name is a private IP address of the app.<br>3. The failure occurs due to the firewall policy of the app webhook service. In this case, check the firewall configuration. For example, a webhook failure occurs if the app webhook server denies all requests arriving at port 80. |
-| Access denied by the webhook service | Chat can access the host, but a connection is not established. In this case, check whether the WebServer has started properly. For example, a webhook failure will occur when the WebServer of the app webhook server has not started or when the port configuration is incorrect. |
+| Webhook Failure Symptom                                      | Possible Reason                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Access to the webhook URL times out                          | 1. Chat cannot complete DNS resolution. In this case, check whether the domain name is valid on the public network. For example, if the webhook host is `http://notexist.com`, Chat cannot complete DNS resolution because this domain name does not exist. <br>2. Chat cannot access the IP address configured in the webhook URL. In this case, check whether this IP address is accessible from the public network. For example, if the webhook host is `http://10.0.0.1`, Chat cannot access this IP address because the domain name is a private IP address of the app.<br>3. The failure occurs due to the firewall policy of the app webhook service. In this case, check the firewall configuration. For example, a webhook failure occurs if the app webhook server denies all requests arriving at port 80. |
+| Access denied by the webhook service                         | Chat can access the host, but a connection is not established. In this case, check whether the WebServer has started properly. For example, a webhook failure will occur when the WebServer of the app webhook server has not started or when the port configuration is incorrect. |
 | HTTPS certificate configuration error of the webhook service | This can occur when the webhook type is HTTPS (or HTTPS mutual authentication). Chat can access the app webhook server, but determines that the certificate configured on the app WebServer is invalid. In this case, check that the HTTPS certificate is properly configured. |
 | HTTPS mutual authentication configuration error of the webhook service | This can occur when the webhook type is HTTPS mutual authentication. Chat verifies that the certificate configured on the app webhook server is valid, but the app webhook server fails to verify the Chat certificate. |
-| The HTTP return code of the webhook service is not 200 | The webhook request is successful, but the HTTP return code in the response packet is not 200. |
-| The webhook response packet could not be parsed | The webhook response packet is not in JSON format. |
+| The HTTP return code of the webhook service is not 200       | The webhook request is successful, but the HTTP return code in the response packet is not 200. |
+| The webhook response packet could not be parsed              | The webhook response packet is not in JSON format.           |

@@ -16,20 +16,20 @@ The URL format of a RESTful API is as follows:
 ```
 https://xxxxxx/$ver/$servicename/$command?sdkappid=$SDKAppID&identifier=$identifier&usersig=$usersig&random=99999999&contenttype=json
 ```
-The descriptions and values ​​of parameters are as follows (parameter names and parameter values ​​are case-sensitive):
+The descriptions and values of parameters are as follows (parameter names and parameter values are case-sensitive):
 
-| Parameter  | Description  | Value  |
-|---------|---------|---------|
-| https    |Request protocol      | The request protocol is HTTPS, and the request method is POST.       |
-| xxxxxx | Dedicated domain name | <li>China: `console.tim.qq.com`</li><li>Singapore: `adminapisgp.im.qcloud.com`</li><li>Seoul: `adminapikr.im.qcloud.com`</li><li>Frankfurt: `adminapiger.im.qcloud.com`</li><li>Mumbai: `adminapiind.im.qcloud.com`</li><li>Silicon Valley: `adminapiusa.im.qcloud.com`</li> |
-| ver  | Protocol version number | Always `v4`.  |
+| Parameter   | Description                                                  | Value                                                        |
+| ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| https       | Request protocol                                             | The request protocol is HTTPS, and the request method is POST. |
+| xxxxxx      | Dedicated domain name                                        | <li>China: `console.tim.qq.com`</li><li>Singapore: `adminapisgp.im.qcloud.com`</li><li>Seoul: `adminapikr.im.qcloud.com`</li><li>Frankfurt: `adminapiger.im.qcloud.com`</li><li>Mumbai: `adminapiind.im.qcloud.com`</li><li>Silicon Valley: `adminapiusa.im.qcloud.com`</li> |
+| ver         | Protocol version number                                      | Always `v4`.                                                 |
 | servicename | Internal service name. Different values of `servicename` correspond to different service types. | Example:<br>For `v4/im_open_login_svc/account_import`, `im_open_login_svc` is the `servicename`.<br/>For more information, see [RESTful API List](https://intl.cloud.tencent.com/document/product/1047/34621). |
-| command | Command word. This parameter is used with the `servicename` parameter to identify a specific service feature. | Example:<br>For `v4/im_open_login_svc/account_import`, `account_import` is the `command`.<br/>For more information, see [RESTful API List](https://intl.cloud.tencent.com/document/product/1047/34621). |
-| sdkappid | App ID obtained in the Chat console | You can obtain the SDKAppID when applying for Chat SDK access. |
-| identifier | Username, which must be the app admin account when a RESTful API is called | For more information, see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
-| usersig | Password that corresponds to the user name. | For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
-| random  | A parameter used to identify the current request | A random 32-bit unsigned integer ranging from 0 to 4,294,967,295 |
-| contenttype   |Request format     | Always `json`.                   |
+| command     | Command word. This parameter is used with the `servicename` parameter to identify a specific service feature. | Example:<br>For `v4/im_open_login_svc/account_import`, `account_import` is the `command`.<br/>For more information, see [RESTful API List](https://intl.cloud.tencent.com/document/product/1047/34621). |
+| sdkappid    | App ID obtained in the Chat console                          | You can obtain the SDKAppID when applying for Chat SDK access. |
+| identifier  | Username, which must be the app admin account when a RESTful API is called | For more information, see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
+| usersig     | Password that corresponds to the user name.                  | For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
+| random      | A parameter used to identify the current request             | A random 32-bit unsigned integer ranging from 0 to 4,294,967,295 |
+| contenttype | Request format                                               | Always `json`.                                               |
 
 >!
 >- When the app server calls a RESTful API, `identifier` must be the app admin account.
@@ -54,11 +54,11 @@ The RESTful API response body is in the JSON format and has the following elemen
 ```
 The response body must contain the `ActionStatus`, `ErrorInfo`, and `ErrorCode` fields. These three fields are described as follows:
 
-| Field | Type| Description |
-|---------|---------|---------|
-|ActionStatus | String | Request result. `OK`: Successful. `FAIL`: Failed. If the request fails, the cause of failure is displayed in the `ErrorInfo` field. |
-|ErrorInfo  | String | Failure causes |
-| ErrorCode | Integer | Error code. `0`: Successful. Other values: Failed. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
+| Field        | Type    | Description                                                  |
+| ------------ | ------- | ------------------------------------------------------------ |
+| ActionStatus | String  | Request result. `OK`: Successful. `FAIL`: Failed. If the request fails, the cause of failure is displayed in the `ErrorInfo` field. |
+| ErrorInfo    | String  | Failure causes                                               |
+| ErrorCode    | Integer | Error code. `0`: Successful. Other values: Failed. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
 
 ## Sample Call
 The following example shows how to use the RESTful API to [get all groups in an app](https://intl.cloud.tencent.com/document/product/1047/34960).
@@ -100,28 +100,28 @@ Access-Control-Allow-Methods: POST
 
 ## RESTful API Common Error Codes
 
-| Error Code |Description|
-|---------|---------|
-| 60002 | HTTP parsing error. Check the URL format of the HTTP request. |
-| 60003 | JSON parsing error. Check the JSON format of the HTTP request. |
-| 60004 | Account or signature error in the request URL or JSON request body. |
-| 60005 | Account or signature error in the request URL or JSON request body. |
-| 60006 | Invalid SDKAppID. Check the validity of SDKAppID. |
-| 60007 | RESTful API call frequency limit exceeded. Reduce your request frequency. |
-| 60008 | Service request timeout or HTTP request format error. Check and try again. |
-| 60009 | Request resource error. Check the request URL. |
-| 60010 | The request requires app admin permissions. |
-| 60011 | SDKAppID request frequency exceeded. Reduce your request frequency. |
-| 60012 | SDKAppID is required for RESTful APIs. Check the SDKAppID parameter in the URL. |
-| 60013 | JSON parsing error in the HTTP response body. |
-| 60014 | Account switching timeout. |
-| 60015 | Invalid account type in the request body. Make sure that the account is in string format. |
-| 60016 | The SDKAppID is disabled. |
-| 60017 | The request is disabled. |
-| 60018 | Too many requests. Try again later. |
-| 60019 | Too many requests. Try again later. |
-| 60020 | Your Pro Edition has expired and was disabled. Log in to the [purchase page](https://buy.cloud.tencent.com/avc) and purchase it again. It will take effect in five minutes upon successful purchase. |
-| 60021  | The source IP of the RESTful API call is invalid. |
+| Error Code | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| 60002      | HTTP parsing error. Check the URL format of the HTTP request. |
+| 60003      | JSON parsing error. Check the JSON format of the HTTP request. |
+| 60004      | Account or signature error in the request URL or JSON request body. |
+| 60005      | Account or signature error in the request URL or JSON request body. |
+| 60006      | Invalid SDKAppID. Check the validity of SDKAppID.            |
+| 60007      | RESTful API call frequency limit exceeded. Reduce your request frequency. |
+| 60008      | Service request timeout or HTTP request format error. Check and try again. |
+| 60009      | Request resource error. Check the request URL.               |
+| 60010      | The request requires app admin permissions.                  |
+| 60011      | SDKAppID request frequency exceeded. Reduce your request frequency. |
+| 60012      | SDKAppID is required for RESTful APIs. Check the SDKAppID parameter in the URL. |
+| 60013      | JSON parsing error in the HTTP response body.                |
+| 60014      | Account switching timeout.                                   |
+| 60015      | Invalid account type in the request body. Make sure that the account is in string format. |
+| 60016      | The SDKAppID is disabled.                                    |
+| 60017      | The request is disabled.                                     |
+| 60018      | Too many requests. Try again later.                          |
+| 60019      | Too many requests. Try again later.                          |
+| 60020      | Your Pro Edition has expired and was disabled. Log in to the [purchase page](https://buy.cloud.tencent.com/avc) and purchase it again. It will take effect in five minutes upon successful purchase. |
+| 60021      | The source IP of the RESTful API call is invalid.            |
 
 ## FAQs
 ### The RESTful API request timed out and no response was received.
@@ -132,5 +132,4 @@ Access-Control-Allow-Methods: POST
 4. Check whether the machine uses a private or public DNS server. If the machine uses a private DNS server, make sure that the DNS server egress is in the same region as the ISP to which the egress IP of the machine belongs.
 5. You are advised to use the "persistent connection+connection pool" mode.
 >?It is recommended that you use a RESTful API persistent connection to connect to the SDK. The reason is that it takes a long time to establish HTTPS non-persistent connections because each request causes TCP+TLS handshake overhead.
-For scenario where a standard HTTP library is used: for HTTP 1.0, the request header `Connection: keep-alive` needs to be specified; for HTTP 1.1, persistent connections are supported by default; for scenarios where HTTPS requests are encapsulated based on TCP, TCP connections can be reused to send and receive requests.
-
+>For scenario where a standard HTTP library is used: for HTTP 1.0, the request header `Connection: keep-alive` needs to be specified; for HTTP 1.1, persistent connections are supported by default; for scenarios where HTTPS requests are encapsulated based on TCP, TCP connections can be reused to send and receive requests.

@@ -35,14 +35,14 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパラメータの説明
 
-| パラメータ | 説明 |
-| --- | --- |
-| https | リクエストプロトコルはHTTPS、リクエストメソッドはPOSTです |
-| www.example.com | コールバックURL |
-| SdkAppid | アプリケーションの作成時にIMコンソールで割り当てられたSDKAppID |
-| CallbackCommand | Group.CallbackSendMsgExceptionという固定値が適用されます |
-| contenttype | JSONという固定値が適用されます |
-| OptPlatform | クライアントプラットフォーム。値の詳細については、[サードパーティコールバックの概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)にあるOptPlatformのパラメータの意味をご参照ください |
+| パラメータ      | 説明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | リクエストプロトコルはHTTPS、リクエストメソッドはPOSTです    |
+| www.example.com | コールバックURL                                              |
+| SdkAppid        | アプリケーションの作成時にIMコンソールで割り当てられたSDKAppID |
+| CallbackCommand | Group.CallbackSendMsgExceptionという固定値が適用されます     |
+| contenttype     | JSONという固定値が適用されます                               |
+| OptPlatform     | クライアントプラットフォーム。値の詳細については、[サードパーティコールバックの概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)にあるOptPlatformのパラメータの意味をご参照ください |
 
 ### リクエストパケットの例
 
@@ -72,20 +72,20 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパケットフィールドの説明
 
-| フィールド | タイプ | 説明 |
-| --- | --- | --- |
-| CallbackCommand | String | コールバックコマンド |
-| GroupId | String | 	グループメッセージが生成されるグループID |
-| Type | String | グループメッセージが生成される[グループタイプの概要](https://intl.cloud.tencent.com/document/product/1047/33529)。例：Public |
-| From_Account | String | メッセージ送信者のUserID |
-| Operator_Account | String | リクエスト送信者のUserID。管理者のリクエストかどうかを識別するために使用できます |
-| Random | Integer | メッセージ送信リクエストにある32桁の乱数 |
-|OnlineOnlyFlag|Integer|オンラインメッセージ。値は1または0です。ライブストリーミンググループの場合はこの属性を無視し、デフォルト値の0に設定されています|
-| MsgBody | Array | メッセージ内容。詳細については、[メッセージ形式の説明](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください |
-| CloudCustomData | String | メッセージカスタムデータ（クラウドに保存され、対向側に送信され、プログラムをアンインストールして再インストールした後にプルできます） |
-| ErrorCode | Interger | メッセージ異常のエラーコード。その他のエラーコードについては、[グループのエラーコード](https://intl.cloud.tencent.com/document/product/1047/34348)をご参照ください |
-| ErrorInfo | String | メッセージ異常の詳細情報 |
-| EventTime | Integer | イベントがトリガーされるミリ秒レベルのタイムスタンプ |
+| フィールド       | タイプ   | 説明                                                         |
+| ---------------- | -------- | ------------------------------------------------------------ |
+| CallbackCommand  | String   | コールバックコマンド                                         |
+| GroupId          | String   | グループメッセージが生成されるグループID                     |
+| Type             | String   | グループメッセージが生成される[グループタイプの概要](https://intl.cloud.tencent.com/document/product/1047/33529)。例：Public |
+| From_Account     | String   | メッセージ送信者のUserID                                     |
+| Operator_Account | String   | リクエスト送信者のUserID。管理者のリクエストかどうかを識別するために使用できます |
+| Random           | Integer  | メッセージ送信リクエストにある32桁の乱数                     |
+| OnlineOnlyFlag   | Integer  | オンラインメッセージ。値は1または0です。ライブストリーミンググループの場合はこの属性を無視し、デフォルト値の0に設定されています |
+| MsgBody          | Array    | メッセージ内容。詳細については、[メッセージ形式の説明](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください |
+| CloudCustomData  | String   | メッセージカスタムデータ（クラウドに保存され、対向側に送信され、プログラムをアンインストールして再インストールした後にプルできます） |
+| ErrorCode        | Interger | メッセージ異常のエラーコード。その他のエラーコードについては、[グループのエラーコード](https://intl.cloud.tencent.com/document/product/1047/34348)をご参照ください |
+| ErrorInfo        | String   | メッセージ異常の詳細情報                                     |
+| EventTime        | Integer  | イベントがトリガーされるミリ秒レベルのタイムスタンプ         |
 
 ### レスポンスパケットの例
 
@@ -99,14 +99,13 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### レスポンスパケットフィールドの説明
 
-| フィールド | タイプ | 属性 | 説明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必須 | リクエスト処理の結果。入力する固定値：OK |
-| ErrorCode | Integer | 必須 | エラーコード。入力する固定値：0 |
-| ErrorInfo | String | 必須	 | エラー情報。固定値：空の文字列 |
+| フィールド   | タイプ  | 属性 | 説明                                     |
+| ------------ | ------- | ---- | ---------------------------------------- |
+| ActionStatus | String  | 必須 | リクエスト処理の結果。入力する固定値：OK |
+| ErrorCode    | Integer | 必須 | エラーコード。入力する固定値：0          |
+| ErrorInfo    | String  | 必須 | エラー情報。固定値：空の文字列           |
 
 ## 参照情報
 
 - [サードパーティコールバックの概要](https://intl.cloud.tencent.com/document/product/1047/34354)
 -REST API：[グループ内での一般メッセージの送信](https://intl.cloud.tencent.com/document/product/1047/34959)
-

@@ -31,15 +31,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求参数说明
 
-| 参数 | 说明 |
-| --- | --- |
-| https | 请求协议为 HTTPS，请求方式为 POST |
-| www.example.com | 回调 URL |
-| SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为：Group.CallbackAfterGroupDestroyed |
-| contenttype | 固定值为 JSON |
-| ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
+| 参数            | 说明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | 请求协议为 HTTPS，请求方式为 POST                            |
+| www.example.com | 回调 URL                                                     |
+| SdkAppid        | 创建应用时在即时通信 IM 控制台分配的 SDKAppID                |
+| CallbackCommand | 固定为：Group.CallbackAfterGroupDestroyed                    |
+| contenttype     | 固定值为 JSON                                                |
+| ClientIP        | 客户端 IP，格式如：127.0.0.1                                 |
+| OptPlatform     | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 
@@ -67,14 +67,14 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### 请求包字段说明
 
-| 字段 | 类型	 | 说明 |
-| --- | --- | --- |
-| CallbackCommand | String | 回调命令 |
-| GroupId | String | 被解散的群组 ID |
-| Type | String | 被解散群的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529)，例如 Public |
-| Owner_Account | String | 群主 UserID |
-| MemberList | Array | 被解散群的成员列表，社群不会返回此字段 |
-| EventTime | Integer | 事件触发的毫秒级别时间戳 |
+| 字段            | 类型    | 说明                                                         |
+| --------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand | String  | 回调命令                                                     |
+| GroupId         | String  | 被解散的群组 ID                                              |
+| Type            | String  | 被解散群的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529)，例如 Public |
+| Owner_Account   | String  | 群主 UserID                                                  |
+| MemberList      | Array   | 被解散群的成员列表，社群不会返回此字段                       |
+| EventTime       | Integer | 事件触发的毫秒级别时间戳                                     |
 
 ### 应答包示例
 
@@ -90,15 +90,13 @@ App 后台记录群解散信息后，发送回调应答包。
 
 ### 应答包字段说明
 
-| 字段 | 类型 | 属性 | 说明 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码，建议设置为0，该回调用于群解散后通知用户，用户的错误码值不影响群解散的正常流程 |
-| ErrorInfo | String | 必填 | 错误信息 |
+| 字段         | 类型    | 属性 | 说明                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败               |
+| ErrorCode    | Integer | 必填 | 错误码，建议设置为0，该回调用于群解散后通知用户，用户的错误码值不影响群解散的正常流程 |
+| ErrorInfo    | String  | 必填 | 错误信息                                                     |
 
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[解散群组](https://intl.cloud.tencent.com/document/product/1047/34896)
-
-

@@ -31,15 +31,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Request parameters
 
-| Parameter | Description |
+| Parameter       | Description                                                  |
 | :-------------- | :----------------------------------------------------------- |
-| https           | The request protocol is HTTPS and the request method is POST.                            |
-| www.example.com | Callback URL                                                     |
-| SdkAppid        | `SDKAppID` assigned by the IM console when the app is created                |
-| CallbackCommand | Always `C2C.CallbackAfterMsgWithDraw`                         |
-| contenttype     | Always `json`                                         |
+| https           | The request protocol is HTTPS and the request method is POST. |
+| www.example.com | Callback URL                                                 |
+| SdkAppid        | `SDKAppID` assigned by the IM console when the app is created |
+| CallbackCommand | Always `C2C.CallbackAfterMsgWithDraw`                        |
+| contenttype     | Always `json`                                                |
 | ClientIP        | Client IP, such as 127.0.0.1                                 |
-| OptPlatform | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| OptPlatform     | Client platform. For valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
 ### Sample request
 
@@ -56,11 +56,11 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 ### Request fields
 
 | Field           | Type    | Description                                                  |
-| :-------------- | :------ | :---------------------------------------------------- |
-| CallbackCommand | String  | Callback command                                              |
-| From_Account    | String  | `UserID` of the message sender                                     |
-| To_Account      | String  | `UserID` of the message recipient                                     |
-| MsgKey          | String  | Unique identifier of the message                                    |
+| :-------------- | :------ | :----------------------------------------------------------- |
+| CallbackCommand | String  | Callback command                                             |
+| From_Account    | String  | `UserID` of the message sender                               |
+| To_Account      | String  | `UserID` of the message recipient                            |
+| MsgKey          | String  | Unique identifier of the message                             |
 | UnreadMsgNum    | Integer | Total number of unread one-to-one messages of `To_Account` (including all one-to-one conversations) |
 
 ### Sample response
@@ -75,11 +75,11 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Response fields
 
-| Field | Type | Required | Description |
-| :----------- | :------ | :--- | :--------------------------------------------- |
-| ActionStatus | String | Yes | Request result. `OK`: successful; `FAIL`: failed |
-| ErrorCode | Integer | Yes | Error code. `0`: callback succeeds; `1`: an error occurs during callback. |
-| ErrorInfo    | String  | Yes | Error information                                       |
+| Field        | Type    | Required | Description                                                  |
+| :----------- | :------ | :------- | :----------------------------------------------------------- |
+| ActionStatus | String  | Yes      | Request result. `OK`: successful; `FAIL`: failed             |
+| ErrorCode    | Integer | Yes      | Error code. `0`: callback succeeds; `1`: an error occurs during callback. |
+| ErrorInfo    | String  | Yes      | Error information                                            |
 
 ## References
 

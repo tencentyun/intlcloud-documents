@@ -37,15 +37,15 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパラメータの説明
 
-| パラメータ     | 説明 |
-| --- | --- |
-| https | リクエストプロトコルはHTTPS、リクエスト方式はPOSTです |
-| www.example.com | コールバックURL |
-| SdkAppid | アプリケーション作成時にIMコンソールで割り当てられたSDKAppID |
-| CallbackCommand | Group.CallbackAfterGroupInfoChangedに固定されます |
-| contenttype | 固定値はJSONです |
-| ClientIP | クライアントIP、形式は例えば127.0.0.1です |
-| OptPlatform | クライアントプラットフォーム、値の選択は、[サードパーティコールバック概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)のパラメータOptPlatformの意味を参照します |
+| パラメータ      | 説明                                                         |
+| --------------- | ------------------------------------------------------------ |
+| https           | リクエストプロトコルはHTTPS、リクエスト方式はPOSTです        |
+| www.example.com | コールバックURL                                              |
+| SdkAppid        | アプリケーション作成時にIMコンソールで割り当てられたSDKAppID |
+| CallbackCommand | Group.CallbackAfterGroupInfoChangedに固定されます            |
+| contenttype     | 固定値はJSONです                                             |
+| ClientIP        | クライアントIP、形式は例えば127.0.0.1です                    |
+| OptPlatform     | クライアントプラットフォーム、値の選択は、[サードパーティコールバック概要：コールバックプロトコル](https://intl.cloud.tencent.com/document/product/1047/34354)のパラメータOptPlatformの意味を参照します |
 
 ### リクエストパッケージの事例
 
@@ -64,17 +64,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### リクエストパッケージフィールドの説明
 
-| フィールド | タイプ | 説明 |
-| --- | --- | --- |
-| CallbackCommand | String | コールバックコマンド |
-| GroupId | String | グループ情報が変更されたグループID |
-| Type | String | グループ情報が変更されたグループ[グループタイプ概要](https://intl.cloud.tencent.com/document/product/1047/33529)、たとえばPublic |
-| Operator_Account | String | オペレーターUserID |
-| Name | String | 変更後のグループ名 |
-| Introduction | String | 変更後のグループ概要 |
-| Notification | String | 変更後のグループ通知 |
-| FaceUrl | String | 変更後のグループプロファイルフォトURL |
-| EventTime | Integer | イベントトリガーのミリ秒レベルのタイムスタンプ |
+| フィールド       | タイプ  | 説明                                                         |
+| ---------------- | ------- | ------------------------------------------------------------ |
+| CallbackCommand  | String  | コールバックコマンド                                         |
+| GroupId          | String  | グループ情報が変更されたグループID                           |
+| Type             | String  | グループ情報が変更されたグループ[グループタイプ概要](https://intl.cloud.tencent.com/document/product/1047/33529)、たとえばPublic |
+| Operator_Account | String  | オペレーターUserID                                           |
+| Name             | String  | 変更後のグループ名                                           |
+| Introduction     | String  | 変更後のグループ概要                                         |
+| Notification     | String  | 変更後のグループ通知                                         |
+| FaceUrl          | String  | 変更後のグループプロファイルフォトURL                        |
+| EventTime        | Integer | イベントトリガーのミリ秒レベルのタイムスタンプ               |
 
 ### レスポンスパッケージの事例
 
@@ -90,15 +90,13 @@ Appバックグラウンドでグループ情報の変更情報を記録した�
 
 ### レスポンスパッケージフィールドの説明
 
-| オブジェクト | 概要 | 機能 | 機能 |
-| --- | --- | --- | --- |
-| ActionStatus | String | 必須 | リクエスト処理の結果、OKは処理が成功したことを意味し、FAILは失敗を意味します。|
-| ErrorCode | Integer | 必須 | エラーコード、0はレスポンス結果を無視できることを意味します |
-| ErrorInfo | String | 必須 | エラーメッセージ |
+| オブジェクト | 概要    | 機能 | 機能                                                         |
+| ------------ | ------- | ---- | ------------------------------------------------------------ |
+| ActionStatus | String  | 必須 | リクエスト処理の結果、OKは処理が成功したことを意味し、FAILは失敗を意味します。 |
+| ErrorCode    | Integer | 必須 | エラーコード、0はレスポンス結果を無視できることを意味します  |
+| ErrorInfo    | String  | 必須 | エラーメッセージ                                             |
 
 ## 参考
 
 - [サードパーティのコールバック概要](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[グループの基本情報の変更](https://intl.cloud.tencent.com/document/product/1047/34962)
-
-
