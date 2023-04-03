@@ -6,8 +6,6 @@ Anda dapat menggunakan salah satu metode berikut untuk menginstal cloud-init:
 - [Mengunduh paket sumber cloud-init secara manual](#ManualDown) 
 - [Menggunakan paket cloud-init dari sumber perangkat lunak](#SoftSources)
 
-## Catatan
-Sebelum mengimpor citra Linux, pastikan Anda telah menginstal layanan cloud-init pada citra dengan benar.
 
 ## Prasyarat
 Server dengan layanan cloud-init yang diinstal dapat mengakses jaringan publik.

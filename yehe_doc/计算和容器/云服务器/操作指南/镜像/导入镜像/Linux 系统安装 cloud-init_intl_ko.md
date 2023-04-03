@@ -7,8 +7,6 @@ Cloud-init를 사용하면 인스턴스를 처음 초기화하는 동안 구성�
 - [cloud-init 소스 패키지 수동 다운로드 방식](#ManualDown) 
 - [소프트웨어 소스의 cloud-init 패키지를 사용하는 방식](#SoftSources)
 
-## 주의 사항
-Linux 이미지를 가져오기 전에 이미지에 cloud-init 서비스를 제대로 설치했는지 확인하십시오.
 
 ## 전제 조건
 cloud-init 서비스가 설치된 서버가 공중망에 올바르게 액세스할 수 있어야 합니다.

@@ -7,8 +7,6 @@ Options to install cloud-init:
 - [Download the cloud-init source package](#ManualDown) 
 - [Use the cloud-init package from the software source](#SoftSources)
 
-## Must-Knows
-Before importing a Linux image, ensure that you have properly installed the cloud-init service in the image.
 
 ## Prerequisites
 Connect the server that you want to install cloud-init to the public network.
