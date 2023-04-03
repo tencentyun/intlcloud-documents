@@ -1,4 +1,4 @@
-﻿## Chinese Mainland Editions
+## Chinese Mainland Editions
 ### SaaS WAF 
 <table>
 <thead>
