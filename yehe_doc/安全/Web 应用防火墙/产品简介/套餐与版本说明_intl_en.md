@@ -28,10 +28,10 @@
 </tr>
 <tr>
  <td>Bandwidth specification (in/off the cloud)</td>
-<td>60/20 Mbps</td>
-<td>125/40 Mbps</td>
-<td>250/80 Mbps</td>
-<td>1,250/400 Mbps</td>
+<td>50/15 Mbps</td>
+<td>100/30 Mbps</td>
+<td>200/50 Mbps</td>
+<td>1,000/250 Mbps</td>
 </tr>
 <tr>
  <td>Dedicated IP</td>
@@ -252,10 +252,10 @@
 </tr>
 <tr>
  <td>Bandwidth specification (in the cloud)</td>
-<td>60 Mbps</td>
-<td>125 Mbps</td>
-<td>250 Mbps</td>
-<td>1,250 Mbps</td>
+<td>100 Mbps</td>
+<td>200 Mbps</td>
+<td>400 Mbps</td>
+<td>400 Mbps</td>
 </tr>
 <tr>
  <td>Multi-region linkage</td>
@@ -446,10 +446,10 @@
 </tr>
 <tr>
  <td>Bandwidth specification (in/off the cloud)</td>
-<td>60/20 Mbps</td>
-<td>125/40 Mbps</td>
-<td>250/80 Mbps</td>
-<td>1,250/400 Mbps</td>
+<td>50/15 Mbps</td>
+<td>80/30 Mbps</td>
+<td>100/50 Mbps</td>
+<td>1,000/250 Mbps</td>
 </tr>
 <tr>
  <td>Dedicated IP</td>
@@ -656,10 +656,10 @@
 </tr>
 <tr>
  <td>Bandwidth specification (in the cloud)</td>
-<td>60 Mbps</td>
-<td>125 Mbps</td>
-<td>250 Mbps</td>
-<td>1,250 Mbps</td>
+<td>100 Mbps</td>
+<td>200 Mbps</td>
+<td>400 Mbps</td>
+<td>400 Mbps</td>
 </tr>
 <tr>
  <td>Multi-region linkage</td>
