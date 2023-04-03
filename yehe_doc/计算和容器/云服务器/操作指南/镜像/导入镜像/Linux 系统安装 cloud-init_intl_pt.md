@@ -6,8 +6,6 @@ O cloud-init permite que você personalize as configurações durante a primeira
 - [Download manual do pacote de origem do cloud-init](#ManualDown) 
 - [Uso do pacote do cloud-init de origem do software](#SoftSources)
 
-## Observações
-Antes de importar uma imagem do Linux, certifique-se de ter instalado corretamente o serviço cloud-init na imagem.
 
 ## Pré-requisitos
 O servidor com o serviço cloud-init instalado pode acessar a rede pública.
