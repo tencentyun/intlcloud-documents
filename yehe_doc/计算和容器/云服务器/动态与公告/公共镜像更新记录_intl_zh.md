@@ -522,7 +522,7 @@ img-4orfgj3l</a>
   <tr>
 	<td>Windows Server 2016 数据中心版 64位中文版</td>
 	<td>镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9ltji92z">img-9ltji92z</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-gu1nmb8d">img-gu1nmb8d</a></td>
 	<td>2023-03-09</td>
 	<td>更新最新系统补丁。</td>
   </tr>
@@ -543,7 +543,7 @@ img-4orfgj3l</a>
   <tr>
 	<td>Windows Server 2012 R2 数据中心版 64位英文版</td>
 	<td >镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-2tddq003">img-2tddq003</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-bpsjtw7n">img-bpsjtw7n</a></td>
 	<td>2023-01-06</td>
 	<td>更新最新系统补丁。</td>
   </tr>
