@@ -42,10 +42,6 @@ You can query all VPC resources via the VPC console, such as cloud resources and
 <td>The number of CVMs in the VPC. Click the number to access the CVM page. Click the CVM icon to redirect to the CVM purchase page.</td>
 </tr>
 <tr>
-<td>Classiclink</td>
-<td>The number of classic network-based CVM instances associated with this VPC. A classic network-based CVM can only be associated with one VPC.</td>
-</tr>
-<tr>
 <td>Direct Connect Gateway</td>
 <td>The number of direct connect gateways in the VPC. Click the number to access the Direct Connect Gateway page.</td>
 </tr>
