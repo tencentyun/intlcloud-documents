@@ -1,26 +1,19 @@
 本文介绍如何通过云服务器控制台的在线迁移功能，进行服务器的在线迁移。
 
-
 ## 迁移流程
 在线迁移流程如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/0e290646e08b6af1b509ce324ea6e096.png)
-
 [](id:prerequisites)
-## 准备事项
 
-- 已具备腾讯云账号。
-- 若您使用子账号进行控制台迁移，则需要使用主账号登录  [访问管理控制台](https://console.cloud.tencent.com/cam/policy)，授予子账号 `QcloudCSMFullAccess` 和 `QcloudCVMFullAccess` 权限。
-- 在 [API密钥管理](https://console.cloud.tencent.com/cam/capi) 页面中创建并获取 `SecretId` 及 `SecretKey`。
-- [下载](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) 迁移工具压缩包。
-- 建议暂停源端服务器上的应用程序，以避免迁移时对现有应用程序可能产生的影响。
-- 建议您在迁移前，通过下方式进行数据备份：
-   - 源端主机：可以选择源服务器快照功能等方式备份数据。
-   - 目标云服务器：可以选择 [创建快照](https://intl.cloud.tencent.com/document/product/362/5755) 等方式备份目标云服务器数据。
+## 准备事项
+- 在 [API密钥管理](https://console.cloud.tencent.com/cam/capi) 页面中创建并获取 `SecretId` 和 `SecretKey`。
+- 建议暂停主机上的应用程序并进行数据备份，以避免迁移时对现有应用程序可能产生的影响。
+ - 源端主机：可以选择源服务器快照功能等方式备份数据。
+ - 目标云服务器：可以选择 [创建快照](https://intl.cloud.tencent.com/document/product/362/5755) 等方式备份目标云服务器数据。
+-  若您使用子账号进行控制台迁移，子账号需要 QcloudCSMFullAccess 和 QcloudCVMFullAccess 权限，您可以使用主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam/policy) 授予。
 
 ## 迁移步骤
-
-
-### 迁移前的检查
+### 步骤一：迁移前的检查
 
 迁移前，需根据实际情况进行检查。检查内容如下表：
  - 若迁移目标为云服务器，则需检查源端主机及目标云服务器。
@@ -73,21 +66,24 @@
 - go2tencentcloud 迁移工具在开始运行时，默认自动检查。如果需要略过检查并强制迁移，请将 client.json 文件中的 `Client.Extra.IgnoreCheck` 字段配置为 `true`。
 </dx-alert>
 
-
 [](id:registrationSource)
-### 注册迁移源
+### 步骤二：导入迁移源
 #### 通过迁移工具导入迁移源
 <dx-tabs>
 ::: Linux 服务器
-1. 将迁移工具 go2tencentcloud.zip [下载](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) 或上传至源端主机，并执行以下命令进入对应目录。
-   1. 依次执行以下命令，解压 go2tencentcloud.zip 并进入目录。
+1. 在待迁移的源端主机执行以下命令 [下载](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) 迁移工具 go2tencentcloud.zip，并进入对于目录。
+  - 依次执行以下命令、[下载](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip)、解压 go2tencentcloud.zip 并进入目录。
+```shellsession
+wget https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip
+```
 ```shellsession
 unzip go2tencentcloud.zip
 ```
 ```shellsession
 cd go2tencentcloud
 ```
-   2. 依次执行以下命令，解压 go2tencentcloud-linux.zip 并进入目录。
+- 依次执行以下命令，解压 go2tencentcloud-linux.zip 并进入目录。
+
 ```shellsession
 unzip go2tencentcloud-linux.zip
 ```
@@ -100,21 +96,21 @@ cd go2tencentcloud-linux
 2. （可选）排除源端主机上不需迁移的文件或目录。
 若 Linux 源端主机中存在不需要迁移的文件或目录，可将文件或目录添加至 [rsync_excludes_linux.txt 文件](https://intl.cloud.tencent.com/document/product/213/44340) 中。
 3. 导入迁移源。
-   1. 以64位 Linux 源端主机为例，以 root 权限依次执行以下命令运行工具。
+  -  以64位 Linux 源端主机为例，以 root 权限依次执行以下命令运行工具。
 ```shellsession
 chmod +x go2tencentcloud_x64
 ```
 ```shellsession
 sudo ./go2tencentcloud_x64
 ```
-   2. 根据提示输入已在 [准备事项](#prerequisites) 中获取的账户 API 访问密钥的 `SecretId` 和 `SecretKey`，并按 **Enter**。如下图所示：
+  - 根据提示输入已在 [准备事项](#prerequisites) 中获取的账户 API 访问密钥的 `SecretId` 和 `SecretKey`，并按 **Enter**。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/38ff9f9d8c143a4cb0df39cbeaf18713.png)
 当迁移工具界面出现如下图所示信息时，表示迁移源已经成功导入控制台，可前往控制台查看迁移源。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f9cf0fd99504aba51ebf82b0cab250b8.png"/>
 :::
 
 ::: Windows 服务器
-1. 将迁移工具 go2tencentcloud.zip 下载或上传至源端主机，解压得到 go2tencentcloud 文件夹，提取其中的 go2tencentcloud-windows.zip 继续解压，得到如下图所示的目录：
+1. 将迁移工具 go2tencentcloud.zip [下载](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) 或上传至源端主机，解压得到 go2tencentcloud 文件夹，提取其中的 go2tencentcloud-windows.zip 继续解压，得到如下图所示的目录：
 ![](https://qcloudimg.tencent-cloud.cn/raw/3f2c9881d9c5323a14d096d0811814cd.png)    
 2. 通过以下方式运行 go2tencentcloud_x64.exe 应用程序。
 	- 方式一：右键以管理员身份运行 go2tencentcloud_x64.exe 应用程序，在弹窗中输入SecretId、SecretKey。
@@ -126,16 +122,18 @@ sudo ./go2tencentcloud_x64
 ![](https://qcloudimg.tencent-cloud.cn/raw/5ecd29f96415d0cb090fe165909272be.png)
 :::
 </dx-tabs>
+<dx-alert infotype="explain" title="">
+若未提示 Import source server successfully， 表示导入迁移源失败， 可查看日志（默认为迁移工具目录下的 logs/log 文件）解决问题之后重新运行迁移工具导入迁移源。
+</dx-alert>
 
 #### 通过控制台查看迁移源
 登录 <a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">在线迁移控制台</a> 即可查看已导入的迁移源，状态为“在线” 。如下图所示：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/11b1e6cada0384dae292e89378629ddc.png"/>
-若未提示 Import source server successfully， 表示导入迁移源失败， 可查看日志（默认为迁移工具目录下的 logs/log 文件）解决问题之后重新运行迁移工具导入迁移源。
 
 >!迁移源导入成功之后，请勿关闭实例中的迁移工具直至迁移任务完成。否则，迁移源离线之后，将无法完成迁移任务。
 
 
-### 创建并启动迁移任务
+### 步骤三：创建并启动迁移任务
 
 1. 创建迁移任务
 登录 [在线迁移控制台](https://console.cloud.tencent.com/cvm/csm/online?rid=1)，单击目标迁移源所在行右侧的**创建迁移任务**。在弹出的“创建迁移任务”窗口中，参考以下信息进行配置。如下图所示：
@@ -231,7 +229,7 @@ sudo ./go2tencentcloud_x64
 <td>创建迁移任务后，在设置的时间自动启动迁移任务。预约执行时间最早可设置为当前时间后<b>10</b>分钟。</td>
 </tr>
 </tbody></table>
- - **高级配置(可选)**：
+ -  **高级配置(可选)** ：
 <table>
 <thead>
 <tr>
@@ -265,9 +263,7 @@ sudo ./go2tencentcloud_x64
 - 迁移目标是云服务器镜像时，开始迁移后将在您的账户下创建一台名为 `do_not_delete_csm_instance` 的中转实例，请不要对中转实例进行重装系统、关机、销毁、重置密码等操作，直至迁移完成系统会自动销毁本次创建的中转实例。
 </dx-alert>
 
-
-### 等待迁移任务结束
-
+### 步骤四：等待迁移任务结束
 
 当迁移任务状态为“成功”时，表示成功完成迁移。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/7beb11db18bd9913b44941dd05f8a4a4.png)
@@ -280,7 +276,7 @@ sudo ./go2tencentcloud_x64
 - 如果迁移过程耗时太长，且需停止本次迁移，您可以先暂停迁移任务，并单击**删除**，即可取消本次迁移任务。
 </dx-alert>
 
-### 迁移后的检查[](id:checkAfter)
+### 步骤五：迁移后的检查[](id:checkAfter)
 
 - **迁移结果失败**：
 请检查日志文件（默认为迁移工具目录下的 log 文件）的错误信息输出、指引文档或者 [服务迁移类常见问题](https://intl.cloud.tencent.com/document/product/213/32395) 进行排查和修复问题。修复后在迁移任务操作列单击**开始/重试**，即可重新开始迁移任务。
@@ -289,6 +285,3 @@ sudo ./go2tencentcloud_x64
  - 若迁移目标为云服务器镜像，可单击迁移任务所在行的“云服务器镜像 ID”，进入 [云服务器镜像页面](https://console.cloud.tencent.com/cvm/image/index) 即可查看该镜像信息，您可使用该镜像创建云服务器。
 
 如有任何疑问、迁移异常等问题请查看 [服务迁移类常见问题](https://intl.cloud.tencent.com/document/product/213/32395) 或者 [联系我们](https://intl.cloud.tencent.com/document/product/213/34837) 解决。
-
-
-
