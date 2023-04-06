@@ -2,7 +2,6 @@
 腾讯云支持将已创建的自定义镜像导出至 [对象存储 COS](https://intl.cloud.tencent.com/document/product/436/6222) 的存储桶内，您可通过该功能导出所需镜像。
 
 ## 前提条件
-- 目前使用该功能需通过申请，请 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请开通功能。
 - 已前往 [对象存储控制台](https://console.cloud.tencent.com/cos) 开通对象存储服务。
 - 已在自定义镜像所在地域创建存储桶，详情请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。
 
@@ -48,7 +47,7 @@
 </table>
 
 ## 操作步骤
-1. 登录云服务器控制台，选择左侧导航栏中的 **[镜像](https://console.cloud.tencent.com/cvm/image)**。
+1. 登录云服务器控制台，选择左侧导航栏中的 **[镜像](https://console.cloud.tencent.com/cvm/image)** 。
 2. 在“镜像”页面上方，选择需导出的自定义镜像所在地域，并单击**自定义镜像**页签。
 3. 选择镜像所在行右侧的**更多** > **导出镜像**。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/67a493d7ae96d92b514f5c124619821c.png)
