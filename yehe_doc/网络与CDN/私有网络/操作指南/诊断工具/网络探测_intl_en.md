@@ -66,8 +66,8 @@ If you specify the CCN as the next hop and the probe destination IPs belong to t
 ## Checking the Latency and Packet Loss of a Network Probe
 
 1. Log in to [VPC console](https://console.cloud.tencent.com/vpc).
-2. Select **Diagnostic Tools** -> **Network Probe** in the left sidebar to enter the management page.
-3. Click the monitoring icon of the target network probe instance to view its latency and packet loss rate.
+2. Select **Diagnostic Tools** > **Network Probe** in the left sidebar to enter the management page.
+3. Click <img src="https://qcloudimg.tencent-cloud.cn/raw/a6d7c58295ef76b3347c82dc9e266da4.png" width="3%"> of the target network probe instance to view its latency and packet loss rate.
 	![](https://main.qcloudimg.com/raw/b1a8a96df051a50cf58fd6f34b09a228.png)
 
 ## Modifying a Network Probe
