@@ -2,7 +2,6 @@
 Tencent Cloud는 생성된 사용자 정의 이미지를 [Cloud Object Storage](https://intl.cloud.tencent.com/document/product/436/6222) 버킷으로 내보내기를 지원하며, 이 기능을 통해 원하는 이미지를 내보낼 수 있습니다.
 
 ## 전제 조건
-- 현재 이 기능을 사용하려면 신청해야 합니다. [티켓 제출](https://console.intl.cloud.tencent.com/workorder/category)을 통해 신청하십시오.
 - [COS 콘솔](https://console.cloud.tencent.com/cos)로 이동하여 COS 서비스를 활성화해야 합니다.
 - 사용자 정의 이미지가 위치한 리전에 버킷이 생성되어야 합니다. 자세한 내용은 [버킷 생성](https://intl.cloud.tencent.com/document/product/436/13309)을 참고하십시오.
 
