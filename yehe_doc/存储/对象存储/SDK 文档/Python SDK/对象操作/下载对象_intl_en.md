@@ -5,13 +5,13 @@ This document provides an overview of APIs and SDK code samples for simple opera
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system. |
+| [GET Object](https://www.tencentcloud.com/document/product/436/7753) | Downloading an object | Downloads an object to local |
 
 ## Advanced APIs (Recommended)
 
 ### Downloading an object (checkpoint restart)
 
-#### Description
+#### Feature description
 This advanced download API can determine whether to download a file in whole or in parts based on the file size. It downloads files smaller than or equal to 20 MB in whole and files larger than 20 MB in parts. It also supports automatic checkpoint restart for suspended multipart downloads.
 
 #### Method prototype
@@ -25,28 +25,41 @@ download_file(Bucket, Key, DestFilePath, PartSize=20, MAXThread=5, EnableCRC=Fal
 # -*- coding=utf-8
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
+from qcloud_cos.cos_exception import CosClientError, CosServiceError
 import sys
 import logging
 
-# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
 
+# Use the advanced API to download once without retry. In this case, the checkpoint restart feature is not used.
 response = client.download_file(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
     DestFilePath='local.txt'
 )
+
+# Use the advanced API for checkpoint restart, and the successfully uploaded parts will not be downloaded again during retries (10 retries here).
+for i in range(0, 10):
+    try:
+        response = client.download_file(
+            Bucket='examplebucket-1250000000',
+            Key='exampleobject',
+            DestFilePath='local.txt')
+        break
+    except CosClientError or CosServiceError as e:
+        print(e)
 ```
 
 #### Sample request with all parameters
@@ -54,8 +67,8 @@ response = client.download_file(
 def upload_percentage(consumed_bytes, total_bytes):
     """Callback function that calculates the upload progress (in percentage)
 
-    :param consumed_bytes: Uploaded data amount
-    :param total_bytes: Total data amount
+    :param consumed_bytes: uploaded data amount
+    :param total_bytes: total data amount
     """
     if total_bytes:
         rate = int(100 * (float(consumed_bytes) / float(total_bytes)))
@@ -107,7 +120,7 @@ response = client.download_file(
 | ResponseContentType | `Content-Type` of the response header | String | No |
 | ResponseExpires | `Expires` of the response header | String | No |
 | VersionId | Version ID of the object to download| String | No |
-|  progress_callback | Callback function for the upload progress. You can customize this function to query the upload progress. | Func | No |
+| progress_callback | Callback function for the upload progress. You can customize this function to query the upload progress. | Func | No |
 
 #### Response description
 None
@@ -115,7 +128,7 @@ None
 
 ### Batch downloading files (downloading a COS directory)
 
-#### Description
+#### Feature description
 The following example shows how to use the SDK’s basic APIs to download a COS directory to local storage.
 
 #### Sample request
@@ -131,16 +144,16 @@ from qcloud_cos import CosConfig, CosServiceError
 from qcloud_cos import CosS3Client
 from qcloud_cos.cos_threadpool import SimpleThreadPool
 
-# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)  # Obtain the object to configure
 client = CosS3Client(config)
@@ -261,7 +274,7 @@ if __name__ == "__main__":
 
 ### Downloading an object
 
-#### Description
+#### Feature description
 
 This API (`GET Object`) is used to download an object.
 
@@ -270,7 +283,7 @@ This API (`GET Object`) is used to download an object.
 ```
  get_object(Bucket, Key, **kwargs)
 ```
-#### Sample 1: Downloading an object
+#### Sample 1: downloading an object
 
 ```python
 # -*- coding=utf-8
@@ -279,16 +292,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -300,7 +313,7 @@ response = client.get_object(
 response['Body'].get_stream_to_file('exampleobject')
 ```
 
-#### Sample 2: Partially downloading an object
+#### Sample 2: partially downloading an object
 
 ```python
 # -*- coding=utf-8
@@ -309,16 +322,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, see https://www.tencentcloud.com/document/product/436/6224
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -356,7 +369,7 @@ response = client.get_object(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
 | Range | Byte range of the object to download. Format: `bytes=first-last` | String | No |
 |  IfMatch  | `ETag` that needs to be matched. The object is downloaded only if its `ETag` matches the value. | String  | No |
 | IfModifiedSince |  Required modification time. The object is downloaded only if it has been modified after the specified time.  | String | No |
