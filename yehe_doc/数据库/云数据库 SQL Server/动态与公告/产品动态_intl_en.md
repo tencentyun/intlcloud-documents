@@ -1,3 +1,19 @@
+## March 2023
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tbody>
+<tr>
+<td>Added cloud disk types for single-node instances</td>
+<td>A TencentDB for SQL Server single-node (formerly Basic Edition) instance of cloud disk edition supports mounting Balanced and Enhanced SSD cloud disks of up to 32 TB in all regions, making it easier to flexibly sustain more business load scenarios.</td>
+<td>2023-03-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238/46490" target="_blank">Storage Type</a></td></tr>
+<tr>
+<td>Fully released the two-node architecture of cloud disk edition</td>
+<td>TencentDB for SQL Server has fully released the new two-node architecture of cloud disk edition in Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Nanjing, Hong Kong (China), and Singapore regions. It has all the features of the two-node architecture of local disk edition, offers more flexible CPU/memory specifications, and supports mounting Balanced and Enhanced SSD cloud disks of up to 32 TB in all regions.</td>
+<td>2023-03-02</td>
+<td><a href="https://www.tencentcloud.com/document/product/238/53977" target="_blank">Instance Architecture</a></td></tr>
+</tbody></table>
+
 ## February 2023
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>

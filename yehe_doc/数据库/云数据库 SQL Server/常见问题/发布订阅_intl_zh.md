@@ -1,18 +1,18 @@
 ### 云数据库 SQL Server 支持发布订阅吗？
-云数据库 SQL Server 发布订阅功能仅支持发布实例和订阅实例均为腾讯云数据库 SQL Server 的场景，仅腾讯云数据库 SQL Server 双机高可用版和集群版支持发布订阅，基础版不支持发布订阅。
+云数据库 SQL Server 发布订阅功能仅支持发布实例和订阅实例均为腾讯云数据库 SQL Server 的场景，仅腾讯云数据库 SQL Server 双节点（原高可用版/集群版）支持发布订阅，单节点（原基础版）不支持发布订阅。
 
-### 云数据库 SQL Server 基础版支持发布订阅吗？
-云数据库 SQL Server 基础版不支持发布订阅。
+### 云数据库 SQL Server 单节点（原基础版）支持发布订阅吗？
+云数据库 SQL Server 单节点（原基础版）不支持发布订阅。
 
 ### 本地 IDC 自建 SQL Server 和云数据库 SQL Server 之间如何进行发布订阅？
 本地 IDC 自建 SQL Server 和云数据库 SQL Server 之间不支持发布订阅，发布订阅功能仅支持发布实例和订阅实例均为腾讯云数据库 SQL Server 的场景。
 
 ### 云数据库 SQL Server 发布订阅功能用于哪些使用场景？
-腾讯云数据库 SQL Server 支持 Microsoft SQL Server 原生的发布订阅复制功能，用户可在 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver) 上进行自助创建、变更、删除发布和订阅服务器，满足用户业务的数据复制和同步需求，具体详见 [发布订阅概述](https://intl.cloud.tencent.com/document/product/238/48063)。
+腾讯云数据库 SQL Server 支持 Microsoft SQL Server 原生的发布订阅复制功能，用户可在 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver) 上进行自助创建、变更、删除发布和订阅服务器，满足用户业务的数据复制和同步需求，具体详见 [发布订阅概述](https://www.tencentcloud.com/document/product/238/48063)。
 
 ### 云数据库 SQL Server 发布订阅功能的使用要满足哪些前提条件？
 - 仅支持发布实例与订阅实例均为腾讯云数据库 SQL Server 的场景。
-- 仅支持云数据库 SQL Server 高可用/集群版实例，基础版不支持发布订阅。
+- 仅支持云数据库 SQL Server 双节点（原高可用版/集群版）实例，单节点（原基础版）不支持发布订阅。
 - 发布实例与订阅实例必须属于同一版本，如均是2017 enterprise 版。
 - 发布实例与订阅实例必须在相同地域（可跨可用区），如发布实例在北京五区，订阅实例在北京七区。
 - 只读实例无法作为发布服务器，也无法作为订阅服务器。
@@ -28,7 +28,8 @@ select name from sys.sysobjects where xtype='U' and id not in(select parent_obj 
 
 [](id:FBDYCZ)
 ### 云数据库 SQL Server 创建发布订阅如何操作？
-登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID，进入实例管理页面，选择发布订阅页，单击**新建**，可设置发布订阅，具体详见 [管理发布订阅](https://intl.cloud.tencent.com/document/product/238/48062)。
+登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID，进入实例管理页面，选择发布订阅页，单击**新建**，可设置发布订阅，具体详见 [管理发布订阅](https://www.tencentcloud.com/document/product/238/48062)。
 
 ### 如何删除两个 SQL Server 数据库间的发布订阅关系？
-登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID，进入实例管理页面，选择发布订阅页，选择所需删除的发布订阅任务，单击**删除**，也可批量删除，具体详见 [管理发布订阅](https://intl.cloud.tencent.com/document/product/238/48062)。
+登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID，进入实例管理页面，选择发布订阅页，选择所需删除的发布订阅任务，单击**删除**，也可批量删除，具体详见 [管理发布订阅](https://www.tencentcloud.com/document/product/238/48062)。
+

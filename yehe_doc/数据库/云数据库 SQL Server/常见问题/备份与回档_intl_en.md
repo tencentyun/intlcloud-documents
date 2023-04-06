@@ -11,19 +11,19 @@ You can do so on the **Backup Management** page in the [TencentDB for SQL Server
 You can do so on the **Backup Management** page in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver). For more information, see [Configuring Automatic Backup](https://intl.cloud.tencent.com/document/product/238/45855).
 
 ### How long can TencentDB for SQL Server retain a backup?
-TencentDB for SQL Server retains an automatic backup for seven days by default, which can be customized.
-The validity period is subject to the configured backup retention period. For more information, see [Configuring Automatic Backup](https://intl.cloud.tencent.com/document/product/238/45855). There is no limit on the retention period of manual backups, and you can delete them as needed. For more information, see [Deleting Manual Backup](https://intl.cloud.tencent.com/document/product/238/45851).
+The retention period of TencentDB for SQL Server automatic backups is seven days by default and can be customized. The validity period is subject to the configured number of backup days. For more information, see [Configuring Automatic Backup](https://intl.cloud.tencent.com/document/product/238/45855).
+If not manually deleted, manual backups will be retained for the same period as automatic backups. You can delete them as instructed in [Deleting Manual Backup](https://intl.cloud.tencent.com/document/product/238/45851).
 
 [](id:KYSDSCM)
-### Can I delete a backup manually?
-- Automatic backups cannot be deleted manually. You can set the retention period for automatic backups, and they will be deleted automatically when they expire.
-- Manual backups can be manually deleted from the backup list in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver). They can be retained permanently as long as they are not deleted.
+### Can I delete backups manually?
+- You can't delete automatic backups manually, but you can set the retention period for them so that they are deleted automatically upon expiration.
+- Manual backups can be manually deleted from the backup list in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver). If they are not manually deleted, they will be retained for the same period as automatic backups.
 
 ### Can I disable data and log backups?
-No. However, you can lower the backup frequency and delete manual backup files no longer used in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver) to reduce the backup space usage.
+No. However, you can lower the backup frequency and delete manual backup files that are no longer used in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver) to reduce the backup space usage.
 
 ### Why can't I initiate a manual backup task?
-Check the automatic backup time you configured. If the instance is performing the daily automatic backup task, you cannot initiate a manual backup task.
+You need to check the automatic backup time you configured. If the instance is performing the daily automatic backup task, you cannot initiate a manual backup task.
 
 ### How do I cancel a backup task?
 Backup tasks in TencentDB for SQL Server cannot be canceled.
@@ -31,7 +31,7 @@ Backup tasks in TencentDB for SQL Server cannot be canceled.
 ### Is a database available during the backup time period?
 A backup window is a custom time period for daily automatic backup, during which the TencentDB for SQL Server instance will be backed up. Based on such regular backups, TencentDB for SQL Server allows you to roll back the instance to a backup point within the retention period. During the backup window, the business won't be affected, but you cannot restart or manually backup the instance in the TencentDB for SQL Server console.
 
-### How do I back up individual databases in TencentDB for SQL Server?
+### How do I back up a database?
 Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver), click the ID of the target instance in the instance list, select the **Backup Management** tab, click **Backup Task Settings**, and set **Upload Backup File** to **Unarchived files**. Then, the .bak file of each database in the instance will be directly uploaded to COS without being archived. For more information, see [Setting Backup Task](https://intl.cloud.tencent.com/document/product/238/45853).
 
 [](id:SLJXBFRW)
@@ -47,14 +47,14 @@ TencentDB for SQL Server cannot be backed up with third-party tools. For securit
 
 ### Can I download or restore backup files that exceed the retention period?
 Expired backup sets will be automatically deleted and cannot be downloaded or restored.
-- We recommend you configure a reasonable backup retention period based on your business needs or download the backup files in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver).
-- You can also manually back up the instance data in the console, and manual backup files will be retained permanently.
->?Manual backups will also take up the backup space. We recommend you plan the usage of the backup space appropriately to reduce costs.
+- We recommend that you configure a backup retention period based on business needs or download the backup files locally in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver).
+- You can also manually back up instance data in the console. Manual backups will be retained permanently.
+>?Manual backups will also take up the backup space. We recommend that you plan the usage of the backup space appropriately to reduce costs.
 
 [](id:YGLSLXZ)
 ### Can I download the backup files of an isolated instance?
 Yes.
-- A pay-as-you-go instance will be isolated into the recycle bin 24 hours after expiration. At this time, rollback and manual backup will be prohibited, but automatic backup can still be downloaded by clicking **More** in the **Operation** column of the instance. Excessive backup space of the instance will continue to be billed until the instance is eliminated.
+- A pay-as-you-go instance will be isolated and moved into the recycle bin 24 hours after expiration. At this time, rollback and manual backup will be prohibited, but automatic backup can still be downloaded by clicking **More** in the **Operation** column of the instance. Excessive backup space of the instance will continue to be billed until the instance is eliminated.
 
 ### Will backup files still be retained after a TencentDB for SQL Server instance is deleted?
 After a TencentDB for SQL Server instance is deleted, all its backup files will be deleted automatically. To retain the data, back up the data first before deleting the instance.
@@ -67,19 +67,19 @@ If the size of backup files exceeds the free tier of the backup space, you can i
 Instance backup files will use the backup space. Each TencentDB for SQL Server instance provides a certain free tier of backup space, and excessive usage will incur additional fees.
 
 [](id:JSBFKJKX)
-### How do I reduce backup space costs in TencentDB for SQL Server?
-- Delete manual backups that are no longer used (on the **Instance Management** > **Backup Management** page in the [TencentDB for SQL Server](https://console.cloud.tencent.com/sqlserver) console). 
-- Reduce the frequency of automatic data backup for non-core businesses (you can adjust the backup cycle and backup file retention period in the console, which should be at least twice a week).
->?The [rollback feature](https://intl.cloud.tencent.com/document/product/238/7522) relies on the backup cycle and retention period of data backups and log backups, but reducing the frequency and retention period of automatic backups will affect the rollback time range for instance data, you need to configure backup appropriately based on your actual needs.
+### How do I reduce the backup space cost?
+- Delete manual backups that are no longer used.  You can do so on the **Instance Management** > **Backup Management** page in the [TencentDB for SQL Server](https://console.cloud.tencent.com/sqlserver) console. 
+- Reduce the frequency of automatic data backup for non-core businesses. You can adjust the backup cycle and backup file retention period in the console, which should be at least twice a week.
+>?The rollback feature relies on the backup cycle and retention days of data backups and log backups. Rollback will be affected if you reduce the automatic backup frequency and retention period. You can select the parameters as needed. For more information, see [Rolling back Databases](https://intl.cloud.tencent.com/document/product/238/7522).
 >
-- Shorten the retention period of data and log backups for non-core businesses (a retention period of seven days can meet the needs in most cases).
+- Shorten the retention period of data and log backups for non-core businesses. A retention period of seven days can meet the needs in most cases.
 
 | Business Scenario | Recommended Backup Retention Period |
 | -------------------- | ------------------------------------------------------------ |
-| Core businesses | 7–1,830 days |
-| Non-core, non-data businesses | Seven days |
-| Archival businesses | Seven days. We recommend you manually back up data based on your actual business needs and delete the backups promptly after use |
-| Testing businesses | Seven days. We recommend you manually back up data based on your actual business needs and delete the backups promptly after use |
+| Core businesses | 7-1,830 days |
+| Non-core, non-data businesses | 7 days |
+| Archival businesses | 7 days. We recommend that you manually back up data based on your actual business needs and delete the backups promptly after use |
+| Testing businesses | 7 days. We recommend that you manually back up data based on your actual business needs and delete the backups promptly after use |
 
 ### How do I view the backup space usage of TencentDB for SQL Server?
 Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver) and select **Database Backup** to view the backup space statistics and trends of all instances in each region under your account as well as the real-time backup space statistics of each instance. For more information, see [Viewing Backup Space](https://intl.cloud.tencent.com/document/product/238/45850).
