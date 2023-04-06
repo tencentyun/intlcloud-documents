@@ -8,9 +8,9 @@ For details about the operations, see [VPN Connections - Getting Started](https:
 ## Direct Connections
 A [direct connection](https://intl.cloud.tencent.com/document/product/216) is a physical direct connection that connects VPC instances and local IDCs. A direct connection consists of three parts: physical connection, dedicated tunnel, and direct connect gateway.
 Users can establish a physical connection to connect Tencent Cloud computing resources in multiple regions, achieving flexible and reliable hybrid cloud deployment.
-![Direct connection](https://main.qcloudimg.com/raw/45c88210412584b1ad1fe5df9522da15.png)
 For details about the operations, see [Direct Connect - Getting Started](https://intl.cloud.tencent.com/document/product/216/7557).
 
 ## Cloud Connect Networks
 [Cloud Connect Network (CCN)](https://intl.cloud.tencent.com/document/product/1003) interconnects Tencent Cloud VPC instances and connects VPC instances with local IDCs.
+For details about the operations, see [Migrating IDC to the Cloud Through CCN](https://www.tencentcloud.com/document/product/216/41747).
 
