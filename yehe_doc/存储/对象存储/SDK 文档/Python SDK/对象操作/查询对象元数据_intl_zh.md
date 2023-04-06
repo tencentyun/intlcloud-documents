@@ -30,11 +30,11 @@ import logging
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 1. 设置用户属性, 包括 secret_id, secret_key, region 等。Appid 已在 CosConfig 中移除，请在参数 Bucket 中带上 Appid。Bucket 由 BucketName-Appid 组成
-secret_id = 'SecretId'     # 替换为用户的 SecretId，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # 替换为用户的 SecretKey，请登录访问管理控制台进行查看和管理，https://console.cloud.tencent.com/cam/capi
+secret_id = os.environ['COS_SECRET_ID']     # 用户的 SecretId，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://www.tencentcloud.com/document/product/598/32675
+secret_key = os.environ['COS_SECRET_KEY']   # 用户的 SecretKey，建议使用子账号密钥，授权遵循最小权限指引，降低使用风险。子账号密钥获取可参见 https://www.tencentcloud.com/document/product/598/32675
 region = 'ap-beijing'      # 替换为用户的 region，已创建桶归属的 region 可以在控制台查看，https://console.cloud.tencent.com/cos5/bucket
-                           # COS 支持的所有 region 列表参见 https://cloud.tencent.com/document/product/436/6224
-token = None               # 如果使用永久密钥不需要填入 token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见 https://cloud.tencent.com/document/product/436/14048
+                           # COS 支持的所有 region 列表参见 https://www.tencentcloud.com/document/product/436/6224
+token = None               # 如果使用永久密钥不需要填入 token，如果使用临时密钥需要填入，临时密钥生成和使用指引参见 https://www.tencentcloud.com/document/product/436/14048
 scheme = 'https'           # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
@@ -59,12 +59,12 @@ response = client.head_object(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket   | Bucket 名称，由 BucketName-APPID 构成  | String  |  是 | 
+| Bucket   | Bucket 名称，由 BucketName-APPID 构成  | String  |  是 |
 | Key   |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg  |String  | 是 |
-| VersionId   | 开启版本控制后，指定对象的具体版本  | String  | 否 | 
-| IfModifiedSince   | 在指定时间后被修改才返回，时间格式为 GMT  | String  | 否 | 
+| VersionId   | 开启版本控制后，指定对象的具体版本  | String  | 否 |
+| IfModifiedSince   | 在指定时间后被修改才返回，时间格式为 GMT  | String  | 否 |
 
 #### 返回结果说明
 
@@ -92,8 +92,8 @@ response = client.head_object(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
 | ETag  |  分块上传时，该值不是对象内容的 MD5 校验值，仅能用于检查对象唯一性 |String|
 | Last-Modified | 对象最后修改时间| String|
 |  Cache-Control  |  缓存策略， HTTP 标准头部| String |
@@ -107,7 +107,7 @@ response = client.head_object(
 |  Accept-Ranges | 范围请求标识，HTTP 标准头部 | String |
 |  Server | 服务端标识，HTTP 标准头部 | String |
 |  Date | 请求日期，HTTP 标准头部 | String |
-|  x-cos-meta-* | 用户自定义的对象元数据， 必须以 x-cos-meta 开头，否则会被忽略 | String | 
+|  x-cos-meta-* | 用户自定义的对象元数据， 必须以 x-cos-meta 开头，否则会被忽略 | String |
 |  x-cos-hash-crc64ecma | 文件的 CRC64 校验码 | String |
-|  x-cos-version-id | 开启版本控制后，对象的版本号 | String | 
+|  x-cos-version-id | 开启版本控制后，对象的版本号 | String |
 |  x-cos-request-id | 请求 ID | String |

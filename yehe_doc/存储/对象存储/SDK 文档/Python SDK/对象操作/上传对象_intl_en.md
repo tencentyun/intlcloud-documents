@@ -1,30 +1,30 @@
-## Overview
+## Feature Overview
 
-This document provides an overview of APIs and SDK code samples for advanced upload, upload in whole, multipart upload, and other object operations.
+This document provides an overview of APIs and SDK code samples related to advanced upload, simple upload, multipart upload, and other object operations.
 
 **Simple operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading object in whole | Uploads object to bucket. |
-| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | Appending parts | Uploads object to bucket by appending parts.                      |
+| [PUT Object](https://www.tencentcloud.com/document/product/436/7749) | Simply uploading an object | Uploads an object to a bucket |
+| [APPEND Object](https://www.tencentcloud.com/document/product/436/7741) | Appending parts | Appends object parts to a bucket.                      |
 
-**Multipart upload operations**
+**Multipart operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries multipart uploads in progress. |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing multipart upload operation | 	Initializes multipart upload operation. |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads file in parts. |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying part | Copies object as part. |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries uploaded parts of multipart upload. |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing multipart upload | Completes multipart upload. |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting multipart upload | Aborts multipart upload operation and deletes uploaded parts. |
+| [List Multipart Uploads](https://www.tencentcloud.com/document/product/436/7736) | Querying multipart uploads | Queries the information on ongoing multipart uploads |
+| [Initiate Multipart Upload](https://www.tencentcloud.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload job |
+| [Upload Part](https://www.tencentcloud.com/document/product/436/7750) | Uploading a part | Uploads a file part | 
+| [Upload Part - Copy](https://www.tencentcloud.com/document/product/436/8287) | Copying a part | Copies an object as a part |
+| [List Parts](https://www.tencentcloud.com/document/product/436/7747) | Querying uploaded parts | Queries uploaded parts in a specified multipart upload operation |
+| [Complete Multipart Upload](https://www.tencentcloud.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of the entire file |
+| [Abort Multipart Upload](https://www.tencentcloud.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload operation and deletes the uploaded parts |
 
 
 ## Advanced APIs (Recommended)
 
-### Uploading object (checkpoint restart)
+### Uploading an object (checkpoint restart)
 
 #### Feature description
 This advanced upload API can automatically select between the `PUT Object` API and the `Upload Part` API according to the file size. It uses the former for files smaller than or equal to 20 MB and the latter for files larger than 20 MB. It also supports automatic checkpoint restart for suspended multipart uploads.
@@ -45,16 +45,16 @@ from qcloud_cos.cos_exception import CosClientError, CosServiceError
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -85,8 +85,8 @@ for i in range(0, 10):
 def upload_percentage(consumed_bytes, total_bytes):
     """Callback function that calculates the upload progress (in percentage)
 
-    :param consumed_bytes: Uploaded data amount
-    :param total_bytes: Total data amount
+    :param consumed_bytes: uploaded data amount
+    :param total_bytes: total data amount
     """
     if total_bytes:
         rate = int(100 * (float(consumed_bytes) / float(total_bytes)))
@@ -101,7 +101,7 @@ response = client.upload_file(
     MAXThread=5,
     progress_callback=upload_percentage,
     EnableMD5=False|True,
-    ACL='private'|'public-read', # Note that the allowed maximum number (1000) of ACLs may be reached if you use this parameter.
+    ACL='private'|'public-read', # Please note that the maximum number (1000) of ACLs allowed may be reached if you use this parameter
     GrantFullControl='string',
     GrantRead='string',
     StorageClass='STANDARD'|'STANDARD_IA'|'ARCHIVE',
@@ -125,45 +125,67 @@ response = client.upload_file(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Key  | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String  |   Yes |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
 | LocalFilePath | Path to the local file | String | Yes |
-| PartSize | Part size. Default value: 1 MB. |  Int | No |
-|  MAXThread  | Maximum number of threads for concurrent multipart uploads. Default value: 5. |  Int |  No |
+| PartSize | Part size. Default value: 1 MB |  Int | No |
+|  MAXThread  | Maximum number of threads for concurrent multipart uploads. Default value: 5 |  Int |  No |
 | progress_callback | Callback function for the upload progress. You can customize this function to query the upload progress. | Func | No |
-| EnableMD5 | Whether to calculate the Content-MD5 checksum, which will increase the upload time. It's not calculated by default. | Bool | No |
-| ACL  | ACL of the object. Valid values: private, public-read.                      | String | No |
-| GrantFullControl | Grants full permission in the format of `id="OwnerUin"` | String | No |
-| GrantRead | Grants read permission in the format of `id="OwnerUin"` | String | No |
-| StorageClass | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |   No |
+| EnableMD5 | Whether to calculate the Content-MD5 checksum, which will extend the upload time. It’s not calculated by default. | Bool | No |
+| ACL  | ACL of the object, such as private or public-read                      | String | No |
+| GrantFullControl | Grants full permission. Format: `id="OwnerUin"` | String | No |
+| GrantRead | Grants read permission. Format: `id="OwnerUin"` | String | No |
+| StorageClass | Storage class of the object. For more information about storage classes such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://www.tencentcloud.com/document/product/436/30925). | String | No |
 | Expires | Expiration time | String | No |
-| CacheControl | Cache policy. Sets `Cache-Control`. | String | No |
-| ContentType | Content type. Sets `Content-Type`. | String | No |
-| ContentDisposition | Filename. Sets `Content-Disposition`. | String | No |
-| ContentEncoding | Encoding format. Sets `Content-Encoding`. | String | No |
-| ContentLanguage  | Language type. Sets `Content-Language`. |  String |  No |
-| ContentLength | Sets the length of the request content | String  | No |
-| ContentMD5 | MD5 checksum of the uploaded object, which is used for verification. | String | No |
-|  Metadata | Custom object metadata | Dict |  No |
-|  TrafficLimit | Bandwidth limit in bit/s for a single request (or a single thread for the advanced download API). Value range: 819200–838860800, i.e., 100 KB/s–100 MB/s. | String |  No |
+| CacheControl | Cache policy | String | No |
+| ContentType | Content type | String | No |
+| ContentDisposition | Filename | String | No |
+| ContentEncoding | Encoding type  | String | No |
+| ContentLanguage | Language type  | String | No |
+| ContentLength | Length of the content  | String | No |
+| ContentMD5 | MD5 checksum of the uploaded object, which is used for verification | String | No |
+|  Metadata | User-defined object metadata | Dict |  No |
+|  TrafficLimit | Bandwidth limit in bit/s for a single request (or a single thread for the advanced download API). Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
 
 #### Response description
-This response contains the attributes of the uploaded object in DICT format:
+The response contains the attributes of the copied object in dict format:
 
 ```python
 {
+    'Content-Type': 'string',
+    'Transfer-Encoding': 'string',
+    'Connection': 'string',
+    'Date': 'string',
+    'Server': 'string',
+    'x-cos-hash-crc64ecma': 'string',
+    'x-cos-request-id': 'string',
+    'x-cos-storage-class': 'string',
+    'Location': 'string',
+    'Bucket': 'string',
+    'Key': 'string',
     'ETag': 'string'
 }
 ```
 
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
-| ETag | This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the multipart uploaded object. | String |
+| Content-Type | Content type. Standard HTTP header | String | 
+|  Transfer-Encoding  | Transfer encoding type. Standard HTTP header | String |
+|  Connection | Connection method. Standard HTTP header | String |
+|  Date | Request date. Standard HTTP header | String |
+|  Server | Server flag. Standard HTTP header | String |
+|  x-cos-hash-crc64ecma | CRC64 checksum of the file | String |
+|  x-cos-request-id | Request ID | String |
+|  x-cos-storage-class | Object storage class | String |
+|  Location | Object access URL | String |
+|  Bucket | Bucket name | String |
+|  Key | Object name | String |
+| ETag | For multipart upload, this value is not necessarily the MD5 checksum of the object. It is used to verify the uniqueness of the multipart uploaded object. | String |
 
 
-### Batch upload (uploading local folders)
+### Batch uploading files (uploading a local folder)
 
 #### Feature description
-The following sample shows how to use the SDK's basic APIs to batch upload local folders to COS.
+The following example shows how to use the SDK’s basic APIs to upload a local folder to COS.
 
 #### Sample request
 
@@ -179,15 +201,15 @@ import sys
 import os
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
+# Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
 client = CosS3Client(config)
@@ -224,7 +246,7 @@ if not result['success_all']:
 
 ## Simple Operations
 
-### Uploading object in whole
+### Uploading an object using simple upload
 
 #### Feature description
 
@@ -235,7 +257,7 @@ This API (`PUT Object`) is used to upload an object to a bucket.
 ```
 put_object(Bucket, Body, Key, **kwargs)
 ```
-#### Sample 1: Uploading a file in whole
+#### Sample 1. Simple object upload
 
 ```python
 # -*- coding=utf-8
@@ -244,25 +266,25 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
 
-# File stream (upload in whole)
+# Simple upload using file stream
 file_name = 'test.txt'
 with open('test.txt', 'rb') as fp:
     response = client.put_object(
-        Bucket='examplebucket-1250000000',  # Bucket name in the format of `BucketName-APPID`.
+        Bucket='examplebucket-1250000000',  # Bucket name format: BucketName-APPID
         Body=fp,
         Key=file_name,
         StorageClass='STANDARD',
@@ -307,7 +329,7 @@ response = client.put_object(
 )
 print(response['ETag'])
 
-# Limit the upload speed
+# Limiting the upload speed
 with open('test.bin', 'rb') as fp:
     response = client.put_object(
         Bucket='examplebucket-1250000000',  
@@ -317,7 +339,7 @@ with open('test.bin', 'rb') as fp:
     )
     print(response['ETag'])
 ```
-#### Sample 2: Creating a directory
+#### Sample 2: creating a directory
 In COS, a directory is an object whose name ends with a slash (/). Therefore, you can call the `Put Object` API.
 
 ```python
@@ -327,16 +349,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -344,13 +366,13 @@ client = CosS3Client(config)
 # Create a directory.
 dir_to_create='path/to/create/dir/'
 response = client.put_object(
-    Bucket='examplebucket-1250000000',  # Bucket name in the format of `BucketName-APPID`.
+    Bucket='examplebucket-1250000000',  # Bucket name format: BucketName-APPID
     Key=dir_to_create,
     Body=b'',
 )
 print(response)
 ```
-#### Sample 3: Uploading an object to a specified directory
+#### Sample 3: uploading an object to a specified directory
 
 ```python
 # -*- coding=utf-8
@@ -359,27 +381,27 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
 
-# You can upload an object whose name is separated by slashes. In this way, the directory that contains this object will be created automatically. To upload new objects to this COS directory, enter the value of `Key` as the directory's prefix.
+# When you upload an object whose name is separated with slashes, a directory that contains this object will be created automatically. To upload a new object to this COS directory, set the key prefix of the object to this directory.
 dir_name = 'path/to/dir/'
 file_name = 'test.txt'
 object_key = dir_name + file_name
 with open('test.txt', 'rb') as fp:
     response = client.put_object(
-        Bucket='examplebucket-1250000000',  # Bucket name in the format of `BucketName-APPID`.
+        Bucket='examplebucket-1250000000',  # Bucket name format: BucketName-APPID
         Body=fp,
         Key=object_key,
         StorageClass='STANDARD',
@@ -396,7 +418,7 @@ response = client.put_object(
     Body=b'bytes'|file,
     Key='exampleobject',
     EnableMD5=False|True,
-    ACL='private'|'public-read', # Note that the allowed maximum number (1000) of ACLs may be reached if you use this parameter.
+    ACL='private'|'public-read', # Please note that the maximum number (1000) of ACLs allowed may be reached if you use this parameter
     GrantFullControl='string',
     GrantRead='string',
     StorageClass='STANDARD'|'STANDARD_IA'|'ARCHIVE',
@@ -421,26 +443,26 @@ response = client.put_object(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-|  Body  | Content of the object to be uploaded, which can be a file stream or a byte stream. |  file/bytes | Yes |
-| Key  | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String  |   Yes |
-| EnableMD5 | Whether to calculate the Content-MD5 checksum, which will increase the upload time. It's not calculated by default. | Bool | No |
-| ACL  | ACL of the object. Valid values: private, public-read.                      | String | No |
-| GrantFullControl | Grants full permission in the format of `id="OwnerUin"` | String | No |
-| GrantRead | Grants read permission in the format of `id="OwnerUin"` | String | No |
-| StorageClass | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
+|  Body  | Content of the object to be uploaded. It can be a file stream or a byte stream. |  file/bytes | Yes |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
+| EnableMD5 | Whether to calculate the Content-MD5 checksum, which will extend the upload time. It’s not calculated by default. | Bool | No |
+| ACL | ACL of the object, such as `private` and `public-read` | String | No |
+| GrantFullControl | Grants full permission. Format: `id="OwnerUin"` | String | No |
+| GrantRead | Grants read permission. Format: `id="OwnerUin"` | String | No |
+| StorageClass | Storage class of the object. For storage classes such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://www.tencentcloud.com/document/product/436/30925). | String     | No |
 | Expires | Expiration time | String | No |
-| CacheControl | Cache policy. Sets `Cache-Control`. | String | No |
-| ContentType | Content type. Sets `Content-Type`. | String | No |
-| ContentDisposition | Object name. Sets `Content-Disposition`. | String | No |
-| ContentEncoding | Encoding format. Sets `Content-Encoding`. | String | No |
-| ContentLanguage  | Language type. Sets `Content-Language`. |  String |  No |
-| ContentLength | Sets the length of the request content | String  | No |
-| ContentMD5 | MD5 checksum of the uploaded object, which is used for verification. | String | No |
-| Metadata | Custom object metadata. This parameter must start with `x-cos-meta`; otherwise, it will be ignored. | Dict | No |
-|  TrafficLimit | Bandwidth limit in bit/s for a single request. Value range: 819200–838860800, i.e., 100 KB/s–100 MB/s. | String |  No |
+| CacheControl | Cache policy | String | No |
+| ContentType | Content type | String | No |
+| ContentDisposition | Object name | String | No |
+| ContentEncoding | Encoding type  | String | No |
+| ContentLanguage | Language type  | String | No |
+| ContentLength | Length of the content  | String | No |
+| ContentMD5 | MD5 checksum of the uploaded object, which is used for verification | String | No |
+| Metadata | User-defined object metadata. This parameter must start with `x-cos-meta`; otherwise, it will be ignored. | Dict | No |
+|  TrafficLimit | Bandwidth limit for a single request in bit/s. Value range: 819200-838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
 
 #### Response description
-This response contains the attributes of the uploaded object in DICT format:
+The response contains the attributes of the copied object in dict format:
 
 ```python
 {
@@ -453,14 +475,14 @@ This response contains the attributes of the uploaded object in DICT format:
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
 | ETag | MD5 checksum of the uploaded object | String |
-| x-cos-version-id | Version number of the object if versioning is enabled | String  |
+| x-cos-version-id | Version ID of the object if versioning is enabled | String  |
 
 
 ### Appending parts 
 
 #### Feature description
 
-This API (`APPEND Object`) is used to upload an object to a bucket by appending parts.
+This API (`APPEND Object`) is used to append object parts to a bucket.
 
 #### Method prototype
 
@@ -476,16 +498,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -512,12 +534,12 @@ response = client.append_object(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-|Key | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. |String| Yes |
-| Position | Starting point for the append operation (in bytes). For the first append, the value of this parameter is 0. For subsequent appends, the value is the `content-length` of the current object. | Int | Yes |
-|Data|Content of the part to be uploaded, which can be a local file stream or an input stream. | file/bytes|Yes|
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
+| Position | Starting point for the append operation (in bytes). For the first append, the value of this parameter is 0. For subsequent appends, the value is the `Content-Length` of the current object. | Int | Yes |
+|Data|Content of the parts to upload, which may be a file stream or byte stream | file/bytes|Yes|
 
 #### Response description
-This response contains the attributes of the object in DICT format after the append operation, including the position of the next append.
+The response contains the attributes of the object in dict format after the append operation.
 ```python
 {
     'ETag': '"9a4802d5c99dafe1c04da0a8e7e166bf"',
@@ -526,18 +548,18 @@ This response contains the attributes of the object in DICT format after the app
 }
 ```
 
-## Multipart Upload Operations
-With multipart upload, you can do the following:
+## Multipart Operations
+Multipart operations include:
 
-- Multipart upload: Initializing a multipart upload operation, uploading parts, and completing a multipart upload operation.
-- Multipart upload resumption: Querying uploaded parts, uploading remaining parts, and completing a multipart upload operation.
-- Deleting uploaded parts.
+- Uploading an object in parts: initializing a multipart upload, uploading parts, and completing a multipart upload
+- Resuming a multipart upload: querying uploaded parts, uploading remaining parts, and completing a multipart upload
+- Deleting uploaded parts
 
-### Querying multipart upload
+### Querying multipart uploads
 
 #### Feature description
 
-This API (`List Multipart Uploads`) is used to query multipart uploads in progress in a specified bucket.
+This API is used to query in-progress multipart uploads in a specified bucket.
 
 #### Method prototype
 
@@ -553,16 +575,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -590,16 +612,16 @@ response = client.list_multipart_uploads(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Prefix | Object key prefix to filter multipart uploads by, which is left empty by default. | String | No |
-| Delimiter | Delimiter, which is left empty by default. | String | No |
-| KeyMarker | Specifies the key of the object after which the returned list begins. It is used together with `UploadIdMarker`. | String | No |
-| UploadIdMarker | Specifies the upload ID of the object after which the returned list begins. It is used together with `KeyMarker`. If `KeyMarker` is not specified, `UploadIdMarker` will be ignored. | String | No |
-| MaxUploads | Maximum number of multipart uploads that can be returned at a time. Default value: 1000. | Int | No |
-| EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: url. | String | No |
+| Prefix | Object key prefix to filter multipart uploads by. It is left empty by default. | String | No |
+| Delimiter | Separator, left empty by default | String | No |
+| KeyMarker | The key of the object after which the returned list begins. It is used together with `UploadIdMarker`. | String | No |
+| UploadIdMarker | The upload ID of the object after which the returned list begins. It is used together with `KeyMarker`. If `KeyMarker` is not specified, `UploadIdMarker` will be ignored. | String | No |
+| MaxUploads | Maximum number of multipart uploads returned at a time, which is `1000` (the maximum value allowed) by default | Int | No |
+| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | No |
 
 #### Response description
 
-This response contains the information of the multipart uploads in DICT format:
+This response contains information on the multipart uploads in dict format:
 
 ```python
 {
@@ -640,24 +662,24 @@ This response contains the information of the multipart uploads in DICT format:
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String |
-| Prefix | Object key prefix to filter multipart uploads by, which is left empty by default. | String |
-| Delimiter | Delimiter, which is left empty by default. | String |
-| KeyMarker | Specifies the key of the object after which the returned list begins. It is used together with `UploadIdMarker`. | String |
-| UploadIdMarker | Specifies the upload ID of the object after which the returned list begins. It is used together with `KeyMarker`. If `KeyMarker` is not specified, `UploadIdMarker` will be ignored. | String |
-| NextKeyMarker | Specifies the key of the object after which the next listing should begin if `IsTruncated` is `true` | String |
-| NextUploadIdMarker | Specifies the upload ID of the object after which the next listing should begin if `IsTruncated` is `true` | String |
-| MaxUploads | Maximum number of multipart uploads that can be returned at a time. Default value: 1000. | Int |
-| IsTruncated | Indicates whether the returned list is truncated | String|
-| EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: url. | String |
-| Upload | List of the information of all the returned multipart uploads, including `UploadId`, `StorageClass`, `Key`, `Owner`, `Initiator`, and `Initiated`. | List |
+| Prefix | Object prefix key by which multipart uploads are queried. It is left empty by default. | String |
+| Delimiter | Separator, which is left empty by default. | String |
+| KeyMarker | The key of the object after which the returned list begins. It is used together with `UploadIdMarker`. | String |
+| UploadIdMarker | The upload ID of the object after which the returned list begins. If `KeyMarker` is not specified, `UploadIdMarker` will be ignored. | String |
+| NextKeyMarker | The key of the object after which the next returned list begins if `IsTruncated` is `true` | String |
+| NextUploadIdMarker | The upload ID of the object after which the next returned list begins if `IsTruncated` is `true` | String |
+| MaxUploads | Maximum number of multipart uploads returned at a time, which is `1000` (the maximum value allowed) by default  | Int |
+| IsTruncated | Whether the returned multipart upload list is truncated | String |
+| EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
+| Upload | List of information on all the returned multipart uploads, including `UploadId`, `StorageClass`, `Key`, `Owner`, `Initiator`, and `Initiated` | List |
 | CommonPrefixes | All keys starting with the specified prefix and ending with the specified delimiter | List |
 
 
-### Initializing multipart upload
+### Initializing a multipart upload
 
 #### Feature description
 
-This API (`Initiate Multipart Upload`) is used to initialize a multipart upload and get its `uploadId`.
+This API (`Initiate Multipart Upload`) is used to initialize a multipart upload and obtain its `uploadId`.
 
 #### Method prototype
 
@@ -673,16 +695,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -714,7 +736,7 @@ response = client.create_multipart_upload(
     GrantFullControl='string',
     GrantRead='string'
 )
-# Get the `UploadId` for subsequent API calls.
+# Obtain UploadId for subsequent API calls
 uploadid = response['UploadId']
 ```
 #### Parameter description
@@ -722,22 +744,22 @@ uploadid = response['UploadId']
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Key  | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String  |   Yes |
-| StorageClass | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
+| StorageClass | Storage class of the object. For storage classes such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://www.tencentcloud.com/document/product/436/30925). | String     | No |
 | Expires | Expiration time | String | No |
-| CacheControl | Cache policy. Sets `Cache-Control`. | String | No |
-| ContentType | Content type. Sets `Content-Type`. | String | No |
-| ContentDisposition | Filename. Sets `Content-Disposition`. | String | No |
-| ContentEncoding | Encoding format. Sets `Content-Encoding`. | String | No |
-| ContentLanguage  | Language type. Sets `Content-Language`. |  String |  No |
-|  Metadata | Custom object metadata | Dict |  No |
-| ACL  | ACL of the object. Valid values: private, public-read.                      | String | No |
-| GrantFullControl | Grants full permission in the format of `id="OwnerUin"` | String | No |
-| GrantRead | Grants read permission in the format of `id="OwnerUin"` | String | No |
+| CacheControl | Cache policy | String | No |
+| ContentType | Content type | String | No |
+| ContentDisposition | Filename | String | No |
+| ContentEncoding | Encoding type | String | No |
+| ContentLanguage | Language type | String | No |
+|  Metadata | User-defined object metadata | Dict |  No |
+| ACL | ACL of the object, such as `private` and `public-read` | String | No |
+| GrantFullControl | Grants full permission. Format: `id="OwnerUin"` | String | No |
+| GrantRead | Grants read permission. Format: `id="OwnerUin"` | String | No |
 
 #### Response description
 
-This response contains the initialization information of the multipart upload in DICT format:
+This response contains information on the initialization of the multipart upload in dict format:
 
 ```python
 {
@@ -750,13 +772,13 @@ This response contains the initialization information of the multipart upload in
 
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
-| UploadId | ID that identifies the multipart upload | String |
+| UploadId | ID of the multipart upload | String |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String |
-|Key | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. |String|
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String |
 
 ### Uploading parts
 
-This API is used to upload an object in parts.
+This API (`Upload Part`) is used to upload an object in parts.
 
 #### Method prototype
 
@@ -772,21 +794,21 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
 
-# Note: Up to 10,000 parts can be uploaded.
+# Note: You can upload at most 10,000 parts at a time.
 response = client.upload_part(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
@@ -798,7 +820,7 @@ response = client.upload_part(
 #### Sample request with all parameters
 
 ```python
-# Note: Up to 10,000 parts can be uploaded.
+# Note: You can upload at most 10,000 parts at a time.
 response = client.upload_part(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
@@ -816,18 +838,18 @@ response = client.upload_part(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Key  | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String  |   Yes |
-| Body  | Content of the part to be uploaded, which can be a local file stream or an input stream. | file/bytes |  Yes|
-| PartNumber | Number that identifies the uploaded part | Int | Yes |
-| UploadId | ID that identifies the multipart upload | String | Yes |
-| EnableMD5 | Whether to calculate the Content-MD5 checksum, which will increase the upload time. It's not calculated by default. | Bool | No |
-| ContentLength | Sets the length of the request content | String | No |
-| ContentMD5 | MD5 checksum of the uploaded object, which is used for verification. | String | No |
-|  TrafficLimit | Bandwidth limit in bit/s for a single request. Value range: 819200–838860800, i.e., 100 KB/s–100 MB/s. | String |  No |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
+| Body  | Content of the parts to upload. It can be a local file stream or a byte stream | file/bytes |  Yes|
+| PartNumber | Part number | Int | Yes |
+| UploadId | ID of the multipart upload | String | Yes |
+| EnableMD5 | Whether to calculate the Content-MD5 checksum, which will extend the upload time. It’s not calculated by default. | Bool | No |
+| ContentLength | Length of the content  | String | No |
+| ContentMD5 | MD5 checksum of the uploaded object, which is used for verification | String | No |
+|  TrafficLimit | Bandwidth limit for a single request in bit/s. Value range: 819200-838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
 
 #### Response description
 
-This response contains the attributes of the uploaded parts in DICT format:
+This response contains the attributes of the uploaded parts in dict format:
 
 ```python
 {
@@ -837,11 +859,11 @@ This response contains the attributes of the uploaded parts in DICT format:
 
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
-| ETag | MD5 checksum of the uploaded part | String |
+| ETag | MD5 checksum of the uploaded parts | String |
 
-### Copying object part
+### Copying an object part
 
-This API (`Upload Part - Copy`) is used to copy an object as a part.
+This API (`Upload Part - Copy`) is used to copy a part of an object.
 
 #### Method prototype
 
@@ -857,16 +879,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -894,7 +916,7 @@ response = client.upload_part_copy(
     CopySource={
         'Bucket': 'sourcebucket-1250000000', 
         'Key': 'sourceObject', 
-        'Region': 'COS_REGION', # Replace it with the source bucket region
+        'Region': 'COS_REGION', #Replace it with the source bucket’s region
         'VersionId': 'string'
     },
     CopySourceRange='string',
@@ -910,19 +932,19 @@ response = client.upload_part_copy(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Key  | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String  |   Yes |
-| PartNumber | Number that identifies the uploaded part | Int | Yes |
-| UploadId | ID that identifies the multipart upload | String | Yes |
-| CopySource  | Path of the source object to be copied, which contains `Bucket`, `Key`, `Region`, and `VersionId`. |  Dict | Yes |
-| CopySourceRange | Byte range of the source object to be copied in the format of `bytes=first-last`. The entire source object will be copied by default if this parameter is not specified. | String | No |
-| CopySourceIfMatch | `ETag` that must be matched. The source object will be copied only if its `ETag` matches the specified value. | String | No |
-| CopySourceIfModifiedSince | Required modification time. The source object will be copied only if it has been modified since the specified time. | String | No |
-| CopySourceIfNoneMatch | `ETag` that cannot be matched. The source object will be copied only if its `ETag` does not match the specified value. | String | No |
-| CopySourceIfUnmodifiedSince | Required unmodified time. The source object will be copied only if it hasn't been modified since the specified time. | String | No |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
+| PartNumber | Part number | Int | Yes |
+| UploadId | ID of the multipart upload | String | Yes |
+| CopySource | Path of the source object to copy, which contains `Bucket`, `Key`, `Region`, and `VersionId` |  Dict | Yes |
+| CopySourceRange | Byte range of the source object to copy in the format of `bytes=first-last`. The entire source will be copied by default if no range is specified. | String | No |
+| CopySourceIfMatch | `ETag` that must be matched. The object is copied only if its `ETag` matches the value. | String | No |
+| CopySourceIfModifiedSince | Required modification time. The object is copied only if it has been modified since the specified time. | String | No |
+| CopySourceIfNoneMatch | `ETag` that cannot be matched. The object is copied only if its `ETag` does not match the specified value. | String | No |
+| CopySourceIfUnmodifiedSince | Required unmodified time. The object is copied only if it hasn’t been modified since the specified time. | String | No |
 
 #### Response description
 
-This response contains the attributes of the copied parts in DICT format:
+This response contains the attributes of the copied parts in dict format:
 ```python
 {
     'ETag': 'string',
@@ -933,15 +955,15 @@ This response contains the attributes of the copied parts in DICT format:
 
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
-| ETag | MD5 checksum of the copied part | String |
+| ETag | MD5 checksum of the copied parts | String |
 | LastModified | Time when the copied parts were last modified | String |
-| x-cos-copy-source-version-id | Version number of the source object | String |
+| x-cos-copy-source-version-id | Version ID of the source object | String |
 
 ### Querying uploaded parts
 
 #### Feature description
 
-This API is used to query the uploaded parts of a multipart upload.
+This API (`List Parts`) is used to query the uploaded parts of a multipart upload.
 
 #### Method prototype
 
@@ -957,16 +979,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -994,15 +1016,15 @@ response = client.list_parts(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-|Key | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. |String| Yes |
-| UploadId | ID that identifies the multipart upload | String | Yes |
-| MaxParts | Maximum number of parts that can be returned at a time. Default value: 1000. |Int| No |
-| PartNumberMarker | Specifies the part number after which the listing should begin. The default value is `0`, which means the listing begins with the first part. |Int| No |
-| EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: url. | String | No |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
+| UploadId | ID of the multipart upload | String | Yes |
+| MaxParts | Maximum number of parts returned at a time, which is `1000` (the maximum value allowed) by default | Int | No |
+| PartNumberMarker | The number of the part after which the list begins. The value of this parameter is `0` by default, which means the list begins from the first part. | Int | No |
+| EncodingType | Encoding method of the returned value. The value is not encoded by default. Valid value: `url`  | String | No |
 
 #### Response description
 
-This response contains the information of all the uploaded parts in DICT format:
+This response contains information on all the uploaded parts in dict format:
 
 ```python
 {
@@ -1037,21 +1059,21 @@ This response contains the information of all the uploaded parts in DICT format:
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String |
-| Key  | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String  |
-| UploadId | ID that identifies the multipart upload | String |
-| EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: url. | String |
-| MaxParts | Maximum number of parts that can be returned at a time. Default value: 1000. | String |
-| IsTruncated | Indicates whether the returned list is truncated | String|
-| PartNumberMarker | Specifies the part number after which the listing should begin. The default value is `0`, which means the listing begins with the first part. | String  |
-| NextPartNumberMarker | Specifies the part number after which the next listing should begin | String |
-| StorageClass | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
-| Part | Information of the uploaded part, including `ETag`, `PartNumber`, `Size`, and `LastModified`. | String |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String |
+| UploadId | ID of the multipart upload | String |
+| EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
+| MaxParts | Maximum number of parts returned at a time, which is `1000` (the maximum value allowed) by default  | String |
+| IsTruncated | Whether the returned part list is truncated | String |
+| PartNumberMarker | The number of the part after which the list begins. The value of this parameter is `0` by default, which means the list begins from the first part. | String |
+| NextPartNumberMarker | The number of the part after which the next returned list begins | String |
+| StorageClass | Storage class of the object. For more information about storage classes such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://www.tencentcloud.com/document/product/436/30925). | String |
+| Part | Information on the uploaded parts, including `ETag`, `PartNumber`, `Size`, and `LastModified` | String |
 | Initiator | Initiator of the multipart upload, including `DisplayName` and `ID` | Dict |
-| Owner | Information of the object owner, including `DisplayName` and `ID`. | Dict |
+| Owner | Information on the object owner, including `DisplayName` and `ID` | Dict |
 
 
 
-### Completing multipart upload
+### Completing a multipart upload
 
 #### Feature description
 
@@ -1071,16 +1093,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -1109,13 +1131,13 @@ response = client.complete_multipart_upload(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Key  | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String  |   Yes |
-| UploadId | ID that identifies the multipart upload | String | Yes |
-|  MultipartUpload  |Information of all parts, including `ETag` and `PartNumber`. | Dict | Yes |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
+| UploadId | ID of the multipart upload | String | Yes |
+| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict |
 
 #### Response description
 
-This response contains the information of the object assembled from the uploaded parts in DICT format:
+The response contains information on the object assembled from the uploaded parts in dict format:
 
 ```python
 {
@@ -1128,17 +1150,17 @@ This response contains the information of the object assembled from the uploaded
 
 | Parameter | Description | Type |
 | -------------- | -------------- |---------- |
-| ETag | 	Unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, check the `ETag` of each part during the upload process. | String |
+| ETag | The unique tag of the assembled object. This value is not necessarily the MD5 checksum of the object. It is used to verify the uniqueness of the object. To verify the object content, you can check the `ETag` of each part during the upload process. | String |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String |
-| Location | URL | String |
-| Key  | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String  |
+| Location | URL address | String |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String |
 
 
-### Aborting multipart upload
+### Aborting a multipart upload
 
 #### Feature description
 
-This API is used to abort a multipart upload and delete the uploaded parts.
+This API (`Abort Multipart Upload`) is used to abort a multipart upload and delete the uploaded parts.
 
 #### Method prototype
 
@@ -1154,16 +1176,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to `INFO`. If you need debugging, you can set it to `DEBUG`, and the SDK will print the communication with the server.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-# 1. Set user attributes such as `secret_id`, `secret_key`, and `region`. `Appid` has been removed from `CosConfig` and thus needs to be specified in `Bucket`, which is in the format of `BucketName-Appid`.
-secret_id = 'SecretId'     # Replace it with your real `SecretId`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # Replace it with your real `SecretKey`, which can be viewed and managed in the CAM console at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with your real region information, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of all availability regions of COS, visit https://cloud.tencent.com/document/product/436/6224.
-token = None               # `token` is required for temporary keys but not permanent keys. For more information on how to generate and use a temporary key, visit https://cloud.tencent.com/document/product/436/14048.
-scheme = 'https'           # Specify whether to use the HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
+# 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -1179,8 +1201,8 @@ response = client.abort_multipart_upload(
 | Parameter | Description | Type | Required |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
-|Key | Unique identifier of the object in the bucket. For example, if an object's access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. |String| Yes |
-| UploadId | ID that identifies the multipart upload | String | Yes |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
+| UploadId | ID of the multipart upload | String | Yes |
 
 #### Response description
 This API returns `None`.

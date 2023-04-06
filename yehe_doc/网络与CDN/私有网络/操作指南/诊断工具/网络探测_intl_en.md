@@ -66,8 +66,8 @@ If you specify the CCN as the next hop and the probe destination IPs belong to t
 ## Checking the Latency and Packet Loss of a Network Probe
 
 1. Log in to [VPC console](https://console.cloud.tencent.com/vpc).
-2. Select **Diagnostic Tools** -> **Network Probe** in the left sidebar to enter the management page.
-3. Click the monitoring icon of the target network probe instance to view its latency and packet loss rate.
+2. Select **Diagnostic Tools** > **Network Probe** in the left sidebar to enter the management page.
+3. Click <img src="https://qcloudimg.tencent-cloud.cn/raw/a6d7c58295ef76b3347c82dc9e266da4.png" width="3%"> of the target network probe instance to view its latency and packet loss rate.
 	![](https://main.qcloudimg.com/raw/b1a8a96df051a50cf58fd6f34b09a228.png)
 
 ## Modifying a Network Probe
@@ -95,5 +95,5 @@ If you specify the CCN as the next hop and the probe destination IPs belong to t
 ## Configuring an Alarm Policy
 You can configure an alarm policy for the network probe service, so that you can promptly detect any route exception to help switch routes quickly and ensure business availability.
 1. Log in to the CM console and go to the [**Alarm Policy**](https://console.cloud.tencent.com/monitor/alarm2/policy) page.
-2. Click **Create**.
-3. In the **Create Alarm Policy** pop-up window, enter the policy name, select **Network Probe** for the policy type, configure the alarm object, alarm trigger condition and alarm policy, and click **Complete**.
+2. Click **Create**. In the **Create Alarm Policy** pop-up window, enter the policy name, select **Network Probe** for the policy type, configure the alarm object, alarm trigger condition and alarm policy, and click **Complete**.
+

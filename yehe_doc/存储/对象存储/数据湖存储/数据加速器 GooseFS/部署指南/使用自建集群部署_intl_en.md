@@ -44,7 +44,7 @@ The pseudo–distribution framework is mainly used for trying out and debugging 
 
 ### Deployment
 
-1. [Download the GooseFS binary distribution package](https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz).
+1. [Download the GooseFS binary distribution package](https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin.tar.gz)).
 2. Decompress the package, go to the GooseFS directory, and perform the operations below.
 - Create the `conf/goosefs-site.properties` configuration file by copying `conf/goosefs-site.properties.template`.
 ```bash
@@ -117,7 +117,7 @@ After a successful deployment, run `./bin/goosefs-start.sh all SudoMount` to sta
 
 In the standalone framework, only one master node and multiple worker nodes are deployed in the cluster. You can deploy and run the cluster as follows:
 
-1. [Download the GooseFS binary distribution package](https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz).
+1. [Download the GooseFS binary distribution package](https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin.tar.gz)).
 2. Run the `tar zxvf goosefs-x.x.x-bin.tar.gz` command to decompress the package into the installation directory. You can see **Introduction to the batch deployment tool** to deploy and run your cluster in batches, or perform the following steps to deploy it manually.
 
 (1) Copy the `template` file from the `conf` directory to create a configuration file.
@@ -129,7 +129,8 @@ $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
 goosefs.master.hostname=<MASTER_HOSTNAME>
 goosefs.master.mount.table.root.ufs=<STORAGE_URI>
 ```
-Set `goosefs.master.hostname` to the hostname or IP of the master node, and `goosefs.master.mount.table.root.ufs` to the URI in the under file system (UFS) to which the GooseFS root directory is mounted. Note that this URI must be accessible for both the master and worker nodes and therefore it cannot be a local directory.
+Set `goosefs.master.hostname` to the hostname or IP of the master node, and `goosefs.master.mount.table.root.ufs` to the URI in the under file system (UFS) to which the GooseFS root directory is mounted. 
+>!This URI must be accessible for both the master and worker nodes and therefore it cannot be a local directory.
 
 For example, you can mount a COS path to the root directory of GooseFS with `goosefs.master.mount.table.root.ufs=cosn://bucket-1250000000/goosefs/`.
 
@@ -175,7 +176,7 @@ goosefs.master.mount.table.root.ufs=<STORAGE_URI>
 goosefs.master.embedded.journal.addresses=<EMBBEDDED_JOURNAL_ADDRESS>
 ```
 
-The configuration items are described as follows:
+>? The configuration items are described as follows:
 -  Set `goosefs.master.mount.table.root.ufs` to the underlying storage URI that is mounted to the GooseFS root directory.
 -  Set `goosefs.master.embedded.journal.addresses` to the `ip:embedded_journal_port` or `host:embedded_journal_port` of all standby nodes. The default value of `embedded_journal_port` is 9202. For example, `goosefs.master.embedded.journal.addresses` can be set to 192.168.1.1:9202, 192.168.1.2:9202, and 192.168.1.3:9202. 
 
