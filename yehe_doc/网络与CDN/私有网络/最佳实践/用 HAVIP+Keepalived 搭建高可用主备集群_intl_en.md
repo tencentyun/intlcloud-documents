@@ -1,18 +1,22 @@
 This document describes how to use Keepalived with [HAVIP](https://intl.cloud.tencent.com/document/product/215/31817) to build a high availability primary/secondary cluster in the Tencent Cloud VPC.
->? HAVIP is currently in beta testing period. Switching between primary/secondary servers may take 10 seconds. To try it out, please apply to be a beta user.
+>? HAVIP is currently in beta, and switching between primary/secondary servers may take 10 seconds. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+>
 
 ## Basic Principle
 Typically, a high availability primary/secondary cluster consists of two servers: an active primary server and a standby secondary server. The two servers share the same VIP (virtual IP) which is only valid for the primary server. When the primary server fails, the secondary server will take over the VIP to continue providing services. This mode is widely used in MySQL source/replica switch and Ngnix web access.
 
 Keepalived is a VRRP-based high availability software that can be used to build a high availability primary/secondary cluster among VPC-based CVMs. To use Keepalived, first complete its configuration in the `keepalived.conf` file.
 ![](https://main.qcloudimg.com/raw/28815d732550f9eebb66e8d81cea22fd.png)
+
 - In traditional physical networks, the primary/secondary status can be negotiated with Keepalived’s VRRP protocol. The primary device periodically sends free-of-charge ARP messages to purge the MAC table or terminal ARP table of the uplink exchange to trigger the VIP migration to the primary device.
 - In a Tencent Cloud VPC, a high availability primary/secondary cluster can also be implemented by deploying Keepalived on CVMs, with the following differences:
    - The VIP must be a [HAVIP](https://intl.cloud.tencent.com/document/product/215/31817) applied for from Tencent Cloud.
    - HAVIP is subnet-sensitive and can only be bound to a server under the same subnet through announcement.
 
-## Notes
+## Note
 + We recommend VRRP communications in unicast mode.
+>? In this document, we use unicast mode for VRRP communications. If you want to use multicast mode, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). After the application is approved, enable the VPC multicast feature. For more information, see [Enabling or Disabling Multicast](https://intl.cloud.tencent.com/document/product/215/40072). You **do not need to configure** the "unicast_peer" parameter in the keepalived configuration file.
+>
 + We recommend that you use Keepalived **1.2.24 or later versions**.
 + Ensure that the `garp` parameters have been configured. Because Keepalived relies on ARP messages to update the IP address, these configurations ensure that the primary device always sends ARP messages for the communication.
 	```plaintext
@@ -27,17 +31,18 @@ Keepalived is a VRRP-based high availability software that can be used to build 
 + Optional: be aware of increased disk usage due to log printing. This can be solved using logrotate or other tools.
 
 
-## Directions
+## Operation Directions
 >!This document uses the following environments as an example. Please replace with your actual configurations.
 >+ Primary CVM: HAVIP-01, 172.16.16.5
 >+ Secondary CVM: HAVIP-02, 172.16.16.6
 >+ HAVIP: 172.16.16.12
 >+ EIP: 81.71.14.118
 >+ Image: CentOS 7.6 64-bit
+>
 ### Step 1: apply for a VIP[](id:step1)
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/).
 2. Select **IP and ENI** > **HAVIP** in the left sidebar to enter the HAVIP management page. 
-3. Select the relevant region on the HAVIP management page and click **Apply**.
+3. Select the target region on the HAVIP management page and click **Apply**.
 4. In the pop-up dialog box, enter the name, select a VPC and a subnet for the HAVIP, and click **OK**.
 >?The IP address of the HAVIP can be automatically assigned or manually specified. If you choose to enter an IP address, make sure that the entered private IP address is within the subnet IP range and is not a reserved IP address of the system. For example, if the subnet IP range is `10.0.0.0/24`, the entered private IP address should be within `10.0.0.2 - 10.0.0.254`.
 >
@@ -153,10 +158,10 @@ In this example, HAVIP-01 and HAVIP-02 are configured with the same weight. Both
    vrrp_instance VI_1 {
    # Select proper parameters for the primary and secondary CVMs.
    state BACKUP            #Set the initial status to `Backup`
-       interface eth0          #The ENI such as `eth0` used to bind a VIP  
-       virtual_router_id 51        #The`virtual_router_id` value for the cluster
+       interface eth0          # The ENI such as `eth0` used to bind a VIP  
+       virtual_router_id 51        # The`virtual_router_id` value for the cluster
        nopreempt                   #Non-preempt mode
-       # preempt_delay 10      #Effective only when “state MASTER”    
+       # preempt_delay 10      # Effective only when `state` is `MASTER`   
        priority 100            # Configure the same weight for the two devices
        advert_int 5       
        authentication {
@@ -168,7 +173,7 @@ In this example, HAVIP-01 and HAVIP-02 are configured with the same weight. Both
            172.16.16.5                #IP address of the peer device
        }
        virtual_ipaddress {
-           172.16.16.12              #HAVIP 
+           172.16.16.12              # HAVIP 
        }
        notify_master "/etc/keepalived/notify_action.sh MASTER"
        notify_backup "/etc/keepalived/notify_action.sh BACKUP"
@@ -177,7 +182,7 @@ In this example, HAVIP-01 and HAVIP-02 are configured with the same weight. Both
        garp_master_delay 1    # How long it will take before the ARP cache can be updated after the CVM switches to the primary status
        garp_master_refresh 5   #Time interval between which the primary node sends ARP messages
        track_interface {
-                   eth0               # ENI such as `eth0` that binds a VIP
+                   eth0               # ENI that bound with VIP, such as `eth0`
            }
        track_script {
           checkhaproxy 
