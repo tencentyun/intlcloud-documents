@@ -2,7 +2,6 @@
 Tencent Cloudは作成済みのカスタムイメージの[COS](https://intl.cloud.tencent.com/document/product/436/6222)バケット内へのエクスポートをサポートしています。この機能によって必要なイメージをエクスポートすることができます。
 
 ## 前提条件
-- 現在、この機能を使用するには申請が必要です。[チケットを提出](https://console.intl.cloud.tencent.com/workorder/category)して、機能のアクティブ化を申請してください。
 - [COSコンソール](https://console.cloud.tencent.com/cos)ですでにCOSサービスをアクティブ化していること。
 - カスタムイメージの存在するリージョンでバケットを作成済みであること。詳細については、[バケットの作成](https://intl.cloud.tencent.com/document/product/436/13309)をご参照ください。
 
