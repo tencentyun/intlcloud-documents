@@ -29,7 +29,7 @@ Tags are used to identify and organize Tencent Cloud resources. Each tag contain
 4. In the pop-up window, configure the information as follows:
    1. For **Tag key**, enter the key name or select one from the drop-down list.
    2. For **Tag value**, enter the key value.
->?A tag key may be null or have multiple values.
+>?A tag key may be null or contains multiple values.
 >
    3. (Optional) Click **Add** and configure **Tag key** and **Tag value** to add a tag.
    4. After completing the configuration, click **OK**.
