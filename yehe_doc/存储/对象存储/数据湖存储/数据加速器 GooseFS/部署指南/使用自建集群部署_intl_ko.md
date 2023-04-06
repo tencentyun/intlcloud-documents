@@ -44,7 +44,7 @@
 
 ### 배포
 
-1. 먼저 [GooseFS 바이너리 배포 패키지를 다운로드](https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz)합니다.
+1. 먼저 [GooseFS 바이너리 배포 패키지를 다운로드](https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin.tar.gz)합니다.
 2. 배포 패키지 다운로드 후 압축 해제하여 GooseFS의 디렉터리로 이동하고 아래의 작업을 실행합니다. 
 - conf/goosefs-site.properties.template 복사를 통해 conf/goosefs-site.properties 구성 파일을 생성합니다. 
 ```bash
@@ -117,23 +117,35 @@ GooseFS는 ‘scripts’ 디렉터리에서 SSH 비밀번호 없이 로그인 �
 
 Standalone 아키텍처는 단일 Master 노드, 다중 Worker 노드의 클러스터 배포 아키텍처를 적용했습니다. 아래 순서를 참고하여 배포를 실행합니다. 
 
-1. [GooseFS 바이너리 배포 패키지를 다운로드](https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz)합니다.
+1. [GooseFS 바이너리 배포 패키지를 다운로드](https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin.tar.gz)합니다.
 2. `tar zxvf goosefs-x.x.x-bin.tar.gz` 명령어를 통해 설치 경로 뒤에 압축 해제합니다. 일괄 배포 툴의 소개를 참고하여 클러스터의 일괄 배포를 설정 및 실행할 수 있으며, 아래 상세한 수동 배포 프로세스 문장을 참고할 수 있습니다. 
 
  (1) ‘conf’ 디렉터리에서 ‘template’ 파일을 복사하여 구성 파일을 생성합니다. 
+
+
 ```bash
 $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
 ```
+
 (2) `goosefs-site.properties` 구성 파일에서 아래와 같은 설정을 지정합니다.
+
 ```properties
 goosefs.master.hostname=<MASTER_HOSTNAME>
 goosefs.master.mount.table.root.ufs=<STORAGE_URI>
 ```
-`goosefs.master.hostname` 을 단일 master 노드의 hostname 혹은 ip로 설정합니다. `goosefs.master.mount.table.root.ufs`는 지정 GooseFS 루트 디렉터리가 마운트한 유닉스 파일 시스템 (UFS) 경로 URI 입니다. 주의: 해당 URI는 반드시 Master와 Worker 노드 모두 액세스 할 수 있어야 하므로 로컬 디렉터리는 지원되지 않습니다.
+
+
+
+
+`goosefs.master.hostname` 을 단일 master 노드의 hostname 혹은 ip로 설정합니다. `goosefs.master.mount.table.root.ufs`는 지정 GooseFS 루트 디렉터리가 마운트한 유닉스 파일 시스템 (UFS) 경로 URI 입니다. 
+
+>! 해당 URI는 반드시 Master와 Worker 노드 모두 액세스 할 수 있어야 하므로 로컬 디렉터리는 지원되지 않습니다.
 
 예를 들어, GooseFS를 루트 경로로 한 COS 경로를 마운트 할 수 있습니다. goosefs.master.mount.table.root.ufs=cosn://bucket-1250000000/goosefs/.
 
 ‘masters’ 구성 파일에서 단일 Master 노드의 hostname 혹은 ip를 지정합니다. 예시:
+
+
 
 ```plaintext
 # The multi-master Zookeeper HA mode requires that all the masters can access
@@ -175,7 +187,7 @@ goosefs.master.mount.table.root.ufs=<STORAGE_URI>
 goosefs.master.embedded.journal.addresses=<EMBBEDDED_JOURNAL_ADDRESS>
 ```
 
-위의 구성 항목의 설명은 다음과 같습니다. 
+>? 위의 구성 항목의 설명은 다음과 같습니다. 
 -  `goosefs.master.mount.table.root.ufs`는 GooseFS 루트 디렉터리의 기본 스토리지 URI 마운트로 설정을 합니다. 
 -  `goosefs.master.embedded.journal.addresses`는 모든 세컨더리 노드의 `ip:embedded_journal_port` 혹은 `host:embedded_journal_port`를 설정합니다. embedded_journal_port는 9202로 기본 설정되어 있습니다. 예시: 192.168.1.1:9202, 192.168.1.2:9202, 192.168.1.3:9202.
 
