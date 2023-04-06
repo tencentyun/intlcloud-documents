@@ -12,20 +12,21 @@ Before using GooseFS, you need to:
 
 ## Downloading and Configuring GooseFS
 
-1. Create and enter a local directory (you can also choose another directory as needed), and then download [goosefs-1.4.0-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz).
+1. Create and enter a local directory (you can also choose another directory as needed), and then download [goosefs-1.4.1-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin.tar.gz)。
 
 ```
 $ cd /usr/local
 $ mkdir /service
 $ cd /service
-$ wget https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz
+$ wget https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin.tar.gz
 ```
 2. Run the following command to decompress the installation package and enter the extracted directory:
 ```shell
-$ tar -zxvf goosefs-1.4.0-bin.tar.gz
-$ cd goosefs-1.4.0
+$ tar -zxvf goosefs-1.4.1-bin.tar.gz
+$ cd goosefs-1.4.1
+
 ```
-After the decompression, the home directory of GooseFS `goosefs-1.4.0` will be generated. This document uses `${GOOSEFS_HOME}` as the absolute path of this home directory.
+After the decompression, the home directory of GooseFS `goosefs-1.4.1` will be generated. This document uses `${GOOSEFS_HOME}` as the absolute path of this home directory.
 3. Create the `conf/goosefs-site.properties` configuration file in `${GOOSEFS_HOME}/conf`. GooseFS provides configuration templates for AI and big data scenarios, and you can choose an appropriate one as needed. Then, enter the editing mode to modify the configuration:
 (1) Use the AI template. For more information, see GooseFS Configuration Practice for a Production Environment in the AI Scenario.
 ```shell
@@ -73,7 +74,7 @@ goosefs.user.file.writetype.default=MUST_CACHE
 1. Before starting GooseFS, you need to enter the GooseFS directory and run the startup command:
 
 ```shell
-$ cd /usr/local/service/goosefs-1.4.0
+$ cd /usr/local/service/goosefs-1.4.1
 $ ./bin/goosefs-start.sh all
 ```
 
