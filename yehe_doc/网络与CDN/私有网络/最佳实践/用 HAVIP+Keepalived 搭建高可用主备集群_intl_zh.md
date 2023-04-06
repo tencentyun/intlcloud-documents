@@ -10,7 +10,7 @@
 
 - 在传统的物理网络中，可以通过 keepalived 的 VRRP 协议协商主备状态，其原理是：主设备周期性发送免费 ARP 报文刷新上联交换机的 MAC 表或终端 ARP 表，触发 VIP 迁移到主设备上。
 - 在腾讯云 VPC 中，支持部署 keepalived 来搭建主备高可用集群。与物理网络相比，主要区别是：
-   - 使用的 VIP 必须是从腾讯云申请的 [高可用虚拟 IP (HAVIP)](https://intl.cloud.tencent.com/document/product/215/31817) 。
+   - 使用的 VIP 必须是从腾讯云申请的 [高可用虚拟 IP (HAVIP)概述](https://intl.cloud.tencent.com/document/product/215/31817) 。
    - VIP 有子网属性，只能在同一个子网下的机器间宣告绑定。
 
 ## 注意事项
@@ -202,7 +202,7 @@ HAVIP-01 和 HAVIP-02 在本例中将被配置成“等权重节点”，即 sta
 
 
 ### 步骤4：**VIP 绑定弹性公网 IP（可选）**  
-1. 在 [高可用虚拟 IP](https://console.cloud.tencent.com/vpc/havip) 控制台，单击 [步骤一 ](#step1)中申请的 HAVIP 所在行的**绑定**。
+1. 在 [高可用虚拟 IP](https://console.cloud.tencent.com/vpc/havip) 控制台，单击 [步骤1](#step1)中申请的 HAVIP 所在行的**绑定**。
 ![](https://main.qcloudimg.com/raw/129cd10051b4d07e1d420b1bec710614.png)
 2. 在弹出的**绑定弹性公网 IP** 对话框中选择待绑定的 EIP，并单击**确定**。如果没有可用的 EIP，请先在 [弹性公网 IP](https://console.cloud.tencent.com/cvm/eip?rid=46)控制台申请。
 ![](https://main.qcloudimg.com/raw/8ca21593889529f42af52c5b68ec2f78.png)
