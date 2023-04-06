@@ -2,7 +2,6 @@
 Tencent Cloud allows you to export created custom images to [COS](https://intl.cloud.tencent.com/document/product/436/6222) buckets.
 
 ## Preparations
-- Currently, before using the feature, you need to [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) to apply for it.
 - You have activated the COS service in the [COS console](https://console.cloud.tencent.com/cos).
 - You have created a bucket for the region where the custom image to export resides. For more information, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
 
