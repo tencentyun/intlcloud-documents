@@ -44,7 +44,7 @@
 
 ### デプロイ
 
-1. 初めに[GooseFSのバイナリーディストリビューションパッケージをダウンロード](https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz)します。
+1. 初めに[GooseFSのバイナリーディストリビューションパッケージをダウンロード](https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin.tar.gz)します。
 2. ディストリビューションパッケージをダウンロードして解凍し、GooseFSのディレクトリに進み、次の操作を実行します。
 - conf/goosefs-site.properties.templateをコピーしてconf/goosefs-site.properties設定ファイルを作成します。
 ```bash
@@ -117,7 +117,7 @@ GooseFSは`scripts`ディレクトリ下でパスワードなしSSHログイン�
 
 StandaloneアーキテクチャはシングルMasterノード、マルチWorkerノードのクラスターデプロイアーキテクチャを採用しています。具体的には下記の手順を参照してデプロイおよび実行することができます。
 
-1. [GooseFSのバイナリーディストリビューションパッケージをダウンロード](https://downloads.tencentgoosefs.cn/goosefs/1.4.0/release/goosefs-1.4.0-bin.tar.gz)します。
+1. [GooseFSのバイナリーディストリビューションパッケージをダウンロード](https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin.tar.gz)します。
 2. `tar zxvf goosefs-x.x.x-bin.tar.gz`コマンドを使用して、インストールパスの後に解凍します。バッチデプロイツールの紹介を参照してクラスターのバッチデプロイを設定および実行することができます。もしくは下記の詳細な手動デプロイフローを引き続き参照することも可能です。
 
 （1）`conf`ディレクトリ下から`template`ファイルをコピーして設定ファイルを作成します。
@@ -129,7 +129,9 @@ $ cp conf/goosefs-site.properties.template conf/goosefs-site.properties
 goosefs.master.hostname=<MASTER_HOSTNAME>
 goosefs.master.mount.table.root.ufs=<STORAGE_URI>
 ```
-このうち、`goosefs.master.hostname`はmasterノードのhostnameまたはipとして設定します。`goosefs.master.mount.table.root.ufs`はGooseFSルートディレクトリがマウントする基盤ファイルシステム（UFS）のパスURIを指定します。注意：このURIは必ずMasterおよびWorkerノードのどちらからもアクセス可能でなければならないため、ローカルディレクトリはサポートしていません。
+このうち、`goosefs.master.hostname`はmasterノードのhostnameまたはipとして設定します。`goosefs.master.mount.table.root.ufs`はGooseFSルートディレクトリがマウントする基盤ファイルシステム（UFS）のパスURIを指定します。
+
+>!このURIは必ずMasterおよびWorkerノードのどちらからもアクセス可能でなければならないため、ローカルディレクトリはサポートしていません。
 
 例えば、あるCOSパスをGooseFSのルートパス：goosefs.master.mount.table.root.ufs=cosn://bucket-1250000000/goosefs/にマウントすることができます。
 
@@ -175,7 +177,7 @@ goosefs.master.mount.table.root.ufs=<STORAGE_URI>
 goosefs.master.embedded.journal.addresses=<EMBBEDDED_JOURNAL_ADDRESS>
 ```
 
-上記の設定選択項目の説明は次のとおりです。
+>?上記の設定選択項目の説明は次のとおりです。
 -  `goosefs.master.mount.table.root.ufs`はGooseFSルートディレクトリにマウントする基盤ストレージURIとして設定します。
 -  `goosefs.master.embedded.journal.addresses`はすべてのスタンバイノードの`ip:embedded_journal_port`または`host:embedded_journal_port`として設定します。このうち、embedded_journal_portはデフォルトでは9202です。例えば、192.168.1.1:9202,192.168.1.2:9202,192.168.1.3:9202のようになります。
 
