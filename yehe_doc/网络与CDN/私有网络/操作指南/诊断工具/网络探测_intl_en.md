@@ -95,5 +95,5 @@ If you specify the CCN as the next hop and the probe destination IPs belong to t
 ## Configuring an Alarm Policy
 You can configure an alarm policy for the network probe service, so that you can promptly detect any route exception to help switch routes quickly and ensure business availability.
 1. Log in to the CM console and go to the [**Alarm Policy**](https://console.cloud.tencent.com/monitor/alarm2/policy) page.
-2. Click **Create**.
-3. In the **Create Alarm Policy** pop-up window, enter the policy name, select **Network Probe** for the policy type, configure the alarm object, alarm trigger condition and alarm policy, and click **Complete**.
+2. Click **Create**. In the **Create Alarm Policy** pop-up window, enter the policy name, select **Network Probe** for the policy type, configure the alarm object, alarm trigger condition and alarm policy, and click **Complete**.
+
