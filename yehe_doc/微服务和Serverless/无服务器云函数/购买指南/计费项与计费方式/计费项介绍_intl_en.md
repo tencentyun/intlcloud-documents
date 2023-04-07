@@ -14,7 +14,7 @@ The basic fees of SCF are billed based on the actual usage.
 | HTTP-triggered function response traffic fee | It is counted only for HTTP-triggered functions configured with default triggers. For more information, see [HTTP-Triggered Function Billing](https://intl.cloud.tencent.com/document/product/583/45902). |
 
 
-For the unit price of each billable item, see [Product Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Here, the public network outbound traffic is in GB as detailed in [Pricing](https://buy.intl.cloud.tencent.com/price/idc).
+For the unit price of each billable item, see [Product Pricing](https://intl.cloud.tencent.com/document/product/583/12281). 
 
 >? For HTTP-triggered functions using the default trigger, HTTP-triggered function response traffic will be additionally generated, which is not included in the free tier. For more information, see [HTTP-Triggered Function Billing](https://intl.cloud.tencent.com/document/product/583/45902).
 >
