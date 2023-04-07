@@ -8,7 +8,7 @@
 | ------------------------------------------------------------ | ------------ | -------------------- |
 | [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | 设置清单任务 | 设置存储桶的清单任务 |
 | [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | 查询清单任务 | 查询存储桶的清单任务 |
-| [DELETE Bucket inventory](https://cloud.tencent.com/document/product/436/33704) | 删除清单任务 | 删除存储桶的清单任务 |
+| [DELETE Bucket inventory](https://www.tencentcloud.com/document/product/436/30626) | 删除清单任务 | 删除存储桶的清单任务 |
 
 ## 设置清单任务
 
