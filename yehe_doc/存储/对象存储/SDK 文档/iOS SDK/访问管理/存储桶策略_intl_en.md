@@ -23,39 +23,39 @@ This API is used to set an access policy on a bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-put-bucket-policy)
+[//]: # ".cssg-snippet-put-bucket-policy"
 ```java
-QCloudPutBucketLoggingRequest *request = [QCloudPutBucketLoggingRequest new];
+QCloudPutBucketPolicyRequest * request = [QCloudPutBucketPolicyRequest new];
 // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-
-
-
-
-    "Statement":[
+request.bucket = @"0-1250000000";
+request.regionName = @"ap-chengdu";
+// Permission policy. For more information, see [CAM Practices > Policy Syntax](https://www.tencentcloud.com/document/product/436/12469).
+request.policyInfo = @{
+    @"Statement": @[
         @{
-        "Principal":{
-            "qcs":[
-            "qcs::cam::uin/100000000001:uin/100000000001"
+        @"Principal": @{
+            @"qcs": @[
+            @"qcs::cam::uin/100000000001:uin/100000000001"
             ]
         },
-        "Effect":"allow",
-        "Action":[
-            "name/cos:GetBucket"
+        @"Effect": @"allow",
+        @"Action": @[
+            @"name/cos:GetBucket"
         ],
-        "Resource":[
-            "qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*",
+        @"Resource": @[
+            @"qcs::cos:ap-guangzhou:uid/1250000000:examplebucket-1250000000/*"
         ]
         }
     ],
-    "version": "2.0",
+    @"version": @"2.0"
     };
-[request setFinishBlock:^(id outputObject,NSError*error) {
+[request setFinishBlock:^(id  _Nullable outputObject, NSError * _Nullable error) {
     
 }];
-[[QCloudCOSXMLService defaultCOSXML] PutBucket:request];
+[[QCloudCOSXMLService defaultCOSXML] PutBucketPolicy:request];
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketReplication.m).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketPolicyOperation.m).
 
 ## Querying a bucket policy
 
@@ -68,20 +68,20 @@ This API is used to query the access policy on a bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-get-bucket-policy)
+[//]: # ".cssg-snippet-get-bucket-policy"
 ```java
 
-QCloudGetBucketLifecycleRequest* request = [QCloudGetBucketLifecycleRequest new];
+QCloudGetBucketPolicyRequest * request = [QCloudGetBucketPolicyRequest new];
 // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-"BucketName": "test-bucket-AppId"
-
-
-    
+request.bucket = @"bucketname-appid";
+request.regionName = @"ap-chengdu";
+[request setFinishBlock:^(QCloudBucketPolicyResult * _Nullable outputObject, NSError * _Nullable error) {
+    // For detailed fields in `QCloudBucketPolicyResult`, see the API documentation or SDK source code.
 }];
-[[QCloudCOSXMLService defaultCOSXML] GetBucket:request];
+[[QCloudCOSXMLService defaultCOSXML] GetBucketPolicy:request];
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketReplication.m).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketPolicyOperation.m).
 
 ## Deleting a bucket policy
 
@@ -94,18 +94,18 @@ This API is used to delete the access policy from a specified bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-delete-bucket-policy)
+[//]: # ".cssg-snippet-delete-bucket-policy"
 ```java
 // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-QCloudGetBucketLifecycleRequest* request = [QCloudGetBucketLifecycleRequest new];
-
-
-[request setFinishBlock:^(id outputObject,NSError*error) {
-    
+QCloudDeleteBucketPolicyRequest * request = [QCloudDeleteBucketPolicyRequest new];
+request.bucket = @"0-1253960454";
+request.regionName = @"ap-chengdu";
+[request setFinishBlock:^(id  _Nullable outputObject, NSError * _Nullable error) {
+    /// If `error` is null, the request is successful.
 }];
-[[QCloudCOSXMLService defaultCOSXML] DeleteBucket:request];
+[[QCloudCOSXMLService defaultCOSXML] DeleteBucketPolicy:request];
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketReplication.m).
+>? For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketPolicyOperation.m).
 
 

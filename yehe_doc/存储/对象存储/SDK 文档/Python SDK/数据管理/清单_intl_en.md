@@ -1,18 +1,18 @@
 
 
-## Overview
+## Feature Overview
 
 This document provides an overview of APIs and SDK code samples for COS inventory.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | -------------------- |
-| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Creating an inventory job | Creates an inventory job for a bucket |
-| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries the inventory jobs of a bucket |
-| [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job from a bucket |
+| [PUT Bucket inventory](https://www.tencentcloud.com/document/product/436/30625) | Setting an inventory job | Sets an inventory job for a bucket |
+| [GET Bucket inventory](https://www.tencentcloud.com/document/product/436/30623) | Querying inventory jobs | Queries the inventory jobs of a bucket |
+| [DELETE Bucket inventory](https://www.tencentcloud.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job from a bucket |
 
 ## Creating an Inventory Job
 
-#### Description
+#### Feature description
 
 This API (PUT Bucket inventory) is used to create an inventory job for a bucket.
 
@@ -31,16 +31,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -86,8 +86,8 @@ response = client.put_bucket_inventory(
 
 | Parameter | Description | Type | Required |
 | ---------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket for inventory job setting, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
-| Id       | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | String | Yes |
+| Bucket | Bucket for inventory job setting, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://www.tencentcloud.com/document/product/436/13312). | String | Yes |
+| Id | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | String | Yes       |
 | Destination            | Inventory job delivery destination information                                      | Dict   | Yes       |
 | COSBucketDestination   | Destination bucket information for inventory job result delivery                             | Dict   | Yes       |
 | AccountId              | Destination bucket account information                                         | String | No |
@@ -100,7 +100,7 @@ response = client.put_bucket_inventory(
 | Prefix                 | Filter prefix for inventory analysis objects                                       | String | No       |
 | IncludedObjectVersions | Versioning information inclusion status. Valid values: All, Current                        | String | Yes       |
 | OptionalFields         | Optional inventory fields                                               | Dict   | No       |
-| Field                  | Field name. Valid values: Size, LastModifiedDate, ETag, StorageClass, IsMultipartUploaded, ReplicationStatus | List   | No       |
+| Field                  | Field names, including `Size`, `LastModifiedDate`, `ETag`, `StorageClass`, `IsMultipartUploaded`, and `ReplicationStatus` | List   | No       |
 | Schedule               | Inventory job execution schedule                                           | Dict   | Yes       |
 | Frequency              | Inventory job execution frequency. Valid values: Daily, Weekly                     | String | Yes       |
 
@@ -120,7 +120,7 @@ The following describes some common errors that may occur when you call this API
 
 ## Querying Inventory Jobs
 
-#### Description
+#### Feature description
 
 This API is used to query the inventory jobs of a bucket.
 
@@ -139,16 +139,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -163,8 +163,8 @@ response = client.get_bucket_inventory(
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket for inventory job query, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String | Yes |
-| Id       | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | String | Yes |
+| Bucket | Bucket for inventory job query, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://www.tencentcloud.com/document/product/436/13312). | String | Yes |
+| Id       | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | String | Yes       |
 
 #### Response description
 
@@ -220,13 +220,13 @@ Inventory job configuration of the bucket in `dict` type.
 | Prefix                 | Filter prefix for inventory analysis objects                                       | String |
 | IncludedObjectVersions | Versioning information inclusion status. Valid values: All, Current                        | String |
 | OptionalFields         | Optional inventory fields                                               | Dict   |
-| Field                  | Field name. Valid values: Size, LastModifiedDate, ETag, StorageClass, IsMultipartUploaded, ReplicationStatus | List   |
+| Field                  | Field names, including `Size`, `LastModifiedDate`, `ETag`, `StorageClass`, `IsMultipartUploaded`, and `ReplicationStatus` | List   |
 | Schedule               | Inventory job execution schedule                                           | Dict   |
 | Frequency              | Inventory job execution frequency. Valid values: Daily, Weekly                     | String |
 
 ## Deleting an Inventory Job
 
-#### Description
+#### Feature description
 
 This API is used to delete a specified inventory job from a bucket.
 
@@ -245,16 +245,16 @@ from qcloud_cos import CosS3Client
 import sys
 import logging
 
-# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
+# In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 1. Set user attributes such as secret_id, secret_key, and region. Appid has been removed from CosConfig and thus needs to be specified in Bucket, which is formatted as BucketName-Appid.
-secret_id = 'SecretId'     # Replace it with the actual SecretId, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'     # Replace it with the actual SecretKey, which can be viewed and managed at https://console.cloud.tencent.com/cam/capi
-region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket
-                           # For the list of regions supported by COS, see https://intl.cloud.tencent.com/document/product/436/6224
-token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://intl.cloud.tencent.com/document/product/436/14048
-scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default
+secret_id = os.environ['COS_SECRET_ID']     #  User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+secret_key = os.environ['COS_SECRET_KEY']   # User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://www.tencentcloud.com/document/product/598/32675.
+region = 'ap-beijing'      # Replace it with the actual region, which can be viewed in the console at https://console.cloud.tencent.com/cos5/bucket.
+                           # For the list of regions supported by COS, visit https://www.tencentcloud.com/document/product/436/6224.
+token = None               # Token is required for temporary keys but not permanent keys. For more information about how to generate and use a temporary key, visit https://www.tencentcloud.com/document/product/436/14048.
+scheme = 'https'           # Specify whether to use HTTP or HTTPS protocol to access COS. This field is optional and is `https` by default.
 
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 client = CosS3Client(config)
@@ -269,8 +269,8 @@ response = client.delete_bucket_inventory(
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket   | Bucket for inventory job deletion, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312).  | String | Yes |
-| Id       | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | String | Yes |
+| Bucket | Bucket for inventory job deletion, in the format of `BucketName-APPID`. For more information, see [Bucket Naming Conventions](https://www.tencentcloud.com/document/product/436/13312). | String | Yes |
+| Id       | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | String | Yes       |
 
 #### Response description
 
