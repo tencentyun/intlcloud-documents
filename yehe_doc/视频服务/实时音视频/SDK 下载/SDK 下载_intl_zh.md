@@ -1394,7 +1394,7 @@
        <td class="tg-cly1 select">×</td>
     </tr>
     <tr>
-       <td class="tg-cly1 select" rowspan="8"><a href="https://cloud.tencent.com/document/product/266/45552">视频安全</a></td>
+       <td class="tg-cly1 select" rowspan="8"><a href="https://www.tencentcloud.com/document/product/266/38131">视频安全</a></td>
        <td class="tg-cly1 select">referer 黑白名单</td>
        <td class="tg-cly1 select">支持通过播放请求中携带的 Referer 字段识别请求的来源，以黑名单或白名单方式对来源请求进行控制</td>
        <td class="tg-cly1 select">✓</td>
