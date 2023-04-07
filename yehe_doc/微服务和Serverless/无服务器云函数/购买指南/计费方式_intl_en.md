@@ -23,7 +23,7 @@ SCF is pay-as-you-go hourly in **USD** based on your actual usage. An event or w
 </table>
 
 
-For the unit prices of resource usage, invocations, public network outbound traffic, and idle provisioned concurrency, please see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Here, the public network outbound traffic is calculated in GB. For more information, please see the "Bill-by-traffic" section in [Public Network Billing](https://buy.cloud.tencent.com/price/idc).
+For the unit prices of resource usage, invocations, public network outbound traffic, and idle provisioned concurrency, please see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281). 
 
 
 ## Billing Principles
