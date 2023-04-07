@@ -23,7 +23,7 @@
 </table>
 
 
-资源使用、调用次数、外网出流量及预置并发闲置量单价请参见 [产品定价](https://intl.cloud.tencent.com/document/product/583/12281)。其中，外网出流量按GB进行计算，详情请参见 [网络带宽计费](https://buy.cloud.tencent.com/price/idc) 中的按流量计费。
+资源使用、调用次数、外网出流量及预置并发闲置量单价请参见 [产品定价](https://intl.cloud.tencent.com/document/product/583/12281)。
 
 
 ## 计量原则
