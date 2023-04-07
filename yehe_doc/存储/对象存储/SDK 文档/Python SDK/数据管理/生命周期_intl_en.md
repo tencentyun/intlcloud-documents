@@ -240,7 +240,7 @@ This API returns the lifecycle configuration on a bucket in dict format.
 | Parameter | Description | Type |
 | ------------------------------ | ------------------------------------------------------------ | ------ |
 | Rule | Sets the rule, including ID, Filter, Status, Expiration, Transition, NoncurrentVersionExpiration, NoncurrentVersionTransition, AbortIncompleteMultipartUpload | List |
-| ID                             | Unique ID of the rule                                         | String | No  |
+| ID                             | Unique ID of the rule                                         | String | 
 
 | Status | Sets whether the rule is enabled. Valid values: `Enabled`, `Disabled` | Dict |
 | Expiration | Specifies when objects expire. It can be an expiry date (`Date`) or the number of days before objects expire (`Days`) | Dict |
