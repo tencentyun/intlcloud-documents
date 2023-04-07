@@ -1394,7 +1394,7 @@ Details
        <td class="tg-cly1 select">×</td>
     </tr>
     <tr>
-       <td class="tg-cly1 select" rowspan="8"><a href="https://cloud.tencent.com/document/product/266/45552">Video security</a></td>
+       <td class="tg-cly1 select" rowspan="8"><a href="https://www.tencentcloud.com/document/product/266/38131">Video security</a></td>
        <td class="tg-cly1 select">Referer allowlist/blocklist</td>
        <td class="tg-cly1 select">Configure an allowlist/blocklist and use the "Referer" field in a playback request to determine whether to allow or block the request</td>
        <td class="tg-cly1 select">✓</td>
