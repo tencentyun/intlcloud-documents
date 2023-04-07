@@ -14,7 +14,7 @@
 | Web 函数响应流量费用 | 仅在配置了默认触发器的 Web 函数内进行统计，具体计费方式参考[ Web 函数计费文档](https://intl.cloud.tencent.com/document/product/583/45902)。 |
 
 
-资源使用、调用次数、外网出流量及预置并发闲置量单、基础套餐费用单价请参考 [产品定价](https://intl.cloud.tencent.com/document/product/583/12281)。其中，外网出流量、响应流量按 GB 进行计算，详情请参见 [网络带宽计费](https://buy.intl.cloud.tencent.com/price/idc) 中的按流量计费。
+资源使用、调用次数、外网出流量及预置并发闲置量单、基础套餐费用单价请参考 [产品定价](https://intl.cloud.tencent.com/document/product/583/12281)。
 
 >? 对于使用默认触发器的 Web 函数，会额外新增 Web 函数响应流量，免费额度不包含 Web 函数响应流量，Web 函数计费详情见 [Web 函数计费说明](https://intl.cloud.tencent.com/document/product/583/45902)。
 >
