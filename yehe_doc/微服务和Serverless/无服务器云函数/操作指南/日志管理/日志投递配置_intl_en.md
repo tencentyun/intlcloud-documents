@@ -21,7 +21,6 @@ Delivering function invocation logs to CLS has the following limits:
 - The maximum number of logs printed within 5 seconds for each request is 5000.
 - The maximum length of each log is 8 KB, and excessive parts will be discarded.
 
-For other limits, see [CLS Specification Description](https://intl.cloud.tencent.com/document/product/614/37887). Pay attention to whether the CLS configuration can meet your business needs. Exceeding the limits may cause log write failures.
 
 ## Directions
 ### Default delivery[](id:MRTD)
