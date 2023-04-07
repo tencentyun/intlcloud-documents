@@ -7,8 +7,8 @@
 
 | API                                                          | 操作名         | 操作描述                   |
 | ------------------------------------------------------------ | -------------- | -------------------------- |
-| [PUT Bucket referer](https://cloud.tencent.com/document/product/436/32492) | 设置存储桶 Referer | 设置存储桶 Referer 白名单或者黑名单 |
-| [GET Bucket referer](https://cloud.tencent.com/document/product/436/32493) | 查询存储桶 Referer | 查询存储桶 Referer 白名单或者黑名单 |
+| [PUT Bucket referer](https://www.tencentcloud.com/document/product/436/31423) | 设置存储桶 Referer | 设置存储桶 Referer 白名单或者黑名单 |
+| [GET Bucket referer](https://www.tencentcloud.com/document/product/436/30615) | 查询存储桶 Referer | 查询存储桶 Referer 白名单或者黑名单 |
 
 ## 设置存储桶 Referer
 
