@@ -4,10 +4,10 @@ The unified organization payment mode is a financial pay-on-behalf mode includin
 | -------- | ------------------------------------------------------------ |
 | Orders | Member accounts' monthly subscription and pay-as-you-go orders are automatically paid by the payer account. |
 | Offers     | Member accounts use the payer account's offers by default. If they place an order on a promotional campaign page, the discount in the campaign will be used. |
-| Vouchers   | No vouchers of member accounts or the admin account are used.                             |
+| Vouchers   | Member accounts use the admin account's vouchers by default.                                 |
 | Bills     | Member accounts' bills are automatically settled to the payer account for unified management.           |
 | Invoices     | Member accounts' invoiceable amounts are automatically settled to the payer account for unified invoice issuance.                 |
-| Transaction details | Member accounts' transaction details are uniformly managed by the admin account. |
+| Transaction details | Member accounts' transaction details are uniformly managed by the payer account.   |
 | Lifecycle | Overdue payments, service suspension, and top-up under member accounts are processed based on the balance of the payer account.   |
 
 Relevant rules are as detailed below:
@@ -80,7 +80,7 @@ The fees incurred within the last cycle will be deducted from the member account
 
 >! The rules also apply to the extended cycle of pay-as-you-go resources.
 
-Voucher: Vouchers cannot be used for payment on behalf of member accounts.
+Vouchers: Member accounts can use the payer account's vouchers.
 
 Resource pack: The rules for product purchase, upgrade/downgrade, unsubscription are the same as those for monthly subscribed products. Currently, fees incurred by pay-as-you-go resources cannot be paid on behalf; instead, they will be deducted from the member account's own resource pack.
 
@@ -98,7 +98,7 @@ Below is an example:
    <tr>
       <td rowspan=2>Hourly</td>
     <td>2021-09-09   <br/>12:00:00–13:00:00</td>
-   <td>The fees are deducted from the payer account.</td> 
+   <td>The fees and vouchers are deducted from the payer account.</td> 
    <td>The fees are deducted from the member account's own resource pack.</td> 
 	  </tr>
 	<td>2021-10-30  <br/>11:00:00–12:00:00</td>
@@ -108,7 +108,7 @@ Below is an example:
 	<tr>
 	   <td rowspan=2>Daily</td>
 	<td>2021-09-09</td>
-	<td>The fees are deducted from the payer account.</td>
+	<td>The fees and vouchers are deducted from the payer account.</td>
 	<td>The fees are deducted from the member account's own resource pack.</td>
 	   </tr>
 	<td>2021-10-30</td>
@@ -118,7 +118,7 @@ Below is an example:
 	<tr>
 	    <td rowspan=2>Monthly</td>
 	<td>2021-09</td>
-	<td>The fees are deducted from the payer account.</td>
+	<td>The fees and vouchers are deducted from the payer account.</td>
 	<td>The fees are deducted from the member account's own resource pack.</td>
 	  </tr>
 	<td>2021-10</td>
@@ -127,6 +127,7 @@ Below is an example:
 	</tr>
 	<tr>
 </table>
+
 
 
 #### Viewing pay-on-behalf orders
@@ -141,7 +142,7 @@ The admin account can view the pay-on-behalf orders of member accounts. For orde
 
 ##### Member account
 
-A member account can view all orders paid by the payer account and **apply for payment-on-behalf** on the page.
+A member account can view all orders paid by the payer account and apply for payment-on-behalf on the page.
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/EHVJ136_%E6%88%90%E5%91%98%E8%B4%A6%E5%8F%B7%E9%A2%84%E4%BB%98%E8%B4%B9%E4%BB%A3%E4%BB%98%E8%AE%A2%E5%8D%95%E6%9F%A5%E7%9C%8B.png)
 
@@ -208,7 +209,7 @@ Specific offer scenarios are as detailed below:
 
 #### Vouchers
 
-Both member and admin accounts' vouchers cannot be used.
+Member accounts can use the admin account's vouchers but not their own vouchers.
 
 #### Bills
 
@@ -219,14 +220,14 @@ Paid-on-behalf bills can be viewed in the [TCO console](https://console.cloud.te
 Below are the bills from the perspectives of the admin account and member account respectively:
 <dx-tabs>
 ::: Admin account
-After logging in to the Tencent Cloud console, the admin account can go to [Billing Center - Bills](https://console.cloud.tencent.com/expense/bill/summary) to view pay-on-behalf bills.![](https://staticintl.cloudcachetci.com/yehe/backend-news/M4w9052_%E9%9B%86%E5%9B%A2%E8%B4%A6%E5%8F%B7%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%851.png)
+After logging in to the Tencent Cloud console, the admin account can go to [Billing Center -> Bills](https://console.cloud.tencent.com/expense/bill/summary) to view pay-on-behalf bills.![](https://staticintl.cloudcachetci.com/yehe/backend-news/M4w9052_%E9%9B%86%E5%9B%A2%E8%B4%A6%E5%8F%B7%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%851.png)
 
 
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/rIAQ772_%E9%9B%86%E5%9B%A2%E8%B4%A6%E5%8F%B7%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%852.png)
 :::
 ::: Member account
-After logging in to the Tencent Cloud console, the member account can go to [Tencent Cloud Organization - Pay-on-behalf bills management](https://console.cloud.tencent.com/organization/agentdeal) to view pay-on-behalf bills.![](https://staticintl.cloudcachetci.com/yehe/backend-news/gbvZ135_%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%851.png)
+After logging in to the Tencent Cloud console, the member account can go to [Tencent Cloud Organization -> Pay-on-behalf bill management](https://console.cloud.tencent.com/organization/agentdeal) to view pay-on-behalf bills.![](https://staticintl.cloudcachetci.com/yehe/backend-news/gbvZ135_%E8%B4%A6%E5%8D%95%E8%AF%A6%E6%83%851.png)
 :::
 </dx-tabs>
 
