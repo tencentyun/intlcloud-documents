@@ -1392,7 +1392,7 @@
        <td class="tg-cly1 select">×</td>
     </tr>
     <tr>
-       <td class="tg-cly1 select" rowspan="8"><a href="https://cloud.tencent.com/document/product/266/45552">ビデオセキュリティ</a></td>
+       <td class="tg-cly1 select" rowspan="8"><a href="https://www.tencentcloud.com/document/product/266/38131">ビデオセキュリティ</a></td>
        <td class="tg-cly1 select">refererブラックリスト/ホワイトリスト</td>
        <td class="tg-cly1 select">再生リクエストに含まれるRefererフィールドを介してリクエストの送信元を識別し、ブラックリストまたはホワイトリスト方式で送信元リクエストを制御する機能をサポートしています</td>
        <td class="tg-cly1 select">✓</td>
