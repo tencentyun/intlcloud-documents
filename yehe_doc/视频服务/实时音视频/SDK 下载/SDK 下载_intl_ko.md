@@ -1392,7 +1392,7 @@
        <td class="tg-cly1 select">×</td>
     </tr>
     <tr>
-       <td class="tg-cly1 select" rowspan="8"><a href="https://cloud.tencent.com/document/product/266/45552">비디오 보안</a></td>
+       <td class="tg-cly1 select" rowspan="8"><a href="https://www.tencentcloud.com/document/product/266/38131">비디오 보안</a></td>
        <td class="tg-cly1 select">referer 블록리스트/얼로우리스트</td>
        <td class="tg-cly1 select">블록리스트/얼로우리스트를 구성하고 재생 요청에서 Referer 필드를 사용하여 요청을 허용할지 또는 차단할지 결정</td>
        <td class="tg-cly1 select">✓</td>
