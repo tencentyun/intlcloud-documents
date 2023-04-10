@@ -3,11 +3,11 @@
 ## 2노드/3노드(로컬 SSD 디스크)
 다음 표에는 소스 인스턴스(2노드/3노드), 읽기 전용 인스턴스 및 재해 복구 인스턴스의 사양이 나와 있습니다.
 <table class="table-striped">
-<thead><tr><th>격리 정책</th><th>CPU 및 메모리</th><th>최대 IOPS</th><th>스토리지 공간</th></tr></thead>
 <tbody>
+<tr><th>격리 정책</th><th>CPU 및 메모리</th><th>최대 IOPS</th><th>스토리지 공간</th></tr>
 <tr>
-<td rowspan="14">범용형</td>
-<td>1코어 1000MB</td><td>1200</td><td rowspan="10">25GB - 3000GB</td></tr>	
+<td rowspan="14">일반형</td>
+<td>1코어 1000MB</td><td>1200</td><td rowspan="4">25GB - 3000GB</td></tr>        
 <tr>
 <td>1코어 2000MB</td><td>2000</td></tr>
 <tr>
@@ -15,7 +15,7 @@
 <tr>
 <td>4코어 8000MB</td><td>8000</td></tr>
 <tr>
-<td>4코어 16000MB</td><td>14000</td></tr>
+<td>4코어 16000MB</td><td>14000</td><td rowspan="6">25GB - 4000GB</td></tr>
 <tr>
 <td>8코어 16000MB</td><td>20000</td></tr>
 <tr>
@@ -27,16 +27,16 @@
 <tr>
 <td>16코어 96000MB</td><td>40000</td></tr>
 <tr>
-<td>16코어 128000MB</td><td>40000</td><td rowspan="4">25GB - 6000GB</td></tr>
+<td>16코어 128000MB</td><td>40000</td><td rowspan="3">25GB - 8000GB</td></tr>
 <tr>
 <td>24코어 244000MB</td><td>60000</td></tr>
 <tr>
 <td>32코어 256000MB</td><td>80000</td></tr>
 <tr>
-<td>48코어 488000MB</td><td>120000</td></tr>
+<td>48코어 488000MB</td><td>120000</td><td rowspan="1">25GB - 12000GB</td></tr>
 <tr>
 <td rowspan="26">전용형</td>
-<td>2코어 16000MB</td><td>8000</td><td rowspan="7">25GB - 3000GB</td></tr>	
+<td>2코어 16000MB</td><td>8000</td><td rowspan="7">25GB - 3000GB</td></tr>        
 <tr>
 <td>4코어 16000MB</td><td>10000</td></tr>
 <tr>
@@ -87,7 +87,9 @@
 <td>64코어 512000MB</td><td>150000</td><td rowspan="2">25GB - 12000GB</td></tr>
 <tr>
 <td>90코어 720000MB</td><td>150000</td></tr>
-</tbody></table>	
+</tbody></table>        
+
+>?각 리전의 인스턴스 사양에 따라 스토리지 공간 최댓값이 다를 수 있습니다. 실제 구매 페이지의 정보를 참고하십시오.
 
 ## 단일 노드(SSD 클라우드 디스크)
 <table class="table-striped">

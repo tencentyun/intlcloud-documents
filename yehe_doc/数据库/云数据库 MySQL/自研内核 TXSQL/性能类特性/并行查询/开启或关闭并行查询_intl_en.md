@@ -1,7 +1,7 @@
 This document describes how to enable or disable the parallel query feature of TencentDB for MySQL via the console or command line.
 
 ## Prerequisites
-Database version: MySQL 8.0 on kernel version 20220830 or later.
+Database version: MySQL 8.0 on kernel version 20220831 or later.
 
 ## Parameters
 >?The parallel query feature can be enabled for both source and read-only instances, as long as their number of CPU cores is greater than or equal to 4.
@@ -15,7 +15,7 @@ You can enable the parallel query feature for the current instance by setting th
 | txsql_parallel_degree | Integer | Global/session | 4 | 0–64 | The maximum number of threads (default parallelism) that can be used during the parallel query of a single statement. `0` indicates to disable the parallel query feature. |
 
 **Suggested settings**
-- Parallelism limit: `txsql_parallel_degree` indicates the maximum number of threads for the parallel query of a single statement, i.e., the default parallelism. We recommend you limit this value to half of the CPU core quantity of the instance. To ensure the stability, the parallel query feature is disabled for small clusters with fewer than four CPU cores, and you cannot adjust parallel query parameters via the console or command line.
+- Parallelism limit: `txsql_parallel_degree` indicates the maximum number of threads for the parallel query of a single statement, i.e., the default parallelism. We recommend that you limit this value to half of the CPU core quantity of the instance. To ensure the stability, the parallel query feature is disabled for small clusters with fewer than four CPU cores, and you cannot adjust parallel query parameters via the console or command line.
 - During the parallel query of a SQL statement, the parallelism set by `txsql_parallel_degree` will be used by default, which can be adjusted through the HINT statement. For more information, see [HINT Statement Control](https://www.tencentcloud.com/document/product/236/53410).
 - `txsql_max_parallel_worker_threads` indicates the number of threads of the instance that can be used for parallel query, and `txsql_max_parallel_worker_threads / txsql_parallel_degree` indicates the maximum number of SQL statements allowed in a parallel query.
 - `txsql_max_parallel_worker_threads` and `txsql_parallel_degree` control the status of the parallel query feature. When either of them is `0`, the feature is disabled.
@@ -40,7 +40,7 @@ You can enable or disable the feature by setting parameters on the **Parameter S
 - Set `txsql_max_parallel_worker_threads` or `txsql_parallel_degree` to `0` to disable parallel query.
 
 You can also set execution conditions on the **Parameter Settings** page. For detailed directions, see [Setting Instance Parameters](https://intl.cloud.tencent.com/document/product/236/35793).
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/yPhk133_14.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/BgaK167_18.png)
 
 ### Specifying the parallel execution mode of a SQL statement through the HINT statement
 TencentDB for MySQL allows you to specify the parallel execution mode of a SQL statement through the HINT statement. For detailed directions, see [HINT Statement Control](https://www.tencentcloud.com/document/product/236/53410).

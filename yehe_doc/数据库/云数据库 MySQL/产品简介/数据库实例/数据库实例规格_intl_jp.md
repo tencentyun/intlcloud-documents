@@ -3,11 +3,11 @@
 ## 2ノード/3ノード（ローカルSSDディスク）
 マスターインスタンス（2ノード/3ノード構造）、読取専用インスタンス、ディザスタリカバリインスタンスの仕様情報については、この表を参照できます。
 <table class="table-striped">
-<thead><tr><th>隔離ポリシー</th><th>CPUとメモリ</th><th>最大IOPS</th><th>ストレージ容量</th></tr></thead>
 <tbody>
+<tr><th>隔離ポリシー</th><th>CPU とメモリ</th><th>最大 IOPS</th><th>ストレージ容量</th></tr>
 <tr>
 <td rowspan="14">汎用型</td>
-<td>1コア 1000MB</td><td>1200</td><td rowspan="10">25GB - 3000GB</td></tr>	
+<td>1コア 1000MB</td><td>1200</td><td rowspan="4">25GB - 3000GB</td></tr>        
 <tr>
 <td>1コア 2000MB</td><td>2000</td></tr>
 <tr>
@@ -15,7 +15,7 @@
 <tr>
 <td>4コア 8000MB</td><td>8000</td></tr>
 <tr>
-<td>4コア 16000MB</td><td>14000</td></tr>
+<td>4コア 16000MB</td><td>14000</td><td rowspan="6">25GB - 4000GB</td></tr>
 <tr>
 <td>8コア 16000MB</td><td>20000</td></tr>
 <tr>
@@ -27,16 +27,16 @@
 <tr>
 <td>16コア 96000MB</td><td>40000</td></tr>
 <tr>
-<td>16コア 128000MB</td><td>40000</td><td rowspan="4">25GB - 6000GB</td></tr>
+<td>16コア 128000MB</td><td>40000</td><td rowspan="3">25GB - 8000GB</td></tr>
 <tr>
 <td>24コア 244000MB</td><td>60000</td></tr>
 <tr>
 <td>32コア 256000MB</td><td>80000</td></tr>
 <tr>
-<td>48コア 488000MB</td><td>120000</td></tr>
+<td>48コア 488000MB</td><td>120000</td><td rowspan="1">25GB - 12000GB</td></tr>
 <tr>
 <td rowspan="26">独占型</td>
-<td>2コア 16000MB</td><td>8000</td><td rowspan="7">25GB - 3000GB</td></tr>	
+<td>2コア 16000MB</td><td>8000</td><td rowspan="7">25GB - 3000GB</td></tr>        
 <tr>
 <td>4コア 16000MB</td><td>10000</td></tr>
 <tr>
@@ -87,7 +87,9 @@
 <td>64コア 512000MB</td><td>150000</td><td rowspan="2">25GB - 12000GB</td></tr>
 <tr>
 <td>90コア 720000MB</td><td>150000</td></tr>
-</tbody></table>	
+</tbody></table>        
+
+>?ストレージ容量の上限は、地域ごとにインスタンスの仕様によって異なる場合があります。実際の購入ページをご参照ください。
 
 ## シングルノード（SSD Cloud Block Storage）
 <table class="table-striped">

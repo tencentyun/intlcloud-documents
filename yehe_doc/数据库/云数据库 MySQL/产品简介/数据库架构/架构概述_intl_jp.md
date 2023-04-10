@@ -2,7 +2,7 @@ TencentDB for MySQLは、単一ノード（クラウドディスクバージョ�
 >?単一ノード（クラウドディスクバージョン）のアーキテクチャは、現在サポートしているリージョンは上海、成都、広州、北京、香港で、その他のリージョンも順次オープンしていきます。
 >
 ## インスタンスアーキテクチャの確認
-- 購入時、[MySQL購入ページ](https://buy.intl.cloud.tencent.com/cdb)にログインし、**アーキテクチャ**で対応するアーキテクチャを選択します。
+- 購入時に[MySQL購入ページ](https://buy.cloud.tencent.com/cdb)にログインし、**アーキテクチャ**で対応するアーキテクチャを選択します。
 - 購入後、[MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、インスタンスリストの**構成情報**でインスタンスのアーキテクチャを確認します。
 
 ## 各アーキテクチャの比較
@@ -12,7 +12,7 @@ TencentDB for MySQLは、単一ノード（クラウドディスクバージョ�
 </thead>
 <tbody><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/39794">分離ポリシー</a></td>
-<td>汎用型</td><td>汎用型</td><td>汎用型</td><td>基本型</td></tr>
+<td>汎用型</td><td>汎用型</td><td>汎用型（読取専用インスタンス）</td><td>基本型</td></tr>
 <tr>
 <td>サポートされているバージョン</td>
 <td>MySQL 5.5、5.6、5.7、8.0</td><td>MySQL 5.6、5.7、8.0</td><td>MySQL 5.6、5.7、8.0</td><td>MySQL 5.7、8.0</td></tr>
@@ -35,11 +35,11 @@ TencentDB for MySQLは、単一ノード（クラウドディスクバージョ�
 <td>ユースケース</td>
 <td>ゲーム、インターネット、モノのインターネット、電子商取引、物流、保険、証券などの業界の応用</td>
 <td>ゲーム、インターネット、モノのインターネット、電子商取引、物流、保険、証券などの業界の応用</td>
-<td>読取/書き込み分離</td>
+<td>読み取り/書き込み分離要求の応用</td>
 <td>個人学習、ミニWebサイト、非コアの小規模企業システムおよび中規模から大規模の企業の開発テスト環境</td></tr>
 </tbody></table>
 
 ##  関連ドキュメント
 - サポートするTencentDB for MySQLバージョン：MySQL 8.0、MySQL 5.7、MySQL 5.6、MySQL 5.5。詳細については、[データベースバージョン](https://intl.cloud.tencent.com/document/product/236/31896)をご参照ください。
-- TencentDB for MySQLは、マスターインスタンス、読取専用インスタンスおよびディザスタリカバリインスタンスをサポートします。詳細については、[データベースインスタンスタイプ](https://intl.cloud.tencent.com/document/product/236/7268)をご参照ください。
+- TencentDB for MySQLは、マスターインスタンス、読み取り専用インスタンスおよびディザスタリカバリインスタンスをサポートします。詳細については、[データベースインスタンスタイプ](https://intl.cloud.tencent.com/document/product/236/7268)をご参照ください。
 - TencentDB for MySQLは、アーキテクチャのタイプによってサポートされている機能が異なります。詳細については、 [機能比較一覧](https://intl.cloud.tencent.com/document/product/236/36007)をご参照ください。

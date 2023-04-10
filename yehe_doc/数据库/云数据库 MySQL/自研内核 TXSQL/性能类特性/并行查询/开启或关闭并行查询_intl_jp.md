@@ -1,7 +1,7 @@
 TencentDB for MySQLは、並列クエリー機能をサポートしています。コンソールまたはコマンドラインを通じて関連するパラメータを調整し、インスタンスの並列クエリー機能を有効または無効にすることができます。
 
 ##  前提条件
-データベースバージョン：MySQL 8.0カーネルバージョン20220830以降。
+データベースバージョン：MySQL 8.0カーネルバージョン20220831以降。
 
 ## パラメータの説明
 >?マスターインスタンスと読み取り専用インスタンスの両方が並列クエリー機能を有効にすることをサポートしますが、インスタンスのCPUコアの数は4以上である必要があります。
@@ -40,7 +40,7 @@ MySQLコンソールを通じてインスタンスパラメータ設定ページ
 - txsql_max_parallel_worker_threadsとtxsql_parallel_degreeのいずれか1つを0に設定すると、並列クエリー機能を無効にすることを意味します。
 
 関連する実行条件パラメータを設定することもできます。コンソールパラメータ設定ページは、下図の通りです。詳細な操作方法については、[パラメータインスタンスの設定](https://intl.cloud.tencent.com/document/product/236/35793)をご参照ください。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/yPhk133_14.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/BgaK167_18.png)
 
 ### hintステートメントによる1つのSQLステートメントの並列実行方法の指定
 TencentDB for MySQLは、1つのSQLステートメントに対して並列実行方法を指定することをサポートします。1つのSQLステートメントを設定する場合は、hintステートメントを使用して操作します。詳細の方法については、[hintステートメント制御](https://www.tencentcloud.com/document/product/236/53410)をご参照ください。

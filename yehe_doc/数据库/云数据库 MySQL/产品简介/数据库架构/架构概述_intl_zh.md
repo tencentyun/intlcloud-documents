@@ -2,7 +2,7 @@
 >?单节点（云盘版）架构目前支持的地域为上海、成都、广州、北京、香港，其他地域后续陆续开放。
 >
 ## 查看实例架构
-- 购买时，登录 [MySQL 购买页](https://buy.intl.cloud.tencent.com/cdb)，在**架构**处可选择对应架构。
+- 购买时，登录 [MySQL 购买页](https://buy.cloud.tencent.com/cdb)，在**架构**处可选择对应架构。
 - 购买后，登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表的**配置信息**查看实例架构。
 
 ## 各架构对比
@@ -12,7 +12,7 @@
 </thead>
 <tbody><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/39794">隔离策略</a></td>
-<td>通用型</td><td>通用型</td><td>通用型</td><td>基础型</td></tr>
+<td>通用型</td><td>通用型</td><td>通用型（只读实例）</td><td>基础型</td></tr>
 <tr>
 <td>支持版本</td>
 <td>MySQL 5.5、5.6、5.7、8.0</td><td>MySQL 5.6、5.7、8.0</td><td>MySQL 5.6、5.7、8.0</td><td>MySQL 5.7、8.0</td></tr>

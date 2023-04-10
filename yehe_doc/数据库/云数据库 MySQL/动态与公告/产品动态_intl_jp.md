@@ -1,3 +1,19 @@
+## 2023年02月
+<table>
+<thead><tr><th width=20%>ダイナミックネーム</th><th width=50%>動的記述</th><th width=15%>リリース時間</th><th width=15%>関連ドキュメント</th></tr></thead>
+<tbody>
+<tr>
+<td>バックアップサイクルは月単位で設定できます</td>
+<td>TencentDB for MySQL自動バックアップのバックアップサイクルの設定について、月単位の設定が追加されました。バックアップサイクルは、週単位と月単位のバックアップ時間を設定できます。</td>
+<td>2023-02-28</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/37796" target="_blank">自動バックアップの設定</a></td></tr>
+<tr>
+<td>コールドバックアップへのダウングレードのサポート</td>
+<td>TencentDB for MySQLは、コールドバックアップへのダウングレードの設定をサポートしています。これにより、生成されたバックアップファイルのストレージタイプをポリシーに基づいて変換し、バックアップストレージのコストを削減できます。</td>
+<td>2023-02-14</td>
+<td><a href="https://www.tencentcloud.com/document/product/236/53949" target="_blank">コードバックアップへのダウングレード設定</a></td></tr>
+</tbody></table>
+
 ## 2022年12月
 <table>
 <thead><tr><th width=20%>ダイナミックネーム</th><th width=50%>動的記述</th><th width=15%>リリース時間</th><th width=15%>関連ドキュメント</th></tr></thead>

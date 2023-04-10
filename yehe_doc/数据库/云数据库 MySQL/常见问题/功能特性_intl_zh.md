@@ -1,7 +1,6 @@
-
 ### 使用云数据库 MySQL 前要做什么准备？
 在使用云数据库 MySQL 前您需要考虑以下两个问题：
-- 您的应用是否适合使用数据库？例如，数据量小、访问量高、key-value 存储的场景就应该考虑使用内存级持久化存储服务。
+- 您的应用是否适合使用数据库？例如，数据量小、访问量高、key-value 存储的场景就应该考虑使用内存级持久化存储服务 [云数据库 Memcached](https://cloud.tencent.com/product/cmem)。
 - 您的数据库设计是否合理？例如，有明显访问热点或者数据量过大的表，则应该考虑拆分成多个表。
 
 ### 云数据库 MySQL 如何对 MySQL 进行管理？
@@ -37,14 +36,17 @@
 ### 用户平时需要关注实例的哪些监控指标？
 CPU 利用率、内存利用率、磁盘空间利用率。您可以根据实际情况 [配置告警](https://intl.cloud.tencent.com/document/product/236/8457)，当收到告警，可采取相应措施消除告警。
 
-### [云数据库 MySQL 是否支持从库访问？](id:congkufangwen) 
+[](id:congkufangwen) 
+### 云数据库 MySQL 是否支持从库访问？
 为了数据库的安全，例如当主实例出现问题时，能快速切换到从库，所以目前不支持对从库进行读写；
 若希望扩展读写能力，可以考虑升级实例配置或购买 [只读实例](https://intl.cloud.tencent.com/document/product/236/7270)。
 
-### [需要使用 MyISAM 数据库引擎怎么办？](id:myisam)
+[](id:myisam)
+### 需要使用 MyISAM 数据库引擎怎么办？
 可以使用 MySQL 5.5 版本，此版本支持 MyISAM 引擎。但建议使用更高版本，如 MySQL 5.7 等，使用 InnoDB 引擎，提供更细粒度行级锁，写入性能更高，提供数据完整性保障，可实现数据库故障后数据不丢失。
 
-### [云数据库 MySQL 支持跨地域访问吗？](id:kuadiyufangwen) 
+[](id:kuadiyufangwen) 
+### 云数据库 MySQL 支持跨地域访问吗？
 默认 VPC 网络下不支持跨地域访问的，各地域间 VPC 网络相互隔离。建议购买与云服务器同地域的云数据库 MySQL 实例，数据就近访问，提供业务服务速率及稳定性。
 
 ### MySQL 授权用户没有 file 权限吗？
@@ -53,8 +55,10 @@ CPU 利用率、内存利用率、磁盘空间利用率。您可以根据实际�
 grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' identified by 'mypasswd';
 ```
 
-### [如何更换云数据库 MySQL 的地域？](id:genghuandiyu)
-暂不支持更换地域，您可以使用 [数据传输服务 DTS](https://intl.cloud.tencent.com/document/product/571/13706) 来实现两地实例间数据迁移，DTS 支持实时数据同步。数据迁移完毕后，自助退还源实例即可。
+[](id:genghuandiyu)
+
+### 如何更换云数据库 MySQL 的地域？
+暂不支持更换地域，您可以使用 [数据传输服务 DTS](https://www.tencentcloud.com/document/product/571) 来实现两地实例间数据迁移，DTS 支持实时数据同步。数据迁移完毕后，自助退还源实例即可。
 
 ### 哪些内容会占用实例的空间？
 用户正常的数据（不包括备份数据），以及数据库实例正常运行所需的数据（如系统数据库、数据库日志、索引等）。同时包含 MySQL 数据库产生的 Binlog 日志。
@@ -64,6 +68,9 @@ grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' 
 
 ### 单节点能否切换为双节点或三节点？
 目前暂不支持单节点切换为双节点或三节点。目前仅支持双节点升级为三节点。
+
+### 按量计费转包年包月对数据库业务是否有影响？
+按量计费实例转成包年包月对实例本身的运行不会有任何影响，只是付费类型的转换。转换步骤请参见 [按量转包年包月](https://www.tencentcloud.com/document/product/236/52515)。
 
 ### innodb 改 myisam 修改表引擎，成功后不变，仍是 innodb？
 MySQL 5.6、MySQL 5.7 版本仅支持 innodb 引擎，若您需要 myisam 引擎，建议使用 MySQL 5.5版本。
@@ -78,7 +85,7 @@ MySQL 5.6、MySQL 5.7 版本仅支持 innodb 引擎，若您需要 myisam 引擎
 - 云数据库上需要设置参数 binlog_row_image=FULL 与 binlog_format=ROW。 
 
 ### 云数据库 MySQL 是部署在物理机，还是云服务器上？
-云数据库 MySQL底层是物理集群，结合了虚拟化技术，部署在集群上，与云服务器是不太一样，云服务器主要是对外提供的服务。
+云数据库 MySQL 底层是物理集群，结合了虚拟化技术，部署在集群上，与云服务器是不太一样，云服务器主要是对外提供的服务。
 
 ### 克隆实例对原实例是否有影响？
 克隆是通过备份拉取的，不会对您的原实例产生影响，克隆完成后，您可以根据自身需求销毁或继续使用原实例。

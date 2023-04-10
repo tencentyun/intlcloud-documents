@@ -1,3 +1,4 @@
+
 TencentDB for MySQLは、公式のデフォルト値に基づいて最適化されています。インスタンスを購入した後、ビジネスシナリオに応じて以下のパラメータを合理的に設定することをお勧めします。
 
 ### character_set_server
@@ -15,18 +16,19 @@ TencentDB for MySQLは、公式のデフォルト値に基づいて最適化さ�
 ### sql_mode
 - デフォルト値：
 ```
-NO_ENGINE_SUBSTITUTION（5.6バージョン），ONLY_FULL_GROUP_BY、STRICT_TRANS_TABLES、NO_ZERO_IN_DATE、NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO、NO_AUTO_CREATE_USER、NO_ENGINE_SUBSTITUTION（5.7バージョン）
+NO_ENGINE_SUBSTITUTION（5.6バージョン）、ONLY_FULL_GROUP_BY、STRICT_TRANS_TABLES、NO_ZERO_IN_DATE、NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO、NO_AUTO_CREATE_USER、NO_ENGINE_SUBSTITUTION（5.7バージョン）
 ```
 - 再起動が必要か：いいえ
 - 役割：MySQLは様々なsqlモードで実行することができます。sqlモードはmysqlがサポートする必要のあるsql構文、データ検証などを定義します。
-5.6バージョンでのこのパラメーターのデフォルト値は`NO_ENGINE_SUBSTITUTION`です。つまり、使用されているストレージエンジンが無効になっているか、コンパイルされていない場合、エラーメッセージが表示されることを表します。5.7バージョンでのこのパラメーターのデフォルト値は`ONLY_FULL_GROUP_BY、STRICT_TRANS_TABLES、NO_ZERO_IN_DATE、NO_ZERO_DATE、ERROR_FOR_DIVISION_BY_ZERO、NO_AUTO_CREATE_USER、NO_ENGINE_SUBSTITUTION`です。
+ - 5.6バージョンにおけるデフォルトパラメーター値は`NO_ENGINE_SUBSTITUTION`で、使用するストレージエンジンが無効または未コンパイルの場合、エラーメッセージが表示されることを表します。
+ -　5.6、8.0バージョンでのこのパラメーターのデフォルト値は`ONLY_FULL_GROUP_BY、STRICT_TRANS_TABLES、NO_ZERO_IN_DATE、NO_ZERO_DATE、ERROR_FOR_DIVISION_BY_ZERO、NO_AUTO_CREATE_USER、NO_ENGINE_SUBSTITUTION`です。
 そのうち：
- - `ONLY_FULL_GROUP_BY`はGROUP BYの集計操作時に、SELECT中の列、HAVINGまたはORDER BY節の列の場合、GROUP BY中に現れるまたはGROUP BY列に依存する関数列である必要があります。
- - `STRICT_TRANS_TABLES`はstrictモードを有効にすることです。NO_ZERO_IN_DATEは日付中の月と日に0を含めることができるかで、かつstrictモードを有効にしたかの影響を受けます。
- - `NO_ZERO_DATE`データベースは0の日付を挿入することができず、かつstrictモードを有効にしたかの影響を受けます。
- - `ERROR_FOR_DIVISION_BY_ZERO`はstrictモードにおいて、INSERTまたはUPDATEの過程で、データが0により除算された場合、警告でなくエラーが発生します。非strictモードではデータが0により除算された場合、MySQLがNULLを戻します。
- - `NO_AUTO_CREATE_USER`は認証情報が指定される場合を除き、ほかの方法で実行される場合は、GRANT ステートメントで新規ユーザーを自動的に作成しません。
- - `NO_ENGINE_SUBSTITUTION`は使用されているストレージエンジンが無効または未コンパイルの場合、エラーメッセージが表示されます。
+   - `ONLY_FULL_GROUP_BY`はGROUP BYの集計操作時に、SELECT中の列、HAVINGまたはORDER BY節の列の場合、GROUP BY中に現れるまたはGROUP BY列に依存する関数列である必要があります。
+   - `STRICT_TRANS_TABLES`はstrictモードを有効にすることです。NO_ZERO_IN_DATEは日付中の月と日に0を含めることができるかで、かつstrictモードを有効にしたかの影響を受けます。
+   - `NO_ZERO_DATE`データベースは0の日付を挿入することができず、かつstrictモードを有効にしたかの影響を受けます。
+   - `ERROR_FOR_DIVISION_BY_ZERO`はstrictモードにおいて、INSERTまたはUPDATEの過程で、データが0により除算された場合、警告でなくエラーが発生します。非strictモードではデータが0により除算された場合、MySQLがNULLを戻します。
+   - `NO_AUTO_CREATE_USER`は認証情報が指定される場合を除き、ほかの方法で実行される場合は、GRANT ステートメントで新規ユーザーを自動的に作成しません。
+   - `NO_ENGINE_SUBSTITUTION`は使用されているストレージエンジンが無効または未コンパイルの場合、エラーメッセージが表示されます。
 - 推奨：SQLモードごとに異なるSQL構文をサポートしているため、ビジネスニーズおよび開発習慣に基づき適切な設定を行うことをお勧めします。
 
 ### long_query_time

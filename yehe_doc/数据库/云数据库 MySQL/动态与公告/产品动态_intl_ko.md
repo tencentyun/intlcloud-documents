@@ -1,3 +1,19 @@
+## 2023년 02월
+<table>
+<thead><tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=15%>배포일</th><th width=15%>관련 문서</th></tr></thead>
+<tbody>
+<tr>
+<td>월별 백업 주기 설정 지원</td>
+<td>TencentDB for MySQL 자동 백업 주기에 월별 주기가 추가되었습니다. 자동 백업 주기를 주별 또는 월별 백업 주기로 설정할 수 있습니다.</td>
+<td>2023-02-28</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/37796" target="_blank">자동 백업 설정</a></td></tr>
+<tr>
+<td>콜드 스토리지 전환 지원</td>
+<td>TencentDB for MySQL은 백업의 콜드 스토리지 전환을 지원합니다. 생성된 백업 파일의 스토리지 유형을 전환하여 백업 스토리지 비용을 줄일 수 있습니다.</td>
+<td>2023-02-14</td>
+<td><a href="https://www.tencentcloud.com/document/product/236/53949" target="_blank">콜드 스토리지 전환 설정</a></td></tr>
+</tbody></table>
+
 ## 2022년 12월
 <table>
 <thead><tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=15%>배포일</th><th width=15%>관련 문서</th></tr></thead>

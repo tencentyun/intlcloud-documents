@@ -1,3 +1,19 @@
+## February 2023
+<table>
+<thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>
+<tbody>
+<tr>
+<td>Supported setting the backup cycle by month</td>
+<td>TencentDB for MySQL allows you to configure automatic backup by week or month.</td>
+<td>2023-02-28</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/37796" target="_blank">Backing up Databases</a></td></tr>
+<tr>
+<td>Supported transition-to-cold storage</td>
+<td>TencentDB for MySQL allows you to configure transition-to-cold storage policies to transition the storage types of generated backup files and reduce the backup storage costs.</td>
+<td>2023-02-14</td>
+<td><a href="https://www.tencentcloud.com/document/product/236/53949" target="_blank">Configuring Transition-to-Cold Storage</a></td></tr>
+</tbody></table>
+
 ## December 2022
 <table>
 <thead><tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Document</th></tr></thead>

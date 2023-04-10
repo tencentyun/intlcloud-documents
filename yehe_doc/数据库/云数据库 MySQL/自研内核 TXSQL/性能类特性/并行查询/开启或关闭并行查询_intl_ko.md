@@ -1,7 +1,7 @@
 본문은 콘솔 또는 명령 라인을 통해 TencentDB for MySQL의 병렬 쿼리 기능을 활성화 또는 비활성화하는 방법을 설명합니다.
 
 ## 전제 조건
-데이터베이스 버전: 커널 버전 3.1.8 이상의 MySQL 8.0.
+데이터베이스 버전: 커널 버전 20220831 이상의 MySQL 8.0.
 
 ## 매개변수 설명
 >?CPU 코어 수가 4보다 크거나 같으면 원본 인스턴스 및 읽기 전용 인스턴스 모두에 대해 병렬 쿼리 기능을 활성화할 수 있습니다.
@@ -40,7 +40,7 @@ MySQL 콘솔의 매개변수 설정 페이지에서 매개변수를 설정하여
 - 병렬 쿼리를 비활성화하려면 txsql_max_parallel_worker_threads 및 txsql_parallel_degree를 0으로 설정합니다.
 
 매개변수 설정 페이지에서 실행 조건을 설정할 수도 있습니다. 자세한 방법은 [인스턴스 매개변수 설정](https://intl.cloud.tencent.com/document/product/236/35793)을 참고하십시오.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/yPhk133_14.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/BgaK167_18.png)
 
 ### hint 문을 통해 SQL 문의 병렬 실행 모드 지정
 TencentDB for MySQL을 사용하면 hint 문을 통해 SQL 문의 병렬 실행 모드를 지정할 수 있습니다. 자세한 방법은 [hint 문 제어](https://www.tencentcloud.com/document/product/236/53410)를 참고하십시오.

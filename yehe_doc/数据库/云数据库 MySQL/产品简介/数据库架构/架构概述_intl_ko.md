@@ -1,18 +1,18 @@
 TencentDB for MySQL은 단일 노드(클라우드 디스크 버전), 2노드(이전 고가용성 버전), 3노드(이전 파이낸스 버전)의 세 가지 유형의 아키텍처를 지원합니다.
->?클라우드 디스크 버전의 단일 노드 아키텍처는 현재 상하이, 청두, 광저우, 베이징, 홍콩 리전에서 지원되며 향후 더 많은 리전에서 사용할 수 있습니다.
+>?클라우드 디스크 버전의 단일 노드 아키텍처는 현재 상하이, 청두, 광저우, 베이징, 중국홍콩 리전에서 지원되며 향후 더 많은 리전에서 사용할 수 있습니다.
 >
 ## 인스턴스 아키텍처 보기
-- 인스턴스 구매 시 [TencentDB for MySQL 구매 페이지](https://buy.intl.cloud.tencent.com/cdb)로 이동하여 **아키텍처** 섹션에서 아키텍처를 선택합니다.
+- 구매할 인스턴스는 [TencentDB for MySQL 구매 페이지](https://buy.cloud.tencent.com/cdb)에 들어가 **아키텍처** 섹션에서 아키텍처를 선택합니다.
 - 인스턴스 구매 후 [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인하여 인스턴스 목록에서 대상 인스턴스를 찾은 다음 **구성** 열에서 아키텍처를 확인합니다.
 
 ## 각 아키텍처 비교
 <table>
 <thead>
-<tr><th>구성</th><th >2노드</th><th>3노드</th><th colspan=2>단일 노드</th>
+<tr><th>아키텍처</th><th >2노드</th><th>3노드</th><th colspan=2>단일 노드</th>
 </thead>
 <tbody><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/39794">격리 정책</a></td>
-<td>일반</td><td>일반</td><td>일반</td><td>기본</td></tr>
+<td>일반형</td><td>일반형</td><td>일반형(읽기 전용 인스턴스)</td><td>기본형</td></tr>
 <tr>
 <td>지원 버전</td>
 <td>MySQL 5.5, 5.6, 5.7, 8.0</td><td>MySQL 5.6, 5.7, 8.0</td><td>MySQL 5.6, 5.7, 8.0</td><td>MySQL 5.7, 8.0</td></tr>
@@ -30,7 +30,7 @@ TencentDB for MySQL은 단일 노드(클라우드 디스크 버전), 2노드(이
 <td>로컬 NVMe SSD</td><td>로컬 NVMe SSD</td><td>로컬 NVMe SSD</td><td>SSD 클라우드 디스크<br>인핸스드 SSD</td></tr>
 <tr>
 <td>성능</td>
-<td>최대 240,000 IOPS</td><td>최대 240,000 IOPS</td><td>대 240,000 IOPS</td><td><li>SSD 클라우드 디스크 랜덤 IOPS 계산: <br>min{1800 + 30 × 용량(GB), 26000}<li>SSD 클라우드 디스크 처리량 계산(MB/s): <br>min{120 + 0.2 × 용량(GB), 260}<li>인핸스드 SSD 랜덤 IOPS 계산: <br>min{1800 + 50 × 용량(GB), 50000}<li>인핸스드 SSD 처리량 계산(MB/s): <br>min{120 + 0.5 × 용량(GB), 350}</td></tr>
+<td>최대 240000 IOPS</td><td>최대 240000 IOPS</td><td>최대 240000 IOPS</td><td><li>SSD 클라우드 디스크 랜덤 IOPS 계산: <br>min{1800 + 30 × 용량(GB), 26000}<li>SSD 클라우드 디스크 처리량 계산(MB/s): <br>min{120 + 0.2 × 용량(GB), 260}<li>인핸스드 SSD 랜덤 IOPS 계산: <br>min{1800 + 50 × 용량(GB), 50000}<li>인핸스드 SSD 처리량 계산(MB/s): <br>min{120 + 0.5 × 용량(GB), 350}</td></tr>
 <tr>
 <td>적용 시나리오</td>
 <td>게임, 인터넷, IoT, 소매, 전자 상거래, 물류, 보험, 증권 등</td>

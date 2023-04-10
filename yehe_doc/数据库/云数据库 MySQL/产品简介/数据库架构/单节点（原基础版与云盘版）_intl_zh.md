@@ -20,6 +20,9 @@
 >- 为保障数据库实例的数据可用性以及可恢复能力，会将磁盘空间中的一小部分（预期为5%）作为系统保护空间，该部分空间用于数据库实例数据保护，无法存放数据。
 >- 增强型 SSD 云盘仅部分地域支持，具体请以购买单节点云盘版实例时云盘选项为准。
 
+### 架构基本框架图
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/KNNI786_4.png)
+
 ## 单节点 - 基础型（原基础版-已下线）
 ### 适用场景
 单节点 - 基础型不建议用于业务正式环境，适用于个人学习、微型网站、企业非核心小型系统以及大中型企业开发与测试环境。
@@ -30,7 +33,7 @@
 - MySQL 单节点 - 基础型底层存储介质使用高性能云盘，适用于90%的 I/O 场景，质优价廉，性能稳定突出；具体 IOPS 范围计算公式：{min 1500 + 8 * 硬盘容量，max 4500}，例如，硬盘容量为50GB，则 IOPS 范围为{min 1900，max 4500}。
 
 ### 架构基本框架图
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/nBeu364_8.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/ZyXS008_5.png)
 
 >!由于 MySQL 单节点 - 基础型是单节点架构，当该节点出现故障，恢复时长比云服务器故障恢复稍长（涉及实例启动与数据恢复）。建议对高可用有要求的业务，使用 MySQL 双节点或三节点的实例。
 
@@ -42,7 +45,7 @@
 底层存储使用本地 NVMe SSD 硬盘，提供强大的 IO 性能。目前应用于 [只读实例](https://intl.cloud.tencent.com/document/product/236/7270)，帮助业务分摊读压力。
 
 ### 架构基本框架图
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/cdyr197_9.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/w7Y5168_6.png)
 
 >!
 >- 单节点部署存在单点风险，在只购买一个只读实例情况下，无法保证业务高可用，单个只读实例故障，会导致业务中断而影响客户。

@@ -1,7 +1,7 @@
 云数据库 MySQL 支持并行查询能力，您可通过控制台或命令行调整相关参数，为实例开启或关闭并行查询功能。
 
 ## 前提条件
-数据库版本：MySQL 8.0 内核版本20220830及以上。
+数据库版本：MySQL 8.0 内核版本20220831及以上。
 
 ## 参数说明
 >?主实例与只读实例均支持开启并行查询功能，但实例 CPU 核数需大于等于4。
@@ -40,7 +40,7 @@
 - 设置 txsql_max_parallel_worker_threads 和 txsql_parallel_degree 任意一个为0表示关闭并行查询能力。
 
 也可设置相关执行条件参数。控制台参数设置页面如下图所示。详细操作方法请参考 [设置实例参数](https://intl.cloud.tencent.com/document/product/236/35793)。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/yPhk133_14.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/BgaK167_18.png)
 
 ### 通过 hint 语句对单条 SQL 语句指定并行执行方式
 云数据库 MySQL 支持对单条 SQL 语句进行指定并行执行方式。对单条 SQL 语句进行设置时，将采用 hint 语句的方式进行操作，详细方法请参照 [hint 语句控制](https://www.tencentcloud.com/document/product/236/53410)。
