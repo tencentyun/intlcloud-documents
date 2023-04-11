@@ -23,7 +23,7 @@ Windows
 ::: パスワードでログインする[](id:passwordLogin)
 1. WindowsリモートログインソフトウェアPuTTYをダウンロードします。
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" style="color: white; font-size:16px;">ここをクリックしてPuTTYをダウンロード</a></div>
-2. 【putty.exe】をダブルクリックして、PuTTYクライアントを開きます。
+2. **putty.exe**をダブルクリックして、PuTTYクライアントを開きます。
 3.  PuTTY Configuration ウィンドウで、次の内容を入力します。次の図に示すように：
 ![](https://main.qcloudimg.com/raw/7ac87da9721ef7d64fe8cac81a3dab33.png)
 パラメータは次のとおりです：
@@ -32,9 +32,9 @@ Windows
  - **Connect type**：「SSH」を選択します。
  - **Saved Sessions**：testなどのセッション名を入力します。
  「Host Name」を設定した後、「Saved Sessions」を設定して保存します。「Saved Sessions」の下に保存されているセッション名をダブルクリックしてCVMにログインできます。
-4. 【Open】をクリックして「PuTTY」インターフェースに入り、「login as:」コマンドプロンプトが表示されます。
-5.「login as」の後にユーザー名を入力し、** Enter**キーを押します。
-6.「Password」の後にパスワードを入力し、** Enter**キーを押します。
+4. **Open**をクリックして「PuTTY」インターフェースに入り、「login as:」コマンドプロンプトが表示されます。
+5.「login as」の後にユーザー名を入力し、 **Enter** キーを押します。
+6.「Password」の後にパスワードを入力し、 **Enter** キーを押します。
 入力されたパスワードはデフォルトでは表示されません。次の図に示すように：
 ![](https://main.qcloudimg.com/raw/9e7ddc631de2a27bfd35f9225de85506.png)
 ログインが完了すると、コマンドプロンプトの左側に現在ログインしているCVMに関する情報が表示されます。
@@ -42,17 +42,17 @@ Windows
 ::: キーでログインする[](id:keyLogin)
 1. WindowsリモートログインソフトウェアPuTTyをダウンロードします。putty.exeとputtygen.exeの両方をそれぞれダウンロードして​ください。
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;margin:5px;"><a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" style="color: white; font-size:16px;">PuTTYをダウンロード</a></div><div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;margin:5px;"><a href="https://the.earth.li/~sgtatham/putty/latest/w64/puttygen.exe" target="_blank" style="color: white; font-size:16px;">PuTTYgenをダウンロード</a></div>
-2. 【puttygen.exe】をダブルクリックして、PuTTy Keyクライアントを開きます。
-3. 【Load】をクリックし、ダウンロードした秘密鍵が保存されているパスを選択して開きます。キーペアを作成した後、秘密鍵をダウンロードして保持する必要があります。詳細については、[SSHキーの管理](https://intl.cloud.tencent.com/document/product/213/16691)をご参照ください。
+2. **puttygen.exe**をダブルクリックして、PuTTy Keyクライアントを開きます。
+3. **Load**をクリックし、ダウンロードした秘密鍵が保存されているパスを選択して開きます。キーペアを作成した後、秘密鍵をダウンロードして保持する必要があります。詳細については、[SSHキーの管理](https://intl.cloud.tencent.com/document/product/213/16691)をご参照ください。
 例えば、davidという名前の秘密鍵ファイルを選択して開きます。
 ![](https://main.qcloudimg.com/raw/0110ba722331fb2892a8e6822ec3f709.png)
 4. <span id="Step4"></span>PuTTY Key Generatorウィンドウにキー名を入力し、PuTTY が秘密鍵の暗号化に使用するパスワードを設定します（オプション）。設定が完了したら、【Save private key】をクリックします。次の図に示すように：
 ![](https://main.qcloudimg.com/raw/58a250d3f3d1b78eff3edaab64cd01c0.png)
-5. ポップアップウィンドウで、キーを保存するパスを選択します。ファイル名フィールドに「キー名.ppk」と入力して、【保存】をクリックします。 例えば、david秘密鍵ファイルをdavid.ppkキーファイルとして保存します。次の図に示すように：
+5. ポップアップウィンドウで、キーを保存するパスを選択します。ファイル名フィールドに「キー名.ppk」と入力して、**保存**をクリックします。 例えば、david秘密鍵ファイルをdavid.ppkキーファイルとして保存します。次の図に示すように：
 ![](https://main.qcloudimg.com/raw/fad925e85923ac1d41afacde4a9c690c.png)
-6. 【putty.exe】をダブルクリックして、PuTTYクライアントを開きます。
-7. 左側のナビゲーションバーで、【Connection】>【SSH】>【Auth】を選択して、Auth設定インターフェースに入ります。
-8. 【Browse】をクリックし、キーが保存されているパスを選択して開きます。次の図に示すように：
+6. **putty.exe**をダブルクリックして、PuTTYクライアントを開きます。
+7. 左側のナビゲーションバーで、**Connection**>**SSH**>**Auth**を選択して、Auth設定インターフェースに入ります。
+8. **Browse**をクリックし、キーが保存されているパスを選択して開きます。次の図に示すように：
 ![](https://main.qcloudimg.com/raw/61993f3977ff681b8b2d78beac55f2ca.png)
 9. Session設定インターフェースに切り替えて、CVM IP、ポート、および接続タイプを設定します。次の図に示すように：
 ![](https://main.qcloudimg.com/raw/ddfd58429288ce0e195e86a6cb1c9cd6.png)
@@ -61,7 +61,7 @@ Windows
  - **Connect type**：「SSH」を選択します。
  - **Saved Sessions**：testなどのセッション名を入力します。
  「Host Name」を設定した後、「Saved Sessions」を設定して保存します。「Saved Sessions」の下に保存されたセッション名をダブルクリックしてCVMにログインできます。
-10. 【Open】をクリックして「PuTTY」インターフェースに入り、「login as:」コマンドプロンプトが表示されます。
+10. **Open**をクリックして「PuTTY」インターフェースに入り、「login as:」コマンドプロンプトが表示されます。
 11.「login as」の後にユーザー名を入力し、** Enter**キーを押します。
 12.[ステップ4](#Step4) に従って暗号化された秘密鍵のパスワードを設定する場合は、「Passphrase for key "imported-openssh-key":」にパスワードを入力し、 **Enter**を押してください。　
 入力されたパスワードはデフォルトでは表示されません。次の図に示すように：
@@ -70,9 +70,9 @@ Windows
 :::
 </dx-tabs>
 
-## 後続の操作
+## その後の操作
 
-CVMにログインした後、個人用Webサイトまたはフォーラムを構築したり、その他の操作を実行したりできます。関連操作については、下記をご参照ください：　　
-- [WordPress ウェブサイトを構築する](https://intl.cloud.tencent.com/document/product/213/33469)
-- [Discuz! フォーラムを構築する](https://intl.cloud.tencent.com/document/product/213/34278)
+CVMにログインした後、個人用Webサイトまたはフォーラムを構築したり、その他の操作を実行したりできます。詳細については、下記のドキュメントをご参照ください：　　　　
+- [WordPress 個人用サイトを構築する](https://intl.cloud.tencent.com/document/product/213/33469)
+- [Discuz!フォーラムを手動で構築する](https://intl.cloud.tencent.com/document/product/213/34278)
 
