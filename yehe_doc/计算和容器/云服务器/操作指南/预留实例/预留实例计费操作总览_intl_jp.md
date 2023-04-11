@@ -27,7 +27,7 @@
 
 3. リザーブドインスタンスの検索
 現在、インスタンスID、リザーブドインスタンス名、ステータス、インスタンスタイプ、規格、支払タイプでリザーブドインスタンスの検索がサポートされています。
-実際のニーズに応じて、検索ボックスにキーワードを入力し、<img src="https://main.qcloudimg.com/raw/ca65dc6312654bc291bdf7ef91efd44f.png"></img>をクリックして検索できます。また、フィルター (インスタンス ID など) を選択し、キーワードを入力して、&lt;img src="https://main.qcloudimg.com/raw/ca65dc6312654bc291bdf7ef91efd44f.png"&gt;&lt;/img&gt;をクリックして検索することもできます。下図に示すように：
+実際のニーズに応じて、検索ボックスにキーワードを入力し、<img src="https://main.qcloudimg.com/raw/ca65dc6312654bc291bdf7ef91efd44f.png"></img>をクリックして検索できます。また、フィルター (インスタンス ID など) を選択し、キーワードを入力して、<img src="https://main.qcloudimg.com/raw/ca65dc6312654bc291bdf7ef91efd44f.png"></img>をクリックして検索することもできます。下図に示すように：
 
 ![image-20200909171518516](https://main.qcloudimg.com/raw/36bb67de495be773d839aa7276d27f7f.png)
 
