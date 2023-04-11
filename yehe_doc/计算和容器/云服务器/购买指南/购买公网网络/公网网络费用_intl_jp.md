@@ -76,10 +76,6 @@
 <td>Accelerated IP</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/684/15254">AIA BGP 帯域幅パッケージ</a></td>
 </tr>
-<tr>
-<td>静的単一IP</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/684/15254">チャイナモバイル/チャイナユニコム/チャイナテレコム帯域幅パッケージ</a></td>
-</tr>
 </tbody></table>
 
 ## 関連ドキュメント
