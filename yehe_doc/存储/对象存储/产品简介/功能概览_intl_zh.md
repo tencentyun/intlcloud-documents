@@ -160,7 +160,7 @@
    </tr>
 </table>
 
-## 数据监控
+## 数据监控与告警
 
 <table>
    <tr>
@@ -168,16 +168,12 @@
       <th>说明</td>
    </tr>
    <tr>
-      <td>监控与告警</td>
-      <td>COS 的读写请求量、流量等数据是基于 <a href="https://www.tencentcloud.com/document/product/248">云监控</a> 来进行统计和展示的。用户可以在云监控的 <a href="https://console.cloud.tencent.com/monitor/product/COS">控制台</a> 查看到 COS 的读写请求量、流量等详细的监控数据，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/31649">监控与告警</a>。</td>
-   </tr>
-   <tr>
       <td>查看数据概览</td>
       <td>COS 提供存储数据的监控能力，您可通过监控数据窗口按照不同时间段查询不同存储类型数据的数据量及趋势，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/36542">查看数据概览</a> 和 <a href="https://intl.cloud.tencent.com/document/product/436/31634">查询数据监控</a>。</td>
    </tr>
    <tr>
       <td>设置监控告警</td>
-      <td>您可以通过云监控的告警策略来设置 COS 监控指标的阈值告警，告警策略包括名称、策略类型和告警触发条件、告警对象、告警通知模板五个必要组成部分，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/39104">设置监控告警</a>。</td>
+      <td>您可以通过腾讯云可观测平台的告警策略来设置 COS 监控指标的阈值告警，告警策略包括名称、策略类型和告警触发条件、告警对象、告警通知模板五个必要组成部分，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/39104">设置监控告警</a>。</td>
    </tr>
 </table>
 
@@ -281,4 +277,5 @@
       <td>COS 支持多种传输协议，包括 HTTP1.0、HTTP1.1、QUIC 协议，同时支持 TLS1.0、TLS1.1、TLS1.2加密协议。如需使用 QUIC 协议，请 <a href="https://intl.cloud.tencent.com/contact-sales">联系我们</a> 开通白名单。</td>
    </tr>
 </table>
+
 
