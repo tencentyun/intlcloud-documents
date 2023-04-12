@@ -4,7 +4,7 @@ Node.js SDK provides APIs for getting object URLs and pre-signed request URLs. F
 
 > ?
 >
-> - You are advised to use a temporary key to generate pre-signed URLs for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects. Note that the action for applying for a temporary key needs to be added with the `"name/cos:GetObject"` permission.
+> - You are advised to use a temporary key to generate pre-signed URLs for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [Principle of Least Privilege](https://www.tencentcloud.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects. Note that the action for applying for a temporary key needs to be added with the `"name/cos:GetObject"` permission.
 > - If you need to use a permanent key to generate a pre-signed URL, you are advised to limit the permission of the permanent key to uploads and downloads only to avoid risks.
 
 ## Signature Calculation
@@ -18,7 +18,7 @@ There are two ways to use the authentication credential:
 
 The `COS.getAuthorization` method is used to calculate the authentication credential (Authorization), which is the signing information used to verify the validity of the request.
 
->! We recommend you use this method only for frontend debugging but not in actual projects, as it may disclose keys.
+> ! We recommend you use this method only for frontend debugging but not in actual projects, as it may disclose keys.
 
 #### Sample code
 
@@ -27,11 +27,11 @@ Obtaining the authentication credential for file download:
 [//]: # (.cssg-snippet-get-authorization)
 
 ```js
-// Log in at https://console.cloud.tencent.com/cam/capi to view and manage the `SECRETID` and `SECRETKEY`.
+// Log in to https://console.cloud.tencent.com/cam/capi to check and manage the SecretId and SecretKey of your project.
 var COS = require('cos-nodejs-sdk-v5');
 var Authorization = COS.getAuthorization({
-  SecretId: 'SECRETID',
-  SecretKey: 'SECRETKEY',
+  SecretId: process.env.SecretId, // User `SecretId`. We recommend that you obtain it from the environment variable. In addition, we recommend that you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
+  SecretKey: process.env.SecretKey, // User `SecretKey`. We recommend that you obtain it from the environment variable. In addition, we recommend that you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
   Method: 'get',
   Key: 'a.jpg',
   Expires: 60,
@@ -54,7 +54,7 @@ var Authorization = COS.getAuthorization({
 
 #### Return value description
 
-The returned value is the calculated authentication credential string `authorization`.
+The return value is the calculated authentication credential string `authorization`.
 
 ## Getting a Pre-signed Request URL
 
@@ -67,7 +67,7 @@ Sample 1. Get an unsigned object URL
 ```js
 var url = cos.getObjectUrl({
   Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-  Region: 'COS_REGION', /* Bucket region (required), such as ap-beijing */
+  Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
   Key: '1.jpg', /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
   Sign: false,
 });
@@ -80,8 +80,8 @@ Sample 2. Get a signed object URL
 ```js
 var url = cos.getObjectUrl({
   Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-  Region: 'COS_REGION', /* Bucket region (required), such as ap-beijing */
-  Key: 'Profile photo.jpg', /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
+  Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
+  Key: 'Profile photo.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
 });
 ```
 
@@ -93,8 +93,8 @@ Sample 3. If the signing process is asynchronous, you need to get the signed URL
 cos.getObjectUrl(
   {
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-    Region: 'COS_REGION', /* Bucket region (required), such as ap-beijing */
-    Key: 'Profile photo.jpg', /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
+    Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
+    Key: 'Profile photo.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     Sign: false,
   },
   function (err, data) {
@@ -111,8 +111,8 @@ Sample 4. Specify the validity period of a link
 cos.getObjectUrl(
   {
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-    Region: 'COS_REGION', /* Bucket region (required), such as ap-beijing */
-    Key: 'Profile photo.jpg', /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
+    Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
+    Key: 'Profile photo.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     Sign: true,
     Expires: 3600, // Unit: second
   },
@@ -132,8 +132,8 @@ var fs = require('fs');
 cos.getObjectUrl(
   {
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-    Region: 'COS_REGION', /* Bucket region (required), such as ap-beijing */
-    Key: 'Profile photo.jpg', /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
+    Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
+    Key: 'Profile photo.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     Sign: true,
   },
   function (err, data) {
@@ -148,7 +148,7 @@ cos.getObjectUrl(
 );
 ```
 
-Sample 6: Generating a pre-signed URL with the signature containing `Query` and `Header`
+Sample 6. Generate the pre-signed URL with the signature containing `Query` and `Header`
 
 [//]: # (.cssg-snippet-get-obejct-url-with-params)
 
@@ -156,8 +156,8 @@ Sample 6: Generating a pre-signed URL with the signature containing `Query` and 
 cos.getObjectUrl(
   {
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-    Region: 'COS_REGION', /* Bucket region (required), such as ap-beijing */
-    Key: 'Profile photo.jpg', /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
+    Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
+    Key: 'Profile photo.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     Sign: true,
     /* The HTTP request parameters passed in should be the same as those of the actual request. This can prevent users from tampering with the HTTP request parameters. */
     Query: {
@@ -165,7 +165,7 @@ cos.getObjectUrl(
     },
     /* The HTTP request headers passed in should be included in the actual request. This can prevent users from tampering with the HTTP request headers that are signed here. */
     Headers: {
-      host: 'xxx', /* Specify the host for access. Error code 403 will be reported for access by a non-specified host. */
+      host: 'xxx', /* Specified host for access. Error code 403 will be reported for access by a non-specified host. */
     },
   },
   function (err, data) {
@@ -186,8 +186,8 @@ var fs = require('fs');
 cos.getObjectUrl(
   {
     Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-    Region: 'COS_REGION', /* Bucket region (required), such as ap-beijing */
-    Key: 'Profile photo.jpg', /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
+    Region: 'COS_REGION',  /* Bucket region, such as `ap-beijing`. Required. */
+    Key: 'Profile photo.jpg',  /* Object key stored in the bucket (such as `1.jpg` and `a/b/test.txt`). Required. */
     Method: 'PUT',
     Sign: true,
   },
@@ -213,9 +213,9 @@ cos.getObjectUrl(
 
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`. The bucket name entered here must be in this format. | String | Yes |
-| Region  | Bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| Key | Object key (object name), which is the unique identifier of an object in a bucket. **If the request operation is to be performed on a file, this parameter will be required and should be a filename.** If the operation is on a bucket, this parameter should be left empty. | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID`. | String | Yes |
+| Region  | Bucket region. For the enumerated values, see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224). | String | Yes |
+| Key | Object key (object name) is the unique ID of an object in a bucket. **If the request operation is to be performed on a file, this parameter is required and should be a filename.** If the operation is on a bucket, this parameter should be left empty. | String | Yes |
 | Sign | Whether to return a signed URL. Default value: `true`. | Boolean | No |
 | Protocol    | Valid values: `http:` (default value), `https:`. | String | No |
 | Domain    | Bucket access domain name. Default value: `{BucketName-APPID}.cos.{Region}.myqcloud.com`. | String | No |
@@ -239,6 +239,6 @@ function(err, data) { ... }
 
 | Parameter | Description | Type |
 | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| err    | The object returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| err | Error code, which is returned when an error (network error or service error) occurs. If the request is successful, this parameter is empty. For more information, please see [Error Codes](https://www.tencentcloud.com/document/product/436/7730). | Object |
 | data         | The object returned when the request is successful. If an error occurs with the request, this parameter is empty.               | Object |
 | - Url | Calculated URL | String |

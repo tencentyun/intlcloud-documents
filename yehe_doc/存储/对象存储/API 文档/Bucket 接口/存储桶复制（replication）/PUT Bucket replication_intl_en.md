@@ -4,8 +4,28 @@ This API is used to add a cross-bucket replication rule to a versioning-enabled 
 
 > !
 >
-> - To use this API, ensure that versioning is enabled for the bucket. For the API documentation of versioning, please see [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889).
+> - To use this API, ensure that versioning is enabled for the bucket. For the API documentation of versioning, please see [PUT Bucket versioning](https://www.tencentcloud.com/document/product/436/19889).
 > - Objects in MAZ buckets cannot be replicated to an OAZ bucket. For example, objects in MAZ_STANDARD cannot be replicated to STANDARD.
+
+
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer (recommended)
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutBucketReplication" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 ## Requests
 
@@ -21,13 +41,13 @@ request body
 ```
 
 >? 
-> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
-> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://www.tencentcloud.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://www.tencentcloud.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://www.tencentcloud.com/document/product/436/7778) for more information)
 > 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://www.tencentcloud.com/document/product/436/7728).
 
 #### Request body
 
@@ -70,7 +90,7 @@ The nodes are described as follows:
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://www.tencentcloud.com/document/product/436/7729).
 
 #### Response body
 
@@ -78,7 +98,7 @@ The response body is empty.
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns uniform error responses and error codes. For more information, see [Error Codes](https://www.tencentcloud.com/document/product/436/7730).
 
 ## Examples
 #### Request

@@ -2,9 +2,28 @@
 
 This API is used to delete the cross-bucket replication configuration from a bucket. When initiating this request, you need to get the request signature to show that the request has been authorized.
 
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer (recommended)
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=DeleteBucketReplication" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                Tencent Cloud API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for APIs. You can use it to query the request and response of each API call and generate sample SDK codes for the call.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 ## Request
 
-#### Sample request
+#### Request example
 
 ```shell
 DELETE /?replication HTTP/1.1
@@ -14,13 +33,13 @@ Authorization: Auth String
 ```
 
 >? 
-> - In `Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com`, &lt;BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://www.tencentcloud.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://www.tencentcloud.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://www.tencentcloud.com/document/product/436/7778) for more information)
 > 
 
 #### Request headers
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://www.tencentcloud.com/document/product/436/7728).
 
 #### Request body
 
@@ -30,7 +49,7 @@ The request body of this request is empty.
 
 #### Response headers
 
-This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://www.tencentcloud.com/document/product/436/7729).
 
 #### Response body
 
@@ -38,9 +57,9 @@ The response body is empty.
 
 #### Error codes
 
-This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns uniform error responses and error codes. For more information, see [Error Codes](https://www.tencentcloud.com/document/product/436/7730).
 
-## Sample
+## Examples
 
 #### Request
 

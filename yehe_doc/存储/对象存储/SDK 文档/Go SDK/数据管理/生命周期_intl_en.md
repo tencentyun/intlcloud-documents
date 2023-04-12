@@ -4,9 +4,9 @@ This document provides an overview of APIs and SDK code samples related to lifec
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting lifecycle configuration | Sets lifecycle for a bucket |
-| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Querying a lifecycle configuration | Queries the lifecycle configuration of a bucket |
-| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deleting a lifecycle configuration | Deletes the lifecycle configuration of a bucket |
+| [PUT Bucket lifecycle](https://www.tencentcloud.com/document/product/436/8280) | Setting lifecycle | Sets lifecycle management configuration for a bucket |
+| [GET Bucket lifecycle](https://www.tencentcloud.com/document/product/436/8278) | Querying lifecycle | Queries the lifecycle management configuration of a bucket |
+| [DELETE Bucket lifecycle](https://www.tencentcloud.com/document/product/436/8284) | Deleting lifecycle | Deletes the lifecycle management configuration of a bucket |
 
 ## Setting a Lifecycle Configuration
 
@@ -34,16 +34,16 @@ import (
 
 func main(){
     // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://www.tencentcloud.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
             // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretID: os.Getenv("SECRETID"),
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretKey: os.Getenv("SECRETKEY"),
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     lc := &cos.BucketPutLifecycleOptions{
@@ -169,16 +169,16 @@ import (
 
 func main(){
     // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://www.tencentcloud.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
             // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretID: os.Getenv("SECRETID"),
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretKey: os.Getenv("SECRETKEY"),
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     _, _, err := client.Bucket.GetLifecycle(context.Background())
@@ -257,16 +257,16 @@ import (
 
 func main(){
     // Bucket name in the format of `BucketName-APPID` (`APPID` is required), which can be viewed in the COS console at https://console.cloud.tencent.com/cos5/bucket.
-    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, see https://intl.cloud.tencent.com/document/product/436/6224.
+    // Replace it with your region, which can be viewed in the COS console at https://console.cloud.tencent.com/. For more information about regions, visit https://www.tencentcloud.com/document/product/436/6224.
     u, _ := url.Parse("https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     client := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             // Get the key from environment variables
             // Environment variable `SECRETID` refers to the user's `SecretId`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretID: os.Getenv("SECRETID"),
+            SecretID: os.Getenv("SECRETID"),  // User `SecretId`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit https://cloud.tencent.com/document/product/598/37140.
             // Environment variable `SECRETKEY` refers to the user's `SecretKey`, which can be viewed in the CAM console at https://console.cloud.tencent.com/cam/capi.
-            SecretKey: os.Getenv("SECRETKEY"),
+            SecretKey: os.Getenv("SECRETKEY"),  // User `SecretKey`. We recommend you use a sub-account key and follow the principle of least privilege to reduce risks. For information about how to obtain a sub-account key, visit  https://cloud.tencent.com/document/product/598/37140.
         },
     })
     _, err := client.Bucket.DeleteLifecycle(context.Background())
