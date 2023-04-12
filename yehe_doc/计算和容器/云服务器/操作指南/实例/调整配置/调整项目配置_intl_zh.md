@@ -4,7 +4,7 @@
 
 
 <dx-alert infotype="notice" title="">
-如果您要将实例分配至新的项目，请先新建项目。
+如果您要将实例分配至新的项目，请先新建项目。具体操作请参考[新建项目](https://intl.cloud.tencent.com/document/product/378/34726)。
 </dx-alert>
 
 
