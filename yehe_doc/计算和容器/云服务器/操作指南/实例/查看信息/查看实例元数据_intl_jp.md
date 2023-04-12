@@ -13,9 +13,9 @@ Tencent Cloudは現在、次のメタデータを提供しています。
 | uuid | インスタンス ID | 1.0 |
 | local-ipv4 | インスタンスのプライベートIPアドレス | 1.0 |
 | public-ipv4 | インスタンスのパブリックIPアドレス | 1.0 |
-| mac | インスタンスeth0デバイスのmacアドレス | 1.0 |
-| placement/region | インスタンスが所在する地域の情報 | 2017年9月19日更新 |
-| placement/zone | インスタンスが所在するアベイラビリティーゾーンの情報 | 2017年9月19日更新 |
+| mac | インスタンスの eth0 デバイスの MAC アドレス | 1.0 |
+| placement/region | インスタンスが属するリージョンの情報 | 2017年9月19日更新 |
+| placement/zone | インスタンスが属するアベイラビリティーゾーンの情報 | 2017年9月19日更新 |
 | network/interfaces/macs/**${mac}**/mac | インスタンスのネットワークインターフェースのMACアドレス | 1.0 |
 | network/interfaces/macs/**${mac}**/primary-local-ipv4 | インスタンスのネットワークインターフェースのプライマリプライベートIPアドレス | 1.0 |
 | network/interfaces/macs/**${mac}**/public-ipv4s | インスタンスのネットワークインターフェースのパブリックIPアドレス | 1.0 |
@@ -29,22 +29,26 @@ Tencent Cloudは現在、次のメタデータを提供しています。
 | payment/charge-type | インスタンスの課金方法 | 2017年9月19日更新 |
 | payment/create-time | インスタンスの作成時間 | 2017年9月19日更新|
 | payment/termination-time | インスタンスの終了時間 | 2017年9月19日更新|
-| app-id | インスタンスが属するユーザーAppId| 2017年9月19日更新|
+| app-id | インスタンス所有者のAppID| 2017年9月19日更新|
 | as-group-id | インスタンスが属するAuto ScalingグループID| 2017年9月19日更新|
 | spot/termination-time | スポットインスタンスの終了時間 | 2017年9月19日更新|
 | /meta-data/instance/instance-type | インスタンス仕様 | 2017年9月19日更新|
 | /instance/image-id | インスタンスイメージID | 2017年9月19日更新 |
-| /instance/security-group | インスタンスにバインドされているセキュリティグループの情報 | 2017年9月19日更新|
+| /instance/security-group | インスタンスを関連付けるセキュリティグループの情報 | 2017年9月19日更新|
+| /instance/bandwidth-limit-egress | インスタンスのプライベートネットワークのアウトバウンド帯域幅制限(Kbit/s) | 2019年9月29日更新|
+| /instance/bandwidth-limit-ingress | インスタンスのプライベートネットワークのインバウンド帯域幅制限 (Kbit/s) | 2019年9月29日更新|
+| /cam/security-credentials/${role-name} | インスタンスのCAMロールポリシーによって生成される一時的な認証情報。インスタンスが CAMロールに関連付けられている場合にのみ一時的な認証情報を取得できます。そのうち、${role-name} パラメータを実際のCAMロール名に置き換える必要があります。それ以外の場合は、404エラーが返されます。| 2019年12月11日更新|
 
 
->?  上記テーブルにおける`${mac}` および `${local-ipv4}`フィールドはそれぞれ指定されたネットワークインターフェースのMACアドレスとプライベートIPアドレスを表します。
+
+>?  上記テーブルにおける${mac}および${local-ipv4}フィールドはそれぞれインスタンスに指定されたネットワークインターフェースのMACアドレスとプライベートIPアドレスを表します。
 > 
-> リクエストするターゲットURLアドレスは、大文字と小文字を区別する必要があります。返されたリクエストの結果に従って、新しいリクエストのターゲットURLアドレスを作成する必要があります。
+> リクエストの宛先 URL アドレスは、大文字と小文字を区別する必要があります。返されたリクエストの結果に従って、新しいリクエストの宛先 URL アドレスを作成する必要があります。
 >
 > 返された配置データは、新しいバージョンで変更されています。以前のバージョンのデータを使用する必要がある場合、以前のバージョンのパスを指定するか、バージョンのパスを指定しないことによりバージョン1.0のデータにアクセスすることができます。返された配置データの詳細については、[リージョンとアベイラビリティーゾーン](https://intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
 
-## インスタンスメタデータのクエリー
-インスタンス内部でインスタンスメタデータを介してインスタンスのローカルIP、パブリックIPアドレスなどのデータにアクセスし、外部アプリケーションとの接続を管理できます。
+## インスタンスメタデータのクエリ
+インスタンスにログインすると、インスタンスのローカルIPアドレスやパブリックIPアドレスなどのメタデータにアクセスして、外部アプリケーションとの接続を管理できます。
 実行中のインスタンス内部からすべてのカテゴリーのインスタンスメタデータを確認するには、次のURIを使用してください。
 
 ```
@@ -58,10 +62,10 @@ curl http://metadata.tencentyun.com/latest/meta-data/
 * リソースが存在しない場合、HTTPエラーコード「404 Not Found」が返されます。
 * インスタンスメタデータに対する操作はいずれも**インスタンス内部**からのみ行うことができます。最初にインスタンスにログインする必要があります。インスタンスへのログインに関する詳細な内容は、[Windowsインスタンスへのログイン](https://intl.cloud.tencent.com/document/product/213/5435)および[Linuxインスタンスへのログイン](https://intl.cloud.tencent.com/document/product/213/5436)をご参照ください。
 
-### メタデータのクエリー例
+### メタデータクエリ例
 
 以下の例では、メタデータのバージョン情報を取得する方法を説明します。
->! Tencent Cloudがメタデータのアクセスパスまたは返されたデータを変更する時、新しいメタデータのバージョンをリリースします。お客様のアプリケーションプログラムまたはスクリプトが以前のバージョンの構造または返されたデータに依存している場合、指定された初期のバージョンを使用してメタデータにアクセスできます。バージョンを指定しない場合、デフォルトでバージョン1.0が使用されます。
+>! Tencent Cloudがメタデータのアクセスパスまたは返されたデータを変更する時、新しいメタデータのバージョンをリリースします。お客様のアプリケーションプログラムまたはスクリプトが以前のバージョンの構造または返されたデータに依存している場合、指定された初期のバージョンを使用してメタデータにアクセスできます。バージョンを指定しない場合、デフォルトでバージョン1.0がアクセスされます。
 >
 
 ```shell
@@ -96,7 +100,7 @@ ap-guangzhou
 ap-guangzhou-3
 ```
 
-以下の例では、インスタンスのプライベートIPアドレスを取得する方法を説明します。インスタンスに複数のENIが存在する場合、eth0デバイスのネットワークアドレスが返されます。
+以下の例では、インスタンスのプライベートIPアドレスを取得する方法を説明します。インスタンスに複数のENIがある場合、eth0デバイスのネットワークアドレスが返されます。
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/local-ipv4
@@ -124,7 +128,7 @@ ins-3g445roi
 cfac763a-7094-446b-a8a9-b995e638471a
 ```
 
-以下の例では、インスタンスeth0デバイスのmacアドレスを取得する方法を説明します。
+以下の例では、インスタンスのeth0デバイスのMACアドレスを取得する方法を説明します。
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/mac
@@ -180,14 +184,14 @@ public-ipv4-mode
 subnet-mask
 ```
 
-以下の例では、プライベートIPアドレスのゲートウェイを取得する方法を説明します。VPCモデルのみがこのデータをクエリーできます。詳細については、[Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215)をご参照ください。
+以下の例では、プライベートIPアドレスのゲートウェイを取得する方法を説明します。VPCモデルのみがこのデータをクエリできます。詳細については、[Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215)をご参照ください。
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/network/interfaces/macs/52:54:00:BF:B3:51/local-ipv4s/10.104.13.59/gateway
 10.15.1.1
 ```
 
-以下の例では、プライベートIPアドレスがパブリックネットワークにアクセスするために使用するアクセスモードを取得する方法を説明します。VPCモデルのみがこのデータをクエリーできます。クラシックネットワークCVMインスタンスは、パブリックネットワークゲートウェイを介してパブリックネットワークにアクセスします。　　
+以下の例では、プライベートIPアドレスがパブリックネットワークにアクセスするために使用するアクセスモードを取得する方法を説明します。VPCモデルのみがこのデータをクエリできます。クラシックネットワークタイプの CVMインスタンスは、パブリックネットワークゲートウェイを介してパブリックネットワークにアクセスします。　　
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/network/interfaces/macs/52:54:00:BF:B3:51/local-ipv4s/10.104.13.59/public-ipv4-mode
@@ -208,7 +212,7 @@ NAT
 255.255.192.0
 ```
 
-以下の例では、インスタンスの課金タイプを取得する方法を説明します。
+以下の例では、インスタンスの課金方法を取得する方法を説明します。
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/payment/charge-type
@@ -242,12 +246,24 @@ POSTPAID_BY_HOUR
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/app-id
 123456789
 ```
+以下の例では、インスタンスが属するCAMロールによって生成された一時的な認証情報を取得する方法を説明します。CVMasはロール名です。
+```shell
+[qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/cam/security-credentials/CVMas
+{
+  "TmpSecretId": "AKIDoQMxF8OPg0gA7pyZIA6cW447p225cIt9NW8dhA1dwl5UvxxxxxxxxxUqRlEb5_",
+  "TmpSecretKey": "Q9z24VucjF4xQQNV64qwF6uWY71PEsH3exxxxxxxxxgA=",
+  "ExpiredTime": 1615590047,
+  "Expiration": "2021-03-12T23:00:47Z",
+  "Token": "xxxxxxxxxxx",
+  "Code": "Success"
+}
+```
 
-## インスタンスユーザーデータのクエリー
-インスタンスを作成する時にインスタンスのユーザーデータを指定することができ、cloud-initを設定した後のCVMインスタンスはこのデータにアクセスできます。
+## インスタンスユーザーデータのクエリ
+インスタンスの作成時にインスタンスユーザーデータを指定できます。 cloud-init が設定されたCVMインスタンスはこのデータにアクセスできます。
 
 ### ユーザーデータの検索
-ユーザーはCVM内部で以下の方式によりユーザーデータにアクセスできます。
+ログイン後、以下の方法でユーザーデータにアクセスできます。
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/user-data
