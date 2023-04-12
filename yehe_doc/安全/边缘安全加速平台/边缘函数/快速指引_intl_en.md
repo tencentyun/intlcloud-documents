@@ -62,7 +62,7 @@ To check whether the function can work as expected, you can initiate a request i
 
 - **Verification by using Curl**
 
-![](https://qcloudimg.tencent-cloud.cn/raw/0d4057ab567b9b5cbe207843bc3da91f.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/a4afb0f5640685994035e53a1e9483e1.png)
 
 ## (Optional) Step 4: Editing the Edge Function
 1. If the deployed function does not meet your expectations, go to the [Edge function](https://console.cloud.tencent.com/edgeone/edgefunctions) page, find the function, and then click **Details**.
