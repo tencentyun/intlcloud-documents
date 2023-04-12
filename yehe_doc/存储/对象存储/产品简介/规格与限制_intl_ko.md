@@ -119,7 +119,7 @@
     		</tr>         
     		<tr>
     			<td colspan="2">SDK 종류</td>
-    			<td >12가지: Android, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, 미니프로그램 SDK</td>
+    			<td >14가지: Android, C, C++, .NET, Flutter, Go, iOS, Java, JavaScript, Node.js, PHP, Python, React Native, 미니프로그램 SDK</td>
     		</tr>        
     		<tr>
     			<td colspan="2">API 예약 필드</td>
