@@ -4,7 +4,7 @@ This project feature is used to manage cloud resources by project. When a CVM in
 
 
 <dx-alert infotype="notice" title="">
-To assign an instance to a new project, create a project first.
+To assign an instance to a new project, create a project first.For more information on how to create a project, refer to [New Project](https://intl.cloud.tencent.com/document/product/378/34726).
 </dx-alert>
 
 
