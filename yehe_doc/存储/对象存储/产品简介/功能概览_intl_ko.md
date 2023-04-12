@@ -168,10 +168,6 @@ Cloud Object Storage(COS)는 주로 다음과 같은 기능을 제공합니다.
       <th>설명</td>
    </tr>
    <tr>
-      <td>모니터링 및 알람</td>
-      <td>COS의 읽기/쓰기 요청량, 트래픽 등의 데이터는 <a href="https://www.tencentcloud.com/document/product/248">Cloud Monitor</a>를 기반으로 통계 및 표시합니다. 클라우드 모니터 <a href="https://console.cloud.tencent.com/monitor/product/COS">콘솔</a>에서 COS의 읽기/쓰기 요청량, 트래픽 등 자세한 모니터링 데이터를 확인할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/31649">모니터링 및 알람</a>을 참고하십시오.</td>
-   </tr>
-   <tr>
       <td>데이터 조회 개요</td>
       <td>COS는 저장 데이터에 대한 모니터링 능력을 제공하며, 데이터 모니터링 창에서 시간대별로 스토리지 유형에 따른 데이터 양과 추세를 확인할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/36542">데이터 개요 조회</a> 및 <a href="https://intl.cloud.tencent.com/document/product/436/31634">데이터 모니터링 조회</a>를 참고하십시오.</td>
    </tr>
