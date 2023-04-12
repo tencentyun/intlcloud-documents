@@ -33,8 +33,8 @@ static std::string Sign(const std::string& secret_id,
 | secret_key      | Key owned by the developer to verify identity for the project  |String                   |
 | http_method | HTTP method, such as POST, GET, HEAD, and PUT; case-insensitive | String |
 | in_uri      | HTTP uri                                              | String                   |
-| headers     | HTTP header key-value pair                  | map<string,string> |
-| params      | HTTP params key-value pair                 | map<string,string> |
+| headers     | HTTP header key-value pair                  | map&lt;string,string&gt; |
+| params      | HTTP params key-value pair                 | map&lt;string,string&gt; |
 
 #### Response description
 
@@ -61,8 +61,8 @@ static std::string Sign(const std::string& secret_id,
 | secret_key      | Key owned by the developer to verify identity for the project  | String                    |
 | http_method     | HTTP method, such as POST, GET, HEAD, and PUT; case-insensitive | String    |
 | in_uri          | HTTP uri                                             | String                    |
-| headers         | HTTP header key-value pair                    | map<string,string> |
-| params          | HTTP params key-value pair                    | map<string,string> |
+| headers         | HTTP header key-value pair                    | map &lt;string,string&gt;  |
+| params          | HTTP params key-value pair                    | map &lt;string,string&gt; |
 | start_time_in_s | Start time of the signature                | uint64_t                  |
 | end_time_in_s   | End time of the signature                | uint64_t                  |
 
@@ -107,6 +107,7 @@ std::string bucket_name = "examplebucket-1250000000";
 std::string object_name = "exampleobject";
 
 // Add the bucket name, object key, and HTTP request method.
+// Note: users do not need to encode object_name.
 qcloud_cos::GeneratePresignedUrlReq req(bucket_name, object_name, qcloud_cos::HTTP_GET);
 std::string presigned_url = cos.GeneratePresignedUrl(req); 
 
