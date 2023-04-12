@@ -1,66 +1,59 @@
-## 概要
+## ユースケース
 
-このドキュメントでは、Linux、Mac OSまたはWindowsシステムのローカルPCでSSHキーを利用してLinuxインスタンスにログインする方法について説明します。
+このドキュメントでは、Linux、Mac OS、または WindowsシステムのローカルPCでSSHを利用してLinuxインスタンスにログインする方法について説明します。
 
-## サポートされるシステム
+##  対応OS
 
-Linux、Mac OSまたはWindows（Windows 10およびWindows Server 2019）
+Linux、Mac OS または Windows (Windows 10 および Windows Server 2019 を含む)
 
 ## 認証方式
 
 **パスワード**または**キー**です。
 
 ## 前提条件
-- インスタンスにログインするための管理者アカウント及びパスワード(またはキー)を取得しました。
- - システムのデフォルトパスワードを利用して、インスタンスにログインする場合は、[サイト内メール](https://console.cloud.tencent.com/message) にアクセスしてパスワードを取得してください。
- - [キーを使用してログインする](#LoginWithKey) 場合、キーを作成してこのCVMにバインドする必要があります。詳細の操作については、[SSHキー](https://intl.cloud.tencent.com/document/product/213/16691)をご参照ください。
- - パスワードを忘れた場合、[インスタンスパスワードのリセット](https://intl.cloud.tencent.com/document/product/213/16566)を行ってください。
-- ご利用のCVMインスタンスはすでにパブリックIPを購入されており、このインスタンスは22ポート（クイック設定で購入したCVMインスタンスの場合、デフォルトでポートを開放）を開放しました。
+- インスタンスにログインするための管理者アカウントとパスワード (またはキー)を取得しました。
+ - Linux インスタンスの管理者アカウントは通常、デフォルトでは `root`にし、Ubuntuシステムのデフォルトでは`ubuntu`にすること。実際の状況に合わせて変更できます。
+ - システムのデフォルトパスワードを利用してインスタンスにログインする場合は、[サイト内メール](https://console.cloud.tencent.com/message)に移動してパスワードを取得してください。
+ - キーを使用してログインする場合は、キーを作成してこのCVMインスタンスに関連付ける必要があります。さらに詳細な操作については、[SSHキー](http://intl.cloud.tencent.com/document/product/213/16691)をご参照ください。
+ - パスワードを忘れた場合は、[インスタンスのパスワードをリセット](http://intl.cloud.tencent.com/document/product/213/16566)してください。
+- CVMインスタンスはすでにパブリックIPを購入されており、このインスタンスは22番ポート(クイック設定で購入したCVMインスタンスの場合、デフォルトで開放している）を開放しました。
 
 ## 操作手順
 
 ### パスワードでログインする
 
 1. 次のコマンドを実行して、Linux CVMに接続します。
-> ローカルPCがMac OSの場合、最初にシステム付属の端末（Terminal）を起動して、次のコマンドを実行する必要があります。
-> ローカルPCがLinuxシステムの場合、次のコマンドを直接実行できます。
-> ローカルPCがWindows 10またはWindows Server 2019の場合、コマンドプロンプト（CMD）を起動して、次のコマンドを実行する必要があります。
->
+>? ローカルコンピューターが Mac OSを実行している場合は、次のコマンドを実行する前に、システム付属のターミナルを開く必要があります。
+> ローカルコンピューターが Linuxを実行している場合は、次のコマンドを直接実行できます。
+> ローカルコンピューターがWindows 10またはWindows Server 2019を実行している場合は、次のコマンドを実行する前に、コマンドプロンプト（CMD）を開く必要があります。
 ```
 ssh <username>@<hostname or IP address>
 ```
- - `username` は、前提条件で取得されたデフォルトアカウントです。
- - `hostname or IP address` はLinuxインスタンスのパブリックIPアドレス或いはカスタムドメイン名です。
-2. すでに取得しているパスワードを入力し、**Enter**キーを押してログインします。
+ - `username` は、前提条件で取得されたデフォルトのアカウントです。
+ - `hostname or IP address` は Linux インスタンスのパブリックIPアドレス或いはカスタムドメイン名です。
+2. 取得したパスワードを入力し、**Enter**キーを押してログインを完了します。
 
 <span id="LoginWithKey"></span>
 ### キーでログインする
 
-1. 次のコマンドを実行して、プライベートキーファイルに本人のみ読み取り権限を付与します。
- > ローカルPCがMac OSの場合、最初にシステム付属の端末（Terminal）を起動して、次のコマンドを実行する必要があります。
- > ローカルPCがLinuxシステムの場合、次のコマンドを直接実行できます。
+1. 次のコマンドを実行して、プライベートキーファイルに本人だけ読み取り権限を付与します。
+>? ローカルコンピューターが Mac OSを実行している場合は、次のコマンドを実行する前に、システム付属のターミナルを開く必要があります。
+> ローカルコンピューターが Linuxを実行している場合は、次のコマンドを直接実行できます。
+> 
 ```
-chmod 400 <The absolute path of the private key downloaded to be associated with the CVM>
+chmod 400 <ダウンロードしたCVMに関連するプライベートキーの絶対パス>
 ```
- > ローカルPCがWindows 10の場合、コマンドプロンプト（CMD）を起動して、次のコマンドを順次実行する必要があります。
+2. ローカルコンピューターがWindows 10を実行している場合は、次のコマンドを実行する前に、コマンドプロンプト（CMD）を開く必要があります。
 ```
-icacls <The absolute path of the private key downloaded to be associated with the CVM> /grant <ユーザー名>:F
+ssh -i <ダウンロードしたCVMに関連するプライベートキーの絶対パス> <username>@<hostname or IP address>
 ```
-```
-icacls <The absolute path of the private key downloaded to be associated with the CVM> /inheritancelevel:r
-```
-2. 次のコマンドを実行して、リモートログインします。
-```
-ssh -i <The absolute path of the private key downloaded to be associated with the CVM> <username>@<hostname or IP address>
-```
- - `username` は、前提条件で取得したデフォルトアカウントです。
- - `hostname or IP address` はLinuxインスタンスのパブリックIPアドレス或いはカスタムドメイン名です。
+ - `username` は、前提条件で取得したデフォルトのアカウントです。
+ - `hostname or IP address` は Linux インスタンスのパブリックIPアドレス或いはカスタムドメイン名です。
 
  例えば、 `ssh -i "Mac/Downloads/shawn_qcloud_stable" ubuntu@192.168.11.123` コマンドを実行して、Linux CVMにリモートログインします。
 
-## 後続の操作
-
-CVMにログインした後、個人のWebサイトまたはフォーラムを構築したり、その他の操作を実行したりできます。関連操作については、下記をご参照ください：　　
-- [WordPress Webサイトを構築する](https://intl.cloud.tencent.com/document/product/213/8044)
-
+## その後の操作
+CVMにログインした後、個人用Webサイトまたはフォーラムを構築したり、その他の操作を実行したりできます。詳細については、下記のドキュメントをご参照ください：　　
+- [WordPress 個人用サイトを構築する](https://intl.cloud.tencent.com/document/product/213/8044)
+- [Discuz!フォーラムを手動で構築する](https://intl.cloud.tencent.com/document/product/213/8043)
 
