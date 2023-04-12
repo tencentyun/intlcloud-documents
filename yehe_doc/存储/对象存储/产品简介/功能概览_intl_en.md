@@ -160,16 +160,12 @@ COS offers the following features:
    </tr>
 </table>
 
-## Data Monitoring
+## Data Monitoring and alarms
 
 <table>
    <tr>
       <th style="width: 18%;">Feature</td>
       <th>Description</td>
-   </tr>
-   <tr>
-      <td>Monitoring and alarms</td>
-      <td>COS data such as read/write requests and traffic are collected and displayed on the <a href="https://www.tencentcloud.com/document/product/248">Cloud Monitor</a>. You can view COS monitoring details on the Cloud Monitor <a href="https://console.cloud.tencent.com/monitor/product/COS">console</a>. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/31649">Monitoring and Alarming.</a></td>
    </tr>
    <tr>
       <td>Dashboard</td>
@@ -281,4 +277,5 @@ COS offers the following features:
       <td>COS supports HTTP 1.0, HTTP 1.1, and QUIC transfer protocols. It also supports TLS 1.0, TLS 1.1, and TLS 1.2 encryption protocols. To try the QUIC protocol, <a href="https://intl.cloud.tencent.com/contact-sales">contact us</a> to add your account to the allowlist.</td>
    </tr>
 </table>
+
 
