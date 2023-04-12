@@ -119,7 +119,7 @@
     		</tr>         
     		<tr>
     			<td colspan="2">SDKs</td>
-    			<td >12 SDKs: Android, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, WeChat Mini Program.</td>
+    			<td >14 SDKs: Android, C, C++, .NET, Flutter, Go, iOS, Java, JavaScript, Node.js, PHP, Python, React Native, WeChat Mini Program.</td>
     		</tr>        
     		<tr>
     			<td colspan="2">API reserved fields</td>
