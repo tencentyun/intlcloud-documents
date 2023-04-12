@@ -111,7 +111,7 @@
     		</tr>
     		<tr>
     			<td >存储类型转化</td>
-    			<td >标准转低频：最小1天。<br>标准/低频转归档或深度归档：最小1天。<br>注意：<br>1. 标准存储（多 AZ）和低频存储（多 AZ）暂不支持沉降为低频存储、归档存储和深度归档存储类型。<br>2. 生命周期不会对小于64KB的对象执行转换操作。</td>
+    			<td >标准转低频：最小1天。<br>标准/低频转归档或深度归档：最小1天。<br>注意：<br>1. 标准存储（多 AZ）和低频存储（多 AZ）暂不支持沉降为低频存储、归档存储和深度归档存储类型。<br>2. 对于小于64KB的对象不会执行生命周期沉降操作。</td>
     		</tr>
     		 <tr>
     			<td >过期删除</td>
@@ -119,7 +119,7 @@
     		</tr>         
     		<tr>
     			<td colspan="2">SDK 种类</td>
-    			<td >12种：Android、C、C++、.NET、Go、iOS、Java、JavaScript、Node.js、PHP、Python、小程序 SDK。</td>
+    			<td >14种：Android、C、C++、.NET、Flutter、Go、iOS、Java、JavaScript、Node.js、PHP、Python、React Native、小程序 SDK。</td>
     		</tr>        
     		<tr>
     			<td colspan="2">API 保留字段</td>
