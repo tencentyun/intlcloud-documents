@@ -16,9 +16,9 @@ Windows, Linux, or macOS
 Hadoop-2.6.0 or later
 
 >?
-- Hadoop-COS has been integrated in Apache Hadoop-3.3.0. For details, click [here](https://hadoop.apache.org/docs/r3.3.0/hadoop-cos/cloud-storage/index.html).
-- If your version is earlier than Apache Hadoop-3.3.0, or the CDH has integrated the Hadoop-COS JAR package, you need to restart NodeManager to load the JAR package.
--  To build a JAR package of a specified Hadoop version, modify `hadoop.version` in the pom file.
+>- Hadoop-COS has been integrated in Apache Hadoop-3.3.0. For details, click [here](https://hadoop.apache.org/docs/r3.3.0/hadoop-cos/cloud-storage/index.html).
+>- If your version is earlier than Apache Hadoop-3.3.0, or the CDH has integrated the Hadoop-COS JAR package, you need to restart NodeManager to load the JAR package.
+>- To build a JAR package of a specified Hadoop version, modify `hadoop.version` in the pom file.
 
 
 
