@@ -33,10 +33,11 @@ static std::string Sign(const std::string& secret_id,
 | secret_key  | 开发者拥有的项目身份密钥                              | String                   |
 | http_method | HTTP 方法，如 POST/GET/HEAD/PUT 等， 传入大小写不敏感 | String                   |
 | in_uri      | HTTP uri                                              | String                   |
-| headers     | HTTP header 的键值对                                  | map <string,string>|
-| params      | HTTP params 的键值对                                  | map <string,string> |
+| headers     | HTTP header 的键值对                                  | map&lt;string,string&gt; |
+| params      | HTTP params 的键值对                                  | map&lt;string,string&gt; |
 
 #### 返回结果说明
+
 
 返回签名字符串，可以在指定的有效期内（通过 CosSysConfig 设置，默认60s）使用，返回空串表示计算签名失败。
 
@@ -61,12 +62,13 @@ static std::string Sign(const std::string& secret_id,
 | secret_key      | 开发者拥有的项目身份密钥                             | String                    |
 | http_method     | HTTP 方法，如 POST/GET/HEAD/PUT 等，传入大小写不敏感 | String                    |
 | in_uri          | HTTP uri                                             | String                    |
-| headers         | HTTP header 的键值对                                 | map <string,string> |
-| params          | HTTP params 的键值对                                 | map <string,string>|
+| headers         | HTTP header 的键值对                                 | map &lt;string,string&gt; |
+| params          | HTTP params 的键值对                                 | map &lt;string,string&gt; |
 | start_time_in_s | 签名生效的开始时间                                   | uint64_t                  |
 | end_time_in_s   | 签名生效的截止时间                                   | uint64_t                  |
 
 #### 返回结果说明
+
 
 返回签名字符串，可以在指定的有效期内（通过 CosSysConfig 设置，默认60s）使用，返回空串表示计算签名失败。
 
