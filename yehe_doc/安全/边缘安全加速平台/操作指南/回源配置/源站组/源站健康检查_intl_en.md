@@ -20,7 +20,7 @@ A health check task can be created to monitor the availability and health of an 
 <tbody><tr>
 <td colspan=2>Select origin group</td>
 <td>Select one or more origin groups.</td>
-<td><ul><li>The origin groups that you select must be used in <a href="https://intl.cloud.tencent.com/document/product/1145/46353">domain service</a>, i.e., these origin groups are bound to <a href="https://intl.cloud.tencent.com/document/product/1145/46193">load balancing tasks</a>.</li><li>For multiple origin groups bound to the same domain name, associate them with the same health check task.</li><li><7><a href="https://intl.cloud.tencent.com/document/product/1145/46194">L4 proxied</a> origin groups are not supported currently.</li></td>
+<td><ul><li>The origin groups that you select must be used in <a href="https://intl.cloud.tencent.com/document/product/1145/46353">domain service</a>, i.e., these origin groups are bound to <a href="https://intl.cloud.tencent.com/document/product/1145/46193">load balancing tasks</a>.</li><li>For multiple origin groups bound to the same domain name, associate them with the same health check task.</li><li><a href="https://intl.cloud.tencent.com/document/product/1145/46194">L4 proxied</a> origin groups are not supported currently.</li></td>
 </tr>
 <tr>
 <td rowspan=11>Configure health check task</td>
