@@ -119,7 +119,7 @@
     		</tr>         
     		<tr>
     			<td colspan="2">SDKの種類</td>
-    			<td >12種類：Android、C、C++、.NET、Go、iOS、Java、JavaScript、Node.js、PHP、Python、ミニプログラムSDK。</td>
+    			<td >14種類：Android、C、C++、.NET、Flutter、Go、iOS、Java、JavaScript、Node.js、PHP、Python、React Native、ミニプログラムSDK。</td>
     		</tr>        
     		<tr>
     			<td colspan="2">API予約フィールド</td>
