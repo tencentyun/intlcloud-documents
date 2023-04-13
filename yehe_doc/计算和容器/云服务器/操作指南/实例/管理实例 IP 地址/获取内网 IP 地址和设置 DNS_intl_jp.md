@@ -47,7 +47,7 @@ nameserver 10.53.216.182
 nameserver 10.53.216.198
 options timeout:1 rotate
 ```
-4. ** Esc**キー を押して、**:wq**を入力し、ファイルを保存して戻ります。
+4. **Esc**キー を押して、 **:wq** を入力し、ファイルを保存して戻ります。
 :::
 ::: Windows\sシステム
 1. Windows CVMにログインします。
