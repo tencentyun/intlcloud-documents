@@ -7,6 +7,7 @@ width: 200px;
 }
 </style>
 
+
 | 工具 | 功能说明 |
 |---------|---------|
 | [COSBrowser 工具](https://intl.cloud.tencent.com/document/product/436/11366) | 本工具支持用户通过可视化界面，方便地进行数据的上传、下载、生成访问链接等操作。 |
@@ -16,11 +17,109 @@ width: 200px;
 |[FTP Server 工具](/doc/product/436/7214)|本工具支持用户使用 FTP 客户端从 COS 上传、下载文件。|
 |[COSFS 工具](/doc/product/436/6883)| 在 Linux 系统中，使用本工具可以把存储桶挂载到本地文件系统中，通过本地文件系统操作 COS 上的对象。|
 |[Hadoop 工具](/doc/product/436/6884)|Hadoop 工具可以为 Hadoop、Spark 以及 Tez 等大数据计算框架集成 COS 提供支持，便于读写存储在 COS 上的数据。|
-| [COSDistcp 工具](https://intl.cloud.tencent.com/document/product/436/38863)  |  COSDistcp 是一款基于 MapReduce 的分布式文件拷贝工具，主要用于 HDFS 和 COS 之间的数据拷贝。|
+| [COSDistCp 工具](https://intl.cloud.tencent.com/document/product/436/38863)  |  COSDistCp 是一款基于 MapReduce 的分布式文件拷贝工具，主要用于 HDFS 和 COS 之间的数据拷贝。|
 |[Hadoop-cos-DistChecker 工具](https://intl.cloud.tencent.com/document/product/436/34687)     |  Hadoop-cos-DistChecker 是一个在使用 hadoop distcp 命令从 HDFS 迁移数据到 COS 上后，用于校验迁移目录完整性的工具。 |
 | [HDFS TO COS 工具](/doc/product/436/7212) |本工具用于将 HDFS 上的数据拷贝到 COS 上。|
 | [自助诊断工具](https://intl.cloud.tencent.com/document/product/436/41623)  |   自助诊断工具是腾讯云对象存储为用户提供的 Web 工具，可用于错误请求的自助诊断排查。   |
 
 
 
- 如果您有其他工具需求，欢迎提交工具需求，我们会及时评估您的需求，谢谢！
+## 上传能力
+
+各工具对于上传能力的支持情况如下表所示：
+
+<table>
+        <tr>
+                <th width="22%">工具</th>
+                <th width="5%">简单上传</td>
+								<th width="5%">分块上传</th>
+								<th width="20%">断点上传</th>
+								<th width="15%">高级上传</th>
+								<th width="15%">一致性校验</th>
+								<th width="12%">生成预签名 URL</th>
+        </tr>
+        <tr>
+                <td>COSBrowser 工具</td>
+                <td>支持</td>
+								<td>支持</td>
+								<td>支持</td>
+								<td>支持，默认8MB触发分块上传</td>
+								<td>支持 md5 校验</td>
+								<td>支持文件下载</td>
+        </tr>
+        <tr>
+                <td>COSCLI 工具</td>
+                <td>支持</td>
+								<td>支持</td>
+								<td>支持</td>
+								<td>支持，可自定分块触发阈值</td>
+								<td>支持 crc64 校验</td>
+								<td>支持</td>
+        </tr>
+        <tr>
+                <td>COSCMD 工具</td>
+                <td>支持</td>
+								<td>支持</td>
+								<td>支持</td>
+								<td>支持，默认10MB触发分块上传</td>
+								<td>支持 md5 校验</td>
+								<td>支持</td>
+        </tr>
+        <tr>
+                <td>COS Migration 工具</td>
+                <td>支持</td>
+								<td>支持</td>
+								<td>支持</td>
+								<td>支持，可自定分块触发阈值</td>
+								<td>支持 md5 校验</td>
+								<td>不适用</td>
+        </tr>
+        <tr>
+                <td>FTP Server 工具</td>
+                <td>支持</td>
+								<td>支持</td>
+								<td>支持</td>
+								<td>支持，可自定分块触发阈值</td>
+								<td>不支持</td>
+								<td>不适用</td>
+        </tr>
+        <tr>
+                <td>COSFS 工具</td>
+                <td>支持</td>
+								<td>支持</td>
+								<td>支持</td>
+								<td>支持，可自定分块触发阈值</td>
+								<td>支持 md5 校验</td>
+								<td>不适用</td>
+        </tr>
+        <tr>
+                <td>Hadoop 工具</td>
+                <td>支持</td>
+								<td>支持</td>
+								<td>不支持，HDFS 协议冲突</td>
+								<td>支持，可自定分块触发阈值</td>
+								<td>支持 crc64、crc32 校验</td>
+								<td>不适用</td>
+        </tr>
+        <tr>
+                <td>COSDistCp 工具</td>
+                <td>支持</td>
+								<td>支持</td>
+								<td>不支持，HDFS 协议冲突</td>
+								<td>支持，可自定分块触发阈值</td>
+								<td>支持文件大小、crc64、crc32 校验</td>
+								<td>不适用</td>
+        </tr>
+        <tr>
+                <td>HDFS TO COS 工具</td>
+                <td>支持</td>
+								<td>支持</td>
+								<td>不支持，HDFS 协议冲突</td>
+								<td>支持，可自定分块触发阈值</td>
+								<td>支持文件名称和大小校验</td>
+								<td>不适用</td>
+        </tr>
+</table>
+
+> ? 高级上传对简单上传和分块上传进行封装，支持根据文件大小选择上传方式。
+

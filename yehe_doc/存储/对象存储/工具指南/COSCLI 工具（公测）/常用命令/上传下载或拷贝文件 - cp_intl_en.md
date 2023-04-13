@@ -7,10 +7,13 @@ The `cp` command is used to upload, download, or copy objects.
 ./coscli cp <source_path> <destination_path> [flags]
 ```
 
->? 
->- For more information on `bucketAlias`, see [Download and Installation Configuration](https://intl.cloud.tencent.com/document/product/436/43265).
->- For other common options of this command (such as switching bucket and user account), see [Common Options](https://intl.cloud.tencent.com/document/product/436/46273).
->
+`cp` includes the following parameters:
+
+
+| Parameter Format | Description | Example |
+| --------- | ------------- | ------------------------ |
+| source_path | Source file path, which can be a local path or a COS file path. The COS path is accessible by using the bucket alias or bucket name configured in the configuration file as detailed in [Download and Installation Configuration](https://intl.cloud.tencent.com/document/product/436/43265). If you use the bucket name for access, you also need to include the `endpoint` flag. | Local path: ~/example.txt <br>COS file path specified with the bucket alias: cos://bucketalias/example.txt <br>COS file path specified with the bucket name: cos://examplebucket-1250000000/example.txt |
+| destination_path | Destination file path, which can be a local path or a COS file path. The COS path is accessible by using the bucket alias or bucket name configured in the configuration file as detailed in [Download and Installation Configuration](https://intl.cloud.tencent.com/document/product/436/43265). If you use the bucket name for access, you also need to include the `endpoint` flag. | Local path: ~/example.txt <br>COS file path specified with the bucket alias: cos://bucketalias/example.txt <br>COS file path specified with the bucket name: cos://examplebucket-1250000000/example.txt |
 
 `cp` includes the following optional flags:
 
@@ -18,8 +21,8 @@ The `cp` command is used to upload, download, or copy objects.
 | --------- | --------------- | ------------------------------------ |
 |  None  | --include   | Includes specific objects.  |
 |  None  | --exclude   | Excludes specific objects.    |
-| -r        | --recursive | Specifies whether to traverse all objects in the directory recursively  |
-|   None  | --storage-class | Specifies the storage class for the object to upload. Default value: STANDARD |
+| -r        | --recursive | Specifies whether to traverse all objects in the directory recursively.  |
+|   None       | --storage-class | Specifies the storage class of the uploaded file. Default value: `STANDARD`. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). |
 |   None       | --part-size     | Part size in MB. Default value: 32 MB     |
 |   None       | --thread-num    | Number of concurrent threads. Default value: 5      |
 |   None       | --rate-limiting | Speed limit for a single URL in MB/s. Value range: 0.1–100 MB/s       |
@@ -36,8 +39,10 @@ The `cp` command is used to upload, download, or copy objects.
 ```plaintext
 ./coscli cp ~/test/ cos://bucket1/example/ -r --include ".*.txt" --meta=x-cos-meta-a:a#ContentType:text#Expires:2022-10-12T00:00:00.000Z
 ```
+> - For other common options of this command (such as switching bucket and user account), see [Common Options](https://intl.cloud.tencent.com/document/product/436/46273).
 
-## Samples
+
+## Examples
 
 ### Upload
 
