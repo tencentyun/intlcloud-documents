@@ -22,7 +22,7 @@ Windows
 <dx-tabs>
 ::: パスワードでログインする[](id:passwordLogin)
 1. リモートログオンクライアントソフト「PuTTY」をダウンロードします。
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" style="color: white; font-size:16px;">ダウンロードPuTTYをダウンロード</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" style="color: white; font-size:16px;">ダウンロード</a></div>
 2. **putty.exe**をダブルクリックして、PuTTYクライアントを開きます。
 3.  PuTTY Configuration ウィンドウで、次の内容を入力します。次の図に示すように：
 ![](https://main.qcloudimg.com/raw/7ac87da9721ef7d64fe8cac81a3dab33.png)
