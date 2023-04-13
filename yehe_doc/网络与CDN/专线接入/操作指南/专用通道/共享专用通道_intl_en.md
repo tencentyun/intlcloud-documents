@@ -7,9 +7,9 @@ A shared dedicated tunnel is a dedicated tunnel created using the partner's conn
 The procedure for enabling a shared dedicated tunnel is as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/1b2bc5e18ecb6cb7477e580a2204c3ba.jpg)
 
-## Preparation
-- You have obtained the connection instance ID for the shared dedicated tunnel and Tencent Cloud entity accounts' UINs of the connection provider from the supplier.
-- You have created a direct connect gateway as instructed in [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
+## Prerequisites
+- Obtain the connection instance ID for the shared dedicated tunnel and Tencent Cloud entity accounts' UINs of the connection provider from the supplier.
+- Create a direct connect gateway as instructed in [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
 
 
 ## Directions
@@ -19,8 +19,8 @@ The procedure for enabling a shared dedicated tunnel is as follows:
 ![]()
 <table>
 <tr>
-<th>Field</th>
-<th>Description</th>
+<th width="15%">Field</th>
+<th width="85%">Description</th>
 </tr>
 <tr>
 <td>Name</td>
@@ -59,8 +59,8 @@ The procedure for enabling a shared dedicated tunnel is as follows:
 ![]()
 <table>
 <tr>
-<th>Field</th>
-<th>Description</th>
+<th width="15%">Field</th>
+<th width="85%">Description</th>
 </tr>
 <tr>
 <td>VLAN ID</td>
@@ -71,15 +71,11 @@ The procedure for enabling a shared dedicated tunnel is as follows:
 <td>Specify the bandwidth cap of the dedicated tunnel, which cannot exceed the maximum bandwidth of the associated connection. If the billing mode is pay-as-you-go by monthly 95th percentile, this parameter does not mean the billable bandwidth.</td>
 </tr>
 <tr>
-<td>Shared tunnel specification</td>
-<td>Display the specification of the shared tunnel where the bandwidth you entered is located.</br>Valid values: 50 Mbps, 100 Mbps, 200 Mbps, 300 Mbps, 400 Mbps, 500 Mbps, 1 Gbps, 2 Gbps, 5 Gbps, 8 Gbps, 10 Gbps, 40 Gbps, 100 Gbps.</td>
-</tr>
-<tr>
-<td>Tencent Cloud Primary IP</td>
+<td>Tencent Cloud Primary IP1</td>
 <td>Enter the connection IP address on the Tencent Cloud side. Do not use the following IP ranges or IP addresses: 169.254.0.0/16, 127.0.0.0/8, 255.255.255.255, 224.0.0.0 - 239.255.255.255, 240.0.0.0 - 255.255.255.254.</td>
 </tr>
 <tr>
-<td>Tencent Cloud Secondary IP</td>
+<td>Tencent Cloud Primary IP2</td>
 <td>Enter the secondary IP address of the connection on the Tencent Cloud side. The secondary IP will be automatically used to ensure the normal operation of your business when the Tencent Cloud primary IP fails and becomes unavailable. This field is not supported when the mask of the secondary IP address is 30 or 31.</td>
 </tr>
 <tr>
@@ -92,7 +88,19 @@ The procedure for enabling a shared dedicated tunnel is as follows:
 </tr>
 <tr>
 <td>Health Check</td>
-<td>Enable the health check of the shared tunnel configuration. For details, see <a href="https://intl.cloud.tencent.com/document/product/216/46292">Dedicated tunnel health check</a>.</td>
+<td>Health check is enabled by default. BFD and NQA modes are provided. For details, see <a href="https://intl.cloud.tencent.com/document/product/216/46292">Dedicated tunnel health check</a>.</td>
+</tr>
+<tr>
+<td>Check mode</td>
+<td>BFD and NQA modes are provided</td>
+</tr>
+<tr>
+<td>Health Check Interval</td>
+<td>The interval between two health checks.</td>
+</tr>
+<tr>
+<td>Number of Failed Health Checks</td>
+<td>Switch the route after the configured consecutive failed health checks.</td>
 </tr>
 <tr>
 <td>BGP ASN</td>
@@ -100,15 +108,9 @@ The procedure for enabling a shared dedicated tunnel is as follows:
 </tr>
 <tr>
 <td>BGP Key</td>
-<td>Enter the MD5 value of the BGP neighbor, which defaults to "tencent". If it is left empty, no BGP key is required. It cannot contain 6 special characters including ?, &, space, ", \, and +.</td>
-</tr>
-<tr>
-<td>CPE IP Range</td>
-<td>Enter the IP ranges of your IDC, with one IP range per line.</br>
-If the new tunnel and existing tunnel are redundant, it is recommended to publish other IP ranges for "CPE IP Range", and complete test for new tunnel with the IDC devices. And then publish the final service IP range via "Change Tunnel", to prevent effects against traffic in running redundant tunnel.</td>
+<td>Enter the MD5 value of the BGP neighbor, which defaults to "tencent". If it is left empty, no BGP key is required. It does not support [?&"\+] and spaces.</td>
 </tr>
 </table>
-
 >?[](id:Breakup)If **Static** is selected as the routing mode, do not directly publish the following routes: `9.0.0.0/8, `10.0.0.0/8`, `11.0.0.0/8`, `30.0.0.0/8`, `100.64.0.0/10`, `131.87.0.0/16`, `172.16.0.0/12` and `192.168.0.0/16` when configuring IDC IP ranges. Instead, you need to first split them as follows.
 >- `9.0.0.0/8` is split into `9.0.0.0/9` + `9.128.0.0/9`.
 >- `10.0.0.0/8` is split into `10.0.0.0/9` + `10.128.0.0/9`.
@@ -119,7 +121,6 @@ If the new tunnel and existing tunnel are redundant, it is recommended to publis
 >- `172.16.0.0/12` is split into `172.16.0.0/13` + `172.24.0.0/13`.
 >- `192.168.0.0/16` is split into `192.168.0.0/17` + `192.168.128.0/17`.
 >
-
 4. Configure IDC devices. You can click **Download configuration guide** to download related files and complete the configurations as instructed in the guide.
 ![]()
 <table>
@@ -131,7 +132,7 @@ If the new tunnel and existing tunnel are redundant, it is recommended to publis
 <tr>
 <td>CPE IP Range</td>
 <td>Enter the customer IP range if <b>Static</b> is selected as the routing mode. This parameter cannot conflict with the VPC IP range in a non-NAT mode.</td>
-<td>You can update the IP range later via <b>Change Tunnel</b> on the console.</td>
+<td>You can update the IP range later via "Change Tunnel" in the console.</td>
 </tr>
 </table>
 5. Click **Submit**.
@@ -141,4 +142,4 @@ After being created, the shared dedicated tunnel is in **Pending accepted** stat
 
 ### Step 2: Set the alarm recipient
 After a dedicated tunnel is created, Tencent Cloud automatically configures four event alarms such as `DirectConnectTunnelDown`, `DirectConnectTunnelBFDDown`, `DirectConnectTunnelBGPSessionDown`, and `DirectConnectTunnelRouteTableOverload`, helping you monitor and manage your dedicated tunnels. For more information on the event alarms, see [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403).
-The automatically created default alarm policy is not configured with recipient information, and only supports console alarms. You can configure alarm recipients. For details, see [**Configuring Alarm Policies**](https://intl.cloud.tencent.com/document/product/216/38402).
+The automatically created default alarm policy is not configured with recipient information, and only supports console alarms. You can configure alarm recipients. For details, see [Configuring Alarm Policies](https://intl.cloud.tencent.com/ document/product/216/38402).
