@@ -111,7 +111,8 @@ The procedure for enabling a shared dedicated tunnel is as follows:
 <td>Enter the MD5 value of the BGP neighbor, which defaults to "tencent". If it is left empty, no BGP key is required. It does not support [?&"\+] and spaces.</td>
 </tr>
 </table>
->?[](id:Breakup)If **Static** is selected as the routing mode, do not directly publish the following routes: `9.0.0.0/8, `10.0.0.0/8`, `11.0.0.0/8`, `30.0.0.0/8`, `100.64.0.0/10`, `131.87.0.0/16`, `172.16.0.0/12` and `192.168.0.0/16` when configuring IDC IP ranges. Instead, you need to first split them as follows.
+
+>? [](id:Breakup)If **Static** is selected as the routing mode, do not directly publish the following routes: `9.0.0.0/8, `10.0.0.0/8`, `11.0.0.0/8`, `30.0.0.0/8`, `100.64.0.0/10`, `131.87.0.0/16`, `172.16.0.0/12` and `192.168.0.0/16` when configuring IDC IP ranges. Instead, you need to first split them as follows.
 >- `9.0.0.0/8` is split into `9.0.0.0/9` + `9.128.0.0/9`.
 >- `10.0.0.0/8` is split into `10.0.0.0/9` + `10.128.0.0/9`.
 >- `11.0.0.0/8` is split into `11.0.0.0/9` + `11.128.0.0/9`.
@@ -137,8 +138,6 @@ The procedure for enabling a shared dedicated tunnel is as follows:
 </table>
 5. Click **Submit**.
 After being created, the shared dedicated tunnel is in **Pending accepted** status. It will turn to be **Connected** after being approved by the connection provider.
-![]()
-![]()
 
 ### Step 2: Set the alarm recipient
 After a dedicated tunnel is created, Tencent Cloud automatically configures four event alarms such as `DirectConnectTunnelDown`, `DirectConnectTunnelBFDDown`, `DirectConnectTunnelBGPSessionDown`, and `DirectConnectTunnelRouteTableOverload`, helping you monitor and manage your dedicated tunnels. For more information on the event alarms, see [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403).
