@@ -59,7 +59,7 @@
 请检查是否已正确配置 IDC 网段并成功传递至腾讯云 VPC。若未正确配置 IDC 业务地址，或 IDC 网段未传递到腾讯云 VPC，则腾讯云 VPC 访问该 IDC 服务器时路由将不可达，导致业务访问不通。
 <dx-accordion>
 ::: 1.检查是否正确配置专用通道的\sIDC\s网段
-1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/conn)，在专用通道列表中单击目标专用通道 ID，在“高级配置”页签中查看【用户 IDC 网段】是否正确配置。
+1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/conn)，在专用通道列表中单击目标专用通道 ID，在“高级配置”页签中查看**用户 IDC 网段**是否正确配置。
 2. 若未正确配置 IDC 网段，请重新配置。具体操作请参见[ 申请专用通道](https://intl.cloud.tencent.com/document/product/216/19250)。
 :::
 ::: 2.检测是否正确配置路由表
