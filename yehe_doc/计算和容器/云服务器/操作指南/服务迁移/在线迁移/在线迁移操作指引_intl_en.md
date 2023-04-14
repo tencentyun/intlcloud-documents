@@ -80,7 +80,7 @@ wget https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2
 unzip go2tencentcloud.zip
 ```
 ```shellsession
-cd go2tencentcloud
+cd go2tencentcloud/go2tencentcloud-linux
 ```
 - Run the following commands in sequence to decompress `go2tencentcloud-linux.zip` and go to the directory.
 
@@ -110,7 +110,7 @@ If you see the following message, the source server is registered successfully. 
 :::
 
 ::: Windows source server
-1. [Download](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) and upload `go2tencentcloud.zip` to the source server. Decompress the file to the `go2tencentcloud` folder. Extract `go2tencentcloud-windows.zip` and decompress it. 
+1. [Download](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) and upload `go2tencentcloud.zip` to the source server. Decompress the file to the `go2tencentcloud` folder and open the `go2tencentcloud-windows`. 
 ![](https://qcloudimg.tencent-cloud.cn/raw/3f2c9881d9c5323a14d096d0811814cd.png)    
 2. Run `go2tencentcloud_x64.exe`
 	- Method 1: Right-click `go2tencentcloud_x64.exe` and run it as admin. Enter `SecretId` and `SecretKey` in the pop-up window.
@@ -256,7 +256,7 @@ You can skip this step if your task is scheduled, which will automatically start
 </dx-alert>
 After creating a migration task, you can click the <b>Migration Task</b> tab to view the task as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
-You can click <b>Start/Retry</b> on the right of the task to start it, click <b>OK</b> in the pop-up window, and the task status will become **Migrating** as shown below:
+You can click <b>Start/Retry</b> on the right of the task to start it, click <b>OK</b> in the pop-up window, and the task status will become <b>Migrating</b> as shown below:
 <img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
 <dx-alert infotype="notice" title="">
 - If the migration destination is a CVM, the destination CVM enters migration mode after the migration starts. Do not reinstall the system, shut down, terminate, or reset passwords of the destination CVM until the migration ends and the destination CVM exits the migration mode.
