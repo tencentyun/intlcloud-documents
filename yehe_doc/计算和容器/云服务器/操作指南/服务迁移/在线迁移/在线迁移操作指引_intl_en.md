@@ -82,14 +82,6 @@ unzip go2tencentcloud.zip
 ```shellsession
 cd go2tencentcloud/go2tencentcloud-linux
 ```
-- Run the following commands in sequence to decompress `go2tencentcloud-linux.zip` and go to the directory.
-
-```shellsession
-unzip go2tencentcloud-linux.zip
-```
-```shellsession
-cd go2tencentcloud-linux
-```
 <dx-alert infotype="explain" title="">
 The files in the `go2tencentcloud` directory will not be migrated. Do not place the files to be migrated in this directory.
 </dx-alert>
