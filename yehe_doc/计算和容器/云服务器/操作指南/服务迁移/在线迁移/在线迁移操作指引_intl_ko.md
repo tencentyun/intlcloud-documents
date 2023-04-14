@@ -118,7 +118,7 @@ sudo ./go2tencentcloud_x64
 :::
 
 ::: Windows 서버
-1. 마이그레이션 도구 go2tencentcloud.zip을 소스 호스트에 다운로드하거나 업로드하고 압축을 해제하여 go2tencentcloud 폴더를 얻고 go2tencentcloud-windows.zip을 추출하여 계속 압축을 해제하여 아래 이미지와 같은 디렉터리를 얻을 수 있습니다.
+1. 마이그레이션 도구 go2tencentcloud.zip를 다운로드하거나 업로드하고 소스 호스트로 추출하면 go2tencentcloud 폴더를 가져오고 "go2tencentcloud-windows.zip" 폴더를 열어 아래와 같이 디렉터리를 가져올 수 있습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3f2c9881d9c5323a14d096d0811814cd.png)    
 2. 다음과 같은 방법으로 go2tencentcloud_x64.exe 응용 프로그램을 실행합니다.
 	- 방법1: go2tencentcloud_x64.exe 응용 프로그램을 관리자 권한으로 우클릭하여 실행하고, 팝업창에 SecretId와 SecretKey를 입력합니다.
