@@ -82,14 +82,6 @@ unzip go2tencentcloud.zip
 ```shellsession
 cd go2tencentcloud/go2tencentcloud-linux
 ```
-- 依次执行以下命令，解压 go2tencentcloud-linux.zip 并进入目录。
-
-```shellsession
-unzip go2tencentcloud-linux.zip
-```
-```shellsession
-cd go2tencentcloud-linux
-```
 <dx-alert infotype="explain" title="">
 `go2tencentcloud` 目录下的文件将不会被迁移，请勿将需迁移的文件放置在该目录下。
 </dx-alert>
