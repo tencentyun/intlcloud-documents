@@ -91,13 +91,6 @@ unzip go2tencentcloud.zip
 ```shellsession
 cd go2tencentcloud/go2tencentcloud-linux
 ```
-   2. 다음 명령어를 순서대로 실행하여 go2tencentcloud-linux.zip의 압축을 풀고 디렉터리로 들어갑니다.
-```shellsession
-unzip go2tencentcloud-linux.zip
-```
-```shellsession
-cd go2tencentcloud-linux
-```
 <dx-alert infotype="explain" title="">
 `go2tencentcloud` 디렉터리에 있는 파일은 마이그레이션되지 않으므로 이 디렉터리에 마이그레이션할 파일을 두지 마십시오.
 </dx-alert>
