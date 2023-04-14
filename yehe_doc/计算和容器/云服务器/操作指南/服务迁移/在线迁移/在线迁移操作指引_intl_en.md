@@ -71,8 +71,7 @@ The online migration procedure is shown below:
 #### Register source server
 <dx-tabs>
 ::: Linux source server
-1. Download the migration tool on the source server.
-  - Run the following commands in sequence to [download](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) and decompress the migration tool `go2tencentcloud.zip` and go to the corresponding directory.
+1. Download the migration tool on the source server. Run the following commands in sequence to [download](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) and decompress the migration tool `go2tencentcloud.zip` and go to the corresponding directory.
 ```shellsession
 wget https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip
 ```
