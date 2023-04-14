@@ -63,7 +63,7 @@ After you learn about [CLS billable items](https://intl.cloud.tencent.com/docume
    </tr>
    <tr>
       <td>Asia Pacific</td>
-      <td  nowrap="nowrap">Singapore<br>Mumbai<br>Tokyo<br>Bangkok<br>Seoul</td>
+      <td  nowrap="nowrap">Singapore<br>Mumbai<br>Tokyo<br>Bangkok<br>Seoul<br>Jakarta</td>
       <td>0.032</td>
       <td>0.141</td>
       <td>0.032</td>
@@ -141,7 +141,7 @@ After you learn about [CLS billable items](https://intl.cloud.tencent.com/docume
    </tr>
     <tr>
       <td>Europe</td>
-      <td nowrap="nowrap">Frankfurt<br>Russia</td>
+      <td nowrap="nowrap">Frankfurt</td>
       <td>0.032</td>
       <td>0.141</td>
       <td>0.032</td>
