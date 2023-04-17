@@ -231,7 +231,7 @@ response = client.delete_objects(
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Delete  | Response method and target objects to delete  | Dict | Yes |
 | Objects | Information of each object to delete | List | Yes |
-| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String |
+| Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String |No |
 | VersionId | Version ID of the target object if versioning is enabled | String  | No |
 | Quiet | Response method. Valid values: `true`: returns only the failed results; `false` (default): returns all results. | String | No |
 
