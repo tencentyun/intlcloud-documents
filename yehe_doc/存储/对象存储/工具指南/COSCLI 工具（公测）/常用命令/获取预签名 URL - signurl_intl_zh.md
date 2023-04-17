@@ -11,7 +11,7 @@ signurl 命令包含以下参数：
 
 | 参数格式          | 参数用途       | 示例                 |
 | ----------------- | -------------- | -------------------- |
- cos://&lt;bucket-name&gt;/&lt;key&gt;  | 指定需要存储桶中的对象。支持使用 [配置参数](https://intl.cloud.tencent.com/document/product/436/43265) 中的桶别名，或桶名称进行访问。如使用桶名称访问，需要额外携带 `endpoint` flag。  |使用桶别名访问：cos://example-alias/test.txt<br>使用桶名称访问：cos://examplebucket-1250000000/test.txt  |
+|  cos://&lt;bucket-name&gt;/&lt;key&gt;  | 指定需要存储桶中的对象。支持使用 [配置参数](https://intl.cloud.tencent.com/document/product/436/43265) 中的桶别名，或桶名称进行访问。如使用桶名称访问，需要额外携带 `endpoint` flag。  |使用桶别名访问：cos://example-alias/test.txt<br>使用桶名称访问：cos://examplebucket-1250000000/test.txt  |
 
 
 signurl 命令包含以下可选 flag：
@@ -22,7 +22,6 @@ signurl 命令包含以下可选 flag：
 | -t        | --time        | 设置 URL 过期时间（默认1000s） |
 
 >? 关于此命令的其他通用选项（例如切换存储桶、切换用户账号等），请参见 [通用选项](https://intl.cloud.tencent.com/document/product/436/46273) 文档。
->
 
 ## 操作示例
 
