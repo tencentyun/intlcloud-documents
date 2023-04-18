@@ -19,6 +19,7 @@ Content-Length: <length>
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 > - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://www.tencentcloud.com/document/product/1045/49896) 文档。
+> - <ObjectKey> 为存储桶对象。
 > 
 
 #### 请求头
