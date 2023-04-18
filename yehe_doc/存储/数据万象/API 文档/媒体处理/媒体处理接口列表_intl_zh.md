@@ -43,17 +43,10 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1045/48932">提交获取媒体信息任务</a></td>
 </tr>
 <tr>
-<td rowspan=4>画质增强</td>
-<td>超分辨率</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1045/48940">提交超分辨率任务</a></td>
-</tr>
+<td rowspan=3>画质增强</td>
 <tr>
-<td>视频增强</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1045/48944">提交视频增强任务</a></td>
-</tr>
-<tr>
-<td>SDRtoHDR</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1045/48935">提交SDRtoHDR任务</a></td>
+<td>画质增强（包含超分辨率、插帧、色彩增强等功能）</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/48944">提交画质增强任务</a></td>
 </tr>
 <tr>
 <td>视频质量评分</td>
@@ -111,12 +104,12 @@
 
 
 ## 模板接口
-针对媒体处理功能（例如音视频转码、音视频拼接、视频截帧和视频转动图等），您需要在数据万象创建**任务**或**工作流**时，指定使用的模板，模板页为您提供了系统预设模板，您也可根据自身业务需求自定义模板，媒体处理模板接口请参考 [媒体处理模板](https://www.tencentcloud.com/document/product/1045/49899)。
+针对媒体处理功能（例如音视频转码、音视频拼接、视频截帧和视频转动图等），您需要在数据万象创建**任务**或**工作流**时，指定使用的模板，模板页为您提供了系统预设模板，您也可根据自身业务需求自定义模板，媒体处理模板接口请参见 [媒体处理模板](https://www.tencentcloud.com/document/product/1045/49899)。
 
 ## 工作流接口
 
-媒体处理中的工作流是指通过配置多个单任务操作组合对指定的上传文件进行自动化处理的过程，工作流调用请参考 [工作流接口](https://www.tencentcloud.com/document/product/1045/43618)。
+媒体处理中的工作流是指通过配置多个单任务操作组合对指定的上传文件进行自动化处理的过程，工作流调用请参见 [工作流接口](https://www.tencentcloud.com/document/product/1045/43618)。
 
 ## 批量任务处理接口
 
-批量任务处理是对指定的存量文件进行单任务处理或按照工作流中配置的操作自动化处理，调用请参考 [批量数据处理接口](https://www.tencentcloud.com/document/product/1045/47027)。
+批量任务处理是对指定的存量文件进行单任务处理或按照工作流中配置的操作自动化处理，调用请参见 [批量数据处理接口](https://www.tencentcloud.com/document/product/1045/47027)。
