@@ -34,7 +34,7 @@
 
 ### 网络层（专用通道）
 - 腾讯云侧和 IDC 用户侧均须配置 BGP IP，并建立会话，并且 BGP 会话须保持双活状态。
-  腾讯云侧配置如下图所示，文档详情请参见 [申请专用通道](https://intl.cloud.tencent.com/document/product/216/19250)。
+  腾讯云侧配置如下图所示，文档详情请参见 [独享专用通道 - 高级配置](https://www.tencentcloud.com/document/product/216/48574)。
 ![]()
 - 提供了 BFD 和 NQA 两种健康检查，确保通道的健壮性，健康检查配置请参见 [专用通道健康检查](https://intl.cloud.tencent.com/document/product/216/46292)。
 
