@@ -114,7 +114,7 @@
 >
 
 #### 步骤四：创建云联网实例[](id:2-4)
-1. 登录 [云联网控制台](https://console.cloud.tencent.com/vpc/ccn)，单击**+新建**，输入云联网实例名称，选择计费模式、服务质量、限速方式和关联实例私有网络，单击**确定**，本文以 “ccn-msg8kju5”、“vpc-gu64ju2u” 为例。
+1. 登录 [云联网控制台](https://console.cloud.tencent.com/vpc/ccn)，单击 **+新建** ，输入云联网实例名称，选择计费模式、服务质量、限速方式和关联实例私有网络，单击**确定**，本文以 “ccn-msg8kju5”、“vpc-gu64ju2u” 为例。
 2. 云联网创建完成后，在云联网列表页单击实例 ID 进入云联网实例详情，本文以 ccn-msg8kju5 为例。
 3. 进入云联网详情页，选择带宽管理标签页，购买跨境带宽流量。
 4. 单击**路由表**。
@@ -138,10 +138,10 @@
 3. 单击**确定**，ID 为 dcg-dx8kvqto 的实例成功关联云联网。
 4. 单击**路由表**。
 >?
->1. 专用通道是静态路由，IDC 往 VPC 方向的流量若想切换至云联网通道路径，只需用户 CPE 路由指向新的子接口云联网通道即可。
->2. 若专用通道均是 BGP 路由，当切换至云联网时，有以下两种情况：
->  2.1. 专线网关在2020年9月15日后创建，云联网向专线网关发送 VPC CIDR，而云端旧通道也向 IDC 发送 VPC CIDR，本地路由器通过 BGP 协议均学习到 VPC CIDR。则需要手动禁用或启用云联网里面 VPC 或专线网关路由，来控制 IDC 往 VPC 的流量路径，更多详情请参见[ 专线网关概述](https://intl.cloud.tencent.com/document/product/216/38746)。
->  2.2. 专线网关在2020年9月15日前创建，云联网向专线网关发送子网 CIDR，因此本地路由器通过 BGP 协议学习到子网 CIDR。而云端旧通道向 IDC 发送 VPC CIDR，本地路由器通过 BGP 协议学习到 VPC CIDR。根据路由掩码最长匹配原则，IDC 往 VPC 方向的流量会自动切换到云联网，更多详情请参见[ 专线网关概述](https://intl.cloud.tencent.com/document/product/216/38746)。
+>- 专用通道是静态路由，IDC 往 VPC 方向的流量若想切换至云联网通道路径，只需用户 CPE 路由指向新的子接口云联网通道即可。
+>- 若专用通道均是 BGP 路由，当切换至云联网时，有以下两种情况：
+>    - 专线网关在2020年9月15日后创建，云联网向专线网关发送 VPC CIDR，而云端旧通道也向 IDC 发送 VPC CIDR，本地路由器通过 BGP 协议均学习到 VPC CIDR。则需要手动禁用或启用云联网里面 VPC 或专线网关路由，来控制 IDC 往 VPC 的流量路径，更多详情请参见[ 专线网关概述](https://intl.cloud.tencent.com/document/product/216/38746)。
+>    - 专线网关在2020年9月15日前创建，云联网向专线网关发送子网 CIDR，因此本地路由器通过 BGP 协议学习到子网 CIDR。而云端旧通道向 IDC 发送 VPC CIDR，本地路由器通过 BGP 协议学习到 VPC CIDR。根据路由掩码最长匹配原则，IDC 往 VPC 方向的流量会自动切换到云联网，更多详情请参见[ 专线网关概述](https://intl.cloud.tencent.com/document/product/216/38746)。
 
 #### 切换 VPC 往 IDC 方向的流量路径[](id:4-2)
 1. 单击 ID 为 rtb-2kanpxjb 的路由表，查看 [VPC 路由表策略的变化](https://console.cloud.tencent.com/vpc/route?rid=8)。VPC 具备自动学习云联网路由表的能力，后加入的等价路由默认不启用。VPC 往 IDC 方向的流量路径依旧选择旧的专用通道。
