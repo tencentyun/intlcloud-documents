@@ -34,7 +34,7 @@ According to [capacity planning](https://intl.cloud.tencent.com/document/product
 
 ### Network layer (dedicated tunnel)
 - BGP IP needs to be configured on both Tencent Cloud side and the user IDC side to establish a session, and BGP session must be kept in active-active status.
-  See the figure below for the configuration on Tencent Cloud side. For more information, see [Applying for a Dedicated Tunnel](https://intl.cloud.tencent.com/document/product/216/19250).
+  See the figure below for the configuration on Tencent Cloud side. For more information, see [Exclusive Virtual Interface-Advanced Configuration](https://www.tencentcloud.com/document/product/216/48574).
 ![]()
 - BFD and NQA needs to be provided for health check to ensure robustness of the tunnel. For more information on the configuration of health check, see [Health Check for the Dedicated Tunnel](https://intl.cloud.tencent.com/document/product/216/46292).
 
