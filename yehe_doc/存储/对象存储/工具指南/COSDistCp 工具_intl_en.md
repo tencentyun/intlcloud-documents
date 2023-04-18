@@ -24,8 +24,8 @@ Hadoop 2.6.0 or above; Hadoop-COS 5.9.3 or above
 
 #### Obtaining the COSDistCp JAR package
 
-- If your Hadoop version is 2.x, you can download [cos-distcp-1.12-2.8.5.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-2.8.5.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-2.8.5-md5.txt) of the package.
-- If your Hadoop version is 3.x, you can download [cos-distcp-1.12-3.1.0.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-3.1.0.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.12-3.1.0-md5.txt) of the package.
+- If your Hadoop version is 2.x, you can download [cos-distcp-1.13-2.8.5.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.13-2.8.5.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.13-2.8.5-md5.txt) of the package.
+- If your Hadoop version is 3.x, you can download [cos-distcp-1.13-3.1.0.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.13-3.1.0.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.13-3.1.0-md5.txt) of the package.
 
 #### Installation notes
 
