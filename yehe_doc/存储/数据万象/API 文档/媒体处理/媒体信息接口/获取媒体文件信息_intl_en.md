@@ -1,21 +1,5 @@
 ## Feature Description
-This API (`GetMediainfo`) is used to get the information of a media file.
-
-<div class="rno-api-explorer">
-    <div class="rno-api-explorer-inner">
-        <div class="rno-api-explorer-hd">
-            <div class="rno-api-explorer-title">
-                API Explorer is recommended.
-            </div>
-            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetMediaInfo&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
-        </div>
-        <div class="rno-api-explorer-body">
-            <div class="rno-api-explorer-cont">
-                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
-            </div>
-        </div>
-    </div>
-</div>
+This API is used to get media file information.
 
 
 ## Request
@@ -33,7 +17,7 @@ Content-Length: <length>
 
 >? 
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity](https://www.tencentcloud.com/document/product/1045/49896) .
 > 
 
 #### Request headers
@@ -42,7 +26,7 @@ This API only uses common request headers. For more information, see [Common Req
 
 #### Request parameters
 
-The parameters are described as follows:
+The parameters are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----- | :----------------------------- | :----- | :--- |
@@ -231,7 +215,7 @@ The nodes are as described below:
 | Language | Response.MediaInfo.<br>Stream.Subtitle | Language. `und` indicates no query result. |  String |
 
 #### Error codes
-There are no special error messages for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/46214).
+There are no special error messages for this request operation. For common error messages, see Error Codes.
 
 
 ## Samples
@@ -254,7 +238,7 @@ Content-Type: application/xml
 Content-Length: 666
 Connection: keep-alive
 Date: Fri, 10 Mar 2016 09:45:46 GMT
-Server: tencent-cos
+Server: tencent-ci
 x-cos-request-id: NTg3NzRiMjVfYmRjMzVfMTViMl82ZGZmNw==
 
 
