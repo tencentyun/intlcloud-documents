@@ -1,21 +1,6 @@
 ## 功能描述
 GetMediainfo 接口用于获取媒体文件的信息。
 
-<div class="rno-api-explorer">
-    <div class="rno-api-explorer-inner">
-        <div class="rno-api-explorer-hd">
-            <div class="rno-api-explorer-title">
-                推荐使用 API Explorer
-            </div>
-            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetMediaInfo&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>点击调试</a>
-        </div>
-        <div class="rno-api-explorer-body">
-            <div class="rno-api-explorer-cont">
-                API Explorer 提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力。您可查看每次调用的请求内容和返回结果以及自动生成 SDK 调用示例。
-            </div>
-        </div>
-    </div>
-</div>
 
 
 ## 请求
@@ -33,7 +18,7 @@ Content-Length: <length>
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://www.tencentcloud.com/document/product/1045/49896) 文档。
 > 
 
 #### 请求头
@@ -231,7 +216,7 @@ Container 节点 Subtitle 的内容：
 | Language | Response.MediaInfo.<br>Stream.Subtitle | 语言，und 表示无查询结果 |  String |
 
 #### 错误码
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/46214) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见错误码文档。
 
 
 ## 实际案例
@@ -254,7 +239,7 @@ Content-Type: application/xml
 Content-Length: 666
 Connection: keep-alive
 Date: Fri, 10 Mar 2016 09:45:46 GMT
-Server: tencent-cos
+Server: tencent-ci
 x-cos-request-id: NTg3NzRiMjVfYmRjMzVfMTViMl82ZGZmNw==
 
 
