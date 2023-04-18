@@ -6,13 +6,13 @@
 
 - 常规的单机数据库中，一张完整的表仅在一个物理存储设备上读写。
 ![](https://main.qcloudimg.com/raw/de72666e1d6aca2a929b0047f941e8c2.png)
-- 分布式数据库中，根据在建表时设定的分表键，系统将根据不同分表键自动分布到不同的物理分片中，但逻辑上仍然是一张完整的表。
+- 分布式数据库中，根据在建表时设定的分表键，系统将根据不同分表键自动分布数据到不同的物理分片中，但逻辑上仍然是一张完整的表。
 ![](https://main.qcloudimg.com/raw/de007b8014a27a44ae78a76846240507.png)
 - 在 TDSQL MySQL版 中，数据的切分通常就需要找到一个分表键（shardkey）以确定拆分维度，再采用某个字段求模（HASH）的方案进行分表，而计算 HASH 的某个字段就是 shardkey。 HASH 算法能够基本保证数据相对均匀地分散在不同的物理设备中。
 
 ### 写入数据（ SQL 语句含有 shardkey ）
 1. 业务写入一行数据。
-2. 网关通过对 shardkey 进行 hash。
+2. 网关对 shardkey 进行 hash，得出 shardkey 的 hash 值。
 3. 不同的 hash 值范围对应不同的分片（调度系统预先分片的算法决定）。
 4. 数据根据分片算法，将数据存入实际对应的分片中。
 ![](https://main.qcloudimg.com/raw/f0685bccd02ed8ff472ed236443db970.jpg)

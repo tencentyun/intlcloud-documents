@@ -1,10 +1,9 @@
-
 ## 连接方式
 连接 TDSQL MySQL版 的方式如下：
 - **内网地址连接**：通过内网地址连接 TDSQL MySQL版，使用云服务器 CVM 直接连接云数据库的内网地址，这种连接方式使用内网高速网络，延迟低。
  - 云服务器和数据库须是同一账号，且同一个[ VPC](https://intl.cloud.tencent.com/document/product/215/535) 内（保障同一个地域），或同在基础网络内。
  - 内网地址系统默认提供，可在  [TDSQL MySQL版 控制台](https://console.cloud.tencent.com/tdsqld/instance-tdmysql) 的实例列表或实例详情页查看。
->?对于不同的 VPC 下（包括同账号/不同账号，同地域/不同地域）的云服务器和数据库，内网连接方式请参见 [云联网](https://intl.cloud.tencent.com/zh/document/product/1003)。
+>?对于不同的 VPC 下（包括同账号/不同账号，同地域/不同地域）的云服务器和数据库，内网连接方式请参见 [云联网](https://www.tencentcloud.com/document/product/1003)。
 >
 - **外网地址连接**：无法通过内网连接时，可通过外网地址连接 TDSQL MySQL版。外网地址需 [手动开启](#waiwang)，可在 [TDSQL MySQL版 控制台](https://console.cloud.tencent.com/tdsqld/instance-tdmysql) 的实例详情页查看，不需要时也可关闭。
  - 开启外网地址，会使您的数据库服务暴露在公网上，可能导致数据库被入侵或攻击。建议您使用内网连接数据库。
