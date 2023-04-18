@@ -12,7 +12,7 @@ You can view the network monitoring data of a connection or dedicated tunnel via
       - **Packet Loss**: number of packets discarded on the port per minute.
       - **Packet Error**: number of packet errors on the port per minute.
 3. Perform the following steps to view the network monitoring data of a dedicated tunnel.
- 1. Click **Dedicated Tunnels** on the left sidebar.
+ 1. Click **Exclusive virtual interface** on the left sidebar.
  2. Locate the target dedicated tunnel and click <img width="3%" src="https://main.qcloudimg.com/raw/52d8549cc2412c6527f332a3b88be44d.png"  > in the **Monitoring** column.
  3. The **Monitoring** page displays **Network Outbound Bandwidth**, **Network Inbound Bandwidth**, **Packets Out**, and **Packets In**. Select **Last 24 hours**, **Last 7 days** or a custom time period to display the monitoring data accordingly.
       - **Network Outbound Bandwidth**: average outbound traffic of the dedicated tunnel per second.
