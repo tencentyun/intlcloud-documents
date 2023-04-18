@@ -72,7 +72,7 @@ To ensure business availability and rollback capability during switchover, you a
  5. On the page displayed, you can view the VPC route table configuration details.
 3. View the dedicated tunnel configuration.[](id:1-3)
   1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/dc).
-  8. Click **Dedicated Tunnel** in the left sidebar, and click the **dedicated tunnel ID** to enter the dedicated tunnel details page.
+  8. Click **Exclusive virtual interface** in the left sidebar, and click the **dedicated tunnel ID** to enter the dedicated tunnel details page.
 4. Click the **Advanced Configuration** tab to view the advanced configuration of the dedicated tunnel.
 Based on the preceding information, VPC traffic destined for 192.168.0.0/24 will be routed to the direct connect gateway dcg-019f9l0q based on the VPC route table policy.
 
@@ -88,7 +88,7 @@ Based on the preceding information, VPC traffic destined for 192.168.0.0/24 will
 
 #### Step 2. Create CCN dedicated tunnels[](id:2-2)
 1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/dc).
-2. Choose **Dedicated tunnels** in the left sidebar and click **+ New**.
+2. Choose **Exclusive virtual interface** in the left sidebar and click **+ New**.
 3. On the **Basic configuration** page, set parameters as needed. This document uses "test" as an example.
 >?
 >- **Connections**: Use the original connection whose ID is `dc-dqggvxad`.
