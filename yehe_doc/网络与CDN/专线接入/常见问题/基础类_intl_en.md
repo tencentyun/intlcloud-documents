@@ -162,7 +162,8 @@ For more information, please see [Service Limits](https://intl.cloud.tencent.com
 
 ### How do I configure alarm policies for Direct Connect?
 
-Go to the Cloud Monitor console to [create a policy](https://console.cloud.tencent.com/monitor/policycreate). On the **Create Policy** page, select **Physical dedicated line** or **Dedicated line channel** for the **Policy Type**, and complete other configurations of the alarm policy.
+For more information, please see [Configuring Alarm Policies](https://intl.cloud.tencent.com/document/product/216/38402).
+
 
 <span id ="08"></span>
 
