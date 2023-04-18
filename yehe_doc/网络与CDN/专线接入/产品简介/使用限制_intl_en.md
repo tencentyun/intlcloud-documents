@@ -2,7 +2,7 @@
 <table>
 <tr>
 <th>Resource</th>
-<th>Limit</th>
+<th>Constraints</th>
 <th>Support Increasing Quota</th>
 <th>Description</th>
 </tr>
@@ -74,32 +74,39 @@
 
 
 ## Access Limits
+
 ### Direct Connect
 - When a Direct Connect gateway is created, the content of IP translation and IP port translation are left empty by default. In this case, neither of them takes effect.
 - Dedicated tunnels support BGP routing and static routing.
 - Note the following limits for delivering routes:
  To improve the fine-grained scheduling capability of your network, do not publish the following routes:
-`9.0.0.0/8`, `10.0.0.0/8`, `11.0.0.0/8`, `30.0.0.0/8`, `100.64.0.0/10`, `131.87.0.0/16`, `172.16.0.0/12`, and `192.168.0.0/16`.
+  **Dedicated tunnel 1.0**
+  `9.0.0.0/8`, `10.0.0.0/8`, `11.0.0.0/8`, `30.0.0.0/8`, `100.64.0.0/10`, `131.87.0.0/16`, `172.16.0.0/12`, and `192.168.0.0/16`.
 >! The direct connect gateway will directly reject large IP ranges.
 >
-
-You can split the above large routes as follows for distribution:
- - <strong>`9.0.0.0/8`</strong>
+ You can split the above large routes as follows for distribution:
+  - <strong>`9.0.0.0/8`</strong>
 Split as: `9.0.0.0/9` + `9.128.0.0/9`
  - <strong>`10.0.0.0/8`</strong>
-Split as: `10.0.0.0/9` + `10.128.0.0/9`
+Split into `10.0.0.0/9` + `10.128.0.0/9`.
  - <strong>`11.0.0.0/8`</strong>
-Split as: `11.0.0.0/9` + `11.128.0.0/9`
+Split into `11.0.0.0/9` + `11.128.0.0/9`.
  - <strong>`30.0.0.0/8`</strong>
-Split as: `30.0.0.0/9` + `30.128.0.0/9`
+Split into `30.0.0.0/9` + `30.128.0.0/9`.
  - <strong>`100.64.0.0/10`</strong>
-Split as: `100.64.0.0/11` + `100.96.0.0/11`
+Split into `100.64.0.0/11` + `100.96.0.0/11`.
  - <strong>`131.87.0.0/16`</strong>
-Split as: `131.87.0.0/17` + `131.87.128.0/17`
+Split into `131.87.0.0/17` + `131.87.128.0/17`.
  - <strong>`172.16.0.0/12`</strong>
-Split as: `172.16.0.0/13` + `172.24.0.0/13`
+Split into `172.16.0.0/13` + `172.24.0.0/13`.
  - <strong>`192.168.0.0/16 `</strong>
-Split as: `192.168.0.0/17` + `192.168.128.0/17`
+Split into `192.168.0.0/17` + `192.168.128.0/17`.
+
+ **Dedicated tunnel 2.0**
+ - `127.0.0.0/8`, `224.0.0.0/4`, `240.0.0.0/4`, `255.255.255.255`, and `169.254.0.0/16` (excluding `169.254.64.0.0/23`).
+ Subnets and other IP addresses in the same network segment. To allow mutual access, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to enable peer IP redistribution.
+
+
 
 ### IP translation
 - IP address pools cannot fall within the CIDR block of the VPC in which the direct connect gateway resides.
@@ -127,9 +134,10 @@ The Tencent Cloud access exchange uses a fixed MAC address of 3c:fd:fe:29:cb:c2.
 >?MAC address flapping (switching jump) occurs when a MAC address is learned by two outbound interfaces in the same VLAN and the MAC address entry learned later overrides the earlier one, making the MAC address unstable.
 
 The following are scenarios where MAC address flapping occurs.
-![](https://qcloudimg.tencent-cloud.cn/raw/9bbc9008b10850527a7f919d49b695b7.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/17260e52033989f2c1dc743dbe2b3382.png)
 As shown in the figure above, customer exchange B connects to Tencent Cloud exchanges A and A1 through two connections (connections 1 and 2).
 MAC address flapping occurs in exchange B when Tencent Cloud returns packets to the customer IDC.
+
 
 ### Access Limits
 To prevent network congestion due to network loops, you are advised to use layer-3 network sub-interfaces to connect to Tencent Cloud Direct Connect devices.

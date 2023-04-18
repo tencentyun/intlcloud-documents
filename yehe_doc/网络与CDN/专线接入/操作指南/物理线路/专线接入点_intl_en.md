@@ -13,7 +13,7 @@ This document describes the approximate locations of Tencent Cloud access points
 <th>Address</th>
 </tr>
 <tr>
-<td rowspan=18>East China</td>
+<td rowspan=19>East China</td>
 <td rowspan=3>Hangzhou</td>
 <td>ap-hangzhou-a-dg</td>
 <td>CTCC</td>
@@ -33,7 +33,7 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>No. 4 Street, Xiasha Economic Development Zone, Qiantang New District, Hangzhou</td>
 </tr>
 <tr>
-<td rowspan=9>Shanghai</td>
+<td rowspan=10>Shanghai</td>
 <td>ap-shanghai-b-tz</td>
 <td>CTCC, CMCC, and CUCC</td>
 <td>Fiber optic port and electrical port</td>
@@ -52,10 +52,16 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>No. 1268 Wanrong Road, Jing'an District, Shanghai</td>
 </tr>
 <tr>
+<td>ap-shanghai-e-ft-t</td>
+<td>CUCC</td>
+<td>Fiber optic port and electrical port</td>
+<td>No. 76 Fute 3rd Road East, Pudong New District, Shanghai</td>
+</tr>
+<tr>
 <td>ap-shanghai-f-yh</td>
 <td>CTCC, CMCC, and CUCC</td>
 <td>Fiber optic port and electrical port</td>
-<td>No. 168, Dongxue Road, Songjiang District, Shanghai</td>
+<td>No. 168 Dongxue Road, Songjiang District, Shanghai</td>
 </tr>
 <tr>
 <td>ap-shanghai-g-hq</td>
@@ -67,7 +73,7 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>ap-shanghai-h-wgq</td>
 <td>CTCC, CMCC, and CUCC</td>
 <td>Fiber optic port and electrical port</td>
-<td>Shanghai Free Trade Zone in Pudong New Area</td>
+<td>No. 99 Fute 1st Road West, Free Trade Zone, Pudong New District, Shanghai</td>
 </tr>
 <tr>
 <td>ap-shanghai-k-sj</td>
@@ -128,14 +134,8 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>Fuzhou Yungu Cangke Data Center, No. 1 Gaochang Road, Cangshan Science and Technology Park, Cangshan District, Fuzhou City</td>
 </tr>
 <tr>
-<td rowspan=10>South China</td>
-<td rowspan=5>Guangzhou</td>
-<td>ap-guangzhou-a-kyl</td>
-<td>CTCC, CMCC, and CUCC</td>
-<td>Fiber optic port and electrical port</td>
-<td>Enterprise Accelerator Park, No. 11 Kaiyuan Avenue, Huangpu District, Guangzhou</td>
-</tr>
-<tr>
+<td rowspan=9>South China</td>
+<td rowspan=4>Guangzhou</td>
 <td>ap-guangzhou-b-hxy</td>
 <td>CTCC, CMCC, and CUCC</td>
 <td>Fiber optic port and electrical port</td>
@@ -317,7 +317,7 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>China Mobile, High-Tech Zone, Xuelan Road, Zhongyuan District, Zhengzhou City</td>
 </tr>
 <tr>
-<td rowspan=3 >Southwest China</td>
+<td rowspan=4 >Southwest China</td>
 <td rowspan=2>Chongqing</td>
 <td>ap-chongqing-a-th</td>
 <td>CTCC, CMCC, and CUCC</td>
@@ -331,11 +331,16 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>No. 7 Yunhan Road, Shuitu Hi-tech Park, Beibei District, Chongqing</td>
 </tr>
 <tr>
-<td>Chengdu</td>
+<td rowspan=2>Chengdu</td>
 <td>ap-chengdu-a-xq</td>
 <td>CTCC</td>
 <td>Fiber optic port and electrical port</td>
 <td>No. 99 Tiansheng Road, Chengdu High-tech Industrial Development Zone (West District), Chengdu City</td>
+</tr>
+<td>ap-chengdu-b-gh</td>
+<td>CTCC, CMCC, CUCC, and local connection carriers</td>
+<td>Fiber optic port</td>
+<td>No. 29, China West Cultural City Industrial Park, Wenjiang District, Chengdu</td>
 </tr>
 <tr>
 <td rowspan=3 >Special Administrative Region</td>
