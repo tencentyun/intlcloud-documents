@@ -6,44 +6,46 @@ The following figure shows you how to interconnect a Tencent Cloud VPC (`172.21.
 
 Follow the steps below:
 <dx-steps>
--[Create a connection](#dc): connects customer’s local IDC to Tencent Cloud.
--[Create a direct connect gateway](#dcgw): as the traffic entry of the Direct Connect, connects a Tencent Cloud VPC to connections (dedicated tunnels).
--[Create a dedicated tunnel](#conn): acts as the network segmentations of a connection.
--[Configure the route table](#route): configures a routing policy in the route table of a VPC subnet to enable connection.
+- [Create a connection](#dc): connects customer’s local IDC to Tencent Cloud.
+- [Create a direct connect gateway](#dcgw): as the traffic entry of the Direct Connect, connects a Tencent Cloud VPC to connections (dedicated tunnels).
+- [Create a dedicated tunnel](#conn): acts as the network segmentations of a connection.
+- [Configure the route table](#route): configures a routing policy in the route table of a VPC subnet to enable connection.
 - [Set alarms](#alarm): configures recipients for alarm policies automatically created together with the connection and dedicated tunnel.
-  </dx-steps>
+</dx-steps>
 
 ## Prerequisites
 - You have built a Tencent Cloud VPC in the Beijing region as instructed in [Building Up an IPv4 VPC](https://intl.cloud.tencent.com/document/product/215/31891).
 
-## Directions
+## How It Works
 ### Step 1: create a connection[](id:dc)
 To create a connection, you need to first confirm the information and submit an application in the console, and then the carrier will start the engineering investigation and wiring. This process takes about 2-3 months. For more information, see [Connection Overview](https://intl.cloud.tencent.com/document/product/216/38524). Perform the following steps to apply for a connection in the console.
 1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/dc).
 2. Click **Connections** on the left sidebar to access the **Connections** page. Click **+New**.
 3. In the pop-up window, read **Tencent Cloud Direct Connect Service Level Agreement**, select **Read and Agreed**, and click **Next**.
-4. Complete the following configurations and click **OK**.
+4. Complete the following configurations and click **OK**。
 <table>
 <tr><th>Parameter</th><th>Description</th></tr>
 <tr><td>Connection Name</td><td>Enter a name for the connection, such as "Connection to Beijing IDC".</td></tr>
-<tr><td>Region</td><td>Select **Beijing**.</td></tr><tr>
-<td>Access Point</td>
-<td>We recommend you first search for access points and check their distances to your IDC, and then select the nearest access point. For more information, see <a href="">Searching for Access Point Locations</a> or <a href="https://intl.cloud.tencent.com/document/product/216/41429">Direct Connect Access Point</a>.</td></tr>
+    <tr><td>Region</td><td>Select <b>Beijing</b>.</td></tr><tr>
+<td>Access point</td>
+<td>We recommend you first search for access points and check their distances to your IDC, and then select the nearest access point. For more information, see <a href="https://intl.cloud.tencent.com/document/product/216/41429">Connection Access Point</a>.</td></tr>
 <tr>
-<td>Connection Provider</td>
+<td>Connection provider</td>
 <td>Select an eligible carrier, such as <b>CTCC</b>.</td></tr>
 <tr>
 <td>Cloud port</td>
 <td>Ports in 1, 10, and 100 Gbps are available. To use a 100 Gbps port, please submit a ticket. Select <b>1 Gbps</b> as an example.</td></tr>
 <tr>
-<td>Port Type</td>
+<td>Port type</td>
 <td>Choose fiber optic port or electrical port as needed. The available ports vary with the port type. For example, 1 Gbps ports include fiber optic port and electrical port, while 10 Gbps ports only include fiber optic port. Select <b>Fiber optic port</b> as an example.</td></tr>
 <tr>
-<td>Bandwidth Cap</td><td>Select **998 Mbps** as an example.</td></tr>
+<td>Bandwidth Cap</td><td>Select <b>998 Mbps</b> as an example.</td></tr>
 </table>
+
 <dx-alert infotype="explain" title="">
 For more information on parameter configurations, see [Applying for Connection](https://intl.cloud.tencent.com/document/product/216/19244)
 </dx-alert>
+
 5. After your application is submitted, Tencent Cloud Direct Connect representative will comprehensively assess Direct Connect resources and then check with you the service details over the phone. After the connection is confirmed to be accessible, you should complete the payment in the console.
 
 ### Step 2: create a direct connect gateway[](id:dcgw)
@@ -59,7 +61,7 @@ For more information on parameter configurations, see [Applying for Connection](
 <tr>
 <td>Network</td><td>Select an existing VPC instance.</td></tr>
 <tr>
-<td>Gateway Type</td>
+<td>Gateway type</td>
 <td>Select <b>Standard</b> as an example.<ul><li><b>Standard</b>: does not support the network address translation feature.</li><li><b>NAT Type</b>: supports the network address translation feature. You should also configure the <a href="https://intl.cloud.tencent.com/document/product/216/19257">network address translation (NAT)</a> if you want to use a NAT direct connect gateway.</li></ul></td></tr>
 </table>
 
@@ -85,27 +87,47 @@ For more information on the parameter configurations, see [Creating a Dedicated 
 </dx-alert>
 4. Configure the following parameters in the **Advanced Configuration** tab, and click **Next**.
 <table>
-<tr><th>Parameter</th><th>Description</th></tr>
+<tr>
+<th>Parameter</th>
+<th>Definition</th>
+</tr>
 <tr>
 <td>VLAN ID</td>
-<td>A VLAN corresponds to a tunnel. Enter a value within the range of 0-3000. Entering <b>0</b> means one dedicated tunnel can be created. Enter <b>0</b> as an example.</td></tr>
+<td>A VLAN corresponds to a tunnel. Enter a value within the range of 0-3000. Entering <b>0</b> means one dedicated tunnel can be created. Enter “0” as an example.</td>
+</tr>
+<tr>
+<td>Peer IP</td>
+<td>Peer IP addresses need to be manually configured by default.</td>
+</tr>
 <tr>
 <td>Bandwidth</td>
-<td>Specify the bandwidth cap of the dedicated tunnel, which cannot exceed the maximum bandwidth of the associated connection. Set it to **2 Mbps** as an example.</td></tr>
+<td>Specify the bandwidth cap of the dedicated tunnel, which cannot exceed the maximum bandwidth of the associated connection. Set it to “2 Mbps” as an example.</td>
+</tr>
 <tr>
 <td>Tencent Cloud Primary IP</td>
-<td>Enter the connection IP address on the Tencent Cloud side. Set it to **172.21.0.0/24** as an example.</td></tr>
+<td>Enter the connection IP address on the Tencent Cloud side. Set it to “172.21.0.0/24” as an example.</td>
+</tr>
 <tr>
 <td>Tencent Cloud Secondary IP</td>
-<td>Enter the secondary IP address of the connection on the Tencent Cloud side. Set it to **172.21.0.2/24** as an example.</td></tr>
+<td>Enter the secondary IP address of the connection on the Tencent Cloud side. Set it to “172.21.0.2/24” as an example.</td>
+</tr>
 <tr>
 <td>CPE Peer IP</td>
-<td>Configure the connection IP address on the user (or carrier) side. Set it to **172.21.0.1/24** as an example.</td></tr>
+<td>Configure the connection IP address on the user (or carrier) side. Set it to “172.21.0.1/24” as an example.</td>
+</tr>
 <tr>
-<td>Routing mode</td><td>Select <b>Static</b>.</td></tr>
+<td>Routing Mode</td>
+<td>Select <b>Static</b>.</td>
+</tr>
 <tr>
-<td>CPE IP range</td><td>Select **192.168.0.0/24** as an example.</td></tr>
+<td>Health Check</td>
+<td>Health check is disabled by default. To enable it, see <a href="https://intl.cloud.tencent.com/document/product/216/46292">Dedicated tunnel health check</a>.</td>
+</tr>
+<tr>
+<tr>
+<td>CPE IP range</td><td>Select <b>192.168.0.0/24</b> as an example.</td></tr>
 </table>
+
 5. Configure IDC devices. You can click **Download configuration guide** to download related files and complete the configurations as instructed in the guide.
 <table>
 <tr><th>Parameter</th><th>Description</th></tr>
@@ -120,7 +142,7 @@ To use a VPC-based direct connect gateway, configure a routing policy with direc
 2. Select **Route Tables** on the left sidebar, and click the **ID/Name** of the target VPC to enter its details page.
 3. Click **+New routing policies** on the **Basic Information** page.
 4. In the pop-up window, enter “192.168.0.0/24” for the **Destination**, select “Direct Connect Gateway” for the **Next hop type**, locate the direct connect gateway created in [Step 2](#dcgw) for the **Next hop**, and click **Create**.
-5. Click **OK**.
+5. Click **Confirm**.
 
 ### Step 5: set alarms[](id:alarm)
 After a connection and a dedicated tunnel are created, Cloud Monitor will automatically create a default alarm policy for each service. This default alarm policy does not configure recipient information, so you can only view alarms on the console. To configure a recipient, take the following steps.
@@ -131,13 +153,12 @@ After a connection and a dedicated tunnel are created, Cloud Monitor will automa
 <tr>
 <td>Bandwidth utilization </td><td>1 minute</td><td>>=</td><td>80%</td><td>5 periods</td><td>Alarm once a day</td></tr>
 </table>
-- Default alarm policy for dedicated tunnels: four types of event alarms are available, including DirectConnectTunnelDown, DirectConnectTunnelBFDDown, DirectConnectTunnelBGPSessionDown, and DirectConnectTunnelRouteTableOverload.
+- Default alarm policy for dedicated tunnels: available event alarms are DirectConnectTunnelDown, DirectConnectTunnelBFDDown, DirectConnectTunnelBGPSessionDown, and DirectConnectTunnelRouteTableOverload.
 </dx-fold-block>
 
-1. Log in to the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/overview).
-2. Select **Alarm Configuration** > **Alarm Policy** on the left sidebar. Click **Advanced Filter** in the upper-right corner of the **Alarm Policy** page, select **All** for **Monitor Type**, and select the relevant product for **Policy type**.
-3. Click the name of the target default policy in the **Alarm Policy** list.
-4. Select a template in the **Alarm Notification** section.
-Click **Edit Recipient** to configure alarm recipients in the template. If existing templates are not suitable, you can click **Create Template** and configure it as prompted. Then you can select the template to configure alarm recipients.
-
+1. Log in to the cloud monitor console. View [Monitoring Overview](https://console.cloud.tencent.com/monitor/overview)
+2. Select **Alarm Configuration** > **Alarm Policy** on the left sidebar. Click **Advanced Filter**, select **All** for **Monitoring Type**, and select the relevant product for **Policy type**.
+3. Click the name of the target default policy in the **Alarm Management** list.
+4. On the **Manage alarm policy** page, select a notification template.
+Click **Edit Recipient** to configure alarm recipients in the template. If existing templates are not suitable, you can click **Create Template** and configure the template to create as prompted. Then you can select the template to configure alarm recipients.
 

@@ -1,6 +1,6 @@
 ## 简介
 
-本文内容引导集成 移动推送 SDK 在线通道推送能力，提供 AndroidStudio Gradle 自动集成和 Android Studio 手动集成两种方式指引。如需在应用进程被杀时也能收到推送，请在完成本文的集成操作后，参考 [厂商通道接入指南](https://intl.cloud.tencent.com/document/product/1024/37176) 文档，完成各厂商通道的接入。
+本文内容引导集成移动推送 SDK 在线通道推送能力，提供 AndroidStudio Gradle 自动集成和 Android Studio 手动集成两种方式指引。如需在应用进程被杀时也能收到推送，请在完成本文的集成操作后，参考 [厂商通道接入指南](https://www.tencentcloud.com/document/product/1024/37176) 文档，完成各厂商通道的接入。
 
 ## SDK 集成（二选一）
 
@@ -13,7 +13,6 @@
 
 1. 登录 [移动推送控制台](https://console.cloud.tencent.com/tpns)，在**产品管理**>**配置管理**页面获取应用的 AccessID、AccessKey。
 2. 在 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面，获取当前最新版本号。
-![]()
 3. 在 app build.gradle 文件下，配置以下内容：
 ```
 android {
@@ -48,11 +47,11 @@ dependencies {
 }
 ```
 
-<dx-alert infotype="notice"> 
- - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
- - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置，否则会导致注册推送服务失败并返回-502或1008003错误码。
- 在 AndroidManifest 文件 application 标签内添加以下元数据：
- ```
+>!
+> - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+> - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置，否则会导致注册推送服务失败并返回-502或1008003错误码。
+> 在 AndroidManifest 文件 application 标签内添加以下元数据：
+> ```
 <application>
 	// 其他安卓组件
 	<meta-data
@@ -60,18 +59,18 @@ dependencies {
 			android:value="其他服务接入点域名" />
 </application>
 ```
- 其他服务接入点域名如下：
-       - 上海：`tpns.sh.tencent.com`
-       - 新加坡：`tpns.sgp.tencent.com`
-       - 中国香港：`tpns.hk.tencent.com`
-</dx-alert> 
+> 其他服务接入点域名如下：
+>   - 上海：`tpns.sh.tencent.com`
+>  - 新加坡：`tpns.sgp.tencent.com`
+>  - 中国香港：`tpns.hk.tencent.com`
+>  
 
 #### 注意事项
 
  - 如在添加以上 abiFilter 配置后， Android Studio 出现以下提示：
    NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin，则在 Project 根目录的 gradle.properties 文件中添加  `android.useDeprecatedNdk=true`。
  - 如需监听消息请参考 XGPushBaseReceiver 接口或 Demo（在 SDK 压缩包内，可前往 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面获取 ）的 MessageReceiver 类。自行继承 XGPushBaseReceiver 并且在配置文件中配置如下内容（请勿在 receiver  里处理耗时操作）：
-​```
+```xml
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
     <intent-filter>
         <!-- 接收消息透传 -->
@@ -98,14 +97,14 @@ dependencies {
 将 SDK 导入到工程的步骤为：
 
 1. 创建或打开 Android 工程。
-2. 将移动推送  SDK 目录下的 libs 目录所有 .jar 文件拷贝到工程的 libs（或 lib）目录下。
-3. .so 文件是移动推送 必须的组件，支持 armeabi、armeabi-v7a、arm64-v8a、mips、mips64、x86、x86_64平台，请根据自己当前 .so 支持的平台添加
+2. 将移动推送 SDK 目录下的 libs 目录所有 .jar 文件拷贝到工程的 libs（或 lib）目录下。
+3. .so 文件是移动推送必须的组件，支持 armeabi、armeabi-v7a、arm64-v8a、mips、mips64、x86、x86_64平台，请根据自己当前 .so 支持的平台添加
 4. 打开 AndroidManifest.xml，添加以下配置（建议参考下载包 Demo 中的 Merged Manifest 修改），其中 “APP的AccessId ” 和 “APP的AccessKey” 替换为 App 对应的 AccessId 和 AccessKey，请确保按照要求配置，否则可能导致服务不能正常使用。
 
 
 #### 权限配置
 
-移动推送  SDK 正常运行所需要的权限。示例代码如下：
+移动推送 SDK 正常运行所需要的权限。示例代码如下：
 
 ```xml
 <!-- 【必须】 移动推送 TPNS SDK VIP版本所需权限 -->
@@ -119,6 +118,7 @@ dependencies {
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
 <!-- 【常用】 移动推送 TPNS SDK所需权限 -->
 <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -214,8 +214,9 @@ dependencies {
     <service
         android:name="com.tencent.android.tpush.service.XGVipPushService"
         android:exported="false"
-        android:process=":xg_vip_service"></service>
-
+        android:process=":xg_vip_service">
+    </service>
+	
     <!-- 【必须】通知 service ，android:name 部分改为包名.XGVIP_PUSH_ACTION -->
         <service android:name="com.tencent.android.tpush.rpc.XGRemoteService"
             android:exported="false">
@@ -287,6 +288,7 @@ dependencies {
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
 <!-- 【常用】 移动推送 TPNS SDK所需权限 -->
 <uses-permission android:name="android.permission.VIBRATE" />
@@ -295,23 +297,22 @@ dependencies {
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-<dx-alert infotype="notice"> 
- - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
- - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置，否则会导致注册推送服务失败并返回-502或1008003错误码。
- 在 AndroidManifest 文件 application 标签内添加以下元数据：
-```
+>!
+>  - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+>  - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置，否则会导致注册推送服务失败并返回-502或1008003错误码。
+>  在 AndroidManifest 文件 application 标签内添加以下元数据：
+> ```
 <application>
-// 其他安卓组件
-<meta-data
-		android:name="XG_SERVER_SUFFIX"
-		android:value="其他服务接入点域名" />
+	// 其他安卓组件
+	<meta-data
+			android:name="XG_SERVER_SUFFIX"
+			android:value="其他服务接入点域名" />
 </application>
 ```
- 其他服务接入点域名如下：
-       - 上海：`tpns.sh.tencent.com`
-       - 新加坡：`tpns.sgp.tencent.com`
-       - 中国香港：`tpns.hk.tencent.com`
-</dx-alert> 
+> 其他服务接入点域名如下：
+>   - 上海：`tpns.sh.tencent.com`
+>   - 新加坡：`tpns.sgp.tencent.com`
+>   - 中国香港：`tpns.hk.tencent.com`
 
 
 ## 调试及设备注册
@@ -321,7 +322,7 @@ dependencies {
 >! 上线时请设置为 false。
 >
 
-​```java
+```java
 XGPushConfig.enableDebug(this,true);
 ```
 
@@ -353,7 +354,7 @@ XGPushManager.registerPush(this, new XGIOperateCallback() {
 TPNS register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 ```
 ### 关闭日志打印
-调用 XGPushConfig.enableDebug(context, false) 关闭 SDK debug 日志开关时，SDK 默认仍会打印部分日常运行日志（包含 移动推送 Token）。
+调用 XGPushConfig.enableDebug(context, false) 关闭 SDK debug 日志开关时，SDK 默认仍会打印部分日常运行日志（包含移动推送 Token）。
 
 您可以通过在 Application.onCreate 内调用如下方法，来关闭这些日常运行日志在控制台的输出打印：
 ```java
@@ -380,34 +381,11 @@ new XGPushConfig.Build(context).setLogLevel(Log.ERROR);
 
 ## 高级配置（可选）
 
-### 音视频富媒体使用方法
-
-1. 在 App 的 layout 目录下，新建一个 xml 文件，命名为 xg_notification。
-2. 复制以下代码到文件中：
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
--<RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_root_view" xmlns:android="http://schemas.android.com/apk/res/android">
-<!--通知的背景，id名字不能改变，其他可变-->
-<ImageView android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/xg_notification_bg" android:scaleType="centerCrop"/>
-<!--通知的大图标，id名字不能改变，其他可变.必须-->
-<ImageView android:layout_height="48dp" android:layout_width="48dp" android:id="@+id/xg_notification_icon" android:scaleType="centerInside" android:layout_marginLeft="5dp" android:layout_centerVertical="true" android:layout_alignParentLeft="true"/>
-<!--通知的时间，id名字不能改变，其他可变.若不显示时间可以去掉此布局-->
-<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/xg_notification_date" android:textSize="12dp" android:layout_marginRight="5dp" android:layout_marginTop="5dp" android:layout_alignParentRight="true" android:layout_alignParentTop="true"/>
-<!--通知的标题，id名字不能改变，其他可变。必须-->
-<TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_notification_style_title" android:layout_marginLeft="10dp" android:layout_marginTop="20dp" android:singleLine="true" android:layout_toRightOf="@id/xg_notification_icon" android:layout_toLeftOf="@id/xg_notification_date"/>
-<!--通知的内容，id名字不能改变，其他可变。必须-->
-<TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_notification_style_content" android:layout_marginTop="1dp" android:singleLine="true" android:layout_toLeftOf="@id/xg_notification_date" android:layout_alignLeft="@+id/xg_notification_style_title" android:layout_below="@+id/xg_notification_style_title"/>
-<!--带音频的富媒体通知的音频播放按钮，id名字不能改变，其他可变。若没用到音频富媒体可以去掉此布局-->
-<ImageView android:layout_height="25dp" android:layout_width="25dp" android:id="@+id/xg_notification_audio_play" android:layout_alignLeft="@+id/xg_notification_style_title" android:visibility="gone" android:background="@android:drawable/ic_media_play" android:layout_alignParentBottom="true"/>
-<!--带音频的富媒体通知的音频停止播放按钮，id名字不能改变，其他可变.若没用到音频富媒体可以去掉此布局-->
-<ImageView android:layout_height="25dp" android:layout_width="25dp" android:id="@+id/xg_notification_audio_stop" android:layout_marginLeft="30dp" android:layout_toRightOf="@+id/xg_notification_audio_play" android:visibility="gone" android:background="@android:drawable/ic_media_pause" android:layout_alignParentBottom="true"/></RelativeLayout>
-```
 
 ### 关闭联合保活
 
 如需关闭联合保活功能，请在应用初始化的时候，例如 Application 或 LauncherActivity 的 onCreate 中调用如下接口，并传递 false 值：
->!
+>! 
 >- 仅 1.1.6.0 之后版本支持关闭联合保活功能，1.1.6.0之前版本移动推送默认开启联合保活能力，且不可关闭。
 >- 1.2.6.0 起默认关闭联合保活功能，可不再调用此接口。
 >
@@ -431,7 +409,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 ### 获取移动推送 Token 交互建议
 
-建议您完成 SDK 集成后，在 App 的【关于】、【意见反馈】等比较不常用的 UI 中，通过手势或者其他方式显示移动推送 Token，控制台和 Restful API 推送需要根据移动推送 Token 进行 Token 推送，后续问题排查也需要根据移动推送 Token 进行定位。
+建议您完成 SDK 集成后，在 App 的【关于】、【意见反馈】等比较不常用的 UI 中，通过手势或者其他方式显示移动推送Token，控制台和 Restful API 推送需要根据移动推送Token 进行 Token 推送，后续问题排查也需要根据移动推送Token 进行定位。
 示例代码如下：
 
 ```java
@@ -439,9 +417,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 XGPushConfig.getToken(getApplicationContext());
 ```
 
-![]()
-
-### 获取移动推送 运行日志交互建议
+### 获取移动推送运行日志交互建议
 
 SDK 提供日志上报接口。如用户在应用上线后遇到推送相关问题，可以通过引导用户操作触发此接口，上传 SDK 运行日志并获取回调返回的日志文件下载地址，方便问题排查。详情参考 [日志上报接口](https://intl.cloud.tencent.com/document/product/1024/30715)。
 
@@ -460,3 +436,14 @@ XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
 ```
 
 
+### 隐私协议声明建议
+
+您可在申请 App 权限使用时，使用以下内容声明授权的用途：
+
+
+<pre>
+我们使用 <a href="https://cloud.tencent.com/product/tpns">腾讯云移动推送 TPNS</a> 用于实现产品信息的推送，在您授权我们“访问网络连接”和“访问网络状态”权限后，表示您同意 <a href="https://cloud.tencent.com/document/product/548/50955">腾讯 SDK 隐私协议</a>。您可以通过关闭终端设备中的通知选项来拒绝接受此 SDK 推送服务。
+</pre>
+
+其中上述声明授权的两个链接如下：
+- 腾讯云移动推送：`https://cloud.tencent.com/product/tpns`

@@ -121,7 +121,6 @@ cos.putObject({
 Upload objects to directory a/b:
 
 ```js
-var folder = 'examplefolder/';
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Your bucket (required) */
     Region: 'COS_REGION',  /* Bucket region (required), such as ap-beijing */

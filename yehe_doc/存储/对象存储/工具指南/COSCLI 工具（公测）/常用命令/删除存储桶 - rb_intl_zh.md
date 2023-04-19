@@ -9,7 +9,7 @@ rb 命令包含以下参数：
 
 | 参数格式  | 参数用途     | 示例                |
 | --------- | ------------- | ------------------------ |
- cos://&lt;bucket-name&gt; | 指定需要访问的存储桶。支持使用 [配置参数](https://intl.cloud.tencent.com/document/product/436/43265) 中的桶别名，或桶名称进行访问。如使用桶名称访问，需要额外携带 `endpoint` flag。  |使用桶别名访问：cos://example-alias<br>使用桶名称访问：cos://examplebucket-1250000000    |
+| cos://&lt;bucket-name&gt; | 指定需要访问的存储桶。支持使用 [配置参数](https://intl.cloud.tencent.com/document/product/436/43265) 中的桶别名，或桶名称进行访问。如使用桶名称访问，需要额外携带 `endpoint` flag。  |使用桶别名访问：cos://example-alias<br>使用桶名称访问：cos://examplebucket-1250000000    |
 
 rb 命令包含以下可选 flag：
 

@@ -35,11 +35,8 @@ cp 命令包含以下可选 flag：
 > - 每个线程都会维护一个链接，对于每个链接，您可以使用 `--rate-limiting` 参数对单链接进行限速，当启用并发上传/下载时，总速率为 `--thread-num * --rate-limiting`。
 > - 当以分块形式上传/下载文件时，会默认开启断点续传。
 > - `--include` 和 `--exclude` 支持标准正则表达式的语法，您可以使用它来过滤出符合特定条件的文件。
-> - 使用 zsh 时，您可能需要在 pattern 串的两端加上双引号。
-```plaintext
-./coscli cp ~/test/ cos://bucket1/example/ -r --include ".*.txt" --meta=x-cos-meta-a:a#ContentType:text#Expires:2022-10-12T00:00:00.000Z
-```
-> -  关于此命令的其他通用选项（例如切换存储桶、切换用户账号等），请参见 [通用选项](https://intl.cloud.tencent.com/document/product/436/46273) 文档。
+> - 使用 zsh 时，您可能需要在 pattern 串的两端加上双引号。```plaintext
+./coscli cp ~/test/ cos://bucket1/example/ -r --include ".*.txt" --meta=x-cos-meta-a:a#ContentType:text#Expires:2022-10-12T00:00:00.000Z```> -  关于此命令的其他通用选项（例如切换存储桶、切换用户账号等），请参见 [通用选项](https://intl.cloud.tencent.com/document/product/436/46273) 文档。
 
 
 ## 操作示例

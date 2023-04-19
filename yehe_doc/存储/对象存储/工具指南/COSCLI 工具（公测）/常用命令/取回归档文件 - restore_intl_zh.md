@@ -12,7 +12,7 @@ restore 命令包含以下参数：
 
 | 参数格式  | 参数用途     | 示例                |
 | --------- | ------------- | ------------------------ |
- cos://&lt;bucket-name&gt; | 指定需要访问的存储桶。支持使用 [配置参数](https://intl.cloud.tencent.com/document/product/436/43265) 中的桶别名，或桶名称进行访问。如使用桶名称访问，需要额外携带 `endpoint` flag。  |使用桶别名访问：cos://example-alias<br>使用桶名称访问：cos://examplebucket-1250000000  |
+| cos://&lt;bucket-name&gt; | 指定需要访问的存储桶。支持使用 [配置参数](https://intl.cloud.tencent.com/document/product/436/43265) 中的桶别名，或桶名称进行访问。如使用桶名称访问，需要额外携带 `endpoint` flag。  |使用桶别名访问：cos://example-alias<br>使用桶名称访问：cos://examplebucket-1250000000  |
 | /prefix/          | 可选参数。指定某一文件夹 | /picture/ |
 
 restore 命令包含以下可选 flag：
@@ -28,11 +28,8 @@ restore 命令包含以下可选 flag：
 
 >?
 > - `--include` 和 `--exclude` 支持标准正则表达式的语法，您可以使用它来过滤出符合特定条件的文件。
-> - 使用 zsh 时，您可能需要在 pattern 串的两端加上双引号。
-```
-./coscli restore cos://bucket1/example/ -r --include ".*.mp4"
-```
->- 关于此命令的其他通用选项（例如切换存储桶、切换用户账号等），请参见 [通用选项](https://intl.cloud.tencent.com/document/product/436/46273) 文档。
+> - 使用 zsh 时，您可能需要在 pattern 串的两端加上双引号。```
+./coscli restore cos://bucket1/example/ -r --include ".*.mp4"```>- 关于此命令的其他通用选项（例如切换存储桶、切换用户账号等），请参见 [通用选项](https://intl.cloud.tencent.com/document/product/436/46273) 文档。
 
 
 ## 操作示例

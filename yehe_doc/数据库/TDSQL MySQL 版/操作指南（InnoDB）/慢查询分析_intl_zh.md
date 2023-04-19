@@ -1,4 +1,3 @@
-
 ## 功能说明
 将超过指定时间的 SQL 查询语句称为“慢查询”，对应语句称为“慢查询语句”，而数据库管理员（DBA）对慢查询语句进行分析并找到慢查询出现原因的过程叫做慢查询分析。
 
@@ -8,7 +7,7 @@
 >?
 >- 单击右上角的![](https://qcloudimg.tencent-cloud.cn/raw/be0133e72c7beef0a232c517ccb4c2a3.png)可自定义显示列表字段。
 >- 目前慢查询分析需要拆分到每个分片分别查看。
->- 下载慢日志，需复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://intl.cloud.tencent.com/zh/document/product/213/10517)中，运用 wget 命令进行内网下载。
+>- 下载慢日志，需复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://www.tencentcloud.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)中，运用 wget 命令进行内网下载。
 
 ## 主要参数说明
 ### 主要默认设置

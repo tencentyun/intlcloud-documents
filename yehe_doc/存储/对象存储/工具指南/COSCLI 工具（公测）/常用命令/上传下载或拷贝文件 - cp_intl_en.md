@@ -35,11 +35,8 @@ The `cp` command is used to upload, download, or copy objects.
 > - Each thread maintains a URL. For each URL, you can use the `--rate-limiting` parameter to limit the speed of a single URL. When concurrent upload/download is enabled, the total rate is `--thread-num * --rate-limiting`.
 > - If an object is uploaded/downloaded in parts, checkpoint restart will be enabled by default.
 > - `--include` and `--exclude` support standard regular expression syntax, so you can use them to filter out objects that meet specific criteria.
-> - When using `zsh`, you may need to add double quotes at both ends of the `pattern` string.
-```plaintext
-./coscli cp ~/test/ cos://bucket1/example/ -r --include ".*.txt" --meta=x-cos-meta-a:a#ContentType:text#Expires:2022-10-12T00:00:00.000Z
-```
-> - For other common options of this command (such as switching bucket and user account), see [Common Options](https://intl.cloud.tencent.com/document/product/436/46273).
+> - When using `zsh`, you may need to add double quotes at both ends of the `pattern` string.```plaintext
+./coscli cp ~/test/ cos://bucket1/example/ -r --include ".*.txt" --meta=x-cos-meta-a:a#ContentType:text#Expires:2022-10-12T00:00:00.000Z```> - For other common options of this command (such as switching bucket and user account), see [Common Options](https://intl.cloud.tencent.com/document/product/436/46273).
 
 
 ## Examples

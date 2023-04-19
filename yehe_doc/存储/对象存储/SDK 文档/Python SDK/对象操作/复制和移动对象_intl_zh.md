@@ -114,7 +114,7 @@ response = client.copy(
 |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String  |  是 |
 |  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String  | 是 |
 |  CopySource  | 描述拷贝源对象的路径，包含 Bucket、Key、Region、VersionId |  Dict | 是 |
-|  CopyStatus  |拷贝状态，可选值 Copy、Replaced | String | 否 ｜
+|  CopyStatus  |拷贝状态，可选值 Copy、Replaced | String | 否|
 |  PartSize  | 分块下载的分块大小，默认为10MB |  Int |  否 |
 |  MAXThread  | 分块下载的并发数量，默认为5个线程下载分块 |  Int |  否 |
 

@@ -1,7 +1,7 @@
 随着厂商通道推送额度和推送频率的限制逐步收紧，push 推送的抵达率和下发速度也受到对应程度的限制。具体限制可参见：
 
-- [厂商通道限额说明](https://www.tencentcloud.com/document/product/1024/35829)
-- [厂商通道 QPS 限制说明](https://www.tencentcloud.com/document/product/1024/35247)
+- [厂商通道限额说明](https://intl.cloud.tencent.com/document/product/1024/35829)
+- [厂商通道 QPS 限制说明](https://intl.cloud.tencent.com/document/product/1024/35247)
 
 移动推送提供「智能分配」和「自定义」两种通道分配策略，可在厂商通道限制下提升推送的综合抵达率和抵达速度。
 
@@ -25,7 +25,7 @@
 
 ### 自定义通道策略[](id:zidingyi)
 
-目前小米、OPPO、vivo 三个厂商通道限制每日推送额度，您可根据业务需求，选择某条推送任务可以通过哪些通道下发，个性化地调整 push 通道下发策略，以节省厂商通道资源，实现推送的价值最大化。
+目前各厂商通道限制每日推送额度，您可根据业务需求，选择某条推送任务可以通过哪些通道下发，个性化地调整 push 通道下发策略，以节省厂商通道资源，实现推送的价值最大化。
 自定义策略详细下发规则见下表：
 
 | 通道                                                  | 开启                                                         | 关闭                   | 支持的消息类型                                               |
@@ -64,9 +64,8 @@
 
 ### Rest API 使用
 
-在 Rest API 可选参数中设置通道策略（channel_rules）参数，可自由设置通道策略，详情请参见 PushAPI 文档中的 [channel_rules 参数说明](https://www.tencentcloud.com/document/product/1024/33764)。
+在 Rest API 可选参数中设置通道策略（channel_rules）参数，可自由设置通道策略，详情请参见 PushAPI 文档中的 [channel_rules 参数说明](https://intl.cloud.tencent.com/document/product/1024/33764)。
 Android 端推送示例如下：
-
 ```json
 {
     "audience_type": "token",

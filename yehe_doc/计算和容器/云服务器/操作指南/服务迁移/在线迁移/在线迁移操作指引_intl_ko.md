@@ -82,17 +82,14 @@
 1. go2tencentcloud.zip을 [다운로드](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip)하거나 원본 서버에 업로드하고 다음 명령을 실행하여 해당 디렉터리로 들어갑니다.
    1. 다음 명령어를 순서대로 실행하여 go2tencentcloud.zip의 압축을 풀고 디렉터리로 들어갑니다.
 ```shellsession
+wget https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip
+
+```
+```shellsession
 unzip go2tencentcloud.zip
 ```
 ```shellsession
-cd go2tencentcloud
-```
-   2. 다음 명령어를 순서대로 실행하여 go2tencentcloud-linux.zip의 압축을 풀고 디렉터리로 들어갑니다.
-```shellsession
-unzip go2tencentcloud-linux.zip
-```
-```shellsession
-cd go2tencentcloud-linux
+cd go2tencentcloud/go2tencentcloud-linux
 ```
 <dx-alert infotype="explain" title="">
 `go2tencentcloud` 디렉터리에 있는 파일은 마이그레이션되지 않으므로 이 디렉터리에 마이그레이션할 파일을 두지 마십시오.
@@ -114,7 +111,7 @@ sudo ./go2tencentcloud_x64
 :::
 
 ::: Windows 서버
-1. 마이그레이션 도구 go2tencentcloud.zip을 소스 호스트에 다운로드하거나 업로드하고 압축을 해제하여 go2tencentcloud 폴더를 얻고 go2tencentcloud-windows.zip을 추출하여 계속 압축을 해제하여 아래 이미지와 같은 디렉터리를 얻을 수 있습니다.
+1. 마이그레이션 도구 go2tencentcloud.zip를 다운로드하거나 업로드하고 소스 호스트로 추출하면 go2tencentcloud 폴더를 가져오고 "go2tencentcloud-windows.zip" 폴더를 열어 아래와 같이 디렉터리를 가져올 수 있습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3f2c9881d9c5323a14d096d0811814cd.png)    
 2. 다음과 같은 방법으로 go2tencentcloud_x64.exe 응용 프로그램을 실행합니다.
 	- 방법1: go2tencentcloud_x64.exe 응용 프로그램을 관리자 권한으로 우클릭하여 실행하고, 팝업창에 SecretId와 SecretKey를 입력합니다.
@@ -289,6 +286,3 @@ Import source server successfully 메시지가 표시되지 않으면 마이그�
  - 마이그레이션 대상이 CVM 이미지인 경우 마이그레이션 작업이 있는 행의 ‘CVM 이미지 ID’를 클릭하여 [CVM 이미지 페이지](https://console.cloud.tencent.com/cvm/image/index)로 이동하여 이미지 정보를 볼 수 있으며, 이미지를 활용하여 CVM을 생성할 수 있습니다.
 
 문의 사항이나 마이그레이션 오류 문제 등이 있다면 [서비스 마이그레이션 관련 FAQ](https://intl.cloud.tencent.com/document/product/213/32395)를 조회하거나 [Contact Us](https://intl.cloud.tencent.com/document/product/213/34837)를 통해 해결하실 수 있습니다.
-
-
-

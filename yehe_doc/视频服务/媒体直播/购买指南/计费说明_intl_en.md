@@ -1,74 +1,103 @@
-## Billing Overview
+## Overview
 
+Transcoding fees and relaying fees are the two main types of fees for using StreamLive. In addition, for StreamLive features that rely on the capabilities of other Tencent Cloud products, fees for the corresponding product will be incurred as well.
+
+Billable items:
 <table>
 <thead>
 <tr>
-<th colspan=2>Billable Item</th>
+<th colspan="2">Item</th>
 <th>Description</th>
 <th>Billing Mode</th>
 </tr>
 </thead>
 <tbody><tr>
-<td rowspan=3>Live transcoding</td>
+<td rowspan="3">Live transcoding</td>
 <td>Standard transcoding</td>
-<td><li>Incurred for using the standard transcoding feature during live streaming<li>Billed based on the transcoding duration and aspect ratio of output video</td>
+<td><li>Incurred for using the standard transcoding feature.<li>Billed based on the transcoding duration (the price varies with the resolution of the output stream).</td>
 <td>Daily pay-as-you-go</td>
 </tr>
 <tr>
-<td>Top Speed Codec transcoding</td>
-<td><li>Incurred for using the Top Speed Codec transcoding feature during live streaming<li>Billed based on the transcoding duration and aspect ratio of output video</td>
+<td>Top Speed Codec (TSC) transcoding</td>
+<td><li>Incurred for using the TSC transcoding feature<li>Billed based on the transcoding duration (the price varies with the resolution of the output stream).</td>
 <td>Daily pay-as-you-go</td>
 </tr>
 <tr>
 <td>Audio transcoding</td>
-<td><li>Incurred for using the audio transcoding feature during live streaming<li>Billed based on the transcoding duration</td>
+<td><li>Incurred for using the audio transcoding feature.<li>Billed based on the transcoding duration.</td>
 <td>Daily pay-as-you-go</td>
 </tr>
 <tr>
-<td colspan=2>Relaying</td>
-<td>The relaying feature adopts a tiered pricing method and is billed based on traffic, whose cost varies from region to region.</td>
+<td colspan="2">Relaying</td>
+<td>Billed according to the traffic consumed (a tiered pricing model is used).</td>
 <td>Daily pay-as-you-go</td>
+</tr>
+</tbody></table>
+
+StreamLive features that depend on other Tencent Cloud products:
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+<th>Billing Mode</th>
+</tr>
+</thead>
+<td>Recording</td>
+<td>The scheduled recording feature (whose event type is `Time Record`) relies on Cloud Object Storage (COS). Using it will incur COS storage fees.</td>
+<td><a href="https://www.tencentcloud.com/document/product/436/16871">COS Billing Overview</a></td>
+</tr>
+<tr>
+<td>Time shifting</td>
+<td>The time shifting feature is implemented by Cloud Streaming Services (CSS). Using it will incur CSS time shifting fees.</td>
+<td><a href="(https://www.tencentcloud.com/document/product/267/46847">Billing of CSS Time Shifting</a></td>
+</tr>
+<tr>
+<td>Face blurring</td>
+<td>The face blurring feature is implemented by Media Processing Service (MPS). Using it will incur MPS content recognition fees.</td>
+<td><a href="((https://www.tencentcloud.com/document/product/1041/49204">MPS Billing Overview</a></td>
 </tr>
 </tbody></table>
 
 ## Live Transcoding
 
-StreamLive offers the **standard transcoding**, **Top Speed Codec transcoding**, and **audio transcoding** features, which are billed separately based on the transcoding duration and resolution (aspect ratio) of output video during live streaming.
+StreamLive offers three types of transcoding capabilities: **standard transcoding**, **TSC transcoding**, and **audio transcoding**. They are billed according to the transcoding duration. The price varies with the codec used and resolution of the output video.
 
-The Top Speed Codec transcoding feature leverages intelligent and dynamic transcoding technologies and a high-precision bitrate control model to produce high-definition video at lower bitrate. For details, please see [Top Speed Codec Transcoding](https://intl.cloud.tencent.com/document/product/267/39604#.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81).
+TSC uses intelligent, dynamic transcoding technologies and a high-precision bitrate control model to produce videos with higher definitions and lower bitrates. For details, see [TSC Transcoding](https://www.tencentcloud.com/document/product/267/39604#.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81).
 
-The transcoding fees incurred vary depending on the transcoding method, as detailed below.
+Your transcoding fees vary according to the transcoding mode you use.
 
 <table>
 <thead>
 <tr>
-<th>Transcoding Method</th>
-<th colspan=2 style="text-align:center">Fee</th>
+<th>Transcoding Mode</th>
+<th colspan="2" style="text-align:center;">Fees</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Joint transcoding</td>
-<td colspan=2 style="text-align:center">Video transcoding fee</td>
+<td colspan="2" style="text-align:center;">Video transcoding fees</td>
 </tr>
 <tr>
 <td>Separate transcoding</td>
-<td style="text-align:center">Video transcoding fee</td>
-<td style="text-align:center">Audio transcoding fee</td>
+<td style="text-align:center;">Video transcoding fees</td>
+<td style="text-align:center;">Audio transcoding fees</td>
 </tr>
 <tr>
 <td>Audio-only transcoding</td>
-<td colspan=2 style="text-align:center">Audio transcoding fee</td>
+<td colspan="2" style="text-align:center;">Audio transcoding fees</td>
 </tr>
 </tbody></table>
 
-### Notes
+### Must-knows
 
-- Billing mode: pay-as-you-go
-- Billing cycle: Transcoding is billed daily and the fees incurred in a day from 00:00 to 24:00 (UTC+8) are charged the next day when bills are generated. For the specific fees incurred and billing time, see the bills.
-- Transcoding duration less than 1 minute will be billed as 1 minute.
-- You won’t be charged the transcoding fee if you haven’t used the transcoding feature.
-- Joint transcoding is billed as video transcoding, so you are not charged the audio transcoding fee for using this method. The audio transcoding fee will be incurred only if you use audio-only transcoding.
-- **StreamLive also provides monthly billing mode to customers with large monthly demands. You can contact your sales rep to change your billing mode.**
+*   Billing mode: Pay-as-you-go.
+*   Billing cycle: The transcoding feature is billed daily. The fees incurred each day (from 00:00 to 24:00 (UTC+8)) are deducted the following day at the time of billing.
+*    **When input data is first received after you start a channel (the channel status is "RUNNING"), the system will start transcoding the data according to the transcoding templates bound to the channel's output. If an output is bound with two transcoding templates, transcoding fees will be calculated separately according to the codec used and the output resolution. Please note that after input data is first received, as long as the channel is still in "RUNNING" status, even if no data is received or generated for a certain period of time, transcoding fees will still be incurred. This is because the system inserts frames in between automatically. Only channels whose status is "IDLE" will not incur transcoding fees.**
+*   Transcoding duration is rounded up to the nearest minute. The system calculates your transcoding cost by dividing your total transcoding minutes by 60 and then multiplying the result by the unit price of transcoding.
+*   Joint transcoding only incurs video transcoding fees. Audio transcoding fees are charged only if you use audio-only transcoding.
+
 
 ### Standard transcoding
 
@@ -80,11 +109,11 @@ The transcoding fees incurred vary depending on the transcoding method, as detai
 <th>Codec</th>
 <th>Resolution</th>
 <th>Price (USD/hour)</th>
-<th>Remarks (long side refers to the longer side between the width and height of output video)</th>
+<th>Remarks (the long side is whichever dimension is longer)</th>
 </tr>
 </thead>
 <tbody><tr>
-<td rowspan=5><strong>H.264 (AVC)</strong></td>
+<td rowspan="5"><strong>H.264 (AVC)</strong></td>
 <td>480p</td>
 <td>0.1818</td>
 <td>Long side ≤ 640 px and short side ≤ 480 px</td>
@@ -110,7 +139,7 @@ The transcoding fees incurred vary depending on the transcoding method, as detai
 <td>Long side &gt; 2560 px or short side &gt; 1440 px</td>
 </tr>
 <tr>
-<td rowspan=5><strong>H.265 (HEVC)</strong></td>
+<td rowspan="5"><strong>H.265 (HEVC)</strong></td>
 <td>480p</td>
 <td>0.9453</td>
 <td>Long side ≤ 640 px and short side ≤ 480 px</td>
@@ -136,24 +165,25 @@ The transcoding fees incurred vary depending on the transcoding method, as detai
 <td>Long side &gt; 2560 px or short side &gt; 1440 px</td>
 </tr>
 </tbody></table>
-> ! For example, if the long side of an output video is 1280 px and short side 480 px, its resolution will be counted as 720p.
 
-#### Billing
+>! For example, if the long side of an output video is 1280 px and the short side is 480 px, the price for 720p will apply. The long side is whichever dimension is longer.
 
-- Billable item: standard transcoding duration
-- Billing rules: The fee is calculated by multiplying your transcoding durations in a natural day by their corresponding unit prices (determined by the codec used and the resolution of output video).
+#### Billing details
 
-#### Fee calculation formula
+*   Billable item: Standard transcoding duration
+*   Billing rules: Your standard transcoding durations in a natural day are multiplied by their respective unit prices (which depend on the codec used and resolution of the output video) to determine the fee.
 
-Standard transcoding fee = Transcoding duration x Codec- and resolution-specific unit price
+#### Billing formula
+
+Standard transcoding fee = Transcoding duration x Unit price (determined by the codec and output resolution)
 
 #### Billing example
 
-Assume that, on January 1, 2021, you transcoded a 1-hour segment of live stream A to 720p video using the H.264 codec and watermarked a 30 min-segment of live stream B, outputting 480p video. The transcoding fee charged on January 2, 2021 would be:
+Assume that on January 1, 2021, you transcoded a one-hour live stream to 720p using the H.264 codec and watermarked a 30-min live stream (the output resolution is 480p). The following transcoding fee would be billed on January 2, 2021:
 
-Daily transcoding fee = 0.3636 (USD/hour) x 1 (hour) + 0.1818 (USD/hour) x 0.5 (hour) = 0.4545 USD
+0.3636 (USD/hour) x 1 (hour) + 0.1818 (USD/hour) x 0.5 (hour) = 0.4545 USD
 
-### Top Speed Codec transcoding
+### TSC transcoding
 
 #### Pricing
 
@@ -166,7 +196,7 @@ Daily transcoding fee = 0.3636 (USD/hour) x 1 (hour) + 0.1818 (USD/hour) x 0.5 (
 </tr>
 </thead>
 <tbody><tr>
-<td rowspan=5>H.264 (AVC)</td>
+<td rowspan="5">H.264 (AVC)</td>
 <td>480p</td>
 <td>0.5999</td>
 </tr>
@@ -187,7 +217,7 @@ Daily transcoding fee = 0.3636 (USD/hour) x 1 (hour) + 0.1818 (USD/hour) x 0.5 (
 <td>10.3250</td>
 </tr>
 <tr>
-<td rowspan=5>H.265 (HEVC)</td>
+<td rowspan="5">H.265 (HEVC)</td>
 <td>480p</td>
 <td>3.1195</td>
 </tr>
@@ -209,56 +239,55 @@ Daily transcoding fee = 0.3636 (USD/hour) x 1 (hour) + 0.1818 (USD/hour) x 0.5 (
 </tr>
 </tbody></table>
 
+#### Billing details
 
-#### Billing
+*   Billable item: TSC transcoding duration
+*   Billing rules: Your TSC transcoding durations in a natural day are multiplied by their respective unit prices (which depend on the resolution of the output video) to determine the fee.
 
-- Billable item: top speed codec transcoding duration
-- Billing rules: The fee is calculated by multiplying your top speed codec transcoding durations in a natural day by their corresponding unit prices (determined by the resolution of output video).
+#### Billing formula
 
-#### Fee calculation formula
-
-Top speed codec transcoding fee = Transcoding duration x Resolution-specific unit price
+TSC transcoding fee = Transcoding duration x Unit price (determined by the output resolution)
 
 #### Billing example
 
-Assume that, on August 1, 2021, you used the top speed codec transcoding feature to transcode a 1-hour segment of live stream A to 720p video and a 30-min segment of live stream B to 480p video. The transcoding fee charged on August 2, 2021 would be:
+Assume that on August 1, 2021, you used the TSC transcoding feature to transcode a one-hour live stream to 720p and a 30-min live stream to 480p. The following transcoding fee would be billed on August 2, 2021:
 
-Daily top speed codec transcoding fee = 1.1999 (USD/hour) x 1 (hour) + 0.5999 (USD/hour) x 0.5 (hour) = 1.49985 USD
+1.1999 (USD/hour) x 1 (hour) + 0.5999 (USD/hour) x 0.5 (hour) = 1.49985 USD
 
 ### Audio transcoding
 
-StreamLive’s audio transcoding feature allows you to transcode audio to multiple formats based on your business needs at high quality, enabling effective and reliable audio output and helping you reduce adaptation, labor, and hardware costs.
+StreamLive's audio transcoding feature allows you to transcode audio to multiple formats to meet different business needs. It's a useful and reliable feature that can spare you the trouble of adaption and reduce your labor and hardware costs.
 
 #### Pricing
 
-| Billable Item   | Billing Mode           | Price            |
-| -------- | ------------------ | ---------------- |
-| Audio transcoding | By audio transcoding duration | 0.1218 USD/hour |
+| Billable Item     | Billed By                               | Price             |
+| ---- | --------- | ------------ |
+| Audio transcoding | The audio transcoding duration. | 0.1218 USD/hour |
 
-#### Billing
+#### Billing details
 
-- Billable item: audio transcoding duration
-- Billing rules: The fee is calculated by multiplying your audio transcoding duration in a natural day by the unit price.
+*   Billable item: Audio transcoding duration
+*   Billing rules: Your audio transcoding duration in a natural day is multiplied by the unit price to determine the fee.
 
-#### Fee calculation formula
+#### Billing formula
 
 Audio transcoding fee = Transcoding duration x Unit price
 
 #### **Billing example**
 
-Assume that you used the audio-only transcoding feature to transcode audio of 5 hours on February 1, 2021. The audio transcoding fee charged on February 2, 2021 would be:
+Assume that you used the audio-only transcoding feature to transcode a five-hour live stream on February 1, 2021. The following audio transcoding fee would be billed on February 2, 2021:
 
-Daily audio transcoding fee = 0.1218 (USD/hour) x 5 (hours) = 0.609 USD
+0.1218 (USD/hour) x 5 (hours) = 0.609 USD
 
 ## Relaying
 
-StreamLive’s relaying feature allows you to relay live streams to third-party addresses and is charged based on the amount of traffic relayed.
+Relaying fees will be incurred if you use StreamLive to publish streams to a third party.
 
-### Notes
+### Must-knows
 
-- Billing mode: pay-as-you-go
-- Billing cycle: Relaying is billed daily and the fees incurred in a day from 00:00 to 24:00 (UTC+8) are charged the next day when bills are generated. For the specific fees incurred and billing time, see the bills.
-- You are not charged the relaying fee if you relay to StreamPackage, as it’s not a third-party service.
+*   Billing mode: Pay-as-you-go.
+*   Billing cycle: The relaying feature is billed daily. The fees incurred each day (from 00:00 to 24:00 (UTC+8)) are deducted the following day at the time of billing.
+*   If your output type is "HLS_STREAM_PACKAGE", "DASH_STREAM_PACKAGE", "HLS_ARCHIVE", or "DASH_ARCHIVE", relaying fees will not be charged.
 
 ### Pricing
 
@@ -271,7 +300,7 @@ StreamLive’s relaying feature allows you to relay live streams to third-party 
 </tr>
 </thead>
 <tbody><tr>
-<td rowspan=4>Hong Kong</td>
+<td rowspan="4">Hong Kong</td>
 <td>0-300 GB</td>
 <td>0.1176</td>
 </tr>
@@ -305,7 +334,7 @@ StreamLive’s relaying feature allows you to relay live streams to third-party 
 <td>0.0784</td>
 </tr>
 <tr>
-<td rowspan=4>Santa Clara</td>
+<td rowspan="4">Santa Clara</td>
 <td>0-300 GB</td>
 <td>0.0882</td>
 </tr>
@@ -322,7 +351,7 @@ StreamLive’s relaying feature allows you to relay live streams to third-party 
 <td>0.0490</td>
 </tr>
 <tr>
-<td rowspan=4>Frankfurt</td>
+<td rowspan="4">Frankfurt</td>
 <td>0-300 GB</td>
 <td>0.0882</td>
 </tr>
@@ -339,7 +368,7 @@ StreamLive’s relaying feature allows you to relay live streams to third-party 
 <td>0.0490</td>
 </tr>
 <tr>
-<td rowspan=4>Mumbai</td>
+<td rowspan="4">Mumbai</td>
 <td>0-300 GB</td>
 <td>0.1071</td>
 </tr>
@@ -356,7 +385,7 @@ StreamLive’s relaying feature allows you to relay live streams to third-party 
 <td>0.0784</td>
 </tr>
 <tr>
-<td rowspan=4>Bangkok</td>
+<td rowspan="4">Bangkok</td>
 <td>0-300 GB</td>
 <td>0.1071</td>
 </tr>
@@ -373,7 +402,7 @@ StreamLive’s relaying feature allows you to relay live streams to third-party 
 <td>0.0784</td>
 </tr>
 <tr>
-<td rowspan=4>Tokyo</td>
+<td rowspan="4">Tokyo</td>
 <td>0-300 GB</td>
 <td>0.1341</td>
 </tr>
@@ -390,7 +419,7 @@ StreamLive’s relaying feature allows you to relay live streams to third-party 
 <td>0.0988</td>
 </tr>
 <tr>
-<td rowspan=4>Seoul</td>
+<td rowspan="4">Seoul</td>
 <td>0-300 GB</td>
 <td>0.1260</td>
 </tr>
@@ -407,7 +436,7 @@ StreamLive’s relaying feature allows you to relay live streams to third-party 
 <td>0.1170</td>
 </tr>
 <tr>
-<td rowspan=4>Saint Paul</td>
+<td rowspan="4">São Paulo</td>
 <td>0-300 GB</td>
 <td>0.1470</td>
 </tr>
@@ -425,17 +454,17 @@ StreamLive’s relaying feature allows you to relay live streams to third-party 
 </tr>
 </tbody></table>
 
-### Billing
+### Billing details
 
-- Billable item: amount of traffic relayed to third parties
-- Billing rules: The fee is calculated by multiplying the amount of traffic relayed to third parties by the unit price of traffic for each traffic tier. Traffic relayed to StreamPackage is not charged.
+*   Billable item: Relaying traffic.
+*   Billing rules: A tiered pricing model is used. The relaying traffic consumed is multiplied by its unit price in each tier, and the results are added up to determine the fee.
 
-### Fee calculation formula
+### Billing formula
 
 Relaying fee = Amount of traffic relayed x Unit price
 
 ### Billing example
 
-Assume that, on August 5, 2021, you used StreamLive’s relaying service in Hong Kong and relayed live streams of 1.8 TB to the local address rtp://129.226.27.xxx:57024. The relaying fee incurred would be:
+Assume that on August 5, 2021, you used StreamLive in Hong Kong to relay a live stream to the local address "rtp\://129.226.27.xxx:57024". The traffic consumed was 1.8 TB. The following relaying fee would be incurred:
 
 300 (GB) x 0.1176 (USD/GB) + 1200 (GB) x 0.0833 (USD/GB) + 300 (GB) x 0.0804 (USD/GB) = 159.36 USD

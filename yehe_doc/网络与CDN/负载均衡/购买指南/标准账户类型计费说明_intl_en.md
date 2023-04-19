@@ -55,7 +55,7 @@ The CLB cost is calculated on the actual amount of usage.
 ### Pricing
 CLB cost = [Instance fee](#traffic-instance) + [Public network fee](#traffic-width) + [LCU fee](#traffic-lcu)
 #### [Instance fee](id:traffic-instance)
-The instance fee is billed by day and settled once every day. Each partial day is billed as a full day.
+The instance fee is billed by day and settled once every day. Each partial hour is billed as a full hour
 
 <table>
 <thead>
@@ -76,7 +76,7 @@ The instance fee is billed by day and settled once every day. Each partial day i
 </tbody></table>
 
 >!
-> - Fee for one settlement cycle will be deducted in advance when you create a pay-as-you-go CLB instance. Make sure that your account balance is sufficient.
+> - Fee for one hour will be deducted in advance when you create a pay-as-you-go CLB instance. Make sure that your account balance is sufficient.
 > - The CLB instance will incur daily instance fees even when it is idle (i.e., there is no access requests and no real server is bound).
 #### [Public network fee](id:traffic-width)
 <dx-accordion>

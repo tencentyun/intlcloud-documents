@@ -82,17 +82,13 @@
 1. 移行ツールgo2tencentcloud.zipを移行元サーバーに[ダウンロード](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip)またはアップロードし、次のコマンドを実行して、対応するディレクトリに進みます。
    1. 次のコマンドを順に実行し、go2tencentcloud.zipを解凍してディレクトリに進みます。
 ```shellsession
+wget https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip
+```
+```shellsession
 unzip go2tencentcloud.zip
 ```
 ```shellsession
-cd go2tencentcloud
-```
-   1. 次のコマンドを順に実行し、go2tencentcloud-linux.zipを解凍してディレクトリに進みます。
-```shellsession
-unzip go2tencentcloud-linux.zip
-```
-```shellsession
-cd go2tencentcloud-linux
+cd go2tencentcloud/go2tencentcloud-linux
 ```
 <dx-alert infotype="explain" title="">
 `go2tencentcloud`ディレクトリ下のファイルは移行されません。移行が必要なファイルをこのディレクトリ下に置かないでください。
@@ -114,7 +110,7 @@ sudo ./go2tencentcloud_x64
 :::
 
 ::: Windowsサーバー
-1. 移行ツールgo2tencentcloud.zipを移行元サーバーにダウンロードまたはアップロードします。この圧縮ファイルを解凍してgo2tencentcloudフォルダーを入手します。その中のgo2tencentcloud-windows.zipをさらに解凍して、下図に示すディレクトリを入手します。
+1. 移行ツールgo2tencentcloud.zipを移行元サーバーにダウンロードまたはアップロードします。この圧縮ファイルを解凍してgo2tencentcloudフォルダーを入手します。go2tencentクラウドウィンドウを開き、下図に示すディレクトリを入手します。
 ![](https://qcloudimg.tencent-cloud.cn/raw/3f2c9881d9c5323a14d096d0811814cd.png)    
 2. 以下の方法でgo2tencentcloud_x64.exeを実行します。
 	- 方法1：右クリックして管理者権限でgo2tencentcloud_x64.exeを実行し、ポップアップしたダイアログにSecretId、SecretKeyを入力します。

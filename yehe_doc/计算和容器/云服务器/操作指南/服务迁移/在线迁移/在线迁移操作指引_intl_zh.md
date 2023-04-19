@@ -71,8 +71,7 @@
 #### 通过迁移工具导入迁移源
 <dx-tabs>
 ::: Linux 服务器
-1. 在待迁移的源端主机执行以下命令 [下载](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) 迁移工具 go2tencentcloud.zip，并进入对于目录。
-  - 依次执行以下命令、[下载](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip)、解压 go2tencentcloud.zip 并进入目录。
+1. 在待迁移的源端主机执行以下命令 [下载](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) 迁移工具 go2tencentcloud.zip，并进入对应目录。
 ```shellsession
 wget https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip
 ```
@@ -80,15 +79,7 @@ wget https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2
 unzip go2tencentcloud.zip
 ```
 ```shellsession
-cd go2tencentcloud
-```
-- 依次执行以下命令，解压 go2tencentcloud-linux.zip 并进入目录。
-
-```shellsession
-unzip go2tencentcloud-linux.zip
-```
-```shellsession
-cd go2tencentcloud-linux
+cd go2tencentcloud/go2tencentcloud-linux
 ```
 <dx-alert infotype="explain" title="">
 `go2tencentcloud` 目录下的文件将不会被迁移，请勿将需迁移的文件放置在该目录下。
@@ -110,7 +101,7 @@ sudo ./go2tencentcloud_x64
 :::
 
 ::: Windows 服务器
-1. 将迁移工具 go2tencentcloud.zip [下载](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) 或上传至源端主机，解压得到 go2tencentcloud 文件夹，提取其中的 go2tencentcloud-windows.zip 继续解压，得到如下图所示的目录：
+1. 将迁移工具 go2tencentcloud.zip [下载](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip) 或上传至源端主机，解压得到 go2tencentcloud 文件夹，打开其中的 go2tencentcloud-windows，得到如下图所示的目录：
 ![](https://qcloudimg.tencent-cloud.cn/raw/3f2c9881d9c5323a14d096d0811814cd.png)    
 2. 通过以下方式运行 go2tencentcloud_x64.exe 应用程序。
 	- 方式一：右键以管理员身份运行 go2tencentcloud_x64.exe 应用程序，在弹窗中输入SecretId、SecretKey。

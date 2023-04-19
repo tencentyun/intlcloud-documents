@@ -43,17 +43,10 @@ A job can be either sync or async:
 <td><a href="https://intl.cloud.tencent.com/document/product/1045/48932">Submitting Media Information Query Job</a></td>
 </tr>
 <tr>
-<td rowspan=4>Image quality enhancement</td>
-<td>Super resolution</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1045/48940">Submitting Super Resolution Job</a></td>
-</tr>
+<td rowspan=3>Image quality enhancement</td>
 <tr>
-<td>Video enhancement</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1045/48944">Submitting Video Enhancement Job</a></td>
-</tr>
-<tr>
-<td>SDR to HDR</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1045/48935">Submitting SDR-to-HDR Job</a></td>
+<td>Image quality enhancement (including functions such as hyper-differentiation rate, interpolation, color enhancement, etc.)</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1045/48944">Submitting Image quality enhancement Job</a></td>
 </tr>
 <tr>
 <td>Video quality scoring</td>

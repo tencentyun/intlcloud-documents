@@ -1133,7 +1133,7 @@ response = client.complete_multipart_upload(
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Key | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | String | Yes |
 | UploadId | ID of the multipart upload | String | Yes |
-| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict |
+| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict |Yes |
 
 #### Response description
 

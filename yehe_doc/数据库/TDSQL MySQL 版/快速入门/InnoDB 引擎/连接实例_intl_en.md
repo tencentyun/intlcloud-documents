@@ -1,10 +1,9 @@
-
 ## Connection Methods
 You can connect to a TDSQL for MySQL instance in the following ways:
-- **Private network connection**: A CVM instance can be used to connect to the private network address of a TencentDB instance. This method utilizes the high-speed private network of Tencent Cloud and features low delay.
+- **Private network connection**: A CVM instance can be used to connect to the private network address of a TDSQL for MySQL instance. This method utilizes the high-speed private network of Tencent Cloud and features low delay.
  - The CVM and TencentDB instances must be under the same account and in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region, or both in the classic network.
  - The private network address is provided by TencentDB by default and can be viewed in the instance list or on the instance details page in the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld/instance-tdmysql).
->?CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over private network through [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003).
+>?CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over the private network through [Cloud Connect Network](https://www.tencentcloud.com/document/product/1003).
 >
 - **Public network connection**: If you fail to access the private network, you can connect to your TDSQL for MySQL instance at its public network address. The public network address needs to be [manually enabled](#waiwang). It can be viewed on the instance details page in the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld/instance-tdmysql) and can be disabled if no longer needed.
  - Enabling the public network address will expose your database services to the public network, which may lead to database intrusions or attacks. We recommend that you use the private network to connect to the database.
@@ -12,9 +11,9 @@ You can connect to a TDSQL for MySQL instance in the following ways:
  - Currently, public network access can be enabled in Guangzhou, Shanghai, Beijing, Chengdu and Nanjing.
  - To enable public network access, associate the instance with a security group. For more information, see [Security Group Configuration](https://intl.cloud.tencent.com/document/product/1042/33348).
 
-## Prerequisites
+## Preparations
 ### Creating an account
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/tdsqld/instance-tdmysql). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
+1. Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld/instance-tdmysql). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the instance management page, select **Account Management** and click **Create Account**.
 ![](https://main.qcloudimg.com/raw/148943eb024c9d3871b3c5d509de2e20.png)
 3. In the pop-up dialog box, enter the account name, host, and password. After confirming that everything is correct, click **Next**.
@@ -25,7 +24,7 @@ The navigation bar on the left provides a graphical interface fully compatible w
 5. Return to the account list, click **Modify Permissions** to modify user permission, click **Clone Account** to completely copy the current account permissions to create a new account. Click **More** to reset the password and delete the account.
 ![](https://main.qcloudimg.com/raw/fe697afd0c76d921ce7961f4c57a9017.png)
 
-### [Enabling public network address (optional)](id:waiwang)
+### [Enabling the public network address (optional)](id:waiwang)
 1. Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld/instance-tdmysql), click an instance ID in the instance list to enter the instance details page, and click **Enable** next to **Public IP** in the **Basic Info** section.
 ![](https://qcloudimg.tencent-cloud.cn/raw/16d255372b034ccf1525b21978c28d4d.png)
 2. After this, the public network address and port number can be obtained. TDSQL for MySQL provides a unique IP and port for access and use.

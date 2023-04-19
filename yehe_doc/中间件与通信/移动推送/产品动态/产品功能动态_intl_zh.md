@@ -1,3 +1,59 @@
+## 2022年08月
+
+<table>
+<thead>
+<tr>
+<th  width=20%>动态名称</th>
+<th  width=44%>动态描述</th>
+<th  width=16%>发布时间</th>
+<th  width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>新增：token包推送</td>
+<td>用户通过文件的方式，对批量设备 Token 上传 Token 包文件内， 即可对 Token 包文件进行推送。</td>
+<td>2022-08-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/33764">token包推送</a></td>
+</tr>
+</tbody></table>
+
+## 2022年06月
+
+<table>
+<thead>
+<tr>
+<th  width=20%>动态名称</th>
+<th  width=44%>动态描述</th>
+<th  width=16%>发布时间</th>
+<th  width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>新增：自定义通道策略</td>
+<td>可关闭移动推送自建通道，应用进程在线离线走厂商通道，防止假链路走自建通道影响推送效果。</td>
+<td>2022-06-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/36151">通道策略</a></td>
+</tr>
+</tbody></table>
+
+## 2022年04月
+
+<table>
+<thead>
+<tr>
+<th  width=20%>动态名称</th>
+<th  width=44%>动态描述</th>
+<th  width=16%>发布时间</th>
+<th  width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>新增：荣耀厂商推送通道</td>
+<td>在荣耀手机上，推送消息能够通过荣耀的系统通道抵达终端，并且无需打开应用，即可收到推送</td>
+<td>2022-04-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/47652">荣耀推送通道</a></td>
+</tr>
+</tbody></table>
 ## 2020年12月
 
 <table>
@@ -13,7 +69,7 @@
 <td>新增推送排查功能</td>
 <td>当某个设备未收到推送时，可以通过该设备 Token 与推送的 PushID 查询未收到原因，快速排查问题</td>
 <td>2020-12-02</td>
-<td>可前往【控制台】>【工具箱】>【<a href="https://console.cloud.tencent.com/tpns/user-tools/">排查工具</a>】>【推送查询】体验</td>
+<td>可前往<b>控制台 > 工具箱 > <a href="https://console.cloud.tencent.com/tpns/user-tools/">排查工具</a> > 推送查询</b>体验</td>
 </tr>
 <tr>
 <td>新增预估设备数功能</td>
@@ -66,12 +122,12 @@
 </tr>
 <tr>
 <td>华为 V2 协议升级通知</td>
-<td>华为官方通知：「<b>2021年9月30日起停用 V2 协议</b>」。TPNS 已将华为推送协议升级到 V5，V5 协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 <a href="https://intl.cloud.tencent.com/document/product/1024/32624"> Intent 方式</a> 携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发</td>
+<td>华为官方通知：「<b>2021年9月30日起停用 V2 协议</b>」。移动推送 已将华为推送协议升级到 V5，V5 协议不支持通过<b>附加参数</b>字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 <a href="https://intl.cloud.tencent.com/document/product/1024/32624"> Intent 方式</a> 携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发</td>
 <td>2020-11-09</td>
 <td>-</td>
 </tr>
 <tr>
-<td>【NEW】个性化推送</td>
+<td><b>NEW</b>个性化推送</td>
 <td>将昵称等用户属性与 Token 绑定后，通过一次配置即可向不同用户发送带有用户属性的个性化推送，平均点击率提升40%</td>
 <td>2020-11-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1024/38542">个性化通知</a></td>
@@ -84,7 +140,7 @@
 </tr>
 <tr>
 <td>iOS 推送支持通道策略</td>
-<td>APNs 静默消息对单设备每小时限额3条，iOS 通知栏消息与静默消息均支持 TPNS 通道与 APNs 通道互补下发，可自定义下发策略</td>
+<td>APNs 静默消息对单设备每小时限额3条，iOS 通知栏消息与静默消息均支持移动推送自建通道与 APNs 通道互补下发，可自定义下发策略</td>
 <td>2020-11-02</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1024/36151">通道策略</a></td>
 </tr>
@@ -168,7 +224,7 @@
 </tr>
 <tr>
 <td>Android 通道策略优化</td>
-<td>Android 通道策略-自定义策略优化，可自由选择设备在线是否优先通过 TPNS 通道下发</td>
+<td>Android 通道策略-自定义策略优化，可自由选择设备在线是否优先通过移动推送自建通道下发</td>
 <td>2020-08-11</td>
 <td>-</td>
 </tr>
@@ -177,7 +233,7 @@
 <td>数据概览页新增数据指标</td>
 <td>控制台数据概览页新增按天查看通知栏开启数、卸载/失效设备数</td>
 <td>2020-08-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1024/36384">数据概览</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/41791">数据概览</td>
 </tr>
 </tbody></table>
 
@@ -203,7 +259,7 @@
 <td>富媒体通知升级</td>
 <td>富媒体通知能力升级，通知带图片，点击率 Up Up ！ （适配华为、小米通道富媒体通知） </td>
 <td>2020-07-30</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/1024/37858 ">富媒体通知</a></td>
+<td><a href="https://cloud.tencent.com/document/product/548/46964 ">富媒体通知</a></td>
 </tr>
 
 <tr>
@@ -258,7 +314,7 @@
         <td>应用级别推送漏斗数据</td>
         <td>支持应用级别的每日及实时的消息发送、抵达（PV/UV）、点击、清除趋势数据并支持分通道查看</td>
         <td>2020-05-25</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/1024/36384">数据概览</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/1024/41791">数据概览</a></td>
     </tr> 
     <tr>
         <td>任务级通道选择</td>
@@ -279,7 +335,7 @@
     </tr>
     <tr>
         <td>小米通道超额提醒</td>
-        <td>小米通道超额后，自动走 TPNS 通道推送，且控制台提示</td>
+        <td>小米通道超额后，自动走移动推送自建通道推送，且控制台提示</td>
         <td>2020-04-23</td>
         <td>-</td>
     </tr>
@@ -311,7 +367,7 @@
         <td>标签组合逻辑优化</td>
         <td>支持标签与或非三层嵌套运算，人群更加细分</td>
         <td>2020-04-09</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/1024/35392">标签功能使用</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/1024/35392#.E6.8E.A7.E5.88.B6.E5.8F.B0.E4.BD.BF.E7.94.A8">标签功能使用</a></td>
     </tr>
     <tr>
         <td>数据概览增加指标</td>
@@ -332,7 +388,7 @@
     </tr>
     <tr>
         <td>Android全面支持多包名推送</td>
-        <td>TPNS通道和各主流厂商通道均支持多包名推送</td>
+        <td>移动推送自建通道和各主流厂商通道均支持多包名推送</td>
         <td>2020-03-12</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/1024/35393">多包名推送功能</a></td>
     </tr>
@@ -364,7 +420,7 @@
         <td>资源级权限控制</td>
         <td>可为子账号分配某个应用的操作权限</td>
         <td>2020-02-24 </td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/1024/35288">TPNS 可授权的资源</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/1024/35288">移动推送 可授权的资源</a></td>
     </tr>
 </table>
 
@@ -380,7 +436,7 @@
     </tr>
     <tr>
         <td>厂商通道超额策略</td>
-        <td>厂商通道超额后自动通过TPNS通道下发，最大程度保证消息可达</td>
+        <td>厂商通道超额后自动通过移动推送自建通道下发，最大程度保证消息可达</td>
         <td>2020-02-24</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/1024/35829">厂商通道限额说明</a></td>
     </tr>

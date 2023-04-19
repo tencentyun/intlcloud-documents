@@ -63,7 +63,7 @@
    </tr>
    <tr>
       <td>亚太地区</td>
-      <td  nowrap="nowrap">新加坡<br>孟买<br>东京<br>曼谷<br>首尔</td>
+      <td  nowrap="nowrap">新加坡<br>孟买<br>东京<br>曼谷<br>首尔<br>雅加达</td>
       <td>0.032</td>
       <td>0.141</td>
       <td>0.032</td>
@@ -141,7 +141,7 @@
    </tr>
     <tr>
       <td>欧洲地区</td>
-      <td nowrap="nowrap">法兰克福<br>俄罗斯</td>
+      <td nowrap="nowrap">法兰克福</td>
       <td>0.032</td>
       <td>0.141</td>
       <td>0.032</td>
