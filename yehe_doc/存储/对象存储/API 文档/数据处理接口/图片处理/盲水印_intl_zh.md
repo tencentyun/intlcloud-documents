@@ -10,7 +10,13 @@
 </ul>
 也可以对已添加盲水印的图片进行盲水印提取。
 
-
+>?
+- 暂不支持为动图（例如 GIF 图片）添加盲水印。
+- 使用盲水印功能，水印图的宽高不得超过原图的1/8。
+- 为保证盲水印效果，水印图请选用黑底白色图片。
+- 文字盲水印当前支持数字[0 - 9]及英文大小写[A - Z,a - z]。
+- 盲水印可抵抗裁剪、涂抹、变色等多种图片盗取攻击，防盗效果与原图大小及攻击程度相关。如需详细咨询请 [提交工单](https://console.cloud.tencent.com/workorder/category)。
+- 盲水印已支持数据万象所有地域，详情请查看 [地域与域名](https://intl.cloud.tencent.com/document/product/1045/33423)。
 ## 添加盲水印
 
 ### 请求一：上传时添加盲水印
@@ -209,7 +215,7 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 图片下载时添加盲水印与添加普通水印操作相同，只需在图片访问链接后使用 watermark 参数即可。
 
 #### 请求示例
-
+	
 ```plaintext
 GET /<ObjectKey>?watermark/3/type/<type>/image/<imageUrl>/text/<text> HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com

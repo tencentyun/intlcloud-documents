@@ -1,8 +1,8 @@
-## Overview
+## Feature Overview
 
-Image compression refers to reducing an image’s size as much as possible without changing its quality, to reduce its cost for storage and traffic and speed up access.
+Image compression is the process of downsizing an image as much as possible without sacrificing quality so that it can be stored at a lower cost and accessed more quickly.
 
-COS launched the AVIF compression feature based on [CI](https://intl.cloud.tencent.com/document/product/1045/33422) to convert images into AVIF format, which is a brand-new image format that uses AV1 compression algorithms. It was first introduced by Netflix in February 2020 and has supported browsers such as Chrome and Firefox.
+COS launched the AVIF compression feature based on [CI](https://www.tencentcloud.com/document/product/1045/33422) to convert images into AVIF format, which is a brand-new image format that uses AV1 compression algorithms. It was first introduced by Netflix in February 2020 and has supported browsers such as Chrome and Firefox.
 
 ## Restrictions
 
@@ -13,9 +13,9 @@ COS launched the AVIF compression feature based on [CI](https://intl.cloud.tence
 
 ## Prerequisites
 
-- To use AVIF compression, enable the image advanced compression feature for your bucket on the bucket’s configuration page. For more information, please see [Setting Image Advanced Compression](https://intl.cloud.tencent.com/document/product/436/40117).
+To use AVIF compression, enable the image advanced compression feature for your bucket on the bucket’s configuration page. For more information, see [Setting Image Advanced Compression](https://www.tencentcloud.com/document/product/436/40117).
 
-## How to Use
+## Directions
 
 COS uses the **imageMogr2** API of CI to provide AVIF compression service.
 
@@ -25,7 +25,7 @@ An image can be processed:
 - Upon upload
 - In cloud
 
->? AVIF compression is billed at image advanced compression rates by CI. For detailed pricing, please see the image processing prices of CI.
+>? AVIF Compression is charged by CI at image advanced compression rates. For detailed pricing, see [Image Processing Fees](https://www.tencentcloud.com/document/product/1045/45582).
 >
 
 ## API Format
@@ -33,12 +33,15 @@ An image can be processed:
 #### 1. Processing upon download
 
 ```plaintext
-download_url?imageMogr2/format/avif
+GET /<ObjectKey>?imageMogr2/format/avif HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 #### 2. Processing upon upload
 
-```http
+```plaintext
 PUT /<ObjectKey> HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
@@ -53,9 +56,12 @@ Pic-Operations:
 }
 ```
 
+>? `Pic-Operations` is a JSON string. Its parameters are as described in [Persistent Image Processing](https://www.tencentcloud.com/document/product/1045/33695).
+>
+
 #### 3. Processing in-cloud data
 
-```http
+```plaintext
 POST /<ObjectKey>?image_process HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
@@ -71,17 +77,23 @@ Pic-Operations:
 }
 ```
 
->? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, use **Processing upon upload** or **Processing in-cloud data** instead.
->
+>? 
+> - Authorization: Auth String (see [Request Signature](https://www.tencentcloud.com/document/product/436/7778) for more information)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://www.tencentcloud.com/document/product/1045/49896).
+> 
+
 
 ## Parameters
 
 | Parameter | Description |
 | :--------------- | :----------------------------------------------------------- |
-| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| ObjectKey  | Object name, such as `folder/sample.jpg`.                           |
 | /format/&lt;Format> | Compression format, which is `avif`    |
 
 ## Examples
+
+>? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, use **Processing upon upload** or **Processing in-cloud data** instead.
+>
 
 Assume that the input image is a 1,335.2 KB image in PNG format, as shown below:
 ![img](https://example-1258125638.cos.ap-shanghai.myqcloud.com/sample.png)

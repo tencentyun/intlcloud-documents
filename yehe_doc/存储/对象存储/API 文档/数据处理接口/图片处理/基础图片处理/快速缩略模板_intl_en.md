@@ -1,19 +1,27 @@
 ## Feature Overview
-COS uses CI's **imageView2** API to provide a common image processing template. You can append parameters to the download URL to generate the desired thumbnail. The input image cannot be larger than 32 MB, with its width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 250 million. The width and height of the output image cannot exceed 9,999 pixels. For an input animated image, the total number of pixels (width x height x number of frames) cannot exceed 250 million (GIF frame limit: 300).
+COS uses the **imageView2** API of CI to provide common image processing templates. You only need to add corresponding parameters to the downloading URL to generate corresponding thumbnails.
 
 An image can be processed:
 
-- During download
-- During upload
-- In the cloud
+- Upon download
+- Upon upload
+- In cloud
 
->! Image processing is charged by CI. For detailed pricing, see [Image Processing Fees](https://intl.cloud.tencent.com/document/product/1045/45582).
+>! Image Processing is charged by CI. For detailed pricing, see **Basic image processing fee** in [Billing and Pricing](https://www.tencentcloud.com/document/product/1045/45582).
 >
 
+## Restrictions
 
-## API Sample
+- Format: JPG, BMP, GIF, PNG, and WebP images can be processed, and HEIF images can be decoded and processed.
+- Static image size: The input image cannot be larger than 32 MB. Its dimensions cannot exceed 50,000 pixels and its resolution cannot exceed 250 million pixels. The dimensions of the output image cannot exceed 50,000 pixels.
+- WebP image size: The input image cannot be larger than 32 MB. Its dimensions cannot exceed 16,383 pixels and its resolution cannot exceed 250 million pixels. The dimensions of the output image cannot exceed 16,383 pixels.
+- Animated image size: For the input or output image, the total number of pixels (width x height x number of frames) cannot exceed 250 million pixels.
+- Number of frames (for animated images): For GIF, the number of frames cannot exceed 300.
 
-#### 1. Processing during download
+
+## API Format
+
+#### 1. Processing upon download
 
 ```plaintext
 GET /<ObjectKey>?imageView2/<mode>/w/<Width>
@@ -27,9 +35,9 @@ Date: <GMT Date>
 Authorization: <Auth String>
 ```
 
->! Quality change parameters apply only to images in **JPG** and **WebP** formats.
+>! Quality parameters apply only to images in **JPG** and **WebP** formats.
 
-#### 2. Processing during upload
+#### 2. Processing upon upload
 
 ```plaintext
 PUT /<ObjectKey> HTTP/1.1
@@ -51,7 +59,7 @@ Pic-Operations:
 }
 ```
 
->? `Pic-Operations` is a JSON string. Its parameters are as described in [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/1045/33695).
+>? `Pic-Operations` is a JSON string. Its parameters are as described in [Persistent Image Processing](https://www.tencentcloud.com/document/product/1045/33695).
 >
 
 #### 3. Processing in-cloud data
@@ -78,33 +86,33 @@ Pic-Operations:
 ```
 
 >? 
-> - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - Authorization: Auth String (see [Request Signature](https://www.tencentcloud.com/document/product/436/7778) for more information)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://www.tencentcloud.com/document/product/1045/49896).
 > 
 
 ## Parameters
 
-| Parameter | Description |
+| Parameter       | Description                                                                                                                                        |
 | ----------------------------- | ------------------------------------------------------------ |
 | ObjectKey  | Object name, such as `folder/sample.jpg`.                           | 
-| /1/w/&lt;Width>/h/&lt;Height> | Specifies the minimum width and height of the thumbnail. In this mode, the image will be first scaled down until one of the minimum values set is reached. Then, the image will be centered and evenly cropped on both sides to meet the specified values. If only one value is set, a square thumbnail will be generated. <br>For example, if the input image size is 1000x500 and this parameter is set to `?imageView2/1/w/500/h/400`, the image will be scaled down to 800x400 first. Then, 150 pixels will be cropped from the left and right sides respectively, outputting a 500x400 thumbnail. |
-| /2/w/&lt;Width>/h/&lt;Height> | Specifies the maximum width and height of the thumbnail. <br>In this mode, the image is scaled down until both the width and length are not greater than the maximum values set. <br>For example, if the input image size is 1000x500 and this parameter is set to `?imageView2/2/w/500/h/400`, the image is scaled down to 500x250. <br>If only one value is set, the image will be adapted. |
-| /3/w/&lt;Width>/h/&lt;Height> | Specifies the minimum width and height of the thumbnail. In this mode, the image will be scaled down until both the width and height are not smaller than the minimum values set. <br>For example, if the input image size is 1000x500 and this parameter is set to `?imageView2/3/w/500/h/400`, the image will be scaled down to 800x400. If only one value is set, a square thumbnail will be generated. |
-| /4/w/&lt;LongEdge>/h/&lt;ShortEdge> | Specifies the minimum values of the long edge and short edge of the thumbnail to scale down the image. If only one value is set, a square thumbnail will be generated. |
-| /5/w/&lt;LongEdge>/h/&lt;ShortEdge> | Specifies the maximum values of the long edge and short edge of the thumbnail to scale down the image. The image will be centered and cropped. If only one value is set, a square thumbnail will be generated. After the scaling, the excess will be cropped. |
-| /format/&lt;Format> | Format of the thumbnail, which can be JPG, BMP, GIF, PNG, or WebP. Default value: Format of the input image. |
-| /q/&lt;Quality>                  | Image quality. The value can be 0–100. Use the value of the original image quality (default) or the specified quality, whichever is smaller. If there is an exclamation mark (!) after &lt;Quality>, the specified quality value is forcibly used. |
-| /rq/&lt;quality>                 | Image quality relative to that of the input image. The value can be 0−100. For example, if the input image quality is 80 and `rquality` is set to `80`, the quality of the output image will be 64 (80 * 80%). |
-| /lq/&lt;quality>                 | Minimum quality of the image. Value range: 0−100. <br>If the input image quality is 85 and `lquality` is set to 80, the quality of the output image will be 85.<br>If the input image quality is 60 and `lquality` is set to 80, the quality of the output image will be improved to 80. |
+| /1/w/&lt;Width>/h/&lt;Height> | Mode 1: specifies the minimum width and height of the thumbnail. <br>In this mode, the image is first scaled down until one of the minimum values set is reached. Then, the image will be centered and evenly cropped on both sides to meet the specified values. <br>If only one value is set, a square thumbnail will be generated. <br>For example, if the input image size is 1000 x 500 and this parameter is set to `?imageView2/1/w/500/h/400`, the image will be scaled down to 800 x 400 first. Then, 150 pixels will be cropped from the left and right sides respectively, outputting a 500 x 400 thumbnail. |
+| /2/w/&lt;Width>/h/&lt;Height> | Mode 2: specifies the maximum width and height of the thumbnail. <br>In this mode, the image is scaled down until both the width and length are not greater than the maximum values set. <br>For example, if the input image size is 1000 x 500 and this parameter is set to `?imageView2/2/w/500/h/400`, the image is scaled down to 500 x 250. <br>If only one value is set, the image will be adapted. |
+| /3/w/&lt;Width>/h/&lt;Height> | Mode 3: specifies the minimum width and height of the thumbnail. <br>In this mode, the image is scaled down until both the width and height are not smaller than the minimum values set. <br>For example, if the input image size is 1000 x 500 and this parameter is set to `??imageView2/3/w/500/h/400`, the image is scaled down to 800 x 400. <br>If only one value is set, a square thumbnail will be generated. |
+| /4/w/&lt;LongEdge>/h/&lt;ShortEdge> | Mode 4: specifies the minimum values of the long edge and short edge of the thumbnail to scale down the image. <br>If only one value is set, a square thumbnail will be generated. |
+| /5/w/&lt;LongEdge>/h/&lt;ShortEdge> | Mode 5: specifies the maximum values of the long edge and short edge of the thumbnail to scale down the image. The image will be then centered and cropped. <br>If only one value is set, a square thumbnail will be generated. <br>After the scaling, the excess will be cropped. |
+| /format/&lt;Format> | Format of the thumbnail, which can be JPG, BMP, GIF, PNG, or WebP. Default value: format of the input image |
+| /q/&lt;Quality> | Image quality. Value range: 0−100. Default value: quality of the input image. The smaller value between the input image quality and the specified quality will be used. If there is an exclamation mark (!) after `&lt;Quality>`, the specified quality will be used. |
+| /rq/&lt;quality> | Relative quality of the image, relative to that of the input image. Value range: 0−100. For example, if the input image quality is 80 and `rquality` is set to `80`, the quality of the output image is 64 (that is, 80 x 80%). |
+| /lq/&lt;quality> | Minimum quality of the image. Value range: 0−100. <br>If the input image quality is 85 and `lquality` is set to `80`, the quality of the output image is 85.<br>If the input image quality is 60 and `lquality` is set to `80`, the quality of the output image will be improved to 80. |
 
 
-## Samples
+## Examples
 
->? **Processing during download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40592) and use the **processing during upload** or **processing in-cloud data** feature.
+>? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, see [Persistent Image Processing](https://www.tencentcloud.com/document/product/436/40592) and use **Processing upon upload** or **Processing in-cloud data**.
 
 
-#### Sample 1: Using mode 1
-The following example uses mode 1, sets the minimum width and height of the thumbnail to 400x600, and sets the absolute quality to 85:
+#### Example 1: Using mode 1
+The following example uses mode 1, and sets the minimum width and height of the thumbnail to 400x600, and the absolute quality to 85:
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageView2/1/w/400/h/600/q/85
@@ -113,19 +121,19 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageView2/1
 Generated thumbnail:
 ![](https://main.qcloudimg.com/raw/281a2f6474ad29b430355f785f158a5c.jpeg)
 
-#### Sample 2: Using mode 1 with a signature carried
-This example processes the image in the same way as in the example above, except that a signature is carried. The signature is concatenated with other processing parameters by an ampersand (&).
+#### Example 2: Using mode 1 with a signature carried
+This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&):
 
 ```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageView2/1/w/400/h/600/q/85
 ```
 
->? You can get the value of `<signature>` as instructed in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>? You can obtain the value of `<signature>` by referring to [Request Signature](https://www.tencentcloud.com/document/product/436/7778).
 >
 
 ## Notes
 
-To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple sample for your reference (it might have expired or become inaccessible). For more information, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114).
+To prevent unauthorized users from accessing or downloading the input image by using a URL that does not contain any processing parameter, you can add the processing parameters to the request signature, making the processing parameters the key of the parameter with the value left empty. The following is a simple example for your reference (it might not be valid or accessible anymore). For more information, please see [Request Signature](https://www.tencentcloud.com/document/product/436/14114).
 
 
 ```plaintext

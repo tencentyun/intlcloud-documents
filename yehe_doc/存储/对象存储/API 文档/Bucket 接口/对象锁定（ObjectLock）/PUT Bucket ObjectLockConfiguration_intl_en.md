@@ -1,4 +1,4 @@
-## Overview
+## Feature Overview
 
 COS supports locking objects stored in your buckets. This API is used to configure object lock for your buckets to meet regulatory requirements.
 
@@ -14,13 +14,13 @@ Authorization: Auth String
 ```
 
 >? 
-> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
-> - Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+> - Host: <BucketName-APPID>.cos.<Region>.myqcloud.com, where <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://www.tencentcloud.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://www.tencentcloud.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://www.tencentcloud.com/document/product/436/7778) for more information)
 > 
 
 #### Request headers
 
-This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://www.tencentcloud.com/document/product/436/7728).
 
 #### Request body
 
@@ -46,13 +46,15 @@ The nodes are described as follows:
 | DefaultRetention | ObjectLockConfiguration.Rule | Default configuration of the retention period (during which an object remains locked) | Containers | Yes |
 | Days | ObjectLockConfiguration.Rule.DefaultRetention | Object retention period, in days. Value range: 1−36500 | Int | Yes |
 
- 
+>!
+- `ObjectLockEnabled` can be set only to `Enabled`, indicating to enable object lock for the bucket.
+- Please note that object lock cannot be disabled once enabled.
 
 ## Response
 
 #### Response headers
 
-This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://www.tencentcloud.com/document/product/436/7729).
 
 #### Response body
 
@@ -60,7 +62,7 @@ The response body is empty.
 
 #### Error codes
 
-This API returns common error responses and error codes. For error codes that are not described below, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For error codes that are not described below, please see [Error Codes](https://www.tencentcloud.com/document/product/436/7730).
 
 | HTTP Status Code | Error Code | Description |
 | :----------- | :---------------- | :----------------------------------------------------------- |

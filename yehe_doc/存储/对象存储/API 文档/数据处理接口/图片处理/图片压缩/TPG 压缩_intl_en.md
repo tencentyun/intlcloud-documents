@@ -1,8 +1,8 @@
-## Overview
+## Feature Overview
 
-Image compression refers to reducing an image’s size as much as possible without changing its quality, to reduce its cost for storage and traffic and speed up access.
+Image compression is the process of downsizing an image as much as possible without sacrificing quality so that it can be stored at a lower cost and accessed more quickly.
 
-COS launched the TPG compression feature based on [CI](https://intl.cloud.tencent.com/document/product/1045/33422) to convert images into TPG format, a Tencent-developed format with animated image support. Currently, products such as QQ Browser and Qzone have TPG support by default. TPG offers over 90% smaller file sizes at the same quality compared with GIF, and over 50% smaller file sizes compared with PNG.
+COS launched the TPG compression feature based on [CI](https://www.tencentcloud.com/document/product/1045/33422) to convert images into TPG format, a Tencent-developed format with animated image support. Currently, products such as QQ Browser and Qzone have TPG support by default. TPG offers over 90% smaller file sizes at the same quality compared with GIF, and over 50% smaller file sizes compared with PNG.
 
 ## Restrictions
 
@@ -12,10 +12,10 @@ COS launched the TPG compression feature based on [CI](https://intl.cloud.tencen
 
 ## Prerequisites
 
-- To use TPG compression, enable the image advanced compression feature for your bucket on the bucket’s configuration page. For more information, please see [Setting Image Advanced Compression](https://intl.cloud.tencent.com/document/product/436/40117).
-- To use the TPG format, ensure that **the environment where images are loaded supports TPG decoding**. CI provides TPG decoder−integrated SDKs for iOS, Android, and [Windows](https://main.qcloudimg.com/raw/851dd252378813d250eeca5ed55ffd36/TPG_win_SDK.zip) clients to facilitate quick integration with TPG.
+- To use TPG compression, enable the image advanced compression feature for your bucket on the bucket’s configuration page. For more information, please see [Setting Image Advanced Compression](https://www.tencentcloud.com/document/product/436/40117).
+- To use the TPG format, ensure that **the environment where images are loaded supports TPG decoding**. Tencent Cloud CI provides the TPG decoder−integrated SDKs for [iOS](https://www.tencentcloud.com/document/product/1045/47707), [Android](https://www.tencentcloud.com/document/product/1045/45575), and [Windows](https://main.qcloudimg.com/raw/851dd252378813d250eeca5ed55ffd36/TPG_win_SDK.zip) clients to facilitate quick integration with TPG.
 
-## How to Use
+## Directions
 
 COS uses the **imageMogr2** API of CI to provide the TPG compression feature.
 
@@ -25,7 +25,7 @@ An image can be processed:
 - Upon upload
 - In cloud
 
->? TPG compression is billed at image advanced compression rates by CI. For detailed pricing, please see the image processing prices of CI.
+>? TPG Compression is charged by CI at image advanced compression rates. For detailed pricing, see [Image Processing Fees](https://www.tencentcloud.com/document/product/1045/45582).
 >
 
 ## API Format
@@ -33,7 +33,10 @@ An image can be processed:
 #### 1. Processing upon download
 
 ```plaintext
-download_url?imageMogr2/format/tpg
+GET /<ObjectKey>?imageMogr2/format/tpg HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
+Date: <GMT Date>
+Authorization: <Auth String>
 ```
 
 #### 2. Processing upon upload
@@ -53,6 +56,9 @@ Pic-Operations:
 }
 ```
 
+>? `Pic-Operations` is a JSON string. Its parameters are as described in [Persistent Image Processing](https://www.tencentcloud.com/document/product/1045/33695).
+>
+
 #### 3. Processing in-cloud data
 
 ```http
@@ -71,22 +77,27 @@ Pic-Operations:
 }
 ```
 
->? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, use **Processing upon upload** or **Processing in-cloud data** instead.
->
+>? 
+> - Authorization: Auth String (see [Request Signature](https://www.tencentcloud.com/document/product/436/7778) for more information)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://www.tencentcloud.com/document/product/1045/49896).
+> 
 
 ## Parameters
 
 | Parameter | Description |
 | :--------------- | :----------------------------------------------------------- |
 | download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
-| /format/<Format> | Compression format, which is `tpg`                             |
+| /format/&lt;Format> | Compression format, which is `tpg`                             |
 
 ## Examples
+
+>? **Processing upon download** is used as an example here, which does not store the output image in a bucket. If you need to store the output image, use **Processing upon upload** or **Processing in-cloud data** instead.
+>
 
 Assume that the input image is a 1,335.2 KB image in PNG format, as shown below:
 ![img](https://example-1258125638.cos.ap-shanghai.myqcloud.com/sample.png)
 
-You can convert the image into TPG format using the following URL:
+You can convert the image into TPG format by using the following URL:
 
 ```plaintext
 http://example-1258125638.cos.ap-shanghai.myqcloud.com/sample.png?imageMogr2/format/tpg
