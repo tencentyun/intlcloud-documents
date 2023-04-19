@@ -18,6 +18,7 @@ Content-Length: <length>
 >? 
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 > - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://intl.cloud.tencent.com/document/product/1045/49896).
+> - <ObjectKey> is the bucket object.
 > 
 
 #### Request parameters
@@ -71,7 +72,7 @@ Content-Type: application/x-mpegURL
 Content-Length: 266005
 Connection: keep-alive
 Date: Fri, 10 Mar 2016 09:45:46 GMT
-Server: tencent-cos
+Server: tencent-ci
 x-cos-request-id: NTg3NzRiMjVfYmRjMzVfMTViMl82ZGZm****
 
 <M3U8 file content>
