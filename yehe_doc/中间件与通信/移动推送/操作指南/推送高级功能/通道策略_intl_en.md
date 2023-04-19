@@ -11,7 +11,7 @@ Tencent Push Notification Service provides two channel assignment policies: smar
 |---------|---------|---------|
 |Tencent Push Notification Service channel | The application process is online | All brands |
 | <nobr>Android vendor channels</br>(Huawei, Mi, Meizu, vivo, OPPO, and FCM)</nobr> | <nobr>Application process online or offline</nobr> | Huawei, Mi, Meizu, vivo, OPPO, OnePlus, Black Shark, realme, iQOO, Honor, and other mobile phones with Google Services Framework |
-| iOS vendor channel (APNs) | <nobr>The appplication process is online or offline</nobr> | Apple |
+| iOS vendor channel (APNs) | <nobr>The application process is online or offline</nobr> | Apple |
 
 ## Channel Policy Overview
 
@@ -25,7 +25,7 @@ Tencent Push Notification Service will, based on the device status, segment acti
 
 ### Custom channel policy[](id:zidingyi)
 
-Currently, the Mi, OPPO, and vivo channels limit the daily number of pushes. You can choose the channels through which this push can be delivered according to business needs and personalize the push channel delivery policy to save vendor channel resources and maximize the value of pushes.
+Currently, vendor channels limit the daily number of pushes. You can choose the channels through which this push can be delivered according to business needs and personalize the push channel delivery policy to save vendor channel resources and maximize the value of pushes.
 The table below specifies the delivery rules of a custom policy.
 
 | Channel                                                  | Enabled                                                        | Disabled                   | Supported Messages                                               |
@@ -35,7 +35,7 @@ The table below specifies the delivery rules of a custom policy.
 | Tencent Push Notification Service                                                  | The Tencent Push Notification Service channel is available for the push.                                       | The Tencent Push Notification Service channel can be disabled.            | Notification bar messages, in-app messages, and silent messages.<br/>**Note**: The Tencent Push Notification Service channel for iOS only takes effect in iOS SDK 1.2.8.0 or later. |
 
 
-## Getting Started
+## Directions
 
 ### Setting the policy in the console
 
@@ -64,9 +64,8 @@ You can choose the channel used for push based on the priority of the push task.
 
 ### Setting the policy with RESTful APIs
 
-Set the optional parameter `channel_rules` of the RESTful API. For more information, see [channel_rules parameter description](https://www.tencentcloud.com/document/product/1024/33764) in the Push API document.
+Set the optional `channel_rules` parameter for the RESTful API. For more information, please see [channel_rules parameter description](https://www.tencentcloud.com/document/product/1024/33764#channel_rules-parameter-description) in the Push API documentation.
 Below is a sample push on Android:
-
 ```json
 {
     "audience_type": "token",
@@ -110,7 +109,7 @@ Below is a sample push on iOS:
 		"message": {
 			"title": "The push will be delivered through the Tencent Push Notification Service channel only",
 			"content": "Push content",
-			"ios":{
+			"ios": {
 				"aps": {
 					"alert": {
 						"subtitle": "Push subtitle"

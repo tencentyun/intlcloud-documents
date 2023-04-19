@@ -69,9 +69,12 @@ The `content` field cannot be empty if the RESTful API is called for push; other
 
 ### Does Tencent Push Notification Service supports .p8 certificates?
 
-A .p8 certificate has security risks. Although its validity is longer than that of a .p12 certificate, it has a wider push permission and scope. If leaked, it may cause more severe consequences. Tencent Push Notification Service recommends you use .p12 certificates to manage the push services of your applications separately.
-
-
+A .p8 certificate has security risks. Although its validity is longer than that of a .p12 certificate, it has a wider push permission and scope. If leaked, it may cause more severe consequences. Tencent Push Notification Service recommends you use .p12 certificates to manage the push services of your applications separately. If you insist on using .p8 certificates, follow the steps below for application:
+1. Go to the certificate page of the Developer center, select **Keys**, and click **+** to create a .p8 certificate.
+2. Enter the certificate name (**Key Name**) and select the corresponding capability (APNs).
+![](https://qcloudimg.tencent-cloud.cn/raw/2071ad1ea3b8eff991e2dff081e339be.png)
+3. Download the certificate (a .p8 certificate can be downloaded only once after creation).
+![](https://qcloudimg.tencent-cloud.cn/raw/991382a254d3fb584df437697ba4797e.png)
 
 ### Why can't push messages be received?
 Message push involves various associated modules, and exception in any steps can lead to message delivery failure. If message delivery failures occur, you are recommended to use the [Toolbox](https://console.cloud.tencent.com/tpns/user-tools) for troubleshooting. Below are the most common issues:
@@ -84,7 +87,7 @@ If there is a network issue, the client may fail to obtain the message-receiving
 
 If the device is not connected to the Internet, it cannot receive the message, even if the client has correctly obtained the token, registered it with the Tencent Push Notification Service backend, and the Tencent Push Notification Service server has successfully delivered the message. The message might be received if the device reconnects to the Internet within a short time, as APNs will retain the message for some time and deliver it again.
 
-Check the SDK integration. After the SDK is integrated, please make sure that it can get the device token used to receive messages. For more information, please see [iOS SDK Integration Guide](https://intl.cloud.tencent.com/document/product/1024/30726).
+Check the SDK integration. After the SDK is integrated, please make sure that it can get the device token used to receive messages. For more information, please see [iOS SDK Integration Guide](https://www.tencentcloud.com/document/product/1024/30726).
 
 
 **Server troubleshooting**
@@ -112,14 +115,16 @@ First, on the device development side, put the audio file in the `bundle` direct
 - If you use RESTful APIs, set the `sound` parameter to the name of the audio file (the full path of the audio file is not required).
 
 
-### Does iOS support offline retention of push messages? 
-No. When the Tencent Push Notification Service server sends a message to APNs, if APNs finds that the device is not online, it will retain the message for a while. However, the duration of the retention is not clear.
+### Does iOS support offline retention of push messages?
+Yes. If notifications are delivered when devices are offline (the persistent connection is interrupted due to a shutdown, airplane mode, or network exception):
+- For the vendor channel (APNs), only the last notification delivered is retained, for less than 24 hours.
+- For the Tencent Push Notification Service channel, the last three notifications delivered are retained, for 72 hours.
 
 
 
 ### Why is arrival data unavailable for iOS?
 - iOS 9.x and earlier versions do not provide an API to listen to the arrival of messages at the device. Therefore, arrival data can be collected.  
-- iOS 10.0 and later versions provide the Service Extension API, which can be called by the client to listen to the arrival of messages. For more information, please see [Notification Service Extension](https://intl.cloud.tencent.com/document/product/1024/30730).
+- iOS 10.0 and later versions provide the Service Extension API, which can be called by the client to listen to the arrival of messages. For more information, please see [Notification Service Extension](https://www.tencentcloud.com/document/product/1024/30730).
 
 
 ### How do I create silent push with the Tencent Push Notification Service server SDK?
@@ -145,7 +150,7 @@ Release the preview version in TestFlight: upload the IPA package to [App Store 
 
 
 ### For iOS, how do I configure to change the badge number only without displaying the message?
-When creating a push, you can use the API to specify the notification bar message type, leave the title empty, and only set `badge_type`. For more information, please see [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
+When creating a push, you can use the API to specify the notification bar message type, leave the title empty, and only set `badge_type`. For more information, please see [Push API](https://www.tencentcloud.com/document/product/1024/33764).
 Sample:
 <dx-codeblock>
 :::  json
@@ -194,6 +199,7 @@ The following error is reported during Xcode debugging: "Error Domain=NSCocoaErr
 ### Why no message arrival data is reported after a message is delivered successfully?
 **Troubleshooting process:**
 **Message delivered via the APNs channel**:
+
 1. Check whether the notification service extension plugin is configured ([details](https://intl.cloud.tencent.com/document/product/1024/30730)). If the plugin is not configured, arrival data cannot be reported.
 2. It could be that the arrival event failed to be collected but the message has actually been sent to the mobile phone (the actual push effect is not affected). Check whether the mobile phone network is normal or whether APNs delivery was delayed.
 

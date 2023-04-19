@@ -17,10 +17,11 @@ The common errors of the RESTful APIs of Tencent Push Notification Service mainl
 | 1008020 | Failed to verify the certificate package name | Certificate upload API |
 | 1008021 | Failed to verify the content and format of the .p12 certificate | Certificate upload API |
 | 1008022  | Incorrect .p12 certificate password | Certificate upload API |
+| 1008023  |iOS push cert was expired for the environment: PRODUCT| Push certificate verification error. Check whether the certificate is within its validity period. | Push API |
 | 1008025 | Failed to create the application. The application already exists under the product | App creation API |
 | 1008026 | Batch operation partially failed | Account binding and query API |
 | 1008027 | Batch operation completely failed | Account binding and query API |
-| 1008028  | Too frequent requests | Statistics API |
+| 1008028  | Request too fast| Exceeded the frequency limit:<li>Exceeded the call frequency limit of statistics APIs.</li><li>Exceeded the push frequency limits of push to all devices, push to devices with specified tags, and push by account package. For related information, see "Note" in [Push API](https://www.tencentcloud.com/document/product/1024/33764).</li> | Statistics API and push API|
 | 1008029 | Invalid token | Single push API, account binding API, and tag binding API |
 | 1008030 | The app is not paid | General error |
 | 1008031  | Application resources are terminated | General error |
@@ -28,5 +29,5 @@ The common errors of the RESTful APIs of Tencent Push Notification Service mainl
 | 10010005 | The push target does not exist | Push API |
 | 10010012 | Invalid push time | Push API |
 | 10010018 | Repeated push | Push APIs for full push and tag push |
-| 1008035  | The application AccessID is incorrect, or the service access point of your application does not match the domain address entered. Refer to [Service URL](https://intl.cloud.tencent.com/document/product/1024/38517) | General error |
-| 1008028  | Request too fast| Exceeded the frequency limit. For the push frequency limits of push to all devices, push to devices with specified tags, and push by account package, see "Note" in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764). | General error |
+| 1008035  | The application AccessID is incorrect, or the service access point of your application does not match the domain address entered. Refer to [Service URL](https://www.tencentcloud.com/document/product/1024/38517) | General error |
+

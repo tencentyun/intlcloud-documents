@@ -14,7 +14,7 @@
 
 >!
 >- 腾讯云移动推送结合业务优化的需求，对**全量推送、标签推送和号码包推送**的频率进行限制，均调整为 1条/秒，官网控制台将与 API 同步调整。
->- 如果超过此频率可能会引起推送异常，如相关推送需更高频率，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category)。
+- 如果超过此频率可能会引起推送异常，如相关推送需更高频率，您可以联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。
 >
 
 ## 必要参数
@@ -178,7 +178,7 @@ Android 平台具体字段如下表：
 | fcm_ch_id	 | String  | android | 无     | 否   | FCM 渠道 ID（仅 FCM 推送通道生效）			     |
 | hw_biz_type            | Integer | android     | 0       | 否                                  |是否开启华为快通知：<li>1：开启<li>0：关闭</li>**注意**：仅华为通道有效，其需要 [联系华为商务](https://developer.huawei.com/consumer/cn/support/business) 开通。          |
 | hw_ch_id       | String  | android | 无     | 否   | 华为渠道 ID（仅 华为推送通道生效）                           |
-| hw_category       | String  | android | 无     | 否   | 华为消息类型标识，确定消息提醒方式，对特定类型消息加快发送，参数详情请参见 [华为的请求参数说明](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References/https-send-api-0000001050986197) 的 category 参数。                           |
+| hw_category       | String  | android | 无     | 否   | 华为消息类型标识，确定消息提醒方式，对特定类型消息加快发送，参数详情请参见 [华为的请求参数说明](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References/https-send-api-0000001050986197) 的 category 参数。<li>IM：即时聊天</li><li>VOIP：音视频通话</li><li>SUBSCRIPTION：订阅</li>                           |
 | hw_importance<span id="hw_importance"></span>     | Integer  | android | 无     | 否   | 消息的提醒级别，取值如下：<li>1：表示通知栏消息预期的提醒方式为静默提醒，消息到达手机后，无铃声震动</li><li>2：表示通知栏消息预期的提醒方式为强提醒，消息到达手机后，以铃声、震动提醒用户。终端设备实际消息提醒方式将根据 [hw_category](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-References/https-send-api-0000001050986197#ZH-CN_TOPIC_0000001134031085__p5203378238) 字段取值或者 [智能分类](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835#ZH-CN_TOPIC_0000001149358835__li19162756181511) 结果进行调整。 </li>                          |
 | oppo_ch_id     | String  | android | 无     | 否   | OPPO渠道 ID（仅 OPPO 推送通道生效）                          |
 | vivo_ch_id     | String  | android | 0      | 否   | vivo 渠道 ID：“0”代表运营消息，“1”代表系统消息（仅 vivo 推送通道生效） |
@@ -291,8 +291,7 @@ iOS 平台具体字段如下表：
 | thread_id       | String  | message       |无    | 否    | 通知分组折叠的组别识别名 |
 | ios    | Object       |message  | 无    | 是    | iOS 消息结构体，请参见 [iOS 字段说明](#iOS) |
 | show_type      | Integer | message | 2      | 否   | 应用前台时，是否展示通知 。 <li>1：不展示</li><li>2：展示</br>说明：若取值为1且应用在前台，终端用户对该条推送无感知，但有抵达数据上报</li> |
-| xg_media_resources    | String     | message | 无    | 否    | 图片、音视频富媒体元素 url 地址                          |
-
+| xg_media_resources    | String     | message | 无    | 否    | 图片、音视频富媒体元素 url 地址，详情请参见 [富媒体通知](https://intl.cloud.tencent.com/document/product/1024/37858)|
 
 
 #### iOS 字段说明[](id:iOS)
@@ -311,7 +310,7 @@ iOS 平台具体字段如下表：
 | badge_type      | Integer | aps    | 无     | 否   | 用户设置角标数字：<li> -1：角标数字不变</li> <li> -2：角标数字自动加1</li><li> >=0：设置自定义角标数字</li> |
 | category        | String  | aps    | 无     | 否   | 下拉消息时显示的操作标识                                     |
 | mutable-content | Integer | aps    | 1     | 否   | 通知拓展参数。<li>推送的时候携带 "mutable-content":1，说明是支持 iOS 10 的 Service Extension</li><li>开启后，推送详情中会有抵达数据上报，使用该功能前请按照 [通知服务扩展的使用说明](https://intl.cloud.tencent.com/document/product/1024/30730) 实现 Service Extension 接口，如果不携带此字段则没有抵达数据上报</li> |
-| sound           | String  | aps    | 无     | 否   | sound 字段使用情况如下：<li>播放系统默认提示音，"sound":"default"</li><li>播放本地自定义铃声，"sound":"chime.aiff"</li><li>静音效果，"sound":"" 或者是去除 sound 字段自定义铃声说明：格式必须是 Linear PCM、MA4（IMA/ADPCM）、alaw，μLaw 的一种，将声频文件放到项目 bundle 目录中，且时长要求30s以下，否则就是系统默认的铃声。</li> |
+| sound           | String  | aps    | 无     | 否   | sound 字段使用情况如下：<li>播放系统默认提示音，"sound":"default"</li><li>播放本地自定义铃声，"sound":"chime.aiff"</li><li>静音效果，"sound":"" 或者是去除 sound 字段。</br>自定义铃声说明：格式必须是 Linear PCM、MA4（IMA/ADPCM）、alaw，μLaw 的一种，将声频文件放到项目 bundle 目录中，且时长要求30s以下，否则就是系统默认的铃声。</li> |
 | interruption-level         | String  | aps    | active    | 否   | 仅对 iOS 15 以后的设备生效，需要在[`Capability` 中打开`Time Sensitive Notifications`选项](https://intl.cloud.tencent.com/document/product/1024/30726)，有4个值可以选择设置：<li>passive：被动通知，即并不需要及时关注的通知。</li><li>active：主动通知，默认的通知。</li><li>time-sensitive：时效性通知，需要人们立刻注意的通知。</li><li>critical：重要通知，需要立刻关注的通知。|
 
 完整的消息示例如下：
@@ -424,7 +423,7 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 
 | 参数名                | 类型    | 父项目 | 必需                           | 默认值                               | 描述                                                         |
 | --------------------- | ------- | ------ | ------------------------------ | ------------------------------------ | ------------------------------------------------------------ |
-| expire_time           | Integer | 无     | 否                             | 86400（24小时）                     | 消息离线存储时间（单位为秒），最长72小时<li>若 expire_time = 0，则表示实时消息</li><li>若 expire_time 大于0，且小于800s，则系统会重置为800s</li><li>若expire_time >= 800s，按实际设置时间存储，最长72小时 </li><li>设置的最大值不得超过259200，否则会导致推送失败</li><li>如需调整离线消息时间，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请</li> |
+| expire_time           | Integer | 无     | 否                             | 86400（24小时）                     | 消息离线存储时间（单位为秒），最长72小时<li>若 expire_time = 0，则表示实时消息</li><li>若 expire_time 大于0，且小于800s，则系统会重置为800s</li><li>若expire_time >= 800s，按实际设置时间存储，最长72小时 </li><li>设置的最大值不得超过259200，否则会导致推送失败</li><li>如需调整离线消息时间，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service) 申请</li> |
 | send_time             | String  | 无     | 否                             | 当前系统时间                         | 指定推送时间，可选择未来90天内的时间：<li>格式为 yyyy-MM-DD HH:MM:SS</li><li>若小于服务器当前时间，则会立即推送</li><li>仅全量推送、号码包推送和标签推送支持此字段</li> |
 | multi_pkg             | Boolean | 无     | 否                             | false                                | 多包名推送：当 App 存在多个渠道包（例如应用宝、豌豆荚等），并期望推送时所有渠道的 App 都能收到消息，可将该值设置为 true。<br>**注意：**该参数默认控制移动推送自建通道的多包名推送，需要实现厂商通道多包名推送详见 [厂商通道多包名配置](https://intl.cloud.tencent.com/document/product/1024/35393) 文档 |
 | loop_param            | Object  | 无     | 否                             | 0                                    | 仅全量推送、号码包推送和标签推送支持此字段，详情见下文 [loop_param 参数说明](#loop_param参数说明) |
