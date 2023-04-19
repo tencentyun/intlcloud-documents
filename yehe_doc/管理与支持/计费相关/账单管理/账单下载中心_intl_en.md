@@ -1,62 +1,62 @@
 ## Overview
 
-Bill Download Center is a new console feature we rolled out in January 2022. You can download your bill data since Bills 3.0 (released in July 2021). Specifically, you can:
+Bill Download became available in the **Billing Center** in January 2022. You can download your bill data generated after Bills 3.0 (released in July 2021). Specifically, you can:
 
-1. Download bill packages, PDF bills (L0), bill summary (L1), bills by instance (L2), and bill details (L3)
+1. Download bill packs, PDF bills (L0), bill summary (L1), bills by instance (L2), and bill details (L3).
 
-2. Download bill data for multiple months
+2. Download bill data for multiple months.
 
-3. Download bill data for an account and selected sub-accounts
+3. Download bill data for an account and selected sub-accounts.
 
-4. Download aggregated bill data (the data of hourly/daily billed products can be aggregated by month before download to reduce the number of bill entries)
+4. Download aggregated bill data (the data of hourly/daily billed products can be aggregated by month before download to reduce the number of bill entries).
 
 ## Directions
 
 ### PDF bills (L0)
 
-Use case: L0 bills are in PDF format and can be used for payment requesting or archiving. You can download the L0 bills of multiple months at a time.
+L0 bills are in PDF format and can be used for your financial records or for sending to other departments to request payment. You can download the L0 bills of a multiple months at a time.
 
-1. Download the L0 bills of the current account:
+1. Download the L0 bills of your account:
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/456df0a32dfd695c80dce416df97b36b.png)
 
-2. Download the L0 bills of the current account and selected sub-accounts:
+2. Download the L0 bills of your account and selected sub-accounts:
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/4d92d9d07c09c028861b7d950364e29a.png)
 
 ### Bill summary (L1)
 
-Use case: L1 bills offer bill data by product, project, region, tag, etc., allowing you to view bill information by different metrics. You can download the bill summary of multiple months in one file and can specify whether to aggregate the data of different accounts. For example, you can download the bill summary of an account in the past 6 months by product.
+L1 bills offer bill data by product, project, region, tag, etc., allowing you to view bill information by different metrics. You can download the bill summary of multiple months in one file and can specify whether to aggregate the data of different accounts.
 
-1. Download the L1 bills of the current account:
+1. Download the L1 bills of your account:
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/b32bca3a44e022d29dac80cde456bafd.png)
 
-2. Download the L1 bills of the current account and selected sub-accounts:
+2. Download the L1 bills of your account and selected sub-accounts:
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/6896cdb672d6d9b1ea57b95fe2c70999.png)
 
 ### Bills by instance (L2)
 
-Use case: L2 bills offer bill data by instance (resource) ID. You can download the L2 bills of multiple months in one file and can specify whether to aggregate the data of different accounts.
+L2 bills offer bill data by resource ID (instance). You can download the L2 bills of multiple months in one file and can specify whether to aggregate the data of different accounts.
 
-1. Download the L2 bills of the current account:
+1. Download the L2 bills of your account:
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/0296b5734363f02bca554e382b089745.png)
 
-2. Download the L2 bills of the current account and selected sub-accounts:
+2. Download the L2 bills of your account and selected sub-accounts:
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/e4a895c497204096fe54e889627df1d3.png)
 
 ### Bill details (L3)
 
-Use case: L3 bills offer bill data at the component level. You can download the L3 bills of multiple months at a time and can specify whether to aggregate the data by month.
+L3 bills offer bill data at the component level. You can download the L3 bills of multiple months at a time and can specify whether to aggregate the data by month.
 
-1. Download the L3 bills of the current account and specify whether to aggregate the data by month:
+1. Download the L3 bills of your account and specify whether to aggregate the data by month:
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/77478baccf07af13d3bc153c3953deca.png)
 
-2. Download the L3 bills of the current account and selected sub-accounts and specify whether to aggregate the data by month:
+2. Download the L3 bills of your account and selected sub-accounts and specify whether to aggregate the data by month:
 
 ![img](https://qcloudimg.tencent-cloud.cn/raw/c572cdd87c750b113dc25540958197c6.png)
 
