@@ -1,25 +1,11 @@
 ## 功能描述
 GetSnapshot 接口用于获取媒体文件某个时间的截图。
 
-<div class="rno-api-explorer">
-    <div class="rno-api-explorer-inner">
-        <div class="rno-api-explorer-hd">
-            <div class="rno-api-explorer-title">
-                推荐使用 API Explorer
-            </div>
-            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetSnapshot&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>点击调试</a>
-        </div>
-        <div class="rno-api-explorer-body">
-            <div class="rno-api-explorer-cont">
-                API Explorer 提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力。您可查看每次调用的请求内容和返回结果以及自动生成 SDK 调用示例。
-            </div>
-        </div>
-    </div>
-</div>
+
 
 ## 使用说明
 
-此接口为同步模式，异步模式请参考 [任务接口-截图任务](https://intl.cloud.tencent.com/document/product/1045/48938)。
+此接口为同步模式，异步模式请参考 [任务接口-截图任务](https://www.tencentcloud.com/document/product/1045/48938)。
 
 ## 请求示例
 
@@ -40,7 +26,8 @@ https://<BucketName-APPID>.cos.<Region>.myqcloud.com/for-test.mp4?ci-process=sna
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - <ObjectKey> 为存储桶对象。
 > 
 
 #### 请求头
@@ -76,7 +63,7 @@ https://<BucketName-APPID>.cos.<Region>.myqcloud.com/for-test.mp4?ci-process=sna
 该响应体为截图文件内容。
 
 #### 错误码
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/46214) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见错误码 文档。
 
 
 ## 实际案例
@@ -106,7 +93,7 @@ Content-Type: image/jpeg
 Content-Length: 266005
 Connection: keep-alive
 Date: Fri, 10 Mar 2016 09:45:46 GMT
-Server: tencent-cos
+Server: tencent-ci
 x-cos-request-id: NTg3NzRiMjVfYmRjMzVfMTViMl82ZGZmNw==
 
 
