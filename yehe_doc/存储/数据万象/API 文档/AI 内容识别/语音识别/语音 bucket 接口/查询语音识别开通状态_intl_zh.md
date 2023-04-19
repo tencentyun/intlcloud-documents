@@ -17,7 +17,7 @@ Content-Type: application/xml
 
 >? 
 > - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://www.tencentcloud.com/document/product/1045/49896) 文档。
 > 
 
 #### 请求头
@@ -85,13 +85,14 @@ Content-Type: application/xml
     <TotalCount>1</TotalCount>
     <PageNumber>1</PageNumber>
     <PageSize>10</PageSize>
-    <SpeechBucketList>
+    <AsrBucketList>
         <BucketId></BucketId>
         <Region></Region>
         <CreateTime></CreateTime>
-    </SpeechBucketList>
+    </AsrBucketList>
 </Response>
 ```
+
 
 具体的数据内容如下：
 
@@ -107,16 +108,17 @@ Container 节点 Response 的内容：
 | TotalCount         | Response | 媒体 Bucket 总数                | Int       |
 | PageNumber         | Response | 当前页数，同请求中的 pageNumber | Int       |
 | PageSize           | Response | 每页个数，同请求中的 pageSize   | Int       |
-| SpeechBucketList    | Response | 语音 Bucket 列表                | Container |
+| AsrBucketList    | Response | 语音 Bucket 列表                | Container |
 
-Container 节点 SpeechBucketList 的内容：
+Container 节点 AsrBucketList 的内容：
 
 | 节点名称（关键字） | 父节点                   | 描述                    | 类型   |
 | :----------------- | :----------------------- | :---------------------- | :----- |
-| BucketId           | Response.MediaBucketList | 存储桶 ID               | String |
-| Name               | Response.MediaBucketList | 存储桶名称，同 BucketId | String |
-| Region             | Response.MediaBucketList | 所在的地域              | String |
-| CreateTime         | Response.MediaBucketList | 创建时间                | String |
+| BucketId           | Response.AsrBucketList | 存储桶 ID               | String |
+| Name               | Response.AsrBucketList | 存储桶名称，同 BucketId | String |
+| Region             | Response.AsrBucketList | 所在的地域              | String |
+| CreateTime         | Response.AsrBucketList | 创建时间                | String |
+
 
 #### 错误码
 
