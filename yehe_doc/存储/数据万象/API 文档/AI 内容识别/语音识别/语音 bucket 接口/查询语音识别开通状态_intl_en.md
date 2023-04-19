@@ -17,7 +17,7 @@ Content-Type: application/xml
 
 >? 
 > - Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
-> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see Authorization Granularity.
+> - When this feature is used by a sub-account, relevant permissions must be granted. For more information, see [Authorization Granularity](https://www.tencentcloud.com/document/product/1045/49896) .
 > 
 
 #### Request headers
@@ -85,13 +85,14 @@ The response body returns **application/xml** data. The following contains all t
     <TotalCount>1</TotalCount>
     <PageNumber>1</PageNumber>
     <PageSize>10</PageSize>
-    <SpeechBucketList>
+    <AsrBucketList>
         <BucketId></BucketId>
         <Region></Region>
         <CreateTime></CreateTime>
-    </SpeechBucketList>
+    </AsrBucketList>
 </Response>
 ```
+
 
 The nodes are as described below:
 
@@ -107,16 +108,16 @@ The nodes are as described below:
 | TotalCount         | Response | Total number of media buckets.                | Int       |
 | PageNumber         | Response | Current page number. Same as `pageNumber` in the request.                           | Int       |
 | PageSize           | Response | Number of entries per page. Same as `pageSize` in the request.   | Int       |
-| SpeechBucketList    | Response | Speech bucket list                | Container |
+| AsrBucketList    | Response | Speech bucket list                | Container |
 
-`SpeechBucketList` has the following sub-nodes:
+`AsrBucketList` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----------------------- | :---------------------- | :----- |
-| BucketId           | Response.MediaBucketList | Bucket ID.               | String |
-| Name               | Response.MediaBucketList | Bucket name. Same as `BucketId`. | String |
-| Region             | Response.MediaBucketList | Bucket region.              | String |
-| CreateTime         | Response.MediaBucketList | Creation time.                | String |
+| BucketId           | Response.AsrBucketList | Bucket ID.               | String |
+| Name               | Response.AsrBucketList | Bucket name. Same as `BucketId`. | String |
+| Region             | Response.AsrBucketList | Bucket region.              | String |
+| CreateTime         | Response.AsrBucketList | Creation time.                | String |
 
 #### Error codes
 
