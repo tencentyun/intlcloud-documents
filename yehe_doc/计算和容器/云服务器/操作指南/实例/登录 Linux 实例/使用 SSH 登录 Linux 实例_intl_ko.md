@@ -19,14 +19,14 @@ Linux, Mac OS 혹은 Windows(Windows 10 및 Windows Server 2019 버전)
 - CVM 인스턴스가 공용 IP를 구매하였고 해당 인스턴스가 CVM 인스턴스의 22번 포트를 활성화한 상태여야 합니다(빠른 구성을 통해 구매한 클라우드 서버 인스턴스는 기본적으로 활성화 상태입니다).
 
 ## 작업 순서
-
-### 비밀번호를 사용하여 로그인하기
-
+<dx-tabs>
+::: 비밀번호를 사용하여 로그인하기 [](id:passwordLogin)
 1. 다음 명령어를 실행하여 Linux CVM에 연결합니다.
->? 로컬 컴퓨터가 Mac OS 시스템이라면 먼저 시스템 자체의 터미널(Terminal)을 연 후에 다음의 명령어를 실행해야 합니다.
-> 로컬 컴퓨터가 Linux 시스템이라면 바로 다음의 명령어를 실행할 수 있습니다.
-> 로컬 컴퓨터가 Windows 10 혹은 Windows Server 2019 시스템이라면 먼저 명령 프롬프트(CMD)를 연 후에 다음의 명령어를 실행해야 합니다.
->
+<dx-alert infotype="explain" title="">
+- 로컬 컴퓨터가 Mac OS 시스템이라면 먼저 시스템 자체의 터미널(Terminal)을 연 후에 다음의 명령어를 실행해야 합니다.
+- 로컬 컴퓨터가 Linux 시스템이라면 바로 다음의 명령어를 실행할 수 있습니다.
+- 로컬 컴퓨터가 Windows 10 혹은 Windows Server 2019 시스템이라면 먼저 명령 프롬프트(CMD)를 연 후에 다음의 명령어를 실행해야 합니다.
+</dx-alert>
 ```
 ssh <username>@<hostname or IP address>
 ```
@@ -34,8 +34,8 @@ ssh <username>@<hostname or IP address>
  - `hostname or IP address`는 사용자의 Linux 인스턴스 공용 IP 또는 사용자 정의 도메인 이름입니다.
 2. 획득한 비밀번호를 입력하고 **Enter**를 누르면 로그인할 수 있습니다.
 
-<span id="LoginWithKey"></span>
-### 보안키를 사용하여 로그인하기
+:::
+::: 보안키를 사용하여 로그인하기 [](id:LoginWithKey)
 
 1. 다음 명령어를 실행하여 개인키 파일에 본인만 읽기 가능한 권한을 부여합니다.
  - 로컬 컴퓨터가 Mac OS 시스템이라면 먼저 시스템 자체의 터미널(Terminal)을 연 후에 다음의 명령어를 실행해야 합니다.
@@ -58,6 +58,8 @@ ssh -i <CVM과 연결된 개인키의 다운로드 절대 경로> <username>@<ho
  - `hostname or IP address`는 사용자의 Linux 인스턴스 공용 IP 또는 사용자 정의 도메인 이름입니다.
 
  예를 들어, `ssh -i "Mac/Downloads/shawn_qcloud_stable.pem" ubuntu@192.168.11.123` 명령어를 실행하여 Linux CVM에 원격 로그인합니다.
+:::
+</dx-tabs>
 
 ## 후속 작업
 
