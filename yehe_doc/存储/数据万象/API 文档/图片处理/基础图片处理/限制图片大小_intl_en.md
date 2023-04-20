@@ -6,8 +6,8 @@ CI uses the **imageMogr2/size-limit** API to limit the size of an image processe
 ## Restrictions
 
 - Format: The API for limiting the image size is supported only for JPG images.
-- Size: The original image cannot be larger than 32 MB. Its dimensions cannot exceed 30,000 pixels and its resolution cannot exceed 250 million pixels. The dimensions of the output image cannot exceed 9,999 pixels.
-- Use: This API only supports processing during download via a GET request but not during upload.
+- Size: The original image cannot be larger than 32 MB. Its dimensions cannot exceed 50000 pixels and its resolution cannot exceed 250 million pixels. The dimensions of the output image cannot exceed 50000 pixels.
+
 
 
 ## API Format
@@ -31,17 +31,17 @@ Operation: size-limit
 | Parameter | Description |
 | :-------------- | :----------------------------------------------------------- |
 | ObjectKey  | Object name, such as `folder/sample.jpg`.                           |
-| size-limit | Limits the size of the output image. The unit can be `k` (KB) or `m` (MB). <br>1. Only JPG images are supported. <br>2. Appending an exclamation mark (!) means to compare the sizes of the input and output images. If the output image is smaller, the output image will be returned; otherwise, the input image will be returned; for example,  `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpg?imageMogr2/size-limit/15k!`. <br>3. We recommend you use this parameter together with `strip` to remove redundant image metadata, for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpg?imageMogr2/strip/format/png/size-limit/15k!`. |
+| size-limit | Limits the size of the output image. The unit can be `k` (KB) or `m` (MB). <br><li> Only JPG images are supported. <br><li> Appending an exclamation mark (!) means to compare the sizes of the input and output images. If the output image is smaller, the output image will be returned; otherwise, the input image will be returned; for example,  `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpg?imageMogr2/size-limit/15k!`. <br><li> We recommend you use this parameter together with `strip` to remove redundant image metadata, for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.png?imageMogr2/strip/format/jpg/size-limit/15k! `. |
 | /ignore-error/1 | If this parameter is carried and the image fails to be processed because the image is too large or a parameter value exceeds the limit, the input image will be returned with no error reported. |
 
 ## Examples
 
 #### Example 1: converting image format and limiting the output image size
 
-This example converts a JPG image into PNG format and limits the output image size to 15 KB:
+This example converts a PNG image into JPG format and limits the output image size to 15 KB:
 
 ```plaintext
-http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/strip/format/png/size-limit/15k!
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.png?imageMogr2/strip/format/jpg/size-limit/15k!
 ```
 
 #### Example 2: converting image format and limiting the output image size with a signature carried
@@ -49,7 +49,7 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/s
 This example processes the image in the same way as in the example above except that a signature is carried. The signature is joined with other processing parameters using an ampersand (&):
 
 ```plaintext
-http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/strip/format/png/size-limit/15k!
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.png?q-sign-algorithm=<signature>&imageMogr2/strip/format/jpg/size-limit/15k!
 ```
 
 >? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
