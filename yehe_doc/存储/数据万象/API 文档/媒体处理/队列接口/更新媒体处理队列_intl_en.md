@@ -2,22 +2,6 @@
 
 This API is used to update a media processing queue.
 
-<div class="rno-api-explorer">
-    <div class="rno-api-explorer-inner">
-        <div class="rno-api-explorer-hd">
-            <div class="rno-api-explorer-title">
-                API Explorer is recommended.
-            </div>
-            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CreateTranscodeTemplate&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
-        </div>
-        <div class="rno-api-explorer-body">
-            <div class="rno-api-explorer-cont">
-                Tencent Cloud API Explorer provides various capabilities such as online call, signature verification, SDK code generation, and quick API search. You can also use it to query the request and response of each API call as well as generate sample code for calls.
-            </div>
-        </div>
-    </div>
-</div>
-
 
 
 ## Request
