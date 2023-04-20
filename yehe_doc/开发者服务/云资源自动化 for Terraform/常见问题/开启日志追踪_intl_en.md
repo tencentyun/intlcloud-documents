@@ -16,7 +16,7 @@ This document describes how to enable local log tracking to get more detailed lo
    ```
 
    After execution, you can see that the Terraform local folder generates a `terraform.log` file, which records the log output as defined by TencentCloud Provider. 
-
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/6fTA180_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_64295ecc-9a62-4362-93c3-c631f7a4f76f.png)
 
 ## Example
 
