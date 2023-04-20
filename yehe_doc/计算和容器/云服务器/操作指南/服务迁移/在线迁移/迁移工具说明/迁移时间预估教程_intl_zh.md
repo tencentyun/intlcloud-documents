@@ -50,7 +50,7 @@
 - 源端主机与目标实例如果处于不同地域时，其传输速度比同地域下慢。
 
 <dx-alert infotype="explain" title="">
-- 通过控制台在线迁移时，如果迁移目标是云服务器镜像，迁移时会创建一台中转实例（名称为 do_not_delete_csm_instance），带宽上线为50Mpbs。
+- 通过控制台在线迁移时，如果迁移目标是云服务器镜像，迁移时会创建一台中转实例（名称为 do_not_delete_csm_instance），带宽上限为50Mpbs。
 - 迁移时您可以在控制台动态调整目的实例（或中转实例）的入网带宽，控制迁移速度。
 </dx-alert>
 
@@ -70,7 +70,7 @@
 ```sh
 yum -y install iperf3
 ```
- - 在源端主机主机上安装  iperf3 工具。请根据源端主机 Linux 发行版本使用对应的安装命令安装 iperf3 工具。
+ - 在源端主机上安装  iperf3 工具。请根据源端主机 Linux 发行版本使用对应的安装命令安装 iperf3 工具。
 3. 执行以下命令，启动目标 CentOS 7.5 测试实例的 iperf3 为服务端。
 ```sh
 iperf3 -s
@@ -82,8 +82,3 @@ iperf3 -c [目标实例IP]
 ```
 返回测试结果如下图所示，可知源端主机与测试 CentOS 7.5 实例之间传输速度大概为111Mbps。
 ![](https://qcloudimg.tencent-cloud.cn/raw/8cda488801e4756c54ac6e7c986a7ba2.png)
-
-
-
-
-
