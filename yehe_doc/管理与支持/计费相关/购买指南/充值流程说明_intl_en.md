@@ -1,4 +1,4 @@
-If your account has negative available credit, you need to top up before you can purchase new Tencent Cloud services. Most Tencent Cloud services are billed hourly. If your available credit remains negative, we may services may be suspended for your account. To avoid service suspension, we recommend you keep your available credit positive. You can top up by **credit card** or via **bank transfer**.
+If your account has negative available credit, you need to top up before you can purchase new Tencent Cloud services. Most Tencent Cloud services are billed hourly. If your available credit remains negative, services may be suspended for your account. To avoid service suspension, we recommend you keep your available credit positive. You can top up by **credit card** or via **bank transfer**.
 
 For data security, only account creators and collaborators with financial permissions have access to the **Payment** page.
 
