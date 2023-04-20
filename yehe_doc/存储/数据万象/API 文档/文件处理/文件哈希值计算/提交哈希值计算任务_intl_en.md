@@ -7,6 +7,8 @@ This API adopts a POST request method. You can submit a job to perform hash calc
 - Calling the API will incur hash calculation fees and COS read request fees as described in [Request Fees](https://www.tencentcloud.com/document/product/436/40100).
 - If the files are stored in COS STANDARD_IA storage class, calling the API will incur STANDARD_IA data retrieval fees as described in [Data Retrieval Fees](https://intl.cloud.tencent.com/document/product/436/40097).
 - Calculation is not supported for files stored in the ARCHIVE or DEEP ARCHIVE storage classes. To calculate hash values for these files, you first need to restore them as instructed in [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633).
+- This API can be used in Beijing, Shanghai, Guangzhou, Chengdu, Hong Kong (China), Singapore, and Silicon Valley regions.
+
 
 ## Restrictions
 
