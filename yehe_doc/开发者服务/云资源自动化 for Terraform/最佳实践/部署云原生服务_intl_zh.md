@@ -414,7 +414,8 @@ load_balancer_ip = "xxx.xxx.xxx.xxx"
 
 ## 验证部署
 
-登录腾讯云控制台，访问容器服务 -> example-cluster 集群，可以看到 Nginx 相关的 Pod 已经 Running。
+登录腾讯云控制台，访问容器服务 -> example-cluster 集群，可以看到 Nginx 相关的 Pod 已经 Running:
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/hBaN946_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_d36efe57-ccb3-407a-befc-0f13f8eaa657.png)
 
 访问 `load_balancer_ip` 显示的地址，页面显示 Welcome To Nginx 则说明应用部署成功！
 
