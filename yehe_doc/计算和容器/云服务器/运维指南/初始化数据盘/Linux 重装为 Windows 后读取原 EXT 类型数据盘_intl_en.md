@@ -14,7 +14,7 @@ Download DiskInternals Linux Reader: `http://www.diskinternals.com/download/Linu
 ## Directions
 ### Mounting a data disk
 
-> If a data disk has been mounted, skip this step.
+>! If a data disk has been mounted, skip this step.
 >
 1. Log in to the [Tencent Cloud CVM Console](https://console.cloud.tencent.com/cvm/).
 2. Click **Cloud Block Storage** from the left sidebar to enter the Cloud Block Storage management page.
@@ -24,7 +24,7 @@ Download DiskInternals Linux Reader: `http://www.diskinternals.com/download/Linu
 
 ### Viewing data disk information 
 1. Run DiskInternals Linux Reader to view the information of newly mounted data disk. `/root/mnt` and `/root/mnt1` correspond to vdb1 and vdb2 respectively, which are the 2 data disk partitions on the Linux CVM before reinstallation as shown below:
-> Note that the Linux data disk is read-only at this time. To perform read and write operations on the data disk as you do on a Windows data disk, back up your needed files and re-format the disk into a standard Windows-supported file system. For more information, please see [Data Disk Partition and Formatting of Windows CVMs](https://intl.cloud.tencent.com/document/product/213/2158).
+>! Note that the Linux data disk is read-only at this time. To perform read and write operations on the data disk as you do on a Windows data disk, back up your needed files and re-format the disk into a standard Windows-supported file system. For more information, please see [Data Disk Partition and Formatting of Windows CVMs](https://intl.cloud.tencent.com/document/product/213/2158).
 >
 ![](https://main.qcloudimg.com/raw/490428b0668dcd61c4c60bcb75121462.png)
 2. Double-click to enter `/root/mnt` directory, right-click the file you want to copy, and select **Save** as shown below:
