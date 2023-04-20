@@ -13,6 +13,7 @@
 - 文件数量支持：最多支持打包 1 万个文件；
 - 文件大小支持：打包压缩后总大小小于 50GB；
 - 调用接口需携带签名，具体规则请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档。
+- 本接口当前支持以下地域：北京、上海、广州、成都、中国香港、新加坡、硅谷。
 
 ## 请求
 
@@ -74,13 +75,13 @@ Container 类型 Request 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点  | 描述                                                         | 类型      | 是否必选 |
 | :----------------- | :------ | :----------------------------------------------------------- | :-------- | :------- |
-| Tag                | Request | 表示任务的类型，文件解压默认为：FileCompress。               | String    | 是       |
+| Tag                | Request | 表示任务的类型，多文件打包压缩默认为：FileCompress。               | String    | 是       |
 | Operation          | Request | 包含文件打包压缩的处理规则。                                 | Container | 是       |
 | QueueId            | Request | 任务所在的队列 ID。                                          | String    | 是       |
 | CallBackFormat     | Request | 任务回调格式，JSON 或 XML，默认 XML，优先级高于队列的回调格式。 | String    | 否       |
 | CallBackType       | Request | 任务回调类型，Url 或 TDMQ，默认 Url，优先级高于队列的回调类型。 | String    | 否       |
 | CallBack           | Request | 任务回调的地址，优先级高于队列的回调地址。                   | String    | 否       |
-| CallBackMqConfig   | Request | 任务回调 TDMQ 配置，当 CallBackType 为 TDMQ 时必填。详情见 [CallBackMqConfig](https://intl.cloud.tencent.com/document/product/1045/49945) | Container | 否       |
+| CallBackMqConfig   | Request | 任务回调 TDMQ 配置，当 CallBackType 为 TDMQ 时必填。详情请参见 [CallBackMqConfig](https://intl.cloud.tencent.com/document/product/1045/49945) | Container | 否       |
 
 Container 类型 Operation 的具体数据描述如下：
 
@@ -94,9 +95,9 @@ Container 类型 FileCompressConfig 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点                               | 描述                                                         | 类型       | 是否必选 |
 | :----------------- | :----------------------------------- | :----------------------------------------------------------- | :--------- | :------- |
-| Flatten            | Request.Operation.FileCompressConfig | 文件打包时，是否需要去除源文件已有的目录结构，有效值：<br>- 0：不需要去除目录结构，打包后压缩包中的文件会保留原有的目录结构；<br>- 1：需要，打包后压缩包内的文件会去除原有的目录结构，所有文件都在同一层级。<br>例如：源文件 URL 为 https://domain/source/test.mp4, 则源文件路径为 source/test.mp4，如果为 1，则 ZIP 包中该文件路径为 test.mp4；如果为0， ZIP 包中该文件路径为 source/test.mp4。 | String     | 是       |
+| Flatten            | Request.Operation.FileCompressConfig | 文件打包时，是否需要去除源文件已有的目录结构，有效值：<br><li> 0：不需要去除目录结构，打包后压缩包中的文件会保留原有的目录结构；<br><li> 1：需要，打包后压缩包内的文件会去除原有的目录结构，所有文件都在同一层级。<br>例如：源文件 URL 为 https://domain/source/test.mp4, 则源文件路径为 source/test.mp4，如果为 1，则 ZIP 包中该文件路径为 test.mp4；如果为0， ZIP 包中该文件路径为 source/test.mp4。 | String     | 是       |
 | Format             | Request.Operation.FileCompressConfig | 打包压缩的类型，有效值：zip、tar、tar.gz。                   | String     | 是       |
-| UrlList            | Request.Operation.FileCompressConfig | 支持将需要打包的文件整理成索引文件，后台将根据索引文件内提供的文件url，打包为一个压缩包文件。索引文件需要保存在当前存储桶中，本字段需要提供索引文件的对象地址，例如：/test/index.csv。<br>索引文件格式：仅支持 CVS文件，一行一条URL（仅支持本存储桶文件），如有多列字段，默认取第一列作为URL。最多不超过10000个文件, 总大小不超过50G, 否则会导致任务失败。 | String     | 否       |
+| UrlList            | Request.Operation.FileCompressConfig |<li>支持将需要打包的文件整理成索引文件，后台将根据索引文件内提供的文件 url，打包为一个压缩包文件。<li>索引文件需要保存在当前存储桶中，本字段需要提供索引文件的对象地址，例如：/test/index.csv。<br><li>索引文件格式：仅支持 CSV 文件，一行一条 URL（仅支持本存储桶文件），如有多列字段，默认取第一列作为URL。最多不超过10000个文件, 总大小不超过50G, 否则会导致任务失败。 | String     | 否       |
 | Prefix             | Request.Operation.FileCompressConfig | 支持对存储桶中的某个前缀进行打包，如果需要对某个目录进行打包，需要加/，例如test目录打包，则值为：test/。最多不超过10000个文件，总大小不超过50G，否则会导致任务失败。 | String     | 否       |
 | Key                | Request.Operation.FileCompressConfig | 支持对存储桶中的多个文件进行打包，个数不能超过 1000, 总大小不超过50G，否则会导致任务失败。 | String数组 | 否       |
 
