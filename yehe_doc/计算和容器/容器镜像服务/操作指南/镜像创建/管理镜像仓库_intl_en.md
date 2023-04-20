@@ -23,7 +23,7 @@ On the "Image Repository" page, you can view the image repository list of the cu
  - **Associated Instance**: currently selected instance, to which the created image repository belongs.
  - **Namespace**: namespace to which the image repository belongs. If the list is empty, you must [create a namespace](https://intl.cloud.tencent.com/document/product/1051/35487) in the instance.
  - **Name**: name of the image repository. The value must be 2 to 200 characters in length and can only contain lowercase letters, numbers, and separators (including periods (.), underscores (_), hyphens (-), and slashes (/). It cannot start or end with a separator or contain several consecutive separators. The name can be a multi-level path, such as `team-01/front/nginx`. You can set the name flexibly based on your business requirements.
- - **Image Source**: "Local" and "Platform" are supported. For more information on how to create images through the platform, see [Creating Images](https://intl.cloud.tencent.com/document/product/1051/37252).
+ - **Image Source**: "Local" and "Platform" are supported. 
  - **Brief Description**: brief description of the image repository. It is a string of up to 100 characters. You can re-edit the description after the image repository is created.
  - **Detailed Description**: detailed description of the image repository. This parameter supports the Markdown syntax. It is a string of up to 1000 characters. You can modify the description after the image repository is created.
 3. Click **OK**.
@@ -33,7 +33,7 @@ After the image repository is created, you can view the image repository on the 
 ![](https://main.qcloudimg.com/raw/4670963ae339d0a177d29a247294281e.png)
 
 - **Filtering namespaces**
-Select <img src="https://main.qcloudimg.com/raw/cec7f1733d3e76d18c27b0bcbb65965b.png" style="margin: -3px 0px"> from the "Image Repository" list for filtering. Then, you can select a namespace to view from the drop-down list.
+Select <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/HCXK749_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230420160124.png" style="margin: -3px 0px"> from the "Image Repository" list for filtering. Then, you can select a namespace to view from the drop-down list.
 - **Viewing details of a repository**
 Click the name of a specified image repository. The repository details page is displayed, where you can manage the image tag and edit the basic information of the image repository.
 - **Deleting an image repository**
@@ -58,7 +58,7 @@ You can click **Layer Information** next to a target image repository to view th
  >! When a specified image tag is deleted, other image tags that have the same image ID as the deleted image tag may also be deleted. Consequently, these image tags will become unavailable.
 
 ### Building images
-You can use the source code hosted on GitHub, GitLab.com, private Gitlab, Gitee code cloud, TGit or CODING to compile and build an image. For more information, see [Configuring Image Building](https://intl.cloud.tencent.com/document/product/1051/37252).
+You can use the source code hosted on GitHub, GitLab.com, private Gitlab, Gitee code cloud, TGit or CODING to compile and build an image. 
 
 ### Editing the repository information
 On the details page of the image repository, you can select the **Repository Information** tab to view and edit basic information of the image repository, as shown in the figure below.
