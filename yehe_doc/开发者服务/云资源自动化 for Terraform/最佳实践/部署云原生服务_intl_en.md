@@ -414,7 +414,8 @@ load_balancer_ip = "xxx.xxx.xxx.xxx"
 
 ## Verifying Deployment
 
-Log in to the Tencent Cloud console and go to TKE > **example-cluster**. You can see that Nginx Pods are **Running**.
+Log in to the Tencent Cloud console and go to TKE > **example-cluster**. You can see that Nginx Pods are **Running**:
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/hBaN946_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_d36efe57-ccb3-407a-befc-0f13f8eaa657.png)
 
 Access the address of `load_balancer_ip`. If the page displays "Welcome to nginx!", the application is deployed successfully.
 
