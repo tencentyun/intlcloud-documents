@@ -1,338 +1,427 @@
+# SDK整体接入流程说明
+
+本文介绍慧眼海外版SDK整体接入的流程
 
 ## 接入准备
+
 - 注册腾讯云企业账号，请见[注册指引](https://www.tencentcloud.com/zh/document/product/378/17985)
 - 完成企业实名认证，请见[企业实名指引](https://www.tencentcloud.com/zh/document/product/378/10496)
 - 登陆慧眼控制台[开通服务](https://console.intl.cloud.tencent.com/faceid) 
 - [联系我们](https://www.tencentcloud.com/zh/document/product/1061/52144)获取最新的SDK及License
 
+## 整体架构图
 
-## 名词介绍
+下图为活体人脸比对SDK集成的架构图
 
-- Customer APP: 客户开发的APP
-- Customer Server: 客户的业务后台
-- Tencent Cloud API: 腾讯云提供的后台接口，用于获取刷脸凭证并获取刷脸结果
-- SDK: 腾讯云提供的Android或者iOS的SDK，用于集成入客户的APP并结合后台接口启动刷脸
+![image.5](https://staticintl.cloudcachetci.com/yehe/backend-news/727J155_image.png)
 
-## 接入时序图
+**慧眼SDK集成包括两部分：**
 
-实际使用时，腾讯云建议使用`CreateUploadUrl`接口来传递数据资源，即下图中颜色区域的流程。客户业务后台也可以通过其他方式上传资源，详见[如何传递资源](https://www.tencentcloud.com/zh/document/product/1061/46849) 。
+**客户端集成：** 将慧眼SDK集成到客户终端业务App中。 
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/DSKv554_a.png)
+**服务器端集成：** 在您的（商家）服务器中公开您的（商家）应用程序的端点，以便商家应用程序可以与商家服务器交互，然后访问 FaceId SaaS API 以获取串联活体比对流程的`SdkToken`以及通过`SdkToken`拉取最终的核身结果。
 
 
-相关后台接口：[GenerateReflectSequence](https://www.tencentcloud.com/zh/document/product/1061/47646)，[DetectReflectLivenessAndCompare](https://www.tencentcloud.com/zh/document/product/1061/44246)，[CreateUploadUrl](https://www.tencentcloud.com/zh/document/product/1061/47648)
+## 整体交互流程
 
-## 具体接入步骤
+集成方只需要传入Token并启动对应的慧眼SDK的活体检测方法，便可以完成活体检测，并返回活体结果。
 
-### 1、终端：SDK 初始化与获取鉴权信息（Initial process）
-在使用慧眼SDK之前，需要调用此方法传入基本配置参数，同时通过回调拉取本地的配置参数信息。
+1. Token的获取可以参考云API接口：[GetFaceldTokenIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/)
 
-Android代码示例：
+2. 用户主动拉取活体结果的云API接口: [GetFaceIdResultIntl](http://)
+
+下图展示了SDK、客户端以及服务器端的整体交互逻辑，图中负责模块解析：
+
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/F5n3129_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_091a5f2d-ebc2-48b3-989e-3fcc1e48881f.png)
+
+ 具体的推荐交互流程详细交互如下：
+
+1. 用户触发终端 Merchant Application 准备调用核身业务场景。
+2. Merchant Application 发送请求到 Merchant Server，告知启动一次核身业务需要活体业务Token。
+3. Merchant Server 传入相关参数调用云API接口[GetFaceldTokenIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/)。
+4. FaceID SaaS 接收到[GetFaceldTokenIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/)调用后，下发此次业务的token给 Merchant Server。
+5. Merchant Server可以将获取到的业务Token，下发给客户的 Merchant Application。
+6. Merchant Application 调用慧眼SDK的启动接口**startHuiYanAuth**传入token与配置信息，开始核身验证。
+7. FaceID SDK 捕捉并上传所需的用户数据，包括活体数据等，上传至 FaceID SaaS 。
+8. FaceID SaaS 在完成核身检测（包括活体与比对流程）以后，会返回结果给 FaceID SDK 。
+9. FaceID SDK 主动触发回调给 Merchant Application 通知核验完成以及核验状态。
+10. Merchant Application 接收到回调以后，可以发送请求通知 Merchant Server去主动获取本次核身的结果，进行确认检查。
+11. Merchant Server主动调用 FaceID SaaS 的接口[GetFaceIdResultIntl](http://)传入相关参数以及本次业务的Token，去获取本次核身的结果。
+12. FaceID SaaS 接收到[GetFaceIdResultIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/)调用后，会返回本次核身的结果到 Merchant Server。
+13. Merchant Server接收到本次核身的结果后，可以下发需要的信息到 Merchant Application。
+14.  Merchant Application 展示最后的结果，呈现在UI界面上，告知用户核身的结果。
+
+
+
+## 接入流程
+
+### 服务器端集成
+
+#### 1、集成准备
+
+在服务端集成之前，你需要按照[获取API秘钥指引](http://)中的说明进行操作，开通腾讯云慧眼服务，并且拿到了腾讯云api访问秘钥SecretId和SecretKey。除此之外你还需要按照[连接腾讯云API接口](https://iwiki.woa.com/pages/viewpage.action?pageId=4007951224)中的操作流程，引入你所熟悉开发语言的SDK包到你服务端模块中，以确保可以成功调用腾讯云API以及正确处理API请求和响应。
+
+#### 2、开始集成
+
+为了确保你的（商户）客户端应用程序能够跟你的（商户）服务端正常交互，商户服务端需要调用慧眼提供的API接口 [**GetFaceIdTokenIntl**](http://) 获取SDKToken串联整个活体比对流程以及调用 [**GetFaceIdResultIntl**](http://) 接口获取活体比对结果，商户服务端需要提供相应的端点给商户客户端调用，下面的示例代码使用 Golang语言作为案例，展示如何在服务端调用腾讯云API接口并拿到正确的响应结果。
+
+**注意：** 该示例中仅仅演示商户服务端与腾讯云API服务交互所需要的处理逻辑，如果有需要的话你需要自己实现你的业务逻辑，比如：
+
+* 当你通过 **GetFaceIdTokenIntl** 接口获取活体比对SDKToken之后，可以将客户端应用程序需要的其他响应同SDKToken一并返回给客户端。
+* 当你通过 **GetFaceIdResultIntl** 接口获取活体比对结果之后，可以将返回的最佳帧照片保存起来，以便后续业务逻辑使用。
+
+```go
+var FaceIdClient *faceid.Client
+
+func init() {
+	// Instantiate a client configuration object. You can specify the timeout period and other configuration items
+	prof := profile.NewClientProfile()
+	prof.HttpProfile.ReqTimeout = 60
+	// TODO replace the SecretId and SecretKey string with the API SecretId and SecretKey
+	credential := cloud.NewCredential("SecretId", "SecretKey")
+	var err error
+	// Instantiate the client object of the requested faceid
+	FaceIdClient, err = faceid.NewClient(credential, "ap-singapore", prof)
+	if nil != err {
+		log.Fatal("FaceIdClient init error: ", err)
+	}
+}
+
+// GetFaceIdToken get token
+func GetFaceIdToken(w http.ResponseWriter, r *http.Request) {
+	log.Println("get face id token")
+	// Step 1: ... parse parameters
+	_ = r.ParseForm()
+	var SecureLevel = r.FormValue("SecureLevel")
+
+	// Step 2: instantiate the request object and provide necessary parameters
+	request := faceid.NewApplyLivenessTokenRequest()
+	request.SecureLevel = &SecureLevel
+	// Step 3: call the Tencent Cloud API through FaceIdClient
+	response, err := FaceIdClient.ApplyLivenessToken(request)
+
+	// Step 4: process the Tencent Cloud API response and construct the return object
+	if nil != err {
+		_, _ = w.Write([]byte("error"))
+		return
+	}
+	SdkToken := response.Response.SdkToken
+	apiResp := struct {
+		SdkToken *string
+	}{SdkToken: SdkToken}
+	b, _ := json.Marshal(apiResp)
+
+	// ... more codes are omitted
+
+	//Step 5: return the service response
+	_, _ = w.Write(b)
+}
+
+// GetFaceIdResult get result
+func GetFaceIdResult(w http.ResponseWriter, r *http.Request) {
+	// Step 1: ... parse parameters
+	_ = r.ParseForm()
+	SdkToken := r.FormValue("SdkToken")
+	// Step 2: instantiate the request object and provide necessary parameters
+	request := faceid.NewGetLivenessResultRequest()
+	request.SdkToken = &SdkToken
+	// Step 3: call the Tencent Cloud API through FaceIdClient
+	response, err := FaceIdClient.GetLivenessResult(request)
+
+	// Step 4: process the Tencent Cloud API response and construct the return object
+	if nil != err {
+		_, _ = w.Write([]byte("error"))
+		return
+	}
+	result := response.Response.Result
+	apiResp := struct {
+		Result *string
+	}{Result: result}
+	b, _ := json.Marshal(apiResp)
+
+	// ... more codes are omitted
+
+	//Step 5: return the service response
+	_, _ = w.Write(b)
+}
+
+func main() {
+	// expose endpoints
+	http.HandleFunc("/api/v1/get-token", GetFaceIdToken)
+	http.HandleFunc("/api/v1/get-result", GetFaceIdResult)
+	// listening port
+	err := http.ListenAndServe(":8080", nil)
+	if nil != err {
+		log.Fatal("ListenAndServe error: ", err)
+	}
+}
+```
+
+#### 3、接口测试
+
+当你完成了集成之后，可以通过postman或者curl命令来测试当前的集成是否正确，通过访问http://ip:port/api/v1/get-token 接口查看是否正常返回 `SdkToken` , 访问http://ip:port/api/v1/get-result 接口查看 `Result` 字段的响应是否为0以判断服务端集成是否成功，具体的响应结果详见API接口部分的介绍。
+
+
+### Android端集成
+
+#### 1、依赖环境
+
+当前Android端慧眼SDK适用于API 19 (Android 4.4) 及以上版本。
+
+#### 2、SDK接入步骤
+
+1. 将**huiyansdk_android_overseas_1.0.9.6_release.aar**具体版本号以官网下载为准) 和 **tencent-ai-sdk-youtu-base-1.0.1.39-release.aar**、**tencent-ai-sdk-common-1.1.36-release.aar**、**tencent-ai-sdk-aicamera-1.0.22-release.aar**(具体版本号以最终提供为准) 添加到您工程的libs目录下。
+
+![](https://ai-sdk-release-1254418846.cos.ap-guangzhou.myqcloud.com/SDK%E6%96%87%E6%A1%A3%E5%9B%BE%E5%BA%8A/tuyong/oversea_lib.png)
+
+2. 在您工程的**build.gradle**中进行如下配置：
+
+```groovy
+// 设置ndk so架构过滤(以armeabi-v7a为例)
+ndk {
+    abiFilters 'armeabi-v7a'
+}
+
+dependencies {
+    // 引入慧眼SDK
+    implementation files("libs/huiyansdk_android_overseas_1.0.9.5_release.aar")
+    // 慧眼通用算法SDK
+    implementation files("libs/tencent-ai-sdk-youtu-base-1.0.1.32-release.aar")
+    // 通用能力组件库
+    implementation files("libs/tencent-ai-sdk-common-1.1.27-release.aar")
+    implementation files("libs/tencent-ai-sdk-aicamera-1.0.18-release.aar")
+
+  	// 慧眼SDK需要依赖的第三方库
+    // gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+}
+```
+
+3. 同时需要在AndroidManifest.xml文件中进行必要的权限声明
+
+```xml
+<!-- 摄像头权限 -->
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-feature
+    android:name="android.hardware.camera"
+    android:required="true" />
+<uses-feature android:name="android.hardware.camera.autofocus" />
+
+<!-- SDK需要的权限 -->
+<uses-permission android:name="android.permission.INTERNET" />
+<!-- SDK可选需要的权限 -->
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
+
+   对于需要兼容Android 6.0以上的用户，以上权限除了需要在AndroidManifest.xml文件中声明权以外，还需使用代码动态申请权限。
+
+#### 3、初始化接口
+
+	在您APP初始化的时候调用，推荐在Application中调用，主要是进行一些SDK的初始化操作
+
+```java
+@Override
+public void onCreate() {
+    super.onCreate();
+    instance = this;
+    // SDK需要在Application初始化时进行初始化
+    HuiYanOsApi.init(getApp());
+}
+```
+
+#### 4、启动核身检测接口
 
 ```java
 // HuiYanOs的相关参数
 HuiYanOsConfig huiYanOsConfig = new HuiYanOsConfig();
 // 此license文件存放在assets下
 huiYanOsConfig.setAuthLicense("YTFaceSDK.license");
-// 启动核身前，拉取本地的配置参数信息
-HuiYanOsApi.startGetAuthConfigData(huiYanOsConfig, new HuiYanConfigCallback() {
-		@Override
-		public void onSuccess(String result) {
-			// 获取配置信息成功, 将配置信息发送给服务器，兑换启动核身配置，服务器下发的光线序列（客户自己实现上图step 4）
-			String reflectSequence = getAuthLightData(result);
-      // ... 剩余步骤
-		}
+if (compatCheckBox.isChecked()) {
+    huiYanOsConfig.setPageColorStyle(PageColorStyle.Dark);
+}
+// 是否需要返回最佳帧
+if (needBestImageCB.isChecked()) {
+    huiYanOsConfig.setNeedBestImage(true);
+}
+// 启动方法，开始的活体，currentToken为后台下发数据
+HuiYanOsApi.startHuiYanAuth(currentToken, huiYanOsConfig, new HuiYanOsAuthCallBack() {
+    @Override
+    public void onSuccess(HuiYanOsAuthResult authResult) {
+        showToast("活体通过！");
+        if (!TextUtils.isEmpty(authResult.getBestImage())) {
+           CommonUtils.decryptBestImgBase64(authResult.getBestImage(), false);
+        }
+    }
 
-		@Override
-		public void onFail(int errorCode, String errMsg) {
-			// 获取配置参数失败（客户自己实现）
-			showError(errorCode, errMsg);
-		}
+    @Override
+    public void onFail(int errorCode, String errorMsg, String token) {
+        String msg = "活体失败 " + "code: " + errorCode + " msg: " + errorMsg + " token: " + token;
+        Log.e(TAG, "onFail" + msg);
+        showToast(msg);
+    }
 });
 ```
 
-iOS代码示例：
+[HuiYanOsAuthResult](https://iwiki.woa.com/pages/viewpage.action?pageId=4007948264)为活体成功的返回结果, 最终的核身结果可以通过token，访问[GetFaceldResultIntl](//todo:正式的官网API接口)获取。
 
-```objective-c
-// HuiYanOs的相关参数
-HuiYanOsConfig *config = [[HuiYanOsConfig alloc] init];
-// license文件在bundle中的路径
-config.authLicense = [[NSBundle mainBundle] pathForResource:@"YTFaceSDK.license" ofType:@""];
-// 活体检测本地检测超时时间（ms）
-config.authTimeOutMs = 20000;
-//指定HuiYanSDKUI.bundle 内语言目录文件
-config.setLanguageFileName = @"th";//th.lproj
-// 启动核身前，拉取本地的配置参数信息
-[HuiYanOsApi startGetAuthConfigData:config withSuccCallback:^(NSString * _Nonnull result) {
-  	// 获取配置信息成功, 将配置信息发送给服务器，兑换启动核身配置，服务器下发的光线序列（客户自己实现上图step 4）
-  	NSString *liveData = [self getLiveDataWith:result];
-} withFialCallback:^(int errCode, NSString * _Nonnull errMsg) {
-  	// 获取配置参数失败（客户自己实现）
-    NSLog(@"errCode:%d, errMsg:%@", errCode, errMsg);
-}];
-```
+**注意：**当前的 **"YTFaceSDK.license"**文件是需要您主动申请的，暂时您可以联系客服人员进行license申请。将申请完成后的license文件放到assets文件下。
 
-SDK的`startGetAuthConfigData`方法需要传入一个回调函数，用于**接收DeviceData数据并通过客户服务端上传至腾讯云**。通过 SDK 获取的 DeviceData 的示例数据如下：
+![](https://ai-sdk-release-1254418846.cos.ap-guangzhou.myqcloud.com/huiyan/image/license%E5%AD%98%E6%94%BE%E8%B7%AF%E5%BE%84.png)
 
-```json
-{
-    "platform": 2,
-    "select_data": "{\"change_point_num\":2,\"android_data\":{\"build_device\":\"flame\",\"build_display\":\"TP1A.220624.014\",\"build_product\":\"flame\",\"build_brand\":\"google\",\"build_model\":\"Pixel 4\",\"android_apilevel\":\"33\",\"build_hardware\":\"flame\",\"android_version\":\"13\",\"lux\":-10000},\"client_version\":\"sdk_version:1.1.20.221.1;ftrack_sdk_version:v3.0.5-mini.12;freflect_sdk_version:3.6.9.2;faction_sdk_version:3.7.5\",\"protocal\":1,\"config\":\"need_action_video\u003dtrue\u0026sdcs\u003d00031.1.20.221.101a634e43d16fe194c41712bf91c56076dd319a0fdcfd575a49d788ec950740ae54f38f04ae\",\"version\":\"3.6.9.2\",\"platform\":2,\"reflect_param\":\" version 2\"}"
-}
-```
+#### 5、SDK资源释放
 
-**注意：不要直接在终端调用腾讯云的接口**
+	在您APP退出使用的时候，可以调用SDK资源释放接口
 
-### 2、 服务端：上传DeviceData并生成光线序列（Generate reflect sequence process）
-
-#### 2.1 使用 [CreateUploadUrl](https://www.tencentcloud.com/document/product/1061/47648) 接口上传资源。
-**注1：本步骤描述的是通用的上传资源方式，后续环节中涉及上传资源操作的，均可参考本步骤。**
-
-该接口作用是获取两个地址，`UploadUrl`为上传资源的目标地址，`ResourceUrl`为访问资源的地址。
-
-输入参数：
-- TargetAction：cos 资源用于的接口名称，如：GenerateReflectSequence、DetectReflectLivenessAndCompare
-- Region: 资源上传的目的地域。**重要！！！：调用TargetAction时传入的Region必须跟调用本接口时传入的Region保持一致，否则会调用失败。**
-
-输出参数：
-- UploadUrl：上传资源的目标地址，通过 HTTP 的 PUT 方式进行上传
-- ResourceUrl：cos 资源地址，能够访问已上传资源的地址
-- ExpiredTimestamp：访问地址与上传地址过期的时间戳
-- RequestId：当前请求的 id
-
-下面为 python 示例的 SDK 调用方式：
-
-```py
-from tencentcloud.common import credential
-from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
-from tencentcloud.faceid.v20180301 import faceid_client, models
-
-# 为开通服务时申请的对应 secretId 和 secretKey ，只需修改这两个参数即可
-secretId = ""
-secretKey = ""
-
-try:
-    cred = credential.Credential(secretId, secretKey)
-    # 注意这里对请求地域有要求，要求详见接口文档
-    client = faceid_client.FaceidClient(cred, "ap-hongkong")
-
-    req = models.CreateUploadUrlRequest()
-    # 这里是输入参数
-    # TargetAction: string cos 资源使用的目标接口
-    req.TargetAction = "GenerateReflectSequence"
-    
-    resp = client.CreateUploadUrl(req)
-    print(resp.to_json_string())
-
-except TencentCloudSDKException as err:
-    print(err)
-```
-
-返回内容为：
-
-```json
-{
-    "UploadUrl": "https://faceid-resource-hk-1258344699.cos.ap-hongkong.myqcloud.com/faceid%2FGenerateReflectSequence%2F1300847512%2F66f265e1-6d93-489e-9b34-8e75d8f6ecd8?q-sign-algorithm=sha1&q-ak=AKIDkJcgTzFEwNXR4SZP0KNAhxwf8KFsEJ7e&q-sign-time=1676537007%3B1676544207&q-key-time=1676537007%3B1676544207&q-header-list=host&q-url-param-list=&q-signature=2ae43986ba2feb0d04dde37ac7b140d8f9596fa7",
-    "ResourceUrl": "https://faceid-resource-hk-1258344699.cos.ap-hongkong.myqcloud.com/faceid%2FGenerateReflectSequence%2F1300847512%2F66f265e1-6d93-489e-9b34-8e75d8f6ecd8?q-sign-algorithm=sha1&q-ak=AKIDkJcgTzFEwNXR4SZP0KNAhxwf8KFsEJ7e&q-sign-time=1676537007%3B1676544207&q-key-time=1676537007%3B1676544207&q-header-list=host&q-url-param-list=&q-signature=9a689732863cef49671d265b39e9aba8fa8f6947",
-    "ExpiredTimestamp": 1676544207,
-    "RequestId": "66f265e1-6d93-489e-9b34-8e75d8f6ecd8"
-}
-```
-
-然后需要将第一步中的产生的 DeviceData 整体**进行 base64** ，通过 `UploadUrl`的地址，采用 HTTP 的 PUT 的方式上传至 COS 资源。
-
-下面为 python 示例：
-
-```py
-import requests
-import base64
-import json
-
-# 这里填写接口 CreateUploadUrl 返回参数UploadUrl内容
-upload_url = "https://faceid-resource-hk-1258344699.cos.ap-hongkong.myqcloud.com/faceid%2FGenerateReflectSequence%2F1300847512%2F66f265e1-6d93-489e-9b34-8e75d8f6ecd8?q-sign-algorithm=sha1&q-ak=AKIDkJcgTzFEwNXR4SZP0KNAhxwf8KFsEJ7e&q-sign-time=1676537007%3B1676544207&q-key-time=1676537007%3B1676544207&q-header-list=host&q-url-param-list=&q-signature=2ae43986ba2feb0d04dde37ac7b140d8f9596fa7"
-
-# 这里填写第一步产生的 DeviceData
-device_data = {
-    "platform": 2,
-    "select_data": "{\"change_point_num\":2,\"android_data\":{\"build_device\":\"flame\",\"build_display\":\"TP1A.220624.014\",\"build_product\":\"flame\",\"build_brand\":\"google\",\"build_model\":\"Pixel 4\",\"android_apilevel\":\"33\",\"build_hardware\":\"flame\",\"android_version\":\"13\",\"lux\":-10000},\"client_version\":\"sdk_version:1.1.20.221.1;ftrack_sdk_version:v3.0.5-mini.12;freflect_sdk_version:3.6.9.2;faction_sdk_version:3.7.5\",\"protocal\":1,\"config\":\"need_action_video\u003dtrue\u0026sdcs\u003d00031.1.20.221.101a634e43d16fe194c41712bf91c56076dd319a0fdcfd575a49d788ec950740ae54f38f04ae\",\"version\":\"3.6.9.2\",\"platform\":2,\"reflect_param\":\" version 2\"}"
-}
-device_data_str = json.dumps(device_data)
-# 将数据进行 base64
-device_data_bs64 = base64.b64encode(device_data_str.encode("utf-8")).decode()
-res = requests.put(upload_url, device_data)
-print(res.json)
-```
-
-如果返回结果成功，那么就可以通过访问 `ResourceUrl` 的地址进行查看。
-
-#### 2.2 使用 [GenerateReflectSequence](https://www.tencentcloud.com/document/product/1061/47646) 生成光线序列。
-
-该API用于根据活体比对（基于反光）SDK收集到的信息生成合适的光线序列，并将光线序列传入SDK，启动身份验证流程。
-
-输入参数：
-- Region：需要与上方请求 cos 资源时输入的地域保持一致
-- DeviceDataUrl：CreateUploadUrl中返回的 ResourceUrl
-- DeviceDataMd5：对于DeviceData 进行 base64后，再进行 MD5 加密的结果
-- SecurityLevel：安全级别，非必填参数
-
-输出参数：
-
-- ReflectSequenceUrl：光线序列的资源URL，需要下载并传递给SDK启动身份验证流程
-- ReflectSequenceMd5：光线序列的 MD5 值，用于校验光线序列一致性
-- RequestId：当前请求的 id
-
-下面为 python 示例的 SDK 调用方式：
-
-```python
-from tencentcloud.common import credential
-from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
-from tencentcloud.faceid.v20180301 import faceid_client, models
-
-# 为开通服务时申请的对应 id 和 key，只需修改这两个参数即可
-secretId = ""
-secretKey = ""
-
-try:
-    cred = credential.Credential(secretId, secretKey)
-
-    client = faceid_client.FaceidClient(cred, "ap-hongkong")
-
-    req = models.GenerateReflectSequenceRequest()
-    # 这里为输入参数
-    # DeviceDataUrl : string 上传 COS 资源的ResourceUrl
-    # DeviceDataMd5 : string DeviceData 进行 base64后，再进行 MD5 加密的结果
-    req.DeviceDataUrl = "https://faceid-resource-hk-1258344699.cos.ap-hongkong.myqcloud.com/faceid%2FGenerateReflectSequence%2F1300847512%2F66f265e1-6d93-489e-9b34-8e75d8f6ecd8?q-sign-algorithm=sha1&q-ak=AKIDkJcgTzFEwNXR4SZP0KNAhxwf8KFsEJ7e&q-sign-time=1676537007%3B1676544207&q-key-time=1676537007%3B1676544207&q-header-list=host&q-url-param-list=&q-signature=9a689732863cef49671d265b39e9aba8fa8f6947"
-    req.DeviceDataMd5 = "809fc43098132b4a67871c809b807ecc"
-    resp = client.GenerateReflectSequence(req)
-    print(resp.to_json_string())
-
-except TencentCloudSDKException as err:
-    print(err)
-```
-
-返回结果为：
-
-```json
-{
-    "ReflectSequenceUrl": "https://faceid-resource-hk-1258344699.cos.ap-hongkong.myqcloud.com/faceid-tmp%2FGenerateReflectSequence%2F75cd2553-32a9-4589-930e-aac5bbbee391_LightData?q-sign-algorithm=sha1&q-ak=AKIDkJcgTzFEwNXR4SZP0KNAhxwf8KFsEJ7e&q-sign-time=1676539577%3B1676546777&q-key-time=1676539577%3B1676546777&q-header-list=host&q-url-param-list=&q-signature=9c5fead3fc49037d522612fb410f37c3b46ee43c",
-    "ReflectSequenceMd5": "f5fd2871de13801fa0254d1305babab5",
-    "RequestId": "75cd2553-32a9-4589-930e-aac5bbbee391"
-}
-```
-获取到`ReflectSequenceUrl`后，客户服务端需要下载该文件，校验改文件的md5值，最后返回给终端进行下一个步骤。
-
-### 3、终端：通过光线序列调用相机获取活体数据（Liveness process）
-当您已经将配置信息从服务器端兑换完成之后，将服务器下发的reflectSequence也就是核身的光线序列，通过此接口传入继续完成剩余本地核身功能。
-
-Android代码示例：
 ```java
-// 启动核验，reflectSequence为上一步从服务器端兑换的光线序列的数据
-HuiYanOsApi.startAuthByLightData(reflectSequence, new HuiYanResultCallBack() {
-		@Override
-		public void onSuccess(byte[] data, String videoPath) {
-			// 1. 将本地核身的数据信息，发送到服务器端做比对验证，得到最终结果。（客户自己实现上图step 10）
-			checkAuthResultByData(data);
-			// 2. 处理本地核身视频videoPath。（客户自己实现）
-			dealWithAuthVideo(videoPath);
-		}
-
-		@Override
-		public void onFail(int errorCode, String errMsg) {
-			// 本地核身失败获取，发生错误
-			showError(errorCode, errMsg);
-		}
-});
-```
-
-iOS代码示例：
-```objective-c
-[HuiYanOsApi startAuthByLightData:liveData withSuccCallback:^(NSData * _Nonnull data, NSString * _Nonnull videoPath) {
-     	//活体通过检测结果数据
-  		// 1. 将本地核身的数据信息，发送到服务器端做比对验证，得到最终结果。（客户自己实现上图step 10）
-		 	[self checkAuthResultByData:data];
-			// 2. 处理本地核身视频videoPath。（客户自己实现）
-			[self dealWithAuthVideo:videoPath];
-} withFialCallback:^(int errCode, NSString * _Nonnull errMsg) {
-  		// 本地核身失败获取，发生错误
-      NSLog(@"errCode:%d, errMsg:%@", errCode, errMsg);
-}];
-```
-
-SDK的`startAuthByLightData`方法需要传入一个回调函数，用于**接收LiveData（活体数据）并通过客户服务端上传至腾讯云**。
-
-### 4、服务端 ：调用 DetectReflectLivenessAndCompare接口（Detect and compare process）
-
-#### 4.1 使用 [CreateUploadUrl](https://www.tencentcloud.com/document/product/1061/47648) 上传资源，并获取对应的UploadUrl和ResourceUrl。
-参考2.1，上传**LiveData（活体数据）**与**要比对的图片**，
-
-#### 4.2 使用 [DetectReflectLivenessAndCompare](https://www.tencentcloud.com/zh/document/product/1061/44246) 接口进行活体与比对。
-
-本接口用于通过活体比对（基于反光）SDK生成的包进行活体检测，并将检测到的人与传入的图片中的人进行比对。
-
-输入参数：
-
-- LiveDataUrl：活体数据的 url。时序图中第13步产生的活体数据，**压缩为 gz 格式**的压缩包后，按照2.1上传资源指引上传 cos
-- LiveDataMd5：活体数据的 MD5
-- ImageUrl：要比对的图片的 url
-- ImageMd5：要比对图片的 MD5
-
-输出参数：
-
-- Result：服务端结果码
-- Description：服务端结果说明
-- BestFrameUrl：最佳帧 URL 地址，存储有效期为 2 小时
-- BestFrameMd5：最佳帧的 MD5 值，用于校验最佳帧文件的一致性
-- Sim：相似度，取值范围：[0.00, 100.00]，表示当前输入参数的图片中人脸照片，与活体阶段的最佳帧中人脸照片的相似度
-- RequestId：当前请求的 id
-
-下面为 python 示例的 SDK 调用方式：
-
-```python
-from tencentcloud.common import credential
-from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
-from tencentcloud.faceid.v20180301 import faceid_client, models
-
-# 为开通服务时申请的对应 id 和 key，只需修改这两个参数即可
-secretId = ""
-secretKey = ""
-
-try:
-    cred = credential.Credential(secretId, secretKey)
-    client = faceid_client.FaceidClient(cred, "ap-hongkong")
-
-    req = models.DetectReflectLivenessAndCompareRequest()
-    # 这里为输入参数
-    req.LiveDataUrl = "https://faceid-resource-sg-1254418846.cos.ap-singapore.myqcloud.com/faceid%2FApplyWebVerificationToken%2F1300268875%2F20b11b59-572d-406d-8d94-e6e05782134c"
-    req.LiveDataMd5 = "d41d8cd98f00b204e9800998ecf8427e"
-    req.ImageUrl = "https://faceid-resource-sg-1254418846.cos.ap-singapore.myqcloud.com/faceid%2FApplyWebVerificationToken%2F1300268875%2F20b11b59-572d-406d-8d94-e6e05782134c"
-    req.ImageMd5 = "d41d8cd98f00b204e9800998ecf8427e"
-    resp = client.DetectReflectLivenessAndCompare(req)
-    print(resp.to_json_string())
-
-except TencentCloudSDKException as err:
-    print(err)
-```
-
-返回结果为：
-
-```json
-{
-    "BestFrameUrl": "https://faceid-resource-sg-1254418846.cos.ap-singapore.myqcloud.com/faceid%2FApplyWebVerificationToken%2F1300268875%2F20b11b59-572d-406d-8d94-e6e05782134c",
-    "Description": "Success",
-    "BestFrameMd5": "d41d8cd98f00b204e9800998ecf8427e",
-    "RequestId": "00577fa0-9d11-459e-a455-fc202ecd65bc",
-    "Sim": 96.3,
-    "Result": "Success"
+@Override
+protected void onDestroy() {
+    super.onDestroy();
+    // 退出时做资源释放
+    HuiYanOsApi.release();
 }
 ```
 
-## 排障指引
-腾讯云不会存储客户服务侧上传的资源，需要客户服务端侧保留**所有的资源**与**API3.0回包中的RequestId**方可定位问题。其中**资源**包括：
-- 生成光线序列阶段上传的`DeviceData`
-- 调用 DetectReflectLivenessAndCompare接口阶段上传的`Image`
-- 调用 DetectReflectLivenessAndCompare接口阶段上传的`LiveData`
+#### 6、混淆规则配置
 
-API3.0回包中的RequestId指的都是`Response.RequestId`字段，包括接口有：
-- CreateUploadUrl
-- GenerateReflectSequence
-- DetectReflectLivenessAndCompare
+  如果您的应用开启了混淆功能，为确保SDK的正常使用，请把以下部分添加到您的混淆文件中。
+
+```java
+#慧眼SDK的混淆包含
+-keep class com.tencent.could.huiyansdk.** {*;}
+-keep class com.tencent.could.aicamare.** {*;}
+-keep class com.tencent.could.component.** {*;}
+-keep class com.tencent.youtu.** {*;}
+-keep class com.tenpay.utils.SMUtils {*;}
+```
+
+
+### iOS端集成
+
+#### 1、依赖环境
+
+1. 开发环境 Xcode 11.0 或以上
+2. 慧眼iOS SDK 适用于手机iOS9.0及以上版本
+
+#### 2、SDK接入步骤
+##### 手动接入方式
+
+1. 导入相关库及文件
+
+Link Binary With Libraries导入相关Framework
+
+2. SDK依赖的库如下
+
+```
+├──HuiYanSDK.framework
+├──YtSDKKitSilentLiveness.framework
+├──YtSDKKitReflectLiveness.framework
+├──YtSDKKitActionLiveness.framework
+├──YtSDKKitFramework.framework
+├──tnnliveness.framework
+├──YTFaceAlignmentTinyLiveness.framework
+├──YTFaceTrackerLiveness.framework
+├──YTFaceDetectorLiveness.framework
+├──YTPoseDetector.framework
+├──YTCommonLiveness.framework
+└──YTFaceLiveReflect.framework
+```
+
+3. Link Binary With Libraries导入系统Framework
+
+```
+├── AVFoundation.framework
+├── libc++.tbd
+└── Accelerate.framework
+```
+
+4. Copy Bundle Resources中导入模型
+
+```
+└── face-tracker-v001.bundle
+```
+
+5. Copy Bundle Resources导入资源文件
+
+```
+└── HuiYanSDKUI.bundle
+```
+
+##### 使用Pod方式接入
+
+1. 将CloudHuiYanSDK_FW文件夹复制到集成项目Podfile同级目录下
+2. 在Podfile设置
+
+```ruby
+target 'HuiYanAuthDemo' do
+  use_frameworks! 
+  pod 'CloudHuiYanSDK_FW', :path => './CloudHuiYanSDK_FW'
+end
+```
+
+3. pod install 更新
+
+>文件层级和具体的设置可以参考Demo
+
+##### Build Phases设置
+
+1. Other Linker Flags 新增 **-ObjC**
+2. 接入ViewController.m 设置后缀为.mm(swift 工程添加系统库libc++.tbd)
+
+##### 权限设置
+
+SDK需要手机网络及 摄像头使用权限，请添加对应的权限声明。在主项目info.plist 配置中添加下面key-value值
+
+```xml
+<key>Privacy - Camera Usage Description</key>
+<string>人脸核身需要开启您的摄像头权限，用于人脸识别</string>
+```
+
+#### 3、开启活体检测接口
+
+```objective-c
+#import <HuiYanSDK/HuiYanOsApi.h>
+#import <HuiYanSDK/HuiYanOSKit.h>
+
+  //获取token
+    NSString *faceToken = self.tokenTextField.text;
+    // 配置SDK
+    HuiYanOsConfig *config = [[HuiYanOsConfig alloc] init];
+    //设置lic
+    config.authLicense = [[NSBundle mainBundle] pathForResource:@"xxx.lic" ofType:@""];
+    //准备阶段超时配置
+    config.prepareTimeoutMs = 20000;
+    //检测阶段超时配置
+    config.authTimeOutMs = 20000;
+    config.isDeleteVideoCache = YES;
+    config.languageType = EN;
+    //    config.userLanguageFileName = @"ko";
+    //    config.userLanguageBundleName = @"UseLanguageBundle";
+    config.iShowTipsPage = YES;
+    config.isGetBestImg = YES;
+
+    [[HuiYanOSKit sharedInstance] startHuiYaneKYC:faceToken withConfig:config
+                                  witSuccCallback:^(HuiYanOsAuthResult * _Nonnull authResult, id  _Nullable reserved) {
+        NSString *bestImg = authResult.bestImage;
+        NSString *token = authResult.faceToken;
+        
+    } withFailCallback:^(int errCode, NSString * _Nonnull errMsg, id  _Nullable reserved) {
+        NSString *showMsg = [NSString stringWithFormat:@"err:%d:%@",errCode,errMsg];
+        NSLog(@"err:%@",showMsg);
+    }];
+```
+[HuiYanOsAuthResult](https://iwiki.woa.com/pages/viewpage.action?pageId=4007948264)为活体成功的返回结果, 最终的核身结果可以通过token，访问[GetFaceldResultIntl](//todo:正式的官网API接口)获取。
+
+**注意：**当前的 **"xxx.lic"**文件是需要您主动申请的，暂时您可以联系客服人员进行license申请
+
+#### 4、SDK资源释放
+
+	在您APP退出使用的时候，可以调用SDK资源释放接口
+
+```objective-c
+// 退出时做资源释放
+- (void)dealloc {
+    [HuiYanOsApi release];
+}
+```
+
+//TODO: 添加demo下载地址
