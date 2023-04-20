@@ -16,11 +16,6 @@
 - [连接类攻击防护](https://intl.cloud.tencent.com/document/product/1029/36133)
 - [区域封禁](https://intl.cloud.tencent.com/document/product/1029/41750)
 
-**域名防护**
-- [防护等级与清洗阈值](https://intl.cloud.tencent.com/document/product/1029/36135)
-- [精准防护](https://intl.cloud.tencent.com/document/product/1029/36136)
-- [CC 频率限制](https://intl.cloud.tencent.com/document/product/1029/36137)
-
 ## 统计报表
 - [防护概览](https://intl.cloud.tencent.com/document/product/1029/44560)
 - [查看操作日志](https://intl.cloud.tencent.com/document/product/1029/36140)
