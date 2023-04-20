@@ -16,11 +16,6 @@ This document lists the references for common operations while using Anti-DDoS P
 - [Connection Protection](https://intl.cloud.tencent.com/document/product/1029/36133)
 - [Regional Blocking](https://intl.cloud.tencent.com/document/product/1029/41750)
 
-**Domain name protection**
-- [Protection Level and Cleansing Threshold](https://intl.cloud.tencent.com/document/product/1029/36135)
-- [Precise Protection](https://intl.cloud.tencent.com/document/product/1029/36136)
-- [Frequency Control](https://intl.cloud.tencent.com/document/product/1029/36137)
-
 ## Statistic Report
 - [Viewing Protection Overview](https://intl.cloud.tencent.com/document/product/1029/36138)
 - [Viewing Operation Log](https://intl.cloud.tencent.com/document/product/1029/36140)
