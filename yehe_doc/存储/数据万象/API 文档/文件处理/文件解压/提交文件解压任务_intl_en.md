@@ -13,6 +13,8 @@ This API adopts a POST request method. You can submit a job to perform file deco
 - Supported file size: Decompression on a file that is less than 5 TB is supported.
 - File decompression adopts streaming decompression. The system outputs the decompressed files while decompressing them. If some files are corrupted during the decompression, the decompression operation stops, and some decompressed files are retained.
 - Calling the API requires a signature. For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+- This API can be used in Beijing, Shanghai, Guangzhou, Chengdu, Hong Kong (China), Singapore, and Silicon Valley regions.
+
 
 ## Request
 
