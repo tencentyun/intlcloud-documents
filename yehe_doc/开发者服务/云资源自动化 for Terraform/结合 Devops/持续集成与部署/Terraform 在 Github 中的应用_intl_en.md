@@ -176,10 +176,10 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           script: |
-            const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
-            #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-            #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
-            #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+            const output = `#### Terraform Format and Style \`${{ steps.fmt.outcome }}\`
+            #### Terraform Initialization \`${{ steps.init.outcome }}\`
+            #### Terraform Validation \`${{ steps.validate.outcome }}\`
+            #### Terraform Plan \`${{ steps.plan.outcome }}\`
             <details><summary>Show Plan</summary>
             \`\`\`\n
             ${{ steps.plan.outputs.plan_info }}
