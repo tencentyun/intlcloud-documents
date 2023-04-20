@@ -12,7 +12,7 @@ DiskInternals Linux Reader 소프트웨어 획득 방법: `http://www.diskintern
 ## 작업 순서
 ### 데이터 디스크 마운트
 
-> 데이터 디스크가 마운트 된 경우, 이 단계를 건너뛰세요.
+>! 데이터 디스크가 마운트 된 경우, 이 단계를 건너뛰세요.
 >
 1. [Tencent Cloud CVM 콘솔](https://console.cloud.tencent.com/cvm/)에 로그인합니다.
 2. 왼쪽 메뉴에서 [Cloud Block Storage]를 선택하여 CBS 관리 페이지에 접속합니다.
@@ -21,10 +21,11 @@ DiskInternals Linux Reader 소프트웨어 획득 방법: `http://www.diskintern
 
 ### 데이터 디스크 정보 조회 
 1. DiskInternals Linux Reader 소프트웨어를 실행하여 방금 마운트된 데이터 디스크 정보를 조회할 수 있습니다. `/root/mnt` 및 `/root/mnt1`은 각각 재설치 전의 Linux CVM 데이터 디스크인 vdb1과 vdb2 두 파티션입니다. 아래 이미지 참조
-> 이때의 Linux 데이터 디스크는 읽기 전용입니다. 이 데이터 디스크를 Windows 데이터 디스크로서 읽고 쓰려면 먼저 필요한 파일을 백업하고 Windows 운영 체제에서 지원하는 표준 유형으로 다시 포맷하세요. 자세한 내용은 [Windows 인스턴스: 데이터 디스크 초기화](https://cloud.tencent.com/document/product/213/2158)를 참조 바랍니다.
+>! 이때의 Linux 데이터 디스크는 읽기 전용입니다. 이 데이터 디스크를 Windows 데이터 디스크로서 읽고 쓰려면 먼저 필요한 파일을 백업하고 Windows 운영 체제에서 지원하는 표준 유형으로 다시 포맷하세요. 자세한 내용은 [Windows 인스턴스: 데이터 디스크 초기화](https://cloud.tencent.com/document/product/213/2158)를 참조 바랍니다.
 >
 ![](https://main.qcloudimg.com/raw/490428b0668dcd61c4c60bcb75121462.png)
 2. `/root/mnt` 디렉터리를 더블 클릭하고 복사할 파일을 마우스 우클릭한 후 [Save]를 선택하여 파일을 저장합니다.
+![](https://main.qcloudimg.com/raw/f36cbf32a7b423b8800e1fda6ba1c038.png)
 
 
 
