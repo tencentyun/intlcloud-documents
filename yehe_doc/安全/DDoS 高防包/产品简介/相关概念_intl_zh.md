@@ -8,10 +8,6 @@
 
 常见攻击类型包括 SYN Flood、ACK Flood、UDP Flood、ICMP Flood 以及 DNS/NTP/SSDP/memcached 反射型攻击。 
 
-### CC 攻击 
-
-CC 攻击主要指通过恶意占用目标服务器应用层资源，消耗处理性能，导致其无法正常提供服务的攻击方式。 
-常见的攻击类型包括基于 HTTP 或 HTTPS 的 GET/POST Flood、四层 CC 以及 Connection Flood 等攻击方式。
 
 ## 防护能力
 
