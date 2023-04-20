@@ -15,7 +15,8 @@
    terraform apply/destroy
    ```
 
-   执行完毕后，可查看 Terraform 本地文件夹会生成一个 terraform.log 的文件。文件记录了 tencentcloud provider 定义的日志输出。
+   执行完毕后，可查看 Terraform 本地文件夹会生成一个 terraform.log 的文件。文件记录了 tencentcloud provider 定义的日志输出。如下图所示：
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/6fTA180_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_64295ecc-9a62-4362-93c3-c631f7a4f76f.png)
 
 
 ## 示例
