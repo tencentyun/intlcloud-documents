@@ -13,6 +13,7 @@ The multi-file zipping feature uses a POST request to zip multiple files into a 
 - Supported file quantity: At most 10,000 files can be zipped.
 - Supported file size: The total size of the compressed file is less than 50 GB.
 - Calling the API requires a signature. For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+- This API can be used in Beijing, Shanghai, Guangzhou, Chengdu, Hong Kong (China), Singapore, and Silicon Valley regions.
 
 ## Request
 
