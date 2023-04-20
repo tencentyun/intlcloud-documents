@@ -19,14 +19,15 @@ Linux, Mac OS or Windows (including Windows 10 and Windows Server 2019)
 - A public IP has been purchased for your CVM instance, and the port 22 is open. It is open by default for a CVM instance purchased with quick configuration.
 
 ## Directions
-
-### Password login
+<dx-tabs>
+::: Using the password [](id:passwordLogin)
 
 1. Execute the following command to connect to the Linux CVM.
->? If your local computer uses Mac OS, you need to open the terminal that comes with the system before executing the following command.
-> If your local computer uses Linux, you can directly execute the following command.
-> If your local computer uses Windows 10 or Windows Server 2019, you need to open the command prompt CMD before executing the following command.
->
+<dx-alert infotype="explain" title="">
+- If your local computer uses Mac OS, you need to open the terminal that comes with the system before executing the following command.
+- If your local computer uses Linux, you can directly execute the following command.
+- If your local computer uses Windows 10 or Windows Server 2019, you need to open the command prompt CMD before executing the following command.
+</dx-alert>
 ```
 ssh <username>@<hostname or IP address>
 ```
@@ -34,8 +35,8 @@ ssh <username>@<hostname or IP address>
  - `hostname or IP address` refers to the public IP address or custom domain name of your Linux instance.
 2. Enter the password you have obtained, and click **Enter** to log in.
 
-<span id="LoginWithKey"></span>
-### Key login
+:::
+::: Using a key [](id:LoginWithKey)
 
 1. Execute the following command to set the private key file readable only to you.
  - If your local computer uses Mac OS, you need to open the terminal that comes with the system before executing the following command.
@@ -58,10 +59,12 @@ ssh -i <The absolute path of the private key downloaded to be associated with th
  - `hostname or IP address` refers to the public IP address or custom domain name of your Linux instance.
 
  For example, execute the `ssh -i "Mac/Downloads/shawn_qcloud_stable.pem" ubuntu@192.168.11.123` command to remotely log in to the Linux CVM.
+:::
+</dx-tabs>
 
 ## Subsequent Operations
 
-After logging in to the CVM, you can build a personal website or forum or perform other operations. For more information, see:
+After logging in to the CVM, you can build a personal website or forum or perform other operations. For more information, please see:
 - [Manually Building WordPress Website](https://intl.cloud.tencent.com/document/product/213/8044)
 - [Manually Building Discuz! Forum](https://intl.cloud.tencent.com/document/product/213/8043)
 
