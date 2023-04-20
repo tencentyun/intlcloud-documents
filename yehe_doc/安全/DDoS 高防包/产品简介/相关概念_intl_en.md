@@ -1,11 +1,10 @@
 ## DDoS Attack
 A Distributed Denial of Service (DDoS) attack is a malicious attempt to make a targeted server unavailable by blocking its network bandwidth or overwhelming its system with a flood of internet traffic. 
+
 ### Network-layer DDoS attack 
 A network-layer DDoS attack attempts to make a targeted server unavailable to its intended users by blocking its network bandwidth and exhaust its system-layer resources with a flood of internet traffic. 
+
 Common attacks include SYN Flood, ACK Flood, UDP Flood, ICMP Flood, and DNS/NTP/SSDP/Memcached reflection attacks. 
-### CC attack 
-A CC attack is a malicious attempt to make a targeted server unavailable by occupying its application-layer resources and exhausting its processing capacity. 
-Common attacks include HTTP/HTTPS-based GET/POST Flood, layer-4 CC, and Connection Flood attacks, etc.
 
 ## Protection Capability
 Protection capability refers to the ability to defend against DDoS attacks. The Anti-DDoS Pro service promises an all-out protection with Tencent Cloud's maximum DDoS protection capability in the current region.
