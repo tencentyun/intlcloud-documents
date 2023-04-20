@@ -40,6 +40,7 @@ SWIFT: MRMDUS33
 Remarks: Cloud service fee + developer account (unique ID)
 
 
+
 | B. Users located in these regions transfer to the following bank account |  |
 |---------|---------|
 | Switzerland | Latvia |
@@ -67,6 +68,7 @@ SWIFT Code: HSBCNL2A
 Remarks: Cloud service fee + developer account (unique ID)
 
 
+
 | C. Users located in these regions transfer to the following bank account |  |
 |---------|---------|
 | Others | Philippines |
@@ -80,6 +82,7 @@ Beneficiary bank: HSBC, Singapore
 Address: 30 Raffles Place, #12-01, Oxley @ Raffles, Singapore 048622
 SWIFT Code: HSBCSGSG
 Remarks: Cloud service fee + developer account (unique ID)
+
 
 2. Bank transfers typically take 3-5 business days or longer if they are cross-border. After your transfer succeeds, please submit a ticket to confirm the transfer information so that we can top up your account. If you have any questions, please upload your payment document in the console.
 
