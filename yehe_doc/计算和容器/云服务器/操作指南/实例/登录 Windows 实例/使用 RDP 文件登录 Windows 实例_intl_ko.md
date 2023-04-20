@@ -13,11 +13,11 @@ Windows, Linux 및 Mac OS 모두 RDP 방식을 사용하여 CVM에 로그인할 
 ## 전제 조건
 
 - Windows 인스턴스 원격 로그인을 위해 필요한 인스턴스의 관리자 계정 및 비밀번호를 획득한 상태여야 합니다.
- - 인스턴스 생성 시 시스템에서 비밀번호 랜덤 생성을 선택했다면 [내부 메시지](https://console.cloud.tencent.com/message)로 이동하여 비밀번호를 받으시기 바랍니다.
- - 로그인 비밀번호가 설정되어 있는 경우 해당 비밀번호를 사용하여 로그인하시기 바랍니다. 비밀번호를 잊으신 경우, [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)하시기 바랍니다.
+  - 인스턴스 생성 시 시스템에서 비밀번호 랜덤 생성을 선택했다면 [내부 메시지](https://console.cloud.tencent.com/message)로 이동하여 비밀번호를 받으시기 바랍니다.
+  - 로그인 비밀번호가 설정되어 있는 경우 해당 비밀번호를 사용하여 로그인하시기 바랍니다. 비밀번호를 잊으신 경우, [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)하시기 바랍니다.
 - CVM 인스턴스에서 공용 IP를 구매하였고, WebRDP 프록시 IP가 소스인 원격 로그인 포트(기본값: 3389)가 인스턴스와 연결된 보안 그룹에서 개방되어있어야 합니다.
- - 빠른 구성을 통해 CVM을 구매하시면 기본적으로 이미 활성화되어 있습니다.
- - 사용자 정의 구성을 통해 CVM을 구매한 경우 [RDP를 통한 Windows CVM 원격 연결 허용](https://intl.cloud.tencent.com/document/product/213/32369)을 참고하여 수동으로 개방하십시오.
+  - 빠른 구성을 통해 CVM을 구매하시면 기본적으로 이미 활성화되어 있습니다.
+  - 사용자 정의 구성을 통해 CVM을 구매한 경우 [RDP를 통한 Windows CVM 원격 연결 허용](https://intl.cloud.tencent.com/document/product/213/32369)을 참고하여 수동으로 개방하십시오.
 - 인스턴스의 공용 네트워크 대역폭이 5Mbit/s 이상인지 확인하십시오. 그렇지 않다면 원격 데스크톱에 랙이 발생됩니다. 네트워크 대역폭 조정은 [네트워크 구성 변경](https://intl.cloud.tencent.com/document/product/213/15517)을 참고하십시오.
 
 
@@ -36,8 +36,8 @@ Windows, Linux 및 Mac OS 모두 RDP 방식을 사용하여 CVM에 로그인할 
 </dx-alert>
 <img src="https://main.qcloudimg.com/raw/0b0076390b95da3885c8967093683975.png"/>
 4. 로컬에 다운로드한 RDP 파일을 더블 클릭하여 비밀번호를 입력하고 **확인**을 클릭하면 바로 Windows CVM과 원격으로 연결됩니다.
- - 시스템 기본 설정 비밀번호로 인스턴스에 로그인할 경우 [내부 메시지](https://console.cloud.tencent.com/message)에 접속하여 획득 바랍니다.
- - 비밀번호를 잊으신 경우, [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)하시기 바랍니다.
+  - 시스템 기본 설정 비밀번호로 인스턴스에 로그인할 경우 [내부 메시지](https://console.cloud.tencent.com/message)에 접속하여 획득 바랍니다.
+  - 비밀번호를 잊으신 경우, [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)하시기 바랍니다.
 
 :::
 ::: \sRDP\s로 Linux\s 시스템 로그인[](id:LinuxRDP)
@@ -57,7 +57,8 @@ rdesktop
 2. [](id:step02) 단말기에서 다음 명령어를 실행하여 rdesktop 설치 패키지를 다운로드합니다. 이 단계에서는 rdesktop 1.8.3 버전을 예시로 사용합니다.
 ```
 wget https://github.com/rdesktop/rdesktop/releases/download/v1.8.3/rdesktop-1.8.3.tar.gz
-``` 최신 설치 패키지가 필요한 경우 [GitHub rdesktop 페이지](https://github.com/rdesktop/rdesktop/releases)에서 최신 설치 패키지를 검색하고 명령어 라인에서 최신 설치 경로로 바꿔줍니다.
+```
+최신 설치 패키지가 필요한 경우 [GitHub rdesktop 페이지](https://github.com/rdesktop/rdesktop/releases)에서 최신 설치 패키지를 검색하고 명령어 라인에서 최신 설치 경로로 바꿔줍니다.
 3. rdesktop 설치 대기 리스트에서 명령어를 순서대로 실행하여 rdesktop을 압축 해제 및 설치합니다.
 ```
 tar xvzf rdesktop-<x.x.x>.tar.gz ## x.x.x를 다운로드된 버전 번호로 변경 
@@ -75,7 +76,7 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ```
    - `Administrator`는 전제 조건에서 획득한 관리자 계정입니다.
    - `<your-password>`는 사용자가 설정한 로그인 비밀번호입니다.
-   시스템 기본 설정 비밀번호로 인스턴스에 로그인할 경우 [내부 메시지](https://console.cloud.tencent.com/message)로 이동하여 획득 바랍니다. 비밀번호를 잊으신 경우 [인스턴스 비밀번호를 재설정](https://intl.cloud.tencent.com/document/product/213/16566)하시기 바랍니다.
+      시스템 기본 설정 비밀번호로 인스턴스에 로그인할 경우 [내부 메시지](https://console.cloud.tencent.com/message)로 이동하여 획득 바랍니다. 비밀번호를 잊으신 경우 [인스턴스 비밀번호를 재설정](https://intl.cloud.tencent.com/document/product/213/16566)하시기 바랍니다.
    - `<hostname or IP address>`는 Windows 인스턴스의 공용 IP 또는 사용자 정의 도메인입니다. 인스턴스 공용 IP 주소 가져오기는 [공용망IP주소 읽어오기](https://intl.cloud.tencent.com/document/product/213/17940)를 참고하십시오.
 
 :::
@@ -93,18 +94,18 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ![](https://main.qcloudimg.com/raw/e69528d10e9a17dfa26119a090766c49.png)
 3. 아래 이미지와 같이 팝업된 ‘Add Desktop’ 창에서 다음의 순서를 따라 연결을 생성합니다.
 ![](https://main.qcloudimg.com/raw/d8e20278dd7c8aed487be2c43986f5e4.png)
-    1. ‘PC name’에 CVM의 공용 IP를 입력합니다. 획득 방법은 [공용망IP 주소 읽어오기](https://intl.cloud.tencent.com/document/product/213/17940)를 참고하십시오.
-    2. **Add**를 클릭하여 생성을 확인합니다.
-    3. 나머지 옵션은 기본 설정을 유지하고 연결 생성을 완료합니다.
+     1. ‘PC name’에 CVM의 공용 IP를 입력합니다. 획득 방법은 [공용망IP 주소 읽어오기](https://intl.cloud.tencent.com/document/product/213/17940)를 참고하십시오.
+     2. **Add**를 클릭하여 생성을 확인합니다.
+     3. 나머지 옵션은 기본 설정을 유지하고 연결 생성을 완료합니다.
     생성된 연결은 아래 이미지와 같이 창에서 바로 조회할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/1c0eff28aa68a7f02e8f295917bb603b.png)
 4. 신규 생성한 연결을 더블 클릭하여 열고, 팝업 창의 메시지를 따라 CVM 계정 및 비밀번호를 입력한 후 **Continue**를 클릭합니다.
- - 시스템 기본 설정 비밀번호로 인스턴스에 로그인할 경우 [내부 메시지](https://console.cloud.tencent.com/message)에 접속하여 획득 바랍니다.
- - 비밀번호를 잊으신 경우, [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)하시기 바랍니다.
-5. 아래 이미지와 같이 팝업 창에서 **Continue**를 클릭하여 연결을 확인합니다.
+5. 시스템 기본 설정 비밀번호로 인스턴스에 로그인할 경우 [내부 메시지](https://console.cloud.tencent.com/message)에 접속하여 획득 바랍니다.
+6. 비밀번호를 잊으신 경우, [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)하시기 바랍니다.
+7. 아래 이미지와 같이 팝업 창에서 **Continue**를 클릭하여 연결을 확인합니다.
 ![](https://main.qcloudimg.com/raw/61b3d9566365183fcc1d92c2f6bc2e7b.png)
 연결 성공 후 아래 이미지와 같이 Windows CVM 인터페이스가 열립니다.
-![](https://main.qcloudimg.com/raw/5a524210acd13624af7263b6de3aea54.png)
+![](https://main.qcloudimg.com/raw/20db4a1d63384bc0575ded68a8fe912d.png)
 :::
 </dx-tabs>
 
@@ -175,3 +176,7 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 <td>사용자의 전체 화면으로 최대화된 30FPS 비디오 시청.</td>
 </tr>
 </table>
+
+```
+
+```

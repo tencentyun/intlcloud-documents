@@ -12,11 +12,11 @@ Windows、Linuxと Mac OSは全てRDPを使用してCVMにログインするこ�
 ##  前提条件
 
 - Windowsインスタンスにリモートログインするには、インスタンスの管理者アカウントとパスワードを取得する必要があります。
- - インスタンス作成時に、システムによるパスワードのランダム発行を選択した場合は、[サイト内メール](https://console.cloud.tencent.com/message)にアクセスしてパスワードを取得してください。
- - ログインパスワードを設定済みの場合は、そのパスワードを使用してログインしてください。パスワードを忘れた場合は、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
+  - インスタンス作成時に、システムによるパスワードのランダム発行を選択した場合は、[サイト内メール](https://console.cloud.tencent.com/message)にアクセスしてパスワードを取得してください。
+  - ログインパスワードを設定済みの場合は、そのパスワードを使用してログインしてください。パスワードを忘れた場合は、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
 - CVMインスタンスはパブリックIPがすでに購入され、インスタンスに関連付けられたセキュリティグループの中で、送信元がWebShellのプロキシIPとなるリモートログインポート（デフォルトは3389）を開放しています。
- - クイック設定でCVMインスタンスを購入した場合、ポートはデフォルトで開かれます。
- - カスタム設定経由でCVMインスタンスを購入した場合は、[セキュリティグループの応用例](https://intl.cloud.tencent.com/document/product/213/32369)を参照して、ポートを手動で開くことができます。
+  - クイック設定でCVMインスタンスを購入した場合、ポートはデフォルトで開かれます。
+  - カスタム設定経由でCVMインスタンスを購入した場合は、[セキュリティグループの応用例](https://intl.cloud.tencent.com/document/product/213/32369)を参照して、ポートを手動で開くことができます。
 - インスタンスのパブリックネットワーク帯域幅が 5Mbit/s 以上であることを確認してください。そうでない場合、リモートデスクトップの応答が遅くなる可能性があります。ネットワーク帯域幅の調整が必要な場合は、[ネットワーク設定の調整](https://intl.cloud.tencent.com/document/product/213/15517)をご参照ください。
 
 
@@ -35,8 +35,8 @@ Windows、Linuxと Mac OSは全てRDPを使用してCVMにログインするこ�
 </dx-alert>
 <img src="https://main.qcloudimg.com/raw/0b0076390b95da3885c8967093683975.png"/>
 4. ローカルにダウンロードしたRDPファイルをダブルクリックして開き、パスワードを入力します。最後に「OK」をクリックすればリモート接続が許可されます。
- - システムのデフォルトパスワードを使用してインスタンスにログインする場合は、[サイト内メール](https://console.cloud.tencent.com/message)にアクセスしてパスワードを取得してください。
- - パスワードを忘れた場合は、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
+  - システムのデフォルトパスワードを使用してインスタンスにログインする場合は、[サイト内メール](https://console.cloud.tencent.com/message)にアクセスしてパスワードを取得してください。
+  - パスワードを忘れた場合は、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
 
 :::
 ::: Linux システム[](id:LinuxRDP)
@@ -56,7 +56,8 @@ rdesktop
 2. [](id:step02)ターミナルウィンドウで以下のコマンドを実行してrdesktopインストールパッケージをダウンロードします。この手順はrdesktop 1.8.3バージョンを例とします。
 ```
 wget https://github.com/rdesktop/rdesktop/releases/download/v1.8.3/rdesktop-1.8.3.tar.gz
-``` 最新のインストールパッケージが必要な場合は、[GitHub rdesktopページ](https://github.com/rdesktop/rdesktop/releases)にアクセスして最新のインストールパッケージをさがし、コマンドラインを最新のインストールパスに置き換えます。
+```
+最新のインストールパッケージが必要な場合は、[GitHub rdesktopページ](https://github.com/rdesktop/rdesktop/releases)にアクセスして最新のインストールパッケージをさがし、コマンドラインを最新のインストールパスに置き換えます。
 3. rdesktopをインストールするディレクトリで、以下のコマンドを実行し、rdesktopを解凍してインストールします。
 ```
 tar xvzf rdesktop-<x.x.x>.tar.gz ##x.x.xをダウンロードしたバージョン番号に置き換えます 
@@ -74,7 +75,7 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ```
    - `Administrator` は前提条件で入手した管理者アカウントです。
    - `<your-password>` は設定されたログインパスワードです。
-   システムのデフォルトパスワードを使用してインスタンスにログインする場合、[サイト内メール](https://console.cloud.tencent.com/message)からパスワードを取得してください。パスワードを忘れた場合、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
+      システムのデフォルトパスワードを使用してインスタンスにログインする場合、[サイト内メール](https://console.cloud.tencent.com/message)からパスワードを取得してください。パスワードを忘れた場合、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
    - `<hostname or IP address>`は、お客様のWindowsインスタンスのパブリックIPまたはカスタムドメイン名となります。インスタンスのパブリックIPの取得方法は、[パブリックIPアドレスの取得](https://intl.cloud.tencent.com/document/product/213/17940)をご参照ください。
 
 :::
@@ -92,18 +93,18 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ![](https://main.qcloudimg.com/raw/e69528d10e9a17dfa26119a090766c49.png)
 3. 表示された「Add Desktop」ウィンドウで、以下の手順に従って、接続を作成します。下図に示すように：
 ![](https://main.qcloudimg.com/raw/d8e20278dd7c8aed487be2c43986f5e4.png)
-    1.「PC name」にCVMインスタンスのパブリックIPアドレスを入力します。パブリックIPアドレスを取得する方法の詳細については、[パブリックIPアドレスの取得](https://intl.cloud.tencent.com/document/product/213/17940)をご参照ください。
-    2. **Add**をクリックします。
-    3. 他のオプションはデフォルト設定のままで、接続が作成されます。
+     1.「PC name」にCVMインスタンスのパブリックIPアドレスを入力します。パブリックIPアドレスを取得する方法の詳細については、[パブリックIPアドレスの取得](https://intl.cloud.tencent.com/document/product/213/17940)をご参照ください。
+     2. **Add**をクリックします。
+     3. 他のオプションはデフォルト設定のままで、接続が作成されます。
     ウィンドウで作成された接続を確認できます。下図に示すように：
 ![](https://main.qcloudimg.com/raw/1c0eff28aa68a7f02e8f295917bb603b.png)
 4. 新規作成した接続をダブルクリックして開き、ポップアップウィンドウでプロンプトに従って、CVMのアカウントとパスワードを入力し、**Continue**をクリックします。
- - システムのデフォルトパスワードを使用してインスタンスにログインする場合は、[サイト内メール](https://console.cloud.tencent.com/message)にアクセスしてパスワードを取得してください。
- - パスワードを忘れた場合は、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
-5. 下図のように、ポップアップしたウィンドウで**Continue**をクリックして、接続を確認します。
+5. システムのデフォルトパスワードを使用してインスタンスにログインする場合は、[サイト内メール](https://console.cloud.tencent.com/message)にアクセスしてパスワードを取得してください。
+6. パスワードを忘れた場合は、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
+7. 下図のように、ポップアップしたウィンドウで**Continue**をクリックして、接続を確認します。
 ![](https://main.qcloudimg.com/raw/61b3d9566365183fcc1d92c2f6bc2e7b.png)
 接続に成功すると、次のページが表示されます。
-![](https://qcloudimg.tencent-cloud.cn/raw/4ad07fb213224a1eff9e1a6fbda385dc.png)
+![](https://main.qcloudimg.com/raw/20db4a1d63384bc0575ded68a8fe912d.png)
 :::
 </dx-tabs>
 
