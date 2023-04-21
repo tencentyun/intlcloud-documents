@@ -14,7 +14,7 @@ Jika Anda tidak dapat memeriksa masalah Anda dengan menggunakan alat diagnosis m
 ## Pemecahan Masalah
 ### Login dengan menggunakan VNC
 <span id="VNC"></span>
-Jika Anda tidak dapat menggunakan metode standar (Webshell) atau perangkat lunak login jarak jauh untuk login ke instans Linux, Anda dapat menggunakan Tencent Cloud VNC untuk login dan menemukan penyebab masalah.
+Jika Anda tidak dapat menggunakan metode standar (Orcaterm) atau perangkat lunak login jarak jauh untuk login ke instans Linux, Anda dapat menggunakan Tencent Cloud VNC untuk login dan menemukan penyebab masalah.
 1. Login ke [konsol CVM](https://console.cloud.tencent.com/cvm/index).
 2. Pada halaman manajemen instans, pilih intans yang akan diakses dan klik **Log In** (Login), seperti yang ditunjukkan pada gambar berikut:
 ![](https://main.qcloudimg.com/raw/a4cc736f2dc7f13bf39756b8e39532d4.png)
@@ -43,7 +43,7 @@ Jika Anda tidak dapat menggunakan metode standar (Webshell) atau perangkat lunak
 
 <span id="HighServerLoad"></span>
 ### Beban server tinggi
-**Problem** (Masalah): Cloud Monitor menunjukkan bahwa beban CPU server tinggi, dan sistem tidak dapat diakses dari jarak jauh atau aksesnya lambat.
+**Problem** (Masalah): Tencent Cloud Observability Platform menunjukkan bahwa beban CPU server tinggi, dan sistem tidak dapat diakses dari jarak jauh atau aksesnya lambat.
 **Possible Causes** (Kemungkinan Penyebab): virus, trojan, perangkat lunak anti-virus pihak ketiga, pengecualian aplikasi, pengecualian driver, dan pembaruan otomatis backend perangkat lunak dapat menyebabkan penggunaan CPU yang tinggi, menyebabkan kegagalan login CVM atau akses yang lambat.
 **Steps** (Langkah-langkah):
 1. Login ke instans dengan menggunakan [VNC](#VNC).
