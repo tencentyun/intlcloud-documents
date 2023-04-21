@@ -15,6 +15,6 @@ Untuk detail tentang mengubah subnet, lihat [Ubah Subnet Instans](http://intl.cl
 3. Pada halaman detail instans, pilih tab [ENI] dan klik <img src = "https://main.qcloudimg.com/raw/57a0c76b72cd97bd80bf857cd30c867a.png" style = "margin: 0;"> untuk memperluas ENI primer.
 4. Dalam daftar operasi ENI utama, klik **Modify Primary IP** (Modifikasi IP Primer).
 5. Di jendela “Modify Primary IP” (Modifikasi IP Primer) yang muncul, masukkan IP baru lalu klik **OK** (OKE). Ini berlaku setelah instans dimulai ulang.
-> Anda hanya dapat memasukkan IP pribadi di CIDR subnet saat ini.
+>! Anda hanya dapat memasukkan IP pribadi di CIDR subnet saat ini.
 >
 
