@@ -20,5 +20,5 @@ This article aims to help users improve the security and reliability of their CV
 - **Blocking instance failures**: you can use [EIPs](https://intl.cloud.tencent.com/document/product/213/5733) for domain name mapping to ensure that the server can quickly redirect the service IP address to another CVM instance when it is unavailable, thereby shielding instance failures.
 
 ## Monitoring and Alarms
-- **Monitoring and event response**: periodically check monitoring data and set proper alarms. For more information, refer to the [Cloud Monitor Product Documentation](https://intl.cloud.tencent.com/document/product/248).
+- **Monitoring and event response**: periodically check monitoring data and set proper alarms. For more information, refer to the [Tencent Cloud Observability Platform Product Documentation](https://intl.cloud.tencent.com/document/product/248).
 - **Handling request spikes**: with [Auto Scaling](https://intl.cloud.tencent.com/document/product/377), the stability of CVMs during peak hours can be guaranteed and unhealthy instances can be replaced automatically.
