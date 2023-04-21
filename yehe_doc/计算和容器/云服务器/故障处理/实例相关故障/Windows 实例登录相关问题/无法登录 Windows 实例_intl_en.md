@@ -56,7 +56,7 @@ If you forgot the password for the instance, you can reset it in the console. Fo
 
 ### High server load[](id:HighServerLoad)
 
-**Problem**: The self-diagnosis tool or Cloud Monitor shows that server CPU workload is too high, and the system is unable to perform remote connection or access is slow.
+**Problem**: The self-diagnosis tool or Tencent Cloud Observability Platform shows that server CPU workload is too high, and the system is unable to perform remote connection or access is slow.
 **Possible cause**: Viruses, trojans, third-party antivirus software, application exceptions, driver exceptions, and automatic updates of software on the backend may lead to high CPU utilization.
 **Procedure**:
 1. Log in to the instance by using [VNC login](#VNC).
@@ -77,8 +77,6 @@ If you forgot the password for the instance, you can reset it in the console. Fo
 <dx-alert infotype="notice" title="">
 Open 3389 must be open for remote login.
 </dx-alert>
-<img src="https://main.qcloudimg.com/raw/27b5aa974a2263719574dfc3bb7c0c6d.png"/>
-If the problem is caused by a port issue of the security group, you can use the **Open all ports** feature to open all ports.
 <img src="https://main.qcloudimg.com/raw/bd91ec53dfd0df6bd1127a7f4f9db35c.png"/><br>
 To define a custom rule for the security group, see <a href="https://intl.cloud.tencent.com/document/product/213/34272">Adding Security Group Rules</a>.
 
