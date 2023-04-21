@@ -1,46 +1,36 @@
 ## Overview
+
 This document describes how to call Tencent Cloud FaceID APIs through API 3.0 Explorer and integrate SDKs in the corresponding programming language into your project after you purchase the FaceID service. You can access FaceID APIs quickly in the following steps.
-
 ## Prerequisites
-Enter [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=DetectAuth&SignVersion=) to call APIs in the following steps.
 
+You have entered the [API 3.0 Explorer](https://console.tencentcloud.com/api/explorer?Product=faceid&Version=2018-03-01&Action=ApplySdkVerificationToken) page.
 ## Directions
-### Step 1
-Select the CompareFace API on the left sidebar.
 
-### Step 2
-Enter your private key information and required parameters.
-![](https://main.qcloudimg.com/raw/800146cb41268ffd2909a60322fa4e5d.png)
+The following steps use the calling of the [ApplySdkVerificationToken](https://www.tencentcloud.com/zh/document/product/1061/49954) API as an example.
+### Step 1.
+On the [API 3.0 Explorer](https://console.tencentcloud.com/api/explorer?Product=faceid&Version=2018-03-01&Action=ApplySdkVerificationToken) page, select `ApplySdkVerificationToken` from the left sidebar, enter required parameters, initiate the call, and get the response.
+![ApplySdkVerificationToken](https://staticintl.cloudcachetci.com/yehe/backend-news/Gnrv261_ApplySdkVerificationToken.png)
 
- - Region: region information in the domain name that determines the access point. For example, `faceid.ap-shanghai.tencentcloudapi.com` indicates that Shanghai is the access point. The common parameter `Region` specifies the region of business resources to be accessed; for example, `Region=ap-beijing` indicates resources in the Beijing region will be accessed. If no region is specified in the domain name, a nearby region will be accessed by default, which may cause problems. If an IP cannot be resolved, Guangzhou region will be used by default. The region for the domain name and the common parameter `Region` can be different, but this may increase access latency. We recommend using the same region for the domain name and the common parameter `Region`, such as South China (Guangzhou)/ap-guangzhou.
- - RuleId: Used to specify use cases. After your apply to activate the service, you can create RuleId in the [FaceID console](https://console.cloud.tencent.com/faceid) and call it after your application is approved. If you have any questions, contact the FaceID WeChat assistant (account: faceid001).
+- `Region`: This is a required parameter that specifies the region information in the domain name and determines the access point. For example, `ap-hongkong` means accessing the Hong Kong access point. APIs may support different regions. For details, see the "Region List" section in the API document of the API you are calling. For example, for [ApplySdkVerificationToken](https://www.tencentcloud.com/zh/document/product/1061/49954), see the "Region List" section in [Common Params](https://www.tencentcloud.com/document/api/1061/36934#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8).
+	![parameters](https://staticintl.cloudcachetci.com/yehe/backend-news/MUuN845_parameters.png)
+- `NeedVerifyIdCard`: This is a required parameter that specifies whether to perform identity card authentication. If this parameter is not selected, only document OCR will be performed. You can select this parameter only when the value of `IdCardType` is `HK`.
 
-<span id="Step 3"></span>
-### Step 3
-Select the programming language to generate codes.
-Enter the parameters on the left to generate codes. Part of the field information in the generated code is subject to the entered content. To adjust an input parameter, modify its value on the left and generate the code again.
+### Step 2.
 
-### Step 4
-Integrate the SDK into the project.
-Integrate the SDK into the project as instructed in the usage guide on the upper right-hand corner. You can call the corresponding API using the code generated in [Step 3](https://intl.cloud.tencent.com/document/product/1061/37029?lang=en&pg=#step-3).
-![](https://main.qcloudimg.com/raw/426025dfc6dcaa3b42525821804c92a7.png)
+Select the corresponding backend language, generate the code, and integrate it into your project. Take Java as an example.
+1. To integrate the code into your project, you need to import the SDK dependencies (see [Java](https://www.tencentcloud.com/zh/document/product/494/7245) in the top right corner of the figure below), get key information, and enter the `SecretId` and `SecretKey` in the code for successful calling.
+2. Part of the field information in the generated code is subject to the entered content. To adjust an input parameter, modify its value on the left and generate the code again.
 
+![api](https://staticintl.cloudcachetci.com/yehe/backend-news/mHPB015_api.png)
 ## Notes
-- You only need to focus on the `Region` field in common parameters when using SDKs to make calls. We recommend using `ap-guangzhou` for both the domain name and `Region`.
-- Address for generating `SecretId`/`SecretKey`: `https://console.cloud.tencent.com/cam/capi`.
-- For base64-encoded images or videos, remove the `data:image/jpg;base64,` prefix and the `\n` line break.
-- If the request result is as shown below, you need to manually configure the signature type:
- ```
-[TencentCloudSDKException]message:AuthFailure.SignatureFailure-The provided credentials
-could not be validated because of exceeding request size limit, you need to use new signature 
-method `TC3-HMAC-SHA256`. requestId:719970d4-5814-4dd9-9757-a3f11ecc9b20
- ```
-Configure the signature type:
-``` js
-  clientProfile.setSignMethod("TC3-HMAC-SHA256"); // Specify the signature algorithm (default value: HmacSHA256)
-```
-- If the API request exceeds 1 MB, only v3 authentication (TC3-HMAC-SHA256) can be used. API 3.0 SDK supports Node.js, Python, Java, PHP, and Go, but not .NET and C#.  For unsupported languages, you need to implement API authentication v3 to call APIs, and we recommend using the signature generation tool in [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=GetActionSequence) to verify the signature.
-![](https://main.qcloudimg.com/raw/29fe779dac02bfef2024265f928556f3.png)
 
-
-
+- To generate a SecretId and a SecretKey, visit https://console.tencentcloud.com/cam/capi.
+- To upload Base64-encoded images or videos for input parameters, remove the `data:image/jpg;base64,` prefix and the `\n` line break.
+- If the following information is returned, manually configure the signature type:
+  ```
+  [TencentCloudSDKException]message:AuthFailure.SignatureFailure-The provided credentials
+  could not be validated because of exceeding request size limit, please use new signature 
+  method `TC3-HMAC-SHA256`. requestId:719970d4-5814-4dd9-9757-a3f11ecc9b20
+  ​```Configuring signature type:
+   `clientProfile.setSignMethod("TC3-HMAC-SHA256"); // Specify the signature algorithm, which is HmacSHA256 by default`
+  ```
