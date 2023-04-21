@@ -127,7 +127,7 @@ For accounts that are making purchases for the first time, the **Quick Configura
 	  <b>Bill-by-traffic</b>: Billing is based on traffic that is actually used. You can specify a peak bandwidth to prevent charges incurred by unexpected traffic. Packet loss will occur when the instantaneous bandwidth exceeds this value. This is applicable to scenarios where the network connection fluctuates significantly.</li>
 	  <li>
 	  <b>Bill-by-bandwidth package</b>: Select this aggregated billing mode when your public network instances have traffic peaks at different times. It is applicable to large-scale businesses where traffic can be staggered between different instances using the public network.
-	  <br />BWP is currently in beta test. To try it out, <a href="https://console.intl.cloud.tencent.com/workorder/category">submit a ticket</a> for application.</li> 
+	  <br /> 
 	</ul>For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/10578">Public Network Billing</a>.
 	</td>
   </tr>
@@ -179,7 +179,7 @@ For accounts that are making purchases for the first time, the **Quick Configura
 	<td>By default, security service is enabled for free to help you build a CVM security system to prevent data leakage.</td>
   </tr>
   <tr>
-	<td>Cloud Monitoring</td>
+	<td>Tencent Cloud Observability Platform</td>
 	<td>No</td>
 	<td>
 	CM is activated by default. It provides comprehensive CVM data monitoring, smart data analysis, real-time fault alarms, and custom data reports to precisely monitor Tencent Cloud services and the health conditions of CVM instances.</td>
