@@ -1,10 +1,10 @@
 ## 操作场景
-腾讯云第五代实例 S5、M5、C4、IT5、D3 全面采用第二代智能英特尔<sup>®</sup>至强<sup>®</sup>可扩展处理器 Cascade Lake。提供了更多的指令集和特性，可用于加速人工智能的应用，同时集成的大量硬件增强技术，其中 AVX-512（高级矢量扩展）能够为 AI 推理过程提供强劲的并行计算能力，使用户获得更好的深度学习效果。
+腾讯云第六代实例 S6 和第五代实例 S5、M5、C4、IT5、D3 全面采用第二代智能英特尔<sup>®</sup>至强<sup>®</sup>可扩展处理器 Cascade Lake。提供了更多的指令集和特性，可用于加速人工智能的应用，同时集成的大量硬件增强技术，其中 AVX-512（高级矢量扩展）能够为 AI 推理过程提供强劲的并行计算能力，使用户获得更好的深度学习效果。
 
 本文以 S5、M5 实例为例，介绍如何在 CVM 上通过 AVX512 加速人工智能应用。
 
 ## 选型推荐[](id:RecommendedSelection)
-云服务器的多种实例规格可用于多种应用开发，其中 [标准型 S5](https://intl.cloud.tencent.com/document/product/213/11518) 及 [内存型 M5](https://intl.cloud.tencent.com/document/product/213/11518) 适用于机器学习或深度学习。这些实例配备了第二代 Intel<sup>®</sup> Xeon<sup>®</sup> 处理器，适配 Intel<sup>®</sup> DL boost 学习能力。推荐配置如下表：
+云服务器的多种实例规格可用于多种应用开发，其中 [标准型 S6](https://intl.cloud.tencent.com/document/product/213/11518)、[标准型 S5](https://intl.cloud.tencent.com/document/product/213/11518) 及 [内存型 M5](https://intl.cloud.tencent.com/document/product/213/11518) 适用于机器学习或深度学习。这些实例配备了第二代 Intel<sup>®</sup> Xeon<sup>®</sup> 处理器，适配 Intel<sup>®</sup> DL boost 学习能力。推荐配置如下表：
 <table>
 <tr>
 <th>平台类型</th><th>实例规格</th>
@@ -44,8 +44,8 @@
 
 ### 部署示例
 您可根据实际业务场景，参考以下示例部署人工智能平台，进行机器学习或深度学习任务：
-
-### 示例1：使用 Intel<sup>®</sup>优化深度学习框架 TensorFlow*
+<dx-accordion>
+::: 示例1：使用 Intel<sup>®</sup>优化深度学习框架 TensorFlow*
 在第二代智能英特尔<sup>®</sup>至强<sup>®</sup>可扩展处理器 Cascade Lake 上 PyTorch 和 IPEX 会自动启用针对 AVX-512 指令集进行的优化，以尽可能提高运算性能。
 
 TensorFlow\* 是用于大规模机器学习及深度学习的热门框架之一。您可参考该示例，提升实例的训练及推理性能。更多框架部署相关信息，请参见 [Intel<sup>®</sup> Optimization for TensorFlow\* Installation Guide](https://software.intel.com/content/www/us/en/develop/articles/intel-optimization-for-tensorflow-installation-guide.html)。操作步骤如下：
@@ -53,8 +53,9 @@ TensorFlow\* 是用于大规模机器学习及深度学习的热门框架之一�
 #### 部署 TensorFlow\* 框架
 1. 在云服务器中，安装 Python。本文以 Python 3.7 为例。
 2. 执行以下命令，安装 Intel<sup>®</sup> 优化的 TensorFlow\* 版本 intel-tensorflow。
->?建议使用**2.4.0及以上版本**，以获得最新的功能与优化。
->
+<dx-alert infotype="explain" title="">
+建议使用**2.4.0及以上版本**，以获得最新的功能与优化。
+</dx-alert>
 ```
 pip install intel-tensorflow
 ```
@@ -80,7 +81,7 @@ lscpu | grep "Core(s) per socket" | cut -d':' -f2 | xargs
  export TF_NUM_INTEROP_THREADS=1
  export TF_ENABLE_MKL_NATIVE_FORMAT=0
 ```
- - 在代码中增加环境变化设置。在运行的 Python 代码中，加入以下环境变化配置：
+ - 在代码中增加环境变量设置。在运行的 Python 代码中，加入以下环境变量配置：
 ```
 import os
 os.environ["KMP_BLOCKTIME"] = "1"
@@ -108,8 +109,8 @@ tf.Session(config=config)
     通过测试，在 batch size 为1时选取适用于图像分类、目标检测的一些模型进行测试，会发现使用 AVX512 优化的版本相对于非优化版本所提供的推理性能有一些明显提升。例如在延迟上，优化后的 ResNet 50的延时降低为原来的45%。
  - **吞吐量性能**：
     通过设置增加 batch size 来测试吞吐性能，选取适用于图像分类、目标检测的一些模型进行测试，发现在吞吐的性能数据上也有明显提升，优化后 ResNet 50的性能提升为原来的1.98倍。
-
-### 示例2：部署深度学习框架 PyTorch*
+:::
+::: 示例2：部署深度学习框架 PyTorch*
 #### 部署步骤
 1. 在云服务器中，安装 Python3.6 或以上版本，本文以 Python 3.7 为例。
 2. 前往 [Intel<sup>®</sup> Extension for PyTorch 官方github repo](https://github.com/intel/intel-extension-for-pytorch#installation)，根据安装指南中提供的信息，对 PyTorch 以及 Intel<sup>®</sup> Extension for PyTorch (IPEX) 进行编译以及安装。
@@ -165,8 +166,8 @@ output = output.to('cpu') # Move output back to ATen format
 
 基于 Intel 第二代英特尔<sup>®</sup>至强<sup>®</sup>可扩展处理器 Cascade Lake，在2*CPU（28核/CPU）及384G内存场景下，不同模型测试的性能数据可参见 [性能测试数据](https://software.intel.com/content/www/us/en/develop/articles/intel-and-facebook-collaborate-to-boost-pytorch-cpu-performance.html)。由于实际模型及物理配置不同，性能数据会有差别，本文提供的测试数据仅供参考。
 
-
-### 示例3：使用 Intel<sup>®</sup>AI 低精度优化工具加速
+:::
+::: 示例3：使用 Intel<sup>®</sup>AI 低精度优化工具加速
 
 
 Intel<sup>®</sup> 低精度优化工具是一个开源的 Python 库，旨在提供一个简单易用的、跨神经网络框架的低精度量化推理接口。用户可以通过对该接口的简单调用来对模型进行量化，提高生产力，从而加速低精度模型在第三代 Intel<sup>®</sup> Xeon<sup>®</sup> DL Boost 可扩展处理器平台上的推理性能。更多使用介绍请参见 [Intel<sup>®</sup> 低精度量化工具代码仓库](https://github.com/Intel/lpot/)。
@@ -471,45 +472,59 @@ pip install lpot
  python setup.py install
 ```
 3. 量化 TensorFlow ResNet50 v1.0。本文以 ResNet50 v1.0 为例，介绍如何使用本工具进行量化：
-    1. 准备数据集。
+    
+1. 准备数据集。
 执行以下命令，下载并解压 ImageNet validation 数据集。
+
 ```plaintext
 mkdir –p img_raw/val && cd img_raw
 wget http://www.image-net.org/challenges/LSVRC/2012/dd31405981
 ef5f776aa17412e1f0c112/ILSVRC2012_img_val.tar
 tar –xvf ILSVRC2012_img_val.tar -C val
 ```
+
 执行以下命令，将 image 文件移入按 label 分类的子目录。
+
 ```plaintext
 cd val
 wget -qO -https://raw.githubusercontent.com/soumith/
 imagenetloader.torch/master/valprep.sh | bash
 ```
-执行以下命令，使用脚本 [prepare_dataset.sh](https://github.com/intel/lpot/blob/master/examples/tensorflow/image_recognition/prepare_dataset.sh) 将原始数据转换为 TFrecord 格式。
+
+执行以下命令，使用脚本 prepare_dataset.sh 将原始数据转换为 TFrecord 格式。
+
 ```plaintext
 cd examples/tensorflow/image_recognition
 bash prepare_dataset.sh --output_dir=./data --raw_dir=/PATH/TO/img_raw/val/ 
 --subset=validation
 ```
+
 更多数据集相关信息，请参见 [Prepare Dataset](https://github.com/intel/lpot/tree/master/examples/tensorflow/image_recognition#2-prepare-dataset)。
-    2. 执行以下命令，准备模型。
+
+2. 执行以下命令，准备模型。
+
 ```plaintext
 wget https://storage.googleapis.com/intel-optimized-tensorflow/
  models/v1_6/resnet50_fp32_pretrained_model.pb
 ```
-    3. 执行以下命令，运行 Tuning。
+
+3. 执行以下命令，运行 Tuning。
 修改文件 `examples/tensorflow/image_recognition/resnet50_v1.yaml`，使 `quantization\calibration`、`evaluation\accuracy`、`evaluation\performance` 三部分的数据集路径指向用户本地实际路径，即数据集准备阶段生成的 TFrecord 数据所在位置。详情请参见 [ResNet50 V1.0](https://github.com/intel/lpot/tree/master/examples/tensorflow/image_recognition#1-resnet50-v10)。
+
 ```plaintext
 cd examples/tensorflow/image_recognition
 bash run_tuning.sh --config=resnet50_v1.yaml \
 --input_model=/PATH/TO/resnet50_fp32_pretrained_model.pb \
 --output_model=./lpot_resnet50_v1.pb
 ```
-    4. 执行以下命令，运行 Benchmark。
+
+4. 执行以下命令，运行 Benchmark。
+
 ```plaintext
 bash run_benchmark.sh --input_model=./lpot_resnet50_v1.pb
 --config=resnet50_v1.yaml
 ```
+
 输出结果如下，其中性能数据仅供参考：
 ```shell
  accuracy mode benchmarkresult:
@@ -523,8 +538,8 @@ bash run_benchmark.sh --input_model=./lpot_resnet50_v1.pb
  Latency: 1.300 ms
  Throughput: 769.302 images/sec
 ```
-
-### 示例4：使用 Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit 进行推理加速
+:::
+::: 示例4：使用 Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit 进行推理加速
 Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit 是一个可以加快计算机视觉及其他深度学习应用部署的工具套件，它能够支持英特尔平台的各种加速器（包括 CPU、GPU、FPGA 以及 Movidius 的 VPU）来进行深度学习，同时能直接支持异构硬件的执行。
 
 Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit 能够优化通过 TensorFlow\* 、PyTorch\* 等训练的模型, 它包括模型优化器、推理引擎、Open Model Zoo、训练后优化工具（Post-training Optimization Tool）等一整套部署工具，其中：
@@ -553,5 +568,6 @@ The Intel® Distribution of OpenVINO™ 工具在多种英特尔处理器与加�
 
 #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit 基准测试
 详情请参见 [安装面向 Linux* 的 Intel<sup>®</sup> OpenVINO™ 工具套件分发版](https://docs.openvinotoolkit.org/downloads/cn/I03030-5-Install%20Intel_%20Distribution%20of%20OpenVINO_%20toolkit%20for%20Linux%20-%20OpenVINO_%20Toolkit.pdf)。
-
+:::
+</dx-accordion>
 
