@@ -5,7 +5,7 @@ This document guides you through how to create a Tencent Cloud Virtual Machine (
 ## Preparations
 
 Before creating a CVM instance, you need to complete the following steps:
-- [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+- [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985).
 - To create a CVM instance whose network type is virtual private cloud (VPC), you need to [create a VPC](https://intl.cloud.tencent.com/document/product/215/31805) in the target region and [create a subnet](https://intl.cloud.tencent.com/document/product/215/31806) in the target availability zone under the VPC.
 - If you do not use the default project, you need to [create a project](https://intl.cloud.tencent.com/document/product/378/34726).
 - If you do not use the default security group, you need to [create a security group](https://intl.cloud.tencent.com/document/product/213/34271) in the target region and add a security group rule that meets your business requirements.
@@ -14,7 +14,7 @@ Before creating a CVM instance, you need to complete the following steps:
 
 ## Directions
 
-1. Log in to [Tencent Cloud](https://intl.cloud.tencent.com). Select **Products** > **Compute** > **[Cloud Virtual Machine](https://intl.cloud.tencent.com/products/cvm)**. Click **Buy Now** to enter the CVM purchase page.
+1. Log in to [Tencent Cloud](https://intl.cloud.tencent.com). Select **Products** > **Compute and Container**> **Compute** > **[Cloud Virtual Machine](https://intl.cloud.tencent.com/products/cvm)**. Click **Buy Now** to enter the CVM purchase page.
  - **[Custom Configuration](https://buy.intl.cloud.tencent.com/cvm?regionId=1&projectId=-1&templateCreateMode=createLt)**: It is suitable for specific scenarios and makes it easier for you to purchase CVM instances as needed.
 2. Configure the following information as prompted by the page:
 <table>
@@ -186,7 +186,7 @@ Before creating a CVM instance, you need to complete the following steps:
 	<td>By default, Anti-DDoS and Cloud Workload Protection are enabled free of charge to help you build a CVM security system to prevent data leakage.</td>
   </tr>
   <tr>
-	<td>Cloud Monitoring</td>
+	<td>Tencent Cloud Observability Platform</td>
 	<td>No</td>
 	<td>
 	CM is activated by default. You can install add-ons to get CVM monitoring metrics and display them in visual charts. You can also specify custom alarm thresholds. In addition, you can configure three-dimensional CVM data monitoring, smart data analysis, real-time fault alarms, and custom data reports to precisely monitor Tencent Cloud services and the health conditions of CVM instances.</td>
