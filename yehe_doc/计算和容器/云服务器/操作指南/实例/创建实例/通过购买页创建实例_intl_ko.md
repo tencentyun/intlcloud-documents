@@ -5,7 +5,7 @@
 ## 전제 조건
 
 CVM 인스턴스를 생성하기 전 다음 작업을 완료해야 합니다.
-- [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985) 및 [Identity Verification](https://intl.cloud.tencent.com/document/product/378/3629)을 완료해야 합니다.
+- [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985) 완료해야 합니다.
 - 생성하려는 네트워크 유형이 VPC의 CVM 인스턴스일 경우, 타깃 리전에서 [Creating VPC](https://intl.cloud.tencent.com/document/product/215/31805) 후 VPC의 타깃 가용존에서 [Creating Subnets](https://intl.cloud.tencent.com/document/product/215/31806) 해야 합니다.
 - 시스템에 자동 생성된 기본 항목을 사용하지 않으려면, [프로젝트 생성](https://intl.cloud.tencent.com/document/product/378/34726)을 해야 합니다.
 - 시스템 자동으로 생성된 기본 보안 그룹을 사용하지 않을 경우 목표 리전에 [보안 그룹 생성](https://intl.cloud.tencent.com/document/product/213/34271)하고 사용자 서비스 수요를 충족할 수 있는 보안 그룹 규칙을 추가합니다.
@@ -14,7 +14,7 @@ CVM 인스턴스를 생성하기 전 다음 작업을 완료해야 합니다.
 
 ## 작업 단계
 
-1. [Tencent Cloud 공식 사이트](https://intl.cloud.tencent.com)에 로그인하고 **제품** > **기본** > **컴퓨팅** > **[CVM](https://intl.cloud.tencent.com/products/cvm)**을 선택한 뒤, **구매하기**를 클릭하여 CVM 구매 페이지로 이동합니다.
+1. [Tencent Cloud 공식 사이트](https://intl.cloud.tencent.com)에 로그인하고 **제품** > **컴퓨팅 및 컨테이너** > **컴퓨팅** > **[CVM](https://intl.cloud.tencent.com/products/cvm)** 을 선택한 뒤, **구매하기**를 클릭하여 CVM 구매 페이지로 이동합니다.
  - **[사용자 정의 구성](https://buy.intl.cloud.tencent.com/cvm?regionId=1&projectId=-1&templateCreateMode=createLt):** 특정 시나리오에서 사용하기에 적합하며 특정 요구 사항에 맞는 CVM 인스턴스를 더 쉽게 구입할 수 있습니다.
 2. 페이지 알림에 따라 다음 정보를 설정합니다.
 <table>
@@ -210,7 +210,7 @@ CVM 인스턴스를 생성하기 전 다음 작업을 완료해야 합니다.
 	및 Cloud Workload Protection이 무료로 활성화되어 데이터 유출을 방지하는 CVM 보안 시스템을 구축할 수 있습니다.</td>
   </tr>
   <tr>
-	<td>클라우드 모니터링</td>
+	<td>TCOP</td>
 	<td>옵션</td>
 	<td>
 	기본적으로 클라우드 서비스 모니터링은 무료로 활성화되어 있습니다. 컴포넌트를 설치하여 CVM 모니터링 메트릭을 얻고 시각적 차트에 표시할 수 있습니다. 사용자 정의 알람 임계값을 지정할 수도 있습니다. 또한 3차원 CVM 데이터 모니터링, 지능형 데이터 분석, 실시간 오류 알람 및 사용자 정의 데이터 보고서를 구성하여 Tencent Cloud 서비스 및 CVM의 상태를 정확하게 모니터링할 수 있습니다.</td>
