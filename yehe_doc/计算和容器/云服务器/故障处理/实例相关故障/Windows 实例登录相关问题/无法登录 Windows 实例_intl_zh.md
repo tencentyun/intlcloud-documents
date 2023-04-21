@@ -56,7 +56,7 @@
 
 ### 服务器高负载[](id:HighServerLoad)
 
-**故障现象**：通过自助检查工具或者云监控，显示服务器 CPU 负载过高导致系统无法进行远程连接或者访问非常卡。
+**故障现象**：通过自助检查工具或者腾讯云可观测平台，显示服务器 CPU 负载过高导致系统无法进行远程连接或者访问非常卡。
 **可能原因**：病毒木马、第三方杀毒软件、应用程序异常、驱动异常或者软件后台的自动更新，会造成 CPU 占用率高，导致登录不上云服务器或者访问慢的问题。
 **处理步骤**：
 1. 通过 [VNC 登录](#VNC) 登录实例。
@@ -77,8 +77,6 @@
 <dx-alert infotype="notice" title="">
 远程登录的 Windows 实例需要放通3389端口。
 </dx-alert>
-<img src="https://main.qcloudimg.com/raw/27b5aa974a2263719574dfc3bb7c0c6d.png"/>
-如果确定为安全组端口设置问题，可通过工具中的**一键放通**功能放通端口。
 <img src="https://main.qcloudimg.com/raw/bd91ec53dfd0df6bd1127a7f4f9db35c.png"/><br>
 如果您需要自定义设置安全组规则，请参考 <a href="https://intl.cloud.tencent.com/document/product/213/34272">添加安全组规则</a> 重新配置安全组规则。
 
