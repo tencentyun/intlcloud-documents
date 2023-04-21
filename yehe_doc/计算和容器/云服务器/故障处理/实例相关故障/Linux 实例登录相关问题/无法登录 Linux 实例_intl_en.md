@@ -36,7 +36,7 @@ Common login failure reasons:
 ## Troubleshooting
 ### Logging in via VNC[](id:VNC)
 
-If you cannot log in to the Linux instance by using Webshell or remote login software, you can try log in with VNC for troubleshooting.
+If you cannot log in to the Linux instance by using Orcaterm or remote login software, you can try log in with VNC for troubleshooting.
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 2. On the **Instances** page, select the target instance and click **Log in**.
 ![](https://main.qcloudimg.com/raw/a4cc736f2dc7f13bf39756b8e39532d4.png)
@@ -66,7 +66,7 @@ If you cannot log in to the Linux instance by using Webshell or remote login sof
 
 
 ### High instance load[](id:HighServerLoad)
-**Problem**: The self-diagnosis tool or Cloud Monitor shows that server CPU workload is too high, and the system is unable to perform remote connection or access is slow.
+**Problem**: The self-diagnosis tool or Tencent Cloud Observability Platform shows that server CPU workload is too high, and the system is unable to perform remote connection or access is slow.
 **Possible cause**: Viruses, trojans, third-party antivirus software, application exceptions, driver exceptions, and automatic updates of software on the backend may lead to high CPU utilization, causing CVM login failures or slow access.
 **Procedure**:
 1. Log in to the instance by using [VNC login](#VNC).
