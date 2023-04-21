@@ -14,7 +14,7 @@ Se você não puder verificar seu problema usando a ferramenta de autodiagnósti
 ## Solução de problemas
 ### Login usando o VNC
 <span id="VNC"></span>
-Se você não puder usar o método padrão (Webshell) ou o software de login remoto para fazer login em uma instância do Linux, poderá usar o VNC da Tencent Cloud para fazer login e localizar as causas do problema.
+Se você não puder usar o método padrão (Orcaterm) ou o software de login remoto para fazer login em uma instância do Linux, poderá usar o VNC da Tencent Cloud para fazer login e localizar as causas do problema.
 1. Faça login no [console do CVM](https://console.cloud.tencent.com/cvm/index).
 2. Na página de gerenciamento de instâncias, selecione a instância a ser acessada e clique em **Log In (Fazer login)**, conforme mostrado na figura abaixo:
 ![](https://main.qcloudimg.com/raw/a4cc736f2dc7f13bf39756b8e39532d4.png)
@@ -43,7 +43,7 @@ Se você não puder usar o método padrão (Webshell) ou o software de login rem
 
 <span id="HighServerLoad"></span>
 ### Carga alta do servidor
-**Problema**: o Cloud Monitor mostra que a carga da CPU do servidor está alta e o sistema não pode ser acessado remotamente ou o acesso está lento.
+**Problema**: o Tencent Cloud Observability Platform mostra que a carga da CPU do servidor está alta e o sistema não pode ser acessado remotamente ou o acesso está lento.
 **Possíveis causas**: vírus, trojans, software antivírus de terceiros, erros de aplicativos, de driver e atualizações automáticas de back-end de software podem levar ao alto uso da CPU, causando falhas de login do CVM ou acesso lento.
 **Etapas**:
 1. Faça login na instância usando o [VNC](#VNC).
