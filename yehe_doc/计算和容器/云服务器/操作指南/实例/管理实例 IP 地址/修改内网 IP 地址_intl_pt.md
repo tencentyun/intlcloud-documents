@@ -15,6 +15,6 @@ Para obter detalhes sobre como alterar a sub-rede, consulte [Alterar sub-rede da
 3. Na página de detalhes da instância, selecione a guia [ENI] e clique em <img src = "https://main.qcloudimg.com/raw/57a0c76b72cd97bd80bf857cd30c867a.png" style = "margin: 0;"> para expandir o ENI principal.
 4. Na lista de operações do ENI principal, clique em **Modify Primary IP (Modificar o IP principal)**.
 5. Na janela “Modify Primary IP (Modificar o IP principal)” que é exibida, insira o novo IP e clique em **OK**. A alteração entra em vigor depois que a instância é reiniciada.
-> Só é possível inserir o IP privado no CIDR da sub-rede atual.
+>! Só é possível inserir o IP privado no CIDR da sub-rede atual.
 >
 
