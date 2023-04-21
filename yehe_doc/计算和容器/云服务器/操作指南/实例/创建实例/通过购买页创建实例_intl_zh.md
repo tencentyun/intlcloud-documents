@@ -5,7 +5,7 @@
 ## 前提条件
 
 在创建 CVM 实例前，您需要完成以下工作：
-- [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+- [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)。
 - 如果要创建网络类型为私有网络的 CVM 实例，需要在目标地域 [创建一个私有网络](https://intl.cloud.tencent.com/document/product/215/31805)，并且在私有网络下的目标可用区 [创建一个子网](https://intl.cloud.tencent.com/document/product/215/31806)。
 - 如果不使用系统自动创建的默认项目，需要 [创建一个项目](https://intl.cloud.tencent.com/document/product/378/34726)。
 - 如果不使用系统自动创建的默认安全组，需要在目标地域 [创建一个安全组](https://intl.cloud.tencent.com/document/product/213/34271) 并添加能满足您业务需求的安全组规则。
@@ -14,7 +14,7 @@
 
 ## 操作步骤
 
-1. 登录 [腾讯云官网](https://intl.cloud.tencent.com)，选择**产品** > **基础** > **计算** > **[云服务器](https://intl.cloud.tencent.com/products/cvm)**，单击**立即选购**，进入云服务器购买页面。
+1. 登录 [腾讯云官网](https://intl.cloud.tencent.com)，选择**产品>计算和容器>计算>[云服务器](https://intl.cloud.tencent.com/products/cvm)** ，单击**立即选购**，进入云服务器购买页面。
  - **[自定义配置](https://buy.intl.cloud.tencent.com/cvm?regionId=1&projectId=-1&templateCreateMode=createLt)：**适合特定场景的使用，方便用户选购自己特定需求的云服务器实例。
 2. 根据页面提示，配置以下信息：
 <table>
@@ -210,7 +210,7 @@
 	防护和云镜主机防护，帮助用户构建服务器安全防护体系，防止数据泄露。</td>
   </tr>
   <tr>
-	<td>云监控</td>
+	<td>腾讯云可观测平台</td>
 	<td>可选</td>
 	<td>
 	默认免费开通云产品监控，安装组件获取主机监控指标并以监控图标形式展示，且支持设置自定义告警阈值等。还提供了立体化云服务器数据监控、智能化数据分析、实时化故障告警和个性化数据报表配置，让用户精准掌控业务和云服务器的健康状况。</td>
