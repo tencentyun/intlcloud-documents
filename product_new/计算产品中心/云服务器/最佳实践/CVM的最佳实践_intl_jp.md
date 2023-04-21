@@ -11,7 +11,7 @@
 ## ストレージ
 
 - **ハードウェアストレージ：**高い信頼性を求めるデータに対して、Tencent CloudのCloud Block Storageを利用してデータの永続性を保証し、できるだけ [ローカルディスク](https://intl.cloud.tencent.com/document/product/213/5798)を選択しないでください。詳細については、 [Cloud Block Storage製品ドキュメント](https://intl.cloud.tencent.com/document/product/362)をご参照ください。
-- **データベース：**頻繁にアクセスし、容量が不安定なデータベースに対して、[Tencent Cloudクラウドデータベース](https://intl.cloud.tencent.com/product/tencentdb-catalog)を利用できます。
+- **データベース：**頻繁にアクセスし、容量が不安定なデータベースに対して、Tencent Cloudクラウドデータベースを利用できます。
 
 ## バックアップとリカバー
 
@@ -20,5 +20,5 @@
 - **インスタンス故障のブロック：** [Elastic IP](https://intl.cloud.tencent.com/document/product/213/5733)によってドメイン名マッピングを行い、CVMが利用できない時に迅速にサービス IP を別のCVMインスタンスにリダイレクトすることを保証することにより、インスタンス故障をブロックします。
 
 ## モニタリングとアラーム
-- **モニタリングと応答イベント：**定期的にモニタリングデータを確認して、かつ適切なアラームを設置します。詳細については、[クラウドモニタリング製品ドキュメント](https://intl.cloud.tencent.com/document/product/248)をご参照ください。
+- **モニタリングと応答イベント：**定期的にモニタリングデータを確認して、かつ適切なアラームを設置します。詳細については、[TCOP製品ドキュメント](https://intl.cloud.tencent.com/document/product/248)をご参照ください。
 - **突発リクエストの処理：** [Auto Scaling](https://intl.cloud.tencent.com/document/product/377)を利用し、 ピークサービス中のCVMの安定性を保証でき、更に不健康のインスタンスを自動的に置き換えることもできます。
