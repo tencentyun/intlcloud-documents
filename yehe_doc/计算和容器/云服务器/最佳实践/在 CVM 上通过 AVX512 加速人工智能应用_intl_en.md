@@ -1,10 +1,10 @@
 ## Overview
-The fifth-generation Tencent Cloud CVM instances (including S5, M5, C4, IT5, D3, etc.) all come with the 2nd generation Intel<sup>®</sup> Xeon<sup>®</sup> scalable processor Cascade Lake. These instances provides more instruction sets and features, which can accelerate the artificial intelligence (AI) applications. The integrated hardware enhancement technology, like Advanced Vector Extensions 512 (AVX-512), can boost the parallel computing performance for AI inference and produce a better deep learning result.
+The fifth-generation Tencent Cloud CVM instances (including  S6, S5, M5, C4, IT5, D3, etc.) all come with the 2nd generation Intel<sup>®</sup> Xeon<sup>®</sup> scalable processor Cascade Lake. These instances provides more instruction sets and features, which can accelerate the artificial intelligence (AI) applications. The integrated hardware enhancement technology, like Advanced Vector Extensions 512 (AVX-512), can boost the parallel computing performance for AI inference and produce a better deep learning result.
 
 This document describes how to use AVX-512 on S5 and M5 CVM instances to accelerate AI application.
 
 ## Recommended Models[](id:RecommendedSelection)
-Tencent Cloud provides various types of CVMs for different application development. The [Standard S5](https://intl.cloud.tencent.com/document/product/213/11518) and [Memory Optimized M5](https://intl.cloud.tencent.com/document/product/213/11518) instance types come with the 2nd generation Intel<sup>®</sup> Xeon<sup>®</sup> processor and support Intel<sup>®</sup> DL Boost, making them suitable for machine learning or deep learning. The recommended configurations are as follows:
+Tencent Cloud provides various types of CVMs for different application development. The [Standard S6](https://intl.cloud.tencent.com/document/product/213/11518)、[Standard S5](https://intl.cloud.tencent.com/document/product/213/11518) and [Memory Optimized M5](https://intl.cloud.tencent.com/document/product/213/11518) instance types come with the 2nd generation Intel<sup>®</sup> Xeon<sup>®</sup> processor and support Intel<sup>®</sup> DL Boost, making them suitable for machine learning or deep learning. The recommended configurations are as follows:
 <table>
 <tr>
 <th>Scenario</th><th>Instance Specifications</th>
@@ -44,8 +44,8 @@ Create an instance as instructed in [Creating Instances via CVM Purchase Page](h
 
 ### Deploying a platform
 Deploy an AI platform as instructed below to perform the machine learning or deep learning task:
-
-### Sample 1: optimizing the deep learning framework TensorFlow* with Intel<sup>®</sup>
+<dx-accordion>
+::: Sample 1: optimizing the deep learning framework TensorFlow* with Intel<sup>®</sup>
 PyTorch and IPEX on the 2nd generation Intel <sup>®</sup> Xeon<sup>®</sup> scalable processor Cascade Lake will automatically optimize AVX-512 instructions to maximize the computing performance.
 
 TensorFlow\* is a widely-used large-scale machine learning and deep learning framework. You can improve the instance training and inference performance as instructed in the sample below. More information about the framework, see [Intel<sup>®</sup> Optimization for TensorFlow\* Installation Guide](https://software.intel.com/content/www/us/en/develop/articles/intel-optimization-for-tensorflow-installation-guide.html). Follow these steps:
@@ -53,8 +53,9 @@ TensorFlow\* is a widely-used large-scale machine learning and deep learning fra
 #### Deploying the TensorFlow\* framework
 1. Install Python in the CVM instance. This document uses Python 3.7 as an example.
 2. Run the following command to install the Intel<sup>®</sup> optimized TensorFlow\* intel-tensorflow.
->?The **version 2.4.0 or later** is recommended to obtain the latest features and optimization.
->
+<dx-alert infotype="explain" title="">
+The **version 2.4.0 or later** is recommended to obtain the latest features and optimization.
+</dx-alert>
 ```
 pip install intel-tensorflow
 ```
@@ -108,8 +109,8 @@ The performance data is as shown in [Improving TensorFlow* Inference Performance
     We tested models of image classification and object detection at batch size one, and found improved inference performance of Intel Optimization for TensorFlow with AVX-512 instructions against the non-optimized version. For example, the latency performance of optimized ResNet 50 is reduced to 45% of the original version.
  - **Throughput performance**:
     We tested models of image classification and object detection for throughput performance at large batch size, and found significant improvements. The throughput performance of optimized ResNet 50 is increased to 1.98 times of the original version.
-
-### Sample 2: deploying the learning framework PyTorch*
+:::
+::: Sample 2: deploying the learning framework PyTorch*
 #### Deployment directions
 1. Install Python 3.6 or a later version in the CVM instance. This document uses Python 3.7 as an example.
 2. Compile and install PyTorch and Intel<sup>®</sup> Extension for PyTorch (IPEX) as intructed in [Intel<sup>®</sup> Extension for PyTorch](https://github.com/intel/intel-extension-for-pytorch#installation).
@@ -165,8 +166,8 @@ output = output.to('cpu') # Move output back to ATen format
 
 Tested on the 2nd generation Intel <sup>®</sup> Xeon<sup>®</sup> scalable processor Cascade Lake with 2*CPU (28 cores per CPU) and 384 GB memory, different models obtain the performance data as shown in [Intel and Facebook* collaborate to boost PyTorch* CPU performance](https://software.intel.com/content/www/us/en/develop/articles/intel-and-facebook-collaborate-to-boost-pytorch-cpu-performance.html). The performance result varies according to model and actual configurations.
 
-
-### Sample 3: using Intel<sup>®</sup>AI Low Precision Optimization Tool for acceleration
+:::
+::: Sample 3: using Intel<sup>®</sup>AI Low Precision Optimization Tool for acceleration
 
 
 The Intel<sup>®</sup> Low Precision Optimization Tool (Intel<sup>®</sup> LPOT) is an open-source Python library that delivers an easy-to-use low-precision inference interface across multiple neural network frameworks. It helps user quantify models, improve productivity, and accelerate the inference performance of low precision models on the 3rd generation Intel<sup>®</sup> Xeon<sup>®</sup> DL Boost scalable processor. For more information, see [Intel<sup>®</sup> Low Precision Optimization Tool code repository](https://github.com/Intel/lpot/).
@@ -523,8 +524,8 @@ The results are as follows, in which the performance data is only for reference:
  Latency: 1.300 ms
  Throughput: 769.302 images/sec
 ```
-
-### Sample 4: using Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit for inference acceleration
+:::
+::: Sample 4: using Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit for inference acceleration
 Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit is a comprehensive toolkit for quickly deploying computer vision and other deep learning applications. It supports various Intel accelerator including VPU for CPU, GPU, FPGA and Movidius, and also supports direct heterogeneous hardware execution.
 
 Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit optimizes models trained by TensorFlow\* and PyTorch\*. It includes Model Optimizer, Inference Engine, Open Model Zoo, Post-training Optimization Tool:
@@ -553,5 +554,7 @@ The Intel® Distribution of OpenVINO™ provides optimization implementations on
 
 #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit benchmark test
 For more information, see [Install Intel<sup>®</sup> Distribution of OpenVINO™ toolkit for Linux*](https://docs.openvinotoolkit.org/downloads/cn/I03030-5-Install%20Intel_%20Distribution%20of%20OpenVINO_%20toolkit%20for%20Linux%20-%20OpenVINO_%20Toolkit.pdf).
+:::
+</dx-accordion>
 
 
