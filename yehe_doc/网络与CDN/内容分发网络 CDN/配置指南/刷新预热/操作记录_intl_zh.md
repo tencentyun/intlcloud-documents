@@ -6,7 +6,7 @@
 ### 使用方式
 
 1. 登录 <a href="https://console.cloud.tencent.com/cdn">CDN 控制台</a>，单击左侧目录的**刷新预热**后，单击**操作记录**。
-2. 指定时间周期、域名/URL、任务类型进行查询，支持指定域名查询，或指定完整的刷新 URL/目录/预热URL查询。
+2. 对指定时间周期、域名/URL、任务类型进行查询，支持指定域名查询，或指定完整的刷新 URL/目录/预热URL查询。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/t6QT128_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230224105641.png)
 
 ### 使用说明
