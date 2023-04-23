@@ -718,4 +718,6 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 56.[云防火墙](https://www.tencentcloud.com/document/product/1160/52113)。
 57.[短视频 SDK](https://www.tencentcloud.com/document/product/1069/52519)。
 58.[密钥管理系统](https://www.tencentcloud.com/document/product/1030/53637)。
-60.[腾讯云数据连接器](https://www.tencentcloud.com/document/product/1165/54051).
+60.[腾讯云数据连接器](https://www.tencentcloud.com/document/product/1165/54051)。
+61.[低代码互动课堂](https://www.tencentcloud.com/document/product/1168/54190)。
+62.[容器安全服务](https://www.tencentcloud.com/document/product/1163/54257)。
