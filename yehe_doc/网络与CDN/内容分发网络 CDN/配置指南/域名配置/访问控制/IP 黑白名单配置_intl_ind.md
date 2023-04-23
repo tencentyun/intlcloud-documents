@@ -14,9 +14,9 @@ Masuk ke [Konsol CDN](https://console.cloud.tencent.com/cdn), pilih **Domain Man
 Alihkan switch, beri centang pada **Blocklist** (Daftar Blokir) atau **Allowlist** (Daftar Izin), masukkan daftar IP atau rentang IP, dan klik **OK**:
 ![](https://main.qcloudimg.com/raw/0b278589542a7022b3525f80ecadd2e3.png)
 **IP blocklist** (Daftar blokir IP)
-Jika IP klien cocok dengan IP atau rentang IP di daftar blokir, simpul CDN yang diakses akan langsung mengembalikan kode status 403.
+Jika IP klien cocok dengan IP atau rentang IP di daftar blokir, simpul CDN yang diakses akan langsung mengembalikan kode status 514.
 **IP allowlist** (Daftar izin IP)
-Jika IP klien tidak cocok dengan IP atau rentang IP di daftar izin, simpul CDN yang diakses akan langsung mengembalikan kode status 403.
+Jika IP klien tidak cocok dengan IP atau rentang IP di daftar izin, simpul CDN yang diakses akan langsung mengembalikan kode status 514.
 **Batasan konfigurasi**
 
 - Daftar blokir dan daftar izin IP saling eksklusif dan tidak dapat dikonfigurasi secara bersamaan.
@@ -36,5 +36,5 @@ Jika konfigurasi daftar blokir/daftar izin IP dari nama domain `www.test.com` ad
 ![](https://main.qcloudimg.com/raw/29a9307902d03f686345eef2964c5ec2.png)
 Maka akses aktualnya adalah sebagai berikut:
 1. Pengguna dengan IP klien `1.1.1.1` mengakses sumber daya `http://www.test.com/test.txt`. Karena IP cocok dengan IP dalam daftar izin, konten yang diminta akan dikembalikan.
-2. Pengguna dengan IP klien `2.1.1.1` mengakses sumber daya `http://www.test.com/test.txt`. Karena IP tidak cocok dengan IP mana pun dalam daftar izin, kode status 403 akan dikembalikan.
+2. Pengguna dengan IP klien `2.1.1.1` mengakses sumber daya `http://www.test.com/test.txt`. Karena IP tidak cocok dengan IP mana pun dalam daftar izin, kode status 514 akan dikembalikan.
 
