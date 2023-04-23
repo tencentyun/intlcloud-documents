@@ -1,7 +1,5 @@
 ## Vast Resource Reserves
 
-Tencent Cloud CDN has strong resource reserves with over 2,800 cache nodes across more than 70 countries and regions, a total reserved bandwidth of over 160 Tbps,and over 100 million active connections, helping safeguard your business.
-
 ### Nodes in mainland China
 
 CDN has over 2,000 cache nodes deployed across all provinces in mainland China, with a total reserved bandwidth of over 110 Tbps. These are all high performance and highly secure Tencent Cloud data centers with quality ISP networks. In addition, Tencent Cloud has strengthened connections with China Mobile, China Unicom, China Telecom, and over 50 small and medium-sized ISPs, and has built four central nodes to significantly improve CDN's acceleration effect.
@@ -19,7 +17,7 @@ CDN has over 2,000 cache nodes deployed across all provinces in mainland China, 
 
 ### Nodes outside mainland China
 
-CDN has been working industriously on global acceleration since 2017. As of May 2021, CDN has over 8,00 cache nodes across more than 70 countries and regions with a total reserved bandwidth of over 50 Tbps, helping your business go global with ease and speed.
+CDN has been working industriously on global acceleration since 2017. As of December 2022, CDN has over 8,00 cache nodes across more than 70 countries and regions with a total reserved bandwidth of over 50 Tbps, helping your business go global with ease and speed.
 ![image-20200210165753661](https://main.qcloudimg.com/raw/034a95d5f46fb8bf848c0a53dd265611.png)
 
 | Region   | Distribution                                                     |
