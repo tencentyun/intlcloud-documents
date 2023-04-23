@@ -159,6 +159,8 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 59.[User Generated Short Video SDK](https://www.tencentcloud.com/document/product/1069/52520).
 60.[Key Management Service](https://www.tencentcloud.com/document/product/1030/53638).
 61.[App Flow](https://www.tencentcloud.com/document/product/1165/54050).
+62.[Low-code Interactive Classroom](https://www.tencentcloud.com/document/product/1168/54191).
+63.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54258).
 
 ## 法域特定の要件
 
