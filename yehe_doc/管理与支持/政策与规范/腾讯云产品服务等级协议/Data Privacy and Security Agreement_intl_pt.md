@@ -164,6 +164,8 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 59.[User Generated Short Video SDK](https://www.tencentcloud.com/document/product/1069/52520).
 60.[Key Management Service](https://www.tencentcloud.com/document/product/1030/53638).
 61.[App Flow](https://www.tencentcloud.com/document/product/1165/54050).
+62.[Low-code Interactive Classroom](https://www.tencentcloud.com/document/product/1168/54191).
+63.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54258).
 
 ## Requisitos específicos da jurisdição
 
