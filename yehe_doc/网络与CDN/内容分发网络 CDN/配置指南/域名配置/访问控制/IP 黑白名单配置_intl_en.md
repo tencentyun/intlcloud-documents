@@ -17,9 +17,9 @@ To enable the IP blocklist/allowlist configuration, toggle on the **On/Off** swi
 #### Adding or modifying a rule
 In the **IP Blocklist/Allowlist Configuration** section, click **Add Rule** to add an IP blocklist/allowlist rule.
 **IP blocklist**
-If a client IP matches an IP or IP range in the blocklist, the accessed CDN node will directly return a 403 status code.
+If a client IP matches an IP or IP range in the blocklist, the accessed CDN node will directly return a 514 status code.
 **IP allowlist**
-If a client IP does not match any IP or IP range in the allowlist, the accessed CDN node will directly return a 403 status code.
+If a client IP does not match any IP or IP range in the allowlist, the accessed CDN node will directly return a 514 status code.
 **Configuration limitations**
 
 - When you add a rule, select **Allowlist** or **Blocklist** as **Rule type**. The IP blocklist and allowlist are mutually exclusive and cannot be configured at the same time.
@@ -45,6 +45,6 @@ If the IP blocklist/allowlist configuration of the domain name `www.test.com` is
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/z5ge560_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230310104738.png)
 Then the actual access will be as follows:
 
-1. If a user whose IP is 1.1.1.1 requests to access `https://www.test.com/test/vod.mp4`, the blocklist rule at the bottom of the rule list is matched. In this case, the access request is denied, and a 403 status code is returned.
-2. If a user whose IP is 1.1.1.2 requests to access `https://www.test.com/test/vod.mp4`, the blocklist rule is not matched because the IP is not specified in the blocklist rule. The allowlist rule that is configured for the access resource allows access requests only from IP 1.1.1.1. In this case, the access request is denied due to an IP mismatch, and a 403 status code is returned.
+1. If a user whose IP is 1.1.1.1 requests to access `https://www.test.com/test/vod.mp4`, the blocklist rule at the bottom of the rule list is matched. In this case, the access request is denied, and a 514 status code is returned.
+2. If a user whose IP is 1.1.1.2 requests to access `https://www.test.com/test/vod.mp4`, the blocklist rule is not matched because the IP is not specified in the blocklist rule. The allowlist rule that is configured for the access resource allows access requests only from IP 1.1.1.1. In this case, the access request is denied due to an IP mismatch, and a 514 status code is returned.
 3. If a user whose IP is 1.1.1.1 requests to access `https://www.test.com/vod.mp4`, the allowlist rule instead of the blocklist rule is matched. In this case, the access request is allowed, and the user can access the resource as expected.
