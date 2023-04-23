@@ -723,3 +723,5 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 58.[User Generated Short Video SDK](https://www.tencentcloud.com/document/product/1069/52519).
 59.[Key Management Service](https://www.tencentcloud.com/document/product/1030/53637).
 60.[App Flow](https://www.tencentcloud.com/document/product/1165/54051).
+61.[Low-code Interactive Classroom](https://www.tencentcloud.com/document/product/1168/54190).
+62.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54257).
