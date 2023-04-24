@@ -23,9 +23,6 @@ We recommend you enable the voice activity detection (VAD) feature for audio seg
 ### Does ASR support sync result call?
 - Real-time speech recognition supports sync recognition result return.
 
-### Can ASR convert Mandarin recording files into English text?
-No.
-
 ### Does ASR support evaluation?
 No.
 
