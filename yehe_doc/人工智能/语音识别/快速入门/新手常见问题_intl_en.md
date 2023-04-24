@@ -1,9 +1,6 @@
 ### How do I connect to ASR?
 ASR currently supports connection via API and SDK (recommended). For more information, see [Quick Server API Access](https://intl.cloud.tencent.com/document/product/1118/43356) and [Real-Time Speech Recognition](https://intl.cloud.tencent.com/document/product/1118/43383).
 
-### How do I update a file over 5 MB in size to the ASR console to try ASR out?
-You can try ASR out by using an audio URL in the feature trial section in the [ASR console](https://console.cloud.tencent.com/asr/demonstrate). **We recommend you upload the audio file to a URL and keep the audio length below five hours.**
-
 ### Which ASR service should I choose in different scenarios?
 - Real-time speech recognition is applicable to scenarios with requirements for real-timeness, such as voice input method, voice robot, and meeting recording.
 
@@ -11,9 +8,9 @@ You can try ASR out by using an audio URL in the feature trial section in the [A
 Real-time speech recognition doesn't support far-field and offline speech recognition features.
 
 ### Does ASR support recognizing speeches in Chinese-English mix and dialects?
-- Real-time speech recognition supports Mandarin, English, Cantonese, Korean, Japanese, Thai, and Shanghainese.
+- ASR supports recognizing Mandarin and English.
 
->?If you want to recognize other dialects such as Sichuan, Nanjing, or Nanchang dialect, fill out the [form](https://cloud.tencent.com/apply/p/75h8nunsh9) for application.
+>?For recognition of Malaysian, Vietnamese, Hindi, Turkish, Arabic, and other languages, [submit a ticket](https://console.tencentcloud.com/workorder/category).
 
 ### How long can an ASR input audio be?
 - In real-time speech recognition, each audio segment of a data packet in the audio stream is 200 ms in length.
