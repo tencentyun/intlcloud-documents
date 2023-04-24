@@ -13,6 +13,5 @@ Result:
 ![](https://main.qcloudimg.com/raw/769ec09e032d1a3d8b03749fe2039f34.png)
 The sample rate of this audio is 8 kHz, the bit depth is 16-bit, and the channel is mono (as compared to stereo).
 
-### How do I update a file over 5 MB in size to the ASR console to try ASR out?
-The ASR console provides a feature trial module for you to try ASR out. If your test audio file is large, we recommend you upload it to a URL and keep the audio length below five hours.
+
 
