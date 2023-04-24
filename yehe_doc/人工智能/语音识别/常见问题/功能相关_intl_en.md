@@ -7,15 +7,15 @@ No. Currently, only real-time speech recognition supports offline speech recogni
 
 ### Does ASR support recognizing speeches in Chinese-English mix and dialects?
 - The Mandarin engine can recognize speeches in Chinese-English mix (at the word level) and accented Mandarin.
-- Real-time speech recognition supports Mandarin, English, Cantonese, Korean, Japanese, Thai, and Shanghainese.
+- ASR supports recognizing Mandarin and English.
 
->?If you want to recognize other dialects such as Sichuan, Nanjing, or Nanchang dialect, fill out the [form](https://cloud.tencent.com/apply/p/75h8nunsh9) for application.
+>?For recognition of Malaysian, Vietnamese, Hindi, Turkish, Arabic, and other languages, [submit a ticket](https://console.tencentcloud.com/workorder/category).
 
 ### How long can an ASR input audio be?
 - In real-time speech recognition, each audio segment of a data packet in the audio stream is 200 ms in length.
 
 ### What audio attributes does ASR support?
-For the detailed specifications of ASR on audio attributes, see [ASR](https://cloud.tencent.com/product/asr/details).
+For the detailed specifications of ASR on audio attributes, see [ASR](https://intl.cloud.tencent.com/product/asr).
 
 ### In real-time speech recognition, if the audio contains multiple sentences, how do I increase the recognition accuracy?
 We recommend you enable the voice activity detection (VAD) feature for audio segmentation. If the audio contains multiple sentences, VAD can detect the pauses between them and automatically divide the audio into different sentences, achieving a higher recognition accuracy.
