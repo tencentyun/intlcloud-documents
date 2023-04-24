@@ -6,7 +6,7 @@ Tencent Cloud Text To Speech (TTS) turns text into natural-sounding speech in mu
 TTS currently supports 53 types of male and female voices, well meeting the needs of diverse use cases such as audiobook, customer service, navigation, and notification.
 
 ### Supported languages
-TTS supports speech synthesis in Chinese, English, Cantonese, and Chinese-English mix.
+TTS supports speech synthesis in Chinese, English and Chinese-English mix.
 
 ### Parameter configuration
 TTS allows you to configure the volume, speech rate (0.6X to 1.5X), and sample rate (8 kHz or 16 kHz for apps and phone lines).
@@ -21,7 +21,7 @@ TTS is built on industry-leading technologies that can quickly create highly nat
 
 ### Flexible settings
 
- - TTS supports speech synthesis in Chinese, English, Cantonese, and Chinese-English mix.
+ - TTS supports speech synthesis in Chinese, English, and Chinese-English mix.
  - It allows you to select volume, speech rate, and other attributes for your specific business needs.
  - It can generate speeches in basic audio files and live audio streams.
  - It supports phone call, app, and other scenarios for your choice.
