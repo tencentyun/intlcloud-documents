@@ -20,9 +20,9 @@ Based on multiple sequential neural network structures (LSTM, Attention Model, a
 
 ASR provides RESTful APIs and SDKs and supports a wide variety of devices and terminals, including smart hardware, mobile application, website, desktop client, and IoT.
 
-### Rich language support
+### Support for Multiple Languages
 
-- ASR supports 23 languages, including Mandarin, English, Cantonese, Korean, Japanese, Thai, and Shanghainese.
+ASR currently supports speech recognition in Mandarin and English, with more languages to come in the future.
 
 ### Excellent recognition performance in noisy environment
 
