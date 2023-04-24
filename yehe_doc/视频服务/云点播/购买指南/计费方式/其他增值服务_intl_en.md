@@ -5,7 +5,7 @@ Below are the pricing details:
 
 | Billable Item       | Price (USD/Min) | Billed By                   |
 | :----------- | :---------------- | -------------------------- |
-| Real-time clipping | 0.0028            | The duration of the output file. |
+| Real-time clipping | 0.00098            | The duration of the output file. |
 
 #### Billing details
 
