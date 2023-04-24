@@ -2,7 +2,7 @@
 TTS is pay-as-you-go. For billing details, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1154/47874).
 
 ### What languages does TTS support?
-Currently, TTS supports Chinese, English, Cantonese, and Chinese-English mix.
+Currently, TTS supports Chinese, English and Chinese-English mix.
 
 ### Does TTS support on-premises deployment?
 No. If you need on-premises deployment, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
