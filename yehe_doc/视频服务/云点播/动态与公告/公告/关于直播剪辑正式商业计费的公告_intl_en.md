@@ -6,7 +6,7 @@ Below are the pricing details:
 
 | Billable Item       | Price (USD/Min) | Billed By                   |
 | ------------ | ----------------- | -------------------------- |
-| Real-time clipping | 0.0028            | The duration of the output file. |
+| Real-time clipping |0.00098          | The duration of the output file. |
 
 For more information, see [VOD Pricing](https://www.tencentcloud.com/products/vod) and [Value-Added Services](https://www.tencentcloud.com/document/product/266/38162).
 
