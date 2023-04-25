@@ -1,13 +1,14 @@
-## Feature Overview 
+## Overview 
 
 COSFS allows you to mount COS buckets to local and work with the COS objects as you do with a local file system. COSFS supports the following features:
 - Most features of the POSIX file system, such as reading/writing files, operations on directories/links, permission management, and uid/gid management.
 - Multipart upload of large files.
 - Data verification with MD5.
-- Data upload to COS using [COS Migration](https://intl.cloud.tencent.com/document/product/436/15392) or [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
+- Data upload to COS using [COS Migration](https://www.tencentcloud.com/document/product/436/15392) or [COSCMD](https://www.tencentcloud.com/document/product/436/10976).
+
 
 ## Limitations
-**COSFS is built on S3FS. As disks are required for COSFS′s read and write operations, COSFS is only suitable for simple management of the mounted files and does not support all features of a local file system. Therefore, you are advised to access COS through Tencent Cloud Storage Gateway (CSG). Tencent CSG can mount COS buckets to multiple servers as network file systems. Users can use the POSIX file protocol to read and write objects in COS through mount points.** The COSFS tool is not applicable to some scenarios, for example:
+COSFS is built on S3FS. As disks are required for COSFS' read and write operations, COSFS is only suitable for simple management of mounted files and does not support all features of a local POSIX file system. Note the following limitations when using the COSFS tool:
 
 - Randomly writing data or appending data to a file may lead to the re-download/re-upload of the entire file. To avoid this, you can use a CVM in the same region as the bucket to accelerate the upload and download.
 - When a COS bucket is mounted to multiple clients, you need to coordinate the behaviors of these clients, for example, to prevent the clients from simultaneously writing data to the same file.
@@ -15,6 +16,12 @@ COSFS allows you to mount COS buckets to local and work with the COS objects as 
 - For metadata operations such as `list directory`, COSFS performs unsatisfactorily as it requires remote access to the COS server.
 - COSFS does not support hard links and is inapplicable to high-concurrency reads/writes.
 - Mounting and unmounting files cannot be performed on the same mount point at the same time. You can use the `cd` command to switch to another directory and then mount and unmount the files at the mount point.
+- Regular disk scanning tasks of the server may cause a high CPU utilization of COSFS, which sends a large number of HEAD and LIST requests, incurring a large amount of request fees. For more information, see [FAQs](#faq).
+
+We recommend you use the following tools rather than COSFS:
+- GooseFS-Lite: You can access COS using GooseFS-Lite, a lightweight standalone COS Fuse tool with better read/write performance and stability.
+- Cloud Storage Gateway (CSG): You can access COS through CSG, which can mount COS buckets to multiple servers as network file systems. Users can use the POSIX file protocol to read and write objects in COS through mount points.
+- WinFsp + GitHub + Rclone: You can use these tools to mount COS as a local drive. For more information, see [Mounting COS to Windows Server as Local Drive](https://www.tencentcloud.com/document/product/436/40490).
 
 ## Operating Environments
 Mainstream Ubuntu, CentOS, SUSE, and macOS
@@ -142,7 +149,7 @@ sudo make install
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib64/pkgconfig/:/usr/local/lib/pkgconfig
 modprobe fuse   # Mount FUSE's kernel module.
 echo "/usr/local/lib" >> /etc/ld.so.conf
-ldconfig   # Update the dynamic-link library.
+ldconfig   #Update the dynamic link library
 pkg-config --modversion fuse  #View the fuse version number. If "2.9.4" is displayed, fuse 2.9.4 is installed successfully. 
 ```
 - Install fuse 2.8.4 or later on the SUSE system manually, as shown below:
@@ -185,8 +192,8 @@ chmod 640 /etc/passwd-cosfs
 ```
 
 >?You need to replace the content enclosed in &lt;&gt; with the actual information.
->- &lt;BucketName-APPID&gt; indicates the name of the bucket. For more information, see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312).
-> - &lt;SecretId&gt; and &lt;SecretKey&gt; are key information. We recommend you use a sub-account key and authorize a sub-account by following the [Notes on Principle of Least Privilege](https://intl.cloud.tencent.com/document/product/436/32972) to reduce risks. For details on how to obtain a sub-account key, see [Access Key](https://intl.cloud.tencent.com/document/product/598/32675).
+>- <BucketName-APPID> indicates the name of the bucket. For more information, see [Bucket Naming Conventions](https://www.tencentcloud.com/document/product/436/13312).
+> - <SecretId> and <SecretKey> are key information. We recommend you use a sub-account key and authorize a sub-account by following the [Notes on Principle of Least Privilege](https://www.tencentcloud.com/document/product/436/32972) to reduce risks. For details on how to obtain a sub-account key, see [Access Key](https://www.tencentcloud.com/document/product/598/32675).
 >- You can configure the key in `$HOME/.passwd-cosfs`. Alternatively, you can run `-opasswd_file=[path]` to specify the directory of the key file and then set permissions of the key file to 600.
 > 
 
@@ -209,7 +216,7 @@ cosfs <BucketName-APPID> <MountPoint> -ourl=http://cos.<Region>.myqcloud.com -od
 ```
 Parameter description
 - &lt;MountPoint&gt; is the mount point, for example, `/mnt`.
-- &lt;Region&gt; is the abbreviation for the region, such as `ap-guangzhou` and `eu-frankfurt`. For more information about region abbreviations, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+- <Region> is the abbreviation for the region, such as `ap-guangzhou` and `eu-frankfurt`. For more information about region abbreviations, see [Regions and Access Endpoints](https://www.tencentcloud.com/document/product/436/6224).
 - `-odbglevel` specifies the log level. The default value is `crit`. Available options are `crit`, `error`, `warn`, `info`, and `debug`.
 - `-oallow_other` allows other users to access the mount folder.
 
@@ -270,5 +277,13 @@ You can obtain the uid of a user using the ID command `id -u username`. For exam
 To improve performance, COSFS uses the system disk by default for the temporary cache of uploaded and downloaded files and releases space after files are closed. When a large number of concurrent files are opened or large files are read or written, COSFS uses hard disk space as much as possible to improve performance. By default, only 100 MB of free hard disk space is reserved for other applications. You can use the `oensure_diskfree=[size]` option to set the size of available hard disk space in MB reserved by COSFS. For example, `-oensure_diskfree=1024` indicates that COSFS will reserve 1024 MB of free space.
 
 
+<span id="faq"></span>
 ## FAQs
-If you have any questions about COSFS, see [COSFS FAQs](https://intl.cloud.tencent.com/document/product/436/30587).
+
+Some FAQs about COSFS are listed below. If you have more questions, see [COSFS FAQs](https://www.tencentcloud.com/document/product/436/30587).
+
+- [What should I do if COSFS has a high CPU utilization, sends a large number of HEAD and LIST requests to COS, and incurs a large amount of request fees during a certain period of time every day?](https://intl.cloud.tencent.com/document/product/436/30587#.E5.AE.89.E8.A3.85-cosfs-rpm-.E5.8C.85.E6.97.B6.EF.BC.8C.E6.8F.90.E7.A4.BA-conflicts-with-file-from-package-fuse-libs-*.EF.BC.8C.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
+ 
+- [Why does it take the ls command so long to return when I run it in a COSFS directory?](https://intl.cloud.tencent.com/document/product/436/30587#.E5.9C.A8-cosfs-.E7.9A.84.E7.9B.AE.E5.BD.95.E4.B8.AD.E6.89.A7.E8.A1.8C-ls-.E5.91.BD.E4.BB.A4.EF.BC.8C.E4.B8.BA.E4.BB.80.E4.B9.88.E5.91.BD.E4.BB.A4.E8.BF.94.E5.9B.9E.E9.9C.80.E8.A6.81.E5.BE.88.E4.B9.85.E7.9A.84.E6.97.B6.E9.97.B4.EF.BC.9F)
+
+

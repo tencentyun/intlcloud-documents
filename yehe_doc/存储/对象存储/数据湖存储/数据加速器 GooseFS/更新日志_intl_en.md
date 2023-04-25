@@ -1,13 +1,39 @@
-The release notes of GooseFS are as follows. If you have any questions or suggestions, [contact us](https://intl.cloud.tencent.com/contact-sales).
+The update history for GooseFS is described as follows. If you have any queries or suggestions, please [contact us](https://www.tencentcloud.com/contact-sales).
 
 <table ><thead ><tr>
 <th >Version</th><th >Update Date</th><th >Description</th><th >Download URL</th></tr>
 
-</thead><tbody ><tr>
+</thead><tbody>
+
+<tr>
+<td>1.4.1</td>
+<td>March 1, 2023</td>
+<td><ul>
+<li>Optimizations:<ol ><li>Supported clearing and viewing the list of incomplete files.</li>
+<li>Optimized the locking granularity for the recursive metadata loading operation (loadmetadata -R).</li>
+</ol></li>
+<li>Bug fixes:<ol ><li>Fixed the issue where the status of the authentication flow and data flow was inconsistent during Flume data write.</li>
+<li>Fixed the issue where deadlock occurred after writing large files exhausted client resources.</li>
+
+</ol>
+</ul>
+
+</td>
+<td><li>GooseFS: <a href="https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin.tar.gz" >Click to download</a></li>
+<li>GooseFS (Kona JDK Edition): <a href="https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin-konajdk11.tar.gz" >Click to download</a></li>
+<li>GooseFS client: <a href="https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-client-1.4.1-bin.tar.gz" >Click to download</a></li>
+<li>GooseFS client (Kona JDK Edition): <a href="https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-client-1.4.1-bin-konajdk11.tar.gz" >Click to download</a></li>
+<li>GooseFS-FUSE client: <a href="https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-fuse-1.4.1-bin.tar.gz" >Click to download</a></li>
+<li>GooseFS-FUSE client (Kona JDK Edition): <a href="https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-fuse-1.4.1-bin-konajdk11.tar.gz" >Click to download</a></li>
+</td>
+</tr>
+
+
+<tr>
 <td>1.4.0</td>
 <td>November 11, 2022</td>
 <td><ul>
-<li>New features:<ol ><li>Provided the file decompression feature, which is in beta test and available in Intelligent Automobile Cloud Zone in Shanghai only.</li>
+<li>New features:<ol ><li>Provided the file decompression feature, which is in beta test and available in Shanghai Auto-Driving Cloud Zone only.</li>
 <li>Supported the temporary key management feature.</li>
 <li>Supported hierarchical traversal for `distributedLoad`.</li>
 <li>Supported downgraded read in GooseFS-FUSE.</li>
@@ -40,7 +66,7 @@ The release notes of GooseFS are as follows. If you have any questions or sugges
 <td>July 25, 2022</td>
 <td><ul>
 <li>New features:<ol ><li>Supported Kerberos authentication.</li>
-<li>Supported access to buckets with <a href="https://intl.cloud.tencent.com/document/product/436/43305" >metadata acceleration</a> enabled by using native POSIX semantics.</li>
+<li>Supported access to buckets with <a href="https://www.tencentcloud.com/document/product/436/43305" >metadata acceleration</a> enabled by using native POSIX semantics.</li>
 <li>Supported the LRU algorithm for the master node cache elimination policy to avoid frequent cache replacement.</li>
 <li>Supported expired metadata cleanup for the master node.</li>
 </ol></li>

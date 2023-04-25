@@ -1,5 +1,5 @@
 
-## Feature Overview
+## Overview
 SSIS, SSAS, and SSRS are three key components for SQL Server to implement business intelligence (BI).
 - SQL Server Integration Services (SSIS) provides enterprise-grade data integration and conversion solutions to extract, transform, and load (ETL) data from various sources.
 - SQL Server Analysis Services (SSAS) is a data analysis engine used to create cubes (multidimensional data models).
@@ -33,7 +33,7 @@ A data transformation process requires built-in logic to respond dynamically to 
 ### Automating administrative features and data loading
 SSIS provides components to automate management, such as copying TencentDB for SQL Server databases and their contained objects, copying TencentDB for SQL Server objects, loading data, and setting the scheduling cycle and frequency of SSIS tasks.
 
-## Benefits to Customer
+## Benefits
 ### High-value data mining
 SSIS aggregates discrete and partially structured data in an enterprise at different standards by cleansing and processing the data. This helps tap into the value of data and form an enterprise-level unified database, which serves as a high-quality data source for enterprise decision making.
 
@@ -49,7 +49,7 @@ SSIS greatly improves your efficiency, accuracy and system performance of data c
 ## Use Limits
 - Currently, the business intelligence server feature is in beta test and can be used free of charge. During the beta test, you can purchase only one business intelligence server with the 2-core 4 GB MEM specification in each region and up to three under each root account. Billing will start in pay-as-you-go mode after the beta test ends.
 - Currently, three SSIS versions are supported: SQL Server 2016 Integration Services, SQL Server 2017 Integration Services, and SQL Server 2019 Integration Services.
-- TencentDB for SQL Server Basic/Dual-Server High Availability/Cluster Edition instances can use SSIS capabilities through the business intelligence server, while read-only instances cannot.
+- TencentDB for SQL Server single-node (formerly Basic Edition) and two-node (formerly High Availability/Cluster Edition) instances can use SSIS capabilities through the business intelligence server, while read-only instances cannot.
 - Currently, the business intelligence server feature is available only in four regions: Guangzhou, Shanghai, Beijing, and Hong Kong (China).
 
 ## Notes
@@ -65,7 +65,7 @@ SSIS greatly improves your efficiency, accuracy and system performance of data c
 - You can use SQL Server Agent to run SSIS program packages.
 - Do not manually create or restore the `SSISDB` database; otherwise, SSIS may not run properly.
 
-## Directions
+## Flowchart
 **Prerequisites**
 Prepare a built SSIS project file with the `.ispac` extension.
 **1. [Purchase a business intelligence server.](https://intl.cloud.tencent.com/document/product/238/48059)**
@@ -73,7 +73,6 @@ TencentDB for SQL Server uses SSIS capabilities, which require project deploymen
 
 **2. [Create a Windows authentication account.](https://intl.cloud.tencent.com/document/product/238/48058)**
 You need to create a Windows authentication account for the business intelligence server for login and SSIS project deployment.
-
 >?Accounts created on the business intelligence server all have Windows authentication permissions. Business intelligence servers can use only this type of accounts, and account permissions cannot be modified.
 
 **3. [Add a flat file.](https://intl.cloud.tencent.com/document/product/238/48057)**
@@ -82,7 +81,7 @@ Before deploying an SSIS project, you need to check whether the project involves
 **4. [Interconnect the source and target instances and business intelligence server.](https://intl.cloud.tencent.com/document/product/238/48056)**
 Before deploying an SSIS project, you need to interconnect the source and target database instances and business intelligence server involved in the project. The interworking group management feature is used to sustain interconnection between instances. Therefore, in the same account and region, all database instances and the business intelligence server in the SSIS project need to be added to the same interworking group, and the interworking IP for business intelligence services needs to be enabled for each of them before they can access each other.
 
-**5. [Deploy an SSIS project.](https://intl.cloud.tencent.com/document/product/238/47721)**
+**5. [Deploy an SSIS project.](https://www.tencentcloud.com/document/product/238/47721)**
 Before deploying an SSIS project, you need to connect to the business intelligence server as follows:
 5.1 Create a Windows authentication account with the same account name and password as that on the business intelligence server in a Windows CVM instance.
 5.2 Use the Windows authentication account created in step 5.1 to log in to the Windows CVM instance.
@@ -98,25 +97,23 @@ Before deploying an SSIS project, you need to connect to the business intelligen
 <tbody>
 <tr>
 <td rowspan="6">Instance List</td>
-<td>Purchasing business intelligence server</td><td>For detailed directions on how to create/purchase a business intelligence server, see <a href="https://intl.cloud.tencent.com/document/product/238/48059" target="_blank">Purchasing Business Intelligence Server</a>.</td></tr>
-<td>Renaming instance</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/238/46508" target="_blank">Renaming Instance</a>.</td></tr>
-<td>Restarting instance</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/238/46505" target="_blank">Restarting Instance</a>.</td></tr>
-<td>Terminating instance</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/238/35787" target="_blank">Terminating Instance</a>.</td></tr>
-<td>Recycle bin</td><td>After a business intelligence server is terminated or deleted by mistake, the operations that can be performed in the recycle bin are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/238/46504" target="_blank">Recycle Bin</a>.</td></tr>
-<td>Editing tag</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/238/46506" target="_blank">Setting Instance Tag</a>.</td></tr>
+<td>Purchasing business intelligence server</td><td>For detailed directions on how to create/purchase a business intelligence server, see <a href="https://www.tencentcloud.com/document/product/238/48059" target="_blank">Purchasing Business Intelligence Server</a>.</td></tr>
+<td>Renaming instance</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://www.tencentcloud.com/document/product/238/46508" target="_blank">Renaming Instance</a>.</td></tr>
+<td>Restarting instance</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://www.tencentcloud.com/document/product/238/46505" target="_blank">Restarting Instance</a>.</td></tr>
+<td>Terminating instance</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://www.tencentcloud.com/document/product/238/35787" target="_blank">Terminating Instance</a>.</td></tr>
+<td>Recycle bin</td><td>After a business intelligence server is terminated or deleted by mistake, the operations that can be performed in the recycle bin are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://www.tencentcloud.com/document/product/238/46504" target="_blank">Recycle Bin</a>.</td></tr>
+<td>Editing tag</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://www.tencentcloud.com/document/product/238/46506" target="_blank">Setting Instance Tag</a>.</td></tr>
 <tr>
-<td rowspan="8">Instance Management</td>
-<td>Setting instance remarks</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/238/46507" target="_blank">Setting Instance Remarks</a>.</td></tr>
-<td>Changing network</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/238/46497" target="_blank">Changing Network (from VPC to VPC)</a>.</td></tr>
-<td>Modifying project</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/238/35786" target="_blank">Setting Instance Project</a>.</td></tr>
-<td>Setting instance maintenance information</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/238/35785" target="_blank">Setting Instance Maintenance Information</a>.</td></tr>
-<td>View monitoring chart</td><td>The monitoring metrics of a business intelligence server and a TencentDB for SQL Server instance are not completely the same. Specific monitoring metrics are as displayed on the actual monitoring page. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/238/46503" target="_blank">Viewing Monitoring Charts</a>.</td></tr>
-<td>Configuring security group</td><td>A business intelligence server also needs to be configured with a security group. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/238/35789" target="_blank">Configuring Security Group</a>.</td></tr>
-<td>Managing account</td><td>For detailed directions on how to create and delete accounts, see <a href="https://cloud.tencent.com/document/product/238/75225" target="_blank">Creating Windows Authentication Account</a>.</td></tr>
-<td>Managing SSIS</td><td>For detailed directions on how to manage SSIS and add flat files, see <a href="https://intl.cloud.tencent.com/document/product/238/48057" target="_blank">Adding Flat File</a>.</td></tr>
+<td rowspan="8">Instance management</td>
+<td>Setting instance remarks</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://www.tencentcloud.com/document/product/238/46507" target="_blank">Setting Instance Remarks</a>.</td></tr>
+<td>Changing network</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://www.tencentcloud.com/document/product/238/46497" target="_blank">Changing Network (from VPC to VPC)</a>.</td></tr>
+<td>Modifying project</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://www.tencentcloud.com/document/product/238/35786" target="_blank">Setting Instance Project</a>.</td></tr>
+<td>Setting instance maintenance information</td><td>The operation steps are the same as those for a TencentDB for SQL Server instance. For detailed directions, see <a href="https://www.tencentcloud.com/document/product/238/35785" target="_blank">Setting Instance Maintenance Information</a>.</td></tr>
+<td>View monitoring chart</td><td>The monitoring metrics of a business intelligence server and a TencentDB for SQL Server instance are not completely the same. Specific monitoring metrics are as displayed on the actual monitoring page. For detailed directions, see <a href="https://www.tencentcloud.com/document/product/238/46503" target="_blank">Viewing Monitoring Charts</a>.</td></tr>
+<td>Configuring security group</td><td>A business intelligence server also needs to be configured with a security group. For detailed directions, see <a href="https://www.tencentcloud.com/document/product/238/35789" target="_blank">Configuring Security Group</a>.</td></tr>
+<td>Managing account</td><td>For detailed directions on how to create and delete accounts, see <a href="https://intl.cloud.tencent.com/document/product/238/48058" target="_blank">Creating Windows Authentication Account</a>.</td></tr>
+<td>Managing SSIS</td><td>For detailed directions on how to manage SSIS and add flat files, see <a href="https://www.tencentcloud.com/document/product/238/48057" target="_blank">Adding Flat File</a>.</td></tr>
 <tr>
 <td rowspan="1">Interworking Group Management</td>
-<td>Interconnecting source/target instances and business intelligence server</td><td>For detailed directions on how to enable the interworking IP for business intelligence services and add instances to an interworking group, see <a href="https://intl.cloud.tencent.com/document/product/238/48056" target="_blank">Interconnecting Source/Target Instances and Business Intelligence Server</a>.</td></tr>
+<td>Interconnecting source/target instances and business intelligence server</td><td>For detailed directions on how to enable the interworking IP for business intelligence services and add instances to an interworking group, see <a href="https://www.tencentcloud.com/document/product/238/48056" target="_blank">Interconnecting Source/Target Instances and Business Intelligence Server</a>.</td></tr>
 </tbody></table>
-
-
