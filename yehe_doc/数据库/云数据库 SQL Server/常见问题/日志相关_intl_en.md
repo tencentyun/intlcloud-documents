@@ -8,10 +8,10 @@ The default slow query collection threshold in TencentDB for SQL Server is one s
 No.
 
 ### Can I view the slow SQL table in TencentDB for SQL Server?
-Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver), click the target instance ID in the instance list, and [query and download slow query logs](https://intl.cloud.tencent.com/document/product/238/47569) on the slow query log page. The slow SQL table of TencentDB for SQL Server is not displayed by default. You can view it after connecting to the instance through SSMS. If you don't have relevant permissions, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for escalating your database account permissions.
+Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver), click the target instance ID in the instance list. On the slow query log page, query and download slow query logs as instructed in [Querying and Downloading Slow Query Log](https://www.tencentcloud.com/document/product/238/47569). The slow SQL table of TencentDB for SQL Server is not displayed by default. You can view it after connecting to the instance through SSMS. If you don't have relevant permissions, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for escalating your database account permissions.
 
 ### How do I analyze slow SQL queries in TencentDB for SQL Server?
-Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver#/) and click the ID of the target instance to enter the slow query log page. For more information, see [Querying and Downloading Slow Query Logs](https://intl.cloud.tencent.com/document/product/238/47569). Download slow logs from the console. The downloaded file is in .xel format. You can open the .xel file in SSMS to view specific slow SQL queries. To optimize slow queries, you can copy them, enable the execution plan feature to view their specific execution plans, and optimize them accordingly. For more information, see [Display an Actual Execution Plan](https://docs.microsoft.com/en/sql/relational-databases/performance/display-an-actual-execution-plan?view=sql-server-ver16).
+Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver#/) and click the ID of the target instance to enter the slow query log page. For more information, see [Querying and Downloading Slow Query Log](https://www.tencentcloud.com/document/product/238/47569). Download slow logs from the console. The downloaded file is in .xel format. You can open the .xel file in SSMS to view specific slow SQL queries. To optimize slow queries, you can copy them, enable the execution plan feature to view their specific execution plans, and optimize them accordingly. For more information, see [Display an Actual Execution Plan](https://docs.microsoft.com/en/sql/relational-databases/performance/display-an-actual-execution-plan?view=sql-server-ver16).
 
 [](id:SFHZDQL)
 ### Will transaction logs in TencentDB for SQL Server be automatically cleared?
@@ -35,4 +35,3 @@ Exec master.sys.sp_readerrorlog FileID,LogType,FilterText
 Sample:
 ```
 exec master.sys.sp_readerrorlog 0,1,'error'
-```

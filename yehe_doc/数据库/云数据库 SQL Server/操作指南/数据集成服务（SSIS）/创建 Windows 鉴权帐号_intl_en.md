@@ -1,6 +1,6 @@
 This document describes how to create a Windows authentication account for a business intelligence server, reset the account password, and delete the account in the console.
 
-## Creating an Account
+## Creating an account
 1. Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver).
 2. In the instance list, find the target business intelligence server and click its ID or **Manage** in the **Operation** column to enter the instance management page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c5f416e296ffe6667b95fec98eaf7e30.png)
@@ -17,7 +17,7 @@ This document describes how to create a Windows authentication account for a bus
 ![](https://qcloudimg.tencent-cloud.cn/raw/531c57c9e195b835592d0d0d0b8b211b.png)
 >!A domain prefix will be automatically added to business intelligence server accounts created in the console, and you don't need to care about the prefix. For example, if you create an account `act1` in the console, the account name displayed in the list will be `xx_x_xx_xxxx/act1`.
 
-## Resetting a Password
+## Resetting a password
 If you forgot the password of a created business intelligence server account, or you need to reset the password, you can reset the password of one or multiple accounts on the **Account Management** tab.
 - Reset the password of a single account:
 Find the target account in the account list, click **Reset Password** in the **Operation** column, enter and confirm the new password, and click **OK**.
@@ -26,11 +26,11 @@ Select target accounts in the account list, select **Batch Management** > **Batc
 ![](https://qcloudimg.tencent-cloud.cn/raw/3ac53c87abc70a10a962d12ca13a0785.png)
 >!Batch password resetting resets the password of all selected accounts to the same password. To set different passwords for different accounts, you need to reset the password of each account.
 
-## Deleting an Account
+## Deleting an account
 You can delete one or multiple accounts on the **Account Management** tab.
-- Delete a single account:
+- Delete one account
 Find the target account in the account list, click **Delete Account** in the **Operation** column, and click **Delete** in the pop-up window.
 - Batch delete accounts
 Select target accounts in the account list, select **Batch Management** > **Batch Delete** above the list, and click **OK** in the pop-up window.
->!When you delete an account, to prevent deletion failures, the system will close all connections of the account first.
+>!To prevent deletion failures, the system will first close all connections to the account before you delete it.
 
