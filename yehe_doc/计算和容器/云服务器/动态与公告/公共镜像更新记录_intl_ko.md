@@ -1,10 +1,12 @@
 <dx-alert infotype="notice" title="">
 - 리전별로 이미지 업데이트 시간이 다를 수 있습니다. 본 문서가 제공하는 이미지 업데이트 시간은 전체 리전의 이미지 업데이트 시간입니다.
-- Tencent Cloud가 제공하는 공용 이미지 유지보수 주기는 공식 유지보수 주기와 같습니다. 
+
 </dx-alert>
+
 
 ## OpenCloudOS
 OpenCloudOS 업데이트 기록은 [OpenCloudOS 이미지 업데이트 로그](https://intl.cloud.tencent.com/document/product/213/46208)를 참고하십시오.
+
 
 ## CentOS
 
@@ -29,6 +31,14 @@ OpenCloudOS 업데이트 기록은 [OpenCloudOS 이미지 업데이트 로그](h
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-8m9ugrip">img-8m9ugrip</a>
 		<br />현재 커널 버전: 4.18.0-348.7.1.el8_5.x86_64</td>
 		<td>2022-09-16</td>
+		<td>최신 시스템 패치 업데이트.</td>
+	</tr>
+	<tr>
+		<td>Centos 8.5x86_64</td>
+		<td>이미지 ID:
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-es95t8wj">img-es95t8wj</a>
+		<br />현재 커널 버전: 4.18.0-348.7.1.el8_5.x86_64</td>
+		<td>2022-11-23</td>
 		<td>최신 시스템 패치 업데이트.</td>
 	</tr>
 		<tr>
@@ -201,8 +211,7 @@ OpenCloudOS 업데이트 기록은 [OpenCloudOS 이미지 업데이트 로그](h
 		<tr>
 			<td>Debian 11.4x86_64</td>
 			<td>이미지 ID:
-			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-btz2mndd">	
-		img-btz2mndd</a>
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-btz2mndd">img-btz2mndd</a>
 			<br />현재 커널 버전: 5.10.0-16-amd64</td>
 			<td>2022-09-08</td>
 			<td>최신 시스템 패치 업데이트.</td>
@@ -222,7 +231,7 @@ img-4cmp1f33</a>
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-7ay90qj7">img-7ay90qj7</a>
 	<br />현재 커널 버전: 4.19.0-21-amd64</td>
 	<td>2022-09-23</td>
-	<td>이미지 런칭.</td>
+	<td>최신 시스템 패치 업데이트.</td>
   </tr>
 	  <tr>
 	<td>Debian 10.11x86_64</td>
@@ -247,7 +256,7 @@ img-4cmp1f33</a>
 img-5k0ys7jp</a>
 	<br />현재 커널 버전: 4.9.0-19-amd64</td>
 	<td>2022-09-30</td>
-	<td>이미지 런칭.</td>
+	<td>최신 시스템 패치 업데이트.</td>
   </tr>
 	<tr>
 	<td>Debian 9.0x86_64</td>
@@ -265,7 +274,7 @@ img-6rrx0ymd</a>
 img-2lj11q1f </a>
 	<br />현재 커널 버전: 3.16.0-11-amd64</td>
 	<td>2022-11-07</td>
-	<td>이미지 런칭.</td>
+	<td>최신 시스템 패치 업데이트.</td>
   </tr>
 </table>
 
@@ -303,7 +312,7 @@ img-jy2bb29p</a>
 img-4ogcw28j</a>
 	<br />현재 커널 버전: 4.18.0-348.20.1.el8_5.x86_64</td>
 	<td>2022-09-30</td>
-	<td>이미지 런칭.</td>
+	<td>최신 시스템 패치 업데이트.</td>
   </tr>
 </table>
 
@@ -322,6 +331,14 @@ img-4ogcw28j</a>
 img-ge141oql</a>
 	<br />현재 커널 버전: 5.19.14-200.fc36.x86_64</td>
 	<td>2022-11-07</td>
+	<td>최신 시스템 패치 업데이트.</td>
+  </tr>
+	<tr>
+	<td>Fedora 37x86_64</td>
+	<td>이미지 ID:
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-d7j9x59z">img-d7j9x59z</a>
+	<br />현재 커널 버전: 6.0.7-301.fc37.x86_64</td>
+	<td>2022-11-30</td>
 	<td>이미지 런칭.</td>
   </tr>
 </table>
@@ -353,7 +370,7 @@ img-ge141oql</a>
 			img-1lkqxofp</a>
 			<br />현재 커널 버전: 13.0-RELEASE</td>
 			<td>2022-09-02</td>
-			<td>이미지 런칭.</td>
+			<td>최신 시스템 패치 업데이트.</td>
   </tr>
 			<tr>
 			<td>FreeBSD 12.3x86_64</td>
@@ -362,7 +379,7 @@ img-ge141oql</a>
 		img-j9m732cx</a>
 			<br />현재 커널 버전: 12.3-RELEAS</td>
 			<td>2022-01-20</td>
-			<td>이미지 런칭.</td>
+			<td>최신 시스템 패치 업데이트.</td>
   </tr>
 	<tr>
 	<td>FreeBSD 12.2x86_64</td>
@@ -371,7 +388,7 @@ img-ge141oql</a>
 img-pi37fg9j</a>
 	<br />현재 커널 버전: 12.2-RELEAS</td>
 	<td>2022-01-20</td>
-	<td>이미지 런칭.</td>
+	<td>최신 시스템 패치 업데이트.</td>
   </tr>
 	<tr>
 	<td>FreeBSD 11.4x86_64</td>
@@ -380,7 +397,7 @@ img-pi37fg9j</a>
 img-aif2u6pf</a>
 	<br />현재 커널 버전: 11.4-RELEASE</td>
 	<td>2022-10-27</td>
-	<td>이미지 런칭.</td>
+	<td>최신 시스템 패치 업데이트.</td>
   </tr>
 </table>
 
@@ -396,8 +413,7 @@ img-aif2u6pf</a>
 	<tr>
 			<td>Rocky Linux 9.0x86_64</td>
 			<td>이미지 ID:
-			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-k1g1wwy9">	
-		img-k1g1wwy9</a>
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-k1g1wwy9">	img-k1g1wwy9</a>
 			<br />현재 커널 버전: 5.14.0-70.13.1.el9_0.x86_64</td>
 			<td>2022-11-25</td>
 			<td>이미지 런칭.</td>
@@ -405,17 +421,15 @@ img-aif2u6pf</a>
 		<tr>
 			<td>Rocky Linux 8.6x86_64</td>
 			<td>이미지 ID:
-			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-no575grb">	
-		img-no575grb</a>
-			<br />현재 버전: 4.18.0-372.9.1.el8.x86_64</td>
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-no575grb">		img-no575grb</a>
+			<br />현재 커널 버전: 4.18.0-372.9.1.el8.x86_64</td>
 			<td>2022-11-25</td>
-			<td>이미지 런칭.</td>
+			<td>최신 시스템 패치 업데이트.</td>
   </tr>
 	  <tr>
 	<td>Rocky Linux 8.5x86_64</td>
 	<td>이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-qd4bf0jb">	
-img-qd4bf0jb</a>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-qd4bf0jb">img-qd4bf0jb</a>
 	<br />현재 커널 버전: 4.18.0-348.20.1.el8_5.x86_64</td>
 	<td>2022-10-10</td>
 	<td>최신 시스템 패치 업데이트.</td>
@@ -480,42 +494,42 @@ img-4orfgj3l</a>
 	<tr>
 	<td>Windows Server 2022 데이터센터 버전의 64비트 중국어 버전</td>
 	<td>이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-m07ny34j">img-9lw52tbx</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-9lw52tbx">img-9lw52tbx</a></td>
 	<td>2022-10-27</td>
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
 	<tr>
 	<td>Windows Server 2022 데이터센터 버전의 64비트 영어 버전</td>
 	<td>이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-9tzezztj">img-cg67n3n9</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-cg67n3n9">img-cg67n3n9</a></td>
 	<td>2022-10-27</td>
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
   <tr>
 	<td>Windows Server 2019 데이터센터 버전의 64비트 중국어 버전</td>
 	<td>이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-mmy6qctz">img-perxw61f</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-perxw61f">img-perxw61f</a></td>
 	<td>2022-12-08</td>
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
 	<tr>
 	<td>Windows Server 2019 데이터센터 버전의 64비트 영어 버전</td>
 	<td>이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-bhvhr6pr">img-1dmc4wwp</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1dmc4wwp">img-1dmc4wwp</a></td>
 	<td>2022-12-8</td>
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
   <tr>
 	<td>Windows Server 2016 데이터센터 버전의 64비트 중국어 버전</td>
 	<td>이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9id7emv7">img-9ltji92z</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9ltji92z">img-9ltji92z</a></td>
 	<td>2022-12-08</td>
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
   <tr>
 <td>Windows Server 2016 데이터센터 버전의 64비트 영어 버전</td>
 	<td>이미지 ID:
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1eckhm4t">img-6fp83vpb</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-6fp83vpb">img-6fp83vpb</a></td>
 	<td>2022-12-08</td>
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
@@ -533,5 +547,7 @@ img-4orfgj3l</a>
 	<td>2022-03-30</td>
 	<td>최신 시스템 패치 업데이트.</td>
   </tr>
+
 </table>
+
 

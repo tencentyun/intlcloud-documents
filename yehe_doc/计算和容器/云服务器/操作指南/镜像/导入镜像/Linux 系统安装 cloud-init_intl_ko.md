@@ -7,6 +7,8 @@ Cloud-init를 사용하면 인스턴스를 처음 초기화하는 동안 구성�
 - [cloud-init 소스 패키지 수동 다운로드 방식](#ManualDown) 
 - [소프트웨어 소스의 cloud-init 패키지를 사용하는 방식](#SoftSources)
 
+## 주의 사항
+Linux 이미지를 가져오기 전에 이미지에 cloud-init 서비스를 제대로 설치했는지 확인하십시오.
 
 ## 전제 조건
 cloud-init 서비스가 설치된 서버가 공중망에 올바르게 액세스할 수 있어야 합니다.
@@ -148,14 +150,14 @@ rm -rf /etc/cloud
 rm -rf /usr/local/bin/cloud*
 ```
 3. OS에 따라 다음 명령을 실행합니다.
-    - deb 시리즈에서는 다음 명령어를 실행합니다.
-    ```shellsession
-    dpkg -i *.deb
-    ```
-   - rpm 시리즈에서는 다음 명령어를 실행합니다.
-   ```shellsession
-   rpm -ivh *.rpm
-   ```
+  - deb 시리즈에서는 다음 명령어를 실행합니다.
+  ```shellsession
+  dpkg -i *.deb
+  ```
+ - rpm 시리즈에서는 다음 명령어를 실행합니다.
+ ```shellsession
+ rpm -ivh *.rpm
+ ```
 4. 버전이 제대로 설치되었는지 확인합니다
   ```shellsession
 cloud-init qcloud -v
@@ -168,7 +170,7 @@ cloud-init qcloud -v
 ### cloud-init 소스 패키지 다운로드
 
 <dx-alert infotype="explain" title="">
-- 정상 설치된 cloud-init-20.1.0011 버전이 Tencent Cloud와 최적의 호환성을 가지므로, 해당 버전의 이미지를 사용해 CVM을 생성하면 모든 구성 옵션이 정상적으로 초기화됩니다. 따라서 **cloud-init-20.1.0011.tar.gz** 버전 설치를 권장하며, 다른 버전의 cloud-init 소스 패키지도 [다운로드](https://launchpad.net/cloud-init/+download)하실 수 있습니다. 본 문서는 cloud-init-20.1.0011 버전을 예시로 사용합니다.
+- 정상 설치된 cloud-init-20.1.0011 버전이 Tencent Cloud와 최적의 호환성을 가지므로, 해당 버전의 이미지를 사용해 CVM을 생성하면 모든 구성 옵션이 정상적으로 초기화됩니다. 따라서 **cloud-init-20.1.0011.tar.gz** 버전 설치를 권장하며, 다른 버전의 cloud-init 소스 패키지도 [다운로드](https://launchpad.net/cloud-init/+download)할 수 있습니다. 본 문서는 cloud-init-20.1.0011 버전을 예시로 사용합니다.
 </dx-alert>
 
 
@@ -190,14 +192,14 @@ tar -zxvf cloud-init-20.1.0011.tar.gz
 cd cloud-init
 ```
 3. 운영 체제 버전에 맞는 Python-pip를 설치합니다.
-    - CentOS 6/7 시리즈에서는 다음 명령어를 실행합니다.
-    ```shellsession
-    yum install python3-pip -y
-    ```
-    - Ubuntu 시리즈에서는 다음 명령어를 실행합니다.
-    ```shellsession
-    apt-get -y install python3-pip
-    ```
+  - CentOS 6/7 시리즈에서는 다음 명령어를 실행합니다.
+```shellsession
+yum install python3-pip -y
+```
+  - Ubuntu 시리즈에서는 다음 명령어를 실행합니다.
+```shellsession
+apt-get -y install python3-pip
+```
 설치 과정에서 설치할 수 없거나 설치 패키지를 찾지 못하는 오류가 발생하는 경우, [Python-pip을 설치할 수 없는 문제 해결](#updateSoftware)을 참조하여 처리하시기 바랍니다.
 4. 다음 명령을 실행하여 pip를 업그레이드합니다.
 ```
@@ -212,19 +214,19 @@ pip3 install -r requirements.txt
 ```
 
 6. 운영 체제 버전에 따라 cloud-utils 모듈을 설치합니다.
-    - CentOS 6 시리즈에서는 다음 명령어를 실행합니다.
-    ```shellsession
-    yum install cloud-utils-growpart dracut-modules-growroot -y
-    dracut -f
-    ```
-    - CentOS 7 시리즈에서는 다음 명령어를 실행합니다.
-    ```shellsession
-    yum install cloud-utils-growpart -y
-    ```
-    - Ubuntu 시리즈에서는 다음 명령어를 실행합니다.
-    ```shellsession
-    apt-get install cloud-guest-utils -y
-    ```
+  - CentOS 6 시리즈에서는 다음 명령어를 실행합니다.
+```shellsession
+yum install cloud-utils-growpart dracut-modules-growroot -y
+dracut -f
+```
+  - CentOS 7 시리즈에서는 다음 명령어를 실행합니다.
+```shellsession
+yum install cloud-utils-growpart -y
+```
+  - Ubuntu 시리즈에서는 다음 명령어를 실행합니다.
+```shellsession
+apt-get install cloud-guest-utils -y
+```
 
 7. 다음 명령어를 실행하여 cloud-init을 설치합니다.
 ```shellsession
@@ -234,16 +236,17 @@ python3 setup.py build
 python3 setup.py install --init-system systemd
 ```
 <dx-alert infotype="notice" title="">
---init-system 의 선택 가능한 매개변수에는 (systemd, sysvinit, sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse, upstart)  [default: None]이 있습니다. 현재 운영 체제가 사용하고 있는 자동 실행 서비스 관리 방식에 따라 선택하시기 바랍니다. 잘못 선택할 경우 시작 시 cloud-init 서비스를 자동 실행할 수 없습니다. 본 문서는 systemd 자동 실행 서비스 관리를 예시로 사용합니다.
+– –-init-system 의 선택 가능한 매개변수에는 (systemd, sysvinit, sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse, upstart) [default: None]이 있습니다. 현재 운영 체제가 사용하고 있는 자동 실행 서비스 관리 방식에 따라 선택하시기 바랍니다. 잘못 선택할 경우 시작 시 cloud-init 서비스를 자동 실행할 수 없습니다.
+- centos6 이하 시스템은 sysvinit를 선택하고 centos7 이상 시스템은 systemd를 선택하십시오. 본문에서는 systemd 자체 실행 서비스 관리를 예시로 설명합니다.
 </dx-alert>
 
-[](id:cloud-init)
 
+[](id:cloud-init)
 ### cloud-init 구성 파일 수정
 
 1. 운영 체제에 따라 적합한 cloud.cfg를 다운로드합니다.
-    - Ubuntu 운영 체제의 cloud.cfg [다운로드](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg).
-    - CentOS 운영 체제의 cloud.cfg [다운로드](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg).
+  - Ubuntu 운영 체제의 cloud.cfg [다운로드](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg).
+  - CentOS 운영 체제의 cloud.cfg [다운로드](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg).
 2. `/etc/cloud/cloud.cfg`의 콘텐츠를 다운로드한 cloud.cfg 파일의 콘텐츠로 대체합니다.
 
 
@@ -259,11 +262,11 @@ useradd syslog
 <dx-alert infotype="explain" title="">
 `strings /sbin/init | grep "/lib/system"` 명령을 수행할 수 있습니다. 반환되는 메시지가 있을 경우 운영 체제는 systemd 자동 실행 관리 서비스입니다.
 </dx-alert>
-- **Ubuntu 또는 Debian에서 다음 명령을 실행해야 합니다.**
+- **Ubuntu 또는 Debian에서 다음 명령을 실행합니다.**
 ```shellsession
  ln -s /usr/local/bin/cloud-init /usr/bin/cloud-init 
 ```
-- **모든 운영 체제에서 다음 명령을 실행해야 합니다.**
+- **모든 운영 체제에서 다음 명령을 실행하십시오.**
 ```shellsession
 systemctl enable cloud-init-local.service 
 systemctl start cloud-init-local.service
@@ -357,8 +360,8 @@ apt-get 또는 yum 명령어를 통해 설치한 cloud-init은 현재 운영 체
 
 ### cloud-init 구성 파일 수정[](id:cloud-init)
 1. 운영 체제에 따라 적합한 cloud.cfg를 다운로드합니다.
-    - Ubuntu 운영 체제의 cloud.cfg [다운로드](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg).
-    - CentOS 운영 체제의 cloud.cfg [다운로드](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg).
+ - Ubuntu 운영 체제의 cloud.cfg [다운로드](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg).
+  - CentOS 운영 체제의 cloud.cfg [다운로드](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg).
 2. `/etc/cloud/cloud.cfg`의 콘텐츠를 다운로드한 cloud.cfg 파일의 콘텐츠로 대체합니다.
 :::
 </dx-tabs>
@@ -389,7 +392,7 @@ rm -rf /var/lib/cloud
 ``` shellsession
 rm -rf /etc/network/interfaces.d/50-cloud-init.cfg
 ```
-4. Ubuntu 또는 Debian 운영 체제에서는 `/etc/network/interfaces`을 다음 콘텐츠로 수정해야 합니다.
+4. Ubuntu 또는 Debian 운영 체제에 대해 `/etc/network/interfaces`을 다음 콘텐츠로 수정해야 합니다.
 ```shellsession
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
@@ -416,11 +419,11 @@ yum install python3-pip -y
 ```shellsession
 apt-get clean all
 ```
-  2. 다음 커맨드를 실행하여 소프트웨어 패키지 리스트를 업데이트하십시오.
+  1. 다음 명령을 실행하여 소프트웨어 패키지 리스트를 업데이트하십시오.
 ```shellsession
 apt-get update -y
 ```
-  3. 다음 명령어를 실행하여 Python-pip을 설치합니다.
+  2. 다음 명령을 실행하여 Python-pip을 설치합니다.
 ```shellsession
 apt-get -y install python3-pip
 ```

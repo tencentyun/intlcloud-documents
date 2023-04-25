@@ -1,10 +1,12 @@
 <dx-alert infotype="notice" title="">
 - イメージの更新時間はリージョンによって異なる場合があります。ここで提供するイメージの更新時間は全リージョンの更新時間になります。
->- Tencent Cloudが提供するパブリックイメージのメンテナンスサイクルは公式に発表されたメンテナンスサイクルと一致します。
+- Tencent Cloudが提供するパブリックイメージのメンテナンスサイクルは公式に発表されているメンテナンスサイクルと一致します。公式に発表されているメンテナンス時間については、[オペレーティングシステムの公式メンテナンスプラン](https://www.tencentcloud.com/document/product/213/53802)をご参照ください。
 </dx-alert>
+
 
 ## OpenCloudOS
 OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ](https://intl.cloud.tencent.com/document/product/213/46208)をご参照ください。
+
 
 ## CentOS
 
@@ -29,6 +31,14 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-8m9ugrip">img-8m9ugrip</a>
 		<br />現在のカーネルバージョン：4.18.0-348.7.1.el8_5.x86_64</td>
 		<td>2022-09-16</td>
+		<td>最新のシステムパッチへ更新。</td>
+	</tr>
+	<tr>
+		<td>Centos 8.5x86_64</td>
+		<td>イメージID：
+		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-es95t8wj">img-es95t8wj</a>
+		<br />現在のカーネルバージョン：4.18.0-348.7.1.el8_5.x86_64</td>
+		<td>2022-11-23</td>
 		<td>最新のシステムパッチへ更新。</td>
 	</tr>
 		<tr>
@@ -201,8 +211,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<tr>
 			<td>Debian 11.4x86_64</td>
 			<td>イメージID：
-			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-btz2mndd">	
-		img-btz2mndd</a>
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-btz2mndd">	img-btz2mndd</a>
 			<br />現在のカーネルバージョン：5.10.0-16-amd64</td>
 			<td>2022-09-08</td>
 			<td>最新のシステムパッチへ更新。</td>
@@ -222,7 +231,7 @@ img-4cmp1f33</a>
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-7ay90qj7">img-7ay90qj7</a>
 	<br />現在のカーネルバージョン：4.19.0-21-amd64</td>
 	<td>2022-09-23</td>
-	<td>イメージがリリースされました。</td>
+	<td>最新のシステムパッチへ更新。</td>
   </tr>
 	  <tr>
 	<td>Debian 10.11x86_64</td>
@@ -247,7 +256,7 @@ img-4cmp1f33</a>
 img-5k0ys7jp</a>
 	<br />現在のカーネルバージョン：4.9.0-19-amd64</td>
 	<td>2022-09-30</td>
-	<td>イメージがリリースされました。</td>
+	<td>最新のシステムパッチへ更新。</td>
   </tr>
 	<tr>
 	<td>Debian 9.0x86_64</td>
@@ -265,7 +274,7 @@ img-6rrx0ymd</a>
 img-2lj11q1f </a>
 	<br />現在のカーネルバージョン：3.16.0-11-amd64</td>
 	<td>2022-11-07</td>
-	<td>イメージがリリースされました。</td>
+	<td>最新のシステムパッチへ更新。</td>
   </tr>
 </table>
 
@@ -303,7 +312,7 @@ img-jy2bb29p</a>
 img-4ogcw28j</a>
 	<br />現在のカーネルバージョン：4.18.0-348.20.1.el8_5.x86_64</td>
 	<td>2022-09-30</td>
-	<td>イメージがリリースされました。</td>
+	<td>最新のシステムパッチへ更新。</td>
   </tr>
 </table>
 
@@ -322,6 +331,14 @@ img-4ogcw28j</a>
 img-ge141oql</a>
 	<br />現在のカーネルバージョン：5.19.14-200.fc36.x86_64</td>
 	<td>2022-11-07</td>
+	<td>最新のシステムパッチへ更新。</td>
+  </tr>
+	<tr>
+	<td>Fedora 37x86_64</td>
+	<td>イメージID：
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-d7j9x59z">	img-d7j9x59z</a>
+	<br />現在のカーネルバージョン：6.0.7-301.fc37.x86_64</td>
+	<td>2022-11-30</td>
 	<td>イメージがリリースされました。</td>
   </tr>
 </table>
@@ -353,7 +370,7 @@ img-ge141oql</a>
 			img-1lkqxofp</a>
 			<br />現在のカーネルバージョン：13.0-RELEASE</td>
 			<td>2022-09-02</td>
-			<td>イメージがリリースされました。</td>
+			<td>最新のシステムパッチへ更新。</td>
   </tr>
 			<tr>
 			<td>FreeBSD 12.3x86_64</td>
@@ -362,7 +379,7 @@ img-ge141oql</a>
 		img-j9m732cx</a>
 			<br />現在のカーネルバージョン：12.3-RELEAS</td>
 			<td>2022-01-20</td>
-			<td>イメージがリリースされました。</td>
+			<td>最新のシステムパッチへ更新。</td>
   </tr>
 	<tr>
 	<td>FreeBSD 12.2x86_64</td>
@@ -371,7 +388,7 @@ img-ge141oql</a>
 img-pi37fg9j</a>
 	<br />現在のカーネルバージョン：12.2-RELEAS</td>
 	<td>2022-01-20</td>
-	<td>イメージがリリースされました。</td>
+	<td>最新のシステムパッチへ更新。</td>
   </tr>
 	<tr>
 	<td>FreeBSD 11.4x86_64</td>
@@ -380,7 +397,7 @@ img-pi37fg9j</a>
 img-aif2u6pf</a>
 	<br />現在のカーネルバージョン：11.4-RELEASE</td>
 	<td>2022-10-27</td>
-	<td>イメージがリリースされました。</td>
+	<td>最新のシステムパッチへ更新。</td>
   </tr>
 </table>
 
@@ -396,8 +413,7 @@ img-aif2u6pf</a>
 	<tr>
 			<td>Rocky Linux 9.0x86_64</td>
 			<td>イメージID：
-			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-k1g1wwy9">	
-		img-k1g1wwy9</a>
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-k1g1wwy9">	img-k1g1wwy9</a>
 			<br />現在のカーネルバージョン：5.14.0-70.13.1.el9_0.x86_64</td>
 			<td>2022-11-25</td>
 			<td>イメージがリリースされました。</td>
@@ -405,17 +421,15 @@ img-aif2u6pf</a>
 		<tr>
 			<td>Rocky Linux 8.6x86_64</td>
 			<td>イメージID：
-			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-no575grb">	
-		img-no575grb</a>
+			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-no575grb">		img-no575grb</a>
 			<br />現在のカーネルバージョン：4.18.0-372.9.1.el8.x86_64</td>
 			<td>2022-11-25</td>
-			<td>イメージがリリースされました。</td>
+			<td>最新のシステムパッチへ更新。</td>
   </tr>
 	  <tr>
 	<td>Rocky Linux 8.5x86_64</td>
 	<td>イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-qd4bf0jb">	
-img-qd4bf0jb</a>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-qd4bf0jb">	img-qd4bf0jb</a>
 	<br />現在のカーネルバージョン：4.18.0-348.20.1.el8_5.x86_64</td>
 	<td>2022-10-10</td>
 	<td>最新のシステムパッチへ更新。</td>
@@ -480,42 +494,42 @@ img-4orfgj3l</a>
 	<tr>
 	<td>Windows Server 2022 Datacenter 64ビット中国語版</td>
 	<td>イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-m07ny34j">img-9lw52tbx</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-9lw52tbx">img-9lw52tbx</a></td>
 	<td>2022-10-27</td>
 	<td>最新のシステムパッチへ更新。</td>
   </tr>
 	<tr>
 	<td>Windows Server 2022 データセンターバージョン64ビット英語版</td>
 	<td>イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-9tzezztj">img-cg67n3n9</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-cg67n3n9">img-cg67n3n9</a></td>
 	<td>2022-10-27</td>
 	<td>最新のシステムパッチへ更新。</td>
   </tr>
   <tr>
 	<td>Windows Server 2019 Datacenter 64ビット中国語版</td>
 	<td>イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-mmy6qctz">img-perxw61f</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-perxw61f">img-perxw61f</a></td>
 	<td>2022-12-08</td>
 	<td>最新のシステムパッチへ更新。</td>
   </tr>
 	<tr>
 	<td>Windows Server 2019 データセンターバージョン64ビット英語版</td>
 	<td>イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-bhvhr6pr">img-1dmc4wwp</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1dmc4wwp">img-1dmc4wwp</a></td>
 	<td>2022-12-8</td>
 	<td>最新のシステムパッチへ更新。</td>
   </tr>
   <tr>
 	<td>Windows Server 2016 Datacenter 64ビット中国語版</td>
 	<td>イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9id7emv7">img-9ltji92z</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9ltji92z">img-9ltji92z</a></td>
 	<td>2022-12-08</td>
 	<td>最新のシステムパッチへ更新。</td>
   </tr>
   <tr>
 <td>Windows Server 2016 データセンターバージョン64ビット英語版</td>
 	<td>イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1eckhm4t">img-6fp83vpb</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-6fp83vpb">img-6fp83vpb</a></td>
 	<td>2022-12-08</td>
 	<td>最新のシステムパッチへ更新。</td>
   </tr>
@@ -533,5 +547,7 @@ img-4orfgj3l</a>
 	<td>2022-03-30</td>
 	<td>最新のシステムパッチへ更新。</td>
   </tr>
+
 </table>
+
 

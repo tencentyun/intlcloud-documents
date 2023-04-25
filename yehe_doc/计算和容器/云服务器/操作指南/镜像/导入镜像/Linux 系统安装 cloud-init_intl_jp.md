@@ -7,6 +7,9 @@ cloud-initをインストールするには、次の3つの方法をお勧めし
 - [手動でcloud-initソースパッケージをダウンロードする](#ManualDown) 
 - [ソフトウェアソースにあるcloud-initパッケージを使用する](#SoftSources)
 
+## 注意事項
+Linuxシステムイメージをインポートする前に、イメージにcloud-initサービスが正しくインストールされていることを確認してください。
+
 ##  前提条件
 cloud-initサービスがインストールされているサーバーは、外部ネットワークに正しくアクセスできます。
 
@@ -147,14 +150,14 @@ rm -rf /etc/cloud
 rm -rf /usr/local/bin/cloud*
 ```
 3. OSに応じて、次のコマンドを実行します：
-    - debシリーズの場合は、次のコマンドを実行します：
-    ```shellsession
-    dpkg -i *.deb
-    ```
-   - rpmシリーズの場合は、次のコマンドを実行します：
-   ```shellsession
-   rpm -ivh *.rpm
-   ```
+  - debシリーズの場合は、次のコマンドを実行します：
+  ```shellsession
+  dpkg -i *.deb
+  ```
+ - rpmシリーズの場合は、次のコマンドを実行します：
+ ```shellsession
+ rpm -ivh *.rpm
+ ```
 4. バージョンが正しくインストールされているかどうかを確認します
   ```shellsession
 cloud-init qcloud -v
@@ -184,25 +187,25 @@ OSがUbuntuの場合は、rootアカウントに切り替えてください。
 ```shellsession
 tar -zxvf cloud-init-20.1.0011.tar.gz 
 ```
-2. 次のコマンドを実行して、解凍されたcloud-initのインストールパッケージディレクトリ（cloud-init-20.1.0011ディレクトリ）に入ります。
+2. 以下のコマンドを実行して、解凍したcloud-initのディレクトリ（cloud-init-20.1.0011ディレクトリ）に入ります。
 ```shellsession
 cd cloud-init
 ```
 3. OSバージョンに応じてPython-pipをインストールします。
-    - CentOS 6/7の場合、次のコマンドを実行します：
-    ```shellsession
-    yum install python3-pip -y
-    ```
-    - Ubuntuの場合、次のコマンドを実行します：
-    ```shellsession
-    apt-get -y install python3-pip
-    ```
+  - CentOS 6/7の場合、次のコマンドを実行します：
+```shellsession
+yum install python3-pip -y
+```
+  - Ubuntuの場合、次のコマンドを実行します。
+```shellsession
+apt-get -y install python3-pip
+```
 インストール中に「インストールに失敗しました」または「インストールパッケージが見つかりません」などのエラーが発生した場合は、 [Python-pipがインストールできない時の解決法](#updateSoftware)を参考して問題のトラブルシューティングを行ってください。
 4. 次のコマンドを実行し、pipをアップグレードします。
 ```
 python3 -m pip install --upgrade pip
 ```
-5. 次のコマンドを実行して、依存関係をインストールします。
+5. 以下のコマンドを実行して、依存関係をインストールします。
 <dx-alert infotype="notice" title="">
 Cloud-initがrequests 2.20.0コンポーネントを使用する場合、Python 2.6はサポートされません。イメージ環境にインストールされているPythonインタープリターバージョンが2.6以前の場合、cloud-initの依存関係をインストールする前、`pip install ';2.20.0'` コマンドを実行して、requests 2.20.0以前のバージョンをインストールしてください。
 </dx-alert>
@@ -210,22 +213,22 @@ Cloud-initがrequests 2.20.0コンポーネントを使用する場合、Python 
 pip3 install -r requirements.txt
 ```
 
-6. OSのバージョンに応じて、cloud-utilsコンポーネントをインストールします。
-    - CentOS 6の場合、次のコマンドを実行します。
-    ```shellsession
-    yum install cloud-utils-growpart dracut-modules-growroot -y
-    dracut -f
-    ```
-    - CentOS 7の場合、次のコマンドを実行します：
-    ```shellsession
-    yum install cloud-utils-growpart -y
-    ```
-    - Ubuntuの場合、次のコマンドを実行します：
-    ```shellsession
-    apt-get install cloud-guest-utils -y
-    ```
+6. OSのバージョンによりcloud-utilsコンポーネントをインストールします。
+  - CentOS 6の場合、次のコマンドを実行します。
+```shellsession
+yum install cloud-utils-growpart dracut-modules-growroot -y
+dracut -f
+```
+  - CentOS 7の場合、次のコマンドを実行します。
+```shellsession
+yum install cloud-utils-growpart -y
+```
+  - Ubuntuの場合、次のコマンドを実行します。
+```shellsession
+apt-get install cloud-guest-utils -y
+```
 
-7. 次のコマンドを実行して、cloud-initをインストールします。
+7. 以下のコマンドを実行して、cloud-initをインストールします。
 ```shellsession
 python3 setup.py build
 ```
@@ -233,16 +236,17 @@ python3 setup.py build
 python3 setup.py install --init-system systemd
 ```
 <dx-alert infotype="notice" title="">
---init-systemのオプションパラメータには、：(systemd、sysvinit、sysvinit_deb、sysvinit_FreeBSD、sysvinit_openrc、sysvinit_suse、upstart)[default：None]があります。現在のOSで使用されている自動起動サービス管理方法によってパラメータを選択してください。選択したパラメータが間違った場合、Cloud―initサービスはシステムの起動時に自動的に起動できません。このドキュメントでは、systemdの自動起動サービス管理を例として説明します。
+- --init-systemのオプションパラメータには、：(systemd、sysvinit、sysvinit_deb、sysvinit_freebsd、sysvinit_openrc、sysvinit_suse、upstart)[default：None]があります。現在のOSで使用されている自動起動サービス管理方法によってパラメータを選択してください。選択したパラメータが間違った場合、Cloud―initサービスはシステムの起動時に自動的に起動できません。
+- CentOS6以前の旧バージョンではsysvinitを選択し、CentOS 7以降のバージョンではsystemdを選択します。このドキュメントでは、例としてsystemdを使用します。
 </dx-alert>
 
-[](id:cloud-init)
 
+[](id:cloud-init)
 ### cloud-init設定ファイルの変更
 
 1. OSの違いに応じて、cloud.cfgをダウンロードします。
-    - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) してUbuntu OSのcloud.cfgをダウンロードします。
-    - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) してCentOSのcloud.cfgをダウンロードします。
+  - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) してUbuntu OSのcloud.cfgをダウンロードします。
+  - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) してCentOSのcloud.cfgをダウンロードします。
 2. `/etc/cloud/cloud.cfg` の内容を、ダウンロードしたcloud.cfgファイルの内容に置き換えます。
 
 
@@ -356,8 +360,8 @@ apt-get/yum install cloud-init
 
 ### cloud-init設定ファイル[](id:cloud-init)の変更
 1. OSの違いに応じて、cloud.cfgをダウンロードします。
-    - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) してUbuntu OSのcloud.cfgをダウンロードします。
-    - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) してCentOSのcloud.cfgをダウンロードします。
+ - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) してUbuntu OSのcloud.cfgをダウンロードします。
+  - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) してCentOSのcloud.cfgをダウンロードします。
 2. `/etc/cloud/cloud.cfg` の内容を、ダウンロードしたcloud.cfgファイルの内容に置き換えます。
 :::
 </dx-tabs>
@@ -376,7 +380,7 @@ apt-get/yum install cloud-init
 ```shellsession
 cloud-init init --local
 ```
-次のようなメッセージが返された場合、cloud-initの設定が完了したことを示しています。
+次のようなメッセージが返却された場合、cloud-initの設定が完了したことがわかります。
 ```shellsession
 Cloud-init v. 20.1.0011 running 'init-local' at Fri, 01 Apr 2022 01:26:11 +0000. Up 38.70 seconds.
 ```
@@ -384,11 +388,11 @@ Cloud-init v. 20.1.0011 running 'init-local' at Fri, 01 Apr 2022 01:26:11 +0000.
 ```shellsession
 rm -rf /var/lib/cloud
 ```
-3. UbuntuまたはDebianの場合、次のコマンドを実行します。
+3. Ubuntu OSまたはDebian OSについて、以下のコマンドを実行します。
 ``` shellsession
 rm -rf /etc/network/interfaces.d/50-cloud-init.cfg
 ```
-4. UbuntuまたはDebianの場合、`/etc/network/interfaces` の内容を次のように置き換えます。
+4. Ubuntu OSまたはDebian OSについて、`/etc/network/interfaces` を以下のように変更する必要があります：
 ```shellsession
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
@@ -415,11 +419,11 @@ yum install python3-pip -y
 ```shellsession
 apt-get clean all
 ```
-  2. 次のコマンドを実行して、ソフトウェアパッケージリストを更新します。
+  1. 次のコマンドを実行して、ソフトウェアパッケージリストを更新します。
 ```shellsession
 apt-get update -y
 ```
-  3. 次のコマンドを実行して、Python-pipをインストールします。
+  2. 次のコマンドを実行して、Python-pipをインストールします。
 ```shellsession
 apt-get -y install python3-pip
 ```
