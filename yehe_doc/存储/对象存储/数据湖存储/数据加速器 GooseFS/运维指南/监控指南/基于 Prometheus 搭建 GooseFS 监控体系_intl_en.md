@@ -1,4 +1,4 @@
-GooseFS allows you to output metrics to different monitoring systems, including Prometheus. Prometheus is an open-source monitoring framework that Tencent Cloud Monitor has integrated with. This document introduces GooseFS metrics and how to report them to the self-built/in-cloud Prometheus.
+GooseFS allows you to output metrics to different monitoring systems, including Prometheus. Prometheus is an open-source monitoring framework that Tencent Cloud Observability Platform has integrated with. This document introduces GooseFS metrics and how to report them to the self-built/in-cloud Prometheus.
 
 ## Preparations
 
