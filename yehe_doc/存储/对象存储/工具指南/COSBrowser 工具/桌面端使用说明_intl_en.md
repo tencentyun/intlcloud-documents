@@ -8,7 +8,7 @@
 | macOS | macOS 10.13 or above | [macOS](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest.dmg) |
 | Linux | Includes GUI and supports the [AppImage](https://appimage.org/) format | [Linux](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip) |
 | Web | Browsers such as Chrome, Firefox, Safari, and Internet Explorer 10+ | [Web](https://cosbrowser.cloud.tencent.com/web) |
-| Uploader plugin |  Chrome | [Chrome web store](https://chrome.google.com/webstore/detail/cosbrowser-uploader/mggpkimgmmdbdbakdkaebhjhgomcmlnd)/[Download](https://cos5.cloud.tencent.com/cosbrowser/latest-chrome.zip) |
+| Uploader plugin |  Chrome  | [Web Store](https://chrome.google.com/webstore/detail/cosbrowser-uploader/mggpkimgmmdbdbakdkaebhjhgomcmlnd)/[Offline download](https://cos5.cloud.tencent.com/cosbrowser/latest-chrome.zip) |
 
 
 ### Installations
@@ -27,7 +27,7 @@ You can log in to the COSBrowser desktop version using a permanent key, Tencent 
 You can log in using your Tencent Cloud API key (`SecretID` and `SecretKey`), which can be created and obtained at [Manage API Key](https://console.cloud.tencent.com/cam/capi) in the CAM console. After you logged in successfully, the key will be saved to **Historical Sessions**. The login page and configuration items are as follows:
 - **Bucket/Access Path**: If the root account allows you to access only a specific bucket or directory with the currently used key, then this configuration item is required. After setting it, you can quickly enter the corresponding file path. The path format is `Bucket` or `Bucket/Object-prefix`; for example, if you are allowed to access only the `doc` folder in the `examplebucket-1250000000` bucket with the current key, enter `examplebucket-1250000000/doc`.
 - **Description**: description of the permanent key entered, such as the operator and the usage. The description can be used to distinguish different `SecretID` when you manage the historical sessions on the historical key page.
-- **Remember Session**:
+- **Remember Session**：
     - If this box is not checked, the Tencent Cloud API key entered will be cleared when you log out (if the key has been saved to the historical sessions, it will be removed).
     - If this box is checked, the Tencent Cloud API key entered will be remembered and can be managed in the historical sessions.
 
@@ -38,7 +38,7 @@ You can log in using your Tencent Cloud API key (`SecretID` and `SecretKey`), wh
 
 ### Login with a Tencent Cloud account
 
-Click **Login with Tencent Cloud Account** and use your Tencent Cloud account to log in to COSBrowser Desktop Version in the pop-up window. You can log in to your Tencent Cloud account via WeChat, email, QQ, WeChat Official Account, WeCom, or sub-user. For detailed directions, see [About Account](https://www.tencentcloud.com/document/product/378).
+Click **Login with Tencent Cloud Account** and use your Tencent Cloud account to log in to COSBrowser Desktop Version in the pop-up window. You can log in to your Tencent Cloud account via email or sub-user. For detailed directions, see [About Account](https://www.tencentcloud.com/document/product/378).
 
 
 
@@ -50,7 +50,7 @@ You can log in to COSBrowser Desktop Version temporarily through the **shared li
 
 ## Basic Features
 
->! COSBrowser for Windows v2.8.4 is used as an example here. For other versions, see [Changelog](https://github.com/tencentyun/cosbrowser/blob/master/changelog.md).
+>! COSBrowser for Windows v2.11.1 is used as an example here. For other versions, see [Changelog](https://github.com/tencentyun/cosbrowser/blob/master/changelog.md).
 
 
 [](id:createordelete)
@@ -59,8 +59,8 @@ You can log in to COSBrowser Desktop Version temporarily through the **shared li
 
 | Feature | Description | Directions |
 | ---------- | -------------------------------------- | ------------------------------------------------------------ |
-| Creating bucket | You can create a bucket directly via the client | 1. In the bucket list, click **Add Bucket** in the upper-left corner<br />2. Enter the bucket name correctly, and select your region and access permissions<br />3. Click **OK**|
-| Deleting bucket | Before you delete a bucket, ensure that all data in the bucket has been cleared | 1. In the bucket list, click **Delete** on the right of the selected bucket <br />2. Click **OK**|
+| Creating bucket | You can create a bucket directly via the client | 1. In the bucket list, click **Add Bucket** in the upper-left corner.<br />2. Enter the bucket name correctly, and select your region and access permissions. You can also set bucket tags as needed.<br />3. Click **OK**.|
+| Deleting bucket | Before you delete a bucket, ensure that all data in the bucket has been cleared | 1. In the bucket list, click **Delete** on the right of the selected bucket. <br />2. Click **OK**.|
 
 [](id:viewbucket)
 
@@ -68,13 +68,13 @@ You can log in to COSBrowser Desktop Version temporarily through the **shared li
 
 You can view bucket details by clicking **Details** on the right of the bucket list. Details include bucket name, region, access permissions, MAZ configuration, versioning status, global acceleration status, and bucket domain name.
 
->! The MAZ configuration currently is only supported in certain regions, such as Beijing, Guangzhou, Shanghai, and Singapore. For more information, see [MAZ Feature Overview](https://intl.cloud.tencent.com/document/product/436/35208).
+>! The MAZ configuration currently is only supported in certain regions, such as Beijing, Guangzhou, Shanghai, and Singapore. For more information, see [MAZ Feature Overview](https://www.tencentcloud.com/document/product/436/35208).
 
 [](id:count)
 
 #### 3. Viewing statistics
 
-You can click **...** > **Statistics** to view the bucket statistics, including the storage usage and the number of objects.
+You can click **…** > **Statistics** to view the bucket statistics, including the storage usage and the number of objects.
 
 [](id:acl)
 
@@ -85,7 +85,7 @@ You can use COSBrowser to manage permissions for buckets and objects.
 - Bucket permissions: Click **Permission Management** on the right of the bucket list.
 - Object permissions: Click **Permission Management** on the right of the object.
 
->? For more information about COS permissions, please see [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).
+>? For more information about COS permissions, please see [ACL Overview](https://www.tencentcloud.com/document/product/436/30583).
 >
 
 [](id:version)
@@ -96,7 +96,7 @@ You can use COSBrowser to enable/disable versioning for a bucket.
 
 Click **Details** in the **Operation** column on the right of the bucket list. In the bucket details pop-up window, click the versioning icon.
 
->?For more information about versioning, see [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
+>?For more information about versioning, see [Versioning Overview](https://www.tencentcloud.com/document/product/436/19883).
 
 [](id:addaccess)
 
@@ -116,27 +116,27 @@ If you log in with a sub-account that does not have permission to access the buc
 <table>
    <tr>
       <th>Upload Feature</th>
-      <th>Remarks</th>
+      <th>Description</th>
       <th>Directions</th>
    </tr>
    <tr>
       <td>Uploading files</td>
       <td >COSBrowser allows you to upload a single file or multiple files in batches in different ways.</td>
-			<td nowrap="nowrap">You can upload files in the following ways. In the specified bucket or path:<br>1. Click <b>Upload</b> to upload files directly. <br>2. Right-click in the blank space of the file list and select <b>Upload Files</b> to upload files. <br>3. Drag a file to the file list pane.</td>
+			<td nowrap="nowrap">You can upload files in the following ways. In the specified bucket or path:<br>1. Click <b>Upload Files</b> to upload files directly. <br>2. Right-click in the blank space of the file list and select <b>Upload Files</b> to upload files. <br>3. Drag a file to the file list pane.</td>
    </tr>
    <tr>
       <td nowrap="nowrap">Uploading a folder and the files contained</td>
       <td>If the name of the file/folder to upload already exists in the bucket or path, the old file/folder will be overwritten by default.</td>
-			<td nowrap="nowrap">You can upload a folder in the following ways. In the specified bucket or path:<br>1. Click <b>Upload</b> to upload a folder directly. <br>2. Right-click in the blank space of the file list and select <b>Upload Folder</b> to upload a folder. <br>3. Drag a folder to the file list pane.</td>
+			<td nowrap="nowrap">You can upload a folder in the following ways. In the specified bucket or path:<br>1. Click <b>Upload Folder</b> to upload a folder directly. <br>2. Right-click in the blank space of the file list and select <b>Upload Folder</b> to upload a folder. <br>3. Drag a folder to the file list pane.</td>
    </tr>
    <tr>
       <td>Incremental upload</td>
       <td>Incremental upload compares the files to upload with existing files in the bucket before the upload. An existing file with the same name in the bucket will be skipped.</td>
-			<td>You can perform the following 2 steps to use incremental upload. In the specified bucket or path:<br>1. Upload as you do with a folder and click **Next**.<br>2. In <b>Storage method</b>, select <b>Skip</b>. Then, click <b>Upload</b> to begin the incremental upload.</td>
+			<td>You can perform the following two steps to use incremental upload. In the specified bucket or path:<br>1. Upload as you do with a folder and click <b>Next</b>.<br>2. In <b>Storage method</b>, select <b>Skip</b>. Then, click <b>Upload</b> to begin the incremental upload.</td>
    </tr>
 </table>
 
->! If you need to upload files in batches, you are advised to use a computer with a 4-core CPU and 16 GB RAM, which allows you to upload up to 300 thousand files at a time.
+>! If you need to upload files in batches, you are advised to use a computer with a 4-core CPU and 16 GB RAM, which allows you to upload up to 300,000 files at a time.
 
 
 
@@ -146,7 +146,7 @@ If you log in with a sub-account that does not have permission to access the buc
 <table>
    <tr>
       <th>Download Feature</th>
-      <th>Remarks</th>
+      <th>Description</th>
       <th>Directions</th>
    </tr>
    <tr>
@@ -166,7 +166,7 @@ If you log in with a sub-account that does not have permission to access the buc
    </tr>
 </table>
 
->! If you need to download files in batches, we recommend you use a computer with a 4-core CPU and 16 GB RAM, which allows you to download up to 300,000 files at a time.
+>! If you need to download files in batches, you are advised to use a computer with a 4-core CPU and 16 GB RAM, which allows you to download up to 300,000 files at a time.
 
 
 [](id:delete)
@@ -178,13 +178,18 @@ Select the desired file/folder and click **More** > **Delete** at the top of the
 [](id:synchronization)
 #### 10. Synchronizing file
 
-The file synchronization feature allows you to upload specified files in your local folders to a bucket in real time or at specified times. Detailed directions are as follows:
+The file synchronization feature allows you to upload specified files in your local folders to a bucket in real time or at a scheduled time. Detailed directions are as follows:
 
 1. Click **Toolbox** > **File Sync** in the top-right corner of the page.
-2. In the pop-up window, specify the local folder to be synced and the destination COS bucket directory.
-3. You can select one-time, automatic, or scheduled sync as the sync type and click **Start Sync** to enable file sync.
-4. You can view the file sync history in sync logs.
+2. Configure the following information in the pop-up window.
+ - **Local Folder**: Specify the local folder for file synchronization.
+ - **Bucket Path**: Specify the destination COS bucket directory.
+ - **File Extension Filtering**: Specify the filename extensions for filtering. Separate two extensions with a semicolon (;). Files with the specified extensions will be ignored.
+ - **Sync Type**: You can select one-time, automatic, or scheduled sync and click **Start Sync** to enable file sync.
 ![](https://main.qcloudimg.com/raw/283c7f9ee254b08561084ece22e2ada2.png)
+
+3. Click **Sync Logs** to view the file sync logs.
+
 > !
 > - Synchronization means that when the file is uploaded, the system automatically identifies whether the same file exists in the bucket. Only files that do not exist in the bucket are synchronously uploaded.
 > - Currently, only synchronizing local files to the bucket is supported. Reverse operation is not supported.
@@ -212,7 +217,7 @@ To create a folder in the specified bucket or path, click **Create Folder** in t
 
 > !
 > - The folder name can contain up to 255 characters, including digits, letters, and visible characters.
-> - The folder name cannot contain special symbols such as `\ / : * ? " | < >`.
+> - The folder name cannot contain special characters such as `\ / : * ? " | < >`.
 > - `..` cannot be used as the folder name.
 > - The folder cannot be renamed.
 
@@ -229,11 +234,11 @@ To view the details of a file, tap its filename or right-click it and select **D
 
 Each file stored in COS can be accessed through a specific URL. If a file is private-read, you can request a temporary signature to generate a temporary access URL with a certain validity period.
 
-You can generate file links in the following ways:
+You can generate a file URL in the following ways:
 
 - In the table view, click the Share icon on the right of the object to generate a URL and copy it. If the file is public-read, the URL will not carry a signature and be valid permanently. If the file is private-read, the URL will carry a signature and be valid for 2 hours.
 - Right-click a file and select **Copy Link** to generate a URL and copy it. If the file is public-read, the URL will not carry a signature and be valid permanently. If the file is private-read, the URL will carry a signature and be valid for 2 hours.
-- On the file details page, click **Create Temporary Link** to set the temporary URL, URL type, and validity period for the specified endpoint (available only when a CDN acceleration domain name is enabled).
+- On the file details page, click **Create link with expires** to set the temporary URL, URL type, and validity period for the specified endpoint (available only when a CDN acceleration endpoint is enabled).
 
 
 
@@ -250,11 +255,11 @@ Click **Share** in the operation column or the context menu to share a COS folde
 
 | Parameter <div style="width: 80pt"></div>| Description |
 | --- | --- |
-| Permission | You can set the access permission for the shared folder.<li>Read only: Pulls the folder list and downloads files in the folder from the access URL.<li>Can edit: Pulls the folder list and downloads files in the folder, uploads files to the folder, and creates folders using the access URL. |
-| Validity Period | In minutes, hours, or days <li>If you log in to the client using a key, the validity period can be 1 minute to 2 hours for the root account, and 1 minute to 1.5 days for sub-accounts.<li>If you log in to the client using a Tencent Cloud account, the longest validity period is 2 hours.<br>The default value is the longest validity period allowed for the current user.|
-| Password | A 6-character password automatically generated by the system. You can customize one as needed (numbers, letters, and symbols are supported). |
+| Permissions | You can set the access permission for the shared folder.<li>Read only: Pulls the folder list and downloads files in the folder from the access URL.<li>Read & write: Pulls the folder list and downloads files in the folder, uploads files to the folder, and creates folders using the access URL. |
+| Valid time | In minutes, hours, or days <li>If you log in to the client using a key, the validity period can be 1 minute to 2 hours for the root account, and 1 minute to 30 days for sub-accounts. <li>If you log in to the client using a Tencent Cloud account, the longest validity period is 2 hours.<br>The default value is the longest validity period allowed for the current user.|
+| Extraction code | A 6-character code automatically generated by the system. You can customize one as needed (numbers, letters, and symbols are supported). |
 
->!When the link is valid, users receiving the link and password can access the folder.
+>!When the link is valid, users receiving the link and extraction code can access the folder.
 
 
 [](id:export)
@@ -281,21 +286,21 @@ COSBrowser allows you to preview media files, including images, videos, and audi
 ![](https://main.qcloudimg.com/raw/b5b58260b55344aaef8028fa2df27fdb.png)
 
 [](id:searchfile)
-#### 19. Searching for File
+#### 19. Searching for file
 
 To search for a file, enter the filename in the search box at the top right of the bucket. COSBrowser supports prefix search and fuzzy search.
 
 [](id:searchbuckete)
-#### 20. Searching for Bucket
+#### 20. Searching for bucket
 
 To quickly locate a bucket, enter the bucket name in the search box above the bucket list on the left.
 
 [](id:viewfiles)
 #### 21. Viewing historical versions or incomplete multipart uploads
 
-- If versioning is enabled for your bucket, you can click **View** > **Versions** above the file list to view the historical versions. Prefix search and clearing all historical versions (retaining the latest version only) are supported.
+- If versioning is enabled for your bucket, you can click **View** > **Multiversion list** above the file list to view the historical versions. Prefix search and clearing all historical versions (retaining the latest version only) are supported.
 <img src="https://main.qcloudimg.com/raw/5fb6a486881f0aeef1682c9944262698.png" width="80%">
-- If you pause or cancel an ongoing upload, incomplete multipart uploads may be generated. You can click **View** > **Incomplete Multipart Upload** above the file list to view them. Prefix search and clearing all incomplete multipart uploads are supported.
+- If you pause or cancel an ongoing upload, incomplete multipart uploads may be generated. You can click **View** > **Incomplete Multipart Uploads** above the file list to view them. Prefix search and clearing all incomplete multipart uploads are supported.
 ![](https://main.qcloudimg.com/raw/17b7a096e0e4388f3fabc82f6a0ef7b2.png)
 
 
@@ -343,42 +348,42 @@ Select the target bucket, click the toolbox icon in the top-right corner of the 
 <table>
    <tr>
       <th nowrap="nowrap">System Feature</th>
-      <th>Remarks</th>
+      <th>Description</th>
       <th>Directions</th>
    </tr>
    <tr>
       <td>Setting up proxy</td>
       <td >COSBrowser uses the system-configured proxy to connect to the Internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet.</td>
-			<td nowrap="nowrap">1. Select <b>Advanced Settings</b> > <b>Proxy</b>.<br>2. Set up a proxy to connect to the internet.</td>
+			<td nowrap="nowrap">1. Select <b>Advanced Setting</b> > <b>Proxy</b>.<br>2. Set up a proxy to connect to the internet.</td>
    </tr>
    <tr>
       <td>Setting the maximum number of concurrently uploaded/downloaded files</td>
       <td>COSBrowser allows you to set the maximum number of concurrently uploaded and downloaded files.</td>
-			<td>1. Select <b>Advanced Settings</b> > <b>Download/Upload</b>.<br>2. Set the maximum number of concurrently transferred files.</td>
+			<td>1. Select <b>Advanced Setting</b> > <b>Upload</b> (or <b>Download</b>).<br>2. Set the maximum number of concurrently transferred files.</td>
    </tr>
    <tr>
       <td>Setting the maximum number of concurrently uploaded/downloaded parts</td>
       <td>COSBrowser supports uploading/downloading a file in multiple parts. When the file to be transferred exceeds a certain size, multipart transfer will be performed by default.</td>
-      <td>1. Select <b>Advanced Settings</b> > <b>Download/Upload</b>.<br>2. Set the maximum number of concurrently transferred parts.</td>
+      <td>1. Select <b>Advanced Setting</b> > <b>Upload</b> (or <b>Download</b>).<br>2. Set the maximum number of concurrently transferred parts.</td>
    </tr>
    <tr>
       <td nowrap="nowrap">Setting the number of retries upon upload/download failure</td>
       <td>COSBrowser will retry failed tasks by default when transferring files.</td>
-      <td>1. Select <b>Advanced Settings</b> > <b>Download/Upload</b>.<br>2. Set the number of retries upon transfer failure.</td>
+      <td>1. Select <b>Advanced Setting</b> > <b>Upload</b> (or <b>Download</b>).<br>2. Set the number of retries upon transfer failure.</td>
    </tr>
    <tr>
       <td>Setting the single-thread upload/download speed limit</td>
       <td>COSBrowser supports limiting the upload and download speeds for a single thread. <br>Total upload (download) speed limit = Single-thread upload (download) speed limit x Number of concurrent files x Number of concurrent parts</td>
-			<td>1. Select <b>Advanced Settings</b> > <b>Upload</b> (<b>Download</b>).<br>2. Set the single-thread upload (download) speed limit in MB/s.</td>
+			<td>1. Select <b>Advanced Setting</b> > <b>Upload</b> (or <b>Download</b>).<br>2. Set the single-thread upload (or download) speed limit in MB/s.</td>
    </tr>
    <tr>
       <td>Setting upload check</td>
       <td>COSBrowser supports checking files online after upload to verify whether their size and status are correct.</td>
-			<td>1. Select <b>Advanced Settings</b> > <b>Upload</b>. <br>2. Select <b>Perform secondary check upon upload completion</b>.</td>
+			<td>1. Select <b>Advanced Setting</b> > <b>Upload</b>. <br>2. Select <b>Secondary verification after uploading</b>.</td>
    </tr>
    <tr>
       <td>Viewing local log</td>
       <td>COSBrowser will record all the performed operations in the `cosbrowser.log` local file.</td>
-			<td nowrap="nowrap">1. Select <b>Advanced Settings</b> > <b>About</b>.<br>2. Click <b>Local Logs</b> to enter the local log directory.</td>
+			<td nowrap="nowrap">1. Select <b>Advanced Setting</b> > <b>About</b>.<br>2. Click <b>Local Logs</b> to enter the local log directory.</td>
    </tr>
 </table>

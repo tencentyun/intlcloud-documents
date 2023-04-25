@@ -17,14 +17,18 @@ You can also let your browser pop up a window for the file to be downloaded by s
 
 ### How do I determine if I am accessing COS over a private network?
 
-The access endpoints of COS use intelligent DNS resolution. For COS access via the Internet (including different ISPs), we will detect and select the optimal linkage for you to access COS. If you have deployed a service in Tencent Cloud to access COS, access within the same region will be automatically directed to a private network address. Cross-region access is not supported in a private network and the COS endpoint is resolved to a public network address by default.
+Tencent Cloud COS adopts intelligent resolution for COS endpoints. In this way, the optimal linkage can be provided for you to access COS with different ISPs.
 
->! The private networks of public cloud regions do not interconnect with those of finance cloud regions.
->
+If you have deployed a CVM within Tencent Cloud for accessing COS over a private network, you must first ensure that the CVM resides in the same region as the COS bucket, then use the `nslookup` command on the CVM to resolve the COS endpoint. If a private IP is returned, access between the CVM and COS is over a private network; otherwise, it is over a public network.
+
+If your CVM resides in a different region from the COS bucket, but it is still in one of COS regions, you can use the COS private network global acceleration domain name to access files and achieve cross-region access between the CVM and COS.
 
 #### How to determine access over a private network
 
-Tencent Cloud products within the same region access each other over a private network by default, incurring no traffic fees. Therefore, we recommend choosing the same region when you purchase different Tencent Cloud products to save on costs.
+Tencent Cloud products within the same region can access each other over a private network, incurring no traffic fees. Therefore, we recommend choosing the same region when you purchase different Tencent Cloud products to save on costs.
+
+>! The private networks of Public Cloud regions do not interconnect with those of Finance Cloud regions.
+>
 
 The following shows how to determine access over a private network:
 
@@ -51,12 +55,12 @@ For more information on private and public network access and connectivity testi
 
 For the private DNS server addresses of CVM, see [Private Network DNS](https://www.tencentcloud.com/document/product/213/5225).
 
->! The private IPs of Tencent Cloud BM instances may be different from those of CVM instances, and their formats are usually `9.*.*.*` or `10.*.*.*`. If you have any queries, [contact us](https://intl.cloud.tencent.com/contact-sales).
+>! The private IPs of Tencent Cloud BM instances may be different from those of CVM instances, and their formats are usually `9.*.*.*` or `10.*.*.*`. If you have any queries, please [contact us](https://www.tencentcloud.com/contact-sales).
 >
 
 ### How do I download a folder?
 
-You can log in to [COSBrowser](https://intl.cloud.tencent.com/document/product/436/11366), select the folder to be downloaded, and click **Download** to download the folder or files in batches. You can also download a folder using the COSCMD tool. For more information, see [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
+You can log in to the [COSBrowser](https://www.tencentcloud.com/document/product/436/11366), select the folder to be downloaded, and click **Download** to download the folder or files in batches. You can also download the folder using the COSCMD tool. For more information, see [COSCMD](https://www.tencentcloud.com/document/product/436/10976).
 
 ### What should I do if the error "403 Forbidden" occurs or access permission is rejected when I perform upload/download and other operations?
 
@@ -68,8 +72,8 @@ You can troubleshoot by referring to [403 Error for COS Access](https://www.tenc
 COS allows you to upload or download multiple files through various methods such as the console, APIs/SDKs, and tools.
 
 - Console: For detailed directions, see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321) and [Downloading Objects](https://intl.cloud.tencent.com/document/product/436/13322).
-- APIs/SDKs: COS allows you to operate on multiple files by repeatedly calling an API or SDK. For more information, see [Action List](https://intl.cloud.tencent.com/document/product/436/10111) and [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).
-- Tools: Use [COSBrowser](https://intl.cloud.tencent.com/document/product/436/11366), [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976), or [COSCLI](https://intl.cloud.tencent.com/document/product/436/43249) for batch operations.
+- APIs/SDKs: COS allows you to operate on multiple files  programmatically by repeatedly calling an API or SDK. For more information, see [APIs for object uploads/downloads](https://www.tencentcloud.com/document/product/436/10111) and [SDK Overview](https://www.tencentcloud.com/document/product/436/6474).
+- Tools: You can use tools such as [COSBrowser](https://www.tencentcloud.com/document/product/436/11366), [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976), and [COSCLI](https://www.tencentcloud.com/document/product/436/43249) for batch operations.
 
 
 ### When I upload a new file to a bucket in which another file of the same name exists, will the old file be overwritten or will the new file be saved with a different version name?
@@ -91,7 +95,7 @@ For more information, see [Download via Pre-Signed URL](https://www.tencentcloud
 
 ### I have set a validity period for a signature, but why can it still be used to download objects after it has expired?
 
-By default, the browser will cache objects that have been loaded successfully. Therefore, if you access the same URL, the cached object will be returned without requesting the server again. Therefore, we recommend that you use the `Cache-Control: no-cache` header during object upload to prevent browser caching (see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) or [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) for details). Alternatively, you can specify the `response-cache-control=no-cache` request header during object download to prevent browser caching (see [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) for details).
+By default, the browser will cache objects that have been loaded successfully. Therefore, if you access the same URL, the cached object will be returned without requesting the server again. Therefore, you are advised to use the `Cache-Control: no-cache` header during object upload to prevent browser caching (see [PUT Object](https://www.tencentcloud.com/document/product/436/7749) or [Initiate Multipart Upload](https://www.tencentcloud.com/document/product/436/7746) for details). Alternatively, you can specify the `response-cache-control=no-cache` request header during object download to prevent browser caching (see [GET Object](https://www.tencentcloud.com/document/product/436/7753) for details).
 
 
 ### What should I do if I upload a file on the console and "Failed to upload. System error." is displayed?
@@ -110,7 +114,7 @@ No. COS filenames are case-sensitive, and thus so are the download URLs. If you 
 ### What should I do if the error "your policy or acl has reached the limit (Status Code: 400; Error Code: PolicyFull)" occurs when I am uploading files or creating a bucket?
 
 COS allows each root account to have up to 1,000 bucket ACLs. If more bucket ACLs have been configured, this error will occur. Therefore, you can delete unnecessary bucket ACLs.
->? We recommend that you not use object-level ACLs or policies. When you call APIs or SDKs, if you don't need ACL control over a file, we recommend that you leave the ACL-related parameters (such as x-cos-acl and ACL) empty to inherit the bucket permissions.
+>?You are not advised to use object-level ACLs or policies. When calling APIs or SDKs, if you do not need ACL control over a file, we recommend leaving the ACL-related parameters (such as x-cos-acl and ACL) empty to inherit the bucket permissions.
 >
 
 
