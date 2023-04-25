@@ -36,7 +36,7 @@
 3. 返回 [认证主体管理](https://console.cloud.tencent.com/organization/group-subject)，单击编辑主体管理账号，设置对应主体的管理员。如下图所示：![](https://staticintl.cloudcachetci.com/yehe/backend-news/R7Kr120_4_%E5%A5%BD%E5%8E%8B%E7%9C%8B%E5%9B%BE.jpg)
 4. 在**认证主体管理**页面的“主体管理列表”或者 成员账号管理 页面的“成员列表”中，单击创建成员，默认选择“新建成员”。
 5. 依次按需填写名称、所属主体、财务权限、付费模式及所属部门。其中所属主体选择“其他主体”，在下拉列表中选择对应的主体。如下图所示：![](https://staticintl.cloudcachetci.com/yehe/backend-news/fyDd242_5_%E5%A5%BD%E5%8E%8B%E7%9C%8B%E5%9B%BE.jpg)
-6. 对应主体管理账号进行审核，审核通过后创建完成。成员账号将继承主体管理员的企业实名信息。 您可在左侧导航中的[组织变更记录](https://console.tencentcloud.com/organization/invitations)，选择**成员变更记录 **> **成员新建记录**页签查看创建记录和结果。如下图所示：![](https://staticintl.cloudcachetci.com/yehe/backend-news/Ufnm109_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_a88f4eb3-03ec-425f-a98e-b092af36560a.png)
+6. 对应主体管理账号进行审核，审核通过后创建完成。成员账号将继承主体管理员的企业实名信息。 您可在左侧导航中的[组织变更记录](https://console.tencentcloud.com/organization/invitations)，选择**成员变更记录**> **成员新建记录**页签查看创建记录和结果。如下图所示：![](https://staticintl.cloudcachetci.com/yehe/backend-news/Ufnm109_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_a88f4eb3-03ec-425f-a98e-b092af36560a.png)
 
 :::
 </dx-tabs>
