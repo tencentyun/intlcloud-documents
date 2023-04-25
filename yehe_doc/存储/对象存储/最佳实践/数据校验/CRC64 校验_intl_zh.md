@@ -2,7 +2,7 @@
 
 数据在客户端和服务器间传输时可能会出现错误，COS 除了可以通过 [MD5 和自定义属性](https://intl.cloud.tencent.com/document/product/436/32467) 验证数据完整性外，还可以通过 CRC64 检验码来进行数据校验。
 
-COS 会对新上传的对象进行 CRC64 计算，并将结果作为对象的属性进行存储，随后在返回的响应头部中携带 x-cos-hash-crc64ecma，该头部表示上传对象的 CRC64 值，根据 [ECMA-182标准]( https://www.ecma-international.org/publications/standards/Ecma-182.htm) 计算得到。对于 CRC64 特性上线前就已经存在于 COS 的对象，COS 不会对其计算 CRC64 值，所以获取此类对象时不会返回其 CRC64 值。
+COS 会对新上传的对象进行 CRC64 计算，并将结果作为对象的属性进行存储，随后在返回的响应头部中携带 x-cos-hash-crc64ecma，该头部表示上传对象的 CRC64 值， 根据[ECMA-182标准]( https://www.ecma-international.org/publications/standards/Ecma-182.htm) 计算得到。对于 CRC64 特性上线前就已经存在于 COS 的对象，COS 不会对其计算 CRC64 值，所以获取此类对象时不会返回其 CRC64 值。
 
 ## 操作说明
 
@@ -96,7 +96,7 @@ OBJECT_TOTAL_SIZE = OBJECT_PART_SIZE * 1 + 123      #对象的总大小
 object_body = '1' * OBJECT_TOTAL_SIZE       #对象内容
 
 #计算整个对象 crc64 校验值
-c64 = crcmod.mkCrcFun(0x142F0E1EBA9EA3693L, initCrc=0L, xorOut=0xffffffffffffffffL, rev=True)
+c64 = crcmod.mkCrcFun(0x142F0E1EBA9EA3693, initCrc=0, xorOut=0xffffffffffffffff, rev=True)
 local_crc64 =str(c64(object_body))
 ```
 
