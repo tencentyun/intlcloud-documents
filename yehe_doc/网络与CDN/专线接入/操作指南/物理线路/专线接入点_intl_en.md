@@ -354,7 +354,7 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>ap-hongkong-b-jja</td>
 <td>Local Service Provider</td>
 <td>Fiber optic port and electrical port</td>
-<td>Tseung Kwan</td>
+<td>Tseung Kwan O</td>
 </tr>
 <tr>
 <td>ap-hongkong-c-ct</td>
