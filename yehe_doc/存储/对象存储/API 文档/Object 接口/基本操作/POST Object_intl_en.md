@@ -5,7 +5,7 @@ This API is used to upload an object within 5 GB to a bucket using an HTML form.
 > !
 >- This API requires a signature different from the standard COS request signatures. For more information, see [Signature protection](#id1) and the description of related fields.
 > - If you upload an object whose name is the same as another object that is already stored in the bucket with versioning disabled, the old object will be overwritten and the response will be returned normally as specified upon successful upload.
-> 
+> - To upload an image, see the [PUT Object](https://www.tencentcloud.com/document/product/436/7749) API examples for data filling.
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
