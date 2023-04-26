@@ -8,7 +8,7 @@
 3. 单击**新建预算**。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/dwQ8962_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_3%E6%96%B0%E5%BB%BA%E9%A2%84%E7%AE%97.png)
 4. 在**编辑预算**页面，按需填写相关信息。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/dwQ8962_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_3%E6%96%B0%E5%BB%BA%E9%A2%84%E7%AE%97.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/TuF7925_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_4%E7%BC%96%E8%BE%91%E9%A2%84%E7%AE%97.png)
  - **基本信息**：根据需要设置便于区分的预算名称，该名称将会展示在预算列表。
  - **编制信息**：
     - 预算周期：支持按照年度、季度、月度、日设置预算周期。
