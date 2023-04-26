@@ -19,7 +19,6 @@
 ### TCPヘルスチェックの設定
 1. [前提条件](#postreq)を参照し、 「ヘルスチェック」タブで操作を行います。
 2. 「ヘルスチェック」タブで、チェックプロトコルに「TCP」を選択します。
-![](https://qcloudimg.tencent-cloud.cn/raw/e2d2dc5608a515513f5a77cb71b7f639.png)
 <table>
 <tr>
 <th>パラメータ</th><th>説明</th>
@@ -44,7 +43,6 @@
 ### HTTPヘルスチェックの設定
 1. [前提条件](#postreq)を参照し、 「ヘルスチェック」タブで操作を行います。
 2. 「ヘルスチェック」タブで、チェックプロトコルに「HTTP」を選択します。
-![](https://qcloudimg.tencent-cloud.cn/raw/792bd8086cf30d829c7d8a03dc9b0c78.png)
 <table>
 <tr>
 <th>パラメータ</th><th>説明</th>
@@ -108,7 +106,6 @@ HTTP /1.1バージョンを選択した時に、チェックするドメイン�
 ### カスタムプロトコルヘルスチェックの設定
 1. [前提条件](#postreq)を参照し、 「ヘルスチェック」タブで操作を行います。
 2. 「ヘルスチェック」タブで、チェックプロトコルに「カスタムプロトコル」を選択します。
-![](https://qcloudimg.tencent-cloud.cn/raw/fd5c4d5442ba8bce5c06a390467f86eb.png)
 <table>
 <tr>
 <th width="25%">パラメータ</th><th>説明</th>
@@ -150,7 +147,6 @@ UDPリスナーはUDPヘルスチェックをサポートしています。こ�
 ### UDPヘルスチェックの設定-ポートチェック
 1. [前提条件](#postreq)を参照し、 「ヘルスチェック」タブで操作を行います。
 2. 「ヘルスチェック」タブで、チェックプロトコルに「ポートチェック」を選択します。
-![](https://qcloudimg.tencent-cloud.cn/raw/72052a24264ec37179faa545575979d6.png)
 <table>
 <tr>
 <th width="25%">パラメータ</th><th>説明</th>
@@ -189,7 +185,6 @@ UDPリスナーはUDPヘルスチェックをサポートしています。こ�
 ### UDPヘルスチェックの設定-PING
 1. [前提条件](#postreq)を参照し、 「ヘルスチェック」タブで操作を行います。
 2. 「ヘルスチェック」タブで、チェックプロトコルに「PING」を選択します。
-![](https://qcloudimg.tencent-cloud.cn/raw/116957dad78ba97cde202151eba54757.png)
 <table>
 <tr>
 <th>パラメータ</th><th>説明</th>
@@ -214,7 +209,6 @@ UDPリスナーはUDPヘルスチェックをサポートしています。こ�
 ### TCPヘルスチェックの設定
 1. [前提条件](#postreq)を参照し、 「ヘルスチェック」タブで操作を行います。
 2. 「ヘルスチェック」タブで、チェックプロトコルに「TCP」を選択します。
-![](https://qcloudimg.tencent-cloud.cn/raw/d0e44625bb1e61658f43143a5a5c4637.png)
 <table>
 <tr>
 <th>パラメータ</th><th>説明</th>
@@ -239,7 +233,6 @@ UDPリスナーはUDPヘルスチェックをサポートしています。こ�
 ### HTTPヘルスチェックの設定
 1. [前提条件](#postreq)を参照し、 「ヘルスチェック」タブで操作を行います。
 2. 「ヘルスチェック」タブで、チェックプロトコルに「HTTP」を選択します。
-![](https://qcloudimg.tencent-cloud.cn/raw/84cbb3b6477a6aa35b34cf5c9cab2009.png)
 <table>
 <tr>
 <th>パラメータ</th><th>説明</th>
@@ -300,7 +293,6 @@ UDPリスナーはUDPヘルスチェックをサポートしています。こ�
 ## HTTPリスナー[](id:http)
 ### HTTPヘルスチェックの設定
 1. [前提条件](#postreq)を参照し、 「ヘルスチェック」タブで操作を行います。
-![](https://qcloudimg.tencent-cloud.cn/raw/7c87cf8289ae26e1be279afc290b77da.png)
 <table>
 <tr>
 <th>パラメータ</th><th>説明</th>
