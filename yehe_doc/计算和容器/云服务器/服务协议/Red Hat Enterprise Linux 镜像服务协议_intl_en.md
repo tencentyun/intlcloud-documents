@@ -1,0 +1,1 @@
+Red Hat Enterprise Linux image is provided by Red Hat Software. When you use Red Hat Enterprise Linux image on Tencent Cloud, you must also comply with the Red Hat Cloud Service Subscription Agreement. See [Cloud Software and Services Agreement](https://www.redhat.com/en/about/licenses/cloud-cssa).
