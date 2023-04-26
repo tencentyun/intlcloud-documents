@@ -354,7 +354,7 @@
 <td>中国香港 - B - 将军澳</td>
 <td>本地供应商</td>
 <td>电口、光口</td>
-<td>Tseung Kwan</td>
+<td>Tseung Kwan O</td>
 </tr>
 <tr>
 <td>中国香港 - C - 沙田</td>
