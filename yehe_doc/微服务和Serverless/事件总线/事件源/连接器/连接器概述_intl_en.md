@@ -11,20 +11,12 @@ A connector is mainly used to proactively pull events from event sources and pus
 </tr>
 </thead>
 <tbody><tr>
-<td>Tencent Distributed Message Queue (TDMQ)</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1108/42278">TDMQ connector</a></td>
-</tr>
-<tr>
 <td>API gateway (APIGW) HTTP</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1108/42279">APIGW connector</a></td>
 </tr>
 <tr>
 <td>CKafka</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1108/42280">CKafka connector</a></td>
-</tr>
-<tr>
-<td>SaaS event delivery, which is supported by Tencent Cloud Enterprise Integration Service (EIS)</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1108/42281">SaaS connector</a></td>
 </tr>
 <tr>
 <td>DTS data subscription</td>
