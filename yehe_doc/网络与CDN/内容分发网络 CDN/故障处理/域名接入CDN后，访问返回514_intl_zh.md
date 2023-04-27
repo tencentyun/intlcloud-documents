@@ -1,0 +1,15 @@
+## 现象描述
+
+域名接入 CDN 后，访问返回514状态码报错。
+![](https://main.qcloudimg.com/raw/799c9f97b32783316c4c46fd544ebff5.png)
+## 可能原因
+
+1. 没有启用 HTTPS 服务，使用了 HTTPS 访问导致返回514；
+2. 命中了 **IP 访问限频配置**，IP 访问限频设置针对单 IP 单节点每秒访问次数进行了限制，若超出限制，则会直接返回514；
+3. 命中了 **IP 黑白名单配置**，若用户端访问的 IP 命中配置黑名单内 IP 或白名单外 IP 均返回514。
+
+## 处理步骤
+
+1. 若使用了 HTTPS 访问可先在 CDN 控制台确认是否启用 HTTPS 服务，若没有开启可将服务打开并完成配置证书。也可参考 [HTTPS 配置指南](https://intl.cloud.tencent.com/document/product/228/35213) 进行配置。
+![](https://qcloudimg.tencent-cloud.cn/raw/ebcc105b8c7b8b81671f0368ae66fe41.png)
+2. 依次确认控制台**IP 访问限频配置**、**IP 黑白名单配置**配置项规则，若命中其中一项您可根据业务情况进行合理调整。

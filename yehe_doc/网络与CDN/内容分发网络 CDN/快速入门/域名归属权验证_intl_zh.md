@@ -2,34 +2,37 @@
 1. 域名首次接入时，例如：a.example.com；该域名接入后，同级域名及次级域名如`b.example.com`视为已有权限域名，默认可接入，无需校验。但上级域名如`example.com`接入仍需校验；
 2. 子域名已在其他账号下接入时，需进行域名归属校验验证当前域名归属权，如验证通过，可通过取回域名接入当前账号；
 3. 同级泛域名接入时，需校验，例如：`a.example.com`已接入，`*.example.com`接入时仍需校验，`*.a.example.com`属于次级泛域名，可免校验接入。
+4. 当您的域名托管于当前账号下的腾讯云 DNSPod 内且未在其他账号下接入时，可免校验快速接入腾讯云 CDN。（如果该域名已被其他账号接入，请通过手动校验后取回）
 
 ## 方法一：DNS解析验证（推荐）
 
 1. 在添加域名时，如果该域名需校验，在域名下方会提示需验证域名归属权，单击**验证方法**；
-![](https://qcloudimg.tencent-cloud.cn/raw/1c6915b095d74f4358923be2ec7740dd.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/3D9m056_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230320164010.png)
 2. 验证方法中，默认为 DNS 解析验证。
 使用 DNS 解析验证的方式，需要您前往该域名的解析服务商，在主域名下添加一个主机记录值为`_cdnauth`的 TXT 记录。
 >!无论您需要新增的域名为`c.b.a.example.com`、`*.example.com`或`test.example.com`，多级域名下主机记录值仍应添加在主域名下，例如：添加的域名是`c.b.a.example.com`，需要新增一条解析记录为`_cdnauth.example.com`即可。
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/e1da0524ad0781544052fd65195d9798.png)
+
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/wG8y738_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230320164127.png)
 **腾讯云 DNS 解析添加方法参考：**
 如果您的解析服务商在腾讯云 DNSPod 上，可进入 [DNS 解析 DNSPod 控制台](https://console.cloud.tencent.com/cns)，找到该域名并单击解析，添加一条记录类型为 TXT 的 DNS 记录，主机记录填写为`_cdnauth`，记录类型选择为 TXT，记录值填写为腾讯云 CDN 提供的记录值，其余选项按照默认参数填写即可。
 **阿里云 DNS 解析添加方法参考：**
 如果您的解析服务商在阿里云，可以在阿里云的域名解析控制台内找到该域名，然后点击右侧的解析设置，记录类型选择为TXT，填写腾讯云 CDN 提供的主机记录、记录值，其余保持为默认参数填写即可。
+
 3. 添加完解析记录后，等待 TXT 记录值生效，生效后，您可点击下方的验证按钮，即可完成域名归属校验；如果验证失败，请确认当前 TXT 记录值在域名解析服务商内是否已生效或是否填写了正确的 TXT 记录值；[如何检测 TXT 记录是否生效？](#q1)
 4. 完成域名归属校验后，如果当前域名已在其它账号下接入，需要切换至当前账号下接入时，您还需要点击取回按钮取回域名，请注意，域名取回后，原账号下的该域名配置将会被清除；
 
 
 ## 方法二：文件验证
 1. 在添加域名时，如果该域名需校验，在域名下方会提示需验证域名归属权，单击**验证方法**；
-![](https://qcloudimg.tencent-cloud.cn/raw/140a8b980bd0c30c0336dcd8f8e3607e.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/3D9m056_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230320164010.png)
 2. 在验证方法内，选择文件验证的方式，
-![](https://qcloudimg.tencent-cloud.cn/raw/8883258277fef3bf2e42ceffb489324a.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/aSWm077_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230320165516.png)
 3. 单击下载文件 verification.html；
 4. 将该文件上传至您主域名的服务器（例如您的 CVM、COS、阿里 ECS、阿里 OSS 等）根目录下，例如：当前添加的域名为 `test.example.com`，您需要将该文件上传至 `example.com` 的根目录下或 `test.example.com` 的根目录下；
 >!文件验证的方式已支持通过将文件上传至子域名进行验证，DNS 验证暂不支持，如您需要通过子域名操作域名归属验证，请使用文件验证的方式。
 5. 确保可通过 `http://example.com/verification.html` 或 `http://test.example.com/verification.html` 访问至到该文件后，即可单击验证按钮进行验证。如果文件内的记录值与我们提供的记录值是一致的，即可验证通过；如果验证失败，请确保上述文件链接可访问，并且您上传的文件为正确文件，可通过访问文件的链接与所下载的文件进行比对是否一致；
->! 文件验证暂时不支持域名取回，如需取回域名请使用 DNS 解析验证方案取回域名。
+6. 完成域名归属校验后，如果当前域名已在其它账号下接入，需要切换至当前账号下接入时，您还需要点击取回按钮取回域名，请注意，域名取回后，原账号下的该域名配置将会被清除；
 
 
 **具体场景操作示例：**
@@ -51,7 +54,7 @@
 }
 ```
 2. 在域名解析处（如DNSPOD）配置上这条TXT解析记录。
-3. 调用 VerifyDomainRecord接口，验证该解析是否生效。
+3. 调用 VerifyDomainRecord 接口，验证该解析是否生效。
 ```
 {
   "Response": {
@@ -65,7 +68,6 @@
 
 ## 常见问题
 [](id:q1)
-
 ### 如何手动检测域名归属校验的 TXT 记录值是否生效？
 **Windows 系统示例：**
 例如接入域名为`test.example.com`，可以在系统内打开 cmd 命令界面内，输入`nslookup -qt=txt _cdnauth.example.com`，根据当前的 TXT 结果，可以查看解析记录是否生效或是否正确。

@@ -42,19 +42,21 @@ After a request goes through an edge node for acceleration, Tencent Cloud CDN ad
 ### How do I configure CDN sub-users?
 Sub-users do not need to register for Tencent Cloud or activate the CDN service. They are added to the sub-user list by the creator. There are two types of sub-users:
 1. Message recipients.
-2. Console users. For more information on how to create and configure a sub-user, please see [Console Permissions](https://intl.cloud.tencent.com/document/product/228/35229).
+2. Console users. For more information on how to create and configure a sub-user, please see [Console Permissions](https://www.tencentcloud.com/document/product/228/35229).
 
 [](id:q14)
 ### How do I configure an IP blocklist/allowlist in CDN?
-CDN supports IP blocklist/allowlist configuration. You can create filtering policies for source IPs of user requests based on your business needs, helping prevent hotlinking and attacks from malicious IPs. For more information, please see [IP Blocklist/Allowlist Configuration](https://intl.cloud.tencent.com/document/product/228/6298).
+CDN supports IP blocklist/allowlist configuration. You can create filtering policies for source IPs of user requests based on your business needs, helping prevent hotlinking and attacks from malicious IPs. For more information, please see [IP Blocklist/Allowlist Configuration](https://www.tencentcloud.com/document/product/228/6298).
 
-For more information on this configuration, please see [IP Access Limit Configuration](https://intl.cloud.tencent.com/document/product/228/6420) and [Hotlink Protection Configuration](https://intl.cloud.tencent.com/document/product/228/6292).
+For more information about this configuration, please see [IP Access Limit Configuration](https://www.tencentcloud.com/document/product/228/6420) and [Hotlink Protection Configuration](https://www.tencentcloud.com/document/product/228/6292).
+
 
 [](id:q19)
 ### Is there a size limit for a file uploaded to CDN?
 Yes. The maximum size of a file that can be uploaded to CDN is 32 MB by default.
 
 [](id:q24)
+
 ### Does CDN support dynamic origin-pull configuration and origin-pull queuing?
 If the primary origin server responds exceptionally, it can redirect requests to the configured backup origin server in sequence for request again.
 
@@ -64,7 +66,7 @@ No, CDN does not permanently block access to a blocked URL.
 
 [](id:q26)
 ### Does CDN support WebSocket?
-ECDN domain names support WebSocket. You can enable WebSocket in the advanced settings on the domain name management page.
+Domain names with ECDN configured support WebSocket. To modify the timeout period, go to **Domain Management** > **Advanced configuration** > **WebSocket timeout**.
 
 ### Does CDN support acceleration by using protocols other than HTTP?
 Yes, CDN supports acceleration by using non-HTTP protocols, such as email protocols and FTP.

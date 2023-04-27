@@ -1,15 +1,10 @@
-<style>
-table th:nth-of-type(3) {
-	width: 586px;
-}
-</style>
 The table below explains the status codes of CDN.
 
 | Status Code | Meaning | Suggestion |
 | ----- | --------------------------------------------------- | ------------------------------------------------------------ |
 | 0|The request ends before the status code is obtained|Check whether the client disconnects the request early, or whether the origin-pull fails.|
 | 400 | HTTP request syntax error <br/>The server cannot parse the request | Check whether the request syntax is correct.                                  |
-| 403    | Request is rejected                             | Check whether the request is blocked by access controls such as referer blocklist/allowlist, IP blocklist/allowlist, and authentication. |
+
 | 404 | Server cannot return correct information           | Check whether the origin server is running normally, and whether the origin server information or origin domain configurations are changed. For more information, see the topic about how to troubleshoot the status code 404 that is returned when a CDN domain name is accessed. |
 | 413    | Content length of the POST request exceeds the limit                    | Check the content size of the POST request from the client (the maximum size is 32 MB by default).           |
 | 414    | URL length exceeds the limit                     | The maximum URL size is 2 KB by default.                                        |
@@ -18,9 +13,9 @@ The table below explains the status codes of CDN.
 | 502    | Gateway Error                             | Check whether the business origin server is normal.                                       |
 | 503    | COS frequency control is triggered                          | Check the cache configuration or whether the COS origin server returns no-cache/no-store.                 |
 | 504    | Gateway timeout                          | Please contact the official website.              |
-| 509    | Blocked due to CC attack                    | [Contact Us](https://intl.cloud.tencent.com/contact-sales) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to unblock it.                             |
-| 514    | IP access frequency exceeds the limit                       | Check the IP access frequency control configuration in the CDN Console.                                 |
-| 524 | Access traffic of the platform is overloaded | Business request surges may trigger a traffic overload on the platform. Estimate and report the business volume to Tencent Cloud. If you have any questions, please contact after-sales service. | 
+| 509    | Blocked due to CC attack                    | [Contact Us](https://www.tencentcloud.com/contact-sales) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to unblock it.                             |
+
+| 524 | Access traffic of the platform is overloaded | Business request surges may trigger a traffic overload on the platform. Estimate and report the business volume to Tencent Cloud. If you have any questions, please contact after-sales service. |
 | 531    | Error resolving the origin-pull domain name in the HTTP request          | Check the domain name resolution configuration of the origin server.                                       |
 | 532    | Failed to establish a connection with the origin server in the HTTPS request              | Check the port 443 status of the origin server, certificate configuration, or availability of the origin server.                  |
 | 533    | Origin-pull connection timeout in the HTTPS request              | Check the port 443 status of the origin server, certificate configuration, or availability of the origin server.                  |
@@ -28,10 +23,10 @@ The table below explains the status codes of CDN.
 | 538    | SSL handshake of HTTPS request failed                | Check the compatibility between the origin server protocol and algorithm.                                 |
 | 539    | Certificate validation of HTTPS request failed           | Check whether the certificate of the origin server is correctly configured (validity period and completeness of the certificate chain).       |
 | 540    | Certificate domain name validation of HTTPS request failed          | Check whether the certificate of the origin server is correctly configured.                                  |
-| 562    | Failed to establish a connection in the HTTPS request                | [Contact Us](https://intl.cloud.tencent.com/contact-sales) with the X-NWS-LOG-UUID information or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for troubleshooting.   |
-| 563    | Connection timeout in the HTTPS request              | [Contact Us](https://intl.cloud.tencent.com/contact-sales) with the X-NWS-LOG-UUID information or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for troubleshooting.   |
-| 564    | Origin-pull in the HTTPS request failed                | If HTTP is configured as the origin-pull protocol, check the load and bandwidth utilization or access limit of the origin server. </br>If the protocol-follow method is configured, check the port 443 status and certificate configuration of the origin server. </br>If no error is found in the origin server, [contact us](https://intl.cloud.tencent.com/contact-sales) with the X-NWS-LOG-UUID information or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for troubleshooting. |
-| 567 | Response times out when the node receives files | [Contact Us](https://intl.cloud.tencent.com/contact-sales) with the X-NWS-LOG-UUID information or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for troubleshooting. |
+| 562    | Failed to establish a connection in the HTTPS request                | [Contact Us](https://www.tencentcloud.com/contact-sales) with the X-NWS-LOG-UUID information or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for troubleshooting.   |
+| 563    | Connection timeout in the HTTPS request              | [Contact Us](https://www.tencentcloud.com/contact-sales) with the X-NWS-LOG-UUID information or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for troubleshooting.   |
+| 564    | Origin-pull in the HTTPS request failed                | If HTTP is configured as the origin-pull protocol, check the load and bandwidth utilization or access limit of the origin server. </br>If the protocol-follow method is configured, check the port 443 status and certificate configuration of the origin server. </br>If no error is found in the origin server, [contact us](https://www.tencentcloud.com/contact-sales) with the X-NWS-LOG-UUID information or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for troubleshooting. |
+| 567 | Response times out when the node receives files | [Contact Us](https://www.tencentcloud.com/contact-sales) with the X-NWS-LOG-UUID information or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for troubleshooting. |
 
 
 
@@ -79,10 +74,3 @@ The table below explains the [HTTP response status codes](https://developer.mozi
 | 505 | The server does not support or refuses to support the HTTP version used in the request. The server is indicating that it is unable or unwilling to complete the request by using the same version as the client. The response should contain an entity that describes the reason why that version is not supported and the other protocols that are supported by the server. |
 | 508 | The server encountered an infinite loop while processing the request. |
 | 510 | The policy for accessing the resource has not been met in the request. |
-
-
-
-
-
-
-

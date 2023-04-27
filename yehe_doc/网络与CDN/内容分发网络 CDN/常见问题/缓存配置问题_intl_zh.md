@@ -1,4 +1,5 @@
 [](id:q1)
+
 ### 什么是节点缓存过期配置？
 节点缓存过期配置是指配置 CDN 加速节点在缓存您的业务内容时遵循的一套过期规则。
 CDN 节点上缓存的用户资源都面临“过期”问题。若资源处于未过期状态，当用户请求到达节点后，节点会将此资源直接返回给用户，提升获取速度；当资源处于过期状态（即超过了设置的有效时间），此时用户请求会由节点发送至源站，若源站内容已更新，则重新获取内容并缓存至节点，同时返回给用户，若源站内容未更新，则仅更新资源在节点的缓存时间。合理地配置缓存时间，能够有效的提升命中率，降低回源率，节省您的带宽。
@@ -11,12 +12,12 @@ CDN 节点上缓存的用户资源都面临“过期”问题。若资源处于�
 [](id:q3)
 ### CDN 如何设置部分文件缓存，部分文件不缓存直接回源？
 您可以按照目录、文件路径、文件类型设置对应的缓存时间。详情请参见 [节点缓存配置](https://intl.cloud.tencent.com/document/product/228/38424)。
-当缓存选项为不缓存时，CDN 节点不缓存该资源，用户每次发送访问请求至 CDN 节点时，CDN 节点都会直接回源站拉取相应文件。
-![]()
+当缓存选项为不缓存时，CDN 节点不缓存该资源，用户每次发送访问请求至 CDN 节点时，CDN 节点都会直接回源站拉取相应文件。例如，需要设置 php;jsp;asp;aspx 动态文件不缓存，html 文件缓存1天，其余文件缓存30天。则按照优先级规则底部优先级大于顶部，则节点缓存过期配置如下图：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/268x818_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230320161250.png)
 
 [](id:q4)
 ### CDN支持哪些缓存过期配置？
-CDN 支持配置各文件类型的缓存过期时间、是否忽略参数、是否忽略大小写、是否遵循源站、启发式缓存等缓存规则。合理地配置缓存规则，能够有效提升命中率，降低回源率，节省您的带宽。详情请参见 [缓存配置](https://intl.cloud.tencent.com/document/product/228/35315) 和 [节点缓存配置](https://intl.cloud.tencent.com/document/product/228/38424) 。
+CDN 支持配置各文件类型的缓存过期时间、是否忽略参数、是否忽略大小写、是否遵循源站、启发式缓存等缓存规则。合理地配置缓存规则，能够有效提升命中率，降低回源率，节省您的带宽。详情请参见 [缓存配置](https://www.tencentcloud.com/document/product/228/35315) 和 [节点缓存配置](https://intl.cloud.tencent.com/document/product/228/38424) 。
 
 [](id:q5)
 ### CDN 默认的缓存配置是什么？
@@ -49,16 +50,22 @@ CDN 支持配置各文件类型的缓存过期时间、是否忽略参数、是�
 因此最终缓存时间为200秒，以最后一次匹配生效。
 
 
-### 如何判断用户访问是否命中 CDN cache？
-您好，可以查看 HTTP 响应头的 X-Cache-Lookup 信息：
-![](https://qcloudimg.tencent-cloud.cn/raw/4c8b8e2954bacadd520c94e6fa4aff31.png)
+### 如何判断用户访问是否命中 CDN 节点缓存？
+可以根据 HTTP 响应头的 X-Cache-Lookup 的值判断是否命中 CDN 节点缓存，可能同时存在多个 X-Cache-Lookup 头，用于表示不同层级的命中状态。
+当 X-Cache-Lookup 有返回以下任意一个值，即代表缓存命中，否则代表缓存未命中。
 X-Cache-Lookup: Hit From MemCache
 X-Cache-Lookup: Hit From Disktank
 X-Cache-Lookup: Cache Hit
-有返回以上任意一个，即代表缓存命中，否则代表缓存未命中。
+![](https://qcloudimg.tencent-cloud.cn/raw/2561202809f0f1f4f0e754fc50eafe9f.png)
 
-### 源站变更文件后，CDN 加速节点上的缓存会实时更新的吗？
-CDN 加速节点上的缓存内容不会实时更新。
-- CDN 节点根据您在控制台配置的 [缓存过期配置](https://intl.cloud.tencent.com/document/product/228/35317) 规则更新缓存；若源站变更文件，但 CDN 缓存未达到过期时间，不会主动回源更新文件，此时将造成源站文件和 CDN 缓存的文件不一致。
--  若您需要主动更新某个文件的缓存，您可以通过 [缓存刷新](https://intl.cloud.tencent.com/document/product/228/6299) 主动清理 CDN 缓存，下一次该文件的请求将回源获取最新的文件并重新缓存；也可以通过 [缓存预热](https://intl.cloud.tencent.com/document/product/228/39000) 使 CDN 主动回源请求获取最新的文件。
-- 若您需要定时更新某个文件的缓存,可以通过**定时刷新预热**按时触发刷新任务。
+### 源站变更文件后，CDN 加速节点上的缓存会主动、实时更新的吗？
+CDN 加速节点上的缓存内容不会主动、实时更新。
+- CDN 节点根据您在控制台配置的 [节点缓存过期配置](https://intl.cloud.tencent.com/document/product/228/38424) 规则更新缓存；若源站变更文件，但 CDN 缓存未达到过期时间，不会主动回源更新文件，此时将造成源站文件和 CDN 缓存的文件不一致。
+- 若源站资源更新后，需要立刻更新 CDN 节点的缓存，可使用 [缓存刷新](https://console.cloud.tencent.com/cdn/refresh) 功能主动更新 CDN 节点未过期的缓存，使 CDN 节点缓存与源站资源保持一致。
+- 若您需要定时更新某个文件的缓存，可以通过 [定时刷新预热](https://console.cloud.tencent.com/cdn/plugins/refresh) 按时触发刷新任务。
+
+
+### CDN 内是否支持 vary 特性
+腾讯云 CDN 已支持 vary 特性，当前 vary 功能正在灰度内测中，如果当前用户的源站针对同一 URL，源站响应有 vary 头部，例如：Vary: Accept-Charset，CDN 节点将根据 Accept-Charset 头部进行区分缓存，客户端再请求文件时，CDN 节点将根据不同的 Accept-Charset 头部响应对应的文件。
+
+腾讯云 CDN 默认已经支持不同压缩文件的多版本缓存，所以 vary 头部功能不支持 Accept-Encoding。当源站返回的 Vary 头部的值只有 Accept-Encoding 时，CDN 节点会忽略此头部。

@@ -50,11 +50,13 @@ CDN 为您提供了 IP 黑白名单配置功能。您可以根据业务需要对
 
 更多配置问题：[IP 访问限频配置](https://intl.cloud.tencent.com/document/product/228/6420)、[防盗链配置](https://intl.cloud.tencent.com/document/product/228/6292)。
 
+
 [](id:q19)
 ### CDN 上传文件有没有大小限制?
 您好，CDN 文件上传默认限制在 32M 以内。
 
 [](id:q24)
+
 ### CDN 是否支持动态回源配置，回源排队?
 若主源站响应异常，可按请求顺序跳转至配置的备份源站重新请求。
 
@@ -64,7 +66,7 @@ CDN 为您提供了 IP 黑白名单配置功能。您可以根据业务需要对
 
 [](id:q26)
 ### CDN 支持 WebSocket 吗？
-全站加速域名已支持 WebSoket，可在域名管理的高级配置找到 WebSoket 进行启用。
+配置为全站加速的域名支持 WebSoket，调整超时时间可在控制台**域名管理** > **高级配置**找到 **WebSocket 超时时间配置**。
 
 ### CDN 支持非 HTTP 协议加速吗？
 目前 CDN 支持非 HTTP 协议加速，例如支持邮件、FTP 等。

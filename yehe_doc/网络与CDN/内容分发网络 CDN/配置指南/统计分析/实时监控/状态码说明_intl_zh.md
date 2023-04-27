@@ -1,15 +1,10 @@
-<style>
-table th:nth-of-type(3) {
-	width: 586px;
-}
-</style>
 以下为 CDN 内部状态码含义说明：
 
 | 状态码 | 含义                                          | 处理建议                                                     |
 | ----- | --------------------------------------------------- | ------------------------------------------------------------ |
 | 0	|获取到响应给请求的状态码前，请求结束	|请检查客户端是否过早的主动断开请求，或检查回源是否失败。|
 | 400    | HTTP 请求语法错误<br/>服务器无法解析 | 请检查请求语法是否正确。                                  |
-| 403	 | 请求拒绝				    |请检查是否配置 referer 黑白名单、IP 黑白名单，鉴权配置等访问控制功能。|
+| 403	 | 超出 IP 访问限频、黑名单拒绝访问  				    |请检查 CDN 控制台 IP 访问限频配置、IP 黑白名单配置。|
 | 404	 | 服务器无法返回正确信息 | 	请检查源站是否正常或者源站信息、回源 HOST 配置是否发生变更。详细说明可见 CDN 域名突然出现404状态。|
 | 413    | POST 长度超出限制                    | 请检查客户端 POST 内容大小（默认大小限制为32MB）。           |
 | 414    | URL 长度超出限制                     | URL 默认大小限制为2KB。                                        |
@@ -18,9 +13,9 @@ table th:nth-of-type(3) {
 | 502    | 网关错误                             | 请检查业务源站是否正常。                                       |
 | 503    | 触发 COS 频控                          | 请检查缓存配置或 COS 源站返回 no-cache/no-store。                 |
 | 504    | 网关超时	                          | 请与网站官方联系。              |
-| 509    | 触发 CC 攻击被封禁                     | 请 [联系我们](https://intl.cloud.tencent.com/contact-sales) 或 [提交工单](https://console.cloud.tencent.com/workorder/category) 解封。                             |
-| 514    | 超出 IP 访问限频                       | 请检查 CDN 控制台 IP 访问限频配置。                                |
-| 524	| 触发平台访问过载| 	业务请求突发会触发平台过载，请评估业务量级向腾讯云报备，有疑问联系售后。| 
+| 509    | 触发 CC 攻击被封禁                     | 请 [联系我们](https://www.tencentcloud.com/contact-us) 或 [提交工单](https://console.tencentcloud.com/workorder/category) 解封。                             |
+| 514    | 超出 IP 访问限频、黑名单拒绝访问、未配置 HTTPS 访问，命中这三项的其中一项。                  | 请检查 CDN 控制台 IP 访问限频配置、IP 黑白名单配置、HTTPS 配置（HTTPS 服务状态为关闭时使用 HTTPS 访问）。                                |
+| 524	| 触发平台访问过载| 	业务请求突发会触发平台过载，请评估业务量级向腾讯云报备，有疑问联系售后。|
 | 531    | HTTPS 请求回源域名解析错误            | 请检查源站域名解析配置。                                       |
 | 532    | HTTPS 请求回源站建连失败              | 请检查源站443端口状态及证书配置或源站可用性。                  |
 | 533    | HTTPS 请求回源站连接超时              | 请检查源站443端口状态及证书配置或源站可用性。                  |
@@ -28,10 +23,10 @@ table th:nth-of-type(3) {
 | 538    | HTTPS 请求 SSL 握手失败                | 请检查源站协议和算法的兼容性。                                 |
 | 539    | HTTPS 请求证书校验失败                | 请检查源站证书是否正常配置（是否过期、是否证书链齐全）。       |
 | 540    | HTTPS 请求证书域名校验不通过          | 请检查源站证书是否正常配置。                                 |
-| 562    | HTTPS 请求建连失败                    | 请 [联系我们](https://intl.cloud.tencent.com/contact-sales) 并提供 X-NWS-LOG-UUID 信息或 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行排查。   |
-| 563    | HTTPS 请求连接超时                    | 请 [联系我们](https://intl.cloud.tencent.com/contact-sales) 并提供 X-NWS-LOG-UUID 信息或 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行排查。   |
-| 564    | HTTPS 请求回源失败                    |若配置为 HTTP 回源方式，请检查源站负载及带宽使用率，或源站访问限制。</br>若配置为协议跟随方式，请检查源站443端口状态及证书配置。</br>若排查源站无异常，请 [联系我们](https://intl.cloud.tencent.com/contact-sales) 并提供 X-NWS-LOG-UUID 信息或 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行排查。|
-|567| 节点接收文件时，响应超时|请 [联系我们](https://intl.cloud.tencent.com/contact-sales) 并提供 X-NWS-LOG-UUID 信息或 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行排查。|
+| 562    | HTTPS 请求建连失败                    | 请 [联系我们](https://www.tencentcloud.com/contact-us) 并提供 X-NWS-LOG-UUID 信息或 [提交工单](https://console.tencentcloud.com/workorder/category) 进行排查。   |
+| 563    | HTTPS 请求连接超时                    | 请 [联系我们](https://www.tencentcloud.com/contact-us) 并提供 X-NWS-LOG-UUID 信息或 [提交工单](https://console.tencentcloud.com/workorder/category) 进行排查。   |
+| 564    | HTTPS 请求回源失败                    |若配置为 HTTP 回源方式，请检查源站负载及带宽使用率，或源站访问限制。</br>若配置为协议跟随方式，请检查源站443端口状态及证书配置。</br>若排查源站无异常，请 [联系我们](https://www.tencentcloud.com/contact-us) 并提供 X-NWS-LOG-UUID 信息或 [提交工单](https://console.tencentcloud.com/workorder/category) 进行排查。|
+|567| 节点接收文件时，响应超时|请 [联系我们](https://www.tencentcloud.com/contact-us) 并提供 X-NWS-LOG-UUID 信息或 [提交工单](https://console.tencentcloud.com/workorder/category) 进行排查。|
 
 
 
@@ -73,16 +68,9 @@ table th:nth-of-type(3) {
 |412|	服务器在验证在请求的头字段中给出先决条件时，没能满足其中的一个或多个。这个状态码允许客户端在获取资源时在请求的元信息（请求头字段数据）中设置先决条件，以此避免该请求方法被应用到其希望的内容以外的资源上。|
 |415|	对于当前请求的方法和所请求的资源，请求中提交的互联网媒体类型并不是服务器中所支持的格式，因此请求被拒绝。例如，客户端将图像上传格式为svg，但服务器要求图像使用上传格式为jpg。|
 |416|	客户端已经要求文件的一部分，但服务器不能提供该部分。例如，如果客户端要求文件的一部分超出文件尾端。|
-|417|	在请求头Expect中指定的预期内容无法被服务器满足，或者这个服务器是一个代理服显的证据证明在当前路由的下一个节点上，Expect的内容无法被满足。|
+|417|	在请求头 Expect 中指定的预期内容无法被服务器满足，或者这个服务器是一个代理服务器，它有明显的证据证明在当前路由的下一个节点上，Expect 的内容无法被满足。|
 |500|	通用错误消息，服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。没有给出具体错误信息。|
 |501|	服务器不支持当前请求所需要的某个功能。当服务器无法识别请求的方法，并且无法支持其对任何资源的请求。|
 |505|	服务器不支持，或者拒绝支持在请求中使用的HTTP版本。这暗示着服务器不能或不愿使用与客户端相同的版本。响应中应当包含一个描述了为何版本不被支持以及服务器支持哪些协议的实体。|
 |508|	服务器在处理请求时陷入死循环。|
 |510|	获取资源所需要的策略并没有被满足。|
-
-
-
-
-
-
-
