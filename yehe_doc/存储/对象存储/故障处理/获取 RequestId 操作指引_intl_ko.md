@@ -1,4 +1,4 @@
-## 소개
+## 개요
 
 COS(Cloud Object Storage) 서비스에서 요청이 전송될 때마다, COS 서버는 해당 요청에 대한 ID, 즉 RequestId를 생성합니다. 본문은 각 시나리오에서 RequestId를 획득하는 방법에 대해 소개합니다. 
 
@@ -10,7 +10,7 @@ COS(Cloud Object Storage) 서비스에서 요청이 전송될 때마다, COS 서
 4. 개발자 툴 상단의 **Network**를 클릭합니다. 
 ![](https://main.qcloudimg.com/raw/0a201a890f54bfabc4267e9c86c89338.png)
 5. 다운로드할 파일명 우측의 **다운로드**를 클릭합니다. 개발자 툴 페이지에서 다운로드할 파일명 입력 및 필터링하여 파일을 선택하고, **Headers**를 클릭하여 **Response Headers** 섹션에서 RequestId 정보를 획득합니다. 
-![](https://main.qcloudimg.com/raw/f5e5453f257fbd86a38d2c8508c968bd.png)
+
 
 ## 파일 액세스 실패 시 획득
 
@@ -52,8 +52,6 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
- 
-
 ### Go SDK를 통해 획득
 
 ```
@@ -61,14 +59,14 @@ package main
  
 import (
    "context"
-   "fmt"
    "net/http"
    "net/url"
+   "os"
    "strings"
    "github.com/tencentyun/cos-go-sdk-v5"
 )
  
-func main() {
+func main(){
    // examplebucket-1250000000과 COS_REGION을 실제 정보로 수정합니다.
    u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
    b := &cos.BaseURL{BucketURL: u}
@@ -84,9 +82,9 @@ func main() {
    // 1. 문자열로 객체 업로드
    f := strings.NewReader("Hello COS")
  
-   response, err := c.Object.Put(context.Background(), name, f, nil)
-   if err != nil {
-       // error정보에는 RequestId 필드가 포함되어 있습니다. 
+   _, err := c.Object.Put(context.Background(), name, f, nil)
+   if err != nil{
+       // error 정보에는 RequestId 필드가 포함되어 있습니다. 
        panic(err)
    }
    requestId := response.Header.Get("X-Cos-Request-Id")
@@ -109,7 +107,7 @@ ClientConfig clientConfig = new ClientConfig(region);
 clientConfig.setHttpProtocol(HttpProtocol.https);
 // 3 cos 클라이언트 생성
 COSClient cosClient = new COSClient(cred, clientConfig);
-// Bucket 이름 생성 형식은 BucketName-APPID이며, 이 곳에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
  
 String content = "Hello COS";
@@ -133,8 +131,8 @@ import logging
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # 1. secret_id, secret_key, region 등을 포함한 사용자 속성을 설정합니다. Appid는 CosConfig에서 제거되었습니다. 매개변수 Bucket에 Appid를 포함시키십시오. Bucket은 BucketName-Appid로 구성됩니다.
-secret_id = 'SecretId'     # 사용자의 SecretId로 대체합니다. CAM 콘솔에 로그인하여 확인 및 관리하십시오. https://console.cloud.tencent.com/cam/capi
-secret_key = 'SecretKey'   # 사용자의 SecretKey로 대체합니다. CAM 콘솔에 로그인하여 확인 및 관리하십시오. https://console.cloud.tencent.com/cam/capi
+secret_id = os.environ['COS_SECRET_ID']     # 사용자 SecretId. 리스크를 줄이기 위해 서브 계정 키를 사용하고 최소 권한 원칙을 따르는 것이 좋습니다. 서브 계정 키를 가져오는 방법에 대한 자세한 내용은 다음을 참고하십시오. https://cloud.tencent.com/document/product/598/37140
+secret_key = os.environ['COS_SECRET_KEY']   # 사용자 SecretKey. 리스크를 줄이기 위해 서브 계정 키를 사용하고 최소 권한 원칙을 따르는 것이 좋습니다. 서브 계정 키를 가져오는 방법에 대한 자세한 내용은 다음을 참고하십시오. https://cloud.tencent.com/document/product/598/37140
 region = 'ap-beijing'      # 사용자의 region으로 대체합니다. 생성된 버킷이 속한 region은 콘솔에서 확인 가능합니다. https://console.cloud.tencent.com/cos5/bucket
                            # COS에서 지원되는 모든 region 목록은 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/6224
 token = None               # 영구 키를 사용하는 경우 token을 입력할 필요가 없으나, 임시 키를 사용하는 경우 입력해야 합니다. 임시 키 생성 및 사용 가이드는 다음을 참고하십시오. https://cloud.tencent.com/document/product/436/14048
@@ -273,7 +271,7 @@ NSURL* url = [NSURL fileURLWithPath:@"파일의 URL"];
 put.bucket = @"examplebucket-1250000000";
 // 객체 키, 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 "video/xxx/movie.mp4"입니다.
 put.object = @"exampleobject";
-// 업로드할 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
+// 업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
 put.body =  url;
 // 업로드 진행률 수신
 [put setSendProcessBlock:^(int64_t bytesSent,
