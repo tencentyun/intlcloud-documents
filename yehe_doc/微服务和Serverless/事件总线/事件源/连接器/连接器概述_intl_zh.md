@@ -11,20 +11,12 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>消息队列 TDMQ</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1108/42278">TDMQ 连接器</a></td>
-</tr>
-<tr>
 <td>API 网关（APIGW）HTTP</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1108/42279">APIGW 连接器</a></td>
 </tr>
 <tr>
 <td>消息队列 Ckafka</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1108/42280">Ckafka 连接器</a></td>
-</tr>
-<tr>
-<td>SaaS 事件投递（企业集成服务 EIS 提供支持）</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1108/42281">SaaS 连接器</a></td>
 </tr>
 <tr>
 <td>DTS 数据订阅</td>
