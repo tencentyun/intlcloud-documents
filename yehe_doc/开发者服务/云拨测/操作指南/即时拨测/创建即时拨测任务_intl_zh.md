@@ -12,4 +12,5 @@
  - [新建文件下载任务类型](https://www.tencentcloud.com/document/product/1169/51995)。
 5. 配置完后单击 **开始测试**。成功创建后将会跳转到即时探测的历史诊断页面。等待1-3分钟后，即可查看拨测数据。
    <img src="https://staticintl.cloudcachetci.com/yehe/backend-news/fX3L919_intl_%E5%A5%BD%E5%8E%8B%E7%9C%8B%E5%9B%BE.png" width="100%">
+
 > ?即时拨测根据您选择的拨测点，按照 [按量后付费价格计费](https://www.tencentcloud.com/document/product/1169/52032)，不可使用套餐包额度进行抵扣。由于即时拨测为单次拨测，单次计费为： 拨测节点x拨测单价。假设您选择了100个 机房（IDC ）拨测点，机房（IDC ）拨测单价为0.0048美元/次。则单次收费为：0.0048*100=00.48美元。
