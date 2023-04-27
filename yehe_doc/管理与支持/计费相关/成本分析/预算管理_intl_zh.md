@@ -60,8 +60,8 @@
 
 ## 可视化面板介绍
 点击预算列表中的预算名称，可进入预算分析面板，进一步分析预算历史达成情况。也可以在此编辑/删除、复制预算。
-![](https://qcloudimg.tencent-cloud.cn/raw/cea87918301f6d1693af29c76fe6b0fd.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/eea294fe35d2f17dbb94b3be2a512819.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/ABFs816_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9D%A2%E6%9D%BF1.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/QEjX852_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9D%A2%E6%9D%BF2.png)
 - **本期预算面板**：您可以查看本期预算的相关信息：包括预算进度、预算与实际费用对比、本期已触发的提醒次数。
 - **预算历史面板**：在预算历史面板中，您可查看该预算在创建以来的历史执行情况。预算历史图表与成本分析打通，以可视化图表的方式展示每个周期的实际成本和预算计划，并支持跳转到成本分析进行进一步分析。
 - **提醒记录面板：**在提醒记录面板可以查看历史上触发的所有预警，包括提醒时间和提醒内容。
