@@ -1,0 +1,175 @@
+网络质量监测针对应用网络稳定性，路由稳定性、DNS 解析正确率，包括 ICMP 时延和丢包率等进行监控。本文将为您介绍如何新建网络质量任务。
+
+## 操作步骤
+### 创建拨测任务
+1. 登录 [云拨测控制台](https://console.cloud.tencent.com/cat/probe/tasklist)。
+2. 在左侧菜单栏中单击**任务列表**。
+3. 单击任务列表页面上方的**新建任务**。
+4. 根据下列说明配置基本信息。
+<table>
+<tr>
+<th> 配置项</th>
+<th> 说明</th>
+</tr>
+<tr>
+<td> 拨测类型</td>
+<td> 选择“自定义拨测”</td>
+</tr>
+<tr>
+<td> 任务类型</td>
+<td> 选择 PC 端或移动端的“网络质量”任务类型。</td>
+</tr>
+<tr>
+<td> 拨测地址</td>
+<td> 请填写需要拨测的 Web 应用地址（以 <code>http://</code> 或 <code>https://</code> 开头）<br>例如：<br>1. 域名：http://www.tencent.com<br/>2.
+域名端口：http://www.tencent.com:80<br/><b>说明：</b>Ping 监测下使用 TCP 或 UDP 协议时，需要填写端口。
+</td>
+</tr>
+<tr>
+<td> 拨测任务名称</td>
+<td> 自定义拨测任务名称。</td>
+</tr>
+<tr>
+<td> 拨测频率</td>
+<td> 支持1分钟、5分钟、10分钟、15分钟、30分钟、60分钟、120分钟的拨测频率。例如选择5分钟频率，表示每个拨测点每5分钟拨测一次。</td>
+</tr>
+<tr>
+<td> 执行时间</td>
+<td> 默认每日按频率执行，您也可根据需求自定义执行计划。例如您可以设置每周上午8点-9点执行拨测任务</td>
+</tr>
+<tr>
+<td> 任务标签</td>
+<td>云拨测结合腾讯云资源标签功能，为您提供按标签授予子账号权限和按标签分账功能。详情可参见 <a href="https://www.tencentcloud.com/document/product/1169/52017">资源标签</a> 进行配置 </td>
+</tr>
+</table>
+5. 根据下列说明配置拨测点。
+    i.选择方式：选择推荐拨测点组或自定义拨测点组（推荐的拨测节点为常用的节点）。
+    ii.选择拨测点。
+    - 可用性拨测点组：仅支持网络质量、端口性能任务类型，适用于网络质量监控、接口可用性监控、劫持和封堵检测。
+    - 高级场景拨测点组：页面用户体验监控、直播卡顿监控、弱网环境可用性探测、CDN 选型与路径优化。覆盖境内外的 IDC、PC 终端、移动端探测点。
+      - 推荐拨测点组：为您推荐常用拨测点组。
+      - 自定义拨测点组：**选择拨测点地域** > **选择拨测点类型** > 在右侧框中勾选拨测点。拨测点类型说明如下：
+<table>
+<tr>
+	<th> 拨测点类型</th>
+	<th> 说明</th>
+</tr>
+<tr>
+<td> 机房（IDC）</td>
+<td> 部署在 PC 电脑上的拨测点，代表 PC 用户体验。</td>
+</tr>
+<tr>
+<td> 网民（LastMile）</td>
+<td> 部署在终端用户 PC 电脑上的拨测点，代表终端 PC 用户体验。</td>
+</tr>
+</table>
+  - 我的拨测点组：您可以在“高级场景拨测点”中选择常用的拨测点组，并单击右下角的**新建拨测点组**即可。下次创建任务时，直接选择我的拨测点组，即可快速选择您创建的常用拨测点。
+    ![](https://staticintl.cloudcachetci.com/yehe/backend-news/kKUC446_25intl_%E5%A5%BD%E5%8E%8B%E7%9C%8B%E5%9B%BE.png)
+<dx-alert infotype="explain" title="选择建议">
+由于机房（IDC）和网民（LastMile）网络环境不同，机房（IDC）比网民（LastMile）更稳定。
+- 若是要监测业务的可用性，可以选择比较稳定的机房 IDC。
+- 若要看终端用户的访问体验、网络情况等建议多选网民 LastMile 或移动端，可以模拟终端用户访问应用的体验。
+</dx-alert>
+6. 配置拨测参数（可选），系统默认为您配置常用的拨测参数，您也可以自定义拨测规则。配置说明如下：
+<table>
+<th>配置类型</th>
+<th>配置项</th>
+<th>说明</th>
+<th>默认取值</th>
+</tr>
+<tr>
+<td>IP 类型</td>
+<td>-</td>
+<td>支持自动、IPV4、IPV6 三种 IP 协议类型。</td>
+<td>自动</td>
+</tr>
+<tr>
+<td rowspan="6">Ping 监测</td>
+<td>协议类型</td>
+<td>支持 ICMP、TCP 、UDP 三种协议类型。</td>
+<td>ICMP </td>
+</tr>
+<tr>
+<td>监测超时（秒）</td>
+<td>定义监测超时时间，可填取值范围为：0 - 60秒（不包含0）。</td>
+<td>20秒</td>
+</tr>
+<tr>
+<td>执行间隔（秒）</td>
+<td>定义 Ping 监测任务执行时间间隔，可选0.5s、1s、2s、3s、4s、5s、10s。</td>
+<td>0.5秒</td>
+</tr>
+<tr>
+<td>Package 数量（个）</td>
+<td>填写数据测试包数量。</td>
+<td>4个</td>
+</tr>
+<tr>
+<td>Package 大小（KB）</td>
+<td>填写所测试的数据包的大小。</td>
+<td>32KB</td>
+</tr>
+<tr>
+<td>切分Package</td>
+<td>根据需求决定是否需要切分测试的数据包。</td>
+<td>切分</td>
+</tr>
+<tr>
+<td rowspan="5">DNS 监测</td>
+<td>监测超时（秒）</td>
+<td>定义监测超时时间，取值范围为0 - 45秒。</td>
+<td>5秒</td>
+</tr>
+<tr>
+<td>查询方式</td>
+<td>支持递归和迭代两种查询方式。</td>
+<td>递归</td>
+</tr>
+<tr>
+<td>指定 NS 服务器</td>
+<td>指定用于 DNS 解析的服务器，填写 NS 服务地址。</td>
+<td>-</td>
+</tr>
+<tr>
+<td>dig 命令</td>
+<td>是否开启 dig 命令格式的监测结果。</td>
+<td>关闭</td>
+</tr>
+<tr>
+<td>DNS 服务器类型</td>
+<td>支持自动、IPV4、IPV6 三种类型。</td>
+<td>IPV4</td>
+</tr>
+<tr>
+<td rowspan="2">Tracert 监测</td>
+<td>监测超时（秒）</td>
+<td>定义监测超时时间，取值范围为：0 - 300 秒（不包含0）。</td>
+<td>60秒</td>
+</tr>
+<tr>
+<td>最大跃点数（个）</td>
+<td>填写跃点数，一个路由为一个跃点数。</td>
+<td>20</td>
+</tr>
+<tr>
+<td rowspan="2">劫持监测参数</td>
+<td>DNS 劫持白名单</td>
+<td>当 DNS 解析结果 IP 不在该白名单则认为被劫持，劫持结果可在多维分析结果详情中勾选查看。详情请参见 <a href="https://www.tencentcloud.com/document/product/1169/52000">劫持监测参数说明</a>。
+</td>
+<td>-</td>
+</tr>
+<tr>
+<td>DNS 劫持黑名单</td>
+<td>当 DNS 解析结果 IP 在该黑名单则认为被劫持，劫持结果可在多维分析结果详情中勾选查看。详情请参见 <a href="https://www.tencentcloud.com/document/product/1169/52000">劫持监测参数说明</a>。
+</td>
+<td>-</td>
+</tr>
+</table>
+
+
+
+### 批量创建拨测任务
+>? 最多支持批量添加20个拨测任务。
+
+您可以在新建任务页中，单击任务名称右侧的“ **+ **”号，并填写任务名称和任务地址即可。创建成功后，将会在任务列表中多个拨测任务。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/2axy219_26intl_%E5%A5%BD%E5%8E%8B%E7%9C%8B%E5%9B%BE.png)
