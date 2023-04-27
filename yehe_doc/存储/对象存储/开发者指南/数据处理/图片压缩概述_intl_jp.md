@@ -4,13 +4,22 @@
 
 Cloud Object Storage (COS)は、[Cloud Infinite (Cloud Infinite、CI)](https://intl.cloud.tencent.com/document/product/1045/33422)に基づいて、さまざまな画像圧縮機能を開始しました。画像圧縮の目的を達成するために、独自のサービスシーンに応じてさまざまな圧縮方法を選択できます。現在サポートされている圧縮方法は次のとおりです：
 
-- **WebP圧縮：**画像は、webp形式に変換できます。これは、jpg形式よりも圧縮率が高いです。同じ画質の場合、webp形式の画像サイズはjpg形式の画像サイズより25%以上小さく、マルチターミナルの使用シーンに適合させることができます。
-- **HEIF圧縮：**画像は、圧縮率が非常に高いheif形式に変換できます。同じ画質の場合、画像サイズはjpg形式の画像よりも80%以上小さくなります。iOSシステムでは、heif画像をアルバムのデフォルト形式とし、Android PシステムはネイティブでHeifをサポートしています。
-- **TPG圧縮：**画像は、tpg形式に画像を変換できます。これは、テンセントによりリリースされた動画をサポートする自社開発の画像形式です。現在、QQブラウザやQQスペースなどの製品は、デフォルトでtpg画像をサポートしています。同じ画質の場合、画像サイズはgif形式の画像よりも90%以上小さくなり、png画像よりも50%以上小さくなります。
 - **AVIF圧縮：**画像は、avif形式に変換できます。avifはav1に基づく新しい画像形式です。2020年2月にNetflixによって最初に発表され、現在ChromeやFirefoxなどのブラウザをサポートしています。
 
->? 画像圧縮は有料サービスであり、Cloud Infiniteにより請求されます。詳細については、Cloud Infiniteの画像処理料金をご参照ください。
+- **WebP圧縮：**画像は、webp形式に変換できます。これは、jpg形式よりも圧縮率が高いです。同じ画質の場合、webp形式の画像サイズはjpg形式の画像サイズより25%以上小さく、マルチターミナルの使用シーンに適合させることができます。
+
+- **HEIF圧縮：**画像は、圧縮率が非常に高いheif形式に変換できます。同じ画質の場合、画像サイズはjpg形式の画像よりも80%以上小さくなります。iOSシステムでは、heif画像をアルバムのデフォルト形式とし、Android PシステムはネイティブでHeifをサポートしています。
+
+- **TPG圧縮：**画像は、tpg形式に画像を変換できます。これは、テンセントによりリリースされた動画をサポートする自社開発の画像形式です。現在、QQブラウザやQQスペースなどの製品は、デフォルトでtpg画像をサポートしています。同じ画質の場合、画像サイズはgif形式の画像よりも90%以上小さくなり、png画像よりも50%以上小さくなります。
+
+- **超インテリジェント圧縮**：画像の主観的品質をインテリジェントに判断して自動的に調節し、画像の元の形式を変更することなく、画像のボリュームをオリジナル画像に比べて格段に小さくすると同時に、視覚効果としては最大限にオリジナル画像に近づけることができます。
+
+  
+
+>? 
 >
+>- 画像圧縮はすべて有料サービスであり、Cloud Infiniteによって課金されます。具体的な料金については、Cloud Infiniteの[画像処理料金](https://intl.cloud.tencent.com/document/product/1045/45582)をご参照ください。
+>- 超インテリジェント圧縮は現在、北京、上海リージョンでのみサポートしています。
 
 ## ユースケース
 
@@ -18,39 +27,57 @@ Cloud Object Storage (COS)は、[Cloud Infinite (Cloud Infinite、CI)](https://i
 
 圧縮機能が異なれば、既存の画像形式やブラウザ環境などとの互換性も異なります。次のテーブルをご参照ください。
 
-| 機能      | サポートされている形式                                                     | サポートされているブラウザとシステム                                            | 互換性 | 圧縮効果 | 圧縮速度 |
+| 機能      | サポートする形式                                                     | サポートするブラウザおよびシステム                                           | 互換性 | 圧縮効果 | 圧縮速度 |
 | :-------- | :----------------------------------------------------------- | ------------------------------------------------------------ | ------ | -------- | -------- |
+| AVIF圧縮 | jpg、png、bmp、gif、heif、webp、tpg式の画像のavif形式への変換をサポートします。 | Firefox、Chrome、Androidなどの少数のブラウザおよびシステムでサポートしています             | 極めて強い   | 極めて強い     | 速い       |
 | WebP圧縮 | jpg、png、bmp、gif、heif、tpg、avif形式の画像のwebp形式への変換をサポートします。| Edge、Firefox、Chrome、Safari、Android、iOS、WeChatなど、95%以上のブラウザやシステムをサポートします | 強い     | 一般     | 速い       |
-| HEIF圧縮 | jpg、png、bmp、webp、avif形式の画像のheif形式への変換をサポートします。      | ブラウザで開くことをサポートしません。iOS11以降およびAndroid Pシステムでネイティブでサポートします      | 弱い     | 強い       | 速い       |
-| TPG圧縮 | jpg、png、bmp、gif、heif、webp、avif形式の画像のtpg形式への変換をサポートします。| 特別なデコーダが必要です。QQブラウザなどのいくつかのブラウザでのみサポートします。                   | 弱い     | 強い       | 速い       |
-| AVIF圧縮 | jpg、png、bmp、gif、heif、webp、tpg形式の画像のavif形式への変換をサポートします。| Firefox、Chrome、Androidなどのいくつかのブラウザやシステムをサポートします               | 弱     | 非常に強い     | 遅い       |
+| HEIF圧縮 | jpg、png、bmp、webp、avifの画像のheif形式への変換をサポートします。    | ブラウザでは開くことができません。iOS 11以上およびAndroid Pシステムでネイティブにサポートしています   | 弱い     | 強い       | 速い       |
+| TPG圧縮  | 支持 jpg、png、bmp、gif、heif、webp、avifの画像のtpg形式への変換をサポートします。 | 特別なデコーダが必要であり、QQブラウザなどの少数のブラウザでのみサポートしています                 | 弱い     | 強い       | 速い       |
+| 超インテリジェント圧縮  | jpg、png形式の画像圧縮をサポートします。元の画像の形式を変換しません。          | 全互換                                                       | 極めて強い   | 強い       | 速い       |
 
 
->? TPG画像を使用する場合、**画像ロード環境がTPGデコードをサポートしている**ことを確認する必要があります。Tencent Cloud Cloud Infiniteは、TPGデコーダが統合された[iOS](https://intl.cloud.tencent.com/document/product/1045/47707)、[Android](https://intl.cloud.tencent.com/document/product/1045/45575)、[Windows](https://main.qcloudimg.com/raw/851dd252378813d250eeca5ed55ffd36/TPG_win_SDK.zip)端末SDKを提供しています。TPGにすばやくアクセスして使用するのに役立ちます。
->
+>? Tencent Cloud InfiniteはTPG、AVIFデコーダを統合した[Windows](https://main.qcloudimg.com/raw/851dd252378813d250eeca5ed55ffd36/TPG_win_SDK.zip) 端末SDKを提供しています。ご自身のクライアントで統合を行うだけで、TPGおよびAVIFのデコードとプレビューを実現できます。
 
 ## 利用方法
 
-上記の圧縮機能は、基本的な画像処理の形式変換機能を介して使用できます。formatパラメータを指定の圧縮形式に設定すると、画像圧縮機能を使用できます。具体的なパラメータは次のとおりです：
+### AVIF、HEIF、TPG圧縮
 
-| パラメータ名 | パラメータ説明                                   |
-| :----- | :----------------------------------------- |
-| webp   | 元の画像をwebp形式に変換して、画像圧縮効果を実現します。|
-| heif   | 元の画像をheif形式に変換して、画像圧縮効果を実現します。|
-| tpg    | 元の画像をtpg形式に変換して、画像圧縮効果を実現します。  |
-| avif   | 元の画像をavif形式に変換して、画像圧縮効果を実現します。|
+この3種類は高度な画像形式に分類されます。[画像の高度圧縮](https://intl.cloud.tencent.com/document/product/436/40117)機能をアクティブ化してからでなければ使用できません。
+
+高度な圧縮機能をアクティブ化すると、画像の[形式変換パラメータ](https://intl.cloud.tencent.com/document/product/436/36369)によって使用できるようになります。formatパラメータを指定の圧縮形式に設定するだけで可能です。具体的なパラメータは次のとおりです。
+
+| パラメータ名                 | パラメータの説明                                   |
+| :--------------------- | :----------------------------------------- |
+| imageMogr2/format/avif | オリジナル画像をavif形式に変換し、画像圧縮効果が得られます。 |
+| imageMogr2/format/heif | オリジナル画像をheif形式に変換し、画像圧縮効果が得られます。 |
+| imageMogr2/format/tpg  | オリジナル画像をtpg形式に変換し、画像圧縮効果が得られます。  |
+
+### WebP圧縮
+
+WebP圧縮機能は、基本画像処理の形式変換機能によってそのまま使用することができます。具体的なパラメータは次のとおりです。
+
+| パラメータ名                 | パラメータの説明                                   |
+| :--------------------- | :----------------------------------------- |
+| imageMogr2/format/webp | オリジナル画像をwebp形式に変換し、画像圧縮効果が得られます。 |
+
+### 超インテリジェント圧縮
+
+超インテリジェント圧縮機能はアンコンシャス型の圧縮です。すなわち、有効化すると、画像へのアクセス方式を変更する必要も、圧縮パラメータを追加する必要もなく、マッチする画像形式に対し自動的に圧縮が行われます。
+
+コンソールで[超インテリジェント圧縮機能を有効化]()する必要があります。有効化すると、画像へのアクセス方式を変更しなくても、その後の画像へのアクセスの際に自動的に圧縮されます。
 
 ## 圧縮の例
 
-png形式の元の画像をjpeg、webp、heif、tpg、avif形式に変換します。元の画像のURLは`https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png`であり、効果は次のとおりです：
+png形式のオリジナル画像に対し上記のすべての圧縮を行ってみます。以下がオリジナル画像リンクであるとします。
 
-![img](https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png)
+https://examples-125xxxxx.cos.ap-shanghai.myqcloud.com/test.png
 
 ### 例1：jpeg画像への変換
 
 リクエストの最終URL：
+
 ```
-https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png?imageMogr2/format/jpeg
+https://examples-125xxxxx.cos.ap-shanghai.myqcloud.com/test.png?imageMogr2/format/jpeg
 ```
 
 ### 例2：webp画像への変換
@@ -58,7 +85,7 @@ https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png?image
 リクエストの最終URL：
 
 ```
-https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png?imageMogr2/format/webp
+https://examples-125xxxxx.cos.ap-shanghai.myqcloud.com/test.png?imageMogr2/format/webp
 ```
 
 ### 例3：heif画像への変換
@@ -66,7 +93,7 @@ https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png?image
 リクエストの最終URL：
 
 ```
-https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png?imageMogr2/format/heif
+https://examples-125xxxxx.cos.ap-shanghai.myqcloud.com/test.png?imageMogr2/format/heif
 ```
 
 ### 例4：tpg画像への変換
@@ -74,7 +101,7 @@ https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png?image
 リクエストの最終URL：
 
 ```
-https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png?imageMogr2/format/tpg
+https://examples-125xxxxx.cos.ap-shanghai.myqcloud.com/test.png?imageMogr2/format/tpg
 ```
 
 ### 例5：avif画像への変換
@@ -82,17 +109,27 @@ https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png?image
 リクエストの最終URL：
 
 ```
-https://ci-avif-demo-1258125638.cos.ap-guangzhou.myqcloud.com/test-png.png?imageMogr2/format/avif
+https://examples-125xxxxx.cos.ap-shanghai.myqcloud.com/test.png?imageMogr2/format/avif
 ```
 
-次の表に、各画像の圧縮方法の圧縮率の比較を示します：
+### 例6：超インテリジェント圧縮の実行
+
+リクエストの最終URL：
+
+```
+https://examples-125xxxxx.cos.ap-shanghai.myqcloud.com/test.png
+```
+
+
+
+下の表に各画像圧縮方式の圧縮率の比較を記載します（例示した結果は参考用です）。
 
 | 形式        | サイズ               |
 | :---------- | :----------------- |
 | png（元の画像） | 465 KB             |
 | jpeg        | 114KB（75.5%減少） |
+| avif        | 32 KB（93.1%減少） |
 | webp        | 64 KB（86.2%減少） |
 | heif        | 54 KB（88.4%減少） |
 | tpg         | 56 KB（88.0%減少） |
-| avif        | 32 KB（93.1%減少） |
-
+| 超インテリジェント圧縮    | 59 KB（87.3%減少） |
