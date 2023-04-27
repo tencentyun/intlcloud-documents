@@ -10,17 +10,19 @@
 
 
 ### 复制说明
-- 自定义镜像仅支持跨地域复制，共享镜像仅支持同地域复制。
-- 复制镜像支持国内至国内复制，国外至国外复制，需要从国内复制镜像到国外，或者从国外复制镜像到国内请联系售后。
+- 自定义镜像支持跨地域复制，共享镜像支持同地域复制。
+- **地域限制**：
+  - 支持中国大陆地域内、其他国家和地区内进行复制镜像。如需从中国大陆地域复制镜像到其他国家或地区，或需从其他国家或地区复制镜像到中国大陆地域，则请通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请。
 - 复制镜像功能本身暂不收费，保留复制后的自定义镜像会产生一定的快照费用。
 - 复制镜像等待时间为10分钟到30分钟。
+- 整机镜像暂不支持跨地域复制。
 
 ## 复制方法
 ### 自定义镜像-跨地域复制
 <dx-tabs>
 ::: 使用控制台复制
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/)。
-2. 在左侧导航栏中，单击 [**镜像**](https://console.cloud.tencent.com/cvm/image)，进入镜像管理页面。
+2. 在左侧导航栏中，单击 **[镜像](https://console.cloud.tencent.com/cvm/image)** ，进入镜像管理页面。
 3. 选择需要被复制的原始镜像地域，单击**自定义镜像**页签。如下图所示：
 例如选择广州地域。
 ![](https://qcloudimg.tencent-cloud.cn/raw/227e952cb09a5b2cedc61f12b6ccb469.png)
@@ -39,10 +41,10 @@
 <dx-tabs>
 ::: 使用控制台复制
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/)。
-2. 在左侧导航栏中，单击 [**镜像**](https://console.cloud.tencent.com/cvm/image)，进入镜像管理页面。
+2. 在左侧导航栏中，单击 **[镜像](https://console.cloud.tencent.com/cvm/image)**，进入镜像管理页面。
 3. 选择需要被复制的原始镜像地域，单击**共享镜像**页签。如下图所示：
-例如选择深圳地域。
-![](https://qcloudimg.tencent-cloud.cn/raw/27b6a301053adc319789ecaeffde8652.png)
+例如选择广州地域。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/ui6Q850_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230403153209.png)
 4. 在需要被复制镜像的实例行中，选择**更多** > **同地域复制**。
 5. 在弹出的“跨地域复制镜像”窗口中，选择要复制的目的地域，单击**确定**。
 复制成功后，目的地域的镜像列表将显示名称相同，ID 不同的镜像。
