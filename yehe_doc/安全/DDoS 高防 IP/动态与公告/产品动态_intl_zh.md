@@ -1,3 +1,57 @@
+## 2022-08
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>智能 CC 支持观察模式</td>
+<td>智能 CC 支持观察模式，并全量上线智能 CC。</td>
+<td> 2022-08-25</td>
+<td> <a href="https://www.tencentcloud.com/document/product/297/48361"> 智能 CC 防护</a>
+</td>
+</tr>
+</tbody></table>
+
+## 2022-07
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>端口接入优化</td>
+<td>支持多实例同时接入，支持备用源站。</td>
+<td> 2022-07-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/37221">端口接入</a>
+</td>
+</tr>
+<tr>
+<td>域名接入优化</td>
+<td>支持多实例同时接入，支持备用源站。</td>
+<td> 2022-07-25</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/297/37222">域名接入</a>
+</td>
+</tr>
+<tr>
+<td>智能调度功能升级</td>
+<td>智能调度支持定向模式。</td>
+<td> 2022-07-20</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/297/37229"> 配置智能调度</a>
+</td>
+</tr>
+</tbody></table>
+
 ## 2022-06
 <table>
 <thead>
@@ -22,10 +76,14 @@
 <td> 2022-06-07</td>
 <td>-</td>
 </tr>
+<tr>
+<td>智能调度支持回切</td>
+<td>高防 IP 智能调度增加回切时间设置，通过回切时间来解决时延和再次攻击的问题。</td>
+<td> 2022-06-07</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/297/37229"> 配置智能调度</a>
 </td>
 </tr>
 </tbody></table>
-
 
 ## 2022-05
 <table>
@@ -46,7 +104,6 @@
 </td>
 </tr>
 </tbody></table>
-
 
 ## 2022-04
 <table>
@@ -80,8 +137,6 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-
 
 ## 2022-03
 <table>
@@ -149,8 +204,6 @@
 </tr>
 </tbody></table>
 
-
-
 ## 2021-12
 <table>
 <thead>
@@ -210,8 +263,6 @@
 </tr>
 </tbody></table>
 
-
-
 ## 2021-11
 <table>
 <thead>
@@ -257,8 +308,6 @@
 </tr>
 </tbody></table>
 
-
-
 ## 2021-10
 <table>
 <thead>
@@ -279,7 +328,6 @@
 </td>
 </tr>
 </tbody></table>
-
 
 ## 2021-09
 <table>
@@ -324,7 +372,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/297/37222">域名接入 </a>
 </tr>
 </tbody></table>
-
 
 ## 2021-07
 <table>

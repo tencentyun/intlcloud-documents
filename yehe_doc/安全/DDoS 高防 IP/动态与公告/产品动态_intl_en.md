@@ -1,3 +1,57 @@
+## August 2022
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported observation mode for CC AI protection</td>
+<td>Observation mode is supported for CC AI protection, and CC AI protection is fully launched.</td>
+<td>August 25, 2022</td>
+<td> <a href="https://www.tencentcloud.com/document/product/297/48361"> Intelligent CC Protection</a>
+</td>
+</tr>
+</tbody></table>
+
+## July 2022
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Optimized port connection</td>
+<td>Multiple instances can be accessed at the same time and standby real servers are supported.</td>
+<td>July 25, 2022</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/297/37221">Port Connection</a>
+</td>
+</tr>
+<tr>
+<td>Domain name connection</td>
+<td>Multiple instances can be accessed at the same time and standby real servers are supported.</td>
+<td>July 25, 2022</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/297/37222">Domain Name Connection</a>
+</td>
+</tr>
+<tr>
+<td>Upgraded intelligent scheduling</td>
+<td>Intelligent scheduling supports directional mode.</td>
+<td>July 20, 2022</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/297/37229"> Configuring Intelligent Scheduling</a>
+</td>
+</tr>
+</tbody></table>
+
 ## June 2022
 <table>
 <thead>
@@ -22,10 +76,14 @@
 <td>June 7, 2022</td>
 <td>N/A</td>
 </tr>
+<tr>
+<td>Intelligent scheduling support for failback</td>
+<td>Anti-DDoS Pro intelligent scheduling adds a time setting for failback, which solves the problems of delay and re-attack.</td>
+<td>June 7, 2022</td>
+<td> <a href="https://intl.cloud.tencent.com/document/product/297/37229"> Configuring Intelligent Scheduling</a>
 </td>
 </tr>
 </tbody></table>
-
 
 ## May 2022
 <table>
@@ -46,7 +104,6 @@
 </td>
 </tr>
 </tbody></table>
-
 
 ## April 2022
 <table>
@@ -80,8 +137,6 @@
 <td>N/A</td>
 </tr>
 </tbody></table>
-
-
 
 ## March 2022
 <table>
@@ -149,8 +204,6 @@
 </tr>
 </tbody></table>
 
-
-
 ## December 2021
 <table>
 <thead>
@@ -210,8 +263,6 @@
 </tr>
 </tbody></table>
 
-
-
 ## November 2021
 <table>
 <thead>
@@ -257,8 +308,6 @@
 </tr>
 </tbody></table>
 
-
-
 ## October 2021
 <table>
 <thead>
@@ -279,7 +328,6 @@
 </td>
 </tr>
 </tbody></table>
-
 
 ## September 2021
 <table>
@@ -324,7 +372,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/297/37222">Domain Name Connection </a>
 </tr>
 </tbody></table>
-
 
 ## July 2021
 <table>

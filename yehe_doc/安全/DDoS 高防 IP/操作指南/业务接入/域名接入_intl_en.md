@@ -4,7 +4,7 @@
 1. Log in to the [Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4), select **Anti-DDoS Advanced (New)** > **Application Accessing** on the left sidebar, and then open the **Access via domain names** tab.
 2. Click **Start Access**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c566b02296505e1ae286529ccf81988c.png)
-2. On the **Access via Domain Name** page, select an associated instance ID and click **Next: Set Port Parameter**.
+3. On the **Access via Domain Name** page, select an associated instance ID and click **Next: Set Port Parameter**.
 >? You can select multiple instances.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/9a7e5418069c1ae134490457e8832ad1.png)
@@ -15,7 +15,9 @@
 >? An alternate real server is used when the real server’s forwarding fails.
 
 5. Click **Complete**. Rules that are added will display in the domain name list. You can check whether they access via the domain names successfully.
->?When the access fails due to certification configuration errors, you will get a prompt "Failed to obtain the certificate. Please go to [SSL Certificate Management](https://console.cloud.tencent.com/ssl) to view details".
+>?
+>- When the access fails due to certification configuration errors, you will get a prompt "Failed to obtain the certificate. Please go to [SSL Certificate Management](https://console.cloud.tencent.com/ssl) to view details".
+>- To avoid seconds of interruptions, update the certificate for connected domain names during off-peak periods.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/21a3776933d55e8f70cab930046edacf.png)
 
@@ -37,7 +39,6 @@
 1. To import multiple rules, you can click **Batch Import**.
 2. In the **Configure Layer-7 Forwarding Rule** window, enter the rules, and click ***OK*.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d14e1161d9c788182ce88e78e2042932.png)
-
 
 ## Exporting a Rule
 1. To import multiple rules, you can click **Batch Export**.

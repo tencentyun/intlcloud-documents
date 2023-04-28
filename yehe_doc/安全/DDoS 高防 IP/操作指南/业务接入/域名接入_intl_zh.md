@@ -4,7 +4,7 @@
 1. 登录 [DDoS 高防 IP（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4) ，在左侧目录中，单击**业务接入** > **域名接入**。
 2. 在域名接入页面，单击**开始接入**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/c566b02296505e1ae286529ccf81988c.png)
-2. 在域名业务接入页面，选择关联实例 ID，单击**下一步：协议端口**。
+3. 在域名业务接入页面，选择关联实例 ID，单击**下一步：协议端口**。
 >? 支持多选，多实例同时接入。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/9a7e5418069c1ae134490457e8832ad1.png)
@@ -15,7 +15,9 @@
 >? 备用源站：当源站转发异常会自动切换转发至备用源站。
 
 5. 单击**完成**，接入的规则会出现在域名接入列表中，在接入状态查看是否接入成功。
->?当因证书问题配置失败时，接入状态右侧会冒泡提醒“因所选证书获取失败，请到 [SSL 证书管理](https://console.cloud.tencent.com/ssl) 查看详情”。
+>?
+>- 当因证书问题配置失败时，接入状态右侧会冒泡提醒“因所选证书获取失败，请到 [SSL 证书管理](https://console.cloud.tencent.com/ssl) 查看详情”。
+>- 当已经接入成功的域名更新证书时，会产生秒级闪断，如需更新证书，建议低峰期更新。
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/21a3776933d55e8f70cab930046edacf.png)
 
@@ -37,7 +39,6 @@
 1. 在域名接入页面，单击**批量导入**。
 2. 在批量导入七层转发规则弹窗，填写所需规则，单击**确定**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d14e1161d9c788182ce88e78e2042932.png)
-
 
 ## 导出规则
 1. 在域名接入页面，单击**导出规则**。
