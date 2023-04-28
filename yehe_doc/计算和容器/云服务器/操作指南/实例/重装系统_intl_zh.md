@@ -1,13 +1,14 @@
 ## 操作场景
 
-重装系统操作可以使实例恢复至刚启动的初始状态，是实例遭遇系统故障时的一种重要恢复手段。
+重装系统操作可以使实例恢复至刚启动的初始状态，是实例遭遇系统故障时的一种重要恢复手段。以下文档指导您如何重装操作系统。
+
 
 云服务器提供以下两种重装类型：
  - **同平台重装**：在任何地域云服务器都可以进行同平台重装。
  例如，Linux 重装为 Linux，Windows 重装为 Windows。 
  - **不同平台重装**：仅支持中国大陆地区（不含中国香港）。
  例如，Linux 重装为 Windows，Windows 重装为 Linux。
-  <dx-alert infotype="explain" title="">
+<dx-alert infotype="explain" title="">
 - 目前新增的所有云硬盘实例和本地盘实例均支持进行不同平台重装系统。部分存量的20GB本地盘实例暂时不支持控制台上进行跨平台重装，使用这些本地盘实例的用户，需要通过 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 进行申请。
 - 竞价实例不支持重装系统。
 </dx-alert>
@@ -15,7 +16,7 @@
 
 
 ## 注意事项
- - **重装准备：**系统盘中的内容会在重装后丢失，需在重装前完成系统盘中重要信息的备份。需要保留系统运行数据的情况下，建议您在重装系统前 [创建自定义镜像](/doc/product/213/4942)，并选择该镜像进行重装。
+ - **重装准备：**重装系统会直接清除系统盘中的数据，您需在重装系统前对系统盘中的重要数据进行备份。需要保留系统运行数据的情况下，建议您在重装系统前 [创建自定义镜像](/doc/product/213/4942)，并选择该镜像进行重装。
  - **镜像选择建议：**建议使用腾讯云提供的镜像或自定义镜像进行重装，不建议使用来源不明的镜像和其他来源。重装系统盘时，请不要进行其他操作。
  - **实例物理特性：**实例的公网 IP 不会改变。
  - **实例规格限制**：若您的实例需选择 Windows 2016 及 2019 相关版本的镜像进行重装，则实例内存需大于2G。
@@ -38,7 +39,7 @@
 <dx-alert infotype="explain" title="">
 其中，当镜像类型为**自定义镜像**或**共享镜像**时，登录方式才可选择**保留镜像设置**。
 </dx-alert>
-<img src="https://main.qcloudimg.com/raw/868508ad1ab1e1e2a60ea98d5d936a92.png"/>
+<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/Akym383_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230407162815.png"/>
 
 :::
 ::: 使用\sAPI\s重装系统[](id:useAPI)
@@ -51,3 +52,4 @@
 您的云服务器在重装系统前已挂载数据盘，且重装系统类型为不同平台重装，则需参考以下文档操作，读取原操作系统下的数据盘数据：
 - [Linux 重装为 Windows 后读取原 EXT 类型数据盘](https://intl.cloud.tencent.com/document/product/213/3856)
 - [Windows 重装为 Linux 后读写原 NTFS 类型数据盘](https://intl.cloud.tencent.com/document/product/213/3857)
+

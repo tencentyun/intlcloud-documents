@@ -10,7 +10,7 @@
 
 ## マイグレーションフロー
 ワンクリック移行のプロセスは下図のとおりです：
-<img style="width:850px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b9713fa4b1e2d1c977600323b1b976a2.png" />
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/rx7I359_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230428170703.png)
 
 ## 移行手順
 

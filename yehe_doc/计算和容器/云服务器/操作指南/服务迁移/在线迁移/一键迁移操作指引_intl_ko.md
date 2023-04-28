@@ -10,7 +10,7 @@
 
 ## 마이그레이션 프로세스
 빠른 마이그레이션 절차는 다음과 같습니다.
-<img style="width:850px; max-width: inherit;" src="https://qcloudimg.tencent-cloud.cn/raw/b9713fa4b1e2d1c977600323b1b976a2.png" />
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/rx7I359_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230428170703.png)
 
 ## 마이그레이션 단계
 

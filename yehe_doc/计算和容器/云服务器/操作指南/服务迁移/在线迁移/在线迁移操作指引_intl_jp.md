@@ -2,7 +2,7 @@
 
 ## マイグレーションフロー
 オンラインマイグレーションのプロセスは、下図のとおりです：
-![](https://qcloudimg.tencent-cloud.cn/raw/f959c68a55518885fc5faddd235a5ef4.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/w6gR606_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230428170713.png)
 [](id:prerequisites)
 ## 移行手順
 ### ステップ1：移行前の準備

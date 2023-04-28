@@ -2,7 +2,7 @@
 
 ## 마이그레이션 프로세스
 온라인 마이그레이션 절차는 다음과 같습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/f959c68a55518885fc5faddd235a5ef4.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/w6gR606_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230428170713.png)
 [](id:prerequisites)
 ## 마이그레이션 단계
 ### 1단계: 마이그레이션 준비
