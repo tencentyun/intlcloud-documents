@@ -5,14 +5,16 @@
 
 
 ## 操作步骤
-1. 登录 [云联网控制台](https://console.cloud.tencent.com/vpc/ccn) ，进入云联网管理页面。
+1. 登录 [云联网控制台](https://console.cloud.tencent.com/vpc/ccn)，进入云联网管理页面。
 2. 在云联网列表中，单击需要启用路由的云联网 ID，进入详情页。
 3. 在**路由表**页签，启用路由：
 >!启用路由后，如果路由规则重叠，则按照最长掩码规则进行匹配。
 >
-  + 单条路由：单击处于禁用中的路由条目右侧的图标，并在弹出的启用路由对话框中，单击“确定”。
- ![]()
+  + 单条路由：单击处于禁用中的路由条目右侧的图标，并在弹出的启用路由对话框中，单击**确定**。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/64uw610_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230504164423.png)
   + 多条路由：勾选多条处于禁用中的路由条目，单击上方的**启用路由**，并在弹出的对话框中，单击**确定**。
- ![]()
-如路由冲突，则路由按照最长掩码规则匹配生效，可能导致启用失败，如需使用该条路由，请先禁用/删除原冲突路由：
-![]()
+ ![](https://staticintl.cloudcachetci.com/yehe/backend-news/2as4310_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230504165355.png)
+启用后，如路由无冲突，则显示如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/rhsH220_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230504165521.png)
+如路由冲突，则路由按照最长掩码规则匹配生效，可能导致启用失败，如需使用该条路由，请先禁用/删除原冲突路由。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/a5Sc595_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230504165757.png)
