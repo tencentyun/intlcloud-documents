@@ -24,7 +24,7 @@ The configuration supported by the two modes are as follows:
 |Binding an EIP                        |       ×   |    &#10003;      |
 
 
->! Container instances are under beta test currently. To use them, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
+>! Container instances are in beta currently. To use them, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
 
 
 
@@ -34,17 +34,12 @@ The configuration supported by the two modes are as follows:
 
 
 
-### Authorizing at the first time
-You need to authorize permissions to the current account for TKE to operate cloud resources when you use an EKSCI for the first time. For details, see [Service Authorization](https://intl.cloud.tencent.com/document/product/457/37808). If you have authorized the permissions to TKE, please skip this step.
+### Granting permissions at the first time of use
+You need to grant permissions to the current account for TKE to operate cloud resources when you use an EKSCI for the first time. For details, see [Service Authorization](https://intl.cloud.tencent.com/document/product/457/37808). If you have granted permissions to TKE, please skip this step.
 
-<dx-alert infotype="explain" title=" ">
+<dx-alert infotype="explain" title="">
 You can log in to the [CAM console](https://console.cloud.tencent.com/cam/role) to check if there is a TKE_QCSRole role.
 </dx-alert>
-
-
-
-
-
 
 
 [](id:EKSCI2)
@@ -68,7 +63,7 @@ You can log in to the [CAM console](https://console.cloud.tencent.com/cam/role) 
 <tr>
 <td>Container network</td>
 <td>Assign an IP address within the IP range of the container network to the container instance.
-<dx-alert infotype="notice" title=" ">
+<dx-alert infotype="notice" title="">
 Subnet determines the availability zone. Each availability zone supports different type of resources, such as AMD, GPU-T4 and GPU-V100. Please select a subnet which supports the desired type of resources according to the prompts.
 </dx-alert>
 </td>
@@ -86,15 +81,15 @@ Subnet determines the availability zone. Each availability zone supports differe
 <td>Provides storage for the container. Currently, it supports NFS and CBS. Also, it needs to be mounted to the specified path of the container.
 <table>
    <tr>
-      <th>Volume Type</th>
+      <th>Volume type</th>
       <th>Description</th>
    </tr>
    <tr>
-	 <td><a href="https://intl.cloud.tencent.com/document/product/362">Cloud Block Storage (CBS)</a></td>
+	 <td><a href="https://www.tencentcloud.com/document/product/362">Cloud Block Storage (CBS)</a></td>
       <td>You can mount a Tencent Cloud CBS disk to a specified path of the container. When the container is migrated, the cloud disk will be migrated along with it. CBS volumes are suitable for the persistent storage of data and can be used for stateful services such as MySQL. For a service for which a CBS volume is configured, the maximum number of Pods is 1.</td>
    </tr>
    <tr>
-      <td nowrap="nowrap"><a href="https://intl.cloud.tencent.com/document/product/582">Network File System (NFS)</a></td>
+      <td nowrap="nowrap"><a href="https://www.tencentcloud.com/document/product/582">Network File System (NFS)</a></td>
       <td>You only need to enter the NFS path. You can use a CFS or NFS for file storage. NFS volumes are suitable for the persistent storage of data that is read and written many times. They can also be used in scenarios such as big data analysis, media processing, and content management.</td>
    </tr>
 </table>
@@ -102,8 +97,8 @@ Subnet determines the availability zone. Each availability zone supports differe
 </tr>
 <tr>
 <td>Containers in the Pod</td>
-<td>You can add multiple containers.<ul><li><b>Name</b>: (optional) enter a custom name. If it is left empty, the image name will be used.</li><li><b>Image</b>: you can select an image from TCR Enterprise Edition, TCR Personal Edition, Dockerhub or a third-party image repository.</li><li><b>Image tag</b>: it defaults to `latest` if it is left empty.</li>
-<li><b>Environment variable</b>: you can configure the environment variables for the container.</li>
+<td>You can add multiple containers.<ul><li><b>Name</b>: (Optional) enter a custom name. If it is left empty, the image name will be used.</li><li><b>Image</b>: You can select an image from TCR Enterprise Edition, TCR Personal Edition, Dockerhub or a third-party image repository.</li><li><b>Image tag</b>: It defaults to `latest` if it is left empty.</li>
+<li><b>Environment variable</b>: You can configure the environment variables for the container.</li>
 <li><b>CPU limit</b>: It is left empty by default and the container can use all instance resources. You can set the maximum amount of CPU resources that the container can use.</li>
 <li><b>Memory limit</b>: It is left empty by default and the container can use all instance resources. You can set the maximum amount of memory resources that the container can use.</li>
 <li><b>Health check</b>: For details, see <a href="https://intl.cloud.tencent.com/document/product/457/30669">Health Check for Containers</a>.</li>
@@ -136,43 +131,34 @@ Restart policy is actually the behavior that acts on containers in the Pod. It d
 
 :::
 ::: Log collection
-You can enable the log collection. For more information, see [Enabling Log Collection](https://intl.cloud.tencent.com/zh/document/product/457/46236).
+You can enable the log collection. For more information, see [Enabling Log Collection](https://intl.cloud.tencent.com/document/product/457/46236).
 :::
 ::: Role authorization[](id:CAM)
 You can bind a role to a container instance. For more information, see [Binding a Role to a Container Instance](https://intl.cloud.tencent.com/document/product/457/46237).
 :::
 ::: EIP
 You can bind a container instance to an EIP to access the public network. For more information, see [Accessing Public Network by Binding an EIP](https://intl.cloud.tencent.com/document/product/457/46235).
-<dx-alert infotype="notice" title=" ">
-It is only applicable for users with bill-by-IP accounts.
+<dx-alert infotype="notice" title="">
+This capability is only available to bill-by-IP accounts.
 </dx-alert>
 
 :::
 </dx-tabs>
 
 
-
-
-
-
-
-
 ### Editing a container instance
-
-
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/eksci).
 2. On the list page of container instances, select the region where the instance is located.
 3. Click **More** > **Edit** on the right of the instance to be edited.
 4. Modify the parameters of the instance on **Edit instance** page.
 5. Click **Update instance** when you finished the modification.
-
-
 >?
-- Previous configuration will be cleared when you update the container instance. You need to recreate it.
-- You cannot modify the following parameters for the container instance. Please recreate them if you want to modify.
-  - Region
-  - Network
-  - Security group
-  - Resource specification
+>- Previous configuration will be cleared when you update the container instance. You need to recreate it.
+>- You cannot modify the following parameters for the container instance. Please recreate them if you want to modify.
+>- Region
+>- Network
+>- Security group
+>- Resource specification
+
 

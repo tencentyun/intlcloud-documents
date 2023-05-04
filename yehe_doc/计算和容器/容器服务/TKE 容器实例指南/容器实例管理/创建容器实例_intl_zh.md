@@ -37,14 +37,9 @@
 ### 首次授权
 当您首次使用容器实例 EKSCI 时，需对当前账号授予腾讯云容器服务操作云资源的权限。详情请参见 [服务授权](https://intl.cloud.tencent.com/document/product/457/37808)。若您已为腾讯云容器服务授权，请跳过该步骤。
 
-<dx-alert infotype="explain" title=" ">
+<dx-alert infotype="explain" title="">
 您可在 [访问管理控制台](https://console.cloud.tencent.com/cam/role) 查看是否存在 TKE_QCSRole 角色。
 </dx-alert>
-
-
-
-
-
 
 
 [](id:EKSCI2)
@@ -68,7 +63,7 @@
 <tr>
 <td>容器网络</td>
 <td>为容器实例分配在容器网络地址范围内的 IP 地址。
-<dx-alert infotype="notice" title=" ">
+<dx-alert infotype="notice" title="">
 子网决定了可用区，每个可用区所支持的资源类型不同，例如 AMD、GPU-T4、GPU-V100，请根据提示选择支持所需资源类型的子网。
 </dx-alert>
 </td>
@@ -90,11 +85,11 @@
       <th>描述</th>
    </tr>
    <tr>
-	 <td><a href="https://intl.cloud.tencent.com/document/product/362">云硬盘 CBS</a></td>
+	 <td><a href="https://www.tencentcloud.com/document/product/362">云硬盘 CBS</a></td>
       <td>您可以指定一块腾讯云 CBS 云硬盘挂载到容器的某一路径下，当容器迁移时，云硬盘会随之迁移。使用云硬盘数据卷适用于数据的持久化保存，可用于 Mysql 等有状态服务。设置云硬盘数据卷的服务，实例数量最大为1。</td>
    </tr>
    <tr>
-      <td nowrap="nowrap"><a href="https://intl.cloud.tencent.com/document/product/582">文件存储 NFS</a></td>
+      <td nowrap="nowrap"><a href="https://www.tencentcloud.com/document/product/582">文件存储 NFS</a></td>
       <td>只需填写 NFS 路径，您可以使用腾讯云文件存储 CFS，也可使用自建的文件存储 NFS。使用 NFS 数据卷适用于多读多写的持久化存储，也适用于大数据分析、媒体处理、内容管理等场景。</td>
    </tr>
 </table>
@@ -136,43 +131,34 @@
 
 :::
 ::: 日志采集
-支持开启日志采集功能，详情可参见 [开启日志采集](https://intl.cloud.tencent.com/zh/document/product/457/46236)。
+支持开启日志采集功能，详情可参见 [开启日志采集](https://intl.cloud.tencent.com/document/product/457/46236)。
 :::
 ::: 角色授权[](id:CAM)
 支持给实例绑定一个角色授权。详情请参见 [为容器实例绑定角色](https://intl.cloud.tencent.com/document/product/457/46237)。
 :::
 ::: 弹性公网\sIP
 支持为实例绑定弹性公网 IP，实现与公网互通。详情可参见 [通过绑定弹性公网 IP 访问外网](https://intl.cloud.tencent.com/document/product/457/46235)。
-<dx-alert infotype="notice" title=" ">
-仅带宽上移用户可使用该能力。
+<dx-alert infotype="notice" title="">
+仅标准账户类型（原“带宽上移账户”）用户可使用该能力。
 </dx-alert>
 
 :::
 </dx-tabs>
 
 
-
-
-
-
-
-
 ### 编辑容器实例
-
-
 
 1. 登录 [容器实例控制台](https://console.cloud.tencent.com/tke2/eksci)。
 2. 在容器实例列表页选择实例所在地域。
 3. 单击需要编辑的实例右侧的**更多** > **编辑**。
 4. 在“编辑实例”页，修改实例参数。
 5. 修改完成后，单击**更新实例**。
-
-
 >?
-- 更新容器实例会清除以往配置，重新创建。
-- 容器实例的以下配置不支持修改，若需要修改，请重新创建。
-  - 地域
-  - 网络
-  - 安全组
-  - 资源规格
+>- 更新容器实例会清除以往配置，重新创建。
+>- 容器实例的以下配置不支持修改，若需要修改，请重新创建。
+>    - 地域
+>    - 网络
+>    - 安全组
+>    - 资源规格
+
 

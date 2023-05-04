@@ -1,5 +1,5 @@
 ## 操作场景
-弹性容器服务（Elastic Kubernetes Service，EKS）支持通过配置 [NAT 网关](https://www.tencentcloud.com/document/product/1015) 和 [路由表](https://intl.cloud.tencent.com/document/product/215/31810) 来实现集群内服务访问外网，您可参考本文进行配置。
+TKE Serverless 容器服务支持通过配置 [NAT 网关](https://www.tencentcloud.com/document/product/1015) 和 [路由表](https://intl.cloud.tencent.com/document/product/215/31810) 来实现集群内服务访问外网，您可参考本文进行配置。
 
 ## 操作步骤
 
@@ -7,12 +7,12 @@
 
 ### 创建 NAT 网关[](id:createNAT)
 1. 登录腾讯云私有网络控制台，选择左侧导航栏中的 **[NAT 网关](https://console.cloud.tencent.com/vpc/nat)**。
-2. 在 “NAT网关”页面中，单击**+新建**。
+2. 在 “NAT网关”页面中，单击 **+新建** 。
 3. 在弹出的“新建NAT网关”窗口中参考 [创建 NAT 网关](https://intl.cloud.tencent.com/document/product/1015/30251)，创建与 TKE Serverless 集群同地域、同私有网络 VPC 的 NAT 网关。
 
 ### 创建指向 NAT 网关的路由表[](id:createRouting)
 1. 选择左侧导航栏中的 **[路由表](https://console.cloud.tencent.com/vpc/route)**，进入“路由表”管理页面。
-2. 在“路由表”管理页面，单击**+新建**。
+2. 在“路由表”管理页面，单击 **+新建** 。
 3. 在弹出的“新建路由表”窗口中，参考以下信息创建与 TKE Serverless 集群同地域、同 VPC 的路由表。如下图所示：
 ![](https://main.qcloudimg.com/raw/927234784ea77fba3d1f1ce0de322a5f.png)
 主要参数信息如下：
@@ -25,12 +25,15 @@
 完成配置路由后，需选择子网关联到该路由表，被选择子网内的访问 Internet 的流量将指向 NAT 网关。步骤如下：
 1. 在“路由表”页面中，选择 [创建指向 NAT 网关的路由表](#createRouting) 步骤中已创建路由表所在行右侧的**关联子网**。
 2. 在弹出的“关联子网”窗口中，勾选需关联子网并单击**确定**即可。
-<dx-alert infotype="explain" title=" ">
+<dx-alert infotype="explain" title="">
 此子网为容器网络，并非 Service CIDR。
 </dx-alert>
 完成路由表关联子网后，同 VPC 的资源即可以通过 NAT 网关的外网 IP 访问 Internet。
 
 ## 验证配置
-1. 在“ Serverless 集群”列表页面，单击集群 ID 进入该集群的管理页面。
+1. 在集群列表页面，单击 Serverless 集群 ID 进入该集群的管理页面。
 2. 选择需登录容器所在行右侧的**远程登录**，并执行 ping 命令验证该 Pod 是否可访问外网。返回结果如下所示，则表明已成功访问外网。
 ![](https://main.qcloudimg.com/raw/35fec47afacbe6d9407f61be565bbb24.png)
+
+## 注意事项
+NAT 网关不再自动调整所绑定的 EIP 带宽，若出现镜像拉取超时等问题且 NAT 网关带宽未达上限时，可查询 EIP 带宽是否已达瓶颈并根据实际需求设置 EIP 带宽上限。
