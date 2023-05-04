@@ -56,7 +56,7 @@ You can use the `ResizeDisk` API to expand the specified cloud disks. For more i
 :::
 ::: Online expansion
 <dx-alert infotype="explain" title="">
-CVM supports online capacity expansion for cloud disk serving as system disk, i.e., non-stop capacity expansion. To use this feature, [submit a ticket](https://console.intl.cloud.tencent.com/workorder) for application.
+CVM supports online capacity expansion for cloud disk serving as system disk, i.e., non-stop capacity expansion. 
 </dx-alert>
   1. Read the notes and click **Adjust Now**.
  2. After the capacity expansion operation is completed in the console, log in to the instance to check whether the file system has been automatically expanded.
