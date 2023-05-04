@@ -26,9 +26,9 @@ The following diagram shows the architecture of the liveness detection and face 
 
 You only need to pass in the token and start the corresponding FaceID SDK's liveness detection method to complete liveness detection and return the result.
 
-1. TencentCloud API for obtaining the token: [GetFaceldTokenIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/)
+1. TencentCloud API for obtaining the token: [GetFaceldTokenIntl](https://www.tencentcloud.com/document/product/1061/54556)
 
-2. TencentCloud API for pulling the liveness detection result: [GetFaceIdResultIntl](http://)
+2. TencentCloud API for pulling the liveness detection result: [GetFaceIdResultIntl](https://www.tencentcloud.com/document/product/1061/54557)
 
 The following diagram shows the overall logic of interaction between the SDK, client, and server:
 
@@ -38,16 +38,16 @@ The following diagram shows the overall logic of interaction between the SDK, cl
 
 1. The customer triggers the merchant application on the terminal to call the liveness verification service scenario.
 2. The merchant application sends a request to the merchant server to notify that the liveness detection service token is required for starting liveness verification once.
-3. The merchant server passes in relevant parameters to call the TencentCloud API [GetFaceldTokenIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/).
-4. After receiving the request for calling [GetFaceldTokenIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/), the FaceID SaaS delivers the service token to the merchant server.
+3. The merchant server passes in relevant parameters to call the TencentCloud API [GetFaceldTokenIntl](https://www.tencentcloud.com/document/product/1061/54556).
+4. After receiving the request for calling [GetFaceldTokenIntl](https://www.tencentcloud.com/document/product/1061/54556), the FaceID SaaS delivers the service token to the merchant server.
 5. The merchant server delivers the obtained service token to the customer's merchant application.
 6. The merchant application calls the FaceID SDK's startup API **startHuiYanAuth** to pass in the token and configuration information and starts liveness verification.  
 7. The FaceID SDK captures and uploads the required user data, including liveness data, to the FaceID SaaS.
 8. The FaceID SaaS returns the verification result to the FaceID SDK after completing liveness verification (including the liveness detection and face comparison).
 9. The FaceID SDK actively triggers callback to notify the merchant application that the verification is complete and of the verification status.
 10. After receiving the callback, the merchant application sends a request to notify the merchant server to obtain the verification result for confirmation.  
-11. The merchant server actively calls the FaceID SaaS API [GetFaceIdResultIntl](http://) to pass in the relevant parameters and service token and obtain the verification result.
-12. After receiving the request for calling [GetFaceIdResultIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/), the FaceID SaaS returns the verification result to the merchant server.
+11. The merchant server actively calls the FaceID SaaS API [GetFaceIdResultIntl](https://www.tencentcloud.com/document/product/1061/54557) to pass in the relevant parameters and service token and obtain the verification result.
+12. After receiving the request for calling [GetFaceIdResultIntl](https://www.tencentcloud.com/document/product/1061/54557), the FaceID SaaS returns the verification result to the merchant server.
 13. After receiving the verification result, the merchant server delivers the required information to the merchant application.
 14. The merchant application displays the final result on the UI to notify the customer of the verification result.
 
@@ -59,11 +59,11 @@ The following diagram shows the overall logic of interaction between the SDK, cl
 
 #### 1. Integration preparations
 
-Before server integration, you need to activate the Tencent Cloud FaceID service and obtain TencentCloud API access key SecretId and SecretKey by following the instructions in [Getting API Key](https://console.tencentcloud.com/cam/capi). In addition, you need to follow the instructions in [Connecting to TencentCloud API] (https://iwiki.woa.com/pages/viewpage.action?pageId=4007951224) to import the SDK package with the programming language you are familiar with to your server modules, to ensure that the TencentCloud API can be successfully called and API requests and responses can be properly processed.
+Before server integration, you need to activate the Tencent Cloud FaceID service and obtain TencentCloud API access key SecretId and SecretKey by following the instructions in [Getting API Key](https://console.tencentcloud.com/cam/capi). In addition, you need to follow the instructions in [Connecting to TencentCloud API](https://iwiki.woa.com/pages/viewpage.action?pageId=4007951224) to import the SDK package with the programming language you are familiar with to your server modules, to ensure that the TencentCloud API can be successfully called and API requests and responses can be properly processed.
 
 #### 2. Integration process
 
-To ensure that your (merchant) client application interacts with your (merchant) server, the merchant server needs to call the API [**GetFaceIdTokenIntl**](http://) provided by FaceID to obtain `SDKToken`, which is used throughout the liveness detection and face comparison process and used by the API [**GetFaceIdResultIntl**](http://) to obtain the liveness comparison result. The merchant server also needs to provide the corresponding endpoint for the merchant client to call. The following sample code with the Golang language is used as an example to show how to call TencentCloud API on the server and obtain the correct response.
+To ensure that your (merchant) client application interacts with your (merchant) server, the merchant server needs to call the API [**GetFaceIdTokenIntl**](https://www.tencentcloud.com/document/product/1061/54556) provided by FaceID to obtain `SDKToken`, which is used throughout the liveness detection and face comparison process and used by the API [**GetFaceIdResultIntl**](https://www.tencentcloud.com/document/product/1061/54557) to obtain the liveness comparison result. The merchant server also needs to provide the corresponding endpoint for the merchant client to call. The following sample code with the Golang language is used as an example to show how to call TencentCloud API on the server and obtain the correct response.
 
 **Note**: This example only demonstrates the processing logic required for interaction between the merchant server and TencentCloud API service. If necessary, you need to implement your own business logic, for example: 
 
@@ -95,10 +95,10 @@ func GetFaceIdToken(w http.ResponseWriter, r *http.Request) {
 	var SecureLevel = r.FormValue("SecureLevel")
 
 	// Step 2: instantiate the request object and provide necessary parameters
-	request := faceid.NewApplyLivenessTokenRequest()
+	request := faceid.NewGetFaceIdTokenIntlRequest()
 	request.SecureLevel = &SecureLevel
 	// Step 3: call the Tencent Cloud API through FaceIdClient
-	response, err := FaceIdClient.ApplyLivenessToken(request)
+	response, err := FaceIdClient.GetFaceIdTokenIntl(request)
 
 	// Step 4: process the Tencent Cloud API response and construct the return object
 	if nil != err {
@@ -123,10 +123,10 @@ func GetFaceIdResult(w http.ResponseWriter, r *http.Request) {
 	_ = r.ParseForm()
 	SdkToken := r.FormValue("SdkToken")
 	// Step 2: instantiate the request object and provide necessary parameters
-	request := faceid.NewGetLivenessResultRequest()
+	request := faceid.NewGetFaceIdResultIntlRequest()
 	request.SdkToken = &SdkToken
 	// Step 3: call the Tencent Cloud API through FaceIdClient
-	response, err := FaceIdClient.GetLivenessResult(request)
+	response, err := FaceIdClient.GetFaceIdResultIntl(request)
 
 	// Step 4: process the Tencent Cloud API response and construct the return object
 	if nil != err {
@@ -145,7 +145,7 @@ func GetFaceIdResult(w http.ResponseWriter, r *http.Request) {
 	_, _ = w.Write(b)
 }
 
-func main(){
+func main() {
 	// expose endpoints
 	http.HandleFunc("/api/v1/get-token", GetFaceIdToken)
 	http.HandleFunc("/api/v1/get-result", GetFaceIdResult)

@@ -26,9 +26,9 @@
 
 集成方只需要传入Token并启动对应的慧眼SDK的活体检测方法，便可以完成活体检测，并返回活体结果。
 
-1. Token的获取可以参考云API接口：[GetFaceldTokenIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/)
+1. Token的获取可以参考云API接口：[GetFaceldTokenIntl](https://www.tencentcloud.com/document/product/1061/54556)
 
-2. 用户主动拉取活体结果的云API接口: [GetFaceIdResultIntl](http://)
+2. 用户主动拉取活体结果的云API接口: [GetFaceIdResultIntl](https://www.tencentcloud.com/document/product/1061/54557)
 
 下图展示了SDK、客户端以及服务器端的整体交互逻辑，图中负责模块解析：
 
@@ -38,16 +38,16 @@
 
 1. 用户触发终端 Merchant Application 准备调用核身业务场景。
 2. Merchant Application 发送请求到 Merchant Server，告知启动一次核身业务需要活体业务Token。
-3. Merchant Server 传入相关参数调用云API接口[GetFaceldTokenIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/)。
-4. FaceID SaaS 接收到[GetFaceldTokenIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/)调用后，下发此次业务的token给 Merchant Server。
+3. Merchant Server 传入相关参数调用云API接口[GetFaceldTokenIntl](https://www.tencentcloud.com/document/product/1061/54556)。
+4. FaceID SaaS 接收到[GetFaceldTokenIntl](https://www.tencentcloud.com/document/product/1061/54556)调用后，下发此次业务的token给 Merchant Server。
 5. Merchant Server可以将获取到的业务Token，下发给客户的 Merchant Application。
 6. Merchant Application 调用慧眼SDK的启动接口**startHuiYanAuth**传入token与配置信息，开始核身验证。
 7. FaceID SDK 捕捉并上传所需的用户数据，包括活体数据等，上传至 FaceID SaaS 。
 8. FaceID SaaS 在完成核身检测（包括活体与比对流程）以后，会返回结果给 FaceID SDK 。
 9. FaceID SDK 主动触发回调给 Merchant Application 通知核验完成以及核验状态。
 10. Merchant Application 接收到回调以后，可以发送请求通知 Merchant Server去主动获取本次核身的结果，进行确认检查。
-11. Merchant Server主动调用 FaceID SaaS 的接口[GetFaceIdResultIntl](http://)传入相关参数以及本次业务的Token，去获取本次核身的结果。
-12. FaceID SaaS 接收到[GetFaceIdResultIntl](https://xn--todo:-1j5hv03dzqg65khptt93cx0w9j0b/)调用后，会返回本次核身的结果到 Merchant Server。
+11. Merchant Server主动调用 FaceID SaaS 的接口[GetFaceIdResultIntl](https://www.tencentcloud.com/document/product/1061/54557)传入相关参数以及本次业务的Token，去获取本次核身的结果。
+12. FaceID SaaS 接收到[GetFaceIdResultIntl](https://www.tencentcloud.com/document/product/1061/54557)调用后，会返回本次核身的结果到 Merchant Server。
 13. Merchant Server接收到本次核身的结果后，可以下发需要的信息到 Merchant Application。
 14.  Merchant Application 展示最后的结果，呈现在UI界面上，告知用户核身的结果。
 
@@ -59,11 +59,11 @@
 
 #### 1、集成准备
 
-在服务端集成之前，你需要按照[获取API秘钥指引](http://)中的说明进行操作，开通腾讯云慧眼服务，并且拿到了腾讯云api访问秘钥SecretId和SecretKey。除此之外你还需要按照[连接腾讯云API接口](https://iwiki.woa.com/pages/viewpage.action?pageId=4007951224)中的操作流程，引入你所熟悉开发语言的SDK包到你服务端模块中，以确保可以成功调用腾讯云API以及正确处理API请求和响应。
+在服务端集成之前，你需要按照[获取API秘钥指引](https://console.tencentcloud.com/cam/capi)中的说明进行操作，开通腾讯云慧眼服务，并且拿到了腾讯云api访问秘钥SecretId和SecretKey。除此之外你还需要按照[连接腾讯云API接口](https://iwiki.woa.com/pages/viewpage.action?pageId=4007951224)中的操作流程，引入你所熟悉开发语言的SDK包到你服务端模块中，以确保可以成功调用腾讯云API以及正确处理API请求和响应。
 
 #### 2、开始集成
 
-为了确保你的（商户）客户端应用程序能够跟你的（商户）服务端正常交互，商户服务端需要调用慧眼提供的API接口 [**GetFaceIdTokenIntl**](http://) 获取SDKToken串联整个活体比对流程以及调用 [**GetFaceIdResultIntl**](http://) 接口获取活体比对结果，商户服务端需要提供相应的端点给商户客户端调用，下面的示例代码使用 Golang语言作为案例，展示如何在服务端调用腾讯云API接口并拿到正确的响应结果。
+为了确保你的（商户）客户端应用程序能够跟你的（商户）服务端正常交互，商户服务端需要调用慧眼提供的API接口 [**GetFaceIdTokenIntl**](https://www.tencentcloud.com/document/product/1061/54556) 获取SDKToken串联整个活体比对流程以及调用 [**GetFaceIdResultIntl**](https://www.tencentcloud.com/document/product/1061/54557) 接口获取活体比对结果，商户服务端需要提供相应的端点给商户客户端调用，下面的示例代码使用 Golang语言作为案例，展示如何在服务端调用腾讯云API接口并拿到正确的响应结果。
 
 **注意：** 该示例中仅仅演示商户服务端与腾讯云API服务交互所需要的处理逻辑，如果有需要的话你需要自己实现你的业务逻辑，比如：
 
@@ -95,10 +95,10 @@ func GetFaceIdToken(w http.ResponseWriter, r *http.Request) {
 	var SecureLevel = r.FormValue("SecureLevel")
 
 	// Step 2: instantiate the request object and provide necessary parameters
-	request := faceid.NewApplyLivenessTokenRequest()
+	request := faceid.NewGetFaceIdTokenIntlRequest()
 	request.SecureLevel = &SecureLevel
 	// Step 3: call the Tencent Cloud API through FaceIdClient
-	response, err := FaceIdClient.ApplyLivenessToken(request)
+	response, err := FaceIdClient.GetFaceIdTokenIntl(request)
 
 	// Step 4: process the Tencent Cloud API response and construct the return object
 	if nil != err {
@@ -123,10 +123,10 @@ func GetFaceIdResult(w http.ResponseWriter, r *http.Request) {
 	_ = r.ParseForm()
 	SdkToken := r.FormValue("SdkToken")
 	// Step 2: instantiate the request object and provide necessary parameters
-	request := faceid.NewGetLivenessResultRequest()
+	request := faceid.NewGetFaceIdResultIntlRequest()
 	request.SdkToken = &SdkToken
 	// Step 3: call the Tencent Cloud API through FaceIdClient
-	response, err := FaceIdClient.GetLivenessResult(request)
+	response, err := FaceIdClient.GetFaceIdResultIntl(request)
 
 	// Step 4: process the Tencent Cloud API response and construct the return object
 	if nil != err {
