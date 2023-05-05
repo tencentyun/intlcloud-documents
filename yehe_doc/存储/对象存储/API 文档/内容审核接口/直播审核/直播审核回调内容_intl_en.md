@@ -1,8 +1,10 @@
-## Feature Description
+## Feature Overview
 
 If you have configured a moderation callback address, after live stream moderation is completed, the backend will call back the moderation result in JSON format to the callback address. You can perform subsequent processing operations based on the callback content.
 
 The callback content is divided into simple callback (Simple) and detailed callback (Detail).
+
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/QLJ4586_PRELIM__%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US.jpeg)
 
 ## Callback Content Description
 
@@ -38,7 +40,7 @@ The nodes are as described below:
 
 | Parameter | Description | Type | Required |
 | :------- | :----------------------------------------------------------- | :------ | :------- |
-| code | Error code. 0: moderation succeeded; other values: moderation failed. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/33700). | Integer | Yes |
+| code | Error code. 0: moderation succeeded; other values: moderation failed. For more information, see [Error Codes](https://www.tencentcloud.com/document/product/1045/33700). | Integer | Yes |
 | message | Error message. | String | Yes |
 | data | Details of the live stream moderation result. | Object | Yes |
 
@@ -60,8 +62,8 @@ The nodes are as described below:
 
 | Parameter | Description | Type | Required |
 | :------- | :------------------------------------------------------ | :------ | :------- |
-| hit_flag | The moderation result returned for the moderation scene. Returned values: <ul  style="margin: 0;"><li>0: Normal. </li><li>1: Confirmed as a violation of the current scene. </li><li>2: Suspected as a violation of the current scene. </li></ul> | Integer | Yes       |
-| label | Hit tag name, which is empty currently. | String | Yes |
+| hit_flag | The moderation result returned for the moderation scene. Return values: <ul  style="margin: 0;"><li>0: Normal. </li><li>1: Confirmed as a violation of the current scene. </li><li>2: Suspected as a violation of the current scene. </li></ul> | Integer | Yes       |
+| label | Hit label name, which is empty currently. | String | Yes |
 | count | The number of sensitive screenshots that hit the moderation scene. | Integer | Yes |
 
 
@@ -142,16 +144,16 @@ The response body returns **application/json** data. The following contains all 
 
 The nodes are as described below:
 
-| Node Name (Keyword)         | Description                               | Type   |
+| Node Name (Keyword) | Description                        | Type   |
 | :----------------- | :---------------------------- | :----- |
 | JobsDetail         | Job result details.         | Object |
 | EventName          | Job type: ReviewVideo. | String |
 
 `JobsDetail` has the following sub-nodes:
 
-| Node Name (Keyword)         | Description                               | Type   |
+| Node Name (Keyword) | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :-------- |
-| Code               | Error code, which will be returned only if `State` is `Failed`. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611). | String |
+| Code               | Error code, which will be returned only if `State` is `Failed`. For more information, see [Error Codes](https://www.tencentcloud.com/document/product/1045/33700). | String |
 | Message            | Error message, which will be returned only if `State` is `Failed`. | String |
 | JobId              | Moderation job ID. | String |
 | DataId             | The original content will be returned if the `DataId` parameter is set when the job is submitted, which can contain up to 512 bytes. | String  |
@@ -159,7 +161,7 @@ The nodes are as described below:
 | CreationTime       | Creation time of the live stream moderation job. | String |
 | Url             | The URL of the live stream to be moderated. | String |
 | SnapshotCount      | The total number of screenshots. In the callback where the live stream status is `Auditing`, this field indicates the number of screenshots included in the callback. | Integer |
-| Label              | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. <br/>Returned values: `Normal`, `Porn`, and `Ads`. | String  |
+| Label              | This field is used to return the **maliciousness label with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. <br/>Return values: `Normal`, `Porn`, and `Ads`. | String  |
 | Result             | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results based on your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer |
 | PornInfo           | The moderation result of the **pornographic information** moderation scene.                           | Object  |
 | AdsInfo            | The moderation result of the **advertising information** moderation scene.                       | Object  |
@@ -177,7 +179,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Description | Type |
 | :----------------- | :------------------------------------------------------ | :------ |
-| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), and `2` (suspected). | Integer |
+| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), `2` (suspected). | Integer |
 | Count              | The number of screenshots that hit this moderation scene.                              | Integer |
 
 `Snapshot` has the following sub-nodes:
@@ -187,7 +189,7 @@ The nodes are as described below:
 | Url | URL of the current live stream screenshot, at which you can view the screenshot. It must be a standard URL. <br/>Note: Each URL is valid for two hours. If you need to view the data after two hours, initiate a new query request. | String |
 | SnapshotTime       | This field returns the timestamp of the current screenshot in milliseconds, such as 1649387157000.  | Integer |
 | Text | This field is used to return the OCR text recognition result of the current screenshot. It will be returned only if text content detection is enabled in the moderation policy. | String |
-| Label              | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. <br/>Returned values: `Normal`, `Porn`, and `Ads`. | String  |
+| Label              | This field is used to return the **maliciousness label with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. <br/>Return values: `Normal`, `Porn`, `Ads`. | String  |
 | Result             | This field indicates the moderation result. You can perform subsequent operations based on the result. We recommend you handle different results based on your business needs. <br/>Valid values: `0` (normal), `1` (sensitive), and `2` (suspiciously sensitive, with human review recommended). | Integer |
 | PornInfo           | The moderation result of the **pornographic information** moderation scene.                           | Object  |
 | AdsInfo            | The moderation result of the **advertising information** moderation scene.                       | Object  |
@@ -196,11 +198,11 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :-------------- |
-| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), and `2` (suspected). | Integer |
+| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), `2` (suspected). | Integer |
 | Score              | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. <br/>For example, `Porn 99` means that the content is very likely to be pornographic. | Integer |
-| Label | This field indicates the overall result tag of the screenshot, which may be `SubLabel`, a person name, etc. | String |
+| Label | This field indicates the overall result label of the screenshot, which may be `SubLabel`, a person name, etc. | String |
 | Category           | This field indicates the specific hit moderation type. <br/>Note: This field may return null.      | String          |
-| SubLabel           | This field indicates the specific sub-tag hit by the moderation job; for example, `SexBehavior` is a sub-tag under the `Porn` tag.<br/>Note: This field may return null, indicating that no specific sub-tags are hit. | String |
+| SubLabel           | This field indicates the specific sub-label hit by the moderation job; for example, `SexBehavior` is a sub-label under the `Porn` label.<br/>Note: This field may return null, indicating that no specific sub-labels are hit. | String |
 | OcrResults | This field represents the detailed OCR result, including the text coordinate information and text recognition result. It will be returned if there is non-compliant content. | Array |
 | LibResults         | This field returns results based on recognition against the risk library. <br/>Note: This field will not be returned if no samples in the risk library are hit. | Container Array |
 
@@ -209,7 +211,7 @@ The nodes are as described below:
 | Node Name (Keyword) | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :------ |
 | ImageId            | This field represents the hit image sample ID in the risk library.                       | String  |
-| Score              | This field returns the confidence under the current tag. Value range: 0–100.  The higher the value, the more likely the image hits a sample in the risk library.  For example, `Porn 99` means that the content is very likely to hit a pornographic sample in the library. | Integer |
+| Score              | This field returns the confidence under the current label. Value range: 0–100.  The higher the value, the more likely the image hits a sample in the risk library.  For example, `Porn 99` means that the content is very likely to hit a pornographic sample in the library. | Integer |
 
 `OcrResults` has the following sub-nodes:
 
@@ -244,7 +246,7 @@ The nodes are as described below:
 | Text | This field is used to return the ASR text recognition result of the current live stream sound segment. | String |
 | OffsetTime         | This field returns the timestamp of the current sound segment in milliseconds, such as 1649387157000. | Integer |
 | Duration | The duration of the current sound segment in milliseconds. | Integer |
-| Label              | This field is used to return the **maliciousness tag with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. <br/>Returned values: `Normal`, `Porn`, and `Ads`. | String  |
+| Label              | This field is used to return the **maliciousness label with the highest priority** in the detection result, which represents the moderation result suggested by the model. We recommend you handle different types of violations and suggestions based on your business needs. <br/>Return values: `Normal`, `Porn`, and `Ads`. | String  |
 | Result | Recognition result for reference. Valid values: `0` (normal), `1` (sensitive), `2` (suspiciously sensitive). | Integer |
 | PornInfo           | The moderation result of the **pornographic information** moderation scene.                           | Object  |
 | AdsInfo            | The moderation result of the **advertising information** moderation scene.                       | Object  |
@@ -253,7 +255,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Description | Type |
 | :----------------- | :----------------------------------------------------------- | :-------------- |
-| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), and `2` (suspected). | Integer |
+| HitFlag            | Whether the moderation type is hit. Valid values: `0` (miss), `1` (hit), `2` (suspected). | Integer |
 | Score              | The confidence the moderation result hits the moderation scene. Value range: 0–100. The higher the value, the more likely the content hits the currently returned moderation scene. <br/>For example, `Porn 99` means that the content is very likely to be pornographic. | Integer |
 | Category           | This field indicates the specific hit moderation type. <br/>Note: This field may return null.      | String          |
 | Keywords           | Keywords hit by the current moderation scene. Nothing will be returned if there is none.  | Array  |
@@ -269,7 +271,7 @@ The nodes are as described below:
 
 `UserInfo` has the following sub-nodes:
 
-| Node Name (Keyword) | Description | Type | Required |
+| Node Name (Keyword)  | Description                                                         | Type   | Required |
 | :----------------- | :-------------------------------------------------- | :----- | :------- |
 | TokenId            | Account information, which can contain up to 128 bytes.           | String | No       |
 | Nickname           | Nickname information, which can contain up to 128 bytes.           | String | No       |
@@ -285,7 +287,7 @@ The nodes are as described below:
 
 `ListInfo` has the following sub-nodes:
 
-| Node Name (Keyword) | Description | Type |
+| Node Name (Keyword) | Description                        | Type   |
 | :----------------- | :------------------- | :-------------- |
 | ListResults        | Results in all hit lists. | Container Array |
 
@@ -298,7 +300,7 @@ The nodes are as described below:
 | Entity             | Entity hit in the list.                         | String  |
 
 
-## Samples
+## Examples
 
 #### Sample 1: Simple callback (Simple)
 

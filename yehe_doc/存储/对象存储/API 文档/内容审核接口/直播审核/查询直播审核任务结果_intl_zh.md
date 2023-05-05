@@ -2,6 +2,7 @@
 
 本接口用于主动查询指定的直播审核任务结果。直播审核功能为异步任务方式，您可以通过提交直播审核任务审核您的直播流，然后通过查询直播审核任务接口轮询获取审核结果。
 
+
 ## 请求
 
 #### 请求示例
@@ -15,7 +16,7 @@ Authorization: <Auth String>
 
 >? 
 > - Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
-> - 通过子账号使用时，需要授予相关的权限，详情请参见数据万象授权粒度详情文档。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [数据万象授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 > 
 
 #### 请求头
@@ -120,7 +121,7 @@ Container 节点 JobsDetail 的内容：
 
 | 节点名称（关键字） | 父节点              | 描述                                                         | 类型             |
 | :----------------- | :------------------ | :----------------------------------------------------------- | :--------------- |
-| Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时返回。详情请查看 [错误码列表](https://intl.cloud.tencent.com/document/product/1045/43611)。 | String           |
+| Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时返回。详情请查看 [错误码列表](https://intl.cloud.tencent.com/document/product/1045/33700)。 | String           |
 | Message            | Response.JobsDetail | 错误描述，只有 State 为 Failed 时返回。                         | String           |
 | DataId             | Response.JobsDetail | 提交任务时设置了 DataId 参数时返回，返回原始内容，长度限制为512字节。您可以使用该字段对待审核的数据进行唯一业务标识。 |   String |
 | JobId              | Response.JobsDetail | 直播审核任务的 ID。                                          | String           |
@@ -248,7 +249,7 @@ Container 节点 UserInfo 的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/33700) 文档。
 
 ## 实际案例
 

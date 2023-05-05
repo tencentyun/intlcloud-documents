@@ -13,8 +13,8 @@
 - 支持设置回调地址 Callback 获取检测结果，或通过 [查询直播审核任务结果](https://intl.cloud.tencent.com/document/product/436/48279) 主动轮询获取审核结果详情。
 - 支持识别多种违规场景，包括：色情、违法、广告等场景。
 <span id=1></span>
-- 支持根据不同的业务场景配置自定义的审核策略。
-- 支持用户自定义配置风险库，打击自定义违规内容。
+- 支持根据不同的业务场景 [配置自定义的审核策略](https://intl.cloud.tencent.com/document/product/1045/52107)。
+- 支持用户 [自定义配置风险库](https://intl.cloud.tencent.com/document/product/436/52096)，打击自定义违规内容。
 
 ## 费用说明
 
@@ -35,6 +35,10 @@
 - 支持的直播流媒体协议：rmtp、hls、http、https 等主流协议。
 - 默认并发审核路数限制：10路，超过并发审核路数，接口会返回错误。
 
+## 推荐使用 SDK
+
+对象存储 SDK 提供了完整的 Demo、自动集成、计算签名等能力。您可通过 SDK 方便快捷地调用接口。[点此查看 SDK 文档](https://intl.cloud.tencent.com/document/product/436/6474)。
+
 ## 请求
 
 #### 请求示例
@@ -50,9 +54,10 @@ Content-Type: application/xml
 <body>
 ```
 
->? 
->- Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->- 通过子账号使用时，需要授予相关的权限，详情请参见数据万象授权粒度详情文档。
+> ?
+>
+> - Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [数据万象授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
 
 #### 请求头
 
@@ -90,6 +95,7 @@ Container 类型 Request 的具体数据描述如下：
 | Type               | Request | 审核的任务类型，直播流审核固定为 live_video。 | String    | 是       |
 | Input              | Request | 包含需要审核的直播流信息。                   | Container | 是       |
 | Conf               | Request | 包含审核规则的配置信息。                     | Container | 是       |
+| StorageConf        | Request | 包含直播流转存的配置信息。                   | Container | 否       |
 
 Container 类型 Input 的具体数据描述如下：
 
@@ -120,9 +126,16 @@ Container 类型 Conf 的具体数据描述如下：
 
 | 节点名称（关键字） | 父节点       | 描述                                                         | 类型    | 是否必选 |
 | ------------------ | ------------ | ------------------------------------------------------------ | ------- | -------- |
-| BizType            | Request.Conf | 表示审核策略的唯一标识，您可以通过控制台上的审核策略页面，配置您希望审核的场景，例如涉黄、广告、违法违规等，配置指引： [设置审核策略](#1)。您可以在控制台上获取到 BizType。BizType 填写时，此条审核请求将按照该审核策略中配置的场景进行审核。<br/>BizType 不填写时，将自动使用默认的审核策略。 | String  | 是       |
+| BizType            | Request.Conf | 表示审核策略的唯一标识，您可以通过控制台上的审核策略页面，配置您希望审核的场景，例如涉黄、广告、违法违规等，配置指引： [设置审核策略](#1)。您可以在控制台上获取到 BizType。BizType 填写时，此条审核请求将按照该审核策略中配置的场景进行审核。BizType 不填写时，将自动使用默认的审核策略。 | String  | 是       |
 | Callback           | Request.Conf | 回调地址，以`http://`或者`https://`开头的地址。              | String  | 否       |
 | CallbackType       | Request.Conf | 回调片段类型，有效值：1（回调全部截帧和音频片段）、2（仅回调违规截帧和音频片段）。默认为 1。 | Integer | 否       |
+
+Container 类型 StorageConf 的具体数据描述如下：
+
+| 节点名称（关键字） | 父节点       | 描述                                                         | 类型    | 是否必选 |
+| ----------- | ------------------- | ------------------------------------------------------------ | ------- | -------- |
+| Path        | Request.StorageConf | 表示直播流所要转存的路径，直播流的 ts 文件和 m3u8 文件将保存在本桶该目录下。m3u8 文件保存文件名为 Path/{$JobId}.m3u8，ts 文件的保存文件名为 Path/{$JobId}-{$Realtime}.ts，其中 Realtime 为17位`年月日时分秒毫秒`时间。 | String  | 否       |
+
 
 ## 响应
 
@@ -170,7 +183,7 @@ Container 节点 JobsDetail 的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/33700) 文档。
 
 ## 实际案例
 

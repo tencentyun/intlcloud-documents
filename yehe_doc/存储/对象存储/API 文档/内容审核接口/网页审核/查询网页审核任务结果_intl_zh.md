@@ -5,6 +5,10 @@
 >? 网页审核任务结果保存时效为3个月，您可通过本接口查询近3个月的审核结果。
 >
 
+## 推荐使用 SDK
+
+对象存储 SDK 提供了完整的 Demo、自动集成、计算签名等能力。您可通过 SDK 方便快捷地调用接口。[点此查看 SDK 文档](https://intl.cloud.tencent.com/document/product/436/6474)。
+
 ## 请求
 
 #### 请求示例
@@ -16,8 +20,10 @@ Date: <GMT Date>
 Authorization: <Auth String>
 ```
 
->? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
+> 
 
 #### 请求头
 
@@ -107,7 +113,7 @@ Container 节点 JobsDetail 的内容：
 
 | 节点名称（关键字） | 父节点              | 描述                                                         | 类型      |
 | :----------------- | :------------------ | :----------------------------------------------------------- | :-------- |
-| Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时返回，详情请查看 [错误码列表](https://intl.cloud.tencent.com/document/product/1045/43611)。 | String    |
+| Code               | Response.JobsDetail | 错误码，只有 State 为 Failed 时返回，详情请查看 [错误码列表](https://intl.cloud.tencent.com/document/product/1045/33700)。 | String    |
 | Message            | Response.JobsDetail | 错误描述，只有 State 为 Failed 时返回。                      | String    |
 | JobId              | Response.JobsDetail | 网页审核任务的 ID。                                          | String    |
 | DataId             | Response.JobsDetail | 提交任务时设置了 DataId 参数时返回，返回原始内容，长度限制为512字节。您可以使用该字段对待审核的数据进行唯一业务标识。 | String    |
@@ -227,7 +233,7 @@ Container 节点 UserInfo 的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/33700) 文档。
 
 ## 实际案例
 

@@ -1,20 +1,24 @@
-## Feature Description
+## Feature Overview
 
-This API is used to submit a webpage moderation job. The webpage moderation feature is async. You can submit a job to moderate your webpage files, and then use the API for [Querying Webpage Moderation Job Result](https://intl.cloud.tencent.com/document/product/436/48283) or [Webpage Moderation Callback Content](https://intl.cloud.tencent.com/document/product/436/48284) to query the moderation results.
+This API is used to submit a webpage moderation job. The webpage moderation feature is async. You can submit a job to moderate your webpage files, and then use the API for [Querying Webpage Moderation Job Result](https://www.tencentcloud.com/document/product/436/48283) or [Webpage Moderation Callback Content](https://www.tencentcloud.com/document/product/436/48284) to query the moderation results.
 
 The API supports the following operations:
 
 - Automatically detect webpage files and recognize non-compliant content in OCR, object detection (such as object, advertising logo, and QR code), and image recognition dimensions based on the deep learning technology.
-- Recognize various non-compliant scenes, including pornographic, illegal, and adverting information.
+- Recognize various non-compliant scenes, including pornographic, illegal, and advertising information.
 
-## Billing Description
+## Billing Details
 
 Webpage moderation is divided into **webpage image moderation** and **webpage text moderation** as detailed below:
 
 - Webpage image moderation: This service extracts images from the webpage for moderation. The moderation fees are the same as those incurred by image moderation.
 - Webpage text moderation: This service extracts text from the webpage for moderation. The moderation fees are the same as those incurred by text moderation.
-- Each moderation scene is billed separately. For example, if you choose to moderate **one webpage file** in two scenes involving pornography and advertising, you will be charged **twice**.
-- Calling the API will incur image moderation fees, text moderation fees, and [COS read request fees](https://intl.cloud.tencent.com/document/product/436/40100).
+- Each moderation scene is billed separately. For example, if you choose to moderate two scenes involving pornography and advertising, then **one webpage file** will be moderated and billed **twice**.
+- Calling the API will incur image moderation fees, text moderation fees, and [COS read request fees](https://www.tencentcloud.com/document/product/436/40100).
+
+## SDK Recommendation
+
+COS SDK provides complete capabilities of demo, automatic integration, and signature calculation. You can easily and quickly call APIs through the SDK. For more information, see [SDK Overview](https://www.tencentcloud.com/document/product/436/6474).
 
 ## Request
 
@@ -31,12 +35,14 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String (for more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
->
+>? 
+> - Authorization: Auth String (see [Request Signature](https://www.tencentcloud.com/document/product/436/7778) for more information)
+> - When this feature is used by a sub-account, relevant permissions must be granted as instructed in [Authorization Granularity Details](https://www.tencentcloud.com/document/product/1045/49896).
+> 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/1045/43609).
+This API only uses [Common Request Headers](https://www.tencentcloud.com/document/product/1045/43609).
 
 #### Request body
 
@@ -46,16 +52,18 @@ This request requires the following request body:
 <Request>
   <Input>
     <Url></Url>
+		<DataId></DataId>
+		<UserInfo></UserInfo>
   </Input>
   <Conf>
-    <DetectType>Porn,Ads</DetectType>
+    <Biztype></Biztype>
     <Callback></Callback>
     <ReturnHighlightHtml>true</ReturnHighlightHtml>
   </Conf>
 </Request>
 ```
 
-The nodes are as described below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----- | :--------------------- | :-------- | :------- |
@@ -65,7 +73,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :------ | :------------------- | :-------- | :------- |
-| Input | Request | Webpage to be moderated. | Container | Yes |
+| Input              | Request | Webpage to be moderated.                   | Container | Yes       |
 | Conf | Request | Moderation rule configuration. | Container | Yes |
 
 `Input` has the following sub-nodes:
@@ -80,20 +88,24 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :---------------- | :--------------------- | :------------------------------------------------------ | :----- | :------- |
-| TokenId           | Request.Input.UserInfo | Business `TokenId`, which can contain up to 128 bytes.                      | String | No       |
-| Nickname          | Request.Input.UserInfo | Business `Nickname`, which can contain up to 128 bytes.                     | String | No       |
-| DeviceId          | Request.Input.UserInfo | Business `DeviceId`, which can contain up to 128 bytes.                     | String | No       |
-| AppId             | Request.Input.UserInfo | Business `AppId`, which can contain up to 128 bytes.                         | String | No       |
-| Room              | Request.Input.UserInfo | Business `Room`, which can contain up to 128 bytes.                          | String | No       |
-| IP                | Request.Input.UserInfo | Business `IP`, which can contain up to 128 bytes.                            | String | No       |
-| Type              | Request.Input.UserInfo | Business `Type`, which can contain up to 128 bytes.                          | String | No       |
+| TokenId            | Request.Input.UserInfo | Account information, which can contain up to 128 bytes.           | String | No       |
+| Nickname           | Request.Input.UserInfo | Nickname information, which can contain up to 128 bytes.           | String | No       |
+| DeviceId           | Request.Input.UserInfo | Device information, which can contain up to 128 bytes.           | String | No       |
+| AppId              | Request.Input.UserInfo | Unique app ID, which can contain up to 128 bytes.           | String | No       |
+| Room               | Request.Input.UserInfo | Room ID information, which can contain up to 128 bytes.           | String | No       |
+| IP                 | Request.Input.UserInfo | IP address information, which can contain up to 128 bytes.           | String | No       |
+| Type               | Request.Input.UserInfo | Business type, which can contain up to 128 bytes.           | String | No       |
+| ReceiveTokenId     | Request.Input.UserInfo | User account to receive messages, which can contain up to 128 bytes.           | String | No       |
+| Gender             | Request.Input.UserInfo | Gender information, which can contain up to 128 bytes.           | String | No       |
+| Level              | Request.Input.UserInfo | Level information, which can contain up to 128 bytes.           | String | No       |
+| Role               | Request.Input.UserInfo | Role information, which can contain up to 128 bytes.           | String | No       |
 
 
 `Conf` has the following sub-nodes:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :------------------ | :----------- | :----------------------------------------------------------- | :------ | :------- |
-| DetectType | Request.Conf | The scene to be moderated, such as `Porn` (pornography) and `Ads` (advertising). You can pass in multiple types and separate them by commas, such as `Porn,Ads`. | String | Yes |
+| BizType | Request.Conf | Unique identifier of the moderation policy. You can configure the scenes you want to moderate on the moderation policy page in the console, such as pornographic, advertising, and illegal information. You can get `BizType` in the console. If `BizType` is specified, the moderation request will perform moderation based on the scenes configured in the moderation policy. If `BizType` is not specified, the default moderation policy will be used automatically. | String | No |
 | Callback           | Request.Conf | Callback address, which must start with `http://` or `https://`.              | String    | No       |
 | ReturnHighlightHtml | Request.Conf | This parameter specifies whether to highlight the non-compliant text on the webpage. When the result is queried or called back, this parameter decides whether to return the highlighted HTML content. Valid values: `true`, `false`. Default value: `false`. | Boolean | No |
 
@@ -101,7 +113,7 @@ The nodes are as described below:
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/1045/43610).
+This API only returns [Common Response Headers](https://www.tencentcloud.com/document/product/1045/43610).
 
 #### Response body
 
@@ -138,13 +150,13 @@ The nodes are as described below:
 | DataId             | Response.JobsDetail | `DataId` field added in the request.                                   | String |
 | JobId | Response.JobsDetail | ID of the webpage moderation job. | String |
 | State              | Response.JobsDetail | Status of the webpage moderation job. Valid values: `Submitted`, `Success`, `Failed`, `Auditing`. | String |
-| CreationTime       | Response.JobsDetail | Creation time of the webpage moderation job. | String |
+| CreationTime       | Response.JobsDetail | Creation time of the webpage moderation job.                         | String    |
 
 #### Error codes
 
-There are no special error messages for this request. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/1045/43611).
+No special error message will be returned for this request. For the common error messages, see [Error Codes](https://www.tencentcloud.com/document/product/1045/33700).
 
-## Samples
+## Use Cases
 
 #### Request
 

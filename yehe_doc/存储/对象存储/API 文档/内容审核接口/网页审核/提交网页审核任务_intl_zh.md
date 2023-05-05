@@ -14,7 +14,11 @@
 - 网页画面审核：通过爬取网页内图片的方式，将爬取的多张图片进行审核，审核费用与图片审核一致。
 - 网页文本审核：将网页内的文本分离出来进行文本审核，审核费用与文本审核一致。
 - 每个审核场景单独计费，例如您选择审核涉黄、广告两种场景，则审核**1个网页**，**计2次**审核费用。
-- 调用接口会产生图片审核费用、文本审核费用 和 [COS 请求费用](https://intl.cloud.tencent.com/document/product/436/40100)。
+- 调用接口会产生图片审核费用、文本审核费用和 [COS 请求费用](https://intl.cloud.tencent.com/document/product/436/40100)。
+
+## 推荐使用 SDK
+
+对象存储 SDK 提供了完整的 Demo、自动集成、计算签名等能力。您可通过 SDK 方便快捷地调用接口。[点此查看 SDK 文档](https://intl.cloud.tencent.com/document/product/436/6474)。
 
 ## 请求
 
@@ -31,8 +35,10 @@ Content-Type: application/xml
 <body>
 ```
 
->? Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
->
+>? 
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> - 通过子账号使用时，需要授予相关的权限，详情请参见 [授权粒度详情](https://intl.cloud.tencent.com/document/product/1045/49896) 文档。
+> 
 
 #### 请求头
 
@@ -46,9 +52,11 @@ Content-Type: application/xml
 <Request>
   <Input>
     <Url></Url>
+		<DataId></DataId>
+		<UserInfo></UserInfo>
   </Input>
   <Conf>
-    <DetectType>Porn,Ads</DetectType>
+    <Biztype></Biztype>
     <Callback></Callback>
     <ReturnHighlightHtml>true</ReturnHighlightHtml>
   </Conf>
@@ -80,20 +88,24 @@ Container 节点 UserInfo 的内容：
 
 | 节点名称（关键字） | 父节点                  | 描述                                                    | 类型    | 是否必选 |
 | :---------------- | :--------------------- | :------------------------------------------------------ | :----- | :------- |
-| TokenId           | Request.Input.UserInfo | 用户业务 TokenId，长度不超过128字节。                      | String | 否       |
-| Nickname          | Request.Input.UserInfo | 用户业务 Nickname，长度不超过128字节。                     | String | 否       |
-| DeviceId          | Request.Input.UserInfo | 用户业务 DeviceId，长度不超过128字节。                     | String | 否       |
-| AppId             | Request.Input.UserInfo | 用户业务 AppId，长度不超过128字节。                        | String | 否       |
-| Room              | Request.Input.UserInfo | 用户业务 Room，长度不超过128字节。                         | String | 否       |
-| IP                | Request.Input.UserInfo | 用户业务 IP，长度不超过128字节。                           | String | 否       |
-| Type              | Request.Input.UserInfo | 用户业务 Type，长度不超过128字节。                         | String | 否       |
+| TokenId           | Request.Input.UserInfo | 一般用于表示账号信息，长度不超过128字节。                      | String | 否       |
+| Nickname          | Request.Input.UserInfo | 一般用于表示昵称信息，长度不超过128字节。                     | String | 否       |
+| DeviceId          | Request.Input.UserInfo | 一般用于表示设备信息，长度不超过128字节。                | String | 否       |
+| AppId             | Request.Input.UserInfo | 一般用于表示 App 的唯一标识，长度不超过128字节。       | String | 否       |
+| Room              | Request.Input.UserInfo | 一般用于表示房间号信息，长度不超过128字节。              | String | 否       |
+| IP                | Request.Input.UserInfo | 一般用于表示 IP 地址信息，长度不超过128字节。        | String | 否       |
+| Type              | Request.Input.UserInfo | 一般用于表示业务类型，长度不超过128字节。     | String | 否       |
+| ReceiveTokenId    | Request.Input.UserInfo | 一般用于表示接收消息的用户账号，长度不超过128字节。    | String | 否       |
+| Gender            | Request.Input.UserInfo | 一般用于表示性别信息，长度不超过128字节。    | String | 否       |
+| Level             | Request.Input.UserInfo | 一般用于表示等级信息，长度不超过128字节。              | String | 否       |
+| Role              | Request.Input.UserInfo | 一般用于表示角色信息，长度不超过128字节。          | String | 否       |
 
 
 Container 类型 Conf 的具体数据描述如下：
 
 | 节点名称（关键字）  | 父节点       | 描述                                                         | 类型    | 是否必选 |
 | :------------------ | :----------- | :----------------------------------------------------------- | :------ | :------- |
-| DetectType          | Request.Conf | 审核的场景类型，有效值：Porn（涉黄）、Ads（广告），可以传入多种类型，不同类型以逗号分隔，例如：Porn,Ads。 | String  | 是       |
+| BizType | Request.Conf | 表示审核策略的唯一标识，您可以通过控制台上的审核策略页面，配置您希望审核的场景，如涉黄、广告、违法违规等。您可以在控制台上获取到 BizType。BizType 填写时，此条审核请求将按照该审核策略中配置的场景进行审核。BizType 不填写时，将自动使用默认的审核策略。 | String | 否 |
 | Callback            | Request.Conf | 回调地址，以`http://`或者`https://`开头的地址。              | String  | 否       |
 | ReturnHighlightHtml | Request.Conf | 指定是否需要高亮展示网页内的违规文本，查询及回调结果时会根据此参数决定是否返回高亮展示的 html 内容。取值为 true 或者 false，默认为 false。 | Boolean | 否       |
 
@@ -142,7 +154,7 @@ Container 节点 JobsDetail 的内容：
 
 #### 错误码
 
-该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/43611) 文档。
+该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/1045/33700) 文档。
 
 ## 实际案例
 

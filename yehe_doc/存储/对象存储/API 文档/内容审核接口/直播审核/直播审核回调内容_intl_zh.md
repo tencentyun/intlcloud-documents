@@ -4,6 +4,8 @@
 
 回调内容分为简洁回调（Simple）和详细回调（Detail）。
 
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/QLJ4586_PRELIM__%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8_%E4%BA%A7%E5%93%81%E7%9B%AE%E5%BD%95_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US.jpeg)
+
 ## 回调内容说明
 
 ### 简洁回调（Simple）
@@ -151,7 +153,7 @@ JobsDetail 的具体内容如下：
 
 | 节点名称（关键字） | 描述                                                         | 类型      |
 | :----------------- | :----------------------------------------------------------- | :-------- |
-| Code               | 错误码，只有 State 为 Failed 时返回。详情请查看 [错误码列表](https://intl.cloud.tencent.com/document/product/1045/43611)。 | String    |
+| Code               | 错误码，只有 State 为 Failed 时返回。详情请查看 [错误码列表](https://intl.cloud.tencent.com/document/product/1045/33700)。 | String    |
 | Message            | 错误描述，只有 State 为 Failed 时返回。                      | String    |
 | JobId              | 审核任务的 ID。                                              | String    |
 | DataId             | 提交任务时设置了DataId参数时返回，返回原始内容，长度限制为512字节。 | String    |
