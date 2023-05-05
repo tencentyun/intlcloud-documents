@@ -10,21 +10,82 @@ An instance is a resource in API Gateway that can provide public IP, private IP,
 
 ## Instance Comparison
 
-| Item | Shared Instance | Dedicated Instance |
-| ------------------ | -------------------------- | --------------------------------------------- |
-| Applicable scenarios | R&D and test environments with a small business scale | Production environments with a large business scale |
-| Billing mode | Pay-as-you-go | Monthly subscription and pay-as-you-go |
-| Billable items | Number of calls and public traffic outbound traffic | Instances and public traffic outbound traffic |
-| SLA | 99.9% | 99.95%–99.99% |
-| Public network entry address | Shared by a group of users | Dedicated |
-| VPC private network entry address | Shared by a group of users | Dedicated |
-| Public network egress address | Shared by a group of users | Dedicated |
-| Public network egress bandwidth | Shared by a group of users | Dedicated |
-| Request packet size limit | 16 MB | Customizable and up to 10 GB (coming soon) |
-| Service and API QPS limit | 500 QPS | 2500–50000 QPS |
-| Operating environment | Not in VPC | In VPC with native capability to connect with VPCs and Direct Connect lines |
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Shared instance</th>
+<th>Dedicated instance</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Scenario</td>
+<td>Small-scale services, develop and test environments</td>
+<td>Large-scale services, production environments</td>
+</tr>
+<tr>
+<td>Billing mode</td>
+<td>Pay-as-you-go</td>
+<td>Monthly Subscription, Pay-as-You-Go</td>
+</tr>
+<tr>
+<td>Billable items</td>
+<td>Invocations, outbound traffic</td>
+<td>Instance fee, outbound traffic</td>
+</tr>
+<tr>
+<td>SLA</td>
+<td>99.9%</td>
+<td>99.95% - 99.99%</td>
+</tr>
+<tr>
+<td>Public network ingress point</td>
+<td>Shared by a group of users</td>
+<td>Dedicated</td>
+</tr>
+<tr>
+<td>VPC ingress address</td>
+<td>Shared by a group of users</td>
+<td>Dedicated</td>
+</tr>
+<tr>
+<td>Public network egress point</td>
+<td>Shared by a group of users</td>
+<td>Dedicated</td>
+</tr>
+<tr>
+<td>Public network outgoing bandwidth</td>
+<td>Shared by a group of users</td>
+<td>Dedicated</td>
+</tr>
+<tr>
+<td>Request size</td>
+<td>Up to 16 MB</td>
+<td>Customized (Up to 10 GB</td>
+</tr>
+<tr>
+<td>Max services/instance</td>
+<td>200</td>
+<td>100 - 2,000</td>
+</tr>
+<tr>
+<td>Max API QPS/service</td>
+<td>500 QPS</td>
+<td>2,500 QPS - 50,000 QPS</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>Cannot connect to VPC</td>
+<td>Support connecting to VPC and Direct Connect instances</td>
+</tr>
+<tr>
+<td>TLS version control</td>
+<td>Not supported</td>
+<td>Supported</td>
+</tr>
+</tbody></table>
 
-> !If the actual request volume greatly exceeds the QPS limit, the overall performance of the instance may be affected, and excessive requests may be discarded with a certain probability.
+> ! Requests may be discarded if the QPS limit is reached. For shared instances, the resource is shared by a group of users. This means if other users in the group have large number of requests, your service performance is affected. To sure the service availability, it’s recommended to use dedicated instances for production environments. 
 
 ## Features of Dedicated Instance
 
@@ -47,7 +108,7 @@ The security and high availability of an API Gateway dedicated instance can be r
 - Physical isolation: an API Gateway dedicated instance tenant is completely physically isolated from other dedicated/shared instance tenants in the same region. There is no data interaction between instances. Attacks to other instances will not affect the stability of the current instance.
 - Clustering: the underlying resources of an API Gateway dedicated instance generally consist of multiple machines (except the Basic Edition), so that the exception of a single machine does not affect the overall availability of the service.
 - Exceptional address removal: an API Gateway dedicated instance dynamically monitors the backend health and automatically removes exceptional backend addresses. In this way, if multiple backend addresses are configured, some exceptional addresses will not affect the gateway service.
-- Connection with security services: an API Gateway dedicated instance can be connected with Tencent Cloud security services such as WAF and IAM to enjoy professional security support.
+- Connection with security services: an API Gateway dedicated instance can be connected with Tencent Cloud security services such as WAF and EIAM to enjoy professional security support.
 
 #### Support for backend load balancing
 
@@ -69,11 +130,11 @@ Key online businesses generally have higher requirements for stability and secur
 
 If your backend businesses are distributed in a variety of complex network environments such as public network, VPC, and IDC Direct Connect, and you need a common traffic egress, API Gateway dedicated instances are your ideal choice, as they support interconnection with diversified complex network environments in the cloud and serve as a unified access layer for such environments. 
 
-## Regions Available for Dedicated Instance
+## Regions Supporting Dedicated API Gateways
 
 | Region | Value | Support |
 | ------------------ | ------------ | -------- |
 | South China (Guangzhou) | ap-guangzhou | Yes |
 | East China (Shanghai) | ap-shanghai | Yes |
 | North China (Beijing) | ap-beijing | Yes |
-| Hong Kong/Macao/Taiwan (China Region) (Hong Kong (China)) | ap-hongkong  | Yes     |
+| Hong Kong/Macao/Taiwan (China) | ap-hongkong  | Yes     |

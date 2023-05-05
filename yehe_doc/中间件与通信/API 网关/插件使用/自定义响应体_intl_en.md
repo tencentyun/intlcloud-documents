@@ -1,21 +1,26 @@
-## Overview
+## Scenarios
 
 The response body sent to the Client by API Gateway contains many fields. If you want to modify the content of the response body, you can do so via custom response body plugin.
 
 The custom response body plugin applies during the response process, and the response content rewriting service can be deployed in SCF, on the public network, or in a VPC. The service backend will send the response body to API Gateway after processing the request message. API Gateway will forward the response content to the response body modification service after receiving it. The modification service will send the modified content of the response body to API Gateway after modifying it. Then, API Gateway will forward the modified response body to the service backend.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/c1f6d2d82dd9e3a19bd83f5a21acbee2.jpg)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Rn6Y872_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_168188624396.png)
 
 ## Prerequisites
 
-- You have activated [SCF](https://console.cloud.tencent.com/scf/list).
+Any one of the following: 
+
+1. Activate [SCF](https://console.cloud.tencent.com/scf/list).
+2. Connect your service to the public network.
+3. Activate [VPC](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 
 ## Directions
+We take SCF as an example in this document.
 
 ### Step 1. Create a function to modify the response body
 
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/list).
-2. Click **Functions** on the left sidebar to enter the function list page.
+2. Click **Function Service** in the left sidebar to open the function list page.
 3. Click **Create** in the top-left corner of the page to create a function that is used to modify the response body.
 
 ### Step 2. Create a custom response body plugin[](id:step2)
@@ -77,7 +82,7 @@ The custom response body plugin applies during the response process, and the res
 </td>
 </tr>
 </table>
-
+<img src = "https://staticintl.cloudcachetci.com/yehe/backend-news/VaTk806_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_1cd7dbeb-5440-4c25-8720-11bcee29302e.png"> 
 	- For verification services deployed in a VPC, you need to enter the following data when creating the custom response plugin:
 <table>
 <tr>
@@ -101,12 +106,14 @@ The custom response body plugin applies during the response process, and the res
 <td>Access address of the response body rewriting service, which can be an HTTP or HTTPS address.</td>
 </tr>
 </table>
+<img src = "https://staticintl.cloudcachetci.com/yehe/backend-news/cruV961_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_92662b80-36b9-4ccf-990f-7c8aafa4dd1b.png"> 
 
 
-### Step 3. Bind the API
+### Step 3: binding the API
 
 1. Select the plugin created in [step 2](#step2) from the plugin list. Click **Bind API** in the **Operation** column.
-2. In the **Bind API** pop-up window, select the service, environment, and the target API.
+2. In the **Bind API** pop-up window, select the service, environment, and the API that needs to be bound to the plugin.
+   ![](https://staticintl.cloudcachetci.com/yehe/backend-news/h49G353_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_f4777ebb-a6ba-45ce-a946-4712123b309c.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 ## pluginData
@@ -133,5 +140,4 @@ The custom response body plugin applies during the response process, and the res
 - If the custom response body plugin is bound to an API with a Mock or TSF backend, it will not take effect.
 - The custom response body plugin does not support the HTTP2 protocol.
 - The custom response body plugin does not support the response body compressed in the gzip format returned by the backend.
-
 
