@@ -44,7 +44,7 @@ A standard direct connect gateway supports propagating secondary CIDR blocks. No
 </tr>
 <tr>
 <td>Gateway type</td>
-<td><ul><li>If `VPC` is selected for **Associated Network**, the network address translation feature is not supported.</li><li>If `NAT` is selected for **Associated Network**, the network address translation feature is supported and you need to configure the translation rules for the NAT gateway.</li></ul></td>
+<td><ul><li>If `VPC` is selected for <b>Associated Network</b>, the network address translation feature is not supported.</li><li>If `NAT` is selected for <b>Associated Network</b>, the network address translation feature is supported and you need to configure the translation rules for the NAT gateway.</li></ul></td>
 </tr>
 </table>
 
