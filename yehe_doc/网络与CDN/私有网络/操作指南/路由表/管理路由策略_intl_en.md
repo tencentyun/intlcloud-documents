@@ -108,4 +108,5 @@ You can delete the unused routing policies. Only the custom routing policies can
 3. Select the routing policy to be deleted, and click **Delete** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/9ab1d9bcca75ba9f4cfdd4abfbddd58e.png)
 4. Read the notes and click **OK**.
+
  	<img src="https://staticintl.cloudcachetci.com/yehe/backend-news/FRKa733_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230406180007.png" width="70%" />
