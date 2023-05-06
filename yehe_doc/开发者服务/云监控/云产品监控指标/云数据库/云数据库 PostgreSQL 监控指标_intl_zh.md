@@ -10,9 +10,6 @@ Namespace=QCE/POSTGRES
 | Connections   | 连接数     | 实例的活跃连接历史变化趋势 | 个   |resourceId|
 | Cpu | CPU 利用率 | 实例 CPU 使用率，由于在闲时采用灵活的 CPU 限制策略，CPU 利用率可能大于100% | %   |resourceId|
 | HitPercent          | 缓冲区缓存命中率   | 数据缓存命中率 | %  |resourceId|
-| InFlow            | 输入流量   | 实例读写输入的流量 | KB/秒  |resourceId|
-| OutFlow         | 	输出流量       | 实例读写输出的流量 | KB/秒   |resourceId|
-| Iops          | 	磁盘 IOPS  | 实例的 IOPS（每秒的请求次数) | 次/秒  |resourceId|
 | Memory          | 内存占用   | 实例占用磁盘的可用空间 | KB  |resourceId|
 | OtherCalls          | 	其他请求数   | 除了读和写以外的请求总数（例如 Drop），按分钟累加 | 次/分钟  |resourceId|
 | Qps             | 	每秒查询数       | 每秒查询次数 | 次/秒  |resourceId|
