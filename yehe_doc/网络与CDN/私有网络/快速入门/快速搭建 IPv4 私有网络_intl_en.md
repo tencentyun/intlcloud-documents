@@ -52,7 +52,7 @@ An EIP is a public IP address that can be applied for and purchased independentl
 
 ### Step 4: test public network connectivity
 Perform the following operations to test the public network connectivity of the CVM instance.
->?Before performing the test, make sure that the security group allows access to the corresponding IP address and port. For example, the ICMP protocol is opened, and the server can be pinged over the public network. For more information, see Viewing a Security Group Rule](https://www.tencentcloud.com/document/product/215/35514).
+>?Before performing the test, make sure that the security group allows access to the corresponding IP address and port. For example, the ICMP protocol is opened, and the server can be pinged over the public network. For more information, see [Viewing a Security Group Rule](https://www.tencentcloud.com/document/product/215/35514).
 >
 1. Log in to the CVM instance with an EIP bound. For more information, see [Login and Connect to Instances](https://www.tencentcloud.com/document/product/213/17278).
 2. Run the `ping Another public IP` command, such as `ping www.qq.com`, to test public network connectivity.
