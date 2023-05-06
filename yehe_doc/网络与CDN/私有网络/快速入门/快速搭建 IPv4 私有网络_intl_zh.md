@@ -11,7 +11,7 @@
 >?私有网络和子网的 CIDR（即网段）一旦创建则无法修改，请提前做好 [网络规划](https://intl.cloud.tencent.com/document/product/215/31795)。
 >
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
-2. 在顶部选择私有网络所属的地域后，单击**+新建**。
+2. 在顶部选择私有网络所属的地域后，单击 **+新建** 。
 3. 在**新建 VPC** 弹窗中，根据如下信息配置私有网络信息和初始子网，然后单击**确定**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/ba0387f51ed8112ab819d5cb9c5113b5.png)
  - **私有网络信息**
