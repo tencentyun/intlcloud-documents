@@ -9,33 +9,22 @@ This document describes how to accelerate routing convergence between customer I
 - Implement routing convergence through BGP+BFD/NQA.
 
 ## Prerequisite
-- You have built a VPC as instructed in [Building Up an IPv4 VPC](https://intl.cloud.tencent.com/document/product/215/31891).
-- You have applied for a connection as instructed in [Applying for Connection](https://intl.cloud.tencent.com/document/product/216/19244) and completed the preparatory construction.
+- You have built a VPC as instructed in [Building Up an IPv4 VPC](https://www.tencentcloud.com/document/product/215/31891).
+- You have applied for a connection as instructed in [Applying for Connection](https://www.tencentcloud.com/document/product/216/19244) and completed the preparatory construction.
 
 
 ## Configuration Guide
-### Step 1. [Creating a direct connect gateway](https://intl.cloud.tencent.com/document/product/216/19256) 
-1. Log in to the Direct Connect Gateway console. Click **Direct Connect Gateway** in the left sidebar.
-2. Select a region and VPC at the top of the **Direct Connect Gateway** page, and click **+ New**.
-![]()
-3. Complete the configurations in the pop-up window and click **OK**.
-![]()
+### Step 1. Create a direct connect gateway
+For more information, see [Creating a Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
 
-### Step 2. [Creating a dedicated tunnel](https://intl.cloud.tencent.com/document/product/216/19250) 
-1. Log in to the [Direct Connect - Dedicated Tunnel console](https://console.cloud.tencent.com/dc/dcConn).
-2. On the **Dedicated Tunnels** page, click **+ New**, complete basic configurations such as name, connection type, access network, gateway region and associated direct connect gateway, and click **Next**.
- <img src="" width="70%">
-3. Configure the following parameters on the **Advanced configuration** page, and then click **OK**.
- <img src="" width="70%">
+### Step 2. Create a dedicated tunnel
+The tunnels created on the connections vary depending on the access method.
+- The tunnels created on your own connections are exclusive dedicated tunnels, which are applicable to scenarios with requirements for high-bandwidth access and exclusive access. For more information, see [Exclusive Virtual Interface](https://intl.cloud.tencent.com/document/product/216/48574).
+- The tunnels created on our partners' connections pre-established in Tencent are shared dedicated tunnels, which are applicable to scenarios where there is no need for high-bandwidth access and the cloudification time is short. For more information, see [Shared Dedicated Tunnel](https://intl.cloud.tencent.com/document/product/216/48575).
 
+### Step 3. Configure health check
+For more information, see [Dedicated tunnel health check](https://intl.cloud.tencent.com/document/product/216/46292).
 
-### Step 3. Configuring health check as instructed in [Dedicated Tunnel Health Check](https://intl.cloud.tencent.com/document/product/216/46292)
-1. Click the name of the created tunnel on the **Dedicated Tunnel** page.
- ![]()
-2. Click **Edit** on the right of **Routing Modes** on the **Advanced Tunnels** tab of the tunnel details page.
-3. Enable **Health Check**.
-4. Configure the parameters of health check, and click **Save**.</br>
- <img src="" width="70%">
 
 ### Step 4. Completing the IDC local configuration as instructed in [Huawei NE Series Routers](https://intl.cloud.tencent.com/document/product/216/46925) 
 This document takes Huawei CE switch as an example. For other local configurations, see [Huawei NE Series Routers](https://intl.cloud.tencent.com/document/product/216/46925).

@@ -2,7 +2,12 @@
 
 ## 前提条件
 - 您已申请物理专线，具体操作请参见[ 申请接入物理专线](https://intl.cloud.tencent.com/document/product/216/19244)。
-- 您已创建腾讯云 VPC，具体操作请参见[ 快速搭建 IPv4 私有网络](https://intl.cloud.tencent.com/document/product/215/31891)。
+- 如果使用 VPC，请确保您已创建腾讯云 VPC，具体操作请参见[ 快速搭建 IPv4 私有网络](https://intl.cloud.tencent.com/document/product/215/31891)。
+- 如果使用云联网 CCN，请确保您已创建云联网实例，具体操作请参见 [新建云联网实例](https://intl.cloud.tencent.com/document/product/1003/30062)。
+- 如果您使用 NAT 型专线网关，您请确保已创建私网 NAT。
+>?NAT 型专线网关需要开白使用，如需使用，请 [提交工单](https://console.cloud.tencent.com/workorder/category)；NAT 型专线网关网络地址映射配置参数新旧版本对应关系请参见 [专线网关概述](https://intl.cloud.tencent.com/document/product/216/38746)。
+
+
 
 ## 使用限制
 标准型专线网关支持传递辅助 CIDR，但需要遵循如下限制：
@@ -31,15 +36,15 @@
 </tr>
 <tr>
 <td>关联网络</td>
-<td>选择云联网类型或私有网络类型的专线网关。</td>
+<td>选择云联网类型、私有网络或 NAT 类型的专线网关。</td>
 </tr>
 <tr>
 <td>所在网络</td>
-<td>若创建私有网络类型的专线网关，则需关联至 VPC 实例。</td>
+<td>所选的专线网关网络类型不同，则需关联相应网络类型的实例。</td>
 </tr>
 <tr>
 <td>网关类型</td>
-<td>若创建私有网络类型的专线网关，则需配置网关类型。<ul><li>标准型：不具备网络地址转换功能。</li><li>NAT 型：具备网络地址转换功能。</li></ul></td>
+<td><ul><li>若创建私有网络类型的专线网关，不具备网络地址转换功能。</li><li>若创建 NAT 型专线网关，具备网络地址转换功能，需要您在 NAT 侧配置转换规则。</li></ul></td>
 </tr>
 </table>
 
@@ -74,15 +79,30 @@
   <td>BGP</td>
   <td>IDC 侧通过 BGP 协议学习到子网 CIDR。</td>
  </tr>
- <tr>
-  <td rowspan="2">2020 年 9 月 15 日零点后</td>
-  <td>静态</td>
-  <td> 入方向路由的路由规则，由用户在本地路由器配置。</td>
- </tr>
- <tr>
-  <td>BGP</td>
-  <td>IDC 侧通过 BGP 协议学习到 VPC CIDR。</td>
+<tr>
+<td rowspan="2">2020 年 9 月 15 日零点后</td>
+<td>静态</td>
+<td> 入方向路由的路由规则，由用户在本地路由器配置。</td>
+</tr>
+<tr>
+<td>BGP</td>
+<td>IDC 侧通过 BGP 协议学习到 VPC CIDR。</td>
+</tr>
+<tr>
+<td rowspan="2">NAT 型专线网关</td>
+<td rowspan="2">无限制</td>
+<td>静态</td>
+<td>入方向路由的路由规则，由用户在本地路由器配置。
+VPC 路由下一跳需指向私网 NAT 网关。
+</td>
+</tr>
+<tr>
+<td>BGP</td>
+<td>VPC 路由下一跳需指向私网 NAT 网关</td>
+</tr>
 </tbody></table>
+
+
 
 ## 后续操作
 - 若您创建的云联网专线网关，则还需在专线网关添加 IDC 网段才可以实现网络通信，详情请参见[ 发布网段至云联网](https://intl.cloud.tencent.com/document/product/216/39083)。
