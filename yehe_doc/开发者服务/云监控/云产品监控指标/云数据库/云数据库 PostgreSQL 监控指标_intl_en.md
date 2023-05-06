@@ -37,27 +37,6 @@ Namespace=QCE/POSTGRES
 <td>resourceId</td>
 </tr>
 <tr>
-<td>InFlow</td>
-<td>Inbound traffic</td>
-<td>Inbound traffic for instance reads/writes</td>
-<td>KB/s</td>
-<td>resourceId</td>
-</tr>
-<tr>
-<td>OutFlow</td>
-<td>Outbound traffic</td>
-<td>Outbound traffic for instance reads/writes</td>
-<td nowrap="nowrap">KB/s</td>
-<td>resourceId</td>
-</tr>
-<tr>
-<td>Iops</td>
-<td>Disk IOPS</td>
-<td>Instance IOPS (number of requests per second)</td>
-<td>Requests/sec</td>
-<td>resourceId</td>
-</tr>
-<tr>
 <td>Memory</td>
 <td>Memory usage</td>
 <td>Available memory space used by the instance</td>
