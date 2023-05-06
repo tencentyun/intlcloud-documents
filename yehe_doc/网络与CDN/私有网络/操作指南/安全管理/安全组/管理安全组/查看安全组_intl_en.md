@@ -1,24 +1,21 @@
-## Operation Scenario
-To view all security groups that you have created in a certain region, complete the following steps.
+## Overview
+This document describes how to check security groups under a region. 
 
-## Steps
-### Viewing all security groups
-1. Log in to [CVM Console](https://console.cloud.tencent.com/cvm/index).
-2. In the left sidebar, click **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)** to enter the security group management page.
-3. On the security group management page, choose **Region** and then you can view all the security groups in the region.
+## Directions
+### List all security groups
+1. Log in to the [security group console](https://console.cloud.tencent.com/vpc/securitygroup), and go to the security group management page.
+2. Select a region to see a list of security groups under that region.
 
-### Viewing a specific security group
-You can use the search feature on the security group management page to view a specific security group.
-1. Log in to [CVM Console](https://console.cloud.tencent.com/cvm/index).
-2. In the left sidebar, click **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)** to enter the security group management page.
-3. On the security group management page, choose **Region**.
-4. In the upper-right corner of the security group list of the region, click the search text box, and select one of the following methods to query the target security group.
- - Choose **Security Group ID**, enter the security group ID, and click <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png"></img> to query the corresponding security group.
- - Choose **Security Group Name**, enter the security group name, and click <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png"></img> to query the corresponding security group.
- - Choose **Label**, enter the label name, and click <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png"></img> to query all security groups with the label.
+### Search for a security group
+You can search for security groups by specifying the group ID/name/tag or using a keyword. 
+1. Log in to the [security group console](https://console.cloud.tencent.com/vpc/securitygroup), and go to the security group management page.
+2. On the Security Group Management page, select **Regions**.
+3. Click the search box, select a type from the drop-down list.
+ - **Security group ID**: Input the group ID and click <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png"></img>.
+ - **Security group name**: Input the group name and click <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png"></img>.
+ - **Tag**: Input a tag and click <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png"></img>.
+ - **Keyword**: Input a keyword and click <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png"></img>.
 
 ## Other Operations
-To learn more about the syntax for viewing a specific security group, click <img src="https://main.qcloudimg.com/raw/9de970d18ee10e917d164edf08670f06.png" style="margin:-3px 0;"></img> in the search text box to view relevant syntax.
-
-
+To learn about how to search for security groups by using syntax, click <img src="https://main.qcloudimg.com/raw/9de970d18ee10e917d164edf08670f06.png" style="margin:-3px 0;"></img>.
 
