@@ -41,7 +41,6 @@ from tencentcloud.common.profile.client_profile import ClientProfile
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
 from tencentcloud.cvm.v20170312 import cvm_client, models
-
 # 默认读取环境变量 TENCENTCLOUD_SECRET_ID 和 TENCENTCLOUD_SECRET_KEY 获取 secretId 和 secretKey
 # 更多凭证管理方式，请参考：https://github.com/TencentCloud/tencentcloud-sdk-python#%E5%87%AD%E8%AF%81%E7%AE%A1%E7%90%86
 cred = credential.EnvironmentVariableCredential().get_credential()
@@ -49,7 +48,6 @@ httpProfile = HttpProfile()
 httpProfile.endpoint = "cvm.tencentcloudapi.com"
 clientProfile = ClientProfile()
 clientProfile.httpProfile = httpProfile
-
 # 举例为南京 请按实际情况进行修改 例如上海请修改为ap-shanghai
 aria = 'ap-nanjing'
 client = cvm_client.CvmClient(cred,aria, clientProfile)
@@ -103,7 +101,6 @@ try:
                 print('请输入正确的选项！！')
         else:
             print('请输入正确的选项！！')
-
 except TencentCloudSDKException as err:
     print(err)
 ```
