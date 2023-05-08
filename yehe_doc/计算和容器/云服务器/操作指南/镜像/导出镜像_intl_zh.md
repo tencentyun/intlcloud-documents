@@ -47,7 +47,7 @@
 </table>
 
 ## 操作步骤
-1. 登录云服务器控制台，选择左侧导航栏中的 **[镜像](https://console.cloud.tencent.com/cvm/image)**。
+1. 登录云服务器控制台，选择左侧导航栏中的 **[镜像](https://console.cloud.tencent.com/cvm/image)** 。
 2. 在“镜像”页面上方，选择需导出的自定义镜像所在地域，并单击**自定义镜像**页签。
 3. 选择镜像所在行右侧的**更多** > **导出镜像**。如下图所示：
 ![](https://qcloudimg.tencent-cloud.cn/raw/67a493d7ae96d92b514f5c124619821c.png)
