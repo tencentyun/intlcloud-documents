@@ -4,9 +4,9 @@ If a notification message sent by an application contains an error or incorrect 
 
 ## Overview
 
-- Message termination: Terminates all offline messages within the offline storage period of the task.
-- Message recall: Terminates the current message and makes it disappear from the notification center on devices where it has arrived but has not been clicked. A recall is imperceptible to users.
-- Message override: Terminates the current message and overrides it with a new one. After a successful override, only the new message will be displayed in the device notification center.
+- Message termination: terminates all offline messages within the offline storage period of the task.
+- Message recall: terminates the current message and makes it disappear from the notification center on devices where it has arrived but has not been clicked. A recall is imperceptible to users.
+- Message override: terminates the current message and overrides it with a new one. After a successful override, only the new message will be displayed in the device notification center.
 - Scheduled task cancellation: Cancels a scheduled task that has not yet been scheduled. After successful cancellation, the scheduled push task will not be delivered any more.
 
 ## Use Limits
@@ -48,7 +48,7 @@ If a notification message sent by an application contains an error or incorrect 
 ### Terminating, overriding, or recalling a push task
 
 1. Log in to the [Tencent Push Notification Service console](https://console.cloud.tencent.com/tpns).
-2. Go to **Push Management** > **Task List**.
+2. Click **Message Management** > **Task List** in the left sidebar.
 3. Click **View Details** for the push task to be terminated, overridden, or recalled.
 4. In the **Push Progress** column in the top-right corner of the push details page, terminate, override, or recall the task.
 ![](https://main.qcloudimg.com/raw/f6308cf63712ee5a4feecd47f26d7f31.png)
@@ -60,7 +60,7 @@ If a notification message sent by an application contains an error or incorrect 
 
 ### Cancelling a scheduled task
 1. Log in to the [Tencent Push Notification Service console](https://console.cloud.tencent.com/tpns).
-2. Go to **Push Management** > **Task List**.
+2. Click **Message Management** > **Task List** in the left sidebar.
 3. Locate the push task whose scheduled task is to be canceled, and click **Cancel Push**.
 4. After the operation succeeds, you can see that the status of the push task becomes **Canceled** in the **Status** column.
 
@@ -74,7 +74,7 @@ If a notification message sent by an application contains an error or incorrect 
 #### API description 
 
 Request method: POST
-Request address:
+Request Address
 ```xml
 Service URL/v3/push/stop_push_msg
 ```
@@ -88,7 +88,7 @@ The API service address corresponds to the service access point one by one; ther
 | pushId | String | Yes       | Push task ID |
 
 
-#### Request example
+#### Sample request
 
 ```
 {
@@ -102,7 +102,7 @@ The API service address corresponds to the service access point one by one; ther
 #### API description 
 
 Request method: POST
-Request address:
+Request Address
 ```xml
 Service URL/v3/push/revoke_push_msg
 ```
@@ -117,7 +117,7 @@ The API service address corresponds to the service access point one by one; ther
 | ------ | ------ | -------- | ---------------- |
 | pushId | String | Yes       | Push task ID |
 
-#### Request example
+#### Sample request
 
 ```
 {
@@ -158,7 +158,7 @@ When you call the [push API](https://www.tencentcloud.com/document/product/1024/
 #### API description 
 
 Request method: POST
-Request address:
+Request Address
 ```xml
 Service URL/v3/push/cancel_timing_task
 ```
@@ -173,7 +173,7 @@ The API service address corresponds to the service access point one by one; ther
 | ------ | ------ | -------- | ---------------- |
 | pushId | String | Yes       | Push task ID |
 
-#### Request example
+#### Sample request
 
 ```
 {

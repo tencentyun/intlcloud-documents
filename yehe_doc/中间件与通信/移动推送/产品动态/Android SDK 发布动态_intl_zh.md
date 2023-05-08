@@ -1,4 +1,28 @@
 
+## 2023年03月
+
+<table>
+	<tr>
+		<th width=20%>动态名称</th>
+    <th width=44%>动态描述</th>
+    <th width=16%>发布时间</th>
+    <th width=20%>相关文档</th>
+	</tr>
+	<tr>
+        <td>SDK 1.3.8.0 版本发布</td>
+	<td>
+		<li>优化：荣耀推送支持 MagicUI 4.0 以上版本</li>
+		<li>修复：使用 Firebase Messaging 时偶现的 ANR 问题</li>
+		<li>优化：内部通信性能</li>
+		</td>
+        <td>2023-03-29</td><td>
+		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK 下载</a></li>
+		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK 升级指南</a></li>
+</td>
+    </tr>
+<tr>
+</table>
+
 ## 2022年11月
 
 <table>
@@ -9,12 +33,13 @@
     <th width=20%>相关文档</th>
 	</tr>
 	<tr>
-        <td>SDK 1.3.6.2 版本发布</td>
+        <td>SDK 1.3.7.2 版本发布</td>
 	<td>
 		<li>升级：小米推送 SDK 5.1.0</li>
 		<li>升级：华为推送 SDK 6.7.0.300</li>
+		<li>修复：华为智选机型角标展示</li>
 		</td>
-        <td>2022-11-03</td><td>
+        <td>2022-11-08</td><td>
 		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK 下载</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK 升级指南</a></li>
 </td>

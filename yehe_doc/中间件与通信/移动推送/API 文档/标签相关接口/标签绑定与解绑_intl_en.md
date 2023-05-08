@@ -1,17 +1,17 @@
-## API Description
-**Request method**: POST
+## API Calling Description
+**Request method**: POST.
 ```plaintext
 Service URL/v3/device/tag
 ```
-API service URLs correspond to service access points one to one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
+The API service address corresponds to the service access point one by one; therefore, please select the service address corresponding to your application [service access point](https://www.tencentcloud.com/document/product/1024/38517).
 
 **API features**:
 Tag API is the general term for all tag APIs. Tag API includes various APIs for setting, updating, and deleting which are described as below:
-For use cases of tags, see [Tag Feature](https://intl.cloud.tencent.com/document/product/1024/35392).
+For use cases of tags, see [Tag Feature](https://www.tencentcloud.com/document/product/1024/35392).
 
 
 
-## Parameters
+## Parameter description
 #### Request parameters
 
 | Parameter | Type | Required | Description |
@@ -19,15 +19,15 @@ For use cases of tags, see [Tag Feature](https://intl.cloud.tencent.com/document
 | operator_type | Integer | Yes | Operation type:<br>`1`: add a tag to a token.<br>`2`: delete a tag from a token.<br>`3`: add multiple tags to a token.<br>`4`: delete multiple tags from a token.<br>`5`: delete all tags from a token.<br>`6`: add one or more tags or custom tags to a token in an overwriting manner.<br>(This API starts to set new tags only after the tag history is cleared. Therefore, for the same token, it is recommended that the interval between API calls be over 1s; otherwise, the update may fail.)<br>`7`: add a tag to multiple tokens.<br>`8`: delete a tag from multiple tokens.<br>`9`: batch add tags (up to 20 pairs are allowed per call; in each tag-token pair, the tag is before the token).<br>`10`: batch delete tags (up to 20 pairs are allowed per call; in each tag-token pair, the tag is before the token). |
 | token_list | Array  | No | Device list:<li>Required when `operator_type` is `1`, `2`, `3`, `4`, `5`, `6`, `7`, or `8`.<li>When `operator_type` is `1`, `2`, `3`, `4`, `5`, or `6` and this parameter contains multiple tokens, only the first token will be set.<li>Format example: ["token1","token2"]<li>The list can contain up to 500 values.<li>A token string cannot exceed 36 characters. |
 | tag_list | Array  | No | Tag list:<li>Required when `operator_type` is `1`, `2`, `3`, `4`, `6`, `7`, or `8`; ignored when `operator_type` is `5`.<li>When `operator_type` is `1`, `2`, `7`, or `8` and this parameter contains multiple tags, only the first tag will be set.<li>Format example: ["tag1","tag2"]<li>The list can contain up to 500 values.<li>A tag string cannot exceed 50 characters. |
-| tag_token_list | Array  | No | Tag-device pair list:<li>Required when `operator_type` is `9` or `10`.<li>Format example: [{"tag":"tag123", "token":"token123"}]<li>In each pair, the tag is before the token.<li>The list can contain up to 500 values.<li>A tag string cannot exceed 50 characters.<li>A token string cannot exceed 36 characters. |
+| tag_token_list | Array  | No | Tag-device pair list:<li>Required when `operator_type` is `9` or `10`.<li>Format example: [{"tag":"tag123", "token":"token123"}]<li>In each pair, the tag is before the token.<li>The list can contain up to 500 values.<li>A tag string cannot exceed 50 characters.<li>A token string cannot exceed 36 characters.</li> |
 
 >!
->- An application can have up to 10,000 custom tags. A single device token can be bound to up to 100 custom tags (if you want to raise this limit, submit a ticket). A single custom tag can be bound to an unlimited number of device tokens.
->- If the API needs to be called only once, then there are no restrictions on the API call method.
->- If the API needs to be called continuously, note the following:
-    - If the API needs to be called continuously to set more than 10 tags or tokens, you are advised to use batch APIs. It is recommended that the interval between API calls be no less than 1s to guarantee correct tag operations.
-    - If not using batch APIs, you should make the next call of the non-batch tag API after the TPNS server returns a value. You are not advised to concurrently make multiple tag API calls in the multi-thread async mode.
->- Colon `:` is a keyword used by the TPNS backend for tag categorization. If you include `:` in a tag when setting it, the string before the first `:` serves as the category name of the tag. This is only used when `operator_type` is `6`, which means overwriting tags by category. For example, if the existing tags of a device are `level:1`, `level:2`, and `male`, you can directly overwrite `level:1` and `level:2` with `level:3` without having to unbind `level:1` and `level:2` one by one, and then bind `level:3`. For more information, please see the following sample request where `operator_type` is `6`.
+- One application can have up to 10,000 custom tags. One device token can be bound to up to 100 custom tags. If you want to increase this limit, contact [our online customer service](https://cloud.tencent.com/online-service). One custom tag can be bound to an unlimited number of device tokens.
+- If the API needs to be called only once, then there are no restrictions on the API call method.
+- If the API needs to be called continuously, note the following:
+ - If the API needs to be called continuously to set more than 10 tags or tokens, you are advised to use batch APIs. It is recommended that the interval between API calls be no less than 1s to guarantee correct tag operations.
+ - When not using batch APIs, then the API for the next non-batched tag is called after the returned value of the Tencent Push Notification Service server is clearly obtained. It is not recommended that multi-thread async be used at the same time as performing tag API calling.
+- Colon `:` is a keyword used by the Tencent Push Notification Service backend for tag categorization. If you include `:` in a tag when setting it, the string before the first `:` serves as the category name of the tag. This is only used when `operator_type` is `6`, which means overwriting tags by category. For example, if the existing tags of a device are `level:1`, `level:2`, and `male`, you can directly overwrite `level:1` and `level:2` with `level:3` without having to unbind `level:1` and `level:2` one by one, and then bind `level:3`. For more information, please see the following sample request where `operator_type` is `6`.
 
 
 #### Response parameters
@@ -40,7 +40,7 @@ For use cases of tags, see [Tag Feature](https://intl.cloud.tencent.com/document
 
 
 
-## Examples
+## Samples
 #### Examples of Tag Binding and Unbinding Requests
 
 - Add a tag (tag1) to a token (token1)

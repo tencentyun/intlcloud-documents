@@ -35,8 +35,8 @@ Tencent Push Notification Service provides two types of tags: custom tags and pr
             <td>Custom tag</td>
             <td>Custom tag, such as meeting ID, class ID, and user hobbies (like basketball and digital products)</td>
 						<td>xg_user_define</td>
-						<td><li>Up to 10,000 custom tags are allowed (to increase the quota, <a href="https://console.tencentcloud.com/workorder/category">submit a ticket</a>)
-<li>One device token can be bound to up to 100 custom tags (to increase the quota, <a href="https://console.tencentcloud.com/workorder/category">submit a ticket</a>)
+						<td><li>Up to 10,000 custom tags are allowed (to increase the quota, <a href="https://cloud.tencent.com/act/event/Online_service">contact our online customer service</a>))
+<li>One device token can be bound to up to 100 custom tags (to increase the quota, <a href="https://cloud.tencent.com/act/event/Online_service">contact our online customer service</a>))
 <li>One custom tag can be bound to an unlimited number of device tokens</td>
 <td>love_basketball, love_shopping, male</td>
         </tr>
@@ -123,17 +123,17 @@ Tencent Push Notification Service provides two types of tags: custom tags and pr
 
 **Method 1. Set tags through RESTful APIs**
 Bind and unbind a custom tag:
-See [Tag Binding and Unbinding](https://intl.cloud.tencent.com/document/product/1024/33766).
+See [Tag Binding and Unbinding](https://www.tencentcloud.com/document/product/1024/33766).
 
 **Method 2. Set tags through device SDKs**
-For the iOS SDK, see [here](https://intl.cloud.tencent.com/document/product/1024/30727#tagging-feature).
-For the Android SDK, see [Setting custom tag](https://intl.cloud.tencent.com/document/product/1024/30715#setting-custom-tag).
+For the iOS SDK, see [Setting custom tag](https://www.tencentcloud.com/document/product/1024/30727).
+For the Android SDK, see [Setting custom tag](https://www.tencentcloud.com/document/product/1024/30715).
 
 >?
->- One device can be bound to up to 100 tags (to increase the quota, [submit a ticket](https://console.tencentcloud.com/workorder/category)).
->- One application can be bound to up to 10,000 tags. To increase the quota, [submit a ticket](https://console.tencentcloud.com/workorder/category) for application.
->- One tag can contain up to 50 bytes.
->- Up to 500 tags can be bound or unbound in one request.
+- One device can be bound to up to 100 tags (to increase the quota, [contact our online customer service](https://cloud.tencent.com/act/event/Online_service))
+- One app can be bound to up to 10,000 tags (to increase the quota, [contact our online customer service](https://cloud.tencent.com/act/event/Online_service))
+- One tag can contain up to 50 bytes.
+- Up to 500 tags can be bound or unbound in one request.
 
 #### Custom tag use cases and keywords
 Tag push is suitable for scenarios where more than 10 devices are bound to a tag and less than 10 pushes are required per day. For other scenarios, account push (binding an account instead of a tag to multiple devices for push) is recommended.
@@ -340,27 +340,27 @@ Call the RESTful API.
 - All devices are bound to the latest preset tags, which will automatically replace the corresponding legacy ones. For example, if the current application version of a device is 1.0.1, when the application is upgraded to 1.0.2, the device will be automatically unbound from the `v1.0.1` tag and then bound to the `v1.0.2` tag.
 
 ### Querying tags bound to devices
- Log in to the [Tencent Push Notification Service console](https://console.cloud.tencent.com/tpns), and choose **App Push Management** > **Troubleshooting Tools** on the left sidebar. Then you can query preset or custom tags by device token.
+ Log in to the [Tencent Push Notification Service console](https://console.cloud.tencent.com/tpns), and click **Message Management** > **Troubleshooting Tools** in the left sidebar. Then you can query preset or custom tags by device token.
  See the figure below:
 ![](https://main.qcloudimg.com/raw/960e8eb3678ebe7457b5887966abed5f.png)
 
-## Getting Started
+## Directions
 
 Tag push allows you to push messages by preset or custom tags or combinations of preset and custom tags (combined by the "AND" or "OR" relationship) according to your operational requirements.
 
 ### Setting the policy in the console
 You can push a message by tag in the Tencent Cloud console as follows.
-1. Select the tag type, e.g., custom tag or a category of preset tags.
+1. Select the tag combination type, e.g., custom tag or a category of preset tags.
 ![](https://main.qcloudimg.com/raw/62e856a901b5be9980f2c6102b0f020c.png)
 2. Select the tags for which you want to push a message after selecting the tag type.
 ![](https://main.qcloudimg.com/raw/6dad332635c15202548a2aca25527b6a.png)
-After a tag is selected, the number of devices bound to the selected tag will also be displayed. The tag combination in the figure above indicates to push a message to male users in Guangdong and Jiangsu who were active on 2020-04-23, 2020-04-22, or 2020-04-21. Then, click **Preview** to push the message to the corresponding target devices.
+After a tag is selected, the number of devices bound to the selected tag will also be displayed. The tag combination in the figure above indicates to push a message to users in Guangdong who were active within two days. Then, click **Test Preview** to push the message to the corresponding target devices.
 
 
 
 ### Calling the push API for tag push
 
-Set the `audience_type` (push target) in the push API request parameter to `tag` to enable tag push. For more information, see [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
+Set the `audience_type` (push target) in the push API request parameter to `tag` to enable tag push. For more information, see [Push API](https://www.tencentcloud.com/document/product/1024/33764).
 API example: push a message to male users in Guangdong and Jiangsu who were active on 2020-04-23, 2020-04-22, or 2020-04-21.
 ```
 {
@@ -425,7 +425,7 @@ API example: push a message to male users in Guangdong and Jiangsu who were acti
 }
 }
 ```
-## FAQ
+## FAQs
 
 1. **Will the API for querying bound devices by tag be made publicly available?**
  The API is currently for internal use only and will not be made publicly available in the future for the sake of system stability. You can select a tag on the push page in the console to query its bound devices.

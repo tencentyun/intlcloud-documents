@@ -15,7 +15,12 @@ The message type can be specified when you call the push API.
 	- [Mi](#xiaomizhinan)
 	- [vivo](#vivozhinan)
 	- [Huawei](#huaweizhinan)
->?After applying for the channel ID, specify it when using the push API.
+	- [HONOR](#rongyaozhinan)
+>?From Android 8.0 (API level 26 or higher) on, to enable popping up notification bar notifications, you must first create notification channels for the application and assign channels for the notifications to pop up. Otherwise, notifications will not be displayed in the notification bar. By assigning a notification to a specific notification channel, the notification will be displayed in the notification bar as the enabled behavior feature for that notification channel. Instead of managing all of your application's notifications directly, you can implement personalized control over each of your application's notification channels, such as controlling the on/off, visual, and auditory options for each channel.
+>You can configure multiple notification channels (up to seven as recommended) for an application. Each of the application's notification channels is distinguished by a notification channel ID (`channel_id`) and is displayed in the application's notification settings as the text defined by the notification channel name (`channel_name`).
+>Once a notification channel is created, the device user has full control, and the developer cannot modify the notification behavior. For a duplicate code call for the same notification channel ID (`channel_id`), only the different notification channel name (`channel_name`) and channel description parameter will take effect, and other visual, auditory, and importance options will not be changed.
+>
+
 2. If you need to manage channels by vendor, customize channel IDs to classify messages based on your application's business message types. You can make vendor-based configurations as below:
 <table>
 <thead>
@@ -46,7 +51,11 @@ The message type can be specified when you call the push API.
 </tr>
 <tr>
 <td>vivo</td>
-<td><ul><li>You can only configure using vivo system messages but cannot customize the notification channel.</li><li>Specify the corresponding channel ID when calling the Tencent Push Notification Service <a href="https://intl.cloud.tencent.com/document/product/1024/33764">server API</a>.</li></ul></td>
+<td><ul><li>You can configure using vivo system messages or operation messages but cannot customize the notification channel.</li><li>Specify the value of the `vivo_ch_id` parameter when calling the Tencent Push Notification Service <a href="https://intl.cloud.tencent.com/document/product/1024/33764">server API</a>.</li></ul></td>
+</tr>
+<tr>
+<td>HONOR</td>
+<td><ul><li>You can configure using HONOR "service and communication" or "information and marketing" messages but cannot customize the notification channel.</li><li>Specify the value of the `hw_importance` parameter when calling the Tencent Push Notification Service <a href="https://intl.cloud.tencent.com/document/product/1024/33764">server API</a>.</li></ul></td>
 </tr>
 </tbody></table>
 3. If you need neither vendor notification messages nor a custom channel ID, Tencent Push Notification Service will specify a default channel ID for all messages of your application and group them into the default type.
@@ -101,6 +110,7 @@ The default channel on the OPPO PUSH platform is the public message channel. Now
 1. Log in to the [OPPO PUSH platform](https://push.oppo.com) and choose **App Configuration** > **Create Channel** to create a channel. The channel ID and name are required and must be the same as those on the application client. Other configuration items are optional.
 >! Once the channel ID is set, it cannot be randomly changed or deleted.
 >
+![](https://main.qcloudimg.com/raw/20c0242e7558cdfac1bd6d6a79f0a219.png)
 2. Currently, the OPPO private message channel can take effect only after you apply for it through email. Please send an application email to the OPPO PUSH platform according to the following requirements. For more information, see [OPPO PUSH Channel Upgrade Beta Invitation](https://open.oppomobile.com/new/developmentDoc/info?id=11227).
 
 
@@ -147,7 +157,7 @@ Restrictions on public and private messages are as follows:
 <tr>
 <th>Message Type</th>
 <th>Message Content</th>
-<th>Received Message Quantity Limit</th>
+<th>Message Quantity Limit</th>
 <th>Application Method</th>
 </tr>
 </thead>
@@ -212,7 +222,7 @@ To improve users' message notification experience and create a good push ecosyst
 <th colspan = "2">Message Type</th>
 <th>Application Category</th>
 <th>Push Quantity Limit</th>
-<th>Received Message Quantity Limit</th>
+<th>Message Quantity Limit</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -293,6 +303,7 @@ Sample push:
 
 Starting from EMUI 10.0, Huawei Push intelligently categorizes notification messages into two levels: "service and communication" and "information and marketing". Versions earlier than EMUI 10.0 don't categorize notification messages and have only one level, where all messages are displayed through the "default notification" channel, which is equivalent to the service and notification category on EMUI 10.0. From January 5, 2023 on, the number of information and marketing messages pushed per day will be capped according to the type of application, while there will be no limit to the number of service and communication messages pushed per day.
 Huawei's response code 256 indicates that the number of information and marketing messages sent of the current day exceeds the limit, and you need to adjust the sending policy. For more information, see [here](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-restriction-description-0000001361648361?ha_source=hms5).
+![](https://qcloudimg.tencent-cloud.cn/raw/8b5ded2fd11711c69227432e9eb0c571.png)
 
 The table below compares the display style of messages at different levels.
 
@@ -375,3 +386,57 @@ Sample push:
     }
 }
 ```
+
+[](id:rongyaozhinan)
+## HONOR Message Classification User Guide
+
+### HONOR message classification overview
+
+According to the application type, message content, and message sending scenario, HONOR Push classifies push messages into "information and marketing" messages and "service and communication" messages. The number of "information and marketing" messages pushed per day will be capped according to the type of application, while there will be no limit to the number of "service and communication" messages pushed per day. For more information, see [here](https://developer.hihonor.com/cn/kitdoc?category=%E5%9F%BA%E7%A1%80%E6%9C%8D%E5%8A%A1&kitId=11002&navigation=guides&docId=notification-push-standards.md&token=).
+You can manage the default display mode and message style for different message levels as follows:
+
+| Message Level | Notification Bar Drop-down List Display | Icon Display | Notification for Screen Lock | Ringtone | Vibration |
+| -------- | ---------------- | -------------- | -------- | ---- | ---- |
+| Service and communication     | Normal         | Supported           | Supported     | Supported | Supported |
+| Information and marketing     | Normal         | Not supported             | Not supported       | Not supported   | Not supported   |
+
+- If the `importance` field is `1`, the message is an "information and marketing" message, its default display mode is silent notification, and it is displayed only in the notification bar drop-down list.
+- If the `importance` field is `2`, the message is a "service and communication" message, and its default display modes are notification for screen lock and notification bar drop-down list display.
+
+Classification rules:
+
+- Intelligent message classification
+Intelligent classification algorithms will automatically categorize your messages according to classification criteria based on multiple dimensions such as the application type and message content.
+- Self-help message classification
+Developers can classify messages by themselves according to message classification specifications.
+Currently, the self-help message classification rule is adopted for all messages by default. HONOR Push will fully trust the classification results provided by developers and display the corresponding information. With the continuous complement and evolution of HONOR Push capabilities, the classification method will be gradually updated and upgraded. For more information, see [here](https://developer.hihonor.com/cn/kitdoc?category=%E5%9F%BA%E7%A1%80%E6%9C%8D%E5%8A%A1&kitId=11002&navigation=guides&docId=notification-class.md&token=).
+
+>!Please comply with HONOR's push message classification rules. Violations will be punished by HONOR. For violations and corresponding penalties, see [here](https://developer.hihonor.com/cn/kitdoc?category=%E5%9F%BA%E7%A1%80%E6%9C%8D%E5%8A%A1&kitId=11002&navigation=guides&docId=notification-penalty-standards.md&token=).
+> 
+
+### Using self-classified messages
+
+Self-classified messages can be delivered only through APIs but not the console. You can use the feature as follows:
+
+Configure the `hw_importance` field in the `Android` request structure of the RESTful API to deliver self-classified messages. For more information, see the parameter description in [Push API](https://www.tencentcloud.com/document/product/1024/33764).
+
+Sample push:
+
+```json
+{
+    "audience_type": "token",
+    "token_list": ["005c28bf60e29f9a***2052ce96f43019a0b7"],
+    "message_type": "notify",
+    "message": {
+        "title": "HONOR：",
+        "content": "Self-classified message",
+        "android": {
+            "hw_importance":2
+        }
+    }
+}
+```
+
+
+
+

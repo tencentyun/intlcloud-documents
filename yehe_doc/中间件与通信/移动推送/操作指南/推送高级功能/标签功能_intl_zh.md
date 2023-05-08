@@ -35,8 +35,8 @@ App 运营中经常需要针对新用户进行消息提醒，从而作为新用�
             <td>自定义标签</td>
             <td>客户自定义，例如会议 ID，班级 ID，用户喜好（篮球，数码产品等）等</td>
 						<td>xg_user_define</td>
-						<td><li>最多可以有10000个自定义 tag（如需提高该限制，请 <a href="https://console.tencentcloud.com/workorder/category">提交工单</a>）
-<li>每个设备 token 最多可绑定100个自定义 tag（如需提高该限制，请联系 <a href="https://console.tencentcloud.com/workorder/category">提交工单</a>)
+						<td><li>最多可以有10000个自定义 tag（如需提高该限制，请联系 <a href="https://cloud.tencent.com/act/event/Online_service">在线客服</a>）
+<li>每个设备 token 最多可绑定100个自定义 tag（如需提高该限制，请联系 <a href="https://cloud.tencent.com/act/event/Online_service">在线客服</a>)
 <li>每个自定义 tag 可绑定的设备 token 数量无限制</td>
 <td> love_basketball, love_shopping, male 等</td>
         </tr>
@@ -130,10 +130,10 @@ iOS SDK 进行标签的设置，详情请参见文档 [自定义标签设置](ht
 Android SDK 进行标签的设置，详情请参见文档 [自定义标签设置](https://intl.cloud.tencent.com/document/product/1024/30715)。
 
 >?
->- 单个设备最多可绑定100个标签（超出可[提交工单](https://console.tencentcloud.com/workorder/category) 申请提高额度）。
->- 单个 App 最多可绑定10000个标签（超出可 [提交工单](https://console.tencentcloud.com/workorder/category) 申请提高额度）。
->- 单个标签不能超过50个字节。
->- 批量绑定解绑标签时，单次请求标签数量不能超过500个。
+- 单个设备最多可绑定100个标签（超出可联系 [在线客服](https://cloud.tencent.com/act/event/Online_service) 申请提高额度）。
+- 单个 App 最多可绑定10000个标签（超出可联系 [在线客服](https://cloud.tencent.com/act/event/Online_service) 申请提高额度）。
+- 单个标签不能超过50个字节。
+- 批量绑定解绑标签时，单次请求标签数量不能超过500个。
 
 #### 自定义标签使用场景及关键字
 标签推送适用于标签绑定设备多（一般绑定设备数超过10个），且推送频次较少（一般该标签的日推送数不超过10次）的场景，针对绑定设备数较小且推送频次较多的标签推送场景，推荐使用账号推送，即通过账号绑定多个设备，用账号替代标签来进行推送。
@@ -350,11 +350,11 @@ Android SDK 进行标签的设置，详情请参见文档 [自定义标签设置
 
 ### 控制台使用
 腾讯云管理台中进行标签推送，如下图所示步骤。
-1. 先选择标签类型，可选自定义标签，和预设标签中的某类标签。
+1. 先选择标签组合类型，可选自定义标签，和预设标签中的某类标签。
 ![](https://main.qcloudimg.com/raw/62e856a901b5be9980f2c6102b0f020c.png)
 2. 在选定标签类型之后，可选择具体需要推送的标签。
 ![](https://main.qcloudimg.com/raw/6dad332635c15202548a2aca25527b6a.png)
-选中标签之后，还会显示选中标签所对应的绑定设备数，上图表述的标签组合意思为：对广东和江苏的用户，且在20200423，20200422和20200421这三天活跃过，并且是男性的用户进行推送。之后点击预览即可进行对应目标设备的推送。
+选中标签之后，还会显示选中标签所对应的绑定设备数，上图表述的标签组合意思为：对广东且在2日内活跃过的用户进行推送。之后点击测试预览即可进行对应目标设备的推送。
 
 
 

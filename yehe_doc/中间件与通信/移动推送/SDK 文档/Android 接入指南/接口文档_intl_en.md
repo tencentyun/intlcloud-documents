@@ -1,5 +1,5 @@
-## Notes
-The account feature and tag deletion feature in this document are available for SDK v1.2.3.0 and later. For versions earlier than v1.2.3.0, see [Accounts and Tags](https://intl.cloud.tencent.com/document/product/1024/40596).
+## Actions
+The account feature and tag deletion feature in this document are available for SDK v1.2.3.0 and later. For versions earlier than v1.2.3.0, see [Accounts and Tags](https://www.tencentcloud.com/document/product/1024/40596).
 
 The package name path prefix of all APIs is `com.tencent.android.tpush`. The following table lists important classes that provide APIs for external use.
 
@@ -19,7 +19,7 @@ The registration API usually provides a compact version and a version with callb
 
 ### Registering a device
 
-The following are device registration API methods. For more information on the timing and principle of calls, see [Device registration flow](https://intl.cloud.tencent.com/document/product/1024/32609#device-registration-flow).
+The following are device registration API methods. For more information on the timing and principle of calls, see [Device registration flow](https://www.tencentcloud.com/document/product/1024/32609#device-registration-flow).
 
 #### API description
 
@@ -140,7 +140,7 @@ public void onRegisterResult(Context context, int errorCode, XGPushRegisterResul
 
 ### Unregistration
 
-The following are unregistration API methods. For more information on the timing and principle of calls, see device unregistration flow [here](https://intl.cloud.tencent.com/document/product/1024/32609).
+The following are unregistration API methods. For more information on the timing and principle of calls, see device unregistration flow [here](https://www.tencentcloud.com/document/product/1024/32609).
 
 >! After calling the unregistration API, you need to call the registration API again before you can receive pushed messages.
 >
@@ -237,7 +237,7 @@ The Tencent Push Notification Service SDK collects statistics on notification/me
 
 >?
 > - Tencent Push Notification Service SDK v1.2.0.1 or later supports listening for the click events of notifications delivered through the Tencent Push Notification Service channel and various vendor channels.
-> - Do not include a redirection action in this callback API. The SDK will automatically perform notification tap-to-redirect based on the redirection action set in the push task. If you want to deliver and get custom push parameters, the Intent mode is recommended. For more information, see [Notification Tap-to-Redirect](https://intl.cloud.tencent.com/document/product/1024/38354).
+> - Do not include a redirection action in this callback API. The SDK will automatically perform notification tap-to-redirect based on the redirection action set in the push task. If you want to deliver and get custom push parameters, the Intent mode is recommended. For more information, see [Notification Tap-to-Redirect](https://www.tencentcloud.com/document/product/1024/38354).
 > 
 #### API description
 
@@ -342,7 +342,7 @@ XGPushManager.createNotificationChannel(context, "default_message", "Default not
 
 Push messages are content delivered to an application by Tencent Push Notification Service. The application needs to inherit the `XGPushBaseReceiver` API to implement and handle all the operations on its own. In other words, delivered messages are not displayed on the notification bar by default, and Tencent Push Notification Service is responsible only for delivering messages from the Tencent Push Notification Service server to the application, but not processing the messages. The messages need to be processed by the application.
 
-- Message refers to the text message delivered by you through console or backend scripts. Tencent Push Notification Service is only responsible for delivering the message to the application, while the application is fully responsible for handling the message body on its own.
+Message refers to the text message delivered by you through console or backend scripts. Tencent Push Notification Service is only responsible for delivering the message to the application, while the application is fully responsible for handling the message body on its own.
 - Because the message is flexible and highly customizable, it is suitable for applications to handle custom business needs on their own, such as delivering application configuration information and customizing message retention and display.
 
 <span id="Message configuration"></span>
@@ -392,9 +392,8 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 ## In-App Message Display
 Starting with SDK v1.2.7.0, you can set whether to allow the display of in-app message windows. For example, you can enable the display of in-app message windows in one Activity page, while disable it in another Activity page.
 
-<dx-alert infotype="notice">
-In-app messages are displayed based on the Android WebView framework. By default, the in-app message display WebView provided by the Tencent Push Notification Service SDK runs in the main process of an app. **Since Android 9, apps can no longer share a single WebView data directory among multiple processes. If your app must use WebView instances in multiple processes, you must first use the `WebView.setDataDirectorySuffix()` method to specify a unique data directory suffix for each process; otherwise, app crash may occur**. The sample configuration code is as follows:
-```java
+>! In-app messages are displayed based on the Android WebView framework. By default, the in-app message display WebView provided by the Tencent Push Notification Service SDK runs in the main process of an app. **Since Android 9, apps can no longer share a single WebView data directory among multiple processes. If your app must use WebView instances in multiple processes, you must first use the `WebView.setDataDirectorySuffix()` method to specify a unique data directory suffix for each process; otherwise, app crash may occur**. The sample configuration code is as follows:
+>```java
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {     
     // Starting with Android 9, you need to set different WebView data directories for the WebView instances of apps’ non-main processes.
     String processName = getProcessName()
@@ -404,9 +403,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
     }
 }
 ```
-Reference document: [Behavior changes: apps targeting API level 28+](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs) (Google Developers).
-</dx-alert>
-
+> Reference document: [Behavior changes: apps targeting API level 28+](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=en#web-data-dirs) (Google Developers).
 ### Setting whether to allow the display of in-app message windows
 ```java
 XGPushConfig.enableShowInMsg(Context context, boolean flag);
@@ -492,7 +489,7 @@ XGPushManager.clearLocalNotifications(context);
 
 ## Account Management
 
-The following are account management API methods. For more information on the timing and principle of calls, see account flow [here](https://intl.cloud.tencent.com/document/product/1024/32609).
+The following are account management API methods. For more information on the timing and principle of calls, see account flow [here](https://www.tencentcloud.com/document/product/1024/32609).
 
 
 ### Adding an account
@@ -531,8 +528,8 @@ XGPushManager.upsertAccounts(context, accountInfoList, xgiOperateCallback);
 
 >?
 > - Each account can be bound to up to 100 tokens.
-> - The account can be email, QQ account number, mobile number, username, etc. For valid values, see [Account Type Value Table](https://intl.cloud.tencent.com/document/product/1024/40598).
-> - If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
+> - The account can be email address, mobile number, username, etc. For account type values, see [Account Type Value Table](https://www.tencentcloud.com/document/product/1024/40598).
+> - If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [Push API](https://www.tencentcloud.com/document/product/1024/33764).
 > 
 ### Adding a mobile number
 
@@ -637,13 +634,13 @@ void clearAccounts(Context context)
 XGPushManager.clearAccounts(getApplicationContext());
 ```
 ## Bucket Tag
-The following are tag management API methods. For more information on the timing and principle of calls, see tag flow [here](https://intl.cloud.tencent.com/document/product/1024/32609).
+The following are tag management API methods. For more information on the timing and principle of calls, see tag flow [here](https://www.tencentcloud.com/document/product/1024/32609).
 ### Preset tags
 Currently, Tencent Push Notification Service preset tags include application version, system version, province, active information, system language, SDK version, country/region, phone brand, and phone model tags. Preset tags are automatically reported in the SDK.
 ### Overwriting multiple tags
 #### API description
 Setting multiple tags at a time will overwrite tags previously set for this device.
-You can set tags for different users and then send mass notifications based on tag names. An application can have up to 10,000 tags, and each token can have up to 100 tags in one application. If you want to increase the limits, please [submit a ticket](https://console.tencentcloud.com/workorder/category). Each custom tag can be bound to an unlimited number of device tokens, and no spaces are allowed in the tag.
+You can set tags for different users and then send mass notifications based on tag names. An application can have up to 10,000 tags, and each token can have up to 100 tags in one application. If you want to increase the limits, [contact our online customer service](https://cloud.tencent.com/act/event/Online_service). Each custom tag can be bound to an unlimited number of device tokens, and no spaces are allowed in the tag.
 ```java
 public static void clearAndAppendTags(Context context, String operateName, Set<String> tags) 
 ```
@@ -756,7 +753,7 @@ This API is used to get the tags bound to the device.
 #### Parameter description
 - `context`: `Context` object.
 - `operateName`: Operation name defined by the user. The callback result will be returned as-is for users to distinguish the operation.
-- `offset`: The starting point
+- `offset`: Starting point
 - `limit`: Number of tags to get; maximum value: `100`
 - `callback`: Callback of tag getting operation
 #### Processing result
@@ -776,7 +773,7 @@ XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
 XGPushManager.queryTags(context, 0, 100, xgiOperateCallback);
 ```
 ## User Attribute Management
-You can set attributes for different users and then perform personalized push in Tencent Push Notification Service. The following are user attribute API methods. For more information on the timing and principle of calls, see user attribute flow [here](https://intl.cloud.tencent.com/document/product/1024/32609).
+You can set attributes for different users and then perform personalized push in Tencent Push Notification Service. The following are user attribute API methods. For more information on the timing and principle of calls, see user attribute flow [here](https://www.tencentcloud.com/document/product/1024/32609).
 ### Adding user attributes
 #### API description
 This API is used to add an attribute (with callback). If there is no attribute, it will add one; otherwise, it will overwrite the existing one.
@@ -978,7 +975,7 @@ XGPushConfig.getOtherPushToken(context);
 A standard token will be returned upon success, and `null` or `0` upon failure.  
 ### Getting custom parameters (custom_content) delivered with the notification on the notification click target page
 This is a new API in the SDK v1.3.2.0. When a notification is clicked and opened, you can use this API to directly get the custom parameters (custom_content) configured when creating the push task on the target notification setting page.
-For usage details, see [Notification Tap-to-Redirect](#examplecode).
+For usage details, see [Notification Tap-to-Redirect](https://intl.cloud.tencent.com/document/product/1024/38354#rest-api-.E4.BD.BF.E7.94.A8).
 ``` 
 public static String getCustomContentFromIntent(Context context, Intent intent)
 ```
@@ -1032,7 +1029,7 @@ XGPushConfig.setAccessKey(context, accessKey);
 >
 ### Reporting logs
 #### API description
-If you find exceptions with TPush, you can call this API to trigger reporting of local push logs. To report the problem, [submit a ticket](https://console.tencentcloud.com/workorder/category) with the file address provided to facilitate troubleshooting.
+If you find exceptions with TPush, you can call this API to trigger reporting of local push logs. To report the problem, [contact our online customer service](https://cloud.tencent.com/act/event/Online_service) with the file address provided to facilitate troubleshooting.
 ```
 public static void uploadLogFile(Context context, HttpRequestCallback httpRequestCallback)
 ```

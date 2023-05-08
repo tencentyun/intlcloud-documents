@@ -5,18 +5,16 @@
 ## 常见场景
 
 1. 开发人员在控制台推送一条消息给测试设备，控制台推送状态显示成功，但在手机通知栏未看到这条消息，通过 Token 查询设备详情发现通知栏权限关闭，在手机上开启通知栏权限后，再次触发注册，此时往这台设备发送消息，手机通知栏成功展示。
-   ![]()
-2. 运营人员通过用户账号推送消息，推送状态显示“推送失败”，在排查工具中输入用户账号查询 Token，发现该应用下，此账号没有关联的设备 Token，可联系开发人员排查是否调用了 [账号绑定（Android）](https://intl.cloud.tencent.com/document/product/1024/30715)或 [账号绑定（iOS）](https://intl.cloud.tencent.com/document/product/1024/30727)接口。
-	 ![](https://qcloudimg.tencent-cloud.cn/raw/2c1559443566760e17b61c649e28b140.png)
-3. 开发人员完成了 TPNS 的接入工作后，对某一批设备 Token 推送消息，线上用户反馈没有收到该推送信息，获取该用户 Token 和 pushID 后，在推送排查得知，推送列表中并无该 Token。
-![]()
+2. 运营人员通过用户账号推送消息，推送状态显示“推送失败”，在排查工具中输入用户账号及绑定的账号类型查询 Token，发现该应用下，此账号没有关联的设备 Token，可联系开发人员排查是否调用了 [账号绑定（Android）](https://intl.cloud.tencent.com/document/product/1024/30715)或 [账号绑定（iOS）](https://www.tencentcloud.com/document/product/1024/30727#.E8.AE.BE.E7.BD.AE.E8.B4.A6.E5.8F.B7)接口。
+	![](https://qcloudimg.tencent-cloud.cn/raw/2c1559443566760e17b61c649e28b140.png)
+3. 开发人员完成了移动推送的接入工作后，对某一批设备 Token 推送消息，线上用户反馈没有收到该推送信息，获取该用户 Token 和 pushID 后，在推送排查得知，推送列表中并无该 Token。
 
 
 ## 操作步骤
 
 ### 通过用户账号查询
 
-1. 登录 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)。
+1. 登录 [移动推送控制台](https://console.cloud.tencent.com/tpns)。
 2. 在左侧导航栏选择**App推送管理**>**排查工具**。
 3. 单击下拉框选择您需要查询产品及应用，选择**通过账号查询**。
    ![](https://qcloudimg.tencent-cloud.cn/raw/981819129693db6ff03842e68ca342a7.png)
@@ -31,7 +29,7 @@
 1. 在排查工具页面，选择**通过 Token 直接查询**。
 2. 输入设备 Token，单击**查询**，页面右侧会显示当前设备注册详情。
 > ? 
-> - Token：TPNS 分配给每一个设备的唯一ID，长度36位。
+> - Token：移动推送分配给每一个设备的唯一ID，长度36位。
 > - 若您不知道如何获取设备 Token，可参考 SDK 集成文档中的 [获取 Token 交互建议（Android）](https://intl.cloud.tencent.com/document/product/1024/30713)或 [获取 Token 交互建议（iOS）](https://intl.cloud.tencent.com/document/product/1024/30726)。
 
 ### 推送查询
@@ -40,13 +38,12 @@
 ![](https://qcloudimg.tencent-cloud.cn/raw/515c21d2a8d51ea56a3bbc2f73b510ef.png)
 2. 输入 pushid（必选）、待查询的设备 Token（必选），单击**查询**，查看排查结果。
 > ?pushid 获取方式：
-> 1. 可在左侧导航栏选择**推送管理**>**推送任务**，获取需要查询的 PushID。
+> 1. 可在左侧导航栏选择 **App 推送管理** > **推送任务**，获取需要查询的 PushID。
 > ![](https://qcloudimg.tencent-cloud.cn/raw/c470a99dabdce3d59f03ab677b440893.png)
 > 2. 在推送接口的应答参数中获取。
-
-3.在**推送管理**>**推送任务**，更换 管理台创建>API创建 及可查看到API推送数据
+3. 在 **App 推送管理** > **推送任务**，更换 管理台创建>API创建 及可查看到API推送数据
 ![](https://qcloudimg.tencent-cloud.cn/raw/f68e6a1e6382bbe7ec4449af95629e50.png)
-4.. 若查询结果与实际情况不符或仍无法解决问题，可查看 [推送常见问题](#.E6.8E.A8.E9.80.81.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98) 或 [提交工单](https://console.cloud.tencent.com/workorder/category)，并补充 pushID 和 Token 信息。
+4. 若查询结果与实际情况不符或仍无法解决问题，可查看 [推送常见问题](#.E6.8E.A8.E9.80.81.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98) 或联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)，并补充 pushID 和 Token 信息。
 
 ## 常见问题
 
@@ -64,7 +61,7 @@
 在设备注册详情页中查看该 Token 是否关联了推送的目标账号或者标签，若未关联则无法通过账号或标签推送。
 2. 推送状态显示已完成，设备状态正常，为什么手机没有收到推送？
  - iOS 平台推送环境是否与 Token 注册环境一致，不一致则无法收到推送，推送环境选择说明详情可参考文档 [推送环境选择](https://intl.cloud.tencent.com/document/product/1024/34214)。
- -  检查 App 包名是否和**[移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)**>**App推送管理**>**基础配置**中填写的包名一致，如果包名不一致检查是否开启 [多包名推送功能](https://intl.cloud.tencent.com/document/product/1024/35393)。
+ -  检查 App 包名是否和**[移动推送控制台](https://console.cloud.tencent.com/tpns)**>**App推送管理**>**基础配置**中填写的包名一致，如果包名不一致检查是否开启 [多包名推送功能](https://intl.cloud.tencent.com/document/product/1024/35393)。
  - 安卓 P 及以上系统需要添加使用 Apache HTTP client 库，检查在 AndroidManifest 的 application 节点内是否有添加以下配置：
 ```
  <uses-library android:name="org.apache.http.legacy" android:required="false"/>

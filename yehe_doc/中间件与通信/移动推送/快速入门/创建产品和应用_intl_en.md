@@ -1,4 +1,4 @@
-## Scenario
+## Overview
 
 This document shows you how to create products and applications in the Tencent Push Notification Service console and how to configure applications.
 
@@ -27,21 +27,21 @@ After you create a product, if you have not yet added a default application, you
 1. Log in to the [Tencent Push Notification Service console](https://console.cloud.tencent.com/tpns), and click **Product Management** in the left sidebar.
 2. On the product list page, select the created product, click **Add Application**, and select **Android** as the platform.
 3. Enter the application name, and click **OK** to create the application.
-	 ![](https://main.qcloudimg.com/raw/55933b66e480455ddbc366245ed48419.png)
+	 ![](https://main.qcloudimg.com/raw/a396a109314535259cd25fed253e73db.png)
 
 #### iOS applications
 
 1. Log in to the [Tencent Push Notification Service console](https://console.cloud.tencent.com/tpns), and click **Product Management** in the left sidebar.
 2. On the product list page, select the created product, click **Add Application**, and select **iOS** as the platform.
 3. Enter the application name, and click **OK** to create the application.
-	 ![](https://main.qcloudimg.com/raw/e389eda368763dcd46cd6c7b4b800c63.png)
+	 ![](https://main.qcloudimg.com/raw/55933b66e480455ddbc366245ed48419.png)
 
 #### macOS applications
 
 1. Log in to the [Tencent Push Notification Service console](https://console.cloud.tencent.com/tpns), and click **Product Management** in the left sidebar.
 2. On the product list page, select the created product, click **Add Application**, and select **macOS** as the platform.
 3. Enter the application name, and click **OK** to create the application.
-	 ![](https://main.qcloudimg.com/raw/e389eda368763dcd46cd6c7b4b800c63.png)
+	 ![](https://main.qcloudimg.com/raw/b674b49fe1aafebdd6e71e8d71487471.png)
 
 ### Configuring applications
 
@@ -58,17 +58,16 @@ After you create an application, you can follow the steps below to configure it.
 1. Go to the **Product List** page, select iOS platform applications, and click **Configuration Management**.
 2. Enter the BundleID for the iOS platform, and click **Save** to complete basic configuration.
 3. Go to the configuration management page, click **Upload Certificate**, enter the certificate password and select a certificate to upload.
-4. Click **Upload** to upload your iOS push certificate to the management platform, and complete iOS application configuration.
-	 
+4. Click **Submit** to upload your iOS push certificate to the management platform, and complete iOS application configuration.
+	 ![](https://main.qcloudimg.com/raw/e389eda368763dcd46cd6c7b4b800c63.png)
 
 #### macOS configuration
 
 1. Go to the **Product List** page, select macOS platform applications, and click **Configuration Management**.
 2. Enter the BundleID for the macOS platform, and click **Save** to complete basic configuration.
 3. Go to the configuration management page, click **Upload Certificate**, enter the certificate password and select a certificate to upload.
-4. Click **Upload** to upload your iOS push certificate to the management platform, and complete iOS application configuration.
-	 
-	
+4. Click **Submit** to upload your iOS push certificate to the management platform, and complete iOS application configuration.
+	 ![](https://main.qcloudimg.com/raw/e389eda368763dcd46cd6c7b4b800c63.png)
 ### Obtaining the application information in the console
 
 After successful configuration, you can obtain the application's **AccessID**, **AccessKey**, and **SecretKey**, which are described as follows.
@@ -78,7 +77,7 @@ After successful configuration, you can obtain the application's **AccessID**, *
 2. Authentication signature generation during a RESTful API call
 
 #### AccessKey: Client authentication key of the application. Use case:
-SDK integration
+SDK Integration
 
 #### SecretKey: Server authentication key of the application. Use case:
 Authentication signature generation during a RESTful API call

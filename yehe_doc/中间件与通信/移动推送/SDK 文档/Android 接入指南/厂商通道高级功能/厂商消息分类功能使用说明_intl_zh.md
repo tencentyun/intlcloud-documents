@@ -15,7 +15,12 @@
 	- [小米申请指南](#xiaomizhinan)
 	- [vivo 申请指南](#vivozhinan)
 	- [华为使用指南](#huaweizhinan)
->?申请到 Channel ID 后在推送 API 时指定即可。
+	- [荣耀使用指南](#rongyaozhinan)
+>?从 Android 8.0（API 级别 26）开始，弹出通知栏通知必须先为应用创建通知渠道，并为要弹出的通知分配渠道，否则通知将不会显示。通过将通知分配给特定的通知渠道，则该通知将以该通知渠道已被开启的行为功能展示在通知栏中。用户可以为应用的每个通知渠道进行个性化控制，而非直接管理应用的所有通知，例如控制每个渠道的开闭、视觉和听觉选项等。
+>一个应用可以有多个通知渠道，建议设置不超过7个通知渠道。应用的每个通知渠道按照通知渠道id（channel_id）区分，通知渠道以通知渠道名称（channel_name）定义的文本展示在应用的通知设置中。
+>通知渠道一旦创建，设备用户拥有完全控制权，开发者便无法更改通知行为。对同一个通知渠道id（channel_id）进行重复创建的代码调用，仅不同的通知渠道名称（channel_name）和渠道描述参数会生效，其他的视觉、听觉、重要性等选项无法改变。
+>
+
 2. 若需要使用厂商做渠道分类管理，自定义 Channel ID，从而做到根据 App 自身的业务消息类别进行消息分类，可根据不同厂商对应进行配置：
 <table>
 <thead>
@@ -46,7 +51,11 @@
 </tr>
 <tr>
 <td>vivo</td>
-<td><ul><li>仅支持配置使用 vivo 系统消息，不支持自定义通知渠道 Channel 。</li><li>调用移动推送 <a href="https://intl.cloud.tencent.com/document/product/1024/33764">服务端 API</a> 时，指定对应的 Channel ID”</li></ul></td>
+<td><ul><li>支持配置使用 vivo 系统消息/运营消息，不支持自定义通知渠道 Channel 。</li><li>调用移动推送 <a href="https://intl.cloud.tencent.com/document/product/1024/33764">服务端 API</a> 时，指定vivo_ch_id参数传值”</li></ul></td>
+</tr>
+<tr>
+<td>荣耀</td>
+<td><ul><li>支持配置使用 荣耀 服务通讯/资讯营销消息，不支持自定义通知渠道 Channel 。</li><li>调用移动推送 <a href="https://intl.cloud.tencent.com/document/product/1024/33764">服务端 API</a> 时，指定hw_importance参数传值”</li></ul></td>
 </tr>
 </tbody></table>
 3. 若既不需要使用厂商通知消息，也不需要自定义 Channel ID，则无需做任何处理，移动推送会为 App 的所有消息指定一个默认的 Channel ID，消息归到默认类别中。
@@ -101,6 +110,7 @@ OPush 平台上默认的是公信通道，目前在原有基础上新增“私�
 1. 进入 [OPPO 开放平台](https://push.oppo.com)，在**应用配置**>**新建通道**中新建通道，通道 ID 与通道名称必填且需要与应用客户端保持一致，其他选项可不填。
 >! 通道 ID 一旦确定下来不能随意变更或删除。
 >
+![](https://main.qcloudimg.com/raw/20c0242e7558cdfac1bd6d6a79f0a219.png)
 2. 目前 OPPO 私信通道需要邮件申请后才能生效，请按照以下要求发送邮件给 OPush 平台，详情请参见 [OPPO PUSH 通道升级公测邀请](https://open.oppomobile.com/new/developmentDoc/info?id=11227)。
 
 
@@ -292,7 +302,8 @@ IM消息/系统消息需求量级（万）：……
 ### 华为消息分类介绍
 
 华为推送从 EMUI 10.0版本开始将通知消息智能分成两个级别：「服务与通讯」和「资讯营销」。EMUI 10.0之前的版本没有对通知消息进行分类，只有一个级别，消息全部通过“默认通知”渠道展示，等价于 EMUI 10.0的服务与通讯。资讯营销类消息的每日推送数量自2023年01月05日起根据应用类型对推送数量进行上限管理，服务与通讯类消息每日推送数量不受限。
-华为回执 256 表示当日的发送量超出资讯营销类消息的限制，请您调整发送策略，各消息类型详情请参见华为的 [推送数量关系细则](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-restriction-description-0000001361648361?ha_source=hms5)。
+华为回执 256 表示当日的发送量超出资讯营销类消息的限制，请您调整发送策略，各消息类型详情请参见华为的 [推送数量关系细则](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-restriction-description-0000001361648361?ha_source=hms5)。如图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/8b5ded2fd11711c69227432e9eb0c571.png)
 
 不同消息级别呈现样式对比：
 
@@ -375,3 +386,57 @@ IM消息/系统消息需求量级（万）：……
     }
 }
 ```
+
+[](id:rongyaozhinan)
+## 荣耀消息分类使用指南
+
+### 荣耀消息分类介绍
+
+荣耀推送服务将根据应用类型、消息内容和消息发送场景，将推送消息分成服务通讯和资讯营销两大类别，资讯营销类消息的每日推送数量根据应用类型对推送数量进行上限管理，服务与通讯类消息每日推送数量不受限，详细说明请参见 [荣耀推送数量管理细则](https://developer.hihonor.com/cn/kitdoc?category=%E5%9F%BA%E7%A1%80%E6%9C%8D%E5%8A%A1&kitId=11002&navigation=guides&docId=notification-push-standards.md&token=)。
+根据消息分类，对不同类别消息的默认展示方式、消息样式进行差异化管理，具体如下：
+
+| 消息级别 | 通知栏下拉的显示 | 图标显示 | 锁屏通知 | 响铃 | 振动 |
+| -------- | ---------------- | -------------- | -------- | ---- | ---- |
+| 服务与通讯     | 正常显示         | 支持           | 支持     | 支持 | 支持 |
+| 资讯营销     | 正常显示         | 否             | 否       | 否   | 否   |
+
+- importance 字段值为“1”时：表示消息为资讯营销类，默认展示方式为静默通知，仅在下拉通知栏展示。
+- importance 字段值为“2”时：表示消息为服务通讯类，默认展示方式为锁屏展示+下拉通知栏展示。
+
+分类规则：
+
+- 消息智能分类
+智能算法将根据APP类型和消息内容等维度，自动将您的消息按照分类标准进行归类。
+- 消息自分类
+允许开发者根据消息分类规范，自行对消息进行分类。
+目前，所有消息默认通过消息自分类方式进行分类处理，荣耀推送服务将充分信任开发者提供的分类结果，并展示对应信息。随着荣耀推送服务能力的不断补充和演进，分类方式也会逐渐更新与升级，请参见 [荣耀最新分类说明](https://developer.hihonor.com/cn/kitdoc?category=%E5%9F%BA%E7%A1%80%E6%9C%8D%E5%8A%A1&kitId=11002&navigation=guides&docId=notification-class.md&token=)。
+
+>!请遵守荣耀的推送分类规则，违规者将受到荣耀对应的处罚，违规行为及相应的处罚措施请参见 [消息违规处罚标准](https://developer.hihonor.com/cn/kitdoc?category=%E5%9F%BA%E7%A1%80%E6%9C%8D%E5%8A%A1&kitId=11002&navigation=guides&docId=notification-penalty-standards.md&token=)。
+> 
+
+### 自分类消息使用
+
+自分类消息仅支持 API 进行下发，控制台暂不支持，可通过以下方式使用：
+
+在 Rest API 请求参数 `Android` 结构体中设置 `hw_importance ` 参数，可实现荣耀自分类消息下发，详情请参见 [PushAPI](https://intl.cloud.tencent.com/document/product/1024/33764) 参数说明。
+
+推送示例如下：
+
+```json
+{
+    "audience_type": "token",
+    "token_list": ["005c28bf60e29f9a***2052ce96f43019a0b7"],
+    "message_type": "notify",
+    "message": {
+        "title": "荣耀：",
+        "content": "自分类推送。",
+        "android": {
+            "hw_importance":2
+        }
+    }
+}
+```
+
+
+
+

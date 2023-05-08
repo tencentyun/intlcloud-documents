@@ -35,7 +35,7 @@
 >?
 >- 您可以输入易于记忆的策略名称。
 >- 复制文档中的代码，替换其中的账号 ID（可在管理台右上角个人 >账号信息页面找到）和 Access_ID（可在管理台移动推送产品管理页面找到）。
-
+>
 复制下方的语法代码：
 ```
 {
@@ -67,19 +67,14 @@
      ]
 }
 ```
-
 替换语法代码中的参数：
-- 主账号ID替换：进入当前主账号的 [账号信息](https://console.cloud.tencent.com/developer) 页面，复制账号 ID，替换上方语法中的 1000000000。
+ - 主账号ID替换：进入当前主账号的 [账号信息](https://console.cloud.tencent.com/developer) 页面，复制账号 ID，替换上方语法中的 1000000000。
 >?如果您当前登录的账号是协作者或子账号，需要向给您分配权限的主账号拥有者获取账号 ID。
-
 ![](https://qcloudimg.tencent-cloud.cn/raw/82f946f2d0dc124a634d6398531d3f89.png)
-- 应用`Access_ID`替换：进入 [移动推送产品管理](https://console.cloud.tencent.com/tpns) 页面，复制需要授权的`Access_ID`，替换上方语法中的 1500000000，如需要同时授权多个应用，可以将 resource 改为：
+ - 应用`Access_ID`替换：进入 [移动推送产品管理](https://console.cloud.tencent.com/tpns) 页面，复制需要授权的`Access_ID`，替换上方语法中的 1500000000，如需要同时授权多个应用，可以将 resource 改为：
 `"qcs::tpns::uin/1000000000:app/{应用Access_ID1}"`,`"qcs::tpns::uin/1000000000:app/{应用Access_ID2}"`
-
 >?其中大括弧“{“、"}"请删除，如需要更多细分操作，请仔细阅读 [进阶自定义配置](https://intl.cloud.tencent.com/document/product/1024/35288)。
-
 5. 返回创建用户页面。
 ![](https://qcloudimg.tencent-cloud.cn/raw/b8806c04fccc0c79d3021c45133f22a7.png)
 搜索您创建的策略名称并勾选，选择下一步后，单击完成。
-6. 完成权限配置后您可以在登录界面选择使用子用户进行账号权限验证：
-![]()
+6. 完成权限配置后您可以在登录界面选择使用子用户进行账号权限验证。

@@ -1,4 +1,28 @@
 
+## March 2023
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>SDK v1.3.8.0 release</td>
+	<td>
+		<li>Optimized HONOR Push to support MagicUI 4.0 or later.</li>
+		<li>Fixed the occasional ANR issues occurred when Firebase Messaging is used.</li>
+		<li>Optimized the internal communication performance.</li>
+		</td>
+        <td>March 29, 2023</td><td>
+		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+		<li><a href="https://www.tencentcloud.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+</td>
+    </tr>
+<tr>
+</table>
+
 ## November 2022
 
 <table>
@@ -9,14 +33,15 @@
     <th width=20%>Documentation</th>
 	</tr>
 	<tr>
-        <td>SDK v1.3.6.2 release</td>
+        <td>Released SDK v1.3.7.2</td>
 	<td>
 		<li>Upgraded the Mi Push SDK to v5.1.0.</li>
 		<li>Upgraded the Huawei Push SDK to v6.7.0.300.</li>
+		<li>Fixed the badge display of Huawei Zhixuan phones.</li>
 		</td>
-        <td>November 3, 2022</td><td>
+        <td>November 8, 2022</td><td>
 		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
-		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+		<li><a href="https://www.tencentcloud.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
     </tr>
 <tr>
@@ -44,7 +69,7 @@
 		</td>
         <td>September 1, 2022</td><td>
 		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
-		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+		<li><a href="https://www.tencentcloud.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
     </tr>
 <tr>
@@ -69,7 +94,7 @@
 		</td>
         <td>July 6, 2022</td><td>
 		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
-		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+		<li><a href="https://www.tencentcloud.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
 </tr>
 </table>
@@ -90,7 +115,7 @@
 		</td>
         <td>June 7, 2022</td><td>
 		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
-		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+		<li><a href="https://www.tencentcloud.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
     </tr>
 </table>
@@ -113,7 +138,7 @@
 		<li>Fixed other known issues.</li>
 		</td>
         <td>May 31, 2022</td><td>
-		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+		<li><a href="https://www.tencentcloud.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
     </tr>
 </table>
@@ -132,7 +157,7 @@
 	<td>
 		<li>Supported the Huawei push channel for a device with an EMUI system.</li>
 		<li>Fixed the issue where the persistent connection retry interval was inaccurate.</li>
-		<li>Supported the HONOR push channel. See <a href="https://intl.cloud.tencent.com/document/product/1024/47652">HONOR Channel Integration</a> for details.</li>
+		<li>Supported the HONOR push channel. See <a href="https://www.tencentcloud.com/document/product/1024/47652">HONOR Channel Integration</a> for details.</li>
 		</td>
         <td>April 25, 2022</td><td>
 		<a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a>
@@ -158,8 +183,8 @@
 		</td>
         <td>February 23, 2022</td><td>
 		<li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
-		<li>For how to get `custom_content` delivered with pushed messages, see <a href="https://intl.cloud.tencent.com/document/product/1024/38354">Notification Tap-to-Redirect > Getting parameters on the client</a>.</li>
-		<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
+		<li>For how to get `custom_content` delivered with pushed messages, see <a href="https://www.tencentcloud.com/document/product/1024/38354">Notification Tap-to-Redirect > Getting parameters on the client</a>.</li>
+		<li><a href="https://www.tencentcloud.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li>
 </td>
     </tr>
 </table>
@@ -201,9 +226,9 @@
 	<tr>
         <td>SDK v1.2.7.1 release</td>
 	<td>Fixed the issue of occasional cross-process storage inconsistency.</td>
-        <td>September 1, 2021</td><td><li>When using the new in-app messaging feature, pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>.
+        <td>September 1, 2021</td><td><li>When using the new in-app messaging feature, pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://www.tencentcloud.com/document/product/1024/30715">API Documentation</a></li>.
 <li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
-<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
+<li><a href="https://www.tencentcloud.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
     </tr>
 </table>
 
@@ -221,8 +246,8 @@
 		<li> Supported in-app message display.
 		<li> Optimized the Tencent Push Notification Service registration process.
 		<li> Fixed the issue where the device model cannot be obtained before a user agrees to the Privacy Policy.</td>
-        <td>August 27, 2021</td><td><li>When using the new in-app messaging feature, pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1024/30715">API Documentation</a></li>
-<li><a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
+        <td>August 27, 2021</td><td><li>When using the new in-app messaging feature, pay attention to the compatibility between WebView and higher Android versions. For more information, see <a href="https://www.tencentcloud.com/document/product/1024/30715">API Documentation</a></li>
+<li><a href="https://www.tencentcloud.com/document/product/1024/40595">Android SDK Upgrade Guide</a></li></td>
     </tr>
 </table>
 
@@ -245,7 +270,7 @@
 		<li>  Fixed IPv6 request failures.</td>
         <td>July 6, 2021</td><td><li>
 <a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
-<li><a href="https://intl.cloud.tencent.com/document/product/1024/32624">Android FAQs</a></li></td>
+<li><a href="https://www.tencentcloud.com/document/product/1024/32624">Android FAQs</a></li></td>
     </tr>
 </table>
 
@@ -265,7 +290,7 @@
 <li>Upgraded the API for binding accounts by adding multiple preset account types.
 <li>Supported clearing notifications pushed through the Mi channel (devices of MIUI 11 or earlier) via the API for clearing all notifications.
 <li>Supported badge display on HONOR mobile phones.</td>
-        <td>May 26, 2021</td><td><li>Because JCenter has been deprecated, you may encounter issues when pulling SDK dependencies. See <a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a> to configure the dependency repository mirror source.</li>
+        <td>May 26, 2021</td><td><li>Because JCenter has been deprecated, you may encounter issues when pulling SDK dependencies. See <a href="https://www.tencentcloud.com/document/product/1024/40595">Android SDK Upgrade Guide</a> to configure the dependency repository mirror source.</li>
 <li> When using the new API for tag query, you need to add the implementation method <code>onQueryTagsResult</code> in the implementation class that inherits <code>XGPushBaseReceiver</code>. </li></td>
     </tr>
 </table>
@@ -329,7 +354,7 @@
     </tr>
         <tr>
         <td>SDK v1.2.1.3 release</td>
-       <td><li>Optimized the internal logic.<li>Officially supported Huawei Push SDK v5 starting from this version. Update the integration configuration as instructed in <a href="https://intl.cloud.tencent.com/document/product/1024/37176">Huawei Channel v5 Integration</a>.</td>
+       <td><li>Optimized the internal logic.<li>Officially supported Huawei Push SDK v5 starting from this version. Update the integration configuration as instructed in <a href="https://www.tencentcloud.com/document/product/1024/37176">Huawei Channel v5 Integration</a>.</td>
         <td>November 11, 2020</td>
         <td>-</td>
     </tr>
@@ -367,7 +392,7 @@
 </tr>
         <tr>
         <td>SDK v1.2.0.3 release</td>
-       <td>Fixed known issues. </td>
+       <td>Fixes known issues. </td>
         <td>July 30, 2020</td>
         <td>-</a></td>
     </tr>
@@ -392,7 +417,7 @@
         <td>SDK v1.2.0.1 release</td>
        <td><li> Supported collecting statistics on vendor channel notification click events. </li> <li> Added more custom notification styles.</li> <li> Upgraded the SDK for OPPO PUSH to v2.1.0.</li> </td>
         <td>June 23, 2020</td>
-        <td>This version involves package name changes. Modify relevant configurations as instructed in <a href="https://intl.cloud.tencent.com/document/product/1024/30713">SDK Integration</a>:
+        <td>This version involves package name changes. Modify relevant configurations as instructed in <a href="https://www.tencentcloud.com/document/product/1024/30713">SDK Integration</a>:
 <li>Automatic integration: Pay attention to the obfuscation configuration.</li>
 <li>Manual integration: Pay attention to the SO files, manifest file, and obfuscation configuration.</li></td>
     </tr>
@@ -423,7 +448,7 @@
         <td>SDK v1.1.6.0 release</td>
         <td><li>Optimized the encryption protocol. </li> <li>Optimized network connection.</li> <li>Supported badge configuration for the Huawei channel.</li> <li>Upgraded the SDK for Mi Push to v3.7.5 and SDK for Meizu Push to v3.9.0.</li><li>Supported Realme and Black Shark channels.</li><li>Removed the call of Beacon to get QIMEI information.</li></td>
         <td>April 21, 2020</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/1024/35828">Badge Adaptation Guide</a></td>
+        <td><a href="https://www.tencentcloud.com/document/product/1024/35828">Badge Adaptation Guide</a></td>
     </tr>
     <tr>
         <td>SDK v1.1.5.5 release</td>
@@ -554,7 +579,7 @@
         <td>SDK v1.1.2.1 release</td>
         <td><li> Optimized the notification bar display.</li> <li> Optimized some APIs.</li> <li> Added the support for audio rich media.</li> <li> Optimized the SDK internally.</li></td>
         <td>September 27, 2019</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/1024/30713#.E9.9B.86.E6.88.90.E6.96.B9.E6.B3.95">Usage of audiovisual rich media</a></td>
+        <td><a href="https://www.tencentcloud.com/document/product/1024/30713#.E9.9B.86.E6.88.90.E6.96.B9.E6.B3.95">Usage of audiovisual rich media</a></td>
     </tr>
 </table>
 

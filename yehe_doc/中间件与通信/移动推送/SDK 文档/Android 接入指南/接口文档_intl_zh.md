@@ -403,7 +403,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
     }
 }
 ```
-> 参考文档：谷歌开发者 [按进程分设基于网络的数据目录](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-cn#web-data-dirs)。
+> 参考文档：谷歌开发者 [按进程分设基于网络的数据目录](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=en#web-data-dirs)。
 ### 设置是否允许展示应用内消息窗口
 ```java
 XGPushConfig.enableShowInMsg(Context context, boolean flag);
@@ -528,7 +528,7 @@ XGPushManager.upsertAccounts(context, accountInfoList, xgiOperateCallback);
 
 >?
 > - 每个账号最多支持绑定100个 token。
-> - 账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号，账号类型取值可参考 [账号类型取值表](https://intl.cloud.tencent.com/document/product/1024/40598)。
+> - 账号可以是邮箱、手机号、用户名等任意类别的业务账号，账号类型取值可参考 [账号类型取值表](https://intl.cloud.tencent.com/document/product/1024/40598)。
 > - 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764) 文档中 account_push_type 参数设置。
 > 
 ### 添加手机号
@@ -640,7 +640,7 @@ XGPushManager.clearAccounts(getApplicationContext());
 ### 覆盖多个标签
 #### 接口说明
 一次设置多个标签，会覆盖这个设备之前设置的标签。
-开发者可以针对不同的用户设置标签，然后根据标签名群发通知。 一个应用最多有10000个 tag， 每个 Token 在一个应用下最多100个 tag，如需提高该限制，请 [提交工单](https://console.tencentcloud.com/workorder/category)。每个自定义 tag 可绑定的设备 Token 数量无限制，tag  中不准包含空格。
+开发者可以针对不同的用户设置标签，然后根据标签名群发通知。 一个应用最多有10000个 tag， 每个 Token 在一个应用下最多100个 tag，如需提高该限制，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。每个自定义 tag 可绑定的设备 Token 数量无限制，tag  中不准包含空格。
 ```java
 public static void clearAndAppendTags(Context context, String operateName, Set<String> tags) 
 ```
@@ -975,7 +975,7 @@ XGPushConfig.getOtherPushToken(context);
 成功时返回正常的 Token；失败时返回 null 或0。  
 ### 在通知点击目标页面内获取随通知下发的自定义参数（custom_content）内容
 SDK 1.3.2.0 新增，当通知被点击打开时，可以在通知设置的目标页面内，通过此接口直接获取创建推送任务时配置的自定义参数（custom_content）内容；
-详细使用方式参见 [通知点击跳转](#examplecode)。
+详细使用方式参见 [通知点击跳转](https://intl.cloud.tencent.com/document/product/1024/38354#rest-api-.E4.BD.BF.E7.94.A8)。
 ``` 
 public static String getCustomContentFromIntent(Context context, Intent intent)
 ```
@@ -1029,7 +1029,7 @@ XGPushConfig.setAccessKey(context, accessKey);
 >
 ### 新增日志上报接口
 #### 接口说明
-开发者如果发现 TPush 相关功能异常，可以调用该接口，触发本地 Push 日志的上报，反馈问题时，请 [提交工单](https://console.tencentcloud.com/workorder/category) 将文件地址给到我们，便于我们排查问题。
+开发者如果发现 TPush 相关功能异常，可以调用该接口，触发本地 Push 日志的上报，反馈问题时，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service) 将文件地址给到我们，便于我们排查问题。
 ```
 public static void uploadLogFile(Context context, HttpRequestCallback httpRequestCallback)
 ```
