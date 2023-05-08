@@ -59,7 +59,7 @@ rm -rf /var/lib/cloud
 	<td>若 <code>preserve_hostname</code> 为 
 	<code>true</code> 且 <code>- scripts-user</code> 配置被禁用，则实例内部的 
 	<code>/var/lib/cloud/instance/scripts/runcmd</code>
-	初始化脚本将不会被执行，并会同时影响其他子项的初始化（主要涉及：云监控、云安全的安装、软件源的设置）。
+	初始化脚本将不会被执行，并会同时影响其他子项的初始化（主要涉及：腾讯云可观测平台、云安全的安装、软件源的设置）。
 	同时，在您创建子机时，自定义脚本也不会被执行。</td>
   </tr>
   <tr>
@@ -78,7 +78,7 @@ rm -rf /var/lib/cloud
 		<li>如果您禁用了 
 		<code>- scripts-user</code> 这行配置，实例内部的 
 		<code>/var/lib/cloud/instance/scripts/runcmd</code>
-		初始化脚本将不会被执行，并会同时影响其他子项的初始化（主要涉及：云监控、云安全的安装、软件源的设置）。同时，在您创建子机时，自定义脚本也不会被执行。</li>
+		初始化脚本将不会被执行，并会同时影响其他子项的初始化（主要涉及：腾讯云可观测平台、云安全的安装、软件源的设置）。同时，在您创建子机时，自定义脚本也不会被执行。</li>
 		<li>每当子机重启时，部分存量机器 
 		<code>/etc/hosts</code> 的设置都会被覆盖。解决方案请参见 
 		<a href="https://intl.cloud.tencent.com/document/product/213/32504">如何有效的修改 Linux 实例的 etc hosts
@@ -181,9 +181,9 @@ pkg_resources.DistributionNotFound: pyyaml
 - 问题现象：
 在开机启动执行 Cloud-Init 时报错。
 - 问题分析：
-安装 Cloud-Init 时，Python 解释默认使用 Python2（即 `/usr/bin/python` 与 `/bin/python` 这两个软连链向 Python2）。当用户业务有需要时，可能会在实例内部把 Python 的默认解释器改为 Python3（即修改 `/usr/bin/python` 与 `/bin/python` 这两个软连，使其指向 Python3）。由于兼容性问题，导致在开机启动执行 Cloud-Init 时报错。
+安装 Cloud-Init 时，Python 解释器默认使用 Python2（即 `/usr/bin/python` 与 `/bin/python` 这两个软链接指向 Python2）。当用户业务有需要时，可能会在实例内部把 Python 的默认解释器改为 Python3（即修改 `/usr/bin/python` 与 `/bin/python` 这两个软链接，使其指向 Python3）。由于兼容性问题，导致在开机启动执行 Cloud-Init 时报错。
 - 解决方案：
- 1. 修改 `/usr/bin/cloud-init` 文件中指定的 Python 解释器，将 `#/usr/bin/python`或`#/bin/python` 修改为 `#! user/bin/python`。
+ 1. 以 Python2.7为例，修改 `/usr/bin/cloud-init` 文件中指定的 Python 解释器，将 `#!/usr/bin/python` 或 `#!/bin/python` 修改为 `#!/usr/bin/python2.7`。
 <dx-alert infotype="notice" title="">
 不要使用软连接，直接指向具体的解释器。
 </dx-alert>
@@ -233,4 +233,5 @@ pkg_resources.DistributionNotFound: pyyaml
  1. 将 cloudbase-init 服务改为 LocalSystem 服务，具体操作方式请参见 [Cloudbase-Init 服务运行排查方案](#checkcloudbase-init) 的 [步骤 2](#step02)。 
  2. 将 cloudbase-init 服务启动类型改为自动。 具体操作方式请参见 [Cloudbase-Init 服务运行排查方案](#checkcloudbase-init) 的 [步骤 2](#step02)。
  3. 卸载对应的安全软件， 或在安全软件里面对 cloudbase-init 服务的相关操作加白名单。
+
 

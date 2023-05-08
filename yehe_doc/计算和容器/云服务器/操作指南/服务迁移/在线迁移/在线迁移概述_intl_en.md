@@ -7,7 +7,7 @@ The source server can be a physical server, a virtual machine, or a cloud server
 
 
 
-## Application Scenarios
+## Scenarios
 
 Online migration is applicable to the following scenarios (including but not limited to):
 - IT architecture cloudification
@@ -17,16 +17,14 @@ Online migration is applicable to the following scenarios (including but not lim
 
 ## Differences from Offline Migration
 
-In offline migration, you need to create images for system disks or data disks on source servers, and then migrate images to the Cloud Virtual Machine (CVM) or Cloud Block Storage (CBS). You do not need to create images for online migration. Instead, you can run the migration tool on source servers to migrate them to destination CVMs.
-
-## Features
-
-Currently, online migration supports the server migration feature.
+In offline migration, you need to create images for system disks or data disks on source servers, and then migrate images to Cloud Virtual Machine (CVM) or Cloud Block Storage (CBS) instances. You do not need to create images for online migration. Instead, you can run the migration tool on source servers to migrate them to the destination CVM instances.
 
 ## Starting Migration
 
-After registering the migration source server to Tencent Cloud using the go2tencentcloud tool provided by Tencent Cloud, manage the migration source and complete the migration task via the feature of online migration in the CVM console. For details, see [Migration in Console](https://intl.cloud.tencent.com/document/product/213/44338).
+- Importing the migration source on the client: Log in to the source server, run the go2tencentcloud tool provided by Tencent Cloud to import the migration source server to Tencent Cloud, and manage the migration source and complete the migration task by using the online migration feature in the CVM console. For more information, see [Operation Guide](https://www.tencentcloud.com/document/product/213/44338).
+- Quick migration in the console: Create multiple migration tasks in the console and synchronize the operating system and programs of the source server to Tencent Cloud without logging in to the source server or downloading tools. For more information, see [Quick Migration Guide](https://intl.cloud.tencent.com/document/product/213/53265).
+
 
 ## FAQs
 
-For more information, please see [Service Migration](https://intl.cloud.tencent.com/document/product/213/32395).
+For more information, see [Service Migration](https://www.tencentcloud.com/document/product/213/32395).
