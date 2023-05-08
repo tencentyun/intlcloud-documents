@@ -1,12 +1,11 @@
-
 >! All billing and payment dates and times on Tencent Cloud International are Beijing time (UTC+8).
 
 Pay-as-you-go accounts of Tencent Cloud International are given a credit limit that allows them to use resources first and pay later. The credit limit varies with customer type and payment frequency (billing cycle).
 ### Customers without sales reps
 Credit limits for customers without sales reps are dynamically adjusted according to their auto-payment records.
-1. After you sign up and add a credit card, the system will grant you a credit limit of 1 USD.
-2. After the first successful auto-payment, the system will increase your credit limit to 30 USD.
-3. For each subsequent successful auto-payment, the system will increase your credit limit by 20 USD.
+1. After you sign up and add a credit card, your account will start with a credit limit of 0 USD.
+2. After you make three successful auto-payments, the system will increase your credit limit to 30 USD.
+3. Afterwards, the system will increase your credit limit by 20 USD each time you make three successful auto-payments.
 4. The credit limit can be increased to up to 150 USD.
 About auto-payment frequency:
 The system deducts the payable amount from your default payment method (credit card) at a certain frequency. This frequency is determined by the billing cycle (hourly, daily, or monthly) of the pay-as-you-go products you use. If a pay-as-you-go product is billed hourly, the system will check on an hourly basis whether your account has sufficient available credit. If not, auto-payment will be triggered.
@@ -16,11 +15,10 @@ For customers with sales reps, auto-payment is disabled by default. To enable it
 After you enable auto-payment:
 1. On the 10th of the payment month, the system will deduct the amount of all due and unpaid payments from your default payment method.
 2. Your payment month depends on the month in which a bill is generated and your payment period.
-For example, if your payment period is one month, your bill for May will be generated in early June, and payments will be collected on July 10. If your payment cycle is two months, your bill for May will be generated in early June, and payments will be collected on August 10.
+For example, if your payment cycle is one month, your bill for May will be generated in early June, and payments will be collected on July 10. If your payment cycle is two months, your bill for May will be generated in early June, and payments will be collected on August 10.
 3. To avoid cases where services are suspended for your account due to overdue payments, we will deduct payments from your default payment method on the payment day even if you haven’t confirmed your past bills.
-
-![](https://main.qcloudimg.com/raw/e81ede56f2b48340a90a9dc2195f5835.png)
-![](https://main.qcloudimg.com/raw/043d7e456abef93c930ba3570f883042.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/JhfG496_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16835140631933.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/iwLp949_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16835140778607.png)
 
 
 ### FAQs
