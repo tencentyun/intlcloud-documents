@@ -94,5 +94,5 @@ If the selected notification group contains a custom webhook, the custom webhook
 
 ## Best Practices
 
-[Setting Alarm Trigger Conditions by Time Period](https://cloud.tencent.com/document/product/614/60693)
-[Setting Interval-Valued Comparison and Periodically-Valued Comparison as Alarm Trigger Conditions](https://tcloud.woa.com/document/product/614/83971)
+[Setting Alarm Trigger Conditions by Time Period](https://www.tencentcloud.com/document/product/614/54948)
+[Setting Interval-Valued Comparison and Periodically-Valued Comparison as Alarm Trigger Conditions](https://www.tencentcloud.com/document/product/614/54949)
