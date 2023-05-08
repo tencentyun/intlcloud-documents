@@ -1,22 +1,25 @@
 Apache Zeppelin is a web-based notebook that enables interactive data analysis. It allows you to create interactive collaborative documents with various prebuilt language backends (or interpreters), such as Scala (Apache Spark), Python (Apache Spark), Spark SQL, Hive, and Shell.
+>? The Flink, HBase, Kylin, Livy, and Spark interpreters are configured for EMR v3.3.0 or later and EMR v2.6.0 or later by default. For configuring interpreters of other components for other versions of EMR, see [Documentation](https://zeppelin.apache.org/) and configure them based on the Zepplin version.
+
 
 ## Prerequisites
 - You have created a cluster and selected the Zeppelin service. For more information, see [Creating EMR Cluster](https://intl.cloud.tencent.com/document/product/1026/31099).
-- In the cluster's EMR security group, open ports 22 and 30001 (which are opened by default for new clusters) and the necessary IP ranges for communication over the private network. The new security group is named in the format of `emr-xxxxxxxx_yyyyMMdd`, which shouldn't be modified manually.
-- Add services as needed, such as Spark, Flink, HBase, and Kylin.
+- In the EMR security group of the cluster, ports 22, 30001, and 18000 and necessary private network IP ranges are enabled (ports 22 and 30001 enabled for a new cluster by default). A new security group must be named in the format of "emr-xxxxxxxx_yyyyMMdd", and the name cannot be modified manually.
+- Services are added as needed, such as Spark, Flink, HBase, and Kylin.
 
-## Logging in to Zeppelin
+## Logging In to Zeppelin
 1. Create a cluster and select the Zeppelin service. For more information, see [Creating EMR Cluster](https://intl.cloud.tencent.com/document/product/1026/31099).
-2. On the left sidebar in the [EMR console](https://console.cloud.tencent.com/emr), select **Cluster Service**.
-3. Click the Zeppelin block and click **Web UI Address** to access the web UI.
-4. For EMR versions later than 3.1.0, the default login permission is set, and both the username and password are `admin`. To change the password, modify the `users` and `roles` options in the `/usr/local/service/zeppelin-0.8.2/conf/shiro.ini` configuration file. For more configuration instructions, see [Apache Shiro Configuration](https://shiro.apache.org/configuration.html#Configuration-INISections).
-5. In EMR 2.6.0 and 3.3.0, Zeppelin login is integrated into the OpenLDAP account, so you can log in only with an OpenLDAP account and password. After a cluster is created, the default OpenLDAP accounts are `root` and `hadoop`, and the default password is the cluster password. Only the `root` account has the Zeppelin admin permissions and has access to the interpreter configuration page.
+2. On the left sidebar in the [EMR console](https://console.cloud.tencent.com/emr), select **Cluster Services**.
+3. Click the Zeppelin block and click **WebUI address** to access the WebUI.
+4. For EMR v2.5.0 or earlier and EMR 3.2.1 or earlier, the default login permission is set, and both the username and password are `admin`. To change the password, you can modify the `users` and `roles` options in the configuration file `/usr/local/service/zeppelin-0.8.2/conf/shiro.ini`. For more configuration instructions, see [here](https://shiro.apache.org/configuration.html#Configuration-INISections).
+5. In EMR v2.6.0 or later and EMR v3.3.0 or later, Zeppelin login is integrated into the OpenLDAP account, so you can log in only with an OpenLDAP account and password. After a cluster is created, the default OpenLDAP accounts are `root` and `hadoop`, and the default password is the cluster password. Only the `root` account has the Zeppelin admin permissions and thus the access to the interpreter configuration page.
 
-## Performing `wordcount` with Spark
-1. Click **Create new note** on the left of the page to create a notebook in the pop-up window.
+## Performing Wordcount Using Spark
+1. Click **Create new note** on the left and create a notebook on the pop-up page.
  ![](https://main.qcloudimg.com/raw/c31d7b714f22b1170d9c6799572227a3.png)
-2. Configure Spark for integration with an EMR cluster (Spark on YARN). Modify and save the configuration.
-![](https://main.qcloudimg.com/raw/3794475f902450a00a86e2bb00dd3c42.png)
+2. For EMR v3.3.0 or later and EMR v2.6.0 or later, clusters connecting Spark to EMR (Spark on YARN) are configured by default.
+	- If you are using EMR v3.1.0, EMR v2.5.0, or EMR v2.3.0, see [Documentation](https://zeppelin.apache.org/docs/0.8.2/interpreter/spark.html) to configure the Spark interpreter.
+	- If you are using EMR v3.2.1, see [Documentation](https://zeppelin.apache.org/docs/0.9.0/interpreter/spark.html) to configure the Spark interpreter.
 3. Go to your own notebook.
  ![](https://main.qcloudimg.com/raw/d56fe984a78c0f8f59498d2c24ee5b73.png)
 4. Write a wordcount program and run the following commands:

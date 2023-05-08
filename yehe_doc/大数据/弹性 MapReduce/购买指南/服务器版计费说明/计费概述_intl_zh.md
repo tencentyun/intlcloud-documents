@@ -1,0 +1,115 @@
+## 计费模式
+弹性 MapReduce（EMR） 集群提供按量计费计费模式，集群费用由集群中全部节点和关联云产品计费的总和；弹性节点（Task 节点）支持竞价实例计费。
+按量计费集群中节点支持按量计费和竞价实例。
+下表列出两种计费模式区别：
+
+<table>
+<thead>
+<tr>
+<th>节点计费模式</th>
+<th>按量计费</th>
+<th>竞价实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>付款方式</td>
+<td>后付费；购买时 <a href="https://intl.cloud.tencent.com/document/product/555/12039">冻结费用</a>，每小时结算。</td>
+<td>后付费；购买时 <a href="https://intl.cloud.tencent.com/document/product/555/12039">冻结费用</a>，每小时结算。</td>
+</tr>
+<tr>
+<td>计费单位</td>
+<td>美元/秒</td>
+<td>美元/秒</td>
+</tr>
+<tr>
+<td>单价</td>
+<td>单价较高</td>
+<td>浮动价格，大多数情况是同规格按量计费模式的10% - 20%</td>
+</tr>
+<tr>
+<td>最少使用时长</td>
+<td>按秒计费，按小时结算，随时购买随时释放</td>
+<td>按秒计费，按小时结算，随时购买随时释放，也可能会被系统主动回收</td>
+</tr>
+<tr>
+<td>节点配置调整</td>
+<td>随时升配置。每台节点升配无限制（仅支持节点 CPU 和内存调整）</td>
+<td>不允许调整配置</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>适用于短时间存在或周期性存在的集群。</td>
+<td>适用于弹性计算资源额外补充算力集群</td>
+</tr>
+<tr>
+<td>计费模式转换</td>
+<td>不可转换为包年包月。</a></td>
+<td>不支持</td>
+</tr>
+</tbody></table>
+**按量计费（除 S5 以及2019年11月后上线的新机型外）支持三级阶梯，用的越久，优惠越大：**
+
+- 第一阶梯 T1：0 &lt;T1 ≤ 96；
+- 第二阶梯 T2：96 &lt;T2 ≤ 360；
+- 第三阶梯 T3：T3>360；
+详情请参见  [三级阶梯详情](https://intl.cloud.tencent.com/document/product/213/2176)。
+
+您可直接使用 [EMR 产品定价](https://buy.cloud.tencent.com/price/emr) 查看节点规格价格，估算资源成本。
+EMR 账单仅含节点费用：节点费用 = CPU + 内存 + 系统盘 + 本地数据盘，关联产品账单通过对应产品查看。EMR 账单详情请参见 [账单查询](https://intl.cloud.tencent.com/document/product/1026/48586) 或 [标签分账](https://intl.cloud.tencent.com/document/product/1026/48586)。
+>! 
+>- **在 CVM 控制台对 EMR 集群按量计费节点进行关机操作时，请谨慎选择关机模式，EMR 节点不支持关机不收费模式。**
+>- **定价中心价格仅为 CPU 和内存、本地数据盘的配置费用**，不包含镜像、系统云盘、数据云盘以及关联产品费用。
+>- 磁盘类型价格请参考 [云硬盘价格总览](https://intl.cloud.tencent.com/document/product/362/2413)，关联云产品费用收取请参见下文 “计费项 > 关联云产品费用”。
+>- 官网价格会根据情况做适当调整，具体价格请参考官网，此处不作为长期有效数据。
+
+## 计费项
+集群实例费用包含集群中全部节点费用和关联云产品费用；在使用 EMR 过程中可能使用其他云产品资源（弹性公网 IP、CDB、CBS、CHDFS、COS、私有网络等），将按照各自云产品计费方式进行收费，具体收费明细，可参考各产品的计费说明。
+<table>
+<thead>
+<tr>
+<th>费用类型</th>
+<th>计费项</th>
+<th>EMR 中使用说明</th>
+<th>计费说明</th>
+<th>产品定价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EMR 节点费用</td>
+<td>节点费用</td>
+<td>可根据业务场景选择不同的机型规格，EMR 独立定价，定价包含节点涉及的 CPU、内存、系统盘以及本地盘资源，计费类型支持按量计费和竞价实例。</td>
+<td>EMR 计费仅收取全部节点费用</td>
+<td><a href="https://buy.cloud.tencent.com/price/emr"><strong>EMR 产品定价</strong></a></td>
+</tr>
+<tr>
+<td rowspan=5>关联云产品费用</td>
+<td>弹性公网 IP</td>
+<td>集群的 Master.1 节点默认开启外网访问功能，以实现在集群外访问 Hadoop 众多组件的 WebUI 界面。流量费用即访问这些页面产生的数据交互流量费用，流量绝大多数情况都非常少。因此默认使用按流量计费的方案，相比按带宽付费更节约成本。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/213/17156">弹性公网 IP 计费概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/213/17156">弹性公网 IP 计费说明</a></td>
+</tr>
+<tr>
+<td>云数据库 MySQL（CDB）</td>
+<td>当选择部署 Hive（本地部署）、Hue、Ranger、Oozie、Druid、Superset 一个或多个组件时需要购买一个云数据库 MySQL（CDB）用于元数据存储。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/18335">云数据库MySQL计费概述</a></td>
+<td><a href="https://buy.cloud.tencent.com/price/cdb/overview?regionId=1&amp;zoneId=100006&amp;engineVersion=8.0&amp;cdbType=Z3&amp;memory=8000&amp;cpu=4&amp;volume=200&amp;goodsNum=1">云数据库 MySQL 产品定价</a></td>
+</tr>
+<tr>
+<td>云硬盘 CBS</td>
+<td>节点部署数据盘为云盘时，将最少购买页一块云硬盘作为数据存储位，云硬盘费用将同下单购买EMR节点是一并支付，并产品 CBS 相应订单，购买的云硬盘计费将同节点计费模式一致。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/362/32415">云硬盘 CBS 计费概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/362/2413">云硬盘价格总览</a></td>
+</tr>
+<tr>
+<td>对象存储 COS</td>
+<td>当您使用对象存储来实现集群的计算存储分离时，会因集群计算请求拉取对象存储中的数据，而产生数据存储和请求费用。同时，在计算中，也可能因结果数据存放或者备份等目的，而在对象存储中产生新的数据。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/16871">对象存储 COS 计费概述</a></td>
+<td><a href="https://buy.cloud.tencent.com/price/cos">对象存储产品定价</a></td>
+</tr>
+<tr>
+<td>云 HDFS（CHDFS）</td>
+<td>当您使用 CHDFS 来实现集群的计算存储分离时，会因集群计算请求拉取 CHDFS 中的数据，而产生数据存储和请求费用。同时，在计算中，也可能因结果数据存放或者备份等目的，而在 CHDFS 中产生新的数据</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1106/41955">云 HDFS 购买指南</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1106/41955">云 HDFS 购买指南</a></td>
+</tr>
+</tbody></table>
