@@ -46,7 +46,7 @@ approx_distinct(x)
 
 Bigint
 
-### Example
+### Sample
 
 Use the `count` function to calculate the PV value and use the `approx_distinct` function to get the approximate number of distinct input values of the `client_ip` field and use it as the UV value.
 
@@ -82,18 +82,17 @@ approx_percentile(x, array[percentage01,percentage02...])
 
 double or array
 
-### Example
-
-Example 1: sort the values of the **resTotalTime** column and return the value of **resTotalTime** approximately at the 50% position
-
+### Sample
+#### Sample 1
+Sort the values of the **resTotalTime** column and return the value of **resTotalTime** approximately at the 50% position.
 ```
 * | select approx_percentile(resTotalTime,0.5)
 ```
 
 
 
-Example 2: Sort the values of the **resTotalTime** column and return the values of **resTotalTime** approximately at the 10%, 20%, and 60% positions
-
+#### Sample 2
+Sort the values of the **resTotalTime** column and return the values of **resTotalTime** approximately at the 10%, 20%, and 60% positions.
 ```
 * | select approx_percentile(resTotalTime, array[0.2,0.4,0.6])
 ```

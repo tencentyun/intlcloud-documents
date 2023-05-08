@@ -5,7 +5,7 @@ This document describes how to configure an alarm policy based on logs so that a
 ## Prerequisites
 
 - You have uploaded the log to a log topic and [configured the index](https://intl.cloud.tencent.com/document/product/614/39594).
-- The log topic is not in [STANDARD_IA](https://intl.cloud.tencent.com/document/product/614/42004) storage, which doesn't support alarm policy configuration.
+- The log topic is not in [STANDARD_IA](https://intl.cloud.tencent.com/document/product/614/42004) storage, which doesn't support alarm policy configuration. An alarm policy requires SQL statements. We recommend that you structure logs as instructed in [Collection Overview](https://intl.cloud.tencent.com/document/product/614/31652).
 - You have logged in to the CLS console and entered the [Alarm Policy](https://console.cloud.tencent.com/cls/alarm/list) page.
 
 ## Directions
@@ -15,7 +15,7 @@ On the **Alarm Policy** page, click **Create** and configure the following items
 
 ### Configuring the monitoring object and monitoring task
 
- - **Monitoring Object**: Select the target log topic.
+ - **Monitoring Object**: Select the target log topic(s). It can be determined whether the trigger conditions are met separately for each log topic. You can select up to 20 log topics in the same region. If multiple log topics meet the trigger conditions at the same time, multiple alarms will be generated at a time.
  - **Monitoring Task**
   - **Query Statement**: It is used for log topics and needs to contain the analysis statement (i.e., SQL statement as described in [Overview and Syntax Rules](https://intl.cloud.tencent.com/document/product/614/37803)).
     - Example 1: To count logs with errors, use `status:error | select count(*) as ErrCount`.
@@ -43,7 +43,6 @@ If the trigger condition is `$2.Latency > 5`, then it is met by four results.
 <li>If triggering by group is not enabled, only one alarm will be triggered when the trigger condition is met by one of the above execution results.</li>
 <li>If it is enabled and the results are grouped by the `domain` field, four alarms will be triggered separately for the above execution results.</li>
 </ul>
-
 >!  
 > - When triggering by group is enabled, the trigger condition may be met by multiple results, and a large number of alarms will be triggered, leading to an alarm storm. Therefore, configure the group field and trigger condition appropriately.
 > - When specifying the group field, you can divide execution results into up to 1,000 groups. No alarms will be triggered for excessive groups.
@@ -51,7 +50,7 @@ If the trigger condition is `$2.Latency > 5`, then it is met by four results.
   - **Execution Cycle**: It indicates the execution frequency of the monitoring task, which can be configured in the following two ways:
  <table>
 		<tr>
-		<th>Cycle Configuration Method</th>
+		<th>Period Configuration Method</th>
 		<th>Description</th>
 		<th>Example</th>
 	</tr>
@@ -86,13 +85,14 @@ When an alarm is triggered, raw logs can be further analyzed through multi-dimen
  - Duration: A notification will be sent only after the trigger condition is met constantly a certain number of times (which can be 1–10 and is 1 by default).
  - Interval: No notifications will be sent within the specified interval after the last notification. For example, the **an alarm will be triggered every 15 minutes** option indicates that only one alarm will be sent within 15 minutes.
 - **Notification Group**:
-The notification channels and objects can be set by associating a notification channel group. Notifications can be sent by SMS, email, phone call, WeChat, WeCom, and custom callback API (webhook). For more information, see [Managing Notification Group](https://intl.cloud.tencent.com/document/product/614/41987).
+The notification channels and objects can be set by associating a notification channel group. Notifications can be sent by SMS, email, phone call, Weixin, WeCom, and custom callback API (webhook). For more information, please see [Managing Notification Groups](https://intl.cloud.tencent.com/document/product/614/41987).
 - **Notification Content**:
-By adding preset variables to the notification content, you can add specified information to the alarm notification. For more information on variables, see [Notification Content Variable](https://intl.cloud.tencent.com/document/product/614/41984).
+By adding preset variables to the notification content, you can add specified information to the alarm notification. For more information on variables, see [Alarm Notification Variable](https://intl.cloud.tencent.com/document/product/614/41984).
 - **Custom Webhook Configuration**:
 If the selected notification group contains a custom webhook, the custom webhook input box will be displayed. You can customize the request header and request body there, which will be used by CLS to call the specified API when an alarm is triggered. In the request header and body, you can use [notification content variables](https://intl.cloud.tencent.com/document/product/614/41984) to send relevant data to the specified API.
 
 
 ## Best Practices
 
-[Counting Logs by Time Range](https://www.tencentcloud.com/document/product/614/50272)
+[Setting Alarm Trigger Conditions by Time Period](https://cloud.tencent.com/document/product/614/60693)
+[Setting Interval-Valued Comparison and Periodically-Valued Comparison as Alarm Trigger Conditions](https://tcloud.woa.com/document/product/614/83971)

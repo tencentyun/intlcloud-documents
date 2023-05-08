@@ -17,7 +17,7 @@ ext_sep("Source field name", "Target field 1,Target field 2,Target field...", se
 ```
 
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
 | ------------ | ------------------- | ----------- | ------------- | ---- -------- | ------------------------ |
@@ -25,10 +25,10 @@ ext_sep("Source field name", "Target field 1,Target field 2,Target field...", se
 | output  | A single field name or multiple new field names concatenated with commas       | string     | Yes        | -      | -   |
 | sep       | Separator  | string            | No            | ,          | Any single character               |
 | quote    | Characters that enclose the value    | string            | No            | -           | -              |
-| restrict          | Handling mode when the number of extracted values is inconsistent with the number of target fields entered by the user:</br>True: Ignore the extraction function and do not perform any extraction processing. </br>False: Try to match the first few fields | bool     | No        | False      | -              |
+| restrict          | Handling mode when the number of extracted values is inconsistent with the number of target fields entered by the user:</br>True: ignore the extraction function and do not perform any extraction processing. </br>False: try to match the first few fields | bool     | No        | False      | -              |
 | mode     | Write mode of the new field        | string        | No          | overwrite  | -              |
 
-#### Examples
+#### Sample
 
 - Example 1. Extract values from logs by using a comma as the separator  
 Raw log:  
@@ -86,17 +86,17 @@ This function is used to extract field value content based on multiple character
 ext_sepstr("Source field name","Target field 1,Target field 2,Target field...", sep="abc", restrict=False, mode="overwrite")  
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
 | -------- | --------------------- | ----------------- | --------------------- | ---------- | ------------------------ |
 | field     | Field to extract       | string     | Yes       | -   | Name of an existing field in the user log |
 | output  | A single field name or multiple new field names concatenated with commas       | string     | Yes        | -      | -   |
 | sep      | Separator (string)                       | string | No   | ,         | -              |
-| restrict          | Handling mode when the number of extracted values is inconsistent with the number of target fields entered by the user:</br>True: Ignore the extraction function and do not perform any extraction processing. </br>False: Try to match the first few fields | bool     | No        | False      | -              |
+| restrict          | Handling mode when the number of extracted values is inconsistent with the number of target fields entered by the user:</br>True: ignore the extraction function and do not perform any extraction processing. </br>False: try to match the first few fields | bool     | No        | False      | -              |
 | mode     | Write mode of the new field        | string        | No          | overwrite  | -              |
 
-#### Examples
+#### Sample
 
 Raw log: 
 ``` 
@@ -125,25 +125,25 @@ This function is used to extract field values from JSON data.
 ext_json("Source field name",prefix="",suffix="",format="full",exclude_node="JSON nodes not to expand")   
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
 | ------------ | ----------------------- | -------------- | ------------ | ---------- | --------------- |
 | field        | Field to extract                                               | string | Yes   | -       | -      |
 | prefix       | Prefix of the new field                                                   | string | No   | -       | -      |
 | suffix       | Suffix of the new field                                                   | string | No   | -       | -      |
-| format       | `full`: The field name format is in full path format (parent + sep +  prefix + key + suffix).</br>`simple`: Non-full path format (prefix + key + suffix) | string | No   | simple | -      |
+| format       | `full`: The field name format is in full path format (parent + sep +  prefix + key + suffix).</br>`simple`: non-full path format (prefix + key + suffix) | string | No   | simple | -      |
 | sep          | Concatenation character, used to concatenate node names                                   | string | No   | #      | -      |
 | depth        | Depth to which the function expands the source field, beyond which nodes will not be expanded any more               | number | No   | 100    | 1-500 |
 | expand_array | Whether to expand an array node                                             | bool   | No   | False  | -      |
 | include_node | Allowlist of node names that match the specified regular expression                                 | string | No   | -       |  -     |
 | exclude_node | Blocklist of node names that match the specified regular expression                                 | string | No   | -       |  -     |
 | include_path | Allowlist of node paths that match the specified regular expression                                 | string | No   | -       |  -     |
-| exclude_path | Blocklist of node paths that match the specified regular expression                                 | string | No   | -       |  -     |
+| exclude_path | Allowlist of node paths that match the specified regular expression                                 | string | No   | -       |  -     |
 | retain | Retains some special symbols without escaping them, such as \n and \t.                       | string | No   | -       |   -    |
 |escape| Whether to escape data. Default value: `True`. If special symbols are contained, escaping cannot be performed. |bool|No|True|-|-|
 
-#### Examples
+#### Sample
 
 - Example 1. Extract the key-values of all nodes and construct new fields based on the extracted values. The example log is multi-level nesting, but the extraction does not distinguish hierarchy.  
 Raw log:
@@ -251,7 +251,7 @@ This function is used to extract field values from JSON data.
 ext_json_jmes("Source field name", jmes= "JSON extraction expression", output="Target field", ignore_null=True, mode="overwrite")   
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
 | ----------------- | ------------------------------------------------------------ | ----------------- | --------------------- | ---------- | ------------------------ |
@@ -261,7 +261,7 @@ ext_json_jmes("Source field name", jmes= "JSON extraction expression", output="T
 | ignore_null | Whether to ignore a node whose value is null. The default value is `True`, ignoring fields whose value is null. Otherwise, an empty string is returned. | bool   | No   | True      | -     |
 | mode        | Write mode of the new field. Default value: `overwrite`                               | string | No   | overwrite | -     |
 
-#### Examples
+#### Sample
 
 - Example 1. Extract only one node from multi-layer JSON data
 Raw log:
@@ -305,7 +305,7 @@ This function is used to extract the value of a field by using a regular express
 ext_regex("Source field name", regex="Regular expression", output="Target field 1,Target field 2,Target field.......", mode="overwrite") 
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
 | ----------------- | ------------------------------- | ------------ | ----------------- | ---------- | -------------- |
@@ -314,7 +314,7 @@ ext_regex("Source field name", regex="Regular expression", output="Target field 
 | output  | A single field name or multiple new field names concatenated with commas       | string     | No        | -      | -   |
 | mode        | Write mode of the new field. Default value: `overwrite`                               | string | No   | overwrite | -     |
 
-#### Examples
+#### Sample
 
 - Example 1. Match digits  
 Raw log:
@@ -355,7 +355,7 @@ This function is used to extract key-value pairs by using two levels of separato
 ext_kv("Source field name", pair_sep=r"\s", kv_sep="=", prefix="", suffix="", mode="fill-auto")  
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter | Description | Parameter Type | Required | Default Value | Value Range |
 | ----------------- | -------------------- | ----------------- | --------------------- | ---------- | ------------------- |
@@ -366,7 +366,7 @@ ext_kv("Source field name", pair_sep=r"\s", kv_sep="=", prefix="", suffix="", mo
 | suffix       | Suffix of the new field                                                   | string | No   | -       | -      |
 | mode        | Write mode of the new field. Default value: `overwrite`                               | string | No   | - | -     |
 
-#### Examples
+#### Sample
 
 The raw log contains two levels of separators: "|" and "=".
 
@@ -395,13 +395,13 @@ This function is used to return the first non-null and non-empty result value.
 ext_first_notnull(value 1, value 2, ...)
 ```
 
-#### Parameter description
+#### Field description
 
 | Parameter        | Description                                          | Type  | Required  | Default Value | Value Range   |
 | ----------------- | ---------------------------------------- | ------------ | ----------- | ------------- | ------------------- |
 | Variable parameter list      | Parameters or expressions that participate in the calculation             | string | Yes   | -          | -     |
 
-#### Examples
+#### Sample
 
 Raw log:
 ```
@@ -415,4 +415,63 @@ Processing result:
 ```
 {"result":"first not null","data3":"first not null","data2":"","data1":"null"}
 ```
+
+
+
+
+
+
+## Function ext_grok
+#### Function definition
+
+This function is used to extract the matched result value according to the Grok syntax.
+
+#### Syntax description
+
+```
+ext_grok(Field value, grok="", extend="")
+```
+
+#### Field description
+
+
+| Parameter        | Description 	     | Type 	 | Required  | 	 Default Value 	 | Value Range   |
+|---------|---------|---------|---------|---------|---------|
+|field	 | Field value |	string	 | Yes 	 |- |	- |
+|grok	 | Expression |string	 | Yes 	 |- |	- |
+|extend	 | Custom Grok expression |string	 | Yes 	 |- |	- |
+
+ 
+
+#### Sample
+- Example 1
+Raw log:
+```
+{"content":"2019 June 24 \"I am iron man\""}
+```
+Processing rule:
+```
+ext_grok("content", grok="%{YEAR:year} %{MONTH:month} %{MONTHDAY:day} %{QUOTEDSTRING:motto}")
+fields_drop("content")
+```
+Processing result:
+```
+{"day":"24", "month":"June", "motto":"I am iron man", "year":"2019"}
+```
+- Example 2
+Raw log:
+```
+{"content":"Beijing-1104,Beijing-Beijing"}
+```
+Processing rule:
+```
+ext_grok("content", grok="%{ID1:user_id1},%{ID2:user_id2}",extend="ID1=%{WORD}-%{INT},ID2=%{WORD}-%{WORD}")
+fields_drop("content")
+```
+Processing result:
+```
+{"user_id1":"Beijing-1104", "user_id2":"Beijing-Beijing"}
+```
+
+
 

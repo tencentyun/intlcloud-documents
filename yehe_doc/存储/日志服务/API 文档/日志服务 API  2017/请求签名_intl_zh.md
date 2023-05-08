@@ -1,16 +1,17 @@
 >! 
 > - 本文档中 API 为日志服务旧版本 API，已不再更新，日志服务新增功能均不支持旧版本 API，强烈建议您使用 [日志服务 API 3.0](https://intl.cloud.tencent.com/document/product/614/42757)。
-> - 创建日志主题、修改索引配置等管理类操作，请直接使用 [日志服务 API 3.0](https://intl.cloud.tencent.com/document/product/614/42757)。日志采集可使用专为日志采集优化过的 [SDK](https://www.tencentcloud.com/document/product/614/45006)。
+> - 创建日志主题、修改索引配置等管理类操作，请直接使用 [日志服务 API 3.0](https://intl.cloud.tencent.com/document/product/614/42757)。日志采集可使用专为日志采集优化过的 [SDK](https://intl.cloud.tencent.com/document/product/614/45006)。
 > 
 
 ## 准备工作
+代码泄漏可能会导致SecretId和SecretKey泄漏,并威胁账号下所有资源的安全性,以下代码仅供参考,建议采用更安全的方式来使用密钥,请参见云API密钥安全方案推荐。
 
 1. 获取 SecretId 和 SecretKey。
    请在控制台 [云 API 密钥](https://console.cloud.tencent.com/capi) 页面可获取。
 2. 确定开发语言：
    根据不同开发语言，确定对应的 HMAC-SHA1 函数。日志服务 CLS 提供 C#，C++，Go，Java，Node.js，PHP，Python 开发语言的 [签名计算 demo](https://mirrors.tencent.com/install/cls/signature.zip) 供用户参考。
 
-通过 API 对 CLS 发起的 HTTP 签名请求，使用标准的 HTTP Authorization 头部来传递，如下例所示：
+ 通过 API 对 CLS 发起的 HTTP 签名请求，使用标准的 HTTP Authorization 头部来传递，如下例所示：
 
 ```shell
 GET /logset?logset_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx HTTP/1.1
@@ -319,4 +320,3 @@ Content-Length: 50
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDc9YlmrBcFk4C8sbmXQ8i65XXXXXXXXXX&q-sign-time=1578976553;1578978363&q-key-time=1578976553;1578978363&q-header-list=content-type;host&q-url-param-list=&q-signature=600aeb5e646d385d7dd9da57ba9b2545cadfaa1c
 {"logset_id":"xxxx-xx-xx-xx-xxxxxxxx","period":30}
 ```
-

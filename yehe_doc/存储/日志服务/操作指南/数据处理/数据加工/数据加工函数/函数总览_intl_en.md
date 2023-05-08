@@ -1,11 +1,9 @@
-CLS' data processing functions can be flexibly combined and used to cleanse, structure, filter, distribute, mask log data and more.
+CLS's data processing functions can be flexibly combined and used to cleanse, structure, filter, distribute, mask log data and more.
 The figure below shows how a log containing JSON data is processed: the log data is processed and transformed into structured data, and then a field in the log is masked before the processed log is distributed.
-
 ![](https://qcloudimg.tencent-cloud.cn/raw/d4bd1388c816337acb35721847298263.png)
 
-The following is an overview of data processing functions.
-
-- **Key-value extraction functions**: Extracting field-value pairs from log text
+The following is an overview of data processing functions:
+- **Key-value extraction functions**: extracting field-value pairs from log text
 <table>
 <tr><th style="width: 10%">Function</th><th style="width: 30%">Description</th><th style="width: 40%">Syntax Description</th><th style="width: 20%">Return Value Type</th></tr>
 <tr><td>ext_sep</td><td>Extracts field value content based on a separator.</td><td>ext_sep("Source field name", "Target field 1,Target field 2,Target field...", sep="Separator", quote="Non-segmentation part"", restrict=False, mode="overwrite")</td><td>Log after extraction (LOG)</td></tr>
@@ -13,8 +11,8 @@ The following is an overview of data processing functions.
 <tr><td>ext_json</td><td>Extracts field values from JSON data.</td><td>Log after extraction (LOG)
 	ext_json("Source field name",prefix="",suffix="",format="full",exclude_node="JSON nodes not to expand")</td><td>Log after extraction (LOG)</td></tr>
 <tr><td>ext_json_jmes</td><td>Extracts a field value based on a JMES expression.</td><td>ext_json_jmes("Source field name", jmes= "JSON extraction expression", output="Target field", ignore_null=True, mode="overwrite")</td><td>Log after extraction (LOG)</td></tr>
-<tr><td>ext_kv</td><td>Extracts a field value by using two levels of separators.</td><td>ext_kv("Source field name", pair_sep=r"\s", kv_sep="=", prefix="", suffix="", mode="fill-auto")</td><td>Log after extraction (LOG)</td></tr>
-<tr><td>ext_regex</td><td>Extracts a field value by using a regular expression.</td><td>ext_regex("Source field name", regex="Regular expression", output="Target field 1,Target field 2,Target field...", mode="overwrite")</td><td>Log after extraction (LOG)</td></tr>
+<tr><td>ext_kv</td><td>Extracts field values by using two levels of separators.</td><td>ext_kv("Source field name", pair_sep=r"\s", kv_sep="=", prefix="", suffix="", mode="fill-auto")</td><td>Log after extraction (LOG)</td></tr>
+<tr><td>ext_regex</td><td>Extracts field values by using a regular expression.</td><td>ext_regex("Source field name", regex="Regular expression", output="Target field 1,Target field 2,Target field...", mode="overwrite")</td><td>Log after extraction (LOG)</td></tr>
 <tr><td>ext_first_notnull</td><td>Returns the first non-null and non-empty result value.</td><td>ext_first_notnull(Value 1,Value 2,...)</td><td>	The first non-null result value</td></tr>
 </table>
 - **Enrichment functions**: Adding fields to existing fields according to rules
@@ -23,7 +21,7 @@ The following is an overview of data processing functions.
 <tr><td>enrich_table</td><td>Uses CSV structure data to match fields in logs and, when matched fields are found, the function adds other fields and values in the CSV data to the source logs.</td><td>enrich_table("CSV source data", "CSV enrichment field", output="Target field 1,Target field 2,Target field....", mode="overwrite")</td><td>Mapped log (LOG)</td></tr>
 <tr><td>enrich_dict</td><td>Uses dict structure data to match a field value in a log. If the specified field and value match a key in the dict structure data, the function assigns the value of the key to another field in the log.</td><td>enrich_dict("JSON dictionary", "Source field name", output=Target field name, mode="overwrite")</td><td>Mapped log (LOG)</td></tr>
 </table>
-- **Flow control functions**: Condition determination
+- **Flow control functions**: condition determination
 <table>
 <tr><th style="width: 10%">Function</th><th style="width: 30%">Description</th><th style="width: 40%">Syntax Description</th><th style="width: 20%">Return Value Type</th></tr>
 <tr><td>compose</td><td>Combines multiple operation functions. Providing combination capabilities similar to those of branch code blocks, this function can combine multiple operation functions and execute them in sequence. It can be used in combination with branches and output functions.</td><td>compose("Function 1","Function 2", ...)</td><td>Log (LOG)</td></tr>
@@ -32,7 +30,7 @@ The following is an overview of data processing functions.
 <tr><td>t_if_else</td><td>Executes a function based on the evaluation result of a condition.</td><td>t_if_else("Condition", Function 1, Function 2)</td><td>Log (LOG)</td></tr>
 <tr><td>t_switch</td><td>Executes different functions depending on whether branch conditions are met. If all conditions are not met, the data is deleted.</td><td>t_switch("Condition 1", Function 1, "Condition 2", Function 2, ...)</td><td>Log (LOG)</td></tr>
 </table>
-- **Row processing functions**: Log distribution, deletion, and splitting
+- **Row processing functions**: log distribution, deletion, and splitting
 <table>
 <tr><th style="width: 10%">Function</th><th style="width: 30%">Description</th><th style="width: 40%">Syntax Description</th><th style="width: 20%">Return Value Type</th></tr>
 <tr><td>log_output</td><td>Outputs a row of log to a specified log topic. This function can be used independently or together with branch conditions.</td><td>log_output(Log topic alias) (The alias here is the target log topic alias specified when the data processing task is created.)</td><td>No return value</td></tr>
@@ -41,7 +39,7 @@ The following is an overview of data processing functions.
 <tr><td>log_keep</td><td>Retains logs that meet a specified condition.</td><td>log_keep(Condition 1)</td><td>Log (LOG)</td></tr>
 <tr><td>log_split_jsonarray_jmes</td><td>Splits and expands the JSON array in the log according to JMES syntax.</td><td>log_split_jsonarray_jmes("field", jmes="items", prefix="")</td><td>Log (LOG)</td></tr>
 </table>
-- **Field processing functions**: Field Create/Read/Update/Delete/Rename
+- **Field processing functions**: field Create/Read/Update/Delete/Rename
 <table>
 <tr><th style="width: 10%">Function</th><th style="width: 30%">Description</th><th style="width: 40%">Syntax Description</th><th style="width: 20%">Return Value Type</th></tr>
 <tr><td>fields_drop</td><td>Deletes the fields that meet a specified condition.</td><td>fields_drop(Field name 1, Field name 2, ..., regex=False,nest=False)</td><td>Log (LOG)</td></tr>
@@ -61,7 +59,7 @@ The following is an overview of data processing functions.
 <tr><td>json_to_xml</td><td>Parses and converts a JSON string value to an XML string.</td><td>json_to_xml(Field value)</td><td>Value string type (STRING)</td></tr>
 <tr><td>if_json</td><td>Checks whether a value is a JSON string.</td><td>if_json(Field value)</td><td>Condition value (BOOL)</td></tr>
 </table>
-- **Regular expression functions**: Matching and replacing characters in text by using regular expressions				
+- **Regular expression functions**: matching and replacing characters in text by using regular expressions				
 <table>
 <tr><th style="width: 10%">Function</th><th style="width: 30%">Description</th><th style="width: 40%">Syntax Description</th><th style="width: 20%">Return Value Type</th></tr>
 <tr><td>regex_match</td><td>Matches data in full or partial match mode based on a regular expression and returns whether the match is successful.</td><td>regex_match(Field value, regex="", full=True)</td><td>Condition value (BOOL)</td></tr>
@@ -98,9 +96,9 @@ The following is an overview of data processing functions.
 - **Logical expression functions**
 <table>
 <tr><th style="width: 10%">Function</th><th style="width: 30%">Description</th><th style="width: 40%">Syntax Description</th><th style="width: 20%">Return Value Type</th></tr>
-<tr><td>op_if</td><td>Returns a value based on a specified condition.</td><td>op_if(Condition 1, Value 1, Value 2)</td><td>If the condition is met, value 1 is returned. Otherwise, value 2 is returned.</td></tr>
-<tr><td>op_and</td><td>Performs the AND operation on values. If all the specified parameter values are evaluated to true, `True` is returned. Otherwise, `False` is returned. </td><td>op_and(Value 1, Value 2, ...)</td><td>BOOL</td></tr>
-<tr><td>op_or</td><td>Performs the OR operation on values. If one or more of the specified parameter values are evaluated to false, `False` is returned. Otherwise, `True` is returned.</td><td>op_or(Value 1, Value 2, ...)</td><td>BOOL</td></tr>
+<tr><td>op_if</td><td>Returns a value based on a specified condition.</td><td>op_if(Condition 1, Value 1, Value 2)</td><td>If the condition is `true`, `Value 1` is returned; otherwise, `Value 2` is returned.</td></tr>
+<tr><td>op_and</td><td>Performs the AND operation on values. If all the specified parameter values are evaluated to true, `True` is returned; otherwise, `False` is returned. </td><td>op_and(Value 1, Value 2, ...)</td><td>BOOL</td></tr>
+<tr><td>op_or</td><td>Performs the OR operation on values. If one or more of the specified parameter values are evaluated to false, `False` is returned; otherwise, `True` is returned.</td><td>op_or(Value 1, Value 2, ...)</td><td>BOOL</td></tr>
 <tr><td>op_not</td><td>Performs the NOT operation on values.</td><td>op_not(Value)</td><td>BOOL</td></tr>
 <tr><td>op_eq</td><td>Compares two values. If the values are equal, `True` is returned.</td><td>op_eq(Value 1, Value 2)</td><td>BOOL</td></tr>
 <tr><td>op_ge</td><td>Compares two values. If `Value 1` is greater than or equal to `Value 2`, `True` is returned.</td><td>op_ge(Value 1, Value 2)</td><td>BOOL</td></tr>

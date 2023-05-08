@@ -5,7 +5,7 @@
 ## 前提条件
 
 - 日志已上传到某个日志主题，且已 [配置索引](https://intl.cloud.tencent.com/document/product/614/39594)。
-- 日志主题不是 [低频存储](https://intl.cloud.tencent.com/document/product/614/42004)，低频存储不支持配置告警策略。
+- 日志主题不是 [低频存储](https://intl.cloud.tencent.com/document/product/614/42004)，低频存储不支持配置告警策略，告警策略需使用 SQL 语句，建议对日志进行 [结构化](https://intl.cloud.tencent.com/document/product/614/31652) 处理。
 - 已登录日志服务控制台，并进入 [告警策略](https://console.cloud.tencent.com/cls/alarm/list) 管理页面。
 
 ## 操作步骤
@@ -15,7 +15,7 @@
 
 ### 配置监控对象和监控任务
 
- - **监控对象**：选择需要监控的日志主题。
+ - **监控对象**：选择需要监控的日志主题，支持多选，每个日志主题单独判断是否满足触发条件。最多可选择20个日志主题，不支持跨地域，同时有多个日志主题满足触发条件时将同时产生多条告警。
  - **监控任务**
   - **执行语句**：作用于日志主题的执行语句，执行语句需包含分析语句（即 [SQL 语句](https://intl.cloud.tencent.com/document/product/614/37803)）。
     - 例1：统计出现 error 的日志条数 `status:error | select count(*) as ErrCount`
@@ -43,7 +43,6 @@
 <li>若未使用分组触发，上述多条执行结果中只要有1条满足触发条件，即触发告警，且仅触发一条告警。</li>
 <li>若使用分组触发，并以 domain 字段为分组依据，上述多条执行结果将分别产生4条告警。</li>
 </ul>
-
 >!  
 > - 使用分组触发功能时，一次告警执行可能会有大量的执行结果满足触发条件，进而同时产生大量告警，造成告警风暴。请合理设定分组字段及触发条件。
 > - 指定分组字段时，最多可将执行结果分为1000个组，超出范围的组将不触发告警。
@@ -95,4 +94,5 @@
 
 ## 最佳实践
 
-[分时段统计日志数量](https://www.tencentcloud.com/document/product/614/50272)
+[按时间段分别设置告警触发条件](https://cloud.tencent.com/document/product/614/60693)
+[使用同环比作为告警触发条件](https://tcloud.woa.com/document/product/614/83971)

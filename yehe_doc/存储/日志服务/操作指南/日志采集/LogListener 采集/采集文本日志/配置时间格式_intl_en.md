@@ -2,8 +2,8 @@
 
 CLS requires a time attribute for each log so that the system can manage the data by the time dimension. When logs are collected using LogListener, the time attribute can be configured using two methods:
 
-- Default method: Use LogListener collection time as the time attribute.
-- Custom method: Use a time field in the log content as the time attribute. In this method, you need to configure a time parsing format.
+- Default method: use LogListener collection time as the time attribute.
+- Custom method: use a time field in the log content as the time attribute. In this method, you need to configure a time parsing format.
 
 >? The time precision of LogListener collection is millisecond. Therefore, the time parsing format needs to be accurate to milliseconds. If the time specified in the required format is less than 1 millisecond, 0 is automatically filled in.
 >
@@ -16,7 +16,7 @@ CLS requires a time attribute for each log so that the system can manage the dat
 | %A       | Full name for a weekday                                       | Friday      |
 | %b       | Abbreviation for a month                                       | Jan         |
 | %B       | Full name for a month                                       | January     |
-| %d       | A day of a month (01 to 31)                                    | 31          |
+| %d       | A day of a month (01 to 31)                                    | 31 
 | %h       | Abbreviation for a month, same as `%b`                         | Jan         |
 | %H       | An hour in the 24-hour system (00 to 23)                                      | 22          |
 | %I       | An hour in the 12-hour system (01 to 12)                                      | 11          |
@@ -53,7 +53,7 @@ CLS requires a time attribute for each log so that the system can manage the dat
 | 06/Aug/2019 12:12:19 +0800     | %d/%b/%Y %H:%M:%S     |
 | Monday, 02-Oct-19 16:07:05 MST | %A, %d-%b-%y %H:%M:%S |
 | 1571394459                     | %s                    |
-| 1571394459123                     | %F                    |
+| 1571394459123                     | %F (LogListener 2.6.4 or later)                   |
 | 06/Aug/2019 12:12:19 +0800                    |  %d/%b/%Y %H:%M:%S %z                   |
 | Monday, 02-Oct-19 16:07:05 MST             |  %A, %d-%b-%y %H:%M:%S %z                   |
 

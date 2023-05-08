@@ -4,10 +4,10 @@ You can consume a log topic as a Kafka topic over the Kafka protocol. In practic
 
 This document provides demos for how to consume log topics with Flink and Flume.
 
-## Prerequisite
+## Prerequisites
 
 - You have activated CLS, created a logset and a log topic, and collected log data.   
-- Make sure that the current account has the permission to enable **Consumption over Kafka**. For more information, see [Examples of Custom Access Policies](https://intl.cloud.tencent.com/document/product/614/45004).
+- Make sure that the current account has the permission to enable **Consumption over Kafka**. For more information, see [Access Policy Templates](https://intl.cloud.tencent.com/document/product/614/45004).
 
 
 ## Use Limits
@@ -19,9 +19,30 @@ This document provides demos for how to consume log topics with Flink and Flume.
 - Data in topics are retained for two hours.
 
 
-## Configuration Methods
 
-To consume logs via Kafka, you need to configure the following parameters:
+
+### Consumption over private or public network
+
+- **Consumption over the private network**: A private network domain name is used to consume logs, and the traffic price is 0.032 USD/GB. If your raw log is 100 GB and you choose Snappy for compression, around 50 GB will be billable, and the private network read traffic fees will be 50 GB * 0.032 USD/GB = 1.6 USD. In general, you can consume logs over the private network if your consumer and log topic are in the same VPC or region.
+- **Consumption over the public network**: A public network domain name is used to consume logs, and the traffic price is 0.141 USD/GB. If your raw log is 100 GB and you choose Snappy for compression, around 50 GB will be billable, and the public network read traffic fees will be 50 GB * 0.141 USD/GB = 7.05 USD. In general, you need to consume logs over the public network if your consumer and log topic are in different VPCs or regions.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/dc288586793b2229ac2402488213e986.jpg)
+
+[](id:steps)
+## Directions
+
+
+1. Log in to the CLS console and select **[Log Topic](https://console.cloud.tencent.com/cls/topic)** on the left sidebar.
+2. On the **Log Topic** page, click the target **Log Topic ID/Name** to enter the log topic management page.
+3. On the log topic management page, click the **Consumption over Kafka** tab.
+4. Click **Edit** on the right, set **Current Status** to **Enable**, and click **OK**.
+5. The console displays the topic and host+port information, which can be copied for constructing the consumer SDK. 
+
+
+
+## Consumer Parameter Description
+
+The parameters of the consumer over Kafka are described as follows:
 
 <table>
 <thead>
@@ -33,11 +54,13 @@ To consume logs via Kafka, you need to configure the following parameters:
 </tr>
 <tr>
 <td>hosts</td>
-<td>Configure it as `${region}-producer.cls.tencentyun.com:9095`. For more information, see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a>.</td>
+<td>Consumption over the private network: `kafkaconsumer-${region}.cls.tencentyun.com:9095`.
+
+Consumption over the public network: `kafkaconsumer-${region}.cls.tencentcs.com:9096`. For more information, see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a>.</td>
 </tr>
 <tr>
 <td>topic</td>
-<td>Configure it as `${out-TopicID}`, i.e., `out-log topic ID`, such as `out-76c63473-c496-466b-XXXX-XXXXXXXXXXXX`.</td>
+<td>Topic name provided in the CLS console for consumption over Kafka, which can be copied by clicking the button next to it, such as `XXXXXX-633a268c-XXXX-4a4c-XXXX-7a9a1a7baXXXX`.</td>
 </tr>
 <tr>
 <td>username</td>
@@ -45,44 +68,28 @@ To consume logs via Kafka, you need to configure the following parameters:
 </tr>
 <tr>
 <td>password</td>
-<td>Configure it as <code>${SecretId}#${SecretKey}</code>, such as `XXXXXXXXXXXXXX#YYYYYYYY`. Log in to the <a href="https://console.cloud.tencent.com/cam">CAM console</a> and select <b>Access Key</b> on the left sidebar to get the key information. You can use either the API key or project key (recommended).</td>
+<td>Configure it as <code>${SecretId}#${SecretKey}</code>, such as `XXXXXXXXXXXXXX#YYYYYYYY`. Log in to the <a href="https://console.cloud.tencent.com/cam">CAM console</a> and click <b>Access Key</b> on the left sidebar to get the key information. You can use either the API key or project key. We recommend that you use a sub-account key and follow the principle of least privilege when authorizing a sub-account, that is, configure the minimum permission for `action` and `resource` in the access policy of the sub-account.</td>
 </tr>
 </tbody></table>
 
-### Consumption over private or public network
-
-- **Consumption over the private network**: A private network domain name is used to consume logs, and the traffic price is 0.032 USD/GB. If your raw log is 100 GB and you choose Snappy for compression, around 50 GB will be billable, and the private network read traffic fees will be 50 GB * 0.032 USD/GB = 1.6 USD. In general, you can consume logs over the private network if your consumer and log topic are in the same VPC or region.
-- **Consumption over the public network**: A public network domain name is used to consume logs, and the traffic price is  0.141 USD/GB. If your raw log is 100 GB and you choose Snappy for compression, around 50 GB will be billable, and the public network read traffic fees will be 50 GB *  0.141 USD/GB = 7.05 USD. In general, you need to consume logs over the public network if your consumer and log topic are in different VPCs or regions.
-
-![](https://qcloudimg.tencent-cloud.cn/raw/dc288586793b2229ac2402488213e986.jpg)
-
-[](id:steps)
-## Directions
-
-1. Log in to the CLS console and select **[Log Topic](https://console.cloud.tencent.com/cls/topic)** on the left sidebar.
-2. On the **Log Topic** page, click the target **Log Topic ID/Name** to enter the log topic management page.
-3. On the log topic management page, click the **Consumption over Kafka** tab.
-4. Click **Edit** on the right, set **Current Status** to **Enable**, and click **OK**.
-5. The console displays the topic and host+port information, which can be copied for constructing the consumer SDK.
-
-
+>!Be sure not to omit the `;` after the <code>${SecretId}#${SecretKey}</code> of the `jaas.config` in the following sample code; otherwise, an error will be reported.
 ## SDK for Python
 
 ```
 import uuid
 from kafka import KafkaConsumer,TopicPartition,OffsetAndMetadata
 consumer = KafkaConsumer(
-# Consumption topic in the format of `out+log topic ID`, such as `out-633a268c-XXXX-4a4c-XXXX-7a9a1a7baXXXX`. 
-'${out-TopicID} ',  
+#Topic name provided in the CLS console for consumption over Kafka, which can be copied in the console, such as `XXXXXX-633a268c-XXXX-4a4c-XXXX-7a9a1a7baXXXX`.
+'Your consumption topic',  
 group_id = uuid.uuid4().hex,
 auto_offset_reset='earliest',
 # Service address + port (9096 for the public network and 9095 for the private network). In this example, consumption is performed over the private network. Enter this field accordingly.
-bootstrap_servers = ['${region}-producer.cls.tencentyun.com:9095'],
+bootstrap_servers = ['kafkaconsumer-${region}.cls.tencentyun.com:9095'],
 security_protocol = "SASL_PLAINTEXT",
 sasl_mechanism = 'PLAIN',   
 # The username is the logset ID, such as `ca5cXXXXdd2e-4ac0af12-92d4b677d2c6`.  
 sasl_plain_username = "${logsetID}",
-# The password is a string of your `SecretId#SecretKey`, such as `AKIDWrwkHYYHjvqhz1mHVS8YhXXXX#XXXXuXtymIXT0Lac`. Note that `#` is required.
+#The password is a string of your `SecretId#SecretKey`, such as `AKIDWrwkHYYHjvqhz1mHVS8YhXXXX#XXXXuXtymIXT0Lac`. Note that `#` is required. We recommend that you use a sub-account key and follow the principle of least privilege when authorizing a sub-account, that is, configure the minimum permission for `action` and `resource` in the access policy of the sub-account.
 sasl_plain_password = "${SecretId}#${SecretKey}",
 api_version = (1,1,1)
 )
@@ -93,8 +100,9 @@ for message in consumer:
     print('end')
 ```
 
-## Consumption of CLS Log by Oceanus
+## Consumption of CLS Logs by Oceanus
 Create a job in the Oceanus console.
+
 
 ```
 CREATE TABLE `nginx_source`
@@ -111,17 +119,18 @@ CREATE TABLE `nginx_source`
     `ts` TIMESTAMP(3) METADATA FROM 'timestamp'                 
 )  WITH (
   'connector' = 'kafka',
-  # Consumption topic in the format of `out+log topic ID`, such as `out-633a268c-XXXX-4a4c-XXXX-7a9a1a7baXXXX`. 
-  'topic' = '${out-TopicID}',  
+  #Topic name provided in the CLS console for consumption over Kafka, which can be copied in the console, such as `XXXXXX-633a268c-XXXX-4a4c-XXXX-7a9a1a7baXXXX`.
+  'topic' = 'Your consumption topic',  
   # Service address + port (9096 for the public network and 9095 for the private network). In this example, consumption is performed over the private network. Enter this field accordingly.
-  'properties.bootstrap.servers' = '${region}-producer.cls.tencentyun.com:9095',       
-  'properties.group.id' = 'YourConsumerGroup', 
+  'properties.bootstrap.servers' = 'kafkaconsumer-${region}.cls.tencentyun.com:9095',       
+    # Replace it with the name of your consumer group   
+  'properties.group.id' = 'The name of your consumer group',  
   'scan.startup.mode' = 'earliest-offset', 
   'format' = 'json',
   'json.fail-on-missing-field' = 'false', 
   'json.ignore-parse-errors' = 'true' ,
   # The username is the logset ID, such as `ca5cXXXXdd2e-4ac0af12-92d4b677d2c6`.
-  # The password is a string of your `SecretId#SecretKey`, such as `AKIDWrwkHYYHjvqhz1mHVS8YhXXXX#XXXXuXtymIXT0Lac`. Note that `#` is required.
+  #The password is a string of your `SecretId#SecretKey`, such as `AKIDWrwkHYYHjvqhz1mHVS8YhXXXX#XXXXuXtymIXT0Lac`. Note that `#` is required. We recommend that you use a sub-account key and follow the principle of least privilege when authorizing a sub-account, that is, configure the minimum permission for `action` and `resource` in the access policy of the sub-account. Be sure not to omit the `;` at the end of the `jaas.config`; otherwise, an error will be reported.
   'properties.sasl.jaas.config' = 'org.apache.kafka.common.security.plain.PlainLoginModule required username="${logsetID}" password="${SecretId}#${SecretKey}";',
   'properties.security.protocol' = 'SASL_PLAINTEXT',
   'properties.sasl.mechanism' = 'PLAIN'
@@ -148,7 +157,7 @@ After confirming that `flink-connector-kafka` exists in `flink lib`, directly re
 </dependency>
 ```
 
-### Registering Flink table
+### Registering a Flink table
 ```sql
 CREATE TABLE `nginx_source`
 (
@@ -166,17 +175,18 @@ CREATE TABLE `nginx_source`
     `ts` TIMESTAMP(3) METADATA FROM 'timestamp'                 
 )  WITH (
   'connector' = 'kafka',
-  # Consumption topic in the format of `out+log topic ID`, such as `out-633a268c-XXXX-4a4c-XXXX-7a9a1a7baXXXX`. 
-  'topic' = '${out-TopicID}',  
+  #Topic name provided in the CLS console for consumption over Kafka, which can be copied in the console, such as `XXXXXX-633a268c-XXXX-4a4c-XXXX-7a9a1a7baXXXX`.
+  'topic' = 'Your consumption topic',  
   # Service address + port (9096 for the public network and 9095 for the private network). In this example, consumption is performed over the private network. Enter this field accordingly.
-  'properties.bootstrap.servers' = '${region}-producer.cls.tencentyun.com:9095',       
-  'properties.group.id' = 'YourConsumerGroup', 
+  'properties.bootstrap.servers' = 'kafkaconsumer-${region}.cls.tencentyun.com:9095', 
+   # Replace it with the name of your consumer group   
+  'properties.group.id' = 'The name of your consumer group', 
   'scan.startup.mode' = 'earliest-offset', 
   'format' = 'json',
   'json.fail-on-missing-field' = 'false', 
   'json.ignore-parse-errors' = 'true' ,
   # The username is the logset ID, such as `ca5cXXXXdd2e-4ac0af12-92d4b677d2c6`.
-  # The password is a string of your `SecretId#SecretKey`, such as `AKIDWrwkHYYHjvqhz1mHVS8YhXXXX#XXXXuXtymIXT0Lac`. Note that `#` is required.
+  #The password is a string of your `SecretId#SecretKey`, such as `AKIDWrwkHYYHjvqhz1mHVS8YhXXXX#XXXXuXtymIXT0Lac`. Note that `#` is required. We recommend that you use a sub-account key and follow the principle of least privilege when authorizing a sub-account, that is, configure the minimum permission for `action` and `resource` in the access policy of the sub-account. Be sure not to omit the `;` at the end of the `jaas.config`; otherwise, an error will be reported.
   'properties.sasl.jaas.config' = 'org.apache.kafka.common.security.plain.PlainLoginModule required username="${logsetID}" password="${SecretId}#${SecretKey}";',
   'properties.security.protocol' = 'SASL_PLAINTEXT',
   'properties.sasl.mechanism' = 'PLAIN'
@@ -196,7 +206,7 @@ If you need to have log data consumed by a self-built HDFS or Kafka cluster, you
 
 ### Enabling log consumption over Kafka
 
-Enable log consumption over Kafka and get the consumer service domain name and topic as instructed in [Directions](#steps).
+Enable log consumption over Kafka and get the consumer service domain name and topic as instructed in [Directions](#steps). 
 
 ### Flume configuration
 
@@ -205,20 +215,21 @@ a1.sources = source_kafka
 a1.sinks = sink_local
 a1.channels = channel1
 
-# Configure the source
+#Configure the source
 a1.sources.source_kafka.type = org.apache.flume.source.kafka.KafkaSource
 a1.sources.source_kafka.batchSize = 10
 a1.sources.source_kafka.batchDurationMillis = 200000
 # Service address + port (9096 for the public network and 9095 for the private network). In this example, consumption is performed over the private network. Enter this field accordingly.
-a1.sources.source_kafka.kafka.bootstrap.servers = ${region}-producer.cls.tencentyun.com:9095
-# Consumption topic in the format of `out+log topic ID`, such as `out-633a268c-XXXX-4a4c-XXXX-7a9a1a7baXXXX`. 
-a1.sources.source_kafka.kafka.topics = ${out-TopicID}  
-a1.sources.source_kafka.kafka.consumer.group.id = YourConsumerGroup
+a1.sources.source_kafka.kafka.bootstrap.servers = $kafkaconsumer-${region}.cls.tencentyun.com:9095
+#Topic name provided in the CLS console for consumption over Kafka, which can be copied in the console, such as `XXXXXX-633a268c-XXXX-4a4c-XXXX-7a9a1a7baXXXX`.
+a1.sources.source_kafka.kafka.topics = Your consumption topic  
+#Replace it with the name of your consumer group
+a1.sources.source_kafka.kafka.consumer.group.id = The name of your consumer group
 a1.sources.source_kafka.kafka.consumer.auto.offset.reset = earliest
 a1.sources.source_kafka.kafka.consumer.security.protocol = SASL_PLAINTEXT
 a1.sources.source_kafka.kafka.consumer.sasl.mechanism = PLAIN
 # The username is the logset ID, such as `ca5cXXXXdd2e-4ac0af12-92d4b677d2c6`.
-# The password is a string of your `SecretId#SecretKey`, such as `AKIDWrwkHYYHjvqhz1mHVS8YhXXXX#XXXXuXtymIXT0Lac`. Note that `#` is required.
+#The password is a string of your `SecretId#SecretKey`, such as `AKIDWrwkHYYHjvqhz1mHVS8YhXXXX#XXXXuXtymIXT0Lac`. Note that `#` is required. We recommend that you use a sub-account key and follow the principle of least privilege when authorizing a sub-account, that is, configure the minimum permission for `action` and `resource` in the access policy of the sub-account. Be sure not to omit the `;` at the end of the `jaas.config`; otherwise, an error will be reported.
 a1.sources.source_kafka.kafka.consumer.sasl.jaas.config = org.apache.kafka.common.security.plain.PlainLoginModule required username="${logsetID}" 
 password="${SecretId}#${SecretKey}";
 

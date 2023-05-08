@@ -1,5 +1,4 @@
-
-本文将为刚入门 日志服务（Cloud Log Service，CLS）的用户提供一条学习的路径。
+本文将为刚入门日志服务（Cloud Log Service，CLS）的用户提供一条学习的路径。
 
 ## 1. 熟悉日志服务的基础知识
 
@@ -121,14 +120,13 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 本章节以键值索引为例说明配置方法，在日志主题管理页面，单击**索引配置**进入到索引管理页面，选择编辑键值索引，然后将需要进行检索分析的字段（键名key）配置到键值索引中，并每个字段的键值索引指定数据类型，目前支持`long`、`double`、`text`等数据类型，其中`text`类型可以指定分词符（分词符将字符串切分成多个分词）。在上述例子中，为`time`，`action`，`status`，`size`，`hashcode`设置键值索引，其中`size`设置为`long`类型。
 
 
-
 开启索引后，新写入的数据将会按照所配置规则建立索引，索引会持久化存储一段时间（根据您所配置的存储周期而定），只有建立索引的部分才能进行日志查询分析。**所以，修改索引规则或关闭索引仅对新写入的数据生效，未过期的历史数据仍可被检索**。
 
 #### 检索日志
 
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
 2. 在左侧导航栏单击**检索分析**，进入到检索分析页。
-3. 选择目标地域与日志主题，选择时间范围，输入检索分析语句（语法支持关键词检索，后缀模糊检索、范围检索等方式，详情参考  [语法规则](https://intl.cloud.tencent.com/document/product/614/39594)），单击**检索分析**，即可检索日志数据。
+3. 选择目标地域与日志主题，选择时间范围，输入检索分析语句（语法支持关键词检索，后缀模糊检索、范围检索等方式，详情参考 [语法规则](https://intl.cloud.tencent.com/document/product/614/39594)），单击**检索分析**，即可检索日志数据。
 
 
 - 示例一：查询失败的日志
@@ -151,27 +149,22 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 
 
 -----
-
-## 4. 控制台界面
-
-以下为日志服务控制台总览页面：
-![](https://qcloudimg.tencent-cloud.cn/raw/e3588065a576694f6f2c7fcda5165059.png)
-
-
------
-
-## 5. 控制台功能概述
+## 4. 控制台功能概述
 
 <table>
 <thead>
 <tr>
-<th>如果您想</th>
-<th>您可以阅读</th>
+<th width=470>如果您想</th>
+<th width=10>您可以阅读</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>通过控制台进行对应的日志集管理。</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/614/34238" target="_blank">日志集操作</a></td>
+</tr>
+<tr>
+<td>通过控制台进行对应的日志主题管理。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/614/34239" target="_blank">日志主题操作</a></td>
 </tr>
 <tr>
 <td>了解机器组相关内容。</td>
@@ -186,12 +179,29 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 <td><a href="https://intl.cloud.tencent.com/document/product/614/37803" target="_blank">日志分析</a></td>
 </tr>
 <tr>
+<td>日志服务支持对一个或多个日志主题设置告警策略，当查询分析结果满足触发条件时发送告警通知，方便用户及时发现异常问题。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/614/39573" target="_blank">监控告警</a></td>
+</tr>
+<tr>
+<td>您可以在仪表盘查看多个基于查询与分析结果的统计图表。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/614/37886" target="_blank">仪表盘</a></td>
+</tr>
+<tr>
+<td>对日志进行清洗、分发、结构化,类似于开源 Logstash。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/614/43568" target="_blank">数据加工</a></td>
+</tr>
+<tr>
+<td>定时 SQL 分析是周期性的日志查询分析任务，并将结果保存到新的日志主题。
+一般可用于聚合日志（可降低存储成本）和报表的场景。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/614/50239" target="_blank">定时 SQL 分析</a></td>
+</tr>
+<tr>
 <td>将日志数据投递到对象存储中，进一步满足日志场景的述求，挖掘日志数据价值。</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/614/32940" target="_blank">投递至 COS</a></td>
 </tr>
 <tr>
 <td>通过 Ckafka 实例来消费日志主题的数据。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/614/30444" target="_blank">投递至 Ckafka</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/614/30444" target="_blank">投递至  Ckafka</a></td>
 </tr>
 <tr>
 <td>了解从不同的操作场景授权配置。</td>
@@ -201,12 +211,11 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 
 -----
 
-## 6. 新手常见问题
+## 5. 新手常见问题
 #### LogListener 相关
 - [机器组状态异常问题](https://intl.cloud.tencent.com/document/product/614/17424)
 - [LogListener 常见问题](https://intl.cloud.tencent.com/document/product/614/38444)
 - [LogListener 安装异常问题](https://intl.cloud.tencent.com/document/product/614/30445)
-- 如何采集部分字段缺失的日志
 
 #### 日志检索相关
 
@@ -214,8 +223,7 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 
 -----
 
-## 7. 反馈与建议
+## 6. 反馈与建议
 使用腾讯云日志服务产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
-- 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 **文档反馈**或选中存在问题的内容进行反馈。
+- 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧**文档反馈**或选中存在问题的内容进行反馈。
 - 如果遇到产品相关问题，您可咨询 [智能客服](https://intl.cloud.tencent.com/contact-sales) 或 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
-

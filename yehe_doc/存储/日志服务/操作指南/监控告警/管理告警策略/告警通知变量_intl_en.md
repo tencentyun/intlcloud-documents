@@ -6,6 +6,7 @@ When [configuring an alarm policy](https://intl.cloud.tencent.com/document/produ
 Detailed log:
 {{.QueryLog[0][0]}}
 ```
+The configured information should be as follows:
 
 When the alarm notification is received, the notification content will be automatically replaced with the following value, indicating the last detailed log when the alarm is triggered:
 
@@ -20,9 +21,9 @@ Detailed log:
 <thead>
 <tr>
 <th>Variable</th>
-<th width="18%">Description</th>
+<th width="18%">Configuration</th>
 <th>Sample Variable Value</th>
-<th>Remarks</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -57,13 +58,13 @@ Detailed log:
 </tr>
 <tr>
 <td>{{.ExecuteQuery}}</td>
-<td>Query statement</td>
+<td>Executed Statement</td>
 <td>["status:&gt;=400 | select count(*) as errorLogCount","status:&gt;=400 | select count(*) as errorLogCount,request_uri group by request_uri order by count(*) desc"]</td>
 <td>It is an array. <code>{{.ExecuteQuery[0]}}</code> indicates the detailed log of the first query statement, <code>{{.ExecuteQuery[1]}}</code> the second, and so on.</td>
 </tr>
 <tr>
 <td>{{.Condition}}</td>
-<td>Trigger condition</td>
+<td>Trigger Condition</td>
 <td>$1.errorLogCount &gt; 1</td>
 <td>-</td>
 </tr>
@@ -179,7 +180,7 @@ Detailed log:
 <td>{{.AnalysisResult}}</td>
 <td>Multi-dimensional analysis result</td>
 <td>For more information, see the <a href="#AnalysisResult">{{.AnalysisResult}}</a> remarks.</td>
-<td>-</td>
+<td>This variable is valid only when an alarm is triggered and becomes invalid when the alarm is cleared.</td>
 </tr>
 </tbody></table>
 
@@ -272,7 +273,7 @@ Then the variable values are:
 ::: {{.AnalysisResult}}[](id:AnalysisResult)
 
 - **Description**: Multi-dimensional analysis result
-- **Remarks**: It is an object. The level-1 object corresponds to each multi-dimensional analysis result, with the `key` being the multi-dimensional analysis name and the `value` being the multi-dimensional analysis result.
+- **Remarks**: It is an object. The level-1 object corresponds to each multi-dimensional analysis result, with the `key` being the multi-dimensional analysis name and the `value` being the multi-dimensional analysis result. This variable is valid only when an alarm is triggered (that is, {{.NotifyType}}=1) and becomes invalid when the alarm is cleared (that is, {{.NotifyType}}=2).
 - **Sample variable value**:
 If there are three multi-dimensional analysis operations in the alarm policy:
 ```plaintext
@@ -492,6 +493,14 @@ xxx
 xxx
 {{end}}
 ```
+Or
+```
+{{if boolen}}
+xxx
+{{else if boolen}}
+xxx
+{{end}}
+```
 
 **Syntax description**:
 
@@ -547,6 +556,15 @@ Returned result:
 
 
 ```
+You can also use `if` to check whether the field value exists. If the field value is an empty string or does not exist, it is equivalent to `false`. For example:
+```
+{{if .QueryLog[0][0].apple}}
+apple exist, value is : {{.QueryLog[0][0].apple}}
+{{else}}
+apple is not exist
+{{end}}
+```
+
 
 
 ### Blank area removal
@@ -743,6 +761,182 @@ Returned result:
 
 ```
 
+### String concatenation
+
+**Syntax format**:
+
+```
+{{concat .variable1 .variable2 ...}}
+```
+
+**Syntax description**:
+
+Concatenate specified variables or strings.
+
+**Sample**:
+
+Concatenate the region and alarm policy name.
+```
+{{concat .Region .Alarm}}
+```
+Returned result:
+```
+Guangzhou alarmTest
+```
+
+### Base64/Base64URL/URL encoding and decoding
+
+**Syntax format**:
+
+```
+{{base64_encode .variable}}
+{{base64_decode .variable}}
+{{base64url_encode .variable}}
+{{base64url_decode .variable}}
+{{url_encode .variable}}
+{{url_decode .variable}}
+```
+
+**Syntax description**:
+
+Encode or decode specified variables or strings. Here, the *"="* at the end will not be removed or added during Base64URL encoding and decoding.
+
+**Sample**:
+
+```
+{{base64_encode "test"}}
+{{base64_decode "dGVzdOa1i+ivlQ=="}}
+{{base64url_encode "test"}}
+{{base64url_decode "dGVzdOa1i-ivlQ=="}}
+{{url_encode "https://console.cloud.tencent.com:80/cls?region=ap-chongqing"}}
+{{url_decode "https%3A%2F%2Fconsole.cloud.tencent.com%3A80%2Fcls%3Fregion%3Dap-chongqing"}}
+```
+
+Returned result:
+
+```
+dGVzdOa1i+ivlQ==
+test
+dGVzdOa1i-ivlQ==
+test
+https%3A%2F%2Fconsole.cloud.tencent.com%3A80%2Fcls%3Fregion%3Dap-chongqing
+https://console.cloud.tencent.com:80/cls?region=ap-chongqing
+```
+
+### MD5/SHA1/SHA256/SHA512 encryption
+
+**Syntax format**:
+
+```
+{{md5 .variable}}
+{{md5 .variable | base64_encode}}
+{{md5 .variable | base64url_encode}}
+{{sha1 .variable}}
+{{sha1 .variable | base64_encode}}
+{{sha1 .variable | base64url_encode}}
+{{sha256 .variable}}
+{{sha256 .variable | base64_encode}}
+{{sha256 .variable | base64url_encode}}
+{{sha512 .variable}}
+{{sha512 .variable | base64_encode}}
+{{sha512 .variable | base64url_encode}}
+```
+
+**Syntax description**:
+
+Encrypt specified variables or strings using a certain encryption algorithm. By default, hexadecimal strings are returned, which can be converted into Base64 or Base64URL as needed.
+
+**Sample**:
+
+```
+{{md5 "test"}}
+{{md5 "test" | base64_encode}}
+{{md5 "test" | base64url_encode}}
+{{sha1 "test"}}
+{{sha1 "test" | base64_encode}}
+{{sha1 "test" | base64url_encode}}
+{{sha256 "test"}}
+{{sha256 "test" | base64_encode}}
+{{sha256 "test" | base64url_encode}}
+{{sha512 "test"}}
+{{sha512 "test" | base64_encode}}
+{{sha512 "test" | base64url_encode}}
+```
+
+Returned result:
+```javascript
+098F6BCD4621D373CADE4E832627B4F6
+CY9rzUYh03PK3k6DJie09g==
+CY9rzUYh03PK3k6DJie09g==
+A94A8FE5CCB19BA61C4C0873D391E987982FBBD3
+qUqP5cyxm6YcTAhz05Hph5gvu9M=
+qUqP5cyxm6YcTAhz05Hph5gvu9M=
+9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08
+n4bQgYhMfWWaL+qgxVrQFaO/TxsrC4Is0V1sFbDwCgg=
+n4bQgYhMfWWaL-qgxVrQFaO_TxsrC4Is0V1sFbDwCgg=
+EE26B0DD4AF7E749AA1A8EE3C10AE9923F618980772E473F8819A5D4940E0DB27AC185F8A0E1D5F84F88BC887FD67B143732C304CC5FA9AD8E6F57F50028A8FF
+7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==
+7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc_iBml1JQODbJ6wYX4oOHV-E-IvIh_1nsUNzLDBMxfqa2Ob1f1ACio_w==
+```
+
+### HMAC_MD5/HMAC_SHA1/HMAC_SHA256/HMAC_SHA512 encryption
+
+**Syntax format**:
+
+```
+{{hmac_md5 .variable "Secretkey"}}
+{{hmac_md5 .variable "Secretkey" | base64_encode}}
+{{hmac_md5 .variable "Secretkey" | base64url_encode}}
+{{hmac_sha1 .variable "Secretkey"}}
+{{hmac_sha1 .variable "Secretkey" | base64_encode}}
+{{hmac_sha1 .variable "Secretkey" | base64url_encode}}
+{{hmac_sha256 .variable "Secretkey"}}
+{{hmac_sha256 .variable "Secretkey" | base64_encode}}
+{{hmac_sha256 .variable "Secretkey" | base64url_encode}}
+{{hmac_sha512 .variable "Secretkey"}}
+{{hmac_sha512 .variable "Secretkey" | base64_encode}}
+{{hmac_sha512 .variable "Secretkey" | base64url_encode}}
+```
+
+**Syntax description**:
+
+Encrypt specified variables or strings using a certain encryption algorithm. By default, hexadecimal strings are returned, which can be converted into Base64 or Base64URL as needed. Here, `Secretkey` is the key in the HMAC encryption algorithm and can be modified as needed.
+
+**Sample**:
+
+```
+{{hmac_md5 "test" "Secretkey"}}
+{{hmac_md5 "test" "Secretkey" | base64_encode}}
+{{hmac_md5 "test" "Secretkey" | base64url_encode}}
+{{hmac_sha1 "test" "Secretkey"}}
+{{hmac_sha1 "test" "Secretkey" | base64_encode}}
+{{hmac_sha1 "test" "Secretkey" | base64url_encode}}
+{{hmac_sha256 "test" "Secretkey"}}
+{{hmac_sha256 "test" "Secretkey" | base64_encode}}
+{{hmac_sha256 "test" "Secretkey" | base64url_encode}}
+{{hmac_sha512 "test" "Secretkey"}}
+{{hmac_sha512 "test" "Secretkey" | base64_encode}}
+{{hmac_sha512 "test" "Secretkey" | base64url_encode}}
+```
+
+Returned result:
+
+```javascript
+E7B946D930658699AA668601E33E87CE
+57lG2TBlhpmqZoYB4z6Hzg==
+57lG2TBlhpmqZoYB4z6Hzg==
+2AB64F124D932F5033EAC7AF392AC5CC4D52F503
+KrZPEk2TL1Az6sevOSrFzE1S9QM=
+KrZPEk2TL1Az6sevOSrFzE1S9QM=
+FC49EBC05209B1359773D87C216BA85BCE0163FDE459EA37AB603EC9D8445D23
+/EnrwFIJsTWXc9h8IWuoW84BY/3kWeo3q2A+ydhEXSM=
+_EnrwFIJsTWXc9h8IWuoW84BY_3kWeo3q2A-ydhEXSM=
+D18DF3D943F74769A8B66E43D7EF03639BB6B8B8A2EBC9976170DC58EEE58BE98478F3183E4B5AA3481DE12026AAE3843F8213B39D639EAC6EE93734EA667BC5
+0Y3z2UP3R2motm5D1+8DY5u2uLii68mXYXDcWO7li+mEePMYPktao0gd4SAmquOEP4ITs51jnqxu6Tc06mZ7xQ==
+0Y3z2UP3R2motm5D1-8DY5u2uLii68mXYXDcWO7li-mEePMYPktao0gd4SAmquOEP4ITs51jnqxu6Tc06mZ7xQ==
+```
+
+
 ## Use Cases
 
 #### Case 1: Displaying the last detailed log in the alarm notification
@@ -849,85 +1043,3 @@ Here, `.QueryResult[0]` indicates the execution result of the first query statem
 /feed error log quantity: 33
 /wp-login.php error log quantity: 26
 ```
-
-
-#### Case 3: Using DingTalk/Lark to receive alarm notifications and adding common basic information to the alarm notification
-
-**Scenario**:
-Alarm notifications are sent to DingTalk/Lark groups through custom webhooks, containing common basic information just like SMS and email alarms.
-
-**Notification content configuration**:
-```
-{{- if eq .NotifyType 1 -}}
-Alarm policy: {{.Alarm}}
-Log topic: {{.Topic}}
-Trigger condition: {{.Condition}}
-Current data: {{.TriggerParams}}
-Duration: {{.Duration}} minutes
-Multidimensional analysis:
-{{- range $key,$value :=  .AnalysisResult}}
-{{$key}}
-{{$value}}
-{{- end}}
-Detailed report: {{.DetailUrl}}
-Query log: {{.QueryUrl}}
-{{- end}}
-
-{{- if eq .NotifyType 2 -}}
-Alarm policy: {{.Alarm}}
-Log topic: {{.Topic}}
-Trigger condition: {{.Condition}}
-Resolution time: {{.NotifyTime}}, for {{.Duration}} minutes
-{{- end}}
-```
-
-**Custom webhook configuration**:
-Request headers:
-```
-Content-Type: application/json
-```
-Lark request content:
-```
-{
-	"msg_type": "post",
-	"content": {
-		"post": {
-			"zh_cn": {
-				"title": "{{if eq .NotifyType 1}}[Alarm] CLS triggered an alarm {{else}} under the account {{escape .UIN}}({{escape .User}}) [Alarm cleared] The following CLS alarm under the account {{escape .UIN}}({{escape .User}}) has been resolved{{end}}",
-				"content": [
-					[{
-						"tag": "text",
-						"text": "{{substr (escape .Message) 0 10000}}"
-					}],
-					[{
-						"tag": "at",
-						"user_id": "all"
-					}]
-				]
-			}
-		}
-	}
-}
-```
-DingTalk request content:
-```
-{
-	"msgtype": "text",
-	"text": {
-		"content": "{{if eq .NotifyType 1}}[Alarm] CLS triggered an alarm {{else}} under the account {{escape .UIN}}({{escape .User}}) [Alarm cleared] The following CLS alarm under the account {{escape .UIN}}({{escape .User}}) has been resolved{{end}}\n{{substr (escape .Message) 0 10000}}"
-	},
-	"at": {
-		"atMobiles": [
-			""
-		],
-		"atUserIds": [
-			""
-		],
-		"isAtAll": true
-	}
-}
-```
->? In the DingTalk/Lark request content, `{{substr (escape .Message) 0 10000}}` indicates that the notification can contain up to 10,000 characters, and excessive characters will be truncated. Avoid exceeding the length limit of DingTalk/Lark APIs; otherwise, notification sending may fail.
->
-
-

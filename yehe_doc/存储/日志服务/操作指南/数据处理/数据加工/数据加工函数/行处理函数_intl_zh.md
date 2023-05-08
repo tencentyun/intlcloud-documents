@@ -11,8 +11,7 @@
 
 #### 语法描述
 
-log_output(别名)，别名在配置加工任务时定义。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/0c4e3f2d99257c6f8e607b56798e04db.jpg)
+log_output(别名)，别名在配置加工任务时定义。
 
 #### 参数说明
 
@@ -43,8 +42,8 @@ log_output(别名)，别名在配置加工任务时定义。如下图所示：
 //按照loglevel字段值为waring/info/error的情况，分发到三个不同的日志主题中。
 t_switch(regex_match(v("loglevel"),regex="info"),log_output("info_log"),regex_match(v("loglevel"),regex="warning"),log_output("warning_log"),regex_match(v("loglevel"),regex="error"),log_output("error_log"))
 ```
-加工结果：如下图所示
-![](https://qcloudimg.tencent-cloud.cn/raw/0e99dd62ca4f13f4d5260310ad4a2648.jpg)
+
+
 
 
 ## log_split 函数
@@ -191,4 +190,56 @@ log_keep(op_eq(v("status"), 500))
 ```
 {"field":"a,b,c","status":"500"}
 ```
+
+## log_split_jsonarray_jmes 函数
+
+#### 函数定义
+
+将日志根据 jmes 语法将 JSON 数组拆分和展开。
+
+#### 语法描述
+
+```sql
+log_split_jsonarray_jmes("field", jmes="items", prefix="")
+```
+
+#### 参数说明
+
+| 参数名称 | 参数描述 | 参数类型 | 是否必须 | 参数默认值 | 参数取值范围 |
+|----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
+| field | 待提取的字段名 | string | 是 | -  | -  |
+
+#### 示例
+
+- 示例1
+原始日志：
+```
+{"common":"common","result":"{\"target\":[{\"a\":\"a\"},{\"b\":\"b\"}]}"}
+```
+加工规则：
+```
+log_split_jsonarray_jmes("result",jmes="target")
+fields_drop("result")
+```
+加工结果：
+```
+{"common":"common", "a":"a"}
+{"common":"common", "b":"b"}
+```
+- 示例2
+原始日志：
+```
+{"common":"common","target":"[{\"a\":\"a\"},{\"b\":\"b\"}]"}
+```
+加工规则：
+```
+log_split_jsonarray_jmes("target",prefix="prefix_")
+fields_drop("target")
+```
+加工结果：
+```
+{"prefix_a":"a", "common":"common"}
+{"prefix_b":"b", "common":"common"}
+```
+
 

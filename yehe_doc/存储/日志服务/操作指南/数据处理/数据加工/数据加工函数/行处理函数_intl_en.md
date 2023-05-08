@@ -11,16 +11,15 @@ This function is used to output a row of log to a specified log topic. It can be
 
 #### Syntax description
 
-log_output(Alias) (The alias is defined during processing task configuration, as shown in the figure below.)
-![](https://qcloudimg.tencent-cloud.cn/raw/0c4e3f2d99257c6f8e607b56798e04db.jpg)
+log_output(Alias). The alias is defined when the processing task is configured.
 
-#### Parameter description
+#### Field description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | alias | Log topic alias | string | Yes | -   | -   |
 
-#### Example
+#### Sample
 
 Distribute the log to 3 different log topics according to the values (`waring`, `info`, and `error`) of the `loglevel` field.
 
@@ -43,8 +42,8 @@ Processing rule:
 // The `loglevel` field has 3 values (`waring`, `info`, and `error`) and therefore the log is distributed to 3 different log topics accordingly.
 t_switch(regex_match(v("loglevel"),regex="info"),log_output("info_log"),regex_match(v("loglevel"),regex="warning"),log_output("warning_log"),regex_match(v("loglevel"),regex="error"),log_output("error_log"))
 ```
-Processing result:
-![](https://qcloudimg.tencent-cloud.cn/raw/0e99dd62ca4f13f4d5260310ad4a2648.jpg)
+
+
 
 
 ## Function log_split
@@ -59,9 +58,9 @@ This function is used to split a row of log into multiple rows of logs based on 
 log_split(Field name, sep=",", quote="\"", jmes="", output="")
 ```
 
-#### Parameter description
+#### Field description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 | field | Field to extract | string | Yes   | -       | -      |
 | sep | Separator | string | No | , | Any single character |
@@ -69,7 +68,7 @@ log_split(Field name, sep=",", quote="\"", jmes="", output="")
 | jmes        | JMES expression. For more information, see [JMESPath](https://jmespath.org/).                      | string | No   | -          | -     |
 | output  | Name of a single field  |string  | Yes  | -  | -  |
 
-#### Example
+#### Sample
 
 - Example 1. Split a log whose `field` has multiple values
 ```
@@ -129,14 +128,14 @@ This function is used to delete logs that meet a specified condition.
 log_drop(Condition 1)
 ```
 
-#### Parameter description
+#### Field description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 |condition  | Function expression whose return value is of bool type  | bool  |  Yes  | - | -  |
 
 
-#### Example
+#### Sample
 
 Delete logs where `status` is `200` and retain other logs.
 
@@ -167,14 +166,14 @@ This function is used to retain logs that meet a specified condition.
 log_keep(Condition 1)
 ```
 
-#### Parameter description
+#### Field description
 
-| Parameter | Description | Parameter Type | Required | Default Value | Value Range |
+| Parameter | Description | Type | Required | Default Value | Value Range |
 |----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
 |condition  | Function expression whose return value is of bool type  | bool  |  Yes  | - | -  |
 
 
-#### Example
+#### Sample
 
 Retain logs where `status` is `500` and delete other logs.
 
@@ -191,4 +190,56 @@ Processing result:
 ```
 {"field":"a,b,c","status":"500"}
 ```
+
+## Function log_split_jsonarray_jmes
+
+#### Function definition
+
+This function is used to split and expand the JSON array in the log according to JMES syntax.
+
+#### Syntax description
+
+```sql
+log_split_jsonarray_jmes("field", jmes="items", prefix="")
+```
+
+#### Field description
+
+| Parameter | Description | Type | Required | Default Value | Value Range |
+|----------- | ----------- | ----------- | ----------- | -------------- | -------------- |
+| field | Field to extract | string | Yes | -  | -  |
+
+#### Sample
+
+- Example 1
+Raw log:
+```
+{"common":"common","result":"{\"target\":[{\"a\":\"a\"},{\"b\":\"b\"}]}"}
+```
+Processing rule:
+```
+log_split_jsonarray_jmes("result",jmes="target")
+fields_drop("result")
+```
+Processing result:
+```
+{"common":"common", "a":"a"}
+{"common":"common", "b":"b"}
+```
+- Example 2
+Raw log:
+```
+{"common":"common","target":"[{\"a\":\"a\"},{\"b\":\"b\"}]"}
+```
+Processing rule:
+```
+log_split_jsonarray_jmes("target",prefix="prefix_")
+fields_drop("target")
+```
+Processing result:
+```
+{"prefix_a":"a", "common":"common"}
+{"prefix_b":"b", "common":"common"}
+```
+
 
