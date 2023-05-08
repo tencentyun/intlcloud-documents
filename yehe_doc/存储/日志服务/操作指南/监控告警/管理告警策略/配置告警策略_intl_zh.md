@@ -94,5 +94,5 @@
 
 ## 最佳实践
 
-[按时间段分别设置告警触发条件](https://cloud.tencent.com/document/product/614/60693)
-[使用同环比作为告警触发条件](https://tcloud.woa.com/document/product/614/83971)
+[按时间段分别设置告警触发条件](https://www.tencentcloud.com/document/product/614/54948)
+[使用同环比作为告警触发条件](https://www.tencentcloud.com/document/product/614/54949)
