@@ -4,7 +4,7 @@
 
 ## 操作步骤
 1. 登录 [事件总线控制台](https://console.cloud.tencent.com/eb)，参考 [开通事件总线](https://intl.cloud.tencent.com/document/product/1108/42272) 完成服务开通。
-2. 选择左侧导航栏中的 **[事件规则](https://console.cloud.tencent.com/eb/rule)**，在“事件规则”页面上方选择地域及事件集，并单击**新建事件规则**。
+2. 选择左侧导航栏中的 **[事件规则](https://console.cloud.tencent.com/eb/rule)** ，在“事件规则”页面上方选择地域及事件集，并单击**新建事件规则**。
 3. 进入“新建事件规则”页面：
     1.  在“基础信息”中输入**规则名称**。如下图所示：
  ![](https://staticintl.cloudcachetci.com/yehe/backend-news/zHwA899_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230421102346.png)
