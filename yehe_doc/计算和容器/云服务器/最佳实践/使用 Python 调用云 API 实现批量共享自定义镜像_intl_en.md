@@ -41,7 +41,6 @@ from tencentcloud.common.profile.client_profile import ClientProfile
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
 from tencentcloud.cvm.v20170312 import cvm_client, models
-
 # By default, the environment variables `TENCENTCLOUD_SECRET_ID` and `TENCENTCLOUD_SECRET_KEY` are read to get the `SecretId` and `SecretKey`.
 # For information about more credential management methods, see https://github.com/TencentCloud/tencentcloud-sdk-python#%E5%87%AD%E8%AF%81%E7%AE%A1%E7%90%86
 cred = credential.EnvironmentVariableCredential().get_credential()
@@ -49,7 +48,6 @@ httpProfile = HttpProfile()
 httpProfile.endpoint = "cvm.tencentcloudapi.com"
 clientProfile = ClientProfile()
 clientProfile.httpProfile = httpProfile
-
 # Nanjing is used in this example. Modify the region according to actual situation. For example, in the case of Shanghai, change the region to `ap-shanghai`.
 aria = 'ap-nanjing'
 client = cvm_client.CvmClient(cred,aria, clientProfile)
@@ -103,7 +101,6 @@ try:
                 print('Please specify a correct option!')
         else:
             print('Please specify a correct option!')
-
 except TencentCloudSDKException as err:
     print(err)
 ```
