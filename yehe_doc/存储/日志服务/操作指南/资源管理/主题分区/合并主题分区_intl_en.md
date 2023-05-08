@@ -10,9 +10,7 @@ This document describes how to merge topic partitions in the CLS console. By mer
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls/overview).
 2. On the left sidebar, click **Log Topic** to go to the log topic list page.
 3. Find the target topic partition and click its ID/name to enter the **Basic Info** page.
-4. In the **Topic Partition Management** section, find the target topic partition and click **Edit** as shown below:
-<img src="https://main.qcloudimg.com/raw/874cb934c61a4a89ae74931fcc1c408e.png"/>
-6. In the pop-up window, select **Merge** as the **Operation** and select the object to be merged as shown below:
-<img src="https://main.qcloudimg.com/raw/e7b755a98381afea764ed14c01066340.png" style="width: 60%;" />
+4. In the **Topic Partition Management** section, find the target topic partition and click **Edit**.
+6. In the pop-up window, select **Merge** as the **Operation** and select the object to be merged.
 5. Click **OK**.
 
