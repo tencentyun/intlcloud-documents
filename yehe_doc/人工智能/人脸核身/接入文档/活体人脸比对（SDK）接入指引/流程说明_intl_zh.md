@@ -59,7 +59,7 @@
 
 #### 1、集成准备
 
-在服务端集成之前，你需要按照[获取API秘钥指引](https://console.tencentcloud.com/cam/capi)中的说明进行操作，开通腾讯云慧眼服务，并且拿到了腾讯云api访问秘钥SecretId和SecretKey。除此之外你还需要按照[连接腾讯云API接口](https://iwiki.woa.com/pages/viewpage.action?pageId=4007951224)中的操作流程，引入你所熟悉开发语言的SDK包到你服务端模块中，以确保可以成功调用腾讯云API以及正确处理API请求和响应。
+在服务端集成之前，你需要按照[获取API秘钥指引](https://console.tencentcloud.com/cam/capi)中的说明进行操作，开通腾讯云慧眼服务，并且拿到了腾讯云api访问秘钥SecretId和SecretKey。除此之外你还需要按照[连接腾讯云API接口](https://www.tencentcloud.com/document/product/1061/54960)中的操作流程，引入你所熟悉开发语言的SDK包到你服务端模块中，以确保可以成功调用腾讯云API以及正确处理API请求和响应。
 
 #### 2、开始集成
 
@@ -360,7 +360,7 @@ end
 
 3. pod install 更新
 
->文件层级和具体的设置可以参考Demo
+>?文件层级和具体的设置可以参考Demo
 
 ##### Build Phases设置
 
@@ -409,13 +409,14 @@ SDK需要手机网络及 摄像头使用权限，请添加对应的权限声明�
         NSLog(@"err:%@",showMsg);
     }];
 ```
+
 [HuiYanOsAuthResult](https://iwiki.woa.com/pages/viewpage.action?pageId=4007948264)为活体成功的返回结果, 最终的核身结果可以通过token，访问[GetFaceldResultIntl](//todo:正式的官网API接口)获取。
 
-**注意：**当前的 **"xxx.lic"**文件是需要您主动申请的，暂时您可以联系客服人员进行license申请
+>!当前的"xxx.lic"文件是需要您主动申请的，暂时您可以联系客服人员进行license申请
 
 #### 4、SDK资源释放
 
-	在您APP退出使用的时候，可以调用SDK资源释放接口
+在您APP退出使用的时候，可以调用SDK资源释放接口
 
 ```objective-c
 // 退出时做资源释放
@@ -423,5 +424,4 @@ SDK需要手机网络及 摄像头使用权限，请添加对应的权限声明�
     [HuiYanOsApi release];
 }
 ```
-
 //TODO: 添加demo下载地址
