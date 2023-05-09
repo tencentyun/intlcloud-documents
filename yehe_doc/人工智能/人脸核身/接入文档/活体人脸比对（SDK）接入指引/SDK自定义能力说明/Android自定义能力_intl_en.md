@@ -23,7 +23,7 @@ The default layout is as shown above, where the positions of all controls can be
 
  
 
-> Note:
+>!
 >
 > The `View type` and the corresponding `android:id` in `demo_huiyan_fragment_authing.xml` are involved in UI event binding, so **do not modify them**.
 
