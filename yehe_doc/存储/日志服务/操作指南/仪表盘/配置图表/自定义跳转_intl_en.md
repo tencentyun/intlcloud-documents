@@ -5,9 +5,9 @@ The custom redirect feature in charts allows for redirecting to the set URL by c
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. On the left sidebar, click **Search and Analysis** or **Dashboard** and create a statistical analysis chart of the table type.
 3. In **Chart Configuration**, click **Custom Redirect** > **+ Add**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/2d54d1d55bf45c8af9f12ad001fe19dc.png" width="48%">
+
 4. Configure the URL, reference variables in the URL as needed, and set whether to open the URL in a new window.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/ae60f7d322e6e655cf136fd6b2572fe1.png" width="65%">
+
 
 
 
@@ -38,12 +38,8 @@ As shown below, clicking **8.4s** triggers the redirect URL embedded with the **
 ## Use case
 
 Scenario: The following counts the top error rates of server IPs. In case of an IP with a high error rate, you need to be redirected to the search and analysis page, where you can view the IP logs with the 4XX status code.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/475eae030bf4dbf350276ec933736443.png" width="65%">
-Configure the redirect URL as shown below:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/3e81d07780fd0920f7d4c914b57698c1.png" width="65%">
+
 ```
 https://console.cloud.tencent.com/cls/search?region=xxxxxxx&topic_id=xxxxxxxx&query=server_addr:${__value.text} AND status:[400 TO 499]&time=now-1h,now
 ```
 After the target IP is clicked, the search page will be opened automatically for search and display of the search result.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/6eadda1f3554239d141097d0cdf29bf7.png" width="65%">
-<img src="https://qcloudimg.tencent-cloud.cn/raw/2bb6b719f37ac80ee2a1c7c71eb4fd4d.png" width="65%">
