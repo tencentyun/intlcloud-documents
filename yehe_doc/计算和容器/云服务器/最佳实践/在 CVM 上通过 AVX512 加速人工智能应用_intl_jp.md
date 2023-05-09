@@ -488,7 +488,7 @@ cd val
 wget -qO -https://raw.githubusercontent.com/soumith/
 imagenetloader.torch/master/valprep.sh | bash
 ```
-​以下のコマンドを実行して、スクリプト [prepare_dataset.sh](https://github.com/intel/lpot/blob/master/examples/tensorflow/image_recognition/prepare_dataset.sh)を使用して、元のデータをTFrecord形式に変換します。
+​以下のコマンドを実行して、スクリプト prepare_dataset.shを使用して、元のデータをTFrecord形式に変換します。
 ```plaintext
 cd examples/tensorflow/image_recognition
 bash prepare_dataset.sh --output_dir=./data --raw_dir=/PATH/TO/img_raw/val/ 
@@ -542,8 +542,7 @@ Intel<sup>®</sup> Distribution of OpenVINO™ Toolkitツールキットのワ�
 ![](https://main.qcloudimg.com/raw/98afcac361352773801fbe863d21b912.png)
 
 #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkitの推論性能
-The Intel® Distribution of OpenVINO™ツールは、さまざまなIntelプロセッサと高速ハードウェアで最適化を実装します。Intel <sup>®</ sup>Xeon<sup>®</ sup>スケーラブルプロセッサプラットフォームでは、Intel <sup>®</ sup> DLBoostおよびAVX-512命令セットを使用して推論ネットワークをアクセラレーションします。各プラットフォームのパフォーマンスデータについては、[Intel<sup>®</sup> OpenVINO™ツールキットベンチマークパフォーマンスデータ](https://docs.openvinotoolkit.org/latest/openvino_docs_performance_benchmarks_openvino.html)をご参照ください。
-
+The Intel® Distribution of OpenVINO™ツールは、さまざまなIntelプロセッサと高速ハードウェアで最適化を実装します。Intel <sup>®</ sup>Xeon<sup>®</ sup>スケーラブルプロセッサプラットフォームでは、Intel <sup>®</ sup> DLBoostおよびAVX-512命令セットを使用して推論ネットワークをアクセラレーションします。
  #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkitディープラーニング開発キット（DLDT）の使用
  以下の資料をご参照ください
 - [Intel<sup>®</sup>ディープラーニングデプロイツールキットの概要](https://docs.openvinotoolkit.org/downloads/cn/I03030-9-Introduction%20to%20Intel_%20Deep%20Learning%20Deployment%20Toolkit%20-%20OpenVINO_%20Toolkit.pdf)
