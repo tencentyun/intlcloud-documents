@@ -540,7 +540,7 @@ The following figure shows the workflow of Intel<sup>®</sup> Distribution of Op
 ![](https://main.qcloudimg.com/raw/98afcac361352773801fbe863d21b912.png)
 
 #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit inference performance
-The Intel® Distribution of OpenVINO™ provides optimization implementations on multiple Intel processors and accelerator hardware. Based on the Intel <sup>®</sup> Xeon<sup>®</sup> scalable processor, it accelerates the inference network using Intel<sup>®</sup> DL Boost and AVX-512 instructions. For more information about the performance data of various platforms, see [Intel<sup>®</sup> Distribution of OpenVINO™ toolkit Benchmark Results](https://docs.openvinotoolkit.org/latest/openvino_docs_performance_benchmarks_openvino.html)
+The Intel® Distribution of OpenVINO™ provides optimization implementations on multiple Intel processors and accelerator hardware. Based on the Intel <sup>®</sup> Xeon<sup>®</sup> scalable processor, it accelerates the inference network using Intel<sup>®</sup> DL Boost and AVX-512 instructions. 
 
  #### Using Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit - Deep Learning Development Toolkit (DLDT)
  Refer to the following documents:
