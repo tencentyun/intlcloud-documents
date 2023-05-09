@@ -2,7 +2,7 @@
 
 ## 客户端相关
 ### Android端常见问题
-1. 集成慧眼后出现**Invoke-customs are only supported starting with Android O (--min-api 26)**错误？
+1. 集成慧眼后出现<b>Invoke-customs are only supported starting with Android O (--min-api 26)</b>错误？
    需要在build.gradle中添加如下配置：
 
 ```groovy
