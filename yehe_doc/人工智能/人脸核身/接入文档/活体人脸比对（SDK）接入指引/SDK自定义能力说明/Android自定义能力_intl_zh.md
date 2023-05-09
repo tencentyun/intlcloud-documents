@@ -4,7 +4,7 @@
 
 #### 自定义布局
 
-慧眼SDK支持自定义UI，主要是通过**AuthUiConfig(可以参考接口概述文档)**配置参数实现，通过传入**Layout resId**的方式可自定义UI布局。
+慧眼SDK支持自定义UI，主要是通过**AuthUiConfig**(可以参考接口概述文档)配置参数实现，通过传入**Layout resId**的方式可自定义UI布局。
 
 使用方式大致如下：
 
@@ -23,7 +23,7 @@ huiYanOsConfig.setAuthUiConfig(authUiConfig);
 
 **demo_huiyan_fragment_authing.xml**文件。
 
-> ! 需要值得注意的是： 
+> ! 
 >
 > **demo_huiyan_fragment_authing.xml** 中的**View类型**以及对应的 **android:id** 由于参与的界面事件绑定，**请不要修改**！。
 
