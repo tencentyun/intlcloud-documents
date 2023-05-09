@@ -4,7 +4,7 @@ Instans Tencent Cloud CVM generasi kelima (termasuk S5, M5, C4, IT5, D3, dll.) s
 Dokumen ini menjelaskan cara menggunakan AVX-512 pada instans CVM S5 dan M5 untuk mempercepat aplikasi AI.
 
 ## Model yang Direkomendasikan[](id:RecommendedSelection)
-Tencent Cloud menyediakan berbagai jenis CVM untuk pengembangan aplikasi yang berbeda. Jenis instans [Standard S5](https://intl.cloud.tencent.com/document/product/213/11518) dan [Memory Optimized M5](https://intl.cloud.tencent.com/document/product/213/11518) dilengkapi dengan prosesor Intel<sup>®</sup> Xeon<sup>®</sup> generasi ke-2 dan mendukung Intel<sup>®</sup> DL Boost, membuatnya cocok untuk pembelajaran mesin atau pembelajaran mendalam. Konfigurasi yang direkomendasikan adalah sebagai berikut:
+Tencent Cloud menyediakan berbagai jenis CVM untuk pengembangan aplikasi yang berbeda. Jenis instans [Standard S6](https://intl.cloud.tencent.com/document/product/213/11518)、[Standard S5](https://intl.cloud.tencent.com/document/product/213/11518) dan [Memory Optimized M5](https://intl.cloud.tencent.com/document/product/213/11518) dilengkapi dengan prosesor Intel<sup>®</sup> Xeon<sup>®</sup> generasi ke-2 dan mendukung Intel<sup>®</sup> DL Boost, membuatnya cocok untuk pembelajaran mesin atau pembelajaran mendalam. Konfigurasi yang direkomendasikan adalah sebagai berikut:
 <table>
 <tr>
 <th>Skenario</th><th>Spesifikasi Instans</th>
@@ -539,7 +539,7 @@ Gambar berikut menunjukkan alur kerja Intel<sup>®</sup> Distribution of OpenVIN
 ![](https://main.qcloudimg.com/raw/98afcac361352773801fbe863d21b912.png)
 
 #### Performa inferensi Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit
-Intel® Distribution of OpenVINO™ menyediakan implementasi pengoptimalan pada beberapa prosesor Intel dan perangkat keras akselerator. Berdasarkan prosesor Intel <sup>®</sup> Xeon<sup>®</sup> yang dapat diskalakan, prosesor ini mempercepat jaringan inferensi menggunakan instruksi Intel<sup>®</sup> DL Boost dan AVX-512. Untuk informasi selengkapnya tentang data performa berbagai platform, lihat [Hasil Pengukuran toolkit Intel<sup>®</sup> Distribution of OpenVINO™](https://docs.openvinotoolkit.org/latest/openvino_docs_performance_benchmarks_openvino.html)
+Intel® Distribution of OpenVINO™ menyediakan implementasi pengoptimalan pada beberapa prosesor Intel dan perangkat keras akselerator. Berdasarkan prosesor Intel <sup>®</sup> Xeon<sup>®</sup> yang dapat diskalakan, prosesor ini mempercepat jaringan inferensi menggunakan instruksi Intel<sup>®</sup> DL Boost dan AVX-512. 
 
  #### Menggunakan Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit - Deep Learning Development Toolkit (DLDT)
  Lihat dokumen berikut:
