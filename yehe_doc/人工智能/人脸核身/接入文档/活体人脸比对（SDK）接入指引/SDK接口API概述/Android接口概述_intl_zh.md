@@ -202,7 +202,7 @@ public interface HuiYanOsAuthCallBack {
 
 ### HuiYanAuthEventCallBack
 
-用来监听核身过程中的关键事件的回调，以及如果需要使用自定义布局的UI绑定可以**[事件绑定(可以参考自定义能力的文档)](https://iwiki.woa.com/pages/viewpage.action?pageId=4007948338)**。
+用来监听核身过程中的关键事件的回调，以及如果需要使用自定义布局的UI绑定可以[事件绑定(可以参考自定义能力的文档)](https://iwiki.woa.com/pages/viewpage.action?pageId=4007948338)。
 
 ```java
 /**
