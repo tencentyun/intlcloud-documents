@@ -1,3 +1,29 @@
+## 2023-02
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>业务流量指标介入云监控</td>
+<td>业务带宽峰值、业务连接数峰值、业务请求峰值接入云监控。</td>
+<td> 2023-02-09</td>
+<td>-</td>
+</td>
+</tr>
+<tr>
+<td>高防 IP 接入云监控告警策略</td>
+<td>云监控支持七层接入的高防 IP 状态码告警配置。</td>
+<td> 2023-02-09</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
 ## 2022-08
 <table>
 <thead>
@@ -105,6 +131,7 @@
 </tr>
 </tbody></table>
 
+
 ## 2022-04
 <table>
 <thead>
@@ -137,6 +164,8 @@
 <td>-</td>
 </tr>
 </tbody></table>
+
+
 
 ## 2022-03
 <table>
@@ -204,6 +233,8 @@
 </tr>
 </tbody></table>
 
+
+
 ## 2021-12
 <table>
 <thead>
@@ -263,6 +294,8 @@
 </tr>
 </tbody></table>
 
+
+
 ## 2021-11
 <table>
 <thead>
@@ -308,6 +341,8 @@
 </tr>
 </tbody></table>
 
+
+
 ## 2021-10
 <table>
 <thead>
@@ -328,6 +363,7 @@
 </td>
 </tr>
 </tbody></table>
+
 
 ## 2021-09
 <table>
@@ -372,6 +408,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/297/37222">域名接入 </a>
 </tr>
 </tbody></table>
+
 
 ## 2021-07
 <table>
