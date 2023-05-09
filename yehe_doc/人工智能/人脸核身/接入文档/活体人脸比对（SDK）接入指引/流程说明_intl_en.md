@@ -262,7 +262,7 @@ HuiYanOsApi.startHuiYanAuth(currentToken, huiYanOsConfig, new HuiYanOsAuthCallBa
 });
 ```
 
-[HuiYanOsAuthResult](https://iwiki.woa.com/pages/viewpage.action?pageId=4007948264) is the returned result of successful liveness verification. The final liveness verification result can be obtained by accessing [GetFaceldResultIntl](//todo) through the token.
+[HuiYanOsAuthResult](https://www.tencentcloud.com/zh/document/product/1061/54964) is the returned result of successful liveness verification. The final liveness verification result can be obtained by accessing [GetFaceldResultIntl](https://www.tencentcloud.com/zh/document/product/1061/54557) through the token.
 
 **Note**: You need to contact the customer service to apply for the **"YTFaceSDK.license"** file, and then place the license file in the `Assets Folder`.
 
@@ -409,9 +409,9 @@ As the SDK requires a mobile network and camera permission, include the followin
         NSLog(@"err:%@",showMsg);
     }];
 ```
-[HuiYanOsAuthResult](https://iwiki.woa.com/pages/viewpage.action?pageId=4007948264) is the returned result of successful liveness verification. The final liveness verification result can be obtained by accessing [GetFaceldResultIntl](//todo: API released at the official website) through the token.
+[HuiYanOsAuthResult](https://www.tencentcloud.com/document/product/1061/54964) is the returned result of successful liveness verification. The final liveness verification result can be obtained by accessing [GetFaceldResultIntl](https://www.tencentcloud.com/document/product/1061/54557) through the token.
 
->!: Currently, you need to contact the customer service to apply for the **"xxx.lic"** file actively.
+>! Currently, you need to contact the customer service to apply for the **"xxx.lic"** file actively.
 
 #### 4. Release SDK resources
 
@@ -423,4 +423,5 @@ Before your app exits, you can call the API to release SDK resources.
     [HuiYanOsApi release];
 }
 ```
-//TODO: add the demo download address.
+//[iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
+[Android demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-android-demo)
