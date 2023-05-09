@@ -554,7 +554,7 @@ Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit 工具套件工作流程�
 ![](https://main.qcloudimg.com/raw/98afcac361352773801fbe863d21b912.png)
 
 #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit 推理性能
-The Intel® Distribution of OpenVINO™ 工具在多种英特尔处理器与加速硬件上提供了优化实现。在英特尔<sup>®</sup>至强<sup>®</sup>可扩展处理器平台上，它使用了Intel<sup>®</sup> DL Boost 与 AVX-512 指令集进行推理网络的加速。关于各平台的性能数据，请参见 [Intel<sup>®</sup> OpenVINO™ 工具套件基准性能数据](https://docs.openvinotoolkit.org/latest/openvino_docs_performance_benchmarks_openvino.html)。
+The Intel® Distribution of OpenVINO™ 工具在多种英特尔处理器与加速硬件上提供了优化实现。在英特尔<sup>®</sup>至强<sup>®</sup>可扩展处理器平台上，它使用了Intel<sup>®</sup> DL Boost 与 AVX-512 指令集进行推理网络的加速。
 
  #### 使用 Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit 深度学习开发套件（DLDT）
  请参考以下资料：
