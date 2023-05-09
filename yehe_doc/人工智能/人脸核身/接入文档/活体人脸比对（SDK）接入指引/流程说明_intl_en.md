@@ -59,7 +59,7 @@ The following diagram shows the overall logic of interaction between the SDK, cl
 
 #### 1. Integration preparations
 
-Before server integration, you need to activate the Tencent Cloud FaceID service and obtain TencentCloud API access key SecretId and SecretKey by following the instructions in [Getting API Key](https://console.tencentcloud.com/cam/capi). In addition, you need to follow the instructions in [Connecting to TencentCloud API](https://iwiki.woa.com/pages/viewpage.action?pageId=4007951224) to import the SDK package with the programming language you are familiar with to your server modules, to ensure that the TencentCloud API can be successfully called and API requests and responses can be properly processed.
+Before server integration, you need to activate the Tencent Cloud FaceID service and obtain TencentCloud API access key SecretId and SecretKey by following the instructions in [Getting API Key](https://console.tencentcloud.com/cam/capi). In addition, you need to follow the instructions in [Connecting to TencentCloud API](https://www.tencentcloud.com/document/product/1061/54960) to import the SDK package with the programming language you are familiar with to your server modules, to ensure that the TencentCloud API can be successfully called and API requests and responses can be properly processed.
 
 #### 2. Integration process
 
@@ -360,7 +360,7 @@ end
 
 3. Run `pod install`.
 
-> For the file levels and specific settings, see the demo.
+>? For the file levels and specific settings, see the demo.
 
 ##### `Build Phases` settings
 
@@ -411,11 +411,11 @@ As the SDK requires a mobile network and camera permission, include the followin
 ```
 [HuiYanOsAuthResult](https://iwiki.woa.com/pages/viewpage.action?pageId=4007948264) is the returned result of successful liveness verification. The final liveness verification result can be obtained by accessing [GetFaceldResultIntl](//todo: API released at the official website) through the token.
 
-**Note**: Currently, you need to contact the customer service to apply for the **"xxx.lic"** file actively.
+>!: Currently, you need to contact the customer service to apply for the **"xxx.lic"** file actively.
 
 #### 4. Release SDK resources
 
-	Before your app exits, you can call the API to release SDK resources.
+Before your app exits, you can call the API to release SDK resources.
 
 ```objective-c
 // Release the resources before exit
@@ -423,5 +423,4 @@ As the SDK requires a mobile network and camera permission, include the followin
     [HuiYanOsApi release];
 }
 ```
-
 //TODO: add the demo download address.
