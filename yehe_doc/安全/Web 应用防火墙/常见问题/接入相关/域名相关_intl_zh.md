@@ -1,36 +1,42 @@
 ### 如何接入域名？
 您可以在 [WAF 控制台](https://console.cloud.tencent.com/guanjia/tea-overview) 中接入域名，详情请参见 [域名添加](https://intl.cloud.tencent.com/document/product/627/35651)。
+
 ### WAF 是否支持泛域名接入？
-支持，如需接入泛域名，直接在 [控制台](https://console.cloud.tencent.com/guanjia/tea-overview) 添加泛域名即可。
+支持，如需接入泛域名，直接在 [WAF 控制台](https://console.cloud.tencent.com/guanjia/tea-overview) 添加泛域名即可。
 >?
->- 若泛域名（如`*.test.com` ）已经在腾讯云接入，则不支持该泛域名的任意子域名，在其他账号接入。
->- 若您的账号已经接入泛域名（如`*.test.com` ），则不支持在此账号下接入 `*.a.test.com` 等形式的泛域名。
+>- 若泛域名（如`*.test.com`）在云 WAF 接入后，支持其他账号接入该泛域名的子域名。
 >- 若您同时添加了泛域名和精确域名（例如：`*.test.com`，`a.test.com`），WAF 优先使用精确域名所配置防护策略。
 
 ### 域名 DNS 解析状态（防护状态）更新需要多长时间？
 请检查您的网站域名 CNAME 配置是否正确，在 DNS 处完成 CNAME 记录添加后，状态更新时间预计10 - 20分钟，请耐心等待。若您设置完成后，等待时间超过30分钟，防护状态仍未更新，您可及时 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=867&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=15&scene_code=29995&step=2) 联系我们协助您处理。
 
-### 域名回源 IP 地址会检查变更吗？
-域名回源 IP 原则上不会进行变更，如果变更 ，我们会在通过短信、邮件或站内信的方式通知您。具体回源 IP 地址，以控制台 [域名列表](https://console.cloud.tencent.com/guanjia/tea-domain) 中所查看到的回源 IP 地址为准。
+### 域名回源 IP 地址会变更吗？
+WAF 在维护、升级等情况下，可能会变更域名回源 IP 地址。如果变更，我们会提前通过短信、邮件或站内信的方式通知您。具体回源 IP 地址，以控制台 [域名列表](https://console.cloud.tencent.com/guanjia/tea-domain)  中所查看到的回源 IP 地址为准。
 ![](https://qcloudimg.tencent-cloud.cn/raw/3d54e9333cfb490dfc1fd00bb13b5678.png)
 
-### 接入 WAF 的域名有什么要求吗？
-接入 WAF 防护的域名需要在工信部完成备案，且源站的业务内容必须合法，同时您可以进行 DNS 解析的修改，否则将无法接入您的域名。
+### SaaS 型 WAF 实例域名接入的服务 VIP 地址是否会变化？
+为了提供多地以及同地多机房容灾能力， WAF 在维护、升级等情况下，可能会变更服务 VIP 地址。为保障客户业务的稳定性，WAF 只提供 CNAME 方式接入，以支持灵活、弹性的迁移和扩容、缩容能力，不支持直接解析到 VIP 地址或业务应用上直接绑定 WAF 实例的服务 VIP 地址。
 
-在完成工信部备案后，还需要完成腾讯云备案。
+### SaaS 型 WAF 实例域名接入的服务 VIP 地址可以申请更新吗？
+SaaS 型 WAF 实例不支持申请变更域名的服务 VIP 地址。如果该实例绑定的域名出现服务异常，请先关注是否被 DDoS 攻击；同时可以 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=867&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=15&scene_code=29995&step=2)  联系我们，我们会及时为您处理。
+
+### 接入 WAF 的域名有什么要求吗？
+如果接入 WAF 防护源站域名地域属于中国大陆地区，源站业务内容必须合法，并且完成工信部备案。
+- 若源站未备案，则需要通过腾讯云完成工信部备案。
+- 若源站已备案，但是是在其他服务商完成的工信部备案，还需要在腾讯云再次接入备案。
+
+>! 若接入实例为 SAAS-WAF 实例，还需要您修改接入源站的 DNS 为 WAF 的 Cname 地址。
 
 ### 域名回源支持哪些方式？
 支持域名回源和 IP 回源，您可以根据需要进行选择和配置，详情可参见 [域名添加](https://intl.cloud.tencent.com/document/product/627/35651)。
 
 ### 域名接入 WAF 之后，如何绑定 CNAME？
-您可以参考 CNAME 文档中的 [操作说明](https://intl.cloud.tencent.com/document/product/228/3121)，在您的 DNS 服务商处绑定 CNAME。
+您可以参考  [修改 DNS 解析](https://intl.cloud.tencent.com/document/product/627/35653)，在您的 DNS 服务商处绑定 CNAME。
 
 ### 域名删除后重新添加， CNAME 会发生变化吗？
-域名在同一实例进行删除后重新添加，CNAME 不会发生变化，在其他实例进行添加 CNAME 会发生变化，具体取值可在 [WAF 控制台域名列表](https://console.cloud.tencent.com/guanjia/tea-domain) 中，实例信息处进行查看。
+域名在控制台删除后重新添加都会发生变化，具体取值可在 [WAF 控制台域名列表](https://console.cloud.tencent.com/guanjia/tea-domain) 中，实例信息处中查看。
 ![](https://qcloudimg.tencent-cloud.cn/raw/776ae20e26e6bffc200649ba9cfb518f.png)
 
-### 域名的 VIP 地址是否可以更换？
-原则上域名的 VIP 地址不能进行变更，如果 WAF 服务出现异常，您可及时 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=867&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=15&scene_code=29995&step=2) 联系我们，我们会及时为您进行 VIP 地址切换。
 
 ### WAF 添加域名时，使用的回源域名应该如何填写？
 回源域名需填写其他代理给出的 CNAME 地址或其他域名，域名不能和 WAF 添加的域名相同，不需要填写协议类型信息（HTTP 或 HTTPS）。

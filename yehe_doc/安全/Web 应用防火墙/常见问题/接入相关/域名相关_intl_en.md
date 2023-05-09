@@ -1,36 +1,42 @@
-### How do I connect a domain name?
-You can connect a domain name in the [WAF console](https://console.cloud.tencent.com/guanjia/tea-overview). For more information, see [Step 1. Add a Domain Name](https://intl.cloud.tencent.com/document/product/627/35651).
-### Does WAF support connecting wildcard domain names?
-Yes. You can connect a wildcard domain name in the [WAF console](https://console.cloud.tencent.com/guanjia/tea-overview).
+### How do I connect a domain name with WAF?
+You can connect domain names to WAF in the [WAF Console](https://console.cloud.tencent.com/guanjia/tea-overview) as instructed in [Add a Domain Name](https://intl.cloud.tencent.com/document/product/627/35651).
+
+### Does WAF support wildcard domain names?
+Yes. You can add a wildcard domain name in the [WAF console](https://console.cloud.tencent.com/guanjia/tea-overview).
 >?
->- If a wildcard domain name, such as `*.test.com`, is already connected to Tencent Cloud, then any of its sub-domain names cannot be connected to another account.
->- If the wildcard domain name `*.test.com` is already connected to your account, then wildcard domain names in formats such as `*.a.test.com` cannot be connected to this account.
->- If you add both a wildcard and a precise domain name (e.g. `*.test.com` and `a.test.com`), WAF first uses the protection policies configured for the precise domain name.
+>- When a wildcard domain is added to WAF, other Tencent Cloud users can still add subdomain names that match the wildcard domain name to WAF.
+>- If you add both a wildcard and a precise domain name (e.g. `*.test.com` and `a.test.com`), policies of the precise domain name prevail.
 
 ### How long does it take to update the DNS resolution (protection) status of my domain name?
-Verify that CNAME configuration for your website domain name is correct. Once you add a CNAME record in DNS, wait 10-20 minutes for the protection status to be updated. If you have waited over 30 minutes, and the protection status has not been updated yet, you can contact us for help by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=867&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=15&scene_code=29995&step=2).
+After you add the CNAME record at your DNS provider, status of the domain name on WAF is updated in 10 to 20 minutes. If you don’t see the update in 30 minutes, please check the CNAME configuration or [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=867&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=15&scene_code=29995&step=2).
 
-### Will WAF notify me when the intermediate IP address of my domain name is changed?
-In principle, the intermediate IP address of your domain name is not changed. If it happens, we will notify you by SMS, email or Message Center. You can view your intermediate IP address in the [Domain Name List](https://console.cloud.tencent.com/guanjia/tea-domain) of the console.
+### Will the intermediate IP change?
+The intermediate IP is subject to be changed by WAF. You will be notified by an SMS message, an email, or a message in Message Center if your intermediate IP address changes. You can check the effective intermediate IP o the [Domain Name List](https://console.cloud.tencent.com/guanjia/tea-domain) page of the WAF console.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3d54e9333cfb490dfc1fd00bb13b5678.png)
 
-### What are the requirements for connecting a domain name to WAF?
-The business content on your real server must be legal, and you can modify the DNS resolution properly. Otherwise, you will not be able to connect your domain name to WAF.
+### Will the SaaS WAF-connected VIP address change?
+Yes. VIP address may change when WAF is maintaining and upgrading its in/cross-region disaster recovery capabilities. To ensure the service availability, WAF only supports configuring VIP addresses by adding the CNAME.
 
-After obtained the ICP filing from the MIIT, you need to file your domain name with Tencent Cloud.
+### Can I modify the SaaS WAF-connected VIP address?
+No. A SaaS WAF-connected VIP address cannot be modified. If the associated domain name fails due to DDoS attacks, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=867&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=15&scene_code=29995&step=2) for assistance.
+
+### What are the requirements for connecting a domain name to WAF?
+If the domain name points to a real server in the Chinese mainland, an ICP filling number is required. 
+- If the domain name is not 
+- If you have obtained an ICP filing for the domain name through another service provider, you must add Tencent Cloud as a service provider to the ICP filing.
+
+>! If the instance to which you add the domain name is a SaaS WAF instance, you also need to add a CNAME record at the DNS service provider of the domain name. Set the record value to the CNAME allocated by WAF.
 
 ### What options does WAF offer for domain name origin-pull?
-WAF performs origin-pull based on domain name or IP. You can choose which option to configure as you need. For more information, see [Add a Domain Name](https://intl.cloud.tencent.com/document/product/627/35651).
+WAF performs origin-pull based on domain name or IP. You can choose which option to configure as you need. For more information, see [Add a Domain Name](https://www.tencentcloud.com/document/product/627/35651).
 
 ### How do I bind a CNAME to my domain name connected to WAF?
-See [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121) for how to bind CNAME with your DNS service provider.
+See [Step 3. Modify DNS Resolution](https://intl.cloud.tencent.com/document/product/627/35653).
 
-### Will the CNAME change if my domain name is deleted and added again?
-After you delete a domain name from an instance, if you add it to the same instance, the CNAME record won't change; if you add it to another instance, the CNAME record will change. You can view the specific value in the instance information in the [domain name list in the WAF console](https://console.cloud.tencent.com/guanjia/tea-domain).
+### If I remove a domain name and add it back to WAF, does the CNAME change?
+Yes. You can check the CNAME in the [Domain Name List page in the WAF console](https://console.cloud.tencent.com/guanjia/tea-domain).
 ![](https://qcloudimg.tencent-cloud.cn/raw/776ae20e26e6bffc200649ba9cfb518f.png)
 
-### Can I change the VIP address of my domain name?
-No, you can't change it, in principle. However, if an exception occurs to your WAF service, you may contact us quickly by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=867&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=15&scene_code=29995&step=2) so that we can switch it to another working VIP address for you.
 
-### How do I enter a forwarding domain name when adding a domain name to WAF?
-You can enter a CNAME address from other proxies or any other domain name as forwarding domain name. The domain name you entered and the one you added to WAF cannot be identical, and the protocol type (HTTP or HTTPS) can be left empty.
+### What is the forwarding domain name?
+When you add a domain name to WAF, you must specify a forwarding domain name. It can be the CNAME of proxy or another domain name. The protocol type (HTTP or HTTPS) is not required.
