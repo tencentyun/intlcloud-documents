@@ -488,7 +488,7 @@ cd val
 wget -qO -https://raw.githubusercontent.com/soumith/
 imagenetloader.torch/master/valprep.sh | bash
 ```
-다음 명령어를 실행하여 스크립트 [prepare_dataset.sh](https://github.com/intel/lpot/blob/master/examples/tensorflow/image_recognition/prepare_dataset.sh)를 사용해 원시 데이터를 TFrecord 포맷으로 전환합니다.
+다음 명령어를 실행하여 스크립트 prepare_dataset.sh 를 사용해 원시 데이터를 TFrecord 포맷으로 전환합니다.
 ```plaintext
 cd examples/tensorflow/image_recognition
 bash prepare_dataset.sh --output_dir=./data --raw_dir=/PATH/TO/img_raw/val/ 
@@ -542,7 +542,7 @@ Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit 툴 패키지 워크플�
 ![](https://main.qcloudimg.com/raw/98afcac361352773801fbe863d21b912.png)
 
 #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit 추론 성능
-The Intel® Distribution of OpenVINO™ 툴은 다양한 Intel 프로세서 및 가속 하드웨어에서 최적화 구현을 제공합니다. 이 툴은 Intel<sup>®</sup> Xeon<sup>®</sup> 확장 가능 프로세서 플랫폼에서 Intel<sup>®</sup> DL Boost 및 AVX-512 명령어 집합을 사용해 추론 네트워크 가속을 진행합니다. 각 플랫폼의 성능 데이터는 [Intel<sup>®</sup> OpenVINO™ 툴 패키지의 기본 성능 데이터](https://docs.openvinotoolkit.org/latest/openvino_docs_performance_benchmarks_openvino.html)를 참고하십시오.
+The Intel® Distribution of OpenVINO™ 툴은 다양한 Intel 프로세서 및 가속 하드웨어에서 최적화 구현을 제공합니다. 이 툴은 Intel<sup>®</sup> Xeon<sup>®</sup> 확장 가능 프로세서 플랫폼에서 Intel<sup>®</sup> DL Boost 및 AVX-512 명령어 집합을 사용해 추론 네트워크 가속을 진행합니다. 
 
  #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkit를 사용한 딥러닝 개발 패키지(DLDT)
  다음 자료를 참고하십시오.
