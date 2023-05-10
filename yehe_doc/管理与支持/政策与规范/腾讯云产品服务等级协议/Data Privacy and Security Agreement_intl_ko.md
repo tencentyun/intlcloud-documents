@@ -174,7 +174,7 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 61.[App Flow](https://www.tencentcloud.com/document/product/1165/54050).
 62.[Low-code Interactive Classroom](https://www.tencentcloud.com/document/product/1168/54191).
 63.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54258).
-
+64.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54989).
 ## 관할권별 요구 사항
 
 **유럽**
