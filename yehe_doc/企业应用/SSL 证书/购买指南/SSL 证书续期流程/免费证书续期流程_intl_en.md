@@ -1,7 +1,7 @@
 Due to changes in Apple and Google root store policies, global CAs have ceased issuing SSL certificates with a validity period greater than two years since September 1, 2020. Therefore, renewing an SSL certificate is equivalent to applying for a new one in the console, and the old certificate will not have a longer validity period. After the new certificate is issued, you need to reinstall it on the server, which takes effect upon deployment.
 For detailed directions on how to install a certificate, see [Installing Certificate](https://write.woa.com/#certificate). If the old certificate is within the validity period, its use will not be affected.
 
-> **Notes**
+>!
 > 
 >  Renewing a free certificate is free of charge.
 > 
@@ -20,7 +20,7 @@ For detailed directions on how to install a certificate, see [Installing Certifi
   - **Adds DNS validation automatically**: For more information, see [Details](https://www.tencentcloud.com/document/product/1007/53635).
     
 
-      > **Notes**
+      >?
       > 
       > If the domain applied for has been successfully hosted in the [DNSPod console](https://console.cloud.tencent.com/cns/domains), DNS validation can be added automatically.
       > 
@@ -32,7 +32,7 @@ For detailed directions on how to install a certificate, see [Installing Certifi
 2. Complete the domain identity verification as prompted by **Validation Instruction**.
    
 
-   > **Notes**
+   >?
    > Click **View Domain Validation Status** to view the current status of the domain validation. 
    >   - Validating: The system is validating the domain.
    >   - Pending validation: The domain validation operation is to be added.
@@ -53,12 +53,12 @@ For detailed directions on how to install a certificate, see [Installing Certifi
 
 After the certificate is issued successfully, you need to reinstall it based on the server type.
 
-> **Notes**
+>?
 > The quick HTTPS feature helps you upgrade from HTTP to HTTPS without tedious SSL certificate deployment.
 
 - International standard certificates:
 
-  - Linux system:
+- Linux system:
 
     - [Installing an SSL Certificate on an Apache Server (Linux)](https://intl.cloud.tencent.com/document/product/1007/30953)
 
@@ -74,7 +74,11 @@ After the certificate is issued successfully, you need to reinstall it based on 
 
     - [Installing an SSL Certificate on a Jetty Server](https://intl.cloud.tencent.com/document/product/1007/36567)
 
-  - Windows system:
+
+
+
+
+- Windows system:
 
     - [Install a certificate on an IIS server](https://intl.cloud.tencent.com/document/product/1007/30955)
 
