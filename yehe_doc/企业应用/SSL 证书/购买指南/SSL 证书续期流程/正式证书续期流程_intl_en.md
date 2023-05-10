@@ -1,6 +1,6 @@
 Renewing an SSL certificate is equivalent to applying for a new one in the console, and you need to install and deploy it on the server. The new certificate does not affect the use of the existing one.
 
-> **Notes**
+>!
 > 
 > - If you need to modify the certificate information, apply for a new one.
 > - Renewing a certificate is equivalent to issuing a new one, and you need to replace the existing one with the new one.
@@ -15,7 +15,7 @@ Renewing the existing certificate holds the following advantages over purchasing
 
 Instead of entering application information again, you only need to confirm the original certificate's application data pulled automatically by the system and proceed with the payment. After making the payment, upload the confirmation letter and wait for certificate review.
 
-> **Notes**
+>?
 > 
 > After renewing a WoTrus international standard certificate or DNSPod Chinese SM (SM2) certificate, you can directly enter the domain identity verification process without uploading the confirmation letter again.
 > 
@@ -25,7 +25,7 @@ Instead of entering application information again, you only need to confirm the 
 
 After renewal, the remaining validity period of the original certificate will roll to the validity period of the new certificate.
 
-> **Notes**
+>!
 > 
 > - The quick renewal option will become available **within 30 calendar days before** a paid certificate expires, and the validity period of a renewed certificate **cannot exceed 398 days**.
 > - The expiration reminder will be sent on the second calendar day after the quick renewal option becomes available. Renew your certificate as soon as possible upon receiving the reminder.
@@ -53,7 +53,7 @@ After renewal, the remaining validity period of the original certificate will ro
 
 ### Step 3. Submit the certificate for review
 
-> **Notes**
+>!
 > 
 > - It is estimated to take **3–5 business days** to issue an OV certificate and **5–7 business days** to issue an EV one.
 > - It is estimated to take **10 minutes to 24 hours** to issue a DV certificate.
@@ -63,7 +63,7 @@ After renewal, the remaining validity period of the original certificate will ro
 
 A renewed WoTrus OV/EV certificate will be issued only after manual approval and domain validation.
 
-> **Notes**
+>?
 > 
 > After you applied, there will be a manual review, during which you will receive a call from the US to your organization's business registration number.
 > 
@@ -73,7 +73,7 @@ A renewed WoTrus OV/EV certificate will be issued only after manual approval and
 
 A renewed DNSPod Chinese SM (SM2) OV/EV certificate will be issued only after manual approval and domain validation.
 
-> **Notes**
+>?
 > 
 > - The first domain validation will remain valid for 13 months from approval, during which no domain validation will be performed if you apply for a DNSPod Chinese SM (SM2) OV/EV SSL certificate with the same organization name for the domain.
 > - The certificate will be issued only after manual approval and domain validation.
@@ -102,15 +102,14 @@ A renewed DNSPod Chinese SM (SM2) OV/EV certificate will be issued only after ma
 
 After the certificate is issued successfully, you need to reinstall it based on its encryption standard type and server type.
 
-> **Notes**
+>?
 > 
 > The quick HTTPS feature helps you upgrade from HTTP to HTTPS without tedious SSL certificate deployment.
 > 
 
 - International standard certificates:
 
-  - Linux system:
-
+- Linux system:
 
     - [Installing an SSL Certificate on an Apache Server (Linux)](https://intl.cloud.tencent.com/document/product/1007/30953)
     
@@ -126,7 +125,10 @@ After the certificate is issued successfully, you need to reinstall it based on 
     
     - [Installing an SSL Certificate on a Jetty Server](https://intl.cloud.tencent.com/document/product/1007/36567)
 
-  - Windows system:
+
+
+
+- Windows system:
 
     - [Install a certificate on an IIS server](https://intl.cloud.tencent.com/document/product/1007/30955)
 
