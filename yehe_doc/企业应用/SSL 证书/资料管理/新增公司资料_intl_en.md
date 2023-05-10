@@ -2,7 +2,7 @@
 
 You can save the organization information in advance so that you can directly submit it during certificate application. In this way, you don't need to repeatedly enter the organization information when applying for multiple certificates and can skip the information review, accelerating the process.
 
-> **Notes**
+>?
 > 
 > - For Chinese SM certificates or international standard certificates for which automatic review is not supported, the information review cannot be skipped, but you can quickly enter the existing organization information on the **My Profile** page.
 > - For the certificate brands and types for which automatic review is supported, see [International Standard Certificates for Which Automatic Review Is Supported](https://www.tencentcloud.com/document/product/1007/53630).
@@ -16,9 +16,8 @@ You can save the organization information in advance so that you can directly su
 
 ## Directions
 
-> **Notes**
+>?
 > 
-
 > Up to 10 organization profiles can be added.
 > 
 
@@ -35,7 +34,7 @@ You can save the organization information in advance so that you can directly su
 3. Click **Submit**. Then, the organization profile will be under review.
    
 
-   > **Notes**
+   >?
    > 
    > The review is generally completed within **one business day**. Be sure not to miss the call from the CA.
    > 
@@ -54,7 +53,7 @@ You can save the organization information in advance so that you can directly su
 4. Click **Submit**. Then, the organization profile will be under review.
    
 
-   > **Notes**
+   >?
    > 
    > The review is generally completed within **one business day**. Be sure not to miss the call from the CA.
    > 
