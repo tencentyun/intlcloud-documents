@@ -1,6 +1,4 @@
-# Overall SDK Integration Process
 
-This document introduces the overall integration process of the FaceID SDK (global edition).
 
 ## Integration Preparations
 
@@ -361,6 +359,8 @@ end
 3. Run `pod install`.
 
 >? For the file levels and specific settings, see the demo.
+>- [iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
+>- [Android demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-android-demo)
 
 ##### `Build Phases` settings
 
@@ -417,11 +417,13 @@ As the SDK requires a mobile network and camera permission, include the followin
 
 Before your app exits, you can call the API to release SDK resources.
 
+
+
 ```objective-c
 // Release the resources before exit
 - (void)dealloc {
     [HuiYanOsApi release];
 }
-```
 //[iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
 [Android demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-android-demo)
+```
