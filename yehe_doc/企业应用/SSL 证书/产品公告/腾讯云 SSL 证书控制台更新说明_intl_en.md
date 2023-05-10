@@ -12,19 +12,19 @@ If you have any questions, suggestions, or comments, [contact us](https://intl.c
 <tr>
 <td rowspan="1" colSpan="1" >Certificate Overview</td>
 
-<td rowspan="1" colSpan="1" >The **Certificate Overview** page displays the SSL certificate application status and monitoring status and allows for other operations. Specifically:<br>- **Application Status**: You can quickly view SSL certificates in **Pending Submission**, **Validating**, **Issued**, and **Rejected** statuses and manipulate them.<br>- **Monitoring Status**: You can quickly view SSL certificate monitoring information such as **Normal Access**, **Access Exception**, and **Expiration Alert** and view the corresponding SSLPod monitoring report.</td>
+<td rowspan="1" colSpan="1" >The <b>Certificate Overview</b> page displays the SSL certificate application status and monitoring status and allows for other operations. Specifically:<br><li> <b>Application Status</b> : You can quickly view SSL certificates in <b>Pending Submission</b> , <b>Validating</b> , <b>Issued</b> , and <b>Rejected</b> statuses and manipulate them.<br><li> <b>Monitoring Status</b> : You can quickly view SSL certificate monitoring information such as <b>Normal Access</b> , <b>Access Exception</b> , and <b>Expiration Alert</b> and view the corresponding SSLPod monitoring report.</td>
 </tr>
 
 <tr>
 <td rowspan="1" colSpan="1" >My Certificates</td>
 
-<td rowspan="1" colSpan="1" >The **My Certificates** page allows you to view and manage SSL certificates that are being applied for as well as issued and expired SSL certificates. Specifically:<br>- View the information of certificates that are being applied for as well as issued and expired certificates.<br>- Purchase a certificate.<br>- Apply for a free certificate.<br>- Upload an existing certificate.<br>- Manage a certificate, for example, submit the application information, reissue a certificate, and renew it.</td>
+<td rowspan="1" colSpan="1" >The <b>My Certificates</b> page allows you to view and manage SSL certificates that are being applied for as well as issued and expired SSL certificates. Specifically:<br><li> View the information of certificates that are being applied for as well as issued and expired certificates.<br><li> Purchase a certificate.<br><li> Apply for a free certificate.<br><li> Upload an existing certificate.<br><li> Manage a certificate, for example, submit the application information, reissue a certificate, and renew it.</td>
 </tr>
 
 <tr>
 <td rowspan="1" colSpan="1" >Operation History</td>
 
-<td rowspan="1" colSpan="1" >The operation history allows you to view the operation records of existing SSL certificates. Specifically:<br>- Export operation records in CSV or JSON format.<br>- Filter operation records.</td>
+<td rowspan="1" colSpan="1" >The operation history allows you to view the operation records of existing SSL certificates. Specifically:<br><li> Export operation records in CSV or JSON format.<br><li> Filter operation records.</td>
 </tr>
 
 <tr>
