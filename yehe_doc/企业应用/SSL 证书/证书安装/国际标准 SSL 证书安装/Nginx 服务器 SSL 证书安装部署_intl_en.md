@@ -1,66 +1,107 @@
+The following video shows you how to install an SSL certificate on an Nginx server:
+
 
 
 ## Overview
+
 This document describes how to install an SSL certificate on an Nginx server.
->?
->- The certificate name `cloud.tencent.com` is used as an example.
->- The Nginx version `nginx/1.18.0` is used as an example.
->- The current server OS is CentOS 7. Detailed steps vary slightly with the OS.
->- Before you install an SSL certificate, enable the default HTTPS port 443 on the Nginx server so that HTTPS can be enabled after the certificate is installed. For more information, see [How Do I Enable Port 443 for a VM?](https://intl.cloud.tencent.com/document/product/1007/36738).
->- For more information about how to upload SSL certificate files to a server, see [Copying Local Files to CVMs](https://intl.cloud.tencent.com/document/product/213/34821).
->
-## Preparations
+
+> **Notes**
+> 
+> - The certificate name `cloud.tencent.com` is used as an example.
+> - The `nginx/1.18.0` version is used as an example.
+> - The current server OS is CentOS 7. Detailed steps vary slightly by OS.
+> - Before you install an SSL certificate, enable the default HTTPS port `443` on the Nginx server so that HTTPS can be enabled after the certificate is installed. For more information, see [How Do I Enable Port 443 for a VM?](https://intl.cloud.tencent.com/document/product/1007/36738).
+> - For detailed directions on how to upload SSL certificate files to a server, see [Copying Local Files to CVMs](https://intl.cloud.tencent.com/document/product/213/34821).
+
+
+## Prerequisites
 - Install the remote file copy tool such as WinSCP. The latest official version is recommended.
+We recommend that you use CVM's file upload feature for deployment to CVM.
+
 - Install the remote login tool such as PuTTY or Xshell. The latest official version is recommended.
+
 - Install the Nginx service containing `http_ssl_module` module in the current server.
+
 - The data required to install the SSL certificate includes the following:
+
 <table>
 <tr>
-<th>Item</th>
-<th>Description</th>
+<td rowspan="1" colSpan="1" >Name</td>
+<td rowspan="1" colSpan="1" >Description</td>
 </tr>
 <tr>
-<td>Server IP address</td>
-<td>IP address of the server, which is used to connect the PC to the server.</td>
+<td rowspan="1" colSpan="1" >Server IP address</td>
+<td rowspan="1" colSpan="1" >IP address of the server, which is used to connect the PC to the server.</td>
 </tr>
 <tr>
-<td>Username</td>
-<td>The username used to log in to the server.</td>
+<td rowspan="1" colSpan="1" >Username</td>
+<td rowspan="1" colSpan="1" >The username used to log in to the server.</td>
 </tr>
 <tr>
-<td>Password</td>
-<td>The password used to log in to the server.</td>
+<td rowspan="1" colSpan="1" >Password</td>
+<td rowspan="1" colSpan="1" >The password used to log in to the server.</td>
 </tr>
 </table>
 
->?For a CVM instance purchased on Tencent Cloud, you can log in to the [CVM console](https://console.cloud.tencent.com/cvm) to get the server IP address, username, and password.
+
+   > **Notes**
+   > 
+   > For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM console](https://console.cloud.tencent.com/cvm) to get the server IP address, username, and password.
+   > 
 
 
 ## Directions
 
 ### Installing the certificate
 1. Log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl), and click **Download** for the certificate you need to install.
+
 2. In the pop-up window, select **Nginx** for the server type, click **Download**, and decompress the `cloud.tencent.com` certificate file package to the local directory.
 After decompression, you can get the certificate file of the corresponding type, which includes the `cloud.tencent.com_nginx` folder.
-   - **Folder**: `cloud.tencent.com_nginx`
-   - **Files in the folder**:
-     - `cloud.tencent.com_bundle.crt`: Certificate file
-     - `cloud.tencent.com_bundle.pem`: Certificate file (optional)
-     - `cloud.tencent.com.key`: Private key file
-     - `cloud.tencent.com.csr`: CSR file
->?The CSR file is uploaded by you or generated online by the system and is provided to the certificate authority (CA) when you apply for the certificate. It is not relevant to installation.
->
+
+  - **Folder**: `cloud.tencent.com_nginx`
+
+  - **Files in the folder**:
+
+    - `cloud.tencent.com_bundle.crt`: Certificate file
+
+    - `cloud.tencent.com_bundle.pem`: Certificate file (optional)
+
+    - `cloud.tencent.com.key`: Private key file
+
+    - `cloud.tencent.com.csr`: CSR file
+      
+
+         > **Notes**
+         > 
+         > You can upload the CSR file when applying for a certificate or have it generated online by the system. It is provided to the CA and irrelevant to the installation.
+         > 
+
 3. Log in to the Nginx server using WinSCP (a tool copying files between a local computer and a remote computer).
-4. Copy the `cloud.tencent.com_bundle.crt` and `cloud.tencent.com.key` files from the local directory to the `/usr/local/nginx/conf` directory of the Nginx server (this is the default installation directory on the Nginx server and can be adjusted as needed).
+   
+
+> **Notes**
+>   - For detailed directions, see [Uploading files via WinSCP to a Linux CVM from Windows](https://intl.cloud.tencent.com/document/product/213/2131).
+>   - We recommend that you use CVM's file upload feature for deployment to CVM.
+
+4. Copy the `cloud.tencent.com_bundle.crt` certificate file and `cloud.tencent.com.key` private key file from the local directory to the `/etc/nginx` directory (this is the default Nginx installation directory and needs to be adjusted as needed) of the Nginx server.
+
 5. Log in to the Nginx server remotely with such a login tool as [PuTTY](https://intl.cloud.tencent.com/document/product/213/32502).
-6. Modify the `conf/nginx.conf` configuration file in the Nginx root directory as follows:
->?
->- If you cannot find the following content, add it manually.
->- In this operation, you can edit the file by running `vim /usr/local/nginx/conf/nginx.conf`.
->- You may need to set the configuration file differently based on the Nginx version. For example, use `listen 443 ssl` instead of `listen 443` or `ssl on` for the version `nginx/1.15.0` or later.
->
-```
-server {
+
+6. Edit the `nginx.conf` configuration file in the Nginx root directory as follows:
+   
+
+   > **Notes**
+   > 
+   >   - If you cannot find the following content, manually add it. Run the `nginx -t` command to find the path of the Nginx configuration file.
+
+   > As shown below: ![tapd_10132091_base64_1665978617_57.png](https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027538067/adbfd11a705911ed8e7e525400463ef7.png?q-sign-algorithm=sha1&q-ak=AKID5CThzZqTVXoRP-XYu2W42mAW62aDoOr6DTPyCZ1RRCQ2qwekuFJNzWTp8i6N4A_9&q-sign-time=1677222539;1677226139&q-key-time=1677222539;1677226139&q-header-list=&q-url-param-list=&q-signature=3c4f3c6b131cc016fe546fe716e983e223eb2b12&x-cos-security-token=5xuAVtZg45zZx30psQ7oVmxUqVP8A8ya8376edc7adf43654fa9e4760c181e126Vc733LJenzJOwBNGjj5ASnnvUWi-SYW0Lm3ieNVenmwlNjhySGIa0zlYq_CpEqylsynWkMxc8b3eU8D7h6FUlSv10ulkppQrv-An-d-Sq44sdT76zQjHU5jOHhrqcH_VcRBf_r4SVKfC6tdxleYfVk9IuS2Ak7BlaPUTjsCWemcXhwiqi_eFblusvSP4WUBTw1-jNyR2PWZdzXuJocrrXCfDRX32-AiXXUEV4RUQ9a6DNqpZ1CfF0-h7skkHIP5vkHh-oF1DNW5fMCA3OgZvYOCu6L5eXVf-TPCzxdSJXdJfBA-FS11cvWB2EfUqbeHUX3HPLOBD8r5KniAxFv3bQ3UaBmn-LjxSGA80smlihp_WCCnGD71_08lW6wD_7syk)
+   > 
+>   - This operation can edit the file by running `vim /etc/nginx/nginx.conf`.
+>   - The configuration file may be written differently on different versions; for example, use `listen 443 ssl` instead of `listen 443` and `ssl on` on `nginx/1.15.0` or later.
+
+   ``` bash
+   server {
         # The default SSL access port is 443
         listen 443 ssl; 
         # Enter the domain name bound to the certificate
@@ -82,72 +123,104 @@ server {
             index  index.html index.htm;
         }
     }
-```
-7. Run the following command in the Nginx root directory to check whether there is a problem with the configuration file.
-```
-./sbin/nginx -t
-```
-   - If yes, reconfigure or fix the problem as prompted.
-   - Otherwise, proceed to [step 8](#step8).
-8. [](id:step8) Run the following command in the Nginx root directory to restart Nginx.
-```
-./sbin/nginx -s reload
-```
-9. If the server is restarted successfully, you can access it through `https://cloud.tencent.com`.
+   ```
+7. Run the following command to check whether there is a problem with the configuration file.
+
+   ``` bash
+   nginx -t
+   ```
+  - If yes, reconfigure or fix the problem as prompted.
+
+  - If not, proceed to [step 8](https://write.woa.com/#step8).
+
+8. Run the following command to reload the Nginx server.
+
+   ``` bash
+   nginx -s reload
+   ```
+9. If the server is reloaded successfully, you can access it through `https://cloud.tencent.com`.
+
 
 ### (Optional) Security configuration for automatic redirect from HTTP to HTTPS
+
 To redirect HTTP requests to HTTPS, complete the following settings:
 1. Select one of the following configuration methods based on your actual needs:
-   - Add a JavaScript script to the page.
-   - Add redirect in the backend program.
-   - Redirect through a web server.
-   - Nginx supports rewrite. If you did not remove PCRE during the compilation, you can add `return 301 https://$host$request_uri;` to the HTTP server to redirect requests made to the default HTTP port 80 to HTTPS.
->?
->- Uncommented configuration statements can be configured as shown below.
->- You may need to configure the configuration file differently based on the Nginx version. For example, use `listen 443 ssl` instead of `listen 443` or `ssl on` for the version `nginx/1.15.0` or later.
->
-```
-server {
-    # The default SSL access port is 443
-    listen 443 ssl;
-    # Enter the domain name bound to the certificate
-    server_name cloud.tencent.com; 
-    # Enter the relative or absolute path of the certificate file
-    ssl_certificate  cloud.tencent.com_bundle.crt; 
-    # Enter the relative or absolute path of the private key file
-    ssl_certificate_key cloud.tencent.com.key; 
-    ssl_session_timeout 5m;
-    # Configure the cipher suite according to the OpenSSL standard
-    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-    # Configure the following protocols
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_prefer_server_ciphers on;
-    location / {
-        # Path to the website homepage. This example is for reference only. You need to set it to the actual path. 
-        # For example, if your website homepage is under the "/etc/www" path of the Nginx server, change the "html" behind "root" to "/etc/www".
-        root html;
-        index index.html index.htm;
-    }
-}
-server {
-    listen 80;
-    # Enter the domain name bound to the certificate
-    server_name cloud.tencent.com; 
-    # Redirect requests made to an HTTP domain name to HTTPS
-    return 301 https://$host$request_uri; 
-}
-```
-2. Run the following command in the Nginx root directory to check whether there is a problem with the configuration file.
-```
-./sbin/nginx -t
-```
-   - If yes, reconfigure or fix the problem as prompted.
-   - Otherwise, proceed to [step 3](#step3).
-3. [](id:step3) Run the following command in the Nginx root directory to restart Nginx.
-```
-./sbin/nginx -s reload
-```
-9. If the server is restarted successfully, you can access it through `https://cloud.tencent.com`.
 
->!If you experience any issues with the above steps, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+  - Add a JavaScript script to the page.
 
+  - Add redirect in the backend program.
+
+  - Redirect through a web server.
+
+  - Nginx supports rewrite. If you did not remove PCRE during the compilation, you can add `return 301 https://$host$request_uri;` to the HTTP server to redirect requests made to the default HTTP port 80 to HTTPS.
+    
+
+      > **Notes**
+      > 
+>     - Uncommented configuration statements can be configured as follows.
+>     - The configuration file may be written differently on different versions; for example, use `listen 443 ssl` instead of `listen 443` and `ssl on` on `nginx/1.15.0` or later.
+
+      ``` bash
+      server {
+       # The default SSL access port is 443
+       listen 443 ssl;
+       # Enter the domain name bound to the certificate
+       server_name cloud.tencent.com; 
+       # Enter the relative or absolute path of the certificate file
+       ssl_certificate  cloud.tencent.com_bundle.crt; 
+       # Enter the relative or absolute path of the private key file
+       ssl_certificate_key cloud.tencent.com.key; 
+       ssl_session_timeout 5m;
+       # Configure the cipher suite according to the OpenSSL standard
+       ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+       # Configure the following protocols
+       ssl_protocols TLSv1.2 TLSv1.3;
+       ssl_prefer_server_ciphers on;
+       location / {
+         # Path to the website homepage. This example is for reference only. You need to set it to the actual path. 
+         # For example, if your website homepage is under the "/etc/www" path of the Nginx server, change the "html" behind "root" to "/etc/www".
+         root html;
+         index index.html index.htm;
+       }
+      }
+      server {
+       listen 80;
+       # Enter the domain name bound to the certificate
+       server_name cloud.tencent.com; 
+       # Redirect requests made to an HTTP domain name to HTTPS
+       return 301 https://$host$request_uri; 
+      }
+      ```
+2. Run the following command to check whether there is a problem with the configuration file.
+
+   ``` bash
+   nginx -t
+   ```
+  - If yes, reconfigure or fix the problem as prompted.
+
+  - If not, proceed to [step 3](https://write.woa.com/#step3).
+
+3. Run the following command to reload the Nginx server.
+
+   ``` bash
+   nginx -s reload
+   ```
+4. If the server is reloaded successfully, you can access it through `https://cloud.tencent.com`.
+
+  - If the security lock icon is displayed in the browser, the certificate has been installed successfully.
+
+  - In case of a website access exception, troubleshoot the issue by referring to the following FAQs:
+
+    - [Website Inaccessible After an SSL Certificate is Deployed](https://intl.cloud.tencent.com/document/product/1007/39821)
+
+    - ["Your Connection is Not Secure" is Displayed After the SSL Certificate is Installed](https://intl.cloud.tencent.com/document/product/1007/40674)
+
+    - [Why Does the Website Prompt "Connection Is Untrusted"?](https://intl.cloud.tencent.com/document/product/1007/30184)
+
+    - [404 Error After the SSL Certificate is Deployed on IIS](https://intl.cloud.tencent.com/document/product/1007/39820)
+      
+
+         > **Notes**
+         > 
+         > If anything goes wrong during this process, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+         > 
