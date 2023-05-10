@@ -721,3 +721,4 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 60.[腾讯云数据连接器](https://www.tencentcloud.com/document/product/1165/54051)。
 61.[低代码互动课堂](https://www.tencentcloud.com/document/product/1168/54190)。
 62.[容器安全服务](https://www.tencentcloud.com/document/product/1163/54257)。
+63.[云拨测](https://www.tencentcloud.com/document/product/1169/54988)。
