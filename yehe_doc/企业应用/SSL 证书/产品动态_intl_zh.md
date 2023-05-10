@@ -25,7 +25,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >批量配置功能上线</td>
 <td rowspan="1" colSpan="1" >购买 SSL 证书时，您可以通过证书购买页【批量配置】页签，快速批量购买证书。<br><br>购买证书时，您可使用已有资料进行快速填写。<br>1个订单支持50个域名或50张证书购买。 </td>
-<td rowspan="1" colSpan="1" >[证书购买页](https://intl.cloud.tencent.com/pricing/ssl)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/pricing/ssl">证书购买页</a></td>
 </tr>
 </table>
 
@@ -42,7 +42,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >云资源托管功能上线</td>
 <td rowspan="1" colSpan="1" >新申请 SSL 证书签发后即可开启云资源托管并绑定相关云资源，当该 SSL 证书进行续费操作生成新证书时，原证书上的关联云资源将自动绑定至新证书上。</td>
-<td rowspan="1" colSpan="1" >[云资源托管说明](https://www.tencentcloud.com/document/product/1007/53631)</td>
+<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1007/53631">云资源托管说明</a></td>
 </tr>
 </table>
 
@@ -81,7 +81,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >多年期证书与我的资料功能上线</td>
 <td rowspan="1" colSpan="1" >提供多年期证书购买以及企业与域名信息管理功能。</td>
-<td rowspan="1" colSpan="1" >[多年期证书与自动审核介绍](https://www.tencentcloud.com/document/product/1007/53630)</td>
+<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1007/53630">多年期证书与自动审核介绍</a></td>
 </tr>
 </table>
 
@@ -98,7 +98,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >SSL 证书新版控制台上线</td>
 <td rowspan="1" colSpan="1" >SSL 证书控制台全面升级。</td>
-<td rowspan="1" colSpan="1" >[腾讯云 SSL 证书控制台更新说明](https://www.tencentcloud.com/document/product/1007/53629)</td>
+<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1007/53629">腾讯云 SSL 证书控制台更新说明</a></td>
 </tr>
 </table>
 
@@ -115,7 +115,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >SSL 证书吊销功能上线</td>
 <td rowspan="1" colSpan="1" >提供各类型证书吊销功能。</td>
-<td rowspan="1" colSpan="1" >[证书吊销指引](https://intl.cloud.tencent.com/document/product/1007/44062)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/44062">证书吊销指引</a></td>
 </tr>
 </table>
 
@@ -132,7 +132,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >新增 WoTrus 品牌国际标准的 SSL 证书购买</td>
 <td rowspan="1" colSpan="1" >沃通电子认证服务有限公司（Wotrus CA Limited）是同时获得国内电子认证服务许可证（由工信部颁发）和通过国际认证的证书颁发机构（CA）。专业为企业提供权威第三方数字身份认证服务，颁发全球信任的各种数字证书产品。</td>
-<td rowspan="1" colSpan="1" >[Wotrus 品牌国际标准证书 OV 与 EV 型 SSL 证书提交流程](https://intl.cloud.tencent.com/document/product/1007/40206)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/40206">Wotrus 品牌国际标准证书 OV 与 EV 型 SSL 证书提交流程</a></td>
 </tr>
 </table>
 
@@ -149,7 +149,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >SecureSite、GeoTrust、TrustAsia 品牌的 SSL 证书上线</td>
 <td rowspan="1" colSpan="1" >提供多品牌证书购买。<br>多品牌包含企业型（OV）、增强型（EV）、通配符在内多种型号 SSL 证书</td>
-<td rowspan="1" colSpan="1" >[购买流程](https://intl.cloud.tencent.com/document/product/1007/30159)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/30159">购买流程</a></td>
 </tr>
 </table>
 
@@ -171,7 +171,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >浏览器兼容性更佳</td>
 <td rowspan="1" colSpan="1" >提供腾讯云官网售卖证书与市场主流浏览器版本兼容相关报告。</td>
-<td rowspan="1" colSpan="1" >  [浏览器兼容性测试报告](https://intl.cloud.tencent.com/document/product/1007/30165)  </td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/30165">浏览器兼容性测试报告</a></td>
 </tr>
 </table>
 
