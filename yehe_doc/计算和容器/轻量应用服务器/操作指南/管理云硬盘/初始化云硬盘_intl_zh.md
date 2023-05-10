@@ -14,42 +14,6 @@
 ## 操作步骤
 
 <dx-tabs>
-::: Windows 实例初始化云硬盘
-
-<dx-alert infotype="explain" title="">
-本文将以 Windows Server 2016 R2 操作系统为例，不同操作系统的格式化操作可能不同，本文仅供参考。
-</dx-alert>
-
-1. 登录轻量应用服务器，详情请参见 [使用 VNC 方式登录 Windows 实例](https://intl.cloud.tencent.com/document/product/1103/46399)。
-2. 右键单击桌面左下角的 <img src="https://qcloudimg.tencent-cloud.cn/raw/d31f2d1c79409188f9465a041455b5cf.png" style="margin:-4px 0px">，并在弹出菜单中选择**磁盘管理**。
-打开“磁盘管理”窗口，即可查看数据盘信息。本文数据盘容量为20GB，如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/e9faf9beb760e47a4732a1d81ee4dc69.png)
-<dx-alert infotype="notice" title="">
-若新增磁盘处于脱机状态（如上图），需要先执行 [步骤3](#step3) 联机后再执行 [步骤4](#step4) 进行初始化。否则直接执行 [步骤4](#step4) 进行初始化。
-</dx-alert>
-3. [](id:step3)右键单击磁盘1区域，在菜单列表中选择**联机**，进行联机。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/0f695c2a297f0e7283dace9b76bd02f6.png)
-4. [](id:step4)联机后磁盘1由脱机状态变为没有初始化。右键单击磁盘1区域，在菜单列表中选择**初始化磁盘**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/2e0449e401ff18bfbfc86da743846677.png)
-5. 在“初始化磁盘”弹窗中勾选需要初始化的磁盘，选择磁盘分区形式并单击**确定**。本文以选择“MBR（主启动记录）”为例，如下图所示：
-<dx-alert infotype="notice" title="">
-磁盘投入使用后再切换磁盘分区形式，磁盘上的原有数据将会清除，因此请根据实际需求合理选择分区形式。
-</dx-alert>
-![](https://qcloudimg.tencent-cloud.cn/raw/f20e82296e93672bfc946cea02e841f5.png)
-6. 右键单击磁盘1未分配的区域，选择**新建简单卷**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/5d887bbbeb457f9b8a7ff01f39988729.png)
-7. 弹出“新建简单卷向导”窗口，根据界面提示，单击**下一步**。
-8. 根据实际情况指定卷大小，默认为最大值，单击**下一步**。
-9. 分配驱动器号，单击**下一步**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/a011638a9a65411a448afa11228d89a3.png)
-10. 选择“按下列设置格式化这个卷”，并根据实际情况设置参数，格式化新分区，单击**下一步**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/64ca489770db96b0dc2bb4ef14a7045e.png)
-11. 单击**完成**完成分区创建。需要等待片刻让系统完成初始化操作，当卷状态为状态良好时，表示初始化磁盘成功。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/c1d704e331ff7a9ae693edc15ff3b197.png)
-初始化成功后，进入“计算机”界面可以查看到新磁盘。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/0998e5d0858d706126578af12b23ab89.png)
-
-:::
 ::: Linux 实例初始化云硬盘
 请根据您实际使用场景选择初始化方式：
 
@@ -175,6 +139,41 @@ sudo df -TH
 ![](https://qcloudimg.tencent-cloud.cn/raw/2fd33e9978b0cea3df6f5e6df917e95a.png)
 磁盘需在每次开机时挂载至实例，若您需设置开机自动挂载磁盘分区，请参考 [Linux 实例开机自动挂载磁盘](#autoMount) 进行设置。
 
+:::
+::: Windows 实例初始化云硬盘
+
+<dx-alert infotype="explain" title="">
+本文将以 Windows Server 2016 R2 操作系统为例，不同操作系统的格式化操作可能不同，本文仅供参考。
+</dx-alert>
+
+1. 登录轻量应用服务器，详情请参见 [使用 VNC 方式登录 Windows 实例](https://intl.cloud.tencent.com/document/product/1103/46399)。
+2. 右键单击桌面左下角的 <img src="https://qcloudimg.tencent-cloud.cn/raw/d31f2d1c79409188f9465a041455b5cf.png" style="margin:-4px 0px">，并在弹出菜单中选择**磁盘管理**。
+打开“磁盘管理”窗口，即可查看数据盘信息。本文数据盘容量为20GB，如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/e9faf9beb760e47a4732a1d81ee4dc69.png)
+<dx-alert infotype="notice" title="">
+若新增磁盘处于脱机状态（如上图），需要先执行 [步骤3](#step3) 联机后再执行 [步骤4](#step4) 进行初始化。否则直接执行 [步骤4](#step4) 进行初始化。
+</dx-alert>
+3. [](id:step3)右键单击磁盘1区域，在菜单列表中选择**联机**，进行联机。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/0f695c2a297f0e7283dace9b76bd02f6.png)
+4. [](id:step4)联机后磁盘1由脱机状态变为没有初始化。右键单击磁盘1区域，在菜单列表中选择**初始化磁盘**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/2e0449e401ff18bfbfc86da743846677.png)
+5. 在“初始化磁盘”弹窗中勾选需要初始化的磁盘，选择磁盘分区形式并单击**确定**。本文以选择“MBR（主启动记录）”为例，如下图所示：
+<dx-alert infotype="notice" title="">
+磁盘投入使用后再切换磁盘分区形式，磁盘上的原有数据将会清除，因此请根据实际需求合理选择分区形式。
+</dx-alert>
+![](https://qcloudimg.tencent-cloud.cn/raw/f20e82296e93672bfc946cea02e841f5.png)
+6. 右键单击磁盘1未分配的区域，选择**新建简单卷**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/5d887bbbeb457f9b8a7ff01f39988729.png)
+7. 弹出“新建简单卷向导”窗口，根据界面提示，单击**下一步**。
+8. 根据实际情况指定卷大小，默认为最大值，单击**下一步**。
+9. 分配驱动器号，单击**下一步**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/a011638a9a65411a448afa11228d89a3.png)
+10. 选择“按下列设置格式化这个卷”，并根据实际情况设置参数，格式化新分区，单击**下一步**。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/64ca489770db96b0dc2bb4ef14a7045e.png)
+11. 单击**完成**完成分区创建。需要等待片刻让系统完成初始化操作，当卷状态为状态良好时，表示初始化磁盘成功。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/c1d704e331ff7a9ae693edc15ff3b197.png)
+初始化成功后，进入“计算机”界面可以查看到新磁盘。如下图所示：
+![](https://qcloudimg.tencent-cloud.cn/raw/0998e5d0858d706126578af12b23ab89.png)
 
 :::
 </dx-tabs>
