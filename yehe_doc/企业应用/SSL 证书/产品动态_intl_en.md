@@ -25,7 +25,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >Launched the batch configuration feature</td>
 <td rowspan="1" colSpan="1" >You can quickly batch purchase SSL certificates on the **Batch Configuration** tab of the certificate purchase page.<br><br>When purchasing a certificate, you can quickly enter the existing information.<br>You can purchase up to 50 domains or certificates in an order.</td>
-<td rowspan="1" colSpan="1" >[Pricing | SSL Certificate](https://intl.cloud.tencent.com/pricing/ssl)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/pricing/ssl">Pricing|SSL Certificate</a></td>
 </tr>
 </table>
 
@@ -42,7 +42,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >Launched the Tencent Cloud resource hosting feature</td>
 <td rowspan="1" colSpan="1" >After a new SSL certificate is issued, you can enable Tencent Cloud resource hosting and bind relevant Tencent Cloud resources. When this SSL certificate is renewed and a new certificate is generated, the Tencent Cloud resources bound to the original certificate will be automatically bound to the new one.</td>
-<td rowspan="1" colSpan="1" >[Tencent Cloud Resource Hosting](https://www.tencentcloud.com/document/product/1007/53631)</td>
+<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1007/53631">Tencent Cloud Resource Hosting</a></td>
 </tr>
 </table>
 
@@ -81,7 +81,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >Launched multi-year certificates and the "My Profile" feature</td>
 <td rowspan="1" colSpan="1" >Multi-year certificates and the organization and domain information management feature are available.</td>
-<td rowspan="1" colSpan="1" >[Multi-Year Certificate and Automatic Review](https://www.tencentcloud.com/document/product/1007/53630)</td>
+<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1007/53630">Multi-Year Certificate and Automatic Review</a></td>
 </tr>
 </table>
 
@@ -98,7 +98,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >Launched the new SSL Certificate Service console</td>
 <td rowspan="1" colSpan="1" >The SSL Certificate Service console is upgraded.</td>
-<td rowspan="1" colSpan="1" >[SSL Certificate Service Console](https://www.tencentcloud.com/document/product/1007/53629)</td>
+<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1007/53629">SSL Certificate Service Console</a></td>
 </tr>
 </table>
 
@@ -115,7 +115,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >Launched the SSL certificate revocation feature</td>
 <td rowspan="1" colSpan="1" >A variety of certificates can be revoked.</td>
-<td rowspan="1" colSpan="1" >[Revoking an SSL Certificate](https://intl.cloud.tencent.com/document/product/1007/44062)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/44062">Revoking an SSL Certificate</a></td>
 </tr>
 </table>
 
@@ -132,7 +132,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >Offered the WoTrus international standard SSL certificate</td>
 <td rowspan="1" colSpan="1" >WoTrus, operated by WoTrus CA Limited, is an internationally verified CA that has also obtained the electronic certification service license (issued by the MIIT) of China. It provides third-party digital identity verification for organizations and issues globally trusted digital certificates.</td>
-<td rowspan="1" colSpan="1" >[Information Submission Process for Wotrus OV and EV SSL Certificates](https://intl.cloud.tencent.com/document/product/1007/40206)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/40206">Information Submission Process for Wotrus OV and EV SSL Certificates</a></td>
 </tr>
 </table>
 
@@ -149,7 +149,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >Launched SecureSite, GeoTrust, and TrustAsia SSL certificates</td>
 <td rowspan="1" colSpan="1" >Certificates of multiple brands are available.<br>They include OV, EV, and wildcard SSL certificates.</td>
-<td rowspan="1" colSpan="1" >[Purchasing Process](https://intl.cloud.tencent.com/document/product/1007/30159)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/30159">Purchasing Process</a></td>
 </tr>
 </table>
 
@@ -171,7 +171,7 @@
 <tr>
 <td rowspan="1" colSpan="1" >Optimized the browser compatibility</td>
 <td rowspan="1" colSpan="1" >Reports on the compatibility between certificates sold at the Tencent Cloud official website and mainstream browser versions are provided.</td>
-<td rowspan="1" colSpan="1" >  [Browser Compatibility Test Report](https://intl.cloud.tencent.com/document/product/1007/30165)  </td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/30165">Browser Compatibility Test Report</a></td>
 </tr>
 </table>
 
