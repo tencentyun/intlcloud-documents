@@ -2,7 +2,7 @@
 
 This document describes how to reissue an SSL certificate, in case your certificate key has been compromised, or you need to generate a new certificate due to other reasons.
 
-> **Notes**
+>?
 > 
 > - Certificate reissue is available only if your certificate **has been issued and will expire in more than 30 days**.
 > - Each free DV certificate can be reissued only once.
@@ -46,7 +46,7 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
   - **Private key password**: To ensure the security of your private key, **password recovery is NOT supported**, so keep the password in mind.
 
 
-> **Notes**
+>?
 > 
 > If you need to deploy the SSL certificate to Tencent Cloud services such as CLB and CDN, do not enter the private key password.
 > 
@@ -60,7 +60,7 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
 4. After your domain is validated, wait for manual approval, upon which the certificate will be reissued. For more information on how to validate a domain, see [Domain Validation Guide](https://www.tencentcloud.com/document/product/1007/53581).
 
 
-> **Notes**
+>?
 > 
 > - If you have successfully applied for this certificate and the organization information submitted in the re-application is consistent with that recorded in the system, manual approval is not required.
 > - If the span between the reissue submission time and original issue time is less than three days, domain validation is not required.
@@ -87,7 +87,7 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
   - **Private key password**: To ensure the security of your private key, **password recovery is NOT supported**, so keep the password in mind.
 
 
-> **Notes**
+>?
 > 
 > If you need to deploy the SSL certificate to Tencent Cloud services such as CLB and CDN, do not enter the private key password.
 > 
@@ -119,7 +119,7 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
   - **Private key password**: To ensure the security of your private key, **password recovery is NOT supported**, so keep the password in mind.
 
 
-> **Notes**
+>?
 > 
 > If you need to deploy the SSL certificate to Tencent Cloud services such as CLB and CDN, do not enter the private key password.
 > 
@@ -131,7 +131,7 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
 3. On the **Validate Domain** page, verify the domain ownership and click **Validate**. For more information on how to validate a domain, see [Domain Validation Guide](https://www.tencentcloud.com/document/product/1007/53581).
 
 
-> **Notes**
+>?
 > 
 > If your DV certificate is purchased from TrustAsia (2-year or 3-year wildcard domain) and you have configured automatic DNS or file validation for the domain you are applying for, ownership verification is not required.
 > 
@@ -139,7 +139,7 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
 4. After the domain is verified, the reissue is completed.
 
 
-> **Notes**
+>?
 > 
 > - In the last 13 months, if domain identity verification has been completed for the certificate to be reissued using the same organization name, domain validation will not be performed.
 > - If the span between the reissue submission time and original issue time is less than three days, domain validation is not required.
@@ -156,7 +156,7 @@ Log in to the [SSL Certificate Service console](https://console.cloud.tencent.co
   - **Private key password**: To ensure the security of your private key, **password recovery is NOT supported**, so keep the password in mind.
 
 
-> **Notes**
+>?
 > 
 > If you need to deploy the SSL certificate to Tencent Cloud services such as CLB and CDN, do not enter the private key password.
 > 
