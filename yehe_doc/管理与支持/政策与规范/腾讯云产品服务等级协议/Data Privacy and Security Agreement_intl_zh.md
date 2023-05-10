@@ -165,6 +165,7 @@
 61.[腾讯云数据连接器](https://www.tencentcloud.com/document/product/1165/54050)。
 62.[低代码互动课堂](https://www.tencentcloud.com/document/product/1168/54191)。
 63.[容器安全服务](https://www.tencentcloud.com/document/product/1163/54258)。
+64.[云拨测](https://www.tencentcloud.com/document/product/1169/54989)。
 
 ## 特定司法管辖区要求
 
