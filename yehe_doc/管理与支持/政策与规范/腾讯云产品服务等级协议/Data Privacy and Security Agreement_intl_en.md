@@ -239,7 +239,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 67.[App Flow](https://www.tencentcloud.com/document/product/1165/54050).
 68.[Low-code Interactive Classroom](https://www.tencentcloud.com/document/product/1168/54191).
 69.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54258).
-
+70.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54989).
 ## 10.Jurisdiction-specific Requirements
 
 ### EEA and UK
