@@ -1,6 +1,4 @@
-# SDK整体接入流程说明
 
-本文介绍慧眼海外版SDK整体接入的流程
 
 ## 接入准备
 
@@ -264,7 +262,7 @@ HuiYanOsApi.startHuiYanAuth(currentToken, huiYanOsConfig, new HuiYanOsAuthCallBa
 
 [HuiYanOsAuthResult](https://www.tencentcloud.com/zh/document/product/1061/54964)为活体成功的返回结果, 最终的核身结果可以通过token，访问[GetFaceldResultIntl](https://www.tencentcloud.com/zh/document/product/1061/54557)获取。
 
-**注意：**当前的 **"YTFaceSDK.license"**文件是需要您主动申请的，暂时您可以联系客服人员进行license申请。将申请完成后的license文件放到assets文件下。
+**注意：**当前的"YTFaceSDK.license"文件是需要您主动申请的，暂时您可以联系客服人员进行license申请。将申请完成后的license文件放到assets文件下。
 
 ![](https://ai-sdk-release-1254418846.cos.ap-guangzhou.myqcloud.com/huiyan/image/license%E5%AD%98%E6%94%BE%E8%B7%AF%E5%BE%84.png)
 
@@ -360,7 +358,9 @@ end
 
 3. pod install 更新
 
->?文件层级和具体的设置可以参考Demo
+>?文件层级和具体的设置可以参考demo。
+>- [iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
+>- [Android demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-android-demo)
 
 ##### Build Phases设置
 
@@ -418,11 +418,12 @@ SDK需要手机网络及 摄像头使用权限，请添加对应的权限声明�
 
 在您APP退出使用的时候，可以调用SDK资源释放接口
 
+
 ```objective-c
 // 退出时做资源释放
 - (void)dealloc {
     [HuiYanOsApi release];
 }
-```
 //[iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
 [Android demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-android-demo)
+```
