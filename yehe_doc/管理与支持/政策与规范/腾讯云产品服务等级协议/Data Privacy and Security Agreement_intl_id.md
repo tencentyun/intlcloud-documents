@@ -165,7 +165,7 @@ Modul berikut akan berlaku dan dimasukkan dengan referensi ke dalam DPSA ini jik
 61.[App Flow](https://www.tencentcloud.com/document/product/1165/54050).
 62.[Low-code Interactive Classroom](https://www.tencentcloud.com/document/product/1168/54191).
 63.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54258).
-
+64.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54989).
 
 ## Persyaratan khusus yurisdiksi
 
