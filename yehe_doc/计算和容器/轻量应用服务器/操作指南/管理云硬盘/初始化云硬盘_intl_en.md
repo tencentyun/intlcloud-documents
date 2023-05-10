@@ -14,42 +14,6 @@ Attach a cloud disk to your Lighthouse instance. See [Attaching a Cloud Disk](ht
 ## Directions
 
 <dx-tabs>
-::: Windows instances
-
-<dx-alert infotype="explain" title="">
-This example uses a Lighthouse instance using Windows Server 2016 R2 operating system. Note that the steps may vary according to the operating system version.
-</dx-alert>
-
-1. Log in to the Lighthouse instance. For more information, see [Logging in to a Windows Instance via VNC](https://intl.cloud.tencent.com/document/product/1103/46399).
-2. On the desktop, right-click <img src="https://qcloudimg.tencent-cloud.cn/raw/d31f2d1c79409188f9465a041455b5cf.png" style="margin:-4px 0px"> in the lower-left corner and click **Disk management** in the pop-up menu.
-Open the **Disk management** window to view the data disk information. 
-![](https://qcloudimg.tencent-cloud.cn/raw/e9faf9beb760e47a4732a1d81ee4dc69.png)
-<dx-alert infotype="notice" title="">
-If the new disk is offline (as shown above), continue to [Step 3](#step3) to make it online. If it’s already online, go to [Step 4](#step4).
-</dx-alert>
-3. [](id:step3) Right-click in the Disk 1 area, and click **Online**.
-![](https://qcloudimg.tencent-cloud.cn/raw/0f695c2a297f0e7283dace9b76bd02f6.png)
-4. [](id:step4)Disk 1 changes from **Offline** to **Not Initialized**. Right-click in the Disk 1 area and select **Initialize Disk**.
-![](https://qcloudimg.tencent-cloud.cn/raw/2e0449e401ff18bfbfc86da743846677.png)
-5. In the **Initialize Disk** window, select the target disk and the disk partition format, and click **OK**. In this example, **MBR (Master Boot Record)** is used.
-<dx-alert infotype="notice" title="">
-If the disk partition format is changed after the disk is put into use, the original data on the disk will be erased. Please select an appropriate partition format based on actual needs.
-</dx-alert>
-![](https://qcloudimg.tencent-cloud.cn/raw/f20e82296e93672bfc946cea02e841f5.png)
-6. Right-click the free space of Disk 1, and select **New Simple Volume**.
-![](https://qcloudimg.tencent-cloud.cn/raw/5d887bbbeb457f9b8a7ff01f39988729.png)
-7. In the welcome page of **New Simple Volume Wizard** pop-up window, click **Next**.
-8. Specify the volume size as needed, which is the maximum value by default. Click **Next**.
-9. Assign a drive letter, and click **Next**.
-![](https://qcloudimg.tencent-cloud.cn/raw/a011638a9a65411a448afa11228d89a3.png)
-10. Select **Format this volume with the following settings**. Configure the parameters as needed, format the new partition, and click **Next**.
-![](https://qcloudimg.tencent-cloud.cn/raw/64ca489770db96b0dc2bb4ef14a7045e.png)
-11. Click **Complete**. Wait for a while for the system to complete the initialization. When the volume status becomes "Healthy", the disk initialization is successful.
-![](https://qcloudimg.tencent-cloud.cn/raw/c1d704e331ff7a9ae693edc15ff3b197.png)
-After the initialization is complete, enter the **PC** interface to view the new disk.
-![](https://qcloudimg.tencent-cloud.cn/raw/0998e5d0858d706126578af12b23ab89.png)
-
-:::
 ::: Linux instance
 Select the initialization method according to your actual use cases:
 
@@ -175,6 +139,41 @@ The returned information is similar to what is shown below. This indicates that 
 ![](https://qcloudimg.tencent-cloud.cn/raw/2fd33e9978b0cea3df6f5e6df917e95a.png)
 The disk needs to be mounted to the instance every time the instance starts up. To set the disk partition to be automatically mounted upon instance start-up, see [Auto-Mounting Disk upon Linux Instance Start-up](#autoMount).
 
+:::
+::: Windows instances
+
+<dx-alert infotype="explain" title="">
+This example uses a Lighthouse instance using Windows Server 2016 R2 operating system. Note that the steps may vary according to the operating system version.
+</dx-alert>
+
+1. Log in to the Lighthouse instance. For more information, see [Logging in to a Windows Instance via VNC](https://intl.cloud.tencent.com/document/product/1103/46399).
+2. On the desktop, right-click <img src="https://qcloudimg.tencent-cloud.cn/raw/d31f2d1c79409188f9465a041455b5cf.png" style="margin:-4px 0px"> in the lower-left corner and click **Disk management** in the pop-up menu.
+Open the **Disk management** window to view the data disk information. 
+![](https://qcloudimg.tencent-cloud.cn/raw/e9faf9beb760e47a4732a1d81ee4dc69.png)
+<dx-alert infotype="notice" title="">
+If the new disk is offline (as shown above), continue to [Step 3](#step3) to make it online. If it’s already online, go to [Step 4](#step4).
+</dx-alert>
+3. [](id:step3) Right-click in the Disk 1 area, and click **Online**.
+![](https://qcloudimg.tencent-cloud.cn/raw/0f695c2a297f0e7283dace9b76bd02f6.png)
+4. [](id:step4)Disk 1 changes from **Offline** to **Not Initialized**. Right-click in the Disk 1 area and select **Initialize Disk**.
+![](https://qcloudimg.tencent-cloud.cn/raw/2e0449e401ff18bfbfc86da743846677.png)
+5. In the **Initialize Disk** window, select the target disk and the disk partition format, and click **OK**. In this example, **MBR (Master Boot Record)** is used.
+<dx-alert infotype="notice" title="">
+If the disk partition format is changed after the disk is put into use, the original data on the disk will be erased. Please select an appropriate partition format based on actual needs.
+</dx-alert>
+![](https://qcloudimg.tencent-cloud.cn/raw/f20e82296e93672bfc946cea02e841f5.png)
+6. Right-click the free space of Disk 1, and select **New Simple Volume**.
+![](https://qcloudimg.tencent-cloud.cn/raw/5d887bbbeb457f9b8a7ff01f39988729.png)
+7. In the welcome page of **New Simple Volume Wizard** pop-up window, click **Next**.
+8. Specify the volume size as needed, which is the maximum value by default. Click **Next**.
+9. Assign a drive letter, and click **Next**.
+![](https://qcloudimg.tencent-cloud.cn/raw/a011638a9a65411a448afa11228d89a3.png)
+10. Select **Format this volume with the following settings**. Configure the parameters as needed, format the new partition, and click **Next**.
+![](https://qcloudimg.tencent-cloud.cn/raw/64ca489770db96b0dc2bb4ef14a7045e.png)
+11. Click **Complete**. Wait for a while for the system to complete the initialization. When the volume status becomes "Healthy", the disk initialization is successful.
+![](https://qcloudimg.tencent-cloud.cn/raw/c1d704e331ff7a9ae693edc15ff3b197.png)
+After the initialization is complete, enter the **PC** interface to view the new disk.
+![](https://qcloudimg.tencent-cloud.cn/raw/0998e5d0858d706126578af12b23ab89.png)
 
 :::
 </dx-tabs>
