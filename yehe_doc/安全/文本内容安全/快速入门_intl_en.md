@@ -133,7 +133,7 @@ After completing the above steps, you can select the created moderation policy a
 
    >? The text must meet the following requirements:
    >- **Text Content Size**: the text length cannot exceed 10,000, calculated based on Unicode encoding.
-   >- **Language**: currently, Chinese, English, and Arabic numerals can be detected.
+   >- **Supported Language**: Chinese.
 
 3. Click **Moderate Now**, and the moderation result of the text will be displayed below the moderated content.
    ![img](https://qcloudimg.tencent-cloud.cn/raw/25ed1c79570608fc343e07ba04ba52cb.png)
