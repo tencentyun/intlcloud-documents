@@ -2,7 +2,7 @@ During your first application for a certificate, make sure that you understand t
 
 ## Step 1: Register an account
 
-> **Notes**
+>?
 > If you already have a Tencent Cloud account, ignore this step.
 > 
 
@@ -49,7 +49,7 @@ Log in at the [SSL certificate purchase page](https://intl.cloud.tencent.com/pri
 
 ## Step 3. Apply for a free SSL certificate
 
-> **Notes**
+>?
 > 
 > This section describes how to apply for a free DV certificate for the setup of a personal website that does not involve private data, finance, and other high security levels.
 > 
@@ -58,7 +58,7 @@ Log in at the [SSL certificate purchase page](https://intl.cloud.tencent.com/pri
 
 ## Step 4. Install and deploy an SSL certificate
 
-> **Notes**
+>!
 > 
 > The quick HTTPS feature helps you upgrade from HTTP to HTTPS without tedious SSL certificate deployment.
 
@@ -81,38 +81,38 @@ Log in at the [SSL certificate purchase page](https://intl.cloud.tencent.com/pri
 <td rowspan="8" colSpan="1" >Linux</td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" > [Installing an SSL Certificate on an Apache Server (Linux)](https://intl.cloud.tencent.com/document/product/1007/30953)</td>
+<td rowspan="1" colSpan="1" > <a href="https://intl.cloud.tencent.com/document/product/1007/30953">Installing an SSL Certificate on an Apache Server (Linux</a></td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" >[Installing an SSL Certificate on an Nginx Server](https://intl.cloud.tencent.com/document/product/1007/30954)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/30954">Installing an SSL Certificate on an Nginx Server</a></td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" >[Installing an SSL Certificate (JKS Format) on a Tomcat Server](https://www.tencentcloud.com/document/product/1007/50805)</td>
+<td rowspan="1" colSpan="1" ><a href="https://www.tencentcloud.com/document/product/1007/50805">Installing an SSL Certificate (JKS Format) on a Tomcat Server</a></td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" >[Installing an SSL Certificate (PFX Format) on a Tomcat Server](https://intl.cloud.tencent.com/document/product/1007/30956)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/30956">Installing an SSL Certificate (PFX Format) on a Tomcat Server</a></td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" >[Installing an SSL Certificate on a GlassFish Server](https://intl.cloud.tencent.com/document/product/1007/36565)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/36565">Installing an SSL Certificate on a GlassFish Server</a></td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" >[Installing an SSL Certificate on a JBoss Server](https://intl.cloud.tencent.com/document/product/1007/36566)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/36566">Installing an SSL Certificate on a JBoss Server</a></td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" >[Installing an SSL Certificate on a Jetty Server](https://intl.cloud.tencent.com/document/product/1007/36567)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/36567">Installing an SSL Certificate on a Jetty Server</a></td>
 </tr>
 <tr>
 <td rowspan="4" colSpan="1" >Windows</td>
-<td rowspan="1" colSpan="1" >[Installing a Certificate on IIS Servers](https://intl.cloud.tencent.com/document/product/1007/30955)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/30955">Installing a Certificate on IIS Servers</a></td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" >[Installing a Certificate on WebLogic Servers](https://intl.cloud.tencent.com/document/product/1007/38093)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/38093">Installing a Certificate on WebLogic Servers</a></td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" >[Installing an SSL Certificate on an Apache Server (Windows)](https://intl.cloud.tencent.com/document/product/1007/50198)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/50198">Installing an SSL Certificate on an Apache Server (Windows)</a></td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" >[Installing an SSL Certificate (JKS Format) on a Tomcat Server](https://intl.cloud.tencent.com/document/product/1007/43804)</td>
+<td rowspan="1" colSpan="1" ><a href="https://intl.cloud.tencent.com/document/product/1007/43804">Installing an SSL Certificate (JKS Format) on a Tomcat Server</a></td>
 </tr>
 </table>
 
