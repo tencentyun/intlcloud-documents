@@ -7,7 +7,7 @@ Generally, you may revoke SSL certificates in the following scenarios:
 - For security reasons, the issued certificates are no longer used.
   
 
-   > **Notes**
+   >?
    > 
    > If an issued certificate has not expired, you can delete it from the certificate list only after the certificate is revoked. A certificate that has not been revoked cannot be deleted.
    > 
@@ -50,7 +50,7 @@ You have logged in to the [SSL Certificate Service console](https://console.clou
 
 ## Directions
 
-> **Notes**
+>?
 > 
 > If the domain bound to the SSL certificate you apply for has expired and been deleted, and you need to revoke the certificate and perform related parsing operations, [contact us](https://intl.cloud.tencent.com/contact-sales) for assistance.
 > 
@@ -63,7 +63,7 @@ You have logged in to the [SSL Certificate Service console](https://console.clou
 
 
 
-   > **Notes**
+   >?
    > 
    > After the certificate is revoked successfully, the certificate enters the revoked status. You can log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) and delete the certificate from the Tencent Cloud system.
    > 
@@ -93,7 +93,7 @@ Revoking different types of certificates
 5. Click **Upload** to upload the application and click **Next**.
    
 
-   > **Notes**
+   >?
    > 
    >   - The application file can be up to 1.4 MB in JPG, GIF, or PDF format.
    >   - After the application file is uploaded, it cannot be uploaded again. Make sure that the application file is uploaded correctly.
@@ -107,7 +107,7 @@ Revoking different types of certificates
 2. After submitting the SSL certificate revocation application, configure the verification information as instructed as soon as possible.
    
 
-   > **Notes**
+   >?
    >   - If your DV certificate is purchased from TrustAsia (2-year or 3-year wildcard domain) and you have configured automatic DNS or file validation for the domain you are applying for, ownership verification is not required.
    >   - If your certificate originally adopts the automatic DNS validation mode but now the conditions for automatic validation are not met, the manual DNS validation mode will be automatically adopted.
    >   - If the certificate adopts the DNS validation mode, add DNS records within three days; otherwise, the revocation will fail. The certificate will be revoked after the successful validation. For detailed directions, see [DNS Validation](https://intl.cloud.tencent.com/document/product/1007/45895).
@@ -126,7 +126,7 @@ Revoking different types of certificates
 5. Click **Upload** to upload the confirmation letter and click **Next**.
    
 
-   > **Notes**
+   >?
    > 
    >   - The confirmation letter file can be up to 1.4 MB in JPG, PNG, or PDF format.
    >   - If automatic DNS or file validation has been configured for the domain applied for, you do not need to upload the confirmation letter.
