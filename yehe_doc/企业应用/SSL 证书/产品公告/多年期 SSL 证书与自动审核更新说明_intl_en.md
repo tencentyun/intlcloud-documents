@@ -1,9 +1,9 @@
-This document describes multi-year certificate purchase and automatic profile review, two features newly added to the [SSL Certificate Service console](https://console.cloud.tencent.com/certoverview) to enhance your experience when applying for a certificate and reapplying for one during renewal.
+\This document describes multi-year certificate purchase and automatic profile review, two features newly added to the [SSL Certificate Service console](https://console.cloud.tencent.com/certoverview) to enhance your experience when applying for a certificate and reapplying for one during renewal.
 If you have any questions, suggestions, or comments, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
 
 ## Feature overview
 
-> **Notes**
+>!
 > 
 > The specific operations are as displayed in the console.
 > 
