@@ -1,6 +1,6 @@
 ### Which languages can TMS detect?
 
-Currently, TMS can detect and recognize porn, ads, and spam in Chinese and English text. It also allows you to configure custom dictionaries to recognize custom non-compliant text.
+Currently, TMS can detect and recognize porn, ads, and spam in Chinese text. It also allows you to configure custom dictionaries to recognize custom non-compliant text.
 
 ### Can URLs in comments be detected for non-compliance?
 
