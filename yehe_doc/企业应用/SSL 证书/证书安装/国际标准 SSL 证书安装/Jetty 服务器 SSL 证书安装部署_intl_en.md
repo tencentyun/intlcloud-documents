@@ -2,7 +2,7 @@
 
 This document describes how to install an SSL certificate on a Jetty server.
 
-> **Notes**
+>?
 > 
 > - The certificate name `cloud.tencent.com` is used as an example.
 > - The `jetty-distribution-9.4.28.v20200408` version is used as an example.
@@ -41,7 +41,7 @@ We recommend that you use CVM's file upload feature for deployment to CVM.
 </table>
 
 
-> **Notes**
+>!
 >   - For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM console](https://console.cloud.tencent.com/cvm) to get the server IP address, username, and password.
 >   - If you have selected the **By pasting** method when applying for the SSL certificate, or your certificate brand is WoTrus, the option to download the JKS certificate file is not provided. Instead, you need to manually convert the format to generate a keystore as follows: 
 >   - Access the [conversion tool](https://myssl.com/cert_convert.html).
@@ -72,19 +72,22 @@ After decompression, you can get the certificate file of the corresponding type,
 5. Use WinSCP (a tool for copying files between a local computer and a remote computer) to log in to the Jetty server and copy the keystore file `cloud.tencent.com.jks` from the local directory to the `cert` folder.
    
 
-   > **Notes**
-   > 
+>?
 >   - For detailed directions, see [Uploading files via WinSCP to a Linux CVM from Windows](https://intl.cloud.tencent.com/document/product/213/2131).
 >   - We recommend that you use CVM's file upload feature for deployment to CVM.
+
+
 
 6. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` directory, modify the configuration in the `jetty-ssl-context.xml` file.
    
 
-> **Notes** 
+>? 
 >   - **KeyStorePath**: Set the default value to the certificate path.
 >   - **KeyStorePassword**: Set the default value to the keystore password. If you have set a private key password when applying for the certificate, enter the private key password; otherwise, enter the password in the `keystorePass.txt` file in the `cloud.tencent.com_jks` folder.
 >   - **KeyManagerPassword**: Set the value to the password in the `keystorePass.txt` file in the `cloud.tencent.com_jks` folder.
 >   - **TrustStorePath**: Set the default value to the certificate path.
+
+
 
    ``` xml
    <?xml version="1.0"?><!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
@@ -135,6 +138,9 @@ After decompression, you can get the certificate file of the corresponding type,
      -->
    </Configure>
    ```
+   
+   
+   
 7. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` directory, change the port number to 443 in the `jetty-ssl.xml` file.
 
    ``` xml
@@ -164,6 +170,9 @@ After decompression, you can get the certificate file of the corresponding type,
     </Arg>
      </Call>
    ```
+   
+   
+   
 8. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408` directory, add the following content to the `start.ini` file:
 
    ``` bash
@@ -189,11 +198,9 @@ After decompression, you can get the certificate file of the corresponding type,
 ## Reminders
 
 After the certificate is deployed, the following error message may be displayed when you access `https://cloud.tencent.com`:
-![](https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100022398434/ad7e2d83397f11edb1de525400c56988.png?q-sign-algorithm=sha1&q-ak=AKIDwqtkxdd9nq2PP2SVlA4_FeceTOBxv-u9NsgSV51rQuwyW-iHsDujp9ITS-uwNPhS&q-sign-time=1677222445;1677226045&q-key-time=1677222445;1677226045&q-header-list=&q-url-param-list=&q-signature=2cb85b124af42e1116d5f435dcad686b0ad1b0f3&x-cos-security-token=bIt0YvI2c3sHVcBABoidKlAIlBMslVfa88f9dbdbfe2bc7dd60baf84ade67a65cxarPRVEcEF0tWHXzvWrEvHIlP0NR_o6vwUZnEzGtol6l0BJShcJV8w-UXSH3OwsHAGODp_E80KYYA_omkkua3S4hBCMVyshVV9GexpXm50rHWElh9MXt-Rxv72ahYNpcu_25mYveI4p7D0f1_DE0tXaQ75-7Vjui2v1S9IX_Q5NTI-Ekl2zbvacN2bfPAirrkZAIARg-f0kkFQWOus9PHSZ8xfIk_RNYz_SjJVm0HMSEjAg_nlMLq8p0zRTKgakkAYbxcnL-gXoo6YPWpZDDAeFCCRdIH8kPYE5XxAYeeEa7Fp8D3ET05ovXY4NeBSwLoocTANod1ChCSxovDlXC5uqG4FqWcYYgvQn4GI_kSuXCLHxIZ7D-xhAvZOOKb01o)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/wSQG704_999999.png)
 If the error message is displayed, copy the `ROOT` file from the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/demo-base/webapps` directory to the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/webapps` directory, and then restart the Jetty server.
 
-> **Notes**
-> 
-
+>!
 > If anything goes wrong during this process, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
 > 
