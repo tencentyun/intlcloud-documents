@@ -2,7 +2,7 @@
 
 本文档指导您如何在 IIS 中安装 SSL 证书。
 
-> **说明**
+>?
 > 
 > - 本文档以证书名称 `cloud.tencent.com` 为例，实际名称请以您申请的证书为准。
 > - 本文档以操作系统 Windows Server 2012 R2 为例。由于操作系统的版本不同，详细操作步骤略有区别。
@@ -32,9 +32,7 @@
 
 5. 在弹出的 “导入证书” 窗口中，选择证书文件存放路径，输入密码，单击**确定**。如下图所示：
    
-
-   > **说明**
-   > 
+>?
 >   - 申请证书时若设置了私钥密码，输入密码时，请输入私钥密码。若申请证书时未设置私钥密码，输入密码时，请输入 `cloud.tencent.com.iis` 文件夹中 keystorePass.txt 文件的密码。
 >   - 如果私钥密码不慎遗忘，请 [工单联系](https://console.cloud.tencent.com/workorder/category) 腾讯云工程师删除该证书，然后重新申请该域名证书。
 
@@ -50,9 +48,8 @@
 
 10. 请使用 `https://cloud.tencent.com` 进行访问。
 
-  - 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
-
-  - 如果网站访问异常，可参考以下常见问题解决方案进行处理：
+- 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
+- 如果网站访问异常，可参考以下常见问题解决方案进行处理：
 
     - [无法使用 HTTPS 访问网站](https://intl.cloud.tencent.com/document/product/1007/39821)
 
@@ -66,7 +63,7 @@
 
 ### HTTP 自动跳转 HTTPS 的安全配置（可选）
 
-> **说明**
+>?
 > 
 > - 正常跳转可按照下列编辑规则。若您有其他需求可以自己设置。
 > - HTTP 跳转 HTTPS 过程中，如果您的网站元素中存在外部链接或者使用的 HTTP 协议，导致整个页面不完全是 HTTPS 协议。部分浏览器会因为这些因素报不安全的提示，例如链接不安全。您可以单击不安全页面中的 “详细信息” 查看报错原因。
@@ -76,7 +73,7 @@
 2. 选择网站下的站点名称，双击打开 “URL 重写”。
    
 
-   > **注意**
+   >!
    > 执行该步骤前请下载安装 [rewrite 模块](https://www.iis.net/downloads/microsoft/url-rewrite)。
    > 
 
@@ -90,7 +87,7 @@
 
   - 匹配URL：在 “模式” 中手动输入`(.*)`。
 
-  - 条件：展开 ![](https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100022398434/d1a14ed637f611edb1de525400c56988.png?q-sign-algorithm=sha1&q-ak=AKIDJWOpn5Euqg_MuaGjDALWvThNxEE3UzuDbQVR2t_3HEJL7mgSvZAM56lckkvMVONT&q-sign-time=1677222502;1677226102&q-key-time=1677222502;1677226102&q-header-list=&q-url-param-list=&q-signature=e0f55bda36b94f2d511ba5e6343be11d29391cbf&x-cos-security-token=bIt0YvI2c3sHVcBABoidKlAIlBMslVfafe704464465dce177710b4c3e9268309xarPRVEcEF0tWHXzvWrEvIgKE_fD8nCDAe9-NBmK4YnTbXq0ucDzsmGfYKQ-N29-1Yxhspn14NIlE6P4HzhZ_Fwyr6Usxx-dKRgCK294domKXWLbt4It_GcQRaY9MwmPjg8YImuRYdhvT4lN-PNSVHcHYfpvhgHDyviqOiMyG1k2XwHMo8HZm5XnurhgnzVUH1BGmCFNM5kizedkzfNCOZsDb2MQvHB-mQ7B3qMfRun_zI1ieOSZtn8nFUGro8yqnkIpfSw9nK8jBckaibHCplmlx9N9xCrz8zN0sY5ETOViZ8-qq_IDmZMFvCdgyiazyvtMBMzAUIS_C6I4Mlliu96YbIUYak29dx4B8e1mcBA4joG6JLnwwq2c5rgi_L_S) 单击添加，弹出 “添加条件” 窗口。
+  - 条件：展开 ![](https://qcloudimg.tencent-cloud.cn/image/document/ef5b891415dd9085bcbe6e0c83dcb089.png) 单击添加，弹出 “添加条件” 窗口。
 
     - 条件输入：`{HTTPS}`。
 
@@ -111,8 +108,5 @@
 7. 返回网站首页，单击右侧 “管理网站” 栏的**重新启动**。即可使用 `http://cloud.tencent.com` 进行访问。
    
 
-   > **注意**
-   > 
-
-   > 操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
-   > 
+>!
+> 操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。 
