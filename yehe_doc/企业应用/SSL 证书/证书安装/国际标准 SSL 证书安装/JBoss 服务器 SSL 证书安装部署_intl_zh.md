@@ -2,7 +2,7 @@
 
 本文档指导您如何在 JBoss 服务器中安装 SSL 证书。
 
-> **说明**
+>?
 > 
 > - 本文档以证书名称 `cloud.tencent.com` 为例。
 > - JBoss 版本以 `jboss-7.1.1` 为例。
@@ -41,7 +41,7 @@
 </table>
 
 
-> **注意**
+>!
 > 
 >   - 在腾讯云官网购买的云服务器，您可以登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)  获取服务器 IP 地址、用户名及密码。
 >   - 当您申请 SSL 证书时选择 “粘贴 CSR” 方式，或购买的品牌证书为 Wotrus，则不提供 JKS 证书文件的下载，需要您通过手动转换格式的方式生成密钥库。其操作方法如下： 
@@ -79,10 +79,11 @@
 5. 使用 “WinSCP” （即本地与远程计算机间的复制文件工具）登录 JBoss 服务器，将已获取到的 `cloud.tencent.com.jks` 密钥库文件从本地目录拷贝至 cert 文件夹。
    
 
-   > **说明**
+   >?
    > 
    >   - WinSCP 上传文件操作可参考 [通过 WinSCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2131)。
    >   - 若您需部署到腾讯云云服务器，建议使用云服务器的文件上传功能。
+
 
 6. 编辑在 `/usr/local/jboss-7.1.1/standalone/configuration` 目录下的 `standalone.xml` 文件。修改端口配置，如下所示：
 
@@ -120,13 +121,17 @@
        </socket-binding-group>
       ```
 
-      配置文件的主要调整说明如下：
 
-    - **开启远程访问**：将 `${jboss.bind.address:127.0.0.1}` 调整为 `${jboss.bind.address:0.0.0.0}`。
 
-    - **修改 http 端口**：将8080端口调整为80。
 
-    - **修改 https 端口**：将8443端口调整为443。
+配置文件的主要调整说明如下：
+
+- **开启远程访问**：将 `${jboss.bind.address:127.0.0.1}` 调整为 `${jboss.bind.address:0.0.0.0}`。
+- **修改 http 端口**：将8080端口调整为80。
+- **修改 https 端口**：将8443端口调整为443。
+
+
+
 
   - 第二部分：添加证书相关配置。
 
@@ -142,15 +147,18 @@
                </virtual-server>
            </subsystem>
       ```
+
+
+
+
 7. 进入 `/usr/local/jboss-7.1.1/bin` 目录下，执行启动命令 `./standalone.sh`，确保正常启动。如下图所示：
-![](https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100022398434/9d885df1397f11ed8088525400463ef7.png?q-sign-algorithm=sha1&q-ak=AKIDoGDZVdOlAliUb-fqUPzsy-qcRoOGOGqY0W6Qce5_cB_Z6ZTpGOIm0a4EIsz2dePo&q-sign-time=1677222430;1677226030&q-key-time=1677222430;1677226030&q-header-list=&q-url-param-list=&q-signature=e48358da4bb96cac49560c2804efa2149d3b37fb&x-cos-security-token=6hMEYRM6EVK7wQVx1850tcGp3oXIcQLa366b300043f7ff031cd0747258cb2a7elq4GrbYk_Xrb8oMoMGYe5BYMFFxReb0LJPs0qfOXNCE75UYaKkE8TWoyL-DZm7-Ydpi0I8yXuly1IW-GrAQOziZPq0nTZ8nUjIwXcWEKgbRW21XKdH630IJ80ff-EbBUqYnBNG5VK6irN4-TwlcDR8HliBKkgjGyx_tNn3GbYZwekx__IW55U7PkJNptsH18CkUpLi-iQaY0YTabcWLeJjnFWxak8nKIP3LLInwTB_SceeY9VLvT1gRh8EYnc3Me8E-AGQyJj7gTgCpqTSWAPXahnD_Frg9NhLEr03EKw6QLJ4z35xvY6FWvnfZX3J1KfG_fIYgduQ2hxz5AXjTyjmJtP6sjQ2onudCNKU48sOrUEeN2dXJnSL1WW2VpmgO9)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/UuQv190_00000000.png)
 
 8. 证书已部署完成，即可使用 `https://cloud.tencent.com` 进行访问。
 
-  - 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
+- 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
 
-
-  - 如果网站访问异常，可参考以下常见问题解决方案进行处理：
+- 如果网站访问异常，可参考以下常见问题解决方案进行处理：
 
     - [无法使用 HTTPS 访问网站](https://intl.cloud.tencent.com/document/product/1007/39821)
 
@@ -158,10 +166,9 @@
 
     - [访问站点提示连接不安全？](https://intl.cloud.tencent.com/document/product/1007/30184)
 
-
     - [在服务器上部署 SSL 证书后访问资源出现 404 报错](https://intl.cloud.tencent.com/document/product/1007/39820)
 
 
-         > **注意**
-         > 操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
-         > 
+>!
+> 操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
+
