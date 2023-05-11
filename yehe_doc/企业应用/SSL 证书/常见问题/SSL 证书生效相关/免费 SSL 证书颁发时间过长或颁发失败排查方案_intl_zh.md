@@ -1,6 +1,6 @@
 本文将介绍您在腾讯云申请免费 SSL 证书时，验证域名所有权中超时导致颁发失败如何排查处理。
 
-> **说明**
+>?
 > 
 >  免费 SSL 证书颁发时间一般不超过30分钟，若超过您可参考本文自行排查导致超时原因。
 > 
@@ -16,13 +16,13 @@ dig 域名名称 CAA
 ```
 
 返回值为空或包含 `0 issuewild "sectigo.com"` 和  `0 issue "sectigo.com"` 即为正常。如下图所示：
-![](https://write-document-release-1258344699.cos-internal.ap-guangzhou.tencentcos.cn/100022348635/41eb33ee37ee11ed8088525400463ef7.png?q-sign-algorithm=sha1&q-ak=AKIDCA0fRmLeWwTaqhIO9OHzbBdqvJVSwwpL23cSygO5PtfpzKsrhtEaC9BzhKxCx2a0&q-sign-time=1676448807;1676452407&q-key-time=1676448807;1676452407&q-header-list=&q-url-param-list=&q-signature=da40cd6c0faf7df1bc5b3d04960affc36d89336d&x-cos-security-token=67r0tZSRDKfWD4gGyrGFdccypdBtJHDa1b290d6aa035d9f4a97367adb087bcecbmx0skXjsUotRaaqcwAxxzLgF2TxF500kWRNlO1Sn4SvfZEIeCsBCOjmSF2pGt8DEI-AGrh0TY1b2BOCTDNV4iCKcu9wST9JCAdb9AuTOUrYS4VbAck8EfojQNVR8OORmGdX0z7ONOhSM8ySt8P7seDOPePUpbJtJ_apGxejL-17SbN56gLHiRyEtZcLNp9AeFBkTZUXPCRCLLXZCJ89RdkCynOs_SBDAwgJS0cHmLrWM3uw0XKrGotReUAGbt8osLswK1CI2fDJ2gi4jujm3odbs4M5gQuDY5exIpE8m4mzZpLtZFhwFbKSOtPy0TblJeBv-t5ZnTPYxMnHNvDAoW7n6LZnjsYoREC_jst966gZKMSTffanCfjAXaXYr1hS)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Jebr513_da1cd0e19bf8dffe3d14b229c3f7143f.png)
 
 ### DNS 诊断工具
 
 前往 [DNS 诊断工具](https://myssl.com/dns_check.html?checking=caa#dns_check)，输入主域名并选择 CAA 记录后点击检测，返回值为空或包含 `0 issuewild "sectigo.com"` 和 `0 issue "sectigo.com"` 即为正常。
 
-> **说明**
+>?
 > 
 >  若出现检测失败或只有部分地区可以正常检测的情况，请检查域名 DNS 解析设置。
 > 
