@@ -2,7 +2,7 @@
 
 This document describes how to install an SSL certificate (JKS format) on a Tomcat server.
 
-> **Notes**
+>?
 > 
 > - The certificate name `cloud.tencent.com` is used as an example.
 > - The `tomcat-9.0.56` version is used as an example.
@@ -41,7 +41,7 @@ We recommend that you use CVM's file upload feature for deployment to CVM.
 </table>
 
 
-   > **Notes**
+   >!
    > 
    >   - For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM console](https://console.cloud.tencent.com/cvm) to get the server IP address, username, and password.
    >   - If you have selected the **By pasting** method when applying for the SSL certificate, or your certificate brand is WoTrus, the option to download the JKS certificate file is not provided. Instead, you need to manually convert the format to generate a keystore as follows: 
@@ -77,7 +77,7 @@ After decompression, you can get the certificate file of the corresponding type,
 3. Use WinSCP (a tool for copying files between a local computer and a remote computer) to log in to the Tomcat server. Then, copy the `cloud.tencent.com.jks` keystore file from the local directory to the `/usr/Tomcat-9.0.56/conf` directory of the Tomcat configuration file.
    
 
-   > **Notes**
+   >?
    > 
    >   - For detailed directions, see [Uploading files via WinSCP to a Linux CVM from Windows](https://intl.cloud.tencent.com/document/product/213/2131).
    >   - We recommend that you use CVM's file upload feature for deployment to CVM.
@@ -103,15 +103,13 @@ After decompression, you can get the certificate file of the corresponding type,
   - **clientAuth**: If it is set to true, Tomcat requires all SSL clients to provide a security certificate for identity verification.
 
 
-      For details about the `server.xml` file, see below:
+For details about the `server.xml` file, see below:
+>! 
+> Do not copy the content of the `server.xml` file; otherwise, the format will be incorrect.
 
 
-      > **Notes**
-      > 
-    
-      > Do not copy the content of the `server.xml` file; otherwise, the format will be incorrect.
-      > 
-    
+
+
       ``` xml
        <?xml version="1.0" encoding="UTF-8"?>
        <Server port="8005" shutdown="SHUTDOWN">
@@ -151,6 +149,9 @@ After decompression, you can get the certificate file of the corresponding type,
         </Service>
       </Server>
       ```
+
+
+
 5. Check whether the Tomcat server is started.
 
   - If so, you need to run the following commands to shut down and restart the Tomcat service in the `bin` directory (for example, `/usr/Tomcat-9.0.56/bin`) of the Tomcat installation directory.
@@ -212,9 +213,8 @@ To redirect HTTP requests to HTTPS, complete the following settings:
      redirectPort="443" />
    ```
 
-   > **Notes**
-   > 
-
+   >?
+   >
    >  This change allows a non-SSL connector to redirect to an SSL connector.
    > 
 
