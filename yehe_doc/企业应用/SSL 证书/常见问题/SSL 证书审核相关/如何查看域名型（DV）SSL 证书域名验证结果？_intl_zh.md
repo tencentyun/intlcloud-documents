@@ -2,7 +2,7 @@
 
 在您提交证书申请后，CA 机构中心将对您的域名及所提交的信息进行审核。域名验证成功后，CA 机构中心才会对证书进行颁发，若您的证书一直未颁发，建议您根据以下内容检验域名验证结果。
 
-> **说明**
+>?
 > 
 > 腾讯云 SSL 证书服务提供的主机记录是全域名的，如果您的域名管理系统不支持全域名的主机记录，请去掉根域名的后缀部分。
 > 
@@ -12,7 +12,7 @@
 1. 请登录您的域名服务器，执行 dig 命令查询域名 DNS 解析。
 
 2. 执行 `dig + 记录类型 + @119.29.29.29` 命令指定使用 DNSPod 的 DNS 进行验证。
-例如 `dig txt cloud.tencent.com @119.29.29.29`![](https://write-document-release-1258344699.cos-internal.ap-guangzhou.tencentcos.cn/100023397743/92cc06f3399711edb1de525400c56988.png?q-sign-algorithm=sha1&q-ak=AKIDcmqi7yunGwC4T11ADQ4FPbYG2IVi-mB-bvMbjj4_HA0zp-HFlWlxYApZ61m3LpzV&q-sign-time=1676448793;1676452393&q-key-time=1676448793;1676452393&q-header-list=&q-url-param-list=&q-signature=be798d80ff5926db1a28aab1fc0ed91509d920b3&x-cos-security-token=fHqwGc36xI6d5QUWAmWE4lOfUGuwp6la54ea5f2979a343a3b1645d9e7eab10e9VUlHxW6drilDRAMT1gTp7OLWhq0dK4anP2t6CGFlcByLB9aYxuO9FVMwjKOZVur8ECv9IbZx_-CVSARNO8JlGYVwM9MfzMlTSzToLTjQ1eB5hI9LI9lEXuqti_B3Q-e2QwHqCzBIA_8VHEVfDkJhBjqN1yF8oGJIiJ4u_f2GmxQSxkqdavD0rAlp9M_qtJuRZyZcqqYGca6K_xM32e7l7eS38jzJsjati4VIHNJv85655OLbI8XXwK6eq8I2huEtRMBsm18V9jE-YV9b_Jdx5lbQKLezB4wqg7PQbdb9IB_pH3qPj_q5MoXBh7Fk7pbc7SNzwWGM0qAhBDL5RuW2YBAoPc_TdwfU5aLypiYFUWjjh19fPM8Mba6QiKBzVf4c)
+例如 `dig txt cloud.tencent.com @119.29.29.29`![](https://staticintl.cloudcachetci.com/yehe/backend-news/zrr7795_111111111111111111111111.png)
 
   - 如果返回结果中存在类似图示中的 TXT 记录，且记录值与证书控制台中证书详情页面中的记录值一致，表示您的 DNS 配置正确且已生效。
 
@@ -20,7 +20,7 @@
 若 DNS 解析配置错误，请登录 [证书管理控制台](https://console.cloud.tencent.com/certoverview)，单击**待验证**页签，进入该证书的详情页面。将证书详情中的记录值复制，并在您的 DNS 域名解析服务商更新解析。如果配置长时间未生效，请联系您的域名托管商。
     
 
-  > **说明**
+  >?
   > 具体操作请您参考 [DNS 验证](https://intl.cloud.tencent.com/document/product/1007/45895)。
 
 
@@ -38,7 +38,7 @@
   - 文件验证需要直接响应200状态码和文件内容，不支持任何形式的跳转。检查该验证 URL 地址是否存在301或302跳转。如存在此类重定向跳转，请取消相关设置关闭跳转。
     
 
-      > **说明**
+      >?
       > 
       > 您可执行 `wget -S URL 地址` 命令检测该验证 URL 地址是否存在跳转。
       > 
