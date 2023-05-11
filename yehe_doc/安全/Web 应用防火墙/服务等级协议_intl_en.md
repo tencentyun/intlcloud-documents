@@ -4,15 +4,15 @@
 
 ## 1. Terms and Definitions
 
-**1.1 Tencent Cloud Web Application Firewall, WAF**
+### 1.1 Tencent Cloud Web Application Firewall, WAF
 
 Tencent Cloud Web Application Firewall refers to the web security protection provided by Tencent Cloud to you (“**Customer**”) through the Web Application Firewall, including website or App service security visualization analysis, OWASP TOP 10 protection, business BOT protection and website compliance protection, etc. The specific services are subject to the services you have purchased and the services provided by Tencent Cloud.
 
-**1.2 Service Month(s)**
+### 1.2 Service Month(s)
 
 Service Month(s) refers to the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The Service Availability will be calculated separately for each Service Month.
 
-**1.3 Service Unavailability**
+### 1.3 Service Unavailability
 
 The Service is deemed as unavailable (“**Service Unavailability**”) if the following conditions exist within a continuous period of 1 minute or more:
 
@@ -22,33 +22,33 @@ The Service is deemed as unavailable (“**Service Unavailability**”) if the f
 
 If the Service is unavailable for less than 1 minute (i.e., the duration of service unavailability for a single instance does not exceed 1 minutes), such circumstance shall not be deemed as Service Unavailability. For example, if the Service is continuously unavailable for 59 seconds, such circumstance shall not be deemed as Service Unavailability.
 
-**1.4 Service Downtime**
+### 1.4 Service Downtime
 
 Service Downtime = the time Service Unavailability is fixed - the time Service Unavailability starts. The Service Downtime is calculated by minutes, and any time less than 60 seconds is calculated by 1 minute. For example, the Service Unavailability start moment is 14:01:01 on 10 January, the Service Unavailability fixed moment is 15:01:29 on 10 January, the Service Unavailability time is 60 minutes and 28 seconds. 28 seconds is less than 1 minute, and it needs to be calculated by 1 minute, so this Service Downtime is 61 minutes.
 
-**1.5 Service Downtime Calculated in Minutes within Service Month(s)**
+### 1.5 Service Downtime Calculated in Minutes within Service Month(s)
 
 The sum of Service Downtime calculated in minutes in a Service Month is Service Downtime Calculated in Minutes within such Service Month. For example, if the Service is unavailable 3 times in a Service Month and such Service Downtimes last for 10 minutes, 20 minutes and 30 minutes respectively, the Service Downtime Calculated in Minutes within such Service Month would be 60 minutes.
 
-**1.6 Total Number of Minutes within Service Month(s)**
+### 1.6 Total Number of Minutes within Service Month(s)
 
 Total Number of Minutes within Service Month(s) = the total number of days in Service Month(s) × 24 (hours) × 60 (minutes).
 
-**2. Service Availability**
+## 2. Service Availability
 
-**2.1 Calculation of Service Availability** 
+### 2.1 Calculation of Service Availability
 
 Service Availability = (1 - Service Downtime Calculated in Minutes within Service Month(s) / Total Number of Minutes within Service Month(s) ) × 100%
 
-**2.2 Service Availability Standard**
+### 2.2 Service Availability Standard
 
 The Service Availability of the Service **shall be no less than 99.95% (“Service Availability Standard”)**. If the Service fails to meet the Service Availability Standard (except under circumstances as set forth in the Disclaimer of Liabilities), you may claim compensation in accordance with Section 3 of this Agreement.
 
-**3. Compensation Plan**
+## 3. Compensation Plan
 
 In respect of the Service, if the Service Availability fails to meet the Service Availability Standard, you will be entitled to compensations in accordance with the following terms:
 
-**3.1 Standards of Compensation**
+### 3.1 Standards of Compensation
 
 (1) Compensations will be made **in the form of voucher** by Tencent Cloud, and you should use the voucher by abiding the voucher usage rules (including usage period, etc., subject to the voucher usage rules published on the official website of Tencent Cloud). Such voucher cannot be converted into cash, and no invoice will be issued in respect thereof. The voucher may only be used to purchase the Service via your Tencent Cloud account, and you cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
 
@@ -60,13 +60,13 @@ In respect of the Service, if the Service Availability fails to meet the Service
 | Less than 99% but is or higher than 95%           | 25% of the Monthly Service Fee            |
 | Less than 95%                                     | 100% of the Monthly Service Fee           |
 
-**3.2 Time Limit for Compensation Application**
+### 3.2 Time Limit for Compensation Application
 
 (1) If the Service Availability in a Service Month fails to meet the Service Availability Standard, you may **apply for compensation only through the Tencent Cloud ticket system under your relevant account** after the fifth (5th) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, **both parties agree that the back-end record of Tencent Cloud shall prevail**.
 
 (2) **You shall apply for compensation no later than the sixtieth (60th) calendar day following the end of the Service Month in which the Service fails to meet the Service Availability Standard**. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
-**4. Disclaimer of Liabilities**
+## 4. Disclaimer of Liabilities
 
 **If the Service is unavailable due to any of the following reasons, the corresponding Service Downtime shall not be counted towards Service Unavailability period and is not eligible for compensation by Tencent Cloud. Tencent Cloud will not be held liable to you for the corresponding Service Unavailability and the unavailability of your business (if any, including but not limited to the interruption and inaccessibility of your business):**
 
@@ -96,7 +96,7 @@ In respect of the Service, if the Service Availability fails to meet the Service
 
 4.13 Any other circumstances in which Tencent Cloud will be exempted or released from its liabilities for compensation or otherwise according to applicable laws, regulations, agreements or rules, or rules or guidelines published by Tencent Cloud separately.
 
-**5. Special Covenants**
+## 5. Special Covenants
 
 5.1 For SaaS-type Web Application Firewall, you should avoid binding your business to the VIP address of the WAF instance as the VIP address of the WAF may change. Otherwise, when the VIP address of the WAF changes, the Service will be unavailable, and your business connected to the WAF cannot be accessed normally.
 
@@ -104,7 +104,7 @@ In respect of the Service, if the Service Availability fails to meet the Service
 
 5.3 Tencent Cloud provides the Customers of SaaS-based Web Application Firewall with the function of automatically releasing the back-to-origin address of the WAF. You may authorize Tencent Cloud to release the back-to-origin EIP address segment of the WAF for the assets of your business source station on Tencent Cloud when the back-to-origin EIP address of the WAF changes, and Tencent Cloud will create a security group policy for the assets of your business source station on Tencent Cloud according to your authorization by calling the authorized interface. However, please note that the security group policies issued by Tencent Cloud are only limited to the back-to-origin EIP address segment after the change of the WAF, and other security group policies still need to be configured and adjusted by you, and you need to ensure that your security group and instance have no restriction on the security group policies issued by Tencent Cloud, otherwise the issuance of the related security group policies may fail.
 
-**6. Miscellaneous**
+## 6. Miscellaneous
 
 **6.1 The parties hereto acknowledge and agree that, for any losses incurred by you for the use of the Service due to any breach by Tencent Cloud, the aggregate liability of Tencent Cloud shall under no circumstance exceed the total service fees you have paid for the relevant Service which fails to meet the Service Availability Standard. If you have used the Service for more than 12 months, the total aggregate liability of Tencent Cloud shall not exceed the total service fees you have paid to Tencent Cloud for the Service which fails to meet the Service Availability Standard in the 12 months immediately preceding the date that event giving rise to the liability first occurred.**
 
