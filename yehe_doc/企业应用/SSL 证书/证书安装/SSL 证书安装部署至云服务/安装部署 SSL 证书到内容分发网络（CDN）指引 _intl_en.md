@@ -8,7 +8,7 @@ You have logged in to the [SSL Certificate Service console](https://console.clou
 
 ## Directions
 
-> **Notes**
+>!
 > 
 > - The domain should be already connected to CDN and in "deploying" or "enabled" status. You cannot deploy a certificate for a disabled domain. For detailed directions, see [Adding Domain Names](https://www.tencentcloud.com/document/product/228/5734).
 > - If CDN acceleration is enabled for COS or CI, certificates cannot be configured for the domain `.file.myqcloud.com` or `.image.myqcloud.com` by default.
