@@ -37,7 +37,7 @@ Generally, you may revoke SSL certificates in the following scenarios:
 <td rowspan="1" colSpan="1" >To revoke a reissued order, you need to revoke the original one, and the reissued order will be automatically revoked along with the original one.</td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" >You cannot revoke certificates issued before March 25, 2020 on your own. If you have such needs, [contact us](https://intl.cloud.tencent.com/contact-sales) for assistance.</td>
+<td rowspan="1" colSpan="1" >You cannot revoke certificates issued before March 25, 2020 on your own. If you have such needs, <a href="https://intl.cloud.tencent.com/contact-sales">contact us</a> for assistance.</td>
 </tr>
 </table>
 
