@@ -2,7 +2,7 @@
 
 This document describes how to install an SSL certificate on a JBoss server.
 
-> **Notes**
+>?
 > 
 > - The certificate name `cloud.tencent.com` is used as an example.
 > - The `jboss-7.1.1` version is used as an example.
@@ -41,7 +41,7 @@ We recommend that you use CVM's file upload feature for deployment to CVM.
 </table>
 
 
-> **Notes**
+>!
 > 
 >   - For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM console](https://console.cloud.tencent.com/cvm) to get the server IP address, username, and password.
 >   - If you have selected the **By pasting** method when applying for the SSL certificate, or your certificate brand is WoTrus, the option to download the JKS certificate file is not provided. Instead, you need to manually convert the format to generate a keystore as follows: 
@@ -79,7 +79,7 @@ After decompression, you can get the certificate file of the corresponding type,
 5. Use WinSCP (a tool for copying files between a local computer and a remote computer) to log in to the JBoss server and copy the keystore file `cloud.tencent.com.jks` from the local directory to the `cert` folder.
    
 
-   > **Notes**
+   >?
    > 
    >   - For detailed directions, see [Uploading files via WinSCP to a Linux CVM from Windows](https://intl.cloud.tencent.com/document/product/213/2131).
    >   - We recommend that you use CVM's file upload feature for deployment to CVM.
@@ -120,13 +120,18 @@ After decompression, you can get the certificate file of the corresponding type,
        </socket-binding-group>
       ```
 
-      Changes required are as follows:
 
-    - **Enabling remote access**: change `${jboss.bind.address:127.0.0.1}` to `${jboss.bind.address:0.0.0.0}`.
 
-    - **Changing the HTTP port**: change port 8080 to 80.
 
-    - **Changing the HTTPS port**: change port 8443 to 443.
+Changes required are as follows:
+
+- **Enabling remote access**: change `${jboss.bind.address:127.0.0.1}` to `${jboss.bind.address:0.0.0.0}`.
+- **Changing the HTTP port**: change port 8080 to 80.
+
+- **Changing the HTTPS port**: change port 8443 to 443.
+
+
+
 
   - Part 2: adding certificate configuration
 
@@ -142,15 +147,18 @@ After decompression, you can get the certificate file of the corresponding type,
                </virtual-server>
            </subsystem>
       ```
+      
+      
+      
 7. Go to the `/usr/local/jboss-7.1.1/bin` directory and run the `./standalone.sh` command to start the JBoss server.
-![](https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100022398434/9d885df1397f11ed8088525400463ef7.png?q-sign-algorithm=sha1&q-ak=AKIDoGDZVdOlAliUb-fqUPzsy-qcRoOGOGqY0W6Qce5_cB_Z6ZTpGOIm0a4EIsz2dePo&q-sign-time=1677222430;1677226030&q-key-time=1677222430;1677226030&q-header-list=&q-url-param-list=&q-signature=e48358da4bb96cac49560c2804efa2149d3b37fb&x-cos-security-token=6hMEYRM6EVK7wQVx1850tcGp3oXIcQLa366b300043f7ff031cd0747258cb2a7elq4GrbYk_Xrb8oMoMGYe5BYMFFxReb0LJPs0qfOXNCE75UYaKkE8TWoyL-DZm7-Ydpi0I8yXuly1IW-GrAQOziZPq0nTZ8nUjIwXcWEKgbRW21XKdH630IJ80ff-EbBUqYnBNG5VK6irN4-TwlcDR8HliBKkgjGyx_tNn3GbYZwekx__IW55U7PkJNptsH18CkUpLi-iQaY0YTabcWLeJjnFWxak8nKIP3LLInwTB_SceeY9VLvT1gRh8EYnc3Me8E-AGQyJj7gTgCpqTSWAPXahnD_Frg9NhLEr03EKw6QLJ4z35xvY6FWvnfZX3J1KfG_fIYgduQ2hxz5AXjTyjmJtP6sjQ2onudCNKU48sOrUEeN2dXJnSL1WW2VpmgO9)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/UuQv190_00000000.png)
 
 8. The certificate is deployed and you can access the website through `https://cloud.tencent.com`.
 
-  - If the security lock icon is displayed in the browser, the certificate has been installed successfully.
+- If the security lock icon is displayed in the browser, the certificate has been installed successfully.
 
 
-  - In case of a website access exception, troubleshoot the issue by referring to the following FAQs:
+- In case of a website access exception, troubleshoot the issue by referring to the following FAQs:
 
     - [Website Inaccessible After an SSL Certificate is Deployed](https://intl.cloud.tencent.com/document/product/1007/39821)
 
@@ -162,6 +170,8 @@ After decompression, you can get the certificate file of the corresponding type,
     - [404 Error After the SSL Certificate is Deployed on IIS](https://intl.cloud.tencent.com/document/product/1007/39820)
 
 
-         > **Notes**
-         > If anything goes wrong during this process, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
-         > 
+
+
+>!
+> If anything goes wrong during this process, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+
