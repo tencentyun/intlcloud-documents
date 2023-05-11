@@ -2,7 +2,7 @@
 
 本文档指导您如何在 Jetty 服务器中安装 SSL 证书。
 
-> **说明**
+>?
 > 
 > - 本文档以证书名称 `cloud.tencent.com` 为例。
 > - Jetty 版本以 `jetty-distribution-9.4.28.v20200408` 为例。
@@ -41,7 +41,7 @@
 </table>
 
 
-> **注意**
+>!
 >   - 在腾讯云官网购买的云服务器，您可以登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)  获取服务器 IP 地址、用户名及密码。
 >   - 当您申请 SSL 证书时选择 “粘贴 CSR” 方式，或购买的品牌证书为 Wotrus，则不提供 JKS 证书文件的下载，需要您通过手动转换格式的方式生成密钥库。其操作方法如下： 
 >   - 访问 [转换工具](https://myssl.com/cert_convert.html)。
@@ -71,20 +71,22 @@
 
 5. 使用 “WinSCP” （即本地与远程计算机间的复制文件工具）登录 Jetty 服务器，将已获取到的 `cloud.tencent.com.jks` 密钥库文件从本地目录拷贝至 cert 文件夹。
    
-
-   > **说明**
-   > 
+>?
 >   - WinSCP 上传文件操作可参考 [通过 WinSCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2131)。
 >   - 若您需部署到腾讯云云服务器，建议使用云服务器的文件上传功能。
+
+
 
 6. 编辑 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` 目录下的 `jetty-ssl-context.xml` 文件，如下所示：
    
 
-> **说明** 
+>? 
 >   - **KeyStorePath**：默认值 default 请填写证书存放的路径。
 >   - **KeyStorePassword**：默认值 default 请填写密钥库密码，指定 keystore 的密码。申请证书时若设置了私钥密码，请填写私钥密码；若申请证书时未设置私钥密码，请填写 `cloud.tencent.com_jks` 文件夹中 keystorePass.txt 文件的密码。
 >   - **KeyManagerPassword**：请填写 `cloud.tencent.com_jks` 文件夹中 keystorePass.txt 文件的密码。
 >   - **TrustStorePath**：默认值 default 请填写证书存放的路径。
+
+
 
    ``` xml
    <?xml version="1.0"?><!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
@@ -135,6 +137,9 @@
      -->
    </Configure>
    ```
+   
+   
+   
 7. 编辑 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` 目录下的 `jetty-ssl.xml` 文件，修改端口为443。如下所示：
 
    ``` xml
@@ -164,6 +169,8 @@
     </Arg>
      </Call>
    ```
+   
+   
 8. 编辑 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408` 目录下的 `start.ini` 文件，添加如下内容：
 
    ``` bash
@@ -171,11 +178,13 @@
    etc/jetty-ssl-context.xml
    etc/jetty-https.xml
    ```
+   
+   
 9. 证书已部署完成，在 jetty 根目录下，执行启动命令 `java -jar start.jar`，即可使用 `https://cloud.tencent.com` 访问。
 
-  - 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
+- 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
 
-  - 如果网站访问异常，可参考以下常见问题解决方案进行处理：
+- 如果网站访问异常，可参考以下常见问题解决方案进行处理：
 
     - [无法使用 HTTPS 访问网站](https://intl.cloud.tencent.com/document/product/1007/39821)
 
@@ -189,11 +198,12 @@
 ## 注意事项
 
 证书部署成功后，使用 `https://cloud.tencent.com` 访问若显示如下：
-![](https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100022398434/ad7e2d83397f11edb1de525400c56988.png?q-sign-algorithm=sha1&q-ak=AKIDwqtkxdd9nq2PP2SVlA4_FeceTOBxv-u9NsgSV51rQuwyW-iHsDujp9ITS-uwNPhS&q-sign-time=1677222445;1677226045&q-key-time=1677222445;1677226045&q-header-list=&q-url-param-list=&q-signature=2cb85b124af42e1116d5f435dcad686b0ad1b0f3&x-cos-security-token=bIt0YvI2c3sHVcBABoidKlAIlBMslVfa88f9dbdbfe2bc7dd60baf84ade67a65cxarPRVEcEF0tWHXzvWrEvHIlP0NR_o6vwUZnEzGtol6l0BJShcJV8w-UXSH3OwsHAGODp_E80KYYA_omkkua3S4hBCMVyshVV9GexpXm50rHWElh9MXt-Rxv72ahYNpcu_25mYveI4p7D0f1_DE0tXaQ75-7Vjui2v1S9IX_Q5NTI-Ekl2zbvacN2bfPAirrkZAIARg-f0kkFQWOus9PHSZ8xfIk_RNYz_SjJVm0HMSEjAg_nlMLq8p0zRTKgakkAYbxcnL-gXoo6YPWpZDDAeFCCRdIH8kPYE5XxAYeeEa7Fp8D3ET05ovXY4NeBSwLoocTANod1ChCSxovDlXC5uqG4FqWcYYgvQn4GI_kSuXCLHxIZ7D-xhAvZOOKb01o)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/wSQG704_999999.png)
 解决方案：您可以将 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/demo-base/webapps` 目录下的 ROOT 文件复制到 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/webapps` 目录下，重启 jetty，即可访问成功。
 
-> **注意**
-> 
 
+
+
+>!
 > 操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
 > 
