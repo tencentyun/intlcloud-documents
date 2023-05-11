@@ -2,7 +2,7 @@
 
 本文档指导您如何在 Tomcat 服务器中安装 JKS 格式的 SSL 证书。
 
-> **说明**
+>?
 > 
 > - 本文档以证书名称 `cloud.tencent.com` 为例。
 > - Tomcat 版本以 `tomcat-9.0.56` 为例。
@@ -41,7 +41,7 @@
 </table>
 
 
-   > **注意**
+   >!
    > 
    >   - 在腾讯云官网购买的云服务器，您可以登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)  获取服务器 IP 地址、用户名及密码。
    >   - 当您申请 SSL 证书时选择 “粘贴 CSR” 方式，或购买的品牌证书为 Wotrus，则不提供 JKS 证书文件的下载，需要您通过手动转换格式的方式生成密钥库。其操作方法如下： 
@@ -77,7 +77,7 @@
 3. 使用 WinSCP（即本地与远程计算机间的复制文件工具）登录 Tomcat 服务器。将已获取到的 `cloud.tencent.com.jks` 密钥库文件从本地目录拷贝至 Tomcat 配置文件目录 `/usr/Tomcat-9.0.56/conf`。
    
 
-   > **说明**
+   >?
    > 
    >   - WinSCP 上传文件操作可参考 [通过 WinSCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2131)。
    >   - 若您需部署到腾讯云云服务器，建议使用云服务器的文件上传功能。
@@ -101,17 +101,14 @@
   - **keystorePass**：密钥库密码，指定 keystore 的密码。申请证书时若设置了私钥密码，请填写私钥密码；若申请证书时未设置私钥密码，请填写 Tomcat 文件夹中 keystorePass.txt 文件的密码。
 
   - **clientAuth**：如果设为 true，表示 Tomcat 要求所有的 SSL 客户出示安全证书，对 SSL 客户进行身份验证。
-
-
-      详细 `server.xml` 文件请参考如下内容：
-
-
-      > **注意**
+详细 `server.xml` 文件请参考如下内容：
+      >!
       > 
-    
       > 不建议您直接复制 server.xml 文件内容，避免格式有误。
       > 
-    
+
+
+
       ``` xml
        <?xml version="1.0" encoding="UTF-8"?>
        <Server port="8005" shutdown="SHUTDOWN">
@@ -151,6 +148,9 @@
         </Service>
       </Server>
       ```
+
+
+
 5. 确认 Tomcat 服务器是否启动。
 
   - 若已启动，您需要在 Tomcat 安装目录 `bin` 目录下（例如：`/usr/Tomcat-9.0.56/bin`）依次执行以下命令，关闭和重启 Tomcat 服务。
@@ -212,9 +212,7 @@
      redirectPort="443" />
    ```
 
-   > **说明**
-   > 
-
+   >?
    >  此修改操作可将非 SSL 的 connector 跳转到 SSL 的 connector 中。
    > 
 
