@@ -37,7 +37,7 @@
 <td rowspan="1" colSpan="1" >重颁发后的订单不能进行吊销操作。如需吊销，需吊销原订单，重颁发订单与原订单将一同自动吊销。</td>
 </tr>
 <tr>
-<td rowspan="1" colSpan="1" >签发时间在2020年3月25日前暂无法使用自主吊销功能，如需吊销请通过 [在线咨询](https://intl.cloud.tencent.com/contact-sales) 联系客服进行处理。</td>
+<td rowspan="1" colSpan="1" >签发时间在2020年3月25日前暂无法使用自主吊销功能，如需吊销请通过<a href="https://intl.cloud.tencent.com/contact-sales">在线咨询</a>联系客服进行处理。</td>
 </tr>
 </table>
 
