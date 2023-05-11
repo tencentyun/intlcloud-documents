@@ -74,7 +74,7 @@ In respect of the Service, if the Service Availability fails to meet the Service
 
 4.2 The Service is unavailable due to the device, software or technology of you or any third party (not directly controlled by Tencent Cloud).
 
-4.3 The Service is unavailable due to your failure to use the products in accordance with the configuration or service rules (including but not limited to the product documentation on Tencent Cloud’s official website, etc.) required by Tencent Cloud.
+4.3 The Service is unavailable due to your failure to use the products in accordance with the configuration or service rules (including but not limited to [the product documentation on Tencent Cloud’s official website](https://www.tencentcloud.com/document/product/627/47805), etc.) required by Tencent Cloud.
 
 4.4 The Service is unavailable as the instance goes into the sandbox due to the peak value of your instance requests exceeding the quantity ordered by you (e.g., your business or attack traffic increase causes the instance requests peak value to exceed the quantity ordered).
 
