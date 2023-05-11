@@ -2,7 +2,7 @@
 
 This document describes how to install an SSL certificate on an Apache server.
 
-> **Notes**
+>?
 > 
 > - The certificate name `cloud.tencent.com` is used as an example.
 > - The `Apache/2.4.53` version is used as an example. The default port is `80`. You can download it from the [Apache official website](https://httpd.apache.org/download.cgi/). If you need to use another version, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
@@ -36,7 +36,7 @@ This document describes how to install an SSL certificate on an Apache server.
 </table>
 
 
-   > **Notes**
+   >?
    > 
    > For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM console](https://console.cloud.tencent.com/cvm) to get the server IP address, username, and password.
    > 
@@ -63,14 +63,14 @@ After decompression, you can get the certificate file of the corresponding type,
     - `cloud.tencent.com.csr`: CSR file
       
 
-         > **Notes**
+         >?
          > You can upload the CSR file when applying for a certificate or have it generated online by the system. It is provided to the CA and irrelevant to the installation.
          > 
 
 3. Log in to the Apache server via the RDP port.
    
 
-   > **Notes**
+   >?
    >   - For detailed directions, see [Uploading Files from Linux to Windows CVM using RDP](https://intl.cloud.tencent.com/document/product/213/34822).
    >   - We recommend that you use CVM's file upload feature for deployment to CVM.
 
@@ -113,9 +113,9 @@ After decompression, you can get the certificate file of the corresponding type,
    ```
 4. Restart the Apache server and then you can access it through `https://cloud.tencent.com`.
 
-  - If the security lock icon is displayed in the browser, the certificate has been installed successfully.
+- If the security lock icon is displayed in the browser, the certificate has been installed successfully.
 
-  - In case of a website access exception, troubleshoot the issue by referring to the following FAQs:
+- In case of a website access exception, troubleshoot the issue by referring to the following FAQs:
 
     - [Website Inaccessible After an SSL Certificate is Deployed](https://intl.cloud.tencent.com/document/product/1007/39821)
 
@@ -141,4 +141,4 @@ After decompression, you can get the certificate file of the corresponding type,
    RewriteRule ^(.*)?$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
    </Directory>
    ```
-3. Restart the Apache server and then you can access it through both `http://cloud.tencent.com` (which will be automatically redirected to `https://cloud.tencent.com`) and `https://cloud.tencent.com`.
+3. Restart the Apache server and then you can access it through both `https://www.tencentcloud.com/` (which will be automatically redirected to `https://www.tencentcloud.com/`) and `https://www.tencentcloud.com/`.
