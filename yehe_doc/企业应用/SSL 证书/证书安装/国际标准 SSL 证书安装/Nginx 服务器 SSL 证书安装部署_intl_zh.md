@@ -6,8 +6,8 @@
 
 本文档指导您如何在 Nginx 服务器中安装 SSL 证书。
 
-> **说明**
-> 
+>?
+>
 > - 本文档以证书名称 `cloud.tencent.com` 为例。
 > - Nginx 版本以 `nginx/1.18.0` 为例。
 > - 当前服务器的操作系统为 CentOS 7，由于操作系统的版本不同，详细操作步骤略有区别。
@@ -45,10 +45,10 @@
 </table>
 
 
-   > **说明**
-   > 
+   >?
+   >
    > 在腾讯云官网购买的云服务器，您可以登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)  获取服务器 IP 地址、用户名及密码。
-   > 
+   >
 
 
 ## 操作步骤
@@ -72,15 +72,14 @@
     - `cloud.tencent.com.csr` CSR 文件
       
 
-         > **说明**
-         > 
-         > CSR 文件是申请证书时由您上传或系统在线生成的，提供给 CA 机构。安装时可忽略该文件。
-         > 
+>?
+> CSR 文件是申请证书时由您上传或系统在线生成的，提供给 CA 机构。安装时可忽略该文件。
+
 
 3. 使用 “WinSCP”（即本地与远程计算机间的复制文件工具）登录 Nginx 服务器。
    
 
-> **说明**
+>?
 >   - WinSCP 上传文件操作可参考 [通过 WinSCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2131)。
 >   - 若您需部署到腾讯云云服务器，建议使用云服务器的文件上传功能。
 
@@ -91,14 +90,13 @@
 6. 编辑 Nginx 根目录下的 `nginx.conf` 文件。修改内容如下：
    
 
-   > **说明**
-   > 
-   >   - 如找不到以下内容，可以手动添加。可执行命令 nginx -t ，找到nginx的配置文件路径。
-
-   > 如下图示例：![tapd_10132091_base64_1665978617_57.png](https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027538067/adbfd11a705911ed8e7e525400463ef7.png?q-sign-algorithm=sha1&q-ak=AKID5CThzZqTVXoRP-XYu2W42mAW62aDoOr6DTPyCZ1RRCQ2qwekuFJNzWTp8i6N4A_9&q-sign-time=1677222539;1677226139&q-key-time=1677222539;1677226139&q-header-list=&q-url-param-list=&q-signature=3c4f3c6b131cc016fe546fe716e983e223eb2b12&x-cos-security-token=5xuAVtZg45zZx30psQ7oVmxUqVP8A8ya8376edc7adf43654fa9e4760c181e126Vc733LJenzJOwBNGjj5ASnnvUWi-SYW0Lm3ieNVenmwlNjhySGIa0zlYq_CpEqylsynWkMxc8b3eU8D7h6FUlSv10ulkppQrv-An-d-Sq44sdT76zQjHU5jOHhrqcH_VcRBf_r4SVKfC6tdxleYfVk9IuS2Ak7BlaPUTjsCWemcXhwiqi_eFblusvSP4WUBTw1-jNyR2PWZdzXuJocrrXCfDRX32-AiXXUEV4RUQ9a6DNqpZ1CfF0-h7skkHIP5vkHh-oF1DNW5fMCA3OgZvYOCu6L5eXVf-TPCzxdSJXdJfBA-FS11cvWB2EfUqbeHUX3HPLOBD8r5KniAxFv3bQ3UaBmn-LjxSGA80smlihp_WCCnGD71_08lW6wD_7syk)
-   > 
+>?
+>   - 如找不到以下内容，可以手动添加。可执行命令 nginx -t ，找到nginx的配置文件路径。
+> 如下图示例：![tapd_10132091_base64_1665978617_57.png](https://qcloudimg.tencent-cloud.cn/image/document/b772c59a0bdd1d7bfc97a2320cb95df7.png)
 >   - 此操作可通过执行 `vim /etc/nginx/nginx.conf` 命令行编辑该文件。
 >   - 由于版本问题，配置文件可能存在不同的写法。例如：Nginx 版本为 `nginx/1.15.0` 以上请使用 `listen 443 ssl` 代替 `listen 443` 和 `ssl on`。
+
+
 
    ``` bash
    server {
@@ -124,6 +122,9 @@
         }
     }
    ```
+   
+   
+   
 7. 通过执行以下命令验证配置文件问题。
 
    ``` bash
@@ -155,10 +156,12 @@
   - Nginx 支持 rewrite 功能。若您在编译时没有去掉 pcre，您可在 HTTP 的 server 中增加 `return 301 https://$host$request_uri;`，即可将默认80端口的请求重定向为 HTTPS。修改如下内容：
     
 
-      > **说明**
-      > 
->     - 未添加注释的配置语句，您按照下述配置即可。
->     - 由于版本问题，配置文件可能存在不同的写法。例如：Nginx 版本为 `nginx/1.15.0` 以上请使用 `listen 443 ssl` 代替 `listen 443` 和 `ssl on`。
+>?
+> - 未添加注释的配置语句，您按照下述配置即可。
+> - 由于版本问题，配置文件可能存在不同的写法。例如：Nginx 版本为 `nginx/1.15.0` 以上请使用 `listen 443 ssl` 代替 `listen 443` 和 `ssl on`。
+
+
+
 
       ``` bash
       server {
@@ -191,6 +194,9 @@
        return 301 https://$host$request_uri; 
       }
       ```
+      
+      
+      
 2. 通过执行以下命令验证配置文件问题。
 
    ``` bash
@@ -207,9 +213,9 @@
    ```
 4. 重载成功，即可使用 `https://cloud.tencent.com` 进行访问。
 
-  - 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
+- 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
 
-  - 如果网站访问异常，可参考以下常见问题解决方案进行处理：
+- 如果网站访问异常，可参考以下常见问题解决方案进行处理：
 
     - [无法使用 HTTPS 访问网站](https://intl.cloud.tencent.com/document/product/1007/39821)
 
@@ -220,7 +226,5 @@
     - [在服务器上部署 SSL 证书后访问资源出现 404 报错](https://intl.cloud.tencent.com/document/product/1007/39820)
       
 
-         > **注意**
-         > 
-         > 操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
-         > 
+>!
+> 操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。

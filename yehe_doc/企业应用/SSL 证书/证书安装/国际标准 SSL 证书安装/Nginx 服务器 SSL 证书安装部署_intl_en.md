@@ -6,8 +6,8 @@ The following video shows you how to install an SSL certificate on an Nginx serv
 
 This document describes how to install an SSL certificate on an Nginx server.
 
-> **Notes**
-> 
+>?
+>
 > - The certificate name `cloud.tencent.com` is used as an example.
 > - The `nginx/1.18.0` version is used as an example.
 > - The current server OS is CentOS 7. Detailed steps vary slightly by OS.
@@ -45,10 +45,10 @@ We recommend that you use CVM's file upload feature for deployment to CVM.
 </table>
 
 
-   > **Notes**
-   > 
+   >?
+   >
    > For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM console](https://console.cloud.tencent.com/cvm) to get the server IP address, username, and password.
-   > 
+   >
 
 
 ## Directions
@@ -72,15 +72,15 @@ After decompression, you can get the certificate file of the corresponding type,
     - `cloud.tencent.com.csr`: CSR file
       
 
-         > **Notes**
-         > 
+         >?
+         >
          > You can upload the CSR file when applying for a certificate or have it generated online by the system. It is provided to the CA and irrelevant to the installation.
-         > 
+         >
 
 3. Log in to the Nginx server using WinSCP (a tool copying files between a local computer and a remote computer).
    
 
-> **Notes**
+>?
 >   - For detailed directions, see [Uploading files via WinSCP to a Linux CVM from Windows](https://intl.cloud.tencent.com/document/product/213/2131).
 >   - We recommend that you use CVM's file upload feature for deployment to CVM.
 
@@ -91,14 +91,13 @@ After decompression, you can get the certificate file of the corresponding type,
 6. Edit the `nginx.conf` configuration file in the Nginx root directory as follows:
    
 
-   > **Notes**
-   > 
-   >   - If you cannot find the following content, manually add it. Run the `nginx -t` command to find the path of the Nginx configuration file.
-
-   > As shown below: ![tapd_10132091_base64_1665978617_57.png](https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027538067/adbfd11a705911ed8e7e525400463ef7.png?q-sign-algorithm=sha1&q-ak=AKID5CThzZqTVXoRP-XYu2W42mAW62aDoOr6DTPyCZ1RRCQ2qwekuFJNzWTp8i6N4A_9&q-sign-time=1677222539;1677226139&q-key-time=1677222539;1677226139&q-header-list=&q-url-param-list=&q-signature=3c4f3c6b131cc016fe546fe716e983e223eb2b12&x-cos-security-token=5xuAVtZg45zZx30psQ7oVmxUqVP8A8ya8376edc7adf43654fa9e4760c181e126Vc733LJenzJOwBNGjj5ASnnvUWi-SYW0Lm3ieNVenmwlNjhySGIa0zlYq_CpEqylsynWkMxc8b3eU8D7h6FUlSv10ulkppQrv-An-d-Sq44sdT76zQjHU5jOHhrqcH_VcRBf_r4SVKfC6tdxleYfVk9IuS2Ak7BlaPUTjsCWemcXhwiqi_eFblusvSP4WUBTw1-jNyR2PWZdzXuJocrrXCfDRX32-AiXXUEV4RUQ9a6DNqpZ1CfF0-h7skkHIP5vkHh-oF1DNW5fMCA3OgZvYOCu6L5eXVf-TPCzxdSJXdJfBA-FS11cvWB2EfUqbeHUX3HPLOBD8r5KniAxFv3bQ3UaBmn-LjxSGA80smlihp_WCCnGD71_08lW6wD_7syk)
-   > 
+>?
+>   - If you cannot find the following content, manually add it. Run the `nginx -t` command to find the path of the Nginx configuration file.
+> As shown below: ![tapd_10132091_base64_1665978617_57.png](https://qcloudimg.tencent-cloud.cn/image/document/b772c59a0bdd1d7bfc97a2320cb95df7.png)
 >   - This operation can edit the file by running `vim /etc/nginx/nginx.conf`.
 >   - The configuration file may be written differently on different versions; for example, use `listen 443 ssl` instead of `listen 443` and `ssl on` on `nginx/1.15.0` or later.
+
+
 
    ``` bash
    server {
@@ -124,6 +123,8 @@ After decompression, you can get the certificate file of the corresponding type,
         }
     }
    ```
+   
+   
 7. Run the following command to check whether there is a problem with the configuration file.
 
    ``` bash
@@ -155,10 +156,11 @@ To redirect HTTP requests to HTTPS, complete the following settings:
   - Nginx supports rewrite. If you did not remove PCRE during the compilation, you can add `return 301 https://$host$request_uri;` to the HTTP server to redirect requests made to the default HTTP port 80 to HTTPS.
     
 
-      > **Notes**
-      > 
->     - Uncommented configuration statements can be configured as follows.
->     - The configuration file may be written differently on different versions; for example, use `listen 443 ssl` instead of `listen 443` and `ssl on` on `nginx/1.15.0` or later.
+>?
+> - Uncommented configuration statements can be configured as follows.
+> - The configuration file may be written differently on different versions; for example, use `listen 443 ssl` instead of `listen 443` and `ssl on` on `nginx/1.15.0` or later.
+  
+
 
       ``` bash
       server {
@@ -191,6 +193,8 @@ To redirect HTTP requests to HTTPS, complete the following settings:
        return 301 https://$host$request_uri; 
       }
       ```
+      
+      
 2. Run the following command to check whether there is a problem with the configuration file.
 
    ``` bash
@@ -205,11 +209,12 @@ To redirect HTTP requests to HTTPS, complete the following settings:
    ``` bash
    nginx -s reload
    ```
+   
 4. If the server is reloaded successfully, you can access it through `https://cloud.tencent.com`.
 
-  - If the security lock icon is displayed in the browser, the certificate has been installed successfully.
+- If the security lock icon is displayed in the browser, the certificate has been installed successfully.
 
-  - In case of a website access exception, troubleshoot the issue by referring to the following FAQs:
+- In case of a website access exception, troubleshoot the issue by referring to the following FAQs:
 
     - [Website Inaccessible After an SSL Certificate is Deployed](https://intl.cloud.tencent.com/document/product/1007/39821)
 
@@ -220,7 +225,5 @@ To redirect HTTP requests to HTTPS, complete the following settings:
     - [404 Error After the SSL Certificate is Deployed on IIS](https://intl.cloud.tencent.com/document/product/1007/39820)
       
 
-         > **Notes**
-         > 
-         > If anything goes wrong during this process, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
-         > 
+>!
+> If anything goes wrong during this process, [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
