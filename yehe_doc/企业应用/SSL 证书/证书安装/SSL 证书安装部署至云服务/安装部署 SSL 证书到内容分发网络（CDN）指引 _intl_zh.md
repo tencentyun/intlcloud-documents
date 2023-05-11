@@ -8,7 +8,7 @@
 
 ## 操作步骤
 
-> **注意**
+>!
 > 
 > - 域名需要已经接入 CDN，且状态为部署中或已启动，关闭状态的域名无法部署证书。具体操作请参考 [接入域名](https://www.tencentcloud.com/document/product/228/5734)。
 > - COS 或 数据万象开启 CDN 加速后，默认的 .file.myqcloud.com 或 .image.myqcloud.com 域名无法配置证书。
