@@ -2,7 +2,7 @@
 
 This document describes how to validate a domain through automatic DNS validation when you apply for a certificate or add a domain in the SSL Certificate Service console.
 
-> **Notes**
+>!
 > 
 > Automatic DNS validation is supported for multi-year international standard certificates only. For more information, see [Available Multi-Year International Standard Certificates](https://www.tencentcloud.com/document/product/1007/53630).
 > 
@@ -24,7 +24,7 @@ This document describes how to validate a domain through automatic DNS validatio
 
 ### Step 2. Add a DNS record
 
-> **Notes**
+>!
 > 
 > The following operations apply only to domains hosted with Tencent Cloud. For those hosted with other platforms, go to the corresponding DNS service provider.
 > 
@@ -52,7 +52,7 @@ This document describes how to validate a domain through automatic DNS validatio
 5. After adding the record successfully, wait for the CA to scan and review it. If it can be found and matches the specified value, the review is completed.
    
 
-> **Notes**
+>?
 >   - DNS usually takes effect within **10 minutes to 24 hours**. The actual time depends on the ISP refresh time.
 >   - Do not delete or modify the configured CNAME record; otherwise, the proxy will not work.
 >   - Do not configure the TXT record for a domain if the CNAME record is already configured; otherwise, domain validation may fail.
