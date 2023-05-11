@@ -2,7 +2,7 @@
 
 本文档指导您如何在 Apache 服务器中安装 SSL 证书。
 
-> **说明**
+>?
 > 
 > - 本文档以证书名称 `cloud.tencent.com` 为例。
 > - Apache 版本以 `Apache/2.4.6` 为例。默认端口为 `80`。您可前往 [Apache 官网](https://httpd.apache.org/download.cgi) 进行下载，若您需要采用其余版本，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
@@ -41,7 +41,7 @@
 </table>
 
 
-   > **说明**
+   >?
    > 
    > 在腾讯云官网购买的云服务器，您可以登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)  获取服务器 IP 地址、用户名及密码。
    > 
@@ -68,7 +68,7 @@
   - **CSR 文件内容**：	`cloud.tencent.com.csr` 文件
     
 
-      > **说明**
+      >?
       > 
       > CSR 文件是申请证书时由您上传或系统在线生成的，提供给 CA 机构。安装时可忽略该文件。
       > 
@@ -76,7 +76,7 @@
 3. 使用 “WinSCP”（即本地与远程计算机间的复制文件工具）登录 Apache 服务器。
    
 
-   > **说明**
+   >?
    > 
    >   - WinSCP 上传文件操作可参考 [通过 WinSCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2131)。
    >   - 若您需部署到腾讯云云服务器，建议使用云服务器的文件上传功能。
@@ -84,26 +84,25 @@
 4. 将已获取到的 `root_bundle.crt` 证书文件、`cloud.tencent.com.crt` 证书文件以及 `cloud.tencent.com.key` 私钥文件从本地目录拷贝到 Apache 服务器的 `/etc/httpd/ssl` 目录下。
    
 
-   > **说明**
+   >?
    > 
    >  若无 `/etc/httpd/ssl` 目录，可通过 `mkdir /etc/httpd/ssl` 命令行创建。
    > 
 
 5. 远程登录 Apache 服务器。例如，使用 [“PuTTY” 工具](https://intl.cloud.tencent.com/document/product/213/32502) 登录。
    
+>?
+> 首次安装的 Apache 服务器，`conf.d`、`conf`、`conf.modules.d` 等目录默认在 `/etc/httpd` 目录下。
 
-   > **说明**
-   > 
 
-   > 首次安装的 Apache 服务器，`conf.d`、`conf`、`conf.modules.d` 等目录默认在 `/etc/httpd` 目录下。
-   > 
+
 
 6. 在 `/etc/httpd/conf` 目录下的 httpd.conf 配置文件找到 `Include conf.modules.d/*.conf`（用于加载配置 SSL 的配置目录）配置语句，并确认该配置语句未被注释。若已注释，请去掉首行的注释符号（`#`），保存配置文件。
 
 7. 在 `/etc/httpd/conf.modules.d` 目录下的 00-ssl.conf 配置文件找到 `LoadModule ssl_module modules/mod_ssl.so`（用于加载 SSL 模块）配置语句，并确认该配置语句未被注释，若已注释，请去掉首行的注释符号（`#`），保存配置文件。
    
 
-   > **注意**
+   >!
    >  由于操作系统的版本不同，目录结构也不同，请根据实际操作系统版本进行查找。
 若以上配置文件中均未找到 `LoadModule ssl_module modules/mod_ssl.so` 和 `Include conf.modules.d/*.conf` 配置语句，请确认是否已经安装 mod_ssl.so 模块。若未安装 mod_ssl.so 模块，您可通过执行`yum install mod_ssl` 命令进行安装。
    > 
@@ -125,11 +124,14 @@
         SSLCertificateChainFile /etc/httpd/ssl/root_bundle.crt 
    </VirtualHost>
    ```
+   
+   
+   
 9. 重新启动 Apache 服务器，即可使用 `https://cloud.tencent.com` 进行访问。
 
-  - 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
+- 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
 
-  - 如果网站访问异常，可参考以下常见问题解决方案进行处理：
+- 如果网站访问异常，可参考以下常见问题解决方案进行处理：
 
     - [无法使用 HTTPS 访问网站](https://intl.cloud.tencent.com/document/product/1007/39821)
 
@@ -147,8 +149,7 @@
 1. 编辑 `/etc/httpd/conf` 目录下的 httpd.conf 配置文件。
    
 
-   > **注意**
-   > 
+>!
 >   - Apache 的版本不同，目录结构也会有所区别。具体请您参阅 [Apache 官方 rewrite 的文档](http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html)。
 >   - httpd.conf 配置文件所在目录不唯一，您可以根据 `/etc/httpd/*` 逐一查找。
 
@@ -176,5 +177,5 @@
 5. 重新启动 Apache 服务器，即可使用 `http://cloud.tencent.com` 进行访问。
    
 
-   > **注意**
-   > 操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
+>!
+> 操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
