@@ -2,8 +2,8 @@
 
 本文档指导您如何在 Apache 服务器中安装 SSL 证书。
 
-> **说明**
-> 
+>?
+>
 > - 本文档以证书名称 `cloud.tencent.com` 为例。
 > - Apache 版本以 `Apache/2.4.53` 为例。默认端口为 `80`。您可前往 [Apache 官网](https://httpd.apache.org/download.cgi/) 进行下载，若您需要采用其余版本，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
 > - 当前服务器的操作系统为 Windows Server 2012 R2，由于操作系统的版本不同，详细操作步骤略有区别。
@@ -36,10 +36,10 @@
 </table>
 
 
-   > **说明**
-   > 
+   >?
+   >
    > 在腾讯云官网购买的云服务器，您可以登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)  获取服务器 IP 地址、用户名及密码。
-   > 
+   >
 
 
 ## 操作步骤
@@ -63,14 +63,14 @@
     - `cloud.tencent.com.csr` CSR 文件
       
 
-         > **说明**
+         >?
          > CSR 文件是申请证书时由您上传或系统在线生成的，提供给 CA 机构。安装时可忽略该文件。
-         > 
+         >
 
 3. 通过 RDP 登录 Apache 服务器。
    
 
-   > **说明**
+   >?
    >   - 通过 RDP 上传文件可参考 [通过 RDP 方式上传文件到云服务器](https://intl.cloud.tencent.com/document/product/213/34822)。
    >   - 若您需部署到腾讯云云服务器，建议使用云服务器的文件上传功能。
 
@@ -113,9 +113,9 @@
    ```
 4. 重新启动 Apache 服务器，即可使用 `https://cloud.tencent.com` 进行访问。
 
-  - 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
+- 如果浏览器地址栏显示安全锁标识，则说明证书安装成功。
 
-  - 如果网站访问异常，可参考以下常见问题解决方案进行处理：
+- 如果网站访问异常，可参考以下常见问题解决方案进行处理：
 
     - [无法使用 HTTPS 访问网站](https://intl.cloud.tencent.com/document/product/1007/39821)
 
@@ -141,4 +141,4 @@
    RewriteRule ^(.*)?$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
    </Directory>
    ```
-3. 重新启动 Apache 服务器，即可使用 `http://cloud.tencent.com` 与 `https://cloud.tencent.com` 进行访问。访问后都将自动跳转到 `https://cloud.tencent.com`。
+3. 重新启动 Apache 服务器，即可使用 `https://www.tencentcloud.com/` 与 `https://www.tencentcloud.com/` 进行访问。访问后都将自动跳转到 `https://www.tencentcloud.com/`。
