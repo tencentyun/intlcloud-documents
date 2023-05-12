@@ -195,7 +195,12 @@ dependencies {
 }
 ```
 
+
+
 3. Make the necessary permission declaration in the `AndroidManifest.xml` file.
+
+
+
 
 ```xml
 <!-- Camera permission -->
@@ -213,9 +218,14 @@ dependencies {
 
    If your app needs to be compatible with Android 6.0 or later, in addition to declaring the above permissions in the `AndroidManifest.xml` file, you need to add the code **Dynamically apply for permissions**.
 
+
+
 #### 3. API initialization 
 
-	This API is called during app initialization, which is mainly used to perform some initialization operations for the SDK. We recommend you call this API in `Application`.
+This API is called during app initialization, which is mainly used to perform some initialization operations for the SDK. We recommend you call this API in `Application`.
+
+
+
 
 ```java
 @Override
@@ -268,7 +278,12 @@ HuiYanOsApi.startHuiYanAuth(currentToken, huiYanOsConfig, new HuiYanOsAuthCallBa
 
 #### 5. Release SDK resources
 
-	Before your app exits, you can call the API to release SDK resources.
+
+Before your app exits, you can call the API to release SDK resources.
+
+
+
+
 
 ```java
 @Override
@@ -360,7 +375,7 @@ end
 
 >? For the file levels and specific settings, see the demo.
 >- [iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
->- [Android demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-android-demo)
+
 
 ##### `Build Phases` settings
 
@@ -409,6 +424,8 @@ As the SDK requires a mobile network and camera permission, include the followin
         NSLog(@"err:%@",showMsg);
     }];
 ```
+
+
 [HuiYanOsAuthResult](https://www.tencentcloud.com/document/product/1061/54964) is the returned result of successful liveness verification. The final liveness verification result can be obtained by accessing [GetFaceldResultIntl](https://www.tencentcloud.com/document/product/1061/54557) through the token.
 
 >! Currently, you need to contact the customer service to apply for the **"xxx.lic"** file actively.
@@ -427,3 +444,8 @@ Before your app exits, you can call the API to release SDK resources.
 //[iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
 [Android demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-android-demo)
 ```
+
+
+
+[iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
+[Android demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-android-demo)
