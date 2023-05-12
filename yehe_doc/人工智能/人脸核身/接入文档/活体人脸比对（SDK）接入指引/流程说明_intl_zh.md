@@ -215,7 +215,7 @@ dependencies {
 
 #### 3、初始化接口
 
-	在您APP初始化的时候调用，推荐在Application中调用，主要是进行一些SDK的初始化操作
+在您APP初始化的时候调用，推荐在Application中调用，主要是进行一些SDK的初始化操作
 
 ```java
 @Override
@@ -268,7 +268,7 @@ HuiYanOsApi.startHuiYanAuth(currentToken, huiYanOsConfig, new HuiYanOsAuthCallBa
 
 #### 5、SDK资源释放
 
-	在您APP退出使用的时候，可以调用SDK资源释放接口
+在您APP退出使用的时候，可以调用SDK资源释放接口
 
 ```java
 @Override
@@ -360,7 +360,7 @@ end
 
 >?文件层级和具体的设置可以参考demo。
 >- [iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
->- [Android demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-android-demo)
+
 
 ##### Build Phases设置
 
@@ -427,3 +427,8 @@ SDK需要手机网络及 摄像头使用权限，请添加对应的权限声明�
 //[iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
 [Android demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-android-demo)
 ```
+
+
+
+[iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
+[Android demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-android-demo)
