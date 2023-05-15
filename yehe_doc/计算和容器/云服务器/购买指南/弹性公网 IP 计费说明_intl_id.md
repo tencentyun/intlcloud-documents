@@ -77,8 +77,8 @@ Lalu lintas jaringan publik yang dihasilkan oleh EIP akan dikenakan biaya jaring
 <table>
     <tr><th>Periode melewati jatuh tempo</th><th>Deskripsi</th></tr>
     <tr><td>Kurang dari 2 jam</td><td>Anda dapat terus menggunakan sumber daya dan akun Anda akan terus dibebankan biaya.</td></tr>
-    <tr><td>≥ 2 jam atau 2 jam + 15 hari</td><td>EIP akan dipertahankan, tetapi layanan akan ditangguhkan. Biaya tidak akan dikenakan lagi dan EIP tidak dapat digunakan.</td></tr>
-    <tr><td>≥ 2 jam + 15 hari</td><td><li>EIP yang belum tersambung dengan sumber daya cloud akan dilepaskan.</li><li>EIP yang telah tersambung dengan sumber daya cloud akan dipertahankan, tetapi layanan akan ditangguhkan. Biaya tidak akan dikenakan lagi dan EIP tidak dapat digunakan.</li></td></tr>
+    <tr><td>≥ 2 jam atau 2 jam + 24 jam</td><td>EIP akan dipertahankan, tetapi layanan akan ditangguhkan. Biaya tidak akan dikenakan lagi dan EIP tidak dapat digunakan.</td></tr>
+    <tr><td>≥ 2 jam + 24 jam</td><td><li>EIP yang belum tersambung dengan sumber daya cloud akan dilepaskan.</li><li>EIP yang telah tersambung dengan sumber daya cloud akan dipertahankan, tetapi layanan akan ditangguhkan. Biaya tidak akan dikenakan lagi dan EIP tidak dapat digunakan.</li></td></tr>
 </table>
 
 ### Sumber daya tersambung yang melewati jatuh tempo 
