@@ -3,7 +3,7 @@
 CVM의 민감한 작업 보호 기능은 계정 리소스 보안을 효과적으로 보호할 수 있습니다. 현재 종료, 재시작, VNC 로그인, 비밀번호 재설정, 폐기, 시스템 재설치, 구성 조정, 키 로드, VPC 전환, 연장 갱신 설정 등의 작업을 지원합니다.
 
 ## 작업 보호 시작
-[보안 설정](https://console.cloud.tencent.com/developer/security)을 통해 작업 보호를 시작할 수 있습니다. 자세한 내용은 [작업 보호](https://cloud.tencent.com/document/product/378/10740)를 참조하십시오.
+[보안 설정](https://console.cloud.tencent.com/developer/security)을 통해 작업 보호를 시작할 수 있습니다. 자세한 내용은 [작업 보호](https://intl.cloud.tencent.com/document/product/378/10740)를 참조하십시오.
 
 ## 작업 보호 인증
 작업 보호를 시작할 경우, 민감한 작업 수행 시 시스템이 먼저 작업 보호 인증을 진행합니다.
