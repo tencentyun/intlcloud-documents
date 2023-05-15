@@ -1,4 +1,4 @@
-## Images
+## Concept
 A Tencent Cloud image provides all the information needed to launch a CVM instance. With an image, you can launch instances with similar configurations easily. Generally speaking, an image is the "installation disk" of a CVM instance.
 
 ## Image Types
