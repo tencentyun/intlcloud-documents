@@ -1,21 +1,21 @@
 
 ## ユースケース
 
-Cloud-initは、主にインスタンスが最初に初期化されるときにカスタマイズ設定機能を提供します。インポートされたイメージにcloud-initサービスがインストールされていない場合、イメージを介して起動されたインスタンスは正しく初期化できなくなり、イメージのインポートに失敗する可能性があります。このドキュメントでは、cloud-initサービスをインストールする方法について説明します。
+Cloud-initはLinuxディストリビューションのインスタンスの自動的な初期化とカスタマイズのためのツールです。インポートされたイメージにcloud-initサービスがインストールされていない場合、イメージを介して起動されたインスタンスは正しく初期化できなくなり、イメージのインポートに失敗する可能性があります。このドキュメントでは、cloud-initサービスをインストールする方法について説明します。
 cloud-initをインストールするには、次の3つの方法をお勧めします：
-- [cloud-initバイナリーパッケージをダウンロードする](#binary)
-- [手動でcloud-initソースパッケージをダウンロードする](#ManualDown) 
-- [ソフトウェアソースにあるcloud-initパッケージを使用する](#SoftSources)
+- [cloud-initバイナリパッケージをダウンロードする](#binary)
+- [cloud-initパッケージを手動でダウンロードする](#ManualDown) 
+- [ソフトウェアソースからcloud-initパッケージを使用する](#SoftSources)
 
 ## 注意事項
 Linuxシステムイメージをインポートする前に、イメージにcloud-initサービスが正しくインストールされていることを確認してください。
 
 ##  前提条件
-cloud-initサービスがインストールされているサーバーは、外部ネットワークに正しくアクセスできます。
+cloud-initサービスがインストールされているサーバーは、パブリックネットワークに正常にアクセスできます。
 
 ## 操作手順
 <dx-tabs>
-::: cloud-init \バイナリーパッケージ[](id:binary)のダウンロード
+::: cloud-initバイナリーパッケージ[](id:binary)をダウンロードする
 <dx-alert infotype="explain" title="">
 - cloud-initはqcloud-pythonに依存します。qcloud-pythonは、Tencent Cloudによって再コンパイルおよびパッケージ化されたソフトウェアパッケージです。これは、ディレクトリ`/usr/local/qcloud/python`にインストールされた、cloud-initオペレーティング環境にのみ使用される個別のpython環境です。システムでのデフォルトのpythonと競合しません。
 - cloud-initは、Tencent Cloudがコミュニティのバージョン20.1に基づいて開発され、Tencent Cloudの動作環境に適応する専用のcloud-initです。
@@ -143,7 +143,7 @@ cloud-initサービスがインストールされているサーバーは、外�
 ### cloud-initバイナリーパッケージ[](id:binary)のダウンロード
 1. 上記のインストールパッケージをダウンロードします。
 
-2. システムにcloud-initが既に存在する場合は、次のコマンドを確認して実行し、残りをクリーンアップしてください。
+2. cloud-init がすでに存在する場合は、次のコマンドを実行してクリアします。
 ```shellsession
 rm -rf /var/lib/cloud
 rm -rf /etc/cloud
@@ -165,12 +165,12 @@ cloud-init qcloud -v
   ```
 5.  再起動後に有効になります
 :::
-::: \scloud-init\sソースコードパッケージを手動でダウンロードする方法[](id:ManualDown)
+::: \scloud-init\sパッケージを手動でダウンロードする[](id:ManualDown)
 
-### cloud-initソースパッケージのダウンロード
+### cloud-initパッケージのダウンロード
 
 <dx-alert infotype="explain" title="">
-- 正常にインストールされた状態では、cloud-init-20.1.0011バージョンがTencent Cloudとの互換性が最も高く、そのイメージで作成されたCVMのすべての設定項目は正常に初期化されます。**cloud-init-20.1.0011.tar.gz** バージョンをインストールすることを推奨します。また [ここをクリック](https://launchpad.net/cloud-init/+download)して、その他のバージョンのcloud-initソースパッケージをダウンロードすることもできます。 このドキュメントでは、cloud-init-20.1.0011バージョンを例に説明します。
+- cloud-init-20.1.0011 バージョンはTencent Cloud と最も互換性があります。これにより、このイメージで作成されたCVMのすべての設定項目が適切に初期化されることが保証されます。**cloud-init-20.1.0011.tar.gz**バージョンをインストールすることを推奨します。また[ここをクリック](https://launchpad.net/cloud-init/+download)してcloud-initパッケージの他のバージョンをダウンロードすることもできます。 このドキュメントでは、cloud-init-20.1.0011バージョンを例に説明します。
 </dx-alert>
 
 
@@ -187,7 +187,7 @@ OSがUbuntuの場合は、rootアカウントに切り替えてください。
 ```shellsession
 tar -zxvf cloud-init-20.1.0011.tar.gz 
 ```
-2. 以下のコマンドを実行して、解凍したcloud-initのディレクトリ（cloud-init-20.1.0011ディレクトリ）に入ります。
+2. 次のコマンドを実行して、解凍したcloud-initインストールパッケージディレクトリ（cloud-init-20.1.0011ディレクトリ）に移動します。
 ```shellsession
 cd cloud-init
 ```
@@ -207,7 +207,7 @@ python3 -m pip install --upgrade pip
 ```
 5. 以下のコマンドを実行して、依存関係をインストールします。
 <dx-alert infotype="notice" title="">
-Cloud-initがrequests 2.20.0コンポーネントを使用する場合、Python 2.6はサポートされません。イメージ環境にインストールされているPythonインタープリターバージョンが2.6以前の場合、cloud-initの依存関係をインストールする前、`pip install ';2.20.0'` コマンドを実行して、requests 2.20.0以前のバージョンをインストールしてください。
+Cloud-initがrequests 2.20.0コンポーネントを使用する場合、Python 2.6はサポートされません。イメージ環境にインストールされているPythonインタープリターバージョンが2.6以前の場合、cloud-initの依存関係をインストールする前、`pip install 'requests<2.20.0'` コマンドを実行して、requests 2.20.0以前のバージョンをインストールしてください。
 </dx-alert>
 ```shellsession
 pip3 install -r requirements.txt
@@ -228,7 +228,7 @@ yum install cloud-utils-growpart -y
 apt-get install cloud-guest-utils -y
 ```
 
-7. 以下のコマンドを実行して、cloud-initをインストールします。
+7. 次のコマンドを実行して、cloud-initをインストールします。
 ```shellsession
 python3 setup.py build
 ```
@@ -236,8 +236,8 @@ python3 setup.py build
 python3 setup.py install --init-system systemd
 ```
 <dx-alert infotype="notice" title="">
-- --init-systemのオプションパラメータには、：(systemd、sysvinit、sysvinit_deb、sysvinit_freebsd、sysvinit_openrc、sysvinit_suse、upstart)[default：None]があります。現在のOSで使用されている自動起動サービス管理方法によってパラメータを選択してください。選択したパラメータが間違った場合、Cloud―initサービスはシステムの起動時に自動的に起動できません。
-- CentOS6以前の旧バージョンではsysvinitを選択し、CentOS 7以降のバージョンではsystemdを選択します。このドキュメントでは、例としてsystemdを使用します。
+- --init-systemのオプションパラメータには、：(systemd、sysvinit、sysvinit_deb、sysvinit_freebsd、sysvinit_openrc、sysvinit_suse、upstart)[default：None]があります。現在のOSで使用されている自動起動サービス管理方法によってパラメータを選択してください。選択したパラメータが間違った場合、システム起動時にcloud-initサービスを自動的に開始できません。
+- CentOS6以前の旧バージョンではsysvinitを選択し、CentOS 7以降のバージョンではsystemdを選択してください。このドキュメントでは、例としてsystemdを使用します。
 </dx-alert>
 
 
@@ -245,8 +245,8 @@ python3 setup.py install --init-system systemd
 ### cloud-init設定ファイルの変更
 
 1. OSの違いに応じて、cloud.cfgをダウンロードします。
-  - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) してUbuntu OSのcloud.cfgをダウンロードします。
-  - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) してCentOSのcloud.cfgをダウンロードします。
+  - Ubuntu OSのcloud.cfgをダウンロードするには、[ここをクリックしてください](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg)。
+  - CentOSのcloud.cfgをダウンロードするには、[ここをクリックしてください](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg)。
 2. `/etc/cloud/cloud.cfg` の内容を、ダウンロードしたcloud.cfgファイルの内容に置き換えます。
 
 
@@ -257,10 +257,10 @@ useradd syslog
 ```
 
 
-### cloud-initサービスの自動起動の設定
-- **OSが systemd自動起動管理サービスの場合は、以下のコマンドを実行して設定します。**
+### システムの起動時にcloud-initサービスを自動実行させる方法
+- **OSがsystemdを使用する場合、次のコマンドを実行します。**
 <dx-alert infotype="explain" title="">
-`strings /sbin/init | grep "/lib/system"`  コマンドを実行します。メッセージが返却された場合は、OSは systemd自動起動管理サービスです。
+OSがsystemdを使用しているかどうかを確認するには、`strings /sbin/init | grep "/lib/system"`コマンドを実行できます。メッセージが返された場合は、OSがsystemdを使用していることを意味します。
 </dx-alert>
 - OSが**UbuntuまたはDebianの場合は、次のコマンドを実行する必要があります。**
 ```shellsession
@@ -330,9 +330,9 @@ StandardOutput=journal+console
 [Install]
 WantedBy=cloud-init.target
 ```
-- **OSがsysvinit自動起動管理サービスの場合は、以下のコマンドを実行して設定します。**
+- **OSがsystemdを使用する場合、次のコマンドを実行します。**
 <dx-alert infotype="explain" title="">
-`strings /sbin/init | grep "sysvinit"`コマンドを実行します。メッセージが返却された場合は、OSはsysvinit自動起動管理サービスです。
+OSがsystemdを使用しているかどうかを確認するには、`strings /sbin/init | grep "sysvinit"`コマンドを実行できます。メッセージが返された場合は、OSがsysvinitを使用していることを意味します。
 </dx-alert>
 ```shellsession
 chkconfig --add cloud-init-local
@@ -345,7 +345,7 @@ chkconfig cloud-config on
 chkconfig cloud-final on 
 ```
 :::
-::: ソフトウェアソースの\scloud-init\sパッケージを使用する方法[](id:SoftSources)
+::: ソフトウェアソースから\scloud-init\sパッケージを使用する[](id:SoftSources)
 ### cloud-initのインストール
 
 次のコマンドを実行して、cloud-initをインストールします。
@@ -360,8 +360,8 @@ apt-get/yum install cloud-init
 
 ### cloud-init設定ファイル[](id:cloud-init)の変更
 1. OSの違いに応じて、cloud.cfgをダウンロードします。
- - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg) してUbuntu OSのcloud.cfgをダウンロードします。
-  - [ここをクリックしてダウンロード](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg) してCentOSのcloud.cfgをダウンロードします。
+ - Ubuntu OSのcloud.cfgをダウンロードするには、[ここをクリックしてください](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/ubuntu/cloud.cfg)。
+ - CentOSのcloud.cfgをダウンロードするには、[ここをクリックしてください](https://gerryguan-1306210569.cos.ap-chongqing.myqcloud.com/cloud-init/cfg/centos/cloud.cfg)。
 2. `/etc/cloud/cloud.cfg` の内容を、ダウンロードしたcloud.cfgファイルの内容に置き換えます。
 :::
 </dx-tabs>
@@ -372,7 +372,7 @@ apt-get/yum install cloud-init
 
 
 <dx-alert infotype="notice" title="">
-以下の操作が完了した後、サーバーを再起動しないでください。再起動した場合は、以下の操作を再度実施する必要があります。
+以下の操作が完了した後、サーバーを再起動しないでください。再起動した場合は、以下の操作を再実行する必要があります。
 </dx-alert>
 
 
@@ -392,7 +392,7 @@ rm -rf /var/lib/cloud
 ``` shellsession
 rm -rf /etc/network/interfaces.d/50-cloud-init.cfg
 ```
-4. Ubuntu OSまたはDebian OSについて、`/etc/network/interfaces` を以下のように変更する必要があります：
+4. Ubuntu OSまたはDebian OSの場合、`/etc/network/interfaces`の内容を次のように変更します：
 ```shellsession
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
