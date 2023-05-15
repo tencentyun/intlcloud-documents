@@ -1,7 +1,7 @@
 This document describes the usage specifications and suggestions after a TDSQL-C for MySQL cluster is created.
 
 ## Database permission specifications
-- All DDL operations (such as creating tables and modifying table structures) can only be performed and launched by DBAs through DMC during off-peak hours after approval.
+- All DDL operations (such as creating tables and modifying table structures) can only be performed by DBAs through Database Management Center (DMC) during off-peak hours after approval.
 - Permissions should be managed in a fine-grained manner by separating read, write, Ops, and development permissions.
 - DDL operations logs should be retained.
 
@@ -13,18 +13,9 @@ This document describes the usage specifications and suggestions after a TDSQL-C
 - A data table must use a business-relevant ordered unique field or a business-irrelevant auto-increment field as the primary key.
 >?The lack of the primary key can easily cause slow source database execution and replication delay.
 - A table field must have a default value and cannot be NULL. If the field is of numeric type, we recommend you use `0` as its default value. If the field is of a character type such as VARCHAR, we recommend you use an empty string ''.
-- Avoid using partitioned tables. If necessary, use multiple independent tables instead.
->?Shortcomings of partitioned tables:
->- All partitions will be locked during DDL operations. As a result, operations on all partitions will be blocked.
->- When a partitioned table contains a large amount of data, it is hard and risky to perform DDL or other Ops operations on it.
->- Partitioned tables are less used and have unknown risks.
->- When a single server is poor in performance, splitting a partitioned table is expensive.
->- When all partitions are accessed due to maloperations on a partitioned table, severe performance problems may occur.
 - We recommend you make each table contain two DATETIME fields: `create_time` and `update_time`.
 >?You can get the required data from a data warehouse based on these two fields without consulting the business team.
 >When an exception occurs in the database, you can use these two fields to determine the time when the data is inserted and updated or determine whether to restore data in extreme cases.
-- Subpartitioning and sharding are recommended when the number of rows in a single table exceeds 5 million or the size of a single table exceeds 2 GB.
-- The length of a single row in a table should not exceed 1,024 bytes, and the number of rows in a single table should not exceed 5 million.
 - Keep the number of fields in a single table below 50.
 - If the lengths of stored strings are almost the same, use fixed-length CHAR strings.
 - Provided that the data consistency is ensured, cross-table redundant fields are allowed to avoid correlated subqueries and improve the query performance.
@@ -54,4 +45,3 @@ For example, if a table contains fields `a`, `b`, `c`, `d`, `e`, and `f`, and fi
  - Indexes should be frequently used. An index needs to be created for a query.
  - Indexes should be as few as possible. Indexes takes up the space and slow down updates and insertions.
  - Unique indexes are not needed. Business uniqueness must be implemented at the application layer in the "query first and then insert" method.
-

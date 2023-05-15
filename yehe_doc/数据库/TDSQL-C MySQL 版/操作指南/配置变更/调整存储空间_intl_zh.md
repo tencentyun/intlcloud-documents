@@ -1,19 +1,59 @@
-当集群存储空间无法满足业务需求时，可对集群的存储空间进行变配操作，以满足业务诉求。
+当集群存储空间无法满足业务需求时，可对集群的存储空间进行变配操作，以满足业务需求。
 本文为您介绍如何调整 TDSQL-C MySQL 版的存储空间。
 
 >!
-> - 存储计费模式为预付费（包年包月）：如果您需要缩减集群的存储空间，请[提交工单](https://console.tencentcloud.com/workorder/category)申请。
-> - 存储计费模式为预付费（包年包月）：您可通过控制台调整集群的存储空间，若要调整超过此计算规格上限的存储空间，您可对读写实例进行计算规格升级。详细计算规格和对应最大存储空间请参见 [产品规格](https://www.tencentcloud.com/document/product/1098/46430)。
-> - 存储计费模式为预付费（包年包月）时，变更存储空间的有效计费时间为变更存储时到您的集群到期的时间。
-> - 存储计费模式为后付费（按量计费）：无需对存储空间进行扩容，您可使用的存储空间最大容量为对应读写实例的计算规格对应的存储空间上限，若要使用超过此计算规格上限的存储空间，您可对该读写实例进行计算规格升级。详细计算规格和对应最大存储空间请参见 [产品规格](https://www.tencentcloud.com/document/product/1098/46430)。
+>- 存储计费模式为按量计费：无需对存储空间进行扩容，您可使用的存储空间最大容量为对应读写实例的计算规格对应的存储空间上限，若要使用超过此计算规格上限的存储空间，您可对该读写实例进行计算规格升级。详细计算规格和对应最大存储空间请参见 [产品规格](https://intl.cloud.tencent.com/document/product/1098/46430)，此外，存储计费模式支持由按量计费转为包年包月，您也可以在转为包年包月的同时调整存储空间。
+>- 存储计费模式为包年包月：您可通过控制台调整集群的存储空间，若要调整超过此计算规格上限的存储空间，您可对读写实例进行计算规格升级。详细计算规格和对应最大存储空间请参见 [产品规格](https://intl.cloud.tencent.com/document/product/1098/46430)。
+>- 存储计费模式为包年包月时，变更存储空间的有效计费时间为变更存储时到您的集群到期的时间。
 
 ## 变配能力
 TDSQL-C MySQL 版采用计算和存储分离的架构，所有计算节点共享一份数据。在跨机变配的场景下，完全无需搬迁数据，所以能够支撑秒级的配置升降级能力。
 当实例变配时，会自动拉起一个高规格的从库。当完成建立之后，自动将新的从库升级为主库，旧的主库网络断开即达到了变配的目的。
 
 ## 操作步骤
+**场景一：存储计费模式为按量计费，需使用超过当前计算规格上限的存储空间**
+存储计费模式为按量计费时，无需对存储空间进行扩容，您可使用的存储空间最大容量为对应读写实例的计算规格对应的存储空间上限，若要使用超过此计算规格上限的存储空间，您可对该读写实例进行计算规格升级，步骤请参考 [调整计算配置](https://www.tencentcloud.com/document/product/1098/50176)。详细计算规格和对应最大存储空间请参见 [产品规格](https://intl.cloud.tencent.com/document/product/1098/46430)。
+
+**场景二：存储计费模式为按量计费，需转为包年包月并指定存储空间**
+在集群列表页，根据实际使用的视图模式进行操作：
+<dx-tabs>
+::: 页签视图
+1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)，在左侧集群列表，单击目标集群，进入集群管理页。
+2. 在集群管理页，计费模式后，单击图标![](https://qcloudimg.tencent-cloud.cn/raw/1ccd57694a24dfdf2b486ef8f7e42d63.png)。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/haTN610_21.png)
+3. 在弹出的设置窗口下，选择包年包月计费模式，然后选择储存空间大小，单击**确定**完成支付即可将存储计费模式变为包年包月并指定存储空间。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/xuLW831_22.png)
+>!存储预付费规格变更需大于已使用存储容量。存储计费模式修改不会影响现有业务。
+:::
+::: 列表视图
 1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)，在集群列表中，找到需要调整存储空间的集群，单击集群 ID 或**操作**列的**管理**，进入集群管理页面。
 2. 在**集群详情** > **配置信息** > **数据库存储使用量**后，单击图标![](https://qcloudimg.tencent-cloud.cn/raw/1ccd57694a24dfdf2b486ef8f7e42d63.png)。
-3. 在弹出的设置窗口下，选择储存空间大小，单击**确定**完成支付。
-
+>?您也可以在集群详情页下的**计费信息** > **存储计费**后，单击图标![](https://qcloudimg.tencent-cloud.cn/raw/1ccd57694a24dfdf2b486ef8f7e42d63.png)进行调整。
+3. 在弹出的设置窗口下，选择包年包月计费模式，然后选择储存空间大小，单击**确定**完成支付。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/LziR876_25.png)
 >!存储预付费规格变更需大于已使用存储容量。存储计费模式修改不会影响现有业务。
+:::
+</dx-tabs>
+
+**场景三：存储计费模式为包年包月，需调整存储空间**
+在集群列表页，根据实际使用的视图模式进行操作：
+<dx-tabs>
+::: 页签视图
+1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)，在左侧集群列表，单击目标集群，进入集群管理页。
+2. 在集群管理页，计费模式后，单击图标![](https://qcloudimg.tencent-cloud.cn/raw/1ccd57694a24dfdf2b486ef8f7e42d63.png)。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/npjZ651_27.png)
+>?您也可以在集群详情页下方分布式存储模块，单击存储规格后的**扩容**进行调整。
+>![](https://staticintl.cloudcachetci.com/yehe/backend-news/8phc012_28.png)
+3. 在弹出的设置窗口下，选择储存空间大小，单击**确定**完成支付。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/3th5190_29.png)
+>!存储预付费规格变更需大于已使用存储容量。存储计费模式修改不会影响现有业务。
+:::
+::: 列表视图
+1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)，在集群列表中，找到需要调整存储空间的集群，单击集群 ID 或**操作**列的**管理**，进入集群管理页面。
+2. 在**集群详情** > **配置信息** > **数据库存储使用量**后，单击图标![](https://qcloudimg.tencent-cloud.cn/raw/1ccd57694a24dfdf2b486ef8f7e42d63.png)。
+>?您也可以在集群详情页下的**计费信息** > **存储计费**后，单击图标![](https://qcloudimg.tencent-cloud.cn/raw/1ccd57694a24dfdf2b486ef8f7e42d63.png)进行调整。
+3. 在弹出的设置窗口下，选择储存空间大小，单击**确定**完成支付。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/miSI683_32.png)
+>!存储预付费规格变更需大于已使用存储容量。存储计费模式修改不会影响现有业务。
+:::
+</dx-tabs>

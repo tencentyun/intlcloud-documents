@@ -8,7 +8,7 @@ TDSQL-C for MySQL provides the Serverless service to meet your database requirem
 
 
 ## Resource Scaling Range (CCU)
-CynosDB Compute Unit (CCU) is the computing and billing unit for the Serverless Edition. A CCU is approximately equal to 1 CPU core and 2 GB memory. The number of CCUs used in each billing cycle is the greater value between the number of CPU cores used by the database and 1/2 of the memory size.
+TDSQL-C Compute Unit (CCU) is the computing and billing unit for the Serverless Edition. A CCU is approximately equal to 1 CPU core and 2 GB memory. The number of CCUs used in each billing cycle is the greater of the number of CPU cores used by the database and 1/2 of the memory size.
 
 You need to set the scaling range for the Serverless service. For more information, see [Compute Unit](https://www.tencentcloud.com/document/product/1098/51975).
 
@@ -19,28 +19,29 @@ We recommend you set the minimum capacity to 0.25 CCUs and select a higher value
 ><dx-tabs>
 ::: Tab view
 On the **Cluster Details** tab on the management page of the target cluster, click **Adjust Configurations** in the top right of the read-write instance, and change the compute unit configuration on the page redirected to. The change will take effect immediately, which is imperceptible to the business.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/zEZw646_21.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Hnjb615_10.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/GHvY154_12.png)
 :::
 ::: List view
->- Adjust the configuration of the read-write instance in the **Instance List** on the management page of the target cluster. The change will take effect immediately, which is imperceptible to the business.
+Adjust the configuration of the read-write instance in the **Instance List** on the management page of the target cluster. The change will take effect immediately, which is imperceptible to the business.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/zEZw646_21.png)
 :::
 </dx-tabs>
+>
 
-
-## Elastic Policy
+## Elastic policy
 The elastic policy of the Serverless service is implemented by monitoring the computing layer. By monitoring the business load, the system automatically scales computing resources and bills the resources consumed at that moment. When there is no database request, the monitoring service will repossess computing resources and notify the access layer. When you access the cluster again, the access layer will wake up the cluster to make it accessible.
 
-Initially, the elastic policy of the Serverless service will limit the CPU and memory resources to the maximum specifications based on the capacity range you selected during purchase, greatly reducing the time impact and usage restrictions caused by CPU and memory scaling. When the cluster triggers the automatic scaling load threshold, the buffer pool will be adjusted within minutes in advance based on the monitoring data. Under this scheme, the CPU can be scaled in an imperceptible manner when you use the database, and no instance ODM events will occur due to the connection surge.
+Initially, the elastic policy of the Serverless service will limit the CPU and memory resources to the maximum specifications based on the capacity range you selected during purchase, greatly reducing the time impact and usage restrictions caused by CPU and memory scaling. When the cluster triggers the automatic scaling load threshold, the buffer pool will be adjusted within minutes in advance based on the monitoring data. Under this scheme, the CPU can be scaled in an imperceptible manner when you use the database, and no instance OOM events will occur due to the connection surge.
 
 ## Automatic Start/Stop
 #### Pausing the service
-- You can enable/disable the auto-pause feature as needed in the [console](https://console.cloud.tencent.com/cynosdb).
+- You can enable/disable the auto-pause feature in the [console](https://console.cloud.tencent.com/cynosdb) based on your business needs.
 >?To enable or disable the auto-pause feature, proceed based on the actual view mode.
 ><dx-tabs>
 ::: Tab view
 On the **Cluster Details** tab on the management page of the target cluster, click **Adjust Configurations** in the top right of the read-write instance, and enable or disable the auto-pause feature on the page redirected to.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/a3rN825_22.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/TLZ4351_14.png)
 :::
 ::: List view
 Click **More** > **Adjust Configurations** in the **Operation** column in **Instance List** > **Read-Write Instance** on the target cluster management page.
@@ -54,7 +55,7 @@ Click **More** > **Adjust Configurations** in the **Operation** column in **Inst
 - You can also manually pause specified databases in the console based on the actual view mode.
 <dx-tabs>
 ::: Tab view
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/Myjm741_23.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/dTmg796_15.png)
 :::
 ::: List view
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/Myjm741_23.png)
@@ -64,9 +65,12 @@ Click **More** > **Adjust Configurations** in the **Operation** column in **Inst
 >! The Serverless service will be automatically paused when there is no user connection. If your business needs to use `event_scheduler` to trigger SQL regularly, we recommend you not enable the auto-pause feature.
 >
 
-#### Starting the service
-You cannot use the features in the [console](https://console.cloud.tencent.com/cynosdb) for a paused serverless database until it is started.
+#### Starting service
+You cannot use the features in the [console](https://console.cloud.tencent.com/cynosdb) for a paused serverless database until it is automatically started or its serverless data is manually started based on the actual view mode.
 <dx-tabs>
+::: Tab view
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/g88u977_17.png)
+:::
 ::: List view
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/hLQ3918_24.png)
 :::

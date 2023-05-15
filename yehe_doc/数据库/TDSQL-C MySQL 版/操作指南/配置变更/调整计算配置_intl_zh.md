@@ -10,27 +10,27 @@ TDSQL-C MySQL 版采用计算和存储分离的架构，所有计算节点共享
 <dx-tabs>
 ::: 页签视图
 1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)，在左侧集群列表，单击目标集群，进入集群管理页。
-2. 在集群详情下，找到目标实例，将鼠标移至实例模块里，单击**调整配置**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/LweX570_78.png)
+2. 在集群详情下，找到目标实例，单击图标![](https://qcloudimg.tencent-cloud.cn/raw/41dc489c5cb922241a02d3a1a44a2a94.png)或者单击**调整配置**进入配置调整页面。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Hu7Y126_34.png)
 3. 在实例配置调整页面中，选择需要变更到的配置，单击**立即购买**。
 >!实例配置调整将导致重启，请确保业务具有重连机制。
 >
 实例变配操作亦可指定变配的自动执行时间。
  - 选择**升级完成时**，则会在完成配置变更后，立即触发切换闪断动作。
- - 选择**维护时间内**，则会在实例的**维护窗口期**内进行闪断切换。修改维护窗口期可参考 [修改实例维护时间](https://www.tencentcloud.com/document/product/1098/53399)。
-![](https://qcloudimg.tencent-cloud.cn/raw/248fb7d57f0b0d3a1844a7d48b74643b.png)
+ - 选择**维护时间内**，则会在实例的**维护窗口期**内进行闪断切换。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/fWiU321_35.png)
 :::
 ::: 列表视图
 1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)，在集群列表中，找到需要调整配置的集群，单击集群 ID 或**操作**列的**管理**，进入集群管理页面。
 2. 在集群管理页面，选择**实例列表**页，找到想要变更配置的实例，选择**更多** > **调整配置**。
-![](https://qcloudimg.tencent-cloud.cn/raw/7e890b021f4ab5adb6f476c2266d24b3.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/7hxI522_36.png)
 3. 在实例配置调整页面中，选择需要变更到的配置，单击**立即购买**。
 >!实例配置调整将导致重启，请确保业务具有重连机制。
 >
 实例变配操作亦可指定变配的自动执行时间。
  - 选择**升级完成时**，则会在完成配置变更后，立即触发切换闪断动作。
- - 选择**维护时间内**，则会在实例的**维护窗口期**内进行闪断切换。修改维护窗口期可参考 [修改实例维护时间](https://www.tencentcloud.com/document/product/1098/53399)。
-![](https://qcloudimg.tencent-cloud.cn/raw/248fb7d57f0b0d3a1844a7d48b74643b.png)
+ - 选择**维护时间内**，则会在实例的**维护窗口期**内进行闪断切换。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/QMKf711_37.png)
 
 :::
 </dx-tabs>
