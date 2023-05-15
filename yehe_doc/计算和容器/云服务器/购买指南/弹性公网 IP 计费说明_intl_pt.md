@@ -77,8 +77,8 @@ O tráfego da rede pública gerado pelo EIP será cobrado com taxas de rede púb
 <table>
     <tr><th>Período de atraso</th><th>Descrição</th></tr>
     <tr><td>Menos de 2 horas</td><td>Você pode continuar a usar seus recursos e sua conta continuará a ser cobrada.</td></tr>
-    <tr><td>≥ 2 horas ou ＜ 2 horas + 15 dias</td><td>O EIP será mantido, mas o serviço será suspenso. As taxas não serão mais cobradas e o EIP não poderá ser usado.</td></tr>
-    <tr><td>≥ 2 horas + 15 dias</td><td><li>O EIP que não foi vinculado aos recursos de nuvem será liberado.</li><li>O EIP que já foi vinculado aos recursos de nuvem será mantido, mas o serviço será suspenso. As taxas não serão mais cobradas e o EIP não poderá ser usado.</li></td></tr>
+    <tr><td>≥ 2 horas ou ＜ 2 horas + 24 horas</td><td>O EIP será mantido, mas o serviço será suspenso. As taxas não serão mais cobradas e o EIP não poderá ser usado.</td></tr>
+    <tr><td>≥ 2 horas + 24 horas</td><td><li>O EIP que não foi vinculado aos recursos de nuvem será liberado.</li><li>O EIP que já foi vinculado aos recursos de nuvem será mantido, mas o serviço será suspenso. As taxas não serão mais cobradas e o EIP não poderá ser usado.</li></td></tr>
 </table>
 
 ### Recursos vinculados em atraso 
