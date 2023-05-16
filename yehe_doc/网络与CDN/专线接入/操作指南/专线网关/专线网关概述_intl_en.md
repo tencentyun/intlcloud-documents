@@ -71,7 +71,7 @@ In a Direct Connect network architecture, if the direct connect gateways A and B
 
 ## NAT Direct Connect Gateway
 A NAT direct connect gateway prevents IP conflicts between your cloud network space and local IDCs by translating IP addresses.
-![](https://qcloudimg.tencent-cloud.cn/raw/b69865bf6415f8ee55f335916187152e.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/CQLc745_2.png)
 
  - We recommend that you use BGP dedicated tunnels, so that a local IDC automatically obtains the CIDR block for traffic to the destination VPC.
  - When you configure routing rules for a VPC NAT gateway, SNAT-Local-Layer-3, SNAT-Local-Layer-4, and DNAT-Peer-Layer-4 rules are mapped automatically. Peer-Layer-3 rules cannot be mapped. In addition, the VPC CIDR block is not published by default. Therefore, you must use a Peer-Layer-3 rule with a Local-Layer-3 or Local-Layer-4 rule.
@@ -115,7 +115,7 @@ Tencent’s self-developed Disaggregated Software-Defined Router (DSR) is a new 
 Compared to classic network physical devices, DSR supports multiple cloud computing virtualization techniques such as NFV and microservice. It adopts a distributed architecture to effectively prevent overall impact caused by the failure of a single component, so as to discover, isolate and recover from failures at the component level automatically.
 
 ### High availability design for direct connect gateways
-![](https://main.qcloudimg.com/raw/e1223de6586b26115d721c55245544f5.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Xm4I201_3.png)
 Tencent Cloud Direct Connect inherits the high availability feature of DSR to significantly increase the availability of the direct connect gateways.
 
 - At the route forwarding plane, DSR provides two active-active routing systems for each dedicated tunnel through multi-site active-active technique with each routing system distributed independently in a different DSR cluster. Meanwhile, the DSR clusters provide two Tencent Cloud border IP addresses to implement active-active routing system at the control plane. Thus, the local router on IDC side has created BGP neighbor adjacency with the two clusters respectively via BGP protocol to effectively ensure high availability of business in case of DSR cluster upgrade or single cluster failure and avoid impact on business caused by single BGP neighbor adjacency interruption and route convergence.
