@@ -6,7 +6,7 @@ This document describes how to achieve resource access between an Internet Data 
 
 ## Scenarios
 You can use Direct Connect and a VPC NAT gateway to build direct connections for resource access between Tencent Cloud and your IDC without causing conflicts between specified IP addresses.
-![](https://qcloudimg.tencent-cloud.cn/raw/eed46c83d8dcb6747d2a2bc26f85168c.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/2aTy476_1.png)
 
 ## Prerequisites
 - You have built a connection. For more information, see [Applying for Connection](https://intl.cloud.tencent.com/document/product/216/19244).
@@ -43,7 +43,7 @@ The tunnels created on the connections vary depending on the access method. You 
 3. On the **SNAT** tab, click **Create**. On the **Create SNAT rule** page, select **Layer-3** for **Mapping type**, enter the VPC IP address in the **Source IP** field, and enter an IP address or IP address pool in the **Mapped IP/Mapped IP pool** field as needed.
 You can click **+ New line** to configure multiple SNAT routing rules.
 4. Click **OK**.
-For more information about parameter configuration, see [Operation Overview](https://www.tencentcloud.com/document/product/647/35109).
+>?For more information about parameter configuration, see [Operation Overview](https://intl.cloud.tencent.com/document/product/1015/30235).
 >
 
 ### [](id:step5)Step 5: Configure routing policies in the VPC route table
