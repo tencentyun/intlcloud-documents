@@ -87,7 +87,7 @@ Direct Connect is billed as follows.
 <tr>
 <td rowspan="2">Asia</td>
 <td>Taiwan (China), Hong Kong (China), Tokyo, Singapore, Seoul, Bangkok</td>
-<td>0.074 </td>
+<td>0.037 </td>
 </tr>
 <tr>
 <td>Mumbai</td>
