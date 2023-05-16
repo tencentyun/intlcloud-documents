@@ -30,11 +30,11 @@ To easily locate and manage the connections under your account, perform the foll
 5. Use a tag to manage the connections.
  1. Click ![](https://main.qcloudimg.com/raw/f22b6d803bb59529e530d140ee669a1c.png) in the upper-right corner of the **Connections** page.
  2. In the pop-up window, select the target tags, and click **OK**.
-Then the tag keys will appear in the first column of the connection list.
+Then the tag keys will appear in the connection list.
 
 ## Deleting a Connection
 You can delete a connection when you no longer need it.
 1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/dc) and click **Connections** on the left sidebar.
 2. Select the connection to delete, and click **Delete** in the **Operation** column.
 3. In the pop-up window, check **Confirm Deletion** and click **Confirm**.
->?The connection will be immediately deleted, and the port monthly rental fees will no longer incur.
+>?The port monthly rental fees will no longer incur.
