@@ -5,14 +5,14 @@
 - **The default mode for new users of LVB is bill-by-traffic.**
 - We offer **prepaid traffic packages**. A traffic package deducts LVB downstream traffic in the Chinese mainland at a ratio of 1:1. Different deduction ratios are applied to **LVB downstream traffic outside the Chinese mainland, LEB downstream traffic in the Chinese mainland, LEB downstream traffic outside the Chinese mainland, and upstream traffic inside and outside the Chinese mainland**. For details, see [Prepaid Packages](https://www.tencentcloud.com/document/product/267/52220).
 - Billing regions outside the Chinese mainland:
-  - Asia Pacific 1: Hong Kong (China), Singapore, Macao (China), Vietnam, Thailand, Nepal, Cambodia, Pakistan
+  - Asia Pacific 1: Hong Kong (China), Singapore, Macao (China), Vietnam, Thailand, Nepal, Cambodia, Pakistan, Laos
   - Asia Pacific 2: Taiwan (China), Japan, Malaysia, Indonesia, South Korea
   - Asia Pacific 3: Philippines, India, Australia
   - North America: United States, Canada, Mexico
   - Europe: Netherlands, Germany, Russia, United Kingdom, Ireland, Italy, Spain, France
   - Middle East: United Arab Emirates, Türkiye, Qatar, Saudi Arabia, Bahrain, Iraq, Oman
   - Africa: South Africa, Egypt
-  - South America: Brazil, Colombia, Argentina
+  - South America: Brazil, Colombia, Argentina, Chile
 - The conversion factor for units of traffic/bandwidth is 1,000. For example, 1 TB = 1,000 GB.
 - A CSS service day is 00:00-23:59 (UTC+08:00).
 - **At 00:00 (UTC+08:00), January 4, 2022**, CSS adjusted the daily billing prices and pricing tiers of LVB’s basic services and started billing usage outside the Chinese mainland by region instead of at a unified price. For details, see [Notice: CSS to Adjust Prices of Basic Services](https://www.tencentcloud.com/document/product/267/43055).
