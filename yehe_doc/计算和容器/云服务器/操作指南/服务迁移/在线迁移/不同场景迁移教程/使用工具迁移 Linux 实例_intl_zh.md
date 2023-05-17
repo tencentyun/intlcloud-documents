@@ -195,7 +195,7 @@ client.json 配置文件说明如下表：
   </tr>
 </table>
 
-如果源端主机和目标云服务器任何一方不能直接访问公网，则可以选择先通过 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037)、[云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 或者 [专线接入](https://intl.cloud.tencent.com/zh/document/product/216) 等方式建立连接通道，再进行内网模式迁移。请根据您的源端主机和目标云服务器的网络环境，确定适合的迁移模式。
+如果源端主机和目标云服务器任何一方不能直接访问公网，则可以选择先通过 [VPC 对等连接](https://intl.cloud.tencent.com/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[云联网](https://intl.cloud.tencent.com/document/product/1003) 或者 [专线接入](https://intl.cloud.tencent.com/document/product/216) 等方式建立连接通道，再进行内网模式迁移。请根据您的源端主机和目标云服务器的网络环境，确定适合的迁移模式。
 
 ###  rsync\_excludes\_linux.txt 文件说明[](id:_linuxTxtState)
 
@@ -368,7 +368,7 @@ sudo ./go2tencentcloud_x64 --no-console
 :::  内网迁移场景1
 
 1. 建立源端主机和目标云服务器的连接通道。
-通过 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037) / [云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 等方式，建立源端主机和目标云服务器的连接通道。
+通过 [VPC 对等连接](https://intl.cloud.tencent.com/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/document/product/1037) / [云联网](https://intl.cloud.tencent.com/document/product/1003) 等方式，建立源端主机和目标云服务器的连接通道。
 2. 将迁移工具 go2tencentcloud.zip 下载或上传至源端主机，并执行以下命令进入对应目录。
    1. 依次执行以下命令，解压 go2tencentcloud.zip 并进入目录。
 ```shellsession
@@ -391,7 +391,7 @@ cd go2tencentcloud-linux
 请按照 [user.json 文件参数说明](#userJsonState) 配置必填项和所需项的值。
 4. 在 `client.json` 文件配置迁移模式和其他项。
    - 将 `client.json` 文件里的 `Client.ToolMode` 值设置为 `true`， 即标识工具模式迁移。
-   - 将 `client.json` 文件里的 `Client.Net.Mode` 项设置为`1`，即进行 [内网迁移模式：场景1](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F) 的迁移。此外，如果还需要进行其他项设置，请按照 [client.json 文件参数说明](#clientJsonState) 进行配置。
+   - 将 `client.json` 文件里的 `Client.Net.Mode` 项设置为`1`，即进行 [内网迁移模式：场景1](https://intl.cloud.tencent.com/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F) 的迁移。此外，如果还需要进行其他项设置，请按照 [client.json 文件参数说明](#clientJsonState) 进行配置。
 5. （可选）排除源端主机上不需迁移的文件或目录。
 若 Linux 源端主机中存在不需要迁移的文件或目录，可将文件或目录添加至 [rsync_excludes_linux.txt 文件](#_linuxTxtState)。
 6. [](id:Scenario1_step06)在一台可以访问公网的主机（如网关）上运行工具。
@@ -443,7 +443,7 @@ sudo ./go2tencentcloud_x64 --no-console
 :::  内网迁移场景2
 
 1. 建立源端主机和目标云服务器的连接通道。
-通过 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037) / [云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 等方式，建立源端主机和目标云服务器的连接通道。
+通过 [VPC 对等连接](https://intl.cloud.tencent.com/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/document/product/1037) / [云联网](https://intl.cloud.tencent.com/document/product/1003) 等方式，建立源端主机和目标云服务器的连接通道。
 2. 将迁移工具 go2tencentcloud.zip 下载或上传至源端主机，并执行以下命令进入对应目录。
    1. 依次执行以下命令，解压 go2tencentcloud.zip 并进入目录。
 ```shellsession
@@ -466,7 +466,7 @@ cd go2tencentcloud-linux
 请按照 [user.json 文件参数说明](#userJsonState) 配置必填项和所需项的值。
 4. 在 `client.json` 文件配置迁移模式和其他项。
     - 将 `client.json` 文件里的 `Client.ToolMode` 值设置为 `true`， 即标识工具模式迁移。
-    - 将 `client.json` 文件里的 `Client.Net.Mode` 项设置为`2`，即进行 [内网迁移模式：场景2](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F) 的迁移。此外，如果还需要进行其他项设置，请按照 [client.json 文件参数说明](#clientJsonState) 进行配置。
+    - 将 `client.json` 文件里的 `Client.Net.Mode` 项设置为`2`，即进行 [内网迁移模式：场景2](https://intl.cloud.tencent.com/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F) 的迁移。此外，如果还需要进行其他项设置，请按照 [client.json 文件参数说明](#clientJsonState) 进行配置。
 5. （可选）排除源端主机上不需迁移的文件或目录。
 若 Linux 源端主机中存在不需要迁移的文件或目录，可将文件或目录添加至 [rsync_excludes_linux.txt 文件](#_linuxTxtState)。
 6. 运行工具。
@@ -488,7 +488,7 @@ sudo ./go2tencentcloud_x64 --no-console
 :::
 :::  内网迁移场景3
 1. 建立源端主机和目标云服务器的连接通道。
-通过 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037) / [云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 等方式，建立源端主机和目标云服务器的连接通道。
+通过 [VPC 对等连接](https://intl.cloud.tencent.com/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/document/product/1037) / [云联网](https://intl.cloud.tencent.com/document/product/1003) 等方式，建立源端主机和目标云服务器的连接通道。
 2. 将迁移工具 go2tencentcloud.zip 下载或上传至源端主机，并执行以下命令进入对应目录。
     1. 依次执行以下命令，解压 go2tencentcloud.zip 并进入目录。
 ```shellsession
@@ -511,7 +511,7 @@ cd go2tencentcloud-linux
 请按照 [user.json 文件参数说明](#userJsonState) 配置必填项和所需项的值。
 4. 在 `client.json` 文件配置迁移模式和其他项。
     - 将 `client.json` 文件里的 `Client.ToolMode` 值设置为 `true`， 即标识工具模式迁移。
-    - 将 `client.json` 文件里的 `Client.Net.Mode` 项设置为`3`，即进行 [内网迁移模式：场景3](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F) 的迁移。
+    - 将 `client.json` 文件里的 `Client.Net.Mode` 项设置为`3`，即进行 [内网迁移模式：场景3](https://intl.cloud.tencent.com/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F) 的迁移。
     - 将 `client.json` 文件里的 `Client.Net.Proxy.Ip` 和 `Client.Net.Proxy.Port` 项设置为网络代理的 IP 地址和端口。如您的网络代理还需认证，则请在 `Client.Net.Proxy.User` 和 `Client.Net.Proxy.Password` 项填写网络代理的用户名和密码。如不需要认证，则不填。 
 		此外，如果还需要进行其他项设置，请按照 [client.json 文件参数说明](#clientJsonState) 进行配置。
 5. （可选）排除源端主机上不需迁移的文件或目录。
@@ -537,7 +537,7 @@ sudo ./go2tencentcloud_x64 --no-console
 
 ### 迁移后的检查
 
-- 若迁移结果失败，则请检查日志文件（默认为迁移工具目录下的 log 文件）的错误信息输出、指引文档或者 [服务迁移类常见问题](https://intl.cloud.tencent.com/document/product/213/32395) 进行排查和修复问题。
+- 若迁移结果失败，则请检查日志文件（默认为迁移工具目录下的 log 文件）的错误信息输出、指引文档或者 [服务器迁移类常见问题](https://intl.cloud.tencent.com/document/product/213/32395) 进行排查和修复问题。
 - 若迁移结果成功，则请检查目标云服务器能否正常启动、目标云服务器数据与源端主机是否一致、网络是否正常或者其他系统服务是否正常等。
 
-如有任何疑问、迁移异常等问题请查看 [服务迁移类常见问题](https://intl.cloud.tencent.com/document/product/213/32395) 或者 [联系我们](https://intl.cloud.tencent.com/document/product/213/34837) 解决。
+如有任何疑问、迁移异常等问题请查看 [服务器迁移类常见问题](https://intl.cloud.tencent.com/document/product/213/32395) 或者 [联系我们](https://intl.cloud.tencent.com/document/product/213/34837) 解决。
