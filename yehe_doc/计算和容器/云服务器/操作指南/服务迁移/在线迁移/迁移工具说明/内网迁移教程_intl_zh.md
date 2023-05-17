@@ -25,7 +25,7 @@
 ### 根据网络环境确定迁移场景
 
 请根据您的源端主机和目标云服务器的网络环境，确定适合的迁移模式。
-目前控制台在线迁移支持公网模式和内网迁移模式。其中，内网迁移模式细分为3种场景。不同迁移模式/场景，对源端主机和目标云服务器的网络要求不一致。如果源端主机和目标云服务器均可以访问公网，则可以直接进行默认模式迁移。如果源端主机和目标云服务器任何一方不能直接访问公网，则可以选择先通过 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037)、[云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 或者 [专线接入](https://intl.cloud.tencent.com/zh/document/product/216) 等方式建立连接通道，再进行内网模式迁移。
+目前控制台在线迁移支持公网模式和内网迁移模式。其中，内网迁移模式细分为3种场景。不同迁移模式/场景，对源端主机和目标云服务器的网络要求不一致。如果源端主机和目标云服务器均可以访问公网，则可以直接进行默认模式迁移。如果源端主机和目标云服务器任何一方不能直接访问公网，则可以选择先通过 [VPC 对等连接](https://intl.cloud.tencent.com/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[云联网](https://intl.cloud.tencent.com/document/product/1003) 或者 [专线接入](https://intl.cloud.tencent.com/document/product/216) 等方式建立连接通道，再进行内网模式迁移。
 
 ### 迁移前的检查
 迁移前，需根据实际情况进行检查。检查内容如下表：
@@ -75,8 +75,8 @@
 
 ## 开始迁移
 1. 建立源端主机和腾讯云的内网连接通道。
- - 若迁移目标为目标云服务器：通过 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037) / [云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 等方式，建立源端主机和目标云服务器的连接通道。
- - 若迁移目标为云服务器镜像：通过 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037) / [云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 等方式，建立源端主机与腾讯云VPC的连接通道。
+ - 若迁移目标为目标云服务器：通过 [VPC 对等连接](https://intl.cloud.tencent.com/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/document/product/1037) / [云联网](https://intl.cloud.tencent.com/document/product/1003) 等方式，建立源端主机和目标云服务器的连接通道。
+ - 若迁移目标为云服务器镜像：通过 [VPC 对等连接](https://intl.cloud.tencent.com/document/product/553) / [VPN 连接](https://intl.cloud.tencent.com/document/product/1037) / [云联网](https://intl.cloud.tencent.com/document/product/1003) 等方式，建立源端主机与腾讯云VPC的连接通道。
 2. 将迁移工具 go2tencentcloud.zip 下载或上传至源端主机，并执行以下命令进入对应目录。
  i.依次执行以下命令，解压 go2tencentcloud.zip 并进入目录。
 ```shellsession
