@@ -25,7 +25,7 @@
 ### 인터넷 환경에 따라 마이그레이션 시나리오 확정
 
 소스 서버와 타깃 CVM의 네트워크 환경에 따라 적절한 마이그레이션 모드를 선택합니다.
-현재 CVM 콘솔은 공용 및 프라이빗 네트워크 모드에서 온라인 마이그레이션을 지원합니다. 프라이빗 네트워크 모드는 세 가지 시나리오에 적용됩니다. 각 마이그레이션 모드 또는 시나리오에는 원본 서버 및 대상 CVM에 대한 네트워크 요구 사항이 다릅니다. 원본 서버와 타깃 CVM이 모두 공용 네트워크에 액세스할 수 있는 경우 마이그레이션에 기본 모드를 사용할 수 있습니다. 소스 서버 또는 타깃 CVM이 공용 네트워크에 직접 액세스할 수 없는 경우 마이그레이션을 위해 프라이빗 네트워크 모드를 사용하기 전에 [Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003) 또는 [Direct Connect](https://intl.cloud.tencent.com/zh/document/product/216)를 통해 둘 사이에 연결을 설정해야 합니다.
+현재 CVM 콘솔은 공용 및 프라이빗 네트워크 모드에서 온라인 마이그레이션을 지원합니다. 프라이빗 네트워크 모드는 세 가지 시나리오에 적용됩니다. 각 마이그레이션 모드 또는 시나리오에는 원본 서버 및 대상 CVM에 대한 네트워크 요구 사항이 다릅니다. 원본 서버와 타깃 CVM이 모두 공용 네트워크에 액세스할 수 있는 경우 마이그레이션에 기본 모드를 사용할 수 있습니다. 소스 서버 또는 타깃 CVM이 공용 네트워크에 직접 액세스할 수 없는 경우 마이그레이션을 위해 프라이빗 네트워크 모드를 사용하기 전에 [Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) 또는 [Direct Connect](https://intl.cloud.tencent.com/document/product/216)를 통해 둘 사이에 연결을 설정해야 합니다.
 
 ### 마이그레이션 사전 점검
 마이그레이션하기 전에 실제 상황에 따라 다음 표의 내용을 확인하십시오.
@@ -75,17 +75,17 @@
 
 ## 마이그레이션 시작
 1. 원본 서버와 Tencent Cloud 간에 프라이빗 네트워크 연결을 설정합니다.
- - 마이그레이션 대상이 CVM인 경우 [Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037) 또는 [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003)를 사용하여 원본 서버와 대상 CVM 간의 연결을 설정합니다.
- - 마이그레이션 대상이 CVM 이미지인 경우[Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037) 또는 [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003)를 사용하여 원본 서버와 Tencent Cloud VPC 간의 연결을 설정합니다.
+ - 마이그레이션 대상이 CVM인 경우 [Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037) 또는 [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003)를 사용하여 원본 서버와 대상 CVM 간의 연결을 설정합니다.
+ - 마이그레이션 대상이 CVM 이미지인 경우[Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037) 또는 [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003)를 사용하여 원본 서버와 Tencent Cloud VPC 간의 연결을 설정합니다.
 2. 마이그레이션 툴 go2tencentcloud.zip을 원본 호스트에 다운로드하거나 업로드하고 다음 명령을 실행하여 해당 디렉터리로 들어갑니다.
-    1. 다음 명령어를 순서대로 실행하여 go2tencentcloud.zip의 압축을 풀고 디렉터리로 들어갑니다.
+ i. 다음 명령어를 순서대로 실행하여 go2tencentcloud.zip의 압축을 풀고 디렉터리로 들어갑니다.
 ```shellsession
 unzip go2tencentcloud.zip
 ```
 ```shellsession
 cd go2tencentcloud
 ```
-    2. 다음 명령어를 순서대로 실행하여 go2tencentcloud-linux.zip의 압축을 풀고 디렉터리로 들어갑니다.
+ ii. 다음 명령어를 순서대로 실행하여 go2tencentcloud-linux.zip의 압축을 풀고 디렉터리로 들어갑니다.
 ```shellsession
 unzip go2tencentcloud-linux.zip
 ```
@@ -95,22 +95,25 @@ cd go2tencentcloud-linux
 <dx-alert infotype="explain" title="">
  `go2tencentcloud` 디렉터리에 있는 파일은 마이그레이션되지 않으므로 이 디렉터리에 마이그레이션할 파일을 두지 마십시오.
 </dx-alert>
+
 3. (옵션)원본 서버에서 마이그레이션하지 않을 파일과 디렉터리를 제외합니다. 
 Linux 원본 호스트에 마이그레이션할 필요가 없는 파일 또는 디렉터리가 있는 경우 [rsync_excludes_linux.txt 파일](https://intl.cloud.tencent.com/document/product/213/44340)에 추가합니다.
+
 4. (옵션) 네트워크 프록시를 설정합니다.
  - 마이그레이션이 [프라이빗 마이그레이션 모드: 시나리오 2](https://intl.cloud.tencent.com/document/product/213/44340)인 경우 이 단계를 건너뛰십시오.
  - 마이그레이션이 [프라이빗 마이그레이션 모드: 시나리오 3](https://intl.cloud.tencent.com/document/product/213/44340)인 경우 프록시 네트워크의 IP 주소와 포트를 구성합니다.
     - `client.json` 파일의 `Client.Net.Proxy.Ip`와 `Client.Net.Proxy.Port`를 네트워크 프록시의 IP 주소와 포트로 설정해야 합니다.
     - 네트워크 프록시 확인이 필요한 경우 `Client.Net.Proxy.User` 및 `Client.Net.Proxy.Password`에 네트워크 프록시의 사용자 이름과 비밀번호를 입력합니다.
+
 5. 마이그레이션 소스를 가져옵니다.
-   1. 예를 들어 64비트 Linux 소스 서버에서 root 사용자로 다음 명령을 순서대로 실행하여 도구를 실행합니다.
+ i. 예를 들어 64비트 Linux 소스 서버에서 root 사용자로 다음 명령을 순서대로 실행하여 도구를 실행합니다.
 ```shellsession
 chmod +x go2tencentcloud_x64
 ```
 ```shellsession
 sudo ./go2tencentcloud_x64
 ```
- 2. 안내에 따라 [준비 사항](#prerequisites)에서 얻은 계정 API 액세스 키의 'SecretId'와 'SecretKey'를 입력하고 **Enter**를 누릅니다. 아래 이미지와 같습니다.
+ ii.안내에 따라 [준비 사항](#prerequisites)에서 얻은 계정 API 액세스 키의 'SecretId'와 'SecretKey'를 입력하고 **Enter**를 누릅니다. 아래 이미지와 같습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/6e38d7e0487da4a2f6fd001e9953466a.png)
 마이그레이션 툴 인터페이스에 다음 이미지와 같은 정보가 나타나면 마이그레이션 소스를 콘솔로 성공적으로 가져온 것이므로 콘솔로 이동하여 마이그레이션 소스를 볼 수 있습니다.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/9261d9c0ce1789c1b7afa1accd6bf884.png"/>
@@ -120,11 +123,13 @@ Import source server successfully 메시지가 표시되지 않으면 마이그�
 <dx-alert infotype="notice" title="">
 마이그레이션 소스를 성공적으로 가져온 후 마이그레이션 작업이 완료될 때까지 인스턴스에서 마이그레이션 툴을 닫지 마십시오. 그렇지 않으면 마이그레이션 소스가 오프라인되어 마이그레이션 작업을 완료할 수 없습니다.
 </dx-alert>
+
 6. 온라인 마이그레이션 콘솔로 이동하여 마이그레이션 작업을 생성합니다.
- 1. [온라인 마이그레이션 콘솔](https://console.cloud.tencent.com/cvm/csm/online?rid=1)에 로그인하여 대상 마이그레이션 소스가 있는 행 우측의 **마이그레이션 작업 생성**을 클릭합니다.
- 2. ‘마이그레이션 작업 생성’ 팝업 창에서 [마이그레이션 작업 설정 설명](https://intl.cloud.tencent.com/document/product/213/44338)을 참고하여 설정합니다.
+ i. [온라인 마이그레이션 콘솔](https://console.cloud.tencent.com/cvm/csm/online?rid=1)에 로그인하여 대상 마이그레이션 소스가 있는 행 우측의 **마이그레이션 작업 생성**을 클릭합니다.
+ ii. ‘마이그레이션 작업 생성’ 팝업 창에서 [마이그레이션 작업 설정 설명](https://intl.cloud.tencent.com/document/product/213/44338)을 참고하여 설정합니다.
 예를 들어 내부 네트워크를 사용하여 Linux 원본 호스트를 Tencent Cloud 상하이 리전으로 마이그레이션하고 대상 CVM 이미지를 생성하는 경우, 마이그레이션 작업 설정은 다음 이미지와 같습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
+
 7. 마이그레이션 작업을 실행합니다.
 <dx-alert infotype="explain" title="">
 실행 예정 작업은 이 단계를 건너뛸 수 있으며, 예약된 실행 시간에 도달하면 자동으로 마이그레이션 작업이 시작됩니다.
@@ -133,6 +138,7 @@ Import source server successfully 메시지가 표시되지 않으면 마이그�
 <img src="https://qcloudimg.tencent-cloud.cn/raw/7d2447ea7e6f348d779e41ad2c08fd93.png"/>
 마이그레이션 작업은 작업 행 오른쪽에 있는 <b>시작/재시도</b>를 클릭하고 팝업 확인 창에서 <b>확인</b>을 클릭하여 마이그레이션 작업을 시작합니다. 이 때 작업 상태가 ‘마이그레이션 중’으로 변경됩니다. 아래 이미지와 같습니다.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/bcbad8eb9a093814f18ff82aab7bc308.png"/>
+
 8. 마이그레이션 작업이 완료될 때까지 기다립니다.
 마이그레이션 작업의 상태가 ‘성공’이면 마이그레이션이 성공적으로 완료되었음을 나타냅니다. 아래 이미지와 같습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7beb11db18bd9913b44941dd05f8a4a4.png)
