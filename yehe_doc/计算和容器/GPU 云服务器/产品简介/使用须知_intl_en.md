@@ -1,8 +1,8 @@
->? GPU Cloud Computing allows you to purchase, manage, and maintain GPU instances in the same way as CVM. For more information, see [CVM Documentation](https://intl.cloud.tencent.com/document/product/213).
+>? Cloud GPU Service allows you to purchase, manage, and maintain GPU instances in the same way as CVM. For more information, see [CVM Documentation](https://intl.cloud.tencent.com/document/product/213).
 
 **Note the following** before using GPU instances.
 #### 1. Data Backup
-GPU Cloud Computing provides powerful computing capabilities. [GN8](https://intl.cloud.tencent.com/document/product/560/19700) instances support local SSDs. Please back up data periodically to ensure data security and prevent data loss.
+Cloud GPU Service provides powerful computing capabilities. [GN8](https://intl.cloud.tencent.com/document/product/560/19700) instances support local SSDs. Please back up data periodically to ensure data security and prevent data loss.
 You can also purchase elastic cloud disks separately to further enhance data security and reliability.
 #### 2. Renewal
 You will receive an alert 7 days before the expiry date of GPU instances. Make sure your account balance is sufficient. GPU instances will be shut down, disconnected and moved to the recycle bin after the expiration.
