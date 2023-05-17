@@ -23,7 +23,7 @@
  ![](https://main.qcloudimg.com/raw/5203e535f5ba947bb67c1f91dee52f1f.jpg)
 :::
 ::: 사설망 마이그레이션 모드[](id:intranetMigration)
-사용자의 소스 CVM이나 대상 CVM이 특정 사설망이나 VPC에 있다면 인터넷을 통해 소스 CVM을 대상 CVM에 바로 연결할 수 없으므로, 툴의 사설망 마이그레이션 모드로 마이그레이션할 수 있습니다. 사설망 마이그레이션을 사용하려면 [Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003) 또는 [Direct Connect](https://intl.cloud.tencent.com/zh/document/product/216) 등의 방법으로 소스 CVM과 대상 CVM 간의 통로를 생성해야 합니다.
+사용자의 소스 CVM이나 대상 CVM이 특정 사설망이나 VPC에 있다면 인터넷을 통해 소스 CVM을 대상 CVM에 바로 연결할 수 없으므로, 툴의 사설망 마이그레이션 모드로 마이그레이션할 수 있습니다. 사설망 마이그레이션을 사용하려면 [Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) 또는 [Direct Connect](https://intl.cloud.tencent.com/document/product/216) 등의 방법으로 소스 CVM과 대상 CVM 간의 통로를 생성해야 합니다.
 
 - [](id:Scenario1)**시나리오1**: (이 시나리오는 [툴 마이그레이션 사용](https://intl.cloud.tencent.com/document/product/213/35640)만 지원) 사용자의 소스 CVM 혹은 대상 CVM이 공중망에 액세스할 수 없다면, 게이트웨이 같이 공중망 액세스 기능을 갖춘 호스트에서 인터넷을 통해 Tencent Cloud API를 호출하여 마이그레이션을 요청한 다음, 터널을 연결하여 데이터를 대상 CVM으로 마이그레이션 할 수 있습니다. 이 시나리오에서는 소스 CVM과 대상 CVM의 공중망 액세스 기능이 필요하지 않습니다.
 ![](https://main.qcloudimg.com/raw/19300ddf557d4534b1cd77fcbf64ef6a.jpg)
