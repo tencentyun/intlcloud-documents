@@ -1,8 +1,8 @@
 ## Billing Description
 
-GPU Cloud Computing is **pay-as-you-go**. See [Instance Billing Modes](https://intl.cloud.tencent.com/document/product/213/2180) for details.
+Cloud GPU Service is **pay-as-you-go**. See [Instance Billing Modes](https://intl.cloud.tencent.com/document/product/213/2180) for details.
 A GPU instance consists of three major parts: network, storage (system disks and data disks), and computing (CPU, memory, and GPU). The prices shown in the table below are only for computing (CPU, memory, and GPU). For more information on network pricing, please see [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578). For more information on disk pricing, please see the [CBS Pricing List](https://intl.cloud.tencent.com/document/product/213/2255).
-GPU Cloud Computing is available in the following instance types: Computing GN6S, GN7, GN8, GN10X, and GN10Xp. You can select the GPU instances that best meet your use case according to the specifications and prices. For more information on GPU instance types, please see [NVIDIA GPU Instances](https://intl.cloud.tencent.com/document/product/560/19700).
+Cloud GPU Service is available in the following instance types: Computing GN6S, GN7, GN8, GN10X, and GN10Xp. You can select the GPU instances that best meet your use case according to the specifications and prices. For more information on GPU instance types, please see [NVIDIA GPU Instances](https://intl.cloud.tencent.com/document/product/560/19700).
 
 >!
 > The prices on this page are for Guangzhou Zone 3. Prices are different depending on the AZ and OS. Please refer to the prices on the [purchase page](https://www.tencentcloud.com/pricing/cvm).
