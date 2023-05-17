@@ -23,7 +23,7 @@
  ![](https://main.qcloudimg.com/raw/5203e535f5ba947bb67c1f91dee52f1f.jpg)
 :::
 ::: 内网迁移模式[](id:intranetMigration)
-如果您的源端主机或目标云服务器处于某个内网或 VPC 中，源端主机不能通过互联网直接与目标云服务器建立连接，则可以使用工具的内网迁移模式进行迁移。内网迁移模式需要通过使用如 [VPC 对等连接](https://intl.cloud.tencent.com/zh/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/zh/document/product/1037)、[云联网](https://intl.cloud.tencent.com/zh/document/product/1003) 或者 [专线接入](https://intl.cloud.tencent.com/zh/document/product/216) 等方式建立源端主机与目标云服务器的连接通道。
+如果您的源端主机或目标云服务器处于某个内网或 VPC 中，源端主机不能通过互联网直接与目标云服务器建立连接，则可以使用工具的内网迁移模式进行迁移。内网迁移模式需要通过使用如 [VPC 对等连接](https://intl.cloud.tencent.com/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[云联网](https://intl.cloud.tencent.com/document/product/1003) 或者 [专线接入](https://intl.cloud.tencent.com/document/product/216) 等方式建立源端主机与目标云服务器的连接通道。
 
 - [](id:Scenario1)**场景1**：（该场景仅支持 [使用工具迁移](https://intl.cloud.tencent.com/document/product/213/35640)）如果您的源端主机或目标云服务器不能访问公网，则可以先通过一台拥有公网访问能力的主机（如网关）以互联网方式访问腾讯云 API 发起迁移请求，再通过连接通道向目标云服务器传输数据进行迁移。此场景不要求对源端主机和目标云服务器具有公网访问能力。
 ![](https://main.qcloudimg.com/raw/19300ddf557d4534b1cd77fcbf64ef6a.jpg)
