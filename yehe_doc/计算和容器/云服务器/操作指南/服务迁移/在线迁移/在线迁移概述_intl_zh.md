@@ -27,4 +27,4 @@
 
 ## 常见问题
 
-详情请参见 [服务迁移相关](https://intl.cloud.tencent.com/document/product/213/32395)。
+详情请参见 [服务器迁移相关](https://intl.cloud.tencent.com/document/product/213/32395)。
