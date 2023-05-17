@@ -86,7 +86,7 @@ The user.json configuration file is described as below:
 	<td>DataDisks.Index</td>
 	<td>Integer</td>
 	<td>No</td>
-	<td>The serial number of data disk ranges from 1 to 20. If the value is <code>1</code>, it indicates that the data disk is the first one to be migrated and attached to the destination CVM; if the value is<code >2</code>, it indicates that the data disk is the second one to be migrated and attached to the destination CVM, and so on.</td>
+	<td>The serial number of data disk ranges from 1 to 20. If the value is <code>1</code>, it indicates that the data disk is the first one to be migrated and attached to the destination CVM; if the value is <code >2</code>, it indicates that the data disk is the second one to be migrated and attached to the destination CVM, and so on.</td>
   </tr>
   <tr>
 	<td>DataDisks.Size</td>
@@ -195,7 +195,7 @@ The client.json configuration file is described as below:
   </tr>
 </table>
 
-If neither the source server or destination CVM can access the public network directly, you can establish a connection between them through [VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003), or [Direct Connect](https://intl.cloud.tencent.com/zh/document/product/216) and then migrate via the private network mode. Determine the appropriate migration mode according to the network environment of your source server and destination CVM.
+If neither the source server or destination CVM can access the public network directly, you can establish a connection between them through [VPC Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003), or [Direct Connect](https://intl.cloud.tencent.com/document/product/216) and then migrate via the private network mode. Determine the appropriate migration mode according to the network environment of your source server and destination CVM.
 
 ### rsync\_excludes\_linux.txt file description[](id:_linuxTxtState)
 
@@ -368,7 +368,7 @@ After the tool runs, wait patiently for the migration to end. Generally, the con
 :::  Private network (Scenario 1)
 
 1. Establish a connection between the source server and the destination CVM.
-- Establish a connection between the source server and the destination CVM by using [VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), or [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003).
+- Establish a connection between the source server and the destination CVM by using [VPC Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), or [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003).
 2. Download or upload `go2tencentcloud.zip` to the source server and run the following command to enter the corresponding directory.
    i. Run the following commands in sequence to decompress `go2tencentcloud.zip` and enter the directory.
 ```shellsession
@@ -391,7 +391,7 @@ The files in the `go2tencentcloud` directory will not be migrated. Do not place 
 Configure the required parameters based on the description of [Parameters in the user.json file](#userJsonState).
 4. In the `client.json` file, configure the migration mode and other parameters.
    - Set the `Client.ToolMode` value in the `client.json` file to `true`, that is, select the migration via tool.
-   - Set the `Client.Net.Mode` in the `client.json` file to `1`, that is, select the [Private network migration mode: Scenario 1](https://intl.cloud.tencent.com/zh/ document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F ) to migrate. If necessary, configure other parameters based on the description of [Parameters in the client.json file](#clientJsonState).
+   - Set the `Client.Net.Mode` in the `client.json` file to `1`, that is, select the [Private network migration mode: Scenario 1](https://intl.cloud.tencent.com/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F ) to migrate. If necessary, configure other parameters based on the description of [Parameters in the client.json file](#clientJsonState).
 5. (Optional) Exclude files and directories on the source server that do not need to be migrated.
 Add files or directories that do not need to be migrated from the Linux source server to [rsync_excludes_linux.txt file](#_linuxTxtState).
 6. [](id:Scenario1_step06)Run the tool on a server (such as the gateway) that can access the public network.
@@ -443,7 +443,7 @@ If `Migrate successfully` is prompted, the entire migration task has been comple
 :::  Private network (Scenario 2)
 
 1. Establish a connection between the source server and the destination CVM.
-- Establish a connection between the source server and the destination CVM by using [VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), or [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003).
+- Establish a connection between the source server and the destination CVM by using [VPC Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), or [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003).
 2. Download or upload `go2tencentcloud.zip` to the source server and run the following command to enter the corresponding directory.
    i. Run the following commands in sequence to decompress `go2tencentcloud.zip` and enter the directory.
 ```shellsession
@@ -466,7 +466,7 @@ The files in the `go2tencentcloud` directory will not be migrated. Do not place 
 Configure the required parameters based on the [description of parameters in the user.json file](#userJsonState).
 4. In the `client.json` file, configure the migration mode and other parameters.
     - Set the `Client.ToolMode` value in the `client.json` file to `true`, that is, select the migration via tool.
-    - Set the `Client.Net.Mode` in the `client.json` file to `2`, that is, select the [Private network migration mode: Scenario 2](https://intl.cloud.tencent.com/zh/ document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F ) to migrate. If necessary, configure other parameters based on the description of [Parameters in the client.json file](#clientJsonState).
+    - Set the `Client.Net.Mode` in the `client.json` file to `2`, that is, select the [Private network migration mode: Scenario 2](https://intl.cloud.tencent.com/ document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F ) to migrate. If necessary, configure other parameters based on the description of [Parameters in the client.json file](#clientJsonState).
 5. (Optional) Exclude files and directories on the source server that do not need to be migrated.
 Add files or directories that do not need to be migrated from the Linux source server to [rsync_excludes_linux.txt file](#_linuxTxtState).
 6. Run the tool.
@@ -488,7 +488,7 @@ After the tool runs, wait patiently for the migration to end. Generally, the con
 :::
 :::  Private network (Scenario 3)
 1. Establish a connection between the source server and the destination CVM.
-- Establish a connection between the source server and the destination CVM by using [VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), or [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003).
+- Establish a connection between the source server and the destination CVM by using [VPC Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), or [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003).
 2. Download or upload `go2tencentcloud.zip` to the source server and run the following command to enter the corresponding directory.
     i. Run the following commands in sequence to decompress `go2tencentcloud.zip` and enter the directory.
 ```shellsession
@@ -511,7 +511,7 @@ The files in the `go2tencentcloud` directory will not be migrated. Do not place 
 Configure the required parameters based on the description of [Parameters in the user.json file](#userJsonState).
 4. In the `client.json` file, configure the migration mode and other parameters.
     - Set the `Client.ToolMode` value in the `client.json` file to `true`, that is, select the migration via tool.
-    - Set the `Client.Net.Mode` in the `client.json` file to `3`, that is, select the [Private network migration mode: Scenario 3](https://intl.cloud.tencent.com/zh/ document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F ) to migrate.
+    - Set the `Client.Net.Mode` in the `client.json` file to `3`, that is, select the [Private network migration mode: Scenario 3](https://intl.cloud.tencent.com/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F ) to migrate.
     - Set the `Client.Net.Proxy.Ip` and `Client.Net.Proxy.Port` in the `client.json` file to the IP address and port of the network proxy. If your network proxy needs to be verified, enter the username and password of the network proxy in `Client.Net.Proxy.User` and `Client.Net.Proxy.Password`. If not necessary, leave the two items empty. 
 		If necessary, configure other parameters based on the description of [Parameters in the client.json file](#clientJsonState).
 5. (Optional) Exclude files and directories on the source server that do not need to be migrated.
