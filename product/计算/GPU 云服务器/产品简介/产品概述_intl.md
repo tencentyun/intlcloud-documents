@@ -1,7 +1,7 @@
-GPU Cloud Computing is a fast, stable and elastic GPU-based computing service. It's applicable to training or reasoning of deep learning, graphics and image processing, and scientific computing, etc. GPU Cloud Computing is easily managed in the same way as the CVMs. With the powerful computing performance of processing massive data, it can effectively relieve the computing pressure of users and improve the efficiency and competitiveness of business processing.
+Cloud GPU Service is a fast, stable and elastic GPU-based computing service. It's applicable to training or reasoning of deep learning, graphics and image processing, and scientific computing, etc. Cloud GPU Service is easily managed in the same way as the CVMs. With the powerful computing performance of processing massive data, it can effectively relieve the computing pressure of users and improve the efficiency and competitiveness of business processing.
 
-## Why GPU Cloud Computing?
-Comparison between GPU Cloud Computing and Self-built GPU Computing:
+## Why Cloud GPU Service?
+Comparison between Cloud GPU Service and Self-built GPU Computing:
 <table class="npf-comparsion-table">
 	<colgroup>
 		<col class="col2" style="width: 6%;" />
@@ -14,7 +14,7 @@ Comparison between GPU Cloud Computing and Self-built GPU Computing:
 			<div>Advantages</div>
 			</th>
 			<th class="stress-item">
-			<div class="gradient ">GPU Cloud Computing</div>
+			<div class="gradient ">Cloud GPU Service</div>
 			</th>
 			<th>
 			<div>Self-built GPU Computing</div>
@@ -132,7 +132,7 @@ Comparison between GPU Cloud Computing and Self-built GPU Computing:
 </table>
 
 
-Comparison between GPU Cloud Computing and CPU Cloud Computing:
+Comparison between Cloud GPU Service and CPU Cloud Computing:
 ![](//mc.qcloudimg.com/static/img/ac3ea7314a71758f5c7caef08ec63692/image.jpg)
 
 <table class="table">
