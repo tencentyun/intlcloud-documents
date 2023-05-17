@@ -195,7 +195,7 @@ client.json 구성 파일은 다음과 같이 설명됩니다.
   </tr>
 </table>
 
-원본 서버 또는 대상 CVM 모두 공용 네트워크에 직접 액세스할 수 없는 경우 [VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connection](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003) 또는 [Direct Connect](https://intl.cloud.tencent.com/zh/document/product/216)를 통해 연결을 설정한 다음 사설 네트워크 모드를 통해 마이그레이션할 수 있습니다. 소스 서버 및 대상 CVM의 네트워크 환경에 따라 적절한 마이그레이션 모드를 결정합니다.
+원본 서버 또는 대상 CVM 모두 공용 네트워크에 직접 액세스할 수 없는 경우 [VPC Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connection](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) 또는 [Direct Connect](https://intl.cloud.tencent.com/document/product/216)를 통해 연결을 설정한 다음 사설 네트워크 모드를 통해 마이그레이션할 수 있습니다. 소스 서버 및 대상 CVM의 네트워크 환경에 따라 적절한 마이그레이션 모드를 결정합니다.
 
 ###  rsync\_excludes\_linux.txt 파일 설명[](id:_linuxTxtState)
 
@@ -368,7 +368,7 @@ sudo ./go2tencentcloud_x64 --no-console
 :::  사설 네트워크 마이그레이션 시나리오 1
 
 1. 소스 CVM과 타깃 CVM의 연결 터널을 생성합니다.
-[Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003) 등의 방법으로 원본 호스트와 타깃 CVM의 연결 터널을 생성합니다.
+[Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) 등의 방법으로 원본 호스트와 타깃 CVM의 연결 터널을 생성합니다.
 2. 마이그레이션 툴 go2tencentcloud.zip을 원본 호스트에 다운로드하거나 업로드하고 다음 명령을 실행하여 해당 디렉터리로 들어갑니다.
    1. 다음 명령어를 순서대로 실행하여 go2tencentcloud.zip의 압축을 풀고 디렉터리로 들어갑니다.
 ```shellsession
@@ -391,7 +391,7 @@ cd go2tencentcloud-linux
 [user.json 파일 매개변수 설명](#userJsonState)에 따라 필수 항목과 필요 항목에 대한 값을 설정합니다.
 4. `client.json` 파일에 마이그레이션 모드와 기타 항목을 설정합니다.
    - `client.json` 파일의 `Client.ToolMode` 값을 `true`로 설정하여 툴 모드 마이그레이션을 식별합니다.
-   - `client.json` 파일의 `Client.Net.Mode` 항목을 `1`, 즉 [사설 네트워크 마이그레이션 모드: 시나리오 1](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)의 마이그레이션으로 설정합니다. 또한, 다른 항목을 설정해야 하는 경우 [client.json 파일 매개변수 설명](#clientJsonState)에 따라 구성하십시오.
+   - `client.json` 파일의 `Client.Net.Mode` 항목을 `1`, 즉 [사설 네트워크 마이그레이션 모드: 시나리오 1](https://intl.cloud.tencent.com/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)의 마이그레이션으로 설정합니다. 또한, 다른 항목을 설정해야 하는 경우 [client.json 파일 매개변수 설명](#clientJsonState)에 따라 구성하십시오.
 5. (옵션)원본 호스트에서 마이그레이션하지 않을 파일 또는 디렉터리를 제외합니다.
 마이그레이션할 필요가 없는 파일이나 디렉터리가 Linux 원본 호스트에 있는 경우 [rsync_excludes_linux.txt 파일](#_linuxTxtState)에 파일이나 디렉터리를 추가할 수 있습니다.
 6. [](id:Scenario1_step06)게이트웨이같이 공용 네트워크에 액세스할 수 있는 호스트에서 툴을 실행합니다.
@@ -443,7 +443,7 @@ sudo ./go2tencentcloud_x64 --no-console
 :::  사설 네트워크 마이그레이션 시나리오 2
 
 1. 소스 CVM과 타깃 CVM의 연결 터널을 생성합니다.
-[Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003) 등의 방법으로 원본 호스트와 타깃 CVM의 연결 터널을 생성합니다.
+[Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) 등의 방법으로 원본 호스트와 타깃 CVM의 연결 터널을 생성합니다.
 2. 마이그레이션 툴 go2tencentcloud.zip을 원본 호스트에 다운로드하거나 업로드하고 다음 명령을 실행하여 해당 디렉터리로 들어갑니다.
    1. 다음 명령어를 순서대로 실행하여 go2tencentcloud.zip의 압축을 풀고 디렉터리로 들어갑니다.
 ```shellsession
@@ -466,7 +466,7 @@ cd go2tencentcloud-linux
 [user.json 파일 매개변수 설명](#userJsonState)에 따라 필수 항목과 필요 항목에 대한 값을 설정합니다.
 4. `client.json` 파일에 마이그레이션 모드와 기타 항목을 설정합니다.
     - `client.json` 파일의 `Client.ToolMode` 값을 `true`로 설정하여 툴 모드 마이그레이션을 식별합니다.
-    - `client.json` 파일의 `Client.Net.Mode` 항목을 `2`, 즉 [사설 네트워크 마이그레이션 모드: 시나리오 2](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)의 마이그레이션으로 설정합니다. 또한, 다른 항목을 설정해야 하는 경우 [client.json 파일 매개변수 설명](#clientJsonState)에 따라 구성하십시오.
+    - `client.json` 파일의 `Client.Net.Mode` 항목을 `2`, 즉 [사설 네트워크 마이그레이션 모드: 시나리오 2](https://intl.cloud.tencent.com/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)의 마이그레이션으로 설정합니다. 또한, 다른 항목을 설정해야 하는 경우 [client.json 파일 매개변수 설명](#clientJsonState)에 따라 구성하십시오.
 5. (옵션)원본 호스트에서 마이그레이션하지 않을 파일 또는 디렉터리를 제외합니다.
 마이그레이션할 필요가 없는 파일이나 디렉터리가 Linux 원본 호스트에 있는 경우 [rsync_excludes_linux.txt 파일](#_linuxTxtState)에 파일이나 디렉터리를 추가할 수 있습니다.
 6. 툴을 실행합니다.
@@ -488,7 +488,7 @@ sudo ./go2tencentcloud_x64 --no-console
 :::
 :::  사설 네트워크 마이그레이션 시나리오 3
 1. 소스 CVM과 타깃 CVM의 연결 터널을 생성합니다.
-[Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003) 등의 방법으로 원본 호스트와 타깃 CVM의 연결 터널을 생성합니다.
+[Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) 등의 방법으로 원본 호스트와 타깃 CVM의 연결 터널을 생성합니다.
 2. 마이그레이션 툴 go2tencentcloud.zip을 원본 호스트에 다운로드하거나 업로드하고 다음 명령을 실행하여 해당 디렉터리로 들어갑니다.
     1. 다음 명령어를 순서대로 실행하여 go2tencentcloud.zip의 압축을 풀고 디렉터리로 들어갑니다.
 ```shellsession
@@ -511,7 +511,7 @@ cd go2tencentcloud-linux
 [user.json 파일 매개변수 설명](#userJsonState)에 따라 필수 항목과 필요 항목에 대한 값을 설정합니다.
 4. `client.json` 파일에 마이그레이션 모드와 기타 항목을 설정합니다.
     - `client.json` 파일의 `Client.ToolMode` 값을 `true`로 설정하여 툴 모드 마이그레이션을 식별합니다.
-    - `client.json` 파일의 `Client.Net.Mode` 항목을 `3`, 즉 [사설 네트워크 마이그레이션 모드: 시나리오 3](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)의 마이그레이션으로 설정합니다.
+    - `client.json` 파일의 `Client.Net.Mode` 항목을 `3`, 즉 [사설 네트워크 마이그레이션 모드: 시나리오 3](https://intl.cloud.tencent.com/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)의 마이그레이션으로 설정합니다.
     - `client.json` 파일의 `Client.Net.Proxy.Ip` 및 `Client.Net.Proxy.Port` 항목을 네트워크 프록시의 IP 주소와 포트로 설정합니다. 네트워크 프록시에 인증이 필요한 경우 `Client.Net.Proxy.User` 및 `Client.Net.Proxy.Password`에 네트워크 프록시의 사용자 이름과 비밀번호를 입력하십시오. 인증이 필요하지 않으면 공백으로 두십시오. 
 		또한, 다른 항목을 설정해야 하는 경우 [client.json 파일 매개변수 설명](#clientJsonState)에 따라 구성하십시오.
 5. (옵션)원본 호스트에서 마이그레이션하지 않을 파일 또는 디렉터리를 제외합니다.
