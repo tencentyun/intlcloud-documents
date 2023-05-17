@@ -86,7 +86,7 @@ user.json設定ファイルの説明は下表のとおりです：
 	<td>DataDisks.Index</td>
 	<td>Integer</td>
 	<td>いいえ</td>
-	<td>データディスクの番号（数値の範囲：[1,20]）です。数値<code>1</code>は、このデータディスクが移行先CVMにマウントされた最初のデータディスクにマイグレーションされることを表します。数値<code>2</code>は、移行先CVMにマウントされた2番目のデータディスクにマイグレーションされることを表します。これにより類推します。</td>
+	<td>データディスクの番号（数値の範囲：[1,20]）です。数値<code>1</code>は、このデータディスクが移行先CVMにマウントされた最初のデータディスクにマイグレーションされることを表します。数値 <code>2</code>は、移行先CVMにマウントされた2番目のデータディスクにマイグレーションされることを表します。これにより類推します。</td>
   </tr>
   <tr>
 	<td>DataDisks.Size</td>
@@ -195,7 +195,7 @@ client.json設定ファイルの一部の説明は下表のとおりです：
   </tr>
 </table>
 
-移行元サーバーまたは移行先CVMのいずれかがパブリックネットワークに直接アクセスできない場合、まず[VPC Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553)、[VPN Connection](https://intl.cloud.tencent.com/zh/document/product/1037)、[CCN](https://intl.cloud.tencent.com/zh/document/product/1003)または[Direct Connection](https://intl.cloud.tencent.com/zh/document/product/216)などの方法で接続チャネルを確立してから、プライベートネットワークモードでのマイグレーションを実施する方法を選択することができます。移行元サーバーと移行先CVMのネットワーク環境に応じて、適切なマイグレーションモードを決定してください。
+移行元サーバーまたは移行先CVMのいずれかがパブリックネットワークに直接アクセスできない場合、まず[VPC Peering Connection](https://intl.cloud.tencent.com/document/product/553)、[VPN Connection](https://intl.cloud.tencent.com/document/product/1037)、[CCN](https://intl.cloud.tencent.com/document/product/1003)または[Direct Connection](https://intl.cloud.tencent.com/document/product/216)などの方法で接続チャネルを確立してから、プライベートネットワークモードでのマイグレーションを実施する方法を選択することができます。移行元サーバーと移行先CVMのネットワーク環境に応じて、適切なマイグレーションモードを決定してください。
 
 ###  rsync\_excludes\_linux.txtファイル説明[](id:_linuxTxtState)
 
@@ -368,7 +368,7 @@ sudo ./go2tencentcloud_x64 --no-console
 :::  プライベートネットワークマイグレーションシナリオ1
 
 1. 移行元サーバーと移行先CVMの間に接続チャネルを確立します。
-[VPN Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553) / [VPN Connection](https://intl.cloud.tencent.com/zh/document/product/1037) / [CCN](https://intl.cloud.tencent.com/zh/document/product/1003) などの方法によって移行元サーバーと移行先CVMの間に接続チャネルを確立します。
+[VPN Peering Connection](https://intl.cloud.tencent.com/document/product/553) / [VPN Connection](https://intl.cloud.tencent.com/document/product/1037) / [CCN](https://intl.cloud.tencent.com/document/product/1003) などの方法によって移行元サーバーと移行先CVMの間に接続チャネルを確立します。
 2. マイグレーションツールgo2tencentcloud.zipをダウンロードするか、または移行元サーバーにアップロードし、次のコマンドを実行して対応するディレクトリに進みます。
    1. 次のコマンドを順に実行し、go2tencentcloud.zipを解凍してディレクトリに進みます。
 ```shellsession
@@ -391,7 +391,7 @@ cd go2tencentcloud-linux
 [user.jsonファイルのパラメータの説明](#userJsonState)に従って、必要な項目と必要な値を設定してください。
 4. `client.json`ファイルでマイグレーションモードとその他の項目を設定します。
    - `client.json`ファイルの`Client.ToolMode`の値を`true`に設定すると、ツールマイグレーションモードが標識されます。
-   - `client.json`ファイルの`Client.Net.Mode`の項目を`1`に設定すると、[プライベートネットワークマイグレーションモード：シナリオ1](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)のマイグレーションを実行します。また、その他の設定が必要な場合は、[client.jsonファイルパラメータの説明](#clientJsonState)に従って設定してください。
+   - `client.json`ファイルの`Client.Net.Mode`の項目を`1`に設定すると、[プライベートネットワークマイグレーションモード：シナリオ1](https://intl.cloud.tencent.com/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)のマイグレーションを実行します。また、その他の設定が必要な場合は、[client.jsonファイルパラメータの説明](#clientJsonState)に従って設定してください。
 5. （オプション）移行元サーバー上でマイグレーション不要のファイルまたはディレクトリを削除します。
 Linux移行元サーバー上でマイグレーション不要のファイルおよびディレクトリがある場合、ファイルおよびディレクトリを[rsync_excludes_linux.txtファイル](#_linuxTxtState)に追加できます。
 6. [](id:Scenario1_step06)パブリックネットワークにアクセスできるサーバー（ゲートウェイなど）上でツールを実行します。
@@ -443,7 +443,7 @@ sudo ./go2tencentcloud_x64 --no-console
 :::  プライベートネットワークマイグレーションシナリオ2
 
 1. 移行元サーバーと移行先CVMの間に接続チャネルを確立します。
-[VPN Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553) / [VPN Connection](https://intl.cloud.tencent.com/zh/document/product/1037) / [CCN](https://intl.cloud.tencent.com/zh/document/product/1003) などの方法によって移行元サーバーと移行先CVMの間に接続チャネルを確立します。
+[VPN Peering Connection](https://intl.cloud.tencent.com/document/product/553) / [VPN Connection](https://intl.cloud.tencent.com/document/product/1037) / [CCN](https://intl.cloud.tencent.com/document/product/1003) などの方法によって移行元サーバーと移行先CVMの間に接続チャネルを確立します。
 2. マイグレーションツールgo2tencentcloud.zipをダウンロードするか、または移行元サーバーにアップロードし、次のコマンドを実行して対応するディレクトリに進みます。
    1. 次のコマンドを順に実行し、go2tencentcloud.zipを解凍してディレクトリに進みます。
 ```shellsession
@@ -466,7 +466,7 @@ cd go2tencentcloud-linux
 [user.jsonファイルのパラメータの説明](#userJsonState)に従って、必要な項目と必要な値を設定してください。
 4. `client.json`ファイルでマイグレーションモードとその他の項目を設定します。
     - `client.json`ファイルの`Client.ToolMode`の値を`true`に設定すると、ツールマイグレーションモードが標識されます。
-    - `client.json`ファイルの`Client.Net.Mode`の項目を`2`に設定すると、[プライベートネットワークマイグレーションモード：シナリオ2](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)のマイグレーションを実行します。また、その他の設定が必要な場合は、[client.jsonファイルパラメータの説明](#clientJsonState)に従って設定してください。
+    - `client.json`ファイルの`Client.Net.Mode`の項目を`2`に設定すると、[プライベートネットワークマイグレーションモード：シナリオ2](https://intl.cloud.tencent.com/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)のマイグレーションを実行します。また、その他の設定が必要な場合は、[client.jsonファイルパラメータの説明](#clientJsonState)に従って設定してください。
 5. （オプション）移行元サーバー上でマイグレーション不要のファイルまたはディレクトリを削除します。
 Linux移行元サーバー上でマイグレーション不要のファイルおよびディレクトリがある場合、ファイルおよびディレクトリを[rsync_excludes_linux.txtファイル](#_linuxTxtState)に追加できます。
 6. ツールを実行する。
@@ -488,7 +488,7 @@ sudo ./go2tencentcloud_x64 --no-console
 :::
 :::  プライベートネットワークマイグレーションシナリオ3
 1. 移行元サーバーと移行先CVMの間に接続チャネルを確立します。
-[VPN Peering Connection](https://intl.cloud.tencent.com/zh/document/product/553) / [VPN Connection](https://intl.cloud.tencent.com/zh/document/product/1037) / [CCN](https://intl.cloud.tencent.com/zh/document/product/1003) などの方法によって移行元サーバーと移行先CVMの間に接続チャネルを確立します。
+[VPN Peering Connection](https://intl.cloud.tencent.com/document/product/553) / [VPN Connection](https://intl.cloud.tencent.com/document/product/1037) / [CCN](https://intl.cloud.tencent.com/document/product/1003) などの方法によって移行元サーバーと移行先CVMの間に接続チャネルを確立します。
 2. マイグレーションツールgo2tencentcloud.zipをダウンロードするか、または移行元サーバーにアップロードし、次のコマンドを実行して対応するディレクトリに進みます。
     1. 次のコマンドを順に実行し、go2tencentcloud.zipを解凍してディレクトリに進みます。
 ```shellsession
@@ -511,7 +511,7 @@ cd go2tencentcloud-linux
 [user.jsonファイルのパラメータの説明](#userJsonState)に従って、必要な項目と必要な値を設定してください。
 4. `client.json`ファイルでマイグレーションモードとその他の項目を設定します。
     - `client.json`ファイルの`Client.ToolMode`の値を`true`に設定すると、ツールマイグレーションモードが標識されます。
-    - `client.json`ファイルの`Client.Net.Mode`の項目を`3`に設定すると、[プライベートネットワークマイグレーションモード：シナリオ3](https://intl.cloud.tencent.com/zh/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)のマイグレーションを実行します。
+    - `client.json`ファイルの`Client.Net.Mode`の項目を`3`に設定すると、[プライベートネットワークマイグレーションモード：シナリオ3](https://intl.cloud.tencent.com/document/product/213/44340#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BF.81.E7.A7.BB.E6.A8.A1.E5.BC.8F)のマイグレーションを実行します。
     - `client.json`ファイルの`Client.Net.Proxy.Ip`と`Client.Net.Proxy.Port`の項目をネットワークプロキシのIPアドレスとポートに設定します。ネットワークプロキシに認証が必要である場合、`Client.Net.Proxy.User`と`Client.Net.Proxy.Password`の項目にネットワークプロキシのユーザー名とパスワードを記入してください。認証が不要な場合は、空白のままにします。 
 		また、その他の設定が必要な場合は、[client.jsonファイルパラメータの説明](#clientJsonState)に従って設定してください。
 5. （オプション）移行元サーバー上でマイグレーション不要のファイルまたはディレクトリを削除します。
