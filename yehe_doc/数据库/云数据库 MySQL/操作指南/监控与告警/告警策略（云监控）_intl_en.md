@@ -1,8 +1,8 @@
-This document describes how to create alarm policies and associate alarm objects in the Cloud Monitor console.
+This document describes how to create alarm policies and associate alarm objects in the Tencent Cloud Observability Platform (TCOP) console.
 
 ## Overview
 You can create alarm policies to trigger alarms and send alarm notifications when the Tencent Cloud service status changes. The created alarm policies can determine whether an alarm needs to be triggered according to the difference between the monitoring metric value and the given threshold at intervals.
-You can take appropriate precautionary or remedial measures in a timely manner when the alarm is triggered by changed product status. Therefore, properly created alarm policies can help you improve the robustness and reliability of your applications. For more information on alarms, see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916) in Cloud Monitor.
+You can take appropriate precautionary or remedial measures in a timely manner when the alarm is triggered by changed product status. Therefore, properly created alarm policies can help you improve the robustness and reliability of your applications. For more information on alarms, see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916) in TCOP.
 
 To send an alarm for a specific status of a product, you need to create an alarm policy at first. An alarm policy is composed of three compulsory components, that is, the name, type and alarm triggering conditions. Each alarm policy is a set of alarm triggering conditions with the logical relationship "OR", that is, as long as one of the conditions is met, an alarm will be triggered. The alarm will be sent to all users associated with the alarm policy. Upon receiving the alarm, the user can view the alarm and take appropriate actions in time.
 
@@ -10,7 +10,7 @@ To send an alarm for a specific status of a product, you need to create an alarm
 
 ## Directions
 ### Creating alarm policy
-1. Log in to the [CM console](https://console.cloud.tencent.com/monitor/overview) and select **Alarm Configuration** > **Alarm Policy** on the left sidebar.
+1. Log in to the [TCOP console](https://console.cloud.tencent.com/monitor/overview) and select **Alarm Configuration** > **Alarm Policy** on the left sidebar.
 2. In the alarm policy list, click **Create**.
 3. On the **Create Alarm Policy** page, set the policy name, policy type, alarm object, and trigger condition.
  - **Policy Type**: It divides into source monitoring and replica monitoring, which are applicable to different types of instances.
