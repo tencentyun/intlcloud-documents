@@ -722,3 +722,4 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 61.[低代码互动课堂](https://www.tencentcloud.com/document/product/1168/54190)。
 62.[容器安全服务](https://www.tencentcloud.com/document/product/1163/54257)。
 63.[云拨测](https://www.tencentcloud.com/document/product/1169/54988)。
+64.[日志服务](https://www.tencentcloud.com/document/product/614/55081)。
