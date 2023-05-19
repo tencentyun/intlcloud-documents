@@ -62,7 +62,7 @@
 
 ## 步骤3：使用 Demo 体验
 
-您可以分别使用 [Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)、[Android](https://github.com/LiteAVSDK/Player_Android) 和 [iOS](https://github.com/LiteAVSDK/Player_iOS)  三端的播放器 Demo 进行验证，具体请参考 Demo 的源码。
+您可以分别使用 [Web](https://tcplayer.vcube.tencent.com/intl/index.html)、[Android](https://github.com/LiteAVSDK/Player_Android) 和 [iOS](https://github.com/LiteAVSDK/Player_iOS)  三端的播放器 Demo 进行验证，具体请参考 Demo 的源码。
 >? 在控制台的 **媒资管理** >[ **视频管理** ](https://console.cloud.tencent.com/vod/media)> **播放器预览** 中，可以获取预览视频对应的 Web 播放器源码，供您直接参考使用。
 <img src="https://main.qcloudimg.com/raw/c5756910c7958aae198804c91b76a89e.png" width="500" />
 
