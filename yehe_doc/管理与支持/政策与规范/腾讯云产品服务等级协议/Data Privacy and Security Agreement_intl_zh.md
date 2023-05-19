@@ -166,6 +166,7 @@
 62.[低代码互动课堂](https://www.tencentcloud.com/document/product/1168/54191)。
 63.[容器安全服务](https://www.tencentcloud.com/document/product/1163/54258)。
 64.[云拨测](https://www.tencentcloud.com/document/product/1169/54989)。
+65.[日志服务](https://www.tencentcloud.com/ind/document/product/614/55082)。
 
 ## 特定司法管辖区要求
 
