@@ -18,7 +18,7 @@
 <td>公有云的计算资源，包括 CPU、内存、操作系统、网络、磁盘等最基础的计算组件。</td>
 </tr>
 <tr>
-<td><b><a href="https://www.tencentcloud.com/document/product/1171/52404">实例类型</a></b></td>
+<td><b><a href="https://www.tencentcloud.com/document/product/1171/52405">实例规格</a></b></td>
 <td>腾讯云提供的云服务器的各种不同 CPU、内存、存储和网络配置。</td>
 </tr>
 <tr>
@@ -78,8 +78,6 @@
 </dx-alert>
 
 
-## 实例类型
-有关裸金属云服务器的实例规格说明，请参考 [实例类型](https://www.tencentcloud.com/document/product/1171/52404)。
 
 ## 计费概述
 有关裸金属云服务器的计费相关说明，请参考 [计费概述](https://www.tencentcloud.com/document/product/1171/52407)。
