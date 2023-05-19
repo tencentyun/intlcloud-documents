@@ -197,12 +197,12 @@ The nodes are as described below:
 | Node Name (Keyword) | Parent Node | Description |
 | :------------------ | :---------------------------- | :------------------------------------- |
 | WatermarkTemplateId | Response.JobsDetail.Operation | Watermark template ID                            |
-| Watermark             | Response.JobsDetail.Operation | Same as `Request.Operation.Watermark` in the request
-| Output | Response.JobsDetail.Operation | Same as `Request.Operation.Output` in the request
-| MediaInfo | Response.JobsDetail.Operation | Media information of the output file, which will not be returned when the job is not completed
-| MediaResult        | Response.JobsDetail.Operation | Basic information of the output file, which will not be returned when the job is not completed
-| UserData           | Response.JobsDetail.Operation | The user information passed through
-| JobLevel    | Response.JobsDetail.Operation | Job priority
+| Watermark             | Response.JobsDetail.Operation | Same as `Request.Operation.Watermark` in the request |
+| Output | Response.JobsDetail.Operation | Same as `Request.Operation.Output` in the request |
+| MediaInfo | Response.JobsDetail.Operation | Media information of the output file, which will not be returned when the job is not completed |
+| MediaResult        | Response.JobsDetail.Operation | Basic information of the output file, which will not be returned when the job is not completed |
+| UserData           | Response.JobsDetail.Operation | The user information passed through |
+| JobLevel    | Response.JobsDetail.Operation | Job priority |
 
 `MediaInfo` has the following sub-nodes:
 Same as the `Response.MediaInfo` node in the [Getting Media File Information](https://www.tencentcloud.com/document/product/1045/43732) API.
