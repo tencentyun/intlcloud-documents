@@ -37,7 +37,7 @@ This document describes how to create a network quality test task to monitor the
 </tr>
 <tr>
 <td>Task tag</td>
-<td>CAT can be used with the Tencent Cloud resource tag feature to perform tag-based sub-account authorization and cost allocation. For more information, see <a href="https://www.tencentcloud.com/document/product/1169/52017">Resource Tag</a>.</td>
+<td>CAT can be used with the Tencent Cloud resource tag feature to perform tag-based sub-account authorization and cost allocation.</td>
 </tr>
 </table>
 
