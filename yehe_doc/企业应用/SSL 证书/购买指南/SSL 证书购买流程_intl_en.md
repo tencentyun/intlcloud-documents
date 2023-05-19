@@ -7,7 +7,7 @@ We recommend that you take the time to understand the differences between the di
 ![](https://main.qcloudimg.com/raw/6e6fe4d37a533f2b81f1f70abf76ef8f.png)
    
 
-   > **Notes**
+   >?
    >   - If you are not familiar with certificate types and brands, click **Quick Configuration** to quickly purchase a certificate recommended by the system.
    >   - Click **Advanced Settings** and set **Project** and **Tag** to better manage existing Tencent Cloud resources by category. For detailed directions on how to add a tag, see [Querying Resources by Tag](https://intl.cloud.tencent.com/document/product/651/32582).
 
@@ -56,7 +56,7 @@ We recommend that you take the time to understand the differences between the di
 Due to changes in Apple and Google root store policies, newly issued SSL/TLS certificates with a validity period greater than 13 months (397 days) have been prohibited by policy since September 1, 2020. Therefore, global CAs have ceased issuing such certificates since September 1, 2020.
 **Currently, only certain multi-year SSL certificates are available from Tencent Cloud (others available are all SSL certificates with a validity period of 13 months). Within 30 days before expiration of your current multi-year certificate, Tencent Cloud will automatically apply for a new one for you, which will be automatically issued upon CA approval.**
 
-> **Notes**
+>?
 > 
 > - Available multi-year SSL certificate brands and types are as displayed on the purchase page.
 > - If the original certificate is installed at the server website, you need to replace it with a newly issued one as instructed in [Selecting an Installation Type for an SSL Certificate](https://intl.cloud.tencent.com/document/product/1007/30173).
@@ -87,7 +87,7 @@ After selecting the brand, model, supported domain name, and certificate validit
 2. After your application is submitted, it will be reviewed. After the review is successfully completed, the certificate will be issued. For more information, please see [The Process of Submitting Materials for OV/EV SSL Certificates](https://intl.cloud.tencent.com/document/product/1007/30160).
    
 
-   > **Notes**
+   >?
    > 
    >   - If you use the approved organization and administrator information in [**My Profile**](https://console.cloud.tencent.com/ssl/info), the confirmation letter is not required.
    >   - For GlobalSign certificates, the confirmation letter still needs to be uploaded when you submit the information.
@@ -95,7 +95,7 @@ After selecting the brand, model, supported domain name, and certificate validit
 
 #### DV SSL certificates
 
-After purchasing the certificate, log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/certoverview) and select **Pending Submission** to enter the management page. Then, submit the information and complete the domain ownership verification, after which the CA will issue the certificate. For more information, see [Information Submission Process for DV SSL Certificates](https://www.tencentcloud.com/document/product/1007/53628).
+After purchasing the certificate, log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/certoverview) and select **Pending Submission** to enter the management page. Then, submit the information and complete the domain ownership verification, after which the CA will issue the certificate. 
 
 #### Free DV SSL certificates
 
