@@ -18,7 +18,7 @@ Before using CBM, you should familiarize yourself with the following concepts:
 <td>A public cloud computing resource containing basic computing components such as CPU, memory, operating system, network, and disk.</td>
 </tr>
 <tr>
-<td><b><a href="https://www.tencentcloud.com/document/product/1171/52404">Instance type</a></b></td>
+<td><b><a href="https://www.tencentcloud.com/document/product/1171/52405">Instance specification</a></b></td>
 <td>Different CPU, memory, storage, and network configurations coming with different Tencent Cloud servers.</td>
 </tr>
 <tr>
@@ -78,8 +78,6 @@ If you have never used CBM, you can try it out as instructed in [Getting Started
 </dx-alert>
 
 
-## Instance types
-For more information on the CBM instance specification, see [Instance Types](https://www.tencentcloud.com/document/product/1171/52404).
 
 ## Billing overview
 For CBM billing details, see [Billing Overview](https://www.tencentcloud.com/document/product/1171/52407).
