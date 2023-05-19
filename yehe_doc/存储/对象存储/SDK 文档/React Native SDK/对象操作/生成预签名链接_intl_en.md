@@ -42,7 +42,7 @@ try {
 
 | Parameter | Description | Type | Required |
 | ---------- | ------------------------------------------------------------ | ------ | ------ |
-| bucket | Bucket name, formatted as `BucketName-APPID`. For more information, see [Bucket Overview](https://www.tencentcloud.com/document/product/436/13312). | String |
+| bucket | Bucket name, formatted as `BucketName-APPID`. For more information, see [Bucket Overview](https://www.tencentcloud.com/document/product/436/13312). | String |Yes |
 | cosPath | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, its object key is `doc/picture.jpg` | String | Yes |
 | signValidTime | Signature validity period, in seconds. Note that this is the signature validity period. You need to ensure the key validity period by yourself. | Int | No |
 | signHost | Whether to include the Host header in the signature. You can choose not to include it, but the request may fail or vulnerabilities may occur. | Bool | No |
