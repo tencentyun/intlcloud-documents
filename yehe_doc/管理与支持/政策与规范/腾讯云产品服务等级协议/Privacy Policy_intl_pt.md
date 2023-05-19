@@ -726,3 +726,4 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 61.[Low-code Interactive Classroom](https://www.tencentcloud.com/document/product/1168/54190).
 62.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54257).
 63.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54988).
+64.[Cloud Log Service](https://www.tencentcloud.com/document/product/614/55081).
