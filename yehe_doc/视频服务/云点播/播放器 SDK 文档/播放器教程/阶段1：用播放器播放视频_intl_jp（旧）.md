@@ -62,7 +62,7 @@ VODをアクティブにする必要があります。手順は以下のとお�
 
 ## ステップ3： Demoを使用して体験
 
-それぞれ、[Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)、[Android](https://github.com/LiteAVSDK/Player_Android) と[iOS](https://github.com/LiteAVSDK/Player_iOS)という3つの端末のプレーヤーDemoで検証を行えます。詳細については、Demoのソース コードをご参照ください。
+それぞれ、[Web](https://tcplayer.vcube.tencent.com/intl/index.html)、[Android](https://github.com/LiteAVSDK/Player_Android) と[iOS](https://github.com/LiteAVSDK/Player_iOS)という3つの端末のプレーヤーDemoで検証を行えます。詳細については、Demoのソース コードをご参照ください。
 >? コンソールの**メディア資産管理** >[**ビデオ管理**](https://console.cloud.tencent.com/vod/media)> **プレーヤープレビュー**では、プレビュービデオに対応するWebプレーヤーのソースコードを取得し、直接参照、使用することができます。
 <img src="https://main.qcloudimg.com/raw/c5756910c7958aae198804c91b76a89e.png" width="500" />
 
