@@ -62,7 +62,7 @@ In the previous step, you have uploaded and processed the video. Now, you can us
 
 ## Step 3. Use a demo for verification
 
-You can use the player demos for [web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html), [Android](https://github.com/LiteAVSDK/Player_Android), and [iOS](https://github.com/LiteAVSDK/Player_iOS) for verification. For more information, see the demo source code.
+You can use the player demos for [web](https://tcplayer.vcube.tencent.com/intl/index.html), [Android](https://github.com/LiteAVSDK/Player_Android), and [iOS](https://github.com/LiteAVSDK/Player_iOS) for verification. For more information, see the demo source code.
 >? In **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** > **Player Preview** in the console, you can get the corresponding web player source code for video preview for your reference.
 <img src="https://main.qcloudimg.com/raw/c5756910c7958aae198804c91b76a89e.png" width="500" />
 
