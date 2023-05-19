@@ -62,7 +62,7 @@ VOD를 활성화하려면 다음 단계를 따르십시오.
 
 ## 3단계: Demo 체험
 
-[Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html), [Android](https://github.com/LiteAVSDK/Player_Android) 및 [iOS](https://github.com/LiteAVSDK/Player_iOS) Player Demo를 사용하여 확인을 진행할 수 있습니다. 자세한 내용은 Demo 소스 코드를 참고하십시오.
+[Web](https://tcplayer.vcube.tencent.com/intl/index.html), [Android](https://github.com/LiteAVSDK/Player_Android) 및 [iOS](https://github.com/LiteAVSDK/Player_iOS) Player Demo를 사용하여 확인을 진행할 수 있습니다. 자세한 내용은 Demo 소스 코드를 참고하십시오.
 >?콘솔의 **미디어 자산** >[ **비디오 관리** ](https://console.cloud.tencent.com/vod/media)> **Player 미리 보기**에서 참고용으로 비디오 미리 보기에 해당하는 Web 플레이어 소스 코드를 얻을 수 있습니다.
 <img src="https://main.qcloudimg.com/raw/c5756910c7958aae198804c91b76a89e.png" width="500" />
 
