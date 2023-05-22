@@ -26,6 +26,7 @@ delete_object(Bucket, Key, **kwargs)
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
@@ -57,6 +58,7 @@ In COS, a directory is a special object with a path ending in "/". You can direc
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
@@ -89,6 +91,7 @@ from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
@@ -173,6 +176,7 @@ delete_objects(Bucket, Delete={}, **kwargs)
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
@@ -290,6 +294,7 @@ from qcloud_cos import CosS3Client
 from qcloud_cos.cos_threadpool import SimpleThreadPool
 import os
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
