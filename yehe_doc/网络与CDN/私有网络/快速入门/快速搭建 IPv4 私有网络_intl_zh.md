@@ -34,8 +34,8 @@
 3. 在自定义配置页面，配置云服务器实例，完成后单击**立即购买**。本操作中云服务器的网络配置如下：
  - 网络：选择已创建的私有网络和子网。
 ![](https://qcloudimg.tencent-cloud.cn/raw/7ec59dbff60a37870ef4f9cdaf2aff70.png)
- - 公网带宽：不勾选<img src="https://main.qcloudimg.com/raw/50eef42428eb34dc35cf40995c9b7736.png" style="margin:-3px 0">。
-![](https://qcloudimg.tencent-cloud.cn/raw/f59fd4da95bd18e3f8585a1541d7547b.png)
+ - 公网 IP：不勾选<img src="https://main.qcloudimg.com/raw/50eef42428eb34dc35cf40995c9b7736.png" style="margin:-3px 0">。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/HMtv404_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230522111237.png)
  - 安全组：选择新建安全组，配置建议请参见 [配置安全组](https://intl.cloud.tencent.com/document/product/213/15377)。
 ![](https://qcloudimg.tencent-cloud.cn/raw/72584971b62015e38c9ad22da7ddd3d4.png)
 
