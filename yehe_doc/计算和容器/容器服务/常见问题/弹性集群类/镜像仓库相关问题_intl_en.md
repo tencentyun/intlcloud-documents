@@ -1,25 +1,24 @@
-### How do I use the Tencent Container Registry (TCR) service in an elastic cluster?
+### How do I use the Tencent Container Registry (TCR) service in an serverless cluster?
 
 
-If you want to use the TCR service in an elastic cluster, ensure that [you have selected the corresponding image access credential](#ensure1) and [ensure the network connectivity between the elastic cluster and TCR](#ensure2).
+If you want to use the TCR service in an serverless cluster, ensure that [you have selected the corresponding image access credential](#ensure1) and [ensure the network connectivity between the serverless cluster and TCR](#ensure2).
 
 [](id:ensure1)
 #### Ensuring that you have selected the corresponding image access credential
 
 A container image is private by default. Therefore, you need to select the image access credential for the TCR instance when creating a workload.
-![](https://main.qcloudimg.com/raw/ec737d41716a3fe79ec9c1d9ef407d08.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/1f2a68b4fce1be7f2ebc13864ea6faab.png)
 You can follow the steps below to create the image access credential:
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/ecluster?rid=1) and go to the “Elastic Cluster” page.
-2. Click the name of the elastic cluster you need to create the access credential for to go to the elastic cluster details page.
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2/ecluster?rid=1) and go to the “Serverless Cluster” page.
+2. Click the name of the serverless cluster you need to create the access credential for to go to the serverless cluster details page.
 3. Click “Namespace” on the left and click **Create**.
 4. On the “Create Namespace” page, select **Auto release TCR enterprise access credential**
-![](https://main.qcloudimg.com/raw/3fea2810c808a00db52c835c8e93b69a.png)
 5. Click **Create Namespace** to create a namespace, and then you can select the image access credential at the newly created namespace.
 
 [](id:ensure2)
-#### Ensuring the network connectivity between the elastic cluster and TCR
+#### Ensuring the network connectivity between the serverless cluster and TCR
 
-The network between the elastic cluster and TCR is not connected by default, so an error indicating network disconnectivity will be reported when you pull the image:
+The network between the serverless cluster and TCR is not connected by default, so an error indicating network disconnectivity will be reported when you pull the image:
 ```
 dial tcp x.x.x.x:443: i/o timeout
 ```
@@ -32,8 +31,8 @@ There are 2 solutions:
 
 | Solution | Note |
 | ------------------- | ------------------------------------------------------------ |
-| Solution 1: private network access (recommended) | Create a private network access linkage on the TCR console and configure private-network domain name resolution. In this way, the elastic cluster can access TCR via the newly created private network access linkage. |
-| Solution 2: public network access | Enable public network access for the elastic cluster so that it can access TCR via the public network. You also need to make TCR accessible via the public network. |
+| Solution 1: private network access (recommended) | Create a private network access linkage on the TCR console and configure private-network domain name resolution. In this way, the serverless cluster can access TCR via the newly created private network access linkage. |
+| Solution 2: public network access | Enable public network access for the serverless cluster so that it can access TCR via the public network. You also need to make TCR accessible via the public network. |
 
 
 #### Solution 1: private network access (recommended)
@@ -41,14 +40,13 @@ There are 2 solutions:
 1. Create a private network access linkage
    1. Log in to the [TCR console](https://console.cloud.tencent.com/tcr/instance?rid=1) and select **Network ACL** > **Private network** on the left sidebar.
    2. Select the region and instance on the “Private network” page and click **Create**.
-   3. In the "Create a private network access linkage" window that appears, configure the VPC and subnet information, as shown in the figure below.
-      ![](https://main.qcloudimg.com/raw/b8c0ba1034268a5590dd3d2a254dc164.png)
+   3. In the "Create a private network access linkage" window that appears, configure the VPC and subnet information.
 2. Click **OK** to start creating the private network access linkage.
 3. Enable domain name private network resolution.
    The domain name of TCR is “&lt;tcr-name>.tencentcloudcr.com”, the resolution of which in the VPC needs to be enabled additionally. If the resolution is not enabled, the aforementioned domain name will be resolved into a public IP rather than a private IP, leading to a private network access failure.
 
 >!After creating an access linkage, please wait until the backend generates a private IP. After that, the following button can be enabled.
->![](https://main.qcloudimg.com/raw/3c3fd38d1765f7e1eab32b65f9c350e4.png)
+
 
 #### Solution 2: public network access
 
@@ -56,11 +54,10 @@ There are 2 solutions:
     1. Log in to the [TCR console](https://console.cloud.tencent.com/tcr/instance?rid=1) and select **Network ACL** > **Public network** on the left sidebar.
     2. Select the region and instance on the “Public network” page.
     3. Enable public network access for the corresponding TCR instance.
-      ![](https://main.qcloudimg.com/raw/8f23dd51507c0de62fd6b8012d28f16d.png)
       In the trial stage, you can set the public IP range as 0.0.0.0/0. In the running stage, you can add the elastic IPs of the NAT gateway egress involved in the following step 2 to the public network allowlist.
-2. Enable public network access for the elastic cluster.
-   Public network access for the elastic cluster is disabled by default, and the elastic cluster needs to access the public network through an NAT gateway. For more information, see [Accessing Internet through NAT Gateway](https://intl.cloud.tencent.com/document/product/457/38369).
-   After configuring the NAT gateway, associate the subnet of the elastic cluster with the route table of the NAT gateway, and make sure the elastic IPs of the NAT gateway egress are added to the TCR access allowlist (**for more information, see [step 1](#step2-1)**). In this way, the elastic cluster can normally access TCR and pull the image from the public network.
+2. Enable public network access for the serverless cluster.
+   Public network access for the serverless cluster is disabled by default, and the serverless cluster needs to access the public network through an NAT gateway. For more information, see [Accessing Internet through NAT Gateway](https://intl.cloud.tencent.com/document/product/457/38369).
+   After configuring the NAT gateway, associate the subnet of the serverless cluster with the route table of the NAT gateway, and make sure the elastic IPs of the NAT gateway egress are added to the TCR access allowlist (**for more information, see [step 1](#step2-1)**). In this way, the serverless cluster can normally access TCR and pull the image from the public network.
 
 
 
@@ -70,7 +67,7 @@ There are 2 solutions:
 
 #### Error:failed to do request:Head "xxxx/manifests/late-st": dial tcp xxx:443: i/o timeout
 An error containing “**443: i/o timeout**” is usually caused by the network disconnectivity between EKS and TCR.
-Please select an access method mentioned in **[Ensuring the network connectivity between the elastic cluster and TCR]** to realize the network connectivity between EKS and TCR.
+Please select an access method mentioned in **[Ensuring the network connectivity between the serverless cluster and TCR]** to realize the network connectivity between EKS and TCR.
 <dx-alert infotype="notice" title="">
 The domain name “&lt;tcr-name>.tencentcloudcr.com” is resolved into a public IP by default. Please figure out the IP address in “dial tcp xxx” indicates a public or private network when the error is reported and solve the problem according to the actual situation.
 </dx-alert>
@@ -91,8 +88,8 @@ For more information on other common errors, see TCR-related [FAQs](https://intl
 
 #### Problem description
 
-When you use the image of an external image repository to create a workload in the elastic cluster, you may encounter the error “**ErrImagePull**” and fail to pull the image, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/08d85768db0f556ab05a231a2e9205b6.png)
+When you use the image of an external image repository to create a workload in the serverless cluster, you may encounter the error “**ErrImagePull**” and fail to pull the image, as shown in the figure below:
+![](https://qcloudimg.tencent-cloud.cn/raw/0d5bf4a45ce5ef4d4f74be2642583b36.png)
 
 #### Cause
 
@@ -115,7 +112,7 @@ Refer to the figure below:
 >?If the images of multiple containers in a Pod are pulled from different repositories, you can enter multiple image repository addresses and separate them with “,”. You can also enter “all”, indicating that all the container image repositories skip certificate verification.
 
 #### HTTP-based image repository
->?By default, an elastic cluster uses the HTTPS protocol to pull images when running, which means if the image repository supports HTTP, it also needs annotations.
+>?By default, an serverless cluster uses the HTTPS protocol to pull images when running, which means if the image repository supports HTTP, it also needs annotations.
 
 With the command `$kubectl describe pod $podname`, if “**http: server gave HTTP response to HTTPS client**” is exported to report an error, it means the image repository that is accessed uses HTTP, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/903d96070e1db400a382342940faa227.png)
