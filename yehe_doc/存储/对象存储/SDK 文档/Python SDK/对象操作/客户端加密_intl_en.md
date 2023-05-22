@@ -27,6 +27,7 @@ from qcloud_cos import CosS3Client
 from qcloud_cos.cos_encryption_client import CosEncryptionClient
 from qcloud_cos.crypto import AESProvider
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
@@ -103,6 +104,7 @@ from qcloud_cos import CosS3Client
 from qcloud_cos.cos_encryption_client import CosEncryptionClient
 from qcloud_cos.crypto import RSAProvider
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
