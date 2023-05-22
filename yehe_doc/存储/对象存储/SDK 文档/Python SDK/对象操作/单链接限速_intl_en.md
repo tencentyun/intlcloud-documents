@@ -15,6 +15,7 @@ The speed range is **819200 to 838860800** (in bit/s), that is, 100 KB/s to 100 
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
@@ -49,6 +50,7 @@ with open('test.bin', 'rb') as fp:
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
