@@ -91,7 +91,7 @@ STANDARD IA 및 ARCHIVE 유형은 콜드 데이터 스토리지 유형입니다.
 
 ### 다중 AZ
 
-다중 AZ(Available Zone)은 Tencent Cloud COS에서 출시한 다중 AZ 스토리지 구성입니다. 사용자 데이터가 도시의 여러 데이터센터에 분산 저장되어 데이터센터 한 곳에 자연재해 및 정전 등 극단적인 상황이 발생하여 전체 장애가 발생하는 경우에도 사용자에게 안정적이고 신뢰도 높은 저장 서비스를 제공합니다.
+다중 AZ(Multiple Availability Zones)은 Tencent Cloud COS에서 출시한 다중 AZ 스토리지 구성입니다. 사용자 데이터가 도시의 여러 데이터센터에 분산 저장되어 데이터센터 한 곳에 자연재해 및 정전 등 극단적인 상황이 발생하여 전체 장애가 발생하는 경우에도 사용자에게 안정적이고 신뢰도 높은 저장 서비스를 제공합니다.
 
 관련 문서는 [Overview of Multi-AZ Feature](https://intl.cloud.tencent.com/document/product/436/35208)를 참고하십시오.
 
