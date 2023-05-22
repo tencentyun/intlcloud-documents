@@ -61,7 +61,7 @@ subjects:
 
 #### （可选）ClusterRole/Role 授予腾讯云的操作权限
 如集群内有相关 ClusterRole/Role 可直接使用 ClusterRoleBinding/RoleBinding 关联。通过控制台授权，将自动创建策略，无需单独创建。
-<dx-codeblock>
+<dx-tabs>
 ::: 管理员权限 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -81,7 +81,6 @@ rules:
   - '*'
   verbs:
   - '*'
-
 ```
 :::
 ::: 只读权限
@@ -269,10 +268,8 @@ rules:
   - get
   - list
   - watch
-
 ```
-
 :::
-</dx-codeblock>
+</dx-tabs>
 
 
