@@ -61,7 +61,7 @@ subjects:
 
 #### (Optional) ClusterRole/Role: permissions authorized to Tencent Cloud OPS team
 If there is relevant ClusterRole/Role in the cluster, you can use ClusterRoleBinding/RoleBinding to associate. Policies will be created automatically if you authorize through console.
-<dx-codeblock>
+<dx-tabs>
 ::: Admin permissions 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -273,6 +273,6 @@ rules:
 ```
 
 :::
-</dx-codeblock>
+</dx-tabs>
 
 
