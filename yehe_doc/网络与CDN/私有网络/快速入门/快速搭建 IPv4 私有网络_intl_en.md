@@ -34,8 +34,8 @@ Before using Tencent Cloud products, [create a Tencent Cloud account](https://ww
 3. On the custom configuration page, configure the CVM instance and then click **Buy Now**. The CVM network configurations are as follows:
  - Network: select the created VPC and subnet.
 ![](https://qcloudimg.tencent-cloud.cn/raw/7ec59dbff60a37870ef4f9cdaf2aff70.png)
- - Public network bandwidth: do not check <img src="https://main.qcloudimg.com/raw/50eef42428eb34dc35cf40995c9b7736.png" style="margin:-3px 0">.
-![](https://qcloudimg.tencent-cloud.cn/raw/f59fd4da95bd18e3f8585a1541d7547b.png)
+ - Public network IP: do not check <img src="https://main.qcloudimg.com/raw/50eef42428eb34dc35cf40995c9b7736.png" style="margin:-3px 0">.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/HMtv404_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230522111237.png)
  - Security Group: select **New security group** and configure it as instructed in [Configuring Security Groups](https://www.tencentcloud.com/document/product/213/15377).
 ![](https://qcloudimg.tencent-cloud.cn/raw/72584971b62015e38c9ad22da7ddd3d4.png)
 
