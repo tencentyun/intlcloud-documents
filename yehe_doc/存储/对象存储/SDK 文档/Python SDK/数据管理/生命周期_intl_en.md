@@ -32,6 +32,7 @@ put_bucket_lifecycle(Bucket, LifecycleConfiguration={}, **kwargs)
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
@@ -161,6 +162,7 @@ This API is used to query the lifecycle configuration of a bucket.
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
@@ -270,6 +272,7 @@ delete_bucket_lifecycle(Bucket, **kwargs)
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
