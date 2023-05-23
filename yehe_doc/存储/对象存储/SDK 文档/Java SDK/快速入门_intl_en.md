@@ -39,7 +39,7 @@ You can install the Java SDK using Maven or source code:
 <dependency>
        <groupId>com.qcloud</groupId>
        <artifactId>cos_api</artifactId>
-       <version>5.6.97</version>
+       <version>5.6.133</version>
 </dependency>
 ```
 - Using source code
