@@ -24,10 +24,10 @@ Getting the download URL:
 ```js
 cos.getObjectUrl(
   {
-    Bucket: 'examplebucket-1250000000', /* Your bucket name. Required. */
-    Region: 'COS_REGION', /* Bucket region (required), such as ap-beijing */
-    Key: 'Profile photo.jpg', /* Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. */
-    Sign: true, /* Get a signed object URL. */
+    Bucket: 'examplebucket-1250000000', // Your bucket name. Required. //
+    Region: 'COS_REGION', // Bucket region (required), such as ap-beijing //
+    Key: 'Profile photo.jpg', // Object key stored in the bucket (required), such as `1.jpg` and `a/b/test.txt`. //
+    Sign: true, // Get a signed object URL. //
   },
   function (err, data) {
     if (err) return console.log(err);
@@ -37,7 +37,7 @@ cos.getObjectUrl(
     var downloadUrl =
       url +
       (url.indexOf('?') > -1 ? '&' : '?') +
-      'response-content-disposition=attachment'; // Add the parameter for a forced download
+      'response-content-disposition=attachment';filename=picture.jpg'; // Add the parameter for a forced download
   }
 );
 ```
