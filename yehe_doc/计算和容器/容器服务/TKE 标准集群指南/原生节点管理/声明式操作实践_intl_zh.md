@@ -133,7 +133,7 @@ spec:
 3. 根据命令`kubectl delete ma np-14024r66-nv8bk` 删除节点。
 
 >?
->- 如果没有调整节点池期望节点数而直接删除节点，节点池内会在检测到实际节点数不满足声明式节点数量，创建一个新节点加入节点池。删除节点的推荐操作方式如下：
-	1. 调整期望节点数：kubectl scale --replicas=1 machineset/np-xxxxx
-	2. 删除对应节点：kubectl delete machine np-xxxxxx-dtjhd
+>- 如果没有调整节点池期望节点数而直接删除节点，节点池会检测到实际节点数不足以满足声明式节点数量，然后会创建一个新节点并将其加入节点池。因此，我们推荐按照以下方式进行节点删除操作：
+>   - 调整期望节点数：kubectl scale --replicas=1 machineset/np-xxxxx
+>   - 删除对应节点：kubectl delete machine np-xxxxxx-dtjhd
 
