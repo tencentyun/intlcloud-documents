@@ -59,9 +59,9 @@ package main
  
 import (
    "context"
+   "fmt"
    "net/http"
    "net/url"
-   "os"
    "strings"
    "github.com/tencentyun/cos-go-sdk-v5"
 )
@@ -125,6 +125,7 @@ System.out.println(requestId);
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # 正常な状況のログレベルはINFOを使用し、特定が必要な場合はDEBUGに変更します。このときSDKは、サーバーとの通信情報をプリントアウトします
