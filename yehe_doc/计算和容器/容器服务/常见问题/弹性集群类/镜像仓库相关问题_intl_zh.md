@@ -9,8 +9,8 @@ Serverless 集群如需使用容器镜像服务 TCR，需要确保 [已选择对
 容器镜像默认私有，因此在创建工作负载时，需选择实例对应的镜像访问凭证。
 ![](https://qcloudimg.tencent-cloud.cn/raw/1f2a68b4fce1be7f2ebc13864ea6faab.png)
 您可参考以下步骤创建镜像访问凭证：
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/ecluster?rid=1)，进入Serverless 集群页面。
-2. 单击您需要创建访问凭证的Serverless 集群名称，进入Serverless 集群详情页。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/ecluster?rid=1)。
+2. 在集群列表页面，单击您需要创建访问凭证的Serverless 集群名称，进入Serverless 集群详情页。
 3. 选择左侧的“命名空间”，单击**新建**。
 4. 在新建“新建Namespace” 页中，勾选**自动下发容器镜像服务企业版访问凭证**。
 5. 单击**创建Namespace**进行创建。此时在新建的命名空间上，即可选择镜像的访问凭证。
@@ -57,7 +57,7 @@ dial tcp x.x.x.x:443: i/o timeout
       测试体验阶段，可将公网 IP 地址段设置为：0.0.0.0/0。后续运行阶段，可将下文步骤2中涉及的 NAT 网关出口的弹性 IP 添加到公网白名单。
 2. 为 Serverless 集群开启公网访问。
    Serverless 集群默认不开通外网访问，需通过 NAT 网关进行外网访问，详情可参见 [通过 NAT 网关访问外网](https://intl.cloud.tencent.com/document/product/457/38369)。
-   完成 NAT 网关配置后，将 Serverless 集群所在子网关联至 NAT 网关的路由表，并确保 NAT 网关出口的弹性 IP 在访问容器镜像服务的白名单里（**请参见上文 [步骤1](#step2-1)**），Serverless 集群即可正常访问容器镜像服务，从公网拉取镜像。
+   完成 NAT 网关配置后，将 Serverless 集群所在子网关联至 NAT 网关的路由表，并确保 NAT 网关出口的弹性 IP 在访问容器镜像服务的白名单里（ **请参见上文 [步骤1](#step2-1)** ），Serverless 集群即可正常访问容器镜像服务，从公网拉取镜像。
 
 
 
@@ -65,17 +65,17 @@ dial tcp x.x.x.x:443: i/o timeout
 
 #### 常见报错指引
 
-#### Error:failed to do request:Head "xxxx/manifests/late-st": dial tcp xxx:443: i/o timeout
-含有 “**443: i/o timeout**” 报错，大部分情况是因为 EKS 到 TCR 网络不通。
-**请参见上文 [确保 Serverless 集群到镜像服务网络打通](#step2)**，选择其中一种访问方式，打通 EKS 到 TCR 的网络。
+#### 报错：Error:\sfailed\sto\sdo\srequest:Head\s"xxxx/manifests/late-st":\sdial\stcp\sxxx:443:\si/o\stimeout
+含有 “**443: i/o timeout**” 报错，大部分情况是因为 TKE Serverless 到 TCR 网络不通。
+ **请参见上文 [确保 Serverless 集群到镜像服务网络打通](#step2)** ，选择其中一种访问方式，打通 TKE Serverless 到 TCR 的网络。
 <dx-alert infotype="notice" title="">
 “&lt;tcr-name>.tencentcloudcr.com”的域名默认会解析成公网 IP ，报错时请注意识别 “dial tcp xxx” 里的 IP 地址是公网还是内网，按实际情况处理。
 </dx-alert>
 
-#### Error:code= Unknown, pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
-含有 “**insufficient_scope: authorization failed**” 报错，说明 EKS 到 TCR 网络已经开通，但权限不足。可能原因为命名空间不存在、密钥不正确、密钥不适用正在拉取的镜像等。
+#### 报错：Error:\scode\s=\sUnknown,\spull\saccess\sdenied,\srepository\sdoes\snot\sexist\sor\smay\srequire\sauthorization:\sserver\smessage:\sinsufficient_scope:\sauthorization\sfailed
+含有 “**insufficient_scope: authorization failed**” 报错，说明 TKE Serverless 到 TCR 网络已经开通，但权限不足。可能原因为命名空间不存在、密钥不正确、密钥不适用正在拉取的镜像等。
 
-#### Error: code = NotFound, failed to resolve reference "xxx:xxx": not found
+#### 报错：Error:\scode\s=\sNotFound,\sfailed\sto\sresolve\sreference\s"xxx:xxx":\snot\sfound
 含有 “**not found**” 报错，说明镜像不存在。
 
 
