@@ -13,6 +13,7 @@ With this method, your master key and data are managed by COS. COS can automatic
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
@@ -65,6 +66,7 @@ from qcloud_cos import CosS3Client
 from qcloud_cos.cos_comm import to_byte
 
 import sys
+import os
 import logging
 import base64
 
@@ -141,6 +143,7 @@ from qcloud_cos import CosS3Client
 from qcloud_cos.cos_comm import get_md5, to_byte
 
 import sys
+import os
 import logging
 import base64
 
