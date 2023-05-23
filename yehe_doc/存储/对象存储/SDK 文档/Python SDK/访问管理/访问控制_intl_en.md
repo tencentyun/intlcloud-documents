@@ -36,6 +36,7 @@ put_bucket_acl(Bucket, AccessControlPolicy={}, **kwargs)
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
@@ -146,6 +147,7 @@ get_bucket_acl(Bucket, **kwargs)
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
@@ -226,6 +228,7 @@ put_object_acl(Bucket, Key, AccessControlPolicy={}, **kwargs)
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
@@ -338,6 +341,7 @@ get_object_acl(Bucket, Key, **kwargs)
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print the communication information of the client.
