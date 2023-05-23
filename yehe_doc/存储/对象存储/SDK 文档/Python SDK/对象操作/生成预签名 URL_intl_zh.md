@@ -3,6 +3,7 @@ Python SDK 提供获取签名、预签名 URL 、下载预签名 URL 的接口�
 使用永久密钥或临时密钥获取预签名 URL 的调用方法相同，使用临时密钥时需要在 header 或 query_string 中加上 x-cos-security-token。
 
 >?
+> - 关于使用预签名 url 上传的说明请参见 [预签名授权上传](https://intl.cloud.tencent.com/document/product/436/14114)， 使用预签名 url 下载的说明请参见 [预签名授权下载](https://intl.cloud.tencent.com/document/product/436/14116)。
 > - 在获取签名时强烈建议将敏感请求头部和请求参数算入签名，这样可以避免相关请求头部和请求参数被使用者篡改，杜绝权限越界的情况发生。同时 SDK 会默认将请求域名算入签名，如果分发后修改了请求域名会导致访问失败，此时可以在获取签名时传入参数忽略请求域名，详细方法参见下面的请求示例。 
 > - 建议用户使用临时密钥生成预签名，通过临时授权的方式进一步提高预签名上传、下载等请求的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
 > - 如果您一定要使用永久密钥来生成预签名，建议永久密钥的权限范围仅限于上传或下载操作，以规避风险。
@@ -27,6 +28,7 @@ get_presigned_url(Bucket, Key, Method, Expired=300, Params={}, Headers={})
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 import requests
 
@@ -108,6 +110,7 @@ print(response)
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 import requests
 
@@ -190,6 +193,7 @@ print(response)
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 import requests
 
@@ -280,6 +284,7 @@ get_presigned_download_url(Bucket, Key, Expired=300, Params={}, Headers={})
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 import requests
 
@@ -411,6 +416,7 @@ get_auth(Method, Bucket, Key, Expired=300, Headers={}, Params={})
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # 正常情况日志级别使用 INFO，需要定位时可以修改为 DEBUG，此时 SDK 会打印和服务端的通信信息
@@ -487,6 +493,7 @@ print(response)
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # 正常情况日志级别使用 INFO，需要定位时可以修改为 DEBUG，此时 SDK 会打印和服务端的通信信息
