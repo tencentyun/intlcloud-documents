@@ -27,6 +27,7 @@ from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 from qcloud_cos.cos_exception import CosClientError, CosServiceError
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
@@ -135,6 +136,7 @@ The following example shows how to use the SDK’s basic APIs to download a COS 
 
 ```python
 # -*- coding=utf-8
+import os
 import logging
 import sys
 import json
@@ -290,6 +292,7 @@ This API (`GET Object`) is used to download an object.
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
@@ -320,6 +323,7 @@ response['Body'].get_stream_to_file('exampleobject')
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
 import sys
+import os
 import logging
 
 # In most cases, set the log level to INFO. If you need to debug, you can set it to DEBUG and the SDK will print information about the communication with the server.
