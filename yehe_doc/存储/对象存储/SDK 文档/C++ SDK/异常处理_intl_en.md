@@ -87,5 +87,4 @@ COS provides a self-help [diagnosis tool](https://console.cloud.tencent.com/cos5
         </div>
     </div>
 </div>
-3. Enter `RequestId` and click **Diagnose**.
-4. Wait and view the diagnostic result.
+3. Enter `RequestId` and click **Diagnose**.Wait and view the diagnostic result.
