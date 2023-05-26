@@ -7,7 +7,7 @@ A good network condition is a prerequisite for business stability. Flow Logs ena
 ### Suggestions on Configuration:
 
 - Create flow logs to capture ENI traffic.
-- Deliver network logs to Cloud Log Service, COS and other services for query, analysis or storage.
+- Deliver network logs to Cloud Log Service for query, analysis or storage.
 
 ![](https://main.qcloudimg.com/raw/ac5376078a6a604f96cf07b2935240b0.svg)
 
@@ -22,7 +22,7 @@ Flow Logs allows the full-time, full-flow capture of ENI traffic across the netw
 ### Suggestions on Configuration:
 
 - Create flow logs to capture ENI traffic.
-- Deliver network logs to Cloud Log Service, ELK, Splunk and other services for analysis.
+- Deliver network logs to Cloud Log Service for analysis.
 ![](https://main.qcloudimg.com/raw/2eeb17251522fa5a1b4d070cf7c9a9bf.svg)
 
 ### Identify threats to network security quickly
