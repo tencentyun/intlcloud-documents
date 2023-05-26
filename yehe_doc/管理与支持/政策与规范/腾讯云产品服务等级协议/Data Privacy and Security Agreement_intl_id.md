@@ -167,7 +167,7 @@ Modul berikut akan berlaku dan dimasukkan dengan referensi ke dalam DPSA ini jik
 63.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54258).
 64.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54989).
 65.[Cloud Log Service](https://www.tencentcloud.com/ind/document/product/614/55082).
-
+66.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55133).
 ## Persyaratan khusus yurisdiksi
 
 
