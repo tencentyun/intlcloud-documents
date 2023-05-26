@@ -737,6 +737,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 68.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54257).
 69.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54988).
 70.[Cloud Log Service](https://www.tencentcloud.com/document/product/614/55081).
+71.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55132).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
