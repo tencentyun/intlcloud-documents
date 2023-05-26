@@ -14,5 +14,3 @@ Mobile Security Usage Restrictions:
 
 - Apps must be signed before upload.
 
-- Every account can only maintain not more than 8 app records.
-
