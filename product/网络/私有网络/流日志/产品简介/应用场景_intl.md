@@ -35,5 +35,5 @@ The addition of traditional traffic checkpoints can cause the performance degrad
 ### Suggestions on Configuration:
 
 - Create flow logs to capture network traffic.
-- Deliver network logs to Cloud Log Service, ELK and other services for query and analysis.
+- Deliver network logs to Cloud Log Service for query and analysis.
 ![](https://main.qcloudimg.com/raw/0e75d73038a2252e60e126dd14376345.svg)
