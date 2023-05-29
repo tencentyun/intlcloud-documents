@@ -177,6 +177,7 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 64.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54989).
 65.[Cloud Log Service](https://www.tencentcloud.com/ind/document/product/614/55082).
 66.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55133).
+67.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55140).
 
 ## 관할권별 요구 사항
 
