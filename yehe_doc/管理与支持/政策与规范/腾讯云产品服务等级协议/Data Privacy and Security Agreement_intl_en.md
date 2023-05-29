@@ -242,7 +242,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 70.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54989).
 71.[Cloud Log Service](https://www.tencentcloud.com/ind/document/product/614/55082).
 72.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55133).
-
+73.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55140).
 ## 10.Jurisdiction-specific Requirements
 
 ### EEA and UK
