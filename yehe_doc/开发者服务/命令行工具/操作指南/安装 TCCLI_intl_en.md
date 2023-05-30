@@ -7,7 +7,7 @@ You have installed the Python environment and pip tool.
 
 <dx-alert infotype="notice" title="">
 - Python 2.7 or later is required. For more information, visit the [Python website](https://www.python.org/) and [pip website](https://pypi.org/project/pip/).
-- TCCLI depends on the TencentCloudApi Python SDK. If the version of the SDK is earlier than that of TCCLI, the SDK is automatically upgraded during TCCLI installation. Check the latest TCCLI version at [GitHub](https://github.com/TencentCloud/tencentcloud-cli).
+- TCCLI depends on the TencentCloudApi Python SDK. If the version of the SDK is earlier than that of TCCLI, the SDK is automatically upgraded during TCCLI installation. Check the latest TCCLI version at [GitHub](https://github.com/TencentCloud/tencentcloud-cli-intl-en).
 </dx-alert>
 
 ## Directions
