@@ -1,17 +1,20 @@
-## Feature overview
+## Overview
 The log search feature collects component operation logs. Then, you can search for core service logs of the current cluster and node system logs by keyword to quickly view key service logs without logging in to nodes.
 
 ## Directions
-1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the cluster list to enter the cluster details page.
-2. On the cluster details page, select **Cluster Monitoring** > **Log Search** to filter and view log content by current cluster, log file, node IP, and time range.
-Or, on the cluster details page, select **Cluster Service** > target component block > **Role Management**, click a **Node IP** in **Role List** to enter the page where the node monitoring metrics are displayed, and then click **Role Log** to enter the **Log Search** page.
-![](https://qcloudimg.tencent-cloud.cn/raw/4fa74b5977eaa40b2939623c4813d344.png)
-Click a **Node IP** to enter the **Node Status** page, or click **Log Source** to enter the page where the node monitoring metrics are displayed.
-![](https://qcloudimg.tencent-cloud.cn/raw/737555cb56ee015c2dd507d647db5c79.png)
-3. During troubleshooting, you usually need to check contextual logs of keywords. On the **Log Search** page, click **View Context** to enter the **Log Context** page.
-![](https://qcloudimg.tencent-cloud.cn/raw/c2966e28bae088a80856e822f2a45e77.png)
+1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click the **ID/Name** of the target cluster in the cluster list.
+2. On the cluster details page, choose **Cluster Monitoring** > **Log Search** to filter and view log content by current cluster, log file, node IP, and time range.
+	Alternatively, choose **Cluster Service** > target component block > **Role Management**, click a **Node IP** in **Role List** to enter the page where the node monitoring metrics are displayed, and then click **Role Log** to enter the **Log Search** page.
+	![](https://staticintl.cloudcachetci.com/yehe/backend-news/VSB5235_%E5%9B%BD%E9%99%85%E7%AB%9934.png)
+	Click a **Node IP** to enter the **Node Status** page, or click **Log Source** to enter the page where the node monitoring metrics are displayed.
+	![](https://staticintl.cloudcachetci.com/yehe/backend-news/fECE443_%E5%9B%BD%E9%99%8535.png)
+	**Keyword description:**
+	- Supports full-text search based on keywords.
+	- Supports search by using special symbols, including hyphen (-), period (.), asterisk (*), greater-than sign (>), less-than sign (<), equal sign (=), exclamation mark (!), brackets (() and {}), and forward slash (/).
+	- Supports phrase-based search. Example: `address=/ip:port`.
+3. During troubleshooting, you usually need to pay attention to contextual logs of keywords. On the **Log Search** page, click **View Context** to enter the **Log Context** page.
 
-## Service types supported for log search
+## Service Types Supported for Log Search
 >!
 >- Currently, only logs in the past 15 days can be searched for.
 >- If log collection has not been enabled on your cluster, you can contact your Tencent Cloud rep for assistance.
@@ -32,7 +35,7 @@ Click a **Node IP** to enter the **Node Status** page, or click **Log Source** t
 <td >NameNode runtime log</td>
 </tr><tr>
 <td >ZKFC</td>
-<td >/data/emr/hdfs/logs/hadoop-hadoop-zkfc.log</td>
+<td >	/data/emr/hdfs/logs/hadoop-hadoop-zkfc.log</td>
 <td >ZKFC runtime log</td>
 </tr><tr>
 <td >DataNode</td>
@@ -103,8 +106,8 @@ Click a **Node IP** to enter the **Node Status** page, or click **Log Source** t
 <td >/data/emr/druid/var/log/druid/middleManager.log	</td>
 <td >MiddleManager runtime log</td>			
 </tr><tr>
-<td >ZooKeeper</td>
-<td >ZooKeeper</td>
+<td >Zookeeper</td>
+<td >Zookeeper</td>
 <td >/data/emr/zookeeper/logs/zookeeper-root-server.log	</td>
 <td >ZooKeeper runtime log</td>			
 </tr><tr>
@@ -194,16 +197,14 @@ Click a **Node IP** to enter the **Node Status** page, or click **Log Source** t
 </tr>
 </table>
 
-## Minimum log level supported by services
+## Minimum Log Level Supported by Services
 
 | Service | Default Minimum Log Level | 
 |---------|---------|
 | Impala and Kudu | 	INFO| 
 | Other services 	| WARN| 
 
-
-
-## Query rule for the minimum log level
+## Query Rules for the Minimum Log Level
 <table>
 <thread>
 <tr>

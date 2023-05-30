@@ -1,4 +1,4 @@
-伸缩记录可查看自动伸缩活动的执行记录等信息。
+伸缩记录可查看自动伸缩活动的执行记录等信息，弹性伸缩扩缩容事件支持事件分级，根据事件等级设置事件告警策略；事件分级详见 [集群事件](https://intl.cloud.tencent.com/document/product/1026/36889) ，事件告警配置详见 [告警配置](https://intl.cloud.tencent.com/document/product/1026/31120)。
 ## 自定义伸缩记录
 - 可按执行时间段筛选伸缩记录，并且支持按策略名称进行查找。
 - 按时间顺序排列展示，执行时间、策略名称、伸缩类型、执行状态，在操作类型下单击**详情**可查看详细信息。
@@ -10,8 +10,8 @@
 - 资源补足重试，将展示是否开启了资源补足重试，若已开启，将会展示重试次数。
 - 伸缩节点数，将展示执行结果细节，若失败将会展示失败原因及解决办法。
 - 伸缩规格，将会展示应规则触发后执行成功的扩容规格和缩容规格及数量。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/RNkt960_%E5%9B%BD%E9%99%8527.png)
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/n67K301_%E5%9B%BD%E9%99%8528.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/8ea2558be96c35666a45217ac351df0c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/baacd6d01c81cb98e6583377ed56620d.png)
 
 ## 托管伸缩记录
 - 可按执行时间段筛选伸缩记录，并且支持按伸缩类型筛选过滤。
@@ -21,4 +21,4 @@
 	- 失败：根据集群负载情况未能成功添加所需节点补充集群算力；其原因为资源不足，建议更换预设资源规格。
 - 机型规格：展示单次扩容或缩容规则触发时，增加或减少的机型规格和机型规格种类。
 - 数量：将成功执行扩缩动作结束后各种规格数量情况。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/2Iv9588_%E5%9B%BD%E9%99%85%E7%AB%9929.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/dfK3476_%E5%9B%BD%E9%99%8539.png)

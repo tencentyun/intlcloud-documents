@@ -228,6 +228,18 @@
 <td >ms</td>
 <td >AM 注册到 RM 的平均时间</td>
 </tr>
+<tr>
+<td >队列 CPU 使用率</td>
+<td >YARN.RM.QUEUE.VCORES.RATIO</td>
+<td >个</td>
+<td >当前队列分配 CPU 使用率</td>
+</tr>
+<tr>
+<td >队列内存使用率</td>
+<td >YARN.RM.QUEUE.MEM.RATIO</td>
+<td >个</td>
+<td >当前队列分配内存使用率</td>
+</tr>
 </table>
 
 ### YARN-ResourceManager

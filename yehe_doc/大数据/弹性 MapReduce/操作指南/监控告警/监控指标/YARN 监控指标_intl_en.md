@@ -211,7 +211,7 @@
 <td >Launched AMs</td>
 <td >AMLaunchDelayNumOps</td>
 <td >-</td>
-<td >Number of launched AMs</td>
+<td >Launched AMs</td>
 </tr><tr>
 <td >Average time for RM to launch AM</td>
 <td >AMLaunchDelayAvgTime</td>
@@ -221,12 +221,24 @@
 <td >Total registered AMs</td>
 <td >AMRegisterDelayNumOps</td>
 <td >-</td>
-<td >Total number of registered AMs</td>
+<td >Total registered AMs</td>
 </tr><tr>
 <td >Average time for AM to register with RM</td>
 <td >AMRegisterDelayAvgTime</td>
 <td >ms</td>
 <td >Average time for AM to register with RM</td>
+</tr>
+<tr>
+<td >Queue CPU utilization</td>
+<td >YARN.RM.QUEUE.VCORES.RATIO</td>
+<td >-</td>
+<td >Utilization of CPU allocated for the current queue</td>
+</tr>
+<tr>
+<td >Queue memory utilization</td>
+<td >YARN.RM.QUEUE.MEM.RATIO</td>
+<td >-</td>
+<td >Utilization of memory allocated for the current queue</td>
 </tr>
 </table>
 
@@ -293,50 +305,50 @@
 <td >Average time of RPC in the queue</td>
 </tr><tr>
 <td rowspan=2>GC count</td>
-<td >YGC </td>
-<td >- </td>
+<td >YGC</td>
+<td >-</td>
 <td >Young GC count</td>
 </tr><tr>
-<td >FGC </td>
-<td >- </td>
+<td >FGC</td>
+<td >-</td>
 <td >Full GC count</td>
 </tr><tr>
 <td rowspan=3>GC time</td>
-<td >FGCT </td>
-<td >s </td>
+<td >FGCT</td>
+<td >s</td>
 <td >Full GC time</td>
 </tr><tr>
-<td >GCT </td>
-<td >s </td>
+<td >GCT</td>
+<td >s</td>
 <td >Garbage collection time</td>
 </tr><tr>
-<td >YGCT </td>
-<td >s </td>
+<td >YGCT</td>
+<td >s</td>
 <td >Young GC time</td>
 </tr><tr>
 <td rowspan=6>Memory zone proportion</td>
 <td >S0</td>
-<td >% </td>
+<td >%</td>
 <td >Percentage of used Survivor 0 memory</td>
 </tr><tr>
-<td >E </td>
-<td >% </td>
+<td >E</td>
+<td >%</td>
 <td >Percentage of used Eden memory</td>
 </tr><tr>
-<td >CCS </td>
-<td >% </td>
+<td >CCS</td>
+<td >%</td>
 <td >Percentage of used compressed class space memory</td>
 </tr><tr>
-<td >S1 </td>
-<td >% </td>
+<td >S1</td>
+<td >%</td>
 <td >Percentage of used Survivor 1 memory</td>
 </tr><tr>
-<td >O </td>
-<td >% </td>
+<td >O</td>
+<td >%</td>
 <td >Percentage of used Old memory</td>
 </tr><tr>
-<td >M </td>
-<td >% </td>
+<td >M</td>
+<td >%</td>
 <td >Percentage of used Metaspace memory</td>
 </tr><tr>
 <td rowspan=6>JVM threads</td>
@@ -382,28 +394,28 @@
 <td >Number of Info logs</td>
 </tr><tr>
 <td rowspan=6>JVM memory</td>
-<td >MemNonHeapUsedM </td>
-<td >MB </td>
+<td >MemNonHeapUsedM</td>
+<td >MB</td>
 <td >Non-heap memory size used by process</td>
 </tr><tr>
-<td >MemNonHeapCommittedM </td>
-<td >MB </td>
+<td >MemNonHeapCommittedM</td>
+<td >MB</td>
 <td >Non-heap memory size committed to process</td>
 </tr><tr>
-<td >MemHeapUsedM </td>
-<td >MB </td>
+<td >MemHeapUsedM</td>
+<td >MB</td>
 <td >Heap memory size used by process</td>
 </tr><tr>
-<td >MemHeapCommittedM </td>
-<td >MB </td>
+<td >MemHeapCommittedM</td>
+<td >MB</td>
 <td >Heap memory size committed to process</td>
 </tr><tr>
-<td >MemHeapMaxM </td>
-<td >MB </td>
+<td >MemHeapMaxM</td>
+<td >MB</td>
 <td >Maximum heap memory size available to process</td>
 </tr><tr>
 <td >MemMaxM </td>
-<td >MB </td>
+<td >MB</td>
 <td >Maximum memory size available to process</td>
 </tr><tr>
 <td >CPU utilization</td>
@@ -503,75 +515,75 @@
 <td >	Number of INFO-level logs</td>
 </tr><tr>
 <td rowspan=6>JVM memory</td>
-<td >MemNonHeapUsedM </td>
-<td >MB </td>
+<td >MemNonHeapUsedM</td>
+<td >MB</td>
 <td >Non-heap memory size used by process</td>
 </tr><tr>
-<td >MemNonHeapCommittedM </td>
-<td >MB </td>
+<td >MemNonHeapCommittedM</td>
+<td >MB</td>
 <td >Non-heap memory size committed to process</td>
 </tr><tr>
-<td >MemHeapUsedM </td>
-<td >MB </td>
+<td >MemHeapUsedM</td>
+<td >MB</td>
 <td >Heap memory size used by process</td>
 </tr><tr>
-<td >MemHeapCommittedM </td>
-<td >MB </td>
+<td >MemHeapCommittedM</td>
+<td >MB</td>
 <td >Heap memory size committed to process</td>
 </tr><tr>
-<td >MemHeapMaxM </td>
-<td >MB </td>
+<td >MemHeapMaxM</td>
+<td >MB</td>
 <td >Maximum heap memory size available to process</td>
 </tr><tr>
 <td >MemMaxM </td>
-<td >MB </td>
+<td >MB</td>
 <td >Maximum memory size available to process</td>
 </tr><tr>
 <td rowspan=2>GC count</td>
-<td >YGC </td>
-<td >- </td>
+<td >YGC</td>
+<td >-</td>
 <td >Young GC count</td>
 </tr><tr>
-<td >FGC </td>
-<td >- </td>
+<td >FGC</td>
+<td >-</td>
 <td >Full GC count</td>
 </tr><tr>
 <td rowspan=3>GC time</td>
-<td >FGCT </td>
-<td >s </td>
+<td >FGCT</td>
+<td >s</td>
 <td >Full GC time</td>
 </tr><tr>
-<td >GCT </td>
-<td >s </td>
+<td >GCT</td>
+<td >s</td>
 <td >Garbage collection time</td>
 </tr><tr>
-<td >YGCT </td>
-<td >s </td>
+<td >YGCT</td>
+<td >s</td>
 <td >Young GC time</td>
 </tr><tr>
 <td rowspan=6>Memory zone proportion</td>
 <td >S0</td>
-<td >% </td>
+<td >%</td>
 <td >Percentage of used Survivor 0 memory</td>
 </tr><tr>
-<td >E </td>
-<td >% </td>
+<td >E</td>
+<td >%</td>
 <td >Percentage of used Eden memory</td>
 </tr><tr>
-<td >CCS </td>
-<td >% </td>
+<td >CCS</td>
+<td >%</td>
 <td >Percentage of used compressed class space memory</td>
 </tr><tr>
-<td >S1 </td>
-<td >% </td>
+<td >S1</td>
+<td >%</td>
 <td >Percentage of used Survivor 1 memory</td>
 </tr><tr>
-<td >O </td>
-<td >% </td>
+<td >O</td>
+<td >%</td>
 <td >Percentage of used Old memory</td>
 </tr><tr>
-<td >M </td>
-<td >% </td>
+<td >M</td>
+<td >%</td>
 <td >Percentage of used Metaspace memory</td>
 </tr><tr>
 <td >CPU utilization</td>
@@ -618,50 +630,50 @@
 <th width=45%>Description</th>
 </tr><tr>
 <td rowspan=2>GC count</td>
-<td >YGC </td>
-<td >- </td>
+<td >YGC</td>
+<td >-</td>
 <td >Young GC count</td>
 </tr><tr>
-<td >FGC </td>
-<td >- </td>
+<td >FGC</td>
+<td >-</td>
 <td >Full GC count</td>
 </tr><tr>
 <td rowspan=3>GC time</td>
-<td >FGCT </td>
-<td >s </td>
+<td >FGCT</td>
+<td >s</td>
 <td >Full GC time</td>
 </tr><tr>
-<td >GCT </td>
-<td >s </td>
+<td >GCT</td>
+<td >s</td>
 <td >Garbage collection time</td>
 </tr><tr>
-<td >YGCT </td>
-<td >s </td>
+<td >YGCT</td>
+<td >s</td>
 <td >Young GC time</td>
 </tr><tr>
 <td rowspan=6>Memory zone proportion</td>
 <td >S0</td>
-<td >% </td>
+<td >%</td>
 <td >Percentage of used Survivor 0 memory</td>
 </tr><tr>
-<td >E </td>
-<td >% </td>
+<td >E</td>
+<td >%</td>
 <td >Percentage of used Eden memory</td>
 </tr><tr>
-<td >CCS </td>
-<td >% </td>
+<td >CCS</td>
+<td >%</td>
 <td >Percentage of used compressed class space memory</td>
 </tr><tr>
-<td >S1 </td>
-<td >% </td>
+<td >S1</td>
+<td >%</td>
 <td >Percentage of used Survivor 1 memory</td>
 </tr><tr>
-<td >O </td>
-<td >% </td>
+<td >O</td>
+<td >%</td>
 <td >Percentage of used Old memory</td>
 </tr><tr>
-<td >M </td>
-<td >% </td>
+<td >M</td>
+<td >%</td>
 <td >Percentage of used Metaspace memory</td>
 </tr><tr>
 <td rowspan=6>JVM threads</td>
@@ -707,28 +719,28 @@
 <td >	Number of INFO-level logs</td>
 </tr><tr>
 <td rowspan=6>JVM memory</td>
-<td >MemNonHeapUsedM </td>
-<td >MB </td>
+<td >MemNonHeapUsedM</td>
+<td >MB</td>
 <td >Non-heap memory size used by process</td>
 </tr><tr>
-<td >MemNonHeapCommittedM </td>
-<td >MB </td>
+<td >MemNonHeapCommittedM</td>
+<td >MB</td>
 <td >Non-heap memory size committed to process</td>
 </tr><tr>
-<td >MemHeapUsedM </td>
-<td >MB </td>
+<td >MemHeapUsedM</td>
+<td >MB</td>
 <td >Heap memory size used by process</td>
 </tr><tr>
-<td >MemHeapCommittedM </td>
-<td >MB </td>
+<td >MemHeapCommittedM</td>
+<td >MB</td>
 <td >Heap memory size committed to process</td>
 </tr><tr>
-<td >MemHeapMaxM </td>
-<td >MB </td>
+<td >MemHeapMaxM</td>
+<td >MB</td>
 <td >Maximum heap memory size available to process</td>
 </tr><tr>
 <td >MemMaxM </td>
-<td >MB </td>
+<td >MB</td>
 <td >Maximum memory size available to process</td>
 </tr><tr>
 <td rowspan=7>Total containers</td>
@@ -768,7 +780,7 @@
 <td >Container launches</td>
 <td >ContainerLaunchDurationNumOps</td>
 <td >-</td>
-<td >Number of container launches</td>
+<td >Container launches</td>
 </tr><tr>
 <td rowspan=2>CPU cores</td>
 <td >AvailableVCores</td>
