@@ -69,21 +69,21 @@
 </thead>
 <tbody><tr>
 <td rowspan=6>通用型</td>		
-<td>2</td><td>2</td><td>50</td><td>30</td><td>1,024</td><td><strong>5.0</strong></td>
+<td>2</td><td>2</td><td>50</td><td>30</td><td>1,024</td><td><strong>8.5</strong></td>
 </tr>
 <tr>
-<td>2</td><td>2</td><td>60</td><td>30</td><td>2,048</td><td><strong>7.0</strong></td>
+<td>2</td><td>2</td><td>60</td><td>30</td><td>2,048</td><td><strong>11.0</strong></td>
 </tr>
-<td>2</td><td>4</td><td>70</td><td>30</td><td>2,560</td><td><strong>9.0</strong></td>
-</tr>
-<tr>
-<td>2</td><td>4</td><td>80</td><td>30</td><td>3,072</td><td><strong>11.0</strong></td>
+<td>2</td><td>4</td><td>70</td><td>30</td><td>2,560</td><td><strong>15.0</strong></td>
 </tr>
 <tr>
-<td>2</td><td>8</td><td>90</td><td>30</td><td>3,584</td><td><strong>16.0</strong></td>
+<td>2</td><td>4</td><td>80</td><td>30</td><td>3,072</td><td><strong>20.0</strong></td>
 </tr>
 <tr>
-<td>2</td><td>8</td><td>100</td><td>30</td><td>4,096</td><td><strong>22.0</strong></td>
+<td>2</td><td>8</td><td>90</td><td>30</td><td>3,584</td><td><strong>30.0</strong></td>
+</tr>
+<tr>
+<td>2</td><td>8</td><td>100</td><td>30</td><td>4,096</td><td><strong>40.0</strong></td>
 </tr>
 <td rowspan=6>企业型</td>	
 <td>4</td><td>8</td><td>120</td><td>32</td><td>5,120</td><td><strong>70.0</strong></td>
