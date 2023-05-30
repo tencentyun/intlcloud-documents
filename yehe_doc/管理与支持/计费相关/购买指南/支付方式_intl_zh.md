@@ -1,4 +1,4 @@
-﻿腾讯云用户可以使用支付方式模块查询，添加，删除和设置默认支付方式，用户需保留至少一个支付方式，账号未绑定支付方式可参照下方流程进行绑定。
+腾讯云用户可以使用支付方式模块查询，添加，删除和设置默认支付方式，用户需保留至少一个支付方式，账号未绑定支付方式可参照下方流程进行绑定。
 
 ## 付款方式页面
 在 [付款方式页面](https://console.intl.cloud.tencent.com/accountv1/paymentmethods) 中，用户可以查询其现有的付款方式，包括付款类型，帐户ID，付款人姓名，状态和操作。
@@ -11,7 +11,7 @@
 ## 添加付款方式
  ![](https://qcloudimg.tencent-cloud.cn/raw/e25dc2b3158cfa06d9565cf87d4fdcb7.png)
 - 登录腾讯云官网**费用中心** > **资金管理** > <b>[支付方式](https://console.intl.cloud.tencent.com/accountv1/paymentmethods)</b>，单击**添加付款方式**按钮跳转到添加付款方式页面，输入信用卡或借记卡信息绑定支付方式。
-![](https://qcloudimg.tencent-cloud.cn/raw/62227294c826f70a061d617ad3de4eab.png)
+ ![](https://staticintl.cloudcachetci.com/yehe/backend-news/BYnm001_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_1685432126964.png)
 - 成功添加付款帐户后，用户的腾讯云帐户将与该付款帐户关联，然后用户可以使用该付款帐户进行充值和付款。
 
 ## 删除付款方式
