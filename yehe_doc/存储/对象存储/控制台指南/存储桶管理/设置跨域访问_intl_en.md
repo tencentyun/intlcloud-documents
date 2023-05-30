@@ -22,7 +22,7 @@ COS supports response to OPTIONS requests for CORS, and returns specific rules s
     - Be careful not to omit the protocol name (http or https). If the port is not the default port 80, you need to add a port. An example IP address is `http://10.10.10.10`.
  - **Allow-Methods**: GET, PUT, POST, DELETE, and HEAD are supported. Enumeration of one or more methods is allowed for a cross-origin request.
  - **Allow-Headers**: notifies the server about which custom HTTP request headers are allowed for subsequent requests when an OPTIONS request is sent, such as `x-cos-meta-md5`.
-    - More than one header can be specified, with one header per line, for example, `Content-type`.
+    - More than one header can be specified, with one header per line, for example, `Content-Type`.
     - Header is easy to omit. Therefore, if there is no special requirement, you are advised to set this field to `*`, meaning that all headers are allowed.
     - Uppercase and lowercase letters [a-z, A-Z] are supported, and no underscores (_) are allowed.
     - Each header specified in `Access-Control-Request-Headers` must correspond to a value in `Allowed-Header`.
