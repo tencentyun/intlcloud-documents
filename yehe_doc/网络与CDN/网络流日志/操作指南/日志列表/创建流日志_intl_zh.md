@@ -2,7 +2,6 @@
 >?NAT 网关、云联网跨地域流量日志目前处于内测中，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
 
 ## 前提条件
-+ 由于流日志数据需要写入日志服务 CLS，请确保已完成授权CLS，方可查看日志数据，具体请参见 [授权流日志访问 CLS 权限](https://intl.cloud.tencent.com/document/product/682/47040)。
 + 已创建好日志集和日志主题：
   + 如需使用高级分析仪表盘功能，则只能选择携带“Flowlog”标识的“flowlog_logset”日志集和其下的日志主题，请提前参考 [主题配置](https://intl.cloud.tencent.com/document/product/682/47038) 页面创建。
   + 如不使用高级分析仪表盘功能，可选择任意日志集和日志主题。可通过在 CLS 控制台创建不携带“Flowlog”标识的[ 日志集和日志主题](https://intl.cloud.tencent.com/document/product/682/18967)，也可通过流日志主题配置控制台创建携带“Flowlog”标识的[ 日志集和日志主题](https://intl.cloud.tencent.com/document/product/682/47038)。
