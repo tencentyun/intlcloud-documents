@@ -1,4 +1,4 @@
-TDSQL-C for MySQL allows you to delete backups to save space. You can manually delete manual backups. For automatic backups, you can adjust their lifecycle as instructed in [Setting Backup Retention Period](https://intl.cloud.tencent.com/document/product/1098/48396).
+TDSQL-C for MySQL allows you to delete backups to save space. You can manually delete manual backups. For automatic backups, you can adjust their lifecycle as instructed in [Setting Backup Retention Period](https://www.tencentcloud.com/document/product/1098/48396).
 
 This document describes how to delete manual backups in the console.
 

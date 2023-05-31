@@ -1,3 +1,4 @@
+
 ### 对比传统本地盘的数据库，TDSQL-C MySQL 版中的大表存储有什么优势？
 TDSQL-C MySQL 版中的一张表，物理上会被拆分到 N 台存储服务器上存储，因此对一张表的 I/O 会被分摊到多块存储磁盘中，I/O 读取的整体吞吐性能要远优于集中式的本地盘数据库。
 
@@ -7,8 +8,10 @@ TDSQL-C MySQL 版不会对创建数据库的数量和创建表的数量进行限
 ### 如何创建数据库/表？
 TDSQL-C MySQL 版支持多种方式创建数据库/表。
 - 通过 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb/mysql)，可快捷创建数据库/表，详细方法请参见 [创建数据库](https://intl.cloud.tencent.com/document/product/1098/44606)。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/MxbF364_14.png)
 - 通过 [DMC 管理平台](https://dms.cloud.tencent.com/?resource-retry=2#/login?dbType=cynosdbmysql&region=ap-guangzhou&instanceId=cynosdbmysql-aaf8s18h)，可个性化创建数据库/表。
-- 登录终端执行 SQL 命令创建数据库/表，登录终端可参见 [连接集群](https://intl.cloud.tencent.com/document/product/1098/40627)。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Ih2L156_15.png)
+- 登录终端执行 SQL 命令创建数据库/表，登录终端可参见 [连接集群](https://www.tencentcloud.com/document/product/1098/51980)。
 创建数据库的 SQL 语句是 create database，命令为：
 ```
 create database <数据库名>;

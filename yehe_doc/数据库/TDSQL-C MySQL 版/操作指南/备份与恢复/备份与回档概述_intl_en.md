@@ -1,9 +1,10 @@
+
 Data is the core asset of enterprises. As your business develops, your data grows in a large-scale and explosive manner. Business applications require real-time, online, and fast data processing. It is more and more challenging for database Ops engineers to protect the data integrity, as data loss may occur for a variety of causes, such as accidental deletion, system vulnerabilities and viruses, hardware failures, and even natural disasters. Therefore, backup and rollback are of significant importance to databases.
 
 ## Backup Overview
 TDSQL-C for MySQL supports data backup and binlog backup. A complete data backup supplemented by a follow-up binlog backup allows you to restore the entire TDSQL-C for MySQL cluster or specified databases/tables to any time point.
 
-You can visually query the field information in the data backup list, such as file name/alias, backup time, start time, end time, backup type, backup mode, backup size, status, and operation. You can also query similar fields in the binlog backup list, including file name, binlog backup start time, binlog backup end time, backup size, and operation. This helps you easily view and manage historical backups.	
+You can visually query the field information in the data backup list, such as file name/alias, backup time, start time, end time, backup type, backup mode, backup size, status, and operation. You can also query similar fields in the binlog backup list, including file name, binlog backup start time, binlog backup end time, backup size, and operation. This helps you easily view and manage historical backups.
 
 The backup and rollback console UI is as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/ab95bb9e785013523cde164556287346.png)
@@ -42,7 +43,7 @@ A binlog backup is the incremental data generated after all the data in the clus
 
 TDSQL-C for MySQL relies on redo logs rather than binlogs for rollback, so that even if binlog is disabled, data can still be rolled back to any time point, and the instance performance can be increased by over 30%.
 
-## Notes
+## Note
 - Only one manual backup task can be performed per hour. Automatic backup tasks are performed according to your configuration, which is once per day by default.
 - Manual backup files can be manually deleted from the backup list. They are retained as long as they are not deleted; therefore, regularly delete those no longer needed to free up the space.
 - Automatic backups cannot be deleted manually. You can set a retention period so that they will be deleted automatically upon expiration.
@@ -50,8 +51,8 @@ TDSQL-C for MySQL relies on redo logs rather than binlogs for rollback, so that 
 
 ## Rollback Overview
 TDSQL-C for MySQL supports data restoration to a specific time point through the rollback feature, minimizing potential system losses.
-TDSQL-C for MySQL can roll back databases/tables to the original cluster and roll back an entire cluster (clone) to a new cluster. You can choose different rollback methods according to your business needs.
+TDSQL-C for MySQL can roll back databases/tables to the original cluster and roll back an entire cluster (clone) to a new cluster. You can choose different rollback methods based on your business needs.
 
 ## Rollback Method
-- Rollback by backup file: This method restores the cluster to the data file state of any backup file within the data backup retention period you set.
+- Rollback by backup file: This method restores the cluster to the data file state of a backup file. The selection range of the backup file is determined by the data backup retention period you set.
 - Rollback by time point: This method restores the cluster to any time point within the binlog backup retention period you set.

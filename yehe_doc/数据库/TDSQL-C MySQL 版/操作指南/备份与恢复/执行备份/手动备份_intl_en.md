@@ -1,7 +1,8 @@
+
 TDSQL-C for MySQL supports automatic backup and manual backup. This document describes how to create a manual backup in the console.
 >?
 >- With manual backup, you can use snapshot backup to manually back up the entire cluster or use logical backup to back up the entire cluster or specified databases/tables.
->- You can delete manual backup files from the backup list to free up the space.
+>- You can delete manual backups from the backup list in the console to release backup space.
 
 ## Directions
 1. Log in to the [TDSQL-C for MySQL console](https://console.cloud.tencent.com/cynosdb).

@@ -1,3 +1,4 @@
+
 ### 如何对 TDSQL-C MySQL 版和腾讯云 MySQL 进行性能测试对比？
 在您对 TDSQL-C MySQL 版和腾讯云 MySQL进行性能对比前，请了解以下注意事项，以便能获得比较准确、合理的性能对比结果。
 - 使用相同规格配置的 TDSQL-C MySQL 版和腾讯云 MySQL 进行性能对比。
@@ -18,7 +19,7 @@ TDSQL-C MySQL 版与腾讯云 MySQL 的性能对比结果，请参见 [测试结
 
 ### 如何发现和优化慢 SQL？
 您可以通过如下两种方式发现和优化慢 SQL：
-- 您可通过实例监控页对慢查询数指标设置告警策略来观察慢 SQL 情况，然后在控制台上通过 [数据库智能管家](https://console.cloud.tencent.com/dbbrain/performance/analysis?instId=cynosdbmysql-ins-qw43wuqj) 通过慢 SQL 分析功能对慢 SQL 的性能进行分析并给出优化建议，依据优化建议进行优化即可。详细请参见 [慢 SQL 分析](https://intl.cloud.tencent.com/document/product/1035/36038)。
+- 您可通过实例监控页对慢查询数指标设置告警策略来观察慢 SQL 情况，然后在控制台上通过 [数据库智能管家](https://console.cloud.tencent.com/dbbrain/performance/analysis?instId=cynosdbmysql-ins-qw43wuqj) 通过慢 SQL 分析功能对慢 SQL 的性能进行分析并给出优化建议，依据优化建议进行优化即可。详细请参见 [慢 SQL 分析](https://intl.cloud.tencent.com/document/product/1035/48637)。
 - 连接数据库集群后执行 `show processlist;` ，找出执行时间过长的 SQL，通过 explain 分析执行计划分析原因，即可作出对应优化。关于如何连接数据库集群，请参见 [连接集群](https://intl.cloud.tencent.com/document/product/1098/40627)。
 
 ### 表分区能够提高 TDSQL-C MySQL 版的查询性能吗？
