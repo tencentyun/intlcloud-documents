@@ -1,3 +1,6 @@
+## Background information
+Your password is hashed by using Secure Hash Algorithm 256 (SHA-256) with a salt value. Tencent Cloud does not save your password in plaintext. This ensures password security.
+
 ## Overview
 This document describes how to modify the password rules for sub-users in the CAM console, including password complexity, length, and validity period. If you don't modify the password rules, the default settings will be applied.
 
