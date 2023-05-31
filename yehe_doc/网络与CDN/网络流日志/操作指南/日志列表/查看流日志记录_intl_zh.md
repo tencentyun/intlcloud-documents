@@ -2,4 +2,3 @@
 
 >!
 >- 流日志字段说明，请参见 [流日志记录](https://intl.cloud.tencent.com/document/product/682/18933)。
->- 由于流日志数据需要写入日志服务 CLS，请确保为流日志授权访问 CLS 的权限，否则将无法在 CLS 上查询到日志数据，详情请参见[ 授权流日志访问 CLS 权限](https://intl.cloud.tencent.com/document/product/682/47040)。
