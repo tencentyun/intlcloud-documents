@@ -42,7 +42,7 @@ Tencent Cloudは作成済みのカスタムイメージの[COS](https://intl.clo
 </tr>
 <tr>
 <td><b>トラフィック料金</b>。COSバケットからイメージをダウンロードすると、ダウンストリームトラフィックが発生します。COSはトラフィック量を計算します。プライベートネットワークのダウンストリームトラフィックは無料ですが、パブリックネットワークのダウンストリームトラフィックは有料です。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/33776">流量费用</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/33776">トラフィック料金</a></td>
 </tr>
 </table>
 
