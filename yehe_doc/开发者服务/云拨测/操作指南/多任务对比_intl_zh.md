@@ -11,4 +11,4 @@
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/XFuV725_5intl_%E5%A5%BD%E5%8E%8B%E7%9C%8B%E5%9B%BE.png)
 
 
->? 相关指标说明请参见 [多维分析-指标说明](https://www.tencentcloud.com/document/product/1169/52007)。
+>? 相关指标说明请参见 [多维分析-指标说明](https://www.tencentcloud.com/document/product/1169/51992)。
