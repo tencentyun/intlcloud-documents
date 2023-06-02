@@ -21,7 +21,7 @@
 1. 登录 [API 网关控制台](https://console.cloud.tencent.com/apigateway/index)。
 2. 在左侧导航栏，单击**密钥**，进入密钥列表页。
 3. 在密钥列表页点击**新建**，弹出新建密钥对话框。
-4. 密钥类型选择**自定义密钥**，输入密钥名称、SecretId、SercretKey。
+4. 密钥类型选择**自定义密钥**，输入密钥名称、SecretId、SecretKey。
 5. 单击**提交**，即可成功创建自定义密钥。
 ![](https://main.qcloudimg.com/raw/c568cddb09a93fdade398aded2f2d3a6.png)
 
