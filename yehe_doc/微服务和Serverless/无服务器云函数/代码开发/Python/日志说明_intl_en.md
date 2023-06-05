@@ -48,17 +48,14 @@ If a single-line log output by a function is in JSON format, the JSON content wi
 You can run the following code to test:
 <dx-codeblock>
 
-```python
+::: python
 # -*- coding: utf8 -*-
 import json
 		
 def main_handler(event, context):
 	print(json.dumps({"key1": "test value 1","key2": "test value 2"}))
 	return("Hello World!")
-```
-
-
-
+:::
 </dx-codeblock>
 
 ### Search method
