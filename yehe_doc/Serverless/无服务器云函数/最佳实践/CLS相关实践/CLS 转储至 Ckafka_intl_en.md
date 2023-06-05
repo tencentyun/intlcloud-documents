@@ -25,7 +25,7 @@ This document describes how to use SCF to dump CLS logs to CKafka. CLS is mainly
 
 ### Creating SCF function
 
-1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
+1. Log in to the [Serverles](https://console.cloud.tencent.com/scf/list) console and enter the function service page.
 2. At the top of the **Function Service** page, select the **Beijing** region and click **Create** to enter the function creation page and configure the following parameters:
  - **Function name**: enter "CLSdemo".
  - **Runtime environment**: select **Python 2.7**.
@@ -55,7 +55,7 @@ The main parameter information is as follows. Keep the remaining configuration i
 
 ### Testing function
 1. Download the log file in the [test sample](https://main.qcloudimg.com/raw/6e0d4837eefd0ce77dac8a3973acdf39.zip), extract `demo-scf1.txt`, and import it to the source CLS service.
-2. Switch to the [SCF console](https://console.cloud.tencent.com/scf/list?rid=8&ns=default) to view the execution result.
+2. Switch to the [Serverless console](https://console.cloud.tencent.com/scf/list?rid=8&ns=default) to view the execution result.
 Select the **Log Query** tab on the function details page to view the printed log information as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/b9dc2dfda8658d1a21739a2898a41c15.png)
 3. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka) to view the data dumping and processing result.
