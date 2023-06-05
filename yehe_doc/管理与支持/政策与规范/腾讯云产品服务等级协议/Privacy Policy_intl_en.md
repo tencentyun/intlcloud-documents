@@ -739,6 +739,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 70.[Cloud Log Service](https://www.tencentcloud.com/document/product/614/55081).
 71.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55132).
 72.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55139).
+73.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55272).
 
 ### Revision History
 [Privacy Policy](https://intl.cloud.tencent.com/document/product/301/43505)(version1.0)
