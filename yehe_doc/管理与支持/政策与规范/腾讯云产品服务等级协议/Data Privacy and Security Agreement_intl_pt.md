@@ -169,6 +169,8 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 64.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54989).
 65.[Cloud Log Service](https://www.tencentcloud.com/ind/document/product/614/55082).
 66.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55133).
+67.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55140).
+
 ## Requisitos específicos da jurisdição
 
 **Europa**

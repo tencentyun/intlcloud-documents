@@ -10,61 +10,60 @@
 </thead>
 <tbody>
 <tr>
-<td>Added table analysis in Kudu</td>
-<td><li>Information can be viewed by table, Tablet, and TabletServer. </li><li>Analysis is supported for tablet-level read and write QPS, storage size, and other information.</li></td>
+<td>Added table analysis in Kudu.</td>
+<td><li>Supported viewing information by table, Tablet, and TabletServer. </li><li>Supported analyzing Tablet-level read and write QPS, storage size and other information.</li></td>
 <td>2023-03-24</td>
-<td></td>
+<td><a href="https://www.tencentcloud.com/document/product/1026/54478">Kudu Table Analysis</a></td>
 </tr>
 <tr>
-<td>Added statistics by region in HBase</td>
-<td>Region-level read QPS, write QPS, and other information were added to help locate hot spots.</td>
+<td>Added statistics by Region in HBase.</td>
+<td>Added Region-level read QPS, write QPS and other information to help locate hot spots.</td>
 <td>2023-03-24</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/46446">HBase Table Analysis</a></td>
 </tr>
 <tr>
-<td>Released the Kafka cluster version: Kafka v2.0.0.</td>
-<td>The Kafka cluster version Kafka v2.0.0 was released, corresponding to the open-source Kafka v2.4.1.</td>
-<td>2023-03-23</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456">Versions of Components</a></td>
-</tr>
-<tr>
-<td>Released the StarRocks cluster version: StarRocks v1.3.0.</td>
-<td>The StarRocks cluster version StarRocks v1.3.0 was released, corresponding to the open-source Kafka v2.4.3.</td>
-<td>2023-03-10</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456">Versions of Components</a></td>
-</tr>
-<tr>
-<td>Released the Hadoop cluster version: JDK11-Beta-based EMR v4.0.0.</td>
-<td>The Hadoop cluster version JDK11-Beta-based EMR v4.0.0 was released, with all of its components running in the JDK 11 environment.</td>
-<td>2023-03-10</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456">Versions of Components</a></td>
-</tr>
-<tr>
-<td>Suspended the provision of the container-based EMR service.</td>
-<td>The container-based EMR service was unavailable for purchase for feature updates.</td>
-<td>2023-03-10</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/48582">Overview</a></td>
-</tr>
-<tr>
 <td>Added more monitoring metrics and alarms.</td>
-<td><li>For HiveMetaStore, over 14 monitoring metrics and alarms (including number of open connections, Get Table requests, and currently active requests) were added.</li><li>For HiveServer2, over 20 monitoring metrics and alarms (including current requests and query submission time/average execution time) were added.</li><li>For YARN, alarms for queue CPU and memory usage in percentages were added.</li></td>
-<td>2023-03-04</td>
+<td><li>For HiveMetaStore, more than 14 monitoring metrics and alarms (including the number of opened and connected processes, Get Table requests, and currently active requests) were added.</li><li>For HiveServer2, more than 20 monitoring metrics and alarms (including the current requests and query submission time/average execution time) were added.</li><li>For YARN, alarms for the queue CPU and memory usage in percentages were added.</li></td>
+<td>2023-03-24</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36884">Hive Monitoring Metrics</a>  <br><a href="https://intl.cloud.tencent.com/document/product/1026/36881">YARN Monitoring Metrics</a></td>
 </tr>
 <tr>
 <td>Added more health status events.</td>
 <td>Two events were added: exception in service role health status and timeout of service role health status.</td>
-<td>2023-03-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889">Cluster Event</a></td>
+<td>2023-03-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889">Cluster Events</a></td>
 </tr>
 <tr>
 <td>Optimized log accuracy.</td>
 <td>The log search accuracy was optimized, with search by keyword and by phrase supported.</td>
-<td>2023-03-04</td>
+<td>2023-03-24</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/35372">Log Search</a></td>
 </tr>
+<tr>
+<td>Released the Kafka cluster version: Kafka v2.0.0.</td>
+<td>Released the Kafka cluster version Kafka v2.0.0, corresponding to the open-source Kafka v2.4.1.</td>
+<td>2023-03-23</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456">Versions of Components</a></td>
+</tr>
+<tr> 
+<td>Released the StarRocks cluster version: StarRocks v1.3.0.</td>
+<td>Released the StarRocks cluster version StarRocks v1.3.0, corresponding to the open-source Kafka v2.4.3.</td>
+<td>2023-03-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456">Versions of Components</a></td>
+</tr>
+<tr>
+<td>Released the Hadoop cluster version: JDK11-Beta-based EMR v4.0.0.</td>
+<td>Released the Hadoop cluster version JDK11-Beta-based EMR v4.0.0, with all of its components running in the JDK 11 environment.</td>
+<td>2023-03-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/46456">Versions of Components</a></td>
+</tr>
+<tr>
+<td>Suspended the provision of the container-based EMR service.</td>
+<td>The container-based EMR service was unavailable for purchase for feature update in progress.</td>
+<td>2023-03-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/48582">Overview</a></td>
+</tr>
 </tbody></table>
-
 
 
 ## February 2023
@@ -86,15 +85,15 @@
 </tr>
 <tr>
 <td>Added table analysis in Hive (based on Hive MetaStore).</td>
-<td><li>Global metrics can be viewed from key dimensions such as total tables, total storage size, table count by access time, and trends.<li>Multi-dimensional data of tables and their partitions can be viewed.</td>
+<td><li>Supported viewing global metrics at key dimensions such as total tables, total storage size, table count by access time, and trends.<li>Supported viewing multi-dimensional data of tables and their partitions.</td>
 <td>2023-02-09</td>
-<td><a href="https://www.tencentcloud.com/document/product/1026/47774" target="_blank">Hive Table Analysis</a></td>
+<td><a href="https://www.tencentcloud.com/document/product/1026/54474" target="_blank">Hive Table Analysis</a></td>
 </tr>
 <tr>
 <td>Added the file-level analysis feature in HDFS.</td>
-<td><li>HDFS data distribution can be viewed from key dimensions such as file count and file size.<li>Users can view and download the lists of top large files and top small files.</td>
+<td><li>Supported viewing HDFS data distribution at key dimensions such as file count and file size.<li>Supported viewing and downloading the lists of top large files and top small files.</td>
 <td>2023-02-09</td>
-<td></td>
+<td><a href="https://www.tencentcloud.com/document/product/1026/54472" target="_blank">HDFS File Storage Analysis</a></td>
 </tr>
 </tbody></table>
 

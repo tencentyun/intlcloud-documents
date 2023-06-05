@@ -8,7 +8,7 @@ Web 应用防火墙支持包年包月（预付费）单一计费方式，包年�
 Web 应用防火墙采取**基础套餐+套餐扩展或套餐增值能力组合**的方式进行计费：
 - 基础套餐（必选）：您可以按包年包月 [预付费模式](https://intl.cloud.tencent.com/document/product/555/42701) 进行购买，套餐和扩展包详情请参见 [购买页](https://buy.cloud.tencent.com/buy/waf) 价格。
 - 套餐扩展（可选）：用户选购基础套餐后，可根据需要购买 [扩展域名包](https://intl.cloud.tencent.com/document/product/627/47799#extra-domain-pack.3Ca-id.3D.22ym.22.3E.3C.2Fa.3E)、[业务扩展包（QPS扩展包）](https://intl.cloud.tencent.com/document/product/627/47799#extra-business-pack-(extra-qps-pack).3Ca-id.3D.22qps.22.3E.3C.2Fa.3E)用以扩展实例规格。
->? 弹性拓展包：弹性防护的用户，WAF 按照超量 QPS 收取对应的弹性防护费用，账单次日生成。若未触发弹性防护，则不收取相关费用。
+
 - 套餐增值能力（可选）：用户在购买基础套餐后，可以选择购买 [安全日志服务包](https://intl.cloud.tencent.com/document/product/627/47799#security-log-pack.3Ca-id.3D.22rz.22.3E.3C.2Fa.3E) 、[BOT 行为管理](https://intl.cloud.tencent.com/document/product/627/47799#bot-behavior-management.3Ca-id.3D.22bot.22.3E.3C.2Fa.3E)。
 
 >?Web 应用防火墙预付费到期处理说明，请参见腾讯云计费相关中 [预付费计费说明](https://intl.cloud.tencent.com/document/product/555/42701)。

@@ -5,7 +5,7 @@ Tencent Cloud SCF provides the following function deployment methods. For more i
 
 - Uploading and deploying a zip package, as instructed in [Installing and Deploying Dependencies](#install)
 - Editing and deploying functions via the console, as instructed in [Deployment Through Console](https://intl.cloud.tencent.com/document/product/583/32741).
-- Using the command line, as instructed in [Deployment Through Serverless Framework CLI](https://intl.cloud.tencent.com/document/product/583/32741).
+- Using the command line, as instructed in [Deployment Through Serverless Cloud Framework](https://intl.cloud.tencent.com/document/product/583/32741).
 
 ## Installing and Deploying Dependencies[](id:install)
 
@@ -46,10 +46,7 @@ exports.main_handler = async (event, context) => {
 };
 ```
 
-2. Run the `npm install requests ` command to install the `requests` dependency under the current directory of the project. The code file is as follows:
-```shell
-$ npm install requests
-```
+2. Run the `npm install request` command to install the requests dependency under the current directory of the project. 
 
 
 ### Packaging and uploading

@@ -59,35 +59,6 @@ When CLS is shared by different business departments, the CLS costs need to be a
 </dx-tabs>
 
 
-### Setting an alert for CLS costs
-
->!
-> - Cost data has a delay of 2 days. It can be used for cost analysis and budget planning, but not for settlement or reconciliation.
-> - The cost analysis feature is currently in beta test.
->
-
-1. Log in to the Billing Center, and enter the [Cost Analysis](https://console.cloud.tencent.com/expense/cost/analysis) page.
-2. Click **Set Alert**.
-
-3. Click **New**.
-
-4. In the pop-up window, select **Cloud Log Service** for **Product** in the **Scope** area, and configure other parameters as needed.
-
-Two alert types are supported: daily data alert and monthly data alert.
- - Daily data alert has three modes: day-over-day, month-over-month, and fixed value (compare your daily cost against a fixed value).
-    Daily data alert formulas:
-    - MoM = ABS ((Daily cost this month − Cost on the same day last month) / Cost on the same day last month × 100%)
-    - DoD = ABS ((Daily cost on a day − Cost on the previous day) / Cost on the previous day × 100%)
-    - Fixed value = Compare cost in the current month against a fixed value
- - Monthly data alert has two modes: month-over-month and fixed value (compare your monthly cost against a fixed value).
-    Monthly data alert formulas:
-    - MoM = ABS ((Cost this month - Cost last month) / Cost last month × 100%)
-    For example, on August 18, cost in the current month is your total cost between August 1 and August 16, which is compared against your cost between July 1 and July 16.
-    - Fixed value = Compare cost in the current month against a fixed value
- - You can configure alert notifications by product and billing mode.
-    Product: All purchased products of the current user are displayed. The logic of the billing mode is similar.
-5. Click **Save**.
-
 
 ## Querying Usage
 
@@ -108,8 +79,8 @@ Two alert types are supported: daily data alert and monthly data alert.
 
 ### Customizing Analysis of Log Topic Usage
 
-1. Log in to the Cloud Monitor console, and enter the [Dashboard List](https://console.cloud.tencent.com/monitor/dashboard2/dashboards) page.
+1. Log in to the Tencent Cloud Observability Platform console, and enter the [Dashboard List](https://console.cloud.tencent.com/monitor/dashboard2/dashboards) page.
 2. Click **Create Dashboard** to create a dashboard for analyzing log topic usage.
 
 3. After completing the configuration, click **Save** in the top-right corner to save the dashboard.
-For more instructions about the dashboard feature, see [Dashboard](https://intl.cloud.tencent.com/document/product/248/38461) in the operation guide of Cloud Monitor.
+For more instructions about the dashboard feature, see [Dashboard](https://intl.cloud.tencent.com/document/product/248/38461) in the operation guide of Tencent Cloud Observability Platform.

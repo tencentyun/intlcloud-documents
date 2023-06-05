@@ -13,7 +13,7 @@
 <td>新增 Kudu 数据表分析</td>
 <td><li>支持表、表内 Tablets、表内 TabletServers 多维信息查看</li><li>提供 Tablets 级读写 QPS、存储量等多维信息分析</li></td>
 <td>2023-03-24</td>
-<td></td>
+<td><a href="https://www.tencentcloud.com/document/product/1026/54478">Kudu 数据表分析</a></td>
 </tr>
 <tr>
 <td>Hbase 新增 Region 分析</td>
@@ -22,12 +22,30 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/46446">Hbase 数据表分析</a></td>
 </tr>
 <tr>
+<td>监控指标告警丰富</td>
+<td><li>HMS 丰富进程打开连接数、Get Table 请求、当前活跃请求等相关监控指标及告警14+   </li><li>HS2丰富当前请求数、查询提交/执行平均时间等监控指标及告警20+   </li><li>Yarn 丰富队列级 Cpu、Memory 使用量的百分比占比指标告警</li></td>
+<td>2023-03-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36884">Hive 监控指标</a>  <br><a href="https://intl.cloud.tencent.com/document/product/1026/36881">YARN 监控指标</a></td>
+</tr>
+<tr>
+<td>健康状态事件丰富</td>
+<td>新增服务角色健康状态异常、服务角色健康状态超时</td>
+<td>2023-03-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889">集群事件</a></td>
+</tr>
+<tr>
+<td>日志精准度优化</td>
+<td>日志检索优化精准度，支持关键字检索及短语检索</td>
+<td>2023-03-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/35372">日志搜索</a></td>
+</tr>
+<tr>
 <td>Kafka 集群类型新增产品版本 Kafka-V2.0.0</td>
 <td>新增产品版本 Kafka-V2.0.0，对应社区 Kafka 版本2.4.1</td>
 <td>2023-03-23</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/46456">组件版本</a></td>
 </tr>
-<tr>
+<tr> 
 <td>StarRocks 集群类型新增产品版本 StarRocks-V1.3.0</td>
 <td>新增产品版本 StarRocks-V1.3.0，对应社区 Kafka 版本2.4.3</td>
 <td>2023-03-10</td>
@@ -45,26 +63,7 @@
 <td>2023-03-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/48582">EMR 容器版概述</a></td>
 </tr>
-<tr>
-<td>监控指标告警丰富</td>
-<td><li>HMS 丰富进程打开连接数、Get Table 请求、当前活跃请求等相关监控指标及告警14+   </li><li>HS2丰富当前请求数、查询提交/执行平均时间等监控指标及告警20+   </li><li>Yarn 丰富队列级 Cpu、Memory 使用量的百分比占比指标告警</li></td>
-<td>2023-03-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/36884">Hive 监控指标</a>  <br><a href="https://intl.cloud.tencent.com/document/product/1026/36881">YARN 监控指标</a></td>
-</tr>
-<tr>
-<td>健康状态事件丰富</td>
-<td>新增服务角色健康状态异常、服务角色健康状态超时</td>
-<td>2023-03-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889">集群事件</a></td>
-</tr>
-<tr>
-<td>日志精准度优化</td>
-<td>日志检索优化精准度，支持关键字检索及短语检索</td>
-<td>2023-03-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/35372">日志搜索</a></td>
-</tr>
 </tbody></table>
-
 
 
 ## 2023年02月
@@ -88,13 +87,13 @@
 <td>新增 Hive (基于 Hive MetaStore) 数据表分析</td>
 <td><li>支持查看总表、总存储量、数据表分布及趋势等重点维度的全局指标数据信息<li>提供数据表列表及其表分区信息相关多维度数据查看功能</td>
 <td>2023-02-09</td>
-<td><a href="https://www.tencentcloud.com/document/product/1026/47774" target="_blank">Hive 数据表分析</a></td>
+<td><a href="https://www.tencentcloud.com/document/product/1026/54474" target="_blank">Hive 数据表分析</a></td>
 </tr>
 <tr>
 <td>新增 HDFS 文件级别分析功能</td>
 <td><li>支持查看 HDFS 文件量分布、存储量分布等重点维度的数据分布<li>提供 top 大文件、top 小文件等常见问题点的信息查看及下载功能</td>
 <td>2023-02-09</td>
-<td></td>
+<td><a href="https://www.tencentcloud.com/document/product/1026/54472" target="_blank">HDFS 文件存储分析</a></td>
 </tr>
 </tbody></table>
 

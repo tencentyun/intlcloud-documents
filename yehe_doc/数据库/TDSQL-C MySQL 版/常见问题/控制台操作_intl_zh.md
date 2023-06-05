@@ -1,6 +1,7 @@
+
 ## 版本升级
 ### TDSQL-C MySQL 版数据库的版本如何升级？
-- 数据库版本升级，如 MySQL 5.7 升级到 MySQL 8.0，TDSQL-C MySQL 版暂不支持这类版本升级，您可以新建目标版本的实例，通过数据传输服务 DTS 迁移源端数据至目标实例。
+- 数据库版本升级，如 MySQL 5.7 升级到 MySQL 8.0，TDSQL-C MySQL 版暂不支持这类版本升级，您可以新建目标版本的实例，通过数据传输服务 DTS 迁移源端数据至目标实例，操作方法请参考 [迁移至 TDSQL-C MySQL](https://intl.cloud.tencent.com/document/product/571/47364)。
 - 内核小版本升级，如 MySQL 5.7 内核小版本 2.0.12 升级到 2.0.14，操作方法请参见 [升级内核小版本](https://intl.cloud.tencent.com/document/product/1098/44617)。
 
 ### 版本升级会影响数据吗？
@@ -13,7 +14,7 @@ TDSQL-C MySQL 版会陆续更新内核小版本更新的特性，包括新功能
 ## 数据导入/导出
 ### TDSQL-C MySQL 版如何导入数据？
 TDSQL-C MySQL 版支持导入数据到云上数据库，可操作方法如下：
-- 通过数据传输服务 DTS 同步数据，可持续做增量数据的导入。
+- 通过数据传输服务 DTS 同步数据，可持续做增量数据的导入，操作方法请参见 [同步至 TDSQL-C MySQL](https://intl.cloud.tencent.com/document/product/571/47348)。
 - 通过 [DMC 管理平台](https://dms.cloud.tencent.com/#/login?dbType=cynosdbmysql&region=ap-beijing&instanceId=cynosdbmysql-d09g8oei) 导入数据，可操作简单一次性的存量文件导入，单次导入可支持最大10GB的文件。支持从本地导入文件和通过 COS 源文件地址导入，数据需先上传至 COS ，然后可参考 [上传对象](https://intl.cloud.tencent.com/document/product/436/13321) 和 [下载对象](https://intl.cloud.tencent.com/document/product/436/13322) 获取 COS 源文件地址。
 
 ### 如何导入大于10GB的 SQL 文件？
@@ -23,7 +24,7 @@ TDSQL-C MySQL 版支持导入数据到云上数据库，可操作方法如下：
 
 ### TDSQL-C MySQL 版如何迁移数据？
 TDSQL-C MySQL 版支持使用数据传输服务 DTS 和命令行工具迁移数据。
-- DTS 数据迁移。
+- DTS 数据迁移，请参见 [TDSQL-C MySQL 版数据迁移](https://intl.cloud.tencent.com/document/product/571/47364)。
 - 支持通过命令行工具迁移数据，请参见 [通过命令行工具迁移](https://intl.cloud.tencent.com/document/product/1098/40638)。
 
 ### TDSQL-C MySQL 版如何导出数据？
@@ -35,13 +36,15 @@ TDSQL-C MySQL 版导出数据有如下两种方法：
 ### TDSQL-C MySQL 版可以实现类似 safe-updates 功能吗？
 safe-updates 为数据库的一种安全模式，在应用 BUG 或者数据库管理员误操作的情况下，会发生对全表进行更新：update delete 的情况。TDSQL-C MySQL 版提供 sql_safe_updates 参数来限制此操作。
 
-您可以在 [控制台](https://console.cloud.tencent.com/cynosdb/mysql#/) 的参数设置开启参数 sql_safe_updates，来完成您的需求。
+您可以在 [控制台](https://console.cloud.tencent.com/cynosdb/mysql#/) 的参数设置开启参数 sql_safe_updates，来完成您的需求，具体操作如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/GpCc656_8.png)
 
 ### TDSQL-C MySQL 版连接的 Threads_created 线程数据一直上涨是否有影响？
 Threads_created 表示运行线程数，若 Threads_created 数据一直上涨是会有影响的，会消耗很小的内存，而且会占用连接数。可以通过如下操作观察和结束部分不必要的会话。
 - 在实例监控页，观察监控指标 - 运行线程数（Threads_created）数值变化。
 - 您可以执行 show processlist 命令，或通过 [数据库智能管家 DBbrain](https://console.cloud.tencent.com/dbbrain/performance/analysis?instId=cynosdbmysql-ins-qw43wuqj) 的实时会话来查看运行线程的详细信息反馈。
 - 如发现 Threads_created 线程数据一直上涨，可根据业务自身实际情况使用 Kill 命令结束部分会话，或通过数据库智能管家 DBbrain 实时会话里的 Kill 会话、持续 Kill 操作完成类似操作。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/u2CV486_9.png)
 
 ### lower_case_table_names 参数如何修改？
 lower_case_table_names 参数表示表名大小写敏感，您可以在购买集群时设置此参数，或者通过控制台来修改。
@@ -58,13 +61,15 @@ TDSQL-C MySQL 版采用计算和存储分离的架构，所有计算节点共享
 
 TDSQL-C MySQL 版的配置变更包括计算节点以及存储空间。
 - 计算节点变配：您可在实例列表，对计算节点进行调配。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/8JMc866_10.png)
 - 存储空间变配：您可在集群详情页，对存储空间进行调配。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/NvTd279_11.png)
 >!
 >- 存储计费模式为按量计费：无需对磁盘进行扩容，您可使用的磁盘最大容量为主实例对应计算节点下磁盘的上限，若要使用超过此计算节点上限的存储空间，您可对主实例进行计算节点升级。详细计算节点和对应最大存储容量请参见 [产品规格](https://intl.cloud.tencent.com/document/product/1098/46430)。
 >- 存储计费模式为包年包月：您可通过控制台调整集群的存储空间，若要调整超过此计算节点上限的存储空间，您可对主实例进行计算节点升级。详细计算节点和对应最大存储容量请参见 [产品规格](https://intl.cloud.tencent.com/document/product/1098/46430)。
 >- 存储计费模式为包年包月时，变更存储容量的有效计费时间为变更容量时到您的集群到期的时间。
 >
-
+操作方法请参见 [修改实例配置](https://www.tencentcloud.com/document/product/1098/50176)。
 
 ### TDSQL-C MySQL 版支持自动伸缩吗？
 TDSQL-C MySQL 版自动伸缩可分为存储空间和计算规格上的伸缩。
@@ -84,6 +89,7 @@ TDSQL-C MySQL 版 [数据备份](https://intl.cloud.tencent.com/document/product
 
 ### TDSQL-C MySQL 版如何恢复数据？
 - 通过回档功能进行数据恢复，此方法支持库表级别回档到原集群。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/485r070_12.png)
 - 通过克隆功能进行数据恢复，此方法支持整集群级别克隆到新集群，支持通过克隆将集群恢复到日志备份保留时间内的任意时间点，或者恢复到指定备份文件的备份集。
 - 通过备份文件进行数据还原，您可通过控制台手动备份来生成逻辑备份文件，通过此文件来进行数据恢复。
 
@@ -106,8 +112,8 @@ TDSQL-C MySQL 版 [数据备份](https://intl.cloud.tencent.com/document/product
 
 [](id:zhanghaomima)
 ### 帐号误删与忘记密码怎么办？
-- 若误删帐号，可在集群列表单击集群 ID 进入实例管理页，通过**帐号管理** > **创建帐号**或使用 SQL 语句进行新建，详细介绍可参见 [创建帐号](https://intl.cloud.tencent.com/document/product/1098/44612)。
-- 若忘记 root 密码，可通过**帐号管理**页找到对应帐号进行**重置密码**操作，详细介绍可参见 [重置密码](https://intl.cloud.tencent.com/document/product/1098/44611)。
+- 若误删帐号，可在集群列表单击集群 ID 进入实例管理页，通过**帐号管理** > **创建帐号**或使用 SQL 语句进行新建。
+- 若忘记 root 密码，可通过**帐号管理**页找到对应帐号进行**重置密码**操作，详细介绍可参见 [重置密码](https://www.tencentcloud.com/document/product/1098/44611)。
 以上操作也可以通过 [云 API 接口](https://intl.cloud.tencent.com/document/product/1098/46319) 实现。
 
 ### TDSQL-C MySQL 版账号和密码组成有什么规范？
@@ -120,5 +126,4 @@ TDSQL-C MySQL 版 [数据备份](https://intl.cloud.tencent.com/document/product
 
 ### 如何查询任务执行情况？
 您可在集群列表右侧单击图标![](https://qcloudimg.tencent-cloud.cn/raw/afb9f424978974f06abf378c5087d4a6.png)，查看当前任务，也可在左侧单击任务列表，查看全部任务详情。
-
 

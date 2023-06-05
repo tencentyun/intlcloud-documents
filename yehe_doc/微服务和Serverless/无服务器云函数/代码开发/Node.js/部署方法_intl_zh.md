@@ -5,7 +5,7 @@
 
 - 通过 zip 打包上传部署，详情可参见 [依赖安装和部署](#install)。
 - 通过控制台编辑和部署，详情可参见 [通过控制台部署函数](https://intl.cloud.tencent.com/document/product/583/32741)。
-- 使用命令行部署，详情可参见 [通过 Serverless Framework CLI 命令行部署函数](https://intl.cloud.tencent.com/document/product/583/32741)。
+- 使用命令行部署，详情可参见 [通过 Serverless Cloud Framework 部署函数](https://intl.cloud.tencent.com/document/product/583/32741)。
 
 ## 依赖安装和部署[](id:install)
 
@@ -24,7 +24,7 @@ Node.js 可以通过 npm 包管理器进行依赖管理。
 
 #### 使用方法
 
-在代码目录下执行 `npm install xxx 命令安装依赖包。
+在代码目录下执行 `npm install xxx` 命令安装依赖包。
 
 
 >!
@@ -46,10 +46,7 @@ exports.main_handler = async (event, context) => {
 };
 ```
 
-2. 使用 `npm install requests ` 在项目当前目录安装 `requests` 依赖。代码文件如下所示：
-```shell
-$ npm install requests
-```
+2. 使用 `npm install request` 命令在项目当前目录安装 requests 依赖。
 
 
 ### 打包上传

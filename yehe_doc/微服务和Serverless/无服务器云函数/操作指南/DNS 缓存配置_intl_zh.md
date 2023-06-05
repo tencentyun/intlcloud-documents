@@ -17,7 +17,7 @@
 
 ### 代码部署的事件函数
 
-1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/list?rid=1&ns=default)，选择需要启用 DNS 缓存配置的函数，进入函数详情页。
+1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/list?rid=1&ns=default)，选择需要启用 DNS 缓存配置的函数，进入函数详情页。
 2. 在函数配置页面，单击右上角**编辑**，在编辑状态中勾选**启用 DNS 缓存**。
 3. 单击**保存**完成函数配置更新。
 
@@ -39,53 +39,51 @@ yum install nscd -y
 ```
 2. 将默认的 `/etc/nscd.conf` 更新为以下内容：
 ``` 
-\#
-\# /etc/nscd.conf
-\#
-\# An example Name Service Cache config file. This file is needed by nscd.
-\#
-\# WARNING: Running nscd with a secondary caching service like sssd may lead to
-\# unexpected behaviour, especially with how long entries are cached.
-\#
-\# Legal entries are:
-\#
-\# logfile <file>
-\# debug-level <level>
-\# threads <initial #threads to use>
-\# max-threads <maximum #threads to use>
-\# server-user <user to run server as instead of root>
-\# server-user is ignored if nscd is started with -S parameters
-\# stat-user <user who is allowed to request statistics>
-\# reload-count unlimited|<number>
-\# paranoia <yes|no>
-\# restart-interval <time in seconds>
-\#
-\# enable-cache <service> <yes|no>
-\# positive-time-to-live <service> <time in seconds>
-\# negative-time-to-live <service> <time in seconds>
-\# suggested-size <service> <prime number>
-\# check-files <service> <yes|no>
-\# persistent <service> <yes|no>
-\# shared <service> <yes|no>
-\# NOTE: Setting 'shared' to a value of 'yes' will accelerate the lookup,
-\# but those lookups will not be counted as cache hits
-\# i.e. 'nscd -g' may show '0%'.
-\# max-db-size <service> <number bytes>
-\# auto-propagate <service> <yes|no>
-\#
-\# Currently supported cache names (services): passwd, group, hosts, services
-\#
-
-\# logfile /var/log/nscd.log
-\# threads 4
-\# max-threads 32
+#
+# /etc/nscd.conf
+#
+# An example Name Service Cache config file. This file is needed by nscd.
+#
+# WARNING: Running nscd with a secondary caching service like sssd may lead to
+# unexpected behaviour, especially with how long entries are cached.
+#
+# Legal entries are:
+#
+# logfile <file>
+# debug-level <level>
+# threads <initial #threads to use>
+# max-threads <maximum #threads to use>
+# server-user <user to run server as instead of root>
+# server-user is ignored if nscd is started with -S parameters
+# stat-user <user who is allowed to request statistics>
+# reload-count unlimited|<number>
+# paranoia <yes|no>
+# restart-interval <time in seconds>
+#
+# enable-cache <service> <yes|no>
+# positive-time-to-live <service> <time in seconds>
+# negative-time-to-live <service> <time in seconds>
+# suggested-size <service> <prime number>
+# check-files <service> <yes|no>
+# persistent <service> <yes|no>
+# shared <service> <yes|no>
+# NOTE: Setting 'shared' to a value of 'yes' will accelerate the lookup,
+# but those lookups will not be counted as cache hits
+# i.e. 'nscd -g' may show '0%'.
+# max-db-size <service> <number bytes>
+# auto-propagate <service> <yes|no>
+#
+# Currently supported cache names (services): passwd, group, hosts, services
+#
+# logfile /var/log/nscd.log
+# threads 4
+# max-threads 32
 server-user root
-\# stat-user somebody
+# stat-user somebody
 debug-level 0
 reload-count 2
 paranoia no
-\# restart-interval 3600
-
+# restart-interval 3600
 enable-cache passwd no
 positive-time-to-live passwd 600
 negative-time-to-live passwd 20
@@ -95,7 +93,6 @@ persistent passwd yes
 shared passwd yes
 max-db-size passwd 33554432
 auto-propagate passwd yes
-
 enable-cache group no
 positive-time-to-live group 3600
 negative-time-to-live group 60
@@ -105,7 +102,6 @@ persistent group yes
 shared group yes
 max-db-size group 33554432
 auto-propagate group yes
-
 enable-cache hosts yes
 positive-time-to-live hosts 300
 negative-time-to-live hosts 0
@@ -114,7 +110,6 @@ check-files hosts no
 persistent hosts no
 shared hosts yes
 max-db-size hosts 8388608
-
 enable-cache services no
 positive-time-to-live services 600
 negative-time-to-live services 3
@@ -123,7 +118,6 @@ check-files services yes
 persistent services yes
 shared services yes
 max-db-size services 33554432
-
 enable-cache netgroup no
 positive-time-to-live n etgroup 28800
 negative-time-to-live netgroup 20

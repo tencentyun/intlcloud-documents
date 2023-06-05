@@ -11,4 +11,4 @@ After creating multiple test tasks for the same scenario, you can leverage the t
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/XFuV725_5intl_%E5%A5%BD%E5%8E%8B%E7%9C%8B%E5%9B%BE.png)
 
 
->? For more information on metrics, see [Test Statistics](https://www.tencentcloud.com/document/product/1169/52007).
+>? For more information on metrics, see [Test Statistics](https://www.tencentcloud.com/document/product/1169/51992).

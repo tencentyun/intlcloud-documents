@@ -22,7 +22,7 @@ COS 서비스는 크로스 도메인 간 액세스를 위한 OPTIONS 요청 응�
     - 프로토콜 이름 http 또는 https를 생략하지 않도록 주의하십시오. 포트가 기본 포트 80이 아닌 경우 포트도 포함해야 합니다. 예시 IP 주소는 `http://10.10.10.10`입니다.
  - **Allow-Methods**: GET, PUT, POST, DELETE 및 HEAD가 지원됩니다. 하나 이상의 허용된 CORS 요청 방법을 열거할 수 있습니다.
  - **Allow-Headers**: OPTIONS 요청을 통해 후속 요청에서 어떤 사용자 정의 HTTP 헤더(예시: x-cos-meta-md5)가 허용되는지 서버에 알립니다.
-    - 한 줄에 하나씩만 여러 Headers를 지정할 수 있습니다. 예시: Content-type.
+    - 한 줄에 하나씩만 여러 Headers를 지정할 수 있습니다. 예시: Content-Type.
     - Header는 생략되는 경향이 있으며 달리 필요하지 않은 경우 모든 헤더가 허용됨을 나타내는 `*`로 설정하는 것이 좋습니다.
     - 영어 대소문자 [a-z, A-Z]가 지원되지만, 언더바 `_`는 허용되지 않습니다.
     - Access-Control-Request-Headers에 지정된 각 Header는 Allowed-Header의 값과 일치해야 합니다.

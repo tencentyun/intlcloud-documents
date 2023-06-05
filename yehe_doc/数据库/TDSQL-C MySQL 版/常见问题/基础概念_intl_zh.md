@@ -1,3 +1,4 @@
+
 ### 什么是 TDSQL-C MySQL 版？
 TDSQL-C MySQL 版（TDSQL-C for MySQL）是腾讯云自研的新一代云原生关系型数据库。融合了传统数据库、云计算与新硬件技术的优势，为用户提供具备极致弹性、高性能、海量存储、安全可靠的数据库服务。
 
@@ -36,4 +37,4 @@ TDSQL-C MySQL 版是存储层采用“三副本强一致算法”实现的分布
 - [TDSQL-C MySQL 同步至 MySQL](https://intl.cloud.tencent.com/document/product/571/47345)
 - [创建 TDSQL-C MySQL 版数据订阅](https://intl.cloud.tencent.com/document/product/571/47354)
 
-2022年5月17日至2022年12月31日，DTS 对目标数据库为 TDSQL-C MySQL 且采用按量计费模式的迁移、同步任务进行免费。
+2022年5月17日至2022年12月31日，DTS 对目标数据库为 TDSQL-C MySQL 且采用按量计费模式的迁移、同步任务进行免费.

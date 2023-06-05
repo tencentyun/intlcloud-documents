@@ -1,14 +1,17 @@
+
 ### What are the strengths of TDSQL-C for MySQL's big table storage over traditional databases using local disks?
 A table in TDSQL-C for MySQL is sharded physically for storage on N storage servers. Therefore, the I/O of a table is allocated to multiple disks, and the overall I/O throughput is much higher than that of centralized databases using local disks.
 
 ### Are there any limits on the numbers of databases and tables that I can create?
-TDSQL-C for MySQL doesn't limit the numbers of databases and tables that can be created. Theoretically, you can create an unlimited number of databases and tables as long as there is enough space. For more information on how to view the upper limit of the storage space, see [Product Specifications](https://intl.cloud.tencent.com/document/product/1098/46430).
+TDSQL-C for MySQL doesn't limit the numbers of databases and tables that can be created. Theoretically, you can create an unlimited number of databases and tables as long as there is enough space. For more information on how to view the upper limit of the storage space, see [Product Specifications](https://www.tencentcloud.com/document/product/1098/46430).
 
 ### How do I create a database/table?
 TDSQL-C for MySQL allows you to create a database/table in many ways:
-- Quickly create a database/table in the [TDSQL-C for MySQL console](https://console.cloud.tencent.com/cynosdb/mysql) as instructed in [Creating Database](https://intl.cloud.tencent.com/document/product/1098/44606).
+- Quickly create a database/table in the [TDSQL-C for MySQL console](https://console.cloud.tencent.com/cynosdb/mysql) as instructed in [Creating Database](https://www.tencentcloud.com/document/product/1098/44606).
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/MxbF364_14.png)
 - Create a custom database/table through [DMC](https://dms.cloud.tencent.com/?resource-retry=2#/login?dbType=cynosdbmysql&region=ap-guangzhou&instanceId=cynosdbmysql-aaf8s18h).
-- Log in to the client as instructed in [Connecting to Cluster](https://intl.cloud.tencent.com/document/product/1098/40627) and run SQL commands to create a database/table.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Ih2L156_15.png)
+- Log in to the client as instructed in [Connecting to Cluster](https://www.tencentcloud.com/document/product/1098/51979) and run SQL commands to create a database/table.
 The SQL statement to create a database is `create database`, and the command is:
 ```
 create database <database name>;
@@ -42,4 +45,4 @@ create table B as select * from A
 Yes. You can use partitioned tables to trim large tables to control the volume of data queried and accessed while remaining imperceptible to business code (with no modifications required).
 
 ### How do I quickly change the structure of a big table?
-TDSQL-C for MySQL supports the instant DDL feature to quickly modify columns in big tables while avoiding data replication. This feature does not replicate the data or use disk capacity or I/O, and can implement changes within seconds during peak hours. For more information, see [Instant DDL Overview](https://intl.cloud.tencent.com/document/product/1098/44589).
+TDSQL-C for MySQL supports the instant DDL feature to quickly modify columns in big tables while avoiding data replication. This feature can implement changes in seconds without replicating data or using disk capacity or I/O during peak hours. For more information, see [Instant DDL Overview](https://intl.cloud.tencent.com/document/product/1098/44589).

@@ -2,7 +2,6 @@ This document describes how to create a flow log policy to collect flow logs of 
 >? The FL service for NAT gateway and CCN cross-region connections is currently in beta. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Prerequisites
-+ Because data collected in FL needs to be written to CLS, you should ensure that you have granted permissions to FL to access CLS. For more information, see [Authorizing FL to Access CLS](https://intl.cloud.tencent.com/document/product/682/47040).
 + You have created a logset and log topic:
   + The Advanced analysis dashboard is only available for “flowlog_logset” logsets marked with “Flowlog” and the log topics under them. For more information, see [Configuring Logsets and Log Topics](https://intl.cloud.tencent.com/document/product/682/47038).
   + If you do not use the advanced analysis dashboard, you can select any logset and log topic. You can [Create Logsets and Log Topics](https://intl.cloud.tencent.com/document/product/682/18967) without the “Flowlog” mark via the CLS console, or [Configure Logsets and Log Topics](https://intl.cloud.tencent.com/document/product/682/47038) with the “Flowlog” mark via the FL console.

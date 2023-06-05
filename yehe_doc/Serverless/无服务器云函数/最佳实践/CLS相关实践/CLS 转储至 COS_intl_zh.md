@@ -20,7 +20,7 @@
 [](id:step03)
 ### 创建云函数 SCF
 
-1. 登录云函数控制台，选择左侧导航栏中的**[函数服务](https://console.cloud.tencent.com/scf/list)**。
+1. 登录 [Serverless](https://console.cloud.tencent.com/scf/list) 控制台，进入函数服务页面。
 2. 在“函数服务”页面上方选择**北京**地域，并单击**新建**进入新建函数页面，配置以下参数：
   - **创建方式**：选择**模板创建**。
   - **模糊搜索**：输入“CLS 消息转储至 COS”，并进行搜索。
@@ -43,13 +43,13 @@
 	- **命名空间**：选择函数所在的命名空间。
 	- **函数名**：选择 [创建云函数 SCF](#step03) 步骤中已创建的云函数。
 	- **别名**：选择函数别名。
-	- **最长等待时间**：单次事件拉取的最长等待事件，默认60s。
+	- **最长等待时间**：单次事件拉取的最长等待时间，默认60s。
 
 [](id:step05)
 ### 测试函数功能
 
 1. 下载 [测试样例](https://main.qcloudimg.com/raw/6e0d4837eefd0ce77dac8a3973acdf39.zip) 中的日志文件，并解压出 demo-scf1.txt，导入至源端CLS服务。
-2. 切换至 [云函数控制台](https://console.cloud.tencent.com/scf/list?rid=8&ns=default)，查看执行结果。
+2. 切换至 [Serverless 控制台](https://console.cloud.tencent.com/scf/list?rid=8&ns=default)，查看执行结果。
    在函数详情页面中选择**日志查询**页签，可以看到打印出的日志信息。如下图所示：
    ![](https://qcloudimg.tencent-cloud.cn/raw/5e9267cb3d77cbcea1210f37358cd6c5.png)
 3. 切换至 [对象存储 COS 控制台](https://console.cloud.tencent.com/cos5) ，查看数据转储及加工结果。

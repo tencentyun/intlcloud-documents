@@ -728,3 +728,4 @@ os seguintes Módulos devem ser aplicados e fazer parte desta política de priva
 63.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54988).
 64.[Cloud Log Service](https://www.tencentcloud.com/document/product/614/55081).
 65.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55132).
+66.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55139).
