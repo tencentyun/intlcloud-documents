@@ -33,7 +33,7 @@ exports.main_handler = async (event, context) => {
 
 ## 函数内发起网络连接
 
-本示例使用了 requests 库在函数内发起网络连接，获取页面信息。可以通过在项目目录下执行 npm install requests` 命令完成依赖库安装。
+本示例使用了 requests 库在函数内发起网络连接，获取页面信息。可以通过在项目目录下执行 `npm install request` 命令完成依赖库安装。
 
 ```js
 'use strict';
