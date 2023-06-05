@@ -33,7 +33,7 @@ exports.main_handler = async (event, context) => {
 
 ## Initiating Network Connection in Function
 
-This example shows you how to use the requests library to initiate network connections in a function and obtain page information. You can run the `npm install requests` command under the project directory to install this dependent library.
+This example shows you how to use the requests library to initiate network connections in a function and obtain page information. You can run the `npm install request` command under the project directory to install this dependent library.
 
 ```js
 'use strict';
