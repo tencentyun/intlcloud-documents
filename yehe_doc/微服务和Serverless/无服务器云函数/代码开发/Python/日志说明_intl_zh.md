@@ -47,18 +47,14 @@ def main_handler(event, context):
 
 您可执行以下代码进行测试：
 <dx-codeblock>
-
-```python
+::: python
 # -*- coding: utf8 -*-
 import json
 		
 def main_handler(event, context):
 	print(json.dumps({"key1": "test value 1","key2": "test value 2"}))
 	return("Hello World!")
-```
-
-
-
+:::
 </dx-codeblock>
 
 ### 检索方法
