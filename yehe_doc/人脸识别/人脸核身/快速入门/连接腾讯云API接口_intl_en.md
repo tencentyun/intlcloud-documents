@@ -23,7 +23,7 @@ You can select the language you are familiar with for coding. This section uses 
 ### Environmental dependency
 
 1. Go 1.9 or above, with the necessary environment variables such as `GOPATH` set properly
-2. Activate the FaceID product by following the [process guide](https://www.tencentcloud.com/document/product/1061/37028?lang=en&pg=)
+2. Activate the eKYC product by following the [process guide](https://www.tencentcloud.com/document/product/1061/37028?lang=en&pg=)
 3. Obtain SecretId and SecretKey by following the [guide to getting the secret key](https://console.tencentcloud.com/cam/capi)
 
 ### Installation
