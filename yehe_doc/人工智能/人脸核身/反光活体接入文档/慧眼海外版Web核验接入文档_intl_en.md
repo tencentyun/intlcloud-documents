@@ -5,7 +5,7 @@
 ##### Prerequisites
 
 1. You have signed up for a Tencent Cloud account and completed identity verification.
-2. You have activated FaceID in the [console](https://console.intl.cloud.tencent.com/faceid).
+2. You have activated eKYC in the [console](https://console.intl.cloud.tencent.com/faceid).
 
 ##### Integration steps
 

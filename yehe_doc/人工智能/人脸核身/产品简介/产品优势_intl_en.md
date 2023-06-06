@@ -1,5 +1,6 @@
 ### Leading algorithms
-Tencent Cloud's face comparison algorithms have set records in multiple international contests. It achieved an industry-leading accuracy of 99.80% during LFW, which is recognized internationally as one of the most challenging face image datasets. In business scenarios, with a false accept rate (FAR) of 0.01%, FaceID has a true accept rate (TAR) over 98%.
+Tencent Cloud's face comparison algorithms have set records in multiple international contests. It achieved an industry-leading accuracy of 99.80% during LFW, which is recognized internationally as one of the most challenging face image datasets. In business scenarios, with a false accept rate (FAR) of 0.01%, eKYC has a true accept rate (TAR) over 98%.
+
 ### High security and reliability
 The combination of liveness detection and Tencent's rich security experience and leading anti-identity attack algorithm capabilities can effectively block attacks with static photo, video reproducing, 3D-based face mask/headform and other means. It helps customers achieve business compliance and mitigate losses arising from identity frauds.
 

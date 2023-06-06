@@ -1,10 +1,10 @@
-This document introduces the custom capabilities of the FaceID SDK (global edition).
+This document introduces the custom capabilities of the eKYC SDK (global edition).
 
 ### I. Custom UI
 
 #### Customizing layout
 
-The FaceID SDK supports custom UI by using `AuthUiConfig` (see the API description document) or passing in `Layout resId`.
+The eKYC SDK supports custom UI by using `AuthUiConfig` (see the API description document) or passing in `Layout resId`.
 
 The usage is as follows:
 
@@ -168,7 +168,7 @@ The previous section describes how to customize the UI layout. This section desc
 When the liveness detection and face comparison UI is created, `onMainViewCreate(View authView)` of `HuiYanAuthEventCallBack` will be called. When the liveness detection and face comparison UI is to be terminated, the `onMainViewDestroy()` method will be called back, and you can customize the processing logic in the corresponding lifecycle.
 
 ```java
-// Set a callback listener for key events in FaceID
+// Set a callback listener for key events in eKYC
 HuiYanOsApi.setAuthEventCallBack(new HuiYanAuthEventCallBack() {
     @Override
     public void onAuthTipsEvent(HuiYanAuthTipsEvent tipsEvent) {
@@ -204,9 +204,9 @@ Based on the callback of `onMainViewCreate` and the callback method of `onMainVi
 
 #### Customizing prompt
 
-If you want to modify a prompt or add a language file, follow the instructions below. The FaceID SDK provides a translation file **hy_customer_string.xml** , which contains all the configuration text that can be modified.
+If you want to modify a prompt or add a language file, follow the instructions below. The eKYC SDK provides a translation file **hy_customer_string.xml** , which contains all the configuration text that can be modified.
 
-1. Open the project in the main module (which integrates the FaceID SDK).
+1. Open the project in the main module (which integrates the eKYC SDK).
 2. Add the **hy_customer_string.xml** file to the corresponding language folder.
 3. Modify the text content that needs to be customized.
 4. After being packaged, the modified content will automatically overwrite the original content.
@@ -219,7 +219,7 @@ If you want to modify a prompt or add a language file, follow the instructions b
 
 To add a language, perform the following steps:
 
-1. Add the corresponding language folder to the project in the main module (which integrates the FaceID SDK).
+1. Add the corresponding language folder to the project in the main module (which integrates the eKYC SDK).
 
 2. Copy the `hy_customer_string.xml` file to the language folder and modify the value content.
 

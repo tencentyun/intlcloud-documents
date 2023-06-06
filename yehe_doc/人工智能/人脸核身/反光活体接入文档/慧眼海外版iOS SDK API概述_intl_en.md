@@ -1,12 +1,12 @@
-## FaceID SDK for iOS API Overview
-The FaceID SDK mainly involves the following classes: `HuiYanOsApi` (API class), `HuiYanOsConfig` (parameter configuration class), and `HuiYanConfigSuccCallback`, `HuiYanConfigFailCallback`, `HuiYanResultSuccCallback`, and `HuiYanResultFailCallback` (result callback classes).
+## eKYC SDK for iOS API Overview
+The eKYC SDK mainly involves the following classes: `HuiYanOsApi` (API class), `HuiYanOsConfig` (parameter configuration class), and `HuiYanConfigSuccCallback`, `HuiYanConfigFailCallback`, `HuiYanResultSuccCallback`, and `HuiYanResultFailCallback` (result callback classes).
 
 ### HuiYanOsApi
 
 | API                                                   | Feature Description                                             |
 | ----------------------------------------------------- | ---------------------------------------------------- |
 | [release()](#release())                               | Releases resources                                         |
-| [startGetAuthConfigData()](#startGetAuthConfigData()) | Gets the local configuration information of the FaceID SDK                        |
+| [startGetAuthConfigData()](#startGetAuthConfigData()) | Gets the local configuration information of the eKYC SDK                        |
 | [startAuthByLightData()](#startAuthByLightData())     | Passes in the light sequence obtained by the server to continue the liveness detection for identity verification  |
 
 #### release()
@@ -17,7 +17,7 @@ The FaceID SDK mainly involves the following classes: `HuiYanOsApi` (API class),
 
 Feature overview:
 
-	This API is used to release the FaceID SDK resources.
+	This API is used to release the eKYC SDK resources.
 
 #### startGetAuthConfigData()
 
@@ -29,7 +29,7 @@ Feature overview:
 
 Feature overview:
 
-	This API is used to pull the FaceID SDK configuration parameters during local detection as the parameters for subsequent acquisition of the light sequence.
+	This API is used to pull the eKYC SDK configuration parameters during local detection as the parameters for subsequent acquisition of the light sequence.
 
 Input parameters:
 
@@ -49,7 +49,7 @@ Input parameters:
 
 Feature overview:
 
-	This API is used to pass in the light sequence data pulled from the server to the FaceID SDK and continue the identity verification process to get the local detection result.
+	This API is used to pass in the light sequence data pulled from the server to the eKYC SDK and continue the identity verification process to get the local detection result.
 
 Input parameters:
 
@@ -63,7 +63,7 @@ Input parameters:
 
 ### HuiYanOsConfig
 
-`HuiYanOsConfig` is the configuration entity class during FaceID SDK start, which mainly contains the following attributes:
+`HuiYanOsConfig` is the configuration entity class during eKYC SDK start, which mainly contains the following attributes:
 
 | Type           | Name               | Description                                 | Default Value               |
 | ----------------------------- | ------------------ | ------------------------------------ | ----------------- |

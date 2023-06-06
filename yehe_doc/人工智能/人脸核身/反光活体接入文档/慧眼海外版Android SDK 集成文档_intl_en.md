@@ -1,12 +1,12 @@
 ### I. Preparations for Development
 
-1. Sign up for a Tencent Cloud account and log in to the FaceID console to activate the service.
-2. Download the FaceID SDK at the SDK download address and integrate it locally.
+1. Sign up for a Tencent Cloud account and log in to the eKYC console to activate the service.
+2. Download the eKYC SDK at the SDK download address and integrate it locally.
 3. Apply for and download the license file.
 
 
 
-### II. FaceID SDK for Android Integration Process
+### II. eKYC SDK for Android Integration Process
 
 The SDK provides the **huiyansdk_android_1.0.7_release.aar** file (as actually downloaded from the official website), which encapsulates the liveness detection feature.
 
@@ -14,7 +14,7 @@ The SDK provides the **huiyansdk_android_1.0.7_release.aar** file (as actually d
 
 #### 1. Dependent environment
 
-The current FaceID SDK for Android is applicable to API 19 (Android 4.4) and above.
+The current eKYC SDK for Android is applicable to API 19 (Android 4.4) and above.
 
 
 
@@ -35,9 +35,9 @@ ndk {
 }
 
 dependencies {
-    // Import the FaceID SDK
+    // Import the eKYC SDK
     implementation files("libs/huiyansdk_android_1.0.7_release.aar")
-    // Import third-party libraries that the FaceID SDK needs to depend on
+    // Import third-party libraries that the eKYC SDK needs to depend on
     // gson
     implementation 'com.google.code.gson:gson:2.8.5'
 }
@@ -96,7 +96,7 @@ public void onCreate() {
 
 ##### 4.2 Initializing configuration and pulling configuration parameters
 
-	Before using the FaceID SDK, you need to call this method to pass in basic configuration parameters and pull the local configuration parameters through the callback as detailed below:
+	Before using the eKYC SDK, you need to call this method to pass in basic configuration parameters and pull the local configuration parameters through the callback as detailed below:
 
 1. Set the launch parameter information.
 
@@ -183,7 +183,7 @@ protected void onDestroy() {
   If the obfuscation feature is enabled for your app, add the following part to your obfuscation file to ensure the normal use of the SDK.
 
 ```java
-# The following FaceID SDK obfuscation rules should be added:
+# The following eKYC SDK obfuscation rules should be added:
 -keep class com.tencent.could.huiyansdk.** {*;}
 -keep class com.tencent.youtu.** {*;}
 -keep class com.tencent.ytcommon.** {*;}
@@ -194,7 +194,7 @@ protected void onDestroy() {
 
 ### III. FAQs About Integration
 
-1. What should I do if I receive the **Invoke-customs are only supported starting with Android O (--min-api 26)** error after integrating FaceID?
+1. What should I do if I receive the **Invoke-customs are only supported starting with Android O (--min-api 26)** error after integrating eKYC?
 
    You need to add the following configuration in `build.gradle`:
 

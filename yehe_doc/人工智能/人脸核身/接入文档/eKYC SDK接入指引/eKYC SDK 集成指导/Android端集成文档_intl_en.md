@@ -10,7 +10,7 @@
 
 #### Environment Requirements
 
-The current FaceID SDK for Android is supported by API 19 (Android 4.4) or later.
+The current eKYC SDK for Android is supported by API 19 (Android 4.4) or later.
 
 [The current eKYC SDK only supports the eKYC process in Hong Kong, China.]
 

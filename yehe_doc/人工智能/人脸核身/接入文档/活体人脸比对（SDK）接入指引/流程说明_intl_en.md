@@ -4,7 +4,7 @@
 
 - Sign up for a Tencent Cloud account. For more information, see [Signing Up](https://www.tencentcloud.com/document/product/378/17985).
 - Complete enterprise identity verification. For more information, see [Enterprise Identity Verification Guide](https://www.tencentcloud.com/document/product/378/10496).
-- Log in to the [FaceID console](https://console.intl.cloud.tencent.com/faceid) and activate the service. 
+- Log in to the [eKYC console](https://console.intl.cloud.tencent.com/faceid) and activate the service. 
 - [Contact us](https://www.tencentcloud.com/document/product/1061/52144) to obtain the latest SDK and license.
 
 ## Overall Architecture Diagram
@@ -13,20 +13,20 @@ The following diagram shows the architecture of the liveness detection and face 
 
 ![image.5](https://staticintl.cloudcachetci.com/yehe/backend-news/727J155_image.png)
 
-**FaceID SDK integration includes two parts:**
+**eKYC SDK integration includes two parts:**
 
-**Client-side integration**: Integrate the FaceID SDK into the customer's terminal service app. 
+**Client-side integration**: Integrate the eKYC SDK into the customer's terminal service app. 
 
-**Server-side integration**: Expose the endpoint of your (merchant) application to your (merchant) server so that the merchant application can interact with the merchant server and then access the FaceID SaaS API to obtain the `SdkToken`, which is used throughout the liveness detection and face comparison process and to pull the final verification result.
+**Server-side integration**: Expose the endpoint of your (merchant) application to your (merchant) server so that the merchant application can interact with the merchant server and then access the eKYC SaaS API to obtain the `SdkToken`, which is used throughout the liveness detection and face comparison process and to pull the final verification result.
 
 
 ## Overall Interaction Process
 
-You only need to pass in the token and start the corresponding FaceID SDK's liveness detection method to complete liveness detection and return the result.
+You only need to pass in the token and start the corresponding eKYC SDK's liveness detection method to complete liveness detection and return the result.
 
-1. TencentCloud API for obtaining the token: [GetFaceldTokenIntl](https://www.tencentcloud.com/document/product/1061/54556)
+1. TencentCloud API for obtaining the token: [GeteKYCTokenIntl](https://www.tencentcloud.com/document/product/1061/54556)
 
-2. TencentCloud API for pulling the liveness detection result: [GetFaceIdResultIntl](https://www.tencentcloud.com/document/product/1061/54557)
+2. TencentCloud API for pulling the liveness detection result: [GeteKYCResultIntl](https://www.tencentcloud.com/document/product/1061/54557)
 
 The following diagram shows the overall logic of interaction between the SDK, client, and server:
 
@@ -36,16 +36,16 @@ The following diagram shows the overall logic of interaction between the SDK, cl
 
 1. The customer triggers the merchant application on the terminal to call the liveness verification service scenario.
 2. The merchant application sends a request to the merchant server to notify that the liveness detection service token is required for starting liveness verification once.
-3. The merchant server passes in relevant parameters to call the TencentCloud API [GetFaceldTokenIntl](https://www.tencentcloud.com/document/product/1061/54556).
-4. After receiving the request for calling [GetFaceldTokenIntl](https://www.tencentcloud.com/document/product/1061/54556), the FaceID SaaS delivers the service token to the merchant server.
+3. The merchant server passes in relevant parameters to call the TencentCloud API [GeteKYCTokenIntl](https://www.tencentcloud.com/document/product/1061/54556).
+4. After receiving the request for calling [GeteKYCTokenIntl](https://www.tencentcloud.com/document/product/1061/54556), the eKYCID SaaS delivers the service token to the merchant server.
 5. The merchant server delivers the obtained service token to the customer's merchant application.
-6. The merchant application calls the FaceID SDK's startup API **startHuiYanAuth** to pass in the token and configuration information and starts liveness verification.  
-7. The FaceID SDK captures and uploads the required user data, including liveness data, to the FaceID SaaS.
-8. The FaceID SaaS returns the verification result to the FaceID SDK after completing liveness verification (including the liveness detection and face comparison).
-9. The FaceID SDK actively triggers callback to notify the merchant application that the verification is complete and of the verification status.
+6. The merchant application calls the eKYC SDK's startup API **startHuiYanAuth** to pass in the token and configuration information and starts liveness verification.  
+7. The eKYC SDK captures and uploads the required user data, including liveness data, to the eKYC SaaS.
+8. The eKYC SaaS returns the verification result to the eKYC SDK after completing liveness verification (including the liveness detection and face comparison).
+9. The eKYC SDK actively triggers callback to notify the merchant application that the verification is complete and of the verification status.
 10. After receiving the callback, the merchant application sends a request to notify the merchant server to obtain the verification result for confirmation.  
-11. The merchant server actively calls the FaceID SaaS API [GetFaceIdResultIntl](https://www.tencentcloud.com/document/product/1061/54557) to pass in the relevant parameters and service token and obtain the verification result.
-12. After receiving the request for calling [GetFaceIdResultIntl](https://www.tencentcloud.com/document/product/1061/54557), the FaceID SaaS returns the verification result to the merchant server.
+11. The merchant server actively calls the eKYC SaaS API [GeteKYCResultIntl](https://www.tencentcloud.com/document/product/1061/54557) to pass in the relevant parameters and service token and obtain the verification result.
+12. After receiving the request for calling [GeteKYCResultIntl](https://www.tencentcloud.com/document/product/1061/54557), the eKYC SaaS returns the verification result to the merchant server.
 13. After receiving the verification result, the merchant server delivers the required information to the merchant application.
 14. The merchant application displays the final result on the UI to notify the customer of the verification result.
 
@@ -57,16 +57,16 @@ The following diagram shows the overall logic of interaction between the SDK, cl
 
 #### 1. Integration preparations
 
-Before server integration, you need to activate the Tencent Cloud FaceID service and obtain TencentCloud API access key SecretId and SecretKey by following the instructions in [Getting API Key](https://console.tencentcloud.com/cam/capi). In addition, you need to follow the instructions in [Connecting to TencentCloud API](https://www.tencentcloud.com/document/product/1061/54960) to import the SDK package with the programming language you are familiar with to your server modules, to ensure that the TencentCloud API can be successfully called and API requests and responses can be properly processed.
+Before server integration, you need to activate the Tencent Cloud eKYC service and obtain TencentCloud API access key SecretId and SecretKey by following the instructions in [Getting API Key](https://console.tencentcloud.com/cam/capi). In addition, you need to follow the instructions in [Connecting to TencentCloud API](https://www.tencentcloud.com/document/product/1061/54960) to import the SDK package with the programming language you are familiar with to your server modules, to ensure that the TencentCloud API can be successfully called and API requests and responses can be properly processed.
 
 #### 2. Integration process
 
-To ensure that your (merchant) client application interacts with your (merchant) server, the merchant server needs to call the API [**GetFaceIdTokenIntl**](https://www.tencentcloud.com/document/product/1061/54556) provided by FaceID to obtain `SDKToken`, which is used throughout the liveness detection and face comparison process and used by the API [**GetFaceIdResultIntl**](https://www.tencentcloud.com/document/product/1061/54557) to obtain the liveness comparison result. The merchant server also needs to provide the corresponding endpoint for the merchant client to call. The following sample code with the Golang language is used as an example to show how to call TencentCloud API on the server and obtain the correct response.
+To ensure that your (merchant) client application interacts with your (merchant) server, the merchant server needs to call the API [**GeteKYCTokenIntl**](https://www.tencentcloud.com/document/product/1061/54556) provided by eKYC to obtain `SDKToken`, which is used throughout the liveness detection and face comparison process and used by the API [**GeteKYCResultIntl**](https://www.tencentcloud.com/document/product/1061/54557) to obtain the liveness comparison result. The merchant server also needs to provide the corresponding endpoint for the merchant client to call. The following sample code with the Golang language is used as an example to show how to call TencentCloud API on the server and obtain the correct response.
 
 **Note**: This example only demonstrates the processing logic required for interaction between the merchant server and TencentCloud API service. If necessary, you need to implement your own business logic, for example: 
 
-* After you obtain the `SDKToken` using the API **GetFaceIdTokenIntl**, you can return other responses required by the client application to the client along with the `SDKToken`.
-* After you obtain the liveness detection and face comparison result using the API **GetFaceIdResultIntl**, you can save the returned photo with the best frame rate for later business logic.
+* After you obtain the `SDKToken` using the API **GeteKYCTokenIntl**, you can return other responses required by the client application to the client along with the `SDKToken`.
+* After you obtain the liveness detection and face comparison result using the API **GeteKYCResultIntl**, you can save the returned photo with the best frame rate for later business logic.
 
 ```go
 var FaceIdClient *faceid.Client
@@ -115,16 +115,16 @@ func GetFaceIdToken(w http.ResponseWriter, r *http.Request) {
 	_, _ = w.Write(b)
 }
 
-// GetFaceIdResult get result
-func GetFaceIdResult(w http.ResponseWriter, r *http.Request) {
+// GeteKYCResult get result
+func GeteKYCResult(w http.ResponseWriter, r *http.Request) {
 	// Step 1: ... parse parameters
 	_ = r.ParseForm()
 	SdkToken := r.FormValue("SdkToken")
 	// Step 2: instantiate the request object and provide necessary parameters
-	request := faceid.NewGetFaceIdResultIntlRequest()
+	request := eKYC.NewGeteKYCResultIntlRequest()
 	request.SdkToken = &SdkToken
-	// Step 3: call the Tencent Cloud API through FaceIdClient
-	response, err := FaceIdClient.GetFaceIdResultIntl(request)
+	// Step 3: call the Tencent Cloud API through eKYCClient
+	response, err := eKYCClient.GeteKYCResultIntl(request)
 
 	// Step 4: process the Tencent Cloud API response and construct the return object
 	if nil != err {
@@ -145,8 +145,8 @@ func GetFaceIdResult(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	// expose endpoints
-	http.HandleFunc("/api/v1/get-token", GetFaceIdToken)
-	http.HandleFunc("/api/v1/get-result", GetFaceIdResult)
+	http.HandleFunc("/api/v1/get-token", GeteKYCToken)
+	http.HandleFunc("/api/v1/get-result", GeteKYCResult)
 	// listening port
 	err := http.ListenAndServe(":8080", nil)
 	if nil != err {
@@ -164,7 +164,7 @@ After you complete the integration, you can test whether the current integration
 
 #### 1. Dependent environment
 
-The current FaceID SDK for Android is supported by API 19 (Android 4.4) or later.
+The current eKYC SDK for Android is supported by API 19 (Android 4.4) or later.
 
 #### 2. SDK integration steps
 
@@ -181,15 +181,15 @@ ndk {
 }
 
 dependencies {
-    // Import the FaceID SDK
+    // Import the eKYC SDK
     implementation files("libs/huiyansdk_android_overseas_1.0.9.5_release.aar")
-    // FaceID general algorithm SDK
+    // eKYC general algorithm SDK
     implementation files("libs/tencent-ai-sdk-youtu-base-1.0.1.32-release.aar")
     // Common capability components
     implementation files("libs/tencent-ai-sdk-common-1.1.27-release.aar")
     implementation files("libs/tencent-ai-sdk-aicamera-1.0.18-release.aar")
 
-  	// Third-Party libraries that the FaceID SDK depends on
+  	// Third-Party libraries that the eKYC SDK depends on
     // gson
     implementation 'com.google.code.gson:gson:2.8.5'
 }
@@ -299,7 +299,7 @@ protected void onDestroy() {
   If the obfuscation feature is enabled for your app, add the following to your obfuscation file to ensure the normal running of the SDK:
 
 ```java
-# The following FaceID SDK obfuscation rules should be added:
+# The following eKYC SDK obfuscation rules should be added:
 -keep class com.tencent.could.huiyansdk.** {*;}
 -keep class com.tencent.could.aicamare.** {*;}
 -keep class com.tencent.could.component.** {*;}
@@ -313,7 +313,7 @@ protected void onDestroy() {
 #### 1. Dependent environment
 
 1. Development environment: Xcode 11.0 or later
-2. The FaceID SDK for iOS is only supported by iOS 9.0 or later.
+2. The eKYC SDK for iOS is only supported by iOS 9.0 or later.
 
 #### 2. SDK integration steps
 ##### Manual integration
@@ -374,6 +374,7 @@ end
 3. Run `pod install`.
 
 >? For the file levels and specific settings, see the demo.
+>
 >- [iOS demo](https://github.com/TencentCloud/huiyan-faceid-demo/tree/main/faceid-iOS-demo)
 
 
@@ -388,7 +389,7 @@ As the SDK requires a mobile network and camera permission, include the followin
 
 ```xml
 <key>Privacy - Camera Usage Description</key>
-<string>FaceID requires you to grant the camera permission for face recognition.</string>
+<string>eKYC requires you to grant the camera permission for face recognition.</string>
 ```
 
 #### 3. Start the liveness detection API

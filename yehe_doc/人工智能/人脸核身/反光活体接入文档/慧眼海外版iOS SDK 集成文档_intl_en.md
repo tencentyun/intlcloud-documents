@@ -1,18 +1,18 @@
 ### I. Preparations for Development
 
-1. Sign up for a Tencent Cloud account and log in to the FaceID console to activate the service.
-2. Download the FaceID SDK at the SDK download address and integrate it locally.
+1. Sign up for a Tencent Cloud account and log in to the eKYC console to activate the service.
+2. Download the eKYC SDK at the SDK download address and integrate it locally.
 3. Apply for the license file.
 
 
 
-### II. FaceID SDK for iOS Integration Process
+### II. eKYC SDK for iOS Integration Process
 
 #### 1. Dependent environment
 
 1. Development environment: Xcode 11.0 or above.
 
-2. The FaceID SDK for iOS is applicable to iOS 9.0 and above.
+2. The eKYC SDK for iOS is applicable to iOS 9.0 and above.
 
    
 
@@ -95,7 +95,7 @@ As the SDK requires a mobile network and camera permission, add the correspondin
 
 ```xml
 <key>Privacy - Camera Usage Description</key>
-<string>FaceID requires to use your camera for face recognition</string>
+<string>eKYC requires to use your camera for face recognition</string>
 ```
 
 
@@ -114,7 +114,7 @@ The following diagram shows the overall logic of interaction between the SDK, cl
 
 ##### 6.1 Initializing configuration and pulling configuration parameters
 
-Before using the FaceID SDK, you need to call this method to pass in basic configuration parameters and pull the local configuration parameters through the callback to get the light sequence as detailed below:
+Before using the eKYC SDK, you need to call this method to pass in basic configuration parameters and pull the local configuration parameters through the callback to get the light sequence as detailed below:
 
 1. Configure the SDK configuration information **HuiYanOsConfig** (set the path of the `lic` file, local detection timeout period, whether to clear the local video cache, etc.).
 

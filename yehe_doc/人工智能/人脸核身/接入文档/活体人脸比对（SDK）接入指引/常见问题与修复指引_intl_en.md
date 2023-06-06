@@ -2,7 +2,7 @@ This document describes FAQs related to the liveness detection and face comparis
 
 ## Client
 ### Android
-1. What should I do if I receive the **Invoke-customs are only supported starting with Android O (--min-api 26)** error after integrating FaceID? 
+1. What should I do if I receive the **Invoke-customs are only supported starting with Android O (--min-api 26)** error after integrating eKYC? 
    Add the following configuration to the `build.gradle` file:
 
 ```groovy

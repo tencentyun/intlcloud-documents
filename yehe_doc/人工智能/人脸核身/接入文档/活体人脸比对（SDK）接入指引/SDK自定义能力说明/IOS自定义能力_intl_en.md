@@ -1,4 +1,4 @@
-This document introduces the custom capabilities of the FaceID SDK (global edition).
+This document introduces the custom capabilities of the eKYC SDK (global edition).
 
 ### I. Custom UI
 

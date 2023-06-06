@@ -1,14 +1,14 @@
-## FaceID SDK for Android API Overview
+## eKYC SDK for Android API Overview
 
-The FaceID SDK mainly involves the following classes: `HuiYanOsApi` (API class), `HuiYanOsConfig` (parameter configuration class), and `HuiYanConfigCallback` and `HuiYanResultCallBack` (result callback classes).
+The eKYC SDK mainly involves the following classes: `HuiYanOsApi` (API class), `HuiYanOsConfig` (parameter configuration class), and `HuiYanConfigCallback` and `HuiYanResultCallBack` (result callback classes).
 
 ### HuiYanOsApi
 
 | API                                                   | Feature Description                                             |
 | ----------------------------------------------------- | ---------------------------------------------------- |
-| [init()](#init())                                     | Initializes FaceID SDK                                        |
+| [init()](#init())                                     | Initializes eKYC SDK                                        |
 | [release()](#release())                               | Releases resources                                         |
-| [startGetAuthConfigData()](#startGetAuthConfigData()) | Gets the local configuration information of the FaceID SDK                        |
+| [startGetAuthConfigData()](#startGetAuthConfigData()) | Gets the local configuration information of the eKYC SDK                        |
 | [startAuthByLightData()](#startAuthByLightData())     | Passes in the light sequence obtained by the server to continue the liveness detection for identity verification  |
 
 #### init()
@@ -19,7 +19,7 @@ public static void init(Context context)
 
 Feature overview:
 
-	This API is used to initialize the FaceID SDK.
+	This API is used to initialize the eKYC SDK.
 
 Input parameters:	
 
@@ -37,7 +37,7 @@ public static void release()
 
 Feature overview:
 
-	This API is used to release the FaceID SDK resources.
+	This API is used to release the eKYC SDK resources.
 
 
 
@@ -51,7 +51,7 @@ public static void startGetAuthConfigData(HuiYanOsConfig startConfig, HuiYanConf
 
 Feature overview:
 
-	This API is used to pull the FaceID SDK configuration parameters during local detection as the parameters for subsequent acquisition of the light sequence.
+	This API is used to pull the eKYC SDK configuration parameters during local detection as the parameters for subsequent acquisition of the light sequence.
 
 Input parameters:
 
@@ -70,7 +70,7 @@ public static void startAuthByLightData(String reflectSequence, HuiYanResultCall
 
 Feature overview:
 
-	This API is used to pass in the light sequence data pulled from the server to the FaceID SDK and continue the identity verification process to get the local detection result.
+	This API is used to pass in the light sequence data pulled from the server to the eKYC SDK and continue the identity verification process to get the local detection result.
 
 Input parameters:
 
@@ -83,7 +83,7 @@ Input parameters:
 
 ### HuiYanOsConfig
 
-`HuiYanOsConfig` is the configuration entity class during FaceID SDK start, which mainly contains the following attributes:
+`HuiYanOsConfig` is the configuration entity class during eKYC SDK start, which mainly contains the following attributes:
 
 | Type           | Name               | Description                                 | Default Value               |
 | -------------- | ------------------ | ------------------------------------ | -------------------- |
@@ -111,7 +111,7 @@ Callback class for initialization and local configuration acquisition.
 
 ```java
 /**
- * Callback for FaceID SDK initialization and local configuration pull
+ * Callback for eKYC SDK initialization and local configuration pull
  */
 public interface HuiYanConfigCallback {
 
