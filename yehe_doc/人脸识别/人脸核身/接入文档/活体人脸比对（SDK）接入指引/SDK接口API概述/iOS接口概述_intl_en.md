@@ -1,13 +1,13 @@
 ### API description
 
-Integration with the eKYC SDK mainly involves the following classes: `HuiYanOSKit` (API class), `HuiYanOsConfig` (configuration parameter class), and `HuiYanOKitSuccCallback` and `HuiYanOKitFailCallback` (result and callback classes).
+Integration with the FaceID SDK mainly involves the following classes: `HuiYanOSKit` (API class), `HuiYanOsConfig` (configuration parameter class), and `HuiYanOKitSuccCallback` and `HuiYanOKitFailCallback` (result and callback classes).
 
 #### HuiYanOSKit
 
 | API                                   | Feature Description                |
 | ------------------------------------- | ----------------------- |
-| [startHuiYaneKYC()](#startHuiYaneKYC) | Starts the liveness detection and face comparison process in the eKYC SDK. |
-| [release()](#release())               | Releases eKYC SDK resources.       |
+| [startHuiYaneKYC()](#startHuiYaneKYC) | Starts the liveness detection and face comparison process in the FaceID SDK. |
+| [release()](#release())               | Releases FaceID SDK resources.       |
 
 
 
@@ -15,7 +15,7 @@ Integration with the eKYC SDK mainly involves the following classes: `HuiYanOSKi
 
 Feature description:
 
-This API is used to release eKYC SDK resources.
+This API is used to release FaceID SDK resources.
 
 ```objective-c
 + (void)release;
@@ -64,7 +64,7 @@ You will need to use the token to call the **GetFaceldResultIntl** API to pull t
 
 #### HuiYanOsConfig
 
-`HuiYanOsConfig` is the configuration entity class during eKYC SDK startup, which mainly contains the following attributes:
+`HuiYanOsConfig` is the configuration entity class during FaceID SDK startup, which mainly contains the following attributes:
 
 | Type                                    | Name                   | Description                                                         | Default Value                    |
 | --------------------------------------- | ---------------------- | ------------------------------------------------------------ | ------------------------- |

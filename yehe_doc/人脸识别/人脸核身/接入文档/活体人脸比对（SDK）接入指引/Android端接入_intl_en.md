@@ -1,12 +1,12 @@
 ### Development Preparations
 
-1. Sign up for a Tencent Cloud account and log in to the eKYC console to activate the service.
-2. Download the eKYC SDK at the SDK download address and integrate it locally.
+1. Sign up for a Tencent Cloud account and log in to the FaceID console to activate the service.
+2. Download the FaceID SDK at the SDK download address and integrate it locally.
 3. Apply for and download the license.
 
 
 
-### eKYC SDK for Android Integration Process
+### FaceID SDK for Android Integration Process
 
 SDK provides the files **huiyansdk_android_overseas_1.0.9.6_release.aar**, **tencent-ai-sdk-youtu-base-1.0.1.39-release.aar**, **tencent-ai-sdk-common-1.1.36-release.aar**, and **tencent-ai-sdk-aicamera-1.0.22-release.aar** (the specific version numbers of the files downloaded from the official website shall prevail). The files are encapsulated with the face liveness detection feature.
 
@@ -14,7 +14,7 @@ SDK provides the files **huiyansdk_android_overseas_1.0.9.6_release.aar**, **ten
 
 #### Environment Requirements
 
-The current eKYC SDK for Android is supported by API 19 (Android 4.4) or later.
+The current FaceID SDK for Android is supported by API 19 (Android 4.4) or later.
 
 
 
@@ -33,15 +33,15 @@ ndk{
 }
 
 dependencies {
-    // Import the eKYC SDK
+    // Import the FaceID SDK
     implementation files("libs/huiyansdk_android_overseas_1.0.9.5_release.aar")
-    // eKYC general algorithm SDK
+    // FaceID general algorithm SDK
     implementation files("libs/tencent-ai-sdk-youtu-base-1.0.1.32-release.aar")
     // Common capability components
     implementation files("libs/tencent-ai-sdk-common-1.1.27-release.aar")
     implementation files("libs/tencent-ai-sdk-aicamera-1.0.18-release.aar")
 
-  	// Third-Party libraries that the eKYC SDK depends on
+  	// Third-Party libraries that the FaceID SDK depends on
     // gson
     implementation 'com.google.code.gson:gson:2.8.5'
 }
@@ -101,7 +101,7 @@ The following diagram shows the overall logic of interaction between the SDK, cl
 
 ##### 1. Initialize the configuration and pull configuration parameters
 
-	Before using the eKYC SDK, you need to call this method to pass in basic configuration parameters and use the callback to pull the local configuration parameter information.
+	Before using the FaceID SDK, you need to call this method to pass in basic configuration parameters and use the callback to pull the local configuration parameter information.
 
 ```java
 // HuiYanOs parameters
@@ -135,7 +135,7 @@ HuiYanOsApi.startGetAuthConfigData(huiYanOsConfig, new HuiYanConfigCallback() {
 
 ##### 2. Complete the remaining steps of liveness verification
 
-After you obtain the configuration information from the server, you need to call this API to pass in the `reflectSequence` delivered by the server, i.e., the light sequence for identity verification, so as to complete the local identity verification.
+​After you obtain the configuration information from the server, you need to call this API to pass in the `reflectSequence` delivered by the server, i.e., the light sequence for identity verification, so as to complete the local identity verification.
 
 ```java
 // Start identity verification. `reflectSequence` is the light sequence data obtained from the server.
@@ -241,7 +241,7 @@ protected void onDestroy() {
   If the obfuscation feature is enabled for your app, add the following to your obfuscation file to ensure the normal running of the SDK:
 
 ```java
-# The following eKYC SDK obfuscation rules should be added:
+# The following FaceID SDK obfuscation rules should be added:
 -keep class com.tencent.could.huiyansdk.** {*;}
 -keep class com.tencent.could.aicamare.** {*;}
 -keep class com.tencent.could.component.** {*;}
@@ -253,7 +253,7 @@ protected void onDestroy() {
 
 ### FAQs About Integration
 
-1. What should I do if **Invoke-customs are only supported starting with Android O (--min-api 26)** appears after I integrate the eKYC?
+1. What should I do if **Invoke-customs are only supported starting with Android O (--min-api 26)** appears after I integrate the FaceID?
 
    Add the following configuration to the `build.gradle` file:
 
@@ -282,15 +282,15 @@ protected void onDestroy() {
 
 ## API Description
 
-The eKYC SDK mainly involves the following classes: HuiYanOsApi (API class), HuiYanOsConfig (configuration parameter class), and HuiYanConfigCallback and HuiYanResultCallBack (result and callback classes).
+The FaceID SDK mainly involves the following classes: HuiYanOsApi (API class), HuiYanOsConfig (configuration parameter class), and HuiYanConfigCallback and HuiYanResultCallBack (result and callback classes).
 
 ### HuiYanOsApi
 
 | API                                                   | Feature Description                                             |
 | ----------------------------------------------------- | ------------------------------------------------------------ |
-| [init()](#init())                                     | Initializes eKYC SDK                                        |
+| [init()](#init())                                     | Initializes FaceID SDK                                        |
 | [release()](#release())                               | Releases resources                                         |
-| [startGetAuthConfigData()](#startGetAuthConfigData()) | Gets the local configuration information of the eKYC SDK                        |
+| [startGetAuthConfigData()](#startGetAuthConfigData()) | Gets the local configuration information of the FaceID SDK                        |
 | [startAuthByLightData()](#startAuthByLightData())     | Passes in the light sequence obtained from the server to continue the liveness detection for identity verification |
 | [startHuiYanAuth()](#startHuiYanAuth())               | Simplified identity verification API, which can be called to complete the entire verification process |
 
@@ -304,7 +304,7 @@ public static void init(Context context)
 
 Feature:
 
-	It is an API for initializing the eKYC SDK.
+	It is an API for initializing the FaceID SDK.
 
 Input parameters:	
 
@@ -322,7 +322,7 @@ public static void release()
 
 Feature:
 
-	It is an API for releasing eKYC SDK resources.
+	It is an API for releasing FaceID SDK resources.
 
 
 
@@ -334,7 +334,7 @@ public static void startGetAuthConfigData(HuiYanOsConfig startConfig, HuiYanConf
 
 Feature:
 
-It is a configuration parameter pulled by the eKYC SDK during local detection in order to obtain the light sequence in subsequent steps.
+It is a configuration parameter pulled by the FaceID SDK during local detection in order to obtain the light sequence in subsequent steps.
 
 Input parameters:
 
@@ -353,7 +353,7 @@ public static void startAuthByLightData(String reflectSequence, HuiYanResultCall
 
 Feature:
 
-​	It is an API used to pass in the light sequence data pulled from the server to the eKYC SDK in order to continue the identity verification process for the local detection result.
+​	It is an API used to pass in the light sequence data pulled from the server to the FaceID SDK in order to continue the identity verification process for the local detection result.
 
 Input parameters:
 
@@ -387,7 +387,7 @@ Input parameters:
 
 ### HuiYanOsConfig
 
-"HuiYanOsConfig" is the configuration entity class during eKYC SDK startup, which mainly covers the following attributes:
+"HuiYanOsConfig" is the configuration entity class during FaceID SDK startup, which mainly covers the following attributes:
 
 | Type           | Name               | Description                                 | Default Value               |
 | --------------------------------- | ------------------ | -------------------------------------------- | -------------------- |
@@ -436,7 +436,7 @@ The result type corresponding to the callback for successful simplified liveness
 
 ### Error Codes
 
-Below are the current error codes in the eKYC SDK (global edition) in failure callbacks and their meaning:
+Below are the current error codes in the FaceID SDK (global edition) in failure callbacks and their meaning:
 
 | Error Code                                | Value | Description               |
 | ------------------------------------- | -------- | ------------------------------------------------------------ |
@@ -466,7 +466,7 @@ Callback class for initialization and acquisition of the local configuration.
 
 ```java
 /**
- * Callback for eKYC SDK initialization and acquisition of the local configuration
+ * Callback for FaceID SDK initialization and acquisition of the local configuration
  */
 public interface HuiYanConfigCallback {
 
@@ -556,7 +556,7 @@ public interface HuiYanOsAuthCallBack {
 
 To add a language, perform the following two steps:
 
-1. Add the corresponding language folder to the project in the main module (which integrates the eKYC SDK).
+1. Add the corresponding language folder to the project in the main module (which integrates the FaceID SDK).
 
 2. Copy **hy_customer_string.xml** to the language folder and modify the value content.
 

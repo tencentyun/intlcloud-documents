@@ -11,7 +11,7 @@
 #### Environment requirements
 
 1. Xcode 12.0 or later is required. We recommend you use the latest version.
-2. The eKYCID SDK for iOS is only supported by iOS 11.0 or later.
+2. The FaceID SDK for iOS is only supported by iOS 11.0 or later.
 
 #### Directions
 
@@ -24,10 +24,10 @@ Importing required libraries and files
 ├──tnn.framework
 ├──tnnliveness.framework
 ├──YTCommonLiveness.framework
-├──YTeKYCAlignmentTinyLiveness.framework
-├──YTeKYCDetectorLiveness.framework
-├──YTeKYCLiveReflect.framework
-├──YTeKYCTrackerLiveness.framework
+├──YTFaceAlignmentTinyLiveness.framework
+├──YTFaceDetectorLiveness.framework
+├──YTFaceLiveReflect.framework
+├──YTFaceTrackerLiveness.framework
 ├──YTPoseDetector.framework
 ├──YtSDKKitActionLiveness.framework
 ├──YtSDKKitFramework.framework
@@ -49,7 +49,7 @@ Importing required libraries and files
 3. Click `Copy Bundle Resources` to add bundle files.
 
 ```
-└── eKYC-tracker-v001.bundle
+└── face-tracker-v001.bundle
 └── huiyan_verification.bundle
 └── ytsdkviidres.bundle
 ```
@@ -88,7 +88,7 @@ This API is called when you initialize your app. It is mainly used for some SDK 
 
 ##### API for starting the eKYC process
 
-When you need to start the eKYC process, you just need to call the `startVerifiWithConfig` method and set `ekycToken` and some other custom fields.
+​When you need to start the eKYC process, you just need to call the `startVerifiWithConfig` method and set `ekycToken` and some other custom fields.
 
 ```objective-c
 - (IBAction)startVerificationEvent:(id)sender {
@@ -97,7 +97,7 @@ When you need to start the eKYC process, you just need to call the `startVerifiW
     config.licPath = [[NSBundle mainBundle] pathForResource:@"eKYC_license.lic" ofType:nil];
     config.languageType = (LanguageType)(selectTag + 1);
     config.verAutoTimeOut = 30000;// Set the authentication timeout period
-    config.hyeKYCTimeOut = 15000;// Set the timeout period of a single eKYC authentication operation
+    config.hyFaceTimeOut = 15000;// Set the timeout period of a single face authentication operation
     config.ekycToken = self.eKYCTokenTextField.text;
     [[VerificationKit sharedInstance] startVerifiWithConfig:config withSuccCallback:^(int errorCode, id  _Nonnull resultInfo, id  _Nullable reserved) {
         NSLog(@"ErrCode:%d msg:%@",errorCode,resultInfo);
@@ -138,7 +138,7 @@ You can call this API after you finish operations and no longer need the SDK.
 
    Change the property of the SDK file to `Objective-C++ Source`.
 
-2. For the absence of image in the SDK intereKYC:
+2. For the absence of image in the SDK interface:
 
    Select TARGETS -> Build Settings -> Other Linker Flags to configure **-ObjC**. 
 

@@ -4,16 +4,16 @@
 
 ### Development Preparations
 
-1. Sign up for a Tencent Cloud account and log in to the eKYC console to activate the service.
-2. Download the eKYC SDK at the SDK download address and integrate it locally.
+1. Sign up for a Tencent Cloud account and log in to the FaceID console to activate the service.
+2. Download the FaceID SDK at the SDK download address and integrate it locally.
 3. Apply for the license file.
 
-### eKYC SDK for iOS Integration Process
+### FaceID SDK for iOS Integration Process
 
 #### Environment Requirements
 
 1. Development environment: Xcode 11.0 or later
-2. The eKYC SDK for iOS is only supported by iOS 9.0 or later.
+2. The FaceID SDK for iOS is only supported by iOS 9.0 or later.
 
 #### **1. Manual integration**
 
@@ -85,7 +85,7 @@ As the SDK requires a mobile network and camera permission, include the followin
 
 ```xml
 <key>Privacy - Camera Usage Description</key>
-<string>eKYC requires you to grant the camera permission for face recognition.</string>
+<string>FaceID requires you to grant the camera permission for face recognition.</string>
 ```
 
 
@@ -104,7 +104,7 @@ The following diagram shows the overall logic of interaction between the SDK, cl
 
 ##### Initializing configuration and pulling parameters
 
-Before using the eKYC SDK, you need to call this method to pass in basic configuration parameters and use the callback to pull the local configuration parameter information.
+Before using the FaceID SDK, you need to call this method to pass in basic configuration parameters and use the callback to pull the local configuration parameter information.
 
 ```objective-c
 // HuiYanOs parameters
@@ -159,14 +159,14 @@ Before your app exits, you can call the API to release SDK resources.
 
 ### API Description
 
-The eKYC SDK mainly involves the following classes: HuiYanOsApi (API class), HuiYanOsConfig (configuration parameter class), and HuiYanConfigCallback and HuiYanResultCallBack (result and callback classes).
+The FaceID SDK mainly involves the following classes: HuiYanOsApi (API class), HuiYanOsConfig (configuration parameter class), and HuiYanConfigCallback and HuiYanResultCallBack (result and callback classes).
 
 #### HuiYanOsApi
 
 | API                                                   | Feature Description                                             |
 | ----------------------------------------------------- | ---------------------------------------------------- |
 | [release()](#release())                               | Releases resources                                         |
-| [startGetAuthConfigData()](#startGetAuthConfigData()) | Gets the local configuration information of the eKYC SDK                        |
+| [startGetAuthConfigData()](#startGetAuthConfigData()) | Gets the local configuration information of the FaceID SDK                        |
 | [startAuthByLightData()](#startAuthByLightData())     | Passes in the light sequence obtained by the server to continue the liveness detection for identity verification  |
 
 
@@ -179,7 +179,7 @@ The eKYC SDK mainly involves the following classes: HuiYanOsApi (API class), Hui
 
 Feature:
 
-	It is an API for releasing eKYC SDK resources.
+	It is an API for releasing FaceID SDK resources.
 
 #### startGetAuthConfigData()
 
@@ -191,7 +191,7 @@ Feature:
 
 Feature:
 
-It is a configuration parameter pulled by the eKYC SDK during local detection in order to obtain the light sequence in subsequent steps.
+It is a configuration parameter pulled by the FaceID SDK during local detection in order to obtain the light sequence in subsequent steps.
 
 Input parameters:
 
@@ -213,7 +213,7 @@ Input parameters:
 
 Feature:
 
-​	It is an API used to pass in the light sequence data pulled from the server to the eKYC SDK in order to continue the identity verification process for the local detection result.
+​	It is an API used to pass in the light sequence data pulled from the server to the FaceID SDK in order to continue the identity verification process for the local detection result.
 
 Input parameters:
 
@@ -227,7 +227,7 @@ Input parameters:
 
 #### HuiYanOsConfig
 
-"HuiYanOsConfig" is the configuration entity class during eKYC SDK startup, which mainly covers the following attributes:
+"HuiYanOsConfig" is the configuration entity class during FaceID SDK startup, which mainly covers the following attributes:
 
 | Type           | Name               | Description                                 | Default Value               |
 | ----------------------------- | ---------------------- | ------------------------------------------------------------ | ----------------- |
@@ -333,7 +333,7 @@ typedef NS_OPTIONS(int, HYShowTimeOutMode) {
 The current version includes interactions with backend APIs for getting a token to start the verification process.
 
 1. Get the verification token by using the server API
-2. Start the eKYC SDK to enter the verification page
+2. Start the FaceID SDK to enter the verification page
 3. Process the best frame (if any) after verification ends
 4. Get the verification result through the token
 
@@ -342,7 +342,7 @@ Overall Process
 ![](https://ai-sdk-release-1254418846.cos.ap-guangzhou.myqcloud.com/huiyan_overseas/image/huiyan_overseas_2.png)
 
 #### SDK APIs Use Instructions
-Start the liveness detection process in the eKYC SDK.
+Start the liveness detection process in the FaceID SDK.
 
 ```objective-c
 #import <HuiYanSDK/HuiYanOsApi.h>
@@ -380,12 +380,12 @@ Start the liveness detection process in the eKYC SDK.
 
 ### API Description
 
-Integration with the simplified eKYC SDK mainly involves the following classes: HuiYanOSKit (API class), HuiYanOsConfig (configuration parameter class), and HuiYanOKitSuccCallback and HuiYanOKitFailCallback (result and callback classes).
+Integration with the simplified FaceID SDK mainly involves the following classes: HuiYanOSKit (API class), HuiYanOsConfig (configuration parameter class), and HuiYanOKitSuccCallback and HuiYanOKitFailCallback (result and callback classes).
 
 #### HuiYanOSKit
 | API                                                   | Feature Description                                             |
 | ------------------------------------- | ----------------------- |
-| [startHuiYaneKYC()](#startHuiYaneKYC) | Starts the liveness detection process in the eKYC SDK. |
+| [startHuiYaneKYC()](#startHuiYaneKYC) | Starts the liveness detection process in the FaceID SDK. |
 | [sdkVersion()](#release())            | Gets the SDK version number.           |
 
 #### startHuiYaneKYC
@@ -518,4 +518,3 @@ If `config.languageType = DEFAULT;` is set, the system will find the language fi
 HuiYanOsConfig *config = [[HuiYanOsConfig alloc] init];
 config.userUIBundleName = @"UserUIBundle"
 ```
-

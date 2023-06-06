@@ -1,6 +1,6 @@
 ## API description
 
-The eKYC SDK mainly involves the following classes: `HuiYanOsApi` (API class), `HuiYanOsConfig` (parameter configuration class), and `HuiYanOsAuthCallBack` and `HuiYanAuthEventCallBack` (result callback classes).
+The FaceID SDK mainly involves the following classes: `HuiYanOsApi` (API class), `HuiYanOsConfig` (parameter configuration class), and `HuiYanOsAuthCallBack` and `HuiYanAuthEventCallBack` (result callback classes).
 
 ### HuiYanOsApi
 
@@ -17,7 +17,7 @@ The eKYC SDK mainly involves the following classes: `HuiYanOsApi` (API class), `
 
 Feature description:
 
-This API is used to initialize the eKYC SDK.
+This API is used to initialize the FaceID SDK.
 
 ```java
 public static void init(Context context)
@@ -35,7 +35,7 @@ Input parameters:
 
 Feature description:
 
-This API is used to release eKYC SDK resources.
+This API is used to release FaceID SDK resources.
 
 ```java
 public static void release() 
@@ -84,7 +84,7 @@ Input parameters:
 
 ### HuiYanOsConfig
 
-`HuiYanOsConfig` is the configuration entity class during eKYC SDK startup, which mainly contains the following attributes:
+`HuiYanOsConfig` is the configuration entity class during FaceID SDK startup, which mainly contains the following attributes:
 
 | Type                              | Name               | Description                                        | Default Value               |
 | --------------------------------- | ------------------ | ------------------------------------------- | -------------------- |
@@ -134,7 +134,7 @@ Parameter configuration of custom liveness detection and face comparison UI.
 | [VideoSize](#VideoSize) | videoSize              | Resolution during liveness detection and face comparison                                         | 480P   |
 | boolean                 | isShowCountdown        | Whether to display the countdown control                                       | true   |
 | boolean                 | isShowErrorDialog      | Whether to display the error dialog                                       | true   |
-| int                     | authLayoutResId        | Custom layout `resID` exported from eKYC, which is -1 by default if not adjusted.                | -1     |
+| int                     | authLayoutResId        | Custom layout `resID` exported from FaceID, which is -1 by default if not adjusted.                | -1     |
 | int                     | feedBackErrorColor     | Color of exception `tips` (format: 0xFFFFFFFF), which is -1 by default if not adjusted.         | -1     |
 | int                     | feedBackTxtColor       | Color of success `tips` (format: 0xFFFFFFFF), which is -1 by default if not adjusted.           | -1     |
 | int                     | authCircleErrorColor   | Color of background round frame for incorrect action (format: 0xFFFFFFFF), which is -1 by default if not adjusted.     | -1     |
@@ -145,7 +145,7 @@ Parameter configuration of custom liveness detection and face comparison UI.
 
 ### VideoSize
 
-Enumerated values of resolutions supported by eKYC.
+Enumerated values of resolutions supported by FaceID.
 
 | VideoSize Value       | Description |
 | ------------------- | ---- |
@@ -163,7 +163,7 @@ The result type corresponding to the callback for successful liveness detection 
 | String | token     | The token used in the current liveness detection and face comparison process.  | Empty     |
 | String | bestImage | Base64-encoded data of the best frame image for liveness detection and face comparison. | Empty     |
 
-You will need to use the token to call the [GeteKYCResultIntl](//TODO:) API to pull the liveness detection and face comparison result.
+You will need to use the token to call the [GetFaceldResultIntl](//TODO:) API to pull the liveness detection and face comparison result.
 
 
 
@@ -206,7 +206,7 @@ This callback is used to listen for key events during liveness detection and fac
 
 ```java
 /**
- * Callback for liveness detection and face comparison event in eKYC SDK
+ * Callback for liveness detection and face comparison event in FaceID SDK
  */
 public interface HuiYanAuthEventCallBack {
 
@@ -243,7 +243,7 @@ public interface HuiYanAuthEventCallBack {
 
 ### Error Codes
 
-Below are the error codes in the eKYC SDK (global edition) in failure callbacks and their meaning:
+Below are the error codes in the FaceID SDK (global edition) in failure callbacks and their meaning:
 
 | Error Codes                                | Error Code | Error Description                                                   |
 | ------------------------------------- | -------- | ------------------------------------------------------------ |
