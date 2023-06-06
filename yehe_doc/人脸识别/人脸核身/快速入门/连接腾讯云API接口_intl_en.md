@@ -1,4 +1,4 @@
-# Connecting to TencentCloud API
+
 
 TencentCloud API 3.0 integrates SDKs for multiple programming languages, making it easier for you to call APIs. It supports nearby access, and the domain name for nearby access is `faceid.tencentcloudapi.com`. It also supports access using a domain name with a specified region, for example, the domain name for the Singapore region is `faceid.ap-singapore. tencentcloudapi.com`.
 

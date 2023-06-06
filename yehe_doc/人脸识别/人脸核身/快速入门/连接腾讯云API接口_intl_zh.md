@@ -1,4 +1,4 @@
-# 连接腾讯云API接口
+
 
 腾讯云API 3.0集成支持多种编程语言的SDK，让你调用API更简单，云API 支持就近地域接入，本产品就近地域接入域名为 faceid.tencentcloudapi.com ，也支持指定地域域名访问，例如新加坡地域的域名为 faceid.ap-singapore.tencentcloudapi.com。
 
