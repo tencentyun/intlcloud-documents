@@ -31,6 +31,9 @@
   [TencentCloudSDKException]message:AuthFailure.SignatureFailure-The provided credentials
   could not be validated because of exceeding request size limit, please use new signature 
   method `TC3-HMAC-SHA256`. requestId:719970d4-5814-4dd9-9757-a3f11ecc9b20
-  ​```设置签名类型：
+  ​```
+  
+  设置签名类型：
+  ​```
    `clientProfile.setSignMethod("TC3-HMAC-SHA256"); // 指定签名算法（默认为 HmacSHA256）`
-  ```
+   ```

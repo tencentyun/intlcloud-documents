@@ -27,10 +27,14 @@ Select the corresponding backend language, generate the code, and integrate it i
 - To generate a SecretId and a SecretKey, visit https://console.tencentcloud.com/cam/capi.
 - To upload Base64-encoded images or videos for input parameters, remove the `data:image/jpg;base64,` prefix and the `\n` line break.
 - If the following information is returned, manually configure the signature type:
+
   ```
   [TencentCloudSDKException]message:AuthFailure.SignatureFailure-The provided credentials
   could not be validated because of exceeding request size limit, please use new signature 
   method `TC3-HMAC-SHA256`. requestId:719970d4-5814-4dd9-9757-a3f11ecc9b20
-  ​```Configuring signature type:
-   `clientProfile.setSignMethod("TC3-HMAC-SHA256"); // Specify the signature algorithm, which is HmacSHA256 by default`
   ```
+  
+  ​Configuring signature type:
+  ```
+   `clientProfile.setSignMethod("TC3-HMAC-SHA256"); // Specify the signature algorithm, which is HmacSHA256 by default`
+   ```
