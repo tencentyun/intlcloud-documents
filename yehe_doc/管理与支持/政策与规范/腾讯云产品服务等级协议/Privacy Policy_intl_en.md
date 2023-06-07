@@ -510,9 +510,13 @@ We may store your personal information within and outside Singapore.
 
 Please refer to the following paragraph regarding “Access, Correction and Deletion” of your personal information, instead of the general “Access, Correction and Deletion” paragraph in the “Your Rights” section of the main privacy policy:
 
-You can access and correct some of your data in the account portal at any time. If you believe there is any other personal information we process about you, or you are unable to correct inaccurate information, you can make a request by contacting us at cloudlegalnotices@tencent.com. You may also have the right to receive a copy of certain personal information (see Portability below). In accordance with the laws in Singapore you do not have the legal right to delete your data, however we may delete your data on request to us.
+You can access and correct your data in the account portal at any time. If you believe there is any other personal information we process about you, or you are unable to correct inaccurate information, you can make a request by contacting us at 
+cloudlegalnotices@tencent.com. In accordance with the laws in Singapore you do not have the legal right to delete your data, however we may delete your data on request to us.
 
-Please note, however, that we may retain personal information if there are valid grounds under data protection laws for us to do so (e.g., for the defence of legal claims or freedom of expression) but we will let you know if that is the case.
+To the extent provided by Singapore data privacy laws, you may withdraw consent you previously provided to us for certain processing activities by contacting us at cloudlegalnotices@tencent.com. Where consent is required to process your personal information, if you do not consent to the processing or if you withdraw your consent we may not be able to deliver the expected service. Please note that the right to withdraw consent is only available if the legal basis for processing information is consent.
+
+We may also use, disclose and/or retain personal information to comply with any applicable laws/regulations, enforceable government request or court order, and for the enforcement or defence of legal claims.
+
 
 ### Thailand
 
