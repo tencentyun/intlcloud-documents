@@ -4,7 +4,7 @@
 
 由集团账号统一回款到集团账户，每个成员账号的消费自动从集团进行代付，不需要资金划拨。该模式下，针对同一个主体的用户，可以设置管理员为代付账号，自动代付名下成员的消费。如下图所示：
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/6gPr336_PRELIM__%E9%9B%86%E5%9B%A2%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86_%E6%99%AE%E9%80%9A%E5%9B%BE%E7%89%87_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US-2_%E5%A5%BD%E5%8E%8B%E7%9C%8B%E5%9B%BE.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/N3UE221_image.png)
 
 ### 成员自付模式
 该模式下，集团管理账号可查看名下成员账号的账户信息、账单信息、为成员开票、合并出账。同实名认证主体的成员账号可以快速继承管理账号的合同价优惠。成员账号自己的消耗由自己支付。如下图所示：
