@@ -22,10 +22,6 @@ Requirements for enabling pay-on-behalf mode: When a member account joins an org
 	<td>Currently, only the admin account can be the payer account, while agents, resellers, and their customers cannot. <br/>1. External accounts or internal accounts of type 4, 6, or 9: The payer account <b>has no overdue payments or has an available balance greater than or equal to 0. </b>.<br/><b>2. Internal accounts of other types: Not verified</b>.</td>
 	</tr>
 	<tr>
-	<td>Offer inheritance verification</td>
-	<td><b>If the member or payer account already involves in offer inheritance, then pay-on-behalf will fail; for example, </b>if member account A selects B as the payer, and B already inherits the offers of C, or A inherits the offers of D, then pay-on-behalf will fail.</td>
-	</tr>
-	<tr>
 </table>
 
 
