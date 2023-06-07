@@ -2,11 +2,8 @@
 
 Pay-as-you-go accounts of Tencent Cloud International are given a credit limit that allows them to use resources first and pay later. The credit limit varies with customer type and payment frequency (billing cycle).
 ### Customers without sales reps
-Credit limits for customers without sales reps are dynamically adjusted according to their auto-payment records.
-1. After you sign up and add a credit card, your account will start with a credit limit of 0 USD.
-2. After you make three successful auto-payments, the system will increase your credit limit to 30 USD.
-3. Afterwards, the system will increase your credit limit by 20 USD each time you make three successful auto-payments.
-4. The credit limit can be increased to up to 150 USD.
+Starting June 08, 2023 at 00:00 (UTC+8), a credit limit will no longer be provided to newly registered Tencent Cloud customers that do not have a sales representative. For existing customers without sales representatives, Tencent Cloud reserves the right to adjust or cancel the credit limit at its own discretion based on the risk status of each account. 
+
 About auto-payment frequency:
 The system deducts the payable amount from your default payment method (credit card) at a certain frequency. This frequency is determined by the billing cycle (hourly, daily, or monthly) of the pay-as-you-go products you use. If a pay-as-you-go product is billed hourly, the system will check on an hourly basis whether your account has sufficient available credit. If not, auto-payment will be triggered.
 
