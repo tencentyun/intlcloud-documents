@@ -153,7 +153,7 @@ In financial pay-on-behalf mode, the admin account can set whether to enable “
 <dx-alert infotype="notice" title="">
 - Offers cannot be inherited for products in the blocklist, for which the member accounts' own offers will apply. For more information on the blocklist, contact your channel manager or submit a ticket for assistance.
 - Rebates of the payer account are not inherited by member accounts.
-- The admin account can set whether to enable “offer inheritance” for member accounts. If “offer inheritance” is enabled, the existing offer inheritance relationship will be verified. If a member chooses another member as its payer, they can’t establish a new inheritance relationship if any of them is already involved in one.
+- The admin account can set whether to enable “offer inheritance” for member accounts. If “offer inheritance” is enabled, the existing offer inheritance relationship will be verified. If a member chooses an admin account as its payer, they can’t establish a new inheritance relationship if any of them is already an inheritor of other accounts.
 If you want to cancel the existing offer inheritance relationship and establish a new one, contact your sales rep to confirm that the payer account has successfully applied for contract offers and to help cancel the existing offer inheritance relationship. If you have any questions, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
 </dx-alert>
 
