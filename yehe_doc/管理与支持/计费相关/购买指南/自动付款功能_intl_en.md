@@ -15,7 +15,7 @@ After you enable auto-payment:
 For example, if your payment cycle is one month, your bill for May will be generated in early June, and payments will be collected on July 10. If your payment cycle is two months, your bill for May will be generated in early June, and payments will be collected on August 10.
 3. To avoid cases where services are suspended for your account due to overdue payments, we will deduct payments from your default payment method on the payment day even if you haven’t confirmed your past bills.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/JhfG496_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16835140631933.png)
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/iwLp949_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16835140778607.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/xuZN175_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16861932582677.png)
 
 
 ### FAQs
