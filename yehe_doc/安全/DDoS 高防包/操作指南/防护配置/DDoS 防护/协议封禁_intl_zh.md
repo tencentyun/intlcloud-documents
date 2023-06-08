@@ -11,7 +11,7 @@ DDoS 高防支持对访问 DDoS 高防的源流量按照协议类型一键封禁
   
 3. 在协议封禁卡片中，单击**设置**，进入协议封禁页面。
 ![](https://qcloudimg.tencent-cloud.cn/raw/3f04c6afa6e8d7f93caaf184edca77ad.png)
-4. 在协议封禁页面，单击**新建**，弹窗新建协议封禁弹窗。
+4. 在协议封禁页面，单击**新建**，弹出新建协议封禁弹窗。
 ![](https://main.qcloudimg.com/raw/10d37670faa7de3167d8cdeb4cf85e61.png)
 5. 在新建协议封禁弹窗中，单击开启所需协议后，单击**确定**，创建协议封禁规则。
 ![](https://main.qcloudimg.com/raw/58a617dbd1909430bf41de75fe34ed39.png)
