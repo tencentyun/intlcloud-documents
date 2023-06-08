@@ -3,7 +3,7 @@ The unified organization payment mode is a financial pay-on-behalf mode includin
 | Capability     | Description                                                                         |
 | -------- | ------------------------------------------------------------ |
 | Orders | Member accounts' monthly subscription and pay-as-you-go orders are automatically paid by the payer account. |
-| Offers     | Member accounts use the payer account's offers by default. If they place an order on a promotional campaign page, the discount in the campaign will be used. |
+| Offers     | This capability is optional. If member accounts have the offer inheritance permission, the offer inheritance rules will apply; otherwise, member accounts will use their own offers. |
 | Vouchers   | Member accounts use the admin account's vouchers by default.                                 |
 | Bills     | Member accounts' bills are automatically settled to the payer account for unified management.           |
 | Invoices     | Member accounts' invoiceable amounts are automatically settled to the payer account for unified invoice issuance.                 |
@@ -148,64 +148,14 @@ A member account can view all orders paid by the payer account and apply for pay
 
 #### Offers
 
-In financial pay-on-behalf mode in TCO, member accounts inherit the billing-level offers of the payer account by default.
+In financial pay-on-behalf mode, the admin account can set whether to enable “offer inheritance” for member accounts. If it is enabled, the offer inheritance rules will apply; otherwise, member accounts will use their own offers.
 
 <dx-alert infotype="notice" title="">
 - Offers cannot be inherited for products in the blocklist, for which the member accounts' own offers will apply. For more information on the blocklist, contact your channel manager or submit a ticket for assistance.
 - Rebates of the payer account are not inherited by member accounts.
-- If a member account or the payer account already involves in offer inheritance, pay-on-behalf will fail; for example:
-    - If member account A selects B as the payer, and B inherits the offers of C, or A inherits the offers of D, then pay-on-behalf will fail.
-    - If member account A selects B as the payer, and D inherits the offers of A, then pay-on-behalf will fail.
-- Such offer inheritance will be automatically canceled when the unified organization payment mode is disabled.
+- The admin account can set whether to enable “offer inheritance” for member accounts. If “offer inheritance” is enabled, the existing offer inheritance relationship will be verified. If a member chooses another member as its payer, they can’t establish a new inheritance relationship if any of them is already involved in one.
+If you want to cancel the existing offer inheritance relationship and establish a new one, contact your sales rep to confirm that the payer account has successfully applied for contract offers and to help cancel the existing offer inheritance relationship. If you have any questions, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category).
 </dx-alert>
-
-Specific offer scenarios are as detailed below:
-
-<table>
-  <tr>
-  <th><b>Transaction Type</b></th>
-  <th><b>Scenario</b></th>
-  <th><b>Offer</b></th>
-  <th><b>Member Account's Billing-Level Offer</b></th>
-  <th><b>Payer Account's Billing-Level Offer</b></th>
-    </tr>
-   <tr>
-      <td rowspan=2>Prepayment by a member account</td>
-    <td>Order placement on a promotional campaign page</td>
-   <td>✓</td> 
-   <td>-</td> 
-   <td>-</td>
-	  </tr>
-	<td>Order placement not on a promotional campaign page</td>
-	<td>-</td>
-	<td>-</td>
-	<td>✓</td> 
-	</tr>
-	<tr>
-	   <td rowspan=4>Postpayment by a member account</td>
-	<td>Settlement cycle when the member account joins the organization</td>
-	<td>-</td>
-	<td>✓</td> 
-	<td>-</td>
-	   </tr>
-	<td>Settlement cycle after the member account joins the organization</td>
-	<td>-</td>
-	<td>-</td>
-	<td>✓</td>   
-	   </tr>
-	<td>Settlement cycle when the member account quits the organization</td>
-	<td>-</td>
-	<td>-</td>
-	<td>✓</td>
-	  </tr>
-	<td>After the member account quits the organization</td>
-	<td>-</td>
-	<td>✓</td> 
-	<td>-</td>
-	</tr>
-	<tr>
-</table>
-
 
 #### Vouchers
 
