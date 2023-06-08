@@ -15,7 +15,7 @@
 例如，如果您的账期是1个月，那么5月份的账单在6月初生成（固定下月出账），到期还款日是7月10号；如果您的账期是2个月，那么5月份的账单在6月初生成，到期还款日是8月10号；
 3.	若历史月份的账单未确认，到了到期还款日，系统会对您账户的默认支付方式进行自动托收还款，以保证正常回款，避免未托收带来的停服。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/JhfG496_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16835140631933.png)
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/iwLp949_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16835140778607.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/xuZN175_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16861932582677.png)
 
 
 ### 三、常见问题
