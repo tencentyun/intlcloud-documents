@@ -1,119 +1,108 @@
-## Problem Description
-When you access the CVM from a local machine or access other network resources from the CVM, network stutters. Packet loss or high latency is found when you execute the `ping` command.
+This document describes the common causes and troubleshooting procedures of CVM network packet loss.
 
-## Problem Analysis
-Packet loss or high latency may be caused by backbone network congestion, network node failure, high load or system configuration. You can use MTR for further diagnosis after ruling out CVM problems.
-MTR is a network diagnostic tool and provides reports that help you locate networking problems.
+## Common Causes
+The common causes of CVM network packet loss are as follows:
+- [TCP packet loss due to the limit setting](#tcpPacketLoss)
+- [UDP packet loss due to the limit setting](#udpPacketLoss)
+- [Packet loss due to soft interrupt](#softInterrupt)
+- [Full UDP send buffer](#sendBuffer)
+- [Full UDP receive buffer](#receiveBuffer)
+- [Full TCP accept queue](#tcpFullyConnectedQueue)
+- [TCP request overflow](#tcpRequestOverflow)
+- [Connections exceeding the upper limit](#upperLimit)
+- [iptables policy rules](#iptablesPolicy)
 
-## Solution
->? This document takes Linux and Windows CVM as an example to describe how to use MTR and analyze the report.
->
-Please see the MTR introduction and instructions corresponding to the host operating system.
-- [WinMTR Introduction and Instructions (for Windows)](#MTRofWindows)
-- [MTR Introduction and Instructions (for Linux)](#MTRofLinux)
 
-<span id="MTRofWindows"></span>
-### WinMTR Introduction and Instructions (for Windows)
-**WinMTR** is a free network diagnostic tool for Windows integrated with Ping and tracert features. Its graphical interface allows you to intuitively see the response time and packet loss of each node.
+## Prerequisites
+To troubleshoot a problem, you need to first log in to your CVM instance. For detailed directions, see [Logging into Linux Instance](https://intl.cloud.tencent.com/zh/document/product/213/32493) and [Logging into Windows Instance](https://intl.cloud.tencent.com/zh/document/product/213/32495).
 
-#### Installing WinMTR
-1. Log in to the Windows CVM.
-2. On the operating system interface, visit the official website (or other legal channels) through the browser to download the WinMTR installer package corresponding to your operating system.
-3. Unzip the WinMRT installer package.
+## Troubleshooting
 
-#### Using WinMTR
-1. Double-click WinMTR.exe to open WinMRT tool.
-2. Enter the IP or domain name of the host in the Host field. Then click **Start** as shown below:
-![](https://main.qcloudimg.com/raw/7aa2d2e76b86deabd6d0248ecf89de56.png)
-3. Wait for WinMTR to run for a while and click **Stop** to stop the test, as shown below:
-![](https://main.qcloudimg.com/raw/5d73f806c0252d26755d584e874c26f1.png)
-Key information of the test result is as shown below:
- - **Hostname**: IP or name of each host passed through on the path to the destination server.
- - **Nr**: Number of nodes that have been passed through.
- - **Loss%**: Packet loss of each node.
- - **Sent**: Number of data packets sent.
- - **Recv**: Number of responses received.
- - **Best**: Shortest response time.
- - **Avrg**: Average response time.
- - **Worst**: Longest response time.
- - **Last**: Last response time.
+### TCP packet loss due to the limit setting[](id:tcpPacketLoss)
+Tencent Cloud provides various types of CVM instances, each of which has different network performance. When the maximum bandwidth or packet size of an instance is reached, packet loss may occur. The troubleshooting procedure is as follows:
+1. Check the bandwidth and packet volume of the instance.
+For a Linux instance, run the `sar -n DEV 2` command to check its bandwidth and packets. The `rxpck/s` and `txpck/s` metrics indicate the packets received and sent, respectively. The `rxkB/s` and `txkB/s` metrics indicate the inbound and outbound bandwidth, respectively.
+2. Compare the result with the performance indicator shown in the [instance type](https://intl.cloud.tencent.com/document/product/213/11518) and check if the upper limit is reached.
+ - If yes, upgrade the instance or adjust your business volume.
+ - If no, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category
+) for assistance.
 
-<span id="MTRofLinux"></span>
-### MTR Introduction and Instructions (for Linux)
-**MTR** is a network diagnostic tool for Linux integrated with Ping, traceroute and nslookup features. ICMP packets are used by default to test the network connection between two nodes.
+### UDP packet loss due to the limit setting[](id:udpPacketLoss)
+Refer to the [troubleshooting procedure for TCP packet loss due to the limit setting](#tcpPacketLoss), and check whether the upper limit is reached.
+ - If yes, upgrade the instance or adjust your business volume.
+ - If no, the cause may be the frequency limit on DNS requests. After the overall bandwidth or packets hit the performance bottleneck of the instance, the DNS request speed may be limited, which causes packet loss. In this case, please [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
 
-#### Installing MTR Installation
-Currently, all released versions of Linux have MTR preinstalled. If not, you can install MTR using the following command:
-- For **CentOS**:
+
+### Packet loss due to soft interrupt[](id:softInterrupt)
+When the operating system detects that the second value of the `/proc/net/softnet_stat` statistics is increasing, a soft interrupt causes the packet loss. The troubleshooting procedure is as follows: 
+Check whether the RPS (Receive Packet Steering) is enabled:
+ - If yes, increase the value of the kernel parameter `net.core.netdev_max_backlog`. For more information on how to modify a kernel parameter, see [Introduction to Linux Kernel Parameters](https://intl.cloud.tencent.com/document/product/213/39162).
+ - If no, check whether the CPU high single-core soft interrupt causes the delayed data receiving and sending. In this case, you can:
+  - Choose to enable RPS to make soft interrupt distribution more balanced.
+  - Check whether the business program will cause uneven distribution of soft interrupts.
+
+### Full UDP send buffer[](id:sendBuffer)
+If your instance lost packets due to insufficient UDP buffer, the troubleshooting procedure is as follows:
+1. Run the `ss -nump` command to check whether the UDP send buffer is full.
+2. If the buffer is full, increase the values of the kernel parameters `net.core.wmem_max` and `net.core.wmem_default`, and restart the UDP program for the configuration to take effect. For more information about kernel parameters, see [Introduction to Linux Kernel Parameters](https://intl.cloud.tencent.com/document/product/213/39162).
+3. If the packet loss problem persists, run the `ss -nump` command, and you will find that the send buffer size does not increase as expected. In this case, check whether `SO_SNDBUF` is configured through the `setsockopt` function in the code. If so, modify the code to increase the value of `SO_SNDBUF`.
+
+### Full UDP receive buffer[](id:receiveBuffer)
+If your instance lost packets due to insufficient UDP buffer, the troubleshooting procedure is as follows:
+1. Run the `ss -nump` command to check whether the UDP receive buffer is full.
+2. If the buffer is full, increase the values of the kernel parameters `net.core.rmem_max` and `net.core.rmem_default`, and restart the UDP program for the configuration to take effect. For more information about kernel parameters, see [Introduction to Linux Kernel Parameters](https://intl.cloud.tencent.com/document/product/213/39162).
+3. If the packet loss problem persists, run the `ss -nump` command, and you will find that the receive buffer size does not increase as expected. In this case, check whether `SO_RCVBUF` is configured through the `setsockopt` function in the code. If so, modify the code to increase the value of `SO_RCVBUF`.
+
+### Full TCP accept queue[](id:tcpFullyConnectedQueue)
+The TCP accept queue length is the `net.core.somaxconn` value or the passed-in `backlog` value when a business process calls the listen system, whichever is smaller. If your instance lost packets due to full TCP accept queue, the troubleshooting procedure is as follows:
+1. Increase the value of the kernel parameter `net.core.somaxconn`. For more information about kernel parameters, see [Introduction to Linux Kernel Parameters](https://intl.cloud.tencent.com/document/product/213/39162).
+2. Check whether the business process passes in the `backlog` parameter, and increase its value accordingly.
+
+### TCP request overflow[](id:tcpRequestOverflow)
+If you lock the socket when TCP receives data, the data will be sent to the backlog queue. If the process fails, packet loss occurs due to the TCP request overflow. Assume the business program performs well, troubleshoot the packet loss problem at the system level.
+
+Check whether the business program sets the buffer size through the `setsockopt` function.
+- If yes, modify the business program to specify a larger value or abandon the setting.
+<dx-alert infotype="explain" title="">
+The `setsockopt` value is restricted by the kernel parameters `net.core.rmem_max` and `net.core.wmem_max`. You can also adjust the values of the two kernel parameters, and then restart the business program for the configuration to take effect.
+</dx-alert>
+- If not, increase the respective values of the kernel parameters `net.ipv4.tcp_mem`, `net.ipv4.tcp_rmem` and `net.ipv4.tcp_wmem` to heighten the socket level.
+For kernel parameter modifications, see [Introduction to Linux Kernel Parameters](https://intl.cloud.tencent.com/document/product/213/39162).
+
+### Connections exceeding the upper limit[](id:upperLimit)
+Tencent Cloud provides various types of CVM instances. Each type has unique connection performance. When instance connections exceed the specified threshold, no connection is allowed, resulting in packet loss. The troubleshooting procedure is as follows:
+<dx-alert infotype="explain" title="">
+The connection refers to the number of CVM instance sessions (including TCP, UDP, and ICMP sessions) saved on a host. If the value is greater than the network connections obtained by using the `ss` or `netstat` command on the instance, the threshold is exceeded.
+</dx-alert>
+
+Compare the network connections on your instance with the number of connections shown in the [instance type](https://intl.cloud.tencent.com/document/product/213/11518) and check if the upper limit is reached.
+ - If yes, upgrade the instance or adjust your business volume.
+ - If no, [submit a ticket](https://console.intl.cloud.tencent.com/workorder/category) for assistance.
+
+
+### iptables policy rules[](id:iptablesPolicy)
+If no relevant rules are set in the iptables of the CVM, the problem may be due to the settings of the iptables policy rules that drop all packets arriving at the CVM. The troubleshooting procedure is as follows:
+
+1. [](id:Step1)Run the following command to view the iptables policy rules.
 ```
-yum install mtr
+iptables -L | grep policy 
 ```
-- For **Ubuntu**:
+The iptables policy rule defaults to `ACCEPT`. If the INPUT chain policy is not `ACCEPT`, all packets to the CVM will be dropped. For example, if the following result is returned, all packets arriving at the CVM will be dropped.
 ```
-sudo apt-get install mtr
+Chain INPUT (policy DROP)
+Chain FORWARD (policy ACCEPT)
+Chain OUTPUT (policy ACCEPT)
+```
+2. Run the following command to adjust the value after `-P` as needed.
+```
+iptables -P INPUT ACCEPT 
+```
+After adjustment, run the command in [step 1](#Step1) again to check, and the following result should be returned:
+```
+Chain INPUT (policy ACCEPT)
+Chain FORWARD (policy ACCEPT)
+Chain OUTPUT (policy ACCEPT)
 ```
 
-#### MTR Parameters
-- **-h/--help**: Displays help menu.
-- **-v/--version**: Displays MTR version information.
-- **-r/--report**: Outputs the result in a report.
-- **-p/--split**: Different from **--report**, **-p/--split** lists the result of each trace separately.
-- **-c/--report-cycles**: Sets the number of data packets sent per second. Default is 10.
-- **-s/--psize**: Sets the size of each data packet.
-- **-n/--no-dns**: Disables domain name resolution for IP address.
-- **-a/--address**: Sets the IP address from which data packets are sent. It is mainly used for scenarios with a single host and multiple IP addresses.
-- **-4**：IPv4
-- **-6**：IPv6
 
-#### Use Cases
-Take a local machine to server (IP: 119.28.98.39) as an example.
-Execute the following command to output the diagnostic result of MTR in a report.
-```
-mtr 119.28.98.39 -- report
-```
-A message similar to the one below is returned:
-```
-[root@VM_103_80_centos ~]# mtr 119.28.98.39 -- report
-Start: Mon Feb  5 11:33:34 2019
-HOST:VM_103_80_centos            Loss%    Snt    Last    Avg    Best    Wrst    StDev
-1.|-- 100.119.162.130             0.0%     10     6.5    8.4     4.6    13.7      2.9
-2.|-- 100.119.170.58              0.0%     10     0.8    8.4     0.6     1.1      0.0
-3.|-- 10.200.135.213              0.0%     10     0.4    8.4     0.4     2.5      0.6
-4.|-- 10.200.16.173               0.0%     10     1.6    8.4     1.4     1.6      0.0
-5.|-- 14.18.199.58                0.0%     10     1.0    8.4     1.0     4.1      0.9
-6.|-- 14.18.199.25                0.0%     10     4.1    8.4     3.3    10.2      1.9
-7.|-- 113.96.7.214                0.0%     10     5.8    8.4     3.1    10.1      2.1
-8.|-- 113.96.0.106                0.0%     10     3.9    8.4     3.9    11.0      2.5
-9.|-- 202.97.90.206               30.0%     10    2.4    8.4     2.4     2.5      0.0
-10.|-- 202.97.94.77               0.0%     10     3.5    4.6     3.5     7.0      1.2
-11.|-- 202.97.51.142              0.0%     10   164.7    8.4   161.3   165.3      1.2
-12.|-- 202.97.49.106              0.0%     10   162.3    8.4   161.7   167.8      2.0
-13.|-- ix-xe-10-2-6-0.tcore2.LVW 10.0%     10   168.4    8.4   161.5   168.9      2.3
-14.|-- 180.87.15.25              10.0%     10   348.1    8.4   347.7   350.2      0.7
-15.|-- 180.87.96.21               0.0%     10   345.0    8.4   343.4   345.0      0.3
-16.|-- 180.87.96.142              0.0%     10   187.4    8.4   187.3   187.6      0.0
-17.|-- ???                      100.0%     10     0.0    8.4     0.0     0.0      0.0
-18.|-- 100.78.119.231             0.0%     10   187.7    8.4   187.3   194.0      2.5
-19.|-- 119.28.98.39               0.0%     10   186.5    8.4   186.4   186.5      0.0
-```
-The main output information is as follows
-- **Host:** IP address or domain name of a node.
-- **Loss%:** Packet loss.
-- **Snt:** Number of data packets sent per second.
-- **Last:** Last response time.
-- **Avg:** Average response time.
-- **Best:** Shortest response time.
-- **Wrst:** Longest response time.
-- **StDev:** Standard deviation. A higher standard deviation indicates a larger difference in the the response time of data packets at this node.
 
-### Report analysis and troubleshooting
->? Due to network asymmetry, we recommend you collect two-way MTR data (from the local machine to the destination server and from the destination server to the local machine) if any network error occurs.
->
-1. According to the report, check whether there is packet loss on the destination IP.
- - If there is no packet loss on the destination IP, network conditions are normal.
- - If there is packet loss on the destination IP, perform [Step 2](#step02).
-2. <span id="step02">Check the result to locate the node where the first packet loss occurs.</span>
- - If packet loss occurred at the destination server, it may be caused by incorrect network configuration of the destination server. Please check its firewall configuration.
- - If packet loss occurred at the first three hops, it may be caused by network problems of the local machine’s ISP. If the problem also happens when you access other addresses, report it to your ISP.
- - If packet loss occurred at the hops closing to the destination server, it may be caused by network problems of the destination server’s ISP. [Submit a ticket](https://console.cloud.tencent.com/workorder/category) to report the problem.
- When submitting the ticket, please attach screenshots of MTR test results from the local machine to the destination server and from the destination server to the local machine.
