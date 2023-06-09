@@ -60,3 +60,7 @@ In the console, hover your mouse over the profile icon in the top right corner, 
 ### What is the invoicing currency?
 
 Tencent Cloud International issues invoices in USD.
+
+### Tax rate for international station invoices:
+
+The tax rate for invoices issued by the international station varies depending on the product, account entity registration location, and channel. Currently, the main tax rates are 0%、6% 、7%、10%、 11%、 20%、 21%、etc. The invoice tax rate is subject to the actual invoice tax rate.
