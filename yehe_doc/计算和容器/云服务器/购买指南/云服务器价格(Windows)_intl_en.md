@@ -1107,29 +1107,3 @@ The following are the rates for different types of CVM instances in different re
 
 [Back to Top](#CVMPricing)
 
-### Moscow
-
-| Model       | Specification   | vCPU     | MEM   | Processor model \(clock rate\)      | Fee         |
-| ----------- | --------------- | -------- | ----- | ----------------------------------- | ----------- |
-| Standard S3 | S3\.SMALL1      | 1\-core  | 1GB   | Intel Xeon Skylake 6133\(2\.5 GHz\) | 0\.02USD/hr |
-| Standard S3 | S3\.SMALL2      | 1\-core  | 2GB   | Intel Xeon Skylake 6133\(2\.5 GHz\) | 0\.05USD/hr |
-| Standard S3 | S3\.SMALL4      | 1\-core  | 4GB   | Intel Xeon Skylake 6133\(2\.5 GHz\) | 0\.10USD/hr |
-| Standard S3 | S3\.MEDIUM4     | 2\-core  | 4GB   | Intel Xeon Skylake 6133\(2\.5 GHz\) | 0.10USD/hr  |
-| Standard S3 | S3\.MEDIUM8     | 2\-core  | 8GB   | Intel Xeon Skylake 6133\(2\.5 GHz\) | 0\.20USD/hr |
-| Standard S3 | S3\.LARGE8      | 4\-core  | 8GB   | Intel Xeon Skylake 6133\(2\.5 GHz\) | 0\.26USD/hr |
-| Standard S3 | S3\.LARGE16     | 4\-core  | 16GB  | Intel Xeon Skylake 6133\(2\.5 GHz\) | 0\.39USD/hr |
-| Standard S3 | S3\.2XLARGE16   | 8\-core  | 16GB  | Intel Xeon Skylake 6133\(2\.5 GHz\) | 0\.53USD/hr |
-| Standard S3 | S3\.2XLARGE32   | 8\-core  | 32GB  | Intel Xeon Skylake 6133\(2\.5 GHz\) | 0\.79USD/hr |
-| Standard S3 | S3\.3XLARGE24   | 12\-core | 24GB  | Intel Xeon Skylake 6133\(2\.5 GHz\) | 0\.79USD/hr |
-| Standard S3 | S3\.3XLARGE48   | 12\-core | 48GB  | Intel Xeon Skylake 6133\(2\.5 GHz\) | 1.18USD/hr  |
-| Standard S3 | S3\.4XLARGE32   | 16\-core | 32GB  | Intel Xeon Skylake 6133\(2\.5 GHz\) | 1.05USD/hr  |
-| Standard S3 | S3\.4XLARGE64   | 16\-core | 64GB  | Intel Xeon Skylake 6133\(2\.5 GHz\) | 1.58USD/hr  |
-| Standard S3 | S3\.6XLARGE48   | 24\-core | 48GB  | Intel Xeon Skylake 6133\(2\.5 GHz\) | 1.58USD/hr  |
-| Standard S3 | S3\.6XLARGE96   | 24\-core | 96GB  | Intel Xeon Skylake 6133\(2\.5 GHz\) | 2.37USD/hr  |
-| Standard S3 | S3\.8XLARGE64   | 32\-core | 64GB  | Intel Xeon Skylake 6133\(2\.5 GHz\) | 2.11USD/hr  |
-| Standard S3 | S3\.8XLARGE128  | 32\-core | 128GB | Intel Xeon Skylake 6133\(2\.5 GHz\) | 3.16USD/hr  |
-| Standard S3 | S3\.16XLARGE128 | 64\-core | 128GB | Intel Xeon Skylake 6133\(2\.5 GHz\) | 4.21USD/hr  |
-| Standard S3 | S3\.16XLARGE256 | 64\-core | 256GB | Intel Xeon Skylake 6133\(2\.5 GHz\) | 6.32USD/hr  |
-| Standard S3 | S3\.20XLARGE320 | 80\-core | 320GB | Intel Xeon Skylake 6133\(2\.5 GHz\) | 7.90USD/hr  |
-
-[Back to Top](#CVMPricing)
