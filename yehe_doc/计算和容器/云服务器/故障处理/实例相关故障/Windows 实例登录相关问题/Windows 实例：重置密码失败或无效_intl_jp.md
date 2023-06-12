@@ -56,31 +56,3 @@ CVMパスワードリセットが失敗または有効にならなかったこ�
 `cloudbase-init`コンポーネントの確認および設定の手順は次のとおりです。
 1. [VNCを使用してWindowsインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32496)を参照し、目的のWindowsインスタンスにログインします。
 2. 実際にインストールされているサードパーティ製セキュリティソフトウェアに応じて、`cloudbase-init`コンポーネントをリカバリし、設定します。
-
-<dx-tabs>
-::: 360 Safeguard
-360 Safeguardはインストール完了後、システムを定期的にスキャンします。`cloudbase-init`コンポーネントをスキャンすると、ハイリスクと認識して隔離する場合があります。次の手順を参照してコンポーネントをリカバリするとともに、信頼できるファイルとして設定してください。
-
-1. 360 Safeguardを開き、【トロイの木馬の検出と駆除】>【リカバリエリア】を選択します。次の図に示します。
-![](https://main.qcloudimg.com/raw/cfc16c35c1eafbf4938f5ef4711cf0ee.png)
-2. ポップアップした「セキュリティ操作センター」ウィンドウで、ファイルにチェックを入れ、【選択したものをリカバリ】をクリックします。
-3. ポップアップした確認ウィンドウで、 「リカバリ後はこのファイルを信頼し、検出・駆除を行いません」にチェックを入れ、【リカバリ】をクリックすれば完了です。次の図に示します。
-![](https://main.qcloudimg.com/raw/4e7dee481a05243cec89ba5c6b1a5eb0.png)
-:::
-::: 火絨セキュリティソフトウェア
-火絨セキュリティソフトウェアはインストール完了後、`cloudbase-init`コンポーネントを自動的に隔離することはありませんが、`cloudbase-init`のパスワード変更行為をブロックすることがあります。次の手順を参照し、コンポーネントを信頼できるファイルとして設定してください。
-1. 火絨セキュリティソフトウェアを開き、右上隅の<img src="https://main.qcloudimg.com/raw/66dcf0fca93bab386180ab4337ebda92.png" style="margin:-3px 0px">を選択し、ポップアップメニューの中から【信頼エリア】をクリックします。次の図に示します。
-![](https://main.qcloudimg.com/raw/93e25735ff17294bb36d224b074ec67a.png)
-2. ポップアップした「信頼エリア」ウィンドウで、下記のファイルおよびフォルダを順に追加すれば完了です。次の図に示します。
-![](https://main.qcloudimg.com/raw/a8b0bd702407e5100238237fb6a5821a.png)
-ファイルおよびフォルダパスは次のとおりです。
- - `C:\Program Files\Cloudbase Solutions`
- - `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\Scripts`
- - `C:\Program Files\QCloud`
- - `C:\Windows\System32\cmd.exe`
- - `C:\Windows\System32\WindowsPowerShell`
- - `C:\Windows\SysWOW64\cmd.exe`
-:::
-</dx-tabs>
-
-
