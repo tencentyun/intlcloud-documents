@@ -1,5 +1,5 @@
 Cloud Firewall can be used with [Anti-DDoS Advanced](https://intl.cloud.tencent.com/document/product/1029), [Web Application Firewall (WAF)](https://intl.cloud.tencent.com/document/product/627), and [Security Group](https://intl.cloud.tencent.com/document/product/213/12452) for protection:
-![](https://qcloudimg.tencent-cloud.cn/raw/100abe24f4367479292f5af383a356f6.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/55f98fc02de51bfa6e3bec3eaf0232dd.png)
 
 - For inbound traffic
      - Cloud Firewall and WAF work together as the overall perimeter protection layer for cloud security. WAF offers protection for encrypted HTTPS traffic, while Cloud Firewall integrates threat intelligence, intrusion prevention system (IPS), and virtual patching to protect unencrypted traffic.
