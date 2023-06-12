@@ -165,11 +165,6 @@ https://tat-${short-region}-1258344699.cos.${region}.myqcloud.com/tat_agent_wind
 	<td>eu-frankfurt</td>
  </tr>
  <tr>
-  <td>莫斯科</td>
-	<td>ru</td>
-	<td> eu-moscow</td>
- </tr>
- <tr>
   <td>弗尼吉亚</td>
 	<td>use</td>
 	<td>na-ashburn</td>
