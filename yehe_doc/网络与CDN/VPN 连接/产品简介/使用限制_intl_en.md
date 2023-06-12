@@ -12,7 +12,7 @@ Note the following when using a VPN connection:
 ## VPN Gateway
  - VPN Connections is a region-level service, but you can also connect to your VPN gateway in any region over the internet.
  - You cannot specify a public IP or the ISP of the public IP for the VPN gateway. IPv6 and anycast IP addresses are also not supported.
- - To create a 1 Gbps SSL VPN gateway, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+ 
 
 ## Customer Gateway
  - You must specify the IP address of the customer gateway. The public IP of the customer gateway cannot be the following IP addresses:
