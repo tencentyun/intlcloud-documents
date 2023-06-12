@@ -198,9 +198,6 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 		<tr>
 			<td>Frankfurt Zone 2 (Nodes in Frankfurt can cover Europe)<br>eu-frankfurt-2</td>
 		</tr>
-		<td >Europe (Moscow)<br>eu-moscow</td>
-		<td>Moscow Zone 1 (Nodes in Moscow can cover Europe)<br>eu-moscow-1</td>
-		</tr>
 	</tbody>
 </table>
 
