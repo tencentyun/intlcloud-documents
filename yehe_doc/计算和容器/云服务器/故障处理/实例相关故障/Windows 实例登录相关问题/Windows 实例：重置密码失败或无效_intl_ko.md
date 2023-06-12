@@ -18,7 +18,7 @@
 
 ### cloudbase-init 서비스 검사
 
-1. [VNC를 사용하여 Windows 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/32496)을 참고하여 타깃 Windows 인스턴스에 로그인합니다.
+1. [표준 로그인 방식으로 Windows 인스턴스에 로그인(권장)](https://intl.cloud.tencent.com/document/product/213/32496)을 참고하여 타깃 Windows 인스턴스에 로그인합니다.
 2. 운영 체제 인터페이스에서 <img src='https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png' style='margin: -3px 0px;'></img>을(를) 우클릭하여 [실행]을 선택하고, [실행] 창에 **services.msc**를 입력한 뒤 **Enter**를 눌러 '서비스' 창을 엽니다.
 3. 아래 이미지와 같이 `cloudbase-init` 서비스가 있는지 확인합니다.
 ![](https://main.qcloudimg.com/raw/2615f5c0e68a31174c16c9a80884455c.png)
@@ -54,33 +54,6 @@
 - 핵심 컴포넌트가 차단되었다면 차단을 해제해야 합니다.
 
 `cloudbase-init` 모듈 검사 및 설정 단계는 다음과 같습니다.
-1. [VNC를 사용하여 Windows 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/32496)을 참고하여 타깃 Windows 인스턴스에 로그인합니다.
+1. [표준 로그인 방식으로 Windows 인스턴스에 로그인(권장)](https://intl.cloud.tencent.com/document/product/213/32496)을 참고하여 타깃 Windows 인스턴스에 로그인합니다.
 2. 실제 설치된 타사 보안 프로그램에 'cloudbase-init' 컴포넌트를 복원 및 설정합니다.
-
-<dx-tabs>
-::: 360 Total Security
-360 Total Security는 설치 후 정기적으로 시스템을 검사하며, `cloudbase-init`를 스캔하게 되면 고위험 요소로 간주하여 격리시킵니다. 다음 단계를 참고하여 컴포넌트를 복원하고 신뢰할 수 있는 파일로 설정합니다.
-
-1. 아래 이미지와 같이 360 Total Security를 열고, [트로이 목마 제거]>[복구 영역]을 선택합니다.
-![](https://main.qcloudimg.com/raw/cfc16c35c1eafbf4938f5ef4711cf0ee.png)
-2. ‘보안 운영 센터’ 팝업 창에서 파일을 선택하고 [선택 항목 복구]을 클릭합니다.
-3. 아래 이미지와 같이, 확인 팝업 창에서 '복구 후 이 파일을 신뢰하고 더 이상 제거하지 않음'을 체크하고, [복구]를 클릭합니다. 
-![](https://main.qcloudimg.com/raw/4e7dee481a05243cec89ba5c6b1a5eb0.png)
-:::
-::: Huorong Security 보안 프로그램
-Huorong Security 보안 소프트웨어는 `cloudbase-init` 컴포넌트를 적극적으로 격리하지 않지만, `cloudbase-init`의 비밀번호 수정 동작을 차단합니다. 다음 단계를 참고하여 컴포넌트를 신뢰할 수 있는 파일로 설정합니다.
-1. Huorong Security 보안 프로그램을 열고 오른쪽 상단의 <img src='https://main.qcloudimg.com/raw/66dcf0fca93bab386180ab4337ebda92.png' style='margin:-3px 0px'>을(를) 선택하고, 아래 이미지와 같이 메뉴 팝업 창에서 [신뢰 영역]클릭합니다.
-![](https://main.qcloudimg.com/raw/93e25735ff17294bb36d224b074ec67a.png)
-2. '신뢰 영역' 팝업 창에서 아래 이미지와 같이 다음 파일과 폴더를 순서대로 추가합니다.
-![](https://main.qcloudimg.com/raw/a8b0bd702407e5100238237fb6a5821a.png)
-파일 및 폴더 경로는 다음과 같습니다:
- - `C:\Program Files\Cloudbase Solutions`
- - `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\Scripts`
- - `C:\Program Files\QCloud`
- - `C:\Windows\System32\cmd.exe`
- - `C:\Windows\System32\WindowsPowerShell`
- - `C:\Windows\SysWOW64\cmd.exe`
-:::
-</dx-tabs>
-
 
