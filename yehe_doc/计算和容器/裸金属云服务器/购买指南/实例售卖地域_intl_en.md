@@ -54,7 +54,7 @@ CBM instances are available in the following regions:
 <tr>
 	<td>BMI5</td>
 	<td>-</td>
-	<td>Beijing, Shanghai, Guangzhou, Nanjing, Chongqing, Hong Kong (China)<br>Other countries and regions: Singapore, Bangkok, Tokyo, Seoul, Moscow, Silicon Valley, Virginia</td>
+	<td>Beijing, Shanghai, Guangzhou, Nanjing, Chongqing, Hong Kong (China)<br>Other countries and regions: Singapore, Bangkok, Tokyo, Seoul, Silicon Valley, Virginia</td>
 </tr><tr>
 	<td rowspan=3>GPU</td>
 	<td>BMGNV4</td>
