@@ -1,5 +1,5 @@
 云防火墙可以与 [DDoS 高防包](https://intl.cloud.tencent.com/document/product/1029)、[Web 应用防火墙（WAF）](https://intl.cloud.tencent.com/document/product/627)、[安全组](https://intl.cloud.tencent.com/document/product/213/12452) 进行联合防护，具体原理如下：
-![](https://qcloudimg.tencent-cloud.cn/raw/100abe24f4367479292f5af383a356f6.jpg)
+![](https://qcloudimg.tencent-cloud.cn/raw/55f98fc02de51bfa6e3bec3eaf0232dd.png)
 
 - 对于入方向流量
      - 云防火墙和 WAF 共同组成了云上网络安全的整体边界防护，WAF 更偏向于对加密的 HTTPS 流量进行防护，非加密流量通过云防火墙集成的威胁情报、 入侵防御系统（IPS）的基础规则和虚拟补丁等进行安全防护。
