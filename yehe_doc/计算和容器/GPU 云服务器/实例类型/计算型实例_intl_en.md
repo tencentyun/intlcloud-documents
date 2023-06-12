@@ -76,7 +76,7 @@ If your GPU instance is to be used for 3D rendering tasks, we recommend you use 
 		<a href="#GN7">GN7</a>
 	  </td>
 	  <td>NVIDIA Tesla T4</td>
-	  <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong, Singapore, Bangkok, Jakarta, Mumbai, Seoul, Tokyo, Silicon Valley, Virginia, Frankfurt, Moscow, and São Paulo</td>
+	  <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong, Singapore, Bangkok, Jakarta, Mumbai, Seoul, Tokyo, Silicon Valley, Virginia, Frankfurt, and São Paulo</td>
 	</tr>
 	<tr>
 	  <td>vGPU - NVIDIA Tesla T4</td>
@@ -476,7 +476,7 @@ GN10Xp instances are available in Guangzhou Zones 3 and 4, Shanghai Zones 2 and 
 #### Hardware specification
 
 - **CPU:** Intel<sup>®</sup> Xeon<sup>®</sup> Platinum 8255C CPU, with a clock rate of 2.5 GHz.
-- **GPU: **NVIDIA<sup>®</sup> Tesla<sup>®</sup> V100 NVLink 32GB, providing 15.7 TFLOPS of single-precision floating point performance, 7.8 TFLOPS of double-precision floating point performance, 125 TFLOPS of deep learning accelerator performance with Tensor cores, and 300 GB/s NVLink.
+- **GPU:** NVIDIA<sup>®</sup> Tesla<sup>®</sup> V100 NVLink 32GB, providing 15.7 TFLOPS of single-precision floating point performance, 7.8 TFLOPS of double-precision floating point performance, 125 TFLOPS of deep learning accelerator performance with Tensor cores, and 300 GB/s NVLink.
 - **Memory:** DDR4, providing memory bandwidth of up to 2,666 MT/s.
 - **Storage:** Select the appropriate CBS [cloud disk type](https://intl.cloud.tencent.com/document/product/362/31636). To [expand the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/31600), create and mount an elastic cloud disk.	 
 - **Network:** Network optimization is enabled by default. The network performance of an instance depends on its specification. You can purchase [public network bandwidth](https://intl.cloud.tencent.com/document/product/213/10578) as needed.
@@ -562,7 +562,7 @@ GN6 and GN6S are cost-effective and applicable to the following scenarios:
 #### AZs
 GN7 instances are available in the following AZs:
 - **GN7.LARGE20 and GN7.2XLARGE40** instances are available in Guangzhou Zones 3, 4, 6, and 7, Shanghai Zones 2, 3, 4, and 5, Nanjing Zones 1, 2, and 3, Beijing Zones 3, 5, 6, and 7, Chengdu Zone 1, Chongqing Zone 1, Hong Kong Zone 2, Silicon Valley Zone 2, and São Paulo Zone 1.
-- **Other GN7** instances are available in Guangzhou Zones 3, 4, 6, and 7, Shanghai Zones 2, 3, 4, and 5, Nanjing Zones 1, 2, and 3, Beijing Zones 3, 5, 6, and 7, Chengdu Zone 1, Chongqing Zone 1, Hong Kong Zone 2, Singapore Zones 1, 2, and 3, Bangkok Zone 2, Jakarta Zone 2, Mumbai Zone 2, Seoul Zones 1 and 2, Tokyo Zone 2, Silicon Valley Zone 2, Frankfurt Zone 1, Moscow Zone 1, Virginia Zone 2, and São Paulo Zone 1.
+- **Other GN7** instances are available in Guangzhou Zones 3, 4, 6, and 7, Shanghai Zones 2, 3, 4, and 5, Nanjing Zones 1, 2, and 3, Beijing Zones 3, 5, 6, and 7, Chengdu Zone 1, Chongqing Zone 1, Hong Kong Zone 2, Singapore Zones 1, 2, and 3, Bangkok Zone 2, Jakarta Zone 2, Mumbai Zone 2, Seoul Zones 1 and 2, Tokyo Zone 2, Silicon Valley Zone 2, Frankfurt Zone 1, Virginia Zone 2, and São Paulo Zone 1.
 
 
 #### Hardware specification
@@ -851,7 +851,7 @@ GN10X instances are available in Guangzhou Zones 3 and 4, Shanghai Zones 2 and 3
 #### Hardware specification
 
 - **CPU:** GN10X is configured with an Intel<sup>®</sup> Xeon<sup>®</sup> Gold 6133 CPU, with a clock rate of 2.5 GHz.
-- **GPU: **NVIDIA<sup>®</sup> Tesla<sup>®</sup> V100 NVLink 32GB, providing 15.7 TFLOPS of single-precision floating point performance, 7.8 TFLOPS of double-precision floating point performance, 125 TFLOPS of deep learning accelerator performance with Tensor cores, and 300 GB/s NVLink.
+- **GPU:** NVIDIA<sup>®</sup> Tesla<sup>®</sup> V100 NVLink 32GB, providing 15.7 TFLOPS of single-precision floating point performance, 7.8 TFLOPS of double-precision floating point performance, 125 TFLOPS of deep learning accelerator performance with Tensor cores, and 300 GB/s NVLink.
 - **Memory:** DDR4, providing memory bandwidth of up to 2,666 MT/s.
 - **Storage:** Select the appropriate CBS [cloud disk type](https://intl.cloud.tencent.com/document/product/362/31636). To [expand the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/31600), create and mount an elastic cloud disk.	 
 - **Network:** Network optimization is enabled by default. The network performance of an instance depends on its specification. You can purchase [public network bandwidth](https://intl.cloud.tencent.com/document/product/213/10578) as needed.
