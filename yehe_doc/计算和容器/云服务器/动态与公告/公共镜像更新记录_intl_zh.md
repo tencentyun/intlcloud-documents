@@ -1,4 +1,5 @@
 <dx-alert infotype="notice" title="">
+
 - 不同地域的镜像更新时间可能不同，本文所提供的镜像更新时间为全地域镜像更新时间。
 - 腾讯云提供的公共镜像维护周期将与官方公布的维护周期保持一致。官方公布维护时间信息请参见 [操作系统官方维护计划](https://www.tencentcloud.com/document/product/213/53802)。
 </dx-alert>
@@ -6,7 +7,6 @@
 
 ## OpenCloudOS
 OpenCloudOS 更新记录请参见 [OpenCloudOS 镜像更新日志](https://intl.cloud.tencent.com/document/product/213/46208)。
-
 
 ## CentOS
 
@@ -279,6 +279,40 @@ img-2lj11q1f </a>
 </table>
 
 
+## Red Hat Enterprise Linux
+
+<table class="tg">
+<thead>
+  <tr>
+    <th style="width: 20%;">镜像版本</th>
+    <th style="width: 35%;">镜像信息</th>
+    <th style="width: 12%;">最近一次更新时间</th>
+    <th style="width: 15%;">最近一次更新内容</th>
+      </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Red Hat Enterprise Linux 8.5</td>
+    <td class="tg-0pky">镜像ID：img-r5xber0b<br>当前内核版本： 4.18.0-425.19.2.el8_7.x86_64</td>
+    <td class="tg-0pky">2023-04-27</td>
+    <td class="tg-0pky">更新最新系统补丁。</td>
+    </tr>
+  <tr>
+    <td class="tg-0pky">Red Hat Enterprise Linux 7.9</td>
+    <td class="tg-0pky">镜像ID：img-0qhxz7dl<br>当前内核版本：3.10.0-1160.88.1.el7.x86_64</td>
+    <td class="tg-0pky">2023-04-27</td>
+    <td class="tg-0pky">更新最新系统补丁。</td>
+    </tr>
+</tbody>
+</table>
+
+<dx-alert infotype="explain" title="">
+- Red Hat Enterprise Linux 镜像处于内测阶段，您可通过 [提交工单](https://console.tencentcloud.com/workorder/category) 获取使用权限。
+- 您在购买云服务器 CVM 时，选中已经通过 Red Hat Enterprise Linux 认证的实例类型，即可选用 Red Hat Enterprise Linux 镜像，您可以点击 [Red Hat Enterprise Linux 镜像使用指引](https://www.tencentcloud.com/document/product/213/55135) 查看支持的镜像版本和实例类型。
+</dx-alert>
+
+
+
 ## AlmaLinux
 <table>
 <tr>
@@ -342,8 +376,6 @@ img-ge141oql</a>
 	<td>镜像上线。</td>
   </tr>
 </table>
-
-
 
 
 ## FreeBSD
@@ -522,7 +554,7 @@ img-4orfgj3l</a>
   <tr>
 	<td>Windows Server 2016 数据中心版 64位中文版</td>
 	<td>镜像 ID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-gu1nmb8d">img-gu1nmb8d</a></td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id= img-gu1nmb8d"> img-gu1nmb8d</a></td>
 	<td>2023-03-09</td>
 	<td>更新最新系统补丁。</td>
   </tr>
@@ -547,7 +579,6 @@ img-4orfgj3l</a>
 	<td>2023-01-06</td>
 	<td>更新最新系统补丁。</td>
   </tr>
-
 </table>
 
 
