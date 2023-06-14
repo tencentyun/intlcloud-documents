@@ -2,6 +2,8 @@
 
 This document provides an overview of code samples for generating a pre-signed object URL.
 
+For details about how to use a pre-signed URL for uploads, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114). For details about how to use a pre-signed URL for downloads, see [Download via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14116).
+
 >?
 > - We recommend you use a temporary key to generate a pre-signed URL for the security of your requests such as uploads and downloads. When you apply for a temporary key, follow the [principle of least privilege](https://intl.cloud.tencent.com/document/product/436/32972) to avoid leaking resources besides your buckets and objects.
 > - If you need to use a permanent key to generate a pre-signed URL, we recommend you limit the permission of the permanent key to uploads and downloads only to avoid risks.
@@ -17,7 +19,7 @@ For the parameters and method description of all the APIs in the SDK, see the [A
 #### Sample 1. Generating pre-signed upload URL
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-presign-upload-url"
+[//]: # (.cssg-snippet-get-presign-upload-url)
 ```objective-c
 QCloudGetPresignedURLRequest* getPresignedURLRequest = [[QCloudGetPresignedURLRequest alloc] init];
 
@@ -63,7 +65,7 @@ getPresignedURLRequest.object = @"exampleobject";
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-presign-upload-url"
+[//]: # (.cssg-snippet-get-presign-upload-url)
 ```swift
 let getPresign  = QCloudGetPresignedURLRequest.init();
 
@@ -109,7 +111,7 @@ QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 #### Sample 2. Generating pre-signed download URL
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-presign-download-url"
+[//]: # (.cssg-snippet-get-presign-download-url)
 ```objective-c
 QCloudGetPresignedURLRequest* getPresignedURLRequest = [[QCloudGetPresignedURLRequest alloc] init];
 
@@ -154,7 +156,7 @@ getPresignedURLRequest.object = @"exampleobject";
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-presign-download-url"
+[//]: # (.cssg-snippet-get-presign-download-url)
 ```swift
 let getPresign  = QCloudGetPresignedURLRequest.init();
 
