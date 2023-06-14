@@ -43,7 +43,7 @@
 <td>公共镜像</td>
 <td>包含开源镜像及商业镜像。
 <ul style="margin:0px">
-<li>开源镜像均免费提供服务。</li>
+<li>开源镜像不产生 License 许可费用。</li>
 <li>商业镜像会产生一定的 License 许可费用，请以实际下单时为准。
 </li>
 </ul>
