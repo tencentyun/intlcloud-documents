@@ -29,7 +29,7 @@ COSコンソールから、バケットへのアクセス権限の設定また�
 1. [COSコンソール](https://console.cloud.tencent.com/cos5)にログインします。
 2. 左側ナビゲーションバーで、**バケットリスト**をクリックします。
 3. リストの上にある**承認管理**をクリックします。
-![](https://main.qcloudimg.com/raw/9bfbb2948c61a9b3a522d61331d90a51.png)
+
 4. ポップアップウィンドウで、承認したいバケットを選択します。次に、バケットのパブリック権限とユーザー権限（例えばサブアカウントの追加、サブアカウントIDは[CAM](https://console.cloud.tencent.com/cam) コンソールで確認できます）を設定します。
 ![](https://main.qcloudimg.com/raw/23eff9055312eaa122e247f9cf0ebf53.png)
 5. 設定の完了後に**OK**をクリックすると、複数のバケットのアクセス権限の設定が完了します。
