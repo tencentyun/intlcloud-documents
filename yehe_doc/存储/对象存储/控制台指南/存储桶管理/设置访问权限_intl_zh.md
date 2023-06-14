@@ -29,7 +29,7 @@
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)。
 2. 在左侧导航栏中，单击**存储桶列表**。
 3. 单击列表上方的**授权管理**。
-![](https://main.qcloudimg.com/raw/9bfbb2948c61a9b3a522d61331d90a51.png)
+
 4. 在弹窗中选择希望授权的存储桶。然后对存储桶的公共权限和用户权限（例如添加子账号，子账号 ID 可在 [访问管理](https://console.cloud.tencent.com/cam) 控制台查看）进行设置。
 ![](https://main.qcloudimg.com/raw/23eff9055312eaa122e247f9cf0ebf53.png)
 5. 配置完成后，单击**确定**，即可完成多个存储桶的访问权限设置。
