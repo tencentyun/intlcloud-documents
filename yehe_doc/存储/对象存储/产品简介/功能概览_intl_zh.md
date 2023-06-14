@@ -194,7 +194,7 @@
    </tr>
    <tr>
       <td>文件处理</td>
-      <td>文件处理是 COS 基于数据万象推出的针对所有格式文件的处理服务，当前提供了文件的哈希值计算、文件解压缩和多文件打包压缩能力，详情请参见文件处理概述。</td>
+      <td>文件处理是 COS 基于数据万象推出的针对所有格式文件的处理服务，当前提供了文件的哈希值计算、文件解压缩和多文件打包压缩能力，详情请参见 <a href="https://www.tencentcloud.com/document/product/436/54156">文件处理概述</a>。</td>
    </tr>
    <tr>
       <td>文档预览</td>
@@ -207,7 +207,7 @@
 
    <tr>
       <td>函数计算</td>
-      <td>COS 支持对指定存储桶设置文件解压缩和 CDN 缓存刷新，详情请参见 <a href="https://www.tencentcloud.com/zh/document/product/436/38137">函数计算</a>。</td>
+      <td>COS 支持对指定存储桶设置 CDN 缓存刷新，详情请参见 <a href="https://www.tencentcloud.com/document/product/436/38137">函数计算</a>。</td>
    </tr>
 	 
 	 
@@ -235,7 +235,7 @@
    </tr>
    <tr>
       <td nowrap="nowrap">与其他云产品集成</td>
-      <td>COS 基于云函数（Serverless Cloud Function，SCF）为用户提供数据库备份、消息备份、日志备份、日志分析、文件解压缩、数据导出等功能，详情请参见 <a href="https://www.tencentcloud.com/zh/document/product/436/39924">应用集成</a>。</td>
+      <td>COS 基于云函数（Serverless Cloud Function，SCF）为用户提供数据库备份、消息备份、日志备份、日志分析、数据导出等功能，详情请参见 <a href="https://www.tencentcloud.com/zh/document/product/436/39924">应用集成</a>。</td>
    </tr>
 </table>
 
@@ -261,7 +261,7 @@
    </tr>
    <tr>
       <td nowrap="nowrap">多种 API 和 SDK</td>
-      <td><ul  style="margin: 0;"><li>API：COS 提供丰富的 API 接口，包括功能接口的使用方法和参数，提供请求示例、响应示例以及错误码介绍，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/10111">操作列表</a>。</li><li>COS 提供多种开发语言：Android、C、C++、.NET、Go、iOS、Java、JavaScript、Node.js、PHP、Python、小程序 SDK，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK 概览</a>。</li></ul></td>
+      <td><ul  style="margin: 0;"><li>API：COS 提供丰富的 API 接口，包括功能接口的使用方法和参数，提供请求示例、响应示例以及错误码介绍，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/10111">操作列表</a>。</li><li>COS 提供多种开发语言：Android、C、C++、.NET(C#)、Flutter、Go、iOS、Java、JavaScript、Node.js、PHP、Python、小程序 SDK，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK 概览</a>。</li></ul></td>
    </tr>
 </table>
 
