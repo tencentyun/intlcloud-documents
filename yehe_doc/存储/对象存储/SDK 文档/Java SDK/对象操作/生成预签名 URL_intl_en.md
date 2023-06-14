@@ -185,7 +185,7 @@ ResponseHeaderOverrides responseHeaders = new ResponseHeaderOverrides();
 String responseContentType = "image/x-icon";
 String responseContentLanguage = "zh-CN";
 // Set the returned header to contain filename information.
-String responseContentDispositon = "filename=\"exampleobject\"";
+String responseContentDispositon = "filename=exampleobject";
 String responseCacheControl = "no-cache";
 String cacheExpireStr =
         DateUtils.formatRFC822Date(new Date(System.currentTimeMillis() + 24L * 3600L * 1000L));
