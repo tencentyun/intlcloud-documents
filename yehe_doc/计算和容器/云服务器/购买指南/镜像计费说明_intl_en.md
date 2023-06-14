@@ -60,7 +60,7 @@ If you choose a licensed Red Hat Enterprise Linux image when creating a **spot i
 **Example**:
 You purchased a CentOS instance at 8:00 am on January 1, 2023. No image license fee occurred during 8:00 - 9:00 am. At 9:30 am, you reinstalled the instance OS with Red Hat Enterprise Linux, and you need to pay for the image license for the billing cycle 9:00 - 10:00 am. At 10:30 am, you reinstalled the instance OS with CentOS, and you need to pay for the image license for the billing cycle 10:00 - 11:00 am. After 11:00 am, you do not need to pay for the image license.
 
-### Billing under RI mode
+### Billing under [RI](https://www.tencentcloud.com/document/product/213/30571) mode
 - When you select RI for a Linux instance, you need to pay for the license for the Red Hat Enterprise Linux image separately.
 - A pay-as-you-go instance with the Red Hat Enterprise Linux image licensed in Tencent Cloud can enjoy a discount when the instance configuration matches RI. However the discount is not available to the image license, which is billed separately.
 
