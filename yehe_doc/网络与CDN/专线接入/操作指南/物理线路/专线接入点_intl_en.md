@@ -52,12 +52,6 @@ This document describes the approximate locations of Tencent Cloud access points
 <td>No. 1268 Wanrong Road, Jing'an District, Shanghai</td>
 </tr>
 <tr>
-<td>ap-shanghai-e-ft-t</td>
-<td>CUCC</td>
-<td>Fiber optic port and electrical port</td>
-<td>No. 76 Fute 3rd Road East, Pudong New District, Shanghai</td>
-</tr>
-<tr>
 <td>ap-shanghai-f-yh</td>
 <td>CTCC, CMCC, and CUCC</td>
 <td>Fiber optic port and electrical port</td>
