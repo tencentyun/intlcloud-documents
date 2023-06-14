@@ -43,7 +43,7 @@ Check below for the billing details of images. For more information, see [Billin
 <td>Public image</td>
 <td>It includes open-source images and commercial images.
 <ul style="margin:0px">
-<li>Open-source images are free of charge.</li>
+<li>You do not need to pay for licenses when you use open-source images.</li>
 <li>You will be charged for licenses to use commercial images.
 </li>
 </ul>
