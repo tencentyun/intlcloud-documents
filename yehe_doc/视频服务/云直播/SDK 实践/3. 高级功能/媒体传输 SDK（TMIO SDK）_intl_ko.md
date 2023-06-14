@@ -309,7 +309,7 @@ tmio_->control(tmio::ControlCmd::GET_STATS, &stats_);
 ```
 
 ## 최신 API 및 Demo 세부 정보 설명
-TMIO SDK에 액세스하기 위해서는 최신 API 및 Demo 설명을 참고할 수 있으며, 자세한 내용은 [TMIO 액세스 세부 정보](https://github.com/tencentyun/tmio)를 참고하십시오.
+TMIO SDK에 액세스하기 위해서는 최신 API 및 Demo 설명을 참고할 수 있으며, 자세한 내용은 [TMIO 액세스 세부 정보](https://github.com/tencentyun/tmio/blob/master/README_en.md)를 참고하십시오.
 
 
 ## FAQ
