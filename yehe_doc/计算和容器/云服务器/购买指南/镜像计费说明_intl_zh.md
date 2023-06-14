@@ -12,7 +12,7 @@
 <tbody>
   <tr>
     <td class="tg-0pky">公共镜像</td>
-    <td class="tg-0pky">包含开源镜像及商业镜像：<br><li>开源镜像均免费提供服务。</li><li>商业镜像会产生一定的 License 许可费用，请以实际下单时为准，目前公共镜像包含 Windows Server、Red Hat Enterprise Linux 两款商业镜像，请您继续阅读本文档查看详细说明。</td></li>
+    <td class="tg-0pky">包含开源镜像及商业镜像：<br><li>开源镜像不产生 License 许可费用。</li><li>商业镜像会产生一定的 License 许可费用，请以实际下单时为准，目前公共镜像包含 Windows Server、Red Hat Enterprise Linux 两款商业镜像，请您继续阅读本文档查看详细说明。</td></li>
   </tr>
   <tr>
     <td class="tg-0pky">自定义镜像</td>
