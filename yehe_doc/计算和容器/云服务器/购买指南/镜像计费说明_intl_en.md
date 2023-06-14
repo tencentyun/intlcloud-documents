@@ -12,7 +12,7 @@ Check below for the billing details of images.
 <tbody>
   <tr>
     <td class="tg-0pky">Public image</td>
-    <td class="tg-0pky">It includes open-source images and commercial images.<br><li>Open-source images are free of charge.</li><li>You will be charged for licenses to use commercial images. Tencent Cloud now provides two commercial images, Windows Server image and Red Hat Enterprise Linux image.</td></li>
+    <td class="tg-0pky">It includes open-source images and commercial images.<br><li>You do not need to pay for licenses when you use open-source images.</li><li>You will be charged for licenses to use commercial images. Tencent Cloud now provides two commercial images, Windows Server image and Red Hat Enterprise Linux image.</td></li>
   </tr>
   <tr>
     <td class="tg-0pky">Custom image</td>
