@@ -29,7 +29,7 @@ You can use the COS console to set or modify bucket access permissions of the fo
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
 2. On the left sidebar, click **Bucket List**.
 3. Click **Manage Permissions** above the bucket list.
-![](https://main.qcloudimg.com/raw/9bfbb2948c61a9b3a522d61331d90a51.png)
+
 4. In the pop-up window, select the buckets that you want to grant permissions for. Then, scroll down to set both public permissions and user ACLs. For example, you can add a sub-account, whose ID can be viewed in the [CAM console](https://console.cloud.tencent.com/cam).
 ![](https://main.qcloudimg.com/raw/23eff9055312eaa122e247f9cf0ebf53.png)
 5. Once completed, click **OK**.
