@@ -309,7 +309,7 @@ tmio_->control(tmio::ControlCmd::GET_STATS, &stats_);
 ```
 
 ## API and Demo Updates
-To get the latest updates on the APIs and demos of the SDK, visit [this GitHub page](https://github.com/tencentyun/tmio).
+To get the latest updates on the APIs and demos of the SDK, visit [this GitHub page](https://github.com/tencentyun/tmio/blob/master/README_en.md).
 
 
 ## FAQs
