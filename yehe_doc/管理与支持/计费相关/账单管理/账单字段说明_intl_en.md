@@ -1,57 +1,55 @@
-## Bill Description
-
 ### 1. Fields
 
-| **Field**                            | **Description**                                                 |
-| ------------------------------------------- | ------------------------------------------------------------ |
-| Payer Account ID                            | Account ID of the payer, which is a user’s unique identifier at Tencent Cloud                     |
-| Owner Account ID                            | Account ID of the resource owner                         |
-| Operator Account ID                         | Account ID of the operator or the user who purchases or activates a product                      |
-| Product Name | Tencent Cloud product, such as CVM or TencentDB for MySQL |
-| Billing Mode                                | Billing mode, which can be monthly subscription or pay-as-you-go                           |
-| Project Name | Project to which a resource belongs. This is user-designated. If a resource has not been assigned to a project, it will automatically belong to the default project.  |
-| Region                                      | Region of a resource, such as South China (Guangzhou)                             |
-| Availability Zone | Availability zone to which a resource belongs, such as Guangzhou Zone 3 |
-| Instance ID                                 | Instance ID, which you can view in the console                               |
-| Instance Name | Resource alias, which is customized by users. It is null if not set. |
-| Instance Type                               | If a special instance such as resource package, RI, SP, or spot instance is used for deduction, the value of this field will be the corresponding instance type. </br>For a common instance, the value of this field will be `-` regardless of whether it is deducted. |
-| Subproduct Name | Subcategory of a Tencent Cloud product, such as CVM – Standard S1 |
-| Transaction Type                            | Type of transaction, such as purchase, activation, renewal, and refund. For details, see “Enumerated values of key fields” below. |
-| Transaction ID                              | Unique transaction identifier                                                 |
-| Transaction Time                            | Fee deduction time                                                 |
-| Usage Start Time                            | Resource usage start time                                             |
-| Usage End Time                              | Resource usage end time                                             |
-| Component Type | Component type, such as CPU, memory, bandwidth, and system disk |
-| Component Name | Component specification, such as Memory – Standard S2 and Premium Cloud Storage – Storage Space |
-| Component List Price                        | List unit price of a component                                                   |
-| Component Contracted Price | Contracted unit price of a component |
-| Component Price Measurement Unit            | Unit of measurement for the component list price                                                     |
-| Component Usage                             | Component usage                                                     |
-| Component Usage Unit | Unit of measurement for component usage |
-| Usage Duration                              | Resource usage duration                                                 |
-| Duration Unit                               | Unit of measurement for usage duration                                           |
-| Reserved Instance | ID of the RI matched, such as s2-RI-1234567890 |
-| Original Cost                               | Original cost of a resource, which is "List unit price × Usage × Usage duration"                     |
-| RI Deduction (Duration)    | Usage duration deducted by RI. The unit of measurement for deduction is the same as that for usage duration.   |
-| RI Deduction (Cost)    | Fee deduction by RI based on the component list price                       |
-| Savings Plan Deduction                      | Deduction by SP                                       |
-| Savings Plan Deduction Rate                 | Discount for a component based on the unused SP     |
-| SP Deduction (Cost)        | Fee deduction by SP based on the component list price</br>SP Deduction (Cost) = Fee deduction by SP/SP discount multiplier  |
-| Discount Multiplier | Discount multiplier. `1` indicates no discount, and `0` indicates 100% off. |
-| Blended Discount Multiplier                          | Combination of the official discount, RI discount, and SP discount. If there are no RI and SP discounts, blended discount multiplier equals discount multiplier. </br>Blended Discount Multiplier = Cost after discounts/Original cost |
-| Currency                                    | Currency used for the settlement of a component                                      |
-| Total Amount After Discount (Excluding Tax) | Total resource cost after discount (before tax), which is "Component original cost × Discount multiplier" or "Component unit price × Usage × Usage duration" |
-| Voucher Deduction | Amount deducted using vouchers from the total cost after discount (before tax) |
-| Amount Before Tax | Pretax amount after voucher deduction |
-| Tax Rate                                    | Tax rate                                                         |
-| Tax Amount                                  | Tax                                                         |
-| Total Cost (Including Tax)                  | Total resource cost after discount (after tax), which is "Component original cost × Discount multiplier × (1 + Tax rate)" or "Component unit price × Usage × Usage duration × (1 + Tax rate)" |
+|Field|Description| 
+|---------|---------|
+| Payer Account ID	| The account ID of the payer, which is the unique identifier of a Tencent Cloud user.	|
+| Owner Account ID	| The account ID of the actual resource user.	|
+| Operator Account ID	| The account or role ID of the operator who purchases or activates a resource.	|
+|Product Name	| The name of a Tencent Cloud product purchased by the user, such as CVM.	|
+| Subproduct Name	| The subcategory of a Tencent Cloud product purchased by the user, such as CVM – Standard S1.|
+|Billing Mode	| The billing mode, which can be monthly subscription or pay-as-you-go.	|
+|Transaction Type	| The detailed transaction type, such as pay-as-you-go hourly settlement. For more valid values, see "[Enumerated values of key fields](#key-fields)".	|
+|Transaction ID	| The bill number for a deducted payment.	|
+|Transaction Time	| The time at which a payment was deducted.	|
+|Usage Start Time	| The time at which product or service usage starts. |
+|Usage End Time	| The time at which product or service usage ends. |
+|Instance ID	| The object ID of a billed resource, such as a CMV instance ID. This object ID may vary due to various forms and contents of resources in different products.	|
+|Instance Name| The resource name set by the user in the console. If it is not set, it will be empty by default.	|
+|Instance Type	| The instance type of a product or service purchased, which can be resource package, RI, SP, or spot instance. Other instance types are not displayed by default.	|
+|Project Name	| The project to which a resource belongs, which is user-designated. If a resource has not been assigned to a project, it will automatically belong to the default project.	|
+|Region	| The region to which a resource belongs, such as South China (Guangzhou).	|
+|Availability Zone	| The availability zone to which a resource belongs, such as Guangzhou Zone 3.	|
+|Component Type	| The component type of a product or service purchased, such as CVM instance components including CPU and memory.	|
+|Component Name	| The specific component of a product or service purchased.	|
+|Component List Price	| The listed unit price of a component. If a customer has applied for a fixed preferential price or contract price, this parameter will not be displayed by default.	|
+| Component Contracted Price	| The contracted unit price of a component, which is "List price x Discount".	|
+|Component Price Measurement Unit	| The unit of measurement for a component price, which is composed of USD, usage unit, and duration unit.	|
+|Component Usage	| The actually settled usage of a component.	|
+|Component Usage Unit	| The unit of measurement for component usage.	|
+|Usage Duration	| The resource usage duration.	|
+|Duration Unit	| The unit of measurement for usage duration.	|
+|Original Cost	| The original cost of a resource, which is "List price x Usage x Usage duration".	|
+|RI Deduction (Duration)	| The usage duration deducted by RI. The unit of measurement for deduction is the same as that for usage duration.	|
+|RI Deduction (Cost)	| The amount deducted from the original cost by RI.	|
+| Savings Plan Deduction	| The savings plan deduction amount.	|
+| Savings Plan Deduction Rate	| The discount multiplier that applies to the component based on the remaining commitment of the savings plan.	|
+|SP Deduction (Cost)	| The amount of cost deducted by a savings plan based on the component's original cost. SP Deduction (Cost) = Cost deduction by SP / SP Deduction Rate	|
+|Discount Multiplier	| The discount multiplier applied to the cost of the resource.	|
+|Blended Discount Multiplier	| The final discount multiplier that is applied after combining multiple discount types, which is "Total amount after discount / Original cost".	|
+| Currency	| The currency used for the settlement of a component.	|
+| Total Amount After Discount (Excluding Tax)	| The total resource cost (not including tax) after discounts have been applied, which is "Component original cost x Discount multiplier" or "Component unit price x Usage x Usage duration".	|
+| Voucher Deduction	| The voucher deduction amount.	|
+|Amount Before Tax	| The pretax amount after voucher deduction.	|
+| Tax Rate	| The tax rate.	|
+| Tax Amount	| The tax amount.	|
+| Total Cost (Including Tax)	| The total resource cost (including tax) after discounts have been applied, which is "Component original cost x Discount multiplier x (1 + Tax rate)" or "Component unit price x Usage x Usage duration x (1 + Tax rate)".	|
+|Additional Attributes	| Attribute remarks, such as the instance type and transaction type of a reserved instance (for example: s1.18px, One-off RI fee) or the two regions associated with a CCN instance (for example: Shanghai - Beijing).	|
+|Configuration Description	| The billable item names and usage of a resource, which are displayed on the resource bill only.	|
+|Extended Fields 1-5	| Extended attribute information of a product, which is displayed on the resource bill only.	|
+|Cost Allocation Tags 1-N	| The cost allocation tags bound to a resource. For details, see [Cost Allocation Tags](https://www.tencentcloud.com/document/product/555/32276).	|
 
+### 2. Enumerated values of key fields[](id:key-fields)
 
-
-### 2. Enumerated values of key fields
-
-| **Field** | **Enumerated Values**                                                 |
-| ---------------- | ------------------------------------------------------------ |
-| Transaction Type | <br/>Purchase<br/>Renewal<br/>Modify<br/>Refund<br/>Deduction<br/>Hourly settlement<br/>Daily settlement<br/>Monthly settlement<br/>Offline project deduction<br/>Offline deduction<br/>adjust-CR<br/>adjust-DR<br/>One-off RI Fee<br/>Spot<br/>Hourly RI fee<br/>New monthly subscription<br/>Monthly subscription renewal<br/>Monthly subscription specification adjustment<br/>Monthly subscription specification adjustment<br/>Monthly subscription refund|
-
+| Field |	 Valid values | 
+|---------|---------|
+| Transaction Type | PurchaseRenewal,Modify,Refund,Deduction,Hourly settlement,Daily settlement,Monthly settlement,Spot,Offline project deduction,Offline deduction,adjust-CR,adjust-DR,One-off RI Fee,Hourly RI fee,New monthly subscription,Monthly subscription renewal,Monthly subscription specification adjustment,Monthly subscription refund,Hourly Savings Plan fee,Guarantee deduction,Pay-as-you-go reversal | 
