@@ -4,7 +4,7 @@ This document explains how CLB instances are billed.
 ## Billable Items
 The CLB cost involves the following four parts: instance fee, public network fee, cross-region binding fee and LCU (Loadbalancer Capacity Unit) fee.
 <dx-alert infotype="explain" title="">
-- Only LCU-supported CLB instances will incur LCU usage fees. LCU-supported CLB instances are only available to beta users. To use it, please [submit an application](https://intl.cloud.tencent.com/apply/p/fj5bwo9e6rj).
+- Only LCU-supported CLB instances will incur LCU usage fees. 
 - Tencent Cloud provides two types of accounts: bill-by-IP and bill-by-CVM. All Tencent Cloud accounts registered after 00:00:00, June 17, 2020 (UTC +8) are bill-by-IP accounts. If you have created an account before that time, you can check your account type at the top of the instance list on the <a href="https://console.cloud.tencent.com/cvm/eip">EIP console</a>.
 - To use a dedicated CLB instance, please contact your sales rep. 
 </dx-alert>
