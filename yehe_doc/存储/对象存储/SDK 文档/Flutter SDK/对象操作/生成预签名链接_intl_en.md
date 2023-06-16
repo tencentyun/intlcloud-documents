@@ -1,6 +1,7 @@
 ## Overview
 
 This document provides an overview of SDK code samples related to generating pre-signed object URLs.
+For details about how to use a pre-signed URL for uploads, see [Upload via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14114). For details about how to use a pre-signed URL for downloads, see [Download via Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/14116).
 
 >?
 > - To learn about signature rules, see [Request Signature](https://www.tencentcloud.com/document/product/436/7778).
