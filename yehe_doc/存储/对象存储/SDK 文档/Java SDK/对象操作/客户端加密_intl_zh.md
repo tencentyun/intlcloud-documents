@@ -37,7 +37,7 @@ Java SDK 支持客户端加密，将文件加密后再进行上传，并在下�
 #### 示例1
 使用腾讯云 KMS 服务加密，创建加密客户端示例，完整的示例代码请参见 [KMS 加密客户端加密完整示例](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/KMSEncryptionClientDemo.java)。
 
-[//]: # ".cssg-snippet-put-object-cse-c-kms"
+[//]: # (.cssg-snippet-put-object-cse-c-kms)
 
 ```java
 // 初始化用户身份信息(secretId, secretKey)
@@ -87,7 +87,7 @@ cosEncryptionClient.shutdown();
 #### 示例2
 使用对称 AES256 加密每次生成的随机密钥示例，完整的示例代码请参见 [客户端对称密钥加密完整示例](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/SymmetricKeyEncryptionClientDemo.java)。
 
-[//]: # ".cssg-snippet-put-object-cse-c-aes"
+[//]: # (.cssg-snippet-put-object-cse-c-aes)
 
 ```java
 // 初始化用户身份信息(secretId, secretKey)
@@ -128,7 +128,7 @@ cosEncryptionClient.shutdown();
 #### 示例3
 使用非对称 RSA 加密每次生成的随机密钥示例，完整的示例代码请参见 [客户端非对称密钥加密完整示例](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/AsymmetricKeyEncryptionClientDemo.java)。
 
-[//]: # ".cssg-snippet-put-object-cse-c-rsa"
+[//]: # (.cssg-snippet-put-object-cse-c-rsa)
 ```java
 // 初始化用户身份信息(secretId, secretKey)
 // SECRETID 和 SECRETKEY 请登录访问管理控制台 https://console.cloud.tencent.com/cam/capi 进行查看和管理
