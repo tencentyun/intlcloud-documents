@@ -2,29 +2,24 @@ The public image maintenance plan of Tencent Cloud is consistent with the offici
 
 >!When an OS is discontinued, any software maintenance and support, including bug fixes and feature updates, are unavailable. Please update your operating system in time or try another image tag.
 
-
-
 ## Tencent Cloud Home-grown OS
 
 ### TencentOS Server
 <table>
 	<tr>
 		<th width="50%">Version</th>
-		<th>Maintenance End Date</th>
+		<th>End of maintenance</th>
 	</tr>
 	<tr>
 		<td>TencentOS Server 2</td>
-		<td>2027-12-31</td>
+		<td>2032-12-31</td>
 	</tr>
 	<tr>
 		<td>TencentOS Server 3</td>
-		<td>2029-12-31</td>
+		<td>2032-12-31</td>
 	</tr>
 </table>
-
-
-
-
+Tencent Cloud will keep providing maintenance services for TencentOS Server 2 and TencentOS Server 3 till December 31, 2032.
 
 ### OpenCloudOS
 <table>
@@ -37,8 +32,6 @@ The public image maintenance plan of Tencent Cloud is consistent with the offici
 		<td>2029-12</td>
 		</tr>
 </table>
-
-
 
 ## Third-Party Operating Systems
 
@@ -77,9 +70,7 @@ The public image maintenance plan of Tencent Cloud is consistent with the offici
 </table>
 
 For more information about official maintenance plans, visit the [CentOS official website](https://wiki.centos.org/About/Product).
->?CentOS plans to officially discontinue support for CentOS Linux. Tencent Cloud provides you with two alternative solutions: OpenCloudOS and TencentOS Server, both compatible with CentOS.
-
-
+>? CentOS plans to officially discontinue support for CentOS Linux. Tencent Cloud provides you with two alternative solutions: OpenCloudOS and TencentOS Server, both compatible with CentOS.
 
 ### Ubuntu
 <table>
@@ -110,10 +101,7 @@ For more information about official maintenance plans, visit the [CentOS officia
 	</tr>
 </table>
 
-
 For more information about official maintenance plans, visit the [Ubuntu official website](https://wiki.ubuntu.com/Releases).
-
-
 
 ### Debian
 <table>
@@ -143,10 +131,7 @@ For more information about official maintenance plans, visit the [Ubuntu officia
 	</tr>
 </table>
 
-
 For more information about official maintenance plans, visit the [Debian official website](https://wiki.debian.org/DebianReleases).
-
-
 
 ### Red Hat Enterprise Linux
 
@@ -180,13 +165,10 @@ For more information about official maintenance plans, visit the [Debian officia
 
 For more information, see [Red Hat Enterprise Linux Life Cycle](https://access.redhat.com/support/policy/updates/errata).
 
-<dx-alert infotype="explain" title="">
-
-- Red Hat Enterprise Linux image is in beta, you can [submit a ticket](https://console.tencentcloud.com/workorder/category) to try it out.
-- You can select an instance model that has been certified for Red Hat Enterprise Linux to use the Red Hat Enterprise Linux image. For supported image tags and instance models, see [FAQs about Red Hat Enterprise Linux Image](https://www.tencentcloud.com/document/product/213/55135).
+<dx-alert infotype="explain" title=""> 
+<li>Red Hat Enterprise Linux image is in beta, you can <a href="https://console.tencentcloud.com/workorder/category">submit a ticket</a> to try it out.</li>
+<li>You can select an instance model that has been certified for Red Hat Enterprise Linux to use the Red Hat Enterprise Linux image. For supported image tags and instance models, see <a href="https://www.tencentcloud.com/document/product/213/55135">FAQs about Red Hat Enterprise Linux Image</a>.</li>
 </dx-alert> 
-
- 
 
 ### AlmaLinux
 <table>
@@ -202,7 +184,6 @@ For more information, see [Red Hat Enterprise Linux Life Cycle](https://access.r
 
 For more information about official maintenance plans, visit the [AlmaLinux official website](https://wiki.almalinux.org/Comparison.html).
 
-
 ### CoreOS
 <table>
 	<tr>
@@ -214,7 +195,6 @@ For more information about official maintenance plans, visit the [AlmaLinux offi
 		<td>2020-05-26</td>
 	</tr>
 </table>
-
 
 ### FreeBSD
 <table>
@@ -240,10 +220,7 @@ For more information about official maintenance plans, visit the [AlmaLinux offi
 	</tr>
 </table>
 
-
 For more information about official maintenance plans, visit the [FreeBSD official website](https://www.freebsd.org/releases/).
-
-
 
 ### Rocky Linux
 <table>
@@ -265,10 +242,7 @@ For more information about official maintenance plans, visit the [FreeBSD offici
 	</tr>
 </table>
 
-
 For more information about official maintenance plans, visit the [Rocky Linux official website](https://rockylinux.org/news/rocky-linux-9-0-ga-release/).
-
-
 
 ### OpenSUSE
 
@@ -295,10 +269,7 @@ For more information about official maintenance plans, visit the [Rocky Linux of
 	</tr>
 </table>
 
-
 For more information about official maintenance plans, visit the [OpenSUSE official website](https://en.opensuse.org/Lifetime).
-
-
 
 ### Windows
 <table>
@@ -329,7 +300,4 @@ For more information about official maintenance plans, visit the [OpenSUSE offic
 	</tr>
 </table>
 
-
 For more information about official maintenance plans, visit the [Microsoft Windows Server official website](https://learn.microsoft.com/en-us/lifecycle/products/).
-
-
