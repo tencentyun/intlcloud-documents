@@ -56,7 +56,7 @@ qcloud_cos::CosResult result = cos.GetBucket(req, &resp);
 
 // 调用成功，调用 resp 的成员函数获取返回内容
 if (result.IsSucc()) {
-   std::vector<Content> contents = get_bucket_resp.GetContents();
+   std::vector<qcloud_cos::Content> contents = resp.GetContents();
    // 遍历列举的对象
    for (auto &content: contents) {
      // do something
@@ -94,7 +94,7 @@ int main(int argc, char *argv[]) {
     	qcloud_cos::GetBucketResp resp;
         result = cos.GetBucket(req, &resp);
         if (result.IsSucc()) {
-            std::vector<Content> contents = get_bucket_resp.GetContents();
+            std::vector<qcloud_cos::Content> contents = resp.GetContents();
             for (auto &content: contents) {
             	// do something
             }
@@ -818,9 +818,10 @@ void SetTier(const std::string& tier);
 
 ## 分块操作
 
-分块上传对象可包括的操作：
+关于分块上传的更多说明请参见 [分块上传](https://www.tencentcloud.com/document/product/436/14112)。分块上传对象可包括的操作：
 
 - 分块上传对象： 初始化分块上传，上传分块，完成所有分块上传。
+- 分块续传：查询已上传的分块，上传分块，完成所有分块上传。
 - 删除已上传分块。
 
 
@@ -848,6 +849,7 @@ std::string object_name = "test_object";
 qcloud_cos::ListMultipartUploadReq req(bucket_name, object_name);
 qcloud_cos::ListMultipartUploadResp resp;
 qcloud_cos::CosResult result = cos.ListMultipartUpload(req, &resp);
+std::vector<qcloud_cos::Upload> rst = resp.GetUpload();
 
 for (std::vector<qcloud_cos::Upload>::const_iterator itr = rst.begin(); itr != rst.end(); ++itr) {
     const qcloud_cos::Upload& upload = *itr;
@@ -1656,4 +1658,3 @@ do {
 ```
 
 
-### 

@@ -194,7 +194,7 @@ COS offers the following features:
    </tr>
    <tr>
       <td>File processing</td>
-      <td>File processing is a processing service provided by COS based on CI for all formats of files. Currently, it provides file hash calculation, file decompression and multi-file zipping capabilities. For details, see File Processing Overview.</td>
+      <td>File processing is a processing service provided by COS based on CI for all formats of files. Currently, it provides file hash calculation, file decompression and multi-file zipping capabilities. For details, see <a href="https://www.tencentcloud.com/document/product/436/54156">File Processing Overview</a>.</td>
    </tr>
    <tr>
       <td>Document preview</td>
@@ -207,7 +207,7 @@ COS offers the following features:
 
    <tr>
       <td>Function calculation</td>
-      <td>COS supports file decompression and CDN Purge Cache for specified buckets. For more information, see <a href="https://www.tencentcloud.com/zh/document/product/436/38137">Function Calculation</a>.</td>
+      <td>COS supports CDN Purge Cache for specified buckets. For more information, see <a href="https://www.tencentcloud.com/document/product/436/38137">Function Calculation</a>.</td>
    </tr>
 	 
 	 
@@ -235,7 +235,7 @@ COS offers the following features:
    </tr>
    <tr>
       <td nowrap="nowrap">Integration with other Tencent Cloud services</td>
-      <td>Based on Serverless Cloud Function (SCF), COS provides database backup, message backup, log backup, log analysis, file decompression, and data export features. For more information, see <a href="https://www.tencentcloud.com/zh/document/product/436/39924">Application Integration</a>.</td>
+      <td>Based on Serverless Cloud Function (SCF), COS provides database backup, message backup, log backup, log analysis, and data export features. For more information, see <a href="https://www.tencentcloud.com/document/product/436/39924">Application Integration</a>.</td>
    </tr>
 </table>
 
@@ -261,7 +261,7 @@ COS offers the following features:
    </tr>
    <tr>
       <td nowrap="nowrap">APIs and SDKs</td>
-      <td><ul  style="margin: 0;"><li>APIs: COS provides a rich set of APIs and API-specific documentation that describes API usage, parameters, sample requests, responses, and error codes. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/10111">Operation List</a>.</li><li>SDKs: COS offers SDKs for various programming languages, including Android, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, and Weixin Mini Programs. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK Overview</a>.</li></ul></td>
+      <td><ul  style="margin: 0;"><li>APIs: COS provides a rich set of APIs and API-specific documentation that describes API usage, parameters, sample requests, responses, and error codes. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/10111">Operation List</a>.</li><li>SDKs: COS offers SDKs for various programming languages, including Android, C, C++, .NET(C#), Flutter, Go, iOS, Java, JavaScript, Node.js, PHP, Python, and Weixin Mini Programs. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK Overview</a>.</li></ul></td>
    </tr>
 </table>
 

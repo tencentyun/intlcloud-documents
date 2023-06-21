@@ -11,7 +11,7 @@
 <tbody>
 <tr>
 <td>Supported resilient business bandwidth</td>
-<td>Anti-DDoS Pro supports resilient business bandwidth, and the excessive part will be charged at 80 CNY/Mbps/month.</td>
+<td>Anti-DDoS Pro supports resilient business bandwidth, and the excessive part will be charged at 14 USD/Mbps/month.</td>
 <td> 2022-11-16</td>
 <td> <a href="https://intl.cloud.tencent.com/document/product/1029/36114">Billing Overview</a>
 </td>

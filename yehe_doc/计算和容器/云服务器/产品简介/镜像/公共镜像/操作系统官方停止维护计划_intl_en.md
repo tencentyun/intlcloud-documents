@@ -1,30 +1,25 @@
 The public image maintenance plan of Tencent Cloud is consistent with the official maintenance plans of operating system platforms. This document provides links to the image version maintenance plans of these platforms.
 
->!After end of maintenance, any software maintenance and support including bug fixes and feature updates are unavailable. We recommend that you update your operating system soon or choose a more stable image version.
+>!When an OS is discontinued, any software maintenance and support, including bug fixes and feature updates, are unavailable. Please update your operating system in time or try another image tag.
 
-
-
-## Self-Developed Operating Systems of Tencent Cloud
+## Tencent Cloud Home-grown OS
 
 ### TencentOS Server
 <table>
 	<tr>
 		<th width="50%">Version</th>
-		<th>Maintenance End Date</th>
+		<th>End of maintenance</th>
 	</tr>
 	<tr>
 		<td>TencentOS Server 2</td>
-		<td>2027-12-31</td>
+		<td>2032-12-31</td>
 	</tr>
 	<tr>
 		<td>TencentOS Server 3</td>
-		<td>2029-12-31</td>
+		<td>2032-12-31</td>
 	</tr>
 </table>
-
-
-
-
+Tencent Cloud will keep providing maintenance services for TencentOS Server 2 and TencentOS Server 3 till December 31, 2032.
 
 ### OpenCloudOS
 <table>
@@ -37,8 +32,6 @@ The public image maintenance plan of Tencent Cloud is consistent with the offici
 		<td>2029-12</td>
 		</tr>
 </table>
-
-
 
 ## Third-Party Operating Systems
 
@@ -77,11 +70,7 @@ The public image maintenance plan of Tencent Cloud is consistent with the offici
 </table>
 
 For more information about official maintenance plans, visit the [CentOS official website](https://wiki.centos.org/About/Product).
->?CentOS plans to officially discontinue support for CentOS Linux. Tencent Cloud provides you with two alternative solutions: OpenCloudOS and TencentOS Server, both compatible with CentOS. For more information, see [CentOS End of Service and Solution Recommendations](https://www.tencentcloud.com/document/product/213/53800).
-
-
-
-
+>? CentOS plans to officially discontinue support for CentOS Linux. Tencent Cloud provides you with two alternative solutions: OpenCloudOS and TencentOS Server, both compatible with CentOS.
 
 ### Ubuntu
 <table>
@@ -112,10 +101,7 @@ For more information about official maintenance plans, visit the [CentOS officia
 	</tr>
 </table>
 
-
 For more information about official maintenance plans, visit the [Ubuntu official website](https://wiki.ubuntu.com/Releases).
-
-
 
 ### Debian
 <table>
@@ -129,7 +115,7 @@ For more information about official maintenance plans, visit the [Ubuntu officia
 		<td>Debian 11</td>
 		<td>2024-07</td>
 		<td>2026-06</td>
-		<td>/</td>
+		<td>None</td>
 	</tr>
 	<tr>
 		<td>Debian 10</td>
@@ -145,9 +131,44 @@ For more information about official maintenance plans, visit the [Ubuntu officia
 	</tr>
 </table>
 
-
 For more information about official maintenance plans, visit the [Debian official website](https://wiki.debian.org/DebianReleases).
 
+### Red Hat Enterprise Linux
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky">Version</th>
+    <th class="tg-0pky">Fully Support End Date</th>
+    <th class="tg-0pky">First-Stage Maintenance Support End Date</th>
+    <th class="tg-0pky">Second-Stage Maintenance Support End Date</th>
+    <th class="tg-0pky">Extended Lifecycle Support (ELS) End Date</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Red Hat Enterprise Linux 8</td>
+    <td class="tg-0pky">2024-05-31</td>
+    <td class="tg-0pky">N/A</td>
+    <td class="tg-0pky">2029-05-31</td>
+    <td class="tg-0pky">2031-05-31</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Red Hat Enterprise Linux 7</td>
+    <td class="tg-0pky">2019-08-06</td>
+    <td class="tg-0pky">2020-08-06</td>
+    <td class="tg-0pky">2024-06-30</td>
+    <td class="tg-0pky">2026-06-30</td>
+  </tr>
+</tbody>
+</table>
+
+For more information, see [Red Hat Enterprise Linux Life Cycle](https://access.redhat.com/support/policy/updates/errata).
+
+<dx-alert infotype="explain" title=""> 
+<li>Red Hat Enterprise Linux image is in beta, you can <a href="https://console.tencentcloud.com/workorder/category">submit a ticket</a> to try it out.</li>
+<li>You can select an instance model that has been certified for Red Hat Enterprise Linux to use the Red Hat Enterprise Linux image. For supported image tags and instance models, see <a href="https://www.tencentcloud.com/document/product/213/55135">FAQs about Red Hat Enterprise Linux Image</a>.</li>
+</dx-alert> 
 
 ### AlmaLinux
 <table>
@@ -163,7 +184,6 @@ For more information about official maintenance plans, visit the [Debian officia
 
 For more information about official maintenance plans, visit the [AlmaLinux official website](https://wiki.almalinux.org/Comparison.html).
 
-
 ### CoreOS
 <table>
 	<tr>
@@ -175,7 +195,6 @@ For more information about official maintenance plans, visit the [AlmaLinux offi
 		<td>2020-05-26</td>
 	</tr>
 </table>
-
 
 ### FreeBSD
 <table>
@@ -201,10 +220,7 @@ For more information about official maintenance plans, visit the [AlmaLinux offi
 	</tr>
 </table>
 
-
 For more information about official maintenance plans, visit the [FreeBSD official website](https://www.freebsd.org/releases/).
-
-
 
 ### Rocky Linux
 <table>
@@ -226,14 +242,7 @@ For more information about official maintenance plans, visit the [FreeBSD offici
 	</tr>
 </table>
 
-
-
-
 For more information about official maintenance plans, visit the [Rocky Linux official website](https://rockylinux.org/news/rocky-linux-9-0-ga-release/).
-
-
-
-
 
 ### OpenSUSE
 
@@ -260,12 +269,7 @@ For more information about official maintenance plans, visit the [Rocky Linux of
 	</tr>
 </table>
 
-
 For more information about official maintenance plans, visit the [OpenSUSE official website](https://en.opensuse.org/Lifetime).
-
-
-
-
 
 ### Windows
 <table>
@@ -296,7 +300,4 @@ For more information about official maintenance plans, visit the [OpenSUSE offic
 	</tr>
 </table>
 
-
-For more information about official maintenance plans, visit the [Microsoft Windows Server official website](https://learn.microsoft.com/zh-cn/lifecycle/products/).
-
-
+For more information about official maintenance plans, visit the [Microsoft Windows Server official website](https://learn.microsoft.com/en-us/lifecycle/products/).

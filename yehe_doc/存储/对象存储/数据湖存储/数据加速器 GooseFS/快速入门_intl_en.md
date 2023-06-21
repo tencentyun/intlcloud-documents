@@ -12,21 +12,21 @@ Before using GooseFS, you need to:
 
 ## Downloading and Configuring GooseFS
 
-1. Create and enter a local directory (you can also choose another directory as needed), and then download [goosefs-1.4.1-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin.tar.gz)。
+1. Create and enter a local directory (you can also choose another directory as needed), and then download [goosefs-1.4.2-bin.tar.gz](https://downloads.tencentgoosefs.cn/goosefs/1.4.2/release/goosefs-1.4.2-bin.tar.gz)。
 
 ```
 $ cd /usr/local
 $ mkdir /service
 $ cd /service
-$ wget https://downloads.tencentgoosefs.cn/goosefs/1.4.1/release/goosefs-1.4.1-bin.tar.gz
+$ wget https://downloads.tencentgoosefs.cn/goosefs/1.4.2/release/goosefs-1.4.2-bin.tar.gz
 ```
 2. Run the following command to decompress the installation package and enter the extracted directory:
 ```shell
-$ tar -zxvf goosefs-1.4.1-bin.tar.gz
-$ cd goosefs-1.4.1
+$ tar -zxvf goosefs-1.4.2-bin.tar.gz
+$ cd goosefs-1.4.2
 
 ```
-After the decompression, the home directory of GooseFS `goosefs-1.4.1` will be generated. This document uses `${GOOSEFS_HOME}` as the absolute path of this home directory.
+After the decompression, the home directory of GooseFS `goosefs-1.4.2` will be generated. This document uses `${GOOSEFS_HOME}` as the absolute path of this home directory.
 3. Create the `conf/goosefs-site.properties` configuration file in `${GOOSEFS_HOME}/conf`. GooseFS provides configuration templates for AI and big data scenarios, and you can choose an appropriate one as needed. Then, enter the editing mode to modify the configuration:
 (1) Use the AI template. For more information, see GooseFS Configuration Practice for a Production Environment in the AI Scenario.
 ```shell
@@ -74,7 +74,7 @@ goosefs.user.file.writetype.default=MUST_CACHE
 1. Before starting GooseFS, you need to enter the GooseFS directory and run the startup command:
 
 ```shell
-$ cd /usr/local/service/goosefs-1.4.1
+$ cd /usr/local/service/goosefs-1.4.2
 $ ./bin/goosefs-start.sh all
 ```
 
@@ -164,10 +164,10 @@ $ goosefs ns create myNamespace cosn://bucketName-1250000000/ \
 ```
 
 >! 
-> - When creating the namespace that mounts COSN, you must use the `–-secret` parameter to specify the key, and use `--attribute` to specify all required parameters of Hadoop-COS (COSN). For the required parameters, please see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
-> - When you create the namespace, if there is no read/write policy (rPolicy/wPolicy) specified, the read/write type set in the configuration file, or the default value (CACHE/CACHE_THROUGH) will be used.
+>- When creating the namespace that mounts COSN, you must use the `–-secret` parameter to specify the key, and use `--attribute` to specify all required parameters of Hadoop-COS (COSN). For the required parameters, please see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
+>- When you create the namespace, if there is no read/write policy (rPolicy/wPolicy) specified, the read/write type set in the configuration file, or the default value (CACHE/CACHE_THROUGH) will be used.
 >
-Likewise, create a namespace to mount Tencent Cloud HDFS:
+>Likewise, create a namespace to mount Tencent Cloud HDFS:
 
 ```shell
 goosefs ns create MyNamespaceCHDFS ofs://xxxxx-xxxx.chdfs.ap-guangzhou.myqcloud.com/ \
@@ -194,25 +194,25 @@ NamespaceStatus{name=myNamespace, path=/myNamespace, ttlTime=-1, ttlAction=DELET
 
 Information recorded in the metadata is as follows:
 
-| No. | Parameter | Description |
-| ---- | ---------------------- | ----- |
-| 1    | name  | Name of the namespace |
-| 2    | path | Path of the namespace in GooseFS |
-| 3    | ttlTime | TTL period of files and directories in the namespace |
-| 4    | ttlAction | TTL action to handle files and directories in the namespace. Valid values: `FREE` (default), `DELETE` |
-| 5    | ufsPath | Mount path of the namespace in the UFS |
-| 6    | creationTimeMs | Time when the namespace is created, in milliseconds |
+| No.  | Parameter              | Description                                                  |
+| ---- | ---------------------- | ------------------------------------------------------------ |
+| 1    | name                   | Name of the namespace                                        |
+| 2    | path                   | Path of the namespace in GooseFS                             |
+| 3    | ttlTime                | TTL period of files and directories in the namespace         |
+| 4    | ttlAction              | TTL action to handle files and directories in the namespace. Valid values: `FREE` (default), `DELETE` |
+| 5    | ufsPath                | Mount path of the namespace in the UFS                       |
+| 6    | creationTimeMs         | Time when the namespace is created, in milliseconds          |
 | 7    | lastModificationTimeMs | Time when files or directories in the namespace is last modified, in milliseconds |
-| 8    | persistenceState | Persistence state of the namespace |
+| 8    | persistenceState       | Persistence state of the namespace                           |
 | 9    | mountPoint             | Whether the namespace is a mount point. The value is fixed to `true`. |
-| 10   | mountId  | Mount point ID of the namespace |
-| 11   | acl | ACL of the namespace |
-| 12   | defaultAcl | Default ACL of the namespace |
-| 13   | owner | Owner of the namespace |
-| 14   | group | Group where the namespace owner belongs |
-| 15   | mode | POSIX permission of the namespace |
-| 16   | writePolicy | Write policy for the namespace |
-| 17   | readPolicy | Read policy for the namespace |
+| 10   | mountId                | Mount point ID of the namespace                              |
+| 11   | acl                    | ACL of the namespace                                         |
+| 12   | defaultAcl             | Default ACL of the namespace                                 |
+| 13   | owner                  | Owner of the namespace                                       |
+| 14   | group                  | Group where the namespace owner belongs                      |
+| 15   | mode                   | POSIX permission of the namespace                            |
+| 16   | writePolicy            | Write policy for the namespace                               |
+| 17   | readPolicy             | Read policy for the namespace                                |
 
 
 ## Loading Table Data to GooseFS

@@ -2,8 +2,9 @@
 
 本文档提供关于生成对象预签名链接的示例代码。
 
+关于使用预签名 URL 上传的说明请参见 [预签名授权上传](https://www.tencentcloud.com/document/product/436/14114)， 使用预签名 URL 下载的说明请参见 [预签名授权下载](https://www.tencentcloud.com/document/product/436/14116)。
 >?
-> - 建议用户使用临时密钥生成预签名，通过临时授权的方式进一步提高预签名上传、下载等请求的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+> - 建议用户使用临时密钥生成预签名，通过临时授权的方式进一步提高预签名上传、下载等请求的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄露目标存储桶或对象之外的资源。
 > - 如果您一定要使用永久密钥来生成预签名，建议永久密钥的权限范围仅限于上传或下载操作，以规避风险。
 > 
 
@@ -17,14 +18,14 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 #### 示例代码一：生成预签名上传链接
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-presign-upload-url"
+[//]: # (.cssg-snippet-get-presign-upload-url)
 ```objective-c
 QCloudGetPresignedURLRequest* getPresignedURLRequest = [[QCloudGetPresignedURLRequest alloc] init];
 
 // 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 getPresignedURLRequest.bucket = @"examplebucket-1250000000";
 
-// 使用预签名 URL 的请求的 HTTP 方法。有效值（大小写敏感）为：@"GET"、@"PUT"、@"POST"、@"DELETE"
+// 使用预签名 URL 请求的 HTTP 方法。有效值（大小写敏感）为：@"GET"、@"PUT"、@"POST"、@"DELETE"
 getPresignedURLRequest.HTTPMethod = @"PUT";
 
 // 获取预签名函数，默认签入Header Host；您也可以选择不签入Header Host，但可能导致请求失败或安全漏洞
@@ -63,14 +64,14 @@ getPresignedURLRequest.object = @"exampleobject";
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-presign-upload-url"
+[//]: # (.cssg-snippet-get-presign-upload-url)
 ```swift
 let getPresign  = QCloudGetPresignedURLRequest.init();
 
 // 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 getPresign.bucket = "examplebucket-1250000000" ;
 
-// 使用预签名 URL 的请求的 HTTP 方法。有效值（大小写敏感）为：
+// 使用预签名 URL 请求的 HTTP 方法。有效值（大小写敏感）为：
 // @"GET"、@"PUT"、@"POST"、@"DELETE"
 getPresign.httpMethod = "PUT";
 
@@ -109,14 +110,14 @@ QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 #### 示例代码二：生成预签名下载链接
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-presign-download-url"
+[//]: # (.cssg-snippet-get-presign-download-url)
 ```objective-c
 QCloudGetPresignedURLRequest* getPresignedURLRequest = [[QCloudGetPresignedURLRequest alloc] init];
 
 // 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 getPresignedURLRequest.bucket = @"examplebucket-1250000000";
 
-// 使用预签名 URL 的请求的 HTTP 方法。有效值（大小写敏感）为：@"GET"、@"PUT"、@"POST"、@"DELETE"
+// 使用预签名 URL 请求的 HTTP 方法。有效值（大小写敏感）为：@"GET"、@"PUT"、@"POST"、@"DELETE"
 getPresignedURLRequest.HTTPMethod = @"GET";
 
 // 获取预签名函数，默认签入Header Host；您也可以选择不签入Header Host，但可能导致请求失败或安全漏洞
@@ -154,14 +155,14 @@ getPresignedURLRequest.object = @"exampleobject";
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-presign-download-url"
+[//]: # (.cssg-snippet-get-presign-download-url)
 ```swift
 let getPresign  = QCloudGetPresignedURLRequest.init();
 
 // 存储桶名称，由BucketName-Appid 组成，可以在COS控制台查看 https://console.cloud.tencent.com/cos5/bucket
 getPresign.bucket = "examplebucket-1250000000" ;
 
-// 使用预签名 URL 的请求的 HTTP 方法。有效值（大小写敏感）为：
+// 使用预签名 URL 请求的 HTTP 方法。有效值（大小写敏感）为：
 // @"GET"、@"PUT"、@"POST"、@"DELETE"
 getPresign.httpMethod = "GET";
 

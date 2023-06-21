@@ -16,7 +16,7 @@
 
 ### 화면 캡처 설정 방법
 - [CSS API](https://intl.cloud.tencent.com/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
-- [CSS 콘솔]>[기능 템플릿]>[음란물 감지 화면 캡처 설정](https://console.cloud.tencent.com/live/config/jtjh)에서 설정할 수 있으며, 자세한 내용은 [라이브 방송 음란물 감지 화면 캡처](https://cloud.tencent.com/document/product/267/20386)를 참조하십시오.
+- [CSS 콘솔]>[기능 템플릿]>[음란물 감지 화면 캡처 설정](https://console.cloud.tencent.com/live/config/jtjh)에서 설정할 수 있으며, 자세한 내용은 [라이브 방송 음란물 감지 화면 캡처](https://www.tencentcloud.com/document/product/267/31072)를 참조하십시오.
 
 ### 화면 캡처 간격 설정
 

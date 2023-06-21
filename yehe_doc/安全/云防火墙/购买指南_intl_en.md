@@ -94,9 +94,6 @@ Paid editions of Tencent Cloud Firewall include Premium Edition, Enterprise Edit
 - All your Cloud Firewall resources will be deleted 14 days after your subscription expires. Your configurations will be deleted and cannot be recovered. In this case, you have to re-purchase and configure again.
 
 
-## Refund policy
-Cloud Firewall is subject to Tencent Cloud's Cloud Service Refund Policy and offers an unconditional refund within 5 days of purchase. If you need a refund, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=517&level2_id=727&source=0&data_title=%E5%85%B6%E4%BB%96%E8%85%BE%E8%AE%AF%E4%BA%91%E4%BA%A7%E5%93%81&level3_id=728&radio_title=%E5%8A%9F%E8%83%BD%E5%92%A8%E8%AF%A2&queue=3026&scene_code=17783&step=2). You cannot request a refund 5 days after purchase.
-
 ## Next steps
 After you purchase Cloud Firewall, you can use it in the following ways:
 - Method 1: Log in to the [Cloud Firewall console](https://console.cloud.tencent.com/cfw) to perform operations.

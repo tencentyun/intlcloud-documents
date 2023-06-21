@@ -309,7 +309,7 @@ tmio_->control(tmio::ControlCmd::GET_STATS, &stats_);
 ```
 
 ## 最新 API 接口及 Demo 详细说明
-接入 TMIO SDK，可参考最新 API 接口和 Demo 说明， 详情请参见 [TMIO 接入详情](https://github.com/tencentyun/tmio)。
+接入 TMIO SDK，可参考最新 API 接口和 Demo 说明， 详情请参见 [TMIO 接入详情](https://github.com/tencentyun/tmio/blob/master/README_en.md)。
 
 
 ## 常见问题解答

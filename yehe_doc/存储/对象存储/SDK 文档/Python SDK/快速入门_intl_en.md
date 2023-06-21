@@ -204,7 +204,7 @@ client = CosS3Client(config)
 
 #### Initializing with the CDN default domain
 
-If you use the CDN default domain to access COS, the SDK will access **CDN** using a domain formatted as **{bucket-appid}.file.mycloud.com** and then access COS via the CDN origin server.
+If you use the CDN default domain to access COS, the SDK will access **CDN** using a domain formatted as **{bucket-appid}.file.myqcloud.com** and then access COS via the CDN origin server.
 
 ```python
 # -*- coding=utf-8
@@ -448,6 +448,7 @@ while True:
         Prefix='folder1',
         Marker=marker
     )
+    if 'Contents' in response:
     print(response['Contents'])
     if response['IsTruncated'] == 'false':
         break 

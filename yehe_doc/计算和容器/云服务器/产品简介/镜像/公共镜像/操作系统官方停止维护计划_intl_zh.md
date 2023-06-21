@@ -2,29 +2,25 @@
 
 >!操作系统停止维护后将无法获得包括问题修复和功能更新在内的软件维护和支持，建议您及时更新或选用更加稳定的镜像版本。
 
-
-
 ## 腾讯云自研操作系统
 
 ### TencentOS Server
 <table>
 	<tr>
 		<th width="50%">版本</th>
-		<th>停止维护时间</th>
+		<th>延长维护</th>
 	</tr>
 	<tr>
 		<td>TencentOS Server 2</td>
-		<td>2027-12-31</td>
+		<td>2032-12-31</td>
 	</tr>
 	<tr>
 		<td>TencentOS Server 3</td>
-		<td>2029-12-31</td>
+		<td>2032-12-31</td>
 	</tr>
 </table>
 
-
-
-
+腾讯云将维护TencentOS Server 2和TencentOS Server 3 到 2032-12-31为止。
 
 ### OpenCloudOS
 <table>
@@ -37,8 +33,6 @@
 		<td>2029-12</td>
 		</tr>
 </table>
-
-
 
 ## 第三方操作系统
 
@@ -77,11 +71,7 @@
 </table>
 
 官方维护时间请参见 [CentOS 官网](https://wiki.centos.org/About/Product)。
->?CentOS 官方计划停止维护 CentOS Linux 项目， 腾讯云为您提供了替代方案，推荐您选用兼容 CentOS 的 OpenCloudOS 或 TencentOS Server 替代。详细说明及切换指引请参考 [CentOS 停服说明及应对方案推荐](https://www.tencentcloud.com/document/product/213/53800) 。
-
-
-
-
+>?CentOS 官方计划停止维护 CentOS Linux 项目， 腾讯云为您提供了替代方案，推荐您选用兼容 CentOS 的 OpenCloudOS 或 TencentOS Server 替代。
 
 ### Ubuntu
 <table>
@@ -112,10 +102,7 @@
 	</tr>
 </table>
 
-
 官方维护时间请参见 [Ubuntu 官网](https://wiki.ubuntu.com/Releases)。
-
-
 
 ### Debian
 <table>
@@ -145,9 +132,44 @@
 	</tr>
 </table>
 
-
 官方维护时间请参见 [Debian 官网](https://wiki.debian.org/DebianReleases)。
 
+### Red Hat Enterprise Linux
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky">版本</th>
+    <th class="tg-0pky">停止完全支持</th>
+    <th class="tg-0pky">停止一阶段维护支持</th>
+    <th class="tg-0pky">停止二阶段维护支持</th>
+    <th class="tg-0pky">停止延长生命周期支持（ELS）</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Red Hat Enterprise Linux 8</td>
+    <td class="tg-0pky">2024-05-31</td>
+    <td class="tg-0pky">不适用</td>
+    <td class="tg-0pky">2029-05-31</td>
+    <td class="tg-0pky">2031-05-31</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Red Hat Enterprise Linux 7</td>
+    <td class="tg-0pky">2019-08-06</td>
+    <td class="tg-0pky">2020-08-06</td>
+    <td class="tg-0pky">2024-06-30</td>
+    <td class="tg-0pky">2026-06-30</td>
+  </tr>
+</tbody>
+</table>
+
+详细信息请参见 [Red Hat 官网](https://access.redhat.com/support/policy/updates/errata)。
+
+<dx-alert infotype="explain" title=""> 
+<li>Red Hat Enterprise Linux 镜像处于内测阶段，您可通过 <a href="https://console.tencentcloud.com/workorder/category">提交工单</a> 获取使用权限。</li>
+<li>您在购买云服务器 CVM 时，选中已经通过 Red Hat Enterprise Linux 认证的实例类型，即可选用 Red Hat Enterprise Linux 镜像，您可以点击 <a href="https://www.tencentcloud.com/document/product/213/55135">Red Hat Enterprise Linux 镜像使用指引</a> 查看支持的镜像版本和实例类型。</li>
+</dx-alert> 
 
 ### AlmaLinux
 <table>
@@ -163,7 +185,6 @@
 
 官方维护时间请参见 [AlmaLinux 官网](https://wiki.almalinux.org/Comparison.html)。
 
-
 ### CoreOS
 <table>
 	<tr>
@@ -175,7 +196,6 @@
 		<td>2020-05-26</td>
 	</tr>
 </table>
-
 
 ### FreeBSD
 <table>
@@ -201,10 +221,7 @@
 	</tr>
 </table>
 
-
 官方维护时间请参见 [FreeBSD 官网](https://www.freebsd.org/releases/)。
-
-
 
 ### Rocky Linux
 <table>
@@ -226,14 +243,7 @@
 	</tr>
 </table>
 
-
-
-
 官方维护时间请参见 [Rocky Linux 官网](https://rockylinux.org/news/rocky-linux-9-0-ga-release/)。
-
-
-
-
 
 ### OpenSUSE
 
@@ -260,12 +270,7 @@
 	</tr>
 </table>
 
-
 官方维护时间请参见 [OpenSUSE 官网](https://en.opensuse.org/Lifetime)。
-
-
-
-
 
 ### Windows
 <table>
@@ -296,7 +301,4 @@
 	</tr>
 </table>
 
-
 官方维护时间请参见 [Microsoft Windows Server 官网](https://learn.microsoft.com/zh-cn/lifecycle/products/)。
-
-

@@ -1,57 +1,55 @@
-## 账单字段说明
+### 1. 账单字段说明
 
-### 1.账单字段说明
+| 字段名称 | 	字段说明 | 
+|---------|---------|
+|Payer Account ID	|支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识	|
+|Owner Account ID	|实际使用资源的账号 ID	|
+|Operator Account ID	|操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）	|
+|Product Name	|用户所采购的各类云产品，例如：云服务器 CVM	|
+|Subproduct Name	|用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1|
+|Billing Mode	|资源的计费模式，区分为包年包月和按量计费	|
+|Transaction Type	|明细交易类型，例如按量计费小时结等，详细类型请参见[关键字段枚举值说明](#key-fields)	|
+|Transaction ID	|结算扣费单号	|
+|Transaction Time	|结算扣费时间	|
+|Usage Start Time	|产品服务开始使用时间	|
+|Usage End Time	|产品服务结束使用时间	|
+|Instance ID	|账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID	|
+|Instance Name	|用户在控制台为资源设置的名称，如果未设置，则默认为空	|
+|Instance Type	|购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。正常的实例展示默认为不展示	|
+|Project Name	|资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目	|
+|Region	|资源所属地域，例如华南地区（广州）	|
+|Availability Zone	|资源所属可用区，例如广州三区	|
+|Component Type	|用户购买的产品或服务对应的组件大类，例如：云服务器 CVM 的组件：CPU、内存等	|
+|Component Name	|用户购买的产品或服务，所包含的具体组件	|
+|Component List Price	|组件的官网原始单价（如果客户享受一口价/合同价则默认不展示）	|
+|Component Contracted Price	|组件的折后单价，组件单价 = 刊例价 * 折扣	|
+|Component Price Measurement Unit	|组件价格的单位，单位构成：元/用量单位/时长单位	|
+|Component Usage	|该组件实际结算用量	|
+|Component Usage Unit	|组件用量对应的单位	|
+|Usage Duration	|资源使用的时长	|
+|Duration Unit	|资源使用时长的单位	|
+|Original Cost	|资源的原始总价，等于刊例价 * 用量 * 时长	|
+|RI Deduction (Duration)	|预留实例抵扣的使用时长，时长单位与被抵扣的时长单位保持一致	|
+|RI Deduction (Cost)	|本产品或服务使用预留实例抵扣的组件原价金额	|
+|Savings Plan Deduction	|节省计划抵扣的SP包面值	|
+|Savings Plan Deduction Rate	|节省计划可用余额额度范围内，节省计划对于此组件打的折扣率	|
+|SP Deduction (Cost)	|按组件原价的口径换算的节省计划抵扣金额,公式=节省计划抵扣金额/节省计划抵扣率	|
+|Discount Multiplier	|本资源享受的折扣率	|
+|Blended Discount Multiplier	|综合各类折扣抵扣信息后的最终折扣率，混合折扣率 = 优惠后总价 / 原价	|
+|Currency	|组件结算使用的货币种类	|
+|Total Amount After Discount (Excluding Tax)	|资源的折后不含税价总价，等于组件原价 * 折扣率，也等于组件单价 * 用量 * 时长	|
+|Voucher Deduction	|使用各类优惠券（如代金券、现金券等）支付的金额	|
+|Amount Before Tax	|扣完代金券税前金额	|
+|Tax Rate	|税率	|
+|Tax Amount	|税额	|
+|Total Cost (Including Tax)	|资源的折后含税总价，等于组件原价 * 折扣率 * （1+税率），等于组件单价 * 用量 * 时长 * （1+税率）	|
+|Additional Attributes	|其他备注信息，如预留实例的预留实例类型和交易类型（例如：s1.18px, One-off RI fee）、CCN产品的两端地域信息（例如，两端地域：上海-北京）	|
+|Configuration Description	|该资源下的计费项名称和用量合并展示，仅在资源账单体现	|
+|Extended Fields 1-5	|产品对应的扩展属性信息，仅在资源账单体现	|
+|Cost Allocation Tags 1-N	|资源绑定的标签，详情请参[见分账标签](https://www.tencentcloud.com/document/product/555/32276)	|
 
-| **字段中文名称**                            | **字段说明**                                                 |
-| ------------------------------------------- | ------------------------------------------------------------ |
-| Payer Account ID                            | 支付者账号ID，用户在腾讯云的唯一账号标识                     |
-| Owner Account ID                            | 资源归属者账号ID                                             |
-| Operator Account ID                         | 操作者账号ID，下单购买或开通产品的用户                       |
-| Product Name                                | 云产品大类，产品四层的第1层，如云服务器CVM、云数据库MySQL    |
-| Billing Mode                                | 资源的计费模式，包年包月或按量计费                           |
-| Project Name                                | 资源所属项目，由用户为资源自助分配，未分配则为默认项目       |
-| Region                                      | 资源所属地域，如华南地区（广州）                             |
-| Availability Zone                           | 资源所属可用区，如广州三区                                   |
-| Instance ID                                 | 实例ID，可以在各产品控制台查看                               |
-| Instance Name                               | 资源别名，由用户为资源自助设置，未设置则为空                 |
-| Instance Type                               | 资源包、RI、SP、竞价实例这四类特殊实例本身的扣费行为，此字段体现对应的实例类型</br>如果是一个普通实例，无论是否被抵扣此字段均显示为“-” |
-| Subproduct Name                             | 云产品子类，产品四层的第2层，如云服务器CVM-标准型S1          |
-| Transaction Type                            | 资源的购买、开通、续费、退费等交易行为，具体枚举值可参见页面下方《关键字段枚举值说明》 |
-| Transaction ID                              | 交易唯一标识                                                 |
-| Transaction Time                            | 资源扣费时间                                                 |
-| Usage Start Time                            | 资源开始使用时间                                             |
-| Usage End Time                              | 资源结束使用时间                                             |
-| Component Type                              | 组件类型的名称，产品四层的第3层，如CPU、内存、带宽、系统盘等 |
-| Component Name                              | 组件的名称，产品四层的第4层，如内存-标准型S2、高性能云硬盘-存储空间等 |
-| Component List Price                        | 组件的官网原始单价                                           |
-| Component Contracted Price                  | 组件的合同签约单价                                           |
-| Component Price Measurement Unit            | 组件刊例价对应的价格单位                                     |
-| Component Usage                             | 组件的用量                                                   |
-| Component Usage Unit                        | 组件用量对应的单位                                           |
-| Usage Duration                              | 资源使用的时长                                               |
-| Duration Unit                               | 资源使用的时长单位                                           |
-| Reserved Instance                           | 用量匹配到的RI ID，比如：s2-RI-1234567890                    |
-| Original Cost                               | 资源的原始总价，等于刊例价 * 用量 * 时长                     |
-| RI Deduction (Duration)   | 预留实例抵扣的使用时长，时长单位与被抵扣的时长单位保持一致   |
-| RI Deduction (Cost)    | 按组件原价的口径换算的预留实例抵扣金额                       |
-| Savings Plan Deduction                      | 节省计划抵扣的SP包面值                                       |
-| Savings Plan Deduction Rate                 | 节省计划可用余额额度范围内，节省计划对于此组件打的折扣率     |
-| SP Deduction (Cost)        | 按组件原价的口径换算的节省计划抵扣金额</br>公式=节省计划抵扣金额/节省计划抵扣率 |
-| Discount Multiplier                              | 资源享受的折扣优惠力度，1表示无折扣，0表示0折                |
-| Blended Discount Multiplier                           | 综合了官网折扣、预留实例抵扣、节省计划抵扣的混合折扣率。若没有预留实例抵扣、节省计划抵扣,混合折扣率等于折扣率</br>公式=优惠后总价/组件原价 |
-| Currency                                    | 组件结算使用的货币种类                                       |
-| Total Amount After Discount (Excluding Tax) | 资源的折后不含税价总价，等于组件原价 * 折扣率，等于组件单价 * 用量 * 时长 |
-| Voucher Deduction                           | 优惠后总价（税前）中使用代金券抵扣的金额                     |
-| Amount Before Tax                           | 扣完代金券税前金额                     |
-| Tax Rate                                    | 税率                                                         |
-| Tax Amount                                  | 税额                                                         |
-| Total Cost (Including Tax)                  | 资源的折后含税总价，等于组件原价 * 折扣率 * （1+税率），等于组件单价 * 用量 * 时长 * （1+税率） |
+### 2. 关键字段枚举值说明[](id:key-fields)
 
-
-
-### 2.关键字段枚举值说明
-
-| **字段中文名称** | **字段说明**                                                 |
-| ---------------- | ------------------------------------------------------------ |
-| Transaction Type | 枚举值如下：<br/>Purchase<br/>Renewal<br/>Modify<br/>Refund<br/>Deduction<br/>Hourly settlement<br/>Daily settlement<br/>Monthly settlement<br/>Offline project deduction<br/>Offline deduction<br/>adjust-CR<br/>adjust-DR<br/>One-off RI Fee<br/>Spot<br/>Hourly RI fee<br/>New monthly subscription<br/>Monthly subscription renewal<br/>Monthly subscription specification adjustment<br/>Monthly subscription specification adjustment<br/>Monthly subscription refund|
-
+| 字段名称 | 字段枚举值如下| 
+|---------|---------|
+| Transaction Type | PurchaseRenewal,Modify,Refund,Deduction,Hourly settlement,Daily settlement,Monthly settlement,Spot,Offline project deduction,Offline deduction,adjust-CR,adjust-DR,One-off RI Fee,Hourly RI fee,New monthly subscription,Monthly subscription renewal,Monthly subscription specification adjustment,Monthly subscription refund,Hourly Savings Plan fee,Guarantee deduction,Pay-as-you-go reversal | 

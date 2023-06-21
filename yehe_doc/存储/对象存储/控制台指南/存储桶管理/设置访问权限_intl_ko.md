@@ -29,7 +29,7 @@ COS 콘솔에서 버킷의 액세스 권한을 설정하거나 수정할 수 있
 1. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인합니다.
 2. 왼쪽 사이드바에서 **버킷 리스트**를 클릭합니다.
 3. 리스트 상단의 **라이선스 관리**를 클릭합니다.
-![](https://main.qcloudimg.com/raw/9bfbb2948c61a9b3a522d61331d90a51.png)
+
 4. 알림창에서 권한을 부여할 버킷을 선택한 뒤 버킷의 공용 권한과 사용자 권한(서브 계정을 추가했다면 [CAM](https://console.cloud.tencent.com/cam) 콘솔에서 조회)을 설정할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/23eff9055312eaa122e247f9cf0ebf53.png)
 5. 설정을 완료 후, **확인**을 클릭하면 여러 버킷에 대한 액세스 권한이 설정됩니다.

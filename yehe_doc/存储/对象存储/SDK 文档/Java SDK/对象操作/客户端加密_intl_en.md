@@ -37,7 +37,7 @@ The client uses AES-256 internally to encrypt data. By default, earlier versions
 #### Sample 1
 The following sample uses Tencent Cloud′s KMS service for client-side encryption. For the complete sample code, see [Complete Sample of Client-Side Encryption using KMS](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/KMSEncryptionClientDemo.java).
 
-[//]: # ".cssg-snippet-put-object-cse-c-kms"
+[//]: # (.cssg-snippet-put-object-cse-c-kms)
 
 ```java
 // Initialize user authentication information (`secretId` and `secretKey`).
@@ -87,7 +87,7 @@ cosEncryptionClient.shutdown();
 #### Sample 2
 The following sample uses symmetric AES-256 to encrypt the randomly generated keys. For the complete sample code, see [Complete Sample of Client-Side Symmetric Encryption](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/SymmetricKeyEncryptionClientDemo.java).
 
-[//]: # ".cssg-snippet-put-object-cse-c-aes"
+[//]: # (.cssg-snippet-put-object-cse-c-aes)
 
 ```java
 // Initialize user authentication information (`secretId` and `secretKey`).
@@ -128,7 +128,7 @@ cosEncryptionClient.shutdown();
 #### Sample 3
 The following sample uses asymmetric RSA to encrypt the randomly generated keys. For the complete sample code, see [Complete Sample of Client-Side Asymmetric Encryption](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/AsymmetricKeyEncryptionClientDemo.java).
 
-[//]: # ".cssg-snippet-put-object-cse-c-rsa"
+[//]: # (.cssg-snippet-put-object-cse-c-rsa)
 ```java
 // Initialize user authentication information (`secretId` and `secretKey`).
 // Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) to view and manage the `SecretId` and `SecretKey` of your project.

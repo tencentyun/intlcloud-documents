@@ -6,7 +6,7 @@ The account assets of a customer are divided into two parts: credit and voucher.
 
 When the customer's assets are insufficient, the customer's resources will be suspended, and both the customer and their reseller will receive service suspension notices.
 
-(1) Service suspension trigger: Available credit + available vouchers change from **≥0** to **<0**.
+(1) Service suspension trigger: Available credit change from **≥0** to **<0**.
 
 (2) Service suspension process: The service will be suspended according to the lifecycle of specific products.
 
@@ -20,6 +20,6 @@ When the customer's assets are insufficient, the customer's resources will be su
 
 When the customer's assets become sufficient, the customer's suspended resources will be resumed, and both the customer and their reseller will receive service resumption notices.
 
-(1) Service resumption trigger: Available credit + available vouchers change from **<0** to **≥0**.
+(1) Service resumption trigger: Available credit change from **<0** to **≥0**.
 
 (2) Service resumption process: The service will be resumed according to the resumption process of specific products.
