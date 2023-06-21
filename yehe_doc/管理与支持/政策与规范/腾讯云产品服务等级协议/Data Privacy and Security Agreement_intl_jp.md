@@ -165,6 +165,7 @@ Tencent と組織は、個人データに関して、組織が管理者であり
 65.[Cloud Log Service](https://www.tencentcloud.com/ind/document/product/614/55082).
 66.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55133).
 67.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55140).
+68.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55273).
 
 ## 法域特定の要件
 
