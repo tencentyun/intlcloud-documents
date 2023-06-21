@@ -32,6 +32,7 @@ Some banks may require you to enter the beneficiary address for bank transfers. 
 | Honduras | Barbados|
 | Haiti | Bahamas |
 | Antigua and Barbuda | |
+
 Beneficiary Name: Tencent Cloud, LLC
 Beneficiary bank: HSBC Bank USA, N.A.
 Address: 2747 Park Blvd., Palo Alto, CA 94306
@@ -57,6 +58,7 @@ Remarks: Cloud service fee + developer account (unique ID)
 | Liechtenstein | Croatia |
 | Belgium | Bulgaria |
 | Austria |  
+
 Beneficiary name: TENCENT CLOUD EUROPE B.V. 
 Beneficiary bank: HSBC BANK PLC, Amsterdam z.o. The Netherlands
 Address: De Entree 236, 1101 EE Amsterdam 
@@ -71,6 +73,7 @@ Currently, bank transfers are not available to users in regions listed under cat
 | Taiwan, China | Indonesia | 
 | Macau, China | Malaysia | 
 | Hong Kong, China | Singapore | 
+
 Beneficiary name: ACEVILLE PTE.LTD.
 Beneficiary bank: HSBC, Singapore
 Address: 30 Raffles Place, #12-01, Oxley @ Raffles, Singapore 048622
