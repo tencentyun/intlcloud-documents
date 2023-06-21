@@ -729,4 +729,4 @@ Modul berikut akan berlaku dan merupakan bagian dari kebijakan privasi ini jika 
 64.[Cloud Log Service](https://www.tencentcloud.com/document/product/614/55081).
 65.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55132).
 66.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55139).
-67.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55272)
+67.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55272).
