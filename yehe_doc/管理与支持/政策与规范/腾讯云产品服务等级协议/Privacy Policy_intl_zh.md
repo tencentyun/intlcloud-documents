@@ -725,3 +725,4 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 64.[日志服务](https://www.tencentcloud.com/document/product/614/55081)。
 65.[对象存储](https://www.tencentcloud.com/document/product/436/55132)。
 66.[互动白板](https://www.tencentcloud.com/document/product/1176/55139)。
+67.[堡垒机](https://www.tencentcloud.com/document/product/1151/55272)。
