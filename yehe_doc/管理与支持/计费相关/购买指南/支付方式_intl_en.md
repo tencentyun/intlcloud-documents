@@ -10,7 +10,7 @@ The [Payment Method](https://console.cloud.tencent.com/accountv1/paymentmethods)
 
 ## Adding a Payment Method
  ![](https://qcloudimg.tencent-cloud.cn/raw/e25dc2b3158cfa06d9565cf87d4fdcb7.png)
-- Log in to the **Billing Center** console > **Payment Management** > <b>[Payment Method](https://console.intl.cloud.tencent.com/accountv1/paymentmethods)</b>, click **Add Payment Method** to go to the payment method configuration page, and fill in the card information.
+- Go to **Billing Center** > **Payment Management** > <b>[Payment Method](https://console.intl.cloud.tencent.com/accountv1/paymentmethods)</b> in the console, click **Add Payment Method** to go to the payment method configuration page, and fill out the card information.
  ![](https://staticintl.cloudcachetci.com/yehe/backend-news/BYnm001_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_1685432126964.png)
 - After a payment method is added, you can use it to top up and make payments.
 
