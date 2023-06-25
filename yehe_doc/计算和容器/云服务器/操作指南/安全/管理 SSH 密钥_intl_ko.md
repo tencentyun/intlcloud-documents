@@ -8,7 +8,7 @@ SSH 키를 인스턴스에 바인딩하거나 바인딩을 해제하려면 먼�
 ## 작업 단계
 
 ### SSH 키 생성[](id:creatSSH)
-1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바에서 **[SSH 키](https://console.cloud.tencent.com/cvm/sshkey)**를 선택합니다.
+1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바에서 **[SSH 키](https://console.cloud.tencent.com/cvm/sshkey)** 를 선택합니다.
 2. ‘SSH 키’ 페이지에서 **키 생성**을 클릭합니다.
 3. ‘SSH 키 생성’ 팝업 창에서 키를 구성합니다. 다음 이미지 참고:
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/4dCL899_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230421162143.png)
@@ -26,21 +26,21 @@ SSH 키를 인스턴스에 바인딩하거나 바인딩을 해제하려면 먼�
 </dx-alert>
 
 ### 인스턴스에 키 바인딩[](id:bindingSSH)
-1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바에서 **[SSH 키](https://console.cloud.tencent.com/cvm/sshkey)**를 선택합니다.
+1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바에서 **[SSH 키](https://console.cloud.tencent.com/cvm/sshkey)** 를 선택합니다.
 2. **SSH 키** 페이지에서 대상 SSH 키 우측의 **인스턴스 바인딩**을 클릭합니다. 다음 이미지 참고:
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/wQxy755_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230421163951.png)
 3. 팝업 창에서 대상 리전과 인스턴스를 선택하고 **바인딩**을 클릭합니다.
 
 
 ### 인스턴스에서 키 바인딩 해제
-1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바에서 **[SSH 키](https://console.cloud.tencent.com/cvm/sshkey)**를 선택합니다.
+1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바에서 **[SSH 키](https://console.cloud.tencent.com/cvm/sshkey)** 를 선택합니다.
 2. ‘SSH 키’ 페이지에서 대상 SSH 키 우측의 **인스턴스 바인딩 해제**를 클릭합니다. 다음 이미지 참고:
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/vvPz605_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230421164006.png)
 3. 팝업 창에서 키에서 바인딩 해제할 리전과 인스턴스를 선택하고 **바인딩 해제**를 클릭합니다.
 
 
 ### SSH 키 이름 또는 설명 수정
-1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바에서 **[SSH 키](https://console.cloud.tencent.com/cvm/sshkey)**를 선택합니다.
+1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바에서 **[SSH 키](https://console.cloud.tencent.com/cvm/sshkey)** 를 선택합니다.
 2. ‘SSH 키’ 페이지에서 키 이름 우측의 <img  style="margin:-3px 0px" src="https://main.qcloudimg.com/raw/9db81482f9242417d94a04f314b42b19.png"/>을(를) 선택합니다. 다음 이미지 참고:
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/JIYj454_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230421164231.png)
 3. ‘키 수정’ 팝업 창에서 새 키 이름 또는 키 설명을 입력하고 **확인**을 클릭합니다.
@@ -51,7 +51,7 @@ SSH 키를 인스턴스에 바인딩하거나 바인딩을 해제하려면 먼�
 SSH 키는 CVM 인스턴스 또는 사용자 지정 이미지와 바인딩된 경우 삭제할 수 없습니다.
 </dx-alert>
 
-1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바에서 **[SSH 키](https://console.cloud.tencent.com/cvm/sshkey)**를 선택합니다.
+1. CVM 콘솔에 로그인한 뒤, 왼쪽 사이드바에서 **[SSH 키](https://console.cloud.tencent.com/cvm/sshkey)** 를 선택합니다.
 2. ‘SSH 키’ 페이지에서 필요에 따라 단일 또는 여러 SSH 키를 삭제할 수 있습니다.
 <dx-tabs>
 ::: 단일 키 삭제
