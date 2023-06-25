@@ -1,4 +1,5 @@
-﻿## Billing Mode
+
+## Billing Mode
 The billing mode of Anti-DDoS Pro (Enterprise) varies by the region of your application.
 - Chinese mainland: Base protection + elastic protection
 - Outside the Chinese mainland: Tencent Cloud Anti-DDoS cleansing center provides an all-out protection
