@@ -4,7 +4,7 @@ CVM インスタンスのメンテナンスタスクにアラームを設定で�
 
 ## 操作手順
 1. [EventBridgeコンソール](https://console.cloud.tencent.com/eb)にログインし、 [EventBridgeのアクティブ化](https://intl.cloud.tencent.com/document/product/1108/42272) の指示に従ってサービスをアクティブ化します。
-2.左側のサイドバーで **[ Event Rule](https://console.cloud.tencent.com/eb/rule)**を選択し、「Event Rule」ページの上部でターゲットリージョンとイベントバスを選択して、**Create Event Rule**をクリックします。
+2.左側のサイドバーで **[ Event Rule](https://console.cloud.tencent.com/eb/rule)** を選択し、「Event Rule」ページの上部でターゲットリージョンとイベントバスを選択して、**Create Event Rule**をクリックします。
 3.「Create Event Rule」ページで、次の操作を実行します。
     1.  下図に示すように、「Basic Information」で、**ルール名**を入力します。
  ![](https://staticintl.cloudcachetci.com/yehe/backend-news/zHwA899_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230421102346.png)
