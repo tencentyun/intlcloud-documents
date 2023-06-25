@@ -32,7 +32,7 @@
 <tbody>
 <tr>
 <td>Supported elastic application bandwidth</td>
-<td>Anti-DDoS Pro supports elastic application bandwidth, and the excessive part will be charged at 80 CNY/Mbps/month.</td>
+<td>Anti-DDoS Pro supports elastic application bandwidth, and the excessive part will be charged at 14 USD/Mbps/month.</td>
 <td>12/16/2022</td>
 <td> <a href="https://intl.cloud.tencent.com/document/product/1029/36114">Billing Overview</a>
 </td>
