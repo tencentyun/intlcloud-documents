@@ -12,9 +12,9 @@
 |---------|---------|
 | CentOS 7.9 64-bit |img-180g963d |
 | CentOS 7.6 64-bit |img-9qabwvbn |
-| CentOS 7.9 64-bit+SG1-pv1.5 |
+| CentOS 7.9 64-bit+SG1-pv1.5 |img-all2luul |
 | CentOS 7.9 64-bit+SG1-pv1.6 |img-ojhiw86l |
-| CentOS 7.4(arm64) |
+| CentOS 7.4(arm64) |img-k4xgkxa5 |
 
 ## 操作ガイド
 ###  pip のアップグレード
