@@ -41,7 +41,6 @@ from tencentcloud.common.profile.client_profile import ClientProfile
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
 from tencentcloud.cvm.v20170312 import cvm_client, models
-
 # デフォルトでは、環境変数 TENCENTCLOUD_SECRET_ID および TENCENTCLOUD_SECRET_KEY を読み取り、secretId および SecretKey を取得します。
 # 認証情報の管理方法の詳細については、https://github.com/TencentCloud/tencentcloud-sdk-python#%E5%87%AD%E8%AF%81%E7%AE%A1%E7%90%86をご覧ください
 cred = credential.EnvironmentVariableCredential().get_credential()
@@ -49,7 +48,6 @@ httpProfile = HttpProfile()
 httpProfile.endpoint = "cvm.tencentcloudapi.com"
 clientProfile = ClientProfile()
 clientProfile.httpProfile = httpProfile
-
 # この例では南京が使用されています。 実際の状況に応じてリージョンを変更します。 たとえば、上海の場合、リージョンを「ap-shanghai」に変更します。
 aria = 'ap-nanjing'
 client = cvm_client.CvmClient(cred,aria, clientProfile)
@@ -103,7 +101,6 @@ try:
                 print('正しいオプションを入力してください！！')
         else:
             print('正しいオプションを入力してください！！')
-
 except TencentCloudSDKException as err:
     print(err)
 ```
