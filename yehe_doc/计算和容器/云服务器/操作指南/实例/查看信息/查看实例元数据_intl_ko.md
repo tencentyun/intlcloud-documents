@@ -135,34 +135,39 @@ Tencent Cloud는 현재 다음과 같은 메타데이터 정보를 제공합니�
 <td>2017-09-19 업데이트</td>
 </tr>
 <tr>
-<td>/meta-data/instance/instance-type</td>
+<td>instance/instance-type</td>
 <td>인스턴스 사양</td>
 <td>2017-09-19 업데이트</td>
 </tr>
 <tr>
-<td>/instance/image-id</td>
+<td>instance/image-id</td>
 <td>인스턴스 이미지 ID</td>
 <td>2017-09-19 업데이트</td>
 </tr>
 <tr>
-<td>/instance/security-group</td>
+<td>instance/security-group</td>
 <td>인스턴스 바인딩 보안 그룹 정보</td>
 <td>2017-09-19 업데이트</td>
 </tr>
 <tr>
-<td>/instance/bandwidth-limit-egress</td>
+<td>instance/bandwidth-limit-egress</td>
 <td>인스턴스 내부 네트워크 아웃바운드 대역폭 제한, 단위Kbit/s</td>
 <td>2019-09-29 업데이트</td>
 </tr>
 <tr>
-<td>/instance/bandwidth-limit-ingress</td>
+<td>instance/bandwidth-limit-ingress</td>
 <td>인스턴스 내부 네트워크 인바운드 대역폭 제한, 단위Kbit/s</td>
 <td>2019-09-29 업데이트</td>
 </tr>
 <tr>
-<td>/cam/security-credentials/${role-name}</td>
+<td>cam/security-credentials/${role-name}</td>
 <td>인스턴스 CAM 역할 정책에서 생성한 임시 자격 증명입니다. 인스턴스가 CAM 역할을 바인딩해야만 임시 자격 증명을 획득할 수 있습니다. ${role-name} 매개변수는 인스턴스 CAM 역할 이름으로 바꿔야 합니다. 지정하지 않는 경우 404가 반환됩니다.</td>
 <td>2019-12-11 업데이트</td>
+</tr>
+<tr>
+<td>volumes</td>
+<td>인스턴스</td>
+<td>1.0</td>
 </tr>
 </tbody></table>
 
@@ -369,14 +374,20 @@ POSTPAID_BY_HOUR
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/cam/security-credentials/CVMas
 {
-  "TmpSecretId": "AKIDoQMxF8OPg0gA7pyZIA6cW447p225cIt9NW8dhA1dwl5UvxxxxxxxxxUqRlEb5_",
-  "TmpSecretKey": "Q9z24VucjF4xQQNV64qwF6uWY71PEsH3exxxxxxxxxgA=",
+  "TmpSecretId": "AKIDoQMxA6cW447p225cIt9NW8dhA1dwl5UvxxxxxxxxxUqRlEb5_",
+  "TmpSecretKey": "Q9z24VucjF4xQQN1PEsH3exxxxxxxxxgA=",
   "ExpiredTime": 1615590047,
   "Expiration": "2021-03-12T23:00:47Z",
   "Token": "xxxxxxxxxxx",
   "Code": "Success"
 }
 ```
+
+아래 예시는 인스턴스 스토리지를 가져오는 방법을 설명합니다.
+​```shell
+[qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/volumes
+disk-xxxxxxxx
+​```
 
 ## 인스턴스 사용자 데이터 조회
 인스턴스 생성 시 인스턴스 사용자 데이터를 지정할 수 있으며, cloud-init이 설정된 CVM은 해당 데이터에 액세스할 수 있습니다.
