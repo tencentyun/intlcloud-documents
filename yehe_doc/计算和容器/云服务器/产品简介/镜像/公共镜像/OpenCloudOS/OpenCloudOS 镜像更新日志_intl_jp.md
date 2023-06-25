@@ -1,8 +1,8 @@
 
 <dx-alert infotype="explain" title="">
 - イメージ更新履歴は発行時間順で表示されます。
-- イメージの発行は地域ごとにテストされます。CVMを作成したときに、イメージが更新履歴の最新バージョンでない場合は、その地域にまだ発行されていない可能性があります。
-- 更新履歴の特定のイメージがコンソールで見つからない場合は、当該イメージがまだ完全にオープンされていない可能性があります。
+- イメージは地域ごとに発行されます。CVMインスタンスの作成時に更新履歴にあるイメージが最新バージョンではない場合、その地域にまだ発行されていない可能性があります。
+- イメージ更新履歴内のイメージがコンソールで見つからない場合は、当該イメージが全面的に公開されていません。この場合、 [チケットを送信](https://console.intl.cloud.tencent.com/workorder/category)してイメージに関する詳細情報を取得できます。
 </dx-alert>
 
 ## イメージ更新履歴
@@ -10,26 +10,42 @@
 <table>
 <thead>
 <tr>
-<th><strong>イメージ名</strong></th>
-<th><strong>更新特性</strong></th>
+<th width="60%"><strong>機能更新</strong></th>
 <th><strong>更新日</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>OpenCloudOS 8.5</td>
 <td>
-OpenCloudOS 8.5はパブリッククラウに導入されました
+<ul class="params">
+<li> firewalld\sssd\rngd サービスを無効にしました</li>
+<li> microcode_ctl/nss-softokn/avahi パッケージをアンインストールしました</li>
+<li>keymapを設定しました</li>
+<li>timezoneを設定しました</li>
+<li>kdumpのブート用のcloudinit.target依存関係を設定しました</li>
+<li>Mirrors.tencentyun.com をrepoの最初のURLとして設定しました</li>
+<li>/etc/rc.d/rc.local ファイルの権限を755に変更しました</li>
+<li> /var/lib/ 内の一部のディレクトリの権限エラーを修正しました</li>
+</ul>
+</td>
+<td>2022-09-16</td>
+</tr>
+<tr>
+<td>
+<ul class="params">
+<li>カーネルバージョンを5.4.119-19.0010に更新しました</li>
+<li>他のユーザーモードソフトウェアを更新しました</li>
+<li>イメージのタイムスタンプを更新しました</li>
+</ul>
+</td>
+<td>2022-07-27</td>
+</tr>
+<tr>
+<td>
+<ul class="params">
+<li>パブリッククラウド向けOpenCloudOS 8.5をリリースしました</li>
+</ul>
 </td>
 <td>2022-03-04</td>
 </tr>
-</tbody></table>                                                 
-
-
-<style>
- .params{margin-bottom:0px !important}
-</style>
-
-
-
-
+</tbody></table>
