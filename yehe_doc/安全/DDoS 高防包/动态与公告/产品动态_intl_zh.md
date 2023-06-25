@@ -32,7 +32,7 @@
 <tbody>
 <tr>
 <td>支持弹性业务带宽</td>
-<td>高防包支持弹性业务带宽，超出部分按照80元/Mbps/月收费。</td>
+<td>高防包支持弹性业务带宽，超出部分按照14美元/Mbps/月收费。</td>
 <td> 2022-12-16</td>
 <td> <a href="https://intl.cloud.tencent.com/document/product/1029/36114">计费概述</a>
 </td>
