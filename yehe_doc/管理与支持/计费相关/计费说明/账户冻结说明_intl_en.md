@@ -1,12 +1,12 @@
 When you activate a pay-as-you-go service or purchase a monthly-subscribed resource, a certain amount of your available account balance will be frozen. The system estimates the amount to be frozen based on the billing cycle or order amount. The frozen amount cannot be spent and will become available after it is unfrozen.
 
-## Frozen amount for pay-as-you-go resources
+## Frozen funds for pay-as-you-go resources
 
 - When you purchase a pay-as-you-go service, the fee for one to two billing cycles will be frozen.
 
 - The frozen amount will be unfrozen after the resource is released.
 
-## Frozen amount for monthly-subscribed resources
+## Frozen funds for monthly-subscribed resources
 
 - When you purchase a monthly-subscribed resource, the amount equivalent to the order cost will be frozen. After the resource is successfully delivered, the frozen amount will be automatically unfrozen to make the order payment.
 
@@ -30,4 +30,4 @@ The frozen amount is deducted from the amount of cash and free credit in your ac
 
 ### 4. Is the frozen amount immediately unfrozen after a resource is released?
 
-No. The frozen amount will be unfrozen after the resource is released according to the policies of the specific product.
+No. When a resource is released, the frozen amount will be unfrozen according to the policies of the specific product.

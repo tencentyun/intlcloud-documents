@@ -736,6 +736,7 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 66.[Cloud Log Service](https://www.tencentcloud.com/document/product/614/55081).
 67.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55132).
 68.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55139).
+69.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55272).
 
 ### 개정 기록
 [개인정보 처리방침](https://intl.cloud.tencent.com/document/product/301/43505)(버전1.0)
