@@ -1,3 +1,24 @@
+## 2023-03
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>企业版高防包上线</td>
+<td>是针对业务部署在境内外腾讯云内的用户。具有境内外 T 级防护能力，需创建高防 EIP 并绑定才能最终生效。满足对业务安全要求较高的企业。</td>
+<td> 2023-03-06	</td>
+<td> <a href="https://cloud.tencent.com/document/product/1021/87036">计费概述（企业版）</a>
+</td>
+</tr>
+</tbody></table>
+
+
 ## 2022-11
 <table>
 <thead>
@@ -11,8 +32,8 @@
 <tbody>
 <tr>
 <td>支持弹性业务带宽</td>
-<td>高防包支持弹性业务带宽，超出部分按照14美元/Mbps/月收费。</td>
-<td> 2022-11-16</td>
+<td>高防包支持弹性业务带宽，超出部分按照80元/Mbps/月收费。</td>
+<td> 2022-12-16</td>
 <td> <a href="https://intl.cloud.tencent.com/document/product/1029/36114">计费概述</a>
 </td>
 </tr>
@@ -53,7 +74,7 @@
 <td>智能 CC 支持观察模式</td>
 <td>智能 CC 支持观察模式，并全量上线智能 CC。</td>
 <td> 2022-08-25</td>
-<td> <a href="https://www.tencentcloud.com/document/product/1029/48285"> 智能 CC 防护</a>
+<td> <a href="https://intl.cloud.tencent.com/document/product/1029/48285"> 智能 CC 防护</a>
 </td>
 </tr>
 </tbody></table>
