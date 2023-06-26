@@ -111,7 +111,7 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 6.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38787).
 7.[StreamLive](https://intl.cloud.tencent.com/document/product/1048/38989).
 8.[StreamPackage](https://intl.cloud.tencent.com/document/product/1063/38992).
-9.[Tencent Cloud Conference](https://intl.cloud.tencent.com/document/product/1023/40236).
+9.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55133).
 10.[Cloud Native Database TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41227).
 11.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41576).
 12.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41706).
@@ -168,9 +168,8 @@ Os seguintes módulos devem ser aplicados e incorporados como referência neste 
 63.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54258).
 64.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54989).
 65.[Cloud Log Service](https://www.tencentcloud.com/ind/document/product/614/55082).
-66.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55133).
-67.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55140).
-68.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55273).
+66.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55140).
+67.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55273).
 
 ## Requisitos específicos da jurisdição
 
