@@ -671,7 +671,7 @@ Tencent Cloud プライバシーポリシーの「*お客様の個人データ�
 6.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38786).
 7.[StreamLive](https://intl.cloud.tencent.com/document/product/1048/38990).
 8.[StreamPackage](https://intl.cloud.tencent.com/document/product/1063/38993).
-9.[Tencent Cloud Conference](https://intl.cloud.tencent.com/document/product/1023/40237).
+9.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55132).
 10.[Cloud Native Database TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41228).
 11.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41578).
 12.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41705).
@@ -727,6 +727,5 @@ Tencent Cloud プライバシーポリシーの「*お客様の個人データ�
 62.[Tencent Container Security Service](https://www.tencentcloud.com/document/product/1163/54257).
 63.[Cloud Automated Testing](https://www.tencentcloud.com/document/product/1169/54988).
 64.[Cloud Log Service](https://www.tencentcloud.com/document/product/614/55081).
-65.[Cloud Object Storage](https://www.tencentcloud.com/document/product/436/55132).
-66.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55139).
-67.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55272).
+65.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55139).
+66.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55272).
