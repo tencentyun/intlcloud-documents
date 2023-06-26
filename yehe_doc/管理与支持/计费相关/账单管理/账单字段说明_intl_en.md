@@ -13,7 +13,7 @@
 |Transaction Time	| The time at which a payment was deducted.	|
 |Usage Start Time	| The time at which product or service usage starts. |
 |Usage End Time	| The time at which product or service usage ends. |
-|Instance ID	| The object ID of a billed resource, such as a CMV instance ID. This object ID may vary due to various forms and contents of resources in different products.	|
+|Instance ID	| The object ID of a billed resource, such as a CVM instance ID. This object ID may vary due to various forms and contents of resources in different products.	|
 |Instance Name| The resource name set by the user in the console. If it is not set, it will be empty by default.	|
 |Instance Type	| The instance type of a product or service purchased, which can be resource package, RI, SP, or spot instance. Other instance types are not displayed by default.	|
 |Project Name	| The project to which a resource belongs, which is user-designated. If a resource has not been assigned to a project, it will automatically belong to the default project.	|
