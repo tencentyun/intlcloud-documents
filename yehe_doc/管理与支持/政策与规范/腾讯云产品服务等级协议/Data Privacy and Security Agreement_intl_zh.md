@@ -110,7 +110,7 @@
 6.[人脸识别](https://intl.cloud.tencent.com/document/product/1059/38787)。
 7.[媒体直播](https://intl.cloud.tencent.com/document/product/1048/38989)。
 8.[媒体包装](https://intl.cloud.tencent.com/document/product/1063/38992)。
-9.[智慧会务](https://intl.cloud.tencent.com/document/product/1023/40236)。
+9.[对象存储](https://www.tencentcloud.com/document/product/436/55133)。
 10.[云原生数据库 TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41227)。
 11.[弹性微服务](https://intl.cloud.tencent.com/document/product/1094/41576)。
 12.[时序数据库 CTSDB](https://intl.cloud.tencent.com/document/product/1100/41706)。
@@ -167,9 +167,8 @@
 63.[容器安全服务](https://www.tencentcloud.com/document/product/1163/54258)。
 64.[云拨测](https://www.tencentcloud.com/document/product/1169/54989)。
 65.[日志服务](https://www.tencentcloud.com/ind/document/product/614/55082)。
-66.[对象存储](https://www.tencentcloud.com/document/product/436/55133)。
-67.[互动白板](https://www.tencentcloud.com/document/product/1176/55140)。
-68.[堡垒机](https://www.tencentcloud.com/document/product/1151/55273)。
+66.[互动白板](https://www.tencentcloud.com/document/product/1176/55140)。
+67.[堡垒机](https://www.tencentcloud.com/document/product/1151/55273)。
 
 ## 特定司法管辖区要求
 
