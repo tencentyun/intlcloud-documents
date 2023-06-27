@@ -21,7 +21,7 @@ Some banks may require you to enter the beneficiary address for bank transfers. 
  
 **Category A**
 
-| Users in these regions use the banking information below |  |
+| Users in these regions use the bank information below |  |
 |---------|---------|
 | United States | Guatemala |
 | Trinidad and Tobago | Grenada |
@@ -45,7 +45,7 @@ Remarks: Cloud service fee + developer account (unique ID)
  
 **Category B**
 
-| Users in these regions use the banking information below |  | 
+| Users in these regions use the bank information below |  | 
 |---------|---------|
 | Switzerland | Latvia |
 | Sweden | Italy |
@@ -75,7 +75,7 @@ Currently, bank transfers are not available to users in regions listed under cat
  
 **Category C**
 
-| Users in these regions use the banking information below |  | 
+| Users in these regions use the bank information below |  | 
 |---------|---------|
 | Others | Philippines | 
 | Taiwan, China | Indonesia | 
