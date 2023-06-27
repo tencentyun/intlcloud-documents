@@ -1,7 +1,7 @@
 Mulai 7 Desember 2020, 21.30 (UTC +8), hanya **bill-by-hourly-traffic** (penagihan-berdasarkan-lalu-lintas-per-jam) tersedia untuk pengguna CDN baru.Cara penagihan tidak dapat diubah setelah aktivasi layanan.
 Tingkat harga tagihan-berdasarkan-lalu-lintas-per-jam sama dengan tingkat harga tagihan-berdasarkan-lalu-lintas-harian.Lihat [Ikhtisar Penagihan](https://intl.cloud.tencent.com/document/product/228/2949)
 
-首次生效为开通当天00:00点，之后每月1日00:00点生效。
+
 >! Untuk detail tentang penagihan nama domain ECDN, baca [Ikhtisar Penagihan](https://intl.cloud.tencent.com/document/product/570/37505).
 
 ## Ikhtisar Tagihan
@@ -20,7 +20,7 @@ Wilayah **inside the Chinese mainland** (di Tiongkok daratan) dan **outside the 
 | Asia Pasifik 2 |      Taiwan (Tiongkok), Jepang, Korea Selatan, Malaysia, Indonesia      |
 | Asia Pasifik 3 |      Filipina, India, Australia, negara dan wilayah Asia Pasifik lainnya       |
 |  Timur Tengah   |              Saudi Arabia, Uni Emirat Arab, Turki               |
-|  Eropa   | Inggris, Rusia, Jerman, Italia, Irlandia, Prancis, Belanda, Spanyol |
+|  Eropa   | Inggris, Jerman, Italia, Irlandia, Prancis, Belanda, Spanyol |
 |  Amerika Utara   |                      Amerika Serikat, Kanada                      |
 |  Amerika Selatan   |                          Brasil                          |
 |  Afrika   |                          Africa Selatan                          |
