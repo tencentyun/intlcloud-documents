@@ -12,7 +12,7 @@ CDN sudah lama menggarap akselerasi global sejak 2017.Hingga Mei 2021, CDN memil
 | Asia   | Hong Kong (Tiongkok), Taiwan (Tiongkok), Makau (Tiongkok), Jepang, Korea, Vietnam, Singapura, Thailand, <br/>Filipina, Malaysia, Indonesia, India, Turki, Arab Saudi, UEA, Myanmar, <br/>Kamboja, Irak, Kuwait, Qatar, Oman, Israel, Mongolia |
 | Amerika Utara   | Amerika Serikat, Kanada, Meksiko                                         |
 | Amerika Selatan   | Brasil, Argentina, Kolombia, Peru, Ekuador, Chili                 |
-| Eropa   | Inggris, Rusia, Jerman, Italia, Polandia, Swedia, Irlandia, Romania, <br/>Spanyol, Portugal, Prancis, Belanda, Belgia, Austria, Denmark, Finlandia |
+| Eropa   | Inggris, Jerman, Italia, Polandia, Swedia, Irlandia, Romania, <br/>Spanyol, Portugal, Prancis, Belanda, Belgia, Austria, Denmark, Finlandia |
 | Afrika   | Afrika Selatan, Mesir, Tanzania                                         |
 | Oseania | Australia, Selandia Baru                                             |
 
