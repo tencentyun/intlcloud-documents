@@ -29,7 +29,7 @@ O CDN vem trabalhando diligentemente na aceleração global desde 2017. Desde ma
 | Ásia | Hong Kong (China), Macau (China), Taiwan (China), Japão, Coreia do Sul, Mongólia, Vietnã, Laos, Singapura, Tailândia, Filipinas, Mianmar, Camboja, Malásia, Indonésia, Índia, Bangladesh, Nepal, Paquistão, Kuwait , Quirguistão, Catar, Israel, Turquia, Iraque, Arábia Saudita, Omã, Emirados Árabes Unidos, Bahrein, Líbano |
 | África | Djibuti, Quênia, Madagascar, Ilhas Maurício, Egito, África do Sul |
 | Oceania | Austrália, Nova Zelândia                                             |
-| Europa | Rússia, Bielorrússia, Itália, Áustria, Polônia, Finlândia, Dinamarca, Bélgica, Suécia, Espanha, França, Holanda, Alemanha, Reino Unido |
+| Europa | Bielorrússia, Itália, Áustria, Polônia, Finlândia, Dinamarca, Bélgica, Suécia, Espanha, França, Holanda, Alemanha, Reino Unido |
 
 ## Programação inteligente global
 
