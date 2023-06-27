@@ -18,9 +18,10 @@ To query the information and progress of a payment, go to **Billing Center** > *
 ### Region List and Beneficiary Address
 Some banks may require you to enter the beneficiary address for bank transfers. Beneficiary accounts differ by region. Refer to the lists below to find the beneficiary address you need.
 
+
 **Category A**
 
-| Users in these regions use the following information |  |
+| Users in these regions use the banking information below |  |
 |---------|---------|
 | United States | Guatemala |
 | Trinidad and Tobago | Grenada |
@@ -41,9 +42,10 @@ Address: 2747 Park Blvd., Palo Alto, CA 94306
 SWIFT: MRMDUS33
 Remarks: Cloud service fee + developer account (unique ID)
 
+
 **Category B**
 
-| Users in these regions use the following information |  | 
+| Users in these regions use the banking information below |  | 
 |---------|---------|
 | Switzerland | Latvia |
 | Sweden | Italy |
@@ -70,9 +72,10 @@ Remarks: Cloud service fee + developer account (unique ID)
 
 Currently, bank transfers are not available to users in regions listed under category B. Please use the [Top-Up Process](https://intl.cloud.tencent.com/document/product/555/11319?lang=en&pg=) instead.
 
+
 **Category C**
 
-| Users in these regions use the following information |  | 
+| Users in these regions use the banking information below |  | 
 |---------|---------|
 | Others | Philippines | 
 | Taiwan, China | Indonesia | 
