@@ -24,7 +24,7 @@ Host: sample.portal.tencentciam.com
 ## Request Headers
 | Parameter | Description |
 | :------------ | :----------------------------------------------------------- |
-| Authorization | OAuth 2.0 Bearer Token. The format is `Bearer <Token>>`, where `Bearer` is a fixed string and `<Token>` is the Access Token with `openid scope` returned when the login is successful. `Bearer` and `<Token>` are separated by a space. |
+| Authorization | OAuth 2.0 Bearer Token. The format is `Bearer <Token>`, where `Bearer` is a fixed string and `<Token>` is the Access Token with `openid scope` returned when the login is successful. `Bearer` and `<Token>` are separated by a space. |
 
 
 ## Sample Success Responses
