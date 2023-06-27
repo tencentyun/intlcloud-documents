@@ -21,7 +21,7 @@ As regiões **dentro da China Continental** e **fora da China Continental** têm
   | Ásia-Pacífico 2 |      Taiwan (China), Japão, Coreia do Sul, Malásia, Indonésia      |
   | Ásia-Pacífico 3 |      Filipinas, Índia, Austrália e outros países e regiões da Ásia-Pacífico       |
   |  Oriente Médio   |              Arábia Saudita, Emirados Árabes Unidos, Turquia               |
-  |  Europa   | Reino Unido, Rússia, Alemanha, Itália, Irlanda, França, Holanda, Espanha |
+  |  Europa   | Reino Unido, Alemanha, Itália, Irlanda, França, Holanda, Espanha |
   América do Norte    | Estados Unidos, Canadá                                           |
   |  América do Sul   | Brasil                          |
   |  África   |                          África do Sul                          |
