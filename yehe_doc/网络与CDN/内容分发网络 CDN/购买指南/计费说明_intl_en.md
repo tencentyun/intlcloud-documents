@@ -21,7 +21,7 @@ Regions **inside the Chinese mainland** and **outside the Chinese mainland** hav
   | Asia Pacific 2 |      Taiwan (China), Japan, South Korea, Malaysia, Indonesia      |
   | Asia Pacific 3 |      Philippines, India, Australia, other Asia-Pacific countries and regions       |
   | Middle East    | Saudi Arabia, United Arab Emirates, Turkey                            |
-  | Europe    | United Kingdom, Russia, Germany, Italy, Ireland, France, Netherlands, Spain |
+  | Europe    | United Kingdom, Germany, Italy, Ireland, France, Netherlands, Spain |
   | North America    | United States, Canada                                           |
   | South America    | Brazil                                                   |
   | Africa    | South Africa                                                   |
