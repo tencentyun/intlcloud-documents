@@ -1,56 +1,57 @@
-Renewing an SSL certificate is equivalent to applying for a new certificate in the console, so you need to install and deploy the new certificate to your server. The new certificate does not affect the usage of the existing one.
+SSL 证书续费操作相当于在控制台重新申请了一个新证书，您需重新安装部署到服务器上。新证书不影响现有证书的正常使用。
 >!
-> - If you want to modify the certificate information, apply for a new one.
-> - After renewal, a new certificate will be issued. Replace the website certificate with the new certificate. For information about how to install a certificate, see [Certificate Installation](#certificate).
+> - 如证书信息需要变更，请重新申请证书。
+> - 证书续费后相当于重新颁发证书，您需要将新证书替换现有证书。证书安装请查看 [证书安装相关文档](#certificate)。
 
 
-## Advantages of Renewal
-Renewing the existing certificate holds the following advantages over purchasing a new one:  
+## 续费优势
+证书续费与重新购买相比，有以下优势：  
 
-### Simplifying renewal procedure
-Instead of entering the application information again, you only need to confirm the original certificate application data pulled automatically by the system and proceed to the payment process. After making the payment, upload the confirmation letter and wait for review.
+### 简化续费流程
+您无需重新填写申请信息，系统自动拉取原有证书申请资料，确认后直接进入付款流程。付款成功后，上传确认函，等待证书审核。
 
-### Prolonging certificate validity after renewal
-After renewal, the remaining available time of the original certificate and an extra 1 to 90 days roll to the validity time of the new certificate for free. You will not experience any loss in certificate validity period due to renewal.   
+### 续费证书时效保障
+对于续费新证书，除正常续费时长外，原证书未用完的时间会增补到新证书里面，并会额外获得1 - 90天不等的赠送时长。客户不会因续费造成证书使用时间上的损失。   
 
-## Certificate Renewal Procedure
+## 证书续费流程
 
-### 1. Going to the certificate renewal page
-1. A quick renewal feature will be **enabled 3 months before your certificate expires**. On the **Certificate Management** page of the [SSL Certificate Service](https://console.cloud.tencent.com/ssl) console, click **Quick Renewal** in the **Operation** column of the certificate you want to renew.
-2. On the pop-up window, confirm the information and click **Renew Now** to enter the renewal page.
+### 一、进入证书续费入口
+1. 付费证书在**过期前30天**会开启快速续费通道，您可在 [SSL 证书管理控制台](https://console.cloud.tencent.com/ssl) 证书列表中，对应证书的状态项中单击【快速续费】，打开快速续费窗口。
+2. 弹出 SSL 证书续费提示后，请确认信息，单击【前往续费】进入续费页面。
 
-### 2. Confirming the renewal information and make the payment.
-1. When renewing a certificate, you do not need to enter the certificate information again. A new certificate will be generated after renewal, so you need to create a CSR file for the new certificate.
- - You can automatically generate a CSR file through the system (**this option is recommended, and the CSR and private key can be generated**).
- - Or, upload a CSR file (**no private key can be generated with this option**).
-2. After confirming the information, select the renewal period, and click **Quick Payment** to go to the payment page.
-3. Confirm the certificate information and click **Purchase** for payment.   
+### 二、续费信息确认与支付
+1. 证书续费无需再次填写信息，由于证书续费后会生成一个新证书，因此要为新证书设置 CSR 文件。
+ - 您可通过系统自动生成 CSR 文件（**推荐，可生成 CSR 和私钥**）。
+ - 您也可上传 CSR 文件（**自行上传，不可生成私钥**）。
+2. 请您在确认信息后，选择续费年限，单击【快速支付】进入证书支付流程。
+3. 确认证书信息后，单击【确认购买】进行付款。   
 
-### 3. Confirming the certificate application
-#### For an OV/EV paid certificate, upload the confirmation letter and wait for review.
-1. After you complete payment, on the **Certificate Management** page in the SSL Certificate Service console, you can find a new certificate with the status of **Pending confirmation letter upload** in the certificate list. Click **Upload confirmation letter** to go to the confirmation letter details page.    
-2. Click **Download Confirmation Letter** as prompted, fill in the information, and seal the letter. Scan the confirmation letter to a file and click **Upload for Review**, as shown in the following figure.   
+### 三、证书审核
+#### OV/EV 型付费证书需上传确认函并等待审核
+1. 购买成功后，SSL 证书管理控制台的证书列表中将生成一个新的证书，状态为**待上传确认函**，单击【上传确认函】进入确认函详情页。    
+2. 请先按照提示单击【下载确认函】，补充信息并盖章。扫描文件（确认函需要扫描到一个文件中），单击【上传审核】提交确认函。如下图所示：   
 ![](https://main.qcloudimg.com/raw/a6517af486b90d670ba989f51c1d3eae.png)
-3. After you submit the confirmation letter, the certificate status changes to **Pending verification**. Wait for the reviewer to verify your information by phone and confirm the domain information email.
->?For OV certificates, certificate issuance takes **3 to 5 business days**. For EV certificates, certificate issuance takes **5 to 7 business days**
+3. 提交证书确认函后，证书状态变为**待验证**，您需等待审核人员进行电话核实和域名信息确认邮件。
+>?OV 型证书颁发等待时间为**3 - 5个工作日**，EV 型证书颁发等待时间为**5 - 7个工作日**。
 
 
-#### For paid DV certificates, verify the domain name.
-1. After you complete payment, on the **Certificate Management** page of the SSL Certificate Service console, you can find a new certificate with the status of **Pending verification** in the certificate list. Click **Details** to go to the **Certificate Details** page.   
-2. The DNS verification value is displayed on the **Certificate Details** page. Add this DNS record and wait for scan and verification by the CA. The certificate will be issued after approval.
->?Issuance of DV certificates takes **10 minutes to 24 hours**.
->
+#### DV 型付费证书需完成域名身份验证
+1. 购买成功后，SSL 证书管理控制台的证书列表中将生成一个新的证书，状态为**待验证**，单击【详情】进入证书详情页。   
+2. 证书详情中会生成解析验证值，您需要添加该条 DNS 解析记录。记录添加完成后，等待 CA 机构扫描验证，验证审核通过后会立即颁发证书。如下图所示：
+>?DV 型证书颁发等待时间为**10分钟 - 24小时**。
+
  ![](https://main.qcloudimg.com/raw/3bc609a54a2f6492df36319829ddf287.png)
 
 
 <span id="certificate"></span>
-## Certificate Installation
-After the certificate is issued, install the certificate based on your server type. For more information about certificate installation, see the following:
-- [Installing a Certificate on Apache servers](https://intl.cloud.tencent.com/document/product/1007/30953)
-- [Installing a Certificate on Nginx servers](https://intl.cloud.tencent.com/document/product/1007/30954)
-- [Installing a Certificate on IIS servers](https://intl.cloud.tencent.com/document/product/1007/30955)
-- [Installing a Certificate on Tomcat servers](https://intl.cloud.tencent.com/document/product/1007/30956)
+## 证书安装相关文档
+证书颁发成功后，您需要重新安装证书，您可以根据您搭建的服务器类型进行证书安装。
+- [Apache 服务器证书安装](https://intl.cloud.tencent.com/document/product/1007/30953)。
+- [Nginx 服务器证书安装](https://intl.cloud.tencent.com/document/product/1007/30954)。
+- [IIS 服务器安装证书](https://intl.cloud.tencent.com/document/product/1007/30955)。
+- [Tomcat 服务器证书安装](https://intl.cloud.tencent.com/document/product/1007/30956)。
 
->!If there is no certificate installation tutorial for the sever you use, go to the [Tencent Cloud MARKET](https://market.cloud.tencent.com/categories/1100?tagName=%E8%AF%81%E4%B9%A6%E5%AE%89%E8%A3%85), search for certificate installation services, and select a vendor for certificate installation service.
+>!
+>如果您因使用不同服务器类型，没有可进行参考的证书安装教程，腾讯云将提供人工服务安装证书的渠道，可快速帮助您进行证书的安装。详情请查看 [证书安装服务](https://market.cloud.tencent.com/categories/1100?tagName=%E8%AF%81%E4%B9%A6%E5%AE%89%E8%A3%85)。
 
 
