@@ -52,27 +52,27 @@
 </tr>
 <tr>
 <td>在新购云硬盘时设置数据备份点配额。</td>
-<td><a href="https://cloud.tencent.com/document/product/362/5744">创建云硬盘<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/5744">创建云硬盘<a></td>
 </tr>
 <tr>
 <td>提升、降低/退还已有云硬盘的数据备份点配额。</td>
-<td><a href="https://cloud.tencent.com/document/product/362/73666">调整数据备份点配额<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/50027">调整数据备份点配额<a></td>
 </tr>
 <tr>
 <td>查看云硬盘数据备份点信息。</td>
-<td><a href="https://cloud.tencent.com/document/product/362/73667">查看云硬盘信息<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/50602">查看云硬盘信息<a></td>
 </tr>
 <tr>
 <td>使用已有数据备份点恢复云硬盘数据。</td>
-<td><a href="https://cloud.tencent.com/document/product/362/73668">使用数据备份点恢复云硬盘数据<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/50028">使用数据备份点恢复云硬盘数据<a></td>
 </tr>
 <tr>
 <td>将数据备份点转化为快照，以长期保留重要数据备份。</td>
-<td><a href="https://cloud.tencent.com/document/product/362/73669">将数据备份点转为快照<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/50029">将数据备份点转为快照<a></td>
 </tr>
 <tr>
 <td>删除数据备份点。</td>
-<td><a href="https://cloud.tencent.com/document/product/362/73670">删除数据备份点<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/50030">删除数据备份点<a></td>
 </tr>
 </table>
 
