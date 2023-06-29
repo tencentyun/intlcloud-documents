@@ -1,0 +1,5 @@
+
+After connecting your acceleration domain name to CDN, CDN assigns a CNAME record to the domain name. You must configure the CNAME record at your domain name provider. The CDN service will be available after the configuration takes effect. This document provides an example that shows you how to configure a CNAME record. For more information, see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
+You can run the `nslookup` or `dig` command to verify whether the configuration has taken effect. If yes, you can hover over the icon next to the CNAME domain name to view a tooltip, which indicates that the CDN service is in normal operation.
+For example, you can run the `nslookup www.qcdntest.cn` or `dig www.qcdntest.cn` command. If the CNAME domain name is returned, the Tencent Cloud CDN service in in operation.
+<img src="https://qcloudimg.tencent-cloud.cn/raw/8e65d17fd785696b21cad2b091da6c1c.png" width="70%">
