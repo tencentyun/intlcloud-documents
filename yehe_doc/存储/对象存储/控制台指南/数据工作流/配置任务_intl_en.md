@@ -5,7 +5,7 @@ For files already in a bucket, you can create a job for media processing, speech
 >?
 > - Currently, jobs can process 3GP, ASF, AVI, DV, FLV, F4V, M3U8, M4V, MKV, MOV, MP4, MPG, MPEG, MTS, OGG, RM, RMVB, SWF, VOB, WMV, WEBM, MP3, AAC, FLAC, AMR, M4A, WMA, and WAV files. When initiating a media processing request, you must enter the complete file name and extension; otherwise, the format cannot be recognized and processed.
 > - Currently, the job feature can only manipulate **existing files**. To manipulate files during **upload**, use the workflow feature as described in [Configuring Workflow](https://intl.cloud.tencent.com/document/product/436/46408).
-> - After a job is created, feature fees will be charged by CI. For billing details, see [Media Processing Fees](https://cloud.tencent.com/document/product/460/58120).
+> - After a job is created, feature fees will be charged by CI. For billing details, see Media Processing Fees.
 > 
 
 ## Viewing Job
@@ -49,7 +49,7 @@ The audio/video transcoding feature converts an audio/video file bitstream. It c
  - **Destination Path**: Path of the output file.
  - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating Top Speed Codec Transcoding Job
 
@@ -72,7 +72,7 @@ The top speed codec technology improves the subjective image quality of a video 
  - **Destination Path**: Path of the output file.
  - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating Broadcast Media Format Transcoding
 
@@ -95,7 +95,7 @@ This feature produces videos in broadcast media formats such as Apple ProRes and
  - **Destination Path**: Path of the output file.
  - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating Highlights Generation Job
 
@@ -115,7 +115,7 @@ The highlights generation feature accurately extracts highlight segments from a 
  - **Destination Path**: Path of the output file.
  - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating Voice Separation Job
 
@@ -136,7 +136,7 @@ The voice separation feature separates the voice from the background sound in a 
  - **Voice Filename**: Name of the output voice file.
  - **Background Sound Filename**: Name of the output background sound file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating Text-to-Speech Job
 
@@ -156,7 +156,7 @@ The text to speech feature can convert text into natural-sounding and smooth spe
  - **Destination Path**: Path of the output file.
  - **Destination Filename**: Name of the output audio file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating Audio/Video Splicing Job
 
@@ -176,7 +176,7 @@ The video/audio splicing feature adds the specified video/audio segment at the b
  - **Destination Path**: Storage path of the output file.
  - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating Audio/Video Segmentation Job
 
@@ -197,7 +197,7 @@ The audio/video segmentation feature splits the specified audio/video file into 
  - **Destination Path**: Storage path of the output file.
  - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating Video Frame Capturing Job
 
@@ -222,7 +222,7 @@ Video frame capturing is a screenshot feature provided by CI to capture the fram
  - **Destination Path**: Storage path of the video screenshots.
  - **Destination Filename**: Name of the output file. Note that as more than one files are output by **smart video frame capturing**, the output filename must contain the ${Number} parameter as the sequence number of the screenshot. For example, if the destination file path is set to `test-${Number}.jpg` and the job captures two screenshots, the actual names of the output files will be `test-0.jpg` and `test-1.jpg`.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 
 
@@ -252,7 +252,7 @@ Video enhancement is a video image quality improvement feature provided by CI. Y
  - **Destination Path**: Path of the output video.
  - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 
 ## Creating Super Resolution Job
@@ -277,7 +277,7 @@ The super resolution feature reconstructs the details and local features of a vi
  - **Destination Path**: Path of the output video.
  - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating SDR-to-HDR Job
 
@@ -302,7 +302,7 @@ SDR to HDR is a video dynamic range conversion feature provided by CI. You can u
  - **Destination Path**: Storage path of the destination file after the SDR-to-HDR conversion is completed.
  - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 
 ## Creating Video-to-Animated Image Conversion Job
@@ -327,15 +327,14 @@ You can use the video-to-animated image conversion feature to convert a video to
  - **Destination Path**: Storage path of the animated images.
  - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating Intelligent Thumbnail Job
 
 The intelligent thumbnail feature intelligently analyzes the quality, brilliance, and content relevance of video frames by understanding the video content with Tencent Media Lab's advanced AI technologies. Then, it extracts optimal frames to generate thumbnails to make the content more engaging.
 
 >?
-> - The intelligent thumbnail feature is a paid service and billed by the original video duration. For billing details, see [Media Processing Fees](https://cloud.tencent.com/document/product/460/58120).
-> - When this service is used for the first time under an account, CI will issue a free resource pack of 1,000 minutes valid for two months, and any excessive usage and usage after the resource pack expires will be billed.
+> - The intelligent thumbnail feature is a paid service and billed by the original video duration. For billing details, see Media Processing Fees.
 > - Three optimal keyframes will be output through smart analysis of each video file.
 > 
 
@@ -354,22 +353,7 @@ The intelligent thumbnail feature intelligently analyzes the quality, brilliance
 >! As more than one files are output by **intelligent thumbnail**, the output filename must contain the parameter ${Number} as the thumbnail serial number. For example, if the output file path is set to `test-${Number}.jpg`, the actual names of the output files will be `test-0.jpg` and `test-1.jpg`.
 >
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
-
-## Creating Digital Watermark Adding Job
-
-This feature can embed an invisible digital watermark into a video for copyright protection.
-
-#### Directions
-
-1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
-2. Click **Bucket List** on the left sidebar.
-3. Click the name of the bucket that you want to manipulate.
-4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
-5. Select the **Media Processing** tab, select **Copyright Protection > Digital Watermark Adding** as the job type, click **Create Job**, and configure as follows:
-
- - **Source File**: Enter the path of the source file, which must begin with but cannot end with `/`. Different folders are separated with `/`.
- - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queue](https://intl.cloud.tencent.com/document/product/1045/43607).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating Digital Watermark Extraction Job
 
@@ -383,11 +367,7 @@ You can use the media processing service to extract the digital watermark from a
 4. On the left sidebar, select **Data Processing Workflow** and click **Job** to enter the job management page.
 5. Select the **Media Processing** tab, select **Copyright Protection > Digital Watermark Extraction** as the job type, click **Create Job**, and configure as follows:
 ![](https://qcloudimg.tencent-cloud.cn/raw/d06366d7bea0a7b3d612af4f1bd65090.png)
- - **Source File URL**: Enter the path of the source file, which cannot begin or end with `/`.
- - **Destination Bucket**: Select a bucket for which the media processing feature has been enabled in the current region.
- - **Digital Watermark Content**: Enter the digital watermark content for traceability during extraction.
- - **Destination Path**: Storage path of the smart thumbnails.
- - **Destination Filename**: Name of the output file.
+ - **Source File**: Enter the path of the source file, which must begin with but cannot end with `/`. Different folders are separated with `/`.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queue](https://intl.cloud.tencent.com/document/product/1045/43607).
    
 ## Creating Speech Recognition Job
@@ -419,7 +399,7 @@ The speech recognition feature recognizes a recording file and asynchronously re
  - **Filter Modal**: Select whether to filter modal.
  - **Smart Speech Conversion**: After it is enabled, recognized Chinese numbers will be converted to Arabic numbers.
  - **Queue**: Currently, only the default speech recognition queue `queue-speech-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
-  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+  - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 
 ## Creating File Preview Job
@@ -442,7 +422,7 @@ The file preview feature allows you to preview files of nearly 30 types online t
  - **Destination Path**: It is optional. If it is not set, it will be the same as the input file path.
  - **Destination Filename**: The file preview service converts each page of the original file into an image. Therefore, you need to add a placeholder (`${Number}` or `${Page}`) to the output filename to number the output images. The output numbers are the same as the file page numbers. For example, if you want to preview a file with three pages and set the output filename to `output${Number}.jpg`, then three images `output1.jpg`, `output2.jpg`, `output3.jpg` will be output.
  - **Queue**: Currently, only the default file preview queue `queue-doc-process-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
 
 ## Creating Image Processing Job
 
@@ -464,4 +444,4 @@ The image processing feature supports flexible image editing, such as rotation, 
  - **Destination Path**: Storage path of the image processing result.
  - **Destination Filename**: Name of the output file.
  - **Queue**: Currently, only the default queue `queue-1` is supported. For more information, see [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412).
- - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410).
+ - **Queue Callback URL**: Callback URL bound to the queue. You can configure it in the queue in [Common Configuration](https://www.tencentcloud.com/document/product/436/46412).
