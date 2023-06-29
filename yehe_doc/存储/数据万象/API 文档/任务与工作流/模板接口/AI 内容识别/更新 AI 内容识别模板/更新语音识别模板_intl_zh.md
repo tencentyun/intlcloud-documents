@@ -112,7 +112,7 @@ Content-Type: application/xml
 
 | 节点名称（关键字） | 父节点 | 描述                                                | 类型      |
 | :----------------- | :----- | :-------------------------------------------------- | :-------- |
-| Response           | 无     | <a href="https://www.tencentcloud.com/document/product/1045/xxx#Response" target="_blank">同创建语音合成模板接口的 Response</a> | Container |
+| Response           | 无     | <a href="https://www.tencentcloud.com/document/product/1045/50303" target="_blank">同创建语音合成模板接口的 Response</a> | Container |
 
 
 #### 错误码
