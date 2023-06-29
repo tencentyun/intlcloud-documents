@@ -49,7 +49,7 @@
  - **대상 경로**: 출력 파일의 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)을 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## 초고속 고화질 트랜스 코딩 작업 생성
 
@@ -72,7 +72,7 @@
  - **대상 경로**: 출력 파일의 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## 방송 미디어 형식 트랜스 코딩 생성
 
@@ -95,7 +95,7 @@
  - **대상 경로**: 출력 파일의 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## 하이라이트 생성 작업 생성
 
@@ -115,7 +115,7 @@
  - **대상 경로**: 출력 파일의 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## 음성 분리 작업 생성
 
@@ -136,7 +136,7 @@
  - **음성 파일 이름**: 출력 음성 파일의 이름입니다.
  - **배경음 파일 이름**: 출력 배경음 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## TTS 작업 생성
 
@@ -156,7 +156,7 @@ TTS는 텍스트를 자연스럽고 부드러운 음성으로 변환하여 스�
  - **대상 경로**: 출력 파일의 경로입니다.
  - **대상 파일 이름**: 출력 오디오 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## 오디오/비디오 접합 작업 생성
 
@@ -176,7 +176,7 @@ TTS는 텍스트를 자연스럽고 부드러운 음성으로 변환하여 스�
  - **대상 경로**: 출력 파일의 저장 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## 오디오/비디오 분할 작업 생성
 
@@ -197,7 +197,7 @@ TTS는 텍스트를 자연스럽고 부드러운 음성으로 변환하여 스�
  - **대상 경로**: 출력 파일의 저장 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## 비디오 프레임 캡처 작업 생성
 
@@ -222,7 +222,7 @@ TTS는 텍스트를 자연스럽고 부드러운 음성으로 변환하여 스�
  - **대상 경로**: 비디오 스크린샷의 저장 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다. **비디오 프레임 캡처**로 둘 이상의 파일이 출력되므로 출력 파일 이름에는 스크린샷의 시퀀스 번호로 ${Number} 매개변수가 포함되어야 합니다. 예를 들어 대상 파일 경로가 test-${Number}.jpg로 설정되고 작업이 두 개의 스크린샷을 캡처하는 경우 출력 파일의 실제 이름은 test-0.jpg 및 test-1.jpg가 됩니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 
 
@@ -252,7 +252,7 @@ TTS는 텍스트를 자연스럽고 부드러운 음성으로 변환하여 스�
  - **대상 경로**: 출력 비디오의 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 
 ## 초해상도 작업 생성
@@ -277,7 +277,7 @@ TTS는 텍스트를 자연스럽고 부드러운 음성으로 변환하여 스�
  - **대상 경로**: 출력 비디오의 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## SDR to HDR 작업 생성
 
@@ -302,7 +302,7 @@ SDR to HDR은 CI에서 제공하는 비디오 다이내믹 레인지 변환 기�
  - **대상 경로**: SDRtoHDR로의 변환이 완료된 후 대상 파일의 저장 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 
 ## 비디오를 애니메이션 이미지로 변환 작업 생성
@@ -327,7 +327,7 @@ SDR to HDR은 CI에서 제공하는 비디오 다이내믹 레인지 변환 기�
  - **대상 경로**: 애니메이션 이미지의 저장 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## 스마트 썸네일 작업 생성
 
@@ -354,7 +354,7 @@ SDR to HDR은 CI에서 제공하는 비디오 다이내믹 레인지 변환 기�
 >! **스마트 썸네일**로 두 개 이상의 파일이 출력되므로 출력 파일 이름에는 썸네일 일련 번호로 매개변수 ${Number}가 포함되어야 합니다. 예를 들어 출력 파일 경로가 test-${Number}.jpg로 설정된 경우 출력 파일의 실제 이름은 test-0.jpg 및 test-1.jpg가 됩니다.
 >
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## 디지털 워터마크 추가 작업 생성
 
@@ -419,7 +419,7 @@ SDR to HDR은 CI에서 제공하는 비디오 다이내믹 레인지 변환 기�
  - **모달 필터링**: 모달 필터링 여부를 선택합니다.
  - **스마트 음성 변환**: 활성화 후 인식된 중국어 숫자를 아라비아 숫자로 변환합니다.
  - **큐**: 현재 기본 음성 인식 큐 queue-speech-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
-  - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+  - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 
 ## 파일 미리보기 작업 생성
@@ -442,7 +442,7 @@ SDR to HDR은 CI에서 제공하는 비디오 다이내믹 레인지 변환 기�
  - **대상 경로**: 선택 사항입니다. 설정하지 않으면 입력 파일 경로와 동일합니다.
  - **대상 파일 이름**: 파일 미리보기 기능은 원본 파일의 각 페이지를 이미지로 변환합니다. 따라서 출력 이미지에 번호를 지정하려면 출력 파일 이름에 자리 표시자(${Number} 또는 ${Page})를 추가해야 합니다. 출력 번호는 파일 페이지 번호와 동일합니다. 예를 들어 세 페이지의 파일을 미리 보고 출력 파일 이름을 output${Number}.jpg로 설정하려는 경우 세 개의 이미지 output1.jpg, output2.jpg, output3.jpg가 출력됩니다.
  - **큐**: 현재 기본 파일 미리 보기 큐 queue-doc-process-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
 
 ## 이미지 처리 작업 생성
 
@@ -464,4 +464,4 @@ SDR to HDR은 CI에서 제공하는 비디오 다이내믹 레인지 변환 기�
  - **대상 경로**: 이미지 처리 결과의 저장 경로입니다.
  - **대상 파일 이름**: 출력 파일의 이름입니다.
  - **큐**: 현재 기본 큐 queue-1만 지원됩니다. 자세한 내용은 [Queues and Callbacks](https://intl.cloud.tencent.com/document/product/436/46412)를 참고하십시오.
- - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://intl.cloud.tencent.com/document/product/436/46410)의 큐에서 구성할 수 있습니다.
+ - **큐 콜백 URL**: 큐에 바인딩된 콜백 URL입니다. [Common Configuration](https://www.tencentcloud.com/document/product/436/46412)의 큐에서 구성할 수 있습니다.
