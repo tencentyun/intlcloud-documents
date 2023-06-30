@@ -243,7 +243,7 @@ Due to different territory sizes of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td rowspan="44">Europe</td>
+      <td rowspan="43">Europe</td>
       <td rowspan="6">Northern Europe</td>
       <td>Finland</td>
       <td></td>
@@ -269,7 +269,7 @@ Due to different territory sizes of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td rowspan="7">Eastern Europe</td>
+      <td rowspan="6">Eastern Europe</td>
       <td>Estonia</td>
       <td></td>
    </tr>
@@ -283,10 +283,6 @@ Due to different territory sizes of countries around the world, and considering 
    </tr>
    <tr>
       <td>Belarus</td>
-      <td></td>
-   </tr>
-   <tr>
-      <td>Russia</td>
       <td></td>
    </tr>
    <tr>
