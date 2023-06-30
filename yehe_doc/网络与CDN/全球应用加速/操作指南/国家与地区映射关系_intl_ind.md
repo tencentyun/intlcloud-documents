@@ -231,7 +231,7 @@ Karena perbedaan luas wilayah antarnegara di seluruh dunia, dan pertimbangan tam
       <td></td>
    </tr>
    <tr>
-      <td rowspan="44">Eropa</td>
+      <td rowspan="43">Eropa</td>
       <td rowspan="6">Eropa Utara</td>
       <td>Finlandia</td>
       <td></td>
@@ -257,7 +257,7 @@ Karena perbedaan luas wilayah antarnegara di seluruh dunia, dan pertimbangan tam
       <td></td>
    </tr>
    <tr>
-      <td rowspan="7">Eropa Timur</td>
+      <td rowspan="6">Eropa Timur</td>
       <td>Estonia</td>
       <td></td>
    </tr>
@@ -271,10 +271,6 @@ Karena perbedaan luas wilayah antarnegara di seluruh dunia, dan pertimbangan tam
    </tr>
    <tr>
       <td>Belarusia</td>
-      <td></td>
-   </tr>
-   <tr>
-      <td>Rusia</td>
       <td></td>
    </tr>
    <tr>
