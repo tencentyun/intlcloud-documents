@@ -274,10 +274,6 @@ Devido aos tamanhos territoriais diferentes de países ao redor do mundo e consi
       <td></td>
    </tr>
    <tr>
-      <td>Rússia</td>
-      <td></td>
-   </tr>
-   <tr>
       <td>Ucrânia</td>
       <td></td>
    </tr>
