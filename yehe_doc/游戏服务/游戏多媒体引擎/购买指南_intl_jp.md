@@ -16,23 +16,23 @@
    <tr>
       <td  rowspan="5">音声PCUによる課金</td>
       <td  rowspan="5">普通音質</td>
-      <td><5000</td>
-      <td>3000</td>
+      <td> ≤ 5,000</td>
+      <td>3,000</td>
    </tr>
    <tr>
-      <td>5000≤PCU<50000</td>
-      <td>1870</td>
+      <td>5,000 < PCUs ≤ 50,000</td>
+      <td>1,870</td>
    </tr>
    <tr>
-      <td>50000≤PCU<100000</td>
-      <td>1560</td>
+      <td>50,000 < PCUs ≤ 100,000</td>
+      <td>1,560</td>
    </tr>
    <tr>
-      <td>100000≤PCU<300000</td>
-      <td>1250</td>
+      <td>100,000 < PCUs ≤ 300,000</td>
+      <td>1,250</td>
    </tr>
    <tr>
-      <td>≥300000</td>
+      <td> > 300,000</td>
       <td>コンサルティング事業</td>
    </tr>
 </table>
