@@ -2,7 +2,7 @@
 
 This document describes how to enable or disable certificate ignoring, a feature provided by the SSL Certificate Service to ignore or re-receive the messages of a specified SSL certificate for effective certificate message management.
 
-> **Notes**
+>!
 > 
 > You can ignore only certificates that will expire soon.
 > 

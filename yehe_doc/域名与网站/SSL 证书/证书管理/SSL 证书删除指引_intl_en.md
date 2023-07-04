@@ -6,7 +6,7 @@ This document describes how to permanently delete an expired or revoked SSL cert
 - The SSL certificate has expired or been revoked or its review has been canceled.
   
 
-   > **Notes**
+   >?
    > 
    >   - You can delete an expired certificate at any time.
    >   - If a certificate has not expired, you must revoke it before deleting it. Revoking a certificate is deregistering an issued certificate from the issuing authority. After the certificate is revoked, the encryption effect is lost and the browser does not trust the certificate any more. For detailed directions, see [Revoking an SSL Certificate](https://intl.cloud.tencent.com/document/product/1007/44062).
@@ -15,7 +15,7 @@ This document describes how to permanently delete an expired or revoked SSL cert
 - You can delete a third-party certificate manually uploaded to the SSL Certificate Service for management at any time.
   
 
-   > **Notes**
+   >!
    > 
    >   - Make sure that the SSL certificate has not been deployed on any Tencent Cloud product such as WAF and CDN.
    >   - If a certificate has been deployed on a Tencent Cloud product, deleting it may interrupt the business of that product.

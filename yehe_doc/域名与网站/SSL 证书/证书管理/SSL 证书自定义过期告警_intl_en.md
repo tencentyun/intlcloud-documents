@@ -2,7 +2,7 @@
 
 This document describes how to configure alarms for the `e79vbLDZ` SSL certificate instance to have alarms sent to specified recipients via SMS and email when it will expire within 30 calendar days.
 
-> **Notes**
+>!
 > 
 > You can set the number of days, interval, and recipients to receive alarm messages for the expiration of the SSL certificate.
 > 
@@ -44,7 +44,7 @@ In the **Basic Info** module, enter the relevant information.
   - **"Metric alarm" condition**: Set the condition to receive only one alarm message if the expiration time is within 30 days under the statistical period of 1 minute.
     
 
-      > **Notes**
+      >!
       > 
       > You can set the alarm trigger condition as needed.
       > 
@@ -54,7 +54,7 @@ In the **Basic Info** module, enter the relevant information.
 
 In the **Configuring Alarm Notification** module, preferably set **Notification Template** to **Select template** and add [Recipient]/[Recipient Group] of the alarm. The figure takes the preset notification template as an example:
 
-> **Notes**
+>!
 > 
 > If no templates are created, click **Create template** to create one. Then, you can specify the recipient to receive the expiration alarm.
 > 
@@ -69,7 +69,7 @@ In the **Configuring Alarm Notification** module, preferably set **Notification 
 3. After the configuration, if the `e79vbLDZ` SSL certificate instance will expire within 30 calendar days, the specified recipient will be notified via SMS and email.
    
 
-   > **Notes**
+   >!
    > 
    >  For more information, see [Cloud Monitor](https://www.tencentcloud.com/document/product/248) documentation.
    > 

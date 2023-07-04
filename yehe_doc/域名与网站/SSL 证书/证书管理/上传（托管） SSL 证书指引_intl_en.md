@@ -4,7 +4,7 @@ You can upload all your SSL certificates to the SSL Certificate Service console 
 
 ## Directions
 
-> **Notes**
+>?
 > 
 > If your certificate failed to be uploaded, troubleshoot as instructed in ["DNS Query Failed. Check Whether the Certificate Conforms to the Standard" Is Prompted During Certificate Upload](https://www.tencentcloud.com/document/product/1007/53582).
 > 
@@ -16,7 +16,7 @@ You can upload all your SSL certificates to the SSL Certificate Service console 
 2. In the **Upload Certificate** pop-up window, select **International standard** and enter the relevant information as shown below:
    
 
-   > **Notes**
+   >?
    > 
    >   - If you download the certificate from Tencent Cloud, upload it by using files in the Nginx folder.
    >   - If you download the certificate from another service provider, contact it for assistance.
@@ -42,7 +42,7 @@ You can upload all your SSL certificates to the SSL Certificate Service console 
   - **Tag**: Select your tag key and tag value to better manage existing Tencent Cloud resources by category.
     
 
-      > **Notes**
+      >?
       > 
       > You can add a tag as instructed in [Querying Resources by Tag](https://intl.cloud.tencent.com/document/product/651/32582).
       > 
@@ -58,7 +58,7 @@ You can upload all your SSL certificates to the SSL Certificate Service console 
 2. In the **Upload Certificate** pop-up window, select **Chinese SM (SM2)** and enter the relevant information as shown below:
    
 
-   > **Notes**
+   >?
    > 
    >   - If you download the certificate from Tencent Cloud, upload it by using files in the Nginx folder.
    >   - If you download the certificate from another service provider, contact it for assistance.
@@ -95,7 +95,7 @@ You can upload all your SSL certificates to the SSL Certificate Service console 
     - The private key starts with "-----BEGIN PRIVATE KEY-----" and ends with "-----END PRIVATE KEY-----".
       
 
-         > **Notes**
+         >?
          > 
          > A private key file with an extension such as .key or .pem is provided by default for a DNSPod Chinese SM certificate. It is required for both the signature private key and encryption private key.
          > 
@@ -103,7 +103,7 @@ You can upload all your SSL certificates to the SSL Certificate Service console 
   - **Tag**: Select your tag key and tag value to better manage existing Tencent Cloud resources by category.
     
 
-      > **Notes**
+      >?
       > 
       > You can add a tag as instructed in [Querying Resources by Tag](https://intl.cloud.tencent.com/document/product/651/32582).
       > 

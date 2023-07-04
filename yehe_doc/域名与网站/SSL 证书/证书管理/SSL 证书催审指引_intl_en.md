@@ -4,7 +4,7 @@ This document describes how to send a reminder in the SSL Certificate Service co
 
 You can send a reminder for the following certificates:
 
-> **Notes**
+>?
 > 
 >  Currently, you cannot send a reminder for DNSPod Chinese SM certificates, and all you need to do is wait for the approval after submitting the information.
 > 
@@ -77,7 +77,7 @@ You can send a reminder for the following certificates:
 3. On the **Certificate Application** page, click **Send reminder** to accelerate the review progress as shown below. The following takes a SecureSite OV certificate as an example:
    
 
-   > **Notes**
+   >?
    > 
    >   - Validating a DV certificate usually takes one business day, and the **reminder** option will become available 24 hours after the information is submitted.
    >   - Reviewing an OV certificate usually takes 3–5 business days, and the **reminder** option will become available 72 hours after the confirmation letter is uploaded.
