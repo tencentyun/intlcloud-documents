@@ -15,7 +15,7 @@
 |Usage End Time	|产品服务结束使用时间	|
 |Instance ID	|账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID	|
 |Instance Name	|用户在控制台为资源设置的名称，如果未设置，则默认为空	|
-|Instance Type	|购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。正常的实例展示默认为不展示	|
+|Instance Type	|购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例类型默认展示为"-"	|
 |Project Name	|资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目	|
 |Region	|资源所属地域，例如华南地区（广州）	|
 |Availability Zone	|资源所属可用区，例如广州三区	|
@@ -28,6 +28,7 @@
 |Component Usage Unit	|组件用量对应的单位	|
 |Usage Duration	|资源使用的时长	|
 |Duration Unit	|资源使用时长的单位	|
+|Reserved Instance                           | 用量匹配到的RI ID，比如：s2-RI-1234567890                    |
 |Original Cost	|资源的原始总价，等于刊例价 * 用量 * 时长	|
 |RI Deduction (Duration)	|预留实例抵扣的使用时长，时长单位与被抵扣的时长单位保持一致	|
 |RI Deduction (Cost)	|本产品或服务使用预留实例抵扣的组件原价金额	|
