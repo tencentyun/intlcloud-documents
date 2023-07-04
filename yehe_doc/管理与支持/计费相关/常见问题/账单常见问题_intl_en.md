@@ -1,3 +1,9 @@
+### What are the fields "Bill Number", "Bill Date", and "Due Date" in PDF bills?
+
+- Bill Number: The ID of a bill, which is composed of bill year, bill month, and a 10-digit random number.
+- Bill Date: The 10th day of the month in which the PDF bill file is generated. If the bill has been rerun (for example, if the bill was adjusted), this field indicates the date when the new bill file is generated.
+- Due Date: The 10th day of the next month following the Bill Date. The due date may be postponed as otherwise specified.
+
 ### Why do I have a negative bill?
 
 Charges are indicated by positive numbers, and refunds, including refunds for downgrading, are indicated by negative numbers. For some products or projects, your refund amount during a billing period may be more than the amount of charges, hence the negative bill.
