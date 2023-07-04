@@ -12,7 +12,7 @@ Windows Server 2008不支持该操作，需要修改对应文件。
 2. 修改内容如下：
    
 
-   > **说明**
+   >?
    > 
    >   - 以 “tencent.com” 域名为例。
    >   - 将 `<binding protocol="https" bindingInformation="*:443:" />` 修改为

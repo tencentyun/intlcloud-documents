@@ -9,7 +9,7 @@ You have registered a domain at your registrar.
 
 ## Directions
 
-> **Notes**
+>?
 > 
 >  You can skip steps 1 and 2 if your domain has been hosted in the DNSPod console.
 > 
@@ -23,7 +23,7 @@ You have registered a domain at your registrar.
 3. In the displayed input box, enter the target second-level domain and click **OK**.
    
 
-   > **Notes**
+   >?
    > 
    >   - DNSPod does not support adding subdomains other than second-level domains. For example, it supports the second-level domain `dnspod.cn` but not the third-level domain `bbs.dnspod.cn`.
    >   - If you are prompted that the domain has been added by another user, see [Domain Retrieval](https://docs.dnspod.cn/dns/5f4889498ae73e11c5b01c12/).
@@ -32,7 +32,7 @@ You have registered a domain at your registrar.
 ### Step 2. Modify the DNS server of the domain
 
 If "DNS Servers Not Correctly Set" is prompted for the added domain, you need to change the DNS server of the domain to that of DNSPod to allow for DNS query and hosting in DNSPod.
-> **Notes**
+>?
 > 
 > - DNSPod will query the corresponding settings document based on your registrar information. You can click the prompt box and view the settings document to complete the change.
 > - If the settings document is unavailable or cannot be queried, we recommend that you contact your registrar.
@@ -45,7 +45,7 @@ If "DNS Servers Not Correctly Set" is prompted for the added domain, you need to
 2. In the **Apply for SSL certificate** pop-up window, select **Free SSL Certificate** and click **Apply (Free)** as shown below:
    
 
-   > **Notes**
+   >?
    > 
    > Only second-level domains and their subdomains are supported for a free certificate. If you need to use a wildcard domain, get a paid SSL certificate.
    > 
@@ -55,7 +55,7 @@ If "DNS Servers Not Correctly Set" is prompted for the added domain, you need to
 3. DNSPod will validate your domain automatically, and you only need to wait for the certificate issue.
    
 
-   > **Notes**
+   >?
    > 
    > Tencent Cloud will complete the SSL certificate review within one business day and notify you of the result through SMS, email, and Message Center.
    > 

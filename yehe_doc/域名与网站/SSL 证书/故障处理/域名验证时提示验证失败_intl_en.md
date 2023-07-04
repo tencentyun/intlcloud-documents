@@ -33,7 +33,7 @@ The system has noticed the validation value but has not issued the certificate.
 
 **View Domain Validation Status** is clicked too many times and thus limited by the CA.
 
-> **Notes**
+>!
 > 
 > If a CAA record for a non-Tencent Cloud CA is configured for the domain, an SSL certificate cannot be issued for the domain properly. Before domain validation, check whether a CAA record is added for the domain and remove it if any.
 > 

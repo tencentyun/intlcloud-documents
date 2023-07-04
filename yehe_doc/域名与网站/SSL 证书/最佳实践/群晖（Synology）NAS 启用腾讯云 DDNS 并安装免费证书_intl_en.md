@@ -2,7 +2,7 @@
 
 This document describes how to enable Tencent Cloud's dynamic DNS (DDNS) in Synology NAS, so as to access Synology NAS with a public IP over the public network by using a domain.
 
-> **Notes**
+>?
 > 
 >  In the process, fees may be incurred by domain purchase, but enabling DDNS and applying for a certificate are free of charge.
 > 
@@ -25,7 +25,7 @@ This document describes how to enable Tencent Cloud's dynamic DNS (DDNS) in Syno
 
 On the [TencentCloud API key](https://console.dnspod.cn/account/token/apikey) page, get the **SecretId** and **SecretKey**.
 
-> **Notes**
+>!
 > 
 > - Your API key represents your account identity and granted permissions, with which all Tencent Cloud resources under your account can be manipulated.
 > - For the security of your assets and services, store your keys safely and change them regularly. Do not upload or share them via any method (such as GitHub).
@@ -47,7 +47,7 @@ On the [TencentCloud API key](https://console.dnspod.cn/account/token/apikey) pa
   - **Get a certificate from Tencent Cloud and set it as default**: After this option is selected, the system will automatically apply for a free TrustAsia SSL certificate for you and replace the default NAS SSL certificate with it.
     
 
-      > **Notes**
+      >?
       > 
       > Click **Test Connection** to test the connection. If the **Status** is **Normal**, the connection is established successfully.
       > 
@@ -55,7 +55,7 @@ On the [TencentCloud API key](https://console.dnspod.cn/account/token/apikey) pa
 3. Click **OK**. Wait for the DNS record to take effect. Then, you can use the domain to access your Synology NAS.
    
 
-   > **Notes**
+   >?
    > 
    > The DNS record usually takes 10 minutes to take effect. 
    > 

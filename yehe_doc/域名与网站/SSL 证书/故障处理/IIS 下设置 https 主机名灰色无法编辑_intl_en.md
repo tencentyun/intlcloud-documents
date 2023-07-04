@@ -12,11 +12,10 @@ Windows Server 2008 does not support the operation, and you need to modify the c
 2. Modify the file content as follows:
    
 
-   > **Notes**
+   >?
    > 
    >   - Take the `tencent.com` domain as an example.
    >   - Change `<binding protocol="https" bindingInformation="*:443:" />` to `<binding protocol="https" bindingInformation="*:443:tencent.com" />`.
-  
    >   - If you cannot modify the file directly, modify it with the admin permission, or copy the file to the desktop for modification and replace the original file.
 
    ``` xml

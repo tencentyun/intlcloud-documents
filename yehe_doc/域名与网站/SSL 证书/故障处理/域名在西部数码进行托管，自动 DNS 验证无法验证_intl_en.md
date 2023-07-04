@@ -9,7 +9,7 @@ You can solve the issue in either of the following ways:
 - Point the DNS server address of the domain to the DNSPod server address and perform DNS query in Tencent Cloud. 
   
 
-   > **Notes**
+   >?
    > 
    > Different DNSPod plans correspond to different DNS addresses.
    > 
