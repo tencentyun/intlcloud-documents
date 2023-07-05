@@ -12,14 +12,14 @@ The rollback feature can roll back databases or tables to a specified point in t
 3. Establish a source-replica relationship between the rollback instance and MySQL source instance, set the rollback time, and specify the databases or tables to be rolled back.
 4. Replicate the rollback databases or tables to the MySQL source instance.
 
-## Feature limits
+## Feature Limits
 - Single-node instances of the cloud disk edition cannot be rolled back.
 - Only source instances can be rolled back. Read-only instances and disaster recovery instances cannot be rolled back.
 - Only specified databases or tables can be rolled back. The databases or tables after rollback will be renamed and replicated to the source instance.
-- MySQL 5.6, 5.7, and 8.0 support rollback. If you are using MySQL 5.5, we recommend you upgrade to a later version as instructed in [Upgrading Database Engine](https://intl.cloud.tencent.com/document/product/236/8126).
+- MySQL 5.6, 5.7, and 8.0 support rollback. If you are using MySQL 5.5, we recommend you upgrade to a later version as instructed in [Upgrading Database Engine](https://www.tencentcloud.com/document/product/236/8126).
 
-## Notes
-- The rollback feature is subject to the backup cycle and retention days set for automatic backup. It enables data rollback based on data backup and binlog backup according to the configured retention days and backup cycle. For the backup cycle settings, see [Backing up Databases](https://intl.cloud.tencent.com/document/product/236/37796). To ensure MySQL data security, set the automatic backup cycle to at least twice a week.
+## Note
+- The rollback feature is subject to the backup cycle and retention days set for automatic backup. It enables data rollback based on data backup and binlog backup according to the configured retention days and backup cycle. For the backup cycle settings, see [Backing up Databases](https://www.tencentcloud.com/document/product/236/37796). To ensure MySQL data security, set the automatic backup cycle to at least twice a week.
 - If a monthly subscribed instance has not expired but your account has overdue payments, the backup service will be downgraded with rollback disabled. If you need to roll it back, top up your account to a positive balance.
 - If the database or table to be rolled back does not exist or has been dropped, you need to log in to the TencentDB instance and create one first before performing rollback in the console.
 - If the cold backup before rollback does not contain the table, the rollback will fail.
@@ -28,7 +28,7 @@ The rollback feature can roll back databases or tables to a specified point in t
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), select one or multiple target instances in the instance list, and select **More** > **Roll Back**.
 >?
 >- If rollback is to be performed on only one instance, you can also go to the instance management page and click **Roll Back** in the top-right corner.
->- Up to five rollback tasks can be initiated at a time under the same `APPID`.
+>- Up to 5 rollback tasks can be initiated at a time under the same APPID.
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/6adc4d0454725e4491cc82eecb930242.png)
 2. On the rollback page, select the original database or table and click **Next: set the rollback time and database table name**.
@@ -54,10 +54,3 @@ The rollback feature can roll back databases or tables to a specified point in t
 ![](https://main.qcloudimg.com/raw/b5206b3c23d532553fb54dfc4fe7bfd0.png)
 5. Once the rollback is completed, go to **Database Management** > **Database List** to view the new databases or tables after rollback in the original instance.
 ![](https://main.qcloudimg.com/raw/9b939d9a6a7da59092df0051f452b5cd.png)
-
-
-
-
-
-
-

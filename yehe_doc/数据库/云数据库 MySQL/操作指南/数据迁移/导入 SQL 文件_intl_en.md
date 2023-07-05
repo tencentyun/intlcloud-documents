@@ -1,9 +1,9 @@
 ## Overview
-TencentDB for MySQL supports importing SQL files in the console. This feature allows you to execute SQL statements in the selected database. You can also use this feature to create databases/tables and change table structure so as to initialize or modify the instance.
+TencentDB for MySQL supports importing SQL files via the console, allowing you to execute SQL statements in the selected database. You can also use this feature to create databases/tables and change table structures to initialize or modify the instance.
 >?Only two-node and three-node TencentDB for MySQL instances support importing SQL files.
 
 ## Directions
-1. Log in to the [TencentDB for MySQL console] (https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to access the instance management page.
 2. On the instance management page, select **Database Management** > **Database List** and click **Data Import**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/eb01b7c4ff2ad548955f54d0a17971e7.png)
 3. In the pop-up window, click **Add File** to import the file. After the upload is completed, click **Next**.
@@ -18,8 +18,8 @@ TencentDB for MySQL supports importing SQL files in the console. This feature al
 4. On the **Select the target database** page, select the target database and click **Next**.
 5. On the confirmation page, confirm that the imported data is correct, enter the account password, and click **Import**.
 >!
->- The import cannot be rolled back. Confirm the import information.
->- If you forgot the password, reset it as instructed in [Resetting Password](https://intl.cloud.tencent.com/document/product/236/31901).
+>- The import cannot be rolled back. Confirm the import information before proceeding.
+>- If you forgot the password, reset it as instructed in [Resetting Password](https://www.tencentcloud.com/document/product/236/31901).
 > 
 ![](https://main.qcloudimg.com/raw/e21ccbe6c1f0a95cd46b4387fea1fab1.png)
 

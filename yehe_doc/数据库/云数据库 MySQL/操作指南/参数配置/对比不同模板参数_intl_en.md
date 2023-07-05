@@ -1,4 +1,3 @@
-
 You can compare custom parameter templates with other custom templates or default templates to view their differences in the TencentDB for MySQL console.
 
 ## Directions
