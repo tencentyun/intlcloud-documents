@@ -1,5 +1,5 @@
 ### Red Hat Enterprise Linux 이미지를 사용하려면 어떻게 해야 합니까?
-Red Hat Enterprise Linux 이미지는 베타 테스트 중입니다. 베타에 참여하려면 [티켓 제출](https://cloud.tencent.com/apply/p/2yj9npvw8lq)하여 신청할 수 있습니다.
+Red Hat Enterprise Linux 이미지는 베타 테스트 중입니다. 베타에 참여하려면 [티켓 제출](https://console.intl.cloud.tencent.com/workorder/category)하여 신청할 수 있습니다.
 
 ### Red Hat Enterprise Linux 이미지는 어떤 태그를 제공합니까? 어떤 인스턴스 유형을 지원합니까?
 
