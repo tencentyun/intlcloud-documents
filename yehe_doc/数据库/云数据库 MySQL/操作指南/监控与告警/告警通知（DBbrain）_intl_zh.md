@@ -1,3 +1,4 @@
+
 本文为您介绍在 MySQL 控制台查看异常告警（DBbrain）消息的操作。
 
 [异常告警（DBbrain）](https://intl.cloud.tencent.com/document/product/1035/37177)通知服务为用户实时推送 MySQL 实例异常告警消息，方便用户及时便捷地了解数据库异常诊断问题。
@@ -14,6 +15,5 @@
 ### 方式二
 登录 [MySQL控制台](https://console.cloud.tencent.com/cdb)，在左侧导航选择**实例列表**、**任务列表**、**参数模板**、**回收站**或**置放群组**页，在右上角单击**异常告警**，可展开异常告警历史消息列表，按钮旁边展示了用户账号下实例所产生的告警问题数量。
 ![](https://main.qcloudimg.com/raw/18bda2b422ce5c221001f885bd8279a4.png)
-
 在展开的异常告警历史消息列表，可以查看到所有被推送过的异常告警历史消息，支持切换地域查看，单击每条告警消息，可查看各异常告警事件的异常诊断详情。
 ![](https://main.qcloudimg.com/raw/b2fcff416f3db287aa8b44b536bd33bd.png)

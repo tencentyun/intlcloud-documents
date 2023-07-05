@@ -1,9 +1,7 @@
-
 云数据库 MySQL 实例备份文件默认可以通过公网或内网进行下载，当您需要对下载进行限制时，可以通过下载配置进行相应的调整。
->?
->- 数据库备份下载配置目前支持的地域：
->广州、上海、北京、深圳、成都、重庆、南京、中国香港、多伦多、新加坡、硅谷、法兰克福、首尔、孟买、曼谷、莫斯科、东京。
-
+>?数据库备份下载配置目前支持的地域：
+>广州、上海、北京、深圳、成都、重庆、南京、中国香港、北京金融、上海金融、深圳金融、多伦多、新加坡、硅谷、法兰克福、首尔、孟买、曼谷、莫斯科、东京。
+>
 
 ## 设置备份下载规则
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在左侧导航选择**数据库备份**页，在上方选择地域。
@@ -14,13 +12,13 @@
 3. 在弹出页面，配置下载详情，单击**确定**。
    - 外网下载：
      - 开启：外网下载开启时，无法对下载条件进行设置。
-     - 关闭：外网下载关闭时，可以对下载条件进行设置，设置条件包含 IP、VPC。
+     - 关闭：外网下载关闭时，可以对内网下载条件进行设置，设置条件包含 IP、VPC。
    - 下载条件设置：
      - 当条件对应的条件值为空时，代表不使用该条件进行限制。
      - IP 地址条件值使用 `,` 进行分割。
      - IP 条件支持 IP 地址以及 IP 地址段作为条件值。
      - 当 IP、VPC 条件均为空时，内网下载不受限制。
-![](https://qcloudimg.tencent-cloud.cn/raw/c2e1481c2a14a5ad8b3dde4819f783c1.png)
+     ![](https://qcloudimg.tencent-cloud.cn/raw/c2e1481c2a14a5ad8b3dde4819f783c1.png)
 4. 配置完成后，返回**下载配置**页可查看生效的条件。
 ![](https://qcloudimg.tencent-cloud.cn/raw/cb4ac45dcde8a57610b0eaec9075c6cb.png)
 
@@ -33,7 +31,7 @@
 
 ### 给子账号授权
 1. 以主账号身份登录 [访问管理控制台](https://console.cloud.tencent.com/cam)，在用户列表选择对应子用户，单击**授权**。
-![img](https://qcloudimg.tencent-cloud.cn/raw/89d7cf063bd376a0cc4f4db0c78e7e56.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/89d7cf063bd376a0cc4f4db0c78e7e56.png)
 2. 在弹出的对话框，选择 **QcloudCDBFullAccess云数据库（CDB）全读写访问权限**预设策略，单击**确定**，即可完成子用户授权。
 ![](https://qcloudimg.tencent-cloud.cn/raw/0819ca9a1a81fc00968f0a263dc7727e.png)
 
@@ -108,7 +106,7 @@ qcs::service_type::account:resource
    - 服务（Service）：选择云数据库 MySQL。
    - 操作（Action）：选择 MySQL 数据库设置下载备份规则的 API，请参见 [API 文档](https://intl.cloud.tencent.com/document/product/236/43327)。
    - 资源（Resource）：请参见 [资源描述方式](https://intl.cloud.tencent.com/document/product/598/10606)，输入`*`，表示可以设置所在地域 MySQL 实例的备份下载规则。
-![](https://qcloudimg.tencent-cloud.cn/raw/5372ae1d2ac16ff63b63fbf175f3fccf.png)
+   ![](https://qcloudimg.tencent-cloud.cn/raw/5372ae1d2ac16ff63b63fbf175f3fccf.png)
 4. 在编辑策略页面，按命名规范，输入“策略名称”（例如 BackupDownloadRestriction）和“描述”后，单击**完成**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/3c5454e0da412c0e12beebb4b045979d.png)
 5. 返回策略列表，即可查看刚创建的自定义策略。

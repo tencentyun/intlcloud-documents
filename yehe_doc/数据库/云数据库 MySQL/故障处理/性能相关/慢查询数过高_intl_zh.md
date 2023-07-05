@@ -1,5 +1,8 @@
 ## 现象描述
-慢查询现象出现的时候，一般伴随着多个监控指标同时飙升，如 CPU 使用率、慢查询数量。
+慢查询现象出现的时候，一般伴随着多个监控指标同时飙升，例如：CPU 使用率、慢查询数量。
+>?可在**实例管理**页 > **实例监控**下查询实例的 CPU 使用率、慢查询数情况。
+>如上图中，当慢查询出现的时候，CPU 使用率突增到了 150%，慢查询的指标也出现了明显上涨。
+
 
 ## 可能原因
 通常情况下是 SQL 语句的执行效率不够高，导致大量的请求堆积在云数据库 MySQL 中，常见原因有两个：
@@ -21,4 +24,4 @@
 ![](https://main.qcloudimg.com/raw/f72dcf38d05fc7381007502e930f3014.png)
 
 ### [措施2：提升云数据库 MySQL 配置](id:cs2)
-查看各规格对应的 [QPS 官方压测数据](https://intl.cloud.tencent.com/document/product/236/8842)，与当前实例的 QPS 数据进行比较，调整对应的 [MySQL CPU 和内存规格](https://intl.cloud.tencent.com/document/product/236/19707)。
+查看各规格对应的 [QPS 官方压测数据](https://intl.cloud.tencent.com/document/product/236/45606)，与当前实例的 QPS 数据进行比较，调整对应的 [MySQL CPU 和内存规格](https://intl.cloud.tencent.com/document/product/236/19707)。

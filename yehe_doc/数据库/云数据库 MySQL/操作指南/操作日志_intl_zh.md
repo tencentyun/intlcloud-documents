@@ -25,10 +25,8 @@
 <tr>
 <td>回档日志</td><td>记录回档任务的运行状态和进展</td></tr>
 </tbody></table>
-<img src="https://qcloudimg.tencent-cloud.cn/raw/eb38248f51697df8b79798e02690f426.png"  style="margin:0;">
-
-3. 在慢日志下载页面，单击**操作**列的**下载**下载慢日志。
-4. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://www.tencentcloud.com/document/product/213/10517)中，运用 wget 命令进行内网高速下载，更高效。
+3. 在慢日志下载页面，单击**操作**列的**下载**，下载慢日志。
+4. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://www.tencentcloud.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)中，运用 wget 命令进行内网高速下载，更高效。
 >?
 >- 若日志大小为0KB，则无法下载。
 >- 您也可以选择**本地下载**直接下载，但耗时较多。

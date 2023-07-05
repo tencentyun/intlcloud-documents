@@ -1,3 +1,4 @@
+
 ## Feature Overview
 This feature speeds up the creation of secondary index. After the feature is enabled, secondary indexes can be concurrently sorted in a temp table using multiple threads. The feature also optimizes the operation of locking the flush list when loading bulk data, effectively reducing the time consumed by CREATE INDEX and the impact on concurrent DML operations.
 
@@ -23,11 +24,10 @@ When the feature is disabled, the operation takes 4,395 seconds; when the featur
 
 ## Use Instructions
 Use the `innodb_fast_ddl` parameter to enable or disable this feature.
-Use the `innodb_parallel_merge_threads` parameter to control the number of concurrent threads used to sort secondary indexes in a temp table. The default value is 8 and the maximum value is 32.
 
-| Parameter                                  | Effective Immediately | Type    | Default Value | Valid Values/Value Range      | Description                                                         |
+| Parameter | Effective Immediately | Type | Default Value | Valid Values/Value Range | Description |
 | ----------------------------- | ---- | ------- | ---- | ---------- | ---------------------------- |
-| innodb_fast_ddl               | Yes  | bool    | OFF  | {ON,OFF}   | Enable or disable FAST DDL           |
-| innodb_parallel_merge_threads | Yes  | Integer | 8    | 1 - 32       | Control the number of concurrent threads used to sort secondary indexes in a temp table |
+| innodb_fast_ddl | Yes | bool | OFF | {ON,OFF} | Enable or disable FAST DDL |
 
->?At present, you can't directly modify the parameter values of the above parameters. If you need to modify the parameter values, you can [Submit a ticket](https://console.cloud.tencent.com/workorder/category) for modification.  
+>?Currently, you cannot directly modify the values of the above parameters. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>

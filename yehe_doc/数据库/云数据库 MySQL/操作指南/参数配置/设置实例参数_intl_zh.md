@@ -13,6 +13,8 @@
 2. 选择**数据库管理** > **参数设置**页，单击**批量修改参数**。
 主实例界面如下：
 ![](https://qcloudimg.tencent-cloud.cn/raw/0236dc88558f16937f71daca3e2d8d0f.png)
+只读实例界面如下：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/fjTY752_61.png)
 3. 在**参数运行值**列，选择需要修改的参数进行修改，确认无误后，单击**确认修改**。
 ![](https://qcloudimg.tencent-cloud.cn/raw/1f904a228aa0ee6bb28f870f3238396c.png)
 4. 在弹出的对话框，选择参数任务的**执行方式**，单击**确定**。

@@ -1,11 +1,10 @@
-
 ## 现象描述
 云数据库 MySQL 对应的默认备库、灾备实例、只读实例均采用 MySQL 原生 binlog 复制技术，当数据复制方式为异步复制或半同步复制时，都有可能发生延迟。
 
 ## 故障影响
 - 若 [备库](https://intl.cloud.tencent.com/document/product/236/38328) 存在延迟，会导致主备实例无法在短时间内完成切换，进而影响业务无法在短时间内恢复正常。
 - 若 [灾备实例](https://intl.cloud.tencent.com/document/product/236/7272) 存在延迟，在堆积的 binlog 未应用完之前，灾备实例将无法顺利升级为主实例，在此期间业务的连续性会因此受到影响。
-- 若读业务对数据一致性有较高要求，[只读组](https://intl.cloud.tencent.com/document/product/236/11361#.E9.85.8D.E7.BD.AE.E5.8F.AA.E8.AF.BB.E5.AE.9E.E4.BE.8B-ro-.E7.BB.84) 可以设置延迟剔除策略，当只读实例与主实例延迟时间超过阈值，对应的只读实例会被自动剔除，从而导致读业务无法正常访问只读实例。
+- 若读业务对数据一致性有较高要求，[只读组](https://intl.cloud.tencent.com/document/product/236/11361) 可以设置延迟剔除策略，当只读实例与主实例延迟时间超过阈值，对应的只读实例会被自动剔除，从而导致读业务无法正常访问只读实例。
 
 ## 可能原因
 - **无主键或二级索引**
@@ -55,11 +54,11 @@
 ### [实例规格过小](id:slgggx)
 1. 建议只读实例、灾备实例规格大于等于主实例，实例规格可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 的实例列表查看。
 2. 若只读实例、灾备实例承载了大量的分析类业务导致实例负载过高，需将其实例规格升级至合适的配置或者对其性能低效的 SQL 进行优化。
- - 优化低效 SQL 请参见 [SQL 优化](https://intl.cloud.tencent.com/document/product/1035/36040)。
+ - 优化低效 SQL 请参见 [SQL 优化](https://intl.cloud.tencent.com/document/product/1035/48635)。
  - 升级实例规格请参见 [调整数据库实例规格](https://intl.cloud.tencent.com/document/product/236/19707)。
 
 ### [Waiting for table metadata lock 报错](id:wftmlbc)
-建议使用 [数据库智能管家 DBbrain](https://intl.cloud.tencent.com/document/product/1035/36036) 对实际业务和实例进行诊断，排查慢查询等指标，来定位耗时的大事务。
+建议使用 [数据库智能管家 DBbrain](https://intl.cloud.tencent.com/document/product/1035/48640) 对实际业务和实例进行诊断，排查慢查询等指标，来定位耗时的大事务。
 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/event)，在异常告警页，选择对应数据库和地域，在**诊断项**勾选如下诊断项，来定位耗时的大事务。
 ![](https://main.qcloudimg.com/raw/11e0dc3ba8fa61eaf07ec3ecf7e38474.png)
 2. 对应如下不同故障场景，采取对应处理措施：

@@ -125,7 +125,6 @@
 **MySQL 单节点（云盘）实例操作步骤**
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击目标实例 ID 进入管理页面，选择**备份恢复** > **手动备份**。
 2. 输入备注名，单击**确定**。
-![](https://qcloudimg.tencent-cloud.cn/raw/a885bfdd53d6ebbd7fba782d61186371.png)
 
 ## 热点问题
 #### 1. 超出备份保留时间的备份还可以下载或还原吗？

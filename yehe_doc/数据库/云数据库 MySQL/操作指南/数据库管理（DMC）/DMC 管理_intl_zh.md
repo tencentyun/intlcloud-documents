@@ -1,7 +1,8 @@
+
 本文主要为您介绍 DMC 控制台的新建库表、库管理、实例监控、实例会话、表数据可视化编辑等功能。
 
 ## 新建库表
-1. 登录 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)，在导航栏选择**新建**>**新建库**>**新建数据库**或**新建**>**新建表**。
+1. 登录 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)，在导航栏选择**新建** > **新建库** > **新建数据库**或**新建** > **新建表**。
 ![](https://main.qcloudimg.com/raw/4b1c803307c0c64d96ff6b8fdf43d3dd.png)
 2. 在弹出的对话框，对新建的库表进行相关配置。
 >?字符集、排序规则介绍可参见 [MySQL 官方文档](https://dev.mysql.com/doc/)。
@@ -31,7 +32,7 @@ DMC 提供 kill 会话的功能，方便用户对会话进行管理。
 ![](https://main.qcloudimg.com/raw/cf0c070dc6ae01c6d9c8795ce0934fb6.png)
 
 ## 数据管理
-登录 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)，在导航栏选择**数据管理**>**数据导入**或**数据导出**，可对数据库进行数据导入导出操作。
+登录 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)，在导航栏选择**导入导出**，然后在下方可选择数据库进行数据导入或数据导出。
 ![](https://main.qcloudimg.com/raw/5c58a3bbfe40ac943bd08a726427b7fa.png)
 
 ## 表数据可视化编辑

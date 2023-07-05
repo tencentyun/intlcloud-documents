@@ -33,7 +33,7 @@
 ## 查看云盘版实例备份空间及免费额度
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击目标实例 ID 或**操作**列的**管理**，进入实例管理页面。
 2. 在实例管理页面，选择**备份恢复**，即可查看该实例对应的实际占用空间和免费空间额度。
-
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/nYt7569_45.png)
 
 ## 热点问题
 #### 超出免费额度的备份空间如何收费？如何减少备份空间开销？
