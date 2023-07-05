@@ -16,23 +16,23 @@ Voice Chat is a pay-as-you-go service billed by voice duration on a monthly basi
    <tr>
       <td  rowspan="5">Billed by voice PCU</td>
       <td  rowspan="5">Standard</td>
-      <td><5,000</td>
+      <td> ≤ 5,000</td>
       <td>3,000</td>
    </tr>
    <tr>
-      <td>5,000 ≤ PCUs < 50,000</td>
+      <td>5,000 < PCUs ≤ 50,000</td>
       <td>1,870</td>
    </tr>
    <tr>
-      <td>50,000 ≤ PCUs < 100,000</td>
+      <td>50,000 < PCUs ≤ 100,000</td>
       <td>1,560</td>
    </tr>
    <tr>
-      <td>100,000 ≤ PCUs < 300,000</td>
+      <td>100,000 < PCUs ≤ 300,000</td>
       <td>1,250</td>
    </tr>
    <tr>
-      <td>≥ 300,000</td>
+      <td> > 300,000</td>
       <td>Contact your Tencent Cloud rep</td>
    </tr>
 </table>

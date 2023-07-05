@@ -112,7 +112,7 @@ The nodes are as described below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | :----------------- | :----- | :-------------------------------------------------- | :-------- |
-| Response           | None     | <a href="https://www.tencentcloud.com/document/product/1045/xxx#Response" target="_blank">Same as `Response` in the text-to-speech template creation API.</a> | Container |
+| Response           | None     | <a href="https://www.tencentcloud.com/document/product/1045/50303" target="_blank">Same as `Response` in the text-to-speech template creation API.</a> | Container |
 
 
 #### Error codes

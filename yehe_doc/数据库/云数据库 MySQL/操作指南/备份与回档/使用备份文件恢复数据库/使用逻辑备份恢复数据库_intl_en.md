@@ -1,19 +1,19 @@
 ## Overview
 >?To save the storage space, physical and logical backups in TencentDB for MySQL will be compressed with qpress and then packed with xbstream offered by Percona.
 
-TencentDB for MySQL supports logical backup as described in [Backing up Databases](https://intl.cloud.tencent.com/document/product/236/37796). You can manually generate and download logical backup for the entire instance or specified databases/tables. This document describes how to manually restore data from logical backup files.
+TencentDB for MySQL supports logical backup as described in [Backing up Databases](https://intl.cloud.tencent.com/document/product/236/37796). In the console, you can manually create logical backup files of an entire instance or specified databases/tables and download them. This document describes how to manually restore data from logical backup files.
 
 - The restoration method described in this document only applies to Linux.
-- For more information about how to restore data in Windows, see [Offline Migration of Data > Data Migration with Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464).
+- For more information about how to restore data in Windows, see [Offline Data Migration > Data Migration with Command Line Tool](https://www.tencentcloud.com/document/product/236/8464).
 - Supported instance architectures: two-node or three-node MySQL
 
 ## Directions
 ### Step 1. Download the backup file
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. On the **Backup and Restoration** > **Data Backup List** tab, locate the backup file to be downloaded and click **Download** in the **Operation** column.
-3. Copy the download address in the pop-up dialog box, log in to the Linux CVM in the same VPC as the TencentDB instance as instructed in [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517), and run `wget` to download the file over the high-speed private network.
+3. We recommend that you copy the download link in the pop-up dialog box, log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command for download over the private network at a higher speed. For more information, see [Customizing Linux CVM Configurations](https://www.tencentcloud.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)
 >?
->- You can also click **Download** to download it directly. However, this may take longer.
+>- You can also click **Download** to download it directly. However, this may take a longer time.
 >- `wget` command format: wget -c 'backup file download address' -O custom filename.xb
 >
 Below is a sample:
@@ -38,9 +38,9 @@ The unpacking result is as shown below:
 ```
 wget -d --user-agent="Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0" https://docs-tencentdb-1256569818.cos.ap-guangzhou.myqcloud.com/qpress-11-linux-x64.tar
 ```
->?If an error is displayed during the `wget` download, you can click [here](https://docs-tencentdb-1256569818.cos.ap-guangzhou.myqcloud.com/qpress-11-linux-x64.tar) to download qpress locally and upload it to the Linux CVM instance. For more information, see [Uploading Files from Linux or MacOS to Linux CVM via SCP](https://intl.cloud.tencent.com/document/product/213/2133).
+>? If an error is displayed during the `wget` download, you can click [here](https://docs-tencentdb-1256569818.cos.ap-guangzhou.myqcloud.com/qpress-11-linux-x64.tar) to download qpress locally and upload it to the Linux CVM instance. For more information, see [Uploading Files from Linux or MacOS to Linux CVM via SCP](https://www.tencentcloud.com/document/product/213/2133).
 >
-2. Extract the qpress binary files by running the following command:
+2. Extract the qpress binary files by running the following command.
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
 source /etc/profile
@@ -61,5 +61,5 @@ mysql -uroot -P3306 -h127.0.0.1 -p < cdb-jp0zua5k_backup_20191202182218.sql
 ```
 >?
 >- This document takes importing into a local MySQL instance with port 3306 as an example. You can replace it as needed.
->- Replace `cdb-jp0zua5k_backup_20191202182218.sql` with the .sql file actually extracted by qpress.
+>- Replace `cdb-jp0zua5k_backup_20191202182218.sql` with the .sql file extracted by qpress.
 

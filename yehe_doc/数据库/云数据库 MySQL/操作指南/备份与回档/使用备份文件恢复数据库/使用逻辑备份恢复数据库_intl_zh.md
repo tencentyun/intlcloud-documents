@@ -1,7 +1,7 @@
 ## 操作场景
 >?为节约存储空间，云数据库 MySQL 的物理备份和逻辑备份文件，都会先经过 qpress 压缩，后经过 xbstream 打包（xbstream 为 Percona 的一种打包/解包工具）进行压缩与打包。
 
-云数据库 MySQL 支持 [逻辑备份](https://intl.cloud.tencent.com/document/product/236/37796) 方式，用户可通过控制台手动备份来生成逻辑备份文件，并下载获取整实例/部分库表的逻辑备份文件，本文为您介绍如何使用逻辑备份文件进行手动还原。
+云数据库 MySQL 支持 [逻辑备份](https://intl.cloud.tencent.com/document/product/236/37796) 方式，用户可通过控制台手动备份来生成逻辑备份文件，并下载获取整个实例/部分库表的逻辑备份文件，本文为您介绍如何使用逻辑备份文件进行手动还原。
 
 - 本文介绍的恢复方式仅适用于 Linux 平台，暂不支持 Windows 平台。
 - Windows 平台恢复数据请参考 [命令行工具迁移数据](https://intl.cloud.tencent.com/document/product/236/8464)。
@@ -11,7 +11,7 @@
 ### 步骤1：下载备份文件
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或**操作**列的**管理**，进入实例管理页面。
 2. 在实例管理页面，选择**备份恢复** > **数据备份列表**页， 选择需要下载的备份，在**操作**列单击**下载**。
-3. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://intl.cloud.tencent.com/document/product/213/10517)中，运用 wget 命令进行内网高速下载，更高效。
+3. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)中，运用 wget 命令进行内网高速下载，更高效。
 >?
 >- 您也可以选择**本地下载**直接下载，但耗时较多。
 >- wget 命令格式：wget -c '备份文件下载地址' -O 自定义文件名.xb

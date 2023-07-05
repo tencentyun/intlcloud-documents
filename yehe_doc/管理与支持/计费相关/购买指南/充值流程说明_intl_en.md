@@ -14,10 +14,12 @@ For data security, only account creators and collaborators with financial permis
 
 
 ### Top up via bank transfer
-1. To top up via a bank transfer, you need to transfer or deposit the top-up amount to our bank account and provide your Tencent Cloud account ID by adding a note. You can find the information of our bank accounts below.
+1. To top up via a bank transfer, you need to transfer or deposit the top-up amount to our bank account and provide your Tencent Cloud account ID by adding a note. Make sure to send your bank transfer to the correct Tencent Cloud bank account according to your account's location.
 >! If you top up via bank transfer, please make sure the payment is in USD.
 
-| A. Users located in these regions transfer to the following bank account |  |
+**Category A**
+
+| Users in these regions use the bank information below |  |
 |---------|---------|
 | United States | Guatemala |
 | Trinidad and Tobago | Grenada |
@@ -39,9 +41,9 @@ Address: 2747 Park Blvd., Palo Alto, CA 94306
 SWIFT: MRMDUS33
 Remarks: Cloud service fee + developer account (unique ID)
 
+**Category B**
 
-
-| B. Users located in these regions transfer to the following bank account |  |
+| Users in these regions use the bank information below |  |
 |---------|---------|
 | Switzerland | Latvia |
 | Sweden | Italy |
@@ -67,9 +69,9 @@ Address: De Entree 236, 1101 EE Amsterdam
 SWIFT Code: HSBCNL2A
 Remarks: Cloud service fee + developer account (unique ID)
 
+**Category C**
 
-
-| C. Users located in these regions transfer to the following bank account |  |
+| Users in these regions use the bank information below |  |
 |---------|---------|
 | Others | Philippines |
 | Taiwan, China | Indonesia |
@@ -84,6 +86,6 @@ SWIFT Code: HSBCSGSG
 Remarks: Cloud service fee + developer account (unique ID)
 
 
-2. Bank transfers typically take 3-5 business days or longer if they are cross-border. After your transfer succeeds, please submit a ticket to confirm the transfer information so that we can top up your account. If you have any questions, please upload your payment document in the console.
+2. Bank transfers typically take 3-5 business days. Cross-border bank transfers may take longer to complete. After your transfer is successfully sent, please submit a ticket to confirm the transfer information so that we can top up your account. If you have any questions, please upload your payment document in the console.
 
-3. You will be responsible for any additional service fees incurred for bank transfer.
+3. You will be responsible for any additional service fees incurred for topup via bank transfer.

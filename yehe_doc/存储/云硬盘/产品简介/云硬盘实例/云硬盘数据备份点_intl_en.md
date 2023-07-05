@@ -53,27 +53,27 @@ When you increase or decrease the data backup point quota, you can find the bill
 </tr>
 <tr>
 <td>Configure the data backup point quota when purchasing a cloud disk.</td>
-<td><a href="https://cloud.tencent.com/document/product/362/5744">Creating Cloud Disk<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/5744">Creating Cloud Disk<a></td>
 </tr>
 <tr>
 <td>Increase or reduce/return the data backup point quota of an existing cloud disk.</td>
-<td><a href="https://cloud.tencent.com/document/product/362/73666">Adjusting Data Backup Point Quota<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/50027">Adjusting Data Backup Point Quota<a></td>
 </tr>
 <tr>
 <td>View the information of the data backup point of a cloud disk.</td>
-<td><a href="https://cloud.tencent.com/document/product/362/73667">Viewing Cloud Disk Information<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/50602">Viewing Cloud Disk Information<a></td>
 </tr>
 <tr>
 <td>Use an existing data backup point to restore cloud disk data.</td>
-<td><a href="https://cloud.tencent.com/document/product/362/73668">Using Data Backup Point to Restore Cloud Disk Data<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/50028">Using Data Backup Point to Restore Cloud Disk Data<a></td>
 </tr>
 <tr>
 <td>Convert a data backup point into a snapshot to retain data for a long time.</td>
-<td><a href="https://cloud.tencent.com/document/product/362/73669">Converting Data Backup Point into Snapshot<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/50029">Converting Data Backup Point into Snapshot<a></td>
 </tr>
 <tr>
 <td>Delete a data backup point.</td>
-<td><a href="https://cloud.tencent.com/document/product/362/73670">Deleting Data Backup Point<a></td>
+<td><a href="https://www.tencentcloud.com/document/product/362/50030">Deleting Data Backup Point<a></td>
 </tr>
 </table>
 

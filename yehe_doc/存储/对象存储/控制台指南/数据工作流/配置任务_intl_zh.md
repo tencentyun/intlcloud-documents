@@ -49,7 +49,7 @@
  - **目标路径**：文件转码后所存放的路径。
  - **目标文件名**：您可在此处指定输出文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建极速高清转码任务
 
@@ -72,7 +72,7 @@
  - **目标路径**：文件转码后所存放的路径。
  - **目标文件名**：您可在此处指定输出文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建广电专业格式转码任务
 
@@ -95,7 +95,7 @@
  - **目标路径**：文件转码后所存放的路径。
  - **目标文件名**：您可在此处指定输出文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建精彩集锦任务
 
@@ -115,7 +115,7 @@
  - **目标路径**：文件处理后所存放的路径。
  - **目标文件名**：您可在此处指定输出文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建人声分离任务
 
@@ -136,7 +136,7 @@
  - **目标人声文件名**：您可以在此处指定输出人声文件的文件名。
  - **目标背景声文件名**：您可在此处指定输出背景声文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建语音合成任务
 
@@ -156,7 +156,7 @@
  - **目标路径**：文件处理后所存放的路径。
  - **目标文件名**：您可在此处指定输出音频文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建音视频拼接任务
 
@@ -176,7 +176,7 @@
  - **目标路径**：拼接完成后文件的存放路径。
  - **目标文件名**：您可在此处指定输出文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建音视频分段任务
 
@@ -197,7 +197,7 @@
  - **目标路径**：分段完成后文件的存放路径。
  - **目标文件名**：您可在此处指定输出文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建视频截帧任务
 
@@ -222,7 +222,7 @@
  - **目标路径**：视频截图的存放路径。
  - **目标文件名**：您可在此处指定目标文件的文件名。注意**智能截帧**的输出文件数量大于1，因此输出文件名必须包含${Number}参数作为截图序号。例如目标文件路径设置为 test-${Number}.jpg，任务截取两张截图，则实际输出文件名为 test-0.jpg、test-1.jpg。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 
 
@@ -252,7 +252,7 @@
  - **目标路径**：视频处理后所存放的路径。
  - **目标文件名**：您可在此处指定输出文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 
 ## 创建超分辨率任务
@@ -277,7 +277,7 @@
  - **目标路径**：视频处理后所存放的路径。
  - **目标文件名**：您可在此处指定输出文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建 SDR to HDR 任务
 
@@ -302,7 +302,7 @@ SDR to HDR 为数据万象提供的视频动态范围变换功能，您可以通
  - **目标路径**：SDRtoHDR 操作后目标文件的存放路径。
  - **目标文件名**：您可在此处指定输出文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 
 ## 创建视频转动图任务
@@ -327,7 +327,7 @@ SDR to HDR 为数据万象提供的视频动态范围变换功能，您可以通
  - **目标路径**：视频转动图的存放路径。
  - **目标文件名**：您可在此处指定输出文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建智能封面任务
 
@@ -354,7 +354,7 @@ SDR to HDR 为数据万象提供的视频动态范围变换功能，您可以通
 >! **智能封面**的输出文件数量大于1，因此输出文件名必须包含${Number}参数作为封面序号。如输出文件路径设置为test-${Number}.jpg，则实际输出文件名为 test-0.jpg、test-1.jpg。
 >
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建数字水印添加任务
 
@@ -419,7 +419,7 @@ SDR to HDR 为数据万象提供的视频动态范围变换功能，您可以通
  - **过滤语气词**：可选择是否过滤语气词。
  - **智能语音转换**：开启后将识别到的数字转化为阿拉伯数字，否则为中文数字。
  - **队列**：目前只支持默认语音识别队列 queue-speech-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
-  - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+  - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 
 ## 创建文档预览任务
@@ -442,7 +442,7 @@ SDR to HDR 为数据万象提供的视频动态范围变换功能，您可以通
  - **目标路径**：选填，若未填写则输出路径与输入文件路径保持一致。
  - **目标文件名**：文档预览服务将原文档的每一页转化输出为一张图片，因此需要在输出文件名中需添加占位符对输出的图片进行编码。您可选择${Number}或${Page}作为占位符，输出编码序号与文档页码序号一致。如您选择对页数为3的文档进行预览，并指定输出文件名为 output${Number}.jpg，则最终将会输出名为 output1.jpg、output2.jpg 和 output3.jpg 三张图片。
  - **队列**：目前只支持默认文档预览队列 queue-doc-process-1，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。
 
 ## 创建图片处理任务
 
@@ -464,4 +464,4 @@ SDR to HDR 为数据万象提供的视频动态范围变换功能，您可以通
  - **目标路径**：图片处理结果的存放路径。
  - **目标文件名**：您可在此处指定输出文件的文件名。
  - **队列**：目前只支持默认队列 queue-1，队列相关说明请查看，队列相关说明请查看 [队列与回调](https://intl.cloud.tencent.com/document/product/436/46412)。
- - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://intl.cloud.tencent.com/document/product/436/46410) 的队列中进行配置。
+ - **队列回调 URL**：与队列绑定的回调地址信息，可前往 [公共配置](https://www.tencentcloud.com/document/product/436/46412) 的队列中进行配置。

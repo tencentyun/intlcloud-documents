@@ -4,7 +4,7 @@ After creating the SSL VPN gateway and server, you need to create an SSL VPN cli
 ## Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. Click **VPN Connection** > **SSL VPN Client** in the left directory to enter the admin page.
-3. Click **+New**.
+3. Click **New**.
 4. Configure the following parameters in the pop-up window.
 ![]()
 <table>

@@ -231,7 +231,7 @@ Devido aos tamanhos territoriais diferentes de países ao redor do mundo e consi
       <td></td>
    </tr>
    <tr>
-      <td rowspan="44">Europa</td>
+      <td rowspan="43">Europa</td>
       <td rowspan="6">Europa Setentrional</td>
       <td>Finlândia</td>
       <td></td>
@@ -257,7 +257,7 @@ Devido aos tamanhos territoriais diferentes de países ao redor do mundo e consi
       <td></td>
    </tr>
    <tr>
-      <td rowspan="7">Europa Oriental</td>
+      <td rowspan="6">Europa Oriental</td>
       <td>Estônia</td>
       <td></td>
    </tr>
@@ -271,10 +271,6 @@ Devido aos tamanhos territoriais diferentes de países ao redor do mundo e consi
    </tr>
    <tr>
       <td>Bielorrússia</td>
-      <td></td>
-   </tr>
-   <tr>
-      <td>Rússia</td>
       <td></td>
    </tr>
    <tr>

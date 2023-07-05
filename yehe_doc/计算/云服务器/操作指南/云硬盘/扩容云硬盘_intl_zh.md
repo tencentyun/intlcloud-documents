@@ -1,0 +1,133 @@
+## 操作场景
+云硬盘是云上可扩展的存储设备，用户可以在创建云硬盘后随时扩展其大小，以增加存储空间，同时不失去云硬盘上原有的数据。
+云硬盘扩容完成后，需扩展分区及文件系统。您可将扩容部分的容量划分至已有分区内，或者将扩容部分的容量格式化成独立的新分区。
+
+
+<dx-alert infotype="notice" title="">
+MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 MBR 格式，且需要扩容到超过2TB时，建议您重新创建并挂载一块数据盘，使用 GPT 分区方式后将数据拷贝至新盘中。
+</dx-alert>
+
+
+## 扩容数据盘
+当扩容类型为数据盘的云硬盘时，您可通过以下3种方式进行扩容。
+
+
+<dx-alert infotype="notice" title="">
+若您的云服务器上已挂载了多块容量及类型均相同的云硬盘，则可参考 [区分数据盘](#distinguish) 操作进行区分。选定需扩容的数据盘后，再通过以下方式进行扩容。
+</dx-alert>
+
+
+
+<dx-tabs>
+::: 通过云服务器控制台扩容（推荐）[](id:useCVMConsole)
+1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
+2. 选择目标云服务器所在行的**更多** > **资源调整** > **云硬盘扩容**。
+3. 在弹出的“云硬盘扩容”窗口中选择需扩容的数据盘，并单击**下一步**。
+4. 在“调整容量”步骤中，设置目标容量（必须大于或等于当前容量），并单击**下一步**。
+5. 在“扩容分区及文件系统”步骤中，查阅注意事项，单击**开始调整**即可。如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/rcu7553_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230421164941.png)
+6. 根据目标云服务的操作系统类型，您需要 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)或 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/39995)将扩容部分的容量划分至已有分区内，或者将扩容部分的容量格式化成独立的新分区。
+:::
+::: 通过云硬盘控制台扩容[](id:useCBSConsole)
+1. 登录 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs)。
+2. 选择目标云硬盘的**更多** > **扩容**。
+3. 选择需要的新容量大小（必须大于或等于当前大小）。
+4. 完成支付。
+5. 根据目标云服务的操作系统类型，您需要执行 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)或 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/39995) 将扩容部分的容量划分至已有分区内，或者将扩容部分的容量格式化成新的独立分区。
+:::
+::: 通过 API 扩容[](id:useAPI)
+您可以使用 ResizeDisk 接口扩容指定的弹性云盘，具体操作请参见 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/16310)。
+
+:::
+</dx-tabs>
+
+
+
+## 扩容系统盘[](id:useCVMconsole)
+1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)，选择目标云服务器所在行的**更多** > **资源调整** > **云硬盘扩容**。
+2. 在弹出的**云硬盘扩容**窗口中选择需扩容的系统盘，并单击**下一步**。
+3. 在**调整容量**步骤中，设置目标容量（必须大于或等于当前容量），并单击**下一步**。
+4. 通过以下扩容方式，完成扩容操作：
+<dx-tabs>
+::: 通过云服务器控制台扩容
+<dx-alert infotype="explain" title="">
+云服务器支持作为系统盘的云硬盘进行在线扩容，即不停服扩容。
+</dx-alert>
+ 1. 在**扩容分区及文件系统**步骤中，查阅注意事项，单击**开始调整**即可。如下图所示：
+ <img style="width:600px; max-width: inherit;" src="https://staticintl.cloudcachetci.com/yehe/backend-news/rcu7553_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230421164941.png" />
+ 2. 完成控制台扩容操作后，请登录实例确认是否已自动扩展文件系统。若未扩展，则请参考 [在线扩展系统盘及文件系统](https://intl.cloud.tencent.com/document/product/362/50063) 进行扩容分区及文件系统操作。
+:::
+::: 通过云硬盘控制台扩容[](id:useCBSConsole)
+1. 登录 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs)。
+2. 选择目标云硬盘的**更多** > **扩容**。
+3. 选择需要的新容量大小（必须大于或等于当前大小）。
+4. 完成支付。
+5. 根据目标云服务的操作系统类型，您需要执行 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)或 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/39995) 将扩容部分的容量划分至已有分区内，或者将扩容部分的容量格式化成新的独立分区。
+:::
+::: 通过 API 扩容[](id:useAPI)
+您可以使用 ResizeInstanceDisks 接口扩容指定的非弹性云盘，具体操作请参见 [扩容实例磁盘](https://intl.cloud.tencent.com/document/product/213/33238)。
+
+:::
+</dx-tabs>
+
+
+## 相关操作
+### 区分数据盘[](id:distinguish)
+您可根据云服务器实际使用的操作系统，选择查看方式：
+<dx-tabs>
+::: Linux
+1. [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)。
+2. 执行以下命令，查看到云硬盘与设备名之间的对应关系。
+```
+ls -l /dev/disk/by-id
+```
+返回结果如下图所示：
+![](https://main.qcloudimg.com/raw/66b6a19695ef4ba21b74ce0cd96503db.png)
+其中，`disk-xxxx` 为云硬盘 ID，您可前往 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs) 查看。
+:::
+::: Windows
+1. [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/5435)。
+2. 右键单击 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-6px 0px">，选择**运行**。
+3. 在“运行”窗口中，输入 `cmd` 并按 **Enter**。
+4. 执行以下命令，查看到云硬盘与设备名之间的对应关系。
+```
+wmic diskdrive get caption,deviceid,serialnumber
+```
+或执行以下命令
+
+```
+wmic path win32_physicalmedia get SerialNumber,Tag
+```
+返回结果如下图所示：
+![](https://main.qcloudimg.com/raw/e91aa2f938ddda304844d7ac28840859.png)
+其中，`disk-xxxx` 为云硬盘 ID，您可前往 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs) 查看。
+:::
+</dx-tabs>
+
+### 查看实例 cloudinit 配置
+您可根据云服务器实际使用的操作系统，选择查看方式：
+<dx-tabs>
+::: 查看 Linux 实例 cloudinit 配置[](id:confirmLinuxConfig)
+完成扩容操作后，请 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436) 确认 `/etc/cloud/cloud.cfg` 是否包含 growpart 及 resizefs 配置项。
+ - 是，则无需进行其他操作。如下图所示：
+![](https://main.qcloudimg.com/raw/03d38f34651d317176c50f1ed3a03f30.png)
+    - **growpart**：扩展分区大小到磁盘大小。
+    - **resizefs**：扩展调整`/`分区文件系统到分区大小。
+ - 否，则需根据目标云服务的操作系统类型，手动扩文件系统及分区。您需要执行 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/39995)，将扩容部分的容量划分至已有分区内或将扩容部分的容量格式化为新的独立分区。
+:::
+::: 查看 Windows 实例 cloudinit 配置[](id:confirmwindowsConfig)
+完成扩容操作后，请 [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/5435) 确认 `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\cloudbase-init.conf` 中的 plugin 是否包含 ExtendVolumesPlugin 配置项。
+ - 是，如果 `cloudbase-init` 配置文件 `cloudbase-init.conf` 中包含了 ExtendVolumesPlugin 配置项，需要重启机器 `cloudbase-init` 才会自动扩展卷把 C 分区后面的空白空间加到 C 分区，并且需要 C 分区和空白空间之间无其他分区干扰。如果 C 分区和空白空间之间无其他分区、且不想重启，或者有第三方安全软件拦截 `cloudbase-init` 使之不能完成 extend volume，您需要手动执行如下 powershell 命令。
+ ```plantext
+$DiskOps="@
+select disk 0
+select volume c
+extend
+exit
+@"
+$DiskOps | diskpart.exe | Out-Null
+ ```
+ - 否，则需根据目标云服务的操作系统类型，手动扩文件系统及分区。您需要执行 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)，将扩容部分的容量划分至已有分区内或将扩容部分的容量格式化为新的独立分区。
+:::
+</dx-tabs>
+

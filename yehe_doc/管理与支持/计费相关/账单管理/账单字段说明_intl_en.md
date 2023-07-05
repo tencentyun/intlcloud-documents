@@ -28,6 +28,7 @@
 |Component Usage Unit	| The unit of measurement for component usage.	|
 |Usage Duration	| The resource usage duration.	|
 |Duration Unit	| The unit of measurement for usage duration.	|
+|Reserved Instance | ID of the RI matched, such as s2-RI-1234567890 |
 |Original Cost	| The original cost of a resource, which is "List price x Usage x Usage duration".	|
 |RI Deduction (Duration)	| The usage duration deducted by RI. The unit of measurement for deduction is the same as that for usage duration.	|
 |RI Deduction (Cost)	| The amount deducted from the original cost by RI.	|

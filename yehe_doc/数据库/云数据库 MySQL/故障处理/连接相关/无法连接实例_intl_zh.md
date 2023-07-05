@@ -1,4 +1,3 @@
-
 ## 现象描述
 - [现象1](id:xz1)：从 CVM 连接登录云数据库 MySQL，连接失败。
 - [现象2](id:xz2)：从本地电脑连接登录云数据库 MySQL，连接失败。
@@ -107,7 +106,7 @@
 >- 示例2：填入10.5.10.%，表示允许 IP 范围在10.5.10.%内的客户端使用该帐号连接数据库。
 
 ### [现象3：DMC 平台登录失败处理方法](id:dptdlsbclff)
-1. 请确认登录帐号的主机限制中，已对该地域 DMC 服务器的全部 IP 授权，授权请参见 [修改授权访问的主机地址](https://intl.cloud.tencent.com/document/product/236/31903)。您也可以直接使用%，放通所有 IP，仅由安全组来限制数据库访问来源。
+1. 请确认登录帐号的主机限制中，已对访问该地域 DMC 服务器的全部 IP 授权，授权请参见 [修改授权访问的主机地址](https://intl.cloud.tencent.com/document/product/236/31903)。您也可以直接使用%，放通所有 IP，仅由安全组来限制数据库访问来源。
 2. 若确认已授权 IP，则可能是帐号密码错误，请重新输入正确的密码，您也可以 [重置密码](https://intl.cloud.tencent.com/document/product/236/31901) 或 [新建一个权限满足需求的临时账号](https://intl.cloud.tencent.com/document/product/236/31900) 。
 
 ## 附录1
@@ -134,7 +133,7 @@
 >- 迁移过程中，实例需要进行重启，请勿进行其他操作。
 >- 迁移后，请注意检查实例运行状态，内网连接以及远程登录是否正常。
 >- 基础网络切换 VPC 网络后不可逆，CVM 切换至 VPC 网络后与其他基础网络的云服务不互通。
-- **解决办法二**：[使用基础网络互通](https://intl.cloud.tencent.com/document/product/215/31807)。
+- **解决办法二**：[使用基础网络互通](https://intl.cloud.tencent.com/document/product/215/41419)。
 - **解决办法三**：CVM 使用 MySQL 的外网连接地址连接 MySQL。这种方式的性能、安全性、稳定性较差，建议您使用 VPC 网络。
 
 #### [CVM 与 MySQL 在同一地域内，但属于不同的 VPC 网络](id:cmvbt)
