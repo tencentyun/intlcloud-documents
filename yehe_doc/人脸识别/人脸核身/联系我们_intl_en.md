@@ -1,5 +1,5 @@
 ## Email
-Official email address of FaceID: cloud_faceid@qq.com. Feel free to contact us for business consulting and technical support.
+Official email address of eKYC: cloud_faceid@qq.com. Feel free to contact us for business consulting and technical support.
 To help us make a prompt and accurate reply, detail your project conditions, requirements, or problems as much as possible in the email, and we will reply to you as soon as we can.
 
 
