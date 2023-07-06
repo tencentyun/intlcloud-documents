@@ -8,7 +8,7 @@
 ## 修改专线带宽[](id:xgzxdk)
 若当前物理专线带宽不能满足您的业务需求时，可以在控制台修改物理专线带宽。
 1. 登录 [专线接入控制台](https://console.cloud.tencent.com/dc/dc)，并在左侧导航栏单击**物理专线**。
-2. 在目标专线有的“带宽”列单击<img src="https://main.qcloudimg.com/raw/134ed671d2fa3ec1b82525985c0a6633.svg" style="zoom:6%;" />。
+2. 在目标专线的“带宽”列单击<img src="https://main.qcloudimg.com/raw/134ed671d2fa3ec1b82525985c0a6633.svg" style="zoom:6%;" />。
 3. 在编辑框中修改带宽值，然后单击**确定**。
  > ?
 > - 若当前物理专线下没有创建专用通道，则调整带宽不小于1Mbps，且不超过其端口带宽值。
