@@ -4,7 +4,7 @@ This document provides an overview of APIs and SDK code samples for blind waterm
 
 | API | Description |
 | ------------------------------------------ | -------------------------- |
-| [Blind watermarking](https://intl.cloud.tencent.com/document/product/1045/43029) | Adds blind watermark to or extracts blind watermark from local image and uploads it to bucket. |
+| [Blind watermarking](https://www.tencentcloud.com/document/product/1045/43029) | Adds blind watermark to or extracts blind watermark from local image and uploads it to bucket. |
 
 ## Adding Blind Watermark
 
