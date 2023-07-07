@@ -11,7 +11,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><a href="https://intl.cloud.tencent.com/document/product/1045/42363">图片高级压缩</a></td>
+<td align="left"><a href="https://www.tencentcloud.com/document/product/1045/42363">图片高级压缩</a></td>
 <td align="left">图片高级压缩可以更加高效地将图片转换为 TPG 或 HEIF 等高压缩比格式，有效降低图片传输链路及加载耗时，降低带宽及流量成本。</td>
 </tr>
 </tbody></table>
