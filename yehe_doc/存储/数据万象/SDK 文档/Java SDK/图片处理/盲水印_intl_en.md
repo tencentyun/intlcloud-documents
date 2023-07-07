@@ -17,7 +17,7 @@ You can add a blind watermark when uploading or downloading an object.
 [//]: # ".cssg-snippet-put-object-with-watermark"
 ```java
 // The bucket name must contain `appid`.
-// For the API description, visit https://cloud.tencent.com/document/product/436/46782.
+// For the API description, visit https://www.tencentcloud.com/document/product/436/49729.
 String bucketName = "examplebucket-1250000000";
 
 String key = "test.png";
