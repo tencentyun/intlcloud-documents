@@ -19,6 +19,12 @@ Alert rules
 - Alerts are sent at four levels: 70–79%, 80–89%, 90–99%, and ≥ 100%.
 - Only one alert is sent daily (00:00–24:00) and the alerts stop after five days.
 
+### Temporary Credit Expiration Alerts
+Alert rules
+- Intended for customers that have applied for a temporary credit limit through a Tencent Cloud sales representative.
+- Alerts are triggered 7 days before your temporary credit limit expires. If the credit limit takes effect for less than 7 days, alerts will be sent according to the actual number of effective days. To ensure the normal use of your cloud resources, please top up your account or contact the sales rep to assess whether to increase the credit limit.
+- Only one alert is sent daily (00:00–24:00), and multiple expiration records are sent in one alert together. The alerts are sent until the expiration date.
+
 ### Credit Change Notifications
 - Intended for customers that have applied for a credit limit through a Tencent Cloud sales representative.
 - Notifications are triggered when a sales rep allocates, repossesses, or cancels credit for a customer.
