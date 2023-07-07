@@ -8,8 +8,8 @@ Before you use LEB, please read [LEB Billing Overview](https://intl.cloud.tencen
 ### Directions
 You can integrate the MLVB SDK into your iOS or Android application to implement the live push and playback features.
 
-- **Live push**: Capture from the camera or phone screen and push the stream to CSS using the RTMP protocol. For details, see [Publishing (Camera)](https://cloud.tencent.com/document/product/454/56591) and [Publishing (Screen Recording)](https://cloud.tencent.com/document/product/454/56594).
-- **Live playback**: Play streams using WebRTC with ultra-low latency. For details, see [Playback > LEB](https://cloud.tencent.com/document/product/454/55880).
+- **Live push**: Capture from the camera or phone screen and push the stream to CSS using the RTMP protocol. For details, see [Publishing (Camera)](https://www.tencentcloud.com/document/product/1071/38157) and [Publishing (Screen Recording)](https://www.tencentcloud.com/document/product/1071/41878).
+- **Live playback**: Play streams using WebRTC with ultra-low latency. For details, see [Playback > LEB](https://www.tencentcloud.com/document/product/1071/41875).
 
 >? The MLVB SDK leverages the capabilities of CSS, IM, TRTC, and other services to implement low-latency audio/video communication for multiple parties, allowing participants to interact with each other while others watch. For details, see [Mic Connect](https://www.tencentcloud.com/document/product/1071/42210).
 
@@ -54,7 +54,7 @@ You can use the following ways to achieve live push and playback on your website
 >- The Opus audio codec is used for the push of WebRTC streams. Therefore, if you use an LVB protocol (RTMP, HTTP-FLV, or HLS) for playback, the CSS backend will automatically convert the audio to AAC format to ensure successful playback, which will incur audio transcoding fees. For details, see [Live Transcoding > Audio Transcoding](https://intl.cloud.tencent.com/document/product/267/39604). If you publish and play streams using the LEB protocol, CSS will not transcode the audio.
 >- With WebRTC, each push domain can be used for up to **1,000 concurrent streams** by default. If you want to push more streams, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
-- **Live playback on web**: We recommend you use our web player SDK [TCPlayerLite](https://cloud.tencent.com/document/product/881/30818), which supports playing **WebRTC streams** on mobile and desktop browsers and delivers a superb streaming experience with millisecond latency, far lower than that of playback using traditional live streaming protocols.
+- **Live playback on web**: We recommend you use our web player SDK [TCPlayerLite](https://www.tencentcloud.com/document/product/266/33977), which supports playing **WebRTC streams** on mobile and desktop browsers and delivers a superb streaming experience with millisecond latency, far lower than that of playback using traditional live streaming protocols.
 >! If a browser does not support WebRTC, a WebRTC URL passed into the player will be converted to better support playback. By default, WebRTC is converted to HLS on mobile browsers and HTTP-FLV on desktop browsers.
 
 ### Free demo
