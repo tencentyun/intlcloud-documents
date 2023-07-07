@@ -4,7 +4,7 @@
 
 | API                                                          | 操作描述                         |
 | ------------------------------------------ | -------------------------- |
-| [盲水印](https://intl.cloud.tencent.com/document/product/1045/43029) | 对本地图片添加或提取盲水印并上传至存储桶 |
+| [盲水印](https://www.tencentcloud.com/document/product/1045/43029) | 对本地图片添加或提取盲水印并上传至存储桶 |
 
 ## 添加盲水印
 
@@ -17,7 +17,7 @@
 [//]: # ".cssg-snippet-put-object-with-watermark"
 ```java
 // bucket名需包含appid
-// api 请参考：https://cloud.tencent.com/document/product/436/46782
+// api 请参考：https://www.tencentcloud.com/document/product/436/49729
 String bucketName = "examplebucket-1250000000";
 
 String key = "test.png";
