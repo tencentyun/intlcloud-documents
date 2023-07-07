@@ -11,7 +11,7 @@ This document provides an overview of APIs and SDK code samples for image advanc
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><a href="https://intl.cloud.tencent.com/document/product/1045/42363">Image advanced compression</a></td>
+<td align="left"><a href="https://www.tencentcloud.com/document/product/1045/42363">Image advanced compression</a></td>
 <td align="left">The image advanced compression feature allows you to easily convert images into formats that provide a high compression ratio, such as TPG and HEIF. This effectively reduces the transmission time, loading time, and the use of bandwidth and traffic.</td>
 </tr>
 </tbody></table>
