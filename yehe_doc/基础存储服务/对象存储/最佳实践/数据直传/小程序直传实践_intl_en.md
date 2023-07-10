@@ -54,7 +54,7 @@ Please refer to [Nodejs Example](https://github.com/tencentyun/cos-js-sdk-v5/blo
 
 ### Small program upload example
 
-The following code is an example of [PUT Object ](https://cloud.tencent.com/document/product/436/7749) interface (recommended) and [POST Object ](https://cloud.tencent.com/document /product/436/14690) interface, the operation guide is as follows:
+The following code is an example of [PUT Object ](https://cloud.tencent.com/document/product/436/7749) interface (recommended) and [POST Object ](https://www.tencentcloud.com/document/product/436/14690) interface, the operation guide is as follows:
 
 #### Upload using POST
 
