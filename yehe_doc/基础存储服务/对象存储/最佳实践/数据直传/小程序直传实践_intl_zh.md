@@ -54,7 +54,7 @@ COS 提供了后缀式请求格式`POST http://cos.ap-beijing.myqcloud.com/examp
 
 ### 小程序上传示例
 
-以下代码同时举例了 [PUT Object ](https://cloud.tencent.com/document/product/436/7749) 接口（推荐使用）和[POST Object ](https://cloud.tencent.com/document/product/436/14690) 接口，操作指引如下：
+以下代码同时举例了 [PUT Object ](https://cloud.tencent.com/document/product/436/7749) 接口（推荐使用）和[POST Object ](https://www.tencentcloud.com/document/product/436/14690) 接口，操作指引如下：
 
 #### 使用 POST 上传
 
