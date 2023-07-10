@@ -88,7 +88,7 @@ An Anti-DDoS Pro (Standard) instance protects application IPs in the same region
 <thead>
 <tr>
 <th  width="20%" and rowspan=2>Number of protected IPs</th>
-<th  width="80%" and  colspan=1 >Yearly subscription price (USD)</th>
+<th  width="80%" and  colspan=1 >Monthly subscription price (USD)</th>
 </tr>
 <tr>
 <th>List price</th>
