@@ -1,220 +1,287 @@
-## Overview
-This document describes how to use simple code to upload files to a COS bucket directly through a WeChat Mini Program without using an SDK.
+## Introduction
 
->! The content of this document is based on the XML edition of APIs.
->
+This document describes how to directly transfer files to a Cloud Object Storage (COS) bucket in a Mini Program with simple code without relying on the SDK.
 
+> ! The content of this document is based on the XML version of the API.
 
-<span id="preparations"></span>
-## Prerequisites
-1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and create a bucket with `BucketName` (bucket name) and `Region` (region name) specified. For more information, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
-2. Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) and obtain your project's SecretId and SecretKey on the API key management page.
+<span id="preparation"></span>
 
-## Directions
+## Preconditions
 
-#### 1. Configuring the WeChat Mini Program Allowlist
-To request COS in your WeChat Mini Program, you need to log in to the WeChat Official Accounts Platform and configure the domain name allowlist in **Development** > **Development Settings**. The SDK uses two APIs: wx.uploadFile and wx.request.
-- For the cos.postObject method, requests are sent using wx.uploadFile.
-- For other methods, requests are sent using wx.request.
+1. Log in to the [COS console](https://console.tencentcloud.com/cos5) and create a bucket with `BucketName` (bucket name) and `Region` (region name) specified. For more information, see [Creating Buckets](https://www.tencentcloud.com/document/product/436/13309).
+2. Log in to the [CAM console](https://console.tencentcloud.com/cam/capi) and obtain your project's SecretId and SecretKey on the API key management page.
+3. Configure the applet domain name whitelist
 
-For both methods, you need to configure COS domain names in corresponding allowlists. There are two forms of allowed domain names.
+To request COS in the Mini Program, you need to log in to the WeChat public platform, and configure the domain name whitelist in "Development" -> "Development Settings". The SDK uses two interfaces: wx.uploadFile and wx.request.
 
-- If only one bucket is used, you can configure the bucket domain name as the allowed domain name, such as `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com`.
-- If multiple buckets are used, you can choose to use suffixed COS requests by placing the buckets in the pathname. In this case, you need to configure the region domain name as the allowed domain name, such as `cos.ap-guangzhou.myqcloud.com`. For details, see the comments in the following code.
+- cos.postObject uses wx.uploadFile to send the request.
+- Other methods use wx.request to send requests.
 
-#### 2. Getting Temporary Key and Calculating Signature
+Both need to configure the COS domain name in the corresponding white list. There are two formats of domain names configured in the whitelist:
 
-For security reasons, the signature uses a temporary key. For details on how to build a temporary key service on the server, see [PHP Sample](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) and [Nodejs Sample](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js).
-If you use other languages or want to implement it on your own, follow the steps below:
-(1) Obtain a temporary key from the server. The server first obtains the tmpSecretId, tmpSecretKey, and sessionToken of the temporary key from the STS service using the SecretId and SecretKey of the fixed key. For more information, see [Temporary Key Generation and Usage Guidelines](https://intl.cloud.tencent.com/document/product/436/14048) or [cos-sts-sdk](https://github.com/tencentyun/qcloud-cos-sts-sdk).
->!Based on whether the PUT or POST request is used, an action that "name/cos:PutObject" or "name/cos:PostObject" is allowed needs to be added to the policy action of the STS.
+- If only one bucket is used, you can configure the Bucket domain name as a whitelist domain name, for example `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com`.
+- If multiple storage buckets are used, you can choose the suffix method to request COS, and place the bucket in the pathname to request. This method needs to configure the regional domain name as a whitelist, such as `cos.ap-guangzhou.myqcloud.com`. For details, please refer to the comments in the code below.
 
-(2) The frontend calculates the signature based on the tmpSecretId, tmpSecretKey, method, and pathname. For more information about signature calculation, see [cos-auth.js](https://unpkg.com/cos-js-sdk-v5/demo/common/cos-auth.min.js). If required by the actual business, the signature can also be calculated in the backend.
-(3) Based on the used request, process the calculated signature and sessionToken as follows:
-  - For the POST request, put them in the `Signature` and `x-cos-security-token` fields of `formData` and send the upload request to COS API.
-  - For the PUT request, put them in the `Signature` and `x-cos-security-token` fields of `headers` and send the upload request to COS API.
+## plan description
 
->!In official deployment, add a layer of permission check of your website.
->
+### Implementation process
 
-#### 3. Suffix Request
+1. Select a file on the front end, and the front end will send the suffix to the server.
+2. The server generates a random COS file path with time according to the suffix, calculates the corresponding signature, and returns the URL and signature information to the front end.
+3. The front end uses a PUT or POST request to directly upload the file to COS.
 
-The general request format of COS API is similar to `POST http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/`. The requested domain name is a bucket domain name. In this way, if you use more than one bucket in the WeChat Mini Program, you need to configure the bucket domain name as an allowed domain name. The solution is as follows:
+### Solution Advantages
 
-COS provides a suffix request format `POST http://cos.ap-beijing.myqcloud.com/examplebucket-1250000000/`. The requested domain name is a region domain name, and the bucket name is placed in the requested path. If you use multiple buckets in the same region in the WeChat Mini Program, you need to configure only one domain name `cos.ap-beijing.myqcloud.com` as an allowed domain name.
+- Permissions security: Using server-side signatures can effectively limit the scope of security permissions, which can only be used to upload a specified file path.
+- Path security: The random COS file path is determined by the server, which can effectively avoid the problem of existing files being overwritten and security risks.
 
-Note that, for the suffix request format, the path used during signing must be prefixed with the bucket name, for example, `/examplebucket-1250000000/`.
+### Suffix request
 
-#### 4. Sample Code for Direct Upload
+The general request format of COS API is similar to `POST http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/`, and the requested domain name is the bucket domain name. In this way, if multiple storage buckets are used in the applet, you need to configure the bucket domain name as a whitelist domain name. The solution is as follows:
 
-The following code lists examples of both [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) API (recommended) and [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) API. The operation guide is as follows:
+COS provides a postfix request format `POST http://cos.ap-beijing.myqcloud.com/examplebucket-1250000000/`, the requested domain name is the regional domain name, and the bucket name is placed in the requested path. To use multiple storage buckets in the same region in the applet, you only need to configure a domain name `cos.ap-beijing.myqcloud.com` as the whitelist domain name.
+
+Note that the suffix request format needs to be noted that the path used when signing should be prefixed with the bucket name, for example `/examplebucket-1250000000/`.
+
+## Practical steps
+
+### Configure the server to implement signature
+
+> ! Please add a layer of authority check on your website itself when the server is officially deployed.
+
+How to calculate the signature can refer to the document [Request Signature](https://cloud.tencent.com/document/product/436/7778).
+Please refer to [Nodejs Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js) for the server-side calculation signature code using Nodejs.
+
+### Small program upload example
+
+The following code is an example of [PUT Object ](https://cloud.tencent.com/document/product/436/7749) interface (recommended) and [POST Object ](https://cloud.tencent.com/document /product/436/14690) interface, the operation guide is as follows:
+
+#### Upload using POST
 
 ```js
-var CosAuth = require('./cos-auth'); // cos-auth.js is referenced, and the download address is https://unpkg.com/cos-js-sdk-v5/demo/common/cos-auth.min.js. 
-
-var Bucket = 'examplebucket-1250000000';
-var Region = 'ap-shanghai';
-var ForcePathStyle = false; // Whether to use a suffix, which involves signature calculation and domain name allowlist configuration. For details about suffix requests, see the description above.
-
 var uploadFile = function () {
+   // url encode format for encoding more characters
+   var camSafeUrlEncode = function (str) {
+     return encodeURIComponent(str)
+       .replace(/!/g, '%21')
+       .replace(/'/g, '%27')
+       .replace(/\(/g, '%28')
+       .replace(/\)/g, '%29')
+       .replace(/\*/g, '%2A');
+   };
 
-    // Parameters used for the request
-    var prefix = 'https://' + Bucket + '.cos.' + Region + '.myqcloud.com/';
-    if (ForcePathStyle) {
-		// The domain name used by the suffix request during signing is the region domain name, not the bucket domain name. For more information, see "3. Suffix Request" described above.
-        prefix = 'https://cos.' + Region + '.myqcloud.com/' + Bucket + '/'; 
-    }
+   // get the signature
+   var getAuthorization = function (options, callback) {
+     wx.request({
+       method: 'GET',
+       // Replace it with your own server address to get the post upload signature
+       url: 'http://127.0.0.1:3000/post-policy?ext=' + options.ext,
+       dataType: 'json',
+       success: function (result) {
+         var data = result. data;
+         if (data) {
+           callback(data);
+         } else {
+           wx. showModal({
+             title: 'Failed to obtain temporary key',
+             content: JSON. stringify(data),
+             showCancel: false,
+           });
+         }
+       },
+       error: function (err) {
+         wx. showModal({
+           title: 'Failed to obtain temporary key',
+           content: JSON. stringify(err),
+           showCancel: false,
+         });
+       },
+     });
+   };
 
-    // URL-encode more characters.
-    var camSafeUrlEncode = function (str) {
-        return encodeURIComponent(str)
-            .replace(/!/g, '%21')
-            .replace(/'/g, '%27')
-            .replace(/\(/g, '%28')
-            .replace(/\)/g, '%29')
-            .replace(/\*/g, '%2A');
-    };
+   var postFile = function ({ prefix, filePath, key, formData }) {
+     var requestTask = wx.uploadFile({
+       url: prefix,
+       name: 'file',
+       filePath: filePath,
+       formData: formData,
+       success: function (res) {
+         var url = prefix + '/' + camSafeUrlEncode(key).replace(/%2F/g, '/');
+         if (res. statusCode === 200) {
+           wx.showModal({ title: 'Uploaded successfully', content: url, showCancel: false });
+         } else {
+           wx. showModal({
+             title: 'Upload failed',
+             content: JSON. stringify(res),
+             showCancel: false,
+           });
+         }
+         console.log(res.header['x-cos-request-id']);
+         console.log(res.statusCode);
+         console.log(url);
+       },
+       fail: function (res) {
+         wx. showModal({
+           title: 'Upload failed',
+           content: JSON. stringify(res),
+           showCancel: false,
+         });
+       },
+     });
+     requestTask.onProgressUpdate(function (res) {
+       console.log('Progress:', res);
+     });
+   };
 
-    // Get the temporary key
-    var stsCache;
-    var getCredentials = function (callback) {
-        if (stsCache && Date.now() / 1000 + 30 < stsCache.expiredTime) {
-            callback(data.credentials);
-            return;
-        }
-        wx.request({
-            method: 'GET',
-            url: 'https://example.com/sts.php', // Server-side signature. For more information, see the instructions for getting the temporary key above.
-            dataType: 'json',
-            success: function (result) {
-                var data = result.data;
-                var credentials = data.credentials;
-                if (credentials) {
-                    stsCache = data
-                } else {
-                    wx.showModal({title: 'failed to get the temporary key', content: JSON.stringify(data), showCancel: false});
-                }
-                callback(stsCache && stsCache.credentials);
-            },
-            error: function (err) {
-                wx.showModal({title: 'failed to get the temporary key', content: JSON.stringify(err), showCancel: false});
-            }
-        });
-    };
+   // upload files
+   var uploadFile = function (filePath) {
+     var extIndex = filePath. lastIndexOf('.');
+     var fileExt = extIndex >= -1 ? filePath. substr(extIndex + 1) : '';
+     getAuthorization({ ext: fileExt }, function (AuthData) {
+       // Parameters used in the request
+       var prefix = 'https://' + AuthData.cosHost;
+       var key = AuthData.cosKey; // It is safer to let the server decide the file name
+       var formData = {
+         key: key,
+         success_action_status: 200,
+         'Content-Type': '',
+         'q-sign-algorithm': AuthData.qSignAlgorithm,
+         'q-ak': AuthData.qAk,
+         'q-key-time': AuthData.qKeyTime,
+         'q-signature': AuthData.qSignature,
+         policy: AuthData. policy,
+       };
+       if (AuthData. securityToken)
+         formData['x-cos-security-token'] = AuthData.securityToken;
+       postFile({ prefix, filePath, key, formData });
+     });
+   };
 
-    // Calculate the signature.
-    var getAuthorization = function (options, callback) {
-        getCredentials(function (credentials) {
-            callback({
-                XCosSecurityToken: credentials.sessionToken,
-                Authorization: CosAuth({
-                    SecretId: credentials.tmpSecretId,
-                    SecretKey: credentials.tmpSecretKey,
-                    Method: options.Method,
-                    Pathname: options.Pathname,
-                })
-            });
-        });
-    };
-
-    // Upload the file through POST.
-    var postFile = function (filePath) {
-        var Key = filePath.substr(filePath.lastIndexOf('/') + 1); // The name of the file to be uploaded is specified here.
-        var signPathname = '/'; // For the PostObject API, the Key is placed in the Body for transmission, so the request path and signature path are /.
-        if (ForcePathStyle) {
-			  // The path used by the suffix request during signing must contain the bucket name. For more information, see "3. Suffix Request" described above.
-            signPathname = '/' + Bucket + '/';  
-        }
-        getAuthorization({Method: 'POST', Pathname: signPathname}, function (AuthData) {
-            var requestTask = wx.uploadFile({
-                url: prefix,
-                name: 'file',
-                filePath: filePath,
-                formData: {
-                    'key': Key,
-                    'success_action_status': 200,
-                    'Signature': AuthData.Authorization,
-                    'x-cos-security-token': AuthData.XCosSecurityToken,
-                    'Content-Type': '',
-                },
-                success: function (res) {
-                    var url = prefix + camSafeUrlEncode(Key).replace(/%2F/g, '/');
-                    console.log(res.statusCode);
-                    console.log(url);
-                    if (/^2\d\d$/.test('' + res.statusCode)) {
-                        wx.showModal({title: 'upload succeeded', content: url, showCancel: false});
-                    } else {
-                        wx.showModal({title: 'upload failed', content: JSON.stringify(res), showCancel: false});
-                    }
-                },
-                fail: function (res) {
-                    wx.showModal({title: 'upload failed', content: JSON.stringify(res), showCancel: false});
-                }
-            });
-            requestTask.onProgressUpdate(function (res) {
-                console.log('progress:', res);
-            });
-        });
-    };
-
-    // Upload the file through PUT.
-    var putFile = function (filePath) {
-        var Key = filePath.substr(filePath.lastIndexOf('/') + 1); // The name of the file to be uploaded is specified here.
-        var signPathname = '/'; // For the PostObject API, the Key is placed in the Body for transmission, so the request path and signature path are /.
-        if (ForcePathStyle) {
-			  // The path used by the suffix request during signing must contain the bucket name. For more information, see "3. Suffix Request" described above.
-            signPathname = '/' + Bucket + '/' + Key;  
-        }
-        getAuthorization({Method: 'PUT', Pathname: signPathname}, function (AuthData) {
-          // The PUT request needs to read the file content from the temporary path of the file.
-          var wxfs = wx.getFileSystemManager();
-          wxfs.readFile({
-            filePath: filePath,
-            success: function (fileRes) {
-              var requestTask = wx.request({
-                url: prefix + signPathname.substr(signPathname.lastIndexOf('/') + 1),
-                method: 'PUT',
-                header: {
-                  'Authorization': AuthData.Authorization,
-                  'x-cos-security-token': AuthData.XCosSecurityToken,
-                },
-                data: fileRes.data,
-                success: function success(res) {
-                  var url = prefix + camSafeUrlEncode(Key).replace(/%2F/g, '/');
-                  if (res.statusCode === 200) {
-                      wx.showModal({title: 'upload succeeded', content: url, showCancel: false});
-                  } else {
-                      wx.showModal({title: 'upload failed', content: JSON.stringify(res), showCancel: false});
-                  }
-                  console.log(res.statusCode);
-                  console.log(url);
-                },
-                fail: function fail(res) {
-                  wx.showModal({title: 'upload failed', content: JSON.stringify(res), showCancel: false});
-                },
-              });
-              requestTask.onProgressUpdate(function (res) {
-                  console.log('in progress:', res);
-              });
-            },
-          });
-        });
-    };
-
-    // Select the file
-    wx.chooseImage({
-        count: 1, // Default value: 9
-        sizeType: ['original'], // You can specify whether the image is original or compressed. Original by default
-        sourceType: ['album', 'camera'], // You can specify whether the source is an album or camera. Both are included by default. 
-        success: function (res) {
-            putFile(res.tempFiles[0].path); // PUT for the upload request, which is recommended.
-            // postFile(res.tempFiles[0].path); // POST for the upload request.
-        }
-    })
+   // Select a document
+   wx.chooseMedia({
+     count: 1, // default 9
+     sizeType: ['original'], // You can specify whether it is the original image or the compressed image, here the original image is used by default
+     sourceType: ['album', 'camera'], // You can specify whether the source is an album or a camera, and the default is both
+     success: function (res) {
+       uploadFile(res. tempFiles[0]. tempFilePath);
+     },
+   });
 };
 ```
 
-## References
+#### Upload using PUT
 
-If you need to use a Mini Program SDK, see [Getting Started with Mini Program SDK](https://intl.cloud.tencent.com/document/product/436/30609).
+```js
+var uploadFile = function () {
+   // url encode format for encoding more characters
+   var camSafeUrlEncode = function (str) {
+     return encodeURIComponent(str)
+       .replace(/!/g, '%21')
+       .replace(/'/g, '%27')
+       .replace(/\(/g, '%28')
+       .replace(/\)/g, '%29')
+       .replace(/\*/g, '%2A');
+   };
 
+   // get the signature
+   var getAuthorization = function (options, callback) {
+     wx.request({
+       method: 'GET',
+       // Replace it with your own server address to get the put upload signature
+       url: 'http://127.0.0.1:3000/put-sign?ext=' + options.ext,
+       dataType: 'json',
+       success: function (result) {
+         var data = result. data;
+         if (data) {
+           callback(data);
+         } else {
+           wx. showModal({
+             title: 'Failed to obtain temporary key',
+             content: JSON. stringify(data),
+             showCancel: false,
+           });
+         }
+       },
+       error: function (err) {
+         wx. showModal({
+           title: 'Failed to obtain temporary key',
+           content: JSON. stringify(err),
+           showCancel: false,
+         });
+       },
+     });
+   };
+
+   var putFile = function ({ prefix, filePath, key, AuthData }) {
+     // put upload needs to read the real content of the file to upload
+     const wxfs = wx.getFileSystemManager();
+     wxfs. readFile({
+       filePath: filePath,
+       success: function (fileRes) {
+         var requestTask = wx. request({
+           url: prefix + '/' + key,
+           method: 'PUT',
+           header: {
+             Authorization: AuthData.authorization,
+             'x-cos-security-token': AuthData.securityToken,
+           },
+           data: fileRes.data,
+           success: function success(res) {
+             var url = prefix + '/' + camSafeUrlEncode(key).replace(/%2F/g, '/');
+             if (res. statusCode === 200) {
+               wx. showModal({
+                 title: 'Uploaded successfully',
+                 content: url,
+                 showCancel: false,
+               });
+             } else {
+               wx. showModal({
+                 title: 'Upload failed',
+                 content: JSON. stringify(res),
+                 showCancel: false,
+               });
+             }
+             console.log(res.statusCode);
+             console.log(url);
+           },
+           fail: function fail(res) {
+             wx. showModal({
+               title: 'Upload failed',
+               content: JSON. stringify(res),
+               showCancel: false,
+             });
+           },
+         });
+         requestTask.onProgressUpdate(function (res) {
+           console.log('Progress:', res);
+         });
+       },
+     });
+   };
+
+   // upload files
+   var uploadFile = function (filePath) {
+     var extIndex = filePath. lastIndexOf('.');
+     var fileExt = extIndex >= -1 ? filePath. substr(extIndex + 1) : '';
+     getAuthorization({ ext: fileExt }, function (AuthData) {
+       const prefix = 'https://' + AuthData.cosHost;
+       const key = AuthData. cosKey;
+       putFile({ prefix, filePath, key, AuthData });
+     });
+   };
+
+   // Select a document
+   wx.chooseMedia({
+     count: 1, // default 9
+     sizeType: ['original'], // You can specify whether it is the original image or the compressed image, here the original image is used by default
+     sourceType: ['album', 'camera'], // You can specify whether the source is an album or a camera, and the default is both
+     success: function (res) {
+       uploadFile(res. tempFiles[0]. tempFilePath);
+     },
+   });
+};
+```
+
+## Related documents
+
+To use the Mini Program SDK, please refer to the Mini Program SDK [Quick Start](https://cloud.tencent.com/document/product/436/31953) document.
