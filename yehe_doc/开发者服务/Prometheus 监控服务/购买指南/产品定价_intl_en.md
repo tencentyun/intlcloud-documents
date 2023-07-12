@@ -1,4 +1,4 @@
-Tencent Managed Service for Prometheus (TMP) is available for purchase in many major regions, and the service price may change across regions depending on different promotional activities or pricing strategies.
+TencentCloud Managed Service for Prometheus (TMP) is available for purchase in many major regions, and the service price may change across regions depending on different promotional activities or pricing strategies.
 
 
 ## Pricing
