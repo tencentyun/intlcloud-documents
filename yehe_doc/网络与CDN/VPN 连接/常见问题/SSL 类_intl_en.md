@@ -13,25 +13,21 @@
 4. The SSL client certificate is used by multiple users. Only one user can use the SSL client certificate.
 
 [](id:03)
-### Does an SSL VPN support access to multiple VPCs?
-No. 
+### Can I change the number of SSL connections?
+No. You must plan the number of SSL connections in advance. 
 
 [](id:04)
-### Can I change the number of SSL connections?
-No. You must plan the number of SSL connections in advance. Tencent Cloud will support this feature in the future.
-
-[](id:05)
 ### Does an SSL VPN require fixed public IP addresses?
 No. SSL VPN connections do not require fixed IP addresses on the user side. An SSL VPN allows Windows, MAC, and Linux clients, as well as mobile phones that use OpenVPN, to connect to instances on Tencent Cloud VPCs.
 
-[](id:06)
+[](id:05)
 ## Can I switch an SSL VPN to an IPsec VPN?
 No, you cannot change the VPN gateway type.
 
-[](id:07)
+[](id:06)
 ### Can multiple clients use the same certificate?
 No, each SSL client configuration certificate can be used only by one client.
 
-[](id:08)
+[](id:07)
 ### What is the maximum number of SSL connections allowed?
 The maximum number of SSL connections allowed varies based on the bandwidth specification. A bandwidth specification of [5 Mbps, 100 Mbps] supports up to 100 SSL connections. A bandwidth specification of [200 Mbps, 500 Mbps] supports up to 500 SSL connections. A bandwidth specification of 1000 Mbps supports up to 1000 SSL connections.

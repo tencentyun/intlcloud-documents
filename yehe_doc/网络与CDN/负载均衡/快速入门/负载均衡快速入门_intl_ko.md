@@ -38,7 +38,7 @@ CLB 리스너는 지정된 프로토콜 및 포트를 통해 포워딩하는 데
   - 밸런싱 방법으로 ‘가중 라운드 로빈’을 선택하고 다음을 클릭합니다. 자세한 내용은 [Load Balancing Methods](https://intl.cloud.tencent.com/document/product/214/6153)를 참고하십시오.
 ![](https://main.qcloudimg.com/raw/263b2486f8a5734ea8aa643ea3b34387.png)
 3. ‘상태 확인’을 활성화합니다. 도메인 및 경로 확인 필드 모두에 기본값을 사용하고 **다음**을 클릭합니다.
-![](https://main.qcloudimg.com/raw/9d8c9bbe1191340e452e9feeafb20e73.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/84dR058_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230710181910.png)
 4. ‘세션 지속성’을 비활성화하고 **제출**을 클릭합니다.
 
 CLB 리스너에 대한 자세한 내용은 [CLB Listener Overview](https://intl.cloud.tencent.com/document/product/214/6151)를 참고하십시오.

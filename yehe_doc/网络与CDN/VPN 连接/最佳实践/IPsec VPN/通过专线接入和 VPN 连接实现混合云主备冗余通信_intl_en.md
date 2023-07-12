@@ -57,7 +57,7 @@ You have deployed businesses in a Tencent Cloud VPC and an IDC. To interconnect 
 ### [](id:step1)Step 1: Connect IDC to VPC through Direct Connect
 1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/dc) and click **Connections** on the left sidebar to create a connection.
 2. Click **Direct Connect Gateway** on the left sidebar and then click **+New** to create a direct connect gateway. In this example, we create a standard direct connect gateway that connects to a VPC. If the IP range of your IDC conflicts with the IP range of the VPC, you can create a direct connect gateway of the NAT type.
-3. Click **Dedicated Tunnels** on the left sidebar and then click **+New** to create a dedicated tunnel. Enter a tunnel name and select the connection type and the direct connect gateway instance that is created. Configure the IP addresses on the Tencent Cloud and IDC sides, select the static route, and enter the IDC IP range. After the configuration is complete, click **Download configuration guide** and complete the IDC device configurations as instructed in the guide.
+3. Click **Exclusive virtual interface** on the left sidebar and then click **+New** to create a dedicated tunnel. Enter a tunnel name and select the connection type and the direct connect gateway instance that is created. Configure the IP addresses on the Tencent Cloud and IDC sides, select the static route, and enter the IDC IP range. After the configuration is complete, click **Download configuration guide** and complete the IDC device configurations as instructed in the guide.
 4. In the route table associated with the VPC subnet for communication, configure a routing policy with the direct connect gateway as the next hop and IDC IP range as the destination.
 >?For detailed configurations, see [Getting Started](https://intl.cloud.tencent.com/document/product/216/7557).
 >
@@ -84,7 +84,7 @@ To stay on top of the primary/secondary connection quality, configure two networ
 
 ### [](id:step4)Step 4: Configure an alarm policy
 You can configure an alarm policy for linkages. When a linkage has an exception, alarm notifications are sent to you automatically via emails and SMS message, alerting you of the risks in advance.
-1. Log in to the CM console and go to the [Alarm Policy](https://console.cloud.tencent.com/monitor/alarm2/policy) page.
+1. Log in to the TCOP console and go to the [Alarm Policy](https://console.cloud.tencent.com/monitor/alarm2/policy) page.
 2. Click **Create**. Enter a policy name, select VPC/Network Probe for the policy type, and specify the network probe instances as the alarm object. Then, configure trigger conditions, alarm notifications, and other information and click **Complete**.
 
 ### [](id:step5)Step 5: Switch between primary and secondary routes

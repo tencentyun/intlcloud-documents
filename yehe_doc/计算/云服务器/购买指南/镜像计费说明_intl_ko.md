@@ -40,7 +40,7 @@ Red Hat Enterprise Linux는 상용 OS입니다. Tencent Cloud를 통한 정식 �
 <dx-alert infotype="explain" title="">
 - Tencent Cloud에서 Red Hat Enterprise Linux 이미지 라이선스 구매 시 할인(스팟 인스턴스에 대한 할인 포함) 및 크레딧은 사용할 수 없습니다.
 - Red Hat Enterprise Linux 이미지를 사용하기 위해 Red Hat Enterprise Linux에 대해 인증된 인스턴스 모델을 선택할 수 있습니다. 지원되는 이미지 태그 및 인스턴스 모델은 [FAQs about Red Hat Enterprise Linux Image](https://www.tencentcloud.com/document/product/213/55135)를 참고하십시오.
-- Red Hat Enterprise Linux 이미지는 베타 테스트 중입니다. 베타에 참여하려면 [티켓 제출](https://cloud.tencent.com/apply/p/2yj9npvw8lq)하여 신청할 수 있습니다.
+- Red Hat Enterprise Linux 이미지는 베타 테스트 중입니다. 베타에 참여하려면 [티켓 제출](https://console.intl.cloud.tencent.com/workorder/category)하여 신청할 수 있습니다.
 </dx-alert>
 
 ### 라이선스 Red Hat Enterprise Linux 이미지 가격

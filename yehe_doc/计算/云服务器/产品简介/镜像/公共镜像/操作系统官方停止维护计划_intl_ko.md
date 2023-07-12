@@ -182,7 +182,7 @@ Tencent Cloud의 공용 이미지 유지 계획은 운영 체제 플랫폼의 �
 
 <dx-alert infotype="explain" title="">
 
-- Red Hat Enterprise Linux 이미지는 베타 테스트 중입니다. 베타에 참여하려면 [티켓 제출](https://cloud.tencent.com/apply/p/2yj9npvw8lq)하여 사용 권한을 신청할 수 있습니다.
+- Red Hat Enterprise Linux 이미지는 베타 테스트 중입니다. 베타에 참여하려면 [티켓 제출](https://console.intl.cloud.tencent.com/workorder/category)하여 사용 권한을 신청할 수 있습니다.
 - CVM 구입 시 Red Hat Enterprise Linux 인증을 통과한 인스턴스 유형을 선택한 경우 Red Hat Enterprise Linux 이미지를 사용할 수 있습니다.  지원되는 이미지 태그 및 인스턴스 모델은 [FAQs about Red Hat Enterprise Linux Image](https://www.tencentcloud.com/document/product/213/55135)를 참고하십시오.
 </dx-alert> 
 

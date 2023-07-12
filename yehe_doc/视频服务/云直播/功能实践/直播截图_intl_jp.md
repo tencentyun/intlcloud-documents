@@ -16,7 +16,7 @@ CSSスクリーンキャプチャとは、ご自身の好きなタイミング�
 
 ### スクリーンキャプチャの設定方式
 - [CSS API](https://intl.cloud.tencent.com/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
-- 【CSSコンソール】>【機能テンプレート】>【[Screencapturing and Porn Detection Configuration](https://console.cloud.tencent.com/live/config/jtjh)】、詳細な情報については、[Screencapturing and Porn Detection Configuration](https://cloud.tencent.com/document/product/267/20386)をご参照ください。
+- 【CSSコンソール】>【機能テンプレート】>【[Screencapturing and Porn Detection Configuration](https://console.cloud.tencent.com/live/config/jtjh)】、詳細な情報については、[Screencapturing and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31072)をご参照ください。
 
 ### スクリーンキャプチャ間隔の設定
 

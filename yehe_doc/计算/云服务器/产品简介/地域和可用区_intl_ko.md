@@ -4,7 +4,7 @@
 
 리전(Region)은 물리적 IDC의 지리적 위치를 의미합니다. Tencent Cloud는 리전별로 완전히 격리되어, 리전별 안정성과 고장 방지 능력을 최대한 보장합니다. 딜레이를 줄이고 다운로드 속도를 높이려면 클라이언트에서 가장 가까운 리전을 선택하는 것이 좋습니다.
 
-다음 리스트 혹은 [DescribeRegion](http://intl.cloud.tencent.com/document/product/213/9456) API를 통해 전체 리전 리스트를 조회할 수 있습니다.
+다음 리스트 혹은 [DescribeRegion](https://intl.cloud.tencent.com/document/product/213/15708) API를 통해 전체 리전 리스트를 조회할 수 있습니다.
 
 ### 관련 특징
 

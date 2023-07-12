@@ -126,8 +126,8 @@ The detailed pricing of elastic protection is as follows:
 | Elastic protection bandwidth (Gbps)     | Below 5 IPs (USD) | 5-10 IPs (USD) | 10-20 IPs (USD) | 20-50 IPs (USD) | 50 IPs above (USD) |
 | -------------------- | ------------- | ------------ | ------------- | ------------- | -------------- |
 | 0＜ Billable elastic bandwidth ≤5     | 130           | 260          | 390          | 520          | 650           |
-| 5＜ Billable elastic bandwidth ≤10     | 166.66           | 500          | 3000          | 666.66          | 833.33           |
-| 10＜ Billable elastic bandwidth ≤20     | 333.33           | 1000          | 6000          | 1333.33          | 1666.66           |
+| 5＜ Billable elastic bandwidth ≤10     | 166.66           | 333.33          | 500          | 666.66          | 833.33           |
+| 10＜ Billable elastic bandwidth ≤20     | 333.33           | 666.66          | 1000          | 1333.33          | 1666.66           |
 | 20＜ Billable elastic bandwidth ≤30     | 583.33           | 1166.66          | 1750          | 2333.33          | 2916.66           |
 | 30＜ Billable elastic bandwidth ≤40     | 800           | 1600          | 2400          | 3200          | 4000           |
 | 40＜ Billable elastic bandwidth ≤50     | 950           | 1900          | 2850          | 3800          | 4750           |

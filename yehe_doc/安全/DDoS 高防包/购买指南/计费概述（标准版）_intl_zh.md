@@ -88,7 +88,7 @@ DDoS 高防包（标准版）默认支持保护单个地域下的业务 IP，防
 <thead>
 <tr>
 <th  width="20%" and rowspan=2>防护 IP 数</th>
-<th  width="80%" and  colspan=1 >包年单价（单位：美元）</th>
+<th  width="80%" and  colspan=1 >包月单价（单位：美元）</th>
 </tr>
 <tr>
 <th>刊例价</th>
