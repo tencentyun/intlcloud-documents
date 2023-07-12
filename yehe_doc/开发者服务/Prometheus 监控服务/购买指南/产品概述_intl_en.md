@@ -1,4 +1,4 @@
-﻿You can estimate the cost of Tencent Managed Service for Prometheus (TMP) resources by referring to the billing documentation.
+﻿You can estimate the cost of TencentCloud Managed Service for Prometheus (TMP) resources by referring to the billing documentation.
 
 ## Billing Mode
 TMP supports the pay-as-you-go billing mode:
