@@ -187,7 +187,9 @@ A free tier of five custom images is provided for each region, and the unit pric
 ## [Cloud Disk Pricing](id:cbsDetail)
 
 ### Pricing information
-Hong Kong (China), Singapore, Silicon Valley, Japan, Frankfurt, and India: 0.17 USD/GB/month
+Hong Kong (China), Singapore, Silicon Valley, Japan, Frankfurt, Jakarta, and India: 
+Premium Cloud Disk: 0.11 USD/GB/month
+SSD Cloud Disk: 0.17 USD/GB/month   
 
 
 
