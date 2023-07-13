@@ -1,12 +1,28 @@
-This document describes how to connect to a cluster at a private network or public network address from a Windows CVM instance.
+TDSQL-C for MySQL supports instance-level dedicated IP address, which allows you to connect to the instance through the IP address of a read-write or read-only instance in a cluster. This document describes how to connect to an instance in a cluster from a Windows CVM instance via private or public network.
 
 ## Prerequisites
-You have created a database cluster account as instructed in [Creating Account](https://www.tencentcloud.com/document/product/1098/44612).
+You have created a database cluster account. For more information, see [Creating Account](https://www.tencentcloud.com/document/product/1098/44612).
 
-## Directions
+## Step1: Query the private and public IP address of the instance to be connected.
+1. Log in to the [TDSQL-C MySQL console](https://console.cloud.tencent.com/cynosdb/mysql/ap-beijing/cluster/cynosdbmysql-fo7dcbse/detail).
+2. On the cluster list page, proceed based on the actually used view mode:
+<dx-tabs>
+::: Tab view
+1. Click the target cluster in the cluster list on the left to enter the cluster management page.
+2. On the **Cluster Details** tab, find the target instance, and view its private and public network IP address under **Network**.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/AzPA266_10.png)
+:::
+::: List view
+1. Click the **ID** of the target cluster in the cluster list or **Manage** in the **Operation** column to enter the cluster Manage page.
+2. On the cluster management page, select the read-write or read-only instance on the instance list page, and you can view the instance private and public network IP address under **Private/Public Network Address**.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/h2eU199_11.png)
+:::
+</dx-tabs>
+
+## Step 2: Connect to the target instance in a cluster
 1. Log in to a Windows CVM instance. For more information, see [Customizing Windows CVM Configurations](https://www.tencentcloud.com/document/product/1098/52633).
 2. Download a standard SQL client.
->?We recommend you download MySQL Workbench. Click [here](https://dev.mysql.com/downloads/workbench/) and download an installer based on your operating system.
+>?We recommend that you download MySQL Workbench. Click [here](https://dev.mysql.com/downloads/workbench/) and download an installer based on your operating system.
 >
 ![](https://main.qcloudimg.com/raw/851ab46468c554097a0cf742017157b7.png)
 3. **Login**, **Sign Up**, and **No thanks, just start my download.** will appear on the page. Select **No thanks, just start my download.** to download quickly.
@@ -23,7 +39,7 @@ You have created a database cluster account as instructed in [Creating Account](
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Hostname</td>
-<td>Enter the private (or public) network address of the target database, which can be viewed on the cluster details page in the <a href="https://console.cloud.tencent.com/cynosdb">console</a>. For public network address, check whether it has been enabled as instructed in <a href="https://www.tencentcloud.com/document/product/1098/51982">Enabling/Disabling Public Network Address</a>.</td></tr>
+<td>Enter the public network address of the target TDSQL-C for MySQL instance in a cluster as instructed in <a href="#SLIPDZ2">Step 1</a>. For public network address, check whether it has been enabled as instructed in <a href="https://www.tencentcloud.com/document/product/1098/51982">Enabling/Disabling Public Network Address</a>.</td></tr>
 <tr>
 <td>Port</td>
 <td>Private (or public) network port.</td></tr>
@@ -34,6 +50,7 @@ You have created a database cluster account as instructed in [Creating Account](
 <td>Password</td>
 <td>Enter the password corresponding to the username. If you forgot the password, reset it in the console.</td></tr>
 </tbody></table>
+
 6. After successful login, the following page will appear, where you can view the modes and objects of the database, create tables, and perform operations such as data insertion and query.
 ![](https://main.qcloudimg.com/raw/33f081e99c384258bbc5ed3683ed4d7d.png)
 
@@ -50,7 +67,7 @@ If the security group rules of the Linux CVM instance don't match properly (for 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/NwXh031_31.png)
 You can locate the possible causes of the login failure through quick check.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/vQRD904_32.png)
-Then, on the CVM instance details page, select **Security Group** > **Edit Rule** and open the corresponding port. For detailed directions, see [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34272).
+Then, on the CVM instance details page, select **Security Group** > **Edit Rule** and open the corresponding port. For detailed directions, see [Adding Security Group Rules](https://www.tencentcloud.com/document/product/213/34272).
 
 #### What settings may cause a cluster connection failure?
 Check whether the CVM instance and the TDSQL-C for MySQL cluster are in the same VPC in the same region under the same Tencent Cloud account. If any of these three prerequisites is not meet, the cluster cannot be connected.

@@ -21,7 +21,7 @@ TDSQL-C MySQL 版支持读写访问地址与只读访问地址，读写访问地
 | 实例管理项 | 说明 | 操作方法 |
 |---------|---------|---------|
 | 实例名 | a. 您可对集群下的读写/只读实例进行名称修改<br>b. 实例名仅支持长度小于60的中文、英文、数字、`-`、`_`、`.` | [设置实例名称](https://intl.cloud.tencent.com/document/product/1098/44633) |
-| 字符集 | a. 您可修改对应实例的字符集<br>b. 目前支持的字符集有：UTF8、GBK、LATIN1、UTF8、MB4  | [修改字符集](https://intl.cloud.tencent.com/document/product/1098/44630) |
+| 字符集 | a. 您可修改对应实例的字符集<br>b. 目前支持的字符集有：UTF8、GBK、LATIN1、UTF8MB4  | [修改字符集](https://intl.cloud.tencent.com/document/product/1098/44630) |
 | 调整配置 | a. 您可根据业务需要变更实例配置<br>b. 可对实例的计算规格与存储进行调整 | [调整计算配置](https://www.tencentcloud.com/document/product/1098/50176)<br>[调整存储空间](https://intl.cloud.tencent.com/document/product/1098/50175) |
 | 维护时间 | a. 您可设置实例的维护时间和周期，便于为相关操作预设维护信息<br>b. 维护周期可连续或间断选择从周一到周日<br>c. 维护时间可设置开始时间和持续时间 | [设置实例维护时间](https://www.tencentcloud.com/document/product/1098/44631) |
 | 重启实例 | a. 当您需要对实例进行例行维护，或者清理数据库的 buffer 时，可以重启实例<br>b. 为避免影响您的业务正常运行，请确保该实例目前无其他任务项 | [重启实例](https://intl.cloud.tencent.com/document/product/1098/44629) |
@@ -29,11 +29,25 @@ TDSQL-C MySQL 版支持读写访问地址与只读访问地址，读写访问地
 | 恢复实例 | a. 您可在误删或其他需要恢复的情况下恢复已隔离状态的实例<br>b. 回收站会显示该实例可恢复的期限 | [恢复实例](https://intl.cloud.tencent.com/document/product/1098/44627) |
 
 ## 查看实例列表
+在集群的管理页面，根据实际使用的视图模式进行操作：
+<dx-tabs>
+::: 页签视图
+1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)，在左侧集群列表，单击目标集群，进入集群管理页。
+2. 在集群详情下，可以查看此集群下拥有的所有读写实例和只读实例。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/jZRG193_30.png)
+3. 如果集群下拥有的只读实例较多，您可单击只读实例下的图标切换查看，拥有5个及以上只读实例时，也可单击图标右侧下拉键筛选目标实例 ID 进行查看。
+4. 您可查看到读写/只读实例的信息为：实例 ID、实例名称、实例运行状态、读写/只读内网或外网地址，可对实例进行的操作为：重启实例、实例名称修改、内网地址修改、外网地址开启或关闭、重启实例、调整配置、销毁实例等，单击**详情**，可进入对应实例详情页面。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/yuXI245_32.png)
+5. 在实例详情页，您可查看实例的基本信息、配置信息、维护信息，也可以查看实例的操作日志。
+:::
+::: 列表视图
 1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)。
 2. 在上方选择地域，在集群列表中，找到目标集群，单击集群 ID 或**操作**列的**管理**进入集群管理页面。
 3. 在集群管理页面，选择实例列表页，即可查看到当前集群下的读写实例和只读实例。
  - 实例列表中默认展示**实例ID/实例名**、**监控**、**可用区**、**内外网地址**、**到期时间**、**实例类型**、**实例状态**、**实例配置**、**操作**等。
  - 若集群下实例较多，也可通过右侧搜索对话框中输入实例 ID 或者实例名的关键字，快速找到对应的实例。
- - 单击实例 ID 可进入实例详情页进行实例监控及操作日志查询。
+ - 单击实例 ID 可进入实例详情页进行实例信息及操作日志查询。
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/tUTg561_8.png)
+:::
+</dx-tabs>

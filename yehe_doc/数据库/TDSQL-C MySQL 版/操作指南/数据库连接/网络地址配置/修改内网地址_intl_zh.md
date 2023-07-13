@@ -17,12 +17,13 @@
 :::
 ::: 列表视图
 1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)，在集群列表中，找到需要的集群，单击集群 ID，进入集群管理页面。
-2. 在**集群详情**页的**连接信息**处，单击对应内网地址后的![](https://main.qcloudimg.com/raw/cf9bbcfaea10f0316bddd967cb6e8ffc.png)。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/mkLM021_39.png)
+2. 选择实例列表页，选择需修改内网地址的实例（读写实例或只读实例），单击其实例 ID 进入实例详情页。
+3. 在实例详情页>连接信息>内网地址后单击图标![](https://main.qcloudimg.com/raw/cf9bbcfaea10f0316bddd967cb6e8ffc.png)。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/vW6D543_24.png)
 3. 在弹出的对话框，修改内网地址端口后，单击**确定**。
 >!修改内网地址会影响正在访问的数据库业务。
 >
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/HXHp898_40.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/VENv431_25.png)
  - **内网地址**：您可在内网地址可选段范围自定义内网地址。
  - **自定义端口**：您可自定义端口值，取值范围为1024 - 65535。
  - **旧IP地址回收时间**：回收时间系统默认为24小时，在24小时内，您依然可通过旧 IP 地址访问实例。此时间支持自定义，范围是：0 - 168小时，若您设置回收时间为0，会立即回收旧 IP 地址，随即不可通过旧 IP 地址访问实例。

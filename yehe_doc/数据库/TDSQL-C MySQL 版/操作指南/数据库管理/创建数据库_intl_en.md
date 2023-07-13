@@ -11,12 +11,12 @@ This document describes how to create a database and manage database account per
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody><tr>
 <td>Database Name</td>
-<td>Enter the database name, which can contain up to 64 lowercase letters, digits, hyphens, and underscores and must start with a letter and end with a letter or digit.</td></tr>
+<td>Enter the database name, which can contain up to 64 letters, digits, hyphens, and underscores and must start with a letter and end with a letter or digit.</td></tr>
 <tr>
 <td>Character Set</td>
 <td>Set the character set supported by the database. For more information, see <a href="https://dev.mysql.com/doc/">MySQL documentation</a>.</td></tr>
 <tr>
-<td>Sorting Rule</td>
+<td>Collation</td>
 <td>Set the sorting rule of the database. For more information, see <a href="https://dev.mysql.com/doc/">MySQL documentation</a>.</td></tr>
 <tr>
 <td>Authorize User</td>

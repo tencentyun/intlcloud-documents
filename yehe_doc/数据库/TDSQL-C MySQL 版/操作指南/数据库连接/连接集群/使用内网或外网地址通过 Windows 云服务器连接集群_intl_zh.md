@@ -1,9 +1,25 @@
-本文为您介绍，如何使用内网或外网地址通过 Windows 云服务器连接集群。
+TDSQL-C MySQL 版支持实例级独立 IP 地址，即您可以通过集群下读写实例或任一只读实例的 IP 地址连接访问对应实例。本文为您介绍，如何使用内网或外网地址通过 Windows 云服务器连接集群。
 
 ## 前提条件
 已创建数据库集群账号，具体请参见 [创建数据库账号](https://www.tencentcloud.com/document/product/1098/44612)。
 
-## 操作步骤
+## 步骤一：查询需要连接的实例内/外网 IP 地址[](id:SLIPDZ2)
+1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb/mysql/ap-beijing/cluster/cynosdbmysql-fo7dcbse/detail)。
+2. 在集群列表页，根据实际使用的视图模式进行操作：
+<dx-tabs>
+::: 页签视图
+1. 在左侧集群列表，单击目标集群，进入集群管理页。
+2. 在集群详情下，找到需要查询内/外网 IP 地址的实例，在其所属网络下方可查看该实例的内/外网 IP 地址。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/AzPA266_10.png)
+:::
+::: 列表视图
+1. 在集群列表中，找到目标集群，单击**集群 ID** 或操作列的**管理**，进入集群管理页面。
+2. 在集群管理页面，选择实例列表页，选择读写实例或只读实例，在**字段：内/外网地址**下查看对应实例的内/外网 IP 地址。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/h2eU199_11.png)
+:::
+</dx-tabs>
+
+## 步骤二：连接集群下的目标实例
 1. 登录到 Windows 云服务器，请参见 [快速配置 Windows 云服务器](https://www.tencentcloud.com/document/product/1098/52633)。
 2. 下载一个标准的 SQL 客户端。
 >?推荐您下载 MySQL Workbench，并根据您的系统来下载适配版本的安装程序，下载地址请参见 https://dev.mysql.com/downloads/workbench/。
@@ -23,7 +39,7 @@
 <thead><tr><th>参数</th><th>说明</th></tr></thead>
 <tbody><tr>
 <td>Hostname</td>
-<td>输入内网（或外网）地址。在 <a href="https://console.cloud.tencent.com/cynosdb">控制台</a> 的集群详情页可查看到目标数据库的内网（或外网）地址。若为外网地址，请确认是否已开启，请参见 <a href="https://www.tencentcloud.com/document/product/1098/51982">开启或关闭外网地址</a>。</td></tr>
+<td>输入 TDSQL-C MySQL 版集群下目标实例的内/外网地址，内/外网地址查询方法参见 <a href="#SLIPDZ2">步骤一</a>。若为外网地址，请确认是否已开启，如未开启，请参见 <a href="https://www.tencentcloud.com/document/product/1098/51982">开启或关闭外网地址</a>。</td></tr>
 <tr>
 <td>Port</td>
 <td>内网（或外网）对应端口。</td></tr>
@@ -34,6 +50,7 @@
 <td>Password</td>
 <td>Username 对应的密码。如忘记密码可在控制台进行修改。</td></tr>
 </tbody></table>
+
 6. 登录成功的页面如图所示，在此页面上您可以看到数据库的各种模式和对象，您可以开始创建表，进行数据插入和查询等操作。
 ![](https://main.qcloudimg.com/raw/33f081e99c384258bbc5ed3683ed4d7d.png)
 
