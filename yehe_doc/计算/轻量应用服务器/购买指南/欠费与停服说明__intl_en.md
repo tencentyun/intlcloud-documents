@@ -1,3 +1,6 @@
+>!
+If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+
 ## Overdue Payments and Service Suspension
 Lighthouse instance packages are prepaid. Generally, if your account has overdue payments, instance usage will not be affected. However, if your account and instances meet the following conditions at the same time, your instances will be suspended due to overdue payments and displayed as in **to be repossessed** status in the [Lighthouse console](https://console.cloud.tencent.com/lighthouse/instance/index).
 - Condition 1: the account has overdue payments.
