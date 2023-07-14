@@ -26,7 +26,7 @@
 <td >Cluster load</td>
 <td >TotalLoad </td>
 <td >1 </td>
-<td >Number of current connections</td>
+<td >Current connections</td>
 </tr><tr>
 <td >Total files in cluster</td>
 <td >FilesTotal </td>
@@ -103,12 +103,12 @@
 </tr><tr>
 <td >Snapshots</td>
 <td >Snapshots </td>
-<td >- </td>
+<td >-</td>
 <td >Number of snapshots</td>
 </tr><tr>
 <td >Disk failure</td>
 <td >VolumeFailuresTotal </td>
-<td >- </td>
+<td >-</td>
 <td >Total number of volume failures across all DataNodes</td>
 </tr>
 </table>
@@ -146,19 +146,19 @@
 </tr><tr>
  <td rowspan=4>Authentication and authorization</td>
  <td >RpcAuthenticationFailures </td>
-<td >	-</td>
+<td > 1 per time</td>
 <td >Number of RPC authentication failures</td>
 </tr><tr>
 <td >RpcAuthenticationSuccesses </td>
-<td >-</td>
+<td > 2 per time</td>
 <td >Number of RPC authentication successes</td>
 </tr><tr>
 <td >RpcAuthorizationFailures </td>
-<td >-</td>
+<td > 3 per time</td>
 <td >Number of RPC authorization failures</td>
 </tr><tr>
 <td >RpcAuthorizationSuccesses </td>
-<td >-</td>
+<td > 4 per time</td>
 <td >Number of RPC authorization successes</td>
 </tr><tr>
 <td >Current connections</td>
@@ -172,28 +172,28 @@
 <td >Length of current RPC processing queue</td>
 </tr><tr>
 <td rowspan=6>JVM memory</td>
-<td >MemNonHeapUsedM </td>
-<td >MB </td>
+<td >MemNonHeapUsedM</td>
+<td >MB</td>
 <td >Size of NonHeapMemory currently used by JVM</td>
 </tr><tr>
-<td >MemNonHeapCommittedM </td>
-<td >MB </td>
+<td >MemNonHeapCommittedM</td>
+<td >MB</td>
 <td >Size of NonHeapCommittedM configured by JVM</td>
 </tr><tr>
-<td >MemHeapUsedM </td>
-<td >MB </td>
+<td >MemHeapUsedM</td>
+<td >MB</td>
 <td >Size of HeapMemory currently used by JVM</td>
 </tr><tr>
-<td >MemHeapCommittedM </td>
-<td >MB </td>
+<td >MemHeapCommittedM</td>
+<td >MB</td>
 <td >Committed size of JVM HeapMemory</td>
 </tr><tr>
-<td >MemHeapMaxM </td>
-<td >MB </td>
+<td >MemHeapMaxM</td>
+<td >MB</td>
 <td >Size of HeapMemory configured by JVM</td>
 </tr><tr>
 <td >MemMaxM </td>
-<td >MB </td>
+<td >MB</td>
 <td >Maximum size of memory available to JVM runtime</td>
 </tr><tr>
 <td >Block reporting latency</td>
@@ -244,50 +244,50 @@
 <td >	Number of INFO-level logs</td>
 </tr><tr>
 <td rowspan=2>GC count</td>
-<td >YGC </td>
-<td >- </td>
+<td >YGC</td>
+<td >-</td>
 <td >Young GC count</td>
 </tr><tr>
-<td >FGC </td>
-<td >- </td>
+<td >FGC</td>
+<td >-</td>
 <td >Full GC count</td>
 </tr><tr>
 <td rowspan=3>GC time</td>
-<td >FGCT </td>
-<td >s </td>
+<td >FGCT</td>
+<td >s</td>
 <td >Full GC time</td>
 </tr><tr>
-<td >GCT </td>
-<td >s </td>
+<td >GCT</td>
+<td >s</td>
 <td >Garbage collection time</td>
 </tr><tr>
-<td >YGCT </td>
-<td >s </td>
+<td >YGCT</td>
+<td >s</td>
 <td >Young GC time</td>
 </tr><tr>
 <td rowspan=6>Memory zone proportion</td>
 <td >S0</td>
-<td >% </td>
+<td >%</td>
 <td >Percentage of used Survivor 0 memory</td>
 </tr><tr>
-<td >S1 </td>
-<td >% </td>
+<td >S1</td>
+<td >%</td>
 <td >Percentage of used Survivor 1 memory</td>
 </tr><tr>
-<td >E </td>
-<td >% </td>
+<td >E</td>
+<td >%</td>
 <td >Percentage of used Eden memory</td>
 </tr><tr>
-<td >O </td>
-<td >% </td>
+<td >O</td>
+<td >%</td>
 <td >Percentage of used Old memory</td>
 </tr><tr>
-<td >M </td>
-<td >% </td>
+<td >M</td>
+<td >%</td>
 <td >Percentage of used Metaspace memory</td>
 </tr><tr>
-<td >CCS </td>
-<td >% </td>
+<td >CCS</td>
+<td >%</td>
 <td >Percentage of used compressed class space memory</td>
 </tr><tr>
 <td >Storages marked as content stale</td>
@@ -939,28 +939,28 @@
 <td >Total number of bytes written to memory</td>
 </tr><tr>
 <td rowspan=6>JVM memory</td>
-<td >MemNonHeapUsedM </td>
-<td >MB </td>
+<td >MemNonHeapUsedM</td>
+<td >MB</td>
 <td >Size of NonHeapMemory currently used by JVM</td>
 </tr><tr>
-<td >MemNonHeapCommittedM </td>
-<td >MB </td>
+<td >MemNonHeapCommittedM</td>
+<td >MB</td>
 <td >Size of NonHeapCommittedM configured by JVM</td>
 </tr><tr>
-<td >MemHeapUsedM </td>
-<td >MB </td>
+<td >MemHeapUsedM</td>
+<td >MB</td>
 <td >Size of HeapMemory currently used by JVM</td>
 </tr><tr>
-<td >MemHeapCommittedM </td>
-<td >MB </td>
+<td >MemHeapCommittedM</td>
+<td >MB</td>
 <td >Committed size of JVM HeapMemory</td>
 </tr><tr>
-<td >MemHeapMaxM </td>
-<td >MB </td>
+<td >MemHeapMaxM</td>
+<td >MB</td>
 <td >Size of HeapMemory configured by JVM</td>
 </tr><tr>
 <td >MemMaxM </td>
-<td >MB </td>
+<td >MB</td>
 <td >Maximum size of memory available to JVM runtime</td>
 </tr><tr>
 <td rowspan=6>JVM threads</td>
@@ -1006,50 +1006,50 @@
 <td >Number of Info logs</td>
 </tr><tr>
 <td rowspan=2>GC count</td>
-<td >YGC </td>
+<td >YGC</td>
 <td >-</td>
 <td >Young GC count</td>
 </tr><tr>
-<td >FGC </td>
+<td >FGC</td>
 <td >-</td>
 <td >Full GC count</td>
 </tr><tr>
 <td rowspan=3>GC time</td>
-<td >FGCT </td>
-<td >s </td>
+<td >FGCT</td>
+<td >s</td>
 <td >Full GC time</td>
 </tr><tr>
-<td >GCT </td>
-<td >s </td>
+<td >GCT</td>
+<td >s</td>
 <td >Garbage collection time</td>
 </tr><tr>
-<td >YGCT </td>
-<td >s </td>
+<td >YGCT</td>
+<td >s</td>
 <td >Young GC time</td>
 </tr><tr>
 <td rowspan=6>Memory zone proportion</td>
-<td >S0 </td>
-<td >% </td>
+<td >S0</td>
+<td >%</td>
 <td >Percentage of used Survivor 0 memory</td>
 </tr><tr>
-<td >E </td>
-<td >% </td>
+<td >E</td>
+<td >%</td>
 <td >Percentage of used Eden memory</td>
 </tr><tr>
-<td >CCS </td>
-<td >% </td>
+<td >CCS</td>
+<td >%</td>
 <td >Percentage of used compressed class space memory</td>
 </tr><tr>
-<td >S1 </td>
-<td >% </td>
+<td >S1</td>
+<td >%</td>
 <td >Percentage of used Survivor 1 memory</td>
 </tr><tr>
-<td >O </td>
-<td >% </td>
+<td >O</td>
+<td >%</td>
 <td >Percentage of used Old memory</td>
 </tr><tr>
-<td >M </td>
-<td >% </td>
+<td >M</td>
+<td >%</td>
 <td >Percentage of used Metaspace memory</td>
 </tr><tr>
 <td rowspan=2>Data traffic</td>
@@ -1113,7 +1113,7 @@
 </tr><tr>
 <td >Start time</td>
 <td >StartTime </td>
-<td >s </td>
+<td >s</td>
 <td >Process start time</td>
 </tr><tr>
 <td rowspan=2>Threads</td>
@@ -1143,7 +1143,7 @@
 <td >Blocks</td>
 <td >Related to disk information, such as `/data/qcloud/data/hdfs`</td>
 <td >-</td>
-<td >Number of blocks</td>
+<td >Blocks</td>
 </tr><tr>
 <td >Used disk capacity</td>
 <td >Related to disk information, such as `/data/qcloud/data/hdfs`</td>
@@ -1171,28 +1171,28 @@
 <th width=50%>Description</th>
 </tr><tr>
 <td rowspan=6>JVM memory</td>
-<td >MemNonHeapUsedM </td>
-<td >MB </td>
+<td >MemNonHeapUsedM</td>
+<td >MB</td>
 <td >Size of NonHeapMemory currently used by JVM</td>
 </tr><tr>
-<td >MemNonHeapCommittedM </td>
-<td >MB </td>
+<td >MemNonHeapCommittedM</td>
+<td >MB</td>
 <td >Size of NonHeapCommittedM configured by JVM</td>
 </tr><tr>
-<td >MemHeapUsedM </td>
-<td >MB </td>
+<td >MemHeapUsedM</td>
+<td >MB</td>
 <td >Size of HeapMemory currently used by JVM</td>
 </tr><tr>
-<td >MemHeapCommittedM </td>
-<td >MB </td>
+<td >MemHeapCommittedM</td>
+<td >MB</td>
 <td >Committed size of JVM HeapMemory</td>
 </tr><tr>
-<td >MemHeapMaxM </td>
-<td >MB </td>
+<td >MemHeapMaxM</td>
+<td >MB</td>
 <td >Size of HeapMemory configured by JVM</td>
 </tr><tr>
 <td >MemMaxM </td>
-<td >MB </td>
+<td >MB</td>
 <td >Maximum size of memory available to JVM runtime</td>
 </tr><tr>
 <td rowspan=6>JVM threads</td>
@@ -1238,50 +1238,50 @@
 <td >Number of INFO-level logs</td>
 </tr><tr>
 <td rowspan=2>GC count</td>
-<td >YGC </td>
-<td >- </td>
+<td >YGC</td>
+<td >-</td>
 <td >Young GC count</td>
 </tr><tr>
-<td >FGC </td>
-<td >- </td>
+<td >FGC</td>
+<td >-</td>
 <td >Full GC count</td>
 </tr><tr>
 <td rowspan=3>GC time</td>
-<td >FGCT </td>
-<td >s </td>
+<td >FGCT</td>
+<td >s</td>
 <td >Full GC time</td>
 </tr><tr>
-<td >GCT </td>
-<td >s </td>
+<td >GCT</td>
+<td >s</td>
 <td >Garbage collection time</td>
 </tr><tr>
-<td >YGCT </td>
-<td >s </td>
+<td >YGCT</td>
+<td >s</td>
 <td >Young GC time</td>
 </tr><tr>
 <td rowspan=6>Memory zone proportion</td>
-<td >S0 </td>
-<td >% </td>
+<td >S0</td>
+<td >%</td>
 <td >Percentage of used Survivor 0 memory</td>
 </tr><tr>
-<td >E </td>
-<td >% </td>
+<td >E</td>
+<td >%</td>
 <td >Percentage of used Eden memory</td>
 </tr><tr>
-<td >CCS </td>
-<td >% </td>
+<td >CCS</td>
+<td >%</td>
 <td >Percentage of used compressed class space memory</td>
 </tr><tr>
-<td >S1 </td>
-<td >% </td>
+<td >S1</td>
+<td >%</td>
 <td >Percentage of used Survivor 1 memory</td>
 </tr><tr>
-<td >O </td>
-<td >% </td>
+<td >O</td>
+<td >%</td>
 <td >Percentage of used Old memory</td>
 </tr><tr>
-<td >M </td>
-<td >% </td>
+<td >M</td>
+<td >%</td>
 <td >Percentage of used Metaspace memory</td>
 </tr><tr>
 <td rowspan=2>Data traffic</td>
@@ -1336,7 +1336,7 @@
 </tr><tr>
 <td >Start time</td>
 <td >StartTime </td>
-<td >s </td>
+<td >s</td>
 <td >Process start time</td>
 </tr><tr>
 <td rowspan=2>Threads</td>
@@ -1359,50 +1359,161 @@
 <th width=50%>Description</th>
 </tr><tr>
 <td rowspan=2>GC count</td>
-<td >YGC </td>
-<td >- </td>
+<td >YGC</td>
+<td >-</td>
 <td >Young GC count</td>
 </tr><tr>
-<td >FGC </td>
-<td >- </td>
+<td >FGC</td>
+<td >-</td>
 <td >Full GC count</td>
 </tr><tr>
 <td rowspan=3>GC time</td>
-<td >FGCT </td>
-<td >s </td>
+<td >FGCT</td>
+<td >s</td>
 <td >Full GC time</td>
 </tr><tr>
-<td >GCT </td>
-<td >s </td>
+<td >GCT</td>
+<td >s</td>
 <td >Garbage collection time</td>
 </tr><tr>
-<td >YGCT </td>
-<td >s </td>
+<td >YGCT</td>
+<td >s</td>
 <td >Young GC time</td>
 </tr><tr>
 <td rowspan=6>Memory zone proportion</td>
-<td >S0 </td>
-<td >% </td>
+<td >S0</td>
+<td >%</td>
 <td >Percentage of used Survivor 0 memory</td>
 </tr><tr>
-<td >E </td>
-<td >% </td>
+<td >E</td>
+<td >%</td>
 <td >Percentage of used Eden memory</td>
 </tr><tr>
-<td >CCS </td>
-<td >% </td>
+<td >CCS</td>
+<td >%</td>
 <td >Percentage of used compressed class space memory</td>
 </tr><tr>
-<td >S1 </td>
-<td >% </td>
+<td >S1</td>
+<td >%</td>
 <td >Percentage of used Survivor 1 memory</td>
 </tr><tr>
-<td >O </td>
-<td >% </td>
+<td >O</td>
+<td >%</td>
 <td >Percentage of used Old memory</td>
 </tr><tr>
-<td >M </td>
-<td >% </td>
+<td >M</td>
+<td >%</td>
 <td >Percentage of used Metaspace memory</td>
 </tr>
 </table>
+
+### HDFS-Router
+<table>
+<tr>
+<th width=20%>Title</th>
+<th width=20%>Metric</th>
+<th width=10%>Unit</th>
+<th width=50%>Description</th>
+</tr><tr>
+<td>ALTER TABLE request duration</td>
+<td>HIVE.HMS.API_ALTER_TABLE</td>
+<td>ms</td>
+<td>Average duration of ALTER TABLE requests</td>
+</tr>
+<tr>
+<td>ALTER TABLE WITH ENV CONTEXT request duration</td>
+<td>HIVE.HMS.API_ALTER_TABLE_WITH_ENV_CONTEXT</td>
+<td>ms</td>
+<td>Average duration of ALTER TABLE WITH ENV CONTEXT requests</td>
+</tr>
+<tr>
+<td>CREATE TABLE request duration</td>
+<td>HIVE.HMS.API_CREATE_TABLE</td>
+<td>ms</td>
+<td>Average duration of CREATE TABLE requests</td>
+</tr>
+<tr>
+<td>CREATE TABLE WITH ENV CONTEXT request duration</td>
+<td>HIVE.HMS.API_CREATE_TABLE_WITH_ENV_CONTEXT</td>
+<td>ms</td>
+<td>Average duration of CREATE TABLE WITH ENV CONTEXT requests</td>
+</tr>
+<tr>
+<td>DROP TABLE request duration</td>
+<td>HIVE.HMS.API_DROP_TABLE</td>
+<td>ms</td>
+<td>Average duration of DROP TABLE requests</td>
+</tr>
+<tr>
+<td>DROP TABLE WITH ENV CONTEXT request duration</td>
+<td>HIVE.HMS.API_DROP_TABLE_WITH_ENV_CONTEXT</td>
+<td>ms</td>
+<td>Average duration of DROP TABLE WITH ENV CONTEXT requests</td>
+</tr>
+<tr>
+<td>GET TABLE request duration</td>
+<td>HIVE.HMS.API_GET_TABLE</td>
+<td>ms</td>
+<td>Average duration of GET TABLE requests</td>
+</tr>
+<tr>
+<td>GET TABLES request duration</td>
+<td>HIVE.HMS.API_GET_TABLES</td>
+<td>ms</td>
+<td>Average duration of GET TABLES requests</td>
+</tr>
+<tr>
+<td>GET MULTI TABLE request duration</td>
+<td>HIVE.HMS.API_GET_MULTI_TABLE</td>
+<td>ms</td>
+<td>Average duration of GET MULTI TABLE requests</td>
+</tr>
+<tr>
+<td>GET TABLE REQ request duration</td>
+<td>HIVE.HMS.API_GET_TABLE_REQ</td>
+<td>ms</td>
+<td>Average duration of GET TABLE REQ requests</td>
+</tr>
+<tr>
+<td>GET DATABASE request duration</td>
+<td>HIVE.HMS.API_GET_DATABASE</td>
+<td>ms</td>
+<td>Average duration of GET DATABASE requests</td>
+</tr>
+<tr>
+<td>GET DATABASES request duration</td>
+<td>HIVE.HMS.API_GET_DATABASES</td>
+<td>ms</td>
+<td>Average duration of GET DATABASES requests</td>
+</tr>
+<tr>
+<td>GET ALL DATABASES request duration</td>
+<td>HIVE.HMS.API_GET_ALL_DATABASES</td>
+<td>ms</td>
+<td>Average duration of GET ALL DATABASES requests</td>
+</tr>
+<tr>
+<td>GET ALL FUNCTIONS request duration</td>
+<td>HIVE.HMS.API_GET_ALL_FUNCTIONS</td>
+<td>ms</td>
+<td>Average duration of GET ALL FUNCTIONS requests</td>
+</tr>
+<tr>
+<td>Current number of active CREATE TABLE requests</td>
+<td>HIVE.HMS.ACTIVE_CALLS_API_CREATE_TABLE</td>
+<td>-</td>
+<td>Current number of active CREATE TABLE requests</td>
+</tr>
+<tr>
+<td>Current number of active DROP TABLE requests</td>
+<td>HIVE.HMS.ACTIVE_CALLS_API_DROP_TABLE</td>
+<td>-</td>
+<td>Current number of active DROP TABLE requests</td>
+</tr>
+<tr>
+<td>Current number of active ALTER TABLE requests</td>
+<td>HIVE.HMS.ACTIVE_CALLS_API_ALTER_TABLE</td>
+<td>-</td>
+<td>Current number of active ALTER TABLE requests</td>
+</tr>
+</tbody></table>

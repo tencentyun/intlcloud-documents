@@ -1,5 +1,5 @@
 ## Basic Settings
-The **Basic Settings** section allows you to set the node quantity range of the custom scaling feature, configure the elastic resource type, and configure whether to support graceful scale-in. It also displays the number of elastic node resources in the current cluster and supports quick release of elastic instances.
+The **Basic settings** section allows you to set the node quantity range of the custom scaling feature, configure the elastic resource type, and configure whether to support graceful scale-in. It also displays the number of elastic node resources in the current cluster and supports quick release of elastic instances.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/S7zr541_%E5%9B%BD%E9%99%8530.png)
 
 - Min node count: The minimum number of elastic task nodes to be retained in the cluster after the auto scale-in policy is triggered.
@@ -32,7 +32,7 @@ If there are eight nodes with specification 1, four with specification 2, and th
 </dx-alert>
     - When a resource specification is out of stock (take specification 2 as an example): 1 + 3 > 1 + 3 + 4 > 1 + 3 + 4 + 5.
 <dx-alert infotype="explain" title="Example:">
-- If there are eight nodes with specification 1, no one with specification 2 (out of stock), and three with specification 3, when a scale-out rule is triggered to add 10 nodes, eight nodes with specification 1 and two with specification 3 will be added according to the sequence.
+- If there are eight nodes with specification 1, no nodes with specification 2 (out of stock), and three nodes with specification 3, when a scale-out rule is triggered to add 10 nodes, eight nodes with specification 1 and two nodes with specification 3 will be added according to the sequence, while specification 2 will not be selected.
 - If there are eight nodes with specification 1 and nodes with other preset specifications are all out of stock, when a scale-out rule is triggered to add 10 nodes, eight nodes with specification 1 will be added, with the scale-out being partially successful.
 </dx-alert>
 
@@ -56,28 +56,309 @@ To add a load-based scaling rule, select **Load-based scaling** as the **Auto-sc
 - Target service: By default, the selected component will inherit the cluster-level configuration and fall into the default configuration group for that node type. You can also set the configuration of the target component through the **Specify configuration** parameter.
 - Node label: This field is empty by default, and the added nodes will be assigned the default label. If you have set a label, resources will be added to the node with this label.
 - Load metric: YARN load metric. You can set the condition rule for triggering the threshold based on the load metric selected here.
+<table>
+<thead>
+<tr>
+<th width=20%>Category</th>
+<th width="20%">Dimension</th>
+<th width="30%">EMR Auto-Scaling Metric</th>
+<th width=30%>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td rowspan=3>AvailableVCores</td>
+<td>root</td>
+<td>AvailableVCores#root</td>
+<td>Number of virtual cores available in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>AvailableVCores#root.default</td>
+<td>Number of virtual cores available in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: AvailableVCores#root.test</td>
+<td>Number of virtual cores available in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>PendingVCores</td>
+<td>root</td>
+<td>PendingVCores#root</td>
+<td>Number of virtual cores waiting to be available in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>PendingVCores#root.default</td>
+<td>Number of virtual cores waiting to be available in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: PendingVCores#root.test</td>
+<td>Number of virtual cores waiting to be available in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>AvailableMB</td>
+<td>root</td>
+<td>AvailableMB#root</td>
+<td>Amount of memory available in the root queue, in MB</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>AvailableMB#root.default</td>
+<td>Amount of memory available in the root.default queue, in MB</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: AvailableMB#root.test</td>
+<td>Amount of memory available in the root.test queue, in MB</td>
+</tr>
+<tr>
+<td rowspan=3>PendingMB</td>
+<td>root</td>
+<td>PendingMB#root</td>
+<td>Amount of memory waiting to be available in the root queue, in MB</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>PendingMB#root.default</td>
+<td>Amount of memory waiting to be available in the root.default queue, in MB</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: PendingMB#root.test</td>
+<td>Amount of memory waiting to be available in the root.test queue, in MB</td>
+</tr>
+<tr>
+<td>AvailableMemPercentage</td>
+<td>Clusters</td>
+<td>AvailableMemPercentage</td>
+<td>Available memory in percentages</td>
+</tr>
+<tr>
+<td>ContainerPendingRatio</td>
+<td>Clusters</td>
+<td>ContainerPendingRatio</td>
+<td>Ratio of the number of containers to be allocated to the number of allocated containers</td>
+</tr>
+<tr>
+<td rowspan=3>AppsRunning</td>
+<td>root</td>
+<td>AppsRunning#root</td>
+<td>Number of running tasks in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>AppsRunning#root.default</td>
+<td>Number of running tasks in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: AppsRunning#root.test</td>
+<td>Number of running tasks in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>AppsPending</td>
+<td>root</td>
+<td>AppsPending#root</td>
+<td>Number of pending tasks in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>AppsPending#root.default</td>
+<td>Number of pending tasks in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: AppsPending#root.test</td>
+<td>Number of pending tasks in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>PendingContainers</td>
+<td>root</td>
+<td>PendingContainers#root</td>
+<td>Number of containers to be allocated in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>PendingContainers#root.default</td>
+<td>Number of containers to be allocated in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: PendingContainers#root.test</td>
+<td>Number of containers to be allocated in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>AllocatedMB</td>
+<td>root</td>
+<td>AllocatedMB#root</td>
+<td>Amount of memory allocated in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>AllocatedMB#root.default</td>
+<td>Amount of memory allocated in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: AllocatedMB#root.test</td>
+<td>Amount of memory allocated in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>AllocatedMB</td>
+<td>root</td>
+<td>AllocatedVCores#root</td>
+<td>Number of virtual cores allocated in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>AllocatedVCores#root.default</td>
+<td>Number of virtual cores allocated in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: AllocatedVCores#root.test</td>
+<td>Number of virtual cores allocated in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>ReservedVCores</td>
+<td>root</td>
+<td>ReservedVCores#root</td>
+<td>Number of virtual cores reserved in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>ReservedVCores#root.default</td>
+<td>Number of virtual cores reserved in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: ReservedVCores#root.test</td>
+<td>Number of virtual cores reserved in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>AllocatedContainers</td>
+<td>root</td>
+<td>AllocatedContainers#root</td>
+<td>Number of containers allocated in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>AllocatedContainers#root.default</td>
+<td>Number of containers allocated in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: AllocatedContainers#root.test</td>
+<td>Number of containers allocated in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>ReservedMB</td>
+<td>root</td>
+<td>ReservedMB#root</td>
+<td>Amount of memory reserved in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>ReservedMB#root.default</td>
+<td>Amount of memory reserved in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: ReservedMB#root.test</td>
+<td>Amount of memory reserved in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>AppsKilled</td>
+<td>root</td>
+<td>AppsKilled#root</td>
+<td>Number of tasks terminated in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>AppsKilled#root.default</td>
+<td>Number of tasks terminated in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: AppsKilled#root.test</td>
+<td>Number of tasks terminated in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>AppsFailed</td>
+<td>root</td>
+<td>AppsFailed#root</td>
+<td>Number of tasks failed in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>AppsFailed#root.default</td>
+<td>Number of tasks failed in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: AppsFailed#root.test</td>
+<td>Number of tasks failed in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>AppsCompleted</td>
+<td>root</td>
+<td>AppsCompleted#root</td>
+<td>Number of tasks completed in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>AppsCompleted#root.default</td>
+<td>Number of tasks completed in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: AppsCompleted#root.test</td>
+<td>Number of tasks completed in the root.test queue</td>
+</tr>
+<tr>
+<td rowspan=3>AppsSubmitted</td>
+<td>root</td>
+<td>AppsSubmitted#root</td>
+<td>Number of tasks submitted in the root queue</td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>AppsSubmitted#root.default</td>
+<td>Number of tasks submitted in the root.default queue</td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: AppsSubmitted#root.test</td>
+<td>Number of tasks submitted in the root.test queue</td>
+</tr>
+<tr>
+<td>AvailableVCoresPercentage</td>
+<td>Clusters</td>
+<td>AvailableVCoresPercentage</td>
+<td>Percentage of virtual cores available in the cluster </td>
+</tr>
+<tr>
+<td rowspan=3>MemPendingRatio</td>
+<td>root</td>
+<td>MemPendingRatio#root</td>
+<td>Percentage of memory waiting to be available in the root queue </td>
+</tr>
+<tr>
+<td>root.default</td>
+<td>MemPendingRatio#root.default</td>
+<td>Percentage of memory waiting to be available in the root.default queue </td>
+</tr>
+<tr>
+<td>Custom subqueue</td>
+<td>Example: MemPendingRatio#root.test</td>
+<td>Percentage of memory waiting to be available in the root.default queue </td>
+</tr>
+</tbody></table>
 
-| EMR Auto-scaling Metric | Description |
-|---------|---------|
-| AvailableVCores#root| Number of virtual cores available in the root queue | 
-| PendingVCores#root| Number of virtual cores waiting to be available in the root queue | 
-| AvailableMB#root| Memory size (in MB) available in the root queue | 
-| PendingMB#root| Memory size (in MB) waiting to be available in the root queue | 
-| AvailableMemPercentage| Available memory in percentages | 
-| ContainerPendingRatio| Ratio of the number of containers to be allocated to the number of allocated containers | 
-| AppsRunning#root| Number of running tasks in the root queue | 
-| AppsPending#root| Number of pending tasks in the root queue | 
-| PendingContainers#root| Number of containers to be allocated in the root queue | 
-| AllocatedMB#root| Memory size allocated in the root queue | 
-| AllocatedVCores#root| Number of virtual cores allocated in the root queue | 
-| ReservedVCores#root| Number of virtual cores reserved in the root queue | 
-| AllocatedContainers#root| Number of containers allocated in the root queue | 
-| ReservedMB#root| Memory size reserved in the root queue | 
-| AppsKilled#root| Number of tasks terminated in the root queue | 
-| AppsFailed#root| Number of tasks failed in the root queue | 
-| AppsCompleted#root| Number of tasks completed in the root queue | 
-| AppsSubmitted#root| Number of tasks submitted in the root queue | 
-| AvailableVCoresPercentage#root| Proportion (in percentages) of virtual cores available in the root queue  | 
+
+
 
 - Statistical rule: The cluster load metric selected by the user is triggered once when the threshold is reached according to the selected aggregate dimension (average value) within a specific statistical period.
 - Statistical period: The statistical duration of the metric. Currently, three statistical periods are supported: 300s, 600s, and 900s.
@@ -97,14 +378,14 @@ To add a load-based scaling rule, select **Load-based scaling** as the **Auto-sc
 2. In the memory mode, if 30 GB memory is to be released, and the cluster has three 8-core 16 GB MEM and two 4-core 8 GB MEM elastic nodes in reverse chronological order when a scale-in rule is triggered, then **one 8-core 16 GB MEM node** will be released.
 </dx-alert>
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/3ydG493_%E5%9B%BD%E9%99%8539.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/dTda088_%E5%9B%BD%E9%99%8538.png)
 - Resource supplement retry: When auto scale-out is performed during peak hours, the number of nodes added may be less than the target number due to the lack of resources. In such a case, if the resource supplement retry policy is enabled, the system will automatically retry to request resources when there are sufficient resources of the set scaling specifications until the target number is reached or approximated. If frequently encountering this situation, you can enable this feature. Please note that retry may extend the time of auto scale-out and this policy change may affect your business.
 - Cooldown period: The interval (60s to 43200s) before carrying out the next auto-scaling action after the rule is successfully executed.
 - Graceful scale-in: After this feature is enabled, if the scale-in action is triggered when a node is executing tasks, the node will not be released immediately. Instead, the scale-in action will be executed after the tasks are completed. However, the scale-in action will still be executed if the tasks are not completed within the specified time.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/3ydG493_%E5%9B%BD%E9%99%8539.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/ICRc017_%E5%9B%BD%E9%99%8540.png)
 
 ### Time-based scaling
-If there are obvious peaks and valleys in your cluster computing workload during a certain period, you can configure time-based scaling policies to ensure that important jobs are completed on time. Time–based scaling policies allows you to automatically add or remove task nodes daily, weekly, or monthly during a set time period.
+If there are obvious peaks and valleys in your cluster computing workload during a certain period, you can configure time-based scaling policies to ensure that important jobs are completed on time. Time-based scaling policies allows you to automatically add or remove task nodes daily, weekly, or monthly during a set time period.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/az2j548_%E5%9B%BD%E9%99%8541.png)
 To add a time-based scaling rule, select **Time-based scaling** as the **Auto-scaling type**, click **Add**, and configure the following fields:
 
@@ -114,7 +395,7 @@ To add a time-based scaling rule, select **Time-based scaling** as the **Auto-sc
 - Recurring: Triggers a scaling action daily, weekly, or monthly at a specific time or time period.
 - Retry period: Auto-scaling may not be executed for various reasons at the specified time. After you set the retry period, the system will try to execute the scaling at a certain interval within the period until it is executed when the conditions are met.
 - Rule expiration: The time-based scaling rule is valid until the end of the date specified here.
-- Scale-out mode: You can select **Node**, **Memory**, or **Core**, and their values must be a positive integer.
+- Scale-out mode: You can select **Node**, **Memory**, or **Core**, and their values must be an integer other than 0.
     - In case of scale-out in the core or memory mode, the quantity of nodes guaranteeing the maximum computing power will be added.
     <dx-alert infotype="explain" title="Example:">
 1. In the core mode, if 10 cores are to be added, but the specification for auto-scaling is to add 8-core nodes in order of priority, then **two 8-core nodes** will be added when the rule is triggered.
@@ -122,7 +403,7 @@ To add a time-based scaling rule, select **Time-based scaling** as the **Auto-sc
 </dx-alert>
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/Qajr613_%E5%9B%BD%E9%99%85%E7%AB%9942.png)
-- Scale-in mode: You can select **Node**, **Memory**, or **Core**, and their values must be a positive integer.
+- Scale-in mode: You can select **Node**, **Memory**, or **Core**, and their values must be an integer other than 0.
     - In case of scale-in in the core or memory mode, a minimum quantity of nodes will be released in reverse chronological order while keeping the business running properly, with at least one node released.
 
 <dx-alert infotype="explain" title="Example:">
@@ -139,7 +420,7 @@ This feature is suitable when you need more computing resources for a specified 
 </dx-alert>
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/fjZM744_%E5%9B%BD%E9%99%85%E7%AB%9944.png)
-- Rule status: Used to mark whether the rule is enabled. The default status of a rule is "Enabled". When you don't want a rule to be executed but still wish to retain it, you can set the rule status to "Disabled".
+- Rule status: Used to mark whether the rule is enabled. The default status of a rule is "Enabled". When you don't want a rule to be executed but still want to retain it, you can set the rule status to "Disabled".
 - Graceful scale-in: After this feature is enabled, if the scale-in action is triggered when a node is executing tasks, the node will not be released immediately. Instead, the scale-in action will be executed after the tasks are completed. However, the scale-in action will still be executed if the tasks are not completed within the specified time.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/3huM523_%E5%9B%BD%E9%99%8545.png)
 

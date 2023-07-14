@@ -5,8 +5,8 @@ EMR allows you to deploy an E-MapReduce Druid cluster as an independent cluster 
 
 ## Purchase suggestions
 To purchase a Druid cluster, select Druid as the cluster type when creating the EMR cluster. The Druid cluster has built-in Hadoop HDFS and YARN services integrated with Druid, which are recommended for testing only. **We strongly recommend you use a dedicated Hadoop cluster in the production environment.**
+To disable the built-in Hadoop services for the Druid cluster, go to the [EMR console](https://console.cloud.tencent.com/emr), select the target service pane on the **Cluster services** page, and click **Operation > Pause service** to suspend the service.
 
-To disable the built-in Hadoop services for the Druid cluster, you can select and suspend the target services on the [Cluster Service](https://console.cloud.tencent.com/emr/static/framework/emr-4qjbxdca?type=clusterservice&regionId=1) page in the EMR console.
 
 ## Configuring connectivity between Hadoop and Druid clusters
 This section describes how to configure the connectivity between the Hadoop and Druid clusters. If you use the built-in Hadoop cluster in the Druid cluster (which is not recommended for the production environment), they can be properly connected with no additional settings required, and you can skip this section.
@@ -43,7 +43,7 @@ You can create the `segments` directory on COS and set its permissions in advanc
 Save the configuration and restart the Druid cluster services.
 
 ## Modifying Druid parameters
-After you create the E-MapReduce Druid cluster, a set of configuration items will be generated automatically. However, we recommend you modify the memory configuration as needed to achieve the optimal performance. You can do so on the [Component Management](https://console.cloud.tencent.com/emr/static/component) page in the EMR console.
+After you create the E-MapReduce Druid cluster, a set of configuration items will be generated automatically. However, we recommend you modify the memory configuration as needed to achieve the optimal performance. You can do so on the [Configurations]https://intl.cloud.tencent.com/document/product/1026/31109) page in the EMR console.
 
 When modifying the configuration, make sure that the modification is correct:
 ```

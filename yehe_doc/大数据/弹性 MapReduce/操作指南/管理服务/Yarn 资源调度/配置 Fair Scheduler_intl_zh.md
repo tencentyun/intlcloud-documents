@@ -16,7 +16,6 @@ Fair Scheduler 是公平调度器，公平调度器将资源公平的分配给 y
 4. 新建 Fair Scheduler 资源池
 调度器类型选择 Fair Scheduler 即可进入 Fair Scheduler 策略设置页面，单击**新建资源池**即可新建资源池，可对已有资源池进行编辑、新建子池、克隆、删除等操作。
 ![](https://qcloudimg.tencent-cloud.cn/raw/0c658f61e62b58c27020d8c1ad87fd82.png)
-
 **字段与配置项对照表：**
 <table>
 <thead>
@@ -105,9 +104,9 @@ Fair Scheduler 是公平调度器，公平调度器将资源公平的分配给 y
 
 
 ### 配置计划模式
-单击策略设置中的**计划模式**即可进入计划模式页面，单击**新建计划模式**即可进行计划模式的新建。
-![](https://qcloudimg.tencent-cloud.cn/raw/b94588efe52844de59a619427b5a0185.png)
-在新建计划模式中选择/填写配置集、名称和计划有效时间。
+1. 单击策略设置中的**计划模式**即可进入计划模式页面，单击**新建计划模式**即可进行计划模式的新建。
+**配置集状态**用于标记计划模式是否开启，默认为开启状态，若不需要使用自定义计划模式但仍想保留配置集，可将**配置集状态**设置为关闭。
+2. 在新建计划模式中选择/填写配置集、名称和计划有效时间。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d45fef031c88783c0b06ee33260ea486.png)
 
 ### 示例配置集
@@ -118,34 +117,33 @@ Fair Scheduler 是公平调度器，公平调度器将资源公平的分配给 y
 ![](https://qcloudimg.tencent-cloud.cn/raw/f7b0f75b338f84cb4d73d7c5b06b30f1.png)
 5. 在资源调度页中选择**计划模式>新建计划模式**，根据业务需要调整计划有效时间。
 >? 如果 EMR 集群配置了定时扩容，建议将计划模式的计划有效时间设置在定时扩容之后。
-
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e372d4e3e821c00237e89c8b1182909e.png" style="zoom:67%;" />
-![](https://qcloudimg.tencent-cloud.cn/raw/68eb5bff93a28b134c1ad8c84d347ae7.png)
-
+>
+![](https://qcloudimg.tencent-cloud.cn/raw/e372d4e3e821c00237e89c8b1182909e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/89318116a64fcfadca1aca35ff2b9745.png)
 6. 在资源调度页中选择**资源池**，在**配置集**下拉选项中，选择一个配置集。
 >? 资源池在不同配置集中的资源量限制相互独立，即可以按照业务分别进行配置，相互不影响。
-
+>
 ![](https://qcloudimg.tencent-cloud.cn/raw/6242338ea9ba5dee55b78f06dbe9c8b9.png)
 7. 在**配置集**下选择之前创建的资源池，按照业务进⾏资源量限制的调整。
 ![](https://qcloudimg.tencent-cloud.cn/raw/476912683296aa9dc28007b4794c0fc8.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/d9cb96648a488cd96810761d6a2697bf.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/8ca6449146e7718b248782a81a7dbd3c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c5a4ccb6eabee693c2539b9fa78d8e7d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0bdf077e98540416cb104b78a647a559.png)
 8. 资源池调整完后，单击**部署生效**，即可使设置生效。
+
 
 ### 配置放置规则
 单击策略设置中的**放置规则**即可进入放置规则页面，单击**新建放置规则**即可进行放置规则的新建。
 ![](https://qcloudimg.tencent-cloud.cn/raw/acb45a79294f2ad650e28849c6644d6a.png)
 填写放置类型和池名称。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/746f8698868e4b9249c5534a11df42c6.png" style="zoom:67%;" />
-
+![](https://qcloudimg.tencent-cloud.cn/raw/d3cdc014b72b1490cfdf9ec63af822f7.png)
 **配置规则类型说明：**
 **root.[pool name]**：该规则始终满足，在其它规则不匹配的情况下使用，因此该规则默认要放置在所有匹配规则之后。
 **root.[pool name].[username]**：该放置规则会判断资源池中是否存在相应的pool name，存在则在该资源池下创建与用户名相同的资源池（勾选池不存在时创建池的情况下）。
-**root.[primary group]**：该放规则使用与该用户主要组匹配的资源池。Linux中用户默认的主要组与用户名一致，匹配时会通过用户的主要组与资源池名称比对。
+**root.[primary group]**：该规则使用与该用户主要组匹配的资源池。Linux中用户默认的主要组与用户名一致，匹配时会通过用户的主要组与资源池名称比对。
 **root.[primary group].[username]**：该放置规则会优先使用用户的主要组匹配的资源池，然后使用与该用户名匹配的子池，如果勾选池不存在时创建池则会在该池下创建一个与用户名一致的子池。
 **root.[secondarygroup]**：该放置规则用于匹配用户的次要组，使用与次要组之一匹配的资源池。
 **root.[secondarygroup].[username]**：该放置规则首先匹配用户的次要组，然后使用与该用户名匹配的资源池。
-**root.[username]**：该放置规则用于匹配与用户名一致的资源池。（不推荐使用）
+**root.[username]**：该放置规则用于匹配与用户名一致的资源池。（不推荐使用)
 已在运行时指定：该放置规则主要使用在运行时指定的资源池。
 放置规则的判断方式，根据放置规则的顺序1、2、3…进行判断，判断到满足条件的放置规则后，后续的规则不再进行匹配。
 
@@ -153,4 +151,4 @@ Fair Scheduler 是公平调度器，公平调度器将资源公平的分配给 y
 单击策略设置中的**用户限制**即可进入用户限制页面，单击**新建用户限制**即可进行用户限制的新建。
 ![](https://qcloudimg.tencent-cloud.cn/raw/c810a65f155a5ea1f727aea0ca9c55a3.png)
 填写用户名称和同时运行应用程序上限：
-![](https://qcloudimg.tencent-cloud.cn/raw/c1377330c36a43e16e10e5c4338e12c5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ecc5ee92ec96ca534635bbbc8d289c02.png)
