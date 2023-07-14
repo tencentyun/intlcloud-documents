@@ -1,19 +1,9 @@
+>? If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+
 <span id="p1"></span>
 ## Pay-As-You-Go Daily Billing Mode 
 
 VOD will deduct fees according to usage of users on the daily billing cycle. If an account becomes overdue, VOD will first suspend the resources under this account. If the account stays overdue for a long time, the resource repossession process will be triggered. The daily billing cycle is the default billing cycle mode. If you want to switch to the monthly billing cycle, please contact sales.
-
- 
-
- 
-
- 
-
- 
-
- 
-
-
 
 ## Service Suspension
 
