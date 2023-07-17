@@ -13,6 +13,7 @@ To avoid affecting your business, the system grants your account in arrears a gr
 - During the grace period, you can change the current ECDN acceleration service configuration of your account.
 - If you are billed monthly, the grace period will be 24 hours by default.
 - If you are billed hourly, the grace period will be 2 hours by default.
+- If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
 
 ## Service Suspension Period
 - If your fail to top up your account within the grace period, it will enter the service suspension period, and the system will push a **service suspension notification**. At this point, be sure to top up as soon as possible.
