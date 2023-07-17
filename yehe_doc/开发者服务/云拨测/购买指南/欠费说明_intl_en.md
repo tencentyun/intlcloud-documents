@@ -1,3 +1,5 @@
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+
 ## Overdue payment alert
 
 Fees are deducted within 24 hours after a test is performed successfully. When your account balance becomes negative, we will notify your Tencent Cloud root account and all the subaccounts via email, SMS, and Message Center.
