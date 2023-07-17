@@ -1,3 +1,5 @@
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+
 ### Fee Freeze
 Before **you create a custom event bus**, an amount of $0.615 on your account will be frozen in advance according to the usage specification of 1,000 million events (the event bus cannot be created if your account balance is less than the amount to be frozen). After you proactively delete the event bus resource, the frozen amount will be unfrozen. The frozen amount is not actually consumed and cannot be used in the frozen state. After being unfrozen, the frozen amount can be used again.
 For more information, see [Prepay Account Freeze](https://intl.cloud.tencent.com/document/product/555/12039).
