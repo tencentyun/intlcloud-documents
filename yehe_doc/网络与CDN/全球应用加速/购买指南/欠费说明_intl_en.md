@@ -1,6 +1,7 @@
 ## Overdue Payment Policy
 
 If your Tencent Cloud account becomes overdue, you will receive notifications through SMS, email, etc. A 2-hour grace period is provided, during which you can still use the GAAP service. GAAP service is suspended if the payment is not made within the grace period.
+If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
 
 ### Overdue 
 GAAP is a pay-as-you-go service that adopts prepay account freezing. The system calculates and deducts the service fee of the previous billing cycle and freezes the amount of the minimum connection fee in the available account balance. If your account balance is not enough, it goes negative and your account becomes overdue.
