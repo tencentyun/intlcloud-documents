@@ -1,3 +1,5 @@
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+
 ## Service Suspension
 When your Tencent Cloud account goes overdue, the following polices are applied to TEM resources under your account: 
 
