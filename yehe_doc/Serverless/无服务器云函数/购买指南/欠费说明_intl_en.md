@@ -1,3 +1,6 @@
+>!
+If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+
 
 ## Billing Cycle
 
@@ -7,7 +10,7 @@ SCF is pay-as-you-go by hour based on your actual usage. Fees will be charged at
 
 ## Service Suspension Mechanism
 
-SCF can be used normally for 24 hours after your account becomes overdue. If your account has been overdue for more than 24 hours, your SCF service will be suspended.
+SCF can be used normally for 24 hours after your account falls into arrears. If your account is in arrears for more than 24 hours, your SCF service will be suspended.
 
 The following restrictions will be imposed on all functions after service suspension:
  - Existing functions cannot be triggered.
