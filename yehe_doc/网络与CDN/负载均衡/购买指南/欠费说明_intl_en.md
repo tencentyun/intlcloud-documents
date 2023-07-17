@@ -1,3 +1,5 @@
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+
 ## Pay-as-You-Go
 >?
 >- **Delete unnecessary pay-as-you-go resources** to stop billing.
