@@ -1,0 +1,27 @@
+在线迁移可以支持您在系统不停机的情况下，将服务器或虚拟机上的系统、服务程序等从自建机房（IDC）或云平台等源环境迁移同步至腾讯云。
+在线迁移提供两种迁移方式，您可以根据您的业务场景，选择合适的迁移方式，并前往对应的文档查看详细的操作指引：
+<table class="tg">
+<thead>
+  <tr>
+    <th width="25%">迁移方式</th>
+    <th width="25%">概述</th>
+    <th width="25%">适用场景</th>
+    <th width="25%">特点</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky"><a href=" https://www.tencentcloud.com/document/product/213/55046">在线迁移：客户端导入迁移源</a></td>
+    <td class="tg-0pky">登录源端实例运行工具导入迁移源，并在控制台上创建迁移任务，完成迁移</td>
+    <td class="tg-0pky"><li>公网迁移&内网迁移</li><li>跨云迁移：适用各种源环境</li><li>IDC上云</li></td>
+    <td class="tg-0pky">高兼容性</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="https://intl.cloud.tencent.com/document/product/213/53265">在线迁移：控制台一键迁移</a></td>
+    <td class="tg-0pky">控制台上验证访问身份即可一键导入迁移源并创建迁移任务</td>
+    <td class="tg-0pky"><li>公网迁移<br></li><li>跨云迁移：适用于源端实例在友商阿里云</li></td>
+    <td class="tg-0pky">一键批量迁移<br>控制台操作
+</td>
+  </tr>
+</tbody>
+</table>
