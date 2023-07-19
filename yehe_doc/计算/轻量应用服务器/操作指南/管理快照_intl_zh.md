@@ -26,7 +26,7 @@
 >- 创建快照通常可以在5分钟以内完成，请耐心等待，创建过程中无需关机。
 >- 在创建快照过程中，可能存在一部分应用数据保存在内存中未持久化存储的情况。此现象可导致快照不能够捕获最新最完整的云硬盘数据，请参考 [注意事项](https://intl.cloud.tencent.com/document/product/362/5755) 确保快照数据的一致性。
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/ebc5c8e622f6433431a5dbed110e9ccc.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/GiT3489_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_4fdcf3e7-b163-457b-93c3-7a5596125bf2.png)
 
 
 ### 使用快照回滚实例系统盘
