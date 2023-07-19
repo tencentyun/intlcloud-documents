@@ -1,30 +1,31 @@
-## Feature Overview
-A [tag](https://intl.cloud.tencent.com/document/product/651/32582) is a key-value pair provided by Tencent Cloud EMR to identify a cluster or node resource.
+## Overview
+[Tags](https://www.tencentcloud.com/document/product/651/32582) are key-value pairs provided by Tencent Cloud EMR to identify cluster types or node resources.
 
-You can manage clusters or node resources in a categorized manner by using tags in various dimensions such as business, purpose, and person-in-charge, or use tags to easily identify them. Tag key-value pairs have no semantic meaning for EMR and are parsed and matched strictly based on strings.
+You can manage clusters or node resources in a categorized manner by using tags in various dimensions such as business, purpose, and responsible person, or use tags to easily identify them. Tag key-value pairs have no semantic meaning for EMR and are parsed and matched strictly based on strings. 
 
-## Use Limits
-A tag is a key-value pair. You can set tags for EMR clusters or node resources to manage them in a categorized manner. Then, you can easily view and identify clusters and node resources under the corresponding tags. Currently, you can edit tags in the EMR Console.
+## Limits
+A tag is a key-value pair. You can set tags for EMR clusters or node resources to manage them in a categorized manner. Then, you can easily view and identify clusters and node resources under the corresponding tags. You can edit tags in the EMR console.
 
-When editing tags, please pay attention to the following use limits:
-- Quantity limit: each cluster or node can have up to 50 tags (**up to 5 tags can be added at a time**).
-- Tag key limit:
- - You cannot use "qcloud", "tencent", or "project" at the beginning of a tag key as they are reserved by the system.
- - A tag key can contain up to 255 digits, letters, and special characters (+ = . @ -).
-- Tag value limit: a tag value can contain up to 127 digits, letters, and special characters (+ = . @ -) or be an empty string.
+There are several limits on tags:
+- Quantity limit: Each cluster or node can have up to 50 tags. (**Up to five tags can be added at a time**.)
+- Tag key limits:
+ - You cannot use "qcloud", "tencent", or "project" at the beginning of a tag key because they are reserved by the system.
+ - A tag key can contain up to 255 characters. Only digits, letters, and the + = . @ - symbols are supported.
+- Tag value limit: A tag value can contain up to 127 characters. Only digits, letters, symbols + = . @ -, and a null string are supported.
 
 ## Directions
-### Editing cluster tag
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr). On the **Cluster List** page, select the cluster for which to edit tags and click **More** > **Edit Tag** at the top as shown below:
-![](https://main.qcloudimg.com/raw/7e41add1edd67201f6527044a8456a77.png)
-2. In the "You have selected 1 Tencent Cloud resource" window that pops up, add, modify, or delete tags based on your actual needs.
->You can edit tags in batches for up to 20 clusters at a time.
-![](https://main.qcloudimg.com/raw/90b51e1625136bf34c8eb6df4a8eada5.png)
-
-### Editing node tag
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and click **ID/Name** of a cluster to enter the cluster details page. Select **Cluster Resource** > **Resource Management**, select the node resource for which to edit tags, and click **More** > **Edit Tag** as shown below:
-![](https://main.qcloudimg.com/raw/2e2b1507f769c977aef797b62d0c5f84.png)
-2. In the "You have selected 1 Tencent Cloud resource" window that pops up, add, modify, or delete tags based on your actual needs.
->You can edit tags in batches for up to 20 clusters at a time.
+### Editing cluster tags
+1. Log in to the [EMR console](https://console.cloud.tencent.com/emr), select the target cluster on the **Cluster list** page and click **More** > **Edit tag**.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/gYyV398_%E5%9B%BD%E9%99%8588.png)
+2. Add, modify or delete tags as needed in the pop-up dialog box.
+>?You can edit tags for up to 20 clusters at a time.
 >
-![](https://main.qcloudimg.com/raw/90b51e1625136bf34c8eb6df4a8eada5.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/npNH254_%E5%9B%BD%E9%99%8589.png)
+
+### Editing node tags
+1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click a cluster ID/name to go to the cluster details page. Select **Cluster resources** > **Resources**, select the target node, and click **More** > **Edit tag**.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/X2e8733_%E5%9B%BD%E9%99%8590.png)
+2. Add, modify or delete tags as needed in the pop-up dialog box.
+>?You can edit tags for up to 20 clusters at a time.
+>
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/xPVb537_%E5%9B%BD%E9%99%8591.png)

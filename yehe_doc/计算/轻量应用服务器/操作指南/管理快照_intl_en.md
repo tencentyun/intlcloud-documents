@@ -26,7 +26,7 @@ On this tab, you can click **Create Snapshot** to create a snapshot or view the 
 >- Generally, it takes less than five minutes to create a snapshot. Please wait patiently. During the creation, the instance doesn't need to be shut down.
 >- During snapshot creation, application data saved in the memory may not be persistently stored. As such, snapshots may not capture the latest and most complete cloud disk data. Refer to [Notes](https://intl.cloud.tencent.com/document/product/362/5755) to ensure snapshot data consistency.
 >
-![](https://qcloudimg.tencent-cloud.cn/raw/ebc5c8e622f6433431a5dbed110e9ccc.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/GiT3489_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_4fdcf3e7-b163-457b-93c3-7a5596125bf2.png)
 
 
 ### Using snapshot to roll back instance system disk

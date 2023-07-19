@@ -1,3 +1,5 @@
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+
 ## Notes
 
 - To avoid affecting your business, make sure to renew your monthly subscribed instances promptly, or enable the [automatic renewal](https://www.tencentcloud.com/document/product/1167/51928) feature and make sure that your account balance is sufficient.

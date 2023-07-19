@@ -1,22 +1,24 @@
-## Disused EMR Versions
-Some earlier EMR versions are disused as they can't use the new features from the community due to the low versions of open-source components. You can't create new clusters on those disused versions, but you can still scale in or out the existing ones.
-- Disused versions of the Hadoop cluster type: EMR v1.3.1, EMR vV2.0.1, EMR v2.1.0, EMR v2.2.0, EMR v2.4.0, EMR v2.5.1, EMR v3.0.0, EMR v3.2.0, and EMR-TianQiong v1.0.0.
-- Disused version of the Druid cluster type: Druid v1.0.0.
+## Deprecated EMR Versions
+We have deprecated some earlier EMR versions because their open-source components are too old to support new features of their communities. You can't create new clusters with deprecated versions, but you can still scale in or out existing clusters.
+Deprecated EMR on CVM versions:
+- Hadoop cluster type: EMR v1.3.1, EMR v2.0.1, EMR v2.1.0, EMR v2.2.0, EMR v2.4.0, EMR v2.5.1, EMR v3.0.0, EMR v3.2.0, and EMR-TianQiong v1.0.0.
+- Druid cluster type: Druid v1.0.0.
 
-We recommend that you create clusters with the latest stable versions of cluster types to enjoy more features and more stable services.
+For full-feature access and better stability, we recommend you create clusters with the latest stable version of each cluster type.
 
 
 
-## EMR Standard Edition Changelog
-Currently, EMR Standard supports the Hadoop, Druid, ClickHouse, Kafka, Doris, and StarRocks clusters.
+
+## EMR on CVM Release Notes
+EMR on CVM supports four cluster types: Hadoop, Druid, Kafka, and StarRocks. For Hadoop clusters, the Standard edition and JDK 11-Beta edition are available.
 <dx-accordion>
-::: Hadoop v2.x Standard supports the following component versions:
+::: Hadoop Standard v2.x supports the following component versions:
 
 | Component | EMR v2.7.0| EMR v2.6.0|  EMR v2.5.0|  EMR v2.3.0| 
 | :------------------------- |  :---------- | :---------- |:---------- | :---------- | 
-| Release time              | July 2022     | July 2021     | September 2020     | May 2020 | 
+| Release time | July 2022 | July 2021 | September 2020 | May 2020 | 
 | HDFS (required) |2.8.5|2.8.5|2.8.5|2.8.5|
-| YARN (required)   | 2.8.5| 2.8.5| 2.8.5| 2.8.5| 
+| YARN (required)| 2.8.5| 2.8.5| 2.8.5| 2.8.5| 
 | ZooKeeper (required) | 3.6.3| 3.6.1| 3.6.1| 3.5.5| 
 | OpenLDAP (required) | 2.4.44| 2.4.44| -| -| 
 | Knox (required) | 1.6.1| 1.2.0| 1.2.0| 1.2.0| 
@@ -52,7 +54,7 @@ Currently, EMR Standard supports the Hadoop, Druid, ClickHouse, Kafka, Doris, an
 
 
 :::
-::: Hadoop v3.X Standard supports the following component versions:
+::: Hadoop Standard v3.x supports the following component versions:
 
 | Component              | EMR v3.5.0 | EMR v3.4.0| EMR v3.3.0| EMR v3.2.1|  EMR v3.1.0| 
 | :------------------------- |  :---------- |:---------- | :---------- | :---------- | :---------- | 
@@ -81,7 +83,7 @@ Currently, EMR Standard supports the Hadoop, Druid, ClickHouse, Kafka, Doris, an
 | Superset|1.5.1| 1.4.1|1.4.1| -| -| 	
 | Alluxio|2.8.0|2.8.0 |2.5.0| 2.5.0| 2.3.0| 
 | Iceberg| 0.13.1 | 0.13.1 | 0.11.0| 0.11.0|  -| 	
-| Hudi|0.12.0| 0.10.1 | 0.8.0| -|  -| 
+| Hudi|0.12.0| 0.11.0 | 0.8.0| -|  -| 
 | Flume|1.10.0| 1.9.0| 1.9.0| 1.9.0|  1.9.0| 	
 | Sqoop| 1.4.7| 1.4.7|1.4.7| 1.4.7| 1.4.7| 
 | Ranger|2.3.0| 2.1.0| 2.1.0| 2.1.0|  2.0.0| 
@@ -92,64 +94,8 @@ Currently, EMR Standard supports the Hadoop, Druid, ClickHouse, Kafka, Doris, an
 
 
 :::
-::: Druid clusters support the following component versions:
-
-| Component | Druid v1.1.0| 
-| ---------------------- | ------------------ |
-| Release time | August 2022      | 
-| HDFS (required)    | 2.8.5         | 
-| YARN (required) | 2.8.5| 
-| Druid (required)     | 0.23.0        | 
-| ZooKeeper (required)    | 3.6.3         | 
-| Knox (required)  | 1.2.0   | 
-| Superset              | 1.4.1        | 
-| Ganglia               | 3.7.2         | 
-
-
-:::
-::: ClickHouse clusters support the following component versions:
-
-| Component | ClickHouse v1.2.0 | ClickHouse v1.1.0 |ClickHouse v1.0.0| 
-| ---------------------- | ------------------ | ------------------ |------------------ |
-| Release time| September 2020 | May 2020 | April 2020 | 
-| ClickHouse (required) | 20.7.2.30| 20.3.10.75| 19.16.12.49| 
-| ZooKeeper (required) | 3.4.9| 3.4.9| 3.4.9| 
-| Superset| 0.35.2| 0.35.2| -| 
-
-
-:::
-::: Kafka clusters support the following component versions:
-
-| Component| Kafka v2.0.0| Kafka v1.0.0| 
-| ------------------------ | ------------- | ------------- |
-| Release time | March 2023     | May 2021     | 
-| Kafka (required)       |2.4.1| 1.1.1| 
-| KafkaManager (required) |2.0.0.2|  2.0.0.2| 
-| Knox (required) | 1.2.0| 1.2.0| 
-| ZooKeeper (required) |3.6.3| 3.6.1| 
-
-:::
-::: Doris clusters support the following component versions:
-
-| Component	| Doris v1.2.0	| Doris v1.1.0		| Doris v1.0.0| 
-| ----------------- | ------------- |  ----------------- | ------------- |
-| Release time| January 2022| September 2021| May 2021| 
-| Doris (required)	| 0.15.0	| 0.14.0		| 0.13.0| 
-| Knox (required)  | 1.2.0| 1.2.0| 1.2.0| 
-:::
-::: StarRocks clusters support the following component versions:
-
-| Component | StarRocks v1.3.0| StarRocks v1.2.0| StarRocks v1.1.0|
-| --------------------- | ---------------- | ---------------- | ---------------- |
-| Release time | March 2023| November 2022 | August 2022 |
-| StarRocks (required) | 2.4.3            | 2.3.2            | 2.2.2            |
-| Knox (required)      | 1.2.0       | 1.2.0       | 1.2.0       |
-
-:::
-</dx-accordion>
-
-## EMR JDK 11-Beta Changelog
-EMR v4.x is a beta version based on the JDK 11 environment, so all components are based on the JDK 11 environment. Currently, this version allows creating Hadoop clusters only.
+::: Hadoop JDK11-Beta supports the following component versions:
+EMR v4.x is a beta version based on the JDK 11 environment, so all components are also based on the JDK 11 environment. Currently, you can only create Hadoop clusters with this version.
 
 Component                  | EMR v4.0.0 |
 | ---------------------------- | ---------- |
@@ -187,4 +133,58 @@ Component                  | EMR v4.0.0 |
 |Delta Lake     | 2.0.0      |
 | GooseFS               | 1.3.0      |
 
+:::
+::: Druid clusters support the following component versions:
+
+| Component | Druid v1.1.0| 
+| ---------------------- | ------------------ |
+| Release time | August 2022| 
+| HDFS (required)    | 2.8.5         | 
+| YARN (required)	| 2.8.5| 
+| Druid (required)     | 0.23.0        | 
+| ZooKeeper (required)    | 3.6.3         | 
+| Knox (required)  | 1.2.0   | 
+| Superset              | 1.4.1        | 
+| Ganglia	| 3.7.2| 
+
+
+:::
+::: Kafka clusters support the following component versions:
+
+| Component| Kafka v2.0.0| Kafka v1.0.0| 
+| ------------------------ | ------------- | ------------- |
+| Release time | March 2023     | May 2021     | 
+| Kafka (required)       |2.4.1| 1.1.1| 
+| KafkaManager (required) |2.0.0.2|  2.0.0.2| 
+| Knox (required) | 1.2.0| 1.2.0| 
+| ZooKeeper (required) |3.6.3| 3.6.1| 
+
+:::
+::: StarRocks clusters support the following component versions:
+
+| Component | StarRocks v1.4.0 | StarRocks v1.3.0| StarRocks v1.2.0| StarRocks v1.1.0|
+| --------------------- | ---------------- | ---------------- | ---------------- |---------------- |
+| Release time | April 2023 | March 2023| November 2022 | August 2022 |
+| StarRocks (required) | 2.5.3 | 2.4.3            | 2.3.2            | 2.2.2            |
+| Knox (required) | 1.2.0| 1.2.0| 1.2.0| 1.2.0|
+
+:::
+</dx-accordion>
+
+## EMR on TKE Release Notes
+
+Component                  | EMR v4.0.0 |
+| --------- | ---------- |
+| Release time | May 2023      |
+| Spark                        | 3.2.2      |
+| Kyuubi                       | 1.6.0      |
+| ZooKeeper | 3.6.3      |
+| OpenLDAP  | 2.4.44     |
+| Knox      | 1.6.1      |
+| Tez                    | 0.10.2     |
+| Hive                    | 3.1.3      |
+| Trino | 389        |
+| Ranger             | 2.3.0      |
+| Hue                     | 4.10.0     |
+| RSS       | 0.6.0      |
 

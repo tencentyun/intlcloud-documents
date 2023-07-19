@@ -1,34 +1,33 @@
 ## Overview
 Fair Scheduler allocates resources fairly to each job on YARN based on weight.
-## Specification items
+## Definitions
 - Configuration Set: Specifies the resource assignment among active resource pools during a specified period.
-- Execution Plans: Specifies when the configuration set will be active.
-- Placement Rules: Automatically allocates jobs submitted by different users to specified resource pools.
+- Execution Plan: Specifies when the configuration set will be active.
+- Placement Rule: Automatically allocates jobs submitted by different users to specified resource pools.
 - User Limits: Specifies the maximum number of applications that can be submitted by a user at a time.
 
 ## Directions
 ### Creating a resource pool
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click **Details** of the target Hadoop cluster in the cluster list to enter the cluster details page.
-2. On the cluster details page, select **Cluster Service** and click **Operation** > **Resource Scheduling** in the top-right corner of the YARN component block to enter the **Resource Scheduling** page.
+2. On the cluster details page, select **Cluster services** and click **Operation** > **Resource scheduling** in the top-right corner of the YARN component block to enter the **Resource scheduling** page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3a9562b5fda7bc120b9acd49439df0ae.png)
 3. Toggle on **Resource scheduler** and configure the scheduler.
 ![](https://qcloudimg.tencent-cloud.cn/raw/1a933147979aeacae6842b98a7f376c1.png)
 4. Create a resource pool for Fair Scheduler.
-Select **Fair Scheduler**. On the displayed page, click **Create Resource Pool**. You can edit, clone, and delete an existing resource pool as well as create a subpool for it.
+Select **Fair Scheduler**. On the displayed page, click **Create resource pool**. You can edit, clone, and delete an existing resource pool as well as create a subpool for it.
 ![](https://qcloudimg.tencent-cloud.cn/raw/0c658f61e62b58c27020d8c1ad87fd82.png)
-
 **Fields and parameters**:
 <table>
 <thead>
 <tr>
-<th>Field Name</th>
+<th>Field</th>
 <th>Parameter</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Resource Pool Name</td>
-<td>`name`</td>
+<td>name</td>
 <td>Name of the resource pool or queue. It can contain only letters, digits, hyphens, and underscores and cannot start with a hyphen or underscore.</td>
 </tr>
 <tr>
@@ -38,12 +37,12 @@ Select **Fair Scheduler**. On the displayed page, click **Create Resource Pool**
 </tr>
 <tr>
 <td>Configuration Set</td>
-<td>N/A</td>
+<td>None</td>
 <td>YARN does not have this parameter, which means a collection of scheduled tasks.</td>
 </tr>
 <tr>
 <td>Weight</td>
-<td>`weight`</td>
+<td>weight</td>
 <td>Percentage of resources in the parent pool. A greater weight means more resources allocated.</td>
 </tr>
 <tr>
@@ -105,39 +104,38 @@ Select **Fair Scheduler**. On the displayed page, click **Create Resource Pool**
 
 
 ### Configuring an execution plan
-In the **Policy Settings** section, click **Execution Plans** > **Create Execution Plan** to create an execution plan.
-![](https://qcloudimg.tencent-cloud.cn/raw/b94588efe52844de59a619427b5a0185.png)
-In the **Create Execution Plan** window, select/enter the **Configuration Set**, **Name**, and **Plan Validity**.
+1. In the **Policy settings** section, click **Execution plans** > **Create execution plan** to create an execution plan.
+**Configuration set status** indicates whether the execution plan is enabled, which defaults to "Enabled". When you don't want to enable an execution plan but still want to retain the configuration set, you can set the plan status to "Disabled".
+2. In the **Create execution plan** window, select/enter the **Configuration set**, **Name**, and **Plan validity**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d45fef031c88783c0b06ee33260ea486.png)
 
 ### Sample configuration set
 1. Log in to the [EMR console](https://console.cloud.tencent.com/emr) and click **Details** of the target Hadoop cluster in the cluster list to enter the cluster details page.
-2. On the cluster details page, select **Cluster Service** and click **Operation** > **Resource Scheduling** in the top-right corner of the YARN component block to enter the **Resource Scheduling** page.
+2. On the cluster details page, select **Cluster services** and click **Operation** > **Resource scheduling** in the top-right corner of the YARN component block to go to the **Resource scheduling** page.
 3. Toggle on **Resource scheduler** and select **Fair Scheduler**.
-4. Click **Create Resource Pool** and configure parameters as needed.
+4. Click **Create resource pool** and configure parameters as needed.
 ![](https://qcloudimg.tencent-cloud.cn/raw/f7b0f75b338f84cb4d73d7c5b06b30f1.png)
 5. On the **Resource Scheduling** page, click **Execution Plans** > **Create Execution Plan** and adjust the **Plan Validity** as needed.
 >? If scheduled scale-out is configured for the EMR cluster, we recommend you set the **Plan Validity** to a time period after the scheduled scale-out.
-
-<img src="https://qcloudimg.tencent-cloud.cn/raw/e372d4e3e821c00237e89c8b1182909e.png" style="zoom:67%;" />
-![](https://qcloudimg.tencent-cloud.cn/raw/68eb5bff93a28b134c1ad8c84d347ae7.png)
-
+>
+![](https://qcloudimg.tencent-cloud.cn/raw/e372d4e3e821c00237e89c8b1182909e.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/89318116a64fcfadca1aca35ff2b9745.png)
 6. On the **Resource Scheduling** page, click **Resource Pools** and select an item from the **Configuration Set** drop-down list.
 >? The resource limits of a resource pool can be configured by configuration set.
-
+>
 ![](https://qcloudimg.tencent-cloud.cn/raw/6242338ea9ba5dee55b78f06dbe9c8b9.png)
 7. Select the created resource pool from **Configuration Set** and adjust the **Resource Limits** as needed.
 ![](https://qcloudimg.tencent-cloud.cn/raw/476912683296aa9dc28007b4794c0fc8.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/d9cb96648a488cd96810761d6a2697bf.png)
-![](https://qcloudimg.tencent-cloud.cn/raw/8ca6449146e7718b248782a81a7dbd3c.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c5a4ccb6eabee693c2539b9fa78d8e7d.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/0bdf077e98540416cb104b78a647a559.png)
 8. After the resource pool adjustment, click **Apply** to make the settings effective.
 
-### Configuring a placement rule
-In the **Policy Settings** section, click **Placement Rules** > **Create Placement Rule** to create a placement rule.
-![](https://qcloudimg.tencent-cloud.cn/raw/acb45a79294f2ad650e28849c6644d6a.png)
-Set **Placement Type** and **Pool Name**.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/746f8698868e4b9249c5534a11df42c6.png" style="zoom:67%;" />
 
+### Configuring a placement rule
+In the **Policy settings** section, click **Placement rules** > **Create placement rule** to create a placement rule.
+![](https://qcloudimg.tencent-cloud.cn/raw/acb45a79294f2ad650e28849c6644d6a.png)
+Set **Placement type** and **Pool name**.
+![](https://qcloudimg.tencent-cloud.cn/raw/d3cdc014b72b1490cfdf9ec63af822f7.png)
 **Configuration rule type description:**
 **root.[pool name]**: The rule always needs to be met and applies when other rules do not match. Therefore, it needs to be placed after others.
 **root.[pool name].[username]**: The rule checks whether the pool name exists in the resource pool, and if so, a resource pool with the same name as the username will be created (when **Create one if the pool does not exist** is selected).
@@ -150,7 +148,7 @@ Specified at runtime: The rule mainly uses the resource pool specified at runtim
 Placement rules are matched in the order of 1, 2, 3... If a rule is matched, rules after it will not be matched.
 
 ### Configuring user limits
-In the **Policy Settings** section, click **User Limits** > **Create User Limit** to create a user limit.
+In the **Policy settings** section, click **User limits** > **Create user limit** to create a user limit.
 ![](https://qcloudimg.tencent-cloud.cn/raw/c810a65f155a5ea1f727aea0ca9c55a3.png)
 Set **Username** and **Max Concurrent Running Apps**.
-![](https://qcloudimg.tencent-cloud.cn/raw/c1377330c36a43e16e10e5c4338e12c5.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ecc5ee92ec96ca534635bbbc8d289c02.png)

@@ -1,4 +1,4 @@
-TDSQL-C for MySQL provides a rich set of performance monitoring metrics to help you stay up to date with the detailed status and performance of your database. Generally, you can view monitoring metrics and data in the TDSQL-C for MySQL console, by creating a CM dashboard, or through TencentCloud API. We recommend you choose the console, where you can quickly get fine-grained monitoring data for the target time range and locate Ops problems accordingly.
+TDSQL-C for MySQL provides a rich set of performance monitoring metrics to help you stay up to date with the detailed status and performance of your database. Generally, you can view monitoring metrics and data in the TDSQL-C for MySQL console by creating a dashboard in Tencent Cloud Observability Platform (TCOP) or through TencentCloud API. We recommend that you choose the console, where you can quickly obtain fine-grained monitoring data for the target time range and locate Ops problems accordingly.
 
 This document describes how to view the monitoring data and perform visual operations on the monitoring page.
 
@@ -7,8 +7,8 @@ This document describes how to view the monitoring data and perform visual opera
 | Option | Strengths | Operation |
 |---------|---------|---------|
 | Viewing data in the TDSQL-C for MySQL console | The console is simple and visual, where you can quickly locate problems in a familiar way. | [Viewing Monitoring Data in the Console](https://www.tencentcloud.com/document/product/1098/50191) |
-| Creating a CM dashboard to view data | You can visually create customized monitoring metric groups. | [Creating Dashboard to View Monitoring Data](https://www.tencentcloud.com/document/product/1098/50190) |
-| Pulling data through TencentCloud API  | You can flexibly pull monitoring metric data to analyze and process it or connect it to other platforms. | |
+| Creating a TCOP dashboard to view data | You can visually create customized monitoring metric groups. | [Creating Dashboard to View Monitoring Data](https://www.tencentcloud.com/document/product/1098/50190) |
+| Pulling data through TencentCloud API  | You can flexibly pull monitoring metric data to analyze and process it or connect it to other platforms. | [Pulling Monitoring Data Through TencentCloud API](https://www.tencentcloud.com/document/product/1098/50189) |
 
 ## Visual Operations on the Monitoring Page
 ### Selecting the standard monitoring view
@@ -59,7 +59,7 @@ On the **Monitoring and Alarms** tab, select a time range and select a time gran
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/j8yh684_16.png)
 **Time ranges and corresponding time granularities**
 
-| Query Time Range | Time Between Query Start Time and Current Time | Default Time Granularity | Optional Time Granularities |
+| Query time range | Range between query start time and current time | Default time granularity | Optional time granularities |
 |-------|-------|--------|----|
 | (0h, 1h] | (0d, 1d] | 5s | 5s/1min/5min | 
 | (0h, 1h] | (1d, 15d]| 1min | 1min/5min | 
@@ -70,7 +70,7 @@ On the **Monitoring and Alarms** tab, select a time range and select a time gran
 | (7d, 31d] |  (0d, 31d]| 1h | 1h/1d | 
 
 **Example:**
-Suppose the current time is 15:00, July 10, 2022, and the query time range is 15:00–16:00, June 29, 2022 (1 hour). Then, as the query time range is 1 hour, and the time between the query start time and the current time is longer than 1 day but short than 15 days, the default time granularity is 1 minute. You can also select the option of 5 minutes.
+Suppose the current time is 15:00, July 10, 2022, and the query time range is 15:00–16:00, June 29, 2022 (1 hour), then the query time range is 1 hour. As the time between the query start time and the current time is longer than 1 day but shorter than 15 days, the default time granularity is 1 minute. You can also select the option of 5 minutes.
 
 >?Currently, you can view monitoring data of TDSQL-C for MySQL in the past 31 days.
 

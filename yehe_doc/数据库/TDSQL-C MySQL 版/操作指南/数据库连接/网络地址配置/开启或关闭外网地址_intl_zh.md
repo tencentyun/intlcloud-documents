@@ -38,9 +38,11 @@ TDSQL-C MySQL 版集群下包含读写实例和只读实例，均支持内网和
 :::
 ::: 列表视图
 1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)，在集群列表中，找到需要的集群，单击集群 ID，进入集群管理页面。
-2. 在**集群详情**页，单击对应外网地址后的**开启**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/4ZXJ420_2.png)
-3. 单击开启后，系统会根据实例绑定安全组的情况分如下几种操作情形。
+2. 在集群管理页>实例列表页，选择需要开启外网的实例（读写实例或只读实例），单击其**实例 ID** 或操作列的**管理**进入实例详情页。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/p7ES377_38.png)
+3. 在实例详情页>连接信息>外网地址后单击**开启**。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/QBZE513_39.png)
+4. 单击开启后，系统会根据实例绑定安全组的情况分如下几种操作情形。
 **情形一：当前安全组配置未放通端口**
 如需开启外网，您需要单击**授权并创建**（系统将申请您的授权自动为本集群绑定已放通内网端口的安全组（当前端口：3306） 方便您进行外网连接，后续您可进入安全组界面进行后续设置或换绑新的安全组）。
 >!
@@ -48,12 +50,11 @@ TDSQL-C MySQL 版集群下包含读写实例和只读实例，均支持内网和
 >- 启用后，您可以在外网通过系统分配的域名和端口访问 TDSQL-C MySQL 版，生效时间大概需要5分钟。
 >- 外网访问仅用于开发或辅助管理数据库，业务访问请使用内网访问。
 >
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/QSKM199_24.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/tSSC602_40.png)
 **情形二：当前安全组配置已放通端口**
 在弹窗下，单击阅读提示并单击**确定**即可开启外网。
-![](https://qcloudimg.tencent-cloud.cn/raw/57ee36bb33a07592dcd0dfa01c49c86a.png)
-4. 成功开启后，您可连接信息下的外网地址处查看外网的主机和端口，外网主机和端口不支持修改。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/mr3M330_26.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/iZiD649_43.png)
+5. 成功开启后，您可连接信息下的外网地址处查看外网的主机和端口，外网主机和端口不支持修改。
 :::
 </dx-tabs>
 
@@ -65,15 +66,16 @@ TDSQL-C MySQL 版集群下包含读写实例和只读实例，均支持内网和
 ::: 页签视图
 1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)，在左侧集群列表，单击目标集群，进入集群管理页。
 2. 在集群详情下，找到需要关闭外网的实例，在外网地址后单击**关闭**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/vhkY070_27.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/BK93318_42.png)
 3. 在弹出的对话框，确认关闭外网的注意事项后，单击**确定**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/Gatb843_28.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/spea558_45.png)
 :::
 ::: 列表视图
 1. 登录 [TDSQL-C MySQL 版控制台](https://console.cloud.tencent.com/cynosdb)，在集群列表中，找到需要的集群，单击集群 ID，进入集群管理页面。
-2. 在**集群详情**页，单击对应外网地址后的**关闭**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/4tVY503_3.png)
-3. 在弹出的对话框，确认关闭外网的注意事项后，单击**确定**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/rBZL349_4.png)
+2. 在集群管理页>实例列表页，选择需要关闭外网的实例（读写实例或只读实例），单击其**实例 ID** 或操作列的**管理**进入实例详情页。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/yAQN422_44.png)
+3. 在实例详情页>连接信息>外网地址后单击**关闭**。
+4. 在弹出的对话框，确认关闭外网的注意事项后，单击**确定**。
 :::
 </dx-tabs>
+

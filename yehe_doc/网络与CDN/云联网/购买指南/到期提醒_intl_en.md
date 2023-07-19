@@ -1,3 +1,5 @@
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+
 ## Pay-As-You-Go by Monthly 95th Percentile
 ### Overdue Payment Alert
 1. Overdue alert: You will receive a notification when your account balance becomes negative.

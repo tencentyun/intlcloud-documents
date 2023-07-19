@@ -1,3 +1,5 @@
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+
 This document describes the overdue payment policy for **monthly subscribed** exclusive clusters.
 
 ## Notes

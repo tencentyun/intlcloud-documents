@@ -1,0 +1,29 @@
+自定义服务角色是指用户可以添加一个 CAM 服务角色用于访问云上对象存储（COS）资源权限，选择的服务类型为“腾讯云产品服务”，支持角色选择“弹性 MapReduce”。若未配置自定义服务角色系统默认使用 EMRCosRole 角色，用于访问对象存储（COS）资源。 
+
+## 步骤1：自定义权限策略
+1. 登录 [访问管理控制台](https://console.cloud.tencent.com/cam/policy)，单击**新建自定义策略**，在弹出的“选择创建策略方式”页面中选择**按策略语法创建**。
+2. 在“按策略语法创建”页面，选择**模板类型**为**空白模板**。
+3. 设置语法策略如下：
+```
+{
+		"version": "2.0",
+		"statement": [
+			{
+					"action": "cos:*",
+					"effect": "allow",
+					"resource": "qcs::cos::uid/appId:bucketName/*"
+			}
+		]
+}
+```
+其中 appId 为主账号 AppID，bucketName 为想要授权的 bucket 名称。生成一个名为 **TestPolicy** 的策略，客户可自定义该名称。
+
+## 步骤2：创建自定义角色
+1. 在 [访问管理控制台](https://console.cloud.tencent.com/cam/role)，单击**新建角色**，在弹出的“选择角色载体”页面中选择**腾讯云产品服务**，进入“新建自定义角色”页面，选择**产品服务**为“弹性 MapReduce (emr)”。
+2. 绑定步骤1中生成的策略，此处为 **TestPolicy**，客户可根据想要授权的策略进行绑定。
+3. 标记角色的标签键和标签值，单击**下一步**。
+4. 生成名称为 **EMRCosRole** 的自定义角色，客户可自定义该名称。
+
+## 步骤3：绑定角色到 EMR 集群
+在 [EMR 控制台](https://console.cloud.tencent.com/emr) 中选中对应的集群，单击**集群 ID/名称**进入实例详情，在**实例信息 > 基础配置 > 自定义服务角色**中，单击**设置**。设置“自定义服务角色为”步骤2中生成的自定义角色，此处为 **EMRCosRole**，用户可自定义该名称。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/cnrw860_%E5%9B%BD%E9%99%8580.png)

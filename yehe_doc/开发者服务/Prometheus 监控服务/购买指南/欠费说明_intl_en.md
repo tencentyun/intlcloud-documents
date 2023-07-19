@@ -1,4 +1,4 @@
-
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
 
 ## Alerting
 - From seven days before your resource expires until the resource is released, the system will send an alert to your Tencent Cloud account creator, global resource collaborators, and financial collaborators via email, SMS, and other methods as configured in the message subscription in the [Message Center](https://console.intl.cloud.tencent.com/message).

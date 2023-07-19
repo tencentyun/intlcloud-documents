@@ -63,7 +63,7 @@ key1=value2&key2=value2...(key 和 value 都需要进行 urlencode)
 | timestamp | 是 | Integer | 当前 UNIX 时间戳，单位为秒。如果与当前时间相差过大，会引起签名过期错误 |
 | expired | 是 | Integer | 签名的有效期截止时间 UNIX 时间戳，单位为秒。expired 必须大于 timestamp 且 expired - timestamp 小于90天 |
 | nonce | 是 | Integer | 随机正整数。用户需自行生成，最长10位 |
-| engine_model_type | 是 | String | 引擎模型类型<br>非电话场景：<br>• 16k_zh：16k 中文普通话通用；<br>• 16k_en：16k 英语；<br>• 16k_ja：16k 日语；<br>• 16k_id 印度尼西亚语；<br>• 16k_vi 越南语；<br>• 16k_ms 马来语；<br>• 16k_fil 菲律宾语；<br>• 16k_pt：16kHz 葡萄牙语；<br>• 16k_tr：16kHz 土耳其语；<br>• 8k_zh：8kHz 中文普通话通用；<br>• 8k_en：8kHz 英语；|
+| engine_model_type | 是 | String | 引擎模型类型<br>电话场景:<br>• 8k_zh：中文电话通用；<br>• 8k_en：英文电话通用；<br>非电话场景：<br>• 16k_zh：中文普通话通用；<br>• 16k_en：英语；<br>• 16k_ja：日语；<br>• 16k_id : 印度尼西亚语；<br>• 16k_vi: 越南语；<br>• 16k_ms: 马来语；<br>• 16k_fil:  菲律宾语；<br>• 16k_pt：葡萄牙语；<br>• 16k_tr：土耳其语；<br>• 16k_ar: 阿拉伯语； |
 | voice_id | 是 | String | 16位 String 串作为每个音频的唯一标识，用户自己生成 |
 | voice_format | 否 | Int | 语音编码方式，可选，默认值为4。1：pcm；4：speex(sp)；6：silk；8：mp3；10：opus（[opus 格式音频流封装说明](#jump)）；12：wav；14：m4a（每个分片须是一个完整的 m4a 音频）；16：aac|
 | needvad | 否 | Integer | 0：关闭 vad，1：开启 vad<br>如果语音分片长度超过60秒，用户需开启 vad（人声检测切分功能） |
@@ -76,6 +76,8 @@ key1=value2&key2=value2...(key 和 value 都需要进行 urlencode)
 | word_info | 否 | Int | 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。支持引擎 8k_en、8k_zh、8k_zh_finance、16k_zh、16k_en、16k_ca、16k_zh-TW、16k_ja、16k_wuu-SH，默认为0|
 | vad_silence_time | 否 | Integer | 语音断句检测阈值，静音时长超过该阈值会被认为断句（多用在智能客服场景，需配合 needvad = 1 使用），取值范围：240-2000，单位 ms，此参数建议不要随意调整，可能会影响识别效果，目前仅支持 8k_zh、8k_zh_finance、16k_zh 引擎模型 |
 | signature | 是 | String | 接口签名参数|
+
+
 
 **signature 签名生成** [](id:sign)
 1. 对除 signature 之外的所有参数按字典序进行排序，拼接请求 URL 作为签名原文，这里以 Appid=1259228442, SecretId=AKIDoQq1zhZMN8dv0psmvud6OUKuGPO7pu0r 为例拼接签名原文，则拼接的签名原文为：

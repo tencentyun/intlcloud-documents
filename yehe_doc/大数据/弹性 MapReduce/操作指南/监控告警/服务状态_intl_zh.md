@@ -1,0 +1,23 @@
+## 功能介绍
+服务状态提供对集群上安装的主要服务的详细监控功能，包括 HDFS、YARN、HIVE、ZOOKEEPER、SPARK、HBase 和 PRESTO 等。本文为您介绍通过控制台查看集群服务状态操作。
+
+## 操作步骤
+1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在集群列表中单击对应的集群 **ID/名称**进入集群详情页。
+2. 在集群详情页面中选择**集群服务**，单击对应组件右上角**操作 > 服务状态**，以 HDFS 为例。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/aQix759_%E5%9B%BD%E9%99%8526.png)
+3. 服务状态页面提供了三部分服务维度的监控视图，分别为服务摘要、健康状态、服务概览。因各服务组件服务不同，展示部分维度不同。
+4. **服务概览**可直观查看对应时间段服务组件的各项指标及指标各项统计规则，系统默认展示6个指标项，可单击**设置指标**自定义展示指标。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/69h2639_%E5%9B%BD%E9%99%8527%E5%92%8C31.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/pdsL052_%E5%9B%BD%E9%99%8528.png)
+5. 服务摘要展示服务当前整体使用状态。
+6. 健康状态展示当前服务各组件运行概况。单击角色名称或运行概况可跳转至角色管理或角色状态页。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/JUTg277_%E5%9B%BD%E9%99%8529.png)
+进入某一角色状态页面，可单击**设置指标**自定义展示指标。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/xBxE167_%E5%9B%BD%E9%99%8530.png)
+7.  服务概览可查看集群维度统计指标，单击**设置指标**可自定义展示指标。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/69h2639_%E5%9B%BD%E9%99%8527%E5%92%8C31.png)
+>!
+>- 服务监控默认展示 HDFS 服务组件，您可手动调整查看其它服务组件。
+>- 因各服务组件服务性质不同，所以服务监控维度部分有所不同，如 HBASE 支持表级监控维度部分。
+>
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Wr8h385_%E5%9B%BD%E9%99%8532.png)

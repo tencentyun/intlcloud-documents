@@ -109,8 +109,8 @@ EMR supports six cluster types and their respective use cases and defines five n
 <td >Default</td>
 <td >It is an MPP analytical database product that supports sub-second queries on PB-scale, structured data. It is compatible with MySQL protocol and uses the standard SQL syntax. It is suitable for historical report analysis, real-time data analysis, interactive data analysis, etc.</td>
 <td><ul style="margin:0"><li/><b>Master node: </b>It is a frontend module that provides the WebUI feature. Processes such as FE Follower and Broker are deployed here. The number of master nodes is ≥ 1 in non-HA mode and ≥ 3 in HA mode.
-<li/><b>Core node: </b>It is a backend module that provides the data storage feature. Processes such as BE and Broker are deployed here. The number of core nodes is ≥3.
-<li/><b>Router node: </b>It is a frontend module that helps achieve high read/write availability. Processes such as FE Observer and Broker are deployed here. Router nodes can be scaled out but not in.
+<li/><b>Core node: </b>It is a backend module that provides the data storage feature. Processes such as BE and Broker are deployed here. The number of core nodes is ≥ 3.
+<li/><b>Router node: </b>It is a frontend module that helps achieve high read/write availability. Processes such as FE Observer and Broker are deployed here. Router nodes can be scaled out but not scaled in.
 </ul></td>
 </tr>
 </tbody>
@@ -128,7 +128,7 @@ EMR supports six cluster types and their respective use cases and defines five n
 <tbody><tr>
 <td >Default</td>
 <td >It is a distributed, partitioned, multi-replica, and multi-subscriber message processing system based on ZooKeeper coordination. It is suitable for asynchronous processing, message communication, and streaming data receiving and distribution.</td>
-<td><ul style="margin:0"><li/><b>Core node: </b>It is a backend module that provides the data storage feature. Processes such as BE and Broker are deployed here. The number of core nodes is ≥ 1 in non-HA mode and ≥ 3 in HA mode.
+<td><ul style="margin:0"><li/><b>Core node: </b>It is a backend module for data storage. Processes such as BE and Broker are deployed here. The number of core nodes is ≥ 1 in non-HA mode or ≥ 2 in HA mode.
 <li/><b>Common node: </b>It provides data sharing and syncing and HA fault tolerance services for the core nodes in an HA cluster. The number of common nodes is 0 in non-HA mode or ≥ 3 in HA mode.</ul></td>
 </tr>
 </tbody>

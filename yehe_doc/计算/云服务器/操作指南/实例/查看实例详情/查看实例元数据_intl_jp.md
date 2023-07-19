@@ -1,7 +1,7 @@
 インスタンスメタデータは、インスタンスに関連するデータを指します。実行中のインスタンスを構成または管理するために使用できます。
 
 <dx-alert infotype="explain" title="">
-インスタンスのメタデータにはログイン後にのみアクセスできますが、データは暗号化されていません。インスタンスにアクセスできる人員はいずれもそのメタデータを表示できます。そのため、機密データを保護するために適切な予防措置を講じる必要があります。
+ インスタンスのメタデータにはログイン後にのみアクセスできますが、データは暗号化されていません。インスタンスにアクセスできる人員はいずれもそのメタデータを表示できます。そのため、機密データを保護するために適切な予防措置を講じる必要があります。
 </dx-alert>
 
 ## インスタンスメタデータの分類
@@ -33,7 +33,7 @@ Tencent Cloudは現在、次のメタデータを提供しています。
 </tr>
 <tr>
 <td>local-ipv4</td>
-<td >インスタンスのプライベートIP アドレス</td>
+<td>インスタンスのプライベートIP アドレス</td>
 <td>1.0</td>
 </tr>
 <tr>
@@ -54,7 +54,7 @@ Tencent Cloudは現在、次のメタデータを提供しています。
 <tr>
 <td>placement/zone</td>
 <td>インスタンスのアベイラビリティーゾーン</td>
-<td>2017 年9月19日更新</td>
+<td>2017年9月19日更新</td>
 </tr>
 <tr>
 <td>network/interfaces/macs/<strong>${mac}</strong>/mac</td>
@@ -67,7 +67,7 @@ Tencent Cloudは現在、次のメタデータを提供しています。
 <td>1.0</td>
 </tr>
 <tr>
-<td>network/interfaces/macs/<strong>${mac}</strong>/public-ipv4s</td>
+<td>network/interfaces/macs/<strong>${mac}/public-ipv4s</td>
 <td>インスタンスネットワークインターフェースのパブリックIPアドレス</td>
 <td>1.0</td>
 </tr>
@@ -76,23 +76,23 @@ Tencent Cloudは現在、次のメタデータを提供しています。
 <td>インスタンスネットワークインターフェースのVPC ID</td>
 <td>2017年9月19日更新</td>
 </tr>
-</tr>
+<tr>
 <td>network/interfaces/macs/<strong>${mac}</strong>/subnet-id</td>
 <td>インスタンスネットワークインターフェースのサブネットID</td>
+<td>2017年9月19日更新</td>
 </tr>
 <tr>
-<td>network/interfaces/macs/<strong>${mac}</strong>/local-ipv4s/<strong>${local-ipv4}</strong>/gateway</td>
 <td>network/interfaces/macs/<strong>${mac}</strong>/local-ipv4s/<strong>${local-ipv4}</strong>/gateway</td>
 <td>インスタンスネットワークインターフェースのゲートウェイアドレス</td>
 <td>1.0</td>
 </tr>
 <tr>
 <td>network/interfaces/macs/<strong>${mac}</strong>/local-ipv4s/<strong>${local-ipv4}</strong>/local-ipv4</td>
+<td>インスタンスネットワークインターフェースのプライベートIPアドレス</td>
 <td>1.0</td>
 </tr>
 <tr>
 <td>network/interfaces/macs/<strong>${mac}</strong>/local-ipv4s/<strong>${local-ipv4}</strong>/public-ipv4</td>
-| network/interfaces/macs/**${mac}**/local-ipv4s/**${local-ipv4}**/public-ipv4 | インスタンスのネットワークインターフェースのパブリックIPアドレス | 1.0 |
 <td>インスタンスネットワークインターフェースのパブリックIPアドレス</td>
 <td>1.0</td>
 </tr>
@@ -116,7 +116,7 @@ Tencent Cloudは現在、次のメタデータを提供しています。
 <td>インスタンスの作成時間</td>
 <td>2017年9月19日更新</td>
 </tr>
-</tr>
+<tr>
 <td>payment/termination-time</td>
 <td>インスタンスの終了時間</td>
 <td>2017年9月19日更新</td>
@@ -176,9 +176,9 @@ Tencent Cloudは現在、次のメタデータを提供しています。
 
 
 <dx-alert infotype="explain" title="">
-- 上記テーブルにおける`${mac}` および `${local-ipv4}`フィールドはそれぞれインスタンスに指定されたネットワークインターフェースのMACアドレスとプライベートIPアドレスを表します。
+- 上記テーブルにおける `${mac}` および `${local-ipv4}`フィールドはそれぞれインスタンスに指定されたネットワークインターフェースのMACアドレスとプライベートIPアドレスを表します。
 - リクエストの宛先URLアドレスは、大文字と小文字を区別する必要があります。返されたリクエストの結果に従って、新しいリクエストの宛先URLアドレスを作成する必要があります。
-- 返された配置データは、新しいバージョンで変更されています。以前のバージョンのデータを使用する必要がある場合、以前のバージョンのパスを指定するか、バージョンのパスを指定しないことによりバージョン1.0のデータにアクセスすることができます。返された配置データの詳細については、[リージョンとアベイラビリティーゾーン](https://intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
+- 返された配置データは、新しいバージョンで変更されています。以前のバージョンのデータを使用する必要がある場合、以前のバージョンのパスを指定するか、バージョンのパスを指定しないことによりバージョン1.0のデータにアクセスすることができます。返された配置データの詳細については、[リージョンとアベイラビリティゾーン](https://intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
 </dx-alert>
 
 
@@ -196,7 +196,7 @@ cURLツールまたはHTTP GETリクエストを介してメタデータにア�
 curl http://metadata.tencentyun.com/latest/meta-data/
 ```
 * リソースが存在しない場合、HTTPエラーコード「404 Not Found」が返されます。
-* メタデータ関連の操作はすべて、**インスタンスにログインした後**のみ実行できます。詳細については、 [Windowsインスタンスへのログイン](https://www.tencentcloud.com/document/product/213/32495)または [Linuxインスタンスへのログイン](https://www.tencentcloud.com/document/product/213/32493)をご参照ください。
+* メタデータ関連の操作はすべて、**インスタンスにログインした後**のみ実行できます。‍まずインスタンスにログインしてください。詳細については、 [Windowsインスタンスへのログイン](https://www.tencentcloud.com/document/product/213/32495)または[ Linuxインスタンスへのログイン]をご参照ください。
 
 ### メタデータクエリ例
 
@@ -210,8 +210,8 @@ Tencent Cloudがメタデータのアクセスパスまたは返されたデー�
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/
-1
-2017/9/19
+1.0
+2017-09-19
 latest
 meta-data
 ```
@@ -230,7 +230,7 @@ public-ipv4
 uuid
 ```
 
-以下の例では、インスタンスの物理的な位置情報を取得する方法を説明します。 返されるデータと物理的な位置情報の関係については、[リージョンとアベイラビリティーゾー](https://intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
+以下の例では、インスタンスの物理的な位置情報を取得する方法を説明します。 返されるデータと物理的な位置情報の関係については、[リージョンとアベイラビリティゾーン](https://intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/placement/region
@@ -244,7 +244,7 @@ ap-guangzhou-3
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/local-ipv4
-10.104.13.59
+10.104.13.59/
 ```
 
 以下の例では、インスタンスのパブリックIPアドレスを取得する方法を説明します。
@@ -324,7 +324,7 @@ public-ipv4-mode
 subnet-mask
 ```
 
-以下の例では、プライベートIPアドレスの情報を取得する方法を説明します。VPCモデルのみがこのデータをクエリできます。VPCモデルの詳細については、 [Virtual Private Cloud (VPC](https://www.tencentcloud.com/document/product/215)をご参照ください。
+以下の例では、プライベートIPアドレスのゲートウェイを取得する方法を説明します。VPCモデルのみがこのデータをクエリできます。VPCモデルの詳細については、[Virtual Private Cloud](https://www.tencentcloud.com/document/product/215)をご参照ください。
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/network/interfaces/macs/52:54:00:BF:B3:51/local-ipv4s/10.104.13.59/gateway
@@ -363,14 +363,14 @@ POSTPAID_BY_HOUR
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/payment/create-time
-2018/9/18 11:27:33
+2018-09-18 11:27:33
 ```
 
 以下の例では、スポットインスタンスの終了時間を取得する方法を説明します。
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/spot/termination-time
-2018/8/18 12:05:33
+2018-08-18 12:05:33
 ```
 
 以下の例では、CVMが属するアカウントAppIdを取得する方法を説明します。

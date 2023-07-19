@@ -1,4 +1,4 @@
-﻿Tencent Managed Service for Prometheus (TMP) will change the free metric storage period of pay-as-you-go instances as described in [Free Metrics in Pay-as-You-Go Mode](https://www.tencentcloud.com/document/product/1116/43469) to **15 days** on **November 30, 2022**. **For TMP instances with storage period over 15 days, their metrics will be charged for the extra storage days**.
+TencentCloud Managed Service for Prometheus (TMP) will change the free metric storage period of pay-as-you-go instances as described in [Free Metrics in Pay-as-You-Go Mode](https://www.tencentcloud.com/document/product/1116/43469) to **15 days** on **November 30, 2022**. **For TMP instances with storage period over 15 days, their metrics will be charged for the extra storage days**.
 
 >? To check the free metrics you have used or streamline monitoring metrics to avoid unnecessary expenses, see [Streamlining Monitoring Metrics](https://www.tencentcloud.com/document/product/457/47004?lang=en&pg=).
 

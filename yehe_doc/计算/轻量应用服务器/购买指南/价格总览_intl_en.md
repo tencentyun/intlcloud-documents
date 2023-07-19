@@ -8,7 +8,7 @@ This document lists the pricing details of Lighthouse instances, including basic
 - Any bundle not included in the table has been discontinued. Discontinued bundles are no longer purchasable but can be renewed at the original price. We recommend you upgrade a discontinued bundle. For more information, see [Upgrading Instance Bundle](https://intl.cloud.tencent.com/document/product/1103/41562).
 </dx-alert>
 
-### Singapore, Tokyo, Silicon Valley, Frankfurt, Mumbai, Toronto
+### Singapore, Tokyo, Silicon Valley, Frankfurt, Mumbai, Toronto, Jakarta
 
 <dx-tabs>
 ::: Linux bundles
@@ -173,7 +173,7 @@ This document lists the pricing details of Lighthouse instances, including basic
 | Region | Price (USD/GB) |
 |---------|---------|
 | Tokyo | 0.13 |
-| Hong Kong (China) , Seoul | 	0.12 |
+| Hong Kong (China) , Seoul , Jakarta| 	0.12 |
 | Silicon Valley, Frankfurt, Toronto	 | 	0.077 |
 | Mumbai	 | 	0.1 |
 | Singapore	 | 	0.081 |
@@ -187,7 +187,9 @@ A free tier of five custom images is provided for each region, and the unit pric
 ## [Cloud Disk Pricing](id:cbsDetail)
 
 ### Pricing information
-Hong Kong (China), Singapore, Silicon Valley, Japan, Frankfurt, and India: 0.17 USD/GB/month
+Hong Kong (China), Singapore, Silicon Valley, Japan, Frankfurt, Jakarta, and India: 
+Premium Cloud Disk: 0.11 USD/GB/month
+SSD Cloud Disk: 0.17 USD/GB/month   
 
 
 

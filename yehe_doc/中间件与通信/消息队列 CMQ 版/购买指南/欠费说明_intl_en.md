@@ -1,3 +1,5 @@
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+
 ## Notes
 
 - When you no longer use pay-as-you-go TDMQ for CMQ resources, terminate them as soon as possible to avoid further fee deductions.

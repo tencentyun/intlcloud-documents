@@ -1,7 +1,7 @@
 本文介绍为 TDSQL-C MySQL 版集群创建安全组及创建后对安全组的管理。
 
 ## 创建安全组
-1. 登录 [云服务器控制台](https://console.cloud.tencent.com/vpc/securitygroup?rid=1&rid=1)。
+1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/securitygroup?rid=1&rid=1)。
 2. 在左侧导航选择**安全组**，在上方选择**地域**，单击**新建**。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/3dJa662_2.png)
 3. 在弹出的对话框，完成如下配置，确认后单击**确定**。
@@ -27,6 +27,7 @@
 <td>显示模板规则</td>
 <td>若选择了模板，可单击显示模板规则展示规则详情。</td></tr>
 </tbody></table>
+
 表1：
 <table>
 <thead><tr><th>模板</th><th>说明</th><th>说明</th></tr></thead>
@@ -35,7 +36,7 @@
 <tr>
 <td>放通22，80，443，3389端口和ICMP协议</td><td>默认放通22，80，443，3389端口和 ICMP 协议，内网全放通。</td><td>此模板对云数据库不生效。</td></tr>
 <tr>
-<td>自定义</td><td>安全组创建成功后，按需自行添加安全组规则。具体操作请参见下文 <a href="https://www.tencentcloud.com/document/product/1098/52744">修改或添加安全组规则</a>。</td></tr></tr>
+<td>自定义</td><td>安全组创建成功后，按需自行添加安全组规则。具体操作请参见下文“添加安全组规则”</a>。</td><td>-</rd></tr>
 </table>
 
 ## 管理安全组

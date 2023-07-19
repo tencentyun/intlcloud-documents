@@ -1,6 +1,7 @@
-﻿This document describes the pricing of TDSQL-C for MySQL.
-## Billing Details
->!Value-added services are billed independently of compute nodes and storage space. For more information, see [Value-Added Service Pricing](#ZZFWJGSM).
+The billable items of TDSQL-C for MySQL include compute node, storage space, and value-added services such as backup space and database audit. This document describes the pricing of TDSQL-C for MySQL.
+
+## Billing Overview
+>!Value-added services are billed separately and independently of compute nodes and storage space. For more information, see [Value-Added Service Pricing](#ZZFWJGSM).
 >
 **Total monthly subscription fees = compute node fees + storage space fees = compute node price * number of compute nodes + storage space price * storage space**
 
@@ -9,16 +10,17 @@
 **Total serverless fees = compute node fees + storage space fees = serverless computing power price * number of CCUs + storage space price * storage space**
 
 TDSQL-C for MySQL adopts a computing-storage separation architecture. You can purchase multiple compute nodes for a single cluster. Each compute node is billed separately, and all compute nodes in the same cluster share the same storage space, so you only need to pay for one storage space.
-​
+
 - Compute node fees are charged in the corresponding billing mode (monthly subscription, pay-as-you-go, or serverless) based on the specification you purchase.
 - Storage space fees are charged in your selected billing mode: monthly subscription (prepaid storage space) or pay-as-you-go (postpaid by hourly storage space usage).
 >?**Monthly-subscribed storage space** can be purchased only after you select the monthly subscription billing mode for TDSQL-C for MySQL.
+>
 
 ## Compute Node Pricing
 <table>
 <thead><tr>
 <th rowspan=2 >Compute Node Specification</th>
-<th colspan=2>Guangzhou, Shanghai, Beijing, and Nanjing</th><th colspan=2>Hong Kong (China) and Taipei (China)</th><th colspan=2>Beijing Finance</th><th colspan=2>Silicon Valley, Frankfurt, and Virginia</th><th colspan=2>Singapore, Seoul</th><th colspan=2>Tokyo</th></tr>
+<th colspan=2>Guangzhou, Shanghai, Beijing, and Nanjing</th><th colspan=2>Hong Kong (China) and Taipei (China)</th><th colspan=2>Beijing Finance</th><th colspan=2>Silicon Valley, Frankfurt, and Virginia</th><th colspan=2>Singapore and Seoul</th><th colspan=2>Tokyo</th></tr>
 <tr>
 <th>Pay-as-You-Go Price (USD/Hour)</th><th>Monthly Subscription Price (USD/Month)</th>
 <th>Pay-as-You-Go Price (USD/Hour)</th><th>Monthly Subscription Price (USD/Month)</th>
@@ -145,14 +147,15 @@ TDSQL-C for MySQL adopts a computing-storage separation architecture. You can pu
 <td>0.00001397</td></tr>
 </tbody></table>
 
+
 >?
->- CynosDB Compute Unit (CCU) is the computing and billing unit for the Serverless Edition. A CCU is approximately equal to 1 CPU core and 2 GB memory. The number of CCUs used in each billing cycle is the greater value between the number of CPU cores used by the database and 1/2 of the memory size.
->- You can refer to [product specifications](https://intl.cloud.tencent.com/document/product/1098/46430) to select the corresponding maximum and minimum CCU values. The storage space upper limit is the same as the maximum storage space corresponding to the [common compute node specifications](https://intl.cloud.tencent.com/document/product/1098/46430).
+TDSQL-C Compute Unit (CCU) is the computing and billing unit for the serverless mode. A CCU is approximately equal to 1 CPU core and 2 GB memory. The number of CCUs used in each billing cycle is the greater of the number of CPU cores used by the database and 1/2 of the memory size.
+>- You can refer to compute unit to select the corresponding maximum and minimum CCU values. The storage space upper limit is the same as the maximum storage space corresponding to the common compute node specifications as described in [Product Specifications](https://intl.cloud.tencent.com/document/product/1098/46430).
 
 ## [Storage Space Pricing](id:cckjjg)
 <table>
 <thead><tr>
-<th colspan=2>Guangzhou, Shanghai, Beijing, Nanjing, and Beijing Finance</th><th colspan=2>Hong Kong (China), Taipei (China), Singapore，Seoul, Silicon Valley, Frankfurt, Tokyo, and Virginia</th></tr>
+<th colspan=2>Guangzhou, Shanghai, Beijing, Nanjing, Beijing Finance, Chengdu, and Chongqing</th><th colspan=2>Hong Kong (China), Taipei (China), Singapore, Silicon Valley, Frankfurt, Tokyo, Virginia, and Seoul</th></tr>
 <tr>
 <th>Pay-as-You-Go Price (USD/GB/Hour)</th><th>Monthly Subscription Price (USD/GB/Month)</th>
 <th>Pay-as-You-Go Price (USD/GB/Hour)</th><th>Monthly Subscription Price (USD/GB/Month)</th>
@@ -162,19 +165,29 @@ TDSQL-C for MySQL adopts a computing-storage separation architecture. You can pu
 <td>0.000792</td><td><li>Below 3,000 GB: 0.22447059<br><li>3,000 GB or above: 0.20576471</td></tr>
 </tbody></table>
 
+
 ## [Value-Added Service Pricing](id:ZZFWJGSM)
 ### Backup space price
 The backup space is free of charge for now.
 
 ### Database audit price
-Database audit is billed by the stored log size for every clock-hour, and usage duration shorter than one hour will be calculated as one hour.
+Database audit  is billed by the amount of audit log storage on a pay-as-you-go basis. Fees are billed for every clock-hour, and usage duration shorter than one hour will be calculated as one hour.
 
-| Region               | Price (USD/GB/Hour) |
-|---------|---------|
-| China (including the Chinese mainland, Hong Kong, Taipei, and finance zones) | 0.00147059 |
-| Other countries and regions | 0.002239 |
+<table>
+<thead><tr><th rowspan="2" width=30%>Region</th><th colspan = "2" >Price (USD/GB/Hour)</th></tr><th>Frequent Access Storage</th><th>Infrequent Access Storage</th></tr></thead>
+<tbody>
+<tr>
+<td>China (including finance regions)</td>
+<td>0.00147059</td><td>0.00018382</td></tr>
+<tr>
+<td>Other countries and regions</td>
+<td>0.00220588</td><td>0.00027573</td></tr>        
+</tbody></table>
 
-## Fees Calculation Examples
+
+For more information, see [Database Audit Billing Overview](https://www.tencentcloud.com/document/product/1098/52146).
+
+## Fees Calculation Example
 >?The following prices are for demonstration only. The actual prices at the official website shall prevail, which may vary by region, campaign, or policy.
 >
 ### Example 1. Both compute nodes and the storage space are monthly subscribed
