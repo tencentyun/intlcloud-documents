@@ -90,7 +90,7 @@ Input模块支持Authentication操作，用户可对每个输入点独立做Auth
 ![](https://qcloudimg.tencent-cloud.cn/raw/6f0ea51524e8fc074c92f0ece1848d2e.png)
 
 
-4. 如果你需要时移功能，可以开启【Time-shifted Viewing】，以开启时移功能。
+4. 如果你需要时移功能，可以开启 Time-shifted Viewing，以开启时移功能。
 ![](https://qcloudimg.tencent-cloud.cn/raw/e947b5903dec1e71f29ef4f15c3b30a0.png)
 Startover Windows：在多长时间内可以对直播进行时移回看。默认1天，还支持选择3天、7天、15天和30天。 
 
@@ -105,17 +105,23 @@ Startover Windows：在多长时间内可以对直播进行时移回看。默认
 - 最多只能返回24小时的时移内容，也就是end和start的时间差不能超过24小时，否则会返回400错误。
 
 时移URL示例:
+
 - 请求2023-07-01T00:00:00Z ~ 2023-07-01T23:59:59Z这段时间的时移内容
+
 ```
 http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=2023-07-01T00:00:00Z&end=2023-07-01T23:59:59Z
+```
 或者
+```
 http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=1688169600&end=1688255999
 ```
 
 - 请求2023-07-01T00:00:00Z开始的直播内容,直到直播结束
 ```
 http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=2023-07-01T00:00:00Z
+```
 或者
+```
 http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=1688169600
 ```
 

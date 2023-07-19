@@ -105,16 +105,22 @@ Please note:
 
 Example timeshift URLs:
 - Request timeshift content from 2023-07-01T00:00:00Z to 2023-07-01T23:59:59Z:
+
 ```
 http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=2023-07-01T00:00:00Z&end=2023-07-01T23:59:59Z
+```
 or
+```
 http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=1688169600&end=1688255999
 ```
 
 - Request live content starting from 2023-07-01T00:00:00Z until the end of the live stream:
+- 
 ```
 http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=2023-07-01T00:00:00Z
+```
 or
+```
 http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=1688169600
 ```
 
