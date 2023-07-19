@@ -115,7 +115,7 @@ http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=1688169600&end=168
 ```
 
 - Request live content starting from 2023-07-01T00:00:00Z until the end of the live stream:
-- 
+
 ```
 http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=2023-07-01T00:00:00Z
 ```
