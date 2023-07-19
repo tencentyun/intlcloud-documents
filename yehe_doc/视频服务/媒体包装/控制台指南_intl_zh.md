@@ -72,9 +72,14 @@ Input模块支持Authentication操作，用户可对每个输入点独立做Auth
 
 ![img](https://main.qcloudimg.com/raw/ce143b55735dee33f7e708c5ea19f89a.png)
 
-2. 输入Endpoint Name，Endpoint Type 默认与Channel的输入协议相同。另外，如果你的输入协议为HLS，则额外可选Type为CMAF，StreamPackage支持将HLS转封装为CMAF（DASH格式）。
+2. 输入Endpoint Name，Endpoint Type 默认与Channel的输入协议相同。 另外，如果你的输入协议为HLS，则额外可选Type为CMAF，StreamPackage支持将HLS转封装为CMAF（DASH格式）。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/fef800b9890ad8c7df531792d20657d7.png)  
+![](https://qcloudimg.tencent-cloud.cn/raw/9ccec5cbe3db2e1ce1ef76baa3fb39b7.png)
+
+如果你需要修改Manifest Name, 请在Manifest Name中输入，默认值是main。
+
+![](https://qcloudimg.tencent-cloud.cn/raw/bdf95344c0310ded0d5e05f3293d4558.png)
+
 
 3. 用户可根据需要选择是否开启IP黑白名单、Authkey等功能。
 
@@ -82,11 +87,39 @@ Input模块支持Authentication操作，用户可对每个输入点独立做Auth
 
 - 支持配置Authkey：支持http-header通过 X-TENCENT-PACKAGE进行鉴权。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/3255d5b26c1ad65a64102fbd6a302157.png)  
+![](https://qcloudimg.tencent-cloud.cn/raw/6f0ea51524e8fc074c92f0ece1848d2e.png)
 
 
+4. 如果你需要时移功能，可以开启【Time-shifted Viewing】，以开启时移功能。
+![](https://qcloudimg.tencent-cloud.cn/raw/e947b5903dec1e71f29ef4f15c3b30a0.png)
+Startover Windows：在多长时间内可以对直播进行时移回看。默认1天，还支持选择3天、7天、15天和30天。 
 
-4. 单击【Create】保存设置，创建完毕。创建完毕的Endpoint支持编辑及删除操作。用户可基于生成的Endpoint URL进行回源拉流操作，从而对直播流进行Distribution。
+开启时移后，直播切片将会被保存在云端，可以通过Endpoint的URL增加参数进行时移观看，具体参数如下
+- timeshift=1,表示观看时移
+- start=xxx,表示时移开始时间，支持ISO 8601 dates格式或者POSIX (or Epoch) time格式。
+- end=xxx,表示时移结束时间，支持ISO 8601 dates格式或者POSIX (or Epoch) time格式。
+
+注意：
+- 如果同时指定start和end，那么end必须大于start，否则会返回400错误。
+- start必须在StartoverWindows范围内，否则会返回400错误。
+- 最多只能返回24小时的时移内容，也就是end和start的时间差不能超过24小时，否则会返回400错误。
+
+时移URL示例:
+- 请求2023-07-01T00:00:00Z ~ 2023-07-01T23:59:59Z这段时间的时移内容
+```
+http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=2023-07-01T00:00:00Z&end=2023-07-01T23:59:59Z
+或者
+http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=1688169600&end=1688255999
+```
+
+- 请求2023-07-01T00:00:00Z开始的直播内容,直到直播结束
+```
+http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=2023-07-01T00:00:00Z
+或者
+http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=1688169600
+```
+
+5. 单击【Create】保存设置，创建完毕。创建完毕的Endpoint支持编辑及删除操作。用户可基于生成的Endpoint URL进行回源拉流操作，从而对直播流进行Distribution。
 
 ![img](https://main.qcloudimg.com/raw/219346607e144822c43173ba1e055905.png)
 

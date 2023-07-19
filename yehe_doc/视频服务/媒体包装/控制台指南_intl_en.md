@@ -74,7 +74,11 @@ You can create endpoints for a channel so that streams can be pulled from the ch
 
 2. Enter an endpoint name. The endpoint type is the same as the channel’s input type by default. If the input type is HLS, you can also select CMAF as the endpoint type. This means StreamPackage can package HLS streams into CMAF streams (DASH).
 
-![](https://qcloudimg.tencent-cloud.cn/raw/fef800b9890ad8c7df531792d20657d7.png)  
+![](https://qcloudimg.tencent-cloud.cn/raw/9ccec5cbe3db2e1ce1ef76baa3fb39b7.png)
+
+If you want to modify the Manifest Name, please enter the name in “Manifest Name”, the default value is main.
+
+![](https://qcloudimg.tencent-cloud.cn/raw/bdf95344c0310ded0d5e05f3293d4558.png)
 
 3. You can also enable IP allowlist/blocklist and AuthKey if necessary.
 
@@ -82,11 +86,39 @@ You can create endpoints for a channel so that streams can be pulled from the ch
 
 - AuthKey: Perform authentication using the HTTP header field X-TENCENT-PACKAGE.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/3255d5b26c1ad65a64102fbd6a302157.png)  
+![](https://qcloudimg.tencent-cloud.cn/raw/6f0ea51524e8fc074c92f0ece1848d2e.png)
 
+4. If you need the timeshift feature, you can enable the "Time-shifted Viewing" to activate it.
+![](https://qcloudimg.tencent-cloud.cn/raw/e947b5903dec1e71f29ef4f15c3b30a0.png)
 
+Startover Windows：Set how long StreamPackage will support time-shifted viewing for the content. Default value is 1 day, and 3days, 7 days, 15 days and 30 days are also supported. 
 
-4. Click **Create** and the endpoint is created. You can modify or delete the endpoint. From the endpoint URL generated, you can pull streams and distribute them.
+Once timeshift is enabled, live segments will be saved in the cloud, and you can watch them with timeshift by adding specific parameters to the Endpoint URL. The parameters are as follows:
+- timeshift=1, Indicates that you want to watch TimeShift stream.
+- start=xxx, indicating the start time of the timeshift. It supports either the ISO 8601 dates format or the POSIX (or Epoch) time format.
+- end=xxx, indicating the end time of the timeshift. It supports either the ISO 8601 dates format or the POSIX (or Epoch) time format.
+
+Please note:
+- If both start and end are specified, end must be greater than start, otherwise a 400 error will be returned.
+- The start time must be within the Startover Windows range, otherwise a 400 error will be returned.
+- Only a maximum of 24 hours of timeshift content can be returned. This means that the time difference between end and start cannot exceed 24 hours, otherwise a 400 error will be returned.
+
+Example timeshift URLs:
+- Request timeshift content from 2023-07-01T00:00:00Z to 2023-07-01T23:59:59Z:
+```
+http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=2023-07-01T00:00:00Z&end=2023-07-01T23:59:59Z
+or
+http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=1688169600&end=1688255999
+```
+
+- Request live content starting from 2023-07-01T00:00:00Z until the end of the live stream:
+```
+http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=2023-07-01T00:00:00Z
+or
+http://domain/v1/path/subpath/playlist.m3u8?timeshift=1&start=1688169600
+```
+
+5. Click **Create** and the endpoint is created. You can modify or delete the endpoint. From the endpoint URL generated, you can pull streams and distribute them.
 
 ![img](https://main.qcloudimg.com/raw/219346607e144822c43173ba1e055905.png)
 
