@@ -1,19 +1,16 @@
 ## Overview
-
-COS offers a limited free tier resource pack to all new users(i.e.users activating COS for the first time) to deduct the fees incurred by data stored in the **STANDARD** storage class, as detailed below: 
+COS offers a limited free tier resource pack to all new users (i.e., users activating COS for the first time) to deduct the fees incurred by data stored in the **STANDARD** storage class, as detailed below: 
 
 | Object | Free Tier | Validity |
 | -------- | ----------------- | ------ |
 | New user | 50 GB STANDARD storage usage | 6 months (180 days) |
 
-
->? The storage capacity is calculated in binary, for example, 1 TB = 1024 GB.
->
+>?The storage capacity is calculated in binary, for example, 1 TB = 1024 GB.
 
 
 ## Free Tier
 
-The free tier is only applicable to **public cloud regions**. For more information on regions, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+The free tier is only applicable to **public cloud regions**, not to finance cloud regions. For more information on regions, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 
 The free tier offered by COS can be used to deduct only **STANDARD storage usage** as detailed below. For more information, see [Billable Items](https://www.tencentcloud.com/document/product/436/40096).
 
@@ -29,9 +26,9 @@ The free tier offered by COS can be used to deduct only **STANDARD storage usage
       <th>Available Free Tier</th>
    </tr>
    <tr>
-      <td rowspan="6">Storage capacity fees</td>
+      <td rowspan="6">Storage usage fees</td>
       <td>STANDARD storage usage</td>
-      <td>Yes.<ul  style="margin: 0;"><li>New users are entitled to a free tier of 50 GB STANDARD storage usage for 6 months (180 days).</li></ul></td>
+      <td>Yes.<br>New users are eligible for a monthly free tier of 50 GB STANDARD storage usage for 6 months (180 days).</td>
    </tr>
    <tr>
       <td>MAZ_STANDARD storage usage</td>
@@ -45,6 +42,7 @@ The free tier offered by COS can be used to deduct only **STANDARD storage usage
    </tr>
    <tr>
       <td>ARCHIVE storage usage</td>
+   </tr>
    <tr>
       <td>DEEP ARCHIVE storage usage</td>
    </tr>
@@ -76,7 +74,7 @@ The free tier offered by COS can be used to deduct only **STANDARD storage usage
 > 
 
 
-Assume that individual user A activated the COS service on March 10, 2019, uploaded 50 GB of files to the STANDARD storage class in Beijing region on March 16 generating 100 requests, and downloaded 10 GB of data over the public network on March 20 generating 100 requests. Apart from these operations, user A did not perform any other operations before the end of September.
+Assume that user A activated the COS service on March 10, 2019, uploaded 50 GB of files to the STANDARD storage class in Beijing region on March 16 generating 100 requests, and downloaded 10 GB of data over the public network on March 20 generating 100 requests. Apart from these operations, user A did not perform any other operations before the end of September.
 
 
 | Time | Description | Unit Price | Volume | Fees (USD) |
@@ -92,9 +90,9 @@ Assume that individual user A activated the COS service on March 10, 2019, uploa
 
 ## Access and Query
 
-After you sign up for a Tencent Cloud account as instructed in [Signing Up](https://intl.cloud.tencent.com/document/product/378/17985) and log in to the [COS console](https://console.cloud.tencent.com/cos5) to activate the COS service, the system will automatically issue the free tier to your account.
+After you sign up for a Tencent Cloud account as instructed in [Signing Up](https://www.tencentcloud.com/document/product/378/17985) and log in to the [COS console](https://console.cloud.tencent.com/cos5) to activate the COS service, the system will automatically issue the free tier to your account.
 
-
+You can view the availability, effective date, and expiration time of the free tier on the [Resource Packs > Free Tier](https://console.cloud.tencent.com/cos5/package/free) page in the console.
 
 
 
@@ -109,11 +107,11 @@ For example, if you activated COS at 17:13:14 on March 10, 2019, and assume that
 During the free tier term, you may still be charged for other fees, such as request fees and traffic fees. Therefore, the billing sequence varies by scenario.
 
 - By default, COS bills are settled in a pay-as-you-go manner.
-- If you are eligible for the free tier of STANDARD storage usage, then your bills will be settled in the order of **free tier** > **pay-as-you-go billing**, that is, you will be charged in a pay-as-you-go manner for the usage in excess of the free tier.
-
+- If you are eligible for the free tier of STANDARD storage usage, and have not purchased a resource pack, then your bills will be settled in the order of **free tier** > **pay-as-you-go billing**, that is, you will be charged in a **pay-as-you-go** manner for the usage in excess of the free tier.
+- If you are eligible for the free tier of STANDARD storage usage, and have purchased a resource pack, then during the validity period of the resource pack, your bills will be settled in the order of **free tier** > **purchased resource pack** > **pay-as-you-go billing**, that is, you will be charged in a **pay-as-you-go** manner for the usage in excess of the free tier and purchased resource pack.
 
 
 
 ## Troubleshooting
 
-If you have any questions about the free tier or your bills, see [Billing](https://intl.cloud.tencent.com/document/product/436/10373) or [contact us](https://intl.cloud.tencent.com/contact-sales).
+If you have any questions about the free tier or your bills, see [Billing](https://www.tencentcloud.com/document/product/436/10373) or [contact us](https://www.tencentcloud.com/contact-sales).

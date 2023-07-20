@@ -69,6 +69,6 @@ COS 为用户提供多种使用方式，具体介绍请见下表：
 
 ## COS 如何收费？
 
-COS 的默认计费方式为按量计费（后付费），详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/436/16871) 文档。
+COS 的默认计费方式为按量计费（后付费），此外部分计费项也可采用有折扣优惠的资源包（预付费）方式进行抵扣，详情请参见 [计费概述](https://intl.cloud.tencent.com/document/product/436/16871) 文档。
 
 

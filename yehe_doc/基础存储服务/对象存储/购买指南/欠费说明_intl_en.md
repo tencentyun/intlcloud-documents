@@ -1,4 +1,3 @@
-
 >!If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
 
 If your account has overdue payment, a notification will be sent to you. Once receiving it, please go to the [Billing Center](https://console.cloud.tencent.com/account/recharge) in the console and pay the past due charges in time to prevent your business from being affected. This document will provide detailed information on overdue payment.
@@ -8,7 +7,7 @@ If your account has overdue payment, a notification will be sent to you. Once re
 You can learn about why overdue payment happens by browsing FAQs as below:
 
 - [Why is my account overdue or charged even if I am on the free tier?](https://www.tencentcloud.com/document/product/436/10373)
-
+- [Why is my account overdue or charged even if I have purchased a resource pack?](https://intl.cloud.tencent.com/document/product/436/10373)
 
 
 >?
@@ -30,7 +29,7 @@ You can learn about why overdue payment happens by browsing FAQs as below:
 
 1. If you no longer use the data stored in COS, delete it to avoid incurring further fees.
 2. You can enable the **cost alert** feature in the **Console** > **Billing Center**. An alert notification will be sent to you when your available balance drops below the alert threshold. For more information, see [Balance Alerts](https://www.tencentcloud.com/document/product/555/9942).
-3. In case of overdue payment, please pay charges timely so that your account balance is not less than 0.
+3. When your account has an overdue payment, top up your account to a positive balance promptly. You can check your [bills](https://console.cloud.tencent.com/expense/bill/overview) in the Billing Center and perform an analysis based on your actual needs. If the amount of resources required for your business scenario is relatively stable, you can purchase a resource pack for deduction of your resource usage to save your costs. For more information, see [Resource Pack (Prepaid)](https://www.tencentcloud.com/document/product/436/54353).
 
 
 
@@ -63,7 +62,7 @@ Step 1. Empty a bucket
 - Empty a bucket by [setting lifecycle configuration](https://intl.cloud.tencent.com/document/product/436/14605): This applies to a bucket containing 10,000 or more objects. A deletion task will be executed when the trigger conditions are met for a lifecycle policy. For details about the task start time and completion time, see the instructions for setting a lifecycle policy in the console.
 - [Empty a bucket](https://intl.cloud.tencent.com/document/product/436/30926) using the console: This applies to a bucket containing less than 10,000 objects. A bucket is emptied immediately after the emptying task is completed.
 
->? If you have a large amount of data in your bucket, emptying the bucket using the console may be slow or even fail due to network reasons. In this case, we recommend you empty the bucket by setting lifecycle configuration.
+>? If you have a large amount of data in your bucket, clearing the bucket using the console may be slow or even fail due to network reasons. In this case, we recommend you clear the bucket by setting lifecycle configuration.
 >
 
 Step 2. Delete a bucket
@@ -78,5 +77,5 @@ After completing steps 1 and 2, log in to the console again to confirm that the 
 
 Step 4. Confirm fees
 
-As storage usage fees are settled daily, the next day's bill will reflect the previous day's storage usage fees. After you clear bucket data, check your bills for the next three consecutive days to make sure no storage usage fees are incurred.
+As storage usage is billed daily, your storage usage generated on a day will be billed the next day. Therefore, after you clear the data in your bucket, check the bills for the last three days to make sure that no additional fees have been incurred.
 

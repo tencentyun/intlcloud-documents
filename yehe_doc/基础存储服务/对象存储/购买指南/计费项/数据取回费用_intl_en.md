@@ -1,20 +1,20 @@
-Retrieving data stored in STANDARD_IA, ARCHIVE, or DEEP ARCHIVE incurs data retrieval fees, which will be charged according to the size of the data retrieved.
+Retrieving data stored in the MAZ_STANDARD_IA, STANDARD_IA, ARCHIVE, or DEEP ARCHIVE storage class incurs data retrieval fees, which will be charged by the size of the retrieved data.
 
->? For more information on storage classes, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
+>? For more information on storage classes, see [Storage Class Overview](https://www.tencentcloud.com/document/product/436/30925).
 > 
 
 
-## STANDARD_IA Data Retrieval Fees
+## MAZ_STANDARD_IA/STANDARD_IA Data Retrieval Fees
 
 | Billable Item Description | Applicable Storage Class | Applicable Billing Mode |
-| ------------------------------------------------------------ | -------------- | -------------- |
-| Data stored in STANDARD_IA can only be read/downloaded after it is restored. The data retrieval fees are calculated based on the size of the object. | STANDARD_IA | Pay-as-you-go |
+| ----------------------- | --------------- |------------------- |
+| Data stored in MAZ_STANDARD_IA or STANDARD_IA can only be read/downloaded after it is restored. The data retrieval fees are calculated based on the size of the object.                            |      MAZ_STANDARD_IA</br>STANDARD_IA                             | Pay-as-you-go |
 
 ## ARCHIVE/DEEP ARCHIVE Data Retrieval Fees
 
 | Billable Item Description | Applicable Storage Class | Applicable Billing Mode |
-| ------------------------------------------------------------ | ------------------------- | -------------- |
-| Data stored in ARCHIVE/DEEP ARCHIVE can only be read/downloaded after it is restored to the STANDARD storage class (i.e., generating a copy in STANDARD) </br></br>The following fees may be incurred for different storage classes and restoration modes: <li>ARCHIVE data retrieval fees (expedited)</li><li>ARCHIVE data retrieval fees (standard)</li><li>ARCHIVE data retrieval fees (bulk)</li><li>DEEP ARCHIVE data retrieval fees (standard)</li><li>DEEP ARCHIVE data retrieval fees (bulk)</li> | ARCHIVE</br>DEEP ARCHIVE | Pay-as-you-go |
+| ----------------------- | --------------- |------------------- |
+| Data stored in ARCHIVE/DEEP ARCHIVE can only be read/downloaded after it is restored to the STANDARD storage class (i.e., generating a copy in STANDARD) </br></br>The following fees may be incurred for different storage classes and restoration modes: <ul style="margin: 0;"><li>ARCHIVE data retrieval fees (expedited)</li><li>ARCHIVE data retrieval fees (standard)</li><li>ARCHIVE data retrieval fees (bulk)</li><li>DEEP ARCHIVE data retrieval fees (standard)</li><li>DEEP ARCHIVE data retrieval fees (bulk)</li></ul> | ARCHIVE</br>DEEP ARCHIVE | Pay-as-you-go |
 
 
 ## Billing Mode and Calculation Formula
@@ -56,11 +56,12 @@ Assume that on November 1, 2020, user B uploaded 5 GB of data to a bucket residi
 - STANDARD_IA request fees: Settled on November 2 and 3, 2020.
 - Public network downstream traffic fees: Settled on November 3, 2020.
 
-Fees analysis:
+As no resource packs are available for data retrievals, an analysis is performed as follows based on the pay-as-you-go billing mode:
 
+Pay-as-you-go:
  - STANDARD_IA storage usage fees = 0.018 USD/GB/month / 30 * 5 GB * 30 days = 0.09 USD
  - STANDARD_IA data retrieval fees = 0.002 USD/GB x 5 GB = 0.01 USD
- - STANDARD_IA request fees = 0.01 USD/10,000 requests * 100 requests / 10,0000 * 2 = 0.0002 USD
+ - STANDARD_IA request fees = 0.01 USD/10,000 requests * 100 requests / 10,000 * 2 = 0.0002 USD
  - Public downstream traffic fees = 0.1 USD/GB x 5 GB = 0.5 USD
 
 In summary, the total bill for user B in November is calculated as follows: 0.09 + 0.01 + 0.0002 + 0.5 = 0.6002 USD.

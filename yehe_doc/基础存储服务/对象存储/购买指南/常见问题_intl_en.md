@@ -3,12 +3,24 @@
 [Does COS offer a free tier?](https://www.tencentcloud.com/document/product/436/10373)
 [Why is my account overdue or charged even if I am on the free tier?](https://www.tencentcloud.com/document/product/436/10373)
 
+### Resource pack
+
+[How do I view the usage of my resource packs?](https://intl.cloud.tencent.com/document/product/436/10373)
+[Can I renew or upgrade my COS resource packs?](https://intl.cloud.tencent.com/document/product/436/10373)
+[Can I use multiple COS resource packs together?](https://intl.cloud.tencent.com/document/product/436/10373)
+[Can I request a refund on a COS resource pack?](https://intl.cloud.tencent.com/document/product/436/10373)
+[Why is my account overdue or charged even if I have purchased a resource pack?](https://intl.cloud.tencent.com/document/product/436/10373)
+[How are COS resource packs applied to deduction of usage?](https://intl.cloud.tencent.com/document/product/436/10373)
 
 ### Notification
 
 [What types of notifications does COS send?](https://intl.cloud.tencent.com/document/product/436/10373)
 [What are subscribed and non-subscribed messages?](https://intl.cloud.tencent.com/document/product/436/10373)
 [How do I configure the root account and sub-accounts to receive COS notifications?](https://intl.cloud.tencent.com/document/product/436/10373)
+[What types of resource packs and billing notifications does COS offer?](https://intl.cloud.tencent.com/document/product/436/10373)
+[What is the policy for sending reminders of exceeding COS resource packs?](https://intl.cloud.tencent.com/document/product/436/10373)
+
+
 
 ### Billing Mode
 
@@ -37,6 +49,7 @@
 
 [Will I be charged immediately after activating COS?](https://intl.cloud.tencent.com/document/product/436/10373)
 [Will file uploads to COS incur fees?](https://intl.cloud.tencent.com/document/product/436/10373)
+[Why is my account charged even if I am on the free tier?](https://intl.cloud.tencent.com/document/product/436/10373)
 [How do I deactivate the COS service and stop being charged?](https://intl.cloud.tencent.com/document/product/436/10373)
 [How will I be charged when storing data in STANDARD_IA for less than 30 days?](https://intl.cloud.tencent.com/document/product/436/10373)
 [How will I be charged when storing data in ARCHIVE for less than 90 days?](https://intl.cloud.tencent.com/document/product/436/10373)

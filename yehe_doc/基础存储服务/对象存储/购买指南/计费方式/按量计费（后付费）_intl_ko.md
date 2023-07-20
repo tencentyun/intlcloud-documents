@@ -1,5 +1,6 @@
 종량제(후불)는 리소스를 먼저 사용하고 나중에 지불하는 Cloud Object Storage(COS)의 기본 과금 방식입니다. [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)의 모든 리전에서 지원되며, 각종 과금 항목의 요금은 매일 계산, 정산, 차감 및 청구됩니다.
 
+자세한 예상 사용량이 있는 경우 비용 절감을 위해 [리소스 패키지(선불)](https://www.tencentcloud.com/document/product/436/54353)를 사용하는 것이 좋습니다. [리소스 패키지 구매 페이지](https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=)에서 원하는 리소스 패키지을 구매하실 수 있습니다.
 
 ## 제품 가격
 
@@ -7,7 +8,7 @@ COS의 종량제 가격 책정은 [가격](https://intl.cloud.tencent.com/pricin
 
 ## 과금 항목
 
-COS의 다양한 과금 항목과 계산법은 다음과 같습니다.
+COS 각 과금 항목은 다음과 같이 계산됩니다.
 <table>
    <tr>
       <th>과금 항목</th>
@@ -17,7 +18,7 @@ COS의 다양한 과금 항목과 계산법은 다음과 같습니다.
    <tr>
       <td nowrap="nowrap">스토리지 사용 요금</td>
       <td>스토리지 클래스에 따라 달라지는 단가로 스토리지 사용량을 기준으로 계산됩니다.</td>
-      <td nowrap="nowrap"><ul style="margin: 0;"><li>스토리지 사용 요금 = 월 단가 / 30 * 일일 스토리지 사용량 * 일수</li><li>일일 스토리지 사용량 = ‘5분 사용량’ 합계 / 288(통계 포인트 수)</li></ul></td>
+      <td nowrap="nowrap"><ul style="margin: 0;"><li>일일 스토리지 사용 요금 = 월 단가 / 30 * 일일 스토리지 사용량</li><li>일일 스토리지 사용량 = ‘5분 사용량’ 합계 / 288(통계 포인트 수)</li></ul></td>
    </tr>
    <tr>
       <td>요청 요금</td>
@@ -78,3 +79,5 @@ COS 과금 항목은 아래와 같이 매일 청구됩니다.
 - STANDARD 스토리지 사용 요금: 해당 월의 데이터 100GB에 대한 스토리지 사용 요금입니다.
 - 트래픽 요금: 해당 월의 데이터 10GB에 대한 공중망 다운스트림 트래픽 요금입니다.
 - 요청 요금: 해당 월의 STANDARD 읽기/쓰기 요청 1만 회에 대한 요청 요금입니다. 그 중 데이터를 업로드하면 STANDARD 쓰기 요청이 생성되고, 다운로드 데이터에서는 STANDARD 읽기 요청이 생성됩니다.
+
+
