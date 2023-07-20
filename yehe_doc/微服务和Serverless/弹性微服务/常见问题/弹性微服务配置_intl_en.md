@@ -1,13 +1,9 @@
-### How do I purchase the TEM service?
-TEM is currently in beta test. You can directly log in to the [TEM console](https://console.cloud.tencent.com/tem) to try it out for free. For more information, see [Purchase Guide](https://www.tencentcloud.com/document/product/1094/47757).
-
-
 ### Which languages does TEM support?
 TEM currently supports microservice applications written in Java. You can make Docker images for non-microservice applications and uploading them to TEM. In this way, you can deploy applications written in any programming language in TEM.
 
 
 ### All my businesses are in CVM. Do I need to modify the code when migrating them to TEM?
-TEM features non-intrusive integration with no business code changes required, which greatly reduces the migration costs. Taking Spring Cloud applications with Eureka or ZooKeeper as the registry as an example, when you migrate them to TEM, you don't need to make any changes, which implements smooth migration imperceptible to users.
+TEM features non-intrusive integration with no business code changes required, which greatly reduces the migration costs. Taking Spring Cloud applications with ZooKeeper as the registry as an example, when you migrate them to TEM, you don't need to make any changes, which implements smooth migration imperceptible to users.
 
 
 ### How does TEM implement Ops-free operations?
