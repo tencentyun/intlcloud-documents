@@ -1,4 +1,4 @@
->! If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
 
 ## Daily Pay-As-You-Go
 If you use the daily pay-as-you-go mode, fees will be deducted from your account balance. If your account has insufficient balance, MPS will finish all ongoing transcoding tasks first and then suspend services for your account. Services will resume only after you make the payment and your available credit becomes positive. The default billing cycle is daily. If you want to change to monthly billing, please contact your sales rep.
