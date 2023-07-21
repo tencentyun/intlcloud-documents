@@ -1,3 +1,5 @@
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
+
 ## 返金説明
 \\**Tencent Effect SDKのエフェクト素材はすべて返金不可となっています。**28日間のテスト期間を設けており、テスト期間中に効果に満足いただけない場合、お客様はいつでも使用を中止することができます。購入された権限を一度バインドすると、Tencent Effect SDKの返金はサポートされません。エフェクト素材ファイルはダウンロードされると回収できないため、返金の対象とはなりません。
 
