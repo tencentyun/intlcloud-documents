@@ -383,5 +383,5 @@ AD insertion fee for each tier = The number of ads inserted × Unit price of the
 
 #### Example
 Assume that you have 10000 viewers watching a live stream on December 1, 2022. The live stream has 8 ad breaks, each containing 10 separate ads. This would result in a total of 800000 ad insertions and would cost $505:
-600000 x 0.000675 + 200000 x 0.0005 = 405 + 100 = 505 美元。
+600000 x 0.000675 + 200000 x 0.0005 = 405 + 100 = 505 USD。
 
