@@ -1,4 +1,4 @@
->! If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
 
 ## Processing for Overdue Payment
 Overdue payment processing of the LVB recording solution depends on the services it consists of:

@@ -3,12 +3,24 @@
 [COS 有免费额度吗?](https://intl.cloud.tencent.com/document/product/436/10373)
 [享受免费额度为何仍会欠费（扣费）？](https://intl.cloud.tencent.com/document/product/436/10373)
 
+### 资源包相关
+
+[如何查看资源包使用情况？](https://intl.cloud.tencent.com/document/product/436/10373)
+[COS 资源包支持续费或升级么？](https://intl.cloud.tencent.com/document/product/436/10373)
+[COS 资源包是否可以叠加使用？](https://intl.cloud.tencent.com/document/product/436/10373)
+[COS 资源包可以退货吗？](https://intl.cloud.tencent.com/document/product/436/10373)
+[已购买资源包为何仍会欠费（或扣费）？](https://intl.cloud.tencent.com/document/product/436/10373)
+[COS 资源包是如何抵扣的？](https://intl.cloud.tencent.com/document/product/436/10373)
 
 ### 通知相关
 
 [COS 的通知有哪些？](https://intl.cloud.tencent.com/document/product/436/10373)
 [什么是订阅消息、非订阅消息？](https://intl.cloud.tencent.com/document/product/436/10373)
 [如何设置主账号、子账号是否接收 COS 通知？](https://intl.cloud.tencent.com/document/product/436/10373)
+[COS 的资源包及计费通知有哪些？](https://intl.cloud.tencent.com/document/product/436/10373)
+[COS 资源包的超量提醒是按照什么策略发送的？](https://intl.cloud.tencent.com/document/product/436/10373)
+
+
 
 ### 收费模式相关
 
@@ -37,6 +49,7 @@
 
 [COS 开通后就会收费吗？](https://intl.cloud.tencent.com/document/product/436/10373)
 [COS 上传是否收费？](https://intl.cloud.tencent.com/document/product/436/10373)
+[已有免费额度资源包，为何仍会扣费？](https://intl.cloud.tencent.com/document/product/436/10373)
 [如何关闭 COS 或停止计费？](https://intl.cloud.tencent.com/document/product/436/10373)
 [COS 低频存储数据不足30天如何计费？](https://intl.cloud.tencent.com/document/product/436/10373)
 [COS 归档存储数据不足90天如何计费？](https://intl.cloud.tencent.com/document/product/436/10373)

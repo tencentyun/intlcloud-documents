@@ -1,4 +1,4 @@
->! If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
 
 ## Overdue Payments
 - The current day's CSS pay-as-you-go daily billing items will be generated the morning of the next day. Bills for the pay-as-you-go monthly billing items will be generated on the first day of the next month. For billing details, see [Viewing Bills](https://intl.cloud.tencent.com/document/product/267/36278).

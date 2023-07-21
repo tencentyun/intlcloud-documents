@@ -3,14 +3,26 @@
 [COSには無料利用枠はありますか。](https://intl.cloud.tencent.com/document/product/436/10373)
 [無料利用枠を利用しているのに料金が未払いとなっている（差し引かれている）のはなぜですか。](https://intl.cloud.tencent.com/document/product/436/10373)
 
+### リソースパック関連
+
+[リソースパックの使用状況を確認するにはどうすればよいですか。](https://intl.cloud.tencent.com/document/product/436/10373)
+[COSリソースパックは支払い更新またはアップグレードをサポートしていますか。](https://intl.cloud.tencent.com/document/product/436/10373)
+[COSリソースパックは重複して使用できますか。](https://intl.cloud.tencent.com/document/product/436/10373)
+[COSリソースパックは返品できますか。](https://intl.cloud.tencent.com/document/product/436/10373)
+[リソースパックを購入したのに料金が未払いとなっている（差し引かれている）のはなぜですか。](https://intl.cloud.tencent.com/document/product/436/10373)
+[COSリソースパックはどのように充当しますか。](https://intl.cloud.tencent.com/document/product/436/10373)
 
 ### 通知関連
 
 [COSの通知にはどのようなものがありますか。](https://intl.cloud.tencent.com/document/product/436/10373)
 [サブスクリプションメッセージ、非サブスクリプションメッセージとは何ですか。](https://intl.cloud.tencent.com/document/product/436/10373)
 [ルートアカウント、サブアカウントがCOS通知を受信するかどうか設定するにはどうすればよいですか。](https://intl.cloud.tencent.com/document/product/436/10373)
+[COSのリソースパックおよび課金通知にはどのようなものがありますか。](https://intl.cloud.tencent.com/document/product/436/10373)
+[COSリソースパックの使用量超過のお知らせはどのようなポリシーに従って送信されますか。](https://intl.cloud.tencent.com/document/product/436/10373)
 
-## 課金方式関連
+
+
+### 課金方式関連
 
 [COSはどのような課金方式をサポートしていますか。](https://intl.cloud.tencent.com/document/product/436/10373)
 [COSのパブリックネットワークのダウンリンクトラフィックはどのように発生しますか。また、どのように課金されますか。](https://intl.cloud.tencent.com/document/product/436/10373)
@@ -37,6 +49,7 @@
 
 [COSはアクティブ化すると有料になりますか。](https://intl.cloud.tencent.com/document/product/436/10373)
 [COSへのアップロードは有料ですか。](https://intl.cloud.tencent.com/document/product/436/10373)
+[無料利用枠リソースパックを利用しているのに料金が差し引かれているのはなぜですか。](https://intl.cloud.tencent.com/document/product/436/10373)
 [COSを利用停止または課金を停止するにはどうすればよいですか。](https://intl.cloud.tencent.com/document/product/436/10373)
 [COSの低頻度ストレージデータの保存期間が30日未満の場合はどのように課金されますか。](https://intl.cloud.tencent.com/document/product/436/10373)
 [COSのアーカイブストレージデータの保存期間が90日未満の場合はどのように課金されますか。](https://intl.cloud.tencent.com/document/product/436/10373)

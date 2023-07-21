@@ -1,4 +1,4 @@
->! If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
 
 ## Overdue Payments and Service Suspension
 - StreamPackage fees are billed in the pay-as-you-go mode. Fees incurred each day are deducted from your account balance the following day.

@@ -56,6 +56,7 @@ For example, if the number of ticket verifications on a day is 200, according to
 
 **Service suspension upon a 7-day overdue payment**: If your account has an overdue payment for more than 7 days, the Captcha service will be suspended. After the service is suspended, you will be unable to use the Captcha console and calling the ticket verification API will return an error.
 
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
 
 ## FAQs
 

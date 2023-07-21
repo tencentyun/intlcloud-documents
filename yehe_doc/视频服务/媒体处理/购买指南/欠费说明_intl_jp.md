@@ -1,3 +1,5 @@
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
+
 ## 従量課金-日次決済
 メディア処理は日次決済のユーザーに対して従量課金を行います。残高不足によりアカウントの支払い停滞が発生したユーザーに対し、メディア処理は、まずすべてのトランスコード中のタスクを完了させてから、サービス停止フローに入ります。ユーザーがアカウントにチャージするまで、コンソールを正常に使用することはできません。課金方式はデフォルトでは日次決済となっています。月次決済に変更する場合は、サービス担当者にご連絡ください。
 

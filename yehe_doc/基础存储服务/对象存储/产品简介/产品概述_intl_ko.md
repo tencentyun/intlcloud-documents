@@ -69,9 +69,6 @@ COS는 사용자에게 다양한 사용 방식을 제공합니다. 자세한 사
 
 ## COS는 어떻게 과금되나요?
 
-COS는 기본적으로 종량제(후불)로 과금됩니다. 자세한 내용은 [과금 개요](https://intl.cloud.tencent.com/document/product/436/16871) 문서를 참고하십시오.
+COS는 기본적으로 종량제(후불)로 청구됩니다. 또한 일부 과금 항목의 사용량도 할인된 리소스 패키지(선불)로 차감할 수 있습니다. 자세한 내용은 [과금 개요](https://intl.cloud.tencent.com/document/product/436/16871)를 참고하십시오.
 
-## 관련 문서
-
-기타 안내 문서는 [개발자 가이드](https://www.tencentcloud.com/document/product/436/14102)를 참고하십시오.
 
