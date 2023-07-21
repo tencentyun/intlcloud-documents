@@ -1,3 +1,5 @@
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
+
 ## 支払い延滞の説明
 - CSSの日次決済項目は、使用後の翌日の朝に日次使用量請求書が生成されます。月次決済項目は、使用後の翌月の1日に月次使用量請求書が生成されます。請求書明細の照会については、[請求書の照会](https://intl.cloud.tencent.com/document/product/267/36278)をご参照ください。
 - Tencent Cloudアカウントの残高が不足して、アカウントが支払い延滞していることが検出されると、アカウント支払い延滞のリマインド通知が送信されます。支払い延滞後24時間以内であればチャージできます。アカウントに24時間以内にチャージされた場合、CSSは停止されません。アカウントが24時間以内にチャージされなかった場合、CSSはサービスを停止します。
