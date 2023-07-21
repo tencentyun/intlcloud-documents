@@ -1,3 +1,5 @@
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
+
 ## 종량제 과금-일 결산
 일 결산 주기에 있는 경우 MPS(Media Processing Service)는 계정 잔액에서 요금을 차감합니다. 귀하의 계정에 잔액이 부족하고 연체되면 MPS는 서비스를 일시 중단하기 전에 진행 중인 모든 트랜스코딩 작업을 완료합니다. 계정을 충전하고 잔액이 플러스가 된 후에만 서비스를 계속 사용할 수 있습니다. 기본적으로 일 결산 과금 모드가 사용됩니다. 월 결산 과금으로 변경하려면 Tencent Cloud 영업 담당자에게 문의하십시오.
 
