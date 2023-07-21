@@ -1,4 +1,4 @@
->! If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
 
 ### Notification
 When your account is overdue, notifications for service suspension will be sent to your Tencent Cloud account creators and all collaborators through email and SMS on the day of and after expiration.
