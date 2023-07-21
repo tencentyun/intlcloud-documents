@@ -20,7 +20,12 @@
 		<td>Packaging fees</td>
 		<td>Using StreamPackage to package live streams will incur packaging fees, which are based on the traffic volume of the streams packaged.</td>
 		<td>Daily pay-as-you-go</td>
-	</tr>	
+	</tr>
+		<tr>
+		<td>AD insertion fees</td>
+		<td>Using AD insertion feature in StreamPackage will incur AD insertion fees. Pricing is based on a tiered pricing model.</td>
+		<td>Daily pay-as-you-go</td>
+	</tr>
 </tbody>
 </table>
 
@@ -325,12 +330,12 @@ StreamPackage packages incoming streams on the cloud into different formats so t
 	<tr>
 		<th>Billable Item</th>
 		<th>Billed By</th>
-		<th>Price</th>
+		<th>Price (USD/GB/day)</th>
 	</tr>
 	<tr>
 		<td>Packaging</td>
 		<td>The traffic volume of streams packaged</td>
-		<td>0.1024 USD/GB/day</td>
+		<td>0.1024 </td>
 	</tr>
 </tbody>
 </table>	
@@ -344,11 +349,39 @@ Assume that you used StreamPackage to package 200 GB of live streams on December
 200 (GB) x 0.1024 (USD/GB/day) = 20.48 USD
 
 
+## AD insertion fees
+For AD insertion feature in StreamPackage, you are charged based on the number of ads inserted into your video streams. If you use the transcoding capabilities in AD insertion, there will be charges for the [MPS Audio/video transcoding ](https://www.tencentcloud.com/document/product/1041/49204?lang=en&pg=).
 
 
+#### Details
+- Billing mode: Pay-as-you-go
+- Billing cycle: AD insertion feature is billed daily and the fees incurred each day from 00:00 to 24:00 (UTC+8) are deducted from your account balance the following day when the bill is generated. For the actual deduction and billing time, see your bills.
 
+#### Pricing
+AD insertion fees are based on a tiered pricing model. The number of ads inserted is multiplied by the unit price of each pricing tier and the results are added up.
+<table class="table-striped">
+<tbody>
+	<tr>
+		<th>Billable Item</th>
+		<th>Tier</th>
+		<th>Price（USD/Insertion/Day）</th>
+	</tr>
+	<tr>
+		<td rowspan="2">AD insertion </td>
+		<td>0 - 600000 insertions</td>
+		<td>0.000675 </td>
+	</tr>	
+	<tr>
+		<td>>  600000 insertions</td>
+		<td>0.0005</td>
+	</tr>
+</tbody>
+</table>
 
+#### Fee calculation formula
+AD insertion fee for each tier = The number of ads inserted × Unit price of the tier. The total AD insertion fee is the fee of each tier combined.
 
-
-
+#### Example
+Assume that you have 10000 viewers watching a live stream on December 1, 2022. The live stream has 8 ad breaks, each containing 10 separate ads. This would result in a total of 800000 ad insertions and would cost $505:
+600000 x 0.000675 + 200000 x 0.0005 = 405 + 100 = 505 美元。
 
