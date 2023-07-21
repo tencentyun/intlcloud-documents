@@ -1,3 +1,5 @@
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
+
 This document describes the RUM service status when your account has overdue payments.
 
 ## Overdue Payment Policy for Pay-as-You-Go Billing
