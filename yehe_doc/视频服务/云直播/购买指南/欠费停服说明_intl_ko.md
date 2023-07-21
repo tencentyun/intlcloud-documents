@@ -1,3 +1,5 @@
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
+
 ## 연체 안내
 - CSS의 일간 결산 후불 과금 항목은 사용 후 익일 오전에 일간 청구서가 발행되며, 월간 결산 후불 과금 항목은 사용 후 익월 1일에 월간 청구서가 발행됩니다. 청구서 내역 조회는 [청구서 조회](https://intl.cloud.tencent.com/document/product/267/36278)를 참조하십시오.
 - Tencent Cloud 계정 잔액 부족으로 인한 계정 연체가 확인될 경우, 계정 연체 알림을 받게 됩니다. 연체 후 24시간의 충전 시간이 부여되며, 24시간 이내에 충전할 경우 CSS 서비스가 중단되지 않지만, 충전하지 않을 경우 CSS 서비스가 중단됩니다.
