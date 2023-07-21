@@ -34,7 +34,7 @@ On the day of and after TCSS service expiration, the system will send alerts for
 - You can still renew the service within five days after suspension on the **Activate service** page.
 - If your TCSS service is not renewed within five days after expiration, the system will suspend it in around 24 hours after that period (the service will be suspended, and the data will be deleted).
 
->! If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
 
 ## Refund Policy
 If you need fewer virtual cores in your business environment due to server deregistration, i.e., the number of cores of the Pro Edition exceeds the actual total number of cores, [contact us](https://intl.cloud.tencent.com/contact-us) for a refund application.
