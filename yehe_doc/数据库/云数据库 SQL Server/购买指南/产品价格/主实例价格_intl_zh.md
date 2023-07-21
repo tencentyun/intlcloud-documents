@@ -1,4 +1,4 @@
-﻿云数据库 SQL Server 支持按量计费模式，本文为您介绍主实例的规格及存储价格。
+﻿云数据库 SQL Server 支持按量计费计费模式，本文为您介绍主实例的规格及存储价格。
 
 ## 主实例 - 规格价格
 ### 按量计费价格
@@ -13,8 +13,10 @@
 <th width="28%">首尔、东京、硅谷、莫斯科</th></tr>
 <tr><td>每 GB</td><td>0.065088</td><td>0.1305</td><td>0.059184</td></tr>
 </tbody></table>
+
 :::
 ::: 双节点（原高可用版/集群版）云盘
+
 <table>
 <tr><th rowspan = "2" width="16%">规格</th>
 <th colspan = "4" style="text-align:center" width="84%">价格（美元/小时）</th></tr>
@@ -63,8 +65,10 @@
 <tr><td>96核192GB</td><td>39.04466824</td><td>78.14829176</td><td>83.00809412</td></tr>
 <tr><td>96核384GB</td><td>42.59418353</td><td>85.30627765</td><td>90.26032941</td></tr>
 </tbody></table>
+
 :::
 ::: 单节点（原基础版）云盘
+
 <table>
 <tr><th rowspan = "2"  width="16%">规格</th>
 <th colspan = "3" style="text-align:center" width="84%">价格（美元/小时）</th></tr>
@@ -83,10 +87,12 @@
 <tr><td>24核48GB</td><td>0.87101544</td><td>2.61304632</td><td>3.04855368</td></tr>
 <tr><td>24核96GB</td><td>1.2756924</td><td>3.8270772</td><td>4.4649228</td></tr>
 </tbody></table>
+
 :::
 </dx-tabs>
 
 [](id:ZSLCCJG)
+
 ## 主实例 - 存储价格
 ### 按量计费价格
 <dx-tabs>
@@ -100,6 +106,7 @@
 <tr>
 <td>每 GB</td><td>0.000216</td><td>0.00054</td><td>0.000432</td></tr>
 </tbody></table>
+
 :::
 ::: 双节点（通用型 SSD 云硬盘）
 <table>
@@ -107,23 +114,27 @@
 <tr>
 <th>北京、上海、广州、南京、成都、重庆</th>
 <th>中国香港</th>
-<th>新加坡</th></tr>
+<th>新加坡、孟买、首尔、弗吉尼亚、法兰克福、硅谷、圣保罗</th></tr>
 <tr>
 <td>每 GB</td><td>0.00029412</td><td>0.00044118</td><td>0.00044118</td></tr>
 </tbody></table>
+
 :::
 ::: 双节点（增强型 SSD 云硬盘）
+
 <table>
 <tr><th rowspan = "2" >规格</th><th colspan = "4" style="text-align:center">价格（美元/小时）</th></tr>
 <tr>
 <th>北京、上海、广州、南京、成都、重庆</th>
 <th>中国香港</th>
-<th>新加坡</th></tr>
+<th>新加坡、孟买、首尔、弗吉尼亚、法兰克福、硅谷、圣保罗</th></tr>
 <tr>
 <td>每 GB</td><td>0.00061765</td><td>0.00097059</td><td>0.00110294</td></tr>
 </tbody></table>
+
 :::
 ::: 单节点（SSD 云硬盘）
+
 <table>
 <tr><th rowspan = "2" >规格</th><th colspan = "3" style="text-align:center">价格（美元/小时）</th></tr>
 <tr>
@@ -133,6 +144,7 @@
 <tr>
 <td>每 GB</td><td>0.00050769</td><td>0.00050769</td><td>0.0006</td></tr>
 </tbody></table>
+
 :::
 ::: 单节点（高性能云硬盘）
 <table>
@@ -144,6 +156,7 @@
 <tr>
 <td>每 GB</td><td>0.00013846</td><td>0.00013846</td><td>0.00013846</td></tr>
 </tbody></table>
+
 :::
 ::: 单节点（通用型 SSD 云硬盘）
 <table>
@@ -155,8 +168,10 @@
 <tr>
 <td>每 GB</td><td>0.00014706</td><td>0.00022059</td><td>0.00022059</td></tr>
 </tbody></table>
+
 :::
 ::: 单节点（增强型 SSD 云硬盘）
+
 <table>
 <tr><th rowspan = "2" >规格</th><th colspan = "3" style="text-align:center">价格（美元/小时）</th></tr>
 <tr>
@@ -166,6 +181,7 @@
 <tr>
 <td>每 GB</td><td>0.00030882</td><td>0.00048529</td><td>0.00055147</td></tr>
 </tbody></table>
+
 :::
 </dx-tabs>
 

@@ -57,12 +57,12 @@
 
 [](id:CKMSQLB)
 ### 云数据库 SQL Server 是否可以查看慢 SQL 表？
-您可以通过登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID，进入慢查询日志页 [查询和下载慢查询日志](https://intl.cloud.tencent.com/document/product/238/47569)。
+您可以通过登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID，进入操作日志页 [查询和下载慢查询日志](https://intl.cloud.tencent.com/document/product/238/47569)。
 云数据库 SQL Server 慢 SQL 表默认不对外开放，您可以使用 SSMS 连接实例后自行查看，若权限不足请 [提交工单](https://console.cloud.tencent.com/workorder/category) 协助申请提升数据库账号权限。
 
-### 云数据库 SQL Server 是否可以开启 SQL trace 追踪权限？
-登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在**账号管理**页创建的账号，默认已开放 SQL trace 追踪权限。
-如果您是登录 SSMS 客户端手动创建的账号，则默认不支持 SQL trace 追踪，您可以用管理员账号自行授权，授权命令为：`GRANT ALTER TRACE TO [$account];`。
+### 云数据库 SQL Server 是否可以开启 SQL trace 追溯权限？
+登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在**账号管理**页创建的账号，默认已开放 SQL trace 追溯权限。
+如果您是登录 SSMS 客户端手动创建的账号，则默认不支持 SQL trace 追溯，您可以用管理员账号自行授权，授权命令为：`GRANT ALTER TRACE TO [$account];`。
 
 ### 云数据库 SQL Server 为什么开通 profiler 没有权限？
 通过 SQL Server 控制台的**账号管理**页创建的账号，默认拥有 profiler 权限；若您是通过 SSMS 工具手动创建的账号，则没有权限，您可通过如下命令进行赋权，赋权命令：`GRANT ALTER TRACE TO [$account];`。
@@ -75,7 +75,7 @@
 
 [](id:TBDZDSL)
 ### 双节点（原高可用版/集群版）主备实例的账号权限如何同步到只读实例？
-双节点（原高可用版/集群版）主实例创建的账号都会自动同步到只读实例，数据库版本 SQL Server 2017/2019 Enterprise 的双节点实例采用 Always On 方式进行同步，数据库版本 SQL Server 2008R2/2012/2014/2016 的双节点实例采用发布订阅方式进行同步。控制台主实例上创建的账号会实时自动同步到只读实例，同步完成后便可在只读实例上使用创建的登录名或修改密码权限。
+双节点（原高可用版/集群版）主实例创建的账号都会自动同步到只读实例，数据库版本 SQL Server 2017/2019 Enterprise 的双节点实例采用 Always On 方式进行同步，数据库版本 SQL Server 2008R2/2012/2014/2016 Enterprise 的双节点实例采用发布订阅方式进行同步。控制台主实例上创建的账号会实时自动同步到只读实例，同步完成后便可在只读实例上使用创建的登录名或修改密码权限。
 
 ### 数据库账号可以实现更细粒度的管理吗（限制源地址、访问表等）？
 您可以连接数据库后使用命令进行更细粒度的授权。
@@ -92,4 +92,5 @@ database 级别角色：
 - db_datareader，可以查看所有数据库中用户表内数据的用户。
 - db_reader，可以对数据库进行读操作。
 - db_writer，可以对数据库进行写操作。
+
 

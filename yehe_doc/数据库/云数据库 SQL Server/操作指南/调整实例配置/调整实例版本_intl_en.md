@@ -1,7 +1,7 @@
 This document describes how to adjust the instance version in the TencentDB for SQL Server console.
 
 ## Supported versions
-TencentDB for SQL Server single-node (formerly Basic Edition) and two-node (formerly High Availability/Cluster Edition) instances support version upgrade.
+TencentDB for SQL Server single-node (formerly basic edition) and two-node (formerly high-availability/cluster edition) instances support version upgrade.
 
 ## Prerequisites
 You can adjust the configuration of a TencentDB for SQL Server instance and its associated instances only when they are in running status and are not executing any tasks.
@@ -11,7 +11,7 @@ Currently, the database version cannot be downgraded back after an upgrade.
 
 ## Impact of configuration adjustment
 - Data migration will be involved during the instance configuration adjustment, and the larger the data volume, the longer the data migration time. Access to the instance will not be affected during this period.
-- A switch will be performed after migration is completed, which causes a momentary disconnection from the database for few seconds. Make sure that your business has a reconnection mechanism.
+- A switch will be performed after migration is completed, which causes a momentary disconnection from the database for a few seconds. Make sure that your business has a reconnection mechanism.
 - Most database, account, and network operations are unavailable during the momentary disconnection. Therefore, we recommend that you perform the switch during off-peak hours.
 
 ## Directions

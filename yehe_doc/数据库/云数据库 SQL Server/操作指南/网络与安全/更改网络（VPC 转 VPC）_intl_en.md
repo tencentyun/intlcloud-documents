@@ -1,17 +1,18 @@
 This document describes how to change the instance network in the TencentDB for SQL Server console.
 
 ## Network types
-TencentDB instances reside in VPCs.
- 
+There are two types of TencentDB network environments: VPC and classic network.
+- Classic network: It is the public network resource pool for all Tencent Cloud users. All your Tencent Cloud resources will be centrally managed by Tencent Cloud.
 - VPC: It is a logically isolated network space that can be customized in Tencent Cloud. Even in the same region, different VPCs cannot communicate with each other by default. Similar to the traditional network in an IDC, a VPC is where your Tencent Cloud service resources are managed.
 
+
 ## Scenario
-Tencent Cloud supports VPC, which is capable of offering a diversity of smooth services. On this basis, we provide the VPC change feature to help you manage network connectivity with ease.
+Tencent Cloud supports VPC to offer a diversity of smooth services. On this basis, we provide the VPC change feature to help you manage network connectivity with ease.
 
 ## Supported instance types
 Primary and read-only instances on all versions.
 
-## Limits
+## Note
 - Changing the network will change the instance IP. The original IP will become invalid after 24 hours by default. Modify the instance IP on the client promptly.
 - If **Valid Hours of Old IP** is set to 0, the IP will be released immediately after the network is changed.
 

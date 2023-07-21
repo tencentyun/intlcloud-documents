@@ -37,7 +37,7 @@
 当源实例为腾讯云低版本的双节点（原高可用版/集群版）实例时，可 [使用 DTS 迁移数据](https://intl.cloud.tencent.com/document/product/238/39006)，来将数据迁移到高版本，但不推荐。您可直接 [调整实例版本](https://intl.cloud.tencent.com/document/product/238/44354)，来将低版本升级到高版本，无需进行数据迁移。
 
 ### 云数据库 SQL Server 是否支持跨账号迁移？
-云数据库 SQL Server 支持使用 DTS 数据迁移功能跨账号（腾讯云账号）进行实例间的数据迁移操作，详细注意事项和操作方法请参见 [使用 DTS 跨账号迁移数据](https://www.tencentcloud.com/document/product/238/53570)。
+云数据库 SQL Server 支持使用 DTS 数据迁移功能跨账号（腾讯云账号）进行实例间的数据迁移操作，详细注意事项和操作方法请参见 [使用 DTS 跨账号迁移数据](https://cloud.tencent.com/document/product/238/85807)。
 
 ### 云数据库 SQL Server 是否支持异构迁移？
 云数据库 SQL Server 不支持异构迁移。

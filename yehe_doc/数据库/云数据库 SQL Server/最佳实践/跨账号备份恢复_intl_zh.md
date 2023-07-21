@@ -2,38 +2,35 @@
 
 ## 注意事项
 - 从账号 A 下的一个实例获取备份文件下载链接后，在账号 B 上去做备份恢复，账号A 和 B 需要在同一个地域。
-- 此备份恢复方式，目前支持的备份文件格式为 bak 文件。
+- 此备份恢复方式，目前支持的备份文件格式为 bak、tar 和 zip 文件。
 - 在控制台获取的备份文件链接，需注意备份文件形式为单库的备份文件才支持跨同地域跨账号备份恢复。
-- 备份恢复功能将支持 .tar 和 .zip 等其他格式的备份文件，功能测试中，预计在1月发布，请以控制台实际支持时间为准。
 - 当前需对下载的备份链接做解码，具体请参考 [解码说明](#jmcz)。
 
 ## 步骤1：从账号 A 获取备份文件下载链接
 1. 使用账号 A 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver#/)，在实例列表，单击实例 ID，进入实例管理页面。
 2. 在实例管理页，单击**备份管理**，在数据备份列表找到目标单库备份文件，单击其**操作**列的**查看详情**。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/3Tm8501_29.png)
-3. 在弹窗中单击**下载**，然后复制下载地址。
+3. 在弹窗中单击**本地下载**，然后复制下载地址。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/fuY9370_30.png)
 
 ## 步骤2：解码链接
-
-从账号 A 获取到备份文件下载链接后，需要对此链接进行调整。
-
->?仅需要对下载链接的前面部分进行调整。
+单击 [在线解码](https://www.zxgj.cn/g/enstring)，在跳转界面对复制的链接进行解码[](id:jmcz)。
+>?仅需要对下载链接的前面部分进行解码。
 >**示例**：假设某个下载链接为：
 >`https://sqlserver-bucket-bj-1258415541.cos.ap-beijing.myqcloud.com/1312368346%2fsqlserver%2fmssql-8e5hjaiq%2fbackup%2fautoed_instance_58013012_AdventureWorksDW2012_2022_12_29023915.bak?**********`
->我们仅需要选取直到 .bak？的部分地址去做调整，调整后再和后半部分组合即可获取到用于跨账号去做备份恢复的链接。
+>我们仅需要选取直到 .bak？的部分地址去做解码，转码后再和后半部分组合即可获取到用于跨账号去做备份恢复的链接。
 >针对以上示例链接，我们取做解码的部分地址为：
 >`https://sqlserver-bucket-bj-1258415541.cos.ap-beijing.myqcloud.com/1312368346%2fsqlserver%2fmssql-8e5hjaiq%2fbackup%2fautoed_instance_58013012_AdventureWorksDW2012_2022_12_29023915.bak?`
->将链接中 **%2f** 换成 **/** 即可：
+>在线解码后为：
 >`https://sqlserver-bucket-bj-1258415541.cos.ap-beijing.myqcloud.com/1312368346/sqlserver/mssql-8e5hjaiq/backup/autoed_instance_58013012_AdventureWorksDW2012_2022_12_29023915.bak?`
 >则最终用于跨账号备份恢复的链接为：
 >`https://sqlserver-bucket-bj-1258415541.cos.ap-beijing.myqcloud.com/1312368346/sqlserver/mssql-8e5hjaiq/backup/autoed_instance_58013012_AdventureWorksDW2012_2022_12_29023915.bak?**********`
-
 
 ## 步骤3：在账号 B 进行数据恢复
 复制步骤2的最终用于备份恢复的链接。
 1. 使用账号 B 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver#/)，在实例列表，单击实例 ID，进入实例管理页面。
 2. 在实例管理页，选择**备份恢复** > **新建**。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/ECHh168_33.png)
 3. 在窗口下，完成如下配置，单击**创建任务**。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/ECHh168_33.png)
 <table>

@@ -8,7 +8,7 @@ You can migrate data from self-built SQL Server databases in local IDCs, CVM ins
 - If your business doesn't allow you to shut down the database and requires smooth migration, you can do so as instructed in [Migration with DTS](https://www.tencentcloud.com/document/product/238/39006). DTS supports two migration modes: full migration and full + incremental migration. It supports multiple access types, such as public network, self-build on CVM, Direct Connect, VPN, and CCN.
 
 ### How do I restore a backup of a self-built database to TencentDB for SQL Server?
-In the TencentDB for SQL Server console, you can directly upload the backup file of a self-built database or download it from COS to restore it to TencentDB for SQL Server through the cold backup migration feature. For more information, see [Cold Backup Migration](https://www.tencentcloud.com/document/product/238/39005).
+In the TencentDB for SQL Server console, you can directly upload the backup file of a self-built database or download it from COS to restore it to TencentDB for SQL Server through the cold backup migration feature. For more information, see [Cold Backup Migration](https://intl.cloud.tencent.com/document/product/238/39005).
 
 [](id:BAKHF)
 ### I have purchased a TencentDB for SQL Server instance. How do I restore a local .bak file to it?
@@ -26,18 +26,18 @@ In the TencentDB for SQL Server console, you can directly upload the .bak backup
 - If your business doesn't allow you to shut down the database and requires smooth migration, you can do so as instructed in [Migration with DTS](https://www.tencentcloud.com/document/product/238/39006). DTS supports two migration modes: full migration and full + incremental migration. It supports multiple access types, such as public network, self-build on CVM, Direct Connect, VPN, and CCN.
 - If your business allows you to shut down the database for backup, you can use [cold backup migration](https://intl.cloud.tencent.com/document/product/238/39005), i.e., restoring data from .bak backup files to migrate the source database to a TencentDB for SQL Server instance. You can download COS files or upload local files for migration. Three data restoration modes are supported: full backups, full backups + log backups, and full backups + differential backups.
 
-### How do I migrate a TencentDB for SQL Server two-node (formerly High Availability/Cluster Edition) instance to a single-node (formerly Basic Edition) instance?
-If the source instance is a two-node (formerly High Availability/Cluster Edition) instance, it cannot be migrated to a single-node (formerly Basic Edition) instance through DTS. You can use .bak files to restore the data through [Cold Backup Migration](https://www.tencentcloud.com/document/product/238/39005).
+### How do I migrate a TencentDB for SQL Server two-node (formerly high-availability/cluster edition) instance to a single-node (formerly basic edition) instance?
+If the source instance is a two-node (formerly high-availability/cluster edition) instance, it cannot be migrated to a single-node (formerly basic edition) instance through DTS. You can use .bak files to restore the data through [Cold Backup Migration](https://www.tencentcloud.com/document/product/238/39005).
 
 [](id:SJGKYBJQSL)
-### How do I migrate a TencentDB for SQL Server single-node (formerly Basic Edition) instance to a two-node (formerly High Availability/Cluster Edition) instance?
-If the source instance is a single-node (formerly Basic Edition) instance, you can do so as instructed in [Migration with DTS](https://www.tencentcloud.com/document/product/238/39006).
+### How do I migrate a TencentDB for SQL Server single-node (formerly basic edition) instance to a two-node (formerly high- availability/cluster edition) instance?
+If the source instance is a single-node (formerly basic edition) instance, you can do so as instructed in [Migration with DTS](https://www.tencentcloud.com/document/product/238/39006).
 
-### How do I migrate a TencentDB for SQL Server two-node (formerly High Availability/Cluster Edition) instance to another two-node (formerly High Availability/Cluster Edition) instance?
-If the source instance is a two-node (formerly High Availability/Cluster Edition) instance, you can do so as instructed in [Migration with DTS](https://www.tencentcloud.com/document/product/238/39006) to migrate the data to an instance on a later version, which is not recommended though. Instead, you can upgrade the version without data migration by following instructions in [Adjusting Instance Version](https://www.tencentcloud.com/document/product/238/44354).
+### How do I migrate a TencentDB for SQL Server two-node (formerly high-availability/cluster edition) instance to another two-node (formerly high-availability/cluster edition) instance?
+If the source instance is a two-node (formerly high-availability/cluster edition) instance, you can do so as instructed in [Migration with DTS](https://www.tencentcloud.com/document/product/238/39006) to migrate the data to an instance on a later version, which is not recommended though. Instead, you can upgrade the version without data migration by following instructions in [Adjusting Instance Version](https://www.tencentcloud.com/document/product/238/44354).
 
 ### Does TencentDB for SQL Server support cross-account migration?
-TencentDB for SQL Server allows you to migrate data between instances with DTS across Tencent accounts. For detailed precautions and directions, see [Cross-Account Migration with DTS](https://www.tencentcloud.com/document/product/238/53570).
+TencentDB for SQL Server allows you to migrate data between instances with DTS across Tencent accounts. For detailed precautions and directions, see [Cross-Account Migration with DTS](https://cloud.tencent.com/document/product/238/85807).
 
 ### Does TencentDB for SQL Server support heterogeneous migration?
 No.
@@ -52,7 +52,7 @@ You can connect Kingdee K/3 WISE to TencentDB for SQL Server in the following st
 ### What should I check before using DTS for data migration to the cloud?
 We recommend that you check the following items in the source and target databases before using DTS for data migration to the cloud:
 - Version numbers of source and target databases. The target database must be on a version later than or equal to the source database. For example, if the source database is on v2016, the target database can only be on v2016, v2017, or v2019.
-- Architecture versions of source and target databases. If the source instance is a self-built database in a local IDC, CVM instance, or cloud server in another cloud vendor, or is a cloud SQL Server instance in another cloud vendor, you can migrate it to a TencentDB for SQL Server single-node (formerly Basic Edition) instance or two-node (formerly High Availability/Cluster Edition) instance on any architecture version. If the source instance is a TencentDB for SQL Server two-node (formerly High Availability/Cluster Edition) instance, it cannot be migrated to a single-node (formerly Basic Edition) instance through DTS. If the source instance is a TencentDB for SQL Server single-node (formerly Basic Edition) instance, it can be migrated to a two-node (formerly High Availability/Cluster Edition) instance through DTS.
+- Architecture versions of source and target databases. If the source instance is a self-built database in a local IDC, CVM instance, or cloud server in another cloud vendor, or is a cloud SQL Server instance in another cloud vendor, you can migrate it to a TencentDB for SQL Server single-node (formerly basic edition) instance or two-node (formerly high-availability/cluster edition) instance on any architecture version. If the source instance is a TencentDB for SQL Server two-node (formerly high-availability/cluster edition) instance, it cannot be migrated to a single-node (formerly basic edition) instance through DTS. If the source instance is a TencentDB for SQL Server single-node (formerly basic edition) instance, it can be migrated to a two-node (formerly high-availability/cluster edition) instance through DTS.
 - Network connectivity between source and target databases. The source and target databases must be connected. The server where the source database resides must have enough outbound bandwidth; otherwise, the migration efficiency will be affected.
 - Names of source and target databases. The source and target instances cannot have databases with the same name.
 - Account permissions of the source database. You need to change to "local" for SQL service startup in the source database. The source database account is unrestricted but needs to have the sysadmin permissions.

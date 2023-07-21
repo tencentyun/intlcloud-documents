@@ -1,4 +1,4 @@
-﻿云数据库 SQL Server 支持按量计费模式，本文为您介绍只读实例的规格及存储价格。
+﻿云数据库 SQL Server 支持按量计费计费模式，本文为您介绍只读实例的规格及存储价格。
 
 ## 只读实例 - 规格价格
 ### 按量计费价格
@@ -12,15 +12,17 @@
 <tbody>
 <tr><td>每 GB</td><td>0.0390528</td><td>0.0783</td></tr>
 </tbody></table>
+
 :::
 ::: 双节点（原高可用版/集群版）云盘
+
 <table>
 <tr><th rowspan = "2" width="16%">规格</th>
 <th colspan = "4" style="text-align:center" width="84%">价格（美元/小时）</th></tr>
 <tr>
 <th width="28%">北京、上海、广州、南京、成都、重庆</th>
 <th width="28%">中国香港</th>
-<th width="28%">新加坡、法兰克福</th></tr>
+<th width="28%">新加坡、孟买、首尔、弗吉尼亚、法兰克福、硅谷、圣保罗</th></tr>
 <tr><td>2核4GB</td><td>0.4880584</td><td>0.9768536</td><td>1.0376012</td></tr>
 <tr><td>2核8GB</td><td>0.5324273</td><td>1.0663285</td><td>1.1282541</td></tr>
 <tr><td>2核16GB</td><td>0.6211652</td><td>1.2452781</td><td>1.3095600</td></tr>
@@ -61,6 +63,7 @@
 <tr><td>96核192GB</td><td>23.4268009</td><td>46.8889751</td><td>49.8048565</td></tr>
 <tr><td>96核384GB</td><td>25.5565101</td><td>51.1837666</td><td>54.1561976</td></tr>
 </tbody></table>
+
 :::
 </dx-tabs>
 
@@ -69,6 +72,7 @@
 ### 按量计费价格
 <dx-tabs>
 ::: 双节点（高性能本地 SSD）
+
 <table>
 <tr><th rowspan="2" >规格</th><th colspan = "2" style="text-align:center">价格（美元/小时）</th></tr>
 <tr>
@@ -77,17 +81,20 @@
 <tbody>
 <tr><td>每 GB</td><td>0.0001296</td><td>0.000324</td></tr>
 </tbody></table>
+
 :::
 ::: 双节点（通用型 SSD 云硬盘）
+
 <table>
 <tr><th rowspan = "2" >规格</th><th colspan = "3" style="text-align:center">价格（美元/小时）</th></tr>
 <tr>
 <th>北京、上海、广州、南京、成都、重庆</th>
 <th>中国香港</th>
-<th>新加坡</th></tr>
+<th>新加坡、孟买、首尔、弗吉尼亚、法兰克福、硅谷、圣保罗</th></tr>
 <tr>
 <td>每 GB</td><td>0.00017647</td><td>0.00026471</td><td>0.00026471</td></tr>
 </tbody></table>
+
 :::
 ::: 双节点（增强型 SSD 云硬盘）
 <table>
@@ -95,9 +102,10 @@
 <tr>
 <th>北京、上海、广州、南京、成都、重庆</th>
 <th>中国香港</th>
-<th>新加坡</th></tr>
+<th>新加坡、孟买、首尔、弗吉尼亚、法兰克福、硅谷、圣保罗</th></tr>
 <tr>
 <td>每 GB</td><td>0.00037059</td><td>0.00058235</td><td>0.00066176</td></tr>
 </tbody></table>
+
 :::
 </dx-tabs>

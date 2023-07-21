@@ -23,7 +23,7 @@ We recommend that you delete a database in the [TencentDB for SQL Server console
 ### How do I modify database permissions in TencentDB for SQL Server?
 We recommend that you modify database permissions in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver) rather than on the SSMS client. For more information, see [Setting Database Permissions](https://www.tencentcloud.com/document/product/238/47425).
 
-### When managing a database with Microsoft SQL Server Management, the system prompts "Login failed. The login is from an untrusted domain and cannot be used with Windows authentication." Why?
+### When managing a database with Microsoft SQL Server Management, I was prompted with the message "Login failed. The login is from an untrusted domain and cannot be used with Windows authentication." Why?
 Change the authentication method to "SQL Server Authentication".
 
 ### Does TencentDB for SQL Server support assigning the sysadmin role to users?
@@ -35,9 +35,9 @@ For TencentDB for SQL Server two-node (formerly High Availability/Cluster Editio
 
 [](id:XTZHLJ)
 ### Can I connect to TencentDB for SQL Server with a Windows system account?
-You cannot connect to a TencentDB for SQL Server non-single-node (formerly Basic Edition) instance with a Windows system account. To connect to a single-node (formerly Basic Edition) instance with such account, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+You cannot connect to a TencentDB for SQL Server non-single-node instance with a Windows system account. To connect to a single-node instance with such account, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 
-### What should I do if I forgot the login password of TencentDB for SQL Server?
+### What should I do if I forget the login password of TencentDB for SQL Server?
 Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver) and click the ID of the target instance to enter the instance management page. On the **Account Management** tab, select **More** > **Reset Password** in the **Operation** column to reset the password. For more information, see [Resetting Password](https://www.tencentcloud.com/document/product/238/35796).
 
 ### How do I reset the password of TencentDB for SQL Server?
@@ -47,7 +47,7 @@ Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.c
 Your login account may be a business account without database/table creation permissions. In this case, grant the account the required permissions in the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver). For more information, see [Setting Database Permissions](https://www.tencentcloud.com/document/product/238/47425).
 
 ### Why do I lack permissions to modify database parameters such as `blocked process threshold(s)`?
-You might be using a sub-account without parameter modification permissions. You can use the root account or grant the sub-account permissions as instructed in [CAM Overview](https://intl.cloud.tencent.com/document/product/238/34583).
+You might be using a sub-account without parameter modification permissions. You can use the root account or grant the sub-account permissions as instructed in [CAM > Overview](https://intl.cloud.tencent.com/document/product/238/34583).
 
 ### Can I have the permission to access and create folders on the server in TencentDB for SQL Server?
 Currently, TencentDB for SQL Server doesn't allow you to access and create folders on the instance server.
@@ -57,7 +57,7 @@ You can view connection details after connecting to the instance through SSMS. I
 
 [](id:CKMSQLB)
 ### Can I view the slow SQL table in TencentDB for SQL Server?
-Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver), click the target instance ID in the instance list, and [query and download slow query logs](https://intl.cloud.tencent.com/document/product/238/47569) on the slow query log page.
+Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver), click the target instance ID in the instance list, and [query and download slow query logs](https://intl.cloud.tencent.com/document/product/238/47569) on the operation log page.
 The slow SQL table of TencentDB for SQL Server is not displayed by default. You can view it after connecting to the instance through SSMS. If you don't have relevant permissions, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for escalating your database account permissions.
 
 ### Can I have the SQL trace permission in TencentDB for SQL Server?
@@ -68,14 +68,14 @@ If your account is created manually through the SSMS client, it doesn't support 
 Accounts created on the **Account Management** tab in the TencentDB for SQL Server console have the Profiler permission by default. However, accounts manually created through SSMS don't have such permission. In this case, you can run the following command to authorize them: `GRANT ALTER TRACE TO [$account];`.
 
 ### Can I use accounts created in the primary instance in read-only instances?
-Accounts created in the primary instance will be synced to read-only instances but cannot be managed there. They support only read but not write operations in read-only instances.
+Accounts created in the primary instance will be synced to read-only instances but cannot be managed there. They only support read but not write operations in read-only instances.
 
 ### Will permissions be synced to replica instances and read-only instances automatically after an account in the primary instance is deleted and created again?
 After an account in the TencentDB for SQL Server primary instance is deleted and created again, the permissions and other modifications in the primary instance will be automatically synced to replica instances and read-only instances.
 
 [](id:TBDZDSL)
 ### How do I sync account permissions on two-node (formerly High Availability/Cluster Edition) primary and replica instances to read-only instances?
-Accounts created in a two-node (formerly High Availability/Cluster Edition) primary instance will be automatically synced to read-only instances. 2017/2019 Enterprise two-node instances use the Always On mode for sync, while 2008 R2/2012/2014/2016 Enterprise two-node instances use the publish/subscribe mode for sync. Accounts created in the primary instance in the console will be synced to read-only instances in real time. After the sync is completed, you can use the created login username or modify the password permission in read-only instances.
+Accounts created in a two-node (formerly High Availability/Cluster Edition) primary instance will be automatically synced to read-only instances. 2017/2019 Enterprise two-node instances use the Always On mode for sync, while 2008R2/2012/2014/2016 Enterprise two-node instances use the publish/subscribe mode for sync. Accounts created in the primary instance in the console will be synced to read-only instances in real time. After the sync is completed, you can use the created login username or modify the password permission in read-only instances.
 
 ### Can I manage database accounts at a finer granularity (such as source address and access table)?
 You can use commands for authorization at a finer granularity after connecting to a database.

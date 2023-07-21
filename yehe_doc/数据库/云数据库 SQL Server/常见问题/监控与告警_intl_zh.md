@@ -1,22 +1,22 @@
 ### 云数据库 SQL Server 实例如何查看监控？
-云数据库 SQL Server 支持 SQL Server 常见的37种参数，详情请参见 [支持的监控指标](https://intl.cloud.tencent.com/document/product/238/46502)，您也可以通过配置 SSMS 的计数器，额外统计其他参数。
-您可以通过 [监控图表](https://intl.cloud.tencent.com/document/product/238/46503) 查看和掌握实例的运行信息，也可以通过云监控对 CPU、内存、存储、网络、连接、访问、锁等共37项监控指标 设置 [告警策略](https://intl.cloud.tencent.com/document/product/238/46501)，[设置告警通知](https://intl.cloud.tencent.com/document/product/238/46500) 及 [查看告警历史](https://intl.cloud.tencent.com/document/product/238/46499)。您可以在 [云监控](https://console.cloud.tencent.com/monitor/alarm2/policy/create) 的告警配置 > 告警策略里面配置告警。
+云数据库 SQL Server 支持 SQL Server 常见的38种参数，详情请参见 [支持的监控指标](https://intl.cloud.tencent.com/document/product/238/46502)，您也可以通过配置 SSMS 的计数器，额外统计其他参数。
+您可以通过 [监控图表](https://intl.cloud.tencent.com/document/product/238/46503) 查看和掌握实例的运行信息，也可以通过腾讯云可观测平台对 CPU、内存、存储、网络、连接、访问、锁等共38项监控指标 设置 [告警策略](https://intl.cloud.tencent.com/document/product/238/46501)，[设置告警通知](https://intl.cloud.tencent.com/document/product/238/46500) 及 [查看告警历史](https://intl.cloud.tencent.com/document/product/238/46499)。您可以在 [腾讯云可观测平台](https://console.cloud.tencent.com/monitor/alarm2/policy/create) 的告警管理 > 策略管理 > 新建策略里面配置告警。
 
 ### 云数据库 SQL Server 在哪儿查看监控图表？
 为方便用户查看和掌握实例的运行信息，云数据库 SQL Server 提供了丰富的性能监控项与便捷的监控功能（自定义视图、时间对比、合并监控项等），您可以通过 [监控图表](https://intl.cloud.tencent.com/document/product/238/46503) 查看和掌握实例的运行信息。
 
 ### 云数据库 SQL Server 都支持哪些监控指标？
-云数据库 SQL Server 支持 SQL Server 常见的37种参数，详情请参见 [支持的监控指标](https://intl.cloud.tencent.com/document/product/238/46502)，您也可以通过配置 SSMS 的计数器，额外统计其他参数。
+云数据库 SQL Server 支持 SQL Server 常见的38种参数，详情请参见 [支持的监控指标](https://intl.cloud.tencent.com/document/product/238/46502)，您也可以通过配置 SSMS 的计数器，额外统计其他参数。
 
 ### 云数据库 SQL Server 如何设置告警策略？
-您可以通过云监控控制台创建告警策略，当云数据库 SQL Server 监控指标状态异常时触发警报并发送相关通知，详情请参见 [设置告警策略](https://intl.cloud.tencent.com/document/product/238/46501)。
+您可以通过腾讯云可观测平台控制台创建告警策略，当云数据库 SQL Server 监控指标状态异常时触发警报并发送相关通知，详情请参见 [设置告警策略](https://intl.cloud.tencent.com/document/product/238/46501)。
 
 ### 云数据库 SQL Server 的告警策略怎么关联告警对象？
-您可以通过云监控控制台创建告警策略并关联告警对象，对象达到告警触发条件时会发送告警，详情请参见 [设置告警策略](https://intl.cloud.tencent.com/document/product/238/46501)。
+您可以通过腾讯云可观测平台控制台创建告警策略并关联告警对象，对象达到告警触发条件时会发送告警，详情请参见 [设置告警策略](https://intl.cloud.tencent.com/document/product/238/46501)。
 
 [](id:SZGJTZ)
 ### 云数据库 SQL Server 如何设置告警通知？
-您新建告警策略后，可以在云监控控制台设置告警通知模板并配置告警通知，配置完成后，如有异常触发了告警，系统会根据您选择的告知渠道（邮件、短信、电话）发送给接收对象，详情请参见 [设置告警通知](https://intl.cloud.tencent.com/document/product/238/46500)。
+您新建告警策略后，可以在腾讯云可观测平台控制台设置告警通知模板并配置告警通知，配置完成后，如有异常触发了告警，系统会根据您选择的告知渠道（邮件、短信、电话）发送给接收对象，详情请参见 [设置告警通知](https://intl.cloud.tencent.com/document/product/238/46500)。
 
 ### 云数据库 SQL Server 如何查看告警历史？
 您可以通过控制台查看告警历史的具体信息，通过告警消息可快速的定位到具体问题，并做进一步排查，详情请参见 [查看告警历史](https://intl.cloud.tencent.com/document/product/238/46499)。
