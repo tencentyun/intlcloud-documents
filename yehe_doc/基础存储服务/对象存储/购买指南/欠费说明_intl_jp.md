@@ -1,3 +1,5 @@
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
+
 アカウントに料金の支払い延滞が生じた場合、システムが料金未納をお知らせするプッシュ通知を送信します。通知を受け取られましたら、お客様の業務への影響を避けるため、速やかにコンソールの[チャージセンター](https://console.cloud.tencent.com/account/recharge) へ進み、チャージを行ってください。以下、料金の未払いに関してご説明します。
 
 ## 支払い延滞の理由
