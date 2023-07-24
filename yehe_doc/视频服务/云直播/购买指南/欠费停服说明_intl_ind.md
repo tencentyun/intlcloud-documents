@@ -1,3 +1,5 @@
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
+
 ## Akun Melewati Jatuh Tempo
 - Item penagihan harian bayar-sesuai-pemakaian CSS untuk hari berjalan akan dibuat pada pagi hari berikutnya. Tagihan untuk item penagihan bulanan bayar-sesuai-pemakaian akan dibuat pada hari pertama bulan berikutnya. Detail penagihan dapat dilihat di [Viewing Bills (Melihat Tagihan)](https://intl.cloud.tencent.com/document/product/267/36278).
 - Tencent Cloud akan mengirimkan pemberitahuan kepada Anda jika akun Anda melewati jatuh tempo. Jika Anda mengisi ulang saldo akun dalam 24 jam setelah menerima pemberitahuan, layanan CSS tidak akan ditangguhkan. Jika saldo akun tidak diisi ulang dalam 24 jam, layanan akan ditangguhkan.
