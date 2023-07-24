@@ -137,3 +137,5 @@
 
 ## 滞納警告
 GMEの日次決済・後払い製品のクラウドリソースサービスについては、有効期限の当日およびそれ以降に、電子メール、Short Message Serviceおよびインサイトメッセージを通じて、Tencent Cloudアカウントの作成者とすべてのコラボレーターに対し、支払い遅延予告アラートメッセージを送信します。
+
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
