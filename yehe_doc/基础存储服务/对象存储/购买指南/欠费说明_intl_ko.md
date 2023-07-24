@@ -1,3 +1,6 @@
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
+
+
 계정이 연체되면 연체 알림이 발송됩니다. 연체 안내를 받은 경우 작업에 지장이 없도록 콘솔 [충전 센터](https://console.cloud.tencent.com/account/recharge)에서 충전하시기 바랍니다. 연체 관련 사항은 다음과 같습니다.
 
 ## 연체 원인
