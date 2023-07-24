@@ -1,4 +1,4 @@
->!If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
 
 ## Arrears Reminder for Pay-as-you-go Resources
 ![](https://main.qcloudimg.com/raw/23ef4b0d1cc37f6d73627978ffd79e83.jpg)
