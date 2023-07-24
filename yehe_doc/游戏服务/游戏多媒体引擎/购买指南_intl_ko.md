@@ -137,3 +137,5 @@
 
 ## 연체 알람
 GME 일 결산 후불 제품의 클라우드 리소스 서비스는 만료일 이후에 Tencent Cloud 계정 생성자와 모든 협력자에게 이메일, SMS 및 내부 메시지를 통해 연체 알림 메시지를 발송합니다.
+
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
