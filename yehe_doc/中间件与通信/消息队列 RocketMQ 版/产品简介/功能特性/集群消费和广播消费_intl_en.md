@@ -1,20 +1,20 @@
-This document describes the features and use cases of cluster consumption and broadcasting consumption in TDMQ for RocketMQ.
+This document describes the features and use cases of clustering consumption and broadcasting consumption in TDMQ for RocketMQ.
 
 ## Feature Description
 
-- Cluster: If the clustering mode is used, any message only needs to be processed by any consumer in the cluster.
-- Broadcast: If the broadcasting mode is used, each message will be pushed to all registered consumers in the cluster to ensure that the message is consumed by each consumer at least once.
+- Clustering: If the clustering mode is used, any message only needs to be processed by any consumer in the cluster.
+- Broadcasting: If the broadcasting mode is used, each message will be pushed to all registered consumers in the cluster to ensure that the message is consumed by each consumer at least once.
 
 ## Use Cases
 
-Cluster consumption is suitable for scenarios where each message only needs to be processed once.
+Clustering consumption is suitable for scenarios where each message only needs to be processed once.
 
 Broadcasting consumption is suitable for scenarios where each message needs to be processed by each consumer in the cluster.
 
 ## Sample Code
 
 - **Clustering subscription**
-All consumers identified by the same group ID will evenly share messages for consumption. For example, if a topic has nine messages, and a group ID identifies three consumer instances, then each instance will consume only three messages evenly in the cluster consumption mode.
+All consumers identified by the same group ID will evenly share messages for consumption. For example, if a topic has nine messages, and a group ID identifies three consumer instances, then each instance will consume only three messages evenly in the clustering consumption mode.
 ```java
 // Set the clustering subscription mode (which is the default mode if you don't specify one)
 properties.put(PropertyKeyConst.MessageModel, PropertyValueConst.CLUSTERING);
