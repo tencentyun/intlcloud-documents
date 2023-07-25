@@ -26,11 +26,11 @@ Okta 是身份识别与访问管理解决方案提供商。腾讯云支持基于
 1. 前往 [应用管理页面](#stepapp) ，单击您创建的应用程序名称。
 2. 在通用/GENERAL 页面，单击 SAML Settings 栏下的 **Edit**，确认当前 App name、App logo（可选）、App visibility（可选）信息，单击 **Next**，进入配置 SAML/Configure SAML 页面。
 3. <span id="buzhou3"></span>在配置 SAML/Configure SAML 页面将 GENERAL 下 Single sign on URL 和 Audience URL(SP Entity ID)补充为以下信息，如下图所示：
-![](https://main.qcloudimg.com/raw/43a621945ad09042a40986abaea67962.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/34ZI722_43a621945ad09042a40986abaea67962.png)
 您可以根据您的腾讯云账号所在站点进行配置：
 |所在站点 | Single sign on URL| Audience URL(SP Entity ID) | 
 |---------|---------|---------|
-| 国际站 | https://intl.cloud.tencent.com/login/saml| intl.cloud.tencent.com|
+| 国际站 | https://www.tencentcloud.com/login/saml| www.tencentcloud.com|
 
 4. 在配置 SAML/Configure SAML 页面将 GENERAL 下 ATTRIBUTE STATEMENTS 补充为以下信息。如下图所示：
 ![](https://main.qcloudimg.com/raw/7114ab440ba1a593111296871fc807f9.png)
