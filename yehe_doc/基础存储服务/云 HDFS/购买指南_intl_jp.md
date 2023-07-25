@@ -75,3 +75,4 @@ CHDFSの課金項目、料金説明、計算式は次のとおりです。
 
 料金センターの残高アラーム機能によって、支払い遅延の事前警告を自分で設定することもできます。
 
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.

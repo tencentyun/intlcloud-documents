@@ -75,3 +75,4 @@ If your account has overdue payments, we will suspend the CHDFS service after 24
 
 You can also configure alarms for overdue payments using the balance alarm feature of the Billing Center.
 
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.

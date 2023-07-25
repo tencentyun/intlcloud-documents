@@ -1,4 +1,4 @@
->!If you are a customer of a Tencent Cloud partner, the rules regarding resource lifecycle when there are overdue payments are subject to the agreement between you and the reseller.
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
 
 ## CBS Overdue Policy
 <dx-tabs>
@@ -10,7 +10,7 @@
 </tr>
 <tr>
 <td><b>Expiration alert</b></td>
-<td>We will send you an expiration alert via email, SMS and Message Center every other day starting 7 days (the 7th, 5th, 3rd, and 1st days) before your monthly subscribed resources expire. The collaborators under your account can configure the receipt method in the console > Message Center > <a href="https://console.cloud.tencent.com/message/subscription">Message Subscription</a> and add recipients in the manner instructed in <a herf="https://cloud.tencent.com/document/product/555/35518">Overdue Payment Alert</a>.
+<td>We will send you an expiration alert via email, SMS and Message Center every other day starting 7 days (the 7th, 5th, 3rd, and 1st days) before your monthly subscribed resources expire. The collaborators under your account can configure the receipt method in the console > Message Center > <a href="https://console.cloud.tencent.com/message/subscription">Message Subscription</a> and add recipients in the manner instructed in Overdue Payment Alert.
 </td>
 </tr>
 <tr>

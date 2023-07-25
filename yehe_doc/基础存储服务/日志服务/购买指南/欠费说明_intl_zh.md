@@ -1,3 +1,5 @@
+>!如果您是腾讯云合作伙伴的客户，账户欠费下的产品资源处理规则以您与合作伙伴约定的协议为准。
+
 当您的账号发生欠费时，系统将为您推送欠费提醒，请在收到欠费通知后，及时前往控制台 [充值中心](https://console.cloud.tencent.com/account/recharge) 进行充值，以免影响您的业务。下面将为您介绍欠费的相关说明。
 
 ## 欠费原因
@@ -6,7 +8,7 @@
 >?
 > - 若您对欠费有疑问，可在控制台 [费用账单](https://console.cloud.tencent.com/expense/bill/overview) 页面查阅和核对您的消费明细。
 > - 若您对具体的扣费项有疑问，可以参见 [计费概述](https://intl.cloud.tencent.com/document/product/614/37509) 了解具体的计费项含义及计费规则。
-> - 若您想了解各费用的计费和结算周期，请参见 [按量计费（后付费）介绍](https://intl.cloud.tencent.com/document/product/614/49672)。
+> - 若您想了解各费用的计费和结算周期，请参见 [按量计费（后付费）介绍]()。
 >
 
 

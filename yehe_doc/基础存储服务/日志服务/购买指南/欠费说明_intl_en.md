@@ -1,3 +1,5 @@
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
+
 If your account has overdue payments, a notification will be sent to you. Once receiving it, go to the [Billing Center](https://console.cloud.tencent.com/account/recharge) in the console and pay the past due charges in time to prevent your business from being affected. This document provides detailed information on overdue payment processing.
 
 ## Overdue payment cause
@@ -6,7 +8,7 @@ If your account has overdue payments, a notification will be sent to you. Once r
 >?
 > - If you have any questions about overdue payments, you can check your bill details on the [Bills](https://console.cloud.tencent.com/expense/bill/overview) page in the console.
 > - If you have any questions about fees, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509) for the description of each billable item and billing rules.
-> - For more information on the billing and settlement cycles of each billable item, see [Pay-as-You-Go (Postpaid)](https://intl.cloud.tencent.com/document/product/614/49672).
+> - For more information on the billing and settlement cycles of each billable item, see [Pay-as-You-Go (Postpaid)]().
 >
 
 

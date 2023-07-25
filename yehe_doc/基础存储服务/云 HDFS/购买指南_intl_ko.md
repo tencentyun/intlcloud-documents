@@ -75,3 +75,4 @@ CHDFS의 과금 항목, 요금 설명 및 계산법은 다음과 같습니다.
 
 또한 과금 센터의 잔액 알림 기능을 통해 연체 알람을 설정할 수 있습니다.
 
+>!If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
