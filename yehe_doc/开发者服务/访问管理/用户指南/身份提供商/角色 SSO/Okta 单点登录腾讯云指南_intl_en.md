@@ -26,11 +26,11 @@ Okta is a solution provider for identification and access management. Tencent Cl
 1. Go to the [application management page](#stepapp), and click the name of the application you created.
 2. On the **General** page, click **Edit** in the **SAML Settings** section, confirm the current **App name**, **App logo** (optional), and **App visibility** (optional), and click **Next** to enter the **Configure SAML** page.
 3. <span id="buzhou3"></span>In the **Configure SAML** page, add the following information to **Single sign on URL** and **Audience URL(SP Entity ID)** under **GENERAL** as shown below:
-![](https://main.qcloudimg.com/raw/43a621945ad09042a40986abaea67962.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/34ZI722_43a621945ad09042a40986abaea67962.png)
 You can configure it based on the site of your Tencent Cloud account:
 | Site | Single sign on URL| Audience URL(SP Entity ID) | 
 |---------|---------|---------|
-| Tencent Cloud International | https://intl.cloud.tencent.com/login/saml| intl.cloud.tencent.com|
+| Tencent Cloud International | https://www.tencentcloud.com/login/saml| www.tencentcloud.com|
 
 4. In the **Configure SAML** page, add the following information to **ATTRIBUTE STATEMENTS** under **GENERAL** as shown below:
 ![](https://main.qcloudimg.com/raw/7114ab440ba1a593111296871fc807f9.png)
