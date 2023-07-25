@@ -32,12 +32,12 @@ Azure Active Directory （Azure AD） 是 Microsoft 推出的基于云的标识�
 1. 在 “SAML 单一登录”概览界面，单击“基本 SAML 配置”右上角的<image style="margin:0;" src="https://main.qcloudimg.com/raw/836588594e0a214b5951ee5207fc2353.png">。如下图所示：
 ![](https://main.qcloudimg.com/raw/87e30ebf37ae821062d9673100cae5ed.png)
 2. 在“基本 SAML 配置”编辑页面填写以下信息，并单击**保存**。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/6d6cf16bc140940eabf61e5951809ed5.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/e5is377_6d6cf16bc140940eabf61e5951809ed5.png)
 您可以根据您的腾讯云账号所在站点进行配置
 |所在站点 |标识符（实体 ID）| 回复 URL（断言使用者服务 URL） | 
 |---------|---------|---------|
 | 中国站| cloud.tencent.com| https://cloud.tencent.com/login/saml|
-| 国际站 |intl.cloud.tencent.com| https://www.tencentcloud.com/login/saml|
+| 国际站 |www.tencentcloud.com| https://www.tencentcloud.com/login/saml|
 3. 在 “SAML 单一登录”概览界面，单击“用户属性和声明”右上角的<image style="margin:0;" src="https://main.qcloudimg.com/raw/836588594e0a214b5951ee5207fc2353.png">，打开“用户属性声明”编辑页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/77dddf7d3248815f0483f33ef8bc6dea.png)
 4. 在“用户属性和声明”编辑页面，单击**添加新的声明**，进入“管理用户声明”页面。如下图所示：
