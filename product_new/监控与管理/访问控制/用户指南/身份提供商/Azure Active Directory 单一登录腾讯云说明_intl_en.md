@@ -33,12 +33,12 @@ Azure Active Directory (Azure AD) is a cloud-based identity and access managemen
 1. In the **SAML Single Sign-On** overview interface, click <image style="margin:0;" src="https://main.qcloudimg.com/raw/836588594e0a214b5951ee5207fc2353.png"> on the upper right of **Basic SAML Configuration**. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/87e30ebf37ae821062d9673100cae5ed.png)
 2. In the **Basic SAML Configuration** editing page, enter the following information and click **Save**. This is shown in the following figure:
-![](https://qcloudimg.tencent-cloud.cn/raw/6d6cf16bc140940eabf61e5951809ed5.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/e5is377_6d6cf16bc140940eabf61e5951809ed5.png)
 You can configure it according to the site where your Tencent Cloud account is located
 |Site |Identifier (entity ID)| Reply URL (Assertion Consumer Service (ACS) URL) | 
 |---------|---------|---------|
 | China website| cloud.tencent.com| https://cloud.tencent.com/login/saml|
-| International website |intl.cloud.tencent.com| https://www.tencentcloud.com/login/saml|
+| International website |www.tencentcloud.com| https://www.tencentcloud.com/login/saml|
 
 3. In the **SAML Single Sign-On** overview interface, click <image style="margin:0;" src="https://main.qcloudimg.com/raw/836588594e0a214b5951ee5207fc2353.png"> in the upper right corner of **User Attributes and Claims** to open the **User Attributes and Claims editor. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/77dddf7d3248815f0483f33ef8bc6dea.png)
