@@ -11,7 +11,7 @@ Bank statements may be physical or digital, depending on your bank and preferenc
 
 ## Sample
 
-![](C:\Users\v_gearwang\Desktop\经销平台\经销平台\经销平台\23.7.27银行示例修改\银行示例.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/f7uz560_%E9%93%B6%E8%A1%8C%E7%A4%BA%E4%BE%8B.png)
 
 
 

@@ -16,7 +16,7 @@
 根据您的银行和偏好，银行对账单可以是实物对账单，也可以是数字对账单。它们可以通过大多数银行应用程序或在线银行账户在线获得，也可以通过邮寄或电子邮件获得。
 
 ## 示例
-![](C:\Users\v_gearwang\Desktop\经销平台\经销平台\经销平台\23.7.27银行示例修改\银行示例.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/f7uz560_%E9%93%B6%E8%A1%8C%E7%A4%BA%E4%BE%8B.png)
 
 
 
