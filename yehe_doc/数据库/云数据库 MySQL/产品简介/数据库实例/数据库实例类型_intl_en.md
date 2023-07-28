@@ -9,11 +9,11 @@ There are three types of instances available in TencentDB for MySQL:
 <tbody><tr>
 <td>Source instance</td><td>An instance that can be read from and written to</td>
 <td><li><a href="https://intl.cloud.tencent.com/document/product/236/38331" target="_blank">Single-node</a> <li><a href="https://intl.cloud.tencent.com/document/product/236/38329" target="_blank">Two-node</a><li><a href="https://intl.cloud.tencent.com/document/product/236/39783" target="_blank">Three-node</a></td>
-<td>Yes</td><td>A source instance can mount read-only instances and disaster recovery instances for read/write separation and remote disaster recovery</td></tr>
+<td>Yes</td><td>A source instance can mount read-only instances and disaster recovery instances for read/write separation and remote disaster recovery.</td></tr>
 <tr>
 <td>Read-only instance</td><td>An instance that can only be read from</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/38331" target="_blank">Single-node</a></td><td>Yes</td>
-<td>A read-only instance cannot exist on its own. Instead, it must be affiliated to a source instance. Its data comes solely from syncing with the source instance, and it must reside in the same region as the source instance</td></tr>
+<td>A read-only instance cannot exist on its own. Instead, it must be affiliated to a source instance. Its data comes solely from syncing with the source instance, and it must reside in the same region as the source instance.</td></tr>
 <tr>
 <td>Disaster recovery instance</td><td>An instance that supports disaster recovery across AZs and regions</td>
 <td><li><a href="https://intl.cloud.tencent.com/document/product/236/38329" target="_blank">Two-node</a><li><a href="https://intl.cloud.tencent.com/document/product/236/39783" target="_blank">Three-node</a><td>Yes</td>
@@ -23,4 +23,4 @@ There are three types of instances available in TencentDB for MySQL:
 ### Reference
 - For more information on the creation of read-only instances, see [Creating Read-Only Instance](https://intl.cloud.tencent.com/document/product/236/7270).
 - For more information on how to create and configure RO groups for read-only instances, see [Managing the RO Group of Read-Only Instance](https://intl.cloud.tencent.com/document/product/236/11361).
-- For more information on the creation of and notes on the disaster recovery instance, see [Disaster Recovery Instance](https://intl.cloud.tencent.com/document/product/236/7272).
+- For more information on the creation of and notes on the disaster recovery instance, see [Managing Disaster Recovery Instance](https://intl.cloud.tencent.com/document/product/236/7272).
