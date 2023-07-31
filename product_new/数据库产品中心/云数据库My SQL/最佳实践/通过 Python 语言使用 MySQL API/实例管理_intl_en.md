@@ -4,14 +4,14 @@
 |ModifyInstanceParam	| Modifies instance parameters |
 |CloseWanService	|	 Disables public network access for an instance |
 |OpenWanService	 | Enables public network access for an instance |
-|RestartDBInstances| Restarts instances |
+|RestartDBInstances| Restarts an instance |
 |OpenDBInstanceGTID| Enables GTID for an instance |
 |ModifyDBInstanceName	| Renames a TencentDB instance |
 |ModifyDBInstanceProject	| Modifies the project to which a TencentDB instance belongs |
 |ModifyDBInstanceVipVport	| Modifies the IP and port number of a TencentDB instance |
 |DescribeDBInstanceCharset	| Queries the character set of a TencentDB instance |
 |DescribeDBInstanceConfig	| Queries the configuration information of a TencentDB instance |
-|DescribeDBInstanceGTID	| Queries whether GTID is activated for a TencentDB instance |
+|DescribeDBInstanceGTID	| Queries whether GTID is enabled for a TencentDB instance |
 |DescribeDBInstanceRebootTime	| Queries the estimated restart time of a TencentDB instance |
 
 ### ModifyInstanceParam for Modifying Instance Parameters
@@ -123,7 +123,7 @@ except TencentCloudSDKException as err:
 ```
 
 
-### RestartDBInstances for Restarting Instances	
+### RestartDBInstances for Restarting an Instance	
 
 ```python
 #!/usr/bin/python
