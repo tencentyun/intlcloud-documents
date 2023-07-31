@@ -4,7 +4,7 @@
 ## 费用组成
 负载均衡（CLB）的费用涉及四部分：CLB 实例费、公网网络费、跨地域绑定费、性能容量单位 LCU（Loadbalancer Capacity Unit）费。
 <dx-alert infotype="explain" title="">
-- LCU 费用仅在“性能容量型”负载均衡实例上收取。目前“性能容量型”负载均衡处于内测中，如需使用，请提交 [内测申请](https://intl.cloud.tencent.com/apply/p/fj5bwo9e6rj)。
+- LCU 费用仅在“性能容量型”负载均衡实例上收取。
 - 目前腾讯云账户分为标准账户类型和传统账户类型，2020年6月17日零点后注册的账户均为标准账户类型，该时间点前注册的账户请在 <a href="https://console.cloud.tencent.com/cvm/eip">公网 IP 控制台</a> 的实例列表页面顶部查看您的账户类型。
 - 若您需使用物理独占型实例，请联系您的商务经理。物理独占型实例3个月起购。
 </dx-alert>
