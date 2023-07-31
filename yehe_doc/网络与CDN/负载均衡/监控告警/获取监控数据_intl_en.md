@@ -9,7 +9,7 @@ Tencent Cloud provides the Cloud Monitor feature for all users by default and do
 ![](https://main.qcloudimg.com/raw/3eb231b336c9325ae16bfe2937e41b39.png)
 
 ## Cloud Monitor Console Method
-Log in to the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/overview) to view CLB monitoring data. Click **Cloud Load Balancer**(https://console.cloud.tencent.com/monitor/clb) on the left sidebar, and then click the ID/name of the CLB instance to access its monitoring details page. You can view the monitoring data of the CLB instance and expand its drop-down list to view the listener and real server monitoring information.
+Log in to the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/overview) to view CLB monitoring data. Click **[Cloud Load Balancer](https://console.cloud.tencent.com/monitor/clb)** on the left sidebar, and then click the ID/name of the CLB instance to access its monitoring details page. You can view the monitoring data of the CLB instance and expand its drop-down list to view the listener and real server monitoring information.
 
 ## API Method
-Use the `GetMonitorData` API to get the monitoring data of all products. For more information, see [GetMonitorData](https://intl.cloud.tencent.com/document/product/248/33881), [Public Network CLB Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/10997), [Private Network CLB Layer-4 Protocol](https://intl.cloud.tencent.com/document/product/248/39529), and [Layer-7 Protocol](https://intl.cloud.tencent.com/document/product/248/39530).
+Use the `GetMonitorData` API to get the monitoring data of all products. For more information, see [GetMonitorData](https://intl.cloud.tencent.com/document/product/248/33881), [Public Network CLB Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/10997), [Private Network CLB](https://intl.cloud.tencent.com/document/product/248/39529).
