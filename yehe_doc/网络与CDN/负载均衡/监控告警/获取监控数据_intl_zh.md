@@ -12,4 +12,4 @@
 登录 [云监控控制台](https://console.cloud.tencent.com/monitor/overview)，单击左侧导航栏中“云产品监控”模块下的[【负载均衡-CLB】](https://console.cloud.tencent.com/monitor/clb)，单击负载均衡实例 ID 进入监控详情页，即可查看该负载均衡实例的监控数据，展开实例即可查看监听器、后端服务器等监控信息。
 
 ## API 方式
-您可以使用 GetMonitorData 接口获取所有产品的监控数据，具体内容请参见 [拉取指标监控数据](https://intl.cloud.tencent.com/document/product/248/33881)，负载均衡的命名空间请参见 [公网负载均衡监控指标](https://intl.cloud.tencent.com/zh/document/product/248/10997)、[内网负载均衡四层协议监控指标](https://intl.cloud.tencent.com/document/product/248/39529) 和 [七层协议监控指标](https://intl.cloud.tencent.com/document/product/248/39530)。
+您可以使用 GetMonitorData 接口获取所有产品的监控数据，具体内容请参见 [拉取指标监控数据](https://intl.cloud.tencent.com/document/product/248/33881)，负载均衡的命名空间请参见 [公网负载均衡监控指标](https://intl.cloud.tencent.com/document/product/248/10997)、[内网负载均衡监控指标](https://intl.cloud.tencent.com/document/product/248/39529) 。
