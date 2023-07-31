@@ -5,14 +5,14 @@ Tencent Cloud [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/d
 
 ## Overview
 <dx-accordion>
-::: \sHTTP/HTTPS\s general access
+::: \sHTTP/HTTPS\s\sgeneral\saccess
 Applicable to apps for ecommerce, social media and other services, and web applications for personal blogging, event pages and more. The workflow is as follows:
 1. HTTP/HTTPS requests initiated by apps, browsers, H5 pages, or Mini Programs access the SCF function through the CLB instance.
 2. After the CLB instance completes the certificate uninstallation, SCF only needs to provide HTTP services.
 3. The request is then transferred to the SCF function for subsequent processing, such as writing to the cloud database and calling other APIs.
 ![](https://main.qcloudimg.com/raw/534ca758662eaffdd40d243bd8384739.svg)
 :::
-::: Switching between CVM and SCF
+::: Switching\sbetween\sCVM\sand\sSCF
 Applicable to migrating HTTP/HTTPS services from CVM to SCF, especially in the event of failover. The workflow is as follows:
 1. The app, browser, H5, or Wechat Mini Program initiates an HTTP/HTTPS request.
 2. The request is then resolved to two CLB instances’ VIPs by the DNS.
@@ -20,7 +20,7 @@ Applicable to migrating HTTP/HTTPS services from CVM to SCF, especially in the e
 4. The switch from CVM to SCF on the backend is complete without affecting the client side.
 ![](https://main.qcloudimg.com/raw/d285c006b5945486a725936385d9dcb2.svg)
 :::
-::: CVM/SCF\s business diversion
+::: CVM/SCF\s\sbusiness\sdiversion
 Applicable to using SCF to handle highly elastic services and CVM to handle daily business in scenarios such as flash sales and snap-up purchase.
 1. Through DNS resolution, domain name A is resolved to one CLB instance’s VIP and domain name B is resolved to the other CLB instance’s VIP.
 2. One CLB instance forwards the request to the CVM and the other forwards it to the SCF.
