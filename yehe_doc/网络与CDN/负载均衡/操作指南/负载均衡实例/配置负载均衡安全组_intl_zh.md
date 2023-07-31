@@ -57,8 +57,8 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
 2. 将安全组绑定 CLB
  1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)。
  2. 在“实例管理”页面找到目标 CLB 实例，单击实例 ID。
- 3. 在实例详情页面单击【安全组】页签，在“已绑定安全组”模块单击【绑定】。
- 4. 在弹出的“配置安全组”窗口中，选择对应绑定到 CLB 上的安全组，单击【确定】。
+ 3. 在实例详情页面单击**安全组**页签，在“已绑定安全组”模块单击**绑定**。
+ 4. 在弹出的“配置安全组”窗口中，选择对应绑定到 CLB 上的安全组，单击**确定**。
        ![](https://main.qcloudimg.com/raw/8a9701e700a94ba55a9a650eb87b4456.png) 
      CLB 安全组配置完成，对于访问 CLB 的流量，仅允许80端口的访问。
      <img alt="" src="https://main.qcloudimg.com/raw/a32cd86653185a5138006757aab38075.png" >
@@ -72,7 +72,7 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
 #### 方式一：开启安全组默认放通
 1.  登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)。
 2. 在“实例管理”页面找到目标 CLB 实例，单击实例 ID。
-3. 在实例详情页面，单击【安全组】页签。
+3. 在实例详情页面，单击**安全组**页签。
 2. 在“安全组”页面，单击<img style="margin:-3px 0px" src="https://main.qcloudimg.com/raw/5ba06490364505efc4d698e3adb1064e.png">，启用默认放通。
 3. 启用默认放通功能后，将仅验证如下<strong>规则预览</strong>中的安全组规则。
     ![](https://main.qcloudimg.com/raw/6caa47138ecb97cc3c60cb38971792fd.png)
@@ -86,6 +86,6 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
    ![](https://console.cloud.tencent.com/cvm/instance/index?rid=1)
 2. 将安全组绑定 CVM
  1. 在 [云服务器控制台](https://console.intl.cloud.tencent.com/cvm/instance/index?rid=1)上，单击 CLB 绑定的 CVM 的 ID，进入详情页。
- 2. 选择【安全组】标签页，在“已绑定安全组”模块单击【绑定】。
- 3. 在弹出的“配置安全组”窗口中，选择对应绑定到 CVM 上的安全组，单击【确定】。      <img alt="" src="https://main.qcloudimg.com/raw/6e0e1c2f834bb7425ef3ca010114165a.png" title="点击看原图">
+ 2. 选择**安全组**标签页，在“已绑定安全组”模块单击**绑定**。
+ 3. 在弹出的“配置安全组”窗口中，选择对应绑定到 CVM 上的安全组，单击**确定**。      <img alt="" src="https://main.qcloudimg.com/raw/6e0e1c2f834bb7425ef3ca010114165a.png" title="点击看原图">
 
