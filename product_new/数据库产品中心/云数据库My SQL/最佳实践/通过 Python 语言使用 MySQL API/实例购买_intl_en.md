@@ -4,7 +4,7 @@
 |DescribeDBInstances	| Queries the list of instances |
 |DescribeDBPrice	| Inquires the price of a TencentDB instance |
 |DescribeDBZoneConfig	| Queries the specifications of purchasable TencentDB instances |
-|InitDBInstances	| Initializes new instances |
+|InitDBInstances	| Initializes a new instance |
 
 
 ### CreateDBInstanceHour for Creating a Pay-as-you-go TencentDB Instance
@@ -165,7 +165,7 @@ except TencentCloudSDKException as err:
 
 ```
 
-### InitDBInstances for Initializing New Instances
+### InitDBInstances for Initializing a New Instance
 ```python
 
 #!/usr/bin/python
