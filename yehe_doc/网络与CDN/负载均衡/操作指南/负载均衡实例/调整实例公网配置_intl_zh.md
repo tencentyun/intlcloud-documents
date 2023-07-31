@@ -3,7 +3,7 @@
 ## 限制说明
 - IPv4 版本的负载均衡：仅标准账户类型支持调整网络配置，传统账户类型不支持。
 - IPv6 版本的负载均衡：标准账户类型和传统账户类型都支持调整网络配置。
-- 若您无法确定账户类型，请参见 [判断账户类型](https://intl.cloud.tencent.com/zh/document/product/684/15246)。
+- 若您无法确定账户类型，请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。
 
 ## 带宽上限
 <table>
