@@ -1,6 +1,6 @@
 Drupal is an open-source content management framework written in PHP, which consists of a content management system and a PHP development framework. It can be used to build rich-featured dynamic websites ranging from personal blogs to large communities.
 This tutorial describes how to build a Drupal ecommerce website on a CVM instance.
-Software environments used here include CentOS v7.2, Drupal v7.56, and PHP v5.4.16.
+Software environments used here include CentOS 7.2, Drupal 7.56, and PHP 5.4.16.
 
 ### Logging in to the CVM instance
 For more information on how to purchase and access a CVM instance, see [Customizing Linux CVM Configurations](https://www.tencentcloud.com/document/product/213/10517).
@@ -85,10 +85,10 @@ chown -R apache:apache /var/www/html/sites
 ```
 service httpd restart
 ```
-6. Enter `http://115.xxx.xxx.xxx/` in your local browser (where `115.xxx.xxx.xxx` is the public IP of your CVM instance) to go to the installation interface of Drupal, select the version to be installed, and click **Save and continue**.
+6. Enter `http://115.xxx.xxx.xxx/` in your local browser (where `115.xxx.xxx.xxx` is the public IP of your CVM instance) to go to the installation page of Drupal, select the version to be installed, and click **Save and continue**.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/Bzap853_6.png)
 7. Select the language for installation and click **Save and continue**.
 8. Set up the database and enter the database information you configured when **installing the MariaDB service**.
 9. Enter the site information.
 10. Complete the Drupal installation.
-11. Then, you can visit `http://115.xxx.xxx.xxx/` (where `115.xxx.xxx.xxx` is the IP address of your CVM instance) to personalize the website.
+11. Then, you can visit `http://115.xxx.xxx.xxx/` (where `115.xxx.xxx.xxx` is the IP address of your CVM instance) to customize the website.
