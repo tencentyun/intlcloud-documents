@@ -41,7 +41,7 @@ You can set threshold alarms for the performance consumption metrics of the moni
 
 
 
-1. Log in to the [Tencent Cloud Observability Platform console](https://console.cloud.tencent.com/monitor).
+1. Log in to the [Tencent Cloud Observability Platform](https://console.cloud.tencent.com/monitor).
 2. Click **Alarm Configuration** > **Alarm Policy** to enter the alarm policy configuration page.
 3. Click **Add** and configure a new alarm policy as shown below:
 
