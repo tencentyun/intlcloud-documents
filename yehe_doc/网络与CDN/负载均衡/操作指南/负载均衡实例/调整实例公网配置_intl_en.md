@@ -3,7 +3,7 @@ You can adjust the bandwidth or the billing mode of public network CLB instances
 ## Restrictions
 - IPv4 CLB instances: network configuration adjustment is only supported for bill-by-IP accounts but not for bill-by-CVM accounts.
 - IPv6 CLB instances: network configuration adjustment is supported for both bill-by-IP and bill-by-CVM accounts.
-- For more information on checking your account type, please refer to [Checking Account Type](https://intl.cloud.tencent.com/zh/document/product/684/15246).
+- For more information on checking your account type, please refer to [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
 
 ## Bandwidth Cap
 <table>
