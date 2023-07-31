@@ -21,14 +21,14 @@ You can create one or more subnets at a time.
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Click **Subnet** on the left sidebar to enter the management page.
 3. Select the region and VPC in which the subnet is to be created and click **Create**.
-4. Enter the subnet’s name, CIDR, AZ, and associated route table.
+4. Enter the subnet name, CIDR, AZ, and associated route table.
 ![](https://main.qcloudimg.com/raw/84bd6ce8469eae5d399ce96a89168299.png)
 5. (Optional) Click **+New line** to create multiple subnets at a time.
 6. Click **Create**.
 
 ## Step 3. Create a route table and associate it with a subnet
 You can create a custom route table, edit its routing policy, and associate it with a specified subnet. The route table associated with a subnet is used to specify the outbound routes for the subnet.
-1. Log in to the VPC Console and select **Route Tables** on the left sidebar.
+1. Log in to the VPC console and select **Route Tables** on the left sidebar.
 2. Select the region and VPC at the top of the list and click **Create**.
 3. In the pop-up dialog box, enter the name, network, routing rules and click **Create**. Return to the route table list to view the newly created route table.
 ![](https://main.qcloudimg.com/raw/4e59f2e780b5296fe85b204bd86b8b73.png)
@@ -43,7 +43,7 @@ You can create a custom route table, edit its routing policy, and associate it w
 
 ## Step 5. Add a TencentDB instance
 #### New database
-1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and click **Create** in the instance list to enter the purchase page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click **Create** in the instance list to enter the purchase page.
 2. In the **Network** section on the purchase page, select the previously created VPC and the corresponding subnet, and add the new TencentDB instance to the VPC.
 ![](https://main.qcloudimg.com/raw/c8f5065a7ceafc763163b4abe82564bf.png)
 
