@@ -2,21 +2,21 @@ Based on customer experiences in stress testing, this document summarizes common
 
 ## Stress testing FAQs
 
-### 1. The public network access is not enabled on real server
+### The public network access is not enabled on real server
 If public network access is not enabled when you purchase CVM, forwarding may fail when a public network CLB is mounted to the CVM instance.
-### 2. The bandwidth of a real server is insufficient
+### The bandwidth of a real server is insufficient
 If the real server has a low bandwidth, it cannot return packets to the CLB when the threshold is exceeded. CLB will return a 504 or 502 error to the client.
-### 3. The client ports are insufficient 
+### The client ports are insufficient 
 If the number of clients is too small or the range of client ports is too narrow, client ports become insufficient and connections will fail to be established. In addition, if the `keep_alive` value is greater than 0 when a persistent connection is established, the connection will permanently use the port, which reduces the number of available client ports.
-### 4. Applications relied on by real servers have performance issues
+### Applications relied on by real servers have performance issues
 After a request reaches a real server through CLB, the load on the real server is normal. However, because applications on real servers also rely on other applications such as database, performance issues in the database may also affect the stress testing performance.
-### 5. A real server is unhealthy
+### A real server is unhealthy
 The health status of real servers may be ignored in stress testing. If the real server has a health check failure or unstable health check status (sometimes good and sometimes bad with rapid changes), stress testing may have poor performance.
-### 6. Session persistence enabled for CLB results in uneven traffic distribution among real servers
+### Session persistence enabled for CLB results in uneven traffic distribution among real servers
 After session persistence is enabled for CLB, requests may be distributed to fixed real servers. The traffic distribution becomes uneven, affecting the performance of stress testing. We recommend you disable session persistence during stress testing.
 
 ## Suggestions for stress testing
->The following configurations are only used for CLB stress testing. You do not need to have them in your production environment.
+>!The following configurations are only used for CLB stress testing. You do not need to have them in your production environment.
 
 - We recommend you use non-persistent connection when stress testing the forwarding capability of CLB.
 Except for verification on session persistence features, stress testing is generally designed to verify the forwarding capability of CLB. Therefore, non-persistent connection can be used to test the processing capability of CLB and real servers.
