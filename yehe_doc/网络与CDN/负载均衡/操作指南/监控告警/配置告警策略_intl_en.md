@@ -97,7 +97,7 @@ You can set threshold alarms for the performance consumption metrics of the moni
   </tr>
   <tr>
     <td>Configure manually <br>(event alarm)</td>
-    <td>You can create event alarms so that when the Tencent Cloud service resources or the underlying infrastructure services encounter any errors, you will promptly receive notifications and can then take measures accordingly. For more information, see <a href="https://intl.cloud.tencent.com/document/product/248/32821">Event Center</a>.</td>
+    <td>You can create event alarms so that when the Tencent Cloud service resources or the underlying infrastructure services encounter any errors, you will promptly receive notifications and can then take measures accordingly. </td>
   </tr>
   <tr>
     <td>Select template</td>
