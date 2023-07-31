@@ -34,7 +34,8 @@ a. A quintuple is still in TIME_WAIT state. In the port allocation policy of the
 b. When `tcp_timestamps` is enabled and the following two conditions are met, the SYN packet will be dropped (because timestamp option is enabled, and the packet is considered as old).
 i. Timestamp of last time > Timestamp of this time
 ii. Packets are received within 24 days (the timestamp field is 32-bit and the timestamp is updated once per 1 millisecond by default in Linux. The timestamp will wrap around after 24 days).
-Note: This problem is more obvious on mobile devices because clients share limited public network IPs under the ISP's NAT gateway and a quintuple can be reused in 2MSL. The timestamps sent from different clients may not be incremental.
+>?This problem is more obvious on mobile devices because clients share limited public network IPs under the ISP's NAT gateway and a quintuple can be reused in 2MSL. The timestamps sent from different clients may not be incremental.
+>
 Taking 2.6.32 kernel as an example, the details are as follows:
 ```
 static inline int tcp_paws_check(const struct tcp_options_received *rx_opt,int paws_win)
