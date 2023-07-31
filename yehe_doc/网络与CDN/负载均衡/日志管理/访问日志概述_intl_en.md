@@ -28,7 +28,7 @@ CLB supports configuring access logs to collect and record the details of each c
 </tr>
 <tr>
 <td>Supported regions</td>
-<td>For more details on CLS available regions, see <a href="https://intl.cloud.tencent.com/zh/document/product/614/18940">Available Regions</a>.</td>
+<td>For more details on CLS available regions, see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a>.</td>
 </tr>
 <tr>
 <td>Supported CLB type</td>
