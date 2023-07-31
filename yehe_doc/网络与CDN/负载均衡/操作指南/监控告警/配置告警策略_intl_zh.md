@@ -41,7 +41,7 @@
 
 
 
-1. 登录 [云监控控制台](https://console.cloud.tencent.com/monitor)。
+1. 登录 [腾讯云可观测平台](https://console.cloud.tencent.com/monitor)。
 2. 单击**告警配置** > **告警策略**，进入告警策略配置页面。
 3. 单击**新增**，配置告警策略，配置说明如下：
 
