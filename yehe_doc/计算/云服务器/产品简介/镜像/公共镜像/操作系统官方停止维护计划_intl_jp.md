@@ -182,7 +182,7 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 
 <dx-alert infotype="explain" title="">
 
-- Red Hat Enterprise Linux イメージは現在ベータ版テスト版実施中で、ベータ版ユーザになろうとする方は、 [チケットを送信](https://cloud.tencent.com/apply/p/2yj9npvw8lq)してください。
+- Red Hat Enterprise Linux イメージは現在ベータ版テスト版実施中で、ベータ版ユーザになろうとする方は、 [チケットを送信](https://console.tencentcloud.com/workorder/category)してください。
 - CVMを購入したときにRed Hat Enterprise Linux認証に合格したインスタンスタイプを選択した場合は、 Red Hat Enterprise Linuxイメージを使用できます。サポートされているイメージタグとインスタンスタイプについては、 [Red Hat Enterprise Linux イメージに関するよくあるご質問](https://www.tencentcloud.com/document/product/213/55135)をご参照ください。
 </dx-alert> 
 
