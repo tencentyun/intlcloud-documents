@@ -1,5 +1,5 @@
 ### Red Hat Enterprise Linux イメージを使用するにはどうすればよいですか?
-Red Hat Enterprise Linux イメージは現在ベータ版テスト版実施中で、ベータ版ユーザになろうとする方は、 [チケットを送信](https://cloud.tencent.com/apply/p/2yj9npvw8lq)‍してください。
+Red Hat Enterprise Linux イメージは現在ベータ版テスト版実施中で、ベータ版ユーザになろうとする方は、 [チケットを送信](https://console.tencentcloud.com/workorder/category)‍してください。
 
 ### どの Red Hat Enterprise Linux イメージタグが利用可能ですか? どのようなインスタンスタイプがサポートされていますか?
 
