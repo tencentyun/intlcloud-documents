@@ -41,7 +41,7 @@ Red Hat Enterprise Linuxは商用 Linux ディストリビューションです�
 - Tencent Cloud での Red Hat Enterprise Linux イメージのライセンスの購入には、割引 (スポット インスタンスの割引を含む) とクーポンは適用されません。
 - CVMの購入時にRed Hat Enterprise Linux認証に合格したインスタンスタイプを選択した場合は、 Red Hat Enterprise Linuxイメージを使用できます。サポートされているイメージタグとインスタンスタイプについては、 [Red Hat Enterprise Linux イメージに関するよくあるご質問](https://www.tencentcloud.com/document/product/213/55135)
 をご参照ください。
-- Red Hat Enterprise Linux イメージは現在ベータ版テスト版実施中で、ベータ版ユーザになろうとする方は、 [チケットを送信](https://cloud.tencent.com/apply/p/2yj9npvw8lq)してください。
+- Red Hat Enterprise Linux イメージは現在ベータ版テスト版実施中で、ベータ版ユーザになろうとする方は、 [チケットを送信](https://console.tencentcloud.com/workorder/category)してください。
 </dx-alert>
 
 ###  Tencent Cloud によって認可された Red Hat Enterprise Linux イメージの料金は下の表をご覧ください。
