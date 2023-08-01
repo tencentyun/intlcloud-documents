@@ -13,10 +13,10 @@ Create a CAM sub-user `cvmtest01` for an employee and use the above two permissi
 
 ## Expected Result
 - The list of CVM instances in Guangzhou region viewed by the admin account: 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/0c9b098919b76c45434c77ba35d2c429.png">                 
+<img src="https://qcloudimg.tencent-cloud.cn/raw/50cfc01f2251596ea26f796060a56716.png">                 
 
 - The list of CVM instances in Guangzhou region viewed by `cvmtest01`:
-<img src="https://qcloudimg.tencent-cloud.cn/raw/50cfc01f2251596ea26f796060a56716.png">     
+<img src="https://qcloudimg.tencent-cloud.cn/raw/0c9b098919b76c45434c77ba35d2c429.png">     
 
 
 ## Options
