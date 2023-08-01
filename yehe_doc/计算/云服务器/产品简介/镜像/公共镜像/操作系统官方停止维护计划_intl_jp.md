@@ -1,16 +1,16 @@
 Tencent Cloudが提供するパブリックイメージのメンテナンスサイクルは公式に発表されているメンテナンスサイクルと一致します。このドキュメントでは、各バージョンのイメージに対するOSプラットフォームごとのメンテナンスプランを確認できます。
 
->!オペレーティングシステムのメンテナンスが終了すると、問題の修正や機能の更新を含むソフトウェアのメンテナンスやサポートを受けることができなくなります。最新のバージョンに更新するか、より安定したイメージバージョンを選択することをお勧めします。
+>!OSのメンテナンスが終了すると、問題の修正や機能の更新を含むソフトウェアのメンテナンスやサポートを受けることができなくなります。最新のバージョンに更新するか、より安定したイメージバージョンを選択することをお勧めします。
 
 
 
-##　Tencent Cloud独自開発OS
+## Tencent Cloud独自開発OS
 
 ### TencentOS Server
 <table>
 	<tr>
 		<th width="50%">バージョン</th>
-		<th>メンテナンス停止時間</th>
+		<th>メンテナンス終了日</th>
 	</tr>
 	<tr>
 		<td>TencentOS Server 2</td>
@@ -30,7 +30,7 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 <table>
 	<tr>
 		<th width="50%">バージョン</th>
-		<th>メンテナンス停止時間</th>
+		<th>メンテナンス終了日</th>
 	</tr>
 	<tr>
 		<td>OpenCloudOS 8</td>
@@ -40,14 +40,14 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 
 
 
-##　サードパーティ製OS
+## サードパーティ製OS
 
 ### CentOS
 <table>
 	<tr>
 		<th width="40%">バージョン</th>
-		<th width="30%">完全更新の終了時間</th>
-		<th width="30%">メンテナンス更新終了時間</th>	
+		<th width="30%">完全更新終了日</th>
+		<th width="30%">メンテナンス更新終了日</th>	
 	</tr>
 	<tr>
 		<td>CentOS Stream 9</td>
@@ -76,10 +76,8 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 	</tr>
 </table>
 
-公式なメンテナンス時間については、[CentOS公式サイト](https://wiki.centos.org/About/Product)をご参照ください。
->?CentOSは、CentOS Linuxプロジェクトのメンテナンスを終了する予定です。Tencent Cloudは、代替案としてCentOS互換のOpenCloudOSまたはTencentOS Serverを提供しています。詳細な説明および切り替え手順については、[CentOSサービス終了の説明および推奨対応策](https://www.tencentcloud.com/document/product/213/53800)をご参照ください。
-
-
+公式メンテナンスプランの詳細については、[CentOS公式サイト](https://wiki.centos.org/About/Product)をご参照ください。
+>?CentOS は、CentOS Linux のサポートを正式に終了する予定です。 Tencent Cloudは、代替案としてCentOS互換のOpenCloudOSまたはTencentOS Serverを提供しています。
 
 
 
@@ -87,8 +85,8 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 <table>
 	<tr>
 		<th width="40%">バージョン</th>
-		<th width="30%">標準サポートの終了時間</th>
-		<th width="30%">拡張更新の終了時間</th>	
+		<th width="30%">標準サポート終了日</th>
+		<th width="30%">拡張更新終了日</th>	
 	</tr>
 	<tr>
 		<td>Ubuntu 22.04 LTS</td>
@@ -113,7 +111,7 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 </table>
 
 
-公式メンテナンス期間については[Ubuntu公式サイト](https://wiki.ubuntu.com/Releases)をご参照ください。
+公式メンテナンス プランの詳細については、[Ubuntu公式サイト](https://wiki.ubuntu.com/Releases)をご参照ください。
 
 
 
@@ -121,15 +119,15 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 <table>
 	<tr>
 		<th width="20%">バージョン</th>
-		<th width="20%">サポート終了時間</th>
-		<th width="30%">EOL-長期サポート（LTS）</th>
-		<th width="30%">EOL-拡張長期サポート（ELTS）</th>
+		<th width="20%">サポート終了日</th>
+		<th width="30%">EOL-長期サポート終了日（LTS）</th>
+		<th width="30%">EOL-延長・長期サポート終了日（ELTS）</th>
 	</tr>
 	<tr>
 		<td>Debian 11</td>
 		<td>2024-07</td>
 		<td>2026-06</td>
-		<td>なし</td>
+		<td>なし
 	</tr>
 	<tr>
 		<td>Debian 10</td>
@@ -146,14 +144,55 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 </table>
 
 
-公式メンテナンス時間については、[Debian公式サイト](https://wiki.debian.org/DebianReleases)をご参照ください。
+公式メンテナンス プランの詳細については、[Debian公式サイト](https://wiki.debian.org/DebianReleases)をご参照ください。
 
+
+
+### Red Hat Enterprise Linux
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky">バージョン</th>
+    <th class="tg-0pky">フルサポート終了日</th>
+    <th class="tg-0pky">メンテナンスサポート 1 の終了日</th>
+    <th class="tg-0pky">メンテナンスサポート2の終了日</th>
+    <th class="tg-0pky">延長ライフサイクルサポートの終了日</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Red Hat Enterprise Linux 8</td>
+    <td class="tg-0pky">2024-05-31</td>
+    <td class="tg-0pky">非該当</td>
+    <td class="tg-0pky">2029-05-31</td>
+    <td class="tg-0pky">2031-05-31</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Red Hat Enterprise Linux 7</td>
+    <td class="tg-0pky">2019-08-06</td>
+    <td class="tg-0pky">2020-08-06</td>
+    <td class="tg-0pky">2024-06-30</td>
+    <td class="tg-0pky">2026-06-30</td>
+  </tr>
+</tbody>
+</table>
+
+詳細については、[Red Hat公式サイト](https://access.redhat.com/support/policy/updates/errata)をご参照ください。
+
+<dx-alert infotype="explain" title="">
+
+- Red Hat Enterprise Linux イメージは現在ベータ版テスト版実施中で、ベータ版ユーザになろうとする方は、 [チケットを送信](https://cloud.tencent.com/apply/p/2yj9npvw8lq)してください。
+- CVMを購入したときにRed Hat Enterprise Linux認証に合格したインスタンスタイプを選択した場合は、 Red Hat Enterprise Linuxイメージを使用できます。サポートされているイメージタグとインスタンスタイプについては、 [Red Hat Enterprise Linux イメージに関するよくあるご質問](https://www.tencentcloud.com/document/product/213/55135)をご参照ください。
+</dx-alert> 
+
+ 
 
 ### AlmaLinux
 <table>
 	<tr>
 		<th width="50%">バージョン</th>
-		<th>メンテナンス停止時間</th>
+		<th>メンテナンス終了日</th>
 	</tr>
 	<tr>
 		<td>AlmaLinux 8.5</td>
@@ -161,14 +200,14 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 	</tr>
 </table>
 
-公式メンテナンス時間については、[AlmaLinux公式サイト](https://wiki.almalinux.org/Comparison.html)をご参照ください。
+公式メンテナンス プランの詳細については、[AlmaLinux公式サイト](https://wiki.almalinux.org/Comparison.html)をご参照ください。
 
 
 ### CoreOS
 <table>
 	<tr>
 		<th width="50%">バージョン</th>
-		<th>メンテナンス停止時間</th>
+		<th>メンテナンス終了日</th>
 	</tr>
 	<tr>
 		<td>CoreOS Container Linux </td>
@@ -181,14 +220,14 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 <table>
 	<tr>
 		<th width="50%">バージョン</th>
-		<th>メンテナンス更新終了時間</th>
+		<th>メンテナンス終了日</th>
 	</tr>
 	<tr>
 		<td> FreeBSD 13.1</td>
 		<td>2023-06-30</td>
 	</tr>
 	<tr>
-		<td> FreeBSD 13.0</th>
+		<td>FreeBSD 13.0</th>
 		<td>2022-08-31</td>
 	</tr>
 	<tr>
@@ -202,7 +241,7 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 </table>
 
 
-公式なメンテナンス時間については、[FreeBSD公式サイト](https://www.freebsd.org/releases/)をご参照ください。
+公式メンテナンスプランの詳細については、[FreeBSD公式サイト](https://www.freebsd.org/releases/)をご参照ください。
 
 
 
@@ -210,7 +249,7 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 <table>
 	<tr>
 		<th width="50%">バージョン</th>
-		<th>メンテナンス停止時間</th>
+		<th>メンテナンス終了日</th>
 	</tr>
 	<tr>
 		<td>Rocky Linux 9.0</td>
@@ -227,11 +266,7 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 </table>
 
 
-
-
-公式メンテナンス時間については、[Rocky Linux公式サイト](https://rockylinux.org/news/rocky-linux-9-0-ga-release/)をご参照ください。
-
-
+公式メンテナンスプランの詳細については、[Rocky Linux公式サイト](https://rockylinux.org/news/rocky-linux-9-0-ga-release/)をご参照ください。
 
 
 
@@ -240,7 +275,7 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 <table>
 	<tr>
 		<th width="50%">バージョン</th>
-		<th>メンテナンス更新終了時間</th>
+		<th>メンテナンス終了日</th>
 	</tr>
 		<tr>
 		<td>OpenSUSE Leap 15.4</td>
@@ -251,7 +286,7 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 		<td>2022-11</td>
 	</tr>
 	<tr>
-		<td>OpenSUSE Leap 15.2 </th>
+		<td>OpenSUSE Leap 15.2</th>
 		<td>2022-01-04</td>
 	</tr>
 	<tr>
@@ -261,9 +296,7 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 </table>
 
 
-公式メンテナンス時間については[OpenSUSE公式サイト](https://en.opensuse.org/Lifetime)をご参照ください。
-
-
+公式メンテナンスプランの詳細については、[OpenSUSE公式サイト](https://en.opensuse.org/Lifetime)をご参照ください。
 
 
 
@@ -271,32 +304,32 @@ Tencent Cloudが提供するパブリックイメージのメンテナンスサ�
 <table>
 	<tr>
 		<th width="40%">バージョン</th>
-		<th width="30%">メインストリーム更新の終了時間</th>
-		<th width="30%">更新終了時間の延長</th>	
+		<th width="30%">メインストリームサポート終了日</th>
+		<th width="30%">延長サポート終了日</th>	
 	</tr>
 	<tr>
-		<td>Windows Server 2022 データセンターバージョン</td>
+		<td>Windows Server 2022 Datacenter</td>
 		<td>2026-10-13</td>
 		<td>2031-10-14</td>
 	</tr>
 		<tr>
-		<td>Windows Server 2019 データセンターバージョン</td>
+		<td>Windows Server 2019 Datacenter</td>
 		<td>2024-01-09</td>
 		<td>2029-01-09</td>
 	</tr>
 		<tr>
-		<td>Windows Server 2016 データセンターバージョン</td>
+		<td>Windows Server 2016 Datacenter</td>
 		<td>2022-01-11</td>
 		<td>2027-01-12</td>
 	</tr>
 		<tr>
-		<td>Windows Server 2012 R2 データセンターバージョン</td>
+		<td>Windows Server 2012 R2 Datacenter</td>
 		<td>2018-10-09</td>
 		<td>2023-10-10</td>
 	</tr>
 </table>
 
 
-公式なメンテナンス時間については、[Microsoft Windows Server公式サイト](https://learn.microsoft.com/zh-cn/lifecycle/products/)をご参照ください。
+公式メンテナンスプランの詳細については、[Microsoft Windows Server公式サイト]をご参照ください。
 
 

@@ -1,12 +1,11 @@
 <dx-alert infotype="notice" title="">
-- イメージの更新時間はリージョンによって異なる場合があります。ここで提供するイメージの更新時間は全リージョンの更新時間になります。
-- Tencent Cloudが提供するパブリックイメージのメンテナンスサイクルは公式に発表されているメンテナンスサイクルと一致します。公式に発表されているメンテナンス時間については、[オペレーティングシステムの公式メンテナンスプラン](https://www.tencentcloud.com/document/product/213/53802)をご参照ください。
+- イメージの更新時間はリージョンによって異なる場合があります。ここで提供されるイメージの更新時間は、すべての Tencent Cloud リージョンでイメージの更新が完了した時間です。
+- Tencent Cloudが提供するパブリックイメージのメンテナンスサイクルは公式に発表されているメンテナンスサイクルと一致します。公式に発表されているメンテナンス時間については、 [OSの公式メンテナンスプラン](https://www.tencentcloud.com/document/product/213/53802)をご参照ください。
 </dx-alert>
 
 
 ## OpenCloudOS
 OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ](https://intl.cloud.tencent.com/document/product/213/46208)をご参照ください。
-
 
 ## CentOS
 
@@ -14,8 +13,8 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
  <tr>
         <th style="width: 20%;">イメージバージョン</th>
         <th style="width: 35%;">イメージ情報</th>
-        <th style="width: 14%;">最終更新時間</th>
-        <th style="width: 26%;">最終更新内容</th>
+        <th style="width: 14%;">最終更新日</th>
+        <th style="width: 26%;">更新内容</th>
     </tr>
 		<tr>
 		<td>CentOS Stream 9x86_64</td>
@@ -23,7 +22,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-9xqekomx">img-9xqekomx</a>
 		<br />現在のカーネルバージョン：5.14.0-202.el9.x86_64</td>
 		<td>2022-12-19</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 	<tr>
 		<td>CentOS Stream 8x86_64</td>
@@ -31,7 +30,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-8m9ugrip">img-8m9ugrip</a>
 		<br />現在のカーネルバージョン：4.18.0-348.7.1.el8_5.x86_64</td>
 		<td>2022-09-16</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 	<tr>
 		<td>Centos 8.5x86_64</td>
@@ -39,7 +38,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-es95t8wj">img-es95t8wj</a>
 		<br />現在のカーネルバージョン：4.18.0-348.7.1.el8_5.x86_64</td>
 		<td>2022-11-23</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 		<tr>
 		<td>CentOS 8.4x86_64</td>
@@ -47,7 +46,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-l5eqiljn">img-l5eqiljn</a>
 		<br />現在のカーネルバージョン：4.18.0-348.7.1.el8_5.x86_64</td>
 		<td>2022-11-07</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 	<tr>
 		<td>CentOS 8.3x86_64</td>
@@ -55,7 +54,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-5w4qozfr">img-5w4qozfr</a>
 		<br />現在のカーネルバージョン：4.18.0-348.7.1.el8_5.x86_64</td>
 		<td>2022-11-07</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 	<tr>
 		<td>CentOS 8.2x86_64</td>
@@ -63,7 +62,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=16&amp;id=img-n7nyt2d7">img-n7nyt2d7</a>
 		<br />現在のカーネルバージョン：4.18.0-348.7.1.el8_5.x86_64</td>
 		<td>2022-08-24</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 	<tr>
 		<td>CentOS 8.0x86_64</td>
@@ -71,15 +70,15 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-25szkc8t">img-25szkc8t</a>
 		<br />現在のカーネルバージョン：4.18.0-348.7.1.el8_5.x86_64</td>
 		<td>2022-03-17</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 		</tr>
 	<tr>
 		<td>CentOS 7.9x86_64</td>
 		<td>イメージID：
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-l8og963d">img-l8og963d</a>
 		<br />現在のカーネルバージョン：3.10.0-1160.71.1.el7.x86_64</td>
-		<td>2022-11-07</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>2023-03-06</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 	<tr>
 		<td>CentOS 7.8x86_64</td>
@@ -87,7 +86,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-3la7wgnt">img-3la7wgnt</a>
 		<br />現在のカーネルバージョン：3.10.0-1160.62.1.el7.x86_64</td>
 		<td>2022-04-19</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 	<tr>
 		<td>CentOS 7.7x86_64</td>
@@ -95,7 +94,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-1u6l2i9l">img-1u6l2i9l</a>
 		<br />現在のカーネルバージョン：3.10.0-1160.62.1.el7.x86_64</td>
 		<td>2022-04-22</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 		<tr>
 		<td>CentOS 7.6x86_64</td>
@@ -103,7 +102,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-9qabwvbn">img-9qabwvbn</a>
 		<br />現在のカーネルバージョン：3.10.0-1160.62.1.el7.x86_64</td>
 		<td>2022-04-28</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 <tr>
 		<td>CentOS 7.5x86_64</td>
@@ -111,7 +110,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-oikl1tzv">img-oikl1tzv</a>
 		<br />現在のカーネルバージョン：3.10.0-1160.71.1.el7.x86_64</td>
 		<td>2022-12-02</td>
-		<td>最新のシステムパッチを更新します。	</td>
+		<td>最新のパッチでシステムを更新します。	</td>
 	</tr>
 	<tr>
 		<td>CentOS 7.4x86_64</td>
@@ -119,7 +118,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-8toqc6s3">img-8toqc6s3</a>
 		<br />現在のカーネルバージョン：3.10.0-1160.62.1.el7.x86_64</td>
 		<td>2022-04-19</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 	<tr>
 		<td>CentOS 7.3x86_64</td>
@@ -127,15 +126,15 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-dkwyg6sr">img-dkwyg6sr</a>
 		<br />現在のカーネルバージョン：3.10.0-1160.62.1.el7.x86_64</td>
 		<td>2022-04-22</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 	<tr>
 		<td>CentOS 7.2x86_64</td>
 		<td>イメージID：
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-31tjrtph">img-31tjrtph</a>
-		<br />現在のカーネルバージョン：3.10.0-1160.62.1.el7.x86_65</td>
-		<td>2022-04-24</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<br />現在のカーネルバージョン：3.10.0-1160.83.1.el7.x86_64</td>
+		<td>2023-03-06</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 	<tr>
 		<td>CentOS 6.10x86_64</td>
@@ -143,7 +142,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-fizif873">img-fizif873</a>
 		<br />現在のカーネルバージョン：2.6.32-754.35.1.el6.x86_64</td>
 		<td>2022-01-17</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 	<tr>
 		<td>CentOS 6.9x86_64</td>
@@ -151,7 +150,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 		<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-i5u2lkoz">img-i5u2lkoz</a>
 		<br />現在のカーネルバージョン：2.6.32-754.30.2.el6.x86_64</td>
 		<td>2022-01-18</td>
-		<td>最新のシステムパッチへ更新。</td>
+		<td>最新のパッチでシステムを更新します。</td>
 	</tr>
 </table>
 
@@ -161,8 +160,8 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 <tr>
         <th style="width: 20%;">イメージバージョン</th>
         <th style="width: 35%;">イメージ情報</th>
-        <th style="width: 14%;">最終更新時間</th>
-        <th style="width: 26%;">最終更新内容</th>
+        <th style="width: 14%;">最終更新日</th>
+        <th style="width: 26%;">更新内容</th>
     </tr>
 	<tr>
 	<td>Ubuntu 22.04x86_64</td>
@@ -170,7 +169,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-487zeit5">img-487zeit5</a>
 	<br />現在のカーネルバージョン：5.15.0-56-generic</td>
 	<td>2022-12-08</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
   <tr>
 	<td>Ubuntu 20.04x86_64</td>
@@ -178,7 +177,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-22trbn9x">img-22trbn9x</a>
 	<br />現在のカーネルバージョン：5.4.0-126-generic</td>
 	<td>2022-09-20</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
   <tr>
 	<td>Ubuntu 18.04x86_64</td>
@@ -186,7 +185,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-pi0ii46r">img-pi0ii46r</a>
 	<br />現在のカーネルバージョン：4.15.0-193-generic</td>
 	<td>2022-11-03</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
   <tr>
 	<td>Ubuntu 16.04x86_64</td>
@@ -194,7 +193,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-pyqx34y1">img-pyqx34y1</a>
 	<br />現在のカーネルバージョン：4.4.0-210-generic</td>
 	<td>2022-03-21</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 </table>
 
@@ -205,8 +204,8 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 <tr>
         <th style="width: 20%;">イメージバージョン</th>
         <th style="width: 35%;">イメージ情報</th>
-        <th style="width: 14%;">最終更新時間</th>
-        <th style="width: 26%;">最終更新内容</th>
+        <th style="width: 14%;">最終更新日</th>
+        <th style="width: 26%;">更新内容</th>
     </tr>
 		<tr>
 			<td>Debian 11.4x86_64</td>
@@ -214,7 +213,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-btz2mndd">	img-btz2mndd</a>
 			<br />現在のカーネルバージョン：5.10.0-16-amd64</td>
 			<td>2022-09-08</td>
-			<td>最新のシステムパッチへ更新。</td>
+			<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	  <tr>
 	<td>Debian 11.1x86_64</td>
@@ -223,7 +222,7 @@ OpenCloudOSの更新記録については、[OpenCloudOSイメージ更新ログ
 img-4cmp1f33</a>
 	<br />現在のカーネルバージョン：5.10.0-19-amd64</td>
 	<td>2022-11-03</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	 <tr>
 	<td>Debian 10.12x86_64</td>
@@ -231,7 +230,7 @@ img-4cmp1f33</a>
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-7ay90qj7">img-7ay90qj7</a>
 	<br />現在のカーネルバージョン：4.19.0-21-amd64</td>
 	<td>2022-09-23</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	  <tr>
 	<td>Debian 10.11x86_64</td>
@@ -239,7 +238,7 @@ img-4cmp1f33</a>
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-h1yvvfw1">img-h1yvvfw1</a>
 	<br />現在のカーネルバージョン：4.19.0-22-amd64</td>
 	<td>2022-11-01</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
   <tr>
 	<td>Debian 10.2x86_64</td>
@@ -247,7 +246,7 @@ img-4cmp1f33</a>
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-qhtfjw1d">img-qhtfjw1d</a>
 	<br />現在のカーネルバージョン：4.19.0-19-amd64</td>
 	<td>2022-11-01</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	<tr>
 	<td>Debian 9.13x86_64</td>
@@ -256,7 +255,7 @@ img-4cmp1f33</a>
 img-5k0ys7jp</a>
 	<br />現在のカーネルバージョン：4.9.0-19-amd64</td>
 	<td>2022-09-30</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	<tr>
 	<td>Debian 9.0x86_64</td>
@@ -265,7 +264,7 @@ img-5k0ys7jp</a>
 img-6rrx0ymd</a>
 	<br />現在のカーネルバージョン：4.9.0-19-amd64</td>
 	<td>2022-11-03</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 		<tr>
 	<td>Debian 8.11x86_64</td>
@@ -274,9 +273,43 @@ img-6rrx0ymd</a>
 img-2lj11q1f </a>
 	<br />現在のカーネルバージョン：3.16.0-11-amd64</td>
 	<td>2022-11-07</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 </table>
+
+
+## Red Hat Enterprise Linux
+
+<table class="tg">
+<thead>
+  <tr>
+    <th style="width: 20%;">イメージバージョン</th>
+    <th style="width: 35%;">イメージ情報</th>
+    <th style="width: 12%;">最終更新日</th>
+    <th style="width: 15%;">更新内容</th>
+      </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Red Hat Enterprise Linux 8.5</td>
+    <td class="tg-0pky">イメージID：img-r5xber0b<br>現在のカーネルバージョン： 4.18.0-425.19.2.el8_7.x86_64</td>
+    <td class="tg-0pky">2023-04-27</td>
+    <td class="tg-0pky">最新のパッチでシステムを更新します。</td>
+    </tr>
+  <tr>
+    <td class="tg-0pky">Red Hat Enterprise Linux 7.9</td>
+    <td class="tg-0pky">イメージID：img-0qhxz7dl<br>現在のカーネルバージョン：3.10.0-1160.88.1.el7.x86_64</td>
+    <td class="tg-0pky">2023-04-27</td>
+    <td class="tg-0pky">最新のパッチでシステムを更新します。</td>
+    </tr>
+</tbody>
+</table>
+
+<dx-alert infotype="explain" title="">
+- Red Hat Enterprise Linux イメージは現在ベータ版テスト版実施中で、ベータ版ユーザになろうとする方は、 [チケットを送信](https://cloud.tencent.com/apply/p/2yj9npvw8lq)してください。
+- CVMを購入したときにRed Hat Enterprise Linux認証に合格したインスタンスタイプを選択した場合は、 Red Hat Enterprise Linuxイメージを使用できます。サポートされているイメージタグとインスタンスタイプについては、 [Red Hat Enterprise Linux イメージに関するよくあるご質問](https://www.tencentcloud.com/document/product/213/55135)をご参照ください。
+</dx-alert>
+
 
 
 ## AlmaLinux
@@ -284,8 +317,8 @@ img-2lj11q1f </a>
 <tr>
         <th style="width: 20%;">イメージバージョン</th>
         <th style="width: 35%;">イメージ情報</th>
-        <th style="width: 14%;">最終更新時間</th>
-        <th style="width: 26%;">最終更新内容</th>
+        <th style="width: 14%;">最終更新日</th>
+        <th style="width: 26%;">更新内容</th>
     </tr>
 		<tr>
 	<td>AlmaLinux 9.0x86_64</td>
@@ -303,7 +336,7 @@ img-f089mf4l</a>
 img-jy2bb29p</a>
 	<br />現在のカーネルバージョン：4.18.0-372.19.1.el8_6.x86_64</td>
 	<td>2022-10-25</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	  <tr>
 	<td>AlmaLinux 8.5x86_64</td>
@@ -312,7 +345,7 @@ img-jy2bb29p</a>
 img-4ogcw28j</a>
 	<br />現在のカーネルバージョン：4.18.0-348.20.1.el8_5.x86_64</td>
 	<td>2022-09-30</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 </table>
 
@@ -321,8 +354,8 @@ img-4ogcw28j</a>
 <tr>
         <th style="width: 20%;">イメージバージョン</th>
         <th style="width: 35%;">イメージ情報</th>
-        <th style="width: 14%;">最終更新時間</th>
-        <th style="width: 26%;">最終更新内容</th>
+        <th style="width: 14%;">最終更新日</th>
+        <th style="width: 26%;">更新内容</th>
     </tr>
 	  <tr>
 	<td>Fedora36x86_64</td>
@@ -331,7 +364,7 @@ img-4ogcw28j</a>
 img-ge141oql</a>
 	<br />現在のカーネルバージョン：5.19.14-200.fc36.x86_64</td>
 	<td>2022-11-07</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	<tr>
 	<td>Fedora 37x86_64</td>
@@ -344,15 +377,13 @@ img-ge141oql</a>
 </table>
 
 
-
-
 ## FreeBSD
 <table>
 <tr>
         <th style="width: 20%;">イメージバージョン</th>
         <th style="width: 35%;">イメージ情報</th>
-        <th style="width: 14%;">最終更新時間</th>
-        <th style="width: 26%;">最終更新内容</th>
+        <th style="width: 14%;">最終更新日</th>
+        <th style="width: 26%;">更新内容</th>
 </tr>
 		<tr>
 			<td>FreeBSD 13.1x86_64</td>
@@ -361,7 +392,7 @@ img-ge141oql</a>
 			img-ng3lehjp</a>
 			<br />現在のカーネルバージョン：13.1-RELEASE</td>
 			<td>2022-09-16</td>
-			<td>最新のシステムパッチへ更新。</td>
+			<td>最新のパッチでシステムを更新します。</td>
   </tr>	
 	<tr>
 			<td>FreeBSD 13.0x86_64</td>
@@ -370,7 +401,7 @@ img-ge141oql</a>
 			img-1lkqxofp</a>
 			<br />現在のカーネルバージョン：13.0-RELEASE</td>
 			<td>2022-09-02</td>
-			<td>最新のシステムパッチへ更新。</td>
+			<td>最新のパッチでシステムを更新します。</td>
   </tr>
 			<tr>
 			<td>FreeBSD 12.3x86_64</td>
@@ -379,7 +410,7 @@ img-ge141oql</a>
 		img-j9m732cx</a>
 			<br />現在のカーネルバージョン：12.3-RELEAS</td>
 			<td>2022-01-20</td>
-			<td>最新のシステムパッチへ更新。</td>
+			<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	<tr>
 	<td>FreeBSD 12.2x86_64</td>
@@ -388,7 +419,7 @@ img-ge141oql</a>
 img-pi37fg9j</a>
 	<br />現在のカーネルバージョン：12.2-RELEAS</td>
 	<td>2022-01-20</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	<tr>
 	<td>FreeBSD 11.4x86_64</td>
@@ -397,7 +428,7 @@ img-pi37fg9j</a>
 img-aif2u6pf</a>
 	<br />現在のカーネルバージョン：11.4-RELEASE</td>
 	<td>2022-10-27</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 </table>
 
@@ -407,8 +438,8 @@ img-aif2u6pf</a>
 <tr>
         <th style="width: 20%;">イメージバージョン</th>
         <th style="width: 35%;">イメージ情報</th>
-        <th style="width: 14%;">最終更新時間</th>
-        <th style="width: 26%;">最終更新内容</th>
+        <th style="width: 14%;">最終更新日</th>
+        <th style="width: 26%;">更新内容</th>
     </tr>
 	<tr>
 			<td>Rocky Linux 9.0x86_64</td>
@@ -424,7 +455,7 @@ img-aif2u6pf</a>
 			<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-no575grb">		img-no575grb</a>
 			<br />現在のカーネルバージョン：4.18.0-372.9.1.el8.x86_64</td>
 			<td>2022-11-25</td>
-			<td>最新のシステムパッチへ更新。</td>
+			<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	  <tr>
 	<td>Rocky Linux 8.5x86_64</td>
@@ -432,7 +463,7 @@ img-aif2u6pf</a>
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-qd4bf0jb">	img-qd4bf0jb</a>
 	<br />現在のカーネルバージョン：4.18.0-348.20.1.el8_5.x86_64</td>
 	<td>2022-10-10</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 </table>
 
@@ -443,8 +474,8 @@ img-aif2u6pf</a>
 <tr>
         <th style="width: 20%;">イメージバージョン</th>
         <th style="width: 35%;">イメージ情報</th>
-        <th style="width: 14%;">最終更新時間</th>
-        <th style="width: 26%;">最終更新内容</th>
+        <th style="width: 14%;">最終更新日</th>
+        <th style="width: 26%;">更新内容</th>
     </tr>
 	 <tr>
 			<td>OpenSUSE Leap 15.4</td>
@@ -455,12 +486,12 @@ img-aif2u6pf</a>
 			<td>イメージがリリースされました。</td>
   </tr>
   <tr>
-	<td>OpenSUSE Leap 15.3</td>
+	<td>OpenSUSE Leap 15.3
 	<td>イメージID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1e4uwwol">img-1e4uwwol</a>
 	<br />現在のカーネルバージョン：5.3.18-59.27-default</td>
-	<td>2021-11-07</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>2022-11-02</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	<tr>
 	<td>OpenSUSE Leap 15.2</td>
@@ -468,16 +499,16 @@ img-aif2u6pf</a>
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-i6u3kbtj">img-i6u3kbtj</a>
 	<br />現在のカーネルバージョン：5.3.18-lp152.106-default</td>
 	<td>2022-01-07</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	<tr>
 	<td>OpenSUSE Leap 15.1</td>
 	<td>イメージID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-4orfgj3l">	
-img-4orfgj3l</a>
+img-4orfgj3l</a><br />現在のカーネルバージョン：4.12.14-lp151.28.91-
 	<br />現在のカーネルバージョン：4.12.14-lp151.28.91-default</td>
-	<td>	2021/12/21	</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>2021-12-21</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 </table>
 
@@ -488,66 +519,65 @@ img-4orfgj3l</a>
 <tr>
         <th style="width: 20%;">イメージバージョン</th>
         <th style="width: 35%;">イメージ情報</th>
-        <th style="width: 14%;">最終更新時間</th>
-        <th style="width: 26%;">最終更新内容</th>
+        <th style="width: 14%;">最終更新日</th>
+        <th style="width: 26%;">更新内容</th>
     </tr>
 	<tr>
-	<td>Windows Server 2022 Datacenter 64ビット中国語版</td>
+	<td>Windows Server 2022 IDC 64-bit Chinese</td>
 	<td>イメージID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-9lw52tbx">img-9lw52tbx</a></td>
-	<td>2022-10-27</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>2023-01-06</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	<tr>
-	<td>Windows Server 2022 データセンターバージョン64ビット英語版</td>
+	<td>Windows Server 2022 IDC 64-bit English</td>
 	<td>イメージID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-cg67n3n9">img-cg67n3n9</a></td>
-	<td>2022-10-27</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>2023-01-06</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
   <tr>
-	<td>Windows Server 2019 Datacenter 64ビット中国語版</td>
+	<td>Windows Server 2019 IDC 64-bit Chinese</td>
 	<td>イメージID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-perxw61f">img-perxw61f</a></td>
-	<td>2022-12-08</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>2023-03-09</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
 	<tr>
-	<td>Windows Server 2019 データセンターバージョン64ビット英語版</td>
+	<td>Windows Server 2019 IDC 64-bit English</td>
 	<td>イメージID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-1dmc4wwp">img-1dmc4wwp</a></td>
-	<td>2022-12-8</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>2023-03-09</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
   <tr>
-	<td>Windows Server 2016 Datacenter 64ビット中国語版</td>
+	<td>Windows Server 2016 IDC 64-bit Chinese</td>
 	<td>イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-9ltji92z">img-9ltji92z</a></td>
-	<td>2022-12-08</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id= img-gu1nmb8d"> img-gu1nmb8d</a></td>
+	<td>2023-03-09</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
   <tr>
-<td>Windows Server 2016 データセンターバージョン64ビット英語版</td>
+<td>Windows Server 2016 IDC 64-bit English</td>
 	<td>イメージID：
 	<a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-6fp83vpb">img-6fp83vpb</a></td>
-	<td>2022-12-08</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<td>2023-03-09</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
   <tr>
-	<td>Windows Server 2012 R2 データセンターバージョン64ビット中国語版</td>
+	<td>Windows Server 2012 R2 IDC 64-bit Chinese</td>
 	<td>イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-29hl923v">img-29hl923v</a></td>
-	<td>2022-03-30</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-ixj8o53x">img-ixj8o53x</a></td>
+	<td>2023-01-06</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
   <tr>
-	<td>Windows Server 2012 R2 データセンターバージョン64ビット英語版</td>
+	<td>Windows Server 2012 R2 IDC 64-bit English</td>
 	<td >イメージID：
-	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-2tddq003">img-2tddq003</a></td>
-	<td>2022-03-30</td>
-	<td>最新のシステムパッチへ更新。</td>
+	<a href="https://console.cloud.tencent.com/cvm/image/detail?id=img-bpsjtw7n">img-bpsjtw7n</a></td>
+	<td>2023-01-06</td>
+	<td>最新のパッチでシステムを更新します。</td>
   </tr>
-
 </table>
 
 
