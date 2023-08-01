@@ -28,11 +28,17 @@
 <span id="redhat"></span>
 
 ## Windows Server 镜像计费说明
+
+在使用 Windows 镜像时，中国大陆地域可享有免除 License 许可费用的优惠，中国大陆以外的地域 License 许可费用包含在实例计费项中，跟随实例的全生命周期一起计费，您可参见下面实例了解如何查看具体费用。
+
+>!示例使用价格可能与实际售卖价格不同，请您以购买页为准。
+
 #### 计费示例
 
-示例背景：新加坡一区，实例为标准型 S5.MEDIUM2，选择按量计费模式。
-- Windows 实例费用为0.05美元/小时，“镜像”项不单独计费，即显示为0美元。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/af8b0002847ce5f1542a90a1990e27ce.png)
+示例背景：新加坡一区，实例为标准型 S5.MEDIUM2，选择按量计费模式购买，除镜像外其余配置均相同。
+- CentOS 实例费用为0.04美元/小时。
+- Windows 实例费用为0.05美元/小时，License 许可费用包含在实例费用内，镜像项不单独计费，即显示为0元。对比如下图所示：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/QCPB267_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16902727662468.png)
 
 
 ## Red Hat Enterprise Linux 镜像计费说明
