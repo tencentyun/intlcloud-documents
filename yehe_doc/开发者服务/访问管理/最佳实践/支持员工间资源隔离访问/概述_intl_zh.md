@@ -13,10 +13,10 @@
 
 ## 预期结果
 - 使用管理员账号查看 CVM 广州区域列表效果： 
-<img src="https://qcloudimg.tencent-cloud.cn/raw/0c9b098919b76c45434c77ba35d2c429.png">                 
+<img src="https://qcloudimg.tencent-cloud.cn/raw/50cfc01f2251596ea26f796060a56716.png">                 
 
 - 使用 cvmtest01 查看 CVM 广州区域列表效果：
-<img src="https://qcloudimg.tencent-cloud.cn/raw/50cfc01f2251596ea26f796060a56716.png">     
+<img src="https://qcloudimg.tencent-cloud.cn/raw/0c9b098919b76c45434c77ba35d2c429.png">     
 
 
 ## 实现方式
