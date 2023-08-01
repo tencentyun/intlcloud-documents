@@ -7,7 +7,7 @@ Your data is scattered among multiple IDCs in a region. When an IDC fails due to
 Multi-AZ provides 99.9999999999% (12 nines) design data reliability and 99.995% design service availability. When you upload data objects to COS, you can store them in a multi-AZ region simply by specifying the storage class.
 
 > ?
-> - Currently, the MAZ configuration of COS is supported only in Beijing, Guangzhou, and Shanghai regions and will be available in other public cloud regions in the future.
+> - Currently, the MAZ configuration of COS is supported only in Beijing, Guangzhou, Shanghai, Hong Kong (China), Singapore regions and will be available in other public cloud regions in the future.
 > - Using the MAZ configuration incurs high storage usage fees. For more information, see [Pricing | Cloud Object Storage](https://buy.intl.cloud.tencent.com/price/cos?lang=en&pg=).
 
 ## Strengths of Multi-AZ
