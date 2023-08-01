@@ -25,7 +25,7 @@ Protection licenses can be purchased through the [CWPP purchase page](https://bu
 ## Overdraft and Renewal
 If auto-renewal has been set, but the deduction is unsuccessful because the relevant account has an insufficient balance or is overdrawn (balance below 0), the original license will be automatically unbound from the server (which means the protection will be stopped) and will enter a 30-day isolation period. If the license is not renewed during this period, the license order will be expired and terminated.
 
-
+>! If you are a customer of a Tencent Cloud partner, the rules regarding resources when there are overdue payments are subject to the agreement between you and the partner.
 
 ## Refund
 Refund amount = Actually paid amount - Price on the official website × Number of licenses/Purchased duration × Protection duration
