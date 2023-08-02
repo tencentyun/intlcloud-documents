@@ -4,7 +4,7 @@ Database Management Center (DMC) is a one-stop Tencent Cloud database management
 
 DMC is currently supported for TencentDB for MySQL, TencentDB for MariaDB, TDSQL-C for MySQL, TencentDB for Redis, and TDSQL for MySQL.
 
-## Overview
+## Features
 - **Data management**
 It supports database operations such as creating and deleting databases/tables, modifying table structures, and maintaining table data.
 
