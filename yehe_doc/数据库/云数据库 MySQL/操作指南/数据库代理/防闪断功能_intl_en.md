@@ -38,7 +38,7 @@ In the following Ops scenarios, the high-availability MySQL instance maintains a
 
 | Ops scenario | Keep-alive rate |
 |---------|---------|
-| Performing source/replica switch | 100% |
+| Performing source-replica switch | 100% |
 | Upgrading kernel minor version | 100% |
 | Adjusting the instance specifications | 100% |
 
