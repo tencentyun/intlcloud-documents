@@ -36,7 +36,7 @@ In different Ops scenarios, you can analyze the ratio of momentary disconnection
 ## Test Results
 In the following Ops scenarios, the high-availability MySQL instance maintains a 100% connection keep-alive rate by the momentary disconnection prevention capability of the database proxy.
 
-| Ops scenario | keep-alive rate |
+| Ops scenario | Keep-alive rate |
 |---------|---------|
 | Performing source/replica switch | 100% |
 | Upgrading kernel minor version | 100% |
