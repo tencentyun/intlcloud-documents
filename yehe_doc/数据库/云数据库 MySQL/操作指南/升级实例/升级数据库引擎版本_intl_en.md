@@ -1,7 +1,7 @@
 
 ## Overview
 This document describes how to upgrade the TencentDB for MySQL engine in the console.
-TencentDB for MySQL supports database engine upgrade:
+TencentDB for MySQL supports database engine upgrade on the following versions:
 - From MySQL 5.5 to MySQL 5.6
 - From MySQL 5.6 to MySQL 5.7
 
@@ -49,7 +49,7 @@ The time it takes depends on the instance's data volume and the read requests to
 TencentDB for MySQL upgrade involves data migration and generally takes a relatively long time. Your business will not be affected during the upgrade and can be accessed as per usual.
 
 #### Why is the instance always in the "Waiting for switch (after upgrade)" status?
-It may be because you select **During maintenance time** as the **Switch Time**, and the switch will be initiated within the next maintenance time after the upgrade.
+It may be because you select **During maintenance time** for **Switch Time**, and the switch will be initiated within the next maintenance time after the upgrade.
 To switch immediately, find the target instance in the instance list and click **Switch Now** in the **Operation** column. The switch will cause a momentary disconnection. Make sure that your business has a reconnection mechanism.
 
 
