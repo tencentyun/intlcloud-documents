@@ -10,8 +10,8 @@ The open-source Percona XtraBackup can be used to back up and restore databases.
 
 ## Prerequisites
 - Download and install XtraBackup.
- - For MySQL 5.6 and 5.7, download Percona XtraBackup 2.4.6 or later at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). For more information on installation, see [Installing Percona XtraBackup on Red Hat Enterprise Linux and CentOS](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html).
- - For MySQL 8.0, download Percona XtraBackup 8.0.22-15 or later at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#). For more information on installation, see [Installing Percona XtraBackup on Red Hat Enterprise Linux and CentOS](https://docs.percona.com/percona-xtrabackup/8.0/installation/yum_repo.html).
+ - For MySQL 5.6 and 5.7, download Percona XtraBackup 2.4.6 or later at [Percona official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). For more information on installation, see [Percona XtraBackup 2.4 documentation](https://docs.percona.com/percona-xtrabackup/2.4/installation/yum_repo.html).
+ - For MySQL 8.0, download Percona XtraBackup 8.0.22-15 or later at [Percona official website](https://www.percona.com/downloads/Percona-XtraBackup-LATEST/#). For more information on installation, see [Percona XtraBackup 8.0 documentation](https://docs.percona.com/percona-xtrabackup/8.0/installation/yum_repo.html).
 - Supported instance architectures: two-node or three-node MySQL
 - Instances with TDE enabled cannot be restored from a physical backup.
 
@@ -73,17 +73,17 @@ xtrabackup --decompress --target-dir=/data/mysql
 ```
 >?
 >- `/data/mysql` is the target directory where the backup file was previously stored. You can replace it with the directory you actually use.
->- The `--remove-original` option is supported only in Percona Xtrabackup v2.4.6 and later.
+>- The `--remove-original` option is supported only in Percona Xtrabackup 2.4.6 and later.
 >- `xtrabackup` won't delete the original files during decompression by default. If you want to delete them upon the completion of decompression, add the `--remove-original` parameter to the above command.
 >
 ![decompress.png](https://main.qcloudimg.com/raw/886e5463ffff0656ffe06d73ffbeb211.png)
 
 ### 3.3 Prepare the backup file
-After a backup file is decompressed, perform the "apply log" operation by running the following command.
+After a backup file is decompressed, perform the `apply log` operation by running the following command.
 ```
 xtrabackup --prepare  --target-dir=/data/mysql
 ```
-If the execution result contains the following output, it means that the preparation succeeded.
+If the execution result contains the following output, it means that the `prepare` operation succeeded.
 ![prepare.png](https://main.qcloudimg.com/raw/13c768fd980f99d7f5824e8f28100950.png)
 		
 ### 3.4 Modify the configuration file
@@ -122,5 +122,5 @@ mysql  -uroot
 ![](https://main.qcloudimg.com/raw/c95419569318a928c0f71978fbb8c6ad.png)
 
 ## FAQs About Backup
-See [General](https://intl.cloud.tencent.com/document/product/236/9036) and [Troubleshooting](https://intl.cloud.tencent.com/document/product/236/34394).
+See [FAQs](https://intl.cloud.tencent.com/document/product/236/9036) and [Troubleshooting](https://intl.cloud.tencent.com/document/product/236/34394).
 
