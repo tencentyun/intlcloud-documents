@@ -1,0 +1,1 @@
+Currently, iPaaS doesn't support configuration downgrade or self-service refunds, and service becomes unavailable upon expiration. To request a refund, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
