@@ -6,11 +6,11 @@ TencentDB for MySQL allows you to set the password complexity to improve the str
  - MySQL 5.7, with minor version 20201231 or later.
  - MySQL 8.0, with minor version 20201230 or later.
 
-- The instance architecture must be two-node/three-node.
+- The instance must be on a two-node/three-node architecture.
 
-## Notes
+## Use Limits
 For any password set during account creation or reset in the TencentDB for MySQL console, it must at least meet the following initial account password requirements:
-- It can contain 8 to 60 characters
+- It can contain 8 to 64 characters
 - It must contain at least three of the following character types: uppercase letters, lowercase letters, digits, and special symbols.
 - Special characters are `_+-&=!@#$%^*()`.
 
@@ -18,7 +18,7 @@ For any password set during account creation or reset in the TencentDB for MySQL
 >?After the password complexity feature is enabled, any password set during account creation or reset must follow the password complexity policy.
 
 ### Enabling when creating an instance on the purchase page
-1. Log in to the [TencentDB for MySQL Purchase Page](https://buy.intl.cloud.tencent.com/cdb).
+1. Log in to the [TencentDB for MySQL purchase page](https://buy.intl.cloud.tencent.com/cdb).
 2. Configure parameters as needed. Select **Enable** after the **Password Complexity** parameter.
 ![](https://qcloudimg.tencent-cloud.cn/raw/d8954b4267f8b9c75b3f33834c8a8ad5.png)
 3. Set the following parameters.
@@ -67,6 +67,6 @@ For any password set during account creation or reset in the TencentDB for MySQL
 3. Select **Disable** in the **Password Complexity** pop-up window and click **OK**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/06c7f71ceaacb063768ac6c83ab78b76.png)
 
-## References
+## Relevant Documentation
 - [Creating Account](https://intl.cloud.tencent.com/document/product/236/31900)
-- [Resetting Instance Password](https://intl.cloud.tencent.com/document/product/236/31901)
+- [Resetting Password](https://intl.cloud.tencent.com/document/product/236/31901)
