@@ -1,8 +1,8 @@
 ## Operation Scenario
-By modifying the host address authorized by the database account in the TencentDB for MySQL Console, you can control the client's access to the database in order to improve the access security.
+By modifying the host address authorized by the database account in the TencentDB for MySQL console, you can control the access to the database to improve the access security.
 
 ## Directions
-1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb).
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
 2. In the instance list, select the instance to be modified and click the instance name or **Manage** in the **Operation** column to enter the instance management page.
 3. Select **Database Management** > **Account Management**, find the account for which to modify the host, and select **More** > **Modify Host**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/ce35c100d385cc7df8f29e6a0b830ada.png)
