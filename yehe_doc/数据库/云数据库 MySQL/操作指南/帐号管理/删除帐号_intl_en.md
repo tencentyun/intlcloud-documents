@@ -1,8 +1,8 @@
 ## Operation Scenarios
-In order to disable an existing database account, it must be deleted in the TencentDB for MySQL Console.
+In order to disable an existing database account, it must be deleted in the TencentDB for MySQL console.
 >!
 >- A database account cannot be recovered once deleted.
->- In order to avoid that the accidental deletion is interrupting the the business normal operation, you need to make sure that the database account to be deleted is no longer in use by any applications.
+>- In order to avoid accidental deletion from interrupting normal use by your business, you need to make sure that the database account to be deleted is no longer used by any applications.
 
 ## Directions
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the "Operation" column to enter the instance management page.
@@ -14,5 +14,5 @@ In order to disable an existing database account, it must be deleted in the Tenc
 ## Related APIs
 | API Name                                                      | Description     |
 | -------------------------------------------------------- | -------- |
-| [DeleteAccounts](https://intl.cloud.tencent.com/document/product/236/17501) | Deletes TencentDB account |
+| [DeleteAccounts](https://intl.cloud.tencent.com/document/product/236/17501) | Deletes a TencentDB account |
 
