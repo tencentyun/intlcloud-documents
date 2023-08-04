@@ -1,4 +1,4 @@
-﻿## 操作场景
+## 操作场景
 
 本文指导您在腾讯轻联告警模块中如何创建、修改、启停、复制和删除告警策略。
 
@@ -93,7 +93,7 @@
     </tr>
 </table>
 4. 配置完以上信息后单击**确定**，即成功创建告警策略。
-   ![](https://qcloudimg.tencent-cloud.cn/raw/bcdb7b3a9e3f42e36436b9cfbc8b3dc3.png)
+
 >?指标解释，可参考 [指标名词](https://www.tencentcloud.com/document/product/1165/51635#vocabulary) 说明。
 
 ### 修改告警策略
