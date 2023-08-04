@@ -24,7 +24,7 @@ You can create, edit, and delete notification templates.
 [](id:new)
 ### Creating a notification template
 
-1. Log in to the iPaaS console and select [**Alarm settings**](https://ipaas.cloud.tencent.com/alarm) > **Notification templates**.
+1. Log in to the iPaaS console and select [**Alarm settings**](https://ipaas.tencentcloud.com/login) > **Notification templates**.
 2. Click **Create** and enter basic information in **Create notification template**.
    - **Template name**: Enter a custom template name.
 3. Configure the notification operation. The parameters are as detailed below:
@@ -85,14 +85,14 @@ You can create, edit, and delete notification templates.
 
 ### Modifying a notification template
 
-1. Log in to the iPaaS console and select [**Alarm settings**](https://ipaas.cloud.tencent.com/alarm) > **Notification templates**.
+1. Log in to the iPaaS console and select [**Alarm settings**](https://ipaas.tencentcloud.com/login) > **Notification templates**.
 2. Click the target template name to enter the editing page.
 3. Edit the target content and click **Confirm**.
 
 
 ### Deleting a notification template
 
-1. Log in to the iPaaS console and select [**Alarm settings**](https://ipaas.cloud.tencent.com/alarm) > **Notification templates**.
+1. Log in to the iPaaS console and select [**Alarm settings**](https://ipaas.tencentcloud.com/login) > **Notification templates**.
 2. Find the name of the target template, click **Delete** in the **Operation** column on the right, and confirm the deletion in the pop-up window.
 > ?A template referenced by an alarm policy cannot be deleted. Cancel the reference in the alarm policy first before deleting the template.
 >

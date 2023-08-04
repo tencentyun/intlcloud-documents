@@ -13,7 +13,7 @@ A security gateway consists of the Server and the Agent:
 [](id:agent)
 ### Step 1. Download the Agent
 
-1. Log in to the [iPaaS console](https://ipaas.cloud.tencent.com/gateway) and select **Security gateway**.
+1. Log in to the [iPaaS console](https://ipaas.tencentcloud.com/login) and select **Security gateway**.
 2. Click **Create** and upload a public key as instructed in [Generating Public and Private Keys](#certificate).
 3. Configure the Agent IP allowlist and private network service, confirm the information, and click **Save**.
 4. Click **Download Agent** in the security gateway list.

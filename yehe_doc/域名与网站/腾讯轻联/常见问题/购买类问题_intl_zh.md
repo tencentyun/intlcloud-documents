@@ -12,5 +12,5 @@
 
 
 ### 企业版的四种配置没有我想要的怎么办？
-在 [腾讯轻联控制台](https://console.cloud.tencent.com/ipaas) 购买页中有“联系我们”的快捷入口，您可以单击 [联系我们](https://intl.cloud.tencent.com/contact-sales) 与专业团队取得联系并完成后续操作。
+在 [腾讯轻联控制台](https://ipaas.tencentcloud.com/login) 购买页中有“联系我们”的快捷入口，您可以单击 [联系我们](https://intl.cloud.tencent.com/contact-sales) 与专业团队取得联系并完成后续操作。
 >?腾讯轻联也支持私有化、混合云等部署方式。

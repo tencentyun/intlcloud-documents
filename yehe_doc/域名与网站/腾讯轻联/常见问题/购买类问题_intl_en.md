@@ -12,5 +12,5 @@ For detailed directions, see [Viewing Environment Configuration](https://www.ten
 
 
 ### What should I do if none of the four Enterprise environment configurations meet my requirements?
-Click [Contact Us](https://intl.cloud.tencent.com/contact-sales) on the purchase page in the [iPaaS console](https://console.cloud.tencent.com/ipaas) to contact our professional team for assistance.
+Click [Contact Us](https://intl.cloud.tencent.com/contact-sales) on the purchase page in the [iPaaS console](https://ipaas.tencentcloud.com/login) to contact our professional team for assistance.
 >?iPaaS also supports on-premises deployment and hybrid cloud deployment.

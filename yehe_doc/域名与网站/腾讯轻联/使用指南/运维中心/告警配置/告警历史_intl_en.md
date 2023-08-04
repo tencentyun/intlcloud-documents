@@ -6,7 +6,7 @@ You can view alarm records in the last 30 days on the alarm history page of iPaa
 
 ### Viewing alarm history
 
-1. Log in to the iPaaS console and select **Alarm settings** > [**Alarm history**](https://ipaas.cloud.tencent.com/alarm).
+1. Log in to the iPaaS console and select **Alarm settings** > [**Alarm history**](https://ipaas.tencentcloud.com/login).
 2. (Optional) Click the time filter in the top-left corner to select the time range of the alarm records to be viewed.
    You can quickly filter alarm records in the last 5 minutes, last 15 minutes, last 30 minutes, last hour, last 6 hours, last 24 hours, yesterday, last 7 days, or last 30 days. You can select a custom time range within the last 30 days.
 3. (Optional) You can enter the information of an alarm object (such as app name) in the **Alarm object** search box to search for the records.

@@ -14,26 +14,26 @@ The options displayed in the **Operation** column vary by app status as follows:
 ## Directions
 ### Creating an integration app
 Create an integration app as follows:
-1. Log in to the [iPaaS console](https://ipaas.cloud.tencent.com/) and click **Integration apps** on the left sidebar.
+1. Log in to the [iPaaS console](https://ipaas.tencentcloud.com/login) and click **Integration apps** on the left sidebar.
 2. On the **Integration apps** page, select the target project name and click **Create integration app**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/4dbfd3e53f5e67b1fd47dc824fac6a93.png)
 3. In the pop-up windown, enter the app name, select the creation method, and click **Confirm** to enter the app configuration page.
 
 ### Configuring an integration app
 View the details or modify the configuration of an app as follows:
-1. Log in to the [iPaaS console](https://ipaas.cloud.tencent.com/) and click **Integration apps** on the left sidebar.
+1. Log in to the [iPaaS console](https://ipaas.tencentcloud.com/login) and click **Integration apps** on the left sidebar.
 2. On the **Integration apps** page, find the target app and click the **App name** to enter the app details page for configuration.
 ![](https://qcloudimg.tencent-cloud.cn/raw/a7450558684a3907d3ab0cc2d7410af7.png)
 
 ### Renaming an integration app
 Rename a modified app as follows for easier identification:
-1. Log in to the [iPaaS console](https://ipaas.cloud.tencent.com/) and click **Integration apps** on the left sidebar.
+1. Log in to the [iPaaS console](https://ipaas.tencentcloud.com/login) and click **Integration apps** on the left sidebar.
 2. On the **Integration apps** page, find the target app, click **Rename** in the **Operation** column, and enter a new name as prompted.
 ![](https://qcloudimg.tencent-cloud.cn/raw/037fbf863667b57f24defbefb2d85a44.png)
 
 ### Importing/Exporting an integration app
 To share an integration app with another account or change the project of an app (currently, you cannot directly perform such operations), you can use the import and export features.
-1. Log in to the [iPaaS console](https://ipaas.cloud.tencent.com/) and click **Integration apps** on the left sidebar.
+1. Log in to the [iPaaS console](https://ipaas.tencentcloud.com/login) and click **Integration apps** on the left sidebar.
 2. On the **Integration apps** page, click **Import integration app** in the top-left corner to import an app, or find the target app and click **Export** in the **Operation** column to export the app.
  - When exporting an app, you can select the target version and choose to export all or the specified flows and connections. The exported app will be automatically downloaded as an .ipaas file.
  - To import an app, you only need to upload its .ipaas file.  
@@ -43,12 +43,12 @@ To share an integration app with another account or change the project of an app
 An integration app that is not running can be deleted.
 >!The data of a deleted app cannot be recovered. Therefore, export the data for backup or check whether the data is needed before deleting an app.
 >
-1. Log in to the [iPaaS console](https://ipaas.cloud.tencent.com/) and click **Integration apps** on the left sidebar.
+1. Log in to the [iPaaS console](https://ipaas.tencentcloud.com/login) and click **Integration apps** on the left sidebar.
 2. On the **Integration apps** page, find the target app and click **Delete** in the **Operation** column.
 ![](https://qcloudimg.tencent-cloud.cn/raw/527974072a9a4bb1e4f09600b25ff517.png)
 ### Viewing running logs
 You can quickly view the running logs of a running integration app.
-1. Log in to the [iPaaS console](https://ipaas.cloud.tencent.com/) and click **Integration apps** on the left sidebar.
+1. Log in to the [iPaaS console](https://ipaas.tencentcloud.com/login) and click **Integration apps** on the left sidebar.
 2. On the **Integration apps** page, find the target app and click **Running logs** in the **Operation** column.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5d68c7905a9fff72914d1cbc1f5fd415.png)
 3. On the **Running logs** tab, you can view the running logs of the currently running version of the currently running app (logs in the last 30 minutes are returned by default).

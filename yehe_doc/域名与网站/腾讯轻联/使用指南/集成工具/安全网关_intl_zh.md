@@ -13,7 +13,7 @@
 [](id:agent)
 ### 步骤1：下载 Agent
 
-1. 登录 [腾讯轻联控制台](https://ipaas.cloud.tencent.com/gateway)，选择**安全网关**。
+1. 登录 [腾讯轻联控制台](https://ipaas.tencentcloud.com/login)，选择**安全网关**。
 2. 单击**创建安全网关**，参见 [生成公私钥](#certificate) 上传公钥。
 3. 配置 Agent IP 白名单和内网服务，单击**保存**并确认。
 4. 在安全网关列表中单击下载 Agent 按钮，下载 Agent。

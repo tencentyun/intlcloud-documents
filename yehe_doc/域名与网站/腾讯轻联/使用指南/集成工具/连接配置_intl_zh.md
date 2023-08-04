@@ -5,7 +5,7 @@
 
 ### 添加连接配置
 #### 步骤1：基本信息
-登录 [腾讯轻联控制台](https://ipaas.cloud.tencent.com/connect-config)，选择**集成工具 > 连接配置** ，选择对应项目名称后单击**创建连接配置**进入连接配置添加界面。
+登录 [腾讯轻联控制台](https://ipaas.tencentcloud.com/login)，选择**集成工具 > 连接配置** ，选择对应项目名称后单击**创建连接配置**进入连接配置添加界面。
 ![](https://qcloudimg.tencent-cloud.cn/raw/afc7e307cb26a23b099a98d0f4c17164.png)
 
 #### 步骤2：授权和配置

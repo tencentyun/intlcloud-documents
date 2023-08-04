@@ -5,7 +5,7 @@ The **Connection** page centrally displays the configuration information of all 
 
 ### Adding a connection
 #### Step 1. Configure the basic information
-Log in to the [iPaaS console](https://ipaas.cloud.tencent.com/connect-config) and select **Integration tools** > **Connection**. On the **Connection** page, select the target project name and click **Create connection** to enter the connection creation page.
+Log in to the [iPaaS console](https://ipaas.tencentcloud.com/login) and select **Integration tools** > **Connection**. On the **Connection** page, select the target project name and click **Create connection** to enter the connection creation page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/afc7e307cb26a23b099a98d0f4c17164.png)
 
 #### Step 2. Complete authorization and configuration
