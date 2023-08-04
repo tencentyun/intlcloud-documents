@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 The **Connection** page centrally displays the configuration information of all authorized app accounts under the current account. In the same integration app, you can add multiple connections. In the same project, you can use an applicable configuration for different integration apps. You can also quickly add and modify connections. The configuration content of used integration apps will also be updated in real time.
 
 ## Directions
