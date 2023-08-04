@@ -1,4 +1,4 @@
-﻿### Can I use Trial product?
+### Can I use Trial product?
 - A new user can enjoy a 30-day free trial and can purchase the Enterprise edition after the trial expires.
 
 
