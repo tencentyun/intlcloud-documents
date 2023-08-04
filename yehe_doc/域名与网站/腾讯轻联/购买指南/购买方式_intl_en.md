@@ -1,4 +1,5 @@
-﻿## Purchasing the Enterprise Edition
+
+## Purchasing the Enterprise Edition
 
 iPaaS offers a 30-day free trial. During or after the trial period, you can purchase the Enterprise edition in the [iPaaS console](https://console.cloud.tencent.com/ipaas).
 
