@@ -11,7 +11,7 @@ TDSQL is a distributed database that supports sharding.
 Sharding is to spread the data of a table into multiple independent physical database servers according to a defined rule to form an "independent" database "shard". Multiple shards together form a logically complete database instance.
 
 #### Shared Nothing architecture
-The Shared Nothing architecture can scale data and access capacity by simply adding more servers. Although it can meet the database capacity needs of most users, it is essentially a minicomputer + shared storage solution that is prone to capacity and performance bottlenecks and relatively expensive.
+The traditional solution uses minicomputers and shared storage, which is more expensive and prone to capacity and performance bottlenecks. TDSQL adopts the Shared Nothing architecture, with each node computing and storing a portion of data. Therefore, no matter how quickly your business grows, you just need to keep adding servers in the distributed cluster to meet the growing computing and storage needs.
 ![](https://main.qcloudimg.com/raw/280276ed738586bc34b959c38346d01a.png)
 
 #### Data splitting methods (sharding rules)
