@@ -1,4 +1,4 @@
-﻿## 操作场景
+## 操作场景
 
 本文指导您在腾讯轻联告警模块中通知模板相关内容。
 
@@ -10,7 +10,7 @@
 - 查看通知模板：子账号需拥有腾讯轻联的项目读权限。
 - 创建、编辑、删除通知模板：子账号需拥有腾讯轻联的项目写权限。
 
-> ?详情可参考 [访问权限](https://intl.cloud.tencent.com/document/product/248/36744) 进行子账号授权。
+>?详情可参考 [访问权限](https://intl.cloud.tencent.com/document/product/248/36744) 进行子账号授权。
 
 ## 使用限制
 
@@ -29,10 +29,10 @@
    - **模板名称**：自定义模板名称。
 3. 填写通知操作，参数说明如下：
 	- **用户通知**
-> ?
-> - [系统管理员](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2) 和 [项目管理员](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2)：下拉支持选择当前项目下的所有成员账号。
-> - [项目成员](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2)：只能选择该成员账号。
-> - [普通成员](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2)：只能选择该成员账号。
+>?
+>- [系统管理员](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2) 和 [项目管理员](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2)：下拉支持选择当前项目下的所有成员账号。
+>- [项目成员](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2)：只能选择该成员账号。
+>- [普通成员](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2)：只能选择该成员账号。
 <table>
 <thead>
 <tr>
@@ -74,11 +74,13 @@
 <td>定义接收告警的时间段。</td>
 </tr>
 </tbody></table>
-> ? 
+
+>? 
 >- 回调地址保存成功后，当用户创建的告警策略被触发或被恢复均会通过接口回调推送告警消息。
 >- 当用户创建的告警策略被触发或恢复时，均会通过接口回调推送告警消息。接口回调也支持重复告警。
 >- 腾讯轻联告警配置的回调是通过 GET 方法调用回调地址，具体日志可通过您配置的服务地址的日志查看是否触发了回调。
 >
+
 4. 单击**确定**，即可新建一个通知模板。
    ![](https://qcloudimg.tencent-cloud.cn/raw/15ec0b30d31d97a4b1184eb9b0539a99.png)
 
