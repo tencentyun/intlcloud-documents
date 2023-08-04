@@ -13,7 +13,7 @@
 <td>Launches Anti-DDoS Pro (Enterprise)</td>
 <td>Anti-DDoS Pro (Enterprise) provides Tbps-level protection for applications deployed in and outside the Chinese mainland. It takes effect only after binding with an Anti DDoS EIP. It is applicable to enterprises with high demand on application security.</td>
 <td>3/6/2023</td>
-<td> <a href="https://cloud.tencent.com/document/product/1021/87036">Billing Overview (Enterprise)</a>
+<td> <a href="https://www.tencentcloud.com/document/product/1029/55301">Billing Overview (Enterprise)</a>
 </td>
 </tr>
 </tbody></table>
