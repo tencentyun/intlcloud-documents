@@ -1,4 +1,4 @@
-This document describes the notes for the TencentDB for MySQL database proxy.
+This document describes the use limits for the TencentDB for MySQL database proxy.
 
 - When using the proxy connection address, if you don't enable transaction split, transaction requests will be routed to the source instance.
 
