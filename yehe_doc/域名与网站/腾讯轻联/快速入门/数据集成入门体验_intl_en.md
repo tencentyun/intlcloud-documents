@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 **Data integration** integrates data from different sources and in different formats to provide your business with comprehensive data sharing and give you a unified and more valuable view of all your data. This helps you make better decisions based on complex and heterogeneous data sources in a fast and stable data environment.
 
 Data integration helps you fully utilize data assets to make smart decisions and drive your business.
