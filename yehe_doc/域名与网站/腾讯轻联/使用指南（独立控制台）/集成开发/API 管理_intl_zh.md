@@ -1,4 +1,4 @@
-﻿## 操作场景
+## 操作场景
 各大企业每天都有大量的 API 增长，同时越来越多公司开始公开 Web API，API 的使用场景正在累积。现在，每日 API 调用量在不断飙升，如何能够安全有效将这些 API 管理起来对于企业而言并不容易。
 
 腾讯轻联提供 API 发布功能，可以一键将已发布的应用打包生成 API，方便用户进行管理和调用；同时提供了 API 管理能力，可以针对 API 进行访问权限管控和流量调度。
@@ -85,7 +85,7 @@ API 名称、描述支持自定义。分组可选择默认分组、新建分组�
 ![](https://qcloudimg.tencent-cloud.cn/raw/f0733f950f62484bb53122014a4b90a4.png)
 4. 发布后，发布后的API状态为**运行中**。
 5. 右上角的**复制**，可将当前版本覆盖到配置中的版本。复制后，API 服务可以再次发布。一个 API 服务可以发布到多个环境。
-6. 可在 API 详情页可查看其日志和监控。日志与监控详细信息参见 [运维中心-监控管理]() 和 [运维中心-运行日志]()。
+6. 可在 API 详情页可查看其日志和监控。日志与监控详细信息参见 [运维中心-监控管理](https://www.tencentcloud.com/document/product/1165/51635) 和 [运维中心-运行日志](https://www.tencentcloud.com/document/product/1165/51636)。
 7. 发布后的 API 服务可停止服务。
 
 ### 描述文件
@@ -175,6 +175,7 @@ API 目录展示已上架的 API 服务。类似一个 API 服务市场，上架
  3. 打开 postman，在输入框填入第1步获取的 API 调用地址。
  4. 将 postman 切换到Pre-request Script标签下，粘贴下方代码段（注意用第2步获取的 HMAC 的Key和Secret，分别来替换代码段中的hmac_key和hmac_secret变量值）。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/9EpR147_66845f28a4d9e8e4aae3d689d73c85ef.png)
+
 ```
 var hmac_key = "2e4d0bbad47e3b5e3a0c";
 var hmac_secret = "815ba6d666d58ef1e79b";
@@ -192,6 +193,7 @@ console.log("requestSignatureBase64String:" + requestSignatureBase64String)
 pm.globals.set("sign", requestSignatureBase64String); //hmac签名
 pm.globals.set("hmac_key", hmac_key); //hmac key
 pm.globals.set("date", time); //请求时间
+
 ```
 
  5. 将 postman 切换到 Headers 标签下，输入下图中的4个KEY-VALUE对。最后，点击 **send** 按钮，即可看到调用API的返回结果。![](https://staticintl.cloudcachetci.com/yehe/backend-news/Rz73063_15374d13a67f41e1e478c1474fbcfd11.png)
