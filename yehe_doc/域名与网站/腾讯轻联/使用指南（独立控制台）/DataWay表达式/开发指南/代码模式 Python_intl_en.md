@@ -262,16 +262,14 @@ The Python code mode supports script debugging to help troubleshoot problems and
 
 1. Enter an expression in the script textbox.
 In Dataway debugging mode, you can use the `print()` function in the expression to print the information to be observed. The printed message will be displayed on the UI after the script is executed.
- <img src="https://qcloudimg.tencent-cloud.cn/raw/5bf051c8ac8496ac816217f29bad0671.png" alt="" style="zoom:50%;" />
+
 
 2. Click the **Debug** icon in the top-right corner of the script editing window. In the simulated data configuration pop-up window, you can set the payload, attributes, and variables of `msg`. After completing the configuration, click **Start test**, and the system will automatically assemble a `msg` parameter and pass it to the `dw_process` function as the script input.
- <img src="https://qcloudimg.tencent-cloud.cn/raw/5a8e4ff1bc6603ac7709638cf1030aa5.png" alt="" style="zoom:50%;" />
+
 
 3. After the `dw_process` function is executed, the execution result and printed debugging log will pop up at the bottom of the editing window. If errors occur during execution, error messages will be displayed.
 	- **Output**: It displays the execution result of the Dataway expression.
-	 <img src="https://qcloudimg.tencent-cloud.cn/raw/0e9d2d98a81736f3294f0c121d9b4127.png" alt="" style="zoom:50%;" />
-	- **Log**: It displays the debugging log printed through the `print` function in the script.
-	  <img src="https://qcloudimg.tencent-cloud.cn/raw/80720758e4387f476465acbcdfe1cf3a.png" alt="" style="zoom:50%;" />
+
 	- **Error**: It displays the script execution error message. If no errors occur, a green tick will be displayed.
 
 
