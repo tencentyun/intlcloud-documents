@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 
 You can view alarm records in the last 30 days on the alarm history page of iPaaS.
 
