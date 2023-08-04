@@ -10,7 +10,7 @@ TencentDB for MySQL imposes data volume restrictions on all types of MySQL insta
 ## Limit on the Number of Connections
 The maximum number of connections to a MySQL instance is specified with the MySQL system variable `max_connections`. When the actual number exceeds `max_connections`, no more connections can be established.
 The default number of connections to TencentDB can be viewed by clicking the instance ID to enter the **Database Management** > **Parameter Settings** page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), which can be adjusted if necessary. However, more connections mean that more system resources will be consumed; if the number of connections goes beyond what the actual system load capacity allows, the system service quality will be definitely undermined.
-For more information on `max_connections`, see [MySQL's official documentation](https://dev.mysql.com/doc/).
+For more information on `max_connections`, see [MySQL official documentation](https://dev.mysql.com/doc/).
 
 ## Limits on the MySQL Client Version
 We recommend that you use the MySQL client and library that come with CVM to connect to TencentDB instances.
@@ -26,7 +26,7 @@ If binlogs are retained for an extended period of time or grow too fast, additio
 ### Notes on the character set
 TencentDB for MySQL uses the UTF8 character set by default.
 Even though TencentDB supports changing the default character set, we recommend that you explicitly specify the encoding format for a table when creating it and specify the connection encoding during connection establishment. In this way, your application will be more portable.
-For more information on the resources of MySQL character set, see [MySQL's official documentation](https://dev.mysql.com/doc/).
+For more information on the resources of MySQL character set, see [MySQL official documentation](https://dev.mysql.com/doc/).
 
 You can modify the character set through SQL or in the TencentDB for MySQL console.
 
