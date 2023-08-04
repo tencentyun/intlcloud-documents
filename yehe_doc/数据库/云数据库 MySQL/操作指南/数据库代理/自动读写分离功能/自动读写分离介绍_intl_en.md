@@ -22,7 +22,7 @@ With the dedicated database proxy, you can build applications that can tolerate 
 ![](https://main.qcloudimg.com/raw/a5f23e2235bc918b1a7e816c8f2c947b.png)
 
 ## Advantages
-- Read/Write requests are automatically separated with a unified access address.
+- Read/write requests are automatically separated with a unified access address.
 - Native linkage support improves the performance and reduces the maintenance costs.
 - You can flexibly set weights and thresholds.
 - Failover is supported, so that even if the database proxy fails, requests can access the source database normally.
