@@ -802,4 +802,4 @@ Dataway supports visual data reference. On the **Flow data** panel, you can clic
 
 1. The **Flow data** panel will pop up automatically when you click the Dataway textbox.
 2. On the **Flow data** panel, click a data tag to select it, and the Dataway textbox will directly reference the flow context data and insert the data tag where the cursor is.
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b8690a07abe2c2f57c3aa686d59de4e9.png" alt="" style="zoom:50%;" />
+
