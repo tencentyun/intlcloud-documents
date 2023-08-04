@@ -1,4 +1,4 @@
-﻿## Use Cases
+## Use Cases
 iPaaS provides various status management solutions. You can log in to the [iPaaS console](https://ipaas.tencentcloud.com/login) and click **Integration tools** > **General storage** on the left sidebar to manage storage structures and data used in your project.
 
 
