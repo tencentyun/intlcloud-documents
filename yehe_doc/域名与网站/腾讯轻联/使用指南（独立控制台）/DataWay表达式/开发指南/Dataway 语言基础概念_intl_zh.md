@@ -802,4 +802,4 @@ Dataway 支持可视化数据引用，在**"集成流数据面板"**点击数据
 
 1. 单击 Dataway 输入文本框时自动弹出**集成流数据面板**。
 2. 单击选择**集成流数据面板**中的数据标签，Dataway 编辑文本框中会自动引用集成流上下文数据，并在当前光标位置插入对应的数据标签。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b8690a07abe2c2f57c3aa686d59de4e9.png" alt="集成流数据面板" style="zoom:50%;" />
+
