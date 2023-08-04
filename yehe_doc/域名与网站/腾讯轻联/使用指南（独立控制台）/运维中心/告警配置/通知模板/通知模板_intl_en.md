@@ -10,7 +10,7 @@ You can create, edit, and delete notification templates.
 - Viewing a notification template: The sub-account must have the project read permission in iPaaS.
 - Creating/Editing/Deleting a notification template: The sub-account must have the project write permission in iPaaS.
 
-> ?For more information on how to grant sub-accounts permissions, see [Granting Tencent Cloud Service Permissions](https://intl.cloud.tencent.com/document/product/248/36744).
+>?For more information on how to grant sub-accounts permissions, see [Granting Tencent Cloud Service Permissions](https://intl.cloud.tencent.com/document/product/248/36744).
 
 ## Use Limits
 
@@ -29,7 +29,7 @@ You can create, edit, and delete notification templates.
    - **Template name**: Enter a custom template name.
 3. Configure the notification operation. The parameters are as detailed below:
 	- **User notification**
-> ?
+>?
 > - [System admin](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2) and [project admin](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2): They can select all member accounts of the current project in the drop-down list.
 > - [Project member](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2): They can select only their own accounts.
 > - [Ordinary member](https://www.tencentcloud.com/document/product/1165/51574#.E8.85.BE.E8.AE.AF.E4.BA.91.E6.95.B0.E6.8D.AE.E8.BF.9E.E6.8E.A5.E5.99.A8.E8.A7.92.E8.89.B2): They can select only their own accounts.
@@ -74,11 +74,13 @@ You can create, edit, and delete notification templates.
 <td>Define the time period for receiving alarms.</td>
 </tr>
 </tbody></table>
-> ? 
+
+
+>? 
 >- After the callback URL is saved successfully, when a created alarm policy is triggered or the alarm is cleared, the alarm messages will be pushed through webhook.
 >- When a created alarm policy is triggered or the alarm is cleared, the alarm messages will be pushed through webhook. Webhooks also support repeated alarms.
 
->
+
 4. Click **Confirm**.
    ![](https://qcloudimg.tencent-cloud.cn/raw/15ec0b30d31d97a4b1184eb9b0539a99.png)
 
