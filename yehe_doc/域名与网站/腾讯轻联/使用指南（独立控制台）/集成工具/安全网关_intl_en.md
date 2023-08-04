@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 
 A security gateway is a proxy system designed to integrate and interconnect iPaaS and your private network service. You can use it when you want to integrate your private network service through iPaaS (deployed in the public cloud) but your private network service is inaccessible over the public network.
 
