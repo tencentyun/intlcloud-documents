@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 
 This document describes how to create, modify, enable, disable, copy, and delete an alarm policy in the alarm module of iPaaS.
 
@@ -93,7 +93,7 @@ You can use an alarm policy to set a threshold alarm for metrics such as number 
     </tr>
 </table>
 4. After configuring the above information, click **Confirm**.
-   ![](https://qcloudimg.tencent-cloud.cn/raw/df6b536d8f80bf50a1990c439ac2d52c.png)
+
 >?For the metric description, see [Monitoring Metric Description](https://www.tencentcloud.com/document/product/1165/51635#vocabulary).
 
 ### Modifying an alarm policy
