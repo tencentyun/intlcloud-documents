@@ -1,4 +1,4 @@
-﻿## Overview
+## Overview
 
 Environment management enables you to view and manage environments and runtime environments easily. You can view the configuration, usage, and Ops information of deployed environments at one stop.
 
@@ -101,8 +101,8 @@ You can enter the **Applications** tab on the environment details page or by sel
   ![](https://qcloudimg.tencent-cloud.cn/raw/81ed73bd794d2e55f93147bfb934e2a1.png)
 :::
 ::: Configuration
->!The **Configuration** tab is displayed only for an exclusive environment. Currently, the configuration parameters cannot be modified on the backend by default for the shared environment.
->
+**Note**:The **Configuration** tab is displayed only for an exclusive environment. Currently, the configuration parameters cannot be modified on the backend by default for the shared environment.
+
 The **Configuration** tab centrally displays parameter configurations, including environment configuration (environment use limits), Dataway configuration, and component configuration. You can modify the upper limits as needed and click **Save**. To restore the default value, click **Reset** as shown below:
 ![](https://qcloudimg.tencent-cloud.cn/raw/4c33ba725cb0b52864f6ec80fd2284b8.png)
 
