@@ -65,7 +65,7 @@ time 用于时间处理的库，可参考 [Python 官方文档](https://docs.pyt
 | 8    | tzname            | 当前时区名称                                                 |
 | 9    | time()            | 当前时间                                                     |
 | 10   | localtime         | 将一个时间戳转换为当前时区的本地时间，返回 struct_time 类型对象 |
-   
+
 	 
 ### json 
 json 用于处理 json 数据的库，可参考 [Python 官方文档](https://docs.python.org/zh-cn/3.5/library/json.html)。已内置代码模式 Python，可以直接引用。
@@ -134,7 +134,7 @@ hashlib 用于生成哈希值的库，可参考 [Python官方文档](https://doc
 |  1   | hashlib.sha256()  |  创建一个 SHA-256 hash 对象。  | 
 |  2   | hashlib.md5()  |  创建一个 MD5 的 hash 对象。  | 
 |  3   | hashlib.sha1()  | 创建一个 SHA1 的 hash 对象。  | 
-    
+
 
 ### datetime
 datetime 用于时间日期处理的库，可参考 [Python官方文档](https://docs.python.org/zh-cn/3.5/library/datetime.html)。已内置代码模式 Python，可以直接引用。 支持的函数/属性有：
@@ -147,7 +147,7 @@ datetime 用于时间日期处理的库，可参考 [Python官方文档](https:/
 | 4   | datetime.timedelta   | 表示两个 date 对象或者 time 对象，或者 datetime 对象之间的时间间隔，精确到微秒。   |
 | 5   | datetime.timezone   | 表示相对于世界标准时间（UTC）的偏移量。   |
 | 6   | datetime.tzinfo   | 描述时区信息对象, 用来给 datetime 和 time 类提供自定义的时间调整概念，如处理时区和/或夏令时。   |
-	
+
 	
 ### decimal
 decimal 用于定点数处理的库，可参考 [Python官方文档](https://docs.python.org/zh-cn/3.5/library/decimal.html)。已内置代码模式 Python，可以直接引用。 支持的函数/属性有：
@@ -174,16 +174,14 @@ pycryptodome 是专用的加密工具三方库，可参考 [pycryptodome官方�
 |   1  | Crypto.Util.Padding | 该模块为添加和删除数据中的标准填充提供了最小的支持, 提供 pad()、unpad() 方法。 |
 |   2  | Crypto.Cipher.AES  | AES 加密模块。它具有16字节的固定数据块大小，密钥可以是128、192或256位长。提供 new() 方法。 |
 
-
 ### struct
 struct 用于打包二进制文件的库，可参考 [Python官方文档](https://docs.python.org/zh-cn/3.5/library/struct.html)。已内置代码模式 Python，可以直接引用。 支持的函数/属性有：
 
-| 序号 |支持的函数/属性| 功能说明                                                     |
-| ---- | ----------------- | ------------------------------------------------------------ |
+| 序号 |支持的函数/属性| 功能说明 |
+| ---- | ----------------- | -------- |
 |   1  |  struct.pack(format, v1, v2, ...) | 返回一个 bytes 对象，其中包含根据格式字符串 format 打包的值 v1, v2, ... 参数个数必须与格式字符串所要求的值完全匹配。|
 |   2  |   struct.unpack(format, buffer) | 根据格式字符串 format 从缓冲区 buffer 解包，返回一个 tuple。|
-  
-	
+
 ### urllib	
 urllib 用于 URL 处理的库，可参考 [Python官方文档](https://docs.python.org/zh-cn/3.5/library/urllib.html)。已内置代码模式 Python，可以直接引用。 支持的函数/属性有：
 
