@@ -65,7 +65,7 @@ Currently, the Python code mode supports the following library functions/types:
 | 8    | tzname            | Returns the name of the current time zone.                                                 |
 | 9    | time()            | Returns the current time.                                                     |
 | 10   | localtime         | Converts a timestamp into the local time of the local time zone and returns a `struct_time` object. |
-   
+
 	 
 ### json 
 `json` is a library for JSON data processing. For more information, see [19.2. json - JSON encoder and decoder](https://docs.python.org/zh-cn/3.5/library/json.html). It has been built in the Python code mode and can be referenced directly.
@@ -134,7 +134,7 @@ The following constants are supported:
 |  1   | hashlib.sha256()  | Creates a SHA-256 hash object.  | 
 |  2   | hashlib.md5()  |  Creates an MD5 hash object.  | 
 |  3   | hashlib.sha1()  | Creates a SHA-1 hash object.  | 
-    
+
 
 ### datetime
 `datetime` is a library for time and date processing. For more information, see [8.1. datetime - Basic date and time types](https://docs.python.org/zh-cn/3.5/library/datetime.html). It has been built in the Python code mode and can be referenced directly. The following functions/attributes are supported:
@@ -147,8 +147,7 @@ The following constants are supported:
 | 4   | datetime.timedelta   | Duration expressing the difference between two `date`, `time`, or `datetime` objects to microsecond resolution.   |
 | 5   | datetime.timezone   | Offset from UTC.   |
 | 6   | datetime.tzinfo   | Time zone information objects. These are used by the `datetime` and `time` classes to provide a customizable notion of time adjustment (for example, to account for time zone and/or DST).   |
-	
-	
+
 ### decimal
 `decimal` is a library for floating-point number processing. For more information, see [9.4. decimal - Decimal fixed point and floating point arithmetic](https://docs.python.org/zh-cn/3.5/library/decimal.html). It has been built in the Python code mode and can be referenced directly. The following functions/attributes are supported:
 
@@ -182,8 +181,7 @@ The following constants are supported:
 | ---- | ----------------- | ------------------------------------------------------------ |
 |   1  |  struct.pack(format, v1, v2, ...) | Returns a `bytes` object containing the values `v1`, `v2`, ... packed according to the format string `format`. The arguments must match the values required by the format exactly. |
 |   2  |   struct.unpack(format, buffer) | Unpacks from the buffer `buffer` according to the format string `format` and returns a tuple. |
-  
-	
+
 ### urllib	
 `urllib` is a library for URL processing. For more information, see [21.5. urllib - URL handling modules](https://docs.python.org/zh-cn/3.5/library/urllib.html). It has been built in the Python code mode and can be referenced directly. The following functions/attributes are supported:
 
