@@ -38,7 +38,7 @@ This feature is currently available in Beijing, Shanghai, Guangzhou, Shenzhen, a
 2. On the instance management page, select **Backup and Restoration** > **Cross-Region Backup**.
 3. In the **Cross-Region Backup** window, complete the configuration and click **OK** to enable cross-region backup.
  - Cross-Region Backup: It is disabled by default.
- - Back Up Binlog: When cross-region backup is enabled, it will be enabled automatically and can be disabled separately.
+ - Back up Binlog: When cross-region backup is enabled, it will be enabled automatically and can be disabled separately.
  - Backup Region: Select one or two regions other than the source instance region.
  - Backup Retention Period: 7 days by default. Value range: 3–1830 days. Backup sets will be deleted automatically upon expiration.
 4. After cross-region backup is completed, the backup will be synced to the target region and can be queried in the backup list of the source instance.
