@@ -35,7 +35,7 @@ TencentDB for MySQL provides system parameter templates for batch parameter sett
 ## November 2020
 | Parameter | MySQL 8.0 | Change Description | 
 |---------|---------|---------|
-| iinnodb_flush_log_at_trx_commit | &#10003; | New parameter |
+| iinnodb_flush_log_at_trx_commit | &#10003; | Parameter added |
 | sync_binlog | &#10003; | Parameter added |
 | local_infile  | &#10003; | Parameter added |
 | innodb_log_file_size | &#10003; | Parameter added |
@@ -53,11 +53,11 @@ TencentDB for MySQL provides system parameter templates for batch parameter sett
 ## August 2020
 | Parameter | MySQL 5.6 | MySQL 5.7 | Change Description | 
 |---------|---------|---------|---------|
-| log_warnings | &#10003; | &#10003; | New parameter |
-| innodb_flush_log_at_trx_commit | &#10003; | &#10003; | New parameter |
-| sync_binlog | &#10003; | &#10003; | New parameter |
-| local_infile | &#10003; | &#10003; | New parameter |
-| innodb_log_file_size | &#10003; | &#10003; | New parameter |
+| log_warnings | &#10003; | &#10003; | Parameter added |
+| innodb_flush_log_at_trx_commit | &#10003; | &#10003; | Parameter added |
+| sync_binlog | &#10003; | &#10003; |Parameter added |
+| local_infile | &#10003; | &#10003; | Parameter added |
+| innodb_log_file_size | &#10003; | &#10003; | Parameter added |
 | binlog_format | &#10003; | &#10003; | New range value: `row` |
 | innodb_autoinc_lock_mode | &#10003; | &#10003; | New default value: `2` |
 | innodb_open_files | &#10003; | &#10003; | New value range: 1–102400 |
