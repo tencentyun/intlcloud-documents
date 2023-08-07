@@ -7,17 +7,17 @@ TencentDB for MySQL provides system parameter templates for batch parameter sett
 ## January 2023
 | Parameter | MySQL 5.7 | MySQL 8.0 | Change Description | 
 |---------|---------|---------|---------|
-| max_execution_time | &#10003; | &#10003;|  `max_execution_time` supports dynamic settings <br><li>Whether to restart: No<br><li>Default value: `0`<br><li>Value range: 0–4294967295<br><li>Unit: ms |
+| max_execution_time | &#10003; | &#10003;|  Dynamic setting is supported for `max_execution_time` <br><li>Restart required: No<br><li>Default value: `0`<br><li>Value range: 0–4294967295<br><li>Unit: ms |
 
 ## August 2022
 | Parameter | MySQL 5.7 | MySQL 8.0 | Change Description | 
 |---------|---------|---------|---------|
-| innodb_buffer_pool_size | &#10003; | &#10003; | `innodb_buffer_pool_size` supports dynamic settings <br><li> Whether to restart: No <br><li> Default value: {DBInitMemory * 786432}<br><li> Value range: {DBInitMemory * 524288} - {DBInitMemory * 943718}<br><li> DBinitMemory: An integer of instance memory size |
+| innodb_buffer_pool_size | &#10003; | &#10003; | Dynamic setting is supported for `innodb_buffer_pool_size` <br><li> Restart required: No <br><li> Default value: {DBInitMemory * 786432}<br><li> Value range: {DBInitMemory * 524288} - {DBInitMemory * 943718}<br><li> DBinitMemory: An integer of instance memory size |
 
 ## July 2022
 | Parameter | MySQL 5.7 | MySQL 8.0 | Change Description | 
 |---------|---------|---------|---------|
-| innodb_temp_data_file_path | &#10003; | &#10003; | Parameter modification is supported for `innodb_temp_data_file_path` (temp tablespace size) and the parameter properties are as follows: <br><li>Whether to restart: Yes <br><li> Default value: `ibtmp1:12M:autoextend`<br><li>Value range of `ibtmp`: 12 MB - 1024 MB. After you select `autoextend`, the maximum value can be set to 2097152 MB |
+| innodb_temp_data_file_path | &#10003; | &#10003; | Parameter modification is supported for `innodb_temp_data_file_path` (temp tablespace size) and the parameter properties are as follows: <br><li>Restart required: Yes <br><li> Default value: `ibtmp1:12M:autoextend`<br><li>Value range of `ibtmp`: 12 MB - 1024 MB. After you select `autoextend`, the maximum value can be set to 2097152 MB |
 
 ## March 2022
 | Parameter | MySQL 5.6 | MySQL 5.7 | MySQL 8.0 | Change Description | 
@@ -36,11 +36,11 @@ TencentDB for MySQL provides system parameter templates for batch parameter sett
 | Parameter | MySQL 8.0 | Change Description | 
 |---------|---------|---------|
 | iinnodb_flush_log_at_trx_commit | &#10003; | New parameter |
-| sync_binlog | &#10003; | New parameter |
-| local_infile  | &#10003; | New parameter |
-| innodb_log_file_size | &#10003; | New parameter |
-| cdb_recycle_bin_enabled | &#10003; | New parameter |
-| binlog_format | &#10003; | New valid value: `row` |
+| sync_binlog | &#10003; | Parameter added |
+| local_infile  | &#10003; | Parameter added |
+| innodb_log_file_size | &#10003; | Parameter added |
+| cdb_recycle_bin_enabled | &#10003; | Parameter added |
+| binlog_format | &#10003; | New value range: `row` |
 | innodb_autoinc_lock_mode | &#10003; | New default value: `2` |
 | table_open_cache | &#10003; | New default value: `2000` |
 | slave_pending_jobs_size_max | &#10003; | New default value: `1073741824` |
