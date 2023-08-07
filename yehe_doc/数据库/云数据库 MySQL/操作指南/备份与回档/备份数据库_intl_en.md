@@ -6,8 +6,8 @@ TencentDB for MySQL single-node (cloud disk), two-node (local disk), and three-n
 
 ### Backup types
 **TencentDB for MySQL two-node and three-node instances support two backup types:**
-- **Physical backup**, which is a full copy of physical data (supported for both automatic backup and manual backup).
-- **Logical backup**, which backs up SQL statements (only supported for manual backup).
+- **Physical backup**: A full copy of physical data (supports both automatic backup and manual backup).
+- **Logical backup**:The backup of SQL statements (supports only manual backup).
 >?
 >- To restore a database from a physical backup, you need to use xbstream to decompress the package first. For more information, see [Restoring Database from Physical Backup](https://intl.cloud.tencent.com/document/product/236/31910).
 >- If the number of tables in a single instance exceeds one million, backup may fail and database monitoring may be affected. Make sure that the number of tables in a single instance is below one million.
