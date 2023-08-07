@@ -160,7 +160,7 @@ Parameter description:
 </tr>
 <tr>
 <td>Match Mode</td>
-<td>You can select <strong>Exact match</strong> or <strong>Fuzzy match</strong>.<ul><li><strong>Exact match</strong>: it <strong>exactly</strong> matches the entered text</li><li> <strong>Fuzzy match</strong>: it detects variants of the entered keyword to fuzzily match similar words such as split words, homographs, homophones, upper and lower cases, and numbers in words</li></ul></td>
+<td>For Chinese characters, both exact matching and fuzzy matching are supported. For alphabet letters, only fuzzy matching is supported.<li>Exact match: it exactly matches the entered text</li><li>Fuzzy match: it detects variants of the entered keyword to fuzzily match similar words such as split words, homographs, homophones, upper and lower cases, and numbers in words</li></td>
 </tr>
 </tbody></table>
 
