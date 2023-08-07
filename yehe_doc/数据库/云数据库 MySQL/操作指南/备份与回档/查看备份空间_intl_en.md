@@ -25,7 +25,7 @@ This document describes how to view the TencenDB for MySQL instance backup space
     Backup Mode: **All**, **Automatic**, **Manual**.
     Backup Method: Currently, only full backup is supported.
     - Backups can be sorted by backup time, task start time, task end time, or backup size.
-    - Click **Details** in the **Operation** column to enter the **Backup and Restoration** tab, where you can click **Download** to download backups. Only manual backups can be deleted.
+    - Click **Details** in the **Operation** column to enter the **Backup and Restoration** tab, where you can click **Download** to download backups. You can only **delete** manual backups
  - **Log Backup List**
     - Backups can be sorted by log data start time or end time.
     - Click **Details** in the **Operation** column to enter the **Backup and Restoration** tab, where you can click **Download** to download logs.
