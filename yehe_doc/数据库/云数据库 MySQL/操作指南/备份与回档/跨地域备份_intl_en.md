@@ -14,7 +14,7 @@ The cross-region backup feature of TencentDB for MySQL can be used to store back
 - Cross-region backup will be triggered after the local automatic backup is completed, that is, the automatic backup will be dumped to the storage device for cross-region backup.
 - The retention period of cross-region backup only affects the backup cycle of the cross-region storage.
 - Backups and binlogs stored in a remote region cannot use the free storage space, and cross-region backups will use the space in the backup region of the source instance.
-- Enabling/Disabling cross-region backup or changing the region won't affect existing backups.
+- Enabling/disabling cross-region backup or changing the region won't affect existing backups.
 - After cross-region backup is enabled, the last valid backup and the binlogs generated from the last valid backup time to the current time will be synced to the target region.
 - If you enable cross-region backup again, remote backups generated before the enablement cannot be used to restore data to the specified time point.
 
