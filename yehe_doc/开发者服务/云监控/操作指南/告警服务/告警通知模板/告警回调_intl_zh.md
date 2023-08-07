@@ -1,32 +1,48 @@
-通过接口回调，您的企业微信群或自建系统可以直接收到云监控的告警通知。接口回调具备将告警信息通过 HTTP 的 POST 请求推送到可访问公网 URL 的功能，您可基于接口回调推送的告警信息做进一步的处理。如需通过企业微信群接收告警通知，请参见 [配置企业微信群接收告警通知](https://intl.cloud.tencent.com/document/product/248/38208)。
+通过接口回调，您的企业微信群或自建系统可以直接收到腾讯云可观测平台的告警通知。接口回调具备将告警信息通过 HTTP 的 POST 请求推送到可访问公网 URL 的功能，您可基于接口回调推送的告警信息做进一步的处理。如需通过企业微信群接收告警通知，请参见 [配置企业微信群接收告警通知](https://intl.cloud.tencent.com/document/product/248/38208)。
 
 > ? 
 > - 当前告警回调没有认证机制，不支持 HTTP 认证。
 > - 告警推送失败最多重试3次，每次推送请求的超时等待时间为5秒。
 > - 当用户创建的告警策略被触发或恢复时，均会通过接口回调推送告警消息。接口回调也支持重复告警。
-> - 云监控回调 API 出方向 IP 为动态随机分配，无法将具体的 IP 信息提供给您，但 IP 端口固定为80端口，建议您根据80端口在安全组上配置加全放通策略。
+> - 腾讯云可观测平台回调 API 出方向 IP 为动态随机分配，无法将具体的 IP 信息提供给您，但 IP 端口固定为80端口，建议您根据80端口在安全组上配置加全放通策略。
 > - 告警回调暂不支持按通知时段推送告警通知，后续会支持，敬请期待。
 
 ## 操作步骤
 
-1. 进入 [云监控控制台—通知模板](https://console.cloud.tencent.com/monitor/alarm2/notice)。
+1. 进入 [腾讯云可观测平台控制台—通知模板](https://console.cloud.tencent.com/monitor/alarm2/notice)。
 2. 单击**新建**，进入新建通知模板。
-3. 在新建通知模板页配置完基础信息后，在接口回调模块中填写公网可访问到的 URL 作为回调接口地址（例如`域名或IP[:端口][/path]`），云监控将及时把告警信息推送到该地址。
+3. 在新建通知模板页配置完基础信息后，在接口回调模块中填写公网可访问到的 URL 作为回调接口地址（例如`域名或IP[:端口][/path]`），腾讯云可观测平台将及时把告警信息推送到该地址。
 4. 进入 [告警策略列表](https://console.cloud.tencent.com/monitor/alarm2/policy)，单击需要绑定告警回调的策略名称，进入管理告警策略页，并在告警策略页单击通知模板。
-5. 云监控会将告警消息通过 HTTP 的 POST 请求推送您系统的 URL 地址，您可以参考 [告警回调参数说明](#.E5.91.8A.E8.AD.A6.E5.9B.9E.E8.B0.83.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E)，对推送的告警信息做进一步的处理。
+5. 腾讯云可观测平台会将告警消息通过 HTTP 的 POST 请求推送您系统的 URL 地址，您可以参考 [告警回调参数说明](#.E5.91.8A.E8.AD.A6.E5.9B.9E.E8.B0.83.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E)，对推送的告警信息做进一步的处理。
  ![](https://main.qcloudimg.com/raw/88ae443dd1118dd2939dda42928a8fcf.png)
 
+### 使用告警回调方式对接 Pagerduty V2 版本
+
+通过API回调功能将告警内容回调到Pagerduty V2。具体操作步骤如下所示：
+
+Step1: 填写正确的Pagerduty回调地址。当前仅支持Pagerduty V2版本，为避免回调失败，请仔细检查是否使用的是正确的 [回调地址](https://events.pagerduty.com/v2/enqueue)。
+
+Step2: 系统检测到用户填写的是Pagerduty的回调地址，需要在下方输入框内填写用户正确的Integration key。
+
+Step3: 按照业务场景填写Notification Cycle和Notification Period。
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/iH5F428_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16913987078000.png)
+
+告警回调配置完成后，告警策略被触发或恢复时，您都将收到来自腾讯云可观测平台的告警回调信息，返回内容可参考下图示例：
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/eeAH799_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_a61817b8-39bc-4e88-ab0c-1972ed976f4a.png)
+
 ### 告警回调鉴权
+
 接口回调支持基于 BasicAuth 的用户安全验证。如果您想将告警信息回调发送到需要用户验证的服务时，可以在接口回调 URL 中使用 HTTP 身份验证来实现。例如将`http://my.service.example.com` 改成 `http://<USERNAME>:<PASSWORD>@my.service.example.com`。
 ![](https://qcloudimg.tencent-cloud.cn/raw/d35cb7693189e581fe9897656c46b31a.png)
 
 ## 告警回调参数说明
 
-当告警规则被触发时，云监控会将告警消息发送到您系统的 URL 地址。接口回调通过 HTTP 的 POST 请求发送 JSON 格式的数据，您可以根据下列参数说明对告警信息做进一步的处理。
+当告警规则被触发时，腾讯云可观测平台会将告警消息发送到您系统的 URL 地址。接口回调通过 HTTP 的 POST 请求发送 JSON 格式的数据，您可以根据下列参数说明对告警信息做进一步的处理。
 
 ### 指标告警
 
 #### 指标告警参数示例
+
 >?大部分指标的 durationTime 和 alarmStatus 数据类型为 string，云服务器的网络类型告警指标的 namespace 为 “qce/lb”。
 
 ```
