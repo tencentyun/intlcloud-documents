@@ -6,4 +6,4 @@ CentOSは、CentOS Linuxプロジェクトのサポートを終了する予定�
 - [OpenCloudOS](https://intl.cloud.tencent.com/document/product/213/46209)：OpenCloudOSをお勧めします。そのベーシックライブラリとユーザスペースコンポーネントは、CentOS 8と完全な互換性を持っています。また、1000万以上のノードで検証した結果、カーネルの最適化とエンハンスメントにより、安定性が70%向上し、特定の運用シーンでの性能が50%向上し、ユーザにCentOS 8より優れたソリューションが提供されます。
 - CentOS StreamおよびUbuntuなどその他のリリースされたバージョン
 
-CentOSをご利用中の場合、お早めに対応するバージョンのOpenCloudOSまたはTencentOS Serverに移行することをお勧めします。移行操作の詳細については、[CentOSのOpenCloudOSへの移行ガイド](https://docs.opencloudos.org/guide/migrate/)及び[CentOSのTencentOS Serverへの移行ガイド](https://intl.cloud.tencent.com/document/product/213/46962)をご参照ください。
+CentOSをご利用中の場合、お早めに対応するバージョンのOpenCloudOSまたはTencentOS Serverに移行することをお勧めします。移行操作の詳細については、[CentOSのTencentOS Serverへの移行ガイド](https://intl.cloud.tencent.com/document/product/213/46962)をご参照ください。
