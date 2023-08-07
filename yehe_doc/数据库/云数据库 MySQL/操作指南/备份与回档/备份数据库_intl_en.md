@@ -5,7 +5,7 @@ To avoid data loss or corruption, you can back up a database automatically or ma
 TencentDB for MySQL single-node (cloud disk), two-node (local disk), and three-node (local disk) instances support **automatic backup** and **manual backup** of databases.
 
 ### Backup types
-**TencentDB for MySQL two-node and three-node instances support two backup types:**＂
+**TencentDB for MySQL two-node and three-node instances support two backup types:**
 - **Physical backup**, which is a full copy of physical data (supported for both automatic backup and manual backup).
 - **Logical backup**, which backs up SQL statements (only supported for manual backup).
 >?
@@ -31,7 +31,7 @@ TencentDB for MySQL single-node (cloud disk), two-node (local disk), and three-n
 |---------|---------|
  | TencentDB for MySQL two-node and three-node instances: <li>Automatic backup supports full physical backup. <li>Manual backup supports full physical backup, full logical backup, and single-database/table logical backup. <li>Both automatic and manual backups can be compressed and downloaded. <br>Single-node instances of cloud disk edition:<li>Automatic backup supports full snapshot backup. <li>Manual backup supports full snapshot backup. <li>Both automatic and manual backups cannot be downloaded. | TencentDB for MySQL single-node (cloud disk edition), two-node, and three-node instances support binlog backup:<li>Log files occupy the instance's backup space. <li>Log files can be downloaded but cannot be compressed. <li>Retention periods can be set for log files. </li> |
 
-## Notes
+## Note
 - Since February 26, 2019, the automatic backup feature of TencentDB for MySQL only supports physical backup (default type) and no longer provides logical backup. automatically. Existing automatic logical backups will be switched to physical backups 
 This will not affect your business access, but may have impact on your habit of automatic backup. If you need logical backups, you can use the manual backup option in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) or call the [CreateBackup](https://intl.cloud.tencent.com/document/product/236/15844) API to generate logical backups.
 - Instance backup files occupy backup space. We recommend that you plan the usage of backup space appropriately. Usage of backup space that exceeds the free tier will incur fees. For more information, see [Backup Space Billing](https://intl.cloud.tencent.com/document/product/236/32344).
@@ -44,10 +44,10 @@ This will not affect your business access, but may have impact on your habit of 
 ### Configuring automatic backup
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID on the instance list page to enter the management page, and select **Backup and Restoration** > **Auto-Backup Settings**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/da6aad42478cbbddba52d02b1d677238.png)
-2. Select backup parameters in the pop-up window and click **OK**: The parameters are as described below:
+2. Select backup parameters in the pop-up window as detailed below and click **OK**:
 >?
 > - The rollback feature as described in [Rolling back Databases](https://intl.cloud.tencent.com/document/product/236/7276) relies on the backup cycle and retention days of data backups and log backups (binlog). Rollback will be affected if you reduce the automatic backup frequency and retention period. You can select the parameters as needed.
-> For example, if the backup cycle is set as Monday and Thursday and the retention period is set as seven days, you can roll a database back to any point of time in the past seven days (which is the actual retention days of data backups and log backups).
+> For example, if the backup cycle is set as Monday and Thursday and the retention period is set as seven days, you can roll a database back to any point of time in the past seven days, which is the actual retention days of data backups and log backups.
 > - Automatic backups cannot be deleted manually. You can set the retention period for automatic backups, and the backups will be deleted automatically when they expire.
 > - Increasing the retention period of data and log backups may cause additional backup space fees.
 > - Shortening the retention period of log backups may affect the data rollback cycle of the instance.
