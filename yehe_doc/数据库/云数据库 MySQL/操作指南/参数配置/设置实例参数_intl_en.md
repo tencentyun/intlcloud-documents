@@ -11,9 +11,9 @@ You can view and modify certain parameters and query parameter modification logs
 ### [Batch modifying parameters](id:plxgcs)
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to access the instance management page.
 2. Select **Database Management** > **Parameter Settings** and click **Batch Modify Parameters**.
-UI for source instance:
+UI for the source instance:
 ![](https://qcloudimg.tencent-cloud.cn/raw/0236dc88558f16937f71daca3e2d8d0f.png)
-UI for read-only instance:
+UI for the read-only instance:
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/fjTY752_61.png)
 3. Locate the desired parameters, and modify their values in the **Current Value** column. After confirming that everything is correct, click **Confirm Modification**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/1f904a228aa0ee6bb28f870f3238396c.png)
@@ -63,7 +63,7 @@ UI for read-only instance:
 >- If you select **During maintenance time**, the parameter modification task will be executed and take effect during this time. For more information, see [Setting Instance Maintenance Window](https://intl.cloud.tencent.com/document/product/236/10929).
 
 
-### Method 3. Importing a parameter template on the "Parameter Template" page
+### Option 3. Importing a parameter template on the "Parameter Template" page
 For more information, see [Managing Parameter Template > Applying a Parameter Template to a Database](https://intl.cloud.tencent.com/document/product/236/31906).
 
 ## Restoring to Default Template
@@ -98,7 +98,7 @@ Expression syntax is supported as follows:
 
 | Parameter | Description | Default Formula |
 | :----------------- | :-------------------------------- | :-------------------------------- |
-| thread_pool_size | The number of thread groups in the thread pool. The default value means that the number of thread groups is the same as the number of CPU cores.= | {MIN(DBInitCpu,64)} |
+| thread_pool_size | The number of thread groups in the thread pool. The default value means that the number of thread groups is the same as the number of CPU cores. | {MIN(DBInitCpu,64)} |
 | table_open_cache_instances | The number of partitions where MySQL caches table handles.                   | {MIN(DBInitMemory/1000,16)} |
 | table_open_cache | The size of the table descriptor, which can reduce the file open/close times.                  | {MAX(DBInitMemory\*512/1000,2048)} |
 | table_definition_cache | The number of opened table cache instances.                                     | {MAX(DBInitMemory\*512/1000,2048)} |
@@ -127,7 +127,7 @@ Before you confirm the parameter modification, the **Modify Parameters** dialog 
 ![](https://qcloudimg.tencent-cloud.cn/raw/33fb2f56d3fb40db0a6771fa8fb43825.png)
 
 ## Canceling Parameter Modification Task
-If a parameter modification or batch modification task has been submitted but you want to cancel it, you can select **[Task List](https://console.cloud.tencent.com/mysql/task)** on the left sidebar in the console, locate the task, and click **Cancel** in the **Operation** column. You can cancel a task only before it is executed. The task state should be **Waiting for execution**.
+If a parameter modification task (to be executed **During maintenance window**) has been submitted but you want to cancel it, you can select **[Task List](https://console.cloud.tencent.com/mysql/task)** on the left sidebar in the console, locate the task, and click **Cancel** in the **Operation** column. You can cancel a task only before it is executed. The task status should be **Waiting for execution**.
 ![](https://main.qcloudimg.com/raw/566fd9374d0d59b38ceb99d310b782a9.png)
 
 ## Viewing Parameter Modification Log
