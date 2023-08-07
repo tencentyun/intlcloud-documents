@@ -1,20 +1,35 @@
-By using API callbacks, you can directly receive alarm notifications from Cloud Monitor (CM) on your WeCom group or self-built system. API callbacks can push alarm information to URLs that are accessible over the public network through HTTP POST requests. You can take further actions based on the alarm information pushed by API callbacks. If you need to receive alarm notifications through a WeCom group, see [Receiving Alarm Notifications through a WeCom Group](https://intl.cloud.tencent.com/document/product/248/38208).
+By using API callbacks, you can directly receive alarm notifications from Tencent Cloud Observability Platform (TCOP) on your WeCom group or self-built system. API callbacks can push alarm information to URLs that are accessible over the public network through HTTP POST requests. You can take further actions based on the alarm information pushed by API callbacks. If you need to receive alarm notifications through a WeCom group, see [Receiving Alarm Notifications through a WeCom Group](https://intl.cloud.tencent.com/document/product/248/38208).
 
 > ? 
 > - Currently, alarm callback does not have an authentication mechanism and does not support HTTP authentication.
 > - A failed alarm push can be retried up to three times, and each push request has a 5-second timeout period.
 > - When an alarm policy created by the user is triggered or the alarm is resolved, the alarm messages will be pushed through the API callbacks. API callbacks also support repeated alarms.
-> - The outbound IP of the CM callback API is dynamically and randomly allocated, so no specific IP information can be provided to you, but the IP port is fixed at 80. We recommend you configure a weighted opening policy in the security group based on port 80.
+> - The outbound IP of the TCOP callback API is dynamically and randomly allocated, so no specific IP information can be provided to you, but the IP port is fixed at 80. We recommend you configure a weighted opening policy in the security group based on port 80.
 > - Alarm callback currently doesn't support pushing notifications by notification period. This will be supported in the future. Please stay tuned.
 
 ## Directions
 
-1. Enter the [CM Console — Notification Template](https://console.cloud.tencent.com/monitor/alarm2/notice) page.
+1. Enter the [TCOP Console — Notification Template](https://console.cloud.tencent.com/monitor/alarm2/notice) page.
 2. Click **Create** to create a notification template.
-3. After configuring the basic information on the **Create Notification Template** page, enter a URL accessible over the public network as the callback API address (such as `domain name or IP[:port][/path]`) in the API callback module, and CM will push alarm messages to this address promptly.
+3. After configuring the basic information on the **Create Notification Template** page, enter a URL accessible over the public network as the callback API address (such as `domain name or IP[:port][/path]`) in the API callback module, and TCOP will push alarm messages to this address promptly.
 4. In the [Alarm Policy](https://console.cloud.tencent.com/monitor/alarm2/policy) list, click the name of an alarm policy to be associated with an alarm callback to enter the alarm policy management page. Select a notification template on the page that appears.
-5. CM will push the alarm messages through the HTTP POST requests to the URL of your system. You can further process the pushed alarm information by referring to [Alarm Callback Parameters](#.E5.91.8A.E8.AD.A6.E5.9B.9E.E8.B0.83.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E).
+5. TCOP will push the alarm messages through the HTTP POST requests to the URL of your system. You can further process the pushed alarm information by referring to [Alarm Callback Parameters](#.E5.91.8A.E8.AD.A6.E5.9B.9E.E8.B0.83.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E).
  ![](https://main.qcloudimg.com/raw/88ae443dd1118dd2939dda42928a8fcf.png)
+
+### Connecting to PagerDuty v2 through alarm callback
+
+The following describes how to call back the alarm content to PagerDuty v2 through API callback:
+
+Step 1: Enter a correct PagerDuty callback address. Currently, only PagerDuty v2 is supported. To avoid a callback failure, make sure the [callback address](https://events.pagerduty.com/v2/enqueue) is correct.
+
+Step 2: After callback address is confirmed by the system, you need to enter a correct integration key in the input box below.
+
+Step 3: Enter information for the **Notification Cycle** and **Notification Period** fields based on your business scenario.
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/iH5F428_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16913987078000.png)
+
+
+After the alarm callback is configured, you can receive the alarm callback information from TCOP when an alarm policy is triggered or when an alarm is resolved. Below is a sample:
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/eeAH799_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_a61817b8-39bc-4e88-ab0c-1972ed976f4a.png)
 
 ### Alarm callback authentication
 API callback supports the BasicAuth-based user security verification. If you want to send the alarm information callback to a service that requires the user’s verification, you can implement HTTP authentication in the API callback URL. For example, you can change `http://my.service.example.com` to `http://<USERNAME>:<PASSWORD>@my.service.example.com`.
@@ -22,7 +37,7 @@ API callback supports the BasicAuth-based user security verification. If you wan
 
 ## Alarm Callback Parameters
 
-When an alarm rule is triggered, CM will send alarm messages to the URL of your system. The API callback sends JSON-formatted data through the HTTP POST requests. You can further process the alarm information by referring to the following parameter descriptions.
+When an alarm rule is triggered, TCOP will send alarm messages to the URL of your system. The API callback sends JSON-formatted data through the HTTP POST requests. You can further process the alarm information by referring to the following parameter descriptions.
 
 ### Metric alarm
 
