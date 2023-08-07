@@ -136,6 +136,6 @@ If a parameter modification or batch modification task has been submitted but yo
 ![](https://main.qcloudimg.com/raw/93494ebb3b80a6547f1c6fe7bcbf9c8a.png)
 3. You can view the recent parameter modification records here.
 
-## Related Operations
+## Subsequent Operations
 - You can use templates to manage database parameters in batches. For more information, see [Managing Parameter Template](https://intl.cloud.tencent.com/document/product/236/31906).
-- For suggestions for configuration of key parameters, see [Suggestions on Parameter Settings](https://intl.cloud.tencent.com/document/product/236/38056).
+- For suggestions on the configuration of key parameters, see [Suggestions on Parameter Settings](https://intl.cloud.tencent.com/document/product/236/38056).
