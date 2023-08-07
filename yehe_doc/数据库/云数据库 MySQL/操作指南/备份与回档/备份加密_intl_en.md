@@ -3,7 +3,7 @@ TencentDB for MySQL supports backup encryption. To use an encrypted backup, you 
 ## Prerequisites
 The MySQL instance architecture is two-node/three-node.
 
-## Notes
+## Note
 - After backup encryption is enabled, the previous backup will not be encrypted, but the new physical backup files will be automatically encrypted for storage.
 - You cannot modify the backup encryption key.
 - After backup encryption is enabled, you don't need to manually decrypt a backup in the console, as the backend will decrypt it automatically before relevant operations such as cloning. However, if you download an encrypted backup, you need to download its key for decryption. For more information, see [Restoring Database from Physical Backup](https://intl.cloud.tencent.com/document/product/236/31910).
