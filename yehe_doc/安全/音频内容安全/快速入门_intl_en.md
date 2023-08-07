@@ -128,13 +128,13 @@ You can configure a custom dictionary.
 
    <img src="https://qcloudimg.tencent-cloud.cn/raw/e05cc82e9a10efec343985fcb13d1424.png" alt="image-20220119102418549" style="zoom:100%;" />
 
-   Parameter description:
+Parameter description:
 
-   | **Parameter** | **Description**                                                     |
-   | :----------- | :----------------------------------------------------------- |
-   | Dictionary Name     | Text description of the dictionary, which can contain up to 32 letters, digits, and underscores. |
-   | Handling Suggestion     | You can select **Non-compliant** or **Suspected**. **Non-compliant**: the information is identified as non-compliant information. **Suspected**: the information may be non-compliant and requires manual recognition. |
-   | Match Mode     | For Chinese characters, both exact matching and fuzzy matching are supported. For alphabet letters, only fuzzy matching is supported.<li>Exact match: it exactly matches the entered text</li><li>Fuzzy match: it detects variants of the entered keyword to fuzzily match similar words such as split words, homographs, homophones, upper and lower cases, and numbers in words</li> |
+| **Parameter** | **Description**                                                     |
+| :----------- | :----------------------------------------------------------- |
+| Dictionary Name     | Text description of the dictionary, which can contain up to 32 letters, digits, and underscores. |
+| Handling Suggestion     | You can select **Non-compliant** or **Suspected**. **Non-compliant**: the information is identified as non-compliant information. **Suspected**: the information may be non-compliant and requires manual recognition. |
+| Match Mode     | For Chinese characters, both exact matching and fuzzy matching are supported. For alphabet letters, only fuzzy matching is supported.<li>Exact match: it exactly matches the entered text</li><li>Fuzzy match: it detects variants of the entered keyword to fuzzily match similar words such as split words, homographs, homophones, upper and lower cases, and numbers in words</li> |
 
 4. Click **OK**.
 
