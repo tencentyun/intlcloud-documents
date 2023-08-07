@@ -63,7 +63,7 @@ Execution mode:
   - During maintenance time: The change will be applied to the instance during the maintenance time, which can be modified on the **Instance Details** page.
 
 ### Newly purchased MySQL instance
-When purchasing a TencentDB for MySQL instance, after selecting a parameter template, you can choose whether to enable **Parameter Adaptation**. If this feature is enabled, the system will perform secondary adjustment according to the selected business scenario, which can be **Order Transactions**, **OLTP Performance Test**, or **Pressure Test**.
+When purchasing a TencentDB for MySQL instance, after selecting a parameter template, you can choose whether to enable **Scenario-Based Intelligent Tuning**. If this feature is enabled, the system will perform secondary adjustment according to the selected business scenario, which can be **Order Transactions**, **OLTP Performance Test**, or **Pressure Test**.
 You can view the change results in **Parameter Settings** > **Intelligent Parameter Tuning** > **View Task**.
 ![](https://qcloudimg.tencent-cloud.cn/raw/bf0e00d4ba24814e1bad20f17cd50575.png)
 
