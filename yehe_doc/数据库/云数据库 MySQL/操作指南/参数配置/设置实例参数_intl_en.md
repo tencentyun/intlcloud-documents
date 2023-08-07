@@ -127,7 +127,7 @@ Before you confirm the parameter modification, the **Modify Parameters** dialog 
 ![](https://qcloudimg.tencent-cloud.cn/raw/33fb2f56d3fb40db0a6771fa8fb43825.png)
 
 ## Canceling Parameter Modification Task
-If a parameter modification task (to be executed **During maintenance window**) has been submitted but you want to cancel it, you can select **[Task List](https://console.cloud.tencent.com/mysql/task)** on the left sidebar in the console, locate the task, and click **Cancel** in the **Operation** column. You can cancel a task only before it is executed. The task status should be **Waiting for execution**.
+If a parameter modification task (to be executed **during maintenance window**) has been submitted but you want to cancel it, you can select **[Task List](https://console.cloud.tencent.com/mysql/task)** on the left sidebar in the console, locate the task, and click **Cancel** in the **Operation** column. You can cancel a task only before it is executed. The task status should be **Waiting for execution**.
 ![](https://main.qcloudimg.com/raw/566fd9374d0d59b38ceb99d310b782a9.png)
 
 ## Viewing Parameter Modification Log
