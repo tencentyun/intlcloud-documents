@@ -88,7 +88,7 @@ Parameter description:
 | :----------- | :----------------------------------------------------------- |
 | Dictionary Name     | Text description of the dictionary, which can contain up to 32 letters, digits, and underscores. |
 | Handling Suggestion     | You can select **Non-compliant** or **Suspected**.<li>Non-compliant: the information is identified as non-compliant information</li><li>Suspected: the information may be non-compliant and requires manual moderation</li> |
-| Match Mode     | You can select **Exact match** or **Fuzzy match**.<li>Exact match: it exactly matches the entered text</li><li>Fuzzy match: it detects variants of the entered keyword to fuzzily match similar words such as split words, homographs, homophones, upper and lower cases, and numbers in words</li> |
+| Match Mode     |For Chinese characters, both exact matching and fuzzy matching are supported. For alphabet letters, only fuzzy matching is supported.<li>Exact match: it exactly matches the entered text</li><li>Fuzzy match: it detects variants of the entered keyword to fuzzily match similar words such as split words, homographs, homophones, upper and lower cases, and numbers in words</li> |
 
 4. Click **OK**.
 
