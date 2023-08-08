@@ -1,4 +1,4 @@
-## Feature Overview
+## Overview
 This feature pushes LIMIT/OFFSET and SUM operations down to the storage engine InnoDB when querying single tables, effectively reducing query latency.
 - When LIMIT/OFFSET is executed using secondary indexes, this feature can avoid using the clustered index values as pointers to find the full table rows, effectively cutting the cost of scanning table data.
 - This feature pushes SUM operations down to InnoDB. In other words, instead of sending rows to the MySQL server, InnoDB calculates data itself and returns the final result to the MySQL server.
@@ -22,14 +22,14 @@ Import one million rows of data and test query performance in sysbench:
 - The execution time of `select * from sbtest1 limit 1000000,1;` decreases from 6.3 to 2.8 seconds.
 - The execution time of `select sum(k) from sbtest1;` decreases from 5.4 to 1.5 seconds.
 
-## Use Instructions
+## Instructions
 During the execution of an SQL statement, the optimizer automatically modifies the query execution plan to implement computation pushdown according to the following parameters.
 Parameters are as follows:
 
 | Parameter                     | Effective Immediately | Type | Default Value | Valid Values/Value Range | Description                             |
 | -------------------------- | ---- | ---- | ---- | ---------- | -------------------------------- |
-| cdb_enable_offset_pushdown | Yes  | bool | ON   | {ON,OFF}   | Enable or disable LIMIT/OFFSET pushdown |
-| cdb_enable_sumagg_pushdown | Yes  | bool | OFF  | {ON,OFF}   | Enable or disable SUM pushdown          |
+| cdb_enable_offset_pushdown | Yes  | bool | ON   | {ON,OFF}   | Enable or disable LIMIT/OFFSET pushdown. It is enabled by default. |
+| cdb_enable_sumagg_pushdown | Yes  | bool | OFF  | {ON,OFF}   | Enable or disable SUM pushdown. It is disabled by default.          |
 
 >?Currently, you cannot directly modify the values of the above parameters. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 >
