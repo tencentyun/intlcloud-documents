@@ -15,7 +15,7 @@ By default, the instance configuration is adjusted in the normal mode, which req
 >! If the local resources are sufficient and meet the conditions of the QuickChange mode, this mode will be used by default. If you don't need to use it, you can disable it by toggling it off on the configuration adjustment page.
 
 
-## Note
+## Use Limits
 - A read-only instance with an exclusive VIP enabled does not support QuickChange.
 - If a read-only instance group (RO group) enables the "Remove Delayed RO Instances" feature, read-only instances whose delay exceeds the specified threshold will be removed from the RO group until the number of remaining ones reaches the allowed minimum number. If the number of the remaining available read-only instances in an RO group is less than or equal to the allowed minimum number, none of those instances will support QuickChange.
 - If an RO group only has one read-only instance, the instance does not support QuickChange.
@@ -155,7 +155,7 @@ Instances can still be accessed during the upgrade, but after the upgrade is com
 You can view the progress in [Task List](https://console.cloud.tencent.com/mysql/task) in the console.
 
 #### What should I do if the disk space is being used up?
-If over 85% disk space is used, we recommend you delete data no longer used or expand disk space in the [console](https://console.cloud.tencent.com/cdb) by selecting **More** > **Adjust Configurations** in the **Operation** column on the right of the instance list.
+If over 85% disk space is used, we recommend that you delete data no longer used or expand disk space in the [console](https://console.cloud.tencent.com/cdb) by selecting **More** > **Adjust Configurations** in the **Operation** column on the right of the instance list.
 
 #### How do I know whether the QuickChange mode is supported when I adjust instance memory or disk capacity?
 On the configuration adjustment page, if the QuickChange mode is supported, the **QuickChange** toggle can be turned on or off as needed; otherwise, the toggle cannot be used.
@@ -164,14 +164,14 @@ On the configuration adjustment page, if the QuickChange mode is supported, the 
 #### Does expanding memory or disk capacity affect the kernel minor version of the instance?
 If the kernel minor version of the instance is not the latest when memory or disk capacity is expanded, it will be upgraded to the latest. In this case, enabling the QuickChange mode will cause the database to restart.
 
-#### Will enabling the QuickChange mode cause the instance to restart?
-The instance needs to be restarted in some cases. A prompt whether to restart the instance will be displayed on the configuration adjustment page as shown below:
+#### Will the instance restart if the QuickChange mode is enabled?
+The instance needs to be restarted in some cases. A prompt will appear asking if you want to restart the instance on the configuration adjustment page.
 ![](https://main.qcloudimg.com/raw/d97d2daa7cb8e5aa0924355c59bc4fc8.png)
 
->?If the kernel minor version of the instance is the latest, adjusting only the disk capacity in the QuickChange mode will not cause the instance to restart.
+>?If the instance is running the latest kernel minor version, it won’t restart if you only adjust the disk capacity in the QuickChange mode.
 
 #### How do I know whether the QuickChange mode is enabled when I upgrade instance configuration in the console?
-You can check the **QuickChange** switch the configuration adjustment page: if the switch is toggled on, the QuickChange mode is enabled; otherwise, the mode is disabled.
+You can check the **QuickChange** switch on the configuration adjustment page: if the switch is toggled on, the QuickChange mode is enabled; otherwise, the mode is disabled.
 ![](https://main.qcloudimg.com/raw/0ecdc6d86e3727e7a688a559ce217d7d.png)
 
 #### How do I know whether the QuickChange mode is enabled when I use APIs to adjust instance configuration?
