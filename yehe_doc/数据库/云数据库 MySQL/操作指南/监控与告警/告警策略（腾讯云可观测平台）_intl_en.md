@@ -14,10 +14,10 @@ To send an alarm for a specific status of a product, you need to create an alarm
 2. In the alarm policy list, click **Create**.
 3. On the **Create Alarm Policy** page, set the policy name, policy type, alarm object, and trigger condition.
  - **Policy Type**: It divides into source monitoring and replica monitoring, which are applicable to different types of instances.
-    - Deploy monitoring on the source: when the monitored instance is a source instance which is not a replica of any instance, replication-related monitoring data is invalid for the source, and the IO and SQL threads are disabled. Replication-related monitoring data is valid and the IO and SQL threads can be enabled only when the monitored instance is a disaster recovery or a read-only instance.
+    - Deploy monitoring on the source: When the monitored instance is a source instance which is not a replica of any instance, replication-related monitoring data is invalid for the source, and the IO and SQL threads are disabled. Replication-related monitoring data is valid and the IO and SQL threads can be enabled only when the monitored instance is a disaster recovery or a read-only instance.
     - Deploy monitoring on the replica: The two-node or three-node source instance and disaster recovery instance come in a source/replica architecture by default. As a result, replication-related monitoring data is valid for the replica only when the monitored instance is a source or disaster recovery instance. Such monitoring data can reflect the replication delay distance and time between the source or disaster recovery instance and its hidden replica nodes. We recommend that you keep an eye out for such monitoring data of the replica. If the source or disaster recovery instance fails, its monitored hidden replica nodes can be promoted to the source instance quickly.
   - **Alarm Object**: The instance to be associated with the policy alarm. You can find the desired instance by selecting the region where it is located or searching for its ID.
- - **Trigger Condition**: It is a semantic condition composed of metric, comparison, threshold, statistical period, and duration. For example, if the metric is disk utilization, the comparison is >, the threshold is 80%, the statistical period is 5 minutes, and the duration is two statistical periods, then the data on disk utilization of a database will be collected once every five minutes, and an alarm will be triggered if the disk utilization exceeds 80% for two consecutive times.
+ - **Trigger Condition**: An alarm trigger is a semantic condition composed of metric, comparison, threshold, statistical period, and duration. For example, if the metric is disk utilization, the comparison is >, the threshold is 80%, the statistical period is 5 minutes, and the duration is two statistical periods, then the data on disk utilization of a database will be collected once every five minutes, and an alarm will be triggered if the disk utilization exceeds 80% for two consecutive times.
  - **Configure Alarm Notification**: You can select a preset or custom notification template. Each alarm policy can be bound to three notification templates at most. For more information, see [Creating Notification Template](https://intl.cloud.tencent.com/document/product/248/38922).
 ![](https://qcloudimg.tencent-cloud.cn/raw/f3f46099bc8d80404a1482af8c2c4def.png)
 4. After confirming that everything is correct, click **Complete**.
@@ -29,7 +29,7 @@ After the alarm policy is created, you can associate some alarm objects with it.
 3. In the pop-up window, select the target alarm object and click **OK** to associate it with the alarm policy.
 
 ## FAQs
-### How can I configure the source/replica delay monitoring?
+### How can I configure the source-replica delay monitoring?
 You can do so by following the steps below based on the actual scenarios.
 - **Scenario 1**: Configure source-replica delay monitoring for the source instance
  1. Log in to the [TCOP console](https://console.cloud.tencent.com/monitor/alarm2/history) select **Alarm Policy** under **Alarm Management** module on the left sidebar, and click **Create Policy** on the **Policy Management** tab.
