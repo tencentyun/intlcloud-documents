@@ -1,4 +1,4 @@
-## Feature Overview
+## Overview
 This feature speeds up the initialization of the buffer pool, reducing the startup time of the database instance.
 
 ### Supported versions
@@ -17,5 +17,5 @@ Performance test data collected from eight instances:
 |       200 GB       | 10.28 s                         | 0.52 s                          |  1,977%   |
 |       500 GB       | 25.72 s                         | 1.32 s                          |  1,948%   |
 
-## Use Instructions
+## Instructions
 This feature is enabled in the kernel by default.
