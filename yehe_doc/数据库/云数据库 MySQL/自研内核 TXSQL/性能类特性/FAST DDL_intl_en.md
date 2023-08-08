@@ -1,5 +1,5 @@
 
-## Feature Overview
+## Overview
 This feature speeds up the creation of secondary index. After the feature is enabled, secondary indexes can be concurrently sorted in a temp table using multiple threads. The feature also optimizes the operation of locking the flush list when loading bulk data, effectively reducing the time consumed by CREATE INDEX and the impact on concurrent DML operations.
 
 ## Supported Versions
@@ -22,12 +22,12 @@ Query OK, 0 rows affected (0.00 sec)
 ```
 When the feature is disabled, the operation takes 4,395 seconds; when the feature is enabled, the operation takes 2,455 seconds.
 
-## Use Instructions
+## Instructions
 Use the `innodb_fast_ddl` parameter to enable or disable this feature.
 
 | Parameter | Effective Immediately | Type | Default Value | Valid Values/Value Range | Description |
 | ----------------------------- | ---- | ------- | ---- | ---------- | ---------------------------- |
 | innodb_fast_ddl | Yes | bool | OFF | {ON,OFF} | Enable or disable FAST DDL |
 
->?Currently, you cannot directly modify the values of the above parameters. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>?Currently, you cannot directly modify the values of the above parameter. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 >
