@@ -1,4 +1,4 @@
-﻿You can grant a user the permission to view and use specific resources in the TencentDB Console by using a CAM policy. The sample below shows how to allow a user to use certain policies in the console.
+This document provides examples about how to grant a user permissions to view and use specific resources in the TencentDB console by using a CAM policy.
 
 ## Full access policy for TencentDB
 To grant a user permissions to create and manage TencentDB instances, you can implement the `QcloudCDBFullAccess` policy for the user.
@@ -66,7 +66,7 @@ The above policy achieves its goal by allowing the user to separately authorize 
 ## Read-only permission policy for TencentDB
 To grant a user permission to view TencentDB instances but not create, delete, or modify them, you can implement the policy named `QcloudCDBInnerReadOnlyAccess` for the user.
 
->?You are recommended to configure the read-only policy for TencentDB.
+>?We recommend that you configure the read-only policy for TencentDB.
 
 Log in to the [CAM console](https://console.cloud.tencent.com/cam/policy), select **Policies** on the left sidebar, click **Service Type** in the policy list and select **TencentDB for MySQL** in the drop-down list, and then you can see this policy in the results.
 
