@@ -1,13 +1,13 @@
 To make it easier for you to view and stay up to date with how instances work, TencentDB for MySQL provides a wide variety of performance monitoring metrics and convenient monitoring features (custom view, time comparison, merged monitoring metrics, etc). You can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), and view them in **Instance Monitoring** on the instance management page.
 >?
->- You can get instance monitoring metrics by calling the [GetMonitorData](https://intl.cloud.tencent.com/document/product/248/33881) API or using the [TencentDB for MySQL monitoring metrics](https://intl.cloud.tencent.com/document/product/248/11006) in Cloud Monitor.
+>- You can get instance monitoring metrics by calling the [GetMonitorData](https://intl.cloud.tencent.com/document/product/248/33881) API or using the [TencentDB for MySQL monitoring metrics](https://intl.cloud.tencent.com/document/product/248/11006) in Tencent Cloud Observability Platform (TCOP).
 >- You can [create dashboards](https://console.cloud.tencent.com/monitor/dashboard2/default?channel=10) for monitoring metrics to analyze monitored data dynamically.
 >- If the number of tables in a single instance exceeds one million, database monitoring may be affected. Make sure that the number of tables in a single instance is below one million.
 
-## Types of instances for monitoring
+## Types of Instances for Monitoring
 TencentDB for MySQL source, read-only, and disaster recovery instances as well as database proxy nodes can be monitored, and each instance is provided with a separate monitoring view for easy query.
 
-## Types of monitoring
+## Monitoring Types
 Four types of monitoring are available for TencentDB for MySQL: resource monitoring, engine monitoring (general), engine monitoring (extended), and deployment monitoring. You can view the metrics of different monitoring types to gain a quick and accurate understanding of how instances perform and operate.
 >?TencentDB for MySQL single-node instances of cloud disk edition currently support resource monitoring and engine monitoring (general) but not engine monitoring (extended) and deployment monitoring.
 >
@@ -22,20 +22,20 @@ Four types of monitoring are available for TencentDB for MySQL: resource monitor
  a. The object of instance deployment monitoring (source) is the linkage between the disaster recovery instance and the source instance. Deployment monitoring displays the IO and SQL thread status of the disaster recovery instance. The source-replica delay (in MB or in seconds) refers to the delay between the disaster recovery instance and the source instance.
     b. The object of instance deployment monitoring (replica) is the linkage between the disaster recovery instance and its hidden replica. Deployment monitoring displays the IO and SQL thread status of the hidden replica. The source-replica delay (in MB or in seconds) refers to the delay between the disaster recovery instance and its hidden replica.
 
-## Monitoring granularity
+## Monitoring Granularity
 TencentDB for MySQL has adopted an adaptive policy for monitoring granularity since August 11, 2018, which means that you cannot select a monitoring granularity as desired for the time being. The adaptive policy is as follows:
 
 | Time Span | Monitoring Granularity | Adaptation Description | Retention Period |
 |:-------|:--------|:----|:-----|
-| (0h, 4h] | 5 seconds | The time span is below 4 hours, and the monitoring granularity is 5 seconds | 1 day |
-| (4h, 2d] | 1 minute | The time span is above 4 hours but below 2 days, and the monitoring granularity is 1 minute | 15 days |
-| (2d, 10d] | 5 minutes | The time span is above 2 days but below 10 days, and the monitoring granularity is 5 minutes | 31 days |
-| (10d, 30d] | 1 hour | The time span is above 10 days but below 30 days, and the monitoring granularity is 1 hour | 62 days |
+| (0h, 4h] | 5 seconds | The time span is below 4 hours, and the monitoring granularity is 5 seconds. | 1 day |
+| (4h, 2d] | 1 minute | The time span is above 4 hours but below 2 days, and the monitoring granularity is 1 minute. | 15 days |
+| (2d, 10d] | 5 minutes | The time span is above 2 days but below 10 days, and the monitoring granularity is 5 minutes. | 31 days |
+| (10d, 30d] | 1 hour | The time span is above 10 days but below 30 days, and the monitoring granularity is 1 hour. | 62 days |
 
 >?Currently, you can view monitoring data of TencentDB for MySQL in the past 30 days.
 
-## Monitoring metrics
-Cloud Monitor provides the following monitoring metrics for TencentDB for MySQL instances in the instance dimension:
+## Monitoring Metrics
+TCOP provides the following monitoring metrics for TencentDB for MySQL instances in the instance dimension:
 
 >?For more information on how to use TencentDB monitoring metrics, see [Introduction](https://www.tencentcloud.com/document/product/248/48735).
 
@@ -44,7 +44,7 @@ Cloud Monitor provides the following monitoring metrics for TencentDB for MySQL 
 | Queries per Second | qps | Counts/second | Number of SQL statements (INSERT, SELECT, UPDATE, DELETE, and REPLACE) executed by the database per second. This metric mainly represents the actual processing capability of the TencentDB instance. |
 | Transactions per Second | tps | Counts/second | The number of transactions executed per second in the database |
 | Slow Queries | slow_queries | - | The number of queries that take more than `long_query_time` second(s) to be executed |
-| Full Table Scans | select_scan | Counts/sec | The number of full-table scans executed per second |
+| Full-Table Scans | select_scan | Counts/sec | The number of full-table scans executed per second |
 | SELECT Queries | select_count | Counts/sec | The number of queries executed per second |
 | UPDATE Queries | com_update | Counts/sec | The number of updates executed per second |
 | DELETE Queries | com_delete | Counts/sec | The number of deletions executed per second |
@@ -53,13 +53,13 @@ Cloud Monitor provides the following monitoring metrics for TencentDB for MySQL 
 | Total Queries | queries | Counts/sec | All executed SQL statements such as SET and SHOW |
 | Open Connections | threads_connected | - | The number of currently open connections |
 | Connection Utilization | connection_use_rate | % | The number of open connections/the maximum number of connections   |
-| Query Utilization | query_rate | % | Actual QPS/recommended QPS |
-| Total Disk Usage | capacity | MB | This includes MySQL's data directories and logs such as binlog, relaylog, undolog, errorlog, and slowlog |
-| Disk Space Used by Data | real_capacity | MB | This includes only MySQL's data directories |
-| Disk Space Used by Log Files | log_capacity  | MB | This includes only MySQL's logs binlog, relaylog, undolog, errorlog, and slowlog |
-| Disk Space Used by Log Files | disk_log_used  | MB | This includes only MySQL's binlog, relaylog, and undolog |
+| Query Utilization | query_rate | % | Actual QPS/Recommended QPS |
+| Total Disk Usage | capacity | MB | This includes MySQL's data directories and logs such as binlog, relaylog, undolog, errorlog, and slowlog. |
+| Disk Space Used by Data | real_capacity | MB | This includes only MySQL's data directories. |
+| Disk Space Used by Logs | log_capacity  | MB | This includes only MySQL's logs binlog, relaylog, undolog, errorlog, and slowlog. |
+| Disk Space Used by Log Files | disk_log_used  | MB | This includes only MySQL's binlog, relaylog, and undolog. |
 | Disk Space Used by Temp Files | disk_tmp_used | MB | This includes only MySQL's temp files. |
-| Disk Utilization |volume_rate | % | Total disk usage/purchased instance space |
+| Disk Utilization |volume_rate | % | Total disk usage/Purchased instance space |
 | Private Outbound Traffic | bytes_sent       | Byte/sec | The number of bytes sent per second |
 | Private Inbound Traffic | bytes_received | Byte/sec | The number of bytes received per second |
 | Query Cache Hit Rate | qcache_hit_rate | % | The query cache hit rate |
@@ -71,7 +71,7 @@ Cloud Monitor provides the following monitoring metrics for TencentDB for MySQL 
 | InnoDB Disk Reads |innodb_os_file_reads| Counts/sec | The total number of file reads performed by read threads within InnoDB |
 | InnoDB Disk Writes | innodb_os_file_writes | Counts/second | The total number of file writes performed by write threads within InnoDB |
 | InnoDB fsync() Calls | innodb_os_fsyncs | Counts/second | The number of calls of the fsync function by InnoDB per second |
-| Tables Opened by InnoDB | innodb_num_open_files | - | The number of files InnoDB currently holds open | 
+| Tables Opened by InnoDB | innodb_num_open_files | - | The number of tables InnoDB currently holds open | 
 | MyISAM Cache Hit Rate | key_cache_hit_rate | % | The MyISAM engine cache hit rate |
 | MyISAM Cache Utilization | key_cache_use_rate | % | The MyISAM engine cache utilization |
 | CPU Utilization | cpu_use_rate | % | If overuse of idle resources is permitted, the CPU utilization may exceed 100% |
