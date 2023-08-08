@@ -4,7 +4,7 @@ This document describes how to view exception alarm messages from DBbrain in the
 DBbrain's [exception alarms](https://intl.cloud.tencent.com/document/product/1035/37177) notification service pushes MySQL instance exception alarm messages to you in real time, allowing you to conveniently and promptly discover database exception diagnosis problems.
 All pushed exception alarm messages are displayed in the historical message list, so you can quickly view and locate previously pushed exception diagnosis problems.
 
-## Viewing an Exception Alarm
+## Viewing an alarm
 ### Option 1
 Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). If an exception diagnosis problem occurs on an instance when you are in the console, a window will pop up in the top-right corner of the console in real time to push the exception alarm message notification, which contains the database instance information such as instance ID, instance name, diagnosis item, and start time. This allows you to quickly learn the diagnosis of the database instance.
 - You can click **View Exception Diagnosis Details** in the message notification to view the specific diagnosis details and optimization advice for the instance.
