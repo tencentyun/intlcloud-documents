@@ -24,20 +24,20 @@ CAM policy:
 ## [Operations in TencentDB](id:caozuo)
 In a TencentDB policy statement, you can specify any API operation from any service that supports TencentDB. APIs prefixed with `cdb:` should be used for TencentDB, such as `cdb:CreateDBInstance` or `cdb:CreateAccounts`.
 
-To specify multiple operations in a single statement, separate them by comma, as shown below:
+To specify multiple operations in a single statement, separate them by comma.
 ```
 "action":["cdb:action1","cdb:action2"]
 ```
-You can also specify multiple operations by using a wildcard. For example, you can specify all operations beginning with "Describe" in the name as shown below:
+You can also specify multiple operations by using a wildcard. For example, you can specify all operations beginning with "Describe" in the name.
 ```
 "action":["cdb:Describe*"]
 ```
-To specify all operations in TencentDB, use the `*` wildcard as shown below:
+To specify all operations in TencentDB, use the `*` wildcard.
 ```
 "action":["cdb:*"]
 ```
 
-## [TencentDB resources](id:ziyuanlujing)
+## [Resources in TencentDB](id:ziyuanlujing)
 Each CAM policy statement has its own applicable resources.
 Resources are generally in the following format:
 ```
@@ -45,20 +45,20 @@ qcs:project_id:service_type:region:account:resource
 ```
 - **project_id** describes the project information, which is only used to enable compatibility with legacy CAM logic and can be left empty.
 - **service_type** describes the product abbreviation such as `cdb`.
-- **region**: Describes the region information, such as `ap-guangzhou`.
-- **account**: Describes the root account of the resource owner, such as `uin/65xxx763`.
+- **region** describes the region information, such as `ap-guangzhou`.
+- **account** describes the root account of the resource owner, such as `uin/65xxx763`.
 - **resource** describes detailed resource information of each product, such as `instanceId/instance_id1` or `instanceId/*`.
 
 
-For example, you can specify a resource for a specific instance (cdb-k05xdcta) in a statement as shown below:
+For example, you can specify a resource for a specific instance (cdb-k05xdcta) in a statement.
 ```
 "resource":[ "qcs::cdb:ap-guangzhou:uin/65xxx763:instanceId/cdb-k05xdcta"]
 ```
-You can also use the wildcard "*" to specify it for all instances that belong to a specific account as shown below:
+You can also use the wildcard "*" to specify it for all instances that belong to a specific account.
 ```
 "resource":[ "qcs::cdb:ap-guangzhou:uin/65xxx763:instanceId/*"]
 ```
-If you want to specify all resources or a specific API operation does not support resource-level permission control, you can use the `*` wildcard in the `resource` element as shown below:
+If you want to specify all resources or a specific API operation does not support resource-level permission control, you can use the `*` wildcard in the `resource` element.
 ```
 "resource": ["*"]
 ```
