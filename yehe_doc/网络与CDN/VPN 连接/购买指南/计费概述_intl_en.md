@@ -7,6 +7,7 @@ This document describes IPSec VPN and SSL VPN billing items and pricing.
 ## Billable Items
 ![](https://qcloudimg.tencent-cloud.cn/raw/5446aa22b46d4f04476d96aa93222129.jpg)
 <table>
+<thead>
 <tr>
 <th>Type</th>
 <th>Billable Item</th>
@@ -26,7 +27,7 @@ This document describes IPSec VPN and SSL VPN billing items and pricing.
 <td colspan="2">Public network traffic fee</td>
 <td>For details of the traffic fee, see <a href="https://www.tencentcloud.com/document/product/213/10578">Public Network Billing</a>.</td>
 </tr>
-</table>
+</tbody></table>
 <dx-alert infotype="explain" title="">
 For IPSec VPN, the customer gateways are free of charge. For SSL VPN, the VPN servers and clients are free of charge.
 </dx-alert>
@@ -41,12 +42,13 @@ Traffic-based billing contains two parts, **traffic fee** (traffic going to the 
 - For gateway fee details, see the following table:
 >?VPN gateway is your target gateway on Tencent Cloud side. The traffic flowing through the VPN gateway incurs fees. The gateway fee is billed by traffic.
 The traffic here refers to the outbound traffic of the VPN gateway, which is also called the downstream traffic.
+
 <table>
 <thead>
 <tr>
 <td width="12%">Gateway specification</td>
 <td width="18%">Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Nanjing</td>
-<td width="18%"> Silicon Valley, Frankfurt, Seoul, Mumbai, Virginia, Moscow, Tokyo, Taipei (China), Hong Kong (China)</td>
+<td width="18%"> Silicon Valley, Frankfurt, Seoul, Mumbai, Virginia, Tokyo, Taipei (China), Hong Kong (China), Sao paulo, Jakarta</td>
 <td width="18%"> Toronto, Singapore, Bangkok </td>
 </tr>
 <tr>
@@ -68,7 +70,8 @@ The traffic here refers to the outbound traffic of the VPN gateway, which is als
 <td>0.9 USD/hour</td>
 </tr>
 </tbody></table>
-## Billing Example - Usage period less than one hour
+
+#### Billing Example - Usage period less than one hour
 Assume a user purchases 50 Mbps VPN gateway in Beijing with the bill-by-traffic option and uses a total of 5 GB traffic between 07:00:00-07:59:59, then at 08:00:00, the user will be required to pay the following fees:
 + Traffic fee: Traffic unit price (0.12 USD/GB for Beijing) × Traffic Usage (in GB) = 0.12 × 5 = 0.6 USD
 + Gateway fee: Gateway unit price (0.074 USD/hour for Beijing) × Gateway usage period (hourly billing, at least one hour is charged) = 0.074 × 1 = 0.074 USD
@@ -84,7 +87,7 @@ SSL VPN is a pay-as-you-go service. It contains three parts of fee: **traffic fe
 <tr>
 <th width="12%">Gateway specification</th>
 <th width="18%">Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Nanjing</th>
-<th width="18%">Silicon Valley, Frankfurt, Seoul, Mumbai, Virginia, Toronto, Bangkok, Singapore, Moscow, Tokyo, Taipei (China), Hong Kong (China)</th>
+<th width="18%">Silicon Valley, Frankfurt, Seoul, Mumbai, Virginia, Toronto, Bangkok, Singapore, Tokyo, Taipei (China), Hong Kong (China)</th>
 </tr>
 <tr>
 <td>5 Mbps/10 Mbps/20 Mbps/</br>50 Mbps/100 Mbps</td>
@@ -96,8 +99,7 @@ SSL VPN is a pay-as-you-go service. It contains three parts of fee: **traffic fe
 <td>0.44 USD/hour</td>
 <td>0.6 USD/hour</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 - For the SSL connection fee, see the following table:
 <table>
 <tr>
@@ -112,7 +114,8 @@ SSL VPN is a pay-as-you-go service. It contains three parts of fee: **traffic fe
 <td> (10,1000]</td>
 <td>0.002</td>
 </tr>
-</table>
+</tbody></table>
+
 >? For 200 Mbps and 500 Mbps, up to 500 connections are supported. For 1000 Mbps, up to 1,000 connections are supported.
 >
 
