@@ -3,7 +3,7 @@ TXRocks has a performance comparable to that of InnoDB; however, its LSM tree st
 ## Background
 TXRocks is used in TencentDB products as an important supplement to InnoDB. With a similar performance, it is further optimized and improved to save more storage space. Below is the comparison between the two engines in terms of space usage and performance.
 
-## TXRocks Uses Less Space Than InnoDB
+## TXRocks Uses Less Space than InnoDB
 ![](https://qcloudimg.tencent-cloud.cn/raw/9a25d5d5f89ea06cd60790873d2c8eef.png)
 **Test scenario**: Both storage engines use the default configuration and the default table structure of sysbench. Each table contains 800,000 records, and the total number of tables gradually increases from 4 to 512.
 The space usage of TXRocks and InnoDB under the specified test conditions is as shown above. The disk usage is displayed on the Y axis.
