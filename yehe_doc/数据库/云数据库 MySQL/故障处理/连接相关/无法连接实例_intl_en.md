@@ -1,10 +1,10 @@
-## Issue
+## Issue Description
 - [Symptom 1](id:xz1): Failed to connect to or log in to a TencentDB for MySQL instance from a CVM instance.
 - [Symptom 2](id:xz2): Failed to connect to or log in to a TencentDB for MySQL instance from a local device.
 - [Symptom 3](id:xz3): Failed to connect to or log in to a TencentDB for MySQL instance from DMC.
 ![](https://qcloudimg.tencent-cloud.cn/raw/6fd9149e439cab91ff45bb8f9192ec66.png)
 
-## Possible Causes
+## Common Causes
 <table>
 <thead><tr><th width=15%>Possible Cause</th><th width=35%>Description</th><th width=15%>Possible Cause</th><th width=35%>Description</th></tr></thead>
 <tbody><tr>
@@ -62,15 +62,15 @@ If the causes cannot be located by the one-click connectivity checker, you can [
 <td>The CVM instance is shut down. To use it, start it up in the <a href="https://console.cloud.tencent.com/cvm/instance">CVM console</a>.</td></tr>
 <tr>
 <td rowspan=2>CVM and MySQL are in the same VPC</td>
-<td>The network types of the CVM and MySQL instances are different. To make them in the same type of network, see <a href="#wlwt">Solutions to network issues</a> to modify their network tpyes</td></tr>.
+<td>The network types of the CVM and MySQL instances are different. To make them in the same type of network, see <a href="#wlwt">Solutions to network issues</a> to modify their network types.</td></tr>
 <tr>
-<td>The CVM and MySQL instances are using different VPC IP ranges. To make them in the same VPC of the same region, see <a href="#wlwt">Solutions to network issues</a> to modify their VPCs.</td></tr>.
+<td>The CVM and MySQL instances are using different VPC IP ranges. To make them in the same VPC of the same region, see <a href="#wlwt">Solutions to network issues</a> to modify their VPCs.</td></tr>
 <tr>
 <td>CVM security group policy</td>
-<td>The <strong>outbound rule</strong> of the CVM instance's security group rejects the access to the IP and port of the MySQL instance. To allow the access to the IP and port of the MySQL instance, see <a href="#caqzpzyw">Incorrect CVM security group configuration</a> to modify the outbound rule</td></tr>.
+<td>The <strong>outbound rule</strong> of the CVM instance's security group rejects the access to the IP and port of the MySQL instance. To allow the access to the IP and port of the MySQL instance, see <a href="#caqzpzyw">Incorrect CVM security group configuration</a> to modify the outbound rule.</td></tr>
 <tr>
 <td>MySQL security group policy</td>
-<td>The <strong>inbound rule</strong> of the MySQL instance's security group rejects the access from the IP and port of the CVM instance. To allow the access from the IP and port of the CVM instance, see <a href="#maqzpzyw">Incorrect MySQL security group configuration</a> to modify the inbound rule</td></tr>.
+<td>The <strong>inbound rule</strong> of the MySQL instance's security group rejects the access from the IP and port of the CVM instance. To allow the access from the IP and port of the CVM instance, see <a href="#maqzpzyw">Incorrect MySQL security group configuration</a> to modify the inbound rule.</td></tr>
 </tbody></table>
 <img src="https://qcloudimg.tencent-cloud.cn/raw/9af6e13c4dea0f77e49c9192026a0846.png">
 
@@ -81,13 +81,13 @@ If the causes cannot be located by the one-click connectivity checker, you can [
 <td>MySQL instance status</td><td>The MySQL instance has been terminated. If it is terminated by mistake, go to the <a href="https://console.cloud.tencent.com/mysql/recycle">recycle bin</a> to restore it.</td></tr>
 <tr>
 <td>Public network access status</td>
-<td>The public network access has been disabled for the MySQL instance. To enable it, see <a href="https://www.tencentcloud.com/document/product/236/37788">Connecting to MySQL Instance</a></td></tr>.
+<td>The public network access has been disabled for the MySQL instance. To enable it, see <a href="https://www.tencentcloud.com/document/product/236/37788">Connecting to MySQL Instance</a>.</td></tr>
 </tbody></table>
 <img src="https://qcloudimg.tencent-cloud.cn/raw/def8a3aa846e5ef72efd4d27adc06fe0.png">
 
 #### [Step 2. If the causes cannot be located by the one-click connectivity checker, refer to the following reasons to check](id:step2)
 [**Incorrect password**](id:mmwt)
-If the connection password is incorrect, you can [reset the password](https://www.tencentcloud.com/document/product/236/31901) or [create a temporary account with sufficient permissions](https://www.tencentcloud.com/document/product/236/31900).
+If the connection password is incorrect, you can [reset the password](https://www.tencentcloud.com/document/product/236/31901) or [create a temporary account with sufficient permissions](https://www.tencentcloud.com/document/product/236/31900) to log in to the database.
 
 [**Incorrect connection command syntax**](id:ljyfwt)
 Check whether the connection command is correct according to the command syntax: `mysql -h hostname -u username -p` for private network connection and `mysql -h hostname -P port -u username -p` for public network connection. For more information, see [Connecting to MySQL Instance](https://www.tencentcloud.com/document/product/236/37788).
