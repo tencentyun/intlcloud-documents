@@ -1,4 +1,4 @@
-## Feature Overview
+## Overview
 - DDL statements support `NO_WAIT` and `WAIT` options. If a DDL statement with `WAIT` enabled fails to obtain an MDL lock, it will wait for `WAIT` seconds before it directly returns the query result. If a DDL statement with `NO_WAIT` enabled, it will directly return the query result without waiting for the MDL lock.
 - SELECT FOR UPDATE statements support `NOWAIT` and `SKIP LOCKED` options. If target rows are locked by another transaction, a SELECT FOR UPDATE statement is supposed to wait for the transaction to release the lock. But in some use cases like flash sales, you do not want to wait for a lock. You can use `SKIP LOCKED` to skip locked rows (as a result, the locked rows won't be returned in the query result set) or `NOWAIT` to return an error without waiting for the lock.
 
@@ -11,7 +11,7 @@ Note that `NO_WAIT` and `NOWAIT` are different keywords.
 ## Use Cases
 Currently, DevAPI/XPlugin does not support using `SKIP LOCKED` or `NOWAIT` in SELECT FOR UPDATE/SHARE statements. Note that `NO_WAIT` in DDL statements and `NOWAIT` in SELECT FOR UPDATE statements are different keywords for historical reasons.
 
-## Use Instructions
+## Instructions
 #### SELECT FOR UPDATE NOWAIT/SKIP LOCKED
 ```
 ###############session 1###############
