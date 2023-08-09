@@ -3,7 +3,7 @@ Prior to MySQL 5.6, the source node syncs binlogs and the replica node replays b
 
 Tencent Cloud's TXSQL kernel team has optimized the parallel replication scheme. Table parallel replication is now supported, improving parallelism and reducing source-replica delay.
 
-## Supported versions
+## Supported Versions
 - Kernel version: MySQL 8.0 20201230 and later.
 - Kernel version: MySQL 5.7 20180530 and later.
 - Kernel version: MySQL 5.6 20170830 and later.
