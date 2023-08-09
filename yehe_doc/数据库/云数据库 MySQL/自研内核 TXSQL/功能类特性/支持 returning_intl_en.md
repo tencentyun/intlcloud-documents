@@ -1,4 +1,4 @@
-## Feature Overview
+## Overview
 In some scenarios, you need to retrieve the rows manipulated by DML statements. There are generally two ways to do so:
 - Add a SELECT statement after the DML statement if the transaction is enabled.
 - Use a trigger or other complex operations.
@@ -18,7 +18,7 @@ Notes:
 3. For INSERT/REPLACE ... RETURNING, columns in the outer table are currently invisible to the subquery in the RETURNING clause.
 4. INSERT/REPLACE ... RETURNING only returns the value of `last_insert_id()` before the statement is executed successfully. To obtain the true value of `last_insert_id()`, you should use RETURNING to return the auto-increment column ID of the table.
 
-## Use Instructions
+## Instructions
 #### INSERT ... RETURNING
 ```
 MySQL [test]> CREATE TABLE `t1` (id1 INT);
