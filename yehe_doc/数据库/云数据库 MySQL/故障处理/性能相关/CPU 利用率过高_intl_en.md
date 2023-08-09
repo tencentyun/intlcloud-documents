@@ -1,4 +1,4 @@
-## Issue
+## Issue Description
 When the CPU utilization of a TencentDB for MySQL exceeds 80%, the service response may slow down or time out, or the database cannot be connected.
 
 You can view the CPU utilization of a TencentDB for MySQL instance on the instance monitoring page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) or in the [DBbrain console](https://console.cloud.tencent.com/dbbrain/event?product=mysql).
@@ -12,7 +12,7 @@ When the HA system detects such an issue, it will trigger a source-replica switc
 
 To protect your business from being affected by CPU resource shortage, we recommend that you optimize the application or upgrade the CPU resources for the instance with a high CPU utilization. A source-replica switch is accompanied by a disconnection lasting for just seconds; therefore, for persistent connections, your application should have a reconnection mechanism.
 
-## Possible Causes
+## Common Causes
 MySQL's CPU resources are mainly used by system threads and user threads. Therefore, if CVMs are for exclusive use by your TencentDB for MySQL instances, you can solve most of the issues just by focusing on the two types of threads.
 
 ### User threads
