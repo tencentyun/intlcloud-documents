@@ -8,10 +8,10 @@ Tencent Cloud's TXSQL kernel team has optimized the parallel replication scheme.
 - Kernel version: MySQL 5.7 20180530 and later.
 - Kernel version: MySQL 5.6 20170830 and later.
 
-## Use cases
+## Use Cases
 This feature is suitable for use cases where optimizing the parallelism of some loads can speed up the binlog replay at the replica node, thus reducing the source-replica delay.
 
-## Notes
+## Instructions
 For MySQL 5.6 and 5.7, you can enable this feature by setting the `slave_parallel_type` parameter to the newly added value `TABLE`. MySQL 8.0 does not support the TABLE mode.
 Additionally, the `cdb_slave_thread_status` table is added to the `information_schema` database to display the thread status of the replica node.
 
