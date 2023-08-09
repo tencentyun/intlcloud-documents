@@ -11,12 +11,12 @@ This document describes how to accelerate the import of massive amounts of data 
 >
  - `rocksdb_merge_buf_size` indicates the data volume of each way in k-way merge during index creation. `rocksdb_merge_combine_read_size` indicates the total memory used in k-way merge.
  - `rocksdb_block_cache_size` indicates the size of `rocksdb_block_cache`. We recommend you decrease its value temporarily during k-way merge.
-3. Use bulk load to import the data.
+3. Use `bulk load` to import the data.
 ```
 SET session rocksdb_bulk_load_allow_unsorted=1;
 SET session rocksdb_bulk_load=1;
 ...
-Import the data.
+Import the data
 ...
 SET session rocksdb_bulk_load=0;
 SET session rocksdb_bulk_load_allow_unsorted=0;
