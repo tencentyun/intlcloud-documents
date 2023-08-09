@@ -1,4 +1,4 @@
-## Issue
+## Issue Description
 TencentDB for MySQL utilizes open-source MySQL's native binlog replication technology for default replicas, disaster recovery instances, and read-only instances. Therefore, there may be a delay during async or semi-sync data replication.
 
 ## Impact
@@ -6,10 +6,10 @@ TencentDB for MySQL utilizes open-source MySQL's native binlog replication techn
 - If a [disaster recovery instance](https://intl.cloud.tencent.com/document/product/236/7272) has a delay, it cannot be promoted to a master instance before the heaped binlogs run out. During this period, business continuity will be affected.
 - If the read business has a high requirement for data consistency, you can set a read-only instance removal policy to automatically remove a read-only instance from the [read-only instance group (RO group)](https://www.tencentcloud.com/document/product/236/11361) when its delay with the source instance exceeds the specified threshold. However, once the read-only instance is removed, the business cannot access it through the RO group.
 
-## Possible Causes
+## Common Causes
 - **No primary key or secondary index**
 When DML operations (e.g., DELETE, UPDATE, and INSERT) are performed on big tables, the rows to be modified will be retrieved based on the primary key or secondary index when the replica node applies the binlog. If the binlog is in the row format and the corresponding table has no primary key or secondary index, a large number of full-table scans will be caused, slowing down the binlog application and leading to data delays.
-For detailed solutions, see [Lack of the primary key or secondary index](#wzjhejsy).
+For detailed solutions, see [No primary key or secondary index](#wzjhejsy).
 
 - **Large transactions** 
 A large transaction refers to a transaction performing INSERT, UPDATE, DELETE, REPLACE operations on millions of rows of data, or a single SQL statement modifying millions of rows of data, whose execution time exceeds 30 seconds.
