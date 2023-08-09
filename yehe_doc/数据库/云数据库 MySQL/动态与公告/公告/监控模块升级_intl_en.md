@@ -5,7 +5,7 @@ To provide you with more stable and high-quality TencentDB for MySQL service and
 
 ## Detailed Schedule
 - 2022-03-25 (Friday): Singapore, Frankfurt, and Virginia
-- 2022-03-28 (Monday): Silicon Valley, Toronto, Sao Paulo, and Jakarta
+- 2022-03-28 (Monday): Silicon Valley, Toronto, São Paulo, and Jakarta
 - 2022-03-29 (Tuesday): Mumbai, Bangkok, Seoul, Tokyo, Hong Kong (China), and Taipei (China)
 - 2022-03-30 (Wednesday): Chengdu and Chongqing
 - 2022-04-01 (Friday): Shenzhen, Hangzhou, Nanjing, and Tianjin
