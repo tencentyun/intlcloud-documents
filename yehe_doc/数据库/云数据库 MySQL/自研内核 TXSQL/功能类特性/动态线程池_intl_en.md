@@ -1,4 +1,4 @@
-## Feature Overview
+## Overview
 The thread pool (Thread_pool) uses a certain number of worker threads to process connection requests, which is typically used in scenarios with online transaction processing (OLTP) workloads. However, when many requests are slow queries, worker threads will be blocked by high-latency operations and fail to quickly respond to new requests. As a result, the system throughput of the thread pool mode is lower than that of the traditional one-thread-per-connection (Per_thread) mode.
 
 The Per_thread and Thread_pool modes have their advantages and disadvantages, so the system needs to flexibly switch between them based on business types. Unfortunately, the mode switch must be completed by restarting the server (during peak hours in most cases), adversely affecting the business.
@@ -12,13 +12,13 @@ To allow users to flexibly switch between Per_thread and Thread_pool, TencentDB 
 ## Use Cases
 This feature is suitable for the business which is sensitive to performance and needs to flexibly change the database working mode based on the business type.
 
-## Impact on Performance
+## Performance Impact 
 - Switching from the thread pool mode to the one-thread-per-connection mode won't block queries or affect database performance.
 - Switching from the one-thread-per-connection mode to the thread pool mode under extremely high QPS and persistent high pressure may block requests because the thread pool is disabled before the switch.
   - Solution 1: you can increase the `thread_pool_oversubscribe` parameter and decrease the `thread_pool_stall_limit` parameter to quickly enable the thread pool. After the blocked SQL queries are processed, you can restore the parameters to their original values as needed.
   - Solution 2: if SQL queries start to be blocked, you can suspend or reduce service traffic for a few seconds, wait for thread pool enablement to complete, and then resume the continuous high-pressure service traffic.
 
-## Use Instructions
+## Instructions
 You can use the `thread_handling_switch_mode` parameter to control whether to dynamically change the thread working mode. Parameter values are described as follows:
 
 | Valid Value   | Description                                               |
