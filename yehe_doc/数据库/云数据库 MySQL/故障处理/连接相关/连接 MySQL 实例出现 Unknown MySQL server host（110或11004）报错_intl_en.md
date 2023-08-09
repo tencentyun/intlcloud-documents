@@ -1,8 +1,8 @@
-## Issue
+## Issue Description
 When you try to connect to a TencentDB for MySQL instance at its public network address, the system prompts `Unknown MySQL server host`.
 ![](https://main.qcloudimg.com/raw/b75b23dd5f306336145dab1719eeb1c7.png)
 
-## Possible Causes
+## Common Causes
 The public network address is incorrect.
 
 ## Solutions
