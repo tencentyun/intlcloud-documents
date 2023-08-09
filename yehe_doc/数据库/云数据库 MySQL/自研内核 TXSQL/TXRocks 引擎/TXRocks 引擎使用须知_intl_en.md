@@ -4,7 +4,7 @@ TXRocks is a transactional storage engine developed by Tencent's TXSQL team base
 By leveraging the LSM tree storage structure of RocksDB, the TXRocks transactional storage engine not only reduces wastes caused by InnoDB's half-full pages and fragments, but also uses the compact storage format. Therefore, it has a performance comparable to that of InnoDB but requires only a half or even smaller storage space. It is more suitable for businesses with a large data volume and high requirements for the transactional read/write performance.
 
 ## Prerequisites
-The database version must be MySQL 5.7 or 8.0 in two-node architecture.
+The database version must be MySQL 5.7 or 8.0 on a two-node architecture.
 
 ## Purchasing TencentDB for MySQL Instance (with RocksDB Engine)
 You can select RocksDB as the engine when purchasing an instance on the TencentDB for MySQL [purchase page](https://buy.Intl.cloud.tencent.com/cdb). For more information on other parameters, see [Creating MySQL Instance](https://intl.cloud.tencent.com/document/product/236/37785).
