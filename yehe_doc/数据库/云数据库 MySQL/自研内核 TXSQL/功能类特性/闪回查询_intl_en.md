@@ -2,13 +2,13 @@
 Maloperations may occur in the process of database Ops and severely affect the business. Rollback and cloning are common recovery methods for maloperations, but they are error-prone and time-consuming in case of minor data changes and urgent troubleshooting, and are uncontrollable in recovery time when dealing with major data changes.
 The TXSQL team has developed and implemented the flashback query feature for the InnoDB engine. It allows you to query the historical data before a maloperation with a simple SQL statement and query the data at a specified time point through specific SQL syntax. This greatly saves the data query and recovery time and enables fast data recovery for better business continuity.
 
-## Supported versions
+## Supported Versions
 - Kernel version: MySQL 5.7 20220715 and later.
 - Kernel version: MySQL 8.0 20220331 and later.
 
 - For more information on how to view or upgrade the minor kernel version, see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
 
-## Use cases
+## Use Cases
 The flashback query feature is used to quickly query the historical data after a maloperation during database Ops.
 Notes:
 - Flashback query is supported only for InnoDB physical tables but not views, other engines, or functions without actual columns such as `last_insert_id()`.
@@ -21,7 +21,7 @@ Notes:
 - Enabling the flashback query feature will delay undo log cleanup and increase the memory usage. We recommend you not set `Innodb_backquery_window` to a large value (preferably between 900 and 1,800), especially for instances with frequent business access requests.
 - If the database instance restarts or crashes, the historical information before the restart or crash cannot be queried. The specified time should be within the supported range (which can be viewed through the status variables `Innodb_backquery_up_time` and `Innodb_backquery_low_time` by running `show status like '%backquery%'`).
 
-## Notes
+## Instructions
 Flashback query provides a new AS OF syntax. You can set the `Innodb_backquery_enable` parameter to `ON` to enable the flashback query feature and then query data at the specified time through the following syntax:
 ```
 SELECT ... FROM <table name>
