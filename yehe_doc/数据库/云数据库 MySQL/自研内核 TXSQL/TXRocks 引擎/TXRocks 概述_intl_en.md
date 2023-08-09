@@ -18,7 +18,7 @@ When a range scan is performed, an iterator will be generated at each level of d
 ![](https://qcloudimg.tencent-cloud.cn/raw/b7bd4fb0cc37a7d60c0c29945095c167.png)
 
 ## TXRocks Strengths
-#### Saved storage space
+#### Less storage space
 Compared with the B+tree structure used by InnoDB, the LSM tree can save a considerable amount of storage space.
 InnoDB's B+tree split often results in half-full pages, idle pages, and space waste; therefore, InnoDB has a lower effective page utilization.
 
