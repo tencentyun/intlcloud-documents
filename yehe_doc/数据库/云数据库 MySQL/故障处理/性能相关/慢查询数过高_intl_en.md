@@ -1,10 +1,10 @@
-## Issue
+## Issue Description
 When a slow query problem occurs, it is usually accompanied by the simultaneous surge of multiple monitoring metrics, such as CPU utilization and the number of slow queries.
 >? You can view the instance CPU utilization and slow queries in the **Instance Management** > **Instance Monitoring** on the instance management page
 >As shown in the figure above, when the slow query problem occurred, the CPU utilization suddenly increased to 150%, and the slow query metric also surged.
 
 
-## Possible Causes
+## Common Causes
 Generally, this is because that the execution efficiency of SQL statements is not high enough, which causes a large number of requests to accumulate in TencentDB for MySQL. There are two common causes:
 - [](id:yy1)Cause 1: The SQL statements didn't use indexes or used inefficient indexes.
 - [](id:yy2)Cause 2: The QPS pressure exceeded the load limit of the current instance.
