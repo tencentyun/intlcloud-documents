@@ -1,6 +1,6 @@
 
-## Feature Overview
-The quick column adding feature allows you to quickly add columns to a big table by only modifying the data dictionary, which eliminates the need of data replication during column adding and greatly reduces the column adding time for big tables and the impact on the system.
+## Overview
+The quick column addition feature allows you to quickly add columns to a big table by only modifying the data dictionary, which eliminates the need of data replication during column adding and greatly reduces the column adding time for big tables and the impact on the system.
 
 ## Supported Versions
 - Kernel version: MySQL 5.7 20190830 and later.
@@ -12,7 +12,7 @@ This feature is suitable for adding columns to a table with a high volume of dat
 ## Performance Data
 In tests with a table of 5 GB data, the time for adding a column is reduced from 40 seconds to below 1 second.
 
-## Use Instructions
+## Instructions
 - INSTANT ADD COLUMN syntax
 Add the `algorithm=instant` clause to `ALTER TABLE` to add a column as follows:
 ```
