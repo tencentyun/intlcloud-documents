@@ -1,4 +1,4 @@
-## Feature Overview
+## Overview
 Row compression and data page compression are already supported, but if small fields in a table are read and written frequently while big fields are not, both of the compression methods waste a lot of computing resources.
 
 In contrast, column compression can compress big fields that are infrequently accessed while ignoring the frequently accessed small fields, which not only reduces the space for storing whole rows of fields but also improves the read and write access efficiency.
@@ -11,7 +11,7 @@ Kernel version: MySQL 5.7 20210330 and above.
 ## Use Cases
 If a table has many frequently accessed small fields and infrequently accessed large fields, you can compress the large field columns.
 
-## Use Instructions
+## Instructions
 ### Supported data types
 1. `BLOB` (including `TINYBLOB`, `MEDIUMBLOB`, and `LONGBLOB`)
 2. `TEXT` (including `TINYTEXT`, `MEDIUMTEXT`, and `LONGTEXT`)
