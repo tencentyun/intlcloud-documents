@@ -1,4 +1,4 @@
-## Issue Issue Description
+## Issue Description
 When you try to connect to a TencentDB for MySQL instance, the system prompts `ERROR 1045 (28000): Access denied for user 'XXX'@'XXX'`.
 ![](https://main.qcloudimg.com/raw/3283ffcec33f4bdf02aa6ed8cf48ea48.png)
 
