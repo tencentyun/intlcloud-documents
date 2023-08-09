@@ -13,7 +13,7 @@ This feature does not require user operations and is automatically completed by 
 ## Use Cases
 This feature is used to drop tables with large data files.
 
-## Note
+## Instructions
 - For MySQL 5.6, you can set the `innodb_async_truncate_work_enabled` parameter to `ON` to enable the async mode of `DROP TABLE`. The default value is `OFF`.
 - For MySQL 5.7 and 8.0, you can set the `innodb_table_drop_mode` parameter to `ASYNC_DROP` to enable the async mode of `DROP TABLE`. The default value is `SYNC_DROP`.
 - The size of the file to be truncated each time is specified by the `innodb_async_truncate_size` parameter. This is not supported for MySQL 5.6.
