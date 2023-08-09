@@ -1,4 +1,4 @@
-## Feature Overview
+## Overview
 SQL optimization is a crucial step in improving database performance. To avoid the impact when the optimizer fails to select an appropriate execution plan, TXSQL provides the outline feature for you to bind execution plans. MySQL allows you to use hints to manually bind execution plans. The hint information contains the optimization rule for SQL statements, algorithm to be used, and index for data scan, and an outline relies on hints to specify execution plans. Tencent Cloud provides the `mysql.outline` system table for you to add plan binding rules and the `cdb_opt_outline_enabled` switch for you to enable/disable the outline feature.
 
 ## Supported Versions
@@ -7,12 +7,12 @@ Kernel version: MySQL 8.0 20201230 and above.
 ## Use Cases
 This feature is suitable for scenarios where an execution plan in the production environment has poor performance (for example, the index in the execution plan is incorrect), but you don't want to modify SQL statements and release a new version to fix this problem.
 
-## Impact on Performance
+## Performance Impact
 - If `cdb_opt_outline_enabled` is enabled, the execution efficiency of SQL statements missing the outline will not be affected.
 - The execution efficiency of SQL statements hitting the outline will be lower than that of general execution, but the performance after outline binding is generally improved by several times.
 - To use `cdb_opt_outline_enabled`, you should consult the OPS or kernel engineers to avoid faulty binding and consequential performance compromise.
 
-## Use Instructions
+## Instructions
 The outline syntax uses a new syntax form:
 - Configure outline information: `outline "sql" set outline_info "outline";`
 - Clear outline information: `outline reset ""; outline reset all;`
@@ -29,7 +29,7 @@ create table t3(a int, b int, c int, unique key idx3(a));
 | ----------------------- | ---- | ---- | ----- | ---------- | ------------------- |
 | cdb_opt_outline_enabled | Yes  | bool | false | true/false | Whether to enable the outline feature. |
 
->?Currently, you cannot directly modify the values of the above parameters. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>?Currently, you cannot directly modify the values of the above parameter. If needed, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 >
 
 ### Binding outline
