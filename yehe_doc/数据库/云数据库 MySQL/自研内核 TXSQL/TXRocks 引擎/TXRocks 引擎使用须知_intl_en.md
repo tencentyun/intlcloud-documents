@@ -75,7 +75,7 @@ TXRocks has certain limits on engine features as detailed below:
 |---------|---------|---------|---------|---------|
 | rocksdb_flush_log_at_trx_commit | No | 1 | 0/1/2 | Controls when to write logs to the disk.<br>It is similar to `innodb_flush_log_at_trx_commit` and indicates whether transactions need to be synced when being committed.<li>0: Transactions are not synced when being committed.<li>1: Transactions are synced when being committed.<li>2: Transactions are synced once every second.</li>  |
 | rocksdb_lock_wait_timeout | No | 1 | 1–1073741824 | Lock wait timeout period in seconds. |
-| rocksdb_merge_buf_size | No | 524288(=512K) | 100–18446744073709551615 | Size of the merge sort buffer used during secondary index creation. |
+| rocksdb_merge_buf_size | No | 524288(=512K) | 100–18446744073709551615 | Size of the merge-sort buffer used during secondary index creation. |
 | rocksdb_merge_combine_read_size | No | 8388608 (=8M) | 524288(=512K)–18446744073709551615 | Size of the memory used by k-way merge during secondary index creation. |
 | rocksdb_deadlock_detect | No | ON | ON/OFF | Whether to enable deadlock detection. |
 | rocksdb_manual_wal_flush | Yes | ON | ON/OFF | If the total size of WAL files exceeds `rocksdb_max_total_wal_size`, RocksDB will forcibly flush the column family to the disk to ensure that the oldest WAL file can be deleted. |
