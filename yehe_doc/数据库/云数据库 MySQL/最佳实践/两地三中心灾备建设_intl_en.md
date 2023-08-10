@@ -26,7 +26,7 @@ Currently, multi-AZ deployment of TencentDB for MySQL is supported in Guangzhou,
 ### Billing description
 This feature is free of charge. There is no charge for migrating an instance from a single AZ to multiple AZs.
 
-## Cross-region Disaster Recovery Instance
+## Cross-Region Disaster Recovery Instance
 For applications with high requirements of service continuity, data reliability, and compliance, TencentDB for MySQL provides cross-region disaster recovery instances to help enhance your capability to deliver continued services at low costs and improve data reliability.
 With a separate database connection address, a cross-region disaster recovery instance can offer read access capability for various scenarios such as nearby access and data analysis at a lower cost of device redundancy. Its highly available source/replica architecture helps avoid single points of failure for databases.
 ![](https://qcloudimg.tencent-cloud.cn/raw/bf639c6f2d80718b2c272cfc0008be54.png)
