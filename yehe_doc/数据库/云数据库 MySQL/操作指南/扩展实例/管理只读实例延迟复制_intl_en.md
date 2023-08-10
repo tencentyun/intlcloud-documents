@@ -77,7 +77,7 @@ This document describes how to set delayed replication for read-only instances a
 <img src="https://qcloudimg.tencent-cloud.cn/raw/ab58491f328ffe447f8790105699f13b.png"  style="zoom:80%;">
 4. You can also select **Replay by Flashbacked Position** in **Deployment Info** > **Operation**. Then, data can be restored to the specified time point or corresponding GTID. After the restoration, replication of the read-only instance will be disabled until the start mode is switched to **Replicate all**.
     - Time: You can select a time point between the replication end time and the current time of the source instance.
-    - GTID: You can select all logs after the binlog not applied. If GTID is selected, data will be replicated until the specified GTID is reached.
+    - GTID: You can select all logs after the unapplied binlog. If GTID is selected, data will be replicated until the specified GTID is reached.
 The length of instance `server_uuid` is fixed at 36 bits, and the GTID must be in `server_uuid:transaction_id` format.
 >!
 >- If the entered binlog position has already been applied on the read-only instance or is after the source instance position, replication will fail to be enabled.
