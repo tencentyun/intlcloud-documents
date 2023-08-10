@@ -22,7 +22,7 @@ A source instance must be created first before a read-only instance can be creat
  - **Assign Read Weight**: It is assigned by the system.
  - **Billing Mode**: Monthly subscription and pay-as-you-go billing are supported.
  - **Region**: It is the same as that of the source instance by default.
- - **Database Version**: it is the same as that of the source instance by default.
+ - **Database Version**: It is the same as that of the source instance by default.
  - **Engine**: It is the same as that of the source instance by default.
  - **Architecture**: Select **Single-node**. Although the single-node architecture is cost-effective, there is a single point of failure for a single read-only instance. It is recommended to purchase at least two read-only instances in the service RO group that requires availability.
  - **Data Replication Mode**: Async replication
