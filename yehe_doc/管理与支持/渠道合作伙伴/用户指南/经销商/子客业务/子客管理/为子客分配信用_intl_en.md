@@ -2,11 +2,11 @@
 
 You can query all your customers under your account and view their basic information and available credit.
 
-Step 1. Contact your sales rep to apply for customer credits. (Note: The credits here are different from the reseller’s self-use credits. Please inform your sales rep that the credits you apply for will be allocated to customers.)
+(Note: There is no limit on the credit that reseller could allocate to end-customers, please manage it carefully.)
 
-Step 2. Use your partner account to log in to [Tencent Cloud](https://intl.cloud.tencent.com/login) and enter the [Partner Center](https://console.intl.cloud.tencent.com/partners).
+Step 1.Use your partner account to log in to [Tencent Cloud](https://intl.cloud.tencent.com/login) and enter the [Partner Center](https://console.intl.cloud.tencent.com/partners).
 
-Step 3. Select **Customer Business>Customer Management** on the left sidebar, click the **My Customers** tab, and allocate credits to your customers in the customer list.
+Step 2. Select **Customer Business>Customer Management** on the left sidebar, click the **My Customers** tab, and allocate credits to your customers in the customer list.
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/a0f15839310ef21c7ae2a5a6f8797ca7.png)
 
@@ -18,7 +18,7 @@ Step 4. Adjust credits for customers.
 
 (2) Set the **credit**, click **OK**, and the system will display a message of successful allocation.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/c52a9ac01c4d5ec8d11037218210eb1c.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/zxQS932_1.png)
 
 
 >?
@@ -35,7 +35,7 @@ Step 4. Adjust credits for customers.
 
 You can enter a negative value to withdraw the available credit of a customer. The maximum **withdrawable customer credit** must be less than or equal to the **available customer credit**.
 
-![](https://qcloudimg.tencent-cloud.cn/raw/88083150d16edc81b61103a44fefe200.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/6TEX657_2.png)
 
 
 
