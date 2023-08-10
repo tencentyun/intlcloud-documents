@@ -1,4 +1,4 @@
-## Scenarios
+## Overview
 For applications with high requirements of service continuity, data reliability, and compliance, TencentDB for MySQL provides cross-region disaster recovery instances to help enhance your capability to deliver continued services at low costs and improve data reliability.
 >?A disaster recovery instance costs the same as the source instance associated with it. For more information, see [Product Pricing](https://buy.cloud.tencent.com/price/cdb).
 
@@ -13,7 +13,7 @@ For applications with high requirements of service continuity, data reliability,
 - When any change takes place in the source instance, the log information recording the change will be copied to the disaster recovery instance and then data sync will be implemented through log replay.
 - If any failure occurs in the source instance, the disaster recovery instance can be activated in seconds to provide full read/write capability.
 
-## Feature Limits
+## Feature limits
 - Disaster recovery instances cannot be created for single-node instances of the cloud disk edition.
 - Disaster recovery instances can be purchased only for high available GTID-enabled source instances on MySQL 5.6 or later with the InnoDB engine at a specification of 1 GB memory and 50 GB disk capacity or above. If your source instance is below this specification, upgrade it first.
 >?If GTID is not enabled, you can enable it on the instance details page in the [console](https://console.cloud.tencent.com/cdb/). This operation takes a long time, and the instance will be disconnected for several seconds. We recommend that you do so during off-peak hours and add a reconnection mechanism in the programs that access the database.
@@ -21,7 +21,7 @@ For applications with high requirements of service continuity, data reliability,
 - One source instance can have one disaster recovery instance at most. Even if the existing disaster recovery instance is in isolation, you cannot create new ones.
 - Disaster recovery instance does not support the following features: transferring project, rollback, SQL operation, changing character set, account management, changing port, data import, rollback log, and read-only instance.
 
-## Creating a Disaster Recovery Instance
+## Creating a disaster recovery instance
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID or **Manage** in the **Operation** column to access the details page.
 2. Make sure that the GTID feature is enabled by viewing the basic information of the instance on the **Instance Details** page. Click **Add Disaster Recovery Instance** in the instance architecture diagram to enter the disaster recovery instance purchase page.
 ![](https://qcloudimg.tencent-cloud.cn/raw/3535c0274c3dfa18134ccc735edd0f46.png)
@@ -35,7 +35,7 @@ For applications with high requirements of service continuity, data reliability,
 4. After confirming that everything is correct, click **Buy Now** and wait for the delivery of disaster recovery instance.
 5. Return to the instance list. After the status of the instance changes to **Running**, it can be used normally.
 
-## Managing a Disaster Recovery Instance
+## Managing a disaster recovery instance
 - **View a disaster recovery instance**
 A disaster recovery instance can be viewed from the region where it resides. You can use the instance list to filter out all instances in a specific region.
 ![](https://qcloudimg.tencent-cloud.cn/raw/096486c7562d5385bfd50a187f85b307.png)
@@ -48,7 +48,7 @@ View the sync delay between the source instance and the disaster recovery instan
 - **Disaster recovery instance features**
 A disaster recovery instance has various features, such as instance details, instance monitoring, database management, security group, and backup and restoration.
 
-## Promoting a Disaster Recovery Instance to Source Instance
+## Promoting a disaster recovery instance to a source instance
 You can promote a disaster recovery instance to source instance in the console as needed.
 >!
 >- After the disaster recovery instance is promoted to source instance, it will replace the original one as the new source instance to continue your business, and its access address will change. Therefore, you need to update the new address for your business.
