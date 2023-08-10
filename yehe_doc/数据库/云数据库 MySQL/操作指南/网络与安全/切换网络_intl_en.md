@@ -25,7 +25,7 @@ Tencent Cloud supports classic network and VPC as described in [Overview](https:
 >?
 >- If there is no IP address specified, one will be automatically assigned by the system.
 >- You can only select a VPC in the region of the instance, but you can choose a subnet in any AZ and view its IP range.
->- We recommend you select a VPC in the region where the CVM instance resides; otherwise, the CVM instance will not be able to access TencentDB for MySQL over the private network, unless a [peering connection](https://intl.cloud.tencent.com/document/product/553/18827) or a [CCN](https://intl.cloud.tencent.com/document/product/1003/30049) instance is created between the two VPCs.
+>- We recommend that you select a VPC in the region where the CVM instance resides; otherwise, the CVM instance will not be able to access TencentDB for MySQL over the private network, unless a [peering connection](https://intl.cloud.tencent.com/document/product/553/18827) or a [CCN](https://intl.cloud.tencent.com/document/product/1003/30049) instance is created between the two VPCs.
 >
    - **Switch from classic network to VPC**
 ![](https://main.qcloudimg.com/raw/ba78ed608b83c2f553cb72350b726491.png)
