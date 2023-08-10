@@ -18,7 +18,7 @@ The MySQL source-replica binlog sync feature is adopted for read-only instances,
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/d6259ca885bb51740f68934481ff28d4.png)
 
-## Feature Limits
+## Feature limits
 - Read-only instances cannot be created for single-node instances of the cloud disk edition.
 - Read-only instances can be purchased only for **two-node or three-node source instances on MySQL 5.6 or later with the InnoDB engine at a specification of 1 GB memory and 50 GB disk capacity or above**. If your source instance is below this specification, upgrade it first.
 - The minimum specification of a read-only instance is 1 GB memory and 50 GB disk capacity, which must be equal to or greater than the storage capacity purchased for the source instance.
