@@ -28,10 +28,10 @@ The MySQL source-replica binlog sync feature is adopted for read-only instances,
 - Database creation/deletion is not supported and neither is phpMyAdmin (PMA).
 - Operations including account creation/deletion/authorization and account name/password modification are not supported.
 
-## Note
+## Use limits
 - There is no need to maintain accounts or databases for read-only instances, which are synchronized with those of the primary instance.
 - If the MySQL version is 5.6 but GTID is not enabled, you need to enable GTID in the console first before creating a read-only instance.
-The operation takes a long time, and the instance will be disconnected for several seconds. You are recommended to do so during off-peak hours and add a reconnection mechanism in the programs that access the database.
+The operation takes a long time, and the instance will be disconnected for several seconds. We recommend that you do so during off-peak hours and add a reconnection mechanism in the programs that access the database.
 - Read-only instances only support the InnoDB engine.
 - Data inconsistency between multiple read-only instances may occur due to the delay in data sync between the read-only instances and the source instance. You can check the delay in the console.
 - The specification of a read-only instance can be different from that of the source instance, which makes it easier for you to upgrade the read-only instance based on the load. We recommend that you keep the same specifications of read-only instances in one RO group.
@@ -49,7 +49,7 @@ The operation takes a long time, and the instance will be disconnected for sever
 <tr>
 <td>Specify RO Group</td><td>You can use the RO group automatically assigned by the system, create one, or select an existing one. <ul><li>Assigned by system: If multiple instances are purchased at a time, each of them will be assigned to an independent RO group, and their weights will be automatically assigned by the system by default. </li><li>Create RO group: Create an RO group. If multiple instances are purchased at a time, all of them will be assigned to this new RO group, and their weights will be allocated by the system automatically by default. </li><li>Existing RO group: Specify an existing RO group. If multiple read-only instances are purchased at a time, all of them will be assigned to the RO group. <br>Their weights will be allocated as configured in the RO group. If assignment by the system is set for the RO group, the instances will be added to the group automatically according to the purchased specifications. If custom allocation is set, their weights will be zero by default. <br>As the same private IP is shared within an RO group, if a VPC is used, the same security group settings will be shared. If an RO group is specified, it is not possible to customize any security group when instances are purchased. </li></ul></td></tr>
 <tr>
-<td>RO Group Name</td><td>Y can set the name of the new RO group when creating it. The name can contain up to 60 letters, digits, hyphens, underscores, and dots.</td></tr>
+<td>RO Group Name</td><td>You can set the name of the new RO group when creating it. The name can contain up to 60 letters, digits, hyphens, underscores, and dots.</td></tr>
 <tr>
 <td>Remove Delayed RO Instances</td><td>Select whether to enable the removal policy. If this option is enabled, you need to set **Delay Threshold** and **Least RO Instances**, and the weight of the removed instances is automatically set to 0. <dx-alert infotype="explain" title="">
 If a read-only instance is removed when its delay exceeds the threshold, it will become inactive, its weight will be automatically set to 0, and alarms will be sent to corresponding recipients. The instance will be put back into the RO group when its delay falls below the threshold. For more information on how to configure the read-only instance removal alarm and recipients, see <a href="https://intl.cloud.tencent.com/document/product/236/8457" target="_blank">Alarm Policies (TCOP)</a>. No matter whether delayed read-only instance removal is enabled, a read-only instance that is removed due to instance failure will rejoin the RO group when it is repaired.
