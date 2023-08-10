@@ -20,11 +20,11 @@ The parallel query feature of TencentDB for MySQL is not supported in the follow
 <tbody>
 <tr>
 <td rowspan="6">Statement compatibility restriction</td>
-<td>Parallel query is not supported for non-query statements, including INSERT ... SELECT and REPLACE ... SELECT.</td></tr>
+<td>Parallel query is not supported for non-query statements, including `INSERT ... SELECT` and `REPLACE ... SELECT`.</td></tr>
 <tr><td>Parallel query is not supported for statements in a stored program.</td></tr>
 <tr><td>Parallel query is not supported for prepared statements.</td></tr>
 <tr><td>Parallel query is not supported for statements in serial isolation-level transactions.</td></tr>
-<tr><td>Parallel query is not supported for locking reads, such as SELECT FOR UPDATE and SELECT ... FOR SHARE.</td></tr>
+<tr><td>Parallel query is not supported for locking reads, such as `SELECT FOR UPDATE` and `SELECT ... FOR SHARE`.</td></tr>
 <tr><td>Parallel query is not supported for CTEs.</td></tr>
 <tr>
 <td rowspan="5">Table/Index compatibility restriction</td>
