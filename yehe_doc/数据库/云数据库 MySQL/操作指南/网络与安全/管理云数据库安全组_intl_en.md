@@ -13,10 +13,10 @@
 3. In the pop-up dialog window, configure the following items, and click **OK**.
  - **Template**: Select a template based on the service to be deployed on the TencentDB instance in the security group, which simplifies the security group rule configuration, as shown in the table below.
 <table>
-	<tr><th>Template</th><th>Description</th><th>Remarks</th></tr>
-	<tr><td>Open all ports</td><td>All ports are opened to the public and private networks. This may present security issues. </td><td>-</td></tr>
+	<tr><th>Template</th><th>Description</th><th>Description</th></tr>
+	<tr><td>Open all ports</td><td>All ports are opened to the public and private networks. This may pose security issues. </td><td>-</td></tr>
 	<tr><td>Open ports 22, 80, 443, and 3389 and the ICMP protocol</td><td>Ports 22, 80, 443, and 3389 and the ICMP protocol are opened to the public network. All ports are opened to the private network. </td><td>This template doesn’t take effect for TencentDB. </td></tr>
-	<tr><td>Custom</td><td>You can create a security group and then add custom rules. For more information, see <a href="https://intl.cloud.tencent.com/document/product/236/14470">TencentDB Security Group Management > Step 2. Add a security group rule</a>. </td><td>-</rd></tr>
+	<tr><td>Custom</td><td>You can create a security group and then add custom rules. For more information, see <a href="https://intl.cloud.tencent.com/document/product/236/14470">Add a security group rule</a>. </td><td>-</rd></tr>
 </table>
  - **Name**: Custom name of the security group.
  - **Project**: Select a project for easier management. By default, **DEFAULT PROJECT** is selected.
@@ -57,7 +57,7 @@ You can also set **Source** to all or specific IPs (IP ranges) as needed to allo
 
 | Inbound or Outbound | Type | Source | Protocol and Port | Policy |
 
-| Inbound | MySQL(3306) | All IPs: 0.0.0.0/0 <br>Specific IPs: specify IPs or IP ranges | TCP:3306 | Allow |
+| Inbound | MySQL(3306) | All IPs: 0.0.0.0/0 <br>Specific IPs: Specify IPs or IP ranges | TCP:3306 | Allow |
 
 
 ### Step 3. Configure a security group
