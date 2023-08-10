@@ -16,11 +16,11 @@ This document describes how to set delayed replication for read-only instances a
 ![](https://qcloudimg.tencent-cloud.cn/raw/87041c7addd9dcfd058b2d3f7c417625.png)
 3. On the RO group configuration page, enable **Delayed Replication**, set the **Replication Delay**, and click **OK**.
    You can set delayed replication and select to replay by flashbacked position or global transaction identifier (GTID) during the delay to efficiently roll back data and fix failures.
-   - **Replication Delay**: you can configure the time of delayed replication between a read-only instance and its source instance. The value range is 1–259200 seconds.
-   - **Remove Delayed RO Instances**: this option indicates whether to enable the removal policy. If a read-only instance is removed when its delay exceeds the threshold, its weight will be set to 0 automatically, and alarms will be sent (for more information on how to configure the read-only instance removal alarm and recipients, see [Alarm Policies (Cloud Monitor)](https://intl.cloud.tencent.com/document/product/236/8457)).
-   - **Delay Threshold**: this sets a delay threshold for the read-only instance. When the threshold is exceeded, the instance will be removed from the read-only group.
-   - **Least RO Instances**: this is the minimum number of instances that should be retained in the RO group. When there are fewer instances in the RO group, even if an instance exceeds the delay threshold, it will not be removed.
-   - **Assign Read Weight**: the RO group supports two weight assignment methods: automatic assignment by the system and custom assignment. The weight value must be an integer between 0 and 100.
+   - **Replication Delay**: You can configure the time of delayed replication between a read-only instance and its source instance. The value range is 1–259200 seconds.
+   - **Remove Delayed RO Instances**: This option indicates whether to enable the removal policy. If a read-only instance is removed when its delay exceeds the threshold, its weight will be set to 0 automatically, and alarms will be sent (for more information on how to configure the read-only instance removal alarm and recipients, see [Alarm Policies (TCOP)](https://intl.cloud.tencent.com/document/product/236/8457)).
+   - **Delay Threshold**: This sets a delay threshold for the read-only instance. When the threshold is exceeded, the instance will be removed from the read-only group.
+   - **Least RO Instances**: This is the minimum number of instances that should be retained in the RO group. When there are fewer instances in the RO group, even if an instance exceeds the delay threshold, it will not be removed.
+   - **Assign Read Weight**: The RO group supports two weight assignment methods: automatic assignment by the system and custom assignment. The weight value must be an integer between 0 and 100.
    - **Load Rebalancing**:
     - Modifying weight will only affect new loads if rebalancing is disabled. The operation has no impact on read-only instances accessed by existing persistent connections and does not cause momentary database disconnection.
     - If rebalancing is enabled, all connections to the database will be temporarily disconnected, and the loads of newly added connections will be balanced according to the set weights.
@@ -63,8 +63,7 @@ This document describes how to set delayed replication for read-only instances a
 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/ae3a4a7f40ee28f4d5ad032f68c8a5a2.png"  style="zoom:80%;">
 3. In the pop-up dialog box, confirm that everything is correct and click **OK**.
->?If delayed replication is disabled, the delayed replication time will be 0 seconds, that is, real-time data sync is resumed between the read-only instance and its source instance. 
-> 
+>?If delayed replication is disabled, the delayed replication time will be 0 seconds, that is, real-time data sync is resumed between the read-only instance and its source instance. > 
 
 ## Enabling Data Replication
 >?The **Replication Status** of a read-only instance is **Normal** by default. If you set delayed replication and delete data accidentally during the delayed replication time period, you can restore the read-only instance to the specified position or GTID of the binlog file to implement quick data restoration.
@@ -77,8 +76,8 @@ This document describes how to set delayed replication for read-only instances a
 >
 <img src="https://qcloudimg.tencent-cloud.cn/raw/ab58491f328ffe447f8790105699f13b.png"  style="zoom:80%;">
 4. You can also select **Replay by Flashbacked Position** in **Deployment Info** > **Operation**. Then, data can be restored to the specified time point or corresponding GTID. After the restoration, replication of the read-only instance will be disabled until the start mode is switched to **Replicate all**.
-    - Time: you can select a time point between the replication end time and the current time of the source instance.
-    - GTID: you can select all logs after the binlog not applied. If GTID is selected, data will be replicated until the specified GTID is reached.
+    - Time: You can select a time point between the replication end time and the current time of the source instance.
+    - GTID: You can select all logs after the binlog not applied. If GTID is selected, data will be replicated until the specified GTID is reached.
 The length of instance `server_uuid` is fixed at 36 bits, and the GTID must be in `server_uuid:transaction_id` format.
 >!
 >- If the entered binlog position has already been applied on the read-only instance or is after the source instance position, replication will fail to be enabled.
