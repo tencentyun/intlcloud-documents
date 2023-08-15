@@ -1,6 +1,6 @@
 ## 1. BACKGROUND
 
-This Module applies if you use Cloud Workload Protection Platform (CWPP) (“**Feature**”). This Module is incorporated into the Data Processing and Security Agreement located at  (“**[DPSA](https://intl.cloud.tencent.com/document/product/301/17347)**”). Terms used but not defined in this Module shall have the meaning given to them in the DPSA. In the event of any conflict between the DPSA and this Module, this Module shall apply to the extent of the inconsistency.
+This Module applies if you use Cloud Workload Protection Platform (CWPP) (“**Feature**”). This Module is incorporated into the Data Processing and Security Agreement located at  (“[DPSA](https://intl.cloud.tencent.com/document/product/301/17347)”). Terms used but not defined in this Module shall have the meaning given to them in the DPSA. In the event of any conflict between the DPSA and this Module, this Module shall apply to the extent of the inconsistency.
 
 ## 2. PROCESSING
 
