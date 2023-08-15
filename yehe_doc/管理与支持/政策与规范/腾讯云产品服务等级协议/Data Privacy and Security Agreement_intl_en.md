@@ -243,6 +243,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 71.[Cloud Log Service](https://www.tencentcloud.com/ind/document/product/614/55082).
 72.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55140).
 73.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55273).
+74.[Cloud Workload Protection Platform](https://www.tencentcloud.com/document/product/296/56235).
 
 ## 10.Jurisdiction-specific Requirements
 
