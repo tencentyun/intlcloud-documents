@@ -332,7 +332,15 @@ x-cos-request-id: NWNlN2RjYjdfZjhjODBiMDlfOWNlNF9hYzc2****
 #### Example 4. Filtering buckets by the specified tag
 
 
-The tag of bucket `examplebucket-1250000000` is `<key1, value1>`, and the tags of bucket `examplebucket1-1250000000` are `<key1, value1>` and `<key2, value2>`.
+The tag of bucket examplebucket-1250000000  is 
+```
+<key1, value1>
+```
+
+and the tags of bucket  examplebucket1-1250000000  are 
+```
+<key1, value1> and <key2, value2>
+```
 
 #### Request
 
