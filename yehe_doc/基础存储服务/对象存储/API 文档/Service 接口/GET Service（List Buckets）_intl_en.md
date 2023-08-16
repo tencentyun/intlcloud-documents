@@ -410,7 +410,7 @@ x-cos-request-id: NjM2MzQwMWZfMmJiMjM1MGFfYTc******
 <ListAllMyBucketsResult>
 	<Owner>
 		<ID>qcs::cam::uin/100000000001:uin/100000000001</ID>
-		<DisplayName>100000000001</DisplayName>
+		<DisplayName>100000000001.</DisplayName>
 	</Owner>
 	<Buckets>
 		<Bucket>
