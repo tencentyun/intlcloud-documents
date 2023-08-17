@@ -508,6 +508,10 @@ You consent to the disclosure, transfer and export of your personal information 
 
 We may store your personal information within and outside Singapore.
 
+Please refer to the following paragraph instead of the second paragraph under the general “Introduction” section of the main privacy policy:
+
+If you do not agree with this privacy policy, we are unable to deliver the Services to you.
+
 Please refer to the following paragraph regarding “Access, Correction and Deletion” of your personal information, instead of the general “Access, Correction and Deletion” paragraph in the “Your Rights” section of the main privacy policy:
 
 You can access and correct your data in the account portal at any time. If you believe there is any other personal information we process about you, or you are unable to correct inaccurate information, you can make a request by contacting us at 
