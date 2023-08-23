@@ -50,9 +50,11 @@ The Modules set out below in the section [Modules](#8) to this privacy policy sh
 
 ### INTRODUCTION
 
-When you use the Tencent Cloud website and cloud services (including https://tencentcloud.io and https://intl.cloud.tencent.com) ("**Services**"), you are agreeing to our rules and policies regarding your personal information and you expressly consent to us collecting, processing, using and storing your personal information, as described in this privacy policy.
+When you use the Tencent Cloud website and cloud services (including https://tencentcloud.io and https://intl.cloud.tencent.com) pursuant to the Tencent Cloud Terms of Service ("**Services**"), you are agreeing to our rules and policies regarding your personal information and you expressly consent to us collecting, processing, using and storing your personal information, as described in this privacy policy.
 
-#### If you do not agree with this privacy policy, you must not use the Services.
+*If you do not agree with this privacy policy, you must not use the Services.*
+
+This privacy policy only applies to you if the Services are provided to you by the relevant Tencent entity as set out in the Terms of Service.
 
 We hold personal information that you provide to us to set up and manage your account and the Services, and personal information generated in connection with your use of the Services ("**Administrative Information**"). We are the data controller of Administrative Information. This privacy policy informs you of your choices and our practices regarding your Administrative Information.
 
@@ -252,6 +254,21 @@ a.  We delegate the processing of your personal information as described below, 
 ### Data Destruction
 
 Personal information, which has fulfilled the purpose for which it was collected or used, and has reached the period of time during which personal information was to be possessed, will be destroyed in an irreversible way. Personal information stored in electronic files will be deleted safely in an irreversible way by using technical methods, and printed information will be destroyed by shredding or incinerating such information.
+
+The personal information are required to be retained pursuant to the following laws and will be retained for the periods indicated in the below table. Please also note that personal information retained pursuant to the following laws may also be retained for other purposes as indicated in the Data Retention section.
+
+<table>
+<tr>
+    <td>Act on the Consumer Protection in Electronic Commerce, Etc.</td>
+    <td>Article 6 of the Act on the Consumer Protection in Electronic Commerce, Etc.</br>Article 6 of the Implementation Decree of the Act on the Consumer Protection in Electronic Commerce, Etc.</td>
+    <td>In an electronic commerce or a mail-order sale: </br> <li>Records regarding labelling and advertising (6 months) </li><li>Records regarding execution or withdrawal of a contract (5 years) </li><li>Records regarding the payment of a price and the supply of goods and services (5 years) </li><li>Records regarding customer services or dispute resolution (3 years)</li></td>
+</tr>
+<tr>
+    <td>Protection of Communications Secrets Act</td>
+    <td>Article 15-2 of the Protection of Communications Secrets Act</br>Article 41 of the Implementation Decree of the Protection of Communications Secrets Act</td>
+    <td><li>Log records, IP address (3 months)</li><li>The date of telecommunications by users, the time that the telecommunications started and ended, the interlocutor’s subscription number such as incoming and outgoing numbers, the frequency of use (12 months)</li></td>
+</tr>
+</table>
 
 ### Your Rights of Data Subject and Methods to Exercise Such Rights
 
