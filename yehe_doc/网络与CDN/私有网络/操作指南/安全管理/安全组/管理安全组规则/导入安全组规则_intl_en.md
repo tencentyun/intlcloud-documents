@@ -11,4 +11,4 @@ You can create and recover security group rules by importing backup rule file.
 >? 
 > - Security group w/ rules: Click **Append** to add rules in the file before the existing rules.
 > - Security group w/o rules: Download a template, edit the file, and import it.
-> 
+> - For details about source and protocol port formats in the import rule template file, see the instructions on the console page.
