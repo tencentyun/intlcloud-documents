@@ -18,7 +18,8 @@ API 网关提供共享实例和专享实例两种实例类型，关于两种实�
 <tbody><tr>
 <td rowspan="2">共享实例</td>
 <td>调用次数</td>
-<td rowspan="2">按量计费：API 网关默认计费方式，按实际使用量计费，按小时结算费用。 资源包计费：API 网关推出的优惠套餐包，可用于抵扣计费项目（调用次数/外网出流量）。</td>
+<td rowspan="2">按量计费：API 网关默认计费方式，按实际使用量计费，按小时结算费用。 <br>
+资源包计费：API 网关推出的优惠套餐包，可用于抵扣计费项目（调用次数/外网出流量）。</td>
 <td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/628/38406">免费额度</a> &gt; <a href="https://intl.cloud.tencent.com/document/product/628/38407">资源包</a> &gt; <a href="https://intl.cloud.tencent.com/document/product/628/11771">按量计费</a></td>
 </tr>
 <tr>
@@ -61,5 +62,5 @@ API 网关提供共享实例和专享实例两种实例类型，关于两种实�
 
 1. 登录 [API 网关](https://console.cloud.tencent.com/apigateway) 控制台。
 2. 在左侧导航栏中单击**资源包**，进入资源包列表。
-3. 查看来源为免费额度的资源包使用量。 
-![](https://main.qcloudimg.com/raw/ca9c5222e609a8bf1418a36eef66499c.png)
+3. 在信息列查看来源为免费额度的资源包，在规格列查看资源余量和总量。
+ ![](https://main.qcloudimg.com/raw/ca9c5222e609a8bf1418a36eef66499c.png)
