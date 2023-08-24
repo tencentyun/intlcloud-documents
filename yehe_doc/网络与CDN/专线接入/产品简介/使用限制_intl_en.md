@@ -103,7 +103,7 @@ Split into `172.16.0.0/13` + `172.24.0.0/13`.
 Split into `192.168.0.0/17` + `192.168.128.0/17`.
 
  **Dedicated tunnel 2.0**
- - `127.0.0.0/8`, `224.0.0.0/4`, `240.0.0.0/4`, `255.255.255.255`, and `169.254.0.0/16` (excluding `169.254.64.0.0/23`).
+ - `127.0.0.0/8`, `224.0.0.0/4`, `240.0.0.0/4`, `255.255.255.255`, and `169.254.0.0/16` (excluding `169.254.64.0/23`).
  Subnets and other IP addresses in the same network segment. To allow mutual access, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to enable peer IP redistribution.
 
 
