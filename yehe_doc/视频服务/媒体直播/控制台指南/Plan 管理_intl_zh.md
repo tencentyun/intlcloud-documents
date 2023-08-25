@@ -10,7 +10,7 @@
 - **Input Switch**：对运行中的频道，切换正在接收的输入。
 - **Time Record**:  对正在运行的频道，执行分时段录制。
 - **SCTE35 Time Signal**：设置SCTE-35 time_signal事件。
-- **SCTE35 Splice Insert**：设置SCTE-5 splice_insert事件。
+- **SCTE35 Splice Insert**：设置SCTE-35 splice_insert事件。
 - **SCTE35 Return to Network**：设置SCTE-35 return to network事件。
 
 ### 创建输入切换类型的事件
