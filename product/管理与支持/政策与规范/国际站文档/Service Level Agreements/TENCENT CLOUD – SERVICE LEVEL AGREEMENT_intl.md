@@ -1,98 +1,101 @@
-## 1.	INTRODUCTION
- 1.1 This Service Level Agreement for Tencent Cloud ("**SLA**") is incorporated into, and forms part of, the Tencent Cloud for Organisations Agreement (the "**Agreement**") entered into between Tencent and Organisation. This SLA applies separately to each account using Tencent Cloud.  
+**1. INTRODUCTION**
 
- 1.2	This SLA, including the Service Levels referenced in Section 5 below, will be effective only during the SLA Term (as defined in Schedule 2 to the Agreement). 
+1.1 This General Service Level Agreement, including the relevant [Service specific Service Level Agreements](https://www.tencentcloud.com/document/product/301), (collectively, "**SLA**") is incorporated into, and forms part of, the Tencent Cloud [Terms of Service](https://www.tencentcloud.com/document/product/301/9248) or the Tencent Cloud Master Services Agreement, as applicable, entered into between Tencent and you (“**Agreement**”). This SLA applies separately to each Account using the Services. 
 
- 1.3 Capitalised terms used but not defined in this SLA will have the meaning given to them in Schedule 1 of the Agreement. 
+1.2 Capitalised terms used but not defined in the SLA will have the meaning given to them in the Agreement.
 
- 1.4 Tencent may amend this SLA (including any Service Levels) in accordance with Clauses 3.4 and 3.5 of the Agreement. 
+1.3 Tencent may amend the SLA in accordance with the Agreement.
 
-1.5 In this SLA:  
+1.4 If there are any discrepancies between this General Service Level Agreement and the relevant Service specific Service Level Agreement(s), the relevant Service specific Service Level Agreement(s) shall apply. 
 
-  (a) "**Billing Cycle**" means a monthly billing cycle for the Charges during the Term; 
+1.5 In this General Service Level Agreement:
 
-  (b) "**Service Credit**" means a credit that Tencent will (subject to the terms and conditions of the Agreement) apply towards future Charges otherwise due and payable by Organisation under the Agreement; and
+(a) “**Billing Cycle**” means a monthly billing cycle for the Fees during the Term;
 
-  (c) 	"**Service Level**" means a service standard identified as a Service Level, as detailed in Section 5 below. 
+(b) "**Compensation**” means the compensation as set out in the relevant Service specific Service Level Agreement; and
 
-## 2.	SERVICE LEVELS AND SERVICE CREDITS 
-2.1 Tencent will use reasonable efforts to make Tencent Cloud available in accordance with the Service Levels. If Tencent Cloud does not meet a Service Level during a particular calendar month (an "**Incident**"), then (subject to the terms and conditions of the Agreement) Organisation is eligible to receive a Service Credit as detailed below.
+(c) "**Service Levels**" means the service standard or service availability set out in the relevant Service specific Service Level Agreement.
 
-2.2 All Service Levels will be calculated on a per-account, per-complete calendar month basis. Service Levels will not be calculated, and no Service Credits will be due, for any non-complete calendar month (i.e. if Organisation does not purchase a particular Tencent Cloud service for a complete calendar month, no Service Levels or Service Credits are applicable in relation to that service for that non-complete calendar month). 
+ 
 
-2.3 Service Credits are calculated as a percentage of the total Charges paid by Organisation to Tencent in respect of the relevant Tencent Cloud service provided under the Agreement during the relevant calendar month in which the Service Level was calculated. 
+**2. SERVICE LEVELS AND SERVICE CREDITS**
 
-2.4 Any Service Credits credited to Organisation:
+Unless otherwise stated in a relevant Service specific Service Level Agreement: 
 
-(a) will only be applied against future payments of Charges due from Organisation's account to Tencent for the relevant Tencent Cloud service that is subject of the relevant Incident;
+2.1 Tencent will use reasonable efforts to make Service available in accordance with the Service specific Service Level Agreement. If Tencent Cloud does not meet a Service Level during the relevant calendar month (an "**Incident**"), then (subject to the terms and conditions of the Agreement and the relevant Service specific Service Level Agreement) you are eligible to receive Compensation.
 
- (b) unless otherwise expressly set out in the Agreement, will be Organisation's sole and exclusive remedy for: 
-	 
-&emsp;(i) Tencent's failure to meet the applicable Service Level; and  
+2.2 All Service Levels will be calculated on a per-account, per-complete calendar month basis. Service Levels will not be calculated, and no Compensation will be due, for any non-complete calendar month (i.e. if you do not purchase a particular Service for a complete calendar month, no Compensation is applicable in relation to that Service for that non-complete calendar month).
 
-  &emsp;(ii) any unavailability of, loss of performance or functionality of, or other failure by Tencent to provide Tencent Cloud (or any part of Tencent Cloud); and
+2.3 Compensation is calculated as a percentage of the total Fees paid by you to Tencent in respect of the relevant Service provided under the Agreement during the relevant calendar month in which the Service Level was calculated.
 
-(c) will not entitle Organisation to any other refund or payment from Tencent or to unilaterally withhold payment of any Charges or other amounts owing to Tencent.
+2.4 Any Compensation provided to you:
 
-2.5 The Service Credits credited to Organisation (pursuant to this SLA and pursuant to all applicable Service Levels) for any particular Tencent Cloud service in any given calendar month will not, under any circumstance, exceed the Charges paid and payable by Organisation for that particular Tencent Cloud service in that calendar month.  
+(a) will only be applied against future payments of Fees due from your account to Tencent for the relevant Service that is subject of the relevant Incident;
 
-## 3.	SERVICE CREDIT CLAIMS
- 3.1 To receive a Service Credit for an Incident, Organisation must submit a claim to Tencent (a "**Service Credit Claim**"). A Service Credit Claim can be submitted via the Tencent Cloud website (the "**Service Credit Claim Form**"). 
+(b) unless otherwise expressly set out in the Agreement, will be your sole and exclusive remedy for:
 
- 3.2 	To be eligible for a Service Credit, Organisation must submit a Service Credit Claim to Tencent within 60 days of the Incident's commencement date, with all information requested on the Service Credit Claim Form being completed by Organisation to Tencent's satisfaction (acting reasonably).   Failure by Organisation to provide all necessary information in respect of a Service Credit Claim within 60 days of the Incident's commencement date will disqualify Organisation from receiving a Service Credit.
+ (i) Tencent's failure to meet the applicable Service Level; and
 
- 3.3	Tencent will evaluate each Service Credit Claim using information reasonable available to it, and (acting reasonably and in good faith) determine whether a Service Credit is owed to Organisation for that Service Credit Claim. Tencent will use reasonable efforts to complete such evaluation within 60 days of Tencent's receipt of a properly completed Service Credit Claim.
+ (ii) any unavailability of, loss of performance or functionality of, or other failure by Tencent to provide the relevant Services (or any part of Tencent Cloud); and
 
- 3.4	If Tencent determines that a Service Credit is owed to Organisation for a Service Credit Claim, Tencent will apply the Service Credit as a deduction to the Charges payable by Organisation in the next Billing Cycle after such determination. 
+(c) will not entitle you to any other refund or payment from Tencent or to unilaterally withhold payment of any Fees or other amounts owing to Tencent.
 
- 3.5	If more than one Service Level is not met because of an Incident, Organisation may choose only one Service Level under which to make a claim based on that Incident.  If Organisation fails to make such a choice, Tencent may in its discretion choose which Service Level default forms the basis for any Service Credit.
+2.5 The Compensation provided to you (pursuant to the relevant Service specific Service Level Agreement and pursuant to all applicable Service Levels) for any particular Service in any given calendar month will not, under any circumstance, exceed the Fees paid and payable by you for that particular Service in that calendar month.
 
- 3.6	Tencent's determination in relation to all Service Credit Claims is final and binding.  
+ 
 
-## 4.	EXCLUSIONS
-4.1 Under no circumstances will this SLA, Service Levels or Service Credits apply to, and under no circumstances will Tencent be liable for, any performance or availability issues relating to Tencent Cloud that are due to any one or more of the following (collectively, the "**Exclusions**"):
+**3. COMPENSATION CLAIMS**
+
+Unless otherwise stated in the relevant Service specific Service Level Agreement:
+
+3.1 To receive Compensation for an Incident, you must submit a claim to Tencent (a "**Compensation Claim**"). A Compensation Claim can be submitted via your Account (the "**Compensation Claim Form**").
+
+3.2 To be eligible for Compensation, you must submit a Compensation Claim to Tencent within 60 days of the Incident's commencement date, with all information requested on the Compensation Claim Form being completed by you to Tencent's satisfaction (acting reasonably). Failure by you to provide all necessary information in respect of a Compensation Claim within 60 days of the Incident's commencement date will disqualify you from receiving Compensation.
+
+3.3 Tencent will evaluate each Compensation Claim using information reasonable available to it, and (acting reasonably and in good faith) determine whether Compensation is owed to you for that Compensation Claim. Tencent will use reasonable efforts to complete such evaluation within 60 days of Tencent's receipt of a properly completed Compensation Claim.
+
+3.4 If Tencent determines that Compensation is owed to you for a Compensation Claim, Tencent will apply the Compensation as a deduction to the Fees payable by you in the next Billing Cycle after such determination.
+
+3.5 If more than one Service Level is not met because of an Incident, you may choose only one Service Level under which to make a claim based on that Incident. If you fail to make such a choice, Tencent may in its discretion choose which Service Level default forms the basis for any Compensation.
+
+3.6 Tencent's determination in relation to all Compensation Claims is final and binding.
+
+ 
+
+**4. EXCLUSIONS**
+
+4.1 Under no circumstances will this SLA, Service Levels or Compensation apply to, and under no circumstances will Tencent be liable for, any performance or availability issues relating to the Services that are due to any one or more of the following (collectively, the "**Exclusions**"):
 
 (a) factors outside of Tencent's reasonable control – for example, due to:
 
-  &emsp;(i) any Force Majeure Event; 
-    
-  &emsp;(ii) any equipment, telecommunications or network failure external to Tencent Cloud's data centres, including at Organisation's site or in relation to Organisation's connections from its site to Tencent Cloud's data centres;
+ (i) any event of force majeure (as defined in the Agreement);
 
-   &emsp;(iii) any security breaches of Tencent Cloud by third parties, provided that Tencent has implemented and followed appropriate security practices (and in accordance with the Tencent Cloud Terms of Service); 
+ (ii) any equipment, telecommunications or network failure external to Tencent Cloud's data centres, including at your site(s) or in relation to your connections from its site to Tencent Cloud's data centres;
 
-  &emsp;(iv) substantial increase in user traffic that Tencent had no prior notice of and/or had no reasonable control over; or
+ (iii) any security breaches of Tencent Cloud by third parties, provided that Tencent has implemented and followed appropriate security practices;
 
-  &emsp;(v) any content delivery failure due to non-compliance with local network regulations and/or licensing; 
+ (iv) substantial increase in user traffic that Tencent had no prior notice of and/or had no reasonable control over; or
+
+ (v) any content delivery failure due to non-compliance with local network regulations and/or licensing;
 
 (b) any network, services, hardware or software not provided by Tencent, including:
 
-  &emsp;(i) any third-party hosting or cloud service; or
+ (i) any third-party hosting or cloud service; or
 
-  &emsp;(ii) any third-party DNS or traffic management service;
+ (ii) any third-party DNS or traffic management service;
 
-(c) Organisation's non-compliance with the Agreement or any instructions concerning the use of Tencent Cloud notified by Tencent from time to time – including:
+(c) your non-compliance with the Agreement or any instructions concerning the use of the Services after being notified of it by Tencent from time to time – including:
 
-  &emsp;(i) any failure to comply with the TOS, including the Privacy Policy, Acceptable Use Policy or Copyright Policy; or
+ (i) any failure to comply with the Agreement, including the Data Processing and Security Agreement, Privacy Policy, Acceptable Use Policy or Copyright Policy; or
 
-  &emsp;(ii)	using Tencent Cloud in a manner inconsistent with its features and functions – for example, performing operations on, configuring  or inputting instructions that are not supported by Tencent Cloud; 
+ (ii) using the Services in a manner inconsistent with its features and functions – for example, performing operations on, configuring or inputting instructions that are not supported by the Services;
 
-(d) Organisation's use of a beta or test version of Tencent Cloud; 
+(d) your use of a beta or test version of the Services;
 
-(e) Organisation's failure to implement and follow appropriate security practices, including by protecting any of Organisation's Tencent Cloud account login details; 
+(e) your failure to implement and follow appropriate security practices, including by protecting any of your Account login details;
 
-(f) any suspension or termination by Tencent of Organisation's use of or access to Tencent Cloud in accordance with the Agreement;
+(f) any suspension or termination by Tencent of your use of or access to your Account or the Services in accordance with the Agreement;
 
-(g) planned or unplanned maintenance to Tencent Cloud; or
+(g) planned or unplanned maintenance to the Services; or
 
-(h)	any other exclusions for specific Service Levels as set out at Section 5 below. 
-
-## 5.	SERVICE LEVELS
-The Service Levels that apply to specific Tencent Cloud services are set out at:
-
-- [CVM Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/30393)
-
-- [CDB Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/12907)
-
-- [CDN Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/30981)
-
-- [Redis Service Level Agreement](https://intl.cloud.tencent.com/document/product/301/32279)
+(h) any other exclusions for specific Service Levels as set out in the relevant Service specific Service Level Agreement(s).
