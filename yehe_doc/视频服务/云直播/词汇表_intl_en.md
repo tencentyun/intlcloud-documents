@@ -1,5 +1,3 @@
-# Glossary
-
 ### Service Level Agreement
 
 Service Level Agreement (SLA) is an official commitment that prevails between a service provider and a client.
@@ -18,8 +16,12 @@ A signature in CSS is used to encrypt the content sent using your own private ke
 
 ### SLA
 
-Please see [Service Level Agreement](https://intl.cloud.tencent.com/zh/document/product/267/17023)
+Please see [Service Level Agreement](https://intl.cloud.tencent.com/document/product/267/17023).
 
 ### StreamName
 
 StreamName is the ID of a stream, which is usually used to uniquely identify the stream together with a domain name.
+
+### ISO date format
+
+ISO date format is a time format as specified in ISO 8601. In CSS, unless otherwise specified, all time-related parameters use UTC time in ISO 8601 standard (in the format of YYYY-MM-DDThh:mm:ssZ). For example, 2022-10-01T10:00:00Z represents 18:00:00 on October 1, 2022 Beijing Time (UTC+8).
