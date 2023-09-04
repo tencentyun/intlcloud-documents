@@ -1,5 +1,3 @@
-# 词汇表
-
 ### 服务级别协议
 
 服务级别协议（Service-Level Agreement，SLA），也称服务等级协议、服务水平协议，是服务提供商与客户之间定义的正式承诺。
@@ -18,8 +16,16 @@
 
 ### SLA
 
-参见 [服务级别协议](https://intl.cloud.tencent.com/zh/document/product/267/17023)
+参见 [服务级别协议](https://intl.cloud.tencent.com/document/product/267/17023)。
 
 ### StreamName
 
 StreamName 是一路流的标识符，通常与某个域名一起唯一标识一路流。
+
+### ISO 日期格式
+
+ISO 日期格式（ISODatetime）是 ISO 8601 标准规定的时间表示方式。云直播如无特别指定，所有时间相关参数统一采用 ISO 8601 表示的 UTC 时间，格式为 YYYY-MM-DDThh:mm:ssZ。
+
+例如，北京时间2018年10月1日18:00，表示方法为：2018-10-01T18:00:00+08:00；
+
+因为北京位于东八区，所以末尾包含+08:00。
