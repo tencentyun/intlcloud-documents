@@ -1,4 +1,4 @@
-Promo vouchers can be used to deduct certain amounts from the fees you incur with Tencent Cloud. You can view your promo vouchers in **Billing Center** > [Vouchers](https://console.cloud.tencent.com/account/voucher). You cannot transfer promo vouchers to other accounts, exchange them for cash, or request invoices for them.
+Promo vouchers can be used to deduct certain amounts from the fees you incur with Tencent Cloud. You can view your promo vouchers in **Billing Center** > [Vouchers](https://console.tencentcloud.com/expense/voucher). You cannot transfer promo vouchers to other accounts, exchange them for cash, or request invoices for them.
 If you have questions, see [FAQs > Promo Vouchers](https://intl.cloud.tencent.com/document/product/555/10870).
 
 ## Use Limits
