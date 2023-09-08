@@ -1,4 +1,4 @@
-代金券是可抵扣费用的优惠券，您可以登录 [腾讯云官网](https://console.cloud.tencent.com)，在**费用中心 > [代金券](https://console.cloud.tencent.com/account/voucher)** 页面中可查看账户下的代金券情况。代金券不可提现，不可转赠，不可开票。
+代金券是可抵扣费用的优惠券，您可以登录 [腾讯云官网](https://console.cloud.tencent.com)，在**费用中心 > [代金券](https://console.tencentcloud.com/expense/voucher)** 页面中可查看账户下的代金券情况。代金券不可提现，不可转赠，不可开票。
 如对代金券使用有疑问，请参阅 [代金券常见问题](https://intl.cloud.tencent.com/document/product/555/10870)。
 
 ## 代金券使用限制
