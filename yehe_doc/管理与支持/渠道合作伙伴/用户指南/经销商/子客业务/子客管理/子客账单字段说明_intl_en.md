@@ -45,7 +45,7 @@
 | Tax Amount                                   | Tax amount [Note: Same as the billing center field, this field is not included in the download file] |
 | Total Cost （Including Tax）                 | The total resource cost (including tax) after discounts have been applied, which is "Component original cost x Discount multiplier x (1 + Tax rate)" or "Component unit price x Usage x Usage duration x (1 + Tax rate)". [Note: Same as the billing center field, this field is not included in the download file] |
 
-| 字段名称         | 字段说明                                                     |
+| field            | description                                                  |
 | ---------------- | ------------------------------------------------------------ |
-| Transaction Type | 枚举值如下：Purchase<br/>Renewal<br/>Modify<br/>Refund<br/>Deduction<br/>Hourly settlement<br/>Daily settlement<br/>Monthly settlement<br/>Offline project deduction<br/>Offline deduction<br/>adjust-CR<br/>adjust-DR<br/>One-off RI Fee<br/>Spot<br/>Hourly RI fee<br/>New monthly subscription<br/>Monthly subscription renewal<br/>Monthly subscription specification adjustment<br/>Monthly subscription specification adjustment<br/>Monthly subscription refund |
+| Transaction Type | Enumerated values：Purchase<br/>Renewal<br/>Modify<br/>Refund<br/>Deduction<br/>Hourly settlement<br/>Daily settlement<br/>Monthly settlement<br/>Offline project deduction<br/>Offline deduction<br/>adjust-CR<br/>adjust-DR<br/>One-off RI Fee<br/>Spot<br/>Hourly RI fee<br/>New monthly subscription<br/>Monthly subscription renewal<br/>Monthly subscription specification adjustment<br/>Monthly subscription specification adjustment<br/>Monthly subscription refund |
 
