@@ -169,6 +169,7 @@ Modul berikut akan berlaku dan dimasukkan dengan referensi ke dalam DPSA ini jik
 65.[Cloud Log Service](https://www.tencentcloud.com/ind/document/product/614/55082).
 66.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55140).
 67.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55273).
+68.[Cloud Workload Protection Platform](https://www.tencentcloud.com/document/product/296/56235).
 
 ## Persyaratan khusus yurisdiksi
 

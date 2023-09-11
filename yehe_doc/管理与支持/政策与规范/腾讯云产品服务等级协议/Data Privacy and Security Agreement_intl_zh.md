@@ -169,6 +169,7 @@
 65.[日志服务](https://www.tencentcloud.com/ind/document/product/614/55082)。
 66.[互动白板](https://www.tencentcloud.com/document/product/1176/55140)。
 67.[堡垒机](https://www.tencentcloud.com/document/product/1151/55273)。
+68.[主机安全](https://www.tencentcloud.com/document/product/296/56235)。
 
 ## 特定司法管辖区要求
 
