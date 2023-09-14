@@ -43,11 +43,27 @@
 #### 4. **1.**   **SECOND-LEVEL RESELLER SUPPORT AND REFUND OBLIGATIONS**
 <p>(a)<u>Support</u>. Second-Level Reseller and Tencent will provide support to End Users and Tencent will provide limited support to Second-Level Reseller as follows:</p>
 
-| Support Level         | Support provided by Partner to End Users                     | **Support provided by Tencent to Second-Level Reseller**     |
-| --------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <b>Tier 1 Support</b> | •	Troubleshooting for End Users <br>•	Setup and configuration assistance </br> | For support services, Partner shall purchase the appropriate support plan (Standard / Commercial / Enterprise) based on its needs and requirements. Separate monthly charges apply. For details, please see https://www.tencentcloud.com/partner/support |
-| <b>Tier 2 Support</b> | •	Troubleshooting for End Users with assistance from Tencent |                                                              |
-| <b>Tier 3 Support</b> | •	Troubleshooting for End Users with assistance from Tencent |                                                              |
+<table>
+    <thead>
+    <tr>
+    <th>Support Level</th>
+         <th>Support provided by Partner to End Users</th>
+        <th>Support provided by Tencent to Second-Level Reseller</th>
+   </tr>
+        <tr>
+        <td><b>Tier 1 Support</b></td>
+            <td>•	Troubleshooting for End Users <br>•	Setup and configuration assistance</br> </td>
+            <td rowspan="3">For support services, Partner shall purchase the appropriate support plan (Standard / Commercial / Enterprise) based on its needs and requirements. Separate monthly charges apply. For details, please see https://www.tencentcloud.com/partner/support</td>
+            </tr>
+        <tr>
+        <td><b>Tier 2 Support</b></td>
+        <td>•	Troubleshooting for End Users with assistance from Tencent</td>
+            </tr>
+        <tr>
+        <td><b>Tier 3 Support</b></td>
+        <td>•	Troubleshooting for End Users with assistance from Tencent</td>
+            </tr>
+<table/>
 
 For the avoidance of doubt, Tencent may redirect any End Users requests for support to **Second-Level Reseller** as appropriate in accordance with the above conditions.&emsp;
 
