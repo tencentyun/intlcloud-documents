@@ -8,13 +8,13 @@ BY USING TENCENT CLOUD VOUCHER (“**TENCENT CLOUD** **VOUCHER**”) PROVIDED BY
 
 Please print or save a copy of these Terms for future reference.
 
-### 1. DEFINITIONS
+**1. DEFINITIONS**
 
 1.1  Unless otherwise defined in these Terms, all capitalized terms shall have the same meaning as defined in the Tencent Cloud Reseller Agreement.
 
  
 
-### 2.   TENCENT CONTRACTING ENTITY
+**2.   TENCENT CONTRACTING ENTITY**
 
 2.1  Depending on the territory where Partner is located, Tencent means the following:
 
@@ -34,11 +34,11 @@ Please print or save a copy of these Terms for future reference.
 
  
 
-### 3.   PURPOSE OF TENCENT CLOUD VOUCHER
+3.   PURPOSE OF TENCENT CLOUD VOUCHER
 
 3.1  In order to help our Tencent Cloud Partners promote Tencent Cloud Products, Tencent may periodically issue online vouchers via the Console to Tencent Cloud Partners for distribution to Partner’s customers’ accounts in the Console. Tencent Cloud Voucher is non-redeemable for cash and cannot be exchanged for cash in part or full and is only entitled for purchase of Tencent Services by Partner’s customers during its validty period.
 
-### 4.   ISSUANCE OF TENCENT CLOUD VOUCHER 
+**4.   ISSUANCE OF TENCENT CLOUD VOUCHER** 
 
 4.1  The issuance, distribution and use of the Tencent Cloud Voucher will be provisioned through the Console only. 
 
@@ -46,7 +46,7 @@ Please print or save a copy of these Terms for future reference.
 
 4.3  Partner may apply to Tencent for issuance of Tencent Cloud Voucher, all application requests will be reviewed by Tencent and are subject to approval by Tencent in its sole discretion. Tencent may impose applicable conditions on the issuance and/or distribution of Tencent Cloud Voucher, which shall be communicated to you separately via your BD contact.
 
-### 5.   DISTRIBUTION AND USE OF TENCENT CLOUD VOUCHER 
+**5.   DISTRIBUTION AND USE OF TENCENT CLOUD VOUCHER **
 
 5.1  Partner may check the Tencent Cloud Voucher balance, distribute Tencent Cloud Voucher to its customers and check on usage of Tencent Cloud voucher by its customers via the Voucher system features and tools in the Console. The distribution of Tencent Cloud Voucher to Partner’s customer may be subject to prior approval by Tencent. Where such Tencent approval is required, it will be processed by the sales and operation team and the approval status will be shown in the Console.
 
@@ -58,7 +58,7 @@ Please print or save a copy of these Terms for future reference.
 
 5.5  If the value of the purchased Tencent Services exceeds the amount stated in the Tencent Cloud Voucher, the remaining Fees (after deduction of the Tencent Cloud Voucher amount) shall be paid by the Partner’s customer.
 
-### **6.PARTNER OBLIGATIONS**
+**6.PARTNER OBLIGATIONS**
 
 6.1  By using Tencent Cloud Voucher, you agree to the following:
 
@@ -78,7 +78,7 @@ Please print or save a copy of these Terms for future reference.
 
 (h)    you shall not upload or introduce any viruses, Trojan horses, malicious code, worms, logic bombs or other material which is malicious or technologically harmful into our systems facilitating Tencent Cloud Voucher.
 
-### 7.   TERM AND TERMINATION
+**7.TERM AND TERMINATION**
 
 7.1  Term. These Terms will become effective upon your agreement to these Terms and will continue in effect unless earlier terminated in accordance with the provisions of these Terms.
 
@@ -88,11 +88,11 @@ Please print or save a copy of these Terms for future reference.
 
 7.4  Renewal of Tencent Cloud Voucher. Before expiry of Tencent Cloud Voucher, you may apply to renew Tencent Cloud Voucher in the Partner Console. All renewal requests are subject to approval by Tencent in its sole discretion. You will be notified if the renewal request is approved. If you do not receive any approval notification within 10 business days, your renewal request is deemed to be denied. 
 
-### 8.   DISCLAIMER OF WARRANTIES
+**8.   DISCLAIMER OF WARRANTIES**
 
 8.1  TO THE EXTENT PERMITTED BY APPLICABLE LAWS, TENCENT CLOUD VOUCHER IS PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS AND NEITHER TENCENT NOR ANY OF TENCENT’S AFFILIATE COMPANIES, NOR ITS LICENSORS, MAKE ANY REPRESENTATION OR WARRANTY IN RELATION TO TENCENT CLOUD VOUCHER PROVISIONED BY TENCENT, INCLUDING ANY REPRESENTATION OR WARRANTY THAT DISTRIBUTION AND/OR USE OF TENCENT CLOUD VOUCHER WILL BE UNINTERRUPTED, SECURE, ERROR-FREE OR FREE FROM VIRUSES OR FROM LATENT/HIDDEN DEFECTS. TENCENT, ON BEHALF OF ITS AFFILIATE COMPANIES AND LICENSORS, HEREBY DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY AND NON-INFRINGEMENT.
 
-### 9.   LIMITATION OF LIABILITY
+**9.LIMITATION OF LIABILITY**
 
 9.1  Cap on Liability. TO THE MAXIMUM EXTENT PERMISSIBLE UNDER APPLICABLE LAW, THE TOTAL AGGREGATE LIABILITY OF TENCENT AND TENCENT’S AFFILIATES FOR ALL CLAIMS IN CONNECTION WITH THESE TERMS OR TENCENT CLOUD VOUCHER, ARISING OUT OF ANY CIRCUMSTANCES WHETHER FROM BREACH OF CONTRACT, NEGLIGENCE, HIDDEN/LATENT DEFECTS OR ANY OTHER CAUSE, WILL BE LIMITED TO USD10. 
 
@@ -102,11 +102,11 @@ Please print or save a copy of these Terms for future reference.
 
 
 
-### **10.INDEMNIFICATION**
+**10.INDEMNIFICATION**
 
 You agree to defend, indemnify and hold harmless Tencent, its directors, employees, agents, partners, affiliates and subsidiaries, from and against any claims, damages, costs, liabilities and expenses (including, but not limited to, reasonable attorneys’ fees) arising out of or related to your violations of these Terms, including without limitation, any unauthorized and/or misuse of Tencent Cloud Voucher.
 
-### **11.GOVERNING LAWS AND DISPUTE RESOLUTION**
+**11.GOVERNING LAWS AND DISPUTE RESOLUTION**
 
 11.1 These Terms shall be governed by and interpreted in accordance with the laws as follows:
 
@@ -116,23 +116,23 @@ If Partner is located in North America, these Terms are governed by and interpre
 
 If Partner is located in the rest of the world except People’s Republic of China, these Terms are governed by and interpreted in accordance with the laws of Singapore. Except for the right of either party to apply to any court of competent jurisdiction for a temporary restraining order, a preliminary injunction, or other equitable relief to preserve the status quo or prevent irreparable harm, any dispute as to the interpretation, enforcement, breach, or termination of these Terms will be settled by binding arbitration under the Rules of Singapore International Arbitration Center (“SIAC Rules”) by three arbitrators appointed in accordance with the SIAC Rules. The place of arbitration shall be Singapore. The language of proceedings shall be English. Judgment upon the award rendered by the arbitrators may be entered in any court of competent jurisdiction.  The prevailing party will be entitled to receive from the other party its reasonable attorneys’ fees and costs incurred in connection with any arbitration or litigation instituted in connection with these Terms.
 
-### **12.  CONFIDENTIAL INFORMATION**
+**12.  CONFIDENTIAL INFORMATION**
 
 12.1 Neither party (the “**Recipient**”) will disclose the other party’s (the “**Discloser**”) Confidential Information except to those of the Recipient’s affiliates, employees, and contractors who need to know the Confidential Information for the purposes of exercising Recipient’s rights and performing Recipient’s obligations under these Terms, and who have agreed in writing to confidentiality obligations that are at least as protective as these Terms. The Recipient will, and will take appropriate measures to ensure that its affiliates, employees, and contractors do: (a) take at least reasonable care to protect the confidentiality of the Discloser’s Confidential Information; and (b) not use the Discloser’s Confidential Information for any purpose other than to exercise the Recipient’s rights and perform the Recipient’s obligations under these Terms. However, the Recipient may also disclose Confidential Information to the extent required by applicable laws, regulations, or government orders; provided that the Recipient uses commercially reasonable efforts, if legally permitted, to: (i) promptly notify the Discloser of those disclosure requirements before disclosing the Discloser’s Confidential Information; and (ii) provide to Discloser any information reasonably requested to assist Discloser in seeking a protective order or other confidential treatment for that Confidential Information. “Confidential Information” means information that one party (or an affiliate) discloses to the other party under these Terms, and that is marked as confidential or should reasonably be considered confidential based on the nature of the information and the circumstances of its disclosure. Confidential Information does not include information that: (a) is independently developed by the Recipient without use of the Confidential Information of the Discloser; (b) is, at the time of disclosure by the Discloser, already known to the Recipient without confidentiality obligations; (c) is rightfully given to the Recipient by a third party without confidentiality obligations; or (d) becomes publicly known through no fault of the Recipient. This Section will survive for a term of three (3) years following termination or expiration of these Terms for whatever reason.
 
-### 13.WAIVER AND SEVERABILITY 
+**13.WAIVER AND SEVERABILITY **
 
 13.1 The waiver by either party of any breach of these Terms does not waive any other breach. Neither party will be treated as having waived any rights by not exercising (or delaying the exercise of) any rights under these Terms. If any part of these Terms is unenforceable, the remaining portions of these Terms will remain in full force and effect.
 
-### 14.FORCE MAJEURE
+**14.FORCE MAJEURE**
 
 14.1 If the performance of these Terms is delayed or either party breaches these Terms due to an event of force majeure, including but not limited to natural disasters, acts of government, promulgation or change of policies, promulgation or change of laws and regulations, strikes and unrest, neither party will be liable for the breach, provided that the affected party will notify the other party as soon as practicable. If an event of force majeure prevents the performance of these Terms for more than 30 calendar days, either party may terminate these Terms, without assuming any liability, by giving 15 days' advance written notice to the other party.
 
-### **15.  ENTIRE AGREEMENT**
+**15.  ENTIRE AGREEMENT**
 
 15.1 These Terms are the final and complete expression of all agreements between you and Tencent regarding their subject matter and supersede all prior oral and written agreements regarding these matters. 
 
-### **16.  MODIFICATION OF THESE TERMS **
+**16.  MODIFICATION OF THESE TERMS **
 
 16.1 Tencent may amend these Terms from time to time by posting updated versions to the Tencent Cloud Partner Console. Updated versions will be effective no earlier than the date of posting. Tencent will use reasonable efforts to notify you of the changes, but you are responsible for periodically checking these Terms for any modifications. Your continued use of the Tencent Cloud Voucher constitutes your acceptance of any amended Terms. Amended Terms are not applicable retroactively.
 
