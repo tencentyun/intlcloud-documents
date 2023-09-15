@@ -1,5 +1,3 @@
-# **Tencent Cloud Partner Program Terms and Conditions**
-
 **We welcome your participation in Tencent Cloud Partner Program****!** 
 
 **PLEASE READ THESE TERMS CAREFULLY**
