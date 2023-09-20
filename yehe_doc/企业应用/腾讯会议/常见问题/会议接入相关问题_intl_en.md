@@ -27,3 +27,6 @@ Click **Settings** after joining the video conference and enable audio mode to r
 
 After you log in to VooV Meeting, click **Start** on the home page. You will start a video conference immediately. There is no need to enter any additional information. You cannot start and host video conferences without logging in to VooV Meeting.
 
+**Why do I get a message saying "Please log in first" when I try to join a meeting using a guest account?**
+You may be joining a meeting with Tencent Meeting users. Under applicable laws and regulations, all such users, including VooV Meeting users, must sign up and log in to join meetings with Tencent Meeting users.
+
