@@ -1,12 +1,11 @@
 ## 操作场景
 预算管理功能从客户内部经营管理诉求出发，帮助腾讯云客户设置预算，追踪预算，分析预算。
->? 预算管理目前正在灰度体验中，如需体验，可以联系您的客户经理。
 
 ## 操作步骤
 1. 登录[费用中心控制台](https://console.intl.cloud.tencent.com/expense)。
 2. 在左侧导航栏中，选择**成本管理> 预算管理**，进入预算管理页面。
 3. 单击**新建预算**。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/dwQ8962_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_3%E6%96%B0%E5%BB%BA%E9%A2%84%E7%AE%97.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/4mbs122_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16952679389930.png)
 4. 在**编辑预算**页面，按需填写相关信息。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/TuF7925_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_4%E7%BC%96%E8%BE%91%E9%A2%84%E7%AE%97.png)
  - **基本信息**：根据需要设置便于区分的预算名称，该名称将会展示在预算列表。
@@ -34,7 +33,7 @@
     - 您配置的预算值，及后续步骤配置的告警阈值，也将体现在其中。
 >? 对于日预算，腾讯云展示历史20天的成本；月预算展示历史12个月；季度预算展示历史4个季度；年预算展示历史每年。
 5. 以上信息填写完后，单击**下一步：设置提醒**，在**设置提醒**页面，按需填写相关信息。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/2dEz776_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_5%E8%AE%BE%E7%BD%AE%E6%8F%90%E9%86%92.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/zHGX895_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_1695267950717.png)
  - **预算提醒**：基于每个预算，最多可设置3组预警。
     - 实际费用：按您的实际消费金额进行预警。
     - 固定值：您可以根据需要设置一个固定的金额，达到或超过该金额时触发预警。
@@ -60,8 +59,8 @@
 
 ## 可视化面板介绍
 点击预算列表中的预算名称，可进入预算分析面板，进一步分析预算历史达成情况。也可以在此编辑/删除、复制预算。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/ABFs816_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9D%A2%E6%9D%BF1.png)
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/QEjX852_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9D%A2%E6%9D%BF2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/jVMI824_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16952679635369.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/UebV186_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16952679754320.png)
 - **本期预算面板**：您可以查看本期预算的相关信息：包括预算进度、预算与实际费用对比、本期已触发的提醒次数。
 - **预算历史面板**：在预算历史面板中，您可查看该预算在创建以来的历史执行情况。预算历史图表与成本分析打通，以可视化图表的方式展示每个周期的实际成本和预算计划，并支持跳转到成本分析进行进一步分析。
 - **提醒记录面板：**在提醒记录面板可以查看历史上触发的所有预警，包括提醒时间和提醒内容。
