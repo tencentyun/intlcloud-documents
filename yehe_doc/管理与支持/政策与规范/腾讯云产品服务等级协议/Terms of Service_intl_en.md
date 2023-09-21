@@ -25,7 +25,7 @@ You must be at least 14 years old to use the Services. By agreeing to these Term
 | South Korea                                             | Tencent Korea Yuhan Hoesa, a Korean registered company located at 152,  Taeheran-ro, Gangnam-gu (Gangnam Finance Center, Yeoksam-dong), Seoul, Korea | South Korea       |
 | Rest of the world                                       | Aceville Pte Ltd, a Singapore registered company located at 30 Raﬄes  Place, #12-01, Oxley @ Raﬄes, Singapore 048622. | Singapore         |
 
- (b) The country speciﬁed in your registered billing information may cause additional or diﬀerent terms to apply, as follows. For example, if your use of the Services is subject to consumer protection regulations as determined under applicable laws, additional terms apply, as set forth in the EEA Consumer Terms, Germany Terms, South Korea Terms and other region specific terms. If the country speciﬁed in your registered billing information is in North America, you shall be subject to the North America Terms below. If you wish to use the Services in the PRC region, you shall be subject to the terms of the PRC Service Region Terms. In addition to the above, additional or diﬀerent terms may apply to your use based on applicable local laws.
+ (b) The country speciﬁed in your registration information may cause additional or diﬀerent terms to apply, as follows. For example, if your use of the Services is subject to consumer protection regulations as determined under applicable laws, additional terms apply, as set forth in the EEA Consumer Terms, Germany Terms, South Korea Terms and other region specific terms. If the country speciﬁed in your registration information is in North America, you shall be subject to the North America Terms below. If you wish to use the Services in the PRC region, you shall be subject to the terms of the PRC Service Region Terms. In addition to the above, additional or diﬀerent terms may apply to your use based on applicable local laws.
 
 **4. USE OF SERVICES**
 
@@ -228,7 +228,7 @@ You must be at least 14 years old to use the Services. By agreeing to these Term
  
  (k) <u>Publicity.</u> You agree that Tencent may refer to you as a customer of Tencent and use your name and logo in Tencent’s marketing materials and websites. Except as otherwise permitted by law, you shall not issue any press release or make any other public communication with respect to these Terms, or the fact that Tencent is providing Services for you. You shall not use Tencent’s trademarks, service marks, service or trade names, logos (“**Tencent Marks**”); or identify Tencent as a supplier of the Services without prior written consent of Tencent. Notwithstanding the permission granted, unless otherwise agreed by Tencent in writing, your limited permission to identify Tencent for such purposes and for the use of Tencent’s Marks shall terminate as soon as these Terms expire or are terminated, whichever is sooner. Your use of the Tencent Marks shall be subject to any terms, conditions, or guidelines that Tencent may issue from time to time.
  
- (l) <u>Notice.</u> Any notice required or permitted to be given under these Terms will be effective if it is in writing and sent by certified or registered mail, or insured courier, return receipt requested, to the appropriate party at the address set forth above (in the case of Tencent) and the registered billing address or any other address registered with us (in your case) and with the appropriate postage affixed. Either party may change its address for receipt of notice by notice to the other party in accordance with this Section. Notwithstanding the foregoing, any notices, communications, or disclosures sent electronically by Tencent through email, the platform for the Services or otherwise, shall be deemed a valid and binding notice required or permitted to be given under these Terms.
+ (l) <u>Notice.</u> Any notice required or permitted to be given under these Terms will be effective if it is in writing and sent by certified or registered mail, or insured courier, return receipt requested, to the appropriate party at the address set forth above (in the case of Tencent) and any address registered with us (in your case) and with the appropriate postage affixed. Either party may change its address for receipt of notice by notice to the other party in accordance with this Section. Notwithstanding the foregoing, any notices, communications, or disclosures sent electronically by Tencent through email, the platform for the Services or otherwise, shall be deemed a valid and binding notice required or permitted to be given under these Terms.
 
 
 ## TENCENT CLOUD PRC SERVICE REGION TERMS
@@ -289,7 +289,7 @@ The formation, validity, performance and interpretation of, and dispute resoluti
 
 ## TENCENT CLOUD NORTH AMERICA TERMS 
 
-To the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registered billing information is in North America, you shall be subject to the terms of these North America Terms. Any terms used but not defined in these North America Terms have the meaning given to them in the Terms.
+To the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registration information is in North America, you shall be subject to the terms of these North America Terms. Any terms used but not defined in these North America Terms have the meaning given to them in the Terms.
 
  **1.Dispute Resolution and Arbitration** 
 
@@ -297,7 +297,7 @@ To the extent you wish to receive Services under the Tencent Cloud Terms of Serv
 
 (b) Any arbitration between you and Tencent will be administered by the American Arbitration Association (“**AAA**”) under its rules in force when the Notice of Arbitration is submitted in accordance with those Rules (“**Rules**”), which Rules are deemed to be incorporated by reference into this clause and as may be amended by the rest of this clause. The Rules and filing forms are available online at [www.adr.org](http://www.adr.org/) or by calling the AAA at 1-800-778-7879. The Federal Arbitration Act and federal arbitration law apply to the Terms. All arbitration proceedings between the parties will be confidential unless otherwise agreed by the parties in writing.
 
-(c) Tencent will reimburse you for your payment of the filing fee, unless your claim is for more than $10,000, in which case the payment of any fees will be decided by the Rules. Any arbitration hearing will take place at a location to be agreed upon in Santa Clara County, California, but if the claim is for $10,000 or less, you may choose whether the arbitration will be conducted: (a) solely on the basis of documents submitted to the arbitrator; (b) through a non-appearance based telephone hearing; or (c) by an in-person hearing as established by the Rules in the county (or parish) of your billing address. The arbitration tribunal will consist of three arbitrators to be appointed in accordance with the Rules. Arbitration will be conducted in English. Judgment upon the award rendered by the arbitrators may be entered in any court of competent jurisdiction.
+(c) Tencent will reimburse you for your payment of the filing fee, unless your claim is for more than $10,000, in which case the payment of any fees will be decided by the Rules. Any arbitration hearing will take place at a location to be agreed upon in Santa Clara County, California, but if the claim is for $10,000 or less, you may choose whether the arbitration will be conducted: (a) solely on the basis of documents submitted to the arbitrator; (b) through a non-appearance based telephone hearing; or (c) by an in-person hearing as established by the Rules in the county (or parish) of the address of your registration information. The arbitration tribunal will consist of three arbitrators to be appointed in accordance with the Rules. Arbitration will be conducted in English. Judgment upon the award rendered by the arbitrators may be entered in any court of competent jurisdiction.
 
 (d) YOU AND TENCENT AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING. Further, unless both you and Tencent agree otherwise, the arbitrator may not consolidate more than one person’s claims, and may not otherwise preside over any form of a representative or class proceeding.
 
@@ -307,7 +307,7 @@ The Services provided to you may include broadband data connectivity services th
 
 ## TENCENT CLOUD EUROPEAN ECONOMIC AREA AND SWITZERLAND (“EEA”)  CONSUMER TERMS
 
-If you are not a business user and you are purchasing the Services for personal use, to the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registered billing information is in the EEA, such Services shall be subject to the terms of these EEA Consumer Terms. Any terms used but not defined in these EEA Consumer Terms have the meaning given to them in the Terms.
+If you are not a business user and you are purchasing the Services for personal use, to the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registration information is in the EEA, such Services shall be subject to the terms of these EEA Consumer Terms. Any terms used but not defined in these EEA Consumer Terms have the meaning given to them in the Terms.
 
  **1.Governing Law**
 
@@ -346,7 +346,7 @@ If you are a consumer residing in France, please note that the exclusion and lim
 
 ## TENCENT CLOUD GERMANY TERMS
 
-To the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registered billing information is in Germany, you shall be subject to the terms of these Germany Terms, which prevail over the general Tencent Cloud Terms of Service in case of any contradictions. Any Terms used but not defined in these Germany Terms have the meaning given to them in the Terms.
+To the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registration information is in Germany, you shall be subject to the terms of these Germany Terms, which prevail over the general Tencent Cloud Terms of Service in case of any contradictions. Any Terms used but not defined in these Germany Terms have the meaning given to them in the Terms.
 
  **1. Privacy Policy.** Our Privacy Policy does not form part of the Terms. It only serves for informational purposes and provides information on how we process personal data within the scope of the Services.
 
@@ -378,7 +378,7 @@ To the extent you wish to receive Services under the Tencent Cloud Terms of Serv
 
 ## TENCENT CLOUD SOUTH KOREA TERMS
 
-To the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registered billing information is South Korea, you shall be subject to the terms of these South Korea Terms, which prevail over the general Tencent Cloud Terms of Service in case of any conflict or inconsistency. Any terms used but not defined in these South Korea Terms have the meaning given to them in the Terms.
+To the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registration information is South Korea, you shall be subject to the terms of these South Korea Terms, which prevail over the general Tencent Cloud Terms of Service in case of any conflict or inconsistency. Any terms used but not defined in these South Korea Terms have the meaning given to them in the Terms.
 
 **1. Eligibility**
 Section 2 concerning eligibility of Terms is hereby restated as follows:
