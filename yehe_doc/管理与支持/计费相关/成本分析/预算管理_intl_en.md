@@ -2,15 +2,12 @@
 
 The budget management feature is developed to meet the internal management needs of Tencent Cloud customers. It lets you configure, track, and analyze budgets to help control your costs.
 
->? The budget management feature is currently in beta test. To try it out, please contact your Tencent Cloud sales rep.
->
-
 ## Directions
 
 1. Log in to the [Billing Center](https://console.cloud.tencent.com/expense/overview).
 2. On the left sidebar, select **Cost Management > Budget Management** to enter the budget management page.
 3. Click **New** to create a budget.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/dwQ8962_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_3%E6%96%B0%E5%BB%BA%E9%A2%84%E7%AE%97.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/4mbs122_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16952679389930.png)
 4. In the **Edit budget** window, configure the following:
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/TuF7925_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_4%E7%BC%96%E8%BE%91%E9%A2%84%E7%AE%97.png)
  - **Basics**: Enter a name for the budget, which will be displayed in the budget list.
@@ -41,7 +38,7 @@ The budget management feature is developed to meet the internal management needs
 >
 
 5. After filling in all the information, click **Next** to configure alerts.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/2dEz776_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_5%E8%AE%BE%E7%BD%AE%E6%8F%90%E9%86%92.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/zHGX895_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_1695267950717.png)
  - **Budget alerts**:
     - **Actual cost:** The alert is triggered based on the actual cost amount.
     - **Against fixed value:** The alert is triggered when a certain fixed amount is reached.
@@ -73,8 +70,8 @@ Review the budget information, alert thresholds, alert details, and other settin
 
 ## Visual Analysis Panel
 Click on a budget name in the budget list to enter the budget analysis panel to further analyze the historical performance of the selected budget. You can also edit, delete, or copy the budget.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/ABFs816_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9D%A2%E6%9D%BF1.png)
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/QEjX852_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9D%A2%E6%9D%BF2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/jVMI824_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16952679635369.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/UebV186_%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_16952679754320.png)
 - **Budget for the current period:** You can view information about the current period’s budget, including the amount of budget already spent, the budget amount compared to your actual costs, and the number of alerts triggered.
 - **Budget history:** You can view the historical status of your budget since the time it was created. The chart shows Cost Explorer data so you can view your actual costs against your budget for each budget period. You can also go directly to **Cost Explorer** for further analysis or go to **Alert History** to view the history of triggered budget alerts, including the alert time and alert content.
 - **Budget information:** On the right panel, you can view the settings for the selected budget. You can also edit, delete, or copy the budget.
