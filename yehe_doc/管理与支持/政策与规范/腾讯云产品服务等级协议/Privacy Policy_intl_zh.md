@@ -271,11 +271,11 @@ a. 我们将通过下述方式委托他人处理您的个人信息，且受托�
 
 根据 PIPA 第 39-11 条的规定，指定国内代理人的相关信息如下：
 
- - 名称：Tencent Korea Yuhan Hoesa
+ - 名称和代表人：Tencent Korea Yuhan Hoesa(公司董事長: LI YAN)
 
  - 地址：152, Taeheran-ro, Gangnam-gu (Gangnam Finance Center, Yeoksam-dong), Seoul, Korea
 
- - 电话：+82-2185-0902
+ - 电话：+82-2-2185-0926
 
  - 电子邮件：cloudlegalnotices@tencent.com
 
