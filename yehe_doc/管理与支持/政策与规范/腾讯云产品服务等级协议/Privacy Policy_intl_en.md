@@ -292,11 +292,11 @@ If you have any questions or comments about the Privacy Policy, if you need to r
 
 Pursuant to Article 39-11 of the PIPA, the information regarding the designated domestic agent is as follows:
 
- - Name: Tencent Korea Yuhan Hoesa
+ - Name and Representative: Tencent Korea Yuhan Hoesa(CEO of Tencent Korea Yuhan Hoesa: Li Yan）
 
  - Address: 152, Taeheran-ro, Gangnam-gu (Gangnam Finance Center, Yeoksam-dong), Seoul, Korea
 
- - Telephone Number: +82-2185-0902
+ - Telephone Number: +82-2-2185-0926
 
  - E-mail: cloudlegalnotices@tencent.com
 
