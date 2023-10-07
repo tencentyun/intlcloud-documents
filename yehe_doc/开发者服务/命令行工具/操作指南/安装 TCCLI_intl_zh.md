@@ -52,7 +52,7 @@ python setup.py install
 
 
 <dx-alert infotype="notice" title="">
-该方法只适用于 Mac OS 系统。您需要先安装 homebrew，安装方法请参见 [homebrew官网](https://brew.sh/index_zh-cn)。
+该方法只适用于 Mac OS 系统。您需要先安装 homebrew，安装方法请参见 [homebrew官网](https://brew.sh/)。
 </dx-alert>
 
 
