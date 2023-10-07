@@ -271,11 +271,11 @@ Se você tiver alguma dúvida ou comentário sobre a Política de Privacidade, s
 
 De acordo com o artigo 39-11 do PIPA, as informações a respeito do agente doméstico designado são as seguintes:
 
- - Nome: Tencent Korea Yuhan Hoesa
+ - Nome e Representante: Tencent Korea Yuhan Hoesa (Representante: Li Yan)
 
  - Endereço: 152, Taeheran-ro, Gangnam-gu (Gangnam Finance Center, Yeoksam-dong), Seoul, Coreia do Sul
 
- - Telefone: +82-2185-0902
+ - Telefone: +82-2-2185-0926
 
  - E-mail: cloudlegalnotices@tencent.com
 
