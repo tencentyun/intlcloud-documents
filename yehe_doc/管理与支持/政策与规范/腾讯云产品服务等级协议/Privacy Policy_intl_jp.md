@@ -271,11 +271,11 @@ PIPA 等の適用法に基づき、書面またはメール、ファックス、
 
 PIPA 第 39 条第 11 項に基づき、指定国内代理人に関する情報は以下の通りです。
 
- - 名称：Tencent Korea Yuhan Hoesa
+ - 名称及び代表：Tencent Korea Yuhan Hoesa (代表: LI YAN)
 
  - 住所：152, Taeheran-ro, Gangnam-gu (Gangnam Finance Center, Yeoksam-dong), Seoul, Korea
 
- - 電話番号：+82-2185-0902
+ - 電話番号：+82-2-2185-0926
 
  - メールアドレス：cloudlegalnotices@tencent.com
 
