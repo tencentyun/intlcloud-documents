@@ -271,11 +271,11 @@ Jika Anda memiliki pertanyaan atau komentar tentang Kebijakan Privasi, jika Anda
 
 Berdasarkan Pasal 39-11 dari PIPA, informasi mengenai agen domestik yang ditunjuk adalah sebagai berikut:
 
- - Nama: Tencent Korea Yuhan Hoesa
+ - Nama dan perwakilan: Tencent Korea Yuhan Hoesa (Perwakilan: Li Yan)
 
  - Alamat: 152, Taeheran-ro, Gangnam-gu (Gangnam Finance Center, Yeoksam-dong), Seoul, Korea
 
- - Nomor Telepon: +82-2185-0902
+ - Nomor Telepon: +82-2-2185-0926
 
  - E-mail: cloudlegalnotices@tencent.com
 
