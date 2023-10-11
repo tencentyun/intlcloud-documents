@@ -27,7 +27,7 @@
 >
 > ● 伙伴承担费用的客户代金券无需腾讯审批，伙伴确认发放后，子客即可收到代金券进行下单使用。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/06f2c62526862b40d6a3033ad1bccb58.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/4pQ5358_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B84.png)
 
 ### 代金券清单查询
 点击客户业务>代金券管理 菜单进入客户代金券清单页面。客户代金券确认发放给客户后，可在此页面查询代金券状态和使用情况，支持全量查询或输入具体条件查询代金券。

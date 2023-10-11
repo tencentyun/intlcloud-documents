@@ -17,7 +17,7 @@
 
 第三步：点击**创建代金券模板**，填写厂商代金券申请规则。
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/uE6S342_%E5%8E%82%E5%95%86.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/U97U328_123.png)
 
 >?
 >
