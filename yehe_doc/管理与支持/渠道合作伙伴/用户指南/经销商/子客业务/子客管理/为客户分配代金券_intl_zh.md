@@ -7,7 +7,7 @@
 第三步：点击**客户业务>代金券管理**菜单进入代金券发放页面。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a6861563e618bfc05057697fed2e43ef.png)
 第四步：点击**创建代金券模板**，填写代金券规则。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/GHTr969_create_voucher.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/U97U328_123.png)
 
 >?
 >
