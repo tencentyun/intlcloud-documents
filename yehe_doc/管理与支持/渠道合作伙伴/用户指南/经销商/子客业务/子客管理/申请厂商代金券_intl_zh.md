@@ -11,8 +11,12 @@
 
 第一步：使用合作伙伴账号登录[腾讯云](https://www.tencentcloud.com/login)，进入[伙伴中心](https://console.tencentcloud.com/partners)。
 
-第二步：点击**客户业务>厂商代金券申请**菜单进入厂商代金券申请页面。![](https://staticintl.cloudcachetci.com/yehe/backend-news/MNEy507_1.png)
+第二步：点击**客户业务>厂商代金券申请**菜单进入厂商代金券申请页面。
+
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/MNEy507_1.png)
+
 第三步：点击**创建代金券模板**，填写厂商代金券申请规则。
+
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/GHTr969_create_voucher.png)
 
 >?
@@ -21,14 +25,22 @@
 >
 >● 指定产品代金券：适用于具体的单个或多个产品，只有适用产品列表里的产品可以使用。
 
+
+
 第四步：确认填写内容后点击**确认**保存代金券模板。
+
+
+
 >?
 >
 >● 厂商代金券申请模板保存成功后，如未发起厂商代金券申请，仍可以进行编辑，发起申请后则模板无法继续编辑，可重新创建新的模板。
 
 第五步：厂商代金券申请模版创建完毕后，可以查看已创建的厂商代金券申请模版，也支持按条件查询已创建厂商代金券模板。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/mQHh793_2.png)
+
 第六步：点击**申请**，可针对某一指定客户的产品测试场景申请厂商代金券。
+
+
 
 >?
 >
