@@ -4,11 +4,11 @@
 >
 >● When you apply for a refund, the voucher cannot be refunded. For detailed rules, see [Refunds | Tencent Cloud](https://www.tencentcloud.com/document/product/555/7440)
 
-### **1、**Applying for a voucher
+### **1、Applying for a voucher**
 
 Customer vouchers are allocated and managed by reseller. If you need vouchers, contact your reseller.
 
-### **2、**Viewing a voucher
+### **2、Viewing a voucher**
 
 (1) Voucher overview
 
@@ -22,6 +22,6 @@ You can view the used, unused, and expired vouchers on the [Voucher](https://con
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/Jcuf019_6.png)
 
-### **3、**Using a voucher
+### **3、Using a voucher**
 
 Vouchers are not displayed on the customer order placement page. The system will automatically deduct vouchers, and you can view the use records.
