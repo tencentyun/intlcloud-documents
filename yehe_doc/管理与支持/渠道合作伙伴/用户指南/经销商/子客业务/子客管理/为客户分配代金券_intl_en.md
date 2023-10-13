@@ -1,11 +1,11 @@
-### Issuing Voucher
 >?
 >-  Note: From October 10, 2023, you need to bear the cost of all the customer vouchers first. You can also apply for vouchers at Tencent's cost by using the vendor voucher application feature based on your customers' actual resource consumption.
 
-Step 1. Currently, Tencent Cloud exclusively provides vouchers at its own expense. To activate or apply for vouchers, contact your channel manager. After a voucher issuance quota is approved, you can issue vouchers to your customers.
-Step 2. Log in to [Tencent Cloud](https://www.tencentcloud.com/login) with your partner account and enter the [Partner Center](https://console.intl.cloud.tencent.com/partners).
-Step 3. On the left sidebar, select **Customer Business > Voucher Management** to enter the voucher issuance page.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/XiPr138_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B81.png)
+Step 1. Currently, you need to issue customer vouchers at your own cost. You can determine the amount and quantity of the vouchers based on your business development planning.For the cost of customer vouchers issued for customer product testing scenarios, apply for a write-off in **Vendor Voucher Application** in the console.
+
+Step 2. Log in to [Tencent Cloud](https://www.tencentcloud.com/login) with your partner account and enter [Partner Center](https://console.tencentcloud.com/partners).
+
+Step 3. On the left sidebar, select **Customer Business > Voucher Management** and enter the voucher issuance page.![](https://staticintl.cloudcachetci.com/yehe/backend-news/XiPr138_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B81.png)
 Step 4. Click **Create Template** and enter the required information.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/T9SV051_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B82.png)
 
@@ -15,7 +15,8 @@ Step 4. Click **Create Template** and enter the required information.
 
 Step 5. Check and confirm the entered information and click **Confirm** to save the voucher template.
 >?
- After being successfully saved, the voucher template can still be edited if vouchers have not been issued to customers; otherwise, it cannot be edited. You can create a new template if necessary.
+>
+>- After being successfully saved, the voucher template can still be edited if vouchers have not been issued to customers; otherwise, it cannot be edited. You can create a new template if necessary.
 
 Step 6. After the voucher template is created, you can view its information or query voucher templates by filter.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/Nbra833_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B83.png)
