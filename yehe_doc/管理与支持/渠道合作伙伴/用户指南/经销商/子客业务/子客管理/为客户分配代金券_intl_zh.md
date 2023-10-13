@@ -5,9 +5,9 @@
 第一步：目前只提供由伙伴承担费用的客户代金券发放。可根据自身业务的拓展情况对客户发放代金券，针对客户产品测试场景方法的客户代金券成本费用，可到厂商代金券申请入口进行申请核销。
 第二步：使用合作伙伴账号登录[腾讯云](https://www.tencentcloud.com/login)，进入[伙伴中心](https://console.tencentcloud.com/partners)。
 第三步：点击**客户业务>代金券管理**菜单进入代金券发放页面。
-![](https://qcloudimg.tencent-cloud.cn/raw/a6861563e618bfc05057697fed2e43ef.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/XiPr138_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B81.png)
 第四步：点击**创建代金券模板**，填写代金券规则。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/U97U328_123.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/T9SV051_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B82.png)
 
 >?
 >
@@ -20,7 +20,7 @@
 代金券模板保存成功后，如未发放给实际客户，仍可以进行编辑，发放给客户后则模板无法继续编辑，可重新创建新的模板。
 
 第六步：代金券模板创建完毕后，可以查看已创建的代金券模板，也支持按条件查询代金券模板。
-![](https://qcloudimg.tencent-cloud.cn/raw/630bdb8e7f53523357f0072c63909da0.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Nbra833_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B83.png)
 第七步：点击**发放**，可将代金券发放给具体的某一客户。
 
 >?
@@ -39,4 +39,4 @@
 >
 >● 客户代金券发放后，如子客未使用完该代金券，允许经销商撤回代金券。
 
-![](https://qcloudimg.tencent-cloud.cn/raw/0081074f4155c525340c83a8d9d39970.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/5z2C861_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B85.png)
