@@ -39,6 +39,9 @@ Address: 2747 Park Blvd., Palo Alto, CA 94306
 SWIFT: MRMDUS33
 Remarks: Cloud service fee + developer account (unique ID)
 
+<br />
+<br />
+<br />
 
 | B. 客户注册地为下方列表用户：|  | 
 |---------|---------|
@@ -66,15 +69,44 @@ SWIFT Code: HSBCNL2A
 Remarks: Cloud service fee + developer account (unique ID)
 目前B类注册地暂不支持使用专属银行账号功能，请使用“[Top-up Process](https://intl.cloud.tencent.com/document/product/555/11319?lang=en&pg=)”方式进行充值.
 
-| C. 对于其他注册地的用户：|  | 
-|---------|---------|
-| Others | Philippines | 
-| Taiwan, China | Indonesia | 
-| Macau, China | Malaysia | 
-| Hong Kong, China | Singapore | 
+<br />
+<br />
+<br />
 
-Beneficiary name: ACEVILLE PTE.LTD.
-Beneficiary bank: HSBC, Singapore
-Address: 30 Raffles Place, #12-01, Oxley @ Raffles, Singapore 048622
-SWIFT Code: HSBCSGSG
-Remarks: Cloud service fee + developer account (unique ID)
+ | C. 对于除A和B类以外的、其他注册地的用户，根据签约主体选择打款账户：|  |
+ |---------|---------|
+ | Others | Philippines |
+ | Taiwan, China | Indonesia |
+ | Macau, China | Malaysia |
+ | Hong Kong, China | Singapore |
+
+各主体打款信息如下：
+1）Contracting Entity：ACEVILLE PTE.LTD.
+
+Bank details：
+  Beneficiary name：ACEVILLE PTE.LTD.
+  Beneficiary account Number：260-737366-178 (USD account)
+  Beneficiary bank：HSBC, Singapore
+  Address：30 Raffles Place, #12-01, Oxley @ Raffles, Singapore 048622
+  SWIFT Code：HSBCSGSG
+  Remarks：Cloud service fee + developer account (unique ID)
+
+2）Contracting Entity：TENCENT CLOUD INTERNATIONAL PTE. LTD.
+
+Bank details：
+  Beneficiary name：TENCENT CLOUD INTERNATIONAL PTE. LTD.   
+  Beneficiary account Number：8830061242  (USD account)
+  Beneficiary bank：JPMorgan Chase Bank N.A., Singapore Branch
+  Address：MARKET STREET, 88, CAPITASPRING, FLOOR 30，SINGAPORE
+  SWIFT Code：CHASSGSG
+  Remarks：Cloud service fee + developer account (unique ID)
+
+3）Contracting Entity：TENCENT KOREA YUHAN HOESA
+
+Bank details：
+  Beneficiary name：TENCENT KOREA YUHAN HOESA
+  Beneficiary account Number：002-192383-297 （KRW account）
+  Beneficiary bank：HK and Shanghai Banking Corp Ltd
+  Address：37, Chilpae-ro, Jung-gu, Seoul, South Korea
+  SWIFT Code：HSBCKRSE
+  Remarks：Cloud service fee + developer account (unique ID)
