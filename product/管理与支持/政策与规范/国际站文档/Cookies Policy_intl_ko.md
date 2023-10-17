@@ -54,7 +54,7 @@
 
 - [Safari 웹](http://support.apple.com/kb/PH5042) 및[  iOS](http://support.apple.com/kb/HT1677)에서의 쿠키 설정
 
-- [ 인터넷 익스플로러(Explorer)에서의 쿠키 설정 ](https://support.microsoft.com/en-us/windows/delete-and-manage-cookies-168dab11-0753-043d-7c16-ede5947fc64d)
+- [ 인터넷 익스플로러(Explorer)에서의 쿠키 설정 ](https://support.microsoft.com/ko-kr/windows/%EC%BF%A0%ED%82%A4-%EC%82%AD%EC%A0%9C-%EB%B0%8F-%EA%B4%80%EB%A6%AC-168dab11-0753-043d-7c16-ede5947fc64d)
 
 - [ Firefox에서의 쿠키 설정 ](http://support.mozilla.org/en-US/kb/cookies)
 
