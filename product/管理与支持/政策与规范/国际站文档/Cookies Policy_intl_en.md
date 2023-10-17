@@ -137,7 +137,7 @@ Alternatively, most browsers allow you to change your cookies settings. These se
 
 [Cookie settings in Safari web](http://support.apple.com/kb/PH5042) and [iOS](http://support.apple.com/kb/HT1677).
 
-[Cookie settings in Internet Explorer](http://windows.microsoft.com/en-gb/windows7/how-to-manage-cookies-in-internet-explorer-9)
+[Cookie settings in Internet Explorer](https://support.microsoft.com/en-us/windows/delete-and-manage-cookies-168dab11-0753-043d-7c16-ede5947fc64d)
 
 [Cookie settings in Firefox](http://support.mozilla.org/en-US/kb/cookies)
 
