@@ -57,7 +57,7 @@ The billing details are as below:
 
 ## Chinese Mainland
 ### Base protection
-The base protection service is monthly subscribed. See the following table for detailed prices.
+Base protection is a postpaid monthly subscription service. See the following table for detailed prices.
 <table>
 <thead>
 <tr>
