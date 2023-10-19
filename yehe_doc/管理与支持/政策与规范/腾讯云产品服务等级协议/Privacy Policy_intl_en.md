@@ -103,9 +103,9 @@ We will use the information in the following ways and in accordance with the fol
 | Photo ID (e.g., driver’s license, passport or work permit) Name and Address (Mandatory) | If you elect to use  servers located in the PRC (excluding Hong Kong (China), Macau (China) and  Taiwan (China)) for the Services, we use your photo ID (or, where you are a  corporate customer, corporate documentation) to ensure that your account is  legally verified in accordance with local law. | It is in our legitimate  interests to process such data to ensure you are able to activate the service  for use in jurisdictions where this is a legal requirement. |
 | Credit card information (card number, name, expiration date, security code, payment ID) (Mandatory) | We use your credit card information to process payments made by you for use of the Services. | We process this  information as it’s necessary for us to perform our contract with you to  facilitate payment for the Services. |
 | Transaction Records (such as date and time of payment for services) (Mandatory) | We provide access to  your Transaction Records to allow you to see your transaction history. | We process this  information as it’s necessary for us to perform our contract with you to  manage payments in respect of the Services. |
-| Log Data, Metadata, IP Address, User Tickets, User Agent, Date and Time of Access, each URL visit within the Tencent Cloud website whether direct or referred from third party website (Optional) | We use this information  for strategy and Service improvement and for analytics. | It is in our legitimate  interests to improve our strategy and Services. |
+| Log Data, Metadata, IP Address, User Tickets, User Agent, Date and Time of Access, each URL visit within the Tencent Cloud website whether direct or referred from third party website (Mandatory) | We use this information  for strategy and Service improvement and for analytics. | It is in our legitimate  interests to improve our strategy and Services. |
 | Customer Service Ticket/ Chat Content, IP Address, Tencent Cloud ID, incident details and response steps (Mandatory) | We use this information  to:   <br/>· deal with your concerns and complaints about the Service; and    <br/>· improve and administer our Services and for internal operations, including  troubleshooting, data analysis, testing, research, statistical and survey  purposes, and to keep our Services safe and secure. | It is in our legitimate  interests to improve our Services and provide support in connection with the  Services supplied to you. |
-| Log and Metadata in relation to incidents (Optional)        | We use this information  in order to improve our Service and responses. | It is in our legitimate  interests to improve our Service and responses. |
+| Log and Metadata in relation to incidents (Mandatory)        | We use this information  in order to improve our Service and responses. | It is in our legitimate  interests to improve our Service and responses. |
 | Enquiry Data (data provided when you submit an enquiry via our website contact form or as part of a sales enquiry), including: your name, email, phone number, UIN, priority of query or ticket, reminder settings,company name, business service, location, and details of your query or any additional information provided by you(Mandatory) | We use this information  to respond to your request.         | It is in our legitimate  interests to process this information as it is needed to respond to your  request. |
 | Technical support enquiry data (data provided when you submit a technical support request), including your name, email, phone number, the type of your question, and details of your query (Mandatory) | We use this information to respond to your request. | It is in our legitimate interests to process this information as it is needed to respond to your request. |
 | Promotional Contact Data: Name, Email, Phone Number, Company Name, Business Service, Location and details of your query (Optional) | We use this information  to: <br/>·  promote our products and services to you; and to send you direct marketing communications through us or our third party partners. | We process this information with your consent. You can withdraw this consent at any time. |
@@ -220,7 +220,7 @@ If we make any material changes to this policy, we will post the updated policy 
 
 ### SOUTH KOREA
 
-Last updated: 12 / 07 / 2020
+Last updated: 10 / 19 / 2023
 
 This Addendum to the Tencent Cloud Privacy Policy (the "Addendum") is to address matters that are necessary to process your personal information in compliance with the Personal Information Protection Act (the "PIPA") of Korea. Please refer Tencent Cloud Privacy Policy for more details on the conditions of using the Services.
 
@@ -231,9 +231,10 @@ a.  We delegate the processing of your personal information as described below, 
 | **Delegatee**                                                | **Delegated Tasks**                     |
 | ------------------------------------------------------------ | --------------------------------------- |
 | Adyen Singapore Pte Ltd.                                     | Payment  processing and risk management |
+| Midaspay HK                                                  | Payment processing and risk management  |
 | Image  Frame Investment (HK) Limited                         | SMS Sending                             |
 | Tencent Computing (Beijing) Co., Ltd.                        | Providing back-end support              |
-| Third Party Resellers                     | Client relationship management and marketing communications              |
+| Third Party Resellers                                        | Client relationship management and marketing communications              |
 
 
 ### Overseas Transfer of Personal Information
@@ -244,6 +245,7 @@ a.  We delegate the processing of your personal information as described below, 
 | **Recipient (Contact Information of  </br> Information Manager)** | **Country to which Your Personal Information is to be Transferred** | **Date and Method of Transfer**                        | **Types of Your Personal Information to be Transferred**     | **Purposes of Use by Recipients**      | **Period of Retention  Use by Recipient**                  |
 | -- | ------- | -------| ----------------------- | -------------------------------------- | ------------------------------------------------------------ |
 | Adyen  Singapore Pte Ltd.</br>dpo@adyen.com             | Singapore                                                    | Encrypted  transmission                                | Credit  card number, name, valid period, CVV, address        | Payment  processor and risk management | 7  years                                                     |
+| Midaspay HK</br>dpo@centauriglobal.com             | Singapore, Hong Kong, United States                                                    | Encrypted transmission                                | Credit card number, name, valid period, CVV, address, device and network information, verification data.        | Payment processor and risk management	 | 7 years                                                   |
 |Frensworkz Software Technology Co., Limited</br>support@frensworkz.com</div> |PRC |Online transmission  |<li>First and last name</li> <li>Title</li> <li>Role</li> <li>Position</li> <li>Industry</li> <li>Employer</li> <li> Contact information (company, department, role, email, phone, QQ number, physical mail address, website)</li> <li>Account, account name, account remark name</li> <li>ID data</li> <li>Billing address, billing country, billing street, billing city, billing state/province, billing zip/postal code</li> |Aggregate implementing services |Until completion of system support services by Frensworkz or for 20 months (whichever is earlier)|
 | Image  Frame Investment (HK) Limited </br>dataprotection@tencent.com                    | Hong  Kong                                                   | Online  transmission                                   | Mobile  number, SMS content                                  | SMS  Sending                           | Account data is held for so long as an account exists. SMS messages are  deleted 13 months after the SMS messages have been sent. |
 |Salesforce.com Singapore Pte. Ltd</br>https://www.salesforce.com/</br>ap/company/privacy/ |United States|Online transmission | <li>Promotional Contact Data</li> <li>Marketing Data</li> <li>First and last name</li> <li>Title</li> <li>Role</li> <li>Position</li> <li>Industry</li> <li>Employer</li> <li>Contact information (company, department, role, email, phone, QQ number, physical mail address, website)</li> <li>Account, account name, account remark name</li> <li>ID data</li> <li>Billing address, billing country, billing street, billing city, billing state/province, billing zip/postal code</li>|Client relationship management and marketing support|Please refer to the retention periods set out in “[Data Retention](#4)”, subject to termination of the contractual relationship between us and Salesforce, in which case data will be deleted within 300 days from termination.|
@@ -272,11 +274,29 @@ The personal information are required to be retained pursuant to the following l
 
 ### Your Rights of Data Subject and Methods to Exercise Such Rights
 
-You may exercise rights related to the protection of personal information by requesting access to your personal information or the correction, deletion or suspension of processing of your personal information, etc. in writing or via email, fax, phone, etc. pursuant to applicable laws such as the PIPA. You may also exercise these rights through your legal guardian or someone who has been authorized by you to exercise such rights. However, in this case, you must submit a power of attorney to us in accordance with the Enforcement Regulations of the PIPA. Upon your request, we will take necessary measures without delay in accordance with applicable laws such as the PIPA. You can also withdraw your consent or demand a suspension of the personal information processing at any time.
+You may exercise the following rights at any time in relation to the protection of personal information:
+(a) The right to request permission to inspect personal information;
+(b) The right to request correction of personal information if there is any error, etc.;
+(c) The right to request deletion of personal information;
+(d) The right to request suspension of processing personal information,
+
+by completing the form specified in attached Form 8 of the Enforcement Rule of the PIPA and submitting it to us by post, email or fax. In such cases, we will take necessary measures promptly. You may also exercise your above rights through an agent, including a legal representative and a power of attorney. In such cases, the data subject is required to submit a letter of delegation as specified in attached Form 11 of the Enforcement Rule of the PIPA. The right to access or restrict processing of personal data may be restricted in accordance with Articles 5-4 and 37-2 of the PIPA. With respect to a request for correction or deletion of personal information, a data subject cannot request the deletion of personal information of such subject if the relevant personal information is provided for as information subject to collection under any statute. 
+
+Upon receipt of a request to inspect, correct or delete personal information or a request to suspend processing of personal information, we will verify whether the requesting person is the data subject or a legitimate representative.
+
+
+### Protecting Your Personal Information
+We have implemented the following measures to protect your personal information.
+
+Management Measures: We have established and implemented internal privacy management policies, which include the designation of privacy personnel, and audit procedures to ensure the privacy policies are implemented effectively.
+
+Technical and Organizational Measures: We have employed a variety of security technologies and procedures to protect your personal information from unauthorized access, use, modification, or disclosure. For example, we have implemented access authorisation and control systems that allow us to grant, change and cancel access rights to personal information to control and limit access to your personal information and record access to personal information. Additionally, we use security software that are regularly updated as well as encryption technology to reduce the risk of personal information leakage during storage and transmission.
+
+Physical Measures: Your personal information is stored in controlled facilities with strict access control procedures in place.
 
 ### Contact
 
-If you have any questions or comments about the Privacy Policy, if you need to report a problem, or if you would like us to update, amend, or request deletion of the information we have about you, please contact our Chief Privacy Officer (or department in charge of personal data protection) at:
+If you have any questions or comments about the Privacy Policy, if you need to report a problem, or if you would like us to update, amend, or request deletion of the information we have about you, please contact our Chief Privacy Officer (or department in charge of personal information protection) at:
 
 **Department in Charge of Protection of Personal Information**
 
@@ -302,11 +322,13 @@ Pursuant to Article 39-11 of the PIPA, the information regarding the designated 
 
 If you need to report or consult any invasion of private information issue then please contact the below agencies:
 
- - Private Information Invasion Report Center (privacy.kisa.or.kr / dial 118)
+ - Personal Information Dispute Mediation Committee (kopico.go.kr/main/main.do dial 1833-6972)
+
+ - Personal Information Infringement Report Center (privacy.kisa.or.kr / dial 118)
 
  - Supreme Prosecutor’s Office’s Cyber Crime Investigations Division (spo.go.kr / dial 1301)
 
- - Korean National Policy Agency’s Cyber Investigation Bureau (ecrm.cyber.go.kr/minwon / dial 182)
+ - Korean National Policy Agency’s Cyber Investigation Bureau Electronic Cybercrime Report & Management System (ecrm.cyber.go.kr/minwon/main dial 182)
 
 ### UNITED STATES
 
@@ -770,3 +792,4 @@ The following Modules shall apply and form part of this privacy policy if you us
 [Privacy Policy](https://www.tencentcloud.com/document/product/301/43505)(version1.0)
 [Privacy Policy](https://www.tencentcloud.com/document/product/301/43520)(version2.0)
 [Privacy Policy](https://www.tencentcloud.com/document/product/301/56679)(version3.0)
+[Privacy Policy](https://www.tencentcloud.com/document/product/301/57263)(version4.0)
