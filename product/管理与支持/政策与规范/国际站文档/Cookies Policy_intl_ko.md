@@ -52,9 +52,9 @@
 
 - [웹용 Chrome](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=en) 및 [안드로이드](https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DAndroid&hl=en)에서의 쿠키 설정
 
-- [ Safari 웹 ](http://support.apple.com/kb/PH5042) 및[  iOS](http://support.apple.com/kb/HT1677)에서의 쿠키 설정
+- [Safari 웹](http://support.apple.com/kb/PH5042) 및[  iOS](http://support.apple.com/kb/HT1677)에서의 쿠키 설정
 
-- [ 인터넷 익스플로러(Explorer)에서의 쿠키 설정 ](http://windows.microsoft.com/en-gb/windows7/how-to-manage-cookies-in-internet-explorer-9)
+- [ 인터넷 익스플로러(Explorer)에서의 쿠키 설정 ](https://support.microsoft.com/ko-kr/windows/%EC%BF%A0%ED%82%A4-%EC%82%AD%EC%A0%9C-%EB%B0%8F-%EA%B4%80%EB%A6%AC-168dab11-0753-043d-7c16-ede5947fc64d)
 
 - [ Firefox에서의 쿠키 설정 ](http://support.mozilla.org/en-US/kb/cookies)
 
