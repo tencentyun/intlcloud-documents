@@ -780,4 +780,4 @@ UAE 법률(예: UAE Cybercrime Law)에 따라 범죄가 성립될 경우 당사�
 [개인정보 처리방침](https://www.tencentcloud.com/document/product/301/43505)(버전1.0)
 [개인정보 처리방침](https://www.tencentcloud.com/document/product/301/43520)(버전2.0)
 [개인정보 처리방침](https://www.tencentcloud.com/document/product/301/56679)(버전3.0)
-[개인정보 처리방침](https://www.tencentcloud.com/document/product/301/57263)(버전3.0)
+[개인정보 처리방침](https://www.tencentcloud.com/document/product/301/57263)(버전4.0)
