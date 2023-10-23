@@ -21,13 +21,13 @@ New billing rules for Tencent Cloud Anti-DDoS Pro (Standard) has officially take
 <tbody><tr>
 <td>Number of protected IPs</td>
 <td>Monthly subscription</td>
-<td>Prepaid</td>
+<td>Postpaid</td>
 <td>Please select the number of application IPs to be protected by an Anti-DDoS Pro (Standard) instance. Options: 10 (default), 50, and 100. If you need protection for more IPs, extra fees will be charged. The number can only be increased but not decreased.</td>
 </tr>
 <tr>
 <td rowspan=2>Application bandwidth</td>
 <td rowspan=2>Monthly subscription</td>
-<td>Prepaid</td>
+<td>Postpaid</td>
 <td>The application bandwidth refers to the normal bandwidth of the protected application. It is billed based on monthly 95th percentile by either the outgoing or incoming traffic (whichever is higher). For the price, see <a href="https://www.tencentcloud.com/document/product/1029/55300#yw">Pricing of application bandwidth</a>. Anti-DDoS Pro (Standard) allows you to exceed your plan’s limit, but the all-out protection capability will become not available and only the basic protection capability remains when the limit has been exceeded for 36 hours accumulatively in a month.</td>
 </tr>
 <tr> 
@@ -53,33 +53,29 @@ An Anti-DDoS Pro (Standard) instance protects application IPs in the same region
 <thead>
 <tr>
 <th  width="20%" rowspan=2>Application bandwidth</th>
-<th colspan=2>Unit price (prepaid and postpaid)</th>
+<th colspan=1>Unit price (postpaid)</th>
 </tr>
 <tr>
 <th>Monthly list price</td>
-<th>Yearly list price</td>
+
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>0-1 Gbps (inclusive)</td>
 <td>14 USD/Mbps/month</td>
-<td>160 USD/Mbps/year</td>
 </tr>
 <tr>
 <td>1-3 Gbps (inclusive)</td>
 <td>10 USD/Mbps/month</td>
-<td>120 USD/Mbps/year</td>
 </tr>
 <tr>
 <td>3-10 Gbps (inclusive)</td>
 <td>7 USD/Mbps/month</td>
-<td>80 USD/Mbps/year</td>
 </tr>
 <tr>
 <td>10 Gbps above</td>
 <td>4 USD/Mbps/month</td>
-<td>40 USD/Mbps/year</td>
 </tr>
 </tbody></table>
 

@@ -1,4 +1,4 @@
-
+﻿
 ## Billing Mode
 The billing mode of Anti-DDoS Pro (Enterprise) varies by the region of your application.
 - Chinese mainland: Base protection + elastic protection
@@ -26,7 +26,7 @@ The billing details are as below:
 <td rowspan=2 >Chinese mainland</td>
 <td>Base protection bandwidth</td>
 <td>Monthly subscription</td>
-<td>Prepaid</td>
+<td>Postpaid</td>
 <td>The fee is calculated based on the base protection bandwidth and how long the service plan you purchased. If you increase the bandwidth, extra fees will occur. Please note that you can only upgrade or keep your current service plan. Downgrade is not supported.</td>
 </tr>
 <tr>
@@ -39,7 +39,7 @@ The billing details are as below:
 <td rowspan=2 >In and outside the Chinese mainland</td>
 <td rowspan=2 >Application bandwidth</td>
 <td>Monthly subscription</td>
-<td>Prepaid</td>
+<td>Postpaid</td>
 <td>The application bandwidth refers to the normal bandwidth of the protected application and is billed by 95th percentile. Anti-DDoS Pro (Enterprise) allows you to exceed your plan’s limit, but the all-out protection capability will become not available and only the basic protection capability remains when the limit has been exceeded for 36 hours accumulatively in a month. The application bandwidth can be increased or decreased, which takes effect in the next month.</td>
 </tr>
 <tr>
@@ -153,39 +153,29 @@ The application bandwidth refers to the normal bandwidth of the protected applic
 <table>
 <thead>
 <tr>
-<th  width="20%" rowspan=2>Application bandwidth</th>
-<th colspan=3>Unit price (prepaid and postpaid)</th>
+<th  width="50%" rowspan=2>Application bandwidth</th>
+<th colspan=1>Unit price (postpaid)</th>
 </tr>
 <tr>
 <th>Monthly list price</td>
-<th>Yearly list price</td>
-<th>37.5% off for yearly subscription</td>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>0-1 Gbps (inclusive)</td>
 <td>14 USD/Mbps/month</td>
-<td>160 USD/Mbps/year</td>
-<td>100 USD/Mbps/year</td>
 </tr>
 <tr>
 <td>1-3 Gbps (inclusive)</td>
 <td>10 USD/Mbps/month</td>
-<td>120 USD/Mbps/year</td>
-<td>75 USD/Mbps/year</td>
 </tr>
 <tr>
 <td>3-10 Gbps (inclusive)</td>
 <td>7 USD/Mbps/month</td>
-<td>80 USD/Mbps/year</td>
-<td>50 USD/Mbps/year</td>
 </tr>
 <tr>
 <td>10 Gbps above</td>
 <td>4 USD/Mbps/month</td>
-<td>40 USD/Mbps/year</td>
-<td>25 USD/Mbps/year</td>
 </tr>
 </tbody></table>
 
