@@ -83,14 +83,15 @@ Tencent Effectモジュールのテスト版Licenseを正式版Licenseにアッ�
 <img src="https://qcloudimg.tencent-cloud.cn/raw/f128fdb87a0cc07762bbb75e86b460e9.png" style="zoom:50%;" />
 3. リソース項目選択およびLicenseバインド画面に進み、**今すぐバインド**をクリックし、**バインドされていない**Tencent Effectパッケージ（バインド可能なリソースパックがない場合は、[リソースパック購入ページ](https://buy.cloud.tencent.com/vcube?type=magic)で購入できます）を選択し、**OK**をクリックすると、アプリケーションを作成して正式版Licenseを発行できます。 
 <img src="https://qcloudimg.tencent-cloud.cn/raw/db5cf0bb61ea8063d25a11dfafb89e90.png" style="zoom:50%;" />
->? **OK**をクリックする前に、Bundle IDとPackage Nameが業務で使用しているパッケージ名の情報と一致しているかを再度確認する必要があります。ストアに送信したものと一致しない場合は、送信前に変更してください。 **正式版Licenseは一度送信に成功すると、License情報の変更ができなくなります**。 
+
+<dx-alert infotype="explain"> **OK**をクリックする前に、Bundle IDとPackage Nameが業務で使用しているパッケージ名の情報と一致しているかを再度確認する必要があります。ストアに送信したものと一致しない場合は、送信前に変更してください。 **正式版Licenseは一度送信に成功すると、License情報の変更ができなくなります**。 </dx-alert>
 
 :::
 ::: 方法2：作成済みの公式アプリケーションでモジュールのロックを解除する
 1. 追加したい**Tencent Effect**機能モジュールの正式アプリケーションを選択し、**新機能モジュールのロックを解除**をクリックします。
 ![](https://qcloudimg.tencent-cloud.cn/raw/7d00d56c1dd4c1658f4fde736276d322.png)
 2. **Tencent Effect**を選択し、**次のステップ**をクリックします。  
-![](<img src="https://qcloudimg.tencent-cloud.cn/raw/d88b7f921e294eafec2bbdbaab65edec.png" style="zoom:50%;" />
+<img src="https://qcloudimg.tencent-cloud.cn/raw/d88b7f921e294eafec2bbdbaab65edec.png" style="zoom:50%;" />
 3. リソース項目選択およびLicenseバインド画面に進み、**今すぐバインド**をクリックし、**バインドされていない**Tencent Effectパッケージ（バインド可能なTencent Effectパッケージがない場合は、[リソースパック購入ページ](https://buy.intl.cloud.tencent.com/vcube)で購入できます）をクリックし、**OK**をクリックすると、アプリケーションに正式版Tencent Effect機能モジュールを生成することができます。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/0df1ab29aec13532934eed6457b8936d.png" style="zoom:50%;" />)
 :::
