@@ -104,7 +104,7 @@ Tencent Effectモジュールのテスト版Licenseを正式版Licenseにアッ�
 [**Tencent Effect SDKコンソール > モバイル端末License管理**](https://console.tencentcloud.com/xmagic)にログインし、ページ上でTencent Effect正式版Licenseの有効期限を確認できます。 Tencent Effect正式版Licenseがすでに期限切れとなっている場合は、次の操作によって更新が可能です。
 1. 有効期限を更新したいLicenseを選択し、Tencent Effectモジュール内の**更新**をクリックします。
 ![](https://qcloudimg.tencent-cloud.cn/raw/a4b37fc395ce6ea395541825167ad284.png)
-2. 元のLicenseと**同タイプのパッケージ**のリソースを選択してバインドし、更新を行います。選択すると更新の開始時刻と終了時刻がリアルタイムに表示され、**OK**をクリックすると更新が完了します。バインド可能なTencent Effectパッケージがない場合は、[リソースパック購入ページ]](https://buy.intl.cloud.tencent.com/vcube)をクリックして購入できます。
+2. 元のLicenseと**同タイプのパッケージ**のリソースを選択してバインドし、更新を行います。選択すると更新の開始時刻と終了時刻がリアルタイムに表示され、**OK**をクリックすると更新が完了します。バインド可能なTencent Effectパッケージがない場合は、[リソースパック購入ページ](https://buy.intl.cloud.tencent.com/vcube)をクリックして購入できます。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/decbe36048335926e3a964a6ae923fbe.png" style="zoom:50%;" />
 >! 現時点では、パッケージの有効期限更新は同タイプのパッケージの更新のみサポートしています。バインドされているLicenseパッケージのタイプがS1 - 04の場合、更新時に選択できるのはS1 - 04のパッケージのみとなります。バインドするパッケージのタイプを変更したい場合は、[チケットを提出](https://console.intl.cloud.tencent.com/workorder/category)するか、または担当者までご連絡ください。
 
