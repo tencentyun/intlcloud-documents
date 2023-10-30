@@ -1,8 +1,8 @@
 Step 1. Log in to [Tencent Cloud](https://www.tencentcloud.com/login) with your partner account and enter [Partner Center](https://console.tencentcloud.com/partners).
 
-Step 2. On the left sidebar, select **Customer Business > Voucher Management** and enter the voucher issuance page.![](https://staticintl.cloudcachetci.com/yehe/backend-news/XiPr138_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B81.png)
+Step 2. On the left sidebar, select **Customer Business > Voucher Management** and enter the voucher issuance page.![](https://staticintl.cloudcachetci.com/yehe/backend-news/guaS970_%E4%BA%8C%E7%BA%A7-1.png)
 Step 3. Click **Create Template** and enter the required information.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/T9SV051_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B82.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/U8Ku933_%E4%BA%8C%E7%BA%A7-2%E3%80%81.png)
 
 >?
 >- General product voucher: It can be used to deduct fees for almost all the products used by your customers.
@@ -14,7 +14,7 @@ Step 4. Check and confirm the entered information and click **Confirm** to save 
 >- After being successfully saved, the voucher template can still be edited if vouchers have not been issued to customers; otherwise, it cannot be edited. You can create a new template if necessary.
 
 Step 5. After the voucher template is created, you can view its information or query voucher templates by filter.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/Nbra833_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B83.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/PVDU693_%E4%BA%8C%E7%BA%A7-3.png)
 Step 6. Click **Issue** in the **Operation** column to issue a voucher to a customer.
 
 >?
@@ -32,4 +32,4 @@ On the left sidebar, select **Customer Business > Voucher Management** and enter
 >- If a customer voucher is not used by any customers after it is issued, you can withdraw it.
 >
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/5z2C861_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B85.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/BA7I478_%E4%BA%8C%E7%BA%A7-5.png)
