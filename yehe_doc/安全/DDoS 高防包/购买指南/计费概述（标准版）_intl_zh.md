@@ -21,13 +21,13 @@
 <tbody><tr>
 <td>防护 IP 数</td>
 <td>包年包月</td>
-<td>预付费</td>
+<td>后付费</td>
 <td>选择需要使用  DDoS 高防包（标准版）实例防护的所有业务 IP 的数量，默认是10个，可选规格：10个、50个、100个。 若升级防护 IP 数，则在原有的基础上加收额外费用，仅可升不可降。</td>
 </tr>
 <tr>
 <td rowspan=2>业务规模</td>
 <td rowspan=2>包年包月</td>
-<td>预付费</td>
+<td>后付费</td>
 <td>业务规模指被防护业务的正常业务规模，以带宽来衡量，入方向或出方向流量按每月最大值95消峰，单价请参见 <a href="https://www.tencentcloud.com/document/product/1029/55300#yw">业务规模价格说明</a>。  允许业务规模短期峰值超过购买的业务规模规格，但是如果一个月累计36小时超过规格，则全力防护会失效，仅保留原生防护的基础防护能力，正常业务带宽不会受到限制。</td>
 </tr>
 <tr> 
@@ -52,34 +52,29 @@ DDoS 高防包（标准版）默认支持保护单个地域下的业务 IP，防
 <table>
 <thead>
 <tr>
-<th  width="20%" rowspan=2>业务规模</th>
-<th colspan=2>单价（预付费和后付费）</th>
+<th  width="40%" rowspan=2>业务规模</th>
+<th colspan=1>单价（后付费）</th>
 </tr>
 <tr>
 <th>月刊例价</td>
-<th>年刊例价</td>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>0-1Gbps（含）</td>
 <td>14美元/Mbps/月</td>
-<td>160美元/Mbps/年</td>
 </tr>
 <tr>
 <td>1-3Gbps（含）</td>
 <td>10美元/Mbps/月</td>
-<td>120美元/Mbps/年</td>
 </tr>
 <tr>
 <td>3-10Gbps（含）</td>
 <td>7美元/Mbps/月</td>
-<td>80美元/Mbps/年</td>
 </tr>
 <tr>
 <td>10Gbps以上</td>
 <td>4美元/Mbps/月</td>
-<td>40美元/Mbps/年</td>
 </tr>
 </tbody></table>
 

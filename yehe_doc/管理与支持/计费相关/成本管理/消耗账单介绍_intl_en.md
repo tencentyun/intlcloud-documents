@@ -2,7 +2,7 @@
 If you have never used the consumption bill feature, enable it as follows:
 1. Log in to the [Billing Center](https://console.cloud.tencent.com/expense/overview).
 2. On the left sidebar, click **Cost Management** > **Consumption Bill** to enter the consumption bill page.
-3. On the consumption bill page, click **Enable**. Afterwards, you can view the consumption bill starting from the current month.
+3. On the consumption bill page, click **Enable**. If you activate the consumption bill after 2023, you can view the bills from January 2023 to now. 
 
 ## Consumption Bill Description
 The consumption bill displays your monthly resource consumption, including consumption of pay-as-you-go resources and the amortized consumption of monthly subscribed resources.
