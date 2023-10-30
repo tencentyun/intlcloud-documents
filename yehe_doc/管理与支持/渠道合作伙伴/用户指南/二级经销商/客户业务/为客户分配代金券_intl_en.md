@@ -21,7 +21,7 @@ Step 6. Click **Issue** in the **Operation** column to issue a voucher to a cust
 >- Vouchers issued at your own cost don't need to be reviewed . After you confirm the issuance, your customers can use the vouchers they receive.
 >
 
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/xW3e535_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B84.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/7vVU994_%E4%BA%8C%E7%BA%A7-2.png)
 
 ### **Querying the Voucher List**
 
