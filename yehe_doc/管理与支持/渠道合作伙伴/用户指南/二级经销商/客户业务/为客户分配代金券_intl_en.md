@@ -29,7 +29,7 @@ On the left sidebar, select **Customer Business > Voucher Management** and enter
 >?
 >-  After a customer voucher is issued, it can be queried under the **Customer Voucher List** tab.
 >- After a customer voucher is issued, you can view its usage by customers based on its balance and status.
->- If a customer voucher is not used by any customers after it is issued, you can withdraw it.
+>- If a customer voucher is not used by any customers after it is issued, you can withdraw it
 >
 
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/5z2C861_%E4%B8%BA%E5%AE%A2%E6%88%B7%E5%88%86%E9%85%8D%E4%BB%A3%E9%87%91%E5%88%B85.png)
