@@ -106,7 +106,8 @@ Tencent Effect SDK를 사용해 보려면 평가판 License를 신청할 수 있
 ![](https://qcloudimg.tencent-cloud.cn/raw/a4b37fc395ce6ea395541825167ad284.png)
 2. 현재 에디션과 **동일한 유형의 에디션**을 선택합니다. 페이지에 갱신된 기간의 시작 및 종료 시간이 표시됩니다. **확인**을 클릭합니다. 바인딩할 에디션이 없다면 [구매 페이지](https://buy.intl.cloud.tencent.com/vcube)에서 구매하십시오.
 <img src="https://qcloudimg.tencent-cloud.cn/raw/decbe36048335926e3a964a6ae923fbe.png" style="zoom:50%;" />
->!현재 동일한 유형의 리소스만 갱신할 수 있습니다. 즉, S1 - 04 에디션을 바인딩한 경우 S1 - 04 에디션만 갱신할 수 있습니다. 바인딩된 에디션 유형을 변경하려면 [티켓 제출](https://console.intl.cloud.tencent.com/workorder/category) 하거나 영업팀에 문의하십시오.
+
+>!현재 동일한 유형의 리소스만 갱신할 수 있습니다. 즉, S1 - 04 에디션을 바인딩한 경우 S1 - 04 에디션만 갱신할 수 있습니다. 바인딩된 에디션 유형을 변경하려면 [티켓 제출](https://console.intl.cloud.tencent.com/workorder/category} 하거나 영업팀에 문의하십시오.
 
 3. 갱신된 유효 기간을 확인합니다.
 >! **공식 License 정보는 수정할 수 없습니다.** 구매한 에디션을 새 애플리케이션에 사용하려면 **공식 License 생성**을 클릭하여 새 애플리케이션에 바인딩합니다.
