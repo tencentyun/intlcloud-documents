@@ -196,6 +196,9 @@ DDoS 高防包（企业版）仅针对腾讯云弹性公网 IP 下的高防 EIP 
 </thead>
 <tbody>
 <tr>
+<td>防护1个 IP</td>
+<td>2367</td>
+<tr>
 <td>防护10个 IP</td>
 <td>8890</td>
 </tr>

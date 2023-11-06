@@ -196,6 +196,10 @@ Fee on elastic application bandwidth = (95th percentile of the monthly peak band
 </thead>
 <tbody>
 <tr>
+<td>1 IP</td>
+<td>2367</td>
+</tr>
+<tr>
 <td>10 IPs</td>
 <td>8890</td>
 </tr>
