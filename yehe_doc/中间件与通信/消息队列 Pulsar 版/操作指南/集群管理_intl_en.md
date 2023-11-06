@@ -2,14 +2,14 @@
 
 Cluster is a resource dimension in TDMQ for Pulsar, and namespaces, topics, and role permissions of different clusters are completely isolated from each other. Each cluster has its own resource limits, such as the total number of topics and message retention period. It is common for the development, test, and production environments to use their respective dedicated clusters.
 
-Clusters are divided into virtual clusters and exclusive clusters:
+Clusters are divided into virtual clusters and professional clusters:
 
 - **Virtual cluster**: Virtual computing and storage resources are used and automatically allocated based on usage. There are certain use limits. You don't need to pay for resources, and you can create up to 5 virtual clusters under each account.
-- **Exclusive cluster**: Physical resources are exclusive, and data is secure. There are almost no use limits. Resource usage fees will be charged even if resources are idle.
+- **professional cluster**: Physical resources are exclusive, and data is secure. There are almost no use limits. Resource usage fees will be charged even if resources are idle.
 
 > ?
 >
-> - Exclusive cluster resources are unavailable currently. They can be applied for after the product is commercially launched. You will be notified by email and SMS one month in advance.
+> - Professional cluster resources are unavailable currently. They can be applied for after the product is commercially launched. You will be notified by email and SMS one month in advance.
 > - Currently, clusters are available in multiple versions. For more information, see [Cluster Version Updates](https://intl.cloud.tencent.com/document/product/1110/42898).
 
 **TDMQ for Pulsar resource hierarchy**
