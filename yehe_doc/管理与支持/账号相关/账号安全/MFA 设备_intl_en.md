@@ -10,8 +10,8 @@ A virtual MFA device is an application program that generates dynamic authentica
 2. Go to **Basic Settings** > **MFA Device** and click **Bind**.
 3. Complete the identity authentication as prompted on the authentication window that pops up.
 4. Select the virtual MFA device, and follow the directions on the page to perform the binding operation.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/93Gu802_MFA1.png)
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/fJg3864_MFA2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Fy6U618_MFA1.png)
+![]( https://staticintl.cloudcachetci.com/yehe/backend-news/8uSA551_MFA2.png)
 5. Click **Submit** to complete the binding of the virtual MFA device.
 
 
