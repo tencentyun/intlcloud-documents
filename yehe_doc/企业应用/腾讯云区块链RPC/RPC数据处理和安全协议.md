@@ -1,5 +1,3 @@
-DATA PROCESSING AND SECURITY AGREEMENT MODULE TENCENT CLOUD BLOCKCHAIN RPC
-
 ## 1. BACKGROUND
 This Module applies if you use Tencent Cloud Blockchain RPC (“Feature”). This Module is incorporated into the Data Processing and Security Agreement located at [Data Processing and Security Agreement](https://intl.cloud.tencent.com/document/product/301/17347) (“DPSA”). Terms used but not defined in this Module shall have the meaning given to them in the DPSA. In the event of any conflict between the DPSA and this Module, this Module shall apply to the extent of the inconsistency.
 
