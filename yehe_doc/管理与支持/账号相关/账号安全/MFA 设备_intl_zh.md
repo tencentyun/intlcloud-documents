@@ -10,8 +10,8 @@ MFA，Multi-FactorAuthentication，即多因子认证，是一种简单有效的
 2. 进入安全设置页面后，选择【基本设置】>【MFA 设备】，单击【绑定】。
 3. 在弹出的身份验证页面中，根据页面提示，完成身份验证。
 4. 选择虚拟 MFA 设备，依照页面指引进行绑定操作。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/93Gu802_MFA1.png)
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/fJg3864_MFA2.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/Fy6U618_MFA1.png)
+![](https://staticintl.cloudcachetci.com/yehe/backend-news/8uSA551_MFA2.png)
 5. 单击【提交】，即可完成虚拟 MFA 设备绑定。
 
 
