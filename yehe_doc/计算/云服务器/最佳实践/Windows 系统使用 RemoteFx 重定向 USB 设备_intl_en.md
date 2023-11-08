@@ -8,7 +8,7 @@ This document uses the following environment versions as examples to describe ho
 
 ## Use Limits
 
-Because RDP 8.0 and later versions support the RemoteFx USB redirection feature, Windows 8, Windows 10, Windows Server 2016, and Windows Server 2019 all support this feature. If the operating system of your local PC has one of these versions, you do not need to install the RDP 8.0 update patch. If your local PC has Windows 7 or Windows Vista, please go to [Microsoft official website](https://support.microsoft.com/en-us) to get and install the RDP 8.0 update patch.
+Given that RDP 8.0 and subsequent versions all support the RemoteFX USB Redirection feature, it follows that Windows Server 2012 and later versions are all compatible with the RemoteFX USB Redirection feature. If your local computer's operating system is Windows Server 2008 R2, it is advisable to upgrade to a higher supported version to ensure the system's optimal performance.
 
 
 ## Directions
