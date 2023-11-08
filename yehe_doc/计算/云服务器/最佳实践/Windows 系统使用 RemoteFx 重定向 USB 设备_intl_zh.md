@@ -8,8 +8,7 @@ RemoteFx 是 Windows RDP 桌面协议升级版，RDP 8.0起可以使用 RemoteFx
 
 ## 使用限制
 
-由于 RDP 8.0及以上版本均支持 RemoteFX USB Redirection 功能，Windows 8、Windows 10、Windows Server 2016 和 Windows Server 2019 均支持 RemoteFX USB Redirection 功能。如果您的本地计算机操作系统以上版本，不需要安装 RDP 8.0 Update 补丁。如果您的本地计算机操作系统为 Windows 7 或者 Windows Vista，请前往 [微软官网](https://support.microsoft.com/en-us) 获取和安装 RDP 8.0 Update 补丁。
-
+由于 RDP 8.0及以上版本均支持 RemoteFX USB Redirection 功能，因此 Windows Server 2012及以上版本系统都支持 RemoteFX USB Redirection 功能。如果您的本地计算机操作系统为 Windows Server 2008 R2，则建议您升级至支持的高版本系统，以确保系统的正常运行。
 
 ## 操作步骤
 
