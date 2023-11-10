@@ -62,9 +62,10 @@ DDoS 高防包（企业版）仅针对腾讯云弹性公网 IP 下的高防 EIP 
 <thead>
 <tr>
 <th width="10%" and rowspan=2>保底防护能力</th>
-<th colspan=3>包月-刊例价（单位：美元）</th>
+<th colspan=4>包月-刊例价（单位：美元）</th>
 </tr>
 <tr>
+<th>1IP</th>
 <th>10IP</th>
 <th>50IP</th>
 <th>100IP</th>
@@ -73,36 +74,42 @@ DDoS 高防包（企业版）仅针对腾讯云弹性公网 IP 下的高防 EIP 
 <tbody>
 <tr>
 <td>300G</td>
+<td>3200</td>
 <td>13333.33 </td>
 <td>26666.66 </td>
 <td>44444.44 </td>
 </tr>
 <tr>
 <td>400G</td>
+<td>5422.22</td>
 <td>22222.22 </td>
 <td>44444.44 </td>
 <td>84444.44 </td>
 </tr>
 <tr>
 <td>500G</td>
+<td>16533.33</td>
 <td>66666.66 </td>
 <td>88888.88 </td>
 <td>111111.11 </td>
 </tr>
 <tr>
 <td>600G</td>
+<td>19866.66</td>
 <td>80000 </td>
 <td>111111.11</td>
 <td>133333.33 </td>
 </tr>
 <tr>
 <td>800G</td>
+<td>22088.88</td>
 <td>88888.88 </td>
 <td>133333.33 </td>
 <td>177777.77 </td>
 </tr>
 <tr>
 <td>1T</td>
+<td>27644.44</td>
 <td>111111.11 </td>
 <td>177777.77 </td>
 <td>222222.22 </td>

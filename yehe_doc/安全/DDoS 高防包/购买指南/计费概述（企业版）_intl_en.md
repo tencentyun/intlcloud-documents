@@ -62,47 +62,54 @@ Base protection is a postpaid monthly subscription service. See the following ta
 <thead>
 <tr>
 <th width="10%" and rowspan=2>Base protection bandwidth</th>
-<th colspan=3>Monthly list price (USD)</th>
+<th colspan=4>Monthly list price (USD)</th>
 </tr>
 <tr>
-<th>10-IP plan</th>
-<th>50 IPplan</th>
-<th>100-IP plan</th>
+<th>1IP</th>
+<th>10IP</th>
+<th>50IP</th>
+<th>100IP</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>300G</td>
+<td>3200</td>
 <td>13333.33 </td>
 <td>26666.66 </td>
 <td>44444.44 </td>
 </tr>
 <tr>
 <td>400G</td>
+<td>5422.22</td>
 <td>22222.22 </td>
 <td>44444.44 </td>
 <td>84444.44 </td>
 </tr>
 <tr>
 <td>500G</td>
+<td>16533.33</td>
 <td>66666.66 </td>
 <td>88888.88 </td>
 <td>111111.11 </td>
 </tr>
 <tr>
 <td>600G</td>
+<td>19866.66</td>
 <td>80000 </td>
 <td>111111.11</td>
 <td>133333.33 </td>
 </tr>
 <tr>
 <td>800G</td>
+<td>22088.88</td>
 <td>88888.88 </td>
 <td>133333.33 </td>
 <td>177777.77 </td>
 </tr>
 <tr>
 <td>1T</td>
+<td>27644.44</td>
 <td>111111.11 </td>
 <td>177777.77 </td>
 <td>222222.22 </td>
