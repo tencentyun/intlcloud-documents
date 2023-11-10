@@ -40,8 +40,7 @@
 ### 通过只读实例 RO 组配置修改
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb/ )，在实例列表，单击主实例 ID，进入实例管理页。
 2. 在实例管理页面，选择**只读实例**页，在 RO 组列单击**配置**，进入 RO 组配置页。
-3. 在 RO 组配置页，修改**延迟时间**，单击**确定**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/437d781e478652416c166449b4420910.png"  style="zoom:60%;">
+3. 在 RO 组配置页，修改**延迟时间**，单击**确定**。<br><img src="https://qcloudimg.tencent-cloud.cn/raw/437d781e478652416c166449b4420910.png"  style="zoom:60%;">
 
 ### 通过只读实例管理页修改
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击只读实例 ID，进入只读实例详情页。
@@ -53,8 +52,7 @@
 ### 通过只读实例 RO 组配置关闭
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb/ )，在实例列表，单击主实例 ID，进入实例管理页。
 2. 在实例管理页面，选择**只读实例**页，在 RO 组列单击**配置**，进入 RO 组配置页。
-3. 在 RO 组配置页，单击关闭**延迟复制**，单击**确定**。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/9191e1c61694da2970323b59a21c59f3.png"  style="zoom:70%;">
+3. 在 RO 组配置页，单击关闭**延迟复制**，单击**确定**。<br><img src="https://qcloudimg.tencent-cloud.cn/raw/9191e1c61694da2970323b59a21c59f3.png"  style="zoom:70%;">
 
 ### 通过只读实例管理页关闭
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击只读实例 ID，进入只读实例详情页。
@@ -86,8 +84,7 @@
 <img src="https://qcloudimg.tencent-cloud.cn/raw/92671ad35d5ef5acbfdf3bfbb47f967a.png"  style="zoom:85%;">
 5. 复制到指定位置过程中，可单击**复制状态**后的**数据回放中**查询任务详情，支持刷新任务详情。
 <img src="https://qcloudimg.tencent-cloud.cn/raw/39274c3aa8e92e6c4dfe0a242de0392e.png"  style="zoom:85%;">
-6. 复制完成后，在**复制状态**后单击**启动**，只读实例即可继续进行复制。
-<img src="https://qcloudimg.tencent-cloud.cn/raw/b27f75181ebae1e8c9b833762ba9388d.png"  style="zoom:85%;">
+6. 复制完成后，在**复制状态**后单击**启动**，只读实例即可继续进行复制。<br><img src="https://qcloudimg.tencent-cloud.cn/raw/b27f75181ebae1e8c9b833762ba9388d.png"  style="zoom:85%;">
 
 
 ## 停止数据复制
