@@ -9,7 +9,7 @@ When integrating the real-time speech recognition API, you need to comply with t
 
 | Item | Description |
 |---------|---------|
-| Language | Supported languages include Mandarin, English, Korean, Japanese, Thai, Bahasa, Vietnamese, Malay, and Filipino. You can set the language through the `engine_model_type` parameter. |
+| Language | Supported languages include Mandarin, English, Korean, Japanese, Thai, Bahasa, Vietnamese, Malay, Filipino, Portuguese, Turkish, Arabic and spanish. You can set the language through the `engine_model_type` parameter. |
 | Industry | General, finance, gaming, education, and healthcare. |
 | Audio attribute | Sample rate: 16000 Hz or 8000 Hz <br>Bit depth: 16 bits<br>Channel: mono |
 | Audio format | PCM, WAV, Opus, Speex, SILK, MP3, M4A, and AAC |
