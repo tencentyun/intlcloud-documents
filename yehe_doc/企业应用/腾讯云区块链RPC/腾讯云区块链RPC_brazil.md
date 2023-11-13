@@ -1,5 +1,5 @@
 ## 1.	CONSIDERAÇÕES
-Este Módulo é aplicável se você usa o Tencent Cloud Blockchain RPC (“Recurso”). Este Módulo está incorporado ao Contrato de [Segurança e Processamento de Dados]( https://intl.cloud.tencent.com/document/product/301/17347) localizado em (“DPSA”). Os termos utilizados, mas não definidos nesse Módulo, devem ter o significado dado a eles no DPSA. No caso de qualquer conflito entre o DPSA e esse Módulo, esse Módulo será aplicado conforme a inconsistência.
+Este Módulo é aplicável se você usa o Tencent Cloud Blockchain RPC (“Recurso”). Este Módulo está incorporado ao Contrato de Segurança e Processamento de Dados localizado em (“[DPSA](https://intl.cloud.tencent.com/document/product/301/17347)”). Os termos utilizados, mas não definidos nesse Módulo, devem ter o significado dado a eles no DPSA. No caso de qualquer conflito entre o DPSA e esse Módulo, esse Módulo será aplicado conforme a inconsistência.
 
 ## 2.	PROCESSAMENTO
 Processaremos os seguintes dados em conexão com o Recurso:
