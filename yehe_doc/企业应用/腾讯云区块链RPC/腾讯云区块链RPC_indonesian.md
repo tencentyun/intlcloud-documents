@@ -1,5 +1,5 @@
 ## 1.	LATAR BELAKANG
-Modul ini berlaku jika Anda menggunakan Tencent Cloud Blockchain RPC (“Fitur”). Modul ini disertakan dalam Perjanjian [Keamanan dan Pemrosesan Data yang](https://intl.cloud.tencent.com/document/product/301/17347) terdapat di  (“DPSA”). Istilah-istilah yang digunakan tetapi tidak didefinisikan dalam Modul ini memiliki arti yang sama dengan yang ditetapkan dalam DPSA. Jika terdapat perbedaan antara DPSA dengan Modul ini, Modul inilah yang akan berlaku apabila terjadi ketidaksesuaian.
+Modul ini berlaku jika Anda menggunakan Tencent Cloud Blockchain RPC (“Fitur”). Modul ini disertakan dalam Perjanjian Keamanan dan Pemrosesan Data yang terdapat di (“[DPSA](https://intl.cloud.tencent.com/document/product/301/17347)”). Istilah-istilah yang digunakan tetapi tidak didefinisikan dalam Modul ini memiliki arti yang sama dengan yang ditetapkan dalam DPSA. Jika terdapat perbedaan antara DPSA dengan Modul ini, Modul inilah yang akan berlaku apabila terjadi ketidaksesuaian.
 
 ## 2.	PEMROSESAN
 Kami akan memproses data berikut sehubungan dengan Fitur:
