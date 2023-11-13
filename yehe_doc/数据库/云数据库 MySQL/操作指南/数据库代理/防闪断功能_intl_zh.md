@@ -5,7 +5,7 @@
 
 ## 实现原理
 防闪断能力，使用了 MySQL 的 session track 功能，当感知到计划内的有损行为时，数据库代理会与切换前的主节点断开连接，将客户端到数据库代理上的连接，恢复至切换后主节点的连接上，通过 session track 能力将会话相关的系统变量、用户变量、字符集编码信息转移至新的后端连接上，实现对应用程序端无损切换。
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/cJuQ313_%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%20MySQL_%E6%B5%81%E7%A8%8B%E5%9B%BE_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/119f026774de441b00adfa1ab265082d.png)
 
 ## 注意事项
 - 当语句中使用了临时表（因临时表和每个会话相关联），会无法恢复连接，直接报错。
