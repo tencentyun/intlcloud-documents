@@ -53,7 +53,7 @@ TencentOS Server 已经历海量业务长时间的实际考验，部署总量达
 TencentOS Server 内核（简称 tkernel）与发行版解耦，当前主力内核分两个版本，
 - 基于社区5.4 LTS 深度优化的 tkernel4（简称 tk4）。
 - 基于社区4.14 LTS 深度优化的 tkernel3（简称 tk3）。
-详情见 [TencentOS kernel github 仓库](https://github.com/Tencent/TencentOS-kernel)。
+详情见 [TencentOS kernel github 仓库](https://gitee.com/OpenCloudOS/OpenCloudOS-Kernel)。
 
 ## 使用 TencentOS Server 
 
