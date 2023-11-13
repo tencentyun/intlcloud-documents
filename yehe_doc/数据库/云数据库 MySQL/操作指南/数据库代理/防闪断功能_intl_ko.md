@@ -5,7 +5,7 @@
 
 ## 구현 원리
 순간 연결 끊김 방지 기능은 MySQL의 session track 메커니즘을 구현합니다. 손실 동작이 감지되면 데이터베이스 프록시는 전환 전에 소스 노드에서 클라이언트 연결을 끊고 전환 후에 소스 노드에 연결합니다. 그 다음 세션 관련 시스템 변수, 사용자 변수 및 문자 세트 인코딩 정보는 session track 메커니즘을 통해 새로운 백엔드 연결로 전송되어 애플리케이션 측에서 무손실 전환을 구현합니다.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/cJuQ313_%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%20MySQL_%E6%B5%81%E7%A8%8B%E5%9B%BE_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/119f026774de441b00adfa1ab265082d.png)
 
 ## 주의 사항
 - 문이 각 세션과 관련된 임시 테이블을 사용하는 경우 연결을 복구할 수 없으며 오류가 보고됩니다.
