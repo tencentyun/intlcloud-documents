@@ -53,7 +53,7 @@ Currently, three TencentOS Server images are available for your choice:
 The TencentOS Server kernel (tkernel) is decoupled from the distribution. The current main kernel is divided into two versions.
 - tkernel4 deeply optimized based on community 5.4 LTS (tk4).
 - tkernel3 deeply optimized based on community 4.14 LTS (tk3).
-For more information, see [TencentOS Kernel's GitHub repository](https://github.com/Tencent/TencentOS-kernel).
+For more information, see [TencentOS Kernel's GitHub repository](https://gitee.com/OpenCloudOS/OpenCloudOS-Kernel).
 
 ## Using TencentOS Server 
 
