@@ -5,7 +5,7 @@ During the instance Ops, you may need to make some adjustments, such as configur
 
 ## How It Works
 The momentary disconnection prevention feature implements MySQL’s session track mechanism. When the lossy behavior is perceived, the database proxy will disconnect the client from the source node before the switch, and connect to the source node after the switch. Then the session-related system variables, user variables, and character set encoding information will be transferred to the new backend connection through the session track mechanism, so as to realize the lossless switching on the application side.
-![](https://staticintl.cloudcachetci.com/yehe/backend-news/cJuQ313_%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93%20MySQL_%E6%B5%81%E7%A8%8B%E5%9B%BE_%E4%B8%AD%E8%AF%91%E8%8B%B1_EN-US.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/119f026774de441b00adfa1ab265082d.png)
 
 ## Notes
 - If the statement uses the temp tables associated with each session, the connection cannot be recovered, and an error will be reported.
