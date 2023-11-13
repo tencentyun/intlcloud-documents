@@ -8,4 +8,6 @@
 2. 在实例管理页，选择**数据库代理** > **概览**，在连接地址下找到目标访问地址，在其**操作**列单击**调整配置**。
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/XFJj414_14.png)
 3. 在调整配置页面，选择对此访问连接的读写属性，完成读权重分配，单击**确定**。
+>?此处的权重是面向读请求（非事务）权重的分配策略。
+>
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/4e4x371_15.png)
