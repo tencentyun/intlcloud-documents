@@ -8,4 +8,6 @@ You have enabled the database proxy. For more information, see [Enabling Databas
 2. On the instance management page, select **Database Proxy** > **Overview**, find the target access address in **Connection Address**, and click **Adjust Configurations** in the **Operation** column.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/4e4x371_15.png)
 3. In the pop-up window, set **Read-Write Attribute**, assign the read weight, and click **OK**.
+>?The weight here pertains to the allocation strategy for read requests (non-transactional).
+>
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/4e4x371_15.png)
