@@ -9,6 +9,7 @@ Kami akan memproses data berikut sehubungan dengan Fitur:
 |** Informasi Aplikasi:** nama aplikasi, waktu pembuatan aplikasi, deskripsi aplikasi, IP atau nama domain situs web yang masuk daftar putih (opsional), kunci API (terenkripsi), tautan permintaan https RPC (sejauh informasi tersebut memenuhi syarat sebagai informasi pribadi) | Kami hanya memproses data ini untuk tujuan menyediakan Fitur kepada Anda.<br>Harap diperhatikan bahwa data ini disimpan dan dicadangkan dalam fitur TencentDB for MySQL kami. | 
 | **Informasi Permintaan Aplikasi: **Alamat IP, permintaan dari aplikasi dan tanggapan dari blockchain, konsumsi unit permintaan dari aplikasi (sejauh informasi tersebut memenuhi syarat sebagai informasi pribadi) | Kami hanya memproses data ini untuk tujuan menyediakan Fitur kepada Anda, termasuk untuk: menampilkan statistik permintaan kepada Anda.<br>Harap diperhatikan bahwa data ini disimpan dan dicadangkan dalam fitur Tencent Cloud House-C kami. Selain itu, permintaan dari aplikasi dan tanggapan dari blockchain dibagikan dengan Ankr untuk memungkinkan kami menyediakan Fitur kepada Anda.| 
 
+Untuk menghindari keraguan, Fitur ini tidak mengakses, melihat, mengontrol, dan/atau memengaruhi data bisnis Anda (termasuk data yang Anda unggah di blockchain) (“Data Bisnis”). Terlepas dari segala sesuatu yang bertentangan dalam DPSA, untuk tujuan Fitur ini, “Konten” (sebagaimana didefinisikan dalam DPSA) tidak termasuk Data Bisnis. 
 
 ## 3.	WILAYAH LAYANAN
 Sebagaimana ditentukan dalam DPSA.
@@ -23,6 +24,7 @@ Kami akan menyimpan data pribadi yang diproses sehubungan dengan Fitur sebagai b
 |---------|---------|
 | Informasi Aplikasi | Kami menyimpan data tersebut sampai Anda meminta penghapusan data tersebut, yang kemudian kami akan menghapusnya dalam 15 hari.  | 
 | Informasi Permintaan Aplikasi | Kami menyimpan data tersebut selama 1 bulan, kecuali Anda meminta penghapusan data tersebut, di mana kami akan menghapusnya dalam 15 hari. | 
+
 Anda dapat meminta penghapusan data pribadi tersebut sesuai dengan DPSA.
 
 
