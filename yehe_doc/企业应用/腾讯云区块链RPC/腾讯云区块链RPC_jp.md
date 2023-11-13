@@ -1,5 +1,5 @@
 ## 1.	背景
-本モジュールは、お客様がTencent Cloud Blockchain RPC（「本機能」）を使用する場合に適用されます。本モジュールは、に記載されている[Data Processing and Security Agreement](https://intl.cloud.tencent.com/document/product/301/17347)（データ処理およびセキュリティに関する契約）（以下「DPSA」）に組み込まれます。本モジュールにおける用語のうち本書内に定義のないものは、DPSA内で定義された意味を有するものとします。DPSAと本モジュールとの間に矛盾がある場合には、その不一致の範囲で本モジュールを優先するものとします。
+本モジュールは、お客様がTencent Cloud Blockchain RPC（「本機能」）を使用する場合に適用されます。本モジュールは、[DPSA](https://intl.cloud.tencent.com/document/product/301/17347) に記載されているData Processing and Security Agreement（データ処理およびセキュリティに関する契約）（以下「DPSA」）に組み込まれます。本モジュールにおける用語のうち本書内に定義のないものは、DPSA内で定義された意味を有するものとします。DPSAと本モジュールとの間に矛盾がある場合には、その不一致の範囲で本モジュールを優先するものとします。
 
 ## 2.	処理
 当社は、本機能に関連して以下のデータを処理します。
