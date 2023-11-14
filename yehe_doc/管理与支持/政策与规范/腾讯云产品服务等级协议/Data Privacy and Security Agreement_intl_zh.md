@@ -170,7 +170,7 @@
 66.[互动白板](https://www.tencentcloud.com/document/product/1176/55140)。
 67.[堡垒机](https://www.tencentcloud.com/document/product/1151/55273)。
 68.[主机安全](https://www.tencentcloud.com/document/product/296/56235)。
-69.[腾讯云区块链 RPC](https://www.tencentcloud.com/zh/document/product/1215/57458?!editLang=ind&lang=zh&pg=)
+69.[腾讯云区块链 RPC](https://www.tencentcloud.com/zh/document/product/1215/57458?!editLang=ind&lang=zh&pg=)。
 
 ## 特定司法管辖区要求
 
