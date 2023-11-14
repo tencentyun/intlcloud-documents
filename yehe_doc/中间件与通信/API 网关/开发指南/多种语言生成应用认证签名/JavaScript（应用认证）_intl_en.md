@@ -89,6 +89,7 @@ req.end()
 const https = require('https')
 const crypto = require('crypto')
 const querystring = require('querystring')
+const url = require('url')
 
 // Application's `ApiAppKey`
 const apiAppKey = 'APIDLIA6tMfqsinsadaaaaaaaapHLkQ1z0kO5n5P'
@@ -113,14 +114,16 @@ const options = {
   },
 }
 
-const sorted_body = sortBody(body)
-const signingStr = buildSignStr(sorted_body)
+// The form parameter is spliced into the query parameter and sorted by dictionary
+const parsedPath = url.parse(options.path, true)
+const sortedQueryParams = sortQueryParams({ ...body, ...parsedPath.query })
+const signingStr = buildSignStr(sortedQueryParams)
 const signing = crypto.createHmac('sha1', apiAppSecret).update(signingStr, 'utf8').digest('base64')
 const sign = `hmac id="${apiAppKey}", algorithm="hmac-sha1", headers="x-date", signature="${signing}"`
 
 options.headers.Authorization = sign
 
-// Send the request
+// Send request
 const req = https.request(options, (res) => {
   console.log(`STATUS: ${res.statusCode}`)
   res.on('data', (chunk) => {
@@ -133,13 +136,13 @@ req.on('error', (error) => {
 req.write(querystring.stringify(body))
 req.end()
 
-function sortBody(body) {
+function sortQueryParams(body) {
   const keys = Object.keys(body).sort()
   let signKeys = []
   for (let i = 0; i < keys.length; i++) {
     signKeys.push(keys[i])
   }
-  // Sort in lexicographical order
+  // Sort lexicographically
   return signKeys.sort()
 }
 
@@ -155,7 +158,7 @@ function buildSignStr(sorted_body) {
     options.headers.Accept,
     options.headers['Content-Type'],
     contentMD5,
-    options.path + '?' + keyStr,
+    `${parsedPath.pathname}${keyStr ? `?${keyStr}` : ''}`,
   ].join('\n')
 }
 :::
