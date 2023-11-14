@@ -179,7 +179,7 @@ Tencent와 조직은 개인 데이터와 관련하여 조직이 컨트롤러이�
 66.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55140).
 67.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55273).
 68.[Cloud Workload Protection Platform](https://www.tencentcloud.com/document/product/296/56235).
-69.[Tencent Cloud Blockchain RPC](https://www.tencentcloud.com/ko/document/product/1215/57458?!editLang=ind&lang=ko&pg=)
+69.[Tencent Cloud Blockchain RPC](https://www.tencentcloud.com/ko/document/product/1215/57458?!editLang=ind&lang=ko&pg=).
 
 ## 관할권별 요구 사항
 
