@@ -114,7 +114,7 @@ const options = {
   },
 }
 
-// Splicing form and query and sort them according to the dictionary
+// Splicing form parameter and query parameter and sort them according to the dictionary
 const parsedPath = url.parse(options.path, true)
 const sortedQueryParams = sortQueryParams({ ...body, ...parsedPath.query })
 const signingStr = buildSignStr(sortedQueryParams)
