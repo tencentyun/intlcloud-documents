@@ -114,7 +114,7 @@ const options = {
   },
 }
 
-// The form parameter is spliced into the query parameter and sorted by dictionary
+// Splicing form and query and sort them according to the dictionary
 const parsedPath = url.parse(options.path, true)
 const sortedQueryParams = sortQueryParams({ ...body, ...parsedPath.query })
 const signingStr = buildSignStr(sortedQueryParams)
@@ -123,7 +123,7 @@ const sign = `hmac id="${apiAppKey}", algorithm="hmac-sha1", headers="x-date", s
 
 options.headers.Authorization = sign
 
-// Send request
+// Send the request
 const req = https.request(options, (res) => {
   console.log(`STATUS: ${res.statusCode}`)
   res.on('data', (chunk) => {
@@ -142,7 +142,7 @@ function sortQueryParams(body) {
   for (let i = 0; i < keys.length; i++) {
     signKeys.push(keys[i])
   }
-  // Sort lexicographically
+  // Sort in lexicographical order
   return signKeys.sort()
 }
 
