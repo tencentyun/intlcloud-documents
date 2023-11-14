@@ -2,9 +2,9 @@
 
 In data subscription (Kafka Edition), you can consume the subscribed data through Kafka 0.11 or later available at [DOWNLOAD](http://kafka.apache.org/downloads). This document provides client consumption demos for Java, Go, and Python for you to quickly test the process of data consumption and understand the method of data parsing.
 
-When configuring the subscription task, you can select different formats of subscribed data, including ProtoBuf, Avro, and JSON. ProtoBuf and Avro adopt the binary format with a higher consumption efficiency, while JSON adopts the easier-to-use lightweight text format. The reference demo varies by the selected data format.
+When configuring the subscription task, you can select different formats of subscribed data, including Protobuf, Avro, and JSON. Protobuf and Avro adopt the binary format with a higher consumption efficiency, while JSON adopts the easier-to-use lightweight text format. The reference demo varies by the selected data format.
 
-This document provides a demo of the ProtoBuf format. The demo already contains the ProtoBuf protocol file, so you don't need to download it separately. If you [download](https://subscribesdk-1254408587.cos.ap-beijing.myqcloud.com/subscribe.proto) it on your own, use ProtoBuf 3.X for code generation to ensure that data structures are compatible.
+This document provides a demo of the Protobuf format. The demo already contains the Protobuf protocol file, so you don't need to download it separately. If you [download](https://subscribesdk-1254408587.cos.ap-beijing.myqcloud.com/subscribe.proto) it on your own, use Protobuf 3.X for code generation to ensure that data structures are compatible.
 
 ## Notes
 
@@ -75,7 +75,7 @@ Here, `broker` is the private network access address for data subscription to Ka
 ### Message production logic
 
 This section describes the message production logic to help you better understand the consumption logic.
-ProtoBuf is used for serialization. The demo for each programming language contains the ProtoBuf definition file, which defines several key data structures: `Envelope` is the structure of eventually sent Kafka messages; `Entry` is the structure of an individual subscription event; and `Entries` is a set of `Entry` structures. Below are their relationships:
+Protobuf is used for serialization. The demo for each programming language contains the Protobuf definition file, which defines several key data structures: `Envelope` is the structure of eventually sent Kafka messages; `Entry` is the structure of an individual subscription event; and `Entries` is a set of `Entry` structures. Below are their relationships:
 
 ![](https://qcloudimg.tencent-cloud.cn/raw/3dcceab6ea08686edf64c0517019d70d.png)
 
@@ -120,7 +120,7 @@ message Entries {
         repeated Entry items = 1; // `Entry` list
 }
 ```
-3. Encode `Entries` with ProtoBuf to generate a binary sequence.
+3. Encode `Entries` with Protobuf to generate a binary sequence.
 4. Put the binary sequence in the `data` field of an `Envelope`. If a single binlog event is oversize, the binary sequence may exceed the size limit of a single Kafka message. In this case, you can separate the binary sequence into multiple segments and put each segment in an `Envelope`.
 `Envelope.total` and `Envelope.index` record the total number of `Envelope` structures and the serial number of the current `Envelope` structure (starting from 0) respectively.
 ```
@@ -148,7 +148,7 @@ The following simply describes the consumption logic. Directions for demos in th
 	err := proto.Unmarshal(msg.Value, &envelope)
 ```
 5. The `partitionMsgConsumer` object continuously consumes one or multiple messages according to the `index` and `total` recorded in the `Envelope` until `Envelope.index` equals to `Envelope.total-1` (which indicates that a complete `Entries` is received. See the consumption and production logic mentioned above).
-6. Combine the `data` fields of multiple consecutive `Envelope` structures received together in sequence. Decode the combined binary sequences into `Entries` with ProtoBuf.
+6. Combine the `data` fields of multiple consecutive `Envelope` structures received together in sequence. Decode the combined binary sequences into `Entries` with Protobuf.
 ```
 	if envelope.Index == 0 {
 		pmc.completeMsg = envelope
@@ -169,8 +169,8 @@ The following simply describes the consumption logic. Directions for demos in th
 
 ## Database Field Mapping and Storage
 
-This section describes the mappings between database field types and data types defined in the ProtoBuf protocol.
-A field value in the source database such as MySQL is stored in the following data structure in the ProtoBuf protocol:
+This section describes the mappings between database field types and data types defined in the Protobuf protocol.
+A field value in the source database such as MySQL is stored in the following data structure in the Protobuf protocol:
 
 ```
 message Data {
@@ -209,7 +209,7 @@ Mapping between MySQL/TDSQL original type and `DataType` is as shown below (the 
 > - The TIMESTAMP type supports time zone. For fields of this type, the system will convert the current time zone to Universal Time Coordinated (UTC) when storing them and convert UTC back to the current time zone when querying them.
 > - The `MYSQL_TYPE_TIMESTAMP` and `MYSQL_TYPE_TIMESTAMP_NEW` fields carry the time zone information, which you can convert on your own when consuming data. For example, the format of the time data output by DTS is a string with time zone, such as `2021-05-17 07:22:42 +00:00`, where `+00:00`indicates the UTC time. You need to take into account the time zone information when parsing and converting the data.
 
-| MySQL/TDSQL Field Type | ProtoBuf DataType Enumerated Value |
+| MySQL/TDSQL Field Type | Protobuf DataType Enumerated Value |
 | ------------------------------------------- | ----------------------------- |
 | MYSQL_TYPE_NULL                             | NIL                           |
 | MYSQL_TYPE_INT8                             | INT8                          |
