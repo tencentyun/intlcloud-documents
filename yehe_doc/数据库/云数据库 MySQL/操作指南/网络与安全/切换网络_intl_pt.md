@@ -4,8 +4,8 @@ A Tencent Cloud aceita [rede clássica e VPC](https://intl.cloud.tencent.com/doc
   - Alternar da rede clássica para VPC: uma única instância de origem do TencentDB pode ser alternada da rede clássica para VPC.
   - Alternar de VPC A para VPC B: uma única instância de origem do TencentDB pode ser alternada de VPC A para VPC B.
 - **IP e porta personalizados)**
- - IP e porta da instância de origem personalizados: o IP e a porta de uma instância de origem podem ser personalizados na página de detalhes da instância no console.
- - IP e porta da instância somente leitura personalizados: o IP e a porta de uma instância somente leitura podem ser personalizados na página de detalhes da instância no console.
+  - IP e porta da instância de origem personalizados: o IP e a porta de uma instância de origem podem ser personalizados na página de detalhes da instância no console.
+  - IP e porta da instância somente leitura personalizados: o IP e a porta de uma instância somente leitura podem ser personalizados na página de detalhes da instância no console.
 
 ## Observações
 - A troca de rede pode causar a alteração do IP privado da instância. O IP original se tornará inválido após o término do tempo de tomada de posse. Modifique o IP da instância no cliente imediatamente.
