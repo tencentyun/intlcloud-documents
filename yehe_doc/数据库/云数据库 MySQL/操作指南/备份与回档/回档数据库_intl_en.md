@@ -32,9 +32,9 @@ The rollback feature can roll back databases or tables to a specified point in t
 >
 ![](https://qcloudimg.tencent-cloud.cn/raw/6adc4d0454725e4491cc82eecb930242.png)
 2. On the rollback page, select the original database or table and click **Next: set the rollback time and database table name**.
-   - 	Fast mode: Import full backup of the instance, and then roll back the selected databases and tables. This rollback mode is slower than the other modes but has no limit.
-   - 	Faster mode: Full backup + database-level binlog. For cross-database operation, if associated database is not selected at the same time, the database callback will fail.
-   - 	Ultrafast mode: Full backup + table-level binlog. For cross-table operation, if associated table is not selected at the same time, the table rollback will fail.
+   - Fast mode: Import full backup of the instance, and then roll back the selected databases and tables. This rollback mode is slower than the other modes but has no limit.
+   - Faster mode: Full backup + database-level binlog. For cross-database operation, if associated database is not selected at the same time, the database callback will fail.
+   - Ultrafast mode: Full backup + table-level binlog. For cross-table operation, if associated table is not selected at the same time, the table rollback will fail.
 >?
 >- Only databases/tables with names containing digits, letters, underscores, or their combinations can be rolled back. Databases/tables with names containing special symbols are not supported.
 >- In the mode where specified databases/tables can be rolled back only, a maximum of 500 databases/tables in the same instance can be rolled back at a time.
