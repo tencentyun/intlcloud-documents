@@ -1,7 +1,7 @@
 This document describes how to set the binlog retention period for a TencentDB for MySQL instance in the console.
 >?
-- You cannot configure local binlog retention for single-node instances of cloud disk edition.
-- If there is a disaster recovery instance for the source instance, the local binlog retention period cannot be shorter than 120 hours. 
+>- You cannot configure local binlog retention for single-node instances of cloud disk edition.
+>- If there is a disaster recovery instance for the source instance, the local binlog retention period cannot be shorter than 120 hours. 
 
 ## Binlog Description
 Binlog grows fast when a TencentDB for MySQL instance executes large transactions or lots of DML operations. Binlog is split every 256 MB and uploaded to COS. You can see the uploaded binlog files in the log list in the console.
