@@ -4,8 +4,8 @@ Tencent Cloud mendukung [jaringan klasik dan VPC](https://intl.cloud.tencent.com
   - Beralih dari jaringan klasik ke VPC: satu instans sumber TencentDB dapat dialihkan dari jaringan klasik ke VPC.
   - Beralih dari VPC A ke VPC B: satu instans sumber TencentDB dapat dialihkan dari VPC A ke VPC B.
 - **Custom IP and port** (IP dan port khusus)
- - IP dan port instans sumber kustom: IP dan port instans sumber dapat disesuaikan pada halaman detail instans di konsol.
- - IP dan port instans baca saja kustom: IP dan port instans baca saja dapat disesuaikan pada halaman detail instans di konsol.
+  - IP dan port instans sumber kustom: IP dan port instans sumber dapat disesuaikan pada halaman detail instans di konsol.
+  - IP dan port instans baca saja kustom: IP dan port instans baca saja dapat disesuaikan pada halaman detail instans di konsol.
 
 ## Catatan
 - Mengalihkan jaringan dapat menyebabkan perubahan IP pribadi instans. IP asli akan menjadi tidak valid setelah waktu kepemilikan kembali berlalu. Harap segera modifikasi IP instans pada klien.
