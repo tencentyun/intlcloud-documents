@@ -4,8 +4,8 @@ Tencent Cloud supports classic network and VPC as described in [Overview](https:
   - Switch from classic network to VPC: A single TencentDB source instance can be switched from classic network to VPC.
   - Switch from VPC A to VPC B: A single TencentDB source instance can be switched from VPC A to VPC B.
 - **Custom IP and port**
- - Custom source instance IP and port: The IP and port of a source instance can be customized on the instance details page in the console.
- - Custom read-only instance IP and port: The IP and port of a read-only instance can be customized on the instance details page in the console.
+  - Custom source instance IP and port: The IP and port of a source instance can be customized on the instance details page in the console.
+  - Custom read-only instance IP and port: The IP and port of a read-only instance can be customized on the instance details page in the console.
 
 ## Notes
 - After the switch from classic network to VPC, only clients in the same VPC can interconnect with each other. You can [configure](https://intl.cloud.tencent.com/document/product/215/31805) a VPC IP range to keep the VPC IP the same as the classic network IP.
