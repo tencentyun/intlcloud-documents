@@ -97,7 +97,6 @@ System.setProperty("javax.net.ssl.keyStore","<下载的证书路径>");
 System.setProperty("javax.net.ssl.keyStorePassword","tencentdb");
 System.setProperty("javax.net.ssl.trustStore","<下载的证书路径>");
 System.setProperty("javax.net.ssl.trustStorePassword","tencentdb");
-
 url = String.format("jdbc:mysql://%s/%s?serverTimezone=UTC&useSSL=true", '<数据库访问地址>', '<指定访问数据库>');
 properties.setProperty("user", '<数据库访问用户名>');
 properties.setProperty("password", '<数据库访问密码>');
