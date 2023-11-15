@@ -80,7 +80,6 @@ $db = new PDO('mysql:host=<数据库访问地址>;port=<访问端口>;dbname=<�
 - Java (MySQL Connector for Java)
 ```
 # generate truststore and keystore in code
-
 String importCert = " -import "+
     " -alias mysqlServerCACert "+
     " -file " + ssl_ca +
@@ -93,9 +92,7 @@ String genKey = " -genkey -keyalg rsa " +
     " -dname CN=MS ";
 sun.security.tools.keytool.Main.main(importCert.trim().split("\\s+"));
 sun.security.tools.keytool.Main.main(genKey.trim().split("\\s+"));
-
 # use the generated keystore and truststore
-
 System.setProperty("javax.net.ssl.keyStore","<下载的证书路径>");
 System.setProperty("javax.net.ssl.keyStorePassword","tencentdb");
 System.setProperty("javax.net.ssl.trustStore","<下载的证书路径>");
