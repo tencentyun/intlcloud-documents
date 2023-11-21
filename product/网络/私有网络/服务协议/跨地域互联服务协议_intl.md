@@ -10,7 +10,7 @@
 The "Service" herein refers to the Tencent Cloud Cross-region Connection Service as well as related technical and network support services.
 
 ## 2. Service Fee
-The billing method and standard (in RMB) are subject to the price published on Tencent Cloud official website, unless otherwise agreed by both parties.
+The billing method and standard (in USD) are subject to the price published on Tencent Cloud official website, unless otherwise agreed by both parties.
 
 ### 3. Customer's Rights and Obligations
 3.1 You have the right to use the Service you purchase as well as the technical support and after-sales services provided by Tencent Cloud in accordance with this Agreement.
