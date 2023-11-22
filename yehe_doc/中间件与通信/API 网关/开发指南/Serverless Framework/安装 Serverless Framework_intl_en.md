@@ -46,7 +46,7 @@ If you have already installed Serverless Framework, you can run the following co
 $ npm update -g serverless
 ```
 
-If Node.js is not installed in your environment, you can install it as instructed in [Node.js Installation Guide](https://nodejs.org/zh-cn/download/) based on your system environment.
+If Node.js is not installed in your environment, you can install it as instructed in [Node.js Installation Guide](https://nodejs.org/en/download) based on your system environment.
 
 
 
