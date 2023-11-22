@@ -47,7 +47,7 @@
 
    Be simplified, the key of this solution is, embedding the Flutter module to your native application in a subproject. As the cross-platform feature of Flutter, one single Flutter module can be added to both Android and iOS projects.
 
-   To launch a Flutter screen from an existing iOS/Android, you start a [FlutterEngine](https://api.flutter.dev/objcdoc/Classes/FlutterEngine.html) and a FlutterViewController/FlutterActiviy.
+   To launch a Flutter screen from an existing iOS/Android, you start a [FlutterEngine](https://api.flutter.dev/javadoc/io/flutter/embedding/engine/FlutterEngine.html) and a FlutterViewController/FlutterActiviy.
 
    The `FlutterEngine` serves as a host to the Dart VM and your Flutter runtime, and the `FlutterViewController`/`FlutterActivity` attaches to a FlutterEngine to pass input events into Flutter and to display frames rendered by the `FlutterEngine`.
 
