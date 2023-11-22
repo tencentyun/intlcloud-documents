@@ -46,7 +46,7 @@ $ npm install -g serverless
 $ npm update -g serverless
 ```
 
-如果您的环境中没有安装 Node.js，可以参考 [Node.js 安装指南](https://nodejs.org/zh-cn/download/) 根据您的系统环境进行安装。
+如果您的环境中没有安装 Node.js，可以参考 [Node.js 安装指南](https://nodejs.org/en/download) 根据您的系统环境进行安装。
 
 
 
