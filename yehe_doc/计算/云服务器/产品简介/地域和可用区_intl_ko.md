@@ -117,7 +117,7 @@
 	</tr>
 	<tr>
 			<td rowspan="3">중국홍콩, 마카오 및 대만 지역(중국홍콩)<br>ap-hongkong</td>
-			<td>홍콩1존(중국 홍콩 노드의 커버리지: 홍콩/마카오/대만 지역)(품절)<br>ap-hongkong-1</td>
+			<td>홍콩1존(중국 홍콩 노드의 커버리지: 홍콩/마카오/대만 지역)<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
 			<td>홍콩2존(중국 홍콩 노드의 커버리지: 홍콩/마카오/대만 지역)<br>ap-hongkong-2</td>
