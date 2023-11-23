@@ -113,7 +113,7 @@ Layanan Tencent Cloud di VPC yang sama saling terhubung melalui jaringan pribadi
 	</tr>
 	<tr>
 			<td rowspan="3">Hong Kong, Makau dan Taiwan, Tiongkok (Hong Kong)<br>ap-hongkong</td>
-			<td>Zona 1 Hong Kong (Node di Hong Kong, Tiongkok dapat mencakup wilayah Hong Kong/Makau/Taiwan) (terjual habis)<br>ap-hongkong-1</td>
+			<td>Zona 1 Hong Kong (Node di Hong Kong, Tiongkok dapat mencakup wilayah Hong Kong/Makau/Taiwan) <br>ap-hongkong-1</td>
 	</tr>
 	<tr>
 			<td>Zona 2 Hong Kong (Node di Hong Kong, Tiongkok dapat mencakup wilayah Hong Kong/Makau/Taiwan)<br>ap-hongkong-2</td>
