@@ -117,7 +117,7 @@ Private network interconnection refers to the interconnection of resources under
 	</tr>
 	<tr>
 			<td rowspan="3">Hong Kong/Macao/Taiwan (Hong Kong, China)<br>ap-hongkong</td>
-			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions) (sold out)<br>ap-hongkong-1</td>
+			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions) <br>ap-hongkong-1</td>
 	</tr>
 	<tr>
 			<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover services in Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td>
