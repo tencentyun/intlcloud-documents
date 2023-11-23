@@ -291,7 +291,7 @@ Prices published here are for reference only. Refer to your bills for final pric
 <tbody>
 <tr>
             <th style="width: 24%;" rowspan="2">Region</th>
-            <th style="width: 38%;" colspan="2">Provisioned Performance<br>(Unit: USD/GB/month)</th>
+            <th style="width: 38%;" colspan="2">Provisioned Performance<br>(Unit: USD/MBps/month)</th>
 </tr>
 <tr>
 <th>1 MB/s - 650 MB/s</th>
@@ -406,7 +406,7 @@ Prices published here are for reference only. Refer to your bills for final pric
 <tbody>
 <tr>
             <th style="width: 24%;" rowspan="2">Region</th>
-            <th style="width: 38%;" colspan="2">Provisioned Performance<br>(Unit: USD/GB/hour)</th>
+            <th style="width: 38%;" colspan="2">Provisioned Performance<br>(Unit: USD/MBps/hour)</th>
 </tr>
 <tr>
 <th>1 MB/s - 650 MB/s</th>
