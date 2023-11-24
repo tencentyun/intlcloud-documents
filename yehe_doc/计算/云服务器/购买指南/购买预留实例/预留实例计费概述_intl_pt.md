@@ -33,7 +33,7 @@ Para verificar as zonas de disponibilidade compatíveis com as RIs, use a API [D
 
 Sistema operacional: atualmente, apenas as instâncias do CVM do Linux são compatíveis com a RI.
 
-Método de pagamento: existem três opções de pagamento: **Pagamento total adiantado**, **Pagamento parcial adiantado** e **Sem pagamento adiantado**.
+Método de pagamento: existem dois opções de pagamento: Pagamento total adiantado, Pagamento parcial adiantado .
 
 Períodos de vigência: 1 ano(365 dias)
 
