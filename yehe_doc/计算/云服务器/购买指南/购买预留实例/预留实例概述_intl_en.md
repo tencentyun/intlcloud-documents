@@ -36,7 +36,6 @@ After prepaying a certain amount for RI, you can enjoy the corresponding discoun
 
 - All Upfront: you pay for the entire RI term with one upfront payment. This option provides you with the largest discount compared to the other two options below.
 - Partial Upfront: you make a low upfront payment and then pay for instance fees at a monthly rate or discounted hourly rate during the RI term.
-- No Upfront: you make no upfront payment and then pay for instance fees at a monthly rate or discounted hourly rate during the RI term.
 Please note that you pay for the entire RI term regardless of actual usage.
 
 #### Validity period type
@@ -51,7 +50,7 @@ To check availability zones that support RIs, please use the [DescribeReservedIn
 
 Operating system: Currently, RI supports Windows and Linux CVM instances.
 
-Payment method: there are three payment options, namely **All Upfront**, **Partial Upfront**, and **No Upfront**.
+Payment method: there are two payment options, namely **All Upfront**, **Partial Upfront**.
 
 Validity period: 1 year (365 days).
 
