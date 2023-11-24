@@ -33,7 +33,7 @@ Untuk memeriksa zona ketersediaan yang mendukung RI, gunakan [DescribeReservedIn
 
 Sistem operasi: saat ini, RI hanya mendukung instans CVM Linux.
 
-Metode pembayaran: ada tiga opsi pembayaran, yaitu **All Upfront** (Lunas di Muka), **Partial Upfront** (Sebagian Di Muka), dan **No Upfront** (Tanpa Pembayaran Di Muka).
+Metode pembayaran: ada dua opsi pembayaran, yaitu **All Upfront** (Lunas di Muka), **Partial Upfront** (Sebagian Di Muka).
 
 Jangka Waktu: 1 tahun(365 hari)
 
