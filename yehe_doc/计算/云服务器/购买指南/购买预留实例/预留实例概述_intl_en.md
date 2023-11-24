@@ -26,7 +26,7 @@ After prepaying a certain amount for RI, you can enjoy the corresponding discoun
 - You can view RI prices in [Pricing | Cloud Virtual Machine](https://www.tencentcloud.com/pricing/cvm/overview). Refer to your bills for final prices.
 - You can make purchases in the [console](https://buy.tencentcloud.com/reservedinstances?regionId=1&zoneId=100003&imageType=linux) or through [API](https://www.tencentcloud.com/zh/document/product/213/30574).
 - Operating system: Currently, RI supports Windows and Linux CVM instances.
-- Payment method: There are three payment options, namely **All Upfront**, **Partial Upfront**, and **No Upfront**.
+- Payment method: There are two payment options, namely **All Upfront**, **Partial Upfront**.
 - Quota: Each user can have up to 20 RIs in one availability zone.
 - Configurations of an RI cannot be changed after purchase. The RI billing discount will no longer apply to the matched instance if you change its configurations.
 - The RI billing discount will still apply to matched CVM instances even after they are proactively or forcibly shut down.
