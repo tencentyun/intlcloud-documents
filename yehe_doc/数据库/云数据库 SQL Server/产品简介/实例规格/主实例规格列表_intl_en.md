@@ -7,7 +7,7 @@ This document describes the latest specifications of TencentDB for SQL Server pr
 <thead><tr><th width=22%>Instance Type</th><th width=18%>Version</th><th width=20%>Disk Type</th><th width=20%>CPU and Memory</th><th width=20%>Disk</th></tr></thead>
 <tbody>
 <td rowspan="30">Single-node (formerly Basic Edition)</td>
-<td rowspan=30><br>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise</td>
+<td rowspan=30><br>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise<br>2022 Enterprise</td>
 <td rowspan="10">Balanced SSD cloud disk<br>Enhanced SSD cloud disk</td>
 <td>2-core 4 GB</td><td rowspan="10">20–32000 GB</td></tr>
 <tr><td>2-core 8 GB</td></tr>
@@ -42,7 +42,7 @@ This document describes the latest specifications of TencentDB for SQL Server pr
 <tr><td>24-core 96 GB</td></tr>
 <tr> 
 <tr><td rowspan="44">Two-node (formerly High Availability/Cluster Edition)</td>
-<td rowspan=44><br>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise</td>
+<td rowspan=44><br>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise<br>2022 Enterprise</td>
 <td rowspan="13">Premium local SSD</td>
 <td>1-core 2 GB</td><td rowspan="7">10–3000 GB</td>
 <tr><td>1-core 4 GB</td></tr>
