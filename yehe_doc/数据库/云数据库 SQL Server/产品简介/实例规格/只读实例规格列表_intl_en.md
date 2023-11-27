@@ -5,7 +5,7 @@ In TencentDB for SQL Server, you can create one or more read-only instances and 
 <table>
 <thead><tr><th>Version</th><th>Disk Type</th><th>CPU and Memory</th><th>Disk</th></tr></thead>
 <tbody>
-<td rowspan=44><br>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise</td>
+<td rowspan=13><br>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise</td>
 <td rowspan="13">Premium local SSD</td>
 <td>1-core 2 GB</td><td rowspan="7">10–3000 GB</td>
 <tr><td>1-core 4 GB</td></tr>
@@ -20,6 +20,7 @@ In TencentDB for SQL Server, you can create one or more read-only instances and 
 <tr><td>48-core 384 GB</td></tr>
 <tr><td>64-core 512 GB</td></tr>
 <tr><td>90-core 720 GB</td></tr>
+<td rowspan=31><br>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise<br>2022 Enterprise</td>
 <td rowspan="31">Balanced SSD cloud disk<br>Enhanced SSD cloud disk</td>
 <td>2-core 4 GB</td><td rowspan="31">20–32000 GB</td>
 <tr><td>2-core 8 GB</td></tr>
