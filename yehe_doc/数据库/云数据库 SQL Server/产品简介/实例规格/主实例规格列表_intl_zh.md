@@ -7,7 +7,7 @@
 <thead><tr><th width=22%>实例类型</th><th width=18%>版本</th><th width=20%>磁盘类型</th><th width=20%>CPU和内存</th><th width=20%>硬盘</th></tr></thead>
 <tbody>
 <td rowspan="30">单节点（原基础版）</td>
-<td rowspan=30><br>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise</td>
+<td rowspan=30><br>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise<br>2022 Enterprise</td>
 <td rowspan="10">通用型 SSD 云硬盘<br>增强型 SSD 云硬盘</td>
 <td>2核 4GB</td><td rowspan="10">20GB - 32000GB</td></tr>
 <tr><td>2核 8GB</td></tr>
@@ -42,7 +42,7 @@
 <tr><td>24核 96GB</td></tr>
 <tr> 
 <tr><td rowspan="44">双节点（原高可用/集群版）</td>
-<td rowspan=44><br>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise</td>
+<td rowspan=44><br>2008 R2 Enterprise<br>2012 Enterprise<br>2014 Enterprise<br>2016 Enterprise<br>2017 Enterprise<br>2019 Enterprise<br>2022 Enterprise</td>
 <td rowspan="13">高性能本地 SSD</td>
 <td>1核 2GB</td><td rowspan="7">10GB - 3000GB</td>
 <tr><td>1核 4GB</td></tr>
