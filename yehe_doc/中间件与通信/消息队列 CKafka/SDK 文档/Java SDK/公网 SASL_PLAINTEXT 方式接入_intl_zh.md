@@ -1,6 +1,6 @@
 ## 操作背景
 
-该任务以 Java 客户端为例指导您在公网网络环境下，使用 SASL_PLAINTEXT 方式接入消息队列 CKafka 并收发消息。
+该任务以 Java 客户端为例指导您在公网网络环境下，使用 SASL_PLAINTEXT 方式接入消息队列 CKafka 版并收发消息。
 
 
 ## 前提条件
@@ -21,7 +21,7 @@
 在**用户管理**页面新建角色，设置密码。
 ![](https://qcloudimg.tencent-cloud.cn/raw/3d83c7d7392032738b231dbc1a07f4fb.png)
 3. 创建 Topic。
-在控制台 **topic 管理**页面新建 Topic（参见 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/47583)）。
+在控制台 **Topic 管理**页面新建 Topic（参见 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/47583)）。
 
 
 
@@ -62,7 +62,7 @@ password="yourpassword";
 <dx-alert infotype="explain" title="">
 username 是`实例 ID` + `#` + `配置的用户名`，password 是配置的用户密码。
 </dx-alert>
-3. 创建消息队列 CKafka 配置文件 kafka.properties。
+3. 创建消息队列 CKafka 版配置文件 kafka.properties。
 <dx-codeblock>
 :::  properties
 ## 配置接入网络，在控制台的实例详情页面接入方式模块的网络列复制。
