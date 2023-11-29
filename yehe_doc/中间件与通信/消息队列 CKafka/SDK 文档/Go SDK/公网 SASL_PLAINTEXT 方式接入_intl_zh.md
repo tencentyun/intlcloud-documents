@@ -1,6 +1,6 @@
 ## 操作场景
 
-本文介绍 Go 客户端如何在公网环境下，使用 SASL_PLAINTEXT 方式接入消息队列 CKafka 收发消息。
+本文介绍 Go 客户端如何在公网环境下，使用 SASL_PLAINTEXT 方式接入消息队列 CKafka 版收发消息。
 
 ## 前提条件
 
