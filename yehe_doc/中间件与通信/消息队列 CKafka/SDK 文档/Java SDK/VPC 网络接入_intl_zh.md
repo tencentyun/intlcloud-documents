@@ -1,6 +1,6 @@
 ## 操作场景
 
-该任务以 Java 客户端为例指导您使用 VPC 网络接入消息队列 CKafka 并收发消息。
+该任务以 Java 客户端为例指导您使用 VPC 网络接入消息队列 CKafka 版并收发消息。
 
 ## 前提条件
 
@@ -24,7 +24,7 @@
       </dependency>
     :::
     </dx-codeblock>
-   2.创建消息队列 CKafka 配置文件 kafka.properties。
+   2.创建消息队列 CKafka 版配置文件 kafka.properties。
     <dx-codeblock>
     :::  bash
       ## 配置接入网络，在控制台的实例详情页面接入方式模块的网络列复制。
