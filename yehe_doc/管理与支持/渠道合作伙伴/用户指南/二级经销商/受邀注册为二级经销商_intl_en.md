@@ -3,7 +3,7 @@
 Step 1. Click the invitation link sent by the distributor to enter the account registration page and enter the registration information. You can only enter the registration page via the invitation link.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/G4PV959_11.png)
 
-Step 2. Complete the account information, including the company name and address, the mobile number, and other required information, and click **Submit**.
+Step 2. Complete the account information, including the company name and address, the mobile number, and other required information, and click Submit.
 ![](https://staticintl.cloudcachetci.com/yehe/backend-news/UCwa119_2.png)
 
 ### 2. Enterprise Identity Verification
