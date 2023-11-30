@@ -787,6 +787,7 @@ The following Modules shall apply and form part of this privacy policy if you us
 71.[Tencent Interactive Whiteboard](https://www.tencentcloud.com/document/product/1176/55139).
 72.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55272).
 73.[Cloud Dedicated Zone](https://www.tencentcloud.com/document/product/1210/56966).
+74.[Player SDK ](https://www.tencentcloud.com/document/product/266/57964).
 
 ### Revision History
 [Privacy Policy](https://www.tencentcloud.com/document/product/301/43505)(version1.0)
