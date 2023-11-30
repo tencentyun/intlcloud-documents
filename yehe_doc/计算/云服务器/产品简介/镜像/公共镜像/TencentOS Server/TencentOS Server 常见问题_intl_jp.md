@@ -41,9 +41,6 @@ Tencent CloudはTencentOS Serverの2つバージョンのパブリックイメ�
 ### TencentOS ServerはどのようなCVMインスタンスタイプをサポートしていますか。
 TencentOS ServerはCVMインスタンスタイプの大部分をサポートしています。[CVM購入ページ](https://buy.intl.cloud.tencent.com/cvm?tab=custom&regionId=1&projectId=-1) でイメージを選択して使用を開始することができます。
 
-### CVMでTencentOS Serverを使用する場合、料金がかかりますか。
-かかりません。TencentOS Server自体は無償で使用でき、CVMの運用料金を支払う必要があるだけです。
-
 ### TencentOS Server使用後のソフトウェアのインストールとアップグレード方法は。
 TencentOS Serverリリース版は、`yum` コマンドまたはTencentOS Serverに付属の`t`コマンドを使用してソフトウェアパッケージを管理できます。なお、TencentOS Server3は、`dnf`コマンドを使用してもソフトウェアパッケージを管理できます。
 
