@@ -5,7 +5,7 @@ BGP 月95计费带宽包自2023年04月01日起已不再新增新用户。静态
 ### 升级操作需要怎么做？
 1. 若您需要将 BGP 升级到“后付费 - 增强型95计费”模式，请参考如下步骤：
 	1. 登录 [共享带宽包控制台](https://console.cloud.tencent.com/vpc/package?rid=1)，创建增强型95计费带宽包。
-	2. 将 BGP 月95计费带宽包中的资源 [迁移](https://www.tencentcloud.com/document/product/684/45860) 到增强型95计费带宽包，完成迁移后请将原月95计费带宽包 [删除](https://www.tencentcloud.com/zh/document/product/684/34598)。
+	2. 将 BGP 月95计费带宽包中的资源 [迁移](https://www.tencentcloud.com/document/product/684/45860?lang=zh&pg=) 到增强型95计费带宽包，完成迁移后请将原月95计费带宽包 [删除](https://www.tencentcloud.com/zh/document/product/684/34598?lang=zh&pg=)。
 2. 若您需要将静态单线升级到“后付费 - 增强型95计费”模式，请 [提交工单](https://console.tencentcloud.com/workorder/category) 处理。
 
 ### 升级后费用是增多还是减少？
