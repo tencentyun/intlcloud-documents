@@ -41,9 +41,6 @@ Tencent Cloud는 두 가지 버전의 공용 이미지를 제공하며 Linux 운
 ### TencentOS Server는 어떤 클라우드 서버 인스턴스 유형을 지원합니까?
 TencentOS Server는 대부분의 클라우드 서버 인스턴스 유형을 지원하며 [클라우드 서버 구매 페이지](https://buy.intl.cloud.tencent.com/cvm?tab=custom®ionId=1&projectId=-1)에서 이미지를 선택하여 사용할 수 있습니다.
 
-### 클라우드 서버에서 TencentOS Server 사용 시 요금이 발생합니까?
-아닙니다. TencentOS Server 자체는 요금이 발생하지 않으며 클라우드 서버 실행 요금만 지불하면 됩니다.
-
 ### TencentOS Server 사용 후 소프트웨어 설치 및 업그레이드는 어떻게 하나요?
 TencentOS Server 릴리스 버전은 'yum' 명령 또는 TencentOS Server와 함께 제공되는 't' 명령을 통해 소프트웨어 패키지를 관리할 수 있습니다. 그 중 TencentOS Server 3는 `dnf` 명령을 통해 소프트웨어 패키지를 관리할 수도 있습니다.
 
