@@ -1,4 +1,4 @@
-﻿### Why should I upgrade to the enhanced 95th percentile bandwidth package?
+### Why should I upgrade to the enhanced 95th percentile bandwidth package?
 The billing method of this package can reflect the actual bandwidth of your business more precisely. You can also set a bandwidth upper limit to ensure that your business bandwidth does not go beyond expectations. In addition, the package provides you with guaranteed bandwidth. After the upgrade, you can enjoy superior and more stable network services.
 No new monthly 95th percentile bandwidth package for BGP IP can be created starting from April 1, 2023. No new monthly 95th percentile bandwidth package for static single-line IP can be created starting from June 1, 2023. Tencent Cloud plans to upgrade the pay-as-you-go - monthly 95th percentile bandwidth package to the pay-as-you-go - enhanced 95th percentile bandwidth package starting from January 1, 2024.
 
