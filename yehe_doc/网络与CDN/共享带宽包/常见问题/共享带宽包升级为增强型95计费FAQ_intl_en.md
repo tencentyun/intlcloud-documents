@@ -5,11 +5,11 @@ No new monthly 95th percentile bandwidth package for BGP IP can be created start
 ### How do I upgrade the package?
 1. If you want to upgrade the bandwidth package of BGP IP to pay-as-you-go - enhanced 95th percentile, follow the steps below:
 	1.1. Log in to the [bandwidth package console](https://console.cloud.tencent.com/vpc/package?rid=1) and create an enhanced 95th percentile bandwidth package.
-	1.2. [Migrate the resources](https://www.tencentcloud.com/document/product/684/45860) from the monthly 95th percentile bandwidth package of BGP to the enhanced 95th percentile bandwidth package. After the migration is completed, [delete ](https://www.tencentcloud.com/zh/document/product/684/34598) the original monthly 95th percentile bandwidth package.
-2. If you want to upgrade the bandwidth package of static single-line IP to pay-as-you-go - enhanced 95th percentile, [submit a ticket](https://console.tencentcloud.com/workorder/category).
+	1.2. [Migrate the resources](https://www.tencentcloud.com/document/product/684/45860?lang=en&pg=) from the monthly 95th percentile bandwidth package of BGP to the enhanced 95th percentile bandwidth package. After the migration is completed, [delete ](https://www.tencentcloud.com/document/product/684/34598?lang=en&pg=) the original monthly 95th percentile bandwidth package.
+2. If you want to upgrade the bandwidth package of static single-line IP to pay-as-you-go - enhanced 95th percentile, [submit a ticket](https://console.tencentcloud.com/workorder/category?pg=).
 
 ### Will the fee increase or decrease after the upgrade?
-It depends on your actual business bandwidth and business model. You can [submit a ticket](https://console.tencentcloud.com/workorder/category) or contact your business manager to calculate the fee.
+It depends on your actual business bandwidth and business model. You can [submit a ticket](https://console.tencentcloud.com/workorder/category?pg=) or contact your business manager to calculate the fee.
 
 ### What is the effective scope of the upgrade?
 The effective scope is as follows:
