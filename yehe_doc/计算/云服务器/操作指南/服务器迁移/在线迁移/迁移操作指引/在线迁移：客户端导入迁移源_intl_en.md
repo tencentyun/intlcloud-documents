@@ -122,7 +122,7 @@ Log in to the <a href="https://console.cloud.tencent.com/cvm/csm/online?rid=1">C
 
 #### 1. Create a migration task
 Log in to the [CVM console](https://console.cloud.tencent.com/cvm/csm/online?rid=1), go to the online migration page, locate the source server, and click **Create migration task**. In the **Create migration task** pop-up window, configure the task as shown below:
-![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/bea534c4ae62dc0fb925147089b3bf00.png)
 [](id:jobSettings)Configuration description:
 
 - Basics:

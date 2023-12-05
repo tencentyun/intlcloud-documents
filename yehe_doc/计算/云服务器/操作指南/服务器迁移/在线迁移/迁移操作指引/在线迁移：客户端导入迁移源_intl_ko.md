@@ -123,7 +123,7 @@ Import source server successfully 메시지가 표시되지 않으면 문제 해
 
 #### 1. 마이그레이션 작업 생성
 [CVM 콘솔](https://console.cloud.tencent.com/cvm/csm/online?rid=1)에 로그인하여 온라인 마이그레이션 페이지로 이동하여 소스 서버를 찾은 후 **마이그레이션 작업 생성**을 클릭합니다. **마이그레이션 작업 생성** 팝업 창에서 작업을 구성합니다. 다음 이미지와 같습니다.
-![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/eafa2cf56f1501c48082b3a3bdbb2c2f.png)
 [](id:jobSettings) 마이그레이션 작업에 대한 자세한 설정 설명은 다음과 같습니다.
 
 - 기본 옵션:
