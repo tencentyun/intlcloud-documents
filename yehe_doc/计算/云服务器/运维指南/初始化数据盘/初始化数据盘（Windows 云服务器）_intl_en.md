@@ -9,7 +9,7 @@ After purchasing or reinstalling CVM, you need to partition and format the data 
 ## Directions
 
 Please select the appropriate operation guide based on disk capacity:
-- If the disk capacity is less than 2 TB, please [initializing cloud disks](https://intl.cloud.tencent.com/document/product/362/6734).
-- If the disk capacity is greater than or equal to 2 TB, please [initializing cloud disks](https://intl.cloud.tencent.com/document/product/362/6735).
+- If the disk capacity is less than 2 TB, please [initializing cloud disks](https://www.tencentcloud.com/document/product/362/31597).
+- If the disk capacity is greater than or equal to 2 TB, please [initializing cloud disks](https://www.tencentcloud.com/document/product/362/31598).
 
 
