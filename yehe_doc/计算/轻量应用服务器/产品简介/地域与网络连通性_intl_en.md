@@ -79,12 +79,12 @@ Both private and public IPs are assigned to Lighthouse instances for private and
 <td rowspan=2>Across regions<br>Under the same account</td>
 <td>Access between Lighthouse instances </td>
 <td>No</td>
-<td>-</td>
+<td><b>Yes</b>. For more information, see <a href="https://www.tencentcloud.com/document/product/1103/41396">Private Network Interconnection</a>.</td>
 </tr>
 <tr>
 <td>Connection between Lighthouse instances and LighthouseDB instances</td>
 <td>No</td>
-<td>-</td>
+<td><b>Yes</b>. For more information, see <a href="https://www.tencentcloud.com/document/product/1103/41396">Private Network Interconnection</a>.</td>
 </tr>
 <tr>
 <td>Under different accounts</td>
