@@ -13,7 +13,7 @@ For detailed directions, please see [Configuring Alarm Recipient](https://intl.c
 SMS bombing (cheating) refers to using malicious programs or tools and exploiting vulnerabilities in website clients or servers to send a large number of SMS verification codes to many irrelevant mobile numbers in a period of time (for example, within a day), which cause harassment to such users.
 SMS bombing (cheating) not only causes harassment to innocent users, but also leads to a high number of complaints, which makes the SMS channel unavailable and results in economic losses to customers; therefore, preventive measures should be taken in advance.
 The figure below shows a real case encountered by a customer (only dozens of messages are sent per day under normal circumstances, but tens of thousands of messages were sent per day during a bombing attack):
-![](https://main.qcloudimg.com/raw/071fbb50d64aa2dcc1f44e0e12ced9eb.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c3ff91b92b3b11a3ea4f8f921fd3555a.png)
 In view of the fact that SMS bombing (cheating) attacks are generally initiated by servers, the following comprehensive measures are recommended for defense:
 
 - Limit the number of requests allowed per IP.
