@@ -4,7 +4,7 @@
 
 
 ## 작업 순서
-1. 	[CVM 콘솔](https://console.cloud.tencent.com/cvm/instance/index?rid=1)에 로그인합니다.
+1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/instance/index?rid=1)에 로그인합니다.
 2. 왼쪽 메뉴의 [예약 인스턴스]를 클릭하여 예약 인스턴스 관리 페이지로 이동합니다.
 3. [예약 인스턴스 생성]을 클릭하여 예약 인스턴스 구매 페이지로 이동합니다.
 
