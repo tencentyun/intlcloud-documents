@@ -2,9 +2,6 @@
 
 A instância reservada (RI) oferece um desconto para as instâncias com pagamento conforme o uso. Este documento descreve como criar RIs pelo console.
 
-## Pré-requisitos
-Atualmente, as RIs são oferecidas apenas para usuários da versão beta. Para usá-las, vá para a página de solicitação da versão beta da RI e [envie uma solicitação](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns) para ser um usuário da versão beta.
-
 ## Direções
 1. Faça login no [Console do CVM](https://console.cloud.tencent.com/cvm/instance/index?rid=1).
 2. Clique em **Reserved Instance (Instância reservada)** na barra lateral esquerda para entrar na página de gerenciamento.
