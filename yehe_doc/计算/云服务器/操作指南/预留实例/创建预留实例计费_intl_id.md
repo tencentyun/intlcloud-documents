@@ -2,9 +2,6 @@
 
 Instans Cadangan (RI) memberikan diskon untuk instans bayar sesuai pemakaian. Dokumen ini menjelaskan cara membuat RI melalui konsol.
 
-## Prasyarat
-Saat ini, RI hanya ditawarkan kepada pengguna beta. Untuk menggunakannya, buka halaman aplikasi beta RI dan [kirim aplikasi](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns) untuk menjadi pengguna beta.
-
 ## Petunjuk
 1. Login ke [Konsol CVM](https://console.cloud.tencent.com/cvm/instance/index?rid=1).
 2. Klik **Reserved Instance** (Instans Cadangan) di bilah sisi kiri untuk masuk ke halaman pengelolaan.
