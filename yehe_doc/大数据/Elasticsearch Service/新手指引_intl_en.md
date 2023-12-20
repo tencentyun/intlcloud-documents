@@ -8,13 +8,9 @@ This document describes how to get started with Elasticsearch Service (ES).
 - [Elastic Stack (X-Pack)](https://intl.cloud.tencent.com/document/product/845/30943)
 - [Capabilities and restrictions of ES](https://intl.cloud.tencent.com/document/product/845/16481)
 
-
------
 ## 2. ES billing mode
-
 ES is pay-as-you-go. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/845/18379).
 
------
 
 ## 3. Getting started
 **3.1. Evaluation of cluster specification and capacity configuration**
@@ -24,7 +20,7 @@ Before using ES, you need to sign up for a Tencent Cloud account first and then 
 **3.3. Cluster access**
 After successfully creating a cluster, you can start to access it through the [API](https://intl.cloud.tencent.com/document/product/845/19540), [client](https://intl.cloud.tencent.com/document/product/845/19538), or [Kibana](https://intl.cloud.tencent.com/document/product/845/19541). Enabling [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275) can improve the security of cluster access.
 
------
+
 ## 4. Overview of console features
 
 | If you want to | 	You can read |
@@ -41,7 +37,7 @@ After successfully creating a cluster, you can start to access it through the [A
 | Back up data | [Automatic Snapshot Backup](https://intl.cloud.tencent.com/document/product/845/32587) and [Using COS for Backup and Restoration](https://intl.cloud.tencent.com/document/product/845/19549) |
 | Upgrade a cluster and use advanced features | [Upgrading ES Clusters](https://intl.cloud.tencent.com/document/product/845/32600) and [ES Version Upgrade Check](https://intl.cloud.tencent.com/document/product/845/32599) |
 
------
+
 ## 5. Best practice
 ### 5.1. Data migration and sync
 **1. Data migration**
@@ -66,7 +62,7 @@ You can specify the specifications of hot and warm nodes based on your business 
 ### 5.4. SQL support
 ES supports SQL instead of DSL as the query language. For those engaged in product operations and data analysis and new ES users, using SQL for queries can reduce their learning costs for getting started with ES. For more information, please see [SQL Support](https://intl.cloud.tencent.com/document/product/845/32574).
 
------
+
 ## 6. FAQs for beginners
 ### 6.1. Product
 - [What business scenarios is ES suitable for?](https://intl.cloud.tencent.com/document/product/845/16599)
@@ -82,7 +78,6 @@ ES supports SQL instead of DSL as the query language. For those engaged in produ
 - [Uneven Cluster Load](https://intl.cloud.tencent.com/document/product/845/40978)
 
 
------
 ## 7. Feedback and suggestions
 If you have any questions or suggestions about ES, you can send your feedback through the following channels, and we will get back to you accordingly:
 - If you find issues with product documentation, such as links, contents, and APIs, you can click **Send Feedback** on the right of the document page and select the specific issues.
