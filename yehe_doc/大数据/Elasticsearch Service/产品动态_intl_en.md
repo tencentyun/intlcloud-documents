@@ -1,7 +1,6 @@
 ## June 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Supported Kibana node specification customization</td>
 <td>You can purchase Kibana node models with different specifications (nodes with 1 CPU core and 2 GB memory are free of charge) for use in scenarios with massive data analysis and export tasks that require a high Kibana performance. In addition, ES supports high Kibana availability across AZs.</td>
@@ -22,12 +21,11 @@
 <td>Starting from June 25, 2021, slow log is enabled for newly purchased clusters by default to capture slow search logs and slow index logs.</td>
 <td>2021-06-25</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/30950" target="_blank">Querying Cluster Logs</a></td></tr>
-</tbody></table>
+</table>
 
 ## May 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Launched in Beijing Zone 6 and Guangzhou Zone 7</td>
 <td>Clusters can be created and managed in Beijing Zone 6 and Guangzhou Zone 7.</td>
@@ -38,12 +36,11 @@
 <td>The nori analyzer provided by Elasticsearch for Korean is supported, which is suitable for full-text search and analysis of Korean documents.</td>
 <td>2021-05-14</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/37440" target="_blank">Plugin List</a></td></tr>
-</tbody></table>
+</table>
 
 ## March 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Supported Elasticsearch 7.10</td>
 <td>Elasticsearch 7.10 is supported.</td>
@@ -64,23 +61,21 @@
 <td>Clusters can be created and managed in the Thailand region.</td>
 <td>2021-03-01</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/19536" target="_blank">Creating Clusters</a></td></tr>
-</tbody></table>
+</table>
 
 ## January 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Supported heteronyms in the pinyin plugin</td>
 <td>The support for heteronyms is optimized for user-friendly input. For example, the original analysis results of a username are "cengmoumou" and "cmm", and the optimized results are "cengmoumou", "zengmoumou", "cmm", and "zmm".</td>
 <td>2021-01-27</td>
 <td>-</td></tr>
-</tbody></table>
+</table>
 
 ## December 2020
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Increased the storage upper limit of a single cloud disk to 30 TB</td>
 <td>For clusters on v6.8 or above, the storage capacity of a single cloud disk can be increased to 30 TB, which helps reduce the number of nodes and the cluster creation costs while using the same storage disk specification.</td>
@@ -121,24 +116,22 @@
 <td>You can switch the UI language of Kibana (Chinese and English) and modify the `timeout` parameter.</td>
 <td>2020-12-01</td>
 <td>-</td></tr>
-</tbody></table>
+</table>
 
 ## October 2020
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Launched in the Russia region</td>
 <td>Clusters can be created and managed in the Russia region.</td>
 <td>2020-10-26</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/19536" target="_blank">Creating Clusters</a></td></tr>
-</tbody></table>
+</table>
 
 ## September 2020
 
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Supported three-AZ cluster deployment</td>
 <td>In addition to dual-AZ cluster deployment, three-AZ cluster deployment is also supported, which helps improve the disaster recovery capability of your clusters.</td>
@@ -174,13 +167,12 @@
 <td>Disk prices are lowered in certain regions.</td>
 <td>2020-09-27</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/18376" target="_blank">Elasticsearch Service Price Reduction Notice</a></td></tr>
-</tbody></table>
+</table>
 
 ## July 2020
 
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Supported presetting the plugin list</td>
 <td>Over 10 open-source and proprietary mature plugins that provide rich features are supported, including IK Analyzer and Smart Chinese Analysis. You can install and uninstall them based on your business needs.</td>
@@ -201,12 +193,11 @@
 <td>You can select the configuration adjustment mode based on your business conditions: <li/>In rolling mode, nodes in the cluster are restarted one by one and quickly adjusted on a rolling basis without any interruption to the system service, but the online performance may be affected.<li/>In blue/green mode, the same number of new nodes as the existing nodes are added to the original cluster with no cluster restart required. This configuration adjustment process is seamless and smooth but time-consuming.</td>
 <td>2020-07-17</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/35713" target="_blank">Suggestions and Principles for Cluster Specification Adjustment</a></td></tr>
-</tbody></table>
+</table>
 
 ## June 2020
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Launched in Guangzhou Zone 6</td>
 <td>Clusters can be created and managed in Guangzhou Zone 6.</td>
@@ -217,12 +208,11 @@
 <td>Clusters can be created and managed in the Tokyo and Virginia regions.</td>
 <td>2020-06-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/19536" target="_blank">Creating Clusters</a></td></tr>
-</tbody></table>
+</table>
 
 ## May 2020
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Integrated X-Pack features</td>
 <td>New clusters support advanced X-Pack features such as alerting, LDAP authentication system, cross-cluster search (CCS), and cross-cluster replication (CCR) (to use such features, previously created clusters need to be upgraded).</td>
@@ -233,12 +223,11 @@
 <td>You can modify the cluster tags on the details page, which makes it easier for you to flexibly categorize and manage resources.</td>
 <td>2020-05-19</td>
 <td>-</td></tr>
-</tbody></table>
+</table>
 
 ## April 2020
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Lowered the product prices</td>
 <td>ES prices are lowered overall.</td>
@@ -254,12 +243,11 @@
 <td>The disk capacity of CVM instances can be expanded directly, which significantly reduces the amount of time it takes to expand the disk capacity and improve the process reliability.</td>
 <td>2020-04-10</td>
 <td>-</td></tr>
-</tbody></table>
+</table>
 
 ## February 2020
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=15%>Release Date</th><th width=15%>Documentation</th></tr>
-<tbody>
 <tr>
 <td>Supported v7.5</td>
 <td>Elasticsearch 7.5 is supported.</td>
@@ -280,5 +268,5 @@
 <td>Clusters with user authentication enabled can be accessed over the public network, but an IP allowlist needs to be configured for security protection.</td>
 <td>2020-02-21</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/16992" target="_blank">ES Cluster</a></td></tr>
-</tbody></table>
+</table>
 
