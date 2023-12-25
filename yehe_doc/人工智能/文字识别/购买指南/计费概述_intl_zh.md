@@ -42,7 +42,7 @@
 			<td>联系商务</td>
 </tr>
 <tr>      
-      <td rowspan="16">卡证文字识别</td>   
+      <td rowspan="17">卡证文字识别</td>   
       <td>银行卡识别</td>
 	  <td>银行卡识别</td>
       <td>0.071美元/次</td>  
@@ -52,12 +52,15 @@
 </tr>
 <tr>      
       <td>中国香港身份证识别</td>
-      <td rowspan="14">通用证照识别</td>
-      <td rowspan="14">0.2美元/次</td>  
-      <td rowspan="14">0.18美元/次</td> 
-      <td rowspan="14">0.14美元/次</td>
-      <td rowspan="14">0.11美元/次</td>
+      <td rowspan="15">通用证照识别</td>
+      <td rowspan="15">0.2美元/次</td>  
+      <td rowspan="15">0.18美元/次</td> 
+      <td rowspan="15">0.14美元/次</td>
+      <td rowspan="15">0.11美元/次</td>
 </tr>
+<tr>      
+      <td>马来西亚身份证识别</td>  
+</tr>					
 <tr>      
       <td>国际护照识别</td>  
 </tr>
