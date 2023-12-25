@@ -47,7 +47,7 @@ AD(Active Directory)는 Microsoft 서비스의 핵심 구성 요소이며 관련
 6. 기본 설정을 유지하고 **다음 단계**를 4회 연속 클릭합니다.
 7. 정보 확인 페이지에서 **설치**를 클릭합니다.
 설치가 완료되면 ‘역할 및 기능 추가’ 대화 상자를 비활성화합니다.
-8. 운영 체제 인터페이스에서 <img src='https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png' style='margin:-3px 0px">을(를) 클릭하고 서버 관리자를 엽니다.
+8. 운영 체제 인터페이스에서 <img src='https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png' style="margin:-3px 0px">을(를) 클릭하고 서버 관리자를 엽니다.
 9. 서버 관리자 창에서 <img src="https://main.qcloudimg.com/raw/b7b26ebdfecb3b158adac1a37d7a23f3.png" style="margin:-3px 0px">을(를) 클릭하여 **이 서버를 도메인 컨트롤러로 향상**을 선택합니다. 아래 이미지와 같습니다.
 ![](https://qcloudimg.tencent-cloud.cn/raw/bc6e02bf64866c4458ec6599babe09a2.png)
 10. 열린 ‘Active Directory 도메인 서비스 설정 마법사’ 창에서 ‘배포 작업 선택’을 **신규 포리스트 추가**로 설정하고 루트 도메인 이름을 입력합니다. 본 문서에서는 'example.com'을 예로 듭니다. 아래 이미지와 같이 **다음 단계**를 클릭합니다.
