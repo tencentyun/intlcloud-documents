@@ -861,7 +861,10 @@ The following Modules shall apply and form part of this privacy policy if you us
 72.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55272).
 
 73.[Cloud Dedicated Zone](https://www.tencentcloud.com/document/product/1210/56966).
+
 74.[Player SDK ](https://www.tencentcloud.com/document/product/266/57964).
+
+75.[Control Center ](https://www.tencentcloud.com/document/product/1220/58232).
 
 ### Revision History
 
