@@ -9,12 +9,11 @@
 - [ES 能力与限制说明。](https://intl.cloud.tencent.com/document/product/845/16481)
 
 
------
-## 2. ES 的计费模式
 
+## 2. ES 的计费模式
 腾讯云 ES 的计费模式为按量计费。计费详情请参见 [计费说明](https://intl.cloud.tencent.com/document/product/845/18379)。
 
------
+
 
 ## 3. 新手入门
 **3.1 集群规格和容量配置评估**
@@ -24,7 +23,7 @@
 **3.3 访问集群**
 集群创建成功后，即可开始访问集群，启用 [ES 集群用户登录认证](https://intl.cloud.tencent.com/document/product/845/35275) 可以提升集群访问的安全性。访问集群有三种方式：[通过 API 访问集群](https://intl.cloud.tencent.com/document/product/845/19540)、[通过客户端访问集群](https://intl.cloud.tencent.com/document/product/845/19538)、[通过 Kibana 访问集群](https://intl.cloud.tencent.com/document/product/845/19541)。
 
------
+
 ## 4. 控制台功能概述
 
 | 如果您想 | 	您可以阅读 |
@@ -41,7 +40,7 @@
 | 备份数据  | [自动快照备份](https://intl.cloud.tencent.com/document/product/845/32587)、[使用 COS 进行备份及恢复](https://intl.cloud.tencent.com/document/product/845/19549)  |
 | 升级集群版本和高级特性     |      [升级 ES 集群](https://intl.cloud.tencent.com/document/product/845/32600) 和 [ES 版本升级检查](https://intl.cloud.tencent.com/document/product/845/32599) |
 
------
+
 ## 5. 最佳实践
 ### 5.1 数据迁移和同步
 **1. 数据迁移**
@@ -66,7 +65,7 @@
 ### 5.4 SQL 支持
 腾讯云 Elasticsearch 支持使用 SQL 代替 DSL 查询语言，对于从事产品运营、数据分析等工作以及初次接触 ES 的人，使用 SQL 语言进行查询，将会降低他们使用 ES 的学习成本。详情请参考 [SQL 支持](https://intl.cloud.tencent.com/document/product/845/32574)。
 
------
+
 ## 6. 新手常见问题
 ### 6.1 产品相关问题
 - [ES 适用于哪些业务场景？](https://intl.cloud.tencent.com/document/product/845/16599)
@@ -82,8 +81,8 @@
 - [集群负载不均的问题如何解决？](https://intl.cloud.tencent.com/document/product/845/40978)
 
 
------
+
 ## 7. 反馈与建议
 使用腾讯云 ES 产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
 - 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可[提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+- 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。

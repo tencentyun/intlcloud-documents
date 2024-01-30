@@ -122,7 +122,7 @@ sudo ./go2tencentcloud_x64
 
 #### 1. 创建迁移任务
 登录 [在线迁移控制台](https://console.cloud.tencent.com/cvm/csm/online?rid=1)，单击目标迁移源所在行右侧的**创建迁移任务**。在弹出的**创建迁移任务**窗口中，参见以下信息进行配置。如下图所示：
-![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/ad896b0672e586e1f6f63c1d9d2d6f20.png)
 [](id:jobSettings)迁移任务详细配置说明如下表：
 
 - 基本选项：

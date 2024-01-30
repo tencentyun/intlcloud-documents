@@ -1,10 +1,10 @@
 >?从2021年07月15日0:00:00开始，存量按量计费实例开始收费。
 
-本章节主要介绍消息队列CKafka的产品规格，计费项目，计费模式和实例价格。
+本章节主要介绍消息队列 CKafka 版的产品规格，计费项目，计费模式和实例价格。
 
 ## 产品规格
 
-消息队列 CKafka 实例按照规格分为标准版和专业版，两个版本的对比如下：
+消息队列 CKafka 版实例按照规格分为标准版和专业版，两个版本的对比如下：
 
 | 项目                 | 专业版                                                       | 标准版                                                       |
 | :------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
@@ -18,7 +18,7 @@
 | 自动化清理磁盘       | 是，自动清理过期数据                                         | 否，磁盘满后需要 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=951&source=0&data_title=消息队列 CKafka&level3_id=955&radio_title=配额提升申请&queue=81&scene_code=18356&step=2">提交工单</a> 处理 |
 | broker 修复升级      | 可以针对性升级，升级过程快速且几乎无感知，稳定性强           | 受限于共享集群，升级解决问题周期较长                         |
 | 高可用能力           | 支持同地域自定义多可用区部署，提升容灾能力                   | 不支持同城跨可用区部署，依赖于后台迁移，需要 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=951&source=0&data_title=消息队列 CKafka&level3_id=954&radio_title=使用咨询(SDK/API/产品等)&queue=81&scene_code=18346&step=2">提交工单</a> 申请，一般处理周期为10个工作日 |
-| 高级特性             | 定时 rebalance，升配可以自定义 rebalance 执行时间，避开业务高峰，详情参见 [升配实例](https://intl.cloud.tencent.com/document/product/597/40650)高级监控，包括网络稳定性分析，请求时延分析等），详情参见 [查询高级监控信息](https://intl.cloud.tencent.com/document/product/597/40038)支持根据磁盘水位动态调节消息保留策略，详情参见 [添加消息动态保留策略](https://intl.cloud.tencent.com/document/product/597/40211) | 无                                                           |
+| 高级特性             | 定时 rebalance，升配可以自定义 rebalance 执行时间，避开业务高峰，详情参见 [升配实例](https://intl.cloud.tencent.com/document/product/597/40650)高级监控，包括网络稳定性分析，请求时延分析等），详情参见 [查询高级监控信息](https://intl.cloud.tencent.com/document/product/597/40038) 支持根据磁盘水位动态调节消息保留策略，详情参见 [添加消息动态保留策略](https://intl.cloud.tencent.com/document/product/597/40211) | 无                                                           |
 | 技术服务             | 提供参数优化咨询服务，可以针对部分特殊的业务场景定制化参数配置，您可以 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=951&source=0&data_title=消息队列 CKafka&level3_id=954&radio_title=使用咨询(SDK/API/产品等)&queue=81&scene_code=18346&step=2">提交工单</a> 申请 | 基础的故障处理和问题修复                                     |
 
 > ?
@@ -32,8 +32,8 @@
 | 项目      | 专业版 | 标准版 | 说明                                                         |
 | :-------- | :----- | :----- | :----------------------------------------------------------- |
 | 峰值带宽  | ✔      | ✔      | 吞吐量指出入带宽峰值，40MB吞吐指出和入的带宽峰值为40MB。考虑实例的副本个数，需要均分吞吐量，例如，客户要求40MB吞吐、3副本，则需要购买120MB/s的吞吐带宽。 |
-| 磁盘容量  | ✔      | ✔      | <li>不同实例规格对应不同的磁盘容量。</li><li> 消息队列 CKafka 标准版支持的磁盘类型为 SSD 云硬盘，专业版支持的磁盘类型为 SSD 云硬盘和高性能云硬盘。</li> |
-| Partition | ✔      | -      | <li>不同实例规格对应不同的 Partition 数量，专业版的 Partition 可以单独额外购买 。</li><li>专业版 Topic 不再额外计费，最高可使用的 Topic 数量 = Partition 数量/副本数。</li><li>不支持缩减Partition数量。</li><li>实例级别的 Paritition 限制包含了副本数。例如：一个实例下有1个双副本、4分区的 Topic、 2个3副本、3分区的 Topic，则该实例的总 partition 个数为 （1 × 2 × 4）+（2 × 3 × 3）= 26个。</li> |
+| 磁盘容量  | ✔      | ✔      | <li>不同实例规格对应不同的磁盘容量。</li><li> 消息队列 CKafka 版标准版支持的磁盘类型为 SSD 云硬盘，专业版支持的磁盘类型为 SSD 云硬盘和高性能云硬盘。</li> |
+| Partition | ✔      | -      | <li>不同实例规格对应不同的 Partition 数量，专业版的 Partition 可以单独额外购买 。</li><li>专业版 Topic 不再额外计费，最高可使用的 Topic 数量 = Partition 数量/副本数。</li><li>不支持缩减 Partition 数量。</li><li>实例级别的 Paritition 限制包含了副本数。例如：一个实例下有1个双副本、4分区的 Topic、 2个3副本、3分区的 Topic，则该实例的总 partition 个数为 （1 × 2 × 4）+（2 × 3 × 3）= 26个。</li> |
 
 ## 计费模式
 
@@ -76,7 +76,7 @@ CKafka 专业版提供了更为灵活的参数选配方式和更稳定的升配�
 > ?
 >
 > - 套餐包含的Partition 数量包含在套餐包的费用中，不额外收费。
-> - 如需更高规格的消息队列 CKafka 实例，请联系商务经理或 [提交工单](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory) 进行开通。
+> - 如需更高规格的消息队列 CKafka 版实例，请联系商务经理或 [提交工单](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory) 进行开通。
 
 峰值带宽基础包的价格按照不同阶梯进行计费，价格阶梯如下：
 
@@ -112,7 +112,7 @@ CKafka 专业版提供了更为灵活的参数选配方式和更稳定的升配�
 
 ### 标准版价格
 
-消息队列 CKafka 标准版根据**峰值吞吐性能**及**磁盘容量**不同分为入门型和标准型等8种实例类型。
+消息队列 CKafka 版标准版根据**峰值吞吐性能**及**磁盘容量**不同分为入门型和标准型等8种实例类型。
 
 **实例价格**
 
@@ -133,7 +133,7 @@ CKafka 专业版提供了更为灵活的参数选配方式和更稳定的升配�
 | :--------- | :------------- | :---------------- |
 | 高性能云硬盘 | 100            | 0.01              |
 
-> ? 如需更高规格的消息队列 CKafka 实例，请联系商务经理或 [提交申请](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory) 进行开通。
+> ? 如需更高规格的消息队列 CKafka 版实例，请联系商务经理或 [提交申请](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory) 进行开通。
 
 ### 专业版价格
 
@@ -160,8 +160,8 @@ CKafka 专业版提供了更为灵活的参数选配方式和更稳定的升配�
 
 > ?
 >
-> - 套餐包含的Partition 数量包含在套餐包的费用中，不额外收费。
-> - 如需更高规格的消息队列 CKafka 实例，请联系商务经理或 [提交工单](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory) 进行开通。
+> - 套餐包含的 Partition 数量包含在套餐包的费用中，不额外收费。
+> - 如需更高规格的消息队列 CKafka 版实例，请联系商务经理或 [提交工单](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory) 进行开通。
 
 峰值带宽基础包的价格按照不同阶梯进行计费，价格阶梯如下：
 

@@ -4,7 +4,7 @@
 ### 当前的 CKafka 是基于开源 Kafka 的哪个版本？
 当前 CKafka 基于 Apache Kafka 0.10、1.1、2.4、2.8版本，推荐生产消费端选取对应版本的 SDK。
 
-### 消息队列 CKafka 是否会暴露 ZooKeeper？
+### 消息队列 CKafka 版是否会暴露 ZooKeeper？
 不开放 ZooKeeper，不提供 zk 地址。
 
 ### CKafka 是否支持公网访问？

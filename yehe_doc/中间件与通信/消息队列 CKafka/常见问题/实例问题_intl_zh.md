@@ -3,7 +3,7 @@
 可以借助控制台的 "[迁移上云](https://console.intl.cloud.tencent.com/ckafka/migration) - 规格计算器" 来计算所需的产品规格：
 <img src="https://main.qcloudimg.com/raw/15b721ef605d238f01f888b6a54a334e.png" width="550px">
 
-消息队列 CKafka 实例按照规格分为标准版和专业版，两个版本的对比参见 [产品规格](https://intl.cloud.tencent.com/document/product/597/41815)。
+消息队列 CKafka 版实例按照规格分为标准版和专业版，两个版本的对比参见 [产品规格](https://intl.cloud.tencent.com/document/product/597/41815)。
 
 请根据自身需要选择产品规格，不同规格的计费规则请参见 [计费概述](https://intl.cloud.tencent.com/document/product/597/11745)。
 

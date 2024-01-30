@@ -1,7 +1,6 @@
 ## 2021年06月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>Kibana 节点规格自定义</td>
 <td>支持购买不同规格的 Kibana 节点机型（1核2G免费），适用于利用 Kibana 进行大量数据分析、数据导出等对 Kibana 性能要求较高的场景。并支持 Kibana 在多可用区的高可用。</td>
@@ -22,12 +21,11 @@
 <td>自2021年06月25日起，新购集群默认开启慢日志，捕获搜索慢日志和索引慢日志</td>
 <td>2021-06-25</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/30950" target="_blank">查询集群日志</a></td></tr>
-</tbody></table>
+</table>
 
 ## 2021年05月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>上线北京6区、广州7区</td>
 <td>支持在北京6区、广州7区创建和管理集群</td>
@@ -38,12 +36,11 @@
 <td>支持 Elastic 官方为韩文提供的 nori 分词插件，适用于韩语文档全文搜索分析场景</td>
 <td>2021-05-14</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/37440" target="_blank">插件列表</a></td></tr>
-</tbody></table>
+</table>
 
 ## 2021年03月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>支持 Elasticseach7.10 版本</td>
 <td>支持 Elasticseach7.10 版本</td>
@@ -64,23 +61,21 @@
 <td>支持在泰国地域创建和管理集群</td>
 <td>2021-03-01</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/19536" target="_blank">Elasticsearch Service 集群定价</a></td></tr>
-</tbody></table>
+</table>
 
 ## 2021年01月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>pinyin 插件支持多音字</td>
 <td>针对多音字分词的支持情况进行优化，实现用户输入友好。例如对用户名“曾某某”的原始分词结果是“cengmoumou”、“cmm”，而优化后的结果是“cengmoumou”、“zengmoumou”、“cmm”、“zmm”</td>
 <td>2021-01-27</td>
 <td>-</td></tr>
-</tbody></table>
+</table>
 
 ## 2020年12月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>单云盘存储上限提升至30T</td>
 <td>对于6.8及以上版本的集群，支持提升单个云盘的存储空间至30T，在相同规格的磁盘存储下，帮助客户减少节点数量，优化集群构建成本</td>
@@ -121,24 +116,22 @@
 <td>支持切换 kibana 的界面语言（中文、英文）和修改 timeout 参数配置</td>
 <td>2020-12-01</td>
 <td>-</td></tr>
-</tbody></table>
+</table>
 
 ## 2020年10月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>上线俄罗斯地域</td>
 <td>支持在俄罗斯地域创建和管理集群</td>
 <td>2020-10-26</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/19536" target="_blank">创建集群</a></td></tr>
-</tbody></table>
+</table>
 
 ## 2020年09月
 
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>集群支持三可用区部署</td>
 <td>在集群已经支持双可用区部署的基础上，进一步支持三可用区部署，提升客户集群容灾能力</td>
@@ -174,13 +167,12 @@
 <td>下调部分地域磁盘定价</td>
 <td>2020-09-27</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/18376" target="_blank">Elasticsearch Service 价格下调通知</a></td></tr>
-</tbody></table>
+</table>
 
 ## 2020年07月
 
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>支持预装插件列表</td>
 <td>支持开源和自研的10余款成熟插件，包括分词插件 IK、smart-cn 等，提供丰富的功能，用户可根据业务需要安装和卸载</td>
@@ -201,12 +193,11 @@
 <td>支持用户根据业务情况选择变配模式：<li/>滚动模式：集群节点逐个重启完成变配，服务不间断，但可能影响线上性能，变配速度较快<li/>蓝绿模式：不重启集群，通过为原集群添加相同数量的新节点来无缝切换，变配平滑但耗时较长</td>
 <td>2020-07-17</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/35713" target="_blank">集群变配建议和原理介绍</a></td></tr>
-</tbody></table>
+</table>
 
 ## 2020年06月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>上线广州6区</td>
 <td>支持在广州6区创建和管理集群</td>
@@ -217,12 +208,11 @@
 <td>支持在东京、弗吉尼亚地区创建和管理集群</td>
 <td>2020-06-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/19536" target="_blank">创建集群</a></td></tr>
-</tbody></table>
+</table>
 
 ## 2020年05月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>X-Pack 功能集成</td>
 <td>新建集群支持 Alerting、LDAP 身份验证系统、CCS 跨集群查询、CCR 跨集群复制等 X-Pack 高级特性（此时间之前已创建的老集群若需上述特性，需升级到新集群）</td>
@@ -233,12 +223,11 @@
 <td>支持在详情页修改集群标签，便于用户更灵活的归类和管理资源</td>
 <td>2020-05-19</td>
 <td>-</td></tr>
-</tbody></table>
+</table>
 
 ## 2020年04月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>产品价格下调</td>
 <td>整体下调 ES 购买价格</td>
@@ -254,12 +243,11 @@
 <td>通过直接扩容 CVM 的磁盘容量，显著降低磁盘扩容耗时，提高流程可靠性</td>
 <td>2020-04-10</td>
 <td>-</td></tr>
-</tbody></table>
+</table>
 
 ## 2020年02月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=15%>发布时间</th><th width=15%>相关文档</th></tr>
-<tbody>
 <tr>
 <td>支持7.5版本</td>
 <td>支持 Elasticseach 7.5版本</td>
@@ -280,5 +268,5 @@
 <td>对于开启了用户登录认证的集群，支持通过外网访问，但需要配置 IP 白名单以提供安全防护</td>
 <td>2020-02-21</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/845/16992" target="_blank">ES 集群访问控制</a></td></tr>
-</tbody></table>
+</table>
 

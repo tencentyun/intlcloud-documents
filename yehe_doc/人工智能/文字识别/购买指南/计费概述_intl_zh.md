@@ -17,7 +17,7 @@
 					<th> 10万 ≤  调用量 < 100万 </th>
 					<th> 100万及以上 </th>
 <tr>      
-      <td rowspan="2">通用文字识别</td>   
+      <td rowspan="3">通用文字识别</td>   
       <td>通用印刷体识别</td>
 	  <td>通用印刷体识别</td>
       <td>0.021美元/次</td>  
@@ -34,7 +34,15 @@
 			<td>0.015美元/次</td>
 </tr>
 <tr>      
-      <td rowspan="4">卡证文字识别</td>   
+      <td>表格识别高精度</td>
+	  <td>表格识别</td>
+      <td>0.2美元/次</td>  
+			<td>0.18美元/次</td> 
+			<td>0.14美元/次</td>
+			<td>联系商务</td>
+</tr>
+<tr>      
+      <td rowspan="17">卡证文字识别</td>   
       <td>银行卡识别</td>
 	  <td>银行卡识别</td>
       <td>0.071美元/次</td>  
@@ -44,19 +52,62 @@
 </tr>
 <tr>      
       <td>中国香港身份证识别</td>
-      <td rowspan="3">通用证照识别</td>
-      <td rowspan="3">0.2美元/次</td>  
-      <td rowspan="3">0.18美元/次</td> 
-      <td rowspan="3">0.14美元/次</td>
-      <td rowspan="3">0.11美元/次</td>
+      <td rowspan="15">通用证照识别</td>
+      <td rowspan="15">0.2美元/次</td>  
+      <td rowspan="15">0.18美元/次</td> 
+      <td rowspan="15">0.14美元/次</td>
+      <td rowspan="15">0.11美元/次</td>
 </tr>
 <tr>      
       <td>马来西亚身份证识别</td>  
+</tr>					
+<tr>      
+      <td>国际护照识别</td>  
 </tr>
 <tr>      
-      <td>护照识别（港澳台地区及境外护照）</td>  
+      <td>印尼身份证识别</td>  
 </tr>
-</tr>       
+<tr>      
+      <td>菲律宾 VoteID 卡识别</td>  
+</tr>
+<tr>      
+      <td>菲律宾驾驶证识别</td>  
+</tr>
+<tr>      
+      <td>菲律宾 SssID 卡识别</td>  
+</tr>
+<tr>      
+      <td>菲律宾 TinID 卡识别</td>  
+</tr>
+<tr>      
+      <td>菲律宾 UMID 卡识别</td>  
+</tr>
+<tr>      
+      <td>泰国身份证识别</td>  
+</tr>
+<tr>      
+      <td>韩国身份证识别</td>  
+</tr>
+<tr>      
+      <td>韩国驾驶证识别</td>  
+</tr>
+<tr>      
+      <td>港澳台通行证识别</td>  
+</tr>
+<tr>      
+      <td>港澳台来往内地通行证识别</td>  
+</tr>
+<tr>      
+      <td>港澳台居住证识别</td>  
+</tr>
+<tr>      
+      <td>中国大陆身份证识别</td>  
+			<td>中国身份证识别</td>
+      <td>0.2美元/次</td>  
+			<td>0.18美元/次</td> 
+			<td>0.14美元/次</td>
+			<td>联系商务</td>
+</tr>      
 </table>
 
 ## 计费与结算方式

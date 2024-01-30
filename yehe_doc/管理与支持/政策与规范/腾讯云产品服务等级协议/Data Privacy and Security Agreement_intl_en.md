@@ -245,6 +245,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 73.[Bastion Host](https://www.tencentcloud.com/document/product/1151/55273).
 74.[Cloud Workload Protection Platform](https://www.tencentcloud.com/document/product/296/56235).
 75.[Tencent Cloud Blockchain RPC](https://www.tencentcloud.com/document/product/1215/57458).
+76.[Control Center](https://www.tencentcloud.com/document/product/1220/58233).
 
 ## 10.Jurisdiction-specific Requirements
 

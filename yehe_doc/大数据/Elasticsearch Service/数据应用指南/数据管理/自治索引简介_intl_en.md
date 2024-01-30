@@ -17,7 +17,7 @@ The autonomous index feature is suitable for log analysis, Ops monitoring, and o
 An autonomous index is implemented through enhancements to the Elasticsearch DataStream kernel. It is internally associated with one or more hidden backing indices (i.e., general Elasticsearch indices), so you only need to focus on and manipulate it.
 ![](https://qcloudimg.tencent-cloud.cn/raw/5a3959563d7b79a85b89d2c15e53378a.jpg)
 - Write mode
-The autonomous index feature supports two data write modes: append write and shard-based write by time. The former is suitable for scenarios without update operations such as logs, and the latter is suitable for scenarios where historical data may be overwritten or updated, such as metric monitoring.
+Autonomous indexing supports two data writing modes: append writing and time-partitioned writing. In the append writing mode, data is written to the latest backup index, making it suitable for log scenarios. In the time-partitioned writing mode, data is written to the corresponding backup index based on the time field, making it ideal for metric scenarios.
 - Write request
 Write requests committed to an autonomous index will be routed to the latest backing index in append write mode or the backing index corresponding to the data time in shard-based write by time mode.
 	1. Append write

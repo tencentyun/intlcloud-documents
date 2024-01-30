@@ -122,7 +122,7 @@ sudo ./go2tencentcloud_x64
 
 #### 1. 移行タスクの作成
 [オンライン移行コンソール](https://console.cloud.tencent.com/cvm/csm/online?rid=1)にログインし、対象の移行元がある行の右側の**移行タスクの作成**をクリックします。**移行タスクの作成**画面が表示されます。この画面で以下の情報を参照して設定します。下図に示すとおり：
-![](https://qcloudimg.tencent-cloud.cn/raw/63c9481797c861890a2ea9ca37c4f272.png)
+![](https://qcloudimg.tencent-cloud.cn/raw/c0598a38a6d2c6af165a1738930462da.png)
 [](id:jobSettings)移行タスクの詳細設定内容は、以下のとおりです。
 
 - 基本オプション：

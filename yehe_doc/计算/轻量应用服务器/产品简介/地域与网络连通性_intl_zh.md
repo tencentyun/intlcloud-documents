@@ -79,12 +79,12 @@
 <td rowspan=2>同账号<br>跨地域</td>
 <td>不同轻量应用服务器互访 </td>
 <td>否</td>
-<td>-</td>
+<td><b>支持</b>，详情请参见 <a href="https://www.tencentcloud.com/zh/document/product/1103/41396">内网互联</a>。</td>
 </tr>
 <tr>
 <td>轻量应用服务器连接轻量数据库服务</td>
 <td>否</td>
-<td>-</td>
+<td><b>支持</b>，详情请参见 <a href="https://www.tencentcloud.com/zh/document/product/1103/41396">内网互联</a>。</td>
 </tr>
 <tr>
 <td>不同账号</td>

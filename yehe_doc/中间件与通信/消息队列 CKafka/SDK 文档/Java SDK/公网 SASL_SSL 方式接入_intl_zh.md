@@ -1,6 +1,6 @@
 ## 操作背景
 
-该任务以 Java 客户端为例指导您在公网网络环境下，使用 SASL_SSL 方式接入消息队列 CKafka 并收发消息。
+该任务以 Java 客户端为例指导您在公网网络环境下，使用 SASL_SSL 方式接入消息队列 CKafka 版并收发消息。
 
 SSL 证书的核心功能是保护服务器-客户端通信。数据通过 SSL 证书加密，其他人无法拥有解锁它的私钥，只能由预期的服务端解锁。
 
@@ -63,7 +63,7 @@ password="yourpassword";
 <dx-alert infotype="explain" title="">
 username 是`实例 ID` + `#` + `配置的用户名`，password 是配置的用户密码。
 </dx-alert>
-3. 创建消息队列 CKafka 配置文件 kafka.properties。
+3. 创建消息队列 CKafka 版配置文件 kafka.properties。
 <dx-codeblock>
 :::  properties
 ## 配置接入网络，在控制台的实例详情页面接入方式模块的网络列复制。
