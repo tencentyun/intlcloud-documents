@@ -20,7 +20,7 @@ Common parameters are required in every API for authenticating users and the API
 gz: Guangzhou; sh: Shanghai; bj: Beijing; cd: Chengdu<br>
 cq: Chongqing; hk: Hong Kong (China); sg: Singapore; th: Bangkok<br>
 kr: Seoul; jp: Tokyo; ru: Moscow; de: Frankfurt<br>
-in: Mumbai; ca: Toronto; usw: Silicon Vally; use: Virginia<br>
+in: Mumbai; usw: Silicon Vally; use: Virginia<br>
 </td><td> Yes
 </td></tr>
 <tr>
