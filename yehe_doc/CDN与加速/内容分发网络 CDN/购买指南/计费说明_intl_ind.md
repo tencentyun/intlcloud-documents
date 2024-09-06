@@ -152,7 +152,7 @@ Dalam contoh spesifik ini, tagihan-berdasarkan-bandwidth merupakan model penagih
 
 ## Pembayaran Terlambat
 
-Untuk pembayaran terlambat, Tencent Cloud akan memberi tahu Anda melalui beberapa saluran termasuk email dan SMS.Tersedia masa tenggang 24 jam.Jika Anda tidak mengisi akun dalam 24 jam, layanan CDN Anda akan ditangguhkan.Setelah akun Anda diisi, status nama domain akan otomatis dipulihkan ke status sebelum penangguhan layanan (proses ini memakan waktu beberapa saat).
+Untuk pembayaran terlambat, Tencent Cloud akan memberi tahu Anda melalui beberapa saluran termasuk email dan SMS.Tersedia masa tenggang 2 jam.Jika Anda tidak mengisi akun dalam 2 jam, layanan CDN Anda akan ditangguhkan.Setelah akun Anda diisi, status nama domain akan otomatis dipulihkan ke status sebelum penangguhan layanan (proses ini memakan waktu beberapa saat).
 
 >!
 >
