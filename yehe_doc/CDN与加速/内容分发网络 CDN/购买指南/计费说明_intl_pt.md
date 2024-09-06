@@ -151,7 +151,7 @@ Nesse exemplo específico, o faturamento por largura de banda é um modelo de fa
 
 ## Em atraso
 
-O Tencent Cloud vai notificá-lo por meio de vários canais, incluindo e-mail e SMS se você tiver pagamentos em atraso. É fornecido um período de carência de **24 horas**. Se você não conseguir recarregar sua conta em 24 horas, o serviço do CDN será suspenso. Depois que sua conta for carregada, o status do nome de domínio será automaticamente restaurado para o status anterior à suspensão do serviço.
+O Tencent Cloud vai notificá-lo por meio de vários canais, incluindo e-mail e SMS se você tiver pagamentos em atraso. É fornecido um período de carência de **2 horas**. Se você não conseguir recarregar sua conta em 2 horas, o serviço do CDN será suspenso. Depois que sua conta for carregada, o status do nome de domínio será automaticamente restaurado para o status anterior à suspensão do serviço.
 
 >!
 >
