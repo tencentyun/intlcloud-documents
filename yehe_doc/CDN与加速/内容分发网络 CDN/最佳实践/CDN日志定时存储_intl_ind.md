@@ -24,9 +24,9 @@ D. Konfigurasikan pencatat waktu
 
 Masuk ke [halaman pengelolaan kunci akses](https://console.cloud.tencent.com/cam/capi), minta atau buat kunci, dan rekam informasi berikut:
 
-Nama kredensial akses (`SecretId`), seperti `AKIDRVI54XXn10r58oZpmzbBOnwt47xO1LRv`
+Nama kredensial akses (`SecretId`), seperti `A********************************v`
 
-Kunci kredensial akses (`SecretKey`), seperti `3t0SYPHRIpjmAAUPfKM8b4yXnff4Aq56`
+Kunci kredensial akses (`SecretKey`), seperti `3**********************************6`
 
 2.Bucket COS
 
