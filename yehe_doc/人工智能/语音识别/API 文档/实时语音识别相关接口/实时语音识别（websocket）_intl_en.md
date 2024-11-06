@@ -84,13 +84,13 @@ Parameter description:
 |input_sample_rate   | NO   |Interge    | Supporting 8k audio in PCM format and upsampling it to 16k for recognition when the engine sampling rate does not match, can effectively improve recognition accuracy.Only supported: 8000. For example, if 8000 is passed in, the PCM audio sampling rate is 8k, and when the engine selects 16k_ Zh, then the PCM audio with a sampling rate of 8k can be at 16k_ Normal recognition under the zh engine.<br> Note: This parameter is only applicable to PCM format audio. If no value is passed in, the default state will be maintained, that is, the engine sampling rate called by default is equal to the PCM audio sampling rate.|
 
 **Signature generation**[](id:sign)
-1. Sort all parameters except `signature` in lexicographical order to concatenate them into the request URL as the original signature string. Here, `Appid=1259228442, SecretId=AKIDoQq1zhZMN8dv0psmvud6OUKuGPO7pu0r` is concatenated into the string as follows:
+1. Sort all parameters except `signature` in lexicographical order to concatenate them into the request URL as the original signature string. Here, `Appid=1259228442, SecretId=AKID*****************************0r` is concatenated into the string as follows:
 ```
-asr.cloud.tencent.com/asr/v2/1259228442?engine_model_type=16k_zh&expired=1592380492&filter_dirty=1&filter_modal=1&filter_punc=1&needvad=1&nonce=1592294092123&secretid=AKIDoQq1zhZMN8dv0psmvud6OUKuGPO7pu0r&timestamp=1592294092&voice_format=1&voice_id=RnKu9FODFHK5FPpsrN
+asr.cloud.tencent.com/asr/v2/1259228442?engine_model_type=16k_zh&expired=1592380492&filter_dirty=1&filter_modal=1&filter_punc=1&needvad=1&nonce=1592294092123&secretid=AKID*****************************u0r&timestamp=1592294092&voice_format=1&voice_id=RnKu9FODFHK5FPpsrN
 ```
 2. Encrypt the original signature string by using `SecretKey` with HMACSHA1 and then Base64-encode it. For example, perform this operation on the original signature string generated in the previous step with `SecretKey=kFpwoX5RYQ2SkqpeHgqmSzHK7h3A2fni` to get:
 ```
-Base64Encode(HmacSha1("asr.cloud.tencent.com/asr/v2/1259228442?engine_model_type=16k_zh&expired=1592380492&filter_dirty=1&filter_modal=1&filter_punc=1&needvad=1&nonce=1592294092123&secretid=AKIDoQq1zhZMN8dv0psmvud6OUKuGPO7pu0r&timestamp=1592294092&voice_format=1&voice_id=RnKu9FODFHK5FPpsrN", "kFpwoX5RYQ2SkqpeHgqmSzHK7h3A2fni"))
+Base64Encode(HmacSha1("asr.cloud.tencent.com/asr/v2/1259228442?engine_model_type=16k_zh&expired=1592380492&filter_dirty=1&filter_modal=1&filter_punc=1&needvad=1&nonce=1592294092123&secretid=AKID******************************0r&timestamp=1592294092&voice_format=1&voice_id=RnKu9FODFHK5FPpsrN", "kFpwoX5RYQ2SkqpeHgqmSzHK7h3A2fni"))
 ```
 The obtained `signature` value is as follows:
 ```
@@ -98,7 +98,7 @@ HepdTRX6u155qIPKNKC+3U0j1N0=
 ```
 3. After the value of `signature` is **URL-encoded (URL-encoding is required; otherwise, authentication may fail**), the final request URL obtained through concatenation is:
 ```
-wss://asr.cloud.tencent.com/asr/v2/1259228442?engine_model_type=16k_zh&expired=1592380492&filter_dirty=1&filter_modal=1&filter_punc=1&needvad=1&nonce=1592294092123&secretid=AKIDoQq1zhZMN8dv0psmvud6OUKuGPO7pu0r&timestamp=1592294092&voice_format=1&voice_id=RnKu9FODFHK5FPpsrN&signature=HepdTRX6u155qIPKNKC%2B3U0j1N0%3D
+wss://asr.cloud.tencent.com/asr/v2/1259228442?engine_model_type=16k_zh&expired=1592380492&filter_dirty=1&filter_modal=1&filter_punc=1&needvad=1&nonce=1592294092123&secretid=AKID*****************************u0r&timestamp=1592294092&voice_format=1&voice_id=RnKu9FODFHK5FPpsrN&signature=HepdTRX6u155qIPKNKC%2B3U0j1N0%3D
 ```
 
 #### Opus audio stream encapsulation description[](id:jump)
