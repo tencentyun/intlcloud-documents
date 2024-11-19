@@ -503,8 +503,8 @@ Bidang (dari kiri ke kanan) dalam log terdaftar sebagai berikut:
 <td>Brazil</td>
 </tr>
 <tr>
-<td>398</td>
-<td>Rusia</td>
+<td>-</td>
+<td>-</td>
 <td>1158</td>
 <td>Kamboja</td>
 <td>2623</td>
