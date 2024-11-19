@@ -19,7 +19,7 @@ Common parameters are required in every API for authenticating users and the API
 </td><td>Identifies the region where the instance you want to operate on resides. Valid values: <br>
 gz: Guangzhou; sh: Shanghai; bj: Beijing; cd: Chengdu<br>
 cq: Chongqing; hk: Hong Kong (China); sg: Singapore; th: Bangkok<br>
-kr: Seoul; jp: Tokyo; ru: Moscow; de: Frankfurt<br>
+kr: Seoul; jp: Tokyo; de: Frankfurt<br>
 in: Mumbai; usw: Silicon Vally; use: Virginia<br>
 </td><td> Yes
 </td></tr>
