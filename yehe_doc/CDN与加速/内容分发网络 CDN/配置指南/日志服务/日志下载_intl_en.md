@@ -513,8 +513,8 @@ The fields (from left to right) in the logs are listed as below:
 <td>Brazil</td>
 </tr>
 <tr>
-<td>398</td>
-<td>Russia</td>
+<td>-</td>
+<td>-</td>
 <td>1158</td>
 <td>Cambodia</td>
 <td>2623</td>
