@@ -25,8 +25,8 @@ Apply for a security credential by following the steps below:
 With the SecretId and SecretKey, a signature string can be generated. The following describes how to generate a signature string:
 
 Suppose that you have the following SecretId and SecretKey:
->  SecretId: AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE
->  SecretKey: Gu5t9xGARNpq86cd98joQYCN3EXAMPLE
+>  SecretId: AKID**********************0123456789
+>  SecretKey: sk0123456789********************
 
 **Note: This information is only for demonstration purposes. Please proceed with your actual SecretId and SecretKey.**
 
@@ -35,7 +35,7 @@ Take "View CVM Instance List" (DescribeInstances) as an example. The possible re
 | Parameter Name | Description | Parameter Value |
 | ------------- | -------------- | ------------------------------------ |
 | Action | Method name | DescribeInstances |
-| SecretId | Key ID | AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE |
+| SecretId | Key ID | AKID**********************0123456789 |
 | Timestamp | Current timestamp | 1465185768 |
 | Nonce | A random positive integer | 11886 |
 | Region | The region where the instance resides | ap-guangzhou |
@@ -57,7 +57,7 @@ First, sort all the request parameters in ascending lexicographical order by the
     'Nonce' : 11886,
     'Offset' : 0,
     'Region' : 'ap-guangzhou',
-    'SecretId' : 'AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE',
+    'SecretId' : 'AKID**********************0123456789',
     'Timestamp' : 1465185768,
     'Version': '2017-03-12',
 }
@@ -73,7 +73,7 @@ Format the above sorted request parameters as "parameter name"="parameter value"
 Then, join the formatted parameters together using "&" to generate the final request string:
 
 ```
-Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12
+Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789&Timestamp=1465185768&Version=2017-03-12
 ```
 
 ### 2.3. Generate original signature string
@@ -91,7 +91,7 @@ Construction rule of original signature string:
 The resulting string is:
 
 ```
-GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12
+GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789&Timestamp=1465185768&Version=2017-03-12
 ```
 
 ### 2.4. Generate signature string
@@ -102,7 +102,7 @@ For example, the code is as follows if written in PHP:
 
 ```
 $secretKey = 'Gu5t9xGARNpq86cd98joQYCN3EXAMPLE';
-$srcStr = 'GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12';
+$srcStr = 'GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789&Timestamp=1465185768&Version=2017-03-12';
 $signStr = base64_encode(hash_hmac('sha1', $srcStr, $secretKey, true));
 echo $signStr;
 ```
