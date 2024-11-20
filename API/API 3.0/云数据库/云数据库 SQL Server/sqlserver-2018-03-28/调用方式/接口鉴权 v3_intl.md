@@ -32,11 +32,11 @@ The following uses querying the list of CVM instances in the Guangzhou region as
 
 In the example, we try to choose common parameters and API parameters that are prone to mistakes. When you actually call an API, please use parameters based on the actual conditions. The parameters vary by API. Do not copy the parameters and values in this example.
 
-Assuming that your SecretId and SecretKey are AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE and Gu5t9xGARNpq86cd98joQYCN3EXAMPLE, respectively, if you want to view the status of the CVM instance named "unnamed" in the Guangzhou region and have only one data entry returned, then the request may be:
+Assuming that your SecretId and SecretKey are AKID**********************0123456789EXAMPLE and sk0123456789********************EXAMPLE, respectively, if you want to view the status of the CVM instance named "unnamed" in the Guangzhou region and have only one data entry returned, then the request may be:
 
 ```
 curl -X POST https://cvm.tencentcloudapi.com \
--H "Authorization: TC3-HMAC-SHA256 Credential=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE/2019-02-25/cvm/tc3_request, SignedHeaders=content-type;host, Signature=72e494ea809ad7a8c8f7a4507b9bddcbaa8e581f516e8da2f66e2c5a96525168" \
+-H "Authorization: TC3-HMAC-SHA256 Credential=AKID**********************0123456789EXAMPLE/2019-02-25/cvm/tc3_request, SignedHeaders=content-type;host, Signature=72e494ea809ad7a8c8f7a4507b9bddcbaa8e581f516e8da2f66e2c5a96525168" \
 -H "Content-Type: application/json; charset=utf-8" \
 -H "Host: cvm.tencentcloudapi.com" \
 -H "X-TC-Action: DescribeInstances" \
@@ -154,7 +154,7 @@ Authorization =
 | Field Name | Explanation |
 |-|-|
 | Algorithm | Signature algorithm, which is always `TC3-HMAC-SHA256`. |
-| SecretId | The SecretId in the key pair, i.e., `AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE`. |
+| SecretId | The SecretId in the key pair, i.e., `AKID**********************0123456789EXAMPLE`. |
 | CredentialScope | Credential scope (see above). The calculation result in this example is `2019-02-25/cvm/tc3_request`. |
 | SignedHeaders | Header information for signature calculation (see above), such as `content-type;host` in this example. |
 | Signature | Signature value. The calculation result in this example is `72e494ea809ad7a8c8f7a4507b9bddcbaa8e581f516e8da2f66e2c5a96525168`. |
@@ -162,14 +162,14 @@ Authorization =
 Based on the rules above, the value in the example is:
 
 ```
-TC3-HMAC-SHA256 Credential=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE/2019-02-25/cvm/tc3_request, SignedHeaders=content-type;host, Signature=72e494ea809ad7a8c8f7a4507b9bddcbaa8e581f516e8da2f66e2c5a96525168
+TC3-HMAC-SHA256 Credential=AKID**********************0123456789EXAMPLE/2019-02-25/cvm/tc3_request, SignedHeaders=content-type;host, Signature=72e494ea809ad7a8c8f7a4507b9bddcbaa8e581f516e8da2f66e2c5a96525168
 ```
 
 The final complete call information is as follows:
 
 ```
 POST https://cvm.tencentcloudapi.com/
-Authorization: TC3-HMAC-SHA256 Credential=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE/2019-02-25/cvm/tc3_request, SignedHeaders=content-type;host, Signature=72e494ea809ad7a8c8f7a4507b9bddcbaa8e581f516e8da2f66e2c5a96525168
+Authorization: TC3-HMAC-SHA256 Credential=AKID**********************0123456789EXAMPLE/2019-02-25/cvm/tc3_request, SignedHeaders=content-type;host, Signature=72e494ea809ad7a8c8f7a4507b9bddcbaa8e581f516e8da2f66e2c5a96525168
 Content-Type: application/json; charset=utf-8
 Host: cvm.tencentcloudapi.com
 X-TC-Action: DescribeInstances
@@ -198,8 +198,8 @@ import javax.xml.bind.DatatypeConverter;
 
 public class TencentCloudAPITC3Demo {
     private final static Charset UTF8 = StandardCharsets.UTF_8;
-    private final static String SECRET_ID = "AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE";
-    private final static String SECRET_KEY = "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE";
+    private final static String SECRET_ID = "AKID**********************0123456789EXAMPLE";
+    private final static String SECRET_KEY = "sk0123456789********************EXAMPLE";
     private final static String CT_JSON = "application/json; charset=utf-8";
 
     public static byte[] hmac256(byte[] key, String msg) throws Exception {
@@ -292,8 +292,8 @@ import hashlib, hmac, json, os, sys, time
 from datetime import datetime
 
 # Key parameters
-secret_id = "AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE"
-secret_key = "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE"
+secret_id = "AKID**********************0123456789EXAMPLE"
+secret_key = "sk0123456789********************EXAMPLE"
 
 service = "cvm"
 host = "cvm.tencentcloudapi.com"
