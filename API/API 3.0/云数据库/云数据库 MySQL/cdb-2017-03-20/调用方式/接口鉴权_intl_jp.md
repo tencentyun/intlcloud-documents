@@ -22,8 +22,8 @@ Tencent Cloud APIは、各アクセスリクエストを認証します。つま
 
 例えば、ユーザーのSecretIdとSecretKeyが次のようになるとします。
 
-* SecretId: AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE
-* SecretKey: Gu5t9xGARNpq86cd98joQYCN3EXAMPLE
+* SecretId: AKID**********************0123456789EXAMPLE
+* SecretKey: sk0123456789********************EXAMPLE
 
 **注意：これは一例に過ぎません。ユーザーの実際申請したSecretIdとSecretKeyによって操作を続けてください！**
 
@@ -32,7 +32,7 @@ CVMのインスタンスリスト表示（DescribeInstances）リクエストを
 | パラメータ名称 | 日本語 | パラメータ値|
 |---------|---------|---------|
 | Action | メソッド名| DescribeInstances |
-| SecretId | 暗号鍵ID | AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE |
+| SecretId | 暗号鍵ID | AKID**********************0123456789EXAMPLE |
 | Timestamp | 現在のタイムスタンプ | 1465185768 |
 | Nonce | ランダムな正の整数 | 11886 |
 | Region | インスタンスの所属地域 | ap-guangzhou |
@@ -54,7 +54,7 @@ CVMのインスタンスリスト表示（DescribeInstances）リクエストを
     'Nonce' : 11886,
     'Offset' : 0,
     'Region' : 'ap-guangzhou',
-    'SecretId' : 'AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE',
+    'SecretId' : 'AKID**********************0123456789EXAMPLE',
     'Timestamp' : 1465185768,
     'Version': '2017-03-12',
 }
@@ -70,7 +70,7 @@ CVMのインスタンスリスト表示（DescribeInstances）リクエストを
 それから、フォーマットされた各パラメータを「＆」でつなぎ合わせて、最後に生成されたリクエスト文字列は次のとおりです：
 
 ```
-Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12
+Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Timestamp=1465185768&Version=2017-03-12
 ```
 
 ### 2.3. 署名原文文字列のつなぎ合わせ
@@ -87,7 +87,7 @@ Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=
 例のつなぎ合わせ結果：
 
 ```
-GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12
+GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Timestamp=1465185768&Version=2017-03-12
 ```
 
 ### 2.4. 署名文字列の生成
@@ -97,8 +97,8 @@ GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&
 具体的なコードは次のとおりです。PHP言語を例とします：
 
 ```
-$secretKey = 'Gu5t9xGARNpq86cd98joQYCN3EXAMPLE';
-$srcStr = 'GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12';
+$secretKey = 'sk0123456789********************EXAMPLE';
+$srcStr = 'GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Timestamp=1465185768&Version=2017-03-12';
 $signStr = base64_encode(hash_hmac('sha1', $srcStr, $secretKey, true));
 echo $signStr;
 ```
@@ -147,7 +147,7 @@ EliP9YW3pW28FpsEdkXt/+WcGeI=
 
 署名プロセスをより明確に説明するために、実際のプログラミング言語を例として上述の署名プロセスを具体的に実施します。リクエストのドメイン名、呼び出すAPI、およびパラメータの値は、上記の署名プロセスのとおりです。コードは署名プロセスを説明するためのものであり、汎用性がありません。実際の開発ではできるだけSDKを使用してください。
 
-最終に出力されたURLは以下である可能性があります：`https://cvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Signature=EliP9YW3pW28FpsEdkXt%2F%2BWcGeI%3D&Timestamp=1465185768&Version=2017-03-12`
+最終に出力されたURLは以下である可能性があります：`https://cvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Signature=EliP9YW3pW28FpsEdkXt%2F%2BWcGeI%3D&Timestamp=1465185768&Version=2017-03-12`
 
 注意：例の暗号鍵は仮想のものであるため、タイムスタンプはシステムの現在時刻ではないので、このURLをブラウザで開くか、curlなどのコマンドで呼び出されると、認証エラー（署名期限切れ）が返されます。通常返されることができるURLを得るために、SecretIdとSecretKeyを本当の暗号鍵に変更して、システムの現在のタイムスタンプをTimestampとして使う必要があります。
 
@@ -202,14 +202,14 @@ public class TencentCloudAPIDemo {
         params.put("Nonce", 11886); // 共通パラメータ
         // 実際に呼び出すときはシステム現在時間を使うべきです。例えば：   params.put("Timestamp", System.currentTimeMillis() / 1000);
         params.put("Timestamp", 1465185768); // 共通パラメータ
-        params.put("SecretId", "AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE"); // 共通パラメータ
+        params.put("SecretId", "AKID**********************0123456789EXAMPLE"); // 共通パラメータ
         params.put("Action", "DescribeInstances"); // 共通パラメータ
         params.put("Version", "2017-03-12"); // 共通パラメータ
         params.put("Region", "ap-guangzhou"); // 共通パラメータ
         params.put("Limit", 20); // 業務パラメータ
         params.put("Offset", 0); // 業務パラメータ
         params.put("InstanceIds.0", "ins-09dx96dg"); // 業務パラメータ
-        params.put("Signature", sign(getStringToSign(params), "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE", "HmacSHA1")); // 共通パラメータ
+        params.put("Signature", sign(getStringToSign(params), "sk0123456789********************EXAMPLE", "HmacSHA1")); // 共通パラメータ
         System.out.println(getUrl(params));
     }
 }
@@ -228,8 +228,8 @@ import time
 
 import requests
 
-secret_id = "AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE"
-secret_key = "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE"
+secret_id = "AKID**********************0123456789EXAMPLE"
+secret_key = "sk0123456789********************EXAMPLE"
 
 def get_string_to_sign(method, endpoint, params):
     s = method + endpoint + "/?"
