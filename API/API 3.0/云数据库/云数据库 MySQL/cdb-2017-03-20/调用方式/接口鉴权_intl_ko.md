@@ -22,8 +22,8 @@ Tencent Cloud API는 각 액세스 요청에 대해 자격 증명을 진행하�
 
 사용자의 SecretId와 SecretKey는 각각 다음과 같습니다.
 
-* SecretId: AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE
-* SecretKey: Gu5t9xGARNpq86cd98joQYCN3EXAMPLE
+* SecretId: AKID**********************0123456789EXAMPLE
+* SecretKey: sk0123456789********************EXAMPLE
 
 **주의: 이것은 단지 예시일 뿐입니다. 사용자는 실제 신청한 SecretId와 SecretKey에 따라 후속 작업을 수행하십시오!**
 
@@ -32,7 +32,7 @@ CVM으로 인스턴스 리스트 조회(DescribeInstances) 요청을 예로 들�
 | 매개변수 이름 | 한국어 | 매개변수 값 |
 |---------|---------|---------|
 | Action | 방법명 | DescribeInstances |
-| SecretId | 키 ID | AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE |
+| SecretId | 키 ID | AKID**********************0123456789EXAMPLE |
 | Timestamp | 현재 타임스탬프 | 1465185768 |
 | Nonce | 랜덤 양의 정수 | 11886 |
 | Region | 인스턴스 소재 지역 | ap-guangzhou |
@@ -54,7 +54,7 @@ CVM으로 인스턴스 리스트 조회(DescribeInstances) 요청을 예로 들�
     'Nonce' : 11886,
     'Offset' : 0,
     'Region' : 'ap-guangzhou',
-    'SecretId' : 'AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE',
+    'SecretId' : 'AKID**********************0123456789EXAMPLE',
     'Timestamp' : 1465185768,
     'Version': '2017-03-12',
 }
@@ -70,7 +70,7 @@ CVM으로 인스턴스 리스트 조회(DescribeInstances) 요청을 예로 들�
 형식화된 각 매개변수를 "&"로 연결하여, 최종 생성된 요청 문자열은 다음과 같습니다.
 
 ```
-Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12
+Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Timestamp=1465185768&Version=2017-03-12
 ```
 
 ### 2.3. 서명 원문 문자열 합치기
@@ -87,7 +87,7 @@ Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=
 예시의 합치기 결과:
 
 ```
-GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12
+GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Timestamp=1465185768&Version=2017-03-12
 ```
 
 ### 2.4. 서명 문자열 생성
@@ -97,8 +97,8 @@ GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&
 구체적인 코드는 PHP 언어를 예로 들면 다음과 같습니다.
 
 ```
-$secretKey = 'Gu5t9xGARNpq86cd98joQYCN3EXAMPLE';
-$srcStr = 'GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12';
+$secretKey = 'sk0123456789********************EXAMPLE';
+$srcStr = 'GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Timestamp=1465185768&Version=2017-03-12';
 $signStr = base64_encode(hash_hmac('sha1', $srcStr, $secretKey, true));
 echo $signStr;
 ```
@@ -147,7 +147,7 @@ EliP9YW3pW28FpsEdkXt/+WcGeI=
 
 서명 프로세스를 더 명확하게 설명하기 위해, 다음에서는 실제 프로그래밍 언어를 예로 들어 위에서 설명한 서명 프로세스를 구체적으로 구현해보겠습니다. 요청 도메인 이름, 호출한 API 및 매개변수의 선택 값은 모두 위에서 설명한 서명 프로세스를 기준으로 합니다. 코드는 서명 프로세스를 설명하기 위한 것이며 범용이 아닙니다. 실제 개발 시에는 최대한 SDK를 사용하십시오.
 
-가능한 최종 출력 url: `https://cvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Signature=EliP9YW3pW28FpsEdkXt%2F%2BWcGeI%3D&Timestamp=1465185768&Version=2017-03-12`
+가능한 최종 출력 url: `https://cvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Signature=EliP9YW3pW28FpsEdkXt%2F%2BWcGeI%3D&Timestamp=1465185768&Version=2017-03-12`
 
 주의: 예시의 키는 가상이므로, 타임스탬프도 시스템 현재 시간이 아니며, 이 URL을 브라우저에서 열거나 curl과 같은 명령으로 호출하면 "서명 만료"의 인증 오류가 반환됩니다. 정상적으로 반환되는 URL을 얻으려면, 예시의 SecretId 및 SecretKey를 실제 키로 수정하고 시스템 현재 타임스탬프를 Timestamp로 사용해야 합니다.
 
@@ -202,14 +202,14 @@ public class TencentCloudAPIDemo {
         params.put("Nonce", 11886); // 공통 매개변수
         // 실제 호출 시 시스템 현재 시간을 사용해야 합니다. 예: params.put("Timestamp", System.currentTimeMillis() / 1000).
         params.put("Timestamp", 1465185768); // 공통 매개변수
-        params.put("SecretId", "AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE"); // 공통 매개변수
+        params.put("SecretId", "AKID**********************0123456789EXAMPLE"); // 공통 매개변수
         params.put("Action", "DescribeInstances"); // 공통 매개변수
         params.put("Version", "2017-03-12"); // 공통 매개변수
         params.put("Region", "ap-guangzhou"); // 공통 매개변수
         params.put("Limit", 20); // 비즈니스 매개변수
         params.put("Offset", 0); // 비즈니스 매개변수
         params.put("InstanceIds.0", "ins-09dx96dg"); // 비즈니스 매개변수
-        params.put("Signature", sign(getStringToSign(params), "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE", "HmacSHA1")); // 공통 매개변수
+        params.put("Signature", sign(getStringToSign(params), "sk0123456789********************EXAMPLE", "HmacSHA1")); // 공통 매개변수
         System.out.println(getUrl(params));
     }
 }
@@ -228,8 +228,8 @@ import time
 
 import requests
 
-secret_id = "AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE"
-secret_key = "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE"
+secret_id = "AKID**********************0123456789EXAMPLE"
+secret_key = "sk0123456789********************EXAMPLE"
 
 def get_string_to_sign(method, endpoint, params):
     s = method + endpoint + "/?"
