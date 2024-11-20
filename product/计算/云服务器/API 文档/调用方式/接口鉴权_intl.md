@@ -26,8 +26,8 @@ Apply for a security credential by following the steps below:
 With the SecretId and SecretKey, a signature string can be generated. The following describes how to generate a signature string:
 
 Suppose that you have the following SecretId and SecretKey:
->  SecretId: AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA
->  SecretKey: Gu5t9xGARNpq86cd98joQYCN3Cozk1qA
+>  SecretId: AKID**********************0123456789
+>  SecretKey: sk0123456789********************
 
 **Note: This is just an example. Please perform subsequent operations based on your actual SecretId and SecretKey.**
 
@@ -36,7 +36,7 @@ Take [View CVM Instance List](/doc/api/229/查看实例列表) (DescribeInstance
 | Parameter Name | Description| Parameter Value| 
 |---------|---------|---------|
 | Action | Method name | DescribeInstances | 
-| SecretId | Key ID | AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA | 
+| SecretId | Key ID | AKID**********************0123456789 | 
 | Timestamp | Current time stamp | 1465185768 | 
 | Nonce | A random positive integer | 11886 | 
 | Region | Region where the instance resides in | gz | 
@@ -53,7 +53,7 @@ First, sort all the request parameters in ascending lexicographical order by the
     'Action' : 'DescribeInstances',
     'Nonce' : 11886,
     'Region' : 'gz',
-    'SecretId' : 'AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA',
+    'SecretId' : 'AKID**********************0123456789',
     'Timestamp' : 1465185768,
 	'instanceIds.0' : 'ins-09dx96dg',
     'limit' : 20,
@@ -69,7 +69,7 @@ Format the above sorted request parameters as "parameter name"="parameter value"
 Then, join the formatted parameters together using "&" to generate the final request string:
 
 ```
-Action=DescribeInstances&Nonce=11886&Region=gz&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA&Timestamp=1465185768&instanceIds.0=ins-09dx96dg&limit=20&offset=0
+Action=DescribeInstances&Nonce=11886&Region=gz&SecretId=AKID**********************0123456789&Timestamp=1465185768&instanceIds.0=ins-09dx96dg&limit=20&offset=0
 ```
 
 ### 2.3. Construct original signature string
@@ -87,7 +87,7 @@ Construction rule of original signature string:
 The resulting string is:
 
 ```
-GETcvm.api.qcloud.com/v2/index.php?Action=DescribeInstances&Nonce=11886&Region=gz&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA&Timestamp=1465185768&instanceIds.0=ins-09dx96dg&limit=20&offset=0
+GETcvm.api.qcloud.com/v2/index.php?Action=DescribeInstances&Nonce=11886&Region=gz&SecretId=AKID**********************0123456789&Timestamp=1465185768&instanceIds.0=ins-09dx96dg&limit=20&offset=0
 ```
 
 ### 2.4. Generate signature string
@@ -98,7 +98,7 @@ For example, the code is as follows if written in PHP:
 
 ```
 $secretKey = 'Gu5t9xGARNpq86cd98joQYCN3Cozk1qA';
-$srcStr = 'GETcvm.api.qcloud.com/v2/index.php?Action=DescribeInstances&Nonce=11886&Region=gz&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA&Timestamp=1465185768&instanceIds.0=ins-09dx96dg&limit=20&offset=0';
+$srcStr = 'GETcvm.api.qcloud.com/v2/index.php?Action=DescribeInstances&Nonce=11886&Region=gz&SecretId=AKID**********************0123456789&Timestamp=1465185768&instanceIds.0=ins-09dx96dg&limit=20&offset=0';
 $signStr = base64_encode(hash_hmac('sha1', $srcStr, $secretKey, true));
 echo $signStr;
 ```
