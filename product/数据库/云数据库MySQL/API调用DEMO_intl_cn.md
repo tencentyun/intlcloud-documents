@@ -14,7 +14,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-guangzhou")
@@ -54,7 +54,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -87,7 +87,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -121,7 +121,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -156,7 +156,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -191,7 +191,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -224,7 +224,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -256,7 +256,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -293,7 +293,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -325,7 +325,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -359,7 +359,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -406,7 +406,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -438,7 +438,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -472,7 +472,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -504,7 +504,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -537,7 +537,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -573,7 +573,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -608,7 +608,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -640,7 +640,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -673,7 +673,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -705,7 +705,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -739,7 +739,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-chengdu")
@@ -774,7 +774,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -811,7 +811,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-shanghai")
@@ -845,7 +845,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -880,7 +880,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -914,7 +914,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -949,7 +949,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -982,7 +982,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -1018,7 +1018,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -1053,7 +1053,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -1088,7 +1088,7 @@ from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
     # 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
 
     #实例化要请求产品(以cdb为例)的client对象
     client = cdb_client.CdbClient(cred, "ap-beijing")
@@ -1127,8 +1127,8 @@ action = 'GetMonitorData'
 
 config = {
     'Region': 'sh',
-    'secretId': 'AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz',
-    'secretKey': 'eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE',
+    'secretId': 'AKID**********************0123456789',
+    'secretKey': 'sk0123456789********************',
     'method': 'get',
 }
 
@@ -1177,8 +1177,8 @@ action = 'DescribeBaseMetrics'
 
 config = {
     'Region': 'sh',
-    'secretId': 'AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz',
-    'secretKey': 'eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE',
+    'secretId': 'AKID**********************0123456789',
+    'secretKey': 'sk0123456789********************',
     'method': 'get',
 }
 
@@ -1226,8 +1226,8 @@ action = 'SendCustomAlarmMsg'
 
 config = {
     'Region': 'sh',
-    'secretId': 'AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz',
-    'secretKey': 'eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE',
+    'secretId': 'AKID**********************0123456789',
+    'secretKey': 'sk0123456789********************',
     'method': 'get',
 }
 
@@ -1271,7 +1271,7 @@ from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentClo
 from tencentcloud.dts.v20180330 import dts_client, models
 
 def returnClient():
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
     client = dts_client.DtsClient(cred, "ap-guangzhou")
     return client
 
@@ -1485,7 +1485,7 @@ from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentClo
 from tencentcloud.dts.v20180330 import dts_client, models
 
 def returnClient():
-    cred = credential.Credential("AKIDrY4UwCdhewLbhdG7f2DmDT4eFftKtWIz", "eGl4KUSEsmaFiyEKFID0bzFKNFvPh2EE")
+    cred = credential.Credential("AKID**********************0123456789", "sk0123456789********************")
     client = dts_client.DtsClient(cred, "ap-guangzhou")
     return client
 

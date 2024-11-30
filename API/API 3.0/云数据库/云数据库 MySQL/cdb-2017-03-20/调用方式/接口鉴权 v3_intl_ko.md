@@ -22,7 +22,7 @@ Tencent Cloud API는 각 액세스 요청에 대해 자격 증명을 진행하�
 
 다음에서 CVM으로 광저우 지역 인스턴스 리스트를 조회하는 예를 들어 서명 컴퓨팅 프로세스를 단계별로 소개합니다. 인스턴스 리스트 조회의 Limit 및 Offset의 두 가지 매개변수를 사용했고, GET 방법으로 호출했습니다.
 
-사용자의 SecretId와 SecretKey는 각각 다음과 같습니다. AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE 및 Gu5t9xGARNpq86cd98joQYCN3EXAMPLE.
+사용자의 SecretId와 SecretKey는 각각 다음과 같습니다. AKID**********************0123456789EXAMPLE 및 sk0123456789********************EXAMPLE.
 
 ### 1. 정규 요청 문자열 합치기
 
@@ -135,7 +135,7 @@ TC3-HMAC-SHA256 Credential=AKIDEXAMPLE/Date/service/tc3_request, SignedHeaders=c
 ```
 https://cvm.tencentcloudapi.com/?Limit=10&Offset=0
 
-Authorization: TC3-HMAC-SHA256 Credential=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE/2018-10-09/cvm/tc3_request, SignedHeaders=content-type;host, Signature=5da7a33f6993f0614b047e5df4582db9e9bf4672ba50567dba16c6ccf174c474
+Authorization: TC3-HMAC-SHA256 Credential=AKID**********************0123456789EXAMPLE/2018-10-09/cvm/tc3_request, SignedHeaders=content-type;host, Signature=5da7a33f6993f0614b047e5df4582db9e9bf4672ba50567dba16c6ccf174c474
 Content-Type: application/x-www-form-urlencoded
 Host: cvm.tencentcloudapi.com
 X-TC-Action: DescribeInstances
@@ -169,8 +169,8 @@ public class TencentCloudAPITC3Demo {
     private final static String CHARSET = "UTF-8";
     private final static String ENDPOINT = "cvm.tencentcloudapi.com";
     private final static String PATH = "/";
-    private final static String SECRET_ID = "AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE";
-    private final static String SECRET_KEY = "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE";
+    private final static String SECRET_ID = "AKID**********************0123456789EXAMPLE";
+    private final static String SECRET_KEY = "sk0123456789********************EXAMPLE";
     private final static String CT_X_WWW_FORM_URLENCODED = "application/x-www-form-urlencoded";
     private final static String CT_JSON = "application/json";
     private final static String CT_FORM_DATA = "multipart/form-data";
@@ -245,8 +245,8 @@ import hashlib, hmac, json, os, sys, time
 from datetime import datetime
 
 # 키 매개변수
-secret_id = "AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE"
-secret_key = "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE"
+secret_id = "AKID**********************0123456789EXAMPLE"
+secret_key = "sk0123456789********************EXAMPLE"
 
 service = "cvm"
 host = "cvm.tencentcloudapi.com"

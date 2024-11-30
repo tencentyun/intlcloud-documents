@@ -24,8 +24,8 @@ Apply for security credentials by following the steps below:
 With the SecretId and SecretKey, a signature string can be generated. The following shows how to generate a signature string:
 
 Suppose that you have the following SecretId and SecretKey:
->  SecretId: AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE
->  SecretKey: Gu5t9xGARNpq86cd98joQYCN3EXAMPLE
+>  SecretId: AKID**********************0123456789EXAMPLE
+>  SecretKey: sk0123456789********************EXAMPLE
 
 **Note: This information is only for demonstration purpose. Make sure you proceed with your actual SecretId and SecretKey.**
 
@@ -34,7 +34,7 @@ For example, if you call the API "View CVM Instance List" (DescribeInstances), t
 | Parameter Name | Description | Parameter Value |
 |---------|---------|---------|
 | Action | Method name |  DescribeInstances |
-| SecretId | Key ID |  AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE |
+| SecretId | Key ID |  AKID**********************0123456789EXAMPLE |
 | Timestamp | Current timestamp |  1465185768 |
 | Nonce | A random positive integer |  11886 |
 | Region | The region where the instance resides |  ap-guangzhou |
@@ -56,7 +56,7 @@ First, sort all the request parameters in an ascending lexicographical order (AS
     'Nonce' : 11886,
     'Offset' : 0,
     'Region' : 'ap-guangzhou',
-    'SecretId' : 'AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE',
+    'SecretId' : 'AKID**********************0123456789EXAMPLE',
     'Timestamp' : 1465185768,
     'Version': '2017-03-12',
 }
@@ -72,7 +72,7 @@ Format the request parameters sorted in the previous step as "parameter name"="p
 Then, join the formatted parameters together with "&" to generate the final request string:
 
 ```
-Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12
+Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Timestamp=1465185768&Version=2017-03-12
 ```
 
 ### 2.3. Generate the original signature string
@@ -90,7 +90,7 @@ The original signature string is constructed as follows:
 The resulting string is:
 
 ```
-GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12
+GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Timestamp=1465185768&Version=2017-03-12
 ```
 
 ### 2.4. Generate the signature string
@@ -100,8 +100,8 @@ Sign the **original signature string** obtained in the previous step using HMAC-
 For example, the code is as follows if written in PHP:
 
 ```
-$secretKey = 'Gu5t9xGARNpq86cd98joQYCN3EXAMPLE';
-$srcStr = 'GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Timestamp=1465185768&Version=2017-03-12';
+$secretKey = 'sk0123456789********************EXAMPLE';
+$srcStr = 'GETcvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Timestamp=1465185768&Version=2017-03-12';
 $signStr = base64_encode(hash_hmac('sha1', $srcStr, $secretKey, true));
 echo $signStr;
 ```
@@ -192,20 +192,20 @@ public class TencentCloudAPIDemo {
         params.put("Nonce", 11886); // Common parameters
         // The current system time should be used for the actual call, for example: params.put("Timestamp", System.currentTimeMillis() / 1000);
         params.put("Timestamp", 1465185768); // Common parameters
-        params.put("SecretId", "AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE"); // Common parameters
+        params.put("SecretId", "AKID**********************0123456789EXAMPLE"); // Common parameters
         params.put("Action", "DescribeInstances"); // Common parameters
         params.put("Version", "2017-03-12"); // Common parameters
         params.put("Region", "ap-guangzhou"); // Common parameters
         params.put("Limit", 20); // Business parameters
         params.put("Offset", 0); // Business parameters
         params.put("InstanceIds.0", "ins-09dx96dg"); // Business parameters
-        params.put("Signature", sign(getStringToSign(params), "Gu5t9xGARNpq86cd98joQYCN3EXAMPLE", "HmacSHA1")); // Common parameters
+        params.put("Signature", sign(getStringToSign(params), "sk0123456789********************EXAMPLE", "HmacSHA1")); // Common parameters
         System.out.println(getUrl(params));
     }
 }
 ```
 
-The resulting URL: `https://cvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKIDz8krbsJ5yKBZQpn74WFkmLPx3EXAMPLE&Signature=EliP9YW3pW28FpsEdkXt%2F%2BWcGeI%3D&Timestamp=1465185768&Version=2017-03-12`
+The resulting URL: `https://cvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx96dg&Limit=20&Nonce=11886&Offset=0&Region=ap-guangzhou&SecretId=AKID**********************0123456789EXAMPLE&Signature=EliP9YW3pW28FpsEdkXt%2F%2BWcGeI%3D&Timestamp=1465185768&Version=2017-03-12`
 
 Note: Since the key in the example is fictitious and the timestamp is not the current system time, the authentication error "The signature expired" will be returned when you open this URL in a browser or call it with a command, such as curl. To get a URL that can be returned normally, replace the SecretId and SecretKey in the example with the real key, and use the current system timestamp as the Timestamp.
 
